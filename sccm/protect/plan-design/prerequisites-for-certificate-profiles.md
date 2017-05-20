@@ -1,0 +1,51 @@
+---
+title: "Wymagania wstępne profilu certyfikatu | Dokumentacja firmy Microsoft"
+description: "Więcej informacji na temat profili certyfikatów w programie System Center Configuration Manager i ich zależności zewnętrzne i zależności w produkcie."
+ms.custom: na
+ms.date: 03/29/2017
+ms.prod: configuration-manager
+ms.reviewer: na
+ms.suite: na
+ms.technology:
+- configmgr-other
+ms.tgt_pltfrm: na
+ms.topic: get-started-article
+ms.assetid: 0317fd02-3721-4634-b18b-7c976a4e92bf
+caps.latest.revision: 9
+author: arob98
+ms.author: angrobe
+manager: angrobe
+ms.translationtype: Machine Translation
+ms.sourcegitcommit: 23b1d24e908d04b64c3bbfa518793a44e696d468
+ms.openlocfilehash: fba52ee305fe67418f2fe544bfe94d10467236d0
+ms.contentlocale: pl-pl
+ms.lasthandoff: 05/17/2017
+
+
+---
+# <a name="prerequisites-for-certificate-profiles-in-system-center-configuration-manager"></a>Wymagania wstępne dotyczące profilów certyfikatów w programie System Center Configuration Manager
+
+*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+
+
+Profile certyfikatów w programie System Center Configuration Manager mają zależności zewnętrzne i zależności w produkcie.  
+
+## <a name="dependencies-external-to-configuration-manager"></a>Zależności poza programem Configuration Manager  
+
+|Zależność|Więcej informacji|  
+|----------------|----------------------|  
+|Urząd certyfikacji wystawiający certyfikaty przedsiębiorstwa z uruchomionymi usługami certyfikatów Active Directory (AD CS).<br /><br /> Aby odwołać certyfikaty, konto komputera serwera lokacji na szczycie hierarchii wymaga uprawnień *Wystawianie certyfikatów i zarządzanie nimi* dla każdego szablonu certyfikatu używanego przez profil certyfikatu w programie Configuration Manager. Alternatywnie można nadać uprawnienia menedżera certyfikatów, aby udzielić uprawnień do wszystkich szablonów certyfikatów używanych przez urząd certyfikacji<br /><br /> Obsługiwane jest opcja zatwierdzania żądań certyfikatów przez menedżera. Jednak szablony certyfikatów, które są używane do wystawiania certyfikatów, należy określić dla **Dostarcz w żądaniu** dla podmiotu certyfikatu, tak że program System Center Configuration Manager może automatycznie dostarczyć tę wartość.|Więcej informacji o Usługach certyfikatów Active Directory zawiera dokumentacja systemu Windows Server:<br /><br /> Windows Server 2012: [Omówienie usług certyfikatów w usłudze Active Directory](http://go.microsoft.com/fwlink/p/?LinkId=286744)<br /><br /> Windows Server 2008: [Usługi certyfikatów Active Directory w systemie Windows Server 2008](http://go.microsoft.com/fwlink/p/?LinkId=115018)|  
+|Usługa roli usługa rejestracji urządzeń sieciowych dla usług certyfikatów Active Directory w systemie Windows Server 2012 R2.<br /><br /> Ponadto:<br /><br /> Numery portów inne niż TCP 443 (dla protokołu HTTPS) lub TCP 80 (dla protokołu HTTP) nie są obsługiwane na potrzeby komunikacji między klientem a Usługą rejestracji urządzeń sieciowych.<br /><br /> Serwer z uruchomioną Usługą rejestracji urządzeń sieciowych musi się różnić od serwera urzędu wystawiającego certyfikaty.|System Center Configuration Manager komunikuje się z usługi rejestracji urządzeń sieciowych w systemie Windows Server 2012 R2, aby generować i weryfikować żądania prostego protokołu rejestrowania certyfikatów (SCEP).<br /><br /> Jeśli certyfikaty będą wydawane użytkownikom lub urządzeniom, które łączą się przez Internet, takim jak urządzenia przenośne, które są zarządzane przez program Microsoft Intune, te urządzenia muszą mieć dostęp do serwera z uruchomioną usługą rejestracji urządzeń sieciowych z Internetu. Taki serwer należy zainstalować na przykład w sieci obwodowej (znanej także jako strefa zdemilitaryzowana, strefa DMZ lub podsieć ekranowana).<br /><br /> Jeśli między serwerem z uruchomioną Usługą rejestracji urządzeń sieciowych a urzędem wystawiającym certyfikaty znajduje się zapora, należy ją skonfigurować tak, aby zezwalała na ruch komunikacyjny (DCOM) między dwoma serwerami. To wymaganie dotyczące zapory ma również zastosowanie do serwera z programem System Center Configuration Manager serwera lokacji wystawiającego urzędu certyfikacji, tak aby System Center Configuration Manager można odwołać certyfikaty.<br /><br /> Jeśli usługi rejestracji urządzeń sieciowych jest skonfigurowana do wymagania protokołu SSL, ze względów bezpieczeństwa jest upewnienie się, że łączące się urządzenia można uzyskać dostęp do listy odwołania certyfikatów (CRL) w celu weryfikowania certyfikatu serwera.<br /><br /> Więcej informacji o usłudze rejestracji urządzeń sieciowych w systemie Windows Server 2012 R2 znajduje się w temacie [Używanie modułu zasad z usługą rejestracji urządzeń sieciowych](http://go.microsoft.com/fwlink/p/?LinkId=328657).|  
+|Jeśli urząd wystawiający certyfikaty działa w systemie Windows Server 2008 R2, ten serwer wymaga poprawki dla żądań odnowienia SCEP.|Jeśli ta poprawka nie została jeszcze na komputerze z urzędem wystawiającym certyfikaty, należy to zrobić. Aby uzyskać więcej informacji, zobacz artykuł [2483564: Żądanie odnowienia certyfikatu SCEP nie działa w systemie Windows Server 2008 R2, jeśli certyfikat jest zarządzany przy użyciu NDES](http://go.microsoft.com/fwlink/?LinkId=311945) w bazie wiedzy Microsoft Knowledge Base.|  
+|Certyfikat uwierzytelniania klienta PKI i wyeksportowany certyfikat głównego urzędu certyfikacji.|Ten certyfikat uwierzytelnia serwer, na którym uruchomiono usługi rejestracji urządzeń sieciowych programu System Center Configuration Manager.<br /><br /> Aby uzyskać więcej informacji, zobacz [Wymagania dotyczące certyfikatu PKI dla programu System Center Configuration Manager](../../core/plan-design/network/pki-certificate-requirements.md).|  
+|Obsługiwane systemy operacyjne urządzeń.|Profile certyfikatów można wdrożyć na urządzeniach z systemami operacyjnymi iOS, Windows 8.1, Windows RT 8.1, Windows 10 oraz Android.|  
+
+## <a name="configuration-manager-dependencies"></a>Zależności programu Configuration Manager  
+
+|Zależność|Więcej informacji|  
+|----------------|----------------------|  
+|Rola systemu lokacji punktu rejestracji certyfikatu|Zanim będzie możliwe użycie profili certyfikatów, należy zainstalować rolę systemu lokacji punktu rejestracji certyfikatu. Ta rola komunikuje się z bazą danych programu System Center Configuration Manager, serwer lokacji programu System Center Configuration Manager i moduł zasad programu System Center Configuration Manager.<br /><br /> Aby uzyskać więcej informacji o wymaganiach systemowych dla tej roli systemu lokacji i miejsca instalacji tej roli w hierarchii, zobacz **wymagania dotyczące systemu lokacji** w sekcji [obsługiwanych konfiguracji programu System Center Configuration Manager](../../core/plan-design/configs/supported-configurations.md) tematu.<br /><br /> Punktu rejestracji certyfikatu nie można zainstalować na serwerze z uruchomioną usługą rejestracji urządzeń sieciowych.|  
+|System Center Configuration Manager moduł zasad jest zainstalowany na serwerze, na którym jest uruchomiona usługa roli usługi rejestracji urządzeń sieciowych dla usług certyfikatów w usłudze Active Directory|Aby wdrożyć profile certyfikatów, należy zainstalować moduł zasad programu System Center Configuration Manager. Ten moduł zasad można znaleźć na nośniku instalacyjnym programu System Center Configuration Manager.|  
+|Dane odnajdywania|Wartości podmiotu certyfikatu i alternatywnej nazwy podmiotu są dostarczane przez program System Center Configuration Manager i pobierane z informacji zebranych podczas odnajdywania:<br /><br /> Certyfikaty użytkowników: odnajdywanie użytkownika usługi Active Directory<br /><br /> Certyfikaty komputerów: Odnajdowanie systemu usługi Active Directory i odnajdowanie sieci|  
+|Określone uprawnienia zabezpieczeń w celu zarządzania profilami certyfikatów|Wymagane są następujące uprawnienia zabezpieczeń w celu zarządzania ustawieniami dostępu do zasobów firmowych, takich jak profile certyfikatów, profile sieci Wi-Fi i profile sieci VPN:<br /><br /> Wyświetlanie i zarządzanie alerty i raporty dla profili certyfikatów: **Tworzenie**, **usunąć**, **Modyfikuj**, **modyfikowanie raportu**, **odczytu**, i **Uruchom raport** dla **alerty** obiektu.<br /><br /> Aby utworzyć i zarządzać profilami certyfikatów: **Tworzenie zasad**, **modyfikowanie raportu**, **odczytu** i **Uruchom raport** dla **profilu certyfikatu** obiektu.<br /><br /> Aby zarządzać sieci Wi-Fi, wdrożeniami profili certyfikatów i sieci VPN: **Wdrażanie zasad konfiguracji**, **Modyfikuj Alert stanu klienta**, **odczytu**, i **Odczytaj zasób** dla **kolekcji** obiektu.<br /><br /> Aby zarządzać wszystkimi zasadami konfiguracji: **Tworzenie**, **usunąć**, **Modyfikuj**, **odczytu** i **Ustawianie zakresu zabezpieczeń** dla **zasady konfiguracji** obiektu.<br /><br /> Aby uruchamiać kwerendy dotyczące profili certyfikatów: **Odczyt** uprawnienia dla **kwerendy** obiektu.<br /><br /> Aby wyświetlić informacje o profilach certyfikatów w konsoli programu System Center Configuration Manager: **Odczyt** uprawnienia dla **witryny** obiektu.<br /><br /> Aby wyświetlać komunikaty o stanie dla profili certyfikatów: **Odczyt** uprawnienia dla **komunikatów o stanie** obiektu.<br /><br /> Aby utworzyć i modyfikować profil certyfikatu zaufanego urzędu certyfikacji: **Tworzenie zasad**, **modyfikowanie raportu**, **odczytu** i **Uruchom raport** dla **profil zaufanego certyfikatu CA** obiektu.<br /><br /> Aby utworzyć i zarządzać profilami sieci VPN: **Tworzenie zasad**, **modyfikowanie raportu**, **odczytu** i **Uruchom raport** dla **profilu sieci VPN** obiektu.<br /><br /> Aby utworzyć i zarządzać profilami sieci Wi-Fi: **Tworzenie zasad**, **modyfikowanie raportu**, **odczytu** i **Uruchom raport** dla **profilu sieci Wi-Fi** obiektu.<br /><br /> **Menedżer dostępu do zasobów firmy** roli zabezpieczeń obejmuje uprawnienia wymagane do zarządzania profilami certyfikatów w programie System Center Configuration Manager. Aby uzyskać więcej informacji, zobacz sekcję **Konfigurowanie administracji opartej na rolach** w temacie [Konfigurowanie zabezpieczeń w programie System Center Configuration Manager](../../core/plan-design/security/configure-security.md).|  
+
