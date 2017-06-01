@@ -179,7 +179,7 @@
 #### [Grupy granic](servers/deploy/configure/boundary-groups.md)
 #### [Grupy granic w wersjach wcześniejszych niż 1610](servers/deploy/configure/boundary-groups-for-1511-1602-and-1606.md)
 ###  [Przygotowanie do korzystania z programu SQL Server AlwaysOn](servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md)
-###  [Konfigurowanie programu SQL Server, zawsze na](servers/deploy/configure/configure-aoag.md)
+###  [Konfigurowanie programu SQL Server, zawsze na](servers/deploy/configure/configure-aoag.md) 
 ###  [Korzystanie z klastra programu SQL Server](servers/deploy/configure/use-a-sql-server-cluster-for-the-site-database.md)
 ###  [Niestandardowe lokalizacje plików bazy danych](servers/deploy/configure/custom-locations-for-site-database-files.md)
 ###  [Konfigurowanie administracji opartej na rolach](servers/deploy/configure/configure-role-based-administration.md)

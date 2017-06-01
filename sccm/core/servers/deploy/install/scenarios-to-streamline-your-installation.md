@@ -27,7 +27,7 @@ ms.lasthandoff: 05/17/2017
 
 *Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
 
-Wraz z wydaniem wersji aktualizacji dla programu System Center Configuration Manager w bieżącej gałęzi są nowe scenariusze uprościć instalację nowej hierarchii do wersji update (tak jak zaktualizować 1610) i uaktualniania programu Microsoft System Center 2012 Configuration Manager. 
+Wraz z wydaniem wersji aktualizacji dla programu System Center Configuration Manager w bieżącej gałęzi są nowe scenariusze uprościć instalację nowej hierarchii do wersji update (tak jak zaktualizować 1610) i uaktualniania programu Microsoft System Center 2012 Configuration Manager.
 
 Obsługiwane scenariusze:  
 
@@ -113,9 +113,7 @@ Wykonaj tej sekwencji:
     -   Podrzędna lokacja główna automatycznie zainstaluje te same aktualizacje, które zostały zainstalowane w centralnej lokacji administracyjnej.  
     -   Dodatkowej sties nie są instalowane automatycznie nowe wersje. Należy uaktualnić je ręcznie z konsoli.  
 
-   
-
-    Po wykonaniu tego kroku i po zainstalowaniu aktualizacji w centralnej lokacji administracyjnej podrzędne lokacje główne zainstalują tę aktualizację tylko wtedy, gdy zezwolą na to ich okna obsługi.  
+  Po wykonaniu tego kroku i po zainstalowaniu aktualizacji w centralnej lokacji administracyjnej podrzędne lokacje główne zainstalują tę aktualizację tylko wtedy, gdy zezwolą na to ich okna obsługi.  
 
 4.  **Zainstaluj wersję aktualizacji w lokacji najwyższego poziomu.** To uaktualnienie lokacji najwyższego poziomu. Po zainstalowaniu wersji aktualizacji witryny administracji centralnej każda podrzędna lokacja główna automatycznie instaluje aktualizacji, chyba że instalacja jest zablokowana z powodu okna obsługi.  
 
