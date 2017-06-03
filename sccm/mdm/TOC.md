@@ -55,6 +55,8 @@
 
 ## [Zarządzanie subskrypcją usługi Intune](deploy-use/manage-intune-subscriptions.md)
 
+## [Zmienić urzędu zarządzania urządzeniami Przenośnymi](deploy-use/change-mdm-authority.md)
+
 ## Zarządzenie dostępem do zasobów
 ### [Tworzenie profilów sieci Wi-Fi](deploy-use/create-wifi-profiles.md)
 ### [Tworzenie profilów certyfikatów PFX](deploy-use/create-pfx-certificate-profiles.md)
