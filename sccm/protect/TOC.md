@@ -1,6 +1,8 @@
 # Poznawanie i eksplorowanie
 ## [Omówienie](understand\protect-data-and-site-infrastructure.md)
-## [Tworzenie kopii zapasowej i odzyskiwanie](understand/backup-and-recovery.md)
+## [Tworzenie kopii zapasowej lokacji](understand/backup-and-recovery.md)
+## [Odzyskiwanie lokacji](understand/recover-sites.md)
+## [Nienadzorowane odzyskiwanie lokacji](understand/unattended-recovery.md)
 ## [Opcje wysokiej dostępności](understand/high-availability-options.md)
 ## [Zarządzanie wdrożeniami o wysokim ryzyku](understand/settings-to-manage-high-risk-deployments.md)
 
