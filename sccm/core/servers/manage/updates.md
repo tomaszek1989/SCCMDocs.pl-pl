@@ -85,7 +85,7 @@ Poniżej przedstawiono wersje programu Configuration Manager dostępne jako lini
 | 1511 <br /><br /> 5.00.8325.1000|2015-12-08| 12/8/2016|Tak|Nie|  
 
 
-*(Uwaga 1)*  Ten nośnik linii bazowej 1606 jest dostępne jako część programu Microsoft System Center 2016 lub wersji programu System Center Configuration Manager (bieżącej gałęzi i długoterminowe obsługi gałęzi 1606).
+*(Uwaga 1) * Ten nośnik linii bazowej 1606 jest dostępne jako część programu Microsoft System Center 2016 lub wersji programu System Center Configuration Manager (bieżącej gałęzi i długoterminowe obsługi gałęzi 1606).
 
 Aby sprawdzić wersję lokacji programu Configuration Manager, w lewym górnym rogu konsoli, gdzie są wyświetlane nowe wersje lokacji i konsoli, wybierz pozycję **Program System Center Configuration Manager — informacje** .  
 
