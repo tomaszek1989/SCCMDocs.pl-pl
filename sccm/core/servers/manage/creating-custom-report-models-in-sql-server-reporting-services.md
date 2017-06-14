@@ -65,7 +65,7 @@ Przykładowe modele raportów są uwzględnione w programie System Center Config
     > [!NOTE]  
     >  Jeśli okienko **Eksploratora rozwiązań** nie jest widoczne, kliknij polecenia **Widok**i **Eksplorator rozwiązań**.  
 
-###  <a name="BKMK_DefineReportModelDataSource"></a> To define the data source for the report model  
+###  <a name="BKMK_DefineReportModelDataSource"></a>Aby zdefiniować źródło danych dla modelu raportu  
 
 1.  W okienku **Eksploratora rozwiązań** programu **SQL Server Business Intelligence Development Studio**kliknij prawym przyciskiem myszy polecenie **Źródła danych** i wybierz polecenie **Dodaj nowe źródło danych**.  
 
@@ -94,7 +94,7 @@ Przykładowe modele raportów są uwzględnione w programie System Center Config
     > [!NOTE]  
     >  Aby zmienić właściwości istniejącego źródła danych, kliknij dwukrotnie źródło danych w folderze **Źródła danych** okienka **Eksplorator rozwiązań** . Właściwości źródła danych zostaną wyświetlone w Projektancie źródła danych.  
 
-###  <a name="BKMK_DefineReportModelDataSourceView"></a> To define the data source view for the report model  
+###  <a name="BKMK_DefineReportModelDataSourceView"></a>Aby zdefiniować widok źródła danych dla modelu raportu  
 
 1.  W okienku **Eksploratora rozwiązań**kliknij prawym przyciskiem myszy polecenie **Widoki źródła danych** i wybierz polecenie **Dodaj nowy widok źródła danych**.  
 
@@ -133,7 +133,7 @@ Przykładowe modele raportów są uwzględnione w programie System Center Config
 
 8.  Aby wyjść z kreatora, kliknij przycisk **Zakończ**. Model raportu pojawi się w oknie projektowania.  
 
-###  <a name="BKMK_PublishReportModel"></a> To publish the report model for use in SQL Server Reporting Services  
+###  <a name="BKMK_PublishReportModel"></a>Aby opublikować model raportu w programie SQL Server Reporting Services  
 
 1.  W **Eksploratorze rozwiązań**kliknij prawym przyciskiem myszy model raportu i wybierz polecenie **Wdróż**. W ramach tego przykładu modelem raportu jest **Simple_Model.smdl**.  
 
@@ -182,7 +182,7 @@ Przykładowe modele raportów są uwzględnione w programie System Center Config
     > [!IMPORTANT]  
     >  Po skopiowaniu pliku modelu raportu na serwerze lokacji programu Configuration Manager, należy zamknąć i ponownie uruchomić konsolę programu Configuration Manager, zanim użyjesz modelu raportu w **Kreatora tworzenia raportów**.  
 
-##  <a name="AdvancedReportModel"></a> Steps for Creating an Advanced Report Model in SQL Server Reporting Services  
+##  <a name="AdvancedReportModel"></a>Procedura tworzenia zaawansowanego modelu raportu w programie SQL Server Reporting Services  
  Poniższe procedury służą do tworzenia zaawansowanego modelu raportu, który użytkownicy witryny mogą wykorzystać do tworzenia konkretnych raportów na podstawie modelu, opartych na danych wielu widoków bazy danych programu Configuration Manager. Utworzony model raportu prezentuje autorowi raportu informacje o komputerach klienckich i zainstalowanym na nich systemie operacyjnym. Informacje te są brane z następujących widoków bazy danych programu Configuration Manager:  
 
 -   **V_R_System**: Zawiera informacje o wykrytych komputerach i kliencie programu Configuration Manager.  
@@ -210,7 +210,7 @@ Przykładowe modele raportów są uwzględnione w programie System Center Config
     > [!NOTE]  
     >  Jeśli okienko **Eksploratora rozwiązań** nie jest widoczne, kliknij polecenia **Widok**i **Eksplorator rozwiązań**.  
 
-#### <a name="to-define-the-data-source-for-the-report-model"></a>To define the data source for the report model  
+#### <a name="to-define-the-data-source-for-the-report-model"></a>Aby zdefiniować źródło danych dla modelu raportu  
 
 1.  W okienku **Eksploratora rozwiązań** programu **SQL Server Business Intelligence Development Studio**kliknij prawym przyciskiem myszy polecenie **Źródła danych** i wybierz polecenie **Dodaj nowe źródło danych**.  
 
@@ -239,7 +239,7 @@ Przykładowe modele raportów są uwzględnione w programie System Center Config
     > [!NOTE]  
     >  Aby zmienić właściwości istniejącego źródła danych, kliknij dwukrotnie źródło danych w folderze **Źródła danych** okienka **Eksplorator rozwiązań** . Właściwości źródła danych zostaną wyświetlone w Projektancie źródła danych.  
 
-#### <a name="to-define-the-data-source-view-for-the-report-model"></a>To define the data source view for the report model  
+#### <a name="to-define-the-data-source-view-for-the-report-model"></a>Aby zdefiniować widok źródła danych dla modelu raportu  
 
 1.  W okienku **Eksploratora rozwiązań**kliknij prawym przyciskiem myszy polecenie **Widoki źródła danych** i wybierz polecenie **Dodaj nowy widok źródła danych**.  
 
@@ -376,7 +376,7 @@ Przykładowe modele raportów są uwzględnione w programie System Center Config
 
 4.  Po zakończeniu zmiany nazw obiektów kliknij przycisk **Plik**i polecenie **Zapisz wszystko**.  
 
-#### <a name="to-publish-the-report-model-for-use-in-sql-server-reporting-services"></a>To publish the report model for use in SQL Server Reporting Services  
+#### <a name="to-publish-the-report-model-for-use-in-sql-server-reporting-services"></a>Aby opublikować model raportu w programie SQL Server Reporting Services  
 
 1.  W okienku **Eksploratora rozwiązań**, kliknij prawym przyciskiem myszy **Advanced_Model.smdl** i wybierz polecenie **Wdróż**.  
 
