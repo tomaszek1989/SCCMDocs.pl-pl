@@ -74,7 +74,7 @@
 ### [How to Read and Write to the Site Control File by Using Managed Code](core/understand/how-to-read-and-write-to-the-site-control-file-by-using-managed-code.md) (Jak wykonać operacje odczytu i zapisu w pliku sterowania lokacji przy użyciu kodu zarządzanego)
 ### [How to Read and Write to the Site Control File by Using WMI](core/understand/how-to-read-and-write-to-the-site-control-file-by-using-wmi.md) (Jak wykonać operacje odczytu i zapisu w pliku sterowania lokacji przy użyciu usługi WMI)
 ### [How to Read a Site Control File Embedded Property List](core/understand/how-to-read-a-configuration-manager-site-control-file-embedded-property-list.md) (Jak odczytać listę właściwości osadzonych pliku sterowania lokacji)
-### [Jak wdrożyć rolę systemu lokacji (przykład:  Rezerwowy punkt stanu)](core/understand/how-to-deploy-a-site-system-role--example---fallback-status-point-.md)
+### [How to Deploy a Site System Role (Example:  Fallback Status Point)](core/understand/how-to-deploy-a-site-system-role--example---fallback-status-point-.md) (Jak wdrożyć rolę systemu lokacji [przykład: rezerwowy punkt stanu])
 ## [Configuration Manager Class Schema](core/understand/configuration-manager-class-schema.md) (Schemat klasy programu Configuration Manager)
 ### [Date and Time Formats](core/understand/date-and-time-formats.md) (Formaty daty i godziny)
 ### [Interpreting Bitfield Properties](core/understand/interpreting-bitfield-properties.md) (Interpretowanie właściwości pól bitowych)
@@ -105,7 +105,7 @@
 
 # [Application Management Extension](apps/application-management-extension.md) (Rozszerzenie zarządzania aplikacjami)
 ## [Deployment Type Extension Versioning](apps/deployment-type-extension-versioning.md) (Przechowywanie wersji rozszerzenia typu wdrożenia)
-## [Scenariusz: Rozszerzanie zarządzania aplikacjami](apps/scenario--extending-application-management.md)
+## [Scenario: Extending Application Management](apps/scenario--extending-application-management.md) (Scenariusz: rozszerzanie zarządzania aplikacjami)
 ### [Extending Application Management Overview](apps/extending-application-management-overview.md) (Omówienie rozszerzania zarządzania aplikacjami)
 ### [Creating the Custom SDK Assembly](apps/creating-the-custom-sdk-assembly.md) (Tworzenie zestawu niestandardowego SDK)
 #### [How to Define the Deployment Technology](apps/how-to-define-the-deployment-technology.md) (Jak zdefiniować technologię wdrożenia)
