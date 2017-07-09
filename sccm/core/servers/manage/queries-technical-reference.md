@@ -1,6 +1,6 @@
 ---
-title: Kwerendy techniczne | Dokumentacja firmy Microsoft
-description: "Lista tematów Pomocy można używać w celu pobrania informacji o zasobach w danej lokacji."
+title: "Informacje techniczne dotyczące zapytań | Dokumentacja firmy Microsoft"
+description: "Zobacz listę tematów, które ułatwiają korzystanie z zapytań można pobrać informacji o zasobach w witrynie."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -16,25 +16,25 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: 10b1010ccbf3889c58c55b87e70b354559243c90
-ms.openlocfilehash: 479a7e902ff19b8ec501ff01c8e56565fd69f51b
+ms.sourcegitcommit: 2087badc9dd1d216352dce232b145a786783ac89
+ms.openlocfilehash: 44f454d2f7c9d317d1ad99ba724931b4631bd11e
 ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 05/18/2017
 
 
 ---                     
 # <a name="queries-technical-reference-for-system-center-configuration-manager"></a>Dokumentacja techniczna dotycząca zapytań w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Kwerendy w programie System Center Configuration Manager zwracają informacje z bazy danych lokacji, na podstawie kryteriów, które określisz. Zapytania umożliwiają pobieranie informacji na temat zasobów w lokacji oraz na temat danych spisu i komunikatów o stanie.  
+Zapytania w programie System Center Configuration Manager zwracają informacje z bazy danych lokacji na podstawie kryteriów, które określisz. Zapytania umożliwiają pobieranie informacji na temat zasobów w lokacji oraz na temat danych spisu i komunikatów o stanie.  
 
-## <a name="queries-topics"></a>Tematy dotyczące zapytań  
- Użyj poniższe tematy ułatwią korzystanie zapytań w programie Configuration Manager.  
+## <a name="topics-about-using-queries-in-configuration-manager"></a>Tematy dotyczące za pomocą zapytań w programie Configuration Manager  
+ Użyj następujących tematach ułatwiają korzystanie zapytań w programie Configuration Manager:  
 
--   [Wprowadzenie do kwerend w programie System Center Configuration Manager](../../../core/servers/manage/introduction-to-queries.md)  
+-   [Wprowadzenie do zapytań w programie System Center Configuration Manager](../../../core/servers/manage/introduction-to-queries.md)  
 
--   [Operacje i obsługa kwerend w programie System Center Configuration Manager](../../../core/servers/manage/operations-and-maintenance-for-queries.md)  
+-   [Operacje i Obsługa zapytań w programie System Center Configuration Manager](../../../core/servers/manage/operations-and-maintenance-for-queries.md)  
 
 -   [Bezpieczeństwo i prywatność zapytań w programie System Center Configuration Manager](../../../core/servers/manage/security-and-privacy-for-queries.md)  
 

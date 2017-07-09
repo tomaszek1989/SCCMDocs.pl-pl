@@ -1,7 +1,7 @@
 ---
 
 title: "Ręczne wdrażanie aktualizacji oprogramowania | Dokumentacja firmy Microsoft"
-description: "Aby ręcznie wdrożyć aktualizacje, wybierz aktualizacje z konsoli programu Configuration Manager i ręcznie wdrożyć je, lub Dodaj aktualizacje do grupy aktualizacji i wdrożenie grupy."
+description: "Aby ręcznie wdrożyć aktualizacje, wybierz aktualizacje z konsoli programu Configuration Manager i ręcznie wdrożyć je, lub do grupy aktualizacji dodawać aktualizacje i wdrożenie grupy."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -14,23 +14,23 @@ ms.technology:
 - configmgr-sum
 ms.assetid: 57184274-5fea-4d79-a2b4-22e08ed26daf
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: 78524abd4c45f0b7402d6f1e85afc60bb72ab0ee
-ms.openlocfilehash: d736715f1f2c92b4c91f156ecb8abe3513811a34
+ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
+ms.openlocfilehash: 2a0d5f12b99689749833c109d4fa399f99451d8a
 ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/08/2017
 
 
 ---
 
 #  <a name="BKMK_ManualDeploy"></a> Ręczne wdrażanie aktualizacji oprogramowania  
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
- Ręczne wdrażanie aktualizacji oprogramowania polega na wyborze aktualizacji oprogramowania z konsoli programu Configuration Manager i ręcznym zainicjowaniu wdrażania. Wybrane aktualizacje oprogramowania można również dodać do grupy aktualizacji, a następnie ręcznie wdrożyć daną grupę. Metodę ręcznego wdrażania stosuje się najczęściej po to, aby uaktualnić urządzenia klienckie za pomocą wymaganych aktualizacji oprogramowania przed utworzeniem reguł ADR, które będą zarządzać ciągłymi, comiesięcznymi wdrożeniami aktualizacji oprogramowania. Ponadto ta metoda umożliwia wdrażanie aktualizacji oprogramowania poza pasmem. Jeśli potrzebujesz pomocy ustalenie wdrożenia, które jest odpowiednie dla Ciebie metody, zobacz [wdrażania aktualizacji oprogramowania](deploy-software-updates.md).
+ Ręczne wdrażanie aktualizacji oprogramowania polega na wyborze aktualizacji oprogramowania w konsoli programu Configuration Manager i ręcznym zainicjowaniu wdrażania. Wybrane aktualizacje oprogramowania można również dodać do grupy aktualizacji, a następnie ręcznie wdrożyć daną grupę. Metodę ręcznego wdrażania stosuje się najczęściej po to, aby uaktualnić urządzenia klienckie za pomocą wymaganych aktualizacji oprogramowania przed utworzeniem reguł ADR, które będą zarządzać ciągłymi, comiesięcznymi wdrożeniami aktualizacji oprogramowania. Ponadto ta metoda umożliwia wdrażanie aktualizacji oprogramowania poza pasmem. Jeśli potrzebujesz pomocy ustalenie wdrożenia, które jest odpowiednie dla Ciebie metody, zobacz [wdrażania aktualizacji oprogramowania](deploy-software-updates.md).
 
- Poniższe sekcje zawierają instrukcje ręcznego wdrażania aktualizacji oprogramowania.  
+ Kroki, aby ręcznie wdrożyć aktualizacje oprogramowania można znaleźć w poniższych sekcjach.  
 
-##  <a name="BKMK_1SearchCriteria"></a>Krok 1: Określ kryteria wyszukiwania aktualizacji oprogramowania  
+##  <a name="BKMK_1SearchCriteria"></a>Krok 1. Określanie kryteriów wyszukiwania aktualizacji oprogramowania  
  Potencjalnie są tysiące aktualizacji oprogramowania wyświetlanych w konsoli programu Configuration Manager. Pierwszym krokiem przepływu pracy ręcznego wdrażania aktualizacji oprogramowania jest ustalenie aktualizacji do wdrożenia. Istnieje na przykład możliwość określenia kryteriów pozwalających pobrać wszystkie aktualizacje oprogramowania wymagane na ponad 50 urządzeniach klienckich, które mają klasyfikację **Zabezpieczenia** lub **Krytyczne** .  
 
 > [!IMPORTANT]  
@@ -43,7 +43,7 @@ ms.lasthandoff: 05/17/2017
 2.  W obszarze roboczym Biblioteka oprogramowania rozwiń listę **Aktualizacje oprogramowania**, a następnie kliknij pozycję **Wszystkie aktualizacje oprogramowania**. Zostaną wyświetlone zsynchronizowane aktualizacje oprogramowania.  
 
     > [!NOTE]  
-    >  Na **wszystkie aktualizacje oprogramowania** węzła, Configuration Manager wyświetla wyłącznie aktualizacje oprogramowania z **krytyczny** i **zabezpieczeń** klasyfikacji i opublikowane w ciągu ostatnich 30 dni.  
+    >  Na **wszystkie aktualizacje oprogramowania** węzła, programu Configuration Manager wyświetla wyłącznie aktualizacje oprogramowania z **krytyczny** i **zabezpieczeń** klasyfikacji i zostały wydane w ciągu ostatnich 30 dni.  
 
 3.  Wybierz w okienku wyszukiwania filtr, aby ustalić wymagane aktualizacje, wykonując jedną lub obie następujące czynności:  
 
@@ -56,8 +56,8 @@ ms.lasthandoff: 05/17/2017
     > [!TIP]  
     >  Na karcie **Wyszukiwanie** oraz w grupie **Zapisywanie** można zapisać kryteria filtrowania.  
 
-##  <a name="BKMK_2UpdateGroup"></a>Krok 2: Tworzenie grupy aktualizacji oprogramowania, które zawiera aktualizacje oprogramowania  
- Grupy aktualizacji oprogramowania stanowią efektywną metodę organizowania aktualizacji oprogramowania podczas przygotowywania wdrożenia. Można ręcznie dodać aktualizacje oprogramowania do grupy aktualizacji oprogramowania lub Configuration Manager może automatycznie dodać aktualizacje oprogramowania do nowej lub istniejącej grupy aktualizacji przy użyciu ADR. Aby ręcznie dodać aktualizacje oprogramowania do nowej grupy aktualizacji, wykonaj czynności opisane w poniższych procedurach.  
+##  <a name="BKMK_2UpdateGroup"></a>Krok 2. Tworzenie grupy aktualizacji oprogramowania zawierającej aktualizacje oprogramowania  
+ Grupy aktualizacji oprogramowania stanowią efektywną metodę organizowania aktualizacji oprogramowania podczas przygotowywania wdrożenia. Można ręcznie dodać aktualizacje oprogramowania do grupy aktualizacji oprogramowania lub programu Configuration Manager może automatycznie dodać aktualizacje oprogramowania do nowej lub istniejącej grupy aktualizacji przy użyciu reguły ADR. Aby ręcznie dodać aktualizacje oprogramowania do nowej grupy aktualizacji, wykonaj czynności opisane w poniższych procedurach.  
 
 #### <a name="to-manually-add-software-updates-to-a-new-software-update-group"></a>Aby ręcznie dodać aktualizacje oprogramowania do nowej grupy aktualizacji  
 
@@ -75,7 +75,7 @@ ms.lasthandoff: 05/17/2017
 
 7.  Wybierz grupę aktualizacji oprogramowania, a następnie na karcie **Narzędzia główne** w grupie **Aktualizacja** kliknij przycisk **Pokaż członków** , aby wyświetlić listę aktualizacji oprogramowania w grupie.  
 
-##  <a name="BKMK_3DownloadContent"></a>Krok 3: Pobieranie zawartości do grupy aktualizacji oprogramowania  
+##  <a name="BKMK_3DownloadContent"></a>Krok 3. Pobieranie zawartości do grupy aktualizacji oprogramowania  
  Przed wdrożeniem aktualizacji oprogramowania można opcjonalnie pobrać zawartość aktualizacji oprogramowania znajdujących się w grupie aktualizacji. Dzięki temu istnieje możliwość sprawdzenia przed wdrożeniem aktualizacji oprogramowania, czy zawartość jest dostępna w punkcie dystrybucji. Pozwoli to zapobiec wszelkim nieoczekiwanym problemom związanym z dostarczeniem zawartości. W przypadku pominięcie tego kroku zawartość zostanie pobrana i skopiowana do punktów dystrybucji w ramach procesu wdrażania. Aby pobrać zawartość aktualizacji oprogramowania do grup aktualizacji, wykonaj czynności opisane w poniższej procedurze.  
 
 
@@ -162,7 +162,7 @@ ms.lasthandoff: 05/17/2017
 
 4. Na karcie **Narzędzia główne** w grupie **Zawartość** kliknij przycisk **Wyświetl stan**.  
 
-##  <a name="BKMK_4DeployUpdateGroup"></a>Krok 4: Wdrożenie grupy aktualizacji oprogramowania  
+##  <a name="BKMK_4DeployUpdateGroup"></a>Krok 4. Wdrożenie grupy aktualizacji oprogramowania  
  Po określeniu, które aktualizacje oprogramowania mają zostać wdrożone i dodaniu owych aktualizacji do grupy aktualizacji oprogramowania można ręcznie wdrożyć aktualizacje w grupie. Aby ręcznie wdrożyć aktualizacje oprogramowania w grupie aktualizacji oprogramowania, należy wykonać następującą procedurę.  
 
 #### <a name="to-manually-deploy-the-software-updates-in-a-software-update-group"></a>Aby ręcznie wdrożyć aktualizacje oprogramowania w grupie aktualizacji oprogramowania:  
@@ -177,15 +177,15 @@ ms.lasthandoff: 05/17/2017
 
 5.  Na stronie Ogólne skonfiguruj następujące ustawienia:  
 
-    -   **Nazwa**: Określ nazwę wdrożenia. Wdrożenie musi mieć unikatową nazwę opisującą jego cel wdrożenia i odróżnia go od innych wdrożeń w lokacji programu Configuration Manager. Domyślnie program Configuration Manager poda automatycznie nazwę wdrożenia w następującym formacie: **Aktualizacje programu Microsoft Software -** <*data*><*czasu*>  
+    -   **Nazwa**: Określ nazwę wdrożenia. Wdrożenie musi mieć unikatową nazwę opisującą jego cel wdrożenia i odróżniającą je od innych wdrożeń w lokacji programu Configuration Manager. Domyślnie program Configuration Manager poda automatycznie nazwę wdrożenia w następującym formacie: **Microsoft Software Updates -** <*data*><*czasu*>  
 
-    -   **Opis**: Określ opis dla wdrożenia. Opis zawiera omówienie wdrożenia i inne istotne informacje pomocne w identyfikacji i odróżnienia wdrożenia między innymi w lokacji programu Configuration Manager. Pole opisu jest opcjonalne, jego limit długości wynosi 256 znaków i jest domyślnie puste.  
+    -   **Opis elementu**: Określ opis wdrożenia. Opis zawiera omówienie wdrożenia i inne istotne informacje pomocne w identyfikacji i odróżnienia wdrożenia między innymi w lokacji programu Configuration Manager. Pole opisu jest opcjonalne, jego limit długości wynosi 256 znaków i jest domyślnie puste.  
 
-    -   **Grupy aktualizacji oprogramowania/Update**: Sprawdź, że wyświetlana grupa aktualizacji oprogramowania lub aktualizacji oprogramowania jest właściwa.  
+    -   **Grupy aktualizacji oprogramowania/aktualizacji oprogramowania**: Sprawdź, czy wyświetlana grupa aktualizacji oprogramowania lub aktualizacja oprogramowania jest poprawna.  
 
     -   **Wybierz szablon wdrażania**: Określ, czy zastosować uprzednio zapisany szablon wdrażania. Można skonfigurować szablon wdrażania zawierający wiele wspólnych właściwości wdrożenia aktualizacji oprogramowania, a następnie zastosować go podczas wdrażania kolejnych aktualizacji oprogramowania w celu zapewnienia spójności podobnych wdrożeń oraz zaoszczędzenia czasu.  
 
-    -   **Kolekcja**: Określ kolekcję wdrożenia, w razie potrzeby. Członkowie kolekcji otrzymają aktualizacje oprogramowania określone we wdrożeniu.  
+    -   **Kolekcja**: Określ kolekcję dla wdrożenia, jeśli ma zastosowanie. Członkowie kolekcji otrzymają aktualizacje oprogramowania określone we wdrożeniu.  
 
 6.  Na stronie Ustawienia wdrożenia skonfiguruj następujące ustawienia:  
 
@@ -198,7 +198,7 @@ ms.lasthandoff: 05/17/2017
         >  Grupy aktualizacji oprogramowania wdrożone jako **wymagane** zostaną pobrane w tle z uwzględnieniem ustawień usługi BITS, jeśli są skonfigurowane.  
         > Jednak grupy aktualizacji oprogramowania wdrożone jako **dostępne** zostaną pobrane na pierwszym planie, a ustawienia usługi BITS zostaną zignorowane.  
 
-    -   **Użyj funkcji Wake-on-LAN do wzbudzania klientów w celu dokonania wymaganych wdrożeń**: Określ, czy włączyć funkcję Wake On LAN w ostatecznym terminie, aby wysłać pakiety wznawiania do komputerów wymagających co najmniej jednej aktualizacji oprogramowania we wdrożeniu. Wszelkie komputery w stanie uśpienia w ostatecznym terminie instalacji zostaną wznowione, aby umożliwić zainicjowanie instalacji aktualizacji oprogramowania. Klienci w stanie uśpienia niewymagający aktualizacji oprogramowania w ramach wdrożenia nie zostaną wznowieni. Domyślnie to ustawienie jest wyłączone i jest dostępne wyłącznie po wybraniu opcji **Wymagane** w ustawieniu **Typ wdrożenia**.  
+    -   **Użyj funkcji Wake-on-LAN do wzbudzania klientów w celu dokonania wymaganych wdrożeń**: Określ, czy włączyć funkcję Wake On LAN, po upływie terminu wdrożenia, aby wysłać pakiety wznawiania do komputerów wymagających co najmniej jednej aktualizacji oprogramowania we wdrożeniu. Wszelkie komputery w stanie uśpienia w ostatecznym terminie instalacji zostaną wznowione, aby umożliwić zainicjowanie instalacji aktualizacji oprogramowania. Klienci w stanie uśpienia niewymagający aktualizacji oprogramowania w ramach wdrożenia nie zostaną wznowieni. Domyślnie to ustawienie jest wyłączone i jest dostępne wyłącznie po wybraniu opcji **Wymagane** w ustawieniu **Typ wdrożenia**.  
 
         > [!WARNING]  
         >  Aby użyć tej opcji, należy skonfigurować komputery i sieci do używania funkcji Wake On LAN.  
@@ -207,18 +207,18 @@ ms.lasthandoff: 05/17/2017
 
 7.  Na stronie Planowanie skonfiguruj następujące ustawienia:  
 
-    -   **Zaplanuj ocenę**: Określ, czy dostępny czas i ostateczny termin instalacji będzie szacowany przy użyciu czasu UTC lub czasu lokalnego komputera z konsolą programu Configuration Manager.  
+    -   **Szacowanie harmonogramu**: Określ, czy dostępny czas i ostateczny termin instalacji będzie szacowany przy użyciu czasu UTC lub czasu lokalnego komputera z konsolą programu Configuration Manager.  
 
         > [!NOTE]  
-        >  Gdy wybierz czasu lokalnego, a następnie wybierz **możliwie jak** dla **czas dostępności oprogramowania** lub **termin ostateczny**, bieżący czas na komputerze z programem konsoli programu Configuration Manager służy do oceny, gdy są dostępne aktualizacje, lub gdy są one zainstalowane na komputerze klienckim. Jeśli klient znajduje się w innej strefie czasowej, akcje te wystąpią, gdy czas klienta osiągnie czas oceny.  
+        >  Gdy wybrania czasu lokalnego, a następnie wybierz **jak najszybciej** dla **czas dostępności oprogramowania** lub **ostateczny termin instalacji**czas bieżący na komputerze z systemem konsoli programu Configuration Manager służy do oceny, kiedy aktualizacje są dostępne lub kiedy są instalowane na komputerze klienckim. Jeśli klient znajduje się w innej strefie czasowej, akcje te wystąpią, gdy czas klienta osiągnie czas oceny.  
 
     -   **Czas dostępności oprogramowania**: Wybierz jedną z następujących ustawień, aby określić, kiedy aktualizacje oprogramowania będą dostępne dla klientów:  
 
-        -   **Jak najszybciej**: Wybierz to ustawienie, aby udostępnić aktualizacje oprogramowania we wdrożeniu klientom jak najszybciej. Po utworzeniu wdrożenia zasady klienta zostaną zaktualizowane, klienci zostaną powiadomieni we wdrożeniu w następnym cyklu sondowania zasad klienta, a następnie aktualizacje oprogramowania zostaną udostępnione do zainstalowania.  
+        -   **Jak najszybciej**: Wybierz to ustawienie, aby udostępnić aktualizacje oprogramowania we wdrożeniu klientom tak szybko, jak to możliwe. Po utworzeniu wdrożenia zasady klienta zostaną zaktualizowane, klienci zostaną powiadomieni we wdrożeniu w następnym cyklu sondowania zasad klienta, a następnie aktualizacje oprogramowania zostaną udostępnione do zainstalowania.  
 
-        -   **Określony czas**: Wybierz to ustawienie, aby udostępnić aktualizacje oprogramowania we wdrożeniu klientom w określonym dniu i godzinie. Po utworzeniu wdrożenia zasady klienta zostaną zaktualizowane, a klienci zostaną powiadomieni we wdrożeniu w następnym cyklu sondowania zasad klienta. Aktualizacje oprogramowania we wdrożeniu nie będą jednak dostępne do zainstalowania do określonej daty i godziny.  
+        -   **Określony czas**: Wybierz to ustawienie, aby udostępnić aktualizacje oprogramowania we wdrożeniu klientów w określonym dniu i godzinie. Po utworzeniu wdrożenia zasady klienta zostaną zaktualizowane, a klienci zostaną powiadomieni we wdrożeniu w następnym cyklu sondowania zasad klienta. Aktualizacje oprogramowania we wdrożeniu nie będą jednak dostępne do zainstalowania do określonej daty i godziny.  
 
-    -   **Ostateczny termin instalacji**: Wybierz jedno z następujących ustawień, aby określić ostateczny termin instalacji aktualizacji oprogramowania we wdrożeniu.  
+    -   **Ostateczny termin instalacji**: Wybierz jedną z następujących ustawień, aby określić ostateczny termin instalacji aktualizacji oprogramowania we wdrożeniu.  
 
         > [!NOTE]  
         >  Ustawienie ostatecznego terminu instalacji można skonfigurować wyłącznie po wybraniu opcji **Wymagane** ustawienia **Typ wdrożenia** na stronie Ustawienia wdrożenia.  
@@ -234,23 +234,23 @@ ms.lasthandoff: 05/17/2017
 
 8.  Na stronie Czynności użytkownika skonfiguruj następujące ustawienia:  
 
-    -   **Powiadomienia użytkowników**: Określ, czy wyświetlać powiadomienia o aktualizacjach oprogramowania w Centrum oprogramowania na komputerze klienckim skonfigurowanego **czas dostępności oprogramowania** oraz czy wyświetlać powiadomienia użytkowników na komputerach klienckich. Jeśli w ustawieniu **Typ wdrożenia** na stronie Ustawienia wdrożenia wybrano opcję **Dostępne** , nie będzie można wybrać opcji **Ukryj w programie Software Center i ukryj wszystkie powiadomienia**.  
+    -   **Powiadomienia użytkowników**: Określ, czy mają być wyświetlane powiadomienia o aktualizacjach oprogramowania w programie Software Center na komputerze klienckim zgodnie ze skonfigurowanym ustawieniem **czas dostępności oprogramowania** oraz czy wyświetlać powiadomienia użytkowników na komputerach klienckich. Jeśli w ustawieniu **Typ wdrożenia** na stronie Ustawienia wdrożenia wybrano opcję **Dostępne** , nie będzie można wybrać opcji **Ukryj w programie Software Center i ukryj wszystkie powiadomienia**.  
 
-    -   **Zachowanie ostatecznego terminu wdrożenia**: * dostępne tylko wtedy, gdy **typu wdrożenia** * jest ustawiona na **wymagane** *na stronie Ustawienia wdrożenia.*   
-    Określ zachowanie po osiągnięciu ostatecznego terminy wdrożenia aktualizacji oprogramowania. Określ, czy zainstalować aktualizacje oprogramowania we wdrożeniu oraz czy uruchomić ponownie system po zainstalowaniu aktualizacji oprogramowania niezależnie od skonfigurowanego okna obsługi. Aby uzyskać więcej informacji dotyczących okien obsługi, zobacz [sposobu używania okien obsługi](../../core/clients/manage/collections/use-maintenance-windows.md).  
+    -   **Zachowanie ostatecznego terminu wdrożenia**: * dostępne tylko wtedy, gdy **typu wdrożenia** * ustawiono **wymagane** *na stronie Ustawienia wdrożenia.*   
+    Określ zachowanie pożądane po osiągnięciu ostatecznego terminu wdrożenia aktualizacji oprogramowania. Określ, czy zainstalować aktualizacje oprogramowania we wdrożeniu oraz czy uruchomić ponownie system po zainstalowaniu aktualizacji oprogramowania niezależnie od skonfigurowanego okna obsługi. Aby uzyskać więcej informacji dotyczących okien obsługi, zobacz [używanie okien obsługi](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
-    -   **Zachowanie ponownego uruchamiania urządzenia**: * dostępne tylko wtedy, gdy **typu wdrożenia** * jest ustawiona na **wymagane** *na stronie Ustawienia wdrożenia.*    
+    -   **Zachowanie ponownego uruchamiania urządzenia**: * dostępne tylko wtedy, gdy **typu wdrożenia** * ustawiono **wymagane** *na stronie Ustawienia wdrożenia.*    
     Określ, czy pominąć ponowne uruchomienie systemu na serwerach i stacjach roboczych po zainstalowaniu aktualizacji oprogramowania i ponowne uruchomienie systemu jest wymagane do ukończenia instalacji.  
 
         > [!IMPORTANT]  
         >  Pominięcie ponownego uruchomienia systemu może być przydatne w środowisku serwerów lub w przypadku, gdy nie chcesz, aby komputery, na których zainstalowano aktualizacje oprogramowania, zostały domyślnie uruchomione ponownie. Może to jednak spowodować, że komputery znajdą się w stanie niezabezpieczonym, podczas gdy zezwolenie na wymuszone ponowne uruchomienie gwarantuje niezwłoczne ukończenie instalacji aktualizacji oprogramowania.
 
-    -   **Obsługa filtru zapisu dla urządzeń z systemem Windows Embedded**: Podczas wdrażania aktualizacji oprogramowania do urządzeń Windows Embedded z włączoną obsługą filtru zapisu, można określić, aby zainstalować aktualizację oprogramowania na tymczasowej nakładce i zatwierdzić zmiany później lub czy zatwierdzić zmiany w ostatecznym terminie instalacji bądź w oknie obsługi. Po zatwierdzeniu zmian w dniu ostatecznego terminu instalacji lub w oknie obsługi należy ponownie uruchomić komputer, aby trwale zapisać zmiany na urządzeniu.  
+    -   **Obsługa filtru zapisu dla urządzeń z systemem Windows Embedded**: Podczas wdrażania aktualizacji oprogramowania na urządzeniach Windows Embedded z włączoną obsługą filtru zapisu, można określić do zainstalowania aktualizacji oprogramowania na tymczasowej nakładce i zatwierdzić zmiany później lub czy zatwierdzić zmiany w ostatecznym terminie instalacji bądź w oknie konserwacji. Po zatwierdzeniu zmian w dniu ostatecznego terminu instalacji lub w oknie obsługi należy ponownie uruchomić komputer, aby trwale zapisać zmiany na urządzeniu.  
 
         > [!NOTE]  
         >  Po wdrożeniu aktualizacji oprogramowania do urządzenia z systemem Windows Embedded upewnij się, że urządzenie należy do kolekcji ze skonfigurowanym oknem obsługi.  
 
-    - **Zachowanie ponownej oceny wdrożenia po ponownym uruchomieniu aktualizacji oprogramowania**: Począwszy od programu 1606 wersji programu Configuration Manager, wybierz to ustawienie umożliwia skonfigurowanie wdrożenia aktualizacji oprogramowania klienci uruchamiania skanowania zgodności aktualizacji oprogramowania, natychmiast po instalacji oprogramowania klienta aktualizacji i ponownym uruchomieniu. Dzięki temu klient może wyszukiwać dodatkowe aktualizacje oprogramowania, które stają się odpowiednie po ponownym uruchomieniu komputera, a następnie instalować je (i zapewniać zgodność) w tym samym oknie obsługi.
+    - **Zachowanie ponownej oceny wdrożenia po ponownym uruchomieniu aktualizacji oprogramowania**: Począwszy od 1606 wersji programu Configuration Manager, wybierz to ustawienie, aby skonfigurować wdrożenia aktualizacji oprogramowania, aby klienci uruchamiali skanowanie zgodności aktualizacji oprogramowania natychmiast po zainstalowaniu klienta oprogramowania, aktualizacji i ponownego uruchomienia. Dzięki temu klient może wyszukiwać dodatkowe aktualizacje oprogramowania, które stają się odpowiednie po ponownym uruchomieniu komputera, a następnie instalować je (i zapewniać zgodność) w tym samym oknie obsługi.
 
 9. Na stronie Alerty Skonfiguruj sposób generowania alertów dotyczących tego wdrożenia w programu Configuration Manager i System Center Operations Manager. Alerty można skonfigurować wyłącznie po wybraniu opcji **Wymagane** ustawienia **Typ wdrożenia** na stronie Ustawienia wdrożenia.  
 
@@ -259,20 +259,20 @@ ms.lasthandoff: 05/17/2017
 
 10. Na stronie Ustawienia pobierania skonfiguruj następujące ustawienia:  
 
-    -   Określ, czy klient pobierze i zainstaluje aktualizacje oprogramowania przy użyciu połączenia z powolną siecią lub rezerwowej lokalizacji zawartości.  
+    - Określ, czy klient pobierze i zainstaluje aktualizacje oprogramowania przy użyciu połączenia z powolną siecią lub rezerwowej lokalizacji zawartości.  
 
-    -   Określ, czy klient ma pobrać i zainstalować aktualizacje oprogramowania z rezerwowego punktu dystrybucji, jeśli zawartość aktualizacji oprogramowania będzie niedostępna w preferowanym punkcie dystrybucji.  
+    - Określ, czy klient ma pobrać i zainstalować aktualizacje oprogramowania z rezerwowego punktu dystrybucji, jeśli zawartość aktualizacji oprogramowania będzie niedostępna w preferowanym punkcie dystrybucji.  
 
-    -   **Zezwalaj klientom na współużytkowanie zawartości z innymi klientami w tej samej podsieci**: Określ, czy korzystanie z usługi BranchCache w odniesieniu do pobrań zawartości. Aby uzyskać więcej informacji na temat usługi BranchCache, zobacz [podstawowe pojęcia związane z zarządzaniem zawartością](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
+    - **Zezwalaj klientom na współużytkowanie zawartości z innymi klientami w tej samej podsieci**: Określ, czy włączyć usługę BranchCache dla pobierania zawartości. Aby uzyskać więcej informacji na temat usługi BranchCache, zobacz [podstawowe pojęcia związane z zarządzaniem zawartością](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md#branchcache).  
 
-    -   Określ, czy klienci połączeni z intranetem mają pobierać aktualizacje oprogramowania z usługi Microsoft Update, jeśli aktualizacje oprogramowania będą niedostępne w punktach dystrybucji.  
+    - **Jeśli aktualizacje oprogramowania nie są dostępne w punkcie dystrybucji w bieżącym, sąsiada lub lokacji grup, Pobierz zawartość z usługi Microsoft Updates**: Wybierz to ustawienie, aby klienci, które są połączone z intranetem mają pobierać aktualizacje oprogramowania z witryny Microsoft Update, jeśli aktualizacje oprogramowania nie są dostępne w punktach dystrybucji. Klienci internetowi zawsze można przejść do witryny Microsoft Update zawartości aktualizacji oprogramowania.
 
-    -   Określ, czy zezwolić klientom używającym taryfowego połączenia z Internetem na pobieranie aktualizacji oprogramowania po upływie ostatecznego terminu instalacji. Dostawcy Internetu czasami naliczają opłaty według ilości wysyłanych i odbieranych danych podczas taryfowego połączenia z Internetem.  
+    - Określ, czy zezwolić klientom używającym taryfowego połączenia z Internetem na pobieranie aktualizacji oprogramowania po upływie ostatecznego terminu instalacji. Dostawcy Internetu czasami naliczają opłaty według ilości wysyłanych i odbieranych danych podczas taryfowego połączenia z Internetem.  
 
     > [!NOTE]  
     >  Klienci żądają lokalizacji zawartości z punktu zarządzania odnośnie do aktualizacji oprogramowania we wdrożeniu. Zachowanie pobierania jest uzależnione od konfiguracji punktu pobierania, pakietu wdrożeniowego oraz ustawień na tej stronie. Aby uzyskać więcej informacji, zobacz [Scenariusze lokalizacji źródła zawartości](../../core/plan-design/hierarchy/content-source-location-scenarios.md).  
 
-11. Jeśli wykonano [krok 3: Pobieranie zawartości do grupy aktualizacji oprogramowania](#BKMK_3DownloadContent), następnie pakiet wdrożeniowy, punkty dystrybucji oraz wybieranie języka nie będą wyświetlane i można przejść do kroku 15 kreatora.  
+11. Jeśli wykonano procedurę [krok 3: Pobieranie zawartości do grupy aktualizacji oprogramowania](#BKMK_3DownloadContent), następnie strony pakiet wdrożeniowy, punkty dystrybucji oraz wybieranie języka nie będą wyświetlane i można przejść do kroku 15 kreatora.  
 
     > [!IMPORTANT]  
     >  Aktualizacje oprogramowania pobrane uprzednio do biblioteki zawartości na serwerze lokacji nie zostaną pobrane ponownie. Dotyczy to również tworzenia nowego pakietu wdrożeniowego aktualizacji oprogramowania. Jeśli pobrano wcześnie wszystkie aktualizacje oprogramowania, kreator przejdzie do strony **Wybieranie języka** (krok 15).  
@@ -281,7 +281,7 @@ ms.lasthandoff: 05/17/2017
 
     1.  **Nazwa**: Określ nazwę pakietu wdrożeniowego. To musi być unikatowa nazwa opisująca zawartość pakietu. Maksymalna długość to 50 znaków.  
 
-    2.  **Opis**: Określ opis zawierający informacje o pakiecie wdrożenia. Długość opisu jest ograniczona do 127 znaków.  
+    2.  **Opis elementu**: Określ opis zawierający informacje o pakiecie wdrożeniowym. Długość opisu jest ograniczona do 127 znaków.  
 
     3.  **Źródło pakietu**: Określ lokalizację plików źródłowych aktualizacji oprogramowania.  Wpisz ścieżkę sieciową do lokalizacji źródłowej, na przykład **\\\serwer\nazwa_udziału\ścieżka**, lub kliknij przycisk **Przeglądaj** , aby znaleźć lokalizację sieciową. Przed kontynuowaniem do następnej strony należy utworzyć folder udostępniony dla plików źródłowych pakietu wdrożeniowego.  
 
@@ -292,9 +292,9 @@ ms.lasthandoff: 05/17/2017
         >  Zarówno konto komputera dostawcy programu SMS, jak i użytkownik, który uruchamia kreatora w celu pobrania aktualizacji oprogramowania, muszą mieć uprawnienia systemu plików NTFS **Zapis** w lokalizacji pobierania. Aby zapobiec naruszeniu plików źródłowych aktualizacji oprogramowania przez osoby atakujące, należy odpowiednio ograniczyć dostęp do lokalizacji pobierania.  
 
         > [!IMPORTANT]  
-        >  Po Menedżera konfiguracji pakietu wdrożeniowego, można zmienić lokalizację źródłową pakietu w jego właściwościach. Jednak w celu wykonania tej czynności należy najpierw skopiować zawartość z pierwotnego źródła pakietu do nowej lokalizacji źródłowej pakietu.  
+        >  Można zmienić lokalizację źródłową pakietu w oknie właściwości pakietu wdrażania po programu Configuration Manager tworzy pakietu wdrożeniowego. Jednak w celu wykonania tej czynności należy najpierw skopiować zawartość z pierwotnego źródła pakietu do nowej lokalizacji źródłowej pakietu.  
 
-    4.  **Priorytet wysyłania**: Określ priorytet wysyłania pakietu wdrożeniowego. Program Configuration Manager używa priorytetu wysyłania pakietu wdrożeniowego, wysyłając pakiet do punktów dystrybucji. Pakiety wdrożeniowe są wysyłane w kolejności priorytetu: Wysoki, średni lub niski. Pakiety o identycznych priorytetach są wysyłane w kolejności ich utworzenia. Jeżeli nie występuje zaległość, przetwarzanie pakietu rozpocznie się natychmiast niezależnie od jego priorytetu.  
+    4.  **Priorytet wysyłania**: Określ priorytet wysyłania pakietu wdrożeniowego. Configuration Manager używa priorytetu wysyłania pakietu wdrożeniowego, gdy wysyła pakiet do punktów dystrybucji. Pakiety wdrożeniowe są wysyłane w kolejności priorytetu: Wysoki, średni lub niski. Pakiety o identycznych priorytetach są wysyłane w kolejności ich utworzenia. Jeżeli nie występuje zaległość, przetwarzanie pakietu rozpocznie się natychmiast niezależnie od jego priorytetu.  
 
 13. Na stronie Punkty dystrybucji określ punkty dystrybucji lub grupy punktów dystrybucji, które będą obsługiwać pliki aktualizacji oprogramowania. Więcej informacji dotyczących punktów dystrybucji znajduje się w sekcji [Konfiguracje punktów dystrybucji](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs).  
 
@@ -302,7 +302,7 @@ ms.lasthandoff: 05/17/2017
 
     -   **Pobierz aktualizacje oprogramowania z Internetu**: Wybierz to ustawienie, aby pobrać aktualizacje oprogramowania z określonej lokalizacji w Internecie. To ustawienie jest domyślnie włączone.  
 
-    -   **Pobierz aktualizacje oprogramowania z lokalizacji w sieci lokalnej**: Wybierz to ustawienie, aby pobrać aktualizacje oprogramowania z folderu lokalnego lub udostępnianego folderu sieciowego. To ustawienie jest przydatne, jeśli komputer, na którym uruchamiasz kreatora, nie ma dostępu do Internetu. Aktualizacje oprogramowania można wstępnie pobrać z dowolnego komputera z dostępem do Internetu i zapisać w lokalizacji w sieci lokalnej w celu zapewnienia późniejszego dostępu do nich na potrzeby instalacji.  
+    -   **Pobierz aktualizacje oprogramowania z lokalizacji w sieci lokalnej**: Wybierz to ustawienie, aby pobrać aktualizacje oprogramowania z folderu lokalnego lub udostępnionego folderu sieciowego. To ustawienie jest przydatne, jeśli komputer, na którym uruchamiasz kreatora, nie ma dostępu do Internetu. Aktualizacje oprogramowania można wstępnie pobrać z dowolnego komputera z dostępem do Internetu i zapisać w lokalizacji w sieci lokalnej w celu zapewnienia późniejszego dostępu do nich na potrzeby instalacji.  
 
 15. Na stronie Wybieranie języka wybierz języki, dla których zostaną pobrane wybrane aktualizacje oprogramowania. Aktualizacje oprogramowania zostaną pobrane, pod warunkiem że będą dostępne w wybranych językach. Aktualizacje oprogramowania bez określonego języka będą pobierane zawsze. Domyślnie kreator wybierze języki skonfigurowane we właściwościach punktu aktualizacji oprogramowania. Przed przejściem do następnej strony należy wybrać co najmniej jeden język. W przypadku wybrania wyłącznie języków nieobsługiwanych przez aktualizację oprogramowania pobranie aktualizacji oprogramowania zakończy się niepowodzeniem.  
 
@@ -313,7 +313,7 @@ ms.lasthandoff: 05/17/2017
 
 17. Kliknij przycisk **Dalej** , aby wdrożyć aktualizację oprogramowania.  
 
- Po ukończeniu kreatora, Configuration Manager pobierze oprogramowanie aktualizacje do biblioteki zawartości na serwerze lokacji, roześle je do skonfigurowanych punktów dystrybucji, a następnie wdraża oprogramowania grupę aktualizacji na klientach w kolekcji docelowej. Więcej informacji o procesie wdrażania znajduje się w sekcji [Proces wdrażania aktualizacji oprogramowania](../understand/software-updates-introduction.md#BKMK_DeploymentProcess).
+ Po ukończeniu kreatora programu Configuration Manager pobierze oprogramowanie aktualizacji do biblioteki zawartości na serwerze lokacji, roześle je do skonfigurowanych punktów dystrybucji, a następnie wdraża oprogramowania grupę aktualizacji na klientach w kolekcji docelowej. Więcej informacji o procesie wdrażania znajduje się w sekcji [Proces wdrażania aktualizacji oprogramowania](../understand/software-updates-introduction.md#BKMK_DeploymentProcess).
 
 ## <a name="next-steps"></a>Następne kroki
 [Monitorowanie aktualizacji oprogramowania](monitor-software-updates.md)

@@ -1,8 +1,8 @@
 ---
 title: "Tworzenie sekwencji zadań w celu przechwycenia i przywrócenia stanu użytkownika | Dokumentacja firmy Microsoft"
-description: "Użyj programu System Center Configuration Manager sekwencje zadań przechwycić i przywrócić dane stanu użytkownika w scenariuszach wdrażania systemu operacyjnego."
+description: "Używany System Center Configuration Manager sekwencji zadań do przechwycenia i przywrócenia danych stanu użytkownika w środowiskach wdrożenia systemu operacyjnego."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 06/07/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,31 +17,31 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
-ms.openlocfilehash: fdfbdd1acb1190ca7de9cff2b4b7f916d8dc1272
+ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
+ms.openlocfilehash: 4b3668094d576b1b8710f08b384aa2f7c5eb0cca
 ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/08/2017
 
 
 ---
 # <a name="create-a-task-sequence-to-capture-and-restore-user-state-in-system-center-configuration-manager"></a>Tworzenie sekwencji zadań w celu przechwycenia i przywrócenia stanu użytkownika w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Użyj sekwencji zadań programu System Center Configuration Manager przechwycić i przywrócić dane stanu użytkownika w scenariuszach wdrażania systemu operacyjnego którym chcesz przechowywać stan użytkownika bieżącego systemu operacyjnego. W zależności od tworzonego typu zadania sekwencji kroki przechwytywania i przywracania mogą zostać automatycznie dodane w ramach sekwencji zadań. W innych sytuacjach konieczne może być ręczne dodanie kroków przechwytywania i przywracania do sekwencji zadań. W tym temacie przedstawiono kroki, które można dodać do istniejącej sekwencji zadań w celu przechwycenia i przywrócenia danych stanu użytkownika.  
+Do przechwytywania i przywracania stanu danych użytkownika w środowiskach wdrożenia systemu operacyjnego, w którym ma zostać zachowany stan użytkownika bieżącego systemu operacyjnego, można użyć sekwencji zadań programu System Center Configuration Manager. W zależności od tworzonego typu zadania sekwencji kroki przechwytywania i przywracania mogą zostać automatycznie dodane w ramach sekwencji zadań. W innych sytuacjach konieczne może być ręczne dodanie kroków przechwytywania i przywracania do sekwencji zadań. W tym temacie przedstawiono kroki, które można dodać do istniejącej sekwencji zadań w celu przechwycenia i przywrócenia danych stanu użytkownika.  
 
 ##  <a name="BKMK_CaptureRestoreUserState"></a> Jak przechwycić i przywrócić dane stanu użytkownika  
  Aby przechwycić i przywrócić stan użytkownika, należy dodać do sekwencji zadań następujące kroki:  
 
 -   **Zażądaj magazynu stanów**: Ten krok jest niezbędny tylko w przypadku przechowywania stanu użytkownika w punkcie migracji stanu.  
 
--   **Przechwyć stan użytkownika**: Ten krok powoduje przechwycenie danych o stanie użytkownika i przechowuje je w punkcie migracji stanu lokalnie lub za pomocą łączy.  
+-   **Przechwyć stan użytkownika**: Ten krok powoduje przechwycenie danych o stanie użytkownika i przechowywanie ich w punkcie migracji stanu lokalnie lub za pomocą łącza.  
 
 -   **Przywróć stan użytkownika**: Ten krok przywraca dane stanu użytkownika na komputerze docelowym. Dane mogą być przywracane z punktu migracji stanu użytkownika lub z komputera docelowego.  
 
 -   **Zwolnij Magazyn stanów**: Ten krok jest niezbędny tylko w przypadku przechowywania stanu użytkownika w punkcie migracji stanu. W tym kroku dane są usuwane z punktu migracji stanu.  
 
- Poniższe procedury służą do dodawania kroków sekwencji zadań niezbędnych do przechwycenia i przywrócenia stanu użytkownika. Aby uzyskać więcej informacji o tworzeniu sekwencji zadań, zobacz [sekwencji zadań do automatyzacji zadań zarządzania](manage-task-sequences-to-automate-tasks.md).  
+ Poniższe procedury służą do dodawania kroków sekwencji zadań niezbędnych do przechwycenia i przywrócenia stanu użytkownika. Aby uzyskać więcej informacji na temat tworzenia sekwencji zadań, zobacz [Zarządzanie sekwencjami zadań do automatyzowania zadań](manage-task-sequences-to-automate-tasks.md).  
 
 #### <a name="to-add-task-sequence-steps-to-capture-the-user-state"></a>Aby dodać kroki sekwencji zadań w celu przechwycenia stanu użytkownika  
 
@@ -70,7 +70,7 @@ Użyj sekwencji zadań programu System Center Configuration Manager przechwycić
 3.  Dodaj krok **Przechwyć stan użytkownika** do sekwencji zadań. W oknie dialogowym **Edytor sekwencji zadań** kliknij przycisk **Dodaj**, wskaż pozycję **Stan użytkownika**, a następnie kliknij pozycję **Przechwyć stan użytkownika**. Określ poniższe właściwości i opcje dotyczące kroku **Przechwyć stan użytkownika** , a następnie kliknij przycisk **OK**.  
 
     > [!IMPORTANT]  
-    >  Dodając ten krok do sekwencji zadań, należy także podać wartość zmiennej **OSDStateStorePath** sekwencji zadań, aby określić miejsce przechowywania danych o stanie użytkownika. Wybierając lokalne przechowywanie stanu użytkownika, nie należy podawać folderu głównego, ponieważ może to spowodować błąd sekwencji zadań. Dane użytkownika przechowywane lokalnie muszą zawsze być w folderze lub podfolderze. Informacje na temat tej zmiennej, można znaleźć w temacie [zmienne przechwytywania stanu użytkownika zadań sekwencję akcji](../understand/task-sequence-action-variables.md#BKMK_CaptureUserState).  
+    >  Dodając ten krok do sekwencji zadań, należy także podać wartość zmiennej **OSDStateStorePath** sekwencji zadań, aby określić miejsce przechowywania danych o stanie użytkownika. Wybierając lokalne przechowywanie stanu użytkownika, nie należy podawać folderu głównego, ponieważ może to spowodować błąd sekwencji zadań. Dane użytkownika przechowywane lokalnie muszą zawsze być w folderze lub podfolderze. Aby uzyskać informacje na temat tej zmiennej, zobacz [przechwytywania ze zmienne akcji sekwencji zadań użytkownika stanu](../understand/task-sequence-action-variables.md#BKMK_CaptureUserState).  
 
      Na karcie **Właściwości** określ następujące opcje:  
 
@@ -82,7 +82,7 @@ Użyj sekwencji zadań programu System Center Configuration Manager przechwycić
 
         -   Kliknij opcję **Przechwyć wszystkie profile użytkowników z opcjami standardowymi** , aby przechwycić wszystkie profile użytkowników.  
 
-        -   Kliknij opcję **Dostosuj przechwytywanie profilu użytkownika** , aby wybrać pojedyncze profile użytkowników.  
+        -   Kliknij opcję **Dostosuj przechwytywanie profilu użytkownika** , aby wybrać pojedyncze profile użytkowników. Wybierz plik konfiguracji (miguser.xml, migsys.xml lub migapp.xml), który zawiera informacje o profilu użytkownika. Nie można użyć pliku konfiguracji w pliku config.xml w tym miejscu, ale można ręcznie dodać go do wiersza polecenia USMT, za pomocą zmiennych OSDMigrageAdditionalCaptureOptions i OSDMigrateAdditionalRestoreOptions.
 
     -   Wybierz opcję **Włącz pełne rejestrowanie** , aby określić, ile informacji ma zostać zapisanych w plikach dziennika w przypadku wystąpienia błędu.  
 
@@ -90,9 +90,9 @@ Użyj sekwencji zadań programu System Center Configuration Manager przechwycić
 
     -   Wybierz pozycję **Kopiuj, używając dostępu do systemu plików** , aby określić następujące ustawienia:  
 
-        -   **Kontynuuj, jeśli nie można przechwycić niektórych plików**: To ustawienie umożliwia kroku sekwencji zadań kontynuować proces migracji, nawet jeśli nie będzie można przechwycić niektórych plików. Wyłączenie tej opcji spowoduje błąd kroku sekwencji zadań, jeśli nie będzie można przechwycić jakiegoś pliku. Ta opcja jest domyślnie włączona.  
+        -   **Kontynuuj, jeśli nie można przechwycić niektórych plików**: To ustawienie umożliwia krok sekwencji zadań będzie kontynuowała proces migracji, nawet jeśli nie można przechwycić niektórych plików. Wyłączenie tej opcji spowoduje błąd kroku sekwencji zadań, jeśli nie będzie można przechwycić jakiegoś pliku. Ta opcja jest domyślnie włączona.  
 
-        -   **Przechwyć lokalnie, używając łączy zamiast kopiować pliki**: To ustawienie umożliwia skorzystanie z funkcji migracji twardych łączy dostępnej w programie USMT 4.0. Jeżeli używasz narzędzia USMT w wersji starszej niż 4.0, to ustawienie jest ignorowane.  
+        -   **Przechwyć lokalnie, używając łączy zamiast kopiować pliki**: To ustawienie umożliwia przy użyciu funkcji migracji twardych łączy dostępnej w programie USMT 4.0. Jeżeli używasz narzędzia USMT w wersji starszej niż 4.0, to ustawienie jest ignorowane.  
 
         -   **Przechwyć w trybie offline (tylko Windows PE)**: To ustawienie umożliwia przechwytywanie stanu z systemu Windows PE bez rozruchu istniejącego systemu operacyjnego. Jeżeli używasz narzędzia USMT w wersji starszej niż 4.0, to ustawienie jest ignorowane.  
 
@@ -117,7 +117,7 @@ Użyj sekwencji zadań programu System Center Configuration Manager przechwycić
 
     -   Określ wszystkie warunki, które muszą zostać spełnione w przypadku wystąpienia błędu, aby kontynuować sekwencję zadań.  
 
- Wdróż tę sekwencję zadań, aby przechwycić stan użytkownika na komputerze docelowym. Informacje o sposobie wdrażania sekwencji zadań, zobacz [wdrażania sekwencji zadań](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  
+ Wdróż tę sekwencję zadań, aby przechwycić stan użytkownika na komputerze docelowym. Aby uzyskać informacje dotyczące sposobu wdrażania sekwencji zadań, zobacz [wdrożyć sekwencję zadań](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  
 
 #### <a name="to-add-task-sequence-steps-to-restore-the-user-state"></a>Aby dodać kroki sekwencji zadań w celu przywrócenia stanu użytkownika  
 
@@ -135,16 +135,16 @@ Użyj sekwencji zadań programu System Center Configuration Manager przechwycić
 
         -   Kliknij opcję **Przywróć wszystkie przechwycone profile użytkowników z opcjami standardowymi** , aby przywrócić wszystkie profile użytkowników.  
 
-        -   Kliknij opcję **Dostosuj przechwytywanie profilu użytkownika** , aby przywrócić pojedyncze profile użytkowników.  
+        -   Kliknij przycisk **dostosować Przywracanie profili użytkowników** Aby przywrócić pojedyncze profile użytkowników. Wybierz plik konfiguracji (miguser.xml, migsys.xml lub migapp.xml), który zawiera informacje o profilu użytkownika. Nie można użyć pliku konfiguracji w pliku config.xml w tym miejscu, ale można ręcznie dodać go do wiersza polecenia USMT, za pomocą zmiennych OSDMigrageAdditionalCaptureOptions i OSDMigrateAdditionalRestoreOptions.
 
     -   Wybierz opcję **Przywróć profile użytkowników komputera lokalnego** , aby podać nowe hasło dla przywróconych profilów. Nie można migrować haseł dla lokalnych profilów.  
 
         > [!NOTE]  
-        >  Gdy masz lokalne konta użytkowników i chcesz używać [Przechwyć stan użytkownika](../understand/task-sequence-steps.md#BKMK_CaptureUserState) kroku i wybierz **Przechwyć wszystkie profile użytkowników z opcjami standardowymi**, należy wybrać **Przywróć profile użytkowników komputera lokalnego** w [Przywróć stan użytkownika](../understand/task-sequence-steps.md#BKMK_RestoreUserState) krok lub sekwencji zadań zakończy się niepowodzeniem.  
+        >  Gdy masz lokalne konta użytkowników i chcesz używać [Przechwyć stan użytkownika](../understand/task-sequence-steps.md#BKMK_CaptureUserState) kroku i wybrać **Przechwyć wszystkie profile użytkowników z opcjami standardowymi**, musisz wybrać **Przywróć profile użytkowników komputera lokalnego** w [Przywróć stan użytkownika](../understand/task-sequence-steps.md#BKMK_RestoreUserState) krok lub sekwencja zadań zakończy się niepowodzeniem.  
 
     -   Wybierz opcję **Kontynuuj, jeśli niektórych plików nie można przywrócić** , jeśli chcesz, aby krok **Przywróć stan użytkownika** kontynuował pracę, gdy nie przywrócenie pliku nie jest możliwe.  
 
-         Jeśli stan użytkownika jest przechowywany za pomocą lokalnych łączy, a operacja przywracania się nie powiedzie, użytkownik administracyjny może ręcznie usunąć twarde łącze utworzone w celu przechowania danych. Inną metodą jest uruchomienie narzędzia USMTUtils w sekwencji zadań. Jeśli używasz narzędzia USMTUtils usunąć twarde łącze Dodaj [Uruchom ponownie komputer](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer) krok po uruchomieniu narzędzia USMTUtils.  
+         Jeśli stan użytkownika jest przechowywany za pomocą lokalnych łączy, a operacja przywracania się nie powiedzie, użytkownik administracyjny może ręcznie usunąć twarde łącze utworzone w celu przechowania danych. Inną metodą jest uruchomienie narzędzia USMTUtils w sekwencji zadań. Jeśli używasz narzędzia USMTUtils usuwania twardych łączy, Dodaj [Uruchom ponownie komputer](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer) kroku po uruchomieniu narzędzia USMTUtils.  
 
     -   Wybierz opcję **Włącz pełne rejestrowanie** , aby określić, ile informacji ma zostać zapisanych w plikach dziennika w przypadku wystąpienia błędu.  
 
@@ -167,7 +167,7 @@ Użyj sekwencji zadań programu System Center Configuration Manager przechwycić
 
     -   Określ wszystkie warunki, które muszą zostać spełnione w przypadku wystąpienia błędu, aby kontynuować sekwencję zadań.  
 
- Wdróż tę sekwencję zadań, aby przywrócić stan użytkownika na komputerze docelowym. Aby uzyskać informacje o wdrażaniu sekwencji zadań, zobacz [wdrażania sekwencji zadań](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  
+ Wdróż tę sekwencję zadań, aby przywrócić stan użytkownika na komputerze docelowym. Aby uzyskać informacje o wdrażaniu sekwencji zadań, zobacz [wdrożyć sekwencję zadań](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS).  
 
 ## <a name="next-steps"></a>Następne kroki
 [Monitorowanie wdrożenia sekwencji zadań](monitor-operating-system-deployments.md#BKMK_TSDeployStatus)

@@ -1,6 +1,6 @@
 ---
-title: "Usługa Windows Defender zaawansowane ochroną | Dokumentacja firmy Microsoft"
-description: "Dowiedz się, jak zarządzać i monitorować zaawansowane zagrożenia ochrony programu Windows Defender, Nowa usługa, która pomaga przedsiębiorstw odpowiadanie na ataki zaawansowane."
+title: "Usługa Windows Defender Advanced Threat Protection | Dokumentacja firmy Microsoft"
+description: "Informacje o sposobie monitorowania Windows Defender Advanced Threat Protection, nową usługę, która ułatwia przedsiębiorstwom odpowiadanie na zaawansowanych ataków i zarządzania nimi."
 ms.custom: na
 ms.date: 03/07/2017
 ms.prod: configuration-manager
@@ -16,48 +16,48 @@ author: NathBarn
 ms.author: nathbarn
 manager: angrobe
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: 8f4ec982a54cf3cefef310268a54850e70e2e63a
-ms.openlocfilehash: 237dc9cbccb973720a633490f096aed4bc16d183
+ms.sourcegitcommit: 0ebda27c0f3848615346c2ecf1ab8b9bb9ab6f0d
+ms.openlocfilehash: 6c3b67278fa587c137a29e174e277fb0f15872c8
 ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 05/26/2017
 
 ---
-# <a name="windows-defender-advanced-threat-protection"></a>Usługa Windows Defender zaawansowane ochroną
+# <a name="windows-defender-advanced-threat-protection"></a>Usługa Windows Defender Advanced Threat Protection
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Począwszy od wersji 1606 programu Configuration Manager (bieżącej gałęzi), program Endpoint Protection może ułatwić zarządzanie i monitorowanie zaawansowane zagrożenia ochrony programu Windows Defender (ATP. Program Windows Defender ATP jest nową usługę, która pomoże przedsiębiorstwa do wykrywania, badanie i reagowania na zaawansowane ataki w ich sieciach.  Dowiedz się więcej o [Windows Defender ATP](http://aka.ms/technet-wdatp). Zasady programu Configuration Manager może pomóc dołączeniu i monitor zarządzanego systemu Windows 10, wersja 1607 (kompilacja 14328) lub nowszy.
+Począwszy od wersji 1606 programu Configuration Manager (wersji current branch), program Endpoint Protection może ułatwić zarządzanie i monitorowanie usługi Windows Defender Advanced Threat Protection (ATP. Windows Defender ATP to nowa usługa, która pomaga firmom wykrywania, badanie i odpowiadać na zaawansowanych ataków w swoich sieciach.  Dowiedz się więcej o [Windows Defender ATP](http://aka.ms/technet-wdatp). Zasady programu Configuration Manager może pomóc dołączyć i monitor zarządzanego systemu Windows 10 w wersji 1607 (kompilacja 14328) lub nowszym.
 
-Program Windows Defender ATP to usługa w [Centrum zabezpieczeń systemu Windows](https://securitycenter.windows.com). Dodawanie i wdrażanie pliku konfiguracji dołączania klienta, programu Configuration Manager można monitorować stan wdrożenia i kondycja agenta programu Windows Defender ATP. Program Windows Defender ATP jest obsługiwana tylko na komputerach z uruchomionym klientem programu Configuration Manager. Zarządzanie urządzeniami przenośnymi lokalnych i komputery zarządzane MDM hybrydowe Intune nie są obsługiwane.
+Program Windows Defender ATP jest usługą [Centrum zabezpieczeń systemu Windows](https://securitycenter.windows.com). Dodawanie i wdrażanie pliku konfiguracji klienta dołączania, programu Configuration Manager można monitorować stan wdrożenia i Windows Defender ATP agent kondycji. Program Windows Defender ATP jest obsługiwana tylko na komputerach z uruchomionym klientem programu Configuration Manager. Lokalne zarządzanie urządzeniami przenośnymi i komputery zarządzane przez MDM hybrydowe usługi Intune nie są obsługiwane.
 
  **Wymagania wstępne**  
 
--   Subskrypcja usługi online ochrony zaawansowane zagrożenia programu Windows Defender  
-
--   Klienci z systemem Windows 10, wersja 1607 i nowsze  
+-   Subskrypcja usługi online Windows Defender Advanced Threat Protection  
+-   Komputery klientów z systemem Windows 10, wersji 1607 i nowszych  
+-   Uruchomiona wersja programu Configuration Manager 1610 lub nowszych agent klienta komputerów klienckich
 
 ## <a name="how-to-create-an-onboarding-configuration-file"></a>Jak utworzyć plik konfiguracji dołączania  
 
  1.  Zaloguj się do [usługi online Windows Defender ATP](https://securitycenter.windows.com/)   
 
- 2.  Kliknij **punktu końcowego zarządzania** elementu menu.  
+ 2.  Polecenie **zarządzania punktu końcowego** elementu menu.  
 
- 3.  Wybierz **wersji programu System Center Configuration Manager (bieżącej gałęzi) 1606** i kliknij przycisk **pakiet**.  
+ 3.  Wybierz **wersji System Center Configuration Manager (wersji current branch) 1606** i kliknij przycisk **pakiet pobierania**.  
 
  4.  Pobierz plik archiwum skompresowany (.zip) i Wyodrębnij zawartość.
 
 > [!IMPORTANT]
-> Plik konfiguracji systemu Windows Defender ATP zawiera poufne informacje, które powinny być zabezpieczone.
+> Plik konfiguracji programu Windows Defender ATP zawiera poufne informacje, które powinny być zabezpieczone.
 
-## <a name="onboard-devices-for-windows-defender-atp"></a>Urządzenia zintegrowane dla programu Windows Defender ATP  
+## <a name="onboard-devices-for-windows-defender-atp"></a>Urządzenia zintegrowane dla Windows Defender ATP  
 
-1.  W konsoli programu Configuration Manager Przejdź **zasoby i zgodność** > **Przegląd** > **Endpoint Protection** > **Windows Defender ATP zasady** i kliknij przycisk **Utwórz zasady systemu Windows Defender ATP**. Zostanie otwarty Kreator zasad systemu Windows Defender ATP.  
+1.  W konsoli programu Configuration Manager Przejdź **zasoby i zgodność** > **omówienie** > **programu Endpoint Protection** > **Windows Defender ATP zasady** i kliknij przycisk **utworzyć zasady usługi Windows Defender ATP**. Zostanie otwarty Kreator zasad systemu Windows Defender ATP.  
 
-2.  Typ **nazwa** i **opis** dla systemu Windows Defender ATP zasad i wybierz **dołączania**. Kliknij przycisk **Dalej**.  
+2.  Typ **nazwa** i **opis** dla Windows Defender ATP zasad i wybierz **dołączania**. Kliknij przycisk **Dalej**.  
 
-3.  **Przeglądaj** do pliku konfiguracji, dostarczone przez dzierżawcy usługi chmury Windows Defender ATP Twojej organizacji. Kliknij przycisk **Dalej**.  
+3.  **Przeglądaj** do pliku konfiguracji dostarczane przez dzierżawcę usługi chmury Windows Defender ATP Twojej organizacji. Kliknij przycisk **Dalej**.  
 
-4.  Określ próbki plików, które są zbierane i udostępniane z zarządzanych urządzeń do analizy.  
+4.  Określ próbki plików, są zbierane i udostępnione z zarządzanych urządzeń do analizy.  
 
     -   **Brak**   
 
@@ -65,53 +65,53 @@ Program Windows Defender ATP to usługa w [Centrum zabezpieczeń systemu Windows
 
      Kliknij przycisk **Dalej**.  
 
-5.  Przejrzyj podsumowanie i Zakończ pracę kreatora.  
+5.  Przejrzyj podsumowanie, a następnie Zakończ pracę kreatora.  
 
-6.  Teraz można wdrożyć zasady Windows Defender ATP do komputerów klientów zarządzanych przez kliknięcie przycisku **Wdróż**.  
+6.  Teraz można wdrożyć zasady Windows Defender ATP na komputerach klienckich zarządzanych przez kliknięcie przycisku **Wdróż**.  
 
-## <a name="monitor-windows-defender-atp"></a>Monitor systemu Windows Defender ATP  
+## <a name="monitor-windows-defender-atp"></a>Monitor usługi Windows Defender ATP  
 
-1.  W konsoli programu Configuration Manager Przejdź **monitorowanie** > **Przegląd** > **zabezpieczeń** , a następnie kliknij przycisk **Windows Defender ATP**.  
+1.  W konsoli programu Configuration Manager Przejdź **monitorowanie** > **omówienie** > **zabezpieczeń** , a następnie kliknij przycisk **Windows Defender ATP**.  
 
-2.  Sprawdź pulpit nawigacyjny ochrony zaawansowane zagrożenia programu Windows Defender.  
+2.  Przejrzyj pulpitu nawigacyjnego systemu Windows Defender Advanced Threat Protection.  
 
-    -   **Stan wdrożenia agenta programu Windows Defender** — liczba i procent komputerów klientów zarządzanych kwalifikujących się z aktywnego dołączono maszynę wirtualną systemu Windows Defender ATP zasad  
+    -   **Stan wdrożenia agenta usługi Windows Defender** — liczbę i odsetek komputerów klientów zarządzanych kwalifikujących się z active został załadowany z zasad programu Windows Defender ATP  
 
-    -   **Kondycja agenta programu Windows Defender ATP** — procent komputerów klienckich raportowania stanu dla ich agenta programu Windows Defender ATP  
+    -   **Kondycja agenta programu Windows Defender ATP** — procent komputerów klienckich raportowanie stanu dla ich agenta Windows Defender ATP  
 
-        -   **Dobra** -działa prawidłowo  
+        -   **Dobra** — działa prawidłowo  
 
-        -   **Nieaktywne** -żadne dane wysyłane do usługi w okresie  
+        -   **Nieaktywne** — żadne dane wysyłane do usługi w czasie  
 
-        -   **Stan agenta** — usługa systemu dla agenta w systemie Windows nie jest uruchomiona  
+        -   **Stan agenta** — nie jest uruchomiona usługa systemowa programu Agent w systemie Windows  
 
-        -   **Nie został załadowany** - zastosowania zasad, ale agent nie zgłosił dołączeniu zasad  
+        -   **Nie został załadowany** — zasady zostały zastosowane, ale agent nie zgłosił dołączyć zasad  
 
 
-## <a name="how-to-create-and-deploy-an-offboarding-configuration-file"></a>Jak utworzyć i wdrożyć plik konfiguracyjny offboarding  
+## <a name="how-to-create-and-deploy-an-offboarding-configuration-file"></a>Jak utworzyć i wdrożyć plik konfiguracji zaawansowanej  
 
 1.  Zaloguj się do [usługi online Windows Defender ATP](https://securitycenter.windows.com/)   
 
-2.  Kliknij **punktu końcowego zarządzania** elementu menu.  
+2.  Polecenie **zarządzania punktu końcowego** elementu menu.  
 
-3.  Wybierz **wersji programu System Center Configuration Manager (bieżącej gałęzi) 1606** i kliknij przycisk **offboarding punktu końcowego**.  
+3.  Wybierz **wersji System Center Configuration Manager (wersji current branch) 1606** i kliknij przycisk **zaawansowanej punktu końcowego**.  
 
-4.  Pobierz plik archiwum skompresowany (.zip) i Wyodrębnij zawartość. Pliki Offboarding są prawidłowe dla 30 dni.
+4.  Pobierz plik archiwum skompresowany (.zip) i Wyodrębnij zawartość. Pliki zaawansowanej są ważne przez 30 dni.
 
-5.  W konsoli programu Configuration Manager Przejdź **zasoby i zgodność** > **Przegląd** > **Endpoint Protection** > **Windows Defender ATP zasady** i kliknij przycisk **Utwórz zasady systemu Windows Defender ATP**. Zostanie otwarty Kreator zasad systemu Windows Defender ATP.  
+5.  W konsoli programu Configuration Manager Przejdź **zasoby i zgodność** > **omówienie** > **programu Endpoint Protection** > **Windows Defender ATP zasady** i kliknij przycisk **utworzyć zasady usługi Windows Defender ATP**. Zostanie otwarty Kreator zasad systemu Windows Defender ATP.  
 
-6.  Typ **nazwa** i **opis** dla systemu Windows Defender ATP zasad i wybierz **Offboarding**. Kliknij przycisk **Dalej**.  
+6.  Typ **nazwa** i **opis** dla Windows Defender ATP zasad i wybierz **wynoszenia**. Kliknij przycisk **Dalej**.  
 
-7.  **Przeglądaj** do pliku konfiguracji, dostarczone przez dzierżawcy usługi chmury Windows Defender ATP Twojej organizacji. Kliknij przycisk **Dalej**.  
+7.  **Przeglądaj** do pliku konfiguracji dostarczane przez dzierżawcę usługi chmury Windows Defender ATP Twojej organizacji. Kliknij przycisk **Dalej**.  
 
-8.  Przejrzyj podsumowanie i Zakończ pracę kreatora.  
+8.  Przejrzyj podsumowanie, a następnie Zakończ pracę kreatora.  
 
-9.  Teraz można wdrożyć zasady Windows Defender ATP do komputerów klientów zarządzanych przez kliknięcie przycisku **Wdróż**.  
+9.  Teraz można wdrożyć zasady Windows Defender ATP na komputerach klienckich zarządzanych przez kliknięcie przycisku **Wdróż**.  
 
 > [!IMPORTANT]
-> Pliki konfiguracji systemu Windows Defender ATP zawiera poufne informacje, które powinny być zabezpieczone.
+> Pliki konfiguracji programu Windows Defender ATP zawiera poufne informacje, które powinny być zabezpieczone.
 
-[Usługa Windows Defender zaawansowane ochroną](https://technet.microsoft.com/itpro/windows/keep-secure/windows-defender-advanced-threat-protection)
+[Zaawansowana ochrona przed zagrożeniami w usłudze Windows Defender](https://technet.microsoft.com/itpro/windows/keep-secure/windows-defender-advanced-threat-protection)
 
-[Rozwiązywanie problemów dołączania ochrony zaawansowane zagrożenia programu Windows Defender](https://technet.microsoft.com/itpro/windows/keep-secure/troubleshoot-onboarding-windows-defender-advanced-threat-protection)
+[Rozwiązywanie problemów przy dołączaniu usługi Windows Defender Advanced Threat Protection](https://technet.microsoft.com/itpro/windows/keep-secure/troubleshoot-onboarding-windows-defender-advanced-threat-protection)
 

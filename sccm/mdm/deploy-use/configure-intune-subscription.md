@@ -1,8 +1,8 @@
 ---
-title: "Konfigurowanie subskrypcji usługi Intune przy użyciu programu System Center Configuration Manager | Dokumentacja firmy Microsoft"
+title: "Skonfiguruj subskrypcję usługi Intune przy użyciu programu System Center Configuration Manager | Dokumentacja firmy Microsoft"
 description: "Skonfiguruj subskrypcję usługi Intune przy użyciu programu System Center Configuration Manager."
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 06/02/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,17 +17,17 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 10cc64ae7e4d91f53201c2896b359e77ef04d32d
+ms.sourcegitcommit: 662901e850566756759fcfc61c58f3c0e56bc5aa
+ms.openlocfilehash: 22d890c972d3166f9c7b583d8d3fa917c1897880
 ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/03/2017
 
 ---
-# <a name="configure-your-intune-subscription-with-system-center-configuration-manager-and-microsoft-intune"></a>Konfigurowanie subskrypcji usługi Intune z programu System Center Configuration Manager i Microsoft Intune
+# <a name="configure-your-intune-subscription-with-system-center-configuration-manager-and-microsoft-intune"></a>Skonfiguruj subskrypcję usługi Intune z programu System Center Configuration Manager i Microsoft Intune
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Subskrypcję usługi Intune umożliwia zarządzanie urządzeniami przez internet. W tym określać kolekcję użytkowników, w których mogą rejestrować urządzenia oraz definiować informacje wyświetlone dla użytkowników. Podczas tworzenia subskrypcji usługi Intune, można również dodać logo do portalu firmy usługi Intune z logo firmy i niestandardowego koloru systemów firmy.
+Subskrypcję usługi Intune umożliwia zarządzanie urządzeniami za pośrednictwem Internetu. Obejmuje to określenie, którą kolekcję użytkownika można zarejestrować urządzenia i definiowanie informacje widoczne dla użytkowników. Podczas tworzenia subskrypcji usługi Intune, można również dodać znakowanie firmowe do portalu firmy usługi Intune z logo firmy i kolorów niestandardowych schematów.
 
 Subskrypcja usługi Intune wykonuje następujące działania:
 
@@ -36,11 +36,11 @@ Subskrypcja usługi Intune wykonuje następujące działania:
 -   Definiuje i konfiguruje platformy przenośne, które mają być obsługiwane.
 
 > [!IMPORTANT]
->  Tworzenie subskrypcji usługi Microsoft Intune w programie Configuration Manager będzie pracować punktu połączenia usługi sieci Web w "trybie online." Zobacz [Informacje o punkcie połączenia z usługą w programie System Center Configuration Manager](../../core/servers/deploy/configure/about-the-service-connection-point.md).
+>  Tworzenie subskrypcji usługi Microsoft Intune w programie Configuration Manager umieści punkt połączenia z usługą sieci Web w "tryb online". Zobacz [Informacje o punkcie połączenia z usługą w programie System Center Configuration Manager](../../core/servers/deploy/configure/about-the-service-connection-point.md).
 
 ## <a name="to-create-the-microsoft-intune-subscription"></a>Aby utworzyć subskrypcję usługi Microsoft Intune
 
-1.  Załóż konto w usłudze a Microsoft Intune (jeśli jeszcze nie masz takiego konta), korzystając z linku [Microsoft Intune](http://go.microsoft.com/fwlink/?LinkID=258216).  Po utworzeniu konta usługi Intune, nie trzeba dodawać żadnych użytkowników do konta usługi Intune lub wykonywania dodatkowych ustawień konfiguracyjnych.
+1.  Załóż konto w usłudze a Microsoft Intune (jeśli jeszcze nie masz takiego konta), korzystając z linku [Microsoft Intune](http://go.microsoft.com/fwlink/?LinkID=258216).  Po utworzeniu konta usługi Intune, nie trzeba dodawać żadnych użytkowników do konta usługi Intune lub wykonaj dodatkowe ustawienia konfiguracji.
 
 2.  W konsoli programu Configuration Manager kliknij przycisk **Administracja**.
 
@@ -50,23 +50,23 @@ Subskrypcja usługi Intune wykonuje następujące działania:
 
 4.  Zapoznaj się z treścią tekstu wyświetlanego na stronie **Wprowadzenie** kreatora tworzenia subskrypcji usługi Microsoft Intune, a następnie kliknij przycisk **Dalej**.
 
-5.  Na stronie **Subskrypcja** kliknij przycisk **Zaloguj się** i zaloguj się za pomocą danych uwierzytelniania swojego konta firmowego lub szkolnego. W **ustaw urząd zarządzania urządzeniami przenośnymi** okno dialogowe, wybierz pole wyboru, aby tylko zarządzanie urządzeniami przenośnymi za pomocą programu Configuration Manager za pośrednictwem konsoli programu Configuration Manager. Musisz wybrać tę opcję, aby kontynuować subskrypcję.
+5.  Na stronie **Subskrypcja** kliknij przycisk **Zaloguj się** i zaloguj się za pomocą danych uwierzytelniania swojego konta firmowego lub szkolnego. W **ustaw urząd zarządzania urządzeniami przenośnymi** okno dialogowe, zaznacz pole wyboru, aby tylko zarządzanie urządzeniami przenośnymi za pomocą programu Configuration Manager za pośrednictwem konsoli programu Configuration Manager. Musisz wybrać tę opcję, aby kontynuować subskrypcję.
 
     > [!IMPORTANT]
-    >  Po wybraniu programu Configuration Manager jako urzędu zarządzania, nie można zmienić urzędu zarządzania Microsoft Intune w przyszłości.
+    >  Po wybraniu programu Configuration Manager jako swój urząd zarządzania, można zmienić swój urząd zarządzania Microsoft Intune w 1610 wersji programu Configuration Manager lub nowszego i Microsoft Intune version 1705 bez konieczności kontaktowania się Microsoft Support i bez konieczności wyrejestrowywania i Zarejestruj ponownie istniejących zarządzanych urządzeń. Aby uzyskać więcej informacji, zobacz [zmienić urzędu zarządzania urządzeniami Przenośnymi](/sccm/mdm/deploy-use/change-mdm-authority).
 
 6.  Kliknij linki do zasad zachowania poufności informacji, aby się z nimi zapoznać, a następnie kliknij przycisk **Dalej**.
 
 7.  Na stronie **Ogólne** określ poniższe opcje, a następnie kliknij przycisk **Dalej**.
 
-  -   **Kolekcja**: Określ kolekcję użytkownika, która zawiera użytkowników, którzy będą rejestrować urządzenia przenośne.
+  -   **Kolekcja**: Określ kolekcję użytkowników obejmującą tych użytkowników, którzy będą rejestrować swoje urządzenia przenośne.
 
       > [!NOTE]
-      >  Jeśli jakiś użytkownik zostanie usunięty z kolekcji, jego urządzenie będzie podlegać zarządzaniu jeszcze przez do 24 godzin, dopóki rekord użytkownika nie zostanie usunięty z bazy danych użytkownika.
+      >  Jeśli użytkownik został usunięty z kolekcji, urządzenia użytkownika będą nadal podlegać zarządzaniu jeszcze przez do 24 godzin, jeśli rekord użytkownika zostanie usunięty z bazy danych użytkownika.
 
   -   **Nazwa firmy**: Podaj nazwę swojej firmy.
 
-  -   **Adres URL dokumentacji ochrony prywatności**: Jeśli informacje o prywatności firmy są publikowane łącze, które jest dostępny z Internetu, podaj łącze, które użytkownicy mogą korzystać z portalu firmy, na przykład http://www.contoso.com/CP_privacy.html. W informacjach o zasadach zachowania poufności można objaśnić, jakiego rodzaju informacje użytkownicy udostępniają danej firmie.
+  -   **Adres URL dokumentacji ochrony prywatności**: W przypadku publikowania informacji o prywatności firmie łącza, który jest dostępny z Internetu, podaj łącze, które użytkownicy mogą uzyskać dostęp z portalu firmy, na przykład http://www.contoso.com/CP_privacy.html. W informacjach o zasadach zachowania poufności można objaśnić, jakiego rodzaju informacje użytkownicy udostępniają danej firmie.
 
   -   **Schemat kolorów portalu firmy**: Opcjonalnie można zmienić domyślny kolor niebieski portali firmy.
 
@@ -75,12 +75,12 @@ Subskrypcja usługi Intune wykonuje następujące działania:
     > [!NOTE]
     >  Zmiana kodu lokacji wpływa tylko na nowe rejestracje i nie ma wpływu na istniejące już, zarejestrowane urządzenia.
 
-8.  Na **informacje kontaktowe firmy** Określ informacje kontaktowe firmy będzie wyświetlany użytkownikom w ramach **kontakt z działem IT** w aplikacji Portal firmy. Podaj informacje o kontakcie dla swojej firmy, a następnie kliknij przycisk **dalej**.
+8.  Na **informacje kontaktowe firmy** Podaj informacje kontaktowe firmy, który będzie wyświetlany użytkownikom w obszarze **kontakt z działem IT** w aplikacji Portal firmy. Podaj informacje kontaktowe firmy, a następnie kliknij przycisk **dalej**.
 
-9. Na **Logo firmy** strony, można wybrać, czy wyświetlić logo w portalu firmy, a następnie kliknij przycisk **dalej**.
+9. Na **Logo firmy** strony, można wybrać, czy wyświetlane logo w portalu firmy, a następnie kliknij przycisk **dalej**.
 
 10. Ukończ pracę kreatora.
 
 > [!div class="button"]
-[< Wstecz kroku](confirm-dns.md)[następny krok >  ](terms-and-conditions.md)
+[< Wstecz krok](confirm-dns.md)[następny krok >  ](terms-and-conditions.md)
 

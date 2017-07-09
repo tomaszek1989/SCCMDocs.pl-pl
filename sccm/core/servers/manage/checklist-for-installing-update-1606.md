@@ -1,8 +1,8 @@
 ---
 title: "Lista kontrolna dotycząca 1606 | Dokumentacja firmy Microsoft"
-description: "Więcej informacji na temat działania należy podjąć przed zaktualizowaniem z System Center Configuration Manager w wersji 1511 lub 1602 1606 wersji."
+description: "Więcej informacji na temat działania należy podjąć przed zaktualizowaniem programu System Center Configuration Manager w wersji 1511 lub 1602 do wersji 1606."
 ms.custom: na
-ms.date: 2/7/2017
+ms.date: 6/6/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -16,45 +16,45 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: 30af3326578d39c6d995672071705bcaeb877e4d
-ms.openlocfilehash: b0def6eb962d243a7ea5910b8d56bbb448b3a2e4
+ms.sourcegitcommit: 3619a73d3a39659de927e1711a7ec81de9918064
+ms.openlocfilehash: a6bda116499845fedff0126e2890755931de85bb
 ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/13/2017
 
 ---
-# <a name="checklist-for-installing-update-1606-for-system-center-configuration-manager"></a>Lista kontrolna instalowania aktualizacji 1606 dla programu System Center Configuration Manager
+# <a name="checklist-for-installing-update-1606-for-system-center-configuration-manager"></a>Lista kontrolna dotycząca instalowania aktualizacji 1606 programu System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Aktualizacja, która służy do aktualizacji z wersji 1511 lub 1602 jest wersja 1606 dla bieżącej gałęzi System Center Configuration Manager.
+Wersja 1606 dla bieżącej gałęzi programu System Center Configuration Manager jest dostępna aktualizacja, służącego do aktualizacji z wersji 1511 lub 1602.
 
-Przed zainstalowaniem wersji 1606 jako aktualizację, przejrzyj następujące informacje i Lista kontrolna dotycząca akcje do wykonania przed rozpoczęciem aktualizacji.
+Przed zainstalowaniem wersji 1606 jako aktualizację, przejrzyj następujące informacje i listy kontrolnej czynności należy wykonać przed rozpoczęciem aktualizacji.
 
-Informacje o wersjach linii bazowej, zobacz [linii bazowej i aktualizacji wersji](../../../core/servers/manage/updates.md#bkmk_Baselines) w [aktualizacji dla programu System Center Configuration Manager](../../../core/servers/manage/updates.md).
+Aby uzyskać informacje o wersji linii bazowej, zobacz [wersje linii bazowej i aktualizacji](../../../core/servers/manage/updates.md#bkmk_Baselines) w [aktualizacji dla programu System Center Configuration Manager](../../../core/servers/manage/updates.md).
 
  ## <a name="about-installing-update-1606"></a>Informacje dotyczące instalowania aktualizacji 1606
 
-Jako *aktualizacji*, 1606 można zainstalować tylko w lokacji najwyższego poziomu w hierarchii. Oznacza to, inicjuje instalację z witryny Administracja centralna, jeśli posiadasz lub autonomicznej lokacji głównej.  
+Jako *aktualizacji*, 1606 można zainstalować tylko w lokacji najwyższego poziomu w hierarchii. Oznacza to, należy zainicjować instalację, z witryny Administracja centralna, jeśli masz lub autonomicznej lokacji głównej.  
 
--   Podrzędne Lokacje główne należy zainstalować aktualizację automatycznie po zakończeniu witryny Administracja centralna instalacji aktualizacji. Podczas instalowania aktualizacji lokacji, można użyć usługi systemu windows do formantu. Przed wersją 1606 usługi systemu windows były nazywane okna obsługi. Aby uzyskać więcej informacji, zobacz [usługi systemu windows dla serwerów lokacji](/sccm/core/servers/manage/service-windows).  
+-   Podrzędne Lokacje główne instalują aktualizację automatycznie po zakończeniu centralnej lokacji administracyjnej, instalowania aktualizacji. Można użyć usługi windows do formantu, gdy lokacja instaluje aktualizacje. Przed wersją 1606 usługi systemu windows były nazywane okna obsługi. Aby uzyskać więcej informacji, zobacz [usługi systemu windows dla serwerów lokacji](/sccm/core/servers/manage/service-windows).  
 
--   Po zakończeniu nadrzędnej lokacji głównej instalacji aktualizacji, należy ręcznie zaktualizować dodatkowej lokacji z konsoli programu Configuration Manager. Automatyczna aktualizacja serwerów lokacji dodatkowych nie jest obsługiwana.  
+-   Należy ręcznie zaktualizować Lokacje dodatkowe przy użyciu konsoli programu Configuration Manager po zakończeniu nadrzędną lokację główną, instalowania aktualizacji. Automatyczna aktualizacja serwerów lokacji dodatkowych nie jest obsługiwana.  
 
-Podczas instalowania aktualizacji serwera lokacji ról systemu lokacji, które są zainstalowane na serwerze lokacji i tymi, które są zainstalowane na komputerach zdalnych zostanie automatycznie zaktualizowany. W związku z tym przed zainstalowaniem aktualizacji, upewnij się, że każdy serwer systemu lokacji spełnia ewentualne nowe wymagania wstępne dla operacji w nowej wersji aktualizacji.  
+Podczas instalowania aktualizacji serwera lokacji role systemu lokacji, które są zainstalowane na serwerze lokacji oraz te, które są zainstalowane na komputerach zdalnych aktualizowany automatycznie. W związku z tym przed zainstalowaniem aktualizacji, upewnij się, że każdy serwer systemu lokacji spełnia ewentualne nowe wymagania wstępne dla operacji przy użyciu nowej wersji aktualizacji.  
 
-Po raz pierwszy po zainstalowaniu aktualizacji za pomocą konsoli programu Configuration Manager będzie się monit o aktualizację tej konsoli.  Aby to zrobić, należy uruchomić Instalatora programu Configuration Manager na komputerze, który jest hostem konsoli, a następnie wybierz opcję, aby zaktualizować konsolę. Zalecamy natychmiastowe instalowanie aktualizacji konsoli.
+Użycie konsoli programu Configuration Manager po zainstalowaniu aktualizacji po raz pierwszy pojawi się monit zaktualizowanie tej konsoli.  Aby to zrobić, należy uruchomić Instalatora programu Configuration Manager na komputerze, który jest hostem konsoli i następnie wybierz opcję, aby zaktualizować konsolę. Zalecamy natychmiastowe instalowanie aktualizacji konsoli.
 
  **Znane problemy dotyczące tej aktualizacji**   
-  Podczas wyświetlania stanu instalacji pakietu aktualizacji, stosuje się następujące problemy:
-  - Podczas aktualizacji z wersji 1602 do 1606 kroku **ładunku pakietu aktualizacji wyodrębniania** ma stan **nie uruchomiono**, nawet jeśli został pobrany.
-  - Podczas aktualizacji z wersji 1511 do 1606, niektóre kroki będzie wyświetlany stan **Ukończono** , ale nie będzie wyświetlana wartość dla **godziny ostatniej aktualizacji**.
+  Wyświetl stan instalacji pakietu aktualizacji obowiązują następujące problemy:
+  - Podczas aktualizacji z wersji 1602 do 1606 kroku **ładunek pakietu aktualizacji wyodrębniania** ma stan **nie rozpoczęto**, nawet jeśli został pobrany.
+  - Podczas aktualizacji z wersji 1511 do 1606, niektóre kroki będzie wyświetlany stan **Ukończono** , ale nie będą wyświetlane wartości **czas ostatniej aktualizacji**.
 
 
 ## <a name="checklist"></a>Lista kontrolna  
 
- **Upewnij się, że wszystkie lokacje z obsługiwaną wersją programu System Center Configuration Manager:**  Przed rozpoczęciem instalacji aktualizacji 1606 każdy serwer lokacji w hierarchii musi mieć tę samą wersję programu System Center Configuration Manager: danej wersji 1511 lub 1602.
+ **Upewnij się, że we wszystkich lokacjach uruchomiona obsługiwana wersja programu System Center Configuration Manager:**  Przed rozpoczęciem instalacji aktualizacji 1606 każdy serwer lokacji w hierarchii muszą korzystać z tej samej wersji programu System Center Configuration Manager: danej wersji 1511 lub 1602.
 
- **Przejrzyj zainstalowane wersje Microsoft.NET na serwerach systemu lokacji:** Podczas instalowania aktualizacji 1606 lokacji, Configuration Manager automatycznie zainstaluje .NET Framework 4.5.2 na każdym komputerze, który obsługuje jeden z następujących ról systemu lokacji (Jeśli nie zainstalowano jeszcze .NET Framework 4.5 lub nowszy):  
+ **Przegląd zainstalowanych wersji Microsoft.NET na serwerach systemu lokacji:** Podczas instalowania aktualizacji 1606 lokacji programu Configuration Manager automatycznie instaluje .NET Framework 4.5.2 na każdym komputerze hostującym jedną z następujących ról systemu lokacji (Jeśli nie zainstalowano jeszcze .NET Framework 4.5 lub nowszej):  
 
 -   Punkt proxy rejestracji  
 
@@ -64,38 +64,34 @@ Po raz pierwszy po zainstalowaniu aktualizacji za pomocą konsoli programu Confi
 
 -   Punkt połączenia usługi  
 
-Ta instalacja można umieścić serwer systemu lokacji w ponowne uruchomienie do czasu stanu i raportuj o błędach w podglądzie stanu składnika programu Configuration Manager. Ponadto mogą losowo występować usterki aplikacji .NET na serwerze do momentu ponownego uruchomienia serwera.  
+Ta instalacja można umieścić serwer systemu lokacji do na ponowne uruchomienie do czasu stanu i raport błędów w przeglądarce stanu składników programu Configuration Manager. Ponadto mogą losowo występować usterki aplikacji .NET na serwerze do momentu ponownego uruchomienia serwera.  
 
- Aby uzyskać więcej informacji, zobacz [lokacji i wymagań wstępnych systemu lokacji](../../../core/plan-design/configs/site-and-site-system-prerequisites.md).  
+ Aby uzyskać więcej informacji, zobacz [lokacji i wymagania wstępne systemu lokacji](../../../core/plan-design/configs/site-and-site-system-prerequisites.md).  
 
- **Sprawdź stan lokacji i hierarchii, a następnie sprawdź, czy nie występują żadne nierozwiązane problemy:** Przed aktualizacją lokacji należy rozwiązać wszystkie problemy z działaniem serwera lokacji, serwera bazy danych lokacji i ról systemu lokacji, które są zainstalowane na komputerach zdalnych. Problemy z działaniem mogą spowodować niepowodzenie aktualizacji lokacji.
+ **Sprawdź stan lokacji i hierarchii, a następnie sprawdź, czy nie występują żadne nierozwiązane problemy:** Przed uaktualnieniem lokacji należy rozwiązać wszystkie problemy z działaniem serwera lokacji, serwera bazy danych lokacji i ról systemu lokacji, które są zainstalowane na komputerach zdalnych. Problemy z działaniem mogą spowodować niepowodzenie aktualizacji lokacji.
 
  Aby uzyskać więcej informacji, zobacz [Korzystanie z alertów i systemu stanu w programie System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
 
- **Sprawdź plik i dane replikacji między lokacjami:**  Upewnij się, że plik i replikacji bazy danych między lokacjami jest bieżących i operacyjnej. Opóźnienia lub zaległości albo można zapobiec pomyślnym, płynnym aktualizacji.    
+ **Przejrzyj replikację plików i danych między lokacjami:**  Upewnij się, że plik i replikacji bazy danych między lokacjami jest operacyjne i bieżący. Opóźnień lub zaległości może uniemożliwić smooth aktualizacji powiodło się.    
 
-W przypadku replikacji bazy danych można skorzystać z Analizatora linków replikacji ułatwiającego rozwiązywanie problemów przed rozpoczęciem aktualizacji. Aby uzyskać więcej informacji, zobacz [o analizator łącza replikacji](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md#BKMK_RLA) w temacie [monitorowanie hierarchii i replikacji infrastruktury w programie System Center Configuration Manager](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md).  
+W przypadku replikacji bazy danych można skorzystać z Analizatora linków replikacji ułatwiającego rozwiązywanie problemów przed rozpoczęciem aktualizacji. Aby uzyskać więcej informacji, zobacz [o analizator łącza replikacji](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md#BKMK_RLA) w temacie [Monitorowanie infrastruktury hierarchii i replikacji w programie System Center Configuration Manager](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md).  
 
- **Zainstaluj wszystkie odpowiednie aktualizacje krytyczne systemów operacyjnych na komputerach hostujących lokację, serwer bazy danych lokacji i role zdalnego systemu lokacji:** Przed zainstalowaniem aktualizacji programu Configuration Manager, należy zainstalować wszystkie krytyczne aktualizacje dla każdego systemu uaktualnianej lokacji. Instalowana aktualizacja może wymagać ponownego uruchomienia odpowiednich komputerów przed rozpoczęciem uaktualniania.  
+ **Zainstaluj wszystkie odpowiednie aktualizacje krytyczne dla systemów operacyjnych na komputerach hostujących lokację, serwer bazy danych lokacji i role zdalnego systemu lokacji:** Przed zainstalowaniem aktualizacji programu Configuration Manager, należy zainstalować wszystkie aktualizacje krytyczne dla odpowiednich systemów lokacji. Instalowana aktualizacja może wymagać ponownego uruchomienia odpowiednich komputerów przed rozpoczęciem uaktualniania.  
 
- **Wyłącz repliki bazy danych dla punktów zarządzania w lokacjach głównych:** Program Configuration Manager pomyślnie nie można zaktualizować lokacji głównej, z repliką bazy danych dla punktów zarządzania włączone. Wyłącz replikację bazy danych przed:  
+ **Wyłącz repliki bazy danych dla punktów zarządzania w lokacjach głównych:** Menedżer konfiguracji nie może pomyślnie zaktualizować lokacji głównej, z repliki bazy danych dla punktów zarządzania włączone. Wyłącz replikację bazy danych, przed zainstalowaniem aktualizacji programu Configuration Manager.  
 
--   Tworzenie kopii zapasowej bazy danych lokacji w celu sprawdzenia uaktualnienia bazy danych.  
+Aby uzyskać więcej informacji, zobacz [replik bazy danych dla punktów zarządzania programu System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
 
--   Instalowana aktualizacja dla programu Configuration Manager.  
+ **Ustaw ręcznego przełączania trybu failover grupy dostępności AlwaysOn programu SQL Server:**  
+ Przed zainstalowaniem aktualizacji, na przykład wersji 1606, upewnij się, że grupy dostępności jest ustawiona na ręcznego przełączania trybu failover. Po zaktualizowaniu lokacji można przywrócić trybu failover automatycznego. Aby uzyskać więcej informacji, zobacz [AlwaysOn programu SQL Server dla bazy danych lokacji](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).
 
-Aby uzyskać więcej informacji, zobacz [bazy danych repliki dla punktów zarządzania programu System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
+ **Skonfiguruj ponownie punkty aktualizacji oprogramowania, które używają usługi równoważenia obciążenia sieciowego:** Menedżer konfiguracji nie może zaktualizować lokacji korzystającej z klastra równoważenia obciążenia sieciowego (NLB), punkty aktualizacji oprogramowania.  
 
- **Ustaw ręcznej pracy awaryjnej grup dostępności AlwaysOn programu SQL Server:**  
- Przed zainstalowaniem aktualizacji, takich jak wersja 1606, upewnij się, że grupy dostępności jest ustawiona na ręcznej pracy awaryjnej. Po zaktualizowaniu witryny można przywrócić pracy awaryjnej automatycznego. Aby uzyskać więcej informacji, zobacz [AlwaysOn programu SQL Server dla bazy danych lokacji](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).
-
- **Skonfiguruj ponownie punkty aktualizacji oprogramowania, które korzystają z usługi równoważenia obciążenia sieciowego:** Menedżer konfiguracji nie może zaktualizować lokacji przy użyciu klastra równoważenia obciążenia sieciowego (NLB), punkty aktualizacji oprogramowania hosta.  
-
-Użycie klastrów równoważenia obciążenia Sieciowego dla punktów aktualizacji oprogramowania, należy użyć programu Windows PowerShell do usunięcia klastra równoważenia obciążenia Sieciowego.    
+Korzystając z klastrami równoważenia obciążenia Sieciowego dla punktów aktualizacji oprogramowania, należy usunąć klaster równoważenia obciążenia Sieciowego za pomocą programu Windows PowerShell.    
 
  Aby uzyskać więcej informacji, zobacz [Planowanie aktualizacji oprogramowania w programie System Center Configuration Manager](../../../sum/plan-design/plan-for-software-updates.md).  
 
- **Wyłącz wszystkie zadania obsługi lokacji w każdej lokacji na czas instalacji aktualizacji w tej witrynie:** Przed zainstalowaniem tej aktualizacji należy wyłączyć wszystkie zadania konserwacji lokacji, które mogą być uruchamiane w czasie procesu aktualizacji jest aktywny. Dotyczy to m.in. następujących zadań:  
+ **Wyłącz wszystkie zadania konserwacji lokacji w każdej lokacji w czasie trwania instalacji aktualizacji w tej witrynie:** Przed zainstalowaniem aktualizacji Wyłącz wszystkie zadania konserwacji lokacji, które mogą być uruchamiane w czasie procesu aktualizacji jest aktywny. Dotyczy to m.in. następujących zadań:  
 
 -   Wykonaj kopię zapasową serwera lokacji  
 
@@ -103,50 +99,51 @@ Użycie klastrów równoważenia obciążenia Sieciowego dla punktów aktualizac
 
 -   Usuń przedawnione dane odnajdywania  
 
-Instalowanie aktualizacji może zakończyć się niepowodzeniem, jeżeli w czasie jego trwania zostanie uruchomione zadanie konserwacji bazy danych lokacji. Przed wyłączeniem zadania Zarejestruj jego harmonogram zadań, aby przywrócić jego konfigurację po zainstalowaniu aktualizacji.  
+Instalowanie aktualizacji może zakończyć się niepowodzeniem, jeżeli w czasie jego trwania zostanie uruchomione zadanie konserwacji bazy danych lokacji. Przed wyłączeniem zadania Zarejestruj jego harmonogram zadań, można przywrócić jego konfigurację po zainstalowaniu aktualizacji.  
 
 Aby uzyskać więcej informacji, zobacz [zadania konserwacji programu System Center Configuration Manager](../../../core/servers/manage/maintenance-tasks.md) i [odwołania do obsługi zadań programu System Center Configuration Manager](../../../core/servers/manage/reference-for-maintenance-tasks.md).  
 
- **Utwórz kopię zapasową bazy danych lokacji w centralnej lokacji administracyjnej oraz lokacjach głównych:** Przed aktualizacją lokacji, należy utworzyć kopię zapasową bazy danych lokacji, sprawdź, czy została pomyślnie wykonana kopia zapasowa do użycia podczas odzyskiwania po awarii.   
+ **Utwórz kopię zapasową bazy danych lokacji w centralnej lokacji administracyjnej i lokacjach głównych:** Przed zaktualizowaniem lokacji Utwórz kopię zapasową bazy danych lokacji, upewnij się, że masz pomyślnego tworzenia kopii zapasowej do użycia podczas odzyskiwania po awarii.   
 
 Aby uzyskać więcej informacji, zobacz [kopii zapasowych i odzyskiwania dla programu System Center Configuration Manager](../../../protect/understand/backup-and-recovery.md).  
 
+<!-- Removed from update guidance 6/6/2017
+ **Test the database upgrade on a copy of the most recent site database backup:** Before you update a System Center Configuration Manager central administration site or primary site, test the site database upgrade process on a copy of the site database.  
 
- **Test uaktualnienia bazy danych na kopię najnowszej kopii zapasowej bazy danych lokacji:** Przed zaktualizowaniem witryny administracji centralnej programu System Center Configuration Manager lub lokacji głównej, testowanie procesu uaktualniania bazy danych lokacji na kopii bazy danych lokacji.  
+-   You should test the site database upgrade process because when you upgrade a site, the site database might be modified.  
 
--   Proces uaktualniania bazy danych lokacji należy przetestować, gdyż podczas uaktualniania lokacji może zmodyfikować bazy danych lokacji.  
+-   Although a test database upgrade is not required, it can identify problems for the upgrade before your production database is affected.  
 
--   Testowego uaktualnienia bazy danych nie jest wymagane, jednak można zidentyfikować problemy związane z uaktualnieniem przed sieci produkcyjnej bazy danych.  
+-   A failed site database upgrade can render your site database inoperable and might require a site recovery to restore functionality.  
 
--   Nieudane uaktualnienie bazy danych lokacji może uniemożliwić korzystanie z bazy danych lokacji i wymóc przeprowadzenie odzyskiwania lokacji w celu przywrócenia jej funkcjonalności.  
+-   Although the site database is shared between sites in a hierarchy, plan to test the database at each applicable site before you upgrade that site.  
 
--   Mimo że bazy danych lokacji jest udostępniana między lokacjami w hierarchii, zaplanować testowanie bazy danych w każdej uaktualnianej lokacji przed uaktualnieniem tej lokacji.  
+-   If you use database replicas for management points at a primary site, disable replication before you create the backup of the site database.  
 
--   Jeśli są używane repliki bazy danych dla punktów zarządzania w lokacji głównej, przed utworzeniem kopii zapasowej bazy danych lokacji należy wyłączyć replikację.  
+Configuration Manager does not support the backup of secondary sites nor does it support the test upgrade of a secondary site database.   
 
-Menedżer konfiguracji nie obsługuje kopii zapasowych lokacji dodatkowych ani nie obsługuje testowego uaktualnienia bazy danych lokacji dodatkowej.   
+Do not run a test database upgrade on the production site database. Doing so updates the site database and could render your site inoperable. For more information, For more information, see [Step 2: Test the database upgrade before installing an update](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2) from **Before you install an in-console update**.
+-->
 
-Nie uruchamiaj testowego uaktualnienia bazy danych na produkcyjną bazę danych lokacji. Wykonanie tej czynności powoduje zaktualizowanie bazy danych lokacji, przez co lokacja może przestać działać. Aby uzyskać więcej informacji, aby uzyskać więcej informacji, zobacz [krok 2: Test uaktualnienia bazy danych przed zainstalowaniem aktualizacji](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2) z **przed zainstalowaniem aktualizacji w konsoli**.
+ **Zaplanuj pilotażowe wdrażanie klienta:** Podczas instalowania aktualizacji powodującej aktualizację klienta można przetestować tę nową aktualizację klienta w środowisku przedprodukcyjnym przed wdrożeniem i uaktualnieniem wszystkich aktywnych klientów.   
 
- **Planowanie pilotażowe klienta:** Po zainstalowaniu aktualizacji, która aktualizuje klienta przed wdraża i uaktualnia wszystkich aktywnych klientów można przetestować tej nowej aktualizacji klienta w produkcji wstępnej.   
+ Aby korzystać z tej opcji, przed rozpoczęciem instalacji aktualizacji, należy skonfigurować lokację do obsługi automatycznych uaktualnień w produkcji wstępnej. Aby uzyskać więcej informacji, zobacz [Uaktualnianie klientów w programie System Center Configuration Manager](../../../core/clients/manage/upgrade/upgrade-clients.md) i   
+[Testowanie uaktualnień klienta w kolekcji przedprodukcyjnej w programie System Center Configuration Manager](../../../core/clients/manage/upgrade/test-client-upgrades.md).  
 
- Aby móc korzystać z tej opcji, przed rozpoczęciem instalacji aktualizacji, należy skonfigurować lokację do obsługi automatycznych uaktualnień do produkcji wstępnej. Aby uzyskać więcej informacji, zobacz [Uaktualnianie klientów w programie System Center Configuration Manager](../../../core/clients/manage/upgrade/upgrade-clients.md) i   
-[Jak przetestować uaktualnienia klienta w kolekcji przedprodukcyjnej w programie System Center Configuration Manager](../../../core/clients/manage/upgrade/test-client-upgrades.md).  
-
- **Planowanie pod kątem używania usługi systemu windows do sterowania podczas aktualizacji serwerów lokacji:** Aby zdefiniować okres, w którym można zainstalować aktualizacji na serwerze lokacji, można użyć usługi windows.
+ **Zamierzasz używać okien obsługi do formantu, gdy serwery lokacji instalują aktualizacje:** Aby zdefiniować okres, w którym można zainstalować aktualizacji na serwerze lokacji, można użyć usługi windows.
 
 Może to ułatwić określenie, kiedy można zainstalować aktualizację w danej hierarchii.
 Przed wersją 1606 usługi systemu windows były nazywane okna obsługi. Aby uzyskać więcej informacji, zobacz [usługi systemu windows dla serwerów lokacji](/sccm/core/servers/manage/service-windows).  
 
- **Uruchom narzędzie sprawdzania wymagań wstępnych instalacji:**  Przed zainstalowaniem aktualizacji 1606, należy uruchomić narzędzie sprawdzania wymagań wstępnych niezależnie od instalacji aktualizacji. Po zainstalowaniu aktualizacji w witrynie Narzędzia sprawdzania wymagań wstępnych zostanie ponownie uruchomione.  
+ **Uruchom narzędzie sprawdzania wymagań wstępnych Instalatora:**  Przed zainstalowaniem aktualizacji 1606, możesz uruchomić narzędzie sprawdzania wymagań wstępnych niezależnie od instalacji aktualizacji. Po zainstalowaniu aktualizacji w lokacji zostanie ponownie uruchomione narzędzie sprawdzania wymagań wstępnych.  
 
-Aby uzyskać więcej informacji, zobacz **krok 3: Uruchom narzędzie sprawdzania wymagań wstępnych przed zainstalowaniem aktualizacji** w [aktualizacji dla programu System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md) tematu.  
+Aby uzyskać więcej informacji, zobacz **krok 3: Uruchom narzędzie sprawdzania wymagań wstępnych przed instalacją aktualizacji** w [aktualizacji dla programu System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md) tematu.  
 
 > [!IMPORTANT]  
->  Po uruchomieniu narzędzia sprawdzania wymagań wstępnych niezależnie lub w ramach instalacji aktualizacji proces aktualizacji niektórych plików źródłowych produktu, które są używane dla zadania obsługi lokacji. W związku z tym, po uruchomieniu narzędzia sprawdzania wymagań wstępnych, lecz przed instalacją aktualizacji 1606, jeśli konieczne jest wykonanie zadania konserwacji lokacji, uruchom **Setupwpf.exe** (Instalator programu Configuration Manager) z dysku CD. Najnowszy folder na serwerze lokacji.  
+>  Po uruchomieniu narzędzia sprawdzania wymagań wstępnych niezależnie lub w ramach instalacji aktualizacji ten proces aktualizuje niektóre pliki źródłowe produktów, które są używane dla zadania obsługi lokacji. W związku z tym po uruchomieniu narzędzia sprawdzania wymagań wstępnych, lecz przed zainstalowaniem aktualizacji 1606, jeśli trzeba wykonać zadanie obsługi lokacji, uruchom **Setupwpf.exe** (Instalator programu Configuration Manager) z dysku CD. Najnowszy folder na serwerze lokacji.  
 
- **Aktualizacja witryny:** Teraz można przystąpić do rozpoczęcia instalacji aktualizacji dla hierarchii.  
-  Zaleca się zaplanowanie instalacji aktualizacji poza godzinach pracy dla każdej lokacji podczas procesu instalowania aktualizacji i jego akcji ponownego zainstalowania składników lokacji i ról systemu lokacji ma co najmniej wpływ na operacje biznesowe.
+ **Zaktualizuj Lokacje:** Teraz można przystąpić do rozpoczęcia instalacji aktualizacji dla hierarchii.  
+  Zaleca się zaplanowanie instalacji aktualizacji poza normalnymi godzinami pracy każdej lokacji, gdy proces instalacji aktualizacji i jego akcje, aby ponownie zainstalować składniki lokacji i role systemu lokacji będą miały jak najmniejszy wpływ na działania biznesowe.
 
 Aby uzyskać więcej informacji, zobacz [Aktualizacje programu System Center Configuration Manager](../../../core/servers/manage/updates.md).  
 

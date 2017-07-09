@@ -1,8 +1,8 @@
 ---
-title: "Zarządzanie subskrypcji usługi Intune skojarzony z System Center Configuration Manager | Dokumentacja firmy Microsoft"
-description: "Zarządzaj subskrypcji usługi Intune skojarzony z programem System Center Configuration Manager."
+title: "Zarządzanie subskrypcją usługi Intune skojarzony z System Center Configuration Manager | Dokumentacja firmy Microsoft"
+description: "Zarządzanie subskrypcję usługi Intune skojarzony z System Center Configuration Manager."
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 06/02/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,36 +17,36 @@ author: mtillman
 ms.author: mtillman
 manager: angrobe
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
-ms.openlocfilehash: 2e0b3cd1070d0f8adb1219acd33c3126d2758a49
+ms.sourcegitcommit: 662901e850566756759fcfc61c58f3c0e56bc5aa
+ms.openlocfilehash: 2cb4d724c8b78657458a30c0bb020f67c6b62795
 ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/03/2017
 
 ---
-# <a name="manage-an-intune-subscription-associated-with-system-center-configuration-manager"></a>Zarządzanie subskrypcji usługi Intune skojarzony z System Center Configuration Manager
+# <a name="manage-an-intune-subscription-associated-with-system-center-configuration-manager"></a>Zarządzanie subskrypcją usługi Intune skojarzony z System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Dodaj Microsoft Intune (subskrypcji wersji próbnej lub płatnej subskrypcji) do programu Configuration Manager, a następnie musi przełączyć się do innej subskrypcji usługi Intune, należy usunąć zarówno **subskrypcja usługi Microsoft Intune** i **punktem połączenia usługi** z konsoli programu Configuration Manager, aby można było dodać nową subskrypcję.
+Jeśli dodawanie Microsoft Intune (subskrypcję próbną lub płatną) do programu Configuration Manager, a następnie należy przełączyć się do innej subskrypcji usługi Intune, musisz usunąć **subskrypcję usługi Microsoft Intune** i **punkt połączenia z usługą** z konsoli programu Configuration Manager, aby można było dodać nową subskrypcję.
 
 > [!NOTE]
-> Można skonfigurować tylko jednej subskrypcji usługi Intune w czasie w hybrydowego zarządzania urządzeniami przenośnymi.
+> Można skonfigurować tylko jedną subskrypcję usługi Intune w czasie w hybrydowego zarządzania urządzeniami przenośnymi.
 
 ## <a name="how-to-delete-an-intune-subscription-from-configuration-manager"></a>Sposób usuwania subskrypcji usługi Intune z programu Configuration Manager
 
 > [!IMPORTANT]
->  Całą zawartość w tym rejestracje użytkownika, zasad i wdrożenia aplikacji skonfigurowany dla urządzeń zarządzanych przez subskrypcję usługi Intune zostaną usunięte po usunięciu subskrypcji.
+>  Całą zawartość w tym rejestracji użytkownika, zasady i wdrożeń aplikacji skonfigurowana dla urządzeń zarządzanych przez subskrypcję usługi Intune zostaną usunięte po usunięciu subskrypcji.
 
-1.  W konsoli programu Configuration Manager, przejdź do **Administracja** > **Przegląd** > **usług w chmurze** > **subskrypcje usługi Microsoft Intune**.
+1.  W konsoli programu Configuration Manager, przejdź do **administracji** > **omówienie** > **usługi w chmurze** > **subskrypcje usługi Microsoft Intune**.
 
-2.  Kliknij prawym przyciskiem myszy wymienionych **subskrypcja usługi Microsoft Intune**, a następnie kliknij przycisk **usunąć**.
+2.  Kliknij prawym przyciskiem myszy wymienionych **subskrypcję usługi Microsoft Intune**, a następnie kliknij przycisk **usunąć**.
 
-3.   W kreatorze kliknij **Usuń subskrypcja usługi Microsoft Intune z programu Configuration Manager**, kliknij przycisk **dalej**, a następnie kliknij przycisk **dalej** ponownie, aby usunąć subskrypcję.
+3.   W kreatorze kliknij **usunąć subskrypcję usługi Microsoft Intune z programu Configuration Manager**, kliknij przycisk **dalej**, a następnie kliknij przycisk **dalej** ponownie, aby usunąć subskrypcję.
 
 
 ## <a name="how-to-remove-the-service-connection-point-role"></a>Jak usunąć rolę punktu połączenia usługi
 
-1.  Przejdź do **Administracja** > **Przegląd** > **lokacji konfiguracji** > **serwery i role systemu lokacji**.
+1.  Przejdź do **administracji** > **omówienie** > **lokacji konfiguracji** > **serwery i role systemu lokacji**.
 
 2.  Wybierz serwer, który hostuje rolę **Punkt połączenia z usługą** .
 
@@ -54,7 +54,6 @@ Dodaj Microsoft Intune (subskrypcji wersji próbnej lub płatnej subskrypcji) do
 
 Teraz możesz utworzyć nowy punkt połączenia z usługą, dodać nową subskrypcję usługi Intune do programu Configuration Manager i ustawić program Configuration Manager jako urząd zarządzania urządzeniami przenośnymi.
 
-## <a name="how-to-change-mdm-authority-to-intune"></a>Jak zmienić urzędu zarządzania urządzeniami Przenośnymi usługi Intune
-
-Począwszy od wersji 1610, możesz przełączyć urzędu zarządzania urządzeniami Przenośnymi z programu Configuration Manager do usługi Intune. Informacje o tej funkcji będzie wkrótce dostępne.
+## <a name="how-to-change-mdm-authority-to-intune"></a>Jak zmienić urząd zarządzania urządzeniami Przenośnymi do usługi Intune
+Począwszy od 1610 wersji programu Configuration Manager i Microsoft Intune version 1705, można zmienić urzędu zarządzania urządzeniami Przenośnymi bez konieczności kontaktowania się Microsoft Support i bez konieczności wyrejestrowywania i Zarejestruj ponownie istniejących zarządzanych urządzeń. Aby uzyskać więcej informacji, zobacz [zmienić urzędu zarządzania urządzeniami Przenośnymi](/sccm/mdm/deploy-use/change-mdm-authority).
 
