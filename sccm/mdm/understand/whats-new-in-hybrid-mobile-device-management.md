@@ -1,8 +1,8 @@
 ---
-title: "What&quot;s new in hybrydowego zarządzania urządzeniami Przenośnymi za pomocą programu Configuration Manager | Dokumentacja firmy Microsoft"
-description: "Poznaj nowe funkcje zarządzania urządzeniami przenośnymi dostępne dla wdrożenia hybrydowego z programu Configuration Manager i usługi Intune."
+title: "What's new in hybrydowego zarządzania urządzeniami Przenośnymi w programie Configuration Manager | Dokumentacja firmy Microsoft"
+description: "Poznaj nowe funkcje zarządzania urządzeniami przenośnymi dostępne dla hybrydowych wdrożeń z programu Configuration Manager i usługi Intune."
 ms.custom: na
-ms.date: 04/21/2017
+ms.date: 06/30/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,55 +16,130 @@ author: Mtillman
 ms.author: mtillman
 manager: angrobe
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: ae008c91a7387ba76f2bfac13f8feb489a0cc558
-ms.openlocfilehash: 0af5ae68353fcf1db846e2e27f3391fe87dcfc42
+ms.sourcegitcommit: 6f9e6e93fce95666503907010a5c253158c5de7c
+ms.openlocfilehash: b9777e8cfa63eda77512e4837de17b99c792a036
 ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/07/2017
 
 ---
-# <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>What's new in hybrydowe zarządzanie urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Microsoft Intune
+# <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>What's new in hybrydowego zarządzania urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Microsoft Intune
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Ten artykuł zawiera szczegółowe informacje dotyczące nowych urządzeń przenośnych, dostępne dla wdrożenia hybrydowego za pomocą programu System Center Configuration Manager i Microsoft Intune funkcje zarządzania (MDM).  
+Ten artykuł zawiera szczegółowe informacje na urządzeniu przenośnym, nowe funkcje zarządzania urządzeniami Przenośnymi jest dostępne dla hybrydowych wdrożeń z programu System Center Configuration Manager i Microsoft Intune.  
 
 ##  <a name="compatibility-with-configuration-manager-versions"></a>Zgodność z wersjami programu Configuration Manager  
 
- Każda sekcja w tym artykule przedstawiono hybrydowe funkcji w ramach różnych kategorii 3. Można określić zgodność funkcji w każdej kategorii z różnymi wersjami programu Configuration Manager, użyj poniższych wskazówek:  
+ Każda sekcja w tym artykule wymieniono funkcje hybrydowych w 3 różnych kategorii. Aby sprawdzić zgodność funkcji w każdej kategorii z różnych wersji programu Configuration Manager, użyj poniższych wskazówek:  
 
-|Kategorie funkcji|Opis|
+|Funkcja kategorii|Opis|
 |-|-|
-|**Nowość w usłudze Microsoft Intune** | Ogólnie rzecz biorąc wszystkie funkcje wymienione w tej kategorii powinien współpracować z wszystkie wersje programu Configuration Manager, w tym wersje programu System Center 2012 R2 Configuration Manager, ponieważ tylko te funkcje wymagają usługi Intune i nie wymagają dodatkowych funkcji w programie Configuration Manager.|
-|**Nowość w programie Configuration Manager Technical Preview**| Wszystkie funkcje wymienione w tej kategorii pracować tylko z określonej wersji Technical Preview. Aby wypróbować te funkcje, należy zainstalować określony w opisie funkcji wersji Technical Preview. Aby uzyskać więcej informacji, zobacz [Technical Preview dla programu System Center Configuration Manager](../../core/get-started/technical-preview.md).|
-|**Nowe w programie Configuration Manager (bieżącej gałęzi)**| Wszystkie funkcje wymienione w tej kategorii pracować tylko z określonej wersji programu Configuration Manager (bieżącej gałęzi), takich jak wersja 1511 lub 1602. Jeśli używasz starszej wersji programu Configuration Manager wdrożenie hybrydowe, należy uaktualnić do wersji Configuration Manager (bieżącej gałęzi) określona w opisie funkcji. Aby uzyskać więcej informacji, zobacz [uaktualnienia programu System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|
+|**Nowość w usłudze Microsoft Intune** | Ogólnie rzecz biorąc wszystkie funkcje wymienione w tej kategorii powinny współpracować z wszystkie wersje programu Configuration Manager, w tym wersje programu System Center 2012 R2 Configuration Manager, ponieważ te funkcje tylko wymagane przez usługę Intune i nie wymagają dodatkowych funkcji w programie Configuration Manager.|
+|**Nowość w programie Configuration Manager Technical Preview**| Wszystkie funkcje wymienione w tej kategorii są prawidłowe tylko w określonej wersji Technical Preview. Aby wypróbować te funkcje, należy zainstalować wersję Technical Preview określony w opisie funkcji. Aby uzyskać więcej informacji, zobacz [Technical Preview programu System Center Configuration Manager](../../core/get-started/technical-preview.md).|
+|**Nowe w programie Configuration Manager (wersji current branch)**| Wszystkie funkcje wymienione w tej kategorii pracować tylko z określonej wersji programu Configuration Manager (wersji current branch), np. w wersji 1511 lub 1602. Jeśli używasz starszej wersji programu Configuration Manager dla danego wdrożenia hybrydowego, należy uaktualnić do wersji Configuration Manager (wersji current branch) określona w opisie funkcji. Aby uzyskać więcej informacji, zobacz [uaktualnienia do programu System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|
 
-## <a name="april-2017"></a>2017 kwietnia
+## <a name="june-2017"></a>2017 czerwca
 
 ### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune
 
-- **MyApps dostępne dla Managed Browser**
+- **Zmienić urzędu zarządzania urządzeniami Przenośnymi**
 
-  Microsoft MyApps już lepszą obsługę przeglądarki zarządzane. Użytkowników zarządzanych przeglądarki, którzy nie są przeznaczone do zarządzania zostanie przeniesiony bezpośrednio do usługi MyApps, gdzie mogą uzyskiwać dostęp do swoich aplikacji SaaS udostępnione przez administratora. Użytkownicy, którzy są przeznaczone do zarządzania Intune będzie mógł uzyskać dostęp do MyApps z wbudowanych zakładki Managed Browser.
+  Począwszy od 1610 wersji programu Configuration Manager i Microsoft Intune version 1705, można zmienić urzędu zarządzania urządzeniami Przenośnymi bez konieczności kontaktowania się Microsoft Support i bez konieczności wyrejestrowywania i Zarejestruj ponownie istniejących zarządzanych urządzeń. Aby uzyskać więcej informacji, zobacz [zmienić urzędu zarządzania urządzeniami Przenośnymi]( /sccm/mdm/deploy-use/change-mdm-authority).
 
-- **Nowe ikony Managed Browser i portalu firmy**
+- **Zarządzane przeglądarki i aplikacji integracji serwera proxy**
 
-  Managed Browser otrzymuje zaktualizowane ikon dla systemu Android i iOS wersji aplikacji. Nowa ikona będzie zawierać identyfikator Intune zaktualizowane, aby stał się bardziej spójne z innymi aplikacjami w przedsiębiorstwie mobilności + zabezpieczeń (EM + S). Nowa ikona programu Managed Browser można wyświetlić na [what's new in strony interfejsu użytkownika aplikacji Intune](/intune/whats-new/whats-new-in-intune-app-ui.md).
+  Intune Managed Browser teraz można zintegrować z usługą serwera Proxy aplikacji usługi Azure AD, aby umożliwić użytkownikom dostęp do wewnętrznych witryn sieci web, nawet wtedy, gdy użytkownik pracuje zdalnie. Użytkownicy przeglądarki wystarczy wprowadzić adres URL witryny ulega zmianie, a w programie Managed Browser kieruje żądanie za pośrednictwem bramy sieci web serwera proxy aplikacji. Aby uzyskać więcej informacji, zobacz [dostępu do internetowego zarządzania przy użyciu zasad przeglądarki Managed](/intune/app-configuration-managed-browser).
 
-  Portal firmy otrzymuje również ikony zaktualizowane wersje aplikacji, aby zwiększyć zgodność z innymi aplikacjami w EM + S Android, iOS i Windows. Te ikony zostanie wydana stopniowo na platformach od kwietnia do maja opóźnione.
+- **Aplikacja Portal firmy dla systemu Android ma teraz nowe środowisko użytkownika końcowego zasad ochrony aplikacji**
 
-- **Wskaźnik postępu logowanie w portalu firmy Android**
+  Na podstawie opinii klientów, firma Microsoft został zmodyfikowany w aplikacji Portal firmy dla systemu Android wyświetlić **dostępu firmy zawartości** przycisku. Celem jest, aby uniemożliwić użytkownikom końcowym niepotrzebnie przechodzi przez proces rejestracji, gdy potrzebują dostępu do aplikacji, które obsługuje zasady ochrony aplikacji z funkcją zarządzania aplikacjami mobilnymi usługi Intune. Te zmiany można wyświetlić na [nowości w aplikacji interfejsu użytkownika](/intune/whats-new-app-ui) strony.
 
-  Aktualizacji aplikacji Portal firmy Android zawiera wskaźnik postępu logowanie, gdy użytkownik uruchamia lub wznowieniu działania aplikacji. Wskaźnik przechodzi nowych stanów, począwszy od "Łączenie...", "Podpisywanie cali..", a następnie "Sprawdzanie wymagań dotyczących zabezpieczeń..." przed zezwoleniem na użytkownika dostęp do tej aplikacji. Można wyświetlić nowe ekrany dla aplikacji Portal firmy dla systemu Android [what's new in strony interfejsu użytkownika aplikacji Intune](/intune/whats-new/whats-new-in-intune-app-ui.md).
+- **Nowa akcja menu można łatwo usunąć Portal firmy**
 
-- **Blokuj dostęp do usługi SharePoint Online aplikacji**
+  Na podstawie opinii użytkowników, aplikacja Portal firmy dla systemu Android została dodana nowa akcja menu zainicjować usuwanie Portal firmy z urządzenia. Ta akcja powoduje usunięcie urządzenia z zarządzania usługi Intune, aby aplikację można usunąć z urządzenia przez użytkownika. Te zmiany można wyświetlić na [nowości w aplikacji interfejsu użytkownika](/intune/whats-new-app-ui) strony i w [dokumentację użytkownika końcowego Android](/intune-user-help/unenroll-your-device-from-intune-android).
 
-  Teraz można utworzyć zasady dostępu warunkowego na podstawie aplikacji, aby zablokować aplikacje, które nie zawierają stosowane zasady ochrony aplikacji do nich dostęp do [usługi SharePoint Online](/InTune/deploy-use/mam-ca-for-sharepoint-online). W tym scenariuszu aplikacje na podstawie dostępu warunkowego można określić aplikacje, które mają mieć dostęp do usługi SharePoint Online za pomocą portalu Azure.
+- **Ulepszenia aplikacji synchronizację z usługą Windows Update twórców 10**
 
-### <a name="new-in-configuration-manager-technical-preview-1704"></a>Nowością w programie Configuration Manager Technical Preview 1704
+  Aplikacja Portal firmy dla systemu Windows 10 będą teraz automatycznie zainicjować synchronizacji żądania instalacji aplikacji dla urządzeń z systemem Windows 10 twórców aktualizację (wersja 1703). Zmniejsza to problem Gaśnięcie silnika w stanie "Oczekiwanie synchronizacji" instaluje aplikację. Ponadto użytkownicy będą mogli ręcznie zainicjować synchronizację z poziomu aplikacji. Te zmiany można wyświetlić na [nowości w aplikacji interfejsu użytkownika](/intune/whats-new-app-ui) strony.
 
-- **Konfigurowanie aplikacji systemu Android za pomocą zasad konfiguracji aplikacji**
+- **Nowe środowisko z przewodnikiem dla Portal firmy dla systemu Windows 10**
 
-  Umożliwia aplikacji zasad konfiguracji w System Center Configuration Manager (Menedżer konfiguracji) dystrybuować wstępnie skonfigurowanych ustawień, gdy użytkownik uruchamia aplikację w systemie Android pracy urządzeń. Zasady konfiguracji systemu android aplikacji są dostępne tylko na urządzeniach z systemem Android do pracy i stosuje się do aplikacji zatwierdzone w grze dla sklepu pracy. Aby uzyskać informacje na temat sposobu wypróbować tę funkcję, zobacz [Android Konfigurowanie aplikacji za pomocą zasad konfiguracji aplikacji](/sccm/core/get-started/capabilities-in-technical-preview-1704#configure-android-apps-with-app-configuration-policies).
+  Aplikacja Portal firmy dla systemu Windows 10 zawiera przewodnik obsługi wskazówki usługi Intune dla urządzeń, które nie zostały zidentyfikowane lub zarejestrowane. Nowe środowisko zawiera instrukcje krok po kroku, które prowadzą użytkowników przez proces rejestracji w usłudze Azure Active Directory (wymagane dla funkcji dostępu warunkowego) i rejestrowanie MDM (wymagane dla funkcji zarządzania urządzeniami). Przewodnik obsługi będzie dostępna na stronie głównej portalu firmy. Użytkownicy mogą nadal używać aplikacji, jeśli nie zostanie wypełnione, rejestracji i rejestracji, ale może wystąpić ograniczenie funkcjonalności.
+
+  Ta aktualizacja jest tylko widoczne na urządzeniach z systemem Windows 10 Anniversary Update (kompilacja 1607) lub nowszej. Te zmiany można wyświetlić na [nowości w aplikacji interfejsu użytkownika](/intune/whats-new-app-ui) strony.
+
+- **Ulepszenia kafelków aplikacji w aplikacji Portal firmy dla systemu iOS**
+
+  Zaktualizowaliśmy projekt kafelków aplikacji na stronie głównej znakowania koloru, ustawione przez Portal firmy. Aby uzyskać więcej informacji, zobacz [nowości w aplikacji interfejsu użytkownika](/intune/whats-new-app-ui).
+
+- **Selektor konta teraz dostępne dla aplikacji Portal firmy dla systemu iOS**
+
+  Naszego nowego konta selektora mogą zobaczyć użytkownicy urządzeń z systemem iOS, podczas logowania się do portalu firmy Jeżeli Użyj ich pracy lub szkołą konta do logowania się do innych aplikacji firmy Microsoft. Aby uzyskać więcej informacji, zobacz [nowości w aplikacji interfejsu użytkownika](/intune/whats-new-app-ui).
+
+### <a name="new-in-configuration-manager-technical-preview-1706"></a>Nowość w programie Configuration Manager Technical Preview 1706
+
+- **Nowe ustawienia zasad zarządzania aplikacjami mobilnymi**    
+
+  Dostępne są następujące ustawienia zasad zarządzania (aplikacjami mobilnymi MAM) aplikacji mobilnej:
+
+  - **Zablokuj Przechwytywanie ekranu (tylko urządzenia z systemem Android):** Określa, że możliwości przechwytywania ekranu urządzenia są blokowane podczas korzystania z tej aplikacji.
+  - **Wyłącz synchronizację kontaktów:** Aplikacja uniemożliwia zapisywania danych do aplikacji natywnej kontaktów na urządzeniu.
+  - **Wyłącz drukowanie:** Zapobiega aplikacji z drukowaniem pracy lub szkoły danych.
+
+  Zobacz [ochrona aplikacji przy użyciu zasad ochrony aplikacji w programie Configuration Manager](https://docs.microsoft.com/sccm/mdm/deploy-use/protect-apps-using-mam-policies) próby nowe ustawienia zasad ochrony aplikacji.
+
+- **Nowe ustawienia elementu konfiguracji systemu Windows**  <!-- 1354715 -->    
+
+  Nowe elementy konfiguracji systemu Windows są dostępne w ramach kategorii ustawienia haseł, urządzenia, magazynu i Microsoft Edge. Aby uzyskać więcej informacji, zobacz [ustawienia elementu konfiguracji systemu Windows nowego](/sccm/core/get-started/capabilities-in-technical-preview-1706#new-windows-configuration-item-settings).
+
+- **Nowe reguły zasad zgodności urządzenia**    
+
+  Można teraz skonfigurować nowe opcje zasad zgodności, które były wcześniej dostępne tylko w autonomicznej usługi Intune. Aby uzyskać więcej informacji, zobacz [ulepszenia zasad zgodności urządzenia](/sccm/core/get-started/capabilities-in-technical-preview-1706#new-device-compliance-policy-rules).
+
+- **Android i iOS ograniczenia rejestracji**<!-- 1290826 -->      
+
+  Administratorzy można teraz określić, że użytkownicy nie można zarejestrować urządzeń osobistych Android lub iOS w środowisku hybrydowym. Dzięki temu limit zarejestrowane urządzenia do predeclared, urządzenia należące do firmy lub zarejestrowane w usłudze Device Enrollment Program tylko urządzeń z systemem iOS. Aby uzyskać więcej informacji, zobacz [Android i iOS ograniczenia rejestracji](/sccm/core/get-started/capabilities-in-technical-preview-1706#android-and-ios-enrollment-restrictions).
+
+- **Obsługa urzędów certyfikacji Entrust**<!-- 1350740 -->     
+
+  Program Configuration Manager obsługuje teraz Entrust urzędów certyfikacji; Dzięki temu dostarczania certyfikatów PFX na urządzeniach zarejestrowanych w programie Microsoft Intune.    
+
+  Podczas dodawania roli punktu rejestracji certyfikatu w programie Configuration Manager, można skonfigurować Entrust jako urząd certyfikacji. Podczas dodawania nowego profilu certyfikatu, który wystawia certyfikaty PFX, możesz wybrać Microsoft lub Entrust urzędu certyfikacji.
+
+  **Znany problem**: W 1706 technical preview certyfikaty PFX nie są wystawiane na potrzeby urzędów certyfikacji firmy Microsoft. Nie dotyczy to profilów SCEP lub importowanych certyfikatów PFX.
+
+- **Obsługa Cisco (IPsec) macOS profilów sieci VPN**  <!-- 1321367 -->    
+
+  Można utworzyć macOS profil sieci VPN z Cisco (IPsec) jako typ połączenia. Aby uzyskać więcej informacji, zobacz [tworzenie profilów sieci VPN](/sccm/mdm/deploy-use/create-vpn-profiles#create-vpn-profiles).
+
+
+## <a name="april-2017"></a>Kwietnia 2017
+
+### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune
+
+- **MyApps dostępne dla programu Managed Browser**
+
+  Microsoft MyApps już lepszą obsługę w programie Managed Browser. Zarządzane przeglądarki użytkowników, którzy nie są przeznaczone dla zarządzania zostanie przeniesiony bezpośrednio z usługą MyApps, gdzie uzyskać dostęp do swoich aplikacji SaaS udostępniane przez administratora. Użytkownicy, którzy są przeznaczone do zarządzania usługi Intune będą w dalszym ciągu mieć możliwość dostępu MyApps z wbudowanych zakładki Managed Browser.
+
+- **Nowe ikony programu Managed Browser i portalu firmy**
+
+  W programie Managed Browser odbiera zaktualizowanym ikonom dla systemu Android i iOS wersji aplikacji. Nową ikonę będzie zawierał zaktualizowane wskaźnika usługi Intune, aby był bardziej spójny z innych aplikacji w Enterprise Mobility + Security (EM + S). Możesz wyświetlać ikonę Nowy w programie Managed Browser na [what's new in strony interfejsu użytkownika aplikacji usługi Intune](/intune/whats-new/whats-new-in-intune-app-ui.md).
+
+  Portal firmy jest również odbieranie zaktualizowanym ikonom dla systemu Android, iOS i Windows wersje aplikacji, aby zwiększyć zgodność z innymi aplikacjami w EM + S. Te ikony zostanie wydana stopniowo na platformach z kwietnia do maja opóźnione.
+
+- **Wskaźnik postępu w logowania w portalu firmy dla systemu Android**
+
+  Aktualizacja aplikacji Portal firmy dla systemu Android zawiera wskaźnik postępu logowania, gdy użytkownik uruchamia lub wznowieniu działania aplikacji. Wskaźnik przechodzi nowe stany, począwszy od "Łączenie...", "Podpisywanie cali...", a następnie "Sprawdzanie wymagań dotyczących zabezpieczeń..." przed zezwoleniem mu dostęp do tej aplikacji. Można wyświetlić nowe ekrany dla aplikacji Portal firmy dla systemu Android na [what's new in strony interfejsu użytkownika aplikacji usługi Intune](/intune/whats-new/whats-new-in-intune-app-ui.md).
+
+- **Zablokuj aplikacjom uzyskiwanie dostępu do usługi SharePoint Online**
+
+  Teraz można utworzyć zasad dostępu warunkowego opartego na aplikacji, aby zablokować aplikacje, których nie zastosowano zasady ochrony aplikacji do nich dostęp [usługi SharePoint Online](/InTune/deploy-use/mam-ca-for-sharepoint-online). W tym scenariuszu dostępu warunkowego opartego na aplikacji można określić aplikacje, które mają dostęp do usługi SharePoint Online przy użyciu portalu Azure.
+
+### <a name="new-in-configuration-manager-technical-preview-1704"></a>Nowość w programie Configuration Manager Technical Preview 1704
+
+- **Konfigurowanie aplikacji systemu Android przy użyciu zasad konfiguracji aplikacji**
+
+  Zasady konfiguracji aplikacji w programie System Center Configuration Manager (program Configuration Manager) można użyć do dystrybucji wstępnie skonfigurowanych ustawień, gdy użytkownik uruchamia aplikację w systemie Android pracy urządzeń. Zasady konfiguracji aplikacji systemu android są dostępne tylko na urządzeniach z systemem Android do pracy i dotyczą zatwierdzonych aplikacji w sklepie Play pracy magazynu. Aby uzyskać informacje na temat sposobu wypróbować tę funkcję, zobacz [Android Konfigurowanie aplikacji przy użyciu zasad konfiguracji aplikacji](/sccm/core/get-started/capabilities-in-technical-preview-1704#configure-android-apps-with-app-configuration-policies).
 
 ## <a name="march-2017"></a>2017 marca
 
@@ -72,248 +147,167 @@ Ten artykuł zawiera szczegółowe informacje dotyczące nowych urządzeń przen
 
 - **Nowe środowisko użytkownika dla aplikacji Portal firmy dla systemu Android**
 
-  Interfejs użytkownika aplikacji Portal firmy dla systemu Android musi bardziej nowoczesny wygląd i działanie. Znaczące aktualizacje są:
+  Aplikacja Portal firmy dla systemu Android ma bardziej nowoczesny wygląd i działanie jej interfejsu użytkownika. Ważne aktualizacje są:
 
-  - Kolory: Nagłówki kartę Portal firmy mają kolor zdefiniowany IT marki.
-  - Aplikacje: W **aplikacje** kartę, **funkcjonalne aplikacje** i **wszystkie aplikacje** przyciski zostały zaktualizowane.
-  - Wyszukiwania: W **aplikacje** kartę, **wyszukiwania** przycisk jest ruchomy przycisk akcji.
-  - Nawigacja aplikacji: **Wszystkie aplikacje** widok przedstawia widok z kartami **duży**, **wszystkie**, i **kategorii** ułatwiające nawigację.
-  - Obsługa: **Moje urządzenia** i **kontakt z działem IT** karty są aktualizowane w celu poprawienia czytelności.
+  - Kolory: Nagłówków karty w portalu firmy mają kolor zdefiniowany IT marki.
+  - Aplikacje: W **aplikacje** karcie **polecane aplikacje** i **wszystkie aplikacje** przyciski zostały zaktualizowane.
+  - Wyszukiwania: W **aplikacje** karcie **wyszukiwania** przestawne przycisku akcji jest przycisk.
+  - Nawigowanie po aplikacji: **Wszystkie aplikacje** widok przedstawia widok z kartami **proponowanym**, **wszystkie**, i **kategorii** ułatwiające nawigację.
+  - Pomoc techniczna: **Moje urządzenia** i **kontakt z działem IT** karty są aktualizowane w celu zwiększenia czytelności.
 
-  Aby uzyskać więcej informacji o tych zmianach, zobacz [aktualizacje interfejsu użytkownika dla aplikacji użytkownika końcowego Intune](/intune/whats-new/whats-new-in-intune-app-ui).
+  Aby uzyskać więcej informacji na temat tych zmian, zobacz [aktualizacje interfejsu użytkownika dla aplikacji użytkownika końcowego Intune](/intune/whats-new/whats-new-in-intune-app-ui).
 
-- **Podpisywanie skryptu dla portalu firmy systemu Windows 10**
+- **Podpisywanie skryptów dla aplikacji Portal firmy systemu Windows 10**
 
-  W razie potrzeby pobrać i ładowanie bezpośrednie aplikacji Portal firmy dla systemu Windows 10 można teraz używać skryptu uprościć i uprościć proces podpisywania aplikacji w Twojej organizacji.  Aby pobrać skrypt i instrukcje dotyczące korzystania z niego, zobacz [podpisywania skryptów dla systemu Windows 10 Portal firmy Microsoft Intune](https://aka.ms/win10cpscript) w galerii TechNet. Więcej szczegółów dotyczących tego powiadomienia, zobacz [aktualizacji aplikacji Portal firmy dla systemu Windows 10](https://blogs.technet.microsoft.com/intunesupport/2017/03/13/updating-your-windows-10-company-portal-app/) na blogu zespołu pomocy technicznej usługi Intune.
+  Jeśli potrzebujesz do pobierania i ładować bezpośrednio aplikację Portal firmy dla systemu Windows 10, teraz umożliwia skrypt uprościć i usprawnić proces podpisywania aplikacji w Twojej organizacji.  Aby pobrać skrypt oraz instrukcje dotyczące korzystania z niego, zobacz [podpisywania skryptów dla systemu Windows 10 Portal firmy Microsoft Intune](https://aka.ms/win10cpscript) w galerii TechNet. Aby uzyskać więcej szczegółów dotyczących tego anonsu, zobacz [aktualizowanie aplikacji Portal firmy dla systemu Windows 10](https://blogs.technet.microsoft.com/intunesupport/2017/03/13/updating-your-windows-10-company-portal-app/) na blogu zespołu pomocy technicznej usługi Intune.
 
-- **Ulepszona obsługa systemu Android użytkowników na podstawie w Chinach**
+- **Ulepszona obsługa użytkowników systemu Android na podstawie w Chinach**
 
-  Z powodu braku sklepu Google Play w Chinach urządzeń z systemem Android musi uzyskać aplikacje z rynków chińskiego. Portal firmy będzie obsługiwać ten przepływ pracy dzięki przekierowaniu użytkowników systemu Android w Chinach pobierania aplikacji portalu firmy i Outlook z lokalnych sklepów z aplikacjami. Zwiększy interfejsu użytkownika po włączeniu zasady dostępu warunkowego zarówno dla zarządzania urządzeniami przenośnymi i zarządzania aplikacjami mobilnymi. Portal firmy i Outlook aplikacje dla systemu Android są dostępne w następujących chińskiego sklepów:
+  Z powodu braku sklepu Google Play w Chinach urządzenia z systemem Android musi uzyskać aplikacje z języka chińskiego rynków. Portal firmy będzie obsługiwać ten przepływ pracy dzięki przekierowaniu użytkowników systemu Android w Chinach pobrania aplikacji Portal firmy i Outlook z magazynów lokalnych aplikacji. Zwiększy środowisko użytkownika po włączeniu zasady dostępu warunkowego do zarządzania urządzeniami przenośnymi i zarządzania aplikacjami mobilnymi. Aplikacji portalu firmy i Outlook dla systemu Android są dostępne w następujących przechowywanych w chińskiej wersji językowej aplikacji:
 
-  - [Baidu](https://go.microsoft.com/fwlink/?linkid=836946)
+  - [Usługi Baidu](https://go.microsoft.com/fwlink/?linkid=836946)
   - [Xiaomi](https://go.microsoft.com/fwlink/?linkid=836947)
   - [Tencent](https://go.microsoft.com/fwlink/?linkid=836949)
   - [Huawei](https://go.microsoft.com/fwlink/?linkid=836948)
   - [Wandoujia](https://go.microsoft.com/fwlink/?linkid=836950)
 
-- **Upewnij się, że aplikacji portalu firmy są aktualne**
+- **Upewnij się, że w aplikacji Portal firmy są aktualne**
 
-  W 2016 grudnia opublikowano aktualizację włączone wymuszania dla uwierzytelnianie wieloskładnikowe (MFA) na grupę użytkowników ich rejestracji, iOS, Android, Windows 8.1 + lub urządzenia Windows Phone 8.1 +. Ta funkcja nie może pracować bez niektóre wersje podstawy aplikacji Portal firmy dla systemu Android (v5.0.3419.0 +) i iOS (v2.1.17 +).
+  W grudnia 2016 r., firma Microsoft opublikowała aktualizacji, która umożliwiała wymuszania uwierzytelnianie wieloskładnikowe (MFA) w grupie użytkowników podczas rejestracji systemu iOS, Android, Windows 8.1 + lub urządzenia Windows Phone 8.1 +. Ta funkcja nie może działać bez określonych wersji linii bazowej w aplikacji Portal firmy dla systemu Android (v5.0.3419.0 +) i iOS (v2.1.17 +).
 
-  Możliwości zarządzania w usłudze Intune są stale poprawianie i wiele ulepszeń mają koordynowany aktualizacje aplikacji portalu firmy na wszystkich obsługiwanych platformach. W związku z tym firma Microsoft zaleca zachowywanie najnowsze wersje aplikacji Portal firmy zainstalowany na urządzeniach, aby wykorzystać ulepszenia w usłudze Intune i najlepsze środowisko użytkownika.
+  Możliwości zarządzania usługi Intune są stale poprawy i wiele ulepszeń ma koordynowane aktualizacje aplikacji portalu firmy na wszystkich obsługiwanych platformach. W związku z tym zaleca się utrzymywanie najnowsze wersje aplikacji Portal firmy zainstalowanych na urządzeniach, aby korzystając z usprawnień w usłudze Intune i aby uzyskać najlepsze środowisko użytkownika.
 
   >[!Tip]
-  > Ma ustawić swoje urządzenia do automatycznego aktualizowania aplikacji ze sklepu z aplikacjami odpowiednich użytkowników. Jeśli udostępnione w aplikacji Portal firmy systemu Android w udziale sieciowym, możesz pobrać najnowszą wersję ze [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=49140).
+  > Ma ustawić swoje urządzenia do automatycznego aktualizowania aplikacji ze sklepu z aplikacjami odpowiednich użytkowników. Jeśli udostępnione w aplikacji Portal firmy dla systemu Android w udziale sieciowym, możesz pobrać najnowszą wersję ze [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=49140).
 
-- **Teams firmy Microsoft jest teraz włączone dla MAM iOS i Android**
+- **Teams firmy Microsoft jest teraz włączony do zarządzania aplikacjami Mobilnymi w systemach iOS i Android**
 
-  Aplikacje Teams firmy Microsoft dla systemów iOS i Android są włączone z funkcjami zarządzania (MAM) aplikacji mobilnej Intune, więc dają możliwość zespołom swobodnie pracy na urządzeniach, przy jednoczesnym zapewnieniu konwersacji i danych firmowych jest chroniony na każdy ruch. Aby uzyskać więcej informacji, zobacz [anons Teams firmy Microsoft](https://blogs.technet.microsoft.com/enterprisemobility/2017/03/14/microsoft-teams-is-now-generally-available-and-mam-enabled-on-ios-and-android/) na blogu mobilności przedsiębiorstwa i zabezpieczeń.
+  Aplikacje Teams firmy Microsoft dla systemu iOS i Android teraz są włączone dla funkcji zarządzania (aplikacjami mobilnymi MAM) aplikacji mobilnej usługi Intune, więc dają możliwość zespołów pracę za darmo na urządzeniach, przy jednoczesnym zapewnieniu konwersacje i danych firmowych jest chroniony w każdym Włącz. Aby uzyskać więcej informacji, zobacz [anons Teams Microsoft](https://blogs.technet.microsoft.com/enterprisemobility/2017/03/14/microsoft-teams-is-now-generally-available-and-mam-enabled-on-ios-and-android/) w blogu dotyczącym pakietu Enterprise Mobility i zabezpieczeń.
 
-### <a name="new-in-configuration-manager-technical-preview-1703"></a>Nowością w programie Configuration Manager Technical Preview 1703
+### <a name="new-in-configuration-manager-technical-preview-1703"></a>Nowość w programie Configuration Manager Technical Preview 1703
 
-- **Dodatkowa obsługa scenariuszy programu zakupów firmy Apple woluminu**
+- **Dodatkowe wsparcie dla scenariuszy programu Apple Volume Purchase Program**
 
-   Począwszy od Technical Preview 1703, masz teraz obsługę w następujących scenariuszach Program zakupu woluminu (VPP):
+   Począwszy od Technical Preview 1703, masz teraz obsługę w następujących scenariuszach Volume Purchase Program (VPP):
 
-   - Urządzenie licencjonowania — aplikacje, które obsługują licencjonowania urządzeń i zostaną wdrożone do kolekcji urządzeń będzie wymagać tylko jedną licencję na urządzenie.  Wcześniej konieczne było użycie licencji dla każdego użytkownika na urządzeniu. Aby uzyskać więcej informacji, zobacz [wdrażanie aplikacji iOS kupionymi woluminu do kolekcji urządzeń](/sccm/core/get-started/capabilities-in-technical-preview-1703#deploy-volume-purchased-ios-apps-to-device-collections).
-   - Używanie wielu tokenów VPP dzierżawcy hybrydowe jednego z obu tokeny używanym do zarządzania aplikacji VPP.
-   - Użycie tokenów VPP edukacji umożliwia rozróżnienie działalności biznesowej i edukacja tokenów.
+   - Urządzenie licencjonowania — aplikacje, które obsługują Licencjonowanie urządzenia i wdrożonych do kolekcji urządzeń będzie wymagać tylko jedną licencję na urządzenie.  Wcześniej można było korzystać z licencji dla każdego użytkownika na urządzeniu. Aby uzyskać więcej informacji, zobacz [wdrażać aplikacje dla systemu iOS zakupionymi zbiorczo w kolekcjach urządzeń](/sccm/core/get-started/capabilities-in-technical-preview-1703#deploy-volume-purchased-ios-apps-to-device-collections).
+   - Użycie wielu tokenów VPP do dzierżawy hybrydowego jednego z oba tokeny używane do zarządzania aplikacje programu VPP.
+   - Użycie tokenów VPP education możliwość rozróżnienia tokeny działalności biznesowej i education.
 
-### <a name="new-in-configuration-manager-current-branch"></a>Nowe w programie Configuration Manager (bieżącej gałęzi)
+### <a name="new-in-configuration-manager-current-branch"></a>Nowe w programie Configuration Manager (wersji current branch)
 
-Następujące funkcje, które wcześniej były dostępne w wersji Technical Preview programu Configuration Manager są teraz dostępne we wdrożeniach hybrydowych za pomocą usługi Intune i program Configuration Manager (bieżącej gałęzi) wersja 1702.
+Następujące funkcje, które były wcześniej dostępne w wersjach Configuration Manager Technical Preview są teraz dostępne w przypadku hybrydowych wdrożeń z usługi Intune i program Configuration Manager (wersji current branch) wersja 1702.
 
-- [Android obsługi pracy](/sccm/core/plan-design/changes/whats-new-in-version-1702##android-for-work-support)
-- [Ustawienia zgodności niezgodnych aplikacji.](/sccm/core/plan-design/changes/whats-new-in-version-1702#conditional-access-device-compliance-policy-improvements)
-- [Utworzenie certyfikatu PFX i dystrybucji oraz obsługa szyfrowania S/MIME](/sccm/core/plan-design/changes/whats-new-in-version-1702#improvements-to-certificate-profiles)
-- [Android i iOS wersje nie są już targetable w kreatorze tworzenia hybrydowe MDM](/sccm/core/plan-design/changes/whats-new-in-version-1702#android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm)
+- [Android obsługę pracy](/sccm/core/plan-design/changes/whats-new-in-version-1702##android-for-work-support)
+- [Ustawienia zgodności niezgodnych aplikacji](/sccm/core/plan-design/changes/whats-new-in-version-1702#conditional-access-device-compliance-policy-improvements)
+- [Utworzenie certyfikatu PFX i dystrybucji i obsługa szyfrowania S/MIME](/sccm/core/plan-design/changes/whats-new-in-version-1702#improvements-to-certificate-profiles)
+- [Wersje systemów android i iOS nie są już targetable w kreatorach tworzenia dla hybrydowego zarządzania urządzeniami Przenośnymi](/sccm/core/plan-design/changes/whats-new-in-version-1702#android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm)
 
-Następujące funkcje dodatkowe hybrydowe znajdują się również w wersji 1702 programu Configuration Manager (bieżącej gałęzi):
+Następujące funkcje dodatkowe hybrydowego znajdują się również w wersji 1702 programu Configuration Manager (wersji current branch):
 
-- **Ulepszona obsługa dla woluminu Program zakupu (VPP) firmy Apple**
+- **Ulepszona obsługa dla Apple Volume Purchase Program (VPP)**
 
-  - Teraz można wdrożyć licencjonowane aplikacje na urządzeniach, jak i użytkowników. W zależności od funkcji aplikacji do obsługi urządzeń licencjonowania odpowiedniej licencji będzie wymagana podczas wdrażania, w następujący sposób:
+  - Teraz można wdrożyć licencjonowane aplikacje na urządzeniach, jak i użytkowników. W zależności od aplikacji możliwość obsługi urządzenia licencjonowania odpowiednią licencję będzie wymagana, wdrażając go w następujący sposób:
 
-    | Wersja programu Configuration Manager | Aplikacja obsługuje licencjonowania urządzenia? | Typ kolekcji wdrożenia | Oświadczeniem licencji |
+    | Wersja programu Configuration Manager | Aplikacja obsługuje licencjonowania urządzeń? | Typ kolekcji wdrażania | Oświadczeniem licencji |
     |-|-|-|-|
-    |Starsze niż 1702|Tak|Użytkownik|Licencja użytkownika|
-    |Starsze niż 1702|Nie|Użytkownik|Licencja użytkownika|
-    |Starsze niż 1702|Tak|Urządzenie|Licencja użytkownika|
-    |Starsze niż 1702|Nie|Urządzenie|Licencja użytkownika|
+    |Wcześniejsza niż 1702|Tak|Użytkownik|Licencja użytkownika|
+    |Wcześniejsza niż 1702|Nie|Użytkownik|Licencja użytkownika|
+    |Wcześniejsza niż 1702|Tak|Urządzenie|Licencja użytkownika|
+    |Wcześniejsza niż 1702|Nie|Urządzenie|Licencja użytkownika|
     |1702 i nowsze|Tak|Użytkownik|Licencja użytkownika|
     |1702 i nowsze|Nie|Użytkownik|Licencja użytkownika|
-    |1702 i nowsze|Tak|Urządzenie|Licencję urządzenia|
+    |1702 i nowsze|Tak|Urządzenie|Licencja urządzenia|
     |1702 i nowsze|Nie|Urządzenie|Licencja użytkownika|
 
-  - Teraz można również wdrażać i śledzić aplikacji uzyskany z iOS Program zakupu zbiorczej dla instytucji edukacyjnych.
+  - Teraz można również wdrożyć i śledzenie aplikacji, które zostały zakupione od iOS Volume Purchase Program dla instytucji edukacyjnych.
 
-  - Można teraz skojarzyć wiele tokenów program zakupu woluminu Apple z programu Configuration Manager.
+  - Teraz można skojarzyć wiele tokenów program zakupów zbiorczych firmy Apple z programem Configuration Manager.
 
-  Aby uzyskać więcej informacji o aplikacjach iOS kupionymi woluminu, zobacz [zarządzania aplikacjami zakupione woluminu iOS](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps).
+  Aby uzyskać więcej informacji o aplikacji dla systemu iOS zakupionymi zbiorczo, zobacz [Zarządzanie aplikacjami zakupionymi zbiorczo systemu iOS](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps).
 
 - **Obsługa aplikacji biznesowych w Sklepie Windows dla firm**
 
   Niestandardowe aplikacje biznesowe w Sklepie Windows dla firm mogą teraz synchronizować.
 
-- **Przed zagrożeniami Mobile nowe narzędzia do monitorowania**
+- **Nowe przed zagrożeniami Mobile narzędzia do monitorowania**
 
-    Ma teraz mają nowe możliwości monitorowania stanu zgodności z dostawcą usług przed zagrożeniami Mobile.
+    Ma teraz mają nowe możliwości monitorowania stanu zgodności z dostawcą usług Mobile przed zagrożeniami.
 
-    Aby uzyskać więcej informacji, zobacz [sposób monitorowania zgodności przed zagrożeniami Mobile](/sccm/mdm/deploy-use/monitor-mobile-threat-defense-compliance).
+    Aby uzyskać więcej informacji, zobacz [sposobu monitorowania zgodności przed zagrożeniami Mobile](/sccm/mdm/deploy-use/monitor-mobile-threat-defense-compliance).
 
-## <a name="february-2017"></a>2017 lutego
+## <a name="february-2017"></a>Lutego 2017
 
 ### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune
 
-- **Modernizacji witryny internetowej portalu firmy**
+- **Modernizacji witryny sieci Web Portal firmy**
 
-  Witryna sieci Web portalu firmy obsługuje aplikacje, które są przeznaczone dla użytkowników, którzy nie mają zarządzanych urządzeń. Witryny sieci Web jest wyrównywany z innych produktów firmy Microsoft i usług przy użyciu nowego schematu kolorów kontrastujące, ilustracje dynamiczne i "menu hamburger,", która zawiera szczegóły dotyczące kontaktu z pomocą techniczną oraz informacje o istniejących zarządzanych urządzeń. Strona docelowa jest grupowany podkreślenie aplikacje, które są dostępne dla użytkowników, którzy carousels dla aplikacji duży i niedawno zaktualizowany. Można znaleźć przed i po obrazów dostępnych na [aktualizacje interfejsu użytkownika](/intune/whats-new/whats-new-in-intune-app-ui) strony.
+  Witryny sieci Web Portal firmy obsługuje aplikacje, które są przeznaczone dla użytkowników, którzy nie mają zarządzanych urządzeń. Witryny sieci Web była zgodna z innymi usługami i produktami firmy Microsoft przy użyciu nowego kontrastujące schemat kolorów, dynamiczne ilustracje i "menu hamburger,", która zawiera szczegóły dotyczące kontaktu z pomocą techniczną oraz informacje o istniejących urządzeń zarządzanych. Strona docelowa jest grupowany do wyróżnienia aplikacje, które są dostępne dla użytkowników, którzy carousels dla aplikacji duży i niedawno aktualizowana. Można znaleźć przed i po dostępnych obrazów na [aktualizacje interfejsu użytkownika](/intune/whats-new/whats-new-in-intune-app-ui) strony.
 
-- **Nowy adres serwera MDM dla urządzeń z systemem Windows**
+- **Nowy adres serwera zarządzania urządzeniami Przenośnymi dla urządzeń z systemem Windows**
 
-  Adres serwera MDM rejestrowania urządzeń z systemem Windows i Windows Phone zmienił się z manage.microsoft.com enrollment.manage.microsoft.com. Powiadom użytkownika do używania enrollment.manage.microsoft.com jako adres serwera MDM, jeśli zostanie wyświetlony monit o jej podczas rejestrowania systemu Windows lub i urządzeń Windows Phone. Ta aktualizacja wymaga również wszelkich CNAME w systemie DNS, który przekierowuje domenę EnterpriseEnrollment.contoso.com do manage.microsoft.com być zastąpiona rekord CNAME w systemie DNS, który przekierowuje domenę EnterpriseEnrollment.contoso.com do EnterpriseEnrollment-s.manage.microsoft.com. Aby uzyskać dodatkowe informacje o tej zmianie odwiedź stronę http://aka.ms/intuneenrollsvrchange.
+  Adres serwera MDM związane z rejestrowaniem urządzeń z systemem Windows i Windows Phone zmienił się z manage.microsoft.com enrollment.manage.microsoft.com. Powiadom użytkownika do używania enrollment.manage.microsoft.com jako adres serwera MDM, jeśli wyświetlony monit o jej podczas rejestrowania systemu Windows lub i urządzeń Windows Phone. Ta aktualizacja wymaga również wszystkie CNAME w systemie DNS, który przekierowuje domenę EnterpriseEnrollment.contoso.com do domeny manage.microsoft.com być zastąpiona rekord CNAME w systemie DNS, który przekierowuje domenę EnterpriseEnrollment.contoso.com do domeny EnterpriseEnrollment-s.manage.microsoft.com. Aby uzyskać dodatkowe informacje o tej zmianie odwiedź stronę http://aka.ms/intuneenrollsvrchange.
 
-### <a name="new-in-configuration-manager-technical-preview-1702"></a>Nowością w programie Configuration Manager Technical Preview 1702
+### <a name="new-in-configuration-manager-technical-preview-1702"></a>Nowość w programie Configuration Manager Technical Preview 1702
 
-- **Android obsługi pracy**
+- **Android obsługę pracy**
 
-  Teraz można zarządzać za pomocą Android do pracy w środowiskach hybrydowych MDM, przy użyciu konfiguracji Menedżera Technical Preview 1702 urządzenia z systemem Android. Obsługiwane urządzenia z systemem Android można rejestrować teraz jako Android pracy urządzeń, które tworzy profil pracy na urządzeniu, do którego można wdrożyć aplikacje zatwierdzone Play pracy. Można również skonfigurować i wdrożyć elementy konfiguracji, zasady zgodności i profilów dostępu do zasobów dla tych urządzeń. Aby uzyskać więcej informacji, zobacz [Android obsługę pracy](/sccm/core/get-started/capabilities-in-technical-preview-1702#android-for-work-support).
+  Możesz teraz zarządzać urządzeniami z systemem Android przy użyciu systemu Android do pracy w środowiskach hybrydowych zarządzania urządzeniami Przenośnymi, za pomocą konfiguracji Manager Technical Preview 1702. Obsługiwane są urządzenia z systemem Android można teraz je zarejestrować jako Android pracy urządzeń, które tworzy profil pracy na urządzeniu, do którego można wdrożyć aplikacji zatwierdzone Play do pracy. Można również skonfigurować i wdrożyć elementy konfiguracji, zasady zgodności i profilów dostępu do zasobów dla tych urządzeń. Aby uzyskać więcej informacji, zobacz [Android obsługę pracy](/sccm/core/get-started/capabilities-in-technical-preview-1702#android-for-work-support).
 
-- **Ustawienia zgodności niezgodnych aplikacji.**
+- **Ustawienia zgodności niezgodnych aplikacji**
 
-  Obecnie można tworzyć reguły niezgodnych aplikacji dla aplikacji Android i iOS w ramach zasad zgodności. Jeśli urządzenia mają określone aplikacje zainstalowane, zostaną oznaczone jako "niezgodnych" i spowoduje utratę dostępu do zasobów firmy, zgodnie z zasadami dostępu warunkowego w miejscu. Aby uzyskać więcej informacji [ulepszenia zasady zgodności urządzeń dostępu warunkowego](/sccm/core/get-started/capabilities-in-technical-preview-1702#conditional-access-device-compliance-policy-improvements).
+  Reguły niezgodnych aplikacji dla aplikacji systemu Android i iOS można teraz utworzyć w zasadach zgodności. Jeśli urządzenia mają określonych aplikacji, które są zainstalowane, zostaną oznaczone jako "niezgodnych" i utracisz dostęp do zasobów firmy zgodnie z zasadami dostępu warunkowego. Aby uzyskać więcej informacji [ulepszenia zasad zgodności urządzenia dostępu warunkowego](/sccm/core/get-started/capabilities-in-technical-preview-1702#conditional-access-device-compliance-policy-improvements).
 
-- **Utworzenie certyfikatu PFX i dystrybucji oraz obsługa szyfrowania S/MIME**
+- **Utworzenie certyfikatu PFX i dystrybucji i obsługa szyfrowania S/MIME**
 
-  Teraz można tworzyć i wdrażać certyfikaty PFX dla użytkowników w środowisku hybrydowym. Tych certyfikatów można następnie używane S/MIME e-mail szyfrowania i odszyfrowywania urządzeń zarejestrowanych przez użytkownika. Aby uzyskać więcej informacji, zobacz [obsługuje certyfikaty PFX utworzyć z S MIME](/sccm/core/get-started/capabilities-in-technical-preview-1702#create-pfx-certificates-with-s-mime-support).
+  Teraz można tworzyć i wdrażać certyfikaty PFX dla użytkowników w środowisku hybrydowym. Tych certyfikatów można następnie używane do szyfrowania S/MIME poczty e-mail i odszyfrowywania przez urządzenia, które użytkownik zarejestrował. Aby uzyskać więcej informacji, zobacz [obsługuje tworzenie PFX certyfikatów przy użyciu S MIME](/sccm/core/get-started/capabilities-in-technical-preview-1702#create-pfx-certificates-with-s-mime-support).
 
-- **Obsługa iOS dodatkowe ustawienia konfiguracji**
+- **Obsługa systemu iOS dodatkowe ustawienia konfiguracji**
    
-    Masz teraz 42 ustawienia dodatkowe systemu iOS, które można skonfigurować w ramach pozycji konfiguracji. Dla urządzeń z systemem iOS nadzorowanego zostały dodane większość ustawień (35 we wszystkich). Aby uzyskać więcej informacji, zobacz [nowe ustawienia zgodności dla urządzeń z systemem iOS](/sccm/core/get-started/capabilities-in-technical-preview-1702#new-compliance-settings-for-ios-devices).
+    Masz teraz 42 ustawienia dodatkowe systemu iOS, które można skonfigurować w ramach elementu konfiguracji. W przypadku urządzeń nadzorowanych iOS zostały dodane większość ustawień (35 we wszystkich). Aby uzyskać więcej informacji, zobacz [nowe ustawienia zgodności dla urządzeń z systemem iOS](/sccm/core/get-started/capabilities-in-technical-preview-1702#new-compliance-settings-for-ios-devices).
 
-## <a name="january-2017"></a>2017 stycznia
+## <a name="january-2017"></a>Stycznia 2017 r
 
 ### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune
 
 - **Obsługuje 7.1.1 systemu android**
 
-  Intune teraz w pełni obsługuje i zarządza Android 7.1.1.
+  Usługa Intune teraz w pełni obsługuje i zarządza 7.1.1 systemu Android.
 
-- **Rozwiąż problem, gdzie urządzenia z systemem iOS nie są aktywne lub konsoli administracyjnej nie może komunikować się z nimi**
+- **Rozwiąż problem, gdy urządzenia z systemem iOS są nieaktywne lub konsoli administracyjnej nie mogą komunikować się z nimi**
 
-  Gdy urządzenia użytkowników traci kontaktu z usługą Intune, można przekazać nowy kroki rozwiązywania problemów, aby pomóc w odzyskaniu dostępu do zasobów firmy. Zobacz [urządzenia są aktywne, lub konsoli administracyjnej nie może komunikować się z nimi](/intune/troubleshoot/troubleshoot-device-enrollment-in-intune#devices-are-inactive-or-the-admin-console-cannot-communicate-with-them).
+  Gdy urządzenia użytkowników utraci kontaktu z usługą Intune, można przekazać nowy kroki rozwiązywania problemów, aby pomóc w odzyskaniu dostępu do zasobów firmy. Zobacz [urządzenia są nieaktywne lub konsoli administracyjnej nie mogą komunikować się z nimi](/intune/troubleshoot/troubleshoot-device-enrollment-in-intune#devices-are-inactive-or-the-admin-console-cannot-communicate-with-them).
 
-### <a name="new-in-configuration-manager-technical-preview-1701"></a>Nowością w programie Configuration Manager Technical Preview 1701
+### <a name="new-in-configuration-manager-technical-preview-1701"></a>Nowość w programie Configuration Manager Technical Preview 1701
 
-- **Android i iOS wersje nie są już targetable w kreatorze tworzenia hybrydowe MDM**
+- **Wersje systemów android i iOS nie są już targetable w kreatorach tworzenia dla hybrydowego zarządzania urządzeniami Przenośnymi**
 
-  Począwszy od Technical Preview 1701 dla hybrydowego zarządzania urządzeniami przenośnymi (MDM), nie jest już konieczne docelowych określonych wersji Android i iOS przy tworzeniu nowych zasad i profile dla urządzeń zarządzanych przez usługę Intune. Z tą zmianą wdrożenia hybrydowego można zapewnić obsługę szybciej nowe wersje Android i iOS bez konieczności nowej wersji programu Configuration Manager lub rozszerzenia. Aby dowiedzieć się więcej, zobacz temat [Android i iOS wersje nie są już targetable w kreatorach tworzenia](/sccm/core/get-started/capabilities-in-technical-preview-1701#android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm).
-
-
-## <a name="december-2016"></a>2016 grudnia
-
-### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune
-
-- **Uwierzytelnianie wieloskładnikowe (MFA) na rejestracji jest przenoszony do portalu Azure**
-
-  Wcześniej czy przejdź do konsoli usługi Intune lub konsoli programu Configuration Manager do ustawiania MFA rejestracje Intune. Ta funkcja zaktualizowane, możesz teraz logowania [portalu Microsoft Azure] (https://manage.windowsazure.com) przy użyciu programu Intune poświadczenia i skonfiguruj ustawienia uwierzytelniania Wieloskładnikowego za pomocą usługi Azure AD. Aby dowiedzieć się więcej, zobacz [uwierzytelnianie wieloskładnikowe dla Microsoft Intune] (https://aka.ms/mfa_ad).
-
-- **Aplikacja Portal firmy dla systemu Android jest teraz dostępny w Chinach**
-
-  Aplikacja Portal firmy dla systemu Android jest teraz dostępny w Chinach. Z powodu braku sklepu Google Play w Chinach urządzeń z systemem Android należy uzyskać aplikacji z rynków chińskiego aplikacji. Aplikacja Portal firmy dla systemu Android jest dostępny do pobrania w następujących magazynów:
-
-  -    [Baidu](https://go.microsoft.com/fwlink/?linkid=836946)
-  -    [Huawei](https://go.microsoft.com/fwlink/?linkid=836948)
-  -    [Tencent](https://go.microsoft.com/fwlink/?linkid=836949)
-  -    [Wandoujia](https://go.microsoft.com/fwlink/?linkid=836950)
-  -    [Xiaomi](https://go.microsoft.com/fwlink/?linkid=836947)
-
-  Aplikacja Portal firmy dla systemu Android używa Google Play usług do komunikowania się z usługą Microsoft Intune. Ponieważ Google Play usług nie są jeszcze dostępne w Chinach, wykonywania następujących zadań może zająć do 8 godzin.
-
-  | Konsola administracyjna programu Configuration Manager | Aplikacja portalu firmy w usłudze Intune dla systemu Android | Witryny sieci Web portalu firmy usługi Intune |
-  |----|----|----|        
-  | Wycofaj/Wyczyść (Usuń wszystkie dane)    | Usuń urządzenie zdalne | Usuwanie urządzenia (lokalne i zdalne) |
-  | Wycofaj/Wyczyść (Usuń dane firmy)    | Resetowanie urządzenia | Resetowanie urządzenia|
-  | Wdrażanie nowych lub zaktualizowanych aplikacji | Instalowanie aplikacji biznesowych — dostępne | Resetowanie kodu dostępu urządzenia|
-  | Zdalne blokowanie    | | |
-  | Resetowanie kodu dostępu | | |        
+  Począwszy od Technical Preview 1701 hybrydowego zarządzania urządzeniami przenośnymi (MDM), nie trzeba docelowych określonych wersji systemu Android i iOS, podczas tworzenia nowych zasad i profilów dla urządzeń zarządzanych przez usługę Intune. Dzięki tej zmianie hybrydowych wdrożeń można zapewnić obsługę szybciej nowe wersje systemów Android i iOS bez konieczności nową wersję programu Configuration Manager lub rozszerzenia. Aby dowiedzieć się więcej, zobacz [wersji systemów Android i iOS nie są już targetable w kreatorach tworzenia](/sccm/core/get-started/capabilities-in-technical-preview-1701#android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm).
 
 
-## <a name="november-2016"></a>Listopad 2016
+## <a name="notices"></a>Powiadomienia
 
-### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune
+### <a name="system-center-2012-configuration-sp1-and-system-center-2012-r2-configuration-manager-rtm-support-for-hybrid-mobile-device-management-ending-on-april-10-2017"></a>Konfiguracja programu System Center 2012 SP1 i System Center 2012 R2 Configuration Manager (RTM): Obsługa hybrydowego zarządzania urządzeniami przenośnymi kończą się 10 kwietnia 2017 r.
 
-- **Portal nowe firmy Microsoft Intune dostępnych dla urządzeń z systemem Windows 10**
+*11 stycznia 2017 r.*
 
-  Firma Microsoft wydała nowy [aplikacji Portal firmy dla urządzeń z systemem Windows 10](https://www.microsoft.com/store/apps/9wzdncrfj3pz). Tej aplikacji, która korzysta z nowego formatu Windows 10 uniwersalnych zapewnia środowisko użytkownika zaktualizowane identyczne na wszystkich urządzeniach z systemem Windows 10, PC i Mobile podobne jednoczesnym nadal te same funkcje zapewniane przez poprzednie aplikacji portalu firmy.
+Obsługa programu System Center 2012 Configuration Manager SP1 i System Center 2012 R2 Configuration Manager RTM zakończona w dniu 12 lipca 2016 r. Następnie obsługę tych wersji łączenie z Microsoft Intune usługi dla hybrydowego zarządzania urządzeniami Przenośnymi kończy się 10 kwietnia 2017 r. Po tej dacie hybrydowego zarządzania urządzeniami Przenośnymi przestanie działać z tych wersji. Zarządzane urządzenia zasadniczo staną się Niezarządzani zgodnie z łącznika usługi Intune połączy się już w usłudze Intune. Dane programu Configuration Manager (takich jak zasady i aplikacje) nie będą przepływać do usługi Intune i dane zarządzanych urządzeń nie będą przepływać do programu Configuration Manager do momentu uaktualnienia ma miejsce.
 
-  Nową aplikację korzysta z funkcji platformy, takich jak logowania jednokrotnego (SSO) i uwierzytelniania opartego na certyfikatach na urządzeniach z systemem Windows 10. Aplikacja jest dostępna jako uaktualnienie istniejącego portalu firmy Windows 8.1 i instaluje Portal firmy systemu Windows Phone 8.1 w Sklepie Windows. Aby uzyskać więcej informacji, przejdź do [Blog zespołu pomocy technicznej usługi Intune](http://aka.ms/intunecp_universalapp).
-
-  Nowa aplikacja Portal firmy jest również wyświetlana dowolnego magazynu systemu Windows dla aplikacji biznesowych oznaczone **dostępne** w konsoli programu Configuration Manager.
-
-
-### <a name="new-in-configuration-manager-current-branch"></a>Nowe w programie Configuration Manager (bieżącej gałęzi)
-
-Następujące funkcje, które wcześniej były dostępne w wersji Technical Preview programu Configuration Manager są teraz dostępne we wdrożeniach hybrydowych za pomocą usługi Intune i program Configuration Manager (bieżącej gałęzi) wersja 1610.
-
-* [Dodatkowe ustawienia i udoskonalone środowisko dla elementów konfiguracji](/sccm/core/plan-design/changes/whats-new-in-version-1610#new-compliance-settings-for-configuration-items)
-* [Dodatkowe ustawienia profilów DEP](whats-new-hybrid-archive.md#new-in-configuration-manager-technical-preview-1609)
-* [Płatną aplikacji w Sklepie Windows dla firm](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)
-* [Typy połączeń macierzystego dla profilów sieci VPN systemu Windows 10](whats-new-hybrid-archive.md#new-in-configuration-manager-technical-preview-1609)
-* [Wykresy zgodności Intune](/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy)
-* [Żądanie zasad synchronizacji z konsoli](/sccm/mdm/deploy-use/sync-intune-device)
-* [Ustawienia konfiguracji usługi Windows Defender](/sccm/compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client#windows-defender)
-
-Następujące funkcje dodatkowe hybrydowe znajdują się również w wersji 1610 programu Configuration Manager (bieżącej gałęzi):
-
-- **Zwiększenie liczby zarejestrowanych urządzeń**
-
-  Teraz można umożliwić użytkownikom rejestrowanie urządzeń do 15. Poprzednie limit został 5 urządzeń dla poszczególnych użytkowników.
-
-
-- **Obsługa zabezpieczeń drukarkach**
-
-  Oprócz pełny Administrator następujące wbudowanych ról zabezpieczeń teraz mają pełny dostęp do elementów w węźle wszystkich urządzeń firmowych, w tym urządzeń Predeclared, profile rejestracji systemu iOS i profilami rejestracji systemu Windows:
-
-    - Menedżer zasobów
-    - Menedżer dostępu do zasobów firmy
-
-  Tylko do odczytu do tych obszarów konsoli programu Configuration Manager nadal dostęp do roli analityk z uprawnieniami tylko do odczytu.
-
-- **Wyzwalacz automatycznego dostępu do sieci VPN z aplikacji systemu Windows o ochronie informacji**
-
-  Domeny głównej ochrony informacji systemu Windows można dodać do profilów sieci VPN systemu Windows 10, które powoduje, że wszystkie aplikacje skojarzone automatycznie wyzwalać połączenia sieci VPN, gdy są uruchamiane na urządzeniu. Ta opcja jest dostępna tylko w przypadku wybierania typu macierzystego połączenia.
-
-- **Funkcja dostępu warunkowego dla profilów sieci VPN systemu Windows 10**
-
-    Możesz teraz wymagać systemu Windows 10 urządzeń zarejestrowanych w usłudze Azure Active Directory zgodności w celu dostępu do sieci VPN za pomocą profili sieci VPN systemu Windows 10 utworzone w konsoli programu Configuration Manager. Można to zrobić za pomocą nowej **Włącz dostęp warunkowy dla tego połączenia VPN** pole wyboru na stronie metodę uwierzytelniania w Kreatorze profilu sieci VPN i właściwości profilu sieci VPN dla profilów sieci VPN systemu Windows 10. Ta opcja jest dostępna tylko w przypadku wybierania typu macierzystego połączenia.
-
-    Można również określić osobny certyfikatu dla uwierzytelniania rejestracji jednokrotnej po włączeniu dostępu warunkowego dla profilu.
-
-
-## <a name="notices"></a>Uwagi
-
-### <a name="system-center-2012-configuration-sp1-and-system-center-2012-r2-configuration-manager-rtm-support-for-hybrid-mobile-device-management-ending-on-april-10-2017"></a>Konfiguracja programu System Center 2012 SP1 i System Center 2012 R2 Configuration Manager (RTM): Pomocy technicznej do zarządzania urządzeniami przenośnymi hybrydowe kończy się dnia 10 kwietnia 2017
-
-*11 stycznia 2017*
-
-Obsługa programu System Center 2012 Configuration Manager SP1 i System Center 2012 R2 Configuration Manager RTM upłynął 12 lipca 2016. Następnie obsługę tych wersjach, łączenie z Microsoft Intune usługi dla hybrydowego MDM kończy się na 10 kwietnia 2017. Po tej dacie hybrydowe MDM przestanie działać z tych wersji. Zarządzanych urządzeń zasadniczo być zarządzana, ponieważ łącznik usługi Intune nie jest już będą się łączyć z usługą Intune. Do usługi Intune nie będzie przepływu danych programu Configuration Manager (takich jak zasady i aplikacje) i urządzenia zarządzanego zostanie nie przepływ danych do programu Configuration Manager do momentu uaktualnienia ma miejsce.
-
-Jeśli wdrożenie hybrydowe korzystasz z programu Configuration Manager 2012 z dodatkiem SP1 lub R2 RTM, zaleca się przed 10 kwietnia 2017 uaktualnienie do programu Configuration Manager (bieżącej gałęzi) lub obsługiwaną poprawkę programu Configuration Manager 2012 (R2 z dodatkiem SP1 lub z dodatkiem SP2), aby uniknąć zakłóceń w działaniu usługi.
+Jeśli korzystasz z wdrożenia hybrydowego programu Configuration Manager 2012 z dodatkiem SP1 lub R2 RTM, zaleca się przed 10 kwietnia 2017 uaktualnienie do programu Configuration Manager (wersji current branch) lub obsługiwanych poprawkę programu Configuration Manager 2012 (R2 z dodatkiem SP1 lub z dodatkiem SP2), aby uniknąć przerw w działaniu usługi.
 
 Dodatkowe zasoby:
--    [Uaktualnienie programu System Center Configuration Manager (bieżącej gałęzi)](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager)
--    [Planowanie uaktualnienia do System Center 2012 R2 Configuration Manager SP1](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningR2SP1Upgrade)
--    [Planowanie uaktualnienia do programu System Center 2012 Configuration Manager SP2](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningSP2Upgrade)
+-   [Uaktualnij do System Center Configuration Manager (wersji current branch)](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager)
+-   [Planowanie uaktualnienia do systemu System Center 2012 R2 Configuration Manager SP1](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningR2SP1Upgrade)
+-   [Planowanie uaktualnienia do programu System Center 2012 Configuration Manager SP2](https://technet.microsoft.com/library/jj822981.aspx#BKMK_PlanningSP2Upgrade)
 
 ### <a name="windows-phone-8-company-portal-upload-deprecated"></a>Przestarzałe przekazywania Portal firmy systemu Windows Phone 8
-*25 października 2016*
+*25 października 2016 r.*
 
-Przekazywanie podpisanej aplikacji portalu firmy została usunięta z konsoli programu Configuration Manager jako pomocy technicznej usługi Intune jest przestarzałe i zastępowane dla systemu Windows 8, Windows Phone 8 i Windows RT i pomoc techniczna dla portalu firmy systemu Windows Phone 8 dobiega końca w listopadzie.  Urządzenia systemu Windows 8, Windows Phone 8 i Windows RT, które są już zarejestrowane w dalszym ciągu być obsługiwane, ale zarejestrowanie dodatkowych urządzeń z tych platform nie będą obsługiwane.
+Pomocy technicznej usługi Intune jest przestarzałe w systemie Windows 8, Windows Phone 8 i Windows RT i pomoc techniczna dla portalu firmy systemu Windows Phone 8 kończy się w listopadzie została usunięta możliwość Przekaż podpisaną aplikację Portal firmy z poziomu konsoli programu Configuration Manager.  Urządzenia z systemem Windows 8, Windows Phone 8 i Windows RT, które są już zarejestrowane będą w dalszym ciągu obsługiwany, ale rejestracji dodatkowych urządzeń z tych platform nie jest obsługiwana.
 
 
 ### <a name="see-also"></a>Zobacz też
 
-- [W przeszłości hybrydowe funkcje zarządzania urządzeniami Przenośnymi](whats-new-hybrid-archive.md)
-- [Nowości dotyczące zarządzania urządzeniami Przenośnymi w programie System Center 2012 Configuration Manager](https://technet.microsoft.com/library/mt445560.aspx)
+- [Poza hybrydowej funkcji MDM](whats-new-hybrid-archive.md)
+- [Nowości w oprogramowaniu MDM w programie System Center 2012 Configuration Manager](https://technet.microsoft.com/library/mt445560.aspx)
 

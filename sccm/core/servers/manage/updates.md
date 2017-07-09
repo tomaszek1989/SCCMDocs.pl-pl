@@ -1,6 +1,6 @@
 ---
 title: Aktualizacje | Dokumentacja firmy Microsoft
-description: "Więcej informacji na temat metody w konsoli usługi o nazwie **aktualizacji i obsługi** ułatwia do zlokalizowania i zalecane aktualizacje do zainstalowania."
+description: "Więcej informacji na temat metody obsługi w konsoli o nazwie ** aktualizacje i obsługa ** który można łatwo zlokalizować i zainstalować zalecane aktualizacje."
 ms.custom: na
 ms.date: 05/02/2017
 ms.prod: configuration-manager
@@ -17,45 +17,45 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
-ms.openlocfilehash: a33960fb89b71c0f8128e21a5054f5b63cfc6b17
+ms.sourcegitcommit: f4c46bfab9b40b29654f4e883817a5508ab25b74
+ms.openlocfilehash: 4bc076bba4672d0be0032ec785da20e60b11a6c4
 ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 06/28/2017
 
 
 ---
 # <a name="updates-for-system-center-configuration-manager"></a>Aktualizacje programu System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager używa metody w konsoli usługi o nazwie **aktualizacji i obsługi** ułatwia znajdowanie i zainstaluj aktualizacje zalecane dla infrastruktury programu Configuration Manager. Ta metoda obsługi w konsoli jest uzupełnione aktualizacji poza pasmem, takich jak poprawki, które są przeznaczone dla klientów, którzy muszą rozwiązać problemy, które mogą być specyficzne dla ich środowiska.  
+System Center Configuration Manager korzysta z metody obsługi w konsoli o nazwie **aktualizacje i obsługa** ułatwia znajdowanie i instalowanie zalecanych aktualizacji infrastruktury programu Configuration Manager. Ta metoda obsługi w konsoli jest uzupełniana przez aktualizacje poza pasmem, takie jak poprawki przeznaczone dla klientów chcących rozwiązać problemy, które mogą dotyczyć ich środowiska.  
 
-> [!TIP]
-> Podczas zarządzania lokacji programu System Center Configuration Manager i infrastruktury hierarchii, warunki *uaktualnienia*, *aktualizacji*, i *zainstalować* są używane do opisywania trzy oddzielne pojęcia. Aby dowiedzieć się, jak używać każdego terminu, zobacz [o uaktualnienie, aktualizacji i instalacji](/sccm/core/understand/upgrade-update-install).
-
-
- **Następujące tematy mogą pomóc zrozumienie, jak znaleźć i zainstalować aktualizację różnych typów dla programu System Center Configuration Manager:**  
-
--   [Instalowanie aktualizacji w konsoli programu System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md)  
-
--   [Użyj narzędzia połączenia usługi programu System Center Configuration Manager](../../../core/servers/manage/use-the-service-connection-tool.md)  
-
--   [Narzędzie rejestracji aktualizacji do importowania poprawek programu System Center Configuration Manager](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md)  
-
--   [Użyj Instalatora poprawek do zainstalowania aktualizacji dla programu System Center Configuration Manager](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md)  
+> [!TIP]  
+> Podczas zarządzania w lokacji programu System Center Configuration Manager i infrastruktury hierarchii, warunki *uaktualnienia*, *aktualizacji*, i *zainstalować* służą do opisywania trzy oddzielne pojęcia. Aby dowiedzieć się, jak każdego terminu jest używany, zobacz [o uaktualnienie, aktualizacji i instalacji](/sccm/core/understand/upgrade-update-install).
 
 
-Jeśli używasz gałęzi Technical Preview, zobacz [Technical Preview dla programu System Center Configuration Manager](/sccm/core/get-started/technical-preview) dodatkowe informacje, które są specyficzne dla tej gałęzi.
+ **Poniższe tematy ułatwią zrozumienie, jak znaleźć i zainstalować różne typy aktualizacji programu System Center Configuration Manager:**  
+
+-   [Instalacja aktualizacji w konsoli programu System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md)  
+
+-   [Użyj narzędzia połączenia z usługą programu System Center Configuration Manager](../../../core/servers/manage/use-the-service-connection-tool.md)  
+
+-   [Używanie narzędzia rejestracji aktualizacji do importowania poprawek do programu System Center Configuration Manager](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md)  
+
+-   [Użyj Instalatora poprawek do instalowania aktualizacji dla programu System Center Configuration Manager](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md)  
+
+
+Jeśli używasz gałęzi Technical Preview, zobacz [Technical Preview programu System Center Configuration Manager](/sccm/core/get-started/technical-preview) Aby uzyskać dodatkowe informacje dotyczące tego oddziału.
 
 
 ##  <a name="bkmk_Baselines"></a> Wersje linii bazowej i aktualizacji  
- Pierwszej wersji programu System Center Configuration Manager w bieżącej gałęzi była wersji 1511, który został wersji linii bazowej. Nowsze wersje linii bazowej w tym wersja 1606 i 1702:
+ Pierwszej wersji programu System Center Configuration Manager bieżącej gałęzi była wersji 1511, której wersji linii bazowej. Nowsze wersje linii bazowej zawierają wersję 1606 i 1702:
 
 -   Po zainstalowaniu nowej lokacji w nowej hierarchii korzystaj z najnowszej wersji linii bazowej.  
 
 -   Aby móc uaktualnić program System Center 2012 Configuration Manager, musisz korzystać z wersji linii bazowej.  
 
--   Okresowo zostaną wydane wersje dodatkowych linii bazowej. Korzystając z najnowszej wersji linii bazowej do zainstalowania nowej hierarchii można uniknąć instalowania z nieaktualną wersją programu Configuration Manager, a następnie uaktualnienia infrastruktury, aby przenieść go na bieżąco.  
+-   Okresowo linii bazowej dodatkowe wersje będzie publikowana. Korzystając z najnowszej wersji linii bazowej do zainstalowania nowej hierarchii, możesz uniknąć instalowania z nieaktualną wersją programu Configuration Manager, następuje uaktualnienie infrastruktury, aby wyświetlić dane.  
 
 Po zainstalowaniu wersji linii bazowej dodatkowe wersje programu Configuration Manager są dostępne jako aktualizacje w konsoli. Aktualizacje w konsoli umożliwiają zaktualizowanie infrastruktury do najnowszej wersji programu Configuration Manager.  
 
@@ -65,7 +65,7 @@ Po zainstalowaniu wersji linii bazowej dodatkowe wersje programu Configuration M
 
 -   Musisz ręcznie aktualizować lokacje dodatkowe do nowej wersji aktualizacji z poziomu konsoli.  
 
-W przypadku zainstalowania aktualizacji pliki instalacyjne dla danej wersji aktualizacji są przechowywane na serwerze lokacji w folderze o nazwie CD.Latest. Zobacz [dysku CD. Najnowsze folderu dla programu System Center Configuration Manager](../../../core/servers/manage/the-cd.latest-folder.md) uzyskać więcej informacji dotyczących tych plików.  
+W przypadku zainstalowania aktualizacji pliki instalacyjne dla danej wersji aktualizacji są przechowywane na serwerze lokacji w folderze o nazwie CD.Latest. Zobacz [dysku CD. Najnowszy folder programu System Center Configuration Manager](../../../core/servers/manage/the-cd.latest-folder.md) Aby uzyskać więcej informacji o tych plikach.  
 
 -   Pliki w folderze CD.Latest są używane podczas odzyskiwania lokacji i instalowania lokacji dodatkowych w hierarchii, która nie korzysta już z wersji linii bazowej.  
 
@@ -75,25 +75,25 @@ Niektóre aktualizacje programu Configuration Manager są dostępne jako aktuali
 
 Poniżej przedstawiono wersje programu Configuration Manager dostępne jako linie bazowe lub aktualizacje albo jako oba te elementy:  
 
-|Wersja |Data udostępnienia|[Data zakończenia pomocy technicznej](/sccm/core/servers/manage/current-branch-versions-supported) |Linia bazowa|Aktualizacja w konsoli|  
+|Wersja |Data udostępnienia|[Data zakończenia wsparcia](/sccm/core/servers/manage/current-branch-versions-supported) |Linia bazowa|Aktualizacja w konsoli|  
 |-------------|-----------|------------|--------------|------------------------|  
 |[1702](/sccm/core/plan-design/changes/whats-new-in-version-1702)<br /><br /> 5.00.8498.1000|3/27/2017| 3/27/2018|Tak|Tak|
 |[1610](/sccm/core/plan-design/changes/whats-new-in-version-1610)<br /><br /> 5.00.8458.1000|11/18/2016| 11/18/2017|Nie|Tak|
 |[1606](/sccm/core/plan-design/changes/whats-new-in-version-1606)<br /><br /> 5.00.8412.1000|7/22/2016| 7/22/2017|Nie|Tak|
-|[1606](/sccm/core/plan-design/changes/whats-new-in-version-1606) z listą poprawkę 1606 (KB3186654) </br></br>5.00.8412.1307 *(Uwaga 1)* |10/12/2016| 7/22/2017|Tak|Nie|
+|[1606](/sccm/core/plan-design/changes/whats-new-in-version-1606) z pakiet zbiorczy poprawek 1606 (KB3186654) </br></br>5.00.8412.1307 *(Uwaga 1)* |10/12/2016| 7/22/2017|Tak|Nie|
 | 1602<br /><br /> 5.00.8355.1000|2016-03-11| 3/11/2017|Nie|Tak|
 | 1511 <br /><br /> 5.00.8325.1000|2015-12-08| 12/8/2016|Tak|Nie|  
 
 
-*(Uwaga 1) * Ten nośnik linii bazowej 1606 jest dostępne jako część programu Microsoft System Center 2016 lub wersji programu System Center Configuration Manager (bieżącej gałęzi i długoterminowe obsługi gałęzi 1606).
+*(Uwaga 1)*  Nośnika linii bazowej 1606 i 1702 są dostępne jako część programu Microsoft System Center 2016 lub System Center Configuration Manager (Current Branch i długoterminowe obsługi gałęzi) udostępnia w [Centrum usługi licencji woluminu](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx) (firmy Microsoft VLSC). Na przykład w centrum VLSC można wyszukiwać *System Center Config Mgr (bieżącej gałęzi i LTSB)*, i jednocześnie 1606 i 1702 nośnika linii bazowej wersji są zwracane i dostępny do pobrania.
 
 Aby sprawdzić wersję lokacji programu Configuration Manager, w lewym górnym rogu konsoli, gdzie są wyświetlane nowe wersje lokacji i konsoli, wybierz pozycję **Program System Center Configuration Manager — informacje** .  
 
 ##  <a name="bkmk_inconsole"></a> Aktualizacje w konsoli i obsługa  
- Korzystając z produkcji instalacji gotowy programu System Center Configuration Manager, nazywana także bieżącej gałęzi większość aktualizacji, które należy zainstalować są dostępne za pomocą aktualizacji i obsługi kanału. Ta metoda umożliwia wyszukiwanie, pobieranie oraz udostępnianie aktualizacji dotyczących bieżącej wersji i konfiguracji infrastruktury. Obejmuje ona tylko aktualizacje zalecane przez firmę Microsoft dla wszystkich klientów.   
+ Realizując produkcji instalację gotowy programu System Center Configuration Manager, nazywana także bieżącej gałęzi, większość aktualizacji, które będą instalowane są dostępne za pomocą aktualizacji i obsługi kanału. Ta metoda umożliwia wyszukiwanie, pobieranie oraz udostępnianie aktualizacji dotyczących bieżącej wersji i konfiguracji infrastruktury. Obejmuje ona tylko aktualizacje zalecane przez firmę Microsoft dla wszystkich klientów.   
  Należą do nich następujące elementy:  
 
--   Nowe wersje, podobnie jak w wersji 1610  
+-   Nowe wersje, takie jak wersja 1610  
 
 -   Aktualizacje obejmujące nowe funkcje bieżącej wersji  
 
@@ -111,43 +111,43 @@ Aktualizacje w konsoli zapewniają większą stabilność i zawierają rozwiąza
 
 -   Klienci programu Configuration Manager  
 
-Menedżer konfiguracji wykrywa nowe aktualizacje podczas synchronizacji Twojej roli systemu lokacji punktu obsługi połączenia z usługą w chmurze firmy Microsoft i Centrum pobierania:  
+Configuration Manager odnajduje nowe aktualizacje podczas synchronizacji z roli systemu lokacji punktu Usługi połączenia z usługą w chmurze firmy Microsoft i Centrum pobierania:  
 
--   Gdy punkt połączenia usługi jest w trybie online, lokacja jest codziennie synchronizowana z firmą Microsoft w celu automatycznego wyszukiwania nowych aktualizacji dotyczących danej infrastruktury.  Do pobierania aktualizacji i redist pliki aktualizacji, korzysta z komputerem obsługującym rolą systemu lokacji punktu połączenia usługi **systemu** kontekstu, aby uzyskać dostęp do poniższej lokalizacji w Internecie: go.microsoft.com i witrynie download.microsoft.com. Informacje o dodatkowych lokalizacji łączy się z punktu połączenia usługi, można znaleźć w temacie [Internet access wymagania](../../../core/servers/deploy/configure/about-the-service-connection-point.md#bkmk_urls) w [o połączenia z usługą punktu w programie System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md).  
+-   Gdy punkt połączenia usługi jest w trybie online, lokacja jest codziennie synchronizowana z firmą Microsoft w celu automatycznego wyszukiwania nowych aktualizacji dotyczących danej infrastruktury.  Aby pobrać aktualizacje i plików redystrybucyjnych aktualizacji, korzysta z komputera, który hostuje rolę systemu lokacji punktu połączenia usługi **systemu** kontekstu do poniższej lokalizacji w Internecie: go.microsoft.com i witrynie download.microsoft.com. Aby uzyskać informacje o dodatkowych lokalizacji punktu połączenia usługi łączy się z, zobacz [wymagania dotyczące dostępu do Internetu](../../../core/servers/deploy/configure/about-the-service-connection-point.md#bkmk_urls) w [o połączenia z usługą punktu w programie System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md).  
 
 -   Gdy punkt połączenia usługi jest w trybie offline, użyj narzędzia połączenia usługi, aby ręcznie zsynchronizować zawartość z usługą firmy Microsoft w chmurze. Aby uzyskać więcej informacji, zobacz [Używanie narzędzia połączenia z usługą w programie System Center Configuration Manager](../../../core/servers/manage/use-the-service-connection-tool.md).  
 
 -   Aktualizacje w konsoli eliminują konieczność osobnego znajdowania i instalowania poszczególnych aktualizacji, dodatków Service Pack oraz nowych funkcji.  
 
--   Możesz instalować tylko wybrane aktualizacje w konsoli, a w przypadku instalowania niektórych aktualizacji możesz wybrać funkcje do włączenia i używania. Aby uzyskać więcej informacji, zobacz [włączają opcjonalne funkcje z aktualizacji](../../../core/servers/manage/install-in-console-updates.md#bkmk_options).  
+-   Możesz instalować tylko wybrane aktualizacje w konsoli, a w przypadku instalowania niektórych aktualizacji możesz wybrać funkcje do włączenia i używania. Aby uzyskać więcej informacji, zobacz [Włącz funkcje opcjonalne aktualizacji](../../../core/servers/manage/install-in-console-updates.md#bkmk_options).  
 
 W przypadku instalowania aktualizacji w konsoli:  
 
 -   Automatycznie jest przeprowadzane sprawdzanie wymagań wstępnych. Możesz również przeprowadzić ten test przed rozpoczęciem instalacji.  
 
--   Aktualizacja jest automatycznie instalowana w centralnej lokacji administracyjnej (jeśli istnieje) i w lokacjach głównych. Można kontrolować, kiedy każdy serwer lokacji podstawowej może zaktualizować swoją infrastrukturę przy użyciu [usługi systemu windows dla serwerów lokacji](../../../core/servers/manage/service-windows.md).  
+-   Aktualizacja jest automatycznie instalowana w centralnej lokacji administracyjnej (jeśli istnieje) i w lokacjach głównych. Można kontrolować, gdy każdy serwer lokacji głównej mogą aktualizować swoją infrastrukturę, używając [usługi systemu windows dla serwerów lokacji](../../../core/servers/manage/service-windows.md).  
 
--   Po zaktualizowaniu serwera lokacji są automatycznie aktualizowane wszystkie powiązane role systemu lokacji (w tym wystąpienia dostawcy programu SMS). Konsole programu Configuration Manager monitować użytkownika konsoli, aby zaktualizować konsolę, po zainstalowaniu aktualizacji lokacji.  
+-   Po zaktualizowaniu serwera lokacji są automatycznie aktualizowane wszystkie powiązane role systemu lokacji (w tym wystąpienia dostawcy programu SMS). Konsole programu Configuration Manager monitować użytkownika konsoli, aby zaktualizować konsolę, po zainstalowaniu aktualizacji w lokacji.  
 
--   Jeśli aktualizacja zawiera klienta programu Configuration Manager, są oferowane testowanie aktualizacji w produkcji wstępnej lub zastosować aktualizację natychmiast do wszystkich klientów.  
+-   Aktualizacja klienta programu Configuration Manager, można wybrać opcję przetestowania aktualizacji w środowisku przedprodukcyjnym lub zastosować aktualizację natychmiast do wszystkich klientów.  
 
 -   Po zaktualizowaniu lokacji głównej lokacje dodatkowe nie są automatycznie aktualizowane. Musisz zainicjować aktualizację lokacji dodatkowej.  
 
 > [!NOTE]  
->  Produkcyjnej wersji programu System Center Configuration Manager (bieżącej gałęzi), gałąź obsługi długoterminowe i Technical Preview dla programu System Center Configuration Manager są różne wersje. W związku z tym aktualizacje, które są stosowane dla jednej gałęzi nie są dostępne jako aktualizacji w konsoli do innych działów. Aby uzyskać więcej informacji o dostępnych gałęzie, zobacz temat [która gałąź programu Configuration Manager należy używać?](/sccm/core/understand/which-branch-should-i-use)
+>  Wersja produkcyjna programu System Center Configuration Manager (wersji current branch), długoterminowe obsługi gałęzi i Technical Preview programu System Center Configuration Manager różni się od wersji. W związku z tym aktualizacje dotyczące jedna gałąź nie są dostępne jako aktualizacje w konsoli do innych działów. Aby uzyskać więcej informacji o dostępnych gałęzie, zobacz [która gałąź programu Configuration Manager należy używać?](/sccm/core/understand/which-branch-should-i-use)
 
 ##  <a name="bkmk_outofband"></a> Poprawki poza pasmem  
 Niektóre poprawki mają ograniczoną dostępność, aby umożliwić rozwiązanie określonych problemów, lub dotyczą wszystkich klientów, ale nie można ich zainstalować w konsoli. Są one oferowane poza pasmem i nie można ich odnaleźć w usłudze firmy Microsoft w chmurze.  
 
-Zwykle, Poznaj poprawki poza pasmem z obsługą klienta firmy Microsoft, artykuł bazy wiedzy, lub [blog zespołu programu System Center Configuration Manager](https://blogs.technet.microsoft.com/configmgrteam) podczas oczekuje się w celu rozwiązania lub rozwiązać problem z wdrożeniem programu Configuration Manager.  
+Zwykle informacje o poprawkach poza pasmem z obsługą klienta firmy Microsoft, artykułu bazy wiedzy lub [blogu zespołu programu System Center Configuration Manager](https://blogs.technet.microsoft.com/configmgrteam) gdy szukamy pozwalających rozwiązać problem z wdrożeniem programu Configuration Manager.  
 
 Te poprawki są instalowane ręcznie przy użyciu jednej z dwóch metod:  
 
--   **Narzędzie rejestracji aktualizacji:** To narzędzie importuje ręcznie poprawkę do konsola programu Configuration Manager, w którym można zainstalować aktualizację można będzie w-konsoli aktualizacji, które są wykrywane automatycznie. Ta metoda jest używana w przypadku aktualizacji korzystających z następującej struktury nazw plików: **.update.exe**.  Przypomina pełną nazwę pliku dla tego typu poprawki: **&lt;Produkt\>-&lt;wersji produktu\>-&lt;identyfikator artykułu KB\>-ConfigMgr.Update.exe**.  
+-   **Narzędzie rejestracji aktualizacji:** To narzędzie umożliwia ręczne zaimportowanie poprawki do konsoli programu Configuration Manager, w którym można zainstalować aktualizacji jako użytkownik w konsoli aktualizacji, które są wykrywane automatycznie. Ta metoda jest używana w przypadku aktualizacji korzystających z następującej struktury nazw plików: **.update.exe**.  Pełna nazwa pliku dla tego typu poprawki podobny: **&lt;Produkt\>-&lt;wersji produktu\>-&lt;identyfikator artykułu bazy wiedzy\>-ConfigMgr.Update.exe**.  
 
-     Aby uzyskać więcej informacji, zobacz [Importuj poprawki programu System Center Configuration Manager za pomocą narzędzia rejestracji aktualizacji](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md).  
+     Aby uzyskać więcej informacji, zobacz [używanie narzędzia rejestracji aktualizacji do importowania poprawek do programu System Center Configuration Manager](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md).  
 
--   **Instalator poprawki:** To narzędzie służy do ręcznie zainstalować poprawkę hotfix, że nie można zainstalować przy użyciu metody w konsoli. Ta metoda służy do poprawki mieć następującą strukturę nazwa pliku: **&lt;Product\>-&lt;product version\>-&lt;KB article ID\>-&lt;platform\>-&lt;language\>.exe**.
+-   **Instalator poprawek:** To narzędzie umożliwia ręczne zainstalowanie poprawki, której nie można zainstalować przy użyciu metody w konsoli. Ta metoda jest używana w przypadku poprawek korzystających z następującej struktury nazw plików: **&lt;Product\>-&lt;product version\>-&lt;KB article ID\>-&lt;platform\>-&lt;language\>.exe**.
 
-     Aby uzyskać więcej informacji, zobacz [do instalowania aktualizacji dla programu System Center Configuration Manager używa Instalatora poprawek](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md).
+     Aby uzyskać więcej informacji, zobacz [używania Instalatora poprawek do instalowania aktualizacji dla programu System Center Configuration Manager](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md).
 

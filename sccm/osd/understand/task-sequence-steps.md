@@ -1,6 +1,6 @@
 ---
-title: "Czynności sekwencji — Configuration Manager | Dokumentacja firmy Microsoft"
-description: "Informacje na temat kroków sekwencji zadań, które można dodać do sekwencji zadań w programie Configuration Manager."
+title: "Zadania sekwencji kroki — programu Configuration Manager | Dokumentacja firmy Microsoft"
+description: "Więcej informacji na temat kroków sekwencji zadań, które można dodać do sekwencji zadań programu Configuration Manager."
 ms.custom: na
 ms.date: 03/26/2017
 ms.prod: configuration-manager
@@ -17,24 +17,24 @@ author: Dougeby
 ms.author: dougeby
 manager: angrobe
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: 071d758f1015d16217a54fe26df5f8f948c818a3
+ms.sourcegitcommit: 6f9e6e93fce95666503907010a5c253158c5de7c
+ms.openlocfilehash: f648d7626af50d95fbaa5a7a2abd821a9c47f5d1
 ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/07/2017
 
 
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Kroki sekwencji zadań w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 Następujące kroki sekwencji zadań można dodać do sekwencji zadań programu Configuration Manager. Aby uzyskać informacje na temat edytowania sekwencji zadań, zobacz [Edytowanie sekwencji zadań](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_ModifyTaskSequence).  
 
 
-##  <a name="BKMK_ApplyDataImage"></a>Zastosuj kroku sekwencji zadań obraz danych  
+##  <a name="BKMK_ApplyDataImage"></a>Zastosuj krok sekwencji zadań obraz danych  
  Krok sekwencji zadań **Zastosuj obraz danych** umożliwia skopiowanie obrazu danych na określoną partycję docelową.  
 
- Ten krok działa tylko w środowisku Windows PE. Nie działa on w standardowym systemie operacyjnym. Aby uzyskać więcej informacji na temat zmiennych sekwencji zadań do wykonania tej akcji, zobacz [zmienne akcji sekwencji zadań](task-sequence-action-variables.md).  
+ Ten krok działa tylko w środowisku Windows PE. Nie działa on w standardowym systemie operacyjnym. Aby uzyskać więcej informacji na temat zmiennych sekwencji zadań dotyczących tej akcji, zobacz [zmienne akcji sekwencji zadań](task-sequence-action-variables.md).  
 
 ### <a name="details"></a>Szczegóły  
  Na karcie **Właściwości** tego kroku można skonfigurować ustawienia opisane w tej sekcji.  
@@ -62,15 +62,15 @@ Następujące kroki sekwencji zadań można dodać do sekwencji zadań programu 
  **Miejsce docelowe**  
  Określa istniejącą sformatowaną partycję i istniejący sformatowany dysk twardy, literę dysku logicznego lub nazwę zmiennej sekwencji zadań, która zawiera literę dysku logicznego.  
 
--   **Następna dostępna partycja** — Użyj następnej partycji, która nie była wcześniej używana przez akcję Zastosuj System operacyjny lub Zastosuj obraz danych w tej sekwencji zadań.  
+-   **Następnej dostępnej partycji** -Użyj dalej sekwencyjnych partycji, która ma nie zostały wcześniej celem akcji Zastosuj System operacyjny lub Zastosuj obraz danych w tej sekwencji zadań.  
 
--   **Określony dysk i partycja** — wybierz **dysku** (rozpoczynający się od cyfry 0) i **partycji** (rozpoczynający się od cyfry 1).  
+-   **Określony dysk i partycja** — wybierz tę opcję **dysku** (rozpoczynający się od cyfry 0) i **partycji** (rozpoczynający się od cyfry 1).  
 
--   **Określona litera dysku logicznego** -określ **litera dysku** przypisaną do partycji przez środowisko Windows PE. Ta litera dysku może różnić się od litery dysku, którą przypisze nowo wdrożony system operacyjny.  
+-   **Określona litera dysku logicznego** — określ **literę dysku** przypisaną do partycji przez środowisko Windows PE. Ta litera dysku może różnić się od litery dysku, którą przypisze nowo wdrożony system operacyjny.  
 
 -   **Litera dysku logicznego przechowywana w zmiennej** — Określ zmienną sekwencji zadań zawiera literę dysku przypisaną do partycji przez środowisko Windows PE. Tę zmienną można zwykle ustawić w sekcji Zaawansowane w oknie dialogowym **Właściwości partycji** dla akcji sekwencji zadań **Formatuj dysk i podziel go na partycje**.  
 
- **Usuń całą zawartość znajdującą się na partycji przed zastosowaniem obrazu**  
+ **Usuń całą zawartość na partycji przed zastosowaniem obrazu**  
  Określa, że wszystkie pliki na partycji docelowej zostaną usunięte przed zainstalowaniem obrazu. Jeśli nie usuniesz zawartości partycji, ten krok może służyć do zastosowania dodatkowej zawartości do wcześniej wybranej partycji.  
 
 ##  <a name="BKMK_ApplyDriverPackage"></a>Zastosuj pakiet sterowników  
@@ -78,7 +78,7 @@ Następujące kroki sekwencji zadań można dodać do sekwencji zadań programu 
 
  Krok sekwencji zadań **Zastosuj pakiet sterowników** udostępnia wszystkie sterowniki urządzeń w pakiecie sterowników do użycia przez system Windows. Ten krok można dodać do sekwencji zadań między krokami **Zastosuj system operacyjny** oraz **Zainstaluj system Windows i program ConfigMgr**, aby udostępnić sterowniki urządzeń w pakiecie sterowników na potrzeby systemu Windows. Zazwyczaj krok **Zastosuj pakiet sterowników** jest umieszczany po kroku sekwencji zadań **Automatycznie zastosuj sterowniki**. Krok sekwencji zadań **Zastosuj pakiet sterowników** może być też używany w scenariuszach wdrażania nośników autonomicznych.  
 
- Upewnij się, że w pakiecie sterowników umieszczono podobne sterowniki urządzeń, i rozpowszechnij je w odpowiednich punktach dystrybucji. Rozpowszechnienie sterowników klientów programu Configuration Manager można zainstalować je. Można na przykład umieścić w pakiecie sterowników wszystkie sterowniki urządzeń od danego producenta, a następnie rozpowszechnić ten pakiet w punktach dystrybucji, z których skojarzone komputery mogą uzyskiwać do nich dostęp.
+ Upewnij się, że w pakiecie sterowników umieszczono podobne sterowniki urządzeń, i rozpowszechnij je w odpowiednich punktach dystrybucji. Rozpowszechnienie klientów programu Configuration Manager można zainstalować je. Można na przykład umieścić w pakiecie sterowników wszystkie sterowniki urządzeń od danego producenta, a następnie rozpowszechnić ten pakiet w punktach dystrybucji, z których skojarzone komputery mogą uzyskiwać do nich dostęp.
 
  Ten krok może być używany w przypadku nośników autonomicznych i przez administratorów, którzy chcą zainstalować określony zestaw sterowników — dotyczy to też sterowników urządzeń, których nie można wykryć w ramach skanowania urządzeń Plug and Play (na przykład drukarek sieciowych).  
 
@@ -104,7 +104,7 @@ Następujące kroki sekwencji zadań można dodać do sekwencji zadań programu 
  **Pakiet sterowników**  
  Określ pakiet sterowników zawierający wymagane sterowniki urządzeń, klikając przycisk **Przeglądaj** i uruchamiając okno dialogowe **Wybieranie pakietu**. Określ istniejący pakiet, który ma zostać udostępniony. Właściwości skojarzonego pakietu są wyświetlane u dołu okna dialogowego.  
 
- **Wybierz sterownik pamięci masowej w pakiet, który musi zostać zainstalowany przed instalacją w systemach operacyjnych starszych niż Windows Vista**  
+ **Wybierz sterownik pamięci masowej w pakiecie, który musi być zainstalowany przed instalacją w systemach operacyjnych starszych niż Windows Vista**  
  Określ sterowniki urządzeń pamięci masowej niezbędne w przypadku instalacji systemów operacyjnych starszych niż Windows Vista.  
 
  **Sterownik**  
@@ -138,16 +138,16 @@ Następujące kroki sekwencji zadań można dodać do sekwencji zadań programu 
  **Opis**  
  Bardziej szczegółowe informacje dotyczące akcji wykonywanej w tym kroku.  
 
- **Dołącz do grupy roboczej**  
+ **Przyłącz do grupy roboczej**  
  Wybierz tę opcję, aby przyłączyć komputer docelowy do określonej grupy roboczej. Wprowadź nazwę grupy roboczej w wierszu **Grupa robocza**. Ta wartość może zostać przesłonięta przez wartość przechwyconą przez krok sekwencji zadań **Przechwyć ustawienia sieci**.  
 
  **Przyłącz do domeny**  
  Wybierz tę opcję, aby przyłączyć komputer docelowy do określonej domeny. Określ lub wyszukaj domenę, taką jak *fabricam.com*. Określ lub wyszukaj ścieżkę protokołu LDAP (Lightweight Directory Access Protocol) dla jednostki organizacyjnej (tj. LDAP//OU=computers, DC=Fabricam.com, C=com).  
 
  **Konta**  
- Kliknij pozycję **Ustaw**, aby określić konto z uprawnieniami przyłączania komputera do domeny. W **konta użytkownika systemu Windows** okno dialogowe można wprowadzić nazwę użytkownika w następującym formacie: **Domena\nazwa użytkownika** .  
+ Kliknij pozycję **Ustaw**, aby określić konto z uprawnieniami przyłączania komputera do domeny. W **konta użytkownika systemu Windows** okno dialogowe, które można wprowadzić nazwę użytkownika w następującym formacie: **DOMENA\UŻYTKOWNIK** .  
 
- **Ustawienia karty**  
+ **Ustawienia karty sieciowej**  
  Określ konfigurację sieci dla każdej karty sieciowej w komputerze. Kliknij pozycję **Nowy**, aby otworzyć okno dialogowe **Ustawienia sieciowe**, a następnie określ ustawienia sieciowe. Jeśli ustawienia sieciowe zostały przechwycone w ramach poprzedniego kroku sekwencji zadań **Przechwyć ustawienia sieci**, do karty sieciowej zostaną zastosowane poprzednie ustawienia, a nie ustawienia określone w tym kroku. Jeśli ustawienia sieciowe nie zostały wcześniej przechwycone, do kart sieciowych zostaną zastosowane ustawienia określone w kroku **Zastosuj ustawienia sieci** w kolejności wyliczenia urządzeń systemu Windows.  
 
 ##  <a name="BKMK_ApplyOperatingSystemImage"></a>Zastosuj obraz systemu operacyjnego  
@@ -175,7 +175,7 @@ Następujące kroki sekwencji zadań można dodać do sekwencji zadań programu 
 
 2.  Przygotowanie pliku odpowiedzi:  
 
-    1.  Utworzenie nowego pliku odpowiedzi ze standardowymi wartościami utworzonymi przez program Configuration Manager.  
+    1.  Tworzy nowego pliku odpowiedzi ze standardowymi wartościami utworzonymi przez program Configuration Manager.  
 
     2.  Scalenie wszystkich wartości z pliku odpowiedzi podanego przez użytkownika.  
 
@@ -225,11 +225,11 @@ Następujące kroki sekwencji zadań można dodać do sekwencji zadań programu 
  **Miejsce docelowe**  
  Określa istniejącą sformatowaną partycję i istniejący sformatowany dysk twardy, literę dysku logicznego lub nazwę zmiennej sekwencji zadań, która zawiera literę dysku logicznego.  
 
--   **Następna dostępna partycja** — Użyj następnej partycji, która nie była wcześniej używana przez akcję Zastosuj System operacyjny lub Zastosuj obraz danych w tej sekwencji zadań.  
+-   **Następnej dostępnej partycji** -Użyj dalej sekwencyjnych partycji, która ma nie zostały wcześniej celem akcji Zastosuj System operacyjny lub Zastosuj obraz danych w tej sekwencji zadań.  
 
--   **Określony dysk i partycja** — wybierz **dysku** (rozpoczynający się od cyfry 0) i **partycji** (rozpoczynający się od cyfry 1).  
+-   **Określony dysk i partycja** — wybierz tę opcję **dysku** (rozpoczynający się od cyfry 0) i **partycji** (rozpoczynający się od cyfry 1).  
 
--   **Określona litera dysku logicznego** -określ **litera dysku** przypisaną do partycji przez środowisko Windows PE. Ta litera dysku może różnić się od litery dysku, którą przypisze nowo wdrożony system operacyjny.  
+-   **Określona litera dysku logicznego** — określ **literę dysku** przypisaną do partycji przez środowisko Windows PE. Ta litera dysku może różnić się od litery dysku, którą przypisze nowo wdrożony system operacyjny.  
 
 -   **Litera dysku logicznego przechowywana w zmiennej** — Określ zmienną sekwencji zadań zawiera literę dysku przypisaną do partycji przez środowisko Windows PE. Tę zmienną można zwykle ustawić w sekcji Zaawansowane w oknie dialogowym **Właściwości partycji** dla akcji sekwencji zadań **Formatuj dysk i podziel go na partycje**.  
 
@@ -299,7 +299,7 @@ Następujące kroki sekwencji zadań można dodać do sekwencji zadań programu 
 5.  Po uruchomieniu akcji sekwencji zadań **Zainstaluj system Windows i program ConfigMgr** i wykonaniu pierwszego rozruchu systemu Windows zostaną znalezione sterowniki wdrożone przejściowo w ramach tej akcji.  
 
 > [!IMPORTANT]
->  **Automatycznie Zastosuj sterowniki** nie można użyć sekwencji zadań z nośników samodzielnych, ponieważ Instalator systemu Windows nie będzie mieć połączenia z lokacją programu Configuration Manager.
+>  **Automatycznie Zastosuj sterowniki** krok sekwencji zadań nie może być używany z nośnikami autonomicznymi, ponieważ Instalator systemu Windows nie będzie mieć połączenia z lokacją programu Configuration Manager.
 
 Ten krok sekwencji zadań działa tylko w środowisku Windows PE. Nie działa on w standardowym systemie operacyjnym. Aby uzyskać więcej informacji na temat zmiennych sekwencji zadań dla tej akcji, zobacz [Zmienne akcji sekwencji zadań Automatycznie zastosuj sterowniki](task-sequence-action-variables.md#BKMK_AutoApplyDrivers).  
 
@@ -367,11 +367,11 @@ Ten krok sekwencji zadań działa tylko w środowisku Windows PE. Nie działa on
  Przechwytuje konfigurację karty sieciowej komputera docelowego. Przechwycone informacje obejmują ustawienia globalne sieci, liczbę kart i ustawienia sieci skojarzone z każdą kartą. Należą do nich ustawienia związane z usługami DNS i WINS, adresami IP oraz filtrami portów.  
 
 ##  <a name="BKMK_CaptureOperatingSystemImage"></a>Przechwyć obraz systemu operacyjnego  
- Krok sekwencji zadań **Przechwyć obraz systemu operacyjnego** umożliwia przechwycenie obrazów z komputera odniesienia i zapisanie ich w pliku WIM w określonym udziale sieciowym. Kreatora dodawania pakietu obrazów systemu operacyjnego można następnie zaimportować tego. Plik WIM do programu Configuration Manager, którą można użyć w przypadku wdrożeń na podstawie obrazu systemu operacyjnego.  
+ Krok sekwencji zadań **Przechwyć obraz systemu operacyjnego** umożliwia przechwycenie obrazów z komputera odniesienia i zapisanie ich w pliku WIM w określonym udziale sieciowym. Aby zaimportować ten można następnie Kreatora dodawania pakietu obrazów systemu operacyjnego. Plik WIM do programu Configuration Manager, którego nie może służyć do wdrożenia na podstawie obrazu systemu operacyjnego.  
 
  Każdy wolumin (dysk) na komputerze odniesienia jest przechwytywany jako osobny obraz w pliku wim. Jeśli przywoływany komputer ma wiele woluminów, wynikowy plik WIM będzie zawierał osobny obraz każdego woluminu. Przechwytywane są tylko woluminy sformatowane przy użyciu systemu NTFS lub FAT32. Woluminy w innych formatach i woluminy USB są pomijane.  
 
- Zainstalowany system operacyjny na komputerze odniesienia musi być zainstalowana wersja systemu Windows, który jest obsługiwany przez program Configuration Manager i musi zostać przygotowane za pomocą narzędzia SysPrep. Wolumin z zainstalowanym systemem operacyjnym i wolumin rozruchowy muszą być tym samym woluminem.  
+ System operacyjny zainstalowany na komputerze odniesienia musi być z wersją systemu Windows, który jest obsługiwany przez program Configuration Manager i muszą zostać przygotowane za pomocą narzędzia SysPrep. Wolumin z zainstalowanym systemem operacyjnym i wolumin rozruchowy muszą być tym samym woluminem.  
 
  Musisz też wprowadzić konto systemu Windows, które ma uprawnienia zapisu w wybranym udziale sieciowym.  
 
@@ -410,11 +410,11 @@ Ten krok sekwencji zadań działa tylko w środowisku Windows PE. Nie działa on
  Musisz wprowadzić konto systemu Windows z uprawnieniami do określonego udziału sieciowego. Kliknij pozycję **Ustaw** , aby określić nazwę tego konta systemu Windows.  
 
 ##  <a name="BKMK_CaptureUserState"></a>Przechwyć stan użytkownika  
- Krok sekwencji zadań **Przechwyć stan użytkownika** umożliwia przechwycenie za pomocą narzędzia do migracji stanu użytkowników (USMT) stanu i ustawień użytkownika z komputera, na którym uruchomiono sekwencję zadań. Ten krok sekwencji zadań jest używany razem z krokiem sekwencji zadań **Przywróć stan użytkownika**. Za pomocą narzędzia USMT 3.0.1 i później, ta opcja zawsze szyfruje Magazyn stanów narzędzia USMT za pomocą klucza szyfrowania wygenerowanego i zarządzanego przez program Configuration Manager.  
+ Krok sekwencji zadań **Przechwyć stan użytkownika** umożliwia przechwycenie za pomocą narzędzia do migracji stanu użytkowników (USMT) stanu i ustawień użytkownika z komputera, na którym uruchomiono sekwencję zadań. Ten krok sekwencji zadań jest używany razem z krokiem sekwencji zadań **Przywróć stan użytkownika**. Przy użyciu narzędzia USMT 3.0.1 i później, ta opcja zawsze szyfruje Magazyn stanów narzędzia USMT za pomocą klucza szyfrowania wygenerowanego i zarządzanego przez program Configuration Manager.  
 
- Aby uzyskać więcej informacji o zarządzaniu stanem użytkownika podczas wdrażania systemów operacyjnych, zobacz [zarządzania stanem użytkownika](../get-started/manage-user-state.md).  
+ Aby uzyskać więcej informacji o zarządzaniu stanem użytkownika podczas wdrażania systemów operacyjnych, zobacz [Zarządzanie stanem użytkownika](../get-started/manage-user-state.md).  
 
- Można również użyć **Przechwyć stan użytkownika** krok sekwencji zadań z **Zażądaj magazynu stanów** i **Zwolnij Magazyn stanów** punktu kroki sekwencji zadań, aby zapisać ustawienia stanu lub przywrócenia ustawień z migracji stanu w lokacji programu Configuration Manager.  
+ Można również użyć **Przechwyć stan użytkownika** krok sekwencji zadań z **Zażądaj magazynu stanów** i **Zwolnij Magazyn stanów** punktu kroków sekwencji zadań, aby zapisać ustawienia stanu lub przywrócenia ustawień z migracji stanu w lokacji programu Configuration Manager.  
 
  Krok sekwencji zadań **Przechwyć stan użytkownika** zapewnia kontrolę nad ograniczonym podzbiorem najczęściej używanych opcji narzędzia USMT. Dodatkowe opcje wiersza polecenia można określić za pomocą zmiennej sekwencji zadań OSDMigrateAdditionalCaptureOptions.  
 
@@ -437,13 +437,13 @@ Ten krok sekwencji zadań działa tylko w środowisku Windows PE. Nie działa on
  **Opis**  
  Bardziej szczegółowe informacje dotyczące akcji wykonywanej w tym kroku.  
 
- **Pakiet narzędzi migracji stanu użytkownika**  
- Wprowadź pakiet programu Configuration Manager, który zawiera wersję narzędzia USMT dla tego kroku sekwencji zadań do użycia podczas przechwytywania stanu i ustawień użytkownika. Ten pakiet nie wymaga programu. Gdy krok sekwencji zadań zostanie uruchomiony, sekwencja zadań użyje wersji narzędzia USMT z określonego pakietu. Określ pakiet zawierający wersję 32-bitową lub wersję x64 narzędzia USMT w zależności od architektury systemu operacyjnego, z którego jest przechwytywany stan.  
+ **Pakiet narzędzia migracji stanu użytkownika**  
+ Wprowadź pakiet programu Configuration Manager, która zawiera wersję narzędzia USMT dla tego kroku sekwencji zadań do użycia podczas przechwytywania stanu i ustawień użytkownika. Ten pakiet nie wymaga programu. Gdy krok sekwencji zadań zostanie uruchomiony, sekwencja zadań użyje wersji narzędzia USMT z określonego pakietu. Określ pakiet zawierający wersję 32-bitową lub wersję x64 narzędzia USMT w zależności od architektury systemu operacyjnego, z którego jest przechwytywany stan.  
 
  **Przechwyć wszystkie profile użytkowników z opcjami standardowymi**  
  Wybierz tę opcję, aby przeprowadzić migrację wszystkich informacji o profilach użytkowników. Ta opcja jest domyślnie wybrana.  
 
- Wybierz tę opcję, ale nie należy wybierać opcji Przywróć profile użytkowników komputera lokalnego w kroku sekwencji zadań Przywróć stan użytkownika, sekwencja zadań zakończy się niepowodzeniem, ponieważ Menedżer konfiguracji nie może migrować nowych kont bez przypisywania do nich haseł. Jeśli użyjesz kreatora **Nowa sekwencja zadań** i utworzysz sekwencję zadań **Zainstaluj istniejący pakiet obrazów**, wynikowa sekwencja zadań domyślnie użyje opcji Przechwyć wszystkie profile z użyciem opcji standardowych, ale nie wybierze opcji Przywróć profile użytkowników komputera lokalnego (konta spoza domeny).  
+ Wybierz tę opcję, ale nie zaznaczaj opcji Przywróć profile użytkowników komputera lokalnego w kroku sekwencji zadań Przywróć stan użytkownika, sekwencja zadań zakończy się niepowodzeniem, ponieważ Menedżer konfiguracji nie może migrować nowych kont bez przypisywania do nich haseł. Jeśli użyjesz kreatora **Nowa sekwencja zadań** i utworzysz sekwencję zadań **Zainstaluj istniejący pakiet obrazów**, wynikowa sekwencja zadań domyślnie użyje opcji Przechwyć wszystkie profile z użyciem opcji standardowych, ale nie wybierze opcji Przywróć profile użytkowników komputera lokalnego (konta spoza domeny).  
 
  Wybierz pozycję **Przywróć profile użytkowników komputera lokalnego** i podaj hasło dla konta, które chcesz migrować. W przypadku ręcznie utworzonej sekwencji zadań to ustawienie znajduje się w kroku Przywróć stan użytkownika. W przypadku sekwencji zadań utworzonej przez kreatora **Nowa sekwencja zadań** to ustawienie znajduje się na stronie kreatora dotyczącej kroku **Przywróć pliki i ustawienia użytkownika**.  
 
@@ -464,15 +464,15 @@ Ten krok sekwencji zadań działa tylko w środowisku Windows PE. Nie działa on
  **Kopiuj, używając dostępu do systemu plików**  
  Włącz tę opcję, aby określić dowolne z następujących ustawień:  
 
--   **Kontynuuj, jeśli nie można przechwycić niektórych plików**: Włącz to ustawienie, aby kontynuować proces migracji, nawet jeśli nie będzie można przechwycić niektórych plików. Jeśli wyłączysz tę opcję i nie będzie można przechwycić pliku, krok sekwencji zadań zakończy się niepowodzeniem. Ta opcja jest domyślnie włączona.  
+-   **Kontynuuj, jeśli nie można przechwycić niektórych plików**: Włącz to ustawienie, aby kontynuować proces migracji, nawet jeśli nie można przechwycić niektórych plików. Jeśli wyłączysz tę opcję i nie będzie można przechwycić pliku, krok sekwencji zadań zakończy się niepowodzeniem. Ta opcja jest domyślnie włączona.  
 
--   **Przechwyć lokalnie, używając łączy zamiast kopiować pliki**: Włącz to ustawienie, aby przechwytywać pliki za pomocą twardych linków NTFS.  
+-   **Przechwyć lokalnie, używając łączy zamiast kopiować pliki**: Włącz to ustawienie umożliwia przechwytywanie plików, twardych linków NTFS.  
 
      Aby uzyskać więcej informacji na temat migrowania danych przy użyciu twardych linków, zobacz [Magazyn migracji za pomocą twardych linków](http://go.microsoft.com/fwlink/p/?LinkId=240222)  
 
 -   **Przechwyć w trybie offline (tylko Windows PE)**: Włącz to ustawienie, aby przechwycić stan użytkownika w środowisku Windows PE zamiast pełnej wersji systemu operacyjnego.  
 
- **Przechwyć, używając woluminu kopii w tle usług (VSS)**  
+ **Przechwyć, używając tle usługi kopiowania woluminów (VSS)**  
  Ta opcja umożliwia przechwytywanie plików, nawet jeśli zostały one zablokowane do edycji przez inną aplikację.  
 
 ##  <a name="BKMK_CaptureWindowsSettings"></a>Przechwyć ustawienia systemu Windows  
@@ -500,7 +500,7 @@ Ten krok sekwencji zadań działa tylko w środowisku Windows PE. Nie działa on
  **Migruj nazwę komputera**  
  Wybierz tę opcję, aby przechwycić nazwą komputera NetBIOS.  
 
- **Migruj zarejestrowane nazwy użytkownika i organizacji**  
+ **Migrowanie zarejestrowane nazwy użytkownika i organizacji**  
  Wybierz tę opcję, aby przechwycić z komputera zarejestrowane nazwy użytkowników i organizacji.  
 
  **Migruj strefę czasową**  
@@ -623,11 +623,14 @@ Ten krok sekwencji zadań działa tylko w środowisku Windows PE. Nie działa on
 
 -   Pakiety  
 
- Ten krok działa dobrze w sekwencji zadań przeprowadzanej w celu uaktualnienia systemu operacyjnego w następujących scenariuszach:  
+ Ten krok działa dobrze w sekwencji zadań w celu uaktualnienia systemu operacyjnego w następujących scenariuszach:  
 
 -   Użycie pojedynczej sekwencji zadań uaktualniania działającej na platformach x86 i x64. W tym celu dodaj dwa kroki zadania **Pobierz zawartość pakietu** w grupie **Przygotowanie do uaktualnienia** z warunkami wykrywania architektury klienta i pobrania tylko odpowiedniego pakietu uaktualnienia systemu operacyjnego. Skonfiguruj tę samą zmienną dla każdego kroku **Pobierz zawartość pakietu** i użyj zmiennej ścieżki nośnika w kroku **Uaktualnij system operacyjny**.  
 
 -   Aby odpowiedni pakiet sterowników był pobierany dynamicznie, użyj dwóch kroków **Pobierz zawartość pakietu** z warunkami wykrywania odpowiedniego typu sprzętu dla każdego pakietu sterowników. Skonfiguruj tę samą zmienną dla każdego kroku **Pobierz zawartość pakietu** i użyj zmiennej wartości **Zawartość przejściowa** w sekcji sterowników w kroku **Uaktualnij system operacyjny**.  
+
+> [!NOTE]    
+> Podczas wdrażania sekwencji zadań zawiera krok Pobierz zawartość pakietu nie zaznaczaj **Pobierz całą zawartość lokalnie przed uruchomieniem sekwencji zadań** dla **opcje wdrażania** na **punktów dystrybucji** strony Kreatora wdrażania oprogramowania.  
 
 Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows PE. Jednak opcję, aby zapisać pakiet w pamięci podręcznej klienta programu Configuration Manager nie jest obsługiwane w środowisku WinPE.
 
@@ -654,14 +657,14 @@ Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows P
  **Umieść w następującej lokalizacji**  
  Wybierz opcję, aby zapisać pakiet w jednej z następujących lokalizacji:  
 
--   **Katalog roboczy sekwencji zadań**  
+ -   **Katalog roboczy sekwencji zadań**  
 
--   **Pamięci podręcznej klienta programu Configuration Manager**: Tej opcji należy użyć do przechowywania zawartości w pamięci podręcznej klientów. Dzięki temu klient może działać jako źródło pamięci podręcznej elementów równorzędnych dla innych klientów pamięci podręcznej elementów równorzędnych. Aby uzyskać więcej informacji, zobacz [Buforowanie równorzędne przygotowanie środowiska Preinstalacyjnego systemu Windows, aby zmniejszyć ruch w sieci WAN](../get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md).  
+ -   **Pamięć podręczna klienta programu Configuration Manager**: Ta opcja umożliwia przechowywanie zawartości w pamięci podręcznej klientów. Dzięki temu klient może działać jako źródło pamięci podręcznej elementów równorzędnych dla innych klientów pamięci podręcznej elementów równorzędnych. Aby uzyskać więcej informacji, zobacz [przygotowanie środowiska Windows PE równorzędnej pamięci podręcznej, aby zmniejszyć ruch w sieci WAN](../get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md).  
 
--   **Niestandardowa ścieżka**  
+ -   **Ścieżka niestandardowa**  
 
  **Zapisz ścieżkę jako zmienną**  
- Ścieżkę można zapisać jako zmienną do użycia w innym kroku sekwencji zadań. Menedżer konfiguracji umożliwia dodanie sufiksu liczbowego do nazwy zmiennej. Na przykład, jeśli określisz zmienną %*mycontent*% jako zmienną niestandardową, jest główną przechowywania przywoływanej zawartości (co może mieć wielu pakietów). Przy odwoływaniu się do zmiennej sufiksu liczbowego zostaną dodane do zmiennej. Na przykład, pierwszy pakietu można będzie odnosić się do %*mycontent01*zmiennej %. Przy odwoływaniu się do zmiennej w krokach podsekwencję, takie jak uaktualnienie systemu operacyjnego, można użyć %*mycontent02*% lub %*mycontent03*%, gdy liczba odpowiada kolejności, w której pakiet zostanie wyświetlony w kroku.  
+ Ścieżkę można zapisać jako zmienną do użycia w innym kroku sekwencji zadań. Menedżer konfiguracji dodaje sufiks numeryczny do nazwy zmiennej. Na przykład jeśli określisz zmienną %*mojazawartosc*% jako zmienną niestandardową, jest to główny katalog do przechowywania przywoływanej zawartości, (która może być wiele pakietów). W przypadku odwoływania się do zmiennej, zostaną dodane do zmiennej sufiksem numerycznym. Na przykład dla pierwszego pakietu zostanie odwołujesz się do %*mojazawartosc01*zmienną %. W przypadku odwoływania się do zmiennej w kolejnych kroków, takich jak Uaktualnij System operacyjny, należy użyć %*mojazawartosc02*% lub %*mycontent03*%, gdzie numer odpowiada kolejności, w której pakiet zostanie wyświetlony w kroku.  
 
  **Jeśli pobieranie pakietu nie powiedzie się, kontynuuj pobieranie pozostałych pakietów na liście**  
  Wskazuje, że jeśli pobieranie pakietu nie powiedzie się, nastąpi przejście do następnego pakietu na liście i rozpoczęcie pobierania.  
@@ -722,7 +725,7 @@ Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows P
  **Wybierz dysk do zaszyfrowania**  
  Określa dysk do zaszyfrowania. Aby zaszyfrować bieżący dysk systemu operacyjnego, wybierz pozycję **Bieżący dysk systemu operacyjnego**, a następnie skonfiguruj jedną z następujących opcji zarządzania kluczami:  
 
--   **Tylko TPM**: Wybierz tę opcję, aby używać tylko module Trusted Platform Module (TPM).  
+-   **Tylko TPM**: Wybierz tę opcję, aby użyć tylko modułu (TPM).  
 
 -   **Klucz uruchomienia tylko na USB**: Wybierz tę opcję, aby użyć klucza uruchomienia przechowywanego na dysku flash USB. Jeśli wybierzesz tę opcję, funkcja BitLocker zablokuje normalny proces rozruchu do czasu podłączenia do komputera urządzenia USB zawierającego klucz uruchomienia funkcji BitLocker.  
 
@@ -735,7 +738,7 @@ Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows P
  **Wybierz miejsce utworzenia klucza odzyskiwania**  
  Aby określić miejsce tworzenia hasła odzyskiwania, wybierz pozycję **W usłudze Active Directory** w celu zdeponowania hasła w usłudze Active Directory. Jeśli wybierzesz tę opcję, będzie konieczne rozszerzenie usługi Active Directory dla tej lokacji, aby można było zapisać skojarzone informacje odzyskiwania funkcji BitLocker. Jeśli nie chcesz tworzyć hasła, wybierz pozycję **Nie twórz klucza odzyskiwania**. Jednak najlepszym rozwiązaniem jest utworzenie hasła.  
 
- **Poczekaj, aż funkcji BitLocker na ukończenie procesu szyfrowania dysku na wszystkich dyskach przed kontynuowanie wykonywania sekwencji zadań**  
+ **Poczekaj na ukończenie procesu szyfrowania dysku na wszystkich dyskach przed kontynuowanie wykonania sekwencji zadań przez funkcję BitLocker**  
  Wybierz tę opcję, aby umożliwić ukończenie szyfrowania dysków za pomocą funkcji BitLocker przed uruchomieniem następnego kroku w sekwencji zadań. W przypadku wybrania tej opcji cały wolumin dysku będzie zaszyfrowany zanim użytkownik będzie mógł zalogować się do komputera.  
 
  Szyfrowanie może potrwać kilka godzin w przypadku dużego dysku twardego. Jeśli nie wybierzesz tej opcji, sekwencja zadań będzie natychmiast kontynuowana.  
@@ -787,9 +790,9 @@ Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows P
 
  Aby utworzyć nową partycję, kliknij pozycję **Nowy** w celu otwarcia okna dialogowego **Właściwości partycji**. Możesz określić typ i rozmiar partycji oraz określić, czy ma ona być partycją rozruchową. Aby zmodyfikować istniejącą partycję, kliknij partycję, którą chcesz zmodyfikować, a następnie kliknij przycisk właściwości. Więcej informacji o konfigurowaniu partycji dysków twardych można znaleźć w jednym z następujących artykułów:  
 
--   [Jak skonfigurować partycje dysków twardych opartych na interfejsie UEFI/GPT](http://go.microsoft.com/fwlink/?LinkID=272104)  
+-   [Jak skonfigurować partycje dysków twardych z systemem UEFI/GPT](http://go.microsoft.com/fwlink/?LinkID=272104)  
 
--   [Jak skonfigurować partycje dysku twardego z systemem BIOS/MBR](http://go.microsoft.com/fwlink/?LinkId=272105)  
+-   [Jak skonfigurować partycje dysków twardych z systemem BIOS/MBR](http://go.microsoft.com/fwlink/?LinkId=272105)  
 
  Aby usunąć partycję, zaznacz partycję do usunięcia, a następnie kliknij pozycję **Usuń**.  
 
@@ -812,7 +815,7 @@ Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows P
 >  Aby można było zainstalować aplikację, która zastępuje inną aplikację, pliki zawartości zastępowanej aplikacji muszą być dostępne. W przeciwnym razie krok sekwencji zadań zakończy się niepowodzeniem. Przykład: program Microsoft Visio 2010 jest zainstalowany na kliencie lub w przechwyconym obrazie. Po uruchomieniu kroku sekwencji zadań Zainstaluj aplikację w celu zainstalowania programu Microsoft Visio 2013 pliki zawartości programu Microsoft Visio 2010 (zastępowanej aplikacji) muszą być dostępne w punkcie dystrybucji. W przeciwnym razie sekwencja zadań zakończy się niepowodzeniem. Klient lub przechwycony obraz bez zainstalowanego programu Microsoft Visio ukończy instalację programu Microsoft Visio 2013 bez sprawdzania dostępności plików zawartości programu Microsoft Visio 2010.  
 
 > [!NOTE]
-> Można użyć SMSTSMPListRequestTimeoutEnabled i listy punktów SMSTSMPListRequestTimeout wbudowane zmienne, aby włączyć i określić, ile czasu w milisekundach sekwencję zadań przed ponowną próbą zainstalowania aplikacji lub oprogramowania aktualizacji po niepowodzeniu pobrania zarządzania z usług lokalizacji. Aby uzyskać więcej informacji, zobacz [varliables wbudowanej sekwencji zadań](task-sequence-built-in-variables.md).
+> Można użyć SMSTSMPListRequestTimeoutEnabled i listy punktów SMSTSMPListRequestTimeout wbudowane zmienne, aby włączyć i określ liczbę milisekund oczekiwania przez sekwencję zadań przed ponowną próbą zainstalowania aplikacji lub oprogramowania zaktualizować po niepowodzeniu pobrania zarządzania z usług lokalizacji. Aby uzyskać więcej informacji, zobacz [varliables wbudowanej sekwencji zadań](task-sequence-built-in-variables.md).
 
  Ten krok sekwencji zadań działa tylko w standardowym systemie operacyjnym. Nie działa on w środowisku Windows PE.  
 
@@ -838,7 +841,7 @@ Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows P
  **Zainstaluj następujące aplikacje**  
  To ustawienie określa aplikacje, które zostaną zainstalowane w kolejności, w jakiej zostały określone.  
 
- Menedżer konfiguracji odfiltruje wyłączone aplikacje lub wszystkie aplikacje z następującymi ustawieniami. Te aplikacje nie będą wyświetlane w oknie dialogowym **Wybierz aplikację do zainstalowania**.  
+ Menedżer konfiguracji odfiltruje wyłączone aplikacje lub wszystkie aplikacje z poniższymi ustawieniami. Te aplikacje nie będą wyświetlane w oknie dialogowym **Wybierz aplikację do zainstalowania**.  
 
 -   Tylko, gdy użytkownik jest zalogowany  
 
@@ -847,7 +850,7 @@ Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows P
  **Zainstaluj aplikacje zgodnie z listą zmiennych dynamicznych**  
  To ustawienie określa podstawową nazwę zestawu zmiennych sekwencji zadań zdefiniowanych dla kolekcji lub komputera. Te zmienne określają aplikacje, które zostaną zainstalowane dla tej kolekcji lub tego komputera. Każda nazwa zmiennej składa się z podstawowej nazwy pospolitej i liczbowego sufiksu (zaczynając od 01). Wartość każdej zmiennej musi zawierać wyłącznie nazwę aplikacji.  
 
- W przypadku aplikacji instalowanych przy użyciu listy zmiennych dynamicznych należy włączyć następujące ustawienie na **ogólne** kartę aplikacji **właściwości** okno dialogowe: **Zezwalaj na ta aplikacja jest instalowana w ramach akcji sekwencji zadań zainstaluj aplikację zamiast wdrażania ręcznego**  
+ W przypadku aplikacji do zainstalowania przy użyciu listy zmiennych dynamicznych należy włączyć następujące ustawienie na **ogólne** kartę aplikacji **właściwości** okno dialogowe: **Zezwalaj na tę aplikację do zainstalowania z akcji sekwencji zadań zainstaluj aplikację zamiast wdrażania ręcznego**  
 
 > [!NOTE]  
 >  W przypadku wdrożeń nośników autonomicznych nie można instalować aplikacji za pomocą listy zmiennych dynamicznych.  
@@ -869,13 +872,13 @@ Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows P
 
 -   Jeśli wartość zmiennej zawiera informacje inne niż nazwa aplikacji, ta aplikacja nie zostanie zainstalowana i sekwencja zadań będzie kontynuować działanie.  
 
--   Jeśli nie zostanie znaleziona zmienna o określonej nazwie podstawowej i sufiksie „01”, aplikacje nie zostaną zainstalowane. Po wybraniu **Kontynuuj przy błędzie** na karcie Opcje kroku sekwencji zadań przerywać sekwencji zadań w przypadku niepowodzenia instalacji aplikacji. Gdy to ustawienie nie zostanie wybrane, sekwencja zadań zakończy się niepowodzeniem i pozostałe aplikacje nie zostaną zainstalowane.  
+-   Jeśli nie zostanie znaleziona zmienna o określonej nazwie podstawowej i sufiksie „01”, aplikacje nie zostaną zainstalowane. Po wybraniu **Kontynuuj przy błędzie** na karcie Opcje kroku sekwencji zadań, sekwencja zadań ma być kontynuowana po niepowodzeniu instalacji aplikacji. Gdy to ustawienie nie zostanie wybrane, sekwencja zadań zakończy się niepowodzeniem i pozostałe aplikacje nie zostaną zainstalowane.  
 
- **Jeśli aplikacja nie powiedzie się, kontynuuj instalowanie innych aplikacji na liście**  
+ **Jeśli aplikacja nie powiedzie się, kontynuuj instalowanie pozostałych aplikacji z listy**  
  To ustawienie określa, że krok ma kontynuować działanie w przypadku niepowodzenia instalacji aplikacji. Jeśli to ustawienie zostanie określone, sekwencja zadań będzie kontynuować działanie niezależnie od zwracanych błędów instalacji. Jeśli to ustawienie nie zostanie określone i instalacja zakończy się niepowodzeniem, krok sekwencji zadań zakończy się natychmiast.  
 
 ##  <a name="BKMK_InstallDeploymentTools"></a>Instalowanie narzędzi wdrażania  
- Użyj **Zainstaluj narzędzia wdrażania** sekwencji zadań, aby zainstalować pakiet programu Configuration Manager zawierający narzędzia wdrażania Sysprep.  
+ Użyj **Zainstaluj narzędzia wdrażania** krok sekwencji zadań umożliwia zainstalowanie pakietu programu Configuration Manager zawierający narzędzia wdrażania Sysprep.  
 
 ### <a name="details"></a>Szczegóły  
  Na karcie **Właściwości** tego kroku można skonfigurować ustawienia opisane w tej sekcji.  
@@ -924,7 +927,7 @@ Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows P
 >   
 >  W przypadku nośnika samodzielnego zawierającego krok Zainstaluj pakiet nośnik ten należy utworzyć w lokacji głównej, na której jest włączony agent dystrybucji oprogramowania, albo dodać krok **Uruchom wiersz polecenia** przed krokiem **Zainstaluj system Windows i program ConfigMgr** oraz przed pierwszym krokiem **Zainstaluj pakiet**. Krok **Uruchom wiersz polecenia** uruchamia polecenie WMIC włączające agenta dystrybucji oprogramowania przed uruchomieniem pierwszego kroku Zainstaluj pakiet. W kroku **Uruchom wiersz polecenia** sekwencji zadań można użyć następującej składni:  
 >   
->  **Wiersz polecenia**: **WMIC/Namespace:\\\root\ccm\policy\machine\requestedconfig ccm_SoftwareDistributionClientConfig ścieżki ComponentName utworzyć = "Włącz SWDist" Enabled = "true", LockSettings = "TRUE", PolicySource = "local", PolicyVersion = "1.0" SiteSettingsKey = "1" /NOINTERACTIVE**  
+>  **Wiersz polecenia**: **WMIC/Namespace:\\ccm_SoftwareDistributionClientConfig ścieżki \root\ccm\policy\machine\requestedconfig NazwaSkładnika utworzyć = "Włącz SWDist" Enabled = "true", LockSettings = "TRUE", PolicySource = "local", PolicyVersion = "1.0" SiteSettingsKey = "1" /NOINTERACTIVE**  
 >   
 >  Aby uzyskać więcej informacji o tworzeniu nośników autonomicznych, zobacz [tworzenia nośnika samodzielnego](../deploy-use/create-stand-alone-media.md).  
 
@@ -953,7 +956,7 @@ Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows P
  **Zainstaluj pakiety oprogramowania zgodnie z listą zmiennych dynamicznych**  
  To ustawienie określa podstawową nazwę zestawu zmiennych sekwencji zadań zdefiniowanych dla kolekcji lub komputera. Te zmienne określają pakiety, które zostaną zainstalowane dla tej kolekcji lub tego komputera. Każda nazwa zmiennej składa się z podstawowej nazwy pospolitej i liczbowego sufiksu (zaczynając od 001). Wartość każdej zmiennej musi zawierać identyfikator pakietu i nazwę oprogramowania rozdzielone dwukropkiem.  
 
- W przypadku oprogramowania instalowanego przy użyciu listy zmiennych dynamicznych należy włączyć następujące ustawienie na **zaawansowane** kartę Pakiet **właściwości** okno dialogowe: **Zezwalaj na ten program można zainstalować z sekwencji zadań pakietu instalacyjnego bez wdrożenia**  
+ W przypadku oprogramowania instalowanego przy użyciu listy zmiennych dynamicznych należy włączyć następujące ustawienie na **zaawansowane** kartę pakietu **właściwości** okno dialogowe: **Zezwalaj na ten program można zainstalować z sekwencji zadań pakietu instalacyjnego bez wdrożenia**  
 
 > [!NOTE]  
 >  W przypadku wdrożeń nośników autonomicznych nie można instalować pakietów oprogramowania za pomocą listy zmiennych dynamicznych.  
@@ -980,23 +983,23 @@ Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows P
 
 -   Jeśli nie zostanie znaleziona zmienna o określonej nazwie podstawowej i sufiksie „001”, pakiety nie zostaną zainstalowane i sekwencja zadań będzie kontynuować działanie.  
 
- **Jeśli instalacja pakietu oprogramowania nie powiedzie się, kontynuuj instalowanie pozostałych pakietów z listy**  
+ **Jeśli instalacja pakietu oprogramowania nie powiedzie się, kontynuuj instalowanie pozostałych pakietów na liście**  
  To ustawienie określa, że krok ma kontynuować działanie w przypadku niepowodzenia instalacji pakietu oprogramowania. Jeśli to ustawienie zostanie określone, sekwencja zadań będzie kontynuować działanie niezależnie od zwracanych błędów instalacji. Jeśli to ustawienie nie zostanie określone i instalacja zakończy się niepowodzeniem, krok sekwencji zadań zakończy się natychmiast.  
 
 ##  <a name="BKMK_InstallSoftwareUpdates"></a>Instalacja aktualizacji oprogramowania  
- Krok sekwencji zadań **Zainstaluj aktualizacje oprogramowania** umożliwia zainstalowanie aktualizacji oprogramowania na komputerze docelowym. Komputer docelowy nie jest sprawdzany pod kątem dostępności odpowiednich aktualizacji oprogramowania do czasu uruchomienia tego kroku sekwencji zadań. Po uruchomieniu komputera docelowego sprawdzania pod kątem aktualizacji oprogramowania, takich jak inny klient zarządzany przez Menedżera konfiguracji. W szczególności w ramach tego kroku są instalowane tylko aktualizacje oprogramowania przeznaczone dla kolekcji, do których obecnie należy komputer.  
+ Krok sekwencji zadań **Zainstaluj aktualizacje oprogramowania** umożliwia zainstalowanie aktualizacji oprogramowania na komputerze docelowym. Komputer docelowy nie jest sprawdzany pod kątem dostępności odpowiednich aktualizacji oprogramowania do czasu uruchomienia tego kroku sekwencji zadań. Po uruchomieniu komputera docelowego jest oceniane pod kątem aktualizacji oprogramowania, takich jak inny klient zarządzany przez Menedżera konfiguracji. W szczególności w ramach tego kroku są instalowane tylko aktualizacje oprogramowania przeznaczone dla kolekcji, do których obecnie należy komputer.  
 >  [!IMPORTANT]
->Zdecydowanie zaleca się zainstalowanie najnowszej wersji programu Windows Update Agent ilość w celu zapewnienia lepszej wydajności przy użyciu kroku sekwencji zadań Zainstaluj aktualizacje oprogramowania.
+>Zdecydowanie zaleca się zainstalowanie najnowszej wersji usługi Windows Update Agent dla znacznie lepszą wydajność przy użyciu kroku sekwencji zadań Zainstaluj aktualizacje oprogramowania.
 >* System Windows 7 — zobacz [artykuł 3161647 bazy wiedzy](https://support.microsoft.com/kb/3161647).
 >* System Windows 8 — zobacz [artykuł 3163023 bazy wiedzy](https://support.microsoft.com/kb/3163023).
 
  Ten krok sekwencji zadań działa tylko w standardowym systemie operacyjnym. Nie działa on w środowisku Windows PE. Aby uzyskać informacje o zmiennych sekwencji zadań dotyczących tej akcji sekwencji zadań, zobacz [Zmienne akcji sekwencji zadań Zainstaluj aktualizacje oprogramowania](task-sequence-action-variables.md#BKMK_InstallSoftwareUpdates).
 
  > [!NOTE]
- > Można użyć SMSTSMPListRequestTimeoutEnabled i listy punktów SMSTSMPListRequestTimeout wbudowane zmienne, aby włączyć i określić, ile czasu w milisekundach sekwencję zadań przed ponowną próbą zainstalowania aplikacji lub oprogramowania aktualizacji po niepowodzeniu pobrania zarządzania z usług lokalizacji. Aby uzyskać więcej informacji, zobacz [wbudowane zmienne sekwencji zadań](task-sequence-built-in-variables.md).
+ > Można użyć SMSTSMPListRequestTimeoutEnabled i listy punktów SMSTSMPListRequestTimeout wbudowane zmienne, aby włączyć i określ liczbę milisekund oczekiwania przez sekwencję zadań przed ponowną próbą zainstalowania aplikacji lub oprogramowania zaktualizować po niepowodzeniu pobrania zarządzania z usług lokalizacji. Aby uzyskać więcej informacji, zobacz [wbudowane zmienne sekwencji zadań](task-sequence-built-in-variables.md).
 
 > [!NOTE]
->Na karcie opcji możesz skonfigurować tę sekwencję zadań, aby ponowić próbę, jeśli komputer zostanie nieoczekiwanie uruchomiony ponownie. Na przykład instalację aktualizacji oprogramowania, która powoduje ponowne uruchomienie komputera. Począwszy od programu Configuration Manager 1602, można skonfigurować zmiennej SMSTSWaitForSecondReboot, aby określić czas (w sekundach), że sekwencja zadań powinno wstrzymać działanie po ponownym uruchomieniu komputera po zainstalowaniu aktualizacji oprogramowania. Aby uzyskać więcej informacji, zobacz [wbudowane zmienne sekwencji zadań](task-sequence-built-in-variables.md).
+>Na karcie opcji możesz skonfigurować tę sekwencję zadań, aby ponowić próbę, jeśli komputer zostanie nieoczekiwanie uruchomiony ponownie. Na przykład instalację aktualizacji oprogramowania, która powoduje ponowne uruchomienie komputera. Począwszy od wersji 1602 programu Configuration Manager, można skonfigurować zmienną SMSTSWaitForSecondReboot, aby określić czas (w sekundach) wstrzymania sekwencji zadań, po ponownym uruchomieniu komputera po zainstalowaniu aktualizacji oprogramowania. Aby uzyskać więcej informacji, zobacz [wbudowane zmienne sekwencji zadań](task-sequence-built-in-variables.md).
 
 ### <a name="details"></a>Szczegóły  
  Na karcie **Właściwości** tego kroku można skonfigurować ustawienia opisane w tej sekcji.  
@@ -1020,11 +1023,11 @@ Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows P
  **Wymagane do instalacji — obowiązkowe aktualizacje oprogramowania tylko**  
  Wybierz tę opcję, aby zainstalować wszystkie aktualizacje oprogramowania oflagowane w programie Configuration Manager jako obowiązkowe dla komputerów docelowych, które odbierają sekwencję zadań. Obowiązkowe aktualizacje oprogramowania mają zdefiniowane przez administratora terminy instalacji.  
 
- **Dostępne do zainstalowania — wszystkie aktualizacje oprogramowania**  
- Wybierz tę opcję, aby zainstalować wszystkie dostępne aktualizacje oprogramowania przeznaczone kolekcji programu Configuration Manager, która odbierze sekwencję zadań. Na komputerach docelowych zostaną zainstalowane wszystkie dostępne aktualizacje oprogramowania.  
+ **Dostępne do instalacji — wszystkie aktualizacje oprogramowania**  
+ Wybierz tę opcję, aby zainstalować wszystkie dostępne aktualizacje oprogramowania przeznaczonych dla kolekcji programu Configuration Manager, która odbierze sekwencję zadań. Na komputerach docelowych zostaną zainstalowane wszystkie dostępne aktualizacje oprogramowania.  
 
- **Oceniać aktualizacje oprogramowania z wyników skanowania w pamięci podręcznej**  
-Począwszy od wersji Configuration Manager 1606, można wykonać pełne skanowanie w poszukiwaniu aktualizacji oprogramowania (zamiast korzystać z buforowanych wyników skanowania). Domyślnie sekwencja zadań używa wyników buforowanych. Jeśli chcesz, aby klient łączył się z punktem aktualizacji oprogramowania w celu przetwarzania i pobierania wykazu najnowszych aktualizacji oprogramowania, możesz wyczyścić pole wyboru opcji. Tę opcję można wybrać w przypadku używania sekwencji zadań w celu [przechwytywania i kompilowania obrazu systemu operacyjnego](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md), gdy wiadomo, że oczekiwana jest duża liczba aktualizacji oprogramowania i wiele z nich ma zależności (jeśli ma to zastosowanie, pojawi się komunikat o konieczności zainstalowania produktu X przed produktem Y). W przypadku zaznaczenia tego ustawienia i wdrażania sekwencji zadań do dużej liczby klientów, one będą łączyć się punkt aktualizacji oprogramowania w tym samym czasie. Może to spowodować problemy z wydajnością podczas przetwarzania i pobierania wykazu. W większości przypadków zalecamy użycie ustawienia domyślnego.
+ **Oceń aktualizacje oprogramowania z wyników skanowania w pamięci podręcznej**  
+Począwszy od wersji Configuration Manager 1606, można wykonać pełne skanowanie w poszukiwaniu aktualizacji oprogramowania (zamiast korzystać z buforowanych wyników skanowania). Domyślnie sekwencja zadań używa wyników buforowanych. Jeśli chcesz, aby klient łączył się z punktem aktualizacji oprogramowania w celu przetwarzania i pobierania wykazu najnowszych aktualizacji oprogramowania, możesz wyczyścić pole wyboru opcji. Tę opcję można wybrać w przypadku używania sekwencji zadań w celu [przechwytywania i kompilowania obrazu systemu operacyjnego](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md), gdy wiadomo, że oczekiwana jest duża liczba aktualizacji oprogramowania i wiele z nich ma zależności (jeśli ma to zastosowanie, pojawi się komunikat o konieczności zainstalowania produktu X przed produktem Y). Gdy wyczyścić to ustawienie i wdrożyć sekwencję zadań do dużej liczby klientów, one będzie łączyć się punkt aktualizacji oprogramowania w tym samym czasie. Może to spowodować problemy z wydajnością podczas przetwarzania i pobierania wykazu. W większości przypadków zalecamy użycie ustawienia domyślnego.
 
 W programie Configuration Manager w wersji 1606 wprowadzono nową zmienną sekwencji zadań SMSTSSoftwareUpdateScanTimeout. Umożliwia ona kontrolę limitu czasu skanowania w celu wyszukania aktualizacji oprogramowania podczas kroku sekwencji zadań Zainstaluj aktualizacje oprogramowania. Wartość domyślna to 30 minut. Aby uzyskać więcej informacji, zobacz [wbudowane zmienne sekwencji zadań](task-sequence-built-in-variables.md).
 
@@ -1051,7 +1054,7 @@ W programie Configuration Manager w wersji 1606 wprowadzono nową zmienną sekwe
  **Opis**  
  Bardziej szczegółowe informacje dotyczące akcji wykonywanej w tym kroku.  
 
- **Dołącz do grupy roboczej**  
+ **Przyłącz do grupy roboczej**  
  Wybierz tę opcję, aby przyłączyć komputer docelowy do określonej grupy roboczej. Jeśli komputer należy obecnie do domeny, wybranie tej opcji spowoduje ponowne uruchomienie komputera.  
 
  **Przyłącz do domeny**  
@@ -1059,29 +1062,29 @@ W programie Configuration Manager w wersji 1606 wprowadzono nową zmienną sekwe
 
  Opcjonalnie można wprowadzić lub wyszukać jednostkę organizacyjną w określonej domenie, do której ma zostać przyłączony komputer. Jeśli komputer należy obecnie do innej domeny lub grupy roboczej, spowoduje to ponowne uruchomienie komputera. Jeśli komputer należy już do innej jednostki organizacyjnej, usługi Active Directory Domain Services nie zezwolą na zmianę jednostki organizacyjnej i to ustawienie zostanie zignorowane.  
 
- **Wprowadź konto, które ma uprawnienie do przyłączania do domeny**  
+ **Wprowadź konto z uprawnieniem do przyłączenia do domeny**  
  Kliknij pozycję **Ustaw**, aby wprowadzić konto i hasło z uprawnieniami do przyłączenia do domeny. Konto należy wprowadzić w następującym formacie:  
 
  *Domena\konto*  
 
 ## <a name="BKMK_PrepareConfigMgrClientforCapture"></a>Przygotuj klienta programu ConfigMgr do przechwycenia  
-Użyj **przygotować klienta programu ConfigMgr do przechwycenia** krok, aby usunąć klienta programu Configuration Manager lub skonfigurować klienta na komputerze odniesienia, aby przygotować go do przechwycenia w ramach procesu przetwarzania obrazów.
+Użyj **przygotować klienta programu ConfigMgr do przechwycenia** krok, aby usunąć klienta programu Configuration Manager lub konfigurowania klienta na komputerze odniesienia, aby przygotować go do przechwycenia w ramach procesu przetwarzania obrazów.
 
-Począwszy od programu Configuration Manager w wersji 1610 kroku przygotować klienta programu ConfigMgr całkowicie usuwa klienta programu Configuration Manager, a nie tylko usunięcie informacji o kluczu. Po wdrożeniu przechwyconego obrazu systemu operacyjnego przez sekwencję zadań zainstalowania nowego klienta programu Configuration Manager zawsze.  
+Począwszy od programu Configuration Manager w wersji 1610 krok przygotować klienta programu ConfigMgr powoduje całkowite usunięcie klienta programu Configuration Manager, a nie tylko usunięcie informacji o kluczu. Jeśli sekwencja zadań wdrażania przechwyconego obrazu systemu operacyjnego zainstaluje nowy klient programu Configuration Manager zawsze.  
 
 Przed 1610 wersji programu Configuration Manager w tym kroku wykonuje następujące zadania:  
 
--   Usunięcie sekcji właściwości konfiguracji klienta z pliku smscfg.ini w katalogu systemu Windows. Te właściwości obejmują informacje specyficzne dla klienta, w tym identyfikator GUID programu Configuration Manager i inne identyfikatory klienta.  
+-   Usunięcie sekcji właściwości konfiguracji klienta z pliku smscfg.ini w katalogu systemu Windows. Tych właściwości należą informacje specyficzne dla klienta, w tym identyfikator GUID programu Configuration Manager i inne identyfikatory klienta.  
 
--   Usuwa wszystkie certyfikaty komputera programu Configuration Manager lub programu SMS.  
+-   Usuwa wszystkie certyfikaty komputera programu SMS lub programu Configuration Manager.  
 
--   Usunięcie pamięci podręcznej klienta programu Configuration Manager.  
+-   Usuwa pamięci podręcznej klienta programu Configuration Manager.  
 
 -   Wyczyszczenie przypisanej zmiennej lokacji klienta programu Configuration Manager.  
 
 -   Usuwa wszystkie lokalne zasady programu Configuration Manager.  
 
--   Usunięcie zaufanego klucza głównego klienta programu Configuration Manager.  
+-   Usuwa zaufany klucz główny dla klienta programu Configuration Manager.  
 
  Ten krok sekwencji zadań działa tylko w standardowym systemie operacyjnym. Nie działa on w środowisku Windows PE.  
 
@@ -1156,13 +1159,13 @@ Przed 1610 wersji programu Configuration Manager w tym kroku wykonuje następuj�
  **Zastosuj funkcję BitLocker do określonego dysku**  
  Określ dysk, dla którego chcesz włączyć funkcję BitLocker. Szyfrowany jest tylko zajęty obszar dysku.  
 
- **Pomiń ten krok dla komputerów, które nie ma modułu TPM lub gdy moduł TPM nie jest włączony**  
+ **Pomiń ten krok w przypadku komputerów, które nie ma modułu TPM lub gdy moduł TPM nie jest włączona**  
  Wybierz tę opcję, aby pominąć szyfrowanie dysku, gdy sprzęt komputerowy nie obsługuje modułu TPM lub gdy moduł TPM nie jest włączony. Można jej na przykład użyć w przypadku wdrażania systemu operacyjnego na maszynie wirtualnej.  
 
 ##  <a name="BKMK_ReleaseStateStore"></a>Zwolnij Magazyn stanów  
  Krok sekwencji zadań **Zwolnij magazyn stanów** umożliwia powiadomienie punktu migracji stanu o ukończeniu akcji przechwytywania lub przywracania. Ten krok jest używany razem z krokami sekwencji zadań **Zażądaj magazynu stanów**, **Przechwyć stan użytkownika** i **Przywróć stan użytkownika** w celu przeprowadzenia migracji danych stanu użytkownika przy użyciu punktu migracji stanu i narzędzia do migracji stanu użytkowników (USMT).  
 
- Aby uzyskać więcej informacji o zarządzaniu stanem użytkownika podczas wdrażania systemów operacyjnych, zobacz [zarządzania stanem użytkownika](../get-started/manage-user-state.md).  
+ Aby uzyskać więcej informacji o zarządzaniu stanem użytkownika podczas wdrażania systemów operacyjnych, zobacz [Zarządzanie stanem użytkownika](../get-started/manage-user-state.md).  
 
  Jeśli zażądano dostępu do punktu migracji stanu w celu przechwycenia stanu użytkownika w ramach kroku sekwencji zadań **Zażądaj magazynu stanów**, ten krok powiadomi punkt migracji stanu o ukończeniu procesu przechwytywania oraz o tym, że dane stanu użytkownika są dostępne do przywrócenia. Punkt migracji stanu ustawi uprawnienia kontroli dostępu dla przechwyconego stanu tak, aby dostęp do niego (tylko do odczytu) miał tylko komputer, na którym jest wykonywane przywracanie.  
 
@@ -1193,7 +1196,7 @@ Przed 1610 wersji programu Configuration Manager w tym kroku wykonuje następuj�
 ##  <a name="BKMK_RequestStateStore"></a>Zażądaj magazynu stanów  
  Krok sekwencji zadań **Zażądaj magazynu stanów** umożliwia zażądanie dostępu do punktu migracji stanu podczas przechwytywania stanu z komputera lub przywracania stanu na komputerze.  
 
- Aby uzyskać więcej informacji o zarządzaniu stanem użytkownika podczas wdrażania systemów operacyjnych, zobacz [zarządzania stanem użytkownika](../get-started/manage-user-state.md).  
+ Aby uzyskać więcej informacji o zarządzaniu stanem użytkownika podczas wdrażania systemów operacyjnych, zobacz [Zarządzanie stanem użytkownika](../get-started/manage-user-state.md).  
 
  Krok sekwencji zadań **Zażądaj magazynu stanów** może być używany razem z krokami **Zwolnij magazyn stanów**, **Przechwyć stan użytkownika** i **Przywróć stan użytkownika** w celu przeprowadzenia migracji stanu komputera przy użyciu punktu migracji stanu i narzędzia do migracji stanu użytkowników (USMT).  
 
@@ -1222,12 +1225,12 @@ Przed 1610 wersji programu Configuration Manager w tym kroku wykonuje następuj�
  **Przechwyć stan z komputera**  
  Ten krok znajduje punkt migracji stanu, który spełnia wymagania minimalne zgodnie z konfiguracją w ustawieniach punktu migracji stanu (maksymalna liczba klientów i minimalna ilość wolnego miejsca na dysku), ale nie gwarantuje, że podczas migracji stanu na dysku będzie dostępna wystarczająca ilość wolnego miejsca. Wybranie tej opcji spowoduje zażądanie dostępu do punktu migracji stanu na potrzeby przechwycenia stanu i ustawień użytkownika z komputera.  
 
- Jeśli lokacja programu Configuration Manager ma włączonych wiele punktów migracji stanu, ten krok sekwencji zadań znajduje punkt migracji stanu ma dostępnego miejsca na dysku przez wyszukiwanie punktu zarządzania lokacji listę punktów migracji stanu i ocenę każdego z nich, dopóki nie zostanie znaleziony taki, który spełnia wymagania minimalne.  
+ Jeśli lokacja programu Configuration Manager ma włączonych wiele punktów migracji stanu, ten krok sekwencji zadań znajduje punkt migracji stanu, który ma dostępnego miejsca na dysku przez wysłanie zapytania punktu zarządzania lokacji, aby uzyskać listę punktów migracji stanu i ocenę każdego z nich do czasu znalezienia punktu, który spełnia minimalne wymagania.  
 
  **Przywróć stan z innego komputera**  
  Wybierz tę opcję, aby zażądać dostępu do punktu migracji stanu na potrzeby przywrócenia przechwyconych wcześniej stanu i ustawień użytkownika na komputerze docelowym.  
 
- Jeśli lokacja programu Configuration Manager ma wiele punktów migracji stanu, ten krok sekwencji zadań znajduje punkt migracji stanu ze stanem komputera przechowywanym na komputerze docelowym.  
+ Jeśli witryna programu Configuration Manager zawiera wiele punktów migracji stanu, ten krok sekwencji zadań znajduje punkt migracji stanu ze stanem komputera przechowywanym na komputerze docelowym.  
 
  **Liczba ponownych prób**  
  Liczba prób znalezienia odpowiedniego punktu migracji stanu przez ten krok sekwencji zadań, po której krok zakończy się niepowodzeniem.  
@@ -1236,12 +1239,12 @@ Przed 1610 wersji programu Configuration Manager w tym kroku wykonuje następuj�
  Czas oczekiwania (w sekundach) kroku sekwencji zadań między ponownymi próbami.  
 
  **Jeśli konto komputera nie może nawiązać połączenia z magazynem stanów, użyj konta dostępu do sieci.**  
- Określa, czy poświadczenia konta dostępu do sieci programu Configuration Manager będzie służyć do połączenia z punktem migracji stanu, jeśli klienta programu Configuration Manager nie może uzyskać dostępu do magazynu stanu punktu, przy użyciu konta komputera. Ta opcja jest mniej bezpieczna, ponieważ inne komputery mogą uzyskać dostęp do przechowywanego stanu za pomocą konta dostępu do sieci, ale może być wymagana, jeśli komputer docelowy nie jest przyłączony do domeny.  
+ Określa, że poświadczenia konta dostępu do sieci programu Configuration Manager będzie służyć do połączenia z punktem migracji stanu, jeśli klient programu Configuration Manager nie może uzyskać dostępu do magazynu stanu przy użyciu konta komputera. Ta opcja jest mniej bezpieczna, ponieważ inne komputery mogą uzyskać dostęp do przechowywanego stanu za pomocą konta dostępu do sieci, ale może być wymagana, jeśli komputer docelowy nie jest przyłączony do domeny.  
 
 ##  <a name="BKMK_RestartComputer"></a>Uruchom ponownie komputer  
  Krok sekwencji zadań **Uruchom ponownie komputer** umożliwia ponowne uruchomienie komputera, na którym działa sekwencja zadań. Po ponownym uruchomieniu komputer automatycznie przejdzie do następnego kroku w sekwencji zadań.  
 
- Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows PE. Aby uzyskać więcej informacji na temat zmiennych sekwencji zadań dotyczących tej akcji sekwencji zadań, zobacz [ponowne uruchomienie zmienne akcji sekwencji zadań na komputerze](task-sequence-action-variables.md#BKMK_RestartComputer).  
+ Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows PE. Aby uzyskać więcej informacji na temat zmiennych sekwencji zadań dotyczących tej akcji sekwencji zadań, zobacz [ponowne uruchomienie zmienne akcji sekwencji zadań komputera](task-sequence-action-variables.md#BKMK_RestartComputer).  
 
 ### <a name="details"></a>Szczegóły  
  Na karcie **Właściwości** tego kroku można skonfigurować ustawienia opisane w tej sekcji.  
@@ -1278,9 +1281,9 @@ Przed 1610 wersji programu Configuration Manager w tym kroku wykonuje następuj�
 ##  <a name="BKMK_RestoreUserState"></a>Przywróć stan użytkownika  
  Krok sekwencji zadań **Przywróć stan użytkownika** umożliwia zainicjowanie narzędzia do migracji stanu użytkowników (USMT) w celu przywrócenia stanu i ustawień użytkownika na komputerze docelowym. Ten krok sekwencji zadań jest używany razem z krokiem sekwencji zadań **Przechwyć stan użytkownika**.  
 
- Aby uzyskać więcej informacji o zarządzaniu stanem użytkownika podczas wdrażania systemów operacyjnych, zobacz [zarządzania stanem użytkownika](../get-started/manage-user-state.md).  
+ Aby uzyskać więcej informacji o zarządzaniu stanem użytkownika podczas wdrażania systemów operacyjnych, zobacz [Zarządzanie stanem użytkownika](../get-started/manage-user-state.md).  
 
- Można również użyć **Przywróć stan użytkownika** krok sekwencji zadań z **Zażądaj magazynu stanów** i **Zwolnij Magazyn stanów** punktu kroki sekwencji zadań, aby zapisać ustawienia stanu lub przywrócenia ustawień z migracji stanu w lokacji programu Configuration Manager. Za pomocą narzędzia USMT 3.0 lub nowszego ta opcja zawsze odszyfrowuje Magazyn stanów narzędzia USMT za pomocą klucza szyfrowania wygenerowanego i zarządzanego przez program Configuration Manager.  
+ Można również użyć **Przywróć stan użytkownika** krok sekwencji zadań z **Zażądaj magazynu stanów** i **Zwolnij Magazyn stanów** punktu kroków sekwencji zadań, aby zapisać ustawienia stanu lub przywrócenia ustawień z migracji stanu w lokacji programu Configuration Manager. Z narzędzia USMT 3.0 lub nowszego ta opcja zawsze odszyfrowuje Magazyn stanów narzędzia USMT za pomocą klucza szyfrowania wygenerowanego i zarządzanego przez program Configuration Manager.  
 
  Krok sekwencji zadań **Przywróć stan użytkownika** zapewnia kontrolę nad ograniczonym podzbiorem najczęściej używanych opcji narzędzia USMT. Dodatkowe opcje wiersza polecenia można określić za pomocą zmiennej sekwencji zadań OSDMigrateAdditionalRestoreOptions.  
 
@@ -1306,8 +1309,8 @@ Przed 1610 wersji programu Configuration Manager w tym kroku wykonuje następuj�
  **Opis**  
  Określa bardziej szczegółowe informacje dotyczące akcji wykonywanej w tym kroku.  
 
- **Pakiet narzędzi migracji stanu użytkownika**  
- Wprowadź pakiet programu Configuration Manager, który zawiera wersję narzędzia USMT dla tego kroku do użycia podczas przywracania stanu i ustawień użytkownika. Ten pakiet nie wymaga programu. Gdy krok sekwencji zadań zostanie uruchomiony, sekwencja zadań użyje wersji narzędzia USMT z określonego pakietu. Określ pakiet zawierający wersję 32-bitową lub wersję x64 narzędzia USMT w zależności od architektury systemu operacyjnego, w którym jest przywracany stan.  
+ **Pakiet narzędzia migracji stanu użytkownika**  
+ Wprowadź pakiet programu Configuration Manager, która zawiera wersję narzędzia USMT dla tego kroku do użycia podczas przywracania stanu i ustawień użytkownika. Ten pakiet nie wymaga programu. Gdy krok sekwencji zadań zostanie uruchomiony, sekwencja zadań użyje wersji narzędzia USMT z określonego pakietu. Określ pakiet zawierający wersję 32-bitową lub wersję x64 narzędzia USMT w zależności od architektury systemu operacyjnego, w którym jest przywracany stan.  
 
  **Przywróć wszystkie przechwycone profile użytkowników z opcjami standardowymi**  
  Przywraca przechwycone profile użytkowników z opcjami standardowymi. Aby dostosować opcje, które zostaną przywrócone, wybierz pozycję **Dostosuj przechwytywanie profili użytkowników**.  
@@ -1347,9 +1350,9 @@ Przed 1610 wersji programu Configuration Manager w tym kroku wykonuje następuj�
  Określa bardziej szczegółowe informacje dotyczące uruchamianego wiersza polecenia.  
 
  **Wiersz polecenia**  
- Określa uruchamiany wiersz polecenia. To pole jest wymagane. Tym rozszerzenia nazw plików są najlepszym rozwiązaniem, na przykład vbs i .exe. Uwzględnij wszystkie wymagane pliki ustawień, opcje wiersza polecenia i przełączniki.  
+ Określa uruchamiany wiersz polecenia. To pole jest wymagane. Najlepszym rozwiązaniem, na przykład vbs i .exe jest tym rozszerzeń nazw plików. Uwzględnij wszystkie wymagane pliki ustawień, opcje wiersza polecenia i przełączniki.  
 
- Jeśli nazwa pliku nie ma określone rozszerzenie nazwy pliku, .com prób programu Configuration Manager, .exe i. bat. Jeśli nazwa pliku ma rozszerzenie, które nie jest wykonywalne, program Configuration Manager spróbuje zastosować skojarzenie lokalne. Na przykład jeśli wiersz polecenia to plik readme.gif, program Configuration Manager uruchomi aplikację określoną na komputerze docelowym w celu otwierania plików GIF.  
+ Jeśli nazwa pliku nie ma określone rozszerzenie nazwy pliku, programu Configuration Manager prób .com, .exe i. bat. Jeśli nazwa pliku ma rozszerzenie, które nie jest plikiem wykonywalnym, programu Configuration Manager spróbuje zastosować skojarzenie lokalne. Na przykład jeśli wiersz polecenia to plik readme.gif, programu Configuration Manager uruchomi aplikację określoną na komputerze docelowym w celu otwierania plików GIF.  
 
  Przykłady:  
 
@@ -1360,7 +1363,7 @@ Przed 1610 wersji programu Configuration Manager w tym kroku wykonuje następuj�
 > [!NOTE]  
 >  Akcje wiersza polecenia, takie jak przekierowywanie danych wyjściowych, przesyłanie potokowe lub kopiowanie, tak jak w poprzednim przykładzie, musi być poprzedzona **cmd.exe /c** polecenie do uruchomienia pomyślnie.  
 
- **Wyłącz przekierowanie 64-bitowy plik systemu**  
+ **Wyłączyć przekierowania systemu plików 64-bitowych**  
  Domyślnie w przypadku uruchomienia w 64-bitowym systemie operacyjnym plik wykonywalny podany w wierszu polecenia jest wyszukiwany i uruchamiany za pomocą przekierowania systemu plików WOW64, dzięki czemu można znaleźć 32-bitowe wersje plików wykonywanych i bibliotek DLL systemu operacyjnego.  Wybranie tej opcji wyłącza użycie przekierowania systemu plików WOW64, dzięki czemu można znaleźć 64-bitowe wersje plików wykonywanych i bibliotek DLL systemu operacyjnego.  Wybranie tej opcji nie ma znaczenia w przypadku uruchamiania w systemie 32-bitowym.  
 
  **Rozpocznij w**  
@@ -1376,10 +1379,10 @@ Przed 1610 wersji programu Configuration Manager w tym kroku wykonuje następuj�
 >  Przycisk **Przeglądaj** umożliwia wyszukanie plików i folderów na komputerze lokalnym, dlatego każdy wybrany w ten sposób element musi również istnieć na komputerze docelowym w tej samej lokalizacji oraz pod tą samą nazwą pliku i folderu.  
 
  **Pakiet**  
- Po określeniu plików lub programów w wierszu polecenia, które nie są już zainstalowane na komputerze docelowym, wybierz tę opcję, aby określić pakiet programu Configuration Manager, który zawiera odpowiednie pliki. Ten pakiet nie wymaga programu. Ta opcja nie jest wymagana, jeśli określone pliki znajdują się na komputerze docelowym.  
+ Po określeniu plików lub programów w wierszu polecenia, który nie ma jeszcze na komputerze docelowym, wybierz tę opcję, aby określić pakiet programu Configuration Manager, który zawiera odpowiednie pliki. Ten pakiet nie wymaga programu. Ta opcja nie jest wymagana, jeśli określone pliki znajdują się na komputerze docelowym.  
 
  **Limit czasu**  
- Określa wartość, która reprezentuje czas programu Configuration Manager będzie zezwala na działanie wiersza polecenia. Ta wartość może być od 1 do 999 minut. Wartość domyślna to 15 minut.  
+ Określa, że wartość, która reprezentuje czas programu Configuration Manager zezwala wiersza polecenia do uruchomienia. Ta wartość może być od 1 do 999 minut. Wartość domyślna to 15 minut.  
 
  Ta opcja jest domyślnie wyłączona.  
 
@@ -1401,7 +1404,7 @@ Przed 1610 wersji programu Configuration Manager w tym kroku wykonuje następuj�
 ##  <a name="BKMK_RunPowerShellScript"></a>Uruchom skrypt programu PowerShell  
  Krok sekwencji zadań **Uruchom skrypt programu PowerShell** umożliwia uruchomienie określonego skryptu programu PowerShell.  
 
- Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows PE. Aby można było uruchomić t en krok w środowisku Windows PE, program Power Shell musi być włączony w obrazie rozruchowym. Program Windows PowerShell (WinPE-PowerShell) można włączyć na karcie **Składniki opcjonalne** we właściwościach obrazu rozruchowego. Aby uzyskać więcej informacji o modyfikowaniu obrazu rozruchowego, zobacz [obrazów rozruchowych Zarządzaj](../get-started/manage-boot-images.md).  
+ Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows PE. Aby można było uruchomić t en krok w środowisku Windows PE, program Power Shell musi być włączony w obrazie rozruchowym. Program Windows PowerShell (WinPE-PowerShell) można włączyć na karcie **Składniki opcjonalne** we właściwościach obrazu rozruchowego. Aby uzyskać więcej informacji o modyfikowaniu obrazu rozruchowego, zobacz [zarządzanie obrazami rozruchowymi](../get-started/manage-boot-images.md).  
 
 > [!NOTE]  
 >  Program PowerShell nie jest domyślnie włączony w systemach operacyjnych Windows Embedded.  
@@ -1439,16 +1442,16 @@ Przed 1610 wersji programu Configuration Manager w tym kroku wykonuje następuj�
 >   
 >  **-Mój_parametr_1 Moja_wartość_1-Mój_parametr_2 Moja_wartość_2**  
 >   
->  Poniżej przedstawiono przykład zawierający nieprawidłowe parametry. Elementy pogrubione to parametry wiersza polecenia programu Windows PowerShell (-nologo i - executionpolicy unrestricted), które nie są używane przez skrypt.  
+>  Poniżej przedstawiono przykład zawierający nieprawidłowe parametry. Elementy pogrubione to parametry wiersza polecenia programu Windows PowerShell (-nologo i - executionpolicy unrestricted) i nie są używane przez skrypt.  
 >   
 >  **-nologo-executionpolicy unrestricted plik Mój_skrypt.ps1-Mój_parametr_1 Moja_wartość_1-Mój_parametr_2 Moja_wartość_2**  
 
  **Zasady wykonywania programu PowerShell**  
  Wybranie zasad wykonywania programu PowerShell pozwala określić, które skrypty programu Windows PowerShell (jeśli takie istnieją) mogą być uruchamiane na komputerze. Wybierz jedną z następujących zasad wykonywania:  
 
--   **Wszystko podpisane**: Można uruchamiać tylko skrypty podpisane przez zaufanego wydawcę.  
+-   **Wszystkie podpisane**: Można uruchamiać tylko skrypty podpisane przez zaufanego wydawcę.  
 
--   **Niezdefiniowane**: Nie wykonywania zdefiniowano zasad. .  
+-   **Niezdefiniowany**: Zdefiniowano zasad wykonywania. .  
 
 -   **Obejście**: Ładuje wszystkie pliki konfiguracji i uruchamia wszystkie skrypty. Jeśli uruchomisz niepodpisany skrypt pobrany z Internetu, przed jego uruchomieniem nie zostanie wyświetlony monit dotyczący uprawnienia.  
 
@@ -1500,15 +1503,15 @@ Przed 1610 wersji programu Configuration Manager w tym kroku wykonuje następuj�
 **Dynamiczne reguły i zmienne**  
  Aby ustawić zmienną dynamiczną do użycia w sekwencji zadań, możesz dodać regułę, a następnie ustawić wartość dla każdej zmiennej określonej dla reguły albo dodać co najmniej jedną zmienną do ustawienia bez dodawania reguły. Możesz dodać regułę z jednej z następujących kategorii:  
 
- -   **Komputer**: Użyj ta kategoria reguł pozwala obliczyć wartości tagu zasobu, identyfikatora UUID, numeru seryjnego lub adresu mac. Możesz ustawić wiele wartości, a jeśli którakolwiek z nich będzie mieć wartość true, reguła zwróci wartość true. Na przykład poniższa reguła zwraca wartość true, jeśli numer seryjny to 5892087, niezależnie od tego, czy adres MAC to 26-78-13-5A-A4-22.  
+ -   **Komputer**: Użyj ta kategoria reguł pozwala obliczyć wartości tagu zasobu, identyfikatora UUID, numer seryjny lub adres mac. Możesz ustawić wiele wartości, a jeśli którakolwiek z nich będzie mieć wartość true, reguła zwróci wartość true. Na przykład poniższa reguła zwraca wartość true, jeśli numer seryjny to 5892087, niezależnie od tego, czy adres MAC to 26-78-13-5A-A4-22.  
 
      `IF Serial Number = 5892087 OR MAC address = 26-78-13-5A-A4-22 THEN`  
 
--   **Lokalizacja**: Użyj ta kategoria reguł pozwala obliczyć wartości bramy domyślnej.  
+-   **Lokalizacja**: Ta kategoria reguł pozwala obliczyć wartości bramy domyślnej.  
 
 -   **Producent i Model**: Użyj ta kategoria reguł pozwala obliczyć wartości producenta i modelu komputera. Aby reguła mogła zwrócić wartość true, producent i model muszą zwrócić wartość true.   
 
-    Począwszy od programu Configuration Manager 1610 wersji, można określić gwiazdkę (*) i znak zapytania (**?**) jako symbole wieloznaczne, gdzie *** odpowiada wielu znaków i **?** pasuje do pojedynczego znaku. Na przykład ciąg "DELL * 900?" będzie zgodna DELL-ABC-9001 i DELL9009.
+    Począwszy od programu Configuration Manager 1610 wersji, można określić znak gwiazdki (*) i znak zapytania (**?**) jako symbole wieloznaczne, gdzie *** odpowiada wielu znaków i **?** reprezentuje pojedynczy znak. Na przykład ciąg "DELL * 900?" będzie odpowiadała DELL-ABC-9001 i DELL9009.
 
 -   **Zmienna sekwencji zadań**: Ta kategoria reguł umożliwia dodawanie zmiennej sekwencji zadań, warunek i wartość do obliczenia. Reguła zwraca wartość true, gdy ustawiona wartość zmiennej spełnia określony warunek.  
 
@@ -1552,11 +1555,11 @@ Po wybraniu zmiennych reguły musisz podać wartość każdej zmiennej. Dla zmie
  Wartość skojarzona ze zmienną sekwencji zadań. Może to być inna zmienna sekwencji zadań określona za pomocą składni %<nazwa zmiennej\>%.  
 
 ##  <a name="BKMK_SetupWindowsandConfigMgr"></a>Zainstaluj system Windows i program ConfigMgr  
- Krok sekwencji zadań **Zainstaluj system Windows i program ConfigMgr** umożliwia przejście ze środowiska Windows PE do nowego systemu operacyjnego. Ten krok sekwencji zadań stanowi wymaganą część każdego wdrożenia systemu operacyjnego. Go instaluje klienta programu Configuration Manager w nowym systemie operacyjnym i przygotowuje sekwencję zadań do kontynuacji działania w nowym systemie operacyjnym.  
+ Krok sekwencji zadań **Zainstaluj system Windows i program ConfigMgr** umożliwia przejście ze środowiska Windows PE do nowego systemu operacyjnego. Ten krok sekwencji zadań stanowi wymaganą część każdego wdrożenia systemu operacyjnego. Go instaluje klienta programu Configuration Manager w nowym systemie operacyjnym i przygotowuje sekwencję zadań kontynuować wykonywanie w nowym systemie operacyjnym.  
 
- Ten krok działa tylko w środowisku Windows PE. Nie działa on w standardowym systemie operacyjnym. Aby uzyskać więcej informacji na temat zmiennych sekwencji zadań dotyczących tej akcji sekwencji zadań, zobacz [Instalatora Windows i program ConfigMgr zmienne akcji sekwencji zadań](task-sequence-action-variables.md#BKMK_SetupWindows).  
+ Ten krok działa tylko w środowisku Windows PE. Nie działa on w standardowym systemie operacyjnym. Aby uzyskać więcej informacji o zmiennych sekwencji zadań dotyczących tej akcji sekwencji zadań, zobacz [zmienne akcji sekwencji zadań Zainstaluj system Windows i program ConfigMgr](task-sequence-action-variables.md#BKMK_SetupWindows).  
 
- **Instalatora Windows i program ConfigMgr** akcji sekwencji zadań zamienia zmienne katalogów sysprep.inf lub unattend.xml, takie jak % WINDIR % i % ProgramFiles %, na katalog instalacyjny środowiska Windows PE X:\Windows. Zmienne sekwencji zadań określone przy użyciu tych zmiennych środowiskowych zostaną zignorowane.  
+ **Zainstaluj system Windows i program ConfigMgr** akcji sekwencji zadań zamienia zmienne katalogów pliku sysprep.inf lub unattend.xml, takie jak % WINDIR % i % ProgramFiles %, na katalog instalacyjny środowiska Windows PE X:\Windows. Zmienne sekwencji zadań określone przy użyciu tych zmiennych środowiskowych zostaną zignorowane.  
 
  Ten krok sekwencji zadań umożliwia wykonywanie następujących czynności:  
 
@@ -1564,19 +1567,19 @@ Po wybraniu zmiennych reguły musisz podać wartość każdej zmiennej. Dla zmie
 
     1.  Wykonuje podstawienie zmiennej sekwencji zadań w pliku unattend.xml.  
 
-    2.  Pobiera pakiet, który zawiera klienta programu Configuration Manager i umieszczenie go we wdrożonym obrazie.  
+    2.  Pobranie pakietu zawierającego klienta programu Configuration Manager i umieszczenie go we wdrożonym obrazie.  
 
 2.  Instalowanie systemu Windows  
 
     1.  Instalacja wykonywana przy użyciu obrazu.  
 
-        1.  Wyłącza klienta programu Configuration Manager w obrazie (czyli wyłącza automatyczne uruchamianie usługi klienta programu Configuration Manager).  
+        1.  Wyłączenie klienta programu Configuration Manager w obrazie (czyli wyłącza automatyczne uruchamianie usługi klienta Configuration Manager).  
 
         2.  Zaktualizowanie rejestru wdrożonego obrazu, aby wdrożony system operacyjny był uruchamiany przy użyciu tej samej litery dysku, która jest używana na komputerze odniesienia.  
 
         3.  Ponowne uruchomienie wdrożonego systemu operacyjnego.  
 
-        4.  Miniinstalacja systemu Windows jest uruchamiana za pomocą wcześniej określonego pliku sysprep.inf lub unattend.xml, który zawiera wszystkie pominięte interakcje użytkownika końcowego. Uwaga: Jeśli **Zastosuj ustawienia sieci** określony w celu dołączenia do domeny, te informacje są w pliku sysprep.inf lub unattend.xml, a miniinstalacji systemu Windows jest wykonywane przyłączanie do domeny.  
+        4.  Miniinstalacja systemu Windows jest uruchamiana za pomocą wcześniej określonego pliku sysprep.inf lub unattend.xml, który zawiera wszystkie pominięte interakcje użytkownika końcowego. Uwaga: Jeśli **Zastosuj ustawienia sieci** określony w celu przyłączenia do domeny, te informacje są w pliku sysprep.inf lub unattend.xml, a miniinstalacji systemu Windows jest wykonywane przyłączanie do domeny.  
 
     2.  Instalacja wykonywana przy użyciu pliku Setup.exe.  Uruchamia plik Setup.exe, który wykonuje typowy proces instalacji systemu Windows:  
 
@@ -1584,7 +1587,7 @@ Po wybraniu zmiennych reguły musisz podać wartość każdej zmiennej. Dla zmie
 
         2.  Ponowne uruchomienie nowo wdrożonego systemu operacyjnego.  
 
-        3.  Miniinstalacja systemu Windows jest uruchamiana za pomocą wcześniej określonego pliku sysprep.inf lub unattend.xml, który zawiera wszystkie pominięte ustawienia interfejsu użytkownika. Uwaga: Jeśli **Zastosuj ustawienia sieci** określony w celu dołączenia do domeny, te informacje są w pliku sysprep.inf lub unattend.xml, a miniinstalacji systemu Windows jest wykonywane przyłączanie do domeny.  
+        3.  Miniinstalacja systemu Windows jest uruchamiana za pomocą wcześniej określonego pliku sysprep.inf lub unattend.xml, który zawiera wszystkie pominięte ustawienia interfejsu użytkownika. Uwaga: Jeśli **Zastosuj ustawienia sieci** określony w celu przyłączenia do domeny, te informacje są w pliku sysprep.inf lub unattend.xml, a miniinstalacji systemu Windows jest wykonywane przyłączanie do domeny.  
 
 3.  Konfigurowanie klienta programu Configuration Manager  
 
@@ -1623,7 +1626,7 @@ Po wybraniu zmiennych reguły musisz podać wartość każdej zmiennej. Dla zmie
  **Pakiet klienta**  
  Określa pakiet instalacyjny klienta programu Configuration Manager, który będzie używany przez ten krok sekwencji zadań. Kliknij przycisk **Przeglądaj** i wybierz pakiet instalacyjny klienta, którego chcesz użyć do zainstalowania klienta programu Configuration Manager.  
 
- **Użyj klienta przedprodukcyjnego pakietu, jeśli jest dostępny**  
+ **Użyj pakietu przedprodukcyjnego klienta, jeśli jest dostępny**  
  Określa, że jeśli pakiet przedprodukcyjny klienta jest dostępny, podczas wykonywania kroku sekwencji zadań zostanie użyty ten pakiet, a nie pakiet produkcyjny klienta. Zazwyczaj klient przedprodukcyjny to nowsza wersja testowana w środowisku produkcyjnym. Kliknij przycisk **Przeglądaj** i wybierz pakiet instalacyjny klienta przedprodukcyjnego, którego chcesz użyć do zainstalowania klienta programu Configuration Manager.  
 
  **Właściwości instalacji**  
@@ -1665,15 +1668,15 @@ Po wybraniu zmiennych reguły musisz podać wartość każdej zmiennej. Dla zmie
  **Klucz produktu**  
  Określ klucz produktu do zastosowania podczas procesu uaktualniania  
 
- **Podaj poniższe zawartość sterowników do Instalatora systemu Windows podczas uaktualniania**  
+ **Podaj poniższą zawartość sterowników w Instalatorze systemu Windows podczas uaktualniania**  
  Wybierz to ustawienie, aby dodać sterowniki do komputera docelowego podczas procesu uaktualniania (odpowiada opcji wiersza polecenia /InstallDriver). Sterowniki muszą być zgodne z systemem Windows 10. Określ jedną z następujących opcji:  
 
 -   **Pakiet sterowników**: Kliknij przycisk **Przeglądaj** i wybierz istniejący pakiet sterowników z listy.  
 
--   **Przemieszczony zawartość**:  Wybierz tę opcję, aby określić lokalizację pakietu sterowników. Możesz wybrać folder lokalny, ścieżkę sieciową lub zmienną sekwencji zadań. Aby używać zmiennej w ścieżce źródłowej, należy wcześniej określić tę zmienną w sekwencji zadań. Na przykład za pomocą kroku [Pobierz zawartość pakietu](task-sequence-steps.md#BKMK_DownloadPackageContent).  
+-   **Zawartość przejściowa**:  Wybierz tę opcję, aby określić lokalizację pakietu sterowników. Możesz wybrać folder lokalny, ścieżkę sieciową lub zmienną sekwencji zadań. Aby używać zmiennej w ścieżce źródłowej, należy wcześniej określić tę zmienną w sekwencji zadań. Na przykład za pomocą kroku [Pobierz zawartość pakietu](task-sequence-steps.md#BKMK_DownloadPackageContent).  
 
  **Limit czasu (w minutach)**  
- Określa liczbę minut, przez które Instalator ma działać, zanim program Configuration Manager zakończy się niepowodzeniem, krok sekwencji zadań.  
+ Określa liczbę minut, przez które Instalator ma uruchomić, zanim programu Configuration Manager zakończy się niepowodzeniem, krok sekwencji zadań.  
 
  **Skanowanie zgodności Instalatora systemu Windows bez rozpoczynania uaktualnienia**  
  Określa, że skanowanie zgodności Instalatora systemu Windows ma się odbyć bez uruchamiania procesu uaktualniania (odpowiada opcji wiersza polecenia /Compat ScanOnly). Po wybraniu tej opcji nadal należy wdrożyć całe źródło instalacji. Instalator zwraca kod zakończenia w wyniku skanowania. Poniższa tabela zawiera niektóre z najczęściej używanych kodów zakończenia.  
@@ -1688,11 +1691,11 @@ Po wybraniu zmiennych reguły musisz podać wartość każdej zmiennej. Dla zmie
 
  Aby uzyskać więcej informacji o tym parametrze, zobacz [Windows Setup Command-Line Options](https://msdn.microsoft.com/library/windows/hardware/dn938368\(v=vs.85\).aspx) (Opcje wiersza polecenia Instalatora systemu Windows)  
 
- **Ignoruj wszystkie komunikaty dismissible zgodności**  
+ **Ignoruj wszystkie komunikaty o zgodności możliwe do odrzucenia**  
  Określa, że Instalator ukończy instalację, ignorując wszystkie możliwe do odrzucenia komunikaty o zgodności (odpowiada opcji wiersza polecenia /Compat IgnoreWarning).  
 
- **Aktualizuj dynamicznie Instalatora systemu Windows za pomocą usługi Windows Update**  
- Określa, czy Instalator będzie wykonywać operacje aktualizacji dynamicznych, takie jak wyszukiwanie, pobieranie i instalowanie aktualizacji (odpowiada opcji wiersza polecenia /DynamicUpdate). To ustawienie nie jest zgodny z aktualizacji oprogramowania programu Configuration Manager, ale można ją włączyć podczas obsługi aktualizacji za pomocą usługi Windows Update lub WSUS (autonomiczny).  
+ **Dynamicznie Aktualizuj Instalatora systemu Windows z usługi Windows Update**  
+ Określa, czy Instalator będzie wykonywać operacje aktualizacji dynamicznych, takie jak wyszukiwanie, pobieranie i instalowanie aktualizacji (odpowiada opcji wiersza polecenia /DynamicUpdate). To ustawienie nie jest zgodny z aktualizacji oprogramowania programu Configuration Manager, ale można ją włączyć w przypadku obsługi aktualizacji za pomocą usługi WSUS (autonomicznie) lub usługi Windows Update.  
 
- **Zastąpienie zasady i użyj domyślnej witryny Microsoft Update**: Wybierz to ustawienie, aby tymczasowo zastępują zasady lokalne w do uruchamiania operacji aktualizacji dynamicznych i komputer pobrać aktualizacje z usługi Windows Update w czasie rzeczywistym.  
+ **Zastąpienia zasad i użyj domyślnej usługi Microsoft Update**: Wybierz to ustawienie, aby tymczasowo zastąpić zasady lokalne w czasie rzeczywistym w celu uruchomienia aktualizacji dynamicznych i pobrania aktualizacji z witryny Windows Update na komputerze.  
 

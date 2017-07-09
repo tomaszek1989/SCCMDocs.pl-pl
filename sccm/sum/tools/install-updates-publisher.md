@@ -1,8 +1,8 @@
 ---
-title: Zainstaluj aktualizacje wydawcy | Dokumentacja firmy Microsoft
+title: Zainstaluj Updates Publisher | Dokumentacja firmy Microsoft
 description: "Zainstaluj System Center Updates Publisher w środowisku"
 ms.custom: na
-ms.date: 4/29/2017
+ms.date: 07/03/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,54 +17,54 @@ ms.author: brenduns
 manager: angrobe
 robots: NOINDEX, NOFOLLOW
 ms.translationtype: Machine Translation
-ms.sourcegitcommit: 90775fcf2549080a43e9c1606caa79d9eb90a89c
-ms.openlocfilehash: 996766d0bd9ab2a3acb1970414f0ae511d97fbff
+ms.sourcegitcommit: 70772ba7d08560aa66abcce29dc6cc6334aa2032
+ms.openlocfilehash: 63ea0383497a3f06870c0907c732010259d1a809
 ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/03/2017
 
 ---
-# <a name="install-updates-publisher"></a>Zainstaluj aktualizacje wydawcy
+# <a name="install-updates-publisher"></a>Zainstaluj Updates Publisher
 
-*Dotyczy: System Center Updates Publisher*
+*Dotyczy: Program System Center Updates Publisher*
 
-Informacje przedstawione w tym temacie ułatwiają pobieranie, instalowanie i konfigurowanie Updates Publisher służących do środowiska.
+Informacje przedstawione w tym temacie ułatwiają get, zainstalować i skonfigurować Updates Publisher do użycia ze środowiskiem.
 
 
 ## <a name="prerequisites-and-limitations"></a>Wymagania wstępne i ograniczenia
-W poniższych sekcjach opisano wymagania dotyczące instalowania i korzystania z wydawcy aktualizacji i ograniczenia lub znanych problemów w celu używania.
+W poniższych sekcjach opisano wymagania dotyczące instalacji i używania Updates Publisher i ograniczenia lub znane problemy jej wykorzystanie.
 
 ### <a name="operating-systems"></a>Systemy operacyjne
-Zainstaluj i uruchom Updates Publisher na 64-bitowych w następujących systemach operacyjnych. Nie ma żadnych minimalnej wersji aktualizacji zbiorczej ani service pack wymagania.
+Zainstaluj i uruchom Updates Publisher w 64-bitowych wersjach następujących systemów operacyjnych. Nie ma żadnych minimalnej wersji aktualizacji zbiorczej lub wymagania dotyczące pakietu usług.
 
--   Windows Server 2016 (wersje Standard, Datacenter)
--   Windows Server 2012 R2 (wersje Standard, Datacenter)
--   Windows 10 (Pro, edukacja, edukacja Pro, Enterprise)
+-   Windows Server 2016 (wersje Standard i Datacenter)
+-   Windows Server 2012 R2 (wersje Standard i Datacenter)
+-   Windows 10 (wersje Pro, Education, Pro, Education i Enterprise)
 -   Windows 8.1 (Professional, Enterprise)
 
 ### <a name="prerequisites"></a>Wymagania wstępne
-Następujące czynności są wymagane na komputerze z programem Updates Publisher.
+Poniższe elementy są wymagane na komputerze z uruchomionym programem Updates Publisher.
 
--   **64-bitowy system operacyjny**: Komputer, którym jest instalowany Updates Publisher musi mieć 64-bitowym systemie operacyjnym.
--   **WSUS 4.0 lub nowszym**:
-    -   W systemie Windows Server Zainstaluj domyślny konsoli administracyjnej, aby spełnić to wymaganie.
-    -   W przypadku systemu Windows 10 i Windows 8.1, zainstalować [zdalnego serwera Administracja narzędzia (RSAT) dla systemów operacyjnych Windows](https://support.microsoft.com/help/2693643/remote-server-administration-tools-rsat-for-windows-operating-systems). Spowoduje to zainstalowanie obsługi niezbędne do używania Updates Publisher (*polecenia cmdlet programu PowerShell i interfejsu API*, i *Konsola zarządzania interfejsem użytkownika*).
+-   **64-bitowym systemie operacyjnym**: Na komputerze, na którym jest instalowany Updates Publisher musi działać 64-bitowym systemie operacyjnym.
+-   **Program WSUS 4.0 lub nowszym**:
+    -   W systemie Windows Server Zainstaluj domyślną konsoli administracyjnej, aby spełnić to wymaganie.
+    -   W przypadku systemu Windows 10 i Windows 8.1, zainstaluj [administracji zdalnej serwera narzędzia (RSAT) dla systemów operacyjnych Windows](https://support.microsoft.com/help/2693643/remote-server-administration-tools-rsat-for-windows-operating-systems). Spowoduje to zainstalowanie obsługi niezbędne do używania Updates Publisher (*poleceń cmdlet programu PowerShell i interfejs API*, i *Konsola zarządzania interfejsem użytkownika*).
 -   **Uprawnienia**:
-    -   Instalacja: Administrator lokalny
-    -   Większość operacji: użytkownika lokalnego
-    -   Publikowanie lub operacji, które obejmują WSUS: Członek grupy Administratorzy WSUS na serwerze WSUS.
+    -   Instalacja: Administratorom lokalnym
+    -   Większość operacji: użytkowników lokalnych
+    -   Publikowanie lub operacji dotyczących usług WSUS: Członek grupy Administratorzy WSUS na serwerze WSUS.
 
 ### <a name="supported-languages"></a>Obsługiwane języki
-Updates Publisher jest dostępna tylko w języku angielskim, ale można zarządzać aktualizacjami dla innych języków. Obsługa języków zależy od zadania, takie jak publikowania, tworzenia lub edytowania aktualizacji.
+Updates Publisher jest dostępna tylko w języku angielskim, ale można zarządzać aktualizacje dla innych języków. Obsługa języków zależy od zadania, takie jak publikowania, tworzenia lub edytowania aktualizacji.
 
-Podczas eksportowania lub publikowanie aktualizacji, Updates Publisher wyświetla tytuł i Opis aktualizacji oprogramowania, na podstawie ustawień regionalnych komputera, na którym zainstalowano Updates Publisher.
+Podczas eksportowania lub publikowanie aktualizacji, Updates Publisher wyświetla tytuł i Opis aktualizacji oprogramowania, zależnie od ustawień regionalnych komputera z zainstalowanym programem Updates Publisher.
 
-Na przykład można utworzyć aktualizację oprogramowania, która ma tytuł angielski i hiszpański.
+Na przykład możesz utworzyć aktualizacji oprogramowania, które zawiera tytuł w języku angielskim i hiszpańskim.
 
--   Jeśli tworzysz aktualizacji na komputerze, którego ustawienia regionalne są angielski, domyślnie byłaby widoczna tytuł i opis w języku angielskim.
--   Jeśli, a następnie wyeksportować lub opublikować tę aktualizację na komputerze, którego ustawienia regionalne są hiszpański, na tym komputerze byłaby widoczna tytuł i opis w języku hiszpańskim.
+-   Jeśli utworzysz aktualizacji na komputerze, na których ustawień regionalnych jest angielski, domyślnie, zobaczysz, tytuł i opis w języku angielskim.
+-   Jeśli następnie eksportu lub opublikować tę aktualizację na komputerze, którego ustawienia regionalne to hiszpański, na tym komputerze zobaczysz tytuł i opis w języku hiszpańskim.
 
 ### <a name="publishing"></a>Publikowanie
-Po opublikowaniu aktualizacji oprogramowania można określić języka pliki binarne aktualizacji oprogramowania. Można również określić, że pliki binarne są niezależne od języka. Są obsługiwane w następujących językach:
+Po opublikowaniu aktualizacji oprogramowania można określić język pliku binarnego aktualizacji oprogramowania. Można również określić, że plik binarny jest niezależny od języka. Obsługiwane są następujące języki:
 
 -   Arabski
 -   Chiński (Hongkong SAR)
@@ -92,8 +92,8 @@ Po opublikowaniu aktualizacji oprogramowania można określić języka pliki bin
 -   szwedzki
 -   turecki
 
-### <a name="software-update-titles-and-descriptions"></a>Tytuły aktualizacji oprogramowania i opisów
-Następujące języki są obsługiwane dla nazwy i opisy tytuły aktualizacji oprogramowania.
+### <a name="software-update-titles-and-descriptions"></a>Aktualizacja tytuły i opisy
+Następujące języki są obsługiwane dla aktualizacji tytuły i opisy.
 
 -   Chiński (tradycyjny)
 -   Chiński uproszczony
@@ -109,17 +109,17 @@ Następujące języki są obsługiwane dla nazwy i opisy tytuły aktualizacji op
 
 
 
-## <a name="install-updates-publisher"></a>Zainstaluj aktualizacje wydawcy
-Pobierz **UpdatesPubliser.msi** do zainstalowania programu System Center Updates Publisher z [Microsoft Download Center](https://go.microsoft.com/fwlink/?linkid=847967).
+## <a name="install-updates-publisher"></a>Zainstaluj Updates Publisher
+Pobierz **UpdatesPubliser.msi** dotyczące instalowania programu System Center Updates Publisher z [Microsoft Download Center](https://go.microsoft.com/fwlink/?linkid=847967).
 
-Aby zainstalować Updates Publisher, uruchom **UpdatesPublisher.msi** na komputerze, który spełnia *wymagania wstępne*. Instalator utworzy następujący folder zawiera pliki niezbędne do uruchomienia Updates Publisher:  *&lt;ścieżki&gt;\Program Files\Microsoft\UpdatesPublisher*.
+Aby zainstalować program Updates Publisher, uruchom **UpdatesPublisher.msi** na komputerze, który spełnia *wymagania wstępne*. Instalator tworzy następujące folder zawiera pliki niezbędne do uruchomienia Updates Publisher:  *&lt;ścieżki&gt;\Program Files\Microsoft\UpdatesPublisher*.
 
-Ponieważ ten folder zawiera wszystkie pliki wymagane do użycia Updates Publisher, można skopiować folder i jego zawartość do nowej lokalizacji lub komputer, a następnie użyć Updates Publisher z tej lokalizacji. Jednak nową lokalizację lub komputer musi spełniać wymagania wstępne dotyczące uruchamiania Updates Publisher.
+Ponieważ ten folder zawiera pliki niezbędne do używania Updates Publisher, możesz można skopiować folder i jego zawartość do nowej lokalizacji lub komputera, a następnie użyć Updates Publisher z tej lokalizacji. Jednak nową lokalizację lub komputer musi spełniać wymagania wstępne dotyczące uruchamiania Updates Publisher.
 
-Po zakończeniu instalacji uruchom **UpdatesPublisher.exe** z *UpdatesPublisher* folder do wydawcy aktualizacji.
+Po zakończeniu instalacji uruchom **UpdatesPublisher.exe** z *UpdatesPublisher* folder, aby uruchomić Updates Publisher.
 
 ## <a name="next-steps"></a>Następne kroki
- Po zainstalowaniu programu Updates Publisher, firma Microsoft zaleca [Konfigurowanie opcji](/tools/updates-publisher-options) przez program Updates Publisher. Niektóre opcje należy skonfigurować przed użyciem niektóre funkcje programu Updates Publisher.
+ Po zainstalowaniu programu Updates Publisher, ale zalecamy [Konfigurowanie opcji](updates-publisher-options.md) dla programu Updates Publisher. Musisz skonfigurować niektóre opcje przed użyciem niektóre funkcje programu Updates Publisher.
 
- Jednakże, jeśli chcesz użyć ustawień domyślnych, a nie zamierzasz wdrożyć aktualizacje na serwerze aktualizacji lub do zarządzanych urządzeń, można przejść prawo do [Zarządzanie katalogami aktualizacji oprogramowania](/tools/updates-publisher-catalogs), lub [tworzenia aktualizacji oprogramowania](/tools/create-updates-with-updates-publisher) i tworzenia wykazów aktualizacji własny.
+ Jednak jeśli chcesz użyć wartości domyślnych i nie planujesz wdrożyć aktualizacje na serwerze aktualizacji lub do zarządzanych urządzeń, można przejść bezpośrednio do [Zarządzanie katalogami aktualizacji oprogramowania](updates-publisher-catalogs.md), lub [utworzyć aktualizacje oprogramowania](create-updates-with-updates-publisher.md) i tworzenia wykazów aktualizacji własny.
 
