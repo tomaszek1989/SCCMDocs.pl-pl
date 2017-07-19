@@ -123,3 +123,4 @@ Po zakończeniu instalacji uruchom **UpdatesPublisher.exe** z *UpdatesPublisher*
 
  Jednak jeśli chcesz użyć wartości domyślnych i nie planujesz wdrożyć aktualizacje na serwerze aktualizacji lub do zarządzanych urządzeń, można przejść bezpośrednio do [Zarządzanie katalogami aktualizacji oprogramowania](updates-publisher-catalogs.md), lub [utworzyć aktualizacje oprogramowania](create-updates-with-updates-publisher.md) i tworzenia wykazów aktualizacji własny.
 
+

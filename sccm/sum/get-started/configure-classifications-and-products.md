@@ -1,5 +1,4 @@
 ---
-
 title: "Konfigurowanie klasyfikacji i produktów do zsynchronizowania | Dokumentacja firmy Microsoft"
 description: "Wykonaj następujące kroki, aby skonfigurować klasyfikacje i produkty do zsynchronizowania w konsoli programu Configuration Manager."
 keywords: 
@@ -18,8 +17,6 @@ ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
 ms.openlocfilehash: 6add66e625c790b65edf64216c2262a5d082f820
 ms.contentlocale: pl-pl
 ms.lasthandoff: 05/17/2017
-
-
 
 ---
 #  <a name="configure-classifications-and-products-to-synchronize"></a>Konfigurowanie klasyfikacji i produktów do zsynchronizowania  
