@@ -15,12 +15,11 @@ caps.latest.revision: 15
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c8717925dba42451b1e241a7c2f59e43896d7d99
-ms.openlocfilehash: e78fe989b7ff445717c8320c4eae3900eb46baea
+ms.translationtype: MT
+ms.sourcegitcommit: 5ebdd12672fecc633321a66738a0978f94ba0aa4
+ms.openlocfilehash: aede531a0406c3d30c9cca957896e002ed22ae51
 ms.contentlocale: pl-pl
-ms.lasthandoff: 06/19/2017
-
+ms.lasthandoff: 07/20/2017
 
 ---
 # <a name="manage-access-to-o365-services-for-pcs-managed-by-system-center-configuration-manager"></a>Zarządzanie dostępem do usług O365 dla komputerów zarządzanych przez program System Center Configuration Manager
@@ -46,7 +45,17 @@ Jeśli szukasz informacji na temat konfigurowania dostępu warunkowego dla urzą
 
 -   Windows 7
 -   Windows 8.1
--   Windows 10 
+-   Windows 10
+
+## <a name="supported-windows-servers"></a>Obsługiwane w systemach Windows Server
+
+-   2008 R2
+-   2012
+-   2012 R2
+-   2016
+
+    > [!IMPORTANT]
+    > Dla serwerów systemu Windows, który może mieć wielu użytkowników jednocześnie zalogowany należy wdrożyć te same zasady dostępu warunkowego do wszystkich użytkowników zalogowany.
 
 ## <a name="configure-conditional-access"></a>Konfigurowanie dostępu warunkowego  
  Aby skonfigurować dostęp warunkowy, musisz najpierw utworzyć zasady zgodności i skonfigurować zasady dostępu warunkowego. Po skonfigurowaniu zasad dostępu warunkowego dla komputerów możesz wymagać zgodności komputerów z zasadami zgodności w celu uzyskiwania dostępu do usług Exchange Online i SharePoint Online.  
