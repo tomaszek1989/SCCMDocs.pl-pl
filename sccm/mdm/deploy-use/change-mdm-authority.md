@@ -16,7 +16,6 @@ ms.openlocfilehash: b80fec937b50dca3ab995be281c44c3145300f9f
 ms.contentlocale: pl-pl
 ms.lasthandoff: 06/03/2017
 
-
 ---
 # <a name="change-your-mdm-authority"></a>Zmienić urzędu zarządzania urządzeniami Przenośnymi
 Począwszy od 1610 wersji programu Configuration Manager i Microsoft Intune version 1705, można zmienić urzędu zarządzania urządzeniami Przenośnymi bez konieczności kontaktowania się Microsoft Support i bez konieczności wyrejestrowywania i Zarejestruj ponownie istniejących zarządzanych urządzeń.
@@ -39,7 +38,8 @@ Przejrzyj następujące informacje w celu przygotowania do zmiany urząd zarząd
 - W konsoli programu Configuration Manager usuń wszystkie role menedżera rejestracji urządzeń. Przejdź do **administracji** > **usługi w chmurze** > **subskrypcje usługi Microsoft Intune**, wybierz subskrypcję Microsoft Intune, kliknij przycisk **właściwości**, kliknij przycisk **Menedżera rejestracji urządzeń** i Usuń wszystkie role menedżera rejestracji urządzeń.
 - W konsoli programu Configuration Manager należy usunąć istniejące kategorie urządzeń. Przejdź do **zasoby i zgodność** > **omówienie** > **kolekcje urządzeń**, wybierz **Zarządzanie kategorie urządzeń**i Usuń istniejące kategorie urządzeń.
 - Podczas zmiany urzędu zarządzania urządzeniami Przenośnymi powinien istnieć bez zauważalnego wpływu dla użytkowników końcowych. Można jednak komunikować się ta zmiana na użytkowników, aby upewnić się, że ich urządzeń są włączone i czy łączą z usługą wkrótce po zmianie. To zapewnia, że dowolną liczbę urządzeń, jak to możliwe będzie połączenia i jak najszybciej rejestrowanie za pomocą usługi za pomocą nowego urzędu.
-- Jeśli używasz programu Configuration Manager (hybrydowego dzierżawcy) do zarządzania urządzeniami z systemem iOS przed zmianą urzędu zarządzania urządzeniami Przenośnymi, należy się upewnić, że tego samego certyfikatu firmy Apple Push Notification service (APNs), który był wcześniej używany w programie Configuration Manager jest odnowiony i użyty do skonfigurowania dzierżawy ponownie w autonomicznej usługi Intune.    
+- Jeśli używasz programu Configuration Manager (hybrydowego dzierżawcy) do zarządzania urządzeniami z systemem iOS przed zmianą urzędu zarządzania urządzeniami Przenośnymi, należy się upewnić, że tego samego certyfikatu firmy Apple Push Notification service (APNs), który był wcześniej używany w programie Configuration Manager jest odnowiony i użyty do skonfigurowania dzierżawy ponownie w autonomicznej usługi Intune.
+
     > [!IMPORTANT]  
     > Jeśli inny certyfikat usługi APN jest używany w przypadku autonomicznej usługi Intune, a następnie wszystkie wcześniej zarejestrowane urządzenia z systemem iOS będzie anulowana i będzie musiał przejść przez proces, aby zarejestruj je ponownie. Przed wykonaniem urząd zarządzania urządzeniami Przenośnymi zmian, upewnij się, że znasz dokładnie APNs certyfikat, który został użyty do zarządzania urządzeniami z systemem iOS w programie Configuration Manager. Znajdź tego samego certyfikatu, które są wyświetlane w portalu Apple Push Certificates (https://identity.apple.com) i upewnij się, że użytkownik o identyfikatorze firmy Apple użyty do tworzenia oryginalnego certyfikatu usługi APN jest zidentyfikowane i dostępne, aby odnowić ten sam certyfikat APNs w ramach przejścia do nowego urzędu zarządzania urządzeniami Przenośnymi.  
 
@@ -52,15 +52,15 @@ Proces można zmienić urząd zarządzania urządzeniami Przenośnymi na autonom
 - Dalej urządzeń czas połączyć się z usługą, zostanie synchronizacji i zastosować nowe ustawienia z nowego urzędu zarządzania urządzeniami Przenośnymi.
 
 #### <a name="to-change-the-mdm-authority-to-intune-standalone"></a>Aby zmienić urząd zarządzania urządzeniami Przenośnymi autonomicznej usługi Intune.
-1.    W konsoli programu Configuration Manager, przejdź do **administracji** &gt; **omówienie** &gt; **usługi w chmurze** &gt; **subskrypcję usługi Microsoft Intune**i usuń istniejącą subskrypcję usługi Intune.
-2.    Wybierz **zmiany urzędu zarządzania urządzeniami Przenośnymi w usłudze Microsoft Intune**, a następnie kliknij przycisk **dalej**.
+1.  W konsoli programu Configuration Manager, przejdź do **administracji** &gt; **omówienie** &gt; **usługi w chmurze** &gt; **subskrypcję usługi Microsoft Intune**i usuń istniejącą subskrypcję usługi Intune.
+2.  Wybierz **zmiany urzędu zarządzania urządzeniami Przenośnymi w usłudze Microsoft Intune**, a następnie kliknij przycisk **dalej**.
 
     ![Pobierz żądanie certyfikatu APNs](/sccm/mdm/deploy-use/media/mdm-change-delete-subscription.png)
-3.    Zaloguj się do dzierżawy usługi Intune, która pierwotnie używana po ustawieniu urzędu zarządzania urządzeniami Przenośnymi w programie Configuration Manager.
-4.    Kliknij przycisk **Dalej** i ukończ pracę kreatora.
-5.    Urząd zarządzania urządzeniami Przenośnymi została zresetowana. Subskrypcję usługi Intune powinien przestanie być wyświetlana w węźle subskrypcje usługi Microsoft Intune w konsoli programu Configuration Manager.
-6.    Zaloguj się do [konsoli administracyjnej Microsoft Intune](http://manage.microsoft.com) przy użyciu tej samej dzierżawy usługi Intune używany w starszych.
-7.    Upewnij się, że urząd zarządzania urządzeniami Przenośnymi została resetowania, a następnie ustaw urząd zarządzania urządzeniami Przenośnymi jako **Microsoft Intune**. Po zmianie urząd zarządzania urządzeniami Przenośnymi, powinien pojawić się on odzwierciedlone w konsoli. Aby uzyskać więcej informacji, zobacz [jak ustawić urząd zarządzania urządzeniami Przenośnymi](https://docs.microsoft.com/en-us/intune/deploy-use/prerequisites-for-enrollment#step-2-set-mdm-authority).
+3.  Zaloguj się do dzierżawy usługi Intune, która pierwotnie używana po ustawieniu urzędu zarządzania urządzeniami Przenośnymi w programie Configuration Manager.
+4.  Kliknij przycisk **Dalej** i ukończ pracę kreatora.
+5.  Urząd zarządzania urządzeniami Przenośnymi została zresetowana. Subskrypcję usługi Intune powinien przestanie być wyświetlana w węźle subskrypcje usługi Microsoft Intune w konsoli programu Configuration Manager.
+6.  Zaloguj się do [konsoli administracyjnej Microsoft Intune](http://manage.microsoft.com) przy użyciu tej samej dzierżawy usługi Intune używany w starszych.
+7.  Upewnij się, że urząd zarządzania urządzeniami Przenośnymi została resetowania, a następnie ustaw urząd zarządzania urządzeniami Przenośnymi jako **Microsoft Intune**. Po zmianie urząd zarządzania urządzeniami Przenośnymi, powinien pojawić się on odzwierciedlone w konsoli. Aby uzyskać więcej informacji, zobacz [jak ustawić urząd zarządzania urządzeniami Przenośnymi](https://docs.microsoft.com/en-us/intune/deploy-use/prerequisites-for-enrollment#step-2-set-mdm-authority).
 <!-- [Azure portal](https://docs.microsoft.com/en-us/intune-azure/enroll-devices/set-mdm-authority) -->
 
 
@@ -68,7 +68,7 @@ Proces można zmienić urząd zarządzania urządzeniami Przenośnymi na autonom
 Jeśli masz urządzenia z systemem iOS, należy skonfigurować certyfikat APNs w usłudze Intune.
 
 #### <a name="to-configure-the-apns-certificate"></a>Aby skonfigurować certyfikat APNs
-1.    Pobierz żądanie certyfikatu APNs.
+1.  Pobierz żądanie certyfikatu APNs.
     <!--The process is different depending on how you connect to Intune:
     **Azure portal**   
     In the [Azure portal](https://azure.portal.com), choose **More Services** &gt; **Monitoring + Management** &gt; **Intune**. On the **Intune** blade, choose **Device enrollment** &gt; **Apple Enrollment** &gt; **Apple MDM Push Certificate**, and then select **Download your CSR** to download and save the .csr file locally.   
@@ -80,22 +80,22 @@ Jeśli masz urządzenia z systemem iOS, należy skonfigurować certyfikat APNs w
 
     ![Pobierz żądanie certyfikatu APNs](/sccm/mdm/deploy-use/media/mdm-change-download-apns-certificate.png)
 
-2.    Przejdź do [Apple Push Certificates Portal](http://go.microsoft.com/fwlink/?LinkId=269844)i zaloguj się przy użyciu **tego samego** Apple ID, który został użyty do wcześniej tworzenia i odnawiania certyfikatu APNs, który został użyty w programie Configuration Manager (rozwiązanie hybrydowe).
+2.  Przejdź do [Apple Push Certificates Portal](http://go.microsoft.com/fwlink/?LinkId=269844)i zaloguj się przy użyciu **tego samego** Apple ID, który został użyty do wcześniej tworzenia i odnawiania certyfikatu APNs, który został użyty w programie Configuration Manager (rozwiązanie hybrydowe).
 
     ![Strona logowania portalu Apple Push Certificates](/sccm/mdm/deploy-use/media/mdm-change-apns-portal.png)
 
-3.    Wybierz certyfikat APNs, który został użyty w programie Configuration Manager (rozwiązanie hybrydowe), a następnie kliknij przycisk **odnawiania**.   
+3.  Wybierz certyfikat APNs, który został użyty w programie Configuration Manager (rozwiązanie hybrydowe), a następnie kliknij przycisk **odnawiania**.   
 
     ![Odnów APNs — okno dialogowe](/sccm/mdm/deploy-use/media/mdm-change-renew-apns.png)
 
-4.    Wybierz APNs plik żądania podpisania certyfikatu (CSR) pobranego lokalnie, a następnie kliknij przycisk **przekazać**.
+4.  Wybierz APNs plik żądania podpisania certyfikatu (CSR) pobranego lokalnie, a następnie kliknij przycisk **przekazać**.
 
     ![Strona logowania portalu Apple Push Certificates](/sccm/mdm/deploy-use/media/mdm-change-renew-apns-upload.png)  
-5.    Wybierz tej samej usługi APNs, a następnie kliknij przycisk **Pobierz**. Pobierz certyfikat usługi APN (PEM) i Zapisz plik lokalnie.  
+5.  Wybierz tej samej usługi APNs, a następnie kliknij przycisk **Pobierz**. Pobierz certyfikat usługi APN (PEM) i Zapisz plik lokalnie.  
 
     ![Strona logowania portalu Apple Push Certificates](/sccm/mdm/deploy-use/media/mdm-change-renew-apns-download.png)
 
-6.    Przekazać odnowiony certyfikat APNs do dzierżawy usługi Intune przy użyciu tego samego Identyfikatora Apple jako przed.
+6.  Przekazać odnowiony certyfikat APNs do dzierżawy usługi Intune przy użyciu tego samego Identyfikatora Apple jako przed.
 <!--The process is different depending on how to connect to Intune:  
     **Azure portal**   
     In the [Azure portal](https://azure.portal.com), choose **More Services** &gt; **Monitoring + Management** &gt; **Intune**. On the **Intune** blade, choose **Device enrollment** &gt; **Apple Enrollment**  &gt; **Apple MDM Push Certificate**, enter your Apple ID in step 3, select the certificate (.pem) file in step 4, and then click **Upload**.     
@@ -171,13 +171,13 @@ Proces, aby zmienić urząd zarządzania urządzeniami Przenośnymi do programu 
 - Dalej urządzeń czas połączyć się z usługą, zostanie synchronizacji i zastosować nowe ustawienia z nowego urzędu zarządzania urządzeniami Przenośnymi.
 
 #### <a name="to-change-the-mdm-authority-to-configuration-manager"></a>Aby zmienić urząd zarządzania urządzeniami Przenośnymi do programu Configuration Manager
-1.    W konsoli programu Configuration Manager, przejdź do **administracji** &gt; **omówienie** &gt; **usługi w chmurze** &gt; **subskrypcję usługi Microsoft Intune**, a następnie wybierz pozycję, aby dodać subskrypcję usługi Intune.
-2.    Zaloguj się do dzierżawy usługi Intune, który pierwotnie używana podczas ustawić urząd zarządzania urządzeniami Przenośnymi w usłudze Intune i kliknij przycisk **dalej**.
-3.    Wybierz **zmienić Mój urząd zarządzania urządzeniami Przenośnymi do programu Configuration Manager**i kliknij przycisk **dalej**.
+1.  W konsoli programu Configuration Manager, przejdź do **administracji** &gt; **omówienie** &gt; **usługi w chmurze** &gt; **subskrypcję usługi Microsoft Intune**, a następnie wybierz pozycję, aby dodać subskrypcję usługi Intune.
+2.  Zaloguj się do dzierżawy usługi Intune, który pierwotnie używana podczas ustawić urząd zarządzania urządzeniami Przenośnymi w usłudze Intune i kliknij przycisk **dalej**.
+3.  Wybierz **zmienić Mój urząd zarządzania urządzeniami Przenośnymi do programu Configuration Manager**i kliknij przycisk **dalej**.
 4.  Wybierz kolekcję użytkowników, która będzie zawierać wszystkich użytkowników, które będą w dalszym ciągu zarządzany przez nowe hybrydowego urzędu zarządzania urządzeniami Przenośnymi.
 5.  Kliknij przycisk **Dalej** i ukończ pracę kreatora.  
-5.    Urząd zarządzania urządzeniami Przenośnymi zostanie zmienione na **programu Configuration Manager**.
-6.    Zaloguj się do [konsoli administracyjnej Microsoft Intune](http://manage.microsoft.com) przy użyciu tej samej usługi Intune dzierżawy i upewnij się, że urząd MDM został zmieniony na **ustawiony program Configuration Manager**.
+5.  Urząd zarządzania urządzeniami Przenośnymi zostanie zmienione na **programu Configuration Manager**.
+6.  Zaloguj się do [konsoli administracyjnej Microsoft Intune](http://manage.microsoft.com) przy użyciu tej samej usługi Intune dzierżawy i upewnij się, że urząd MDM został zmieniony na **ustawiony program Configuration Manager**.
 
 
 ### <a name="enable-ios-enrollment"></a>Włączanie rejestracji systemu iOS
@@ -194,22 +194,22 @@ Jeśli masz urządzenia z systemem iOS, należy skonfigurować certyfikat APNs w
     > [!IMPORTANT]
     > Należy pobrać nowe żądanie podpisania certyfikatu. Nie należy używać istniejącego pliku, lub zakończy się niepowodzeniem.  
 
-2.    Przejdź do [Apple Push Certificates Portal](http://go.microsoft.com/fwlink/?LinkId=269844)i zaloguj się przy użyciu **tego samego** Apple ID, który został użyty do wcześniej tworzenia i odnawiania certyfikatu APNs używanej w autonomicznej usługi Intune.
+2.  Przejdź do [Apple Push Certificates Portal](http://go.microsoft.com/fwlink/?LinkId=269844)i zaloguj się przy użyciu **tego samego** Apple ID, który został użyty do wcześniej tworzenia i odnawiania certyfikatu APNs używanej w autonomicznej usługi Intune.
 
     ![Strona logowania portalu Apple Push Certificates](/sccm/mdm/deploy-use/media/mdm-change-apns-portal.png)
 
-3.    Wybierz certyfikat APNs, który został użyty w autonomicznej usługi Intune, a następnie kliknij przycisk **odnawiania**.   
+3.  Wybierz certyfikat APNs, który został użyty w autonomicznej usługi Intune, a następnie kliknij przycisk **odnawiania**.   
 
     ![Odnów APNs — okno dialogowe](/sccm/mdm/deploy-use/media/mdm-change-renew-apns.png)
 
-4.    Wybierz APNs plik żądania podpisania certyfikatu (CSR) pobranego lokalnie, a następnie kliknij przycisk **przekazać**.
+4.  Wybierz APNs plik żądania podpisania certyfikatu (CSR) pobranego lokalnie, a następnie kliknij przycisk **przekazać**.
 
     ![Strona logowania portalu Apple Push Certificates](/sccm/mdm/deploy-use/media/mdm-change-renew-apns-upload.png)  
-5.    Wybierz tej samej usługi APNs, a następnie kliknij przycisk **Pobierz**. Pobierz certyfikat usługi APN (PEM) i Zapisz plik lokalnie.  
+5.  Wybierz tej samej usługi APNs, a następnie kliknij przycisk **Pobierz**. Pobierz certyfikat usługi APN (PEM) i Zapisz plik lokalnie.  
 
     ![Strona logowania portalu Apple Push Certificates](/sccm/mdm/deploy-use/media/mdm-change-renew-apns-download.png)
 
-6.    Przekazać odnowiony certyfikat APNs do dzierżawy hybrydowych przy użyciu tego samego Identyfikatora Apple jako przed.
+6.  Przekazać odnowiony certyfikat APNs do dzierżawy hybrydowych przy użyciu tego samego Identyfikatora Apple jako przed.
 
     1.  W konsoli programu Configuration Manager, przejdź do **administracji** &gt; **usługi w chmurze** &gt; **subskrypcję usługi Microsoft Intune**i wybierz polecenie **Konfiguruj platformy** &gt; **iOS**.  
     2.  W **właściwości subskrypcji usługi Microsoft Intune** okno dialogowe, wybierz opcję **certyfikat APNs** i kliknij, aby wybrać **włączyć systemów iOS i MAC OS X (MDM) rejestracji** wyboru.  
