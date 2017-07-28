@@ -15,12 +15,11 @@ caps.latest.revision:
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: dc221ddf547c43ab1f25ff83c3c9bb603297ece6
-ms.openlocfilehash: f11a53bbc85b40077b3909568db5ae5552b0456c
+ms.translationtype: MT
+ms.sourcegitcommit: ef42d1483053e9a6c502f4ebcae5a231aa6ba727
+ms.openlocfilehash: c421c3495f56503d5cbda7b1a5ab5350a168912d
 ms.contentlocale: pl-pl
-ms.lasthandoff: 06/01/2017
-
+ms.lasthandoff: 07/26/2017
 
 ---
 #  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>Punkt usługi Magazyn danych programu System Center Configuration Manager
@@ -52,7 +51,7 @@ Podczas instalowania roli systemu lokacji, instaluje i konfiguruje bazę danych 
   - **Administrator** na komputerze, który będzie hostem bazy danych magazynu danych.
   - **DB_owner** uprawnień w bazie danych magazynu danych.
   - **DB_reader** i **wykonania** baza danych lokacji uprawnienia do lokacji najwyższego poziomu.
--    Baza danych magazynu danych jest obsługiwane na domyślne lub nazwane wystąpienie programu SQL Server 2012 lub nowszym. Wersja musi być Enterprise lub Datacenter.
+-   Baza danych magazynu danych jest obsługiwane na domyślne lub nazwane wystąpienie programu SQL Server 2012 lub nowszym. Wersja musi być Enterprise lub Datacenter.
   - Grupy dostępności AlwaysOn programu SQL Server: Ta konfiguracja nie jest obsługiwana.
   - Klastra programu SQL Server: Klastrów pracy awaryjnej programu SQL Server nie są obsługiwane. Jest to spowodowane bazy danych magazynu danych nie zostały głęboko przetestowane w klastrach trybu failover programu SQL Server.
   - Gdy baza danych magazynu danych jest zdalnie z serwera bazy danych lokacji, musi mieć oddzielnej licencji dla programu SQL Server obsługującym bazę danych.
@@ -78,7 +77,7 @@ Po zainstalowaniu roli programu Configuration Manager utworzy bazę danych magaz
 **Wybór roli systemu** strony:  
 
 **Ogólne** strony:
--     **Ustawienia połączenia bazy danych magazynu danych programu Configuration Manager**:
+-   **Ustawienia połączenia bazy danych magazynu danych programu Configuration Manager**:
  - **Program SQL Server w pełni kwalifikowana nazwa domeny**:  
  Określ w pełni kwalifikowanej nazwy domeny (FQDN) serwera, który hostuje bazę danych magazynu danych usługi punktu.
  - **Nazwa wystąpienia serwera SQL, jeśli ma to zastosowanie**:   
@@ -86,7 +85,7 @@ Po zainstalowaniu roli programu Configuration Manager utworzy bazę danych magaz
  - **Nazwa bazy danych**:   
  Określ nazwę bazy danych magazynu danych.  Configuration Manager utworzy bazę danych magazynu danych o tej nazwie. Jeśli określisz nazwy bazy danych, która już istnieje w wystąpieniu programu SQL server Configuration Manager będzie używać tej bazy danych.
  - **Port serwera SQL używane do łączenia**:   
- Określ numer portu TCP/IP, który jest skonfigurowany dla programu SQL Server, który jest hostem datbase magazynu danych. Port ten jest używany przez usługę synchronizacji magazynu danych do nawiązania połączenia bazy danych magazynu danych.  
+ Określ numer portu TCP/IP, który jest skonfigurowany dla programu SQL Server, który jest hostem bazy danych magazynu danych. Port ten jest używany przez usługę synchronizacji magazynu danych do nawiązania połączenia bazy danych magazynu danych.  
 
 **Harmonogram synchronizacji** strony:   
 - **Harmonogram synchronizacji**:
@@ -103,15 +102,15 @@ Rola systemu lokacji magazynu danych obejmuje następujące raporty, które maj�
  - **Wdrażanie aplikacji — historycznych**:   
  Przejrzyj szczegóły dotyczące wdrażania aplikacji dla określonej aplikacji i komputera.
  - **Program Endpoint Protection i aktualizacji oprogramowania zgodności - historycznych**: Wyświetl komputery, których brakuje aktualizacji oprogramowania.  
- - **Spis sprzętu ogólne — historycznych**:      
+ - **Spis sprzętu ogólne — historycznych**:   
  Wyświetl wszystkie spisu sprzętu dla określonej maszyny.
- - **Spis oprogramowania ogólne — historycznych**:      
+ - **Spis oprogramowania ogólne — historycznych**:   
  Wyświetl wszystkie spisu oprogramowania dla określonej maszyny.
- - **Przegląd kondycji infrastruktury — historycznych**:     
+ - **Przegląd kondycji infrastruktury — historycznych**:  
  Wyświetla Przegląd kondycji infrastruktury programu Configuration Manager
- - **Lista złośliwego oprogramowania wykryto - historycznych**:     
+ - **Lista złośliwego oprogramowania wykryto - historycznych**:    
  Widok złośliwego oprogramowania, która została wykryta w organizacji.
- - **Podsumowanie dystrybucji oprogramowania - historycznych**:     
+ - **Podsumowanie dystrybucji oprogramowania - historycznych**:   
  Podsumowanie dystrybucji oprogramowania dla określonych anonsów i komputera.
 
 
@@ -126,13 +125,13 @@ Inaczej niż w przypadku przenoszenia bazy danych magazynu danych ta zmiana powo
 ## <a name="move-the-data-warehouse-database"></a>Przenoszenie bazy danych magazynu danych
 Aby przenieść bazę danych magazynu danych na nowy serwer SQL, wykonaj następujące kroki:
 
-1.    Użyj SQL Server Management Studio, aby utworzyć kopię zapasową danych baza danych magazynu, a następnie Przywróć tę bazę danych do programu SQL Server na nowym komputerze, który będzie obsługiwał hurtowni danych.   
+1.  Użyj SQL Server Management Studio, aby utworzyć kopię zapasową danych baza danych magazynu, a następnie Przywróć tę bazę danych do programu SQL Server na nowym komputerze, który będzie obsługiwał hurtowni danych.   
 > [!NOTE]     
 > Po przywróceniu bazy danych na nowy serwer, upewnij się, że uprawnienia dostępu do bazy danych są takie same na nową bazę danych magazynu danych, jakie były na oryginalnej bazy danych magazynu danych.  
 
-2.    Użyj konsoli programu Configuration Manager, aby usunąć rolę systemu lokacji punktu usługi Magazyn danych z bieżącego serwera.
-3.    Ponownie zainstaluj punkt usługi Magazyn danych i określ nazwę nowego serwera SQL i wystąpienia, który jest hostem bazy danych magazynu danych, możesz przywrócić.
-4.    Po zainstalowaniu roli systemu lokacji, przeniesienie zostało ukończone.
+2.  Użyj konsoli programu Configuration Manager, aby usunąć rolę systemu lokacji punktu usługi Magazyn danych z bieżącego serwera.
+3.  Ponownie zainstaluj punkt usługi Magazyn danych i określ nazwę nowego serwera SQL i wystąpienia, który jest hostem bazy danych magazynu danych, możesz przywrócić.
+4.  Po zainstalowaniu roli systemu lokacji, przeniesienie zostało ukończone.
 
 ## <a name="troubleshooting-data-warehouse-issues"></a>Rozwiązywanie problemów z magazynem danych
 **Pliki dziennika**:  
@@ -167,7 +166,7 @@ Po otwarciu raportu magazynu danych, jest zwracany następujący błąd:
     1. Otwórz usług IIS, kliknij przycisk **certyfikaty serwera**, kliknij prawym przyciskiem myszy **Tworzenie certyfikatu z podpisem własnym**, a następnie określ "przyjazną nazwę" w nazwie certyfikatu jako **danych magazynu SQL Server Identification Certificate**. Wybierz magazyn certyfikatów jako **osobistych**.
     2. Otwórz **SQL Server Configuration Manager**w obszarze **konfigurację sieci programu SQL Server**, kliknij prawym przyciskiem myszy, aby wybrać **właściwości** w obszarze **protokoły dla elementu MSSQLSERVER**. Następnie na **certyfikatu** wybierz opcję **danych magazynu SQL Server Identification Certificate** jako certyfikat, a następnie zapisz zmiany.  
     3. Otwórz **SQL Server Configuration Manager**w obszarze **usług SQL Server**, uruchom ponownie **usługi SQL Server** i **usługi raportowania**.
-    4.    Otwórz program Microsoft Management Console (MMC) i Dodaj przystawkę dla **certyfikaty**, wybierz pozycję Zarządzanie certyfikatami dla **konto komputera** komputera lokalnego. Następnie, w konsoli MMC rozwiń węzeł **osobistych** folder > **certyfikaty**i eksportowanie **danych magazynu SQL Server Identification Certificate** jako **certyfikat x.509 szyfrowany binarnie algorytmem DER (. CER)** pliku.    
+    4.  Otwórz program Microsoft Management Console (MMC) i Dodaj przystawkę dla **certyfikaty**, wybierz pozycję Zarządzanie certyfikatami dla **konto komputera** komputera lokalnego. Następnie, w konsoli MMC rozwiń węzeł **osobistych** folder > **certyfikaty**i eksportowanie **danych magazynu SQL Server Identification Certificate** jako **certyfikat x.509 szyfrowany binarnie algorytmem DER (. CER)** pliku.    
   2.    Na komputerze, który jest hostem usług SQL Server Reporting Services, Otwórz program MMC i dodać przystawkę dla **certyfikaty**, a następnie wybierz certyfikat zarządzania **konto komputera**. W obszarze **zaufane główne urzędy certyfikacji** folder importu **danych magazynu SQL Server Identification Certificate**.
 
 
@@ -178,7 +177,7 @@ Po otwarciu raportu magazynu danych, jest zwracany następujący błąd:
 
 | Krok   | Szczegóły  |
 |:------:|-----------|  
-| **1**  |     Serwer lokacji przesyła i przechowuje dane w bazie danych lokacji.  |  
+| **1**  |  Serwer lokacji przesyła i przechowuje dane w bazie danych lokacji.  |  
 | **2**  |      Punkt usługi Magazyn danych na podstawie harmonogramu i konfiguracji, pobiera dane z bazy danych lokacji.  |  
 | **3**  |  Punkt usługi Magazyn danych przesyła i przechowuje kopię zsynchronizowane dane w bazie danych magazynu danych. |  
 **Raportowanie**

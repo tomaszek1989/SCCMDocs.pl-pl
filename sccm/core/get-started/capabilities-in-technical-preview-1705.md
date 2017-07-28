@@ -14,11 +14,11 @@ ms.assetid: 00684289-d21a-45f8-b1e3-c5c787d73096
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: f4c46bfab9b40b29654f4e883817a5508ab25b74
-ms.openlocfilehash: 1a38d25fbc26bd1f45c6fa2a0e931536af2d8b2f
+ms.translationtype: MT
+ms.sourcegitcommit: ef42d1483053e9a6c502f4ebcae5a231aa6ba727
+ms.openlocfilehash: b977a79baec73999caa21648adcb6fcfec4a4935
 ms.contentlocale: pl-pl
-ms.lasthandoff: 06/28/2017
+ms.lasthandoff: 07/26/2017
 
 ---
 # <a name="capabilities-in-technical-preview-1705-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1705 programu System Center Configuration Manager
@@ -93,9 +93,9 @@ Po uruchomieniu narzędzia:
 | **- &lt;Nazwa wystąpienia programu SQL Server >**             | *Opcjonalne* <br> Umożliwia zidentyfikowanie wystąpienia programu SQL Server, który jest hostem bazy danych lokacji. |
 | **-FDELETE**                              | *Opcjonalne* <br> Umożliwia wymuszenie usunięcia pomyślnie pobrany pakiet aktualizacji. |  
  **Przykłady:**  
- W typowym scenariuszu chcesz zresetować aktualizacji, która ma problemy z pobieraniem. Nazwa FQDN programu SQL serwerów jest *server1.fabrikam.com*, datbase lokacji jest *CM_XYZ*i pakietu, identyfikator GUID jest *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Uruchom: ***CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ 61F16B3C-F1F6-4F9F-8647-2A524B0C802C -P***
+ W typowym scenariuszu chcesz zresetować aktualizacji, która ma problemy z pobieraniem. Nazwa FQDN programu SQL serwerów jest *server1.fabrikam.com*, bazy danych lokacji jest *CM_XYZ*i pakietu, identyfikator GUID jest *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Uruchom: ***CMUpdateReset.exe -S server1.fabrikam.com -D CM_XYZ 61F16B3C-F1F6-4F9F-8647-2A524B0C802C -P***
 
- W przypadku bardziej skrajne chcesz wymusić usunięcie pakietu aktualizacji powodować problemy. Nazwa FQDN programu SQL serwerów jest *server1.fabrikam.com*, datbase lokacji jest *CM_XYZ*i pakietu, identyfikator GUID jest *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Uruchom: ***CMUpdateReset.exe - FDELETE -S server1.fabrikam.com -D CM_XYZ 61F16B3C-F1F6-4F9F-8647-2A524B0C802C -P***
+ W przypadku bardziej skrajne chcesz wymusić usunięcie pakietu aktualizacji powodować problemy. Nazwa FQDN programu SQL serwerów jest *server1.fabrikam.com*, bazy danych lokacji jest *CM_XYZ*i pakietu, identyfikator GUID jest *61F16B3C-F1F6-4F9F-8647-2A524B0C802C*.  Uruchom: ***CMUpdateReset.exe - FDELETE -S server1.fabrikam.com -D CM_XYZ 61F16B3C-F1F6-4F9F-8647-2A524B0C802C -P***
 
 ### <a name="test-the-tool-with-the-technical-preview"></a>Testowanie narzędzia z wersji zapoznawczej Technical Preview  
 Za pomocą tego narzędzia, z wersji Technical Preview 1606 lub nowszej. Zapewnienia pomocy technicznej odbywa się tak, aby narzędzie może być używany z większą liczbą scenariuszy aktualizacji wersji zapoznawczej technical preview, bez oczekiwania do czasu następnej wersji zapoznawczej technical preview.

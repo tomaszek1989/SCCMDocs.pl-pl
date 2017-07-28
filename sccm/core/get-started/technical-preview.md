@@ -15,12 +15,11 @@ caps.latest.revision: 157
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 6f9e6e93fce95666503907010a5c253158c5de7c
-ms.openlocfilehash: 736e5a04d3d5f2a3825ed4e801308fd5699ea86e
+ms.translationtype: MT
+ms.sourcegitcommit: 1f57c63ceeb13c7f7d760d7ecfb48df749da6770
+ms.openlocfilehash: 4644928acbb1ae3d7d72f877565589fae435a96b
 ms.contentlocale: pl-pl
-ms.lasthandoff: 07/07/2017
-
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="technical-preview-for-system-center-configuration-manager"></a>Wersja zapoznawcza Technical Preview programu System Center Configuration Manager
@@ -116,6 +115,17 @@ Można zainstalować wersji linii bazowej dla maksymalnie 1 rok po ich wydaniu. 
 
  |Możliwość |Wersji Technical Preview |Bieżącą wersję gałęzi|  
  |----------------|---------------------|--------------------|
+ |Klient równorzędnej pamięci podręcznej obsługę plików instalacji ekspresowej dla systemu Windows 10 i usługi Office 365|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#client-peer-cache-support-for-express-installation-files-for-windows-10-and-office-365)|![Nie dodano](media/Red_X.gif)|
+ |Powierzchni urządzenia pulpitu nawigacyjnego|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#surface-device-dashboard)|![Nie dodano](media/Red_X.gif)|
+ |Konfigurowanie i wdrażanie zasad Guard aplikacji programu Windows Defender|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#configure-and-deploy-windows-defender-application-guard-policies)|![Nie dodano](media/Red_X.gif)|
+ |Dodawanie parametrów podczas wdrażania skryptów programu PowerShell z programu Configuration Manager|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#add-parameters-when-you-deploy-powershell-scripts-from-configuration-manager)|![Nie dodano](media/Red_X.gif)|
+
+
+## <a name="capabilities-delivered-in-previous-technical-previews"></a>Możliwości oferowane w poprzednich wersjach technical Preview
+ Gdy wszystkie funkcje z wersji technical preview są dostępne w minimalna obsługiwana wersja Current Branch, szczegóły dotyczące tej wersji zapoznawczej są usuwane z poniższej tabeli.  
+
+ |Możliwość |Wersji Technical Preview |Bieżącą wersję gałęzi|  
+ |----------------|---------------------|--------------------|
  |Nowe ustawienia zasad zarządzania aplikacjami mobilnymi|[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#new-mobile-application-management-policy-settings)|![Nie dodano](media/Red_X.gif)|
  |Grupy granic ulepszone dla punktów aktualizacji oprogramowania|[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#improved-boundary-groups-for-software-update-points)|![Nie dodano](media/Red_X.gif)|
  |Wysoką dostępność roli serwera lokacji|[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#site-server-role-high-availability) |![Nie dodano](media/Red_X.gif)|
@@ -136,13 +146,7 @@ Można zainstalować wersji linii bazowej dla maksymalnie 1 rok po ich wydaniu. 
  |Ocena zaświadczania o kondycji urządzenia dla zasady zgodności dla dostępu warunkowego|[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#device-health-attestation-assessment-for-compliance-policies-for-conditional-access)|![Nie dodano](media/Red_X.gif)|
  |Obsługa Entrust urzędów certyfikacji|[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#support-for-entrust-certification-authorities)|![Nie dodano](media/Red_X.gif)|
  |Obsługa Cisco (IPSec) macOS profilów sieci VPN|[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#cisco-ipsec-support-for-macos-vpn-profiles)|![Nie dodano](media/Red_X.gif)|
-
-## <a name="capabilities-delivered-in-previous-technical-previews"></a>Możliwości oferowane w poprzednich wersjach technical Preview
- Gdy wszystkie funkcje z wersji technical preview są dostępne w minimalna obsługiwana wersja Current Branch, szczegóły dotyczące tej wersji zapoznawczej są usuwane z poniższej tabeli.  
-
- |Możliwość |Wersji Technical Preview |Bieżącą wersję gałęzi|  
- |----------------|---------------------|--------------------|
-  |Nowe możliwości dla usługi Azure AD i zarządzania w chmurze|[Podgląd techniczna 1705](capabilities-in-technical-preview-1705.md#new-capabilities-for-azure-ad-and-cloud-management)|![Nie dodano](media/Red_X.gif)|
+ |Nowe możliwości dla usługi Azure AD i zarządzania w chmurze|[Podgląd techniczna 1705](capabilities-in-technical-preview-1705.md#new-capabilities-for-azure-ad-and-cloud-management)|![Nie dodano](media/Red_X.gif)|
  |Konfigurowanie i wdrażanie zasad Guard aplikacji programu Windows Defender|[Podgląd techniczna 1705](capabilities-in-technical-preview-1705.md#configure-and-deploy-windows-defender-application-guard-policies)|![Nie dodano](media/Red_X.gif)|
  |Narzędzie resetowania aktualizacji  |[Podgląd techniczna 1705](capabilities-in-technical-preview-1705.md#update-reset-tool)|![Nie dodano](media/Red_X.gif)|
  |Obsługa konsoli usługi wysokiej rozdzielczości  |[Podgląd techniczna 1705](capabilities-in-technical-preview-1705.md#high-dpi-console-support)|![Nie dodano](media/Red_X.gif)|

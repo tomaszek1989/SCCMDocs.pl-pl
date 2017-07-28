@@ -1,8 +1,8 @@
 ---
-title: "Wymagania wstępne dotyczące witryn | Dokumentacja firmy Microsoft"
-description: "Dowiedz się więcej o wymaganiach wstępnych dotyczących instalowania różnych typów witryn programu System Center Configuration Manager."
+title: "Wymagania wstępne dotyczące lokacji | Dokumentacja firmy Microsoft"
+description: "Więcej informacji na temat wymagań wstępnych dotyczących instalowania różnych typów lokacji programu System Center Configuration Manager."
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,105 +15,118 @@ caps.latest.revision: 5
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: ff89d4aea6be871e64e0a788f054ba4cadb3e51d
+ms.translationtype: MT
+ms.sourcegitcommit: 5945abb49fe06c59355805aa94b04d0d445ecbc3
+ms.openlocfilehash: d46a8b66ace45d25da9d86f2e91b19ae1d6875ab
 ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 07/24/2017
 
 ---
-# <a name="prerequisites-for-installing-system-center-configuration-manager-sites"></a>Wymagania wstępne dotyczące instalacji lokacji programu System Center Configuration Manager
+# <a name="prerequisites-for-installing-system-center-configuration-manager-sites"></a>Wymagania wstępne dotyczące instalowania lokacji programu System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Przed rozpoczęciem instalacji lokacji jest dobrym rozwiązaniem, aby dowiedzieć się więcej o wymaganiach wstępnych dotyczących instalowania różnych typów witryn programu System Center Configuration Manager.
+Przed rozpoczęciem instalacji lokacji jest dobrym rozwiązaniem, aby dowiedzieć się więcej o wymaganiach wstępnych dotyczących instalacji różnych typów lokacji programu System Center Configuration Manager.
 
 ## <a name="primary-sites-and-the-central-administration-site"></a>Lokacje główne i centralna lokacja administracyjna
-Następujące wymagania wstępne dotyczą instalowania centralnej lokacji administracyjnej jako pierwszą lokację w hierarchii, zainstalowaniu autonomicznej lokacji głównej lub podrzędnej lokacji głównej. Jeśli witryna Administracja centralna jest instalowany jako część rozszerzenia hierarchii, zobacz [rozszerzania autonomicznej lokacji głównej](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md#bkmk_expand) w tym temacie.
+Następujące wymagania wstępne dotyczą instalowania centralną lokację administracyjną jako pierwszą lokację w hierarchii, zainstalowaniu autonomicznej lokacji głównej lub podrzędnej lokacji głównej. Jeśli instalujesz centralną lokację administracyjną w ramach rozszerzania hierarchii, zobacz [rozszerzania autonomicznej lokacji głównej](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md#bkmk_expand) w tym temacie.
 
-###  <a name="bkmk_PrereqPri"></a>Wymagania wstępne dotyczące instalacji lokacji głównej lub centralnej lokacji administracyjnej  
+###  <a name="bkmk_PrereqPri"></a>Wymagania wstępne dotyczące instalowania lokacji głównej lub centralnej lokacji administracyjnej  
 
--   Konto użytkownika, który instaluje lokacji musi mieć następujące uprawnienia:  
+-   Konto użytkownika, który powoduje zainstalowanie lokacji musi mieć następujące uprawnienia:  
 
     -   **Administrator** na komputerze serwera lokacji  
-    -   **Administrator** na każdym komputerze, który będzie obsługiwać **bazy danych lokacji** lub wystąpienie **dostawcy programu SMS** dla witryny  
-    -   **Sysadmin** w wystąpieniu programu SQL Server, który obsługuje bazę danych lokacji  
+    -   **Administrator** na każdym komputerze, który będzie obsługiwał **bazy danych lokacji** lub wystąpienie **dostawcy programu SMS** dla lokacji  
+    -   **Sysadmin** w wystąpieniu programu SQL Server, który jest hostem bazy danych lokacji  
 
         > [!IMPORTANT]  
-        >  Po zakończeniu instalacji zarówno konto użytkownika uruchamiającego instalację, jak i konto komputera serwera lokacji musi zachować uprawnienia administratora systemu do programu SQL Server. Nie usuwaj uprawnienia administratora systemu z tych kont.  
+        >  Po zakończeniu instalacji zarówno konto użytkownika uruchamiającego instalację, jak i konto komputera serwera lokacji musi zachować prawa sysadmin do programu SQL Server. Nie usuwaj praw sysadmin z tych kont.  
 
--   Jeśli instalujesz głównej witryny wymagane są następujące prawa dodatkowe:  
-    -  **Administrator** na dodatkowych komputerach, na których zostanie zainstalowany początkowy punkt zarządzania i punkt dystrybucji, ile na serwerze lokacji  
+-   Jeśli instalujesz lokacji głównej, wymagane są następujące prawa dodatkowe:  
+    -  **Administrator** na dodatkowych komputerach, na którym będzie instalowany początkowy punkt zarządzania i punkt dystrybucji, w przeciwnym razie na serwerze lokacji  
 
--   Jeśli instalujesz nowej lokacji głównej podrzędnych poniżej witryny Administracja centralna, wymagane są następujące prawa dodatkowe:  
+-   Jeśli instalujesz nową podrzędną lokację główną poniżej centralnej lokacji administracyjnej, wymagane są następujące prawa dodatkowe:  
 
-    -   **Administrator** na komputerze, na którym przechowywana jest witryna Administracja centralna  
+    -   **Administrator** na komputerze, który jest hostem witryny Administracja centralna  
 
-    -   Prawa administracyjne oparte na rolach w programie Configuration Manager, odpowiadające roli zabezpieczeń **Administrator infrastruktury** lub **pełnego administratora.**  
+    -   Prawa administracyjne opartej na rolach w programie Configuration Manager, które są równoważne roli zabezpieczeń **Administrator infrastruktury** lub **administrator o pełnych uprawnieniach**  
 
--   Należy użyć nośnika instalacyjnego poprawne (plików źródłowych) i uruchom Instalatora z tej lokalizacji. Informacje o plikach prawidłowego źródła użyć do zainstalowania różnych typach witryn, zobacz [opcje instalowania różnych typach witryn](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_options) w [przygotowanie do zainstalowania lokacji](../../../../core/servers/deploy/install/prepare-to-install-sites.md) tematu.
+-   Należy użyć nośnika instalacyjnego poprawne (plików źródłowych) i uruchom Instalatora z tej lokalizacji. Aby uzyskać informacje o poprawnych plików źródłowych na potrzeby instalacji różnych typów lokacji, zobacz [opcje instalacji różnych typów lokacji](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_options) w [przygotowaniu się do zainstalowania lokacji](../../../../core/servers/deploy/install/prepare-to-install-sites.md) tematu.
 
--   Komputer serwera lokacji musi mieć dostęp do zaktualizowane pliki Instalatora firmy Microsoft, w jeden z następujących sposobów:
-    -  Przed rozpoczęciem instalacji można pobrać i przechowywanie kopii tych plików w sieci lokalnej za pomocą [Narzędzie pobierania Instalatora](../../../../core/servers/deploy/install/setup-downloader.md).
-    -  Jeśli lokalną kopię tych plików nie jest dostępna, serwer lokacji musi mieć dostęp do Internetu, więc można go pobrać te pliki firmy Microsoft podczas instalacji.
+-   Komputer serwera lokacji musi mieć dostęp do zaktualizowanych plików Instalatora firmy Microsoft, w jednym z następujących sposobów:
+    -  Przed rozpoczęciem instalacji, możesz pobrać i przechowywać kopię tych plików w sieci lokalnej za pomocą [Narzędzie pobierania Instalatora](../../../../core/servers/deploy/install/setup-downloader.md).
+    -  Jeśli lokalną kopię tych plików nie jest dostępny, serwer lokacji musi mieć dostęp do Internetu, aby mógł pobrać tych plików przez firmę Microsoft podczas instalacji.
 
-- Aby rozszerzyć autonomicznej lokacji głównej, w którym jest zainstalowana rola systemu lokacji przez punkt usługi połączenia, należy odinstalować punkt połączenia usługi. Dozwolony jest tylko jedno wystąpienie tej roli w hierarchii i jest dozwolony tylko w lokacji najwyższego poziomu w hierarchii. Będziesz mieć możliwość ponownego zainstalowania roli podczas instalacji centralnej lokacji administracyjnej.
-- Serwer lokacji i komputerach bazy danych lokacji musi spełniać wszystkie konfiguracje wymagań wstępnych. Przed uruchomieniem programu instalacyjnego, mogą [ręcznie uruchomić narzędzie sprawdzania wymagań wstępnych](../../../../core/servers/deploy/install/prerequisite-checker.md) do identyfikowania i rozwiązywania problemów.  
+- Aby rozszerzyć autonomicznej lokacji głównej, który ma zainstalowaną rolę systemu lokacji przez punkt usługi połączenia, należy odinstalować punkt połączenia usługi. W hierarchii jest dozwolone tylko jedno wystąpienie tej roli, a jest dozwolona tylko w lokacji najwyższego poziomu w hierarchii. Będziesz mieć możliwość ponownego zainstalowania roli podczas instalacji centralnej lokacji administracyjnej.
+- Serwer lokacji i komputery bazy danych lokacji muszą spełniać wszystkie wymagania wstępne konfiguracji. Przed rozpoczęciem instalacji możesz [ręcznie uruchomić narzędzie sprawdzania wymagań wstępnych](../../../../core/servers/deploy/install/prerequisite-checker.md) do identyfikowania i rozwiązywania problemów.  
 
 
 ### <a name="bkmk_expand"></a>Wymagania wstępne dotyczące rozszerzania autonomicznej lokacji głównej
-Aby rozszerzyć do hierarchii z centralną lokacją administracyjną, autonomicznej lokacji głównej musi spełniać następujące wymagania wstępne:
+Autonomicznej lokacji głównej musi spełniać następujące wymagania wstępne, aby rozszerzyć do hierarchii z centralną lokacją administracyjną:
 
--   **Należy zainstalować nowych instalacji centralnej lokacji administracyjnej przy użyciu nośnika z dysku CD. Najnowsze folderu (która zawiera pliki źródłowe) odpowiadający wersji autonomicznej lokacji głównej**
+-   **Zainstalowanie nowych instalacji centralnej lokacji administracyjnej przy użyciu nośnika z dysku CD. Najnowszy folder (zawierający pliki źródłowe) odpowiadający wersji autonomicznej lokacji głównej**
 
- Upewnij się, dopasowanie wersji, należy użyć plików źródłowych znalezione w [dysku CD. Najnowszy folder](/sccm/core/servers/manage/the-cd.latest-folder) autonomicznej lokacji głównej.
+ Aby zapewnić Dopasowanie wersji, użyj plików źródłowych w znaleziono [dysku CD. Najnowszy folder](/sccm/core/servers/manage/the-cd.latest-folder) autonomicznej lokacji głównej.
 
- Aby uzyskać więcej informacji o plikach prawidłowego źródła użyć do zainstalowania różnych lokacji, zobacz [opcje instalowania różnych typach witryn](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_options) w [przygotowanie do zainstalowania lokacji](../../../../core/servers/deploy/install/prepare-to-install-sites.md) tematu.
+ Aby uzyskać więcej informacji o plikach poprawnego źródła użyć do zainstalowania w różnych lokacjach, zobacz [opcje instalacji różnych typów lokacji](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_options) w [przygotowaniu się do zainstalowania lokacji](../../../../core/servers/deploy/install/prepare-to-install-sites.md) tematu.
 
 
--   **Nie można skonfigurować autonomicznej lokacji głównej do migracji danych z innej hierarchii programu Configuration Manager**  
+-   **Autonomicznej lokacji głównej nie można skonfigurować do migracji danych z innej hierarchii programu Configuration Manager**  
 
-     Należy zatrzymać aktywną migrację danych do autonomicznej lokacji głównej z innych hierarchii programu Configuration Manager i usunąć wszystkie konfiguracje migracji. Obejmuje to zadania migracji, które nie zostały ukończone, zbierania danych i konfiguracji aktywnej hierarchii źródłowej.  
+     Należy zatrzymać aktywną migrację autonomicznej lokacji głównej z innych hierarchii programu Configuration Manager i usunąć wszystkie konfiguracje migracji. Dotyczy to również zadania migracji, które nie zostały wykonane, zbierania danych oraz konfiguracji aktywnej hierarchii źródłowej.  
 
-     Jest to konieczne, ponieważ operacje migracji odbywają się za pośrednictwem lokacji najwyższej warstwy w hierarchii, a po rozszerzeniu autonomicznej lokacji głównej konfiguracje migracji nie transferu witryny administracji centralnej.  
+     Jest to konieczne, ponieważ operacje migracji odbywają się w lokacji najwyższego poziomu w hierarchii, a po rozszerzeniu autonomicznej lokacji głównej konfiguracje migracji nie są przenoszone do centralnej lokacji administracyjnej.  
 
-     Jeżeli po rozszerzeniu autonomicznej lokacji głównej, należy zmienić konfigurację migracji w lokacji głównej, centralna lokacja administracyjna wykonuje operacje związane z migracją. Aby uzyskać więcej informacji o sposobie konfigurowania migracji, zobacz [Konfigurowanie hierarchii źródłowych i lokacji źródłowych na potrzeby migracji programu System Center Configuration Manager](../../../../core/migration/configuring-source-hierarchies-and-source-sites-for-migration.md).  
+     Po rozszerzeniu autonomicznej lokacji głównej, jeśli skonfigurujesz migracji w lokacji głównej, centralna lokacja administracyjna wykonuje operacje związane z migracją. Aby uzyskać więcej informacji o sposobie konfigurowania migracji, zobacz [Konfigurowanie hierarchii źródłowych i lokacji źródłowych na potrzeby migracji do programu System Center Configuration Manager](../../../../core/migration/configuring-source-hierarchies-and-source-sites-for-migration.md).  
 
--   **Konto komputera komputer, który będzie hostem nowej centralnej lokacji administracyjnej musi należeć do grupy użytkowników administratora na pojedynczy standa lokacji głównej**  
+-   **Konto komputera komputer, który będzie hostem nowej centralnej lokacji administracyjnej musi być członkiem grupy użytkownika administratora w pojedynczy standa lokacji głównej**  
 
-     Aby pomyślnie rozszerzyć autonomiczną lokację główną, musi mieć konto komputera nowej witryny Administracja centralna **administratora** prawa w autonomicznej lokacji głównej. Jest to wymagane tylko podczas rozszerzania lokacji. Konto można usunąć z grupy użytkowników w lokacji głównej, po zakończeniu rozszerzania lokacji.  
+     Aby pomyślnie rozszerzyć autonomiczną lokację główną, konto komputera nowej centralnej lokacji administracyjnej musi mieć **administratora** prawa w autonomicznej lokacji głównej. Jest to wymagane tylko podczas rozszerzania lokacji. Konto można usunąć z grupy użytkowników w lokacji głównej po zakończeniu rozszerzania lokacji.  
 
--   **Konto użytkownika, który uruchamia Instalatora w celu zainstalowania nowej centralnej lokacji administracyjnej musi mieć uprawnienia do administrowania opartego na rolach w autonomicznej lokacji głównej**  
+-   **Konto użytkownika, który uruchamia Instalatora w celu zainstalowania nowej centralnej lokacji administracyjnej musi mieć prawa administracyjne oparte na rolach w autonomicznej lokacji głównej**  
 
      Aby zainstalować centralną lokację administracyjną w ramach rozszerzania lokacji, konto użytkownika, który uruchamia Instalatora w celu zainstalowania centralnej lokacji administracyjnej musi mieć zdefiniowane w administracji opartej na rolach w autonomicznej lokacji głównej jako **administrator o pełnych uprawnieniach** lub **Administrator infrastruktury**.  
 
--   **Aby rozszerzyć lokację, należy odinstalować następujące role systemu lokacji autonomicznej lokacji głównej:**  
+-   **Aby rozszerzyć lokację, należy odinstalować następujące role systemu lokacji z autonomicznej lokacji głównej:**  
 
     -   Punkt synchronizacji analizy zasobów  
     -   Punkt ochrony punktu końcowego  
     -   Punkt połączenia usługi  
 
-   Te role systemu lokacji są obsługiwane tylko w lokacji najwyższego poziomu w hierarchii. W związku z tym należy odinstalować te role systemu lokacji, przed rozszerzeniem autonomicznej lokacji głównej. Po rozszerzeniu lokacji można ponownie zainstalować te role systemu lokacji w witrynie Administracja centralna.  
+   Te role systemu lokacji są obsługiwane tylko w lokacji najwyższego poziomu w hierarchii. W związku z tym należy odinstalować te role systemu lokacji, przed rozszerzeniem autonomicznej lokacji głównej. Po rozszerzeniu lokacji można ponownie zainstalować te role systemu lokacji w centralnej lokacji administracyjnej.  
 
     Wszystkie inne role systemu lokacji można pozostają zainstalowane w lokacji głównej.  
 
--   **Musi być otwarty port dla SQL Server Service Broker (SSB) między autonomicznej lokacji głównej i komputera, na którym zostanie zainstalowany w witrynie Administracja centralna**  
+-   **Musi być otwarty port dla programu SQL Server Service Broker (SSB) między autonomiczną lokację główną a komputerem instalującym centralną lokację administracyjną**  
 
-     Do replikacji danych między centralną lokacją administracyjną i lokacją główną, Configuration Manager wymaga otwartego portu między dwiema lokacjami dla SSB do użycia. Podczas instalowania centralnej lokacji administracyjnej i rozszerzania autonomicznej lokacji głównej, sprawdzanie wymagań wstępnych nie sprawdza czy port określony dla SSB jest otwarty w lokacji podstawowej.  
+     Do replikacji danych między centralną lokacją administracyjną a lokacją główną, program Configuration Manager wymaga otwartego portu między dwiema lokacjami dla SSB do użycia. Po zainstalowaniu centralnej lokacji administracyjnej i rozszerzenia autonomicznej lokacji głównej, sprawdzanie wymagań wstępnych sprawdza, czy port SSB wybrane jest otwarty w lokacji głównej.  
+
+**Znane problemy podczas konfigurowania usług Azure:**  
+Gdy użyj jednej z następujących usług platformy Azure z programem Configuration Manager i planowanie rozszerzania lokacji, po rozwinięciu lokacji należy usunąć, a następnie utwórz ponownie połączenie z usługą.
+
+Usługi:  
+-       [Program Operations Manager Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) (OMS)
+-       [Gotowości do uaktualnienia](/sccm/core/clients/manage/upgrade/upgrade-analytics)
+-       [Sklep Windows dla firm](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)
+
+Aby rozwiązać ten problem, wykonaj następujące kroki:
+ 1.    W konsoli programu Configuration Manager należy usunąć usługę Azure z węzła usług Azure.
+ 2.    W portalu Azure należy usunąć dzierżawy, która jest skojarzona z usługą w węźle usługi Azure Active Directory dzierżaw.  Spowoduje to również usunięcie aplikacji sieci web usługi Azure AD, który jest skojarzony z usługą.  
+ 3.   Ponownie skonfiguruj połączenie z usługą Azure do użytku z programem Configuration Manager.
 
 
 ## <a name="bkmk_secondary"></a>Lokacje dodatkowe
-Wymagania wstępne dotyczące instalacji lokacji dodatkowej są następujące:
--   Administrator konfigurujący instalację lokacji dodatkowej w konsoli programu Configuration Manager musi mieć prawa administracyjne oparte na rolach odpowiadające roli zabezpieczeń **Administrator infrastruktury** lub **administrator o pełnych uprawnieniach**.  
+Poniżej przedstawiono wymagania wstępne dotyczące instalowania lokacji dodatkowej:
+-   Administrator konfigurujący instalację lokacji dodatkowej w konsoli programu Configuration Manager musi mieć prawa administracyjne oparte na rolach, które są równoważne roli zabezpieczeń **Administrator infrastruktury** lub **administrator o pełnych uprawnieniach**.  
 -   Konto komputera nadrzędnej lokacji głównej musi być **administratora** na komputerze serwera lokacji dodatkowej.  
--   Jeśli lokacja dodatkowa używa uprzednio zainstalowanego wystąpienia programu SQL Server do obsługi bazy danych lokacji dodatkowej:  
+-   Kiedy lokacja dodatkowa używa uprzednio zainstalowanego wystąpienia programu SQL Server do hostowania bazy danych lokacji dodatkowej:  
 
     -   **Konto komputera** nadrzędnej lokacji głównej musi mieć **sysadmin** prawa do wystąpienia programu SQL Server na komputerze serwera lokacji dodatkowej.  
 
     -   **Systemu lokalnego** konto komputera serwera lokacji dodatkowej musi mieć **sysadmin** prawa do wystąpienia programu SQL Server na komputerze serwera lokacji dodatkowej.  
 
         > [!IMPORTANT]  
-        >  Po zakończeniu instalacji oba konta muszą zachować uprawnienia administratora systemu do programu SQL Server. Nie usuwaj uprawnienia administratora systemu z tych kont.  
+        >  Po zakończeniu instalacji oba konta muszą zachować prawa sysadmin do programu SQL Server. Nie usuwaj praw sysadmin z tych kont.  
 
--   Komputer serwera lokacji dodatkowej musi spełniać wszystkie konfiguracje wymagań wstępnych, w tym program SQL Server i domyślne role systemu lokacji punktu zarządzania i punkt dystrybucji.  
+-   Komputer serwera lokacji dodatkowej musi spełniać wszystkie wymagania wstępne konfiguracji, w tym programu SQL Server i domyślne role systemu lokacji punktu zarządzania i punkt dystrybucji.  
 
