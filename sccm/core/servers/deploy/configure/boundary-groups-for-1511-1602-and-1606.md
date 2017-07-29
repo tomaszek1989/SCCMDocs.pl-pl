@@ -21,11 +21,11 @@ ms.openlocfilehash: 640cdc67f301a81a45bf27f95eb03cbc8754a9aa
 ms.contentlocale: pl-pl
 ms.lasthandoff: 05/17/2017
 
-
 ---
 # <a name="boundary-groups-for-system-center-configuration-manager-version-1511-1602-and-1606"></a>Grupy granic programu System Center Configuration Manager wersji 1511, 1602 i 1606
 
 *Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+<!-- This topic drops from TOC with the release of version 1706 -->
 
 Informacje przedstawione w tym temacie jest właściwy za pomocą grup granic w wersjach 1511, 1602, 1606 programu System Center Configuration Manager.
 Jeśli używasz wersji 1610 lub nowszej, zobacz [konfigurowania grup granic](/sccm/core/servers/deploy/configure/boundary-groups) informacji o sposobie używania grupy granic przeprojektowane.  
