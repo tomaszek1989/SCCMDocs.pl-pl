@@ -20,6 +20,7 @@
 
 ## Wdrażanie aplikacji
 ### [Wdrażanie aplikacji](deploy-use/deploy-applications.md)
+### [Share an application (Udostępnianie aplikacji)](deploy-use/share-applications.md)
 ### [Symulowanie wdrożenia aplikacji](deploy-use/simulate-application-deployments.md)
 ### [Wdrażanie aplikacji wirtualnych App-V](get-started/deploying-app-v-virtual-applications.md)
 
@@ -37,3 +38,5 @@
 ### [Aktualizowanie i wycofywanie aplikacji](deploy-use/update-and-retire-applications.md)
 ### [Korygowanie i zastępowanie aplikacji](deploy-use/revise-and-supersede-applications.md)
 ### [Odinstalowywanie aplikacji](deploy-use/uninstall-applications.md)
+
+## [Run and manage scripts (Uruchamianie skryptów i zarządzanie nimi)](deploy-use/create-deploy-scripts.md)
