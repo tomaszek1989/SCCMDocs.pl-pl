@@ -60,6 +60,7 @@
 ## Zarządzenie dostępem do zasobów
 ### [Tworzenie profilów sieci Wi-Fi](deploy-use/create-wifi-profiles.md)
 ### [Tworzenie profilów certyfikatów PFX](deploy-use/create-pfx-certificate-profiles.md)
+### [Importowanie profilów certyfikatów PFX](deploy-use/import-pfx-certificate-profiles.md)
 ### [Profile sieci VPN](deploy-use/create-vpn-profiles.md)
 ### [Tworzenie profilów poczty e-mail](deploy-use/create-exchange-activesync-profiles.md)
 ### [Ustawienia funkcji Windows Hello dla firm](deploy-use/windows-hello-for-business-settings.md)
