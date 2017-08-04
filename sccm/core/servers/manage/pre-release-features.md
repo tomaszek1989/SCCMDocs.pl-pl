@@ -2,7 +2,7 @@
 title: "Funkcje wersji wstępnej | Dokumentacja firmy Microsoft"
 description: "Funkcje wersji wstępnej programu System Center Configuration Manager"
 ms.custom: na
-ms.date: 6/13/2017
+ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,12 +15,11 @@ caps.latest.revision: 36
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3619a73d3a39659de927e1711a7ec81de9918064
-ms.openlocfilehash: 988f8da0b221f8c0b470e7a0a8ed995356193f98
+ms.translationtype: MT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: 7b594daeed81ef2d991ad06489f9184a69804117
 ms.contentlocale: pl-pl
-ms.lasthandoff: 06/13/2017
-
+ms.lasthandoff: 07/29/2017
 
 ---
 # <a name="pre-release-features-in-system-center-configuration-manager"></a>Funkcje wersji wstępnej programu System Center Configuration Manager
@@ -51,9 +50,10 @@ Jeśli udzielił zgody w autonomicznej lokacji głównej, a następnie rozwiń w
 
  |Funkcja          |Dodany jako wersji wstępnej | Dodaje funkcję Pełna|  
 |------------------|---------------------|---------------------|
+| Tworzenie i uruchamianie skryptów programu PowerShell z poziomu konsoli programu Configuration Manager |  [Wersja 1706](/sccm/apps/deploy-use/create-deploy-scripts)|![Jeszcze nie](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Zarządzanie urządzeniami Guard z programu Configuration Manager |  [Wersja 1702](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)|![Jeszcze nie](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Sprawdź, czy uruchamianie plików wykonywalnych przed zainstalowaniem aplikacji  |   [Wersja 1702](/sccm/apps/deploy-use/deploy-applications#how-to-check-for-running-executable-files-before-installing-an-application) |![Jeszcze nie](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-| Punkt usługi magazynu danych  |  [Wersja 1702](/sccm/core/servers/manage/data-warehouse) |![Jeszcze nie](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
+| Punkt usługi magazynu danych  |  [Wersja 1702](/sccm/core/servers/manage/data-warehouse) |[Wersja 1706](/sccm/core/servers/manage/data-warehouse)|
 | Równorzędnej pamięci podręcznej w celu dystrybucji zawartości do klientów |  [Wersja 1610](/sccm/core/plan-design/hierarchy/client-peer-cache) |![Jeszcze nie](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Brama zarządzania w chmurze |  [Wersja 1610](/sccm/core/clients/manage/plan-cloud-management-gateway) |![Jeszcze nie](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Pulpit nawigacyjny źródła danych klienta |  [Wersja 1610](/sccm/core/servers/deploy/configure/monitor-content-you-have-distributed#client-data-sources-dashboard) |![Jeszcze nie](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|

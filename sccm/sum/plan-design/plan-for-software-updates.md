@@ -1,5 +1,4 @@
 ---
-
 title: Planowanie aktualizacji oprogramowania | Dokumentacja firmy Microsoft
 description: "Planowanie infrastruktury punktu aktualizacji oprogramowania jest niezbędne, aby używać aktualizacji oprogramowania w środowisku produkcyjnym programu System Center Configuration Manager."
 keywords: 
@@ -13,12 +12,11 @@ ms.service:
 ms.technology:
 - configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: f4c46bfab9b40b29654f4e883817a5508ab25b74
-ms.openlocfilehash: b5a2fd9f15992c9e5ef8aede64af5446b6852b1a
+ms.translationtype: MT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: bc7e702a4277ac1dc358aa9a2795cddbf42e475f
 ms.contentlocale: pl-pl
-ms.lasthandoff: 06/28/2017
-
+ms.lasthandoff: 07/29/2017
 
 ---
 
@@ -109,11 +107,15 @@ Aby wyszukać znaczenie kodu błędu, możesz przekonwertować kod dziesiętny b
 
 
 ###  <a name="BKMK_ManuallySwitchSUPs"></a>Ręcznie przełączać klientów do nowego punktu aktualizacji oprogramowania
-Począwszy od programu Configuration Manager w wersji 1606, możesz włączyć opcję dla klientów programu Configuration Manager, która umożliwia przełączanie do nowego punktu aktualizacji oprogramowania w przypadku wystąpienia problemów z aktywnym punktem aktualizacji oprogramowania. Ta opcja powoduje zmiany tylko wtedy, gdy klient odbierze wiele punktów aktualizacji oprogramowania z punktu zarządzania.  
+Począwszy od programu Configuration Manager w wersji 1606, możesz włączyć opcję dla klientów programu Configuration Manager, która umożliwia przełączanie do nowego punktu aktualizacji oprogramowania w przypadku wystąpienia problemów z aktywnym punktem aktualizacji oprogramowania. Ta opcja powoduje zmiany tylko wtedy, gdy klient odbierze wiele punktów aktualizacji oprogramowania z punktu zarządzania.
 
-Włącz tę opcję dla kolekcji urządzeń lub zestawu wybranych urządzeń. Po włączeniu tej opcji klienci będą szukać innego punktu aktualizacji oprogramowania podczas kolejnego skanowania. W zależności od ustawień konfiguracji usługi WSUS (klasyfikacje aktualizacji, produkty, współdzielenie bazy danych usługi WSUS przez punkty aktualizacji oprogramowania itd.) przełączenie na nowy punkt aktualizacji oprogramowania spowoduje wygenerowanie dodatkowego ruchu sieciowego. Dlatego opcji tej należy używać wyłącznie wtedy, gdy jest to konieczne.  
+> [!IMPORTANT]    
+> Po przełączeniu urządzenia do używania nowego serwera urządzenia używają rezerwowego do znajdowania ten nowy serwer. W związku z tym Przejrzyj konfiguracji grupy granic i upewnij się, że punkty aktualizacji oprogramowania znajdują się w grupach granic poprawne przed rozpoczęciem tej zmiany. Aby uzyskać więcej informacji, zobacz [punktów aktualizacji oprogramowania](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points).
+>
+> Przełącz do nowego punktu aktualizacji oprogramowania wygeneruje dodatkowy ruch sieciowy. Ilość ruchu zależy od ustawień konfiguracji programu WSUS (klasyfikacje aktualizacji, produkty, czy punkty aktualizacji oprogramowania współdzielą bazę danych usług WSUS, itp.). Jeśli planujesz przełącznika wielu urządzeń, należy wziąć pod uwagę podczas okna obsługi, aby zmniejszyć wpływ do sieci podczas synchronizacji do nowego serwera punktu aktualizacji oprogramowania w ten sposób.
 
 #### <a name="to-enable-the-option-to-switch-software-update-points"></a>Aby włączyć opcję przełączania punktów aktualizacji oprogramowania  
+Włącz tę opcję dla kolekcji urządzeń lub zestawu wybranych urządzeń. Po włączeniu tej opcji klienci będą szukać innego punktu aktualizacji oprogramowania podczas kolejnego skanowania.
 
 1.  W konsoli programu Configuration Manager kliknij pozycję **Zasoby i zgodność > Przegląd > Kolekcje urządzeń**.  
 
@@ -296,7 +298,7 @@ Aktualizacje oprogramowania wymagają zainstalowania obsługiwanej wersji progra
 
     > [!NOTE]  
     >  Gdy ustawia zastąpionej aktualizacji oprogramowania programu Configuration Manager **ważność**, nie ustawia aktualizacji **ważność** w usługach WSUS. Jednakże, gdy zostanie uruchomione zadanie oczyszczania usług WSUS, aktualizacje ustawioną **ważność** w programie Configuration Manager są ustawione na stan **odrzucone** w programie WSUS server i Windows Update Agent na komputerach nie będzie więcej wyszukiwać tych aktualizacji. Oznacza to, że klienci będą nadal skanowania pod kątem wygasłych aktualizacji do momentu uruchamia zadanie oczyszczania. Aby uzyskać informacje na temat zadanie oczyszczania usług WSUS, zobacz [obsługi aktualizacji oprogramowania](/sccm/sum/deploy-use/software-updates-maintenance).
-    
+
 ###  <a name="BKMK_UpdateLanguages"></a> Języki  
  Ustawienia języka w punkcie aktualizacji oprogramowania pozwala na skonfigurowanie języków, dla których szczegóły podsumowania (metadane aktualizacji oprogramowania) są synchronizowane z aktualizacjami oprogramowania, oraz wersji językowych aktualizacji oprogramowania, które zostaną pobrane.  
 

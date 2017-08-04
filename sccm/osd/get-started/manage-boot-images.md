@@ -1,6 +1,6 @@
 ---
-title: "Zarządzanie obrazami rozruchowymi — Configuration Manager | Dokumentacja firmy Microsoft"
-description: "Dowiedz się, że w programie Configuration Manager do zarządzania systemu Windows PE obrazów rozruchowych jest używany podczas wdrażania systemu operacyjnego."
+title: "Zarządzanie obrazami rozruchowymi — programu Configuration Manager | Dokumentacja firmy Microsoft"
+description: "Dowiedz się, że w programie Configuration Manager do zarządzania obrazy rozruchowe Windows PE, używane podczas wdrażania systemu operacyjnego."
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
@@ -16,51 +16,57 @@ caps.handback.revision: 0
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0cf2ac6440588ccf4848baa7a195f78e8675447d
-ms.openlocfilehash: c6a1eb9ccaee45eb242fb320cb6b492d1a39d349
+ms.translationtype: MT
+ms.sourcegitcommit: 0663ba84762c44a5c303562548499f195bae9e1c
+ms.openlocfilehash: cc678c1133b1944f55bcad309cf9ede9f0660b57
 ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.lasthandoff: 08/01/2017
 
 ---
 # <a name="manage-boot-images-with-system-center-configuration-manager"></a>Zarządzanie obrazami rozruchowymi przy użyciu programu System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Obraz rozruchowy w programie Configuration Manager jest [środowiska Preinstalacyjnego systemu Windows (WinPE)](https://msdn.microsoft.com/library/windows/hardware/dn938389%28v=vs.85%29.aspx) obraz, który jest używany podczas wdrażania systemu operacyjnego. Obrazy rozruchowe są używane do uruchamiania komputera ze środowiskiem WinPE, czyli minimalnym systemem operacyjnym z ograniczoną listą składników i usług, który przygotowuje komputer docelowy do instalacji systemu operacyjnego Windows.  Poniższe sekcje służą do zarządzania obrazami rozruchowymi.
+Obraz rozruchowy w programie Configuration Manager jest [środowiska Windows PE (WinPE)](https://msdn.microsoft.com/library/windows/hardware/dn938389%28v=vs.85%29.aspx) obrazu, który jest używany podczas wdrażania systemu operacyjnego. Obrazy rozruchowe są używane do uruchamiania komputera ze środowiskiem WinPE, czyli minimalnym systemem operacyjnym z ograniczoną listą składników i usług, który przygotowuje komputer docelowy do instalacji systemu operacyjnego Windows.  Poniższe sekcje umożliwiają zarządzanie obrazami rozruchowymi.
 
 ## <a name="BKMK_BootImageDefault"></a>Domyślne obrazy rozruchowe
-Program Configuration Manager udostępnia dwa domyślne obrazy rozruchowe: Do obsługi x86 platform i do obsługi x64 platformy. Te obrazy są przechowywane w: \\ \\ *servername*> \SMS_ <*kod_lokacji*> \osd\boot\\<*x64*> lub <*i386*>. Domyślne obrazy rozruchowe są zaktualizowane lub ponownie wygenerować w zależności od akcji, które należy wykonać.
+Configuration Manager udostępnia dwa domyślne obrazy rozruchowe: Do obsługi x86 platform i jeden do obsługi x64 platform. Te obrazy są przechowywane w: \\ \\ *servername*> \SMS_ <*kod_lokacji*> \osd\boot\\<*x64*> lub <*i386*>. Domyślne obrazy rozruchowe są zaktualizowane lub ponownie wygenerowany w zależności od działanie, które należy podjąć.
 
-**Użyj aktualizacji i obsługi w celu zainstalowania najnowszej wersji programu Configuration Manager** począwszy od wersji 1702, podczas uaktualniania wersji zestawu Windows, a następnie użyć aktualizacji i obsługi w celu zainstalowania najnowszej wersji programu Configuration Manager, Configuration Manager ponownie wygenerować domyślne obrazy rozruchowe. W tym nową wersję środowiska Windows PE z zaktualizowanego zestawu Windows nowej wersji klienta programu Configuration Manager, sterowniki, dostosowania itp. Niestandardowe obrazy rozruchowe nie są modyfikowane.
-
-Przed wersją 1702 programu Configuration Manager aktualizuje istniejące obrazu rozruchowego (boot.wim) przy użyciu składników klienta, sterowniki, dostosowania, itp., ale nie będą korzystać z najnowszej wersji środowiska Windows PE z zestawu Windows ADK. Należy ręcznie zmodyfikować obraz rozruchowy do nowej wersji zestawu Windows adk.
-
-**Uaktualnienie z programu Configuration Manager 2012 do Configuration Manager bieżącej gałęzi CB** po uaktualnieniu programu Configuration Manager 2012 do CB programu Configuration Manager za pomocą procesu instalacji programu Configuration Manager będzie ponownie wygenerować domyślne obrazy rozruchowe. Obejmuje nową wersję środowiska Windows PE z zestawu Windows zaktualizowanych nowej wersji klienta programu Configuration Manager oraz wszystkie dostosowania pozostaną niezmienione. Niestandardowe obrazy rozruchowe nie są modyfikowane.
-
-**Aktualizuj punkty dystrybucji o obraz rozruchowy** korzystając **Aktualizuj punkty dystrybucji** akcji z **obrazów rozruchowych** węzeł w konsoli programu Configuration Manager, Configuration Manager aktualizuje domyślne obrazy rozruchowe składniki klienta, sterowniki, dostosowania, itp., ale nie będzie korzystać z najnowszej wersji środowiska Windows PE z zestawu Windows ADK. Niestandardowe obrazy rozruchowe nie są modyfikowane.
-
-Należy również uwzględnić następujące czynności dla każdego z powyższych czynności:
-- Obiekty sterownika źródła musi być prawidłowy, w tym pliki źródłowe sterownika lub sterowników, nie zostaną dodane do obrazów rozruchowych w witrynie.
-- Obrazy rozruchowe, które nie są oparte na domyślne obrazy rozruchowe, nawet jeśli korzystają z tej samej wersji środowiska Windows PE, nie zostaną zmodyfikowane.
-- Należy ponownie przeprowadzić dystrybucję obrazy rozruchowe zmodyfikowanych do punktów dystrybucji.
-- Należy ponownie utworzyć dowolnego nośnika, który korzysta z obrazów rozruchowych modyfikacji.
-- Jeśli nie chcesz dostosować domyślne obrazy rozruchowe automatycznie aktualizowane, nie należy przechowywać je w lokalizacji domyślnej.
+Należy wziąć pod uwagę następujące czynności opisane w poniższych sekcjach:
+- Obiekty źródłowe sterowników musi być prawidłową, w tym pliki źródłowe sterownika lub sterowników, nie zostanie dodany do obrazów rozruchowych w lokacji.
+- Obrazy rozruchowe, które nie są oparte na domyślne obrazy rozruchowe, nawet jeśli używają tej samej wersji systemu Windows PE, nie zostaną zmodyfikowane.
+- Obrazy rozruchowe zmodyfikowane do punktów dystrybucji należy ponownie rozesłać.
+- Należy ponownie utworzyć wszelkich nośnika, który korzysta z obrazów rozruchowych zmodyfikowane.
+- Jeśli nie chcesz, aby dostosowane domyślne obrazy rozruchowe automatycznie aktualizowane, nie należy przechowywać je w lokalizacji domyślnej.
 
 > [!NOTE]
-> Narzędzie dziennika śledzenia Menedżera konfiguracji zostanie dodany do wszystkich obrazów rozruchowych, które dodajesz do **Biblioteka oprogramowania**. Podczas pracy w środowisku Windows PE, można uruchomić narzędzie dziennika śledzenia Menedżera konfiguracji, wpisując **CMTrace** z wiersza polecenia.  
+> Configuration Manager Trace Log Tool jest dodawany do wszystkich obrazów rozruchowych, które dodajesz do **Biblioteka oprogramowania**. Podczas pracy w środowisku Windows PE, można uruchomić Configuration Manager Trace Log Tool, wpisując **CMTrace** z wiersza polecenia.  
+
+### <a name="use-updates-and-servicing-to-install-the-latest-version-of-configuration-manager"></a>Użyj aktualizacji i obsługi, aby zainstalować najnowszą wersję programu Configuration Manager
+Począwszy od wersji 1702, podczas uaktualniania wersji zestawu Windows ADK i użyj aktualizacje i obsługa, aby zainstalować najnowszą wersję programu Configuration Manager, Configuration Manager generuje domyślne obrazy rozruchowe. W tym nową wersją środowiska Windows PE z zaktualizowany zestaw Windows ADK, nowej wersji klienta programu Configuration Manager, sterowniki, dostosowywanie, itp. Niestandardowe obrazy rozruchowe nie są modyfikowane.
+
+Przed wersją 1702 programu Configuration Manager aktualizuje istniejący obraz rozruchowy (boot.wim) przy użyciu składników klienta, sterowniki, dostosowywanie, itp., ale nie będzie używać najnowszej wersji systemu Windows PE z zestawu Windows ADK. Należy ręcznie zmodyfikować obraz rozruchowy do nowej wersji zestawu Windows adk.
+
+### <a name="upgrade-from-configuration-manager-2012-to-configuration-manager-current-branch-cb"></a>Uaktualnianie z programu Configuration Manager 2012 do programu Configuration Manager bieżącego Branch (CB)
+Po uaktualnieniu programu Configuration Manager 2012 CB programu Configuration Manager przy użyciu procesu instalacji programu Configuration Manager spowoduje ponowne wygenerowanie domyślne obrazy rozruchowe. Dotyczy to również nową wersję środowiska Windows PE z zaktualizowany zestaw Windows ADK, nowej wersji klienta programu Configuration Manager i wszystkie dostosowania pozostają niezmienione. Niestandardowe obrazy rozruchowe nie są modyfikowane.
+
+### <a name="update-distribution-points-with-the-boot-image"></a>Aktualizuj punkty dystrybucji o obraz rozruchowy
+Jeśli używasz **Aktualizuj punkty dystrybucji** akcji z **obrazów rozruchowych** węzeł w konsoli programu Configuration Manager, Configuration Manager aktualizuje domyślne obrazy rozruchowe składników klienta, sterowniki, dostosowywanie, itp.    
+
+Począwszy od programu Configuration Manager 1706 wersji, można ponownie załadować najnowszą wersję środowiska Windows PE (w katalogu instalacyjnym zestawu Windows ADK) do obrazu rozruchowego. **Ogólne** Kreatora aktualizacji punktów dystrybucji zawiera informacje o wersji zestawu Windows ADK na serwerze lokacji, wersja zestawu Windows ADK, w którym użyto środowiska Windows PE w obrazie rozruchowym i wersja klienta programu Configuration Manager. Można użyć te informacje ułatwiające podjęcie decyzji o ponowne załadowanie obrazu rozruchowego. Ponadto nową kolumnę (**wersji klienta**) został dodany podczas wyświetlania obrazów rozruchowych w **obrazów rozruchowych** węzeł, aby wiedzieć, jakiej wersji klienta programu Configuration Manager korzysta z każdego obrazu rozruchowego.    
+
+Niestandardowe obrazy rozruchowe nie są modyfikowane.
 
 ##  <a name="BKMK_BootImageCustom"></a>Dostosowanie obrazu rozruchowego  
- Można dostosować obraz rozruchowy lub [zmodyfikować obraz rozruchowy](#BKMK_ModifyBootImages), z konsoli programu Configuration Manager, gdy jest on oparty na wersję środowiska Windows PE z obsługiwanej wersji zestawu Windows. Po uaktualnieniu lokacji do nowej wersji i zainstalowaniu nowej wersji zestawu Windows ADK niestandardowe obrazy rozruchowe (znajdujące się poza lokalizacją domyślnego obrazu rozruchowego) nie są aktualizowane przy użyciu nowej wersji zestawu Windows ADK. Kiedy tak się stanie, nie będzie można dostosować obrazy rozruchowe w konsoli programu Configuration Manager. Będą jednak nadal działać tak samo jak przed uaktualnieniem.  
+ Obraz rozruchowy można dostosować lub [zmodyfikować obraz rozruchowy](#BKMK_ModifyBootImages), z poziomu konsoli programu Configuration Manager, gdy jest on oparty na wersji środowiska Windows PE z obsługiwanej wersji zestawu Windows adk. Po uaktualnieniu lokacji do nowej wersji i zainstalowaniu nowej wersji zestawu Windows ADK niestandardowe obrazy rozruchowe (znajdujące się poza lokalizacją domyślnego obrazu rozruchowego) nie są aktualizowane przy użyciu nowej wersji zestawu Windows ADK. W takim przypadku nie będzie można dostosować obrazy rozruchowe w konsoli programu Configuration Manager. Będą jednak nadal działać tak samo jak przed uaktualnieniem.  
 
  Jeśli obraz rozruchowy jest oparty na innej wersji zestawu Windows ADK zainstalowanej w lokacji, należy dostosować obrazy rozruchowe za pomocą innej metody, takiej jak narzędzie wiersza polecenia Deployment Image Servicing and Management (DISM), które jest częścią zestawów Windows AIK i Windows ADK. Aby uzyskać więcej informacji, zobacz [dostosowywanie obrazów rozruchowych](customize-boot-images.md).  
 
 ##  <a name="BKMK_AddBootImages"></a>Dodawanie obrazu rozruchowego  
 
- Podczas instalacji lokacji programu Configuration Manager automatycznie dodaje obrazy rozruchowe, które są oparte na wersji środowiska WinPE z obsługiwanej wersji zestawu Windows adk. W zależności od wersji programu Configuration Manager może być możliwe dodanie obrazów rozruchowych opartych na różnych wersji środowiska WinPE z obsługiwanej wersji zestawu Windows ADK.  Przy próbie dodania obrazu rozruchowego, który zawiera nieobsługiwaną wersję środowiska WinPE, wystąpi błąd.  
+ Podczas instalacji lokacji programu Configuration Manager automatycznie dodaje obrazy rozruchowe, które są oparte na wersji środowiska WinPE z obsługiwanej wersji zestawu Windows adk. W zależności od wersji programu Configuration Manager może być możliwe dodanie obrazów rozruchowych opartych na różnych wersjach środowiska WinPE z obsługiwanej wersji zestawu Windows ADK.  Przy próbie dodania obrazu rozruchowego, który zawiera nieobsługiwaną wersję środowiska WinPE, wystąpi błąd.  
 
- Poniżej zamieszczono obsługiwanej wersji zestawu Windows ADK, wersję środowiska Windows PE, na której oparto obraz rozruchowy, który można dostosować z konsoli programu Configuration Manager i wersji systemu Windows PE, na których oparto obraz rozruchowy który można dostosować przy użyciu narzędzia DISM, a następnie dodać obraz do programu Configuration Manager.  
+ Poniżej znajdują się obsługiwaną wersję zestawu Windows ADK, wersję systemu Windows PE, na której oparto obraz rozruchowy, który można dostosować z konsoli programu Configuration Manager i wersje systemu Windows PE, na których oparto obraz rozruchowy można dostosować, używając narzędzia DISM i dodania do programu Configuration Manager.  
 
 -   **Wersja zestawu Windows ADK**  
 
@@ -74,9 +80,9 @@ Należy również uwzględnić następujące czynności dla każdego z powyższy
 
      Windows PE 3.1<sup>1</sup> i Windows PE 5  
 
-     <sup>1</sup> można dodawać tylko obraz rozruchowy do programu Configuration Manager, gdy jest on oparty na systemie Windows PE 3.1. Zainstaluj uzupełnienie Windows AIK dla systemu Windows 7 z dodatkiem SP1, aby uaktualnić zestaw Windows AIK dla systemu Windows 7 (oparty na środowisku Windows PE3) z uzupełnieniem Windows AIK dla systemu Windows 7 z dodatkiem SP1 (oparte na środowisku Windows PE 3.1). Uzupełnienie Windows AIK dla systemu Windows 7 z dodatkiem SP1 możesz pobrać z [Centrum pobierania Microsoft](http://www.microsoft.com/download/details.aspx?id=5188).  
+     <sup>1</sup> można dodawać tylko obraz rozruchowy do programu Configuration Manager bazujące na środowisku Windows PE 3.1. Zainstaluj uzupełnienie Windows AIK dla systemu Windows 7 z dodatkiem SP1, aby uaktualnić zestaw Windows AIK dla systemu Windows 7 (oparty na środowisku Windows PE3) z uzupełnieniem Windows AIK dla systemu Windows 7 z dodatkiem SP1 (oparte na środowisku Windows PE 3.1). Uzupełnienie Windows AIK dla systemu Windows 7 z dodatkiem SP1 możesz pobrać z [Centrum pobierania Microsoft](http://www.microsoft.com/download/details.aspx?id=5188).  
 
-     Na przykład jeśli korzystasz z programu Configuration Manager, można dostosować obrazy rozruchowe program Windows ADK dla systemu Windows 10 (oparte na systemie Windows PE 10) z konsoli programu Configuration Manager. Chociaż obrazy rozruchowe bazujące na środowisku Windows PE 5 są obsługiwane, należy je dostosować za pomocą innego komputera i użyć wersji narzędzia DISM zainstalowanej z zestawem Windows ADK dla systemu Windows 8. Następnie można dodać obraz rozruchowy do konsoli programu Configuration Manager. Aby uzyskać więcej informacji o czynności pozwalające na dostosowanie obrazu rozruchowego (z dodaniem opcjonalnych składników i sterowników), włączenie obsługi wiersza polecenia w obrazie rozruchowym, dodanie obrazu rozruchowego do konsoli programu Configuration Manager i Aktualizuj punkty dystrybucji z obrazu rozruchowego, zobacz [dostosowywanie obrazów rozruchowych](customize-boot-images.md).
+     Na przykład gdy program Configuration Manager, można dostosować obrazy rozruchowe zestawu Windows ADK dla systemu Windows 10 (oparte na systemie Windows PE 10) z konsoli programu Configuration Manager. Chociaż obrazy rozruchowe bazujące na środowisku Windows PE 5 są obsługiwane, należy je dostosować za pomocą innego komputera i użyć wersji narzędzia DISM zainstalowanej z zestawem Windows ADK dla systemu Windows 8. Następnie można dodać obraz rozruchowy do konsoli programu Configuration Manager. Aby uzyskać więcej informacji o czynności pozwalające na dostosowanie obrazu rozruchowego (Dodawanie opcjonalnych składników i sterowników), włączenie obsługi wiersza polecenia w obrazie rozruchowym, dodanie obrazu rozruchowego do konsoli programu Configuration Manager i Aktualizuj punkty dystrybucji o obraz rozruchowy, zobacz [dostosowywanie obrazów rozruchowych](customize-boot-images.md).
 
  Użyj następującej procedury, aby dodać ręcznie obraz rozruchowy.  
 
@@ -106,12 +112,12 @@ Należy również uwzględnić następujące czynności dla każdego z powyższy
 
 6.  Ukończ pracę kreatora.  
 
- Obraz rozruchowy zostanie wyświetlony w **obrazu rozruchowego** węzeł konsoli programu Configuration Manager. Jednakże zanim będzie można użyć obrazu rozruchowego do wdrożenia systemu operacyjnego, należy przesłać obraz rozruchowy do punktów dystrybucji, grup punktów dystrybucji lub do kolekcji skojarzonych z grupami punktów dystrybucji.  
+ Obraz rozruchowy zostanie wyświetlony w **obrazu rozruchowego** węzła konsoli programu Configuration Manager. Jednakże zanim będzie można użyć obrazu rozruchowego do wdrożenia systemu operacyjnego, należy przesłać obraz rozruchowy do punktów dystrybucji, grup punktów dystrybucji lub do kolekcji skojarzonych z grupami punktów dystrybucji.  
 
 > [!NOTE]  
->  Po wybraniu **obrazu rozruchowego** węzła w konsoli programu Configuration Manager **rozmiar (KB)** kolumny zostanie wyświetlony rozmiar każdego obrazu rozruchowego. Jednak gdy Menedżera konfiguracji wysyła obraz rozruchowy przez sieć, wysyła skompresowana kopia obrazu, który jest zwykle znacznie mniejszy niż podany w **rozmiar (KB)** kolumny.  
+>  Po wybraniu **obrazu rozruchowego** węzeł w konsoli programu Configuration Manager **rozmiar (KB)** kolumny Wyświetla zdekompresowanych rozmiar każdego obrazu rozruchowego. Jednak gdy Menedżera konfiguracji wysyła obraz rozruchowy przez sieć, wysyła skompresowana kopia obrazu, który jest zwykle znacznie mniejszy niż podany w **rozmiar (KB)** kolumny.  
 
-##  <a name="BKMK_DistributeBootImages"></a>Dystrybucja obrazów rozruchowych do punktu dystrybucji  
+##  <a name="BKMK_DistributeBootImages"></a>Dystrybuowanie obrazów rozruchowych do punktu dystrybucji  
  Dystrybucja obrazów rozruchowych do punktów dystrybucji przebiega tak samo, jak w przypadku zawartości innego typu. W większości przypadków musisz przeprowadzić dystrybucję obrazu rozruchowego do co najmniej jednego punktu dystrybucji przed wdrożeniem systemu operacyjnego i przed utworzeniem nośnika.  
 
 > [!NOTE]  
@@ -119,11 +125,11 @@ Należy również uwzględnić następujące czynności dla każdego z powyższy
 >   
 >  -   Punkt dystrybucji musi być skonfigurowany tak, aby akceptował żądania dotyczące środowiska PXE.  
 > -   Musisz przeprowadzić dystrybucję obu obrazów rozruchowych obsługujących środowisko PXE (x86 i x64) do co najmniej jednego punktu dystrybucji obsługującego środowisko PXE.  
-> -   Menedżer konfiguracji dystrybuuje obrazy rozruchowe do **RemoteInstall** folderu w punkcie dystrybucji z włączoną obsługą środowiska PXE.  
+> -   Configuration Manager dystrybuuje obrazy rozruchowe do **RemoteInstall** folderu w punkcie dystrybucji z włączoną obsługą środowiska PXE.  
 >   
->  Aby uzyskać więcej informacji o używaniu środowiska PXE do wdrażania systemów operacyjnych, zobacz [środowiska PXE używany do wdrażania systemu Windows za pośrednictwem sieci](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
+>  Aby uzyskać więcej informacji o używaniu środowiska PXE do wdrażania systemów operacyjnych, zobacz [przy użyciu środowiska PXE do wdrażania systemu Windows za pośrednictwem sieci](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
 
- Aby zapoznać się z procedurą dystrybucji obrazu rozruchowego, zobacz [Dystrybucja zawartości](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).  
+ Aby zapoznać się z procedurą dystrybucji obrazu rozruchowego, zobacz [Dystrybucja zawartości](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_distribute).  
 
 ##  <a name="BKMK_ModifyBootImages"></a>Modyfikowanie obrazu rozruchowego  
  Możesz dodać sterowniki urządzeń do obrazu, usunąć je z obrazu lub edytować właściwości skojarzone z obrazem rozruchowym. Dodawane lub usuwane sterowniki urządzeń mogą obejmować sterowniki kart sieciowych albo urządzeń pamięci masowych. Podczas modyfikowania obrazów rozruchowych należy uwzględnić następujące czynniki:  
@@ -132,7 +138,7 @@ Należy również uwzględnić następujące czynności dla każdego z powyższy
 
 -   Podczas modyfikowania obraz rozruchowy nie zmienia żadnych skojarzonych pakietów, do których się odwołuje.  
 
--   Po wprowadzeniu zmian w obrazie rozruchowym musisz go **zaktualizować** w punktach dystrybucji, które już zawierają ten obraz rozruchowy, aby zapewnić dostępność jego najnowszej wersji. Aby uzyskać więcej informacji, zobacz [Zarządzanie dystrybuowaną zawartością](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkmanagea-manage-the-content-you-have-distributed).  
+-   Po wprowadzeniu zmian w obrazie rozruchowym musisz go **zaktualizować** w punktach dystrybucji, które już zawierają ten obraz rozruchowy, aby zapewnić dostępność jego najnowszej wersji. Aby uzyskać więcej informacji, zobacz [Zarządzanie dystrybuowaną zawartością](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_manage).  
 
  Aby zmodyfikować obraz rozruchowy, wykonaj czynności opisane w poniższej procedurze.  
 
@@ -152,7 +158,7 @@ Należy również uwzględnić następujące czynności dla każdego z powyższy
 
     -   Na karcie **Sterowniki** dodaj sterowniki urządzeń systemu Windows wymagane do rozruchu środowiska WinPE. Podczas dodawania sterowników urządzeń należy uwzględnić następujące zalecenia:  
 
-        -   Wybierz **Ukryj sterowniki, które nie są zgodne z architekturą obrazu rozruchowego** tylko wyświetlić tylko te sterowniki z architekturą obrazu rozruchowego. Architektura jest oparta na architekturze zgłoszonej w pliku INF dostarczonym przez producenta.  
+        -   Wybierz **Ukryj sterowniki, które nie są zgodne z architekturą obrazu rozruchowego** można wyświetlić tylko sterowniki dla architektury obrazu rozruchowego. Architektura jest oparta na architekturze zgłoszonej w pliku INF dostarczonym przez producenta.  
 
         -   Wybierz ustawienie **Ukryj sterowniki, które nie należą do klasy sieci lub magazynu (na potrzeby obrazów rozruchowych)**, aby wyświetlić tylko sterowniki magazynów i sieci oraz ukryć inne sterowniki, które nie są zwykle wymagane przez obrazy rozruchowe, takie jak sterownik wideo lub sterownik modemu.  
 
@@ -196,24 +202,24 @@ Należy również uwzględnić następujące czynności dla każdego z powyższy
         -   Wybierz pozycję **Wdróż ten obraz rozruchowy z punktu dystrybucji obsługującego PXE**, jeśli obraz rozruchowy jest używany we wdrożeniu obsługującym środowisko PXE.  
 
             > [!NOTE]  
-            >  Aby uzyskać więcej informacji, zobacz [środowiska PXE używany do wdrażania systemu Windows za pośrednictwem sieci](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
+            >  Aby uzyskać więcej informacji, zobacz [przy użyciu środowiska PXE do wdrażania systemu Windows za pośrednictwem sieci](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
 
     -   Na karcie **Dostęp do danych** wybierz dowolne z poniższych ustawień:  
 
         -   Ustaw **Ustawienia udziału pakietu**, jeżeli klienci mają instalować zawartość tego pakietu z sieci.  
 
-        -   Ustaw **ustawienia aktualizacji pakietu** , aby określić, jak program Configuration Manager ma odłączać użytkowników od punktu dystrybucji. Menedżer konfiguracji może być niemożliwe do aktualizacji obrazu rozruchowego, jeżeli użytkownicy są połączeni z punktem dystrybucji.  
+        -   Ustaw **ustawienia aktualizacji pakietu** można określić, jak program Configuration Manager do odłączania użytkowników od punktu dystrybucji. Menedżer konfiguracji może być nie można zaktualizować obrazu rozruchowego, gdy użytkownicy są podłączeni do punktu dystrybucji.  
 
     -   Na karcie **Ustawienia dystrybucji** wybierz dowolne z poniższych ustawień:  
 
-        -   W **priorytetu dystrybucji** listy, określ poziom priorytetu, program Configuration Manager ma użyć w przypadku wielu pakietów do tego samego punktu dystrybucji.  
+        -   W **priorytetu dystrybucji** Określ poziom priorytetu, program Configuration Manager ma użyć w przypadku dystrybucji kilku pakietów do tego samego punktu dystrybucji.  
 
         -   Wybierz opcję **Dystrybuuj zawartość tego pakietu do preferowanych punktów dystrybucji**, jeśli chcesz włączyć dystrybucję zawartości na żądanie do preferowanych punktów dystrybucji. Po włączeniu tego ustawienia punkt zarządzania dystrybuuje zawartość do wszystkich preferowanych punktów dystrybucji, gdy klient zażąda zawartości pakietu niedostępnej na żadnym z preferowanych punktów dystrybucji.  
 
         -   Wybierz ustawienia opcji **Wstępnie przygotowane ustawienia punktu dystrybucji**, aby określić sposób dystrybucji obrazu rozruchowego do punktów dystrybucji obsługujących zawartość wstępnie przygotowaną.  
 
             > [!NOTE]  
-            >  Aby uzyskać więcej informacji na temat wstępnie przygotowanej zawartości, zobacz [Wstępne przygotowanie zawartości](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkprestagea-use-prestaged-content).  
+            >  Aby uzyskać więcej informacji na temat wstępnie przygotowanej zawartości, zobacz [Wstępne przygotowanie zawartości](/sccm/core/servers/deploy/configure/deploy-and-manage-content#bkmk_prestage).  
 
     -   Na karcie **Lokalizacje zawartości** wybierz punkt dystrybucji lub grupę punktów dystrybucji i wykonaj jedną z następujących akcji:  
 
@@ -221,13 +227,13 @@ Należy również uwzględnić następujące czynności dla każdego z powyższy
 
         -   Kliknij przycisk **Sprawdź poprawność**, aby sprawność integralność pakietu obrazu rozruchowego w wybranym punkcie dystrybucji lub grupie punktów dystrybucji.  
 
-    -   Na **opcjonalne składniki** Określ składniki, które są dodawane do środowiska Windows PE do użytku z programem Configuration Manager. Aby uzyskać więcej informacji o dostępnych składnikach opcjonalnych znajduje się w temacie [WinPE: Dodawanie pakietów (informacje o opcjonalnych składnikach)](https://msdn.microsoft.com/library/windows/hardware/dn938382\(v=vs.85\).aspx).  
+    -   Na **opcjonalnych składników** karcie, określ składniki dodane do systemu Windows PE do użytku z programem Configuration Manager. Aby uzyskać więcej informacji o dostępnych składnikach opcjonalnych, zobacz [WinPE: Dodawanie pakietów (opcjonalnych składnikach)](https://msdn.microsoft.com/library/windows/hardware/dn938382\(v=vs.85\).aspx).  
 
     -   Na karcie **Zabezpieczenia** wybierz użytkownika administracyjnego i zmień operacje, jakie może wykonywać.  
 
 6.  Po skonfigurowaniu właściwości kliknij przycisk **OK**.  
 
-##  <a name="BKMK_BootImagePXE"></a>Konfigurowanie obrazu rozruchowego do wdrożenia z punktu dystrybucji z włączoną obsługą środowiska PXE  
+##  <a name="BKMK_BootImagePXE"></a>Konfigurowanie obrazu rozruchowego do wdrożenia z punktu dystrybucji obsługującego PXE  
  Przed użyciem obrazu rozruchowego środowiska PXE do wdrożenia systemu operacyjnego należy skonfigurować obraz rozruchowy do wdrożenia z punktu dystrybucji obsługującego środowisko PXE.  
 
 #### <a name="to-configure-a-boot-image-to-deploy-from-a-pxe-enabled-distribution-point"></a>Aby skonfigurować obraz rozruchowy do wdrożenia z punktu dystrybucji obsługującego środowisko PXE  
@@ -243,12 +249,12 @@ Należy również uwzględnić następujące czynności dla każdego z powyższy
 5.  Na karcie **Źródło danych** wybierz pozycję **Wdróż ten obraz rozruchowy z punktu dystrybucji obsługującego środowisko PXE**.  
 
     > [!NOTE]  
-    >  Aby uzyskać więcej informacji, zobacz [środowiska PXE używany do wdrażania systemu Windows za pośrednictwem sieci](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
+    >  Aby uzyskać więcej informacji, zobacz [przy użyciu środowiska PXE do wdrażania systemu Windows za pośrednictwem sieci](../deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
 
 6.  Po skonfigurowaniu właściwości kliknij przycisk **OK**.  
 
 ##  <a name="BKMK_BootImageLanguage"></a>Konfigurowanie wielu języków dla wdrażania obrazu rozruchowego  
- Obrazy rozruchowe są niezależne od języka. Umożliwia to użycie jednego obrazu rozruchowego wyświetlającego tekst sekwencji zadań w wielu językach w ramach środowiska WinPE, jeśli dołączysz obsługę odpowiedniego języka za pomocą opcjonalnych składników środowiska WinPE i ustawisz odpowiednią zmienną sekwencji zadań w celu wskazania, który język może być wyświetlany. Język wdrażanego systemu operacyjnego jest niezależny od języka, który jest wyświetlany w przypadku WinPE, niezależnie od wersji programu Configuration Manager. Język wyświetlany użytkownikowi jest określany w następujący sposób:  
+ Obrazy rozruchowe są niezależne od języka. Umożliwia to użycie jednego obrazu rozruchowego wyświetlającego tekst sekwencji zadań w wielu językach w ramach środowiska WinPE, jeśli dołączysz obsługę odpowiedniego języka za pomocą opcjonalnych składników środowiska WinPE i ustawisz odpowiednią zmienną sekwencji zadań w celu wskazania, który język może być wyświetlany. Język wdrażanego systemu operacyjnego jest niezależny od języka, który jest wyświetlany w środowisku WinPE, niezależnie od wersji programu Configuration Manager. Język wyświetlany użytkownikowi jest określany w następujący sposób:  
 
 -   Gdy użytkownik uruchamia sekwencję zadań z istniejącego systemu operacyjnego, programu Configuration Manager automatycznie używa języka skonfigurowanego dla użytkownika. Jeśli sekwencja zadań jest uruchamiana automatycznie w wyniku obowiązującego ostatecznego terminu wdrożenia, program Configuration Manager używa języka systemu operacyjnego.  
 

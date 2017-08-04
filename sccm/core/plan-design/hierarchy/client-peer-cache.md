@@ -2,7 +2,7 @@
 title: "Klient równorzędnej pamięci podręcznej | System Center Configuration Manager"
 description: "Używanie równorzędnej pamięci podręcznej dla lokalizacji źródła zawartości klienta podczas wdrażania zawartości w programie System Center Configuration Manager."
 ms.custom: na
-ms.date: 7/3/2017
+ms.date: 7/31/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -15,11 +15,11 @@ caps.latest.revision: 3
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: ed6b65a1a5aabc0970cd0333cb033405cf6d2aea
-ms.openlocfilehash: 94802680747a3d371716c1b345b2cba098150716
+ms.translationtype: MT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: 89fcd16887ae77299f9d18472ee6a1ba56794eca
 ms.contentlocale: pl-pl
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 07/29/2017
 
 ---
 
@@ -94,7 +94,9 @@ Ten raport umożliwia poznać szczegóły odrzucenia dla typu grupy lub odrzucen
 
 -   Tylko klienci mogą przesyłać zawartość, od klientów równorzędnej pamięci podręcznej, które znajdują się w ich bieżącej grupy granic.
 
--   Każda lokacja, w którym klienci używają równorzędnej pamięci podręcznej musi być skonfigurowany z [konta dostępu do sieci](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account). Konto jest używane przez komputer źródła równorzędnej pamięci podręcznej do uwierzytelniania żądań pobierania od elementów równorzędnych i wymaga tylko uprawnienia użytkownika domeny do tego celu.
+-   Przed wersją 1706 każdej lokacji, w którym klienci używają równorzędnej pamięci podręcznej musi być skonfigurowany z [konta dostępu do sieci](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account). Począwszy od wersji 1706, że konto nie jest już wymagane z jednym wyjątkiem.  Wyjątek stanowi, gdy klient używa równorzędnej pamięci podręcznej, pobieranie i uruchamianie sekwencji zadań z Centrum oprogramowania, a sekwencja zadań wykonuje ponowny rozruch klienta w środowisku WinPE.  W tym scenariuszu klient nadal wymaga konta dostępu do sieci, gdy jest w środowisku WinPE, dzięki czemu można uzyskać dostępu do źródła równorzędnej pamięci podręcznej, aby pobrać zawartość.
+
+    Gdy jest to wymagane, konto dostępu do sieci jest używany przez komputer źródła równorzędnej pamięci podręcznej do uwierzytelniania żądań pobierania od elementów równorzędnych i wymaga tylko uprawnienia użytkownika domeny, w tym celu.
 
 -   Ponieważ bieżącego granic źródła równorzędnej pamięci podręcznej zawartości jest określany przez ostatnich przesłanie spisu sprzętu tego klienta, klient uzyskuje mobilny dostęp do lokalizacji sieciowej, który znajduje się w grupie granic różnych może być brany pod członka grupy granic wcześniejsze na potrzeby równorzędnej pamięci podręcznej. Może to spowodować, że klient oferowany źródła zawartości równorzędnej pamięci podręcznej, który nie znajduje się w lokalizacji bezpośredniej sieci. Firma Microsoft zaleca, z wyjątkiem klientów, którzy są podatne na tej konfiguracji z uczestnictwa jako źródło równorzędnej pamięci podręcznej.
 

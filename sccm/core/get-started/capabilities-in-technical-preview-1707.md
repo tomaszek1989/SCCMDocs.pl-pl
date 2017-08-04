@@ -2,7 +2,7 @@
 title: Technical Preview 1707 | Dokumentacja firmy Microsoft
 description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview 1707 programu System Center Configuration Manager."
 ms.custom: na
-ms.date: 06/30/2017
+ms.date: 07/28/2017
 ms.prod: configuration-manager
 ms.technology:
 - configmgr-other
@@ -15,8 +15,8 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: MT
-ms.sourcegitcommit: 1f57c63ceeb13c7f7d760d7ecfb48df749da6770
-ms.openlocfilehash: 118f20768ffc99364eb9e8cf2074d7a23f4dc572
+ms.sourcegitcommit: 6e890862fd02786b675e2b7abaca7ede7c0e977a
+ms.openlocfilehash: 91fd850f055a7e892a54487307109a291e336696
 ms.contentlocale: pl-pl
 ms.lasthandoff: 07/28/2017
 
@@ -62,7 +62,7 @@ Kliknij sekcję **modeli powierzchni** wykresu, aby uzyskać pełną listę urz�
 ## <a name="configure-and-deploy-windows-defender-application-guard-policies"></a>Konfigurowanie i wdrażanie zasad Guard aplikacji programu Windows Defender
 <!-- 1351960 -->
 
-[Ochrona programu Windows Defender aplikacji](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97) jest nową funkcją systemu Windows, która pomaga chronić użytkowników przez otwarcie niezaufanych witryn sieci web w bezpiecznego kontenera izolowanym, który nie jest dostępny za pomocą innymi składnikami systemu operacyjnego. W tej wersji technical preview dodaliśmy pomocy technicznej, aby skonfigurować tę funkcję za pomocą ustawień zgodności programu Configuration Manager, które można skonfigurować, a następnie wdrożyć do kolekcji. Ta funkcja zostanie wydana w 64-bitowej wersji aktualizacji twórcy systemu Windows 10 w wersji zapoznawczej (nazwa kodowa: RS2). Do testowania tej funkcji teraz, możesz muszą używać wersji zapoznawczej tej aktualizacji.
+[Ochrona programu Windows Defender aplikacji](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97) jest nową funkcją systemu Windows, która pomaga chronić użytkowników przez otwarcie niezaufanych witryn sieci web w bezpiecznego kontenera izolowanym, który nie jest dostępny za pomocą innymi składnikami systemu operacyjnego. W tej wersji technical preview dodaliśmy pomocy technicznej, aby skonfigurować tę funkcję za pomocą ustawień zgodności programu Configuration Manager, które można skonfigurować, a następnie wdrożyć do kolekcji. Ta funkcja zostanie wydana w 64-bitowej wersji aktualizacji twórca spadek 10 systemu Windows w wersji zapoznawczej (nazwa kodowa: RS3). Do testowania tej funkcji teraz, możesz muszą używać wersji zapoznawczej tej aktualizacji.
 
 ### <a name="before-you-start"></a>Przed rozpoczęciem
 
@@ -87,12 +87,12 @@ Aby dowiedzieć się więcej o ochronie aplikacji systemu Windows Defender, zoba
 
 <!-- 1236459 --->
 
-W ostatnim Technical Preview wprowadzono nową możliwość, która umożliwia [tworzenia i uruchamiania skryptów programu PowerShell z poziomu konsoli programu Configuration Manager]( /core/get-started/capabilities-in-technical-preview-1706#create-and-run-powershell-scripts-from-the-configuration-manager-console).
+W ostatnim Technical Preview wprowadzono nową możliwość, która umożliwia [tworzenia i uruchamiania skryptów programu PowerShell z poziomu konsoli programu Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1706#create-and-run-powershell-scripts-from-the-configuration-manager-console).
 W tej wersji Technical Preview możemy zostały rozszerzone na tej możliwości. Configuration Manager teraz odczytuje skrypt programu PowerShell i wyświetla wszystkie parametry w kreatorze tworzenia skryptów. Możesz podać wartość parametru w kreatorze, który będzie używany, gdy skrypt jest uruchamiany. Alternatywnie można pozostawić parametr puste. Jeśli to zrobisz, należy podać wartość parametru podczas uruchamiania skryptu.
 
 ### <a name="try-it-out"></a>Wypróbuj
 
-1. Postępuj zgodnie z instrukcjami, aby [tworzenia i uruchamiania skryptów programu PowerShell z poziomu konsoli programu Configuration Manager]( /core/get-started/capabilities-in-technical-preview-1706#create-and-run-powershell-scripts-from-the-configuration-manager-console).
+1. Postępuj zgodnie z instrukcjami, aby [tworzenia i uruchamiania skryptów programu PowerShell z poziomu konsoli programu Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1706#create-and-run-powershell-scripts-from-the-configuration-manager-console). 
 2. Na nowym **Parametry skryptu** strony **Kreatora tworzenia skryptu**, wybierz parametr, a następnie kliknij przycisk **Edytuj**.
 3. Podana wartość parametru zaznaczony parametr, a następnie kliknij przycisk **OK**.
 4. Ukończ pracę kreatora.

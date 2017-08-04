@@ -16,12 +16,11 @@ caps.handback.revision: 0
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 6f9e6e93fce95666503907010a5c253158c5de7c
-ms.openlocfilehash: f648d7626af50d95fbaa5a7a2abd821a9c47f5d1
+ms.translationtype: MT
+ms.sourcegitcommit: b7461f89f483314bd07248bbc9d5dde85ca6b6c2
+ms.openlocfilehash: e0726febc4c36a26c5e067914734838bf2681e6c
 ms.contentlocale: pl-pl
-ms.lasthandoff: 07/07/2017
-
+ms.lasthandoff: 08/03/2017
 
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Kroki sekwencji zadań w programie System Center Configuration Manager
@@ -1527,9 +1526,9 @@ Po wybraniu zmiennych reguły musisz podać wartość każdej zmiennej. Dla zmie
 >  W przypadku importowania sekwencji zadań z krokiem Ustaw zmienne dynamiczne i wybrania pozycji **Wartość tajna** dla wartości zmiennej wartość zostanie usunięta po zaimportowaniu sekwencji zadań. Dlatego musisz ponownie wprowadzić wartość zmiennej dynamicznej po zaimportowaniu sekwencji zadań.  
 
 ##  <a name="BKMK_SetTaskSequenceVariable"></a>Ustaw zmienną sekwencji zadań  
- Krok sekwencji zadań **Ustaw zmienną sekwencji zadań** umożliwia ustawienie wartości zmiennej używanej w sekwencji zadań.  
+Krok sekwencji zadań **Ustaw zmienną sekwencji zadań** umożliwia ustawienie wartości zmiennej używanej w sekwencji zadań.  
 
- Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows PE. Zmienne sekwencji zadań są odczytywane przez akcje sekwencji zadań i określają działanie tych akcji. Aby uzyskać więcej informacji na temat określonych zmiennych sekwencji zadań, zobacz [zmienne akcji sekwencji zadań](task-sequence-action-variables.md).  
+Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows PE. Zmienne sekwencji zadań są odczytywane przez akcje sekwencji zadań i określają działanie tych akcji. Aby uzyskać więcej informacji na temat określonych zmiennych sekwencji zadań, zobacz [zmienne akcji sekwencji zadań](task-sequence-action-variables.md).  
 
 ### <a name="details"></a>Szczegóły  
  Na karcie **Właściwości** tego kroku można skonfigurować ustawienia opisane w tej sekcji.  
@@ -1553,6 +1552,16 @@ Po wybraniu zmiennych reguły musisz podać wartość każdej zmiennej. Dla zmie
 
  **Wartość**  
  Wartość skojarzona ze zmienną sekwencji zadań. Może to być inna zmienna sekwencji zadań określona za pomocą składni %<nazwa zmiennej\>%.  
+
+## <a name="hide-task-sequence-progress"></a>Ukryj postęp sekwencji zadań
+<!-- 1354291 -->
+Wraz z wydaniem 1706 można kontrolować, gdy postęp sekwencji zadań jest wyświetlana dla użytkowników końcowych za pomocą nowej zmiennej. W sekwencji zadań, użyj **Ustaw zmienną sekwencji zadań** krok, aby ustawić wartość **TSDisableProgressUI** zmiennej, aby ukryć lub wyświetlić postęp sekwencji zadań. Służy Ustaw zmienną sekwencji zadań krok wiele razy w sekwencji zadań można zmienić wartości dla zmiennej. Dzięki temu można ukrywać lub wyświetlać postęp sekwencji zadań w różne sekcje sekwencji zadań.
+
+ - **Aby ukryć postęp sekwencji zadań**  
+W edytorze sekwencji zadań, użyj [Ustaw zmienną sekwencji zadań](#BKMK_SetTaskSequenceVariable) krok, aby ustawić wartość **TSDisableProgressUI** zmienną **True** ukrycia postęp sekwencji zadań.
+
+ - **Aby wyświetlić postęp sekwencji zadań**  
+W edytorze sekwencji zadań, użyj [Ustaw zmienną sekwencji zadań](#BKMK_SetTaskSequenceVariable) krok, aby ustawić wartość **TSDisableProgressUI** zmienną **False** Aby wyświetlić postęp sekwencji zadań.
 
 ##  <a name="BKMK_SetupWindowsandConfigMgr"></a>Zainstaluj system Windows i program ConfigMgr  
  Krok sekwencji zadań **Zainstaluj system Windows i program ConfigMgr** umożliwia przejście ze środowiska Windows PE do nowego systemu operacyjnego. Ten krok sekwencji zadań stanowi wymaganą część każdego wdrożenia systemu operacyjnego. Go instaluje klienta programu Configuration Manager w nowym systemie operacyjnym i przygotowuje sekwencję zadań kontynuować wykonywanie w nowym systemie operacyjnym.  

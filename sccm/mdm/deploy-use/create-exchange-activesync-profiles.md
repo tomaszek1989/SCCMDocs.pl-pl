@@ -1,8 +1,8 @@
 ---
-title: "Tworzenie profilów poczty e-mail protokołu Exchange ActiveSync | Dokumentacja firmy Microsoft"
-description: "Dowiedz się, jak tworzyć i konfigurować profile poczty e-mail programu System Center Configuration Manager pracy w usłudze Microsoft Intune."
+title: "Utworzenie profili poczty e-mail protokołu Exchange ActiveSync | Dokumentacja firmy Microsoft"
+description: "Dowiedz się, jak utworzyć i skonfigurować profile poczty e-mail w System Center Configuration Manager działa w usłudze Microsoft Intune."
 ms.custom: na
-ms.date: 03/28/2017
+ms.date: 07/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,20 +16,19 @@ caps.handback.revision: 0
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 761c3f58f7c57d8f87ee802da37821895062546d
-ms.openlocfilehash: bcf337d2abbcd5aad0f99098f6afd4a73ada3a0b
+ms.translationtype: MT
+ms.sourcegitcommit: c0d94b8e6ca6ffd82e879b43097a9787e283eb6d
+ms.openlocfilehash: 7434c98f2217cf63fdcd250b91e772de72daaea9
 ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.lasthandoff: 08/02/2017
 
 ---
 
 # <a name="exchange-activesync-email-profiles-in-system-center-configuration-manager"></a>Profile poczty e-mail protokołu Exchange ActiveSync w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Za pomocą programu Microsoft Intune i program Exchange ActiveSync, można skonfigurować urządzenia przy użyciu profilów poczty e-mail i ograniczeń. Pozwala to użytkownikom dostępu do firmowej poczty e-mail na swoich urządzeniach z Instalatorem minimalny wymagany z ich strony.  
+Za pomocą programu Microsoft Intune i program Exchange ActiveSync, można skonfigurować urządzenia przy użyciu profilów poczty e-mail i ograniczeń. Pozwala to użytkownikom dostęp do firmowej poczty e-mail na swoich urządzeniach wykonaniu minimalnej liczby czynności z ich strony.  
 
  Za pomocą profili poczty e-mail można konfigurować poniższe typy urządzeń:  
 
@@ -37,58 +36,58 @@ Za pomocą programu Microsoft Intune i program Exchange ActiveSync, można skonf
 - Windows Phone 8,1
 - Windows Phone 8.0
 - urządzenia iPhone z systemem iOS 5, iOS 6, iOS 7 i iOS 8  
-- Ipad z systemem iOS 5, iOS 6, iOS 7 i iOS 8  
+- urządzenia Ipad z systemem iOS 5, iOS 6, iOS 7 i iOS 8  
 - Samsung KNOX Standard (4 i nowsze)
 - Android for Work
 
-Wdrażanie profili poczty e-mail na urządzeniach, możesz zarejestrować urządzenia w usłudze Intune. Aby uzyskać więcej informacji na temat rejestrowania urządzeń, zobacz [Zarządzanie urządzeniami przenośnymi w usłudze Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).
+Aby wdrożyć profile poczty e-mail na urządzeniach, możesz zarejestrować urządzenia w usłudze Intune. Aby uzyskać więcej informacji na temat rejestrowania urządzeń, zobacz [Zarządzanie urządzeniami przenośnymi w usłudze Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).
 
 > [!NOTE]
-> Intune zapewnia Android dwa profile poczty e-mail pracy, jeden dla aplikacji poczty e-mail Gmail i dziewięciu pracy aplikacji poczty e-mail. Te aplikacje są dostępne w sklepie Google Play i obsługują połączenia z serwerem Exchange. Aby włączyć łączność wiadomości e-mail, wdrożyć po jednej z tych aplikacji poczty e-mail na urządzeniach użytkowników, a następnie utwórz i wdrożyć odpowiedni profil. Aplikacji poczty e-mail, takich jak pracy dziewięciu może być wolne. Przegląd aplikacji licencji szczegółów lub skontaktuj się z firmą aplikacji pytania.
+> Usługa Intune umożliwia Android dwa profile poczty e-mail pracy, jeden dla usługi Gmail aplikacja poczty e-mail i pracy dziewięć aplikacji poczty e-mail. Te aplikacje są dostępne w sklepie Google Play i obsługują połączenia z serwerem Exchange. Aby umożliwić łączność poczty e-mail, wdrażania jednej z tych aplikacji poczty e-mail na urządzeniach użytkowników, a następnie utwórz i wdrożyć odpowiedni profil. Aplikacji poczty e-mail, takich jak dziewięciu pracy może być wolne. Przegląd aplikacji szczegółowe informacje o licencjonowaniu lub skontaktuj się z firmą aplikacji z jakieś pytania.
 
  Oprócz konfigurowania konta e-mail na urządzeniu, można skonfigurować ustawienia synchronizacji dla kontaktów, kalendarzy i zadań.  
 
- Podczas tworzenia profilu poczty e-mail można zastosować wiele różnych ustawień zabezpieczeń. Te ustawienia obejmują certyfikaty tożsamości, szyfrowania i podpisywania, które zostały zdefiniowane przy użyciu profili certyfikatów programu System Center Configuration Manager. Aby uzyskać więcej informacji na temat profilów certyfikatów zobacz [Profile certyfikatów w programie System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).    
+ Podczas tworzenia profilu poczty e-mail, można dołączyć szeroki zakres ustawień zabezpieczeń. Te ustawienia obejmują certyfikaty tożsamości, szyfrowania i podpisywania, które są skonfigurowane przy użyciu profilów certyfikatów w programie System Center Configuration Manager. Aby uzyskać więcej informacji na temat profilów certyfikatów zobacz [Profile certyfikatów w programie System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles.md).    
 
 ## <a name="create-an-exchange-activesync-email-profile"></a>Utwórz profil poczty e-mail protokołu Exchange ActiveSync  
 
-Aby utworzyć profil, należy użyć programu Exchange ActiveSync E-mail Kreatora tworzenia profilu. 
+Aby utworzyć profil, używasz programu Exchange ActiveSync Kreator tworzenia profilów E-mail. 
 
 1.  W konsoli programu Configuration Manager wybierz **zasoby i zgodność**.  
 
-2.  W **zasoby i zgodność** obszaru roboczego, rozwiń węzeł **ustawień zgodności**, rozwiń węzeł **dostęp do zasobów firmy**, a następnie wybierz **profile poczty E-mail**.  
+2.  W **zasoby i zgodność** obszaru roboczego, rozwiń węzeł **ustawień zgodności**, rozwiń węzeł **dostęp do zasobów firmy**, a następnie wybierz pozycję **profile poczty E-mail**.  
 
-3.  Na **Home** w karcie **Utwórz** grupy, wybierz **tworzenia profilu poczty E-mail programu Exchange ActiveSync** Aby uruchomić kreatora.
+3.  Na **Home** karcie **Utwórz** grupy, wybierz **tworzenia profilu poczty E-mail programu Exchange ActiveSync** Aby uruchomić kreatora.
 
-4.  Na **ogólne** strony kreatora należy skonfigurować następujące opcje:
+4.  Na **ogólne** strony kreatora skonfiguruj następujące opcje:
 
-    - **Nazwa**. Wprowadź opisową nazwę profilu poczty e-mail.
+    - **Nazwa**. Podaj opisową nazwę profilu poczty e-mail.
 
-    - **Opis**. Opcjonalnie podaj opis profilu poczty e-mail, który ułatwi jego identyfikację w konsoli programu Configuration Manager.
+    - **Opis elementu**. Opcjonalnie podaj opis profilu poczty e-mail, który pomoże zidentyfikować je w konsoli programu Configuration Manager.
 
-    - **Ten profil poczty e-mail jest dla systemu Android do pracy**. Ta opcja będzie wdrożyć ten profil poczty e-mail dla tylko Android pracy urządzeń. Po zaznaczeniu tego pola **obsługiwane platformy** nie jest wyświetlana strona kreatora. Skonfigurowano tylko Android profili poczty e-mail w pracy.
+    - **Jest to profil poczty e-mail dla systemu Android for Work**. Wybierz tę opcję, będzie wdrażania tego profilu poczty e-mail tylko systemu Android dla urządzeń w pracy. Po zaznaczeniu tego pola **obsługiwane platformy** nie jest wyświetlana strona kreatora. Tylko Android pracy profilów poczty e-mail są skonfigurowane.
 
-4.  Na **programu Exchange ActiveSync** stronie kreatora podaj następujące informacje:  
+4.  Na **programu Exchange ActiveSync** strona kreatora określ następujące informacje:  
 
-    -   **Host protokołu Exchange ActiveSync**. Określ nazwę hosta serwera Exchange firmy, który jest hostem usług protokołu Exchange ActiveSync.  
+    -   **Host protokołu Exchange ActiveSync**. Określ nazwę hosta serwera Exchange firmy obsługującego usług protokołu Exchange ActiveSync.  
 
     -   **Nazwa konta**. Określ nazwę wyświetlaną konta e-mail w postaci będzie ona pokazywana użytkownikom na ich urządzeniach.  
 
-    -   **Nazwa użytkownika konta**. Wybierz, jak nazwa użytkownika konta poczty e-mail jest konfigurowana na urządzeniach klienckich. Z listy rozwijanej można wybrać jedną z następujących opcji:  
+    -   **Nazwa użytkownika konta**. Wybierz, jak nazwa użytkownika konta e-mail będzie konfigurowana na urządzeniach klienckich. Z listy rozwijanej można wybrać jedną z następujących opcji:  
 
-        -   **Główna nazwa użytkownika**. Użyj pełnej głównej nazwy użytkownika do logowania się do programu Exchange.  
+        -   **Główna nazwa użytkownika**. Użyj pełnej głównej nazwy do logowania do programu Exchange.  
 
         -   **Nazwa konta**. Użyj pełnej nazwy konta z usługi Active Directory.
 
-        -   **Podstawowy adres SMTP**. Użyj podstawowego adresu SMTP użytkownika do logowania się do programu Exchange.  
+        -   **Podstawowy adres SMTP**. Użyj podstawowego adresu SMTP użytkownika do logowania do programu Exchange.  
 
-    -   **Adres e-mail**. Wybierz, jak adres e-mail użytkownika na poszczególnych urządzeniach klientów jest generowany. Z listy rozwijanej można wybrać jedną z następujących opcji:  
+    -   **Adres e-mail**. Wybierz, jak jest generowany adres e-mail użytkownika na poszczególnych urządzeniach klientów. Z listy rozwijanej można wybrać jedną z następujących opcji:  
 
-        -   **Podstawowy adres SMTP**. Użyj podstawowego adresu SMTP użytkownika do logowania się do programu Exchange.  
+        -   **Podstawowy adres SMTP**. Użyj podstawowego adresu SMTP użytkownika do logowania do programu Exchange.  
 
-        -   **Główna nazwa użytkownika**. Użyj pełnej głównej nazwy użytkownika jako adresu e-mail.  
+        -   **Główna nazwa użytkownika**. Użyj pełnej głównej nazwy jako adresu e-mail.  
 
-    -   **Konto domeny**. Wybierz jedną z następujących opcji:  
+    -   **Domena konta**. Wybierz jedną z następujących opcji:  
 
         -   **Uzyskaj z usługi Active Directory**  
 
@@ -104,27 +103,29 @@ Aby utworzyć profil, należy użyć programu Exchange ActiveSync E-mail Kreator
 
     -   **Certyfikat tożsamości**. Wybierz **wybierz** , a następnie wybierz certyfikat tożsamości.  
 
-        > [!NOTE]  
-        > Zanim będzie możliwe wybranie certyfikatu tożsamości, najpierw należy go skonfigurować jako profil certyfikatu prostego protokołu rejestrowania certyfikatów (SCEP). Aby uzyskać więcej informacji na temat profilów certyfikatów zobacz [Profile certyfikatów w programie System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
+         Tożsamość certyfikaty muszą mieć certyfikaty SCEP; Nie można użyć certyfikatu PFX.  Aby dowiedzieć się więcej, zobacz [profilów w programie System Center Configuration Manager certyfikatów](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
 
-         Ta opcja jest dostępna tylko wtedy, gdy została wybrana opcja **certyfikaty** pod **metodę uwierzytelniania**.  
+         Ta opcja jest dostępna tylko wtedy, gdy została wybrana opcja **certyfikaty** w obszarze **metodę uwierzytelniania**.  
 
-    -   **Użyj szyfrowania S/MIME**. Wyślij pocztę wychodzącą przy użyciu szyfrowania S/MIME. Ta opcja ma zastosowanie tylko do urządzeń z systemem iOS. Wybierz jedną z następujących opcji:
+    -   **Użyj szyfrowania S/MIME**. Wysyłanie poczty wychodzącej przy użyciu szyfrowania S/MIME. Ta opcja ma zastosowanie tylko do urządzeń z systemem iOS. Wybierz jedną z następujących opcji:
 
-        -   **Certyfikaty szyfrowania**. Wybierz **wybierz** , a następnie wybierz certyfikat szyfrowania. Można wybrać tylko certyfikatu PFX do użycia jako certyfikat szyfrowania.
+        -   **Certyfikaty podpisywania**.  Wybierz **wybierz** , a następnie wybierz profil certyfikatu do użycia na potrzeby szyfrowania.  
 
-        Jeśli wybierzesz zarówno certyfikat szyfrowania i podpisywania certyfikatów, należy zarówno one w formacie PFX.
+            Profil może być certyfikatu SCEP lub PFX.  Jednak jeśli podpisywania i szyfrowania są używane, należy wybrać profilów certyfikatów PFX dla *zarówno* podpisywania i szyfrowania.
 
-        > [!NOTE]  
-        > Zanim będzie możliwe wybranie certyfikaty, najpierw należy je skonfigurować jako profil certyfikatu protokołu SCEP lub PFX. Aby uzyskać więcej informacji na temat profilów certyfikatów zobacz [Profile certyfikatów w programie System Center Configuration Manager](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
+        -   **Certyfikaty szyfrowania**. Wybierz **wybierz** , a następnie wybierz certyfikat do użycia dla szyfrowania. Można wybrać tylko certyfikatu PFX do użycia jako certyfikat szyfrowania.
+
+        -   Do szyfrowania wszystkich wiadomości na urządzeniach z systemem iOS, Włącz **Wymagaj szyfrowania** wyboru.    
+
+         Należy utworzyć profile certiciate możesz wybrać je tutaj.  Aby dowiedzieć się więcej, zobacz [profilów w programie System Center Configuration Manager certyfikatów](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
 
 ## <a name="configure-synchronization-settings-for-the-exchange-activesync-email-profile"></a>Skonfiguruj ustawienia synchronizacji profilu poczty e-mail protokołu Exchange ActiveSync  
 
 Na stronie **Konfiguruj ustawienia synchronizacji** kreatora tworzenia profilu poczty e-mail protokołu Exchange ActiveSync podaj następujące informacje:  
 
--   **Harmonogram**. Wybierz harmonogram, według którego urządzenia spowoduje zsynchronizowanie danych z programu Exchange server. Ta opcja ma zastosowanie tylko do urządzeń z systemem Windows Phone. Wybierz spośród opcji:  
+-   **Harmonogram**. Wybierz harmonogram, za pomocą którego urządzenia będą synchronizowanie danych z programu Exchange server. Ta opcja ma zastosowanie tylko do urządzeń z systemem Windows Phone. Wybierz spośród opcji:  
 
-    -   **Nieskonfigurowane**. Harmonogram synchronizacji nie jest wymuszany. Umożliwia to użytkownikom konfigurowanie własnego harmonogramu synchronizacji.  
+    -   **Nieskonfigurowane**. Harmonogram synchronizacji nie jest wymuszana. Umożliwia to użytkownikom na konfigurowanie własnego harmonogramu synchronizacji.  
 
     -   **Nadejścia nowych wiadomości**. Dane, takie jak wiadomości e-mail i elementy kalendarza zostaną automatycznie zsynchronizowane po ich nadejściu.  
 
@@ -136,11 +137,11 @@ Na stronie **Konfiguruj ustawienia synchronizacji** kreatora tworzenia profilu p
 
     -   **Ręczne**. Urządzenie użytkownika należy ręcznie zainicjować synchronizację.  
 
--   **Liczba dni do synchronizowania poczty e-mail**. Z listy rozwijanej wybierz liczbę dni poczty e-mail, który chcesz zsynchronizować. Wybierz jedną z następujących opcji:  
+-   **Liczba dni do synchronizowania poczty e-mail**. Z listy rozwijanej wybierz liczbę dni poczty e-mail, które mają być synchronizowane. Wybierz jedną z następujących opcji:  
 
-    -   **Nieskonfigurowane**. Ustawienie nie jest wymuszane. Pozwala on użytkownikom skonfigurować, ile wiadomości e-mail zostanie pobranych na urządzenie.  
+    -   **Nieskonfigurowane**. Ustawienie nie jest wymuszana. Umożliwia użytkownikom na konfigurowanie, ile wiadomości e-mail zostanie pobranych na urządzenie.  
 
-    -   **Nieograniczona liczba**. Synchronizować wszystkie dostępne wiadomości e-mail.  
+    -   **Nieograniczone**. Synchronizować wszystkie dostępne wiadomości e-mail.  
 
     -   **1 dzień**  
 
@@ -152,15 +153,15 @@ Na stronie **Konfiguruj ustawienia synchronizacji** kreatora tworzenia profilu p
 
     -   **1 miesiąc**  
 
--   **Zezwalaj na przenoszenie do innych kont e-mail wiadomości**. Wybierz tę opcję, aby umożliwić użytkownikom przenoszenie wiadomości e-mail między różnymi kontami skonfigurowanymi na ich urządzeniach. Ta opcja ma zastosowanie tylko do urządzeń z systemem iOS.  
+-   **Zezwalaj na wiadomości do przeniesienia do innych kont e-mail**. Wybierz tę opcję, aby umożliwić użytkownikom przenoszenie wiadomości e-mail między różnymi kontami skonfigurowane na urządzeniu. Ta opcja ma zastosowanie tylko do urządzeń z systemem iOS.  
 
--   **Zezwalaj na wysyłanie wiadomości e-mail z aplikacji innych firm**. Wybierz tę opcję, aby umożliwić użytkownikom wysyłanie wiadomości e-mail z pewnych aplikacji innych niż domyślne, innych firm wiadomości e-mail. Ta opcja ma zastosowanie tylko do urządzeń z systemem iOS.  
+-   **Zezwalaj na wysyłanie z aplikacji innych firm**. Wybierz tę opcję, aby umożliwić użytkownikom wysyłanie wiadomości e-mail z pewnych aplikacji innych niż domyślne e-mail innych firm. Ta opcja ma zastosowanie tylko do urządzeń z systemem iOS.  
 
 -   **Synchronizuj ostatnio używane adresy e-mail**. Wybierz tę opcję, aby zsynchronizować listę adresów e-mail, które były ostatnio używane na urządzeniu. Ta opcja ma zastosowanie tylko do urządzeń z systemem iOS.  
 
--   **Użyj protokołu SSL**. Wybierz tę opcję, aby użyć komunikacji Secure Sockets Layer (SSL) do wysyłania wiadomości e-mail, otrzymywania wiadomości e-mail i komunikacji z serwerem Exchange.  
+-   **Użyj protokołu SSL**. Wybierz tę opcję, aby użyć komunikacji Secure Sockets Layer (SSL) do wysyłania wiadomości e-mail, odbierania wiadomości e-mail i komunikacji z serwerem Exchange.  
 
--   **Typ do synchronizowania zawartości**. Wybierz typy zawartości, które chcesz synchronizować z urządzeniami. Ta opcja ma zastosowanie tylko do urządzeń z systemem Windows Phone. Wybierz spośród opcji:  
+-   **Typ zawartości do zsynchronizowania**. Wybierz typy zawartości, które mają być synchronizowane na urządzeniach. Ta opcja ma zastosowanie tylko do urządzeń z systemem Windows Phone. Wybierz spośród opcji:  
 
     -   **Poczta e-mail**  
 
@@ -172,9 +173,9 @@ Na stronie **Konfiguruj ustawienia synchronizacji** kreatora tworzenia profilu p
 
 ## <a name="specify-supported-platforms-for-the-exchange-activesync-email-profile"></a>Określ obsługiwane platformy dla profilu poczty e-mail protokołu Exchange ActiveSync  
 
-1.  Na **obsługiwane platformy** strony programu Exchange ActiveSync E-mail Kreatora tworzenia profilu, wybierz systemy operacyjne, na których zostanie zainstalowany profil poczty e-mail. Lub wybierz **Zaznacz wszystko** zainstalować profil poczty e-mail we wszystkich dostępnych systemach operacyjnych.  
+1.  Na **obsługiwane platformy** strony z programu Exchange ActiveSync E-mail Kreatora tworzenia profilu, wybierz systemy operacyjne, na których zostanie zainstalowany profil poczty e-mail. Lub wybierz **Zaznacz wszystko** Aby zainstalować profil poczty e-mail we wszystkich dostępnych systemach operacyjnych.  
 
 2.  Zakończ pracę kreatora.
 
-Informacje dotyczące sposobu wdrażania profili poczty e-mail protokołu Exchange ActiveSync, zobacz [sposobu wdrażania profili w programie System Center Configuration Manager](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md).  
+Aby uzyskać informacje o tym, jak wdrażać profile poczty e-mail protokołu Exchange ActiveSync, zobacz [sposobu wdrażania profili w programie System Center Configuration Manager](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md).  
 

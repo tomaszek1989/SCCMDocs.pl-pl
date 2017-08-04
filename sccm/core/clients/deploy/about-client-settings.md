@@ -2,7 +2,7 @@
 title: Ustawienia klienta | Dokumentacja firmy Microsoft
 description: "Wybierz ustawienia klienta przy użyciu konsoli administracyjnej programu System Center Configuration Manager."
 ms.custom: na
-ms.date: 03/24/2017
+ms.date: 08/01/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: 0
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c8717925dba42451b1e241a7c2f59e43896d7d99
-ms.openlocfilehash: 4a169098f30e4a9d708e41ee25c6a400d5ff0e85
+ms.translationtype: MT
+ms.sourcegitcommit: c0d94b8e6ca6ffd82e879b43097a9787e283eb6d
+ms.openlocfilehash: a8233c361e1a78b14a02f328da445814624e38d8
 ms.contentlocale: pl-pl
-ms.lasthandoff: 06/19/2017
+ms.lasthandoff: 08/02/2017
 
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Informacje o ustawieniach klienta w programie System Center Configuration Manager
@@ -55,7 +55,7 @@ Wiele ustawień klienta nie wymaga wyjaśnień. Inne są opisane w tym miejscu.
 
 -   **Maksymalna szybkość transferu poza oknem ograniczenia przepustowości (Kb/s)**  
 
-   Określ maksymalną szybkość transmisji którego klienci będą używać poza przepustowości okna, gdy wybrano ograniczenia przepustowości poza oknem usługi BITS usługi BITS.  
+   Określ maksymalną szybkość transmisji używanego przez klientów poza przepustowości okna, gdy wybrano ograniczenia przepustowości poza oknem usługi BITS usługi BITS.  
 
 ## <a name="client-cache-settings"></a>Ustawienia pamięci podręcznej klienta
 
@@ -63,9 +63,25 @@ Wiele ustawień klienta nie wymaga wyjaśnień. Inne są opisane w tym miejscu.
 
   Począwszy od wersji 1606, użyj tego ustawienia, aby skonfigurować komputer kliencki [usługi BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#branchcache). Aby zezwolić na buforowanie usługi BranchCache na kliencie, **Włącz usługę BranchCache** do **tak**.
 
+- **Włącz usługę BranchCache**
+
+Włącza funkcję BranchCache na komputerach klienckich.
+
+- **Maksymalny rozmiar pamięci podręcznej usługi BranchCache (część procentowa dysku)**.
+
 - **Skonfiguruj rozmiar pamięci podręcznej klienta**
 
-  Pamięci podręcznej klienta na komputerach z systemem Windows są przechowywane tymczasowe pliki służące do instalacji aplikacji i programów. Wybierz **tak** do określenia **maksymalny rozmiar pamięci podręcznej** (w megabajtach lub część procentowa dysku). Rozmiar pamięci podręcznej klienta można rozszerzyć do maksymalnego rozmiaru w Megabajtach lub wartość procentowa dysku, **ta wartość jest mniejsza**. Jeśli ta opcja jest **nr**, domyślny rozmiar to 5,120 MB.
+  Pamięci podręcznej klienta na komputerach z systemem Windows są przechowywane tymczasowe pliki służące do instalacji aplikacji i programów. Wybierz **tak** następnie określ:
+    - **Maksymalny rozmiar pamięci podręcznej** (MB). 
+    - **Maksymalny rozmiar pamięci podręcznej** (procent dysku).
+Rozmiar pamięci podręcznej klienta można rozszerzyć do maksymalnego rozmiaru w Megabajtach lub wartość procentowa dysku, **ta wartość jest mniejsza**. Jeśli ta opcja jest **nr**, domyślny rozmiar to 5,120 MB.
+
+- **Włącz klienta programu Configuration Manager w pełnej wersji systemu operacyjnego, aby udostępnić zawartość**
+
+Umożliwia elementu równorzędnego pamięci podręcznej klientów programu Configuration Manager. Następnie należy określić informacje o portach za pomocą której klient komunikuje się z komputerem równorzędnym. Menedżer konfiguracji automatycznie skonfiguruje reguł zapory systemu Windows, aby zezwolić na ten ruch. Jeśli używasz innej zapory, należy ręcznie skonfigurować reguły zezwalające na ten ruch.
+
+
+
 
 ## <a name="client-policy"></a>Zasady klienta  
 
@@ -107,7 +123,7 @@ Wiele ustawień klienta nie wymaga wyjaśnień. Inne są opisane w tym miejscu.
 
   -   Internetowy punkt zarządzania pomyślnie uwierzytelnił użytkownika za pomocą uwierzytelniania systemu Windows (Kerberos lub NTLM).  
 
-   Jeśli dla tej opcji nie zostanie określona inna wartość niż **Fałsz** lub **Nie**, lub gdy jeden z warunków nie zostanie spełniony, komputer połączony z Internetem będzie otrzymywał wyłącznie zasady komputera. Przy takim scenariuszu użytkownicy mogą nadal oglądać i instalować aplikacje oraz zażądać ich z internetowego katalogu aplikacji. Jeśli to ustawienie jest **False** lub **nr** , ale **Włącz sondowanie zasad użytkownika na klientach** jest **True** lub **Włącz zasady użytkownika na klientach** jest **tak**, użytkownicy nie będą otrzymywali zasady użytkownika, dopóki komputer jest połączony z intranetem.  
+   Jeśli opuścisz tę opcję **False** lub **nr**, lub jeden z warunków nie powiedzie się, komputer na Internet będzie otrzymywał wyłącznie zasady komputera. Przy takim scenariuszu użytkownicy mogą nadal oglądać i instalować aplikacje oraz zażądać ich z internetowego katalogu aplikacji. Jeśli to ustawienie jest **False** lub **nr** , ale **Włącz sondowanie zasad użytkownika na klientach** jest **True** lub **Włącz zasady użytkownika na klientach** jest **tak**, użytkownicy nie będą otrzymywali zasady użytkownika, dopóki komputer jest połączony z intranetem.  
 
    Aby uzyskać więcej informacji na temat zarządzania klientami przez Internet, zobacz [uwagi dotyczące komunikacji klientów z Internetu lub niezaufanego lasu](../../../core/plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan) w [komunikacja między punktami końcowymi w programie System Center Configuration Manager](../../../core/plan-design/hierarchy/communications-between-endpoints.md).  
 
@@ -118,7 +134,7 @@ Wiele ustawień klienta nie wymaga wyjaśnień. Inne są opisane w tym miejscu.
 
 -   **Zaplanuj ocenę zgodności**  
 
-     Wybierz **harmonogram** Aby utworzyć domyślny harmonogram, który będzie wyświetlana dla użytkowników po wdrożeniu przez nich podstawy konfiguracji. Tę wartość można skonfigurować dla każdej podstawy w oknie dialogowym **Wdrażanie podstawy konfiguracji** .  
+     Wybierz **harmonogram** Aby utworzyć domyślny harmonogram, który jest pokazywane użytkownikom po wdrożeniu przez nich podstawy konfiguracji. Tę wartość można skonfigurować dla każdej podstawy w oknie dialogowym **Wdrażanie podstawy konfiguracji** .  
 
 -   **Włącz dane użytkownika i profile**  
 
@@ -140,7 +156,7 @@ Wiele ustawień klienta nie wymaga wyjaśnień. Inne są opisane w tym miejscu.
 
      -   Użytkownik chce ręcznie skonfigurować najbliższy serwer dla klientów lub uniemożliwić klientom łączenie się z serwerem przez wolne połączenie sieciowe.  
 
-     -   Użytkownik chce kontrolować, którzy klienci łączą się z którym serwerem. Może to być przydatne przy testowaniu, ze względu na wydajność lub z przyczyn biznesowych.  
+     -   Użytkownik chce kontrolować, którzy klienci łączą się z którym serwerem. Ta konfiguracja może być do testowania wydajności lub z przyczyn biznesowych.  
 
      -   Użytkownik nie chce czekać do 25 godzin na zmianę sieci, aby klienci zostali skonfigurowani przy użyciu innego punktu witryny sieci Web katalogu aplikacji.  
 
@@ -228,7 +244,7 @@ Wiele ustawień klienta nie wymaga wyjaśnień. Inne są opisane w tym miejscu.
     -   Korzystając z programu Configuration Manager zestaw software development kit (SDK) w celu zarządzania powiadomieniami agentem klienta i instalacji aplikacji i aktualizacji oprogramowania.  
 
     > [!WARNING]  
-    >  Jeśli wybierzesz tę opcję, gdy żadna z tych warunków nie ma zastosowania, aktualizacji oprogramowania i wymaganych aplikacji nie zainstaluje na klientach. To ustawienie nie uniemożliwia użytkownikom instalowanie aplikacji z katalogu aplikacji lub uniemożliwić pakietów, programów i sekwencji zadań jest instalowany na komputerach klienckich.  
+    >  Jeśli wybierzesz tę opcję, gdy żadna z tych warunków nie ma zastosowania, aktualizacji oprogramowania i wymaganych aplikacji nie są zainstalowane na komputerach klienckich. To ustawienie nie uniemożliwia użytkownikom instalowanie aplikacji z katalogu aplikacji lub uniemożliwić pakietów, programów i sekwencji zadań jest instalowany na komputerach klienckich.  
 
 -   **Zasady wykonywania programu PowerShell**  
 

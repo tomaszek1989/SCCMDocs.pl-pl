@@ -2,7 +2,7 @@
 title: "Konfigurowanie systemu Android hybrydowego zarządzania urządzeniami z programu System Center Configuration Manager i Microsoft Intune | Dokumentacja firmy Microsoft"
 description: "Przygotowanie do zarządzania urządzeniami przenośnymi dla systemu Android za pomocą programu Configuration Manager i usługi Intune."
 ms.custom: na
-ms.date: 03/27/2017
+ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,12 +16,11 @@ caps.handback.revision: 0
 author: nathbarn
 ms.author: nathbarn
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 86620254897aa9a775dc433de7010b5814c1ec3e
-ms.openlocfilehash: af6fa2dfae5549e89c46d05d0cef1e24342558f9
+ms.translationtype: MT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: b47ecd1754a623b1b57dc5c5ecb42a6b0b64404e
 ms.contentlocale: pl-pl
-ms.lasthandoff: 07/06/2017
-
+ms.lasthandoff: 07/29/2017
 
 ---
 # <a name="set-up-android-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Konfigurowanie hybrydowego zarządzania urządzeniami z systemem Android za pomocą programu System Center Configuration Manager i usługi Microsoft Intune
@@ -39,6 +38,9 @@ Poniższe kroki programowi Configuration Manager zarządzanie urządzeniami z sy
 2. W konsoli programu Configuration Manager w **administracji** obszaru roboczego wybierz **omówienie** > **usługi w chmurze** > **subskrypcję usługi Microsoft Intune** i wybierz swoją subskrypcję usługi Intune.  
 3. Na **Home** karcie **subskrypcji** grupy, wybierz **Konfiguruj platformy** > **Android**.  
 4. W **właściwości subskrypcji usługi Microsoft Intune** okno dialogowe Wybierz **Android** i sprawdź **włączyć Android rejestracji** pole.  
+
+> [!NOTE]
+>  **Osobiście urządzenia należące do bloku** funkcja jest niedostępna w tej chwili. 
 
  Po skonfigurowaniu, należy poinformować użytkowników, jak zarejestrować swoje urządzenia. Zobacz [Co mówić użytkownikom na temat rejestrowania ich urządzeń](https://docs.microsoft.com/intune/deploy-use/what-to-tell-your-end-users-about-using-microsoft-intune). Te informacje dotyczą urządzeń przenośnych zarządzanych zarówno przez usługę Microsoft Intune, jak i program Configuration Manager.
 

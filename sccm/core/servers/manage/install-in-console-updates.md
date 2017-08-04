@@ -15,12 +15,11 @@ caps.latest.revision: 36
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3619a73d3a39659de927e1711a7ec81de9918064
-ms.openlocfilehash: 34ddb646137aaf1160d850ba7c1e0109f467225d
+ms.translationtype: MT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: 2bbc8935bee306ed0bc312cc43b8f5374a8df7ff
 ms.contentlocale: pl-pl
-ms.lasthandoff: 06/13/2017
-
+ms.lasthandoff: 07/29/2017
 
 ---
 # <a name="install-in-console-updates-for-system-center-configuration-manager"></a>Instalacja aktualizacji w konsoli programu System Center Configuration Manager
@@ -289,6 +288,9 @@ Zadań po instalacji obejmują:
 
 ##  <a name="bkmk_retry"></a> Ponawianie nieudanej instalacji aktualizacji  
 W przypadku niepowodzenia aktualizacji do zainstalowania, przejrzyj opinii w konsoli, by określić rozwiązania ostrzeżeń i błędów. Możesz również wyświetlić dziennik ConfigMgrPrereq.log na serwerze lokacji, aby uzyskać dodatkowe informacje. Przed ponowieniem instalacji aktualizacji należy naprawić błędy, a powinno rozwiązać ostrzeżenia.  
+
+> [!TIP]  
+> Jeśli aktualizacja ma problemów z pobieraniem lub replikację, można użyć [aktualizacji zresetuj narzędzie](/sccm/core/servers/manage/update-reset-tool). To narzędzie jest dostępne z lokacji, na których jest uruchomiona wersja 1706 lub nowszego. 
 
 Gdy wszystko będzie gotowe do ponowienia instalacji aktualizacji, wybierz aktualizację, nie powiodło się, a następnie wybierz odpowiednią opcję. Zachowania ponawiania instalacji aktualizacji zależy od węzła, gdzie uruchomić retry wraz z opcją ponownych prób, używanej.  
 

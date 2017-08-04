@@ -2,7 +2,7 @@
 title: "Zawsze włączone w programie SQL Server | Dokumentacja firmy Microsoft"
 description: "Zaplanuj użycie programu SQL Server zawsze w grupie dostępności wraz z programem SCCM."
 ms.custom: na
-ms.date: 5/26/2017
+ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,12 +15,11 @@ caps.latest.revision: 16
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: dc221ddf547c43ab1f25ff83c3c9bb603297ece6
-ms.openlocfilehash: 188ae877368a6cb2ec9998bff74259b4e5b5e7ce
+ms.translationtype: MT
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: c746365238e1255d73387a9496521bb03a56b21b
 ms.contentlocale: pl-pl
-ms.lasthandoff: 06/01/2017
-
+ms.lasthandoff: 07/29/2017
 
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Przygotowanie do korzystania z programu SQL Server zawsze włączonych grup dostępności z programu Configuration Manager
@@ -38,12 +37,14 @@ Jeśli używasz grup dostępności w systemie Microsoft Azure, możesz zwiększy
 >  Przed kontynuowaniem należy doświadczenia z konfiguracji programu SQL Server i grup dostępności programu SQL Server. Informacje poniżej odwołuje się do biblioteki dokumentacji programu SQL Server i procedur.
 
 ## <a name="supported-scenarios"></a>Scenariusze obsługiwane
-Poniżej przedstawiono obsługiwane scenariusze użycia dostępności grupy z programu Configuration Manager. Szczegóły i procedury dla każdego znajdują się w [Konfigurowanie grup dostępności dla programu Configuration Manager](/sccm/core/servers/deploy/configure/configure-aoag).
+Poniżej przedstawiono obsługiwane scenariusze użycia grup dostępności z programu Configuration Manager. Szczegóły i procedury dla każdego znajdują się w [Konfigurowanie grup dostępności dla programu Configuration Manager](/sccm/core/servers/deploy/configure/configure-aoag).
 
 
 -      [Utwórz grupę dostępności do użytku z programem Configuration Manager](/sccm/core/servers/deploy/configure/configure-aoag#create-and-configure-an-availability-group).
 -     [Konfigurowanie lokacji do używania grupy dostępności](/sccm/core/servers/deploy/configure/configure-aoag#configure-a-site-to-use-the-database-in-the-availability-group).
--     [Dodawanie lub usuwanie repliki członków z grupy dostępności, który jest hostem bazy danych lokacji](/sccm/core/servers/deploy/configure/configure-aoag#add-and-remove-replica-members).
+-     [Dodawanie lub usuwanie repliki synchroniczne członków z grupy dostępności, który jest hostem bazy danych lokacji](/sccm/core/servers/deploy/configure/configure-aoag#add-and-remove-synchronous-replica-members).
+-     [Konfigurowanie replik zatwierdzania asynchronicznego](/sccm/core/servers/deploy/configure/configure-aoag#configure-an-asynchronous-commit-repilca) (wymaga programu Configuration Manager w wersji 1706 lub nowszej.)
+-     [Odzyskiwanie lokacji z repliki zatwierdzania asynchronicznego](/sccm/core/servers/deploy/configure/configure-aoag#use-the-asynchronous-replica-to-recover-your-site) (wymaga programu Configuration Manager w wersji 1706 lub nowszej.)
 -     [Przenieś bazy danych lokacji z grupy dostępności domyślne lub nazwane wystąpienie autonomiczny serwer SQL](/sccm/core/servers/deploy/configure/configure-aoag#stop-using-an-availability-group).
 
 
@@ -62,31 +63,35 @@ Każdej repliki w grupie dostępności musi działać wersja programu SQL Server
 Należy użyć *Enterprise* wersji programu SQL Server.
 
 **Konto:**  
-Każde wystąpienie programu SQL Server można uruchomić przy użyciu konta użytkownika domeny (**konto usługi**) lub **systemu lokalnego**. Każdej repliki w grupie może mieć inną konfigurację. Na [najlepsze rozwiązania programu SQL Server](/sql/sql-server/install/security-considerations-for-a-sql-server-installation#before-installing-includessnoversionincludesssnoversion-mdmd), użyj konta z najniższą możliwe uprawnienia.
+Każde wystąpienie programu SQL Server można uruchomić przy użyciu konta użytkownika domeny (**konto usługi**) lub konta domeny. Każdej repliki w grupie może mieć inną konfigurację. Na [najlepsze rozwiązania programu SQL Server](/sql/sql-server/install/security-considerations-for-a-sql-server-installation#before-installing-includessnoversionincludesssnoversion-mdmd), użyj konta z najniższą możliwe uprawnienia.
 
-Na przykład aby skonfigurować uprawnienia dla programu SQL Server 2016 i kont usług, zobacz [Konfigurowanie kont usług systemu Windows i uprawnienia](/sql/database-engine/configure-windows/configure-windows-service-accounts-and-permissions) w witrynie MSDN.
+-   Aby skonfigurować uprawnienia dla programu SQL Server 2016 i kont usług, zobacz [Konfigurowanie kont usług systemu Windows i uprawnienia](/sql/database-engine/configure-windows/configure-windows-service-accounts-and-permissions) w witrynie MSDN.
+-   Aby użyć konta domeny, należy użyć certyfikatów. Aby uzyskać więcej informacji, zobacz [Użyj certyfikatów dla bazy danych dublowania punktu końcowego (Transact-SQL)](https://docs.microsoft.com/sql/database-engine/database-mirroring/use-certificates-for-a-database-mirroring-endpoint-transact-sql).
 
-  Jeśli używasz **systemu lokalnego** do uruchomienia repliki, należy skonfigurować uwierzytelnianie punktu końcowego. W tym delegowanie praw, aby ustanowić połączenie z punktem końcowym serwera repliki.
-  -     Delegować prawa programu SQL Server, dodając konto komputera każdego programu SQL Server jako logowania na inne serwery SQL w węźle i przyznanie temu kontu uprawnienia SA.  
-  -     Delegować prawa punktu końcowego do każdego zdalnego serwera, na lokalny punkt końcowy, uruchamiając poniższy skrypt na każdej repliki:    
-
-              GRANT CONNECT ON endpoint::[endpoint_name]  
-              TO [domain\servername$]
 
 Aby uzyskać więcej informacji, zobacz [Tworzenie punktu końcowego dublowania bazy danych dla zawsze włączonych grup dostępności](/sql/database-engine/availability-groups/windows/database-mirroring-always-on-availability-groups-powershell).
 
 ### <a name="availability-group-configurations"></a>Konfiguracje grupy dostępności
 **Elementy członkowskie repliki:**  
-Grupa dostępności musi mieć jedną replikę podstawową i może mieć maksymalnie dwóch synchronicznych replik pomocniczych.  Każdy element członkowski repliki musi:
+-   Grupa dostępności musi mieć jedną replikę podstawową.
+-   Przed wersją 1706 może mieć maksymalnie dwóch synchronicznych replik pomocniczych.
+-   Począwszy od wersji 1706, używając samą liczbę i rodzaj replik w grupie dostępności jako obsługiwany przez wersję programu SQL Server, którego używasz.
+
+    Możesz użyć repliki zatwierdzania asynchronicznego, aby odzyskać repliki synchroniczne. Zobacz [opcje odzyskiwania bazy danych lokacji]( /sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption) w temacie kopii zapasowych i odzyskiwania, aby uzyskać informacje o tym.
+    > [!CAUTION]  
+    > Menedżer konfiguracji nie obsługuje trybu failover do korzystania z repliki zatwierdzania asynchronicznego jako bazy danych lokacji.
+Ponieważ programu Configuration Manager nie można zweryfikować stanu repliki zatwierdzania asynchronicznego, aby upewnić się, że jest aktualny, i [zgodnie z założeniami takie repliki może być zsynchronizowane]( https://msdn.microsoft.com/library/ff877884(SQL.120).aspx(d=robot)#Availability%20Modes), użycie zatwierdzania asynchronicznego replika jako bazy danych lokacji można umieścić integralność danych lokacji i na ryzyko.
+
+Każdy element członkowski repliki musi:
 -   używać **wystąpienia domyślnego**;  
     *Począwszy od wersji 1702, można użyć* ***nazwane wystąpienie***.
 
--      Ma **połączenia w podstawową rolą** ustawioną **tak**
--      Ma **czytelny dodatkowej** ustawioną **tak**  
--      być skonfigurowana na potrzeby **ręcznej pracy awaryjnej**.       
+-     Ma **połączenia w podstawową rolą** ustawioną **tak**
+-     Ma **czytelny dodatkowej** ustawioną **tak**  
+-     być skonfigurowana na potrzeby **ręcznej pracy awaryjnej**.      
 
     >  [!TIP]
-    >  Program Configuration Manager obsługuje przy użyciu repliki grupy dostępności, gdy wartość **automatycznej pracy awaryjnej**. Jednak **ręczną pracę awaryjną** musi być ustawiona podczas:
+    >  Obsługa programu Configuration Manager za pomocą dostępności grupy repliki synchroniczne, gdy wartość **automatycznej pracy awaryjnej**. Jednak **ręczną pracę awaryjną** musi być ustawiona podczas:
     >  -  Możesz uruchomić Instalatora, aby określić używanie bazy danych lokacji w grupie dostępności.
     >  -  Podczas instalowania wszelkich aktualizacji programu Configuration Manager (nie tylko aktualizacje, które są stosowane do bazy danych lokacji).  
 
@@ -95,15 +100,15 @@ Wszystkie repliki w grupie dostępności musi być obsługiwana lokalnie lub hos
 
 Po skonfigurowaniu grupy dostępności na platformie Azure i grupa jest za usługą równoważenia obciążenia wewnętrzne lub zewnętrzne, są następujące porty domyślne, należy otworzyć umożliwiające instalacji dostęp do każdej repliki:   
 
--      Program mapowania punktów końcowych RCP - **TCP 135**   
--      Blok komunikatów serwera — **TCP 445**  
+-     Program mapowania punktów końcowych RCP - **TCP 135**   
+-     Blok komunikatów serwera — **TCP 445**  
     *Po zakończeniu przenoszenia bazy danych można usunąć tego portu. Począwszy od wersji 1702, ten port nie jest już wymagane.*
--      SQL Server Service Broker - **TCP 4022**
--      SQL przez TCP — **TCP 1433**   
+-     SQL Server Service Broker - **TCP 4022**
+-     SQL przez TCP — **TCP 1433**   
 
 Po zakończeniu instalacji następujące porty muszą pozostać dostępne:
--      SQL Server Service Broker - **TCP 4022**
--      SQL przez TCP — **TCP 1433**
+-     SQL Server Service Broker - **TCP 4022**
+-     SQL przez TCP — **TCP 1433**
 
 Począwszy od wersji 1702, można użyć innych portów dla tych konfiguracji. Należy użyć tych samych portów, przez punkt końcowy, a na wszystkich replik w grupie dostępności.
 
@@ -119,25 +124,25 @@ W przypadku należy uruchomić Instalatora programu Configuration Manager do sko
 Pomocnicze serwery repliki wymagają tej ścieżki pliku tylko podczas używania Instalatora, aby określić wystąpienie bazy danych w grupie dostępności. Po zakończeniu konfiguracji bazy danych lokacji w grupie dostępności, można usunąć nieużywaną ścieżkę z pomocnicze serwery repliki.
 
 Na przykład rozważmy następujący scenariusz:
--    Można utworzyć grupy dostępności, która używa trzech serwerów SQL.
+-   Można utworzyć grupy dostępności, która używa trzech serwerów SQL.
 
--    Twoim podstawowym serwerem repliki jest nowa instalacja programu SQL Server 2014. Domyślnie bazy danych. MDF i. Pliki LDF są przechowywane w C:\Program Files\Microsoft SQL Server\MSSQL12. MSSQLSERVER\MSSQL\DATA.
+-   Twoim podstawowym serwerem repliki jest nowa instalacja programu SQL Server 2014. Domyślnie bazy danych. MDF i. Pliki LDF są przechowywane w C:\Program Files\Microsoft SQL Server\MSSQL12. MSSQLSERVER\MSSQL\DATA.
 
--    Oba serwery repliki pomocniczej zostały uaktualnione do programu SQL Server 2014 z poprzednich wersji i Zachowaj Oryginalna ścieżka pliku do przechowywania plików bazy danych: C:\Program Files\Microsoft SQL Server\MSSQL10. MSSQLSERVER\MSSQL\DATA.
+-   Oba serwery repliki pomocniczej zostały uaktualnione do programu SQL Server 2014 z poprzednich wersji i Zachowaj Oryginalna ścieżka pliku do przechowywania plików bazy danych: C:\Program Files\Microsoft SQL Server\MSSQL10. MSSQLSERVER\MSSQL\DATA.
 
--    Przed przystąpieniem do przenoszenia bazy danych lokacji do tej grupy dostępności, na każdym serwerze repliki pomocniczej należy utworzyć następujące ścieżki plików nawet w przypadku replik pomocniczych nie będzie używać tej lokalizacji pliku: C:\Program Files\Microsoft SQL Server\MSSQL12. MSSQLSERVER\MSSQL\DATA (jest to duplikat ścieżki, która jest używana w replice podstawowej).
+-   Przed przystąpieniem do przenoszenia bazy danych lokacji do tej grupy dostępności, na każdym serwerze repliki pomocniczej należy utworzyć następujące ścieżki plików nawet w przypadku replik pomocniczych nie będzie używać tej lokalizacji pliku: C:\Program Files\Microsoft SQL Server\MSSQL12. MSSQLSERVER\MSSQL\DATA (jest to duplikat ścieżki, która jest używana w replice podstawowej).
 
--    Następnie przydziel konta usługi programu SQL Server w każdej repliki pomocniczej pełnego dostępu do lokalizacji pliku nowo utworzony na tym serwerze.
+-   Następnie przydziel konta usługi programu SQL Server w każdej repliki pomocniczej pełnego dostępu do lokalizacji pliku nowo utworzony na tym serwerze.
 
--    Teraz można pomyślnie uruchomić Instalatora programu Configuration Manager, aby skonfigurować lokację do użycia w grupie dostępności bazy danych lokacji.
+-   Teraz można pomyślnie uruchomić Instalatora programu Configuration Manager, aby skonfigurować lokację do użycia w grupie dostępności bazy danych lokacji.
 
 **Skonfiguruj bazę danych na nowej repliki:**   
  Dla każdej repliki bazy danych musi być ustawione z następujących czynności:
--     **Integrację środowiska CLR** musi być *włączone*
--      **Maksymalny rozmiar repl** musi być *2147483647*
--      Właściciel bazy danych musi być *konta administratora systemu*
--      **TRUSTWORTY** musi być **ON**
--      **Usługa Service Broker** musi być *włączone*
+-   **Integrację środowiska CLR** musi być *włączone*
+-     **Maksymalny rozmiar repl** musi być *2147483647*
+-     Właściciel bazy danych musi być *konta administratora systemu*
+-     **TRUSTWORTY** musi być **ON**
+-     **Usługa Service Broker** musi być *włączone*
 
 Te konfiguracje mogą być wykonywane na tylko replikę podstawową. Aby skonfigurować replikę pomocniczą, należy pierwszy trybu failover serwera podstawowego na serwerze pomocniczym, aby pomocniczej, co sprawia, że pomocniczy nowej repliki podstawowej.   
 
@@ -213,7 +218,7 @@ Programu Microsoft SQL Server 2016 Standard edition [grup dostępności podstawo
 **Serwerami SQL, które zawierają grupy dostępności dodatkowe:**   
 Przed 1610 wersji programu Configuration Manager gdy grupy dostępności na hostach programu SQL Server, co najmniej jedną grupę dostępności, oprócz używanego programu Configuration Manager, każdej repliki w każdej z tych grup dostępności dodatkowe grupy musi mieć następującą konfigurację ustawione w czasie uruchamiania Instalatora programu Configuration Manager lub instalowania aktualizacji programu Configuration Manager:
 -   **ręcznej pracy awaryjnej**
--     **zezwalała na każde połączenie tylko do odczytu**
+-   **zezwalała na każde połączenie tylko do odczytu**
 
 **Użyj nieobsługiwany bazy danych:**
 -   **Program Configuration Manager obsługuje tylko bazy danych lokacji w grupie dostępności:** Następujące nie są obsługiwane:

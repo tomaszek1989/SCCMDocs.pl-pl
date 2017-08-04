@@ -2,7 +2,7 @@
 title: "Zarządzanie aplikacjami ze Sklepu Windows dla firm | Dokumentacja firmy Microsoft"
 description: "Zarządzanie i wdrażanie aplikacji w Sklepie Windows dla firm za pomocą programu System Center Configuration Manager."
 ms.custom: na
-ms.date: 7/25/2017
+ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,10 +16,10 @@ author: robstackmsft
 ms.author: robstack
 manager: angrobe
 ms.translationtype: MT
-ms.sourcegitcommit: ef42d1483053e9a6c502f4ebcae5a231aa6ba727
-ms.openlocfilehash: 93e767c9a115b30d68871baece670977165f55f4
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: 369b6a82a20a90ca534f9484c0be71096dd35a30
 ms.contentlocale: pl-pl
-ms.lasthandoff: 07/26/2017
+ms.lasthandoff: 07/29/2017
 
 ---
 
@@ -85,6 +85,8 @@ Na komputerach z systemem Windows 10 w wersji starszej niż aktualizacji twórc�
 
 ## <a name="set-up-windows-store-for-business-synchronization"></a>Konfigurowanie Sklepu Windows dla firm synchronizacji
 
+### <a name="for-configuration-manager-versions-prior-to-1706"></a>Wersje programu Configuration Manager przed 1706
+
 **W usłudze Azure Active Directory należy zarejestrować programu Configuration Manager jako narzędzie do zarządzania "API sieci Web i/lub aplikacji sieci Web". Ta akcja umożliwia Identyfikatora klienta, które są potrzebne później.**
 1. W węźle usługi Active Directory [https://manage.windowsazure.com](https://manage.windowsazure.com), wybierz w usłudze Azure Active Directory, a następnie kliknij przycisk **aplikacji** > **Dodaj**.
 2.  Kliknij przycisk **Dodaj aplikację moją organizację**.
@@ -110,6 +112,24 @@ Na komputerach z systemem Windows 10 w wersji starszej niż aktualizacji twórc�
 2.  Na **Home** karcie **Sklep Windows dla firm** kliknij przycisk **Dodaj Sklepu Windows dla firm**. 
 3.  Dodaj identyfikator dzierżawy, identyfikator klienta i klucz klienta z usługi Azure Active Directory, a następnie Ukończ pracę kreatora.
 4. Gdy wszystko będzie gotowe, zobaczysz skonfigurowane konto **Sklep Windows dla firm** listy w konsoli programu Configuration Manager.
+
+### <a name="for-configuration-manager-version-1706-and-later"></a>Dla 1706 wersji programu Configuration Manager i nowszych
+
+1. W konsoli przejdź do **administracji** > **omówienie** > **zarządzania usługami w chmurze** > **Azure** > **usług Azure**, a następnie wybierz **Konfigurowanie usług Azure** uruchomić **Kreator usług Azure**.
+2. Na **usług Azure** wybierz usługi, które chcesz skonfigurować, a następnie kliknij przycisk **dalej**.
+3. Na **ogólne** Podaj przyjazną nazwę dla nazwy usługi Azure i opcjonalny opis, a następnie kliknij pozycję **dalej**.
+4. Na **aplikacji** , określ środowisku platformy Azure, a następnie kliknij przycisk **Przeglądaj** otworzyć **aplikacji Server** okna.
+5. W **aplikacji Server** okna, aplikacji serwera, którego chcesz użyć, a następnie kliknij przycisk **OK**. Aplikacje serwera są aplikacjami sieci web platformy Azure, które zawierają konfiguracje dla konta platformy Azure, w tym Identyfikatora dzierżawy, identyfikator klienta i klucz tajny dla klientów. Jeśli nie ma dostępnego serwera aplikacji, użyj jednej z następujących czynności:
+    - **Utwórz:** Aby utworzyć nową aplikację serwera, kliknij przycisk **Utwórz**. Podaj przyjazną nazwę dla aplikacji i dzierżawcy. Następnie po możesz zalogować się do platformy Azure, programu Configuration Manager utworzy aplikacji sieci web na platformie Azure, w tym identyfikator klienta i klucz tajny do użycia z aplikacji sieci web. Później możesz wyświetlić te z portalu Azure.
+    - **Import:** Aby korzystać z aplikacji sieci web, która już istnieje w subskrypcji platformy Azure, kliknij przycisk **importu**. Podaj przyjazną nazwę dla aplikacji i dzierżawy, a następnie określ identyfikator dzierżawy, identyfikator klienta i klucz tajny aplikacji sieci web platformy Azure, który program Configuration Manager do użycia. Po **Sprawdź** informacji, kliknij przycisk **OK** aby kontynuować. 
+6. Przegląd **informacji** strony i wykonać wszelkie dodatkowe kroki i konfiguracje, zgodnie z instrukcją. Te konfiguracje są niezbędne do korzystania z usługi z programem Configuration Manager. Na przykład, aby skonfigurować w Sklepie Windows dla firm:
+    - Na platformie Azure musisz zarejestrować programu Configuration Manager jako interfejs API sieci Web lub aplikacji sieci web i zarejestrować identyfikator klienta. Możesz również określić klucz klienta do użycia przez narzędzie do zarządzania (czyli programu Configuration Manager).
+    - W Sklepie Windows dla firm konsoli musi skonfigurować programu Configuration Manager jako narzędzie do zarządzania magazynami, umożliwia obsługę aplikacji licencjonowanych w trybie offline i następnie zakupu co najmniej jedną aplikację. 
+7. Kliknij przycisk **dalej** po osiągnięciu gotowości kontynuować.
+8. Na **konfiguracji aplikacji** ukończenia konfiguracji katalogu i język aplikacji dla tej usługi, a następnie kliknij przycisk **dalej**.
+9. Po zakończeniu działania kreatora, konsoli programu Configuration Manager pokazuje, że skonfigurowano **Sklep Windows dla firm** jako **typu usługi w chmurze**.
+
+
 
 
 ## <a name="create-and-deploy-a-configuration-manager-application-from-a-windows-store-for-business-app"></a>Tworzenie i wdrażanie aplikacji programu Configuration Manager w Sklepie Windows dla aplikacji biznesowych.

@@ -1,5 +1,5 @@
 ---
-title: "Rozszerzania zapasów sprzętu | Dokumentacja firmy Microsoft"
+title: "Rozszerzanie spisu sprzętu | Dokumentacja firmy Microsoft"
 description: "Informacje o sposobach rozszerzania zapasów sprzętu w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 02/22/2017
@@ -16,145 +16,144 @@ caps.handback.revision: 0
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9c5d1e48b76392beaf54b5377c69b648537e86f8
-ms.openlocfilehash: 10c1d11a5cf06f3587fb6066801c0eab802dcf9a
+ms.translationtype: MT
+ms.sourcegitcommit: 5f1412fb132e3a074742e11f1142b2594146cbe1
+ms.openlocfilehash: 3e5517e1710d0d12e51fba58efda5dc5edd08544
 ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.lasthandoff: 07/28/2017
 
 ---
 # <a name="how-to-extend-hardware-inventory-in-system-center-configuration-manager"></a>Jak rozszerzyć spis sprzętu w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Spis sprzętu odczytuje informacje z komputery z systemem Windows przy użyciu Instrumentacji zarządzania Windows (WMI). Usługa WMI jest implementacja firmy Microsoft z opartych na sieci web Enterprise Management (WBEM), branżowy standard dostępu do informacji zarządzania w przedsiębiorstwie. W poprzednich wersjach programu Configuration Manager można rozszerzyć zapasy sprzętu, modyfikując sms_def.mof pliku na serwerze lokacji. Ten plik zawiera listę klas WMI, które mogą być odczytane przez spis sprzętu. Edytując ten plik, można było włączać i wyłączać istniejące klasy oraz tworzyć nowe klasy w spisie.  
+Spis sprzętu odczytuje informacje z komputerów z systemem Windows przy użyciu Instrumentacji zarządzania Windows (WMI). Usługa WMI stanowi implementację firmy Microsoft z opartych na sieci web Enterprise Management (WBEM) standardem do uzyskiwania dostępu do informacji dotyczących zarządzania w przedsiębiorstwie. W poprzednich wersjach programu Configuration Manager można rozszerzyć spis sprzętu przez zmodyfikowanie pliku sms_def.mof na serwerze lokacji. Ten plik zawierał listę klas usługi WMI do odczytania przez spis sprzętu. Edytując ten plik, można było włączać i wyłączać istniejące klasy oraz tworzyć nowe klasy w spisie.  
 
-Plik Configuration.mof jest używana do definiowania klas danych, aby być spisanych według spisu sprzętu na kliencie i jest identyczne z programu Configuration Manager 2012. Możesz tworzyć klasy danych w istniejącym spisie, niestandardowe klasy danych repozytorium usługi WMI lub klucze rejestru w systemach klienckich.  
+Plik Configuration.mof umożliwia definiowanie klas danych do dodania do spisu sprzętu na kliencie i różni się od programu Configuration Manager 2012. Możesz tworzyć klasy danych w istniejącym spisie, niestandardowe klasy danych repozytorium usługi WMI lub klucze rejestru w systemach klienckich.  
 
  Ponadto plik Configuration.mof pozwala zdefiniować i zarejestrować dostawców usługi WMI, którzy uzyskują dostęp do informacji o urządzeniu podczas tworzenia spisu sprzętu. Podczas rejestrowania dostawców jest definiowany typ dostawcy do użycia oraz klasy obsługiwane przez dostawcę.  
 
- Gdy klienci programu Configuration Manager żądają zasad, na przykład podczas ich interwału sondowania zasad klienta standardowego, Configuration.mof jest dołączony do treści zasad. Następnie ten plik jest pobierany i kompilowany przez klientów. W przypadku dodawania, modyfikowania lub usuwania klas danych w pliku Configuration.mof klienci automatycznie kompilują zmiany wprowadzone w klasach danych powiązanych ze spisem. Żadne dalsze działania jest niezbędne do klasy nowe lub zmodyfikowane dane spisu na klientach programu Configuration Manager. Plik ten znajduje się w lokalizacji **<lokalizacja_instalacji_programu_Configuration_Manager\>\Inboxes\clifiles.src\hinv\\** na serwerach lokacji głównej.  
+ Gdy klienci programu Configuration Manager żądają zasad, na przykład podczas ich standardowego interwału sondowania zasad klienta, plik Configuration.mof jest dołączany do treści zasad. Następnie ten plik jest pobierany i kompilowany przez klientów. W przypadku dodawania, modyfikowania lub usuwania klas danych w pliku Configuration.mof klienci automatycznie kompilują zmiany wprowadzone w klasach danych powiązanych ze spisem. Niezbędne do klasy nowe lub zmodyfikowane dane spisu na klientach programu Configuration Manager jest żadne dalsze akcje. Plik ten znajduje się w lokalizacji **<lokalizacja_instalacji_programu_Configuration_Manager\>\Inboxes\clifiles.src\hinv\\** na serwerach lokacji głównej.  
 
- W programie Configuration Manager nie jest już edytowany plik sms_def.mof tak jak w programie Configuration Manager 2007. Zamiast tego można włączać i wyłączać klasy usługi WMI oraz dodawać nowe klasy do zbierania przez spis sprzętu przy użyciu ustawień klienta. Program Configuration Manager zapewnia następujące metody do rozszerzania zapasów sprzętu.  
+ W programie Configuration Manager, nie trzeba już edytować pliku sms_def.mof jak w programie Configuration Manager 2007. Zamiast tego można włączać i wyłączać klasy usługi WMI oraz dodawać nowe klasy do zbierania przez spis sprzętu przy użyciu ustawień klienta. Configuration Manager udostępnia następujące metody umożliwiające rozszerzenie spisu sprzętu.  
 
 > [!NOTE]  
->  Jeśli plik Configuration.mof, aby dodać niestandardowy spis klasy został zmieniony ręcznie, zmiany te zostaną zastąpione podczas aktualizacji do wersji 1602. Aby móc nadal używać niestandardowych klas, po dokonaniu aktualizacji, należy dodać je do sekcji "Dodanej rozszerzenia" pliku Configuration.mof po zaktualizowaniu do 1602.  
-> Jednak nie wolno modyfikować żadnych powyżej tej sekcji, jak te sekcje są zarezerwowane do modyfikacji przez program Configuration Manager. Kopia zapasowa Twojego niestandardowego pliku Configuration.mof znajduje się w następującej lokalizacji:  
+>  Jeśli ręcznie zmodyfikowano plik Configuration.mof w celu dodania niestandardowych klas spisu, zmiany te zostaną zastąpione podczas aktualizacji do wersji 1602. Aby nadal używać klas niestandardowych po dokonaniu aktualizacji, możesz musi je dodać do sekcji "Added extensions" w pliku Configuration.mof po aktualizacji do wersji 1602.  
+> Jednak możesz musi nie wprowadzać jakichkolwiek modyfikacji powyżej tej sekcji, ponieważ sekcje te są zarezerwowane do modyfikowania przez program Configuration Manager. Kopia zapasowa Twojego niestandardowego pliku Configuration.mof znajduje się w następującej lokalizacji:  
 > **<katalog instalacyjny programu CM\>\data\hinvarchive\\**.  
 
 |Metoda|Więcej informacji|  
 |------------|----------------------|  
-|Włączanie lub wyłączanie istniejących klas spisu|Włącz lub Wyłącz domyślne klasy spisu lub utworzyć niestandardowe ustawienia, dzięki którym można zbierać klasy spisu sprzętu różnych z określonej kolekcji klientów klienta. Zobacz [do włączenia lub wyłączenia istniejących klas spisu](#BKMK_Enable) procedurze w tym temacie.|  
-|Dodawanie nowej klasy spisu|Dodaj nową klasę spisu z przestrzeni nazw usługi WMI na innym urządzeniu. Zobacz [Aby dodać nowe klasy spisu](#BKMK_Add) procedurze w tym temacie.|  
-|Importowanie i eksportowanie klas spisu sprzętu|Importowanie i eksportowanie plików Managed Object Format (MOF), które zawierają klasy spisu z konsoli programu Configuration Manager. Zobacz [zaimportować klas spisu sprzętu](#BKMK_Import) i [wyeksportować klasy spisu sprzętu](#BKMK_Export) procedury przedstawione w tym temacie.|  
-|Tworzenie plików NOIDMIF|Pliki NOIDMIF umożliwia zbieranie informacji o urządzeń klienckich, które nie mogą być spisane przez program Configuration Manager. Możesz na przykład zebrać numer zasobu urządzenia, który istnieje tylko w postaci etykiety na urządzeniu. Spis NOIDMIF jest automatycznie kojarzony z urządzeniem klienckim, z którego został zebrany. Zobacz [utworzyć pliki NOIDMIF](#BKMK_NOIDMIF) w tym temacie.|  
-|Tworzenie plików IDMIF|Pliki IDMIF umożliwia zbieranie informacji o zasobach w organizacji, które nie są skojarzone z klientem programu Configuration Manager, na przykład, projektory, photocopiers i drukarek sieciowych. Zobacz [utworzyć pliki IDMIF](#BKMK_IDMIF) w tym temacie.|  
+|Włączanie lub wyłączanie istniejących klas spisu|Włącz lub wyłączać domyślne klasy spisu lub utworzyć niestandardowe ustawienia, które umożliwiają zbieranie klas spisu sprzętu z określonych kolekcji klientów. Zobacz [Aby włączyć lub wyłączyć istniejące klasy spisu](#BKMK_Enable) procedurze w tym temacie.|  
+|Dodawanie nowej klasy spisu|Dodaj nową klasę spisu z przestrzeni nazw usługi WMI na innym urządzeniu. Zobacz [Aby dodać nową klasę spisu](#BKMK_Add) procedurze w tym temacie.|  
+|Importowanie i eksportowanie klas spisu sprzętu|Importowanie i eksportowanie pliki Managed Object Format (MOF), zawierające klasy spisu z konsoli programu Configuration Manager. Zobacz [Aby zaimportować klasy spisu sprzętu](#BKMK_Import) i [Aby wyeksportować klasy spisu sprzętu](#BKMK_Export) procedury przedstawione w tym temacie.|  
+|Tworzenie plików NOIDMIF|Użyj plików NOIDMIF, aby zbierać informacje o urządzeniach klienckich, które nie może zebrać spisu przez program Configuration Manager. Możesz na przykład zebrać numer zasobu urządzenia, który istnieje tylko w postaci etykiety na urządzeniu. Spis NOIDMIF jest automatycznie kojarzony z urządzeniem klienckim, z którego został zebrany. Zobacz [Aby utworzyć pliki NOIDMIF](#BKMK_NOIDMIF) w tym temacie.|  
+|Tworzenie plików IDMIF|Pliki IDMIF umożliwiają zbieranie informacji o zasobach w organizacji, które nie są skojarzone z klientem programu Configuration Manager, na przykład, projektorach, kopiarkach i drukarkach sieciowych. Zobacz [Aby utworzyć pliki IDMIF](#BKMK_IDMIF) w tym temacie.|  
 
 ## <a name="procedures-to-extend-hardware-inventory"></a>Procedury rozszerzania spisu sprzętu  
-Te procedury umożliwiają skonfigurowanie domyślnych ustawień klienta dla spisu sprzętu i dotyczą wszystkich klientów w hierarchii. Jeśli chcesz, aby te ustawienia dotyczyły tylko niektórych klientów, Utwórz niestandardowe ustawienia urządzenia klienckiego i przypisać je do kolekcji z określonym klientem. Zobacz [sposób konfigurowania ustawień klienta w programie System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md).  
+Te procedury umożliwiają skonfigurowanie domyślnych ustawień klienta dla spisu sprzętu i dotyczą wszystkich klientów w hierarchii. Jeśli chcesz, aby te ustawienia dotyczyły tylko niektórych klientów, Utwórz niestandardowe ustawienie urządzenia klienckiego i przypisz je do kolekcji z określonym klientem. Zobacz [sposób konfigurowania ustawień klienta w programie System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md).  
 
 ###  <a name="BKMK_Enable"></a> Aby włączyć lub wyłączyć istniejące klasy spisu  
 
-1.  W konsoli programu Configuration Manager wybierz **Administracja** > **ustawień klienta** > **domyślne ustawienia klienta**.  
+1.  W konsoli programu Configuration Manager wybierz **administracji** > **ustawień klienta** > **domyślne ustawienia klienta**.  
 
-4.  Na **Home** w karcie **właściwości** grupy, wybierz **właściwości**.  
+4.  Na **Home** karcie **właściwości** grupy, wybierz **właściwości**.  
 
-5.  W **domyślne ustawienia klienta** okno dialogowe Wybierz **spisu sprzętu**.  
+5.  W **domyślne ustawienia klienta** oknie dialogowym wybierz **spisu sprzętu**.  
 
 6.  Na liście **Ustawienia urządzenia** kliknij pozycję **Ustaw klasy**.  
 
 7.  W oknie dialogowym **Klasy spisu sprzętu** wybierz lub anuluj wybór klas i właściwości klas, które mają zostać zebrane przez spis sprzętu. Możesz rozszerzyć klasy w celu wybrania lub anulowania wyboru poszczególnych właściwości tej klasy. Użyj pola **Wyszukaj klasy spisu** , aby wyszukać poszczególne klasy.  
 
     > [!IMPORTANT]  
-    >  Po dodaniu nowej klasy spisu sprzętu programu Configuration Manager spowoduje zwiększenie rozmiaru pliku zapasów zbierane i przesyłane do serwera lokacji. Może to negatywnie wpłynąć na wydajność sieci i lokacji programu Configuration Manager. Włącz tylko klasy spisu, które chcesz zebrać.  
+    >  Po dodaniu nowych klas do spisu sprzętu programu Configuration Manager spowoduje zwiększenie rozmiaru pliku spisu, który został zebrany i wysłany na serwer lokacji. Może to negatywnie wpłynąć na wydajność sieci i lokacji programu Configuration Manager. Włącz tylko klasy spisu, które chcesz zebrać.  
 
 
 ###  <a name="BKMK_Add"></a> Aby dodać nową klasę spisu  
 
 Możesz dodawać klasy spisu tylko z serwera najwyższego poziomu w hierarchii oraz przez zmodyfikowanie domyślnych ustawień klienta. Ta opcja nie jest dostępna w przypadku tworzenia niestandardowych ustawień urządzenia.
 
-1.  W konsoli programu Configuration Manager wybierz **Administracja** > **ustawień klienta** > **domyślne ustawienia klienta**.  
+1.  W konsoli programu Configuration Manager wybierz **administracji** > **ustawień klienta** > **domyślne ustawienia klienta**.  
 
-4.  Na **Home** w karcie **właściwości** grupy, wybierz **właściwości**.  
+4.  Na **Home** karcie **właściwości** grupy, wybierz **właściwości**.  
 
-5.  W **domyślne ustawienia klienta** okno dialogowe Wybierz **spisu sprzętu**.  
+5.  W **domyślne ustawienia klienta** oknie dialogowym wybierz **spisu sprzętu**.  
 
 6.  W **ustawienia urządzenia** wybierz **Ustaw klasy**.  
 
-7.  W **klasy spisu sprzętu** okno dialogowe Wybierz **Dodaj**.  
+7.  W **klasy spisu sprzętu** oknie dialogowym wybierz **Dodaj**.  
 
 8.  W oknie dialogowym **Dodawanie klasy spisu sprzętu** kliknij pozycję **Połącz**.  
 
 9. W oknie dialogowym **Łączenie z Instrumentacją zarządzania Windows (WMI)** określ nazwę komputera, z którego będą pobierane klasy usługi WMI, oraz przestrzeń nazw usługi WMI, za pomocą której będą pobierane klasy. Aby pobrać wszystkie klasy w określonej przestrzeni nazw usługi WMI, kliknij pozycję **Cykliczne**. Jeśli komputer, z którym nawiązujesz połączenie, nie jest komputerem lokalnym, podaj poświadczenia logowania dla konta z uprawnieniem dostępu do usługi WMI na komputerze zdalnym.  
 
-10. Wybierz **połączenia**.  
+10. Wybierz **połączyć**.  
 
-11. W **Dodaj klasę spisu sprzętu** dialogowym **spisu klasy** , wybierz klasy WMI, które chcesz dodać do spisu sprzętu programu Configuration Manager.  
+11. W **Dodaj klasę spisu sprzętu** okna dialogowego, **klasy spisu** Wybierz klasy usługi WMI, które chcesz dodać do spisu sprzętu programu Configuration Manager.  
 
-12. Aby edytować informacje o wybranej klasy WMI, należy wybrać **edytować**i w **klasy kwalifikatory** okna dialogowego podaj następujące informacje:  
+12. Jeśli chcesz edytować informacje o wybranej klasie usługi WMI, wybierz **Edytuj**, a następnie w **kwalifikatory klasy** okna dialogowego podaj następujące informacje:  
 
-    -   **Nazwa wyświetlana** -będzie wyświetlane w Eksploratorze zasobów.  
+    -   **Nazwa wyświetlana** — ta informacja będzie wyświetlana w Eksploratorze zasobów.  
 
-    -   **Właściwości** -jednostki, w której każda właściwość WMI klasy będzie wyświetlany.  
+    -   **Właściwości** — Określ jednostki, w którym każda właściwość WMI będzie wyświetlana klasy.  
 
      Możesz też określić właściwości jako właściwość klucza, aby łatwiej jednoznacznie zidentyfikować każde wystąpienie klasy. Jeśli nie zdefiniowano klucza klasy i klient zgłosił wiele wystąpień klasy, w bazie danych będzie przechowywane tylko najnowsze znalezione wystąpienie.  
 
-     Po zakończeniu konfigurowania właściwości, kliknij przycisk **OK** zamknąć **klasy kwalifikatory** okno dialogowe i inne okno dialogowe. 
+     Po zakończeniu konfigurowania właściwości kliknij **OK** zamknąć **kwalifikatory klasy** okno dialogowe i inne okno dialogowe. 
 
 
 ###  <a name="BKMK_Import"></a> Aby zaimportować klasy spisu sprzętu  
 
 Klasy spisu można importować tylko po zmodyfikowaniu domyślnych ustawień klienta. Można jednak użyć niestandardowych ustawień klienta, aby zaimportować informacje, które nie zawierają zmiany schematu, takiej jak zmiana wartości właściwości istniejącej klasy z **True** na **False**.  
 
-1.  W konsoli programu Configuration Manager wybierz **Administracja** >  **ustawień klienta** > **domyślne ustawienia klienta**.  
+1.  W konsoli programu Configuration Manager wybierz **administracji** >  **ustawień klienta** > **domyślne ustawienia klienta**.  
 
-4.  Na **Home** w karcie **właściwości** grupy, wybierz **właściwości**.  
+4.  Na **Home** karcie **właściwości** grupy, wybierz **właściwości**.  
 
-5.  W **domyślne ustawienia klienta** okno dialogowe Wybierz **spisu sprzętu**.  
+5.  W **domyślne ustawienia klienta** oknie dialogowym wybierz **spisu sprzętu**.  
 
 6.  W **ustawienia urządzenia** wybierz **Ustaw klasy**.  
 
-7.  W **klasy spisu sprzętu** okno dialogowe Wybierz **importowania**.  
+7.  W **klasy spisu sprzętu** oknie dialogowym wybierz **importu**.  
 
-8.  W **importowania** okno dialogowe, wybierz zarządzany obiekt pliku Format (MOF), który chcesz zaimportować, a następnie wybierz **OK**. Przejrzyj elementy, które zostaną zaimportowane, a następnie kliknij przycisk **importowania**.  
+8.  W **zaimportować** okno dialogowe, wybierz zarządzany obiekt pliku Format (MOF), który chcesz zaimportować, a następnie wybierz pozycję **OK**. Przejrzyj elementy, które zostaną zaimportowane, a następnie kliknij przycisk **importu**.  
 
 ###  <a name="BKMK_Export"></a> Aby wyeksportować klasy spisu sprzętu  
 
-1.  W konsoli programu Configuration Manager wybierz **Administracja** > **ustawień klienta** > **domyślne ustawienia klienta**.  
+1.  W konsoli programu Configuration Manager wybierz **administracji** > **ustawień klienta** > **domyślne ustawienia klienta**.  
 
-4.  Na **Home** w karcie **właściwości** grupy, wybierz **właściwości**.  
+4.  Na **Home** karcie **właściwości** grupy, wybierz **właściwości**.  
 
-5.  W **domyślne ustawienia klienta** okno dialogowe Wybierz **spisu sprzętu**.  
+5.  W **domyślne ustawienia klienta** oknie dialogowym wybierz **spisu sprzętu**.  
 
 6.  W **ustawienia urządzenia** wybierz **Ustaw klasy**.  
 
-7.  W **klasy spisu sprzętu** okno dialogowe Wybierz **wyeksportować**.  
+7.  W **klasy spisu sprzętu** oknie dialogowym wybierz **wyeksportować**.  
 
     > [!NOTE]  
     >  Eksportowane są wszystkie obecnie wybrane klasy.  
 
-8.  W **wyeksportować** okna dialogowego określ pliku Managed Object Format (MOF), który chcesz wyeksportować klasy, a następnie wybierz **zapisać**.  
+8.  W **wyeksportować** oknie dialogowym Określ pliku Managed Object Format (MOF), który chcesz wyeksportować klasy, a następnie wybierz pozycję **zapisać**.  
 
 ## <a name="how-to-use-management-information-files-mif-files-to-extend-hardware-inventory"></a>Jak rozszerzyć spis sprzętu za pomocą plików informacji zarządzania (MIF)  
- Aby rozszerzyć informacje dotyczące spisu sprzętu zebrane z klientów przez program Configuration Manager, należy użyć plików formatu MIF (Management Information). Podczas tworzenia spisu sprzętu informacje przechowywane w plikach MIF są dodawane do raportu spisu klienta i przechowywane w bazie danych lokacji, która umożliwia korzystanie z danych tak samo jak w przypadku domyślnych danych spisu klienta. Istnieją dwa typy plików MIF: IDMIF i NOIDMIF.
+ Plików Management Information Format (MIF) umożliwiają rozszerzanie informacji o spisie sprzętu zbieranych z klientów przez program Configuration Manager. Podczas tworzenia spisu sprzętu informacje przechowywane w plikach MIF są dodawane do raportu spisu klienta i przechowywane w bazie danych lokacji, która umożliwia korzystanie z danych tak samo jak w przypadku domyślnych danych spisu klienta. Istnieją dwa typy plików MIF: IDMIF i NOIDMIF.
 
 > [!IMPORTANT]  
->  Przed dodaniem informacji z plików MIF z bazą danych programu Configuration Manager, należy utworzyć lub zaimportować informacje o klasie dla nich. Aby uzyskać więcej informacji, zobacz sekcje [Aby dodać nową klasę spisu](#BKMK_Add) i [Aby zaimportować klasy spisu sprzętu](#BKMK_Import) w tym temacie.  
+>  Przed dodaniem informacje z plików MIF do bazy danych programu Configuration Manager, należy utworzyć lub zaimportować informacje o klasie. Aby uzyskać więcej informacji, zobacz sekcje [Aby dodać nową klasę spisu](#BKMK_Add) i [Aby zaimportować klasy spisu sprzętu](#BKMK_Import) w tym temacie.  
 
 ###  <a name="BKMK_NOIDMIF"></a> Aby utworzyć pliki NOIDMIF  
- Pliki NOIDMIF umożliwia dodawanie informacji do spisu sprzętu klienta, które normalnie nie mogą być zebrane przez program Configuration Manager i jest skojarzona z urządzenia określonego klienta. Na przykład wiele firm etykiety na każdym komputerze w organizacji za pomocą numeru i wykazu je ręcznie. Podczas tworzenia pliku NOIDMIF te informacje mogą być dodawane do bazy danych programu Configuration Manager i służyć do obsługi zapytań i raportowania. Informacje dotyczące tworzenia plików NOIDMIF znajduje się w dokumentacji zestawu SDK programu Configuration Manager.  
+ Pliki NOIDMIF można dodać informacje do spisu sprzętu klienta, które nie mogą zostać zebrane przez program Configuration Manager i jest skojarzony z określonym urządzeniem klienta. Na przykład w wielu firmach każdy komputer w organizacji z liczbą zasobów i katalogu je ręcznie. Podczas tworzenia pliku NOIDMIF, te informacje mogą być dodawane do bazy danych programu Configuration Manager i służyć do obsługi zapytań i raportowania. Informacje o tworzeniu plików NOIDMIF znajduje się w dokumentacji zestawu SDK programu Configuration Manager.  
 
 > [!IMPORTANT]  
->  Podczas tworzenia pliku NOIDMIF muszą zostać zapisane w formacie ANSI. Pliki NOIDMIF zapisane w formacie UTF-8 zakodowane nie można odczytać przez program Configuration Manager.  
+>  Podczas tworzenia pliku NOIDMIF musi zostać zapisany w zakodowanym formacie ANSI. Przez program Configuration Manager nie może odczytywać plików NOIDMIF zapisanych w formacie UTF-8 zakodowany.  
 
- Po utworzeniu plik NOIDMIF zapisać ją w *% Windir %***\System32\CCM\Inventory\Noidmifs** folder na każdym komputerze klienckim. Program Configuration Manager będzie zbierać informacje z plików NODMIF w tym folderze podczas następnego cyklu spisu sprzętu zaplanowane.  
+ Utworzony plik NOIDMIF należy zapisać ją w *% Windir %***\CCM\Inventory\Noidmifs** na każdym kliencie. Menedżer konfiguracji zbierze informacje z plików NOIDMIF w tym folderze podczas następnego cyklu tworzenia spisu sprzętu zaplanowane.  
 
 ###  <a name="BKMK_IDMIF"></a> Aby utworzyć pliki IDMIF  
- Pliki IDMIF umożliwia dodawanie informacji o zasobach, które może nie zwykle dodane do spisu przez program Configuration Manager i nie jest skojarzony z urządzeniem określonego klienta do bazy danych programu Configuration Manager. Na przykład można użyć IDMIFS zbieranie informacji o projektory, odtwarzaczy DVD, photocopiers lub innego sprzętu, który nie zawiera klienta programu Configuration Manager. Informacje o tworzeniu pliki IDMIF znajduje się w dokumentacji zestawu SDK programu Configuration Manager.  
+ Pliki IDMIF umożliwia dodawanie informacji o zasobach, które może nie zwykle dodane do spisu przez program Configuration Manager i nie jest skojarzony z określonym urządzeniem klienta, w bazie danych programu Configuration Manager. Na przykład można użyć one do zbierania informacji o projektorach, odtwarzaczach DVD, kopiarkach lub innym sprzęcie, który nie zawiera klienta programu Configuration Manager. Informacje o tworzeniu plików IDMIF znajduje się w dokumentacji zestawu SDK programu Configuration Manager.  
 
- Po utworzeniu pliku IDMIF zapisać ją w *% Windir %***\System32\CCM\Inventory\Idmifs** folderu na komputerach klienckich. Program Configuration Manager będzie zbierać informacje z tego pliku podczas następnego cyklu spisu sprzętu zaplanowane. Musisz zadeklarować dla nowych klas informacje zawarte w pliku przez ich dodanie lub zaimportowanie.  
+ Utworzony plik IDMIF należy zapisać ją w *% Windir %***\CCM\Inventory\Idmifs** folderu na komputerach klienckich. Menedżer konfiguracji zbierze informacje z tego pliku podczas następnego cyklu tworzenia spisu sprzętu zaplanowane. Musisz zadeklarować dla nowych klas informacje zawarte w pliku przez ich dodanie lub zaimportowanie.  
 
 > [!NOTE]
-> Pliki MIF mogą zawierać dużą ilość danych. Zbieranie tych danych może mieć zły wpływ na wydajność lokacji. Gromadzenie MIF tylko w razie potrzeby Włącz i skonfiguruj opcję **maksymalny niestandardowego pliku MIF rozmiar pliku (KB)** w ustawienia spisu sprzętu. Aby uzyskać więcej informacji, zobacz [wprowadzenie do spisu sprzętu w programie System Center Configuration Manager](introduction-to-hardware-inventory.md).
+> Pliki MIF mogą zawierać dużą ilość danych. Zbieranie tych danych może mieć zły wpływ na wydajność lokacji. Włącz gromadzenie MIF tylko wtedy, gdy jest to wymagane i skonfiguruj opcję **maksymalny rozmiar niestandardowego pliku MIF (KB)** w ustawienia spisu sprzętu. Aby uzyskać więcej informacji, zobacz [wprowadzenie do spisu sprzętu w programie System Center Configuration Manager](introduction-to-hardware-inventory.md).
 

@@ -1,8 +1,8 @@
 ---
 title: Przyrostowych wersji programu System Center Configuration Manager | Dokumentacja firmy Microsoft
-description: "Informacje o sposobie instalowania i zarządzanie aktualizacjami oprogramowania System Center Configuration Manager."
+description: "Dowiedz się, jak zainstalować i zarządzanie aktualizacjami w programie System Center Configuration Manager."
 ms.custom: na
-ms.date: 3/27/2017
+ms.date: 7/31/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -15,36 +15,33 @@ caps.latest.revision: 4
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
-ms.openlocfilehash: fb968fe866920c93edaa43be457032c3e7fd1c42
+ms.translationtype: MT
+ms.sourcegitcommit: c0d94b8e6ca6ffd82e879b43097a9787e283eb6d
+ms.openlocfilehash: 043c9521f4a94ea2df5cebb4ca1c0b1127f0edbc
 ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
+ms.lasthandoff: 08/02/2017
 
 ---
-# <a name="whats-new-in-system-center-configuration-manager-incremental-versions"></a>What's new in przyrostowych wersji programu System Center Configuration Manager
+# <a name="whats-new-in-system-center-configuration-manager-incremental-versions"></a>Nowości w wersjach przyrostowych programu System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
-
-
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
- System Center Configuration Manager używa w konsoli [Obsługa](/sccm/core/servers/manage/updates) proces, który ułatwia odnajdywanie i instalowanie aktualizacji programu Configuration Manager. Oznacza to, ma więcej dodatków service Pack lub wersji aktualizacji zbiorczej do śledzenia. Nie masz już do wyszukiwania pobierania najnowszej wersji lub aktualizacji.
 
- Zamiast tego, aby zaktualizować produkt do nowej wersji bieżącej gałęzi, używasz konsoli programu Configuration Manager znaleźć i następnie [zainstalować aktualizacji w konsoli](../../../core/servers/manage/install-in-console-updates.md). Kilka razy każdego roku, nowa wersja wersje obejmują aktualizacje produktu. Każda wersja również mogą wprowadzać nowe funkcje.  
 
- Po zainstalowaniu aktualizacji z nowych funkcji, można użyć (lub nie używać) funkcje we wdrożeniu. Wersje różnych aktualizacji są identyfikowane przez rok i miesiąc. Na przykład wersja 1511 identyfikuje listopada 2015 roku (miesiąc po bieżącej gałęzi System Center Configuration Manager najpierw została opublikowana do produkcji). Nowsze aktualizacje, począwszy od 2016, mają nazwy wersji, jak 1610, co oznacza aktualizacja, która została utworzona w 2016 października.
+ System Center Configuration Manager używa w konsoli [aktualizacje i obsługa](/sccm/core/servers/manage/updates) procesu, który ułatwia odnajdywanie i instalowanie aktualizacji programu Configuration Manager. Oznacza to, nie dodatków service Pack lub wersji aktualizacji zbiorczej do śledzenia. Nie masz już do wyszukiwania pobierania najnowszej wersji lub aktualizacji.
 
- Należy zaktualizować te wersje są kluczem do zrozumienia przyrostowej wersji instalacji programu System Center Configuration Manager, i jakie funkcje mają dostępne w celu umożliwienia we wdrożeniu.
+ Zamiast tego, aby zaktualizować produktu do nowej wersji bieżącej gałęzi, używasz konsoli programu Configuration Manager można znaleźć, a następnie [instalacja aktualizacji w konsoli](../../../core/servers/manage/install-in-console-updates.md). Kilka razy każdego roku, nowej wersji wersje, które obejmują aktualizacje produktu. Każda wersja również mogą wprowadzać nowe funkcje.  
 
- Początkowa wersja programu System Center Configuration Manager Current Branch to wersja 1511. Od tej wersji początkowej dodatkowe aktualizacje są dostępne. Aby odnaleźć nowości z każdą wersją, należy użyć następujących łączy:
-  - [Nowości w wersji 1702](../../../core/plan-design/changes/whats-new-in-version-1702.md)
-  - [Nowości w wersji 1610](../../../core/plan-design/changes/whats-new-in-version-1610.md)
-  - [Nowości w wersji 1606](../../../core/plan-design/changes/whats-new-in-version-1606.md)  
+ Po zainstalowaniu aktualizacji z nowych funkcji, można użyć (lub nie) te funkcje w danym wdrożeniu. Różne wersje aktualizacji są identyfikowane przez rok i miesiąc. Na przykład w wersji 1511 identyfikuje listopada 2015 roku (miesiąc po bieżącej gałęzi programu System Center Configuration Manager został opublikowany po raz pierwszy RTM). Nowsze aktualizacje, począwszy od publikowanych w 2016 r., mieć nazwy wersji takie jak 1610, która oznacza, że aktualizacja, który został utworzony w października 2016.
 
-<!-- 
-  - [What's new in version 1602](../../../core/plan-design/changes/whats-new-in-version-1602.md)
--->
+ Te wersje aktualizacji są kluczem do zrozumienia wersji przyrostowej instalacji programu System Center Configuration Manager, i jakie funkcje mają dostępne w celu umożliwienia w danym wdrożeniu.
 
- Każda wersja aktualizacji jest obsługiwana przez rok po jego wydaniu. Jest dobrym pomysłem jest aktualne informacje o najnowszej wersji aktualizacji, jeśli jest to możliwe. Aby uzyskać więcej informacji, zobacz [pomocy technicznej dla programu System Center Configuration Manager bieżącej wersji gałęzi](../../../core/servers/manage/current-branch-versions-supported.md).  
+ Początkowa wersja programu System Center Configuration Manager Current Branch to wersja 1511. Od początkowej wersji dostępne są dodatkowe aktualizacje. Aby odnaleźć nowości w każdej wersji, który pozostaje w obsłudze, użyj następujących łączy:
+  - [Co nowego w wersji 1706](../../../core/plan-design/changes/whats-new-in-version-1706.md)  
+  - [Co nowego w wersji 1702](../../../core/plan-design/changes/whats-new-in-version-1702.md)
+  - [Co nowego w wersji 1610](../../../core/plan-design/changes/whats-new-in-version-1610.md)
+
+
+ Każda wersja aktualizacji jest obsługiwana dla rok po jego wersji. Należy dobrze jest aktualne informacje o najnowszej wersji aktualizacji, jeśli to możliwe. Aby uzyskać więcej informacji, zobacz [pomocy technicznej dla programu System Center Configuration Manager bieżącej gałęzi wersji](../../../core/servers/manage/current-branch-versions-supported.md).  
 

@@ -2,7 +2,7 @@
 title: Magazyn danych | Dokumentacja firmy Microsoft
 description: "Punkt usługi magazynu danych i bazy danych programu System Center Configuration Manager"
 ms.custom: na
-ms.date: 5/31/2017
+ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,10 +16,10 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 ms.translationtype: MT
-ms.sourcegitcommit: ef42d1483053e9a6c502f4ebcae5a231aa6ba727
-ms.openlocfilehash: c421c3495f56503d5cbda7b1a5ab5350a168912d
+ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
+ms.openlocfilehash: eedbf12d3bf628666efc90c85a8dfab37e4dc9ab
 ms.contentlocale: pl-pl
-ms.lasthandoff: 07/26/2017
+ms.lasthandoff: 07/29/2017
 
 ---
 #  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>Punkt usługi Magazyn danych programu System Center Configuration Manager
@@ -27,11 +27,12 @@ ms.lasthandoff: 07/26/2017
 
 Począwszy od wersji 1702, punkt usługi Magazyn danych można użyć do przechowywania i raport dotyczący długoterminowe dane historyczne dla danego wdrożenia programu Configuration Manager.
 
-> [!TIP]  
-> Wprowadzonym w wersji 1702, punkt usługi Magazyn danych to funkcja wersji wstępnej. Aby ją włączyć, zobacz [korzystanie z funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features).
+> [!TIP]
+> Punkt usługi Magazyn danych jest wprowadzonych w wersji 1702 funkcji wersji wstępnej. Aby ją włączyć, zobacz [korzystanie z funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features).
 
-Magazyn danych obsługuje maksymalnie 2 TB danych z sygnaturami czasowymi, śledzenie zmian. Przechowywanie danych odbywa się przez automatyczne synchronizacje z bazy danych lokacji programu Configuration Manager do bazy danych magazynu danych. Te informacje są dostępne z punktu usług Reporting Services.
+> Począwszy od wersji 1706, ta funkcja nie jest już funkcji wersji wstępnej.
 
+Magazyn danych obsługuje maksymalnie 2 TB danych z sygnaturami czasowymi, śledzenie zmian. Przechowywanie danych odbywa się przez automatyczne synchronizacje z bazy danych lokacji programu Configuration Manager do bazy danych magazynu danych. Te informacje są dostępne z punktu usług Reporting Services. Dane, które są synchronizowane z bazy danych magazynu danych jest zachowywana przez 3 lata. Okresowo wbudowanego zadania usuwa dane starsze niż trzy lata.
 
 Dane, które są synchronizowane obejmuje następujące elementy z grup danych globalnych i danych lokacji:
 - Kondycja infrastruktury
@@ -46,15 +47,22 @@ Podczas instalowania roli systemu lokacji, instaluje i konfiguruje bazę danych 
 
 
 ## <a name="prerequisites-for-the-data-warehouse-service-point"></a>Wymagania wstępne dotyczące punktu usługi magazynu danych
+- Rola systemu lokacji magazynu danych jest obsługiwana tylko w lokacji najwyższego poziomu w hierarchii. (Centralnej lokacji administracyjnej lub autonomicznej lokacji głównej).
 - Komputer, na którym zainstalowano rolę systemu lokacji wymaga programu .NET Framework 4.5.2 lub nowszej.
 - Aby zsynchronizować dane z bazy danych magazynu danych jest używane konto komputera komputera, na którym zainstalowano rolę systemu lokacji. To konto wymaga następujących uprawnień:  
   - **Administrator** na komputerze, który będzie hostem bazy danych magazynu danych.
   - **DB_owner** uprawnień w bazie danych magazynu danych.
   - **DB_reader** i **wykonania** baza danych lokacji uprawnienia do lokacji najwyższego poziomu.
--   Baza danych magazynu danych jest obsługiwane na domyślne lub nazwane wystąpienie programu SQL Server 2012 lub nowszym. Wersja musi być Enterprise lub Datacenter.
-  - Grupy dostępności AlwaysOn programu SQL Server: Ta konfiguracja nie jest obsługiwana.
-  - Klastra programu SQL Server: Klastrów pracy awaryjnej programu SQL Server nie są obsługiwane. Jest to spowodowane bazy danych magazynu danych nie zostały głęboko przetestowane w klastrach trybu failover programu SQL Server.
-  - Gdy baza danych magazynu danych jest zdalnie z serwera bazy danych lokacji, musi mieć oddzielnej licencji dla programu SQL Server obsługującym bazę danych.
+- Baza danych magazynu danych wymaga użycia programu SQL Server 2012 lub nowszym. Wersja może być Standard, Enterprise lub Datacenter.
+- Obsługiwane są następujące konfiguracje programu SQL Server do hostowania bazy danych magazynu:  
+  - Domyślne wystąpienie
+  - Nazwane wystąpienie
+  - SQL Server zawsze włączone grupy dostępności
+  - Klaster pracy awaryjnej programu SQL Server
+-   Gdy baza danych magazynu danych jest zdalnie z serwera bazy danych lokacji, musi mieć oddzielnej licencji dla każdego serwera SQL hostującego bazę danych.
+- Jeśli używasz [widoki rozproszone](/sccm/core/servers/manage/data-transfers-between-sites#bkmk_distviews), roli systemu lokacji punktu usług danych magazynu należy zainstalować na tym samym serwerze, który udostępnia bazę danych witryny Administracja centralna.
+
+
 
 > [!IMPORTANT]  
 > Magazyn danych nie jest obsługiwana, gdy komputer z uruchomioną punktu usługi Magazyn danych lub obsługującego bazę danych magazynu danych ma jeden z następujących języków:
@@ -65,9 +73,7 @@ Podczas instalowania roli systemu lokacji, instaluje i konfiguruje bazę danych 
 
 
 ## <a name="install-the-data-warehouse"></a>Zainstalować Magazyn danych
-Można zainstalować rolę systemu lokacji magazynu danych tylko w lokacji najwyższego poziomu w hierarchii (centralnej lokacji administracyjnej lub autonomicznej lokacji głównej).
-
-Każda hierarchia obsługuje jedno wystąpienie tej roli, a może znajdować się w każdym systemie lokacji w tej lokacji najwyższego poziomu. SQL Server, który jest hostem bazy danych dla magazynu może być lokalnym do roli systemu lokacji lub zdalnym. Chociaż w magazynie danych działa z zainstalowanym w tej samej lokacji punkt usług raportowania, dwie role systemu lokacji nie jest konieczne można zainstalować na tym samym serwerze.   
+Każda hierarchia obsługuje jedno wystąpienie tej roli w każdym systemie lokacji w lokacji najwyższego poziomu. SQL Server, który jest hostem bazy danych dla magazynu może być lokalnym do roli systemu lokacji lub zdalnym. Chociaż w magazynie danych działa z zainstalowanym w tej samej lokacji punkt usług raportowania, dwie role systemu lokacji nie jest konieczne można zainstalować na tym samym serwerze.   
 
 Aby zainstalować rolę, użyj **lokacji Kreator dodawania ról systemu** lub **lokacji Kreator tworzenia serwera systemu**. Zobacz [zainstalować role systemu lokacji](/sccm/core/servers/deploy/configure/install-site-system-roles) Aby uzyskać więcej informacji.  
 
@@ -83,7 +89,8 @@ Po zainstalowaniu roli programu Configuration Manager utworzy bazę danych magaz
  - **Nazwa wystąpienia serwera SQL, jeśli ma to zastosowanie**:   
  Jeśli nie używasz domyślnego wystąpienia programu SQL Server, należy określić wystąpienie.
  - **Nazwa bazy danych**:   
- Określ nazwę bazy danych magazynu danych.  Configuration Manager utworzy bazę danych magazynu danych o tej nazwie. Jeśli określisz nazwy bazy danych, która już istnieje w wystąpieniu programu SQL server Configuration Manager będzie używać tej bazy danych.
+ Określ nazwę bazy danych magazynu danych. Nazwa bazy danych nie może przekraczać 10 znaków. (Długość nazwy obsługiwanych zostanie zwiększony w przyszłej wersji).
+ Configuration Manager tworzy bazę danych magazynu danych o tej nazwie. Jeśli określisz nazwy bazy danych, która już istnieje w wystąpieniu programu SQL server Configuration Manager korzysta z tej bazy danych.
  - **Port serwera SQL używane do łączenia**:   
  Określ numer portu TCP/IP, który jest skonfigurowany dla programu SQL Server, który jest hostem bazy danych magazynu danych. Port ten jest używany przez usługę synchronizacji magazynu danych do nawiązania połączenia bazy danych magazynu danych.  
 
@@ -125,7 +132,7 @@ Inaczej niż w przypadku przenoszenia bazy danych magazynu danych ta zmiana powo
 ## <a name="move-the-data-warehouse-database"></a>Przenoszenie bazy danych magazynu danych
 Aby przenieść bazę danych magazynu danych na nowy serwer SQL, wykonaj następujące kroki:
 
-1.  Użyj SQL Server Management Studio, aby utworzyć kopię zapasową danych baza danych magazynu, a następnie Przywróć tę bazę danych do programu SQL Server na nowym komputerze, który będzie obsługiwał hurtowni danych.   
+1.  Aby utworzyć kopię zapasową bazy danych magazynu danych, należy użyć programu SQL Server Management Studio. Następnie Przywróć tę bazę danych do programu SQL Server na nowym komputerze, który obsługuje magazyn danych.   
 > [!NOTE]     
 > Po przywróceniu bazy danych na nowy serwer, upewnij się, że uprawnienia dostępu do bazy danych są takie same na nową bazę danych magazynu danych, jakie były na oryginalnej bazy danych magazynu danych.  
 
@@ -140,13 +147,13 @@ Użyj następujących dzienników do badania problemów dotyczących instalacji 
  - *Microsoft.ConfigMgrDataWarehouse.log* — ten dziennik umożliwia badanie synchronizacji danych między programami bazy danych lokacji do bazy danych magazynu danych.
 
 **Konfigurowanie awarii**  
- Instalacja punktu usługi Magazyn danych nie powiedzie się na zdalnym serwerze systemu lokacji w magazynie danych po pierwszym Rola systemu lokacji zainstalowane na tym komputerze.  
+ Instalacja punktu usługi Magazyn danych nie powiedzie się na zdalnym serwerze systemu lokacji w magazynie danych po pierwszym Rola systemu lokacji, która instaluje na tym komputerze.  
   - **Rozwiązanie**:   
     Upewnij się, że komputer, na którym instalujesz punktu usługi Magazyn danych na już znajduje się co najmniej jeden innych ról systemu lokacji.  
 
 
 **Znane problemy z synchronizacją**:   
-Synchronizacja nie powiedzie się z następującymi w *Microsoft.ConfigMgrDataWarehouse.log*: **"nie powiodło się wypełnienie obiektów schematu"**  
+Synchronizacja nie powiedzie się następujący komunikat o błędzie w *Microsoft.ConfigMgrDataWarehouse.log*: **"nie powiodło się wypełnienie obiektów schematu"**  
  - **Rozwiązanie**:  
     Upewnij się, że konto komputera komputera hostującego rolę systemu lokacji jest **db_owner** na bazę danych magazynu danych.
 
@@ -167,7 +174,7 @@ Po otwarciu raportu magazynu danych, jest zwracany następujący błąd:
     2. Otwórz **SQL Server Configuration Manager**w obszarze **konfigurację sieci programu SQL Server**, kliknij prawym przyciskiem myszy, aby wybrać **właściwości** w obszarze **protokoły dla elementu MSSQLSERVER**. Następnie na **certyfikatu** wybierz opcję **danych magazynu SQL Server Identification Certificate** jako certyfikat, a następnie zapisz zmiany.  
     3. Otwórz **SQL Server Configuration Manager**w obszarze **usług SQL Server**, uruchom ponownie **usługi SQL Server** i **usługi raportowania**.
     4.  Otwórz program Microsoft Management Console (MMC) i Dodaj przystawkę dla **certyfikaty**, wybierz pozycję Zarządzanie certyfikatami dla **konto komputera** komputera lokalnego. Następnie, w konsoli MMC rozwiń węzeł **osobistych** folder > **certyfikaty**i eksportowanie **danych magazynu SQL Server Identification Certificate** jako **certyfikat x.509 szyfrowany binarnie algorytmem DER (. CER)** pliku.    
-  2.    Na komputerze, który jest hostem usług SQL Server Reporting Services, Otwórz program MMC i dodać przystawkę dla **certyfikaty**, a następnie wybierz certyfikat zarządzania **konto komputera**. W obszarze **zaufane główne urzędy certyfikacji** folder importu **danych magazynu SQL Server Identification Certificate**.
+  2.    Na komputerze, który jest hostem usług SQL Server Reporting Services, Otwórz program MMC i dodać przystawkę dla **certyfikaty**. Następnie wybierz opcję, aby zarządzać certyfikatami dla **konto komputera**. W obszarze **zaufane główne urzędy certyfikacji** folder importu **danych magazynu SQL Server Identification Certificate**.
 
 
 ## <a name="data-warehouse-dataflow"></a>Biblioteka przepływu danych magazynu danych   
@@ -186,5 +193,5 @@ Po otwarciu raportu magazynu danych, jest zwracany następujący błąd:
 |:------:|-----------|  
 | **A**  |  Za pomocą wbudowanych raportów, użytkownik zażąda danych. To żądanie jest przekazywana do usług Reporting Services punktu, przy użyciu programu SQL Server Reporting Services. |  
 | **B**  |      Większość raporty są aktualne informacje, a te żądania są uruchamiane w bazie danych lokacji. |  
-| **C**  | Gdy raport żąda danych historycznych, za pomocą jednej z raporty z *kategorii* z **hurtowni danych**, żądanie jest wykonywane na bazie danych magazynu danych.   |  
+| **C**  | Gdy raport żąda danych historycznych, za pomocą jednej z raporty z *kategorii* z **hurtowni danych**, żądanie jest uruchamiana dla bazy danych magazynu danych.   |  
 
