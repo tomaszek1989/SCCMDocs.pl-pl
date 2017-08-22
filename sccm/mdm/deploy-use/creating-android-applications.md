@@ -6,21 +6,19 @@ ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e025c48c-1514-4ab7-836c-e0635aaa993a
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: MT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: 3a89abc81cd70f4e499bf4e3087fd53915377c44
-ms.contentlocale: pl-pl
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="create-android-applications-with-system-center-configuration-manager"></a>Tworzenie aplikacji systemu Android z System Center Configuration Manager
 
@@ -66,4 +64,3 @@ Wykonaj poniższe kroki zatwierdzania aplikacji w Play pracy magazynu, zsynchron
 8. Przejdź do **Biblioteka oprogramowania** > **omówienie** > **Zarządzanie aplikacjami** > **aplikacji**, wybierz systemu Android dla aplikacji do pracy i wdrażanie w zwykły sposób.
 
 Aby zsynchronizować Play dla aplikacji do pracy z programem Configuration Manager, możesz musi zatwierdzić co najmniej jedną aplikację na Play pracy witryny sieci Web.
-

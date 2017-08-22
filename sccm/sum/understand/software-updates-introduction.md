@@ -1,7 +1,6 @@
 ---
-
 title: Wprowadzenie do aktualizacji oprogramowania | Dokumentacja firmy Microsoft
-description: Poznaj podstawy aktualizacji oprogramowania System Center Configuration Manager.
+description: Poznaj podstawy aktualizacji oprogramowania w programie System Center Configuration Manager.
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -10,44 +9,40 @@ ms.date: 10/06/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: e9778b13-c8a3-40eb-8655-34ac8ce9cdaa
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d8cace9edd58e8fa438dbb43e54e57cd0dc55d2b
 ms.openlocfilehash: 2904b904bbaf155f016f55fbd36af80308a42d76
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="introduction-to-software-updates-in-system-center-configuration-manager"></a>Wprowadzenie do aktualizacji oprogramowania System Center Configuration Manager
+# <a name="introduction-to-software-updates-in-system-center-configuration-manager"></a>Wprowadzenie do aktualizacji oprogramowania w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Aktualizacje oprogramowania System Center Configuration Manager udostępnia zestaw narzędzi i zasobów, które ułatwiają zarządzanie złożonymi zadaniami śledzenia i stosowania aktualizacji oprogramowania na komputerach klienckich w przedsiębiorstwie. Efektywny proces zarządzania aktualizacjami oprogramowania jest konieczny do zachowania skuteczności działania, rozwiązywania problemów dotyczących zabezpieczeń i zachowania stabilności infrastruktury sieciowej. Jednakże z powodu zmienności technologii i stałego pojawiania się nowych zagrożeń bezpieczeństwa efektywne zarządzanie aktualizacjami oprogramowania wymaga stałej uwagi.  
+Aktualizacje oprogramowania w programie System Center Configuration Manager udostępnia zestaw narzędzi i zasobów, które ułatwiają zarządzanie złożonymi zadaniami śledzenia i stosowania aktualizacji oprogramowania na komputerach klienckich w przedsiębiorstwie. Efektywny proces zarządzania aktualizacjami oprogramowania jest konieczny do zachowania skuteczności działania, rozwiązywania problemów dotyczących zabezpieczeń i zachowania stabilności infrastruktury sieciowej. Jednakże z powodu zmienności technologii i stałego pojawiania się nowych zagrożeń bezpieczeństwa efektywne zarządzanie aktualizacjami oprogramowania wymaga stałej uwagi.  
 
-Przykładowy scenariusz demonstrujący wdrażanie aktualizacji oprogramowania w danym środowisku, można znaleźć w temacie [przykładowy scenariusz wdrażania aktualizacji oprogramowania zabezpieczającego](../deploy-use/example-scenario-deploy-monitor-monthly-security-updates.md).  
+Przykładowy scenariusz przedstawiający sposób demonstrujący wdrażanie aktualizacji oprogramowania w danym środowisku, zobacz [przykładowy scenariusz wdrażania aktualizacji oprogramowania zabezpieczającego](../deploy-use/example-scenario-deploy-monitor-monthly-security-updates.md).  
 
 ##  <a name="BKMK_Synchronization"></a> Synchronizacja aktualizacji oprogramowania  
- Synchronizację aktualizacji oprogramowania w programie Configuration Manager łączy się z usługą Microsoft Update do pobierania metadanych aktualizacji oprogramowania. Lokacja najwyższego poziomu (centralnej lokacji administracyjnej lub autonomicznej lokacji głównej) synchronizuje się z usługą Microsoft Update zgodnie z harmonogramem lub po ręcznym rozpoczęciu synchronizacji z konsoli programu Configuration Manager. Po zakończeniu synchronizacji aktualizacji oprogramowania w lokacji najwyższego poziomu programu Configuration Manager w lokacjach podrzędnych, rozpoczyna się synchronizacja aktualizacji oprogramowania, jeżeli istnieją. Po ukończeniu synchronizacji w każdej lokacji dodatkowej lub głównej tworzone są zasady dla całej lokacji udostępniające komputerom klienckim lokalizację punktów aktualizacji oprogramowania.  
+ Synchronizacja aktualizacji oprogramowania w programie Configuration Manager łączy się z witryną Microsoft Update do pobierania metadanych aktualizacji oprogramowania. Lokacji najwyższego poziomu (centralna lokacja administracyjna lub autonomiczna lokacja główna) synchronizuje się z usługą Microsoft Update zgodnie z harmonogramem lub po ręcznym rozpoczęciu synchronizacji z konsoli programu Configuration Manager. Po zakończeniu synchronizacji aktualizacji oprogramowania w lokacji najwyższego poziomu programu Configuration Manager w lokacjach podrzędnych, rozpoczyna się synchronizacja aktualizacji oprogramowania, jeżeli istnieją. Po ukończeniu synchronizacji w każdej lokacji dodatkowej lub głównej tworzone są zasady dla całej lokacji udostępniające komputerom klienckim lokalizację punktów aktualizacji oprogramowania.  
 
 > [!NOTE]  
->  Aktualizacje oprogramowania są domyślnie włączone w ustawieniach klienta. Jednakże w przypadku wybrania dla ustawienia klienta **Włącz aktualizacje oprogramowania na klientach** wartości **Nie** w celu wyłączenia aktualizacji oprogramowania w kolekcji lub w ustawieniach domyślnych, lokalizacja punktów aktualizacji oprogramowania nie jest wysyłana do skojarzonych klientów. Aby uzyskać szczegółowe informacje, zobacz [ustawienia klienta aktualizacji oprogramowania](../../core/clients/deploy/about-client-settings.md#software-updates).  
+>  Aktualizacje oprogramowania są domyślnie włączone w ustawieniach klienta. Jednakże w przypadku wybrania dla ustawienia klienta **Włącz aktualizacje oprogramowania na klientach** wartości **Nie** w celu wyłączenia aktualizacji oprogramowania w kolekcji lub w ustawieniach domyślnych, lokalizacja punktów aktualizacji oprogramowania nie jest wysyłana do skojarzonych klientów. Aby uzyskać więcej informacji, zobacz [ustawienia klienta aktualizacji oprogramowania](../../core/clients/deploy/about-client-settings.md#software-updates).  
 
  Po odebraniu zasad klient rozpocznie skanowanie pod kątem zgodności aktualizacji oprogramowania i zapisze informacje w Instrumentacji zarządzania Windows (WMI). Informacje o zgodności są następnie wysyłane do punktu zarządzania, który wysyła je serwera lokacji. Więcej informacji na temat oceny zgodności zawiera sekcja [Software updates compliance assessment](#BKMK_SUMCompliance) w tym temacie.  
 
- W lokacji głównej można instalować wiele punktów aktualizacji oprogramowania. Pierwszy zainstalowany punkt aktualizacji oprogramowania jest konfigurowany jako źródło synchronizacji. Synchronizuje on się z witryny Microsoft Update lub WSUS spoza hierarchii programu Configuration Manager. Inne punkty aktualizacji oprogramowania w lokacji używają jako źródła synchronizacji pierwszego punktu aktualizacji oprogramowania.  
+ W lokacji głównej można instalować wiele punktów aktualizacji oprogramowania. Pierwszy zainstalowany punkt aktualizacji oprogramowania jest konfigurowany jako źródło synchronizacji. Służy do synchronizacji z usługi Microsoft Update lub serwer WSUS spoza hierarchii programu Configuration Manager. Inne punkty aktualizacji oprogramowania w lokacji używają jako źródła synchronizacji pierwszego punktu aktualizacji oprogramowania.  
 
 > [!NOTE]  
->  Po ukończeniu procesu synchronizacji aktualizacji oprogramowania w lokacji najwyższego poziomu metadane aktualizacji oprogramowania są replikowane w lokacjach podrzędnych za pomocą replikacji bazy danych. Po podłączeniu konsoli programu Configuration Manager do podrzędnej lokacji programu Configuration Manager Wyświetla metadane aktualizacji oprogramowania. Jednak dopóki zainstalować i skonfigurować punkt aktualizacji oprogramowania w lokacji, klienci nie będą skanować pod kątem zgodności aktualizacji oprogramowania ani zgłaszać informacji o zgodności do programu Configuration Manager i nie można pomyślnie wdrożyć aktualizacji oprogramowania.  
+>  Po ukończeniu procesu synchronizacji aktualizacji oprogramowania w lokacji najwyższego poziomu metadane aktualizacji oprogramowania są replikowane w lokacjach podrzędnych za pomocą replikacji bazy danych. Po podłączeniu konsoli programu Configuration Manager do lokacji podrzędnej programu Configuration Manager Wyświetla metadane aktualizacji oprogramowania. Jednak do momentu zainstalowania i skonfigurowania punktu aktualizacji oprogramowania w lokacji, klienci nie będą skanować pod kątem zgodności aktualizacji oprogramowania, klienci nie będą zgłaszać informacji o zgodności do programu Configuration Manager i nie można pomyślnie wdrożyć aktualizacji oprogramowania.  
 
 ### <a name="synchronization-on-the-top-level-site"></a>Synchronizacja w lokacji najwyższego poziomu  
  Proces synchronizacji aktualizacji oprogramowania w lokacji najwyższego poziomu powoduje pobranie z usługi Microsoft Update metadanych aktualizacji oprogramowania spełniających kryteria określone we właściwościach Składnika punktu aktualizacji oprogramowania. Kryteria należy skonfigurować tylko w lokacji najwyższego poziomu.  
 
 > [!NOTE]  
->  Można określić istniejący serwer WSUS, który nie znajduje się w hierarchii programu Configuration Manager, a nie Microsoft Updates jako źródło synchronizacji.  
+>  Można określić istniejący serwer WSUS, który nie znajduje się w hierarchii programu Configuration Manager, zamiast Microsoft Updates jako źródło synchronizacji.  
 
  Poniższa lista zawiera opis podstawowych kroków procesu synchronizacji w lokacji najwyższego poziomu:  
 
@@ -57,7 +52,7 @@ Przykładowy scenariusz demonstrujący wdrażanie aktualizacji oprogramowania w 
 
 3.  Metadane aktualizacji oprogramowania są synchronizowane z usługą Microsoft Update, a wszelkie zmiany są wstawiane i aktualizowane w bazie danych usługi WSUS.  
 
-4.  Po zakończeniu synchronizacji WSUS Menedżer synchronizacji programu WSUS Synchronizuje metadane aktualizacji oprogramowania z bazy danych programu WSUS w bazie danych programu Configuration Manager, a wszelkie zmiany od ostatniej synchronizacji są wstawiane lub aktualizowane w bazie danych lokacji. Metadane aktualizacji oprogramowania są przechowywane w bazie danych lokacji jako element konfiguracji.  
+4.  Po zakończeniu synchronizacji programu WSUS Menedżer synchronizacji programu WSUS Synchronizuje metadane aktualizacji oprogramowania z bazy danych programu WSUS w bazie danych programu Configuration Manager, a wszelkie zmiany od ostatniej synchronizacji są wstawiane lub aktualizowane w bazie danych lokacji. Metadane aktualizacji oprogramowania są przechowywane w bazie danych lokacji jako element konfiguracji.  
 
 5.  Elementy konfiguracji aktualizacji oprogramowania są wysyłane do lokacji podrzędnych za pomocą replikacji bazy danych.  
 
@@ -85,10 +80,10 @@ Przykładowy scenariusz demonstrujący wdrażanie aktualizacji oprogramowania w 
 7.  Menedżer synchronizacji programu WSUS wysyła pojedynczo żądania do usługi WSUS działającej w innych punktach aktualizacji oprogramowania w lokacji. Serwery programu WSUS w innych punktach aktualizacji oprogramowania są skonfigurowane jako repliki usługi WSUS działające w domyślnym punkcje aktualizacji oprogramowania w lokacji.  
 
 ##  <a name="BKMK_SUMCompliance"></a> Software updates compliance assessment  
- Przed wdrożeniem aktualizacji oprogramowania na komputerach klienckich w programie Configuration Manager, należy rozpocząć skanowanie pod kątem zgodności z aktualizacjami oprogramowania na komputerach klienckich. Dla każdej aktualizacji oprogramowania zostanie utworzony komunikat o stanie zawierający stan zgodności aktualizacji. Komunikaty o stanie są wysyłane w trybie zbiorczym do punktu zarządzania, a następnie do serwera lokacji, gdzie stan zgodności jest wstawiany do bazy danych lokacji. Stan zgodności aktualizacji oprogramowania jest wyświetlany w konsoli programu Configuration Manager. Aktualizacje oprogramowania można wdrożyć i zainstalować na komputerach, które wymagają aktualizacji. Poniższe sekcje zawierają informacje o stanach zgodności i opis procesu skanowania pod kątem zgodności aktualizacji oprogramowania.  
+ Przed wdrożeniem aktualizacji oprogramowania na komputerach klienckich w programie Configuration Manager, należy rozpocząć skanowanie pod kątem zgodności aktualizacji oprogramowania na komputerach klienckich. Dla każdej aktualizacji oprogramowania zostanie utworzony komunikat o stanie zawierający stan zgodności aktualizacji. Komunikaty o stanie są wysyłane w trybie zbiorczym do punktu zarządzania, a następnie do serwera lokacji, gdzie stan zgodności jest wstawiany do bazy danych lokacji. Stan zgodności aktualizacji oprogramowania jest wyświetlany w konsoli programu Configuration Manager. Aktualizacje oprogramowania można wdrożyć i zainstalować na komputerach, które wymagają aktualizacji. Poniższe sekcje zawierają informacje o stanach zgodności i opis procesu skanowania pod kątem zgodności aktualizacji oprogramowania.  
 
 ### <a name="software-updates-compliance-states"></a>Stany zgodności aktualizacji oprogramowania  
- Następujące wymieniono i opisano każdy stan zgodności jest wyświetlana w konsoli programu Configuration Manager dla aktualizacji oprogramowania.  
+ Poniżej wymieniono i opisano każdy stan zgodności jest wyświetlana w konsoli programu Configuration Manager dla aktualizacji oprogramowania.  
 
 -   **Wymagane**  
 
@@ -134,25 +129,25 @@ Przykładowy scenariusz demonstrujący wdrażanie aktualizacji oprogramowania w 
 
  Skanowanie pod kątem zgodności z aktualizacjami oprogramowania można uruchamiać następującymi metodami, wliczając w to harmonogram skanowania:  
 
--   **Harmonogram skanowania w poszukiwaniu aktualizacji oprogramowania**: Skanowanie w poszukiwaniu oprogramowania aktualizuje zgodności uruchamia się zgodnie ze skonfigurowanym harmonogramem skanowania skonfigurowanym w ustawieniach agenta klienta aktualizacji oprogramowania. Aby uzyskać więcej informacji o sposobie konfigurowania ustawień klienta aktualizacji oprogramowania, zobacz [ustawienia klienta aktualizacji oprogramowania](../../core/clients/deploy/about-client-settings.md#software-updates).  
+-   **Harmonogram skanowania w poszukiwaniu aktualizacji oprogramowania**: Skanowanie pod kątem oprogramowania zgodności z aktualizacjami uruchamiane zgodnie z harmonogramem skanowania, skonfigurowanym w ustawieniach agenta klienta aktualizacji oprogramowania. Aby uzyskać więcej informacji o sposobie konfigurowania ustawień klienta aktualizacji oprogramowania, zobacz [ustawienia klienta aktualizacji oprogramowania](../../core/clients/deploy/about-client-settings.md#software-updates).  
 
--   **Działanie właściwości programu Configuration Manager**: Użytkownik może uruchomić **cykl skanowania aktualizacji oprogramowania** lub **cykl oceny wdrożenia aktualizacji oprogramowania** akcji na **akcji** karcie w **właściwości programu Configuration Manager** okno dialogowe na komputerze klienckim.  
+-   **Działanie właściwości programu Configuration Manager**: Użytkownik może uruchomić **cykl skanowania aktualizacji oprogramowania** lub **cykl oceny wdrożenia aktualizacji oprogramowania** akcji **akcji** karcie **właściwości programu Configuration Manager** okno dialogowe na komputerze klienckim.  
 
--   **Harmonogram ponownej oceny wdrożenia**: Ocena wdrożenia i skanowanie w poszukiwaniu oprogramowania aktualizuje zgodności uruchamia się zgodnie z harmonogramem ponownej oceny wdrożenia, skonfigurowanym w ustawieniach agenta klienta aktualizacji oprogramowania. Aby uzyskać więcej informacji o ustawieniach klienta aktualizacji oprogramowania, zobacz [ustawienia klienta aktualizacji oprogramowania](../../core/clients/deploy/about-client-settings.md#software-updates).  
+-   **Harmonogram ponownej oceny wdrożenia**: Ocena wdrożenia i skanowanie w poszukiwaniu oprogramowania zgodności z aktualizacjami uruchamiane zgodnie z harmonogramem ponownej oceny skonfigurowanego wdrożenia, który jest skonfigurowany w ustawieniach agenta klienta aktualizacji oprogramowania. Aby uzyskać więcej informacji o ustawieniach klienta aktualizacji oprogramowania, zobacz [ustawienia klienta aktualizacji oprogramowania](../../core/clients/deploy/about-client-settings.md#software-updates).  
 
--   **Przed pobraniem plików aktualizacji**: Kiedy komputer klienta otrzymuje zasady przypisywania dotyczące nowo wymaganego wdrożenia, Agent klienta aktualizacji oprogramowania pobiera pliki aktualizacji oprogramowania do lokalnej pamięci podręcznej. Przed pobraniem plików aktualizacji oprogramowania agent klienta uruchamia skanowanie, aby zweryfikować, że aktualizacja oprogramowania jest nadal wymagana.  
+-   **Przed pobraniem plików aktualizacji**: Kiedy komputer klienta otrzymuje zasady przypisywania dotyczące nowo wymaganego wdrożenia, Agent klienta aktualizacji oprogramowania pobiera pliki aktualizacji oprogramowania do lokalnej pamięci podręcznej klienta. Przed pobraniem plików aktualizacji oprogramowania agent klienta uruchamia skanowanie, aby zweryfikować, że aktualizacja oprogramowania jest nadal wymagana.  
 
--   **Przed zainstalowaniem aktualizacji oprogramowania**: Tuż przed instalacją aktualizacji oprogramowania Agent klienta aktualizacji oprogramowania uruchamia skanowanie, aby sprawdzić, czy aktualizacje oprogramowania są nadal wymagane.  
+-   **Przed zainstalowaniem aktualizacji oprogramowania**: Tuż przed instalacją aktualizacji oprogramowania Agent klienta aktualizacji oprogramowania uruchamia skanowanie, aby zweryfikować, czy aktualizacje oprogramowania są nadal wymagane.  
 
--   **Po zainstalowaniu aktualizacji oprogramowania**: Tuż po ukończeniu instalacji aktualizacji oprogramowania, Agent klienta aktualizacji oprogramowania uruchamia skanowanie, aby zweryfikować, że aktualizacje oprogramowania nie są już wymagane i tworzy nowy komunikat o stanie stwierdzający, że aktualizacja oprogramowania została zainstalowana. Kiedy instalacja zakończyła się, ale wymaga ponownego uruchomienia, komunikat o stanie wskazuje, że komputer klienta oczekuje na ponowne uruchomienie.  
+-   **Po zainstalowaniu aktualizacji oprogramowania**: Tuż po ukończeniu instalacji aktualizacji oprogramowania Agent klienta aktualizacji oprogramowania uruchamia skanowanie, aby zweryfikować, że aktualizacje oprogramowania nie są już wymagane i tworzy nowy komunikat o stanie stwierdzający, że aktualizacja oprogramowania została zainstalowana. Kiedy instalacja zakończyła się, ale wymaga ponownego uruchomienia, komunikat o stanie wskazuje, że komputer klienta oczekuje na ponowne uruchomienie.  
 
--   **Po ponownym uruchomieniu systemu**: Gdy komputer kliencki oczekuje na ponowne uruchomienie systemu na zakończenie instalacji aktualizacji oprogramowania, Agent klienta aktualizacji oprogramowania uruchamia skanowanie po ponownym uruchomieniu, aby sprawdzić, czy aktualizacja oprogramowania nie jest już wymagane i tworzy komunikat o stanie stwierdzający, że aktualizacja oprogramowania została zainstalowana.  
+-   **Po ponownym uruchomieniu systemu**: Gdy komputer kliencki oczekuje na ponowne uruchomienie systemu, aby ukończyć instalację aktualizacji oprogramowania, Agent klienta aktualizacji oprogramowania uruchamia skanowanie po ponownym uruchomieniu, aby sprawdzić, czy aktualizacja oprogramowania nie jest już wymagane i tworzy komunikat o stanie stwierdzający, że aktualizacja oprogramowania została zainstalowana.  
 
 #### <a name="time-to-live-value"></a>Wartość czasu wygaśnięcia  
  Metadane aktualizacji oprogramowania wymagane do skanowania pod kątem zgodności z aktualizacjami oprogramowania są magazynowane na lokalnym komputerze klienta i domyślnie ważne przez najwyżej 24 godziny. Ta wartość jest znana jako czas wygaśnięcia.  
 
 #### <a name="scan-for-software-updates-compliance-types"></a>Typy skanowania pod kątem zgodności z aktualizacjami oprogramowania  
- Przeprowadzając skanowanie pod kątem zgodności z aktualizacjami oprogramowania, klient korzysta ze skanowania w trybie online lub offline i wymuszonym lub niewymuszonym, zależnie od sposobu uruchomienia skanowania pod kątem zgodności z aktualizacjami oprogramowania. Poniżej opisano, które metody uruchamiania skanowania są w trybie online lub offline i czy skanowanie jest wymuszone, czy niewymuszone.  
+ Przeprowadzając skanowanie pod kątem zgodności z aktualizacjami oprogramowania, klient korzysta ze skanowania w trybie online lub offline i wymuszonym lub niewymuszonym, zależnie od sposobu uruchomienia skanowania pod kątem zgodności z aktualizacjami oprogramowania. Poniżej opisano, które metody uruchamiania skanowania działają w trybie online w trybie offline, a także czy skanowanie jest wymuszone, czy niewymuszone.  
 
 -   **Harmonogram skanowania w poszukiwaniu aktualizacji oprogramowania** (niewymuszone skanowanie w trybie online)  
 
@@ -195,13 +190,13 @@ Przykładowy scenariusz demonstrujący wdrażanie aktualizacji oprogramowania w 
 
  Podczas tworzenia nowego pakietu wdrożeniowego numer wersji zawartości zostaje ustawiony na 1 jeszcze przed pobraniem jakichkolwiek aktualizacji oprogramowania. Kiedy za pomocą pakietu zostają pobrane pliki aktualizacji oprogramowania, numer wersji zawartości zwiększa się do 2. Dlatego też wszystkie nowe pakiety wdrożeniowe uruchamiają się z wersją zawartości zaczynającą się od 2. Za każdym razem, kiedy zawartość pakietu wdrożeniowego ulega zmianie, numer wersji zawartości zwiększa się o 1. Aby uzyskać więcej informacji, zobacz [podstawowe pojęcia związane z zarządzaniem zawartością](../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md).  
 
- Klienci instalują aktualizacje oprogramowania we wdrożeniu, korzystając z dowolnego punktu dystrybucji mającego dostępne aktualizacje oprogramowania, niezależnie od pakietu wdrożeniowego. Nawet jeśli któryś z pakietów wdrożeniowych dla aktywnego wdrożenia zostanie usunięty, klienci nadal mogą zainstalować aktualizacje oprogramowania we wdrożeniu, o ile tylko każda z aktualizacji została pobrana do co najmniej jednego innego pakietu wdrożeniowego i jest dostępna w punkcie dystrybucji, do którego ma dostęp dany klient. Wraz z usunięciem ostatniego pakietu wdrożeniowego zawierającego aktualizację oprogramowania komputery klienckie tracą możliwość pobrania aktualizacji oprogramowania, dopóki aktualizacja nie zostanie ponownie pobrana do pakietu wdrożeniowego. Aktualizacje oprogramowania są wyświetlane z czerwoną strzałką w konsoli programu Configuration Manager po pliki aktualizacji nie są w żadnym pakiecie wdrożeniowym. Wdrożenia, które zawierają jakiekolwiek aktualizacje w tym stanie, są wyświetlane z podwójną czerwoną strzałką.  
+ Klienci instalują aktualizacje oprogramowania we wdrożeniu, korzystając z dowolnego punktu dystrybucji mającego dostępne aktualizacje oprogramowania, niezależnie od pakietu wdrożeniowego. Nawet jeśli któryś z pakietów wdrożeniowych dla aktywnego wdrożenia zostanie usunięty, klienci nadal mogą zainstalować aktualizacje oprogramowania we wdrożeniu, o ile tylko każda z aktualizacji została pobrana do co najmniej jednego innego pakietu wdrożeniowego i jest dostępna w punkcie dystrybucji, do którego ma dostęp dany klient. Wraz z usunięciem ostatniego pakietu wdrożeniowego zawierającego aktualizację oprogramowania komputery klienckie tracą możliwość pobrania aktualizacji oprogramowania, dopóki aktualizacja nie zostanie ponownie pobrana do pakietu wdrożeniowego. Aktualizacje oprogramowania są wyświetlane z czerwoną strzałką w konsoli programu Configuration Manager, jeśli pliki aktualizacji nie są w żadnym pakiecie wdrożeniowym. Wdrożenia, które zawierają jakiekolwiek aktualizacje w tym stanie, są wyświetlane z podwójną czerwoną strzałką.  
 
 ##  <a name="BKMK_DeploymentWorkflows"></a> Przepływy pracy wdrożeń aktualizacji oprogramowania  
  Istnieją dwa główne scenariusze wdrażania aktualizacji oprogramowania w danym środowisku: wdrażanie ręczne i wdrażanie automatyczne. Na ogół aktualizacje oprogramowania wdraża się ręcznie, aby utworzyć linię bazową dla komputerów klienckich, po czym zarządza się aktualizacjami oprogramowania na klientach za pomocą wdrażania automatycznego. W poniższych częściach omówiono przepływ pracy ręcznego i automatycznego wdrażania aktualizacji oprogramowania.  
 
 ###  <a name="BKMK_ManualDeployment"></a> Ręczne wdrażanie aktualizacji oprogramowania  
- Ręczne wdrażanie aktualizacji oprogramowania to proces polegający na wyborze aktualizacji oprogramowania w konsoli programu Configuration Manager i ręcznym uruchomieniu procedury wdrażania. Tę metodę wdrażania stosuje się najczęściej po to, aby uaktualnić komputery klienckie za pomocą wymaganych aktualizacji oprogramowania przed utworzeniem zasad wdrażania automatycznego, zarządzających ciągłymi comiesięcznymi wdrożeniami aktualizacji oprogramowania, i aby wdrożyć wymagania aktualizacji oprogramowania poza pasmem. Na poniższej liście przedstawiono ogólny przepływ pracy ręcznego wdrażania aktualizacji oprogramowania:  
+ Ręczne wdrażanie aktualizacji oprogramowania to proces wyborze aktualizacji oprogramowania w konsoli programu Configuration Manager i ręcznym uruchomieniu procedury wdrażania. Tę metodę wdrażania stosuje się najczęściej po to, aby uaktualnić komputery klienckie za pomocą wymaganych aktualizacji oprogramowania przed utworzeniem zasad wdrażania automatycznego, zarządzających ciągłymi comiesięcznymi wdrożeniami aktualizacji oprogramowania, i aby wdrożyć wymagania aktualizacji oprogramowania poza pasmem. Na poniższej liście przedstawiono ogólny przepływ pracy ręcznego wdrażania aktualizacji oprogramowania:  
 
 1.  Odfiltrowanie aktualizacji oprogramowania, które korzystają z określonych wymagań. Można na przykład podać kryteria pozwalające pobrać wszystkie aktualizacje oprogramowania zabezpieczeń lub krytyczne aktualizacje oprogramowania, jakie są wymagane na ponad 50 komputerach klienckich.  
 
@@ -277,11 +272,10 @@ Przykładowy scenariusz demonstrujący wdrażanie aktualizacji oprogramowania w 
 
  Ustawienie czynności użytkownika kontrolujące zachowanie filtra zapisu ma postać pola wyboru o nazwie **Zatwierdź zmiany po upływie terminu wdrożenia lub w oknach obsługi (wymaga ponownego uruchomienia)**.  
 
- Aby uzyskać więcej informacji o sposobie zarządzania przez Menedżera konfiguracji urządzeń embedded używających filtrów zapisu, zobacz [Planowanie wdrożenia klientów na urządzeniach Windows Embedded](../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md).  
+ Aby uzyskać więcej informacji o zarządzaniu programu Configuration Manager na urządzeniach osadzonych korzystających z filtrów zapisu, zobacz [Planowanie wdrożenia klientów na urządzeniach Windows Embedded](../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md).  
 
 ##  <a name="BKMK_ExtendSoftwareUpdates"></a> Rozszerzanie aktualizacji oprogramowania w programie Configuration Manager  
- System Center Updates Publisher umożliwia zarządzanie aktualizacjami oprogramowania, które nie są dostępne z witryny Microsoft Update. Po opublikowaniu aktualizacji oprogramowania na serwerze aktualizacji i synchronizować aktualizacje oprogramowania w programie Configuration Manager, można wdrożyć aktualizacji oprogramowania klientom programu Configuration Manager. Aby uzyskać więcej informacji dotyczących programu Updates Publisher, zobacz [Updates Publisher 2011](http://go.microsoft.com/fwlink/p/?LinkId=252947).  
+ System Center Updates Publisher umożliwia zarządzanie aktualizacjami oprogramowania, które nie są dostępne z witryny Microsoft Update. Po opublikowaniu aktualizacji oprogramowania na serwerze aktualizacji i synchronizować aktualizacje oprogramowania w programie Configuration Manager, można wdrożyć aktualizacje oprogramowania do klientów programu Configuration Manager. Aby uzyskać więcej informacji dotyczących programu Updates Publisher, zobacz [Updates Publisher 2011](http://go.microsoft.com/fwlink/p/?LinkId=252947).  
 
 ## <a name="next-steps"></a>Następne kroki
 [Planowanie aktualizacji oprogramowania](../plan-design/plan-for-software-updates.md)
-

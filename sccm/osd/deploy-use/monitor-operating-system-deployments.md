@@ -1,34 +1,31 @@
 ---
 title: "Monitorowanie wdrożeń systemu operacyjnego | Dokumentacja firmy Microsoft"
-description: "Aby pomóc monitorować obiekty wdrożenia systemu operacyjnego, konsoli programu Configuration Manager zawiera alerty, raporty i różne wskaźniki stanu."
+description: "Aby ułatwić do monitorowania obiektów wdrożenia systemu operacyjnego, konsoli programu Configuration Manager zawiera alertów, raportów i różnych wskaźniki stanu."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 08085d94-295c-432f-b5e3-9736bce0193b
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
 ms.openlocfilehash: 154c0a286e6b9ccedc7545eb010967ac00d35407
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="monitor-operating-system-deployments-in-system-center-configuration-manager"></a>Monitorowanie wdrożeń systemu operacyjnego w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Konsoli programu Configuration Manager udostępnia następujące sposoby ułatwiają monitorowanie obiekty wdrożenia systemu operacyjnego.  
+Konsoli programu Configuration Manager oferuje następujące sposoby ułatwiają monitorowanie obiekty wdrożenia systemu operacyjnego.  
 
 
 ##  <a name="BKMK_OSDAlerts"></a> Alerty wdrożeń systemu operacyjnego  
@@ -97,4 +94,3 @@ Konsoli programu Configuration Manager udostępnia następujące sposoby ułatwi
 3.  Wybierz punkt dystrybucji, dla którego mają być wyświetlone informacje o stanie punktu dystrybucji.  
 
 4.  W okienku wyników kliknij kartę **Szczegóły** . Zostaną wyświetlone informacje o stanie punktu dystrybucji.  
-

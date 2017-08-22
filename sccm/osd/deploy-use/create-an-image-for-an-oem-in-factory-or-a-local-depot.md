@@ -1,42 +1,39 @@
 ---
-title: Tworzenie obrazu dla OEM w fabryce lub w lokalnym magazynie | Dokumentacja firmy Microsoft
-description: "Wdrożenia z nośników wstępnie przygotowanych umożliwia zmniejszenie ruchu w sieci, podczas wdrażania systemu operacyjnego na komputerze, który nie jest w pełni udostępnione."
+title: Tworzenie obrazu dla producenta OEM w fabryce lub lokalnym magazynie | Dokumentacja firmy Microsoft
+description: "Wdrożenia z nośników wstępnie przygotowanych umożliwia zmniejszenie ruchu w sieci, podczas wdrażania systemu operacyjnego na komputerze, który nie jest w pełni zaaprowizowanym."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a7d3df90-062d-4d57-9e9d-e137d3e7cd7f
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
 ms.openlocfilehash: 07aba04fb1b845e389a5f75b115d536136c1569c
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="create-an-image-for-an-oem-in-factory-or-a-local-depot-with-system-center-configuration-manager"></a>Tworzenie obrazu dla producenta OEM w fabryce lub lokalnym magazynie przy użyciu programu System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Wdrożenia z nośników wstępnie przygotowanych w programie System Center Configuration Manager pozwalają wdrożyć system operacyjny na komputerze, który nie jest w pełni udostępnione. Nośnik wstępnie przygotowany to plik Windows Imaging Format (WIM), który można zainstalować na komputerze bez systemu operacyjnego przez producenta (OEM) lub w Centrum przygotowywania przedsiębiorstwa, który nie jest podłączony do środowiska programu Configuration Manager. Później w środowisku programu Configuration Manager, komputer uruchomi się przy użyciu obrazu rozruchowego udostępnionego przez nośnik, wyboru skrótu jest uruchamiane na wstępnie przygotowanego nośnika, aby upewnić się, jest prawidłowy, a następnie komputer łączy się z punktem zarządzania lokacji uzyskać dostępne sekwencje zadań kończące proces pobierania.
+Wdrożenia z nośników wstępnie przygotowanych w programie System Center Configuration Manager pozwalają wdrożyć system operacyjny na komputerze, który nie jest w pełni zaaprowizowanym. Nośnik wstępnie przygotowany to plik Windows Imaging Format (WIM), który producent (OEM) lub w Centrum przygotowywania przedsiębiorstwa niepołączonym do środowiska programu Configuration Manager można zainstalować na komputerze bez systemu operacyjnego. Później w środowisku programu Configuration Manager, komputer uruchomi się przy użyciu obrazu rozruchowego udostępnionego przez nośnik, sprawdzanie wartości skrótu jest uruchamiane na wstępnie przygotowanego nośnika upewnij się, że jest prawidłowy, a następnie komputer łączy się z punktem zarządzania lokacją, aby uzyskać dostępne sekwencje zadań kończące proces pobierania.
 
 
 Ta metoda wdrażania może zmniejszyć ilość ruchu w sieci, ponieważ obraz rozruchowy i obraz systemu operacyjnego znajdują się już na komputerze docelowym. Możliwe jest określenie, jakie aplikacje, pakiety i pakiety sterowników mają być uwzględnione na wstępnie przygotowanym nośniku. Po zainstalowaniu systemu operacyjnego na komputerze lokalna pamięć podręczna sekwencji zadań jest najpierw sprawdzana pod kątem aplikacji, pakietów lub pakietów sterowników. Jeśli zawartości nie można odnaleźć lub została zmieniona, jest ona pobierana z punktu dystrybucji skonfigurowanego na wstępnie przygotowanym nośniku, a następnie instalowana.  
 
  Wstępnie przygotowanego nośnika można użyć w następujących scenariuszach wdrażania systemu operacyjnego:  
 
--   [Zainstaluj nową wersję systemu Windows na nowym komputerze (od zera)](install-new-windows-version-new-computer-bare-metal.md)  
+-   [Instalowanie nowej wersji systemu Windows na nowym komputerze (od zera)](install-new-windows-version-new-computer-bare-metal.md)  
 
--   [Zastąp istniejący komputer i przenieść ustawień](replace-an-existing-computer-and-transfer-settings.md)  
+-   [Zastępowanie istniejącego komputera i transferowanie ustawień](replace-an-existing-computer-and-transfer-settings.md)  
 
  Wykonaj kroki jednego ze scenariuszy wdrażania systemu operacyjnego, a następnie użyj poniższych sekcji w celu przygotowania i utworzenia wstępnie przygotowanego nośnika.  
 
@@ -57,4 +54,3 @@ Ta metoda wdrażania może zmniejszyć ilość ruchu w sieci, ponieważ obraz ro
 
 ## <a name="start-the-computer-to-install-the-operating-system"></a>Uruchamianie komputera w celu zainstalowania systemu operacyjnego  
  Plik wstępnie przygotowanego nośnika jest stosowany do komputerów. Gdy komputer jest uruchamiany po raz pierwszy, rozpoczyna się proces instalacji systemu operacyjnego.  
-

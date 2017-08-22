@@ -1,53 +1,50 @@
 ---
-title: "Monitoruj klientów — Configuration Manager | Dokumentacja firmy Microsoft"
-description: "Uzyskać szczegółowe wskazówki dotyczące monitorowania klientów w programie System Center Configuration Manager."
+title: "Monitorowanie klientów — Configuration Manager | Dokumentacja firmy Microsoft"
+description: "Uzyskać szczegółowe wskazówki dotyczące sposobu monitorować klientów w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2c8f57cf-1968-48de-87fb-4897432ed6e0
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
 ms.openlocfilehash: 08a4d9b29871b49e3118aef949572cef64940f96
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="how-to-monitor-clients-in-system-center-configuration-manager"></a>Jak monitorować klientów w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
- Po zainstalowaniu aplikacji klienta programu System Center Configuration Manager na komputerach z systemem Windows i urządzeń w danej lokacji można monitorować ich kondycji i aktywności w konsoli programu Configuration Manager.  
+ Po zainstalowaniu aplikacji klienckiej programu System Center Configuration Manager na komputerach z systemem Windows i urządzeń w swojej witrynie, można monitorować ich kondycję i działanie w konsoli programu Configuration Manager.  
 
 ##  <a name="bkmk_about"></a> Informacje o stanie klienta  
- Menedżer konfiguracji zawiera następujące typy informacji, jak stan klienta:  
+ Configuration Manager udostępnia następujące rodzaje informacji o stanie klienta:  
 
--   **Stan online klienta** — począwszy od wersji 1602 programu Configuration Manager, ten stan wskazuje, czy komputer jest online. Komputer jest traktowany jako będący w trybie online, jeśli jest połączony z przypisanym do niego punktem zarządzania.  Aby wskazać, że klient jest w trybie online, wysyła komunikaty ping podobny do punktu zarządzania. Jeśli punkt zarządzania nie odbierze komunikatu w ciągu mniej więcej 5 minut, klient jest traktowany jako będący w trybie offline.  
+-   **Stan online klienta** — począwszy od wersji 1602 programu Configuration Manager, ten stan wskazuje, czy komputer jest włączony. Komputer jest traktowany jako będący w trybie online, jeśli jest połączony z przypisanym do niego punktem zarządzania.  Aby wskazać, że klient jest w trybie online, wysyła komunikaty typu ping do punktu zarządzania. Jeśli punkt zarządzania nie odbierze komunikatu w ciągu mniej więcej 5 minut, klient jest traktowany jako będący w trybie offline.  
 
--   **Aktywność klienta** -ten stan wskazuje, czy klient został aktywnie interesujących z programu Configuration Manager w ciągu ostatnich 7 dni. Jeśli klient nie zażądał aktualizacji zasad, nie wysłał komunikatu z sygnałem pulsu ani nie wysłał informacji spisu sprzętu w ciągu 7 dni, jest traktowany jako nieaktywny.  
+-   **Aktywność klienta** — ten stan wskazuje, czy klient aktywnie korzystał z programu Configuration Manager w ciągu ostatnich 7 dni. Jeśli klient nie zażądał aktualizacji zasad, nie wysłał komunikatu z sygnałem pulsu ani nie wysłał informacji spisu sprzętu w ciągu 7 dni, jest traktowany jako nieaktywny.  
 
--   **Sprawdzanie klienta** -ten stan wskazuje wynik oceny okresowe uruchomioną na komputerze klienta programu Configuration Manager.  Proces oceny sprawdza komputer i może rozwiązać niektóre znalezione problemy. Aby uzyskać więcej informacji, zobacz [Sprawdzenia i korygowania wykonywane przez funkcję sprawdzenia klienta](#BKMK_ClientHealth).  
+-   **Sprawdzanie klienta** — ten stan pokazuje Powodzenie okresowej oceny uruchomioną na komputerze klienta programu Configuration Manager.  Proces oceny sprawdza komputer i może rozwiązać niektóre znalezione problemy. Aby uzyskać więcej informacji, zobacz [Sprawdzenia i korygowania wykonywane przez funkcję sprawdzenia klienta](#BKMK_ClientHealth).  
 
      Na komputerach z systemem Windows 7 sprawdzanie stanu klienta jest uruchamiane jako zaplanowane zadanie. W przypadku nowszych systemów operacyjnych sprawdzanie stanu klienta jest uruchamiane automatycznie podczas okna obsługi systemu Windows.  
 
-     Korygowanie można skonfigurować w taki sposób, aby nie było uruchamiane na określonych komputerach, na przykład na serwerze krytycznym dla działania firmy. Ponadto jeśli istnieją dodatkowe elementy, które użytkownik chce ocenić, aby uzyskać wszechstronne rozwiązanie służące do monitorowania ogólnej kondycji, aktywności i zgodności komputerów w organizacji można użyć ustawień zgodności programu Configuration Manager. Aby uzyskać więcej informacji dotyczących ustawień zgodności, zobacz [Planowanie i konfigurowania ustawień zgodności w programie System Center Configuration Manager](../../../compliance/plan-design/plan-for-and-configure-compliance-settings.md).  
+     Korygowanie można skonfigurować w taki sposób, aby nie było uruchamiane na określonych komputerach, na przykład na serwerze krytycznym dla działania firmy. Ponadto istnieją dodatkowe elementy, które użytkownik chce ocenić, można użyć ustawień zgodności programu Configuration Manager, aby uzyskać wszechstronne rozwiązanie do monitorowania ogólnej kondycji, aktywności i zgodności komputerów w organizacji. Aby uzyskać więcej informacji dotyczących ustawień zgodności, zobacz [Planowanie i konfigurowania ustawień zgodności w programie System Center Configuration Manager](../../../compliance/plan-design/plan-for-and-configure-compliance-settings.md).  
 
 ##  <a name="bkmk_indStatus"></a> Monitorowanie stanu poszczególnych klientów  
 
-1.  W konsoli programu Configuration Manager kliknij **zasoby i zgodność** > **urządzeń** lub wybierz kolekcję w węźle **kolekcji urządzeń**.  
+1.  W konsoli programu Configuration Manager kliknij **zasoby i zgodność** > **urządzeń** lub wybierz kolekcję w węźle **kolekcje urządzeń**.  
 
-     Począwszy od wersji 1602 programu Configuration Manager, na początku każdego wiersza wskazują stan online urządzenia:  
+     Począwszy od wersji 1602 programu Configuration Manager, ikony na początku każdego wiersza wskazują stan online urządzenia:  
 
     |||  
     |-|-|  
@@ -56,9 +53,9 @@ ms.lasthandoff: 05/17/2017
     |![ikona nieznanego stanu dla klientów](../../../core/clients/manage/media/unknown-status-icon.png)|Stan online jest nieznany.|  
     |![nie zainstalowano klienta](../../../core/clients/manage/media/client-not-installed.png)|Klient nie jest zainstalowany na urządzeniu.|  
 
-2.  Dla bardziej szczegółowy stan online Dodaj informacje o stanie online klienta do widoku urządzenie prawym przyciskiem myszy nagłówek kolumny, a następnie klikając pola stan online, które chcesz dodać. Możesz dodać następujące kolumny  
+2.  Aby uzyskać bardziej szczegółowy stan online dodać informacje o stanie online klienta do widoku urządzenia, klikając prawym przyciskiem myszy nagłówek kolumny, a następnie klikając pola stanu online, które chcesz dodać. Możesz dodać następujące kolumny  
 
-    -   **Stan online urządzenia** wskazuje, czy klient jest obecnie w trybie online, czy offline. (To te same informacje podane przez ikony).  
+    -   **Stan online urządzenia** wskazuje, czy klient jest obecnie w trybie online, czy offline. (To te same informacje podawane przez ikony).  
 
     -   **Czas ostatniego stanu online** wskazuje, kiedy stan klienta zmienił się na online.  
 
@@ -70,11 +67,11 @@ ms.lasthandoff: 05/17/2017
 
 1.  W konsoli programu Configuration Manager kliknij **monitorowanie** > **stanu klienta**. Na tej stronie konsoli możesz przejrzeć ogólne statystyki aktywności klienta i sprawdzeń klienta w lokacji.  Możesz również zmienić zakres informacji, wybierając inną kolekcję.  
 
-2.  Aby przejść do szczegółów na temat statystyki zgłoszone, kliknij nazwę informacje w raporcie (takie jak **aktywnych klientów, które pomyślnie ukończyły sprawdzanie klienta lub nie zwróciło żadnych wyników**) i przejrzyj informacje o poszczególnych klientów.  
+2.  Aby przejść do szczegółów dotyczących zgłoszonych statystyk, kliknij nazwę zgłoszonych informacji (takich jak **aktywnych klientów, które pomyślnie ukończyły sprawdzanie klienta lub nie zwróciło żadnych wyników**) i przejrzyj informacje o poszczególnych klientach.  
 
-3.  Kliknij przycisk **aktywność klienta** aby zobaczyć wykresy przedstawiający aktywność klienta w lokacji programu Configuration Manager.  
+3.  Kliknij przycisk **aktywność klienta** aby zobaczyć wykresy przedstawiające aktywność klienta w lokacji programu Configuration Manager.  
 
-4.  Kliknij przycisk **sprawdzanie klienta** aby zobaczyć wykresy przedstawiające stan klienta sprawdza, czy w lokacji programu Configuration Manager.  
+4.  Kliknij przycisk **sprawdzanie klienta** aby zobaczyć wykresy przedstawiające stan klienta sprawdza się w tej lokacji programu Configuration Manager.  
 
  Użytkownik może skonfigurować alerty, które będą powiadamiać o sprawdzaniu wyników przez klientów, jeśli aktywność klienta spadnie poniżej określonego odsetka klientów w kolekcji lub korygowanie nie powiedzie się na określonym odsetku klientów. Aby uzyskać informacje na temat konfigurowania stanu klienta, zobacz [Jak skonfigurować stan klienta w programie System Center Configuration Manager](../../../core/clients/deploy/configure-client-status.md).  
 
@@ -87,7 +84,7 @@ ms.lasthandoff: 05/17/2017
 |Sprawdź, czy wymagania wstępne klienta zostały zainstalowane|Zainstaluj wymagania wstępne klienta|Sprawdź, czy wymagania wstępne klienta zostały zainstalowane. Aby zapoznać się w wymaganiami wstępnymi, odczytaj zawartość pliku ccmsetup.xml w folderze instalacyjnym klienta.|  
 |Test integralności repozytorium WMI|Zainstaluj ponownie klienta programu Configuration Manager|Sprawdza, czy pozycje klienta programu Configuration Manager znajdują się w usłudze WMI.|  
 |Sprawdź, czy usługa klienta jest uruchomiona.|Uruchom usługę klienta (hosta agenta programu SMS).|Brak dodatkowych informacji|  
-|Test obiektów sink zdarzenia WMI.|Uruchom ponownie usługę klienta|Sprawdź, czy obiekt sink zdarzenia WMI jest utracone związane z programu Configuration Manager|  
+|Test obiektów sink zdarzenia WMI.|Uruchom ponownie usługę klienta|Sprawdź, czy związane z programu Configuration Manager, czy obiekt sink zdarzenia WMI zostało utracone|  
 |Sprawdź, czy istnieje usługa instrumentacji zarządzania Windows (WMI)|Brak korygowania|Brak dodatkowych informacji|  
 |Sprawdź, czy usługa klienta jest poprawnie zainstalowana.|Zainstaluj ponownie klienta|Brak dodatkowych informacji|  
 |Test odczytu i zapisu repozytorium WMI|Wyzeruj repozytorium WMI i zainstaluj ponownie klienta programu Configuration Manager|Skorygowanie kontroli klienta jest realizowane wyłącznie na komputerach z systemami Windows Server 2003, Windows XP (64-bitowym) i starszych.|  
@@ -109,9 +106,8 @@ ms.lasthandoff: 05/17/2017
 |Sprawdź, czy usługa zdalnego sterowania programem Configuration Manager jest uruchamiana automatycznie, czy ręcznie|Resetuj typ uruchamiania usługi do automatycznego|Brak dodatkowych informacji|  
 |Sprawdź, czy usługa zdalnego sterowania programem Configuration Manager jest uruchomiona|Uruchom usługę zdalnego sterowania|Brak dodatkowych informacji|  
 |Sprawdź, czy dostawca WMI klienta jest w dobrej kondycji|Zrestartuj usługę instrumentacji zarządzania Windows|Skorygowanie kontroli klienta jest realizowane wyłącznie na komputerach z systemami Windows Server 2003, Windows XP (64-bitowym) i starszych.|  
-|Sprawdź, czy usługa serwera proxy wzbudzania (serwer proxy programu Configuration Manager) jest uruchomiona|Uruchom usługę serwera proxy programu Configuration Manager|To sprawdzenie odbywa się tylko wtedy, gdy **zarządzania energią**: **Włącz serwer proxy wznawiania** ustawienia klienta jest ustawiona na **tak** w obsługiwanych systemach operacyjnych klienta.|  
-|Sprawdź, czy usługa serwera proxy wzbudzania (serwer proxy programu Configuration Manager) jest uruchomiana automatycznie|Resetuj typ uruchamiania usługi serwera proxy programu Configuration Manager do automatycznego|To sprawdzenie odbywa się tylko wtedy, gdy **zarządzania energią**: **Włącz serwer proxy wznawiania** ustawienia klienta jest ustawiona na **tak** w obsługiwanych systemach operacyjnych klienta.|  
+|Sprawdź, czy usługa serwera proxy wzbudzania (serwer proxy programu Configuration Manager) jest uruchomiona|Uruchom usługę serwera proxy programu Configuration Manager|To sprawdzenie klienta jest wykonywane tylko wtedy, gdy **zarządzania energią**: **Włącz serwer proxy wznawiania** ma ustawioną wartość ustawienia klienta **tak** w obsługiwanych systemach operacyjnych klienta.|  
+|Sprawdź, czy usługa serwera proxy wzbudzania (serwer proxy programu Configuration Manager) jest uruchomiana automatycznie|Resetuj typ uruchamiania usługi serwera proxy programu Configuration Manager do automatycznego|To sprawdzenie klienta jest wykonywane tylko wtedy, gdy **zarządzania energią**: **Włącz serwer proxy wznawiania** ma ustawioną wartość ustawienia klienta **tak** w obsługiwanych systemach operacyjnych klienta.|  
 
 ## <a name="client-deployment-log-files"></a>Pliki dziennika wdrożenia klienta
 Aby uzyskać informacje o plikach dziennika używanych przez wdrożenie klienta i operacji zarządzania, zobacz [pliki dziennika w programie System Center Configuration Manager](/sccm/core/plan-design/hierarchy/log-files#BKMK_ClientLogs).
-

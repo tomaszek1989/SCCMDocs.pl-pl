@@ -1,7 +1,6 @@
 ---
-
 title: "Bezpieczeństwo i prywatność aktualizacji oprogramowania | Dokumentacja firmy Microsoft"
-description: "Wykonaj te najlepsze rozwiązania w zakresie zabezpieczeń dotyczące aktualizacji oprogramowania i Dowiedz się więcej na temat zasad zachowania poufności informacji obsługi programu Configuration Manager."
+description: "Wykonaj następujące najlepsze rozwiązania w zakresie zabezpieczeń dotyczące aktualizacji oprogramowania i Dowiedz się więcej na temat obsługi informacje o ochronie prywatności w programie Configuration Manager."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -10,23 +9,19 @@ ms.date: 10/06/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: 41d6d5d8-ba84-4efb-b105-4d1eed239824
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
 ms.openlocfilehash: 4b4f045138abc14b6e93b3b990c5f3a8b4f2f952
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="security-and-privacy-for-software-updates-in-system-center-configuration-manager"></a>Bezpieczeństwo i prywatność aktualizacji oprogramowania w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Ten temat zawiera informacje o ochronie prywatności dotyczące aktualizacji oprogramowania System Center Configuration Manager i zabezpieczeń.  
+Ten temat zawiera bezpieczeństwa i informacje o ochronie prywatności dotyczące aktualizacji oprogramowania w programie System Center Configuration Manager.  
 
 ##  <a name="BKMK_Security_HardwareInventory"></a> Najlepsze rozwiązania w zakresie bezpieczeństwa dotyczące aktualizacji oprogramowania  
  Podczas wdrażania aktualizacji oprogramowania na klientach należy stosować następujące najlepsze rozwiązania w zakresie zabezpieczeń:  
@@ -47,7 +42,7 @@ Ten temat zawiera informacje o ochronie prywatności dotyczące aktualizacji opr
 
 -   Włącz protokół SSL w programie WSUS i przestrzegaj najlepszych rozwiązań z zakresu zabezpieczania programu Windows Server Update Services (WSUS).  
 
-     Określ i stosuj najlepsze rozwiązania dotyczące wersji programu WSUS używanej z menedżerem konfiguracji zabezpieczeń.  
+     Określ i stosuj najlepsze rozwiązania dla wersji programu WSUS używanej z programem Configuration Manager.  
 
     > [!IMPORTANT]  
     >  Jeśli punkt aktualizacji oprogramowania jest skonfigurowany do komunikacji SSL z serwerem programu WSUS, na serwerze programu WSUS należy skonfigurować wirtualne katalogi główne do obsługi protokołu SSL.  
@@ -56,22 +51,21 @@ Ten temat zawiera informacje o ochronie prywatności dotyczące aktualizacji opr
 
      Domyślnie program Configuration Manager nie sprawdza listy odwołania certyfikatów (CRL) w celu weryfikacji sygnatury aktualizacji oprogramowania przed ich wdrożeniem na komputerach. Sprawdzanie listy CRL przy każdorazowym użyciu certyfikatu zapewnia lepszą ochronę przed potencjalnym użyciem odwołanego certyfikatu, jednak wprowadza opóźnienie komunikacji i konieczność dodatkowego przetwarzania danych na komputerze wykonującym weryfikację listy.  
 
-     Aby uzyskać więcej informacji o sposobie włączania listy CRL sprawdzania dostępności aktualizacji oprogramowania, zobacz [jak włączyć sprawdzanie listy CRL dla aktualizacji oprogramowania System Center Configuration Manager](../get-started/manage-settings-for-software-updates.md#crl-checking-for-software-updates).  
+     Aby uzyskać więcej informacji o sposobie włączania listy CRL sprawdzania dostępności aktualizacji oprogramowania, zobacz [jak włączać sprawdzanie listy CRL na potrzeby aktualizacji oprogramowania w programie System Center Configuration Manager](../get-started/manage-settings-for-software-updates.md#crl-checking-for-software-updates).  
 
 -   Skonfiguruj program WSUS do używania niestandardowej witryny sieci web.  
 
      Podczas instalowania programu WSUS na punkcie aktualizacji oprogramowania jest dostępna opcja użycia istniejącej domyślnej witryny sieci Web usług IIS lub utworzenia niestandardowej witryny sieci web programu WSUS. Utwórz niestandardową witrynę sieci Web programu WSUS, tak aby usługi IIS obsługiwały usługi programu WSUS w dedykowanej wirtualnej witrynie sieci i nie udostępniały tej samej witryny sieci web, który jest używany przez inne systemy lokacji programu Configuration Manager lub inne aplikacje.  
 
-     Aby uzyskać więcej informacji, zobacz [konfigurowania programu WSUS do używania niestandardowej witryny sieci web](plan-for-software-updates.md#BKMK_CustomWebSite).  
+     Aby uzyskać więcej informacji, zobacz [skonfigurować program WSUS do używania niestandardowej witryny sieci web](plan-for-software-updates.md#BKMK_CustomWebSite).  
 
 ##  <a name="BKMK_Privacy_HardwareInventory"></a>Informacje o ochronie prywatności dotyczące aktualizacji oprogramowania  
  Aktualizacje oprogramowania skanują komputery klienckie, aby określić, które aktualizacje są wymagane, a następnie wysyłają odpowiednią informację z powrotem do bazy danych lokacji. Podczas procesu aktualizacji oprogramowania programu Configuration Manager może przesyłać informacje między klientami a serwerami, które identyfikują komputer i konta logowania.  
 
  Configuration Manager przechowuje informacje o stanie dotyczące procesu wdrażania oprogramowania. Informacje o stanie nie są szyfrowane podczas przesyłania ani przechowywania. Informacje o stanie są przechowywane w bazie danych programu Configuration Manager i ich usunięcia przez zadania konserwacji bazy danych. Żadne informacje o stanie nie są wysyłane do firmy Microsoft.  
 
- Stosowanie aktualizacji oprogramowania programu Configuration Manager do zainstalowania aktualizacji oprogramowania na komputerach klienckich może podlegać postanowienia licencyjne dotyczące oprogramowania tych aktualizacji, które są oddzielne od postanowień licencyjnych oprogramowania System Center Configuration Manager. Zawsze należy przeczytać i zaakceptować postanowienia licencyjne dotyczące oprogramowania, przed zainstalowaniem aktualizacji oprogramowania za pomocą programu Configuration Manager.  
+ Stosowanie aktualizacji oprogramowania programu Configuration Manager do zainstalowania aktualizacji oprogramowania na komputerach klienckich mogą być narażone na postanowienia licencyjne dotyczące oprogramowania dla tych aktualizacji, które są oddzielne od postanowień licencyjnych oprogramowania System Center Configuration Manager. Zawsze przejrzeć i zaakceptować postanowienia licencyjne dotyczące oprogramowania, przed zainstalowaniem aktualizacji oprogramowania za pomocą programu Configuration Manager.  
 
  Menedżer konfiguracji nie implementuje aktualizacji oprogramowania domyślnie i przed zbieranych informacji wymaga podjęcia kilku czynności konfiguracyjnych.  
 
  Przed skonfigurowaniem aktualizacji oprogramowania należy wziąć pod uwagę wymogi związane z ochroną prywatności.  
-

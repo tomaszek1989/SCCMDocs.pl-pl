@@ -6,23 +6,20 @@ ms.date: 6/5/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f7832d83-9ae2-4530-8a77-790e0845e12f
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: f7cd9c71287d62c9f5d36e2f032bc2a6065572ae
 ms.openlocfilehash: 7deb00d4b67eabf3238907b337a9d0367c3d99cc
-ms.contentlocale: pl-pl
-ms.lasthandoff: 06/06/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-
 # <a name="back-up-a-configuration-manager-site"></a>Tworzenie kopii zapasowej lokacji programu Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
@@ -208,4 +205,3 @@ Usługa VSS stanowi zestaw interfejsów API modelu COM z zaimplementowaną struk
 
 ## <a name="next-steps"></a>Następne kroki
 Po utworzeniu kopii zapasowej ćwiczenie [lokacji odzyskiwania](/sccm/protect/understand/recover-sites) z kopii zapasowej. Może to być przydatne zapoznanie się z procesu odzyskiwania, zanim zajdzie konieczność na niej się opierać i można potwierdzić przeznaczeniem kopii zapasowej zakończyła się pomyślnie.  
-

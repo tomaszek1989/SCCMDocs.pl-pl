@@ -5,4 +5,4 @@ Aby uzyskać więcej informacji, zobacz sekcję [Kodeks postępowania — częst
 
 # <a name="docsmicrosoftcom-github-repository"></a>Repozytorium docs.microsoft.com Github
 
-Znalezieniu repozytoriami GitHub, które zawiera wszystkie źródła do zawartości opublikowanego do [https://docs.microsoft.com](https://docs.microsoft.com/.), strony głównej zawartości wszystkich techniczne dla chmury i dzielenia przedsiębiorstwa firmy Microsoft.
+Znalezieniu repozytoriów GitHub, które zawiera wszystkie źródła do zawartości opublikowanego do [https://docs.microsoft.com](https://docs.microsoft.com/.), macierzystego całej zawartości technicznej dla chmury i dzielenia przedsiębiorstwa firmy Microsoft.

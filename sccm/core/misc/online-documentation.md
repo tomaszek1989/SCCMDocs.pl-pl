@@ -1,5 +1,5 @@
 ---
-title: "Dokumentację w trybie online | Dokumentacja firmy Microsoft"
+title: Dokumentacja online | Dokumentacja firmy Microsoft
 ms.custom: na
 ms.date: 10/06/2016
 ms.reviewer: na
@@ -8,29 +8,26 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.assetid: 6d665cef-fc67-4686-bcb3-0572c0a3760c
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
 ms.openlocfilehash: 73bb5d4236469746102fd4893c53f20aaee122d5
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="online-documentation-for-system-center-configuration-manager"></a>Dokumentację w trybie online dla programu System Center Configuration Manager
+# <a name="online-documentation-for-system-center-configuration-manager"></a>Dokumentację online dla programu System Center Configuration Manager
 
 
 Witamy w bibliotece dokumentacji programu System Center Configuration Manager.  
 Znajdź bibliotekę dokumentacji dla używanej wersji produktu:  
 
 ## <a name="system-center-configuration-manager-current-branch"></a>System Center Configuration Manager (Current Branch)  
-**Dokumentacją online:** Z dokumentacją online bieżącej gałęzi programu System Center Configuration Manager można wyświetlić w witrynie TechNet:  
+**Dokumentacja online:** Można wyświetlić dokumentację online dla bieżącej gałęzi programu System Center Configuration Manager w witrynie TechNet:  
 
 -   [Wprowadzenie do programu System Center Configuration Manager](https://technet.microsoft.com/library/mt622715.aspx)  
 
@@ -52,30 +49,30 @@ Znajdź bibliotekę dokumentacji dla używanej wersji produktu:
 
 -   [Bezpieczeństwo i ochrona prywatności w programie System Center Configuration Manager](https://technet.microsoft.com/library/mt622694.aspx)  
 
-**Informacje o wersji:** Informacje o wersji zawierają informacje, które nie są dostępne w dokumentacji produktu i może być wymagane do pomyślnej instalacji i korzystania z programu System Center Configuration Manager. Zobacz [informacje o wersji programu System Center Configuration Manager](https://technet.microsoft.com/library/mt592024.aspx)  
+**Informacje o wersji:** Informacje o wersji obejmują informacje, które nie jest dostępny w dokumentacji produktu i mogą być wymagane do pomyślnego zainstalowania i używania programu System Center Configuration Manager. Zobacz [informacje o wersji programu System Center Configuration Manager](https://technet.microsoft.com/library/mt592024.aspx)  
 
-**Znajdowanie pomocy:** Zobacz [znaleźć pomocy dla za pomocą programu System Center Configuration Manager](https://technet.microsoft.com/library/mt628521.aspx):  
+**Znajdź pomocy:** Zobacz [znaleźć pomocy dla programu System Center Configuration Manager](https://technet.microsoft.com/library/mt628521.aspx):  
 
-**Ułatwienia dostępu:** Zobacz [ułatwienia dostępu dla konsoli programu Configuration Manager](https://technet.microsoft.com/library/mt628521.aspx)  
+**Ułatwienia dostępu:** Zobacz [funkcje ułatwień dostępu dla konsoli programu Configuration Manager](https://technet.microsoft.com/library/mt628521.aspx)  
 
 
 ## <a name="system-center-configuration-manager-technical-preview"></a>System Center Configuration Manager Technical Preview  
-**Dokumentacją online:** Dokumentacją online można przeglądać w następujących przewodników w witrynie TechNet:  
+**Dokumentacja online:** Dokumentację online można przeglądać w następujących Przewodnikach w witrynie TechNet:  
 
  [System Center Configuration Manager Technical Preview](https://go.microsoft.com/fwlink/p/?LinkId=534001)  
 
-**Informacje o wersji:** Informacje o wersji dla tego technical preview są dołączone do tej wersji można znaleźć w dokumentacji core i prezentowany w tekście informacji dla każdej funkcji.  
+**Informacje o wersji:** Informacje o wersji dla tej wersji technical preview są dołączone do podstawowej dokumentacji tej wersji i są prezentowane wraz z informacjami dla każdej funkcji.  
 
-**Ułatwienia dostępu:** Informacje o dostępności dla tego technical preview jest identyczne z System Center 2012 Configuration Manager. Zapoznaj się z tematem [Funkcje ułatwień dostępu w programie Configuration Manager](http://go.microsoft.com/fwlink/p/?LinkId=258586), w którym można znaleźć informacje o funkcjach, produktach i usługach powodujących, że program Configuration Manager jest bardziej dostępny dla osób niepełnosprawnych.  
+**Ułatwienia dostępu:** Informacje o ułatwień dostępu dla tej wersji technical preview są takie same jak w programie System Center 2012 Configuration Manager. Zapoznaj się z tematem [Funkcje ułatwień dostępu w programie Configuration Manager](http://go.microsoft.com/fwlink/p/?LinkId=258586), w którym można znaleźć informacje o funkcjach, produktach i usługach powodujących, że program Configuration Manager jest bardziej dostępny dla osób niepełnosprawnych.  
 
 ## <a name="system-center-2012-configuration-manager"></a>System Center 2012 Configuration Manager  
-**Dokumentacją online:** następujących:  
+**Dokumentacja online:** dla następujących:  
 
--   System Center 2012 Configuration Manager bez dodatku service pack, z dodatkiem SP1 i SP2  
+-   System Center 2012 Configuration Manager bez dodatku service pack, SP1 i SP2  
 
--   System Center 2012 R2 Configuration Manager bez dodatku service pack i z dodatkiem SP1  
+-   System Center 2012 R2 Configuration Manager bez dodatku service pack i SP1  
 
-dokumentacją online można przeglądać w następujących przewodników w witrynie TechNet:  
+dokumentację online można przeglądać w następujących Przewodnikach w witrynie TechNet:  
 
 -   [Wprowadzenie do programu System Center 2012 Configuration Manager](https://go.microsoft.com/fwlink/p/?LinkId=210632)  
 
@@ -101,7 +98,6 @@ dokumentacją online można przeglądać w następujących przewodników w witry
 
 -   [Publikacje techniczne dla programu System Center 2012 Configuration Manager](http://go.microsoft.com/fwlink/p/?LinkId=261032)  
 
-**Ułatwienia dostępu:** Można znaleźć w temacie online [funkcje ułatwień dostępu programu Configuration Manager](http://go.microsoft.com/fwlink/p/?LinkId=258586), aby uzyskać informacje dotyczące funkcji, produktów i usług, które ułatwiają dostęp do programu Configuration Manager dla osób niepełnosprawnych.  
+**Ułatwienia dostępu:** Zapoznaj się z tematem online [funkcje ułatwień dostępu programu Configuration Manager](http://go.microsoft.com/fwlink/p/?LinkId=258586), aby uzyskać informacje dotyczące funkcji, produktów i usług, które ułatwiają dostęp do programu Configuration Manager dla osób niepełnosprawnych.  
 
 **Dokumentacja do pobrania:** Możesz pobrać [kopię tej dokumentacji technicznej z Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=253643). W bibliotece online TechNet można znaleźć najbardziej aktualne informacje.
-

@@ -1,39 +1,36 @@
 ---
-title: "Dostosowywanie obrazów systemu operacyjnego — Configuration Manager | Dokumentacja firmy Microsoft"
-description: "Użyj sekwencji zadań przechwytywania i kompilacji, konfiguracja ręczna lub obu tych dostosowywania obrazu systemu operacyjnego."
+title: "Dostosowanie obrazów systemu operacyjnego — programu Configuration Manager | Dokumentacja firmy Microsoft"
+description: "Aby dostosować obraz systemu operacyjnego, należy użyć sekwencji zadań do przechwytywania i kompilacji, konfiguracja ręczna lub obie te grupy."
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 95033a9b-ff13-4b70-b1de-bcb25bcb6024
-caps.latest.revision: 12
-caps.handback.revision: 0
+caps.latest.revision: "12"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
 ms.openlocfilehash: 485cb3ca4988f983c1ec71b6c8daf136571bf0ea
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="customize-operating-system-images-with-system-center-configuration-manager"></a>Dostosowanie obrazów systemu operacyjnego w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Obrazy systemu operacyjnego w programie System Center Configuration Manager to pliki WIM, stanowiące skompresowaną kolekcję plików i folderów, które są wymagane do pomyślnej instalacji i konfiguracji systemu operacyjnego na komputerze odniesienia. Niestandardowy obraz systemu operacyjnego jest tworzony na komputerze odniesienia skonfigurowanym przy użyciu wszystkich wymaganych plików systemu operacyjnego, plików obsługi, aktualizacji oprogramowania, narzędzi i innych aplikacji. Następnie jest z niego przechwytywany. Zakres ręcznego konfigurowania komputera odniesienia zależy od użytkownika. Konfigurację komputera odniesienia można całkowicie zautomatyzować, korzystając z sekwencji zadań tworzenia i przechwytywania. Można ręcznie skonfigurować określone aspekty komputera odniesienia, a następnie skonfigurować pozostałe, korzystając z sekwencji zadań. Inna możliwość to ręczne skonfigurowanie komputera odniesienia bez użycia sekwencji zadań. Poniższe sekcje służą do dostosowania systemu operacyjnego.
+Obrazy systemu operacyjnego w programie System Center Configuration Manager to pliki WIM, stanowiące skompresowaną kolekcję plików i folderów, które są wymagane do pomyślnej instalacji i konfiguracji systemu operacyjnego na komputerze odniesienia. Niestandardowy obraz systemu operacyjnego jest tworzony na komputerze odniesienia skonfigurowanym przy użyciu wszystkich wymaganych plików systemu operacyjnego, plików obsługi, aktualizacji oprogramowania, narzędzi i innych aplikacji. Następnie jest z niego przechwytywany. Zakres ręcznego konfigurowania komputera odniesienia zależy od użytkownika. Konfigurację komputera odniesienia można całkowicie zautomatyzować, korzystając z sekwencji zadań tworzenia i przechwytywania. Można ręcznie skonfigurować określone aspekty komputera odniesienia, a następnie skonfigurować pozostałe, korzystając z sekwencji zadań. Inna możliwość to ręczne skonfigurowanie komputera odniesienia bez użycia sekwencji zadań. Poniższe sekcje umożliwiają dostosowanie systemu operacyjnego.
 
-##  <a name="BKMK_PrepareReferenceComputer"></a>Przygotowanie do komputera odniesienia  
+##  <a name="BKMK_PrepareReferenceComputer"></a>Przygotuj się do komputera odniesienia  
  Przed przechwyceniem obrazu systemu operacyjnego z komputera odniesienia należy uwzględnić kilka kwestii.  
 
-###  <a name="BKMK_RefComputerDecide"></a>Wybieranie automatycznych lub ręcznych konfiguracji  
+###  <a name="BKMK_RefComputerDecide"></a>Wybieranie konfiguracji automatycznej lub ręcznej  
  Poniżej przedstawiono zalety i wady zautomatyzowanej oraz ręcznej konfiguracji komputera odniesienia.  
 
 #### <a name="automated-configuration"></a>Konfiguracja zautomatyzowana  
@@ -56,7 +53,7 @@ Obrazy systemu operacyjnego w programie System Center Configuration Manager to p
 
 -   Nie jest konieczne tworzenie sekwencji zadań ani jej testowanie i rozwiązywanie problemów.  
 
--   Można zainstalować bezpośrednio z dysków CD bez umieszczania wszystkich pakietów oprogramowania (w tym systemu Windows), w pakiecie programu Configuration Manager.  
+-   Możesz zainstalować bezpośrednio z dysków CD bez umieszczania wszystkich pakietów oprogramowania (w tym systemu Windows), w pakiecie programu Configuration Manager.  
 
  **Wady**  
 
@@ -73,7 +70,7 @@ Obrazy systemu operacyjnego w programie System Center Configuration Manager to p
 
 -   **Wdrażany system operacyjny**  
 
-     Na komputerze odniesienia musi być zainstalowany system operacyjny, który ma zostać wdrożony na komputerach docelowych. Aby uzyskać więcej informacji o systemach operacyjnych, które można wdrożyć, zobacz [wymagania dotyczące wdrażania systemu operacyjnego infrastruktury](../plan-design/infrastructure-requirements-for-operating-system-deployment.md).  
+     Na komputerze odniesienia musi być zainstalowany system operacyjny, który ma zostać wdrożony na komputerach docelowych. Aby uzyskać więcej informacji o systemach operacyjnych, które można wdrożyć, zobacz [wymagania dotyczące infrastruktury dla wdrożenia systemu operacyjnego](../plan-design/infrastructure-requirements-for-operating-system-deployment.md).  
 
 -   **Odpowiedni dodatek service pack**  
 
@@ -108,15 +105,15 @@ Obrazy systemu operacyjnego w programie System Center Configuration Manager to p
 
      Odpowiednie narzędzia i skrypty wymagane do skorygowania scenariuszy instalacji  
 
--   **Odpowiednie dostosowanie pulpitu, takie jak ustawienie tapety, nazwy firmy i domyślnego profilu użytkownika**  
+-   **Odpowiednie dostosowanie pulpitu, takie jak tapetę, znakowanie i domyślnego profilu użytkownika**  
 
      Na komputerze odniesienia można skonfigurować właściwości pulpitu, które mają zostać uwzględnione przy przechwytywaniu obrazu systemu operacyjnego z komputera odniesienia. Właściwości pulpitu obejmują tapetę, znakowanie organizacji i standardowy domyślny profil użytkownika.  
 
-##  <a name="BKMK_ManuallyBuildReference"></a>Ręcznie utworzyć komputer referencyjny  
+##  <a name="BKMK_ManuallyBuildReference"></a>Ręcznie utworzyć komputer odniesienia  
  Użyj następującej procedury, aby ręcznie utworzyć komputer odniesienia.  
 
 > [!NOTE]  
->  Jeśli komputer odniesienia jest tworzony ręcznie, możesz przechwycić obraz systemu operacyjnego przy użyciu nośnika przechwytywania. Aby uzyskać więcej informacji, zobacz [tworzenia nośnika przechwytywania](../deploy-use/create-capture-media.md).  
+>  Jeśli komputer odniesienia jest tworzony ręcznie, możesz przechwycić obraz systemu operacyjnego przy użyciu nośnika przechwytywania. Aby uzyskać więcej informacji, zobacz [Tworzenie nośnika przechwytywania](../deploy-use/create-capture-media.md).  
 
 #### <a name="to-manually-build-the-reference-computer"></a>Aby ręcznie utworzyć komputer odniesienia  
 
@@ -135,8 +132,7 @@ Obrazy systemu operacyjnego w programie System Center Configuration Manager to p
 
  Po przygotowaniu komputera odniesienia należy użyć sekwencji zadań do przechwycenia z niego obrazu systemu operacyjnego.  Szczegółowe kroki przedstawiono w temacie [Przechwytywanie obrazu systemu operacyjnego z istniejącego komputera odniesienia](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md#BKMK_CaptureExistingRefComputer).  
 
-##  <a name="BKMK_UseTSToBuildReference"></a>Komputer referencyjny za pomocą sekwencji zadań  
+##  <a name="BKMK_UseTSToBuildReference"></a>Za pomocą sekwencji zadań do utworzenia komputera odniesienia  
  Proces tworzenia komputera odniesienia można zautomatyzować, używając sekwencji zadań wdrażającej system operacyjny, sterowniki, aplikacje itd.  Użyj kroków poniżej, aby utworzyć komputer odniesienia, a następnie przechwycić obraz systemu operacyjnego z komputera odniesienia.  
 
 -   Użyj sekwencji zadań, aby utworzyć i przechwycić obraz systemu operacyjnego z komputera odniesienia.  Szczegółowe kroki przedstawiono w temacie [Tworzenie i przechwytywanie komputera odniesienia przy użyciu sekwencji zadań](../deploy-use/create-a-task-sequence-to-capture-an-operating-system.md#BKMK_BuildCaptureTS).  
-

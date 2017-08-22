@@ -1,35 +1,32 @@
 ---
 title: "Zarządzanie dostępem do usługi SharePoint Online | Dokumentacja firmy Microsoft"
-description: "Dowiedz się, jak używać zasad dostępu warunkowego programu System Center Configuration Manager SharePoint Online do zarządzania dostępem do usługi OneDrive."
+description: "Dowiedz się, jak korzystać z programu System Center Configuration Manager SharePoint Online zasad dostępu warunkowego do zarządzania dostępem do usługi OneDrive."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 49cec466-1676-4fe2-a2fe-5004f01d735e
-caps.latest.revision: 11
-caps.handback.revision: 0
+caps.latest.revision: "11"
+caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 6424fb07802b62820b4dc78a58ab30d3b956abef
 ms.openlocfilehash: c564c1fc25c5156a2d9ddfa1b4123024c658bf61
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="manage-sharepoint-online-access-in-system-center-configuration-manager"></a>Zarządzanie dostępem do usługi SharePoint Online w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
-Użyj programu System Center Configuration Manager **usługi SharePoint Online** zasady dostępu warunkowego w celu zarządzania dostępem do usługi OneDrive biznesowych plików znajdujących się w programie SharePoint online, na podstawie warunków określisz.
+Użyj programu System Center Configuration Manager **usługi SharePoint Online** na podstawie zasad dostępu warunkowego do zarządzania dostępem do usługi OneDrive dla firm plików znajdujących się w usłudze SharePoint online, przy użyciu określonych warunków.
 Dostęp do programu SharePoint Online można kontrolować z poniższych aplikacji dla wymienionych platform:  
 
 -   Microsoft Office Mobile (Android)  
@@ -44,14 +41,14 @@ Dostęp do programu SharePoint Online można kontrolować z poniższych aplikacj
 
 -   Microsoft OneNote (Android i iOS)
 
-Aplikacji komputerowych pakietu Office można uzyskać dostęp do usługi SharePoint Online na komputerach z systemem:  
+Aplikacje komputerowe pakietu Office można uzyskać dostępu do usługi SharePoint Online na komputerach z systemem:  
 
 -   Pakietem Office 2013 lub nowszym z włączonym [nowoczesnym uwierzytelnianiem](https://support.office.com/en-US/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a) .  
 
 -   Systemem Windows 7.0 lub Windows 8.1  
 
 > [!NOTE]  
->  Komputery powinny zostać przyłączone do domeny lub być zgodnych z zasadami ustawionymi w usłudze Intune.  
+>  Komputery powinny zostać przyłączone do domeny lub być zgodne z zasadami ustawionymi w usłudze Intune.  
 
 
 
@@ -61,13 +58,13 @@ Aplikacji komputerowych pakietu Office można uzyskać dostęp do usługi ShareP
 
  Aby nawiązać połączenie z wymaganymi plikami, urządzenie z uruchomioną usługą OneDrive musi:  
 
--   Być zarejestrowane w usłudze Microsoft Intune lub komputera przyłączonego do domeny.  
+-   Zostać zarejestrowane w usłudze Microsoft Intune lub przyłączony do domeny.  
 
--   Zarejestruj urządzenia w usłudze Azure Active Directory (dzieje się to automatycznie podczas rejestrowania urządzenia z usługą Intune.  
+-   Rejestrowanie urządzenia w usłudze Azure Active Directory (dzieje się automatycznie, gdy urządzenie jest zarejestrowane w usłudze Intune.  
 
      W przypadku komputerów przyłączonych do domeny należy skonfigurować urządzenie do [automatycznego rejestrowania](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/) w usłudze Azure Active Directory.  
 
--   Być zgodne z zasadami zgodności wdrożonego programu Configuration Manager  
+-   Być zgodne z wdrożonymi zasadami zgodności programu Configuration Manager  
 
  Stan urządzenia jest przechowywany w usłudze Azure Active Directory, która na podstawie wybranych warunków blokuje dostęp do plików lub go przydziela.  
 
@@ -108,22 +105,22 @@ Aplikacji komputerowych pakietu Office można uzyskać dostęp do usługi ShareP
 
 ## <a name="configure-conditional-access-for-sharepoint-online"></a>Konfigurowanie dostępu warunkowego dla usługi SharePoint Online  
 
-### <a name="step-1-configure-active-directory-security-groups"></a>Krok 1: Skonfiguruj grupy zabezpieczeń usługi Active Directory  
+### <a name="step-1-configure-active-directory-security-groups"></a>Krok 1. Konfigurowanie grup zabezpieczeń usługi Active Directory  
  Przed rozpoczęciem skonfiguruj grupy zabezpieczeń usługi Azure Active Directory dla zasad dostępu warunkowego. Możesz skonfigurować te grupy w **centrum administracyjnym usługi Office 365** lub w **portalu konta usługi Intune**. Grupy te zawierają użytkowników, którzy będą objęci zasadami lub wykluczeni z nich. Jeśli zasady obejmują użytkownika, każde używane przez niego urządzenie musi być zgodne, aby mógł uzyskać dostęp do zasobów.  
 
  Możesz określić dwa typy grup dla zasad usługi SharePoint Online:  
 
--   **Grupy docelowe** â €"grupy użytkowników, do których mają dotyczyć zasady  
+-   **Grupy docelowe** â €"grupy użytkowników, do których zasady będą stosowane  
 
 -   **Wykluczone grupy** â €"grupy użytkowników, którzy są wykluczeni z zasad (opcjonalnie)  
 
  Jeśli użytkownik należy do obu grup, będzie wykluczony z zasad.  
 
-### <a name="step-2-configure-and-deploy-a-compliance-policy"></a>Krok 2: Konfigurowanie i wdrażanie zasad zgodności  
+### <a name="step-2-configure-and-deploy-a-compliance-policy"></a>Krok 2. Konfigurowanie i wdrażanie zasad zgodności  
  Upewnij się, że utworzono zasady zgodności i wdrożono je na wszystkich urządzeniach, które będą objęte zasadami dostępu usługi SharePoint Online.  
 
 > [!NOTE]  
->  Gdy zasady zgodności są wdrażane dla grup w usłudze Intune lub kolekcji programu Configuration Manager, zasady dostępu warunkowego są przeznaczone do grupy zabezpieczeń usługi Azure Active Directory.  
+>  Jeśli zasady zgodności są wdrażane do grup w usłudze Intune lub kolekcji programu Configuration Manager, zasady dostępu warunkowego są przeznaczone dla grup zabezpieczeń usługi Azure Active Directory.  
 
  Aby uzyskać szczegółowe informacje o tym, jak skonfigurować zasady zgodności, zobacz [Zarządzanie zasadami zgodności urządzeń za pomocą programu System Center Configuration Manager](../../protect/deploy-use/device-compliance-policies.md).  
 
@@ -132,13 +129,13 @@ Aplikacji komputerowych pakietu Office można uzyskać dostęp do usługi ShareP
 
  Gdy wszystko będzie gotowe, przejdź do **kroku 3**.  
 
-###  <a name="BKMK_OneDrive"></a>Krok 3: Skonfiguruj zasady usługi SharePoint Online  
+###  <a name="BKMK_OneDrive"></a>Krok 3. Konfigurowanie zasad usługi SharePoint Online  
 
 
  Skonfiguruj zasady wymagające, aby tylko urządzenia zarządzane i zgodne miały dostęp do usługi SharePoint Online. Te zasady będą przechowywane w usłudze Azure Active Directory.
 
  >[!NOTE]
- >Można też utworzyć zasady dostępu warunkowego w konsoli zarządzania programu Azure AD. Konsola zarządzania usługi Azure AD umożliwia tworzenie urządzenia Intune zasady dostępu warunkowego (nazywany zasad dostępu warunkowego opartych na urządzeniach w usłudze Azure AD) oprócz innych zasad dostępu warunkowego, takich jak uwierzytelnianie wieloskładnikowe. Można także ustawić zasady dostępu warunkowego dla aplikacji Enterprise innych firm, takich jak Salesforce i obsługuje okno tej usługi Azure AD. Aby uzyskać więcej informacji, zobacz [sposobu ustawiania zasad dostępu warunkowego opartych na urządzeniach Azure Active Directory do kontroli dostępu do usługi Azure Active Directory połączone aplikacje](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-policy-connected-applications/).  
+ >Można też utworzyć zasady dostępu warunkowego w konsoli zarządzania usługą Azure AD. Konsola zarządzania w usłudze Azure AD umożliwia tworzenie urządzeń w usłudze Intune zasady dostępu warunkowego (nazywane zasad dostępu warunkowego opartego na urządzeniach w usłudze Azure AD) oprócz innych zasad dostępu warunkowego, takich jak uwierzytelnianie wieloskładnikowe. Można także ustawić zasady dostępu warunkowego dla aplikacji przedsiębiorstwa innych firm, takich jak Salesforce i obsługuje pole tej usługi Azure AD. Aby uzyskać więcej informacji, zobacz [sposobu ustawiania zasad dostępu warunkowego opartego na urządzenia usługi Azure Active Directory do kontroli dostępu do usługi Azure Active Directory połączone aplikacji](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-policy-connected-applications/).  
 
 1.  W konsoli programu Configuration Manager kliknij przycisk **Zasoby i zgodność**.  
 
@@ -156,19 +153,19 @@ Aplikacji komputerowych pakietu Office można uzyskać dostęp do usługi ShareP
     >   
     >  W tym [artykule](https://support.office.com/en-US/article/How-modern-authentication-works-for-Office-2013-and-Office-2016-client-apps-e4c45989-4b1a-462e-a81b-2a13191cf517) przedstawiono bardziej szczegółowe informacje dotyczące sposobu działania nowoczesnego uwierzytelniania.  
 
-     Dla systemu windows, komputery komputer musi być albo domeny przyłączony lub zarejestrowane za pomocą usługi Intune i są zgodne. Można ustawić następujące wymagania:  
+     Dla komputerów z systemem windows komputer musi być domeny przyłączone lub zarejestrowane w usłudze Intune i zgodne. Można ustawić następujące wymagania:  
 
-    -   **Urządzenia muszą zostać przyłączone do domeny lub być zgodne.** Oznacza to, że komputery muszą zostać domeny dołączonym do lub być zgodne z zasadami ustawionymi w usłudze Intune. Jeśli komputer nie spełnia żadnego z tych wymagań, użytkownik jest monitowany o zarejestrowanie urządzenia w usłudze Intune.  
+    -   **Urządzenia muszą zostać przyłączone do domeny lub być zgodne.** Oznacza to, że komputery muszą zostać domeny połączone lub być zgodne z zasadami ustawionymi w usłudze Intune. Jeśli komputer nie spełnia żadnego z tych wymagań, użytkownik jest monitowany o zarejestrowanie urządzenia w usłudze Intune.  
 
     -   **Urządzenia muszą zostać przyłączone do domeny.** Oznacza to, że komputery muszą zostać przyłączone do domeny, aby mogły uzyskiwać dostęp do usługi Exchange Online. Jeśli komputer nie został przyłączony do domeny, dostęp do poczty e-mail będzie zablokowany, a użytkownik zostanie poproszony o skontaktowanie się z administratorem IT.  
 
-    -   **Urządzenia muszą być zgodne.** Oznacza to, że komputery muszą być zarejestrowane w usłudze Intune i są zgodne. Jeśli komputer nie został zarejestrowany, zostanie wyświetlony komunikat z instrukcjami dotyczącymi rejestrowania.  
+    -   **Urządzenia muszą być zgodne.** Oznacza to, że komputery muszą być zarejestrowane w usłudze Intune i zgodne. Jeśli komputer nie został zarejestrowany, zostanie wyświetlony komunikat z instrukcjami dotyczącymi rejestrowania.  
 
-4.  W obszarze **dostęp z przeglądarki** do usługi SharePoint Online i OneDrive dla firm, można zezwolić na dostęp do usługi Exchange Online tylko za pośrednictwem obsługiwanych przeglądarek: Safari (iOS), a Chrome (Android). Dostęp z innych przeglądarek zostanie zablokowany.  Ograniczenia platformy wybrane w przypadku dostępu do aplikacji usługi OneDrive mają zastosowanie również w tym miejscu.
+4.  W obszarze **dostęp za pomocą przeglądarki** do usługi SharePoint Online i OneDrive dla firm można zezwolić na dostęp do usługi Exchange Online tylko za pośrednictwem obsługiwanych przeglądarek: Safari (iOS) i Chrome (Android). Dostęp z innych przeglądarek zostanie zablokowany.  Ograniczenia platformy wybrane w przypadku dostępu do aplikacji usługi OneDrive mają zastosowanie również w tym miejscu.
 
-    Na urządzeniach z systemem **Android** użytkownicy muszą włączyć dostęp do przeglądarki.  Użytkownik końcowy w tym celu należy włączyć Włącz model obiektów opcji przeglądarki Accessâ€ na zarejestrowanym urządzeniu w następujący sposób:
+    Na urządzeniach z systemem **Android** użytkownicy muszą włączyć dostęp do przeglądarki.  W tym celu użytkownik końcowy musi włączyć model â €obiektów przeglądarki Accessâ€ opcji na zarejestrowanym urządzeniu w następujący sposób:
     1.  Otwórz aplikację **Portal firmy**.
-    2.  Przejdź do **ustawienia** strony Potrójna kropki (â €¦) lub przycisk menu sprzętu.
+    2.  Przejdź do **ustawienia** strony z przycisku wielokropka (â €¦) lub przycisku menu sprzętu.
     3.  Naciśnij przycisk **Włącz dostęp za pomocą przeglądarki** .
     4.  W przeglądarce Chrome wyloguj się z usługi Office 365 i uruchom przeglądarkę.
 
@@ -198,9 +195,8 @@ Aplikacji komputerowych pakietu Office można uzyskać dostęp do usługi ShareP
 
  Nie musisz wdrażać zasad dostępu warunkowego; są one aktywne natychmiast.  
 
- Zobacz [dostępu Zarządzanie usługą SharePoint Online w usłudze Microsoft Intune](https://technet.microsoft.com/library/dn705844.aspx) informacji o sposobie można monitorować zasady z poziomu konsoli usługi Intune.  
+ Zobacz [dostępu Zarządzanie usługą SharePoint Online w usłudze Microsoft Intune](https://technet.microsoft.com/library/dn705844.aspx) uzyskać informacji na temat sposobu monitorowania zasad za pomocą konsoli usługi Intune.  
 
 ### <a name="see-also"></a>Zobacz także  
 
  [Zarządzanie dostępem do usług w programie System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md)
-

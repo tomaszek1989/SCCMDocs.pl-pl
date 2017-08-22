@@ -6,21 +6,19 @@ ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 7e4ec207-bb49-401f-af1b-dd705ecb465d
-caps.latest.revision: 0
+caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
+ms.openlocfilehash: e0b887169f0c8ae6901d1c6fd6a498df9596c2b4
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
-ms.openlocfilehash: 0d6527abba24b685151ae63feaae29b30d1e2cc9
-ms.contentlocale: pl-pl
-ms.lasthandoff: 07/29/2017
-
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="configure-sql-server-always-on-availability-groups-for-configuration-manager"></a>Konfigurowanie programu SQL Server zawsze włączonych grup dostępności dla programu Configuration Manager
 
@@ -106,7 +104,7 @@ Aby wykonać tę procedurę, musi być konto, którego używasz do uruchamiania 
 
 
 
-## <a name="add-and-remove-synchronous-replica-members"></a>Dodawanie i usuwanie synchronicznych replik  
+## <a name="add-or-remove-synchronous-replica-members"></a>Dodawanie lub usuwanie synchronicznych replik  
 Kiedy bazy danych lokacji znajduje się w grupie dostępności, należy użyć poniższych procedur można dodać ani usunąć synchronicznych replik. Aby uzyskać informacje dotyczące typu i liczby replik, które są obsługiwane, zobacz **konfiguracji grupy dostępności** w obszarze [wymagania wstępne](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database#prerequisites) w ramach sekcji przygotowanie do użycia tematu grupy dostępności.
 
 Aby wykonać poniższe procedury, konto, którego używasz, musi być:
@@ -114,25 +112,13 @@ Aby wykonać poniższe procedury, konto, którego używasz, musi być:
 -   A **sysadmin** na każdym serwerze SQL, który jest hostem lub będzie hostem bazy danych lokacji.
 
 
-### <a name="to-add-a-new-synchronous-replica-member"></a>Aby dodać nowy element członkowski repliki synchroniczne
-1.  Dodaj nowy serwer jako replikę pomocniczą do grupy dostępności. Zobacz [Dodawanie repliki pomocniczej do grupy dostępności (SQL Server)](/sql/database-engine/availability-groups/windows/add-a-secondary-replica-to-an-availability-group-sql-server) w bibliotece dokumentacji programu SQL Server.
-
-2.  Zatrzymaj lokację programu Configuration Manager, uruchamiając **Preinst.exe/stopsite**. Zobacz [narzędzia Obsługa hierarchii](/sccm/core/servers/manage/hierarchy-maintenance-tool-preinst.exe).
-
-3.  Użyj programu SQL Server, aby utworzyć kopię zapasową bazy danych lokacji z repliki podstawowej, a następnie przywrócić dane z tej kopii zapasowej do nowego serwera repliki pomocniczej. Zobacz [tworzenie pełnej kopii zapasowej bazy danych](/sql/relational-databases/backup-restore/create-a-full-database-backup-sql-server) i [Przywróć kopię zapasową bazy danych przy użyciu narzędzia SSMS](/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms) w dokumentacji programu SQL Server.
-
-4.  Skonfiguruj każdą replikę pomocniczą. W celu skonfigurowania każdej repliki pomocniczej w grupie dostępności wykonaj następujące czynności:
-
-    1.  Upewnij się, konto komputera serwera lokacji jest elementem członkowskim **Administratorzy lokalni** na każdym komputerze, który jest członkiem grupy dostępności.
-
-    2.  Uruchom [skrypt weryfikacji](/sccm/core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database#prerequisites) z wymagań wstępnych, aby upewnić się, że dla każdej repliki bazy danych lokacji jest poprawnie skonfigurowana.
-
-    3.  Jeśli jest to niezbędne do skonfigurowania nowej repliki ręcznie pracy awaryjnej replikę podstawową do niej nową replikę pomocniczą, a następnie wprowadź wymagane ustawienia. Zobacz [Perform a Planned Manual Failover of an Availability Group](/sql/database-engine/availability-groups/windows/perform-a-planned-manual-failover-of-an-availability-group-sql-server) (Wykonywanie zaplanowanego ręcznego przełączania awaryjnego grupy dostępności) w dokumentacji programu SQL Server.
-
-5.  Uruchom ponownie lokację, uruchamiając usługi Menedżer składników lokacji (**sitecomp**) i **SMS_Executive** .
+### <a name="to-add-a-new-synchronous-replica-member"></a>Aby dodać nowy element członkowski repliki synchroniczne  
+Proces dodawania repliki pomocniczej do grupy dostępności, możesz korzystać z programu Configuration Manager może być skomplikowane, dynamiczny i wymagają kroki i procedury, które zmiany oparte na poszczególnych środowisk. Pracujemy nad ulepszenia programu Configuration Manager w celu uproszczenia tego procesu. Tymczasem należy dodać replikach pomocniczych, zapoznaj się poniższym blogu w witrynie TechNet wskazówki
+-   [Program ConfigMgr 1702: Dodanie nowego węzła (replika pomocnicza) do istniejącej grupy dostępności AO SQL](https://blogs.technet.microsoft.com/umairkhan/2017/07/17/configmgr-1702-adding-a-new-node-secondary-replica-to-an-existing-sql-ao-ag/)
 
 ### <a name="to-remove-a-replica-member"></a>Aby usunąć element członkowski repliki
-Do wykonania tej procedury, skorzystaj z informacji w [usunąć repliki pomocniczej z grupy dostępności](/sql/database-engine/availability-groups/windows/remove-a-secondary-replica-from-an-availability-group-sql-server) z dokumentacji programu SQL Server.
+Do wykonania tej procedury, skorzystaj z informacji w [usunąć repliki pomocniczej z grupy dostępności](/sql/database-engine/availability-groups/windows/remove-a-secondary-replica-from-an-availability-group-sql-server) z dokumentacji programu SQL Server.  
+
 
 ## <a name="configure-an-asynchronous-commit-replica"></a>Konfigurowanie zatwierdzania asynchronicznego replika
 Począwszy od programu Configuration Manager 1706 wersji, można dodać asynchroniczne repliki do grupy dostępności używanych z programem Configuration Manager. Aby to zrobić, nie trzeba uruchamiać skrypty konfiguracji wymagane do skonfigurowania repliki synchroniczne. (Dotyczy, ponieważ nie jest obsługiwane do korzystania z tej repliki asynchronicznych jako baza danych lokacji). Zobacz [dokumentacji programu SQL Server](https://msdn.microsoft.com/library/hh213247(v=sql.120).aspx(d=robot)) informacji na temat dodawania repliki pomocniczej do grupy dostępności.
@@ -186,4 +172,3 @@ Aby wykonać tę procedurę, konto, którego używasz, musi być:
 9.  Po podaniu informacji dotyczących nowej lokalizacji bazy danych zamknij Instalator, wykonując normalne czynności procedury i konfiguracji. Po zakończeniu instalacji lokacja zostanie ponownie uruchomiona i rozpocznie korzystanie z nowej lokalizacji bazy danych.    
 
 10. Aby wyczyścić serwery, które były elementami członkowskimi grupy dostępności, postępuj zgodnie ze wskazówkami w temacie [Remove an Availability Group](/sql/database-engine/availability-groups/windows/remove-an-availability-group-sql-server) (Usuwanie grupy dostępności) w dokumentacji programu SQL Server.
-

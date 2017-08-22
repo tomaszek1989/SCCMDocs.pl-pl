@@ -1,41 +1,38 @@
 ---
-title: "Tworzenie kolekcji zarządzania urządzeniami Przenośnymi za pomocą programu System Center Configuration Manager | Dokumentacja firmy Microsoft"
-description: "Utwórz kolekcję zarządzania urządzeniami Przenośnymi za pomocą programu System Center Configuration Manager."
+title: "Utwórz kolekcję usługi zarządzania urządzeniami Przenośnymi za pomocą programu System Center Configuration Manager | Dokumentacja firmy Microsoft"
+description: "Utwórz kolekcję usługi zarządzania urządzeniami Przenośnymi za pomocą programu System Center Configuration Manager."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d1b4337f-85e8-45e6-8bbe-9f18b49041c7
-caps.latest.revision: 18
-caps.handback.revision: 0
+caps.latest.revision: "18"
+caps.handback.revision: "0"
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
 ms.openlocfilehash: fabbcfd2d5656d4fa8cb87feffe87e17998df145
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-an-mdm-collection-with-system-center-configuration-manager-and-microsoft-intune"></a>Tworzenie kolekcji zarządzania urządzeniami Przenośnymi za pomocą programu System Center Configuration Manager i Microsoft Intune
+# <a name="create-an-mdm-collection-with-system-center-configuration-manager-and-microsoft-intune"></a>Utwórz kolekcję usługi zarządzania urządzeniami Przenośnymi z programu System Center Configuration Manager i Microsoft Intune
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Kolekcji użytkowników programu Configuration Manager jest wymagane w celu określenia użytkowników, którzy mogą rejestrować urządzenia do systemu zarządzania. Kolekcje użytkowników (a nie kolekcji urządzeń) można używać tylko w przypadku, ponieważ Intune licencje są przypisywane przez użytkownika.
+Kolekcja użytkownika programu Configuration Manager jest wymagany do określania użytkowników, którzy mogą rejestrować urządzenia w systemie zarządzania. Kolekcje użytkowników (zamiast kolekcji urządzeń) można używać tylko licencji usługi Intune nie zostały przypisane przez użytkownika.
 
 > [!NOTE]
-> Aby zarejestrować urządzenia za pomocą usługi Intune, nie należy przypisywać licencji do użytkowników w portalu usługi Office 365 lub portalu usługi Azure Active Directory. W tym użytkownicy w kolekcji, która pobiera skojarzone z subskrypcją usługi Intune (w [później krok](configure-intune-subscription.md)) to wszystkie, które są wymagane.
+> Aby zarejestrować urządzenia w usłudze Intune, nie musisz przypisać licencje do użytkowników w portalu usługi Office 365 lub portalu usługi Azure Active Directory. W tym użytkowników w kolekcji, która pobiera skojarzone z subskrypcją usługi Intune (w [później krok](configure-intune-subscription.md)) to wszystko, która jest wymagana.
 
-Do celów testowych można skonfigurować **reguły bezpośredniej** i dodać określonych użytkowników, którzy mogą rejestrować urządzenia. W konsoli programu Configuration Manager athe, należy wybrać, **zasoby i zgodność** > **kolekcji użytkowników**, kliknij przycisk **Home** kartę > **Utwórz** grupy, a następnie kliknij przycisk **tworzenia kolekcji użytkowników**. Szerszy dystrybucji należy używać **kwerendy reguł** do definiowania użytkowników. Aby uzyskać więcej informacji na temat kolekcji, zobacz [tworzenie kolekcji](https://technet.microsoft.com/library/mt629371.aspx).
+Do celów testowych można zdefiniować **reguły bezpośredniej** i dodać określonych użytkowników, którzy mogą rejestrować urządzenia. W konsoli programu Configuration Manager athe, należy wybrać, **zasoby i zgodność** > **kolekcje użytkowników**, kliknij przycisk **Home** kartę > **Utwórz** grupy, a następnie kliknij przycisk **Utwórz kolekcję użytkowników**. Do szerszego grona dystrybucji należy używać **zapytania reguł** do definiowania użytkowników. Aby uzyskać więcej informacji o kolekcjach, zobacz [sposobach tworzenia kolekcji](https://technet.microsoft.com/library/mt629371.aspx).
 
-![Tworzenie kolekcji użytkowników do zarządzania urządzeniami Przenośnymi](../media/mdm-create-user-collection.png)
+![Utwórz kolekcję użytkowników do zarządzania urządzeniami Przenośnymi](../media/mdm-create-user-collection.png)
 
 > [!div class="button"]
 [Następny krok >](confirm-dns.md)
-

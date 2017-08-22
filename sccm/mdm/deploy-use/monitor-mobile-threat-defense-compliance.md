@@ -1,13 +1,12 @@
 ---
 title: "Monitorowanie zgodności przed zagrożeniami Mobile | System Center Configuration Manager"
-description: "Monitor stanu zgodności partnera Mobile przed zagrożeniami z konsoli programu Configuration Manager"
+description: "Monitor stanu zgodności przed zagrożeniami Mobile partnera z konsoli programu Configuration Manager"
 ms.custom: na
 ms.date: 03/21/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 408190da-bea6-4122-9dd6-f90155040e88
@@ -15,31 +14,28 @@ caps.latest.revision:
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 212628639300e9c361f7cee61b3df6b1cb6874ce
 ms.openlocfilehash: 8edf83a0f761dfc16274ce49c3aa2b878c7fe6cd
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="monitor-mobile-threat-defense-compliance"></a>**Monitorowanie zgodności przed zagrożeniami Mobile**
 
-# <a name="monitor-mobile-threat-defense-compliance"></a>**Monitorowanie zgodności przed zagrożeniami telefon komórkowy**
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+## <a name="to-monitor-the-overall-compliance-status"></a>Aby monitorować stan zgodności ogólnej
 
-## <a name="to-monitor-the-overall-compliance-status"></a>Do monitorowania stanu zgodności ogólnej
-
-Aby monitorować stan obrony zagrożenia przenośnych:
+Aby monitorować stan obrony zagrożeń przenośnych:
 
 1.  W konsoli programu Configuration Manager, kliknij polecenie **monitorowanie** obszaru roboczego.
 
 2.  W **monitorowanie** obszaru roboczego kliknij **zabezpieczeń** węzła.
 
-Podsumowanie stanu zgodności z zagrożenia różnych poziomach, która jest wyświetlana w postaci wykresu visual jest widoczny. Możesz kliknąć na poszczególne sekcje wykresy, aby uzyskać więcej informacji, takich jak: 
+Podsumowanie stanu zgodności z zagrożeń różnych poziomach, która jest wyświetlana w postaci wykresu visual jest widoczny. Możesz kliknąć poszczególne sekcje wykresy, aby uzyskać więcej informacji, takich jak: 
 
-- Liczba urządzeń raportowania jako niezgodne przez platformę
-- Błędy związane ze stanem zgodności urządzeń
+- Liczba urządzeń podlegających jako niezgodne przez platformę
+- Błędy związane ze stanem zgodności urządzenia
 
 ![](http://i.imgur.com/bmPsiWk.png)
 
@@ -49,31 +45,30 @@ Można również wyświetlić stan poszczególnych urządzeń:
 
 1.  W konsoli programu Configuration Manager, kliknij polecenie **zasoby i zgodność** obszaru roboczego.
 
-2.  Kliknij **urządzeń**.
+2.  Polecenie **urządzeń**.
 
 > [!TIP] 
-> Możesz dodać **zgodności urządzenia zagrożenia** i **poziomu zagrożenia urządzenia** kolumn, aby zobaczyć stan. Te kolumny nie są domyślnie wyświetlane.
+> Możesz dodać **zgodności urządzeń za zagrożenie** i **poziom zagrożenia urządzenia** kolumn, aby wyświetlić stan. Te kolumny nie są wyświetlane domyślnie.
 
-## <a name="device-threat-protection-tab"></a>Karta ochroną urządzenia
+## <a name="device-threat-protection-tab"></a>Karta ochrony przed zagrożeniami urządzenia
 
-Ponadto na **urządzeń** ekranu, można wybrać określone urządzenia, a następnie kliknij na **ochroną urządzenia** kartę, która zawiera więcej szczegółów o stanie zgodności urządzenia. Znajdź poniżej opisy kolumn i ich oczekiwanych wartości, aby ułatwić analizowanie stan zgodności urządzenia.
+Ponadto na **urządzeń** ekranu, można wybrać określone urządzenia, a następnie kliknij pozycję **ochrony urządzenia przed zagrożeniami** kartę, która zawiera więcej informacji na temat stanu zgodności urządzenia. Znajdź poniżej opisy kolumn i ich wartości oczekiwanej, aby ułatwić analizowanie stan zgodności urządzenia.
 
 > [!IMPORTANT] 
-> Na karcie ochroną urządzenia tylko pojawia się jeśli wybrane urządzenie jest urządzeniem przenośnym.
+> Na karcie ochrony urządzenia przed zagrożeniami tylko zostaną wyświetlone Jeśli wybrane urządzenie jest urządzeniem przenośnym.
 
-|Nazwa kolumny|Widoczne domyślnie|Opis| 
+|Nazwa kolumny|Domyślnie widoczne|Opis| 
 |-|-|-|
-|**Opis**| Tak | Szczegóły dotyczące zagrożenia dostarczone przez partnera przed zagrożeniami Mobile. |
-|**Czas ostatniej aktualizacji**| Tak | Partner przed zagrożeniami Mobile wysyłane po raz ostatni zaktualizowano szczegółowych informacji dotyczących zagrożenia dla usługi Intune. |
-|**Ważność zagrożenia**| Tak | Ważność zagrożenie jest definicji dla poszczególnych zagrożeń, na podstawie konfiguracji administratora w konsoli programu Mobile przed zagrożeniami partnera. Ma jedną z trzech wartości: **Low**, **Medium** or **High** |
-|**Stan zagrożenia**| Tak | Bieżący stan zagrożenia na urządzeniu. Stany: **Active**, **rozwiązane** lub **ignorowane:** Wskazuje, że użytkownik ignorowane zagrożenia na urządzeniu, ale jest nadal obecna zagrożenia. |
-|**Typ zagrożenia**| Tak | Typ partnera przed zagrożeniami Mobile zagrożenia. Dopuszczalne wartości: **App**, **File** or **OS** |
+|**Opis**| Tak | Szczegółowe informacje na temat zagrożeń udostępniane przez partnerów Mobile przed zagrożeniami. |
+|**Czas ostatniej aktualizacji**| Tak | Czas ostatniego partnera przed zagrożeniami Mobile wysyłane zaktualizować szczegółów na temat zagrożeń do usługi Intune. |
+|**Ważność zagrożeń**| Tak | Ważność zagrożenie jest definicji dla poszczególnych zagrożeń, na podstawie konfiguracji administratora w konsoli partnera Mobile przed zagrożeniami. Zawiera jedną z trzech wartości: **Niski**, **średni** lub **wysoka** |
+|**Stan zagrożeń**| Tak | Bieżący stan to zagrożenie na urządzeniu. Możliwe stany: **Active**, **rozpoznać** lub **zignorowane:** Wskazuje, że użytkownik ignorowane zagrożeń na swoim urządzeniu, ale zagrożenie jest nadal obecna. |
+|**Typ zagrożeń**| Tak | Typ partnera przed zagrożeniami Mobile zagrożeń. Możliwe wartości: **Aplikacja**, **pliku** lub **systemu operacyjnego** |
 |**Identyfikator konta usługi AAD**| Nie | Unikatowy identyfikator usługi Azure Active Directory. |
-|**Klasyfikacja**| Tak | Partner przed zagrożeniami Mobile podano klasyfikacji zagrożenia. Dopuszczalne wartości: **Włącznik głównego, Riskware, programami do wyświetlania reklam, Chargeware, DataLeak, koń trojański, robak, wirus, wykorzystania Tylne wejście do systemu, robotów, AppDropper, ClickFraud, wiadomości-śmieci, programy szpiegujące, SurveillanceWare, luki w zabezpieczeniach, nieznany, główny Jailbrake, łączności, TollFraud, SideloadedApp** |
-|**Identyfikator urządzenia**| Nie | Identyfikator obiektu usługi Azure Active Directory reprezentujący urządzeniem dołączonym do pracy z informacjami o zagrożenia. |
-|**Identyfikator zagrożenia**| Nie | Partner przed zagrożeniami przenośnymi wygenerowany Unikatowy identyfikator zagrożenia. Identyfikator zagrożenie jest używany do śledzenia rozwiązania. |
-|**Adres URL zagrożenia**| Nie | Jeśli jest obecny, łącza URL zagrożenia z powrotem do widoku konsoli zarządzania partnera przenośnymi przed zagrożeniami z określonym zagrożeniem. |
+|**Klasyfikacja**| Tak | Partner przed zagrożeniami Mobile podać Klasyfikacja zagrożeń. Możliwe wartości: **Włącznik głównego, Riskware, Adware, Chargeware, DataLeak, to koń trojański, robak, wirusów, wykorzystać Tylne wejście do systemu, Bot, AppDropper, ClickFraud, wiadomości-śmieci, programy szpiegujące, SurveillanceWare, luki w zabezpieczeniach, nieznane główny Jailbrake, łączności, TollFraud, SideloadedApp** |
+|**Identyfikator urządzenia**| Nie | Identyfikator obiektu usługi Azure Active Directory reprezentujący urządzenia przyłączone do miejsca pracy z informacjami o zagrożeń. |
+|**Identyfikatora zagrożenia**| Nie | Partner przed zagrożeniami Mobile generowany Unikatowy identyfikator zagrożenia. Identyfikatora zagrożenia służy do śledzenia rozpoznawania. |
+|**Adres URL zagrożeń**| Nie | Jeśli jest obecny, łącza URL zagrożeń z powrotem do widoku konsoli zarządzania partnera przed zagrożeniami Mobile określonym zagrożeniem. |
 
 > [!TIP] 
-> Upewnij się włączyć kolumn, które nie są **widoczne domyślnie** aby zobaczyć bardziej szczegółowe informacje o stanie zgodności przed zagrożeniami przenośnymi urządzeń.
-
+> Upewnij się włączyć kolumn, które nie są **domyślnie widoczne** aby zobaczyć więcej szczegółów o stanie zgodności przed zagrożeniami Mobile dla urządzeń.

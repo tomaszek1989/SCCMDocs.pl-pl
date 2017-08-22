@@ -2,28 +2,25 @@
 title: "Tworzenie i uruchamianie skryptów w programie Configuration Manager | Dokumentacja firmy Microsoft"
 description: "Tworzenie i uruchamianie skryptów na urządzeniach klienckich w programie Configuration Manager."
 ms.custom: na
-ms.date: 08/01/2017
+ms.date: 08/09/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-app
+ms.technology: configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
-caps.latest.revision: 14
-caps.handback.revision: 0
+caps.latest.revision: "14"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
+ms.openlocfilehash: ed84f7900eee5c04728d0e4d1b46027c36327bec
+ms.sourcegitcommit: b41d3e5c7f0c87f9af29e02de3e6cc9301eeafc4
 ms.translationtype: MT
-ms.sourcegitcommit: c0d94b8e6ca6ffd82e879b43097a9787e283eb6d
-ms.openlocfilehash: 4dcda88d4e91347f6da97e8da04c38f9e65e07bc
-ms.contentlocale: pl-pl
-ms.lasthandoff: 08/02/2017
-
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/11/2017
 ---
-
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Tworzenie i uruchamianie skryptów programu PowerShell z poziomu konsoli programu Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
@@ -61,7 +58,6 @@ Domyślnie użytkownicy nie można zatwierdzić skryptu, który one utworzone pr
 2. W obszarze roboczym **Administracja** rozwiń węzeł **Konfiguracja lokacji**, a następnie kliknij przycisk **Lokacje**.
 3. Na liście witryn, wybierz witryny, a następnie na **Home** karcie **witryny** kliknij przycisk **ustawienia hierarchii**.
 4. Na **ogólne** karcie **właściwości ustawień hierarchii** okna dialogowego polu, wyczyść pole wyboru **nie zezwalaj na skryptu autorzy mogą zatwierdzać własnych skryptów**.
-Lokacje
 
 ## <a name="import-and-edit-a-script"></a>Importowanie i edytowanie skryptu
 
@@ -120,4 +116,3 @@ Po uruchomieniu skryptu na urządzeniach klienckich, użyj tej procedury, aby mo
 1. W konsoli programu Configuration Manager kliknij **monitorowanie**.
 2. W **monitorowanie** obszaru roboczego kliknij **stanu skryptu**.
 3. W **stanu skryptu** listy, wyświetlania wyników dla każdego skryptu uruchomionego na urządzeniach klienckich. Kod zakończenia skryptu **0** ogół wskazuje, że skrypt został uruchomiony pomyślnie.
-

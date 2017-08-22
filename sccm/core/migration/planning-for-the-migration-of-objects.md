@@ -6,23 +6,20 @@ ms.date: 1/12/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 066caf00-e419-4efb-93d3-ba4ba878297c
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
 ms.openlocfilehash: 17f3955aa7c63a13bab03b46002f7de0b0ec38fe
-ms.contentlocale: pl-pl
-ms.lasthandoff: 06/08/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="plan-for-the-migration-of-configuration-manager-objects-to-system-center-configuration-manager"></a>Planowanie migracji obiektów programu Configuration Manager do programu System Center Configuration Manager
 
@@ -188,4 +185,3 @@ Aby uzyskać więcej informacji o raportach zobacz [raportowania w programie Sys
  Nie wprowadzono żadnych ważnych zmian dotyczących pomiaru użytkowania oprogramowania między programu Configuration Manager 2007 i System Center Configuration Manager. Zasady pomiaru użytkowania oprogramowania można migrować z obsługiwanej hierarchii źródłowej do hierarchii docelowej.  
 
  Domyślnie zasady pomiaru użytkowania oprogramowania, które można migrować do hierarchii docelowej, nie są skojarzone z konkretną lokacją w hierarchii docelowej, lecz mają zastosowanie do wszystkich klientów w hierarchii. Aby zastosować zasadę pomiaru użytkowania oprogramowania do klientów w konkretnej lokacji, należy edytować zasadę pomiaru po jej zmigrowaniu.  
-

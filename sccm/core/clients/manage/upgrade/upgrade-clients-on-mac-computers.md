@@ -1,70 +1,67 @@
 ---
-title: "Uaktualnienie klientów macOS — Configuration Manager | Dokumentacja firmy Microsoft"
+title: "Uaktualnianie klientów macOS — programu Configuration Manager | Dokumentacja firmy Microsoft"
 description: "Uaktualnij klientów na komputerach Mac w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 74c60941-5eae-4905-9e58-252bdb39df96
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
 ms.openlocfilehash: 502116b66fc14914ca0606ae416e82202824de7a
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="how-to-upgrade-clients-on-mac-computers-in-system-center-configuration-manager"></a>Jak uaktualnić klientów na komputerach Mac w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Wykonaj kroki wysokiego poziomu opisane poniżej, aby uaktualnić klienta dla komputerów Mac za pomocą aplikacji programu System Center Configuration Manager. Alternatywnie można również pobrać plik instalacyjny klienta na komputery Mac, skopiować go do udostępnionej lokalizacji sieciowej lub folderu lokalnego na komputerze Mac, a następnie poinstruować użytkowników, aby uruchomili instalację ręcznie.  
+Wykonaj kroki szczegółowo opisane poniżej, aby uaktualnić klienta dla komputerów Mac za pomocą aplikacji programu System Center Configuration Manager. Alternatywnie można również pobrać plik instalacyjny klienta na komputery Mac, skopiować go do udostępnionej lokalizacji sieciowej lub folderu lokalnego na komputerze Mac, a następnie poinstruować użytkowników, aby uruchomili instalację ręcznie.  
 
 > [!NOTE]  
 >  Przed wykonaniem tych kroków upewnij się, że komputer Mac spełnia wymagania wstępne. Zobacz [obsługiwanych systemów operacyjnych dla komputerów Mac](../../../plan-design/configs/supported-operating-systems-for-clients-and-devices.md#mac-computers).  
 
-## <a name="step-1-download-the-latest-mac-client-installation-file-from-the-microsoft-download-center"></a>Krok 1: Pobierz najnowszy plik instalacyjny klienta Mac z Microsoft Download Center  
- Klient Mac dla programu Configuration Manager nie jest dostarczony na nośniku instalacyjnym programu Configuration Manager i musi zostać pobrana z Microsoft Download Center. Pliki instalacyjne klienta na komputery Mac zawiera plik Instalatora Windows o nazwie ConfigmgrMacClient.msi.  
+## <a name="step-1-download-the-latest-mac-client-installation-file-from-the-microsoft-download-center"></a>Krok 1. Pobierz najnowszy plik instalacyjny klienta Mac z Microsoft Download Center  
+ Klienta programu Configuration Manager dla komputerów Mac nie jest dostarczony na nośniku instalacyjnym programu Configuration Manager i musi zostać pobrany z Microsoft Download Center. Pliki instalacyjne klienta na komputery Mac zawiera plik Instalatora Windows o nazwie ConfigmgrMacClient.msi.  
 
  Możesz pobrać ten plik z [Centrum pobierania Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=525184).  
 
-## <a name="step-2-run-the-downloaded-installation-file-to-create-the-mac-client-installation-file"></a>Krok 2: Uruchomienie pobranego pliku instalacyjnego w celu utworzenia pliku instalacyjnego klienta Mac  
+## <a name="step-2-run-the-downloaded-installation-file-to-create-the-mac-client-installation-file"></a>Krok 2. Uruchomienie pobranego pliku instalacyjnego w celu utworzenia pliku instalacyjnego klienta Mac  
  Na komputerze z systemem Windows uruchom pobraną konsolę **ConfigmgrMacClient.msi** , aby wypakować plik instalacyjny klienta na komputery Mac o nazwie **Macclient.dmg**. Ten plik można domyślnie znaleźć w folderze **C:\Program Files (x86)\Microsoft\System Center 2012 Configuration Manager Mac Client** na komputerze z systemem Windows po wypakowaniu plików.  
 
-## <a name="step-3-extract-the-client-installation-files"></a>Krok 3: Wyodrębnienie plików instalacyjnych klienta  
+## <a name="step-3-extract-the-client-installation-files"></a>Krok 3. Wyodrębnienie plików instalacyjnych klienta  
  Skopiuj plik Macclient.dmg do udziału sieciowego lub lokalnego folderu na komputerze Mac. Następnie na komputerze Mac zainstaluj, a następnie otwórz plik Maccclient.dmg i skopiuj pliki do folderu na komputerze Mac.  
 
-## <a name="step-4-create-a-cmmac-file-that-can-be-used-to-create-an-application"></a>Krok 4: Tworzenie pliku *.cmmac, który może służyć do tworzenia aplikacji  
+## <a name="step-4-create-a-cmmac-file-that-can-be-used-to-create-an-application"></a>Krok 4. Tworzenie pliku *.cmmac, który może służyć do tworzenia aplikacji  
 
 1.  Za pomocą narzędzia **CMAppUtil** (znajdującego się w folderze **Tools** w plikach instalacyjnych klienta na komputery Mac) utwórz plik *.cmmac z pakietu instalacyjnego klienta. Ten plik będzie używany do tworzenia aplikacji programu Configuration Manager.  
 
-2.  Skopiuj nowy plik **CMClient.pkg.cmmac** plik w lokalizacji dostępnej dla komputera, na którym jest uruchomiona konsola programu Configuration Manager.  
+2.  Skopiuj nowy plik **CMClient.pkg.cmmac** plik do lokalizacji dostępnej dla komputera, na którym jest uruchomiona konsola programu Configuration Manager.  
 
  Aby uzyskać więcej informacji, zobacz [dodatkowe procedury tworzenia i wdrażania aplikacji dla komputerów Mac](/sccm/apps/get-started/creating-mac-computer-applications#supplemental-procedures-to-create-and-deploy-applications-for-mac-computers).  
 
 ## <a name="step-5-create-and-deploy-an-application-containing-the-mac-client-files"></a>**Krok 5.** Tworzenie i wdrażanie aplikacji zawierającej pliki klienta na komputery Mac  
 
-1.  W konsoli programu Configuration Manager, Utwórz aplikację za pomocą **CMClient.pkg.cmmac** pliku, który zawiera pliki instalacyjne klienta.  
+1.  W konsoli programu Configuration Manager, należy utworzyć aplikację z **CMClient.pkg.cmmac** pliku, który zawiera pliki instalacyjne klienta.  
 
 2.  Wdróż tę aplikację na komputerach Mac w hierarchii.  
 
- Aby uzyskać więcej informacji, zobacz [aplikacje komputerowe tworzenie Mac z System Center Configuration Manager](../../../../apps/get-started/creating-mac-computer-applications.md).  
+ Aby uzyskać więcej informacji, zobacz [aplikacji dla komputerów Mac tworzenia z System Center Configuration Manager](../../../../apps/get-started/creating-mac-computer-applications.md).  
 
-## <a name="step-6-users-install-the-latest-client"></a>Krok 6: Zainstalowanie najnowszego klienta przez użytkowników  
- Użytkownicy klientów na komputery Mac pojawi się monit, że aktualizacja klienta programu Configuration Manager jest dostępna i musi być zainstalowany. Po zainstalowaniu klienta użytkownicy muszą ponownie uruchomić swoje komputery Mac.  
+## <a name="step-6-users-install-the-latest-client"></a>Krok 6. Zainstalowanie najnowszego klienta przez użytkowników  
+ Użytkownicy klientów na komputery Mac, zostanie wyświetlony monit, czy aktualizacja klienta programu Configuration Manager jest dostępna i musi zostać zainstalowany. Po zainstalowaniu klienta użytkownicy muszą ponownie uruchomić swoje komputery Mac.  
 
  Po ponownym uruchomieniu komputera zostanie automatycznie uruchomiony Kreator rejestracji komputera, aby zażądać nowego certyfikatu użytkownika.  
 
- Jeśli nie używasz rejestracji programu Configuration Manager, ale zainstalować certyfikat klienta niezależnie od programu Configuration Manager, zobacz [skonfigurować uaktualnionego klienta do używania istniejącego certyfikatu](#BKMK_UpgradingClient_MachineEnrollment).  
+ Jeśli nie używasz rejestracji programu Configuration Manager, lecz zainstalować certyfikat klienta niezależnie od programu Configuration Manager, zobacz [skonfigurować uaktualnionego klienta do używania istniejącego certyfikatu](#BKMK_UpgradingClient_MachineEnrollment).  
 
 ##  <a name="BKMK_UpgradingClient_MachineEnrollment"></a> Configure the upgraded client to use an existing certificate  
  Uruchom poniższą procedurę, aby zablokować uruchomienie Kreatora rejestracji komputera oraz skonfigurować uaktualnionego klienta do używania istniejącego certyfikatu klienta.  
@@ -101,7 +98,6 @@ Wykonaj kroki wysokiego poziomu opisane poniżej, aby uaktualnić klienta dla ko
 
     ```  
 
--   Dodaj element konfiguracji do linii bazowej konfiguracji, a następnie Wdróż linię bazową do wszystkich komputerów Mac, których certyfikat jest instalowany niezależnie od programu Configuration Manager.  
+-   Dodaj element konfiguracji do linii bazowej konfiguracji, a następnie Wdróż linię bazową konfiguracji do wszystkich komputerów Mac, których certyfikat jest instalowany niezależnie od programu Configuration Manager.  
 
- Aby uzyskać więcej informacji dotyczących sposobu tworzenia i wdrażania elementów konfiguracji dla komputerów Mac, zobacz [tworzenie elementów konfiguracji dla urządzeń z systemem Mac OS X zarządzane przy użyciu klienta programu System Center Configuration Manager](../../../../compliance/deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client.md) i [wdrażanie podstaw konfiguracji w programie System Center Configuration Manager](../../../../compliance/deploy-use/deploy-configuration-baselines.md).  
-
+ Aby uzyskać więcej informacji dotyczących sposobu tworzenia i wdrażania elementów konfiguracji dla komputerów Mac, zobacz [jak utworzyć elementy konfiguracji dla urządzeń z systemem Mac OS X zarządzanych za pomocą klienta programu System Center Configuration Manager](../../../../compliance/deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client.md) i [jak wdrożyć linie bazowe konfiguracji w programie System Center Configuration Manager](../../../../compliance/deploy-use/deploy-configuration-baselines.md).  

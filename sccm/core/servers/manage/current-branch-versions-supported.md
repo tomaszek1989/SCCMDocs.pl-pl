@@ -6,22 +6,20 @@ ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35b5baec-d313-46aa-9d14-c443aa0d6c09
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: noindex,nofollow
-ms.translationtype: MT
-ms.sourcegitcommit: 5d696e3da187d47e0d41c02864d9b5267827e701
 ms.openlocfilehash: 1c02d2c51964fed960ffab42175762c1b04e6445
-ms.contentlocale: pl-pl
-ms.lasthandoff: 07/31/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="support-for-system-center-configuration-manager-current-branch-versions"></a>Obsługa bieżących wersji gałęzi programu System Center Configuration Manager
 
@@ -54,4 +52,3 @@ Rysunek 1. Przykład nakładanie się cyklu wersji current Branch obsługi pomoc
 
 
 Aby uzyskać informacje o dostępności aktualizacji w konsoli lub linii bazowej i numery wersji, zobacz [wersje linii bazowej i aktualizacji](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions).
-

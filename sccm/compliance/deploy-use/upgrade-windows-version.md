@@ -6,24 +6,21 @@ ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b0c9db74-841e-46eb-8924-957cde968bf7
-caps.latest.revision: 8
-caps.handback.revision: 0
+caps.latest.revision: "8"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: MT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: cd8c644d07dab0010dc211df8ce4f2dc6e1fa7ae
-ms.contentlocale: pl-pl
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-
 # <a name="upgrade-windows-devices-with-the-edition-upgrade-policy-in-system-center-configuration-manager"></a>Uaktualnianie urządzeń z systemem Windows z zasad uaktualniania wersji w programie System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
@@ -101,4 +98,3 @@ Podczas monitorowania wdrożenia nowo utworzony **wdrożeń** węzła **monitoro
 Te błędy oznacza, że wdrożenie nie powiodło się. Sprawdź na komputer docelowy pomyślnie wykonać uaktualnienie.
 
 Gdy zasady osiągnie docelowego komputera z systemem Windows i jest obliczane, zostanie uruchomiony ponownie w ciągu dwóch godzin w celu zastosowania uaktualnienia. Upewnij się, poinformuj o tym, wszyscy użytkownicy, do których można wdrożyć zasady, lub zaplanować zasady do uruchamiania poza użytkowników godziny pracy.
-

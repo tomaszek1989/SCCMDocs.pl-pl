@@ -6,22 +6,20 @@ ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 97f2d81a-2c58-442c-88bc-defd5a1cd48f
-caps.latest.revision: 23
-caps.handback.revision: 0
+caps.latest.revision: "23"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: MT
-ms.sourcegitcommit: 0663ba84762c44a5c303562548499f195bae9e1c
 ms.openlocfilehash: cc678c1133b1944f55bcad309cf9ede9f0660b57
-ms.contentlocale: pl-pl
-ms.lasthandoff: 08/01/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="manage-boot-images-with-system-center-configuration-manager"></a>Zarządzanie obrazami rozruchowymi przy użyciu programu System Center Configuration Manager
 
@@ -270,4 +268,3 @@ Niestandardowe obrazy rozruchowe nie są modyfikowane.
 1.  Przed aktualizacją obrazu rozruchowego sprawdź, czy odpowiedni plik zasobów sekwencji zadań (tsres.dll) znajduje się w folderze danego języka na serwerze lokacji. Na przykład plik zasobu języka angielskiego znajduje się w następującej lokalizacji: <*folder_instalacji_programu_Configuration_Manager*>\OSD\bin\x64\00000409\tsres.dll.  
 
 2.  W ramach polecenia przeduruchomieniowego ustaw dla zmiennej środowiskowej SMSTSLanguageFolder identyfikator wybranego języka. Identyfikator języka musi być liczbą dziesiętną, a nie szesnastkową. Aby na przykład ustawić identyfikator języka na język angielski, musisz określić wartość dziesiętną 1033, a nie wartość szesnastkową 00000409 używaną w przypadku nazwy folderu.  
-

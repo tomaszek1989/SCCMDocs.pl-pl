@@ -6,22 +6,19 @@ ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 0a7415ba-2c53-4433-983e-780e92aa662f
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0ebda27c0f3848615346c2ecf1ab8b9bb9ab6f0d
 ms.openlocfilehash: 0a3704a2d3b75ed7e0a7f718b681448ab6fc078d
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/26/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="plan-for-site-system-servers-and-site-system-roles-for-system-center-configuration-manager"></a>Planowanie serwerów i ról systemu lokacji w programie System Center Configuration Manager
 
@@ -154,4 +151,3 @@ Poniżej opisano role systemu lokacji, które mogą korzystać z serwera proxy:
  Aby uzyskać więcej informacji o serwerach proxy punktów aktualizacji oprogramowania, zobacz sekcję "Ustawienia serwera Proxy" w [instalacji punktu aktualizacji oprogramowania](../../../sum/get-started/install-a-software-update-point.md) tematu.  
 
 -   **Punkt połączenia usługi.** Kiedy skonfigurować w trybie online (nie w trybie offline), ta rola systemu lokacji łączy się z Microsoft Intune i usługą w chmurze firmy Microsoft.  
-

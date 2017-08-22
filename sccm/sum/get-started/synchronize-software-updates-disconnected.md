@@ -1,6 +1,5 @@
 ---
-
-title: "Synchronizowanie aktualizacji za pomocą połączenia internetowego - programu Configuration Manager | Dokumentacja firmy Microsoft"
+title: "Synchronizowanie aktualizacji bez połączenia internetowego — programu Configuration Manager | Dokumentacja firmy Microsoft"
 description: "Uruchom synchronizację aktualizacji oprogramowania w punkcie aktualizacji oprogramowania najwyższego poziomu jest odłączony od Internetu."
 keywords: 
 author: dougeby
@@ -10,24 +9,19 @@ ms.date: 01/23/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: 1a997c30-8e71-4be5-89ee-41efb2c8d199
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
 ms.openlocfilehash: fd9c1e9418ff1956c6ef98753e23a293440179be
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-
 # <a name="synchronize-software-updates-from-a-disconnected-software-update-point"></a>Synchronizowanie aktualizacji oprogramowania z odłączonego punktu aktualizacji oprogramowania  
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
- Aby zsynchronizować metadane aktualizacji oprogramowania, gdy punkt aktualizacji w lokacji najwyższego poziomu jest odłączony od Internetu, należy użyć funkcji eksportu i importu. Można wybrać istniejący serwer WSUS nie należy do hierarchii programu Configuration Manager jako źródło synchronizacji. Ten temat zawiera informacje o sposobie używania funkcji eksportu i importu narzędzia WSUSUtil.  
+ Aby zsynchronizować metadane aktualizacji oprogramowania, gdy punkt aktualizacji w lokacji najwyższego poziomu jest odłączony od Internetu, należy użyć funkcji eksportu i importu. Jako źródło synchronizacji można wybrać istniejący serwer WSUS nie znajduje się w hierarchii programu Configuration Manager. Ten temat zawiera informacje o tym, jak używać funkcji eksportowania i importowania narzędzia WSUSUtil.  
 
  Aby eksportować i importować metadane aktualizacji oprogramowania, należy wyeksportować odpowiednie metadane z bazy danych programu WSUS na określony serwer eksportu, skopiować lokalnie przechowywane pliki postanowień licencyjnych do punktu aktualizacji oprogramowania, a następnie zaimportować metadane aktualizacji do bazy danych programu WSUS w odłączonym punkcie aktualizacji oprogramowania.  
 
@@ -35,8 +29,8 @@ ms.lasthandoff: 05/17/2017
 
 |Punkt aktualizacji oprogramowania|Nadrzędne źródło aktualizacji dla podłączonych punktów aktualizacji oprogramowania|Serwer eksportu dla odłączonego punktu aktualizacji oprogramowania|  
 |---------------------------|-----------------------------------------------------------------|------------------------------------------------------------|  
-|Centralna lokacja administracyjna|Microsoft Update (Internet)<br /><br /> Istniejący serwer WSUS|Wybierz serwer programu WSUS, który jest synchronizowany z usługą Microsoft Update przy użyciu klasyfikacji aktualizacji oprogramowania, produktów i języków wymaganych w środowisku programu Configuration Manager.|  
-|Autonomiczna lokacja główna|Microsoft Update (Internet)<br /><br /> Istniejący serwer WSUS|Wybierz serwer programu WSUS, który jest synchronizowany z usługą Microsoft Update przy użyciu klasyfikacji aktualizacji oprogramowania, produktów i języków wymaganych w środowisku programu Configuration Manager.|  
+|Centralna lokacja administracyjna|Microsoft Update (Internet)<br /><br /> Istniejący serwer WSUS|Wybierz serwer programu WSUS, który jest synchronizowany z Microsoft Update przy użyciu klasyfikacji aktualizacji oprogramowania, produktów i języków wymaganych w środowisku programu Configuration Manager.|  
+|Autonomiczna lokacja główna|Microsoft Update (Internet)<br /><br /> Istniejący serwer WSUS|Wybierz serwer programu WSUS, który jest synchronizowany z Microsoft Update przy użyciu klasyfikacji aktualizacji oprogramowania, produktów i języków wymaganych w środowisku programu Configuration Manager.|  
 
  Przed rozpoczęciem eksportowania należy sprawdzić, czy synchronizacja aktualizacji oprogramowania została ukończona na wybranym serwerze eksportu, aby mieć pewność, że zsynchronizowano metadane najnowszych aktualizacji oprogramowania. Aby sprawdzić, czy synchronizacja aktualizacji oprogramowania zakończyła się powodzeniem, wykonaj czynności opisane w poniższej procedurze.  
 
@@ -107,7 +101,6 @@ ms.lasthandoff: 05/17/2017
      Ten format można podsumować w następujący sposób: WSUSutil.exe występuje polecenie importowania, nazwa pliku pakietu (.cab) utworzonego w ramach operacji eksportowania, ścieżka do pliku pakietu, jeśli znajduje się w innym folderze, a nazwa pliku dziennika. Narzędzie WSUSutil.exe importuje metadane z serwera eksportu i tworzy plik dziennika dotyczący tej operacji.  
 
 ## <a name="next-steps"></a>Następne kroki
-Po zsynchronizowaniu aktualizacji oprogramowania po raz pierwszy lub po dostępnych nowych klasyfikacji lub produktów, należy [Konfigurowanie nowej klasyfikacji i produktów](configure-classifications-and-products.md) do synchronizowania aktualizacji oprogramowania do nowych kryteriów.
+Po zsynchronizowaniu aktualizacji oprogramowania po raz pierwszy lub po dostępnych nowych klasyfikacji lub produktów, należy [konfigurowanie nowych klasyfikacji i produktów](configure-classifications-and-products.md) synchronizowania aktualizacji oprogramowania do nowych kryteriów.
 
-Po zakończeniu zsynchronizować aktualizacje oprogramowania z kryteriami, które są potrzebne [Zarządzanie ustawieniami aktualizacji oprogramowania](manage-settings-for-software-updates.md).  
-
+Po wykonaniu zsynchronizować aktualizacje oprogramowania z kryteriami, które są potrzebne [Zarządzanie ustawieniami aktualizacji oprogramowania](manage-settings-for-software-updates.md).  

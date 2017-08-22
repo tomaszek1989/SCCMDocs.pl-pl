@@ -6,23 +6,20 @@ ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 727bca0d-6458-48dc-9a63-3b66d9799ddb
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 2087badc9dd1d216352dce232b145a786783ac89
 ms.openlocfilehash: 44f454d2f7c9d317d1ad99ba724931b4631bd11e
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/18/2017
-
-
----                     
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
+---
 # <a name="queries-technical-reference-for-system-center-configuration-manager"></a>Dokumentacja techniczna dotycząca zapytań w programie System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
@@ -37,4 +34,3 @@ Zapytania w programie System Center Configuration Manager zwracają informacje z
 -   [Operacje i Obsługa zapytań w programie System Center Configuration Manager](../../../core/servers/manage/operations-and-maintenance-for-queries.md)  
 
 -   [Bezpieczeństwo i prywatność zapytań w programie System Center Configuration Manager](../../../core/servers/manage/security-and-privacy-for-queries.md)  
-

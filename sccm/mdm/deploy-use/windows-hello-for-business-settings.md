@@ -1,49 +1,46 @@
 ---
-title: "Windows Hello ustawień biznesowych | Dokumentacja firmy Microsoft"
-description: "Dowiedz się, jak integrować Windows Hello dla firm z System Center Configuration Manager."
+title: "Usługi Windows Hello dla firm ustawienia | Dokumentacja firmy Microsoft"
+description: "Dowiedz się, jak zintegrować Windows Hello dla firm z System Center Configuration Manager."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c0593c07-5dd7-4d23-a0d8-d30165f49ef7
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 8c7bf901caa49c8585a9ed3913d4a5a2aac57013
-ms.openlocfilehash: 7ac2baeb3c10ce90eb643fa28a953186b571d037
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.openlocfilehash: a97b3d97eb302e4133b0a79a8c7e27004872c8b1
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="windows-hello-for-business-settings-in-system-center-configuration-manager-hybrid"></a>Windows Hello ustawień biznesowych w System Center Configuration Manager (hybrydowy)
+# <a name="windows-hello-for-business-settings-in-system-center-configuration-manager-hybrid"></a>Usługi Windows Hello dla firm ustawień w programie System Center Configuration Manager (rozwiązanie hybrydowe)
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager umożliwia integrację z Windows Hello dla firm (dawniej Passport firmy Microsoft dla systemu Windows), który jest alternatywna metoda logowania dla urządzeń z systemem Windows 10. Funkcja Hello dla firm korzysta z usługi Active Directory lub konta usługi Azure Active Directory w celu zastąpienia hasła, karty inteligentnej lub wirtualnej karty inteligentnej.  
+System Center Configuration Manager umożliwia integrację z usługą Windows Hello dla firm (dawniej Microsoft Passport dla systemu Windows), czyli alternatywną metodą logowania dla urządzeń z systemem Windows 10. Funkcja Hello dla firm korzysta z usługi Active Directory lub konta usługi Azure Active Directory w celu zastąpienia hasła, karty inteligentnej lub wirtualnej karty inteligentnej.  
 
 Funkcja Hello dla firm pozwala używać **gestu użytkownika** do logowania, zamiast hasła. Gestem użytkownika może być prosty numer PIN, uwierzytelnianie biometryczne lub urządzenie zewnętrzne, np. czytnik linii papilarnych.  
 
- Menedżer konfiguracji integruje się z systemu Windows Hello dla firm na dwa sposoby:  
+ Configuration Manager integruje się z usługi Windows Hello dla firm na dwa sposoby:  
 
--   Aby kontrolować, którzy użytkownicy gestów mogą i nie można używać do logowania, można użyć programu Configuration Manager.  
+-   Aby kontrolować gesty użytkownicy mogą i nie można używać do logowania, można użyć programu Configuration Manager.  
 
 -   W dostawcy magazynu kluczy funkcji Windows Hello dla firm można przechowywać certyfikaty uwierzytelniania. Aby uzyskać więcej informacji, zobacz [profile certyfikatów](create-pfx-certificate-profiles.md).  
 
-- Można wdrożyć Windows Hello zasady biznesowe przyłączonych do domeny systemu Windows 10 urządzeń, które Uruchom klienta programu Configuration Manager. Ta konfiguracja jest opisany w [skonfigurować Windows Hello firmy na urządzeniach przyłączonych do domeny systemu Windows 10](../../protect/deploy-use/windows-hello-for-business-settings.md#configure-windows-hello-for-business-on-domain-joined-windows-10-devices). Używając programu Configuration Manager za pomocą usługi Intune (hybrydowy), te ustawienia można skonfigurować w Windows 10 i Windows 10 Mobile urządzeń, ale nie w urządzeń dołączonych do domeny, które Uruchom klienta programu Configuration Manager.   
+- Można wdrożyć usługi Windows Hello dla firm zasad na urządzeniach przyłączonych do domeny systemu Windows 10, w z klientem programu Configuration Manager. Ta konfiguracja jest opisana w [konfigurowania usługi Windows Hello dla firm na urządzeniach z systemem Windows 10 przyłączonych do domeny](../../protect/deploy-use/windows-hello-for-business-settings.md#configure-windows-hello-for-business-on-domain-joined-windows-10-devices). Jeśli używasz programu Configuration Manager z usługą Intune (rozwiązanie hybrydowe), te ustawienia można skonfigurować na systemu Windows 10 i urządzeniach z systemem Windows 10 Mobile, ale nie na urządzeniach przyłączonych do domeny z systemem klienta programu Configuration Manager.   
 
-Ogólne informacje o konfigurowaniu Windows Hello ustawień biznesowych, zobacz [Windows Hello ustawień biznesowych w programie System Center Configuration Manager](../../protect/deploy-use/windows-hello-for-business-settings.md).
+Aby uzyskać ogólne informacje o konfigurowaniu usługi Windows Hello dla firm ustawień, zobacz [usługi Windows Hello dla firm ustawień w programie System Center Configuration Manager](../../protect/deploy-use/windows-hello-for-business-settings.md).
 
-## <a name="configure-windows-hello-for-business-settings-hybrid"></a>Konfigurowanie systemu Windows Hello dla firm ustawienia (hybrydowy)  
+## <a name="configure-windows-hello-for-business-settings-hybrid"></a>Konfigurowanie usługi Windows Hello dla firm ustawienia (rozwiązanie hybrydowe)  
 
-1.  W konsoli programu Configuration Manager kliknij **Administracja** > **usług w chmurze** > **subskrypcje usługi Microsoft Intune**.  
+1.  W konsoli programu Configuration Manager kliknij **administracji** > **usługi w chmurze** > **subskrypcje usługi Microsoft Intune**.  
 
 3.  Wybierz z listy swoją subskrypcję usługi Microsoft Intune, a następnie na karcie **Narzędzia główne** w grupie **Subskrypcja** kliknij opcję **Konfiguruj platformy** > **Windows (MDM)**.  
 
@@ -104,7 +101,6 @@ Ogólne informacje o konfigurowaniu Windows Hello ustawień biznesowych, zobacz 
 5.  Po zakończeniu kliknij przycisk **OK**.  
 
 ### <a name="see-also"></a>Zobacz także  
- [Ochrona infrastruktury danych i witryny z System Center Configuration Manager](../../protect/understand/protect-data-and-site-infrastructure.md)
+ [Ochrona danych i infrastruktury lokacji z System Center Configuration Manager](../../protect/understand/protect-data-and-site-infrastructure.md)
 
- [Zarządzanie weryfikacji tożsamości za pomocą Windows Hello dla firm](https://technet.microsoft.com/itpro/windows/keep-secure/manage-identity-verification-using-microsoft-passport).  
-
+ [Zarządzanie weryfikacji tożsamości za pomocą usługi Windows Hello dla firm](https://technet.microsoft.com/itpro/windows/keep-secure/manage-identity-verification-using-microsoft-passport).  

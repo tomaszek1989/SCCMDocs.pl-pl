@@ -2,23 +2,21 @@
 title: Nowa wersja 1706 | Dokumentacja firmy Microsoft
 description: "Uzyskiwanie szczegółowych informacji dotyczących zmian i nowych możliwości wprowadzonych w wersji 1706 programu System Center Configuration Manager."
 ms.custom: na
-ms.date: 07/31/2017
+ms.date: 08/11/2017
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ac034143-003e-4629-aac2-99eaffef4db1
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
+ms.openlocfilehash: 30bd5f1244534511e5cde8ee0e1a8c74819b1634
+ms.sourcegitcommit: 9a6f8e028fb5eb2e752da70f42a5b548339bd8f4
 ms.translationtype: MT
-ms.sourcegitcommit: c0d94b8e6ca6ffd82e879b43097a9787e283eb6d
-ms.openlocfilehash: 42e5223da204a568e6dca9e6690f08609cd43aa6
-ms.contentlocale: pl-pl
-ms.lasthandoff: 08/02/2017
-
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="what39s-new-in-version-1706-of-system-center-configuration-manager"></a>Jaki &#39; s nowego w wersji 1706 programu System Center Configuration Manager
 
@@ -207,7 +205,7 @@ Spis sprzętu teraz zbiera informacje o czy Bezpieczny rozruch jest włączony n
 W tej wersji wprowadzono możliwość rozwijanie i zwijanie grupy sekwencji zadań. Można rozwinąć lub zwinąć poszczególnych grup lub rozwiń lub Zwiń wszystkie grupy w jednocześnie.
 
 ### <a name="reload-boot-images-with-current-windows-pe-version"></a>Załaduj ponownie obrazy rozruchowe z bieżącej wersji systemu Windows PE
-Po uruchomieniu **Aktualizuj punkty dystrybucji** na wybranego obrazu rozruchowego, teraz możesz ponownie załadować najnowszą wersję środowiska Windows PE (w katalogu instalacyjnym zestawu Windows ADK) do obrazu rozruchowego. Aby uzyskać więcej informacji, zobacz [Aktualizuj punkty dystrybucji o obraz rozruchowy](/sccm/osd/get-started/manage-boot-images.md#update-distribution-points-with-the-boot-image).
+Po uruchomieniu **Aktualizuj punkty dystrybucji** na wybranego obrazu rozruchowego, teraz możesz ponownie załadować najnowszą wersję środowiska Windows PE (w katalogu instalacyjnym zestawu Windows ADK) do obrazu rozruchowego. Aby uzyskać więcej informacji, zobacz [Aktualizuj punkty dystrybucji o obraz rozruchowy](/sccm/osd/get-started/manage-boot-images#update-distribution-points-with-the-boot-image).
 
 ## <a name="software-updates"></a>Aktualizacje oprogramowania
 
@@ -216,15 +214,17 @@ W tej wersji możemy znacznie ulepszono czas pobierania aktualizacji Express. Ab
 
 ### <a name="manage-microsoft-surface-driver-updates"></a>Zarządzanie aktualizacjami sterownik Microsoft Surface
 <!-- 1098490 -->
-Można teraz używać programu Configuration Manager do zarządzania aktualizacjami sterownik Microsoft Surface.
+Można teraz używać programu Configuration Manager do zarządzania aktualizacjami sterownik Microsoft Surface.    
+
 
 #### <a name="prerequisites"></a>Wymagania wstępne
-Wszystkie punkty aktualizacji oprogramowania, należy uruchomić system Windows Server 2016.
+- Wszystkie punkty aktualizacji oprogramowania, należy uruchomić system Windows Server 2016.    
+- Jest to funkcja wersji wstępnej, które należy włączyć dla niego mają być dostępne. Aby uzyskać więcej informacji, zobacz sekcję dotyczącą [używania funkcji w wersjach wstępnych z poziomu aktualizacji](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
 
 #### <a name="to-manage-surface-driver-updates"></a>Do zarządzania aktualizacjami powierzchni sterownika
 
 1. Włącz synchronizację dla Microsoft Surface sterowników. Użyj procedury [Konfigurowanie klasyfikacji i produktów](/sccm/sum/get-started/configure-classifications-and-products) i wybierz **obejmują Microsoft Surface sterowniki i aktualizacje oprogramowania układowego** wyboru na **klasyfikacje** kartę, aby włączyć sterowniki powierzchni.
-2. [Synchronizuj sterowniki Microsoft Surface](/sccm/sum/get-started/synchronize-software-updates.md).
+2. [Synchronizuj sterowniki Microsoft Surface](/sccm/sum/get-started/synchronize-software-updates).
 3. [Wdrażanie zsynchronizowane Microsoft Surface sterowniki](/sccm/sum/deploy-use/deploy-software-updates)
 
 ### <a name="configure-windows-update-for-business-deferral-policies"></a>Konfigurowanie usługi Windows Update dla zasad wykluczenia biznesowych
@@ -255,6 +255,12 @@ W tym wydaniu wartości **Zezwalaj na udostępnianie między pracą a profilu os
 
 Aby uzyskać więcej informacji, zobacz [elementy konfiguracji dla systemu Android dla urządzeń pracy](/sccm/mdm/deploy-use/create-configuration-items-for-android-for-work-devices-managed-without-the-client).
 
+### <a name="android-and-ios-enrollment-restrictions"></a>Android i iOS ograniczenia rejestracji
+<!-- 1290826 -->
+W tej wersji można teraz określić, że użytkownicy nie można zarejestrować urządzeń osobistych Android lub iOS. Nowe ustawienia ograniczeń urządzeń umożliwiają ograniczanie rejestracji urządzeń z systemem Android do wcześniej zadeklarowanej urządzeń. Dla urządzeń z systemem iOS możesz zablokować rejestrację wszystkich urządzeń, z wyjątkiem tych zarejestrowane za pomocą programu Device Enrollment Program firmy Apple, konfiguratora firmy Apple lub konta Menedżera rejestracji urządzeń usługi Intune.
+- Aby uzyskać więcej informacji na temat ograniczeń rejestracja systemu Android, zobacz [Konfigurowanie zarządzania urządzeniami z systemem Android](/sccm/mdm/deploy-use/enroll-hybrid-android).
+- Aby uzyskać więcej informacji na temat ograniczeń rejestracji systemu iOS, zobacz [skonfigurować ograniczenia rejestracji systemu iOS](/sccm/mdm/deploy-use/enroll-hybrid-ios-mac#configure-enrollment-restrictions).
+
 ## <a name="protect-devices"></a>Ochrona urządzeń
 
 ### <a name="include-trust-for-specific-files-and-folders-in-a-device-guard-policy"></a>Obejmują zaufania dla określonych plików i folderów w zasadach ochrony urządzeń
@@ -268,4 +274,3 @@ Teraz można opcjonalnie dodawać zaufania dla określonych plików, folderów w
 - Zaufanie aplikacji, które są objęte obrazu wdrożenia systemu operacyjnego
 
 Aby uzyskać więcej informacji, zobacz [zarządzania ochrona urządzeń z programem Configuration Manager](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager).
-

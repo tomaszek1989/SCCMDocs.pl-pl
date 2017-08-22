@@ -1,39 +1,36 @@
 ---
 title: Tworzenie linii bazowych konfiguracji | Dokumentacja firmy Microsoft
-description: "Tworzenie linii bazowych konfiguracji programu System Center Configuration Manager można wdrożyć w kolekcji."
+description: "Tworzenie linii bazowych konfiguracji w System Center Configuration Manager można wdrożyć do kolekcji."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 678c9622-c61b-47d1-ba25-690616e431c7
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: f9e939d871e95a3248d8e5d96cb73063a81fd5cf
 ms.openlocfilehash: 649942d3d468ec35c7246e08f741cdebd22fb3ac
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="create-configuration-baselines-in-system-center-configuration-manager"></a>Tworzenie linii bazowych konfiguracji w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
-Linie bazowe konfiguracji w programie System Center Configuration Manager zawiera elementy konfiguracji wstępnie zdefiniowanych i, opcjonalnie, inne linie bazowe konfiguracji. Po utworzeniu linii bazowej konfiguracji możesz wdrożyć ją do kolekcji, co spowoduje pobranie jej przez urządzenia w kolekcji i przeprowadzenie oceny zgodności urządzeń za jej pomocą.  
+Linie bazowe konfiguracji w programie System Center Configuration Manager zawiera wstępnie zdefiniowane elementy konfiguracji i opcjonalnie, inne linie bazowe konfiguracji. Po utworzeniu linii bazowej konfiguracji możesz wdrożyć ją do kolekcji, co spowoduje pobranie jej przez urządzenia w kolekcji i przeprowadzenie oceny zgodności urządzeń za jej pomocą.  
 
- Linie bazowe konfiguracji w programie Configuration Manager może zawierać określone poprawki elementów konfiguracji lub można skonfigurować, aby zawsze korzystać z najnowszej wersji elementu konfiguracji. Aby uzyskać więcej informacji dotyczących poprawek elementu konfiguracji, zobacz [zadania zarządzania dla danych konfiguracji](../../compliance/deploy-use/management-tasks-for-configuration-data.md).  
+ Linie bazowe konfiguracji w programie Configuration Manager mogą zawierać konkretne wersje elementów konfiguracji lub można skonfigurować tak, aby zawsze używać najnowszej wersji elementu konfiguracji. Aby uzyskać więcej informacji na temat wersji elementów konfiguracji, zobacz [zadania zarządzania dla danych konfiguracji](../../compliance/deploy-use/management-tasks-for-configuration-data.md).  
 
- Istnieją dwie metody, które umożliwiają tworzenie linii bazowych konfiguracji:  
+ Istnieją dwie metody, których można użyć do utworzenia linii bazowych konfiguracji:  
 
 -   Importowanie danych konfiguracji z pliku. Aby uruchomić **Kreatora importu danych konfiguracji**w węźle **Elementy konfiguracji** lub **Linie bazowe konfiguracji** w obszarze roboczym **Zasoby i zgodność** , kliknij polecenie **Importuj dane konfiguracji**.  
 
@@ -67,9 +64,8 @@ Linie bazowe konfiguracji w programie System Center Configuration Manager zawier
     > [!NOTE]
     >  Lista **Zmień cel** jest dostępna tylko wtedy, jeśli kliknięto opcję **Ten element konfiguracji zawiera ustawienia aplikacji** na stronie **Ogólne** **Kreatora tworzenia elementu konfiguracji**.  
 
-7.  Użyj listy **Zmień poprawkę** , aby wybrać konkretną lub najnowszą wersję elementu konfiguracji na potrzeby przeprowadzenia oceny zgodności na urządzeniach klienckich, lub wybierz pozycję **Zawsze używaj najnowszych** , aby zawsze używać najnowszej wersji. Aby uzyskać więcej informacji dotyczących poprawek elementu konfiguracji, zobacz [zadania zarządzania dla danych konfiguracji](../../compliance/deploy-use/management-tasks-for-configuration-data.md).  
+7.  Użyj listy **Zmień poprawkę** , aby wybrać konkretną lub najnowszą wersję elementu konfiguracji na potrzeby przeprowadzenia oceny zgodności na urządzeniach klienckich, lub wybierz pozycję **Zawsze używaj najnowszych** , aby zawsze używać najnowszej wersji. Aby uzyskać więcej informacji na temat wersji elementów konfiguracji, zobacz [zadania zarządzania dla danych konfiguracji](../../compliance/deploy-use/management-tasks-for-configuration-data.md).  
 
-8.  Aby usunąć element konfiguracji z linii bazowej konfiguracji, wybierz element konfiguracji, a następnie kliknij przycisk **usunąć**.  
+8.  Aby usunąć element konfiguracji z linii bazowej konfiguracji, wybierz element konfiguracji, a następnie kliknij przycisk **Usuń**.  
 
 9. Kliknij przycisk **OK** , aby zamknąć okno dialogowe **Tworzenie linii bazowej konfiguracji** i utworzyć linię bazową konfiguracji.  
-

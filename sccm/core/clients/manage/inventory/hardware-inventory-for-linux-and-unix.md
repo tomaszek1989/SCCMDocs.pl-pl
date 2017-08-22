@@ -1,33 +1,30 @@
 ---
-title: "Spis sprzętu | Dokumenty Microsoft | Linux systemu UNIX "
-description: "Dowiedz się, jak użyć spisu sprzętu dla systemów Linux i UNIX w programie System Center Configuration Manager."
+title: "Spis sprzętu | Dokumentacja firmy Microsoft | Linux, UNIX "
+description: "Dowiedz się, jak korzystać ze spisu sprzętu dla systemów Linux i UNIX w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 02/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1026d616-2a20-4fb2-8604-d331763937f8
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9c5d1e48b76392beaf54b5377c69b648537e86f8
 ms.openlocfilehash: b6776fbe0cfca23244d767cffd554a2ef4567a2d
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="hardware-inventory-for-linux-and-unix-in-system-center-configuration-manager"></a>Spis sprzętu dla systemów Linux i UNIX w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Klient programu System Center Configuration Manager dla systemu Linux i UNIX obsługuje spisu sprzętu. Po zebraniu spisu sprzętu można uruchomić spis widoku w Eksploratorze zasobów lub raporty programu Configuration Manager i te informacje służą do tworzenia kwerend i kolekcji, które umożliwiają następujące operacje:  
+Klient programu System Center Configuration Manager dla systemów Linux i UNIX obsługuje spis sprzętu. Po zebraniu spisu sprzętu można uruchomić Widok spisu w Eksploratorze zasobów lub raporty programu Configuration Manager i dzięki tym informacjom można tworzyć zapytania i kolekcje, które umożliwiają wykonywanie następujących operacji:  
 
 -   Wdrażanie oprogramowania  
 
@@ -41,7 +38,7 @@ Klient programu System Center Configuration Manager dla systemu Linux i UNIX obs
 
  Serwer modelu wspólnych informacji jest instalowany jako część klienta dla systemów Linux i UNIX. Klient dla systemów Linux i UNIX komunikuje się bezpośrednio z serwerem modelu wspólnych informacji i nie używa interfejsu usługi WS-MAN serwera modelu wspólnych informacji. Port usługi WS-MAN na serwerze modelu wspólnych informacji jest wyłączony podczas instalowania klienta. Firma Microsoft opracowała serwer modelu wspólnych informacji, który jest teraz dostępny jako oprogramowanie open source za pośrednictwem projektu Open Management Infrastructure (OMI). Aby uzyskać więcej informacji o projekcie Open Management Infrastructure, odwiedź witrynę sieci Web konsorcjum [The Open Group](http://go.microsoft.com/fwlink/p/?LinkId=262317) .  
 
- Spis sprzętu na serwerach z systemami Linux i UNIX działa przez mapowanie istniejących klas Win32 WMI i właściwości na równoważne klasy i właściwości dla serwerów z systemami Linux i UNIX. Mapowanie jeden do jednego klasy i właściwości umożliwia spisu sprzętu z systemem Linux i UNIX integrację z programem Configuration Manager. Wyświetla magazynu danych z serwerów z systemem Linux i UNIX oraz spis z komputerów z systemem Windows w konsoli programu Configuration Manager i raporty. To zapewnia spójne, jednorodne środowisko zarządzania.  
+ Spis sprzętu na serwerach z systemami Linux i UNIX działa przez mapowanie istniejących klas Win32 WMI i właściwości na równoważne klasy i właściwości dla serwerów z systemami Linux i UNIX. To mapowanie jeden do jednego klas i właściwości umożliwia spisu sprzętu systemów Linux i UNIX do integracji z programem Configuration Manager. Dane spisu z serwerów Linux i UNIX są wyświetlane razem ze spisem z komputerów z systemem Windows w konsoli programu Configuration Manager i w raportach. To zapewnia spójne, jednorodne środowisko zarządzania.  
 
 > [!TIP]  
 >  Możesz użyć wartości **Podpis** dla klasy **Operating System** w celu identyfikowania różnych systemów operacyjnych Linux i UNIX w zapytaniach i kolekcjach.  
@@ -75,7 +72,7 @@ Klient programu System Center Configuration Manager dla systemu Linux i UNIX obs
 
 -   SMS_Processor  
 
- Nie wszystkie właściwości te klasy magazynu są włączone dla komputerów z systemem Linux i UNIX w programie Configuration Manager.  
+ Nie wszystkie właściwości dla tych klas spisu są włączone dla komputerów z systemami Linux i UNIX w programie Configuration Manager.  
 
 ##  <a name="BKMK_OperationsforHardwareforLnU"></a> Operacje dotyczące spisu sprzętu  
  Po zebraniu spisu sprzętu z serwerów z systemami Linux i UNIX można wyświetlać i używać tych informacji w taki sam sposób, jak w przypadku wyświetlania spisu zebranego z innych komputerów:  
@@ -101,21 +98,21 @@ Klient programu System Center Configuration Manager dla systemu Linux i UNIX obs
 
 2.  Konfigurowanie komputerów w taki sposób, aby korzystały z nowego dostawcy na potrzeby zgłaszania spisu  
 
-3.  Włącz programu Configuration Manager do obsługi nowego dostawcę  
+3.  Włączanie obsługi nowego dostawcy program Configuration Manager  
 
 ###  <a name="BKMK_LinuxProvider"></a> Tworzenie niestandardowego dostawcy spisu sprzętu dla komputerów z systemami Linux i UNIX:  
- Można utworzyć niestandardowe sprzętowego dostawcy magazynu dla klienta programu Configuration Manager dla systemu Linux i UNIX **źródło OMI - v.1.0.6** i postępuj zgodnie z instrukcjami z OMI wprowadzenie. Proces ten obejmuje tworzenie pliku Managed Object Format (MOF), który definiuje schemat nowego dostawcy. Później należy zaimportować plik MOF do programu Configuration Manager można włączyć obsługę nowa klasa niestandardowy spis.  
+ Aby utworzyć niestandardowego dostawcy spisu sprzętu dla klienta programu Configuration Manager dla systemów Linux i UNIX, należy użyć **OMI Source — v.1.0.6** i postępuj zgodnie z instrukcjami OMI Getting Started Guide. Proces ten obejmuje tworzenie pliku Managed Object Format (MOF), który definiuje schemat nowego dostawcy. Później należy zaimportować plik MOF do programu Configuration Manager można włączyć obsługę nowej klasy niestandardowego spisu.  
 
- Pakiet OMI Source — v.1.0.6 oraz podręcznik OMI Getting Started Guide są dostępne do pobrania z witryny sieci Web konsorcjum [The Open Group](http://go.microsoft.com/fwlink/p/?LinkId=262317) . Te pliki do pobrania można znaleźć na **dokumenty** u następującą stronę w witrynie sieci Web OpenGroup.org: [Otwórz infrastruktury zarządzania (OMI)](http://go.microsoft.com/fwlink/p/?LinkId=286805).  
+ Pakiet OMI Source — v.1.0.6 oraz podręcznik OMI Getting Started Guide są dostępne do pobrania z witryny sieci Web konsorcjum [The Open Group](http://go.microsoft.com/fwlink/p/?LinkId=262317) . Te pliki do pobrania można znaleźć na **dokumenty** kartę na następującej stronie sieci web w witrynie opengroup.org: [Otwórz infrastruktury zarządzania (OMI)](http://go.microsoft.com/fwlink/p/?LinkId=286805).  
 
 ###  <a name="BKMK_AddProvidertoLinux"></a> Konfigurowanie niestandardowego dostawcy spisu sprzętu na każdym komputerze, na którym działa system Linux lub UNIX:  
  Po utworzeniu niestandardowego dostawcy spisu należy skopiować, a następnie zarejestrować plik biblioteki dostawcy na każdym komputerze, na którym znajduje się spis przeznaczony do zebrania.  
 
-1.  Skopiuj bibliotekę dostawcy na każdy komputer z systemem Linux lub UNIX, z którego ma zostać zebrany spis. Nazwa biblioteki dostawcy podobny do następującego: **XYZ_MyProvider.so**  
+1.  Skopiuj bibliotekę dostawcy na każdy komputer z systemem Linux lub UNIX, z którego ma zostać zebrany spis. Nazwa biblioteki dostawcy przypomina następującą nazwę: **XYZ_MyProvider.so**  
 
-2.  Następnie na każdym komputerze z systemem Linux lub UNIX zarejestruj bibliotekę dostawcy z serwerem OMI. Po zainstalowaniu klienta programu Configuration Manager dla systemu Linux i UNIX, ale należy ręcznie rejestrować niestandardowych dostawców serwera OMI instaluje się na komputerze. W celu zarejestrowania dostawcy należy użyć następującego polecenia: **/opt/microsoft/omi/bin/omireg XYZ_MyProvider.so**  
+2.  Następnie na każdym komputerze z systemem Linux lub UNIX zarejestruj bibliotekę dostawcy z serwerem OMI. Serwer OMI jest instalowany na komputerze po zainstalowaniu klienta programu Configuration Manager dla systemów Linux i UNIX, ale należy ręcznie zarejestrować niestandardowych dostawców. W celu zarejestrowania dostawcy należy użyć następującego polecenia: **/opt/microsoft/omi/bin/omireg XYZ_MyProvider.so**  
 
-3.  Po zarejestrowaniu nowego dostawcy przetestuj go, korzystając z narzędzia **omicli** . **Omicli** narzędzie jest instalowane na każdym komputerze z systemem Linux i UNIX, po zainstalowaniu klienta programu Configuration Manager dla systemu Linux i UNIX. Jeśli nazwą utworzonego dostawcy jest na przykład **XYZ_MyProvider** , uruchom następujące polecenie na komputerze: **/opt/microsoft/omi/bin/omicli ei root/cimv2 XYZ_MyProvider**  
+3.  Po zarejestrowaniu nowego dostawcy przetestuj go, korzystając z narzędzia **omicli** . **Omicli** narzędzie jest instalowane na każdym komputerze z systemem Linux i UNIX, po zainstalowaniu klienta programu Configuration Manager dla systemów Linux i UNIX. Jeśli nazwą utworzonego dostawcy jest na przykład **XYZ_MyProvider** , uruchom następujące polecenie na komputerze: **/opt/microsoft/omi/bin/omicli ei root/cimv2 XYZ_MyProvider**  
 
      Informacje na temat narzędzia **omicli** i testowania niestandardowych dostawców zawiera przewodnik OMI Getting Started Guide (OMI — przewodnik z wprowadzeniem).  
 
@@ -125,5 +122,4 @@ Klient programu System Center Configuration Manager dla systemu Linux i UNIX obs
 ###  <a name="BKMK_AddLinuxProvidertoCM"></a> Włączanie nowej klasy spisu w programie Configuration Manager:  
  Zanim program Configuration Manager będzie mógł zgłosić spis zgłoszony przez nowego dostawcę na komputerach z systemami Linux i UNIX, musisz zaimportować plik Managed Object Format (MOF) definiujący schemat niestandardowego dostawcy.  
 
- Aby zaimportować plik MOF niestandardowych do programu Configuration Manager, zobacz [Konfigurowanie spisu sprzętu w programie System Center Configuration Manager](../../../../core/clients/manage/inventory/configure-hardware-inventory.md).  
-
+ Aby zaimportować niestandardowego pliku MOF do programu Configuration Manager, zobacz [jak skonfigurować spis sprzętu w programie System Center Configuration Manager](../../../../core/clients/manage/inventory/configure-hardware-inventory.md).  

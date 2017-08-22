@@ -1,37 +1,34 @@
 ---
-title: "Typowe zadania zarządzania zgodności dla urządzeń zarządzanych przez klienta - programu Configuration Manager | Dokumentacja firmy Microsoft"
-description: "Informacje na temat ustawień zgodności programu System Center Configuration Manager przez pracy przez kilka typowych scenariuszy."
+title: "Typowe zadania zarządzania zgodności dla urządzeń zarządzanych przez klienta — programu Configuration Manager | Dokumentacja firmy Microsoft"
+description: "Informacje na temat ustawień zgodności programu System Center Configuration Manager przez pracy nad niektórych typowych scenariuszy."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4e345791-74db-41ad-b472-024ce6521daf
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 991eff171dce95590a7f050e0d3b07f98c0224b3
 ms.openlocfilehash: 2012ab5e55da8d707fd668e0163b42fe7d56c72f
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="common-tasks-for-managing-compliance-on-devices-with-the-system-center-configuration-manager-client"></a>Typowe zadania zarządzania zgodności na urządzeniach z klientem programu System Center Configuration Manager
+# <a name="common-tasks-for-managing-compliance-on-devices-with-the-system-center-configuration-manager-client"></a>Typowe zadania zarządzania zgodnością na urządzeniach z klientem programu System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Scenariusze, w tym temacie umożliwiają wprowadzenie do pracy przez kilka typowych scenariuszy, które mogą wystąpić przy użyciu ustawień zgodności programu System Center Configuration Manager.  
+Scenariusze w tym temacie umożliwiają wprowadzenie do pracy za pośrednictwem niektórych typowych scenariuszy, które mogą wystąpić przy użyciu ustawień zgodności programu System Center Configuration Manager.  
 
- Jeśli już znasz ustawień zgodności, szczegółowa dokumentacja o wszystkich funkcji, można użyć znajdują się w [elementów konfiguracji dla urządzeń zarządzanych za pomocą klienta programu System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-with-the-client.md) sekcji.  
+ Jeśli już znasz ustawienia zgodności, szczegółowa dokumentacja wszystkich funkcji, należy użyć znajdują się w [elementy konfiguracji dla urządzeń zarządzanych za pomocą klienta programu System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-with-the-client.md) sekcji.  
 
- Przed rozpoczęciem należy odczytać [wprowadzenie ustawień zgodności](../../compliance/get-started/get-started-with-compliance-settings.md) Dowiedz się niektóre podstawowe informacje o ustawieniach zgodności i przeczytać [planowanie i skonfigurować ustawienia zgodności](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md) do zaimplementowania wszelkie niezbędne wymagania wstępne.  
+ Przed rozpoczęciem przeczytaj [Rozpoczynanie pracy z ustawieniami zgodności](../../compliance/get-started/get-started-with-compliance-settings.md) Aby poznać niektóre podstawowe ustawienia zgodności, a także temat [planowanie i konfigurowanie ustawień zgodności](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md) implementacji wszelkich niezbędnych wymagań wstępnych.  
 
 ## <a name="general-information-for-each-scenario"></a>Ogólne informacje dotyczące poszczególnych scenariuszy  
  W każdym scenariuszu zostanie utworzony element konfiguracji, który wykonuje określone zadanie. Otwórz Kreatora tworzenia elementu konfiguracji, wykonując następujące kroki:  
@@ -42,7 +39,7 @@ Scenariusze, w tym temacie umożliwiają wprowadzenie do pracy przez kilka typow
 
 4.  Na karcie **Ogólne** Kreatora tworzenia elementu konfiguracji, jak pokazano poniżej, podaj nazwę i opis elementu konfiguracji, a następnie wybierz odpowiedni typ elementu konfiguracji dla każdego scenariusza w tym temacie.  
 
-     ![Zawiera ogólne strona kreatora tworzenia elementu konfiguracji.](/sccm/compliance/plan-design/media/Compliance-Settings-Wizard---1.png)  
+     ![Pokazuje stronę Ogólne Kreator tworzenia elementu konfiguracji.](/sccm/compliance/plan-design/media/Compliance-Settings-Wizard---1.png)  
 
 ## <a name="scenarios-for-windows-10-devices-managed-with-the-configuration-manager-client"></a>Scenariusze dla urządzeń z systemem Windows 10 zarządzanych za pomocą klienta programu Configuration Manager  
 
@@ -61,18 +58,18 @@ Scenariusze, w tym temacie umożliwiają wprowadzenie do pracy przez kilka typow
 
 6.  Zakończ pracę kreatora, aby utworzyć element konfiguracji.  
 
- Możesz teraz użyć informacji w [typowe zadania dotyczące tworzenia i wdrażania linii bazowych konfiguracji z System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) temacie ułatwiają wdrażanie konfiguracji został utworzony na urządzeniach.  
+ Teraz można używać z informacjami w [typowe zadania dotyczące tworzenia i wdrażania linii bazowych konfiguracji z System Center Configuration Manager](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) temacie ułatwiają wdrażanie konfiguracji utworzonych na urządzeniach.  
 
 ## <a name="scenarios-for-windows-desktop-and-server-computers-managed-with-the-configuration-manager-client"></a>Scenariusze dla komputerów stacjonarnych i serwerów z systemem Windows zarządzanych za pomocą klienta programu Configuration Manager  
- Na komputerach Mac z systemem klienta programu Configuration Manager dostępne są dwie opcje do oceny zgodności:  
+ Na komputerach Mac z klientem programu Configuration Manager masz dwie opcje oceny zgodności:  
 
 -   Ocena pliku preferencji (plist) systemu Mac OS X.  
 
 -   Użycie skryptu niestandardowego i ocena wyników zwróconych przez skrypt.  
 
- Aby uzyskać więcej informacji, zobacz [tworzenie elementów konfiguracji dla urządzeń z systemem Mac OS X zarządzane przy użyciu klienta programu System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client.md).  
+ Aby uzyskać więcej informacji, zobacz [jak utworzyć elementy konfiguracji dla urządzeń z systemem Mac OS X zarządzanych za pomocą klienta programu System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-mac-os-x-devices-managed-with-the-client.md).  
 
-### <a name="scenario-remediate-an-incorrect-registry-value-on-windows-desktop-computers"></a>Scenariusz: Korygowanie wartości niepoprawne rejestru na komputerach stacjonarnych systemu Windows  
+### <a name="scenario-remediate-an-incorrect-registry-value-on-windows-desktop-computers"></a>Scenariusz: Korygowanie niepoprawnej wartości rejestru na komputerach stacjonarnych z systemem Windows  
  W tym scenariuszu ustalono, że ważna aplikacja biznesowa nie działa poprawnie na niektórych zarządzanych komputerach z systemem Windows 8.1. Po zbadaniu problemu okazało się, że przyczyną jest ustawienie na niektórych komputerach klucza rejestru o nazwie **HKEY_LOCAL_MACHINE\SOFTWARE\Woodgrove\LOB App\Configuration\Configuration1** na wartość **0** . Aby aplikacja biznesowa działała poprawnie, ta wartość musi być ustawiona na **1**.  
 
  W tej procedurze zostanie utworzony element konfiguracji, który będzie monitorować i automatycznie korygować wszelkie znalezione niepoprawne wartości kluczy rejestru.  
@@ -107,9 +104,8 @@ Scenariusze, w tym temacie umożliwiają wprowadzenie do pracy przez kilka typow
 
     -   **Ustawienie musi być zgodne z następującą regułą** — sprawdź, czy nazwa ustawienia jest poprawna, i skonfiguruj opcję określającą, że wartość ustawienia musi być równa **1**.  
 
-    -   **Koryguj niezgodne reguły, jeśli są obsługiwane** — zaznacz to pole, aby upewnić się, że programu Configuration Manager zresetuje wartość klucza rejestru do poprawnej wartości, jeśli jest niepoprawny.  
+    -   **Koryguj niezgodne reguły, jeśli są obsługiwane** — zaznacz to pole, aby upewnić się, że programu Configuration Manager spowoduje zresetowanie wartość klucza rejestru do poprawnej wartości, jeśli jest nieprawidłowe.  
 
 6.  Zakończ pracę kreatora, aby utworzyć element konfiguracji.  
 
- Możesz teraz użyć informacji w [typowe zadania dotyczące tworzenia i wdrażania linii bazowych konfiguracji](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) temacie ułatwiają wdrażanie konfiguracji został utworzony na urządzeniach.  
-
+ Teraz można używać z informacjami w [typowe zadania dotyczące tworzenia i wdrażania linii bazowych konfiguracji](../../compliance/plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md) temacie ułatwiają wdrażanie konfiguracji utworzonych na urządzeniach.  

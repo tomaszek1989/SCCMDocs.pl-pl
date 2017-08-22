@@ -2,26 +2,24 @@
 title: "Przestarzałe funkcje | Dokumentacja firmy Microsoft"
 description: "Więcej informacji na temat funkcji, produktów i systemów operacyjnych, które już nie obsługuje System Center Configuration Manager."
 ms.custom: na
-ms.date: 06/27/2017
+ms.date: 08/16/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: d8c8b44c-1e8a-42b6-bab4-23c72a0a6169
-caps.latest.revision: 15
-caps.handback.revision: 0
+caps.latest.revision: "15"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
+ms.openlocfilehash: 8ac7009014a4652a36acf69ebfe9ccab3ba8ecbd
+ms.sourcegitcommit: 3ce56c7350411d8cc3d3cb9b4054f9ada9b0ed54
 ms.translationtype: MT
-ms.sourcegitcommit: ef42d1483053e9a6c502f4ebcae5a231aa6ba727
-ms.openlocfilehash: 98fa323cb94013d875e2cea41b80fff8cc75b6b2
-ms.contentlocale: pl-pl
-ms.lasthandoff: 07/26/2017
-
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/17/2017
 ---
 # <a name="removed-and-deprecated-features-for-system-center-configuration-manager"></a>Usunięte i przestarzałe funkcje programu System Center Configuration Manager
 
@@ -71,7 +69,7 @@ Aby uzyskać więcej informacji, zobacz:
 |**Systemy operacyjne**|**Najpierw ogłoszone jako przestarzałe**|**Obsługa usunięta**|  
 |-|-|-|  
 |Windows XP|10 lipca 2015 r.|Wersja 1511|  
-|Windows XP Embedded|10 lipca 2015 r.|Wersja 1702|  
+|Windows XP Embedded <br><br> Dotyczy to wszystkich [systemy operacyjne oparte na XP Embedded](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices#windows-embedded-computers).|10 lipca 2015 r.|Wersja 1702|  
 |Windows Server 2003|10 lipca 2015 r.|Wersja 1511|  
 |Windows Server 2003 R2|10 lipca 2015 r.|Wersja 1511|  
 |Windows Vista|10 lipca 2015 r.|Wersja 1511|  
@@ -102,9 +100,10 @@ Należy uaktualnić używanej wersji programu SQL Server, zalecamy następujący
 |Zarządzanie poza pasmem — tak jak w programie System Center 2012 Configuration Manager|16 października 2015|Wersja 1511|
 |Sekwencje zadań: <br /> -OSDPreserveDriveLetter  <br /><br /> Podczas wdrażania systemu operacyjnego domyślnie Instalatora systemu Windows teraz określa najlepsze literę dysku do użycia (zwykle C:). Jeśli chcesz określić inny dysk do użycia, możesz zmienić lokalizację, w kroku sekwencji zadań Zastosuj System operacyjny. Przejdź do **wybierz lokalizację, w której chcesz zastosować ten system operacyjny** wybierz pozycję **określona litera dysku logicznego**i wybierz dysk, który ma być używany. |20 czerwca 2016 r. |Wersja 1606 |
 |Sekwencje zadań: <br /> -Konwertuj dysk na dynamiczny <br /> -Zainstaluj narzędzia wdrażania |18 listopada 2016 r.|Obsługa tych zadań sekwencji kończy się z pierwszą aktualizacją wydaną po 1 czerwca 2017 r.|
-|Software Center ma zmieniony, nowoczesny wygląd. Aplikacje, które wcześniej znajdowały się tylko w wykazie aplikacji zależnych od Silverlight (aplikacje dostępne dla użytkowników) teraz wyświetlane w programie Software Center na **aplikacji** kartę. Katalog aplikacji nadal będą dostępne za pośrednictwem łącza na **stan instalacji** Centrum oprogramowania.<br><br>W najbliższych miesiącach poprzedniej wersji Centrum oprogramowania nie będą już dostępne.<br><br>Aby użyć nowego centrum oprogramowania przez włączenie na kliencie ustawienia, można skonfigurować klientów **Agent komputera** > **Użyj nowego centrum oprogramowania**.<br><br>Aby uzyskać więcej informacji na temat Centrum oprogramowania, zobacz [planowanie i Konfigurowanie zarządzania aplikacjami w programie System Center Configuration Manager](https://docs.microsoft.com/sccm/apps/plan-design/plan-for-and-configure-application-management).|13 grudnia 2016 r.|Obsługa w poprzedniej wersji Centrum oprogramowania kończy się pierwszą aktualizacją wydaną po 1 stycznia 2018.|
+|Program Software Center ma zmieniony, nowoczesny wygląd. W najbliższych miesiącach poprzedniej wersji Centrum oprogramowania nie będą już dostępne.<br><br>Aby użyć nowego centrum oprogramowania przez włączenie na kliencie ustawienia, można skonfigurować klientów **Agent komputera** > **Użyj nowego centrum oprogramowania**.<br><br>Aby uzyskać więcej informacji na temat Centrum oprogramowania, zobacz [planowanie i Konfigurowanie zarządzania aplikacjami w programie System Center Configuration Manager](https://docs.microsoft.com/sccm/apps/plan-design/plan-for-and-configure-application-management).|13 grudnia 2016 r.|Obsługa w poprzedniej wersji Centrum oprogramowania kończy się pierwszą aktualizacją wydaną po 1 stycznia 2018.|
+|Dzięki udostępnieniu nowe środowisko programu Software Center w wersji 1511 aplikacje, które wcześniej znajdowały się tylko w wykazie aplikacji (aplikacje dostępne dla użytkowników) teraz wyświetlane w Centrum oprogramowania. </br></br>Dzięki tej funkcji podstawowego katalogu aplikacji teraz zawarta w programie Software Center środowiska pracy opartego na sieci web katalogu aplikacji nie będą już dostępne w najbliższych miesiącach.|11 sierpnia 2017 r.| Obsługa środowiska użytkownika witryny sieci web kończy się wraz z pierwszą aktualizacją wydaną po 1 czerwca 2018 katalogu aplikacji|
 |Zarządzanie wirtualnych dysków twardych (VHD) z programu Configuration Manager. </br></br>Dotyczy to również usunięcie opcje tworzenia nowego wirtualnego dysku twardego lub dysk VHD za pomocą sekwencji zadań zarządzania i usunięcie węzła wirtualnych dysków twardych z konsoli programu Configuration Manager. </br></br>Ta obsługa zostanie usunięty, istniejące pliki VHD nie zostaną usunięte, ale nie będą już dostępne z poziomu konsoli programu Configuration Manager.  |6 stycznia 2017 r. |Obsługa kończy się wirtualne dyski twarde z pierwszą aktualizacją wydaną po 1 czerwca 2017 r.|
-|Narzędzie oceny uaktualniania programu Configuration Manager dla programu System Center. </br></br>Narzędzie oceny uaktualniania zależy od zarówno System Center Configuration Manager, jak i zestawu narzędzi zgodności aplikacji (ACT) 6.x. Dostarczono ACT z ostateczną wersją systemu Windows 10 ADK v1511. Ponieważ będzie żadnych aktualizacji dalsze działanie, obsługę narzędzia Upgrade Assessment Tool nie będzie już dostępna. </br></br>Zastępuje narzędzie oceny uaktualniania [gotowości do uaktualnienia](/sccm/core/clients/manage/upgrade/upgrade-analytics) funkcji. Powiadomienie o wycofaniu został dodany do [strony pobierania UAT](https://www.microsoft.com/download/details.aspx?id=37145) na 2016-9-12. |9/12/2016  | 11 lipca 2017 r. |  
+|Narzędzie oceny uaktualniania programu Configuration Manager dla programu System Center. </br></br>Narzędzie oceny uaktualniania zależy od zarówno System Center Configuration Manager, jak i zestawu narzędzi zgodności aplikacji (ACT) 6.x. Dostarczono ACT z ostateczną wersją systemu Windows 10 ADK v1511. Ponieważ będzie żadnych aktualizacji dalsze działanie, obsługę narzędzia Upgrade Assessment Tool nie będzie już dostępna. </br></br>Zastępuje narzędzie oceny uaktualniania [gotowości do uaktualnienia](/sccm/core/clients/manage/upgrade/upgrade-analytics) funkcji. Powiadomienie o wycofaniu został dodany do [strony pobierania UAT](https://www.microsoft.com/download/details.aspx?id=37145) na 2016-9-12. |9/12/2016  | 11 lipca 2017 r. |
 
 
 <br></br>
@@ -121,4 +120,3 @@ Dodatkowe szczegóły dla funkcje usunięte z wersji 1511 wersji System Center C
  System Center Configuration Manager usunięto obsługę ochrony dostępu do sieci. Funkcja jest przestarzała w systemie Windows Server 2012 R2 i zostanie usunięty z systemu Windows 10.  
 
  Aby zapoznać się z alternatywami dla funkcji ochrony dostępu do sieci, zobacz sekcję *Przestarzałe funkcje* w temacie [Omówienie usług zasad sieciowych i dostępu sieciowego](https://technet.microsoft.com/library/hh831683.aspx).
-

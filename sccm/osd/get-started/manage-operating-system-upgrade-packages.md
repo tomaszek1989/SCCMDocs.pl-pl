@@ -1,37 +1,34 @@
 ---
-title: "Zarządzanie pakietami uaktualnienia systemu operacyjnego | Dokumentacja firmy Microsoft"
-description: "Informacje o sposobie zarządzania pakietami uaktualnienia systemu operacyjnego w programie System Center Configuration Manager."
+title: "Zarządzanie pakietami uaktualnień systemu operacyjnego | Dokumentacja firmy Microsoft"
+description: "Dowiedz się, jak zarządzać pakietami uaktualnień systemu operacyjnego w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b9b22655-b8c1-461f-8047-3a7e906f647a
-caps.latest.revision: 12
-caps.handback.revision: 0
+caps.latest.revision: "12"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f44505c977b511223a083a960f871371c0ff133
 ms.openlocfilehash: 5fef04f26b12bced073332fd1f7b4e7c7bd7d398
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="manage-operating-system-upgrade-packages-with-system-center-configuration-manager"></a>Zarządzanie pakietami uaktualnień systemu operacyjnego w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Pakiet uaktualnienia w programie System Center Configuration Manager zawiera pliki źródłowe Instalatora systemu Windows, które są używane do uaktualniania istniejącego systemu operacyjnego na komputerze. Użyj następujących sekcji Zarządzanie pakietami uaktualnienia systemu operacyjnego w programie Configuration Manager.
+Pakiet uaktualnienia w programie System Center Configuration Manager zawiera pliki źródłowe Instalatora systemu Windows, które są używane do uaktualniania istniejącego systemu operacyjnego na komputerze. Użyj następujących sekcji, aby zarządzać pakietami uaktualnień systemu operacyjnego w programie Configuration Manager.
 
 ##  <a name="BKMK_AddOSUpgradePkgs"></a> Dodawanie pakietów uaktualnień systemu operacyjnego do programu Configuration Manager  
- Przed użyciem pakiet uaktualnienia systemu operacyjnego, należy dodać pakiet do lokacji programu Configuration Manager. Aby dodać pakiet aktualizacji systemu operacyjnego, należy wykonać poniższą procedurę.  
+ Przed użyciem pakietu uaktualnienia systemu operacyjnego, należy dodać pakietu do lokacji programu Configuration Manager. Aby dodać pakiet aktualizacji systemu operacyjnego, należy wykonać poniższą procedurę.  
 
 #### <a name="to-add-an-operating-system-upgrade-package"></a>Aby dodać pakiet uaktualnienia systemu operacyjnego  
 
@@ -65,9 +62,9 @@ Pakiet uaktualnienia w programie System Center Configuration Manager zawiera pli
  Dystrybuowanie obrazów systemu operacyjnego do punktów dystrybucji przebiega tak samo jak w przypadku zawartości innego typu. W większości przypadków przed wdrożeniem systemu operacyjnego musisz przeprowadzić dystrybucję obrazu systemu operacyjnego do co najmniej jednego punktu dystrybucji. Aby zapoznać się z procedurą dystrybucji obrazu systemu operacyjnego, zobacz temat [Dystrybucja zawartości](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).  
 
 ##  <a name="BKMK_OSUpgradePkgApplyUpdates"></a> Stosowanie aktualizacji oprogramowania do pakietów uaktualnień systemu operacyjnego  
- Począwszy od programu Configuration Manager w wersji 1602, można stosować nowe aktualizacje oprogramowania do obrazu systemu operacyjnego w pakiecie uaktualnienia systemu operacyjnego. Przed zainstalowaniem aktualizacji oprogramowania do pakiet uaktualniający, który musi mieć oprogramowanie aktualizacji infrastruktury, w miejscu, pomyślnie zsynchronizowane aktualizacje oprogramowania i pobrać aktualizacje oprogramowania do biblioteki zawartości na serwerze lokacji. Aby uzyskać więcej informacji, zobacz [wdrażania aktualizacji oprogramowania](../../sum/deploy-use/deploy-software-updates.md).  
+ Począwszy od programu Configuration Manager w wersji 1602, można stosować nowe aktualizacje oprogramowania do obrazu systemu operacyjnego do pakietu uaktualnienia systemu operacyjnego. Przed zainstalowaniem aktualizacji oprogramowania do pakietu uaktualnienia, który musi mieć oprogramowanie aktualizacji infrastruktury w miejscu, pomyślnie zsynchronizować aktualizacje oprogramowania i pobrane aktualizacje oprogramowania do biblioteki zawartości na serwerze lokacji. Aby uzyskać więcej informacji, zobacz [wdrażania aktualizacji oprogramowania](../../sum/deploy-use/deploy-software-updates.md).  
 
- Odpowiednie aktualizacje oprogramowania można stosować do pakietu uaktualnienia zgodnie z zaplanowanym harmonogramem. Zgodnie z harmonogramem określonym przez użytkownika programu Configuration Manager dotyczą aktualizacji oprogramowania, które można wybrać pakiet uaktualnienia systemu operacyjnego, a następnie opcjonalnie dystrybuuje zaktualizowany pakiet uaktualniający do punktów dystrybucji. Informacje o pakiecie uaktualnienia systemu operacyjnego, w tym informacje o aktualizacjach oprogramowania zastosowanych podczas importu, są przechowywane w bazie danych lokacji. W bazie danych lokacji są także przechowywane informacje o aktualizacjach oprogramowania zastosowanych do pakietu uaktualnienia od jego pierwszego dodania. Po uruchomieniu kreatora w celu zastosowania aktualizacji oprogramowania do pakietu uaktualnienia obrazu systemu operacyjnego kreator pobiera listę dostępnych do wyboru aktualizacji, które nie zostały jeszcze zastosowane do pakietu uaktualnienia. Dotyczy aktualizacji oprogramowania pakiet uaktualnienia systemu operacyjnego i kopiuje aktualizacje oprogramowania z biblioteki zawartości na serwerze lokacji programu Configuration Manager.  
+ Odpowiednie aktualizacje oprogramowania można stosować do pakietu uaktualnienia zgodnie z zaplanowanym harmonogramem. Zgodnie z harmonogramem określonym przez użytkownika programu Configuration Manager stosuje aktualizacje oprogramowania, które należy wybrać pakiet uaktualnienia systemu operacyjnego, a następnie opcjonalnie dystrybuuje zaktualizowany pakiet uaktualnienia do punktów dystrybucji. Informacje o pakiecie uaktualnienia systemu operacyjnego, w tym informacje o aktualizacjach oprogramowania zastosowanych podczas importu, są przechowywane w bazie danych lokacji. W bazie danych lokacji są także przechowywane informacje o aktualizacjach oprogramowania zastosowanych do pakietu uaktualnienia od jego pierwszego dodania. Po uruchomieniu kreatora w celu zastosowania aktualizacji oprogramowania do pakietu uaktualnienia obrazu systemu operacyjnego kreator pobiera listę dostępnych do wyboru aktualizacji, które nie zostały jeszcze zastosowane do pakietu uaktualnienia. Configuration Manager kopiuje aktualizacje oprogramowania z biblioteki zawartości na serwerze lokacji i stosuje aktualizacje oprogramowania do pakietu uaktualnienia systemu operacyjnego.  
 
  Aby zastosować aktualizację oprogramowania do pakietu uaktualnienia systemu operacyjnego, należy wykonać poniższą procedurę.  
 
@@ -85,13 +82,12 @@ Pakiet uaktualnienia w programie System Center Configuration Manager zawiera pli
 
 6.  Na stronie **Ustawianie harmonogramu** określ poniższe ustawienia, a następnie kliknij przycisk **Dalej**.  
 
-    1.  **Harmonogram**: Wybierz harmonogram stosowania aktualizacji oprogramowania do obrazu systemu operacyjnego.  
+    1.  **Harmonogram**: Określ harmonogram stosowania aktualizacji oprogramowania do obrazu systemu operacyjnego.  
 
-    2.  **Kontynuuj przy błędzie**:  Wybierz tę opcję, aby kontynuować stosowanie aktualizacji oprogramowania do obrazu nawet po wystąpieniu błędu.  
+    2.  **Kontynuuj przy błędzie**:  Wybierz tę opcję, aby kontynuować stosowanie aktualizacji oprogramowania do obrazu nawet wtedy, gdy występuje błąd.  
 
-    3.  **Rozpraszanie obrazu do punktów dystrybucji**: Wybierz tę opcję, aby zaktualizować obraz systemu operacyjnego na punktach dystrybucji po zastosowaniu aktualizacji oprogramowania.  
+    3.  **Dokonaj dystrybucji obrazu do punktów dystrybucji**: Wybierz tę opcję, aby zaktualizować obraz systemu operacyjnego w punktach dystrybucji po zastosowaniu aktualizacji oprogramowania.  
 
 7.  Na stronie **Podsumowanie** sprawdź informacje, a następnie kliknij przycisk **Dalej**.  
 
 8.  Na stronie **Ukończenie** sprawdź, czy aktualizacje oprogramowania zostały pomyślnie zastosowane do obrazu systemu operacyjnego.  
-

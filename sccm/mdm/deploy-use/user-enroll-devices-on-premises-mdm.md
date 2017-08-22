@@ -1,46 +1,43 @@
 ---
-title: "Jak użytkownicy rejestrują urządzenia z lokalnych MDM — Configuration Manager | Dokumentacja firmy Microsoft"
-description: "Zrozumienie, jak użytkownicy rejestrują urządzenia z lokalnego zarządzania urządzeniami przenośnymi w programie System Center Configuration Manager."
+title: "Jak użytkownicy rejestrują urządzenia z lokalnym zarządzaniem urządzeniami Przenośnymi — programu Configuration Manager | Dokumentacja firmy Microsoft"
+description: "Dowiedz się, jak użytkownicy rejestrują urządzenia z zarządzania urządzeniami przenośnymi lokalnymi w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 59004b34-b64f-4d77-898c-07bf3dc75430
-caps.latest.revision: 9
-caps.handback.revision: 0
+caps.latest.revision: "9"
+caps.handback.revision: "0"
 author: Mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 507bad02c6e028f09a8b0c8a566ac55f7c3942a5
 ms.openlocfilehash: 8c7438c2cc0bc66654eb3e74de10553df53181d9
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-users-enroll-devices-with-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Jak użytkownicy rejestrują urządzenia z lokalnego zarządzania urządzeniami przenośnymi w programie System Center Configuration Manager
+# <a name="how-users-enroll-devices-with-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Jak użytkownicy rejestrują urządzenia z zarządzania urządzeniami przenośnymi lokalnymi w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Za pomocą zarządzania urządzeniami przenośnymi lokalnego Menedżera konfiguracji centrum systemu użytkownicy mogą rejestrować urządzenia, jeśli przyznano im uprawnienia rejestracji (przez ustawienia zaktualizowanego klienta), a ich urządzeń certyfikatu wymaganego głównego zainstalowana tak, aby mieć zaufanej komunikacji z serwerów obsługujących role systemu lokacji wymagane. Aby uzyskać więcej informacji dotyczących sposobu konfigurowania rejestracji, zobacz [Konfigurowanie rejestracji urządzeń do zarządzania urządzeniami przenośnymi lokalnie w programie System Center Configuration Manager](../../mdm/get-started/set-up-device-enrollment-on-premises-mdm.md).  
+Z System Center Configuration Manager na — lokalne zarządzanie urządzeniami przenośnymi użytkownicy mogą rejestrować urządzenia, jeśli przyznano im uprawnienia rejestracji (przez uaktualnione ustawienia klienta), a ich urządzeniach zainstalowano certyfikat główny wymagany do nawiązania zaufanej komunikacji z serwerami hostującymi wymagane role systemu lokacji. Aby uzyskać więcej informacji na temat sposobu konfigurowania rejestracji, zobacz [Konfigurowanie rejestracji urządzeń do zarządzania urządzeniami przenośnymi lokalnymi w programie System Center Configuration Manager](../../mdm/get-started/set-up-device-enrollment-on-premises-mdm.md).  
 
 > [!NOTE]  
->  Bieżącej gałęzi programu Configuration Manager obsługuje rejestracji w zarządzanie urządzeniami przenośnymi lokalnie na urządzeniach z systemem w następujących systemach operacyjnych:  
+>  Bieżąca gałąź programu Configuration Manager obsługuje rejestrację w lokalnego zarządzania urządzeniami przenośnymi dla urządzeń z systemem następujących systemach operacyjnych:  
 >   
 > -  Windows 10 Enterprise  
 > -   Windows 10 Pro  
-> -   Windows 10 Team \(począwszy od 1602 wersji programu Configuration Manager\)  
+> -   Windows 10 Team \(w programie Configuration Manager w wersji 1602\)  
 > -   Windows 10 Mobile  
 > -   Windows 10 Mobile Enterprise
-> -   System Windows 10 Enterprise IoT   
+> -   Windows 10 Enterprise IoT   
 
-Następujące zadania wyjaśniają, jak zarejestrować i zweryfikować rejestracji komputerów i urządzeń, na\-lokalnych zarządzanie urządzeniami przenośnymi:  
+Następujące zadania wyjaśniają, jak zarejestrować oraz zweryfikować rejestrację komputerów i urządzeń dla na\-lokalnych zarządzanie urządzeniami przenośnymi:  
 
 -   [Rejestrowanie komputera z systemem Windows 10](#bkmk_enrollDesk)  
 
@@ -75,9 +72,8 @@ Następujące zadania wyjaśniają, jak zarejestrować i zweryfikować rejestrac
 5.  Na następnym ekranie wprowadź służbowy adres e-mail i hasło, a następnie kliknij przycisk **Zaloguj**. Po chwili urządzenie zostanie zarejestrowane. Kliknij przycisk **Gotowe**.  
 
 ##  <a name="bkmk_verify"></a> Weryfikuj rejestrację urządzenia  
- Można sprawdzić, czy urządzenia zostały pomyślnie zarejestrowane w konsoli programu Configuration Manager.  
+ Aby sprawdzić, czy urządzenia zostały zarejestrowane pomyślnie w konsoli programu Configuration Manager.  
 
 1.  Uruchom konsolę programu Configuration Manager.  
 
 2.  Kliknij przycisk **Zasoby i zgodność** > **Przegląd** > **Urządzenia**. Zarejestrowane urządzenie zostanie wyświetlone na liście.  
-

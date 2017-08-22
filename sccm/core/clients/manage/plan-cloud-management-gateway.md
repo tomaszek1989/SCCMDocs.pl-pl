@@ -3,20 +3,17 @@ title: "Planowanie brama zarządzania chmurze | Dokumentacja firmy Microsoft"
 description: 
 ms.date: 06/07/2017
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
 ms.openlocfilehash: a7380ae781447880ffcba0778694ea62e10c4889
-ms.contentlocale: pl-pl
-ms.lasthandoff: 06/08/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Planowanie brama zarządzania chmury w programie Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
@@ -198,4 +195,3 @@ Aby uzyskać listę wszystkich plików dziennika związanych z CMG, zobacz [plik
 ## <a name="next-steps"></a>Następne kroki
 
 [Konfigurowanie bramy zarządzania chmurą](setup-cloud-management-gateway.md)
-

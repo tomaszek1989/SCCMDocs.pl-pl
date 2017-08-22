@@ -1,69 +1,65 @@
 ---
-title: "Migracja bezpieczeństwo i prywatność | Dokumentacja firmy Microsoft"
-description: "Pobierz najlepszych praktyk dotyczących zabezpieczeń i ochrony prywatności podczas migracji do środowiska programu System Center Configuration Manager."
+title: "Migracja zabezpieczenia i prywatność | Dokumentacja firmy Microsoft"
+description: "Pobierz najlepsze rozwiązania i informacje o ochronie prywatności dotyczące migracji do środowiska programu System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6893fce1-7ad5-4151-9ba9-3096871e8e4a
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5e3d3f4194b06442e34c10988a20fe9ca40ac5d7
 ms.openlocfilehash: 8aa6971d75924ab5bcacd70c330913097ecf8717
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="security-and-privacy-for-migration-to-system-center-configuration-manager"></a>Bezpieczeństwo i ochrona prywatności podczas migracji programu System Center Configuration Manager
+# <a name="security-and-privacy-for-migration-to-system-center-configuration-manager"></a>Bezpieczeństwo i ochrona prywatności podczas migracji do programu System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Ten temat zawiera najlepsze praktyki dotyczące zabezpieczeń i ochrony prywatności podczas migracji do środowiska programu System Center Configuration Manager.  
+Ten temat zawiera najlepsze rozwiązania i informacje o ochronie prywatności dotyczące migracji do środowiska programu System Center Configuration Manager.  
 
 ## <a name="security-best-practices-for-migration"></a>Najlepsze rozwiązania dotyczące migracji  
- Należy stosować następujące najlepsze rozwiązanie bezpieczeństwa dotyczące migracji.  
+ Użyj następujących względów bezpieczeństwa do migracji.  
 
 |Najlepsze rozwiązanie w zakresie zabezpieczeń|Więcej informacji|  
 |----------------------------|----------------------|  
-|Użyj konta komputera dla konta dostawcy programu SMS lokacji źródłowej oraz konta programu SQL Server lokacji źródłowej, a nie konta użytkownika.|Jeśli konto użytkownika należy użyć do migracji, Usuń szczegółowe dane konta, po zakończeniu migracji.|  
-|Użyj protokołu IPsec podczas migrowania zawartości z punktu dystrybucji w lokacji źródłowej do punktu dystrybucji w lokacji docelowej.|Mimo że migrowana zawartość jest mieszana naruszeniem, jeśli modyfikacji danych podczas transferu, migracja nie powiedzie się.|  
-|Ogranicz i Monitoruj użytkowników administracyjnych, którzy mogą tworzyć zadania migracji.|Integralność bazy danych hierarchii docelowej zależy od integralności danych, które użytkownik administracyjny wybiera do importu z hierarchii źródłowej. Ponadto ten użytkownik administracyjny może czytać wszystkie dane hierarchii źródłowej.|  
+|Użyj konta komputera na konto dostawcy programu SMS lokacji źródłowej i konto źródłowego serwera SQL lokacji zamiast konta użytkownika.|Jeśli konto użytkownika należy użyć do migracji, Usuń szczegóły konta, po zakończeniu migracji.|  
+|Użyj protokołu IPsec, podczas migrowania zawartości z punktu dystrybucji w lokacji źródłowej do punktu dystrybucji w lokacji docelowej.|Mimo że migrowana zawartość jest wartość skrótu, aby wykryć, naruszanie zawartości, jeśli dane zostanie zmodyfikowana w czasie jest przesyłana, migracja nie powiedzie się.|  
+|Ogranicz i Monitoruj użytkowników administracyjnych, którzy mogą tworzyć zadania migracji.|Integralność bazy danych hierarchii docelowej zależy od integralności danych, które użytkownik administracyjny wybiera do importu z hierarchii źródłowej. Ponadto ten użytkownik administracyjny może czytać wszystkie dane z hierarchii źródłowej.|  
 
 ### <a name="security-issues-for-migration"></a>Problemy z bezpieczeństwem dotyczące migracji  
-Z migracją wiążą się następujące problemy bezpieczeństwa:  
+Migracja zawiera następujące problemy bezpieczeństwa:  
 
--   Klienci, którzy są zablokowani w lokacji źródłowej mogą zostać pomyślnie przypisani do hierarchii docelowej przed zmigrowaniem ich rekordu klienta.  
+-   Klienci, którzy są blokowane z lokacji źródłowej może pomyślnie przypisany do hierarchii docelowej przed ich rekord klienta jest migrowana.  
 
-     Mimo że program Configuration Manager zachowuje zablokowany stan migrowanych klientów, klient może zostać pomyślnie przypisany do hierarchii docelowej, jeśli przypisanie nastąpi przed zakończeniem migracji rekordu klienta.  
+     Mimo że programu Configuration Manager zachowuje zablokowany stan migrowanych klientów, klient może zostać pomyślnie przypisany do hierarchii docelowej, jeśli przypisanie nastąpi przed zakończeniem migracji rekordu klienta.  
 
 -   Komunikaty inspekcji nie są migrowane.  
 
-Podczas migracji danych z lokacji źródłowej do lokacji docelowej następuje utrata wszystkich informacji inspekcji z hierarchii źródłowej.  
+Podczas migracji danych z lokacji źródłowej do lokacji docelowej, zostaną utracone wszystkich informacji inspekcji z hierarchii źródłowej.  
 
-## <a name="privacy-information-for-migration"></a>Informacje o prywatności dotyczące migracji  
- Migracja wykrywa w bazie danych lokacji, pozwalające identyfikować infrastrukturę źródłową informacje i zapisuje te dane do bazy danych w hierarchii docelowej. Informacje, które wykrywa w lokacji źródłowej lub hierarchii programu System Center Configuration Manager, zależą od funkcji włączonych w środowisku źródłowym, a także operacji zarządzania wykonanych w tym środowisku.  
+## <a name="privacy-information-for-migration"></a>Informacje o ochronie prywatności dotyczące migracji  
+ Migracja umożliwia odnajdywanie informacji o bazie danych lokacji, które identyfikują w infrastrukturze źródłowej i zapisuje te dane do bazy danych w hierarchii docelowej. Informacje, które wykrywa w lokacji źródłowej lub hierarchii programu System Center Configuration Manager zależy od funkcji włączonych w środowisku źródłowym, jak również operacji zarządzania wykonanych w tym środowisku.  
 
- Aby uzyskać więcej informacji o zabezpieczeniach i ochronie prywatności znajduje się w następujących tematach:  
+ Aby uzyskać więcej informacji o zabezpieczeniach i informacje o ochronie prywatności Zobacz jedną z następujących tematów:  
 
--   Aby uzyskać więcej informacji o ochronie prywatności dla programu Configuration Manager 2007, zobacz [bezpieczeństwo i prywatność programu Configuration Manager 2007](http://go.microsoft.com/fwlink/p/?LinkId=216450) w bibliotece dokumentacji programu Configuration Manager 2007.  
+-   Aby uzyskać więcej informacji o prywatności dla programu Configuration Manager 2007, zobacz [bezpieczeństwo i prywatność programu Configuration Manager 2007](http://go.microsoft.com/fwlink/p/?LinkId=216450) w bibliotece dokumentacji programu Configuration Manager 2007.  
 
--   Aby uzyskać więcej informacji o ochronie prywatności dla programu System Center 2012 Configuration Manager, zobacz [zabezpieczenia i ochrona prywatności w programie System Center 2012 Configuration Manager](https://technet.microsoft.com/library/gg682033.aspx) w bibliotece dokumentacji programu System Center 2012 Configuration Manager.  
+-   Aby uzyskać więcej informacji na temat zachowania poufności informacji programu System Center 2012 Configuration Manager, zobacz [zabezpieczenia i prywatność programu System Center 2012 Configuration Manager](https://technet.microsoft.com/library/gg682033.aspx) w bibliotece dokumentacji programu System Center 2012 Configuration Manager.  
 
--   Aby uzyskać więcej informacji o ochronie prywatności dla programu System Center Configuration Manager, zobacz [zabezpieczenia i prywatność programu System Center Configuration Manager](../../core/plan-design/security/security-and-privacy.md).  
+-   Aby uzyskać więcej informacji dotyczących zachowania poufności informacji programu System Center Configuration Manager, zobacz [zabezpieczenia i prywatność programu System Center Configuration Manager](../../core/plan-design/security/security-and-privacy.md).  
 
 Można migrować niektóre lub wszystkie obsługiwane dane z lokacji źródłowej do hierarchii docelowej.  
 
 Migracja nie jest domyślnie włączona i wymaga wykonania kilku czynności konfiguracyjnych. Informacje o migracji nie są wysyłane do firmy Microsoft.  
 
 Przed migracją danych z hierarchii źródłowej, należy wziąć pod uwagę wymagania dotyczące ochrony prywatności.  
-

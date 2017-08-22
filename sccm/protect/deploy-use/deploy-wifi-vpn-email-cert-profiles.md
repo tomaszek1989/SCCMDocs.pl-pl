@@ -1,34 +1,32 @@
 ---
-title: "Wdrażanie sieci Wi-Fi, sieci VPN, profile certyfikatów oraz wiadomości e-mail | Dokumentacja firmy Microsoft"
-description: "Informacje o sposobie wdrażania sieci Wi-Fi, sieci VPN, poczty e-mail i profili certyfikatów w programie System Center Configuration Manager."
+title: "Wdrażanie sieci Wi-Fi, VPN, poczty e-mail i profilów certyfikatów | Dokumentacja firmy Microsoft"
+description: "Dowiedz się, jak wdrożyć sieci Wi-Fi, VPN, poczty e-mail i profilów certyfikatów w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3753608d-b539-44dc-8e3f-b631319e7687
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: Nbigman
 ms.author: nbigman
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c2e3aef41e9a890d136039f85777ab07284e5c27
 ms.openlocfilehash: 70372d5df13034b48f3e43b766776442f1be5823
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="deploy-profiles-in-system-center-configuration-manager"></a>Wdrażanie profili w programie System Center Configuration Manager
+# <a name="deploy-profiles-in-system-center-configuration-manager"></a>Wdrażanie profilów w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Profile należy wdrożyć do jednej lub kilku kolekcjach przed ich użyciem.  
+Profile należy wdrożyć w jednej lub kilku kolekcjach przed ich użyciem.  
 
- Użyj **Wdrażanie profilu sieci Wi-Fi**, **Wdrażanie profilu sieci VPN**, **Wdrażanie profilu programu Exchange ActiveSync**, lub **Wdróż profil certyfikatu** okno dialogowe, aby skonfigurować wdrożenie tych profilów. W ramach konfiguracji należy zdefiniować kolekcję, do których profil jest można wdrożyć i określić, jak często profil jest sprawdzany pod kątem zgodności.  
+ Użyj **Wdrażanie profilu sieci Wi-Fi**, **Wdróż profil VPN**, **Wdrażanie profilu programu Exchange ActiveSync**, lub **Wdróż profil certyfikatu** okno dialogowe umożliwia skonfigurowanie wdrażania profili. W ramach konfiguracji należy zdefiniować kolekcję, do której profil ma można wdrożyć i określ, jak często profil jest oceniane pod kątem zgodności.  
 
 > [!NOTE]  
 >  Wdrożenie wielu profili dostępu do zasobów firmy dla tego samego użytkownika spowoduje następujące zachowanie:  
@@ -39,7 +37,7 @@ Profile należy wdrożyć do jednej lub kilku kolekcjach przed ich użyciem.
 > -   Przed wdrożeniem profili certyfikatów należy skonfigurować infrastrukturę i utworzyć profile certyfikatów. Więcej informacji znajduje się w następujących tematach:  
 >   
 >  -   [Konfigurowanie infrastruktury certyfikatów w programie System Center Configuration Manager](certificate-infrastructure.md)  
-> -   [Tworzenie profili certyfikatów w programie System Center Configuration Manager](create-certificate-profiles.md)    
+> -   [Jak tworzyć profile certyfikatów w programie System Center Configuration Manager](create-certificate-profiles.md)    
 
 > [!IMPORTANT]  
 >  Po usunięciu wdrożenia profilu sieci VPN nie jest usuwany z urządzeń klientów. Aby usunąć profil z urządzeń, należy zrobić to ręcznie.
@@ -50,17 +48,17 @@ Profile należy wdrożyć do jednej lub kilku kolekcjach przed ich użyciem.
 
 1.  W konsoli programu System Center Configuration Manager wybierz **zasoby i zgodność**.  
 
-2.  W **zasoby i zgodność** obszaru roboczego, rozwiń węzeł **ustawień zgodności**, rozwiń węzeł **dostęp do zasobów firmy**, a następnie wybierz odpowiedni profil typu, takich jak **profilów sieci Wi-Fi**.  
+2.  W **zasoby i zgodność** obszaru roboczego, rozwiń węzeł **ustawień zgodności**, rozwiń węzeł **dostęp do zasobów firmy**, a następnie wybierz typ odpowiedni profil, takich jak **profilów sieci Wi-Fi**.  
 
-3.  Na liście profilów wybierz profil, który chcesz wdrożyć, a następnie w **Home** w karcie **wdrożenia** , kliknij przycisk **Wdróż**.  
+3.  Na liście profilów wybierz profil, który chcesz wdrożyć, a następnie w **Home** karcie **wdrożenia** kliknij przycisk **Wdróż**.  
 
-4.  W oknie dialogowym Wdróż profilu Podaj następujące informacje:  
+4.  W oknie dialogowym wdrażania profilu Podaj następujące informacje:  
 
-    -   **Kolekcja** -kliknij **Przeglądaj** aby wybrać kolekcję, w której chcesz wdrożyć profil.  
+    -   **Kolekcja** — kliknij przycisk **Przeglądaj** aby wybrać kolekcję, w której chcesz wdrożyć profil.  
 
-    -   **Generowanie alertu** — Włącz tę opcję skonfigurować alert generowany, jeżeli zgodność profilu jest mniejsza niż określony procent określonej daty i godziny. Możesz również określić, czy chcesz wysyłać alert do programu System Center Operations Manager.  
+    -   **Generuj alert** — Włącz tę opcję skonfigurować alert generowany, jeżeli zgodność profilu jest mniejsza niż określony procent określonej daty i godziny. Możesz również określić, czy chcesz wysyłać alert do programu System Center Operations Manager.  
 
-    -   -   **Opóźnienie losowe (w godzinach)**: (Tylko w przypadku profili certyfikatów zawierających ustawienia prostego protokołu rejestrowania certyfikatów) Określa okno opóźnienia, aby uniknąć nadmiernego przetwarzania usługi rejestracji urządzeń sieciowych. Domyślna wartość to **64** godziny.  
+    -   -   **Opóźnienie losowe (godziny)**: (Tylko w przypadku profilów certyfikatów zawierających ustawienia prostego protokołu rejestrowania certyfikatów) Określa okno opóźnienia, aby uniknąć nadmiernego przetwarzania w usłudze rejestracji urządzeń sieciowych. Domyślna wartość to **64** godziny.  
 
     -   **Określ harmonogram oceny zgodności dla tego <type> profilu** — Określ harmonogram oceny wdrożonego profilu na komputerach klienckich. Harmonogram może być prosty lub niestandardowy.  
 
@@ -71,7 +69,6 @@ Profile należy wdrożyć do jednej lub kilku kolekcjach przed ich użyciem.
 
 ### <a name="see-also"></a>Zobacz także  
 
-[Monitorowanie sieci Wi-Fi, sieci VPN i profile poczty e-mail w programie System Center Configuration Manager](monitor-wifi-email-vpn-profiles.md)
+[Monitorowanie sieci Wi-Fi, VPN i profile poczty e-mail w programie System Center Configuration Manager](monitor-wifi-email-vpn-profiles.md)
 
-[Monitorowanie profili certyfikatów w programie System Center Configuration Manager](monitor-certificate-profiles.md)
-
+[Jak monitorować profile certyfikatów w programie System Center Configuration Manager](monitor-certificate-profiles.md)

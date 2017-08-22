@@ -6,28 +6,25 @@ ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fa648e73-5fb8-4818-ab57-7466ffaf888e
-caps.latest.revision: 24
+caps.latest.revision: "24"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 6424fb07802b62820b4dc78a58ab30d3b956abef
 ms.openlocfilehash: a5c2a8912cd2ef95a778b81d0b7f1f98315b8413
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="manage-email-access-in-system-center-configuration-manager"></a>Zarządzanie dostępem do poczty e-mail w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Użyj programu System Center Configuration Manager warunkowego dostępu do zarządzania dostępem do poczty e-mail programu Exchange na podstawie warunków, które określisz.  
+Używany System Center Configuration Manager warunkowego dostępu do zarządzania dostępem do poczty e-mail programu Exchange na podstawie warunków, które określisz.  
 
 Możesz zarządzać dostępem do następujących programów i usług:  
 
@@ -39,7 +36,7 @@ Możesz zarządzać dostępem do następujących programów i usług:
 
 Dostęp do programu Exchange Online i lokalnego programu Exchange można kontrolować z wbudowanego klienta poczty e-mail na poniższych platformach:  
 
--   Android 4.0 i nowsze, Samsung KNOX Standard 4.0 i nowsze  
+-   System android 4.0 i nowsze, Samsung KNOX Standard 4.0 lub nowszy  
 
 -   System iOS 7.1 lub nowszy  
 
@@ -47,30 +44,30 @@ Dostęp do programu Exchange Online i lokalnego programu Exchange można kontrol
 
 -   Aplikacja do obsługi poczty w systemie Windows 8.1 lub nowszym
 
-Aplikacji komputerowych pakietu Office można uzyskać dostęp do usługi Exchange Online w przypadku komputerów z systemem:  
+Aplikacje komputerowe pakietu Office można uzyskać dostępu do usługi Exchange Online na komputerach z systemem:  
 
 -   Pakietem Office 2013 lub nowszym z włączonym [nowoczesnym uwierzytelnianiem](https://support.office.com/en-US/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a) .  
 
 -   Systemem Windows 7.0 lub Windows 8.1  
 
 > [!NOTE]  
->  Komputery powinny zostać przyłączone do domeny lub być zgodnych z zasadami ustawionymi w usłudze Intune.  
+>  Komputery powinny zostać przyłączone do domeny lub być zgodne z zasadami ustawionymi w usłudze Intune.  
 
 
 ## <a name="device-requirements"></a>Wymagania dotyczące urządzeń
  Jeśli skonfigurujesz dostęp warunkowy, to aby użytkownik mógł połączyć się ze swoją pocztą e-mail, jego urządzenie musi:  
 
--   Być zarejestrowane w usłudze Intune lub komputera przyłączonego do domeny.  
+-   Zostać zarejestrowane w usłudze Intune lub przyłączony do domeny.  
 
--   Rejestrowanie urządzenia w usłudze Azure Active Directory (dzieje się to automatycznie, gdy urządzenie jest zarejestrowane w usłudze Intune (tylko w przypadku programu Exchange Online). ponadto identyfikator klienta programu Exchange ActiveSync musi być zarejestrowany w usłudze Azure Active Directory (nie dotyczy to urządzeń z systemem Windows i Windows Phone łączących się z lokalnym programem Exchange);  
+-   Rejestrowanie urządzenia w usłudze Azure Active Directory (dzieje się automatycznie, gdy urządzenie jest zarejestrowane w usłudze Intune (tylko w przypadku usługi Exchange Online). ponadto identyfikator klienta programu Exchange ActiveSync musi być zarejestrowany w usłudze Azure Active Directory (nie dotyczy to urządzeń z systemem Windows i Windows Phone łączących się z lokalnym programem Exchange);  
 
      W przypadku komputera przyłączonego do domeny należy skonfigurować urządzenie do automatycznego rejestrowania w usłudze Azure Active Directory.  Sekcja **Dostęp warunkowy dla komputerów** w temacie [Zarządzanie dostępem do usług w programie System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md) zawiera pełen zestaw wymagań dotyczących włączania dostępu warunkowego dla komputerów.  
 
--   Być zgodne z zasadami zgodności programu Configuration Manager wdrożonymi na tym urządzeniu  
+-   Być zgodne z wdrożonymi na tym urządzeniu zasadami zgodności programu Configuration Manager  
 
  Jeśli warunki dostępu warunkowego nie zostaną spełnione, użytkownik zobaczy podczas logowania jeden z następujących komunikatów:  
 
--   Jeśli urządzenie nie jest zarejestrowane w usłudze Intune lub nie jest zarejestrowany w usłudze Azure Active Directory, zostanie wyświetlony komunikat z instrukcjami na temat instalowania aplikacji portalu firmy, rejestrowania urządzenia i (w przypadku urządzeń z systemami Android i iOS), aktywowania poczty e-mail, co powoduje skojarzenie Identyfikatora programu Exchange ActiveSync urządzenia z rekordem urządzenia w usłudze Azure Active Directory.  
+-   Jeśli urządzenie nie jest zarejestrowane w usłudze Intune lub nie jest zarejestrowany w usłudze Azure Active Directory, zostanie wyświetlony komunikat z instrukcjami o sposobie instalowania aplikacji portalu firmy, rejestrowania urządzenia i (w przypadku urządzeń z systemami Android i iOS) i aktywowania poczty e-mail, co umożliwia skojarzenie Identyfikatora programu Exchange ActiveSync urządzenia z rekordem urządzenia w usłudze Azure Active Directory.  
 
 -   Jeśli urządzenie nie jest zgodne, zostanie wyświetlony komunikat kierujący użytkownika do portalu sieci web usługi Intune, gdzie można znaleźć informacje o problemie i sposobie jego rozwiązania.  
 
@@ -93,7 +90,7 @@ Nieobsługiwane przeglądarki zostaną zablokowane. Aplikacje programu OWA dla s
 
  Możesz zablokować dostęp do poczty e-mail programu Exchange z poziomu klienta poczty e-mail programu Exchange ActiveSync dostarczonego z urządzeniem na następujących platformach:  
 
--   Android 4.0 i nowsze, Samsung KNOX Standard 4.0 i nowsze  
+-   System android 4.0 i nowsze, Samsung KNOX Standard 4.0 lub nowszy  
 
 -   System iOS 7.1 lub nowszy  
 
@@ -103,31 +100,31 @@ Nieobsługiwane przeglądarki zostaną zablokowane. Aplikacje programu OWA dla s
 
  Aplikacja Outlook dla systemów iOS i Android oraz aplikacja klasyczna Outlook w wersji 2013 lub nowszej są obsługiwane tylko w usłudze Exchange Online.  
 
- **Lokalnego programu Exchange connector** między programu Configuration Manager i Exchange jest wymagana dla dostępu warunkowego do pracy.  
+ **Lokalnego programu Exchange connector** programu Configuration Manager i Exchange jest wymagana do działania dostępu warunkowego.  
 
- Można skonfigurować zasady dostępu warunkowego dla lokalnego programu Exchange z konsoli programu Configuration Manager. Po skonfigurowaniu zasad dostępu warunkowego dla usługi Exchange Online można rozpocząć proces w konsoli programu Configuration Manager, co powoduje uruchomienie konsoli usługi Intune, gdzie można ukończyć proces.  
+ Można skonfigurować zasady dostępu warunkowego dla lokalnego programu Exchange z poziomu konsoli programu Configuration Manager. Po skonfigurowaniu zasad dostępu warunkowego dla usługi Exchange Online, możesz rozpocząć ten proces w konsoli programu Configuration Manager, co spowoduje uruchomienie konsoli usługi Intune, w którym można ukończyć proces.  
 
 ## <a name="configure-conditional-access"></a>Konfigurowanie dostępu warunkowego
-### <a name="step-1-evaluate-the-effect-of-the-conditional-access-policy"></a>Krok 1: Ocena wpływu zasad dostępu warunkowego  
- Po skonfigurowaniu **lokalnego programu Exchange connector**, można użyć programu Configuration Manager**lista urządzeń uporządkowana według stanu dostępu warunkowego** raport do identyfikowania urządzeń, które nie będą miały dostęp do programu Exchange po skonfigurowaniu zasad dostępu warunkowego. Ten raport wymaga również:  
+### <a name="step-1-evaluate-the-effect-of-the-conditional-access-policy"></a>Krok 1. Ocena wpływu zasad dostępu warunkowego  
+ Po skonfigurowaniu **lokalnego programu Exchange connector**, korzystając z programu Configuration Manager**lista urządzeń uporządkowana według stanu dostępu warunkowego** raport, aby zidentyfikować urządzenia, które będą miały zablokowany dostęp do programu Exchange po skonfigurowaniu zasad dostępu warunkowego. Ten raport wymaga również:  
 
--   Subskrypcję usługi Intune  
+-   Subskrypcja usługi Intune  
 
 -   skonfigurowania i wdrożenia punktu połączenia usługi.  
 
- W parametrach raportu wybierz grupę Intune chcesz ocenić i, w razie potrzeby, platformy urządzeń, do których mają dotyczyć zasady.  
+ W parametrach raportu wybierz grupę usługi Intune, w której chcesz ocenić i, w razie potrzeby, platformy urządzeń, do których zasady będą stosowane.  
 
  Więcej informacji o sposobie uruchamiania raportów znajduje się w temacie [Raportowanie w programie System Center Configuration Manager](../../core/servers/manage/reporting.md).  
 
  Po uruchomieniu raportu sprawdź następujące cztery kolumny w celu określenia, czy użytkownik będzie zablokowany:  
 
--   **Kanał zarządzania** — wskazuje, czy urządzenie jest zarządzane przez usługę Intune i/lub protokołu Exchange ActiveSync.  
+-   **Kanał zarządzania** — wskazuje, czy urządzenie jest zarządzane przez usługę Intune i programu Exchange ActiveSync.  
 
--   **Zarejestrowane w usłudze AAD** — wskazuje, czy urządzenie jest zarejestrowane w usłudze Azure Active Directory (tzn. dołączone do obszaru roboczego).  
+-   **Zarejestrowane w usłudze AAD** — wskazuje, czy urządzenie jest zarejestrowane w usłudze Azure Active Directory (nazywane dołączanie do miejsca pracy).  
 
 -   **Zgodne** — wskazuje, czy urządzenie jest zgodne ze wszystkimi wdrożonymi zasadami zgodności.  
 
--   **Aktywowany EAS** -iOS i android muszą mieć identyfikator programu Exchange ActiveSync skojarzony z rekordem rejestracji urządzenia w usłudze Azure Active Directory. Kojarzenie jest wykonywane, gdy użytkownik kliknie link **Uaktywnij pocztę e-mail** w wiadomości e-mail z kwarantanny.  
+-   **Aktywowano program EAS** -urządzeń iOS i Android muszą mieć identyfikator programu Exchange ActiveSync skojarzony z rekordem rejestracji urządzenia w usłudze Azure Active Directory. Kojarzenie jest wykonywane, gdy użytkownik kliknie link **Uaktywnij pocztę e-mail** w wiadomości e-mail z kwarantanny.  
 
     > [!NOTE]  
     >  Urządzenia z systemem Windows Phone zawsze wyświetlają wartość w tej kolumnie.  
@@ -141,24 +138,24 @@ Nieobsługiwane przeglądarki zostaną zablokowane. Aplikacje programu OWA dla s
 
  Możesz wyeksportować zawartość raportu i użyć kolumny **Adres e-mail** , aby zawiadomić użytkowników o tym, że będą blokowani.  
 
-### <a name="step-2-configure-user-groups-or-collections-for-the-conditional-access-policy"></a>Krok 2: Konfigurowanie grup użytkowników lub kolekcji na potrzeby zasad dostępu warunkowego  
+### <a name="step-2-configure-user-groups-or-collections-for-the-conditional-access-policy"></a>Krok 2. Konfigurowanie grup użytkowników lub kolekcji dla zasad dostępu warunkowego  
  Zasady dostępu warunkowego są przeznaczone dla różnych grup lub kolekcji użytkowników w zależności od typów zasad. Grupy te zawierają użytkowników, którzy będą objęci zasadami lub wykluczeni z nich. Jeśli zasady obejmują użytkownika, każde używane przez niego urządzenie musi być zgodne, aby mógł uzyskać dostęp do poczty e-mail.  
 
 -   **Zasady usługi Exchange Online** — grupy użytkowników zabezpieczeń usługi Azure Active Directory. Możesz skonfigurować te grupy w **centrum administracyjnym usługi Office 365**lub w **portalu konta usługi Intune**.  
 
--   **Zasad lokalnego programu Exchange** — do kolekcji użytkowników programu Configuration Manager. Możesz je konfigurować w obszarze roboczym **Zasoby i zgodność** .  
+-   **W przypadku zasad lokalnego programu Exchange** — do kolekcji użytkowników programu Configuration Manager. Możesz je konfigurować w obszarze roboczym **Zasoby i zgodność** .  
 
  Możesz określić dwa typy grup dla każdej zasady:  
 
 -   **Grupy docelowe** — grupy użytkowników lub kolekcji, do których zastosowano zasady  
 
--   **Wykluczone grupy** — grupy użytkowników lub kolekcji, które są wykluczone z zasad (opcjonalnie)  
+-   **Wykluczone grupy** — grupy lub użytkowników, kolekcje, które są wykluczone z zasad (opcjonalnie)  
 
  Jeśli użytkownik należy do obu grup, zostanie wykluczony z zasad.  
 
  Tylko grupy i kolekcje objęte zasadami dostępu warunkowego są oceniane pod kątem dostępu do programu Exchange.  
 
-### <a name="step-3-configure-and-deploy-a-compliance-policy"></a>Krok 3: Konfigurowanie i wdrażanie zasad zgodności  
+### <a name="step-3-configure-and-deploy-a-compliance-policy"></a>Krok 3. Konfigurowanie i wdrażanie zasad zgodności  
  Upewnij się, że utworzono zasady zgodności i wdrożono je na wszystkich urządzeniach, które będą objęte zasadami dostępu warunkowego do programu Exchange.  
 
  Aby uzyskać szczegółowe informacje o tym, jak skonfigurować zasady zgodności, zobacz [Zarządzanie zasadami zgodności urządzeń za pomocą programu System Center Configuration Manager](device-compliance-policies.md).  
@@ -168,12 +165,12 @@ Nieobsługiwane przeglądarki zostaną zablokowane. Aplikacje programu OWA dla s
 
  Gdy wszystko będzie gotowe, przejdź do **kroku 4**.  
 
-### <a name="step-4-configure-the-conditional-access-policy"></a>Krok 4: Konfiguruj zasady dostępu warunkowego  
+### <a name="step-4-configure-the-conditional-access-policy"></a>Krok 4. Konfigurowanie zasad dostępu warunkowego  
 
 #### <a name="for-exchange-online-and-tenants-in-the-new-exchange-online-dedicated-environment"></a>Usługa Exchange Online (i dzierżawy w nowym środowisku usługi Exchange Online w wersji dedykowanej)
 
 >[!NOTE]
->Można też utworzyć zasady dostępu warunkowego w konsoli zarządzania programu Azure AD. Konsola zarządzania usługi Azure AD umożliwia tworzenie urządzenia Intune zasady dostępu warunkowego (nazywany zasad dostępu warunkowego opartych na urządzeniach w usłudze Azure AD) oprócz inne zasady dostępu warunkowego, takich jak uwierzytelnianie wieloskładnikowe. Można także ustawić zasady dostępu warunkowego dla aplikacji Enterprise innych firm, takich jak Salesforce i obsługuje okno tej usługi Azure AD. Aby uzyskać więcej informacji, zobacz [sposobu ustawiania zasad dostępu warunkowego opartych na urządzeniach Azure Active Directory do kontroli dostępu do usługi Azure Active Directory połączone aplikacje](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-policy-connected-applications/).
+>Można też utworzyć zasady dostępu warunkowego w konsoli zarządzania usługą Azure AD. Konsola zarządzania w usłudze Azure AD umożliwia tworzenie urządzeń w usłudze Intune zasady dostępu warunkowego (nazywane zasad dostępu warunkowego opartego na urządzeniach w usłudze Azure AD) oprócz innych zasad dostępu warunkowego, takich jak uwierzytelnianie wieloskładnikowe. Można także ustawić zasady dostępu warunkowego dla aplikacji przedsiębiorstwa innych firm, takich jak Salesforce i obsługuje pole tej usługi Azure AD. Aby uzyskać więcej informacji, zobacz [sposobu ustawiania zasad dostępu warunkowego opartego na urządzenia usługi Azure Active Directory do kontroli dostępu do usługi Azure Active Directory połączone aplikacji](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-policy-connected-applications/).
 
  Następujący przepływ jest używany przez zasady dostępu warunkowego dla usługi Exchange Online na potrzeby oceniania, czy urządzenia mają mieć do niej dostęp.  
 
@@ -181,15 +178,15 @@ Nieobsługiwane przeglądarki zostaną zablokowane. Aplikacje programu OWA dla s
 
  Aby uzyskać dostęp do poczty e-mail, urządzenie musi:  
 
--   Zarejestrować w usłudze Intune  
+-   Być zarejestrowane w usłudze Intune  
 
--   Komputery muszą zostać przyłączone do domeny lub zostać zarejestrowane i być zgodne z zasadami ustawionymi w usłudze Intune.  
+-   Komputery muszą zostać przyłączone do domeny lub zostać zarejestrowane i zgodne z zasadami ustawionymi w usłudze Intune.  
 
--   Zarejestruj urządzenia w usłudze Azure Active Directory (dzieje się to automatycznie podczas rejestrowania urządzenia z usługą Intune.  
+-   Rejestrowanie urządzenia w usłudze Azure Active Directory (dzieje się automatycznie, gdy urządzenie jest zarejestrowane w usłudze Intune.  
 
      W przypadku komputerów przyłączonych do domeny musisz skonfigurować [automatyczne rejestrowanie urządzenia](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/) w usłudze Azure Active Directory.  
 
--   Mieć aktywną pocztę e-mail, co powoduje skojarzenie Identyfikatora programu Exchange ActiveSync urządzenia z rekordem urządzenia w usłudze Azure Active Directory (dotyczy tylko urządzeń z systemem Android i iOS).  
+-   Mieć aktywną pocztę e-mail, co powoduje skojarzenie Identyfikatora programu Exchange ActiveSync urządzenia z rekordem urządzenia w usłudze Azure Active Directory (dotyczy systemów iOS i tylko w przypadku urządzeń z systemem Android).  
 
 -   być zgodne z wdrożonymi zasadami zgodności.  
 
@@ -199,7 +196,7 @@ Nieobsługiwane przeglądarki zostaną zablokowane. Aplikacje programu OWA dla s
 
 -   Jeśli urządzenie nie jest zarejestrowane w usłudze Azure Active Directory, zostanie wyświetlony komunikat z instrukcjami dotyczącymi sposobu instalowania aplikacji portalu firmy i rejestrowania.  
 
--   Jeśli urządzenie nie jest zgodne, zostanie wyświetlony komunikat kierujący użytkownika do witryny sieci Web portalu firmy usługi Intune lub aplikacji Portal firmy, gdzie można znaleźć informacje o problemie i sposobie jego rozwiązania.  
+-   Jeśli urządzenie nie jest zgodne, zostanie wyświetlony komunikat kierujący użytkownika do witryny sieci Web Portal firmy usługi Intune lub aplikacji Portal firmy, gdzie można znaleźć informacje o problemie i sposobie jego rozwiązania.  
 
 -   W przypadku komputera:  
 
@@ -210,7 +207,7 @@ Nieobsługiwane przeglądarki zostaną zablokowane. Aplikacje programu OWA dla s
  Komunikat jest wyświetlany na urządzeniu w przypadku użytkowników usługi Exchange Online i dzierżaw w nowym środowisku usługi Exchange Online w wersji dedykowanej. Jest także dostarczany do skrzynki odbiorczej poczty e-mail w przypadku lokalnego programu Exchange i starszych urządzeń usługi Exchange Online w wersji dedykowanej.  
 
 > [!NOTE]  
->  Zezwalaj programu Configuration Manager, które zastępują zasady dostępu warunkowego, blokowania i kwarantanny reguł, które są zdefiniowane w konsoli administracyjnej usługi Exchange Online.  
+>  Menedżer konfiguracji, które zastępują zasady dostępu warunkowego, zezwalania, blokowania i kwarantanny zdefiniowanych w konsoli administracyjnej usługi Exchange Online.  
 
 > [!NOTE]  
 >  Zasady dostępu warunkowego muszą zostać skonfigurowane w konsoli usługi Intune. Aby rozpocząć wykonywanie poniższych czynności, uzyskaj dostęp do konsoli usługi Intune za pośrednictwem programu Configuration Manager. W przypadku wyświetlenia monitu zaloguj się za pomocą poświadczeń użytych w celu skonfigurowania punktu połączenia programu Configuration Manager i usługi Intune.  
@@ -221,9 +218,9 @@ Nieobsługiwane przeglądarki zostaną zablokowane. Aplikacje programu OWA dla s
 
 2.  Rozwiń węzeł **Ustawienia zgodności**, rozwiń węzeł **Dostęp warunkowy**, a następnie kliknij pozycję **Exchange Online**.  
 
-3.  Na karcie **Narzędzia główne** w grupie **Linki** kliknij pozycję **Konfiguruj zasady dostępu warunkowego w konsoli usługi Intune**. Należy podać nazwę użytkownika i hasło konta używane do łączenia z programu Configuration Manager za pomocą dowolnego administratora globalnego dla usługi Intune.  
+3.  Na karcie **Narzędzia główne** w grupie **Linki** kliknij pozycję **Konfiguruj zasady dostępu warunkowego w konsoli usługi Intune**. Należy podać nazwę użytkownika i hasło konta używanego do łączenia programu Configuration Manager z administratorami globalnymi usługi Intune.  
 
-     Zostanie otwarta konsola administratora usługi Intune.  
+     Zostanie otwarta konsola administracyjna usługi Intune.  
 
 4.  W [konsoli administracyjnej usługi Microsoft Intune](https://manage.microsoft.com)kliknij kolejno pozycje **Zasady** > **Dostęp warunkowy** > **Zasady usługi Exchange Online**.  
 
@@ -234,7 +231,7 @@ Nieobsługiwane przeglądarki zostaną zablokowane. Aplikacje programu OWA dla s
     > [!NOTE]  
     >  Jeśli zasady zgodności nie zostaną wdrożone i włączysz zasady usługi Exchange Online, wszystkie objęte nimi urządzenia będą raportowane jako zgodne.  
     >   
-    >  Bez względu na stan zgodności wszyscy użytkownicy, którzy są objęci zasadami będzie wymagane do rejestrowania swoich urządzeń w usłudze Intune.  
+    >  Bez względu na stan zgodności wszyscy użytkownicy, którzy są objęci zasadami będą musieli zarejestrować używane urządzenia w usłudze Intune.  
 
 6.  W obszarze **Dostęp do aplikacji**dla programu Outlook i innych aplikacji korzystających z nowoczesnych metod uwierzytelniania możesz ograniczyć dostęp tylko do zgodnych urządzeń dla każdej z platform.  Urządzenia z systemem Windows muszą zostać przyłączone do domeny lub zostać zarejestrowane w usłudze Intune i być zgodne.  
 
@@ -252,13 +249,13 @@ Nieobsługiwane przeglądarki zostaną zablokowane. Aplikacje programu OWA dla s
 
     -   **Urządzenia muszą zostać przyłączone do domeny.** Komputery muszą zostać przyłączone do domeny, aby mogły uzyskiwać dostęp do usługi Exchange Online. Jeśli komputer nie został przyłączony do domeny, dostęp do poczty e-mail będzie zablokowany, a użytkownik zostanie poproszony o skontaktowanie się z administratorem IT.  
 
-    -   **Urządzenia muszą być zgodne.** Komputery musi być on zarejestrowany w usłudze Intune i są zgodne. Jeśli komputer nie został zarejestrowany, zostanie wyświetlony komunikat z instrukcjami dotyczącymi rejestrowania.  
+    -   **Urządzenia muszą być zgodne.** Komputery muszą być zarejestrowane w usłudze Intune i zgodne. Jeśli komputer nie został zarejestrowany, zostanie wyświetlony komunikat z instrukcjami dotyczącymi rejestrowania.  
 
-7.  W obszarze **programu Outlook web access (OWA)**, można wybrać zezwolić na dostęp do usługi Exchange Online tylko za pośrednictwem obsługiwanych przeglądarek: Safari (iOS), a Chrome (Android). Dostęp z innych przeglądarek zostanie zablokowany. Ograniczenia platformy wybrane w przypadku dostępu do aplikacji dla programu Outlook mają zastosowanie również w tym miejscu.
+7.  W obszarze **programu Outlook web access (OWA)**, można zezwolić na dostęp do usługi Exchange Online tylko za pośrednictwem obsługiwanych przeglądarek: Safari (iOS) i Chrome (Android). Dostęp z innych przeglądarek zostanie zablokowany. Ograniczenia platformy wybrane w przypadku dostępu do aplikacji dla programu Outlook mają zastosowanie również w tym miejscu.
 
-    Na urządzeniach z systemem **Android** użytkownicy muszą włączyć dostęp do przeglądarki.  Użytkownika końcowego w tym celu należy włączyć opcję "Włącz dostęp z przeglądarki" na zarejestrowanym urządzeniu w następujący sposób:
+    Na urządzeniach z systemem **Android** użytkownicy muszą włączyć dostęp do przeglądarki.  W tym celu użytkownik końcowy musi włączyć opcję "Włącz dostęp za pomocą przeglądarki" na zarejestrowanym urządzeniu w następujący sposób:
      1. Otwórz aplikację **Portal firmy**.
-     2. Przejdź do **ustawienia** strony Potrójna kropki (...) lub przycisk menu sprzętu.
+     2. Przejdź do **ustawienia** strony z przycisku wielokropka (...) lub przycisku menu sprzętu.
       3.    Naciśnij przycisk **Włącz dostęp za pomocą przeglądarki** .
       4.    W przeglądarce Chrome wyloguj się z usługi Office 365 i uruchom przeglądarkę.
 
@@ -320,13 +317,13 @@ Nieobsługiwane przeglądarki zostaną zablokowane. Aplikacje programu OWA dla s
 
      Kliknij przycisk **Dalej**.  
 
-5.  Na stronie **Kolekcje docelowe** dodaj jedną lub więcej kolekcji użytkowników. Aby uzyskać dostęp do programu Exchange, użytkowników w tych kolekcji muszą rejestrować urządzenia z usługą Intune i również być zgodne z zasadami zgodności wdrożone.  
+5.  Na stronie **Kolekcje docelowe** dodaj jedną lub więcej kolekcji użytkowników. Aby uzyskać dostęp do programu Exchange, użytkownicy w tych kolekcjach muszą zarejestrować swoje urządzenia w usłudze Intune i muszą być zgodni z zasadami zgodności wdrożone.  
 
      ![HybridCondAccessWiz2](media/HybridCondAccessWiz2.PNG)  
 
      Kliknij przycisk **Dalej**.  
 
-6.  Na stronie **Wykluczone kolekcje** dodaj dowolne kolekcje użytkowników, które mają być wykluczone z zasad dostępu warunkowego. Użytkownicy w tych grupach, nie muszą rejestrować urządzenia z usługą Intune i nie muszą być zgodne z wdrożonymi zasadami zgodności, aby uzyskać dostęp do programu Exchange.  
+6.  Na stronie **Wykluczone kolekcje** dodaj dowolne kolekcje użytkowników, które mają być wykluczone z zasad dostępu warunkowego. Użytkownicy w tych grupach, nie muszą rejestrować swoje urządzenia w usłudze Intune i nie muszą być zgodne z wdrożonymi zasadami zgodności, aby dostęp do programu Exchange.  
 
      ![HybridCondAccessWiz3](media/HybridCondAccessWiz3.png)  
 
@@ -334,14 +331,14 @@ Nieobsługiwane przeglądarki zostaną zablokowane. Aplikacje programu OWA dla s
 
      Kliknij przycisk **Dalej**.  
 
-7.  Na **edytować powiadomienie użytkownika** skonfiguruj wiadomości e-mail, aby usługa Intune wysyła do użytkowników z instrukcjami dotyczącymi sposobu odblokowywania urządzeń (oprócz wiadomości e-mail wysyłanej z programu Exchange).  
+7.  Na **edytowanie powiadomienia użytkownika** skonfiguruj wiadomości e-mail wysyłanej przez usługę Intune z instrukcjami dotyczącymi odblokowywania urządzenia (jako uzupełnienie wiadomości e-mail wysyłanej przez program Exchange).  
 
      Możesz zmienić domyślną wiadomość i użyć tagów HTML do formatowania wyświetlania tekstu. Możesz też wysłać wcześniej do pracowników wiadomość e-mail z informacjami o nadchodzących zmianach i instrukcjami dotyczącymi rejestrowania urządzeń.  
 
      ![HybridCondAccessWiz4](media/HybridCondAccessWiz4.PNG)  
 
     > [!NOTE]  
-    >  Ponieważ powiadomienie e-mail usługi Intune instrukcjami odblokowywania jest dostarczane do skrzynki pocztowej programu Exchange użytkownika, w przypadku, gdy urządzenie użytkownika zostanie zablokowane przed odebraniem wiadomości e-mail, może on użyć niezablokowanego urządzenia lub innej metody uzyskiwać dostęp do programu Exchange i wyświetlić wiadomość.  
+    >  Ponieważ powiadomienie e-mail usługi Intune instrukcjami odblokowywania jest dostarczane do skrzynki pocztowej programu Exchange użytkownika, w przypadku, gdy urządzenie użytkownika zostanie zablokowane przed odebraniem wiadomości e-mail, ich użyć niezablokowanego urządzenia lub innej metody dostępu do programu Exchange i wyświetlić wiadomość.  
 
     > [!NOTE]  
     >  Aby program Exchange mógł wysłać powiadomienie e-mail, musisz skonfigurować konto, które będzie używane do wysyłania powiadomień e-mail. Czynność tę wykonujesz podczas konfigurowania właściwości łącznika serwera Exchange.  
@@ -354,12 +351,11 @@ Nieobsługiwane przeglądarki zostaną zablokowane. Aplikacje programu OWA dla s
 
 -   Nie musisz wdrażać zasad dostępu warunkowego; są one aktywne natychmiast.  
 
--   Po skonfigurowaniu profilu programu Exchange ActiveSync użytkownika może potrwać od 1 do 3 godzin urządzenia zablokowane (Jeśli nie jest zarządzane przez usługę Intune).  
+-   Po skonfigurowaniu przez użytkownika profilu programu Exchange ActiveSync, może potrwać od 1 do 3 godzin urządzenia do zablokowania (Jeśli nie jest zarządzany przez usługę Intune).  
 
--   Jeśli zablokowany użytkownik następnie zarejestruje urządzenia w usłudze Intune (lub rozwiąże problemy z niezgodnością), dostęp do poczty e-mail zostanie odblokowany w ciągu 2 minut.  
+-   Jeśli zablokowany użytkownik następnie zarejestruje urządzenie w usłudze Intune (lub rozwiąże problemy z niezgodnością), dostęp do poczty e-mail zostanie odblokowany w ciągu 2 minut.  
 
--   Jeśli użytkownik wyrejestruje-rejestruje z usługi Intune może potrwać od 1 do 3 godzin zablokowanie urządzenia.  
+-   Jeśli użytkownik wyrejestruje-urządzenie z usługi Intune może potrwać od 1 do 3 godzin zablokowanie urządzenia.  
 
 ### <a name="see-also"></a>Zobacz także  
  [Zarządzanie dostępem do usług w programie System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md)
-

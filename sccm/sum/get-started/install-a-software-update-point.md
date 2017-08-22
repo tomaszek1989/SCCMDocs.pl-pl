@@ -1,5 +1,4 @@
 ---
-
 title: Instalowanie i Konfigurowanie punktu aktualizacji oprogramowania | Dokumentacja firmy Microsoft
 description: "Lokacje główne wymagają punktu aktualizacji oprogramowania w centralnej lokacji administracyjnej dla oceny zgodności aktualizacji oprogramowania i aby wdrożyć oprogramowanie aktualizacje klientów."
 keywords: 
@@ -10,20 +9,14 @@ ms.date: 05/30/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: b099a645-6434-498f-a408-1d438e394396
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: dc221ddf547c43ab1f25ff83c3c9bb603297ece6
 ms.openlocfilehash: 7d369384d133c90a15e01df50ac53992d61f3873
-ms.contentlocale: pl-pl
-ms.lasthandoff: 06/01/2017
-
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-
-
 # <a name="install-and-configure-a-software-update-point"></a>Instalowanie i Konfigurowanie punktu aktualizacji oprogramowania  
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
@@ -156,4 +149,3 @@ ms.lasthandoff: 06/01/2017
 Punkt aktualizacji oprogramowania, zaczynając od najwyższy lokacji w hierarchii programu Configuration Manager został zainstalowany. Powtórz procedury przedstawione w tym temacie, aby zainstalować punkt aktualizacji oprogramowania w lokacjach podrzędnych.
 
 Po utworzeniu oprogramowania punkty zainstalowanych aktualizacji, przejdź do [synchronizowanie aktualizacji oprogramowania](synchronize-software-updates.md).
-

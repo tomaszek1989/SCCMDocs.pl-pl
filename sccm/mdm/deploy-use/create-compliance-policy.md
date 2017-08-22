@@ -6,8 +6,7 @@ ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0fd76043-d7ee-423d-8c5f-aa7e9ed58ce0
@@ -16,14 +15,12 @@ author: andredm7
 ms.author: andredm
 manager: angrobe
 robots: noindex
-ms.translationtype: MT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: 6630d0170df22f46f14df241ffd8d48266c69263
-ms.contentlocale: pl-pl
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-
 # <a name="create-and-deploy-a-device-compliance-policy"></a>Tworzenie i wdrażanie zasad zgodności urządzenia
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
@@ -320,5 +317,4 @@ Identyfikator aplikacji jest identyfikatorem, który unikatowo identyfikuje apli
     4. Wyszukaj tekst **element bundleId**.
 
     Identyfikator jest przykładową aplikację: "*element bundleId*": "*com.companyname.appname*" 
-
 

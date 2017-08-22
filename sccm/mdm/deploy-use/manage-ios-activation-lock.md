@@ -1,31 +1,28 @@
 ---
-title: "Zarządzanie iOS blokadę aktywacji | Dokumentacja firmy Microsoft"
-description: "Zarządzaj iOS blokady aktywacji z System Center Configuration Manager."
+title: "Zarządzanie blokadą aktywacji systemu iOS | Dokumentacja firmy Microsoft"
+description: "Zarządzanie blokadą aktywacji w programie System Center Configuration Manager systemu iOS."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e2745bac-e1b4-4dac-8ac7-32f1c820bc9c
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
 ms.openlocfilehash: 88bef04a52f716ae13afc21c25d33dea06a3fc9c
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="manage-ios-activation-lock-with-system-center-configuration-manager"></a>Zarządzanie blokadą aktywacji systemu iOS za pomocą programu System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
 Program System Center Configuration Manager ułatwia zarządzanie blokadą aktywacji systemu iOS — funkcją aplikacji Znajdź mój iPhone dla urządzeń z systemem iOS 7.1 lub nowszym. Jeśli funkcja blokady aktywacji została włączona, należy podać identyfikator Apple ID i hasło użytkownika, aby można było wykonać następujące czynności:
@@ -70,7 +67,7 @@ Wiąże się to z następującymi korzyściami biznesowymi dotyczącymi urządze
 - Możesz umożliwić użytkownikowi normalną pracę, wiedząc, że w razie konieczności zmiany przeznaczenia urządzenia można je wycofać lub odblokować.
 
 
-## <a name="enable-activation-lock-on-supervised-devices"></a>Włącz blokadę aktywacji na nadzorowanego urządzenia
+## <a name="enable-activation-lock-on-supervised-devices"></a>Umożliwia blokadę aktywacji na nadzorowanych urządzeniach
 
 Aby utworzyć i wdrożyć element konfiguracji typu **Systemy iOS i Mac OS X** w celu włączenia blokady aktywacji na urządzeniach nadzorowanych, należy użyć ustawień zgodności programu Configuration Manager:
 
@@ -86,7 +83,7 @@ Obejście blokady aktywacji lub pobranie kodu obejścia blokady aktywacji jest m
 
 
 
-## <a name="view-the-activation-lock-bypass-code"></a>Wyświetlanie kodu obejścia blokady aktywacji
+## <a name="view-the-activation-lock-bypass-code"></a>Wyświetl kod obejścia blokady aktywacji
 
 1. W konsoli programu Configuration Manager kliknij przycisk **Zasoby i zgodność**.
 2. W obszarze roboczym **Zasoby i zgodność** kliknij pozycję **Urządzenia**.
@@ -94,7 +91,7 @@ Obejście blokady aktywacji lub pobranie kodu obejścia blokady aktywacji jest m
 4. Na karcie **Narzędzia główne** w grupie **Urządzenie** kliknij pozycję **Akcje zdalnego urządzenia** > **Wyświetl kod obejścia blokady aktywacji**.
 5. W oknie dialogowym **Kod obejścia blokady aktywacji** zostanie wyświetlony kod obejścia dla wybranego urządzenia.
 
-## <a name="bypass-activation-lock"></a>Obejść blokadę aktywacji
+## <a name="bypass-activation-lock"></a>Obchodzenie blokady aktywacji
 
 1. W konsoli programu Configuration Manager kliknij przycisk **Zasoby i zgodność**.
 2. W obszarze roboczym **Zasoby i zgodność** kliknij pozycję **Urządzenia**.
@@ -106,4 +103,3 @@ Obejście blokady aktywacji lub pobranie kodu obejścia blokady aktywacji jest m
     - Dane odnajdywania urządzenia w oknie dialogowym właściwości urządzenia.
     - Kolumna **Stan obejścia blokady aktywacji** w widoku **Urządzenia** (ta kolumna jest domyślnie ukryta).
     - Sekcja **Informacje o akcjach urządzenia zdalnego** na karcie **Podsumowanie** w okienku szczegółów (gdy urządzenie jest wybrane).
-

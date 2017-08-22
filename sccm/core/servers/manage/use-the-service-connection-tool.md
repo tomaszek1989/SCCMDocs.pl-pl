@@ -1,38 +1,35 @@
 ---
 title: "Narzędzie połączenia usługi | Dokumentacja firmy Microsoft"
-description: "Więcej informacji na temat tego narzędzia, który umożliwia połączenia z usługą w chmurze programu Configuration Manager ręcznie przekazać informacje o wykorzystaniu."
+description: "Dowiedz się więcej o tym narzędziu, dzięki którym będzie się połączyć z usługą chmury programu Configuration Manager w celu ręcznego przekazania informacji o użyciu."
 ms.custom: na
 ms.date: 4/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6e4964c5-43cb-4372-9a89-b62ae6a4775c
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 32f7fc4ef9c8e8d3c2ec8eeaf9a3174bad992ffb
 ms.openlocfilehash: 0da80521bf223a765c3731f8ad59623d85a4c9fa
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="use-the-service-connection-tool-for-system-center-configuration-manager"></a>Używanie narzędzia połączenia z usługą w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Użyj **narzędzia połączenia usługi** gdy ten punkt połączenia usługi jest w trybie offline lub gdy serwerów systemu lokacji programu Configuration Manager nie są połączone z Internetem. Narzędzie może pomóc aktualności lokacji przy użyciu najnowszych aktualizacji programu Configuration Manager.  
+Użyj **narzędzia połączenia z usługą** gdy punkt połączenia usługi jest w trybie offline lub gdy serwery systemu lokacji programu Configuration Manager nie jest połączony z Internetem. Narzędzie mogą pomóc witryny instalować najnowsze aktualizacje do programu Configuration Manager.  
 
-W czasie wykonywania narzędzie ręcznie łączy się z usługą w chmurze programu Configuration Manager do przekazywania informacji o użyciu dla hierarchii i pobierania aktualizacji. Przekazywanie danych o użyciu jest niezbędne, aby usługa w chmurze mogła dostarczyć prawidłowe aktualizacje do wdrożenia.  
+Po uruchomieniu narzędzia ręcznie łączy do usługi w chmurze programu Configuration Manager można przekazać użycia informacji o hierarchii oraz pobrania aktualizacji. Przekazywanie danych o użyciu jest niezbędne, aby usługa w chmurze mogła dostarczyć prawidłowe aktualizacje do wdrożenia.  
 
 ## <a name="prerequisites-for-using-the-service-connection-tool"></a>Wymagania wstępne dotyczące korzystania z narzędzia połączenia usługi
-Poniżej przedstawiono wymagania wstępne i znanych problemów.
+Poniżej przedstawiono wymagania wstępne i znane problemy.
 
 **Wymagania wstępne:**
 
@@ -42,7 +39,7 @@ Poniżej przedstawiono wymagania wstępne i znanych problemów.
 
 -   Każdy komputer, na którym działa narzędzie (komputer z punktem połączenia z usługą i komputer połączony z Internetem) musi być systemem 64-bitowym, a na komputerze musi być zainstalowane następujące oprogramowanie:  
 
-    -   Pliki **pakietu redystrybucyjnego Visual C++** w wersji x86 i x64.   Domyślnie program Configuration Manager instaluje x64 wersji na komputerze, który jest hostem punktu połączenia usługi.  
+    -   Pliki **pakietu redystrybucyjnego Visual C++** w wersji x86 i x64.   Domyślnie program Configuration Manager instaluje x64 wersja na komputerze, który hostuje punkt połączenia usługi.  
 
          Aby pobrać kopię plików Visual C++, odwiedź stronę [Visual C++ Redistributable Packages for Visual Studio 2013](http://www.microsoft.com/download/details.aspx?id=40784) (Pakiety redystrybucyjne Visual C++ dla programu Visual Studio 2013) w Centrum pobierania Microsoft.  
 
@@ -60,22 +57,22 @@ Poniżej przedstawiono wymagania wstępne i znanych problemów.
 
 ## <a name="use-the-service-connection-tool"></a>Używanie narzędzia połączenia usługi  
 
- Narzędzie połączenia usługi można znaleźć (**serviceconnectiontool.exe**), na nośniku instalacyjnym programu Configuration Manager w **%path%\smssetup\tools\ServiceConnectionTool** folder. Zawsze używaj narzędzia połączenia usługi, która jest zgodna z wersją programu Configuration Manager można użyć.
+ Narzędzie połączenia usługi można znaleźć (**serviceconnectiontool.exe**), na nośniku instalacyjnym programu Configuration Manager w **%path%\smssetup\tools\ServiceConnectionTool** folderu. Zawsze używaj zgodna z wersją programu Configuration Manager można użyć narzędzia połączenia z usługą.
 
 
  W tej procedurze w przykładach dotyczących wiersza polecenia używane są następujące nazwy plików i lokalizacje folderów (są to przykładowe ścieżki i nazwy plików, które można zamienić na odpowiednie dla swojego środowiska i swoich preferencji):  
 
--   Ścieżka do manipulatora USB, w którym są przechowywane dane w ramach transferu między serwerami:  **D:\USB\\**  
+-   Ścieżka do dysku USB, na którym są przechowywane dane do transferu między serwerami:  **D:\USB\\**  
 
--   Nazwa pliku .cab, który zawiera dane wyeksportowane z witryny: **UsageData.cab**  
+-   Nazwa pliku cab zawierającego dane wyeksportowane z lokacji: **UsageData.cab**  
 
--   Nazwa pusty folder, w którym będą przechowywane pobrane aktualizacje programu Configuration Manager w ramach transferu między serwerami: **UpdatePacks**  
+-   Nazwa pustego folderu, w którym będą przechowywane pobrane aktualizacje programu Configuration Manager do transferu między serwerami: **UpdatePacks**  
 
 Na komputerze hostującym punkt połączenia z usługą:  
 
 -   Otwórz wiersz polecenia z uprawnieniami administracyjnymi, a następnie przejdź do lokalizacji zawierającej plik **serviceconnectiontool.exe**.  
 
-     Domyślnie to narzędzie można znaleźć na nośniku instalacyjnym programu Configuration Manager w **%path%\smssetup\tools\ServiceConnectionTool** folder. Aby narzędzie połączenia z usługą zadziałało, wszystkie pliki z tego folderu muszą znajdować się w jednym folderze.  
+     Domyślnie narzędzie to można znaleźć na nośniku instalacyjnym programu Configuration Manager w **%path%\smssetup\tools\ServiceConnectionTool** folderu. Aby narzędzie połączenia z usługą zadziałało, wszystkie pliki z tego folderu muszą znajdować się w jednym folderze.  
 
 Po uruchomieniu poniższego polecenia narzędzie przygotowuje plik cab, który zawiera informacje dotyczące użycia, i kopiuje go do określonej lokalizacji. Dane w pliku cab są uzależnione od skonfigurowanego poziomu danych diagnostycznych i danych użycia zbieranych przez lokację. (zobacz [Dane diagnostyczne i dane użycia dla programu System Center Configuration Manager](../../../core/plan-design/diagnostics/diagnostics-and-usage-data.md)).  Uruchom następujące polecenie, aby utworzyć plik cab:  
 
@@ -86,11 +83,11 @@ Musisz także skopiować folder ServiceConnectionTool wraz z całą zawartości�
 ### <a name="overview"></a>Omówienie
 **Aby użyć narzędzia połączenia z usługą, należy wykonać trzy podstawowe kroki:**  
 
-1.  **Przygotuj**:  Ten krok działa na komputerze, który jest hostem punktu połączenia usługi. Po uruchomieniu narzędzia umieszcza dane użycia w pliku cab i zapisze go na dysku USB lub określ transferu alternatywnej lokalizacji.  
+1.  **Przygotowanie**:  Ten krok działa na komputerze, który hostuje punkt połączenia usługi. Po uruchomieniu narzędzia umieszcza dane użycia pliku cab i zapisze go na dysku USB (lub określ innej wybranej lokalizacji transferowej).  
 
-2.  **Połącz**: W tym kroku uruchom narzędzie na komputerze zdalnym, który łączy się z Internetem, aby można było przekazać dane użycia i następnie pobrać aktualizacje.  
+2.  **Połącz**: W tym kroku uruchom narzędzie na komputerze zdalnym, który łączy się z Internetem, można przekazać danych użycia, a następnie pobrać aktualizacji.  
 
-3.  **Importuj**: Ten krok działa na komputerze, który jest hostem punktu połączenia usługi. W czasie wykonywania narzędzie można pobrać importuje i dodaje je do lokacji, można wyświetlić i zainstalować te aktualizacje z konsoli programu Configuration Manager.  
+3.  **Importuj**: Ten krok działa na komputerze, który hostuje punkt połączenia usługi. Po uruchomieniu narzędzia importuje zostanie pobrane i dodaje je do lokacji, aby móc wyświetlić i zainstalować te aktualizacje z konsoli programu Configuration Manager.  
 
 Począwszy od wersji 1606, podczas nawiązywania połączenia z firmą Microsoft można przekazać wiele plików cab jednocześnie (każdy z innej hierarchii), a także określić serwer proxy i użytkownika serwera proxy.   
 
@@ -128,7 +125,7 @@ Aby określić serwer proxy, można użyć następujących parametrów opcjonaln
 
 5.  Uruchom następujące polecenie, aby rozpocząć przesyłanie informacji o użyciu i pobieranie aktualizacji programu Configuration Manager:  
 
-    -   **serviceconnectiontool.exe-Połącz D:\USB\UpdatePacks - updatepackdest D:\USB - usagedatasrc**
+    -   **serviceconnectiontool.exe-connect - usagedatasrc D:\USB - updatepackdest D:\USB\UpdatePacks**
 
     Więcej przykładów tego wiersza polecenia znajduje się w sekcji [Opcje wiersza polecenia](../../../core/servers/manage/use-the-service-connection-tool.md#bkmk_cmd) w dalszej części tego tematu.
 
@@ -150,7 +147,7 @@ Aby określić serwer proxy, można użyć następujących parametrów opcjonaln
 
 8.  Po zakończeniu importowania możesz zamknąć wiersz polecenia. (Importowane są tylko aktualizacje dla odpowiednich hierarchii).  
 
-9. Otwórz konsolę programu Configuration Manager i przejdź do **Administracja** > **aktualizacji i obsługi**. Aktualizacje, które zostały zaimportowane, są teraz dostępne do zainstalowania. (Przed wersją 1702, aktualizacji i obsługi został pod **Administracja** > **usług w chmurze**.)
+9. Otwórz konsolę programu Configuration Manager i przejdź do **administracji** > **aktualizacje i obsługa**. Aktualizacje, które zostały zaimportowane, są teraz dostępne do zainstalowania. (Przed wersji 1702, aktualizacje i obsługa znajdowało się pod **administracji** > **usługi w chmurze**.)
 
  Aby uzyskać informacje o instalowaniu aktualizacji, zobacz [Instalacja aktualizacji w konsoli programu System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md).  
 
@@ -163,4 +160,3 @@ Aby określić serwer proxy, można użyć następujących parametrów opcjonaln
 |**-connect -usagedatasrc [napęd:][ścieżka] -updatepackdest [napęd:][ścieżka] -proxyserveruri [nazwa_FQDN_serwera_proxy] -proxyusername [nazwa_użytkownika]** <br /> <br /> W przypadku używania wersji programu Configuration Manager wcześniejszej niż 1606 należy określić nazwę pliku cab i nie można używać opcji dla serwera proxy.  Obsługiwane parametry polecenia są następujące: <br /> **-connect -usagedatasrc [napęd:][ścieżka][nazwa_pliku] -updatepackdest [napęd:][ścieżka]** |To polecenie służy do nawiązywania połączenia z usługą Configuration Manager w chmurze w celu przekazywania plików cab danych użycia z określonej lokalizacji oraz do pobierania dostępnych pakietów aktualizacji i zawartości konsoli. Opcje dotyczące serwerów proxy są opcjonalne.<br /><br /> Polecenie to uruchom jako **administrator lokalny** na komputerze mającym połączenie z Internetem.<br /><br /> Przykład dotyczący nawiązywania połączenia bez użycia serwera proxy: **-connect -usagedatasrc D:\USB\ -updatepackdest D:\USB\UpdatePacks** <br /><br /> Przykład dotyczący nawiązywania połączenia z użyciem serwera proxy: **-connect -usagedatasrc D:\USB\Usagedata.cab -updatepackdest D:\USB\UpdatePacks -proxyserveruri itgproxy.redmond.corp.microsoft.com -proxyusername Meg** <br /><br /> W przypadku używania wersji wcześniejszej niż 1606 należy określić nazwę pliku cab, natomiast nie można określić serwera proxy. Użyj następującego przykładowego wiersza polecenia: **-connect -usagedatasrc D:\USB\Usagedata.cab -updatepackdest D:\USB\UpdatePacks**|      
 |**-import -updatepacksrc [dysk:][ścieżka]**|To polecenie importuje pakiety aktualizacji i zawartość konsoli, którą wcześniej pobrano do konsoli programu Configuration Manager.<br /><br /> Polecenie to uruchom jako **administrator lokalny** na serwerze, który jest hostem punktu połączenia z usługą.<br /><br /> Przykład:  **-import -updatepacksrc D:\USB\UpdatePacks**|  
 |**-export -dest [dysk:][ścieżka][nazwapliku.csv]**|To polecenie eksportuje dane użycia do pliku csv, którego zawartość można później obejrzeć.<br /><br /> Polecenie to uruchom jako **administrator lokalny** na serwerze, który jest hostem punktu połączenia z usługą.<br /><br /> Przykład: **-export -dest D:\USB\usagedata.csv**|  
-

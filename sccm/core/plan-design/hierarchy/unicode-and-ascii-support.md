@@ -1,36 +1,33 @@
 ---
-title: "Obsługa ASCII i Unicode | Dokumentacja firmy Microsoft"
-description: "Więcej informacji na temat obsługi znaków Unicode i ASCII w obiektach programu System Center Configuration Manager."
+title: "Obsługa kodów ASCII i Unicode | Dokumentacja firmy Microsoft"
+description: "Więcej informacji o obsługę znaków Unicode i ASCII w obiektach programu System Center Configuration Manager."
 ms.custom: na
 ms.date: 3/1/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2bdec799-905f-48bc-aed5-2d92134739e8
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: b35e747c8c297d61bb549b9767c4318f51e5fdb4
 ms.openlocfilehash: 18f1c64c1f27001a0fdfbab4236d09a5bc279272
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="unicode-and-ascii-support-in-system-center-configuration-manager"></a>Obsługa standardu Unicode i ASCII w programie System Center Configuration Manager
+# <a name="unicode-and-ascii-support-in-system-center-configuration-manager"></a>Obsługa standardów Unicode i ASCII w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager tworzy większość obiektów z użyciem znaków Unicode. Jednak niektóre obiekty obsługują tylko znaki ASCII lub mają inne ograniczenia.  
+System Center Configuration Manager tworzy większość obiektów przy użyciu znaków Unicode. Jednak niektóre obiekty obsługują tylko znaki ASCII lub mają inne ograniczenia.  
 
- W poniższych częściach wymieniono obiekty, które muszą używać znaków tylko z zestawu znaków ASCII lub mają dodatkowe ograniczenia.  
+ W poniższych sekcjach wymieniono obiekty, które muszą używać znaków tylko zestawu znaków ASCII lub mają dodatkowe ograniczenia.  
 
 -   [Obiekty używające znaków ASCII](#BKMK_ASCIIchar)  
 
@@ -48,7 +45,7 @@ System Center Configuration Manager tworzy większość obiektów z użyciem zna
 -   Następujące konta programu Configuration Manager:  
 
     > [!NOTE]  
-    >  Konta te znaki ASCII i RUS dotyczącą lokacji z uruchomionym w języku rosyjskim.  
+    >  Te konta obsługuje znaki ASCII i RUS w lokacji, która działa w rosyjski.  
 
     -   Konto instalacji wypychanej klienta  
 
@@ -71,15 +68,15 @@ System Center Configuration Manager tworzy większość obiektów z użyciem zna
     -   Konto serwera proxy punktu aktualizacji oprogramowania  
 
     > [!NOTE]  
-    >  Konta, które określają dla administracji opartej na rolach obsługują znaki Unicode.  
+    >  Konta, które można określić dla administracji opartej na rolach obsługują znaki Unicode.  
     >   
-    >  Reporting Services punktu konto obsługuje znaki Unicode z wyjątkiem znaków RUS.  
+    >  Reporting Services punktu obsługuje konta Unicode, z wyjątkiem znaków RUS.  
 
--   W pełni kwalifikowana nazwa domeny (FQDN) dla serwerów lokacji i systemy lokacji  
+-   Pełni kwalifikowaną nazwą domeny (FQDN) dla serwerów lokacji i systemy lokacji  
 
 -   Ścieżka instalacji programu Configuration Manager  
 
--   Nazwy wystąpień programu SQL Server  
+-   Nazwy wystąpienia programu SQL Server  
 
 -   Ścieżka do następujących ról systemu lokacji:  
 
@@ -97,19 +94,19 @@ System Center Configuration Manager tworzy większość obiektów z użyciem zna
 
 -   Ścieżka do następujących folderów:  
 
-    -   Folder, w którym są przechowywane dane migracji stanu klientów  
+    -   Folder, w którym są przechowywane dane migracji stanu klienta  
 
     -   Folder zawierający raporty programu Configuration Manager  
 
-    -   Folder, który przechowuje kopię zapasową programu Configuration Manager  
+    -   Folder, w którym są przechowywane w kopii zapasowej programu Configuration Manager  
 
-    -   Folder, w którym są przechowywane pliki źródłowe instalacji dla konfiguracji lokacji  
+    -   Folder, w którym są przechowywane pliki źródłowe instalacji dla instalacji lokacji  
 
-    -   Folder, w którym są przechowywane wymagane wstępnie pliki do pobrania, użyj przez Instalatora  
+    -   Folder, w którym przechowywane są wstępnie wymagane pliki do pobrania do użycia przez Instalatora  
 
 -   Ścieżka do następujących obiektów:  
 
-    -   Witryny sieci Web usług IIS  
+    -   Witryna sieci Web IIS  
 
     -   Ścieżka instalacji aplikacji wirtualnej  
 
@@ -117,11 +114,11 @@ System Center Configuration Manager tworzy większość obiektów z użyciem zna
 
 -   Następujące obiekty dla AMT i zarządzania poza pasmem:  
 
-    -   Nazwa FQDN komputera z technologią AMT  
+    -   Nazwa FQDN komputera AMT.  
 
-    -   Nazwa komputera z technologią AMT  
+    -   Nazwa komputera opartych na technologii AMT  
 
-    -   Nazwa NetBIOS domeny  
+    -   Nazwa domeny NetBIOS  
 
     -   Nazwa profilu bezprzewodowego i identyfikator SSID  
 
@@ -133,17 +130,16 @@ System Center Configuration Manager tworzy większość obiektów z użyciem zna
 
     -   Zawartość magazynu danych AMT  
 
--   Nazwy plików ISO nośników rozruchowych  
+-   Nośnik rozruchowy nazwy plików ISO  
 
 ##  <a name="BKMK_OtherCharLimitations"></a>Dodatkowe ograniczenia  
  Poniżej przedstawiono dodatkowe ograniczenia dotyczące obsługiwanych zestawów znaków i wersji językowych:  
 
 -   Menedżer konfiguracji nie obsługuje zmiany ustawień regionalnych komputera serwera lokacji.  
 
--   Urząd certyfikacji (CA) przedsiębiorstwa nie obsługuje nazw komputerów klienckich, które używają zestawów znaków dwubajtowych (DBCS). Nazwy komputerów klienckich, które są dostępne są ograniczone przez zestaw znaków IA5 infrastruktury PKI. Ponadto program Configuration Manager nie obsługuje nazw urzędów certyfikacji ani wartości nazw podmiotów, które używają zestawów znaków Dwubajtowych.  
+-   Urząd certyfikacji (CA) przedsiębiorstwa nie obsługuje nazw komputerów klienckich, które używają zestawów znaków dwubajtowych (DBCS). Nazwy komputerów klienckich, które są dostępne są ograniczone przez ograniczenia zestaw znaków IA5 infrastruktury kluczy publicznych. Ponadto program Configuration Manager nie obsługuje nazw urzędów certyfikacji ani wartości nazw podmiotów, które używają zestawów znaków Dwubajtowych.  
 
 ##  <a name="BKMK_LangNonLocalize"></a>Obiekty programu Configuration Manager, które nie są zlokalizowane  
- Baza danych programu Configuration Manager obsługuje standard Unicode dla większości zapisywanych obiektów, a jeśli to możliwe, wyświetla te informacje w języku systemu operacyjnego zgodnym z ustawieniami regionalnymi komputera. Interfejs klienta lub konsoli programu Configuration Manager do wyświetlania informacji w języku systemu operacyjnego komputera ustawienia regionalne tego komputera musi być zgodne z językiem klienta lub serwera zainstalowanego w lokacji.  
+ Baza danych programu Configuration Manager obsługuje standard Unicode dla większości zapisywanych obiektów, a jeśli to możliwe, wyświetla te informacje w języku systemu operacyjnego zgodnym z ustawieniami regionalnymi komputera. Interfejs klienta lub konsolę programu Configuration Manager, aby wyświetlać informacje w języku systemu operacyjnego komputera ustawienia regionalne tego komputera muszą być zgodne z językiem klienta lub serwera zainstalowanego w lokacji.  
 
- Jednak niektóre obiekty programu Configuration Manager nie obsługują standardu Unicode i są przechowywane w bazie danych przy użyciu znaków ASCII lub mają ograniczenia dodatkowych języków. Te informacje są zawsze wyświetlane przy użyciu zestawu znaków ASCII lub w języku, który był używany podczas tworzenia obiektu.  
-
+ Jednak niektóre obiekty programu Configuration Manager nie obsługują standardu Unicode i są przechowywane w bazie danych przy użyciu znaków ASCII lub mają ograniczenia związane z dodatkowych języków. Te informacje są zawsze wyświetlane przy użyciu zestawu znaków ASCII lub w języku, który był używany podczas tworzenia obiektu.  

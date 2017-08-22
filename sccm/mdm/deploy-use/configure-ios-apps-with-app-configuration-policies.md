@@ -1,77 +1,75 @@
 ---
-title: "Konfigurowanie aplikacji za pomocą zasad konfiguracji aplikacji | Dokumentacja firmy Microsoft"
-description: "Pomóc w wyeliminowaniu problemów z konfiguracją na urządzeniach z systemem iOS 8 lub nowszy przy wdrażaniu zasad konfiguracji aplikacji dla użytkowników, przed ich uruchomieniem aplikacji."
+title: "Konfigurowanie aplikacji systemu iOS przy użyciu zasad konfiguracji aplikacji | Dokumentacja firmy Microsoft"
+description: "Wyeliminować problemy z konfiguracją na urządzeniach z systemem iOS 8 lub nowszym, wdrażając zasady konfiguracji aplikacji dla użytkowników przed ich uruchomieniem aplikacji."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f0a78038-ea22-4826-9c07-1771b7dd2e8d
-caps.latest.revision: 18
-caps.handback.revision: 0
+caps.latest.revision: "18"
+caps.handback.revision: "0"
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 23b1d24e908d04b64c3bbfa518793a44e696d468
 ms.openlocfilehash: 50aea2afaf34974ca92ac58b6569bff56403a9ab
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="apply-settings-to-ios-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Zastosowanie ustawień do aplikacji systemu iOS z zasady konfiguracji aplikacji w programie System Center Configuration Manager
+# <a name="apply-settings-to-ios-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Zastosuj ustawienia aplikacji dla systemu iOS przy użyciu zasad konfiguracji aplikacji w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
-Zasady konfiguracji aplikacji można użyć w System Center Configuration Manager (Menedżer konfiguracji) do rozpowszechniania ustawień, które mogą być wymagane, gdy użytkownik uruchomi aplikację. Na przykład aplikacja może wymagać użytkownika, aby określić te szczegóły:
+Zasady konfiguracji aplikacji można użyć w programie System Center Configuration Manager (program Configuration Manager) do dystrybucji ustawień, które mogą być wymagane, jeśli użytkownik uruchamia aplikację. Na przykład aplikacja może wymagać użytkownikowi określ następujące informacje szczegółowe:
 - Niestandardowy numer portu
 - Ustawienia języka
 - Ustawienia zabezpieczeń
-- Informacje o znakowaniu ustawienia, takie jak logo firmy
+- Ustawienia oznaczeń marki, takich jak logo firmy
 
-Jeśli użytkownik wprowadza ustawienia nieprawidłowo, obciążenia rozwiązywania tych problemów znajduje się w pomocy technicznej i wdrażania aplikacji jest powolne.
-Aby uniknąć tych problemów, zasady konfiguracji aplikacji służy do wdrażania ustawienia wymagane dla użytkowników przed ich uruchomieniem aplikacji. Ustawienia są automatycznie skojarzone z użytkownikiem. Użytkownik nie trzeba podejmować żadnych działań.
-Aby użyć zasad konfiguracji aplikacji w programie Configuration Manager zamiast wdrażanie zasad konfiguracji bezpośrednio do użytkowników i urządzeń, należy skojarzyć zasady z typu wdrożenia podczas wdrażania aplikacji. Ustawienia zasad są stosowane, gdy aplikacja sprawdza, czy ich (zazwyczaj przy pierwszym uruchomieniu aplikacji).
+Jeśli użytkownik wprowadzi ustawienia nieprawidłowo, obciążenia naprawione mieści się w pomocy technicznej i wdrażanie aplikacji jest powolne.
+Aby uniknąć tych problemów, zasady konfiguracji aplikacji służy do wdrożenia wymagane ustawienia dla użytkowników, zanim uruchomią oni aplikację. Ustawienia są automatycznie skojarzone z użytkownikiem. Użytkownik nie musi wykonywać żadnych czynności.
+Aby zamiast wdrażania zasad konfiguracji bezpośrednio do użytkowników i urządzeń, należy użyć zasad konfiguracji aplikacji w programie Configuration Manager, należy skojarzyć zasady z typem wdrożenia podczas wdrażania aplikacji. Ustawienia zasad są stosowane, gdy aplikacja sprawdza, czy je (zazwyczaj przy pierwszym uruchomieniu aplikacji).
 
-Zasady konfiguracji aplikacji są obecnie dostępne tylko na urządzeniach z systemem iOS 8 lub nowszy, a dla tych typów aplikacji:
+Zasady konfiguracji aplikacji są obecnie dostępne tylko na urządzeniach z systemem iOS 8 lub nowszy, a w przypadku tych typów aplikacji:
 
-- **pakiet aplikacji dla systemu iOS (*pliku .ipa)**
+- **pakiet aplikacji dla systemu iOS (*plik IPA)**
 - **pakiet aplikacji dla systemu iOS ze sklepu z aplikacjami**
 
 Aby uzyskać więcej informacji na temat typów instalacji aplikacji, zobacz [wprowadzenie do zarządzania aplikacjami](/sccm/apps/understand/introduction-to-application-management).
 
 ## <a name="create-an-app-configuration-policy"></a>Tworzenie zasad konfiguracji aplikacji
 
-1. W konsoli programu Configuration Manager wybierz **Biblioteka oprogramowania** > **zarządzania aplikacjami** > **zasady konfiguracji aplikacji**.
-2. Na **Home** w karcie **zasady konfiguracji aplikacji** grupy, wybierz **tworzenie nowych zasad konfiguracji aplikacji**.
-3. W przypadku tworzenia aplikacji zasad Kreatora konfiguracji na **ogólne** Ustaw informacje o zasadach:
+1. W konsoli programu Configuration Manager wybierz **Biblioteka oprogramowania** > **Zarządzanie aplikacjami** > **zasady konfiguracji aplikacji**.
+2. Na **Home** karcie **zasady konfiguracji aplikacji** grupy, wybierz **utworzyć nowe zasady konfiguracji aplikacji**.
+3. W aplikacji konfiguracji kreatora tworzenia zasad na **ogólne** Ustaw informacje o zasadach:
   - **Nazwa**. Wprowadź unikatową nazwę zasady.
-  - **Opis**. (Opcjonalnie) Aby ułatwić identyfikację zasad, można dodać opis.
-  - **Przypisane kategorie, aby poprawić wyszukiwanie i filtrowanie**. (Opcjonalnie) Aby utworzyć i przypisać kategorie do zasad, wybierz **kategorii**. Kategorie łatwiejsze do sortowania i wyszukiwania elementów w konsoli programu Configuration Manager.
-4. Na **zasad systemu iOS** wybierz, jak ustawić informacje o konfiguracji zasad:
-  - **Określ nazwę i pary wartości**. Opcja ta właściwość listy plików, które nie używają zagnieżdżenia.
+  - **Opis elementu**. (Opcjonalnie) Aby ułatwić identyfikację zasad, można dodać opis.
+  - **Przypisane kategorie, aby poprawić wyszukiwanie i filtrowanie**. (Opcjonalnie) Aby utworzyć i przypisać kategorie do zasady, wybierz **kategorii**. Kategorie ułatwić sortowanie i znajdowanie elementów w konsoli programu Configuration Manager.
+4. Na **zasady systemu iOS** zdecyduj, jak ustawić informacji o konfiguracji zasad:
+  - **Określ nazwę i pary wartości**. Opcja ta pliki listy właściwości, które nie korzystają z zagnieżdżenia.
 
       *Aby określić pary nazw i wartości*
         1. Aby dodać nową parę, wybierz **nowy**.
-        2. W **dodać pary nazwa/wartość** okna dialogowego należy określić następujące czynności:
-            - **Typ**. Z listy wybierz typ wartości, którą chcesz określić.
-            - **Nazwa**. Wprowadź nazwę klucza listy właściwości, dla którego chcesz określić wartość.
+        2. W **dodać pary nazwa/wartość** okna dialogowego polu, podaj następujące informacje:
+            - **Typ**. Z listy wybierz typ wartości, który ma zostać określony.
+            - **Nazwa**. Wprowadź nazwę klucza listę właściwości, dla którego chcesz określić wartość.
             - **Wartość**. Wprowadź wartość, która zostanie zastosowana do wprowadzony klucz.
 
-  - **Przejdź do pliku listy właściwości**. Użyj tej opcji, jeśli masz już pliku XML konfiguracji aplikacji lub dla bardziej złożonych plików, które używają zagnieżdżenia.
+  - **Przejdź do pliku listy właściwości**. Użyj tej opcji, jeśli masz już plik XML konfiguracji aplikacji lub bardziej złożonych plików, które korzysta z opcji zagnieżdżenia.
 
     *Aby przejść do pliku listy właściwości*
 
-      1.  W **zasady konfiguracji aplikacji** wprowadź informacje listy właściwości w poprawnym formacie XML.
+      1.  W **zasady konfiguracji aplikacji** wprowadź informacje dotyczące listy właściwości w poprawnym formacie XML.
 
-      Aby dowiedzieć się więcej na temat list właściwości XML, zobacz [listy właściwości XML opis](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/PropertyLists/UnderstandXMLPlist/UnderstandXMLPlist.html) w sklepie iOS Biblioteka dla deweloperów.
+      Aby dowiedzieć się więcej na temat list właściwości XML, zobacz [informacje na temat list właściwości XML](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/PropertyLists/UnderstandXMLPlist/UnderstandXMLPlist.html) w bibliotece deweloperów systemu iOS.
 
-Format listy właściwości XML różni się w zależności od aplikacji, który jest konfigurowany. Szczegółowe informacje o formacie do użycia, skontaktuj się z dostawcą aplikacji.
+Format listy właściwości XML różni się zależnie od konfigurowanej aplikacji. Skontaktuj się z dostawcą aplikacji, aby uzyskać szczegółowe informacje na temat formatu do użycia.
 Usługa Intune obsługuje następujące typy danych na liście właściwości:
             
             ```
@@ -82,8 +80,8 @@ Usługa Intune obsługuje następujące typy danych na liście właściwości:
             <dict>
             <true /> or <false />
             ```
-Aby uzyskać więcej informacji na temat typów danych, zobacz [o zawiera listę właściwości](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/PropertyLists/AboutPropertyLists/AboutPropertyLists.html) w sklepie iOS Biblioteka dla deweloperów.
-Intune również obsługuje następujące typy token na liście właściwości:
+Aby uzyskać więcej informacji na temat typów danych, zobacz [temat list właściwości](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/PropertyLists/AboutPropertyLists/AboutPropertyLists.html) w bibliotece deweloperów systemu iOS.
+Usługa Intune obsługuje również następujące typy tokenów na liście właściwości:
             
             ```
             {{userprincipalname}} - (Example: John@contoso.com)
@@ -97,24 +95,24 @@ Intune również obsługuje następujące typy token na liście właściwości:
             {{serialnumberlast4digits}} - (Example: G5V2) for iOS devices
             ```
 
-{{I}} znaków są używane przez tylko typy tokenów i nie może być używany do innych celów.
+{{I}} znaków są używane tylko przez typy tokenów i nie mogą być używane do innych celów.
             
-5. Aby zaimportować plik XML, który został utworzony wcześniej, wybierz **wybierz plik**.
-6. Wybierz **dalej**. Jeśli wystąpią błędy w kodzie XML, należy je poprawić przed kontynuowaniem.
-7. Zakończ czynności wyświetlane w kreatorze.
+5. Aby zaimportować plik XML, który został utworzony wcześniej, wybierz **Wybieranie pliku**.
+6. Wybierz **dalej**. Jeśli wystąpią błędy w kodzie XML, należy je poprawić, aby kontynuować.
+7. Zakończ kroki opisane w kreatorze.
 
-Nowe zasady konfiguracji aplikacji jest wyświetlana w **Biblioteka oprogramowania** obszaru roboczego, w **zasady konfiguracji aplikacji** węzła.
+Nowe zasady konfiguracji aplikacji jest wyświetlany w obszarze **Biblioteka oprogramowania** obszaru roboczego w **zasady konfiguracji aplikacji** węzła.
 
 ## <a name="associate-an-app-configuration-policy-with-a-configuration-manager-application"></a>Dodawanie skojarzenia zasad konfiguracji aplikacji z aplikacją programu Configuration Manager
 
-Aby skojarzyć zasady konfiguracji aplikacji z wdrażaniem aplikacji dla systemu iOS, wdrożyć aplikację w zwykły sposób za pomocą procedury w [wdrażania aplikacji](/sccm/apps/deploy-use/deploy-applications) tematu.
+Aby skojarzyć zasady konfiguracji aplikacji do wdrażania aplikacji dla systemu iOS, Wdróż aplikację w zwykły sposób za pomocą procedury w [wdrażania aplikacji](/sccm/apps/deploy-use/deploy-applications) tematu.
 
-W Kreatorze wdrażania oprogramowania na **zasady konfiguracji aplikacji** wybierz **nowy**. W **wybierz zasady konfiguracji aplikacji** okno dialogowe, wybierz typ wdrożenia aplikacji i zasady konfiguracji aplikacji, które chcesz skojarzyć je z.
+W Kreatorze wdrażania oprogramowania na **zasady konfiguracji aplikacji** wybierz pozycję **nowy**. W **wybierz zasady konfiguracji aplikacji** okno dialogowe, wybierz typ wdrożenia aplikacji, a zasady konfiguracji aplikacji, które chcesz skojarzyć go z.
 Po zainstalowaniu typu wdrożenia jest automatycznie stosowane ustawienia zasad konfiguracji aplikacji.
 
 ## <a name="example-format-for-the-mobile-app-configuration-xml-file"></a>Przykładowy format pliku XML konfiguracji aplikacji mobilnej
 
-Podczas tworzenia pliku konfiguracji aplikacji mobilnej można użyć tego formatu do określenia jednego lub więcej z następujących wartości:
+Podczas tworzenia pliku konfiguracji aplikacji mobilnej można użyć tego formatu, można określić jedną lub więcej z następujących wartości:
 
 ```
 <dict>
@@ -140,4 +138,3 @@ Podczas tworzenia pliku konfiguracji aplikacji mobilnej można użyć tego forma
   <string>{{udidlast4digits}}</string>
 </dict>
 ```
-

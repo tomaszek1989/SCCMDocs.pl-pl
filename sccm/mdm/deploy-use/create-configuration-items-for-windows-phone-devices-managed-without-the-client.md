@@ -1,30 +1,27 @@
 ---
-title: "Tworzenie elementów konfiguracji dla urządzeń Windows Phone zarządzane za pomocą usługi Intune | Dokumentacja firmy Microsoft"
+title: "Jak utworzyć elementy konfiguracji dla urządzeń Windows Phone zarządzanych za pomocą usługi Intune | Dokumentacja firmy Microsoft"
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: df10dc4d-c9ff-4574-bb33-8d30eb14cfe3
-caps.latest.revision: 13
-caps.handback.revision: 0
+caps.latest.revision: "13"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: bcb2d14ef097afc2915932fe09f6d83c968aecf9
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="how-to-create-configuration-items-for-windows-phone-devices-managed-without-the-system-center-configuration-manager-client"></a>Jak utworzyć elementy konfiguracji dla urządzeń z systemem Windows Phone zarządzanych bez klienta programu System Center Configuration Manager
-Użyj programu System Center Configuration Manager**Windows Phone** elementu konfiguracji do zarządzania ustawieniami urządzenia Windows Phone, które są zarejestrowane w usłudze Microsoft Intune lub lokalnych zarządzanych przez program Configuration Manager.  
+Użyj programu System Center Configuration Manager**Windows Phone** element konfiguracji do zarządzania ustawieniami urządzeń Windows Phone, które są zarejestrowane w Microsoft Intune lub zarządzane lokalnie przez program Configuration Manager.  
   
 ### <a name="to-create-a-windows-phone-configuration-item"></a>Aby utworzyć element konfiguracji Windows Phone  
   
@@ -36,11 +33,11 @@ Użyj programu System Center Configuration Manager**Windows Phone** elementu kon
   
 4.  Na stronie **Ogólne** w **Kreatorze tworzenia elementu konfiguracji**podaj nazwę i opcjonalny opis elementu konfiguracji.  
   
-5.  W obszarze **określić typ elementu konfiguracji, który chcesz utworzyć**, wybierz opcję **Windows Phone**.  
+5.  W obszarze **Określ typ elementu konfiguracji, który chcesz utworzyć**, wybierz pozycję **Windows Phone**.  
   
-6.  Kliknij przycisk **kategorii** należy utworzyć i przypisać kategorie ułatwiają wyszukiwanie i filtrowanie elementów konfiguracji w konsoli programu Configuration Manager.  
+6.  Kliknij przycisk **kategorii** możesz utworzyć i przypisać kategorie ułatwiające wyszukiwanie i filtrowanie elementów konfiguracji w konsoli programu Configuration Manager.  
   
-7.  Na **obsługiwane platformy** strony kreatora wybierz określonych platform Windows Phone, które będą oceniać elementu konfiguracji.  
+7.  Na **obsługiwane platformy** strony kreatora wybierz platformy Windows Phone, które będą oceniać element konfiguracji.  
   
 8.  Na stronie **Ustawienia urządzenia** kreatora wybierz grupę ustawień, którą chcesz skonfigurować. Szczegółowe informacje można znaleźć w sekcji [Informacje dotyczące ustawień elementu konfiguracji systemu Windows Phone](#BKMK_Setref) w tym temacie. Następnie kliknij pozycję **Dalej**.  
   
@@ -51,15 +48,15 @@ Użyj programu System Center Configuration Manager**Windows Phone** elementu kon
   
 10. Dla każdej grupy ustawień można również skonfigurować ważność, która będzie zgłaszana w przypadku braku zgodności znalezionego elementu konfiguracji:  
   
-    -   **Brak** -urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważności niepowodzenia dla raportów programu Configuration Manager.  
+    -   **Brak** — urządzenia, które nie spełniają tej zasady zgodności nie będą zgłaszać ważności niepowodzenia dla raportów programu Configuration Manager.  
   
-    -   **Informacje o** -urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **informacji** dla raportów programu Configuration Manager.  
+    -   **Informacje o** — urządzenia, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **informacji** dla raportów programu Configuration Manager.  
   
-    -   **Ostrzeżenie** -urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **ostrzeżenie** dla raportów programu Configuration Manager.  
+    -   **Ostrzeżenie** — urządzenia, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **ostrzeżenie** dla raportów programu Configuration Manager.  
   
-    -   **Krytyczne** -urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczny** dla raportów programu Configuration Manager.  
+    -   **Krytyczne** — urządzenia, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczne** dla raportów programu Configuration Manager.  
   
-    -   **Krytyczne ze zdarzeniem** -urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczny** dla raportów programu Configuration Manager. Ten poziom ważności jest też rejestrowany jako zdarzenie systemu Windows w dzienniku zdarzeń aplikacji.  
+    -   **Krytyczne ze zdarzeniem** — urządzenia, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczne** dla raportów programu Configuration Manager. Ten poziom ważności jest też rejestrowany jako zdarzenie systemu Windows w dzienniku zdarzeń aplikacji.  
   
 11. Na stronie **Możliwość zastosowania platformy** kreatora przejrzyj ustawienia, które nie są zgodne z wybranymi wcześniej obsługiwanymi platformami. Możesz wrócić i usunąć te ustawienia lub kontynuować.  
   
@@ -73,7 +70,7 @@ Użyj programu System Center Configuration Manager**Windows Phone** elementu kon
 ##  <a name="windows-phone-configuration-item-settings-reference"></a>Informacje dotyczące ustawień elementu konfiguracji systemu Windows Phone  
   
 ### <a name="password"></a>Hasło  
- Te ustawienia dotyczą zarówno Windows Phone 8 i Windows Phone 8.1.  
+ Te ustawienia dotyczą zarówno systemu Windows Phone 8 i Windows Phone 8.1.  
   
 |Ustawienie|Szczegóły|  
 |-------------|-------------|  
@@ -89,14 +86,14 @@ Użyj programu System Center Configuration Manager**Windows Phone** elementu kon
   
 |Ustawienie|Szczegóły|  
 |-------------|-------------|  
-|**Przechwytywanie ekranu**|Zezwalaj użytkownikowi na wykonaj zrzut ekranu urządzenia wyjściowego.<br /><br /> (Tylko Windows Phone 8.1)|  
+|**Przechwytywanie ekranu**|Zezwalaj użytkownikowi na wykonanie zrzutu ekranu urządzenia.<br /><br /> (Tylko Windows Phone 8.1)|  
 |**Przesłanie danych diagnostycznych**|Umożliwia przesyłanie plików dzienników aplikacji.|  
 |**Geolokalizacja**|Umożliwia urządzeniu wykorzystanie danych usług lokalizacji.<br /><br /> (Tylko Windows Phone 8.1)|  
 |**Kopiowanie i wklejanie**|Umożliwia stosowanie funkcji kopiuj i wklej do przenoszenia danych między aplikacjami.<br /><br /> (Tylko Windows Phone 8.1)|  
 |**Bluetooth**|Zezwala na korzystanie z funkcji Bluetooth urządzenia.|  
   
 ### <a name="email-management"></a>Zarządzanie pocztą e-mail  
- Te ustawienia dotyczą zarówno Windows Phone 8 i Windows Phone 8.1.  
+ Te ustawienia dotyczą zarówno systemu Windows Phone 8 i Windows Phone 8.1.  
   
 |Ustawienie|Szczegóły|  
 |-------------|-------------|  
@@ -108,21 +105,21 @@ Użyj programu System Center Configuration Manager**Windows Phone** elementu kon
 |**Maksymalny rozmiar załącznika (automatycznie pobieranego)**|Określa maksymalny rozmiar wiadomości e-mail pobieranych automatycznie.|  
 |**Synchronizacja kalendarza**||  
 |**Niestandardowe konto e-mail**|Umożliwia korzystanie na urządzeniu z konta innego niż Microsoft.|  
-|**Ustaw konto Microsoft jako opcjonalne w aplikacji Poczta systemu Windows**|Nie wymagają użycia konta Microsoft, aby zalogować się do Windows Mail.|  
+|**Ustaw konto Microsoft jako opcjonalne w aplikacji Poczta systemu Windows**|Nie wymagają użycia konta Microsoft do logowania się do systemu Windows Mail.|  
   
 ### <a name="store"></a>Magazyn  
- Te ustawienia dotyczą tylko na urządzeniach Windows Phone 8.1.  
+ Te ustawienia dotyczą tylko urządzeń systemu Windows Phone 8.1.  
   
 |Ustawienie|Szczegóły|  
 |-------------|-------------|  
 |**Sklep z aplikacjami**|Umożliwia dostęp do sklepu z aplikacjami na urządzeniu.|  
   
 ### <a name="browser"></a>Przeglądarka  
- Te ustawienia dotyczą zarówno Windows Phone 8 i Windows Phone 8.1.  
+ Te ustawienia dotyczą zarówno systemu Windows Phone 8 i Windows Phone 8.1.  
   
 |Ustawienie|Szczegóły|  
 |-------------|-------------|  
-|**Zezwalaj na używanie przeglądarki sieci web**|Włączać lub wyłączać domyślnej przeglądarki internetowej.|  
+|**Zezwalaj na używanie przeglądarki sieci web**|Włącz lub wyłącz domyślnej przeglądarki internetowej.|  
 |**Autowypełnianie**|Użytkownik może zmienić ustawienia autowypełniania w przeglądarce.|  
 |**Wykonywanie skryptów aktywnych**|Przeglądarka może uruchamiać skrypty, takie jak skrypty kontrolek ActiveX.|  
 |**Dodatki plug-in**|Użytkownik może dodać dodatki plug-in do programu Internet Explorer.|  
@@ -130,7 +127,7 @@ Użyj programu System Center Configuration Manager**Windows Phone** elementu kon
 |**Ostrzeżenie o oszustwie**|Włącz lub wyłącz ostrzeżenia o potencjalnych fałszywych witrynach sieci Web.|  
   
 ### <a name="internet-explorer"></a>Internet Explorer  
- Te ustawienia dotyczą zarówno Windows Phone 8 i Windows Phone 8.1.  
+ Te ustawienia dotyczą zarówno systemu Windows Phone 8 i Windows Phone 8.1.  
   
 |Ustawienie|Szczegóły|  
 |-------------|-------------|  
@@ -165,29 +162,29 @@ Użyj programu System Center Configuration Manager**Windows Phone** elementu kon
 |**Magazyn wymienny**|Zezwalaj na korzystanie na urządzeniu z magazynu wymiennego, takiego jak karta SD.|  
 |**Aparat fotograficzny**|Zezwalaj na korzystanie z aparatu fotograficznego urządzenia.|  
 |**Komunikacja zbliżeniowa (NFC)**|Zezwalaj na komunikację z wykorzystaniem technologii NFC na urządzeniu.<br /><br /> (Tylko Windows Phone 8.1)|  
-|**Zezwalaj na połączenie USB**|Zezwalaj na urządzenia peryferyjne połączenia z tym urządzeniem za pośrednictwem USB.|
+|**Zezwalaj na połączenie USB**|Zezwalaj na urządzenia peryferyjne nawiązać połączenia z tym urządzeniem USB.|
   
 ### <a name="peak-synchronization"></a>Synchronizacja w szczycie  
- Te ustawienia dotyczą zarówno Windows Phone 8 i Windows Phone 8.1.  
+ Te ustawienia dotyczą zarówno systemu Windows Phone 8 i Windows Phone 8.1.  
   
 |Ustawienie|Szczegóły|  
 |-------------|-------------|  
-|**Określ godziny szczytu**|Określ okno czasu, który będzie używany przez dwa poniższe ustawienia.|  
-|**Częstotliwość synchronizacji w szczycie**|Wybierz, jak często urządzenia będą synchronizować w czasie największego obciążenia określona.|  
-|**Częstotliwość synchronizacji poza szczytem**|Wybierz, jak często urządzenie będzie synchronizować poza określony czas szczytu.|  
+|**Określ godziny szczytu**|Określić przedział czasu, który będzie używany przez następujące dwa ustawienia.|  
+|**Częstotliwość synchronizacji w szczycie**|Wybierz, jak często urządzenie będzie synchronizować podczas godziny szczytu na określony.|  
+|**Częstotliwość synchronizacji poza szczytem**|Wybierz, jak często urządzenie będzie synchronizować poza godziny szczytu na określony.|  
   
 ### <a name="roaming"></a>Roaming  
- Te ustawienia dotyczą zarówno Windows Phone 8 i Windows Phone 8.1.  
+ Te ustawienia dotyczą zarówno systemu Windows Phone 8 i Windows Phone 8.1.  
   
 |Ustawienie|Szczegóły|  
 |-------------|-------------|  
-|**Zarządzanie urządzeniem podczas roamingu**|Umożliwia urządzenia, które mają być zarządzane przez program Configuration Manager podczas roamingu.|  
+|**Zarządzanie urządzeniem podczas roamingu**|Umożliwia urządzenia, które mają być zarządzane przez program Configuration Manager, podczas roamingu.|  
 |**Pobieranie oprogramowania podczas roamingu**|Umożliwia pobieranie aplikacji i oprogramowania podczas roamingu.|  
 |**Pobieranie wiadomości e-mail podczas roamingu**|Umożliwia pobieranie wiadomości e-mail podczas roamingu.|  
 |**Roaming danych**|Umożliwia roaming między sieciami przy dostępie do danych.|  
   
 ### <a name="encryption"></a>Szyfrowanie  
- Te ustawienia dotyczą zarówno Windows Phone 8 i Windows Phone 8.1.  
+ Te ustawienia dotyczą zarówno systemu Windows Phone 8 i Windows Phone 8.1.  
   
 |Ustawienie|Szczegóły|  
 |-------------|-------------|  
@@ -199,7 +196,7 @@ Użyj programu System Center Configuration Manager**Windows Phone** elementu kon
 |**Algorytm szyfrowania**|Wybierz algorytm szyfrowania wiadomości e-mail.|  
   
 ###  <a name="wireless-communications"></a>Komunikacja bezprzewodowa  
- Te ustawienia dotyczą zarówno Windows Phone 8 i Windows Phone 8.1.  
+ Te ustawienia dotyczą zarówno systemu Windows Phone 8 i Windows Phone 8.1.  
   
 |Nazwa ustawienia|Szczegóły|  
 |------------------|-------------|  
@@ -224,7 +221,7 @@ Użyj programu System Center Configuration Manager**Windows Phone** elementu kon
 |**Ta sieć łączy się z Internetem**|Wybierz tę opcję, jeśli chcesz podać ustawienia proxy umożliwiające urządzeniom przenośnym łączenie się z Internetem za pośrednictwem połączenia bezprzewodowego.|  
 |**Ustawienia serwera proxy**|Określ zgodnie z wymaganiami ustawienia **Serwer** i **Port** dla opcji **HTTP**, **WAP** i **Sockets**.|  
 |**Włącz dostęp do sieci 802.1X**|Wybierz tę opcję, aby zabezpieczyć połączenie przez określenie typu protokołu EAP.|  
-|**Typ protokołu EAP**|Wybierz typ protokołu EAP do użycia:<br><br> - **PEAP**<br> - **Karta inteligentna lub certyfikat**|  
+|**Typ protokołu EAP**|Wybierz typ protokołu EAP do użycia:<br><br> - **PROTOKÓŁ PEAP**<br> - **Karta inteligentna lub certyfikat**|  
     
   
 ###  <a name="certificates"></a>Certyfikaty  
@@ -232,7 +229,7 @@ Użyj programu System Center Configuration Manager**Windows Phone** elementu kon
   
  Kliknij przycisk **Importuj** i określ następujące wartości:  
   
--   **Plik certyfikatu** — kliknij przycisk **Przeglądaj** a następnie wybierz plik certyfikatu z rozszerzeniem **cer** , który chcesz zaimportować.  
+-   **Plik certyfikatu** — kliknij przycisk **Przeglądaj** , a następnie wybierz plik certyfikatu z rozszerzeniem **.cer** , który chcesz zaimportować.  
   
 -   **Magazyn docelowy** – wybierz co najmniej jeden magazyn docelowy, w którym zaimportowany certyfikat zostanie dodany na urządzeniu przenośnym:  
   
@@ -242,7 +239,7 @@ Użyj programu System Center Configuration Manager**Windows Phone** elementu kon
   
     -   **Normalny**  
   
-    -   **Uprzywilejowane**  
+    -   **Uprzywilejowany**  
   
     -   **SPC**  
   
@@ -258,12 +255,12 @@ Użyj programu System Center Configuration Manager**Windows Phone** elementu kon
   
     -   **IT Administrator**  
   
-    -   **Nieuwierzytelniony użytkownik**  
+    -   **Użytkownik nieuwierzytelniony**  
   
-    -   **Zaufanych serwerów inicjowania obsługi administracyjnej**  
+    -   **Zaufany serwer dostarczania**  
   
 ### <a name="system-security"></a>Zabezpieczenia systemu  
- Te ustawienia dotyczą zarówno Windows Phone 8 i Windows Phone 8.1.  
+ Te ustawienia dotyczą zarówno systemu Windows Phone 8 i Windows Phone 8.1.  
   
 |Ustawienie|Szczegóły|  
 |-------------|-------------|  
@@ -274,10 +271,10 @@ Użyj programu System Center Configuration Manager**Windows Phone** elementu kon
 |**SmartScreen**|Włącz lub wyłącz funkcję Windows SmartScreen.|  
 |**Ochrona przed wirusami**|Upewnij się, że urządzenie jest chronione przez oprogramowanie antywirusowe|  
 |**Sygnatury ochrony przed wirusami są aktualne**|Upewnij się, że sygnatury oprogramowania antywirusowego są aktualne.|
-|**Zezwalaj na ręczne unenrollment**|Załóżmy użytkownika Usuń urządzenie z zarządzania urządzeniami przenośnymi.|  
+|**Zezwalaj na ręczne Wyrejestrowanie**|Umożliwia użytkownikowi usunięcie ich urządzenia z zarządzania urządzeniami przenośnymi.|  
   
 ### <a name="windows-server-work-folders"></a>Foldery robocze systemu Windows Server  
- Te ustawienia dotyczą zarówno Windows Phone 8 i Windows Phone 8.1.  
+ Te ustawienia dotyczą zarówno systemu Windows Phone 8 i Windows Phone 8.1.  
   
 |Ustawienie|Szczegóły|  
 |-------------|-------------|  
@@ -286,21 +283,21 @@ Użyj programu System Center Configuration Manager**Windows Phone** elementu kon
 ### <a name="allowed-and-blocked-apps-list-windows-phone-81-only"></a>Lista dozwolonych i zablokowanych aplikacji (tylko Windows Phone 8.1)  
  Umożliwia określenie listy zgodnych i niezgodnych aplikacji systemu Windows Phone w firmie. Użytkownicy nie mogą instalować aplikacji określonych jako zablokowane. Jeśli określisz listę dozwolonych aplikacji, użytkownicy będą mogli instalować tylko aplikacje znajdujące się na liście.  
   
- Nie można określić jednocześnie dozwolonych i zablokowanych aplikacji w tej samej pozycji konfiguracji.  
+ Nie można określić dozwolonych i zablokowanych aplikacji w tym samym elemencie konfiguracji.  
   
 > [!IMPORTANT]  
->  Jeśli określisz listę dozwolonych aplikacji, musi zapewnić, że aplikacji portalu firmy i być wdrożona na urządzeniach Windows Phone 8.1 dla wszystkich aplikacji znajdują się w **dozwolone** lista aplikacji.  
+>  Jeśli określisz listę dozwolonych aplikacji, pamiętaj, że aplikacja portal firmy i wszystkie inne aplikacje wdrożone na urządzeniach Windows Phone 8.1 znajdują się w **dozwolone** listy aplikacji.  
   
-##### <a name="to-specify-an-allowed-or-blocked-apps-list"></a>Do określania listy dozwolonych lub zablokowanych aplikacji  
+##### <a name="to-specify-an-allowed-or-blocked-apps-list"></a>Aby określić listę dozwolonych lub zablokowanych aplikacji  
   
-1.  Na **listy dozwolonych i zablokowanych aplikacji (Windows Phone 8.1)** określ następujące informacje:  
+1.  Na **lista dozwolonych i blokowanych aplikacji (Windows Phone 8.1)** Podaj następujące informacje:  
   
 |||  
 |-|-|  
 |Ustawienie|Więcej informacji|  
 |**Lista zablokowanych aplikacji**|Wybierz tę opcję, aby utworzyć listę aplikacji, których użytkownicy nie mogą instalować.|  
 |**Lista dozwolonych aplikacji**|Wybierz tę opcję, aby określić listę aplikacji, które użytkownicy mogą instalować.|  
-|**Dodaj**|Dodaje aplikację do wybranej listy. Wprowadź wybraną nazwę, opcjonalnie wydawcę aplikacji, a także adres URL aplikacji w sklepie z aplikacjami.<br /><br /> Aby określić adres URL, na stronie Sklepu Windows Phone wyszukaj aplikację, której chcesz użyć.<br /><br /> **Przykład:** Wyszukaj w sklepie **Skype** aplikacji. Adres URL, którego używasz będzie http://www.windowsphone.com/en-us/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51.<br /><br /> Dla aplikacji portal firmy lub aplikacje biznesowe nie trzeba określić pełny adres URL tylko identyfikator GUID aplikacji.|  
+|**Dodaj**|Dodaje aplikację do wybranej listy. Wprowadź wybraną nazwę, opcjonalnie wydawcę aplikacji, a także adres URL aplikacji w sklepie z aplikacjami.<br /><br /> Aby określić adres URL, na stronie Sklepu Windows Phone wyszukaj aplikację, której chcesz użyć.<br /><br /> **Przykład:** Wyszukaj w sklepie **Skype** aplikacji. Adres URL, którego używasz będzie http://www.windowsphone.com/en-us/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51.<br /><br /> Dla aplikacji portal firmy lub aplikacji biznesowych nie trzeba określić pełny adres URL tylko identyfikator GUID aplikacji.|  
 |**Edytowanie**|Umożliwia edytowanie nazwy, wydawcy i adresu URL wybranej aplikacji.|  
 |**Usuń**|Usuwa wybraną aplikację z listy.|  
 |**Importujuj**|Importuje listę aplikacji wprowadzoną w pliku w formacie wartości rozdzielanych przecinkami. W pliku użyj formatu: nazwa aplikacji, wydawca, adres URL.|  

@@ -1,41 +1,38 @@
 ---
-title: Zasady stosowania | Dokumentacja firmy Microsoft
-description: "Zarządzanie zasady stosowania dla programu System Center Updates Publisher"
+title: "Reguły stosowania | Dokumentacja firmy Microsoft"
+description: "Zarządzanie możliwość zastosowania reguł dla programu System Center Updates Publisher"
 ms.custom: na
 ms.date: 4/29/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3cf0c2cd-397a-4622-b11c-961f334fb7d7
-caps.latest.revision: 1
+caps.latest.revision: "1"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: NOINDEX, NOFOLLOW
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 31819a1df4e63e1114682490a9b3c3b4e5c99cfa
 ms.openlocfilehash: 2925abda07abaa46ad56b9b433ce003c22aede5e
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="manage-applicability-rules-in-updates-publisher"></a>Zarządzaj regułami zastosowania w Updates Publisher
 
-# <a name="manage-applicability-rules-in-updates-publisher"></a>Zarządzanie zasady stosowania w Updates Publisher
+*Dotyczy: Program System Center Updates Publisher*
 
-*Dotyczy: System Center Updates Publisher*
+Z programem Updates Publisher reguły stosowania zdefiniować wymagania, które muszą zostać spełnione, zanim urządzenie można zainstalować aktualizacji. Reguły są również używane do określenia, czy na komputerze jest zainstalowana aktualizacja. Reguła zastosowania, złożoną z wielu części jest określana jako regułę należy ustawić.
 
-Z programem Updates Publisher reguły stosowania zdefiniować wymagania, które muszą zostać spełnione przed urządzenia można zainstalować aktualizacji. Zasady są również używane do ustalenia, jeśli na komputerze jest zainstalowana aktualizacja. Reguły stosowania, która jest złożony z wielu części, jest określana zgodnie z zasadą ustawić.
+Pakiety aktualizacji nie należy używać reguły stosowania.
 
-Pakiety aktualizacji należy używać reguły stosowania.
+## <a name="overview-of-applicability-rules"></a>Omówienie możliwość zastosowania reguł
+Zarządzanie możliwość zastosowania reguł z **obszaru roboczego zasady**. Po utworzeniu reguły jest określenie co najmniej jeden warunek. Jeśli określono wiele warunków, można skonfigurować relacje między warunki tak, aby obliczyć sekwencyjnie ani łączone w logiczne **i** lub **lub** instrukcje.
 
-## <a name="overview-of-applicability-rules"></a>Omówienie zasady stosowania
-Zarządzanie zasady stosowania z **roboczym reguły**. Podczas tworzenia reguły określasz co najmniej jeden warunek. Jeśli określono wiele warunków, można skonfigurować relacje między warunków, więc są one obliczane sekwencyjnie lub łączone w logicznej **i** lub **lub** instrukcje.
-
-Na przykład Oto zestaw reguł, który zawiera trzy zasady. Pierwsza reguła sprawdza, czy *mój_plik* plik istnieje, a drugi i trzeci reguły Sprawdź, czy język systemu operacyjnego jest angielski i japoński.
+Na przykład następujące jest zestaw reguł, który zawiera trzy zasady. Pierwsza reguła sprawdza, czy *mój_plik* plik istnieje, a drugi i trzeci zasad Sprawdź, czy język systemu operacyjnego jest angielski i japoński.
 
     And  
       File ‘\[PROGRAM\_FILES\] \\Microsoft\\MyFile’ exists  
@@ -43,55 +40,54 @@ Na przykład Oto zestaw reguł, który zawiera trzy zasady. Pierwsza reguła spr
         Windows Language is English   
         Windows Language is Japanese
 
-Wszystkie aktualizacje wymagają co najmniej jedną regułę możliwości zastosowania. Aktualizacje, które należy zaimportować już zostały zastosowane reguły stosowania, a podczas tworzenia własnych aktualizacji, należy dodać co najmniej jedną regułę do nich. Można zmodyfikować, a następnie rozwiń węzeł z regułami dla dowolnej aktualizacji w aktualizacji wydawcy.
+Wszystkie aktualizacje wymagają co najmniej jedną regułę zastosowania. Aktualizacje, które należy zaimportować już mieć możliwość zastosowania reguł stosowanych, a podczas tworzenia własnych aktualizacji, należy dodać co najmniej jedną regułę do nich. Można zmodyfikować, a następnie rozwiń węzeł z regułami dowolna aktualizacja w Updates Publisher.
 
-Widok reguły zostały utworzone, w **roboczym reguły**, wybierz regułę z **zapisanych reguł** listy. Poszczególne warunki i operacje logiczne dla tej reguły są wyświetlane w **zasady stosowania** konsoli. Reguły dla aktualizacji, które można zaimportować tylko można wyświetlać i modyfikować podczas edycji tej aktualizacji.
+Widok reguł zostały utworzone, w **obszaru roboczego zasady**, wybierz regułę z **zapisanych reguł** listy. Poszczególne warunki i operacje logiczne dla tej reguły są wyświetlane w **reguły stosowania** okienku konsoli. Zasady aktualizacji, które należy zaimportować tylko można wyświetlać i modyfikować podczas edytowania tej aktualizacji.
 
-W dwóch miejscach w Updates Publisher, można utworzyć reguły:
+Można utworzyć reguły w dwóch lokalizacjach w Updates Publisher:
 
--   W **roboczym reguły** tworzenia i **zapisać** zestawów reguł, której następnie można później. Podczas edytowania lub tworzenia aktualizacji można wybrać **zapisane zasadę** jako **reguły typu**, a następnie wybierz z listy z zestawów reguł wstępnie utworzone.
+-   W **roboczym reguły** tworzenia i **zapisać** zestawów reguł, której następnie można później. Podczas edytowania lub tworzenia aktualizacji możesz wybrać **reguła zapisana** jako **typ reguły**, a następnie wybierz z listy z zestawów reguł wstępnie utworzone.
 
--   Można również utworzyć nowe reguły w czasie który tworzenia lub edytowania aktualizacji. Reguły utworzone w ten sposób nie są zapisywane do użycia w przyszłości.
+-   Można również utworzyć nowe reguły w czasie który tworzenia lub edytowania aktualizacji. Zasady utworzone w ten sposób nie są zapisywane do użycia w przyszłości.
 
-## <a name="create-applicability-rule"></a>Tworzenie reguły stosowania
-Następujące informacje są podobne jak utworzyć zasady za pomocą [Kreatora tworzenia aktualizacji](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard). Jednak w przeciwieństwie do kreatora, należy zapisać swoje zestawów reguł do użytku w przyszłości.
+## <a name="create-applicability-rule"></a>Tworzenie reguły do zastosowania
+Następujące informacje są podobne do tworzenia reguł za pomocą [kreatora Utwórz aktualizacji](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard). Jednak w przeciwieństwie do kreatora można zapisać z zestawów reguł do użytku w przyszłości.
 
-1.  W **roboczym reguły**, wybierz **Utwórz** otworzyć **Utwórz regułę** kreatora.
+1.  W **obszaru roboczego zasady**, wybierz **Utwórz** otworzyć **Utwórz regułę** kreatora.
 
-2.  Określ nazwę reguły, a następnie kliknij przycisk ![nową regułę](media/newrule.png). Spowoduje to otwarcie **stosowania reguły** strony, gdzie można skonfigurować reguły.
+2.  Określ nazwę reguły, a następnie kliknij przycisk ![nową regułę](media/newrule.png). Spowoduje to otwarcie **możliwość zastosowania reguł** strony, w którym można skonfigurować reguły.
 
-3.  Dla **reguły typu,** wybierz jedną z następujących czynności. Różne opcje, które należy skonfigurować dla każdego typu:
+3.  Aby uzyskać **typ, reguły** wybierz jedną z następujących czynności. Różne opcje, które należy skonfigurować dla każdego typu:
 
-    -   **Plik** — ta zasada umożliwia mieć urządzenia pliku z właściwościami, które spełniają jeden lub więcej kryteriów, określ przed tej aktualizacji można zastosować.
+    -   **Plik** — użycia tej reguły, aby mieć urządzenia pliku z właściwościami, które spełniają jeden lub więcej kryteria przed tę aktualizację można zastosować.
 
-    -   **Rejestr —** ten typ umożliwia określenie szczegółów rejestru, które muszą być obecne przed urządzenie kwalifikuje się do zainstalowania tej aktualizacji.
+    -   **Rejestr —** tego typu umożliwia określenie szczegółów rejestru, które muszą być obecne zanim urządzenie kwalifikuje się do zainstalowania tej aktualizacji.
 
-    -   **System —** zasada używa szczegóły systemu do ustalenia możliwości zastosowania. Można wybrać Definiowanie wersji systemu Windows, Windows języka, architektury procesora lub określ kwerendę usługi WMI do identyfikowania urządzeń systemu operacyjnego.
+    -   **System —** ta zasada używa szczegóły systemu w celu określenia możliwości zastosowania. Można wybrać Definiowanie wersji systemu Windows, Windows języka, architektury procesora, lub określ kwerendę usługi WMI, aby zidentyfikować system operacyjny urządzenia.
 
-    -   **Instalator systemu Windows —** ta reguła służy do określenia stosowania oparte na zainstalowany. Poprawka MSI lub Instalatora systemu Windows (. MSP). Można również określić, czy określone składniki lub funkcje są instalowane w ramach zapotrzebowania.
+    -   **Instalator Windows —** ta reguła służy do określenia zastosowania oparte na zainstalowanym. Poprawka MSI lub Instalatora systemu Windows (. MSP). Można również określić, czy określone składniki i funkcje są instalowane jako część wymagań.
 
        > [!IMPORTANT]   
-       > Na zarządzanych deices, usługa Windows Update Agent nie może wykryć pakiety instalacji systemu Windows, które są zainstalowane dla poszczególnych użytkowników. Korzystając z tego typu reguły, należy skonfigurować zasady stosowania dodatkowych, takich jak wartości klucza rejestru lub wersje plików, tak aby pakiet Instalatora Windows może prawidłowo wykrył niezależnie od konkretnego użytkownika lub całego systemu.
+       > Z zarządzanych deices, Windows Update Agent nie może wykryć pakietów instalacji systemu Windows, które są zainstalowane dla poszczególnych użytkowników. Korzystając z tego typu reguł, należy skonfigurować reguły stosowania dodatkowych, takich jak wersji plików lub wartości klucza rejestru, aby pakiet Instalatora Windows, które mogą być poprawnie wykrywane niezależnie od tego, bazując na użytkownika lub systemu.
 
     -   **Zapisano regułę —** ta opcja pozwala znaleźć i używać reguł, które wcześniej skonfigurowane i zapisane.
 
-4.  Nadal można dodawać i konfigurować dodatkowe zasady zgodnie z potrzebami.
+4.  Kontynuuj dodać i skonfigurować dodatkowe zasady zgodnie z potrzebami.
 
-5.  Za pomocą przycisków operacji logicznej do zamówienia i grupowania różnych zasad, aby utworzyć bardziej złożoną Sprawdzanie wymagań wstępnych.
+5.  Użyj przycisków operacja logiczna kolejność i grupy różne reguły do utworzenia bardziej złożonych wymagań wstępnych.
 
-6.  Po zakończeniu zestaw reguł, kliknij przycisk **OK** go zapisać. Teraz zestaw reguł jest wyświetlana w **zapisanych reguł** listy.
+6.  Po zakończeniu zestawu reguł, kliknij przycisk **OK** go zapisać. Reguła teraz ustawić zostanie wyświetlona w **zapisanych reguł** listy.
 
-## <a name="edit-applicability-rule-sets"></a>Edytowanie zestawów reguł stosowania
-Aby edytować regułę stosowania w **roboczym reguły** Wybierz reguły są zapisywane w **zapisanych reguł** , a następnie wybierz **edytować** na Wstążce. Spowoduje to otwarcie **Edytuj regułę** kreatora.
+## <a name="edit-applicability-rule-sets"></a>Edytowanie zestawów reguł zastosowania
+Aby edytować regułę zastosowania w **obszaru roboczego zasady** Wybierz reguły jest zapisywany w **zapisanych reguł** listy, a następnie wybierz pozycję **Edytuj** na Wstążce. Spowoduje to otwarcie **edytowanie reguły** kreatora.
 
-**Edytuj regułę** Kreator wyświetla bieżące zasady zestawu reguł. Edytowanie reguł w taki sam sposób jak używasz **Utwórz regułę** kreatora, aby utworzyć nowe reguły. Ten kreator służy do zmiany nazwy zestawu reguł, usunąć zasady, zmienić kolejność reguł i relacje lub dodawanie nowych zasad.
+**Edytowanie reguły** Kreator wyświetla bieżące reguły dla zestawu reguł. Edytowanie reguł w taki sam sposób, jak używasz **Utwórz regułę** kreatora, aby utworzyć nowe reguły. Ten kreator służy do zmiany nazwy zestawu reguł, usunąć zasady, zmienić kolejność reguł i relacje lub Dodaj nowe reguły.
 
-Po wprowadzeniu zmian kliknij **OK** Aby zapisać zmiany i zamknąć kreatora.
+Po wprowadzeniu zmian, wybierz **OK** Aby zapisać zmiany i zamknąć kreatora.
 
-Więcej informacji o korzystaniu z kreatora reguły można znaleźć w temacie **krok 7**, strony stosowania z [Kreatora tworzenia aktualizacji](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard).
+Aby uzyskać więcej informacji o korzystaniu z kreatora reguły, zobacz **kroku 7**, strona zastosowania z [kreatora Utwórz aktualizacji](/sccm/sum/tools/create-updates-with-updates-publisher#the-create-update-wizard).
 
-## <a name="delete-applicability-rules"></a>Usuń zasady stosowania
-Aby usunąć regułę stosowania zapisane w **roboczym reguły** wybierz regułę lub zestaw reguł z **zapisanych reguł** , a następnie wybierz **usunąć** na Wstążce. Spowoduje to usunięcie zapisanych reguła lub zestaw reguł z Updates Publisher.
+## <a name="delete-applicability-rules"></a>Usuń zasady
+Aby usunąć regułę zastosowania zapisane w **obszaru roboczego zasady** wybierz zasady lub zestaw reguł z **zapisanych reguł** listy, a następnie wybierz pozycję **usunąć** na Wstążce. Spowoduje to usunięcie zapisanych zasady lub zestaw reguł z Updates Publisher.
 
-Aby usunąć reguły z określonej aktualizacji, należy najpierw [edytować aktualizację](/sccm/sum/tools/manage-updates-with-updates-publisher#edit-updates-and-bundles).
-
+Aby usunąć regułę z określoną aktualizację, należy najpierw [Edytuj aktualizacji](/sccm/sum/tools/manage-updates-with-updates-publisher#edit-updates-and-bundles).

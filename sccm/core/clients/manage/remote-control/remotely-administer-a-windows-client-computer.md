@@ -6,22 +6,20 @@ ms.date: 07/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3c9648c4-645e-4e47-ae10-2da817b8c83b
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: MT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: aecc4ccfec98932f3988f1ca1fcdc898cd417933
-ms.contentlocale: pl-pl
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="how-to-remotely-administer-a-windows-client-computer-by-using-system-center-configuration-manager"></a>Zdalne administrowanie komputerem klienckim z systemem Windows przy użyciu programu System Center Configuration Manager
 
@@ -97,4 +95,3 @@ Program CmRcViewer.exe obsługuje następujące opcje wiersza polecenia:
 - **/?** — Wyświetla opcje wiersza polecenia dla przeglądarki zdalnego sterowania.  
      
 **Example:CmRcViewer.exe** *< adres\>*   *< \\\Site nazwa serwera >*  
-

@@ -1,48 +1,45 @@
 ---
-title: Definiowanie granic | Dokumentacja firmy Microsoft
-description: "Zrozumienie, jak zdefiniować lokalizacje sieciowe w sieci intranet, który może zawierać urządzeń, którymi chcesz zarządzać."
+title: "Należy zdefiniować granice | Dokumentacja firmy Microsoft"
+description: "Zrozumienie, jak zdefiniować lokalizacje sieciowe w intranecie, która może zawierać urządzeń, którymi chcesz zarządzać."
 ms.custom: na
 ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 4a9dc4d9-e114-42ec-ae2b-73bee14ab04f
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: bed70809008fde5e2b0215f4dce049402edf83ba
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="define-network-locations-as-boundaries-for-system-center-configuration-manager"></a>Zdefiniuj lokalizacje sieciowe jako granic dla programu System Center Configuration Manager
+# <a name="define-network-locations-as-boundaries-for-system-center-configuration-manager"></a>Definiują lokalizacje sieciowe jako granic dla programu System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Granice programu Configuration Manager są lokalizacji w sieci, które zawierają urządzenia, które mają być zarządzane. Urządzenie znajduje się na granicy jest odpowiednikiem lokacji usługi Active Directory lub adres IP sieci, który jest identyfikowany przez klienta Configuratoin Manager, który jest zainstalowany na urządzeniu.
- - Pojedyncze granice można tworzyć ręcznie. Jednak program Configuration Manager nie obsługuje bezpośredniego wpisywania supersieci jako granicy. Zamiast tego można użyć typu granicy z zakresem adresów IP.
- - Można skonfigurować [odnajdywania lasu usługi Active Directory](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutForest) metodę, aby automatycznie wykrywać i tworzenia granic dla każdej podsieci IP i lokacji usługi Active Directory odnajduje. Gdy usługa wykrywania lasu Active Directory przypisane do lokacji usługi Active Directory, programu Configuration Manager skonwertuje supersieć na granicę zakres adresów IP.  
+Granice programu Configuration Manager są lokalizacje w sieci, które zawierają urządzeń, które mają być zarządzane. Granica, w której znajduje się na urządzeniu jest odpowiednikiem lokacji usługi Active Directory lub adres IP sieci, który jest identyfikowany przez klienta Configuratoin Manager, który jest zainstalowany na urządzeniu.
+ - Pojedyncze granice można tworzyć ręcznie. Jednak programu Configuration Manager nie obsługuje bezpośredniego wpisywania supersieci jako granicy. Zamiast tego można użyć typu granicy z zakresem adresów IP.
+ - Można skonfigurować [odnajdywania lasu usługi Active Directory](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutForest) metodę, aby automatycznie wykrywać i tworzenie granic dla każdej podsieci IP i lokacji usługi Active Directory umożliwia odnalezienie go. Gdy funkcja odnajdywania lasu usługi Active Directory rozpozna przypisany do lokacji usługi Active Directory, programu Configuration Manager skonwertuje supersieć na granicę zakres adresów IP.  
 
-Nie jest niczym niezwykłym dla urządzenia w celu użyj adresu IP administrator programu Configuration Manager nie są znane. Gdy lokalizację sieciową urządzenie jest w stanie wątpliwości, upewnij się, urządzenie raportuje jako lokalizacji, za pomocą **IPCONFIG** polecenia na urządzeniu.  
+Nie jest rzadko urządzenia do używania adresu IP, który nie został powiadomiony o administrator programu Configuration Manager. Podczas lokalizacji sieciowej, urządzenia jest wątpliwa, potwierdź urządzenie raportuje jako jego lokalizację, używając **IPCONFIG** polecenia na urządzeniu.  
 
 Tworzona granica automatycznie otrzymuje nazwę opartą na typie i zakresie granicy. Nie można modyfikować tej nazwy. Zamiast tego można określić opis, który pomoże zidentyfikować granicę w konsoli programu Configuration Manager.  
 
-Każda granica jest dostępne dla każdej lokacji w hierarchii. Po utworzeniu granicy można zmodyfikować jej właściwości, należy wykonać następujące czynności:  
+Każda granica jest dostępne dla każdej lokacji w hierarchii. Po utworzeniu granicy można zmodyfikować jej właściwości, wykonaj następujące czynności:  
 -   Dodanie granicy do jednej lub wielu grup granic.  
 -   Zmiana typu lub zakresu granicy.  
 -   Wyświetlenie karty **Systemy lokacji** dla granicy w celu sprawdzenia, które serwery systemu lokacji (punkty dystrybucji, punkty migracji stanu i punkty zarządzania) są skojarzone z granicą.  
 
 ## <a name="to-create-a-boundary"></a>Aby utworzyć granicę  
 
-1.  W konsoli programu Configuration Manager kliknij **Administracja** > **Konfiguracja hierarchii** > **granic**  
+1.  W konsoli programu Configuration Manager kliknij **administracji** > **Konfiguracja hierarchii** > **granic**  
 
 2.  Na karcie **Narzędzia główne** w grupie **Tworzenie** kliknij przycisk **Utwórz granicę.**  
 
@@ -67,7 +64,7 @@ Każda granica jest dostępne dla każdej lokacji w hierarchii. Po utworzeniu gr
 
 ## <a name="to-configure-a-boundary"></a>Aby skonfigurować granicę  
 
-1.  W konsoli programu Configuration Manager kliknij **Administracja** > **Konfiguracja hierarchii** > **granic**  
+1.  W konsoli programu Configuration Manager kliknij **administracji** > **Konfiguracja hierarchii** > **granic**  
 
 2.  Wybierz granicę, którą chcesz zmodyfikować.  
 
@@ -87,4 +84,3 @@ Każda granica jest dostępne dla każdej lokacji w hierarchii. Po utworzeniu gr
     -   Aby usunąć tę granicę z grupy granic, wybierz grupę granic i kliknij przycisk **Usuń**.  
 
 7.  Kliknij przycisk **OK** , aby zamknąć właściwości granicy i zapisać konfigurację.  
-

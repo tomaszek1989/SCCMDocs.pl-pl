@@ -6,24 +6,21 @@ ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7591e386-a9ab-4640-8643-332dce5aa006
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: MT
-ms.sourcegitcommit: 1035dbbf944a3a467d637a4a948a75b0946eb711
 ms.openlocfilehash: 4a3c69edc85a4ea7501510b6b3f12c72ad3a24ff
-ms.contentlocale: pl-pl
-ms.lasthandoff: 07/11/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# Tworzenie sekwencji zadań w celu uaktualnienia systemu operacyjnego w programie System Center Configuration Manager
-<a id="create-a-task-sequence-to-upgrade-an-operating-system-in-system-center-configuration-manager" class="xliff"></a>
+# <a name="create-a-task-sequence-to-upgrade-an-operating-system-in-system-center-configuration-manager"></a>Tworzenie sekwencji zadań w celu uaktualnienia systemu operacyjnego w programie System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
@@ -43,8 +40,7 @@ Użyj sekwencji zadań w programie System Center Configuration Manager automatyc
 
     -   [Aplikacje](../../apps/deploy-use/create-applications.md) muszą zostać dodane do konsoli programu Configuration Manager.  
 
-#### Aby utworzyć sekwencję zadań uaktualniającą system operacyjny
-<a id="to-create-a-task-sequence-that-upgrades-an-operating-system" class="xliff"></a>  
+#### <a name="to-create-a-task-sequence-that-upgrades-an-operating-system"></a>Aby utworzyć sekwencję zadań uaktualniającą system operacyjny  
 
 1.  W konsoli programu Configuration Manager kliknij przycisk **Biblioteka oprogramowania**.  
 
@@ -78,8 +74,7 @@ Użyj sekwencji zadań w programie System Center Configuration Manager automatyc
 
 
 
-## Konfigurowanie wstępne wypełnienie pamięci podręcznej
-<a id="configure-pre-cache-content" class="xliff"></a>
+## <a name="configure-pre-cache-content"></a>Konfigurowanie wstępne wypełnienie pamięci podręcznej
 Począwszy od wersji 1702, w przypadku wdrożeń dostępnych sekwencji zadań, można korzystać z funkcji wstępne pamięci podręcznej klienci Pobierz tylko odpowiedniej zawartości, zanim użytkownik instaluje zawartości.
 > [!TIP]  
 > Wstępne pamięci podręcznej wprowadzonym w wersji 1702, to funkcja wersji wstępnej. Aby ją włączyć, zobacz [korzystanie z funkcji wersji wstępnej aktualizacje](/sccm/core/servers/manage/pre-release-features).
@@ -88,8 +83,7 @@ Załóżmy na przykład, że chcesz wdrożyć sekwencję zadań uaktualnienia w 
 
 Wstępne wypełnienie pamięci podręcznej udostępnia opcję, aby umożliwić klientom pobieranie tylko zawartość dotyczy zaraz po otrzymaniu wdrożenia. W związku z tym, kiedy użytkownik kliknie **zainstalować** w programie Software Center zawartości są gotowe, a instalacja uruchamia się szybko, ponieważ zawartość znajduje się na lokalnym dysku twardym.
 
-### Aby skonfigurować funkcję wstępne pamięci podręcznej
-<a id="to-configure-the-pre-cache-feature" class="xliff"></a>
+### <a name="to-configure-the-pre-cache-feature"></a>Aby skonfigurować funkcję wstępne pamięci podręcznej
 
 1. Utwórz pakiety uaktualnień dla określonych architektur i języków systemu operacyjnego. Określ architekturę i język na **źródła danych** pakietu. Dla języka, użyj konwersji dziesiętne (na przykład 1033 jest dziesiętnego dla języka angielskiego i 0x0409 jest odpowiednikiem szesnastkowym). Aby uzyskać więcej informacji, zobacz [tworzenia sekwencji zadań w celu uaktualnienia systemu operacyjnego](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system).
 
@@ -107,16 +101,14 @@ Wstępne wypełnienie pamięci podręcznej udostępnia opcję, aby umożliwić k
     - Na **punktów dystrybucji** skonfiguruj **opcje wdrażania** ustawienia. Jeśli zawartość nie jest wstępnie buforowane na kliencie, zanim użytkownik uruchamia proces instalacji, te ustawienia są używane.
 
 
-### Środowisko użytkownika
-<a id="user-experience" class="xliff"></a>
+### <a name="user-experience"></a>Środowisko użytkownika
 - Gdy klient odbierze zasady wdrażania, zostanie ona rozpoczęta wstępnie buforowania zawartości. Zawiera wszystkie przywoływanej zawartości (wszystkie inne typy pakietów) oraz tylko pakiet uaktualnienia systemu operacyjnego zgodny klienta na podstawie wybranych warunków ustawienie w sekwencji zadań.
 - Gdy wdrożenie jest udostępniane użytkownikom (ustawienie **Planowanie** kartę wdrożenia), wyświetlane jest powiadomienie informować użytkowników o nowego wdrożenia i wdrożenie staje się widoczna w Centrum oprogramowania. Użytkownik może przejść do Centrum oprogramowania i kliknij przycisk **zainstalować** do rozpoczęcia instalacji.
 - Jeśli zawartość nie jest w pełni wstępnie pamięci podręcznej, a następnie będzie używać ustawień określonych w **opcji wdrażania** kartę wdrożenia. Zaleca się, czy jest wystarczająco dużo czasu między po utworzeniu wdrożenia i czasu, w którym wdrożenia staną się dostępne dla użytkowników, aby umożliwić klientom wystarczająco dużo czasu na wstępnie buforują zawartość.
 
 
 
-## Pobierz zawartość pakietu sekwencji zadań
-<a id="download-package-content-task-sequence-step" class="xliff"></a>  
+## <a name="download-package-content-task-sequence-step"></a>Pobierz zawartość pakietu sekwencji zadań  
  [Pobierz zawartość pakietu](../understand/task-sequence-steps.md#BKMK_DownloadPackageContent) krok może służyć przed **Uaktualnij System operacyjny** krok w następujących scenariuszach:  
 
 -   Należy użyć pojedynczej sekwencji zadań uaktualniania działającej na platformie zarówno x86 i x64 64. W tym celu dodaj dwa kroki zadania **Pobierz zawartość pakietu** w grupie **Przygotowanie do uaktualnienia** z warunkami wykrywania architektury klienta i pobrania tylko odpowiedniego pakietu uaktualnienia systemu operacyjnego. Skonfiguruj tę samą zmienną dla każdego kroku **Pobierz zawartość pakietu** i użyj zmiennej ścieżki nośnika w kroku **Uaktualnij system operacyjny**.  
@@ -126,18 +118,14 @@ Wstępne wypełnienie pamięci podręcznej udostępnia opcję, aby umożliwić k
    > [!NOTE]
    > W przypadku więcej niż jeden pakiet programu Configuration Manager dodaje sufiks numeryczny do nazwy zmiennej. Na przykład jeśli określisz zmienną % mojazawartosc % jako zmienną niestandardową, to główną przechowywania przywoływanej zawartości (która może być wiele pakietów). W przypadku odwoływania się do zmiennej w kroku podsekwencji, takim jak Uaktualnij system operacyjny, jest ona używana z sufiksem numerycznym. W tym przykładzie, mojazawartosc01% lub % mojazawartosc02%, gdzie numer odpowiada kolejności, w której pakiet zostanie wyświetlony w tym kroku.
 
-## Opcjonalne kroki przetwarzania końcowego sekwencji zadań
-<a id="optional-post-processing-task-sequence-steps" class="xliff"></a>  
+## <a name="optional-post-processing-task-sequence-steps"></a>Opcjonalne kroki przetwarzania końcowego sekwencji zadań  
  Po utworzeniu sekwencji zadań, możesz dodać dodatkowe kroki w celu odinstalowania aplikacji ze znanymi problemami dotyczącymi zgodności lub dodać akcje przetwarzania końcowego uruchamiane po ponownym uruchomieniu komputera i pomyślne uaktualnienie do systemu Windows 10. Dodaj te dodatkowe kroki w grupy przetwarzanie końcowe sekwencji zadań.  
 
 > [!NOTE]  
 >  Ponieważ ta sekwencja zadań nie jest liniowa, istnieją warunki dotyczące kroków, które mogą wpłynąć na wyniki sekwencji zadań, w zależności od tego, czy pomyślnie uaktualni ona komputer kliencki, czy też będzie konieczne przywrócenie komputera klienta do wersji systemu operacyjnego z.  
 
-## Kroki opcjonalne wycofywania sekwencji zadań
-<a id="optional-rollback-task-sequence-steps" class="xliff"></a>  
+## <a name="optional-rollback-task-sequence-steps"></a>Kroki opcjonalne wycofywania sekwencji zadań  
  W przypadku wystąpienia problemów z procesem uaktualnienia po ponownym uruchomieniu komputera, Instalator cofnie uaktualnienia do poprzedniego systemu operacyjnego, a sekwencja zadań będzie kontynuować wykonywanie kolejnych kroków w grupie wycofywanie. Po utworzeniu sekwencji zadań, można dodać opcjonalne kroki do grupy wycofywanie.  
 
-## Uruchom ponownie folder i pliki zostały usunięte po komputera
-<a id="folder-and-files-removed-after-computer-restart" class="xliff"></a>  
+## <a name="folder-and-files-removed-after-computer-restart"></a>Uruchom ponownie folder i pliki zostały usunięte po komputera  
  Po zakończeniu sekwencji zadań w celu uaktualnienia systemu operacyjnego do systemu Windows 10 i wszystkich kroków w sekwencji zadań przetwarzania końcowego i wycofywanie skryptów nie są usuwane ponownego uruchomienia komputera.  Te pliki skryptów nie zawierają informacji poufnych.  
-

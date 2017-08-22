@@ -1,32 +1,29 @@
 ---
 title: "Planowanie wdrożenia klienta na urządzeniach Windows Embedded | Dokumentacja firmy Microsoft"
-description: "Planowanie wdrożenia klienta na urządzeniach Windows Embedded w programie System Center Configuration Manager."
+description: "Planowanie wdrożenia klientów na urządzeniach Windows Embedded w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 038e61f9-f49d-41d1-9a9f-87bec9e00d5d
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
 ms.openlocfilehash: f7ef476a2ebcf0161ebb70d8a3d95f77806aa05e
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="planning-for-client-deployment-to-windows-embedded-devices-in-system-center-configuration-manager"></a>Planowanie wdrożenia klientów na urządzeniach Windows Embedded w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 <a name="BKMK_DeployClientEmbedded"></a>Jeśli urządzenie Windows Embedded nie zawiera klienta programu System Center Configuration Manager, można użyć dowolnej metody instalacji klienta, jeśli urządzenie spełnia wymagane zależności. Jeśli urządzenie osadzone obsługuje filtry zapisu, przed zainstalowaniem klienta konieczne jest ich wyłączenie, a następnie ponowne ich włączenie po zainstalowaniu klienta i przypisaniu go do lokacji.  
 
@@ -42,29 +39,29 @@ ms.lasthandoff: 05/17/2017
 
  Filtry zapisu decydują o sposobie aktualizowania systemu operacyjnego na urządzeniu osadzonym przy wprowadzaniu zmian, jak instalowanie oprogramowania. Gdy filtry zapisu są włączone, zmiany nie są dokonywane bezpośrednio w systemie operacyjnym, lecz zostają przekierowane do tymczasowej nakładki. Jeśli zmiany zostaną zapisane wyłącznie w nakładce, zostaną utracone po wyłączeniu urządzenia osadzonego. Jeśli filtry zapisu zostaną jednak tymczasowo wyłączone, zmiany mogą być trwałe, aby nie trzeba było ich dokonywać ponownie (lub ponownie instalować oprogramowania) przy każdym uruchamianiu urządzenia osadzonego. Tymczasowe wyłączenie i ponowne włączenie filtrów zapisu wymaga jednak co najmniej jednego ponownego uruchomienia, użytkownik będzie więc zazwyczaj chciał określić jego czas przez skonfigurowanie okien obsługi, aby ponowne uruchomienia następowały poza godzinami pracy.  
 
- Można skonfigurować opcje umożliwiające automatyczne wyłączenie i ponowne włączenie filtrów zapisu w trakcie wdrażania oprogramowania, takiego jak aplikacje, sekwencje zadań, aktualizacje oprogramowania i klient programu Endpoint Protection. Wyjątkiem są linie bazowe konfiguracji zawierające elementy konfiguracji, które korzystają z automatycznego korygowania. Przy takim scenariuszu korygowanie zawsze następuje w nakładce, jest więc dostępne tylko do momentu ponownego uruchomienia urządzenia. Korygowanie zostanie zastosowane ponownie w następnym cyklu szacowania, ale tylko w nakładce, która zostanie wyczyszczona po ponownym uruchomieniu. Aby wymusić zatwierdzenie zmian korygowania Configuration Manager, można wdrożyć podstawę konfiguracji, a następnie inne wdrożenie oprogramowania obsługujące zatwierdzenie zmiany najszybciej, jak to możliwe.  
+ Można skonfigurować opcje umożliwiające automatyczne wyłączenie i ponowne włączenie filtrów zapisu w trakcie wdrażania oprogramowania, takiego jak aplikacje, sekwencje zadań, aktualizacje oprogramowania i klient programu Endpoint Protection. Wyjątkiem są linie bazowe konfiguracji zawierające elementy konfiguracji, które korzystają z automatycznego korygowania. Przy takim scenariuszu korygowanie zawsze następuje w nakładce, jest więc dostępne tylko do momentu ponownego uruchomienia urządzenia. Korygowanie zostanie zastosowane ponownie w następnym cyklu szacowania, ale tylko w nakładce, która zostanie wyczyszczona po ponownym uruchomieniu. Aby wymusić zatwierdzenie zmian korygowania przez program Configuration Manager, można wdrożyć podstawę konfiguracji, a następnie inne wdrożenie oprogramowania obsługujące zatwierdzenie zmiany najszybciej, jak to możliwe.  
 
- Jeśli filtry zapisu są wyłączone, można zainstalować oprogramowanie na urządzeniach Windows Embedded za pomocą Centrum oprogramowania. Jednak jeśli filtry zapisu są włączone, instalacja nie powiedzie się i programu Configuration Manager wyświetli komunikat o błędzie, że masz niewystarczające uprawnienia do instalowania aplikacji.  
+ Jeśli filtry zapisu są wyłączone, można zainstalować oprogramowanie na urządzeniach Windows Embedded za pomocą Centrum oprogramowania. Jednak jeśli filtry zapisu są włączone, instalacja nie powiedzie się i programu Configuration Manager wyświetla komunikat o błędzie, że użytkownik ma niewystarczające uprawnienia do instalowania aplikacji.  
 
 > [!WARNING]  
->  Nawet jeśli nie wybrano opcji programu Configuration Manager, aby potwierdzić zmiany, zmiany mogą zostać zatwierdzone, jeśli inna instalacja oprogramowania lub zmiana zatwierdzi zmiany. Przy takim scenariuszu oprócz nowych zmian zostaną również zatwierdzone pierwotne zmiany.  
+>  Nawet jeśli nie wybierzesz opcji programu Configuration Manager, aby zatwierdzić zmiany, zmiany mogą zostać zatwierdzone, jeśli inna instalacja oprogramowania lub zmiana zatwierdzi zmiany. Przy takim scenariuszu oprócz nowych zmian zostaną również zatwierdzone pierwotne zmiany.  
 
- Gdy Configuration Manager wyłączy filtry zapisu, aby zmiany były trwałe, tylko użytkownicy z lokalnymi uprawnieniami administracyjnymi może zalogować się i korzystać z urządzenia osadzonego. W tym okresie użytkownicy z niskimi uprawnieniami będą zablokowani i zobaczą komunikat, że komputer jest niedostępny z powodu trwającego serwisowania, co pomaga chronić urządzenie w stanie, w którym zmiany mogą być trwale zastosowane. Ta blokada w trybie obsługi jest kolejnym powodem, dla którego należy skonfigurować okno obsługi w okresie, w którym użytkownicy nie będą logować się na tych urządzeniach.  
+ Gdy program Configuration Manager wyłączy filtry zapisu, aby zmiany były trwałe, tylko użytkownicy z lokalnymi uprawnieniami administracyjnymi może zalogować się i korzystać z urządzenia osadzonego. W tym okresie użytkownicy z niskimi uprawnieniami będą zablokowani i zobaczą komunikat, że komputer jest niedostępny z powodu trwającego serwisowania, co pomaga chronić urządzenie w stanie, w którym zmiany mogą być trwale zastosowane. Ta blokada w trybie obsługi jest kolejnym powodem, dla którego należy skonfigurować okno obsługi w okresie, w którym użytkownicy nie będą logować się na tych urządzeniach.  
 
  Program Configuration Manager obsługuje zarządzanie następującymi typami filtrów zapisu:  
 
--   Oparte na plikach filtr zapisu (tylko programy) - Aby uzyskać więcej informacji, zobacz [filtr zapisu oparte na plikach](http://go.microsoft.com/fwlink/?LinkID=204717).  
+-   Na podstawie pliku filtru zapisu (FBWF) — Aby uzyskać więcej informacji, zobacz [filtrów zapisu opartych na plikach](http://go.microsoft.com/fwlink/?LinkID=204717).  
 
--   Ulepszone zapisu filtru (EWF) pamięci RAM — Aby uzyskać więcej informacji, zobacz [rozszerzony filtr zapisu](http://go.microsoft.com/fwlink/?LinkId=204718).  
+-   Rozszerzony zapisu filtru (EWF) pamięci RAM — Aby uzyskać więcej informacji, zobacz [Enhanced Write Filter](http://go.microsoft.com/fwlink/?LinkId=204718).  
 
--   Ujednolicona zapisu filtr — Aby uzyskać więcej informacji, zobacz [ujednolicony filtr zapisu](http://go.microsoft.com/fwlink/?LinkId=309236).  
+-   Ujednolicony filtr zapisu (UWF) — Aby uzyskać więcej informacji, zobacz [ujednolicony filtr zapisu](http://go.microsoft.com/fwlink/?LinkId=309236).  
 
  Gdy urządzenie Windows Embedded jest w trybie EWF RAM reg. programu Configuration Manager nie obsługuje operacji filtrów zapisu.  
 
 > [!IMPORTANT]  
->  Jeśli jest to możliwe, użyj filtry zapisu oparte na plikach (FBWF) z programu Configuration Manager w celu zwiększenia wydajności i skalowalności.
+>  Jeśli jest to możliwe, Użyj filtrów zapisu opartych na plikach (FBWF) z programu Configuration Manager w celu zwiększenia wydajności i skalowalności.
 >
-> **Dla urządzeń używających tylko tylko programy:** Skonfiguruj następujące wyjątki, aby zachować stan klienta i dane zapasów między ponownymi uruchomieniami urządzeń:  
+> **Urządzenia używające tylko plikach:** Skonfiguruj następujące wyjątki, aby zachować stan klienta i dane spisu między ponownymi uruchomieniami urządzeń:  
 >   
 >  -   CCMINSTALLDIR\\*.sdf  
 > -   CCMINSTALLDIR\ServiceData  
@@ -82,13 +79,13 @@ ms.lasthandoff: 05/17/2017
 > -   CCMINSTALLDIR\ServiceData  
 > -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\CCM\StateSystem  
 >   
-> **Urządzenia korzystające z FBWF i UWF tylko:** Gdy klienci w grupie roboczej korzystają z certyfikatów do uwierzytelniania punktów zarządzania, należy również wykluczyć klucza prywatnego, upewnij się, że klient w dalszym ciągu do komunikowania się z punktem zarządzania. Na tych urządzeniach skonfiguruj następujące wyjątki:  
+> **Urządzenia używające plikach i UWF tylko:** Gdy klienci w grupie roboczej korzystają z certyfikatów do uwierzytelniania punktów zarządzania, musisz również wykluczyć klucz prywatny, aby upewnić się, że klient w dalszym ciągu do komunikowania się z punktem zarządzania. Na tych urządzeniach skonfiguruj następujące wyjątki:  
 >   
 >  -   c:\Windows\System32\Microsoft\Protect  
 > -   c:\ProgramData\Microsoft\Crypto  
 > -   HKEY_LOCAL_MACHINE\Software\Microsoft\SystemCertificates\SMS\Certificates  
 
- Przykładowy scenariusz wdrażania i zarządzania nimi obsługą filtru zapisu Windows Embedded urządzeń w programie Configuration Manager można znaleźć w temacie [przykładowy scenariusz wdrażania i zarządzanie klientami programu System Center Configuration Manager na urządzeniach Windows Embedded](../../../../core/clients/deploy/example-scenario-for-deploying-and-managing-clients-on-windows-embedded-devices.md).  
+ Przykładowy scenariusz wdrażania i zarządzania nimi włączonymi filtrami zapisu Windows Embedded, zobacz urządzeń w programie Configuration Manager [przykładowy scenariusz wdrażania i zarządzania klientami programu System Center Configuration Manager na urządzeniach Windows Embedded](../../../../core/clients/deploy/example-scenario-for-deploying-and-managing-clients-on-windows-embedded-devices.md).  
 
  Więcej informacji o sposobie tworzenia obrazów dla urządzeń Windows Embedded i konfigurowania filtrów zapisu znajduje się w dokumentacji platformy Windows Embedded. Odpowiednie informacje można także uzyskać od producenta OEM.  
 
@@ -110,4 +107,3 @@ ms.lasthandoff: 05/17/2017
 >   
 >      -   Windows Embedded Standard 7 (64-bitowy)  
 >     -   Windows Embedded POSReady 7 (64-bitowy)
-

@@ -6,22 +6,19 @@ ms.date: 05/02/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a3be4f8f-3d44-4e3c-9fa1-e85f30a36e72
-caps.latest.revision: 0
+caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 662901e850566756759fcfc61c58f3c0e56bc5aa
 ms.openlocfilehash: 26356a80bd8c78d4517253bae73e53d8d8f3a73a
-ms.contentlocale: pl-pl
-ms.lasthandoff: 06/03/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="which-branch-of-configuration-manager-should-i-use"></a>Które gałęzi programu Configuration Manager należy użyć?
 
@@ -86,7 +83,7 @@ Aby zainstalować LTSB jako nową lokację lub uaktualnienie z obsługiwanej lok
 > Można również uzyskać wersję ewaluacyjną programu System Center 2016 z [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-system-center-technical-preview).
 
 **Funkcje LTSB**
--    Odbiera aktualizacje w konsoli, dostarczających krytycznych poprawek
+-   Odbiera aktualizacje w konsoli, dostarczających krytycznych poprawek
 - Udostępnia opcję instalacji po wygasły Twoje umowy lub równoważne uprawnienia SA do programu Configuration Manager
 - Program obsługuje uaktualnienie (konwersji) bieżącej gałęzi, jeśli masz bieżącej umowy SA lub odpowiednie prawa dostępu do programu Configuration Manager
 
@@ -96,14 +93,14 @@ LTSB jest oparty na wersji Current Branch 1606 i ma następujące ograniczenia:
 - Obsługuje ograniczony zestaw listę systemów operacyjnych serwera i klienta i powiązanych technologii, takich jak wersji programu SQL Server. Aby uzyskać więcej informacji o to, co jest obsługiwane w tej gałęzi, zobacz [obsługiwane konfiguracje dla gałęzi obsługi długoterminowe](supported-configurations-for-ltsb.md).
 - Nie otrzymywać aktualizacje dla nowych funkcji.
 - Nie obsługuje dodawania subskrypcji usługi Microsoft Intune, co uniemożliwia używanie:
-  -    Usługa Intune w konfiguracji hybrydowego zarządzania urządzeniami Przenośnymi
+  - Usługa Intune w konfiguracji hybrydowego zarządzania urządzeniami Przenośnymi
  - Lokalne zarządzanie urządzeniami Przenośnymi
--    Nie obsługuje użycia nawigacyjnym obsługi systemu Windows 10, obsługi planów, Windows 10 Current Branch (CB) lub Current Branch for Business (CBB).
+-   Nie obsługuje użycia nawigacyjnym obsługi systemu Windows 10, obsługi planów, Windows 10 Current Branch (CB) lub Current Branch for Business (CBB).
 - Nieobsługiwana w przyszłych wydaniach systemu Windows 10 LTSB i Windows Server.
--    Brak obsługi analizy zasobów.
--    Brak obsługi dla punktów dystrybucji w chmurze.
--    Brak obsługi pomocy technicznej dla usługi Exchange Online jako łącznik programu Exchange.
--    Nie obsługuje żadnych funkcji wersji wstępnej.
+-   Brak obsługi analizy zasobów.
+-   Brak obsługi dla punktów dystrybucji w chmurze.
+-   Brak obsługi pomocy technicznej dla usługi Exchange Online jako łącznik programu Exchange.
+-   Nie obsługuje żadnych funkcji wersji wstępnej.
 
 
 
@@ -115,7 +112,7 @@ LTSB jest oparty na wersji Current Branch 1606 i ma następujące ograniczenia:
   - [Licencjonowanie i gałęzi programu System Center Configuration Manager](learn-more-editions.md)
   - [Wersje linii bazowej i aktualizacji](/sccm/core/servers/manage/updates#baseline-and-update-versions) w [aktualizacji programu Configuration Manager](/sccm/core/servers/manage/updates)
 - Nie jest dostępna opcja Aby przekonwertować LTSB Technical Preview. Wersji zapoznawczych Technical Preview są oddzielnych instalacji, które nie wymagają licencji.
--    Nie można uaktualnić wersję ewaluacyjną bieżącej gałęzi do instalacji LTSB.
+-   Nie można uaktualnić wersję ewaluacyjną bieżącej gałęzi do instalacji LTSB.
 
 
 ## <a name="technical-preview-for-system-center-configuration-manager"></a>Wersja zapoznawcza Technical Preview programu System Center Configuration Manager
@@ -141,8 +138,8 @@ Funkcje, które zostały po raz pierwszy wprowadzone w wersji Technical Preview 
 Aby uzyskać więcej informacji, zobacz [Technical Preview programu System Center Configuration Manager](/sccm/core/get-started/technical-preview).
 
 **Opcje aktualizacji**
--    Można zainstalować aktualizację w konsoli dla nowej wersji Technical Preview.
--    Nie jest dostępna opcja konwersji wersji Technical Preview na bieżącej gałęzi lub LTSB.
+-   Można zainstalować aktualizację w konsoli dla nowej wersji Technical Preview.
+-   Nie jest dostępna opcja konwersji wersji Technical Preview na bieżącej gałęzi lub LTSB.
 
 
 ## <a name="identify-your-branch-and-version"></a>Identyfikowanie gałęzi i wersji programu
@@ -154,4 +151,3 @@ Aby sprawdzić wersję lokacji, w konsoli przejdź do **System Center Configurat
 **Gałęzi**  
 Aby potwierdzić gałąź witryny (jako LTSB lub Current Branch), w konsoli przejdź do **administracji** > **konfiguracja lokacji** > **witryny**i Otwórz **ustawienia hierarchii**. Jeśli ma tej opcji można przekonwertować na bieżącej gałęzi i jest aktywna, w lokacji działa wersja LTSB. Gdy w lokacji działa bieżącej gałęzi, ta opcja jest wyszarzony.
 Aby uzyskać informacje o różnych wersji programu Configuration Manager, zobacz "wersje linii bazowej i aktualizacji" w [aktualizacji programu Configuration Manager](/sccm/core/servers/manage/updates).
-

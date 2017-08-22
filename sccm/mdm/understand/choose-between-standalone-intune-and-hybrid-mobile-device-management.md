@@ -6,21 +6,19 @@ ms.date: 07/18/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 73ff9bb9-e605-4b68-92a1-487684fed42d
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: dougeby
 ms.author: dougeby
 manager: angrobe
+ms.openlocfilehash: 26c36df77c21254c7ad2b8a45906bd3706f9ec65
+ms.sourcegitcommit: 06aef618f72c700f8a716a43fb8eedf97c62a72b
 ms.translationtype: MT
-ms.sourcegitcommit: 648bc6b96aa5ccc834442a962e6d5b5125f88bb5
-ms.openlocfilehash: ddb6d47e5dba4fddd6fa811d83b1bf0c91ad26f9
-ms.contentlocale: pl-pl
-ms.lasthandoff: 07/19/2017
-
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/21/2017
 ---
 # <a name="choose-between-microsoft-intune-standalone-and-hybrid-mobile-device-management-with-system-center-configuration-manager"></a>Wybór między Microsoft Intune autonomiczne, jak i hybrydowe zarządzanie urządzeniami przenośnymi z System Center Configuration Manager
 
@@ -51,8 +49,7 @@ Hybrydowego zarządzania urządzeniami Przenośnymi to rozwiązanie, która inte
 
 
 ## <a name="changing-the-mdm-authority-setting"></a>Zmiana ustawienia urzędu zarządzania urządzeniami Przenośnymi
-Jeśli musisz zmienić ustawienie urzędu zarządzania urządzeniami Przenośnymi, można zmienić go samodzielnie bez konieczności kontaktowania się Microsoft Support i bez konieczności wyrejestrowywania i Zarejestruj ponownie istniejących zarządzanych urządzeń. Aby uzyskać więcej informacji, zobacz [zmienić urzędu zarządzania urządzeniami Przenośnymi](/sccm/mdm/deploy-use/change-mdm-authority.md).
+Jeśli musisz zmienić ustawienie urzędu zarządzania urządzeniami Przenośnymi, można zmienić go samodzielnie bez konieczności kontaktowania się Microsoft Support i bez konieczności wyrejestrowywania i Zarejestruj ponownie istniejących zarządzanych urządzeń. Aby uzyskać więcej informacji, zobacz [zmienić urzędu zarządzania urządzeniami Przenośnymi](../deploy-use/change-mdm-authority.md).
 
 > [!NOTE]    
 > Musi mieć programu Configuration Manager w wersji 1610 lub nowszej można zmienić urzędu zarządzania urządzeniami Przenośnymi na autonomicznej usługi Intune. Jeśli istnieje wcześniejszej wersji programu Configuration Manager można zmienić urząd zarządzania urządzeniami Przenośnymi, ale wymaga pomoc od operacji i pomocy technicznej firmy Microsoft. On również wymaga wyrejestrować i Zarejestruj ponownie wszystkie urządzenia, po zmianie urząd zarządzania urządzeniami Przenośnymi.  
-

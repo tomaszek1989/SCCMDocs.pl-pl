@@ -6,8 +6,7 @@ ms.date: 6/5/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 19539f4d-1667-4b4c-99a1-9995f12cf5f7
@@ -15,14 +14,12 @@ caps.latest.revision:
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: f7cd9c71287d62c9f5d36e2f032bc2a6065572ae
 ms.openlocfilehash: 49eea15ea2888f8f93c33eb771c09147ba21529e
-ms.contentlocale: pl-pl
-ms.lasthandoff: 06/06/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-
 #  <a name="recover-a-configuration-manager-site"></a>Odzyskiwanie lokacji programu Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
@@ -244,4 +241,3 @@ Podczas procesu odzyskiwania programu Configuration Manager sprawdza, czy na kom
 Punkt dystrybucji poza lokacją dodatkową nie musi być instalowany ponownie podczas odzyskiwania tej lokacji. Odzyskana lokacja dodatkowa zostanie automatycznie zsynchronizowana ponownie z punktem dystrybucji.
 
 Status odzyskiwania lokacji dodatkowej można sprawdzić za pomocą **Pokaż stan instalacji** akcji z **witryny** węzeł w konsoli programu Configuration Manager.
-

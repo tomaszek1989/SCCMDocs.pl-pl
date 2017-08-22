@@ -1,57 +1,53 @@
 ---
 title: Tworzenie aplikacji systemu iOS | Dokumentacja firmy Microsoft
-description: "Zobacz uwagi, które należy wziąć pod uwagę podczas tworzenia i wdrażania aplikacji na urządzeniach z systemem iOS."
+description: "Zobacz uwagi, które należy wziąć pod uwagę podczas tworzenia i wdrażania aplikacji dla urządzeń z systemem iOS."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ff633013-5313-4cd3-949c-56d45e777280
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 6424fb07802b62820b4dc78a58ab30d3b956abef
 ms.openlocfilehash: 349fcf335e7faddbcbd2ffe0ece7e711465f28df
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="create-ios-applications-with-system-center-configuration-manager"></a>Tworzenie aplikacji systemu iOS z System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Aplikacji programu System Center Configuration Manager ma co najmniej jeden typ wdrożenia obejmujący pliki instalacyjne oraz informacje wymagane do wdrożenia oprogramowania na urządzeniu. Typu wdrożenia zawiera również zasady określające czas i sposób wdrożenia oprogramowania.  
+Aplikacji programu System Center Configuration Manager ma co najmniej jeden typ wdrożenia obejmujący pliki instalacyjne oraz informacje wymagane do wdrożenia oprogramowania na urządzeniu. Typ wdrożenia ma również zasady określające, kiedy i jak oprogramowanie zostanie wdrożone.  
 
- Możesz tworzyć aplikacje przy użyciu następujących metod:  
+ Aplikacje można utworzyć przy użyciu następujących metod:  
 
--   Automatyczne utworzenie aplikacji i typów wdrożenia przez odczytanie plików instalacyjnych aplikacji.  
+-   Automatyczne tworzenie aplikacji i typów wdrożenia przez odczytanie plików instalacyjnych aplikacji.  
 
 -   ręczne utworzenie aplikacji, a następnie dodanie typów wdrożenia.  
 
--   Importowanie aplikacji z pliku.  
+-   Zaimportowanie aplikacji z pliku.  
 
-Zobacz [Uruchom Kreatora tworzenia aplikacji](../../apps/deploy-use/create-applications.md#start-the-create-application-wizard) kroki wymagane do tworzenia aplikacji programu Configuration Manager i typów wdrożeń. Ponadto należy uwzględnić następujące kwestie, podczas tworzenia i wdrażania aplikacji na urządzeniach z systemem iOS.  
+Zobacz [uruchomić Kreatora tworzenia aplikacji](../../apps/deploy-use/create-applications.md#start-the-create-application-wizard) dla czynności wymagane do tworzenia aplikacji programu Configuration Manager i typów wdrożeń. Ponadto należy pamiętać przedstawione poniżej zagadnienia, podczas tworzenia i wdrażania aplikacji dla urządzeń z systemem iOS.  
 
 ## <a name="general-considerations"></a>Zagadnienia ogólne  
  Program Configuration Manager obsługuje wdrażanie następujących typów aplikacji:  
 
 |Typ urządzenia|Obsługiwane pliki|  
 |-----------------|---------------------|  
-|iOS|*.ipa<br /><br /> W System Center Configuration Manager nie trzeba określić plik listy właściwości (.plist), podczas importowania aplikacji dla systemu iOS.|  
+|iOS|*.ipa<br /><br /> W programie System Center Configuration Manager, nie trzeba określać pliku listy (.plist) właściwości podczas importowania aplikacji dla systemu iOS.|  
 
  Obsługiwane są następujące akcje wdrażania:  
 
 |Typ urządzenia|Obsługiwane akcje|  
 |-----------------|-----------------------|  
-|iOS|**Dostępne**, **wymagane**. Użytkownik musi wyrazić zgodę na instalacji i dezinstalacji.
+|iOS|**Dostępne**, **wymagane**. Użytkownik musi wyrazić zgodę do instalacji i dezinstalacji.
 
 > [!IMPORTANT]  
->  Obecnie użytkownicy końcowi nie mogą instalować aplikacji firmowych za pomocą aplikacji Portal firmy usługi Microsoft Intune dla systemu iOS. Jest to spowodowane istnieją ograniczenia, które znajdują się w aplikacji opublikowanych w sklepie iOS App Store (patrz wytyczne przeglądu sklepu aplikacji, sekcja 2). Użytkownicy mogą instalować aplikacje firmowe (w tym aplikacje zarządzane i pakiety aplikacji biznesowych ze sklepu App Store) przez przejście na urządzeniu do portalu usługi Intune w sieci Web (portal.manage.microsoft.com). Aby uzyskać więcej informacji na temat możliwości zarządzania mobilnego, które są włączone za pomocą aplikacji Portal firmy usługi Intune, zobacz [zarejestrowane możliwości zarządzania urządzeniami w programie Microsoft Intune](https://technet.microsoft.com/library/dn600287.aspx).  
-
+>  Obecnie użytkownicy końcowi nie mogą instalować aplikacji firmowych za pomocą aplikacji Portal firmy usługi Microsoft Intune dla systemu iOS. Jest to, ponieważ istnieją ograniczenia, które są dotyczącymi aplikacji opublikowanych w sklepie iOS App Store (zobacz wytyczne przeglądu sklepu aplikacji, sekcja 2). Użytkownicy mogą instalować aplikacje firmowe (w tym aplikacje zarządzane i pakiety aplikacji biznesowych ze sklepu App Store) przez przejście na urządzeniu do portalu usługi Intune w sieci Web (portal.manage.microsoft.com). Aby uzyskać więcej informacji na temat możliwości zarządzania mobilnej, które są włączone przez aplikacji Portal firmy usługi Intune, zobacz [zarejestrowane możliwości zarządzania urządzeniami w programie Microsoft Intune](https://technet.microsoft.com/library/dn600287.aspx).  

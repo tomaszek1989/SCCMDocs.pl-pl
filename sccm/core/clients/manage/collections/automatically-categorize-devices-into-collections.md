@@ -1,60 +1,57 @@
 ---
-title: "Automatycznie kategoryzowanie urządzenia do kolekcji | Dokumentacja firmy Microsoft"
-description: "Klasyfikowanie urządzenia do kolekcji automatycznie z System Center Configuration Manager."
+title: "Automatycznie kategoryzowanie urządzeń do kolekcji | Dokumentacja firmy Microsoft"
+description: "Kategoryzowanie urządzeń w kolekcji automatycznie z System Center Configuration Manager."
 ms.custom: na
 ms.date: 04/23/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 98b038b4-1a13-4228-bdb8-a12194e32b0e
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
 ms.openlocfilehash: d1b79fb091a6ae4b967d63843ae7b45a0cbeb555
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="automatically-categorize-devices-into-collections-with-system-center-configuration-manager"></a>Automatycznie kategoryzowanie urządzenia do kolekcji z programem System Center Configuration Manager
+# <a name="automatically-categorize-devices-into-collections-with-system-center-configuration-manager"></a>Automatycznie kategoryzowanie urządzeń do kolekcji w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Możesz utworzyć kategorie urządzeń, które mogą być używane do automatycznego umieszczania urządzeń w kolekcji urządzeń, podczas korzystania z programu Configuration Manager z Microsoft Intune. Następnie konieczność do wybierz kategorię urządzenia, gdy ich zarejestrować urządzenia w usłudze Intune. Z konsoli programu Configuration Manager można zmienić kategorię urządzenia.
+Możesz utworzyć kategorie urządzeń, które mogą być używane do automatycznego umieszczania urządzeń w kolekcji urządzeń, gdy używasz programu Configuration Manager w usłudze Microsoft Intune. Następnie konieczność do wybierz kategorię urządzeń, gdy rejestrują urządzenia w usłudze Intune. Możesz zmienić kategorii urządzeń w konsoli programu Configuration Manager.
 
 > [!IMPORTANT]  
-    >  Ta funkcja działa z **czerwca 2016** wersji programu Microsoft Intune i nowszych. Upewnij się, że masz zostały zaktualizowane do tej wersji przed podjęciem próby wykonania tych procedur.
+    >  Ta funkcja działa z **czerwca 2016** wersji programu Microsoft Intune lub nowszego. Upewnij się, że możesz zostały zaktualizowane do tej wersji przed wypróbowanie tych procedur.
 
-## <a name="create-device-categories"></a>Tworzenie kategorii urządzenia
+## <a name="create-device-categories"></a>Tworzenie kategorii urządzeń
 
-1.  Przejdź do **zasoby i zgodność** > **Przegląd** > **kolekcji urządzeń**.
-2.  Na **Home** w karcie **kolekcji urządzeń** grupy, wybierz **Zarządzanie kategorie urządzeń**.
+1.  Przejdź do **zasoby i zgodność** > **omówienie** > **kolekcje urządzeń**.
+2.  Na **Home** karcie **kolekcje urządzeń** grupy, wybierz **Zarządzanie kategorie urządzeń**.
 3.  Tworzenie, edytowanie lub usuwanie kategorii.
 
-## <a name="associate-a-collection-with-a-device-category"></a>Skojarzenia kolekcji z kategorii urządzenia
+## <a name="associate-a-collection-with-a-device-category"></a>Skojarzenia kolekcji z kategorii urządzeń
 
-Po skojarzeniu kolekcji z kategorii urządzenia, wszystkie urządzenia w tej kategorii zostanie dodany do kolekcji. Nie można dodać reguły kategorii urządzenia do kolekcji wbudowanych, takich jak **wszystkie systemy**.
+Gdy kolekcja jest skojarzona z kategorii urządzeń, wszystkie urządzenia w tej kategorii zostanie dodany do kolekcji. Nie można dodać regułę kategorii urządzenia do wbudowanej kolekcji, takie jak **wszystkie systemy**.
 
-1.  Na **reguł członkostwa** na karcie **właściwości** okno dialogowe dla kolekcji urządzeń wybierz **Dodaj regułę** > **regułę kategorii urządzenia**.
+1.  Na **reguł członkostwa** karcie **właściwości** okno dialogowe w kolekcji urządzeń, wybierz opcję **Dodaj regułę** > **regułę kategorii urządzenia**.
 2.  W **wybierz kategorie urządzeń** okno dialogowe, wybierz co najmniej jednej kategorii urządzenia, które będą stosowane do wszystkich urządzeń w kolekcji.
 
 ## <a name="change-the-category-of-a-device"></a>Zmień kategorię urządzenia
 
-1.  W **zasoby i zgodność** > **Przegląd** > **urządzeń**, wybierz urządzenie z **urządzeń** listy.
-2.  Na **Home** w karcie **urządzenia** grupy, wybierz **Zmień kategorię**.
-3.  Wybierz kategorię, a następnie wybierz **OK**.
+1.  W **zasoby i zgodność** > **omówienie** > **urządzeń**, wybierz urządzenie z **urządzeń** listy.
+2.  Na **Home** karcie **urządzenia** grupy, wybierz **Zmień kategorię**.
+3.  Wybierz kategorię, a następnie wybierz pozycję **OK**.
 
-## <a name="view-which-category-a-device-belongs-to"></a>Wyświetlanie urządzenie należy do kategorii
+## <a name="view-which-category-a-device-belongs-to"></a>Wyświetl urządzenie należy do kategorii
 
-W **zasoby i zgodność** > **Przegląd** > **urządzeń**w **urządzeń** listy kategorii jest wyświetlany w **kategorię urządzenia** kolumny.
+W **zasoby i zgodność** > **omówienie** > **urządzeń**w **urządzeń** listy kategorii jest wyświetlany w **kategorii urządzeń** kolumny.
 
-Jeśli **kategorię urządzenia** kolumny nie jest wyświetlany, kliknij prawym przyciskiem myszy nagłówek kolumny w **urządzeń** listy (takich jak **nazwa**), a następnie zaznacz pozycję **kategorię urządzenia**.
+Jeśli **kategorii urządzeń** kolumna nie jest wyświetlana, kliknij prawym przyciskiem myszy nagłówek kolumny w **urządzeń** listy (takich jak **nazwa**), a następnie wybierz pozycję **kategorii urządzeń**.
 
-Jeśli przypisać urządzenia do kategorii, a następnie Usuń kategorię raportu **listy urządzeń zarejestrowanych przez użytkownika w programie Microsoft Intune** spowoduje wyświetlenie identyfikatora GUID w **kategorię urządzenia** kolumny, a nie nazwę kategorii.
-
+Jeśli przypisywanie urządzeń do kategorii, a następnie usunąć kategorię raportu **listy urządzeń zarejestrowanych przez użytkownika w programie Microsoft Intune** wyświetli identyfikator GUID w **kategorii urządzeń** kolumny, a nie nazwy kategorii.

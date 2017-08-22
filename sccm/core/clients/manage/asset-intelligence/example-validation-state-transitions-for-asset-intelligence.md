@@ -1,34 +1,31 @@
 ---
-title: "Przykład zmian stanu sprawdzania poprawności analizy zasobów | Dokumentacja firmy Microsoft"
-description: "Zobacz przykłady zmian stanu sprawdzania poprawności analizy zasobów w programie System Center Configuration Manager."
+title: "Przykład przejść stanu weryfikacji dla analizy zasobów | Dokumentacja firmy Microsoft"
+description: "Przykłady przejść stanu weryfikacji dla analizy zasobów w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 2/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6230a6e5-a1f6-459b-84f1-07fbde0e70f0
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9c5d1e48b76392beaf54b5377c69b648537e86f8
 ms.openlocfilehash: f280e06f34c0ed355b7c2652c571e36eb6684c59
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="example-validation-state-transitions-for-asset-intelligence-in-system-center-configuration-manager"></a>Przykład zmian stanu sprawdzania poprawności analizy zasobów w programie System Center Configuration Manager
+# <a name="example-validation-state-transitions-for-asset-intelligence-in-system-center-configuration-manager"></a>Przykład przejść stanu weryfikacji dla analizy zasobów w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Stan weryfikacji analizy zasobów w programie System Center Configuration Manager nie są statyczne i zmienić działania administracyjne, które należy wykonać w celu wpływają na dane, które są przechowywane w katalogu analizy zasobów. Ten temat zawiera przykłady w celu weryfikacji możliwych stanów przejść.
+Stany weryfikacji analizy zasobów w programie System Center Configuration Manager nie są statyczne i może zostać zmieniony z działania administracyjne, które należy wykonać w celu modyfikacji danych, które są przechowywane w katalogu analizy zasobów. W tym temacie przedstawiono przykłady weryfikacji możliwych przejść stanu.
 
 ##  <a name="BKMK_UncategorizedIsCategorized"></a> Element katalogu bez kategorii jest kategoryzowany przez użytkownika administracyjnego  
 
@@ -76,11 +73,10 @@ Stan weryfikacji analizy zasobów w programie System Center Configuration Manage
 |**Bez kategorii**|Tytuł oprogramowania znajdującego się w spisie jest wprowadzany do bazy danych analizy zasobów, przy czym nie był on poprzednio skategoryzowany przez usługę System Center Online ani użytkownika administracyjnego.|  
 |**Zdefiniowane przez użytkownika**|Dla elementu bez kategorii została określona kategoria.|  
 |**Zdefiniowane przez użytkownika** do **Oczekujące**|Przesyłasz element zdefiniowany przez użytkownika do usługi System Center Online w celu określenia kategorii.|  
-|**Oczekujące** do **Można aktualizować**|Obiekty zdefiniowane przez użytkownika katalogu zostały skategoryzowane inaczej przez usługę System Center Online podczas kolejnej synchronizacji katalogu. Akcja **Rozwiąż konflikt** umożliwia określenie, czy mają zostać użyte nowe informacje o kategorii, czy poprzednia wartość zdefiniowana przez użytkownika. Aby uzyskać więcej informacji na temat rozwiązywania konfliktów, zobacz [rozwiązać konflikty szczegóły oprogramowania](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md#BKMK_ResolveSoftwareDetails).|  
-|**Można aktualizować** do **Zweryfikowane**|Akcja **Rozwiąż konflikt** umożliwia wybranie nowych informacji o kategorii odebranych z usługi System Center Online podczas poprzedniej aktualizacji katalogu. Aby uzyskać więcej informacji na temat rozwiązywania konfliktów, zobacz [rozwiązać konflikty szczegóły oprogramowania](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md#BKMK_ResolveSoftwareDetails).|  
+|**Oczekujące** do **Można aktualizować**|Obiekty zdefiniowane przez użytkownika katalogu zostały skategoryzowane inaczej przez usługę System Center Online podczas kolejnej synchronizacji katalogu. Akcja **Rozwiąż konflikt** umożliwia określenie, czy mają zostać użyte nowe informacje o kategorii, czy poprzednia wartość zdefiniowana przez użytkownika. Aby uzyskać więcej informacji na temat rozwiązywania konfliktów, zobacz [rozwiązać konflikt szczegółów oprogramowania](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md#BKMK_ResolveSoftwareDetails).|  
+|**Można aktualizować** do **Zweryfikowane**|Akcja **Rozwiąż konflikt** umożliwia wybranie nowych informacji o kategorii odebranych z usługi System Center Online podczas poprzedniej aktualizacji katalogu. Aby uzyskać więcej informacji na temat rozwiązywania konfliktów, zobacz [rozwiązać konflikt szczegółów oprogramowania](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md#BKMK_ResolveSoftwareDetails).|  
 |lub||  
-|**Można aktualizować** do **Zdefiniowane przez użytkownika**|Akcja **Rozwiąż konflikt** umożliwia użycie poprzedniej wartości zdefiniowanej przez użytkownika. Aby uzyskać więcej informacji na temat rozwiązywania konfliktów, zobacz [rozwiązać konflikty szczegóły oprogramowania](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md#BKMK_ResolveSoftwareDetails).|  
+|**Można aktualizować** do **Zdefiniowane przez użytkownika**|Akcja **Rozwiąż konflikt** umożliwia użycie poprzedniej wartości zdefiniowanej przez użytkownika. Aby uzyskać więcej informacji na temat rozwiązywania konfliktów, zobacz [rozwiązać konflikt szczegółów oprogramowania](../../../../core/clients/manage/asset-intelligence/operations-for-asset-intelligence.md#BKMK_ResolveSoftwareDetails).|  
 
 > [!NOTE]  
 >  Ponieważ informacje o kategorii uzyskane z usługi System Center Online są przechowywane w bazie danych i nie można ich usunąć, możesz przywrócić kategorię określoną przez usługę System Center Online później.  
-

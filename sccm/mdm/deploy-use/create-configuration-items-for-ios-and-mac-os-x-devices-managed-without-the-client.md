@@ -1,31 +1,28 @@
 ---
 title: "Tworzenie elementów konfiguracji dla systemów iOS i Mac OS X urządzeń zarządzanych za pomocą usługi Intune | Dokumentacja firmy Microsoft"
-description: "Użycie elementu konfiguracji systemu Mac OS X i iOS programu System Center Configuration Manager do zarządzania ustawieniami dla systemów iOS i Mac OS X urządzeń."
+description: "Użyj elementu konfiguracji systemu Mac OS X i System Center Configuration Manager dla systemu iOS do zarządzania ustawieniami dla systemów iOS i Mac OS X urządzeń."
 ms.custom: na
 ms.date: 03/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 613a48ac-c55d-4c4a-94ea-d3747a1b10cb
-caps.latest.revision: 15
-caps.handback.revision: 0
+caps.latest.revision: "15"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: 6e2cb628217598480973d4f728a9e0a7cd5873e7
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-create-configuration-items-for-ios-and-mac-os-x-devices-managed-with-intune"></a>Tworzenie elementów konfiguracji dla systemów iOS i Mac OS X urządzeń zarządzanych za pomocą usługi Intune
-Użyj programu System Center Configuration Manager **iOS i Mac OS X** elementu konfiguracji do zarządzania ustawieniami dla systemów iOS i Mac OS X urządzeń, które są zarejestrowane w usłudze Microsoft Intune lub lokalnych zarządzanych przez program Configuration Manager.  
+# <a name="how-to-create-configuration-items-for-ios-and-mac-os-x-devices-managed-with-intune"></a>Jak utworzyć elementy konfiguracji dla systemów iOS i Mac OS X urządzeń zarządzanych za pomocą usługi Intune
+Użyj programu System Center Configuration Manager **z systemem iOS i Mac OS X** element konfiguracji do zarządzania ustawieniami dla systemów iOS i Mac OS X urządzeń, które są zarejestrowane w programie Microsoft Intune lub zarządzane lokalnie przez program Configuration Manager.  
   
 ### <a name="to-create-an-ios-and-mac-os-x-configuration-item"></a>Aby utworzyć element konfiguracji systemów iOS i Mac OS X  
   
@@ -39,7 +36,7 @@ Użyj programu System Center Configuration Manager **iOS i Mac OS X** elementu k
   
 5.  W obszarze **Określ typ elementu konfiguracji, który chcesz utworzyć** wybierz pozycję **iOS i Mac OS X**.  
   
-6.  Kliknij przycisk **kategorii** należy utworzyć i przypisać kategorie ułatwiają wyszukiwanie i filtrowanie elementów konfiguracji w konsoli programu Configuration Manager.  
+6.  Kliknij przycisk **kategorii** możesz utworzyć i przypisać kategorie ułatwiające wyszukiwanie i filtrowanie elementów konfiguracji w konsoli programu Configuration Manager.  
   
 7.  Na stronie **Obsługiwane platformy** kreatora wybierz platformy systemów iOS i Mac OS X, które będą oceniać element konfiguracji.  
   
@@ -52,15 +49,15 @@ Użyj programu System Center Configuration Manager **iOS i Mac OS X** elementu k
   
 10. Dla każdej grupy ustawień można również skonfigurować ważność, która będzie zgłaszana w przypadku braku zgodności znalezionego elementu konfiguracji:  
   
-    -   **Brak** -urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważności niepowodzenia dla raportów programu Configuration Manager.  
+    -   **Brak** — urządzenia, które nie spełniają tej zasady zgodności nie będą zgłaszać ważności niepowodzenia dla raportów programu Configuration Manager.  
   
-    -   **Informacje o** -urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **informacji** dla raportów programu Configuration Manager.  
+    -   **Informacje o** — urządzenia, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **informacji** dla raportów programu Configuration Manager.  
   
-    -   **Ostrzeżenie** -urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **ostrzeżenie** dla raportów programu Configuration Manager.  
+    -   **Ostrzeżenie** — urządzenia, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **ostrzeżenie** dla raportów programu Configuration Manager.  
   
-    -   **Krytyczne** -urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczny** dla raportów programu Configuration Manager.  
+    -   **Krytyczne** — urządzenia, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczne** dla raportów programu Configuration Manager.  
   
-    -   **Krytyczne ze zdarzeniem** -urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczny** dla raportów programu Configuration Manager. Ten poziom ważności jest też rejestrowany jako zdarzenie systemu Windows w dzienniku zdarzeń aplikacji.  
+    -   **Krytyczne ze zdarzeniem** — urządzenia, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczne** dla raportów programu Configuration Manager. Ten poziom ważności jest też rejestrowany jako zdarzenie systemu Windows w dzienniku zdarzeń aplikacji.  
   
 11. Na stronie **Możliwość zastosowania platformy** kreatora przejrzyj ustawienia, które nie są zgodne z wybranymi wcześniej obsługiwanymi platformami. Możesz wrócić i usunąć te ustawienia lub kontynuować.  
   
@@ -83,9 +80,9 @@ Użyj programu System Center Configuration Manager **iOS i Mac OS X** elementu k
 |**Liczba zapamiętanych haseł**|Zapobiega ponownemu użyciu hasła stosowanego wcześniej.|  
 |**Liczba nieudanych prób logowania przed usunięciem zawartości urządzenia**|Czyści urządzenie po określonej liczbie prób logowania zakończonych niepowodzeniem.<br /><br /> (dotyczy tylko urządzeń z systemem iOS)|  
 |**Złożoność hasła**|Wybierz, czy można określić numer PIN, taki jak 1234, czy też należy podać silne hasło.| 
-|**Zezwalaj na proste hasła**|Zezwalaj na proste hasła, takich jak **0000** i **1234**.|
+|**Zezwalaj na proste hasła**|Zezwalaj na proste hasła, takie jak **0000** i **1234**.|
 |**Odblokowywanie odciskiem linii papilarnych**|Zezwalaj na odblokowywanie urządzenia przy użyciu linii papilarnych.|
-|**Zmiana kodu dostępu** (tylko nadzorowane)|Zezwalaj na hasło urządzenia, aby dodać, zmienić lub usunąć.|
+|**Modyfikowanie kodu dostępu** (tylko nadzorowane)|Zezwalaj na hasło urządzenia, aby dodać, zmienić ani usunąć.|
   
 ###  <a name="device"></a>Urządzenie  
  Te ustawienia dotyczą zarówno urządzeń z systemem iOS, jak i urządzeń z systemem Mac OS X.  
@@ -97,33 +94,33 @@ Użyj programu System Center Configuration Manager **iOS i Mac OS X** elementu k
 |**Asystent głosowy**|Umożliwia korzystanie z aplikacji asystentów głosowych, takich jak Siri.|  
 |**Asystent głosowy, gdy zablokowany**|Umożliwia korzystanie z aplikacji asystentów głosowych, takich jak Siri, gdy urządzenie jest zablokowane.|  
 |**Przechwytywanie ekranu**|Umożliwia wykonanie zrzutu ekranu urządzenia.|  
-|**Klient czacie wideo**|Umożliwia korzystanie z aplikacji rozmów wideo, takich jak Facetime.|  
+|**Klient rozmów wideo**|Umożliwia korzystanie z aplikacji rozmów wideo, takich jak Facetime.|  
 |**Gry dla wielu graczy**|Umożliwia granie w gry z innymi osobami w Internecie.|  
 |**Oprogramowanie osobistego portfela, gdy zablokowany**|Umożliwia korzystanie z oprogramowania osobistego portfela, takiego jak aplikacja Passbook.|  
 |**Przesłanie danych diagnostycznych**|Umożliwia przesyłanie plików dzienników aplikacji.|  
 |**Powiadomienia Centrum akcji**|Zezwalaj użytkownikowi na dostęp do widoku powiadomień bez odblokowywania urządzenia.|
-|**Muzyka Apple** (tylko nadzorowane)|Zezwalaj na korzystanie z aplikacji muzyka firmy Apple.|
-|**Transmisje podcast** (tylko nadzorowane)|Zezwalaj na korzystanie z aplikacji transmisje podcast.|
-|**Komunikaty aplikacji** (tylko nadzorowane)|Zezwalaj na korzystanie z aplikacji wiadomości do wysyłania wiadomości SMS.|
-|**Wallpaper modyfikacji** (tylko nadzorowane)|Zezwalaj użytkownikom na zmianę tapetę na urządzeniu.|
-|**Wyszukiwanie definicji Word** (tylko nadzorowane)|Zezwalaj na funkcję iOS umożliwiający wyróżnić wyraz i wyszukać jego definicji.|
+|**Muzyka Apple** (tylko nadzorowane)|Zezwalaj na korzystanie z aplikacji firmy Apple utworów muzycznych.|
+|**Podkasty** (tylko nadzorowane)|Zezwalaj na korzystanie z aplikacji podkasty.|
+|**Komunikaty aplikacji** (tylko nadzorowane)|Zezwalaj na korzystanie z aplikacji Messages do wysyłania wiadomości SMS.|
+|**Wallpaper modyfikacji** (tylko nadzorowane)|Zezwalaj użytkownikom na zmianę tapety urządzenia.|
+|**Word definicji wyszukiwania** (tylko nadzorowane)|Zezwalaj na funkcji systemu iOS, która umożliwia zaznacz słowo i wyszukać jego definicji.|
 |**Wykrycie nadgarstka sparowanego obserwowanie firmy Apple**|Po włączeniu Apple Watch nie będzie wyświetlać powiadomienia, gdy nie trwa zużyte.|
-|**Filtr niestosownych wyrażeń Siri** (tylko nadzorowane)|Zapobiega Siri z dyktowania lub mówić obsceniczne języka.|
+|**Używanie programu Siri niestosownych wyrażeń filtru** (tylko nadzorowane)|Uniemożliwia używanie programu Siri z dyktowania lub mówiąc profanujących języka.|
 |**Zmiana nazwy urządzenia** (tylko nadzorowane)|Zezwalaj użytkownikom na zmianę nazwy urządzenia.|
-|**Modyfikacja ustawień przesyłania diagnostyki** (tylko nadzorowane)|Zezwalania lub blokowania urządzenia przesyłanie danych diagnostycznych do firmy Apple.|
-|**Centrum gier** (tylko nadzorowane)|Zezwalaj na korzystanie z aplikacji Game Center.|
+|**Modyfikacja ustawień diagnostyki przesyłanie** (tylko nadzorowane)|Zezwala lub blokuje możliwość przesyłania danych diagnostycznych do firmy Apple z urządzenia.|
+|**Centrum gier** (tylko nadzorowane)|Zezwalaj na używanie aplikacji Game Center.|
 |**iTunes radiowych** (tylko nadzorowane)|Zezwalaj na korzystanie z aplikacji radiowych iTunes.|
-|**Grupy dyskusyjne firmy Apple** (tylko nadzorowane)|Zezwalaj na korzystanie z aplikacji grup dyskusyjnych firmy Apple.|
-|**Parowanie Apple Watch** (tylko nadzorowane)|Zezwalaj na urządzenie, aby skojarzyć Apple Watch.|
-|**Korekty automatycznej** (tylko nadzorowane)|Służy do urządzenie automatycznie poprawić błędnie napisanych wyrazów.|
+|**Grupy dyskusyjne firmy Apple** (tylko nadzorowane)|Zezwalaj na korzystanie z aplikacji firmy Apple wiadomości.|
+|**Parowanie Apple Watch** (tylko nadzorowane)|Zezwalaj urządzeniu na parowanie Apple Watch.|
+|**Korekty automatycznej** (tylko nadzorowane)|Zezwala urządzeniu na automatyczne poprawianie pisowni.|
 |**Modyfikacja Bluetooth** (tylko nadzorowane)|Umożliwia użytkownikowi zmianę ustawień Bluetooth na urządzeniu.|
-|**Zmiany w ustawieniach użycia danych komórkowych aplikacji** (tylko nadzorowane)|Zezwalaj użytkownikowi na aplikacje, które mogą używać danych komórkowych formantu.|
-|**Skróty klawiaturowe** (tylko nadzorowane)|Umożliwia używanie skrótów klawiaturowych.|
-|**Klawiatury predykcyjnej** (tylko nadzorowane)|Zezwalaj na używanie klawiatury predykcyjnej, które sugerują wyrazy, które użytkownik może być.|
-|**Sprawdzanie pisowni klawiatury** (tylko nadzorowane)|Umożliwia sprawdzania pisowni urządzenia.|
+|**Zmiany ustawień użycia danych komórkowych aplikacji** (tylko nadzorowane)|Zezwalaj użytkownikowi na kontrolować aplikacje, które mogą korzystać z danych komórkowych.|
+|**Skróty klawiaturowe** (tylko nadzorowane)|Umożliwia korzystanie z skrótów klawiaturowych.|
+|**Klawiatury predykcyjnej** (tylko nadzorowane)|Zezwalaj na używanie klawiatury predykcyjnych, które sugeruje wyrazy, które użytkownik może chcieć.|
+|**Klawiatura sprawdzanie** (tylko nadzorowane)|Umożliwia urządzeniu sprawdzania pisowni.|
 |**Modyfikacja ustawień powiadomień** (tylko nadzorowane)|Zezwalaj użytkownikom na zmianę ustawienia powiadomień urządzenia.|
-|**Zwracają wyniki z Internetu w centrum uwagi wyszukiwania** (tylko nadzorowane)|Niech nawiązać połączenie z Internetem, aby dostarczyć więcej wyników wyszukiwania w centrum uwagi.|
-|**Użyj Siri do zapytania generowane przez użytkownika zawartości z Internetu** (tylko nadzorowane)|Zezwalaj na Siri uzyskać dostęp do witryn sieci Web w odpowiedzi na pytania.|
+|**Zwracania wyników z Internetu w przez wyszukiwanie Spotlight** (tylko nadzorowane)|Umożliwiają wyszukiwanie Spotlight łączyło się z Internetem w celu udostępniania dodatkowych wyników.|
+|**Użyj programowi siri na wykonywanie zapytań o zawartość wygenerowaną przez użytkowników z Internetu** (tylko nadzorowane)|Zezwala programowi Siri na dostęp do witryny sieci Web do odpowiedzi na pytania.|
 
   
 ###  <a name="store"></a>Magazyn  
@@ -134,9 +131,9 @@ Użyj programu System Center Configuration Manager **iOS i Mac OS X** elementu k
 |**Sklep z aplikacjami**|Umożliwia dostęp do sklepu z aplikacjami na urządzeniu.|  
 |**Wprowadź hasło w celu dostępu do sklepu z aplikacjami**|Użytkownicy muszą wprowadzić hasło, aby uzyskać dostęp do sklepu z aplikacjami.|  
 |**Zakupy w aplikacjach**|Umożliwia użytkownikom dokonywanie zakupów w aplikacjach.|
-|**Instalowanie aplikacji przy użyciu programu Apple Configurator i iTunes tylko** (tylko nadzorowane)|Włącza lub wyłącza sklepu z aplikacjami z ekranu głównego urządzenia. Użytkownicy mogą nadal używać do instalowania i aktualizowania aplikacji iTunes lub narzędzia Apple Configurator.|
-|**Dostęp do magazynu iBooks** (tylko nadzorowane)|Zezwalaj użytkownikowi na przeglądanie i zakupu książki z magazynu iBooks.|
-|**Pobieranie aplikacji automatyczne** (tylko nadzorowane)|Zezwalaj na aplikacje zakupione na innych urządzeniach do automatycznego pobierania do tego urządzenia. To ustawienie nie wpływa na aktualizacje aplikacji.|
+|**Instalowanie aplikacji przy użyciu programu Apple Configurator i tylko iTunes** (tylko nadzorowane)|Włącza lub wyłącza sklepu z aplikacjami z ekranu głównego urządzenia. Użytkownicy mogą nadal używać programu iTunes lub narzędzia Apple Configurator do instalacji i aktualizacji aplikacji.|
+|**Dostęp do sklepu iBooks** (tylko nadzorowane)|Umożliwia użytkownikowi przeglądanie i kupowanie książek w sklepie iBooks.|
+|**Pobieranie aplikacji automatyczne** (tylko nadzorowane)|Zezwalaj na aplikacje zakupione na innych urządzeniach do automatycznego pobierania na tym urządzeniu. To ustawienie nie dotyczy aktualizacji aplikacji.|
 
   
 ###  <a name="browser"></a>Przeglądarka  
@@ -159,9 +156,9 @@ Użyj programu System Center Configuration Manager **iOS i Mac OS X** elementu k
 |**Zawartość dla dorosłych w sklepie z multimediami**|Określ, czy chcesz zezwolić na dostęp do zawartości dla dorosłych w sklepie z aplikacjami.|  
 |**Region klasyfikacji**|Określa kraj, dla którego chcesz zastosować ograniczenia klasyfikacji.|  
 |**Klasyfikacja filmu**|Określ maksymalny dozwolony poziom klasyfikacji treści filmu.|  
-|**Pokaż TV klasyfikacji**|Określ maksymalny dozwolony poziom klasyfikacji treści programu TV.|  
+|**Klasyfikacja programu TV**|Określ maksymalny dozwolony poziom klasyfikacji treści programu TV.|  
 |**Klasyfikacja aplikacji**|Określ maksymalny dozwolony poziom klasyfikacji treści aplikacji.| 
-|**Zawartości z flagą "Erotyki" magazynu iBook** (tylko nadzorowane)|Zezwalaj użytkownikowi na pobieranie książki z kategorii "Erotyki".| 
+|**Zawartości ze sklepu iBook oznaczonej jako "Erotyka"** (tylko nadzorowane)|Zezwalaj użytkownikom na pobieranie ze sklepu iBook książek z kategorii "Erotyka".| 
   
 > [!NOTE]  
 >  Dostępne klasyfikacje różnią się w zależności od wybranej opcji ustawienia **Region klasyfikacji**.  
@@ -175,10 +172,10 @@ Użyj programu System Center Configuration Manager **iOS i Mac OS X** elementu k
 |**Zaszyfrowanej kopii zapasowej**|Zezwalaj na szyfrowanie kopii zapasowych w usłudze w chmurze.|  
 |**Synchronizacja dokumentów**|Zezwalaj na synchronizację dokumentów z usługą w chmurze.|  
 |**Synchronizacja zdjęć**|Zezwalaj na synchronizację zdjęć z usługą w chmurze.| 
-|**Biblioteka zdjęć iCloud**|Jeśli ustawiono **nr**, wyłącza używanie biblioteki zdjęć iCloud, która pozwala na przechowywanie zdjęć i klipów wideo w chmurze. Żadnych zdjęć nie są w pełni pobrane z usługi i cloud biblioteka fotografii na urządzeniu zostaną usunięte z urządzenia, jeśli wartość atrybutu to **nr**.|
-|**Funkcje udostępniania w ramach usługi iCloud**|Ustaw **nr** wyłączyć funkcje udostępniania iCloud na urządzeniu.|
-|**Oddania kontynuowanie działania na inne urządzenie**|Zezwalaj użytkownikowi na kontynuowanie pracy, które zostały rozpoczęte na urządzenia iOS w innym systemie iOS lub Mac OS X.|
-|**Zsynchronizuj dane z zarządzanych aplikacji do usługi iCloud**|Zezwalaj na aplikacje, które można zarządzać za pomocą usługi Intune do synchronizacji danych do konta usługi i cloud.|
+|**Biblioteka zdjęć w usłudze iCloud**|Jeśli ustawiono **nr**, wyłącza użycie usługi iCloud fotografii bibliotekę, która umożliwia użytkownikom przechowywanie zdjęcia i filmy w chmurze. Żadnych zdjęć nie pełni pobrane z iCloud biblioteki zdjęć na urządzeniu zostaną usunięte z urządzenia, jeśli ta wartość jest równa **nr**.|
+|**Udostępnianie zdjęć w ramach usługi iCloud**|Ustaw **nr** wyłączyć iCloud udostępniania zdjęć na urządzeniu.|
+|**Programowi handoff na kontynuowanie działań na innym urządzeniu**|Zezwalaj użytkownikowi na kontynuowanie pracy rozpoczętej na urządzenia z systemem iOS w innym systemie iOS lub Mac OS X.|
+|**Synchronizowanie danych z zarządzanych aplikacji usługi iCloud**|Zezwalaj aplikacjom zarządzanym przy użyciu usługi Intune na synchronizowanie danych konta usługi iCloud.|
 
   
 ###  <a name="security"></a>Zabezpieczenia  
@@ -187,7 +184,7 @@ Użyj programu System Center Configuration Manager **iOS i Mac OS X** elementu k
 |Nazwa ustawienia|Szczegóły|  
 |------------------|-------------|  
 |**Aparat fotograficzny**|Zezwalaj na korzystanie z aparatu fotograficznego urządzenia.| 
-|**Zaufanie nowego autorzy aplikacji enterprise**|Umożliwia użytkownikowi wybranie zaufania aplikacji, które nie zostały pobrane ze sklepu z aplikacjami.| 
+|**Zaufania nowych autorów aplikacji przedsiębiorstwa**|Umożliwia użytkownikowi wybieranie zaufania aplikacji, które nie zostały pobrane ze sklepu z aplikacjami.| 
   
 ###  <a name="roaming"></a>Roaming  
  Te ustawienia dotyczą tylko urządzeń z systemem iOS.  
@@ -204,27 +201,27 @@ Użyj programu System Center Configuration Manager **iOS i Mac OS X** elementu k
 |Nazwa ustawienia|Szczegóły|  
 |------------------|-------------|  
 |**Użytkownik zamierza zaakceptować niezaufane certyfikaty TLS**|Opcja **Dozwolone** umożliwia użytkownikowi akceptowanie tych certyfikatów. Opcja **Zabronione** powoduje automatyczne odrzucanie certyfikatów niezaufanych.|
-|**Zezwalaj na blokadę aktywacji (tylko w trybie nadzorowanym)**|To ustawienie umożliwia włączanie blokady aktywacji w systemie iOS na **nadzorowanych** urządzeniach z systemem iOS, którymi możesz zarządzać. Aby uzyskać więcej informacji na temat blokady aktywacji, zobacz [Manage iOS Activation Lock with System Center Configuration Manager](../../mdm/deploy-use/manage-ios-activation-lock.md) (Zarządzanie blokadą aktywacji systemu iOS w programie System Center Configuration Manager).
+|**Zezwalaj na blokadę aktywacji (tylko tryb nadzorowany)**|To ustawienie umożliwia włączanie blokady aktywacji w systemie iOS na **nadzorowanych** urządzeniach z systemem iOS, którymi możesz zarządzać. Aby uzyskać więcej informacji na temat blokady aktywacji, zobacz [Manage iOS Activation Lock with System Center Configuration Manager](../../mdm/deploy-use/manage-ios-activation-lock.md) (Zarządzanie blokadą aktywacji systemu iOS w programie System Center Configuration Manager).
 |**Ekran blokady — centrum sterowania**|Określa, czy aplikacja Centrum sterowania jest dostępna, gdy urządzenie jest zablokowane.|  
 |**Widok powiadomienia na ekranie blokady**|Określa, czy można wyświetlać powiadomienia, gdy urządzenie jest zablokowane.|  
-|**Widoku dziś na ekranie blokady**|Określa, czy można wyświetlać widok Dzisiaj, gdy urządzenie jest zablokowane.|  
-|**Zmodyfikuj ustawienia konta** (tylko nadzorowane)|Zezwalaj użytkownikom na zmianę ustawienia konta, takie jak konfiguracje wiadomości e-mail.|
-|**Zmieniać ustawienia aplikacja Znajdź mój przyjaciół** (tylko nadzorowane)|Zezwalaj użytkownikom na zmianę ustawień aplikacji Znajdź mój znajomych.|
-|**Użyj hosta parowania do sterowania urządzeniami można skojarzyć urządzenia z systemem iOS** (tylko nadzorowane)|Zezwalaj na hosta parowania umożliwi kontroli administratora urządzeń, które można skojarzyć urządzenia z systemem iOS.|
-|**Wymaż całą zawartość i ustawienia** (tylko nadzorowane)|Zezwalaj użytkownikowi na za pomocą opcji wymazywanie całą zawartość i ustawienia na urządzeniu.|
-|**Konfiguruj ograniczenia na urządzeniu** (tylko nadzorowane)|Zezwalaj użytkownikowi na konfigurowanie ograniczenia urządzenia (kontroli rodzicielskiej) na urządzeniu.|
-|**Instalowanie konfiguracji profilów i certyfikaty** (tylko nadzorowane)|Zezwalaj użytkownikowi na instalowanie konfiguracji profilów i certyfikatów.|
-|**Hasło dla AirPlay wychodzących żądań**|Wymagaj hasła parowania, gdy użytkownik korzysta z AirPlay do strumieniowego przesyłania zawartości do urządzeń firmy Apple.|
+|**Widok dzisiejszy na ekranie blokady**|Określa, czy można wyświetlać widok Dzisiaj, gdy urządzenie jest zablokowane.|  
+|**Zmodyfikuj ustawienia konta** (tylko nadzorowane)|Zezwalaj użytkownikom na zmianę ustawienia konta, takie jak konfiguracja poczty e-mail.|
+|**Zmiany ustawień aplikacji Find My Friends** (tylko nadzorowane)|Zezwalaj użytkownikom na zmianę ustawień aplikacji Find My Friends.|
+|**Użyj parowanie hostów w celu kontrolowania urządzenia może być sparowane urządzenie iOS** (tylko nadzorowane)|Zezwalaj na parowanie hostów w celu umożliwienia administratorowi kontrolowania urządzeń, które może być sparowane urządzenie z systemem iOS.|
+|**ERASE całej zawartości i wszystkich ustawień** (tylko nadzorowane)|Zezwalaj użytkownikowi korzystanie z opcji wymazywania całej zawartości i wszystkich ustawień na urządzeniu z.|
+|**Konfigurowanie ograniczeń urządzenia** (tylko nadzorowane)|Zezwalaj użytkownikowi na Konfigurowanie ograniczeń urządzenia (kontroli rodzicielskiej) na urządzeniu.|
+|**Instalowanie profilów konfiguracji i certyfikatów** (tylko nadzorowane)|Zezwalaj użytkownikowi na instalowanie profilów konfiguracji i certyfikatów.|
+|**Hasło dla wychodzących żądań funkcji AirPlay**|Wymagaj hasła parowania, gdy użytkownik używa funkcji AirPlay do strumieniowego przesyłania zawartości do innych urządzeń firmy Apple.|
   
 ###  <a name="data-protection"></a>Ochrona danych  
  Te ustawienia dotyczą tylko urządzeń z systemem iOS.  
   
 |Nazwa ustawienia|Szczegóły|  
 |------------------|-------------|  
-|**Otwieranie dokumentów zarządzanych aplikacji w innych aplikacjach niezarządzanych**|Do użytku z aplikacji zarządzanych przez Menedżera konfiguracji zasad zarządzania aplikacjami.|  
-|**Otwórz dokumenty z niezarządzanych aplikacji w innych zarządzanych aplikacjach**|Do użytku z aplikacji zarządzanych przez Menedżera konfiguracji zasad zarządzania aplikacjami.| 
-|**Traktuj AirDrop jako niezarządzane docelowej** (tylko nadzorowane)|Zatrzymuje aplikacje zarządzane mogą wysyłać dane przy użyciu. Airdrop.|
-|**AirDrop** (tylko nadzorowane)|Zezwalaj na używanie funkcji AirDrop do wymiany zawartości z urządzeń w pobliżu.|
+|**Otwieranie dokumentów w zarządzanych aplikacjach w innych niezarządzanych aplikacjach**|Do użytku z aplikacjami zarządzanymi przez zasady zarządzania aplikacjami programu Configuration Manager.|  
+|**Otwórz dokumenty z niezarządzanych aplikacji w innych zarządzanych aplikacjach**|Do użytku z aplikacjami zarządzanymi przez zasady zarządzania aplikacjami programu Configuration Manager.| 
+|**Traktuj AirDrop jako miejsca docelowego niezarządzane** (tylko nadzorowane)|Zatrzymuje aplikacji zarządzanych możliwość przesyłania danych za pośrednictwem. Airdrop.|
+|**AirDrop** (tylko nadzorowane)|Zezwalaj na korzystanie z funkcji AirDrop do wymiany zawartości z pobliskimi urządzeniami.|
   
 ###  <a name="compliant-and-noncompliant-apps-ios"></a>Zgodne i niezgodne aplikacje (iOS)  
  Umożliwia określenie listy zgodnych i niezgodnych aplikacji systemu iOS w firmie. Następnie można użyć raportów w celu wyświetlenia urządzeń z zainstalowanymi niezgodnymi aplikacjami oraz skojarzonego użytkownika.  
@@ -245,7 +242,7 @@ Użyj programu System Center Configuration Manager **iOS i Mac OS X** elementu k
   
          Otwórz stronę instalacji aplikacji i skopiuj adres URL do schowka. Możesz teraz użyć tego adresu URL na liście zgodnych lub niezgodnych aplikacji.  
   
-         **Przykład:** Wyszukaj w sklepie **Microsoft Word for iPad** aplikacji. Adres URL, którego użyjesz, to **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
+         **Przykład:** Wyszukaj w sklepie **Microsoft Word dla tabletu iPad** aplikacji. Adres URL, którego użyjesz, to **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
   
     -   **Edytuj** — umożliwia edytowanie nazwy, wydawcy i adresu URL wybranej aplikacji.  
   
@@ -314,30 +311,30 @@ Użyj programu System Center Configuration Manager **iOS i Mac OS X** elementu k
   
 1.  Na stronie **Konfigurowanie ustawień profilu niestandardowego systemów iOS i Mac OS X** **Kreatora tworzenia elementu konfiguracji** podaj następujące informacje:  
   
-    -   **Nazwa niestandardowego profilu konfiguracji (wyświetlana dla użytkowników)** — Podaj nazwę zasad, która będzie wyświetlana na urządzeniu i w konfiguracji Menedżera raportów.  
+    -   **Nazwa niestandardowego profilu konfiguracji (wyświetlana użytkownikom)** — Podaj nazwę zasad, która będzie wyświetlana na urządzeniu i w konfiguracji Menedżera raportów.  
   
     -   **Importuj** — wybierz plik wyeksportowany za pomocą narzędzia Apple Configurator.  
   
     -   **Szczegóły profilu konfiguracji** — wyświetla zaimportowany plik.  
   
-    -   **Korygowanie niezgodnych ustawień** -  
+    -   **Koryguj niezgodne ustawienia** -  
   
          Wybierz tę opcję, jeśli chcesz skorygować niezgodne ustawienia konfiguracji (jeśli jest to obsługiwane).  
   
     -   **Waga niezgodności do raportów** — określ poziom ważności zgłaszany w przypadku oceny tych zasad zgodności jako niezgodnych. Poniżej przedstawiono dostępne poziomy ważności:  
   
         > [!NOTE]  
-        >  Jeśli urządzenie z systemem Mac OS X jest w trybie uśpienia, nie można dostarczać zasad i profilów ani dodawać ich do spisu. W związku z tym konsoli programu Configuration Manager może tymczasowo wyświetlić ustawienia zasad stanu błędu aż do następnej urządzenie wznawia pracę z trybu uśpienia.  
+        >  Jeśli urządzenie z systemem Mac OS X jest w trybie uśpienia, nie można dostarczać zasad i profilów ani dodawać ich do spisu. W związku z tym konsoli programu Configuration Manager może być tymczasowo wyświetlany stan ustawienia zasad z błędami do następnego wznowienia, które działania urządzenia z trybu uśpienia.  
   
-        -   **Brak** urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważności niepowodzenia dla raportów programu Configuration Manager.  
+        -   **Brak** urządzenia, które nie spełniają tej zasady zgodności nie będą zgłaszać ważności niepowodzenia dla raportów programu Configuration Manager.  
   
         -   **Informacje o** urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **informacji** dla raportów programu Configuration Manager.  
   
         -   **Ostrzeżenie** urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **ostrzeżenie** dla raportów programu Configuration Manager.  
   
-        -   **Krytyczne** urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczny** dla raportów programu Configuration Manager.  
+        -   **Krytyczne** urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczne** dla raportów programu Configuration Manager.  
   
-        -   **Krytyczne ze zdarzeniem** urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczny** dla raportów programu Configuration Manager. Ten poziom ważności jest też rejestrowany jako zdarzenie systemu Windows w dzienniku zdarzeń aplikacji.  
+        -   **Krytyczne ze zdarzeniem** urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczne** dla raportów programu Configuration Manager. Ten poziom ważności jest też rejestrowany jako zdarzenie systemu Windows w dzienniku zdarzeń aplikacji.  
   
 #### <a name="how-to-create-a-configuration-profile-file"></a>Jak utworzyć plik profilu konfiguracji  
  Dostępne są dwa sposoby tworzenia pliku profilu konfiguracji używanego przez zasady niestandardowe:  
@@ -365,7 +362,7 @@ Użyj programu System Center Configuration Manager **iOS i Mac OS X** elementu k
   
         -   Skopiuj adres URL strony i użyj go jako adresu URL do określenia aplikacji, którą chcesz uruchomić w trybie kiosku.  
   
-        -   **Przykład:** Wyszukaj **Microsoft Word for iPad**. Adres URL, którego użyjesz, to **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
+        -   **Przykład:** Wyszukaj **Microsoft Word dla tabletu iPad**. Adres URL, którego użyjesz, to **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
   
     -   **Dotknięcie** — włącza lub wyłącza ekran dotykowy na urządzeniu.  
   
@@ -403,16 +400,15 @@ Użyj programu System Center Configuration Manager **iOS i Mac OS X** elementu k
   
     -   **Waga niezgodności do raportów** — określ poziom ważności zgłaszany w przypadku oceny tych zasad zgodności jako niezgodnych. Dostępne są następujące poziomy ważności:  
   
-        -   **Brak** urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważności niepowodzenia dla raportów programu Configuration Manager.  
+        -   **Brak** urządzenia, które nie spełniają tej zasady zgodności nie będą zgłaszać ważności niepowodzenia dla raportów programu Configuration Manager.  
   
         -   **Informacje o** urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **informacji** dla raportów programu Configuration Manager.  
   
         -   **Ostrzeżenie** urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **ostrzeżenie** dla raportów programu Configuration Manager.  
   
-        -   **Krytyczne** urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczny** dla raportów programu Configuration Manager.  
+        -   **Krytyczne** urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczne** dla raportów programu Configuration Manager.  
   
-        -   **Krytyczne ze zdarzeniem** urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczny** dla raportów programu Configuration Manager. Ten poziom ważności jest też rejestrowany jako zdarzenie systemu Windows w dzienniku zdarzeń aplikacji.  
+        -   **Krytyczne ze zdarzeniem** urządzeń, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczne** dla raportów programu Configuration Manager. Ten poziom ważności jest też rejestrowany jako zdarzenie systemu Windows w dzienniku zdarzeń aplikacji.  
   
 ## <a name="see-also"></a>Zobacz też  
  [Elementy konfiguracji dla urządzeń zarządzanych bez klienta programu System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-without-the-client.md)
-

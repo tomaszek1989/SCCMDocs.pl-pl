@@ -1,35 +1,32 @@
 ---
-title: "Tworzenie elementów konfiguracji dla zarządzanych przez klienta systemu Windows — Configuration Manager | Dokumentacja firmy Microsoft"
-description: "Zarządzaj ustawieniami serwerów za pomocą niestandardowego elementu konfiguracji systemu Windows, komputerów stacjonarnych i serwerów i komputerów z systemem Windows."
+title: "Tworzenie elementów konfiguracji dla klientów zarządzanych komputerów z systemem Windows — programu Configuration Manager | Dokumentacja firmy Microsoft"
+description: "Zarządzaj ustawieniami dla serwerów z niestandardowego elementu konfiguracji systemu Windows, komputerów stacjonarnych i serwerów i komputerów z systemem Windows."
 ms.custom: na
 ms.date: 11/18/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1eb2fcaf-acac-4388-9b31-6cccafacaabe
-caps.latest.revision: 9
-caps.handback.revision: 0
+caps.latest.revision: "9"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 31819a1df4e63e1114682490a9b3c3b4e5c99cfa
 ms.openlocfilehash: e040c6b3a951d1bdf5a46dd82f1bd92b45c2e71d
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="how-to-create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-system-center-configuration-manager-client"></a>Tworzenie niestandardowych elementów konfiguracji dla komputerów stacjonarnych i serwerów z systemem Windows zarządzanych za pomocą klienta programu System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
-Użyj programu System Center Configuration Manager **niestandardowych systemu Windows, komputerów stacjonarnych i serwerów** elementu konfiguracji do zarządzania ustawieniami komputerów z systemem Windows i serwerach, które są zarządzane przez klienta programu Configuration Manager.  
+Użyj programu System Center Configuration Manager **niestandardowe systemu Windows, komputerów stacjonarnych i serwerów** element konfiguracji do zarządzania ustawieniami komputerów z systemem Windows i serwery, które są zarządzane przez klienta programu Configuration Manager.  
 
 ## <a name="start-the-create-configuration-item-wizard"></a>Uruchom Kreatora tworzenia elementu konfiguracji
 
@@ -44,7 +41,7 @@ Użyj programu System Center Configuration Manager **niestandardowych systemu Wi
     > [!TIP]  
     >  Jeśli chcesz określić ustawienia metody wykrywania, która służy do sprawdzania istnienia aplikacji, wybierz pozycję **Ten plik konfiguracji zawiera ustawienia aplikacji**.  
 
-6.  Kliknij przycisk **kategorii** należy utworzyć i przypisać kategorie ułatwiają wyszukiwanie i filtrowanie elementów konfiguracji w konsoli programu Configuration Manager.  
+6.  Kliknij przycisk **kategorii** możesz utworzyć i przypisać kategorie ułatwiające wyszukiwanie i filtrowanie elementów konfiguracji w konsoli programu Configuration Manager.  
 
 ## <a name="provide-detection-method-information"></a>Podawanie informacji dotyczących metody wykrywania  
  Użyj tej procedury, aby podać informacje dotyczące metody wykrywania dla elementu konfiguracji.  
@@ -52,7 +49,7 @@ Użyj programu System Center Configuration Manager **niestandardowych systemu Wi
 > [!NOTE]  
 >  Ma ona zastosowanie tylko wtedy, gdy wybrano pozycję **Ten element konfiguracji zawiera ustawienia aplikacji** na stronie **Ogólne** kreatora.  
 
- Metoda wykrywania w programie Configuration Manager zawiera zasady, które są używane do wykrycia, czy aplikacja jest zainstalowana na komputerze. Wykrywanie ma miejsce przed oceną zgodności elementu konfiguracji. Aby wykryć, czy aplikacja jest zainstalowana, można wykryć obecność pliku Instalatora Windows aplikacji, użyć niestandardowego skryptu lub wybrać pozycję **Zawsze zakładaj, że aplikacja jest zainstalowana** w celu poddania ocenie zgodności elementu konfiguracji niezależnie od tego, czy aplikacja jest zainstalowana.  
+ Metoda wykrywania w programie Configuration Manager zawiera reguły, które są używane do wykrywania, czy aplikacja jest zainstalowana na komputerze. Wykrywanie ma miejsce przed oceną zgodności elementu konfiguracji. Aby wykryć, czy aplikacja jest zainstalowana, można wykryć obecność pliku Instalatora Windows aplikacji, użyć niestandardowego skryptu lub wybrać pozycję **Zawsze zakładaj, że aplikacja jest zainstalowana** w celu poddania ocenie zgodności elementu konfiguracji niezależnie od tego, czy aplikacja jest zainstalowana.  
 
  Użyj tych procedur, aby skonfigurować metody wykrywania w programie System Center Configuration Manager.  
 
@@ -80,7 +77,7 @@ Użyj programu System Center Configuration Manager **niestandardowych systemu Wi
 
     -   **Skrypt VBScript**  
 
-    -   **Język JScript**  
+    -   **Języka JScript**  
 
     -   **PowerShell**  
 
@@ -99,7 +96,7 @@ Użyj programu System Center Configuration Manager **niestandardowych systemu Wi
 
     -   **Opis:** Wprowadź opis ustawienia. Możesz wprowadzić maksymalnie 256 znaków.  
 
-    -   **Typ ustawienia:** Na liście wybierz i skonfiguruj jeden z następujących typów ustawienie do użycia dla tego ustawienia:  
+    -   **Typ ustawienia:** Na liście wybierz i skonfiguruj jedno z następujących typów ustawień dla tego ustawienia:  
 
         -   **Zapytanie usługi Active Directory**  
 
@@ -151,7 +148,7 @@ Użyj programu System Center Configuration Manager **niestandardowych systemu Wi
             -   **Nazwa pliku lub folderu** — określ nazwę pliku lub folderu wyszukiwanego obiektu. W nazwie pliku lub folderu możesz określić systemowe zmienne środowiskowe i zmienną środowiskową *%USERPROFILE%*. Możesz też stosować symbole wieloznaczne * i ? w nazwie pliku.  
 
                 > [!NOTE]  
-                >  Jeśli podczas określania nazwy pliku lub folderu używać symboli wieloznacznych, ta kombinacja spowodować wytworzenie dużej liczby wyników i może spowodować wysokim wykorzystaniem zasobów na komputerze klienckim i duży ruch w sieci podczas raportowania wyników do programu Configuration Manager.  
+                >  Określ nazwę pliku lub folderu, użyj symboli wieloznacznych ta kombinacja może powodować generowanie dużej liczby wyników i może spowodować wysokim wykorzystaniem zasobów na komputerze klienckim i duże zwiększenie ruchu sieciowego podczas raportowania wyników do programu Configuration Manager.  
 
             -   **Uwzględnij podfoldery** — Włącz tę opcję, jeśli chcesz dodatkowo przeszukać wszystkie podfoldery znajdujące się we wskazanej ścieżce.  
 
@@ -231,13 +228,13 @@ Użyj programu System Center Configuration Manager **niestandardowych systemu Wi
 
         -   **Zapytanie XPath**  
 
-            -   **Ścieżka** — określ ścieżkę do pliku XML na komputerach klienckich do użycia w celu oceny zgodności. Program Configuration Manager obsługuje wszystkie zmienne środowiskowe systemu Windows i *% USERPROFILE %* zmiennej użytkownika w nazwie ścieżki.  
+            -   **Ścieżka** — określ ścieżkę do pliku XML na komputerach klienckich do użycia w celu oceny zgodności. Program Configuration Manager obsługuje korzystanie z wszystkich zmiennych środowiskowych systemu Windows i *% USERPROFILE %* zmiennej użytkownika w nazwie ścieżki.  
 
             -   **Nazwa pliku XML** — określ nazwę pliku zawierającego zapytanie XML do użycia w celu oceny zgodności na komputerach klienckich.  
 
             -   **Uwzględnij podfoldery** — Włącz tę opcję, jeśli chcesz dodatkowo przeszukać wszystkie podfoldery znajdujące się we wskazanej ścieżce.  
 
-            -   **Ten plik jest skojarzony z aplikacją 64-bitowych** — wybierz, czy lokalizacja pliku 64-bitowy system (*% windir %*\System32) powinien przeszukiwane oprócz lokalizacji pliku 32-bitowy system (*% windir %*\Syswow64) na komputerach klienckich programu Configuration Manager z systemem 64-bitowej wersji systemu Windows.  
+            -   **Ten plik jest skojarzony z aplikacją 64-bitowych** — wybierz, czy lokalizacja plików systemu 64-bitowego (*% windir %*\System32) powinna być dodatkowo przeszukiwana oprócz lokalizacji plików systemu 32-bitowych (*% windir %*\Syswow64) na komputerach klienckich programu Configuration Manager z uruchomioną 64-bitowej wersji systemu Windows.  
 
             -   **Zapytanie XPath** — określ prawidłowe pełne zapytanie w języku XML Path Language (XPath) do użycia w celu oceny zgodności na komputerach klienckich.  
 
@@ -247,7 +244,7 @@ Użyj programu System Center Configuration Manager **niestandardowych systemu Wi
 
              Jeśli zapytanie XPath jest nieprawidłowe, to ustawienie jest traktowane jako niezgodne na komputerach klienckich.  
 
-    -   **Typ danych:** Na liście wybierz format, w którym warunek zwraca dane, zanim zostaną użyte do oceny ustawienie. Dla niektórych typów ustawień lista **Typ danych** nie jest wyświetlana.  
+    -   **Typ danych:** Na liście wybierz format, w którym warunek zwraca dane, zanim zostanie on użyty do oceny ustawienia. Dla niektórych typów ustawień lista **Typ danych** nie jest wyświetlana.  
 
         > [!NOTE]  
         >  Typ danych **Liczba zmiennoprzecinkowa** obsługuje tylko 3 cyfry po przecinku.  
@@ -270,16 +267,16 @@ Użyj programu System Center Configuration Manager **niestandardowych systemu Wi
 
 2.  W oknie dialogowym **Tworzenie reguły** podaj następujące informacje:  
 
-    -   **Nazwa:** Wprowadź nazwę zasady zgodności.  
+    -   **Nazwa:** Wprowadź nazwę reguły zgodności.  
 
-    -   **Opis:** Wprowadź opis zasady zgodności.  
+    -   **Opis:** Wprowadź opis reguły zgodności.  
 
     -   **Wybrane ustawienie:** Kliknij przycisk **Przeglądaj** otworzyć **wybierz ustawienie** okno dialogowe. Wybierz ustawienie, dla którego chcesz zdefiniować regułę, lub kliknij pozycję **Nowe ustawienie**. Po zakończeniu kliknij pozycję **Wybierz**.  
 
         > [!NOTE]  
         >  Możesz również kliknąć pozycję **Właściwości**, aby wyświetlić informacje dotyczące aktualnie wybranego ustawienia.  
 
-    -   **Typ reguły:** Wybierz typ zasady zgodności, którego chcesz używać:  
+    -   **Typ reguły:** Wybierz typ reguły zgodności, którego chcesz użyć:  
 
         -   **Wartość** — tworzy regułę porównującą wartość zwróconą przez element konfiguracji z określoną wartością.  
 
@@ -301,7 +298,7 @@ Użyj programu System Center Configuration Manager **niestandardowych systemu Wi
             |Jedno z|W polu tekstowym określ jedną pozycję w każdym wierszu.|  
             |Żadne z|W polu tekstowym określ jedną pozycję w każdym wierszu.|  
 
-        -   **Koryguj niezgodne reguły, jeśli są obsługiwane** — wybierz tę opcję, jeśli program Configuration Manager ma automatycznie korygować niezgodne reguły. Program Configuration Manager może automatycznie rozwiązać następujące reguły:  
+        -   **Koryguj niezgodne reguły, jeśli są obsługiwane** — wybierz tę opcję, jeśli program Configuration Manager ma automatycznie korygować niezgodne reguły. Menedżer konfiguracji automatycznie koryguje następujące typy reguł:  
 
             -   **Wartość rejestru** — wartość rejestru jest korygowana, jeśli jest niezgodna, i jest tworzona, jeśli nie istnieje.  
 
@@ -314,7 +311,7 @@ Użyj programu System Center Configuration Manager **niestandardowych systemu Wi
 
         -   **Zgłaszaj brak zgodności, jeśli wystąpienie tego ustawienia nie zostanie odnalezione** — element konfiguracji zgłasza niezgodność, jeśli to ustawienie nie zostanie znalezione na komputerach klienckich.  
 
-        -   **Waga niezgodności raportów:** Określ poziom ważności, który jest zgłaszany (w raportach programu Configuration Manager) w przypadku tej zasady zgodności zakończy się niepowodzeniem. Poniżej przedstawiono dostępne poziomy ważności:  
+        -   **Waga niezgodności do raportów:** Określ poziom ważności zgłaszany (w raportach programu Configuration Manager) w przypadku niepowodzenia reguły niezgodności. Poniżej przedstawiono dostępne poziomy ważności:  
 
             -   **Brak** komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia.  
 
@@ -322,9 +319,9 @@ Użyj programu System Center Configuration Manager **niestandardowych systemu Wi
 
             -   **Ostrzeżenie** komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **ostrzeżenie**.  
 
-            -   **Krytyczne** komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczny**.  
+            -   **Krytyczne** komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczne**.  
 
-            -   **Krytyczne ze zdarzeniem** komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczny**. Ten poziom ważności jest rejestrowany także jako zdarzenie systemu Windows w dzienniku zdarzeń aplikacji.  
+            -   **Krytyczne ze zdarzeniem** komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczne**. Ten poziom ważności jest rejestrowany także jako zdarzenie systemu Windows w dzienniku zdarzeń aplikacji.  
 
         -   Dla typu reguły **Egzystencjalna** podaj następujące informacje:  
 
@@ -337,7 +334,7 @@ Użyj programu System Center Configuration Manager **niestandardowych systemu Wi
 
             -   **Występuje następującą liczbę razy:**  
 
-        -   **Waga niezgodności raportów:** Określ poziom ważności, który jest zgłaszany (w raportach programu Configuration Manager) w przypadku tej zasady zgodności zakończy się niepowodzeniem. Poniżej przedstawiono dostępne poziomy ważności:  
+        -   **Waga niezgodności do raportów:** Określ poziom ważności zgłaszany (w raportach programu Configuration Manager) w przypadku niepowodzenia reguły niezgodności. Poniżej przedstawiono dostępne poziomy ważności:  
 
             -   **Brak** komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia.  
 
@@ -345,9 +342,9 @@ Użyj programu System Center Configuration Manager **niestandardowych systemu Wi
 
             -   **Ostrzeżenie** komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **ostrzeżenie**.  
 
-            -   **Krytyczne** komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczny**.  
+            -   **Krytyczne** komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczne**.  
 
-            -   **Krytyczne ze zdarzeniem** komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczny**. Ten poziom ważności jest rejestrowany także jako zdarzenie systemu Windows w dzienniku zdarzeń aplikacji.  
+            -   **Krytyczne ze zdarzeniem** komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczne**. Ten poziom ważności jest rejestrowany także jako zdarzenie systemu Windows w dzienniku zdarzeń aplikacji.  
 
 3.  Kliknij przycisk **OK**, aby zamknąć okno dialogowe **Tworzenie reguły**.  
 
@@ -358,4 +355,3 @@ Z listy na stronie **Obsługiwane platformy** w **Kreatorze tworzenia elementu k
 
 ## <a name="complete-the-wizard"></a>Ukończ pracę kreatora  
  Na stronie **Podsumowanie** kreatora zapoznaj się z akcjami, które zostaną podjęte, a następnie zakończ pracę kreatora. Nowy element konfiguracji jest wyświetlany w węźle **Elementy konfiguracji** w obszarze roboczym **Zasoby i zgodność**.  
-

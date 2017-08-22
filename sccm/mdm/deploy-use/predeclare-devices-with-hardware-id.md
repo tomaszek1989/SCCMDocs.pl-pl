@@ -2,25 +2,23 @@
 title: "Wstępna deklaracja urządzeń z numery IMEI lub iOS za | Dokumentacja firmy Microsoft"
 description: "Wstępna deklaracja urządzeń firmowych z ich numerami IMEI lub iOS za."
 ms.custom: na
-ms.date: 03/24/2017
+ms.date: 08/15/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ddb4c68e-e7f7-475a-89e2-7379a86e44c4
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: nathbarn
 ms.author: nathbarn
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5eed004bd38a567dfdd4e392300be656a7abe3f7
-ms.openlocfilehash: c692fad43807e54cecbd7ab60284ea740d60617d
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/25/2017
-
+ms.openlocfilehash: 7d139a2c74c0f29604f2f3d9b8e2739364633f17
+ms.sourcegitcommit: db7b7ec347638efd05cdba474e8a8f8535516116
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/16/2017
 ---
 # <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Wstępna deklaracja urządzeń z numery IMEI lub iOS za
 
@@ -30,19 +28,22 @@ Można zidentyfikować urządzenia należące do firmy przez zaimportowanie ich 
 
 Podczas przekazywania numerów seryjnych urządzeń z systemem iOS należące do firmy, muszą być skojarzone z profilem rejestracji w firmie. Następnie można zarejestrować urządzeń, przy użyciu programu device enrollment program (DEP) albo firmy Apple lub narzędziu Apple Configurator, aby wyświetlać je jako należące do firmy.
 
+>[!NOTE]
+>Urządzenia z systemem android, z wyjątkiem urządzeń Samsung Knox Standard, musi mieć kartę SIM predeclare i zarejestrować jako urządzenia należące do firmy z numerem IMEI.
+
 ## <a name="how-to-predeclare-corporate-owned-devices"></a>Jak wstępna deklaracja urządzeń należących do firmy za
 
-1.    W konsoli programu Configuration Manager, przejdź do **zasoby i zgodność** > **omówienie** > **wszystkich firmowych urządzeń** > **wcześniej zadeklarowanej urządzeń**.
+1.  W konsoli programu Configuration Manager, przejdź do **zasoby i zgodność** > **omówienie** > **wszystkich firmowych urządzeń** > **wcześniej zadeklarowanej urządzeń**.
 
 2.  Kliknij przycisk **utworzyć wcześniej zadeklarowanej urządzeń**. Zostanie otwarty Kreator tworzenia wcześniej zadeklarowanej urządzeń.
 
-3.    Wybierz jak chcesz dodać informacje o urządzeniu:
+3.  Wybierz jak chcesz dodać informacje o urządzeniu:
 
-     -    **Przekaż plik CSV zawierający IMEI lub numery seryjne i szczegóły**
+     -  **Przekaż plik CSV zawierający IMEI lub numery seryjne i szczegóły**
 
         Dla tej opcji, kliknij przycisk **Przeglądaj** Aby określić plik CSV zawierający informacje do wstępna deklaracja urządzeń należących do firmy za. Plik CSV musi być poprawnie sformatowana. Aby uzyskać więcej informacji, zobacz [Format przekazywania CSV plików](#format-for-uploading-csv-files).
 
-     -    **Ręcznie Dodaj IMEI lub numery seryjne i szczegóły**
+     -  **Ręcznie Dodaj IMEI lub numery seryjne i szczegóły**
 
         Aby ręcznie wprowadzić informacje, wpisz numer seryjny numer lub iOS IMEI i szczegóły dla urządzeń. Aby kontynuować, popraw jakiekolwiek błędy lub ostrzeżenia.
 
@@ -67,10 +68,10 @@ Plik CSV, który umożliwia identyfikowanie urządzeń za pomocą numeru seryjne
 | IMEI #  | numer seryjny systemu iOS  | SYSTEM OPERACYJNY | Szczegóły |
 |------------ |---------------|-----|-----|
 | 123456789012345    |   | SYSTEMU WINDOWS | Należące do firmy urządzenia z systemem Windows|
-|   | A1B2C3D4E5C6 | DLA SYSTEMU IOS |     Urządzenia z systemem iOS należące do firmy|
-| 223456789012345 | E6D5C4B3A210 |   DLA SYSTEMU IOS |     Inne urządzenie z systemem iOS|
-| 323456789012345 |        |   DLA SYSTEMU IOS |     Trzeci urządzenia z systemem iOS|
-| 123456789012346 |         |   ANDROID |     Należące do firmy urządzenia z systemem Android|
+|   | A1B2C3D4E5C6 | DLA SYSTEMU IOS |  Urządzenia z systemem iOS należące do firmy|
+| 223456789012345 | E6D5C4B3A210 |   DLA SYSTEMU IOS |  Inne urządzenie z systemem iOS|
+| 323456789012345 |        |   DLA SYSTEMU IOS |    Trzeci urządzenia z systemem iOS|
+| 123456789012346 |         |   ANDROID |   Należące do firmy urządzenia z systemem Android|
 
 Nie dołączaj wiersz nagłówków w pliku CSV. W poniższym przykładzie przedstawiono te same dane przykładowe w formacie CSV:
 
@@ -87,4 +88,3 @@ Kolumn w pliku CSV akceptuje następujące wartości:
 | Kolumna 1 | Kolumna 2 | Kolumna 3 | Kolumna 4 |
 |---|---|---|---|
 |Numer IMEI, bez spacji | numer seryjny systemu iOS | IOS, WINDOWS lub systemu ANDROID | Szczegóły urządzenia opcjonalne (limit to 1024 znaków) |
-

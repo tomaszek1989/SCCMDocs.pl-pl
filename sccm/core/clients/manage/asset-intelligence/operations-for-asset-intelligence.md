@@ -1,32 +1,29 @@
 ---
-title: "Analiza zasobów | Dokumentacja firmy Microsoft"
-description: "Wykonywać typowe zadania inteligencji zasobów programu System Center Configuration Manager."
+title: "Użyj analizy zasobów | Dokumentacja firmy Microsoft"
+description: "Wykonywać typowe zadania analizy zasobów w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 2/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e8159bd9-5c2b-4d25-82f9-78fcfd732ba9
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9c5d1e48b76392beaf54b5377c69b648537e86f8
 ms.openlocfilehash: 17168e26f13340847928f6e3623115cd4b55997b
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-use-asset-intelligence-in-system-center-configuration-manager"></a>Jak używać inteligencji zasobów programu System Center Configuration Manager
+# <a name="how-to-use-asset-intelligence-in-system-center-configuration-manager"></a>Jak używać analizy zasobów w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 Ten temat zawiera informacje ułatwiające zarządzanie typowych zadań analizy zasobów w hierarchii programu System Center Configuration Manager:  
 
@@ -36,12 +33,12 @@ Ten temat zawiera informacje ułatwiające zarządzanie typowych zadań analizy 
 ###  <a name="BKMK_AssetIntelligenceHomePage"></a> Strona główna Analiza zasobów  
  Na stronie głównej **Analiza zasobów** jest wyświetlany pulpit nawigacyjny podsumowania zawierający informacje o katalogu analizy zasobów. Na stronie głównej możesz wyświetlać informacje o synchronizacji katalogu i stanie spisanego oprogramowania. Strona główna **Analiza zasobów** jest podzielona na następujące sekcje:  
 
--   **Synchronizacja katalogu**: Informacje dotyczące tego, czy jest włączona funkcja analizy zasobów, bieżący stan punktu synchronizacji analizy zasobów, harmonogram synchronizacji, czy zaimportować zestawienie licencji klienta, ostatniej aktualizacji stanu i czas dla następnej zaplanowanej aktualizacji i liczbę zmian, które wystąpiły po zainstalowaniu systemu lokacji punktu synchronizacji analizy zasobów.  
+-   **Synchronizacja katalogu**: Informacje na temat tego, czy analiza zasobów jest włączona, bieżący stan punktu synchronizacji analizy zasobów, harmonogramie synchronizacji, czy zestawienie licencji klienta jest zaimportowane, ostatniej aktualizacji stanu i podczas następnej zaplanowanej aktualizacji oraz liczbę zmian, które wystąpiły po zainstalowaniu systemu lokacji punktu synchronizacji analizy zasobów.  
 
     > [!NOTE]  
     >  Sekcja synchronizacji katalogu analizy zasobów jest wyświetlana na stronie **Analiza zasobów** tylko wtedy, gdy zainstalowano rolę systemu lokacji punktu synchronizacji analizy zasobów.  
 
--   **Stan oprogramowania spisanych**: Zawiera liczbę i odsetek dodawanych do spisu oprogramowania, kategorie oprogramowania i rodziny oprogramowania, które są identyfikowane przez firmę Microsoft, które są identyfikowane przez użytkownika administracyjnego, w toku identyfikacji online lub niezidentyfikowane i nieoczekujące. Informacje wyświetlane w formacie tabeli zawierają liczbę elementów w każdej kategorii, natomiast informacje wyświetlane na wykresie przedstawiają odsetek dla każdej z nich.  
+-   **Stan spisanego oprogramowania**: Zawiera ilość i odsetek spisanego oprogramowania, kategorie oprogramowania i rodziny oprogramowania, które są identyfikowane przez firmę Microsoft, zidentyfikowane przez użytkownika administracyjnego, będące w toku identyfikacji online lub niezidentyfikowane i nieoczekujące. Informacje wyświetlane w formacie tabeli zawierają liczbę elementów w każdej kategorii, natomiast informacje wyświetlane na wykresie przedstawiają odsetek dla każdej z nich.  
 
  Poniższa procedura umożliwia wyświetlenie informacji dotyczących analizy zasobów na stronie głównej **Analiza zasobów** .  
 
@@ -52,7 +49,7 @@ Ten temat zawiera informacje ułatwiające zarządzanie typowych zadań analizy 
 2.  W obszarze roboczym **Zasoby i zgodność** kliknij pozycję **Analiza zasobów**. Zostaną wyświetlone raporty analizy zasobów.  
 
 ###  <a name="BKMK_AssetIntelligenceReports"></a> Raporty analizy zasobów  
- Istnieje ponad 60 raportów analizy zasobów, które przedstawiają informacje zebrane w ramach analizy zasobów. Wiele z tych raportów łączy się z bardziej szczegółowymi raportami, w których możesz znaleźć ogólne informacje, a następnie przejść do informacji bardziej szczegółowych. Raporty analizy zasobów znajdują się w konsoli programu Configuration Manager w **monitorowanie** obszaru roboczego, w obszarze **raportowania** węzła. Raporty zapewniają informacje dotyczące sprzętu, zarządzania licencjami oraz oprogramowania. Aby uzyskać więcej informacji na temat raportów w programie Configuration Manager, zobacz [raportowania w programie System Center Configuration Manager](../../../../core/servers/manage/reporting.md).  
+ Istnieje ponad 60 raportów analizy zasobów, które przedstawiają informacje zebrane w ramach analizy zasobów. Wiele z tych raportów łączy się z bardziej szczegółowymi raportami, w których możesz znaleźć ogólne informacje, a następnie przejść do informacji bardziej szczegółowych. Raporty analizy zasobów znajdują się w konsoli programu Configuration Manager w **monitorowanie** obszaru roboczego, w obszarze **raportowania** węzła. Raporty zapewniają informacje dotyczące sprzętu, zarządzania licencjami oraz oprogramowania. Aby uzyskać więcej informacji o raportach w programie Configuration Manager, zobacz [raportowania w programie System Center Configuration Manager](../../../../core/servers/manage/reporting.md).  
 
 > [!NOTE]  
 >  Informacje o liczbach i licencjach zainstalowanych tytułów oprogramowania wyświetlane w raportach analizy zasobów mogą się różnić od rzeczywistej liczby zainstalowanych tytułów oprogramowania lub licencji używanych w środowisku z powodu złożonych zależności i ograniczeń występujących podczas tworzenia spisu informacji o licencjach dla tytułów oprogramowania zainstalowanych w środowiskach przedsiębiorstw. Raportów analizy zasobów nie należy używać jako jedynego źródła informacji podczas określania zgodności zakupionych licencji na oprogramowanie.  
@@ -71,10 +68,10 @@ Ten temat zawiera informacje ułatwiające zarządzanie typowych zadań analizy 
 3.  Wybierz raport analizy zasobów, który chcesz uruchomić, a następnie na karcie **Narzędzia główne** w grupie **Grupa raportów** kliknij polecenie **Uruchom**.  
 
 ##  <a name="BKMK_SynchronizeTheCatalog"></a> Synchronizacja katalogu analizy zasobów  
- Możesz zsynchronizować lokalny katalog analizy zasobów z programem System Center Online, aby pobrać najnowszą kategoryzację tytułów oprogramowania. W przypadku ręcznego zażądania synchronizacji katalogu z programem System Center Online wykonanie procesu synchronizacji z programem System Center Online może zająć 15 minut lub dłużej. Aktualizacje programu Configuration Manager **ostatniej pomyślnej aktualizacji** ustawienie na **analizy zasobów** strona główna z bieżącym czasem dla po pomyślnym zakończeniu synchronizacji.  
+ Możesz zsynchronizować lokalny katalog analizy zasobów z programem System Center Online, aby pobrać najnowszą kategoryzację tytułów oprogramowania. W przypadku ręcznego zażądania synchronizacji katalogu z programem System Center Online wykonanie procesu synchronizacji z programem System Center Online może zająć 15 minut lub dłużej. Aktualizacje programu Configuration Manager **Ostatnia pomyślna aktualizacja** ustawienie **analizy zasobów** strony głównej przy użyciu bieżącego czasu po pomyślnym zakończeniu synchronizacji.  
 
 > [!NOTE]  
->  Przed użyciem procedur należy zainstalować rolę systemu lokacji punktu synchronizacji analizy zasobów. Aby uzyskać informacje o instalowaniu punkt synchronizacji analizy zasobów, zobacz [Konfigurowanie analizy zasobów w programie System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md).  
+>  Przed użyciem procedur należy zainstalować rolę systemu lokacji punktu synchronizacji analizy zasobów. Aby uzyskać informacje o instalowaniu punktu synchronizacji analizy zasobów, zobacz [Konfigurowanie analizy zasobów w programie System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md).  
 
  Poniższa procedura umożliwia utworzenie harmonogramu synchronizacji katalogu analizy zasobów.  
 
@@ -181,7 +178,7 @@ Ten temat zawiera informacje ułatwiające zarządzanie typowych zadań analizy 
  Informacje o wymaganiach sprzętowych mogą pomóc w sprawdzeniu, czy komputery spełniają wymagania sprzętowe tytułów oprogramowania zanim zostaną wyznaczone w celu wdrożenia oprogramowania. Wiele wymagań sprzętowych jest wstępnie zdefiniowanych w katalogu analizy zasobów, a użytkownik może utworzyć dodatkowe informacje o wymaganiach sprzętowych, aby spełnić wymagania niestandardowe. Stan sprawdzania poprawności dla wszystkich wstępnie zdefiniowanych wymagań sprzętowych to zawsze **Zweryfikowane**, a zdefiniowane przez użytkownika informacje o wymaganiach sprzętowych dodane do katalogu analizy zasobów mają stan **Zdefiniowane przez użytkownika**.  
 
 > [!IMPORTANT]  
->  Wymagania sprzętowe wyświetlane w konsoli programu Configuration Manager są pobierane z katalogu analizy zasobów na komputerze lokalnym i nie są oparte na informacjach tytuł dodawanych do spisu oprogramowania od klientów programu System Center 2012 Configuration Manager. Informacje dotyczące wymagań sprzętowych nie są aktualizowane w ramach procesu synchronizacji z usługą System Center Online. Możesz utworzyć zdefiniowane przez użytkownika wymagania sprzętowe dla spisanego oprogramowania, które nie ma skojarzonych wymagań sprzętowych.  
+>  Wymagania sprzętowe wyświetlane w konsoli programu Configuration Manager są pobierane z katalogu analizy zasobów na komputerze lokalnym i nie są oparte na informacjach dotyczących tytułów oprogramowania spisanych z klientów programu System Center 2012 Configuration Manager. Informacje dotyczące wymagań sprzętowych nie są aktualizowane w ramach procesu synchronizacji z usługą System Center Online. Możesz utworzyć zdefiniowane przez użytkownika wymagania sprzętowe dla spisanego oprogramowania, które nie ma skojarzonych wymagań sprzętowych.  
 
  Poniższa procedura umożliwia utworzenie zdefiniowanych przez użytkownika wymagań sprzętowych.  
 
@@ -195,17 +192,17 @@ Ten temat zawiera informacje ułatwiające zarządzanie typowych zadań analizy 
 
 4.  Na stronie **Ogólne** podaj następujące informacje:  
 
-    1.  **Tytuł oprogramowania**: Określa tytuł oprogramowania, dla którego są skojarzone wymagania sprzętowe. Tytuł oprogramowania nie może istnieć w katalogu analizy zasobów.  
+    1.  **Tytuł oprogramowania**: Określa tytuł oprogramowania, dla której są skojarzone wymagania sprzętowe. Tytuł oprogramowania nie może istnieć w katalogu analizy zasobów.  
 
-    2.  **Stan sprawdzania poprawności**: Wyświetla stan sprawdzania poprawności jako **zdefiniowane przez użytkownika** wymagania sprzętowe. Nie można modyfikować tego ustawienia.  
+    2.  **Stan sprawdzania poprawności**: Wyświetla stan sprawdzania poprawności jako **zdefiniowane przez użytkownika** wymagań sprzętowych. Nie można modyfikować tego ustawienia.  
 
-    3.  **Minimalna Procesora (MHz)**: Określa minimalną szybkość procesora, (w MHz), wymagany przez tytułu oprogramowania.  
+    3.  **Minimalna szybkość CPU (MHz)**: Określa minimalną szybkość procesora w megahercach (MHz) wymaganą przez tytuł oprogramowania.  
 
-    4.  **Minimalna ilość pamięci RAM (KB)**: Określa minimalną ilość pamięci RAM, w kilobajtach (KB), wymagany przez tytułu oprogramowania.  
+    4.  **Minimalna ilość pamięci RAM (KB)**: Określa minimalną ilość pamięci RAM w kilobajtach (KB) wymaganą przez tytuł oprogramowania.  
 
-    5.  **Minimalna ilość miejsca (KB)**: Określa minimalna ilość wolnego miejsca (w KB) wymagane przez tytułu oprogramowania.  
+    5.  **Minimalna ilość miejsca (KB)**: Określa minimalną ilość wolnego miejsca, w artykule bazy wiedzy wymaganą przez tytuł oprogramowania.  
 
-    6.  **Minimalny rozmiar (KB)**: Określa rozmiar minimalny dysku twardego (w KB) wymagane przez tytułu oprogramowania.  
+    6.  **Minimalny rozmiar dysku (KB)**: Określa minimalny rozmiar dysku twardego, w artykule bazy wiedzy wymaganą przez tytuł oprogramowania.  
 
      Kliknij przycisk **Dalej**.  
 
@@ -233,20 +230,20 @@ Ten temat zawiera informacje ułatwiające zarządzanie typowych zadań analizy 
 
 5.  Na karcie **Ogólne** możesz zmodyfikować następujące informacje o kategoryzacji:  
 
-    -   **Nazwa produktu**: Określa nazwę tytułu dodawanych do spisu oprogramowania.  
+    -   **Nazwa produktu**: Określa nazwę spisanego tytułu oprogramowania.  
 
-    -   **Dostawca**: Określa nazwę dostawcy, która stworzyła tytuł dodawanych do spisu oprogramowania.  
+    -   **Dostawcy**: Określa nazwę dostawcy, który opracował spisany tytuł oprogramowania.  
 
-    -   **Kategoria**: Określa kategorię oprogramowania, która jest aktualnie przypisane do tytułu dodawanych do spisu oprogramowania.  
+    -   **Kategoria**: Określa kategorię oprogramowania, która jest aktualnie przypisana do spisanego tytułu oprogramowania.  
 
-    -   **Rodzina**: Określa rodzinę oprogramowania aktualnie przypisane do tytułu dodawanych do spisu oprogramowania.  
+    -   **Rodzina**: Określa rodziny oprogramowania, który jest aktualnie przypisana do spisanego tytułu oprogramowania.  
 
 6.  Kliknij przycisk **OK** , aby zapisać zmiany.  
 
  Poniższa procedura umożliwia przywrócenie pierwotnych informacji o kategoryzacji danego oprogramowania.  
 
 ### <a name="revert-categorization-information-to-original-settings-for-software"></a>Przywracanie pierwotnych ustawień informacji o kategoryzacji danego oprogramowania  
- Program Configuration Manager przechowuje informacje kategoryzacji uzyskany z programu System Center Online w bazie danych. Tych informacji nie można usunąć. Po zmodyfikowaniu informacji o kategoryzacji można przywrócić informacje o kategoryzacji pochodzące z programu System Center Online. Pierwotne ustawienia można przywrócić również w przypadku spisanego oprogramowania, które nie znajduje się w katalogu analizy zasobów.  
+ Program Configuration Manager przechowuje informacje o kategorii uzyskane z programu System Center Online w bazie danych. Tych informacji nie można usunąć. Po zmodyfikowaniu informacji o kategoryzacji można przywrócić informacje o kategoryzacji pochodzące z programu System Center Online. Pierwotne ustawienia można przywrócić również w przypadku spisanego oprogramowania, które nie znajduje się w katalogu analizy zasobów.  
 
  Poniższa procedura umożliwia przywrócenie pierwotnych ustawień informacji o kategoryzacji.  
 
@@ -281,7 +278,7 @@ Ten temat zawiera informacje ułatwiające zarządzanie typowych zadań analizy 
 -   Źródło tytułu oprogramowania nie jest przechowywane w katalogu programu System Center Online. Jednak tytułów aplikacji zawierających informacje poufne lub zastrzeżone nie należy przesyłać do kategoryzacji przez program System Center Online.  
 
 > [!NOTE]  
->  Aby uzyskać więcej informacji dotyczących prywatności analizy zasobów, zobacz [bezpieczeństwo i prywatność inteligencji zasobów programu System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/security-and-privacy-for-asset-intelligence.md).  
+>  Aby uzyskać więcej informacji dotyczących prywatności analizy zasobów, zobacz [bezpieczeństwo i prywatność analizy zasobów w programie System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/security-and-privacy-for-asset-intelligence.md).  
 
  Poniższa procedura umożliwia zażądanie kategoryzacji tytułu oprogramowania w katalogu analizy zasobów przez program System Center Online.  
 
@@ -294,7 +291,7 @@ Ten temat zawiera informacje ułatwiające zarządzanie typowych zadań analizy 
 3.  Wybierz jedną lub wiele nazw produktów do przesłania do programu System Center Online w celu kategoryzacji. Tylko tytuły oprogramowania bez kategorii można przesyłać do programu System Center Online w celu kategoryzacji. Jeśli spisany tytuł oprogramowania został skategoryzowany przez administratora i, w wyniku tego, ma stan Zdefiniowane przez użytkownika, przed przesłaniem do programu System Center Online w celu kategoryzacji kliknij prawym przyciskiem myszy spisany tytuł oprogramowania, a następnie kliknij polecenie **Przywróć** , aby przywrócić tytuł oprogramowania do stanu **Bez kategorii** .  
 
     > [!NOTE]  
-    >  Program Configuration Manager może przetwarzać maksymalnie 100 tytułów oprogramowania do kategoryzacji naraz. Jeśli wybierzesz więcej niż 100 tytułów oprogramowania, tylko pierwsze 100 tytułów zostanie przetworzonych. Aby skategoryzować pozostałe tytuły oprogramowania, należy je przesłać w partiach zawierających mniej niż 100 tytułów.  
+    >  Menedżer konfiguracji może przetwarzać maksymalnie 100 tytułów oprogramowania do kategoryzacji naraz. Jeśli wybierzesz więcej niż 100 tytułów oprogramowania, tylko pierwsze 100 tytułów zostanie przetworzonych. Aby skategoryzować pozostałe tytuły oprogramowania, należy je przesłać w partiach zawierających mniej niż 100 tytułów.  
 
     > [!TIP]  
     >  Kliknij kolumnę **Stan** , aby posortować według stanu sprawdzania poprawności. Pozwala to wyświetlić wszystkie nazwy produktów bez kategorii i szybko wybrać wiele pozycji, aby je przesłać w celu kategoryzacji.  
@@ -327,15 +324,14 @@ Ten temat zawiera informacje ułatwiające zarządzanie typowych zadań analizy 
 
 5.  Przejrzyj następujące informacje:  
 
-    -   **Wartość lokalnego**: Określa informacje o kategoryzacji istniejącego oprogramowania w katalogu analizy zasobów powodujące konflikt z nowszej szczegóły kategoryzacji oprogramowania System Center Online.  
+    -   **Wartości lokalnej**: Określa informacje o kategoryzacji oprogramowania w katalogu analizy zasobów powodujący konflikt z nowszej szczegółami kategoryzacji oprogramowania System Center Online.  
 
-    -   **Pobrane wartość**: Określa nowy System Center Online kategoryzacji informacje o oprogramowaniu sprzeczne informacje kategoryzacji oprogramowania katalogu analizy zasobów.  
+    -   **Pobrana wartość**: Określa nowy System Center Online informacje o kategoryzacji oprogramowania powodujące konflikt analizy zasobów katalogu informacje o kategoryzacji oprogramowania.  
 
 6.  Wybierz jedno z następujących ustawień, aby rozwiązać konflikt szczegółów oprogramowania:  
 
-    -   **Nie należy zmieniać wartości informacji o katalogu edytowanym lokalnie**: Rozwiązuje konflikt szczegóły oprogramowania, zachowując istniejące informacje kategoryzacji oprogramowania katalogu analizy zasobów. Po wybraniu tego ustawienia stan tytułu oprogramowania zostanie zmieniony z **Aktualizowalne** na **Zdefiniowane przez użytkownika**.  
+    -   **Nie zmieniaj lokalnie edytowanej wartości informacji katalogu**: Rozwiązuje konflikt szczegółów oprogramowania przez zachowanie istniejące informacje o kategoryzacji oprogramowania katalogu analizy zasobów. Po wybraniu tego ustawienia stan tytułu oprogramowania zostanie zmieniony z **Aktualizowalne** na **Zdefiniowane przez użytkownika**.  
 
-    -   **Zastąpienie wartości informacji o katalogu edytowanym lokalnie pobrany System Center Online wartość**: Rozwiązuje konflikt szczegóły oprogramowania przez zastąpienie istniejących informacji kategoryzacji oprogramowania katalogu analizy zasobów z nowymi informacjami uzyskanymi z programu System Center Online. Po wybraniu tego ustawienia stan tytułu oprogramowania zostanie zmieniony z **Aktualizowalne** na **Zweryfikowane**.  
+    -   **Zastąp lokalnie edytowaną wartość informacji katalogu pobrany System Center Online wartość**: Rozwiązuje konflikt szczegółów oprogramowania przez zastąpienie istniejącej informacje o kategoryzacji oprogramowania katalogu analizy zasobów z nowymi informacjami uzyskanymi z programu System Center Online. Po wybraniu tego ustawienia stan tytułu oprogramowania zostanie zmieniony z **Aktualizowalne** na **Zweryfikowane**.  
 
      Kliknij przycisk **OK** , aby zapisać rozwiązanie konfliktu.  
-

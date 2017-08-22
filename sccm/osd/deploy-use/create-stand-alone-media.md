@@ -6,23 +6,20 @@ ms.date: 06/07/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c6b9ccd2-78d9-4f0e-b25a-70d0866300ba
-caps.latest.revision: 21
-caps.handback.revision: 0
+caps.latest.revision: "21"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c6ee0ed635ab81b5e454e3cd85637ff3e20dbb34
 ms.openlocfilehash: 98f902429ad1b9965a0dc4cc2e1bd071ad5c0779
-ms.contentlocale: pl-pl
-ms.lasthandoff: 06/08/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="create-stand-alone-media-with-system-center-configuration-manager"></a>Tworzenie nośnika samodzielnego w programie System Center Configuration Manager
 
@@ -176,4 +173,3 @@ Przed uruchomieniem Kreatora tworzenia nośnika sekwencji zadań w celu utworzen
 |Zainstaluj system Windows i program ConfigMgr|Ten krok sekwencji zadań należy zainstalować oprogramowanie klienta programu Configuration Manager. Configuration Manager instaluje i rejestruje identyfikator GUID klienta programu Configuration Manager. Niezbędne parametry instalacji można przypisać w oknie **Właściwości instalacji** .|  
 |Przywróć pliki użytkownika i ustawienia — **(Nowa grupa sekwencji zadań)**|Utwórz następną podgrupę sekwencji zadań. Ta podgrupa zawiera kroki niezbędne do przywrócenia stanu użytkownika.|  
 |Przywróć stan użytkownika|Ten krok sekwencji zadań umożliwia zainicjowanie narzędzia do migracji stanu użytkowników (USMT) w celu przywrócenia stanu i ustawień użytkownika przechwyconych w ramach akcji przechwytywania stanu użytkownika na komputerze docelowym.|  
-

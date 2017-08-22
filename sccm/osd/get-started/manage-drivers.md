@@ -1,40 +1,37 @@
 ---
 title: "Zarządzanie sterownikami — Configuration Manager | Dokumentacja firmy Microsoft"
-description: "Katalog sterowników programu Configuration Manager do importowania sterowników urządzeń, grupy sterowników w pakietach, a dystrybucję tych pakietów do punktów dystrybucji."
+description: "Aby zaimportować sterowniki urządzeń, sterowniki grupy w pakiety, przy użyciu katalogu sterowników programu Configuration Manager, a następnie dystrybucji tych pakietów do punktów dystrybucji."
 ms.custom: na
 ms.date: 01/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 84802d55-112e-4f7f-9a48-74a80d91a0f4
-caps.latest.revision: 10
-caps.handback.revision: 0
+caps.latest.revision: "10"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
 ms.openlocfilehash: 87ab9925717a307cbda3cea1f2e470ae012fa067
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="manage-drivers-in-system-center-configuration-manager"></a>Zarządzanie sterownikami w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager udostępnia katalog sterowników, którego można użyć do zarządzania sterownikami urządzeń Windows w środowisku programu Configuration Manager. Katalogu sterowników można używać do importowania sterowników urządzeń do programu Configuration Manager, do grupowania ich w pakiety oraz do dystrybucji tych pakietów do punktów dystrybucji, gdzie można je podczas wdrażania systemu operacyjnego. Sterowników urządzeń można użyć w przypadku instalacji pełnego systemu operacyjnego na komputerze docelowym i instalowania systemu Windows PE za pomocą obrazu rozruchowego. Sterowniki urządzeń dla systemu Windows zawierają plik informacji instalatora (INF) oraz wszelkie dodatkowe pliki wymagane do obsługi urządzenia. Po wdrożeniu systemu operacyjnego programu Configuration Manager pobiera informacje o sprzęcie i platformie dla urządzenia z pliku INF. Użyj następującego do zarządzania sterownikami w środowisku programu Configuration Manager.
+System Center Configuration Manager udostępnia katalog sterowników, którego można użyć do zarządzania sterownikami urządzeń Windows w środowisku programu Configuration Manager. Katalogu sterowników można używać do importowania sterowników urządzeń do programu Configuration Manager, do grupowania ich w pakiety oraz do dystrybucji tych pakietów do punktów dystrybucji, w której będą dostępne podczas wdrażania systemu operacyjnego. Sterowników urządzeń można użyć w przypadku instalacji pełnego systemu operacyjnego na komputerze docelowym i instalowania systemu Windows PE za pomocą obrazu rozruchowego. Sterowniki urządzeń dla systemu Windows zawierają plik informacji instalatora (INF) oraz wszelkie dodatkowe pliki wymagane do obsługi urządzenia. Po wdrożeniu systemu operacyjnego programu Configuration Manager pobiera informacje o sprzęcie i platformie dotyczące urządzenia z pliku INF. Użyj następującego polecenia do zarządzania sterownikami w środowisku programu Configuration Manager.
 
 ##  <a name="BKMK_DriverCategories"></a> Kategorie sterowników urządzeń  
- Podczas importowania sterowników urządzeń można je przypisać do kategorii. Kategorie sterowników urządzeń ułatwiają grupowanie sterowników o podobnym przeznaczeniu w katalogu sterowników. Do jednej konkretnej kategorii można na przykład przypisać wszystkie sterowniki kart sieciowych. Następnie podczas tworzenia sekwencji zadań obejmującej krok [Automatycznie zastosuj sterowniki](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers) możesz określić specyficzną kategorię sterowników urządzeń. Następnie Menedżer konfiguracji skanowanie sprzętu i wybierze odpowiednie sterowniki z kategorii do użytku przez Instalatora systemu Windows do użycia.  
+ Podczas importowania sterowników urządzeń można je przypisać do kategorii. Kategorie sterowników urządzeń ułatwiają grupowanie sterowników o podobnym przeznaczeniu w katalogu sterowników. Do jednej konkretnej kategorii można na przykład przypisać wszystkie sterowniki kart sieciowych. Następnie podczas tworzenia sekwencji zadań obejmującej krok [Automatycznie zastosuj sterowniki](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers) możesz określić specyficzną kategorię sterowników urządzeń. Programu Configuration Manager skanuje następnie sprzęt i i wybiera odpowiednie sterowniki z tej kategorii do umieszczenia w systemie dla Instalatora systemu Windows do użycia.  
 
 ##  <a name="BKMK_ManagingDriverPackages"></a> Pakiety sterowników  
- Możesz grupować podobne sterowniki urządzeń w pakiety, aby usprawnić wdrażanie systemu operacyjnego. Na przykład możesz utworzyć osobny pakiet sterowników dla każdego producenta komputerów w Twojej sieci. Pakiet sterowników można utworzyć w czasie importowania sterowników do katalogu sterowników w węźle **Pakiety sterowników** . Po utworzeniu pakietu sterowników muszą być dystrybuowane do punktów dystrybucji, z których programu Configuration Manager komputery klienckie mogą instalować sterowniki w razie potrzeby. Rozważ następujące opcje:  
+ Możesz grupować podobne sterowniki urządzeń w pakiety, aby usprawnić wdrażanie systemu operacyjnego. Na przykład możesz utworzyć osobny pakiet sterowników dla każdego producenta komputerów w Twojej sieci. Pakiet sterowników można utworzyć w czasie importowania sterowników do katalogu sterowników w węźle **Pakiety sterowników** . Po utworzeniu pakietu sterowników, muszą być dystrybuowane do punktów dystrybucji, z których programu Configuration Manager komputery klienckie można zainstalować sterowników w razie potrzeby. Rozważ następujące opcje:  
 
 -   W utworzonym pakiecie sterowników lokalizacja źródłowa pakietu musi wskazywać na pusty udział sieciowy, który nie jest używany przez inny pakiet sterowników, a dostawca programu SMS musi mieć przypisane uprawnienie do zapisu i do odczytu tej lokalizacji.  
 
@@ -84,18 +81,18 @@ System Center Configuration Manager udostępnia katalog sterowników, którego m
 |**Utwórz wstępnie przygotowany plik zawartości**|Tworzy pliki, których można użyć do ręcznego zaimportowania zawartości i skojarzonych metadanych. Wstępnie przygotowanej zawartości należy używać w przypadku ograniczonej przepustowości sieci między serwerem lokacji a punktami dystrybucji, w których jest przechowywany pakiet sterowników.|  
 |**Usuwanie**|Usuwa pakiet sterowników z węzła **Pakiety sterowników** .|  
 |**Dystrybuuj zawartość**|Dystrybuuje pakiet sterowników do punktów dystrybucji, grup punktów dystrybucji oraz grup punktów dystrybucji skojarzonych z kolekcjami.|  
-|**Zarządzaj kontami dostępu**|Dodaje, modyfikuje lub usuwa konta dostępu do pakietu sterowników.<br /><br /> Aby uzyskać więcej informacji dotyczących kont dostępu do pakietu, zobacz [kont używanych w programie Configuration Manager](../../core/plan-design/hierarchy/accounts.md).|  
+|**Zarządzaj kontami dostępu**|Dodaje, modyfikuje lub usuwa konta dostępu do pakietu sterowników.<br /><br /> Aby uzyskać więcej informacji dotyczących kont dostępu do pakietu, zobacz [konta używane w programie Configuration Manager](../../core/plan-design/hierarchy/accounts.md).|  
 |**Przenieś**|Przenosi pakiet sterowników do innego folderu w węźle **Pakiety sterowników** .|  
 |**Aktualizuj punkty dystrybucji**|Aktualizuje pakiet sterowników urządzenia we wszystkich punktach dystrybucji, w których pakiet jest przechowywany. Ta akcja umożliwia skopiowanie tylko zawartości zmienionej od jej ostatniej dystrybucji.|  
 |**Właściwości**|Otwiera okno dialogowe **Właściwości** , w którym można sprawdzić i zmienić zawartość oraz właściwości sterownika urządzenia. Można na przykład zmienić nazwę i opis sterownika urządzenia, włączyć go oraz określić platformy, na których można uruchomić dany sterownik urządzenia.|  
 
 ##  <a name="BKMK_DeviceDrivers"></a> Sterowniki urządzeń  
- Możesz instalować sterowniki urządzeń na komputerach docelowych bez uwzględniania ich w obrazie systemu operacyjnego, który jest wdrażany. Program Configuration Manager udostępnia katalog sterowników zawierający odniesienia do wszystkich sterowników urządzeń importowanych do programu Configuration Manager. Katalog sterowników znajduje się w **Biblioteka oprogramowania** obszaru roboczego i składa się z dwóch węzłów: **Sterowniki** i **pakiety sterowników**. W węźle **Sterowniki** wyświetlają się wszystkie sterowniki zaimportowane do katalogu sterowników. Użyj tego węzła na potrzeby odnajdywania szczegółów każdego z zaimportowanych sterowników, modyfikowania sterowników w pakiecie sterowników lub obrazie rozruchowym, włączania lub wyłączania sterownika itd.  
+ Możesz instalować sterowniki urządzeń na komputerach docelowych bez uwzględniania ich w obrazie systemu operacyjnego, który jest wdrażany. Configuration Manager udostępnia katalog sterowników, który zawiera odwołania do wszystkich sterowników urządzeń zaimportowanych do programu Configuration Manager. Katalog sterowników znajduje się w **Biblioteka oprogramowania** obszaru roboczego i składa się z dwóch węzłów: **Sterowniki** i **pakiety sterowników**. W węźle **Sterowniki** wyświetlają się wszystkie sterowniki zaimportowane do katalogu sterowników. Użyj tego węzła na potrzeby odnajdywania szczegółów każdego z zaimportowanych sterowników, modyfikowania sterowników w pakiecie sterowników lub obrazie rozruchowym, włączania lub wyłączania sterownika itd.  
 
 ###  <a name="BKMK_ImportDrivers"></a> Importowanie sterowników urządzeń do katalogu sterowników  
  Przed użyciem sterowników urządzeń w ramach wdrażania systemu operacyjnego należy je zaimportować do katalogu sterowników. Aby lepiej zarządzać sterownikami urządzeń, najlepiej zaimportować tylko te sterowniki, które są planowane do zainstalowania podczas wdrażania systemu operacyjnego. W katalogu sterowników można jednak przechowywać wiele wersji sterowników urządzeń, aby zapewnić łatwą metodę uaktualniania istniejących sterowników na wypadek zmiany wymogów sprzętowych sieci.  
 
- W ramach procesu importowania sterownika urządzenia Configuration Manager odczytuje dostawcy, klasa, wersji, podpisie, obsługiwanym sprzęcie i obsługiwane platformy informacje, które są skojarzone z danym urządzeniem. Domyślnie nazwa sterownika jest przypisywana na podstawie pierwszego obsługiwanego przez niego urządzenia sprzętowego. Później można jednak zmienić nazwę sterownika urządzenia. Lista obsługiwanych platform powstaje na podstawie informacji w pliku INF sterownika. Dokładność tych informacji może się różnić, dlatego po zaimportowaniu sterownika urządzenia do katalogu sterowników należy ręcznie sprawdzić, czy jest on obsługiwany.  
+ W ramach procesu importowania sterownika urządzenia programu Configuration Manager odczytuje dostawcy, klasy, wersji, podpisie, obsługiwanym sprzęcie oraz obsługiwane informacje platformy, które są skojarzone z danym urządzeniem. Domyślnie nazwa sterownika jest przypisywana na podstawie pierwszego obsługiwanego przez niego urządzenia sprzętowego. Później można jednak zmienić nazwę sterownika urządzenia. Lista obsługiwanych platform powstaje na podstawie informacji w pliku INF sterownika. Dokładność tych informacji może się różnić, dlatego po zaimportowaniu sterownika urządzenia do katalogu sterowników należy ręcznie sprawdzić, czy jest on obsługiwany.  
 
  Po zaimportowaniu sterowników urządzeń do katalogu możesz dodać je do pakietów sterowników lub pakietów obrazów rozruchowych.  
 
@@ -114,27 +111,27 @@ System Center Configuration Manager udostępnia katalog sterowników, którego m
 
 4.  Na stronie **Lokalizowanie sterownika** określ następujące opcje, a następnie kliknij przycisk **Dalej**:  
 
-    -   **Importuj wszystkie sterowniki w następującej ścieżce sieciowej (UNC)**: Aby zaimportować wszystkie sterowniki urządzeń, które są zawarte w określonym folderze, podaj ścieżkę sieciową do folderu sterowników urządzeń. Na przykład:  **\\\nazwa_serwera\folder**.  
+    -   **Importuj wszystkie sterowniki w następującej ścieżce sieciowej (UNC)**: Aby zaimportować wszystkie sterowniki urządzeń, które znajdują się w określonym folderze, określ ścieżkę sieciową do folderu sterowników urządzeń. Na przykład:  **\\\nazwa_serwera\folder**.  
 
         > [!NOTE]  
         >  Proces importowania wszystkich sterowników może zająć trochę czasu, jeśli istnieje wiele folderów i wiele plików sterowników (inf).  
 
-    -   **Importuj wybrany sterownik**: Aby zaimportować wybrany sterownik z folderu, określ ścieżkę sieciową (UNC) dla sterownika urządzenia systemu Windows. Plik INF lub masowej magazynu pliku Txtsetup.oem sterownika.  
+    -   **Importuj wybrany sterownik**: Aby zaimportować wybrany sterownik z folderu, określ ścieżkę sieciową (UNC) do sterownika urządzenia systemu Windows. Plik INF lub masowej magazynu pliku Txtsetup.oem sterownika.  
 
-    -   **Wybierz opcję dla zduplikowanych sterowników**: Wybierz, jak program Configuration Manager ma zarządzać kategoriami sterowników po zaimportowaniu zduplikowanego urządzenia.  
+    -   **Wybierz opcję dla zduplikowanych sterowników**: Wybierz, jak program Configuration Manager ma zarządzać kategoriami sterowników po zaimportowaniu dysku zduplikowane urządzenie.  
 
     > [!IMPORTANT]  
     >  Podczas importowania sterowników serwer lokacji musi mieć uprawnienie **Odczyt** w danym folderze. W przeciwnym razie importowanie zakończy się niepowodzeniem.  
 
 5.  Na stronie **Szczegóły sterownika** określ następujące opcje, a następnie kliknij przycisk **Dalej**:  
 
-    -   **Ukryj sterowniki, które nie znajdują się w sieci lub magazynu klasy (dla obrazów rozruchowych)**: To ustawienie umożliwia wyświetlanie tylko sterowniki pamięci masowej i sieci, a ukryć innych sterowników, które zazwyczaj nie jest potrzebna do obrazów rozruchowych, takich jak sterownika wideo lub sterownik modemu.  
+    -   **Ukryj sterowniki, które nie należą do klasy sieci lub magazynu (na potrzeby obrazów rozruchowych)**: Użyj tego ustawienia, aby wyświetlić tylko sterowniki magazynów i sieci oraz ukryć inne sterowniki, które nie są zwykle wymagane przez obrazy rozruchowe, takie jak sterownik wideo lub sterownik modemu.  
 
-    -   **Ukryj sterowniki, które nie są podpisane cyfrowo**: To ustawienie umożliwia ukrywanie sterowniki, które nie są podpisane cyfrowo.  
+    -   **Ukryj sterowniki, które nie są podpisane cyfrowo**: To ustawienie umożliwia ukrycie sterowników, które nie są podpisane cyfrowo.  
 
     -   Wybierz z listy sterowniki, które mają zostać zaimportowane do katalogu sterowników.  
 
-    -   **Włącz te sterowniki i Zezwól komputerom na ich instalację**: Wybierz to ustawienie, aby zezwolić komputerom na instalowanie sterowników urządzeń. To pole wyboru jest domyślnie zaznaczone.  
+    -   **Włącz te sterowniki i Zezwól komputerom na ich instalację**: Wybierz to ustawienie, aby umożliwić komputerom zainstalowanie sterowników urządzeń. To pole wyboru jest domyślnie zaznaczone.  
 
         > [!IMPORTANT]  
         >  Jeżeli sterownik urządzenia powoduje problem, lub w celu wstrzymania instalacji sterownika urządzenia, można wyłączyć ten sterownik, usuwając zaznaczenie pola wyboru **Włącz te sterowniki i zezwól komputerom na ich instalację** . Sterowniki można również wyłączyć po ich zaimportowaniu.  
@@ -156,15 +153,15 @@ System Center Configuration Manager udostępnia katalog sterowników, którego m
 
     -   Kliknij przycisk **Tak** w oknie dialogowym, aby zaktualizować obrazy rozruchowe w punktach dystrybucji. Nie można używać sterowników urządzeń dopóki nie zostaną rozproszone do punktów dystrybucji. Jeśli klikniesz przycisk **Nie**, wówczas musisz uruchomić akcję **Zaktualizuj punkt dystrybucji** — dopiero wówczas obraz rozruchowy będzie zawierał zaktualizowane sterowniki. Jeśli pakiet sterowników nigdy nie został rozesłany, należy kliknąć opcję **Dystrybuuj zawartość** w węźle **Pakiety sterowników** .  
 
-    -   Menedżer konfiguracji ostrzega, jeśli architektura dla jednego lub więcej sterowników nie jest zgodna z architekturą obrazy rozruchowe, które zostały wybrane. Jeśli występuje niezgodność, kliknij przycisk **OK** i wróć do strony **Szczegóły sterownika** , aby wyczyścić sterowniki, które nie są zgodne z architekturą wybranego obrazu rozruchowego. Na przykład w przypadku wybrania obrazu rozruchowego x64 i x86 wszystkie sterowniki muszą obsługiwać obie architektury. Jeśli wybierzesz obraz rozruchowy x64, wszystkie sterowniki muszą obsługiwać architekturę x64.  
+    -   Configuration Manager wyświetli ostrzeżenie, jeśli architektura co najmniej jednego sterownika nie jest zgodna z architekturą wybranych obrazów rozruchowych. Jeśli występuje niezgodność, kliknij przycisk **OK** i wróć do strony **Szczegóły sterownika** , aby wyczyścić sterowniki, które nie są zgodne z architekturą wybranego obrazu rozruchowego. Na przykład w przypadku wybrania obrazu rozruchowego x64 i x86 wszystkie sterowniki muszą obsługiwać obie architektury. Jeśli wybierzesz obraz rozruchowy x64, wszystkie sterowniki muszą obsługiwać architekturę x64.  
 
         > [!NOTE]  
         >  -   Architektura jest oparta na architekturze zgłoszonej w pliku INF dostarczonym przez producenta.  
         > -   Jeśli sterownik zgłasza, że obsługuje obie architektury, wówczas można go zaimportować do dowolnego obrazu rozruchowego.  
 
-    -   Menedżer konfiguracji ostrzega, jeśli należy dodać sterowniki urządzeń, które nie są sieci lub magazynu sterowniki do obrazu rozruchowego, ponieważ w większości przypadków nie są konieczne do obrazu rozruchowego. Kliknij przycisk **Tak** , aby dodać sterowniki do obrazu rozruchowego, lub przycisk **Nie** , aby wrócić i zmodyfikować wybór sterowników.  
+    -   Configuration Manager wyświetli ostrzeżenie, jeśli musisz dodać sterowniki urządzeń, które nie są sieci lub magazynu sterowników do obrazu rozruchowego, ponieważ w większości przypadków nie są niezbędne dla obrazu rozruchowego. Kliknij przycisk **Tak** , aby dodać sterowniki do obrazu rozruchowego, lub przycisk **Nie** , aby wrócić i zmodyfikować wybór sterowników.  
 
-    -   Configuration Manager wyświetla ostrzeżenie, jeśli jeden lub więcej wybrane sterowniki nie są podpisane cyfrowo prawidłowo. Kliknij przycisk **Tak** , aby kontynuować, a następnie kliknij przycisk **Nie** , aby wrócić i zmienić wybór sterownika.  
+    -   Configuration Manager wyświetli ostrzeżenie, jeśli jeden lub więcej z wybranych sterowników nie jest poprawnie cyfrowo podpisany. Kliknij przycisk **Tak** , aby kontynuować, a następnie kliknij przycisk **Nie** , aby wrócić i zmienić wybór sterownika.  
 
 8.  Ukończ pracę kreatora.  
 
@@ -218,15 +215,15 @@ System Center Configuration Manager udostępnia katalog sterowników, którego m
 
     -   Kliknij przycisk **Tak** w oknie dialogowym, aby zaktualizować obrazy rozruchowe w punktach dystrybucji. Nie można używać sterowników urządzeń dopóki nie zostaną rozproszone do punktów dystrybucji. Jeśli klikniesz przycisk **Nie**, wówczas musisz uruchomić akcję **Zaktualizuj punkt dystrybucji** — dopiero wówczas obraz rozruchowy będzie zawierał zaktualizowane sterowniki. Jeśli pakiet sterowników nigdy nie został rozesłany, należy kliknąć opcję **Dystrybuuj zawartość** w węźle **Pakiety sterowników** .  
 
-    -   Menedżer konfiguracji ostrzega, jeśli architektura dla jednego lub więcej sterowników nie jest zgodna z architekturą obrazy rozruchowe, które zostały wybrane. Jeśli występuje niezgodność, kliknij przycisk **OK** i wróć do strony **Szczegóły sterownika** , aby wyczyścić sterowniki, które nie są zgodne z architekturą wybranego obrazu rozruchowego. Na przykład w przypadku wybrania obrazu rozruchowego x64 i x86 wszystkie sterowniki muszą obsługiwać obie architektury. Jeśli wybierzesz obraz rozruchowy x64, wszystkie sterowniki muszą obsługiwać architekturę x64.  
+    -   Configuration Manager wyświetli ostrzeżenie, jeśli architektura co najmniej jednego sterownika nie jest zgodna z architekturą wybranych obrazów rozruchowych. Jeśli występuje niezgodność, kliknij przycisk **OK** i wróć do strony **Szczegóły sterownika** , aby wyczyścić sterowniki, które nie są zgodne z architekturą wybranego obrazu rozruchowego. Na przykład w przypadku wybrania obrazu rozruchowego x64 i x86 wszystkie sterowniki muszą obsługiwać obie architektury. Jeśli wybierzesz obraz rozruchowy x64, wszystkie sterowniki muszą obsługiwać architekturę x64.  
 
         > [!NOTE]  
         >  -   Architektura jest oparta na architekturze zgłoszonej w pliku INF dostarczonym przez producenta.  
         > -   Jeśli sterownik zgłasza, że obsługuje obie architektury, wówczas można go zaimportować do dowolnego obrazu rozruchowego.  
 
-    -   Menedżer konfiguracji ostrzega, jeśli należy dodać sterowniki urządzeń, które nie są sieci lub magazynu sterowniki do obrazu rozruchowego, ponieważ w większości przypadków nie są konieczne do obrazu rozruchowego. Kliknij przycisk **Tak** , aby dodać sterowniki do obrazu rozruchowego, lub przycisk **Nie** , aby wrócić i zmodyfikować wybór sterowników.  
+    -   Configuration Manager wyświetli ostrzeżenie, jeśli musisz dodać sterowniki urządzeń, które nie są sieci lub magazynu sterowników do obrazu rozruchowego, ponieważ w większości przypadków nie są niezbędne dla obrazu rozruchowego. Kliknij przycisk **Tak** , aby dodać sterowniki do obrazu rozruchowego, lub przycisk **Nie** , aby wrócić i zmodyfikować wybór sterowników.  
 
-    -   Configuration Manager wyświetla ostrzeżenie, jeśli jeden lub więcej wybrane sterowniki nie są podpisane cyfrowo prawidłowo. Kliknij przycisk **Tak** , aby kontynuować, a następnie kliknij przycisk **Nie** , aby wrócić i zmienić wybór sterownika.  
+    -   Configuration Manager wyświetli ostrzeżenie, jeśli jeden lub więcej z wybranych sterowników nie jest poprawnie cyfrowo podpisany. Kliknij przycisk **Tak** , aby kontynuować, a następnie kliknij przycisk **Nie** , aby wrócić i zmienić wybór sterownika.  
 
 7.  Kliknij przycisk **OK**.  
 
@@ -237,19 +234,19 @@ System Center Configuration Manager udostępnia katalog sterowników, którego m
 |------------|-----------------|  
 |**Kategoryzuj**|Czyści, zarządza lub ustawia kategorie administracyjne wybranych sterowników urządzeń.|  
 |**Usuwanie**|Usuwa sterownik urządzenia z węzła **Sterowniki** , a także ze skojarzonych punktów dystrybucji.|  
-|**Wyłącz**|Zabrania instalowania sterownika urządzenia. Sterowniki urządzeń można tymczasowo wyłączyć, tak aby komputery klienckie programu Configuration Manager i sekwencji zadań nie można zainstalować je podczas wdrażania systemów operacyjnych. **Uwaga:**  Akcję Wyłącz zapobiega tylko sterowniki instalowanie przy użyciu sekwencji zadań automatycznie Zastosuj sterowniki.|  
-|**Włączenie**|Zezwala na komputerach klienckich programu Configuration Manager i sekwencji zadań instalowania sterownika urządzenia podczas wdrażania systemu operacyjnego.|  
+|**Wyłącz**|Zabrania instalowania sterownika urządzenia. Sterowniki urządzeń można tymczasowo wyłączyć, aby komputery klienckie programu Configuration Manager i sekwencji zadań nie może je zainstalować w przypadku wdrażania systemów operacyjnych. **Uwaga:**  Akcja Wyłącz zapobiega wyłącznie sterowniki instalacji za pomocą kroku sekwencji zadań automatycznie Zastosuj sterowniki.|  
+|**Włączenie**|Umożliwia klientów programu Configuration Manager i sekwencji zadań instalowania sterownika urządzenia podczas wdrażania systemu operacyjnego.|  
 |**Przenieś**|Przenosi sterownik urządzenia do innego folderu w węźle **Sterowniki** .|  
 |**Właściwości**|Otwiera okno dialogowe **Właściwości** , w którym można sprawdzić i zmienić właściwości sterownika urządzenia. Można na przykład zmienić nazwę i opis sterownika urządzenia, włączyć go oraz określić platformy, na których można uruchomić dany sterownik urządzenia.|  
 
 ##  <a name="BKMK_TSDrivers"></a> Użyj sekwencji zadań, aby zainstalować sterowniki urządzeń  
  Wdrażanie systemu operacyjnego można zautomatyzować za pomocą sekwencji zadań. Każdy krok sekwencji zadań może wykonywać konkretną akcję, na przykład instalowanie sterownika urządzenia. Aby zainstalować sterowniki urządzeń podczas wdrażania systemu operacyjnego, można użyć dwóch poniższych kroków sekwencji zadań:  
 
--   [Automatycznie Zastosuj sterowniki](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers): Ten krok pozwala automatycznie dopasować i zainstalować sterowniki urządzeń w ramach wdrażania systemu operacyjnego. Krok sekwencji zadań można skonfigurować tak, aby instalował tylko sterownik najlepiej dopasowany do wykrytego urządzenia sprzętowego albo instalował wszystkie zgodne sterowniki, a następnie umożliwił Instalatorowi systemu Windows wybranie najlepszego z nich. Ponadto można określić kategorię sterowników urządzeń, aby ograniczyć liczbę sterowników dostępnych w tym kroku.  
+-   [Automatycznie Zastosuj sterowniki](../understand/task-sequence-steps.md#BKMK_AutoApplyDrivers): Ten krok pozwala automatycznie dopasować i zainstalować sterowniki urządzeń w ramach wdrożenia systemu operacyjnego. Krok sekwencji zadań można skonfigurować tak, aby instalował tylko sterownik najlepiej dopasowany do wykrytego urządzenia sprzętowego albo instalował wszystkie zgodne sterowniki, a następnie umożliwił Instalatorowi systemu Windows wybranie najlepszego z nich. Ponadto można określić kategorię sterowników urządzeń, aby ograniczyć liczbę sterowników dostępnych w tym kroku.  
 
 -   [Zastosuj pakiet sterowników](../understand/task-sequence-steps.md#BKMK_ApplyDriverPackage): Ten krok pozwala udostępnić wszystkie sterowniki urządzeń w konkretnym pakiecie sterowników dla Instalatora systemu Windows. Instalator systemu Windows wyszuka wymagane sterowniki urządzeń we wskazanych pakietach sterowników. Podczas tworzenia autonomicznego nośnika musisz użyć tego kroku, aby zainstalować sterowniki urządzeń.  
 
- Podczas korzystania z tych kroków sekwencji zadań można także określić, w jaki sposób sterowniki urządzeń są instalowane na komputerze, na którym jest wdrażany system operacyjny. Aby uzyskać więcej informacji, zobacz [sekwencji zadań do automatyzacji zadań zarządzania](../deploy-use/manage-task-sequences-to-automate-tasks.md).  
+ Podczas korzystania z tych kroków sekwencji zadań można także określić, w jaki sposób sterowniki urządzeń są instalowane na komputerze, na którym jest wdrażany system operacyjny. Aby uzyskać więcej informacji, zobacz [Zarządzanie sekwencjami zadań do automatyzowania zadań](../deploy-use/manage-task-sequences-to-automate-tasks.md).  
 
 ##  <a name="BKMK_InstallingDeviceDiriversTS"></a> Użyj sekwencji zadań, aby zainstalować sterowniki urządzeń na komputerach  
  Aby zainstalować sterowniki urządzeń w ramach wdrażania systemu operacyjnego, wykonaj czynności opisane w poniższej procedurze.  
@@ -277,4 +274,3 @@ System Center Configuration Manager udostępnia katalog sterowników, którego m
 
 ##  <a name="BKMK_DriverReports"></a> Raporty zarządzania sterownikami  
  Aby sprawdzić ogólne informacje o sterownikach urządzeń w katalogu sterowników, można skorzystać z szeregu raportów dostępnych w kategorii raportów **Zarządzanie sterownikiem** . Aby uzyskać więcej informacji o raportach zobacz [raportowania](../../core/servers/manage/reporting.md).
-

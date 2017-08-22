@@ -6,30 +6,27 @@ ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0212b023-804a-4f84-b880-7a59cdb49c67
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 74341fb60bf9ccbc8822e390bd34f9eda58b4bda
 ms.openlocfilehash: f77af4b8fcb193ed44511c0e5eea7290f55dbbf8
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="use-a-task-sequence-to-manage-virtual-hard-disks-in-system-center-configuration-manager"></a>Zarządzanie wirtualnymi dyskami twardymi w programie System Center Configuration Manager za pomocą sekwencji zadań
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-W System Center Configuration Manager mogą zarządzać wirtualnych dysków twardych (VHD) oraz integrować twardych tworzonych w centrum danych z konsoli programu Configuration Manager. W szczególności można utworzyć i zmodyfikować dysk VHD, dodawać aplikacje i aktualizacje oprogramowania do dysku VHD i publikować dyski VHD do System Center Virtual Machine Manager (VMM) z konsoli programu Configuration Manager.  
+W programie System Center Configuration Manager, można zarządzać wirtualnymi dyskami twardymi (VHD) oraz integrować wirtualne dyski twarde, tworzonych w centrum danych z konsoli programu Configuration Manager. W szczególności można utworzyć i modyfikować dyski VHD, dodawać aplikacje i aktualizacje oprogramowania do dysku VHD i publikować dyski VHD do System Center Virtual Machine Manager (VMM) z konsoli programu Configuration Manager.  
 
- Poniższe sekcje służą do zarządzania dyskami VHD w programie Configuration Manager.
+ Następujące sekcje służą do zarządzania dyskami VHD w programie Configuration Manager.
 
 ## <a name="prerequisites"></a>Wymagania wstępne  
  Przed rozpoczęciem sprawdź następujące wymagania wstępne:  
@@ -46,10 +43,10 @@ W System Center Configuration Manager mogą zarządzać wirtualnych dysków twar
 
     -   Windows Server 2012 R2  
 
--   Wirtualizacja musi być włączona w systemie BIOS i funkcji Hyper-V musi być zainstalowany na komputerze, z którego uruchomiono konsolę programu Configuration Manager do zarządzania dyskami VHD. Ponadto zaleca się zainstalowanie narzędzi do zarządzania funkcją Hyper-V umożliwiających testowanie i rozwiązywanie problemów z wirtualnymi dyskami twardymi. Narzędzia do zarządzania funkcją Hyper-V należy zainstalować na przykład w celu monitorowania postępu sekwencji zadań w funkcji Hyper-V przy użyciu pliku smsts.log. Więcej informacji na temat wymagań dotyczących funkcji Hyper-V znajduje się w temacie [Wymagania wstępne instalacji funkcji Hyper-V](http://technet.microsoft.com/library/cc731898.aspx).  
+-   Wirtualizacja musi być włączona w systemie BIOS i funkcji Hyper-V musi być zainstalowany na komputerze z poziomu konsoli programu Configuration Manager do zarządzania dyskami VHD. Ponadto zaleca się zainstalowanie narzędzi do zarządzania funkcją Hyper-V umożliwiających testowanie i rozwiązywanie problemów z wirtualnymi dyskami twardymi. Narzędzia do zarządzania funkcją Hyper-V należy zainstalować na przykład w celu monitorowania postępu sekwencji zadań w funkcji Hyper-V przy użyciu pliku smsts.log. Więcej informacji na temat wymagań dotyczących funkcji Hyper-V znajduje się w temacie [Wymagania wstępne instalacji funkcji Hyper-V](http://technet.microsoft.com/library/cc731898.aspx).  
 
     > [!IMPORTANT]  
-    >  Proces tworzenia dysku VHD wiąże się ze zużyciem pamięci i czasu procesora. Dlatego zaleca się zarządzania dyskami VHD z poziomu konsoli programu Configuration Manager, który nie jest zainstalowany na serwerze lokacji.  
+    >  Proces tworzenia dysku VHD wiąże się ze zużyciem pamięci i czasu procesora. W związku z tym zaleca się Zarządzanie dyskami VHD z poziomu konsoli programu Configuration Manager, który nie jest zainstalowany na serwerze lokacji.  
 
 -   W przypadku zarządzania dyskami VHD za pomocą komputera sterowanego zdalnie z serwera lokacji, serwer ten musi mieć uprawnienie dostępu **Zapis** w folderze zawierającym plik VHD.  
 
@@ -60,13 +57,13 @@ W System Center Configuration Manager mogą zarządzać wirtualnych dysków twar
 -   Zainstaluj konsolę programu System Center Virtual Machine Manager (VMM) na komputerze, z którego dysk VHD zostanie przekazany do programu VMM. Konsolę programu VMM można zainstalować na osobnym komputerze używanym do zarządzania dyskami VHD, dzięki czemu do zaimportowania dysku VHD do programu VMM nie trzeba instalować funkcji Hyper-V.  
 
     > [!NOTE]  
-    >  Zainstaluj konsolę programu VMM, po otwarciu konsoli programu Configuration Manager, należy ponownie uruchomić konsolę programu Configuration Manager po ukończeniu instalacji konsoli programu VMM. W przeciwnym razie programu Configuration Manager nie będą pomyślnie łączyć się z serwerem zarządzania programu VMM do przekazania dysku VHD.  
+    >  Po otwarciu konsoli programu Configuration Manager należy zainstalować konsolę programu VMM, należy ponownie uruchomić konsolę programu Configuration Manager po ukończeniu instalacji konsoli programu VMM. W przeciwnym razie programu Configuration Manager zostanie nie mógł nawiązać serwerze zarządzania programu VMM w celu przekazania dysku VHD.  
 
 ##  <a name="BKMK_CreateVHDSteps"></a> Procedura tworzenia dysku VHD  
  Aby utworzyć dysk VHD, należy utworzyć sekwencję zadań obejmującą wymagane do tego celu czynności, a następnie użyć jej w Kreatorze tworzenia wirtualnych dysków twardych. W poniższych sekcjach opisano procedurę tworzenia dysku VHD.  
 
 ###  <a name="BKMK_CreateTS"></a> Tworzenie sekwencji zadań w ramach dysku VHD  
- Należy utworzyć sekwencję zadań obejmującą czynności w celu utworzenia dysku VHD. W Kreatorze tworzenia sekwencji zadań jest dostępna opcja **Zainstaluj istniejący pakiet obrazów na wirtualnym dysku twardym** , dzięki której można utworzyć czynności w celu utworzenia dysku VHD. Kreator dodaje na przykład następujące wymagane czynności: Uruchom ponownie w środowisku Windows PE, Formatuj dysk i podziel go na partycje, Zastosuj system operacyjne i Wyłącz komputer. Dysku VHD nie można utworzyć w pełnej wersji systemu operacyjnego. Ponadto program Configuration Manager musi poczekać na maszyna wirtualna jest zamknięta, przed ukończeniem pakietu. Domyślnie kreator oczekuje 5 minut, a następnie wyłącza maszynę wirtualną. Po utworzeniu sekwencji zadań można w razie potrzeby dodać więcej czynności.  
+ Należy utworzyć sekwencję zadań obejmującą czynności w celu utworzenia dysku VHD. W Kreatorze tworzenia sekwencji zadań jest dostępna opcja **Zainstaluj istniejący pakiet obrazów na wirtualnym dysku twardym** , dzięki której można utworzyć czynności w celu utworzenia dysku VHD. Kreator dodaje na przykład wykonać następujące czynności: Uruchom ponownie w środowisku Windows PE, Formatuj dysk i podziel go na partycje, Zastosuj system operacyjne i Wyłącz komputer. Dysku VHD nie można utworzyć w pełnej wersji systemu operacyjnego. Ponadto programu Configuration Manager musi poczekać na maszyna wirtualna jest zamknięta, przed ukończeniem pakietu. Domyślnie kreator oczekuje 5 minut, a następnie wyłącza maszynę wirtualną. Po utworzeniu sekwencji zadań można w razie potrzeby dodać więcej czynności.  
 
 > [!IMPORTANT]  
 >  Poniższa procedura dotyczy tworzenia sekwencji zadań przy użyciu opcji **Zainstaluj istniejący pakiet obrazów na wirtualnym dysku twardym** , która automatycznie dodaje czynności wymagane do pomyślnego utworzenia dysku VHD. W przypadku użycia istniejącej sekwencji zadań lub ręcznego tworzenia sekwencji zadań należy pamiętać, aby na końcu sekwencji zadań dodać czynność Wyłącz komputer. W przeciwnym razie tymczasowa maszyna wirtualna nie zostanie usunięta i nie będzie można ukończyć procesu tworzenia dysku VHD. Kreator ukończy jednak działanie i zgłosi powodzenie operacji.  
@@ -87,9 +84,9 @@ W System Center Configuration Manager mogą zarządzać wirtualnych dysków twar
 
     -   **Nazwa sekwencji zadań**: Określ nazwę identyfikującą sekwencję zadań.  
 
-    -   **Opis**: Określ opis sekwencji zadań.  
+    -   **Opis elementu**: Określ opis sekwencji zadań.  
 
-    -   **Obraz rozruchowy**: Określ obraz rozruchowy, który instaluje system operacyjny na komputerze docelowym. Aby uzyskać więcej informacji, zobacz [obrazów rozruchowych Zarządzaj](../get-started/manage-boot-images.md).  
+    -   **Obraz rozruchowy**: Określ obraz rozruchowy, który instaluje system operacyjny na komputerze docelowym. Aby uzyskać więcej informacji, zobacz [zarządzanie obrazami rozruchowymi](../get-started/manage-boot-images.md).  
 
 6.  Na stronie **Instalowanie systemu Windows** określ poniższe ustawienia, a następnie kliknij przycisk **Dalej**.  
 
@@ -97,19 +94,19 @@ W System Center Configuration Manager mogą zarządzać wirtualnych dysków twar
 
     -   **Obraz**: Jeśli pakiet obrazu systemu operacyjnego zawiera wiele obrazów, określ indeks obrazu systemu operacyjnego do zainstalowania.  
 
-    -   **Klucz produktu**: Określ klucz produktu dla systemu operacyjnego do zainstalowania. Możesz określić zakodowane klucze licencji zbiorczych oraz standardowe klucze produktów. W przypadku użycia niezakodowanego klucza produktu poszczególne grupy 5 znaków muszą być oddzielone kreskami (-). Na przykład: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
+    -   **Klucz produktu**: Określ klucz produktu systemu operacyjnego do zainstalowania. Możesz określić zakodowane klucze licencji zbiorczych oraz standardowe klucze produktów. W przypadku użycia niezakodowanego klucza produktu poszczególne grupy 5 znaków muszą być oddzielone kreskami (-). Na przykład: *XXXXX-XXXXX-XXXXX-XXXXX-XXXXX*  
 
-    -   **Tryb licencjonowania serwera**: Określ rodzaj licencji serwera **na stanowisko**, **na serwer**, lub nie licencji. W przypadku wybrania licencji serwera **Na serwer**określ również maksymalną liczbę połączeń serwera.  
+    -   **Tryb licencjonowania serwera**: Określ, czy serwer licencji jest **na stanowisko**, **na serwer**, lub które nie licencji. W przypadku wybrania licencji serwera **Na serwer**określ również maksymalną liczbę połączeń serwera.  
 
     -   Określ, w jaki sposób ma być obsługiwane konto administratora używane podczas wdrażania obrazu systemu operacyjnego.  
 
-        -   **Losowo Generuj hasło administratora lokalnego i Wyłącz konto na wszystkich obsługiwanych platformach (zalecane)**: Użyj tego ustawienia, aby Kreator losowo utworzył hasło do konta administratora lokalnego i Wyłącz konto po wdrożeniu obrazu systemu operacyjnego.  
+        -   **Losowo Generuj hasło administratora lokalnego i Wyłącz konto na wszystkich obsługiwanych platformach (zalecane)**: Użyj tego ustawienia, aby Kreator losowo utworzył hasło do konta administratora lokalnego i wyłączył to konto po wdrożeniu obrazu systemu operacyjnego.  
 
-        -   **Włącz konto i określ hasło administratora lokalnego**: Użyj tego ustawienia, aby używać określonego hasła dla konta administratora lokalnego na wszystkich komputerach, na których jest wdrażany system operacyjny.  
+        -   **Włącz konto i określ hasło administratora lokalnego**: Użyj tego ustawienia, aby użyć konkretnego hasła dla konta administratora lokalnego na wszystkich komputerach z wdrożonym obrazem systemu operacyjnego.  
 
 7.  Na stronie **Konfigurowanie sieci** określ poniższe ustawienia, a następnie kliknij przycisk **Dalej**.  
 
-    -   **Dołącz do grupy roboczej**: Określ, czy dodać komputer docelowy do grupy roboczej.  
+    -   **Przyłącz do grupy roboczej**: Określ, czy dodać komputer docelowy do grupy roboczej.  
 
     -   **Przyłącz do domeny**: Określ, czy dodać komputer docelowy do domeny. W polu **Domena**określ nazwę domeny.  
 
@@ -120,7 +117,7 @@ W System Center Configuration Manager mogą zarządzać wirtualnych dysków twar
 
     -   **Konto**: Określ nazwę użytkownika i hasło dla konta, które ma uprawnienia do dołączenia do określonej domeny. Przykład: *domena\użytkownik* lub *%zmienna%*.  
 
-8.  Na **Instalowanie programu Configuration Manager** Określ pakiet klienta programu Configuration Manager do zainstalowania na komputerze docelowym, a następnie kliknij przycisk **dalej**.  
+8.  Na **Instalowanie programu Configuration Manager** Określ pakiet klienta programu Configuration Manager można zainstalować na komputerze docelowym, a następnie kliknij przycisk **dalej**.  
 
 9. Na stronie **Instalowanie aplikacji** określ aplikacje do zainstalowania na komputerze docelowym, a następnie kliknij przycisk **Dalej**. Jeżeli określisz wiele aplikacji, możesz również wybrać, aby nie przerywać sekwencji zadań w przypadku niepowodzenia instalowania określonej aplikacji.  
 
@@ -143,7 +140,7 @@ W System Center Configuration Manager mogą zarządzać wirtualnych dysków twar
 3.  Na karcie **Narzędzia główne** w grupie **Tworzenie** kliknij przycisk **Utwórz wirtualny dysk twardy** , aby uruchomić Kreatora tworzenia wirtualnych dysków twardych.  
 
     > [!NOTE]  
-    >  Funkcji Hyper-V musi być zainstalowany na komputerze używanym do zarządzania dyskami VHD konsolą programu Configuration Manager lub **Utwórz wirtualny dysk twardy** opcja nie jest włączona. Więcej informacji na temat wymagań dotyczących funkcji Hyper-V znajduje się w temacie [Wymagania wstępne instalacji funkcji Hyper-V](http://technet.microsoft.com/library/cc731898.aspx).  
+    >  Funkcji Hyper-V musi być zainstalowany na komputer z uruchomioną konsolą programu Configuration Manager, z którego zarządzania dyskami VHD lub **Utwórz wirtualny dysk twardy** opcja nie jest włączona. Więcej informacji na temat wymagań dotyczących funkcji Hyper-V znajduje się w temacie [Wymagania wstępne instalacji funkcji Hyper-V](http://technet.microsoft.com/library/cc731898.aspx).  
 
     > [!TIP]  
     >  Aby organizować dyski VHD, utwórz nowy folder lub wybierz istniejący folder w węźle **Wirtualne dyski twarde** , a następnie z poziomu danego folderu kliknij przycisk **Utwórz wirtualny dysk twardy** .  
@@ -156,12 +153,12 @@ W System Center Configuration Manager mogą zarządzać wirtualnych dysków twar
 
     -   **Komentarz**: Określ opis dysku VHD.  
 
-    -   **Ścieżka**: Określ ścieżkę i nazwę pliku który Kreator ma utworzyć plik dysku VHD.  
+    -   **Ścieżka**: Określ ścieżkę i nazwę pliku, dla których kreator utworzy plik VHD.  
 
          Należy wprowadzić prawidłową ścieżkę sieciową w formacie UNC. Na przykład:  **\\\servername\\< nazwa_udziału\>\\< nazwa pliku\>VHD**.  
 
         > [!WARNING]  
-        >  Menedżer konfiguracji musi mieć **zapisu** dostęp do uprawnień do określonej ścieżki do tworzenia dysku VHD. Gdy programu Configuration Manager nie można uzyskać dostęp do ścieżki, rejestruje skojarzony błąd w pliku distmgr.log na serwerze lokacji.  
+        >  Menedżer konfiguracji musi mieć **zapisu** dostęp do uprawnień do określonej ścieżki do utworzenia dysku VHD. W przypadku programu Configuration Manager nie może uzyskać dostępu do ścieżki, rejestruje skojarzony błąd w pliku distmgr.log na serwerze lokacji.  
 
 5.  Na stronie **Sekwencja zadań** określ sekwencję zadań wybraną w poprzedniej sekcji, a następnie kliknij przycisk **Dalej**.  
 
@@ -172,17 +169,17 @@ W System Center Configuration Manager mogą zarządzać wirtualnych dysków twar
 8.  Sprawdź ustawienia i kliknij przycisk **Dalej**. Kreator utworzy dysk VHD.  
 
     > [!TIP]  
-    >  Czas wymagany do ukończenia procesu tworzenia dysku VHD może się różnić. Postęp procesu wykonywanego przez kreatora można monitorować przy użyciu poniższych plików dzienników. Domyślnie dzienniki znajdują się na komputerze z konsolą programu Configuration Manager w ścieżce %*ProgramFiles(x86)*%\Microsoft Configuration Manager\AdminConsole\AdminUILog.  
+    >  Czas wymagany do ukończenia procesu tworzenia dysku VHD może się różnić. Postęp procesu wykonywanego przez kreatora można monitorować przy użyciu poniższych plików dzienników. Domyślnie dzienniki znajdują się na komputerze z konsolą programu Configuration Manager w lokalizacji %*ProgramFiles(x86)*%\Microsoft Configuration Manager\AdminConsole\AdminUILog.  
     >   
     >  -   **CreateTSMedia.log**: Kreator zapisuje informacje w tym dzienniku podczas tworzenia nośnika sekwencji zadań. Ten plik dziennika umożliwia monitorowanie postępu tworzenia nośnika autonomicznego przez kreatora.  
-    > -   **Pliku DeployToVHD.log**: Kreator zapisuje informacje w tym dzienniku podczas procesu tworzenia dysku VHD. Ten plik dziennika umożliwia monitorowanie postępu wszystkich czynności kreatora po utworzeniu nośnika autonomicznego.  
+    > -   **DeployToVHD.log**: Kreator zapisuje informacje w tym dzienniku podczas procesu tworzenia dysku VHD. Ten plik dziennika umożliwia monitorowanie postępu wszystkich czynności kreatora po utworzeniu nośnika autonomicznego.  
     >   
-    >  Ponadto aby zobaczyć uruchomioną sekwencję zadań, po rozpoczęciu instalacji systemu operacyjnego można otworzyć Menedżera funkcji Hyper-V (jeżeli na komputerze zainstalowano narzędzia do zarządzania funkcją Hyper-V) i nawiązać połączenie z tymczasową maszyną wirtualną utworzoną przez kreatora. Postęp sekwencji zadań można monitorować z poziomu maszyny wirtualnej za pomocą pliku smsts.log. Ten plik dziennika umożliwia rozwiązywanie problemów związanych z ukończeniem poszczególnych czynności sekwencji zadań. Plik smsts.log znajduje się w folderze x: \windows\temp\smstslog\smsts.log przed sformatowaniem dysku twardego i c:\\_SMSTaskSequence\Logs\Smstslog\ po jego sformatowaniu. Po ukończeniu sekwencji zadań maszyna wirtualna zostanie wyłączona po upływie 5 minut (domyślnie) i usunięta.  
+    >  Ponadto aby zobaczyć uruchomioną sekwencję zadań, po rozpoczęciu instalacji systemu operacyjnego można otworzyć Menedżera funkcji Hyper-V (jeżeli na komputerze zainstalowano narzędzia do zarządzania funkcją Hyper-V) i nawiązać połączenie z tymczasową maszyną wirtualną utworzoną przez kreatora. Postęp sekwencji zadań można monitorować z poziomu maszyny wirtualnej za pomocą pliku smsts.log. Ten plik dziennika umożliwia rozwiązywanie problemów związanych z ukończeniem poszczególnych czynności sekwencji zadań. Plik smsts.log znajduje się w x: \windows\temp\smstslog\smsts.log przed sformatowaniem dysku twardego i c:\\_SMSTaskSequence\Logs\Smstslog\ po jego sformatowaniu. Po ukończeniu sekwencji zadań maszyna wirtualna zostanie wyłączona po upływie 5 minut (domyślnie) i usunięta.  
 
- Gdy program Configuration Manager utworzy dysk VHD, znajduje się w **wirtualne dyski twarde** węzła w konsoli programu Configuration Manager w **wdrożenia systemu operacyjnego** w węźle **Biblioteka oprogramowania** obszaru roboczego.  
+ Gdy programu Configuration Manager utworzy wirtualny dysk twardy, znajduje się w **wirtualne dyski twarde** węzeł w konsoli programu Configuration Manager w obszarze **wdrożenia systemu operacyjnego** w węźle **Biblioteka oprogramowania** obszaru roboczego.  
 
 > [!NOTE]  
->  Configuration Manager pobiera rozmiar dysku VHD, nawiązując połączenie z lokalizacji źródłowej wirtualnego dysku twardego. Jeśli programu Configuration Manager nie może uzyskać dostępu do pliku VHD, **0** jest wyświetlany w **rozmiar (KB)** kolumny dysku VHD.  
+>  Configuration Manager pobiera rozmiar dysku VHD, nawiązując połączenie z lokalizacją źródłową wirtualnego dysku twardego. Jeśli programu Configuration Manager nie może uzyskać dostępu do pliku VHD, **0** jest wyświetlany w **rozmiar (KB)** kolumny dysku VHD.  
 
 ##  <a name="BKMK_ModifyVHDSteps"></a> Procedura modyfikowania istniejącego dysku VHD  
  Aby zmodyfikować dysk VHD, należy utworzyć sekwencję zadań obejmującą wymagane do tego celu czynności. Tę sekwencję zadań należy następnie wybrać w Kreatorze modyfikowania wirtualnych dysków twardych. Kreator dołącza dysk VHD do maszyny wirtualnej, uruchamia na tym dysku sekwencję zadań, a następnie aktualizuje plik VHD. W poniższych sekcjach opisano procedurę modyfikowania dysku VHD.  
@@ -206,9 +203,9 @@ W System Center Configuration Manager mogą zarządzać wirtualnych dysków twar
 
     -   **Nazwa sekwencji zadań**: Określ nazwę identyfikującą sekwencję zadań.  
 
-    -   **Opis**: Określ opis sekwencji zadań.  
+    -   **Opis elementu**: Określ opis sekwencji zadań.  
 
-    -   **Obraz rozruchowy**: Określ obraz rozruchowy, który instaluje system operacyjny na komputerze docelowym. Aby uzyskać więcej informacji, zobacz [obrazów rozruchowych Zarządzaj](../get-started/manage-boot-images.md).  
+    -   **Obraz rozruchowy**: Określ obraz rozruchowy, który instaluje system operacyjny na komputerze docelowym. Aby uzyskać więcej informacji, zobacz [zarządzanie obrazami rozruchowymi](../get-started/manage-boot-images.md).  
 
 6.  Ukończ pracę kreatora.  
 
@@ -240,7 +237,7 @@ W System Center Configuration Manager mogą zarządzać wirtualnych dysków twar
 3.  Na karcie **Narzędzia główne** w grupie **Wirtualny dysk twardy** kliknij przycisk **Modyfikuj wirtualny dysk twardy** , aby uruchomić Kreatora modyfikowania wirtualnych dysków twardych.  
 
     > [!NOTE]  
-    >  Funkcji Hyper-V musi być zainstalowany na komputerze używanym do zarządzania dyskami VHD konsolą programu Configuration Manager lub **Modyfikuj wirtualny dysk twardy** opcja nie jest włączona. Więcej informacji na temat wymagań dotyczących funkcji Hyper-V znajduje się w temacie [Wymagania wstępne instalacji funkcji Hyper-V](http://technet.microsoft.com/library/cc731898.aspx).  
+    >  Funkcji Hyper-V musi być zainstalowany na komputer z uruchomioną konsolą programu Configuration Manager, z którego zarządzania dyskami VHD lub **Modyfikuj wirtualny dysk twardy** opcja nie jest włączona. Więcej informacji na temat wymagań dotyczących funkcji Hyper-V znajduje się w temacie [Wymagania wstępne instalacji funkcji Hyper-V](http://technet.microsoft.com/library/cc731898.aspx).  
 
 4.  Na stronie **Ogólne** potwierdź następujące ustawienia, a następnie kliknij przycisk **Dalej**.  
 
@@ -250,10 +247,10 @@ W System Center Configuration Manager mogą zarządzać wirtualnych dysków twar
 
     -   **Komentarz**: Określa opis dysku VHD.  
 
-    -   **Ścieżka**: Określa ścieżkę i nazwę pliku w którym znajduje się plik dysku VHD. Nie można modyfikować tego ustawienia.  
+    -   **Ścieżka**: Określa nazwę i ścieżka pliku, w którym znajduje się plik VHD. Nie można modyfikować tego ustawienia.  
 
         > [!WARNING]  
-        >  Menedżer konfiguracji musi mieć **zapisu** dostęp do uprawnień do określonej ścieżki do tworzenia dysku VHD. Gdy programu Configuration Manager nie można uzyskać dostęp do ścieżki, rejestruje skojarzony błąd w pliku distmgr.log na serwerze lokacji.  
+        >  Menedżer konfiguracji musi mieć **zapisu** dostęp do uprawnień do określonej ścieżki do utworzenia dysku VHD. W przypadku programu Configuration Manager nie może uzyskać dostępu do ścieżki, rejestruje skojarzony błąd w pliku distmgr.log na serwerze lokacji.  
 
 5.  Na stronie **Sekwencja zadań** określ niestandardową sekwencję zadań utworzoną w poprzedniej sekcji, a następnie kliknij przycisk **Dalej**.  
 
@@ -264,19 +261,19 @@ W System Center Configuration Manager mogą zarządzać wirtualnych dysków twar
 8.  Sprawdź ustawienia i kliknij przycisk **Dalej**. Kreator utworzy zmodyfikowany dysk VHD.  
 
     > [!TIP]  
-    >  Czas wymagany do ukończenia procesu modyfikowania dysku VHD może się różnić. Postęp procesu wykonywanego przez kreatora można monitorować przy użyciu poniższych plików dzienników. Domyślnie dzienniki znajdują się na komputerze z konsolą programu Configuration Manager w ścieżce %*ProgramFiles(x86)*%\Microsoft Configuration Manager\AdminConsole\AdminUILog.  
+    >  Czas wymagany do ukończenia procesu modyfikowania dysku VHD może się różnić. Postęp procesu wykonywanego przez kreatora można monitorować przy użyciu poniższych plików dzienników. Domyślnie dzienniki znajdują się na komputerze z konsolą programu Configuration Manager w lokalizacji %*ProgramFiles(x86)*%\Microsoft Configuration Manager\AdminConsole\AdminUILog.  
     >   
     >  -   **CreateTSMedia.log**: Kreator zapisuje informacje w tym dzienniku podczas tworzenia nośnika sekwencji zadań. Ten plik dziennika umożliwia monitorowanie postępu tworzenia nośnika autonomicznego przez kreatora.  
-    > -   **Pliku DeployToVHD.log**: Kreator zapisuje informacje w tym dzienniku podczas procesu modyfikowania dysku VHD. Ten plik dziennika umożliwia monitorowanie postępu wszystkich czynności kreatora po utworzeniu nośnika autonomicznego.  
+    > -   **DeployToVHD.log**: Kreator zapisuje informacje w tym dzienniku podczas procesu modyfikowania dysku VHD. Ten plik dziennika umożliwia monitorowanie postępu wszystkich czynności kreatora po utworzeniu nośnika autonomicznego.  
     >   
-    >  Ponadto, aby zobaczyć uruchomioną sekwencję zadań, można otworzyć Menedżera funkcji Hyper-V (jeżeli na komputerze zainstalowano narzędzia do zarządzania funkcją Hyper-V) i nawiązać połączenie z tymczasową maszyną wirtualną utworzoną przez kreatora. Postęp sekwencji zadań można monitorować z poziomu maszyny wirtualnej za pomocą pliku smsts.log. Ten plik dziennika umożliwia rozwiązywanie problemów związanych z ukończeniem poszczególnych czynności sekwencji zadań. Plik smsts.log znajduje się w folderze x: \windows\temp\smstslog\smsts.log przed sformatowaniem dysku twardego i c:\\_SMSTaskSequence\Logs\Smstslog\ po jego sformatowaniu. Po ukończeniu sekwencji zadań maszyna wirtualna zostanie wyłączona po upływie 5 minut (domyślnie) i usunięta.  
+    >  Ponadto, aby zobaczyć uruchomioną sekwencję zadań, można otworzyć Menedżera funkcji Hyper-V (jeżeli na komputerze zainstalowano narzędzia do zarządzania funkcją Hyper-V) i nawiązać połączenie z tymczasową maszyną wirtualną utworzoną przez kreatora. Postęp sekwencji zadań można monitorować z poziomu maszyny wirtualnej za pomocą pliku smsts.log. Ten plik dziennika umożliwia rozwiązywanie problemów związanych z ukończeniem poszczególnych czynności sekwencji zadań. Plik smsts.log znajduje się w x: \windows\temp\smstslog\smsts.log przed sformatowaniem dysku twardego i c:\\_SMSTaskSequence\Logs\Smstslog\ po jego sformatowaniu. Po ukończeniu sekwencji zadań maszyna wirtualna zostanie wyłączona po upływie 5 minut (domyślnie) i usunięta.  
 
 ##  <a name="BKMK_ApplyUpdates"></a> Stosowanie aktualizacji oprogramowania do dysku VHD  
- Okresowo są wydawane nowe aktualizacje oprogramowania, które mają zastosowanie do systemu operacyjnego znajdującego się na używanym dysku VHD. Odpowiednie aktualizacje oprogramowania można stosować do dysku VHD zgodnie z zaplanowanym harmonogramem. Zgodnie z harmonogramem określonym przez użytkownika programu Configuration Manager mają zastosowanie aktualizacji oprogramowania, które można wybrać do dysku VHD.  
+ Okresowo są wydawane nowe aktualizacje oprogramowania, które mają zastosowanie do systemu operacyjnego znajdującego się na używanym dysku VHD. Odpowiednie aktualizacje oprogramowania można stosować do dysku VHD zgodnie z zaplanowanym harmonogramem. Zgodnie z harmonogramem określonym przez użytkownika programu Configuration Manager stosuje wybrane aktualizacje oprogramowania do dysku VHD.  
 
  Informacje o dysku VHD, w tym informacje o aktualizacjach oprogramowania zastosowanych podczas utworzenia dysku VHD, są przechowywane w bazie danych lokacji. W bazie danych lokacji są także przechowywane informacje o aktualizacjach oprogramowania zastosowanych do dysku VHD od chwili jego pierwszego utworzenia. Po uruchomieniu kreatora w celu zastosowania aktualizacji oprogramowania do dysku VHD kreator pobiera listę dostępnych do wyboru aktualizacji, które nie zostały jeszcze zastosowane do dysku VHD.  
 
- Możesz wybrać **Kontynuuj przy błędzie** wybrane ustawienie dla programu Configuration Manager, aby kontynuować stosowanie oprogramowania aktualizuje nawet wtedy, gdy występuje błąd podczas stosowania jednego lub więcej oprogramowania aktualizacjami.  
+ Możesz wybrać **Kontynuuj przy błędzie** wybrane ustawienie dla programu Configuration Manager, aby kontynuować stosowanie oprogramowania aktualizuje nawet wtedy, gdy występuje błąd stosowanie jednej lub więcej oprogramowania aktualizacjami.  
 
 > [!NOTE]  
 >  Poszczególne aktualizacje oprogramowania są kopiowane z biblioteki zawartości znajdującej się na serwerze lokacji.  
@@ -297,16 +294,16 @@ W System Center Configuration Manager mogą zarządzać wirtualnych dysków twar
 
 6.  Na stronie **Ustawianie harmonogramu** określ poniższe ustawienia, a następnie kliknij przycisk **Dalej**.  
 
-    1.  **Harmonogram**: Wybierz harmonogram stosowania aktualizacji oprogramowania do dysku VHD.  
+    1.  **Harmonogram**: Określ harmonogram stosowania aktualizacji oprogramowania do dysku VHD.  
 
-    2.  **Kontynuuj przy błędzie**: Wybierz tę opcję, aby kontynuować stosowanie aktualizacji oprogramowania do obrazu nawet po wystąpieniu błędu.  
+    2.  **Kontynuuj przy błędzie**: Wybierz tę opcję, aby kontynuować stosowanie aktualizacji oprogramowania do obrazu nawet wtedy, gdy występuje błąd.  
 
 7.  Na stronie **Podsumowanie** sprawdź informacje, a następnie kliknij przycisk **Dalej**.  
 
 8.  Na stronie **Ukończenie** sprawdź, czy aktualizacje oprogramowania zostały pomyślnie zastosowane do obrazu systemu operacyjnego.  
 
 ##  <a name="BKMK_ImportToVMM"></a> Importowanie dysku VHD do Menedżera maszyny wirtualnej dla programu System Center  
- Program System Center VMM to rozwiązanie zarządzania dla zwirtualizowanego centrum danych, które pozwala konfigurować hosty, funkcje sieciowe i magazyny wirtualizacji w ramach tworzenia i wdrażania usługi i maszyn wirtualnych w utworzonych uprzednio prywatnych chmurach. Po utworzeniu dysku VHD w programie Configuration Manager, można importować i zarządzać dysk VHD za pomocą programu VMM.  
+ Program System Center VMM to rozwiązanie zarządzania dla zwirtualizowanego centrum danych, które pozwala konfigurować hosty, funkcje sieciowe i magazyny wirtualizacji w ramach tworzenia i wdrażania usługi i maszyn wirtualnych w utworzonych uprzednio prywatnych chmurach. Po utworzeniu dysku VHD w programie Configuration Manager, można importować i zarządzanie dysk VHD za pomocą programu VMM.  
 
 > [!TIP]  
 >  Przed przekazaniem dysku VHD do programu VMM sprawdź, czy konsola programu VMM pomyślnie nawiązuje połączenie z serwerem zarządzania VMM.  
@@ -330,4 +327,3 @@ W System Center Configuration Manager mogą zarządzać wirtualnych dysków twar
     -   **Użyj nieszyfrowanego transferu**: Wybierz to ustawienie, aby przesłać plik VHD na serwer zarządzania VMM bez szyfrowania.  
 
 5.  Na stronie Podsumowanie sprawdź ustawienia, a następnie zakończ pracę kreatora. Czas potrzebny na przekazanie dysku VHD zależy od rozmiaru pliku VHD oraz od przepustowości sieci do serwera zarządzania VMM.  
-

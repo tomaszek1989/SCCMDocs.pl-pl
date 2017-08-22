@@ -1,11 +1,10 @@
 ---
-title: "Możliwości w Technical Preview 1704 programu Configuration Manager"
-description: "Informacje na temat funkcji dostępnych w Technical Preview programu System Center Configuration Manager, 1704 wersji."
+title: Funkcje w wersji zapoznawczej Technical Preview 1704 programu Configuration Manager
+description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersja 1704."
 ms.custom: na
 ms.date: 4/21/2017
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -14,63 +13,61 @@ ms.assetid: e318e705-20f2-417d-8cde-7dfe661b2fa7
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: ae008c91a7387ba76f2bfac13f8feb489a0cc558
 ms.openlocfilehash: d7caee47ca74064630e09c1bdb94187af256d4b4
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1704-for-system-center-configuration-manager"></a>Możliwości w Technical Preview 1704 System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1704-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1704 programu System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (Technical Preview)*
+*Dotyczy: System Center Configuration Manager (wersja zapoznawcza Technical Preview)*
 
-Ten artykuł wprowadza do funkcji, które są dostępne w Technical Preview programu System Center Configuration Manager, 1704 wersji. Można zainstalować tę wersję, aby zaktualizować i dodawać nowe funkcje do lokacji programu Configuration Manager technical preview. Przed zainstalowaniem tej wersji technical preview, przejrzyj temat wprowadzające [Technical Preview dla programu System Center Configuration Manager](../../core/get-started/technical-preview.md), aby zapoznać się z ogólnym wymagania i ograniczenia dotyczące używania technical preview, jak zaktualizować między wersjami i jak Wyraź swoją opinię dotyczącą funkcji w technical preview.    
+W tym artykule przedstawiono funkcje, które są dostępne w wersji Technical Preview programu System Center Configuration Manager, wersja 1704. Można zainstalować tę wersję, aby zaktualizować i dodać nowe funkcje do lokacji programu Configuration Manager technical preview. Przed zainstalowaniem tej wersji technical Preview, przejrzyj temat wprowadzający [Technical Preview programu System Center Configuration Manager](../../core/get-started/technical-preview.md), aby zapoznać się z ogólne wymagania i ograniczenia dotyczące używania wersji technical preview, jak zaktualizować między wersjami i sposobu wyrazić swoją opinię na temat funkcji w wersji technical preview.    
 
 
 **Poniżej przedstawiono nowe funkcje, które można wypróbować z tą wersją.**  
 
-## <a name="configure-android-apps-with-app-configuration-policies"></a>Konfigurowanie aplikacji systemu Android za pomocą zasad konfiguracji aplikacji
-Można użyć zasad konfiguracji aplikacji w System Center Configuration Manager (Menedżer konfiguracji) aby dystrybuować ustawień, które mogą być wymagane, gdy użytkownik uruchamia aplikację w systemie Android pracy urządzeń. Zasady konfiguracji systemu android aplikacji są dostępne tylko na urządzeniach z systemem Android do pracy i stosuje się do aplikacji zatwierdzone w grze dla sklepu pracy.
+## <a name="configure-android-apps-with-app-configuration-policies"></a>Konfigurowanie aplikacji systemu Android przy użyciu zasad konfiguracji aplikacji
+Zasady konfiguracji aplikacji w programie System Center Configuration Manager (program Configuration Manager) można użyć do dystrybucji ustawień, które mogą być wymagane, jeśli użytkownik uruchamia aplikację w systemie Android pracy urządzeń. Zasady konfiguracji aplikacji systemu android są dostępne tylko na urządzeniach z systemem Android do pracy i dotyczą zatwierdzonych aplikacji w sklepie Play pracy magazynu.
 
-### <a name="try-it-out"></a>Wypróbuj to                 
+### <a name="try-it-out"></a>Podczas próby                 
 
-W konsoli programu Configuration Manager wybierz **Biblioteka oprogramowania** > **zarządzania aplikacjami** > **zasady konfiguracji aplikacji** i wybierz polecenie **Tworzenie zasad konfiguracji aplikacji**. Na **ogólne** strony kreatora, możesz teraz **wybierz typ zasad konfiguracji**. Określ platformy zasadom konfiguracji aplikacji: **Zasady konfiguracji dla systemu Android dla aplikacji do pracy**. Następnie możesz albo **Określ nazwę i pary wartości** lub **przejdź do pliku JSON listy właściwości**. Nowe zasady konfiguracji aplikacji jest wyświetlana w **Biblioteka oprogramowania** obszaru roboczego, w **zasady konfiguracji aplikacji** węzła. Aby skojarzyć zasady konfiguracji aplikacji z wdrażaniem systemu Android dla pracy aplikacji, wdrożenie aplikacji w zwykły sposób za pomocą procedury w [wdrażania aplikacji](/sccm/apps/deploy-use/deploy-applications) tematu.
+W konsoli programu Configuration Manager wybierz **Biblioteka oprogramowania** > **Zarządzanie aplikacjami** > **zasady konfiguracji aplikacji** i wybierz polecenie **Tworzenie zasad konfiguracji aplikacji**. Na **ogólne** strony kreatora, możesz teraz **wybierz typ zasad konfiguracji**. Określ platformy docelowej zasady konfiguracji aplikacji: **Zasady konfiguracji dla systemu Android dla aplikacji służbowych**. Można następnie **Określ pary nazwa-wartość** lub **przejdź do pliku JSON listy właściwości**. Nowe zasady konfiguracji aplikacji jest wyświetlany w obszarze **Biblioteka oprogramowania** obszaru roboczego w **zasady konfiguracji aplikacji** węzła. Aby skojarzyć zasady konfiguracji aplikacji z wdrożeniem systemu android dla aplikacji do pracy, Wdróż aplikację w zwykły sposób za pomocą procedury w [wdrażania aplikacji](/sccm/apps/deploy-use/deploy-applications) tematu.
 
-## <a name="hardware-inventory-collects-secure-boot-information"></a>Spis sprzętu zbiera informacje Bezpieczny rozruch
-Spis sprzętu teraz zbiera informacje o czy Bezpieczny rozruch jest włączona na komputerach klienckich. Te informacje są przechowywane w **SMS_Firmware** klasy (wprowadzonych w wersji 1702) i włączone w sprzętu spisu domyślnie. Aby uzyskać więcej informacji na temat zapasów sprzętu, zobacz [Konfigurowanie spisu sprzętu](/sccm/core/clients/manage/inventory/configure-hardware-inventory).
+## <a name="hardware-inventory-collects-secure-boot-information"></a>Spisu sprzętu zbiera informacje Bezpieczny rozruch
+Spis sprzętu teraz zbiera informacje o czy Bezpieczny rozruch jest włączony na komputerach klienckich. Te informacje są przechowywane w **SMS_Firmware** klasy (wprowadzonych w wersji 1702) i włączone w sprzętu, spisu domyślnie. Aby uzyskać więcej informacji dotyczących zapasów sprzętu, zobacz [jak skonfigurować spis sprzętu](/sccm/core/clients/manage/inventory/configure-hardware-inventory).
 
-## <a name="add-child-task-sequences-to-a-task-sequence"></a>Dodaj sekwencji zadań podrzędnych do sekwencji zadań
-W tej wersji można dodać nowej sekwencji zadań z systemem innym sekwencji zadań, co powoduje utworzenie relacji nadrzędny/podrzędny między sekwencji zadań. Dzięki temu można utworzyć więcej sekwencji zadań moduły, które można ponownie użyć.  
+## <a name="add-child-task-sequences-to-a-task-sequence"></a>Dodaj do sekwencji zadań sekwencje zadań podrzędnych
+W tej wersji można dodać nowy krok sekwencji zadań uruchamiana innej sekwencji zadań, która tworzy relacji nadrzędny/podrzędny między sekwencji zadań. Dzięki temu można utworzyć więcej sekwencje zadań moduły, które można użyć ponownie.  
 
-Dodaj sekwencji zadań podrzędnych do sekwencji zadań, Uwzględnij następujące kwestie:
+Należy rozważyć dodanie sekwencji zadań podrzędnych do sekwencji zadań:
 
-- Sekwencje zadań nadrzędne i podrzędne skutecznie są łączone w jednej zasady, które klient uruchamia.
-- Dodaj sekwencji zadań podrzędnych, która jest elementem nadrzędnym innego sekwencji zadań nie jest obsługiwane.
-- Środowisko jest globalne. Na przykład jeśli zmienna jest zestawu nadrzędnego sekwencji zadań, a następnie zmienione przez sekwencję zadań podrzędnych, pozostanie zmiennej zmieniony przenoszenie do przodu. Podobnie jeśli sekwencja zadań podrzędnych tworzy nową zmienną, zmienna jest dostępna dla pozostałych kroków w sekwencji zadania nadrzędnego.
-- Komunikaty o stanie są wysyłane na normalny pojedyncze zadanie sekwencji operacji.
-- Sekwencje zadań tworzyć wpisy w pliku smsts.log z dziennikiem nowych wpisów, które go wyczyścić, jeśli sekwencja zadań podrzędnych rozpoczyna się.
-- W Technical Preview dla programu Configuration Manager, wersja 1704, sekwencje zadań podrzędnych odwołuje się do dowolnego pakietu i uruchomienia sekwencji zadań nadrzędnego z Centrum oprogramowania, klient nie znajdzie zawartości pakietu podczas uruchamiania sekwencji zadań podrzędnych. W tym scenariuszu należy uruchomić z nośnika sekwencji zadań (rozruchu środowiska PXE, nośnika itp.).  
+- Sekwencje zadań nadrzędnych i podrzędnych skutecznie są połączone w jedną zasadę, która działa na kliencie.
+- Dodaj sekwencję zadań podrzędnych, który jest elementem nadrzędnym innego sekwencji zadań nie jest obsługiwane.
+- Środowisko jest globalnego. Na przykład jeśli zmiennej jest ustawiany przez sekwencję zadań nadrzędny i następnie zmienić przez sekwencję zadań podrzędnych, pozostaje zmiennej zmienić przenoszenie do przodu. Podobnie jeśli sekwencja zadań podrzędnych tworzy nową zmienną, zmienna jest dostępne dla pozostałych kroków w sekwencji zadań nadrzędnej.
+- Komunikaty o stanie są wysyłane na normalny dla operacji sekwencji pojedyncze zadanie.
+- Sekwencje zadań tworzyć wpisy w pliku smsts.log w nowy dziennik wpisów, dzięki któremu można wyczyścić podczas sekwencji zadań podrzędnych rozpoczyna się.
+- W wersji Technical Preview programu Configuration Manager, wersja 1704, sekwencje zadań podrzędnych odwołuje się do dowolnego pakietu i uruchomienia sekwencji zadań nadrzędnego z Centrum oprogramowania klienta nie będzie zawierał zawartość pakietu po uruchomieniu sekwencji zadań podrzędnych. W tym scenariuszu, należy uruchomić z nośnika sekwencji zadań (rozruchu środowiska PXE, nośnika itp.).  
 
-    Jeśli sekwencja zadań podrzędnych używa kroków, takich jak **Uruchom wiersz polecenia** (bez jakiegokolwiek odniesienia pakiet), **Format**, **funkcji BitLocker**itp., a następnie sekwencja zadań zostanie pomyślnie uruchomione z Centrum oprogramowania.
+    Jeśli sekwencja zadań podrzędnych używa kroków, takich jak **Uruchom wiersz polecenia** (bez żadnych odwołanie pakietu), **Format**, **funkcji BitLocker**itp., a następnie sekwencja zadań będzie uruchamiana pomyślnie w programie Software Center.
 
-### <a name="to-add-a-child-task-sequence-to-a-task-sequence"></a>Aby dodać sekwencji zadań podrzędnych do sekwencji zadań
-1. W edytorze sekwencji zadań, kliknij przycisk **Add**, wybierz opcję **ogólne**i kliknij przycisk **uruchamiania sekwencji zadań**.
+### <a name="to-add-a-child-task-sequence-to-a-task-sequence"></a>Możesz dodać sekwencję zadań podrzędnych do sekwencji zadań
+1. W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ogólne**i kliknij przycisk **uruchamiania sekwencji zadań**.
 2. Kliknij przycisk **Przeglądaj** do wybierania sekwencji zadań podrzędnych.  
 
-## <a name="reload-boot-images-with-current-windows-pe-version"></a>Załaduj ponownie obrazy rozruchowe z bieżącą wersję środowiska Windows PE
-Po uruchomieniu **Aktualizuj punkty dystrybucji** na wybranego obrazu rozruchowego, teraz można ponownie załadować najnowszą wersję środowiska Windows PE (w katalogu instalacyjnym zestawu Windows ADK) w obrazie rozruchowym. **Ogólne** strona kreatora zawiera informacje o wersji zestawu Windows zainstalowane na serwerze lokacji, wersji zestawu Windows ADK, z którego użyto środowiska Windows PE w obrazie rozruchowym, a wersja klienta programu Configuration Manager. Te informacje służą ułatwiające podjęcie decyzji o ponowne załadowanie obrazu rozruchowego. Ponadto nową kolumnę (**wersji klienta**) został dodany podczas wyświetlania obrazów rozruchowych w **obrazów rozruchowych** węzeł, aby wiedzieć, jakie wersje klienta programu Configuration Manager używa każdego obrazu rozruchowego.
+## <a name="reload-boot-images-with-current-windows-pe-version"></a>Załaduj ponownie obrazy rozruchowe z bieżącej wersji systemu Windows PE
+Po uruchomieniu **Aktualizuj punkty dystrybucji** na wybranego obrazu rozruchowego, teraz możesz ponownie załadować najnowszą wersję środowiska Windows PE (w katalogu instalacyjnym zestawu Windows ADK) do obrazu rozruchowego. **Ogólne** kreatora zawiera informacje o wersji zestawu Windows ADK na serwerze lokacji, wersja zestawu Windows ADK, w którym użyto środowiska Windows PE w obrazie rozruchowym i wersja klienta programu Configuration Manager. Można użyć te informacje ułatwiające podjęcie decyzji o ponowne załadowanie obrazu rozruchowego. Ponadto nową kolumnę (**wersji klienta**) został dodany podczas wyświetlania obrazów rozruchowych w **obrazów rozruchowych** węzeł, aby wiedzieć, jakiej wersji klienta programu Configuration Manager korzysta z każdego obrazu rozruchowego.
 
-### <a name="to-reload-a-boot-image-with-the-current-windows-pe-version"></a>Aby ponownie załadować obraz rozruchowy z bieżącą wersją systemu Windows PE
+### <a name="to-reload-a-boot-image-with-the-current-windows-pe-version"></a>Aby ponownie załadować obraz rozruchowy w bieżącej wersji systemu Windows PE
 
 1. W konsoli programu Configuration Manager, przejdź do **Biblioteka oprogramowania** > **systemów operacyjnych** > **obrazów rozruchowych**.
 2. Wybierz obraz rozruchowy, a następnie kliknij przycisk **Aktualizuj punkty dystrybucji**.
-3. Na **ogólne** w kreatorze Wybierz **obrazu rozruchowego Załaduj ponownie przy użyciu bieżącej wersji środowiska Windows PE z zainstalowany zestaw Windows ADK**.
+3. Na **ogólne** strony kreatora wybierz pozycję **Załaduj obraz rozruchowy przy użyciu bieżącej wersji systemu Windows PE z zainstalowany zestaw Windows ADK**.
 
 ## <a name="improvements-to-operating-system-deployment"></a>Ulepszenia dotyczące wdrażania systemu operacyjnego
-Wprowadzono następujące ulepszenia wprowadzone do wdrożenia systemu operacyjnego, będące wynikiem opinii głosu użytkownika.
+Wprowadzono następujące ulepszenia do wdrożenia systemu operacyjnego, będące wynikiem swoją opinię głosu użytkownika.
 
-- [Nowy **wersji systemu operacyjnego** kolumny obrazów systemu operacyjnego](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/17558407-add-a-column-to-the-operating-system-images-node-f): Dodaliśmy nową kolumnę o nazwie **wersji systemu operacyjnego** Aby wyświetlić wersję systemu operacyjnego obrazu podczas wyświetlania informacji w **obrazów systemu operacyjnego** i **pakiety uaktualnienia systemu operacyjnego** węzłów. Tylko wersję pierwszego indeksu w. Zostanie wyświetlony WIM. Przejdź do **szczegóły** kartę obraz, aby przejrzeć wersje systemu operacyjnego dla innych indeksów.
+- [Nowy **wersji systemu operacyjnego** kolumny obrazów systemu operacyjnego](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/17558407-add-a-column-to-the-operating-system-images-node-f): Dodano nową kolumnę o nazwie **wersji systemu operacyjnego** Aby wyświetlić wersję systemu operacyjnego dla obrazu, podczas wyświetlania informacji w **obrazów systemu operacyjnego** i **pakiety uaktualnień systemu operacyjnego** węzłów. Tylko wersję indeks pierwszego w. WIM jest wyświetlany. Przejdź do **szczegóły** kartę obraz, aby przejrzeć wersje systemu operacyjnego dla innych indeksów.
 
-- [Rejestrowanie bardziej wydajne w Smsts.log](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/16791919-stop-filling-smsts-log-with-useless): Począwszy od tej wersji, firma Microsoft nie są już zapisywanie wpisów w pliku smsts.log CCM_CIVersionInfo.PolicyID informacji. Przed tą wersją może występować wiele wpisów z tymi informacjami, dokonujący trudno znaleźć bardziej istotne informacje w pliku dziennika.
-
+- [Bardziej efektywne rejestrowanie w Smsts.log](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/16791919-stop-filling-smsts-log-with-useless): Począwszy od tej wersji, firma Microsoft nie są już zapisywania wpisów w pliku smsts.log CCM_CIVersionInfo.PolicyID informacji. Przed tą wersją może istnieć wiele wpisów z tymi informacjami, dokonujący twardych można znaleźć więcej informacji w pliku dziennika.

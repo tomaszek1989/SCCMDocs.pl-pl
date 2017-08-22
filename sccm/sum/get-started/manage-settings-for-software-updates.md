@@ -1,7 +1,6 @@
 ---
-
 title: "Zarządzanie ustawieniami aktualizacji oprogramowania | Dokumentacja firmy Microsoft"
-description: "Więcej informacji na temat ustawień klienta, które są odpowiednie dla aktualizacji oprogramowania w lokacji po zainstalowaniu punktu aktualizacji oprogramowania."
+description: "Dowiedz się więcej o ustawieniach klienta, które są odpowiednie dla aktualizacji oprogramowania w lokacji po zainstalowaniu punktu aktualizacji oprogramowania."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -10,31 +9,27 @@ ms.date: 03/26/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: 0d484c1a-e903-4bff-9e9b-e452c62e38a8
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: fe4a8f56e0b554e206bcc4503a0268dc761ded81
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-
 #  <a name="BKMK_ManageSUSettings"></a>Zarządzanie ustawieniami aktualizacji oprogramowania  
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 Po zsynchronizowaniu aktualizacji oprogramowania w programie Configuration Manager, skonfiguruj i sprawdź ustawienia w poniższych sekcjach.
 
 ##  <a name="BKMK_ClientSettings"></a> Ustawienia klienta dotyczące aktualizacji oprogramowania  
-Po zainstalowaniu punktu aktualizacji oprogramowania aktualizacje te są domyślnie włączone na klientach, a ustawienia na stronie **Aktualizacje oprogramowania** mają przypisane wartości domyślne. Ustawienia klienta są używane w całej lokacji i obowiązują podczas aktualizacji oprogramowania są skanowane pod kątem zgodności oraz sposób instalowania aktualizacji oprogramowania są instalowane na komputerach klienckich. Przed wdrożeniem aktualizacji oprogramowania, należy sprawdzić, czy ustawienia klienta są odpowiednie dla aktualizacji oprogramowania w lokacji.  
+Po zainstalowaniu punktu aktualizacji oprogramowania aktualizacje te są domyślnie włączone na klientach, a ustawienia na stronie **Aktualizacje oprogramowania** mają przypisane wartości domyślne. Ustawienia klienta są używane w całej lokacji oraz mają wpływ, jeśli aktualizacje oprogramowania są skanowane pod kątem zgodności, a następnie, kiedy aktualizacje oprogramowania są zainstalowane na komputerach klienckich. Przed wdrożeniem aktualizacji oprogramowania, sprawdź, czy ustawienia klienta są odpowiednie dla aktualizacji oprogramowania w danej lokacji.  
 
 > [!IMPORTANT]  
->  Ustawienie **Włącz aktualizacje oprogramowania na klientach** jest domyślnie włączone. Wyczyszczenie tego ustawienia programu Configuration Manager usunie istniejące zasady wdrażania z klienta.  
+>  Ustawienie **Włącz aktualizacje oprogramowania na klientach** jest domyślnie włączone. Jeśli wyczyścisz to ustawienie, programu Configuration Manager usunie istniejące zasady wdrażania z klienta.  
 
-Aby uzyskać informacje dotyczące sposobu konfigurowania ustawień klienta, zobacz [sposób konfigurowania ustawień klienta](../../core/clients/deploy/configure-client-settings.md).  
+Aby uzyskać informacje o sposobie konfigurowania ustawień klienta, zobacz [sposób konfigurowania ustawień klienta](../../core/clients/deploy/configure-client-settings.md).  
 
 Aby uzyskać więcej informacji o ustawieniach klienta, zobacz [informacje o ustawieniach klienta](../../core/clients/deploy/about-client-settings.md).  
 
@@ -65,7 +60,7 @@ Aby otworzyć okno właściwości aktualizacji oprogramowania, wykonaj następuj
 3.  Wybierz co najmniej jedną aktualizację oprogramowania, a następnie na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości** .  
 
    > [!NOTE]  
-   >  Na **wszystkie aktualizacje oprogramowania** węzła, Configuration Manager wyświetla wyłącznie aktualizacje oprogramowania, które mają **krytyczny** i **zabezpieczeń** które zostały opublikowane w ciągu ostatnich 30 dni.  
+   >  Na **wszystkie aktualizacje oprogramowania** węzła, programu Configuration Manager wyświetla wyłącznie aktualizacje oprogramowania, które mają **krytyczny** i **zabezpieczeń** klasyfikacji i które zostały wydane w ciągu ostatnich 30 dni.  
 
 ###  <a name="BKMK_SoftwareUpdatesInformation"></a> Przeglądanie informacji o aktualizacjach oprogramowania  
 W oknie właściwości oprogramowania można wyświetlić szczegółowe informacje o aktualizacji oprogramowania. Szczegółowe informacje nie będą wyświetlane w przypadku wybrania więcej niż jednej aktualizacji oprogramowania. Następujące sekcje opisują informacje dostępne dla wybranej aktualizacji oprogramowania.  
@@ -73,17 +68,17 @@ W oknie właściwości oprogramowania można wyświetlić szczegółowe informac
 ####  <a name="BKMK_SoftwareUpdateDetails"></a> Szczegóły aktualizacji oprogramowania  
 Na karcie **Szczegóły aktualizacji** można wyświetlić następujące podsumowanie informacji na temat wybranej aktualizacji oprogramowania:  
 
-- **Identyfikator biuletynu**: Określa identyfikator biuletynu powiązany z aktualizacjami oprogramowania zabezpieczeń. Szczegółowe informacje o biuletynie zabezpieczeń można znaleźć, wyszukując identyfikator biuletynu w witrynie internetowej [Microsoft Security Bulletin Search](http://go.microsoft.com/fwlink/p/?LinkId=58313) .  
+- **Identyfikator biuletynu**: Określa identyfikator biuletynu skojarzony z aktualizacjami oprogramowania zabezpieczeń. Szczegółowe informacje o biuletynie zabezpieczeń można znaleźć, wyszukując identyfikator biuletynu w witrynie internetowej [Microsoft Security Bulletin Search](http://go.microsoft.com/fwlink/p/?LinkId=58313) .  
 
 - **Identyfikator artykułu**: Określa identyfikator artykułu dotyczącego aktualizacji oprogramowania. Ów artykuł zawiera bardziej szczegółowe informacje na temat aktualizacji oprogramowania i wersji, której poprawkę lub udoskonalenie stanowi dana aktualizacja.  
 
 - **Data zmian**: Określa datę ostatniej modyfikacji aktualizacji oprogramowania.  
 
-- **Maksymalna ocena ważności**: Określa zdefiniowaną przez dostawcę ważności aktualizacji oprogramowania.  
+- **Maksymalna ocena ważności**: Określa zdefiniowaną przez dostawcę ważności dla aktualizacji oprogramowania.  
 
-- **Opis**: Zawiera omówienie stanu aktualizacji oprogramowania poprawkę lub udoskonalenie stanowi.  
+- **Opis elementu**: Zawiera omówienie stanu aktualizacji oprogramowania, którego poprawkę lub udoskonalenie stanowi.  
 
-- **Właściwe języki**: Zawiera listę języków, których dotyczy dana aktualizacja oprogramowania.  
+- **Właściwe języki**: Wyświetla listę języków, których dotyczy dana aktualizacja oprogramowania.  
 
 - **Objęte produkty**: Zawiera listę produktów, których dotyczy dana aktualizacja oprogramowania.  
 
@@ -92,7 +87,7 @@ Na karcie **Informacje o zawartości** przejrzyj następujące informacje dotycz
 
 -   **Identyfikator zawartości**: Określa identyfikator zawartości aktualizacji oprogramowania.  
 
--   **Pobrane**: Wskazuje, czy program Configuration Manager ma pobrane pliki aktualizacji oprogramowania.  
+-   **Pobrane**: Wskazuje, czy programu Configuration Manager pobrał pliki aktualizacji oprogramowania.  
 
 -   **Język**: Określa języki aktualizacji oprogramowania.  
 
@@ -114,13 +109,13 @@ Na karcie **Informacje o zastępowaniu** można wyświetlić następujące infor
 W oknie właściwości można skonfigurować ustawienia aktualizacji oprogramowania dotyczące co najmniej jednej aktualizacji. Większość ustawień aktualizacji oprogramowania można skonfigurować wyłącznie w centralnej lokacji administracyjnej lub autonomicznej lokacji głównej. Następujące sekcje zawierają informacje pomocne podczas konfigurowania ustawień aktualizacji oprogramowania.  
 
 ####  <a name="BKMK_SetMaxRunTime"></a> Ustawianie maksymalnego czasu działania  
-Na karcie **Maksymalny czas działania** ustaw maksymalny czas działania przydzielony aktualizacji oprogramowania na komputerach klienckich. Jeśli aktualizacja trwa dłużej niż maksymalna wartość czasu wykonywania, Configuration Manager utworzy komunikat o stanie i przestanie monitorować wdrożenie instalacji aktualizacji oprogramowania. To ustawienie można skonfigurować wyłącznie w centralnej lokacji administracyjnej lub autonomicznej lokacji głównej.  
+Na karcie **Maksymalny czas działania** ustaw maksymalny czas działania przydzielony aktualizacji oprogramowania na komputerach klienckich. Jeśli aktualizacja trwa dłużej niż maksymalny wyznaczony czas działania, Configuration Manager utworzy komunikat o stanie i przestanie monitorować wdrożenie instalacji aktualizacji oprogramowania. To ustawienie można skonfigurować wyłącznie w centralnej lokacji administracyjnej lub autonomicznej lokacji głównej.  
 
 Configuration Manager używa również to ustawienie, aby określić, czy należy zainicjować instalację aktualizacji oprogramowania w ramach skonfigurowanego okna obsługi. Jeśli wartość maksymalnego czasu działania jest większa niż wartość dostępnego czasu w oknie obsługi, instalacja aktualizacji oprogramowania zostanie odłożona do momentu rozpoczęcia następnego okna obsługi. Jeśli na komputerze klienckim ze skonfigurowanym oknem obsługi (ramami czasowymi) należy zainstalować wiele aktualizacji oprogramowania, w pierwszej kolejności zostanie zainstalowana aktualizacja o najkrótszym maksymalnym czasie działania, następnie aktualizacja o drugim najkrótszym maksymalnym czasie działania i tak dalej. Przed zainstalowaniem każdej aktualizacji oprogramowania klient sprawdzi, czy dostępne okno obsługi zapewni odpowiednią ilość czasu na zainstalowanie aktualizacji obsługi. Rozpoczęta instalacja aktualizacja obsługi będzie kontynuowana również w przypadku, gdy jej czas będzie wykraczał poza czas okna obsługi. Aby uzyskać więcej informacji o korzystaniu z okien obsługi, zobacz [Używanie okien obsługi w programie System Center Configuration Manager](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
 Na karcie **Maksymalny czas działania** można wyświetlić i skonfigurować następujące ustawienia:  
 
-- **Maksymalny czas wykonywania**: Określa maksymalną liczbę minut wyznaczoną na ukończenie instalacji jest już monitorowane przez program Configuration Manager instalacji aktualizacji oprogramowania. To ustawienie umożliwia również określenie, czy czas pozostały do zakończenia okna obsługi jest wystarczający, aby zainstalować aktualizację. Domyślne ustawienie wynosi 60 minut dla dodatków service pack. Dla innych typów aktualizacji oprogramowania wartość domyślna to 10 minut, jeśli dokonano nowej instalacji programu Configuration Manager w wersji 1511 lub nowszej i 5 minut, podczas uaktualnienia z poprzedniej wersji. Dopuszczalny zakres wartości wynosi od 5 do 9999 minut.  
+- **Maksymalny czas wykonywania**: Określa maksymalną liczbę minut wyznaczoną na ukończenie instalacji jest już monitorowany przez program Configuration Manager instalacji aktualizacji oprogramowania. To ustawienie umożliwia również określenie, czy czas pozostały do zakończenia okna obsługi jest wystarczający, aby zainstalować aktualizację. Domyślne ustawienie to 60 minut dla dodatków service pack. Dla innych typów aktualizacji oprogramowania wartość domyślna to 10 minut, jeśli została ona nowej instalacji programu Configuration Manager w wersji 1511 lub nowszej i 5 minut po uaktualnieniu z poprzedniej wersji. Dopuszczalny zakres wartości wynosi od 5 do 9999 minut.  
 
 > [!IMPORTANT]  
 >  Należy pamiętać, aby wartość maksymalnego czasu działania była mniejsza od wartości czasu skonfigurowanego okna obsługi. W przeciwnym razie instalacja aktualizacji oprogramowania nie zostanie nigdy zainicjowana.  
@@ -130,15 +125,14 @@ We właściwościach aktualizacji oprogramowania na karcie **Ważność niestand
 
 Na karcie **Ważność niestandardowa** można skonfigurować następujące ustawienia:  
 
-- **Ważność niestandardowa**: Ustawienie niestandardowej wartości ważności aktualizacji oprogramowania. Wybierz z listy opcję **Krytyczne**, **Ważne**, **Umiarkowane**lub **Niska** . Domyślnie pole niestandardowej wartości ważności jest puste.
+- **Ważność niestandardowa**: Ustawia niestandardowej wartości ważności aktualizacji oprogramowania. Wybierz z listy opcję **Krytyczne**, **Ważne**, **Umiarkowane**lub **Niska** . Domyślnie pole niestandardowej wartości ważności jest puste.
 
 ## <a name="crl-checking-for-software-updates"></a>Sprawdzanie listy CRL dla aktualizacji oprogramowania
 Domyślnie listy odwołania certyfikatów (CRL) nie jest sprawdzana podczas weryfikowania podpisu aktualizacji oprogramowania System Center Configuration Manager. Sprawdzanie listy CRL przy każdorazowym użyciu certyfikatu zapewnia lepszą ochronę przed potencjalnym użyciem odwołanego certyfikatu, jednak wprowadza opóźnienie komunikacji i konieczność dodatkowego przetwarzania danych na komputerze wykonującym weryfikację listy.  
 
-Jeśli używane, sprawdzanie listy CRL należy ją włączyć w konsolach programu Configuration Manager, które przetwarzają aktualizacje oprogramowania.  
+Jeśli używana, sprawdzanie listy CRL musi być włączona konsol programu Configuration Manager, które przetwarzają aktualizacje oprogramowania.  
 
 #### <a name="to-enable-crl-checking"></a>Aby włączyć sprawdzanie listy CRL  
-Na komputerze wykonującym sprawdzanie listy CRL z dysku DVD produktu, uruchom następujące polecenie w wierszu polecenia: **\SMSSETUP\BIN\X64\\**<*języka*>**\UpdDwnldCfg.exe /checkrevocation**.  
+Na komputerze wykonującym sprawdzanie listy CRL z dysku DVD produktu uruchom następujące polecenie w wierszu polecenia: **\SMSSETUP\BIN\X64\\**<*języka*>**\UpdDwnldCfg.exe /checkrevocation**.  
 
 Na przykład dla języka angielskiego (US) uruchom **\SMSSETUP\BIN\X64\00000409\UpdDwnldCfg.exe /checkrevocation**  
-

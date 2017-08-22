@@ -9,17 +9,14 @@ ms.date: 06/27/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
+ms.openlocfilehash: 8b739a01a6bb5cacf0f7109e2e6fa3b31dd666d3
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
-ms.openlocfilehash: bc7e702a4277ac1dc358aa9a2795cddbf42e475f
-ms.contentlocale: pl-pl
-ms.lasthandoff: 07/29/2017
-
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-
 # <a name="plan-for-software-updates-in-system-center-configuration-manager"></a>Planowanie aktualizacji oprogramowania w programie System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
@@ -297,7 +294,7 @@ Aktualizacje oprogramowania wymagają zainstalowania obsługiwanej wersji progra
 -   Jeśli zastępowana aktualizacja oprogramowania nie została zatwierdzona do wdrożenia w środowisku produkcyjnym.  
 
     > [!NOTE]  
-    >  Gdy ustawia zastąpionej aktualizacji oprogramowania programu Configuration Manager **ważność**, nie ustawia aktualizacji **ważność** w usługach WSUS. Jednakże, gdy zostanie uruchomione zadanie oczyszczania usług WSUS, aktualizacje ustawioną **ważność** w programie Configuration Manager są ustawione na stan **odrzucone** w programie WSUS server i Windows Update Agent na komputerach nie będzie więcej wyszukiwać tych aktualizacji. Oznacza to, że klienci będą nadal skanowania pod kątem wygasłych aktualizacji do momentu uruchamia zadanie oczyszczania. Aby uzyskać informacje na temat zadanie oczyszczania usług WSUS, zobacz [obsługi aktualizacji oprogramowania](/sccm/sum/deploy-use/software-updates-maintenance).
+    > Gdy ustawia zastąpionej aktualizacji oprogramowania programu Configuration Manager **wygasłe**, nie ustawia aktualizacji **odrzucone** w usługach WSUS. Jednakże, gdy zostanie uruchomione zadanie oczyszczania usług WSUS, aktualizacje ustawioną **wygasłe** w programie Configuration Manager są ustawione na stan **odrzucone** w programie WSUS server i Windows Update Agent na komputerach nie będzie więcej wyszukiwać tych aktualizacji. Oznacza to, że klienci będą nadal skanowania pod kątem wygasłych aktualizacji do momentu uruchamia zadanie oczyszczania. Aby uzyskać informacje na temat zadanie oczyszczania usług WSUS, zobacz [obsługi aktualizacji oprogramowania](/sccm/sum/deploy-use/software-updates-maintenance).
 
 ###  <a name="BKMK_UpdateLanguages"></a> Języki  
  Ustawienia języka w punkcie aktualizacji oprogramowania pozwala na skonfigurowanie języków, dla których szczegóły podsumowania (metadane aktualizacji oprogramowania) są synchronizowane z aktualizacjami oprogramowania, oraz wersji językowych aktualizacji oprogramowania, które zostaną pobrane.  
@@ -327,4 +324,3 @@ W poprzednich wersjach programu Configuration Manager, gdy oczekuje na ponowne u
 
 ## <a name="next-steps"></a>Następne kroki
 Po planowania aktualizacji oprogramowania, zapoznaj się z [przygotowanie do oprogramowania aktualizuje zarządzania](../get-started/prepare-for-software-updates-management.md).
-

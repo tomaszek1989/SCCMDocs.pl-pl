@@ -6,21 +6,19 @@ ms.date: 3/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e7cdb1a9-140a-436e-ac71-72d083110223
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: f7cd9c71287d62c9f5d36e2f032bc2a6065572ae
 ms.openlocfilehash: 8ff48b08d1abb7481592c0ea076d4efa15c3d8ee
-ms.contentlocale: pl-pl
-ms.lasthandoff: 06/06/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="use-a-command-line-to-install-system-center-configuration-manager-sites"></a>Użyj wiersza polecenia, aby zainstalować lokacji programu System Center Configuration Manager
 
@@ -126,4 +124,3 @@ Skrypt zawiera nazwy sekcji i kluczy oraz wartości. Należy uwzględnić nastę
     -   Podając odniesienie pliku skryptu Instalatora w wierszu polecenia, należy podać pełną ścieżkę do pliku. Na przykład, jeśli plik inicjowania Instalatora ma nazwę Setup.ini i znajduje się w folderze C:\Setup, w wierszu polecenia wpisz: **Instalatora/script c:\setup\setup.ini**.  
 
 -   Konto, na którym uruchomiono Instalatora musi mieć **administratora** uprawnienia na komputerze. Uruchamiając Instalatora ze skryptem instalacji nienadzorowanej, Otwórz okno wiersza polecenia przy użyciu **Uruchom jako administrator** opcji.   
-

@@ -6,8 +6,7 @@ ms.date: 6/5/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 828c31d1-3d70-4412-b1a8-c92e7e504d39
@@ -15,18 +14,15 @@ caps.latest.revision:
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: f7cd9c71287d62c9f5d36e2f032bc2a6065572ae
 ms.openlocfilehash: b5a1a1d165a6888bc26e809666d2331ff3c24d68
-ms.contentlocale: pl-pl
-ms.lasthandoff: 06/06/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-
 # <a name="unattended-site-recovery-for-configuration-manager"></a>Nienadzorowane odzyskiwanie lokacji programu Configuration Manager   
 
-*Dotyczy: System Center Configuration Manager (Current Branch)* 
- przeprowadzić [nienadzorowane odzyskiwanie](/sccm/protect/understand/recover-sites#site-recovery-procedures) programu Configuration Manager centralnej lokacji administracyjnej lub lokacji głównej, można utworzyć skrypt instalacji nienadzorowanej, a następnie użyć Instalatora z **/script** — opcja polecenia. Skrypt zawiera ten sam typ informacji, o które monituje Kreator instalacji, różnica polega tylko na braku ustawień domyślnych. Należy określić wszystkie wartości kluczy instalacji mających zastosowanie do używanego typu odzyskiwania.
+*Dotyczy: System Center Configuration Manager (Current Branch)* przeprowadzić [nienadzorowane odzyskiwanie](/sccm/protect/understand/recover-sites#site-recovery-procedures) programu Configuration Manager centralnej lokacji administracyjnej lub lokacji głównej, można utworzyć skrypt instalacji nienadzorowanej, a następnie użyć Instalatora z **/script** — opcja polecenia. Skrypt zawiera ten sam typ informacji, o które monituje Kreator instalacji, różnica polega tylko na braku ustawień domyślnych. Należy określić wszystkie wartości kluczy instalacji mających zastosowanie do używanego typu odzyskiwania.
 
  Aby użyć opcji wiersza polecenia Instalatora /script, należy utworzyć plik inicjujący oraz podać jego nazwę po opcji wiersza polecenia Instalatora /script. Nazwa pliku jest bez znaczenia, jak długo ma **.ini** rozszerzenia nazwy pliku. Podając odniesienie do pliku inicjowania Instalatora w wierszu polecenia, należy wprowadzić pełną ścieżkę do pliku. Na przykład, jeśli plik inicjujący Instalatora nosi nazwę *setup.ini*, i jest on przechowywany w *folderze C:\setup*, będzie wierszu polecenia:
 
@@ -386,4 +382,3 @@ ms.lasthandoff: 06/06/2017
     -   **Wymagane:** Nie
     -   **Wartości:** &lt;*Limit czasu*>
     -   **Szczegóły:** Określa maksymalną wartość limitu czasu (w minutach) dla lokacji głównej połączyć się z witryną Administracja centralna. Jeśli na przykład nie uda się nawiązać połączenia między lokacją główną a centralną lokacją administracyjną, lokacja główna ponowi próbę połączenia z centralną lokacją administracyjną na podstawie wartości CASRetryInterval przed upływem czasu określonego w opcji WaitForCASTimeout. Możesz określić wartość z zakresu od 0 do 100.
-

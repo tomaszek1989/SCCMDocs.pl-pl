@@ -1,38 +1,35 @@
 ---
-title: "Włącz rejestrowanie dla platform za pomocą programu System Center Configuration Manager | Dokumentacja firmy Microsoft"
-description: "Włącz rejestrowanie dla platform za pomocą programu System Center Configuration Manager i Microsoft Intune."
+title: "Włącz rejestrowanie platformy przy użyciu programu System Center Configuration Manager | Dokumentacja firmy Microsoft"
+description: "Włącz rejestrowanie platformy przy użyciu programu System Center Configuration Manager i Microsoft Intune."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a9163b77-a67d-4139-8272-bb1dfdb8707c
-caps.latest.revision: 18
-caps.handback.revision: 0
+caps.latest.revision: "18"
+caps.handback.revision: "0"
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
 ms.openlocfilehash: 4b047aa752b638aeeb7dd363a66564800d00a8df
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="enable-platform-enrollment-with-system-center-configuration-manager-and-microsoft-intune"></a>Włącz rejestrowanie dla platform za pomocą programu System Center Configuration Manager i Microsoft Intune
+# <a name="enable-platform-enrollment-with-system-center-configuration-manager-and-microsoft-intune"></a>Włączanie rejestracji platformy z programu System Center Configuration Manager i Microsoft Intune
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Platformy urządzeń różnych wymagają dodatkowej konfiguracji, aby włączyć rejestrowanie urządzeń.
-  - [iOS i Mac rejestracji instalacji](enroll-hybrid-ios-mac.md): Pobierz certyfikat usługi Apple MDM Push
+Różne platformy urządzeń wymagają dodatkowej konfiguracji do włączenia rejestracji urządzeń.
+  - [iOS i Mac konfiguracji rejestracji](enroll-hybrid-ios-mac.md): Pobieranie certyfikatu usługi wypychania MDM firmy Apple
 
-  - [Instalator systemu Windows rejestracji](enroll-hybrid-windows.md): Konfigurowanie usługi DNS i włączyć opcję rejestracji urządzeń zarówno komputery z systemem Windows, Windows 10 Mobile i Windows Phone
+  - [Instalator systemu Windows rejestracji](enroll-hybrid-windows.md): Konfigurowanie systemu DNS i włączyć rejestrowanie urządzeń zarówno komputery z systemem Windows, Windows 10 Mobile i Windows Phone
 
-  - [Android](enroll-hybrid-android.md): Urządzenia z systemem android wymagane nie dodatkowe czynności, aby włączyć rejestrowanie
+  - [Android](enroll-hybrid-android.md): Urządzenia z systemem android wymagane żadne dodatkowe czynności, aby włączyć rejestrowanie
 
-Po włączeniu zarządzania MDM, można określić liczbę urządzeń, które może zarejestrować każdy użytkownik, do 15 urządzeń dla poszczególnych użytkowników.
-
+Po włączeniu zarządzania rozwiązania MDM można określić liczbę urządzeń, które każdy użytkownik może zarejestrować, maksymalnie 15 urządzeń dla każdego użytkownika.

@@ -1,34 +1,31 @@
 ---
-title: "Najlepsze praktyki zarządzania energią | Dokumentacja firmy Microsoft"
-description: "Pobierz najlepsze rozwiązania w zakresie zarządzania energią w programie System Center Configuration Manager."
+title: "Najlepsze rozwiązania dotyczące zarządzania energią | Dokumentacja firmy Microsoft"
+description: "Pobierz najlepsze rozwiązania dotyczące zarządzania energią w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9f7142e1-c972-4384-853b-2da1568cb3e3
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: fc392e4440e84614f92218e9c7a09ec1c2c64f53
 ms.openlocfilehash: d3cc24c7923141f039dcda26ac27489cb0143e89
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="best-practices-for-power-management-in-system-center-configuration-manager"></a>Najlepsze rozwiązania w zakresie zarządzania zużyciem energii w programie System Center Configuration Manager
+# <a name="best-practices-for-power-management-in-system-center-configuration-manager"></a>Najlepsze rozwiązania dotyczące zarządzania energią w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Użyj następujących najlepszych rozwiązań zarządzania energią w programie System Center Configuration Manager.  
+Stosować następujące najlepsze rozwiązania dotyczące zarządzania energią w programie System Center Configuration Manager.  
 
 ## <a name="perform-the-monitoring-phase-at-a-representative-time"></a>Przeprowadzanie fazy monitorowania w czasie reprezentatywnym  
  Faza monitorowania zarządzania energią umożliwia uzyskiwanie informacji o zużyciu energii, działaniach, możliwościach zarządzania energią i wpływie komputerów w organizacji na środowisko. Upewnij się, że wybierasz reprezentatywny czas do przeprowadzenia fazy monitorowania. Na przykład przeprowadzenie fazy monitorowania w dniu wolnym nie spowoduje utworzenia realistycznego raportu zużycia energii komputera.  
@@ -57,7 +54,7 @@ Użyj następujących najlepszych rozwiązań zarządzania energią w programie 
 
 -   Komputery publiczne, takie jak kioski w miejscu publicznym, monitory informacyjne oraz konsole monitorowania, w przypadku których komputer i monitor muszą być zawsze włączone.  
 
- Aby uzyskać więcej informacji, zobacz [Konfigurowanie zarządzania zużyciem energii w programie System Center Configuration Manager](../../../../core/clients/manage/power/configuring-power-management.md).  
+ Aby uzyskać więcej informacji, zobacz [Konfigurowanie zarządzania energią w programie System Center Configuration Manager](../../../../core/clients/manage/power/configuring-power-management.md).  
 
 ## <a name="first-apply-power-plans-to-a-test-collection-of-computers"></a>Najpierw zastosuj plany zasilania do testowej kolekcji komputerów  
  Należy zawsze przetestować efekty zastosowania planu zarządzania energią w testowej kolekcji komputerów przed zastosowaniem planu zasilania w większej kolekcji komputerów.  
@@ -65,23 +62,22 @@ Użyj następujących najlepszych rozwiązań zarządzania energią w programie 
  Ustawienia zasilania zastosowane na komputerach z systemem Windows XP lub Windows Server 2003 nie są przywracane do oryginalnych wartości, nawet jeśli komputer jest wykluczany z zarządzania energią. W nowszych wersjach systemu Windows wykluczenie komputera z zarządzania energią powoduje przywrócenie oryginalnych wartości wszystkich ustawień zasilania. Nie można przywrócić oryginalnych wartości pojedynczych ustawień zasilania.  
 
 ## <a name="apply-power-plan-settings-individually"></a>Zastosuj ustawienia planu zasilania indywidualnie  
- Sprawdź efekt zastosowania każdego ustawienia zasilania przed zastosowaniem kolejnego, aby upewnić się, że wymagany efekt został osiągnięty. Aby uzyskać więcej informacji na temat ustawienia planu zasilania, zobacz [ustawień zarządzania energią dostępne w planie](../../../../core/clients/manage/power/create-and-apply-power-plans.md#BKMK_Plans) w temacie [sposób tworzenia i stosowania planów zasilania w programie System Center Configuration Manager](../../../../core/clients/manage/power/create-and-apply-power-plans.md).  
+ Sprawdź efekt zastosowania każdego ustawienia zasilania przed zastosowaniem kolejnego, aby upewnić się, że wymagany efekt został osiągnięty. Aby uzyskać więcej informacji na temat ustawień planu zasilania, zobacz [ustawienia planu zarządzania energią dostępne](../../../../core/clients/manage/power/create-and-apply-power-plans.md#BKMK_Plans) w temacie [tworzenie i stosowanie planów zasilania w programie System Center Configuration Manager](../../../../core/clients/manage/power/create-and-apply-power-plans.md).  
 
 ## <a name="regularly-monitor-computers-to-see-if-they-have-multiple-power-plans-applied"></a>Regularnie monitoruj komputery, aby sprawdzić, czy zastosowano na nich wiele planów zasilania  
  Zarządzanie energią oferuje raport zawierający komputery, na których zastosowano więcej niż jeden plan zasilania.  
 
  Jeśli komputer należy do wielu kolekcji, w których są stosowane różne plany zasilania, zostaną wykonane następujące akcje:  
 
--   Plan zasilania: Jeśli wiele wartości dla ustawień zasilania są stosowane do komputera, najmniej restrykcyjnego wartość jest używana.  
+-   Plan zasilania: Jeśli wiele wartości dla ustawień zasilania są stosowane do komputera, jest używana wartość najmniej restrykcyjna.  
 
--   Godzina wznowienia: Jeśli wiele razy wznowienia są stosowane do komputera stacjonarnego, będą używane najbliżej północy czasu.  
+-   Godzina wznowienia: Jeśli na komputerze zastosowano wiele godzin wznowienia, będzie używana godzina najbliższa północy.  
 
-     Aby uzyskać więcej informacji, zobacz [komputery z wieloma planów zasilania](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md#BKMK_Multiple) w temacie [monitora i planu na potrzeby zarządzania zużyciem energii w programie System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md). Aby uzyskać więcej informacji dotyczących sposobu zarządzania energią rozwiązywania konfliktów, zobacz [sposób tworzenia i stosowania planów zasilania w programie System Center Configuration Manager](../../../../core/clients/manage/power/create-and-apply-power-plans.md).  
+     Aby uzyskać więcej informacji, zobacz [komputery z wieloma planami zasilania](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md#BKMK_Multiple) w temacie [jak monitorować i planować zarządzanie energią w programie System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md). Aby uzyskać więcej informacji na temat sposobu rozwiązywania konfliktów przez funkcję zarządzania energią, zobacz [tworzenie i stosowanie planów zasilania w programie System Center Configuration Manager](../../../../core/clients/manage/power/create-and-apply-power-plans.md).  
 
 ## <a name="save-or-export-power-management-information-during-the-monitoring-and-planning-phase-of-power-management"></a>Zapisuj lub eksportuj informacje o zarządzaniu energią w fazie monitorowania i planowania zarządzania energią  
- Power management informacje używane przez raporty codzienne są przechowywane w bazie danych lokacji programu Configuration Manager 31 dni.  
+ Informacje dotyczące zarządzania energią używane w codziennych raportach są przechowywane w bazie danych lokacji programu Configuration Manager przez 31 dni.  
 
- Informacje zarządzania energią używane przez miesięczne raporty są przechowywane w bazie danych lokacji programu Configuration Manager dla 13 miesięcy.  
+ Informacje dotyczące zarządzania energią używane w miesięcznych raportach są przechowywane w bazie danych lokacji programu Configuration Manager przez 13 miesięcy.  
 
- Podczas uruchamiania raportów fazach monitorowania i planowania i zgodności zarządzania energią, zapisać lub wyeksportować wyniki z wszystkie raporty, które mają być przechowywane dane dla porównania później w przypadku, gdy są nowsze usunięte przez program Configuration Manager.  
-
+ Podczas uruchamiania raportów podczas fazy monitorowania i zapewniania zgodności zarządzania energią, Zapisz lub wyeksportuj wyniki wszystkich raportów, które mają być przechowywane dane późniejszego porównania na wypadek, gdyby zostały później usunięte przez program Configuration Manager.  

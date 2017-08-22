@@ -1,34 +1,31 @@
 ---
 title: Ustawienia zapory i portu klienta systemu Windows | Dokumentacja firmy Microsoft
-description: "Wybierz ustawienia portu dla klientów i zapory systemu Windows w programie System Center Configuration Manager."
+description: "Wybierz zapory systemu Windows i ustawienia portu dla klientów w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dce4b640-c92f-401a-9873-ce9aa9262014
-caps.latest.revision: 8
-caps.handback.revision: 0
+caps.latest.revision: "8"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4eee9731a4a27328c47c0d15931cab28cf520a18
 ms.openlocfilehash: 79686514efcba344c4babc3d3be03b48adca7132
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="windows-firewall-and-port-settings-for-clients-in-system-center-configuration-manager"></a>Ustawienia zapory systemu Windows i portu dla klientów w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Komputerów klienckich w programie System Center Configuration Manager, które działa Zapora systemu Windows często wymagają konfigurowania wyjątków, aby umożliwić komunikację z ich lokacji. Wyjątki, które trzeba skonfigurować, zależą od funkcji zarządzania używanych z klientem programu Configuration Manager.  
+Komputery klienckie w programie System Center Configuration Manager, w których działa Zapora systemu Windows często wymagają konfigurowania wyjątków, aby umożliwić komunikację z ich lokacją. Wyjątki, które trzeba skonfigurować, zależą od funkcji zarządzania używanych z klientem programu Configuration Manager.  
 
  Poniższe sekcje umożliwiają identyfikację tych funkcji zarządzania oraz zawierają dodatkowe informacje o sposobie konfigurowania tych wyjątków dla Zapory systemu Windows.  
 
@@ -44,13 +41,13 @@ Komputerów klienckich w programie System Center Configuration Manager, które d
 3.  Skonfiguruj wymagane wyjątki oraz niestandardowe programy i porty.  
 
 ## <a name="programs-and-ports-that-configuration-manager-requires"></a>Programy i porty wymagane przez program Configuration Manager  
- Następujące funkcje programu Configuration Manager wymagają wyjątków w Zaporze systemu Windows:  
+ Następujące funkcje programu Configuration Manager wymagają ustawienia wyjątków w Zaporze systemu Windows:  
 
 ### <a name="queries"></a>Kwerendy  
- Po uruchomieniu konsoli programu Configuration Manager na komputerze, na którym działa Zapora systemu Windows są uruchamiane po raz pierwszy niepowodzenie zapytania i system operacyjny wyświetli okno dialogowe z pytaniem, czy chcesz odblokować statview.exe. Odblokowanie pliku statview.exe spowoduje, że zapytania będą w przyszłości uruchamiane bez błędów. Przed uruchomieniem kwerendy można dodać plik Statview.exe do listy programów i usług na karcie **Wyjątki** Zapory systemu Windows.  
+ Po uruchomieniu konsoli programu Configuration Manager na komputerze, na którym działa Zapora systemu Windows są uruchamiane po raz pierwszy zapytania kończyć się niepowodzeniem i system operacyjny wyświetli okno dialogowe z pytaniem, czy chcesz odblokowanie pliku statview.exe. Odblokowanie pliku statview.exe spowoduje, że zapytania będą w przyszłości uruchamiane bez błędów. Przed uruchomieniem kwerendy można dodać plik Statview.exe do listy programów i usług na karcie **Wyjątki** Zapory systemu Windows.  
 
 ### <a name="client-push-installation"></a>Wypychana instalacja klienta  
- Aby wypychania klienta do zainstalowania klienta programu Configuration Manager, należy dodać następujące wyjątki zapory systemu Windows:  
+ Aby wypychania klienta do zainstalowania klienta programu Configuration Manager, należy dodać następujące porty jako wyjątki do zapory systemu Windows:  
 
 -   Wychodzące i przychodzące: **Udostępnianie plików i drukarek**  
 
@@ -60,25 +57,25 @@ Komputerów klienckich w programie System Center Configuration Manager, które d
  Aby użyć zasad grupy, aby zainstalować klienta programu Configuration Manager, należy dodać **udostępnianie plików i drukarek** jako wyjątek do zapory systemu Windows.  
 
 ### <a name="client-requests"></a>Żądania klienta  
- Dla komputerów klienckich do komunikacji z systemami lokacji programu Configuration Manager należy dodać następujące porty jako wyjątki w Zaporze systemu Windows:  
+ Dla komputerów klienckich do komunikacji z systemami lokacji programu Configuration Manager należy dodać następujące porty jako wyjątki do zapory systemu Windows:  
 
- Wychodzące: TCP Port **80** (do komunikacji HTTP)  
+ Wychodzące: TCP Port **80** (dla komunikacji HTTP)  
 
- Wychodzące: TCP Port **443** (do komunikacji HTTPS)  
+ Wychodzące: TCP Port **443** (dla komunikacji HTTPS)  
 
 > [!IMPORTANT]  
 >  Są to domyślne numery portów, które można zmienić w programie Configuration Manager. Aby uzyskać więcej informacji, zobacz temat jak [jak skonfigurować porty komunikacyjne klienta w programie System Center Configuration Manager](../../../core/clients/deploy/configure-client-communication-ports.md). Jeżeli domyślne wartości dla tych portów zostały zmienione, należy także skonfigurować odpowiednie wyjątki w Zaporze systemu Windows.  
 
 ### <a name="client-notification"></a>Powiadomienie klienta  
- Punkt zarządzania informuje, że komputery klienckie o akcji, które należy wykonać, gdy użytkownik administracyjny wybierze akcję klienta w konsoli programu Configuration Manager, takie jak pobieranie zasad komputera lub rozpoczęcie skanowania w poszukiwaniu złośliwego oprogramowania należy dodać następujący jako wyjątek do zapory systemu Windows:  
+ Punkt zarządzania powiadomienie, że komputery klienckie o akcji, które należy wykonać, gdy użytkownik administracyjny wybierze akcję klienta w konsoli programu Configuration Manager, takich jak pobranie zasad komputera lub rozpoczęcie skanowania złośliwego oprogramowania dodać następujący port jako wyjątek do zapory systemu Windows:  
 
  Wychodzące: TCP Port **10123**  
 
- Jeśli ten komunikat nie powiedzie się, program Configuration Manager automatycznie powraca do przy użyciu istniejącego punktu zarządzania klientami komunikacji portu protokołu HTTP lub HTTPS:  
+ Jeśli ta komunikacja nie powiedzie się, programu Configuration Manager automatycznie powraca do przy użyciu istniejącego punktu zarządzania klientami komunikacji portu protokołu HTTP lub HTTPS:  
 
- Wychodzące: TCP Port **80** (do komunikacji HTTP)  
+ Wychodzące: TCP Port **80** (dla komunikacji HTTP)  
 
- Wychodzące: TCP Port **443** (do komunikacji HTTPS)  
+ Wychodzące: TCP Port **443** (dla komunikacji HTTPS)  
 
 > [!IMPORTANT]  
 >  Są to domyślne numery portów, które można zmienić w programie Configuration Manager. Aby uzyskać więcej informacji, zobacz [jak skonfigurować porty komunikacyjne klienta w programie System Center Configuration Manager](../../../core/clients/deploy/configure-client-communication-ports.md). Jeżeli domyślne wartości dla tych portów zostały zmienione, należy także skonfigurować odpowiednie wyjątki w Zaporze systemu Windows.  
@@ -89,7 +86,7 @@ Komputerów klienckich w programie System Center Configuration Manager, które d
 -   Przychodzące: TCP Port**2701**  
 
 ### <a name="remote-assistance-and-remote-desktop"></a>Pomoc zdalna i Pulpit zdalny  
- Aby uruchomić Pomoc zdalną z konsoli programu Configuration Manager, należy dodać program niestandardowy **Helpsvc.exe** i niestandardowy port TCP komunikacji przychodzącej **135** do listy dozwolonych programów i usług w Zaporze systemu Windows na komputerze klienckim. Należy także zezwolić na działanie funkcji **Pomoc zdalna** i **Pulpit zdalny**. Jeżeli funkcja Pomoc zdalna zostanie uruchomiona z komputera klienckiego, Zapora systemu Windows Firewall automatycznie skonfiguruje funkcje **Pomoc zdalna** i **Pulpit zdalny**oraz zezwoli na ich działanie.  
+ Aby uruchomić Pomoc zdalną z konsoli programu Configuration Manager, należy dodać program niestandardowy **Helpsvc.exe** i niestandardowy port wejściowy TCP **135** do listy dozwolonych programów i usług w Zaporze systemu Windows na komputerze klienckim. Należy także zezwolić na działanie funkcji **Pomoc zdalna** i **Pulpit zdalny**. Jeżeli funkcja Pomoc zdalna zostanie uruchomiona z komputera klienckiego, Zapora systemu Windows Firewall automatycznie skonfiguruje funkcje **Pomoc zdalna** i **Pulpit zdalny**oraz zezwoli na ich działanie.  
 
 ### <a name="wake-up-proxy"></a>Serwer proxy wznawiania  
  Jeżeli ustawienie serwera proxy wznawiania zostanie włączone na kliencie, nowa usługa o nazwie Serwer proxy wznawiania ConfigMgr będzie korzystała z protokołu równorzędnego, aby sprawdzić, czy inne komputery w podsieci są wznowione oraz wznowić je w razie potrzeby. Ta funkcja komunikacji wykorzystuje następujące porty:  
@@ -98,7 +95,7 @@ Komputerów klienckich w programie System Center Configuration Manager, które d
 
  Wychodzące: UDP Port **9**  
 
- Są to domyślne numery portów, które można zmienić w programie Configuration Manager za pomocą **zarządzania energią** ustawienia klientów **numer portu serwera proxy wznawiania (UDP)** i **numer portu Wake On LAN (UDP)**. W przypadku określenia **zarządzania energią**: **Wyjątek zapory systemu Windows dla serwera proxy wznawiania** klienta, te porty zostaną automatycznie skonfigurowane w Zaporze systemu Windows dla klientów. Jeżeli jednak na klientach działa inna zapora, należy ręczne skonfigurować wyjątki dla tych numerów portów.  
+ Są to domyślne numery portów, które można zmienić w programie Configuration Manager za pomocą **zarządzania energią** ustawienia klientów **numer portu serwera proxy wznawiania (UDP)** i **numer portu Wake On LAN (UDP)**. Jeśli określisz **zarządzania energią**: **Wyjątek zapory systemu Windows dla serwera proxy wznawiania** klienta ustawienie, te porty zostaną automatycznie skonfigurowane w Zaporze systemu Windows dla klientów. Jeżeli jednak na klientach działa inna zapora, należy ręczne skonfigurować wyjątki dla tych numerów portów.  
 
  Oprócz tych portów, serwer proxy wznawiania korzysta także z komunikatów żądania echa protokołu ICMP (Internet Control Message Protocol) przesyłanych między komputerami klienckimi. Ta komunikacja służy do potwierdzenia, czy drugi komputer kliencki w sieci został wybudzony. Protokół ICMP jest czasami określany jako polecenia TCP/IP Ping.  
 
@@ -138,7 +135,7 @@ Komputerów klienckich w programie System Center Configuration Manager, które d
 |-----------------|---------|---------|  
 |Protokół HTTP (Hypertext Transfer Protocol) z komputera klienckiego do punktu aktualizacji oprogramowania.|--|80 lub 8530 (patrz adnotacja 2, **Usługi Windows Server Update Services**)|  
 |Protokół HTTPS (Secure Hypertext Transfer Protocol) z komputera klienckiego do punktu aktualizacji oprogramowania.|--|443 lub 8531 (patrz adnotacja 2, **Usługi Windows Server Update Services**)|  
-|Blok komunikatów serwera (SMB) między serwerem źródłowym a komputerem klienckim, w przypadku określenia właściwości wiersza polecenia CCMSetup **/source:&lt;ścieżki\>**.|--|445|  
+|Blok komunikatów serwera (SMB) między serwerem źródłowym i komputer kliencki w przypadku określenia właściwości wiersza polecenia CCMSetup **/source:&lt;ścieżki\>**.|--|445|  
 
 ### <a name="ports-that-are-used-with-group-policy-based-installation"></a>Porty używane z instalacją opartą na zasadach grupy  
 
@@ -146,16 +143,16 @@ Komputerów klienckich w programie System Center Configuration Manager, które d
 |-----------------|---------|---------|  
 |Protokół HTTP (Hypertext Transfer Protocol) z komputera klienckiego do punktu zarządzania, jeżeli połączenie wykorzystuje protokół HTTP.|--|80 (zobacz uwaga 1, **Dostępny alternatywny port**)|  
 |Protokół HTTPS (Secure Hypertext Transfer Protocol) z komputera klienckiego do punktu zarządzania, jeżeli połączenie wykorzystuje protokół HTTPS.|--|443 (zobacz uwaga 1, **Dostępny alternatywny port**)|  
-|Blok komunikatów serwera (SMB) między serwerem źródłowym a komputerem klienckim, w przypadku określenia właściwości wiersza polecenia CCMSetup **/source:&lt;ścieżki\>**.|--|445|  
+|Blok komunikatów serwera (SMB) między serwerem źródłowym i komputer kliencki w przypadku określenia właściwości wiersza polecenia CCMSetup **/source:&lt;ścieżki\>**.|--|445|  
 
 ### <a name="ports-that-are-used-with-manual-installation-and-logon-script-based-installation"></a>Porty używane z instalacją ręczną i instalacją opartą na skrypcie logowania  
 
 |Opis|UDP|TCP|  
 |-----------------|---------|---------|  
-|Blok komunikatów serwera (SMB) między komputerem klienckim a udziałem sieciowym, z którego uruchomiono program CCMSetup.exe.<br /><br /> Po zainstalowaniu programu Configuration Manager plików źródłowych instalacji klienta są kopiowane i automatycznie udostępniane z  *&lt;Ścieżkainstalacyjna\>*folderu \Client na punktach zarządzania. Można jednak skopiować te pliki i utworzyć nowy udział na komputerze w sieci. Można także wyeliminować ten ruch sieciowy, uruchamiając program CCMSetup.exe lokalnie, na przykład z nośnika wymiennego.|--|445|  
-|HTTP Hypertext Transfer Protocol () z komputera klienckiego do punktu zarządzania, jeżeli połączenie wykorzystuje protokół HTTP i nie należy określać właściwości wiersza polecenia CCMSetup **/source:&lt;ścieżki\>**.|--|80 (zobacz uwaga 1, **Dostępny alternatywny port**)|  
-|Secure Hypertext Transfer Protocol (HTTPS) z komputera klienckiego do punktu zarządzania, jeżeli połączenie wykorzystuje protokół HTTPS, a nie należy określać właściwości wiersza polecenia CCMSetup **/source:&lt;ścieżki\>**.|--|443 (zobacz uwaga 1, **Dostępny alternatywny port**)|  
-|Blok komunikatów serwera (SMB) między serwerem źródłowym a komputerem klienckim, w przypadku określenia właściwości wiersza polecenia CCMSetup **/source:&lt;ścieżki\>**.|--|445|  
+|Blok komunikatów serwera (SMB) między komputerem klienckim a udziałem sieciowym, z którego uruchomiono program CCMSetup.exe.<br /><br /> Podczas instalowania programu Configuration Manager, pliki źródłowe instalacji klienta są kopiowane i automatycznie udostępniane z  *&lt;Ścieżka_instalacji\>*folderu \Client na punktach zarządzania. Można jednak skopiować te pliki i utworzyć nowy udział na komputerze w sieci. Można także wyeliminować ten ruch sieciowy, uruchamiając program CCMSetup.exe lokalnie, na przykład z nośnika wymiennego.|--|445|  
+|Protokół HTTP (Hypertext Transfer) z komputera klienckiego do punktu zarządzania, jeżeli połączenie wykorzystuje protokół HTTP i nie należy określać właściwości wiersza polecenia CCMSetup **/source:&lt;ścieżki\>**.|--|80 (zobacz uwaga 1, **Dostępny alternatywny port**)|  
+|Secure Hypertext Transfer Protocol (HTTPS) z komputera klienckiego do punktu zarządzania, jeśli połączenie wykorzystuje protokół HTTPS i nie należy określać właściwości wiersza polecenia programu CCMSetup **/source:&lt;ścieżki\>**.|--|443 (zobacz uwaga 1, **Dostępny alternatywny port**)|  
+|Blok komunikatów serwera (SMB) między serwerem źródłowym i komputer kliencki w przypadku określenia właściwości wiersza polecenia CCMSetup **/source:&lt;ścieżki\>**.|--|445|  
 
 ### <a name="ports-that-are-used-with-software-distribution-based-installation"></a>Porty używane z instalacją opartą na dystrybucji oprogramowania  
 
@@ -174,5 +171,4 @@ Komputerów klienckich w programie System Center Configuration Manager, które d
 
  Jeżeli port protokołu HTTP to 80, port protokołu HTTPS musi mieć wartość 443.  
 
- Jeżeli port protokołu HTTP jest inny, HTTPS port musi mieć numer wyższy o 1. Na przykład 8530 i 8531.
-
+ Jeśli port protokołu HTTP jest inny, HTTPS port musi wynosić 1 wyższej. Na przykład 8530 i 8531.

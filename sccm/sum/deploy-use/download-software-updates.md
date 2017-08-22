@@ -1,6 +1,6 @@
 ---
-title: Pobierz aktualizacje oprogramowania - programu Configuration Manager | Dokumentacja firmy Microsoft
-description: "Użyj Kreatora pobierania aktualizacji oprogramowania do pobierania aktualizacji oprogramowania oraz dystrybuować je do punktów dystrybucji, dzięki czemu można je wdrożyć na klientach."
+title: "Pobierz aktualizacje oprogramowania — programu Configuration Manager | Dokumentacja firmy Microsoft"
+description: "Użyj Kreatora pobierania aktualizacji oprogramowania do pobierania aktualizacji oprogramowania i rozproszyć je do punktów dystrybucji, aby przystąpić do wdrażania na klientach."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -9,26 +9,19 @@ ms.date: 01/23/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: de78e8d3-043f-4cd3-97e0-4dfb824fd3fb
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4e44e2b8f6baf020c3b7742bafd607082ffacaa4
 ms.openlocfilehash: f38f72f9f547b82c92789f02975cbd0193b79b2d
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-
-
-
 # <a name="download-software-updates"></a>Pobieranie aktualizacji oprogramowania  
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Istnieje kilka metod udostępniane użytkownikowi w celu pobierania aktualizacji oprogramowania w programie Configuration Manager. Podczas tworzenia zasady wdrażania automatycznego (ADR) lub ręcznie wdrożyć aktualizacje oprogramowania, aktualizacje oprogramowania zostaną pobrane do biblioteki zawartości na serwerze lokacji. Następnie aktualizacje oprogramowania są kopiowane do biblioteki zawartości w punktach dystrybucji, które są skojarzone z pakietem wdrożenia. Aby pobrać aktualizacje oprogramowania przed ich wdrożeniem, można użyć Kreatora pobierania aktualizacji. Umożliwi to upewnienie się, że aktualizacje oprogramowania są dostępne w punktach dystrybucji przed ich wdrożeniem na komputerach klienckich.  
+Istnieje kilka metod udostępniane użytkownikowi w celu pobierania aktualizacji oprogramowania w programie Configuration Manager. Podczas tworzenia reguły wdrażania automatycznego (ADR) lub ręcznego wdrażania aktualizacji oprogramowania, aktualizacje oprogramowania zostaną pobrane do biblioteki zawartości na serwerze lokacji. Następnie aktualizacje oprogramowania są kopiowane do biblioteki zawartości w punktach dystrybucji, które są skojarzone ze skonfigurowanym pakietem wdrożeniowym. Aby pobrać aktualizacje oprogramowania przed ich wdrożeniem, można użyć Kreatora pobierania aktualizacji. Umożliwi to upewnienie się, że aktualizacje oprogramowania są dostępne w punktach dystrybucji przed ich wdrożeniem na komputerach klienckich.  
 
 > [!NOTE]  
 >  Informacje o monitorowaniu stanu zawartości znajdują się w sekcji [Monitorowanie stanu zawartości](../deploy-use/monitor-software-updates.md#BKMK_ContentStatus).  
@@ -119,4 +112,3 @@ Aby pobrać aktualizacje oprogramowania przy użyciu Kreatora pobierania aktuali
 9. On the **Summary** page, verify the settings that you selected in the wizard, and then click **Next** to download the software updates.  
 
 10. On the **Completion** page, verify that the software updates were successfully downloaded, and then click **Close**.  --->
-

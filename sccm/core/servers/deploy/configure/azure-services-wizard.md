@@ -6,21 +6,19 @@ ms.date: 7/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: a26a653e-17aa-43eb-ab36-0e36c7d29f49
-caps.latest.revision: 0
+caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: MT
-ms.sourcegitcommit: 0663ba84762c44a5c303562548499f195bae9e1c
 ms.openlocfilehash: 22203b358830903cf2e531c0532ae3111b8265fc
-ms.contentlocale: pl-pl
-ms.lasthandoff: 08/01/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="configure-azure-services-for-use-with-configuration-manager"></a>Konfigurowanie usług platformy Azure do użytku z programem Configuration Manager
 
@@ -96,4 +94,3 @@ W tym momencie połączyły tej lokacji programu Configuration Manager z usług�
 Można wyświetlić właściwości usługi Azure, które zostały skonfigurowane do użycia.
 
 W konsoli przejdź do **administracji** > **omówienie** > **usługi w chmurze** > **usług Azure**. Następnie wybierz usługę, aby wyświetlić lub edytować, a następnie kliknij przycisk **właściwości**.
-

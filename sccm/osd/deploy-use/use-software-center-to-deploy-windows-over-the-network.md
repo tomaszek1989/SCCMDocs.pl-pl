@@ -6,22 +6,19 @@ ms.date: 6/16/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 919e3636-53fe-4119-ad14-2d03702b391b
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: f4c46bfab9b40b29654f4e883817a5508ab25b74
 ms.openlocfilehash: 8988409c68b7f69439ed03872c316b2139d25616
-ms.contentlocale: pl-pl
-ms.lasthandoff: 06/28/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="use-software-center-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Wdrażanie systemu Windows za pośrednictwem sieci przy użyciu programu Software Center i System Center Configuration Manager
 
@@ -44,4 +41,3 @@ Wdróż system operacyjny w kolekcji docelowej. Aby uzyskać więcej informacji,
 -   **Wdrożenie wymagane**: Wymagane wdrożenia udostępnienia systemu operacyjnego w programie Software Center, ale jego zostanie uruchomiony automatycznie zgodnie ze skonfigurowanym harmonogramem przypisywania.
 
 -   **Wdrożenie dostępne**: System operacyjny będzie dostępny w programie Software Center i użytkownik może go zainstalować na żądanie.
-

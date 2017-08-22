@@ -9,17 +9,14 @@ ms.date: 7/31/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.assetid: 68407ab8-c205-44ed-9deb-ff5714451624
-ms.translationtype: MT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: b1f4cd4a6f19a02d2b2dc3f9a841aeeb2a1403dd
-ms.contentlocale: pl-pl
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-
 # <a name="integrate-upgrade-readiness-with-system-center-configuration-manager"></a>Integracja gotowości do uaktualnienia z programu System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
@@ -143,4 +140,3 @@ Przed 1706 gałęzi programu Configuration Manager, aby utworzyć połączenie d
 
     > [!NOTE]
     > Należy połączyć gotowości do uaktualnienia lokacji najwyższego poziomu w hierarchii. Jeśli możesz połączyć uaktualnienia gotowości do autonomicznej lokacji głównej, a następnie dodać centralną lokację administracyjną do środowiska, należy usunąć i Utwórz ponownie połączenie OMS w nowej hierarchii.
-

@@ -1,54 +1,51 @@
 ---
-title: "Monitorowanie profili certyfikatów | Dokumentacja firmy Microsoft"
-description: "Informacje o sposobie monitorowania stanu zgodności profili certyfikatów programu System Center Configuration Manager."
+title: "Monitorowanie profilów certyfikatów | Dokumentacja firmy Microsoft"
+description: "Informacje o sposobie monitorowania stanu zgodności profilów certyfikatów w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 98feaa06-64b1-4e86-a122-93017c97cd4f
-caps.latest.revision: 7
-caps.handback.revision: 0
+caps.latest.revision: "7"
+caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
 ms.openlocfilehash: 84e275fa5b17bc703da22fb686ef9050d17e557f
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-monitor-certificate-profiles-in-system-center-configuration-manager"></a>Monitorowanie profili certyfikatów w programie System Center Configuration Manager
+# <a name="how-to-monitor-certificate-profiles-in-system-center-configuration-manager"></a>Jak monitorować profile certyfikatów w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
-##  <a name="view-compliance-results-in-the-configuration-manager-console"></a>Wyświetl wyniki zgodności w konsoli programu Configuration Manager  
+##  <a name="view-compliance-results-in-the-configuration-manager-console"></a>Wyświetlanie wyników zgodności w konsoli programu Configuration Manager  
 
-Monitorowanie zgodności certyfikatów protokołu SCEP należy używać konsoli, raczej, użyj [raporty](#view-compliance-results-by-using-reports). 
+Do monitorowania certyfikatów protokołu SCEP należy używać konsoli, a nie, użyj [raporty](#view-compliance-results-by-using-reports). 
 
 1.  W konsoli programu Configuration Manager wybierz **monitorowanie**>  **wdrożeń**.  
 
-3.  Wybierz wdrożenie profilu certyfikatu zainteresowania.  
+3.  Wybierz wdrożenie profilu certyfikatu zainteresowań.  
 
-4.  Przejrzyj informacje o zgodności certyfikatów podsumowania na stronie głównej. Bardziej szczegółowe informacje, wybierz profil certyfikatu, a następnie na **Home** w karcie **wdrożenia** grupy, wybierz **Wyświetl stan** otworzyć **stan wdrożenia** strony.  
+4.  Przejrzyj informacje o zgodności certyfikatów podsumowania na stronie głównej. Bardziej szczegółowe informacje, wybierz profil certyfikatu, a następnie na **Home** karcie **wdrożenia** grupy, wybierz **Wyświetl stan** można otworzyć **stan wdrożenia** strony.  
 
      Na stronie **Stan wdrożenia** znajdują się następujące karty:  
 
-    -   **Zgodny z**: Wyświetla zgodność profilu certyfikatu na podstawie liczby zasobów, których dotyczy problem. Możesz dwukrotnie kliknąć zasadę, aby utworzyć tymczasowy węzeł w węźle **Użytkownicy** obszaru roboczego **Zasoby i zgodność** . Ten węzeł zawiera wszystkich użytkowników zgodnych z profilem certyfikatu. W okienku **Szczegóły zasobu** także zostaną wyświetleni użytkownicy zgodni z danym profilem. Kliknij dwukrotnie użytkownika na liście, aby uzyskać więcej informacji.  
+    -   **Zgodne**: Zawiera informacje o zgodności profilu certyfikatu na podstawie liczby uwzględnionych zasobów. Możesz dwukrotnie kliknąć zasadę, aby utworzyć tymczasowy węzeł w węźle **Użytkownicy** obszaru roboczego **Zasoby i zgodność** . Ten węzeł zawiera wszystkich użytkowników zgodnych z profilem certyfikatu. W okienku **Szczegóły zasobu** także zostaną wyświetleni użytkownicy zgodni z danym profilem. Kliknij dwukrotnie użytkownika na liście, aby uzyskać więcej informacji.  
 
         > [!IMPORTANT]  
         >  Profil certyfikatu nie jest oceniany, jeśli nie dotyczy urządzenia klienckiego. Jego stan jest jednak zwracany jako zgodny.  
 
-    -   **Błąd**: Wyświetla listę wszystkich błędów dla wybranego wdrożenia profilu certyfikatu na podstawie liczby zasobów, których dotyczy problem. Możesz kliknąć dwukrotnie zasadę, aby utworzyć tymczasowy węzeł w węźle **Użytkownicy** obszaru roboczego **Zasoby i zgodność** . Ten węzeł zawiera wszystkich użytkowników, dla których wygenerowano błąd związany z tym profilem. Po wybraniu użytkownika w okienku **Szczegóły zasobu** zostaną wyświetleni użytkownicy, których dotyczy wybrany problem. Kliknij dwukrotnie użytkownika na liście, aby wyświetlić więcej informacji.  
+    -   **Błąd**: Wyświetla listę wszystkich błędów dla wybranego wdrożenia profilu certyfikatu na podstawie liczby uwzględnionych zasobów. Możesz kliknąć dwukrotnie zasadę, aby utworzyć tymczasowy węzeł w węźle **Użytkownicy** obszaru roboczego **Zasoby i zgodność** . Ten węzeł zawiera wszystkich użytkowników, dla których wygenerowano błąd związany z tym profilem. Po wybraniu użytkownika w okienku **Szczegóły zasobu** zostaną wyświetleni użytkownicy, których dotyczy wybrany problem. Kliknij dwukrotnie użytkownika na liście, aby wyświetlić więcej informacji.  
 
-    -   **Niezgodny**: Wyświetla listę wszystkich niezgodnych zasad w profilu certyfikatu na podstawie liczby zasobów, których dotyczy problem. Możesz kliknąć dwukrotnie zasadę, aby utworzyć tymczasowy węzeł w węźle **Użytkownicy** obszaru roboczego **Zasoby i zgodność** . Ten węzeł zawiera wszystkich użytkowników, którzy nie są zgodni z tym profilem. Po wybraniu użytkownika w okienku **Szczegóły zasobu** zostaną wyświetleni użytkownicy, których dotyczy wybrany problem. Kliknij dwukrotnie użytkownika na liście, aby wyświetlić więcej informacji o danym problemie.  
+    -   **Niezgodne**: Wyświetla listę wszystkich niezgodnych reguł w profilu certyfikatu na podstawie liczby uwzględnionych zasobów. Możesz kliknąć dwukrotnie zasadę, aby utworzyć tymczasowy węzeł w węźle **Użytkownicy** obszaru roboczego **Zasoby i zgodność** . Ten węzeł zawiera wszystkich użytkowników, którzy nie są zgodni z tym profilem. Po wybraniu użytkownika w okienku **Szczegóły zasobu** zostaną wyświetleni użytkownicy, których dotyczy wybrany problem. Kliknij dwukrotnie użytkownika na liście, aby wyświetlić więcej informacji o danym problemie.  
 
     -   **Nieznany**: Wyświetla listę wszystkich użytkowników, którzy nie zgłosili zgodności dla wybranego wdrożenia profilu certyfikatu wraz z bieżącym stanem klienta urządzeń.  
 
@@ -66,14 +63,14 @@ Monitorowanie zgodności certyfikatów protokołu SCEP należy używać konsoli,
     |0x00000040|Informacje o stanie zostały pominięte. Taka sytuacja może wystąpić, jeśli urząd certyfikacji HYPERLINK „http://msdn.microsoft.com/en-us/windows/ms721572” \l „_security_certification_authority_gly” jest nieprawidłowy lub nie został wybrany do monitorowania.|  
     |0x00000100|Odmówiono rejestracji.|  
 
-##  <a name="view-compliance-results-by-using-reports"></a>Wyświetl wyniki zgodności przy użyciu raportów
+##  <a name="view-compliance-results-by-using-reports"></a>Wyświetlanie wyników zgodności przy użyciu raportów
 
- Ustawienia zgodności w programie System Center Configuration Manager obejmują wbudowane raporty, których można użyć do monitorowania informacji o profilach certyfikatów. Te raporty mają kategorię **Zarządzanie zgodnością i ustawieniami**.  
+ Ustawienia zgodności w programie System Center Configuration Manager obejmują wbudowane raporty, które umożliwiają monitorowanie informacji o profilach certyfikatów. Te raporty mają kategorię **Zarządzanie zgodnością i ustawieniami**.  
 
 > [!IMPORTANT]  
 >  W przypadku korzystania z parametrów **Filtr urządzenia** i **Filtr użytkownika** w raportach ustawień zgodności należy użyć symbolu wieloznacznego (%).  
 
-Monitorowanie zgodności certyfikatów protokołu SCEP używać tych raportów certyfikatu w węźle raport **dostęp do zasobów firmy**:  
+Do monitorowania certyfikatów protokołu SCEP używać tych raportów certyfikatu w węźle raportu **dostęp do zasobów firmy**:  
 
  -   Historia wystawiania certyfikatów  
  -   Lista zasobów z certyfikatami, które wkrótce wygasną  
@@ -82,4 +79,3 @@ Monitorowanie zgodności certyfikatów protokołu SCEP używać tych raportów c
 
 
  Aby uzyskać więcej informacji o sposobie konfiguracji raportowania w programie System Center Configuration Manager, zobacz [raportowania w programie System Center Configuration Manager](../../core/servers/manage/reporting.md).  
-

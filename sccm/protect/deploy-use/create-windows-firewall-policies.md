@@ -6,28 +6,25 @@ ms.date: 03/07/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6ecdfad1-6305-45a8-ae75-3f33b967cb8f
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 8f4ec982a54cf3cefef310268a54850e70e2e63a
 ms.openlocfilehash: acd75a8b22d050970b8c1176f725ddb4445633aa
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="create-and-deploy-windows-firewall-policies-for-endpoint-protection-in-system-center-configuration-manager"></a>Tworzenie i wdrażanie zasad zapory systemu Windows dla programu Endpoint Protection w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Zasady zapory dla programu Endpoint Protection w programie System Center 2012 Configuration Manager umożliwiają wykonywanie zadań konserwacji i podstawowej konfiguracji zapory systemu Windows na komputerach klienckich w hierarchii. Zasady Zapory systemu Windows umożliwiają wykonywanie następujących zadań:  
+Zasady zapory dla programu Endpoint Protection w programie System Center 2012 Configuration Manager umożliwiają wykonywanie podstawowych konfiguracji zapory systemu Windows i zadania konserwacji na komputerach klienckich w hierarchii. Zasady Zapory systemu Windows umożliwiają wykonywanie następujących zadań:  
 
 -   kontrolowanie, czy Zapora systemu Windows jest włączona, czy wyłączona;  
 
@@ -37,7 +34,7 @@ Zasady zapory dla programu Endpoint Protection w programie System Center 2012 Co
 
 1.  W konsoli programu Configuration Manager kliknij przycisk **Zasoby i zgodność**.  
 
-2.  W **zasoby i zgodność** obszaru roboczego, rozwiń węzeł **Endpoint Protection**, a następnie kliknij przycisk **zasad zapory systemu Windows**.  
+2.  W **zasoby i zgodność** obszaru roboczego, rozwiń węzeł **programu Endpoint Protection**, a następnie kliknij przycisk **zasady zapory systemu Windows**.  
 
 3.  Na karcie **Narzędzia główne** w grupie **Tworzenie** kliknij pozycję **Utwórz zasady Zapory systemu Windows**.  
 
@@ -68,7 +65,7 @@ Zasady zapory dla programu Endpoint Protection w programie System Center 2012 Co
 
 1.  W konsoli programu Configuration Manager kliknij przycisk **Zasoby i zgodność**.  
 
-2.  W **zasoby i zgodność** obszaru roboczego, rozwiń węzeł **Endpoint Protection**, a następnie kliknij przycisk **zasad zapory systemu Windows**.  
+2.  W **zasoby i zgodność** obszaru roboczego, rozwiń węzeł **programu Endpoint Protection**, a następnie kliknij przycisk **zasady zapory systemu Windows**.  
 
 3.  Na liście **Zasady Zapory systemu Windows** wybierz zasady Zapory systemu Windows, które chcesz wdrożyć.  
 
@@ -80,4 +77,3 @@ Zasady zapory dla programu Endpoint Protection w programie System Center 2012 Co
 
     > [!IMPORTANT]  
     >  Po wdrożeniu zasad Zapory systemu Windows w kolekcji zostaną one zastosowane dla komputerów w losowej kolejności w ciągu 2-godzinnego okresu, aby uniknąć przeciążenia sieci.
-

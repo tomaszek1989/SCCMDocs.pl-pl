@@ -9,15 +9,13 @@ ms.date: 10/06/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
+ms.openlocfilehash: 2da61e6e06850b36543b9fd41bd9a7d2368006fb
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
-ms.openlocfilehash: bdf0cbe82113a3aec2677a3628ccc253363eb24e
-ms.contentlocale: pl-pl
-ms.lasthandoff: 07/29/2017
-
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 #  <a name="configure-classifications-and-products-to-synchronize"></a>Konfigurowanie klasyfikacji i produktów do synchronizacji  
 
@@ -51,8 +49,12 @@ ms.lasthandoff: 07/29/2017
     > - **Pakiety zbiorcze aktualizacji**: Określenie zbiorczego zestawu poprawek zebranych w jednym pakiecie w celu łatwiejszego wdrażania. Poprawki tego typu mogą obejmować aktualizacje zabezpieczeń, aktualizacje krytyczne, aktualizacje zwykłe i tak dalej. Pakiet zbiorczy aktualizacji na ogół dotyczy konkretnego obszaru, takiego jak zabezpieczenia czy składnik produktu.  
     > - **Aktualizacje**: Określenie aktualizacji aplikacji lub pliku, który jest obecnie zainstalowany.  
     > - **Uaktualnij**: Określa uaktualnienie funkcji systemu Windows 10. Lokacjach i punktach aktualizacji oprogramowania, na których musi działać co najmniej program WSUS 4.0 z [poprawkę 3095113](https://support.microsoft.com/kb/3095113) uzyskanie **uaktualnienia** klasyfikacji.    
-    >     
-    > Począwszy od programu Configuration Manager 1706 wersji, można również wybrać **obejmują Microsoft Surface sterowniki i aktualizacje oprogramowania układowego** pole wyboru, aby zsynchronizować Microsoft Surface sterowniki. Wszystkich punktów aktualizacji oprogramowania, należy uruchomić system Windows Server 2016 do pomyślnej synchronizacji powierzchni sterowniki.
+    >       
+
+    > [!NOTE]    
+    > Począwszy od programu Configuration Manager 1706 wersji, można również wybrać **obejmują Microsoft Surface sterowniki i aktualizacje oprogramowania układowego** pole wyboru, aby zsynchronizować Microsoft Surface sterowniki. Wszystkich punktów aktualizacji oprogramowania, należy uruchomić system Windows Server 2016 do pomyślnej synchronizacji powierzchni sterowniki.     
+    >    
+    > Jest to funkcja wersji wstępnej. Funkcje wersji wstępnej są zawarte w produkcie do wczesnego testowania w środowisku produkcyjnym, ale nie powinny być uznawane za gotowe do produkcji. Należy włączyć tę funkcję dla powinna być dostępna. Aby uzyskać więcej informacji, zobacz sekcję dotyczącą [używania funkcji w wersjach wstępnych z poziomu aktualizacji](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
 
 5.  Na karcie **Produkty** określ produkty, w ramach których mają zostać zsynchronizowane aktualizacje oprogramowania, a następnie kliknij przycisk **Zamknij**.  
 
@@ -66,4 +68,3 @@ ms.lasthandoff: 07/29/2017
 
 ## <a name="next-steps"></a>Następne kroki
 Uruchom synchronizację aktualizacji oprogramowania, aby pobrać aktualizacje oprogramowania oparte na kryteriach nowego. Aby uzyskać więcej informacji, zobacz [synchronizowanie aktualizacji oprogramowania](synchronize-software-updates.md).
-

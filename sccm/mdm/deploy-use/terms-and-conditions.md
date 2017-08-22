@@ -1,33 +1,30 @@
 ---
 title: Warunki i postanowienia w System Center Configuration Manager | Dokumentacja firmy Microsoft
-description: "Wdrażanie warunków i postanowień w grupach użytkowników w programie System Center Configuration Manager."
+description: "Wdrożenie warunków i postanowień w grupach użytkowników w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4d3f9e6b-4d71-4fc4-9b91-47f1bfbd8c70
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: nathbarn
 ms.author: nathbarn
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3b1451edaed69a972551bd060293839aa11ec8b2
 ms.openlocfilehash: 20be68496099a67ad2d475067f073da2cef16c86
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="add-terms-and-conditions-with-system-center-configuration-manager"></a>Dodawanie warunków i postanowień z programem System Center Configuration Manager
+# <a name="add-terms-and-conditions-with-system-center-configuration-manager"></a>Dodawanie warunków i postanowień w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager warunków i postanowień można wdrożyć dla grup użytkowników, aby wyjaśnić, jak rejestrowanie urządzeń, dostęp do zasobów pracy i Portal firmy wpływają na urządzeniami i użytkownikami. Aby móc rejestrować się i uzyskiwać dostęp do zasobów służbowych w Portalu firmy, użytkownicy muszą zaakceptować warunki i postanowienia.  
+System Center Configuration Manager warunków i postanowień można wdrożyć w grupach użytkowników pozwala wyjaśnić wpływ rejestracji urządzeń, dostęp do zasobów roboczych i korzystania z portalu firmy na urządzenia i użytkowników. Aby móc rejestrować się i uzyskiwać dostęp do zasobów służbowych w Portalu firmy, użytkownicy muszą zaakceptować warunki i postanowienia.  
 
  ## <a name="working-with-terms-and-conditions-policies-in-system-center-configuration-manager"></a>Praca z zasadami dotyczącymi warunków i postanowień w programie System Center Configuration Manager  
  Możesz utworzyć i wdrożyć wiele zestawów warunków i postanowień. Możesz również utworzyć różne wersje tych samych warunków i postanowień w różnych językach, a następnie wdrożyć je w odpowiednich grupach.  
@@ -42,7 +39,7 @@ System Center Configuration Manager warunków i postanowień można wdrożyć dl
 
     -   **Nazwa** — unikatowa nazwa wyświetlana w konsoli programu Configuration Manager  
 
-    -   **Opis** — szczegóły, które pomagają zidentyfikować warunki i postanowienia w konsoli programu Configuration Manager  
+    -   **Opis elementu** — szczegóły ułatwiające identyfikację warunków i postanowień w konsoli programu Configuration Manager  
 
      Następnie kliknij przycisk **Dalej**.  
 
@@ -52,7 +49,7 @@ System Center Configuration Manager warunków i postanowień można wdrożyć dl
 
     -   **Tekst warunków** — warunki i postanowienia wyświetlane użytkownikom w Portalu firmy  
 
-    -   **Tekst objaśniający znaczenie decyzji użytkownika o akceptacji** — etykieta dotycząca akceptacji widoczna dla użytkowników **Przykład**: "Zgadzam się z warunkami i postanowieniami".  
+    -   **Tekst objaśniający znaczenie decyzji użytkownika o akceptacji** — etykieta dotycząca akceptacji widoczna dla użytkowników **Przykład**: "Akceptuję warunki i postanowienia".  
 
      Następnie kliknij przycisk **Dalej**.  
 
@@ -73,7 +70,7 @@ System Center Configuration Manager warunków i postanowień można wdrożyć dl
 
 ## <a name="to-monitor-terms-and-conditions"></a>Aby monitorować warunki i postanowienia  
 
-1.  Można monitorować wdrożeń, warunki i postanowienia w konsoli programu Configuration Manager. W konsoli programu Configuration Manager wybierz pozycję **Monitorowanie** > **Przegląd** > **Wdrożenia**.  
+1.  Możesz monitorować wdrożenia warunków i postanowień w konsoli programu Configuration Manager. W konsoli programu Configuration Manager wybierz pozycję **Monitorowanie** > **Przegląd** > **Wdrożenia**.  
 
 2.  Wybierz wdrożenie warunków i postanowień z listy wdrożeń.  
 
@@ -123,5 +120,4 @@ System Center Configuration Manager warunków i postanowień można wdrożyć dl
      Zaleca się, aby zwiększać numer wersji i wymagać akceptacji po każdym wprowadzeniu znaczących zmian warunków i postanowień. Jeśli zmiany obejmują na przykład poprawki błędów pisowni lub zmiany formatowania, zachowaj bieżący numer wersji.
 
 > [!div class="button"]
-[< Wstecz kroku](configure-intune-subscription.md)[następny krok >  ](create-service-connection-point.md)
-
+[< Wstecz krok](configure-intune-subscription.md)[następny krok >  ](create-service-connection-point.md)

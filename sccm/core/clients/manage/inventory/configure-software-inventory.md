@@ -6,45 +6,42 @@ ms.date: 02/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: f86559de-092a-4ce8-9b43-5d7530e0b763
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9c5d1e48b76392beaf54b5377c69b648537e86f8
 ms.openlocfilehash: e60cec71c425e5e42d450cbeee366528d4b42405
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-configure-software-inventory-in-system-center-configuration-manager"></a>Jak skonfigurować spis oprogramowania System Center Configuration Manager
+# <a name="how-to-configure-software-inventory-in-system-center-configuration-manager"></a>Jak skonfigurować spis oprogramowania w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
- Ta procedura umożliwia skonfigurowanie domyślnych ustawień klienta dla spisu oprogramowania i dotyczy wszystkich komputerów w hierarchii. Jeśli chcesz zastosować te ustawienia tylko do niektórych komputerów utworzyć niestandardowe ustawienie urządzenia klienckiego i przypisać je do kolekcji zawierającej komputery, których chcesz użyć spisu oprogramowania. Aby uzyskać więcej informacji na temat tworzenia niestandardowych ustawień urządzenia, zobacz [sposób konfigurowania ustawień klienta w programie System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md).  
+ Ta procedura umożliwia skonfigurowanie domyślnych ustawień klienta dla spisu oprogramowania i dotyczy wszystkich komputerów w hierarchii. Jeśli chcesz zastosować te ustawienia tylko do niektórych komputerów, Utwórz niestandardowe ustawienie urządzenia klienckiego i przypisz je do kolekcji zawierającej komputery, na których chcesz używać spisu oprogramowania. Aby uzyskać więcej informacji o sposobie tworzenia niestandardowych ustawień urządzenia, zobacz [sposób konfigurowania ustawień klienta w programie System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md).  
 
 ## <a name="to-configure-software-inventory"></a>Aby skonfigurować spis oprogramowania  
 
-1.  W konsoli programu Configuration Manager wybierz **Administracja** > **ustawień klienta****domyślne ustawienia klienta**.    
+1.  W konsoli programu Configuration Manager wybierz **administracji** > **ustawień klienta****domyślne ustawienia klienta**.    
 
-4.  Na **Home** w karcie **właściwości** grupy, wybierz **właściwości**.  
+4.  Na **Home** karcie **właściwości** grupy, wybierz **właściwości**.  
 
-5.  W **ustawienia domyślne** okno dialogowe Wybierz **spisu oprogramowania**.  
+5.  W **ustawienia domyślne** oknie dialogowym wybierz **spisu oprogramowania**.  
 
 6.  Na liście **Ustawienia urządzenia** skonfiguruj następujące wartości:  
 
     -   **Włącz spis oprogramowania na klientach** — z listy rozwijanej wybierz **True**.  
 
-    -   **Harmonogram spisu i plik kolekcji harmonogram oprogramowania** — Określa interwał w magazynowe zbieranie oprogramowania klientów i plików.   
+    -   **Harmonogram spisu, a plik kolekcji harmonogram oprogramowania** — konfiguruje interwał, w którym zbierania spisu oprogramowania i plików.   
 
-7.  Skonfiguruj wymagane ustawienia klienta. Lista ustawień klienta spisu oprogramowania, które można skonfigurować, zobacz [spisu oprogramowania](../../../../core/clients/deploy/about-client-settings.md#software-inventory) w sekcji [informacje o ustawieniach klienta w programie System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md) tematu.  
+7.  Skonfiguruj wymagane ustawienia klienta. Aby uzyskać listę ustawień klienta spisu oprogramowania, które można skonfigurować, zobacz [spisu oprogramowania](../../../../core/clients/deploy/about-client-settings.md#software-inventory) sekcji [informacje o ustawieniach klienta w programie System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md) tematu.  
 
  Klienci zostaną skonfigurowani przy użyciu tych ustawień podczas następnego pobierania zasad klienta. Aby dowiedzieć się, jak zainicjować pobieranie zasad dla jednego klienta, zobacz [Jak zarządzać klientami w programie System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
 

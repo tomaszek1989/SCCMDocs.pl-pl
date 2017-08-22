@@ -6,22 +6,20 @@ ms.date: 03/26/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 02bc6bd4-ca53-4e22-8b80-d8ee5fe72567
-caps.latest.revision: 15
-caps.handback.revision: 0
+caps.latest.revision: "15"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: MT
-ms.sourcegitcommit: b7461f89f483314bd07248bbc9d5dde85ca6b6c2
 ms.openlocfilehash: 32b24b3637dfafe401ea1d9f51b3769aa749f544
-ms.contentlocale: pl-pl
-ms.lasthandoff: 08/03/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="task-sequence-built-in-variables-in-system-center-configuration-manager"></a>Wbudowane zmienne sekwencji zadań w programie System Center Configuration Manager
 
@@ -102,4 +100,3 @@ ms.lasthandoff: 08/03/2017
 |SMSTSSoftwareUpdateScanTimeout| Zapewnia możliwość kontrolowania limitu czasu dla skanowania aktualizacji oprogramowania podczas kroku sekwencji zadań [Instalowanie aktualizacji oprogramowania](task-sequence-steps.md#BKMK_InstallSoftwareUpdates). Na przykład można zwiększyć wartość domyślną, jeśli istnieje wiele aktualizacji oprogramowania do zainstalowania. Wartość domyślna to 30 minut. |
 |SMSTSUDAUsers|Określa użytkownika podstawowego komputera docelowego. Określa użytkowników w następującym formacie. Do rozdzielania wielu użytkowników użyj przecinka (,).<br /><br /> Przykład:<br /><br /> **domena\użytkownik1, domena\użytkownik2, domena\użytkownik3**<br /><br /> Aby uzyskać więcej informacji o sposobie kojarzenia użytkowników z komputerem docelowym, zobacz [kojarzyć użytkowników z komputerem docelowym](../get-started/associate-users-with-a-destination-computer.md).|  
 |SMSTSWaitForSecondReboot|Począwszy od programu Configuration Manager w wersji 1602, ta opcjonalna zmienna sekwencji zadań jest dostępna ułatwia kontrolowanie zachowania klientów podczas instalacji aktualizacji oprogramowania wymaga ponownego uruchomienia dwóch. Tę zmienną należy ustawić przed wykonaniem kroku [Instalowanie aktualizacji oprogramowania](task-sequence-steps.md#BKMK_InstallSoftwareUpdates), aby zapobiec zakończeniu sekwencji zadań niepowodzeniem z powodu drugiego ponownego uruchomienia podczas instalowania aktualizacji oprogramowania.<br /><br /> Należy ustawić wartość SMSTSWaitForSecondReboot w sekundach, aby określić, jak długo sekwencja zadań jest wstrzymywana podczas wykonywania kroku Zainstaluj aktualizacje oprogramowania, gdy komputer jest ponownie uruchamiany, aby zapewnić odpowiednią ilość czasu na drugie ponowne uruchomienie. <br />Jeśli na przykład zmienna SMSTSWaitForSecondReboot zostanie ustawiona na 600, po ponownym uruchomieniu sekwencja zadań zostanie wstrzymana na 10 minut przed wykonaniem dodatkowych kroków sekwencji zadań. Jest to przydatne w przypadku instalowania kilkuset aktualizacji oprogramowania w jednym kroku sekwencji zadań Zainstaluj aktualizacje oprogramowania.|  
-

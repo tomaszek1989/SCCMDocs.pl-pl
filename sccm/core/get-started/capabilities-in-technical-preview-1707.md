@@ -2,10 +2,9 @@
 title: Technical Preview 1707 | Dokumentacja firmy Microsoft
 description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview 1707 programu System Center Configuration Manager."
 ms.custom: na
-ms.date: 07/28/2017
+ms.date: 08/14/2017
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -14,12 +13,11 @@ ms.assetid: cb405ba0-8792-4ab7-988b-2f835f3a9550
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
+ms.openlocfilehash: 7ee2fd78c6c502394016ba077d42714041ad01c6
+ms.sourcegitcommit: 10f17229c5a359f040cb7f8f5e7bd868a34ac086
 ms.translationtype: MT
-ms.sourcegitcommit: 6e890862fd02786b675e2b7abaca7ede7c0e977a
-ms.openlocfilehash: 91fd850f055a7e892a54487307109a291e336696
-ms.contentlocale: pl-pl
-ms.lasthandoff: 07/28/2017
-
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/15/2017
 ---
 # <a name="capabilities-in-technical-preview-1707-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1707 programu System Center Configuration Manager
 
@@ -33,6 +31,17 @@ W tym artykule przedstawiono funkcje, które są dostępne w wersji Technical Pr
 -   **Issue Name**. Details
     Workaround details.
 -->
+
+**Znane problemy w tej wersji Technical Preview:**
+-   **Aktualizacja do wersji 1707 podglądu zakończy się niepowodzeniem, jeśli masz serwer lokacji w trybie pasywnym**. Po uruchomieniu wersji zapoznawczej 1706 i mieć [serwera lokacji głównej w trybie pasywnym](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), aby może pomyślnie zaktualizować lokację preview do wersji 1707 należy najpierw odinstalować serwer lokacji w trybie pasywnym. Po lokalizacji uruchomiono wersję 1707 można ponownie zainstalować serwer lokacji w trybie pasywnym.
+
+  Aby odinstalować lokacji w trybie pasywnym:
+  1. W konsoli przejdź do **administracji** > **omówienie** > **konfiguracja lokacji** > **serwery i role systemu lokacji**, a następnie wybierz serwer lokacji w trybie pasywnym.
+  2. W **ról systemu lokacji** okienku, kliknij prawym przyciskiem myszy **serwera lokacji** roli, a następnie wybierz pozycję **Usuń rolę**.
+  3. Kliknij prawym przyciskiem myszy na serwerze lokacji w trybie pasywnym, a następnie wybierz pozycję **usunąć**.
+  4. Po odinstalowaniu serwera lokacji, na serwerze lokacji głównej active Uruchom ponownie usługę **CONFIGURATION_MANAGER_UPDATE**.
+
+
 
 **Poniżej przedstawiono nowe funkcje, które można wypróbować z tą wersją.**  
 
@@ -89,13 +98,13 @@ Aby dowiedzieć się więcej o ochronie aplikacji systemu Windows Defender, zoba
 
 W ostatnim Technical Preview wprowadzono nową możliwość, która umożliwia [tworzenia i uruchamiania skryptów programu PowerShell z poziomu konsoli programu Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1706#create-and-run-powershell-scripts-from-the-configuration-manager-console).
 W tej wersji Technical Preview możemy zostały rozszerzone na tej możliwości. Configuration Manager teraz odczytuje skrypt programu PowerShell i wyświetla wszystkie parametry w kreatorze tworzenia skryptów. Możesz podać wartość parametru w kreatorze, który będzie używany, gdy skrypt jest uruchamiany. Alternatywnie można pozostawić parametr puste. Jeśli to zrobisz, należy podać wartość parametru podczas uruchamiania skryptu.
+W tej wersji technical preview należy podać parametry, które wymaga skryptu. W przyszłym wydaniu planujemy upewnij się, podając opcjonalne parametry skryptu.
 
 ### <a name="try-it-out"></a>Wypróbuj
 
-1. Postępuj zgodnie z instrukcjami, aby [tworzenia i uruchamiania skryptów programu PowerShell z poziomu konsoli programu Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1706#create-and-run-powershell-scripts-from-the-configuration-manager-console). 
+1. Postępuj zgodnie z instrukcjami, aby [tworzenia i uruchamiania skryptów programu PowerShell z poziomu konsoli programu Configuration Manager](/sccm/core/get-started/capabilities-in-technical-preview-1706#create-and-run-powershell-scripts-from-the-configuration-manager-console).
 2. Na nowym **Parametry skryptu** strony **Kreatora tworzenia skryptu**, wybierz parametr, a następnie kliknij przycisk **Edytuj**.
 3. Podana wartość parametru zaznaczony parametr, a następnie kliknij przycisk **OK**.
 4. Ukończ pracę kreatora.
 
 Po uruchomieniu skryptu, będzie on używać żadnych wartości parametrów, które zostały skonfigurowane.
-

@@ -6,40 +6,38 @@ ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 101d7d4d-92db-419d-b2ae-3c1c1dea68e9
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4eee9731a4a27328c47c0d15931cab28cf520a18
 ms.openlocfilehash: 744bc3792a02f13d3cf940cd1a4f2fd8749ee2f4
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="about-client-installation-properties-published-to-active-directory-domain-services"></a>Informacje o właściwościach instalacji klienta publikowanych w usługach Active Directory Domain Services
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 Po rozszerzeniu schematu usługi Active Directory dla programu System Center Configuration Manager, a lokacja jest opublikowana w usługach domenowych w usłudze Active Directory, wiele właściwości instalacji klienta są publikowane w usługach domenowych w usłudze Active Directory. Jeżeli komputer może zlokalizować te właściwości instalacji klienta, może ich użyć podczas wdrażania klienta programu Configuration Manager.  
 
  Zalety użycia usług domenowych w usłudze Active Directory w celu publikacji właściwości instalacji klienta są następujące:  
 
--   Instalacje klientów oparta na punkcie aktualizacji oprogramowania i instalacje klienta zasad grupy nie wymagają parametrów instalacji można skonfigurować na każdym komputerze.  
+-   Instalacje klienta oparta na punkcie aktualizacji oprogramowania i instalacje klienta zasad grupy nie wymagają parametrów instalacji można skonfigurować na każdym komputerze.  
 
 -   Ponieważ te informacje są generowane automatycznie, eliminuje to ryzyko błędu ludzkiego związanego z ręcznym wprowadzaniem właściwości instalacji.  
 
 > [!NOTE]  
->  Aby uzyskać więcej informacji na temat rozszerzania schematu usługi Active Directory dla programu Configuration Manager oraz publikowania lokacji zobacz [rozszerzenia schematu dla programu System Center Configuration Manager](../../plan-design/network/schema-extensions.md).  
+>  Aby uzyskać więcej informacji na temat rozszerzania schematu usługi Active Directory dla programu Configuration Manager oraz publikowania lokacji, zobacz [rozszerzenia schematu dla programu System Center Configuration Manager](../../plan-design/network/schema-extensions.md).  
 
 ## <a name="client-installation-properties-published-to-active-directory-domain-services"></a>Właściwości instalacji klienta publikowanych w usługach domenowych w usłudze Active Directory  
-Oto lista właściwości instalacji klienta. Aby uzyskać więcej informacji o każdym elemencie wymienione poniżej, zobacz [o właściwościach instalacji klienta w programie System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
+Poniżej znajduje się lista właściwości instalacji klienta. Aby uzyskać więcej informacji na temat każdego z elementów wymienionych poniżej, zobacz [o właściwościach instalacji klienta w programie System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
 
 -   Kod lokacji programu Configuration Manager.  
 
@@ -49,7 +47,7 @@ Oto lista właściwości instalacji klienta. Aby uzyskać więcej informacji o k
 
 -   Porty komunikacyjne klienta dla protokołu HTTP i HTTPS.  
 
--   Rezerwowy punkt stanu. Jeżeli lokacja ma kilka rezerwowych punktów stanu, tylko pierwszy z nich zainstalowany jest opublikowana w usługach domenowych w usłudze Active Directory.  
+-   Rezerwowy punkt stanu. Jeśli lokacja ma kilka rezerwowych punktów stanu, tylko pierwszy z nich została zainstalowana jest publikowana w usługach domenowych w usłudze Active Directory.  
 
 -   Ustawienie oznaczające, że klient musi się komunikować tylko przy użyciu protokołu HTTPS.  
 
@@ -65,26 +63,26 @@ Oto lista właściwości instalacji klienta. Aby uzyskać więcej informacji o k
 
 -   Właściwości instalacji pliku Client.msi określone na karcie **Klient** w oknie dialogowym **Właściwości instalacji klienta w trybie push** .
 
-Instalacja klienta (CCMSetup) wykorzystuje właściwości, które są publikowane w usługach domenowych w usłudze Active Directory, tylko wtedy, gdy nie inne są określone właściwości przy użyciu jednej z następujących czynności:  
+Instalacja klienta (CCMSetup) wykorzystuje właściwości, które są publikowane w usługach domenowych w usłudze Active Directory, tylko wtedy, gdy nie innych są określone właściwości przy użyciu jednej z następujących czynności:  
 
 -   Metoda instalacji ręcznej (opisane w dalszej części tego artykułu)
 
--   Metoda instalacji zasad grupy (opisane w dalszej części tego artykułu)
+-   Metody instalacji zasad grupy (opisane w dalszej części tego artykułu)
 
 > [!NOTE]  
->  Właściwości instalacji klienta służą do instalowania klienta. Te właściwości mogą zostać zastąpione nowymi ustawieniami z przypisanej lokacji, po zainstalowaniu klienta i jego pomyślnym przypisaniu do lokacji programu Configuration Manager.  
+>  Właściwości instalacji klienta służą do instalowania klienta. Te właściwości mogą zastąpione nowymi ustawieniami z przypisanej do niego lokacji po zainstalowaniu klienta i jego pomyślnym przypisaniu do lokacji programu Configuration Manager.  
 
- Użyj szczegółowe informacje w poniższych sekcjach, aby ustalić, które metody instalacji klienta programu Configuration Manager usług domenowych w usłudze Active Directory w celu uzyskania właściwości instalacji klienta.  
+ Użyj szczegółowe informacje w poniższych sekcjach, aby określić, które metody instalacji klienta programu Configuration Manager używać usług domenowych w usłudze Active Directory w celu uzyskania właściwości instalacji klienta.  
 
 ## <a name="client-push-installation"></a>Wypychana instalacja klienta  
  Wypychana instalacja klienta nie korzysta z usług domenowych w usłudze Active Directory w celu uzyskania właściwości instalacji.  
 
- Zamiast tego można określić właściwości instalacji klienta w **klienta** na karcie **właściwości instalacji wypychanej klienta** okno dialogowe. Te opcje i ustawienia lokacji dotyczące klienta są przechowywane w pliku odczytywanym przez klienta podczas instalacji.  
+ Zamiast tego można określić właściwości instalacji klienta w **klienta** karcie **właściwości instalacji wypychanej klienta** okno dialogowe. Te opcje i ustawienia lokacji dotyczące klienta są przechowywane w pliku odczytywanym przez klienta podczas instalacji.  
 
 > [!NOTE]  
 >  Na karcie **Klient** nie jest konieczne określanie żadnych właściwości CCMSetup instalacji wypychanej klienta, rezerwowego punkt stanu ani zaufanego klucza głównego. Te ustawienia są automatycznie udostępniane klientom w przypadku ich instalacji wypychanej.  
 
- Wszystkie właściwości, które są określone w **klienta** kartę są publikowane w usługach domenowych w usłudze Active Directory, jeśli lokacja jest opublikowana w usługach domenowych w usłudze Active Directory. Te ustawienia są odczytywane przez instalacje klientów po uruchomieniu programu CCMSetup bez właściwości instalacji.  
+ Wszystkie właściwości, które określisz w **klienta** karcie są publikowane w usługach domenowych w usłudze Active Directory, jeśli lokacja jest opublikowana w usługach domenowych w usłudze Active Directory. Te ustawienia są odczytywane przez instalacje klientów po uruchomieniu programu CCMSetup bez właściwości instalacji.  
 
 ## <a name="software-update-point-based-installation"></a>Instalacja oparta na punkcie aktualizacji oprogramowania  
  Metoda instalacji oparta na punkcie aktualizacji oprogramowania nie obsługuje dodawania właściwości instalacji do wiersza polecenia programu CCMSetup.  
@@ -117,14 +115,13 @@ Instalacja klienta (CCMSetup) wykorzystuje właściwości, które są publikowan
 
 -   Komputerowi nie zostały udostępnione właściwości instalacji przy użyciu zasad grupy.  
 
-## <a name="installations-for-clients-that-cannot-access-active-directory-domain-services"></a>Instalacje w przypadku klientów, którzy nie mogą uzyskać dostęp do usług domenowych w usłudze Active Directory  
-Te komputery klienckie nie może odczytać lub uzyskać dostęp do opublikowanych właściwości instalacji z usług domenowych w usłudze Active Directory.
+## <a name="installations-for-clients-that-cannot-access-active-directory-domain-services"></a>Instalacje w przypadku klientów, których nie można uzyskać dostępu do usług domenowych w usłudze Active Directory  
+Te komputery klienckie nie może odczytać lub uzyskać dostępu do opublikowanych właściwości instalacji z usług domenowych w usłudze Active Directory.
 
- Ci klienci są:  
+ Ci klienci obejmują:  
 
 -   Komputery grupy roboczej.  
 
--   Klienci, którzy są przypisane do lokacji programu Configuration Manager, który nie jest publikowana w usługach domenowych w usłudze Active Directory.  
+-   Klienci, którzy są przypisane do lokacji programu Configuration Manager, który nie jest opublikowana w usługach domenowych w usłudze Active Directory.  
 
 -   Klienci, którzy są instalowane, gdy są one połączone z Internetem.  
-

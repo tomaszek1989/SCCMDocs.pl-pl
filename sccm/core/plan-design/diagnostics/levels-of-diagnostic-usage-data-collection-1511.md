@@ -1,17 +1,16 @@
 ---
 title: Dane diagnostyczne dla 1511 | Dokumentacja firmy Microsoft
-description: "Więcej informacji na temat poziomów diagnostyki i System Center Configuration Manager w wersji 1511 służy do zbierania danych użycia."
+description: "Więcej informacji na temat poziomy danych diagnostycznych i danych użycia, która gromadzi System Center Configuration Manager w wersji 1511."
 ms.custom: na
 ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9e614ae1-47d2-4a93-ba0a-89dc50d1e266
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
@@ -34,46 +33,45 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: 215ca2a10c50da08d2265ec0926c0310883588ba
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="levels-of-diagnostic-usage-data-collection-for-version-1511-of-system-center-configuration-manager"></a>Poziomy zbierania danych diagnostycznych użycia wersja 1511 dla programu System Center Configuration Manager
+# <a name="levels-of-diagnostic-usage-data-collection-for-version-1511-of-system-center-configuration-manager"></a>Poziomy zbierania diagnostycznych danych użycia dla wersji 1511 programu System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager w wersji 1511 zbiera trzy poziomy diagnostyki i dane dotyczące użycia: **Podstawowe**, **rozszerzone**, i **pełne**. Domyślnie ta funkcja jest ustawiona na poziomie rozszerzonym. Poniższe sekcje zawierają dodatkowe szczegóły dotyczące danych, która gromadzi każdy poziom.  
+System Center Configuration Manager w wersji 1511 zbiera trzy poziomy danych diagnostycznych i danych użycia: **Podstawowe**, **rozszerzone**, i **pełne**. Domyślnie ta funkcja jest ustawiona na poziomie rozszerzonym. Poniższe sekcje zawierają dodatkowe szczegółowe informacje o danych, która gromadzi każdy poziom.  
 
 > [!IMPORTANT]  
->  Menedżer konfiguracji nie zbiera kody lokacji, witryn nazwisk, adresów IP, nazwy użytkowników, nazwy komputerów, adresów fizycznych ani adresów e-mail na poziomach Basic lub rozszerzonego. Wszelkie zbierania tych informacji na poziomie pełnego nie jest purposeful, oznacza to, potencjalnie uwzględnione w zaawansowane informacje diagnostyczne, takie jak pliki dziennika lub migawki pamięci. Firma Microsoft nie użyje tych informacji do identyfikacji użytkownika, kontaktu lub rozwoju reklamy.  
+>  Menedżer konfiguracji nie zbiera kodów lokacji, nazwy lokacji, adresów IP, nazwy użytkowników, nazwy komputerów, adresów fizycznych lub adresy e-mail na poziomie podstawowym i rozszerzonym. Wszelkie zbierania tych informacji na poziomie pełnym nie jest nigdy wykonywane celowo, oznacza to, że potencjalnie objęte zaawansowane informacje diagnostyczne, takie jak pliki dziennika lub migawki pamięci. Firma Microsoft nie będzie używać tych informacji do identyfikacji użytkownika, kontaktowania się z Tobą lub rozwoju reklamy.  
 
 ##  <a name="bkmk_change"></a> Jak zmienić poziom  
- Administratorzy, którzy mają zakres administracyjny opartej na rolach zawierający **Modyfikuj** uprawnienia na **witryny** klasy obiektów można zmienić poziom danych zebranych w ustawieniach diagnostyki i użycia danych w konsoli programu Configuration Manager.
+ Administratorzy, którzy mają opartej na rolach zakres administracyjny, który zawiera **Modyfikuj** uprawnienia **lokacji** klasy obiektów mogą zmieniać poziom danych zebranych w ustawieniach danych diagnostycznych i danych użycia w konsoli programu Configuration Manager.
 
- Aby to zrobić w konsoli, przejdź na kartę zakulisowego (górnym lewym karcie z strzałkę listy rozwijanej), wybierz **dane użycia**, a następnie wybierz poziom danych, która ma być używana.  
+ Aby to zrobić, w konsoli przejdź do karty zaplecze (lewa górna karta ze strzałką listy rozwijanej), wybierz **dane użycia**, a następnie wybierz poziom danych, którego chcesz używać.  
 
 
 ##  <a name="bkmk_level1"></a> Poziom 1 — podstawowy  
- Poziom podstawowy zawiera dane o hierarchii, dane, które są wymagane, aby pomóc poprawić instalacji lub uaktualnienia doświadczenie i danych, która pozwala na zidentyfikowanie aktualizacji programu Configuration Manager, które są stosowane dla hierarchii.  
+ Poziom podstawowy obejmuje dane dotyczące hierarchii, dane, które są wymagane do udoskonalania procesów instalacji lub uaktualnienia środowiska i dane, które pomaga ustalić aktualizacji programu Configuration Manager, które są odpowiednie dla danej hierarchii.  
 
- Począwszy od z System Center Configuration Manager w wersji 1511, ten poziom jest następująca:  
+ W programie System Center Configuration Manager w wersji 1511, ten poziom obejmuje następujące elementy:  
 
 
--   Informacje o ustawieniach
-    - Tworzenie, zainstaluj typu, pakiety językowe i funkcje, które włączono
+-   Informacje na temat instalacji
+    - Tworzenie, zainstaluj typu, pakiety językowe i funkcje, które są włączone
 
-    - Stan wdrożenia pakietu aktualizacji i błędów  
+    - Zaktualizuj stan wdrożenia pakietów i błędów  
 
--   Metryki wydajności bazy danych (replikacja przetwarzania informacji, pierwsze procedur przechowywanych programu SQL Server przez procesora i użycie dysku)  
+-   Metryki wydajności bazy danych (replikacja przetwarzania informacje, top procedur składowanych serwera SQL przez procesora i użycie dysku)  
 
--   Konfiguracja podstawowej bazy danych (procesory, konfiguracji klastra i konfiguracji widoków rozproszonych)  
+-   Podstawowa konfiguracja bazy danych (procesory, konfiguracja klastra i konfiguracja widoków rozproszonych)  
 
 -   Schemat bazy danych programu Configuration Manager (skrót wszystkich definicji obiektu)  
 
--   Wersje klienta liczba programu Configuration Manager i systemu operacyjnego  
+-   Wersje systemu operacyjnego i wersji klientów liczba programu Configuration Manager  
 
 -   Liczba systemów operacyjnych dla zarządzanych urządzeń i zasad ustawionych przez program Exchange Connector  
 
@@ -81,34 +79,34 @@ System Center Configuration Manager w wersji 1511 zbiera trzy poziomy diagnostyk
 
 -   Liczba urządzeń z systemem Windows 10 według gałęzi i kompilacji  
 
--   Podstawowe programu Configuration Manager hierarchii danych lokacji (witryny, listy, typu, wersji, stan, liczba klientów i strefy czasowej)  
+-   Podstawowe programu Configuration Manager hierarchii danych lokacji (listy witryn, typu, wersja, stan, liczba klientów i strefa czasowa)  
 
--   Podstawowy serwer informacje o systemie lokacji (Role systemu lokacji używana, stan Internet i protokołu SSL, system operacyjny, procesory i maszyny fizycznej lub wirtualnej)  
+-   Podstawowy system informacji o serwerze lokacji (używane role systemu lokacji, stan internetowego i protokołu SSL, system operacyjny, procesory i maszynie fizycznej lub wirtualnej)  
 
--   Statystyki odnajdywania użytkownika podstawowego (użytkownika odnajdywania średnią minimum/maksimum i liczba rozmiary grupy)  
+-   Podstawowe statystyki odnajdywania użytkownika (użytkownik odnajdywania i minimalna/maksymalna/średnia liczba rozmiar grupy)  
 
--   Podstawowe informacje Endpoint Protection (wersje ochrony przed złośliwym oprogramowaniem klienta)  
+-   Podstawowe informacje programu Endpoint Protection (wersje klienta ochrony przed złośliwym oprogramowaniem)  
 
--   Podstawowy typ wdrożenia aplikacji i zlicza (całkowita liczba aplikacji, całkowita aplikacji przy użyciu wielu typów wdrożeń, całkowita aplikacje z zależnościami, całkowita zastąpione aplikacji oraz liczba technologie wdrażania w użyciu)  
+-   Podstawowy typ aplikacji i wdrażania liczby (całkowita liczba aplikacji, całkowita liczba aplikacji z wieloma typami wdrożeń, całkowita liczba aplikacji z zależnościami, całkowita liczba zastąpione aplikacji i liczba technologii wdrażania w użyciu)  
 
--   Wdrożenie podstawowego systemu operacyjnego (OSD) zlicza (obrazów)  
+-   Wdrożenie podstawowego systemu operacyjnego (OSD) liczby (obrazy)  
 
--   Punkt dystrybucji i zarządzania punktu typów oraz informacje o podstawowej konfiguracji (chronione, wstępnie przygotowane, środowisko PXE, multiemisja stanu protokołu SSL, punktów dystrybucji ściągania/peer włączone MDM, włączony protokół SSL, itd.)  
+-   Punkt dystrybucji i punktów zarządzania typy i podstawowe informacje o konfiguracji (chronione, wstępnie przygotowane, środowisko PXE, multiemisja, stan SSL, punkty dystrybucji ściągania/równorzędne, zarządzania urządzeniami Przenośnymi, włączyć protokołu SSL itd.)  
 
--   Statystyka telemetrii (uruchamiania, środowisko uruchomieniowe i błędy)  
+-   Dane statystyczne telemetrii (uruchamiania, środowisko uruchomieniowe i błędy)  
 
 ##  <a name="bkmk_level2"></a> Poziom 2 — rozszerzony  
-Poziom rozszerzonego jest domyślnie po zakończeniu pracy Instalatora. Ten poziom między innymi dane gromadzone w podstawowy poziom danych właściwych dla funkcji (częstotliwość oraz czas trwania użycia), ustawienia klienta programu Configuration Manager (nazwa składnika, stan i niektóre ustawienia, takie jak interwały) i podstawowe informacje o aktualizacji oprogramowania).  
+Poziom rozszerzony jest domyślnie po zakończeniu pracy Instalatora. Ten poziom obejmuje: dane, które są zbierane w poziom podstawowy, dane specyficzne dla funkcji (częstotliwość i czas trwania użycia), ustawienia klienta programu Configuration Manager (nazwa składnika, stan i niektóre ustawienia, takie jak interwały sondowania) i podstawowe informacje o aktualizacjach oprogramowania).  
 
-Ten poziom jest zalecane, ponieważ firma Microsoft zapewnia minimalne dane, które są wymagane w celu ulepszenia przydatne w przyszłych wersjach produktów i usług. Ten poziom nazwy obiektów nie zbieraj (witryn, użytkownicy, komputery lub obiekty), szczegóły dotyczące obiektów związanych z zabezpieczeniami lub luk w zabezpieczeniach, takich jak liczby systemów, które wymagają aktualizacji oprogramowania.  
+To poziom zalecany, ponieważ zapewnia z minimalną ilość danych, które są wymagane do dodawania przydatnych ulepszeń w przyszłych wersjach produktów i usług firmy Microsoft. Ten poziom nazwy nie zbieranie obiektów (lokacji, użytkowników, komputerów lub obiektów), szczegóły obiektów powiązanych z zabezpieczeniami lub luk w zabezpieczeniach, takich jak liczba systemów wymagających aktualizacji oprogramowania.  
 
-Począwszy od z System Center Configuration Manager w wersji 1511, ten poziom jest następująca:  
+W programie System Center Configuration Manager w wersji 1511, ten poziom obejmuje następujące elementy:  
 
 -   **Zarządzanie aplikacjami:**  
 
-    -   Podstawowe użycie/docelowych informacji dla typów wdrożeń, które są używane w ramach organizacji (użytkownika i urządzenia docelowe i wymagana i dostępna)  
+    -   Informacje podstawowe użycia/elementów docelowych dla typów wdrożeń, które są używane w ramach organizacji (użytkownik lub urządzenie docelowe i wymagana i dostępna)  
 
-    -   Informacje na temat wdrażania aplikacji (instalowania/odinstalowywania, wymaga zatwierdzenia i interakcji z użytkownikiem włączone/wyłączone)  
+    -   Informacje na temat wdrażania aplikacji (Instalowanie/Odinstalowywanie, wymaga zatwierdzenia i włączona/wyłączona interakcja użytkownika)  
 
     -   Dostępne dane statystyczne żądań dotyczących aplikacji  
 
@@ -140,49 +138,49 @@ Począwszy od z System Center Configuration Manager w wersji 1511, ten poziom je
 
     -   Podstawowe informacje o linii bazowej konfiguracji (liczba, liczba wdrożeń i liczba odwołań)  
 
-    -   Liczba wdrożeń odwołujące się do ustawień wbudowanych (wartość ustawienia nie są przechwytywane)  
+    -   Liczba wdrożeń, które odwołują się do ustawień wbudowanych (wartość ustawienia nie jest przechwytywana)  
 
-    -   Liczba reguł i wdrożenia, które są tworzone dla ustawień niestandardowych  
+    -   Liczba reguł i wdrożeń utworzonych dla ustawień niestandardowych  
 
-    -   Liczba wdrożonych szablony prostego protokołu rejestrowania certyfikatów  
+    -   Liczba wdrożonych szablonów prostego protokołu rejestrowania certyfikatów  
 
 -   **Zawartość:**  
 
     -   Liczba granic według typu  
 
-    -   Informacje o grupach granic (liczba granice i systemów lokacji, które są przypisane do każdej grupy granic)  
+    -   Informacje o grupach granic (liczba granic i systemy lokacji, które są przypisane do każdej grupy granic)  
 
-    -   Informacje o grupie punktów dystrybucji (liczba pakiety i punkty dystrybucji, które są przypisane do każdej grupy punktów dystrybucji)  
+    -   Informacje o grupie punktów dystrybucji (liczba pakietów i punktów dystrybucji, które są przypisane do każdej grupy punktów dystrybucji)  
 
-    -   Informacje o konfiguracji punktu dystrybucji (Korzystanie z pamięci podręcznej w oddziale firmy i monitorowania punktu dystrybucji)  
+    -   Informacje o konfiguracji punktu dystrybucji (użycie pamięci podręcznej gałęzi i monitorowania punktu dystrybucji)  
 
-    -   Informacje o konfiguracji Menedżera dystrybucji (wątków, opóźnienie, liczbę ponownych prób i ściągnąć ustawienia punktu dystrybucji)  
+    -   Informacje o konfiguracji Menedżera dystrybucji (wątki, opóźnienie, liczba ponownych prób i ustawienia ściągającego punktu dystrybucji)  
 
 -   **Program Program Endpoint Protection:**  
 
-    -   Punkt końcowy ochrony przed złośliwym oprogramowaniem i użycia zasad zapory systemu Windows (liczba unikatowych zasady przypisane grupie)<br /><br />Nie ma żadnych informacji o ustawieniach, które znajdują się w zasadach.  
+    -   Endpoint Protection chroniącego przed złośliwym kodem i użycie zasad zapory systemu Windows (liczba unikatowych zasad przypisanych do grupy)<br /><br />Nie ma żadnych informacji o ustawieniach uwzględnionych w zasadach.  
 
-    -   Błędy wdrożenia programu Endpoint Protection (liczba kody błędów wdrażania zasad programu Endpoint Protection)  
+    -   Błędy wdrożenia programu Endpoint Protection (liczba kodów błędów wdrażania zasad programu Endpoint Protection)  
 
-    -   Liczba kolekcji, które są wybrane są widoczne w pulpicie nawigacyjnym Endpoint Protection  
+    -   Liczba kolekcji wybranych do jego wyświetlenia na pulpicie nawigacyjnym programu Endpoint Protection  
 
     -   Liczba alertów, które są skonfigurowane dla funkcji programu Endpoint Protection  
 
 -   **Zarządzanie aplikacjami mobilnymi:**  
 
-    -   Liczba włączone MAM Office aplikacji, -biznesowych oraz zasady przez system operacyjny  
+    -   Liczba aplikacji pakietu Office z możliwością zarządzania aplikacjami Mobilnymi, --aplikacji biznesowych i zasad przez system operacyjny  
 
     -   Liczba wdrożeń zasad/aplikacji zarządzania aplikacjami mobilnymi  
 
-    -   Liczba reguł, które są tworzone na ustawienie MAM  
+    -   Liczba reguł, które są tworzone na ustawienie zarządzania aplikacjami Mobilnymi  
 
 -   **Zarządzanie urządzeniami przenośnymi:**  
 
-    -   Liczba wydanych akcji urządzenia przenośnego: blokowanie, przypiąć Umieść, czyszczenia i wycofywania poleceń
+    -   Liczba wydanych akcji urządzenia przenośnego: blokowanie, przypiąć rest, czyszczenia i wycofywania poleceń
 
-    -   Liczba urządzeń przenośnych, które są zarządzane przez program Configuration Manager i Microsoft Intune i jak zostały zarejestrowane (zbiorczo lub oparte na użytkownika)  
+    -   Liczba urządzeń przenośnych, które są zarządzane przez program Configuration Manager i Microsoft Intune i jak zostały zarejestrowane (masowo lub oparta na użytkowniku)  
 
-    -   Harmonogram sondowania urządzeń przenośnych i statystyki dla urządzeń przenośnych zaewidencjonować czas trwania  
+    -   Harmonogram sondowania urządzeń przenośnych i statystyki dla urządzeń przenośnych, czas trwania zaewidencjonowania  
 
     -   Liczba zasad urządzeń przenośnych  
 
@@ -190,9 +188,9 @@ Począwszy od z System Center Configuration Manager w wersji 1511, ten poziom je
 
 -   **Rozwiązywanie problemów z Microsoft Intune:**  
 
-    -   Liczba i rozmiar stan, stan, Magazyn, RDR, DDR, UDX, dzierżawy komunikatów o stanie, znaki, dziennika, certyfikatów, CRP, ponownej synchronizacji, CFD, RDO, BEX, ISM i zgodności pobieranych z Microsoft Intune  
+    -   Liczba i rozmiar stanu, statusu, spisu, RDR, DDR, UDX, dzierżawy komunikatów o stanie, POL, dziennika Cert, CRP, Resync, CFD, RDO, BEX, ISM i zgodności pobranych z programu Microsoft Intune  
 
-    -   Liczba i rozmiar akcji urządzenia (czyszczenie, wycofanie, blokowanie), telemetrii i komunikatów danych, które są replikowane w usłudze Microsoft Intune  
+    -   Liczba i rozmiar akcji urządzenia (czyszczenie, wycofanie, blokowanie), telemetrii i danych wiadomości, które są replikowane w usłudze Microsoft Intune  
 
     -   Pełne i różnicowe statystyki synchronizacji użytkowników usługi Microsoft Intune  
 
@@ -208,13 +206,13 @@ Począwszy od z System Center Configuration Manager w wersji 1511, ten poziom je
 
 -   **Aktualizacje oprogramowania:**  
 
-    -   Wdrożone razem/średnia liczba kolekcji, które wdrożenia aktualizacji oprogramowania i maksymalna/średnia liczba aktualizacji  
+    -   Łączna/średnia liczba kolekcji, które mają wdrożenia aktualizacji oprogramowania oraz maksymalna/średnia liczba wdrożonych aktualizacji  
 
     -   Liczba reguł wdrażania automatycznego, które są powiązane z synchronizacji  
 
     -   Liczba reguł wdrażania automatycznego, które umożliwiają tworzenie nowej grupy aktualizacji lub dodawanie aktualizacji do istniejącej grupy  
 
-    -   Dostępny i terminu zmianami używanych w zasadach wdrażania automatycznego  
+    -   Różnice dostępne i, które są używane w regułach wdrażania automatycznego  
 
     -   Średnia i maksymalna liczba przydziałów na aktualizację  
 
@@ -222,11 +220,11 @@ Począwszy od z System Center Configuration Manager w wersji 1511, ten poziom je
 
     -   Liczba przydziałów i grup aktualizacji  
 
-    -   Liczba pakietów aktualizacji i maksimum/minimum/średnią liczbę punktów dystrybucji, ukierunkowane na z pakietami  
+    -   Liczba pakietów aktualizacji oraz maksymalna/minimalna/średnia liczba punktów dystrybucji, które są objęte z pakietami  
 
     -   Liczba grup aktualizacji oraz maksymalna/minimalna/średnia liczba aktualizacji na grupę  
 
-    -   Liczba aktualizacji i procent aktualizacji, które są wdrożone za wygasłe, zastąpione, pobrane i zawierać umowy licencyjne  
+    -   Liczba aktualizacji i procent aktualizacji wdrożonych, ważność, zastąpione pobrane i zawiera umowy licencyjne  
 
     -   Liczba maszyn i kody błędów skanowania aktualizacji  
 
@@ -236,11 +234,11 @@ Począwszy od z System Center Configuration Manager w wersji 1511, ten poziom je
 
     -   Liczba reguł wdrażania automatycznego, które mają wiele wdrożeń  
 
-    -   Konfiguracje, które są używane do obsługi planów active systemu Windows 10  
+    -   Konfiguracje, które są używane dla aktywnych planach obsługi systemu Windows 10  
 
     -   Wersje zawartości pulpitu nawigacyjnego systemu Windows 10  
 
-    -   Liczba systemu Windows 10 klientów, którzy używają usługi Windows Update dla firm  
+    -   Liczba systemu Windows 10 klientów, którzy za pomocą usługi Windows Update dla firm  
 
     -   Dane statystyczne poprawek klastrów  
 
@@ -255,9 +253,9 @@ Począwszy od z System Center Configuration Manager w wersji 1511, ten poziom je
     -   Liczba kolekcji według typu  
 
 ##  <a name="bkmk_level3"></a> Poziom 3 — pełny  
-Pełna poziom zawiera wszystkie dane w poziomy podstawowe i rozszerzone. Zawiera on również dodatkowe informacje na temat programu Endpoint Protection, wartości procentowe zgodności aktualizacji i informacje na temat aktualizacji oprogramowania. Ten poziom można także zaawansowane informacje diagnostyczne, takie jak pliki systemowe i migawki pamięci, które mogą zawierać informacje osobiste, które istniały w pamięci lub pliki dziennika w czasie przechwytywania.  
+Poziom pełny obejmuje wszystkie dane na poziomie podstawowy i rozszerzony. Zawiera on również dodatkowe informacje na temat programu Endpoint Protection, wartości procentowe zgodności aktualizacji i informacje na temat aktualizacji oprogramowania. Ten poziom może obejmować zaawansowane informacje diagnostyczne, takie jak pliki systemowe i migawki pamięci, które mogą zawierać informacje osobiste, które istniały w pamięci lub plikach dziennika w czasie przechwytywania.  
 
-Począwszy od z System Center Configuration Manager w wersji 1511, ten poziom jest następująca:  
+W programie System Center Configuration Manager w wersji 1511, ten poziom obejmuje następujące elementy:  
 
 -   Dane statystyczne odświeżania i oceny kolekcji  
 
@@ -265,13 +263,13 @@ Począwszy od z System Center Configuration Manager w wersji 1511, ten poziom je
 
 -   Konfiguracja zasad programu Endpoint Protection  
 
--   Informacje dotyczące wdrażania aktualizacji oprogramowania (część wdrożenia przeznaczone z klienta do czasu UTC, wymagane i opcjonalne i silent i pomijania ponownego uruchomienia)  
+-   Informacje dotyczące wdrażania aktualizacji oprogramowania (procent wdrożeń docelowych z klienta do czasu UTC, wymagane i opcjonalne lub silent i pomijania ponownego uruchomienia)  
 
 -   Ogólna zgodność wdrożeń aktualizacji oprogramowania  
 
 -   Informacje dotyczące harmonogramu oceny reguły wdrażania automatycznego  
 
--   Liczba klientów, których zasady ochrony dostępu do sieci  
+-   Liczba klientów, którzy mają zasad ochrony dostępu do sieci  
 
 -   Liczby i kody błędów wdrażania aktualizacji oprogramowania  
 
@@ -284,4 +282,3 @@ Począwszy od z System Center Configuration Manager w wersji 1511, ten poziom je
 -   Procent powodzenia skanowania aktualizacji oprogramowania  
 
 -   Minimalna/maksymalna/średnia liczba godzin od ostatniego skanowania aktualizacji oprogramowania  
-

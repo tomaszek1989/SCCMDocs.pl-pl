@@ -5,21 +5,19 @@ ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ed931751-18f2-4230-a09e-a0a329fbfa1c
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: MT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: 442e5e1fbddd00248819a8de79adc78929474fc0
-ms.contentlocale: pl-pl
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="about-discovery-methods-for-system-center-configuration-manager"></a>Informacje o metodach odnajdywania dla programu System Center Configuration Manager
 
@@ -525,4 +523,3 @@ Aby skonfigurować filtrowanie **opcji** karcie **właściwości odnajdywania sy
 Każda metoda odnajdywania obsługuje zawiera unikatową listę atrybutów usługi Active Directory, które mogą być wykrywane.  
 
 Można wyświetlić i skonfigurować listę atrybutów niestandardowych na **atrybuty usługi Active Directory** karcie **właściwości odnajdywania systemu usługi Active Directory** i **właściwości odnajdywania użytkownika usługi Active Directory** okien dialogowych.  
-

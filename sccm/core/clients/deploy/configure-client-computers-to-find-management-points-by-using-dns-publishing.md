@@ -1,42 +1,39 @@
 ---
-title: "Konfigurowanie publikowania DNS punkty zarządzania Znajdź klientów | Dokumentacja firmy Microsoft"
-description: "Ustaw komputery klienckie w celu znalezienia punktów zarządzania przy użyciu publikowania DNS w programie System Center Configuration Manager."
+title: "Konfigurowanie publikowania DNS punktów zarządzania Znajdź klientów | Dokumentacja firmy Microsoft"
+description: "Ustaw komputery klienckie pod kątem wyszukiwania punktów zarządzania przy użyciu publikowania DNS w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 03cec407-0f9f-454f-a360-b005af738d29
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
 ms.openlocfilehash: d016ec3fe106b2d90b3c14b4f9296aed4d198644
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-configure-client-computers-to-find-management-points-by-using-dns-publishing-in-system-center-configuration-manager"></a>Jak skonfigurować komputery klienckie w celu znalezienia punktów zarządzania przy użyciu publikowania DNS w programie System Center Configuration Manager
+# <a name="how-to-configure-client-computers-to-find-management-points-by-using-dns-publishing-in-system-center-configuration-manager"></a>Jak skonfigurować komputery klienckie pod kątem wyszukiwania punktów zarządzania przy użyciu publikowania DNS w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Klienci w programie System Center Configuration Manager należy znaleźć punkt zarządzania, aby dokończyć przypisanie lokacji i jako proces w toku i zarządzani. Najbezpieczniejszą metodę odnajdywania punktów zarządzania zapewniają klientom w intranecie usługi domenowe Active Directory. Jeśli jednak klienci nie mogą używać metody lokalizowania usługi (na przykład nie został rozszerzony schemat usługi Active Directory lub klienci znajdują się w grupie roboczej), jako preferowaną metodę lokalizowania usługi należy używać publikowania DNS.  
+Klienci w programie System Center Configuration Manager muszą lokalizować punkt zarządzania, aby dokończyć przypisanie lokacji i jako proces w toku ma pozostać zarządzane. Najbezpieczniejszą metodę odnajdywania punktów zarządzania zapewniają klientom w intranecie usługi domenowe Active Directory. Jeśli jednak klienci nie mogą używać metody lokalizowania usługi (na przykład nie został rozszerzony schemat usługi Active Directory lub klienci znajdują się w grupie roboczej), jako preferowaną metodę lokalizowania usługi należy używać publikowania DNS.  
 
 > [!NOTE]  
->  W przypadku zainstalowania klienta z systemem Linux i UNIX należy określić punkt zarządzania, który ma być używany jako pierwszy punkt kontaktu. Aby uzyskać informacje o sposobie instalowania klienta z systemem Linux i UNIX, zobacz [wdrażanie klientów do serwerów systemu UNIX i Linux w programie System Center Configuration Manager](../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md).  
+>  W przypadku zainstalowania klienta z systemem Linux i UNIX należy określić punkt zarządzania, który ma być używany jako pierwszy punkt kontaktu. Aby uzyskać informacje o sposobie instalowania klienta dla systemów Linux i UNIX, zobacz [jak wdrożyć klientów na serwerach UNIX i Linux w programie System Center Configuration Manager](../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md).  
 
  Przed użyciem publikowania DNS dla punktów zarządzania należy się upewnić, że serwery DNS w intranecie mają rekordy zasobów lokalizowania usługi (SRV RR) oraz odpowiednie rekordy zasobów hosta (A lub AAA) dla punktów zarządzania lokacji. Rekordy zasobów lokalizacji usługi mogą być tworzone automatycznie przez program Configuration Manager lub ręcznie, administrator systemu DNS, który tworzy rekordy w systemie DNS.  
 
- Aby uzyskać więcej informacji o funkcji publikowania DNS jako metodzie lokalizowania usług dla klientów programu Configuration Manager, zobacz [zrozumieć, jak klienci znaleźć zasoby witryny i usługi dla programu System Center Configuration Manager](../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
+ Aby uzyskać więcej informacji o funkcji publikowania DNS jako metody lokalizacji usługi dla klientów programu Configuration Manager, zobacz [zrozumieć, jak klienci znajdują zasoby i usługi programu System Center Configuration Manager lokacji](../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
 
- Domyślnie klienci wyszukują punkty zarządzania w systemie DNS w swojej domenie DNS. Jednak jeśli nie ma żadnych punktów zarządzania publikowanych w domenie klienta, należy ręcznie skonfigurować klientów za pomocą sufiksu DNS punktu zarządzania. Sufiks DNS można skonfigurować na kliencie podczas instalacji klienta lub po niej:  
+ Domyślnie klienci wyszukują punkty zarządzania w systemie DNS w swojej domenie DNS. Jednak w przypadku żadnych punktów zarządzania publikowanych w domenie klientów ręcznie musi skonfigurować klientów z sufiksu DNS punktu zarządzania. Sufiks DNS można skonfigurować na kliencie podczas instalacji klienta lub po niej:  
 
 -   Aby skonfigurować klientów sufiksem punktu zarządzania podczas instalacji, należy skonfigurować właściwości pliku Client.msi programu CCMSetup.  
 
@@ -59,4 +56,3 @@ Klienci w programie System Center Configuration Manager należy znaleźć punkt 
 2.  Na karcie **Lokacja** określ sufiks DNS punktu zarządzania, a następnie kliknij przycisk **OK**.  
 
      Jeśli w lokacji jest więcej niż jeden punkt zarządzania i znajdują się one w więcej niż jednej domenie, wystarczy określić tylko jedną domenę. Jeśli klienci łączą się z punktem zarządzania w bieżącej domenie, pobierają listę dostępnych punktów zarządzania, która zawiera punkty z innych domen.
-

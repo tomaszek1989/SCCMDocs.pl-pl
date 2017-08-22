@@ -6,48 +6,45 @@ ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-client
+ms.technology: configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 10049c89-b37c-472b-b317-ce4f56cd4be7
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 690d03d9c8c49a815bd318df549d7401a855bc5d
 ms.openlocfilehash: c535bc62497b5ff0b60ca266c28630d890af3604
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="example-scenario-for-deploying-and-managing-system-center-configuration-manager-clients-on-windows-embedded-devices"></a>Przykładowy scenariusz wdrażania i zarządzanie klientami programu System Center Configuration Manager na urządzeniach Windows Embedded
+# <a name="example-scenario-for-deploying-and-managing-system-center-configuration-manager-clients-on-windows-embedded-devices"></a>Przykładowy scenariusz wdrażania i zarządzania klientami programu System Center Configuration Manager na urządzeniach Windows Embedded
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-W tym scenariuszu przedstawiono sposób zarządzania obsługą filtru zapisu Windows Embedded urządzenia z Manager.If konfiguracji urządzenia osadzone nie obsługują filtrów zapisu, działają jako standardowa klientów programu Configuration Manager i nie można stosować te procedury.  
+W tym scenariuszu pokazano sposób zarządzania obsługą filtru zapisu Windows Embedded urządzeniom Manager.If konfiguracji urządzenia osadzone nie obsługują filtrów zapisu, działają jako standardowa klientów programu Configuration Manager i nie można stosować te procedury.  
 
-Firma Coho Vineyard & Winery otwiera Centrum dla gości i musi kioski z systemem Windows Embedded, aby działać interaktywne prezentacje. Budynek nowego Centrum dla gości nie jest bliski działu IT, więc kioski muszą być zarządzane zdalnie. Oprócz oprogramowania, które obsługuje prezentacje te urządzenia musi działać aktualne ochrony przed złośliwym oprogramowaniem ochrony oprogramowania zgodne z zasadami zabezpieczeń firmy. Kioski muszą działać 7 dni w tygodniu bez przerwy, gdy Centrum dla gości jest otwarte.  
+Firma Coho Vineyard & Winery otwiera Centrum dla gości i wymaga kioskami z systemem Windows Embedded, na których działać interaktywne prezentacje. Budynek nowego Centrum dla gości nie jest pobliżu działu IT, kioski muszą być zarządzane zdalnie. Oprócz oprogramowania, które obsługuje prezentacje te urządzenia, należy uruchomić oprogramowanie aktualne ochrony przed złośliwym kodem są zgodne z firmowymi zasadami zabezpieczeń. Kioski muszą działać przez 7 dni w tygodniu, bez przestojów, gdy Centrum dla gości jest otwarte.  
 
- Hurtownia działa już programu Configuration Manager do zarządzania urządzeniami w sieci. Program Configuration Manager jest skonfigurowany do uruchamiania programu Endpoint Protection i zainstalowania aktualizacji oprogramowania i aplikacji. Jednak ponieważ zespół IT nie zarządzał wcześniej urządzeniami z systemem Windows Embedded, Magdalena, administrator programu Configuration Manager, uruchamia wersję pilotażową, aby zarządzać dwoma kioskami w recepcji.   
+ Firma Coho działa już Configuration Manager do zarządzania urządzeniami w sieci. Menedżer konfiguracji jest skonfigurowany do uruchamiania programu Endpoint Protection oraz instalowania aktualizacji oprogramowania i aplikacji. Jednak ponieważ zespół IT nie zarządzał wcześniej urządzeniami z systemem Windows Embedded, Magdalena, administrator programu Configuration Manager, uruchamia wersję pilotażową, aby zarządzać dwoma kioskami w recepcji.   
 
- Aby zarządzać tymi urządzeniami Windows Embedded, które są włączone filtrów zapisu, Magdalena wykonuje następujące czynności, aby zainstalować klienta programu Configuration Manager, zabezpieczenia klienta za pomocą programu Endpoint Protection i zainstalowania oprogramowania interaktywnej prezentacji.  
+ Aby zarządzać tymi urządzeniami Windows Embedded, które mają włączoną filtru zapisu, Magdalena wykonuje następujące czynności, aby zainstalować klienta programu Configuration Manager, zabezpieczenia klienta za pomocą programu Endpoint Protection i zainstalowania oprogramowania interaktywnej prezentacji.  
 
-1.  Filtry zapisu, Magdalena odczyty jak używa urządzeń Windows Embedded i jak programu Configuration Manager ułatwia tę czynność dzięki automatycznemu wyłączeniu i ponownemu włączeniu moduł zapisujący filtry w celu utrwalenia instalacji oprogramowania.  
+1.  Odczyty Magdalena używaniu urządzeń z systemem Windows Embedded filtrów zapisu, i jak programu Configuration Manager ułatwia tę czynność dzięki automatycznemu wyłączaniu i ponownemu włączeniu składnika zapisywania programu filtrów w celu utrwalenia instalacji oprogramowania.  
 
      Aby uzyskać więcej informacji, zobacz [Planowanie wdrożenia klientów na urządzeniach Windows Embedded w programie System Center Configuration Manager](../../../core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices.md).  
 
-2.  Przed zainstalowaniem klienta programu Configuration Manager, Magdalena tworzy nową kolekcję na podstawie kwerendy urządzeń dla urządzeń z systemem Windows Embedded. Ponieważ firma stosuje standardowe nazewnictwo do identyfikacji komputerów, Magdalena może jednoznacznie zidentyfikować urządzenia z systemem Windows Embedded za pomocą pierwszych sześciu liter nazwy komputera: **WEMDVC**. Aby utworzyć tę kolekcję, korzysta z następującego zapytania WQL: **select SMS_R_System.NetbiosName from SMS_R_System where SMS_R_System.NetbiosName like "WEMDVC%"**  
+2.  Przed zainstalowaniem klienta programu Configuration Manager, Magdalena tworzy nową kolekcję na podstawie kwerendy urządzeń dla urządzeń z systemem Windows Embedded. Ponieważ firma korzysta z do identyfikacji komputerów standardowe nazewnictwo, Magdalena może jednoznacznie zidentyfikować urządzenia z systemem Windows Embedded za pomocą pierwszych sześciu liter nazwy komputera: **WEMDVC**. Aby utworzyć tę kolekcję, korzysta z następującego zapytania WQL: **select SMS_R_System.NetbiosName from SMS_R_System where SMS_R_System.NetbiosName like "WEMDVC%"**  
 
      Ta kolekcja umożliwia jej zarządzanie urządzeniami z systemem Windows Embedded z wykorzystaniem różnych opcji konfiguracji innych urządzeń. Użyje tej kolekcji także w celu sterowania ponownymi uruchomieniami, wdrożenia programu Endpoint Protection z ustawieniami klientów i wdrożenia aplikacji prezentacji interaktywnej.  
 
-     Zobacz [tworzenie kolekcji w programie System Center Configuration Manager](../../../core/clients/manage/collections/create-collections.md).  
+     Zobacz [jak tworzyć kolekcje w programie System Center Configuration Manager](../../../core/clients/manage/collections/create-collections.md).  
 
 3.  Magdalena konfiguruje kolekcję dla okna obsługi, aby ponowne uruchomienia, które mogą być wymagane w celu zainstalowania aplikacji prezentacji i uaktualnień, nie nastąpiły w godzinach pracy centrum dla gości. Będzie ono czynne od 09:00 do 18:00, od poniedziałku do piątku. Konfiguruje okno obsługi tak, aby działało codziennie od 18:30 do 06:00.  
 
-4.  Aby uzyskać więcej informacji, zobacz [sposobu używania okien obsługi w programie System Center Configuration Manager](../../../core/clients/manage/collections/use-maintenance-windows.md).  
+4.  Aby uzyskać więcej informacji, zobacz [używanie okien obsługi w programie System Center Configuration Manager](../../../core/clients/manage/collections/use-maintenance-windows.md).  
 
 5.  Następnie Magdalena konfiguruje niestandardowe ustawienie urządzenia klienckiego w celu instalacji klienta programu Endpoint Protection, wybierając ustawienie **Tak** poniższych ustawień i wdraża to niestandardowe ustawienie klienta w kolekcji urządzeń z systemem Windows Embedded:  
 
@@ -57,34 +54,34 @@ Firma Coho Vineyard & Winery otwiera Centrum dla gości i musi kioski z systemem
 
     -   **Pozwól na instalację klienta programu Endpoint Protection oraz jego ponowne uruchamianie poza oknami obsługi**  
 
-     Po zainstalowaniu klienta programu Configuration Manager, te ustawienia instalacji klienta Endpoint Protection i go jest zachowywany w systemie operacyjnym w ramach instalacji, a nie zapisane wyłącznie w nakładce. Zasady zabezpieczeń obowiązujące w firmie wymagają zainstalowania w każdym przypadku oprogramowania chroniącego przed złośliwym kodem i Magdalena chce uniknąć ryzyka związanego z brakiem zabezpieczeń kiosku nawet przez krótki czas w przypadku ich ponownego uruchomienia.  
+     Po zainstalowaniu klienta programu Configuration Manager, te ustawienia instalacji klienta Endpoint Protection i upewnij się, że go utrwalone w systemie operacyjnym w ramach instalacji, a nie zapisanie w nakładce tylko. Zasady zabezpieczeń obowiązujące w firmie wymagają zainstalowania w każdym przypadku oprogramowania chroniącego przed złośliwym kodem i Magdalena chce uniknąć ryzyka związanego z brakiem zabezpieczeń kiosku nawet przez krótki czas w przypadku ich ponownego uruchomienia.  
 
     > [!NOTE]  
     >  Ponowne uruchomienia wymagane do zainstalowania klienta programu Endpoint Protection są jednorazowe, następują podczas instalacji urządzeń i przed rozpoczęciem pracy centrum dla gości. W przeciwieństwie do okresowego wdrażania aplikacji lub aktualizacji definicji oprogramowania przy kolejnym uruchomieniu klienta programu Endpoint Protection jest zainstalowany na tym samym urządzeniu będzie miała gdy firma uaktualni do następnej wersji programu Configuration Manager.  
 
-     Aby uzyskać więcej informacji, zobacz [Konfigurowanie Endpoint Protection w programie System Center Configuration Manager](../../../protect/deploy-use/configure-endpoint-protection.md).  
+     Aby uzyskać więcej informacji, zobacz [Konfigurowanie programu Endpoint Protection w programie System Center Configuration Manager](../../../protect/deploy-use/configure-endpoint-protection.md).  
 
-6.  Ustawienia konfiguracji dla klienta w miejscu Magdalena przygotowuje do instalacji klientów programu Configuration Manager. Przed zainstalowaniem klientów musi ręcznie wyłączyć filtr zapisu na urządzeniach z systemem Windows Embedded. Zapoznaje się z dokumentacją OEM dostarczoną z kioskami i postępuje zgodnie z instrukcjami, aby wyłączyć filtry zapisu.  
+6.  Przy użyciu ustawień konfiguracyjnych dla klienta w miejscu Magdalena przygotowuje się do instalacji klientów programu Configuration Manager. Przed zainstalowaniem klientów musi ręcznie wyłączyć filtr zapisu na urządzeniach z systemem Windows Embedded. Zapoznaje się z dokumentacją OEM dostarczoną z kioskami i postępuje zgodnie z instrukcjami, aby wyłączyć filtry zapisu.  
 
-     Magdalena zmienia nazwę urządzenia, więc używanym w firmie formatem nazewnictwa, a następnie instaluje klienta ręcznie, uruchamiając program CCMSetup z następujące polecenie z dysku zmapowanego zawierającego pliki źródłowe klienta: **CCMSetup.exe /MP:mpserver.cohovineyardandwinery.com SMSSITECODE = CO1**  
+     Magdalena zmienia nazwę urządzenia, używanym w firmie formatem nazewnictwa, a następnie instaluje klienta ręcznie, uruchamiając program CCMSetup przy użyciu następującego polecenia z zamapowanego dysku zawierającego pliki źródłowe klienta: **CCMSetup.exe /MP:mpserver.cohovineyardandwinery.com SMSSITECODE = CO1**  
 
      To polecenie umożliwia zainstalowanie klienta, przypisanie go do punktu zarządzania z intranetową nazwą FQDN **mpserver.cohovineyardandwinery.com**i przypisanie klienta do lokacji głównej o nazwie **CO1**.  
 
      Magdalena wie, że instalacja klientów i wysłanie przez nich informacji o stanie do lokacji zawsze zajmuję trochę czasu. Dlatego czeka przed sprawdzeniem, czy klienci zostali pomyślnie zainstalowani, przypisani do lokacji i wyświetleni jako klienci w kolekcji utworzonej dla urządzeń z systemem Windows Embedded.  
 
-     Jako dodatkowe potwierdzenie klika sprawdza właściwości programu Configuration Manager w Panelu sterowania na urządzeniach i porównuje je ze standardowych komputery z systemem Windows, które są zarządzane przez witrynę. Przykładowo na karcie **Składniki** stan pozycji **Agent inwentaryzacji zasobów sprzętowych** to **Włączono**, a na karcie **Akcje** jest dostępnych 11 akcji, w tym **Cykl oceny wdrażania aplikacji** i **Cykl zbierania danych odnajdowania**.  
+     Jako dodatkowe potwierdzenie ona sprawdza właściwości programu Configuration Manager w Panelu sterowania na urządzeniach i porównuje je ze standardowymi komputerami z systemem Windows są zarządzane przez witrynę. Przykładowo na karcie **Składniki** stan pozycji **Agent inwentaryzacji zasobów sprzętowych** to **Włączono**, a na karcie **Akcje** jest dostępnych 11 akcji, w tym **Cykl oceny wdrażania aplikacji** i **Cykl zbierania danych odnajdowania**.  
 
      Mając pewność, że klienci zostali pomyślnie zainstalowani, przypisani i odbierają zasady klienta z punktu zarządzania, Magdalena włącza ręcznie filtry zapisu, postępując według instrukcji podanych w dokumentacji OEM.  
 
      Aby uzyskać więcej informacji, zobacz:  
 
-    -   [Wdrażanie klientów na komputerach z systemem Windows w programie System Center Configuration Manager](../../../core/clients/deploy/deploy-clients-to-windows-computers.md)  
+    -   [Jak wdrożyć klientów na komputerach z systemem Windows w programie System Center Configuration Manager](../../../core/clients/deploy/deploy-clients-to-windows-computers.md)  
 
     -   [Jak przypisać klientów do lokacji w programie System Center Configuration Manager](../../../core/clients/deploy/assign-clients-to-a-site.md)  
 
-7.  Teraz, gdy klient programu Configuration Manager jest zainstalowany na urządzeniach z systemem Windows Embedded, Magdalena sprawdza, czy może zarządzać nimi w taki sam sposób jak klika standardowymi klientami z systemem Windows. Na przykład z konsoli programu Configuration Manager może zdalnie zarządzać nimi za pomocą zdalnego sterowania, zainicjować klienta zasad, i wyświetlić klienta właściwości i spis sprzętu.  
+7.  Teraz, gdy klient programu Configuration Manager jest zainstalowany na urządzeniach z systemem Windows Embedded, Magdalena sprawdza, czy może zarządzać nimi w taki sam sposób jak ona standardowymi klientami z systemem Windows. Na przykład z poziomu konsoli programu Configuration Manager może zdalnie zarządzać nimi przy użyciu zdalnego sterowania, zainicjować klienta zasad, a widok spisu sprzętu i właściwości klienta.  
 
-     Ponieważ te urządzenia są połączone z domeną usługi Active Directory, użytkownik nie musi zatwierdzać ich ręcznie jako zaufanych klientów i sprawdza z konsoli programu Configuration Manager one zatwierdzone.  
+     Ponieważ te urządzenia są przyłączone do domeny usługi Active Directory, użytkownik nie musi zatwierdzać ich ręcznie jako zaufanych klientów i sprawdza z konsoli programu Configuration Manager, że są zatwierdzeni.  
 
      Aby uzyskać więcej informacji, zobacz [Jak zarządzać klientami w programie System Center Configuration Manager](../../../core/clients/manage/manage-clients.md).  
 
@@ -100,19 +97,19 @@ Firma Coho Vineyard & Winery otwiera Centrum dla gości i musi kioski z systemem
 
      Te ustawienia obejmują następujące elementy na stronie **Czynności użytkownika** kreatora:  
 
-    -   **Zachowanie ostatecznego terminu wdrożenia**: **Instalacji oprogramowania** pole wyboru nie jest zaznaczone.  
+    -   **Zachowanie ostatecznego terminu wdrożenia**: **Instalacji oprogramowania** nie zaznaczono pola wyboru.  
 
-    -   **Obsługa filtru zapisu dla urządzeń z systemem Windows Embedded**: **Zatwierdź zmiany po upływie terminu wdrożenia lub w oknie obsługi (wymaga ponownego uruchomienia)** pole wyboru nie jest zaznaczone.  
+    -   **Obsługa filtru zapisu dla urządzeń z systemem Windows Embedded**: **Zatwierdź zmiany po upływie terminu wdrożenia lub w oknie obsługi (wymaga ponownego uruchomienia)** nie zaznaczono pola wyboru.  
 
      Magdalena zachowuje te ustawienia domyślne. Te dwie opcje w połączeniu z tą konfiguracja umożliwiają instalację definicji aktualizacji oprogramowania dla programu Endpoint Protection na nakładce w ciągu dnia bez oczekiwania na instalację i zatwierdzenie podczas okna obsługi. Ta konfiguracja jest najbardziej zgodna z zasadami zabezpieczeń firmy dotyczącymi działania na komputerach aktualnego zabezpieczenia przed złośliwym kodem.  
 
     > [!NOTE]  
-    >  W przeciwieństwie do instalacji aplikacji, definicje aktualizacji oprogramowania dla programu Endpoint Protection mogą być instalowane bardzo często, nawet kilka razy dziennie. Często są to bardzo małe pliki. W przypadku tych typów wdrożeń dotyczących zabezpieczeń często optymalnym rozwiązaniem jest instalowanie w nakładce bez oczekiwania na okno obsługi. Klient programu Configuration Manager szybko zainstaluje ponownie aktualizacje definicji oprogramowania w przypadku ponownego uruchomienia urządzenia, ponieważ ta akcja inicjuje ocenę bez oczekiwania na następną zaplanowaną ocenę.  
+    >  W przeciwieństwie do instalacji aplikacji, definicje aktualizacji oprogramowania dla programu Endpoint Protection mogą być instalowane bardzo często, nawet kilka razy dziennie. Często są to bardzo małe pliki. W przypadku tych typów wdrożeń dotyczących zabezpieczeń często optymalnym rozwiązaniem jest instalowanie w nakładce bez oczekiwania na okno obsługi. Klient programu Configuration Manager szybko zainstaluje ponownie aktualizacje definicji oprogramowania Jeśli urządzenie zostanie uruchomiony ponownie, ponieważ ta akcja inicjuje ocenę bez oczekiwania na następną zaplanowaną ocenę.  
 
      Magdalena wybiera kolekcję urządzeń z systemem Windows Embedded dla zasady automatycznego wdrożenia.  
 
      Aby uzyskać więcej informacji, zobacz artykuł  
-                  Krok 3: Konfigurowanie aktualizacji oprogramowania programu Configuration Manager w celu dostarczenia aktualizacji do komputerów klienckich w [konfigurowaniu ochrony punktu końcowego programu System Center Configuration Manager](../../../protect/deploy-use/configure-endpoint-protection.md)  
+                  Krok 3. Konfigurowanie aktualizacji oprogramowania programu Configuration Manager w celu dostarczenia aktualizacji do komputerów klienckich w [Konfigurowanie programu Endpoint Protection w programie System Center Configuration Manager](../../../protect/deploy-use/configure-endpoint-protection.md)  
 
 10. Magdalena decyduje się na skonfigurowanie zadania obsługi, które okresowo zatwierdza wszystkie zmiany w nakładce. To zadanie ułatwia wdrażanie definicji aktualizacji oprogramowania i ogranicza liczbę skumulowanych aktualizacji, które muszą zostać zainstalowane ponownie, przy każdym ponownym uruchomieniu urządzenia. Z jej doświadczenia wynika, że zapewnia to bardziej efektywną pracę programów chroniących przed złośliwym kodem.  
 
@@ -138,7 +135,7 @@ Firma Coho Vineyard & Winery otwiera Centrum dla gości i musi kioski z systemem
     4.  Dokańcza pracę kreatora bez wprowadzania dodatkowych zmian.  
 
      Aby uzyskać więcej informacji, zobacz artykuł  
-                  [Zarządzanie sekwencjami zadań do automatyzacji zadań w programie System Center Configuration Manager](../../../osd/deploy-use/manage-task-sequences-to-automate-tasks.md).  
+                  [Zarządzanie sekwencjami zadań w celu zautomatyzowania zadań w programie System Center Configuration Manager](../../../osd/deploy-use/manage-task-sequences-to-automate-tasks.md).  
 
 11. Aby kioski działały automatycznie, Magdalena pisze skrypt w celu skonfigurowania na urządzeniach następujących ustawień:  
 
@@ -164,11 +161,11 @@ Firma Coho Vineyard & Winery otwiera Centrum dla gości i musi kioski z systemem
 
     -   [Jak monitorować program Endpoint Protection w programie System Center Configuration Manager](../../../protect/deploy-use/monitor-endpoint-protection.md)  
 
-    -   [Monitorowanie aplikacji z System Center Configuration Manager](/sccm/apps/deploy-use/monitor-applications-from-the-console)  
+    -   [Monitorowanie aplikacji w programie System Center Configuration Manager](/sccm/apps/deploy-use/monitor-applications-from-the-console)  
 
 13. Magdalena monitoruje kioski i przekazuje swojemu menedżerowi informację o pomyślnym zarządzaniu. Dlatego też do centrum dla gości zostaje zamówionych 20 kiosków.  
 
-     Aby uniknąć ręcznej instalacji klienta programu Configuration Manager, co wymaga ręcznego wyłączenia, a następnie włączenia filtrów zapisu, Magdalena sprawdza, czy zamówienie zawiera dostosowany obraz, który zawiera już instalacją i przypisaniem lokacji klienta programu Configuration Manager. Ponadto urządzeniom nadawane są nazwy zgodne z formatem stosowanym w firmie.  
+     Aby uniknąć ręcznej instalacji klienta programu Configuration Manager, co wymaga ręcznego wyłączenia, a następnie włączenia filtrów zapisu, Magdalena sprawdza, czy zamówienie zawiera dostosowany obraz, która zawiera już instalacją i przypisaniem lokacji klienta programu Configuration Manager. Ponadto urządzeniom nadawane są nazwy zgodne z formatem stosowanym w firmie.  
 
      Kioski zostają dostarczone do centrum dla gości na tydzień przed jego otwarciem. W tym czasie są podłączane do sieci, całe zarządzanie urządzeniami odbywa się automatycznie i lokalny administrator nie jest potrzebny. Magdalena sprawdza, czy kioski działają zgodnie z wymaganiami:  
 
@@ -181,4 +178,3 @@ Firma Coho Vineyard & Winery otwiera Centrum dla gości i musi kioski z systemem
     -   oprogramowanie prezentacji interaktywnej jest zainstalowane i działa automatycznie, umożliwiając klientom korzystanie z niego.  
 
 14. Po wykonaniu tej konfiguracji początkowej ponowne uruchomienia, które mogą być wymagane w celu zainstalowania aktualizacji, nastąpią tylko wtedy, gdy centrum dla gości będzie zamknięte.  
-

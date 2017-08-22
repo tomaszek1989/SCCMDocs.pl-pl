@@ -1,38 +1,35 @@
 ---
-title: "Konfigurowanie spisu sprzętu | Dokumenty Microsoft | urządzenia przenośne"
+title: "Konfigurowanie spisu sprzętu | Dokumentacja firmy Microsoft | urządzenia przenośne"
 description: "Konfigurowanie spisu sprzętu dla urządzeń przenośnych zarejestrowanych w usłudze Microsoft Intune i programu System Center Configuration Manager."
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-hybrid
+ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 78a0aecc-f775-451e-aa05-56377ec91b1f
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 199096db7a23fb14db98b95e75246ed254848ab7
 ms.openlocfilehash: 7ab9042a525e07b8e3107479cedeec6b99f7bc86
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="how-to-configure-hardware-inventory-for-mobile-devices-enrolled-by-microsoft-intune-and-system-center-configuration-manager"></a>Jak skonfigurować spis sprzętu dla urządzeń przenośnych zarejestrowanych w usłudze Microsoft Intune i programu System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-W programie Configuration Manager można zbierać spis sprzętu dotyczący iOS, Android i Windows za pomocą łącznika programu Microsoft Intune. Aby uzyskać informacje o sposobie konfigurowania spisu sprzętu, zobacz [sposobach rozszerzania zapasów sprzętu w programie System Center Configuration Manager](../../core/clients/manage/inventory/extend-hardware-inventory.md).  
+W programie Configuration Manager można zebrać spis sprzętu w systemach iOS, Android i Windows urządzeń przy użyciu łącznika programu Microsoft Intune. Aby uzyskać informacje o sposobie konfigurowania spisu sprzętu, zobacz [jak rozszerzyć spis sprzętu w programie System Center Configuration Manager](../../core/clients/manage/inventory/extend-hardware-inventory.md).  
 
  Aby uzyskać informacje o sposobie rejestrowania urządzeń w programie Microsoft Intune, zobacz [zarządzania urządzeniami przenośnymi w usłudze Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).  
 
 ## <a name="hardware-inventory-for-mobile-devices"></a>Spis sprzętu dla urządzeń przenośnych  
- W poniższych tabelach przedstawiono klasy spisu dostępnych zapasów sprzętowych różnych platform przenośnych często używane.  
+ W poniższych tabelach przedstawiono klas sprzętu dostępnych dla spisu sprzętu w często używanych platform urządzeń przenośnych.  
 
  **iOS**  
 
@@ -62,7 +59,7 @@ W programie Configuration Manager można zbierać spis sprzętu dotyczący iOS, 
  **Android**  
 
 > [!NOTE]  
->  **UWAGA:** Klasy spisu android są dostępne podczas korzystania z aplikacji portalu firmy Android.  
+>  **UWAGA:** Klasy spisu dla systemu android są dostępne podczas korzystania z aplikacji Portal firmy dla systemu Android.  
 
 |Klasa spisu sprzętu|Android|  
 |------------------------------|-------------|  
@@ -140,4 +137,3 @@ W programie Configuration Manager można zbierać spis sprzętu dotyczący iOS, 
  <sup>1</sup> Cyfry numeru telefonu są wyświetlane jako znaki * z wyjątkiem ostatnich 4 cyfr.  
 
  Aby spis objął numer telefonu, w urządzeniu musi znajdować się karta SIM, a numer telefonu nadany przez operatora musi być powiązany z tą kartą SIM.  
-

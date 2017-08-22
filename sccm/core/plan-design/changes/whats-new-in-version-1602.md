@@ -1,90 +1,88 @@
 ---
 title: Nowe w programie System Center Configuration Manager wersji 1602 | Dokumentacja firmy Microsoft
-description: "Uzyskiwanie szczegółowych informacji dotyczących zmian oraz nowe funkcje wprowadzone w wersji 1602 programu System Center Configuration Manager."
+description: "Uzyskiwanie szczegółowych informacji dotyczących zmian i nowych możliwości wprowadzonych w wersji 1602 programu System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/30/2016
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4021eca1-adfb-4e5a-adee-159263c29637
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: noindex,nofollow
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: 9a548f43625a907173e7b967d26356bd80f1c5d9
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="what39s-new-in-version-1602-of-system-center-configuration-manager"></a>Co &#39; s nowe w wersji 1602 programu System Center Configuration Manager
+# <a name="what39s-new-in-version-1602-of-system-center-configuration-manager"></a>Jaki &#39; s nowego w wersji 1602 programu System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
-Zaktualizuj 1602 dla programu System Center Configuration Manager jest dostępna jako aktualizacja w konsoli dla witryn zainstalowane wcześniej, których jest uruchomiona wersja 1511 tylko. Wersja 1511 jest początkowej, wersję linii bazowej, którą można użyć do zainstalowania nowej lokacji programu Configuration Manager.  
+Aktualizacji 1602 dla programu System Center Configuration Manager jest tylko dostępna jako aktualizacja w konsoli dla zainstalowanych wcześniej lokacji w wersji 1511. Wersja 1511 to początkowa, wersji linii bazowej, używaną do zainstalowania nowych lokacji programu Configuration Manager.  
 
 
 > [!TIP]  
->  Więcej informacji na temat:  
+>  Dowiedz się więcej o:  
 >   
->   -   [Instalowanie nowych witryn](/sccm/core/servers/deploy/install) (przy użyciu wersji linii bazowej, takich jak 1511)  
->   -   [Instalowanie aktualizacji w lokacjach](/sccm/core/servers/manage/updates) (takich jak zaktualizować 1602)  
+>   -   [Instalowanie nowej lokacji](/sccm/core/servers/deploy/install) (przy użyciu wersji linii bazowej, np. 1511)  
+>   -   [Instalowanie aktualizacji w lokacjach](/sccm/core/servers/manage/updates) (np. aktualizacji 1602)  
 
- Poniższe sekcje zawierają szczegółowe informacje dotyczące zmiany i nowe możliwości wprowadzona w wersji 1602 programu Configuration Manager.  
+ Poniższe sekcje zawierają szczegółowe informacje dotyczące zmian i nowych możliwości wprowadzonych w wersji 1602 programu Configuration Manager.  
 
 ## <a name="site-infrastructure"></a>Infrastruktura lokacji  
 
-###  <a name="bkmk_UpgradeOS"></a>Uaktualnij system operacyjny serwerów lokacji, z systemem Windows Server 2008 R2, w miejscu  
- Lokacji programu Configuration Manager, na których jest uruchomiona wersja 1602 lub nowszej obsługuje uaktualnienia w miejscu lokacji serwery systemu operacyjnego z systemem Windows Server 2008 R2 do systemu Windows Server 2012 R2.  
+###  <a name="bkmk_UpgradeOS"></a>Uaktualnienie w miejscu systemu operacyjnego serwerów lokacji, z systemem Windows Server 2008 R2  
+ Lokacje programu Configuration Manager, na których jest uruchomiona wersja 1602 lub nowszej obsługują uaktualnienie w miejscu lokacji serwery systemu operacyjnego z systemu Windows Server 2008 R2 do systemu Windows Server 2012 R2.  
 
 > [!WARNING]  
->  Przed uaktualnieniem do systemu Windows Server 2012 R2, należy odinstalować WSUS 3.2 z serwera.  
+>  Przed uaktualnieniem do systemu Windows Server 2012 R2, należy odinstalować usługi WSUS 3.2 z serwera.  
 >   
->  Informacji dotyczących tego kroku krytyczne, zobacz sekcję "Nowe i zmienione funkcje" w [Omówienie usług Windows Server Update](https://technet.microsoft.com/library/hh852345.aspx), w dokumentacji systemu Windows Server.  
+>  Aby uzyskać informacje o tym krytycznym kroku, zobacz sekcję "Nowe i zmienione funkcje" w [Omówienie usług Windows Server Update Services](https://technet.microsoft.com/library/hh852345.aspx), w dokumentacji systemu Windows Server.  
 
- Aby uaktualnić serwer, użyj procedury uaktualniania systemu Windows Server 2012 R2. Nie trzeba uruchomić przywracanie serwera lokacji po uaktualnieniu programu Configuration Manager. Informacje dotyczące procedur uaktualniania można znaleźć w temacie [Opcje uaktualniania do systemu Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx) w dokumentacji systemu Windows Server.  
+ Aby uaktualnić serwer, wykorzystywane procedury uaktualniania systemu Windows Server 2012 R2. Nie trzeba uruchomić przywracania serwera lokacji po uaktualnieniu programu Configuration Manager. Informacje dotyczące procedur uaktualniania można znaleźć w temacie [Opcje uaktualniania do systemu Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx) w dokumentacji systemu Windows Server.  
 
 ###  <a name="bkmk_AOAG"></a>Grupy dostępności AlwaysOn programu SQL Server  
- Użyj grupy dostępności AlwaysOn programu SQL Server do obsługi bazy danych lokacji w lokacji głównej i centralnej lokacji administracyjnej jako rozwiązań wysokiej dostępności i odzyskiwania po awarii.  
+ Użyj grup dostępności AlwaysOn programu SQL Server do hostowania bazy danych lokacji w lokacjach głównych i centralnej lokacji administracyjnej jako rozwiązania wysokiej dostępności i odzyskiwania po awarii.  
 
- Aby uzyskać szczegółowe informacje, zobacz [AlwaysOn programu SQL Server dla bazy danych lokacji wysokiej dostępności dla programu System Center Configuration Manager](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).  
+ Aby uzyskać więcej informacji, zobacz [AlwaysOn programu SQL Server dla bazy danych lokacji o wysokiej dostępności programu System Center Configuration Manager](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).  
 
 ## <a name="operating-system-deployment"></a>Wdrożenie systemu operacyjnego  
 
 ### <a name="windows-10-servicing"></a>Obsługa systemu Windows 10  
- Dodano następujące ulepszenia obsługi systemu Windows 10 w 1602 wersji programu Configuration Manager:  
+ Następujące ulepszenia obsługi systemu Windows 10 zostały dodane w programie Configuration Manager w wersji 1602:  
 
--   Nowe opcje filtrowania są dostępne do obsługi planów, które umożliwiają filtrowanie **języka**, **wymagane**, i **tytuł**. Tylko uaktualnienia zgodne z określonymi kryteriami zostaną dodane do skojarzonego wdrożenia.  
+-   Nowe opcje filtrowania są dostępne dla planów, które umożliwiają filtrowanie dla obsługi **języka**, **wymagane**, i **tytuł**. Tylko uaktualnienia zgodne z określonymi kryteriami zostaną dodane do skojarzonego wdrożenia.  
 
--   Po wybraniu **uaktualnień** klasyfikacji dla oprogramowania aktualizuje synchronizacji, zostanie wyświetlone ostrzeżenie. To ostrzeżenie informuje, że [poprawkę 3095113](https://support.microsoft.com/kb/3095113) dla systemu Windows Server Update Services (WSUS) 4.0 jest wymagany, zanim będzie można pomyślnie synchronizować aktualizacje oprogramowania, a także obsługi systemu Windows 10 do poprawnego działania. Z z komunikatem ostrzegawczym, można przejść do artykułu bazy wiedzy skojarzone.  
+-   Po wybraniu **uaktualnień** synchronizacji aktualizacji oprogramowania klasyfikacji, wyświetlane jest ostrzeżenie. To ostrzeżenie informujące, że [poprawkę 3095113](https://support.microsoft.com/kb/3095113) dla systemu Windows Server Update Services (WSUS) 4.0 jest wymagany, zanim można pomyślnie zsynchronizować aktualizacje oprogramowania i obsługi systemu Windows 10 działała poprawnie. W komunikacie ostrzegawczym można przejść do skojarzonego artykułu bazy wiedzy.  
 
--   Dostępne systemu Windows 10 teraz uaktualnia tylko do wyświetlania w **obsługi systemu Windows 10** \ **wszystkie aktualizacje składników systemu Windows 10** węzeł konsoli programu Configuration Manager. Aktualizacje te nie są już wyświetlane w **aktualizacji oprogramowania** \ **wszystkie aktualizacje oprogramowania** węzeł konsoli.  
+-   10 systemu Windows dostępne uaktualnienia są teraz wyświetlane tylko w **obsługi systemu Windows 10** \ **wszystkie aktualizacje systemu Windows 10** węzła konsoli programu Configuration Manager. Te aktualizacje nie są już wyświetlane w **aktualizacji oprogramowania** \ **wszystkie aktualizacje oprogramowania** węzła konsoli.  
 
--   Planowanie obsługi jest uznawany za wdrożenie o wysokim ryzyku i **Wybieranie kolekcji** tylko kolekcji niestandardowych, które spełniają ustawienia weryfikacji wdrażania, które są skonfigurowane we właściwościach lokacji jest wyświetlana w oknie. Aby uzyskać więcej informacji, zobacz [Ustawienia zarządzania wdrożeniami o wysokim ryzyku dla programu System Center Configuration Manager](../../../protect/understand/settings-to-manage-high-risk-deployments.md).  
+-   Plan obsługi jest uznawana za wdrożenie wysokiego ryzyka oraz **Wybieranie kolekcji** wyświetlane tylko kolekcje niestandardowe zgodne z ustawieniami weryfikacji wdrożenia skonfigurowanymi we właściwościach lokacji. Aby uzyskać więcej informacji, zobacz [Ustawienia zarządzania wdrożeniami o wysokim ryzyku dla programu System Center Configuration Manager](../../../protect/understand/settings-to-manage-high-risk-deployments.md).  
 
--   Użytkownicy, którzy teraz uruchomić pakiet uaktualnienia systemu Windows 10 komunikat czy one zaktualizuje ich systemu operacyjnego.  
+-   Użytkownicy, którzy teraz uruchomić pakiet uaktualnienia systemu Windows 10 komunikat że będą uaktualniać ich systemu operacyjnego.  
 
 ## <a name="application-management"></a>Zarządzanie aplikacjami  
 
 ### <a name="ios-app-configuration-policies"></a>Zasady konfiguracji aplikacji systemu iOS  
- Użycie zasad konfiguracji aplikacji programu Configuration Manager do dostarczenia ustawień, które mogą być wymagane, gdy użytkownik uruchomi aplikację iOS. Na przykład aplikacja może wymagać użytkownikowi na określenie numeru portu niestandardowego języka, ustawienia zabezpieczeń i ustawienia znakowania (np. logo firmy). Te ustawienia są niepoprawnie wprowadzone, to zwiększenia obciążeń do pomocy technicznej, a także spowolnić przyjęcia nowych aplikacji.  
+ Użyj zasad konfiguracji aplikacji programu Configuration Manager umożliwiają określanie wartości ustawień, które mogą być wymagane, jeśli użytkownik uruchamia aplikację systemu iOS. Na przykład aplikacja może wymagać użytkownikowi określić niestandardowy numer portu, języka, ustawień zabezpieczeń i ustawień oznaczania marką (takich jak logo firmy). Jeśli te ustawienia są niepoprawnie wprowadzona, to zwiększyć obciążenie działu pomocy technicznej i zwolnić rozpowszechnianie nowych aplikacji.  
 
- Zasady konfiguracji aplikacji może pomóc wyeliminować te problemy, umożliwiając wdrożenia tych ustawień dla użytkowników w zasadach, zanim uruchomienia aplikacji. Ustawienia są następnie udostępniane automatycznie, a użytkownik nie trzeba podejmować żadnych działań. Aby uzyskać szczegółowe informacje, zobacz [skonfigurowanie aplikacji systemu iOS z zasady konfiguracji aplikacji w programie System Center Configuration Manager](../../../apps/deploy-use/configure-ios-apps-with-app-configuration-policies.md).  
+ Zasady konfiguracji aplikacji mogą pomóc wyeliminować te problemy, umożliwiając wdrażanie tych ustawień do użytkowników w zasadach, zanim uruchomią oni aplikację. Ustawienia są następnie określane automatycznie, a użytkownik nie musi wykonywać żadnych czynności. Aby uzyskać więcej informacji, zobacz [Konfigurowanie aplikacji systemu iOS przy użyciu zasad konfiguracji aplikacji w programie System Center Configuration Manager](../../../apps/deploy-use/configure-ios-apps-with-app-configuration-policies.md).  
 
 ### <a name="manage-volume-purchased-ios-apps"></a>Zarządzanie aplikacjami systemu iOS nabytymi w ramach zakupów zbiorczych  
- Menedżer konfiguracji ułatwiają wdrażanie i zarządzanie aplikacjami, zakupionym w woluminie z VPP firmy Apple woluminu zakupu programu (). Program Configuration Manager importuje informacje o licencji ze sklepu z aplikacjami i śledzi, ile licencji jest używany.  
+ Menedżer konfiguracji ułatwiają wdrażanie i zarządzanie aplikacjami zakupionymi zbiorczo w od firmy Apple Volume Purchase Program (VPP). Configuration Manager importuje informacje o licencji ze sklepu z aplikacjami i śledzenie, ile licencji jest używanych.  
 
- Aby uzyskać szczegółowe informacje, zobacz [zarządzania aplikacjami iOS kupionymi woluminu z System Center Configuration Manager](../../../apps/deploy-use/manage-volume-purchased-ios-apps.md).  
+ Aby uzyskać więcej informacji, zobacz [Zarządzanie zbiorczo zakupionymi aplikacjami systemu iOS z System Center Configuration Manager](../../../apps/deploy-use/manage-volume-purchased-ios-apps.md).  
 
 ### <a name="automatic-creation-of-office-mobile-apps"></a>Automatyczne tworzenie aplikacji mobilnych pakietu Office  
- Po uaktualnieniu do wersji 1602 z 1511 programu Configuration Manager automatycznie tworzy następujące aplikacje mobilne Microsoft Office dla systemów Android i iOS:  
+ Podczas aktualizacji do wersji 1602 z 1511 programu Configuration Manager automatycznie tworzy następujące aplikacje mobilne Microsoft Office dla systemów Android i iOS:  
 
 -   Program Microsoft Word  
 
@@ -94,131 +92,130 @@ Zaktualizuj 1602 dla programu System Center Configuration Manager jest dostępna
 
 -   Microsoft OneDrive  
 
--   Program Microsoft OneNote (tylko iOS)  
+-   Microsoft OneNote (tylko iOS)  
 
 -   Program Microsoft Outlook  
 
-Można znaleźć tych aplikacji w **aplikacji** węzeł konsoli programu Configuration Manager.  
+Dostępne są te aplikacje w **aplikacji** węzła konsoli programu Configuration Manager.  
 
- Aby uzyskać więcej informacji dotyczących wdrażania aplikacji, zobacz [jak wdrażać aplikacje z System Center Configuration Manager](../../../apps/deploy-use/deploy-applications.md).  
+ Aby uzyskać więcej informacji na temat wdrażania aplikacji, zobacz [sposobu wdrażania aplikacji w programie System Center Configuration Manager](../../../apps/deploy-use/deploy-applications.md).  
 
 ## <a name="software-updates"></a>Aktualizacje oprogramowania  
 
 ### <a name="manage-office-365-client-updates"></a>Zarządzanie aktualizacjami klienta usługi Office 365  
- System Center Configuration Manager ma możliwość zarządzania aktualizacji klienta usługi Office 365 za pomocą przepływu pracy zarządzania aktualizacji oprogramowania. Aby uzyskać więcej informacji, zobacz [zarządzania Office 365 ProPlus aktualizacji z System Center Configuration Manager](/sccm/sum/deploy-use/manage-office-365-proplus-updates).  
+ System Center Configuration Manager ma możliwość zarządzania aktualizacjami klienta usługi Office 365 za pomocą przepływu pracy zarządzania aktualizacjami oprogramowania. Aby uzyskać więcej informacji, zobacz [zarządzania usługi Office 365 ProPlus aktualizacji w programie System Center Configuration Manager](/sccm/sum/deploy-use/manage-office-365-proplus-updates).  
 
 ## <a name="compliance-settings"></a>Ustawienia zgodności  
 
 ### <a name="compliance-settings-for-devices-running-windows-10-team"></a>Ustawienia zgodności dla urządzeń z systemem Windows 10 Team  
- Dodano nowe ustawienia **Windows 8.1 i Windows 10** elementu konfiguracji. Te ustawienia ułatwiają kontroli urządzeń z systemem Windows 10 Team, takich jak urządzenia Surface Hub.  
+ Nowe ustawienia zostały dodane do **Windows 8.1 i Windows 10** elementu konfiguracji. Te ustawienia ułatwiają kontrolowanie urządzeń z systemem Windows 10 Team, takich jak urządzenia Surface Hub.  
 
- Aby uzyskać szczegółowe informacje, zobacz [tworzenie elementów konfiguracji dla urządzeń Windows 8.1 i Windows 10 zarządzane bez klienta programu System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
+ Aby uzyskać więcej informacji, zobacz [jak utworzyć elementy konfiguracji dla urządzeń Windows 8.1 i Windows 10 zarządzanych bez klienta programu System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
 
 ### <a name="kiosk-mode-settings-for-android-samsung-knox-standard-devices"></a>Ustawienia trybu kiosku dla urządzeń z systemem Android Samsung KNOX Standard  
- Tryb kiosku służy do blokowania urządzenia tak, aby pracować tylko niektórych funkcji. Na przykład można zezwolić na urządzeniu do uruchamiania tylko jednej aplikacji zarządzanych, który określisz lub można wyłączyć przyciski regulacji głośności na urządzeniu. Można użyć tych ustawień dla modeli pokazowych urządzenia lub dla urządzeń przeznaczonych do wykonywania tylko jednej funkcji, takich jak urządzenia w punktach sprzedaży. W programie Configuration Manager można teraz określić ustawienia trybu kiosku dla urządzeń Samsung KNOX Standard.  
+ Tryb kiosku umożliwia blokowanie urządzenia, tak aby tylko niektóre funkcje działają. Na przykład można zezwolić na uruchamianie tylko określonej zarządzanej aplikacji przez użytkownika na urządzeniu, lub można wyłączyć przyciski regulacji głośności na urządzeniu. Można użyć tych ustawień dla modeli pokazowych urządzenia lub urządzenia służącego do wykonywania tylko jednej funkcji, takich jak urządzeń w punkcie sprzedaży. W programie Configuration Manager można teraz określić ustawienia trybu kiosku dla urządzenia Samsung KNOX Standard.  
 
- Aby uzyskać szczegółowe informacje, zobacz [tworzenie elementów konfiguracji dla urządzeń Android i Samsung KNOX Standard zarządzane bez klienta programu System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md).  
+ Aby uzyskać więcej informacji, zobacz [jak utworzyć elementy konfiguracji dla urządzeń z systemami Android i Samsung KNOX Standard zarządzanych bez klienta programu System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md).  
 
 ## <a name="conditional-access"></a>Dostęp warunkowy  
 
 ### <a name="conditional-access-for-pcs-managed-by-system-center-configuration-manager"></a>Dostęp warunkowy dla komputerów zarządzanych przez program System Center Configuration Manager  
- Wstecz, aby tej wersji do ustawiania dostępu warunkowego dla komputera, komputer musiała zostać zarejestrowane w usłudze Intune albo muszą być w przypadku komputera przyłączonego do domeny. Począwszy od aktualizacji 1602 dostępu warunkowego dla komputerów zarządzanych przez program System Center Configuration manager jest obsługiwana. Na komputerach, które są zarządzane przez program System Center Configuration Manager można ograniczyć dostęp do usługi Exchange Online i usługi SharePoint Online tylko do urządzeń, które są zgodne z zasadami zgodności, które można ustawić.  
+ Przed tą wersją Konfigurowanie dostępu warunkowego na komputerze, do komputera musiały być zarejestrowane w usłudze Intune albo muszą być przyłączone do domeny komputera. Począwszy od aktualizacji 1602, dostęp warunkowy dla komputerów zarządzanych przez program System Center Configuration manager jest obsługiwana. W przypadku komputerów zarządzanych przez program System Center Configuration Manager można ograniczyć dostęp do usługi Exchange Online i SharePoint Online tylko do urządzeń, które są zgodne z ustawionymi zasadami zgodności.  
 
- Aby uzyskać szczegółowe informacje, zobacz [zarządzanie dostępem do usługi O365 dla komputerów zarządzanych przez program System Center Configuration Manager](../../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md).  
+ Aby uzyskać więcej informacji, zobacz [zarządzanie dostępem do usług O365 dla komputerów zarządzanych przez program System Center Configuration Manager](../../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md).  
 
-### <a name="restricting-access-based-on-the-health-of-devices"></a>Ograniczanie dostępu oparte na kondycji urządzeń  
- Teraz można ograniczyć dostęp do poczty e-mail i 0ffice usług 365 oparte na kondycji urządzeń, podawaną przez usługę kondycji zaświadczania. Ponadto urządzenia zarządzane przez usługę Intune zostaną uwzględnione w raportach kondycji urządzenia.  
+### <a name="restricting-access-based-on-the-health-of-devices"></a>Ograniczanie dostępu na podstawie kondycji urządzeń  
+ Można teraz ograniczyć dostęp do poczty e-mail i 0ffice 365 usługi na podstawie kondycji urządzeń zgłoszonej przez usługę zaświadczania o kondycji. Ponadto urządzenia zarządzane przez usługę Intune są ujęte w raportach o kondycji urządzeń.  
 
- Konsoli programu Configuration Manager oferuje nowe zasady zgodności, która pozwala określić, czy urządzenia powinno być dozwolone lub zablokowane dostępu na podstawie ich stanu kondycji. Aby uzyskać szczegółowe informacje o kondycji usługi zaświadczania i jak kondycji urządzeń jest zgłaszany w usłudze Intune, zobacz [zaświadczania kondycji programu System Center Configuration Manager](../../../core/servers/manage/health-attestation.md).  
+ Nowa reguła zgodności, który służy do określenia, czy urządzeniu powinno być dozwolone, czy zablokowała dostęp na podstawie stanu kondycji funkcjami, konsoli programu Configuration Manager. Aby uzyskać szczegółowe informacje o usłudze zaświadczania o kondycji i sposobie zgłaszania kondycji urządzeń w usłudze Intune, zobacz [zaświadczania o kondycji programu System Center Configuration Manager](../../../core/servers/manage/health-attestation.md).  
 
 ### <a name="new-compliance-policy-rules"></a>Nowe reguły zasad zgodności  
- Nowe reguły zasad zgodności, takie jak aktualizacje automatyczne i wymagający hasła do odblokowania urządzeń, zostały dodane do obsługi lepsze wymagania dotyczące zabezpieczeń.
+ Nowe reguły zasad zgodności, takie jak aktualizacje automatyczne i wymaganie hasła do odblokowania urządzeń, zostały dodane do obsługi lepsze wymagań w zakresie zabezpieczeń.
 
- Aby uzyskać więcej informacji, zobacz [zasadami zgodności urządzeń w programie System Center Configuration Manager](../../../protect/deploy-use/device-compliance-policies.md).  
+ Aby uzyskać więcej informacji, zobacz [zasady zgodności urządzeń w programie System Center Configuration Manager](../../../protect/deploy-use/device-compliance-policies.md).  
 
-### <a name="make-sure-enrolled-and-compliant-devices-always-have-access-to-exchange-on-premises"></a>Upewnij się, że urządzenia zarejestrowane i być zgodne zawsze mają dostęp do lokalnego programu Exchange  
- Podczas sprawdzania następującą opcję urządzeń, które są zarejestrowane w usłudze Intune i być zgodne z zasadami zgodności mogą uzyskiwać dostęp do lokalnego programu Exchange: **Domyślne reguły zastąpienie — zawsze Zezwalaj Intune zarejestrowane i zgodne urządzenia w celu dostępu do lokalnego programu Exchange:**. Ta zasada jest dostępna w **strony Ogólne** z **skonfigurować kreatora zasady dostępu warunkowego** dla lokalnego programu Exchange.
+### <a name="make-sure-enrolled-and-compliant-devices-always-have-access-to-exchange-on-premises"></a>Upewnij się, że zarejestrowane i zgodne urządzenia zawsze miały dostęp do lokalnego programu Exchange  
+ Jeśli zaznaczysz poniższą opcję, urządzenia zarejestrowane w usłudze Intune i zgodne z zasadami zgodności, mogą uzyskiwać dostęp do lokalnego programu Exchange: **Przesłonięcie reguły domyślnej — zawsze Zezwalaj zarejestrowanym w usłudze Intune i zgodnym urządzeniom na dostęp do lokalnego programu Exchange:**. Ta reguła jest dostępna na **strony Ogólne** z **warunkowego Kreatora konfiguracji zasad dostępu** dla lokalnego programu Exchange.
 
- Ta zasada ma pierwszeństwo przed regułą domyślne, co oznacza, że nawet jeśli ustawić domyślną regułę do kwarantanny lub blok dostępu zarejestrowane i urządzeń zgodnych nadal będą mogli uzyskać dostęp do lokalnego programu Exchange. Użyj tego ustawienia, należy zarejestrować i urządzeń zgodnych zawsze ma dostęp do poczty e-mail za pośrednictwem lokalnego programu Exchange.   
+ Ta reguła zastępuje regułę domyślną, co oznacza, że nawet jeśli domyślna reguła jest ustawiona na kwarantannę lub blokowanie dostępu, zarejestrowane i zgodne urządzenia nadal będzie można uzyskać dostęp do lokalnego programu Exchange. Użyj tego ustawienia, aby zarejestrowane i zgodne urządzenia zawsze miały dostęp do poczty e-mail za pośrednictwem lokalnego programu Exchange.   
 
  Aby uzyskać szczegółowe wskazówki, zobacz [zarządzanie dostępem do poczty e-mail w programie System Center Configuration Manager](../../../protect/deploy-use/manage-email-access.md).  
 
 ## <a name="client-management"></a>Zarządzanie klientami  
 
 ### <a name="client-online-status"></a>Stan online klienta  
- Nowy stan dla klientów jest dostępne dla monitorowania, jeśli komputer jest w trybie online lub nie. Komputer jest uznawany za online, jeśli jest ona połączona z przypisanego punktu zarządzania. Aby wskazać, że komputer jest w trybie online, klient wysyła komunikaty ping podobny do punktu zarządzania. Jeśli punkt zarządzania nie pojawi się komunikat po 5 minut, klient jest określana jako trybu offline.  
+ Nowy stan dla klientów jest dostępna do monitorowania, jeśli komputer jest w trybie online lub nie. Komputer jest uznawany za online, jeśli jest ona połączona z przypisanym punkcie zarządzania. Aby wskazać, że komputer jest w trybie online, klient wysyła komunikaty typu ping do punktu zarządzania. Jeśli punkt zarządzania nie odbierze komunikatu po 5 minutach, klient jest traktowany jako w trybie offline.  
 
- Aby uzyskać szczegółowe informacje, zobacz [jak monitorować klientów w programie System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md).  
+ Aby uzyskać więcej informacji, zobacz [jak monitorować klientów w programie System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md).  
 
-### <a name="refresh-pc-machine-and-user-policy-from-software-center"></a>Odświeżanie zasad komputera i użytkownika komputera z Centrum oprogramowania  
- Nowa opcja **zasady synchronizacji**, został dodany do **opcje** > **Konserwacja komputera** strony Centrum oprogramowania, które powoduje, że komputer, aby odświeżyć jego programu Configuration Manager zasad komputera i użytkownika.  
+### <a name="refresh-pc-machine-and-user-policy-from-software-center"></a>Odświeżanie zasad użytkownika i komputera PC z Centrum oprogramowania  
+ Nowa opcja **zasady synchronizacji**, został dodany do **opcje** > **Konserwacja komputera** w Centrum oprogramowania, który powoduje odświeżenie jej programu Configuration Manager na komputerze zasad użytkownika i komputera.  
 
-### <a name="software-center-branding-changes"></a>Zmiany znakowania Centrum oprogramowania  
- Można zmienić kolor, nazwę organizacji i ikony, które są wyświetlane w Centrum oprogramowania. Te ustawienia są stosowane zgodnie z następującymi zasadami:  
+### <a name="software-center-branding-changes"></a>Zmiany znakowania programu Centrum oprogramowania  
+ Można zmienić kolor, nazwę organizacji i ikony wyświetlane w programie Software Center. Te ustawienia są stosowane zgodnie z następującymi zasadami:  
 
-- Jeśli nie zainstalowano usługi roli serwera lokacji punktu witryny sieci Web katalogu aplikacji, a następnie Software Center wyświetla nazwę organizacji, określona w **Agent komputera** klienta nosi nazwę **nazwa organizacji wyświetlana w Centrum oprogramowania**.  
+- Jeśli nie zainstalowano roli serwera lokacji punktu witryny sieci Web katalogu aplikacji, a następnie Centrum oprogramowania wyświetlana nazwa organizacji określona w **Agent komputera** klienta nosi nazwę **nazwa organizacji wyświetlana w Centrum oprogramowania**.  
 
-- Jeśli zainstalowano roli serwera lokacji punktu witryny sieci Web katalogu aplikacji, Centrum oprogramowania Wyświetla nazwę organizacji i kolor określony we właściwościach roli serwera lokacji punktu witryny sieci Web katalogu aplikacji.  
+- Po zainstalowaniu roli serwera lokacji punktu witryny sieci Web katalogu aplikacji programu Software Center wyświetla nazwę organizacji i kolor określone we właściwościach roli serwera lokacji punktu witryny sieci Web katalogu aplikacji.  
 
-- Jeśli subskrypcja Microsoft Intune jest skonfigurowany i podłączony do środowiska programu Configuration Manager, programu Software Center wyświetla nazwę organizacji, kolor i logo firmy określonej we właściwościach subskrypcji usługi Intune.  
+- Jeśli subskrypcję Microsoft Intune jest skonfigurowana i podłączone do środowiska programu Configuration Manager, programu Software Center wyświetla nazwę organizacji, kolor i logo firmy określone we właściwościach subskrypcji usługi Intune.  
 
-### <a name="health-attestation"></a>Poświadczenie zdrowia  
- Administratorzy mogą wyświetlać stan systemu Windows 10 urządzenia kondycji zaświadczania w konsoli programu Configuration Manager. Jest on dostępny dla programu Configuration Manager, a także programu Configuration Manager w usłudze Microsoft Intune. Zaświadczanie o kondycji urządzenia umożliwia administratorowi upewnienie się, że komputery klienckie mają włączone następujące godne zaufania konfiguracje systemu BIOS, modułu TPM i oprogramowania rozruchowego:  
+### <a name="health-attestation"></a>Zaświadczanie o kondycji  
+ Administratorzy mogą wyświetlać stan zaświadczania o kondycji urządzenia systemu Windows 10 w konsoli programu Configuration Manager. To jest dostępna dla programu Configuration Manager, a także programu Configuration Manager w usłudze Microsoft Intune. Zaświadczanie o kondycji urządzenia umożliwia administratorowi upewnienie się, że komputery klienckie mają włączone następujące godne zaufania konfiguracje systemu BIOS, modułu TPM i oprogramowania rozruchowego:  
 
--   Wczesne uruchamiania ochrony przed złośliwym oprogramowaniem  
+-   Usługa wczesnej ochrony przed złośliwym oprogramowaniem  
 
 -   Funkcja BitLocker  
 
 -   Bezpieczny rozruch  
 
--   Integralności kodu  
+-   Integralność kodu  
 
-Aby uzyskać szczegółowe informacje, zobacz [zaświadczania kondycji programu System Center Configuration Manager](../../../core/servers/manage/health-attestation.md).  
+Aby uzyskać więcej informacji, zobacz [zaświadczania o kondycji programu System Center Configuration Manager](../../../core/servers/manage/health-attestation.md).  
 
-### <a name="improvements-to-endpoint-protection-antimalware-settings"></a>Ulepszenia ustawień ochrony przed złośliwym oprogramowaniem Endpoint Protection  
- 1602 dodaje następujące nowe ustawienia w zasadach ochrony przed złośliwym oprogramowaniem Endpoint Protection dla usługi Windows Defender:  
+### <a name="improvements-to-endpoint-protection-antimalware-settings"></a>Udoskonalenia ustawień ochrony przed złośliwym kodem programu Endpoint Protection  
+ 1602 dodano następujące nowe ustawienia w zasadach ochrony przed złośliwym kodem Endpoint Protection dla usługi Windows Defender:  
 
--   Ochrona w czasie rzeczywistym: Blokowanie aplikacji potencjalnie niechciane pobierania przed instalacji.  
+-   Ochrona w czasie rzeczywistym: Blokuj potencjalnie niechciane aplikacje podczas pobierania przed instalacją.  
 
 -   Ustawienia skanowania: Skanuj zamapowane dyski sieciowe podczas pełnego skanowania.  
 
--   Automatyczne przykładowe ustawienia przesyłania plików:  
+-   Przykładowy automatycznej ustawień przesyłania plików:  
 
-     Aparat ochrony przed złośliwym oprogramowaniem może zażądać próbki plików, które zostanie wysłane do firmy Microsoft do dalszej analizy. Domyślnie przed wysłaniem takich próbek zawsze wyświetlany jest monit. Administratorzy mogą teraz zarządzać następującymi ustawieniami w celu skonfigurowania tego zachowania:  
+     Aparat ochrony przed złośliwym kodem może prosić o przesyłanie plików próbek do firmy Microsoft w celu dalszej analizy. Domyślnie przed wysłaniem takich próbek zawsze wyświetlany jest monit. Administratorzy mogą teraz zarządzać następującymi ustawieniami w celu skonfigurowania tego zachowania:  
 
-    -   Zaawansowane: Włącz automatyczne próbką pliku pomagające ustalić, czy niektóre elementy wykrytego złośliwego firmy Microsoft.  
+    -   Zaawansowane: Włącz przesyłanie plików próbek automatycznego pomóc firmie Microsoft w określeniu, czy konkretne wykryte elementy są złośliwe.  
 
-    -   Zaawansowane: Zezwalaj użytkownikom na modyfikowanie automatycznego przykładowe ustawienia przesyłania plików.  
+    -   Zaawansowane: Zezwalaj użytkownikom na modyfikowanie ustawień przesyłania automatyczne przykładowych plików.  
 
-    Ponadto w sekcji "Ustawienia wykluczania" zasady ochrony przed złośliwym oprogramowaniem ochrony punktu końcowego istniejące **wykluczyć pliki i foldery** teraz umożliwia urządzenie wyłączenia.  
+    Ponadto w sekcji "Ustawienia wykluczania" zasad ochrony przed złośliwym kodem ochrony punktu końcowego, istniejące **wykluczyć pliki i foldery** ustawienie teraz umożliwia teraz wykluczanie urządzeń.  
 
-Aby uzyskać szczegółowe informacje, zobacz [sposobu tworzenia i wdrażania zasad ochrony przed złośliwym oprogramowaniem programu Endpoint Protection w programie System Center Configuration Manager](../../../protect/deploy-use/endpoint-antimalware-policies.md).  
+Aby uzyskać więcej informacji, zobacz [tworzenie i wdrażanie zasad ochrony przed złośliwym kodem programu Endpoint Protection w programie System Center Configuration Manager](../../../protect/deploy-use/endpoint-antimalware-policies.md).  
 
 ## <a name="mobile-device-management"></a>Zarządzanie urządzeniami przenośnymi  
 
-### <a name="ios-activation-lock"></a>iOS blokadę aktywacji  
- Configuration Manager może ułatwić zarządzanie iOS blokadę aktywacji, funkcja Znajdź mój iPhone i aplikacji dla systemu iOS 7.1 urządzenia z nowszymi wersjami. Blokada aktywacji jest włączana automatycznie w przypadku użycia aplikacji Znajdź mój iPhone na urządzeniu. Jeśli ta funkcja została włączona, należy podać identyfikator Apple ID i hasło użytkownika, aby można było wykonać następujące czynności:  
+### <a name="ios-activation-lock"></a>Blokady aktywacji systemu iOS  
+ Configuration Manager ułatwia zarządzanie blokadą aktywacji, funkcja Znajdź systemu iOS aplikacja Mój iPhone dla systemu iOS 7.1 i nowszym. Blokada aktywacji jest włączana automatycznie w przypadku użycia aplikacji Znajdź mój iPhone na urządzeniu. Jeśli ta funkcja została włączona, należy podać identyfikator Apple ID i hasło użytkownika, aby można było wykonać następujące czynności:  
 
--   Wyłącz Znajdź mój iPhone.  
+-   Wyłączenie aplikacji Znajdź mój iPhone.  
 
--   Wymazanie urządzenia.  
+-   Usunięcie z urządzenia.  
 
--   Uaktywnij ponownie urządzenie.  
+-   Ponownego uaktywnienia urządzenia.  
 
-Program Configuration Manager mogą poprosić o stan blokady aktywacji zarówno nadzorowanego i bez kontroli urządzeń z systemem iOS 7.1 i nowsze. Dla urządzeń z nadzorowanego programu Configuration Manager można pobrać kodu obejścia blokady aktywacji i wydać go bezpośrednio do urządzenia.  
+Menedżer konfiguracji może wysłać żądanie stanu blokady aktywacji na nadzorowanych i nienadzorowanych urządzeniach z systemem iOS 7.1 lub nowszy. W przypadku urządzeń nadzorowanych programu Configuration Manager może pobrać kod obejścia blokady aktywacji i wystawić go bezpośrednio na urządzeniu.  
 
- Aby uzyskać szczegółowe informacje, zobacz [chronić iOS urządzeniami przy użyciu blokady aktywacji obejścia w programie System Center Configuration Manager](/sccm/mdm/deploy-use/manage-ios-activation-lock).  
+ Aby uzyskać więcej informacji, zobacz [Łatwiejsza ochrona urządzeń z blokady aktywacji obejścia w programie System Center Configuration Manager dla systemu iOS](/sccm/mdm/deploy-use/manage-ios-activation-lock).  
 
-### <a name="monitor-terms-and-conditions-deployments"></a>Monitorowanie wdrożenia warunki i postanowienia  
- Można monitorować wdrożeń, warunki i postanowienia w konsoli programu Configuration Manager.  
+### <a name="monitor-terms-and-conditions-deployments"></a>Monitorować wdrożenia warunków i postanowień  
+ Możesz monitorować wdrożenia warunków i postanowień w konsoli programu Configuration Manager.  
 
- Wybierz warunki i postanowienia wdrożenie z listy wdrożeń. Obszar Podsumowanie zawiera następujące statystyki:  
+ Wybierz wdrożenie warunków i postanowień, z listy wdrożeń. Obszar podsumowania przedstawia następujące statystyki:  
 
--   **Zgodny z**: Użytkowników, którzy zaakceptowali najnowszą wersję warunków i postanowień.  
+-   **Zgodne**: Użytkownicy zaakceptowali najnowszą wersję warunków i postanowień.  
 
 -   **Błąd**  
 
--   **Niezgodne**: Użytkowników, którzy zaakceptowali wersji warunków i postanowień, ale nie najnowszej wersji.  
+-   **Niezgodne**: Użytkownicy zaakceptowali wersję warunków i postanowień, ale nie najnowszą wersję.  
 
--   **Nieznany**: Użytkownicy nigdy nie zaakceptował warunki i postanowienia, łącznie z tymi bez zarejestrowane urządzenia.  
-
+-   **Nieznany**: Użytkownicy nigdy nie zaakceptowali warunków i postanowień, w tym użytkownicy bez zarejestrowanego urządzenia.  

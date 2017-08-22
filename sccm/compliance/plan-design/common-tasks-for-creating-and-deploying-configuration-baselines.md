@@ -6,25 +6,22 @@ ms.date: 07/12/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4bb6afeb-d267-4f9b-ade2-26e5400c223b
-caps.latest.revision: 6
-caps.handback.revision: 0
+caps.latest.revision: "6"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: MT
-ms.sourcegitcommit: 344b55aecd72479b759b40e8252e64a06c5eaba0
 ms.openlocfilehash: 5bf4457af6bedf7bc9cd73c879f1857209c0725d
-ms.contentlocale: pl-pl
-ms.lasthandoff: 07/13/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# Typowe zadania dotyczące tworzenia i wdrażania linii bazowych konfiguracji z System Center Configuration Manager
-<a id="common-tasks-for-creating-and-deploying-configuration-baselines-with-system-center-configuration-manager" class="xliff"></a>
+# <a name="common-tasks-for-creating-and-deploying-configuration-baselines-with-system-center-configuration-manager"></a>Typowe zadania dotyczące tworzenia i wdrażania linii bazowych konfiguracji z System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
@@ -34,8 +31,7 @@ Ten temat zawiera typowe scenariusze, aby uzyskać więcej informacji o sposobie
 
  Przed rozpoczęciem przeczytaj [wprowadzenie do ustawień zgodności w programie System Center Configuration Manager](../../compliance/get-started/get-started-with-compliance-settings.md) Aby poznać niektóre podstawowe ustawienia zgodności, a także temat [planowanie i konfigurowanie ustawień zgodności](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md) implementacji wszelkich niezbędnych wymagań wstępnych.  
 
-## Tworzenie planu bazowego konfiguracji
-<a id="create-a-configuration-baseline" class="xliff"></a>  
+## <a name="create-a-configuration-baseline"></a>Tworzenie planu bazowego konfiguracji  
  W tym przykładzie utworzono element konfiguracji tylko 10 komputerów z systemem Windows uruchom klienta programu Configuration Manager.  
 
  Ten element konfiguracji wymusza stosowanie hasła z co najmniej 6 znakami na komputerach z systemem Windows 10. Element konfiguracji ma nazwę **Wymuszanie hasła w systemie Windows 10**.  
@@ -60,8 +56,7 @@ Użyj poniższej procedury, aby dowiedzieć się, jak dodać ten element konfigu
 
  Możesz teraz przeglądać linii bazowej konfiguracji w **linie bazowe konfiguracji** węzła konsoli programu Configuration Manager.  
 
-## Wdrażanie linii bazowej konfiguracji
-<a id="deploy-the-configuration-baseline" class="xliff"></a>  
+## <a name="deploy-the-configuration-baseline"></a>Wdrażanie linii bazowej konfiguracji  
  W tym przykładzie możesz wdrożyć linię bazową konfiguracji, który został utworzony w poprzedniej procedurze do kolekcji komputerów.  
 
 1.  W konsoli programu Configuration Manager kliknij **zasoby i zgodność** > **ustawień zgodności** > **linie bazowe konfiguracji**.  
@@ -87,8 +82,6 @@ Użyj poniższej procedury, aby dowiedzieć się, jak dodać ten element konfigu
 
  Jeśli chcesz szybko wyświetlić statystyki zgodności dla tego wdrożenia, w obszarze roboczym **Monitorowanie** kliknij pozycję **Wdrożenia**. W dolnej części ekranu, zobacz **statystyki zgodności** wykresu.  
 
-## Następne kroki
-<a id="next-steps" class="xliff"></a> 
+## <a name="next-steps"></a>Następne kroki 
 
 Aby uzyskać szczegółowe informacje o monitorowaniu linii bazowych konfiguracji, zobacz [monitorować ustawienia zgodności](../../compliance/deploy-use/monitor-compliance-settings.md).  
-

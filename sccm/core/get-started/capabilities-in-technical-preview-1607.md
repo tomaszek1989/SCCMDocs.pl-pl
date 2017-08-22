@@ -1,81 +1,78 @@
 ---
-title: "Możliwości w Technical Preview 1607 programu Configuration Manager"
-description: "Informacje na temat funkcji dostępnych w Technical Preview programu System Center Configuration Manager, wersja 1607."
+title: Funkcje w wersji zapoznawczej Technical Preview 1607 programu Configuration Manager
+description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersji 1607."
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2bb69547-3370-4860-96b0-7fb600c56482
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
 ms.openlocfilehash: 4717e0f8eef01501fb5b5790e855c476c1ca4590
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1607-for-system-center-configuration-manager"></a>Możliwości w Technical Preview 1607 System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1607-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1607 programu System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (Technical Preview)*
+*Dotyczy: System Center Configuration Manager (wersja zapoznawcza Technical Preview)*
 
-Ten artykuł wprowadza do funkcji, które są dostępne w Technical Preview programu System Center Configuration Manager, wersja 1607. Można zainstalować tę wersję, aby zaktualizować i dodawać nowe funkcje do lokacji programu Configuration Manager technical preview.      Przed zainstalowaniem tej wersji technical preview, przejrzyj temat wprowadzające [Technical Preview dla programu System Center Configuration Manager](../../core/get-started/technical-preview.md), aby zapoznać się z ogólnym wymagania i ograniczenia dotyczące używania technical preview, jak zaktualizować między wersjami i jak Wyraź swoją opinię dotyczącą funkcji w technical preview.    
+W tym artykule przedstawiono funkcje, które są dostępne w wersji Technical Preview programu System Center Configuration Manager, wersji 1607. Można zainstalować tę wersję, aby zaktualizować i dodać nowe funkcje do lokacji programu Configuration Manager technical preview.      Przed zainstalowaniem tej wersji technical Preview, przejrzyj temat wprowadzający [Technical Preview programu System Center Configuration Manager](../../core/get-started/technical-preview.md), aby zapoznać się z ogólne wymagania i ograniczenia dotyczące używania wersji technical preview, jak zaktualizować między wersjami i sposobu wyrazić swoją opinię na temat funkcji w wersji technical preview.    
 
 
 **Poniżej przedstawiono nowe funkcje, które można wypróbować z tą wersją.**  
 
-## <a name="dmp_edition"></a>Zasady uaktualniania usprawnień w tej wersji systemu Windows 10
+## <a name="dmp_edition"></a>Ulepszenia w wersji systemu Windows 10, Uaktualnij zasad
 
-W tej wersji wprowadzono następujące ulepszenia wprowadzone do tej zasady:
+W tej wersji wprowadzono następujące ulepszenia dotyczące tej zasady:
 
-* Można teraz używać zasady uaktualniania wersji z komputery z systemem Windows 10 uruchomionymi Menedżera konfiguracji klienta oprócz komputery z systemem Windows 10 są rejestrowane w usłudze Microsoft Intune.
-* Można uaktualnić z systemu Windows 10 Professional do dowolnej platformy w kreatorze, które są zgodne ze sprzętem.
+* Można teraz używać zasad uaktualniania wersji z 10 komputerów z systemem Windows uruchom Menedżera konfiguracji klienta oprócz komputerów z systemem Windows 10 zarejestrowanych w usłudze Microsoft Intune.
+* Windows 10 Professional można uaktualnić do żadnej platformy w kreatorze, które są zgodne ze sprzętem.
 
-[Więcej informacji na temat systemu Windows 10 wersji uaktualnienia zasad](/sccm/compliance/deploy-use/upgrade-windows-version)
+[Więcej informacji na temat systemu Windows 10 zasady uaktualniania wersji](/sccm/compliance/deploy-use/upgrade-windows-version)
 
-### <a name="try-it-out"></a>Wypróbuj to!
+### <a name="try-it-out"></a>Wypróbuj
 
-1. Informacje zawarte w [istniejący temat zasady uaktualniania wersji](/sccm/compliance/deploy-use/upgrade-windows-version) utworzyć zasady uaktualniania wersji.
-2. Wdróż te zasady na komputerze z systemem Windows 10 uruchomiony klient programu Configuration Manager.
-Gdy zasady dotrą do docelowego komputera z systemem Windows, zostanie on uruchomiony ponownie w ciągu dwóch godzin w celu zastosowania uaktualnienia. Obecnie nie można pominąć ten uruchomienie. Upewnij się, informuje wszystkich użytkowników, dla których wdrożono zasadę lub zaplanować zasady uruchomiony poza użytkowników godziny pracy.
+1. Skorzystaj z informacji w [istniejący temat zasady uaktualniania wersji](/sccm/compliance/deploy-use/upgrade-windows-version) do tworzenia zasad uaktualniania wersji.
+2. Na komputerze z systemem Windows 10 uruchomiony klient programu Configuration Manager, należy wdrożyć te zasady.
+Gdy zasady dotrą do docelowego komputera z systemem Windows, zostanie on uruchomiony ponownie w ciągu dwóch godzin w celu zastosowania uaktualnienia. Obecnie nie można pominąć ponownego uruchomienia. Upewnij się, poinformuj o tym, wszyscy użytkownicy, do których można wdrożyć zasady, lub zaplanować zasady do uruchamiania poza użytkowników godziny pracy.
 
 ### <a name="known-issue-with-this-release"></a>Znany problem w tej wersji
-Ustawienia klienta programu Configuration Manager, może zawierać ustawienia dla **uaktualnienia wersji**. W tej wersji te ustawienia nie działają. Wykonaj instrukcje podane powyżej do uaktualnienia do nowszej wersji systemu Windows 10.
+W ustawieniach klienta programu Configuration Manager, można napotkać ustawienia **uaktualniania wersji**. W tej wersji te ustawienia nie są funkcjonalne. Wykonaj instrukcje podane powyżej do uaktualnienia systemu Windows 10 do nowszej wersji.
 
 ## <a name="customizable-branding-for-software-center-dialogs"></a>Możliwość dostosowania znaków firmowych w oknach dialogowych Centrum oprogramowania
 
-Niestandardowe znakowanie dla programu Software Center wprowadzono 1602 wersji programu Configuration Manager. W wersji Technical Preview 1607 tego znakowania jest rozszerzona na wszystkie skojarzone okna dialogowe i powiadomień paska zadań w celu zapewnienia bardziej spójne możliwości użytkowników Centrum oprogramowania.
+Znakowanie niestandardowych w programie Software Center wprowadzono w programie Configuration Manager w wersji 1602. Obsługa w wersji zapoznawczej Technical Preview 1607, znakowania jest rozszerzona na wszystkie skojarzone okien dialogowych i powiadomień paska zadań w celu zapewnienia bardziej spójnego użytkownikom Centrum oprogramowania.
 
-### <a name="try-it-out"></a>Wypróbuj to!
+### <a name="try-it-out"></a>Wypróbuj
 
-Niestandardowe znakowanie dla programu Software Center zostanie zastosowane zgodnie z następującymi zasadami:
+Znakowanie niestandardowych w programie Software Center jest stosowane zgodnie z następującymi zasadami:
 
-1. Jeśli nie zainstalowano usługi roli serwera lokacji punktu witryny sieci Web katalogu aplikacji, a następnie Software Center wyświetli podana nazwa organizacji w **Agent komputera** ustawienia klienta **nazwa organizacji wyświetlana w Centrum oprogramowania**. Aby uzyskać instrukcje, zobacz [sposób konfigurowania ustawień klienta](../../core/clients/deploy/configure-client-settings.md).
+1. Jeśli nie zainstalowano roli serwera lokacji punktu witryny sieci Web katalogu aplikacji, a następnie Centrum oprogramowania będzie wyświetlana nazwa organizacji określona w **Agent komputera** ustawienia klienta **nazwa organizacji wyświetlana w Centrum oprogramowania**. Aby uzyskać instrukcje, zobacz [sposób konfigurowania ustawień klienta](../../core/clients/deploy/configure-client-settings.md).
 
-2. Po zainstalowaniu roli serwera lokacji punktu witryny sieci Web katalogu aplikacji, Centrum oprogramowania będą wyświetlane, nazwę organizacji i kolor określony we właściwościach roli serwera lokacji katalogu aplikacji witryny sieci Web punktu. Aby uzyskać więcej informacji, zobacz [opcje konfiguracji dla punktu witryny sieci Web katalogu aplikacji](../../core/servers/deploy/configure/configuration-options-for-site-system-roles.md#BKMK_ApplicationCatalog_Website).
+2. Po zainstalowaniu roli serwera lokacji punktu witryny sieci Web katalogu aplikacji, Centrum oprogramowania będzie wyświetlana nazwa organizacji i kolor określone we właściwościach roli serwera lokacji katalogu aplikacji witryny sieci Web punktu. Aby uzyskać więcej informacji, zobacz [opcji konfiguracji dla punktu witryny sieci Web katalogu aplikacji](../../core/servers/deploy/configure/configuration-options-for-site-system-roles.md#BKMK_ApplicationCatalog_Website).
 
-3. Jeśli subskrypcja Microsoft Intune jest skonfigurowany i podłączony do środowiska programu Configuration Manager, programu Software Center będzie wyświetlać nazwę organizacji, kolor i logo firmy określonej we właściwościach subskrypcji usługi Intune. Aby uzyskać więcej informacji, zobacz [Konfigurowanie subskrypcji usługi Microsoft Intune](/mdm/deploy-use/configure-intune-subscription).
+3. Jeśli subskrypcję Microsoft Intune jest skonfigurowana i podłączone do środowiska programu Configuration Manager, Centrum oprogramowania będzie wyświetlana nazwa organizacji, kolor i logo firmy określone we właściwościach subskrypcji usługi Intune. Aby uzyskać więcej informacji, zobacz [skonfigurować subskrypcję Microsoft Intune](/mdm/deploy-use/configure-intune-subscription).
 
-## <a name="use-the-same-network-adapter-for-multiple-pxe-initiated-deployments"></a>Wdrożenia inicjowane przez użycie tej samej karty sieciowej dla wielu środowiska PXE
-W wersji Technical Preview 1607, korzystając z karty ethernet do obrazu wiele urządzeń (takich jak karta USB ethernet, którego używasz na wielu urządzeniach) można włączyć nowe ustawienie, które pozwala na wprowadzenie identyfikatory sprzętu dla karty ethernet. Menedżer konfiguracji ignoruje identyfikatory sprzętu, na liście w przypadku przeprowadzania instalacji środowiska PXE i rejestracji klienta.
+## <a name="use-the-same-network-adapter-for-multiple-pxe-initiated-deployments"></a>Wdrożenia inicjowane z jedną kartą sieciową użytek wielu środowiska PXE
+W wersji zapoznawczej Technical Preview 1607, korzystając z karty ethernet obrazu wielu urządzeń (na przykład karty USB ethernet, który jest używany w wielu urządzeń) można włączyć nowe ustawienie, który pozwala na wprowadzenie identyfikatory sprzętu dla kart sieciowych ethernet. Menedżera konfiguracji ignoruje identyfikatory sprzętu, na liście podczas przeprowadzania instalacji środowiska PXE i rejestracji klienta.
 
-Aby uzyskać więcej informacji o tym problemie, zobacz [Blog zespołu pomocy technicznej programu Configuration Manager OSD](https://blogs.technet.microsoft.com/system_center_configuration_manager_operating_system_deployment_support_blog/2015/08/27/reusing-the-same-nic-for-multiple-pxe-initiated-deployments-in-system-center-configuration-manger-osd/).  
+Aby uzyskać więcej informacji na temat tego problemu, zobacz [Blog zespołu pomocy technicznej programu Configuration Manager OSD](https://blogs.technet.microsoft.com/system_center_configuration_manager_operating_system_deployment_support_blog/2015/08/27/reusing-the-same-nic-for-multiple-pxe-initiated-deployments-in-system-center-configuration-manger-osd/).  
 
-### <a name="enable-the-feature-to-manage-duplicate-hardware-identifiers"></a>Włączanie funkcji do zarządzania sprzętu zduplikowane identyfikatory  
-1. W konsoli programu Configuration Manager, przejdź do **Administracja** > **Przegląd** > **usług w chmurze** > **aktualizacji i obsługi** > **funkcji**.
+### <a name="enable-the-feature-to-manage-duplicate-hardware-identifiers"></a>Włącz tę funkcję, aby zarządzać sprzętu zduplikowane identyfikatory  
+1. W konsoli programu Configuration Manager, przejdź do **administracji** > **omówienie** > **usługi w chmurze** > **aktualizacje i obsługa** > **funkcji**.
 2. W okienku wyświetlania wybierz **Zarządzaj sprzętu zduplikowane identyfikatory**.
-3. Na **Home** w karcie **funkcji** , kliknij przycisk **włączyć**.
+3. Na **Home** karcie **funkcje** kliknij przycisk **włączyć**.
 
-### <a name="add-hardware-identifiers-for-configuration-manager-to-ignore"></a>Dodaj identyfikatory sprzętu dla programu Configuration Manager ignorowanie  
-1. W konsoli programu Configuration Manager, przejdź do **Administracja** > **Przegląd** > **konfiguracja lokacji** > **witryny**.
+### <a name="add-hardware-identifiers-for-configuration-manager-to-ignore"></a>Dodaj identyfikatory sprzętowe dla programu Configuration Manager do ignorowania  
+1. W konsoli programu Configuration Manager, przejdź do **administracji** > **omówienie** > **konfiguracja lokacji** > **witryny**.
 2. Na karcie **Narzędzia główne** w grupie **Lokacje** kliknij przycisk **Ustawienia hierarchii**.
 3. Przejdź do **zatwierdzania klienta i rekordy powodujące konflikt** kartę.
-4. Kliknij przycisk **Dodaj** w **zduplikowane identyfikatory sprzętu** sekcję, aby dodać nowe identyfikatory sprzętu.
-
+4. Kliknij przycisk **Dodaj** w **zduplikowane identyfikatory sprzętu** sekcji, aby dodać nowe identyfikatory sprzętu.

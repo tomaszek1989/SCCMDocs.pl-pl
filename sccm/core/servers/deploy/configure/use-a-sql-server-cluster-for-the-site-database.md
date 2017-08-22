@@ -1,52 +1,49 @@
 ---
 title: Klaster programu SQL Server | Dokumentacja firmy Microsoft
-description: "Użyj klastra programu SQL Server do obsługi bazy danych lokacji programu System Center Configuration Manager. Zawiera informacje na temat obsługiwanych opcji."
+description: "Używać klastra programu SQL Server do hostowania bazy danych lokacji programu System Center Configuration Manager. Zawiera informacje na temat opcje są obsługiwane."
 ms.custom: na
 ms.date: 2/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: d09a82c6-bbd1-49ca-8ffe-e3ce87b85d33
-caps.latest.revision: 10
-caps.handback.revision: 0
+caps.latest.revision: "10"
+caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: ce0d7fc5f3d1812c4d62e551661c0ef89707567b
 ms.openlocfilehash: 53f119bbb1f8827a9c23c8b747840350bbb92790
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="use-a-sql-server-cluster-for-the-system-center-configuration-manager-site-database"></a>Używanie klastra programu SQL Server dla bazy danych lokacji programu System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
- Klastra programu SQL Server można użyć do obsługi bazy danych lokacji programu System Center Configuration Manager. Baza danych lokacji jest jedyną rolą systemu lokacji obsługiwaną w klastrze programu SQL Server.  
+ Klastra programu SQL Server służy do obsługi bazy danych lokacji programu System Center Configuration Manager. Baza danych lokacji jest jedyną rolą systemu lokacji obsługiwaną w klastrze programu SQL Server.  
 
 > [!IMPORTANT]  
->  Pomyślne konfigurowanie klastrów programu SQL Server zależy od dokumentacji i procedur omówionych w bibliotece dokumentacji programu SQL Server.  
+>  Pomyślne zestawu klastrów programu SQL Server korzysta z dokumentacji i procedur dostępnych w bibliotece dokumentacji programu SQL Server.  
 
- Klastra można zapewnić obsługę pracy awaryjnej i zwiększyć niezawodność bazy danych lokacji. Jednak nie zawierają dodatkowe przetwarzanie ani korzyści z równoważenia obciążenia. W rzeczywistości pogorszenie wydajności mogą wystąpić, ponieważ serwer lokacji musi znaleźć aktywnego węzła klastra programu SQL Server, zanim nawiąże połączenie bazy danych lokacji.  
+ Klastra można zapewnić obsługę pracy awaryjnej i zwiększyć niezawodność bazy danych lokacji. Jednak nie zapewniają dodatkowego przetwarzania ani korzyści z funkcji równoważenia obciążenia. W rzeczywistości spadek wydajności może wystąpić, ponieważ zanim łączy się bazy danych lokacji z serwera lokacji musi najpierw odnaleźć aktywny węzeł klastra programu SQL Server.  
 
  Przed zainstalowaniem programu Configuration Manager, należy przygotować klastra programu SQL Server do obsługi programu Configuration Manager. (Zobacz wymagania wstępne w dalszej części tej sekcji).  
 
- Składnik zapisywania usługi kopiowania woluminów w tle systemu Windows podczas instalacji programu Configuration Manager instaluje się na każdym fizycznym węźle komputera klastra systemu Microsoft Windows Server. Obejmuje to obsługę **kopii zapasowej serwera lokacji** zadań konserwacji.  
+ Podczas instalacji programu Configuration Manager składnik zapisywania usługi kopiowania woluminów w tle systemu Windows jest instalowana na każdym fizycznym węźle komputera klastra systemu Microsoft Windows Server. W ten sposób realizowany **Utwórz kopię zapasową serwera lokacji** zadań konserwacji.  
 
- Po zainstalowaniu lokacji programu Configuration Manager sprawdza zmiany do węzła klastra co godzinę. Program Configuration Manager automatycznie zarządza zmiany, które są wykrył, że wpływu na instalacje składników programu Configuration Manager (takie jak tryb pracy awaryjnej węzła lub dodanie nowego węzła do klastra programu SQL Server).  
+ Po zainstalowaniu lokacji programu Configuration Manager sprawdza zmiany węzła klastra co godzinę. Menedżer konfiguracji automatycznie zarządza wszelkie zmiany, które zostały znalezione, które wpływają na instalacje składników programu Configuration Manager (na przykład węzła trybu failover, lub dodanie nowego węzła do klastra programu SQL Server).  
 
-## <a name="supported-options-for-using-a-sql-server-failover-cluster"></a>Obsługiwane opcje dotyczące korzystania z klastra pracy awaryjnej programu SQL Server
+## <a name="supported-options-for-using-a-sql-server-failover-cluster"></a>Obsługiwane opcje używania klastra pracy awaryjnej programu SQL Server
 
-Obsługiwane są następujące opcje dla klastrów pracy awaryjnej programu SQL Server służący jako baza danych lokacji:
+Obsługiwane są następujące opcje dla klastrów trybu failover programu SQL Server używany jako bazy danych lokacji:
 
--   Pojedyncze wystąpienie klastra  
+-   Klaster z pojedynczym wystąpieniem  
 
 -   Konfiguracja z wieloma wystąpieniami  
 
@@ -58,11 +55,11 @@ Należy zwrócić uwagę na następujące wymagania wstępne:
 
 -   Baza danych lokacji musi znajdować się poza serwerem lokacji. (Klaster nie może zawierać serwera systemu lokacji).  
 
--   Należy dodać konto komputera serwera lokacji do lokalnej grupy administratorów każdego serwera w klastrze.  
+-   Należy dodać konto komputera serwera lokacji do grupy Administratorzy lokalni każdego serwera w klastrze.  
 
--   Do obsługi uwierzytelniania Kerberos, **TCP/IP** protokołu komunikacji sieciowej musi być włączona dla połączenia sieciowego każdego węzła klastra programu SQL Server. **Nazwane potoki** nie są wymagane, ale można ich używać do rozwiązywania problemów z uwierzytelnianiem Kerberos. Ustawienia protokołu są konfigurowane w **programu SQL Server Configuration Manager**w obszarze **konfigurację sieci programu SQL Server**.  
+-   Aby zapewnić obsługę uwierzytelniania Kerberos **TCP/IP** musi być włączony protokół komunikacji sieciowej dla połączenia sieciowego każdego węzła klastra programu SQL Server. **Nazwane potoki** nie są wymagane, ale można ich używać do rozwiązywania problemów z uwierzytelnianiem Kerberos. Ustawienia protokołu sieciowego są konfigurowane w **SQL Server Configuration Manager**w obszarze **konfigurację sieci programu SQL Server**.  
 
--   Jeśli używana jest infrastruktura PKI, zobacz wymagania dotyczące certyfikatu PKI dla programu Configuration Manager dla konkretnych wymogach certyfikatu obowiązujących używania klastra programu SQL Server dla bazy danych lokacji.  
+-   Jeśli korzystasz z infrastruktury kluczy publicznych, zobacz wymagania dotyczące certyfikatu PKI dla programu Configuration Manager dla konkretnych wymogach certyfikatu obowiązujących używania klastra programu SQL Server dla bazy danych lokacji.  
 
 Należy wziąć pod uwagę następujące ograniczenia:  
 
@@ -74,33 +71,32 @@ Należy wziąć pod uwagę następujące ograniczenia:
 
 -   **Dostawca programu SMS:**  
 
-    -   Instalowanie wystąpienia dostawcy programu SMS w klastrze programu SQL Server lub na komputerze z uruchomionym węzłem klastrowanego programu SQL Server nie jest obsługiwane.  
+    -   Instalowanie wystąpienia dostawcy programu SMS w klastrze programu SQL Server lub na komputerze, który działa jako węzeł klastra programu SQL Server nie jest obsługiwane.  
 
 -   **Opcje replikacji danych:**  
 
-    -   W przypadku używania **widoków rozproszonych**, nie można używać klastra programu SQL Server do obsługi bazy danych lokacji.  
+    -   Jeśli użyjesz **widoków rozproszonych**, nie można używać klastra programu SQL Server do hostowania bazy danych lokacji.  
 
 -   **Tworzenie kopii zapasowej i odzyskiwanie:**  
 
-    -   Menedżer konfiguracji nie obsługuje kopii zapasowej Data Protection Manager (DPM) dla klastra programu SQL Server używającego wystąpienia nazwanego. Jednak obsługuje kopii zapasowych programu DPM na klastrze programu SQL Server, który używa domyślnego wystąpienia programu SQL Server.  
+    -   Dla klastra programu SQL Server używającego wystąpienia nazwanego programu Configuration Manager nie obsługuje tworzenia kopii zapasowej Data Protection Manager (DPM). Jednak obsługuje kopii zapasowych programu DPM na klastrze programu SQL Server, który korzysta z domyślnego wystąpienia programu SQL Server.  
 
 ## <a name="prepare-a-clustered-sql-server-instance-for-the-site-database"></a>Przygotowanie klastrowanego wystąpienia programu SQL Server dla bazy danych lokacji  
 
-Oto główne zadania do wykonania w celu przygotowania do bazy danych:
+Poniżej przedstawiono główne zadania do wykonania w celu przygotowania bazy danych lokacji:
 
--   Utwórz wirtualny klaster programu SQL Server na potrzeby hostowania bazy danych lokacji w istniejącym środowisku klastra systemu Windows Server. Konkretne kroki do instalowania i konfigurowania klastra programu SQL Server zobacz dokumentację specyficzne dla używanej wersji programu SQL Server. Na przykład, jeśli używasz programu SQL Server 2008 R2, zobacz [Instalowanie klastra pracy awaryjnej programu SQL Server 2008 R2](http://go.microsoft.com/fwlink/p/?LinkId=240231).  
+-   Utwórz wirtualny klaster programu SQL Server na potrzeby hostowania bazy danych lokacji w istniejącym środowisku klastra systemu Windows Server. Określone kroki instalowania i konfigurowania klastra programu SQL Server w dokumentacji danej wersji programu SQL Server. Na przykład, jeśli używasz programu SQL Server 2008 R2, zobacz [Instalowanie klastra pracy awaryjnej programu SQL Server 2008 R2](http://go.microsoft.com/fwlink/p/?LinkId=240231).  
 
--   Na każdym komputerze w klastrze programu SQL Server należy umieścić plik w folderze głównym każdego dysku, na którym nie ma programu Configuration Manager do zainstalowania składników lokacji. Plik powinien mieć nazwę **NO_SMS_ON_DRIVE.SMS**. Domyślnie program Configuration Manager instaluje pewne składniki w każdym fizycznym węźle do obsługi operacji, takich jak kopii zapasowej.  
+-   Na każdym komputerze w klastrze programu SQL Server możesz umieścić plik w folderze głównym każdego dysku, na których nie chcesz instalować składników lokacji program Configuration Manager. Plik powinien mieć nazwę **NO_SMS_ON_DRIVE.SMS**. Domyślnie program Configuration Manager instaluje pewne składniki w każdym fizycznym węźle do obsługi operacji, takich jak kopii zapasowej.  
 
 -   Dodaj konto komputera serwera lokacji do grupy **Administratorzy lokalni** każdego komputera węzła klastra systemu Windows Server.  
 
--   W wirtualnym wystąpieniu programu SQL Server, należy przypisać **sysadmin** roli programu SQL Server do konta użytkownika, który będzie uruchamiany Instalator programu Configuration Manager.  
+-   W wirtualnym wystąpieniu programu SQL Server, należy przypisać **sysadmin** roli programu SQL Server do konta użytkownika, który zostanie uruchomiony Instalator programu Configuration Manager.  
 
 ### <a name="to-install-a-new-site-using-a-clustered-sql-server"></a>Aby zainstalować nową lokację przy użyciu klastrowanego programu SQL Server  
- Aby zainstalować lokacji, która korzysta z bazy danych lokacji klastrowane, uruchom Instalatora programu Configuration Manager po procesie normalnej instalacji lokacji, z następującą modyfikacją:  
+ Aby zainstalować lokację, która korzysta z klastrowanej bazy danych lokacji, uruchom Instalatora programu Configuration Manager po zakończeniu procesu zwykłej instalacji lokacji, z następującą modyfikacją:  
 
 -   Na stronie **Informacje o bazie danych** określ nazwę wirtualnego wystąpienia klastra programu SQL Server, które ma hostować bazę danych lokacji. Wystąpienie wirtualne zastępuje nazwę komputera, na którym działa program SQL Server.  
 
     > [!IMPORTANT]  
-    >  Musisz wprowadzić nazwę wirtualnego wystąpienia klastra programu SQL Server, a nie wirtualną nazwę systemu Windows Server utworzoną przez klaster systemu Windows Server. Jeśli używasz wirtualną nazwę systemu Windows Server, bazy danych lokacji instaluje się na lokalnym dysku twardym aktywnego węzła klastra systemu Windows Server. Uniemożliwia to pracę w trybie failover w przypadku awarii tego węzła.  
-
+    >  Musisz wprowadzić nazwę wirtualnego wystąpienia klastra programu SQL Server, a nie wirtualną nazwę systemu Windows Server utworzoną przez klaster systemu Windows Server. Jeśli użyjesz wirtualnej nazwy systemu Windows Server, bazy danych lokacji są instalowane na lokalnym dysku twardym aktywnego węzła klastra systemu Windows Server. Uniemożliwia to pracę w trybie failover w przypadku awarii tego węzła.  

@@ -1,40 +1,37 @@
 ---
-title: "Tworzenie wstępnie przygotowanego nośnika z System Center Configuration Manager | Dokumentacja firmy Microsoft"
-description: "Tworzenie wstępnie przygotowanego nośnika w System Center Configuration Manager w celu uproszczenia wdrażania systemu Windows w różnych scenariuszach."
+title: "Tworzenie wstępnie przygotowanego nośnika w programie System Center Configuration Manager | Dokumentacja firmy Microsoft"
+description: "Tworzenie wstępnie przygotowanego nośnika w System Center Configuration Manager można uprościć wdrażanie systemu Windows w kilku scenariuszach."
 ms.custom: na
 ms.date: 04/11/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ff6e7267-302a-4563-815e-cdc0d1a4b60f
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: ae9488a34c6b1e04397c4875de4b3bc607f7116c
 ms.openlocfilehash: 33abf3853d912d423e427db4d35fb4a16167164e
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-prestaged-media-with-system-center-configuration-manager"></a>Tworzenie wstępnie przygotowanego nośnika z programem System Center Configuration Manager
+# <a name="create-prestaged-media-with-system-center-configuration-manager"></a>Tworzenie wstępnie przygotowanego nośnika w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Wstępnie przygotowanego nośnika w programie System Center Configuration Manager to plik Windows Imaging Format (WIM), który można zainstalować na komputerze bez systemu operacyjnego przez producenta lub w Centrum przygotowywania przedsiębiorstwa, który nie jest podłączony do środowiska programu Configuration Manager.  
+Wstępnie przygotowanego nośnika w programie System Center Configuration Manager to plik Windows Imaging Format (WIM), który można zainstalować na komputerze bez systemu operacyjnego przez producenta tego komputera lub w Centrum przygotowywania przedsiębiorstwa niepołączonym do środowiska programu Configuration Manager.  
 Nośnik wstępnie przygotowany zawiera obraz rozruchowy używany do uruchomienia komputera docelowego oraz obraz systemu operacyjnego stosowany względem tego komputera. Możesz także określić aplikacje, pakiety i pakiety sterowników, które mają zostać dołączone do wstępnie przygotowanego nośnika. Na nośniku nie znajduje się sekwencja zadań, która wdraża system operacyjny. Nośnik wstępnie przygotowany jest umieszczany na dysku twardym nowego komputera przed jego wysłaniem do użytkownika końcowego. Użyj wstępnie przygotowanego nośnika w następujących scenariuszach wdrażania systemu operacyjnego:  
 
--   [Tworzenie obrazu dla producenta OEM w fabryce lub lokalnego magazynu](../../osd/deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot.md)  
+-   [Tworzenie obrazu dla producenta OEM w fabryce lub lokalnym magazynie](../../osd/deploy-use/create-an-image-for-an-oem-in-factory-or-a-local-depot.md)  
 
--   [Zainstaluj nową wersję systemu Windows na nowym komputerze (od zera)](install-new-windows-version-new-computer-bare-metal.md)  
+-   [Instalowanie nowej wersji systemu Windows na nowym komputerze (od zera)](install-new-windows-version-new-computer-bare-metal.md)  
 
--   [Wdrażanie systemu Windows to Go](deploy-windows-to-go.md)  
+-   [Wdrażanie funkcji Windows to Go](deploy-windows-to-go.md)  
 
  Gdy taki komputer z wstępnie przygotowanym nośnikiem zostanie włączony po raz pierwszy, nastąpi rozruch środowiska Windows PE i nawiązanie połączenia z punktem zarządzania w celu zlokalizowania sekwencji zadań, która dokończy proces wdrożenia systemu operacyjnego. Możesz określić aplikacje, pakiety i pakiety sterowników do dołączenia do wstępnie przygotowanego nośnika. W czasie wdrażania sekwencji zadań wykorzystującej nośnik wstępnie przygotowany kreator sprawdza, czy w lokalnej pamięci podręcznej sekwencji zadań znajduje się prawidłowa zawartość. Jeśli zawartości nie można odnaleźć lub została zmieniona, kreator pobiera zawartość z punktu dystrybucji.  
 
@@ -43,9 +40,9 @@ Nośnik wstępnie przygotowany zawiera obraz rozruchowy używany do uruchomienia
 
 |Zadanie|Opis|  
 |----------|-----------------|  
-|Obraz rozruchowy|Należy wziąć pod uwagę następujące kwestie dotyczące obrazu rozruchowego, który będzie używany w sekwencji zadań do wdrażania systemu operacyjnego:<br /><br /> -Architektura obrazu rozruchowego musi być zgodna z architekturą komputera docelowego. Na przykład komputer docelowy z procesorem x64 obsługuje rozruch i uruchamianie obrazów rozruchowych x86 lub x64. Jednak komputer docelowy z procesorem x86 obsługuje tylko rozruch i uruchamianie obrazów rozruchowych x86.<br />-Upewnij się, czy obraz rozruchowy zawiera sterowniki pamięci masowej i sieci, są wymagane do udostępnienia komputera docelowego.|  
-|Tworzenie sekwencji zadań w celu wdrożenia systemu operacyjnego|W ramach wstępnie przygotowanego nośnika musisz określić sekwencję zadań wdrożenia systemu operacyjnego.<br /><br /> -Dla czynności w celu utworzenia nowej sekwencji zadań, zobacz [tworzenia sekwencji zadań w celu zainstalowania systemu operacyjnego](../../osd/deploy-use/create-a-task-sequence-to-install-an-operating-system.md).<br />-Aby uzyskać więcej informacji o sekwencjach zadań, zobacz [sekwencji zadań do automatyzacji zadań zarządzania](../../osd/deploy-use/manage-task-sequences-to-automate-tasks.md).|  
-|Dystrybucja całej zawartości skojarzonej z sekwencją zadań|Całą zawartość wymaganą przez sekwencję zadań należy umieścić w co najmniej jednym punkcie dystrybucji. Zawartość ta obejmuje obraz rozruchowy, obraz systemu operacyjnego i inne skojarzone pliki. Kreator zbiera informacje z punktu dystrybucji, w którym tworzy nośnik samodzielny. Użytkownik musi mieć uprawnienia do **odczytu** biblioteki zawartości w tym punkcie dystrybucji.  Aby uzyskać szczegółowe informacje, zobacz [informacje o bibliotece zawartości](../../core/plan-design/hierarchy/the-content-library.md).|  
+|Obraz rozruchowy|Należy wziąć pod uwagę następujące kwestie dotyczące obrazu rozruchowego, który będzie używany w sekwencji zadań do wdrażania systemu operacyjnego:<br /><br /> — Architektura obrazu rozruchowego musi być zgodna z architekturą komputera docelowego. Na przykład komputer docelowy z procesorem x64 obsługuje rozruch i uruchamianie obrazów rozruchowych x86 lub x64. Jednak komputer docelowy z procesorem x86 obsługuje tylko rozruch i uruchamianie obrazów rozruchowych x86.<br />-Sprawdź, czy obraz rozruchowy zawiera sterowniki sieciowe i masowej magazynu, które są wymagane do udostępnienia komputera docelowego.|  
+|Tworzenie sekwencji zadań w celu wdrożenia systemu operacyjnego|W ramach wstępnie przygotowanego nośnika musisz określić sekwencję zadań wdrożenia systemu operacyjnego.<br /><br /> — Aby uzyskać instrukcje dotyczące tworzenia nowej sekwencji zadań, zobacz [tworzenia sekwencji zadań w celu zainstalowania systemu operacyjnego](../../osd/deploy-use/create-a-task-sequence-to-install-an-operating-system.md).<br />— Aby uzyskać więcej informacji o sekwencjach zadań, zobacz [Zarządzanie sekwencjami zadań do automatyzowania zadań](../../osd/deploy-use/manage-task-sequences-to-automate-tasks.md).|  
+|Dystrybucja całej zawartości skojarzonej z sekwencją zadań|Całą zawartość wymaganą przez sekwencję zadań należy umieścić w co najmniej jednym punkcie dystrybucji. Zawartość ta obejmuje obraz rozruchowy, obraz systemu operacyjnego i inne skojarzone pliki. Kreator zbiera informacje z punktu dystrybucji, w którym tworzy nośnik samodzielny. Użytkownik musi mieć uprawnienia do **odczytu** biblioteki zawartości w tym punkcie dystrybucji.  Aby uzyskać więcej informacji, zobacz [informacje o bibliotece zawartości](../../core/plan-design/hierarchy/the-content-library.md).|  
 |Dysk twardy na komputerze docelowym|Przed umieszczeniem wstępnie przygotowanego nośnika na dysku twardym komputera docelowego należy sformatować dysk twardy. Jeżeli dysk twardy nie będzie sformatowany w momencie stosowania nośnika, przy próbie uruchomienia komputera docelowego wystąpi błąd sekwencji zadań wdrażającej system operacyjny.|  
 
 > [!NOTE]  
@@ -81,11 +78,11 @@ Nośnik wstępnie przygotowany zawiera obraz rozruchowy używany do uruchomienia
 
     -   **Komentarz**: Określ unikatowy opis dotyczący przeznaczenia nośnika.  
 
-    -   **Plik multimedialny**: Określ nazwę i ścieżkę plików wyjściowych. Kreator zapisuje pliki wyjściowe do tej lokalizacji. Na przykład:  **\\\servername\folder\outputfile.wim**  
+    -   **Plik nośnika**: Określ nazwę i ścieżkę plików wyjściowych. Kreator zapisuje pliki wyjściowe do tej lokalizacji. Na przykład:  **\\\servername\folder\outputfile.wim**  
 
 7.  Na stronie **Zabezpieczenia** określ poniższe informacje, a następnie kliknij przycisk **Dalej**.  
 
-    -   Wybierz **Włącz obsługę nieznanych komputerów** pole wyboru, aby zezwolić nośnikowi na wdrażanie systemu operacyjnego na komputerze, który nie jest zarządzany przez program Configuration Manager. Nie ma rekordów tych komputerów w bazie danych programu Configuration Manager.  Aby uzyskać więcej informacji, zobacz [przygotowanie do wdrożeń na nieznanych komputerach](../get-started/prepare-for-unknown-computer-deployments.md).  
+    -   Wybierz **Włącz obsługę nieznanych komputerów** pole wyboru, aby zezwolić nośnikowi na wdrażanie systemu operacyjnego na komputerze, który nie jest zarządzany przez program Configuration Manager. Nie ma rekordów tych komputerów w bazie danych programu Configuration Manager.  Aby uzyskać więcej informacji, zobacz [przygotowania do wdrożeń na nieznanych komputerach](../get-started/prepare-for-unknown-computer-deployments.md).  
 
     -   Zaznacz pole wyboru **Chroń nośnik hasłem** i wprowadź silne hasło w celu ochrony nośnika przed nieautoryzowanym dostępem. Po określeniu hasła użytkownik musi podać to hasło, aby używać wstępnie przygotowanego nośnika.  
 
@@ -98,7 +95,7 @@ Nośnik wstępnie przygotowany zawiera obraz rozruchowy używany do uruchomienia
 
          Aby uzyskać więcej informacji dotyczących tego certyfikatu klienta używanego dla obrazów rozruchowych, zobacz [wymagania dotyczące certyfikatu PKI](../../core/plan-design/network/pki-certificate-requirements.md).  
 
-    -   **Koligacja urządzenia użytkownika**: Do obsługi zarządzania skoncentrowanego na użytkowniku w programie Configuration Manager, określ sposób nośnik ma skojarzyć użytkowników z komputerem docelowym. Aby uzyskać więcej informacji o sposobie wdrażania systemów operacyjnych obsługi koligacji urządzenia użytkownika, zobacz [kojarzyć użytkowników z komputerem docelowym](../get-started/associate-users-with-a-destination-computer.md).  
+    -   **Koligacja urządzenia użytkownika**: Aby obsługiwać w programie Configuration Manager Zarządzanie skoncentrowane na użytkowniku, określ sposób nośnik ma skojarzyć użytkowników z komputerem docelowym. Aby uzyskać więcej informacji o sposobie obsługi koligacji urządzenia użytkownika przez wdrożenie systemu operacyjnego, zobacz [kojarzyć użytkowników z komputerem docelowym](../get-started/associate-users-with-a-destination-computer.md).  
 
         -   Wybierz opcję **Zezwalaj na koligację urządzenia użytkownika z automatycznym zatwierdzeniem** , aby nośnik automatycznie skojarzał użytkowników z komputerem docelowym. Ta funkcja opiera się na akcjach w ramach sekwencji zadań, która wdraża system operacyjny. W tym scenariuszu sekwencja zadań tworzy relację między określonymi użytkownikami a komputerem docelowym podczas wdrażania systemu operacyjnego do komputera docelowego.  
 
@@ -113,7 +110,7 @@ Nośnik wstępnie przygotowany zawiera obraz rozruchowy używany do uruchomienia
     > [!IMPORTANT]  
     >  Architektura dystrybuowanego obrazu rozruchowego musi być zgodna z architekturą komputera docelowego. Na przykład komputer docelowy z procesorem x64 obsługuje rozruch i uruchamianie obrazów rozruchowych x86 lub x64. Jednak komputer docelowy z procesorem x86 obsługuje tylko rozruch i uruchamianie obrazów rozruchowych x86.  
 
-    -   W polu **Obraz rozruchowy** wybierz obraz rozruchowy do uruchomienia komputera docelowego. Aby uzyskać więcej informacji, zobacz [obrazów rozruchowych Zarządzaj](../get-started/manage-boot-images.md).  
+    -   W polu **Obraz rozruchowy** wybierz obraz rozruchowy do uruchomienia komputera docelowego. Aby uzyskać więcej informacji, zobacz [zarządzanie obrazami rozruchowymi](../get-started/manage-boot-images.md).  
 
     -   W polu **Punkt dystrybucji** określ punkt dystrybucji, w którym znajduje się obraz rozruchowy. Kreator pobiera obraz rozruchowy z punktu dystrybucji i zapisuje go na nośniku.  
 
@@ -126,7 +123,7 @@ Nośnik wstępnie przygotowany zawiera obraz rozruchowy używany do uruchomienia
 
 10. Na stronie **Obrazy** określ poniższe informacje, a następnie kliknij przycisk **Dalej**.  
 
-    -   W polu **Pakiet obrazów** określ obraz systemu operacyjnego. Aby uzyskać więcej informacji, zobacz [zarządzania obrazami systemu operacyjnego](../get-started/manage-operating-system-images.md).  
+    -   W polu **Pakiet obrazów** określ obraz systemu operacyjnego. Aby uzyskać więcej informacji, zobacz [zarządzanie obrazami systemu operacyjnego](../get-started/manage-operating-system-images.md).  
 
     -   Jeżeli pakiet zawiera kilka obrazów systemu operacyjnego, w polu **Indeks obrazu** określ obraz do wdrożenia.  
 
@@ -144,5 +141,4 @@ Nośnik wstępnie przygotowany zawiera obraz rozruchowy używany do uruchomienia
 12. Ukończ pracę kreatora.  
 
 ## <a name="next-steps"></a>Następne kroki
-[Scenariusze wdrażania systemów operacyjnych enterprise](scenarios-to-deploy-enterprise-operating-systems.md)
-
+[Scenariusze wdrażania systemów operacyjnych dla przedsiębiorstw](scenarios-to-deploy-enterprise-operating-systems.md)

@@ -1,31 +1,28 @@
 ---
-title: "Tworzenie elementów konfiguracji dla zarządzanych przez klienta Mac - programu Configuration Manager | Dokumentacja firmy Microsoft"
-description: "Element konfiguracji programu System Center Configuration Manager Mac OS X umożliwia zarządzanie ustawieniami dla urządzeń z systemem Mac OS X."
+title: "Tworzenie elementów konfiguracji dla komputerów Mac zarządzanych przez klienta — programu Configuration Manager | Dokumentacja firmy Microsoft"
+description: "Umożliwia zarządzanie ustawieniami urządzeń z systemem Mac OS X, należy użyć elementu konfiguracji programu System Center Configuration Manager Mac OS X."
 ms.custom: na
 ms.date: 03/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 722d5bf5-bedc-4dfc-b324-6eeb773874e9
-caps.latest.revision: 8
-caps.handback.revision: 0
+caps.latest.revision: "8"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: 541e5ad629a9e2ed9c353dff150f9b86b9d12b7d
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="how-to-create-configuration-items-for-mac-os-x-devices-managed-with-the-system-center-configuration-manager-client"></a>Tworzenie elementów konfiguracji dla urządzeń z systemem Mac OS X zarządzanych za pomocą klienta programu System Center Configuration Manager
-Użyj programu System Center Configuration Manager**systemu Mac OS X (niestandardowy)** elementu konfiguracji do zarządzania ustawieniami urządzenia systemu Mac OS X, które są zarządzane przez klienta programu Configuration Manager.  
+Użyj programu System Center Configuration Manager**systemu Mac OS X (niestandardowy)** element konfiguracji do zarządzania ustawieniami urządzeń systemu Mac OS X, które są zarządzane przez klienta programu Configuration Manager.  
   
  System operacyjny Mac OS X używa plików listy właściwości (plików plist) do przechowywania ustawień aplikacji. Użyj ustawień zgodności, aby ocenić i skorygować ustawienia w pliku listy właściwości. Ustawieniami systemu Mac OS X możesz także zarządzać za pomocą skryptu powłoki zwracającego wartość, którą można ocenić i skorygować w celu zachowania zgodności.  
   
@@ -41,7 +38,7 @@ Użyj programu System Center Configuration Manager**systemu Mac OS X (niestandar
   
 5.  W obszarze **Określ typ elementu konfiguracji, który chcesz utworzyć** wybierz pozycję **Mac OS X (niestandardowy)**.  
   
-6.  Kliknij przycisk **kategorii** należy utworzyć i przypisać kategorie ułatwiają wyszukiwanie i filtrowanie elementów konfiguracji w konsoli programu Configuration Manager.  
+6.  Kliknij przycisk **kategorii** możesz utworzyć i przypisać kategorie ułatwiające wyszukiwanie i filtrowanie elementów konfiguracji w konsoli programu Configuration Manager.  
   
 7.  Na stronie **Obsługiwane platformy** kreatora wybierz wersje systemu Mac OS X, które będą oceniać element konfiguracji.  
   
@@ -51,7 +48,7 @@ Użyj programu System Center Configuration Manager**systemu Mac OS X (niestandar
   
 10. Wybierz wartość dla pozycji **Typ ustawienia**, a następnie podaj wymagane informacje przedstawione w poniższej tabeli:  
   
-    -   **Mac OS X preferencje** -  
+    -   **Preferencje systemu Mac OS X** -  
   
         -   **Identyfikator aplikacji** — określ identyfikator aplikacji dla pliku listy właściwości zawierającego klucz, który chcesz ocenić pod kątem zgodności.  
   
@@ -64,7 +61,7 @@ Użyj programu System Center Configuration Manager**systemu Mac OS X (niestandar
   
     -   **Skrypt** -  
   
-        -   **Skrypt wykrywania** — kliknij polecenie **Dodaj skrypt**, a następnie podaj skrypt powłoki, aby ocenić ustawienia na komputerze Mac pod kątem zgodności. Użyj **echo** polecenia skryptu powłoki do zwracania wartości do programu Configuration Manager dla zgodności. Program Configuration Manager używa wyników zwróconych w **STDOUT** do oceny zgodności.  
+        -   **Skrypt wykrywania** — kliknij polecenie **Dodaj skrypt**, a następnie podaj skrypt powłoki, aby ocenić ustawienia na komputerze Mac pod kątem zgodności. Użyj **echo** polecenie w skrypcie powłoki, aby powrócić do programu Configuration Manager wartości zgodności. Program Configuration Manager używa wyników zwróconych w **STDOUT** do oceny zgodności.  
   
             > [!IMPORTANT]  
             >  W skrypcie odnajdywania nie można umieścić polecenia **reboot**. Ponieważ skrypty odnajdywania są uruchamiane przy każdym ponownym uruchomieniu klienta, spowodowałoby to ciągłe ponowne uruchamianie komputera Mac.  
@@ -79,7 +76,7 @@ Użyj programu System Center Configuration Manager**systemu Mac OS X (niestandar
     > [!NOTE]  
     >  Typ danych **Liczba zmiennoprzecinkowa** obsługuje tylko 3 cyfry po przecinku.  
     >   
-    >  Menedżer konfiguracji nie obsługuje korzystania **Boolean** ustawieniach skryptu elementu konfiguracji Mac — typ danych. Zamiast tego należy ustawić typ danych na wartość **Liczba całkowita** i upewnić się, że skrypt zwraca liczbę całkowitą.  
+    >  Menedżer konfiguracji nie obsługuje używania **logiczna** typ danych w ustawieniach skryptu elementu konfiguracji dla komputerów Mac. Zamiast tego należy ustawić typ danych na wartość **Liczba całkowita** i upewnić się, że skrypt zwraca liczbę całkowitą.  
   
 12. Kliknij przycisk **OK**, aby zapisać ustawienia i zamknąć okno dialogowe **Tworzenie ustawienia**, a następnie dodaj tyle ustawień, ile potrzebujesz.  
   
@@ -87,18 +84,18 @@ Użyj programu System Center Configuration Manager**systemu Mac OS X (niestandar
   
 14. W oknie dialogowym **Tworzenie reguły** podaj następujące informacje:  
   
-    -   **Nazwa:** Wprowadź nazwę zasady zgodności.  
+    -   **Nazwa:** Wprowadź nazwę reguły zgodności.  
   
-    -   **Opis:** Wprowadź opis zasady zgodności.  
+    -   **Opis:** Wprowadź opis reguły zgodności.  
   
     -   **Wybrane ustawienie:** Kliknij przycisk **Przeglądaj** otworzyć **wybierz ustawienie** okno dialogowe. Wybierz ustawienie, dla którego chcesz zdefiniować regułę, lub kliknij pozycję **Nowe ustawienie**. Po zakończeniu kliknij pozycję **Wybierz**.  
   
         > [!TIP]  
         >  Możesz również kliknąć pozycję **Właściwości**, aby wyświetlić informacje dotyczące aktualnie wybranego ustawienia.  
   
-    -   **Typ reguły:** Wybierz typ zasady zgodności, którego chcesz używać:  
+    -   **Typ reguły:** Wybierz typ reguły zgodności, którego chcesz użyć:  
   
-        -   **Wartość:** Utwórz regułę, która porównuje wartości zwracanej przez element konfiguracji względem wartości, który określisz.  
+        -   **Wartość:** Utwórz regułę porównującą wartość zwróconą przez element konfiguracji z określonej wartości.  
   
         -   **Egzystencjalna** — tworzy regułę, która ocenia ustawienie w zależności od tego, czy istnieje na urządzeniu.  
   
@@ -110,13 +107,13 @@ Użyj programu System Center Configuration Manager**systemu Mac OS X (niestandar
   
             -   **Nie równa się**  
   
-            -   **Większe niż**  
+            -   **Większa niż**  
   
             -   **Mniej niż**  
   
             -   **Między**  
   
-            -   **Większe niż lub równe**  
+            -   **Większe lub równe**  
   
             -   **Mniejsze niż lub równe**  
   
@@ -133,15 +130,15 @@ Użyj programu System Center Configuration Manager**systemu Mac OS X (niestandar
   
     -   **Ważność niezgodności raportów** — określ poziom ważności zgłaszany w przypadku wykrycia niezgodności przez regułę. Poniżej przedstawiono dostępne poziomy ważności:  
   
-        -   **Brak** -komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważności niepowodzenia dla raportów programu Configuration Manager.  
+        -   **Brak** — komputery, które nie spełniają tej zasady zgodności nie będą zgłaszać ważności niepowodzenia dla raportów programu Configuration Manager.  
   
         -   **Informacje o** -komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **informacji** dla raportów programu Configuration Manager.  
   
         -   **Ostrzeżenie** -komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **ostrzeżenie** dla raportów programu Configuration Manager.  
   
-        -   **Krytyczne** -komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczny** dla raportów programu Configuration Manager.  
+        -   **Krytyczne** -komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczne** dla raportów programu Configuration Manager.  
   
-        -   **Krytyczne ze zdarzeniem** -komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczny** dla raportów programu Configuration Manager. Ten poziom ważności jest również rejestrowany przez komputer kliencki Mac.  
+        -   **Krytyczne ze zdarzeniem** -komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczne** dla raportów programu Configuration Manager. Ten poziom ważności jest również rejestrowany przez komputer kliencki Mac.  
   
     -   Dla typu reguły **Egzystencjalna** podaj następujące informacje:  
   
@@ -151,17 +148,17 @@ Użyj programu System Center Configuration Manager**systemu Mac OS X (niestandar
   
             -   **Ustawienie nie może istnieć na urządzeniach klienckich**  
   
-        -   **Waga niezgodności raportów:** Określ poziom ważności, który jest zgłaszany w przypadku tej zasady zgodności zakończy się niepowodzeniem. Poniżej przedstawiono dostępne poziomy ważności:  
+        -   **Waga niezgodności do raportów:** Określ poziom ważności zgłaszany w przypadku niepowodzenia reguły niezgodności. Poniżej przedstawiono dostępne poziomy ważności:  
   
-            -   **Brak** -komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważności niepowodzenia dla raportów programu Configuration Manager.  
+            -   **Brak** — komputery, które nie spełniają tej zasady zgodności nie będą zgłaszać ważności niepowodzenia dla raportów programu Configuration Manager.  
   
             -   **Informacje o** -komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **informacji** dla raportów programu Configuration Manager.  
   
             -   **Ostrzeżenie** -komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **ostrzeżenie** dla raportów programu Configuration Manager.  
   
-            -   **Krytyczne** -komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczny** dla raportów programu Configuration Manager.  
+            -   **Krytyczne** -komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczne** dla raportów programu Configuration Manager.  
   
-            -   **Krytyczne ze zdarzeniem** -komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczny** dla raportów programu Configuration Manager. Ten poziom ważności jest również rejestrowany przez komputer kliencki Mac.  
+            -   **Krytyczne ze zdarzeniem** -komputerów, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczne** dla raportów programu Configuration Manager. Ten poziom ważności jest również rejestrowany przez komputer kliencki Mac.  
   
         > [!NOTE]  
         >  Wyświetlone opcje mogą różnić się w zależności od typu ustawienia, dla którego jest konfigurowana reguła.  
@@ -176,4 +173,3 @@ Użyj programu System Center Configuration Manager**systemu Mac OS X (niestandar
   
 ## <a name="see-also"></a>Zobacz też  
  [Elementy konfiguracji dla urządzeń zarządzanych za pomocą klienta programu System Center Configuration Manager](../../compliance/deploy-use/configuration-items-for-devices-managed-with-the-client.md)
-

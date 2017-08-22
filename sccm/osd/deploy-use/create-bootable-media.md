@@ -1,38 +1,35 @@
 ---
-title: "Tworzenie nośnika rozruchowego - programu Configuration Manager | Dokumentacja firmy Microsoft"
-description: "Nośnik rozruchowy w programie Configuration Manager ułatwiają zainstalować nową wersję systemu Windows lub Zastąp ustawienia komputera i transferu."
+title: "Tworzenie nośnika rozruchowego — Configuration Manager | Dokumentacja firmy Microsoft"
+description: "Nośnik rozruchowy w programie Configuration Manager ułatwiają instalowanie nowej wersji systemu Windows lub zastąpić ustawienia komputera i transferu."
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ead79e64-1b63-4d0d-8bd5-addff8919820
-caps.latest.revision: 11
-caps.handback.revision: 0
+caps.latest.revision: "11"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 89158debdf4c345a325feeb608db2215a88ed81b
 ms.openlocfilehash: 9032698fa12bf453041ea06bf330d3b4687c2a97
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-bootable-media-with-system-center-configuration-manager"></a>Tworzenie nośnika rozruchowego z System Center Configuration Manager
+# <a name="create-bootable-media-with-system-center-configuration-manager"></a>Tworzenie nośnika rozruchowego w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Nośnik rozruchowy w programie Configuration Manager zawiera obraz rozruchowy, opcjonalne polecenia przeduruchomieniowe i skojarzonych z nimi plików i pliki programu Configuration Manager. Użyj wstępnie przygotowanego nośnika w następujących scenariuszach wdrażania systemu operacyjnego:  
+Nośnik rozruchowy w programie Configuration Manager zawiera obraz rozruchowy, opcjonalne polecenia przeduruchomieniowe i skojarzone pliki oraz pliki programu Configuration Manager. Użyj wstępnie przygotowanego nośnika w następujących scenariuszach wdrażania systemu operacyjnego:  
 
--   [Zainstaluj nową wersję systemu Windows na nowym komputerze (od zera)](install-new-windows-version-new-computer-bare-metal.md)  
+-   [Instalowanie nowej wersji systemu Windows na nowym komputerze (od zera)](install-new-windows-version-new-computer-bare-metal.md)  
 
--   [Zastąp istniejący komputer i przenieść ustawień](replace-an-existing-computer-and-transfer-settings.md)  
+-   [Zastępowanie istniejącego komputera i transferowanie ustawień](replace-an-existing-computer-and-transfer-settings.md)  
 
 ##  <a name="BKMK_CreateBootableMedia"></a> Tworzenie nośnika rozruchowego  
  Podczas uruchamiania za pomocą nośnika rozruchowego uruchomiany jest komputer docelowy, który następnie łączy się z siecią i pobiera z niej sekwencję zadań, obraz systemu operacyjnego oraz inną wymaganą zawartość. Ponieważ sekwencja zadań nie znajduje się na nośniku, sekwencję zadań oraz zawartość można zmienić bez konieczności ponownego tworzenia nośnika. Pakiety na nośniku rozruchowym nie są szyfrowane. Należy podjąć odpowiednie środki bezpieczeństwa, takie jak dodanie hasła do nośnika, oraz upewnić się, że zawartość pakietu jest chroniona przed nieautoryzowanymi użytkownikami.  
@@ -41,9 +38,9 @@ Nośnik rozruchowy w programie Configuration Manager zawiera obraz rozruchowy, o
 
 |Zadanie|Opis|  
 |----------|-----------------|  
-|Obraz rozruchowy|Należy wziąć pod uwagę następujące kwestie dotyczące obrazu rozruchowego, który będzie używany w sekwencji zadań do wdrażania systemu operacyjnego:<br /><br /> -Architektura obrazu rozruchowego musi być zgodna z architekturą komputera docelowego. Na przykład komputer docelowy z procesorem x64 obsługuje rozruch i uruchamianie obrazów rozruchowych x86 lub x64. Jednak komputer docelowy z procesorem x86 obsługuje tylko rozruch i uruchamianie obrazów rozruchowych x86.<br />-Upewnij się, czy obraz rozruchowy zawiera sterowniki pamięci masowej i sieci, są wymagane do udostępnienia komputera docelowego.|  
-|Tworzenie sekwencji zadań w celu wdrożenia systemu operacyjnego|W ramach nośnika rozruchowego należy określić sekwencję zadań służącą do wdrażania systemu operacyjnego. Czynności w celu utworzenia nowej sekwencji zadań, można znaleźć w temacie [tworzenia sekwencji zadań w celu zainstalowania systemu operacyjnego](../deploy-use/create-a-task-sequence-to-install-an-operating-system.md).|  
-|Dystrybucja całej zawartości skojarzonej z sekwencją zadań|Całą zawartość wymaganą przez sekwencję zadań należy umieścić w co najmniej jednym punkcie dystrybucji. Zawartość ta obejmuje obraz rozruchowy i inne skojarzone pliki przeduruchomieniowe. Kreator zbiera informacje z punktu dystrybucji, w którym tworzy nośnik rozruchowy. Użytkownik musi mieć uprawnienia do **odczytu** biblioteki zawartości w tym punkcie dystrybucji.  Aby uzyskać szczegółowe informacje, zobacz [informacje o bibliotece zawartości](../../core/plan-design/hierarchy/the-content-library.md).|  
+|Obraz rozruchowy|Należy wziąć pod uwagę następujące kwestie dotyczące obrazu rozruchowego, który będzie używany w sekwencji zadań do wdrażania systemu operacyjnego:<br /><br /> — Architektura obrazu rozruchowego musi być zgodna z architekturą komputera docelowego. Na przykład komputer docelowy z procesorem x64 obsługuje rozruch i uruchamianie obrazów rozruchowych x86 lub x64. Jednak komputer docelowy z procesorem x86 obsługuje tylko rozruch i uruchamianie obrazów rozruchowych x86.<br />-Sprawdź, czy obraz rozruchowy zawiera sterowniki sieciowe i masowej magazynu, które są wymagane do udostępnienia komputera docelowego.|  
+|Tworzenie sekwencji zadań w celu wdrożenia systemu operacyjnego|W ramach nośnika rozruchowego należy określić sekwencję zadań służącą do wdrażania systemu operacyjnego. Aby uzyskać instrukcje dotyczące tworzenia nowej sekwencji zadań, zobacz [tworzenia sekwencji zadań w celu zainstalowania systemu operacyjnego](../deploy-use/create-a-task-sequence-to-install-an-operating-system.md).|  
+|Dystrybucja całej zawartości skojarzonej z sekwencją zadań|Całą zawartość wymaganą przez sekwencję zadań należy umieścić w co najmniej jednym punkcie dystrybucji. Zawartość ta obejmuje obraz rozruchowy i inne skojarzone pliki przeduruchomieniowe. Kreator zbiera informacje z punktu dystrybucji, w którym tworzy nośnik rozruchowy. Użytkownik musi mieć uprawnienia do **odczytu** biblioteki zawartości w tym punkcie dystrybucji.  Aby uzyskać więcej informacji, zobacz [informacje o bibliotece zawartości](../../core/plan-design/hierarchy/the-content-library.md).|  
 |Przygotowanie wymiennego dysku USB|Dla wymiennego dysku USB:<br /><br /> Jeśli ma być używany wymienny dysk USB, musi on być podłączony do komputera, na którym uruchomiono kreatora, i być wykrywalny przez system Windows jako urządzenie wymienne. Podczas tworzenia nośnika kreator zapisuje dane bezpośrednio na dysku USB. Nośnik samodzielny korzysta z systemu plików FAT32. Nie można utworzyć nośnika samodzielnego na dysku flash USB zawierającym plik o rozmiarze ponad 4 GB.|  
 |Tworzenie folderu wyjściowego|Dla zestawu dysków CD/DVD:<br /><br /> Przed uruchomieniem Kreatora tworzenia nośnika sekwencji zadań w celu utworzenia nośnika dla zestawu dysków CD lub DVD należy utworzyć folder na pliki wyjściowe kreatora. Nośnik utworzony dla zestawu dysków CD lub DVD jest zapisywany bezpośrednio w folderze w postaci plików ISO.|  
 
@@ -81,7 +78,7 @@ Nośnik rozruchowy w programie Configuration Manager zawiera obraz rozruchowy, o
 
     -   Jeśli wybrano opcję **Zestaw CD/DVD**, należy określić pojemność nośnika oraz nazwę i ścieżkę do plików wyjściowych. Kreator zapisuje pliki wyjściowe do tej lokalizacji. Na przykład:  **\\\servername\folder\outputfile.iso**  
 
-         Jeżeli pojemność nośnika jest zbyt mała do zapisania całej zawartości, tworzonych jest kilka plików, które należy zapisać na wielu dyskach CD lub DVD. Jeżeli jest wymaganych wiele nośników, program Configuration Manager dodaje kolejny numer do nazw poszczególnych plików wyjściowych, który tworzy. Ponadto można wdrożyć aplikację z systemem operacyjnym, a nie mieści się na jednym nośniku, Configuration Manager są przechowywane aplikacji na kilku nośnikach. Po uruchomieniu nośnika samodzielnego program Configuration Manager monituje użytkownika o kolejnego nośnika, na którym przechowywana jest aplikacja.  
+         Jeżeli pojemność nośnika jest zbyt mała do zapisania całej zawartości, tworzonych jest kilka plików, które należy zapisać na wielu dyskach CD lub DVD. Jeżeli jest wymaganych wiele nośników, programu Configuration Manager dodaje kolejny numer do nazwy poszczególnych utworzonych plików wyjściowych. Ponadto jeśli wdrażania aplikacji z systemem operacyjnym, a nie mieści się na jednym nośniku, program Configuration Manager przechowuje aplikacji na kilku nośnikach. Po uruchomieniu nośnika samodzielnego program Configuration Manager monitu o kolejnego nośnika, na którym przechowywana jest aplikacja.  
 
         > [!IMPORTANT]  
         >  W przypadku wybrania istniejącego obrazu ISO Kreator tworzenia nośnika sekwencji zadań usuwa ten obraz z dysku lub udziału bezpośrednio po przejściu do następnej strony kreatora. Istniejący obraz zostanie usunięty nawet w przypadku anulowania pracy kreatora.  
@@ -98,7 +95,7 @@ Nośnik rozruchowy w programie Configuration Manager zawiera obraz rozruchowy, o
 
         -   Komputer, który nie jest importowany do programu Configuration Manager  
 
-        -   Komputer, który nie został odnaleziony przez program Configuration Manager  
+        -   Komputer nieodnajdywany przez program Configuration Manager  
 
     -   Zaznacz pole wyboru **Chroń nośnik hasłem** i wprowadź silne hasło w celu ochrony nośnika przed nieautoryzowanym dostępem. Po określeniu hasła użytkownik musi podać to hasło, aby używać nośnika rozruchowego.  
 
@@ -111,7 +108,7 @@ Nośnik rozruchowy w programie Configuration Manager zawiera obraz rozruchowy, o
 
          Aby uzyskać więcej informacji dotyczących tego certyfikatu klienta używanego dla obrazów rozruchowych, zobacz [wymagania dotyczące certyfikatu PKI](../../core/plan-design/network/pki-certificate-requirements.md).  
 
-    -   **Koligacja urządzenia użytkownika**: Do obsługi zarządzania skoncentrowanego na użytkowniku w programie Configuration Manager, określ sposób nośnik ma skojarzyć użytkowników z komputerem docelowym. Aby uzyskać więcej informacji o sposobie wdrażania systemów operacyjnych obsługi koligacji urządzenia użytkownika, zobacz [kojarzyć użytkowników z komputerem docelowym](../get-started/associate-users-with-a-destination-computer.md).  
+    -   **Koligacja urządzenia użytkownika**: Aby obsługiwać w programie Configuration Manager Zarządzanie skoncentrowane na użytkowniku, określ sposób nośnik ma skojarzyć użytkowników z komputerem docelowym. Aby uzyskać więcej informacji o sposobie obsługi koligacji urządzenia użytkownika przez wdrożenie systemu operacyjnego, zobacz [kojarzyć użytkowników z komputerem docelowym](../get-started/associate-users-with-a-destination-computer.md).  
 
         -   Wybierz opcję **Zezwalaj na koligację urządzenia użytkownika z automatycznym zatwierdzeniem** , aby nośnik automatycznie skojarzał użytkowników z komputerem docelowym. Ta funkcja opiera się na akcjach w ramach sekwencji zadań, która wdraża system operacyjny. W tym scenariuszu sekwencja zadań tworzy relację między określonymi użytkownikami a komputerem docelowym podczas wdrażania systemu operacyjnego do komputera docelowego.  
 
@@ -149,12 +146,11 @@ Nośnik rozruchowy w programie Configuration Manager zawiera obraz rozruchowy, o
 10. Ukończ pracę kreatora.  
 
 ## <a name="create-bootable-media-on-a-usb-drive-from-a-network-share"></a>Tworzenie nośnika rozruchowego na dysku USB z udziału sieciowego
-Informacje w tej sekcji opisano tworzenia nośnika rozruchowego na dysk flash USB w przypadku dysku flash nie jest podłączony do komputera z konsolą programu Configuration Manager. Do tworzenia nośnika rozruchowego na dysk USB, można utworzyć nośnik rozruchowy sekwencji zadań, zainstaluj obraz ISO i transferu plików z ISO na dysk USB.
+Informacje przedstawione w tej sekcji ułatwia tworzenia nośnika rozruchowego na dysku flash USB, jeśli dysk flash nie jest połączony z komputerem z konsolą programu Configuration Manager. Do tworzenia nośnika rozruchowego na dysku USB, można utworzyć nośnik rozruchowy dla sekwencji zadań, zainstaluj ISO i transferu plików z obrazem ISO na dysk USB.
 
-1. [Tworzenie nośnika rozruchowego sekwencji zadań](#to-create-task-boobable-media). Na **typu nośnika** wybierz opcję **zestaw CD/DVD**. Kreator zapisuje pliki wyjściowe w lokalizacji określonej przez użytkownika. Na przykład:  **\\\servername\folder\outputfile.iso**.  
-2. Przygotuj wymienny dysk USB. Dysku musi być sformatowany, puste i rozruchowego.
-3. Zainstaluj obraz ISO z lokalizacji udziału i transferu plików z ISO na dysk USB.
+1. [Tworzenie nośnika rozruchowego sekwencji zadań](#to-create-task-boobable-media). Na **typ nośnika** wybierz pozycję **zestawem dysków CD/DVD**. Kreator zapisuje pliki wyjściowe do określonej lokalizacji. Na przykład:  **\\\servername\folder\outputfile.iso**.  
+2. Przygotowanie wymiennego dysku USB. Dysk musi być sformatowany, pusty i rozruchowych.
+3. Zainstaluj obraz ISO z lokalizacji udziału i transferu plików z obrazem ISO na dysk USB.
 
 ## <a name="next-steps"></a>Następne kroki  
 [Wdrażanie systemu Windows za pośrednictwem sieci przy użyciu nośnika rozruchowego](use-bootable-media-to-deploy-windows-over-the-network.md)  
-

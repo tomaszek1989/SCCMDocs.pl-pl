@@ -1,53 +1,50 @@
 ---
-title: Podstawy administracji opartej na rolach | Dokumentacja firmy Microsoft
-description: "Użyj administracji opartej na rolach, aby kontrolować dostęp administracyjny do programu Configuration Manager i obiektów, którymi można zarządzać."
+title: Podstawowe informacje na temat administracji opartej na rolach | Dokumentacja firmy Microsoft
+description: "Administracja oparta na rolach umożliwia kontrolowanie dostępu administracyjnego do programu Configuration Manager i obiekty, którymi zarządzasz."
 ms.custom: na
 ms.date: 1/3/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0a2d6c3f-a4e4-4c19-b087-3caada480de9
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 1b9e49da1a5bbfca93fe683b82d2c0056a22cc1f
 ms.openlocfilehash: ddf2ad1cae51c1e36df5a6d86822e2b9abe604e2
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="fundamentals-of-role-based-administration-for-system-center-configuration-manager"></a>Podstawowe założenia administracji opartej na rolach dla programu System Center Configuration Manager
+# <a name="fundamentals-of-role-based-administration-for-system-center-configuration-manager"></a>Podstawowe informacje dotyczące administrowania opartego na rolach dla programu System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Za pomocą programu System Center Configuration Manager umożliwia administracji opartej na rolach bezpiecznego dostępu, który jest potrzebny do administrowania programem Configuration Manager. Możesz również bezpieczny dostęp do obiektów, którymi można zarządzać, takich jak kolekcje, wdrożenia i lokacje. Po zidentyfikowaniu pojęcia wprowadzone w tym temacie można [skonfigurowanie administracji opartej na rolach dla programu System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
+Z programem System Center Configuration Manager umożliwia administracji opartej na rolach bezpiecznego dostępu, które jest wymagane do zarządzania programu Configuration Manager. Możesz również bezpieczny dostęp do obiektów, którymi można zarządzać, takich jak kolekcje, wdrożenia i lokacje. Po zidentyfikowaniu pojęciami opisanymi w tym temacie można [Konfigurowanie administracji opartej na rolach dla programu System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).  
 
- Model administracji opartej na rolach definiuje oraz zarządza bezpieczeństwo w całej hierarchii ustawień dostępu do wszystkich witryn i ustawień lokacji przy użyciu następujących czynności:  
+ Model administrowania opartego na rolach definiuje oraz zarządza ustawienia dostępu bezpieczeństwo w całej hierarchii dla wszystkich witryn i ustawień lokacji przy użyciu następujących czynności:  
 
--   *Role zabezpieczeń* są przypisywane do użytkowników administracyjnych, aby podać te użytkownicy (lub grupy użytkowników) uprawnienia do różnych obiektów programu Configuration Manager. Na przykład uprawnienia tworzenia lub zmiany ustawień klienta.  
+-   *Role zabezpieczeń* są przypisywane do użytkowników administracyjnych w celu zapewnienia tych użytkowników (lub grupy użytkowników) uprawnień do różnych obiektów programu Configuration Manager. Na przykład uprawnienia tworzenia lub zmiany ustawień klienta.  
 
--   *Zakresy zabezpieczeń* pozwalają grupować konkretne wystąpienia obiektów, które użytkownik administracyjny jest odpowiedzialny do zarządzania, takich jak aplikacja, która instaluje pakiet Microsoft Office 2010.  
+-   *Zakresy zabezpieczeń* służą do grupują określone wystąpienia obiektów, którymi zarządza, takie jak aplikacja instalująca program Microsoft Office 2010 użytkownik z uprawnieniami administracyjnymi.  
 
--   *Kolekcje* są używane do określania grup zasobów użytkowników i urządzeń, które użytkownik administracyjny może zarządzać.  
+-   *Kolekcje* służą do określania grup zasobów użytkowników i urządzeń, którymi może zarządzać użytkownik administracyjny.  
 
- Za pomocą kombinacji ról zabezpieczeń, zakresy zabezpieczeń i kolekcji można segregowanie przypisań administracyjnych, spełniających wymagania Twojej organizacji. Używane razem, ich zdefiniować zakres administracyjny użytkownika, co użytkownik może wyświetlać i zarządzać we wdrożeniu programu Configuration Manager.  
+ Kombinacja ról zabezpieczeń, zakresów zabezpieczeń i kolekcji możesz segregowanie przypisań administracyjnych, które spełniają wymagania danej organizacji. Razem definiują zakres administracyjny użytkownika, co ten użytkownik może wyświetlać i zarządzać we wdrożeniu programu Configuration Manager.  
 
-## <a name="benefits-of-role-based-administration"></a>Korzyści z administracji opartej na rolach  
+## <a name="benefits-of-role-based-administration"></a>Korzyści wynikające z administracji opartej na rolach  
 
 -   Lokacje nie są używane jako granice administracyjne.  
 
--   Tworzenie użytkowników administracyjnych dla hierarchii i tylko konieczne przypisanie do nich zabezpieczeń jeden raz.  
+-   Tworzenie użytkowników administracyjnych dla hierarchii i przypisanie do nich zabezpieczeń jeden raz.  
 
 -   Wszystkie przypisania zabezpieczeń są replikowane i dostępne w całej hierarchii.  
 
--   Dostępne są wbudowane role zabezpieczeń, które są używane do przypisywania typowych zadań administracyjnych. Utwórz własne niestandardowe role zabezpieczeń do obsługi konkretnych potrzeb biznesowych.  
+-   Brak ról zabezpieczeń, które są używane do przypisywania typowych zadań administracyjnych. Tworzenie własnych niestandardowych ról zabezpieczeń do obsługi konkretnych potrzeb biznesowych.  
 
 -   Użytkownicy administracyjni widzą tylko te obiekty, które mają uprawnienia do zarządzania.  
 
@@ -62,28 +59,28 @@ Podczas projektowania i implementować zabezpieczenia administracyjne dla progra
 -   [Zakresy zabezpieczeń](#bkmk_PlanScope)  
 
 
- Zakres administracyjny kontroluje obiekty, które użytkownik administracyjny widoki w konsoli programu Configuration Manager, a określa uprawnienia, które użytkownik ma dla tych obiektów. Konfiguracje administracji opartej na rolach są replikowane do wszystkich lokacji w hierarchii jako dane globalne, a następnie stosowane do wszystkich połączeń administracyjnych.  
+ Zakres administracyjny kontroluje obiekty, które użytkownik administracyjny widoków w konsoli programu Configuration Manager, a określa uprawnienia, które użytkownik ma dla tych obiektów. Konfiguracje administracji opartej na rolach są replikowane do wszystkich lokacji w hierarchii jako dane globalne, a następnie stosowane do wszystkich połączeń administracyjnych.  
 
 > [!IMPORTANT]  
->  Opóźnienia w replikacji między lokacjami mogą utrudnić odebranie zmian przez lokację w zakresie administracji opartej na rolach. Aby uzyskać informacje o sposobie monitorowania replikacji bazy danych między lokacjami, zobacz [transferu danych między lokacjami w programie System Center Configuration Manager](../../core/servers/manage/data-transfers-between-sites.md) tematu.  
+>  Opóźnienia w replikacji między lokacjami mogą utrudnić odebranie zmian przez lokację w zakresie administracji opartej na rolach. Aby uzyskać informacje o sposobach monitorowania replikacji bazy danych między lokacjami, zobacz [transfer danych między lokacjami w programie System Center Configuration Manager](../../core/servers/manage/data-transfers-between-sites.md) tematu.  
 
 ##  <a name="bkmk_Planroles"></a> Role zabezpieczeń  
  Używanie ról zabezpieczeń do przydzielania uprawnień bezpieczeństwa użytkownikom administracyjnym. Role zabezpieczeń to grupy uprawnień zabezpieczeń przypisywane do użytkowników administracyjnych i umożliwiające wykonywanie im zadań administracyjnych. Te uprawnienia zabezpieczeń definiują działania administracyjne, które użytkownik administracyjny może wykonywać oraz uprawnienia przydzielane określonym typom obiektów. Najlepsze rozwiązanie w zakresie zabezpieczeń to przypisanie ról zabezpieczeń nadających jak najmniejsze uprawnienia.  
 
- Program Configuration Manager ma dostępne wbudowane role zabezpieczeń obsługujące typowe grupowania zadań administracyjnych i można utworzyć własne niestandardowe role zabezpieczeń do obsługi konkretnych potrzeb biznesowych. Przykłady wbudowanych ról zabezpieczeń:  
+ Configuration Manager ma dostępne wbudowane role zabezpieczeń obsługujące typowe grupowania zadań administracyjnych i można utworzyć własne niestandardowe role zabezpieczeń do obsługi konkretnych potrzeb biznesowych. Przykłady wbudowanych ról zabezpieczeń:  
 
--   *Administrator o pełnych uprawnieniach* przyznaje wszystkie uprawnienia dostępne w programie Configuration Manager.  
+-   *Administrator o pełnych uprawnieniach* przyznaje wszystkie uprawnienia w programie Configuration Manager.  
 
--   *Menedżer zasobów* przyznaje uprawnienia do zarządzania punktem synchronizacji analizy zasobów, analizy zasobów raportowania klasy, spisu oprogramowania i sprzętu oraz zasadami zliczania.  
+-   *Menedżer zasobów* przyznaje uprawnienia do zarządzania punktem synchronizacji analizy zasobów, analizy zasobów raportowania klas, spisu oprogramowania, spisem sprzętu i regułami pomiarów.  
 
--   *Menedżer aktualizacji oprogramowania* przyznaje uprawnienia do definiowania i wdrażania aktualizacji oprogramowania. Użytkownicy administracyjni, skojarzeni z tą rolą mogą tworzyć kolekcje, grupy aktualizacji oprogramowania, wdrożenia i szablony.  
+-   *Menedżer aktualizacji oprogramowania* przyznaje uprawnienia do definiowania i wdrażania aktualizacji oprogramowania. Użytkownicy administracyjni, którzy są powiązani z tą rolą można tworzyć kolekcje, grupy aktualizacji oprogramowania, wdrożenia i szablony.  
 
 > [!TIP]  
->  Można wyświetlić listę wbudowanych ról zabezpieczeń i niestandardowe role zabezpieczeń utworzone, wraz z opisami w konsoli programu Configuration Manager. Aby wyświetlić ról w **Administracja** obszaru roboczego, rozwiń węzeł **zabezpieczeń**, a następnie wybierz **role zabezpieczeń**.  
+>  Możliwość wyświetlenia listy wbudowanych ról zabezpieczeń i niestandardowe role zabezpieczeń utworzone, wraz z opisami w konsoli programu Configuration Manager. Aby wyświetlić role, w **administracji** obszaru roboczego, rozwiń węzeł **zabezpieczeń**, a następnie wybierz **role zabezpieczeń**.  
 
- Każda rola zabezpieczeń ma specyficzne uprawnienia do różnych typów obiektów. Na przykład *Autor aplikacji* rola zabezpieczeń ma następujące uprawnienia do aplikacji: Zatwierdzanie, tworzenie, usuwanie, modyfikowanie, Modyfikuj Folder, Przenieś obiekt, Odczytaj, uruchom raport i ustaw zakres zabezpieczeń.
+ Każda rola zabezpieczeń ma specyficzne uprawnienia do różnych typów obiektów. Na przykład *Autor aplikacji* rola zabezpieczeń ma następujące uprawnienia do aplikacji: Zatwierdzanie, tworzenie, Usuń, Modyfikuj, Modyfikuj Folder, Przenieś obiekt, Odczytaj, uruchom raport i ustaw zakres zabezpieczeń.
 
- Nie jest możliwa zmiana uprawnień dla wbudowanych ról zabezpieczeń. Można jednak skopiować rolę, wprowadzić zmiany, a następnie zapisać je jako nową, niestandardową rolę zabezpieczeń. Istnieje także możliwość importu ról zabezpieczeń, wyeksportowanych z innej hierarchii, na przykład z sieci testowej. Przejrzyj role zabezpieczeń i odpowiednie uprawnienia, aby ustalić, czy będziesz używać wbudowanych ról zabezpieczeń, lub czy trzeba tworzyć własne niestandardowe role zabezpieczeń.  
+ Nie jest możliwa zmiana uprawnień dla wbudowanych ról zabezpieczeń. Można jednak skopiować rolę, wprowadzić zmiany, a następnie zapisać je jako nową, niestandardową rolę zabezpieczeń. Możesz również zaimportować ról zabezpieczeń, wyeksportowanych z innej hierarchii, na przykład z sieci testowej. Przejrzyj role zabezpieczeń i ich uprawnienia, aby określić, czy będziesz używać wbudowanych ról zabezpieczeń, lub czy należy utworzyć własne niestandardowe role zabezpieczeń.  
 
  ### <a name="to-help-you-plan-for-security-roles"></a>Aby zaplanować role zabezpieczeń  
 
@@ -95,12 +92,12 @@ Podczas projektowania i implementować zabezpieczenia administracyjne dla progra
 
 4.  Jeśli zidentyfikowane zadania nie mapują na wbudowane role zabezpieczeń, utwórz i przetestuj nowe role zabezpieczeń.  
 
-Informacje o sposobie tworzenia i konfigurowania ról zabezpieczeń dla administracji opartej na rolach, zobacz [utworzyć niestandardowe role zabezpieczeń](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_CreateSecRole) i [Konfigurowanie ról zabezpieczeń](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecRole) w [skonfigurowanie administracji opartej na rolach dla programu System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md) tematu.  
+Aby uzyskać informacje o sposobie tworzenia i konfigurowania ról zabezpieczeń administracji opartej na rolach, zobacz [Tworzenie niestandardowych ról zabezpieczeń](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_CreateSecRole) i [konfigurowania ról zabezpieczeń](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecRole) w [Konfigurowanie administracji opartej na rolach dla programu System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md) tematu.  
 
 ##  <a name="bkmk_planCol"></a> Kolekcje  
  Kolekcje określają zasoby u użytkownika i komputera, które użytkownik administracyjny może wyświetlać lub którymi może zarządzać. Przykładowo aby użytkownicy administracyjni mogli wdrażać aplikacje lub realizować zdalne sterowanie, należy do nich przypisać rolę zabezpieczeń przydzielającą dostęp do kolekcji zawierającej dane zasoby. Istnieje możliwość wybrania kolekcji użytkowników lub urządzeń.  
 
- Aby uzyskać więcej informacji na temat kolekcji, zobacz [wprowadzenie do kolekcji w programie System Center Configuration Manager](../../core/clients/manage/collections/introduction-to-collections.md).  
+ Aby uzyskać więcej informacji o kolekcjach, zobacz [wprowadzenie do kolekcji w programie System Center Configuration Manager](../../core/clients/manage/collections/introduction-to-collections.md).  
 
  Przed skonfigurowaniem administracji oparta na rolach sprawdź, czy konieczne jest utworzenie nowej kolekcji z któregokolwiek z następujących powodów:  
 
@@ -112,14 +109,14 @@ Informacje o sposobie tworzenia i konfigurowania ról zabezpieczeń dla administ
 
 -   Podział organizacyjny. Przykładowo oddzielne kolekcje dla poszczególnych jednostek biznesowych.  
 
-Aby uzyskać informacje o sposobie konfigurowania kolekcji dla administracji opartej na rolach, zobacz [Konfigurowanie kolekcji w celu zarządzania zabezpieczeniami](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigColl) w [skonfigurowanie administracji opartej na rolach dla programu System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md) tematu.  
+Aby uzyskać informacje o sposobie konfigurowania kolekcji na potrzeby administrowania opartego na rolach, zobacz [Konfigurowanie kolekcji w celu zarządzania zabezpieczeniami](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigColl) w [Konfigurowanie administracji opartej na rolach dla programu System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md) tematu.  
 
 ##  <a name="bkmk_PlanScope"></a> Zakresy zabezpieczeń  
- Zakresy zabezpieczeń umożliwiają zapewnienie użytkownikom administracyjnym dostępu do zabezpieczanych obiektów. Zakres zabezpieczeń to nazwane zestawy zabezpieczanych obiektów, które są przypisane do użytkownika administracyjnego jako grupa. Wszystkie zabezpieczane obiekty muszą być przypisane do przynajmniej jednego zakresu zabezpieczeń. Program Configuration Manager ma dwa wbudowane zakresy zabezpieczeń:  
+ Zakresy zabezpieczeń umożliwiają zapewnienie użytkownikom administracyjnym dostępu do zabezpieczanych obiektów. Zakres zabezpieczeń jest nazwany zestaw zabezpieczane obiekty, które są przypisane do użytkownika administracyjnego jako grupa. Wszystkie zabezpieczane obiekty muszą być przypisane do przynajmniej jednego zakresu zabezpieczeń. Configuration Manager ma dwa wbudowane zakresy zabezpieczeń:  
 
 -   *Wszystkie* wbudowany zakres zabezpieczeń nadaje dostęp do wszystkich zakresów. Nie można przypisywać obiektów do tego zakresu zabezpieczeń.  
 
--   *Domyślne* wbudowany zakres zabezpieczeń jest używany domyślnie do wszystkich obiektów. Podczas pierwszej instalacji programu Configuration Manager, wszystkie obiekty są przypisane do tego zakresu zabezpieczeń.  
+-   *Domyślne* wbudowany zakres zabezpieczeń jest używany domyślnie dla wszystkich obiektów. Podczas pierwszej instalacji programu Configuration Manager, do tego zakresu zabezpieczeń przypisywane są wszystkie obiekty.  
 
 Jeśli chcesz ograniczyć obiekty wyświetlane i zarządzane przez użytkowników administracyjnych musisz utworzyć własne, niestandardowe zakresy zabezpieczeń i używać ich. Zakresy zabezpieczeń nie obsługują struktury hierarchicznej i nie mogą być zagnieżdżone. Zakresy zabezpieczeń mogą zawierać przynajmniej jeden typ obiektu, w tym:  
 
@@ -211,7 +208,6 @@ Zakresy zabezpieczeń należy tworzyć, gdy konieczne jest ograniczenie dostępu
 
 -   Grupa użytkowników administracyjnych musi mieć możliwość wyświetlenia aplikacji produkcyjnych, lecz nie powinna mieć dostępu do aplikacji testowych. Utwórz dwa zakresy zabezpieczeń — dla aplikacji produkcyjnych i aplikacji testowych.  
 
--   Różni użytkownicy administracyjni muszą mieć zróżnicowany dostęp do niektórych wystąpień obiektów określonego typu. Na przykład jedna grupa użytkowników administracyjnych wymaga uprawnienia odczytu do określonych grup aktualizacji oprogramowania, a inna grupa użytkowników administracyjnych wymaga uprawnień do modyfikowania i usuwania dla innych grup aktualizacji oprogramowania. Utwórz różne zakresy zabezpieczeń dla tych grup aktualizacji oprogramowania.  
+-   Różni użytkownicy administracyjni muszą mieć zróżnicowany dostęp do niektórych wystąpień obiektów określonego typu. Na przykład jedna grupa użytkowników administracyjnych wymaga uprawnienia odczytu do określonych grup aktualizacji oprogramowania, a inna grupa użytkowników administracyjnych wymaga uprawnienia do modyfikowania i usuwania dla innych grup aktualizacji oprogramowania. Utwórz różne zakresy zabezpieczeń dla tych grup aktualizacji oprogramowania.  
 
-Aby uzyskać informacje o sposobie konfigurowania zakresów zabezpieczeń dla administracji opartej na rolach, zobacz [Konfigurowanie zakresów zabezpieczeń dla obiektu](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecScope) w [skonfigurowanie administracji opartej na rolach dla programu System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md) tematu.  
-
+Aby uzyskać informacje o sposobie konfigurowania zakresów zabezpieczeń administracji opartej na rolach, zobacz [Konfigurowanie zakresów zabezpieczeń dla obiekt](../../core/servers/deploy/configure/configure-role-based-administration.md#BKMK_ConfigSecScope) w [Konfigurowanie administracji opartej na rolach dla programu System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md) tematu.  

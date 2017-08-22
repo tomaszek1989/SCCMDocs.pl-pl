@@ -6,21 +6,19 @@ ms.date: 06/13/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c14a3607-253b-41fb-8381-ae2d534a9022
-caps.latest.revision: 36
+caps.latest.revision: "36"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: MT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: 2bbc8935bee306ed0bc312cc43b8f5374a8df7ff
-ms.contentlocale: pl-pl
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="install-in-console-updates-for-system-center-configuration-manager"></a>Instalacja aktualizacji w konsoli programu System Center Configuration Manager
 
@@ -386,4 +384,3 @@ Gdy zarówno aktualizacje są dostępne w konsoli, zaleca się zainstalowanie ak
 -   Jeśli wcześniej zainstalowano starszych aktualizacji, nie trzeba zainstalować aktualizację przy użyciu nowszych danych. Jednak po zainstalowaniu nowsza aktualizacja po zainstalowaniu pierwszej aktualizacji spowoduje zaktualizowanie użyciu plików binarnych. Brak dodatkowych zmian i nie są wymagane żadne dodatkowe działania ze strony użytkownika.
 
 -   Jeśli wcześniej zainstalowano najnowszą aktualizację, a następnie zainstalować aktualizację przy użyciu starszych danych, jest potrzebne żadne dodatkowe działanie. Jest to spowodowane nowszych plików binarnych, nie jest już zainstalowany nie są zastępowane przez wartości binarne tej samej z oryginalnej aktualizacji.
-

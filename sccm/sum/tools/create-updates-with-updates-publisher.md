@@ -6,22 +6,20 @@ ms.date: 4/29/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 46a1a8ac-126c-4ee6-ae09-32dfbdb83368
-caps.latest.revision: 1
+caps.latest.revision: "1"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: NOINDEX, NOFOLLOW
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c8717925dba42451b1e241a7c2f59e43896d7d99
 ms.openlocfilehash: 98e490d7f5ca17dcf2a0aaa848f14e789f214123
-ms.contentlocale: pl-pl
-ms.lasthandoff: 06/19/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="create--software-updates-and-update-bundles-with-updates-publisher"></a>Utwórz aktualizacji oprogramowania i pakietów aktualizacji przez program Updates Publisher
 
@@ -193,4 +191,3 @@ Ponieważ ten kreator używa tego samego przepływu pracy jako [kreatora Utwórz
 7.  Na **członków** strony, aktualizacje należy wybrać, aby dodać pakiet aktualizacji. Dostępne są tylko aktualizacje zostały utworzone lub zaimportować do programu Updates Publisher.
 
 Po zakończeniu działania Kreatora nowego pakietu aktualizacji jest dodawany do węzła w **aktualizacji obszaru roboczego** identyfikowane przez **dostawcy** nazwę używaną dla pakietu aktualizacji.
-

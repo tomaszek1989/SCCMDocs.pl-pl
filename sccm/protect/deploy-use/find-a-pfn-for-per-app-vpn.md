@@ -1,52 +1,50 @@
 ---
-title: "Znajdź nazwę rodziny pakietu (PFN) dla sieci VPN dla aplikacji | Dokumentacja firmy Microsoft"
-description: "Zapoznaj się z dwóch sposobów, aby znaleźć nazwę rodziny pakietu, dzięki czemu można skonfigurować sieci VPN dla aplikacji."
+title: "Znajdowanie nazwy rodziny pakietów (PFN) dla sieci VPN dla aplikacji | Dokumentacja firmy Microsoft"
+description: "Więcej informacji na temat dwa sposoby znajdowania nazwy rodziny pakietów, dzięki czemu można skonfigurować sieci VPN dla aplikacji."
 ms.custom: na
 ms.date: 10/06/2016
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 47118499-3d26-4c25-bfde-b129de7eaa59
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: Nbigman
 ms.author: nbigman
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: bff083fe279cd6b36a58305a5f16051ea241151e
 ms.openlocfilehash: ce50645155ecb14a82d8b982aa69c0f87dd15fbf
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="find-a-package-family-name-pfn-for-per-app-vpn"></a>Znajdź nazwę rodziny pakietu (PFN) dla sieci VPN dla aplikacji
+# <a name="find-a-package-family-name-pfn-for-per-app-vpn"></a>Znajdowanie nazwy rodziny pakietów (PFN) dla sieci VPN dla aplikacji
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
-Istnieją dwa sposoby, aby znaleźć PFN, dzięki czemu można skonfigurować sieci VPN dla aplikacji.
+Istnieją dwa sposoby znajdowania nazwy PFN, dzięki czemu można skonfigurować sieci VPN dla aplikacji.
 
-## <a name="find-a-pfn-for-an-app-thats-installed-on-a-windows-10-computer"></a>Znajdź PFN dla aplikacji, która jest zainstalowana na komputerze z systemem Windows 10
+## <a name="find-a-pfn-for-an-app-thats-installed-on-a-windows-10-computer"></a>Znajdowanie nazwy PFN dla aplikacji, która jest zainstalowana na komputerze z systemem Windows 10
 
-Jeśli korzystasz z aplikacji jest już zainstalowany na komputerze z systemem Windows 10, można użyć [Get-AppxPackage](https://technet.microsoft.com/library/hh856044.aspx) polecenia cmdlet środowiska PowerShell w celu uzyskania PFN.
+Jeśli korzystasz z aplikacji jest już zainstalowana na komputerze z systemem Windows 10, możesz użyć [Get-AppxPackage](https://technet.microsoft.com/library/hh856044.aspx) uzyskać nazwę PFN przy użyciu polecenia cmdlet programu PowerShell.
 
-Składnia Get-AppxPackage jest:
+Get-AppxPackage składnia jest następująca:
 
 ` Parameter Set: __AllParameterSets`
 ` Get-AppxPackage [[-Name] <String> ] [[-Publisher] <String> ] [-AllUsers] [-User <String> ] [ <CommonParameters>]`
 
 > [!NOTE]
-> Może być konieczne uruchamiania programu PowerShell jako administrator, aby pobrać PFN
+> Może być konieczne uruchomienie programu PowerShell jako administrator w celu uzyskania nazwy PFN
 
-Na przykład, aby uzyskać informacje na temat uniwersalnych aplikacji instalowanych przy użyciu komputera `Get-AppxPackage`.
+Na przykład, aby uzyskać informacje dotyczące wszystkich aplikacji uniwersalnych zainstalowanych na komputerze, użyj `Get-AppxPackage`.
 
-Aby uzyskać informacje o aplikacji, należy znać nazwę lub część nazwy, należy użyć `Get-AppxPackage *<app_name>`. Należy zwrócić uwagę na znaki wieloznaczne, szczególnie przydatne, jeśli nie masz pewności pełnej nazwy aplikacji. Na przykład uzyskać informacje dotyczące programu OneNote, użyj `Get-AppxPackage *OneNote`.
+Aby uzyskać informacje dotyczące aplikacji, musisz znać nazwę lub część nazwy, użyj `Get-AppxPackage *<app_name>`. Zwróć uwagę na użycie wieloznacznego szczególnie przydatne, jeśli nie masz pewności, jaka jest pełna nazwa aplikacji. Na przykład aby uzyskać informacje dotyczące programu OneNote, użyj `Get-AppxPackage *OneNote`.
 
 
-Poniżej przedstawiono informacje pobierane dla programu OneNote:
+Oto informacje uzyskane dla programu OneNote:
 
 `Name                   : Microsoft.Office.OneNote`
 
@@ -72,14 +70,14 @@ Poniżej przedstawiono informacje pobierane dla programu OneNote:
 
 
 
-## <a name="find-a-pfn-if-the-app-is-not-installed-on-a-computer"></a>Znajdź PFN, jeśli aplikacja nie jest zainstalowana na komputerze
+## <a name="find-a-pfn-if-the-app-is-not-installed-on-a-computer"></a>Znajdowanie nazwy PFN, jeśli aplikacja nie jest zainstalowany na komputerze
 
-1.    Przejdź do https://www.microsoft.com/en-us/store/apps
-2.    Wprowadź nazwę aplikacji na pasku wyszukiwania. W naszym przykładzie wyszukiwanie programu OneNote.
-3.    Kliknij łącza do aplikacji. Należy zauważyć, że adres URL, którego można uzyskać dostęp ma szereg litery na końcu. W naszym przykładzie adres URL wygląda następująco:`https://www.microsoft.com/en-us/store/apps/onenote/9wzdncrfhvjl`
-4.    Wklej następujący adres URL w innej karty `https://bspmts.mp.microsoft.com/v1/public/catalog/Retail/Products/<app id>/applockerdata`, zastąpienie `<app id>` z identyfikatorem aplikacji uzyskany z https://www.microsoft.com/en-us/store/apps - tej serii litery na końcu adresu URL w kroku 3. W naszym przykładzie przykład programu OneNote, można wkleić: `https://bspmts.mp.microsoft.com/v1/public/catalog/Retail/Products/9wzdncrfhvjl/applockerdata`.
+1.  Przejdź do https://www.microsoft.com/en-us/store/apps
+2.  Wprowadź nazwę aplikacji na pasku wyszukiwania. W naszym przykładzie Wyszukaj aplikację OneNote.
+3.  Kliknij łącza do wybranej aplikacji. Należy pamiętać, że adres URL zawiera serię liter na końcu. W naszym przykładzie adres URL wygląda następująco:`https://www.microsoft.com/en-us/store/apps/onenote/9wzdncrfhvjl`
+4.  Na innej karcie Wklej następujący adres URL `https://bspmts.mp.microsoft.com/v1/public/catalog/Retail/Products/<app id>/applockerdata`, zastępując `<app id>` identyfikatorem aplikacji uzyskane z https://www.microsoft.com/en-us/store/apps — serią liter na końcu adresu URL w kroku 3. W tym przykładzie programu OneNote, należy wkleić: `https://bspmts.mp.microsoft.com/v1/public/catalog/Retail/Products/9wzdncrfhvjl/applockerdata`.
 
-W krawędzi jest wyświetlane żądane informacje; w programie Internet Explorer kliknij polecenie **Otwórz** Aby wyświetlić informacje. Wartość PFN jest podana w pierwszym wierszu. Oto jak wyniki wyglądać w naszym przykładzie:
+W krawędzi są wyświetlane żądane informacje; w programie Internet Explorer, kliknij przycisk **Otwórz** Aby wyświetlić informacje. Wartość PFN jest podana w pierwszym wierszu. Oto jak wyglądają wyniki w naszym przykładzie:
 
 
 `{`
@@ -88,4 +86,3 @@ W krawędzi jest wyświetlane żądane informacje; w programie Internet Explorer
 `  "windowsPhoneLegacyId": "ca05b3ab-f157-450c-8c49-a1f127f5e71d",`
 `  "publisherCertificateName": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"`
 `}`
-

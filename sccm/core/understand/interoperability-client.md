@@ -1,60 +1,66 @@
 ---
-title: "Używanie klienta rozszerzonej współpracy z bieżącej gałęzi | Dokumentacja firmy Microsoft"
-description: "Informacje o używaniu klienta z długoterminowe obsługi gałęzi z programu Configuration Manager za pomocą witryny bieżącej gałęzi."
+title: "Należy użyć klienta programu Configuration Manager rozszerzonej współdziałanie z bieżącej gałęzi | Dokumentacja firmy Microsoft"
+description: "Informacje o używaniu klienta z długoterminowe obsługi gałęzi programu Configuration Manager z lokacją bieżącej gałęzi."
 ms.custom: na
-ms.date: 01/04/2017
+ms.date: 08/09/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 600086d5-bd9e-4ac1-8ace-c7a62de80dc2
-caps.latest.revision: 0
+caps.latest.revision: "0"
 author: robstackmsft
 ms.author: robstack
-Robots: NOINDEX,NOFOLLOW
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4eee9731a4a27328c47c0d15931cab28cf520a18
-ms.openlocfilehash: 4cc339e28110a3097c318b61224ae7692c47a31a
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.openlocfilehash: 6487a7c0eb958c74ca4c6a7233747966110eceb9
+ms.sourcegitcommit: b41d3e5c7f0c87f9af29e02de3e6cc9301eeafc4
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/11/2017
 ---
-# <a name="use-the-client-software-from-the-version-1606-baseline-media-for-extended-interoperability-with-future-versions-of-a-current-branch-site"></a>Użyj oprogramowania klienckiego z nośnika linii bazowej 1606 wersji rozszerzonej współdziałanie z przyszłych wersji lokacji bieżącej gałęzi
+# <a name="use-the-configuration-manager-client-software-for-extended-interoperability-with-future-versions-of-a-current-branch-site"></a>Użyj rozszerzonej współdziałanie z przyszłych wersji Current Branch lokacji oprogramowanie klienta programu Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi) (długoterminowej obsługi oddziału)*  
+*Dotyczy: Program System Center Configuration Manager (Current Branch), (długoterminowej obsługi Branch)*  
 
-Można użyć programu Configuration Manager oprogramowanie klienckie dla komputerów z systemem Windows (client.msi) z nośnika linii bazowej wersji 1606 DVD można uzyskać za pomocą programu System Center 2016 lub z lub wersji programu System Center Configuration Manager (bieżącej gałęzi i długoterminowe obsługi 1606 gałęzi) do zarządzania urządzeniami, które należą do lokacji bieżącej gałęzi. Ten klient jest nazywany rozszerzonej współdziałanie klienta.
+W niektórych przypadkach zasad firmy może nie pozwalają na regularnie aktualizację klienta programu Configuration Manager na niektórych komputerach. Na przykład konieczne może być zgodne z zasadami zarządzania zmiany lub urządzenie może być krytycznym.
 
-## <a name="how-this-scenario-works"></a>Jak działa ten scenariusz:
-Zazwyczaj po zainstalowaniu nowej aktualizacji w konsoli dla bieżącej gałęzi klienci automatycznie aktualizuje swoje oprogramowanie klienckie, mogą korzystać z tych nowych funkcji.
+Gdy powinno być kontynuowane użycie automatycznego uaktualnienia klienta, gdy to możliwe w dla większości klientów, w programie Configuration Manager zaktualizuje 1610, mogą obsługiwać te potrzeby przez zainstalowanie nowego klienta do użycia długoterminowej, wywołuje rozszerzoną współdziałanie klienta (EIC).
 
-W tym scenariuszu należy użyć bieżącej gałęzi i odbieranie nowych funkcji i aktualizacji. Większość klientów Uruchom oprogramowanie klienckie z bieżącego rozgałęzienia i zaktualizować przy każdej aktualizacji wersji, które należy zainstalować oprogramowanie klienta. Jednak na podzbioru krytyczne systemów, które chcesz odbierać aktualizacje oprogramowania klienta, należy zainstalować klienta rozszerzonej współpracy. Tacy klienci nie zostaną zainstalowane nowe oprogramowanie klienckie, dopóki jawnie wdrożenia nowej wersji oprogramowania klienckiego do nich.
+EIC jest zgodna z wersją 1610 lokacji programu Configuration Manager lub nowszego. EIC należy używać tylko dla określonych komputerów, które nie może być często aktualizowana, takich jak kiosku lub urządzeń w punktach sprzedaży. Korzystając z najnowszych klienta programu Configuration Manager dla wszystkich innych komputerów.
 
-Więcej informacji na temat uniemożliwić klientom bieżącej gałęzi automatycznej aktualizacji po zainstalowaniu nowej wersji programu Configuration Manager będzie dostępne w wersji bieżącej gałęzi 1610.
+## <a name="how-this-scenario-works"></a>Jak działa w tym scenariuszu
 
-Lokacji bieżącej gałęzi musi być zainstalowana wersja 1606 lub nowszej.
+Zwykle po zainstalowaniu nowej aktualizacji w konsoli dla bieżącej gałęzi klientów automatycznie aktualizuje oprogramowanie klienckie, ich aby mogli oni korzystać te nowe funkcje.
+
+W tym scenariuszu możesz użyć bieżącej gałęzi i odbierać nowe funkcje i aktualizacje. Większość klientów uruchomione oprogramowanie klienckie z bieżącej gałęzi i może je aktualizować przy każdej wersji aktualizacji, które należy zainstalować oprogramowanie klienta. Jednak na podzbiór krytycznych systemów, które chcesz odbierać aktualizacje oprogramowania klienta, należy zainstalować klienta współdziałanie rozszerzonej. Ci klienci nie należy instalować nowe oprogramowanie klienckie, dopóki nie zostanie jawnie wdrożony nowej wersji oprogramowania klienckiego do nich.
+
+>[!IMPORTANT]
+>Bieżąca gałąź witryny musi być zainstalowana wersja 1610 lub nowszej.
+
+## <a name="how-to-use-the-eic"></a>Jak używać EIC
+
+1. Uzyskaj EIC (wersja klienta 5.00.8412) z folderu \SMSSETUP\Client z nośnika instalacyjnego programu Configuration Manager 1606 aktualizacji. Upewnij się, że należy skopiować całą zawartość folderu.
+2. Ręcznie zainstaluj EIC na tych urządzeniach. [Przeczytaj więcej informacji o sposobie ręcznego zainstalowania klienta](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Manual).
+3. Wyklucz tej kolekcji uaktualnienia klienta.
+
+>[!TIP]
+>Aby znaleźć System Center Configuration Manager w wersji 1606 w wolumin licencjonowania Service Center (VLSC), przejdź do **pliki do pobrania i klucze** karcie [VLSC](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx), wyszukaj "system center konfiguracji", a następnie wybierz **System Center Config Mgr (bieżącej gałęzi i LTSB)**.
 
 ## <a name="the-extended-interoperability-client-software"></a>Oprogramowanie klienckie rozszerzonej współdziałanie
-Korzystając z klienta rozszerzonej współpracy z 2016 Center systemu lub wersji programu System Center Configuration Manager (bieżącej gałęzi i długoterminowe obsługi gałęzi 1606) z lokacji bieżącej gałęzi, klient jest obsługiwana przez dwa lata po powszechnym udostępnieniu wersję, która jest 12 października 2016.
 
-Planowanie aktualizacji klienta współdziałanie rozszerzonej na urządzeniach zarządzanych za pomocą bieżącej gałęzi przed pomocy technicznej dla klienta wygaśnie. W tym celu pobrać nową wersję klienta firmy Microsoft, a następnie wdrożyć ten zaktualizowanego oprogramowania klienckiego na urządzeniach korzystających z bieżącego rozszerzone współdziałanie klienta.
+Bieżący EIC będą nadal obsługiwane zaktualizowane wersje programu Configuration Manager bieżącej gałęzi do momentu co najmniej 18 listopada 2018. Po upływie tego czasu Sprawdź na tej stronie Szczegóły nowego EIC lub rozszerzenia obsługi EIC istniejących.
 
-**Ograniczenia klienta rozszerzonej współpracy:**
--     Za pomocą aktualizacji w konsoli nie są dostępne aktualizacje dla oprogramowania klienckiego rozszerzonej współpracy. Dodatkowe szczegóły dotyczące wdrażania oprogramowania klienckiego zaktualizowane zostanie dostarczona podczas zwalniania zaktualizowanego klienta.
+>[!TIP]
+>EIC jest obsługiwana w przypadku co najmniej dwóch lat od daty wydania (zobacz [pomocy technicznej dla programu System Center Configuration Manager bieżącej gałęzi wersji](/sccm/core/servers/manage/current-branch-versions-supported)). Na przykład obsługa bieżącego EIC wynosi dwa lata po wydaniu 1610, czyli 18 listopada 2018.
 
-## <a name="identify-the-client-version-you-use"></a>Identyfikowania używanej wersji klienta
-Poniżej przedstawiono dostępne zarówno dla bieżącej gałęzi i LTSB wersje główne klienta:
+Planuje aktualizację klienta współdziałanie rozszerzonej na urządzeniach, którymi zarządzasz przy użyciu bieżącej gałęzi przed pomocy technicznej dla klienta wygaśnie. Aby to zrobić, pobrać nową wersję klienta firmy Microsoft, a następnie wdrożyć oprogramowanie zaktualizowanego klienta na urządzeniach korzystających z bieżącego rozszerzonej współdziałanie klienta.
 
-|Wersja klienta|Tworzyć gałęzie i wersji |  
-|----------------|---------------------|
-|5.00.8325.xxxx |    -Bieżącej gałęzi 1511|
-|5.00.8355.xxxx    |-Bieżącej gałęzi 1602|
-|5.00.8412.1307    |-Bieżącej gałęzi 1606 </br> -Bieżącej gałęzi 1606 z listą poprawkę 1606 (KB3186654)</br>-klienta rozszerzonej współpracy z wersji 1606 nośnika linii bazowej|  
+## <a name="limitations-of-the-extended-interoperability-client"></a>Ograniczenia rozszerzonej współdziałanie klienta
 
-Wersja klienta na kliencie można przeglądać na **ogólne** kartę programu Configuration Manager w Panelu sterowania.
+- Aktualizacje oprogramowania klienckiego rozszerzonej współdziałanie nie są dostępne za pomocą aktualizacji w konsoli. Dodatkowe szczegóły dotyczące wdrażania oprogramowania zaktualizowanego klienta są udostępniane po zwolnieniu zaktualizowanego klienta.
+- EIC obsługuje tylko aktualizacje oprogramowania, spisu i pakietów i programów.
 
-Na **składniki** kartę apletu, niektóre składniki pokazują różne wartości. Na przykład wersję klienta 8412.1307, niektóre składniki mogą zostać wyświetlone 5.00.8412. **1000** lub 5.00.8412. **1006**.  Inny w cztery ostatnie cyfry dla niektórych składników jest normalnym i nie wskazuje błąd składnika, aby zaktualizować bieżącą wersję klienta.
+## <a name="next-steps"></a>Następne kroki
 
+Skorzystaj z informacji w [jak monitorować klientów](/sccm/core/clients/manage/monitor-clients) aby upewnić się, że klienci są poprawnie zainstalowane na urządzeniach ma.

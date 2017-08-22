@@ -6,25 +6,21 @@ ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: dudeso
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5e5d854c-9cc1-4dd8-b33f-0fcac675b395
-caps.latest.revision: 13
-caps.handback.revision: 0
+caps.latest.revision: "13"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
+ms.openlocfilehash: 3921748d3c99c2a35b670f3ca121dc7ab92d43bc
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
-ms.openlocfilehash: 4bb1f4a068563a5fe6f384708e10269dcd3229da
-ms.contentlocale: pl-pl
-ms.lasthandoff: 07/29/2017
-
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-
-
 # <a name="device-guard-management-with-configuration-manager"></a>Zarządzanie urządzeniami Guard z programu Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
@@ -97,6 +93,9 @@ Podczas dodawania relacji zaufania dla określonych plików, folderów w zasadac
     - Zaufanie aplikacji, które są objęte obrazu wdrożenia systemu operacyjnego. 
 7.  Kliknij przycisk **dalej**, następnie Zakończ pracę kreatora.
 
+>[!IMPORTANT]
+>Włączenie zaufanych plików lub folderów jest obsługiwana tylko na komputerach klienckich z wersją 1706 lub nowszego klienta programu Configuration Manager. Wszystkie reguły dołączania są uwzględnione w zasadach ochrony urządzeń, a następnie wdrożony zasady klienta komputera z systemem starszej wersji klienta programu Configuration Manager, zasady zakończy się niepowodzeniem do zastosowania. Uaktualnianie starszych klientów rozwiąże ten problem. Nadal można stosować zasady, które nie zawierają żadnych reguł dołączania dotyczące starszych wersji klienta programu Configuration Manager.
+
 ## <a name="how-to-deploy-a-device-guard-policy"></a>Jak wdrożyć zasady ochrony urządzeń
 1.  W konsoli programu Configuration Manager kliknij przycisk **Zasoby i zgodność**.
 2.  W **zasoby i zgodność** obszaru roboczego, rozwiń węzeł **programu Endpoint Protection**, a następnie kliknij przycisk **zasady ochrona urządzeń**.
@@ -130,7 +129,6 @@ W takim przypadku oprogramowanie mogą nadal mogą być uruchamiane, nawet jeśl
 - Korzystając z programu Configuration Manager umożliwia integralności kodu można skonfigurować na kliencie komputerów z zasadami ochrony urządzeń, zasady nie zapobiega użytkowników z uprawnieniami administratora lokalnego obchodzenia zasad ochrony urządzeń lub inny sposób wykonywania niezaufanych oprogramowania. 
 - Jest jedynym sposobem, aby uniemożliwić użytkownikom z uprawnieniami administratora lokalnego z wyłączeniem integralności kodu można skonfigurować do wdrażania zasad binarne podpisem. To wdrożenie jest możliwe za pośrednictwem zasad grupy, ale obecnie nieobsługiwane w programie Configuration Manager.
 - Ustawienie konfiguracji programu Configuration Manager jako zarządzane Instalatora na komputerach klienckich używane są zasady funkcji AppLocker. Zasady ograniczeń oprogramowania jest używany tylko do identyfikowania instalatorów zarządzane i wszystkie wymuszania sytuacji z integralności kodu można skonfigurować. 
-
 
 
 

@@ -6,22 +6,20 @@ ms.date: 03/26/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
-caps.latest.revision: 26
-caps.handback.revision: 0
+caps.latest.revision: "26"
+caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: MT
-ms.sourcegitcommit: b7461f89f483314bd07248bbc9d5dde85ca6b6c2
 ms.openlocfilehash: e0726febc4c36a26c5e067914734838bf2681e6c
-ms.contentlocale: pl-pl
-ms.lasthandoff: 08/03/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Kroki sekwencji zadań w programie System Center Configuration Manager
 
@@ -1707,4 +1705,3 @@ W edytorze sekwencji zadań, użyj [Ustaw zmienną sekwencji zadań](#BKMK_SetTa
  Określa, czy Instalator będzie wykonywać operacje aktualizacji dynamicznych, takie jak wyszukiwanie, pobieranie i instalowanie aktualizacji (odpowiada opcji wiersza polecenia /DynamicUpdate). To ustawienie nie jest zgodny z aktualizacji oprogramowania programu Configuration Manager, ale można ją włączyć w przypadku obsługi aktualizacji za pomocą usługi WSUS (autonomicznie) lub usługi Windows Update.  
 
  **Zastąpienia zasad i użyj domyślnej usługi Microsoft Update**: Wybierz to ustawienie, aby tymczasowo zastąpić zasady lokalne w czasie rzeczywistym w celu uruchomienia aktualizacji dynamicznych i pobrania aktualizacji z witryny Windows Update na komputerze.  
-

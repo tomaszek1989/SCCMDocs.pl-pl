@@ -1,37 +1,34 @@
 ---
 title: "Konfigurowanie zarządzania energią | Dokumentacja firmy Microsoft"
-description: "Konfigurowanie zarządzania zużyciem energii w programie System Center Configuration Manager."
+description: "Konfigurowanie zarządzania energią w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 435c923c-ea30-4dce-8afd-48962ed85502
-caps.latest.revision: 5
-caps.handback.revision: 0
+caps.latest.revision: "5"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
 ms.openlocfilehash: e111ac2545dd9e0b96a50c10246bb75d286a737a
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="configuring-power-management-in-system-center-configuration-manager"></a>Konfigurowanie zarządzania zużyciem energii w programie System Center Configuration Manager
+# <a name="configuring-power-management-in-system-center-configuration-manager"></a>Konfigurowanie zarządzania energią w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Przed użyciem zarządzania zużyciem energii w programie System Center Configuration Manager, należy wykonać następujące kroki konfiguracji.  
+Przed użyciem funkcji zarządzania energią w programie System Center Configuration Manager, należy wykonać poniższe czynności konfiguracyjne.  
 
 ## <a name="enable-and-configure-power-management-client-settings"></a>Włączanie i konfigurowanie ustawień klienta dla zarządzania energią  
- Ta procedura umożliwia skonfigurowanie domyślnych ustawień klienta dla zarządzania energią i dotyczy wszystkich komputerów w hierarchii. Jeśli te ustawienia mają być stosowane tylko dla niektórych komputerów, utwórz niestandardowe ustawienie klienta urządzenia i przypisz je do kolekcji zawierającej komputery, na których chcesz zarządzać energią. Aby uzyskać więcej informacji na temat tworzenia niestandardowych ustawień urządzenia, zobacz [sposób konfigurowania ustawień klienta w programie System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md).  
+ Ta procedura umożliwia skonfigurowanie domyślnych ustawień klienta dla zarządzania energią i dotyczy wszystkich komputerów w hierarchii. Jeśli te ustawienia mają być stosowane tylko dla niektórych komputerów, utwórz niestandardowe ustawienie klienta urządzenia i przypisz je do kolekcji zawierającej komputery, na których chcesz zarządzać energią. Aby uzyskać więcej informacji o sposobie tworzenia niestandardowych ustawień urządzenia, zobacz [sposób konfigurowania ustawień klienta w programie System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md).  
 
 #### <a name="to-enable-power-management-and-configure-client-settings"></a>Włączanie zarządzania energią i konfigurowanie ustawień klienta  
 
@@ -49,7 +46,7 @@ Przed użyciem zarządzania zużyciem energii w programie System Center Configur
 
     -   **Zezwalaj na zarządzanie zasilaniem urządzeń** — z listy rozwijanej wybierz pozycję **Prawda** , aby włączyć zarządzanie energią.  
 
-7.  Skonfiguruj wymagane ustawienia klienta. Lista ustawień klienta zarządzania energią, które można skonfigurować, zobacz [zarządzania energią](../../../../core/clients/deploy/about-client-settings.md#power-management) w sekcji [informacje o ustawieniach klienta w programie System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md) tematu.  
+7.  Skonfiguruj wymagane ustawienia klienta. Aby uzyskać listę ustawień klienta zarządzania energią, które można skonfigurować, zobacz [zarządzania energią](../../../../core/clients/deploy/about-client-settings.md#power-management) sekcji [informacje o ustawieniach klienta w programie System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md) tematu.  
 
 8.  Kliknij przycisk **OK** , aby zamknąć okno dialogowe **Ustawienia domyślne klienta** .  
 
@@ -71,7 +68,7 @@ Przed użyciem zarządzania zużyciem energii w programie System Center Configur
 > [!NOTE]  
 >  Jeśli opcja **Zezwalaj użytkownikom na wykluczanie swoich urządzeń z zarządzania zasilaniem** jest skonfigurowana w ustawieniach klienta, użytkownicy mogą wykluczyć własne komputery z zarządzania energią za pomocą Centrum oprogramowania.  
 
- Aby dowiedzieć się, które komputery zostały wykluczone z zarządzania energią, uruchom raport **Wykluczone komputery**. Więcej informacji na temat tego raportu można znaleźć w temacie [wykluczone komputery](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md#BKMK_Excluded) w [monitora i planu na potrzeby zarządzania zużyciem energii w programie System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
+ Aby dowiedzieć się, które komputery zostały wykluczone z zarządzania energią, uruchom raport **Wykluczone komputery**. Aby uzyskać więcej informacji na temat tego raportu zobacz [wykluczone komputery](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md#BKMK_Excluded) w [jak monitorować i planować zarządzanie energią w programie System Center Configuration Manager](../../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
 
 > [!IMPORTANT]  
 >  W przypadku ustawień zasilania zastosowanych na komputerach z systemem Windows XP lub Windows Server 2003 nie są przywracane oryginalne wartości, nawet jeśli komputer zostanie wykluczony z zarządzania energią. W nowszych wersjach systemu Windows wykluczenie komputera z zarządzania energią powoduje przywrócenie oryginalnych wartości wszystkich ustawień zasilania. Nie można przywrócić oryginalnych wartości pojedynczych ustawień zasilania.  
@@ -84,7 +81,6 @@ Przed użyciem zarządzania zużyciem energii w programie System Center Configur
 
 3.  Na liście **Kolekcje urządzeń** wybierz kolekcję, którą chcesz wykluczyć z zarządzania energią, a następnie na karcie **Narzędzia główne** w grupie **Właściwości** kliknij pozycję **Właściwości**.  
 
-4.  W **zarządzania energią** na karcie *< nazwa kolekcji\>***właściwości** okno dialogowe, wybierz opcję **nigdy nie dotyczą ustawienia zarządzania zasilaniem komputerów w tej kolekcji**.  
+4.  W **zarządzania energią** karcie *< nazwa kolekcji\>***właściwości** okno dialogowe, wybierz opcję **nigdy nie stosuj ustawień zarządzania zasilaniem do komputerów w tej kolekcji**.  
 
 5.  Kliknij przycisk **OK** zamknąć *< nazwa kolekcji\>***właściwości** okno dialogowe i zapisać ustawienia.  
-

@@ -6,8 +6,7 @@ ms.date: 07/31/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7def067e-845c-4db3-9d56-fa1dcf2fd7c7
@@ -15,12 +14,11 @@ caps.latest.revision:
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: MT
-ms.sourcegitcommit: 3c75c1647954d6507f9e28495810ef8c55e42cda
 ms.openlocfilehash: dab99748902df0fad32a1e2adad0c05e0dd8bdc9
-ms.contentlocale: pl-pl
-ms.lasthandoff: 07/29/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="checklist-for-installing-update-1706-for-system-center-configuration-manager"></a>Lista kontrolna dotycząca instalowania aktualizacji 1706 programu System Center Configuration Manager
 
@@ -177,4 +175,3 @@ Po uaktualnieniu do wersji 1706 każdym uruchomieniu SMS_Executive następujący
 -    Microsoft SQL Server zgłosił 515, ważność komunikatu SQL 16: [23000] [515] [Microsoft] [SQL Server Native klienta 11.0] [SQL Server] nie można wstawić wartości NULL w kolumnie "RowVersion" tabeli 'CM_GF1.dbo.AAD_SecretChange_Notify'; kolumna nie dopuszcza wartości null. Wstaw kończy się niepowodzeniem.
 
 Można zignorować ten komunikat.  Możliwy, gdy nie skonfigurowano żadnych usług w chmurze przed zaktualizowaniem do wersji 1706 do użytku. Ten problem zostanie rozwiązany w przyszłej wersji.
-
