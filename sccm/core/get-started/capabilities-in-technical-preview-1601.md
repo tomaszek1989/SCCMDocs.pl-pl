@@ -1,6 +1,6 @@
 ---
-title: Funkcje w wersji zapoznawczej Technical Preview 1601 programu Configuration Manager
-description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersja 1601."
+title: Funcionalidades no Technical Preview 1601 Configuration Manager
+description: "Saiba mais sobre as funcionalidades disponíveis no Technical Preview do System Center Configuration Manager, versão 1601."
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
@@ -18,24 +18,24 @@ robots: noindex,nofollow
 ms.openlocfilehash: ef0db5b11ae2be5edcb4db87400c5c273c89972e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pl-PL
+ms.contentlocale: pt-PT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1601-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1601 programu System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1601-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1601 do System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (wersja zapoznawcza Technical Preview)*
+*Aplica-se a: O System Center Configuration Manager (Technical Preview)*
 
-W tym artykule przedstawiono funkcje, które są dostępne w wersji Technical Preview programu System Center Configuration Manager, wersja 1601. Można zainstalować tę wersję, aby zaktualizować i dodać nowe funkcje do lokacji programu Configuration Manager technical preview.      Przed zainstalowaniem tej wersji technical Preview, przejrzyj temat wprowadzający [Technical Preview programu System Center Configuration Manager](../../core/get-started/technical-preview.md), aby zapoznać się z ogólne wymagania i ograniczenia dotyczące używania wersji technical preview, jak zaktualizować między wersjami i sposobu wyrazić swoją opinię na temat funkcji w wersji technical preview.  
+Este artigo apresenta as funcionalidades que estão disponíveis no Technical Preview do System Center Configuration Manager, versão 1601. Pode instalar esta versão para atualizar e adicionar novas capacidades ao seu local de pré-visualização técnica do Configuration Manager.      Antes de instalar esta versão do technical preview, reveja o tópico introdutórias, [pré-visualização técnica do System Center Configuration Manager](../../core/get-started/technical-preview.md), para se familiarizar com os requisitos gerais e limitações para utilizar como uma pré-visualização técnica, ao atualizar entre versões e como fornecer comentários sobre as funcionalidades de um technical preview.  
 
- **Znane problemy dotyczące tej wersji Technical Preview:**  
+ **Problemas conhecidos para este Technical Preview:**  
 
--   Jeśli zarządzasz **opcje aktualizacji klienta** promowanie klienta przedprodukcyjnego do środowiska produkcyjnego, tekst pola wyboru Wyświetla wersję klienta zero (0) zamiast rzeczywistego numeru kompilacji klienta. Właściwej produkcji wstępnej wersji klienta jest wyświetlana powyżej tej opcji, a to wersja klienta jest podwyższany do środowiska produkcyjnego, po wybraniu tej opcji.  
+-   Quando gere **opções de atualização de cliente** para promover um cliente de pré-produção para produção, o texto da caixa de verificação apresenta uma versão de cliente zero (0) em vez do número de compilação do cliente real. A versão correta de cliente de pré-produção é apresentada na superfície acima desta opção e a versão de cliente que é promovida para produção quando seleciona esta opção.  
 
--   Podczas aktualizacji do wersji Technical Preview 1601 i wybrania opcji testowania klienta programu Configuration Manager w kolekcji przedprodukcyjnej pakiet klienta dla kolekcji nie można uaktualnić. Ten problem występuje tylko dla wersji Technical Preview 1601.  
+-   Quando atualizar para a Technical Preview 1601 e escolhendo a opção para testar o cliente do Configuration Manager numa coleção de pré-produção, o pacote de cliente para a coleção não será atualizado. Este problema é apenas na Technical Preview 1601.  
 
-     Aby rozwiązać ten problem wykonaj jedną z wykonaj:  
+     Para resolver que estes problemas, efetue um dos seguintes:  
 
-    -   Uruchom poniższy skrypt SQL w bazie danych lokacji głównej:  
+    -   Execute o seguinte script SQL na base de dados do site primário:  
 
         ```  
         DECLARE @PilotingPkgID NVARCHAR(8)  
@@ -56,165 +56,165 @@ W tym artykule przedstawiono funkcje, które są dostępne w wersji Technical Pr
 
         ```  
 
-    -   Dodaj nową rolę systemu lokacji punktu dystrybucji do lokacji laboratorium. Nowy punkt dystrybucji uaktualni kolekcji przedprodukcyjnej przy użyciu nowego pakietu klienta.  
+    -   Adicione uma nova função de sistema de sites do ponto de distribuição para o site de laboratório. O novo ponto de distribuição irá atualizar a coleção de pré-produção com o novo pacote de cliente.  
 
-**Poniżej przedstawiono nowe funkcje, które można wypróbować z tą wersją.**  
+**Seguem-se novas funcionalidades que pode experimentar com esta versão.**  
 
-##  <a name="bkmk_hybrid1"></a>Ulepszenia integracji programu Microsoft Intune  
-W 1601 Technical Preview dodano obsługę następujących funkcji:  
+##  <a name="bkmk_hybrid1"></a>Melhoramentos à integração do Microsoft Intune  
+No 1601 Technical Preview, foi adicionado suporte para as seguintes funcionalidades:  
 
-### <a name="improvements-to-conditional-access"></a>Ulepszenia dostępu warunkowego  
+### <a name="improvements-to-conditional-access"></a>Melhoramentos ao acesso condicional  
 
--   **Obsługa dostępu warunkowego dla komputerów, które są zarządzane przez program System Center Configuration Manager**  
+-   **Suporte de acesso condicional para PCs geridos pelo System Center Configuration Manager**  
 
-     Można teraz ustawić zasady dostępu warunkowego dla komputerów zarządzanych przez System Center Configuration Manager, który będzie wymagać, aby komputery się zgodne z zasadami zgodności, aby uzyskać dostęp do usługi Exchange Online i SharePoint Online.  Dzięki tej nowej funkcji można również zarejestrować komputery z usługą Azure AD za pomocą zasad zgodności oraz monitorowania i raportowania rejestrację usługi Azure AD.  
+     Agora pode definir políticas de acesso condicional para PCs geridos pelo System Center Configuration Manager, que irá exigir que os computadores estejam em conformidade com a política de conformidade para aceder aos serviços Exchange Online e SharePoint Online.  Com esta nova funcionalidade, também pode registar PCs com o Azure AD através da política de conformidade bem como monitorizar e o relatório de registo do Azure AD.  
 
     > [!NOTE]  
-    >  Dostęp warunkowy nie jest jeszcze obsługiwana w systemie Windows 10.  
+    >  Acesso condicional ainda não é suportado no Windows 10.  
 
-    Poniżej podano wymagania wstępne, aby użyć tej funkcji:  
+    Seguem-se os pré-requisitos para utilizar esta funcionalidade:  
 
-    -   Azure Active Directory Premium subskrypcji i ADFS Sync.  
+    -   Subscrição do Active Directory Premium e ADFS Sync do Azure.  
 
-    -   Subskrypcja usługi Microsoft Intune. Subskrypcja usługi Microsoft Intune należy skonfigurować w konsoli programu Configuration Manager.  
+    -   Uma Subscrição do Microsoft Intune. A subscrição do Microsoft Intune deve ser configurada na consola do Configuration Manager.  
 
-    -   [Wymagania wstępne dotyczące rejestracji automatycznej usługi Azure AD](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
+    -   [Pré-requisitos para o registo automático do Azure AD](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
 
-    Aby użyć opcji, należy utworzyć zasady zgodności w programie Configuration Manager za pomocą określonych reguł opisanych poniżej i ustawić zasady dostępu warunkowego w konsoli usługi Intune.  Ponadto aby upewnić się, mogą uzyskiwać dostęp tylko dla zgodnych komputerów, należy ustawić wymaganie na komputerze z systemem Windows **urządzenia muszą być zgodne** opcji. Poniżej przedstawiono reguły zasad zgodności, które mają zastosowanie do komputerów zarządzanych przez program System Center Configuration manager.  
+    Para utilizar a opção, tem de criar uma política de conformidade no Configuration Manager com regras específicas, descritas abaixo e definir uma política de acesso condicional na consola do Intune.  Além disso, para garantir que apenas a computadores conformes são permissão de acesso, tem de definir o requisito de Windows PC como **dispositivos tem de estar em conformidade** opção. Seguem-se as regras de política de conformidade que são aplicáveis a PCs geridos pelo System Center Configuration manager.  
 
-    -   **Wymagaj rejestracji w usłudze Azure ActiveDirectory:** Ta reguła sprawdza, czy urządzenie użytkownika miejscu pracy zostało dołączone do usługi Azure AD, a jeśli nie, urządzenie jest automatycznie rejestrowane w usłudze Azure AD. Automatyczna rejestracja jest obsługiwana tylko w systemie Windows 8.1. W przypadku komputerów z systemem Windows 7 należy wdrożyć instalatora MSI w celu przeprowadzenia rejestracji automatycznej. Aby uzyskać więcej informacji, zobacz [tutaj](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
+    -   **Exigir registo no Azure ActiveDirectory:** Esta regra verifica se o dispositivo do utilizador é o local de trabalho associado para o Azure AD e, se não, o dispositivo é automaticamente registado no Azure AD. O registo automático é suportado apenas no Windows 8.1. Para PCs Windows 7, implemente um MSI para efetuar o registo automático. Para obter mais informações, consulte [aqui](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
 
-    -   **Zainstalowano wszystkie wymagane aktualizacje z ostatecznym terminem przypadającym wcześniej niż określona liczba dni temu:** Ta reguła sprawdza, czy urządzenie użytkownika ma wszystkie wymagane aktualizacje (określone w **wymagane aktualizacje automatyczne** reguły) w ramach terminu ostatecznego i okresu prolongaty określonego przez użytkownika i automatycznie instaluje wszystkie oczekujące wymagane aktualizacje.  
+    -   **Todas as atualizações necessárias instaladas com um prazo mais antigo do que um determinado número de dias:** Esta regra verifica se o dispositivo do utilizador tem todas as atualizações necessárias (especificadas no **atualizações automáticas necessárias** regra) dentro do prazo e o período de tolerância especificados por si e automaticamente instalar quaisquer atualizações necessárias pendentes.  
 
-    -   **Wymagaj szyfrowania dysków funkcją BitLocker:** Jest to sprawdzenie, czy dysk podstawowy (np. C:\\) na urządzeniu jest funkcją BitLocker zaszyfrowany. Jeśli szyfrowanie funkcją BitLocker nie jest włączone na głównym urządzeniu, dostęp do poczty e-mail i usług SharePoint jest zablokowany.  
+    -   **Exigir encriptação de unidade BitLocker:** Esta é uma verificação para ver se a unidade principal (por exemplo, c:\\) no dispositivo é BitLocker encriptado. Se a encriptação Bitlocker não estiver ativada no dispositivo primário, o acesso ao e-mail e aos SharePoint Services é bloqueado.  
 
-    -   **Wymagaj ochrony przed złośliwym oprogramowaniem:** Jest to sprawdzenie, czy oprogramowanie chroniące przed złośliwym kodem (System Center Endpoint Protection lub usługa Windows Defender) jest włączona i uruchomiona.  
-         Jeśli takie oprogramowanie nie jest włączone, dostęp do poczty e-mail i usług SharePoint jest zablokowany.  
+    -   **Exigir Antimalware:** Esta é uma verificação para ver se o software antimalware (System Center Endpoint Protection ou apenas o Windows Defender) está ativado e em execução.  
+         Se não estiver ativado, o acesso ao e-mail e aos SharePoint Services é bloqueado.  
 
-    Użytkownicy końcowi, którzy są zablokowane z powodu niezgodności zostaną wyświetlone informacje o zgodności w Centrum oprogramowania SCCM i zostanie zainicjowana nowa ocena zasad, gdy problemy ze zgodnością zostaną rozwiązane.  
+    Os utilizadores finais que estão bloqueados devido a não conformidade Verão informações de conformidade no Centro de Software do SCCM e irão iniciar uma nova avaliação de políticas quando os problemas de conformidade estiverem resolvidos.  
 
--   **Dostęp warunkowy i usługa zaświadczania o kondycji** teraz możesz ograniczyć dostęp do poczty e-mail i usług 0365 na podstawie kondycji urządzeń zgłoszonej przez usługę zaświadczania o kondycji.  Ponadto urządzenia zarządzane przez usługę Intune są ujęte w raportach o kondycji urządzeń.  
+-   **Acesso condicional com serviço de atestado de estado de funcionamento** agora pode restringir o acesso ao e-mail e aos 0365 serviços com base no estado de funcionamento dos dispositivos, conforme comunicado pelo serviço de atestado do Estado de funcionamento.  Além disso, os dispositivos que são geridos pelo Intune são incluídos nos relatórios de estado de funcionamento do dispositivo.  
 
-    Do konsoli programu configuration manager, który służy do określenia, czy urządzeniu powinno być dozwolone, czy zablokowała dostęp na podstawie stanu kondycji została dodana nowa reguła zgodności.  Aby utworzyć tę regułę, otwórz **Kreatora tworzenia zasad zgodności**i Dodaj nową regułę.  Wybierz **zgłoszone jako kondycji przez usługę zaświadczania o kondycji** dla warunku i ustaw wartość **True**.  Spowoduje to upewnij się, że tylko urządzenia zgłoszone jako poprawne będą mieli dostęp do zasobów firmy. Aby uzyskać szczegółowe informacje o usłudze zaświadczania o kondycji i sposobie zgłaszania kondycji urządzeń w usłudze Intune, zobacz [zaświadczania o kondycji](#bkmk_devicehealth).  
+    Foi adicionada uma nova regra de conformidade à consola do configuration manager permite-lhe especificar se os dispositivos devem ser permitidos ou bloqueados acesso com base no respetivo estado de funcionamento.  Para criar esta regra, abra o **criar Assistente de política de conformidade**e adicione uma nova regra.  Selecione o **reportado como estado de funcionamento pelo serviço de atestado de estado de funcionamento** para a condição e defina o valor **verdadeiro**.  Esta ação irá garantir que apenas os dispositivos que são reportados como bom estado de funcionamento terão acesso aos recursos da empresa. Para obter detalhes sobre o serviço de atestado de estado de funcionamento e sobre como o estado de funcionamento dos dispositivos é reportado no Intune, consulte [Device Health Attestation](#bkmk_devicehealth).  
 
--   **Nowe ustawienia zasad zgodności:** Nowe ustawienia zasad zgodności zwiększyć bezpieczeństwo i ochrona na urządzeniach, które są używane do dostępu do firmowej poczty e-mail i usług programu SharePoint:  
+-   **Novas definições de política de conformidade:** As novas definições de política de conformidade ajudam a melhorar a segurança e proteção em dispositivos que são utilizados para aceder ao e-mail da empresa e aos SharePoint services:  
 
-    -   **Wymagaj aktualizacji automatycznych:** Urządzenia z Windows 8.1 lub nowszym można wymagać, aby zezwalały na automatyczne instalowanie aktualizacji, a także określić klasę aktualizacji, które są zainstalowane.  Użytkownik może wybrać: instalowane tylko aktualizacje oznaczone jako ważne lub wszystkie zalecane aktualizacje.  
+    -   **Requerer atualizações automáticas:** Pode exigir a dispositivos com Windows 8.1 ou posterior para permitir a instalação automática de atualizações e também de especificar a classe de atualizações que estão instalados.  Pode optar por: instalar apenas as atualizações marcadas como importantes ou instalar todas as atualizações recomendadas.  
 
-         Aby utworzyć regułę dla aktualizacji automatycznych, otwórz **Kreatora tworzenia zasad zgodności**i Dodaj nową regułę.  Wybierz **minimalna Klasyfikacja wymaganych aktualizacji** jako warunek i ustaw wartość na jedną z dostępnych wartości: **Brak**, **zalecane**, i **ważne**.  
+         Para criar uma regra para atualizações automáticas, abra o **criar Assistente de política de conformidade**e adicione uma nova regra.  Selecione **classificação mínima de atualizações necessárias** como condição e defina o valor como um dos valores disponíveis: **Nenhum**, **recomendado**, e **importante**.  
 
-        -   **Brak:** Aktualizacje nie są instalowane automatycznie.  
+        -   **Nenhuma:** As atualizações não são instaladas automaticamente.  
 
-        -   **Zalecane:** Wszystkie zalecane aktualizacje są instalowane.  
+        -   **Recomendado:** Todas as atualizações recomendadas são instaladas  
 
-        -   **Ważne:** Instalowane są tylko aktualizacje sklasyfikowane jako ważne.  
+        -   **Importante:** Apenas as atualizações classificadas como importantes estão instaladas.  
 
-    -   **Wymagaj hasła do odblokowania urządzeń przenośnych:** Jeśli to ustawienie jest równa **tak**, użytkownicy końcowi muszą wprowadzić hasło przed uzyskaniem dostępu do swoich urządzeń.  
+    -   **Exigir uma palavra-passe para desbloquear dispositivos móveis:** Quando esta definição está definida como **Sim**, os utilizadores finais tem de introduzir uma palavra-passe antes de poderem aceder ao respetivo dispositivo.  
 
-         Aby utworzyć regułę dla hasła do odblokowania urządzeń przenośnych, otwórz **Kreatora tworzenia zasad zgodności**i Dodaj nową regułę. Wybierz **Wymagaj hasła do odblokowania bezczynnego urządzenia** jako warunek i ustaw wartość **True**.  
+         Para criar uma regra para palavra-passe desbloquear dispositivos móveis, abra o **criar Assistente de política de conformidade**e adicione uma nova regra. Selecione **exigir uma palavra-passe para desbloquear um dispositivo inativo** como condição e defina o valor **verdadeiro**.  
 
-    -   **Liczba minut braku aktywności, zanim będzie wymagane hasło:**  Określa czas bezczynności, po którym użytkownik musi wprowadzić ponownie swoje hasło.  
+    -   **Minutos de inatividade antes da palavra-passe é exigida:**  Especifica o tempo inativo antes de o utilizador ter de reintroduzir a palavra-passe.  
 
-         Aby utworzyć tę regułę, otwórz **Kreatora tworzenia zasad zgodności**i Dodaj nową regułę. **Wybierz liczba minut braku aktywności, zanim będzie wymagane hasło** jako warunek i ustaw dla niego jedną z dostępnych opcji: 1 minutę, 5 minut, 15 minut, 30 minut I godzinę.  
+         Para criar esta regra, abra o **criar Assistente de política de conformidade**e adicione uma nova regra. **Selecione os minutos de inatividade antes da palavra-passe é exigida** como condição e defina o valor como uma das opções disponíveis: 1 minuto, 5 minutos, 15 minutos, 30 minutos, posso hora.  
 
--   **Przesłonięcie reguły domyślnej — zawsze Zezwalaj urządzeniom zgodnym i zarejestrowanym w usłudze Intune w celu uzyskania dostępu do lokalnego programu Exchange:**  
+-   **Substituição da regra predefinida - permitir sempre que dispositivos conformes e inscritos no Intune aceder ao Exchange no local:**  
 
-     Po zaznaczeniu tej opcji urządzenia zarejestrowane w usłudze Intune i zgodne z zasadami zgodności mogą uzyskać dostęp do lokalnego programu Exchange. Ta reguła zastępuje regułę domyślną, co oznacza, że nawet w przypadku ustawienia reguły domyślnej na kwarantannę lub blokowanie dostępu, zarejestrowane i zgodne urządzenia nadal będzie można uzyskać dostęp do lokalnego programu Exchange.  
-     Użyj tego ustawienia, aby zarejestrowane i zgodne urządzenia zawsze miały dostęp do poczty e-mail za pośrednictwem lokalnego programu Exchange.  
+     Quando seleciona esta opção, os dispositivos que estão inscritos no Intune e em conformidade com as políticas de conformidade estão autorizados a aceder ao Exchange no local. Esta regra substitui a regra predefinida, que significa que mesmo que defina a regra predefinida para colocar em quarentena ou bloquear o acesso, inscritos e conformes ainda será capazes de aceder ao Exchange no local.  
+     Utilize esta definição quando quiser inscrito e os dispositivos compatíveis tenham sempre acesso ao e-mail através do Exchange no local.  
 
-     Jest to obsługiwane na następujących platformach:  Windows Phone 8 i nowsze, iOS 6 i nowsze. System android 4.0 i nowsze, Samsung KNOX Standard 4.0 lub nowszy.  
+     Isto é suportado nas seguintes plataformas:  Windows Phone 8 e posterior, iOS 6 e posterior. Android 4.0 e posterior, Samsung KNOX Standard 4.0 e posterior.  
 
-     Aby użyć tej opcji, przejdź do **ogólne** strony **warunkowego Kreatora konfiguracji zasad dostępu** dla lokalnego programu Exchange.  
+     Para utilizar esta opção, vá para o **geral** página do **configurar Assistente de política de acesso condicional** para o Exchange no local.  
 
-##  <a name="bkmk_clientStatus"></a>Stan online klienta  
-Począwszy od wersji zapoznawczej technical preview 1601, można określić jeden rzut oka czy klient jest w trybie online lub offline w konsoli programu Configuration Manager. Dzięki zaktualizowanym ikonom i kolumn w liście urządzeń konsoli można ocenić stan klientów w środowisku w celu zidentyfikowania obszarów problemów oraz innych problemów, które mogą wymagać Twojej uwagi.  
+##  <a name="bkmk_clientStatus"></a>Estado online do cliente  
+A partir do technical Preview 1601, pode identificar rapidamente se um cliente está online ou offline na consola do Configuration Manager. Com ícones atualizados e colunas nas listagens de dispositivo da consola, pode avaliar o estado dos clientes no seu ambiente para identificar áreas problemáticas e outros problemas que poderão ter a sua atenção.  
 
-Klient jest w trybie online, jeśli jest on aktualnie połączony z rolą systemu lokacji punktu zarządzania Configuration Manager. Tak długo, jak punkt zarządzania odbiera komunikaty typu ping od klienta, jest w stanie online. Jeśli punkt zarządzania nie odbierze komunikatu do 5 minut, stan klienta zmieni się na offline.  
+Um cliente está online se estiver atualmente ligado a uma função de sistema de sites do ponto de gestão do Configuration Manager. Desde que o ponto de gestão está a receber mensagens do tipo ping do cliente, o respetivo estado é online. Se a gestão não receber uma mensagem para 5 minutos ou por isso, o estado do cliente é alterado para offline.  
 
-### <a name="icons-for-client-status"></a>Ikony stanu klienta  
+### <a name="icons-for-client-status"></a>Ícones de estado do cliente  
 
 |||  
 |-|-|  
-|![ikona stanu online dla klientów](media/online-status-icon.png)|Klient jest w trybie online.|  
-|![ikona stanu offline dla klientów](media/offline-status-icon.png)|Klient jest w trybie offline.|  
-|![ikona nieznanego stanu dla klientów](media/unknown-status-icon.png)|Stan klienta jest nieznany.|  
+|![ícone de estado online dos clientes](media/online-status-icon.png)|O cliente está online.|  
+|![ícone de estado offline dos clientes](media/offline-status-icon.png)|O cliente está offline.|  
+|![ícone de estado desconhecido dos clientes](media/unknown-status-icon.png)|Estado do cliente é desconhecido.|  
 
-### <a name="prerequisites"></a>Wymagania wstępne  
- Stan online klienta nie ma wymagań wstępnych. Możesz rozpocząć korzystanie z niej natychmiast po zainstalowaniu programu Configuration Manager technical preview 1601.  
+### <a name="prerequisites"></a>Pré-requisitos  
+ Estado online do cliente não tem pré-requisitos. Pode começar a utilizá-lo assim que o Configuration Manager technical preview 1601 for instalado.  
 
-### <a name="limitations"></a>Ograniczenia  
- Stan online klienta jest dostępna dla komputerów z systemem Windows tylko z zainstalowanym klientem programu Configuration Manager. Stan online klienta nie jest obsługiwana dla komputerów Mac, Linux lub UNIX komputera lub urządzeń zarządzanych za pomocą na\-lokalnych zarządzanie urządzeniami przenośnymi.  
+### <a name="limitations"></a>Limitações  
+ Estado online do cliente só está disponível para computadores Windows com o cliente do Configuration Manager instalado. Estado online do cliente não é suportado para computadores Mac, Linux ou UNIX computador ou dispositivos geridos com no\-no local a gestão de dispositivos móveis.  
 
-### <a name="to-view-client-online-status"></a>Aby wyświetlić stan online klienta  
+### <a name="to-view-client-online-status"></a>Para ver o estado online do cliente  
 
-1.  W konsoli programu Configuration Manager, przejdź do **zasoby i zgodność > Przegląd > urządzenia**.  
+1.  Na consola do Configuration Manager, vá para **ativos e compatibilidade > Descrição geral > dispositivos**.  
 
-2.  Kliknij prawym przyciskiem myszy nagłówek kolumny, a następnie kliknij jedno z pól stanu online klienta, aby dodać go do widoku urządzeń. Pola są  
+2.  Faça duplo clique no cabeçalho da coluna e, em seguida, clique em um dos campos de estado online do cliente para adicioná-lo para a vista do dispositivo. Os campos são  
 
-    -   **Stan online urządzenia** wskazuje, czy klient jest obecnie w trybie online, czy offline.  
+    -   **Estado Online do Dispositivo** indica se o cliente está atualmente online ou offline.  
 
-    -   **Godzina ostatniej obecności Online** wskazuje, kiedy stan online klienta zmienił z trybu offline do trybu online.  
+    -   **Última vez Online** indica quando o estado online do cliente mudou de offline para online.  
 
-    -   **Godzina ostatniej obecności Offline** wskazuje zmiany stanu z trybu online do trybu offline.  
+    -   **Última vez Offline** indica quando o estado mudou de online para offline.  
 
- Aby wyświetlić ostatnie zmiany stanu klienta, Odśwież konsolę.  
+ Para mostrar as alterações recentes ao estado do cliente, atualize a consola.  
 
-##  <a name="bkmk_appmgmt1601"></a>Ulepszenia dotyczące zarządzania aplikacjami  
- W wersji zapoznawczej Technical Preview 1601 dodano obsługę następujących funkcji:  
+##  <a name="bkmk_appmgmt1601"></a>Melhoramentos à gestão de aplicações  
+ No 1601 Technical Preview foi adicionado suporte para as seguintes funcionalidades:  
 
-### <a name="manage-volume-purchased-apps-for-ios-devices"></a>Zarządzanie zbiorczo zakupionymi aplikacjami dla urządzeń z systemem iOS  
- Niektóre sklepy z aplikacjami umożliwiają zakup wielu licencji dla aplikacji, które mają być uruchamiane w firmie możliwości. Dzięki temu można zmniejszyć koszty administracyjne śledzenia wielu zakupionych kopii aplikacji.  
+### <a name="manage-volume-purchased-apps-for-ios-devices"></a>Gerir aplicações compradas em grandes volumes para dispositivos iOS  
+ Algumas lojas de aplicações permitem comprar várias licenças para uma aplicação que pretende executar na sua empresa. Isto ajuda a reduzir a sobrecarga administrativa de controlar várias cópias adquiridas de aplicações.  
 
- Menedżer konfiguracji ułatwia teraz Zarządzanie aplikacjami zakupionymi za pośrednictwem takiego programu przez zaimportowanie informacji o licencji ze sklepu z aplikacjami i śledzenie, ile licencji jest używanych.  
+ O Configuration Manager agora ajuda-o a gerir aplicações compradas através de um programa ao importar as informações de licença da loja de aplicações e ao controlar a quantidade de licenças utilizou.  
 
- Aby uzyskać więcej informacji, zobacz [Zarządzanie aplikacjami zakupionymi za pośrednictwem programu zakupów zbiorczych z programem Configuration Manager](https://technet.microsoft.com/library/mt627954.aspx).  
+ Para obter mais informações, consulte [gerir aplicações compradas através de um programa de compra de volume com o Configuration Manager](https://technet.microsoft.com/library/mt627954.aspx).  
 
-### <a name="ios---app-configuration-for-applicationsbr-hybrid"></a>iOS — Konfiguracja aplikacji dla aplikacji<br />Hybrydowe  
- Niektóre aplikacje iOS obsługują wstępnie skonfigurowane ustawienia, takie jak serwer lub baza danych, z którą aplikacja powinna się połączyć. Program Configuration Manager obsługuje teraz wdrażanie zasad konfiguracji aplikacji na urządzeniu, które umożliwiają użytkownikowi natychmiastowe korzystanie z aplikacji bez konieczności się z następującymi informacjami. Deweloperzy muszą włączyć tę funkcję w swoich aplikacjach.  
+### <a name="ios---app-configuration-for-applicationsbr-hybrid"></a>iOS - configuração de aplicação para aplicações<br />Híbrida  
+ Algumas aplicações iOS suportam a pré-configuração de definições, tais como um servidor ou base de dados a que a aplicação deve estabelecer ligação. O Configuration Manager suporta agora implementar aplicações políticas de configuração para o dispositivo que permitem que o utilizador utilize a aplicação imediatamente sem necessitar de conhecer estas informações. Os programadores tem de ativar esta funcionalidade nas suas aplicações.  
 
- Ograniczona liczba publicznie wydanych aplikacji obsługuje obecnie wstępne skonfigurowanie ustawienia; może również we własnym zakresie zdobyciu aplikacje biznesowe, które je obsługują.  
+ Um número limitado de aplicações lançadas ao público suporta atualmente a pré-configuração de definições; poderá também ter internamente programado linha de negócio que suportam estas.  
 
-#### <a name="prerequisites-for-this-scenario"></a>Wymagania wstępne dotyczące tego scenariusza  
+#### <a name="prerequisites-for-this-scenario"></a>Pré-requisitos para este cenário  
 
--   Należy dodać subskrypcję Microsoft Intune do programu Configuration Manager.  
+-   Tem de ter adicionado uma subscrição do Microsoft Intune ao Configuration Manager.  
 
--   Należy dodać poprawny certyfikat usługi APNs firmy Apple do subskrypcji usługi Intune.  
+-   Tem de ter adicionado um certificado do Apple APNs válido à subscrição do Intune.  
 
--   Należy wdrożyć aplikację systemu iOS, która obsługuje konfigurację aplikacji.  
+-   Tem de ter implementado uma aplicação iOS que suporte a configuração de aplicação.  
 
-#### <a name="try-it-out"></a>Wypróbuj  
- Gdy powyższe wymagania wstępne są spełnione, należy utworzyć aplikację programu Configuration Manager, która używa typu wdrożenia iOS. Aplikację, której używasz musi obsługiwać funkcję konfiguracji aplikacji. Zapoznaj się z dokumentacją dostawcy aplikacji, aby dowiedzieć się, jakie określone elementy (pary nazwa/wartość), można skonfigurować.  
+#### <a name="try-it-out"></a>Experimente!  
+ Assim que são cumpridos os pré-requisitos acima, terá de criar uma aplicação do Configuration Manager que utiliza um tipo de implementação iOS. A aplicação que utilizar tem de suportar a configuração de aplicação. Consulte a documentação do fornecedor da aplicação para saber que itens específicos (pares nome/valor), pode configurar.  
 
- Następnie należy skojarzyć zasady konfiguracji aplikacji z typem wdrożenia iOS podczas wdrażania aplikacji. Można także wdrożyć zasady z **zasady konfiguracji aplikacji** węzła, przeznaczone dla istniejącej aplikacji i kolekcji.  
+ Em seguida, associar a política de configuração de aplicação com o tipo de implementação iOS durante a implementação de aplicação. Também pode implementar a política do **políticas de configuração de aplicação** nó, direcionado para uma aplicação e coleção existentes.  
 
- Spróbuj wykonać następujące zadania, a następnie użyj formularza opinii u góry tego tematu, aby poinformować nas, jak Ci poszło:  
+ Experimente concluir as seguintes tarefas e, em seguida, utilize as informações de feedback perto da parte superior deste tópico para nos informar como correu:  
 
--   Jeśli masz aplikację iOS, która obsługuje konfigurację aplikacji, zapoznaj się z dokumentacją dostawcy aplikacji, aby dowiedzieć się, pary nazw i wartości, należy określić w celu skonfigurowania aplikacji.  
+-   Se tiver uma aplicação iOS que suporte a configuração de aplicação, consulte a documentação do fornecedor da aplicação para saber os pares de nome / valor que tem de especificar para configurar a aplicação.  
 
--   Uruchom **Tworzenie zasad konfiguracji aplikacji** kreatora. Na **zasady systemu iOS** kreatora spróbuj dodać pary nazw i wartości znalezione w dokumentacji dostawcy aplikacji albo można zaimportować plik XML zawierający wymagane wartości.  
+-   Iniciar o **criar política de configuração de aplicação** assistente. No **política iOS** página do assistente, tente adicionar os pares nome / valor encontrado partir a documentação do fornecedor de aplicação ou podem importar um ficheiro XML que contém os valores necessários.  
 
--   W **wdrażanie oprogramowania** kreatora na **zasady konfiguracji aplikacji** Skojarz zasady konfiguracji aplikacji utworzone przy użyciu typu wdrożenia zgodnego z aplikacji.  
+-   No **Implementar Software** assistente, no **política de configuração de aplicação** página, associe a política de configuração de aplicação que criou com um tipo de implementação compatível da aplicação.  
 
-##  <a name="bkmk_compliance1601"></a>Ulepszenia dotyczące ustawień zgodności  
- W wersji zapoznawczej Technical Preview 1601 dodano obsługę następujących funkcji:  
+##  <a name="bkmk_compliance1601"></a>Melhoramentos às definições de compatibilidade  
+ No 1601 Technical Preview foi adicionado suporte para as seguintes funcionalidades:  
 
-### <a name="microsoft-edge-browser-settings"></a>Ustawienia przeglądarki Microsoft Edge  
- Dodano nowe ustawienia przeglądarki Microsoft Edge do **Windows 8.1 i Windows 10** elementu konfiguracji (ustawienia dotyczą tylko urządzeń z systemem Windows 10).  
+### <a name="microsoft-edge-browser-settings"></a>Definições do browser Microsoft Edge  
+ Foram adicionadas novas definições do browser Microsoft Edge para o **Windows 8.1 e Windows 10** item de configuração (definições aplicáveis apenas a dispositivos Windows 10).  
 
- Aby wyświetlić nowe ustawienia, wybierz pozycję **Microsoft Edge** z elementu konfiguracji **ustawienia urządzenia** strony **tworzenia elementu konfiguracji** kreatora.  
+ Para ver as novas definições, selecione **Microsoft Edge** do item de configuração **definições do dispositivo** página do **Criar Item de configuração** assistente.  
 
- Aby uzyskać więcej informacji, zobacz [jak utworzyć elementy konfiguracji dla urządzeń Windows 8.1 i Windows 10 zarządzanych bez klienta programu System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
+ Para obter mais informações, consulte [como criar itens de configuração para dispositivos Windows 8.1 e Windows 10 geridos sem o cliente do System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
 
-### <a name="compliance-settings-for-windows-10-team-devices"></a>Ustawienia zgodności dla urządzeń z systemem Windows 10 Team  
- Te nowe ustawienia zgodności umożliwiają konfigurowanie urządzeń z systemem Windows 10 team, na przykład urządzeń Surface Hub.  
+### <a name="compliance-settings-for-windows-10-team-devices"></a>Definições de conformidade para dispositivos Windows 10 Team  
+ Utilize estas novas definições de compatibilidade para configurar dispositivos que executam o Windows 10 team, tais como dispositivos Surface Hub.  
 
- Aby wyświetlić nowe ustawienia, wybierz pozycję **systemu Windows 10 Team** z elementu konfiguracji **ustawienia urządzenia** strony **tworzenia elementu konfiguracji** kreatora.  
+ Para ver as novas definições, selecione **Windows 10 Team** do item de configuração **definições do dispositivo** página do **Criar Item de configuração** assistente.  
 
- Aby uzyskać więcej informacji, zobacz [jak utworzyć elementy konfiguracji dla urządzeń Windows 8.1 i Windows 10 zarządzanych bez klienta programu System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
+ Para obter mais informações, consulte [como criar itens de configuração para dispositivos Windows 8.1 e Windows 10 geridos sem o cliente do System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
 
-### <a name="android---kiosk-mode-for-samsung-knox-standardbr-hybrid"></a>Android — tryb kiosku dla Samsung KNOX Standard<br />Hybrydowe  
- Tryb kiosku umożliwia blokowanie urządzenia w celu zezwolenia tylko określonych funkcji. Na przykład można zezwolić na uruchamianie na urządzeniu tylko określonej zarządzanej aplikacji albo można wyłączyć przyciski regulacji głośności na urządzeniu. Można użyć tych ustawień dla modeli pokazowych urządzenia lub dla urządzeń przeznaczonych do wykonywania tylko jednej funkcji — na przykład urządzeń w punkcie sprzedaży. Te ustawienia są niedostępne w przypadku urządzeń Samsung KNOX Standard w **Windows 8.1 i Windows 10** elementu konfiguracji (ustawienia dotyczą tylko urządzeń z systemem Windows 10).  
+### <a name="android---kiosk-mode-for-samsung-knox-standardbr-hybrid"></a>Android - modo de local público para Samsung KNOX Standard<br />Híbrida  
+ Modo de local público permite-lhe bloquear um dispositivo para que apenas determinadas funcionalidades funcionem. Por exemplo, pode permitir que um dispositivo execute apenas uma aplicação gerida que especificar ou pode desativar os botões de volume num dispositivo. Estas definições podem ser utilizadas para um modelo de demonstração de um dispositivo ou para um dispositivo com a finalidade de desempenhar apenas uma função, como um dispositivo de ponto de venda. Estas definições não estão disponíveis para dispositivos Samsung KNOX Standard no **Windows 8.1 e Windows 10** item de configuração (definições aplicáveis apenas a dispositivos Windows 10).  
 
- Aby wyświetlić nowe ustawienia, wybierz pozycję **tryb kiosku — Samsung KNOX** z elementu konfiguracji **ustawienia urządzenia** strony **tworzenia elementu konfiguracji** kreatora.  
+ Para ver as novas definições, selecione **modo de local público - Samsung KNOX** do item de configuração **definições do dispositivo** página do **Criar Item de configuração** assistente.  
 
- Aby uzyskać więcej informacji, zobacz [jak utworzyć elementy konfiguracji dla urządzeń Windows 8.1 i Windows 10 zarządzanych bez klienta programu System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
+ Para obter mais informações, consulte [como criar itens de configuração para dispositivos Windows 8.1 e Windows 10 geridos sem o cliente do System Center Configuration Manager](../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  

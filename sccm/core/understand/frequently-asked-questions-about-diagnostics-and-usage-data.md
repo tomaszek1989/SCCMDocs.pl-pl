@@ -1,6 +1,6 @@
 ---
-title: "Często zadawane pytania dotyczące danych diagnostycznych | Dokumentacja firmy Microsoft"
-description: "Znajdź często zadawane pytania dotyczące danych diagnostycznych i użycia programu System Center Configuration Manager."
+title: "Dados de diagnóstico FAQ | Microsoft Docs"
+description: "Localize perguntas mais frequentes sobre os dados de diagnóstico e utilização para o System Center Configuration Manager."
 ms.custom: na
 ms.date: 2/8/2017
 ms.prod: configuration-manager
@@ -17,42 +17,42 @@ manager: angrobe
 ms.openlocfilehash: 177a30a30f6b8579fa1956d28581d4f9d3a11838
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pl-PL
+ms.contentlocale: pt-PT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="frequently-asked-questions-about-diagnostics-and-usage-data-for-system-center-configuration-manager"></a>Często zadawane pytania dotyczące danych diagnostycznych i danych użycia dla programu System Center Configuration Manager
+# <a name="frequently-asked-questions-about-diagnostics-and-usage-data-for-system-center-configuration-manager"></a>Perguntas frequentes sobre diagnósticos e dados de utilização para o System Center Configuration Manager
 
-*Dotyczy: Program System Center Configuration Manager (Current Branch)*
+*Aplica-se a: O System Center Configuration Manager (ramo atual)*
 
-Poniżej są często zadawane pytania dotyczące danych diagnostycznych i użycia programu System Center Configuration Manager:  
+As seguintes perguntas mais frequentes sobre os dados de diagnóstico e utilização para o System Center Configuration Manager:  
 
-###  <a name="bkmk_off"></a> Jak wyłączyć telemetrię?  
-Nie można wyłączyć telemetrii. Można jednak wybrać poziom zbieranych danych telemetrycznych. Punkt połączenia usługi można również użyć w trybie offline pomagające w zarządzaniu podczas przesyłania danych telemetrycznych.
+###  <a name="bkmk_off"></a> como desligo a telemetria?  
+Telemetria não pode ser desativada. No entanto, pode escolher o nível de dados de telemetria que são recolhidos. Também pode utilizar um ponto de ligação de serviço no modo offline, para ajudar a gerir quando os dados de telemetria são submetidos.
 
-Bieżąca gałąź programu Configuration Manager wymaga aktualizacji regularnie do obsługi nowych wersji systemu Windows 10 i Microsoft Intune. Firma Microsoft wymaga co najmniej podstawowego poziomu danych diagnostycznych i danych użycia, aby zapewnić aktualność produktu poprawić środowisko aktualizacji oraz zwiększyć jakość i bezpieczeństwo produktu.
+O ramo atual do Configuration Manager tem de ser atualizado regularmente para suportar novas versões do Windows 10 e o Microsoft Intune. Microsoft necessita, pelo menos, o nível básico dos diagnósticos e dados de utilização para manter o produto atualizado, melhorar a experiência de atualização e melhorar a qualidade e segurança do produto.
 
-###  <a name="bkmk_retention"></a> Co to jest okres przechowywania danych?  
- Dane diagnostyczne i użycia są przechowywane przez jeden rok.  
+###  <a name="bkmk_retention"></a> O que é o período de retenção de dados?  
+ Os dados de diagnóstico e de utilização são conservados durante um ano.  
 
-###  <a name="bkmk_update"></a> Czy podczas instalowania lub aktualizowania produktu są wysyłane dane diagnostyczne i dane użycia?  
- Nie. Dane diagnostyczne i dane użycia są wysyłane dopiero po zainstalowaniu i uruchomieniu lokacji.  
+###  <a name="bkmk_update"></a> Os diagnósticos e dados de utilização são enviados ao instalar ou atualizar o produto?  
+ Não. Os diagnósticos e dados de utilização são apenas enviados depois do site ser instalado e estar operacional.  
 
-###  <a name="bkmk_frequency"></a> Jak często są wysyłane dane?  
- SQL przechowywane procedury wykonywane co siedem dni (od daty zainstalowania lokacji). W trybie online punkt połączenia usługi jest skonfigurowany tak, aby przekazywał dane po uruchomieniu zapytań. W trybie offline administrator przekazuje dane przy użyciu narzędzia połączenia usługi. (Należy pamiętać, że dane nie jest początkowo dostępna w trybie offline do siedmiu dni, po zainstalowaniu lokacji).  
+###  <a name="bkmk_frequency"></a> Os dados são enviados com que frequência?  
+ O SQL Server armazenada procedimentos executados a cada sete dias (a contar da data em que a instalação do site). No modo online, o ponto de ligação de serviço está configurado para carregar os dados após a execução de consultas. No modo offline, o administrador utiliza a ferramenta de ligação de serviço para carregar os dados. (Tenha em atenção de que os dados não estão disponíveis inicialmente para utilização offline sete dias após a instalação do site.)  
 
-###  <a name="bkmk_network"></a> Czy przy użyciu danych można utworzyć mapę sieci?  
- Jak pokazano w opisie poziomy zbierania diagnostycznych danych użycia programu System Center Configuration Manager, szczegóły lokacji zawierają informacje o strefie czasowej z każdej lokacji. Te informacje mogą zapewniają wgląd w lokalizację geograficzną i rozproszenie lokacji w hierarchii. Jednak są zbierane żadne informacje sieci, (takich adresów IP lub bardziej szczegółowych informacji geograficznych).
- - [Dane diagnostyczne dla 1511](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1511)
- - [Dane diagnostyczne 1602](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1602)
- - [Przesłanie danych diagnostycznych dla wersji 1606](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1606)
- - [Przesłanie danych diagnostycznych dla wersji 1610](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1610)
+###  <a name="bkmk_network"></a> Os dados podem ser utilizados para formar um mapa de rede?  
+ Como é mostrado na descrição dos níveis de recolha de dados de diagnóstico de utilização para o System Center Configuration Manager, os detalhes de site incluem informações de fuso horário de cada site. Esta informação pode fornecem informações aprofundadas de geolocalização abrangente e dispersão global dos sites numa hierarquia. No entanto, são recolhidos sem detalhes da rede, (esses endereços IP ou informações geográficas mais detalhadas).
+ - [Dados de diagnóstico para 1511](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1511)
+ - [Dados de diagnóstico para 1602](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1602)
+ - [Dados de diagnóstico da versão 1606](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1606)
+ - [Dados de diagnóstico da versão 1610](/sccm/core/plan-design/diagnostics/levels-of-diagnostic-usage-data-collection-1610)
 
 
-###  <a name="bkmk_tables"></a> Czy dane w tabelach niestandardowych są widoczne?  
- Nie. Dane diagnostyczne i użycia są zbierane przez procedury składowane SQL w domyślnych tabelach produktów w bazie danych (które mają przedrostek **TEL_** ). W ramach zapytania dotyczącego wykrywania schematu SQL tworzony jest skrót wszystkich nazw tabel na potrzeby porównania ze znanymi wartościami domyślnymi. To jest określenie, czy istnieją tabele niestandardowe w bazie danych (czyli schemat bazy danych jest dłuższy od wartość domyślna), ale nie żadnych danych zawartych w tych tabelach.  
+###  <a name="bkmk_tables"></a> Consegue ver os dados nas tabelas personalizadas?  
+ Não. Dados de diagnóstico e utilização são recolhidos através de procedimentos armazenados de SQL relativamente a tabelas de produtos predefinidas na base de dados (todas as que têm o prefixo **Tel _** ). Como parte da consulta de deteção do esquema SQL, todos os nomes de tabela estão têm um hash para comparação contra as predefinições conhecidas. Isto pode determinar que tabelas personalizadas existem na base de dados (que é expandido o esquema de base de dados da predefinição), mas não quaisquer dados contidos nessas tabelas.  
 
-###  <a name="bkmk_databases"></a>Zobacz nazwy innych baz danych, lub czy są widoczne w innych bazach danych?  
- Nie. Procedury składowane służące do zbierania danych są ograniczone do bazy danych lokacji.  
+###  <a name="bkmk_databases"></a>Pode ver os nomes de outras bases de dados ou, pode ver os dados nas outras bases de dados?  
+ Não. Os procedimentos armazenados para recolher dados estão limitados à base de dados do site.  
 
-## <a name="see-also"></a>Zobacz także  
- [Dane diagnostyczne i dane użycia dla programu System Center Configuration Manager](../../core/plan-design/diagnostics/diagnostics-and-usage-data.md)
+## <a name="see-also"></a>Consulte também  
+ [Os diagnósticos e dados de utilização para o System Center Configuration Manager](../../core/plan-design/diagnostics/diagnostics-and-usage-data.md)

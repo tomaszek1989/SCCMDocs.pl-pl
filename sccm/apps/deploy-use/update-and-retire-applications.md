@@ -1,44 +1,40 @@
 ---
-title: Zaktualizuj i wycofywania aplikacji | Dokumentacja firmy Microsoft
-description: "Popraw, zastępują lub odinstalować wdrożone aplikacje za pomocą programu System Center Configuration Manager."
+title: "Atualizar e extinguir aplicações | Microsoft Docs"
+description: "Rever, substituir ou desinstalar aplicações implementadas através do System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-app
+ms.technology: configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 68ac8a07-8e54-4a3c-91e3-e50dc1cabf5d
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c9fb0fa46058c773eec6ac23999357d35d9f970f
 ms.openlocfilehash: 805e04c447747b4d12350b692880dbc005bd7168
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="update-and-retire-applications-with-system-center-configuration-manager"></a>Zaktualizuj i wycofywania aplikacji z System Center Configuration Manager
+# <a name="update-and-retire-applications-with-system-center-configuration-manager"></a>Atualizar e extinguir aplicações com o System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Aplica-se a: O System Center Configuration Manager (ramo atual)*
 
 
-Istnieje prawdopodobieństwo, że ostatecznie należy wprowadzać zmian w aplikacji, odinstalować aplikację lub Zastąp już raz wdrożonej aplikacji nowej aplikacji. System Center Configuration Manager zapewnia te możliwości, aby ułatwić aktualizowanie i wycofywania aplikacji:  
+É provável que, eventualmente, poderá ser útil efetuar alterações a uma aplicação, desinstalar uma aplicação ou substituir uma aplicação já implementada por uma nova aplicação. System Center Configuration Manager dá-lhe estas capacidades, para o ajudar a atualizar e extinguir aplicações:  
 
--   **Popraw aplikacji**. Po wprowadzeniu zmian do aplikacji lub typu wdrożenia programu Configuration Manager przechowuje historii zmian. W dowolnym momencie można przywrócić wcześniejszą wersję aplikacji. Możesz również można wyświetlić jego właściwości, przywrócenie poprzedniej poprawki aplikacji lub usunięcie starej poprawki.  
+-   **Rever aplicações**. Quando fizer alterações a uma aplicação ou um tipo de implementação, o Configuration Manager mantém um histórico de alterações. Pode reverter a aplicação para uma revisão anterior em qualquer altura. Também pode ver as respetivas propriedades, restaurar uma revisão anterior de uma aplicação ou eliminar uma revisão antiga.  
 
-  Aby uzyskać więcej informacji, zobacz [wersje aplikacji](revise-and-supersede-applications.md#application-revisions).  
+  Para obter mais informações, consulte [revisões de aplicações](revise-and-supersede-applications.md#application-revisions).  
 
--   **Zastępowania aplikacji**. Można uaktualnić lub zastąpić istniejące aplikacje przy użyciu relacji zastępowania. Podczas zastępowania aplikacji można określić nowy typ wdrożenia w celu zastąpienia typu wdrożenia zastępowanej aplikacji. Ponadto można ustalić, czy należy uaktualnić lub odinstalować zastępowanej aplikacji przed aplikacji zastępującej jest zainstalowany.  
+-   **Substituir aplicações**. Pode atualizar ou substituir as aplicações existentes utilizando uma relação de substituição. Se substituir uma aplicação, pode especificar um novo tipo de implementação para substituir o tipo de implementação da aplicação substituída. Além disso, pode definir se atualizar ou desinstalar a aplicação substituída antes da aplicação substituta está instalado.  
 
-  Aby uzyskać więcej informacji, zobacz [zastępowania aplikacji](revise-and-supersede-applications.md#application-supersedence).  
+  Para obter mais informações, consulte [substituição de aplicações](revise-and-supersede-applications.md#application-supersedence).  
 
--   **Odinstalowywanie aplikacji**. Program Configuration Manager sprawia, że dezinstalacji aplikacji łatwe. Można to zrobić w trybie dyskretnym, bez żadnej interwencji, aplikacji lub urządzenia użytkownika.  
+-   **Desinstalar aplicações**. Gestor de configuração facilita a desinstalação de uma aplicação fácil. Isto pode ser conseguido de forma silenciosa, sem qualquer intervenção do utilizador do dispositivo ou aplicação.  
 
-  Aby uzyskać więcej informacji, zobacz [odinstalowanie aplikacji](uninstall-applications.md).  
-
+  Para obter mais informações, consulte [desinstalar aplicações](uninstall-applications.md).  

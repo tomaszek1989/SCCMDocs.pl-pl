@@ -1,6 +1,6 @@
 ---
-title: Modyfikowanie infrastruktury | Dokumentacja firmy Microsoft
-description: "Dowiedz się, jak wprowadzić zmiany lub wykonać akcje, które mają wpływ na infrastruktury programu Configuration Manager, które zostały wdrożone."
+title: Modificar a infra-estrutura | Microsoft Docs
+description: "Saiba como efetuar alterações ou executar ações que afetam a infraestrutura do Configuration Manager que implementou."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,352 +18,352 @@ manager: angrobe
 ms.openlocfilehash: a5228c4984347be4b115bfa5563791fa2fb7319c
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pl-PL
+ms.contentlocale: pt-PT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="modify-your-system-center-configuration-manager-infrastructure"></a>Modyfikowanie infrastruktury programu System Center Configuration Manager
+# <a name="modify-your-system-center-configuration-manager-infrastructure"></a>Modificar a infraestrutura do System Center Configuration Manager
 
-*Dotyczy: Program System Center Configuration Manager (Current Branch)*
+*Aplica-se a: O System Center Configuration Manager (ramo atual)*
 
-Po zainstalowaniu co najmniej jednej lokacji może zaistnieć potrzeba zmodyfikowania konfiguracji lub podjęcia działań, które będą miały wpływ na wdrożoną infrastrukturę.  
+Depois de instalar um ou mais sites, poderá ser necessário modificar configurações ou executar ações que afetam a infraestrutura implementada.  
 
 
-##  <a name="BKMK_ManageSMSprovider"></a>Zarządzanie dostawcą programu SMS  
- Dostawca programu SMS (plik biblioteki dołączanej: smsprov.dll) zapewnia konsolom programu Configuration Manager punkt kontaktu administracyjnego. W przypadku instalowania wielu dostawców programu SMS można zapewnić nadmiarowość punktów kontaktu w celu administrowania lokacją i hierarchią.  
+##  <a name="BKMK_ManageSMSprovider"></a>Gerir o fornecedor de SMS  
+ O fornecedor de SMS (um ficheiro de biblioteca de ligação dinâmica: smsprov.dll) fornece o ponto de contacto administrativo para uma ou mais consolas do Configuration Manager. Ao instalar múltiplos Fornecedores de SMS, poderá fornecer redundância de pontos de contacto, ao administrar o site e a hierarquia.  
 
- W każdej lokacji programu Configuration Manager można ponownie uruchomić Instalatora, aby:  
+ Em cada site do Configuration Manager, pode voltar a executar a configuração para:  
 
--   Dodania dodatkowego wystąpienia dostawcy programu SMS (każde dodatkowe wystąpienie dostawcy programu SMS musi być na innym komputerze)  
+-   Adicionar uma instância adicional do fornecedor de SMS (cada instância adicional do fornecedor de SMS tem de ser num computador separado)  
 
--   Usuwanie wystąpienia dostawcy programu SMS (Aby usunąć ostatniego dostawcę programu SMS dla lokacji, należy odinstalować lokację)  
+-   Remover uma instância do fornecedor de SMS (para remover o último fornecedor de SMS de um site, tem de desinstalar o site)  
 
- Instalację lub usuwanie dostawcy programu SMS można monitorować, przeglądając dziennik **ConfigMgrSetup.log** w folderze głównym serwera lokacji, na którym jest uruchamiany Instalator.  
+ Pode monitorizar a instalação ou remoção do Fornecedor de SMS, visualizando o **ConfigMgrSetup.log** na pasta raiz do servidor de site onde executa a Configuração.  
 
- Przed zmodyfikowaniem dostawcy programu SMS w lokacji należy zapoznać się z informacjami w temacie [Planowanie dostawcy programu SMS dla programu System Center Configuration Manager](../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
+ Antes de modificar o Fornecedor de SMS num site, deve estar familiarizado com as informações em [Planear o Fornecedor de SMS para o System Center Configuration Manager](../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
 
-#### <a name="to-manage-the-sms-provider-configuration-for-a-site"></a>Aby zarządzać konfiguracją dostawcy programu SMS dla lokacji  
+#### <a name="to-manage-the-sms-provider-configuration-for-a-site"></a>Para gerir a configuração do Fornecedor de SMS num site  
 
-1.  Uruchom **Instalatora programu Configuration Manager** z  **&lt;folder instalacji lokacji programu Configuration Manager\>\BIN\X64\setup.exe**.  
+1.  Executar **configuração do Configuration Manager** de  **&lt;pasta de instalação de site do Configuration Manager\>\BIN\X64\setup.exe**.  
 
-2.  Na stronie **Pierwsze kroki** wybierz pozycję **Przeprowadź obsługę lokacji lub zresetuj tę lokację**, a następnie kliknij przycisk **Dalej**.  
+2.  Na página **Introdução**, selecione **Executar a manutenção do site ou repor este site** e clique em **Seguinte**.  
 
-3.  Na stronie **Obsługa lokacji** wybierz pozycję **Modyfikuj konfigurację dostawcy programu SMS**, a następnie kliknij przycisk **Dalej**.  
+3.  Na página **Manutenção do Site**, selecione **Modificar a configuração do Fornecedor de SMS** e clique em **Seguinte**.  
 
-4.  Na stronie **Zarządzanie dostawcami programu SMS** wybierz jedną z poniższych opcji i zgodnie z nią dokończ działanie kreatora:  
+4.  Na página **Gerir Fornecedores de SMS**, selecione uma das seguintes opções e conclua o assistente através de uma das duas opções seguintes:  
 
-    -   Aby dodać w witrynie dodatkowego dostawcę programu SMS:  
+    -   Para adicionar um Fornecedor de SMS adicional a este site:  
 
-         Wybierz pozycję **Dodaj nowego dostawcę programu SMS**, określ nazwę FQDN komputera, który będzie — a aktualnie nie jest — hostem dostawcy programu SMS, a następnie kliknij przycisk **Dalej**.  
+         Selecione **Adicionar um novo Fornecedor de SMS**, especifique o FQDN de um computador que irá alojar o Fornecedor de SMS, e que não aloje nenhum atualmente, e clique em **Seguinte**.  
 
-    -   Aby usunąć dostawcę programu SMS z serwera:  
+    -   Para remover um Fornecedor de SMS de um servidor:  
 
-         Wybierz opcję **Odinstaluj określonego dostawcę programu SMS**, wybierz nazwę komputera, z którego chcesz usunąć dostawcę programu SMS, kliknij przycisk **Dalej**, a następnie potwierdź tę akcję.  
+         Selecione **Desinstalar o Fornecedor de SMS especificado**, selecione o nome do computador do qual pretende remover o Fornecedor de SMS, clique em **Seguinte** e confirme a ação.  
 
         > [!TIP]  
-        >  Aby przenieść dostawcę programu SMS między dwoma komputerami, należy zainstalować dostawcę programu SMS na nowym komputerze, a potem usunąć dostawcę programu SMS z lokalizacji początkowej. Nie ma osobnej opcji, która służyłaby przeniesieniu dostawcy programu SMS między komputerami w ramach jednego procesu.  
+        >  Para mover o Fornecedor de SMS entre dois computadores, tem de instalar o Fornecedor de SMS no novo computador e remover o Fornecedor de SMS da localização original. Não existe uma opção dedicada para mover o Fornecedor de SMS entre computadores num único processo.  
 
- Po zakończeniu działania Kreatora instalacji konfiguracja dostawcy programu SMS zostanie ukończona. Na karcie **Ogólne** w oknie dialogowym **Właściwości** danej lokacji można zweryfikować komputery, które mają zainstalowanego dostawcę programu SMS dla jednej z lokacji.  
+ Depois da conclusão do Assistente de Configuração, a configuração do Fornecedor de SMS está concluída. No separador **Geral**, na caixa de diálogo **Propriedades** do site, pode verificar os computadores que têm um Fornecedor de SMS instalado para um site.  
 
-##  <a name="bkmk_Console"></a>Zarządzanie konsoli programu Configuration Manager  
- Poniżej przedstawiono zadania, które można wykonywać, aby zarządzać konsoli programu Configuration Manager:  
+##  <a name="bkmk_Console"></a>Gerir a consola do Configuration Manager  
+ Seguem-se tarefas que pode fazer para gerir a consola do Configuration Manager:  
 
--   **Modyfikowanie języka wyświetlanego w konsoli programu Configuration Manager** — Aby zmodyfikować zainstalowane języki, zobacz sekcję [język konsoli zarządzania programu Configuration Manager](#BKMK_ManageConsoleLanguages) w tym temacie.  
+-   **Modificar o idioma que é apresentado na consola do Configuration Manager** - para modificar o idiomas instalados, consulte [idioma de consola do Configuration Manager gerir](#BKMK_ManageConsoleLanguages) neste tópico.  
 
--   **Instalowanie dodatkowych konsol** — Aby zainstalować dodatkowe konsole, zobacz [konsole instalacji programu System Center Configuration Manager](/sccm/core/servers/deploy/install/install-consoles).  
+-   **Instalar consolas adicionais** - para instalar consolas adicionais, consulte [consolas de instalar o System Center Configuration Manager](/sccm/core/servers/deploy/install/install-consoles).  
 
--   **Konfigurowanie modelu DCOM** — Aby skonfigurować uprawnienia modelu DCOM umożliwia konsolom sterowanym zdalnie z serwera lokacji do połączenia, zobacz [skonfigurować uprawnienia modelu DCOM dla zdalnej konsoli programu Configuration Manager](#BKMK_ConfigDCOMforRemoteConsole) w tym temacie.  
+-   **Configurar o DCOM** - para configurar permissões de DCOM para ativar a consolas remotas do servidor do site para ligar, consulte [configurar do DCOM para consolas remotas do Configuration Manager](#BKMK_ConfigDCOMforRemoteConsole) neste tópico.  
 
--   **Modyfikowanie uprawnień w celu ograniczenia, co użytkownicy administracyjni mogą wyświetlać w konsoli** — Aby zmodyfikować uprawnienia administracyjne ograniczające co użytkownicy mogą i w konsoli można znaleźć [modyfikacja zakresu administracyjnego użytkownika administracyjnego](/sccm/core/servers/deploy/configure/configure-role-based-administration#BKMK_ModAdminUser).     
+-   **Modificar permissões para limitar o que os utilizadores administrativos podem ver na consola do** - para modificar as permissões administrativas, limitando o que os utilizadores podem ver e fazer na consola, consulte [modificar o âmbito administrativo de um utilizador administrativo](/sccm/core/servers/deploy/configure/configure-role-based-administration#BKMK_ModAdminUser).     
 
-###  <a name="BKMK_ManageConsoleLanguages"></a>Zarządzanie językiem konsoli programu Configuration Manager  
- Podczas instalacji serwera lokacji pliki instalacyjne konsoli programu Configuration Manager oraz obsługiwane pakiety języków lokacji są kopiowane do  **&lt;Ścieżka_instalacji_programu_configmgr\>\Tools\ConsoleSetup** podfolderu na serwerze lokacji.  
+###  <a name="BKMK_ManageConsoleLanguages"></a>Gerir o idioma da consola do Configuration Manager  
+ Durante a instalação do servidor de site, os ficheiros de instalação de consola do Configuration Manager e os pacotes de idiomas suportados para o site são copiados para o  **&lt;Caminhodeinstalaçãodoconfigmgr\>\Tools\ConsoleSetup** subpasta no servidor do site.  
 
--   Po rozpoczęciu instalacji konsoli programu Configuration Manager z tego folderu na serwerze lokacji, konsola programu Configuration Manager i pliki pakietu obsługiwanego języka są kopiowane do komputera  
+-   Quando iniciar a instalação da consola do Configuration Manager a partir desta pasta no servidor do site, a consola do Configuration Manager e os ficheiros do pacote de idiomas suportados são copiados para o computador  
 
--   Gdy pakiet języka jest dostępny z bieżącym ustawieniem języka na komputerze, w tym języku otwarciu konsoli programu Configuration Manager  
+-   Quando um pacote de idiomas está disponível para a definição de idioma atual do computador, a consola do Configuration Manager será aberta nesse idioma  
 
--   Jeśli powiązany pakiet języka nie jest dostępny dla konsoli programu Configuration Manager, konsola otworzy się w języku angielskim  
+-   O pacote de idiomas associado não esteja disponível para a consola do Configuration Manager, a consola será aberta em inglês  
 
-Na przykład Rozważmy scenariusz, w którym zainstalowano konsolę programu Configuration Manager z serwera lokacji obsługującego język angielski, niemiecki i francuski. Po otwarciu konsoli programu Configuration Manager na komputerze z skonfigurowano ustawienie języka francuskiego, konsola otworzy się w języku francuskim. Po otwarciu konsoli programu Configuration Manager na komputerze ze skonfigurowanym ustawieniem języka japońskiego, konsola otworzy w języku angielskim, ponieważ pakiet języka japońskiego nie będzie dostępny.  
+Por exemplo, considere um cenário onde instalar a consola do Configuration Manager de um servidor de site que suporte inglês, alemão e francês. Se abrir a consola do Configuration Manager num computador com uma definição de idioma configurada de francês, a consola será aberta em francês. Se abrir a consola do Configuration Manager num computador com um idioma configurada como japonês, a consola será aberta em japonês porque o pacote de idiomas de japonês não está disponível.  
 
- Zawsze, gdy zostanie otwarta konsola programu Configuration Manager, on określa ustawień języka skonfigurowanych na komputerze, sprawdza, czy powiązany pakiet języka jest dostępny dla konsoli programu Configuration Manager, a następnie otworzeniem konsoli przy użyciu odpowiedniego pakietu języka. Aby otworzyć konsolę programu Configuration Manager w języku angielskim niezależnie od ustawień języka skonfigurowanych na komputerze, należy ręcznie należy usunąć albo zmienić pliki pakietu języka na komputerze.  
+ Sempre que abre a consola do Configuration Manager, determina as definições de idioma configurada para o computador, verifica se um pacote de idiomas associado está disponível para a consola do Configuration Manager e, em seguida, abre a consola utilizando o pacote de idioma apropriado. Quando pretender abrir a consola do Configuration Manager em inglês, independentemente das definições de idioma configuradas no computador, tem manualmente remova ou mude o nome de ficheiros do pacote de idiomas no computador.  
 
- Aby uruchomić konsolę programu Configuration Manager w języku angielskim niezależnie od ustawień regionalnych skonfigurowanych na komputerze, należy użyć poniższych procedur.  
+ Utilize os procedimentos seguintes para iniciar a consola do Configuration Manager em inglês, independentemente da definição de região configurada no computador.  
 
-##### <a name="to-install-an-english-only-version-of-the-configuration-manager-console-on-computers"></a>Aby zainstalować wyłącznie anglojęzyczną wersję konsoli programu Configuration Manager na komputerach  
+##### <a name="to-install-an-english-only-version-of-the-configuration-manager-console-on-computers"></a>Para instalar uma versão apenas em inglês da consola do Configuration Manager em computadores  
 
-1.  W Eksploratorze Windows przejdź do  **&lt;Ścieżka_instalacji_programu_configmgr\>\Tools\ConsoleSetup\LanguagePack**  
+1.  No Explorador do Windows, navegue para  **&lt;Caminhodeinstalaçãodoconfigmgr\>\Tools\ConsoleSetup\LanguagePack**  
 
-2.  Zmień nazwy plików **msp** i **mst**. Możesz na przykład zmienić nazwę **&lt;nazwa pliku\>.MSP na** **&lt;nazwa pliku\>.MSP.disabled**.  
+2.  Mude o nome dos ficheiros **.msp** e **.mst**. Por exemplo, pode alterar **&lt;nome do ficheiro\>.MSP** para **&lt;nome do ficheiro\>.MSP.disabled**.  
 
-3.  Zainstaluj konsolę programu Configuration Manager na komputerze.  
+3.  Instale a consola do Configuration Manager no computador.  
 
     > [!IMPORTANT]  
-    >  Po skonfigurowaniu nowych języków dla serwera lokacji, pliki .msp i .mst zostaną ponownie skopiowane do **LanguagePack** folderu, na które należy powtórzyć całą procedurę, aby zainstalować nowe konsole programu Configuration Manager wyłącznie w języku angielskim.  
+    >  Quando são configurados novos idiomas de servidor para o servidor do site, os ficheiros. msp e. mst são novamente copiados para o **LanguagePack** pasta e terá de repetir este procedimento para instalar novas consolas do Configuration Manager apenas em inglês.  
 
-##### <a name="to-temporarily-disable-a-console-language-on-an-existing-configuration-manager-console-installation"></a>Aby tymczasowo wyłączyć język konsoli w istniejącej instalacji konsoli programu Configuration Manager  
+##### <a name="to-temporarily-disable-a-console-language-on-an-existing-configuration-manager-console-installation"></a>Para desativar temporariamente um idioma de consola numa instalação existente de consola do Configuration Manager  
 
-1.  Na komputerze, na którym jest uruchomiona konsola programu Configuration Manager Zamknij konsolę programu Configuration Manager.  
+1.  No computador que está a executar a consola do Configuration Manager, feche a consola do Configuration Manager.  
 
-2.  W Eksploratorze Windows przejdź do &lt; *Ścieżka_instalacji_konsoli*> \Bin\ na komputerze konsoli programu Configuration Manager.  
+2.  No Explorador do Windows, navegue para &lt; *Caminhodeinstalaçãodaconsola*> \bin\. no computador da consola do Configuration Manager.  
 
-3.  Zmień nazwę odpowiedniego folderu języka skonfigurowanego na komputerze. Jeśli na przykład ustawienia języka komputera skonfigurowano na język niemiecki, można zmienić nazwę folderu **de** na **de.disabled**.  
+3.  Mude o nome da pasta de idiomas apropriada para o idioma que se encontra configurado no computador. Por exemplo, se as definições de idioma do computador tiverem sido definidas para alemão, poderá mudar o nome da pasta **de** para **de.disabled**.  
 
-4.  Aby otworzyć konsolę programu Configuration Manager w języku skonfigurowanym na komputerze, Zmień nazwę folderu oryginalną nazwę. Na przykład zmień nazwę folderu **de.disabled** na **de**.  
+4.  Para abrir a consola do Configuration Manager no idioma que está configurado para o computador, mude o nome da pasta para o nome original. Por exemplo, mude o nome **de.disabled** para **de**.  
 
-##  <a name="BKMK_ConfigDCOMforRemoteConsole"></a>Konfigurowanie uprawnień modelu DCOM dla zdalnej konsoli programu Configuration Manager  
- Konto użytkownika, na którym uruchomiona jest konsola programu Configuration Manager wymaga uprawnień dostępu do bazy danych lokacji za pomocą dostawcy programu SMS. Jednak użytkownik administracyjny używający zdalnej konsoli programu Configuration Manager wymaga również **aktywacji zdalnej** uprawnień modelu DCOM na:  
+##  <a name="BKMK_ConfigDCOMforRemoteConsole"></a>Configurar permissões de DCOM para consolas remotas do Configuration Manager  
+ A conta de utilizador que executa a consola do Configuration Manager necessita de permissão para aceder à base de dados do site utilizando o fornecedor de SMS. No entanto, um utilizador administrativo que utilize uma consola remota do Configuration Manager também necessita de **ativação remota** permissões de DCOM em:  
 
--   komputerze serwera lokacji;  
+-   O computador do servidor do site  
 
--   każdym komputerze, na którym znajduje się wystąpienie dostawcy programu SMS.  
+-   Cada computador que aloja uma instância do Fornecedor de SMS  
 
- Dostępu do dostawcy programu SMS na komputerze udziela grupa zabezpieczeń **Administratorzy programu SMS**, która może też służyć do udzielenia wymaganych uprawnień dotyczących modelu DCOM. (Ta grupa jest lokalnych dla komputera, gdy dostawca programu SMS działa na serwerze członkowskim i jest grupą lokalną domeny, gdy dostawca programu SMS działa na kontrolerze domeny).  
+ O grupo de segurança com o nome **Admins de SMS** concede acesso ao Fornecedor de SMS num computador e também pode ser utilizado para conceder as permissões de DCOM necessárias. (Este grupo é local no computador quando o fornecedor de SMS é executado num servidor membro e é um grupo local de domínio quando o fornecedor de SMS é executado num controlador de domínio.)  
 
 > [!IMPORTANT]  
->  Konsola programu Configuration Manager używa Instrumentacji zarządzania Windows (WMI) do łączenia się z dostawcą programu SMS, a WMI wewnętrznie używa modelu DCOM. W związku z tym program Configuration Manager wymaga uprawnień do aktywacji serwera DCOM na komputerze dostawcy programu SMS, jeśli konsola programu Configuration Manager jest uruchomiona na komputerze innym niż komputer dostawcy programu SMS. Domyślnie aktywacji zdalnej otrzymuje się tylko członkom wbudowanej grupy administratorów. W przypadku przyznania uprawnienia do aktywacji zdalnej całej grupie Administratorzy programu SMS członek tej grupy mógłby próbować ataków DCOM na komputer dostawcy programu SMS. Taka konfiguracja zwiększa także obszar komputera narażony na ataki. Aby osłabić to zagrożenie, należy starannie monitorować członkostwo w grupie Administratorzy programu SMS.  
+>  Consola do Configuration Manager utiliza o Windows Management Instrumentation (WMI) para ligar ao fornecedor de SMS e a WMI utiliza o DCOM internamente. Por conseguinte, o Configuration Manager requer permissões para ativar um servidor DCOM no computador do fornecedor de SMS se a consola do Configuration Manager está em execução num computador diferente do computador do fornecedor de SMS. Por predefinição, a ativação remota é concedida apenas aos membros do grupo Administradores incorporado. Se permitir que o grupo Admins de SMS tenha a permissão Ativação Remota, um membro deste grupo pode tentar ataques DCOM contra o computador do Fornecedor de SMS. Esta configuração também aumenta a superfície de ataque do computador. Para atenuar esta ameaça, monitorize cuidadosamente os membros do grupo Admins de SMS.  
 
- Użyj poniższej procedury można skonfigurować każdą lokację administracji centralnej serwera lokacji głównej i każdy komputer z zainstalowanym dostawcą programu SMS można udzielić dostępu do konsoli dla użytkowników administracyjnych zdalnego programu Configuration Manager.  
+ Utilize o procedimento seguinte para configurar cada site de administração central, servidor de site primário e cada computador onde o fornecedor de SMS instalado para conceder acesso à consola para os utilizadores administrativos a remoto do Configuration Manager.  
 
-#### <a name="to-configure-dcom-permissions-for-remote-configuration-manager-console-connections"></a>Aby skonfigurować uprawnienia modelu DCOM dotyczące zdalnych połączeń z konsolą programu Configuration Manager  
+#### <a name="to-configure-dcom-permissions-for-remote-configuration-manager-console-connections"></a>Para configurar permissões de DCOM para ligações de consolas remotas do Configuration Manager  
 
-1.  Otwórz okno dialogowe **Usługi składowe**, uruchamiając plik **Dcomcnfg.exe**.  
+1.  Abra **Serviços de Componentes**, executando **Dcomcnfg.exe**.  
 
-2.  W **usługi składowe**, kliknij przycisk **katalog główny konsoli** >  **usługi składowe** > **komputerów**, a następnie kliknij przycisk **Mój komputer**. W menu **Akcja** kliknij polecenie **Właściwości**.  
+2.  No **serviços de componentes**, clique em **raiz da consola** >  **serviços de componentes** > **computadores**e, em seguida, clique em **meu computador**. No menu **Ação**, clique em **Propriedades**.  
 
-3.  W oknie dialogowym **Właściwości mojego komputera** na karcie **Zabezpieczenia COM** w sekcji **Uprawnienia uruchamiania i aktywacji** kliknij przycisk **Edytuj limity**.  
+3.  Na caixa de diálogo **Propriedades de O Meu Computador**, na secção **Permissões de Lançamento e Ativação** do separador **Segurança COM**, clique em **Editar Limites**.  
 
-4.  W oknie dialogowym **Uprawnienia uruchamiania i aktywacji** kliknij przycisk **Dodaj**.  
+4.  Na caixa de diálogo **Permissões de Lançamento e Ativação**, clique em **Adicionar**.  
 
-5.  W **Wybieranie użytkowników, komputerów, kont usług lub grup** okna dialogowego, **wprowadź nazwy obiektów do wybrania (przykłady)** wpisz **Administratorzy programu SMS**, a następnie kliknij przycisk **OK**.  
+5.  No **selecionar utilizadores, computadores, contas de serviço ou grupos** caixa de diálogo a **introduzir os nomes de objeto a selecionar (exemplos)** caixa, escreva **Admins de SMS**e, em seguida, clique em **OK**.  
 
     > [!NOTE]  
-    >  Aby móc odnaleźć grupę Administratorzy programu SMS, może być konieczna zmiana ustawienia w polu **Z tej lokalizacji**. Grupa jest lokalną grupą komputera, kiedy dostawca programu SMS jest uruchamiany na serwerze członkowskim, i jest grupą lokalną domeny, kiedy dostawca programu SMS działa na kontrolerze domeny.  
+    >  Poderá ter de alterar a definição **Desta localização** para localizar o grupo Admins de SMS. Este grupo é local no computador quando o Fornecedor de SMS é executado num servidor membro e é um grupo local do domínio quando o Fornecedor de SMS é executado num controlador de domínio.  
 
-6.  W sekcji **Uprawnienia administratorów programu SMS**, w celu zezwolenia na aktywację zdalną, zaznacz pole wyboru **Aktywacja zdalna**.  
+6.  Na secção **Permissões para Admins de SMS**, para permitir a ativação remota, selecione a caixa de verificação **Ativação Remota**.  
 
-7.  Kliknij przycisk **OK**, ponownie kliknij przycisk **OK**, a następnie zamknij okno **Zarządzanie komputerem**. Komputer jest teraz skonfigurowane i umożliwiają zdalne programu Configuration Manager dostęp do członków grupy Administratorzy programu SMS.  
+7.  Clique em **OK** e clique novamente em **OK** e, em seguida, feche **Gestão de Computadores**. O computador está agora configurado para permitir o acesso à consola aos membros do grupo Admins de SMS remoto do Configuration Manager.  
 
- Powtórz tę procedurę na każdym komputerze dostawcy programu SMS, który ma obsługiwać zdalne konsole programu Configuration Manager.  
+ Repita este procedimento em cada computador fornecedor de SMS que possa suportar consolas remotas do Configuration Manager.  
 
-##  <a name="bkmk_dbconfig"></a>Modyfikowanie konfiguracji bazy danych lokacji  
- Po zainstalowaniu lokacji można zmodyfikować konfigurację jej bazy danych i serwera bazy danych, uruchamiając Instalatora na serwerze centralnej lokacji administracyjnej lub lokacji głównej. Bazę danych lokacji można przenieść do nowego wystąpienia programu SQL Server na tym samym komputerze lub do innego komputera z uruchomioną obsługiwaną wersją programu SQL Server. Te i pokrewne zmiany nie są obsługiwane dla konfiguracji bazy danych w lokacjach dodatkowych.  
+##  <a name="bkmk_dbconfig"></a>Modificar a configuração de base de dados do site  
+ Após instalar um site, poderá modificar a configuração de base de dados do site e o servidor da base de dados do site executando o Programa de Configuração num servidor de site de administração central ou servidor de site primário. Pode mover a base de dados do site para uma nova instância do SQL Server no mesmo computador, ou para outro computador que execute uma versão suportada do SQL Server. Estas e as alterações relacionadas não são suportadas para a configuração da base de dados em sites secundários.  
 
- Aby uzyskać więcej informacji na temat limitów pomocy technicznej, zobacz [Zasady pomocy technicznej dotyczące ręcznego wprowadzania zmian w bazach danych w środowisku programu Configuration Manager](https://support.microsoft.com/kb/3106512).  
+ Para obter mais informações sobre os limites do suporte, veja [Política de suporte para alterações manuais da base de dados num ambiente do Configuration Manager](https://support.microsoft.com/kb/3106512).  
 
 > [!NOTE]  
->  Podczas modyfikowania konfiguracji bazy danych lokacji programu Configuration Manager ponownie uruchamia lub instaluje usługi programu Configuration Manager na serwerze lokacji i serwery zdalnego systemu lokacji komunikujących się z bazą danych.  
+>  Quando modificar a configuração de base de dados para um site, o Configuration Manager reinicia ou reinstala serviços do Configuration Manager no servidor de site e servidores de sistema de sites remotos que comunicam com a base de dados.  
 
-**Aby zmodyfikować konfigurację bazy danych**, uruchom Instalatora na serwerze lokacji i wybierz opcję **Przeprowadź obsługę lokacji lub zresetuj tę lokację**. Następnie wybierz opcję **Modyfikuj konfigurację serwera SQL**. Można zmienić następujące konfiguracje bazy danych lokacji:  
+**Para alterar a configuração da base de dados**, terá de executar a Configuração no servidor do site e selecionar a opção **Executar a manutenção do site ou repor este site**. Em seguida, selecione a opção **Modificar a configuração do SQL Server**. Pode alterar as seguintes configurações de bases de dados do site:  
 
--   Serwer z systemem Windows, który bazę danych.  
+-   O servidor baseado em Windows que aloja a base de dados.  
 
--   Wystąpienie programu SQL Server używane na serwerze hostującym jego bazę danych  
+-   A instância do SQL Server utilizada num servidor que aloja a base de dados do SQL Server.  
 
--   Nazwa bazy danych.  
+-   O nome da base de dados.  
 
--   Port usługi SQL Server używany przez program Configuration Manager  
+-   Porta do SQL Server em utilização pelo Configuration Manager  
 
--   Port brokera usług serwera SQL używane przez program Configuration Manager  
+-   Porta do SQL Server Service Broker utilizado pelo Configuration Manager  
 
-**Jeśli przeniesiesz bazy danych lokacji, należy skonfigurować następujące czynności:**  
+**Se mover a base de dados do site, tem de configurar o seguinte:**  
 
--   **Konfigurowanie dostępu:** Po przeniesieniu bazy danych lokacji do nowego komputera Dodaj konto komputera serwera lokacji do **Administratorzy lokalni** na komputerze z uruchomionym programem SQL Server. W przypadku używania klastra programu SQL Server w ramach bazy danych lokacji należy dodać konto komputera do grupy **Administratorzy lokalni** na każdym komputerze węzła klastra systemu Windows Server.  
+-   **Configure o acesso:** Quando mover a base de dados do site para um novo computador, adicione a conta de computador do servidor do site para o **Local de administradores** grupo no computador que executa o SQL Server. Se utilizar um cluster do SQL Server para a base de dados do site, terá de adicionar a conta de computador ao grupo **Administradores Locais** de cada computador com nós de cluster do Windows Server.  
 
--   **Włącz integrację środowiska uruchomieniowego (języka wspólnego CLR):**  W przypadku przenoszenia bazy danych do nowego wystąpienia w programie SQL Server lub do nowego komputera programu SQL Server, należy włączyć integrację środowiska uruchomieniowego (języka wspólnego CLR). Aby włączyć integrację środowiska CLR, użyj **programu SQL Server Management Studio** połączyć się z wystąpieniem programu SQL Server, który jest hostem bazy danych lokacji i uruchom następującą procedurę składowaną jako zapytanie: **procedury składowanej sp_configure 'clr enabled', 1; ponownie skonfigurować**.  
--  **Upewnij się, że nowy serwer SQL nie ma dostępu do lokalizacji kopii zapasowej:** Gdy używasz UNC do przechowywania kopii zapasowej bazy danych lokacji po przeniesieniu bazy danych do nowego serwera, włącznie z przejściem do grupy dostępności AlwaysOn programu SQL Server lub klastra programu SQL Server, upewnij się, konto komputera nowego serwera SQL ma **zapisu** uprawnieniami do lokalizacji UNC.  
+-   **Ative integração language runtime (CLR):**  Ao mover a base de dados para uma nova instância do SQL Server ou para um novo computador do SQL Server, tem de ativar integração language runtime (CLR). Para ativar o CLR, utilize **SQL Server Management Studio** para ligar à instância do SQL Server que aloja a base de dados do site e execute o seguinte procedimento armazenado como uma consulta: **sp_configure 'clr enabled', 1; reconfigure**.  
+-  **Certifique-se de que o novo SQL Server tem acesso à localização de cópia de segurança:** Quando utiliza um UNC para armazenar a cópia de segurança de base de dados do site, depois de mover a base de dados para um novo servidor, incluindo uma mudança de um grupo de Disponibilidade AlwaysOn do SQL Server ou para um cluster do SQL Server, certifique-se a conta de computador do novo servidor do SQL Server tem **escrever** permissões para a localização UNC.  
 
 
 > [!IMPORTANT]  
->  Przed przeniesieniem bazy danych zawierającej co najmniej jedną replikę dla punktów zarządzania należy najpierw usunąć repliki bazy danych. Po przeniesieniu bazy danych można ponownie skonfigurować repliki bazy danych. Aby uzyskać więcej informacji, zobacz [Repliki bazy danych dla punktów zarządzania programu System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
+>  Antes de mover uma base de dados que tenha uma ou mais réplicas de base de dados para pontos de gestão, necessitará primeiro de remover as réplicas de base de dados. Após concluir a mudança da base de dados, poderá reconfigurar as réplicas de base de dados. Para obter mais informações, veja [Réplicas de bases de dados para pontos de gestão do System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
 
-##  <a name="bkmk_SPN"></a>Zarządzanie główną nazwę usługi dla serwera bazy danych lokacji  
-Możliwe jest wybranie konta, na którym uruchomiono usługi SQL Services dla bazy danych lokacji:  
+##  <a name="bkmk_SPN"></a>Gerir o SPN para o servidor de base de dados do site  
+Pode selecionar a conta que executa o SQL Services para a base de dados do site:  
 
--   Gdy usługi są uruchomione przy użyciu konta systemowego komputerów, główna nazwa usługi jest automatycznie rejestrowana.  
+-   Quando os serviços são executados com a conta de sistema de computadores, o SPN é registado automaticamente para si.  
 
--   Gdy usługi są uruchomione przy użyciu lokalnego konta użytkownika domeny, należy ręcznie zarejestrować główną nazwę usługi, aby zapewnić klientom SQL i innym systemom lokacji możliwość przeprowadzenia uwierzytelniania przy użyciu protokołu Kerberos. Bez przeprowadzenia uwierzytelniania przy użyciu protokołu Kerberos komunikacja z bazą danych może zakończyć się niepowodzeniem.  
+-   Quando os serviços são executados com uma conta de utilizador local de domínio, tem de registar manualmente o SPN para garantir que os clientes de SQL e outro sistema de sites podem executar a autenticação Kerberos. Sem autenticação Kerberos, a comunicação com a base de dados poderá falhar.  
 
-Dokumentacja programu SQL Server może ułatwić [ręczne zarejestrowanie głównej nazwy usługi](https://technet.microsoft.com/library/ms191153\(v=sql.120\).aspx) i zapewnienie dodatkowych informacji uzupełniających na temat głównych nazw usług i połączeń przy użyciu protokołu Kerberos.  
+A documentação do SQL Server pode ajudá-lo a [registar manualmente o SPN](https://technet.microsoft.com/library/ms191153\(v=sql.120\).aspx) e fornecer informações adicionais sobre SPNs e ligações Kerberos.  
 
 > [!IMPORTANT]  
->  -   Po utworzeniu głównej nazwy usługi klastrowanego programu SQL Server należy określić nazwę wirtualną klastra programu SQL Server jako nazwę komputera z programem SQL Server.  
-> -   Polecenie rejestrowania głównej nazwy usługi nazwanego wystąpienia programu SQL Server jest takie samo jak polecenie używane podczas rejestrowania głównej nazwy usługi domyślnego wystąpienia, ale numer portu musi być zgodny z portem używanym przez to nazwane wystąpienie.  
+>  -   Ao criar um SPN para um SQL Server em cluster, deverá especificar o nome virtual do Cluster do SQL Server como o nome de computador do SQL Server  
+> -   O comando para registar um SPN para uma instância nomeada do SQL Server é igual ao utilizado para registar um SPN para uma instância predefinida, com exceção do facto de o número de porta ter de corresponder à porta que é utilizada pela instância nomeada  
 
-Główną nazwę usługi konta usługi programu SQL Server na serwerze bazy danych lokacji można zarejestrować za pomocą narzędzia **Setspn**. Narzędzie Setspn należy uruchomić na komputerze należącym do domeny programu SQL Server, używając poświadczeń administratora domeny.  
+Pode registar um SPN para a conta de serviço do SQL Server do servidor de base de dados do site através da ferramenta **Setspn**. Deverá executar a ferramenta Setspn num computador que resida no domínio do SQL Server, a qual deverá utilizar credenciais de Administrador de Domínio ao ser executada.  
 
- Poniższe procedury zawierają przykładowe sposoby zarządzania nazwą SPN konta usługi programu SQL Server przy użyciu narzędzia Setspn w systemie Windows Server 2008 R2. Dokładne wskazówki dotyczące narzędzia Setspn znajdują się w temacie [Setspn — omówienie](http://go.microsoft.com/fwlink/p/?LinkId=226343) lub w podobnej dokumentacji dotyczącej używanego systemu operacyjnego.  
+ Utilize os seguintes procedimentos como exemplos de como gerir o SPN para a conta de serviço do SQL Server que utiliza a ferramenta Setspn no Windows Server 2008 R2. Para obter instruções específicas sobre o Setspn, veja [Descrição Geral do Setspn](http://go.microsoft.com/fwlink/p/?LinkId=226343) ou outra documentação semelhante, específica do seu sistema operativo.  
 
 > [!NOTE]  
->  Poniższe procedury odwołują się narzędzie wiersza polecenia Setspn. Narzędzie wiersza polecenia Setspn jest dostępne w przypadku, po zainstalowaniu narzędzi obsługi systemu Windows Server 2003 z dysku CD produktu lub [Microsoft Download Center](http://go.microsoft.com/fwlink/p/?LinkId=100114). Więcej informacji o sposobie instalowania narzędzi obsługi systemu Windows z dysku CD produktu znajduje się w temacie [Instalowanie narzędzi obsługi systemu Windows](http://go.microsoft.com/fwlink/p/?LinkId=62270).  
+>  Os seguintes procedimentos fazem referência a ferramenta de linha de comandos Setspn. A ferramenta de linha de comandos Setspn está incluída quando instalar ferramentas de suporte do Windows Server 2003 para a partir do CD de produto ou do [Microsoft Download Center](http://go.microsoft.com/fwlink/p/?LinkId=100114). Para obter mais informações sobre como instalar as Ferramentas de Suporte do Windows a partir do CD de produto, veja [Instalar as Ferramentas de Suporte do Windows](http://go.microsoft.com/fwlink/p/?LinkId=62270).  
 
-#### <a name="to-manually-create-a-domain-user-service-principal-name-spn-for-the-sql-server-service-account"></a>Aby ręcznie utworzyć użytkownika domeny głównej nazwy usługi (SPN) dla konta usługi programu SQL Server  
+#### <a name="to-manually-create-a-domain-user-service-principal-name-spn-for-the-sql-server-service-account"></a>Para criar manualmente um utilizador de domínio nome Principal de serviço (SPN) para a conta de serviço do SQL Server  
 
-1.  W menu **Start** kliknij pozycję **Uruchom**, a następnie wpisz w oknie dialogowym Uruchamianie polecenie **cmd**.  
+1.  No menu **Início**, clique em **Executar** e, em seguida, introduza **cmd** na caixa de diálogo Executar.  
 
-2.  W wierszu polecenia przejdź do katalogu instalacyjnego narzędzi obsługi systemu Windows Server. Domyślnie te narzędzia znajdują się w **C:\Program Files\Support Tools** katalogu.  
+2.  Na linha de comandos, navegue para o diretório de instalação das ferramentas de suporte do Windows Server. Por predefinição, estas ferramentas estão localizadas no **C:\Program Files\Support Tools** diretório.  
 
-3.  Wprowadź prawidłowe polecenie, aby utworzyć nazwę SPN. Aby utworzyć nazwę SPN, można użyć nazwy NetBIOS lub w pełni kwalifikowaną nazwę (FQDN) komputera z programem SQL Server. Należy jednak utworzyć nazwę SPN zarówno w ramach nazwy NetBIOS, jak i FQDN.  
+3.  Introduza um comando válido para criar o SPN. Para criar o SPN, pode utilizar o nome NetBIOS ou o nome de domínio completamente qualificado (FQDN) do computador com o SQL Server. No entanto, precisará de criar um SPN tanto para o nome NetBIOS como para o FQDN.  
 
     > [!IMPORTANT]  
-    >  Po utworzeniu nazwy SPN klastrowanego programu SQL Server należy określić nazwę wirtualną klastra programu SQL Server jako nazwę komputera z programem SQL Server.  
+    >  Ao criar um SPN para um SQL Server em cluster, deverá especificar o nome virtual do Cluster do SQL Server como o nome de computador do SQL Server.  
 
-    -   Aby utworzyć nazwę SPN dla nazwy NetBIOS komputera programu SQL Server, wpisz następujące polecenie: **setspn – MSSQLSvc /&lt;nazwa komputera serwera SQL\>: 1433 &lt;domena\konto >**  
+    -   Para criar um SPN para o nome NetBIOS do computador do SQL Server, escreva o seguinte comando: **setspn - A MSSQLSvc /&lt;nome de computador do SQL Server\>: 1433 &lt;domínio \ conta >**  
 
-    -   Aby utworzyć nazwę SPN dla nazwy FQDN komputera programu SQL Server, wpisz następujące polecenie: **setspn – MSSQLSvc /&lt;nazwa FQDN programu SQL Server\>: 1433 &lt;domena\konto >**  
+    -   Para criar um SPN para o FQDN do computador do SQL Server, escreva o seguinte comando: **setspn - A MSSQLSvc /&lt;FQDN do SQL Server\>: 1433 &lt;domínio \ conta >**  
 
     > [!NOTE]  
-    >  Polecenie rejestrowania nazwy SPN nazwanego wystąpienia programu SQL Server jest takie samo jak polecenie używane podczas rejestrowania nazwy SPN domyślnego wystąpienia, ale numer portu musi być zgodny z portem używanym przez to nazwane wystąpienie.  
+    >  O comando para registar um SPN para uma instância nomeada do SQL Server é igual ao utilizado para registar um SPN para uma instância predefinida, com exceção do fato de o número de porta ter de corresponder à porta que é utilizada pela instância nomeada.  
 
-#### <a name="to-verify-the-domain-user-spn-is-registered-correctly-by-using-the-setspn-command"></a>Aby sprawdzić, czy nazwa SPN użytkownika domeny została prawidłowo zarejestrowana przy użyciu polecenia Setspn  
+#### <a name="to-verify-the-domain-user-spn-is-registered-correctly-by-using-the-setspn-command"></a>Para verificar se o SPN do utilizador de domínio está corretamente registado utilizando o comando Setspn  
 
-1.  W menu **Start** kliknij pozycję **Uruchom**, a następnie wpisz w oknie dialogowym **Uruchamianie** polecenie **cmd**.  
+1.  No menu **Início**, clique em **Executar** e, em seguida, introduza **cmd** na caixa de diálogo **Executar**.  
 
-2.  W wierszu polecenia wprowadź następujące polecenie: **setspn -L &lt;domena\konto usługi SQL >**.  
+2.  Na linha de comandos, introduza o seguinte comando: **setspn -L &lt;domínio \ conta do serviço SQL >**.  
 
-3.  Sprawdź zarejestrowaną nazwę **ServicePrincipalName**, aby upewnić się, że utworzono prawidłową nazwę SPN dla programu SQL Server.  
+3.  Reveja o **ServicePrincipalName** registado para certificar-se de que foi criado um SPN válido para o SQL Server.  
 
-#### <a name="to-verify-the-domain-user-spn-is-registered-correctly-when-using-the-adsiedit-mmc-console"></a>Aby sprawdzić, czy nazwa SPN użytkownika domeny została prawidłowo zarejestrowana przy użyciu konsoli MMC ADSIEdit  
+#### <a name="to-verify-the-domain-user-spn-is-registered-correctly-when-using-the-adsiedit-mmc-console"></a>Para verificar se o SPN do utilizador de domínio está corretamente registado utilizando a consola ADSIEdit do MMC  
 
-1.  W menu **Start** kliknij pozycję **Uruchom**, a następnie wpisz **adsiedit.msc**, aby uruchomić konsolę MMC ADSIEdit.  
+1.  No menu **Início**, clique em **Executar** e, em seguida, introduza **adsiedit.msc** para iniciar a consola ADSIEdit do MMC.  
 
-2.  W razie potrzeby połącz się z domeną serwera lokacji.  
+2.  Se necessário, ligue estabeleça a ligação ao domínio do servidor do site.  
 
-3.  W okienku konsoli rozwiń domenę serwera lokacji, rozwiń **DC =&lt;nazwa wyróżniająca serwera\>**, rozwiń węzeł **CN = Users**, kliknij prawym przyciskiem myszy **CN =&lt;użytkownik konta usługi\>**, a następnie kliknij przycisk **właściwości**.  
+3.  No painel de consola, expanda o domínio do servidor de site, expanda **DC =&lt;nome único do servidor\>**, expanda **CN = Users**, faça duplo clique **CN =&lt;utilizador da conta de serviço\>**e, em seguida, clique em **propriedades**.  
 
-4.  W **CN =&lt;użytkownik konta usługi\> właściwości** okno dialogowe, przejrzyj **servicePrincipalName** wartość, aby upewnić się, że prawidłowa nazwa SPN została utworzona i skojarzonych z komputerem programu SQL Server.  
+4.  No **CN =&lt;utilizador da conta de serviço\> propriedades** caixa de diálogo, reveja o **servicePrincipalName** valor para se certificar de que foi criado e associado ao computador correto do SQL Server um SPN válido.  
 
-#### <a name="to-change-the-sql-server-service-account-from-local-system-to-a-domain-user-account"></a>Aby zmienić konto usługi SQL Server z systemu lokalnego na konto użytkownika domeny  
+#### <a name="to-change-the-sql-server-service-account-from-local-system-to-a-domain-user-account"></a>Para alterar a conta de serviço do SQL Server de sistema local para uma conta de utilizador de domínio  
 
-1.  Utwórz lub wybierz konto użytkownika systemu lokalnego albo domeny, które ma być używane jako konto usługi SQL Server.  
+1.  Crie ou selecione a conta de utilizador de domínio ou de sistema local que pretende utilizar como a conta de serviço do SQL Server.  
 
-2.  Otwórz **Menedżera konfiguracji programu SQL Server**.  
+2.  Abra o **Gestor de Configuração do SQL Server**.  
 
-3.  Kliknij przycisk **usług SQL Server**, a następnie kliknij dwukrotnie **programu SQL Server&lt;nazwa wystąpienia\>**.  
+3.  Clique em **do SQL Server Services**e, em seguida, faça duplo clique **do SQL Server&lt;nome da instância\>**.  
 
-4.  Na karcie **Logowanie** wybierz opcję **To konto**, a następnie wybierz nazwę użytkownika i hasło do konta użytkownika domeny utworzonego w kroku 1 lub kliknij przycisk **Przeglądaj**, aby znaleźć konto użytkownika w usługach domenowych Active Directory, a następnie kliknij przycisk **Zastosuj**.  
+4.  No separador **Início de sessão**, selecione **Esta conta** e, em seguida, introduza o nome de utilizador e a palavra-passe da conta de utilizador de domínio criada no passo 1, ou clique em **Procurar** para localizar a conta de utilizador nos Serviços de Domínio do Active Directory e, em seguida, clique em **Aplicar**.  
 
-5.  W oknie dialogowym **Potwierdź zmianę konta** kliknij przycisk **Tak**, aby potwierdzić zmianę konta i uruchomić ponownie usługę SQL Server.  
+5.  Clique em **Sim** na caixa de diálogo **Confirmar Alteração da Conta** para confirmar a alteração da conta de serviço e reiniciar o serviço do SQL Server.  
 
-6.  Po pomyślnej zmianie konta usługi kliknij przycisk **OK**.  
+6.  Clique em **OK** após a alteração com êxito da conta de serviço.  
 
-##  <a name="bkmk_reset"></a>Uruchamianie resetowania lokacji  
- Gdy resetowanie lokacji ma miejsce w centralnej lokacji administracyjnej lub lokacji głównej, przeprowadzane jest:  
+##  <a name="bkmk_reset"></a>Executar uma reposição do site  
+ Quando uma reposição do site é executada num site de administração central ou site primário, o site:  
 
--   Ponowne zastosowanie programu Configuration Manager domyślne uprawnienia plików i rejestru  
+-   Volta a permissões de ficheiros e registo de Configuration Manager predefinido  
 
--   Ponowna instalacja wszystkich składników lokacji i wszystkich ról systemu lokacji  
+-   Reinstala todos os componentes do site e todas as funções de sistema de site no site  
 
-Resetowanie lokacji nie jest możliwe w lokacjach dodatkowych.  
+Os sites secundários não suportam uma reposição de site.  
 
-Resetowanie lokacji może być uruchamiane ręcznie, w wybranym momencie, ale może zostać również uruchomione automatycznie po zmodyfikowaniu konfiguracji lokacji.  
+As reposições do site podem ser executadas manualmente, quando assim o decidir, mas também podem ser executadas automaticamente depois de modificar a configuração do site.  
 
-Na przykład jeśli wprowadzono zmiany w kontach używanych przez składniki programu Configuration Manager, należy rozważyć ręcznego resetowania lokacji, aby upewnić się, że składniki lokacji zostaną zaktualizowane do używania nowych szczegółów konta. Jednak przypadku zmodyfikowania języków serwera lub klienta w lokacji programu Configuration Manager automatycznie uruchamia resetuje lokację, ponieważ jest to wymagane, aby lokacja mogła zastosować tę zmianę.  
+Por exemplo, se tiver ocorrido uma alteração às contas utilizadas por componentes do Configuration Manager, deve considerar uma reposição para garantir que os componentes do site para utilizar os novos detalhes da conta de atualização manual do site. No entanto, se modificar os idiomas de cliente ou servidor num site, o Configuration Manager executa automaticamente um reposição do site devido a reposição não é necessária para que um site pode utilizar esta alteração.  
 
 > [!NOTE]  
->  Resetowanie lokacji nie resetowania uprawnień dostępu do obiektów — Configuration Manager.  
+>  Uma reposição do site não repõe as permissões de acesso para não - objetos do Configuration Manager.  
 
-Podczas resetowania lokacji:  
+Quando uma reposição do site é executada:  
 
-1.  Instalator przerywa działanie i uruchamia ponownie **SMS_SITE_COMPONENT_MANAGER** oraz składniki wątków usługi **SMS_EXECUTIVE** usługi.  
+1.  A configuração interrompe e reinicia o **SMS_SITE_COMPONENT_MANAGER** serviço e os componentes de thread do **SMS_EXECUTIVE** serviço.  
 
-2.  Instalator usuwa, a następnie tworzy ponownie systemu lokacji folder udostępniony i **SMS Executive** na komputerze lokalnym oraz na komputerach zdalnego systemu lokacji.  
+2.  Programa de configuração remove e, em seguida, recria o sistema de sites partilha, pasta e o **SMS Executive** componente no computador local e em computadores de sistema de sites remotos.  
 
-3.  Instalator ponownie uruchamia **SMS_SITE_COMPONENT_MANAGER** usługa ta usługa instaluje **SMS_EXECUTIVE** i **SMS_SQL_MONITOR** usług.  
+3.  A configuração reinicia o **SMS_SITE_COMPONENT_MANAGER** serviço, este serviço instala os **SMS_EXECUTIVE** e **SMS_SQL_MONITOR** serviços.  
 
-Ponadto resetowanie lokacji powoduje przywrócenie następujących obiektów:  
+Além disso, uma reposição do site restaura os seguintes objetos:  
 
--   Klucze rejestru **SMS** lub **NAL** oraz wszystkie domyślne podklucze należące do tych kluczy.  
+-   As chaves de registo **SMS** ou **NAL**, bem como outras subchaves predefinidas sob destas chaves.  
 
--   Drzewo katalogów plików programu Configuration Manager i wszystkie domyślne pliki lub podkatalogi w drzewie katalogów tego pliku.  
+-   Na árvore de diretórios de ficheiros do Configuration Manager e quaisquer ficheiros predefinidos ou subdiretórios desta árvore de diretórios de ficheiros.  
 
-**Wymagania wstępne dotyczące uruchamiania resetowania lokacji**  
+**Pré-requisitos para executar uma reposição do site**  
 
-Konto, którego chcesz użyć do wykonania resetu lokacji, musi mieć przyznane następujące uprawnienia:  
+A conta utilizada para efetuar uma reposição do site tem de ter as seguintes permissões:  
 
--   Konto, którego chcesz użyć do wykonania resetu lokacji, musi mieć przyznane następujące uprawnienia:  
+-   A conta utilizada para efetuar uma reposição do site tem de ter as seguintes permissões:  
 
-    -   **Centralna lokacja administracyjna**: Konto, którego używasz do wykonywania resetu w tej lokacji musi być administratorem lokalnym na serwerze centralnej lokacji administracyjnej oraz musi mieć przyznane uprawnienia równoważne **administrator o pełnych uprawnieniach** roli zabezpieczeń administracji opartej na rolach.  
+    -   **Site de administração central**: A conta que utilizar para executar uma reposição do site tem de ser um administrador local no servidor do site de administração central e deve possuir privilégios equivalentes da **administrador total** função de segurança da administração baseada em funções.  
 
-    -   **Lokacja główna**: Konto, którego używasz do wykonywania resetu w tej lokacji musi być administratorem lokalnym na serwerze lokacji głównej oraz musi mieć przyznane uprawnienia równoważne **administrator o pełnych uprawnieniach** roli zabezpieczeń administracji opartej na rolach. Jeśli lokacja główna znajduje się w hierarchii z centralną lokacją administracyjną, to konto musi być także kontem lokalnego administratora na serwerze centralnej lokacji administracyjnej.  
+    -   **Site primário**: A conta que utilizar para executar uma reposição do site tem de ser um administrador local no servidor do site primário e deve possuir privilégios equivalentes da **administrador total** função de segurança da administração baseada em funções. Se o site primário estiver numa hierarquia com um site de administração central, esta conta também deverá ser um administrador local no servidor do site de administração central.  
 
-**Ograniczenia dotyczące resetowania lokacji**
-  - Począwszy od wersji 1602, nie można użyć resetowania lokacji, aby zmienić serwer lub zainstalowanym na dodatkowe tak długo, jak hierarchii jest skonfigurowany do obsługi pakietów językowych klienta [testowanie uaktualnień klienta w kolekcji środowiska przedprodukcyjnego](/sccm/core/clients/manage/upgrade/test-client-upgrades).
+**Limitações para uma reposição do site**
+  - A partir da versão 1602, não é possível utilizar uma reposição para alterar o servidor do site ou pacotes de idiomas de cliente que instalado no sties desde que a hierarquia está configurada para suportar [testar as atualizações de cliente numa coleção de pré-produção](/sccm/core/clients/manage/upgrade/test-client-upgrades).
 
-#### <a name="to-perform-a-site-reset"></a>Aby wykonać reset lokacji  
+#### <a name="to-perform-a-site-reset"></a>Para efetuar uma reposição do site  
 
-1.  Uruchom **Instalatora programu Configuration Manager** z  **&lt;folder instalacji lokacji programu Configuration Manager\>\BIN\X64\setup.exe**.  
+1.  Executar **configuração do Configuration Manager** de  **&lt;pasta de instalação de site do Configuration Manager\>\BIN\X64\setup.exe**.  
 
     > [!TIP]  
-    >  Można również uruchomić Resetowanie lokacji przez uruchamianie Instalatora programu Configuration Manager na **Start** menu komputera serwera lokacji lub z nośnika źródłowego programu Configuration Manager.  
+    >  Também pode executar um reposição do site ao iniciar a configuração do Configuration Manager no **iniciar** menu do computador do servidor do site ou a partir do suporte de dados de origem do Configuration Manager.  
 
-2.  Na stronie **Pierwsze kroki** wybierz pozycję **Przeprowadź obsługę lokacji lub zresetuj tę lokację**, a następnie kliknij przycisk **Dalej**.  
+2.  Na página **Introdução** , selecione **Executar a manutenção do site ou repor este site**e clique em **Seguinte**.  
 
-3.  Na stronie **Obsługa lokacji** wybierz polecenie **Resetuj lokację** bez zmian konfiguracji, a następnie kliknij przycisk **Dalej**.  
+3.  Na página **Manutenção do Site**, selecione **Repor o site sem alterações de configuração** e clique em **Seguinte**.  
 
-4.  Kliknij przycisk **Tak**, aby rozpocząć reset lokacji.  
+4.  Clique em **Sim** para iniciar a reposição do site.  
 
-Po zakończeniu resetowania lokacji kliknij przycisk **Zamknij**, aby dokończyć procedurę.  
+Quando a reposição do site estiver concluída, clique em **Fechar** para concluir este procedimento.  
 
-##  <a name="bkmk_sitelang"></a>Zarządzanie pakietami językowymi w lokacji  
-Po zainstalowaniu lokacji można zmienić używane pakiety językowe serwera i klienta:  
+##  <a name="bkmk_sitelang"></a>Gerir pacotes de idiomas num site  
+Após a instalação de um site, pode alterar os pacotes de idioma de servidor e cliente que estão em utilização:  
 
-**Pakiety językowe serwera:**  
+**Pacotes de idiomas de servidor:**  
 
--   **Dotyczy:**  
+-   **Aplica-se a:**  
 
-     Instalacje konsoli programu Configuration Manager  
+     Instalações da consola do Configuration Manager  
 
-     Nowe instalacje odpowiednich ról systemu lokacji  
+     Novas instalações de funções do sistema de sites aplicáveis  
 
--   **Szczegóły:**  
+-   **Detalhes:**  
 
-     Po zaktualizowaniu pakietów językowych serwera w lokacji można dodać obsługę pakietów językowych do konsol programu Configuration Manager.  
+     Depois de atualizar os pacotes de idiomas de servidor num site, pode adicionar suporte para os pacotes de idiomas para consolas do Configuration Manager.  
 
-     Aby dodać obsługę pakietu językowego serwera do konsoli programu Configuration Manager, należy zainstalować konsolę programu Configuration Manager z **ConsoleSetup** folderu na serwerze lokacji, który zawiera pakiet językowy, który ma być używany. Jeśli została już zainstalowana konsola programu Configuration Manager, należy najpierw odinstalować go w celu włączenia nowa instalacja nie rozpozna bieżącej listy obsługiwanych pakietów językowych.  
+     Para adicionar suporte para um pacote de idiomas de servidor para uma consola do Configuration Manager, tem de instalar a consola do Configuration Manager do **ConsoleSetup** pasta num servidor de site que inclua o pacote de idiomas que pretende utilizar. Se já estiver instalada a consola do Configuration Manager, terá primeiro de desinstalar para permitir que a nova instalação identifique a lista atual de pacotes de idiomas suportados.  
 
-**Pakiety językowe klienta:**  
+**Pacotes de idiomas de cliente:**  
 
--   **Dotyczy:**  
+-   **Aplica-se a:**  
 
-     Zmiany pakietów językowych klienta powodują aktualizację plików źródłowych instalacji klienta, dzięki czemu nowe instalacje i uaktualnienia klienta umożliwiają obsługę zaktualizowanej listy języków klienta.  
+     As alterações de pacotes de idiomas de cliente atualizam os ficheiros de origem da instalação do cliente para que as novas instalações e atualizações do cliente adicionem suporte à lista atualizada de idiomas do cliente.  
 
--   **Szczegóły:**  
+-   **Detalhes:**  
 
-     Po zaktualizowaniu pakietów językowych w lokacji musisz zainstalować każdego klienta, który będzie używać tych pakietów, za pomocą plików źródłowych zawierających pakiety językowe klienta.  
+     Após atualizar os pacotes de idiomas de cliente num site, instale cada cliente que utilizará os pacotes de idiomas utilizando os ficheiros de origem que incluem os pacotes de idiomas de cliente.  
 
-Aby uzyskać informacje o językach klienta i serwera, które są obsługiwane przez program Configuration Manager, zobacz [pakiety językowe w programie System Center Configuration Manager](../../../core/servers/deploy/install/language-packs.md)  
+Para obter informações sobre os idiomas de cliente e servidor que são suportados pelo Configuration Manager, consulte [pacotes de idiomas no System Center Configuration Manager](../../../core/servers/deploy/install/language-packs.md)  
 
-#### <a name="to-modify-the-language-packs-that-are-supported-at-a-site"></a>Aby zmodyfikować pakiety językowe obsługiwane w lokacji  
+#### <a name="to-modify-the-language-packs-that-are-supported-at-a-site"></a>Para modificar os pacotes de idiomas suportados num site  
 
-1.  Na serwerze lokacji uruchom Instalatora programu Configuration Manager z  **&lt;folder instalacji lokacji programu Configuration Manager\>\BIN\X64\setup.exe.**  
+1.  No servidor do site, execute a configuração do Configuration Manager de  **&lt;pasta de instalação de site do Configuration Manager\>\BIN\X64\setup.exe.**  
 
-2.  Na stronie **Pierwsze kroki** wybierz pozycję **Przeprowadź obsługę lokacji lub zresetuj tę lokację**, a następnie kliknij przycisk **Dalej**.  
+2.  Na página **Introdução**, selecione **Executar a manutenção do site ou repor este site** e clique em **Seguinte**.  
 
-3.  Na stronie **Obsługa lokacji** wybierz polecenie **Modyfikuj konfigurację języka**, a następnie kliknij przycisk **Dalej**.  
+3.  Na página **Manutenção do Site**, selecione **Modificar a configuração do idioma** e clique em **Seguinte**.  
 
-4.  Na stronie **Pobieranie plików wymaganych wstępnie** wybierz polecenie **Pobierz wymagane pliki**, aby pobrać aktualizacje pakietów językowych, lub wybierz polecenie **Użyj wcześniej pobranych plików**, aby użyć wcześniej pobranych plików zawierających pakiety językowe, które chcesz dodać do lokacji. Kliknij przycisk **Dalej**, aby zweryfikować pliki i kontynuować.  
+4.  Na página **Transferências de Pré-requisitos**, selecione **Transferir ficheiros necessários** para adquirir atualizações de pacotes de idiomas ou selecione **Utilizar ficheiros anteriormente transferidos** para utilizar ficheiros transferidos anteriormente que incluem os pacotes de idiomas que pretende adicionar ao site. Clique em **Seguinte** para validar os ficheiros e continuar.  
 
-5.  Na stronie **Wybór języka serwera** zaznacz pola wyborów obok języków serwera obsługiwanych przez tę lokację, a następnie kliknij przycisk **Dalej**.  
+5.  Na página **Seleção do Idioma do Servidor**, selecione a caixa de verificação dos idiomas do servidor suportados por este site e clique em **Seguinte**.  
 
-6.  Na stronie **Wybór języka klienta** zaznacz pola wyborów obok języków klienta obsługiwanych przez tę lokację, a następnie kliknij przycisk **Dalej**.  
+6.  Na página **Seleção de Idioma do Cliente**, selecione a caixa de verificação dos idiomas do cliente suportados por este site e clique em **Seguinte**.  
 
-7.  Kliknij przycisk **Dalej**, aby zmodyfikować języki obsługiwane w lokacji.  
+7.  Clique em **Seguinte** para modificar o suporte de idiomas no site.  
 
     > [!NOTE]  
-    >  Inicjuje programu Configuration Manager reset lokacji, co spowoduje również ponowne zainstalowanie wszystkich ról systemu lokacji w lokacji.  
+    >  Inicia de Gestor de configuração uma reposição do site que também reinstala todas as funções de sistema de sites no site.  
 
-8.  Po zakończeniu tej procedury kliknij przycisk **Zamknij**.  
+8.  Clique em **Fechar** para concluir este procedimento.  
 
-##  <a name="BKMK_ModDBAlert"></a>Modyfikowanie progu alertu serwera bazy danych  
- Domyślnie program Configuration Manager generuje alerty, gdy brakuje wolnego miejsca na dysku na serwerze bazy danych lokacji. Według domyślnych ustawień ostrzeżenie będzie generowane, gdy ilość wolnego miejsca na dysku osiągnie 10 GB lub mniej, natomiast próg alertu krytycznego wynosi 5 GB lub mniej. Można zmodyfikować te wartości lub wyłączyć funkcję alertów w poszczególnych lokacjach.  
+##  <a name="BKMK_ModDBAlert"></a>Modifique o limiar de alerta de servidor de base de dados  
+ Por predefinição, o Configuration Manager gera alertas quando o espaço livre em disco num servidor de base de dados do site é baixa. As predefinições estão definidas para emitir um aviso quando existirem 10 GB ou menos de espaço livre em disco e um alerta crítico quando existirem menos de 5 GB de espaço livre em disco. Pode modificar estes valores ou desativar os alertas para cada site.  
 
- Aby zmienić te ustawienia:  
+ Para alterar estas definições:  
 
-1.  W obszarze roboczym **Administracja** rozwiń węzeł **Konfiguracja lokacji**, a następnie kliknij przycisk **Lokacje**.  
+1.  Na área de trabalho **Administração** , expanda **Configuração do Site**e clique em **Sites**.  
 
-2.  Wybierz lokację, którą chcesz skonfigurować i otwórz tej lokacji **właściwości**.  
+2.  Selecione o site que pretende configurar e abra desse site **propriedades**.  
 
-3.  W tej witrynie **właściwości** okno dialogowe, wybierz opcję **alertu** karcie, a następnie Edytuj ustawienia.  
+3.  O site **propriedades** caixa de diálogo, selecione o **alerta** e em seguida, edite as definições.  
 
-4.  Kliknij przycisk **OK**, aby zamknąć okno dialogowe właściwości tej lokacji.  
+4.  Clique em **OK** para fechar a caixa de diálogo de propriedades do site.  

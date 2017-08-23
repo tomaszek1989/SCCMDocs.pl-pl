@@ -1,6 +1,6 @@
 ---
-title: Funkcje w wersji zapoznawczej Technical Preview 1612 programu Configuration Manager
-description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersja 1612."
+title: "Capacidades na pré-visualização técnica 1612 do Configuration Manager"
+description: "Saiba mais sobre as funcionalidades disponíveis no Technical Preview do System Center Configuration Manager, versão 1612."
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
@@ -17,306 +17,306 @@ manager: angrobe
 ms.openlocfilehash: bcb14a2be312d4d8a4a9c235652c7bf971a7a976
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pl-PL
+ms.contentlocale: pt-PT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1612 programu System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1612 do System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (wersja zapoznawcza Technical Preview)*
-
-
-
-W tym artykule przedstawiono funkcje, które są dostępne w wersji Technical Preview programu System Center Configuration Manager, wersja 1612. Można zainstalować tę wersję, aby zaktualizować i dodać nowe funkcje do lokacji programu Configuration Manager technical preview. Przed zainstalowaniem tej wersji technical Preview, przejrzyj temat wprowadzający [Technical Preview programu System Center Configuration Manager](../../core/get-started/technical-preview.md), aby zapoznać się z ogólne wymagania i ograniczenia dotyczące używania wersji technical preview, jak zaktualizować między wersjami i sposobu wyrazić swoją opinię na temat funkcji w wersji technical preview.    
+*Aplica-se a: O System Center Configuration Manager (Technical Preview)*
 
 
-**Poniżej przedstawiono nowe funkcje, które można wypróbować z tą wersją.**  
 
-## <a name="the-data-warehouse-service-point"></a>Punkt usługi magazynu danych
-Począwszy od wersji Technical Preview 1612 punktu usługi magazynu danych można przechowywać i raport dotyczący długoterminowe dane historyczne dla danego wdrożenia programu Configuration Manager. Jest to osiągane przez automatyczne synchronizacje z bazy danych lokacji programu Configuration Manager do bazy danych magazynu danych. Te informacje są dostępne z punktu usług raportowania.
+Este artigo apresenta as funcionalidades que estão disponíveis no Technical Preview do System Center Configuration Manager, versão 1612. Pode instalar esta versão para atualizar e adicionar novas capacidades ao seu local de pré-visualização técnica do Configuration Manager. Antes de instalar esta versão do technical preview, reveja o tópico introdutórias, [pré-visualização técnica do System Center Configuration Manager](../../core/get-started/technical-preview.md), para se familiarizar com os requisitos gerais e limitações para utilizar como uma pré-visualização técnica, ao atualizar entre versões e como fornecer comentários sobre as funcionalidades de um technical preview.    
 
-Domyślnie po zainstalowaniu nowej roli systemu lokacji programu Configuration Manager utworzy bazę danych magazynu danych w wystąpieniu programu SQL Server, który określisz. Magazyn danych obsługuje maksymalnie 2 TB danych z sygnaturami czasowymi, śledzenie zmian.  Domyślnie dane, które są synchronizowane z bazy danych lokacji zawiera grupy danych dla danych globalnych, dane lokacji Global_Proxy, danych w chmurze i widoków bazy danych. Można również zmodyfikować, co jest synchronizowane uwzględnić dodatkowe tabele lub wykluczyć określonych tabel domyślne zestawy replikacji.
-Wartości domyślne, który jest synchronizowany zawiera informacje dotyczące następujących:
-- Kondycja infrastruktury
-- Zabezpieczenia
-- Zgodność
-- Złośliwe oprogramowanie   
-- Wdrożenia oprogramowania
-- Szczegóły spisu (jednak historię spisu nie jest zsynchronizowany)
 
-Oprócz instalowania i konfigurowania bazy danych magazynu danych, kilka nowych raportów są zainstalowane, aby można było łatwo wyszukać i raportu na tych danych.
+**Seguem-se novas funcionalidades que pode experimentar com esta versão.**  
 
-### <a name="data-warehouse-dataflow"></a>Biblioteka przepływu danych magazynu danych   
+## <a name="the-data-warehouse-service-point"></a>O ponto de serviço do armazém de dados
+Começando com a versão de pré-visualização técnica 1612, o ponto de serviço do armazém de dados permite-lhe armazenar e elaborar relatórios sobre dados históricos a longo prazo para a sua implementação do Configuration Manager. Isto é conseguido ao sincronizações automáticas da base de dados do site do Configuration Manager para uma base de dados do armazém de dados. Esta informação, em seguida, é acessível a partir do ponto do Reporting services.
+
+Por predefinição, quando instalar a nova função de sistema de sites, do Configuration Manager cria a base de dados do armazém de dados de uma instância do SQL Server que especificou. O armazém de dados suporta até 2 TB de dados, com carimbos de registo de alterações.  Por predefinição, os dados que são sincronizados a partir da base de dados do site incluem os grupos de dados para dados globais, dados do Site, Global_Proxy, dados em nuvem e vistas da base de dados. Também pode modificar o que está sincronizado para incluir tabelas adicionais, ou excluir tabelas específicas dos conjuntos de replicação de predefinição.
+Os dados predefinidos que são sincronizados incluem informações sobre:
+- Estado de funcionamento da infraestrutura
+- Segurança
+- Conformidade
+- Software maligno   
+- Implementações de software
+- Detalhes de inventário (no entanto, o histórico de inventário não está sincronizado)
+
+Para além de instalar e configurar a base de dados do armazém de dados, vários novos relatórios estão instalados para que possa facilmente procurar e relatórios sobre estes dados.
+
+### <a name="data-warehouse-dataflow"></a>Fluxo de dados de armazém de dados   
 ![Datawarehouse_flow](./media/datawarehouse.png)
 
-| Krok         | Szczegóły  |
+| Passo         | Detalhes  |
 |:------:|-----------|  
-| **1**  |  Serwer lokacji przesyła i przechowuje dane w bazie danych lokacji.  |  
-| **2** |   Punkt usługi magazynu danych na podstawie harmonogramu i konfiguracji, pobiera dane z bazy danych lokacji.  |  
-| **3** |  Punkt usługi magazynu danych przesyła i przechowuje kopię zsynchronizowane dane w bazie danych magazynu danych. |  
-| **A** |  Używając raportów wbudowanych, danych żądań która jest przekazywana do usług Reporting Services punktu, przy użyciu programu SQL Server Reporting Services. |  
-| **B** |   Większość raporty są aktualne informacje, a te żądania są uruchamiane w bazie danych lokacji. |  
-| **C** | Gdy raport żąda danych historycznych, za pomocą jednej z raporty z *kategorii* z **hurtowni danych**, żądanie jest wykonywane na bazie danych magazynu danych.   |  
+| **1**  |  O servidor do site transfere e armazena dados na base de dados do site.  |  
+| **2** |   Com base na respetiva agenda e a configuração, o ponto de serviço do armazém de dados obtém os dados da base de dados do site.  |  
+| **3** |  O ponto de serviço do armazém de dados é transferida e armazena uma cópia dos dados sincronizados na base de dados do armazém de dados. |  
+| **A** |  Utilizar relatórios incorporados, para dados é efetuado um pedido que é transferido para o Reporting Services ponto utilizando o SQL Server Reporting Services. |  
+| **B** |   A maioria dos relatórios são para obter informações atuais e estes pedidos são executados na base de dados do site. |  
+| **C** | Quando um relatório solicita dados históricos, utilizando um dos relatórios com um *categoria* de **do armazém de dados**, o pedido é executado na base de dados do armazém de dados.   |  
 
-### <a name="prerequisites-for-the-data-warehouse-service-point-and-database"></a>Wymagania wstępne dla punktu usługi magazynu danych i bazy danych
-- Hierarchii musi mieć zainstalowaną rolę systemu lokacji punktu usług raportowania.
-- Komputer, na którym zainstalowano rolę systemu lokacji wymaga programu .NET Framework 4.5.2 lub nowszej.
-- Konto komputera, na którym zainstalowano rolę systemu lokacji musi mieć uprawnienia administratora lokalnego na komputerze, który będzie hostem bazy danych magazynu danych.
-- Konto administracyjne, które należy zainstalować rolę systemu lokacji musi być użytkownikiem DBO w wystąpieniu programu SQL Server, który będzie hostem bazy danych magazynu danych.  
--  Baza danych jest obsługiwana:
-  - Z programu SQL Server 2012 lub nowszym, Enterprise lub Datacenter edition.
-  - Na domyślne lub nazwane wystąpienie
-  - Na *klastra programu SQL Server*. Mimo że ta konfiguracja powinna działać, nie została przetestowana i obsługa to optymalne rozwiązanie.
-  - Gdy wspólnie z jednej bazy danych lokacji lub baza danych punktu usług raportowania. Jednak zaleca się, można zainstalować na osobnym serwerze.  
-- Konto, które jest używane jako *konta punktu usług raportowania* musi mieć **db_datareader** uprawnień do bazy danych magazynu danych.  
-- Bazy danych nie jest obsługiwana w *grupy dostępności AlwaysOn programu SQL Server*.
+### <a name="prerequisites-for-the-data-warehouse-service-point-and-database"></a>Pré-requisitos para o ponto de serviço do armazém de dados e a base de dados
+- A hierarquia tem de ter dos serviços de relatórios do ponto de função de sistema de sites instalada.
+- O computador onde instalou a função de sistema de sites requer o .NET Framework 4.5.2 ou posterior.
+- A conta de computador do computador onde instalou a função de sistema de sites tem de ter permissões de administrador local no computador que alojará a base de dados do armazém de dados.
+- A conta administrativa utilizada para instalar a função de sistema de sites tem de ser um DBO na instância do SQL Server que alojará a base de dados do armazém de dados.  
+-  A base de dados é suportada:
+  - Com o SQL Server 2012 ou posterior, Enterprise ou Datacenter edition.
+  - Numa instância predefinida ou nomeada
+  - Num *Cluster do SQL Server*. Embora esta configuração deverão funcionar, não foram testado e suporte é melhor esforço.
+  - Quando localizado conjuntamente com uma base de dados do site ou a base de dados de ponto de serviços de relatórios. No entanto, recomendamos que, de ser instalado num servidor separado.  
+- A conta que é utilizada como o *conta de ponto do Reporting Services* tem de ter o **db_datareader** permissão para a base de dados do armazém de dados.  
+- A base de dados não é suportado um *grupo de Disponibilidade AlwaysOn do SQL Server*.
 
-### <a name="install-the-data-warehouse"></a>Zainstalować Magazyn danych
-Zainstaluj rolę systemu lokacji magazynu danych w centralnej lokacji administracyjnej lub lokacji głównej przy użyciu **lokacji Kreator dodawania ról systemu** lub **lokacji Kreator tworzenia serwera systemu**. Zobacz [zainstalować role systemu lokacji](/sccm/core/servers/deploy/configure/install-site-system-roles) Aby uzyskać więcej informacji. Hierarchia obsługuje wiele wystąpień tej roli, ale w każdej lokacji jest obsługiwane tylko jedno wystąpienie.  
+### <a name="install-the-data-warehouse"></a>Instalar o armazém de dados
+Instalar a função de sistema de sites do armazém de dados num site de administração central ou site primário, utilizando o **Adicionar Assistente de funções de sistema de Site** ou **criar Assistente de servidor de sistema de Site**. Consulte [instalar funções do sistema de sites](/sccm/core/servers/deploy/configure/install-site-system-roles) para obter mais informações. A hierarquia suporta várias instâncias desta função, mas é suportada apenas uma instância em cada site.  
 
-Po zainstalowaniu roli programu Configuration Manager utworzy bazę danych magazynu danych w wystąpieniu programu SQL Server, który określisz. Jeśli określono nazwę istniejącej bazy danych (w sposób jak w przypadku należy [przenieść bazę danych magazynu danych na nowy serwer SQL](#move-the-data-warehouse-database)), programu Configuration Manager nie tworzy nową bazę danych, ale zamiast tego używa jednego użytkownika.
+Quando instalar a função, o Configuration Manager cria a base de dados do armazém de dados para si na instância do SQL Server que especificou. Se especificar o nome da base de dados existente (como iria fazer se a [mover a base de dados do armazém de dados para um novo SQL Server](#move-the-data-warehouse-database)), do Configuration Manager não criar uma nova base de dados, mas em vez disso, utiliza um que especificar.
 
-#### <a name="configurations-used-during-installation"></a>Konfiguracje używane podczas instalacji
-Skorzystaj z poniższych informacji w celu ukończenia instalacji roli systemu lokacji:
+#### <a name="configurations-used-during-installation"></a>Configurações utilizadas durante a instalação
+Utilize as informações seguintes para concluir a instalação da função de sistema de sites:
 
-**Wybór roli systemu** strony:  
-Zanim kreator wyświetli opcję Wybierz i zainstaluj punkt usługi magazynu danych, należy zainstalować punkt usług raportowania.
+**Seleção da função do sistema** página:  
+Antes do assistente apresenta uma opção para selecionar e instalar o ponto de serviço do armazém de dados, tem de ter instalado um ponto do Reporting services.
 
-**Ogólne** strony: Wymagane są następujące informacje ogólne:
-- **Ustawienia bazy danych programu Configuration Manager:**   
-  - **Nazwa serwera** — Określ nazwę FQDN serwera obsługującego bazę danych lokacji. Jeśli nie używasz domyślnego wystąpienia programu SQL Server, należy określić wystąpienie po nazwy FQDN w następującym formacie: ***&lt;Sqlserver_FQDN >\&< nazwa_wystąpienia >***
-  - **Nazwa bazy danych** — Określ nazwę bazy danych lokacji.
-  - **Sprawdź, czy** — kliknij przycisk **Sprawdź** aby upewnić się, że połączenie z bazą danych lokacji zostanie nawiązane.
+**Geral** página: As seguintes informações gerais, é necessárias:
+- **Definições de base de dados do Configuration Manager:**   
+  - **Nome do servidor** -especifique o FQDN do servidor que aloja a base de dados do site. Se utilizar uma instância predefinida do SQL Server, tem de especificar a instância após o FQDN no seguinte formato: ***&lt;Sqlserver_FQDN >\&lt; Nome_Instância >***
+  - **Nome da base de dados** -especifique o nome da base de dados do site.
+  - **Certifique-se** -clique em **verifique** para se certificar de que a ligação para a base de dados do site é concluída com êxito.
 </br></br>
-- **Ustawienia bazy danych magazynu danych:**
-  - **Nazwa serwera** — Określ nazwę FQDN serwera, który jest hostem punktu usługi magazynu danych i bazy danych. Jeśli nie używasz domyślnego wystąpienia programu SQL Server, należy określić wystąpienie po nazwy FQDN w następującym formacie: ***&lt;Sqlserver_FQDN >\&< nazwa_wystąpienia >***
-  - **Nazwa bazy danych** — Określ nazwę FQDN dla bazy danych magazynu danych.  Configuration Manager utworzy bazę danych o tej nazwie. Jeśli określisz nazwy bazy danych, która już istnieje w wystąpieniu programu SQL server Configuration Manager będzie używać tej bazy danych.
-  - **Sprawdź, czy** — kliknij przycisk **Sprawdź** aby upewnić się, że połączenie z bazą danych lokacji zostanie nawiązane.
+- **Definições de base de dados do armazém de dados:**
+  - **Nome do servidor** - especifique o FQDN do servidor que aloja o ponto de serviço do armazém de dados e da base de dados. Se utilizar uma instância predefinida do SQL Server, tem de especificar a instância após o FQDN no seguinte formato: ***&lt;Sqlserver_FQDN >\&lt; Nome_Instância >***
+  - **Nome da base de dados** -especifique o FQDN para a base de dados do armazém de dados.  Configuration Manager irá criar a base de dados com este nome. Se especificar um nome de base de dados que já existe na instância do SQL server, o Configuration Manager irá utilizar a base de dados.
+  - **Certifique-se** -clique em **verifique** para se certificar de que a ligação para a base de dados do site é concluída com êxito.
 
-**Ustawienia synchronizacji** strony:   
-- **Ustawienia danych:**
-  - **Grupy replikacji, aby zsynchronizować** — wybierz grupę danych mają być synchronizowane. Aby uzyskać informacje o różnych typach danych grup, zobacz [replikacji bazy danych](/sccm/core/servers/manage/data-transfers-between-sites#a-namebkmkdbrepa-database-replication) i **widoki rozproszone** w [transfer danych między lokacjami](/sccm/core/servers/manage/data-transfers-between-sites).
-  - **Tabel dołączonych do synchronizowania** — Określ nazwę każdej kolejnej tabeli mają być synchronizowane. Oddziel wiele tabel za pomocą przecinka. Te tabele zostaną zsynchronizowane z bazy danych lokacji oprócz grupy replikacji, którą wybierzesz.
-  - **Tabele wyłączone do synchronizowania** — Określ nazwę dla poszczególnych tabel z synchronizacji grupy replikacji. Tabele, które określisz, zostanie wykluczony z. Oddziel wiele tabel za pomocą przecinka.
-- **Ustawienia synchronizacji:**
-  - **Interwał synchronizacji (w minutach)** — Określ wartość w minutach. Po upływie interwału uruchamia nowe synchronizacji. W ten sposób realizowany zakresu od 60 do 1440 minut (24 godziny).
-  - **Harmonogram** — określ dni, które mają uruchamianie synchronizacji.
+**As definições de sincronização** página:   
+- **Definições de dados:**
+  - **Grupos de replicação para sincronizar** – selecione os grupos de dados que pretende sincronizar. Para obter informações sobre os diferentes tipos de grupos de dados, consulte [replicação de base de dados](/sccm/core/servers/manage/data-transfers-between-sites#a-namebkmkdbrepa-database-replication) e **vistas distribuídas** no [transferências de dados entre sites](/sccm/core/servers/manage/data-transfers-between-sites).
+  - **As tabelas incluídas para sincronizar** – especifique o nome de cada tabela adicional que pretende sincronizar. Separe várias tabelas com uma vírgula. Estas tabelas vão ser sincronizadas a partir da base de dados do site, além de selecionar os grupos de replicação.
+  - **As tabelas excluídas para sincronizar** -especifique o nome de tabelas individuais dos grupos de replicação sincronizar. As tabelas que especificar serão excluídas. Separe várias tabelas com uma vírgula.
+- **Definições de sincronização:**
+  - **Intervalo de sincronização (minutos)** -Especifique um valor em minutos. Após ter sido atingido o intervalo, inicia uma sincronização de novo. Isto suporta um intervalo entre 60 e 1440 minutos (24 horas).
+  - **Agenda** -especifique os dias em que pretende que a sincronização para ser executada.
 
-**Dostęp do punktu raportowania**:   
-Po zainstalowaniu roli magazynu danych, upewnij się, konto, które jest używane jako *konta punktu usług raportowania* ma **db_datareader** uprawnień do bazy danych magazynu danych.
+**Acesso de ponto de Reporting**:   
+Após a função de armazém de dados está instalada, certifique-se a conta que é utilizada como o *conta de ponto do Reporting Services* tem o **db_datareader** permissão para a base de dados do armazém de dados.
 
-#### <a name="troubleshoot-installation-and-data-synchronization"></a>Rozwiązywanie problemów z synchronizacją instalacji i danych
-Użyj następujących dzienników do badania problemów dotyczących instalacji punktu usługi magazynu danych lub synchronizacji danych:
-- **DWSSMSI.log** i **DWSSSetup.log** — za pomocą tych dzienników do sprawdzania, czy błędy podczas instalowania punktu usług magazynu danych.
--   **Microsoft.ConfigMgrDataWarehouse.log** — ten dziennik umożliwia badanie synchronizacji danych między programami bazy danych lokacji do bazy danych magazynu danych.
+#### <a name="troubleshoot-installation-and-data-synchronization"></a>Resolver problemas de instalação e os dados de sincronização
+Utilize os seguintes registos para investigar problemas com a instalação do ponto de serviço do armazém de dados, ou uma sincronização de dados:
+- **DWSSMSI.log** e **DWSSSetup.log** -utilizar estes registos para investigar erros ao instalar o ponto de serviço do armazém de dados.
+-   **Microsoft.ConfigMgrDataWarehouse.log** – utilizar este registo para investigar a sincronização de dados entre a base de dados do site para a base de dados do armazém de dados.
 
-### <a name="reporting"></a>Raportowanie
-Po zainstalowaniu roli systemu lokacji hurtowni danych, następujące raporty są dostępne na ten punkt usług raportowania z *kategorii* z **magazynu danych:**
+### <a name="reporting"></a>Relatórios
+Depois de instalar uma função de sistema de sites do armazém de dados, os seguintes relatórios estão disponíveis no seu ponto do Reporting services com um *categoria* de **do armazém de dados:**
 
-|Raport                   | Szczegóły                                  |
+|Relatório                   | Detalhes                                  |
 |-------------------------|------------------------------------------|
-| **Raport wdrażania aplikacji** | Przejrzyj szczegóły dotyczące wdrażania aplikacji dla określonej aplikacji i komputera.|
-| **Program Endpoint Protection, a raport zgodności aktualizacji oprogramowania**   | Wyświetl komputery, których brakuje aktualizacji oprogramowania.|
-| **Raport o spisie sprzętu ogólne**  | Wyświetl wszystkie spisu sprzętu dla określonej maszyny.|
-| **Raport ze spisu oprogramowania ogólne**  | Wyświetl wszystkie spisu oprogramowania dla określonej maszyny.|
-| **Przegląd kondycji infrastruktury**  |Wyświetla Przegląd kondycji infrastruktury programu Configuration Manager.|
-| **Lista wykrytym złośliwym oprogramowaniem**  |Widok złośliwego oprogramowania, która została wykryta w organizacji.|
-|** Oprogramowania dystrybucji podsumowania raportu ** | Podsumowanie dystrybucji oprogramowania dla określonych anonsów i komputera.|
+| **Relatório de implementação de aplicação** | Ver os detalhes para a implementação de aplicação para uma aplicação específica e a máquina.|
+| **Endpoint Protection e o relatório de conformidade de atualização de Software**   | Computadores de vista que estão em falta atualizações de software.|
+| **Relatório de inventário de Hardware geral**  | Ver todo o inventário de hardware para um computador específico.|
+| **Relatório de inventário de Software geral**  | Ver todo o inventário de software para uma máquina específica.|
+| **Descrição geral do Estado de funcionamento de infraestrutura**  |Apresenta uma descrição geral do Estado de funcionamento da infraestrutura do Configuration Manager.|
+| **Lista de Malware detetado**  |Software maligno de vista que foi detetado na organização.|
+|* * Software distribuição resumo relatório * * | Um resumo de distribuição de software para um anúncio específico e a máquina.|
 
-### <a name="move-the-data-warehouse-database"></a>Przenoszenie bazy danych magazynu danych
-Aby przenieść bazę danych magazynu danych na nowy serwer SQL, wykonaj następujące kroki:
+### <a name="move-the-data-warehouse-database"></a>Mover a base de dados do armazém de dados
+Utilize os seguintes passos para mover a base de dados do armazém de dados para um novo SQL Server:
 
-  1. Przejrzyj bieżącej konfiguracji bazy danych i rekordów szczegółów konfiguracji, takich jak:  
-   - Grupy danych, które można synchronizować
-   - Tabele, możesz dołączyć lub wykluczyć z synchronizacji       
+  1. Reveja a configuração de base de dados atual e registe os detalhes da configuração, incluindo:  
+   - Os grupos de dados que sincronizar
+   - Tabelas incluir ou excluir da sincronização       
 
-   Po przywrócić bazę danych na nowy serwer i ponownie zainstalować rolę systemu lokacji zostanie ponownie skonfigurować te grupy danych i tabele.  
+   Irá reconfigurar estes grupos de dados e tabelas depois de restaurar a base de dados para um novo servidor e reinstalar a função de sistema de sites.  
 
-  2. Użyj programu SQL Server Management Studio kopii zapasowej bazy danych magazynu danych, a następnie ponownie, aby przywrócić tę bazę danych do programu SQL server na nowym komputerze, który będzie obsługiwał hurtowni danych.
+  2. Utilize o SQL Server Management Studio para cópia de segurança de base de dados do armazém de dados e, em seguida, novamente para restaurar a base de dados para um SQL server no novo computador que irá alojar o armazém de dados.
 
-  Po przywróceniu bazy danych na nowy serwer, upewnij się, że uprawnienia dostępu do bazy danych są takie same na nową bazę danych magazynu danych, jakie były na oryginalnej bazy danych magazynu danych.
+  Depois de restaurar a base de dados para o novo servidor, certifique-se de que as permissões de acesso de base de dados são os mesmos na nova base de dados de armazém de dados idênticos na base de dados de armazém de dados original.
 
-  3. Użyj konsoli programu Configuration Manager, aby usunąć rolę systemu lokacji punktu usługi magazynu danych z bieżącego serwera.
+  3. Utilize a consola do Configuration Manager para remover a função de sistema de sites de ponto de serviço do armazém de dados do servidor atual.
 
-  4. Instalowania nowego punktu usługi magazynu danych i określ nazwę nowego serwera SQL i wystąpienia, który jest hostem bazy danych magazynu danych, możesz przywrócić.
+  4. Instalar um novo ponto de serviço do armazém de dados e especifique o nome do novo SQL Server e instância que aloja a base de dados do armazém de dados que é restaurada.
 
-  5. Po zainstalowaniu roli systemu lokacji, przeniesienie zostało ukończone.
+  5. Após a instalação da função de sistema de sites, a mudança está concluída.
 
-Możesz przejrzeć następujące dzienniki programu Configuration Manager, aby potwierdzić, że pomyślnie ponownie zainstalował rolę systemu lokacji:  
-- **DWSSMSI.log** i **DWSSSetup.log** — za pomocą tych dzienników do sprawdzania, czy błędy podczas instalowania punktu usług magazynu danych.
--   **Microsoft.ConfigMgrDataWarehouse.log** — ten dziennik umożliwia badanie synchronizacji danych między programami bazy danych lokacji do bazy danych magazynu danych.
+Pode rever os seguintes registos do Configuration Manager para confirmar que a função de sistema do site reinstalou com êxito:  
+- **DWSSMSI.log** e **DWSSSetup.log** -utilizar estes registos para investigar erros ao instalar o ponto de serviço do armazém de dados.
+-   **Microsoft.ConfigMgrDataWarehouse.log** – utilizar este registo para investigar a sincronização de dados entre a base de dados do site para a base de dados do armazém de dados.
 
 
-## <a name="content-library-cleanup-tool"></a>Narzędzia do oczyszczania biblioteki zawartości
-Począwszy od wersji Technical Preview 1612, można użyć nowego narzędzia wiersza polecenia (**ContentLibraryCleanup.exe**) można usunąć zawartość, która jest już skojarzony z dowolnego pakietu lub aplikacji z punktu dystrybucji (oddzielony zawartości). To narzędzie jest wywoływana narzędzia Oczyszczanie biblioteki zawartości.
+## <a name="content-library-cleanup-tool"></a>Ferramenta de limpeza da biblioteca de conteúdos
+A partir da versão de pré-visualização técnica 1612, pode utilizar uma nova ferramenta de linha de comandos (**ContentLibraryCleanup.exe**) remover o conteúdo que é mais longo não associados a qualquer pacote ou aplicação a partir de um ponto de distribuição (órfão conteúdo). Esta ferramenta denomina-se a ferramenta de limpeza da biblioteca de conteúdos.
 
-To narzędzie ma wpływ tylko na zawartość w punkcie dystrybucji, które określisz po uruchomieniu narzędzia i nie można usunąć zawartość z biblioteki zawartości na serwerze lokacji.
+Esta ferramenta afeta apenas o conteúdo no ponto de distribuição que especificou quando executar a ferramenta e não é possível remover o conteúdo da biblioteca de conteúdos no servidor do site.
 
-Po zainstalowaniu Technical Preview 1612 można znaleźć **ContentLibraryCleanup.exe** w *%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* folderu na serwerze lokacji Technical Preview.
+Depois de instalar 1612 de pré-visualização técnica, pode encontrar **ContentLibraryCleanup.exe** no *%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* pasta no servidor do site de pré-visualização técnica.
 
-Narzędzia dostępne w tej wersji Technical Preview ma zastąpić starsze wersje narzędzi podobne wydane w ciągu ostatnich produktów Configuration Manager. Mimo że ta wersja narzędzia przestanie działać po 1 marca 2017 nowe wersje opublikuje z przyszłych wersji zapoznawczych Technical Preview, dopóki to narzędzie jest wydane jako część Current Branch lub wersja produkcyjna gotowy poza pasmem.
+A ferramenta lançada com este Technical Preview destina-se para substituir as versões anteriores das ferramentas semelhantes lançadas para produtos anteriores do Configuration Manager. Embora esta versão da ferramenta deixarão de funcionar após 1 de Março de 2017, novas versões vai lançar com pré-visualizações técnicas futuras até que esta ferramenta é lançada como parte do ramo atual, ou uma versão de fora de banda pronto de produção.
 
-### <a name="requirements"></a>Wymagania  
- - Narzędzie można uruchomić bezpośrednio na komputerze, który hostuje punkt dystrybucji lub zdalnie z innego serwera. Narzędzie można uruchomić tylko z pojedynczego punktu dystrybucji w czasie.
- - Konto użytkownika, który uruchomił narzędzie bezpośrednio musi mieć uprawnienia administracji opartej na rolach, które są równe z pełnymi uprawnieniami administratora w hierarchii programu Configuration Manager.  Narzędzie nie działa, gdy konto użytkownika jest uprawnienia jako członek grupy zabezpieczeń systemu Windows z uprawnieniami administratora pełnego.
+### <a name="requirements"></a>Requisitos  
+ - A ferramenta pode ser executada diretamente no computador que aloja o ponto de distribuição ou remotamente a partir de outro servidor. A ferramenta só pode ser executada em relação a um único ponto de distribuição de cada vez.
+ - A conta de utilizador que executa a ferramenta diretamente tem de ter permissões de administração baseada em funções que sejam iguais a um administrador total na hierarquia do Configuration Manager.  A ferramenta não funcionará quando a conta de utilizador é concedida permissões como um membro de um grupo de segurança do Windows que tem as permissões de administrador global.
 
-### <a name="modes-of-operation"></a>Tryby operacyjne
-Narzędzie można uruchomić w dwóch trybach:
-  1.    **Co jeśli tryb**:   
-      Jeśli nie określisz **/delete** przełącznika, narzędzie działa w trybie co jeśli i identyfikuje zawartości, które zostaną usunięte z punktu dystrybucji, ale nie faktycznego usunięcia żadnych danych.
+### <a name="modes-of-operation"></a>Modos de funcionamento
+A ferramenta pode ser executada em dois modos:
+  1.    **Modo de investiguem**:   
+      Quando não especificar o **/eliminar** comutador, a ferramenta é executado no modo de investiguem e identifica os conteúdos que serão eliminados do ponto de distribuição, mas não eliminar, na verdade, quaisquer dados.
 
-      - Narzędzie jest uruchamiane w tym trybie, informacje o zawartości, które zostałyby usunięte są automatycznie zapisywane w pliku dziennika narzędzia. Użytkownik nie jest monit o potwierdzenie każdego potencjalnych usunięcia.
-      - Domyślnie plik dziennika są zapisywane do folderu tymczasowego użytkowników na komputerze, na którym należy uruchomić narzędzie, ale przełącznik/log może zostać użyty do przekierowania do innej lokalizacji pliku dziennika.  
+      - Quando a ferramenta é executada neste modo, informações sobre o conteúdo que será eliminado automaticamente são escritas no ficheiro de registo de ferramentas. Não é pedido ao utilizador para confirmar eliminação cada potencial.
+      - Por predefinição, o ficheiro de registo é escrito na pasta temporária de utilizadores no computador em que executa a ferramenta, no entanto, pode utilizar o comutador /log para redirecionar o ficheiro de registo para outra localização.  
       </br>
 
-    Firma Microsoft zaleca, uruchom narzędzie w tym trybie i przejrzeć wynikowy plik dziennika, przed uruchomieniem narzędzia z przełącznikiem/DELETE.  
+    Recomendamos que execute a ferramenta neste modo e rever o ficheiro de registo resultante antes de executar a ferramenta com o comutador /delete.  
 
-  2. **Usuń tryb**: Po uruchomieniu narzędzia z **/delete** przełącznika, narzędzie jest uruchamiane w trybie delete.
+  2. **Eliminar modo**: Quando executa a ferramenta com o **/eliminar** comutador, a ferramenta é executada no modo de eliminação.
 
-     - Po uruchomieniu narzędzia w tym trybie oddzielone zawartości, która znajduje się w określonym punkcie dystrybucji można usunąć z biblioteki zawartości w punkcie dystrybucji.
-     -  Przed usunięciem każdego pliku, użytkownik jest monitowany o potwierdzenie, że plik powinien zostać usunięty.  Można wybrać **Y** tak, **N** na nie, lub **tak na wszystkie** pominąć dalsze monity i Usuń wszystkie oddzielone zawartość.  
+     - Quando a ferramenta é executada neste modo, o conteúdo órfão que se encontra no ponto de distribuição especificado pode ser eliminado da biblioteca de conteúdos do ponto de distribuição.
+     -  Antes de eliminar cada ficheiro, é pedido ao utilizador para confirmar que o ficheiro deve ser eliminado.  Pode selecionar, **Y** para Sim, **N** para não, ou **Sim para todas as** para ignorar avisos adicionais e eliminar todos os órfão conteúdo.  
      </br>
 
-     Firma Microsoft zaleca, uruchom narzędzie w trybie warunkowej i przejrzeć wynikowy plik dziennika, przed uruchomieniem narzędzia z przełącznikiem/DELETE.  
+     Recomendamos que execute a ferramenta no modo de investiguem e rever o ficheiro de registo resultante antes de executar a ferramenta com o comutador /delete.  
 
-Po uruchomieniu narzędzia do oczyszczania biblioteki zawartości w trybie automatycznie tworzy dziennika o nazwę, która zawiera tryb, w którym narzędzie jest uruchamiane w, nazwę punktu dystrybucji, Data i czas operacji. W pliku dziennika było nawiązywane automatycznie po zakończeniu działania narzędzia. Domyślnie ten dziennik jest zapisywany do użytkowników **temp** folderu na komputerze, na którym uruchamiasz narzędzia., jednak można przełącznik wiersza polecenia przekierowania w pliku dziennika do innej lokalizacji, w tym udziale sieciowym.   
-
-
-### <a name="run-the-tool"></a>Uruchom narzędzie
-Aby uruchomić narzędzie:
-1. Otwórz administracyjny wiersz polecenia w folderze, który zawiera **ContentLibraryCleanup.exe**.  
-2. Następnie wprowadź wiersz polecenia, który zawiera przełączniki wiersza polecenia wymagane i opcjonalne przełączniki, którego chcesz użyć.
-
-**Znany problem** po uruchomieniu narzędzia dowolnego pakietu lub wdrożenia nie powiodło się lub jest w toku może być zwracany błąd podobnie do następującej:
--  *System.InvalidOperationException: Ta biblioteka zawartości nie można oczyścić teraz ponieważ pakietu <packageID> nie jest w pełni zainstalowany.*
-
-**Obejście problemu:** Brak. Narzędzie nie niezawodnej zidentyfikować osieroconych plików, gdy zawartość jest w toku lub nie powiodła się do wdrożenia. W związku z tym narzędzie nie pozwoli do czyszczenia zawartości do momentu rozwiązania problemu.
+Quando a ferramenta de limpeza da biblioteca de conteúdos é executada em qualquer modo, cria automaticamente um registo com um nome que inclui o modo que é executada a ferramenta, o nome do ponto de distribuição, a data e a hora da operação. O ficheiro de registo abre automaticamente quando a ferramenta estiver concluída. Por predefinição, este registo é escrito para os utilizadores **temp** pasta no computador em que executa a ferramenta., no entanto, pode utilizar um comutador de linha de comandos para redirecionar o ficheiro de registo para outra localização, incluindo uma partilha de rede.   
 
 
+### <a name="run-the-tool"></a>Execute a ferramenta
+Para executar a ferramenta:
+1. Abra uma linha de comandos administrativa para uma pasta que contém **ContentLibraryCleanup.exe**.  
+2. Em seguida, introduza uma linha de comandos que inclui os comutadores de linha de comandos necessário e comutadores opcionais que pretende utilizar.
 
-### <a name="command-line-switches"></a>Przełączniki wiersza polecenia  
-Następujące przełączniki wiersza polecenia mogą być używane w dowolnej kolejności.   
+**Problema de conhecido** quando a ferramenta é executada, poderá ser devolvido um erro semelhante ao seguinte, quando qualquer pacote de implementação falhou ou está em curso:
+-  *System.InvalidOperationException: Nesta biblioteca de conteúdos não é possível limpar neste momento porque o pacote <packageID> não é completamente instalado.*
 
-|Przełącznik|Szczegóły|
+**Solução:** Nenhuma. A ferramenta não é possível fiável identificar ficheiros órfãos quando o conteúdo está em curso ou falhou a implementação. Por conseguinte, a ferramenta não permitirá a limpar conteúdo até que este problema seja resolvido.
+
+
+
+### <a name="command-line-switches"></a>Parâmetros da linha de comandos  
+Os seguintes parâmetros de linha de comandos podem ser utilizados por qualquer ordem.   
+
+|Parâmetro|Detalhes|
 |---------|-------|
-|**/ DELETE**  |**Opcjonalne** </br> Użyj tego przełącznika, jeśli chcesz usunąć zawartość z punktu dystrybucji. Zostanie wyświetlony monit, przed usunięciem zawartości. </br></br> Gdy ta opcja nie jest używany, narzędzie rejestruje wyniki dotyczące zawartości zostaną usunięte, ale nie powoduje usunięcia zawartości z punktu dystrybucji. </br></br> Przykład: ***/ Delete server1.contoso.com /dp ContentLibraryCleanup.exe*** |
-| **/q**       |**Opcjonalne** </br> Uruchom narzędzie w trybie cichym, które pomijają wszystkie monity (na przykład monity podczas usuwania zawartości), a nie automatycznie otworzyć plik dziennika. </br></br> Przykład: ***ContentLibraryCleanup.exe /q /dp serwer1.contoso.com*** |
-| **/dp &lt;FQDN punktów dystrybucji >**  | **Wymagane** </br> Określ w pełni kwalifikowaną nazwę (FQDN) punktu dystrybucji, które chcesz wyczyścić. </br></br> Przykład:  ***ContentLibraryCleanup.exe /dp serwer1.contoso.com***|
-| **/PS &lt;lokacji głównej nazwy FQDN >**       | **Opcjonalne** podczas czyszczenia zawartości z punktu dystrybucji w lokacji głównej.</br>**Wymagane** podczas czyszczenia zawartości z punktu dystrybucji w lokacji dodatkowej. </br></br> Określ nazwę FQDN punktu dystrybucji w lokacji głównej należy do lub z głównej nadrzędnej, gdy punkt dystrybucji znajduje się w lokacji dodatkowej. </br></br> Przykład: ***ContentLibraryCleanup.exe /dp server1.contoso.com /ps siteserver1.contoso.com*** |
-| **/sc &lt;kod lokacji głównej >**  | **Opcjonalne** podczas czyszczenia zawartości z punktu dystrybucji w lokacji głównej.</br>**Wymagane** podczas czyszczenia zawartości z punktu dystrybucji w lokacji dodatkowej. </br></br> Określ kod lokacji w lokacji głównej, należącego do punktu dystrybucji lub nadrzędnej lokacji głównej, gdy punkt dystrybucji znajduje się w lokacji dodatkowej.</br></br> Przykład: ***ContentLibraryCleanup.exe /dp server1.contoso.com /sc ABC*** |
-| **/ log<log file directory>**       |**Opcjonalne** </br> Określ katalog, aby umieścić pliki dziennika w. Może to być lokalny lub w sieci, należy udostępnić.</br></br> Gdy ta opcja nie jest używana, pliki dziennika są automatycznie umieszczane w folderze tymczasowym użytkowników.</br></br> Przykład dysku lokalnym: ***/ ContentLibraryCleanup.exe /dp server1.contoso.com log C:\Users\Administrator\Desktop*** </br></br>Przykład z udziału sieciowego: ***/ Log server1.contoso.com /dp ContentLibraryCleanup.exe \\ &lt;udostępnianie >\&< folder >***|
+|**/DELETE**  |**Opcional** </br> Utilize este parâmetro se pretender eliminar o conteúdo do ponto de distribuição. Lhe for pedido antes do conteúdo é eliminado. </br></br> Quando este parâmetro não for utilizado, a ferramenta regista resultados sobre o conteúdo que será eliminado, mas não eliminar todos os conteúdos do ponto de distribuição. </br></br> Exemplo: ***ContentLibraryCleanup.exe /dp server1.contoso.com /delete*** |
+| **/q**       |**Opcional** </br> Execute a ferramenta no modo silencioso que suprime todos os avisos (como avisos aquando da eliminação de conteúdo) e não abra automaticamente o ficheiro de registo. </br></br> Exemplo: ***ContentLibraryCleanup.exe /q /dp server1.contoso.com*** |
+| **/dp &lt;FQDN do ponto de distribuição >**  | **Necessário** </br> Especifique o nome de domínio completamente qualificado (FQDN) do ponto de distribuição que pretende apagar. </br></br> Exemplo:  ***ContentLibraryCleanup.exe /dp server1.contoso.com***|
+| **/PS &lt;site primário FQDN >**       | **Opcional** quando o conteúdo a partir de um ponto de distribuição num site primário de limpeza.</br>**Necessário** quando o conteúdo a partir de um ponto de distribuição num site secundário de limpeza. </br></br> Especifique o FQDN do ponto de distribuição do site primário pertence ao ou do elemento principal primário principal quando o ponto de distribuição num site secundário. </br></br> Exemplo: ***ContentLibraryCleanup.exe /dp server1.contoso.com /ps siteserver1.contoso.com*** |
+| **/sc &lt;código do site principal >**  | **Opcional** quando o conteúdo a partir de um ponto de distribuição num site primário de limpeza.</br>**Necessário** quando o conteúdo a partir de um ponto de distribuição num site secundário de limpeza. </br></br> Especifique o código do site do site primário que pertence o ponto de distribuição ou do site primário principal quando o ponto de distribuição num site secundário.</br></br> Exemplo: ***ContentLibraryCleanup.exe /dp server1.contoso.com /sc ABC*** |
+| **/log<log file directory>**       |**Opcional** </br> Especifique um diretório colocar ficheiros de registo na. Isto pode ser uma unidade local ou numa rede de partilha.</br></br> Quando este parâmetro não for utilizado, ficheiros de registo são automaticamente colocados na pasta temporária de utilizador.</br></br> Exemplo de unidade local: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log C:\Users\Administrator\Desktop*** </br></br>Exemplo de partilha de rede: ***ContentLibraryCleanup.exe /dp server1.contoso.com /log \\ &lt;partilhar >\&lt; pasta >***|
 
 
-## <a name="improvements-for-in-console-search"></a>Ulepszenia wyszukiwania w konsoli
-Na podstawie User Voice opinii, dodano następujące ulepszenia dotyczące wyszukiwania w konsoli:
- - **Ścieżka obiektu:**  
-  Wiele obiektów obsługuje teraz nową kolumnę o nazwie **ścieżki obiektu**.  Podczas wyszukiwania i zawierało tej kolumny w wynikach wyświetlania, można wyświetlić ścieżkę do każdego obiektu. Na przykład, jeśli podczas wykonywania wyszukiwania dla aplikacji w węźle aplikacje są również wyszukiwanie węzły podrzędne *ścieżki obiektu* kolumny w okienku wyników zostanie wyświetlona ścieżka do każdego obiektu zwróconego.   
+## <a name="improvements-for-in-console-search"></a>Melhoramentos para pesquisa na consola
+Com base nos comentários de voz do utilizador, iremos adicionou os seguintes melhoramentos para a pesquisa na consola:
+ - **Caminho do objeto:**  
+  Muitos objetos suportam agora uma nova coluna com o nome **caminho de objecto**.  Quando pesquisar e inclua esta coluna nos resultados a apresentar, pode ver o caminho para cada objeto. Por exemplo, se executar uma pesquisa de aplicações no nó de aplicações e também procura nodes secundárias, a *caminho de objecto* coluna no painel de resultados mostra o caminho para cada objeto devolvido.   
 
-- **Zachowanie szukany tekst:**  
-  Gdy wprowadź tekst w polu tekstowym wyszukiwania, a następnie przełączać się między wyszukiwanie węzła podrzędnego i bieżącego węzła wpisany tekst teraz utrwalić i pozostają dostępne dla nowego wyszukiwania bez konieczności wpisz je ponownie.
+- **Preservação de texto de pesquisa:**  
+  Quando introduzir o texto na caixa de texto de pesquisa e, em seguida, alternar entre a procurar nó secundárias e o nó atual, o texto que escreveu irá agora persistem e permanecem disponível para uma nova procura sem ter de introduzi-lo.
 
-- **Zachowanie zdecydować, czy wyszukiwanie węzły podrzędne:**  
- Opcja Wybierz albo wyszukiwania *bieżącego węzła* lub *wszystkie węzły podrzędne* teraz będzie nadal występować po zmianie pracujesz w węźle.   To nowe zachowanie oznacza, że nie trzeba stale ustawiony decyzję, jak poruszanie konsoli.  Domyślnie po otwarciu konsoli opcją jest wyszukiwanie tylko bieżącego węzła.
+- **Preservação de sua decisão para procurar nodes secundárias:**  
+ A opção que selecionar para a pesquisa a *nó atual* ou *todos os nós secundárias* agora persistir quando altera o nó que está a trabalhar.   Este novo comportamento significa que não é necessário repor constantemente a decisão como mover-se a consola.  Por predefinição, quando abrir a consola a opção é apenas pesquisar no nó atual.
 
-## <a name="prevent-installation-of-an-application-if-a-specified-program-is-running"></a>Zapobiega instalacji aplikacji, jeśli określony program jest uruchomiony.
-Lista plików wykonywalnych (z rozszerzeniem .exe) można teraz skonfigurować we właściwościach typu wdrożenia, które, jeśli działa, zablokuje instalacji aplikacji. Po próbie instalacji, użytkownicy będą widzieć okno dialogowe z pytaniem, aby zamknąć procesów, które blokują instalacji.
+## <a name="prevent-installation-of-an-application-if-a-specified-program-is-running"></a>Impedi a instalação de uma aplicação se estiver a executar um programa especificado.
+Agora, pode configurar uma lista de ficheiros executáveis (com a extensão .exe) nas propriedades de tipo de implementação que, se em execução, irão bloquear a instalação de uma aplicação. Após a instalação for tentada, os utilizadores verão uma caixa de diálogo a perguntá-los para fechar os processos que estão a bloquear a instalação.
 
-### <a name="try-it-out"></a>Podczas próby
-Aby skonfigurować listę plików wykonywalnych
-1.  Na stronie właściwości każdego typu wdrożenia wybierz **obsługi Instalatora** kartę.
-2.  Kliknij przycisk **Dodaj**, dodać więcej plików wykonywalnych do listy (na przykład **Edge.exe**)
-3.  Kliknij przycisk **OK** aby zamknąć okno dialogowe właściwości typu wdrożenia.
+### <a name="try-it-out"></a>Experimente
+Para configurar uma lista de ficheiros executáveis
+1.  Na página de propriedades de qualquer tipo de implementação, escolha o **instalador processamento** separador.
+2.  Clique em **adicionar**, para adicionar um mais ficheiros executáveis à lista (por exemplo **Edge.exe**)
+3.  Clique em **OK** para fechar a caixa de diálogo de propriedades de tipo de implementação.
 
-Teraz podczas wdrażania tej aplikacji, użytkownika lub urządzenia, a jeden z plików wykonywalnych, dodane jest uruchomiona, użytkownicy zobaczą okno dialogowe Centrum oprogramowania informacją, których instalacja nie powiodła się, ponieważ aplikacja jest uruchomiona.
+Agora, quando irá implementar esta aplicação para um utilizador ou um dispositivo e um dos executáveis que adicionou está em execução, o utilizador final verá uma caixa de diálogo de centro de Software informar de que a instalação falhou porque uma aplicação está em execução.
 
-## <a name="new-windows-hello-for-business-notification-for-end-users"></a>Nowe usługi Windows Hello dla firm powiadomienia dla użytkowników końcowych
+## <a name="new-windows-hello-for-business-notification-for-end-users"></a>Novo do Windows Hello para notificação de negócio para os utilizadores finais
 
-Nowe powiadomienie systemu Windows 10 informuje o użytkowników końcowych, że ich należy wykonać dodatkowe akcje do wykonania Windows Hello dla firm Instalatora (na przykład konfigurowania numeru PIN).
+Uma nova notificação do Windows 10 informa os utilizadores finais que requerem ações adicionais para concluir Windows Hello para a configuração de negócio (por exemplo, definição de um PIN).
 
-## <a name="windows-store-for-business-support-in-configuration-manager"></a>Sklep Windows dla firm pomocy technicznej w programie Configuration Manager
+## <a name="windows-store-for-business-support-in-configuration-manager"></a>Loja Windows para o suporte de negócio no Configuration Manager
 
-Teraz można wdrożyć licencjonowane aplikacje z celem wdrożenia **dostępne** ze Sklepu Windows dla firm na komputerach z uruchomionym klientem programu Configuration Manager.
-Aby uzyskać więcej informacji, zobacz [Zarządzanie aplikacjami ze Sklepu Windows dla firm z System Center Configuration Manager](https://docs.microsoft.com/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
+Pode agora implementar aplicações licenciadas online com um objetivo de implementação **disponível** da loja Windows para empresas para os computadores a executar o cliente do Configuration Manager.
+Para obter mais detalhes, consulte [gerir aplicações da loja Windows para empresas com o System Center Configuration Manager](https://docs.microsoft.com/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
 
-Obsługa ta funkcja jest obecnie dostępna tylko dla komputerów z systemem Windows 10 RS2 kompilacji wersji zapoznawczej.
+Suporte para esta funcionalidade está atualmente disponível apenas em PCs com a Windows 10 RS2 de pré-visualização.
 
-## <a name="return-to-previous-page-when-a-task-sequence-fails"></a>Powrót do poprzedniej strony, gdy sekwencja zadań nie powiodło się.
-Można teraz wróć do poprzedniej strony po uruchomieniu sekwencji zadań i awarii. Przed tą wersją trzeba było ponownego uruchomienia sekwencji zadań, jeśli wystąpił błąd. Na przykład można użyć **Wstecz** przycisk w następujących scenariuszach:
+## <a name="return-to-previous-page-when-a-task-sequence-fails"></a>Regressar à página anterior, quando ocorre uma falha de uma sequência de tarefas
+Agora pode regressar a uma página anterior quando executa uma sequência de tarefas e não existe uma falha. Antes desta versão, era necessário reiniciar a sequência de tarefas quando ocorreu uma falha. Por exemplo, pode utilizar o **anterior** botão nos seguintes cenários:
 
-- Gdy komputer jest uruchamiany w środowisku Windows PE, dialogowym bootstrap sekwencji zadań może być wyświetlany, zanim sekwencja zadań będzie dostępna. Po kliknięciu przycisku Dalej w tym scenariuszu sekwencja zadań na ostatniej stronie wyświetla komunikat, że nie dostępnych sekwencji zadań. Teraz, możesz kliknąć **Wstecz** ponowić wyszukiwanie uzyskać dostępne sekwencje zadań. Ten proces można powtarzać do czasu udostępnienia sekwencji zadań.
-- Po uruchomieniu sekwencji zadań, ale zależnych pakietów zawartości nie są jeszcze dostępne w punktach dystrybucji, sekwencja zadań kończy się niepowodzeniem. Możesz teraz dystrybuować brakującą zawartość (jeśli go nie została jeszcze rozesłana) lub poczekaj, aż zawartości, które mają być dostępne w punktach dystrybucji, a następnie kliknij **Wstecz** mają wyszukiwania sekwencji zadań ponownie dla zawartości.
+- Quando um computador é iniciado no Windows PE, o diálogo de arranque de configuração de sequência de tarefas pode apresentar antes da sequência de tarefas está disponível. Quando clicar em seguinte neste cenário, a página final da sequência de tarefas é apresentada uma mensagem que existem não existem sequências de tarefas disponíveis. Agora, pode clicar em **anterior** para novamente procurar sequências de tarefas disponíveis. Pode repetir este processo até que a sequência de tarefas esteja disponível.
+- Quando executa uma sequência de tarefas, mas os pacotes de conteúdos dependentes ainda não estão disponíveis nos pontos de distribuição, a sequência de tarefas falhará. Pode agora distribuir o conteúdo em falta (se não foi distribuída ainda) ou aguardar que o conteúdo fique disponível nos pontos de distribuição e, em seguida, clique em **anterior** ter a pesquisa de sequência de tarefas novamente para o conteúdo.
 
-## <a name="express-installation-files-support-for-windows-10-updates"></a>Obsługa aktualizacji systemu Windows 10 pliki instalacji ekspresowej
-Dodaliśmy obsługę plików instalacji ekspresowej w programie Configuration Manager dla aktualizacje systemu Windows 10. Korzystając z obsługiwanej wersji systemu Windows 10, teraz służy ustawień programu Configuration Manager można pobrać tylko różnice między bieżącego miesiąca systemu Windows 10 aktualizacji zbiorczej i aktualizacją poprzedniego miesiąca. Obecnie w programie Configuration Manager bieżącej gałęzi, pełnej systemu Windows 10 aktualizacji zbiorczej (w tym wszystkie aktualizacje z ostatnich miesięcy) są pobierane każdego miesiąca. Przy użyciu plików instalacji ekspresowej zapewnia mniejsze pliki do pobrania i instalacji szybsze na klientach.
+## <a name="express-installation-files-support-for-windows-10-updates"></a>Suporte para atualizações do Windows 10 de ficheiros de instalação rápida
+Foi adicionado ficheiros de instalação rápida suportem no Configuration Manager para atualizações do Windows 10. Quando utiliza uma versão suportada do Windows 10, agora, pode utilizar definições de Configuration Manager para transferir apenas o delta entre Windows 10 atualização o mês atual cumulativa e a atualização do mês anterior. Atualmente no ramo de atual do Configuration Manager, o Windows 10 cumulativa atualização completa (incluindo todas as atualizações de meses anteriores) são transferidos por mês. A utilização de ficheiros de instalação rápida fornece para transferências mais pequenas e tempos de instalação mais rápidos nos clientes.
 
 > [!IMPORTANT]
-> Podczas ustawienia, aby obsługiwać użycie plików instalacji ekspresowej jest dostępna w programie Configuration Manager, ta funkcja jest obsługiwana tylko w systemie Windows 10 w wersji 1607 z aktualizacją usługi Windows Update Agent dołączone do aktualizacji wydanej w dniu 10 stycznia 2017 (wtorek poprawek). Aby uzyskać więcej informacji na temat tych aktualizacji, zobacz [obsługuje artykułu 3213986](https://support.microsoft.com/help/4009938/january-10-2017-kb3213986-os-build-14393-693). Możliwość korzystania z plików instalacji ekspresowej, po udostępnieniu dalej zestaw aktualizacji na 14 lutego 2017 r. Windows 10 w wersji 1607 bez aktualizacji i wcześniejsze wersje nie obsługują plików instalacji ekspresowej.
+> Enquanto as definições para suportar a utilização de ficheiros de instalação rápida está disponível no Configuration Manager, esta funcionalidade só é suportada no Windows 10 versão 1607 com uma atualização do Windows Update Agent incluída com as atualizações publicadas no 10 de Janeiro de 2017 (Patch Terça-feira). Para mais informações sobre estas atualizações, consulte [suporta artigo 3213986](https://support.microsoft.com/help/4009938/january-10-2017-kb3213986-os-build-14393-693). Pode tirar partido dos ficheiros de instalação rápida quando o seguinte conjunto de atualizações são lançadas a 14 de Fevereiro de 2017. Windows 10 versão 1607 sem a atualização e as versões anteriores não suportam a ficheiros de instalação rápida.
 
 
-### <a name="to-enable-the-download-of-express-installation-files-for-windows-10-updates-on-the-server"></a>Aby włączyć pobieranie plików instalacji ekspresowej aktualizacji systemu Windows 10 na serwerze
-Aby rozpocząć, synchronizacja metadanych dla plików instalacji ekspresowej systemu Windows 10, należy włączyć ją we właściwościach punktu aktualizacji oprogramowania.
-1.  W konsoli programu Configuration Manager, przejdź do **administracji** > **konfiguracja lokacji** > **witryny**.
-2.  Wybierz centralnej lokacji administracyjnej lub autonomicznej lokacji głównej.
-3.  Na karcie **Narzędzia główne** w grupie **Ustawienia** kliknij przycisk **Konfiguruj składniki lokacji**, a następnie kliknij pozycję **Punkt aktualizacji oprogramowania**. Na **pliki aktualizacji** wybierz opcję **pobrać pełną pliki dla wszystkich aktualizacji zatwierdzonych i pliki instalacji ekspresowej dla systemu Windows 10**.
+### <a name="to-enable-the-download-of-express-installation-files-for-windows-10-updates-on-the-server"></a>Para permitir a transferência de ficheiros de instalação rápida para atualizações do Windows 10 no servidor
+Para iniciar a sincronizar os metadados para ficheiros de instalação rápida do Windows 10, tem de ativá-la nas propriedades do ponto de atualização de Software.
+1.  Na consola do Configuration Manager, navegue até à **administração** > **configuração do Site** > **Sites**.
+2.  Selecione o site de administração central ou site primário autónomo.
+3.  No separador **Home Page** , no grupo **Definições** , clique em **Configurar Componentes do Site**e clique em **Ponto de Atualização de Software**. No **ficheiros de atualização** separador, selecione **transferir ficheiros completos de todas as atualizações aprovadas e ficheiros de instalação rápida para o Windows 10**.
 
-### <a name="to-enable-support-for-clients-to-download-and-install-express-installation-files"></a>Aby włączyć obsługę klientów pobrać i zainstalować pliki instalacji ekspresowej
-Aby włączyć obsługę plików instalacji ekspresowej na klientach, należy włączyć plików instalacji ekspresowej na klientach w sekcji Ustawienia klienta aktualizacji oprogramowania. Spowoduje to utworzenie nowego odbiornik HTTP, która nasłuchuje żądań pobrać pliki instalacji ekspresowej na porcie, który określisz. Po wdrożeniu ustawień klienta, aby włączyć tę funkcję na komputerze klienckim, spróbuje pobrać różnica między bieżącego miesiąca systemu Windows 10 aktualizacji zbiorczej i poprzedniego miesiąca aktualizacji (klientów musi działać wersja systemu Windows 10 obsługuje pliki instalacji ekspresowej).
-1.  Umożliwia obsługę plików instalacji ekspresowej we właściwościach składnika punktu aktualizacji oprogramowania (poprzedniej procedury).
-2.  W konsoli programu Configuration Manager, przejdź do **administracji** > **ustawień klienta**.
-3.  Wybierz ustawienia odpowiedniego klienta, a następnie na **Home** , kliknij pozycję **właściwości**.
-4.  Wybierz **aktualizacji oprogramowania** skonfiguruj **tak** dla **Włącz instalację Express aktualizacji na klientach** ustawienia i skonfigurować port używany przez odbiornik HTTP na kliencie **Port używany na pobieranie zawartości dla aktualizacji Express** ustawienie.
+### <a name="to-enable-support-for-clients-to-download-and-install-express-installation-files"></a>Para ativar o suporte para os clientes transferir e instalar ficheiros de instalação rápida
+Para ativar o suporte de ficheiros de instalação rápida nos clientes, tem de ativar os ficheiros de instalação rápida nos clientes na secção de definições de cliente de atualizações de Software. Esta ação cria um serviço de escuta HTTP novo que escuta pedidos transferir ficheiros de instalação rápida na porta que especificar. Depois de implementar as definições de cliente para ativar esta funcionalidade no cliente, a tentativa de transferir as diferenças entre Windows 10 atualização o mês atual cumulativa e a atualização do mês anterior (os clientes têm de executar uma versão do Windows 10 que suporta ficheiros de instalação rápida).
+1.  Ative o suporte para ficheiros de instalação rápida nas propriedades do componente de ponto de atualização de Software (procedimento anterior).
+2.  Na consola do Configuration Manager, navegue até à **administração** > **as definições de cliente**.
+3.  Selecione as definições de cliente adequado, em seguida, no **home page** separador, clique em **propriedades**.
+4.  Selecione o **atualizações de Software** página, configure **Sim** para o **ativar instalação de atualizações rápida nos clientes** definir e configurar a porta utilizada pelo serviço de escuta HTTP no cliente para o **porta utilizada para transferir conteúdo para atualizações de Express** definição.
 
 
-## <a name="odata-endpoint-data-access"></a>Dostęp do danych punktu końcowego OData
+## <a name="odata-endpoint-data-access"></a>Acesso de dados de ponto final de OData
 
- Configuration Manager udostępnia teraz punktu końcowego RESTful OData do uzyskiwania dostępu do danych programu Configuration Manager. Punkt końcowy jest zgodny z Odata w wersji 4, dzięki czemu narzędzi, takich jak Excel i Power BI, aby łatwo uzyskiwać dostęp do danych programu Configuration Manager za pośrednictwem jednego punktu końcowego. Technical Preview 1612 obsługuje tylko do odczytu obiektów w programie Configuration Manager.  
+ Configuration Manager fornece agora um ponto final de RESTful OData para aceder a dados do Configuration Manager. O ponto final é compatível com a versão 4, que ativa as ferramentas como o Excel e o Power BI para aceder facilmente aos dados do Configuration Manager através de um único ponto final de Odata. Technical Preview 1612 só suporta acesso de leitura para objetos no Configuration Manager.  
 
-Dane, które jest obecnie dostępny w [dostawca WMI programu Configuration Manager](/sccm/develop/reference/configuration-manager-reference) również jest teraz dostępne przy użyciu nowego punktu końcowego OData RESTful. Zestawy jednostek udostępnianych przez punkt końcowy OData umożliwiają Wylicz tych samych danych, które można zbadać za pomocą dostawcy WMI.
+Dados que estão atualmente disponíveis no [fornecedor do Configuration Manager WMI](/sccm/develop/reference/configuration-manager-reference) também está agora acessível com o novo ponto de final de OData RESTful. Os conjuntos de entidade expostos pelo ponto final de OData permitem-lhe enumerar sobre os mesmos dados, pode consultar com o fornecedor WMI.
 
-### <a name="try-it-out"></a>Podczas próby
+### <a name="try-it-out"></a>Experimente
 
-Przed użyciem punktu końcowego OData, należy włączyć ją dla tej lokacji.
+Antes de poder utilizar o ponto final de OData, tem de ativá-la para o site.
 
-1.  Przejdź do **administracji** > **lokacji konfiguracji** > **witryny**.
-2.  Wybierz lokację główną, a następnie kliknij przycisk **właściwości**.
-3.  W arkuszu właściwości lokacji głównej na karcie Ogólne kliknij **punkt końcowy REST włączyć dla wszystkich dostawców w tej witrynie**, a następnie kliknij przycisk **OK**.
+1.  Aceda a **administração** > **configuração do Site** > **Sites**.
+2.  Selecione o site primário e clique em **propriedades**.
+3.  No separador Geral da folha de propriedades de site primário, clique em **REST de ativar o ponto final para todos os fornecedores neste site**e, em seguida, clique em **OK**.
 
-W ulubionych podglądu zapytania OData, spróbuj zapytania podobne do następujących zwracać różne obiekty w programie Configuration Manager:
+No seu Visualizador de consulta de OData favorito, tente consultas semelhantes para os exemplos seguintes para devolver vários objetos no Configuration Manager:
 
-| Cel | Zapytanie OData |
+| Objetivo | Consulta de OData |
 |---|---|
-| Pobierz wszystkie kolekcje | `http://localhost/CMRestProvider/Collection` |
-| Pobierz kolekcję | `http://localhost/CMRestProvider/Collection('SMS00001')`
-| Pobierz top 100 urządzeń w kolekcji | `http://localhost/CMRestProvider/Collection('SMS00001')/Device?$top=100` |
-| Pobierz urządzeń o identyfikatorze zasobu w kolekcji | `http://localhost/CMRestProvider/Collection('SMS00001')/Device(16777573)` |
-| Pobierz system operacyjny urządzenia w kolekcji | `http://localhost/CMRestProvider/Collection('SMS00001')/Device(16777573)/OPERATING_SYSTEM` |
-| Pobierz użytkowników w kolekcji | `http://localhost/CMRestProvider/Collection('SMS00001')/User` |
+| Obter todas as coleções | `http://localhost/CMRestProvider/Collection` |
+| Obter uma coleção | `http://localhost/CMRestProvider/Collection('SMS00001')`
+| Obter superiores 100 dispositivos na coleção | `http://localhost/CMRestProvider/Collection('SMS00001')/Device?$top=100` |
+| Obter um dispositivo com um ID de recurso na coleção | `http://localhost/CMRestProvider/Collection('SMS00001')/Device(16777573)` |
+| Obter o sistema operativo do dispositivo na coleção | `http://localhost/CMRestProvider/Collection('SMS00001')/Device(16777573)/OPERATING_SYSTEM` |
+| Obter os utilizadores na coleção | `http://localhost/CMRestProvider/Collection('SMS00001')/User` |
 
 > [!NOTE]
-> Przykładowe zapytania wyświetlany w przypadku użycia tabeli *localhost* jako host name w adresie URL i mogą być używane na komputerze z uruchomionym dostawcą programu SMS. Jeśli korzystasz z zapytań na innym komputerze, zastąpić nazwę FQDN serwera z zainstalowanym dostawcą programu SMS localhost.
+> As consultas de exemplo mostradas a utilização de tabela *localhost* como o anfitrião de nome no URL e pode ser utilizado no computador com o fornecedor de SMS. Se estiver a executar as suas consultas a partir de um computador diferente, substitua localhost o FQDN do servidor com o fornecedor de SMS instalado.
 
-## <a name="azure-active-directory-onboarding"></a>Azure Active Directory dołączania
+## <a name="azure-active-directory-onboarding"></a>Integração do Active Directory do Azure
 
-Azure Active Directory (AD) dołączania tworzy połączenie programu Configuration Manager i usługi Azure Active Directory, który będzie używany przez inne usługi w chmurze. Obecnie można to do utworzenia połączenia potrzebne do zarządzania bramy chmury.
+A integração do Active Directory (AD) do Azure cria uma ligação entre o Configuration Manager e o Azure Active Directory para ser utilizado por outros serviços em nuvem. Atualmente pode ser utilizado para criar a ligação necessária para o Gateway de gestão de nuvem.
 
-To zadanie z administratora platformy Azure, należy wykonać, potrzebne będą poświadczenia administratora usługi Azure.
+Execute esta tarefa com o administrador do Azure, pois terá as credenciais de administrador do Azure.
 
-#### <a name="to-create-the-connection"></a>Aby utworzyć połączenie:
+#### <a name="to-create-the-connection"></a>Para criar a ligação:
 
-2. W **administracji** obszaru roboczego wybierz **usługi w chmurze** > **usługi Azure Active Directory** > **Dodaj usługi Azure Active Directory**.
-2. Wybierz **logowania** do utworzenia połączenia z usługą Azure AD.
+2. No **administração** área de trabalho, escolha **serviços em nuvem** > **do Azure Active Directory** > **adicionar do Azure Active Directory**.
+2. Escolha **sessão** para criar a ligação com o Azure AD.
 
-#### <a name="configuration-manager-client-requirements"></a>Wymagania dotyczące klienta programu Configuration Manager
+#### <a name="configuration-manager-client-requirements"></a>Requisitos do cliente do Configuration Manager
 
-Istnieje kilka wymagań dotyczących włączania tworzenia zasad użytkowników w chmurze brama zarządzania.
+Existem vários requisitos para ativar a criação da política de utilizador no Gateway de gestão de nuvem.
 
-- Musi zostać ukończony proces przechodzenia do usługi Azure AD, a klient ma początkowo będą podłączone do sieci firmowej, aby uzyskać informacje o połączeniu.
-- Klienci muszą mieć jednocześnie przyłączonych do domeny (zarejestrowane w usługi Active Directory) i przyłączone do domeny chmury (zarejestrowane w usłudze Azure AD).
-- Należy uruchomić [odnajdywania użytkownika usługi Active Directory](/sccm/core/servers/deploy/configure/about-discovery-methods#active-directory-user-discovery#active-directory-user-discovery).
-- Modyfikowanie klienta programu Configuration Manager, aby umożliwić żądania dotyczące zasad użytkownika za pośrednictwem Internetu, a wdrożenia zmiany do klienta. Ponieważ ta zmiana klienta odbywa się *na urządzeniu klienckim*, mimo że nie ukończono zmiany konfiguracji niezbędne dla zasad użytkownika można ją wdrożyć za pośrednictwem bramy zarządzania w chmurze.
-- Punkt zarządzania musi być skonfigurowana do używania protokołu HTTPS do zabezpieczania token w sieci, a musi mieć .net 4.5 zainstalowane.
+- O processo de integração do Azure AD tem de ser concluído e o cliente tem de ser inicialmente ligado à rede da empresa para obter as informações de ligação.
+- Os clientes tem de ser ambos associados a um domínio (registado nos Active Directory) e na nuvem-associados a um domínio (registado no Azure AD).
+- Tem de executar [deteção de utilizador do Active Directory](/sccm/core/servers/deploy/configure/about-discovery-methods#active-directory-user-discovery#active-directory-user-discovery).
+- Tem de modificar o cliente do Configuration Manager para permitir pedidos de política de utilizador através da Internet e implementar a alteração ao cliente. Porque esta alteração para o cliente tem lugar *no dispositivo cliente*, podem ser implementada através do Gateway de gestão de nuvem, apesar de não concluídas as alterações de configuração necessárias para a política de utilizador.
+- O ponto de gestão tem de ser configurado para utilizar HTTPS para proteger o token na rede e tem de ter o .net 4.5 instalados.
 
-Po wprowadzeniu tych zmian konfiguracji, można utworzyć zasad użytkownika i przenieść klientów do Internetu, aby przetestować zasady. Żądania dotyczące zasad użytkownika przez bramę zarządzania chmury będą uwierzytelniane przy użyciu uwierzytelniania opartego na tokenach usługi Azure AD.
+Depois de efetuar estas alterações de configuração, pode criar uma política de utilizador e mover clientes à Internet para testar a política. Pedidos de política de utilizador através do Gateway de gestão de nuvem serão autenticados com a autenticação baseada em tokens do AD do Azure.
 
-## <a name="change-to-configuring-multi-factor-authentication-for-device-enrollment"></a>Zmień na konfigurowanie uwierzytelniania wieloskładnikowego dla rejestracji urządzeń
+## <a name="change-to-configuring-multi-factor-authentication-for-device-enrollment"></a>Alterar para configurar a autenticação multifator para inscrição de dispositivos
 
-Teraz, możesz skonfigurować uwierzytelnianie wieloskładnikowe (MFA) do zarejestrowania urządzenia w portalu Azure, opcja MFA została usunięta w konsoli programu Configuration Manager. Więcej informacji na temat konfigurowania uwierzytelniania Wieloskładnikowego dla rejestracji można znaleźć [w tym temacie Microsoft Intune](https://docs.microsoft.com/en-us/intune/deploy-use/multi-factor-authentication-azure-active-directory).
+Agora que pode configurar a autenticação multifator (MFA) para inscrição de dispositivos no portal do Azure, a opção de MFA foi removida na consola do Configuration Manager. Pode encontrar mais informações sobre como configurar a MFA para inscrição [neste tópico do Microsoft Intune](https://docs.microsoft.com/en-us/intune/deploy-use/multi-factor-authentication-azure-active-directory).

@@ -1,6 +1,6 @@
 ---
-title: "Lista kontrolna dotycząca 1606 | Dokumentacja firmy Microsoft"
-description: "Więcej informacji na temat działania należy podjąć przed zaktualizowaniem programu System Center Configuration Manager w wersji 1511 lub 1602 do wersji 1606."
+title: "Lista de verificação para 1606 | Microsoft Docs"
+description: "Saiba mais sobre as ações a efetuar antes de atualizar do System Center Configuration Manager versão 1511 ou 1602 para a versão 1606."
 ms.custom: na
 ms.date: 6/6/2017
 ms.reviewer: na
@@ -17,93 +17,93 @@ manager: angrobe
 ms.openlocfilehash: a6bda116499845fedff0126e2890755931de85bb
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pl-PL
+ms.contentlocale: pt-PT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="checklist-for-installing-update-1606-for-system-center-configuration-manager"></a>Lista kontrolna dotycząca instalowania aktualizacji 1606 programu System Center Configuration Manager
+# <a name="checklist-for-installing-update-1606-for-system-center-configuration-manager"></a>Lista de verificação para instalar a atualização 1606 para o System Center Configuration Manager
 
-*Dotyczy: Program System Center Configuration Manager (Current Branch)*
+*Aplica-se a: O System Center Configuration Manager (ramo atual)*
 
-Wersja 1606 dla bieżącej gałęzi programu System Center Configuration Manager jest dostępna aktualizacja, służącego do aktualizacji z wersji 1511 lub 1602.
+A versão 1606 para o ramo atual do System Center Configuration Manager é uma atualização que pode utilizar ao atualizar a partir da versão 1511 ou 1602.
 
-Przed zainstalowaniem wersji 1606 jako aktualizację, przejrzyj następujące informacje i listy kontrolnej czynności należy wykonać przed rozpoczęciem aktualizacji.
+Antes de instalar a versão 1606 como uma atualização, reveja as seguintes informações e a lista de verificação para ações a efetuar antes de iniciar a atualização.
 
-Aby uzyskać informacje o wersji linii bazowej, zobacz [wersje linii bazowej i aktualizacji](../../../core/servers/manage/updates.md#bkmk_Baselines) w [aktualizacji dla programu System Center Configuration Manager](../../../core/servers/manage/updates.md).
+Para obter informações sobre as versões de linha de base, consulte [versões de linha de base e atualização](../../../core/servers/manage/updates.md#bkmk_Baselines) no [atualizações para o System Center Configuration Manager](../../../core/servers/manage/updates.md).
 
- ## <a name="about-installing-update-1606"></a>Informacje dotyczące instalowania aktualizacji 1606
+ ## <a name="about-installing-update-1606"></a>Sobre a instalação de atualização 1606
 
-Jako *aktualizacji*, 1606 można zainstalować tylko w lokacji najwyższego poziomu w hierarchii. Oznacza to, należy zainicjować instalację, z witryny Administracja centralna, jeśli masz lub autonomicznej lokacji głównej.  
+Como um *atualizar*, 1606 só pode ser instalado no site de nível superior da sua hierarquia. Isto significa que inicia a instalação do seu site de administração central, se tiver uma, ou do seu site primário autónomo.  
 
--   Podrzędne Lokacje główne instalują aktualizację automatycznie po zakończeniu centralnej lokacji administracyjnej, instalowania aktualizacji. Można użyć usługi windows do formantu, gdy lokacja instaluje aktualizacje. Przed wersją 1606 usługi systemu windows były nazywane okna obsługi. Aby uzyskać więcej informacji, zobacz [usługi systemu windows dla serwerów lokacji](/sccm/core/servers/manage/service-windows).  
+-   Os sites primários subordinados instalam a atualização automaticamente após a instalação da atualização do site de administração central. Pode utilizar janelas de serviço para controlar quando um site instala as atualizações. Antes de versão 1606, janelas de serviço foram chamadas janelas de manutenção. Para obter mais informações, consulte [windows para servidores de site do serviço](/sccm/core/servers/manage/service-windows).  
 
--   Należy ręcznie zaktualizować Lokacje dodatkowe przy użyciu konsoli programu Configuration Manager po zakończeniu nadrzędną lokację główną, instalowania aktualizacji. Automatyczna aktualizacja serwerów lokacji dodatkowych nie jest obsługiwana.  
+-   Tem de atualizar manualmente sites secundários a partir da consola do Configuration Manager após a instalação da atualização do site primário principal. A atualização automática dos servidores de site secundários não é suportada.  
 
-Podczas instalowania aktualizacji serwera lokacji role systemu lokacji, które są zainstalowane na serwerze lokacji oraz te, które są zainstalowane na komputerach zdalnych aktualizowany automatycznie. W związku z tym przed zainstalowaniem aktualizacji, upewnij się, że każdy serwer systemu lokacji spełnia ewentualne nowe wymagania wstępne dla operacji przy użyciu nowej wersji aktualizacji.  
+Quando o servidor do site instala a atualização, as funções do sistema de sites que estão instaladas no servidor do site e os que são instaladas em computadores remotos for atualizadas automaticamente. Por conseguinte, antes de instalar a atualização, certifique-se de que cada servidor do sistema de sites cumpre os novos pré-requisitos para as operações com a nova versão de atualização.  
 
-Użycie konsoli programu Configuration Manager po zainstalowaniu aktualizacji po raz pierwszy pojawi się monit zaktualizowanie tej konsoli.  Aby to zrobić, należy uruchomić Instalatora programu Configuration Manager na komputerze, który jest hostem konsoli i następnie wybierz opcję, aby zaktualizować konsolę. Zalecamy natychmiastowe instalowanie aktualizacji konsoli.
+Na primeira vez que utiliza uma consola do Configuration Manager após a atualização foi instalada, será solicitado Atualize a consola.  Para tal, tem de executar a configuração do Configuration Manager no computador que aloja a consola e, em seguida, escolha a opção para atualizar a consola. Recomendamos que não adie a instalação da atualização na consola.
 
- **Znane problemy dotyczące tej aktualizacji**   
-  Wyświetl stan instalacji pakietu aktualizacji obowiązują następujące problemy:
-  - Podczas aktualizacji z wersji 1602 do 1606 kroku **ładunek pakietu aktualizacji wyodrębniania** ma stan **nie rozpoczęto**, nawet jeśli został pobrany.
-  - Podczas aktualizacji z wersji 1511 do 1606, niektóre kroki będzie wyświetlany stan **Ukończono** , ale nie będą wyświetlane wartości **czas ostatniej aktualizacji**.
+ **Problemas conhecidos para esta atualização**   
+  São aplicáveis os seguintes problemas quando visualizar o estado de instalação do pacote de atualização:
+  - Ao atualizar a partir da versão 1602 para 1606, o passo **payload do pacote de atualização de extrair** apresenta o estado **não iniciado**, mesmo que a transferência foi concluída.
+  - Ao atualizar a partir da versão 1511 para 1606, alguns passos mostram um Estado de **concluído** , mas não apresentará um valor para **hora da última atualização**.
 
 
-## <a name="checklist"></a>Lista kontrolna  
+## <a name="checklist"></a>Lista de verificação  
 
- **Upewnij się, że we wszystkich lokacjach uruchomiona obsługiwana wersja programu System Center Configuration Manager:**  Przed rozpoczęciem instalacji aktualizacji 1606 każdy serwer lokacji w hierarchii muszą korzystać z tej samej wersji programu System Center Configuration Manager: danej wersji 1511 lub 1602.
+ **Certifique-se de que todos os sites executem uma versão suportada do System Center Configuration Manager:**  Antes de iniciar a instalação da atualização 1606, cada servidor do site na hierarquia tem de executar a mesma versão do System Center Configuration Manager: a versão 1511 ou 1602.
 
- **Przegląd zainstalowanych wersji Microsoft.NET na serwerach systemu lokacji:** Podczas instalowania aktualizacji 1606 lokacji programu Configuration Manager automatycznie instaluje .NET Framework 4.5.2 na każdym komputerze hostującym jedną z następujących ról systemu lokacji (Jeśli nie zainstalowano jeszcze .NET Framework 4.5 lub nowszej):  
+ **Revisão instaladas versões Microsoft.NET em servidores do sistema de sites:** Quando um site instala a atualização 1606, Configuration Manager instala automaticamente .NET Framework 4.5.2 em cada computador que aloja uma das seguintes funções do sistema de sites (se o .NET Framework 4.5 ou posterior não está já instalada):  
 
--   Punkt proxy rejestracji  
+-   Ponto proxy de registo  
 
--   Punkt rejestracji  
+-   Ponto de inscrição  
 
--   Punkt zarządzania  
+-   Ponto de gestão  
 
--   Punkt połączenia usługi  
+-   Ponto de ligação de serviço  
 
-Ta instalacja można umieścić serwer systemu lokacji do na ponowne uruchomienie do czasu stanu i raport błędów w przeglądarce stanu składników programu Configuration Manager. Ponadto mogą losowo występować usterki aplikacji .NET na serwerze do momentu ponownego uruchomienia serwera.  
+Esta instalação pode colocar o servidor de sistema de sites no reinício pendente erros de estado e relatórios para o Visualizador de estado do componente do Configuration Manager. Além disso, as aplicações .NET no servidor podem ter falhas aleatórias até que o servidor seja reiniciado.  
 
- Aby uzyskać więcej informacji, zobacz [lokacji i wymagania wstępne systemu lokacji](../../../core/plan-design/configs/site-and-site-system-prerequisites.md).  
+ Para obter mais informações consulte [Site e os pré-requisitos de sistema de site](../../../core/plan-design/configs/site-and-site-system-prerequisites.md).  
 
- **Sprawdź stan lokacji i hierarchii, a następnie sprawdź, czy nie występują żadne nierozwiązane problemy:** Przed uaktualnieniem lokacji należy rozwiązać wszystkie problemy z działaniem serwera lokacji, serwera bazy danych lokacji i ról systemu lokacji, które są zainstalowane na komputerach zdalnych. Problemy z działaniem mogą spowodować niepowodzenie aktualizacji lokacji.
+ **Rever o estado de site e da hierarquia e certifique-se de que existem não existem problemas por resolver:** Antes de atualizar um site, resolva todos os problemas operacionais do servidor do site, o servidor de base de dados do site e funções de sistema de sites que são instaladas em computadores remotos. Uma atualização de site pode falhar devido a problemas operacionais existentes.
 
- Aby uzyskać więcej informacji, zobacz [Korzystanie z alertów i systemu stanu w programie System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
+ Para obter mais informações, veja [Utilizar alertas e o sistema de estado para o System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
 
- **Przejrzyj replikację plików i danych między lokacjami:**  Upewnij się, że plik i replikacji bazy danych między lokacjami jest operacyjne i bieżący. Opóźnień lub zaległości może uniemożliwić smooth aktualizacji powiodło się.    
+ **Reveja o ficheiro e dados de replicação entre sites:**  Certifique-se de que o ficheiro e a replicação de base de dados entre sites está operacional e atual. Os atrasos ou os registos de segurança no podem impedir uma atualização com êxito, uniforme.    
 
-W przypadku replikacji bazy danych można skorzystać z Analizatora linków replikacji ułatwiającego rozwiązywanie problemów przed rozpoczęciem aktualizacji. Aby uzyskać więcej informacji, zobacz [o analizator łącza replikacji](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md#BKMK_RLA) w temacie [Monitorowanie infrastruktury hierarchii i replikacji w programie System Center Configuration Manager](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md).  
+Para a replicação de base de dados, pode utilizar o Analisador de Ligações de Replicação para ajudar a resolver problemas antes de iniciar a atualização. Para obter mais informações, consulte [sobre o analisador do Link de replicação](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md#BKMK_RLA) no tópico [monitorizar a infraestrutura hierarquia e replicação no System Center Configuration Manager](../../../core/servers/manage/monitor-hierarchy-and-replication-infrastructure.md).  
 
- **Zainstaluj wszystkie odpowiednie aktualizacje krytyczne dla systemów operacyjnych na komputerach hostujących lokację, serwer bazy danych lokacji i role zdalnego systemu lokacji:** Przed zainstalowaniem aktualizacji programu Configuration Manager, należy zainstalować wszystkie aktualizacje krytyczne dla odpowiednich systemów lokacji. Instalowana aktualizacja może wymagać ponownego uruchomienia odpowiednich komputerów przed rozpoczęciem uaktualniania.  
+ **Instale todas as atualizações críticas aplicáveis para sistemas operativos em computadores que alojam o site, o servidor de base de dados do site e as funções do sistema de sites remoto:** Antes de instalar uma atualização para o Configuration Manager, instale quaisquer atualizações críticas para cada sistema de sites aplicáveis. Se uma atualização que instalar necessitar de um reinício, reinicie os computadores aplicáveis antes de iniciar a atualização.  
 
- **Wyłącz repliki bazy danych dla punktów zarządzania w lokacjach głównych:** Menedżer konfiguracji nie może pomyślnie zaktualizować lokacji głównej, z repliki bazy danych dla punktów zarządzania włączone. Wyłącz replikację bazy danych, przed zainstalowaniem aktualizacji programu Configuration Manager.  
+ **Desative réplicas de base de dados para pontos de gestão em sites primários:** O Configuration Manager não é possível atualizar com êxito um site primário que tenha uma réplica de base de dados para pontos de gestão ativada. Desative a replicação de base de dados antes de instalar uma atualização para o Configuration Manager.  
 
-Aby uzyskać więcej informacji, zobacz [replik bazy danych dla punktów zarządzania programu System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
+Para obter mais informações, consulte [da base de dados réplicas para pontos de gestão do System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
 
- **Ustaw ręcznego przełączania trybu failover grupy dostępności AlwaysOn programu SQL Server:**  
- Przed zainstalowaniem aktualizacji, na przykład wersji 1606, upewnij się, że grupy dostępności jest ustawiona na ręcznego przełączania trybu failover. Po zaktualizowaniu lokacji można przywrócić trybu failover automatycznego. Aby uzyskać więcej informacji, zobacz [AlwaysOn programu SQL Server dla bazy danych lokacji](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).
+ **Definir grupos de Disponibilidade AlwaysOn do SQL Server para ativação pós-falha manual:**  
+ Antes de instalar atualizações, tais como a versão 1606, certifique-se de que o grupo de disponibilidade está definido para ativação pós-falha manual. Depois do site tiver sido atualizado, pode restaurar a ativação pós-falha para ser automática. Para obter mais informações, consulte [SQL Server AlwaysOn para uma base de dados do site](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).
 
- **Skonfiguruj ponownie punkty aktualizacji oprogramowania, które używają usługi równoważenia obciążenia sieciowego:** Menedżer konfiguracji nie może zaktualizować lokacji korzystającej z klastra równoważenia obciążenia sieciowego (NLB), punkty aktualizacji oprogramowania.  
+ **Reconfigure os pontos de atualização de software que utilizem NLB:** O Configuration Manager não é possível atualizar um site que utiliza um cluster de balanceamento de carga na rede (NLB) para alojar pontos de atualização de software.  
 
-Korzystając z klastrami równoważenia obciążenia Sieciowego dla punktów aktualizacji oprogramowania, należy usunąć klaster równoważenia obciążenia Sieciowego za pomocą programu Windows PowerShell.    
+Se utilizar NLB clusters para pontos de atualização de software, utilize o Windows PowerShell para remover o cluster NLB.    
 
- Aby uzyskać więcej informacji, zobacz [Planowanie aktualizacji oprogramowania w programie System Center Configuration Manager](../../../sum/plan-design/plan-for-software-updates.md).  
+ Para obter mais informações, veja [Planear atualizações de software no System Center Configuration Manager](../../../sum/plan-design/plan-for-software-updates.md).  
 
- **Wyłącz wszystkie zadania konserwacji lokacji w każdej lokacji w czasie trwania instalacji aktualizacji w tej witrynie:** Przed zainstalowaniem aktualizacji Wyłącz wszystkie zadania konserwacji lokacji, które mogą być uruchamiane w czasie procesu aktualizacji jest aktywny. Dotyczy to m.in. następujących zadań:  
+ **Desative todas as tarefas de manutenção do site em cada site durante a instalação da atualização desse site:** Antes de instalar a atualização, desative as tarefas de manutenção do site que possam ser executadas durante o período de tempo que o processo de atualização estiver ativo. Estas incluem as seguintes, entre outras:  
 
--   Wykonaj kopię zapasową serwera lokacji  
+-   Servidor do Site de Reserva  
 
--   Usuń przedawnione operacje klienta  
+-   Eliminar Operações de Cliente Desatualizadas  
 
--   Usuń przedawnione dane odnajdywania  
+-   Eliminar Dados de Deteção Desatualizados  
 
-Instalowanie aktualizacji może zakończyć się niepowodzeniem, jeżeli w czasie jego trwania zostanie uruchomione zadanie konserwacji bazy danych lokacji. Przed wyłączeniem zadania Zarejestruj jego harmonogram zadań, można przywrócić jego konfigurację po zainstalowaniu aktualizacji.  
+Quando uma tarefa de manutenção da base de dados do site é executada durante a instalação da atualização, a instalação da atualização pode falhar. Antes de desativar uma tarefa, registe o agendamento da tarefa para que possa restaurar a respetiva configuração após a atualização foi instalada.  
 
-Aby uzyskać więcej informacji, zobacz [zadania konserwacji programu System Center Configuration Manager](../../../core/servers/manage/maintenance-tasks.md) i [odwołania do obsługi zadań programu System Center Configuration Manager](../../../core/servers/manage/reference-for-maintenance-tasks.md).  
+Para obter mais informações, consulte [tarefas de manutenção do System Center Configuration Manager](../../../core/servers/manage/maintenance-tasks.md) e [tarefas de referência para a manutenção do System Center Configuration Manager](../../../core/servers/manage/reference-for-maintenance-tasks.md).  
 
- **Utwórz kopię zapasową bazy danych lokacji w centralnej lokacji administracyjnej i lokacjach głównych:** Przed zaktualizowaniem lokacji Utwórz kopię zapasową bazy danych lokacji, upewnij się, że masz pomyślnego tworzenia kopii zapasowej do użycia podczas odzyskiwania po awarii.   
+ **Crie uma cópia de segurança da base de dados do site no site de administração central e sites primários:** Antes de atualizar um site, uma cópia de segurança da base de dados do site para se certificar de que tem uma cópia de segurança a utilizar para recuperação após desastre.   
 
-Aby uzyskać więcej informacji, zobacz [kopii zapasowych i odzyskiwania dla programu System Center Configuration Manager](../../../protect/understand/backup-and-recovery.md).  
+Para obter mais informações, consulte [cópia de segurança e recuperação para o System Center Configuration Manager](../../../protect/understand/backup-and-recovery.md).  
 
 <!-- Removed from update guidance 6/6/2017
  **Test the database upgrade on a copy of the most recent site database backup:** Before you update a System Center Configuration Manager central administration site or primary site, test the site database upgrade process on a copy of the site database.  
@@ -123,24 +123,24 @@ Configuration Manager does not support the backup of secondary sites nor does it
 Do not run a test database upgrade on the production site database. Doing so updates the site database and could render your site inoperable. For more information, For more information, see [Step 2: Test the database upgrade before installing an update](/sccm/core/servers/manage/install-in-console-updates#bkmk_step2) from **Before you install an in-console update**.
 -->
 
- **Zaplanuj pilotażowe wdrażanie klienta:** Podczas instalowania aktualizacji powodującej aktualizację klienta można przetestować tę nową aktualizację klienta w środowisku przedprodukcyjnym przed wdrożeniem i uaktualnieniem wszystkich aktywnych klientów.   
+ **Planear testes de implementação de cliente:** Quando instala uma atualização que atualiza o cliente, pode testar essa nova atualização de cliente em pré-produção antes de implementar e atualiza todos os clientes ativos.   
 
- Aby korzystać z tej opcji, przed rozpoczęciem instalacji aktualizacji, należy skonfigurować lokację do obsługi automatycznych uaktualnień w produkcji wstępnej. Aby uzyskać więcej informacji, zobacz [Uaktualnianie klientów w programie System Center Configuration Manager](../../../core/clients/manage/upgrade/upgrade-clients.md) i   
-[Testowanie uaktualnień klienta w kolekcji przedprodukcyjnej w programie System Center Configuration Manager](../../../core/clients/manage/upgrade/test-client-upgrades.md).  
+ Para tirar partido desta opção, antes de iniciar a instalação da atualização, tem de configurar o seu site para suportar as atualizações automáticas para pré-produção. Para obter mais informações, veja [Atualização dos clientes no System Center Configuration Manager](../../../core/clients/manage/upgrade/upgrade-clients.md) e   
+[Como testar as atualizações de cliente numa coleção de pré-produção no System Center Configuration Manager](../../../core/clients/manage/upgrade/test-client-upgrades.md).  
 
- **Zamierzasz używać okien obsługi do formantu, gdy serwery lokacji instalują aktualizacje:** Aby zdefiniować okres, w którym można zainstalować aktualizacji na serwerze lokacji, można użyć usługi windows.
+ **Planear a utilização de janelas de serviço para controlar quando os servidores do site instalam atualizações:** Pode utilizar janelas de serviço para definir um período durante o qual podem ser instaladas as atualizações de um servidor de site.
 
-Może to ułatwić określenie, kiedy można zainstalować aktualizację w danej hierarchii.
-Przed wersją 1606 usługi systemu windows były nazywane okna obsługi. Aby uzyskać więcej informacji, zobacz [usługi systemu windows dla serwerów lokacji](/sccm/core/servers/manage/service-windows).  
+Isto pode ajudar a controlar quando os sites na hierarquia instalam a atualização.
+Antes de versão 1606, janelas de serviço foram chamadas janelas de manutenção. Para obter mais informações, consulte [windows para servidores de site do serviço](/sccm/core/servers/manage/service-windows).  
 
- **Uruchom narzędzie sprawdzania wymagań wstępnych Instalatora:**  Przed zainstalowaniem aktualizacji 1606, możesz uruchomić narzędzie sprawdzania wymagań wstępnych niezależnie od instalacji aktualizacji. Po zainstalowaniu aktualizacji w lokacji zostanie ponownie uruchomione narzędzie sprawdzania wymagań wstępnych.  
+ **Execute o Verificador de pré-requisitos do programa de configuração:**  Antes de instalar a atualização 1606, pode executar o Verificador de pré-requisitos independentemente da instalação da atualização. Quando instalar a atualização no site, o Verificador de pré-requisitos é executado novamente.  
 
-Aby uzyskać więcej informacji, zobacz **krok 3: Uruchom narzędzie sprawdzania wymagań wstępnych przed instalacją aktualizacji** w [aktualizacji dla programu System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md) tematu.  
+Para obter mais informações, consulte **passo 3: Executar o Verificador de pré-requisitos antes de instalar uma atualização** no [atualizações para o System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md) tópico.  
 
 > [!IMPORTANT]  
->  Po uruchomieniu narzędzia sprawdzania wymagań wstępnych niezależnie lub w ramach instalacji aktualizacji ten proces aktualizuje niektóre pliki źródłowe produktów, które są używane dla zadania obsługi lokacji. W związku z tym po uruchomieniu narzędzia sprawdzania wymagań wstępnych, lecz przed zainstalowaniem aktualizacji 1606, jeśli trzeba wykonać zadanie obsługi lokacji, uruchom **Setupwpf.exe** (Instalator programu Configuration Manager) z dysku CD. Najnowszy folder na serwerze lokacji.  
+>  Quando o Verificador de pré-requisitos é executado independentemente ou como parte de uma instalação de atualização, o processo atualiza alguns ficheiros de origem do produto que são utilizados para tarefas de manutenção do site. Por conseguinte, depois de executar o Verificador de pré-requisitos, mas antes a instalar a atualização 1606, se precisar de executar uma tarefa de manutenção do site, execute **Setupwpf.exe** (configuração do Configuration Manager) partir do CD. Pasta mais recente no servidor do site.  
 
- **Zaktualizuj Lokacje:** Teraz można przystąpić do rozpoczęcia instalacji aktualizacji dla hierarchii.  
-  Zaleca się zaplanowanie instalacji aktualizacji poza normalnymi godzinami pracy każdej lokacji, gdy proces instalacji aktualizacji i jego akcje, aby ponownie zainstalować składniki lokacji i role systemu lokacji będą miały jak najmniejszy wpływ na działania biznesowe.
+ **Atualizar sites:** Agora está pronto para iniciar a instalação da atualização para a sua hierarquia.  
+  Recomendamos que planeia instalar a atualização fora do horário comercial normal para cada site, quando o processo de instalação da atualização e as respetivas ações para reinstalar os componentes do site e funções de sistema de sites irão ter o mínimo efeito nas suas operações de negócio.
 
-Aby uzyskać więcej informacji, zobacz [Aktualizacje programu System Center Configuration Manager](../../../core/servers/manage/updates.md).  
+Para obter mais informações, veja [Atualizações para o System Center Configuration Manager](../../../core/servers/manage/updates.md).  

@@ -1,361 +1,358 @@
 ---
-title: "Możliwości w Technical Preview 1702 programu Configuration Manager"
-description: "Informacje na temat funkcji dostępnych w Technical Preview programu System Center Configuration Manager, 1702 wersji."
+title: "Capacidades na pré-visualização técnica 1702 do Configuration Manager"
+description: "Saiba mais sobre as funcionalidades disponíveis no Technical Preview do System Center Configuration Manager, versão 1702."
 ms.custom: na
 ms.date: 02/24/2017
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aedd608d-6db3-4ea5-851d-70f2dcda6bb5
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 8f4ec982a54cf3cefef310268a54850e70e2e63a
 ms.openlocfilehash: 3bdbcd1a3c64a1d50f2f6219b2a5e17d60979864
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1702-for-system-center-configuration-manager"></a>Możliwości w Technical Preview 1702 System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1702-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1702 do System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (Technical Preview)*
+*Aplica-se a: O System Center Configuration Manager (Technical Preview)*
 
-Ten artykuł wprowadza do funkcji, które są dostępne w Technical Preview programu System Center Configuration Manager, 1702 wersji. Można zainstalować tę wersję, aby zaktualizować i dodawać nowe funkcje do lokacji programu Configuration Manager technical preview. Przed zainstalowaniem tej wersji technical preview, przejrzyj temat wprowadzające [Technical Preview dla programu System Center Configuration Manager](../../core/get-started/technical-preview.md), aby zapoznać się z ogólnym wymagania i ograniczenia dotyczące używania technical preview, jak zaktualizować między wersjami i jak Wyraź swoją opinię dotyczącą funkcji w technical preview.    
-
-
-**Poniżej przedstawiono nowe funkcje, które można wypróbować z tą wersją.**  
-
-##  <a name="send-feedback-from-the-configuration-manager-console"></a>Wyślij opinię z konsoli programu Configuration Manager
-
-Ta wersja zapoznawcza wprowadza nowe opcje opinii w konsoli programu Configuration Manager. Opcje opinii umożliwia wysyłanie opinii bezpośrednio do zespołu deweloperów i na opinie UserVoice Menedżera konfiguracji witryny sieci Web.  
-
->Można znaleźć **opinii** opcji:
--  Na Wstążce po lewej karcie głównej każdego węzła.  
-   ![Wstążka](./media/feedback-home.png)
-
--  Po kliknięciu prawym przyciskiem myszy dowolnego obiektu w konsoli.   
-    ![Prawej kliknięcia](./media/feedback-option.png)   
-
-Wybieranie **opinii** otwiera w przeglądarce WWW opinii UserVoice programu Configuration Manager, w https://configurationmanager.uservoice.com/forums/300492-ideas.
-##  <a name="changes-for-updates-and-servicing"></a>Zmiany aktualizacji i obsługi
-Następujące są wprowadzane z tego podglądu.
-
-**Prostsze opcje aktualizacji**  
-Przy następnym infrastruktury kwalifikuje się do dwóch lub większej liczby aktualizacji, pobrać najnowszą aktualizację. Na przykład, jeśli bieżąca wersja lokacji wynosi dwa lub więcej starsze niż najnowszą wersję, która jest dostępna, tylko że najnowsza wersja aktualizacji jest pobierany automatycznie.  
-
-Użytkownik może pobrać i zainstalować dostępne aktualizacje, nawet jeśli nie są one najbardziej aktualnej wersji. Jednakże otrzymasz ostrzeżenie, że aktualizacja została zastąpiona przez nowszej. Do pobierania aktualizacji, która jest *dostępne do pobrania*, wybierz aktualizację, w konsoli, a następnie kliknij przycisk **pobrać**.
-
-**Ulepszone oczyszczanie starszych aktualizacji**   
-Dodaliśmy funkcję automatycznego czyszczenia, która usuwa niepotrzebne pliki do pobrania z folderu "EasySetupPayload" na serwerze lokacji.  
+Este artigo apresenta as funcionalidades que estão disponíveis no Technical Preview do System Center Configuration Manager, versão 1702. Pode instalar esta versão para atualizar e adicionar novas capacidades ao seu local de pré-visualização técnica do Configuration Manager. Antes de instalar esta versão do technical preview, reveja o tópico introdutórias, [pré-visualização técnica do System Center Configuration Manager](../../core/get-started/technical-preview.md), para se familiarizar com os requisitos gerais e limitações para utilizar como uma pré-visualização técnica, ao atualizar entre versões e como fornecer comentários sobre as funcionalidades de um technical preview.    
 
 
-## <a name="peer-cache-improvements"></a>Ulepszenia pamięci podręcznej elementu równorzędnego
-Począwszy od tej wersji, komputer źródłowy pamięci podręcznej elementu równorzędnego będą odrzucać żądania zawartości, gdy komputer źródłowy pamięci podręcznej elementu równorzędnego spełnia żadnego z następujących warunków:  
- -     Jest w trybie niskim poziomie naładowania baterii.
- -  Obciążenie procesora CPU przekracza 80% w czasie żądania zawartości.
- -  We/Wy dysku ma *AvgDiskQueueLength* który przekracza 10.
- -  Nie ma ma więcej dostępnych połączeń z komputerem.   
+**Seguem-se novas funcionalidades que pode experimentar com esta versão.**  
 
-Można skonfigurować te ustawienia przy użyciu klasy konfiguracji agenta klienta dla funkcji źródło elementu równorzędnego (*SMS_WinPEPeerCacheConfig*) używając System Center Configuration Manager SDK.
+##  <a name="send-feedback-from-the-configuration-manager-console"></a>Enviar comentários a partir da consola do Configuration Manager
 
-Gdy komputer odrzuci zawartość, komputera wysyłającego żądanie będzie wyszukiwać źródła alternatywne zawartości formularza w puli lokalizacji źródła zawartości.   
+Esta pré-visualização introduz novas opções de comentários na consola do Configuration Manager. As opções de comentários permite-lhe enviar comentários diretamente a equipa de desenvolvimento, a título de site de comentários do UserVoice do Configuration Manager.  
 
-## <a name="azurediscovery"></a>Azure Active Directory Domain Services umożliwia zarządzanie urządzeniami, użytkowników i grup
+>Pode encontrar o **comentários** opção:
+-  No Friso, na extremidade esquerda do separador de início de cada nó.  
+   ![Friso](./media/feedback-home.png)
 
-Z tego technical preview można zarządzać urządzeń dołączonych do usług domenowych w usłudze Azure Active Directory (AD) w wersji zarządzane domeny. Za pomocą różnych metod odnajdywania programu Configuration Manager umożliwia również odnajdywanie urządzeń, użytkowników i grup w tej domenie.
+-  Quando lhe com o botão direito em qualquer objeto na consola do.   
+    ![Opção de clique ecrãs](./media/feedback-option.png)   
 
-Infrastruktura lokacji technical preview, klientów i domen usługi Azure AD domeny należy uruchomić w systemie Azure.
+Escolher **comentários** abre o seu browser para o site de comentários do UserVoice do Configuration Manager, em https://configurationmanager.uservoice.com/forums/300492-ideas.
+##  <a name="changes-for-updates-and-servicing"></a>Alterações para atualizações e manutenção
+Os seguintes são introduzidas com esta pré-visualização.
 
+**Opções de atualização mais simples**  
+Da próxima vez que qualificam da sua infraestrutura de dois ou mais atualizações, só a atualização mais recente é transferida. Por exemplo, se a versão atual do site é dois ou mais antiga que a versão mais recente está disponível, apenas esse mais recente versão de atualização é transferida automaticamente.  
 
-### <a name="set-up-configuration-manager-to-use-azure-ad"></a>Skonfiguruj program Configuration Manager do używania usługi Azure AD
-Aby korzystać z usługi Azure AD za pomocą programu Configuration Manager, będą potrzebne następujące czynności:
--    Subskrypcja platformy Azure.
--    Azure AD z usługami domenowymi (DS).
--    Lokacja programu Configuration Manager, która działa na maszynie Wirtualnej platformy Azure, który jest dołączony do usługi Azure AD.
--    Klientów programu Configuration Manager, które są uruchamiane w tym samym środowisku usługi Azure AD.
+Tem a opção para transferir e instalar as outras atualizações disponíveis, mesmo quando não estão a versão mais atual. No entanto, irá receber um aviso que a atualização foi substituída por uma mais recente. Para transferir uma atualização que é *disponível para transferência*, selecione a atualização na consola e, em seguida, clique em **transferir**.
 
-Aby skonfigurować usługę Azure AD domeny, zobacz [rozpoczęcie pracy z usługami Azure AD](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started).
-
-### <a name="discover-resources"></a>Odnajdywanie zasobów
-Po Konfigurowanie programu Configuration Manager jest skonfigurowany do uruchamiania w usłudze Azure AD, można użyć następujących metod odnajdywania usługi Active Directory wyszukiwanie Azure AD dla zasobów:  
-- Odnajdywanie systemu usługi Active Directory
-- odnajdywanie użytkownika usługi Active Directory
-- Odnajdywanie grupy usługi Active Directory  
-
-Dla każdej używanej metody Edytowanie kwerendy LDAP do wyszukiwania struktury Azure AD OU zamiast kontenerów, które są typowe dla lokalnej usługi Active Directory. Wymaga to bezpośrednie zapytania wyszukiwania usługi Active Directory w Twojej subskrypcji platformy Azure.  
-
-W poniższych przykładach użyto Azure AD z *contoso.onmicrosoft.com*:
- - **Odnajdywanie systemu**   
-Azure AD przechowuje urządzeń w ramach **AADDC komputery** jednostki Organizacyjnej.  Skonfiguruj następujące ustawienia:  
-  -    *Komputery LDAP://OU=AADDC, DC = contoso, DC = onmicrosoft, DC = com*  
+**Limpeza melhorada de atualizações anteriores**   
+Adicionámos uma função de limpeza automática, que elimina as transferências desnecessárias da pasta 'EasySetupPayload' no seu servidor do site.  
 
 
-- **Odnajdywanie użytkownika** AAD przechowuje użytkowników w ramach **AADDC użytkowników** jednostki Organizacyjnej.  Skonfiguruj następujące ustawienia:
-  - *Użytkownicy LDAP://OU=AADDC, DC = contoso, DC = onmicrosoft, DC = com*
+## <a name="peer-cache-improvements"></a>Melhorias da Cache ponto a ponto
+A partir desta versão, um computador de origem de cache ponto a ponto irão rejeitar um pedido para o conteúdo quando o computador de origem de cache ponto a ponto cumpre qualquer uma das seguintes condições:  
+ -  Está no modo de bateria baixo.
+ -  Carga da CPU excede 80% momento solicitados.
+ -  E/s de disco tem um *AvgDiskQueueLength* excede que 10.
+ -  Não existem ligações mais não disponíveis para o computador.   
+
+Pode configurar estas definições utilizando a classe de configuração do agente de cliente para a funcionalidade de origem do elemento de rede (*SMS_WinPEPeerCacheConfig*) ao utilizar o SDK do System Center Configuration Manager.
+
+Quando o computador rejeita um pedido para o conteúdo, o computador que efetuou irá continuar a pesquisa origens alternativas de formulário de conteúdo no seu conjunto das localizações de origem de conteúdo disponível.   
+
+## <a name="azurediscovery"></a>Utilizar serviços de domínio do Active Directory do Azure para gerir dispositivos, utilizadores e grupos
+
+Com esta pré-visualização técnica versão que pode gerir dispositivos que estão associados a um serviços de domínio do Azure Active Directory (AD) geridos por domínio. Também pode detetar dispositivos, utilizadores e grupos no domínio com vários métodos de deteção do Configuration Manager.
+
+A infraestrutura de pré-visualização técnica de sites, clientes e o domínio de serviços de domínio do Azure AD tem todas executadas no Azure.
 
 
-- **Odnajdywanie grupy**  
-Azure AD nie ma jednostkę Organizacyjną, która przechowuje grup. Zamiast tego użyj taką samą strukturę ogólne jako kwerendy System lub użytkownik i skonfiguruj zapytanie LDAP wskaż jednostki Organizacyjnej, która zawiera grupy, że chcesz odnaleźć.
+### <a name="set-up-configuration-manager-to-use-azure-ad"></a>Definir a cópia de segurança do Configuration Manager para utilizar o Azure AD
+Para utilizar o Azure AD com o Configuration Manager, irá precisar do seguinte:
+-   Subscrição do Azure.
+-   Azure AD com os serviços de domínio (DS).
+-   Um site do Configuration Manager que é executado numa VM do Azure que está associado ao seu Azure AD.
+-   Clientes do Configuration Manager que são executados no mesmo ambiente do Azure AD.
 
-Zobacz następujące tematy, aby uzyskać więcej informacji na temat usługi Azure AD:  
- - [Azure Active Directory Domain Services](https://azure.microsoft.com/en-us/services/active-directory-ds) w witrynie azure.microsoft.com.
- - [Dokumentacja usługi domenowe Active Directory](https://docs.microsoft.com/azure/active-directory-domain-services) na docs.microsoft.com.
+Para configurar o serviço de domínio do Azure AD, consulte [começar com os serviços de domínio do Azure AD](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started).
 
-## <a name="conditional-access-device-compliance-policy-improvements"></a>Ulepszenia zasady zgodności urządzeń dostępu warunkowego
+### <a name="discover-resources"></a>Detetar recursos
+Depois de definir a cópia de segurança do Configuration Manager para executar no Azure AD, pode utilizar os seguintes métodos de deteção do Active Directory para procurar o Azure AD para recursos:  
+- Deteção de Sistemas do Active Directory
+- Deteção de Utilizadores do Active Directory
+- Deteção de Grupos do Active Directory  
 
-Dostępny jest nową regułę zasad zgodności urządzeń blokowania dostępu do zasobów firmy, które obsługują dostęp warunkowy, gdy użytkownicy korzystają z aplikacji, które są częścią listę niezgodnych aplikacji. Lista niezgodnych aplikacji może być zdefiniowany przez administratora podczas dodawania nowej reguły zgodne **aplikacji, których nie można zainstalować**. Ta reguła wymaga administratora, aby wprowadzić **Nazwa aplikacji**, **Identyfikatora aplikacji**i **wydawcę aplikacji** (opcjonalnie), dodając do listy niezgodnych aplikacji. To ustawienie dotyczy tylko systemów iOS i android.
+Para cada método que utilizar, de editar a consulta LDAP para procurar as estruturas do Azure AD UO em vez dos contentores que são normais do Active Directory no local. Isto requer direcionar a consulta para procurar o Active Directory na sua subscrição do Azure.  
 
-Ponadto pomaga organizacjom uniknięcie wycieku danych za pośrednictwem niezabezpieczonej aplikacje i zapobiec zużycie nadmiernej ilości danych za pośrednictwem niektórych aplikacji.
+Os exemplos seguintes utilizam um Azure AD de *contoso.onmicrosoft.com*:
+ - **Deteção de sistemas**   
+Azure AD armazena dispositivos sob o **AADDC computadores** UO.  Configure o seguinte:  
+  - *LDAP://ou=AADDC computadores, DC = contoso, DC = onmicrosoft, DC = com*  
 
-- Dowiedz się więcej [działanie zasadami zgodności urządzeń](https://docs.microsoft.com/sccm/protect/deploy-use/device-compliance-policies).
-- Dowiedz się więcej [Tworzenie zasad zgodności urządzeń](https://docs.microsoft.com/sccm/protect/deploy-use/create-compliance-policy).
 
-### <a name="try-it-out"></a>Wypróbuj to
+- **Deteção de utilizadores** AAD armazena utilizadores sob o **AADDC utilizadores** UO.  Configure o seguinte:
+  - *LDAP://ou=AADDC utilizadores, DC = contoso, DC = onmicrosoft, DC = com*
 
-**Scenariusz:** Określenie aplikacji, które mogą być przyczyną wycieku danych, wysyłając dane firmowe spoza firmy lub powoduje zużycie nadmiernej ilości danych, następnie [Tworzenie zasad zgodności urządzeń dostępu warunkowego](https://docs.microsoft.com/sccm/protect/deploy-use/create-compliance-policy) który dodaje te aplikacje do listy niezgodnych aplikacji. Spowoduje to zablokowania dostępu do zasobów firmy, które obsługują dostęp warunkowy, dopóki użytkownik może usunąć zablokowanych aplikacji.
 
-## <a name="antimalware-client-version-alert"></a>Alert wersji klienta ochrony przed złośliwym oprogramowaniem
-Począwszy od tej wersji wstępnej, Configuration Manager Endpoint Protection zapewnia alert, jeśli więcej niż 20% (domyślnie) zarządzanych klientów korzysta z wersji wygasłe ochrony przed złośliwym oprogramowaniem klienta (tj. klienta usługi Windows Defender lub Endpoint Protection).
+- **Deteção de grupos**  
+Azure AD não tem uma UO que armazena a grupos. Em vez disso, utilize a mesma estrutura geral como as consultas de sistema ou o utilizador e configurar a consulta LDAP para apontar para a UO que contém os grupos que pretende detetar.
 
-### <a name="try-it-out"></a>Wypróbuj to
-Upewnij się, że program Endpoint Protection jest włączona na wszystkich klientach desktop i serwerów za pomocą zasad ustawień klienta. Teraz można wyświetlać **wersji klienta ochrony przed złośliwym oprogramowaniem** i **stan wdrożenia programu Endpoint Protection** przechodząc **zasoby i zgodność** > **Przegląd** > **urządzeń** > **wszystkie komputery stacjonarne i klienci służyć**. Aby sprawdzić, czy alert, należy wyświetlić **alerty** w **monitorowanie** obszaru roboczego. Ponad 20% zarządzanych klienci korzystający z wygasła wersja oprogramowania ochrony przed złośliwym oprogramowaniem, ochrony przed złośliwym oprogramowaniem wersja klienta jest nieaktualna zostanie wyświetlony alert. Ten alert nie jest wyświetlany na **monitorowanie** > **Przegląd** kartę. Do aktualizacji klientów wygasłe ochrony przed złośliwym oprogramowaniem, Włącz aktualizacje oprogramowania ochrony przed złośliwym oprogramowaniem klientów.
+Consulte o seguinte para obter mais informações acerca do Azure AD:  
+ - [Serviços de domínio do Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory-ds) em azure.microsoft.com.
+ - [Documentação dos serviços de domínio do Active Directory](https://docs.microsoft.com/azure/active-directory-domain-services) em docs.microsoft.com.
 
-Aby skonfigurować wartość procentowa, o której alert jest generowany, rozwiń węzeł **monitorowanie** > **alerty** > **wszystkie alerty**, kliknij dwukrotnie **nieaktualny klienci ochrony przed złośliwym oprogramowaniem** i modyfikować **Zgłoś alert, jeśli procent zarządzanych klientów z nieaktualną wersją klienta przed złośliwym kodem jest więcej niż** — opcja.
+## <a name="conditional-access-device-compliance-policy-improvements"></a>Melhoramentos de política de conformidade de dispositivos de acesso condicional
 
-## <a name="compliance-assessment-for-windows-update-for-business-updates"></a>Oceny zgodności dla usługi Windows Update aktualizacje biznesowe
-Można teraz skonfigurować reguły zgodności zasad aktualizacji do uwzględnienia Windows Update wynik oceny biznesowych w ramach oceny dostępu warunkowego.
+Uma nova regra de política de conformidade de dispositivo está disponível para ajudar a bloquear o acesso aos recursos empresariais que suportam o acesso condicional, quando os utilizadores estão a utilizar aplicações que fazem parte de uma lista de aplicações não conformes. A lista de aplicações não conformes pode ser definida pelo administrador ao adicionar a nova regra de conformidade **aplicações que não não possível instalar**. Esta regra requer que o administrador para introduzir o **nome da aplicação**, a **ID da aplicação**e o **fabricante da aplicação** (opcional) quando adicionar uma aplicação à lista de não conformidade. Esta definição aplica-se apenas a dispositivos iOS e Android.
+
+Além disso, ajuda as organizações a mitigar a fuga de dados através de aplicações não segura e impedir que o consumo excessivo de dados através de determinadas aplicações.
+
+- Saiba mais [como funcionam as políticas de conformidade do dispositivo](https://docs.microsoft.com/sccm/protect/deploy-use/device-compliance-policies).
+- Saiba mais [como criar políticas de conformidade de dispositivo](https://docs.microsoft.com/sccm/protect/deploy-use/create-compliance-policy).
+
+### <a name="try-it-out"></a>Experimente
+
+**Cenário:** Identificar aplicações que poderá estar a causar fugas de dados através do envio de dados da empresa fora da sua empresa ou que estão a causar o consumo excessivo de dados, em seguida, [criar uma política de conformidade de dispositivos de acesso condicional](https://docs.microsoft.com/sccm/protect/deploy-use/create-compliance-policy) estas aplicações que adiciona a lista de aplicações não conformes. Isto irá bloquear o acesso aos recursos empresariais que suportam o acesso condicional até que o utilizador pode remover a aplicação bloqueada.
+
+## <a name="antimalware-client-version-alert"></a>Alerta de versão de cliente Antimalware
+Começando com esta versão de pré-visualização, proteção de ponto final do Gestor de configuração fornece um alerta se tiver mais de 20% (predefinição) dos clientes geridos estiver a utilizar uma versão do cliente antimalware (ou seja, o cliente Windows Defender ou o Endpoint Protection) expirada.
+
+### <a name="try-it-out"></a>Experimente
+Certifique-se de que o Endpoint Protection está ativado em todos os clientes de ambiente de trabalho e o servidor através da política de definições de cliente. Agora, pode ver **versão de cliente Antimalware** e **estado de implementação do Endpoint Protection** acedendo **ativos e compatibilidade** > **descrição geral** > **dispositivos** > **todos os ambientes de trabalho e a servir clientes**. Verificar a existência de um alerta, ver **alertas** no **monitorização** área de trabalho. Se mais de 20% dos clientes geridos estão em execução uma versão do antimalware software expirada, a versão de cliente Antimalware está desactualizada é apresentado o alerta. Este alerta não aparecer no **monitorização** > **descrição geral** separador. Para atualizar os clientes de antimalware expirada, ative atualizações de software para clientes de antimalware.
+
+Para configurar a percentagem em que o alerta é gerado, expanda **monitorização** > **alertas** > **todos os alertas**, faça duplo clique em **Antimalware clientes desatualizados** e modificar o **emitir um alerta se a percentagem de clientes geridos com uma versão desatualizada do cliente antimalware é mais do que** opção.
+
+## <a name="compliance-assessment-for-windows-update-for-business-updates"></a>Avaliação de compatibilidade para o Windows Update para atualizações de negócio
+Agora, pode configurar uma regra de atualização de política de conformidade para incluir uma atualização do Windows para o resultado da avaliação de negócio como parte da avaliação de acesso condicional.
 > [!IMPORTANT]
-> Musi mieć Windows 10 Insider Preview kompilacji 15019 lub nowszej do używania oceny zgodności dla usługi Windows Update do aktualizacji firmy.
+> Tem de ter o Windows 10 internas de pré-visualização 15019 ou posterior para utilizar a avaliação de compatibilidade para o Windows Update para atualizações de negócio.
 
-### <a name="allow-windows-update-for-business-to-manage-windows-10-updates"></a>Zezwalaj na usługi Windows Update w przedsiębiorstwie do zarządzania aktualizacjami systemu Windows 10
-Aby zebrać informacje o oceny zgodności dla usługi Windows Update aktualizacje biznesowych, umożliwia skonfigurowanie ustawienia umożliwiające jawnie usługi Windows Update w przedsiębiorstwie do zarządzania aktualizacjami systemu Windows 10 agenta klienta poniższej procedury.
-1. W konsoli programu Configuration Manager przejdź do obszaru **Administracja** > **Ustawienia klienta**.
-2. We właściwościach ustawień klienta, przejdź do **aktualizacji oprogramowania**i wybierz **tak** dla **Zarządzanie systemem Windows 10 aktualizacji z usługi Windows Update dla firm** ustawienie.
+### <a name="allow-windows-update-for-business-to-manage-windows-10-updates"></a>Permitir atualização do Windows para empresas gerir atualizações do Windows 10
+Para recolher informações de avaliação de compatibilidade para o Windows Update para atualizações de negócio, utilize o procedimento seguinte para configurar o definição para permitir explicitamente o Windows Update para empresas gerir atualizações do Windows 10 do agente de cliente.
+1. Na consola do Configuration Manager, aceda a **Administração** > **Definições do Cliente**.
+2. Nas propriedades para as definições de cliente, aceda a **atualizações de Software**e selecione **Sim** para o **de atualizações de gerir o Windows 10 com o Windows Update para empresas** definição.
 
-### <a name="create-a-compliance-policy-for-windows-update-for-business-assessment"></a>Tworzenie zasad zgodności dla usługi Windows Update w celu oceny biznesowe
-1. W konsoli programu Configuration Manager, przejdź do **zasoby i zgodność** > **ustawień zgodności** > **zasady zgodności**.
-2. Kliknij przycisk **Utwórz zasady zgodności** lub wybierz istniejące zasady zgodności w celu modyfikowania.
-3. Na stronie Ogólne, podaj nazwę i opis, wybierz **reguły zgodności dla urządzeń zarządzanych za pomocą klienta programu Configuration Manager**, Ustaw ważność niezgodności raportowania i kliknij przycisk **dalej**.
-4. Na stronie obsługiwane platformy wybierz **systemu Windows 10**, a następnie kliknij przycisk **dalej**.
-5. Na stronie reguły kliknij **nowy...** , a następnie dla **warunku** wybierz **usługi Windows Update wymaga zgodności Business**. **Wartość** ustawienie jest automatycznie ustawiana **True**.
+### <a name="create-a-compliance-policy-for-windows-update-for-business-assessment"></a>Criar uma política de conformidade para o Windows Update para avaliação de negócio
+1. Na consola do Configuration Manager, vá para **ativos e compatibilidade** > **as definições de compatibilidade** > **políticas de conformidade**.
+2. Clique em **criar política de conformidade** ou selecione uma política de conformidade existente para modificar.
+3. Na página geral, forneça um nome e uma descrição, selecione **regras de compatibilidade para dispositivos geridos com o cliente do Configuration Manager**, definir a gravidade de incompatibilidade para relatórios e, em **seguinte**.
+4. Na página de plataformas suportadas, selecione **Windows 10**e, em seguida, clique em **seguinte**.
+5. Na página de regras, clique em **novo...** e, em seguida, para **condição** escolha **requerem o Windows Update para compatibilidade de negócio**. O **valor** definição é automaticamente definida para **verdadeiro**.
 
-Nowe zasady zostaną wyświetlone w węźle **Zasady zgodności** w obszarze roboczym **Zasoby i zgodność** .
+A nova política é apresentada no nó **Políticas de Conformidade** da área de trabalho **Ativos e Compatibilidade** .
 
-### <a name="deploy-a-compliance-policy"></a>Wdrażanie zasad zgodności
-1. W konsoli programu Configuration Manager, przejdź do **zasoby i zgodność** > **ustawień zgodności**, a następnie kliknij przycisk **zasady zgodności**.
-2. Na karcie **Narzędzia główne** w grupie **Wdrażanie** kliknij przycisk **Wdróż**.
-3. W oknie dialogowym **Wdrażanie zasad zgodności** kliknij przycisk **Przeglądaj** , aby wybrać kolekcję użytkowników, dla której chcesz wdrożyć zasady.
-   Ponadto można wybrać opcje generowania alertów w przypadku niezgodności zasad, a także skonfigurować harmonogram oceny zasad pod kątem zgodności.
-4. Gdy wszystko będzie gotowe, kliknij przycisk **OK**.
+### <a name="deploy-a-compliance-policy"></a>Implementar uma política de conformidade
+1. Na consola do Configuration Manager, vá para **ativos e compatibilidade** > **as definições de compatibilidade**e, em seguida, clique em **políticas de conformidade**.
+2. No separador **Home Page** , no grupo **Implementação** , clique em **Implementar**.
+3. Na caixa de diálogo **Implemente a Política de Conformidade** , clique em **Procurar** para selecionar a coleção de utilizadores na qual a política será implementada.
+   Além disso, pode selecionar opções de geração de alertas quando a política não está em conformidade, bem como configurar a agenda com base na qual a política será avaliada em termos de conformidade.
+4. Quando tiver terminado, clique em **OK**.
 
-### <a name="monitor-the-compliance-policy"></a>Monitorowanie zasad zgodności
-Po utworzeniu zasad zgodności, można monitorować wyniki zgodności w konsoli programu Configuration Manager. Aby uzyskać szczegółowe informacje, zobacz [monitorowanie zasad zgodności](https://docs.microsoft.com/en-us/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy).
+### <a name="monitor-the-compliance-policy"></a>Monitorizar a política de conformidade
+Depois de criar a política de conformidade, pode monitorizar os resultados de compatibilidade na consola do Configuration Manager. Para obter mais informações, consulte [monitorizar a política de conformidade](https://docs.microsoft.com/en-us/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy).
 
 
-## <a name="improvements-to-software-center-settings-and-notification-messages-for-high-impact-task-sequences"></a>Ulepszenia w ustawieniach Centrum oprogramowania i komunikatów powiadomień dla sekwencji zadań wysoki wpływ
-Ta wersja zawiera następujące ulepszenia w ustawieniach Centrum oprogramowania i komunikatów powiadomień dla sekwencji zadań wdrażania wysoki wpływ:
+## <a name="improvements-to-software-center-settings-and-notification-messages-for-high-impact-task-sequences"></a>Melhoramentos às definições do Centro de Software e mensagens de notificação para sequências de tarefas de elevado impacto
+Esta versão inclui os seguintes melhoramentos para mensagens de notificação para sequências de tarefas de implementação de elevado impacto e de definições do Centro de Software:
 
-- W oknie właściwości dla sekwencji zadań można teraz skonfigurować dowolnej sekwencji zadań, w tym sekwencji zadań systemu operacyjnego jako wdrożenie o wysokim ryzyku. Wszystkie sekwencje zadań, która spełnia określone warunki automatycznie jest zdefiniowany jako wysoki wpływ. Aby uzyskać szczegółowe informacje, zobacz [Zarządzanie wdrożeniami o wysokim ryzyku](http://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments).
-- W oknie właściwości dla sekwencji zadań można użyć domyślnego komunikatu powiadomienia lub utworzyć własne niestandardowe powiadomienie wysoki wpływ wdrożenia.
-- W oknie właściwości dla sekwencji zadań można skonfigurować właściwości, które obejmują wprowadzić wymagane ponowne uruchomienie Centrum oprogramowania rozmiar pobierania sekwencji zadań i szacowany czas wykonywania.
-- Komunikat domyślny wysoki wpływ wdrożenia dla miejscowego uaktualnienia teraz stany automatycznie migracji aplikacji, danych i ustawień. Wcześniej, komunikat domyślny dla każdej instalacji systemu operacyjnego wskazane, że wszystkie aplikacje, dane i ustawienia zostałyby utracone, która nie obowiązuje dla uaktualnienia w miejscu.
+- Nas propriedades para a sequência de tarefas, agora pode configurar qualquer sequência de tarefas, incluindo sequências de tarefas de sistema não operacionais, como uma implementação de alto risco. Qualquer sequência de tarefas que cumpra determinadas condições é automaticamente definida como impacto elevado. Para obter mais informações, consulte [gerir implementações de alto risco](http://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments).
+- Nas propriedades para a sequência de tarefas, pode optar por utilizar a mensagem de notificação predefinidas ou criar a sua própria mensagem de notificação personalizada para implementações de elevado impacto.
+- Nas propriedades para a sequência de tarefas, pode configurar o Centro de Software propriedades, que incluem efetuar um reinício necessário, o tamanho de transferência da sequência de tarefas, e o estimado tempo de execução.
+- A mensagem de implementação de elevado impacto predefinida para direta atualiza agora os Estados que as aplicações, dados e definições são migradas automaticamente. Anteriormente, a mensagem predefinida para qualquer instalação do sistema operativo for indicado que todas as aplicações, dados e as definições serão perdidas, que não era aplica-se uma atualização no local.
 
-### <a name="set-a-task-sequence-as-a-high-impact-task-sequence"></a>Ustawianie sekwencji zadań za pomocą sekwencji zadań wysoki wpływ
-Użyj poniższej procedury do ustawienia sekwencji zadań jako wysoki wpływ.
+### <a name="set-a-task-sequence-as-a-high-impact-task-sequence"></a>Definir uma sequência de tarefas como uma sequência de tarefas de elevado impacto
+Utilize o procedimento seguinte para definir uma sequência de tarefas como de elevado impacto.
 > [!NOTE]
-> Wszystkie sekwencje zadań, która spełnia określone warunki automatycznie jest zdefiniowany jako wysoki wpływ. Aby uzyskać szczegółowe informacje, zobacz [Zarządzanie wdrożeniami o wysokim ryzyku](http://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments).
+> Qualquer sequência de tarefas que cumpra determinadas condições é automaticamente definida como impacto elevado. Para obter mais informações, consulte [gerir implementações de alto risco](http://docs.microsoft.com/sccm/protect/understand/settings-to-manage-high-risk-deployments).
 
-1. W konsoli programu Configuration Manager, przejdź do **Biblioteka oprogramowania** > **systemów operacyjnych** > **sekwencji zadań**.
-2. Wybierz sekwencję zadań do edycji, a następnie kliknij przycisk **właściwości**.
-3. Na **powiadomienie użytkownika** zaznacz **jest sekwencji zadań wysoki wpływ**.
+1. Na consola do Configuration Manager, vá para **biblioteca de Software** > **sistemas operativos** > **sequências de tarefas**.
+2. Selecione a sequência de tarefas para editar e clique em **propriedades**.
+3. No **notificação do utilizador** separador, selecione **esta é uma sequência de tarefas de elevado impacto**.
 
-### <a name="create-a-custom-notification-for-high-risk-deployments"></a>Utwórz niestandardowe powiadomienia dla wdrożenia o wysokim ryzyku
-1. W konsoli programu Configuration Manager, przejdź do **Biblioteka oprogramowania** > **systemów operacyjnych** > **sekwencji zadań**.
-2. Wybierz sekwencję zadań do edycji, a następnie kliknij przycisk **właściwości**.
-3. Na **powiadomienie użytkownika** zaznacz **użyć niestandardowego tekstu**.
+### <a name="create-a-custom-notification-for-high-risk-deployments"></a>Criar uma notificação para implementações de alto risco
+1. Na consola do Configuration Manager, vá para **biblioteca de Software** > **sistemas operativos** > **sequências de tarefas**.
+2. Selecione a sequência de tarefas para editar e clique em **propriedades**.
+3. No **notificação do utilizador** separador, selecione **utilizar texto personalizado**.
 >  [!NOTE]
->  Tekst powiadomienia użytkownika można ustawić tylko podczas **jest sekwencji zadań wysoki wpływ** jest zaznaczone.
+>  Só é possível definir texto de notificação do utilizador quando o **esta é uma sequência de tarefas de elevado impacto** está selecionada.
 
-4. Skonfiguruj następujące ustawienia (maksymalnie 255 znaków dla każdego pola tekstowego):
+4. Configure as seguintes definições (máximo de 255 carateres para cada caixa de texto):
 
-   **Tekst nagłówka powiadomienia użytkownika**: Określa niebieski tekst wyświetlany na powiadomienie użytkownika Centrum oprogramowania. Na przykład domyślny powiadomienie użytkowników, ta sekcja zawiera którąś "Potwierdź chcesz uaktualnić system operacyjny na tym komputerze".
+   **Texto do título de notificação de utilizador**: Especifica o texto azul que apresenta na notificação de utilizador do Centro de Software. Por exemplo, a predefinição de notificação de utilizador, esta secção contém algo semelhante a "Confirmar que pretende atualizar o sistema operativo neste computador".
 
-   **Tekst komunikatu powiadomienia użytkownika**: Istnieją trzy pola tekstowe, które zawierają treści niestandardowe powiadomienia.
-   - 1. pole tekstowe: Określa główną część tekstu, zazwyczaj zawierającej instrukcje dla użytkownika. Na przykład domyślny powiadomienie użytkowników, ta sekcja zawiera coś jak "Uaktualnianie systemu operacyjnego potrwa i komputer może być kilka razy ponownie."
-   - pole tekstowe 2: Określa tekst czcionką pogrubioną w głównej części tekstu. Na przykład domyślny powiadomienie użytkowników, ta sekcja zawiera coś jak "to uaktualnienie w miejscu instalacji nowego systemu operacyjnego i automatycznie migruje aplikacje, dane i ustawienia".
-   - pole tekstowe 3: Określa ostatni wiersz tekstu pogrubienie tekstu. Na przykład domyślny powiadomienie użytkowników, ta sekcja zawiera którąś "kliknij przycisk Zainstaluj, aby rozpocząć. W przeciwnym razie kliknij przycisk Anuluj."   
+   **Texto de mensagem de notificação do utilizador**: Existem três caixas de texto que fornecem o corpo da notificação personalizada.
+   - caixa de texto 1ª: Especifica o corpo do principal de texto, normalmente, que contém instruções para o utilizador. Por exemplo, a predefinição de notificação de utilizador, esta secção contém algo como "a atualização do sistema operativo irá demorar tempo e o computador poderá reiniciar várias vezes."
+   - caixa de texto 2nd: Especifica o texto a negrito no corpo do principal do texto. Por exemplo, a predefinição de notificação de utilizador, esta secção contém algo como "esta atualização no local instala o novo sistema operativo e migra automaticamente as suas definições, aplicações e dados."
+   - caixa de texto 3rd: Especifica a última linha de texto com o texto a negrito. Por exemplo, a predefinição de notificação de utilizador, esta secção contém algo semelhante a "clique em instalar para iniciar. Caso contrário, clique em Cancelar."   
 
-   Załóżmy, że skonfigurować następujące powiadomienie niestandardowych właściwości.
+   Vamos supor que configura a seguinte notificação personalizada nas propriedades.
 
-   ![Niestandardowe powiadomienia dla sekwencji zadań](.\media\user-notification.png)
+   ![Notificação personalizada para uma sequência de tarefas](.\media\user-notification.png)
 
-   Następujący komunikat powiadomienia będą wyświetlane podczas instalacji zostanie otwarty przez użytkownika z Centrum oprogramowania.
+   Será apresentada a seguinte mensagem de notificação quando o utilizador final abre a instalação do Centro de Software.
 
-   ![Niestandardowe powiadomienia dla sekwencji zadań](.\media\user-notification-enduser.png)
+   ![Notificação personalizada para uma sequência de tarefas](.\media\user-notification-enduser.png)
 
-### <a name="configure-software-center-properties"></a>Konfigurowanie właściwości Centrum oprogramowania
-Poniższa procedura służy do konfigurowania szczegóły sekwencji zadań wyświetlana w Centrum oprogramowania. Te informacje są wyłącznie w celach informacyjnych.  
-1. W konsoli programu Configuration Manager, przejdź do **Biblioteka oprogramowania** > **systemów operacyjnych** > **sekwencji zadań**.
-2. Wybierz sekwencję zadań do edycji, a następnie kliknij przycisk **właściwości**.
-3. Na **ogólne** kartę, dostępne są następujące ustawienia dla programu Software Center:
-  - **Wymagane jest ponowne uruchomienie**: Powiadomi użytkownika, czy ponowne uruchomienie jest wymagane podczas instalacji.
-  - **Pobierz rozmiar (MB)**: Określa, ile megabajtów jest wyświetlana w Centrum oprogramowania dla sekwencji zadań.  
-  - **Szacowany czas wykonywania (minuty)**: Określa, że szacowany czas wykonywania w minutach, które jest wyświetlane w Centrum oprogramowania dla sekwencji zadań.
-
-
-## <a name="check-for-running-executable-files-before-installing-an-application"></a>Sprawdź, czy uruchomiony pliki wykonywalne przed zainstalowaniem aplikacji
-
-W  *<deployment type name>*  **właściwości** okno dialogowe typu wdrożenia, na karcie zachowanie instalacji można teraz określić jedną więcej plików wykonywalnych, które działa, spowoduje zablokowania instalacji typu wdrożenia. Użytkownik należy zamknąć plik wykonywalny jest uruchomiona (lub może zostać zamknięty w automatycznie w przypadku wdrożeń z celem wymagane) przed wdrożeniem typ może być instalowany.
-
-### <a name="try-it-out"></a>Wypróbuj to.
-
-1.    We właściwościach typu wdrożenia programu Configuration Manager wybierz **zainstalować zachowanie** kartę.
-2.    Wybierz **Dodaj** dodać jedną lub więcej nazw pliku wykonywalnego chcesz sprawdzić. Można również dodać nazwę wyświetlaną, aby ułatwić użytkownikom zidentyfikować aplikacje na liście.
-3.    Jeśli wdrożenie ma cel w Kreatorze wdrażania oprogramowania wymagane Opcjonalnie można **automatycznie Zamknij wszystkie uruchomione pliki wykonywalne określone na karcie zachowanie instalacji okna dialogowego właściwości typu wdrożenia**.
-
-Jeśli aplikacja została wdrożona jako **dostępne**i użytkownik końcowy spróbuje zainstalować aplikację, zostanie wyświetlony monit do Zamknij wszystkie uruchomione plików wykonywalnych określona zanim można kontynuować instalacji.
-
-Jeśli aplikacja została wdrożona jako **wymagane**, a opcja **automatycznie Zamknij wszystkie uruchomione pliki wykonywalne określone na karcie zachowanie instalacji okna dialogowego właściwości typu wdrożenia** jest zaznaczone, zobaczy okno dialogowe, które informuje, że określone pliki wykonywalne zostaną automatycznie zamknięte po osiągnięciu ostatecznego terminu instalacji aplikacji. Można zaplanować tych okien dialogowych w **ustawień klienta** > **Agent komputera**. Jeśli nie chcesz użytkownika końcowego, aby wyświetlić te wiadomości, wybierz **Ukryj w programie Software Center i wszystkie powiadomienia** na **środowisko użytkownika** kartę właściwości wdrożenia.
-
-Jeśli aplikacja została wdrożona jako **wymagane** i opcję **automatycznie Zamknij wszystkie uruchomione pliki wykonywalne określone na karcie zachowanie instalacji okna dialogowego właściwości typu wdrożenia** nie jest zaznaczone, a następnie instalacja aplikacji zakończy się niepowodzeniem, jeśli jeden lub więcej określonych aplikacji są uruchomione.
-
-## <a name="create-pfx-certificates-with-s-mime-support"></a>Tworzenie certyfikatów PFX z obsługą S MIME
-
-Teraz można tworzyć profilu certyfikatu PFX, który obsługuje S/MIME i wdrożyć go dla użytkowników.  Ten certyfikat może być następnie używane S/MIME szyfrowania i odszyfrowywania różnych urządzeń zarejestrowanych przez użytkownika.
-
-Ponadto można określić wiele urzędów certyfikacji (CA) na wiele ról systemu lokacji punktu rejestracji certyfikatu i następnie przypisz które przetwarzają żądania urzędów certyfikacji w ramach profilu certyfikatu.
-
-Dla urządzeń z systemem iOS można skojarzyć profil certyfikatu PFX do profilu poczty e-mail i włączyć szyfrowania S/MIME.  Następnie to umożliwi S/MIME w klienta macierzystego poczty e-mail w systemie iOS i kojarzy prawidłowy certyfikat szyfrowania S/MIME do niego.
-
-Aby uzyskać więcej informacji na temat certyfikatów w programie Configuration Manager, zobacz [wprowadzenie do profili certyfikatów w programie System Center Configuration Manager]( https://docs.microsoft.com/sccm/protect/deploy-use/introduction-to-certificate-profiles).
+### <a name="configure-software-center-properties"></a>Configurar propriedades de centro de Software
+Utilize o procedimento seguinte para configurar os detalhes para a sequência de tarefas apresentadas no Centro de Software. Estes detalhes estão apenas para informação.  
+1. Na consola do Configuration Manager, vá para **biblioteca de Software** > **sistemas operativos** > **sequências de tarefas**.
+2. Selecione a sequência de tarefas para editar e clique em **propriedades**.
+3. No **geral** separador, estão disponíveis as seguintes definições no Centro de Software:
+  - **Reinício necessário**: Permite que o utilizador saber se é necessário reiniciar durante a instalação.
+  - **Transferir o tamanho (MB)**: Especifica a quantidade de megabytes é apresentada no Centro de Software para a sequência de tarefas.  
+  - **Estimado (minutos) o tempo de execução**: Especifica que o estimado tempo de execução em minutos, que é apresentado no Centro de Software para a sequência de tarefas.
 
 
-## <a name="new-compliance-settings-for-ios-devices"></a>Nowe ustawienia zgodności dla urządzeń z systemem iOS
+## <a name="check-for-running-executable-files-before-installing-an-application"></a>Verifique a existência de executar ficheiros executáveis antes de instalar uma aplicação
 
-Dodano nowe ustawienia, których można użyć w swoich elementów konfiguracji dla urządzeń z systemem iOS. Są to ustawienia, które wcześniej były dostępne w programie Microsoft Intune w konfiguracji autonomicznej i są teraz dostępne przy użyciu usługi Intune z programem Configuration Manager. Jeśli potrzebujesz pomocy przy użyciu tych ustawień, zobacz [ustawień zasad systemu iOS w programie Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/ios-policy-settings-in-microsoft-intune).
+No  *<deployment type name>*  **propriedades** caixa de diálogo de um tipo de implementação, no separador Instalar comportamento, agora pode especificar um dos ficheiros executáveis mais que, se em execução, irão bloquear a instalação do tipo de implementação. O utilizador tem de fechar o ficheiro executável está em execução (ou pode ser fechada automaticamente para implementações com um objetivo necessário) antes da implementação tipo pode ser instalado.
 
-- **Zsynchronizuj dane z zarządzanych aplikacji do usługi iCloud**
-- **Oddania kontynuowanie działania na inne urządzenie**
-- **Funkcje udostępniania w ramach usługi iCloud**
-- **Biblioteka zdjęć iCloud**
-- **Zaufanie nowego autorzy aplikacji enterprise**
-- **Zezwalaj użytkownikom na pobieranie zawartości z flagą "Erotyki" magazynu iBook** (tylko w trybie nadzorowanym)
-- **Wymuszaj sparowanego obserwowanie firmy Apple, aby korzystać z nadgarstka wykrywania**
-- **Hasło dla AirPlay wychodzących żądań**
-- **Zmodyfikuj ustawienia konta** (tylko w trybie nadzorowanym)
-- **Zmiany w ustawieniach użycia danych komórkowych aplikacji** (tylko w trybie nadzorowanym)
-- **Wymaż całą zawartość i ustawienia** (tylko w trybie nadzorowanym)
-- **Konfiguruj ograniczenia na urządzeniu** (tylko w trybie nadzorowanym)
-- **Użyj hosta parowania do sterowania urządzeniami można skojarzyć urządzenia z systemem iOS** (tylko w trybie nadzorowanym)
-- **Instalowanie konfiguracji profilów i certyfikaty** (tylko w trybie nadzorowanym)
-- **Zmiana nazwy urządzenia** (tylko w trybie nadzorowanym)
-- **Zmiana kodu dostępu** (tylko w trybie nadzorowanym)
-- **Parowanie Apple Watch** (tylko w trybie nadzorowanym)
-- **Modyfikacja ustawień powiadomień** (tylko w trybie nadzorowanym)
-- **Wallpaper modyfikacji** (tylko w trybie nadzorowanym)
-- **Modyfikacja ustawień przesyłania diagnostyki** (tylko w trybie nadzorowanym)
-- **Modyfikacja Bluetooth** (tylko w trybie nadzorowanym)
-- **AirDrop** (tylko w trybie nadzorowanym)
-- **Użyj Siri do zapytania generowane przez użytkownika zawartości z Internetu** (tylko w trybie nadzorowanym)
-- **Filtr niestosownych wyrażeń Siri** (tylko w trybie nadzorowanym)
-- **Zwracają wyniki z Internetu w centrum uwagi wyszukiwania** (tylko w trybie nadzorowanym)
-- **Wyszukiwanie definicji Word** (tylko w trybie nadzorowanym)
-- **Klawiatury predykcyjnej** (tylko w trybie nadzorowanym)
-- **Korekty automatycznej** (tylko w trybie nadzorowanym)
-- **Sprawdzanie pisowni klawiatury** (tylko w trybie nadzorowanym)
-- **Skróty klawiaturowe** (tylko w trybie nadzorowanym)
+### <a name="try-it-out"></a>Experimente.
+
+1.  Nas propriedades de um tipo de implementação do Configuration Manager, escolha o **instalar comportamento** separador.
+2.  Escolha **adicionar** para adicionar um ou mais nomes de ficheiro executável que pretende procurar. Também pode adicionar um nome a apresentar para o tornar mais fácil para os utilizadores identificar aplicações na lista.
+3.  Se a implementação tiver um objetivo necessário, o Assistente de implementação de software, opcionalmente, pode optar por **fechar automaticamente quaisquer executáveis em execução, especificado no separador de comportamento de instalação de caixa de diálogo de propriedades do tipo de implementação**.
+
+Se a aplicação foi implementada como **disponível**e um utilizador final tenta instalar uma aplicação, será pedido para fechar a qualquer executáveis em execução, especificado antes de poderão avançar com a instalação.
+
+Se a aplicação foi implementada como **necessário**e a opção **fechar automaticamente quaisquer executáveis em execução, especificado no separador de comportamento de instalação de caixa de diálogo de propriedades do tipo de implementação** é selecionado, verá uma caixa de diálogo que os informa de que executáveis que especificou são fechados automaticamente quando é atingido o prazo de instalação da aplicação. Pode agendar estas caixas de diálogo no **as definições de cliente** > **agente do computador**. Se não pretender que o utilizador final para ver estas mensagens, selecione **ocultar no Centro de Software e em todas as notificações** no **experiência de utilizador** separador de propriedades da implementação.
+
+Se a aplicação foi implementada como **necessário** e a opção **fechar automaticamente quaisquer executáveis em execução, especificado no separador de comportamento de instalação de caixa de diálogo de propriedades do tipo de implementação** não estiver selecionada, em seguida, a instalação da aplicação irá falhar se um ou mais das aplicações especificadas estão em execução.
+
+## <a name="create-pfx-certificates-with-s-mime-support"></a>Criar os certificados PFX com suporte de S MIME
+
+Agora pode criar um perfil de certificado PFX suporta S/MIME e implementá-la aos utilizadores.  Este certificado, em seguida, pode ser utilizado para encriptação S/MIME e desencriptação em todos os dispositivos que o utilizador tenha inscrito.
+
+Além disso, pode agora especificar várias autoridades de certificação (AC) em várias funções de sistema de sites de ponto de registo de certificados e, em seguida, atribuir os pedidos de processo do ACS como parte do perfil de certificado.
+
+Para dispositivos iOS, pode associar um perfil de certificado PFX para um perfil de e-mail e ativar a encriptação S/MIME.  Em seguida, isto permite que o S/MIME do cliente de e-mail nativa no iOS e associa o certificado de encriptação S/MIME correto para a mesma.
+
+Para obter mais informações sobre os certificados no Configuration Manager, consulte [introdução aos perfis de certificado no System Center Configuration Manager]( https://docs.microsoft.com/sccm/protect/deploy-use/introduction-to-certificate-profiles).
+
+
+## <a name="new-compliance-settings-for-ios-devices"></a>Novas definições de conformidade para dispositivos iOS
+
+Adicionámos novas definições, que pode utilizar os itens de configuração para dispositivos iOS. Estas são as definições que existiam no Microsoft Intune numa configuração autónoma e anteriormente estão agora disponíveis ao utilizar o Intune com o Configuration Manager. Se precisar de ajuda com qualquer uma destas definições, consulte [definições de política do iOS no Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/ios-policy-settings-in-microsoft-intune).
+
+- **Sincronizar os dados de aplicações geridas para iCloud**
+- **Handoff continue as atividades outro dispositivo**
+- **Partilha de fotografias do iCloud**
+- **Biblioteca de fotografias do iCloud**
+- **Os autores de aplicação do novo enterprise de confiança**
+- **Permitir que o utilizador transfira conteúdos da loja iBook sinalizado como "Erótico"** (modo supervisionado apenas)
+- **Forçar emparelhado observa Apple para utilizar a deteção de wrist**
+- **Palavra-passe para AirPlay pedidos de envio**
+- **Modificar as definições da conta** (modo supervisionado apenas)
+- **Alterações das definições de utilização de dados via rede móvel aplicação** (modo supervisionado apenas)
+- **Apagar todos os conteúdos e definições** (modo supervisionado apenas)
+- **Configure as restrições no dispositivo** (modo supervisionado apenas)
+- **Utilize emparelhamento de anfitrião para controlar os dispositivos um dispositivo iOS pode ser emparelhado com** (modo supervisionado apenas)
+- **Instalar a configuração de perfis e certificados** (modo supervisionado apenas)
+- **Modificação de nome de dispositivo** (modo supervisionado apenas)
+- **Modificação do código de acesso** (modo supervisionado apenas)
+- **O emparelhamento do Apple Watch** (modo supervisionado apenas)
+- **Modificação das definições de notificação** (modo supervisionado apenas)
+- **Imagem de fundo modificação** (modo supervisionado apenas)
+- **Modificação de definições de submissão de diagnóstico** (modo supervisionado apenas)
+- **Modificação de Bluetooth** (modo supervisionado apenas)
+- **AirDrop** (modo supervisionado apenas)
+- **Utilize a siri Consulte conteúdos gerados pelo utilizador de consulta da Internet** (modo supervisionado apenas)
+- **Filtro de profanity Siri** (modo supervisionado apenas)
+- **Devolver resultados da Internet na pesquisa Spotlight** (modo supervisionado apenas)
+- **Pesquisa de definição de palavra** (modo supervisionado apenas)
+- **Teclados preditivos** (modo supervisionado apenas)
+- **Correção automática** (modo supervisionado apenas)
+- **Teclado verificação ortográfica** (modo supervisionado apenas)
+- **Atalhos de teclado** (modo supervisionado apenas)
 <!--- - **Enterprise app trust settings modification** --->
-- **Instalowanie aplikacji przy użyciu programu Apple Configurator i iTunes tylko** (tylko w trybie nadzorowanym)
-- **Pobieranie aplikacji automatyczne** (tylko w trybie nadzorowanym)
-- **Zmieniać ustawienia aplikacja Znajdź mój znajomych** (tylko w trybie nadzorowanym)
-- **Dostęp do magazynu iBooks** (tylko w trybie nadzorowanym)
-- **Komunikaty aplikacji** (tylko w trybie nadzorowanym)
-- **Transmisje podcast** (tylko w trybie nadzorowanym)
-- **Muzyka Apple** (tylko w trybie nadzorowanym)
-- **iTunes radiowych** (tylko w trybie nadzorowanym)
-- **Grupy dyskusyjne firmy Apple** (tylko w trybie nadzorowanym)
-- **Centrum gier** (tylko w trybie nadzorowanym)
-- **Traktuj AirDrop jako miejsca docelowego niezarządzane**
+- **Instalar aplicações com o Apple Configurator e apenas iTunes** (modo supervisionado apenas)
+- **Aplicação automática transferências** (modo supervisionado apenas)
+- **Efetuar alterações às definições da aplicação encontrar amigos** (modo supervisionado apenas)
+- **Acesso à loja iBooks** (modo supervisionado apenas)
+- **Aplicação mensagens** (modo supervisionado apenas)
+- **Podcasts** (modo supervisionado apenas)
+- **Música Apple** (modo supervisionado apenas)
+- **botões de opção do iTunes** (modo supervisionado apenas)
+- **Apple notícias** (modo supervisionado apenas)
+- **Centro de jogos** (modo supervisionado apenas)
+- **Tratar AirDrop como um destino de não gerido**
 
-## <a name="android-for-work-support"></a>Android obsługi pracy
+## <a name="android-for-work-support"></a>Android para o suporte de trabalho
 
-Począwszy od wersji Technical Preview 1702, można powiązać z konta Google dzierżawcy MDM hybrydowego. Dzięki temu można wykonać następujące czynności:
+A partir da versão de pré-visualização técnica 1702, é possível vincular uma conta do Google no seu inquilino MDM híbrida. Isto permite-lhe fazer o seguinte:
 
-- Rejestrowanie [obsługiwane urządzenia z systemem Android](https://support.google.com/work/android/answer/6174145?hl=en&ref_topic=6151012) jako Android pracy — Tworzenie profili pracy tych zarejestrowane urządzenia
-- Zatwierdź aplikacje Play pracy magazynu, ich synchronizacji z konsoli programu Configuration Manager, a następnie wdrożyć je w profilach pracy urządzeń
-- Tworzenie i wdrażanie elementów konfiguracji, aby skonfigurować ustawienia profilu i hasło pracy dla tych urządzeń
-- Tworzenie i wdrażanie elementów zasady zgodności i profilów dostępu do zasobów dla systemu Android dla urządzeń w pracy, jak już dla urządzeń z systemem Android
-- Przeprowadzić selektywne czyszczenie danych w systemie Android pracy urządzeń
+- Inscrever [dispositivos Android suportados](https://support.google.com/work/android/answer/6174145?hl=en&ref_topic=6151012) como Android de trabalho, a criação de perfis de trabalho nos dispositivos inscritos
+- Aprovar aplicações na Play para o arquivo de trabalho, sincronizá-las com a consola do Configuration Manager e, em seguida, implementá-las para perfis de trabalho dos dispositivos
+- Criar e implementar itens de configuração para configurar definições de perfil e a palavra-passe de trabalho para esses dispositivos
+- Criar e implementar itens de política de conformidade e perfis de acesso a recursos para Android para dispositivos de trabalho, já fazê-lo para dispositivos Android
+- Executar a eliminação seletiva no Android para dispositivos de trabalho
 
-Po zarejestrowaniu urządzenia zgodnie z Android do pracy tworzy profil pracy na urządzeniu Intune, które mogą zarządzać. Ten profil pracy istnieje side-by-side z profilem osobistych na urządzeniu Android. Użytkownicy mogą łatwo przełączać pracy profilu aplikacji i osobiste w profilu aplikacji. Nie można zarządzać elementów w profilu osobistym. Aplikacje osobiste i dane pozostają niezarządzane. Program Configuration Manager ma pełną kontrolę nad profilu pracy i jego zawartość i usunąć go z urządzenia.
+Quando inscreve um dispositivo como Android para trabalho cria um perfil de trabalho no dispositivo que o Intune pode gerir. Este perfil de trabalho existe lado lado a lado com o perfil pessoal no dispositivo Android. Os utilizadores podem facilmente mudar entre aplicações do perfil de trabalho e aplicações pessoais perfil. Não é possível gerir itens no perfil de pessoal. Aplicações pessoais e os dados permanecem não geridos. O Configuration Manager tem controlo total sobre o perfil de trabalho e o respetivo conteúdo e removê-lo do dispositivo.
 
-Android pracy to platforma oddzielnych z Android i należy zdecydować, który formularz zarządzania dla urządzeń z systemem Android, które obsługują profile pracy.
+Android para o trabalho é uma plataforma separada do Android, e terá de decidir a forma da gestão a utilizar para dispositivos Android que suportam perfis de trabalho.
 
-### <a name="try-it-out"></a>Wypróbuj to!
-W poniższych sekcjach opisano Android do zarządzania pracą.
+### <a name="try-it-out"></a>Experimente!
+As secções seguintes descrevem Android para gestão de trabalho.
 
-#### <a name="enable-android-for-work-management"></a>Włącz Android do zarządzania pracą
-1. Utwórz konto Google w https://accounts.google.com/SignUp do użycia jako Android Twoje konto administratora pracy, która zostanie skojarzona z wszystkich Android dla zadania zarządzania dla tej dzierżawy usługi Intune. Może to być konto Google współużytkowane przez administratorów, którzy zarządzają urządzeniami z systemem Android. To konto Google, używana do zarządzania i publikowania aplikacji w Play dla konsoli pracy w organizacji. Aby zatwierdzić aplikacje w grę dla sklepu pracy, więc śledzić wpisywane nazwę konta i hasło będzie używał tego konta.
-2. Włączanie rejestracji Android przez powiązanie konta Google dzierżawcy Intune zarządzane w programie Configuration Manager:
-  1. Przejdź do **Administracja** > **Przegląd** > **usług w chmurze** > **subskrypcje usługi Microsoft Intune** i wybierz subskrypcję usługi Intune.
-  2. Na wstążce kliknij **Konfiguruj platformy** > **Android** i upewnij się, **rejestracji włączyć Android** jest zaznaczone.
-  3. Na wstążce kliknij **Konfiguruj platformy** > **Android pracy**.
-  4. W oknie dialogowym kliknij **skonfigurować Android do pracy w konsoli usługi Intune**. W przeglądarce sieci web zostanie otwarta konsola usługi Intune.
-  5. Użyj poświadczeń administratora usługi Intune zalogować się do portalu usługi Intune.
-  6. Kliknij przycisk **Konfiguruj** otworzyć Android Google Play dla pracy witryny sieci Web.
-  7. Firmy Google logowania na stronie wprowadź poświadczenia konta Google z kroku 1, a następnie podaj informacje o firmie.
-3. Po powrocie do portalu Intune Android pracy jest włączona i ma trzy opcje rejestracji dla systemu Android dla pracy urządzeń:
-  - **Zarządzanie urządzeniami wszystkie jako Android** — (wyłączony) Android wszystkich urządzeń, w tym urządzeń, które obsługują Android do pracy, zostaną zarejestrowane jako konwencjonalne urządzenia z systemem Android
-  - **Zarządzanie urządzeniami obsługiwane jako Android pracy** — (Enabled) zarejestrowane jako Android wszystkie urządzenia Android pracy dla pracy urządzeń. Wszelkie urządzenia Android, który nie obsługuje Android do pracy jest zarejestrowany jako urządzenie konwencjonalnych Android.
-  - **Zarządzanie obsługiwane urządzenia dla użytkowników tylko w tych grupach jako Android pracy** -(testowanie) umożliwia Android są przeznaczone do pracy zarządzania ograniczony zestaw użytkowników. Tylko członkowie wybranej grupy, którzy rejestrują urządzenia obsługującego Android do pracy są rejestrowane jako Android dla urządzeń w pracy. Wszystkie inne zarejestrowane jako urządzenia z systemem Android.
+#### <a name="enable-android-for-work-management"></a>Ativar Android para gestão de trabalho
+1. Crie uma conta do Google https://accounts.google.com/SignUp para utilizar como Android para a conta de administrador de trabalho que será associada ao Android todas as tarefas de gestão de trabalho para este inquilino Intune. Isto pode ser uma conta do Google partilhada entre os administradores que gerem os dispositivos Android. Esta é a conta do Google pela sua organização para gerir e publicar aplicações na Play para a consola de trabalho. Irá utilizar esta conta para aprovar aplicações na Play para o arquivo de trabalho, por isso, manter controlar do nome da conta e palavra-passe.
+2. Ative a inscrição de dispositivos Android através do enlace a conta do Google para o inquilino do Intune gerido no Configuration Manager:
+  1. Aceda a **administração** > **descrição geral** > **serviços em nuvem** > **subscrições do Microsoft Intune** e selecione a sua subscrição do Intune.
+  2. No Friso, clique em **configurar plataformas** > **Android** e certifique-se **ativar inscrição Android** está marcada.
+  3. No Friso, clique em **configurar plataformas** > **Android para trabalho**.
+  4. Na caixa de diálogo, clique em **configurar Android para o trabalho na consola do Intune**. Abre a consola do Intune no seu browser.
+  5. Utilize as suas credenciais de administrador do Intune para iniciar sessão no portal do Intune.
+  6. Clique em **configurar** para abrir o Android da Google Play para o Web site de trabalho.
+  7. Da Google-na página sessão, introduza as credenciais da conta Google do passo 1 e, em seguida, forneça as informações da sua empresa.
+3. Quando regressar ao portal do Intune, o Android para o trabalho está ativado e tem três opções de inscrição para Android para dispositivos de trabalho:
+  - **Gerir todos os dispositivos como Android** - (desativado) Android todos os dispositivos, incluindo dispositivos que suportam o Android for Work, que irão ser inscritos como dispositivos Android convencionais
+  - **Gerir os dispositivos suportados como Android para trabalho** - (ativado) todos os dispositivos que suportam o Android de trabalho são inscritos como Android, para dispositivos de trabalho. Todos os dispositivos Android que não suporta Android para o trabalho está inscrito como um dispositivo Android convencional.
+  - **Gerir os dispositivos suportados para apenas os utilizadores nestes grupos como Android para trabalho** -permite (teste) de destino Android para gestão de trabalho para um conjunto limitado de utilizadores. Apenas os membros de grupos selecionados que inscreverem um dispositivo que suporta o Android de trabalho são inscritos como Android, para dispositivos de trabalho. Todos os outros são inscritos como dispositivos Android.
   
 > [!NOTE]
-> Zapobiega to znany problem **Zarządzaj obsługiwane urządzenia dla użytkowników tylko w tych grupach jako Android pracy** opcję działać zgodnie z oczekiwaniami. Urządzenia użytkowników w określonej usłudze Azure AD będą rejestrować grup jako Android zamiast Android do pracy. Aby przetestować Android do pracy, należy użyć **Zarządzanie wszystkich obsługiwanych urządzeń jako Android pracy**.
+> Um problema conhecido impede o **gerir dispositivos suportados para apenas os utilizadores nestes grupos como Android para trabalho** opção de funcionar conforme esperado. Os dispositivos dos utilizadores no Azure AD especificado grupos irão inscrever como Android, em vez de Android para o trabalho. Para testar o Android de trabalho, tem de utilizar o **gerir todos os dispositivos suportados como Android para trabalho**.
 
 
-  W celu umożliwienia Android do pracy rejestracji, należy wybierz jedną z opcji u dołu dwa. **Zarządzaj obsługiwane urządzenia dla użytkowników tylko w tych grupach jako Android pracy** opcja wymaga, należy najpierw zdefiniować grupy zabezpieczeń usługi Azure Active Directory.
+  Para ativar o Android para a inscrição de trabalho, tem de escolher uma das opções na parte inferior dois. O **gerir dispositivos suportados para apenas os utilizadores nestes grupos como Android para trabalho** opção requer que tem de configurar primeiro os grupos de segurança do Azure Active Directory.
 
-Po zakończeniu powiązania; zostaną wyświetlone nazwę konta i nazwę organizacji w portalu usługi Intune w tym momencie możesz zamknąć obie przeglądarki.
+Verá o nome de conta e o nome da organização no portal do Intune depois de concluída; o enlace nessa altura, pode fechar ambos os browsers.
 
-#### <a name="approve-and-deploy-android-for-work-apps"></a>Zatwierdzanie i wdrażanie Android dla aplikacji do pracy
-Wykonaj te kroki, aby zatwierdzić aplikacje w grę dla sklepu pracy, synchronizować je do konsoli programu Configuration Manager i wdrażanie ich Android zarządzanych urządzeń w pracy. Aby wdrożyć aplikacje profilów użytkowników pracy, musisz zatwierdzić aplikacje Play pracy, a następnie synchronizacji aplikacji za pomocą konsoli programu Configuration Manager.
+#### <a name="approve-and-deploy-android-for-work-apps"></a>Aprovar e implementar Android para aplicações de trabalho
+Siga estes passos para aprovar aplicações na Play para o arquivo de trabalho, sincronizá-los para a consola do Configuration Manager e implementá-las para o Android gerida para dispositivos de trabalho. Para implementar aplicações para perfis de utilizador de trabalho, terá de aprovar as aplicações na Play para o trabalho e, em seguida, sincronizar as aplicações com a consola do Configuration Manager.
 
-1. Otwórz przeglądarkę i przejdź do: https://play.google.com/work.
-2. Zaloguj się przy użyciu konta administratora Google związana z dzierżawą usługi Intune.
-3. Przeglądanie w poszukiwaniu aplikacji, które chcesz wdrożyć w danym środowisku i kliknij przycisk **Zatwierdź** dla każdego z nich.
-4. W konsoli programu Configuration Manager, przejdź do **administratora** > **Przegląd** > **usług w chmurze** > **Android pracy** i kliknij przycisk **synchronizacji**.
-5. Poczekaj, aż do 10 minut dla aplikacji do synchronizacji, a następnie przejdź **Biblioteka oprogramowania** > **Przegląd** > **zarządzania aplikacjami** > **informacji o licencji dla aplikacji do sklepu**.
-6. Kliknij aplikację zsynchronizowane z Play pracy, a następnie kliknij przycisk **tworzenie aplikacji**.
-7. Zakończ pracę kreatora i kliknij przycisk **Zamknij**.
-8. Przejdź do **Biblioteka oprogramowania** > **Przegląd** > **zarządzania aplikacjami** > **aplikacji**, wybierz Android dla aplikacji do pracy i wdrażania w zwykły sposób.
+1. Abra um browser e aceda a: https://play.google.com/work.
+2. Inicie sessão com a conta de administrador do Google vinculado ao seu inquilino do Intune.
+3. Procure as aplicações que pretende implementar no seu ambiente e clique em **aprovar** para cada um deles.
+4. Na consola do Configuration Manager, vá para **administrador** > **descrição geral** > **serviços em nuvem** > **Android para trabalho** e clique em **sincronização**.
+5. Aguarde até 10 minutos para as aplicações sincronizar e, em seguida, avance **biblioteca de Software** > **descrição geral** > **gestão de aplicações** > **informações de licença para aplicações da loja**.
+6. Clique numa aplicação sincronizada a partir da Play para o trabalho e, em seguida, clique em **Criar aplicação**.
+7. Conclua o assistente e clique em **fechar**.
+8. Aceda a **biblioteca de Software** > **descrição geral** > **gestão de aplicações** > **aplicações**, selecione um Android para aplicações de trabalho e implementar como habitualmente.
 
-Aby zsynchronizować Play dla aplikacji do pracy z programem Configuration Manager, należy zatwierdzić co najmniej jedną aplikację na Play pracy witryny sieci Web.
+Para sincronizar Play para aplicações de trabalho com o Configuration Manager, necessitará de aprovar pelo menos uma aplicação na Play para o Web site de trabalho.
 
-#### <a name="enroll-an-android-for-work-device"></a>Rejestrowanie Android pracy urządzenia
-Jak zarejestrować Android urządzeń pracy jest podobne do rejestracji dla systemu Android. Pobierz i uruchom aplikację Portal firmy dla systemu Android na urządzeniu przenośnym. Użytkownik jest monitowany utworzyć profil pracy w ramach procesu rejestracji.  Po utworzeniu profilu pracy, musisz przełączyć się do zarządzanego wersji portalu firmy. Zarządzanych aplikacji Portal firmy jest oznaczane małe Aktówki pomarańczowy w prawym dolnym rogu.
+#### <a name="enroll-an-android-for-work-device"></a>Inscrever um Android para dispositivos de trabalho
+Como inscrever o Android para dispositivos de trabalho é semelhante a inscrição para Android. Transfira e execute a aplicação Portal da empresa para Android no seu dispositivo móvel. Será solicitado para criar um perfil de trabalho como parte do processo de inscrição.  Assim que o perfil de trabalho é criado, tem de mudar para a versão do Portal da empresa gerida. O Portal da empresa geridos é marcado com um pequeno briefcase laranja no canto inferior direito.
 
-#### <a name="create-and-deploy-a-configuration-item"></a>Tworzenie i wdrażanie elementu konfiguracji
-Android do pracy składa się z dwóch grup ustawienie pozycji konfiguracji:
-- Hasło
-- Profil pracy
+#### <a name="create-and-deploy-a-configuration-item"></a>Criar e implementar um item de configuração
+Android de trabalho tem dois grupos de definições para itens de configuração:
+- Palavra-passe
+- Perfil de trabalho
 
-Można skonfigurować zawartości udostępnianie między profili pracy, jak również następujące elementy konfiguracji na urządzeniach z systemem Android 6 lub nowszej:
-- Zachowanie aplikacji z prośbą o określonych uprawnień
-- Czy powiadomienia dla aplikacji w ramach profilu pracy są widoczne na ekranie blokady
+Pode configurar o conteúdo de partilha entre perfis de trabalho, bem como os seguintes itens de configuração em dispositivos com Android 6 ou superior:
+- O comportamento para solicitar permissões específicas de aplicações
+- Indica se as notificações para aplicações no perfil de trabalho são visíveis no ecrã de bloqueio
 
-To spróbować utworzyć element konfiguracji za pomocą standardowych przepływu pracy, wybierz polecenie **Android pracy** na **ogólne** strony i skonfiguruj ustawienia dla każdej grupy ustawień, dodawanie elementów konfiguracji do linii bazowej i wdrażanie w zwykły sposób. Te ustawienia będą stosowane tylko do urządzeń zarejestrowane jako Android na potrzeby pracy, a nie te, które zarejestrowane jako Android.
+Para experimentar isto, crie um item de configuração através do fluxo de trabalho padrão, escolha **Android para trabalho** no **geral** página e configurar as definições para cada um dos grupos de definições, adicionar o item de configuração para uma linha de base e implementar como habitualmente. Estas definições apenas se aplica a dispositivos inscritos como Android, para e de trabalho não os que são inscritos como Android.
 
-#### <a name="perform-selective-wipe"></a>Przeprowadzić selektywne czyszczenie danych
-Urządzenia zarejestrowane jako Android do pracy tylko można selektywnie ponieważ tylko Zarządzanie profilu pracy. Chroni to ten profil z jest wyczyszczone. Wykonywanie selektywne czyszczenie danych w systemie Android pracy urządzenia Usuwa profil pracy, w tym wszystkie aplikacje i dane i unenrolls urządzenia.
+#### <a name="perform-selective-wipe"></a>Executar a eliminação seletiva
+Os dispositivos inscritos como Android para trabalho só poderem ser apagados seletivamente porque apenas a gerir o perfil de trabalho. Esta ação protege o perfil pessoal dados serem apagados. A eliminação seletiva num Android para dispositivos de trabalho remove o perfil de trabalho, incluindo todas as aplicações e dados e é removido do dispositivo.
 
-Aby selektywnie wyczyść Android pracy urządzenia, użyj normalnych [proces selektywnego czyszczenia](https://docs.microsoft.com/sccm/mdm/deploy-use/wipe-lock-reset-devices#selective-wipe) w konsoli programu Configuration Manager.
+Para apagar seletivamente um Android para dispositivos de trabalho, utilize o normal [processo de eliminação seletiva](https://docs.microsoft.com/sccm/mdm/deploy-use/wipe-lock-reset-devices#selective-wipe) na consola do Configuration Manager.
 
-#### <a name="known-issues-for-android-for-work"></a>Znane problemy dotyczące Android do pracy
-**Konfigurowanie synchronizacji w Android o przyczynach profile poczty e-mail pracy były zaplanowane Niepowodzenie wdrażania** jest jedną z opcji w interfejsie użytkownika programu ConfigMgr dla systemu Android profili poczty e-mail pracy "Harmonogram". Na innych platformach dzięki temu administrator, aby skonfigurować harmonogram do synchronizowania poczty e-mail i innych danych konta poczty e-mail do urządzeń przenośnych, które wdrożenia. Nie działa dla systemu Android profili poczty e-mail w pracy i wybierając opcję żadnych innych niż "Nie skonfigurowano" spowoduje, że w profilu nie można wdrożyć na żadnych urządzeniach.
-
+#### <a name="known-issues-for-android-for-work"></a>Problemas conhecidos para Android para o trabalho
+**Configurar a sincronização agendada no Android para causas de perfis de e-mail de trabalho para efetuar para implementar** é uma das opções na IU do ConfigMgr para Android para perfis de e-mail de trabalho "Agenda". Noutras plataformas, isto permite que o administrador configurar uma agenda para a sincronizar o e-mail e outros dados de conta de e-mail para dispositivos móveis que é implementado. No entanto, não funciona para Android para perfis de e-mail de trabalho e selecionar qualquer opção que não seja "Não configurada" fará com que o perfil a não ser implementada para todos os dispositivos.

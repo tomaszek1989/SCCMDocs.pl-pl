@@ -1,518 +1,515 @@
 ---
-title: "Rozmieszczanie zawartości | Dokumentacja firmy Microsoft"
-description: "Po zainstalowaniu punktów dystrybucji programu System Center Configuration Manager, Oto jak można rozpocząć wdrażanie zawartości do nich."
+title: "Implementar conteúdo | Microsoft Docs"
+description: "Depois de instalar pontos de distribuição para o System Center Configuration Manager, eis como pode começar a implementar o conteúdo aos mesmos."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d50dcca0-4419-449d-a487-73abcadf328f
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
 ms.openlocfilehash: 36b08285ef78d0acb9ba9c44abe2d57e311d44b3
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="deploy-and-manage-content-for-system-center-configuration-manager"></a>Wdrażanie i zarządzanie zawartością programu System Center Configuration Manager
+# <a name="deploy-and-manage-content-for-system-center-configuration-manager"></a>Implementar e gerir conteúdo para o System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Aplica-se a: O System Center Configuration Manager (ramo atual)*
 
-Po zainstalowaniu punktów dystrybucji programu System Center Configuration Manager, można rozpocząć wdrażanie zawartości do nich. Zazwyczaj zawartość przesyła do punktów dystrybucji w sieci, ale istnieje inne opcje, aby pobrać zawartość do punktów dystrybucji. Po przesyła zawartość do punktu dystrybucji, można zaktualizować, rozpowszechniać, Usuń i sprawdź poprawność tej zawartości w punktach dystrybucji.  
+Depois de instalar pontos de distribuição para o System Center Configuration Manager, pode começar a implementar o conteúdo aos mesmos. Normalmente, as transferências de conteúdo para pontos de distribuição através da rede, mas existe outras opções para obter conteúdo aos pontos de distribuição. Depois de as transferências de conteúdo para um ponto de distribuição, pode atualizar, redistribuir, remover e validar esse conteúdo em pontos de distribuição.  
 
-##  <a name="bkmk_distribute"></a>Dystrybucja zawartości  
- Zazwyczaj dystrybucji zawartości do punktów dystrybucji, aby była dostępna na komputerach klienckich. (Wyjątek jest użycie opcji dystrybucji zawartości na żądanie dla określonego wdrożenia).  Podczas dystrybucji zawartości są przechowywane pliki zawartości w pakiecie programu Configuration Manager, a następnie przesyła ów pakiet do punktu dystrybucji. Typy zawartości, którą można dystrybuować, między innymi:  
+##  <a name="bkmk_distribute"></a>Distribuir conteúdo  
+ Normalmente, distribuir conteúdo para pontos de distribuição para que fiquem disponível para computadores cliente. (A exceção é quando utiliza a distribuição de conteúdo a pedido para um implementação específica.)  Quando distribui conteúdo, o Configuration Manager armazena os ficheiros de conteúdo num pacote e, em seguida, distribui o pacote ao ponto de distribuição. Os tipos de conteúdo que podem ser distribuídos, incluem:  
 
--   Typy wdrożenia aplikacji  
+-   Tipos de implementação de aplicação  
 
--   Pakiety  
+-   Pacotes  
 
--   Pakiety wdrożeniowe  
+-   Pacotes de implementação  
 
--   Pakiety sterowników  
+-   Pacotes de controladores  
 
--   Obrazy systemu operacyjnego  
+-   Imagens de sistema operativo  
 
--   Instalatorzy systemu operacyjnego  
+-   Instaladores do sistema operativo  
 
--   Obrazy rozruchowe  
+-   Imagens de arranque  
 
--   Sekwencje zadań  
+-   Sequências de tarefas  
 
-Podczas tworzenia pakietu zawierającego pliki źródłowe, takie jak wdrożenia typu lub wdrażania pakietu aplikacji, witryny, w której zostaje utworzony pakiet staje się właścicielem lokacji źródła zawartości pakietu. Program Configuration Manager skopiuje pliki źródłowe ze ścieżki plików źródłowych określonej dla obiektu do biblioteki zawartości na serwerze lokacji, która jest właścicielem źródła zawartości pakietu.  Następnie Configuration Manager replikuje informacje dodatkowe lokacje. (Zobacz [biblioteki zawartości](../../../../core/plan-design/hierarchy/the-content-library.md) uzyskać więcej informacji na ten temat.)  
+Quando cria um pacote que contém ficheiros de origem, tal como uma aplicação tipo ou implementação de pacote de implementação, o site no qual o pacote é criado torna-se o proprietário do site para a origem de conteúdo do pacote. O Configuration Manager copia os ficheiros de origem do caminho de ficheiro de origem que especificar para o objeto à biblioteca de conteúdos no servidor do site que é proprietário da origem de conteúdo do pacote.  Em seguida, o Configuration Manager replica as informações nos sites adicionais. (Consulte [a biblioteca de conteúdos](../../../../core/plan-design/hierarchy/the-content-library.md) para obter mais informações sobre esta.)  
 
-Użyj poniższej procedury do dystrybucji zawartości do punktów dystrybucji.  
+Utilize o seguinte procedimento para distribuir conteúdo para pontos de distribuição.  
 
-#### <a name="to-distribute-content-on-distribution-points"></a>Aby przeprowadzić dystrybucję zawartości w punktach dystrybucji  
+#### <a name="to-distribute-content-on-distribution-points"></a>Para distribuir conteúdo em pontos de distribuição  
 
-1.  W konsoli programu Configuration Manager kliknij przycisk **Biblioteka oprogramowania**.  
+1.  Na consola do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  W **Biblioteka oprogramowania** obszaru roboczego, wybierz jedną z następujących kroków dla typu zawartości, którą chcesz dystrybuować:  
+2.  No **biblioteca de Software** área de trabalho, selecione um dos seguintes passos para o tipo de conteúdo que pretende distribuir:  
 
-    -   **Aplikacje**: Rozwiń węzeł **zarządzania aplikacjami** > **aplikacji**, a następnie wybierz aplikacje, które chcesz rozesłać.  
+    -   **Aplicações**: Expanda **gestão de aplicações** > **aplicações**e, em seguida, selecione as aplicações que pretende distribuir.  
 
-    -   **Pakiety**: Rozwiń węzeł **zarządzania aplikacjami** >  **pakiety**, a następnie wybierz pakiety, które chcesz rozesłać.  
+    -   **Pacotes**: Expanda **gestão de aplicações** >  **pacotes**e, em seguida, selecione os pacotes que pretende distribuir.  
 
-    -   **Pakiety wdrożeniowe**: Rozwiń węzeł **aktualizacji oprogramowania** >  **pakiety wdrożeniowe**, a następnie wybierz pakiety wdrożeniowe, które chcesz rozesłać.  
+    -   **Pacotes de implementação**: Expanda **atualizações de Software** >  **pacotes de implementação**e, em seguida, selecione os pacotes de implementação que pretende distribuir.  
 
-    -   **Pakiety sterowników**: Rozwiń węzeł **systemów operacyjnych** >  **pakiety sterowników**, a następnie wybierz pakiety sterowników, które chcesz rozesłać.  
+    -   **Pacotes de controladores**: Expanda **sistemas operativos** >  **pacotes de controladores**e, em seguida, selecione os pacotes de controladores que pretende distribuir.  
 
-    -   **Obrazy systemu operacyjnego**: Rozwiń węzeł **systemów operacyjnych** >  **obrazów systemu operacyjnego**, a następnie wybierz obrazy systemu operacyjnego, które chcesz rozesłać.  
+    -   **Imagens de sistema operativo**: Expanda **sistemas operativos** >  **imagens do sistema operativo**e, em seguida, selecione as imagens de sistema operativo que pretende distribuir.  
 
-    -   **Instalatorzy systemu operacyjnego**: Rozwiń węzeł **systemów operacyjnych** > **instalatorzy systemu operacyjnego**, a następnie wybierz instalatorów systemu operacyjnego, które chcesz rozesłać.  
+    -   **Instaladores do sistema operativo**: Expanda **sistemas operativos** > **instaladores do sistema operativo**e, em seguida, selecione os instaladores do sistema operativo que pretende distribuir.  
 
-    -   **Obrazy rozruchowe**: Rozwiń węzeł **systemów operacyjnych** >  **obrazów rozruchowych**, a następnie wybierz obrazy rozruchowe, które chcesz rozesłać.  
+    -   **Imagens de arranque**: Expanda **sistemas operativos** >  **imagens de arranque**e, em seguida, selecione as imagens de arranque que pretende distribuir.  
 
-    -   **Sekwencje zadań**: Rozwiń węzeł **systemów operacyjnych** >  **sekwencji zadań**, a następnie wybierz sekwencję, którą chcesz rozesłać. Mimo że sekwencje zadań nie zawierają zawartości, mają jednak powiązane z zawartością zależności, które są dystrybuowane.  
-
-        > [!NOTE]  
-        >  W przypadku zmodyfikowania sekwencji zadań, należy ponownie rozesłać zawartość.  
-
-3.  Na karcie **Narzędzia główne** w grupie **Wdrażanie** kliknij przycisk **Dystrybuuj zawartość**. Zostanie otwarty Kreator dystrybucji zawartości.  
-
-4.  Na **ogólne** , sprawdź, czy wymieniona zawartość jest zawartością, który chcesz rozesłać, wybierz, czy program Configuration Manager, aby wykrywać zależności zawartości skojarzone z wybraną zawartością oraz Dodaj zależności do dystrybucji, a następnie kliknij przycisk **dalej**.  
-
-    > [!NOTE]  
-    >  Istnieje możliwość skonfigurowania **Wykryj powiązane zależności zawartości i dodaj je do tej dystrybucji** tylko dla typu zawartości aplikacji. Menedżer konfiguracji automatycznie skonfiguruje to ustawienie dla sekwencji zadań, a nie może być modyfikowany.  
-
-5.  Na **zawartości** karcie, jeśli wyświetlony, sprawdź, czy na liście znajduje się zawartość do dystrybucji, a następnie kliknij przycisk **dalej**.  
-
-    > [!NOTE]  
-    >  **Zawartości** na stronie są wyświetlane tylko wtedy, gdy **Wykryj powiązane zależności zawartości i dodaj je do tej dystrybucji** jest wybrane ustawienie **ogólne** w kreatorze.  
-
-6.  Na **miejsce docelowe zawartości** kliknij **Dodaj**, wybierz jedną z następujących czynności, a następnie wykonaj odpowiednie czynności:  
-
-    -   **Kolekcje**: Wybierz **kolekcji użytkowników** lub **kolekcji urządzeń**, kliknij kolekcję skojarzoną z co najmniej jedną grupę punktów dystrybucji, a następnie kliknij przycisk **OK**.  
+    -   **As sequências de tarefas**: Expanda **sistemas operativos** >  **sequências de tarefas**e, em seguida, selecione a sequência de tarefas que pretende distribuir. Embora as sequências de tarefas não contêm conteúdo, podem tem conteúdas dependências associadas que são distribuídas.  
 
         > [!NOTE]  
-        >  Są wyświetlane tylko kolekcje skojarzone z grupą punktów dystrybucji. Aby uzyskać więcej informacji o kojarzeniu kolekcji z grupami punktów dystrybucji, zobacz [umożliwia zarządzanie grupami punktów dystrybucji](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage) w [zainstalować i skonfigurować punkty dystrybucji programu System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md) tematu.  
+        >  Se modificar a sequência de tarefas, necessitará de redistribuir o conteúdo.  
 
-    -   **Punkt dystrybucji**: Wybierz istniejący punkt dystrybucji, a następnie kliknij przycisk **OK**. Punkty dystrybucji, które wcześniej odebrały zawartość nie są wyświetlane.  
+3.  No separador **Início** , no grupo **Implementação** , clique em **Distribuir Conteúdo** É aberto o Assistente para distribuir conteúdo.  
 
-    -   **Grupy punktów dystrybucji**: Wybierz istniejącą grupę punktów dystrybucji, a następnie kliknij przycisk **OK**. Grupy punktów dystrybucji, które wcześniej odebrały zawartość nie są wyświetlane.  
-
-    Po zakończeniu dodawania miejsc docelowych zawartości, kliknij przycisk **dalej**.  
-
-7.  Na **Podsumowanie** stronie, przed kontynuowaniem sprawdź ustawienia dystrybucji. Aby przeprowadzić dystrybucję zawartości do wybranych miejsc docelowych, kliknij przycisk **dalej**.  
-
-8.  **Postępu** strony wyświetlany postęp dystrybucji.  
-
-9. **Potwierdzenia** na stronie są wyświetlane, czy zawartość została pomyślnie przypisana do punktów. Do monitorowania dystrybucji zawartości, zobacz [monitorowania zawartości, których dystrybucja z System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  
-
-##  <a name="bkmk_prestage"></a>Użyj wstępnie przygotowanej zawartości  
- Można wstępnie przygotować pliki zawartości aplikacji i typów pakietów:  
-
--   W konsoli programu Configuration Manager, należy wybrać zawartość, a następnie użyć **Tworzenie kreatora przygotowanego pliku zawartości** utworzyć skompresowany, wstępnie przygotowany plik zawartości, który zawiera pliki i skojarzone metadane dla wybranej zawartości.  
-
--   Następnie można ręcznie zaimportować zawartość na serwerze lokacji dodatkowej lokacji lub punktu dystrybucji.  
-
--   Podczas importowania wstępnie przygotowanego pliku zawartości na serwerze lokacji pliki zawartości są dodawane do biblioteki zawartości na serwerze lokacji, a następnie zarejestrowana w bazie danych serwera lokacji.  
-
--   Podczas importowania wstępnie przygotowanego pliku zawartości w punkcie dystrybucji pliki zawartości zostaną dodane do biblioteki zawartości w punkcie dystrybucji, a komunikat o stanie są wysyłane do serwera lokacji, który informuje o lokacji, czy zawartość jest dostępna w punkcie dystrybucji.  
-
-**Ograniczenia i zagadnienia związane z wstępnie przygotowanej zawartości:**  
-
--   **Kiedy punkt dystrybucji jest zlokalizowany na serwerze lokacji**, nie należy włączać punktu dystrybucji dla wstępnie przygotowanej zawartości. Zamiast tego należy użyć procedury w [jak wstępnie przygotować zawartość w punkcie dystrybucji na serwerze lokacji](#bkmk_dpsiteserver).  
-
--   **Gdy punkt dystrybucji jest skonfigurowany jako punkt dystrybucji ściągania**, nie należy włączać punktu dystrybucji dla wstępnie przygotowanej zawartości. Konfiguracja wstępnie przygotowanej zawartości dla punktu dystrybucji zastępuje konfigurację punktu dystrybucji. Ściągający punkt dystrybucji skonfigurowany do obsługi wstępnie przygotowanej zawartości nie będzie ściągać zawartości z punktu dystrybucji i nie będzie otrzymywać zawartości z serwera lokacji.  
-
--   **Musi być utworzyć bibliotekę zawartości w punkcie dystrybucji było wstępnie przygotować zawartość do punktu dystrybucji**. Dystrybucja zawartości za pośrednictwem sieci, co najmniej jeden raz przed wstępnym zawartości do punktu dystrybucji.  
-
--   **Podczas wstępnego przygotowywania zawartości dla pakietu o długiej ścieżce źródła pakietu** (na przykład ponad 140 znaków), narzędzie wiersza polecenia Extract Content może zakończyć się niepowodzeniem pomyślnie wyodrębnić zawartości tego pakietu do biblioteki zawartości.  
-
-Informacje o tym, kiedy należy wstępnie przygotować pliki zawartości, zobacz *wstępnie zawartości* w [zarządzanie przepustowością sieci związane z zarządzaniem zawartością](/sccm/core/plan-design/hierarchy/manage-network-bandwidth) tematu.  
-
-Poniższe sekcje służą do wstępnego przygotowania zawartości.  
-
-###  <a name="BKMK_CreatePrestagedContentFile"></a>Krok 1: Utwórz wstępnie przygotowany plik zawartości  
- Można utworzyć skompresowany, wstępnie przygotowany plik zawartości, który zawiera pliki i skojarzone metadane zawartości wybrane w konsoli programu Configuration Manager. Poniższa procedura umożliwia utworzenie wstępnie przygotowanego pliku zawartości.  
-
-##### <a name="to-create-a-prestaged-content-file"></a>Aby utworzyć wstępnie przygotowany plik zawartości  
-
-1.  W konsoli programu Configuration Manager kliknij przycisk **Biblioteka oprogramowania**.  
-
-2.  W **Biblioteka oprogramowania** obszaru roboczego, wybierz jedną z następujących kroków dla typu zawartości, którą chcesz wstępnie przygotować:  
-
-    -   **Aplikacje**: Rozwiń węzeł **zarządzania aplikacjami**, kliknij przycisk **aplikacji**, a następnie wybierz aplikacje, które chcesz wstępnie przygotować.  
-
-    -   **Pakiety**: Rozwiń węzeł **zarządzania aplikacjami**, kliknij przycisk **pakiety**, a następnie wybierz pakiety, które chcesz wstępnie przygotować.  
-
-    -   **Pakiety sterowników**: Rozwiń węzeł **systemów operacyjnych**, kliknij przycisk **pakiety sterowników**, a następnie wybierz pakiety sterowników, które chcesz wstępnie przygotować.  
-
-    -   **Obrazy systemu operacyjnego**: Rozwiń węzeł **systemów operacyjnych**, kliknij przycisk **obrazów systemu operacyjnego**, a następnie wybierz obrazy systemu operacyjnego, które chcesz wstępnie przygotować.  
-
-    -   **Instalatorzy systemu operacyjnego**: Rozwiń węzeł **systemów operacyjnych**, kliknij przycisk **instalatorzy systemu operacyjnego**, a następnie wybierz instalatorów systemu operacyjnego, które chcesz wstępnie przygotować.  
-
-    -   **Obrazy rozruchowe**: Rozwiń węzeł **systemów operacyjnych**, kliknij przycisk **obrazów rozruchowych**, a następnie wybierz obrazy rozruchowe, które chcesz wstępnie przygotować.  
-
-    -   **Sekwencje zadań**: Rozwiń węzeł **systemów operacyjnych**, kliknij przycisk **sekwencji zadań**, a następnie wybierz sekwencje zadań, które chcesz wstępnie przygotować.  
-
-3.  Na **Home** w karcie **wdrożenia** , kliknij przycisk **Utwórz wstępnie przygotowany plik zawartości**. Otworzy się Kreator tworzenia przygotowanego zawartości pliku.  
+4.  No **geral** página, certifique-se de que os conteúdos apresentados correspondem aos conteúdos que pretende distribuir, especifique se pretende que o Configuration Manager para detetar as dependências de conteúdos que estão associados a conteúdos selecionados e adicione as dependências à distribuição e, em seguida, clique em **seguinte**.  
 
     > [!NOTE]  
-    >  **W przypadku aplikacji:** Na **Home** w karcie **aplikacji** , kliknij przycisk **Utwórz wstępnie przygotowany plik zawartości**.  
+    >  Tem a opção para configurar o **detetar dependências de conteúdo associado e adicioná-las a esta distribuição** definição apenas para o tipo de conteúdo da aplicação. O Configuration Manager configura automaticamente esta definição para sequências de tarefas e não pode ser modificado.  
+
+5.  No **conteúdo** separador, caso seja apresentado, certifique-se de que os conteúdos apresentados correspondem aos conteúdos que pretende distribuir e, em seguida, clique em **seguinte**.  
+
+    > [!NOTE]  
+    >  O **conteúdo** página é apresentada apenas quando o **detetar dependências de conteúdo associado e adicioná-las a esta distribuição** definição está selecionada no **geral** página do assistente.  
+
+6.  No **destino do conteúdo** página, clique em **adicionar**, escolha uma das seguintes e, em seguida, siga o passo associado:  
+
+    -   **Coleções**: Selecione **coleções de utilizadores** ou **coleções de dispositivos**, clique na coleção associada um ou mais grupos de pontos de distribuição e, em seguida, clique em **OK**.  
+
+        > [!NOTE]  
+        >  São apresentadas apenas as coleções que estão associadas um grupo de pontos de distribuição. Para obter mais informações sobre como associar coleções a grupos de pontos de distribuição, consulte [gerir grupos de pontos de distribuição](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage) no [instalar e configurar pontos de distribuição para o System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md) tópico.  
+
+    -   **Ponto de distribuição**: Selecione um ponto de distribuição existente e, em seguida, clique em **OK**. Pontos de distribuição que tenham anteriormente recebido o conteúdo não são apresentados.  
+
+    -   **Grupo de pontos de distribuição**: Selecione um grupo de pontos de distribuição existente e, em seguida, clique em **OK**. Grupos de pontos de distribuição que tenham anteriormente recebido o conteúdo não serão apresentados.  
+
+    Quando acabar de adicionar destinos de conteúdo, clique em **seguinte**.  
+
+7.  No **resumo** , reveja as definições da distribuição antes de continuar. Para distribuir o conteúdo aos destinos selecionados, clique em **seguinte**.  
+
+8.  O **progresso** página apresenta o progresso da distribuição.  
+
+9. O **confirmação** página mostra se os conteúdos foram atribuídos com êxito aos pontos. Para monitorizar a distribuição de conteúdos, consulte [monitorizar conteúdo que distribuiu com o System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  
+
+##  <a name="bkmk_prestage"></a>Utilize conteúdo pré-configurado  
+ Pode pré-configurar ficheiros de conteúdo para aplicações e tipos de pacote:  
+
+-   Na consola do Configuration Manager, selecione o conteúdo necessário e, em seguida, utilizar o **criar Assistente de ficheiro de conteúdo pré-configurado** para criar um ficheiro de conteúdo comprimido e pré-configurado que contém os ficheiros e metadados associados para o conteúdo que selecionou.  
+
+-   Em seguida, pode importar manualmente o conteúdo no servidor do site, site secundário, ou ponto de distribuição.  
+
+-   Quando importar o ficheiro de conteúdo pré-configurado num servidor do site, os ficheiros de conteúdo são adicionados à biblioteca de conteúdos no servidor do site e, em seguida, registados na base de dados do servidor do site.  
+
+-   Quando importar o ficheiro de conteúdo pré-configurado num ponto de distribuição, os ficheiros de conteúdo são adicionados à biblioteca de conteúdos no ponto de distribuição e é enviada uma mensagem de estado para o servidor de site que informa o site que o conteúdo está disponível no ponto de distribuição.  
+
+**Limitações e considerações para conteúdo pré-configurado:**  
+
+-   **Quando o ponto de distribuição estiver localizado no servidor do site**, não ative o ponto de distribuição para conteúdo pré-configurado. Em alternativa, utilize o procedimento [como pré-configurar conteúdo num ponto de distribuição num servidor do site](#bkmk_dpsiteserver).  
+
+-   **Quando o ponto de distribuição é configurado como um ponto de distribuição de solicitação**, não ative o ponto de distribuição para conteúdo pré-configurado. A configuração de conteúdo pré-configurado para um ponto de distribuição substitui a configuração de ponto de distribuição de solicitação. Um ponto de distribuição de solicitação que esteja configurado para conteúdos pré-configurados não solicitará conteúdos a partir do ponto de distribuição de origem e recebe os conteúdos do servidor do site.  
+
+-   **A biblioteca de conteúdos tem de ser criada no ponto de distribuição para que possa pré-configurar conteúdo para o ponto de distribuição**. Distribua conteúdo através da rede, pelo menos, uma vez para pré-configurar conteúdo para o ponto de distribuição.  
+
+-   **Quando pré-configura conteúdo para um pacote com um caminho de origem do pacote extenso** (por exemplo, mais de 140 caracteres), a ferramenta de linha de comandos extrair conteúdo poderá não concluir com êxito a extração dos conteúdos desse pacote para a biblioteca de conteúdos.  
+
+Para obter informações sobre quando pré-configurar ficheiros de conteúdo, consulte *conteúdo pré-configurado* no [gerir a largura de banda de rede para a gestão de conteúdo](/sccm/core/plan-design/hierarchy/manage-network-bandwidth) tópico.  
+
+Utilize as secções seguintes para pré-configurar conteúdo.  
+
+###  <a name="BKMK_CreatePrestagedContentFile"></a>Passo 1: Criar um ficheiro de conteúdo pré-configurado  
+ Pode criar um ficheiro de conteúdo comprimido e pré-configurado que contém os ficheiros e metadados associados para o conteúdo que selecionou na consola do Configuration Manager. Utilize o procedimento seguinte para criar um ficheiro de conteúdo pré-configurado.  
+
+##### <a name="to-create-a-prestaged-content-file"></a>Para criar um ficheiro de conteúdo pré-configurado  
+
+1.  Na consola do Configuration Manager, clique em **Biblioteca de Software**.  
+
+2.  No **biblioteca de Software** área de trabalho, selecione um dos seguintes passos para o tipo de conteúdo que pretende pré-configurar:  
+
+    -   **Aplicações**: Expanda **gestão de aplicações**, clique em **aplicações**e, em seguida, selecione as aplicações que pretende pré-configurar.  
+
+    -   **Pacotes**: Expanda **gestão de aplicações**, clique em **pacotes**e, em seguida, selecione os pacotes que pretende pré-configurar.  
+
+    -   **Pacotes de controladores**: Expanda **sistemas operativos**, clique em **pacotes de controladores**e, em seguida, selecione os pacotes de controladores que pretende pré-configurar.  
+
+    -   **Imagens de sistema operativo**: Expanda **sistemas operativos**, clique em **imagens do sistema operativo**e, em seguida, selecione as imagens de sistema operativo que pretende pré-configurar.  
+
+    -   **Instaladores do sistema operativo**: Expanda **sistemas operativos**, clique em **instaladores do sistema operativo**e, em seguida, selecione os instaladores do sistema operativo que pretende pré-configurar.  
+
+    -   **Imagens de arranque**: Expanda **sistemas operativos**, clique em **imagens de arranque**e, em seguida, selecione as imagens de arranque que pretende pré-configurar.  
+
+    -   **As sequências de tarefas**: Expanda **sistemas operativos**, clique em **sequências de tarefas**e, em seguida, selecione a sequência de tarefas que pretende pré-configurar.  
+
+3.  No **home page** separador o **implementação** , clique em **criar ficheiro de conteúdo de pré-configurado**. A criar pré-configurado conteúdo ficheiro é aberto o assistente.  
+
+    > [!NOTE]  
+    >  **Para aplicações:** No **home page** separador o **aplicação** , clique em **criar pré-configurado ficheiro de conteúdo**.  
     >   
-    >  **W przypadku pakietów:** Na **Home** w karcie &lt; *Nazwa_pakietu*> grupy, kliknij przycisk **Utwórz wstępnie przygotowany plik zawartości**.  
+    >  **Para pacotes:** No **home page** separador o &lt; *PackageName*>, clique em **criar pré-configurado ficheiro de conteúdo**.  
 
-4.  Na **ogólne** kliknij **Przeglądaj**wybierz lokalizację wstępnie przygotowanego pliku zawartości, określ nazwę pliku, a następnie kliknij przycisk **zapisać**. Używasz wstępnie przygotowanego pliku zawartości na serwerach lokacji głównych, serwerach lokacji dodatkowych lub punktów dystrybucji do importowania zawartości i metadanych.  
+4.  No **geral** página, clique em **procurar**, escolha a localização de ficheiro de conteúdo pré-configurado, especifique um nome para o ficheiro e, em seguida, clique em **guardar**. Utilize o ficheiro de conteúdo pré-configurado em servidores de site primário, servidores de sites secundários ou pontos de distribuição para importar o conteúdo e metadados.  
 
-5.  W przypadku aplikacji wybierz **Eksportuj wszystkie zależności** Menedżera konfiguracji wykrywa i dodaje zależności skojarzone z aplikacją do wstępnie przygotowanego pliku zawartości. Domyślnie to ustawienie jest włączone.  
+5.  Para aplicações, selecione **exportar todas as dependências** para que o Configuration Manager detete e adicione as dependências associadas à aplicação para o ficheiro de conteúdo pré-configurado. Por predefinição, esta definição está selecionada.  
 
-6.  W **komentarze administratora**wprowadź opcjonalne komentarze dotyczące wstępnie przygotowanego pliku zawartości, a następnie kliknij przycisk **dalej**.  
+6.  No **comentários do administrador**, introduza comentários opcionais sobre o ficheiro de conteúdo pré-configurado e, em seguida, clique em **seguinte**.  
 
-7.  Na **zawartości** upewnij się, że wymieniona zawartość jest zawartości, który chcesz dodać do wstępnie przygotowanego pliku zawartości, a następnie kliknij przycisk **dalej**.  
+7.  No **conteúdo** página, certifique-se de que os conteúdos apresentados correspondem aos conteúdos que pretende adicionar ao ficheiro de conteúdo pré-configurado e, em seguida, clique em **seguinte**.  
 
-8.  Na **lokalizacje zawartości** określ punkty dystrybucji, z którego mają zostać pobrane pliki zawartości dla wstępnie przygotowanego pliku zawartości. Można wybrać więcej niż jeden punkt dystrybucji do pobierania zawartości. Punkty dystrybucji są wymienione w sekcji lokalizacje zawartości. **Zawartości** kolumna Wyświetla, ile wybranych pakietów lub aplikacji jest dostępnych w każdym punkcie dystrybucji. Configuration Manager rozpoczyna się od pierwszego punktu dystrybucji na liście do pobierania wybranej zawartości, a następnie przechodzi w dół listy w celu pobrania pozostałej zawartości wymaganej przez wstępnie przygotowany plik zawartości. Kliknij przycisk **Przenieś w górę** lub **Przenieś w dół** Aby zmienić kolejność priorytetów punktów dystrybucji. Jeśli punkty dystrybucji na liście nie zawierają całej wybranej zawartości, należy dodać punkty dystrybucji na liście z zawartością lub zamknąć kreatora, rozesłać zawartość do co najmniej jednego punktu dystrybucji i uruchom ponownie kreatora.  
+8.  No **localizações de conteúdo** página, especifique os pontos de distribuição a partir do qual obter os ficheiros de conteúdo para o ficheiro de conteúdo pré-configurado. Pode selecionar mais do que um ponto de distribuição para obter o conteúdo. Os pontos de distribuição estão listados na secção Localizações de conteúdo. O **conteúdo** coluna indica quantos dos selecionado pacotes ou aplicações estão disponíveis em cada ponto de distribuição. Configuration Manager começa com o primeiro ponto de distribuição na lista para obter o conteúdo selecionado e, em seguida, percorre a lista para obter os restantes conteúdos necessários para o ficheiro de conteúdo pré-configurado. Clique em **mover para cima** ou **mover para baixo** para alterar a ordem de prioridade dos pontos de distribuição. Quando os pontos de distribuição na lista não contiverem todo o conteúdo selecionado, tem de adicionar pontos de distribuição para a lista que contenham o conteúdo ou sair do assistente, distribuir o conteúdo para, pelo menos, um ponto de distribuição e, em seguida, reinicie o assistente.  
 
-9. Na **Podsumowanie** Potwierdź szczegóły. Można wrócić do poprzedniej strony i wprowadzić zmiany. Kliknij przycisk **dalej** utworzyć wstępnie przygotowany plik zawartości.  
+9. No **resumo** página, confirme os detalhes. Pode voltar atrás às páginas anteriores e efetuar alterações. Clique em **seguinte** para criar o ficheiro de conteúdo pré-configurado.  
 
-10. **Postępu** strona zostanie wyświetlona zawartość dodawana do wstępnie przygotowanego pliku zawartości.  
+10. O **progresso** página apresenta os conteúdos que está a ser adicionado ao ficheiro de conteúdo pré-configurado.  
 
-11. Na **ukończenia** , sprawdź, czy wstępnie przygotowany plik zawartości został pomyślnie utworzony, a następnie kliknij przycisk **Zamknij**.  
+11. No **conclusão** página, certifique-se de que o ficheiro de conteúdo pré-configurado foi criado com êxito e, em seguida, clique em **fechar**.  
 
-###  <a name="BKMK_AssignContentToDistributionPoint"></a>Krok 2: Przypisanie zawartości do punktów dystrybucji  
- Po wstępnym pliku zawartości Przypisz zawartość do punktów dystrybucji.  
+###  <a name="BKMK_AssignContentToDistributionPoint"></a>Passo 2: Atribua o conteúdo para pontos de distribuição  
+ Depois de pré-configurar o ficheiro de conteúdo, atribua o conteúdo para pontos de distribuição.  
 
 > [!NOTE]  
->  Użyj wstępnie przygotowanego pliku zawartości do odzyskania biblioteki zawartości na serwerze lokacji i nie ma potrzeby wstępnego przygotowywania plików zawartości w punkcie dystrybucji, można pominąć tę procedurę.  
+>  Quando utilizar um ficheiro de conteúdo pré-configurado para recuperar a biblioteca de conteúdos num servidor do site e necessitar de pré-configurar os ficheiros de conteúdo num ponto de distribuição, pode ignorar este procedimento.  
 
- Użyj poniższej procedury, aby przypisać zawartość we wstępnie przygotowanego pliku zawartości do punktów dystrybucji.  
+ Utilize o procedimento seguinte para atribuir o conteúdo do ficheiro de conteúdo pré-configurado para pontos de distribuição.  
 
 > [!IMPORTANT]  
->  Sprawdź, czy punkty dystrybucji, które chcesz wstępnie przygotować są skonfigurowane jako wstępnie przygotowanych punktów dystrybucji, lub czy zawartość jest rozsyłana do punktów dystrybucji za pośrednictwem sieci.  
+>  Certifique-se de que os pontos de distribuição que pretende pré-configurar estão configurados como pontos de distribuição pré-configurados ou que o conteúdo é distribuído aos pontos de distribuição através da rede.  
 
-##### <a name="to-assign-the-content-to-distribution-points"></a>Aby przypisać zawartość do punktów dystrybucji  
+##### <a name="to-assign-the-content-to-distribution-points"></a>Para atribuir o conteúdo a pontos de distribuição  
 
-1.  W konsoli programu Configuration Manager kliknij przycisk **Biblioteka oprogramowania**.  
+1.  Na consola do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  W **Biblioteka oprogramowania** obszaru roboczego, wybierz jedną z następujących kroków dla typu zawartości wybranej podczas tworzenia wstępnie przygotowanego pliku zawartości:  
+2.  No **biblioteca de Software** área de trabalho, selecione um dos seguintes passos para o tipo de conteúdo que selecionou quando criou o ficheiro de conteúdo pré-configurado:  
 
-    -   **Aplikacje**: Rozwiń węzeł **zarządzania aplikacjami**, kliknij przycisk **aplikacji**, a następnie wybierz wstępnie przygotowane aplikacje.  
+    -   **Aplicações**: Expanda **gestão de aplicações**, clique em **aplicações**e, em seguida, selecione as aplicações que pré-configurou.  
 
-    -   **Pakiety**: Rozwiń węzeł **zarządzania aplikacjami**, kliknij przycisk **pakiety**, a następnie wybierz wstępnie przygotowane pakiety.  
+    -   **Pacotes**: Expanda **gestão de aplicações**, clique em **pacotes**e, em seguida, selecione os pacotes que pré-configurou.  
 
-    -   **Pakiety wdrożeniowe**: Rozwiń węzeł **aktualizacji oprogramowania**, kliknij przycisk **pakiety wdrożeniowe**, a następnie wybierz wstępnie przygotowane pakiety wdrożeniowe.  
+    -   **Pacotes de implementação**: Expanda **atualizações de Software**, clique em **pacotes de implementação**e, em seguida, selecione os pacotes de implementação que pré-configurou.  
 
-    -   **Pakiety sterowników**: Rozwiń węzeł **systemów operacyjnych**, kliknij przycisk **pakiety sterowników**, a następnie wybierz wstępnie przygotowane pakiety sterowników.  
+    -   **Pacotes de controladores**: Expanda **sistemas operativos**, clique em **pacotes de controladores**e, em seguida, selecione os pacotes de controladores que pré-configurou.  
 
-    -   **Obrazy systemu operacyjnego**: Rozwiń węzeł **systemów operacyjnych**, kliknij przycisk **obrazów systemu operacyjnego**, a następnie wybierz wstępnie przygotowane obrazy systemu operacyjnego.  
+    -   **Imagens de sistema operativo**: Expanda **sistemas operativos**, clique em **imagens do sistema operativo**e, em seguida, selecione as imagens de sistema operativo que pré-configurou.  
 
-    -   **Instalatorzy systemu operacyjnego**: Rozwiń węzeł **systemów operacyjnych**, kliknij przycisk **instalatorów systemu operacyjnego**, a następnie wybierz wstępnie przygotowane instalatorów systemu operacyjnego.  
+    -   **Instaladores do sistema operativo**: Expanda **sistemas operativos**, clique em **instaladores do sistema operativo**e, em seguida, selecione os instaladores do sistema operativo que pré-configurou.  
 
-    -   **Obrazy rozruchowe**: Rozwiń węzeł **systemów operacyjnych**, kliknij przycisk **obrazów rozruchowych**, a następnie wybierz wstępnie przygotowane obrazy rozruchowe.  
+    -   **Imagens de arranque**: Expanda **sistemas operativos**, clique em **imagens de arranque**e, em seguida, selecione as imagens de arranque que pré-configurou.  
 
-3.  Na karcie **Narzędzia główne** w grupie **Wdrażanie** kliknij przycisk **Dystrybuuj zawartość**. Zostanie otwarty Kreator dystrybucji zawartości.  
+3.  No separador **Início** , no grupo **Implementação** , clique em **Distribuir Conteúdo** É aberto o Assistente para distribuir conteúdo.  
 
-4.  Na **ogólne** , sprawdź, czy wymieniona zawartość jest wstępnie zawartości, wybierz, czy program Configuration Manager, aby wykrywać zależności zawartości skojarzone z wybraną zawartością oraz Dodaj zależności do dystrybucji, a następnie kliknij przycisk **dalej**.  
-
-    > [!NOTE]  
-    >  Istnieje możliwość skonfigurowania **Wykryj powiązane zależności zawartości i dodaj je do tej dystrybucji** tylko dla typu zawartości aplikacji. Menedżer konfiguracji automatycznie skonfiguruje to ustawienie dla sekwencji zadań, a nie może być modyfikowany.  
-
-5.  Na **zawartości** strony, jeśli wyświetlony, sprawdź, czy na liście znajduje się zawartość do dystrybucji, a następnie kliknij przycisk **dalej**.  
+4.  No **geral** página, certifique-se de que os conteúdos apresentados correspondem aos conteúdos que pré-configurou, especifique se pretende que o Configuration Manager para detetar as dependências de conteúdos que estão associados a conteúdos selecionados e adicione as dependências à distribuição e, em seguida, clique em **seguinte**.  
 
     > [!NOTE]  
-    >  **Zawartości** na stronie są wyświetlane tylko wtedy, gdy **Wykryj powiązane zależności zawartości i dodaj je do tej dystrybucji** jest wybrane ustawienie **ogólne** w kreatorze.  
+    >  Tem a opção para configurar o **detetar dependências de conteúdo associado e adicioná-las a esta distribuição** definição apenas para o tipo de conteúdo da aplicação. O Configuration Manager configura automaticamente esta definição para sequências de tarefas e não pode ser modificado.  
 
-6.  Na **miejsce docelowe zawartości** kliknij **Dodaj**, wybierz jedną z poniższych opcji obejmujących punkty dystrybucji do wstępnego przygotowania, a następnie wykonaj odpowiednie czynności:  
+5.  No **conteúdo** página, se for apresentada, certifique-se de que os conteúdos apresentados correspondem aos conteúdos que pretende distribuir e, em seguida, clique em **seguinte**.  
 
-    -   **Kolekcje**: Wybierz **kolekcji użytkowników** lub **kolekcji urządzeń**, kliknij kolekcję skojarzoną z co najmniej jedną grupę punktów dystrybucji, a następnie kliknij przycisk **OK**.  
+    > [!NOTE]  
+    >  O **conteúdo** página é apresentada apenas quando o **detetar dependências de conteúdo associado e adicioná-las a esta distribuição** definição está selecionada no **geral** página do assistente.  
+
+6.  No **destino do conteúdo** página, clique em **adicionar**, escolha um dos seguintes itens que incluem os pontos de distribuição a pré-configurar e, em seguida, siga o passo associado:  
+
+    -   **Coleções**: Selecione **coleções de utilizadores** ou **coleções de dispositivos**, clique na coleção associada um ou mais grupos de pontos de distribuição e, em seguida, clique em **OK**.  
 
         > [!NOTE]  
-        >  Są wyświetlane tylko kolekcje skojarzone z grupą punktów dystrybucji.  Aby uzyskać więcej informacji, zobacz [umożliwia zarządzanie grupami punktów dystrybucji](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage) w [zainstalować i skonfigurować punkty dystrybucji programu System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md) tematu.  
+        >  São apresentadas apenas as coleções que estão associadas um grupo de pontos de distribuição.  Para obter mais informações, consulte [gerir grupos de pontos de distribuição](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_manage) no [instalar e configurar pontos de distribuição para o System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md) tópico.  
 
-    -   **Punkt dystrybucji**: Wybierz istniejący punkt dystrybucji, a następnie kliknij przycisk **OK**. Punkty dystrybucji, które wcześniej odebrały zawartość nie są wyświetlane.  
+    -   **Ponto de distribuição**: Selecione um ponto de distribuição existente e, em seguida, clique em **OK**. Pontos de distribuição que tenham anteriormente recebido o conteúdo não são apresentados.  
 
-    -   **Grupy punktów dystrybucji**: Wybierz istniejącą grupę punktów dystrybucji, a następnie kliknij przycisk **OK**. Grupy punktów dystrybucji, które wcześniej odebrały zawartość nie są wyświetlane.  
+    -   **Grupo de pontos de distribuição**: Selecione um grupo de pontos de distribuição existente e, em seguida, clique em **OK**. Grupos de pontos de distribuição que tenham anteriormente recebido o conteúdo não serão apresentados.  
 
-    Po zakończeniu dodawania miejsc docelowych zawartości, kliknij przycisk **dalej**.  
+    Quando acabar de adicionar destinos de conteúdo, clique em **seguinte**.  
 
-7.  Na **Podsumowanie** stronie, przed kontynuowaniem sprawdź ustawienia dystrybucji. Aby przeprowadzić dystrybucję zawartości do wybranych miejsc docelowych, kliknij przycisk **dalej**.  
+7.  No **resumo** , reveja as definições da distribuição antes de continuar. Para distribuir o conteúdo aos destinos selecionados, clique em **seguinte**.  
 
-8.  **Postępu** strony wyświetlany postęp dystrybucji.  
+8.  O **progresso** página apresenta o progresso da distribuição.  
 
-9. **Potwierdzenia** na stronie są wyświetlane, czy zawartość została pomyślnie przypisana do punktów dystrybucji. Do monitorowania dystrybucji zawartości, zobacz [monitorowania zawartości, których dystrybucja z System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  
+9. O **confirmação** página é apresentada se ou não os conteúdos foram atribuídos com êxito aos pontos de distribuição. Para monitorizar a distribuição de conteúdos, consulte [monitorizar conteúdo que distribuiu com o System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  
 
-###  <a name="BKMK_ExportContentFromPrestagedContentFile"></a>Krok 3: Wyodrębnienie zawartości ze wstępnie przygotowanego pliku zawartości  
- Po utworzeniu wstępnie przygotowanego pliku zawartości i przypisaniu zawartości do punktów dystrybucji, można wyodrębnić pliki zawartości do biblioteki zawartości w punkcie dystrybucji lub serwerze lokacji. Zazwyczaj kopiowany na dysk przenośny, taki jak dysk USB, wstępnie przygotowany plik zawartości lub wielokrotnie nagrywać zawartości nośnika, takich jak dysk DVD i ma on dostępny w lokalizacji lokacji serwera lub punktu dystrybucji wymagającego zawartości.  
+###  <a name="BKMK_ExportContentFromPrestagedContentFile"></a>Passo 3: Extrair o conteúdo do ficheiro de conteúdo pré-configurado  
+ Depois de criar o ficheiro de conteúdo pré-configurado e atribuir o conteúdo a pontos de distribuição, pode extrair os ficheiros de conteúdo à biblioteca de conteúdos no ponto de servidor ou a distribuição de um site. Normalmente, que copiou o ficheiro de conteúdo pré-configurado para uma unidade portátil, como uma unidade USB, ou gravado o conteúdo para o suporte de dados como um DVD e tiver disponível na localização do site servidor ou ponto de distribuição que necessite do conteúdo.  
 
- Użyj poniższej procedury, aby ręcznie wyodrębnić pliki zawartości ze wstępnie przygotowanego pliku zawartości przy użyciu narzędzia wiersza polecenia Extract Content.  
+ Utilize o procedimento seguinte para exportar manualmente os ficheiros de conteúdo do ficheiro de conteúdo pré-configurado utilizando a ferramenta de linha de comandos extrair conteúdo.  
 
 > [!IMPORTANT]  
->  Po uruchomieniu narzędzia wiersza polecenia Extract Content narzędzie utworzy plik tymczasowy podczas tworzenia wstępnie przygotowanego pliku zawartości. Następnie plik zostanie skopiowany do folderu docelowego, a plik tymczasowy zostanie usunięty. Musi mieć wystarczającą ilość miejsca na plik tymczasowy lub proces kończy się niepowodzeniem. Plik tymczasowy zostanie utworzony w następującej lokalizacji:  
+>  Quando executar a ferramenta de linha de comandos extrair conteúdo, a ferramenta cria um ficheiro temporário à medida que cria o ficheiro de conteúdo pré-configurado. Em seguida, o ficheiro é copiado para a pasta de destino e o ficheiro temporário é eliminado. Tem de ter espaço suficiente em disco para este ficheiro temporário ou o processo de falha. O ficheiro temporário é criado na seguinte localização:  
 >   
->  -   Plik tymczasowy zostanie utworzony w folderze wskazanym jako folder docelowy wstępnie przygotowanego pliku zawartości.  
+>  -   O ficheiro temporário é criado na mesma pasta que especificar como a pasta de destino para o ficheiro de conteúdo pré-configurado.  
 
 > [!IMPORTANT]  
->  Użytkownik uruchamiający narzędzie wiersza polecenia Extract Content musi mieć **administratora** uprawnienia na komputerze, na którym jest wyodrębniana wstępnie przygotowana zawartość.  
+>  O utilizador que executa a ferramenta de linha de comandos extrair conteúdo tem de ter **administrador** direitos no computador a partir do qual está a extrair o conteúdo pré-configurado.  
 
-##### <a name="to-extract-the-content-files-from-the-prestaged-content-file"></a>Aby wyodrębnić pliki zawartości ze wstępnie przygotowanego pliku zawartości  
+##### <a name="to-extract-the-content-files-from-the-prestaged-content-file"></a>Para extrair os ficheiros de conteúdo do ficheiro de conteúdo pré-configurado  
 
-1.  Skopiuj wstępnie przygotowany plik zawartości na komputer, z którym chcesz wyodrębnić zawartość.  
+1.  Copie o ficheiro de conteúdo pré-configurado para o computador a partir do qual pretende extrair o conteúdo.  
 
-2.  Skopiuj narzędzie wiersza polecenia Extract Content z &lt; *Ścieżkainstalacjiprogramuconfigmgr*> \bin\\&lt;*platformy*> do komputera, z którym chcesz wyodrębnić wstępnie przygotowany plik zawartości.  
+2.  Copie a ferramenta de linha de comandos extrair conteúdo de &lt; *Caminhodeinstalaçãodoconfigmgr*> \bin\\&lt;*plataforma*> para o computador a partir do qual pretende extrair o ficheiro de conteúdo pré-configurado.  
 
-3.  Otwórz wiersz polecenia i przejdź do lokalizacji folderu zawierającego wstępnie przygotowany plik zawartości oraz narzędzie Extract Content.  
+3.  Abra a linha de comandos e navegue para a localização da pasta do ficheiro de conteúdo pré-configurado e da ferramenta extrair conteúdo.  
 
     > [!NOTE]  
-    >  Można wyodrębnić co najmniej jeden wstępnie przygotowany plik zawartości na serwerze lokacji, serwera lokacji dodatkowej lub punktu dystrybucji.  
+    >  Pode extrair um ou mais ficheiros de conteúdo num servidor do site, o servidor de site secundário ou ponto de distribuição de pré-configurado.  
 
-4.  Typ **extractcontent/p:**&lt;*Lokalizacjawstępnieprzygotowanegopliku*>**\\**&lt;*PrestagedFileName*> **/S** Aby zaimportować pojedynczy plik.  
+4.  Tipo **extractcontent /p:**&lt;*localizaçãodoficheiropré-configurado*>**\\**&lt;*nomedoficheiropré-configurado*> **/S** para importar um único ficheiro.  
 
-     Typ **extractcontent/p:**&lt;*Lokalizacjawstępnieprzygotowanegopliku*> **/S** zaimportować wszystkie wstępnie przygotowane pliki we wskazanym folderze.  
+     Tipo **extractcontent /p:**&lt;*localizaçãodoficheiropré-configurado*> **/S** importar todos os ficheiros pré-configurados na pasta especificada.  
 
-     Na przykład wpisz **extractcontent /P:D:\PrestagedFiles\MyPrestagedFile.pkgx /S** gdzie `D:\PrestagedFiles\` to Lokalizacjawstępnieprzygotowanegopliku, `MyPrestagedFile.pkgx` to nazwa wstępnie przygotowanego pliku i `/S` informuje menedżera konfiguracji, aby wyodrębnić jedynie pliki zawartości, które są nowsze niż to, co jest obecnie w punkcie dystrybucji.  
+     Por exemplo, digite **extractcontent /P:D:\PrestagedFiles\MyPrestagedFile.pkgx /S** onde `D:\PrestagedFiles\` corresponde a Localficheiropreconfigurado, `MyPrestagedFile.pkgx` é o nome do ficheiro pré-configurado e `/S` informa o Configuration Manager para extrair apenas os ficheiros de conteúdo que são mais recentes do que o que está atualmente no ponto de distribuição.  
 
-     Podczas wyodrębniania wstępnie przygotowanego pliku zawartości na serwerze lokacji pliki zawartości zostaną dodane do biblioteki zawartości na serwerze lokacji, a następnie dostępność zawartości zostanie zarejestrowana w bazie danych serwera lokacji. Podczas eksportowania wstępnie przygotowanego pliku zawartości w punkcie dystrybucji pliki zawartości są dodawane do biblioteki zawartości w punkcie dystrybucji, punkt dystrybucji wyśle komunikat o stanie do serwera nadrzędnej lokacji głównej, a następnie dostępność zawartości zostanie zarejestrowana w bazie danych lokacji.  
+     Quando extrair o ficheiro de conteúdo pré-configurado num servidor do site, os ficheiros de conteúdo são adicionados à biblioteca de conteúdos no servidor do site e, em seguida, a disponibilidade de conteúdos está registada na base de dados do servidor do site. Ao exportar o ficheiro de conteúdo pré-configurado num ponto de distribuição, os ficheiros de conteúdo são adicionados à biblioteca de conteúdos no ponto de distribuição, o ponto de distribuição envia uma mensagem de estado para o servidor de site primário principal e, em seguida, a disponibilidade de conteúdos está registada na base de dados do site.  
 
     > [!IMPORTANT]  
-    >  W poniższym scenariuszu należy zaktualizować zawartość wyodrębnioną ze wstępnie przygotowanego pliku zawartości podczas aktualizacji zawartości do nowej wersji:  
+    >  No cenário seguinte, tem de atualizar o conteúdo que extraiu de um ficheiro de conteúdo pré-configurado quando o conteúdo é atualizado para uma nova versão:  
     >   
-    >  1.  Tworzenie wstępnie przygotowanego pliku zawartości w wersji 1 pakietu.  
-    >  2.  Zaktualizuj pliki źródłowe pakietu przy użyciu wersji 2.  
-    >  3.  Wyodrębnij wstępnie przygotowany plik zawartości (wersja 1 pakietu) w punkcie dystrybucji.  
+    >  1.  Criar um ficheiro de conteúdo pré-configurado para a versão 1 de um pacote.  
+    >  2.  Atualizar os ficheiros de origem para o pacote com a versão 2.  
+    >  3.  Extraia o ficheiro de conteúdo pré-configurado (versão 1 do pacote) num ponto de distribuição.  
     >   
-    > Menedżer konfiguracji nie przeprowadzi automatycznej dystrybucji pakietu w wersji 2 do punktu dystrybucji. Należy utworzyć nowy wstępnie przygotowany plik zawartości zawiera nową wersję pliku i następnie wyodrębnić zawartość, zaktualizować punkt dystrybucji do rozpowszechniania plików, które zostały zmienione lub ponownie rozesłać wszystkie pliki w pakiecie.  
+    > O Configuration Manager não distribui automaticamente a versão 2 do pacote ao ponto de distribuição. Tem de criar um novo ficheiro de conteúdo pré-configurado que contém a nova versão do ficheiro e, em seguida, extrair os conteúdos, atualizar o ponto de distribuição para distribuir os ficheiros que tenham sido alterados ou redistribuir os ficheiros do pacote.  
 
-###  <a name="bkmk_dpsiteserver"></a>Jak wstępnie przygotować zawartość w punkcie dystrybucji na serwerze lokacji  
- Punkt dystrybucji jest zainstalowany na serwerze lokacji, musi być pomyślnie przygotować zawartość poniższej procedury. Jest to spowodowane pliki zawartości znajdują się już w bibliotece zawartości.  
+###  <a name="bkmk_dpsiteserver"></a>Como pré-configurar conteúdo num ponto de distribuição num servidor do site  
+ Quando um ponto de distribuição é instalado num servidor do site, tem de utilizar o procedimento seguinte para pré-configurar com sucesso o conteúdo. Isto acontece porque os ficheiros de conteúdo já estão na biblioteca de conteúdos.  
 
- Gdy punkt dystrybucji nie jest włączone dla wstępnie przygotowanej zawartości lub gdy punkt dystrybucji nie znajduje się na serwerze lokacji, zobacz [Użyj wstępnie przygotowaną zawartość](#bkmk_prestage) w tym temacie.  
+ Quando o ponto de distribuição não estiver ativado para pré-configurar conteúdo ou quando o ponto de distribuição não estiver localizado num servidor do site, consulte o [utilizar ficheiro de conteúdo](#bkmk_prestage) deste tópico.  
 
-##### <a name="to-prestage-content-on-distribution-points-located-on-a-site-server"></a>Aby wstępnie przygotować zawartość w punktach dystrybucji znajdujących się na serwerze lokacji  
+##### <a name="to-prestage-content-on-distribution-points-located-on-a-site-server"></a>Para pré-configurar conteúdo em pontos de distribuição localizados num servidor do site  
 
-1.  Wykonaj następujące kroki, aby sprawdzić, czy punkt dystrybucji nie jest włączona dla wstępnie przygotowanej zawartości.  
+1.  Utilize os seguintes passos para verificar que o ponto de distribuição não está ativado para conteúdo pré-configurado.  
 
-    1.  W konsoli programu Configuration Manager kliknij przycisk **Administracja**.  
+    1.  Na consola do Configuration Manager, clique em **Administração**.  
 
-    2.  W **Administracja** obszaru roboczego, kliknij przycisk **punktów dystrybucji**, a następnie wybierz punkt dystrybucji, który znajduje się na serwerze lokacji.  
+    2.  No **administração** área de trabalho, clique em **pontos de distribuição**e, em seguida, selecione o ponto de distribuição que esteja localizado no servidor do site.  
 
-    3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
+    3.  No separador **Home Page** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-    4.  Na **ogólne** Sprawdź, czy **Włącz ten punkt dystrybucji dla wstępnie przygotowanej zawartości** pole wyboru nie jest zaznaczone.  
+    4.  No **geral** separador, certifique-se de que o **ativar conteúdo pré-configurado para este ponto de distribuição** não estiver selecionada a caixa de verificação.  
 
-2.  Tworzenie wstępnie przygotowanego pliku zawartości przy użyciu [krok 1: Utwórz wstępnie przygotowany plik zawartości](#BKMK_CreatePrestagedContentFile) w tym temacie.  
+2.  Criar o ficheiro de conteúdo pré-configurado utilizando a [passo 1: Criar um ficheiro de conteúdo pré-configurado](#BKMK_CreatePrestagedContentFile) deste tópico.  
 
-3.  Przypisz zawartość do punktu dystrybucji przy użyciu [krok 2: Przypisanie zawartości do punktów dystrybucji](#BKMK_AssignContentToDistributionPoint) w tym temacie.  
+3.  Atribua o conteúdo ao ponto de distribuição utilizando o [passo 2: Atribua o conteúdo para pontos de distribuição](#BKMK_AssignContentToDistributionPoint) deste tópico.  
 
-4.  Na serwerze lokacji wyodrębnienie zawartości ze wstępnie przygotowanego pliku zawartości przy użyciu [krok 3: Wyodrębnienie zawartości ze wstępnie przygotowany plik zawartości](#BKMK_ExportContentFromPrestagedContentFile) w tym temacie.  
+4.  No servidor do site, extrair o conteúdo do ficheiro de conteúdo pré-configurado utilizando a [passo 3: Extrair os conteúdos do ficheiro de conteúdo pré-configurado](#BKMK_ExportContentFromPrestagedContentFile) deste tópico.  
 
     > [!NOTE]  
-    >  W przypadku punktu dystrybucji w lokacji pomocniczej, odczekaj przynajmniej 10 minut, a następnie za pomocą konsoli programu Configuration Manager, który jest połączony z nadrzędnej lokacji głównej, przypisz zawartość do punktu dystrybucji w lokacji dodatkowej.  
+    >  Quando o ponto de distribuição num site secundário, aguarde pelo menos 10 minutos e, em seguida, utilizando uma consola do Configuration Manager que está ligada ao site primário principal, atribua o conteúdo ao ponto de distribuição no site secundário.  
 
-##  <a name="bkmk_manage"></a>Zarządzanie których dystrybucja zawartości  
- Masz następujące opcje zarządzania zawartością:  
- - [Aktualizowanie zawartości](#update-content)
- - [Rozpowszechnianie zawartości](#redistribute-content)
- - [Usuwanie zawartości](#remove-content)
- - [Sprawdzanie poprawności zawartości](#validate-content)
+##  <a name="bkmk_manage"></a>Gerir o conteúdo que distribuiu  
+ Tem as seguintes opções para gestão de conteúdo:  
+ - [Atualizar conteúdo](#update-content)
+ - [Redistribuir conteúdo](#redistribute-content)
+ - [Remover o conteúdo](#remove-content)
+ - [Validar conteúdo](#validate-content)
 
-### <a name="update-content"></a>Aktualizowanie zawartości
-Po zaktualizowaniu lokalizacji plików źródłowych wdrożenia przez dodanie nowych plików lub zastąpić istniejące pliki przy użyciu nowszej wersji, musisz zaktualizować pliki zawartości w punktach dystrybucji przy użyciu **Aktualizuj punkty dystrybucji** lub **Aktualizuj zawartość** akcji:  
--   Pliki zawartości zostaną skopiowane ze ścieżki plików źródłowych do biblioteki zawartości w lokacji będącej właścicielem źródła zawartości pakietu  
--   Numer wersji pakietu jest zwiększany.  
--   Każde wystąpienie biblioteki zawartości na serwerach lokacji i w dystrybucji punktów aktualizacji tylko te pliki, które zostały zmienione  
+### <a name="update-content"></a>Atualizar conteúdo
+Quando a localização do ficheiro de origem para uma implementação é atualizada através da adição de novos ficheiros ou substituir ficheiros existente com uma versão mais recente, pode atualizar os ficheiros de conteúdo em pontos de distribuição utilizando o **atualizar pontos de distribuição** ou **atualizar conteúdos** ação:  
+-   Os ficheiros de conteúdos são copiados do caminho de ficheiro de origem para a biblioteca de conteúdos no site que é proprietário da origem de conteúdo do pacote  
+-   A versão do pacote é incrementada  
+-   Cada instância da biblioteca de conteúdos em servidores do site e na distribuição pontos de atualizações apenas com os ficheiros que tenham sido alterados  
 
 > [!WARNING]  
->  Wersja pakietu aplikacji ma zawsze numer 1. Po zaktualizowaniu zawartości dla typu wdrożenia aplikacji programu Configuration Manager utworzy nowy identyfikator zawartości typu wdrożenia i odwołania do pakietu nowy identyfikator zawartości.  
+>  A versão do pacote de aplicações é sempre 1. Quando atualizar o conteúdo de um tipo de implementação de aplicação, o Configuration Manager cria um novo ID de conteúdo para o tipo de implementação e o pacote referenciará o novo ID de conteúdo.  
 
-#### <a name="to-update-content-on-distribution-points"></a>Aby zaktualizować zawartość w punktach dystrybucji  
+#### <a name="to-update-content-on-distribution-points"></a>Para atualizar conteúdo em pontos de distribuição  
 
-1.  W konsoli programu Configuration Manager kliknij przycisk **Biblioteka oprogramowania**.  
+1.  Na consola do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  W **Biblioteka oprogramowania** obszaru roboczego, wybierz jedną z następujących kroków dla typu zawartości, którą chcesz dystrybuować:  
+2.  No **biblioteca de Software** área de trabalho, selecione um dos seguintes passos para o tipo de conteúdo que pretende distribuir:  
 
-    -   **Aplikacje**: Rozwiń węzeł **zarządzania aplikacjami** > **aplikacji**, a następnie wybierz aplikacje, które chcesz rozesłać. Kliknij przycisk **typy wdrożeń** , a następnie wybierz typ wdrożenia, który chcesz zaktualizować.  
+    -   **Aplicações**: Expanda **gestão de aplicações** > **aplicações**e, em seguida, selecione as aplicações que pretende distribuir. Clique em de **tipos de implementação** separador e, em seguida, selecione o tipo de implementação que pretende atualizar.  
 
-    -   **Pakiety**: Rozwiń węzeł **zarządzania aplikacjami** > **pakiety**, a następnie wybierz pakiety, które chcesz zaktualizować.  
+    -   **Pacotes**: Expanda **gestão de aplicações** > **pacotes**e, em seguida, selecione os pacotes que pretende atualizar.  
 
-    -   **Pakiety wdrożeniowe**: Rozwiń węzeł **aktualizacji oprogramowania** > **pakiety wdrożeniowe**, a następnie wybierz pakiety wdrożeniowe, które chcesz zaktualizować.  
+    -   **Pacotes de implementação**: Expanda **atualizações de Software** > **pacotes de implementação**e, em seguida, selecione os pacotes de implementação que pretende atualizar.  
 
-    -   **Pakiety sterowników**: Rozwiń węzeł **systemów operacyjnych** > **pakiety sterowników**, a następnie wybierz pakiety sterowników, które chcesz zaktualizować.  
+    -   **Pacotes de controladores**: Expanda **sistemas operativos** > **pacotes de controladores**e, em seguida, selecione os pacotes de controladores que pretende atualizar.  
 
-    -   **Obrazy systemu operacyjnego**: Rozwiń węzeł **systemów operacyjnych** > **obrazów systemu operacyjnego**, a następnie wybierz obrazy systemu operacyjnego, które chcesz zaktualizować.  
+    -   **Imagens de sistema operativo**: Expanda **sistemas operativos** > **imagens do sistema operativo**e, em seguida, selecione as imagens de sistema operativo que pretende atualizar.  
 
-    -   **Instalatorzy systemu operacyjnego**: Rozwiń węzeł **systemów operacyjnych** > **instalatorzy systemu operacyjnego**, a następnie wybierz instalatorów systemu operacyjnego, które chcesz zaktualizować.  
+    -   **Instaladores do sistema operativo**: Expanda **sistemas operativos** > **instaladores do sistema operativo**e, em seguida, selecione os instaladores do sistema operativo que pretende atualizar.  
 
-    -   **Obrazy rozruchowe**: Rozwiń węzeł **systemów operacyjnych** >  **obrazów rozruchowych**, a następnie wybierz obrazy rozruchowe, które chcesz zaktualizować.  
+    -   **Imagens de arranque**: Expanda **sistemas operativos** >  **imagens de arranque**e, em seguida, selecione as imagens de arranque que pretende atualizar.  
 
-3.  Na **Home** w karcie **wdrożenia** , kliknij przycisk **Aktualizuj punkty dystrybucji**, a następnie kliknij przycisk **OK** potwierdzenie aktualizacji zawartości.  
-
-    > [!NOTE]  
-    >  Aby zaktualizować zawartość dla aplikacji, kliknij przycisk **typy wdrożeń** , kliknij prawym przyciskiem myszy typ wdrożenia, kliknij pozycję **Aktualizuj zawartość**, a następnie kliknij przycisk **OK** potwierdzenie odświeżenia zawartości.  
+3.  No **home page** separador o **implementação** , clique em **atualizar pontos de distribuição**e, em seguida, clique em **OK** para confirmar que pretende atualizar o conteúdo.  
 
     > [!NOTE]  
-    >  Podczas aktualizowania zawartości obrazów rozruchowych zostanie otwarty Kreator zarządzania punktem dystrybucji. Przejrzyj informacje na **Podsumowanie** , a następnie ukończ kreatora w celu zaktualizowania zawartości.  
+    >  Para atualizar conteúdos de aplicações, clique o **tipos de implementação** separador, clique com o botão direito do tipo de implementação, clique em **atualizar conteúdos**e, em seguida, clique em **OK** para confirmar que pretende atualizar o conteúdo.  
 
-### <a name="redistribute-content"></a>Rozpowszechnianie zawartości
-Ponownej dystrybucji pakietu do skopiowania wszystkich plików zawartości w pakiecie w punktach dystrybucji lub grupy punktów dystrybucji, a tym samym zastąpić istniejące pliki.  
+    > [!NOTE]  
+    >  Quando atualizar o conteúdo para imagens de arranque, é aberto o Assistente para gerir pontos de distribuição. Reveja as informações de **resumo** página e, em seguida, conclua o Assistente para atualizar o conteúdo.  
 
- Tej operacji należy użyć w celu naprawienia plików zawartości w pakiecie lub ponownego wysłania zawartości, jeśli jej wstępne rozesłanie zakończy się niepowodzeniem. Można ponownie rozesłać pakietu za pomocą:  
+### <a name="redistribute-content"></a>Redistribuir conteúdo
+Pode redistribuir um pacote para copiar todos os ficheiros de conteúdo no pacote para pontos de distribuição ou grupos de pontos de distribuição e substituindo os ficheiros existentes.  
 
--   Właściwości pakietu  
--   Właściwości punktu dystrybucji  
--   Właściwości grupy punktów dystrybucji.  
+ Utilize esta operação para reparar ficheiros de conteúdo no pacote ou reenviar o conteúdo quando a distribuição inicial falha. Pode redistribuir um pacote de:  
+
+-   Propriedades do pacote  
+-   Propriedades do ponto de distribuição  
+-   Propriedades do grupo de ponto de distribuição.  
 
 
-#### <a name="to-redistribute-content-from-package-properties"></a>Aby ponownie rozesłać zawartość przy użyciu właściwości pakietu  
+#### <a name="to-redistribute-content-from-package-properties"></a>Para redistribuir conteúdos a partir das propriedades de pacote  
 
-1.  W konsoli programu Configuration Manager kliknij przycisk **Biblioteka oprogramowania**.  
+1.  Na consola do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  W **Biblioteka oprogramowania** obszaru roboczego, wybierz jedną z następujących kroków dla typu zawartości, którą chcesz dystrybuować:  
+2.  No **biblioteca de Software** área de trabalho, selecione um dos seguintes passos para o tipo de conteúdo que pretende distribuir:  
 
-    -   **Aplikacje**: Rozwiń węzeł **zarządzania aplikacjami** >  **aplikacji**, a następnie wybierz aplikację, którą chcesz ponownie rozesłać.  
+    -   **Aplicações**: Expanda **gestão de aplicações** >  **aplicações**e, em seguida, selecione a aplicação que pretende redistribuir.  
 
-    -   **Pakiety**: Rozwiń węzeł **zarządzania aplikacjami** > **pakiety**, a następnie wybierz pakiet, który chcesz ponownie rozesłać.  
+    -   **Pacotes**: Expanda **gestão de aplicações** > **pacotes**e, em seguida, selecione o pacote que pretende redistribuir.  
 
-    -   **Pakiety wdrożeniowe**: Rozwiń węzeł **aktualizacji oprogramowania** >  **pakiety wdrożeniowe**, a następnie wybierz pakiet wdrożeniowy, który chcesz ponownie rozesłać.  
+    -   **Pacotes de implementação**: Expanda **atualizações de Software** >  **pacotes de implementação**e, em seguida, selecione o pacote de implementação que pretende redistribuir.  
 
-    -   **Pakiety sterowników**: Rozwiń węzeł **systemów operacyjnych** > **pakiety sterowników**, a następnie wybierz pakiet sterowników, który chcesz ponownie rozesłać.  
+    -   **Pacotes de controladores**: Expanda **sistemas operativos** > **pacotes de controladores**e, em seguida, selecione o pacote de controladores que pretende redistribuir.  
 
-    -   **Obrazy systemu operacyjnego**: Rozwiń węzeł **systemów operacyjnych** > **obrazów systemu operacyjnego**, a następnie wybierz obraz systemu operacyjnego, który chcesz ponownie rozesłać.  
+    -   **Imagens de sistema operativo**: Expanda **sistemas operativos** > **imagens do sistema operativo**e, em seguida, selecione a imagem de sistema operativo que pretende redistribuir.  
 
-    -   **Instalatorzy systemu operacyjnego**: Rozwiń węzeł **systemów operacyjnych** > **instalatorzy systemu operacyjnego**, a następnie wybierz Instalator systemu operacyjnego, który chcesz ponownie rozesłać.  
+    -   **Instaladores do sistema operativo**: Expanda **sistemas operativos** > **instaladores do sistema operativo**e, em seguida, selecione o programa de instalação do sistema operativo que pretende redistribuir.  
 
-    -   **Obrazy rozruchowe**: Rozwiń węzeł **systemów operacyjnych** >  **obrazów rozruchowych**, a następnie wybierz obraz rozruchowy, który chcesz ponownie rozesłać.  
+    -   **Imagens de arranque**: Expanda **sistemas operativos** >  **imagens de arranque**e, em seguida, selecione a imagem de arranque que pretende redistribuir.  
 
-3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
+3.  No separador **Home Page** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-4.  Kliknij przycisk **lokalizacje zawartości** , a następnie wybierz punkt dystrybucji lub grupę punktów dystrybucji, w której chcesz ponownie rozesłać zawartość, kliknij przycisk **ponownej dystrybucji**, a następnie kliknij przycisk **OK**.  
+4.  Clique em de **localizações de conteúdo** separador, selecione o ponto de distribuição ou grupo de pontos de distribuição nos quais pretende redistribuir o conteúdos, clique em **redistribuir**e, em seguida, clique em **OK**.  
 
-#### <a name="to-redistribute-content-from-distribution-point-properties"></a>Aby ponownie rozesłać zawartość przy użyciu właściwości punktu dystrybucji  
+#### <a name="to-redistribute-content-from-distribution-point-properties"></a>Para redistribuir conteúdos a partir das propriedades do ponto de distribuição  
 
-1.  W konsoli programu Configuration Manager kliknij przycisk **Administracja**.  
+1.  Na consola do Configuration Manager, clique em **Administração**.  
 
-2.  W **Administracja** obszaru roboczego, kliknij przycisk **punktów dystrybucji**, a następnie wybierz punkt dystrybucji, w której chcesz ponownie wysłać zawartość.  
+2.  No **administração** área de trabalho, clique em **pontos de distribuição**e, em seguida, selecione o ponto de distribuição em que pretende redistribuir o conteúdo.  
 
-3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
+3.  No separador **Home Page** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-4.  Kliknij przycisk **zawartości** , a następnie wybierz zawartość do ponownego rozesłania, kliknij przycisk **ponownej dystrybucji**, a następnie kliknij przycisk **OK**.  
+4.  Clique em de **conteúdo** separador, selecione o conteúdo a redistribuir, clique em **redistribuir**e, em seguida, clique em **OK**.  
 
-#### <a name="to-redistribute-content-from-distribution-point-group-properties"></a>Aby ponownie rozesłać zawartość przy użyciu właściwości grupy punktów dystrybucji  
+#### <a name="to-redistribute-content-from-distribution-point-group-properties"></a>Para redistribuir conteúdos a partir das propriedades do grupo de ponto de distribuição  
 
-1.  W konsoli programu Configuration Manager kliknij przycisk **Administracja**.  
+1.  Na consola do Configuration Manager, clique em **Administração**.  
 
-2.  W **Administracja** obszaru roboczego, kliknij przycisk **grupy punktów dystrybucji**, a następnie wybierz grupę punktów dystrybucji, w której chcesz ponownie wysłać zawartość.  
+2.  No **administração** área de trabalho, clique em **grupos de pontos de distribuição**e, em seguida, selecione o grupo de pontos de distribuição nos quais pretende redistribuir o conteúdo.  
 
-3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
+3.  No separador **Home Page** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-4.  Kliknij przycisk **zawartości** , a następnie wybierz zawartość do ponownego rozesłania, kliknij przycisk **ponownej dystrybucji**, a następnie kliknij przycisk **OK**.  
+4.  Clique em de **conteúdo** separador, selecione o conteúdo a redistribuir, clique em **redistribuir**e, em seguida, clique em **OK**.  
 
     > [!IMPORTANT]  
-    >  Zawartość pakietu zostanie rozesłana ponownie do wszystkich punktów dystrybucji w grupie punktów dystrybucji.  
+    >  O conteúdo do pacote é redistribuído a todos os pontos de distribuição no grupo de pontos de distribuição.  
 
 
-#### <a name="use-the-sdk-to-force-replication-of-content"></a>Użyj zestawu SDK, aby wymusić replikację zawartości
-Można użyć **RetryContentReplication** metody klasy Instrumentacji zarządzania Windows (WMI) z zestawu SDK programu Configuration Manager, aby wymusić Menedżera dystrybucji w celu skopiowania zawartości z lokalizacji źródłowej do biblioteki zawartości.  
+#### <a name="use-the-sdk-to-force-replication-of-content"></a>Utilize o SDK para forçar a replicação de conteúdo
+Pode utilizar o **RetryContentReplication** método de classe de Windows Management Instrumentation (WMI) do SDK do Configuration Manager para forçar o Gestor de distribuição para copiar o conteúdo na localização de origem para a biblioteca de conteúdos.  
 
-Tej metody można używać tylko do wymuszenia replikacji, gdy należy ponownie przeprowadzić dystrybucję zawartości, po wystąpiły problemy z normalnej replikacji zawartości (zwykle potwierdzona przy użyciu konsoli, w węźle Monitorowanie).   
+Só utilize este método para forçar a replicação tem de redistribuir conteúdos após ocorreram problemas com replicação normal do conteúdo (normalmente confirmada através da utilização do nó de monitorização da consola).   
 
-Aby uzyskać więcej informacji dotyczących tej opcji SDK, zobacz [RetryContentReplication metody w klasie SMS_CM_UpdatePackages](https://msdn.microsoft.com/library/mt762092(CMSDK.16).aspx) w witrynie MSDN. Microsoft.com.
+Para obter mais informações sobre esta opção de SDK, consulte [RetryContentReplication método na classe SMS_CM_UpdatePackages](https://msdn.microsoft.com/library/mt762092(CMSDK.16).aspx) no MSDN. Microsoft.com.
 
-### <a name="remove-content"></a>Usuwanie zawartości
-Gdy zawartość nie jest już potrzeba w punktach dystrybucji, można usunąć pliki zawartości w punkcie dystrybucji.  
+### <a name="remove-content"></a>Remover o conteúdo
+Quando já não necessita de conteúdo em pontos de distribuição, pode remover os ficheiros de conteúdo no ponto de distribuição.  
 
--   Właściwości pakietu  
--   Właściwości punktu dystrybucji  
--   Właściwości grupy punktów dystrybucji.  
+-   Propriedades do pacote  
+-   Propriedades do ponto de distribuição  
+-   Propriedades do grupo de ponto de distribuição.  
 
-Jednakże gdy zawartość jest powiązana z innym pakietem rozesłanym do tego samego punktu dystrybucji, nie można usunąć zawartość.  
+No entanto, quando o conteúdo estiver associado a outro pacote que tenha sido distribuído para o mesmo ponto de distribuição, não é possível remover o conteúdo.  
 
-#### <a name="to-remove-package-content-files-from-distribution-points"></a>Aby usunąć pliki zawartości pakietu z punktów dystrybucji  
+#### <a name="to-remove-package-content-files-from-distribution-points"></a>Para remover ficheiros de conteúdo do pacote a pontos de distribuição  
 
-1.  W konsoli programu Configuration Manager kliknij przycisk **Biblioteka oprogramowania**.  
+1.  Na consola do Configuration Manager, clique em **Biblioteca de Software**.  
 
-2.  W **Biblioteka oprogramowania** obszaru roboczego, wybierz jedną z następujących kroków dla typu zawartości, którą chcesz usunąć:  
+2.  No **biblioteca de Software** área de trabalho, selecione um dos seguintes passos para o tipo de conteúdo que pretende eliminar:  
 
-    -   **Aplikacje**: Rozwiń węzeł **zarządzania aplikacjami** > **aplikacji**, a następnie wybierz aplikację, którą chcesz usunąć.  
+    -   **Aplicações**: Expanda **gestão de aplicações** > **aplicações**e, em seguida, selecione a aplicação que pretende remover.  
 
-    -   **Pakiety**: Rozwiń węzeł **zarządzania aplikacjami** > **pakiety**, a następnie wybierz pakiet, który chcesz usunąć.  
+    -   **Pacotes**: Expanda **gestão de aplicações** > **pacotes**e, em seguida, selecione o pacote que pretende remover.  
 
-    -   **Pakiety wdrożeniowe**: Rozwiń węzeł **aktualizacji oprogramowania** > **pakiety wdrożeniowe**, a następnie wybierz pakiet wdrożeniowy, który chcesz usunąć.  
+    -   **Pacotes de implementação**: Expanda **atualizações de Software** > **pacotes de implementação**e, em seguida, selecione o pacote de implementação que pretende remover.  
 
-    -   **Pakiety sterowników**: Rozwiń węzeł **systemów operacyjnych** > **pakiety sterowników**, a następnie wybierz pakiet sterowników, który chcesz usunąć.  
+    -   **Pacotes de controladores**: Expanda **sistemas operativos** > **pacotes de controladores**e, em seguida, selecione o pacote de controladores que pretende remover.  
 
-    -   **Obrazy systemu operacyjnego**: Rozwiń węzeł **systemów operacyjnych** > **obrazów systemu operacyjnego**, a następnie wybierz obraz systemu operacyjnego, który chcesz usunąć.  
+    -   **Imagens de sistema operativo**: Expanda **sistemas operativos** > **imagens do sistema operativo**e, em seguida, selecione a imagem do sistema operativo que pretende remover.  
 
-    -   **Instalatorzy systemu operacyjnego**: Rozwiń węzeł **systemów operacyjnych** > **instalatorzy systemu operacyjnego**, a następnie wybierz Instalator systemu operacyjnego, który chcesz usunąć.  
+    -   **Instaladores do sistema operativo**: Expanda **sistemas operativos** > **instaladores do sistema operativo**e, em seguida, selecione o instalador do sistema operativo que pretende remover.  
 
-    -   **Obrazy rozruchowe**: Rozwiń węzeł **systemów operacyjnych** > **obrazów rozruchowych**, a następnie wybierz obraz rozruchowy, który chcesz usunąć.  
+    -   **Imagens de arranque**: Expanda **sistemas operativos** > **imagens de arranque**e, em seguida, selecione a imagem de arranque que pretende remover.  
 
-3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
+3.  No separador **Home Page** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-4.  Kliknij przycisk **lokalizacje zawartości** , a następnie wybierz punkt dystrybucji lub grupę punktów dystrybucji, z którego chcesz usunąć zawartość, kliknij przycisk **Usuń**, a następnie kliknij przycisk **OK**.  
+4.  Clique em de **localizações de conteúdo** separador, selecione o ponto de distribuição ou grupo de pontos de distribuição que pretende remover conteúdo, clique em **remover**e, em seguida, clique em **OK**.  
 
-#### <a name="to-remove-package-content-from-distribution-point-properties"></a>Aby usunąć zawartość przy użyciu właściwości punktu dystrybucji  
+#### <a name="to-remove-package-content-from-distribution-point-properties"></a>Para remover o conteúdo do pacote a partir das propriedades do ponto de distribuição  
 
-1.  W konsoli programu Configuration Manager kliknij przycisk **Administracja**.  
+1.  Na consola do Configuration Manager, clique em **Administração**.  
 
-2.  W **Administracja** obszaru roboczego, kliknij przycisk **punktów dystrybucji**, a następnie wybierz punkt dystrybucji, w której chcesz usunąć zawartość.  
+2.  No **administração** área de trabalho, clique em **pontos de distribuição**e, em seguida, selecione o ponto de distribuição em que pretende eliminar o conteúdo.  
 
-3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
+3.  No separador **Home Page** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-4.  Kliknij przycisk **zawartości** , a następnie wybierz zawartość do usunięcia, kliknij przycisk **Usuń**, a następnie kliknij przycisk **OK**.  
+4.  Clique em de **conteúdo** separador, selecione o conteúdo a remover, clique em **remover**e, em seguida, clique em **OK**.  
 
-#### <a name="to-remove-content-from-distribution-point-group-properties"></a>Aby usunąć zawartość przy użyciu właściwości grupy punktów dystrybucji  
+#### <a name="to-remove-content-from-distribution-point-group-properties"></a>Para remover o conteúdo a partir das propriedades do grupo de ponto de distribuição  
 
-1.  W konsoli programu Configuration Manager kliknij przycisk **Administracja**.  
+1.  Na consola do Configuration Manager, clique em **Administração**.  
 
-2.  W **Administracja** obszaru roboczego, kliknij przycisk **grupy punktów dystrybucji**, a następnie wybierz grupę punktów dystrybucji, w której chcesz usunąć zawartość.  
+2.  No **administração** área de trabalho, clique em **grupos de pontos de distribuição**e, em seguida, selecione o grupo de pontos de distribuição em que pretende remover o conteúdo.  
 
-3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
+3.  No separador **Home Page** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-4.  Kliknij przycisk **zawartości** , a następnie wybierz zawartość do usunięcia, kliknij przycisk **Usuń**, a następnie kliknij przycisk **OK**.  
-
-
-### <a name="validate-content"></a>Sprawdzanie poprawności zawartości
-Proces weryfikacji zawartości sprawdza integralność plików zawartości w punktach dystrybucji. Można włączyć weryfikację zawartości zgodnie z harmonogramem lub można ręcznie zainicjować weryfikację zawartości przy użyciu właściwości punktów dystrybucji i pakietów.  
-
- Podczas uruchamiania procesu weryfikacji zawartości, Configuration Manager weryfikuje pliki zawartości w punktach dystrybucji i jeśli skrót pliku jest nieoczekiwany dla plików w punkcie dystrybucji, Menedżer konfiguracji tworzy komunikat o stanie można sprawdzić w **monitorowanie** obszaru roboczego.  
-
- Aby uzyskać więcej informacji o konfigurowaniu harmonogramu weryfikacji zawartości, zobacz [konfiguracje punktu dystrybucji](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs) w [zainstalować i skonfigurować punkty dystrybucji programu System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md) tematu.  
+4.  Clique em de **conteúdo** separador, selecione o conteúdo a remover, clique em **remover**e, em seguida, clique em **OK**.  
 
 
-#### <a name="to-initiate-content-validation-for-all-content-on-a-distribution-point"></a>Aby zainicjować sprawdzanie całej zawartości w punkcie dystrybucji  
+### <a name="validate-content"></a>Validar conteúdo
+O processo de validação do conteúdo verifica a integridade dos ficheiros de conteúdo em pontos de distribuição. Ativar a validação de conteúdo com base numa agenda ou iniciar manualmente a validação de conteúdo das propriedades dos pontos de distribuição e pacotes.  
 
-1.  W konsoli programu Configuration Manager kliknij przycisk **Administracja**.  
+ Quando o processo de validação de conteúdos é iniciado, o Configuration Manager verifica os ficheiros de conteúdo em pontos de distribuição e se o hash de ficheiro for inesperado para os ficheiros no ponto de distribuição, o Configuration Manager cria uma mensagem de estado que poderá consultar no **monitorização** área de trabalho.  
 
-2.  W **Administracja** obszaru roboczego, kliknij przycisk **punktów dystrybucji**, a następnie wybierz punkt dystrybucji, w którym chcesz zweryfikować zawartość.  
+ Para obter mais informações sobre como configurar a agenda de validação de conteúdos, consulte [as configurações do ponto de distribuição](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md#bkmk_configs) no [instalar e configurar pontos de distribuição para o System Center Configuration Manager](../../../../core/servers/deploy/configure/install-and-configure-distribution-points.md) tópico.  
 
-3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
 
-4.  Na **zawartości** , a następnie wybierz pakiet, w którym chcesz zweryfikować zawartość, kliknij przycisk **weryfikacji**, kliknij przycisk **OK**, a następnie kliknij przycisk **OK**. Proces weryfikacji zawartości zostanie zainicjowany dla pakietu w punkcie dystrybucji.  
+#### <a name="to-initiate-content-validation-for-all-content-on-a-distribution-point"></a>Para iniciar a validação de conteúdos para todo o conteúdo num ponto de distribuição  
 
-5.  Aby wyświetlić wyniki procesu weryfikacji zawartości **monitorowanie** obszaru roboczego, rozwiń węzeł **stan dystrybucji**i kliknij przycisk **stan zawartości** węzła. Jest wyświetlana zawartość poszczególnych typów pakietu (na przykład aplikacja, pakiet aktualizacji oprogramowania i obraz rozruchowy). Aby uzyskać więcej informacji o monitorowaniu stanu zawartości, zobacz [monitorowania zawartości, których dystrybucja z System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  
+1.  Na consola do Configuration Manager, clique em **Administração**.  
 
-#### <a name="to-initiate-content-validation-for-a-package"></a>Aby zainicjować weryfikację zawartości pakietu  
+2.  No **administração** área de trabalho, clique em **pontos de distribuição**e, em seguida, selecione o ponto de distribuição em que pretende validar o conteúdo.  
 
-1.  W konsoli programu Configuration Manager kliknij przycisk **Biblioteka oprogramowania**.  
+3.  No separador **Home Page** , no grupo **Propriedades** , clique em **Propriedades**.  
 
-2.  W **Biblioteka oprogramowania** obszaru roboczego, wybierz jedną z następujących kroków dla typu zawartości, którą chcesz zweryfikować:  
+4.  No **conteúdo** separador, selecione o pacote em que pretende validar o conteúdos, clique em **validar**, clique em **OK**e, em seguida, clique em **OK**. Inicia o processo de validação de conteúdo para o pacote no ponto de distribuição.  
 
-    -   **Aplikacje**: Rozwiń węzeł **zarządzania aplikacjami** > **aplikacji**, a następnie wybierz aplikację, którą chcesz zweryfikować.  
+5.  Para ver os resultados do processo de validação de conteúdo, no **monitorização** área de trabalho, expanda **estado da distribuição**e clique no **estado do conteúdo** nós. O conteúdo para cada tipo de pacote (por exemplo, aplicação, pacote de atualização de Software e imagem de arranque) é apresentado. Para obter mais informações sobre a monitorização de estado do conteúdo, consulte [monitorizar conteúdo que distribuiu com o System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  
 
-    -   **Pakiety**: Rozwiń węzeł **zarządzania aplikacjami** > **pakiety**, a następnie wybierz pakiet, który chcesz zweryfikować.  
+#### <a name="to-initiate-content-validation-for-a-package"></a>Para iniciar a validação de conteúdo de um pacote  
 
-    -   **Pakiety wdrożeniowe**: Rozwiń węzeł **aktualizacji oprogramowania** > **pakiety wdrożeniowe**, a następnie wybierz pakiet wdrożeniowy, który chcesz zweryfikować.  
+1.  Na consola do Configuration Manager, clique em **Biblioteca de Software**.  
 
-    -   **Pakiety sterowników**: Rozwiń węzeł **systemów operacyjnych** > **pakiety sterowników**, a następnie wybierz pakiet sterowników, który chcesz zweryfikować.  
+2.  No **biblioteca de Software** área de trabalho, selecione um dos seguintes passos para o tipo de conteúdo que pretende validar:  
 
-    -   **Obrazy systemu operacyjnego**: Rozwiń węzeł **systemów operacyjnych** > **obrazów systemu operacyjnego**, a następnie wybierz obraz systemu operacyjnego, który chcesz zweryfikować.  
+    -   **Aplicações**: Expanda **gestão de aplicações** > **aplicações**e, em seguida, selecione a aplicação que pretende validar.  
 
-    -   **Instalatorzy systemu operacyjnego**: Rozwiń węzeł **systemów operacyjnych** >  **instalatorzy systemu operacyjnego**, a następnie wybierz Instalator systemu operacyjnego, który chcesz zweryfikować.  
+    -   **Pacotes**: Expanda **gestão de aplicações** > **pacotes**e, em seguida, selecione o pacote que pretende validar.  
 
-    -   **Obrazy rozruchowe**: Rozwiń węzeł **systemów operacyjnych** > **obrazów rozruchowych**, a następnie wybierz obraz rozruchowy, który chcesz wstępnie przygotować.  
+    -   **Pacotes de implementação**: Expanda **atualizações de Software** > **pacotes de implementação**e, em seguida, selecione o pacote de implementação que pretende validar.  
 
-3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
+    -   **Pacotes de controladores**: Expanda **sistemas operativos** > **pacotes de controladores**e, em seguida, selecione o pacote de controladores que pretende validar.  
 
-4.  Na **lokalizacje zawartości** , a następnie wybierz punkt dystrybucji lub grupę punktów dystrybucji, w których chcesz zweryfikować zawartość, kliknij przycisk **weryfikacji**, kliknij przycisk **OK**, a następnie kliknij przycisk **OK**. Rozpocznie się proces weryfikacji zawartości wybranego punktu dystrybucji lub grupy punktów dystrybucji.  
+    -   **Imagens de sistema operativo**: Expanda **sistemas operativos** > **imagens do sistema operativo**e, em seguida, selecione a imagem de sistema operativo que pretende validar.  
 
-5.  Aby wyświetlić wyniki procesu weryfikacji zawartości **monitorowanie** obszaru roboczego, rozwiń węzeł **stan dystrybucji**i kliknij przycisk **stan zawartości** węzła. Jest wyświetlana zawartość poszczególnych typów pakietu (na przykład aplikacja, pakiet aktualizacji oprogramowania i obraz rozruchowy). Aby uzyskać więcej informacji o monitorowaniu stanu zawartości, zobacz [monitorowania zawartości, których dystrybucja z System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  
+    -   **Instaladores do sistema operativo**: Expanda **sistemas operativos** >  **instaladores do sistema operativo**e, em seguida, selecione o instalador do sistema operativo que pretende validar.  
 
+    -   **Imagens de arranque**: Expanda **sistemas operativos** > **imagens de arranque**e, em seguida, selecione a imagem de arranque que pretende pré-configurar.  
+
+3.  No separador **Home Page** , no grupo **Propriedades** , clique em **Propriedades**.  
+
+4.  No **localizações de conteúdo** separador, selecione o ponto de distribuição ou grupo de pontos de distribuição nos quais validar o conteúdos, clique em **validar**, clique em **OK**e, em seguida, clique em **OK**. O processo de validação de conteúdos é iniciado para o conteúdo no ponto de distribuição selecionados ou grupo de pontos de distribuição.  
+
+5.  Para ver os resultados do processo de validação de conteúdo, no **monitorização** área de trabalho, expanda **estado da distribuição**e clique no **estado do conteúdo** nós. O conteúdo para cada tipo de pacote (por exemplo, aplicação, pacote de atualização de Software e imagem de arranque) é apresentado. Para obter mais informações sobre como monitorizar o estado do conteúdo, consulte [monitorizar conteúdo que distribuiu com o System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  

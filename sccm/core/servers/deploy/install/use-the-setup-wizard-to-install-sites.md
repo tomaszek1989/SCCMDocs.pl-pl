@@ -1,5 +1,5 @@
 ---
-title: Kreator instalacji | Dokumentacja firmy Microsoft
+title: "Assistente de configuração | Microsoft Docs"
 ms.custom: na
 ms.date: 7/24/2017
 ms.prod: configuration-manager
@@ -16,376 +16,376 @@ manager: angrobe
 ms.openlocfilehash: 678f1b35fe6f7649dacb766f7c671f4ec8ea1435
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pl-PL
+ms.contentlocale: pt-PT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-the-setup-wizard-to-install-system-center-configuration-manager-sites"></a>Instalowanie lokacji programu System Center Configuration Manager za pomocą Kreatora konfiguracji
+# <a name="use-the-setup-wizard-to-install-system-center-configuration-manager-sites"></a>Utilize o Assistente de configuração para instalar sites do System Center Configuration Manager
 
-*Dotyczy: Program System Center Configuration Manager (Current Branch)*
+*Aplica-se a: O System Center Configuration Manager (ramo atual)*
 
 
-Aby zainstalować nową witrynę programu System Center Configuration Manager przy użyciu interfejsu użytkownika z przewodnikiem, należy użyć Kreatora instalacji programu Configuration Manager (setup.exe). Kreator obsługuje instalowanie lokacji głównej lub centralnej lokacji administracyjnej. Możesz także użyć kreatora do [uaktualnienie instalacji wersji ewaluacyjnej](../../../../core/servers/deploy/install/upgrade-an-evaluation-install-to-a-full-install.md) programu Configuration Manager do w pełni licencjonowanej instalacji. Jeśli nie chcesz używać kreatora, należy użyć [skrypt instalacji](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md) i uruchomić instalację nienadzorowaną wiersza polecenia.
+Para instalar um novo site do System Center Configuration Manager, utilizando uma interface de utilizador orientada, utilize o Assistente de configuração do Configuration Manager (setup.exe). O assistente suporta a instalação de um site primário ou site de administração central. Também é utilizar o Assistente para [atualizar uma instalação de avaliação](../../../../core/servers/deploy/install/upgrade-an-evaluation-install-to-a-full-install.md) do Configuration Manager para uma instalação totalmente licenciada. Quando não quiser utilizar o assistente, em vez disso, pode utilizar um [script de instalação](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md) e execute uma instalação autónoma de linha de comandos.
 
-Aby zainstalować lokację dodatkową, należy zainstalować lokacji z poziomu konsoli programu Configuration Manager. Lokacje dodatkowe nie obsługują instalację skryptową wiersza polecenia.
+Para instalar um site secundário, tem de instalar o site a partir da consola do Configuration Manager. Os sites secundários não suportam uma instalação com script da linha de comandos.
 
-## <a name="bkmk_primary"></a>Instalowanie centralnej lokacji administracyjnej lub lokacji głównej
-Użyj poniższej procedury do zainstalowania centralnej lokacji administracyjnej lub lokacji głównej lub uaktualnić lokację w wersji ewaluacyjne do pełni licencjonowanej lokacji programu Configuration Manager.   
+## <a name="bkmk_primary"></a>Instalar um site de administração central ou site primário
+Utilize o procedimento seguinte para instalar um site de administração central ou um site primário ou para atualizar um site de avaliação para um site totalmente licenciada do Configuration Manager.   
 
-Przed rozpoczęciem instalacji lokacji, należy zapoznać się ze szczegółowymi informacjami w następujących artykułach:
- -  [Przygotowanie do zainstalowania lokacji](../../../../core/servers/deploy/install/prepare-to-install-sites.md)
- -  [Wymagania wstępne dotyczące instalowania lokacji](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md)
+Antes de iniciar a instalação do site, deve estar familiarizado com os detalhes nos seguintes artigos:
+ -  [Preparar a instalação de sites](../../../../core/servers/deploy/install/prepare-to-install-sites.md)
+ -  [Pré-requisitos para instalar sites](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md)
 
-Jeśli instalujesz centralną lokację administracyjną w ramach scenariusza rozszerzania lokacji, przejrzyj [rozszerzania autonomicznej lokacji głównej](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_expand) tego tematu, aby można było używać poniższej procedury.
+Se estiver a instalar um site de administração central como parte de um cenário de expansão do site, reveja o [expandir um site primário autónomo](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_expand) secção deste tópico antes de utilizar o procedimento seguinte.
 
-### <a name="bkmk_installpri"></a>Aby zainstalować lokację głównej lub centralnej administracji
+### <a name="bkmk_installpri"></a>Para instalar um site primário ou de administração central
 
-1.  Na komputerze, na którym chcesz zainstalować lokację, uruchom  **&lt;InstallationMedia\>\SMSSETUP\BIN\X64\Setup.exe** uruchomić **Kreatora instalacji programu System Center Configuration Manager**.  
+1.  No computador onde pretende instalar o site, execute  **&lt;InstallationMedia\>\SMSSETUP\BIN\X64\Setup.exe** para iniciar o **Assistente de configuração do System Center Configuration Manager**.  
 
     > [!NOTE]  
-    > Podczas instalowania centralnej lokacji administracyjnej rozszerzania autonomicznej lokacji głównej, lub instalowania nowej podrzędnej lokacji głównej w istniejącej hierarchii, należy użyć nośnika instalacyjnego (plików źródłowych), który jest zgodny z wersją istniejącej lokacji lub lokacji. Jeśli po zainstalowaniu aktualizacji w konsoli, które zmieniły wersję zainstalowanych wcześniej lokacji, nie używaj oryginalnego nośnika instalacyjnego. Zamiast tego należy użyć plików źródłowych z [dysku CD. Najnowszy folder](../../../../core/servers/manage/the-cd.latest-folder.md) zaktualizowane witryny. Configuration Manager wymaga użycia plików źródłowych odpowiadających wersji istniejącej lokacji, które będą się łączyć nowej witryny.  
+    > Quando instalar um site de administração central para expandir num site primário autónomo ou instalar um novo site primário subordinado numa hierarquia existente, tem de utilizar o suporte de instalação (ficheiros de origem) que corresponde à versão do site existente ou sites. Se instalou atualizações na consola que alteraram a versão dos sites anteriormente instalados, não utilize o suporte de dados de instalação original. Em alternativa, utilize ficheiros de origem do [CD. Pasta mais recente](../../../../core/servers/manage/the-cd.latest-folder.md) de um site atualizado. O Configuration Manager requer a utilização de ficheiros de origem que corresponde à versão do site existente que o novo site irá ligar ao.  
 
-2.  Na **przed rozpoczęciem** wybierz pozycję **dalej**.  
+2.  No **antes de começar** página, escolha **seguinte**.  
 
-3.  Na **wprowadzenie** wybierz typ lokacji, który chcesz zainstalować:  
+3.  No **introdução** página, selecione o tipo de site que pretende instalar:  
 
-    -   **Centralna lokacja administracyjna**, jako pierwszą lokację nowej hierarchii lub podczas rozszerzania autonomicznej lokacji głównej:  
+    -   **Site de administração central**, como o primeiro site numa nova hierarquia ou ao expandir um site primário autónomo:  
 
-        Wybierz **zainstalować lokację administracji centralnej programu Configuration Manager**.  
+        Selecione **instalar um site de administração central do Configuration Manager**.  
 
-         Podczas kolejnych kroków tej procedury są oferowane wyboru, aby zainstalować centralną lokację administracyjną jako pierwszą lokację nowej hierarchii, lub zainstalować centralną lokację administracyjną do rozszerzenia autonomicznej lokacji głównej.  
+         Durante o passo posterior deste procedimento, é-lhe dada a opção para instalar um site de administração central como o primeiro site numa nova hierarquia ou para instalar um site de administração central para expandir num site primário autónomo.  
 
-    -    **Lokacja główna**, jako autonomicznej lokacji głównej, która jest pierwszą lokację nowej hierarchii lub jako element podrzędny głównej:  
+    -    **Site primário**, como um site primário autónomo que é o primeiro site numa nova hierarquia, ou um subordinado principal:  
 
-        Wybierz **zainstalować lokację główną programu Configuration Manager**.  
+        Selecione **instalar um site primário do Configuration Manager**.  
 
         > [!TIP]  
-        > Zazwyczaj wybiera się jedynie opcję opcję **Użyj typowych opcji instalacji dla autonomicznej lokacji głównej** Aby zainstalować autonomiczną lokację główną w środowisku testowym. Po wybraniu tej opcji Instalator:  
+        > Normalmente, apenas seleciona a opção **utilizar opções de instalação típicas para um site primário autónomo** quando pretende instalar um site primário autónomo num ambiente de teste. Quando seleciona esta opção, a configuração:  
 
-        > -   Automatycznie skonfiguruje lokację jako autonomiczną lokację główną.  
-        > -   Używa domyślnej ścieżki instalacji.  
-        > -   Używa lokalnej instalacji domyślnego wystąpienia programu SQL Server dla bazy danych lokacji.  
-        > -   Instaluje punkt zarządzania i punkt dystrybucji na komputerze serwera lokacji.  
-        > -   Skonfiguruje lokację z językiem angielskim i język wyświetlania systemu operacyjnego na serwerze lokacji głównej, jeśli jest to jeden z języków obsługiwanych w programie Configuration Manager.  
+        > -   Configura automaticamente o site como um site primário autónomo.  
+        > -   Utiliza um caminho de instalação predefinido.  
+        > -   Utiliza uma instalação local da instância predefinida do SQL Server para a base de dados do site.  
+        > -   Instala um ponto de gestão e um ponto de distribuição no computador do servidor do site.  
+        > -   Configura o site com inglês e o idioma de apresentação do sistema operativo no servidor do site primário se corresponder a um dos idiomas que suporte do Configuration Manager.  
 
-4.  Na **klucz produktu** strony:
-    - Wybierz, czy ma zostać zainstalowany jako wersja ewaluacyjna, czy licencjonowaną wersję programu Configuration Manager.  
+4.  No **chave de produto** página:
+    - Escolha se pretende instalar o Configuration Manager como uma edição de avaliação ou uma edição licenciada.  
 
-      -   Jeśli wybierzesz wersję licencjonowaną, podaj klucz produktu i wybierz pozycję **dalej**.  
+      -   Se selecionar uma edição licenciada, introduza a chave de produto e escolha **seguinte**.  
 
-      -   Jeśli wybierzesz wersję ewaluacyjną, wybierz **dalej**. (Można uaktualnić instalację w wersji ewaluacyjnej do pełnej instalacji później.)  
-    - Począwszy od wersji października 2016 nośnika linii bazowej 1606 wersji programu System Center Configuration Manager, można określić datę wygaśnięcia umowy Software Assurance. Na tej stronie, masz możliwość określenia **Data wygaśnięcia Software Assurance** umowy licencyjnej jako wygodny monitu dla użytkownika z tą datą. Jeśli nie zostanie wprowadzony to podczas instalacji, możesz podać go później z w konsoli programu Configuration Manager.
+      -   Se selecionar uma edição de avaliação, escolha **seguinte**. (Pode atualizar uma instalação de avaliação para uma instalação completa mais tarde.)  
+    - Começando com a versão de Outubro de 2016 da versão 1606 da linha de base de dados para o System Center Configuration Manager, pode especificar a data de expiração do seu contrato de Software Assurance. Nesta página, tem a opção para especificar o **data de expiração do Software Assurance** do seu contrato de licenciamento em como um lembrete para si conveniente dessa data. Se não introduzir este durante a configuração, pode especificá-la mais tarde a partir da consola do Configuration Manager.
 
       > [!NOTE]   
-      > Microsoft nie zweryfikować wprowadzona data wygaśnięcia i sprawdzanie oryginalności licencji nie będą używać tej daty. Należy zamiast tego należy używać go jako przypomnienie daty wygaśnięcia. Jest to przydatne, ponieważ programu Configuration Manager okresowo sprawdza dostępność nowych aktualizacji oprogramowania oferowanych w trybie online — i stan licencji gwarancji oprogramowania powinna być bieżącego, dzięki czemu masz prawo do korzystania z tych dodatkowych aktualizacji.    
+      > Microsoft não a validar a data de expiração que introduziu e não as utilizaremos esta data para validação da licença. Em vez disso, pode utilizá-lo como um lembrete da sua data de expiração. Isto é útil porque o Configuration Manager verifica periodicamente para novas atualizações de software disponibilizadas online — e o estado de licença do software assurance deve ser atual, de modo a que está elegível para utilizar estas atualizações adicionais.    
 
-      Aby uzyskać więcej informacji, zobacz [licencjonowania i gałęzi programu System Center Configuration Manager](/sccm/core/understand/learn-more-editions).
+      Para obter mais informações, consulte [licenciamento e ramos para o System Center Configuration Manager](/sccm/core/understand/learn-more-editions).
 
-5.  Na **postanowienia licencyjne dotyczące oprogramowania firmy Microsoft** przeczytaj i zaakceptuj postanowienia licencyjne.  
+5.  No **termos de licenciamento de Software Microsoft** página, leia e aceite os termos de licenciamento.  
 
-6.  Na **licencje wymagań wstępnych** strony, przeczytaj i zaakceptuj postanowienia licencyjne wstępnie wymaganego oprogramowania. Instalator pobiera i automatycznie instaluje oprogramowanie w systemach lokacji lub klientów, gdy są wymagane. Przed kontynuowaniem do następnej strony, musisz zaznaczyć wszystkie pola.  
+6.  No **licenças de pré-requisito** página, leia e aceite os termos de licenciamento para software de pré-requisito. A configuração transfere e instala automaticamente o software em sistemas de sites ou clientes quando tem necessário. Tem de verificar todas as caixas de antes de poder continuar para a página seguinte.  
 
-7.  Na **pobieranie plików wymaganych wstępnie** Określ, czy Instalator ma pobrać najnowsze wymagane wstępnie pliki z Internetu lub użyj wcześniej pobranych plików:  
+7.  No **as transferências de pré-requisitos** página, especifique se a configuração deverá transferir os ficheiros redistribuíveis de pré-requisitos a partir da Internet ou utilizar ficheiros anteriormente transferidos:  
 
-    -   Instalator ma pobrać pliki teraz, wybierz opcję **Pobierz wymagane pliki** i określ lokalizację do zapisania plików.  
+    -   Se pretender que o programa de configuração para transferir os ficheiros neste momento, selecione **transferir ficheiros necessários** e especifique uma localização para armazenar os ficheiros.  
 
-    -   Jeżeli pliki zostały wcześniej pobrane przy użyciu [Narzędzie pobierania Instalatora](../../../../core/servers/deploy/install/setup-downloader.md), wybierz pozycję **Użyj wcześniej pobranych plików** i określ folder pobierania.  
+    -   Se tiver transferido anteriormente os ficheiros utilizando [dispositivo de transferência da configuração](../../../../core/servers/deploy/install/setup-downloader.md), selecione **utilizar ficheiros anteriormente transferidos** e especifique a pasta de transferência.  
 
         > [!TIP]  
-        > W przypadku używania wcześniej pobranych plików Sprawdź, czy ścieżka do folderu pobierania zawiera najnowszą wersję plików.  
+        > Se utilizar ficheiros anteriormente transferidos, certifique-se de que o caminho para a pasta de transferência contém a versão mais recente dos ficheiros.  
 
-8.  Na **wybór języka serwera** wybierz języki, które są dostępne dla konsoli programu Configuration Manager i raporty. (Język angielski jest wybrany domyślnie i nie można usunąć).  
+8.  No **seleção de idioma do servidor** página, selecione os idiomas que estão disponíveis para a consola do Configuration Manager e para relatórios. (O inglês está selecionado por predefinição e não pode ser removido.)  
 
-9. Na **wybór języka klienta** wybierz języki, które są dostępne na komputerach klienckich i określ, czy włączyć obsługę wszystkich języków klienta dla klientów urządzeń przenośnych. (Język angielski jest wybrany domyślnie i nie można usunąć).  
+9. No **seleção de idioma do cliente** página, selecione os idiomas que estão disponíveis para os computadores cliente e especifique se pretende ativar todos os idiomas de cliente para clientes de dispositivos móveis. (O inglês está selecionado por predefinição e não pode ser removido.)  
 
     > [!IMPORTANT]  
-    > Korzystając z centralnej lokacji administracyjnej, upewnij się, że języki klienta, które można skonfigurować w centralnej lokacji administracyjnej obejmuje wszystkie języki klienckie, które można skonfigurować w każdej podrzędnej lokacji głównej. Jest to spowodowane instalowanych z punktu dystrybucji klientów korzystać języków klienta z lokacji najwyższego poziomu podczas instalowanych z punktem zarządzania klientów korzystać języków klienta z przypisanej lokacji głównej.  
+    > Quando utiliza um site de administração central, certifique-se de que configurou no site de administração central de idiomas de cliente incluem todos os idiomas de cliente que configurou em cada site primário subordinado. Isto acontece porque os clientes que instale a partir de um ponto de distribuição têm acesso para os idiomas de cliente do site de nível superior, enquanto os clientes que instale a partir de um ponto de gestão tem acesso para os idiomas de cliente do respetivo site primário atribuído.  
 
-10. Na **ustawienia lokacji i instalacji** strony, określ następujące informacje dla nowej lokacji, który użytkownik instaluje:  
+10. No **definições de instalação e Site** página, especifique as seguintes opções para o novo site que estiver a instalar:  
 
-    -   **Kod lokacji:** [Każdy kod lokacji w hierarchii musi być unikatowa](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_sitecodes) i składającej się z trzech znaków alfanumerycznych (od A do Z) i od 0 do 9. Ponieważ kody lokacji są używane w nazwach folderów, nie należy używać systemu Windows, zastrzeżonych nazw lokacji, w tym:    
+    -   **Código do site:** [Cada código do site numa hierarquia têm de ser exclusivo](../../../../core/servers/deploy/install/prepare-to-install-sites.md#bkmk_sitecodes) e composto por três dígitos alfanuméricos (da A z) e de 0 a 9. Uma vez que o código de site é utilizado em nomes de pastas, não utilize nomes reservados ao Windows para o site, incluindo:    
         -   AUX  
-        -   KON    
+        -   CON    
         -   NUL    
         -   PRN    
         -   SMS  
 
         > [!NOTE]  
-        > Instalator nie Sprawdź, czy należy określić kod lokacji jest już używana lub jeśli ma ona zastrzeżona.  
+        > A configuração não verifica se o código do site que especificou já está a ser utilizado ou se tiver um nome reservado.  
 
-    -   **Nazwa lokacji:** Każda lokacja wymaga podania przyjaznej nazwy, która ułatwia zidentyfikowanie lokacji.  
+    -   **Nome do site:** Cada site requer este nome amigável, que pode ajudar a identificar o site.  
 
-    -   **Folder instalacji:** To jest ścieżka folderu do instalacji programu Configuration Manager. Nie można zmienić lokalizacji po zainstalowaniu lokacji. Ponadto ścieżka nie może zawierać znaków Unicode ani końcowych spacji.  
+    -   **Pasta de instalação:** Este é o caminho da pasta para a instalação do Configuration Manager. Não é possível alterar a localização após a instalação do site. Além disso, o caminho não pode conter carateres Unicode nem espaços à direita.  
 
-11. Na **instalacji lokacji** strony, użyj opcji odpowiadającej Twojemu scenariuszowi:  
+11. No **instalação de Site** página, utilize a opção seguinte que corresponda ao seu cenário:  
 
-    -   **Instaluję centralną lokację administracyjną:**  
+    -   **Estou a instalar um site de administração central:**  
 
-         Na **instalacja centralnej lokacji administracyjnej** wybierz pozycję **Zainstaluj jako pierwszą lokację w nowej hierarchii**, a następnie wybierz pozycję **dalej** aby kontynuować.  
+         No **instalação do Site de Administração Central** página, selecione **instalar como o primeiro site numa nova hierarquia**e, em seguida, escolha **seguinte** para continuar.  
 
-    -   **Rozszerzam autonomiczną lokację główną do hierarchii z centralną lokacją administracyjną:**  
+    -   **Estou a expandir um site primário autónomo numa hierarquia com um site de administração central:**  
 
-         Na **instalacja centralnej lokacji administracyjnej** wybierz pozycję **rozszerzyć istniejącą autonomiczną lokację główną do hierarchii**, określ nazwę FQDN serwera autonomicznej lokacji głównej, a następnie wybierz pozycję **dalej** aby kontynuować.  
+         No **instalação do Site de Administração Central** página, selecione **expandir um site primário autónomo existente numa hierarquia**, especifique o FQDN do servidor do site primário autónomo e, em seguida, escolha **seguinte** para continuar.  
 
-         Nośniki, które należy zainstalować nową centralną lokację administracyjną musi być zgodna z wersją lokacji głównej.  
+         O suporte de dados que utilizar para instalar o novo site de administração central tem de corresponder à versão do site primário.  
 
-    -   **Instaluję autonomiczną lokację główną:**  
+    -   **Estou a instalar um site primário autónomo:**  
 
-         Na **instalacja lokacji głównej** wybierz pozycję **zainstalować lokację główną jako autonomiczną**, a następnie wybierz pozycję **dalej**.  
+         No **instalação do Site primário** página, selecione **instalar o site primário como um site autónomo**e, em seguida, escolha **seguinte**.  
 
-    -   **Instaluję podrzędną lokację główną:**  
+    -   **Estou a instalar um site primário subordinado:**  
 
-         Na **instalacja lokacji głównej** wybierz pozycję **dołączyć lokację podstawową do istniejącej hierarchii**, określ nazwę FQDN centralnej lokacji administracyjnej, a następnie wybierz pozycję **dalej**.  
+         No **instalação do Site primário** página, selecione **associar o site primário para uma hierarquia existente**, especifique o FQDN para o site de administração central e, em seguida, escolha **seguinte**.  
 
-12. Na **informacje o bazie danych** Podaj następujące informacje:  
+12. No **informações da base de dados** página, especifique as seguintes informações:  
 
-    -   **Nazwa programu SQL Server (FQDN):** To jest domyślnie jako komputer serwera lokacji.
+    -   **Nome do SQL Server (FQDN):** Por predefinição, está definida para ser o computador do servidor do site.
 
-     Jeśli używasz port niestandardowy, Dodaj ten port na nazwę FQDN programu SQL Server. Aby to zrobić, wykonaj nazwę FQDN serwera oprogramowania sequel z przecinek i numer portu.   Na przykład w przypadku serwera *SQLServer1.fabrikam.com*, aby określić port skorzystaj z następujących *1551*:  **SQLServer1.fabrikam.com, 1551**
+     Se utilizar uma porta personalizada, adicione essa porta para o FQDN do SQL Server. Para tal, siga o FQDN do servidor sequel com uma vírgula e, em seguida, o número de porta.   Por exemplo, para o servidor *SQLServer1.fabrikam.com*, utilize o seguinte procedimento para especificar a porta *1551*:  **SQLServer1.fabrikam.com, 1551**
 
-    -   **Nazwa wystąpienia:** Domyślnie to pole jest puste. Używa domyślnego wystąpienia programu SQL Server na komputerze serwera lokacji.  
+    -   **Nome da instância:** Por predefinição, este está em branco. Utiliza a instância predefinida do SQL Server no computador do servidor do site.  
 
-    -   **Nazwa bazy danych:** Domyślnie jest to wartość to CM_&lt;Kod_lokacji\>. Mogą używać innej nazwy, który określisz.  
+    -   **Nome da base de dados:** Por predefinição, está definida como CM_&lt;Sitecode\>. Está a utilizar um nome diferente que especificar.  
 
-    -   **Port brokera usług:** Domyślnie ta jest ustawiona na używany jest domyślny port usług SQL Server Service Broker (SSB) 4022. SQL używa go do komunikowania się bezpośrednio do bazy danych lokacji w innych lokacjach.  
+    -   **A porta do Service Broker:** Por predefinição, está definida para utilizar a porta do SQL Server Service Broker (SSB) predefinida de 4022. SQL Server utiliza-o para comunicar diretamente com a base de dados do site de outros sites.  
 
-13. Na drugiej stronie **informacje o bazie danych** strony, można określić innych niż domyślne lokalizacje pliku danych programu SQL Server i pliku dziennika programu SQL Server dla bazy danych lokacji:  
+13. Na segunda **informações da base de dados** página, pode especificar localizações não predefinidas para o ficheiro de dados do SQL Server e o ficheiro de registo do SQL Server para a base de dados do site:  
 
-    -   Podano domyślne lokalizacje plików dla programu SQL Server.  
+    -   São fornecidas localizações predefinidas de ficheiros para o SQL Server.  
 
-    -   Można określić innych niż domyślne lokalizacje plików nie jest dostępna w przypadku używania klastra programu SQL Server.  
+    -   A opção para especificar localizações de ficheiros não predefinidas não está disponível quando utiliza um cluster do SQL Server.  
 
-    -   Narzędzie sprawdzania wymagań wstępnych nie przeprowadza sprawdzenia wolnego miejsca na dysku dla innych niż domyślne lokalizacji plików.  
+    -   O Verificador de pré-requisitos não executa uma verificação de espaço livre em disco para não predefinidas localizações de ficheiros.  
 
-14. Na **ustawienia dostawcy programu SMS** strony, określ nazwę FQDN serwera, na którym chcesz zainstalować dostawcy programu SMS.  
+14. No **as definições do fornecedor de SMS** página, especifique o FQDN para o servidor onde pretende instalar o fornecedor de SMS.  
 
-    -   Domyślnie jest określony serwer lokacji.  
+    -   Por predefinição, o servidor de site é especificado.  
 
-    -   Po zainstalowaniu lokacji, możesz skonfigurować dodatkowych dostawców programu SMS.  
+    -   Após a instalação do site, pode configurar fornecedores de SMS adicionais.  
 
-15. Na **ustawienia komunikacji klienta** wybierz, czy skonfigurować wszystkie systemy lokacji, aby akceptowały wyłącznie komunikację HTTPS od klientów lub metoda komunikacji ma być skonfigurowana dla poszczególnych ról systemu lokacji.  
+15. No **definições de comunicação de cliente** página, escolha se pretende configurar todos os sistemas de sites para aceitar apenas comunicações HTTPS de clientes ou o método de comunicação seja configurado para cada função do sistema de sites.  
 
-    Po wybraniu **wszystkie role systemu lokacji akceptują tylko komunikację HTTPS od klientów**, komputer kliencki musi mieć ważny certyfikat PKI do uwierzytelniania klientów. Aby uzyskać więcej informacji na temat wymagań dotyczących certyfikatów PKI, zobacz [wymagania dotyczące certyfikatu PKI dla programu Configuration Manager](https://technet.microsoft.com/library/gg699362.aspx).  
-
-    > [!NOTE]  
-    > Ten krok ma zastosowanie tylko podczas instalowania lokacji głównej. Jeśli instalujesz centralną lokację administracyjną, Pomiń ten krok.  
-
-16. Na **ról systemu lokacji** wybierz, czy zainstalować punktu zarządzania lub punktu dystrybucji. Dla każdej roli wybranej do zainstalowania przez Instalatora:  
-
-    -   Należy wprowadzić **FQDN** dla komputera, który będzie obsługiwać rolę i wybierz klienta metody połączenia, czy serwer będzie obsługiwać (HTTP lub HTTPS).  
-
-    -   W przypadku wybrania **wszystkie role systemu lokacji akceptują tylko komunikację HTTPS od klientów** na poprzedniej stronie, ustawienia połączeń z klienta zostaną automatycznie skonfigurowane dla protokołu HTTPS i nie można zmienić, chyba że Przejdź wstecz i zmień ustawienie.  
+    Quando seleciona **todas as funções de sistema de site aceitam apenas comunicação HTTPS dos clientes**, o computador cliente tem de ter um certificado PKI válido para autenticação de cliente. Para obter mais informações sobre os requisitos de certificado PKI, consulte [requisitos de certificado PKI para o Configuration Manager](https://technet.microsoft.com/library/gg699362.aspx).  
 
     > [!NOTE]  
-    > Ten krok ma zastosowanie tylko podczas instalowania lokacji głównej. Jeśli instalujesz centralną lokację administracyjną, Pomiń ten krok.  
+    > Este passo só se aplica quando instala um site primário. Se estiver a instalar um site de administração central, ignore este passo.  
+
+16. No **funções do sistema de sites** página, escolha se pretende instalar um ponto de gestão ou ponto de distribuição. Para cada função que optar por instalar através da configuração:  
+
+    -   Tem de introduzir o **FQDN** para o computador que irá alojar a função e escolha o cliente do método de ligação que o servidor irá suportar (HTTP ou HTTPS).  
+
+    -   Se tiver selecionado **todas as funções de sistema de site aceitam apenas comunicação HTTPS dos clientes** na página anterior, as definições de ligação de cliente são automaticamente configuradas para HTTPS em não podem ser alteradas a menos que Retroceda e altere a definição.  
 
     > [!NOTE]  
-    > Aby zainstalować role systemu lokacji, Instalator używa **konta instalacji systemu lokacji**. Domyślnie używa konta komputera lokacji głównej. To konto musi być administratorem lokalnym na komputerze zdalnym, aby zainstalować rolę systemu lokacji. Jeśli to konto nie ma wymaganych uprawnień, usuń zaznaczenie ról systemu lokacji i zainstalować je później z poziomu konsoli programu Configuration Manager po skonfigurowaniu dodatkowych kont do użycia jako konta instalacji systemu lokacji.  
-
-17. Na **dane użycia** strony, przejrzyj informacje na temat danych tego zbieranych przez firmę Microsoft, a następnie wybierz **dalej**.  
-
-18. **Konfiguracja punktu połączenia usługi** strona jest dostępna tylko podczas instalacji:  
-
-    -   Jeśli instalujesz autonomicznej lokacji głównej.  
-
-    -   Jeśli instalujesz centralną lokację administracyjną.  
+    > Este passo só se aplica quando instala um site primário. Se estiver a instalar um site de administração central, ignore este passo.  
 
     > [!NOTE]  
-    > Jeśli instalujesz podrzędnej lokacji głównej, należy pominąć ten krok, (Ta strona nie jest dostępna).  
+    > Para instalar funções do sistema de sites, a configuração utiliza o **conta de instalação do sistema de sites**. Por predefinição, esta utiliza a conta de computador do site primário. Esta conta tem de ser um administrador local num computador remoto para instalar a função de sistema de sites. Se esta conta não possui as permissões necessárias, desmarque as funções de sistema de sites e instalar mais tarde a partir da consola do Configuration Manager, depois de configurar contas adicionais para utilizar como contas de instalação de sistema do site.  
 
-     Jeśli instalujesz centralną lokację administracyjną w ramach scenariusza rozszerzania lokacji, a ta rola jest już zainstalowana w autonomicznej lokacji głównej, należy odinstalować tę rolę z autonomicznej lokacji głównej. W hierarchii jest dozwolone tylko jedno wystąpienie tej roli, i jest dozwolona tylko w lokacji najwyższego poziomu w hierarchii.  
+17. No **dados de utilização** página, reveja as informações sobre os dados que a Microsoft recolhe e, em seguida, escolha **seguinte**.  
 
-     Po wybraniu konfiguracji dla **punkt połączenia z usługą**, wybierz **dalej**. (Po zakończeniu instalacji można zmienić tej konfiguracji z poziomu konsoli programu Configuration Manager).  
+18. O **programa de configuração de ponto de ligação de serviço** página apenas está disponível durante a configuração:  
 
-19. Na **Podsumowanie ustawień** Przejrzyj ustawienia, która zostanie wybrana. Gdy wszystko jest gotowe, wybierz pozycję **dalej** można uruchomić narzędzie sprawdzania wymagań wstępnych.  
+    -   Quando estiver a instalar um site primário autónomo.  
 
-20. Na **Sprawdzanie wymagań wstępnych instalacji** strony, wszelkie problemy, które mogą zostać zidentyfikowane są wyświetlane.  
+    -   Quando estiver a instalar um site de administração central.  
 
-    -   Gdy narzędzie sprawdzania wymagań wstępnych wykryje problem, wybierz element na liście, aby uzyskać więcej informacji dotyczących sposobu rozwiązania problemu.  
+    > [!NOTE]  
+    > Se estiver a instalar um site primário subordinado, ignore este passo (esta página não está disponível).  
 
-    -   Musisz rozwiązać każdy element ze stanem **** przed kontynuowaniem instalacji lokacji. Elementy ze stanem **ostrzeżenie** powinny zostać rozwiązane, ale nie blokują instalacji lokacji.  
+     Se estiver a instalar um site de administração central como parte de um cenário de expansão do site e esta função já está instalada no site primário autónomo, tem de desinstalar esta função do site primário autónomo. Apenas uma instância desta função é permitida numa hierarquia — e só é permitida no site de nível superior da hierarquia.  
 
-    -   Po rozwiązaniu problemów, wybierz **Uruchom sprawdzanie** Aby ponownie uruchomić narzędzie sprawdzania wymagań wstępnych.  
+     Depois de selecionar uma configuração para o **ponto de ligação de serviço**, escolha **seguinte**. (Após a conclusão da configuração, pode alterar esta configuração a partir da consola do Configuration Manager).  
 
-     Po uruchomieniu narzędzia sprawdzania wymagań wstępnych i odbierania nie są sprawdzane **** stanu, możesz wybrać **Rozpocznij instalację** do rozpoczęcia instalacji lokacji.  
+19. No **resumo de definições** página, reveja as definições que selecionou. Quando estiver pronto, selecione **seguinte** para iniciar o Verificador de pré-requisitos.  
+
+20. No **a verificação dos pré-requisitos de instalação** página, quaisquer problemas que podem ser identificados estão listados.  
+
+    -   Quando o Verificador de pré-requisitos detetar um problema, escolha um item na lista para obter detalhes sobre como resolver o problema.  
+
+    -   Tem de resolver cada item com o estado **falha** antes de continuar a instalar o site. Itens com o estado **aviso** devem ser resolvidos, mas não bloqueiam a instalação do site.  
+
+    -   Depois de resolver problemas, escolha **executar verificação** para voltar a executar o Verificador de pré-requisitos.  
+
+     Quando executa o Verificador de pré-requisitos e não as verificações de recebem um **falha** Estado, pode escolher **Iniciar instalação** para iniciar a instalação de site.  
 
     > [!TIP]  
-    > Oprócz uwag, które jest dostępne w kreatorze, można znaleźć dodatkowe informacje na temat problemów z wymaganiami wstępnymi, przeglądając **ConfigMgrPrereq.log** pliku w folderze głównym dysku systemowego komputera, instalowana na. Aby uzyskać listę reguły wymagań wstępnych instalacji i opisy, zobacz [listy z Sprawdzanie wymagań wstępnych programu System Center Configuration Manager](../../../../core/servers/deploy/install/list-of-prerequisite-checks.md).  
+    > Além dos comentários que é fornecido no assistente, pode encontrar informações adicionais sobre problemas de pré-requisitos ao visualizar o **ConfigMgrPrereq.log** ficheiro na raiz da unidade de sistema do computador que está a instalar. Para obter uma lista de regras de pré-requisitos de instalação e as descrições, consulte [lista de verificações de pré-requisitos para o System Center Configuration Manager](../../../../core/servers/deploy/install/list-of-prerequisite-checks.md).  
 
-21. Na **instalacji** Instalator wyświetla stan instalacji. Po zakończeniu podstawowej instalacji serwera lokacji, będziesz mieć możliwość **Zamknij** Kreatora instalacji. Po zamknięciu Kreatora instalacji i konfiguracji początkowej lokacji kontynuowane w tle.  
+21. No **instalação** página, o programa de configuração apresenta o estado da instalação. Quando a instalação de servidor do site principal estiver concluída, terá a opção de **fechar** o Assistente de instalação. Quando fechar o assistente, a instalação e configurações de site inicial continuam em segundo plano.  
 
-    -   Można połączyć konsolę programu Configuration Manager do lokacji, przed ukończeniem instalacji. Ta konsola łączy się tylko do odczytu i umożliwia wyświetlanie obiektów oraz ustawień, ale nie ich edytowanie.  
+    -   Pode ligar uma consola do Configuration Manager para o site antes da configuração está concluída. Esta consola liga como só de leitura e permite-lhe ver objetos e definições, mas não é possível introduzir edições.  
 
-    -   Po zakończeniu instalacji będzie można połączyć konsolę, która umożliwia edytowanie obiektów i ustawień.  
-
-
-## <a name="bkmk_expand"></a>Rozszerzenia autonomicznej lokacji głównej
-Jeśli po zainstalowaniu autonomicznej lokacji głównej jako pierwszej lokacji, masz opcję później rozszerzyć tę lokację w większej hierarchii, instalując centralną lokację administracyjną.   
-
-Po rozwinięciu autonomicznej lokacji głównej, należy zainstalować nową centralną lokację administracyjną korzystającej z istniejącej autonomicznej lokacji głównej bazy danych jako odwołanie. Po zainstalowaniu nowej centralnej lokacji administracyjnej autonomiczna lokacja główna działa jako podrzędnej lokacji głównej.
-
--   Tylko autonomiczną lokację główną można rozszerzyć do nowej hierarchii.  
-
--   Tylko jedną autonomiczną lokację główną można rozszerzyć do określonej hierarchii. Nie można użyć tej opcji, aby przyłączyć dodatkowe autonomiczne Lokacje główne do tej samej hierarchii. Zamiast tego należy użyć migracji do migracji danych z jednej hierarchii do innego.  
-
--   Po rozszerzeniu autonomicznej lokacji w hierarchii z centralną lokacją administracyjną, można dodać dodatkowe podrzędne Lokacje główne.  
-
--   Aby usunąć lokację główną z hierarchii z centralną lokacją administracyjną, należy odinstalować lokację główną.  
-
-Aby rozszerzyć lokację, należy użyć Kreatora instalacji programu System Center Configuration Manager do zainstalowania nowej centralnej lokacji administracyjnej z następującymi zastrzeżeniami:  
-
--   Przy użyciu tej samej wersji programu Configuration Manager jako autonomiczną lokację główną, należy zainstalować centralną lokację administracyjną.  
-
--   Na **wprowadzenie** strony Kreatora konfiguracji wybierz opcję instalacji centralnej lokacji administracyjnej. Na późniejszym etapie instalacji możesz wybrać opcję rozszerzenia istniejącej autonomicznej lokacji głównej.  
-
--   Po skonfigurowaniu **wybór języka klienta** strony dla nowej centralnej lokacji administracyjnej, musisz wybrać te same języki klienta, które są skonfigurowane dla autonomicznej lokacji głównej, która jest rozszerzanie.  
-
--   Na **instalacji lokacji** strony, wybierz opcję rozszerzenia autonomicznej lokacji głównej.  
-
-Aby rozszerzyć autonomiczną lokację główną, należy najpierw zobacz [wymagania wstępne dotyczące rozszerzania lokacji](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#bkmk_expand), a następnie wykonać procedurę  *[instalacji lokacji głównej lub centralnej administracji](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_installpri)*we wcześniejszej części tego artykułu.
+    -   Após a conclusão da configuração, poderá ligar uma consola que possa editar objetos e definições.  
 
 
-## <a name="bkmk_secondary"></a>Instalacja lokacji dodatkowej
- Aby zainstalować lokację dodatkową używa się konsoli programu Configuration Manager.  
+## <a name="bkmk_expand"></a>Expandir um site primário autónomo
+Quando tiver instalado um site primário autónomo como primeiro site, tem a opção mais tarde para expandir esse site para uma hierarquia maior instalando um site de administração central.   
 
--   Jeśli konsola, której używasz, nie jest podłączony do lokacji głównej, który ma być lokacją nadrzędną nowej lokacji dodatkowej, polecenie zainstalowania lokacji zostaną zreplikowane do prawidłowej lokacji głównej.  
+Quando expande um site primário autónomo, instala um novo site de administração central que utiliza a base de dados do site primário autónomo existente como referência. Depois de instala o novo site de administração central, o site primário autónomo funciona como um site primário subordinado.
 
--   Przed rozpoczęciem instalacji lokacji, upewnij się, że konto użytkownika ma uprawnienia wymagań wstępnych i że komputer, który będzie hostem nowej lokacji dodatkowej spełnia wszystkie wymagania wstępne dotyczące serwera lokacji dodatkowej.  
+-   Apenas um site primário autónomo pode ser expandido para uma nova hierarquia.  
 
--   Po zainstalowaniu lokacji dodatkowej programu Configuration Manager skonfiguruje nową lokację w celu użycia portów komunikacyjnych klienta skonfigurowanych w nadrzędnej lokacji głównej.  
+-   Apenas um site primário autónomo pode ser expandido para uma hierarquia específica. Não é possível utilizar esta opção para associar sites primários autónomos adicionais na mesma hierarquia. Em vez disso, utilize a migração para migrar dados de uma hierarquia para outra.  
 
-### <a name="bkmk_installsecondary"></a>Aby zainstalować lokację dodatkową  
+-   Depois de expandir um site autónomo numa hierarquia com um site de administração central, pode adicionar sites primários subordinados adicionais.  
+
+-   Para remover um site primário de uma hierarquia com um site de administração central, tem de desinstalar o site primário.  
+
+Para expandir o site, utilize o Assistente de configuração do System Center Configuration Manager para instalar um novo site de administração central com os seguintes avisos:  
+
+-   Tem de instalar o site de administração central utilizando a mesma versão do Configuration Manager como site primário autónomo.  
+
+-   No **introdução** página do Assistente de configuração, selecionar a opção para instalar um site de administração central. Uma fase posterior da configuração, irá escolher uma opção para expandir um site primário autónomo existente.  
+
+-   Quando configura o **seleção de idioma do cliente** página para o novo site de administração central, tem de selecionar os mesmos idiomas de cliente que estão configurados para o site primário autónomo que está a expandir.  
+
+-   No **instalação de Site** página, selecione a opção para expandir o site primário autónomo.  
+
+Para expandir um site primário autónomo, consulte o [pré-requisitos para expandir um site](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#bkmk_expand)e, em seguida, utilize o procedimento  *[para instalar um site de administração central ou primário](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_installpri)*, anteriormente neste artigo.
 
 
-1.  W konsoli programu Configuration Manager, przejdź do **administracji** > **konfiguracja lokacji** > **witryny**. Wybierz lokację, która będzie nadrzędną lokacją główną nowej lokacji dodatkowej.  
+## <a name="bkmk_secondary"></a>Instalar um site secundário
+ Utilize a consola do Configuration Manager para instalar um site secundário.  
 
-2.  Wybierz **Utwórz lokację dodatkową** uruchomić **Kreator tworzenia lokacji dodatkowej**.  
+-   Se a consola que utiliza não está ligada ao site primário que será o site principal para o novo site secundário, o comando para instalar o site será replicado para o site primário correto.  
 
-3.  Na **przed rozpoczęciem** pozycję Potwierdź, że wymieniona lokacja główna jest lokacji, który ma być lokacją nadrzędną nowej lokacji dodatkowej. Następnie wybierz pozycję **dalej**.  
+-   Antes de iniciar a instalação do site, certifique-se de que a conta de utilizador tem as permissões de pré-requisitos e, se o computador que irá alojar o novo site secundário cumpre todos os pré-requisitos para utilização como um servidor de site secundário.  
 
-4.  Na **ogólne** strony, podaj następujące informacje:  
+-   Quando instala o site secundário, o Configuration Manager configura o novo site para utilizar as portas de comunicação de cliente que estão configuradas no site primário principal.  
 
-    -   **Kod lokacji**: Każdy kod lokacji w hierarchii musi być unikatowa i składającej się z trzech znaków alfanumerycznych (od A do Z) i od 0 do 9. Ponieważ kody lokacji są używane w nazwach folderów, nie należy używać systemu Windows, zastrzeżonych nazw lokacji, w tym:  
+### <a name="bkmk_installsecondary"></a>Para instalar um site secundário  
+
+
+1.  Na consola do Configuration Manager, navegue até à **administração** > **configuração do Site** > **Sites**. Selecione o site que será o site primário principal do novo site secundário.  
+
+2.  Escolha **Criar Site secundário** para iniciar o **criar Assistente de Site secundário**.  
+
+3.  No **antes de começar** página, confirme se o site primário apresentado é o site que pretende ser o elemento principal do novo site secundário. Em seguida, escolha **seguinte**.  
+
+4.  No **geral** página, especifique o seguinte:  
+
+    -   **Código do site**: Cada código do site numa hierarquia tem de ser exclusivo e composto por três dígitos alfanuméricos (da A z) e de 0 a 9. Uma vez que o código de site é utilizado em nomes de pastas, não utilize nomes reservados ao Windows para o site, incluindo:  
 
         -   AUX    
-        -   KON    
+        -   CON    
         -   NUL    
         -   PRN  
         -   SMS  
 
        > [!NOTE]  
-       > Instalator nie Sprawdź, czy należy określić kod lokacji jest już w użyciu lub jeśli jest nazwą zastrzeżoną.  
+       > A configuração não verifica se o código do site que especificou já está a ser utilizado ou se é um nome reservado.  
 
-    -   **Nazwa serwera lokacji**: Jest to nazwa FQDN serwera, na którym zostanie zainstalowana nowa lokacja dodatkowa.  
+    -   **Nome do servidor de site**: Este é o FQDN do servidor onde irá instalar o novo site secundário.  
 
-    -   **Nazwa witryny**: Każda lokacja wymaga podania przyjaznej nazwy, która ułatwia zidentyfikowanie lokacji.  
+    -   **Nome do site**: Cada site requer este nome amigável, que pode ajudar a identificar o site.  
 
-    -   **Folder instalacji**: To jest ścieżka folderu do instalacji programu Configuration Manager. Nie można zmienić lokalizacji po zainstalowaniu lokacji. Ścieżka nie może zawierać znaków Unicode ani końcowych spacji.  
+    -   **Pasta de instalação**: Este é o caminho da pasta para a instalação do Configuration Manager. Não é possível alterar a localização após a instalação do site. O caminho não pode conter carateres Unicode nem espaços à direita.  
 
     > [!IMPORTANT]  
-    > Po określeniu szczegółów na tej stronie możesz wybrać **Podsumowanie** Aby użyć wartości domyślnych dla pozostałych opcji lokacji dodatkowej i przejść bezpośrednio do **Podsumowanie** stronie kreatora.  
+    > Depois de especificar detalhes nesta página, pode escolher **resumo** para utilizar as predefinições para o resto das opções do site secundário e para ir diretamente para o **resumo** página do assistente.  
 
-    > -   Tej opcji należy używać tylko wtedy, gdy znasz domyślne ustawienia kreatora i są to ustawienia, którego chcesz użyć.  
-    > -   Grupy granic nie są skojarzone z punktem dystrybucji, korzystając z ustawień domyślnych. W związku z tym dopóki nie skonfigurujesz grup granic obejmujących serwer lokacji dodatkowej, klienci nie będą używać punktu dystrybucji zainstalowanego w tej lokacji dodatkowej jako lokalizacji źródła zawartości.  
+    > -   Utilize esta opção apenas quando estiver familiarizado com as predefinições neste assistente e, se forem as definições que pretende utilizar.  
+    > -   Grupos de limites não estão associados com o ponto de distribuição quando utiliza as predefinições. Por conseguinte, até configurar grupos de limites que incluem o servidor de site secundário, os clientes não utilizam o ponto de distribuição que está instalado neste site secundário como uma localização de origem de conteúdo.  
 
-5.  Na **plików źródłowych instalacji** wybierz, jak komputera lokacji dodatkowej ma uzyskać pliki źródłowe instalacji lokacji.  
+5.  No **ficheiros de origem de instalação** página, escolha como o computador do site secundário obtém os ficheiros de origem para instalar o site.  
 
-     Jeśli używasz plików źródłowych, które są przechowywane w sieci lub przechowywane na komputerze lokacji dodatkowej:  
+     Quando utiliza ficheiros de origem que estão armazenados na rede ou armazenados no computador do site secundário:  
 
-    -   Lokalizacji plików źródłowych musi znajdować się folder o nazwie **Redist** zawierającą wszystkie pliki, które zostały wcześniej pobrane przy użyciu narzędzia pobierania Instalatora.  
+    -   A localização do ficheiro de origem tem de incluir uma pasta denominada **Redist** que inclui todos os ficheiros que foram anteriormente transferidos utilizando o programa de configuração.  
 
-    -   Jeśli dowolny z plików z **Redist** nie są dostępne, Instalator nie będzie można zainstalować lokacji pomocniczej.  
+    -   Se qualquer um dos ficheiros da **Redist** não estão disponíveis, a configuração não irá instalar o site secundário.  
 
-    -   Konto komputera lokacji dodatkowej musi mieć **odczytu** uprawnień do źródłowego folderu i udziału plików.  
+    -   A conta de computador do site secundário tem de ter **leitura** permissões para a origem de pasta e partilha de ficheiros.  
 
-6.  Na **ustawienia programu SQL Server** Określ wersji programu SQL Server do użycia, a następnie skonfiguruj odpowiednie ustawienia.  
+6.  No **definições do SQL Server** página, especifique a versão do SQL Server para utilizar e, em seguida, configure as definições relacionadas.  
 
     > [!NOTE]  
-    > Instalator nie zweryfikować wprowadzonej na tej stronie do momentu rozpoczęcia instalacji. Przed kontynuowaniem należy sprawdzić te ustawienia.  
+    > A configuração não valida as informações que introduzir nesta página antes de iniciar a instalação. Antes de continuar, verifique estas definições.  
 
-     **Zainstaluj i skonfiguruj lokalną kopię programu SQL Express na komputerze lokacji dodatkowej**  
+     **Instalar e configurar uma cópia local do SQL Server Express no computador do site secundário**  
 
-    -   **Port usługi SQL Server**: Określ port usługi SQL Server dla programu SQL Server Express do użycia. Port usługi jest zazwyczaj skonfigurowany, by używał portu TCP 1433, ale można skonfigurować inny port.  
+    -   **Porta do SQL Server Service**: Especifique a porta do serviço do SQL Server para o SQL Server Express utilizar. A porta de serviço normalmente é configurada para utilizar a porta TCP 1433, mas pode configurar outra porta.  
 
-    -   **Port brokera usług serwera SQL**: Określ port usługi SQL Server Service Broker (SSB) programu SQL Server Express do użycia. Broker usług jest zazwyczaj skonfigurowany, aby używał portu TCP 4022, ale można skonfigurować inny port. Należy określić prawidłowy port, który żaden lokacji ani usługa nie używa i blokuje Zapora nie ogranicza.  
+    -   **Porta do SQL Server Broker**: Especifique a porta do SQL Server Service Broker (SSB) para o SQL Server Express utilizar. O Mediador de serviço normalmente é configurado para utilizar a porta TCP 4022, mas pode configurar uma porta diferente. Tem de especificar uma porta válida que nenhum outro site ou serviço está a utilizar e que estão a bloquear o sem restrições de firewall.  
 
     > [!IMPORTANT]  
-    > Program Configuration Manager instaluje program SQL Server Express, instaluje program SQL Server Express 2012 bez dodatku service pack:  
+    > Quando o Configuration Manager instala o SQL Server Express, instala o SQL Server Express 2012 sem service Pack:  
 
-    > -   Dla lokacji dodatkowej do obsługi po jej zainstalowaniu należy uaktualnić program SQL Server Express 2012 do [obsługiwanej wersji](/sccm/core/plan-design/configs/support-for-sql-server-versions#bkmk_SQLVersions).
-    > -   Ponadto jeśli nowa instalacja lokacji dodatkowej zakończy się niepowodzeniem zakończyć, ale najpierw ukończy instalację programu SQL Server Express 2012, musisz zaktualizować to wystąpienie programu SQL Server Express przed programu Configuration Manager mógł pomyślnie ponowić próbę instalacji lokacji dodatkowej.  
+    > -   Para o site secundário seja suportado, após a instalação, tem de atualizar o SQL Server Express 2012 para [uma versão suportada](/sccm/core/plan-design/configs/support-for-sql-server-versions#bkmk_SQLVersions).
+    > -   Além disso, se a nova instalação de site secundário não for concluída, mas a instalação do SQL Server Express 2012, tem de atualizar essa instância do SQL Server Express antes do Configuration Manager com êxito pode repetir a instalação de site secundário.  
 
-     **Użyj istniejącego wystąpienia programu SQL Server**  
+     **Utilizar uma instância existente do SQL Server**  
 
-    -   **Nazwa FQDN serwera SQL**: Przejrzyj nazwę FQDN komputera z programem SQL Server. Należy użyć lokalnego serwera z uruchomionym programem SQL Server do hostowania bazy danych lokacji dodatkowej, a nie można zmodyfikować to ustawienie.  
+    -   **FQDN do SQL Server**: Reveja o FQDN para o computador a executar o SQL Server. Tem de utilizar um servidor local a executar o SQL Server para alojar a base de dados do site secundário e não é possível modificar esta definição.  
 
-    -   **Wystąpienie programu SQL Server**: Określ wystąpienie programu SQL Server do użycia jako baza danych lokacji dodatkowej. Tę opcję, pozostaw pole puste, aby użyć wystąpienia domyślnego.  
+    -   **Instância do SQL Server**: Especifique a instância do SQL Server para utilizar como a base de dados do site secundário. Deixe esta opção em branco para utilizar a instância predefinida.  
 
-    -   **Nazwa bazy danych lokacji programu ConfigMgr**: Określ nazwę dla bazy danych lokacji dodatkowej.  
+    -   **Nome de base de dados do site do ConfigMgr**: Especifique o nome a utilizar para a base de dados do site secundário.  
 
-    -   **Port brokera usług serwera SQL**: Określ port usługi SQL Server Service Broker (SSB) programu SQL Server do użycia. Należy określić prawidłowy port, czy żaden lokacji ani usługa nie używa i czy Zapora nie ogranicza bloku.  
+    -   **Porta do SQL Server Broker**: Especifique a porta do SQL Server Service Broker (SSB) para o SQL Server utilizar. Tem de especificar uma porta válida que nenhum outro site ou serviço está a utilizar e que não existem restrições de firewall bloquear.  
 
     > [!TIP]  
-    > Zobacz [wersji programu SQL Server obsługiwane](../../../../core/plan-design/configs/support-for-sql-server-versions.md) listę wersji programu SQL Server obsługiwanych przez usługę System Center Configuration Manager.  
+    > Consulte [versões do SQL Server suportada](../../../../core/plan-design/configs/support-for-sql-server-versions.md) para obter uma lista das versões do SQL Server que suporta o System Center Configuration Manager.  
 
-7.  Na **punktu dystrybucji** Skonfiguruj ustawienia punktu dystrybucji, który zostanie zainstalowany na serwerze lokacji dodatkowej.  
+7.  No **ponto de distribuição** página, configure as definições do ponto de distribuição que irá ser instalado num servidor do site secundário.  
 
-     **Wymagane ustawienia:**  
+     **Definições necessárias:**  
 
-    -   **Określ sposób komunikacji urządzeń klienckich z punktem dystrybucji**: Wybierz wartość HTTP lub HTTPS.  
+    -   **Especifique a forma como os dispositivos cliente comunicam com o ponto de distribuição**: Escolha entre HTTP e HTTPS.  
 
-    -   **Utwórz certyfikat z podpisem własnym lub zaimportuj certyfikat klienta PKI**: Wybór między przy użyciu certyfikatu z podpisem własnym (który umożliwia także połączenia anonimowe z klientów programu Configuration Manager do biblioteki zawartości) lub zaimportowania certyfikatu z infrastruktury kluczy publicznych.  
+    -   **Criar um certificado autoassinado ou importar um certificado de cliente PKI**: Escolha entre utilizar um certificado autoassinado (que lhe permite também permitir ligações anónimas de clientes do Configuration Manager para a biblioteca de conteúdos) ou importar um certificado a partir da sua PKI.  
 
-         Certyfikat jest używany do uwierzytelniania punktu dystrybucji do punktu zarządzania przed wysłaniem przez dany punkt dystrybucji komunikatów o stanie.  
+         O certificado é utilizado para autenticar o ponto de distribuição para um ponto de gestão antes do ponto de distribuição envia mensagens de estado.  
 
-         Aby uzyskać informacje o wymaganiach dotyczących certyfikatów, zobacz [wymagania dotyczące certyfikatu PKI dla programu Configuration Manager](https://technet.microsoft.com/library/gg699362.aspx).  
+         Para obter informações sobre os requisitos de certificados, consulte [requisitos de certificado PKI para o Configuration Manager](https://technet.microsoft.com/library/gg699362.aspx).  
 
-    **Ustawienia opcjonalne:**  
+    **Definições opcionais:**  
 
-    -   **Instalowanie i konfigurowanie usług IIS, jeśli jest to wymagane przez program Configuration Manager**: Wybierz to ustawienie, aby umożliwić programowi Configuration Manager Zainstaluj i skonfiguruj usługi Internet Information Services (IIS) na serwerze, jeśli to nie jest jeszcze zainstalowana. Usługi IIS muszą być zainstalowane we wszystkich punktach dystrybucji.  
+    -   **Instalar e configurar o IIS se exigido pelo Configuration Manager**: Selecione esta definição para permitir que o Configuration Manager instale e configure serviços de informação Internet (IIS) no servidor se ainda não estiver instalado. IIS tem de ser instalado em todos os pontos de distribuição.  
 
         > [!NOTE]  
-        > Mimo że to ustawienie jest opcjonalne, usługi IIS muszą zainstalowane na serwerze, aby można było pomyślnie zainstalować punkt dystrybucji.  
+        > Embora esta definição é opcional, IIS tem de estar instalado no servidor para que um ponto de distribuição possa ser instalado com êxito.  
 
-    -   **Włącz i skonfiguruj usługę BranchCache dla tego punktu dystrybucji**.  
+    -   **Ativar e configurar o BranchCache para este ponto de distribuição**.  
 
-    -   **Opis elementu**. Jest to przyjazny opis punktu dystrybucji ułatwić jego zidentyfikowanie.  
+    -   **Descrição**. Esta é uma descrição amigável do ponto de distribuição para o ajudar a reconhecê-lo.  
 
-    -   **Włącz ten punkt dystrybucji dla wstępnie przygotowanej zawartości**.  
+    -   **Ativar conteúdo pré-configurado para este ponto de distribuição**.  
 
-8.  Na **ustawienia dysku** Określ ustawienia dysku dla punktu dystrybucji w lokacji dodatkowej.  
+8.  No **definições de unidade** página, especifique as definições de unidade para o ponto de distribuição do site secundário.  
 
-     Można skonfigurować maksymalnie dwóch dysków dla biblioteki zawartości oraz dwóch dysków dla udziału pakietu. Jednak programu Configuration Manager może używać dodatkowych dysków, gdy dwa pierwsze osiągną skonfigurowaną rezerwę wolnego miejsca. **Ustawienia dysku** strona jest, którym można skonfigurować priorytet dysków oraz ilość wolnego miejsca na każdym z dysków.  
+     Pode configurar até duas unidades de disco para a biblioteca de conteúdos e duas unidades de disco para a partilha de pacote. No entanto, o Configuration Manager possa utilizar unidades adicionais quando as duas primeiras atingem a reserva do espaço de unidade configurada. O **definições de unidade** página é onde configura a prioridade das unidades de disco e a quantidade de espaço livre que deverá permanecer disponível em cada unidade de disco.  
 
-    -   **Rezerwacja miejsca (MB) na dysku**: Wartość skonfigurowana w tym ustawieniu określa ilość wolnego miejsca na dysku przed programu Configuration Manager wybierze inny dysk, aby kontynuować proces kopiowania do tego dysku. Pliki zawartości mogą znajdować się na wielu dyskach.  
+    -   **(MB) de reserva do espaço na unidade**: O valor que configurar para esta definição determina a quantidade de espaço livre numa unidade antes do Configuration Manager escolher uma unidade diferente e continuar o processo de cópia para essa unidade. Ficheiros de conteúdo podem abranger várias unidades.  
 
-    -   **Lokalizacje zawartości**: Określ lokalizacje zawartości dla zawartości biblioteki i udziału pakietu. Menedżer konfiguracji kopiuje zawartość do lokalizacji głównej zawartości do momentu osiągnięcia ilości wolnego miejsca ustawieniu wartości określonej dla **Rezerwacja miejsca na dysku (MB)**.
+    -   **Localizações de conteúdo**: Especifique as localizações de conteúdos para a partilha de biblioteca e o pacote de conteúdos. O Configuration Manager copia os conteúdos para localização de conteúdos primária até a quantidade de espaço livre atinge o valor especificado para **reserva de espaço na unidade (MB)**.
 
-     Domyślnie lokalizacje zawartości są skonfigurowane **automatyczne**. Lokalizacją główną zawartości jest ustawiona na dysk o największej ilości wolnego miejsca podczas instalacji. Dodatkowej lokalizacja jest ustawiana na dysku, który ma najwięcej wolnego miejsca na dysku po dysku podstawowego. Gdy podstawowych i pomocniczych osiągną rezerwę wolnego miejsca, programu Configuration Manager wybierze inny dostępny dysk o największej ilości wolnego miejsca, aby kontynuować proces kopiowania.  
+     Por predefinição, as localizações de conteúdo estão definidas como **automática**. A localização de conteúdos primária está definida para a unidade de disco que tem mais espaço de disco no momento de instalação. A localização secundária é definida para a unidade de disco que tenha mais disco espaço livre após a unidade principal. Quando as unidades principais e secundárias atingem a reserva do espaço na unidade, o Configuration Manager seleciona uma outra unidade disponível com mais disco espaço livre e continua o processo de cópia.  
 
-9. Na **weryfikacji zawartości** Określ, czy można zweryfikować integralność plików zawartości w punkcie dystrybucji.  
+9. No **validação de conteúdo** página, especifique se pretende validar a integridade dos ficheiros de conteúdo no ponto de distribuição.  
 
-    -   Po włączeniu weryfikacji zawartości zgodnie z harmonogramem, programu Configuration Manager zainicjuje proces w zaplanowanym czasie, a cała zawartość w punkcie dystrybucji zostanie poddana weryfikacji.  
+    -   Quando ativar a validação de conteúdo com base numa agenda, o Configuration Manager iniciará o processo à hora agendada e todo o conteúdo no ponto de distribuição é verificado.  
 
-    -   Można również skonfigurować **priorytet weryfikacji zawartości**.  
+    -   Também pode configurar o **prioridade de validação de conteúdo**.  
 
-    -   Aby wyświetlić wyniki procesu weryfikacji zawartości, w konsoli programu Configuration Manager, przejdź do **monitorowanie** > **stan dystrybucji** > **stan zawartości**. Jest wyświetlana zawartość poszczególnych typów pakietu (na przykład aplikacja, pakiet aktualizacji oprogramowania i obraz rozruchowy).  
+    -   Para ver os resultados do processo de validação de conteúdo, na consola do Configuration Manager, navegue até à **monitorização** > **estado da distribuição** > **estado do conteúdo**. O conteúdo para cada tipo de pacote (por exemplo, aplicação, pacote de atualização de Software e imagem de arranque) é apresentado.  
 
-10. Na **grup granic** możesz zarządzać grupami granic, przypisane do tego punktu dystrybucji:  
+10. No **grupos de limites** página, gira os grupos de limites que este ponto de distribuição está atribuído a:  
 
-    -   Podczas wdrażania zawartości klienci muszą być w grupie granic skojarzonej z punktem dystrybucji, aby używać go jako źródłowej lokalizacji zawartości.  
+    -   Durante a implementação de conteúdos, os clientes tem de ser um grupo de limites que estão associados com o ponto de distribuição para utilizá-la como uma localização de origem para o conteúdo.  
 
-    -   Możesz wybrać **Zezwalaj na rezerwową lokalizację źródła zawartości** opcję, aby umożliwić klientom spoza grup granic na rezerwowe używanie punktu dystrybucji jako lokalizacji źródłowej zawartości jeśli preferowane punkty dystrybucji nie są dostępne.  
+    -   Pode selecionar o **permitir a localização de origem de contingência para conteúdo** opção para permitir que os clientes fora destes grupos de limites recorram à contingência e utilizem o ponto de distribuição como localização de origem para o conteúdo quando não existem pontos de distribuição preferenciais disponíveis.  
 
-     Aby uzyskać informacje na temat preferowanych punktów dystrybucji, zobacz [podstawowe pojęcia związane z zarządzaniem zawartością](../../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md) tematu.  
+     Para obter informações sobre pontos de distribuição preferenciais, consulte o [conceitos fundamentais da gestão de conteúdos](../../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md) tópico.  
 
-11. Na **Podsumowanie** strony, sprawdź ustawienia, a następnie wybierz **dalej** do instalacji lokacji dodatkowej. Gdy Kreator wyświetli **zakończenia** strony, możesz zamknąć kreatora. Instalacja lokacji dodatkowej będzie kontynuowana w tle.  
+11. No **resumo** página, verifique as definições e, em seguida, escolha **seguinte** para instalar o site secundário. Quando o assistente apresentar a **conclusão** página, pode fechar o assistente. A instalação do site secundário continua em segundo plano.  
 
 
-### <a name="bkmk_verify"></a>Aby sprawdzić stan instalacji lokacji dodatkowej  
+### <a name="bkmk_verify"></a>Para verificar o estado de instalação de site secundário  
 
-1.  W konsoli programu Configuration Manager, przejdź do **administracji** > **konfiguracja lokacji** > **witryny**.  
+1.  Na consola do Configuration Manager, navegue até à **administração** > **configuração do Site** > **Sites**.  
 
-2.  Wybierz serwer lokacji dodatkowej, który instaluje, a następnie wybierz pozycję **Pokaż stan instalacji**.  
+2.  Selecione o servidor de site secundário que estiver a instalar e, em seguida, escolha **Mostrar estado da instalação**.  
 
     > [!TIP]  
-    > Po zainstalowaniu więcej niż jednej lokacji dodatkowej jednocześnie narzędzie sprawdzania wymagań wstępnych jest uruchamiana dla jednej lokacji w czasie i musi zakończyć lokacji, przed wykonaniem Sprawdź dalej lokacji.  
+    > Quando instalar mais do que um site secundário de uma vez, o Verificador de pré-requisitos é executada relativamente a um único site um momento e tem de concluir um site antes de iniciar a verificação do site seguinte.  

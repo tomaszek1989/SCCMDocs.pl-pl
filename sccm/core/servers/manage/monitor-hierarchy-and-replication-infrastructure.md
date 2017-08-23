@@ -1,6 +1,6 @@
 ---
-title: Monitorowanie replikacji | Dokumentacja firmy Microsoft
-description: "Dowiedz się, jak monitorować infrastrukturę i operacje w programie Configuration Manager za pomocą obszaru roboczego monitorowania w konsoli."
+title: "Monitorizar a replicação | Microsoft Docs"
+description: "Saiba como monitorizar a infraestrutura e operações no Configuration Manager utilizando a área de trabalho monitorização na consola do."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,226 +18,226 @@ manager: angrobe
 ms.openlocfilehash: 132803a1aa9aad5c5462686bd656688418e47d07
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pl-PL
+ms.contentlocale: pt-PT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="monitor-hierarchy-and-replication-infrastructure-in-system-center-configuration-manager"></a>Monitorowanie infrastruktury hierarchii i replikacji w programie System Center Configuration Manager
+# <a name="monitor-hierarchy-and-replication-infrastructure-in-system-center-configuration-manager"></a>Monitorizar a infraestrutura de hierarquia e replicação no System Center Configuration Manager
 
-*Dotyczy: Program System Center Configuration Manager (Current Branch)*
+*Aplica-se a: O System Center Configuration Manager (ramo atual)*
 
-Aby monitorować infrastrukturę i operacje w programie System Center Configuration Manager, należy użyć **monitorowanie** obszaru roboczego w konsoli programu Configuration Manager.  
-
-> [!NOTE]  
->  Wyjątkiem od tej lokalizacji jest obszar Migracja, który monitoruje się bezpośrednio w węźle **Migracja** obszaru roboczego **Administracja** . Aby uzyskać więcej informacji, zobacz [Operacje migracji do programu System Center Configuration Manager](../../../core/migration/operations-for-migration.md).  
-
- Oprócz monitorowania przy użyciu konsoli programu Configuration Manager, możesz użyć raportów programu Configuration Manager lub Wyświetl pliki dziennika programu Configuration Manager składników programu Configuration Manager. Aby uzyskać informacje na temat raportów, zobacz [Raportowanie w programie System Center Configuration Manager](../../../core/servers/manage/reporting.md). Aby uzyskać informacje na temat plików dziennika, zobacz [Pliki dziennika w programie System Center Configuration Manager](../../../core/plan-design/hierarchy/log-files.md).  
-
- Podczas monitorowania lokacji należy znaleźć oznaki problemów, które wymagają podjęcia odpowiednich akcji. Na przykład:  
-
--   zaległość plików na serwerach lokacji i w systemach lokacji;  
-
--   komunikaty o stanie wskazujące błąd lub problem;  
-
--   nieprawidłowa komunikacja międzylokacyjna;  
-
--   komunikaty o błędach i komunikaty ostrzegawcze w dzienniku zdarzeń systemowych na serwerach;  
-
--   komunikaty o błędach i komunikaty ostrzegawcze w dzienniku błędów programu Microsoft SQL Server;  
-
--   lokacje lub klienci, którzy nie zgłosili się przez długi czas;  
-
--   wolna odpowiedź z bazy danych programu SQL Server;  
-
--   oznaki awarii sprzętowej.  
-
-Aby ograniczyć ryzyko awarii lokacji, gdy w ramach zadań monitorowania zostaną wykryte jakiekolwiek oznaki problemów, należy jak najszybciej określić źródło problemu i usunąć go.  
-
-
-
-##  <a name="BKMK_MonintorMgmtTasks"></a> Monitorowanie typowych zadań zarządzania programu Configuration Manager  
- Configuration Manager udostępnia wbudowaną funkcję monitorowania z poziomu konsoli programu Configuration Manager. Można monitorować różne zadania, w tym dotyczące aktualizacji oprogramowania, zarządzania energią i wdrażania zawartości w hierarchii.  
-
- Aby ułatwić sobie monitorowanie typowych zadań programu Configuration Manager, skorzystaj z poniższych informacji:  
-
- **Alerty**  
-   Zobacz [Monitorowanie alertów](../../../core/servers/manage/use-alerts-and-the-status-system.md#BKMK_MonitorAlerts) w temacie [Korzystanie z alertów i systemu stanu w programie System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
-
- **Ustawienia zgodności**  
-   Zobacz [Jak monitorować ustawienia zgodności w programie System Center Configuration Manager](../../../compliance/deploy-use/monitor-compliance-settings.md).  
-
- **Wdrożenie zawartości**  
-   Aby uzyskać ogólne informacje o monitorowaniu zawartości, zobacz [Zarządzanie zawartością i infrastrukturą zawartości programu System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
-
-Informacje o monitorowaniu określonych typów wdrażania zawartości znajdują się w następujących sekcjach:
--   Aby uzyskać informacje o monitorowaniu aplikacji, zobacz [Monitorowanie aplikacji za pomocą programu System Center Configuration Manager](/sccm/apps/deploy-use/monitor-applications-from-the-console).  
-
--   Aby monitorować pakiety i programy, zapoznaj się z sekcją Jak zarządzać pakietami i programami w temacie [Pakiety i programy w programie System Center Configuration Manager](../../../apps/deploy-use/packages-and-programs.md).  
-
-**Program Program Endpoint Protection**  
-   Zobacz [Jak monitorować program Endpoint Protection w programie System Center Configuration Manager](../../../protect/deploy-use/monitor-endpoint-protection.md).  
-
-**Monitorowanie zarządzania energią**  
- Zobacz [Jak monitorować i planować zarządzanie energią w programie System Center Configuration Manager](../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
-
-**Monitorowanie zliczania oprogramowania**  
-Zobacz [Monitorowanie użycia aplikacji za pomocą funkcji pomiaru użytkowania oprogramowania w programie System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
-
-**Monitorowanie aktualizacji oprogramowania**  
- Zobacz [monitorowanie aktualizacji oprogramowania w programie System Center Configuration Manager](../../../sum/deploy-use/monitor-software-updates.md).  
-
-
-##  <a name="BKMK_MonitorInfrastructure"></a> Monitorowanie infrastruktury hierarchii w programie Configuration Manager  
-Configuration Manager udostępnia kilka metod monitorowania stanu oraz operacji w hierarchii. Istnieje możliwość sprawdzenia stanu systemu lokacji w całej hierarchii, monitorowania replikacji międzylokacyjnej z poziomu hierarchii lokacji lub widoku geograficznego, monitorowania linków replikacji bazy danych między lokacjami oraz korygowania problemów dotyczących replikacji przy użyciu narzędzia Analizator linków replikacji.  
-
-###  <a name="BKMK_SH_Node"></a> Informacje o węźle Hierarchia lokacji  
-**Hierarchia lokacji** węzła **monitorowanie** obszar roboczy zawiera omówienie programu Menedżera konfiguracji hierarchii i łączy międzylokacyjnych. Dostępne są dwa widoki:  
-
--   **Diagram hierarchii**: Ten widok przedstawia hierarchię jako mapę topologii uproszczoną tak, aby pokazywała tylko najważniejsze informacje.  
-
--   **Widok geograficzny**: Wyświetla lokacje na mapie geograficznej, przedstawiając konfigurowane lokalizacje lokacji.  
-
-W węźle **Hierarchia lokacji** można monitorować kondycję poszczególnych lokacji oraz linki replikacji międzylokacyjnej i ich związek z czynnikami zewnętrznymi, na przykład z lokalizacją geograficzną.  
-
-Ponieważ stan lokacji i między lokacjami należy połączyć stan replikacji jako dane lokacji, a nie danych globalnych, podczas łączenia z konsolą programu Configuration Manager z podrzędnej lokacji głównej, nie można wyświetlić stanu lokacji ani łącza do innych lokacji głównych lub do nich podrzędnych lokacji dodatkowych. Na przykład w hierarchii wielu lokacji głównych, gdy konsola programu Configuration Manager łączy się z lokacją główną, można wyświetlić stan podrzędnych lokacji dodatkowych, lokacji głównej i centralnej lokacji administracyjnej, ale nie można wyświetlić stan innych węzłów hierarchii należących do centralnej lokacji administracyjnej.  
-
- Aby kontrolować sposób wyświetlania obiektów renderowania przez hierarchię lokacji, użyj polecenia **Skonfiguruj ustawienia** . Konfiguracje **hierarchia lokacji** węzła wprowadzone po podłączeniu konsoli programu Configuration Manager do jednej lokacji są replikowane do innych lokacji.  
-
-#### <a name="hierarchy-diagram"></a>Diagram hierarchii  
- Lokacje są wyświetlane na diagramie hierarchicznym w formie mapy topologii. W tym widoku można wybrać lokację i wyświetlić jej podsumowanie komunikatów o stanie, przechodzić do szczegółów w celu wyświetlenia komunikatów o stanie i otworzyć okno dialogowe **Właściwości** poszczególnych lokacji.  
-
- Ponadto można Zatrzymaj wskaźnik myszy w lokacji lub łącza replikacji między lokacjami, aby wyświetlić stan wysokiego poziomu dla danego obiektu. Stan łącza replikacji nie jest replikowany globalnie, w hierarchii z wieloma lokacjami głównymi należy połączyć konsoli programu Configuration Manager do witryny Administracja centralna w celu wyświetlenia szczegółów łączy replikacji między wszystkimi lokacjami.  
-
- Diagram hierarchiczny można modyfikować przy użyciu następujących opcji:  
-
--   **Grupy**: Można skonfigurować liczbę lokacji głównych i dodatkowych wyzwalających zmianę sposobu wyświetlania diagramu hierarchicznego polegającą na łączeniu lokacji w jeden obiekt. Gdy lokacje są połączone w jeden obiekt, zobacz całkowita liczba lokacji oraz zestawienie wysokiego poziomu komunikatów o stanie i stanu lokacji. Konfiguracje grup nie wpływają na widok geograficzny.  
-
--   **Ulubione Lokacje**: Umożliwia określenie poszczególnych lokacji jako ulubionych lokacji. Ulubiona lokacja jest oznaczona na diagramie hierarchicznym ikoną gwiazdki. Ulubione lokacje nie są połączone z innymi lokacjami w przypadku używania grup i są zawsze wyświetlane pojedynczo.  
-
-#### <a name="geographical-view"></a>Widok geograficzny  
- Widok geograficzny wyświetla lokalizacje poszczególnych lokacji na mapie geograficznej. Wyświetlane są tylko lokacje ze skonfigurowaną lokalizacją. Wybranie lokacji w tym widoku powoduje wyświetlenie łączy replikacji z lokacją nadrzędną lub podrzędną. W przeciwieństwie do widoku diagramu hierarchicznego w tym widoku nie można wyświetlać szczegółów dotyczących komunikatu o stanie lokacji lub łącza replikacji.  
+Para monitorizar a infraestrutura e operações no System Center Configuration Manager, utilize o **monitorização** área de trabalho na consola do Configuration Manager.  
 
 > [!NOTE]  
->  Aby użyć widoku geograficznego, komputer Konsola łączy program Configuration Manager wymaga programu Internet Explorer zainstalowany i mieć dostęp do map Bing przy użyciu protokołu HTTP.  
+>  A exceção a esta localização é a Migração, que é monitorizada diretamente no nó **Migração** da área de trabalho **Administração** . Para obter mais informações, veja [Operações de migração para o System Center Configuration Manager](../../../core/migration/operations-for-migration.md).  
 
-Widok geograficzny można modyfikować przy użyciu poniższych opcji.  
+ Além de utilizar a consola do Configuration Manager para monitorização, pode utilizar os relatórios do Configuration Manager ou ver ficheiros de registo do Configuration Manager para componentes do Configuration Manager. Para obter informações sobre relatórios, veja [Os relatórios do System Center Configuration Manager](../../../core/servers/manage/reporting.md). Para obter informações sobre ficheiros de registo, veja [Ficheiros de registo no System Center Configuration Manager](../../../core/plan-design/hierarchy/log-files.md).  
 
--   **Lokalizacja lokacji**: Można określić lokalizacji geograficznych poszczególnych lokacji. Jako lokalizację można określić ulicę, nazwę miejsca (na przykład nazwę miejscowości) lub współrzędne geograficzne. Aby wybrać na przykład współrzędne geograficzne miejscowości Redmond w stanie Waszyngton, jako lokalizację lokacji należy określić wartość **N 47 40 26,3572 W 122 7 17,4432** . Wartość współrzędnych geograficznych nie musi zawierać symboli stopni, minut i sekund. Configuration Manager używa usługi mapy Bing Wyświetla lokalizację w widoku geograficznym. Pozwala to wyświetlić hierarchię w odniesieniu do lokalizacji geograficznej, a tym samym zapoznać się z regionalnymi problemami, które mogą mieć wpływ na określone lokacje lub replikację międzylokacyjną.  
+ Quando monitorizar sites, procure sinais que indiquem problemas que exijam uma ação da sua parte. Por exemplo:  
 
-     Podczas wybierania lokalizacji można wyszukać określoną lokację w hierarchii przy użyciu pola **Lokalizacja** . Po wybraniu lokacji wprowadź w kolumnie **Lokalizacja** nazwę miejscowości lub ulicę. Configuration Manager używa usługi mapy Bing można rozpoznać lokalizacji.  
+-   Uma acumulação de ficheiros em servidores de site e sistemas de sites.  
 
-###  <a name="BKMK_MonitorRepLinksAndStatuss"></a> Monitorowanie linków replikacji bazy danych i stanu replikacji  
- Oprócz szczegółów wysokiego poziomu, które są dostępne w węźle **Hierarchia lokacji** w obszarze roboczym **Monitorowanie** , możesz także monitorować szczegóły replikacji bazy danych, gdy używasz węzła **Replikacja bazy danych** w obszarze roboczym **Monitorowanie** . Z **replikacji bazy danych** można monitorować stan łączy replikacji między lokacjami oraz szczegóły dotyczące inicjalizacji i szczegóły replikacji dla grup replikacji w lokacji, do którego jest podłączony konsoli programu Configuration Manager.  
+-   Mensagens de estado que indiquem um erro ou um problema.  
+
+-   Falha de comunicações intra-site.  
+
+-   Mensagens de erro e aviso no registo de eventos do sistema dos servidores.  
+
+-   Mensagens de erro e aviso no registo de erros do Microsoft SQL Server.  
+
+-   Sites ou clientes que não comuniquem há muito tempo.  
+
+-   Resposta lenta da base de dados do SQL Server.  
+
+-   Sinais de falha de hardware.  
+
+Para minimizar o risco de falha de um site, se as tarefas de monitorização revelarem sinais de problemas, investigue a origem do problema e corrija-o logo que seja possível.  
+
+
+
+##  <a name="BKMK_MonintorMgmtTasks"></a> Monitorizar tarefas de gestão comuns do Configuration Manager  
+ Configuration Manager fornece monitorização incorporada a partir da consola do Configuration Manager. É possível monitorizar muitas tarefas, incluindo as relacionadas com atualizações de software, gestão de energia e a implementação de conteúdo na hierarquia.  
+
+ Utilize as seguintes informações para ajudar a monitorizar tarefas comuns do Configuration Manager:  
+
+ **Alertas**  
+   Veja [Monitorizar alertas](../../../core/servers/manage/use-alerts-and-the-status-system.md#BKMK_MonitorAlerts) em [Utilizar alertas e o sistema de estado para o System Center Configuration Manager](../../../core/servers/manage/use-alerts-and-the-status-system.md).  
+
+ **Definições de Compatibilidade**  
+   Veja [Como monitorizar as definições de compatibilidade no System Center Configuration Manager](../../../compliance/deploy-use/monitor-compliance-settings.md).  
+
+ **Implementação de Conteúdos**  
+   Para obter informações gerais sobre a monitorização de conteúdo, veja [Gerir conteúdo e a infraestrutura de conteúdo do System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+
+Para obter informações sobre a monitorização de tipos de implementação de conteúdos específicos:
+-   Para monitorizar Aplicações, veja [Monitorizar aplicações com o System Center Configuration Manager](/sccm/apps/deploy-use/monitor-applications-from-the-console).  
+
+-   Para monitorizar Pacotes e Programas, veja Como gerir pacotes e programas   em [Pacotes e programas no System Center Configuration Manager](../../../apps/deploy-use/packages-and-programs.md).  
+
+**Endpoint Protection**  
+   Veja [Como monitorizar o Endpoint Protection no System Center Configuration Manager](../../../protect/deploy-use/monitor-endpoint-protection.md).  
+
+**Monitorizar a Gestão de Energia**  
+ Veja [Como monitorizar e planear a gestão de energia no System Center Configuration Manager](../../../core/clients/manage/power/monitor-and-plan-for-power-management.md).  
+
+**Monitorizar a Medição de Software**  
+Veja [Monitorizar a utilização da aplicação com a medição de software no System Center Configuration Manager](../../../apps/deploy-use/monitor-app-usage-with-software-metering.md).  
+
+**Monitorizar Atualizações de Software**  
+ Consulte [monitorizar atualizações de software no System Center Configuration Manager](../../../sum/deploy-use/monitor-software-updates.md).  
+
+
+##  <a name="BKMK_MonitorInfrastructure"></a> Monitorizar a infraestrutura de hierarquia do Configuration Manager  
+Configuration Manager fornece vários métodos para monitorizar o estado e as operações da hierarquia. Pode verificar o estado do sistema de sites de toda a hierarquia, monitorizar a replicação entre sites a partir de uma hierarquia de sites ou uma vista geográfica, monitorizar ligações de replicação entre sites para replicação de bases de dados e utilizar a ferramenta Analisador de Ligações de Replicação para remediar problemas de replicação.  
+
+###  <a name="BKMK_SH_Node"></a> Acerca do nó Hierarquia do Site  
+O **hierarquia do Site** o nó do **monitorização** área de trabalho fornece uma descrição geral do seu Configuration Manager ligações de hierarquia e entre sites. Pode utilizar duas vistas:  
+
+-   **Diagrama de hierarquia**: Esta vista apresenta a hierarquia como um mapa de topologia que foi simplificado para mostrar apenas as informações essenciais.  
+
+-   **Vista geográfica**: Esta vista apresenta os sites num mapa geográfico que mostra as localizações do site que configurou.  
+
+Utilize o nó **Hierarquia do Site** para monitorizar o estado de funcionamento de cada site e as ligações de replicação entre sites, bem como a relação dos mesmos com fatores externos, como uma localização geográfica.  
+
+Porque o estado do site e entre sites associar replicar de estado como dados do site e os dados não globais, quando se liga a consola do Configuration Manager para um site primário subordinado, não é possível ver o estado de site ou da ligação de outros sites primários ou dos seus sites secundários subordinados. Por exemplo, numa hierarquia com múltiplos sites primários, quando a consola do Configuration Manager se liga a um site primário, pode ver o estado dos sites secundários subordinados, o site primário e site de administração central, mas não é possível ver o estado de outros nós da hierarquia abaixo do site de administração central.  
+
+ Utilize o comando **Configurar Definições** para controlar a forma como o ecrã da hierarquia de sites é apresentado. Configurações para a **hierarquia do Site** efetuar quando a consola do Configuration Manager está ligada a um site no nó são replicados para todos os outros sites.  
+
+#### <a name="hierarchy-diagram"></a>Diagrama de Hierarquia  
+ O diagrama da hierarquia apresenta os sites num mapa de topologia. Nesta vista, pode selecionar um site e ver um resumo das mensagens de estado desse site, explorar para ver mensagens de estado e aceder à caixa de diálogo **Propriedades** dos sites.  
+
+ Além disso, pode colocar em pausa o ponteiro do rato numa ligação de site ou a replicação entre sites para ver o estado de alto nível para esse objeto. Porque o estado da ligação de replicação não replicado globalmente, numa hierarquia com múltiplos sites primários, tem de ligar a consola do Configuration Manager para o site de administração central para visualizar os detalhes de ligação de replicação entre todos os sites.  
+
+ As seguintes opções modificam o diagrama da hierarquia:  
+
+-   **Grupos**: Pode configurar o número de sites primários e sites secundários que acionam uma alteração na apresentação do diagrama da hierarquia que combine os sites num único objeto. Quando os sites são combinados num único objeto, pode ver o número total de sites e um rollup de alto nível de mensagens de estado e estado do site. As configurações de grupos não afetam a vista geográfica.  
+
+-   **Sites Favoritos**: Pode especificar sites individuais como um site favorito. Um ícone de estrela identifica um site favorito no diagrama da hierarquia. Os sites favoritos não são combinados com outros sites quando utiliza grupos e são sempre apresentados individualmente.  
+
+#### <a name="geographical-view"></a>Vista Geográfica  
+ A vista geográfica apresenta a localização de cada site num mapa geográfico. Só são apresentados os sites que configurar com uma localização. Quando seleciona um site nesta vista, são apresentadas as ligações de replicação a sites principais ou subordinados. Ao contrário da vista de diagrama da hierarquia, não pode visualizar detalhes de mensagens de estado ou de ligações de replicação do site nesta vista.  
+
+> [!NOTE]  
+>  Para utilizar a vista geográfica, o computador para que o se liga a consola do Configuration Manager tem de ter o Internet Explorer instalado e de conseguir aceder ao mapas Bing utilizando o protocolo HTTP.  
+
+A opção seguinte modifica a vista geográfica.  
+
+-   **Localização do site**: Pode especificar uma localização geográfica para cada site. Pode especificar a localização como uma morada, o nome de um local, o nome de uma cidade por exemplo, ou pelas coordenadas de latitude e longitude. Por exemplo, para utilizar a latitude e longitude de Redmond, Washington, especificaria **N 47 40 26.3572 W 122 7 17.4432** como a localização do site. Não precisa de especificar os símbolos para os graus, minutos ou segundos da longitude e da latitude. O Configuration Manager utiliza o mapas Bing para apresentar a localização na vista geográfica. Isto oferece a opção de visualizar a hierarquia em relação a uma localização geográfica, o que pode fornecer informações aprofundadas sobre problemas regionais que possam afetar sites específicos ou a replicação entre sites.  
+
+     Quando especificar uma localização, pode utilizar a caixa **Localização** para procurar um site específico na hierarquia. Com o site selecionado, introduza a localização como o nome de uma cidade ou morada na coluna **Localização** . O Configuration Manager utiliza o mapas Bing para resolver a localização.  
+
+###  <a name="BKMK_MonitorRepLinksAndStatuss"></a> Como monitorizar ligações de replicação de base de dados e o estado de replicação  
+ Além dos detalhes de alto nível acessíveis a partir do nó **Hierarquia do Site** na área de trabalho **Monitorização** . Também pode monitorizar os detalhes de replicação de base de dados quando utiliza o nó **Replicação de Base de Dados** na área de trabalho **Monitorização** . Do **replicação de base de dados** pode monitorizar o estado das ligações de replicação entre sites e os detalhes de inicialização e os detalhes de replicação dos grupos de replicação no site ao qual está ligada a consola do Configuration Manager.  
 
 > [!TIP]  
->  Węzeł **Replikacja bazy danych** jest również dostępny w węźle **Konfiguracja hierarchii** w obszarze roboczym **Administracja** , ale z poziomu tej lokalizacji nie można zobaczyć stanu replikacji w ramach linków replikacji bazy danych.  
+>  Embora também seja apresentado um nó **Replicação de Base de Dados** no nó **Configuração da Hierarquia** da área de trabalho **Administração** , não pode ver o estado da replicação de ligações de replicação de base de dados a partir dessa localização.  
 
-####  <a name="BKMK_MonitorReplicationLinks"></a> Stan linku replikacji  
-Replikacja bazy danych między lokacjami obejmuje kilka zestawów informacji nazywanych grupami replikacji. Replikacja każdej z tych grup odbywa się przy użyciu różnych priorytetów replikacji. Domyślnie nie można modyfikować danych zawartych w grupie replikacji ani częstotliwości replikacji.  
+####  <a name="BKMK_MonitorReplicationLinks"></a> Estado da ligação de replicação  
+A replicação de base de dados entre sites envolve a replicação de vários conjuntos de informações, denominados grupos de replicação. Cada grupo de replicação é replicado com diferentes prioridades de replicação. Por predefinição, não é possível modificar os dados contidos num grupo de replicação e a frequência da replicação.  
 
- Gdy łącze replikacji jest aktywne i nie jest w stanie wskazującym uszkodzenie lub nieprawidłowe działanie, replikacja wszystkich grup odbywa się w ustalonym czasie. Jeżeli replikacja w co najmniej jednej grupie replikacji nie powiedzie się w oczekiwanym czasie, zostanie wskazany stan nieprawidłowego działania łącza. Takie linki mogą nadal działać, ale należy je monitorować w celu sprawdzenia, czy powróciły do aktywnego stanu, lub zbadać je, aby mieć pewność, że nieprawidłowe działanie ani błędy replikacji nie wystąpią ponownie.  
+ Quando uma ligação de replicação está ativa e não tem um estado de falha ou degradação, todos os grupos de replicação são replicados atempadamente. Quando a replicação de um ou mais grupos de replicação não é concluída no período de tempo previsto, a ligação é apresentada como degradada. As ligações degradadas podem funcionar, mas deve monitorizá-las para se certificar de que devolvem um estado ativo; caso contrário, investigue-as para assegurar que não ocorre degradação ou falhas de replicação adicionais.  
 
- Dla każdego linku replikacji i danej grupy replikacji możesz określić liczbę ponownych prób replikacji zakończonych niepowodzeniem, po osiągnięciu której dla linku zostanie ustawiony stan obniżonej sprawności lub uszkodzenia. Stan nieprawidłowego działania lub uszkodzenia linku zostanie wskazany nawet w przypadku, gdy replikacja zakończy się powodzeniem we wszystkich grupach z wyjątkiem jednej, która nie może przeprowadzić replikacji w ramach określonej liczby prób. Informacje o progach replikacji znajdują się w sekcji [Progi replikacji bazy danych](../../../core/servers/manage/data-transfers-between-sites.md#BKMK_DBRepThresholds) w temacie [Transfer danych między lokacjami w programie System Center Configuration Manager](../../../core/servers/manage/data-transfers-between-sites.md).  
+ Para cada ligação de replicação, pode especificar o número de vezes que um grupo de replicação não replicado com êxito tenta a replicação novamente antes de o estado da ligação ser definido como degradado ou falhado. Mesmo que apenas um grupo de replicação não seja replicado com êxito, o estado da ligação é definido como degradado ou falhado porque um grupo de replicação não concluiu a replicação no número de tentativas especificado. Para obter informações sobre os limiares de replicação, veja a secção [Limiares de Replicação de Base de Dados](../../../core/servers/manage/data-transfers-between-sites.md#BKMK_DBRepThresholds) em [Transferência de dados entre sites no System Center Configuration Manager](../../../core/servers/manage/data-transfers-between-sites.md).  
 
- Aby poznać stany linków replikacji wskazujące konieczność przeprowadzenia dalszych badań, zapoznaj się z informacjami w poniższej tabeli.  
+ Utilize as informações da tabela que se segue para compreender o estado de ligações de replicação que pode exigir investigação adicional.  
 
-|Opis łącza|Więcej informacji|  
+|Descrição da ligação|Mais informações|  
 |----------------------|----------------------|  
-|**Łącze jest aktywne**|Nie wykryto żadnych problemów i komunikacja za pośrednictwem łącza odbywa się prawidłowo.|  
-|**Łącze działa nieprawidłowo**|Replikacja działa, ale w co najmniej jednym obiekcie lub grupie replikacja jest opóźniona. Łącza w tym stanie należy monitorować i zapoznać się z informacjami z obu lokacji objętych danych łączem, które mogą wskazywać jego uszkodzenie.<br /><br /> Nieprawidłowe działanie łącza może również zostać wskazane, gdy lokacja odbierająca replikowane dane nie może szybko przekazać ich do bazy danych. Taka sytuacja może wystąpić w przypadku replikacji dużych ilości danych. Na przykład podczas wdrażania aktualizacji oprogramowania na dużej liczbie komputerów przetworzenie replikowanych danych przez lokację nadrzędną objętą łączem może zająć dużo czasu. Zwłoka podczas przetwarzania w lokacji nadrzędnej może spowodować wskazywanie stanu nieprawidłowego działania łącza dopóki lokacja nadrzędna nie przetworzy pomyślnie zaległych danych.|  
-|**Łącze jest uszkodzone**|Replikacja nie działa. Istnieje prawdopodobieństwo, że łącze replikacji odzyska sprawność bez podejmowania dalszych akcji. Łącze można zbadać i skorygować odbywającą się za jego pośrednictwem replikację przy użyciu Analizatora łącza replikacji.<br /><br /> Ten stan może również oznaczać problem związany z siecią fizyczną między lokacjami nadrzędną i podrzędną w ramach łącza replikacji.|  
+|**A ligação está ativa**|Não foram detetados problemas e existe comunicação através da ligação.|  
+|**A ligação está degradada**|A replicação funciona, mas pelo menos um objeto ou grupo de replicação está atrasado. Monitorize as ligações que estejam neste estado e procure nas informações de ambos os sites da ligação indicações de que a ligação poderá falhar.<br /><br /> Uma ligação também pode apresentar um estado degradado quando o site que recebe dados replicados não consegue consolidar rapidamente os dados na base de dados. Isto pode acontecer quando são replicados grandes volumes de dados. Por exemplo, se implementar uma atualização de software em muitos computadores, o site principal da ligação poderá demorar algum tempo a processar o volume de dados que é replicado. Um atraso do processamento no site principal pode fazer com que o estado da ligação seja definido como degradado até o site principal conseguir processar com êxito os dados acumulados.|  
+|**A ligação falhou**|A replicação não funciona. É possível que uma ligação de replicação possa recuperar sem qualquer ação adicional. Pode utilizar o Analisador de Ligações de Replicação para investigar e ajudar a remediar uma replicação nesta ligação.<br /><br /> Este estado também pode indicar um problema na rede física entre o site principal e o subordinado na ligação de replicação.|  
 
- Podczas uaktualniania lokacji nadrzędnej do nowej wersji dodatku Service Pack stan łącza lokacji podrzędnej będzie wskazywany jako aktywny. Jeżeli po uaktualnieniu lokacja podrzędna ma taką samą wersję dodatku Service Pack jak lokacja nadrzędna, z poziomu lokacji nadrzędnej jest wskazywany stan aktywny linku, a z poziomu lokacji podrzędnej — stan trwającej konfiguracji.  
+ Quando um site principal estiver a ser atualizado para um novo service pack e visualizar o estado da ligação a partir do site subordinado, o estado da ligação será apresentado como ativo. Após a atualização, até o site subordinado ter o mesmo service pack do site principal, o estado da ligação será apresentado como ativo quando visualizado a partir do site principal e como em configuração quando visualizado a partir do site subordinado.  
 
-####  <a name="BKMK_MonitorReplicationStatus"></a> Stan replikacji  
- W węźle **Replikacja bazy danych** w obszarze roboczym **Monitorowanie** można wyświetlić stan replikacji za pośrednictwem linku oraz szczegóły dotyczące bazy danych w każdej lokacji objętej linkiem replikacji. Istnieje również możliwość wyświetlania szczegółów dotyczących grup replikacji. Aby wyświetlić szczegóły, wybierz łącze replikacji, a następnie otwórz kartę zawierającą odpowiedni stan replikacji. Poniżej przedstawiono szczegółowe informacje o różnych kartach zawierających stan replikacji.  
+####  <a name="BKMK_MonitorReplicationStatus"></a> Estado de replicação  
+ Pode utilizar o nó **Replicação de Base de Dados** da área de trabalho **Monitorização** para ver o estado da replicação de uma ligação de replicação e ver detalhes sobre a base de dados do site em cada site na ligação de replicação. Também pode ver detalhes sobre grupos de replicação. Para ver detalhes, selecione uma ligação de replicação e, em seguida, selecione o separador adequado para o estado de replicação que pretende visualizar. Seguem-se detalhes sobre os diferentes separadores do estado de replicação.  
 
- **Podsumowanie**  
- Umożliwia wyświetlenie informacji wysokiego poziomu dotyczących replikacji danych lokacji oraz danych globalnych między dwiema lokacjami objętymi łączem.  
+ **Resumo**  
+ Veja informações de alto nível sobre a replicação de dados de site e dados globais entre os dois sites de uma ligação.  
 
- Ponadto aby wyświetlić raport zawierający szczegółowe informacje o przepustowości sieci używanej w ramach replikacji za pośrednictwem linku, można kliknąć pozycję **Wyświetl raporty z historycznymi danymi o ruchu** .  
+ Também pode clicar em **Ver relatórios de histórico de tráfego de dados** para ver um relatório que mostra detalhes sobre a largura de banda de rede utilizada pela replicação na ligação de replicação.  
 
- **Lokacja nadrzędna**  
- W ramach lokacji nadrzędnej objętej łączem replikacji umożliwia wyświetlenie szczegółowych informacji o bazie danych, takich jak następujące:  
+ **Site Principal**  
+ Relativamente ao site principal de uma ligação de replicação, veja detalhes sobre a base de dados, incluindo:  
 
--   Porty zapory programu SQL Server  
+-   Portas da firewall para o SQL Server  
 
--   Wolne miejsce na dysku  
+-   Espaço livre em disco  
 
--   Lokalizacje plików bazy danych  
+-   Localizações de ficheiros de base de dados  
 
--   Certyfikaty  
+-   Certificados  
 
-**Lokacja podrzędna**  
- W ramach lokacji podrzędnej objętej łączem replikacji umożliwia wyświetlenie szczegółowych informacji o bazie danych, takich jak następujące:  
+**Site Subordinado**  
+ Relativamente ao site subordinado de uma ligação de replicação, veja detalhes sobre a base de dados, incluindo:  
 
--   Porty zapory programu SQL Server  
+-   Portas da firewall para o SQL Server  
 
--   Wolne miejsce na dysku  
+-   Espaço livre em disco  
 
--   Lokalizacje plików bazy danych  
+-   Localizações de ficheiros de base de dados  
 
--   Certyfikaty  
+-   Certificados  
 
-**Szczegóły inicjalizacj**    
- Umożliwia wyświetlenie stanu inicjalizacji grup replikowanych za pośrednictwem łącza replikacji. Te informacje pozwalają ustalić, czy inicjalizacja danych replikacji jest w toku czy zakończyła się niepowodzeniem.  
+**Detalhes de inicialização**    
+ Veja o estado de inicialização de grupos de replicação que são replicados através da ligação de replicação. Estas informações podem ajudar a identificar se a inicialização de dados de replicação está em curso ou falhou.  
 
- Ponadto za pomocą tych informacji można ustalić, kiedy lokacja jest w trybie współdziałania. Tryb współdziałania występuje, gdy w lokacji podrzędnej jest uruchomiona tej samej wersji programu Configuration Manager jako lokacji nadrzędnej.  
+ Além disso, pode utilizar estas informações para identificar quando um site pode estar no modo de interoperabilidade. Modo de interoperabilidade ocorre quando o site subordinado não executa a mesma versão do Configuration Manager do site principal.  
 
-**Szczegóły replikacji**    
- Umożliwia wyświetlenie stanu replikacji każdej grupy replikacji, które wykonuje replikację za pośrednictwem łącza. Te informacje ułatwiają identyfikację problemów lub opóźnień replikacji określonych danych i określenie odpowiednich progów replikacji bazy danych dla tego linku. Informacje o progach replikacji bazy danych znajdują się w sekcji [Progi replikacji bazy danych](../../../core/servers/manage/data-transfers-between-sites.md#BKMK_DBRepThresholds) w temacie [Transfer danych między lokacjami w programie System Center Configuration Manager](../../../core/servers/manage/data-transfers-between-sites.md).  
+**Detalhes de replicação**    
+ Visualize o estado de replicação para cada grupo de replicação que replica na ligação. Utilize estas informações para ajudar a identificar problemas ou atrasos na replicação de dados específicos e determinar os limiares de replicação de base de dados adequados para essa ligação. Para obter informações sobre os limiares de replicação de base de dados, veja a secção [Limiares de Replicação de Base de Dados](../../../core/servers/manage/data-transfers-between-sites.md#BKMK_DBRepThresholds) em [Transferência de dados entre sites no System Center Configuration Manager](../../../core/servers/manage/data-transfers-between-sites.md).  
 
 > [!TIP]  
->  Grupy replikacji dla danych lokacji są wysyłane tylko z lokacji podrzędnej do nadrzędnej. Grupy replikacji danych globalnych są replikowane w obu kierunkach.  
+>  Os grupos de replicação de dados do site são enviados apenas do site subordinado para o site principal. Os grupos de replicação de dados globais são replicados em ambas as direções.  
 
-###  <a name="BKMK_RLA"></a> Informacje o Analizatorze linków replikacji  
- Configuration Manager zawiera **analizator łącza replikacji** umożliwiający analizę i rozwiązywanie problemów z replikacją. Analizatora linków replikacji można użyć do usuwania błędów związanych z awarią linku replikacji, jeżeli replikacja nie powiodła się lub przestała działać, ale nie zaraportowano jeszcze jej błędu. Analizator łącza replikacji może służyć do rozwiązywania problemów z replikacją między następującymi komputerami w hierarchii programu Configuration Manager (kierunek błędu replikacji nie ma znaczenia):  
+###  <a name="BKMK_RLA"></a> Acerca do Analisador de Ligações de Replicação  
+ O Configuration Manager inclui **analisador do Link de replicação** que utilizar para analisar e reparar problemas de replicação. É possível utilizar o Analisador de Ligações de Replicação para remediar falhas da ligação de replicação quando a replicação falha e quando a replicação deixa de funcionar mas ainda não foi reportada como falhada. Pode ser utilizado o analisador do Link de replicação para remediar problemas de replicação entre os seguintes computadores na hierarquia do Configuration Manager (a direção da falha da replicação não é importante):  
 
--   pomiędzy serwerem lokacji a serwerem bazy danych lokacji,  
+-   Entre um servidor do site e o servidor de base de dados do site.  
 
--   Między serwerem bazy danych lokacji witryny innej lokacji komputera bazy danych lokacji (replikacja wewnątrz lokacyjna).  
+-   Entre um servidor de base de dados do site de sites e o computador de base de dados outro site de sites (replicação entre sites).  
 
-Analizator łącza replikacji można uruchomić w konsoli programu Configuration Manager lub w wierszu polecenia:  
+Pode executar o analisador do Link de replicação na consola do Configuration Manager ou uma linha de comandos:  
 
--   Aby uruchamiać w konsoli programu Configuration Manager: W **monitorowanie** obszaru roboczego kliknij **replikacji bazy danych** węzła, wybierz łącze replikacji, które mają być analizowane, a następnie w **replikacji bazy danych** na **Home** wybierz opcję **analizator łącza replikacji**.  
+-   Para executar na consola do Configuration Manager: No **monitorização** área de trabalho, clique em de **replicação de base de dados** nó, selecione a ligação de replicação que pretende analisar, e, em seguida, no **replicação de base de dados** grupo o **home page** separador, selecione **analisador do Link de replicação**.  
 
--   Aby uruchomić polecenie w wierszu polecenia, wpisz następujące polecenie: **%path%\Microsoft Configuration Manager\AdminConsole\bin\Microsoft.ConfigurationManager.ReplicationLinkAnalyzer.Wizard.exe &lt;nazwa_fqdn_źródłowego_serwera_lokacji\> &lt;FQDN docelowego serwera lokacji\>**  
+-   Para executar numa linha de comandos, escreva o seguinte comando: **%path%\Microsoft Configuration Manager\AdminConsole\bin\Microsoft.ConfigurationManager.ReplicationLinkAnalyzer.Wizard.exe &lt;FQDN do servidor de site de origem\> &lt;FQDN do servidor de site de destino\>**  
 
-Po uruchomieniu Analizator linków replikacji wykrywa problemy, używając szeregu zasad i sprawdzeń diagnostycznych. Podczas pracy narzędzia można wyświetlić zidentyfikowane przez nie problemy. Jeżeli znane są instrukcje rozwiązania problemu, zostaną one wyświetlone. Jeżeli Analizator łącza replikacji może automatycznie rozwiązać problem, zostanie wyświetlona odpowiednia opcja. Po zakończeniu pracy analizator łącza replikacji zapisuje wyniki w następujących raportów opartych na języku XML oraz pliku dziennika na pulpicie użytkownika, który uruchomił narzędzie:  
+Quando o Analisador de Ligações de Replicação é executado, deteta problemas através da utilização de um conjunto de regras de diagnóstico e verificações. Quando a ferramenta é executada, é possível ver os problemas que a ferramenta identifica. Quando as instruções para resolver um problema são conhecidas, estas são apresentadas. Se o Analisador de Ligações de Replicação puder remediar automaticamente um problema, essa opção é apresentada. Quando terminar de analisador do Link de replicação, guarda os resultados no seguinte relatório baseado em XML e um ficheiro de registo no ambiente de trabalho do utilizador que executa a ferramenta:  
 
 -   ReplicationAnalysis.xml  
 
 -   ReplicationLinkAnalysis.log  
 
-Podczas pracy Analizator łącza replikacji zatrzymuje następujące usługi w trakcie rozwiązywania problemów i uruchamia je ponownie po ukończeniu rozwiązywania:  
+Quando o Analisador de Ligações de Replicação é executado, para os seguintes serviços enquanto efetua a remediação de alguns problemas e reinicia esses serviços quando a remediação estiver concluída:  
 
 -   SMS_SITE_COMPONENT_MANAGER  
 
 -   SMS_EXECUTIVE  
 
-Jeżeli Analizator łącza replikacji nie ukończy rozwiązywania problemu, należy sprawdzić ustawienia serwera lokacji i ponownie uruchomić te usługi, jeżeli zostały zatrzymane.  
+Se o Analisador de Ligações de Replicação não conseguir concluir a remediação, reveja o servidor do site e reinicie esses serviços caso estejam parados.  
 
-Zakończone powodzeniem i niepowodzeniem akcje sprawdzania i rozwiązywania problemów są rejestrowane, aby umożliwić uzyskanie dodatkowych szczegółowych informacji niedostępnych w interfejsie narzędzia.  
+As ações de investigação e de remediação bem-sucedidas e falhadas são registadas para fornecer detalhes adicionais que não são apresentados na interface da ferramenta.  
 
-**Wymagania wstępne dotyczące korzystania z Analizatora linków replikacji:**  
+**Pré-requisitos para utilizar o Analisador de Ligações de Replicação:**  
 
--   Konto używane do uruchamiania Analizatora linków replikacji musi mieć prawa administratora lokalnego na każdym komputerze korzystającym z linku replikacji. Konto nie wymaga roli zabezpieczeń administracji opartej na rolach określone. Dlatego użytkownik administracyjny z dostępem do **replikacji bazy danych** węzła, można uruchomić narzędzie w konsoli programu Configuration Manager lub administrator systemu z wystarczającymi prawami do każdego komputera może uruchomić narzędzie z wiersza polecenia.  
+-   A conta utilizada para executar o Analisador de Ligações de Replicação deve ter direitos de administrador local em cada computador que esteja envolvido na ligação de replicação. A conta não necessita de uma função de segurança da administração baseada em funções específicas. Por conseguinte, um utilizador administrativo com acesso para o **replicação de base de dados** nó pode executar a ferramenta na consola do Configuration Manager ou um administrador de sistema com direitos suficientes em cada computador pode executar a ferramenta numa linha de comandos.  
 
--   Konto używane do uruchamiania Analizatora linków replikacji musi mieć prawa sysadmin w każdej bazie danych programu SQL Server korzystającej z linku replikacji.  
+-   A conta utilizada para executar o Analisador de Ligações de Replicação tem de ter direitos de administrador do sistema em cada base de dados do SQL Server que esteja envolvida na ligação de replicação.  
 
-**Znane problemy dotyczące Analizatora linków replikacji:**  
+**Problemas conhecidos do Analisador de Ligações de Replicação:**  
 
--   Wraz z wydaniem programu System Center Configuration Manager w wersji 1511 analizator łącza replikacji generuje błędy certyfikatu brokera usług serwera SQL dla lokacji głównych uaktualnionych z programu System Center 2012 Configuration Manager. Jest to spowodowane zmianami w nazwach certyfikatów wprowadzonymi w wersji 1511, dla której analizator łącza replikacji nie został jeszcze zaktualizowany. Te błędy można zignorować.  
+-   Com o lançamento do System Center Configuration Manager versão 1511, o analisador do link de replicação gera erros de certificado do SQL Server Service Broker para sites primários atualizados do System Center 2012 Configuration Manager. Isto acontece devido a alterações nos nomes dos certificados introduzidas com a versão 1511 para a qual analisador do Link de replicação tem ainda não foi atualizado. Estes erros podem ser ignorados com segurança.  
 
-###  <a name="BKMK_ProcsforMonitoringReplication"></a> Procedury monitorowania replikacji bazy danych  
+###  <a name="BKMK_ProcsforMonitoringReplication"></a> Procedimentos para monitorizar a replicação de base de dados  
 
-##### <a name="to-monitor-high-level-site-to-site-database-replication-status"></a>Aby monitorować stan replikacji wysokiego poziomu bazy danych lokacji do lokacji    
-1.  W konsoli programu Configuration Manager kliknij **monitorowanie**.  
+##### <a name="to-monitor-high-level-site-to-site-database-replication-status"></a>Para monitorizar o estado de replicação de base de dados de site para site alto nível    
+1.  Na consola do Configuration Manager, clique em **monitorização**.  
 
-2.  W obszarze roboczym **Monitorowanie** kliknij element **Hierarchia lokacji** , aby otworzyć widok **Diagram hierarchii** .  
+2.  Na área de trabalho **Monitorização** , clique em **Hierarquia do Site** para abrir a vista **Diagrama da Hierarquia** .  
 
-3.  Umieść na krótko wskaźnik myszy na linii między dwiema lokacjami, aby wyświetlić stan globalnej i dotyczącej lokacji replikacji danych między tymi lokacjami.  
+3.  Coloque brevemente o ponteiro do rato sobre a linha entre os dois sites para ver o estado da replicação de dados global e de site para estes sites.  
 
-##### <a name="to-monitor-the-replication-status-for-a-replication-link"></a>Aby monitorować stan replikacji dla łącza replikacji    
-1.  W konsoli programu Configuration Manager kliknij **monitorowanie**.  
+##### <a name="to-monitor-the-replication-status-for-a-replication-link"></a>Para monitorizar o estado de replicação para uma ligação de replicação    
+1.  Na consola do Configuration Manager, clique em **monitorização**.  
 
-2.  W obszarze roboczym **Monitorowanie** kliknij element **Replikacja bazy danych**, a następnie wybierz link replikacji dla monitorowanego linku. Następnie wybierz w obszarze roboczym odpowiednią kartę, aby wyświetlić różne szczegóły dotyczące stanu replikacji dla tego linku.  
+2.  Na área de trabalho **Monitorização** , clique em **Replicação de Base de Dados**e selecione a ligação de replicação para a ligação que pretende monitorizar. Em seguida, na área de trabalho, selecione o separador adequado para ver outros detalhes do estado de replicação dessa ligação.  

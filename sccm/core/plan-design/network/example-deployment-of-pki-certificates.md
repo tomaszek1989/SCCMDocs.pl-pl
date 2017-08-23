@@ -1,781 +1,777 @@
 ---
-title: "Wdrażanie certyfikatów PKI | Dokumentacja firmy Microsoft"
-description: "Przykład krok po kroku, aby dowiedzieć się, jak utworzyć i wdrożyć System Center Configuration Manager używa certyfikatów PKI, należy wykonać."
+title: "Certificados de implementação de PKI | Microsoft Docs"
+description: Siga um exemplo passo a passo para saber como criar e implementar certificados PKI que utiliza o System Center Configuration Manager.
 ms.custom: na
 ms.date: 02/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 3417ff88-7177-4a0d-8967-ab21fe7eba17
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 2c723fe7137a95df271c3612c88805efd8fb9a77
 ms.openlocfilehash: b15f85b4483bbae2444d4e73d2e2aa0b3979d9ab
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="step-by-step-example-deployment-of-the-pki-certificates-for-system-center-configuration-manager-windows-server-2008-certification-authority"></a>Przykład krok po kroku wdrożenia certyfikatów PKI dla programu System Center Configuration Manager: Urząd certyfikacji systemu Windows Server 2008
+# <a name="step-by-step-example-deployment-of-the-pki-certificates-for-system-center-configuration-manager-windows-server-2008-certification-authority"></a>Exemplo passo a passo implementação dos certificados PKI para o System Center Configuration Manager: Autoridade de certificação do Windows Server 2008
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Aplica-se a: O System Center Configuration Manager (ramo atual)*
 
-W tym przykładzie krok po kroku, używa urząd certyfikacji (CA) systemu Windows Server 2008 i wdrożeniu procedur pokazujących, jak utworzyć i wdrożyć certyfikaty infrastruktury kluczy publicznych (PKI), których używa System Center Configuration Manager. W procedurach korzysta się z urzędu certyfikacji przedsiębiorstwa i z szablonów certyfikatów. Kroki procedur są właściwe tylko na użytek sieci testowej, jako weryfikacja koncepcji.  
+Esta implementação de exemplo passo a passo, que utiliza uma autoridade de certificação (AC) do Windows Server 2008, tem de procedimentos que mostram como criar e implementar os certificados de infraestrutura de chaves públicas (PKI) que utiliza o System Center Configuration Manager. Estes procedimentos utilizam uma autoridade de certificação (AC) empresarial e modelos de certificado. Os passos são adequados apenas para uma rede de teste, como prova de conceito.  
 
- Ponieważ nie ma jednej właściwej metody wdrażania wymaganych certyfikatów, należy się zapoznać z dokumentacją wdrożeniową konkretnej infrastruktury PKI w zakresie wymaganych procedur i najlepszych praktyk wdrażania wymaganych certyfikatów w środowisku produkcyjnym. Aby uzyskać więcej informacji o wymaganiach dotyczących certyfikatów, zobacz [wymagania dotyczące certyfikatu PKI dla programu System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md).  
+ Porque não existe nenhum método de implementação único para os certificados necessários, consulte a documentação de implementação de PKI específica para os procedimentos necessários e as melhores práticas para implementar os certificados necessários para um ambiente de produção. Para obter mais informações sobre os requisitos de certificado, consulte [requisitos de certificado PKI para o System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md).  
 
 > [!TIP]  
->  Można dostosować instrukcje w tym temacie, aby systemy operacyjne, które nie zostały udokumentowane w części wymagania dotyczące sieci testowej. Niemniej jednak w przypadku uruchamiania urzędu certyfikacji wystawiającego certyfikat w systemie Windows Server 2012 nie jest wyświetlany monit o wersję szablonu certyfikatu. Zamiast tego należy określić to na **zgodności** we właściwościach szablonu:  
+>  Pode adaptar as instruções neste tópico para sistemas operativos que não estão documentados na secção de requisitos de rede de teste. No entanto, se estiver a executar a AC emissora no Windows Server 2012, não lhe será solicitada a indicação da versão do modelo de certificado. Em vez disso, especifique isto no **compatibilidade** separador de propriedades do modelo:  
 >   
->  -   **Urząd certyfikacji**: **Windows Server 2003**  
-> -   **Odbiorca certyfikatu**: **Windows XP / Server 2003**  
+>  -   **Autoridade de certificação**: **Windows Server 2003**  
+> -   **Destinatário do certificado**: **Windows XP / Server 2003**  
 
-## <a name="in-this-section"></a>W tej sekcji  
- W poniższych sekcjach zawarto przykładowe instrukcje krok po kroku dotyczące tworzenia i wdrażania następujących certyfikatów, których można użyć z System Center Configuration Manager:  
+## <a name="in-this-section"></a>Nesta secção  
+ As secções seguintes incluem instruções passo a passo de exemplo para criar e implementar os seguintes certificados que podem ser utilizados com o System Center Configuration Manager:  
 
- [Wymagania dotyczące sieci testowej](#BKMK_testnetworkenvironment)  
+ [Requisitos de rede de teste](#BKMK_testnetworkenvironment)  
 
- [Przegląd certyfikatów](#BKMK_overview2008)  
+ [Descrição geral dos certificados](#BKMK_overview2008)  
 
- [Wdrażanie certyfikatu serwera sieci web dla systemów lokacji z usługami IIS](#BKMK_webserver2008_cm2012)  
+ [Implementar o certificado de servidor web para sistemas de sites que executam o IIS](#BKMK_webserver2008_cm2012)  
 
- [Wdrażanie certyfikatu usługi dla punktów dystrybucji w chmurze](#BKMK_clouddp2008_cm2012)  
+ [Implementar o certificado de serviço para pontos de distribuição baseado na nuvem](#BKMK_clouddp2008_cm2012)  
 
- [Wdrażanie certyfikatu klienta dla komputerów z systemem Windows](#BKMK_client2008_cm2012)  
+ [Implementar o certificado de cliente para computadores Windows](#BKMK_client2008_cm2012)  
 
- [Wdrażanie certyfikatu klienta dla punktów dystrybucji](#BKMK_clientdistributionpoint2008_cm2012)  
+ [Implementar o certificado de cliente para pontos de distribuição](#BKMK_clientdistributionpoint2008_cm2012)  
 
- [Wdrażanie certyfikatu rejestracji dla urządzeń przenośnych](#BKMK_mobiledevices2008_cm2012)  
+ [Implementar o certificado de inscrição para dispositivos móveis](#BKMK_mobiledevices2008_cm2012)  
 
- [Wdrażanie certyfikatów dla komputerów AMT](#BKMK_AMT2008_cm2012)  
+ [Implementar os certificados para AMT](#BKMK_AMT2008_cm2012)  
 
- [Wdrażanie certyfikatu klienta dla komputerów Mac](#BKMK_MacClient_SP1)  
+ [Implementar o certificado de cliente para computadores Mac](#BKMK_MacClient_SP1)  
 
-##  <a name="BKMK_testnetworkenvironment"></a>Wymagania dotyczące sieci testowej  
- Z instrukcjami krok po kroku wiążą się następujące wymagania:  
+##  <a name="BKMK_testnetworkenvironment"></a>Requisitos de rede de teste  
+ As instruções passo a passo têm os seguintes requisitos:  
 
--   W sieci testowej działają usługi domenowe Active Directory z systemem Windows Server 2008; instalacja to pojedyncza domena, pojedynczy las.  
+-   A rede de teste está a executar os Serviços de Domínio do Active Directory com o Windows Server 2008 e está instalada como único domínio e única floresta.  
 
--   Istnieje serwer członkowski z systemem Windows Server 2008 Enterprise Edition, został na nim zainstalowany Rola usług certyfikatów w usłudze Active Directory, która jest skonfigurowana jako główny urząd certyfikacji przedsiębiorstwa (CA).  
+-   Tem um servidor membro com o Windows Server 2008 Enterprise Edition, que tem a função de serviços de certificados do Active Directory instalada no mesmo e está configurado como uma autoridade de certificação de raiz empresarial (AC).  
 
--   Masz jeden komputer, który ma system Windows Server 2008 (Standard Edition lub Enterprise Edition R2 lub nowszy) na nim zainstalowany tego komputera jest wyznaczony jako serwer członkowski, i usługi Internet Information Services (IIS) jest na nim zainstalowany. Ten komputer będzie serwerem systemu lokacji programu System Center Configuration Manager, skonfigurowanego przy użyciu sieci intranet w pełni kwalifikowaną nazwę domeny (FQDN), do obsługi połączeń klienckich w sieci intranet i internetowej nazwy FQDN, jeśli zachodzi potrzeba obsługi urządzeń przenośnych zarejestrowanych w programie System Center Configuration Manager i klientów w Internecie.  
+-   Tem um computador que tenha o Windows Server 2008 (Standard Edition ou Enterprise Edition, R2 ou posterior) instalado no mesmo, que o computador está designado como servidor membro e serviços de informação Internet (IIS) está instalado no mesmo. Este computador será o servidor de sistema de sites do System Center Configuration Manager irá ser configurado com um nome de domínio completamente qualificado (FQDN) para suportar ligações de cliente na intranet e um FQDN de Internet caso seja necessário suportar dispositivos móveis que são inscritos pelo System Center Configuration Manager e os clientes de intranet na Internet.  
 
--   Istnieje jeden klient systemu Windows Vista z zainstalowanym pakietem service najnowsze, a ten komputer jest skonfigurowany przy użyciu nazwy komputera, by zawierała znaki ASCII, który jest przyłączony do domeny. Ten komputer będzie komputera klienckiego programu System Center Configuration Manager.  
+-   Ter um cliente do Windows Vista com service pack mais recente instalado e este computador está configurado com um nome de computador que abrange carateres ASCII e está associado ao domínio. Este computador será um computador de cliente do System Center Configuration Manager.  
 
--   Możesz zalogować się przy użyciu konta administratora domeny głównej lub konta administratora domeny przedsiębiorstwa i wykorzystać to konto do wszystkich procedur tego przykładowego wdrożenia.  
+-   Pode iniciar sessão com uma conta de administrador de domínio de raiz ou uma conta de administrador de domínio da empresa e utilizar esta conta para todos os procedimentos nesta implementação de exemplo.  
 
-##  <a name="BKMK_overview2008"></a>Przegląd certyfikatów  
- Poniższa tabela zawiera listę typów certyfikatów PKI, które mogą być wymagane dla programu System Center Configuration Manager i opisuje, jak są używane.  
+##  <a name="BKMK_overview2008"></a>Descrição geral dos certificados  
+ A tabela seguinte lista os tipos de certificados PKI que poderão ser necessárias para o System Center Configuration Manager e descreve a forma como são utilizados.  
 
-|Wymagany certyfikat|Opis certyfikatu|  
+|Requisito de Certificado|Descrição do Certificado|  
 |-----------------------------|-----------------------------|  
-|Certyfikat serwera sieci Web dla systemów lokacji z usługami IIS|Ten certyfikat służy do szyfrowania danych i uwierzytelniania serwera wobec klientów. Należy zainstalować zewnętrznie z programu System Center Configuration Manager na serwerach systemów lokacji z systemem Internet Information Services (IIS) i które są skonfigurowane w programie System Center Configuration Manager do używania protokołu HTTPS.<br /><br /> Instrukcje konfiguracji i instalacji tego certyfikatu, zobacz [wdrażania certyfikatu serwera sieci web dla systemów lokacji z usługami IIS](#BKMK_webserver2008_cm2012) w tym temacie.|  
-|Certyfikat usługi dla klientów do łączenia się z chmurowymi punktami dystrybucji|Instrukcje konfiguracji oraz instalacji tego certyfikatu, zobacz [wdrożenia certyfikatu usługi dla punktów dystrybucji w chmurze](#BKMK_clouddp2008_cm2012) w tym temacie.<br /><br /> **Ważne:** Ten certyfikat jest używany w połączeniu z certyfikatem zarządzania systemu Windows Azure. Aby uzyskać więcej informacji o certyfikacie zarządzania, zobacz [jak utworzyć certyfikat zarządzania](http://go.microsoft.com/fwlink/p/?LinkId=220281) i [jak dodać certyfikat zarządzania do subskrypcji systemu Windows Azure](http://go.microsoft.com/fwlink/?LinkId=241722) w sekcji platformy Windows Azure w bibliotece MSDN.|  
-|Certyfikat klienta dla komputerów z systemem Windows|Ten certyfikat służy do uwierzytelniania komputerów klienckich programu System Center Configuration Manager do systemów lokacji, które są skonfigurowane do używania protokołu HTTPS. Może również służyć dla punktów zarządzania i punktów migracji stanu do monitorowania stanu operacyjnego, gdy są one skonfigurowane do używania protokołu HTTPS. Należy zainstalować zewnętrznie z programu System Center Configuration Manager na komputerach.<br /><br /> Instrukcje konfiguracji i instalacji tego certyfikatu, zobacz [wdrażania certyfikatu klienta dla komputerów z systemem Windows](#BKMK_client2008_cm2012) w tym temacie.|  
-|Certyfikat klienta dla punktów dystrybucji|Ten certyfikat ma dwa cele:<br /><br /> Certyfikat służy do uwierzytelniania punktu dystrybucji wobec punktu zarządzania z włączonym protokołem HTTPS przed wysłaniem przez dany punkt dystrybucji komunikatów o stanie.<br /><br /> Po wybraniu w punkcie dystrybucji opcji **Włącz obsługę środowiska PXE dla klientów** certyfikat zostanie wysłany do komputerów przeprowadzających rozruch w środowisku PXE, aby umożliwić im połączenie z punktem zarządzania z włączoną obsługą HTTPS podczas wdrażania systemu operacyjnego.<br /><br /> Instrukcje konfiguracji i instalacji tego certyfikatu, zobacz [wdrażania certyfikatu klienta dla punktów dystrybucji](#BKMK_clientdistributionpoint2008_cm2012) w tym temacie.|  
-|Certyfikat rejestracji dla urządzeń przenośnych|Ten certyfikat służy do uwierzytelniania klientów urządzeń przenośnych programu System Center Configuration Manager do systemów lokacji, które są skonfigurowane do używania protokołu HTTPS. Musi być zainstalowany w ramach rejestracji urządzeń przenośnych w programie System Center Configuration Manager i wybierz szablon certyfikatu skonfigurowanym jako ustawienie klienta urządzenia przenośnego.<br /><br /> Instrukcje konfiguracji tego certyfikatu, zobacz [wdrożenia certyfikatu rejestracji dla urządzeń przenośnych](#BKMK_mobiledevices2008_cm2012) w tym temacie.|  
-|Certyfikaty dla komputerów Intel AMT|Trzy certyfikaty odnoszą się do zarządzania poza pasmem dla komputerów opartych na technologii Intel AMT:<ul><li>Certyfikat udostępniania technologii zarządzania aktywnego (AMT)</li><li>Certyfikat serwera sieci web AMT</li><li>Opcjonalnie certyfikat uwierzytelniania klienta dla 802.1 X sieci przewodowej lub bezprzewodowej</li></ul>Certyfikat udostępniania AMT musi być zainstalowany zewnętrznie z programu System Center Configuration Manager na komputerze punktu obsługi poza pasmem, a następnie wybierz certyfikat zainstalowany we właściwościach punktu Usługi poza pasmem. Certyfikat serwera sieci web AMT i certyfikat uwierzytelniania klienta są instalowane podczas udostępniania AMT i zarządzania, a następnie wybierz skonfigurowane szablony certyfikatów we właściwościach składnika zarządzania poza pasmem.<br /><br /> Instrukcje konfiguracji tych certyfikatów, zobacz [wdrożyć certyfikaty dla komputerów AMT](#BKMK_AMT2008_cm2012) w tym temacie.|  
-|Certyfikat klienta dla komputerów Mac|Można zażądać i zainstaluj ten certyfikat na komputerze Mac, gdy używasz rejestracji programu System Center Configuration Manager i wybierz jako ustawienie klienta urządzenia przenośnego skonfigurowany szablon certyfikatu.<br /><br /> Instrukcje konfiguracji tego certyfikatu, zobacz [wdrażania certyfikatu klienta dla komputerów Mac](#BKMK_MacClient_SP1) w tym temacie.|  
+|Certificado de servidor Web para os sistemas de sites que executam o IIS|Este certificado é utilizado para encriptar dados e autenticar o servidor para clientes. Tem de ser instalado externamente do System Center Configuration Manager em servidores de sistemas de sites que executam os serviços de informação Internet (IIS) e que estão configurados no System Center Configuration Manager para utilizar HTTPS.<br /><br /> Para obter os passos configurar e instalação deste certificado, consulte [implementar o certificado de servidor web para sistemas de sites que executam o IIS](#BKMK_webserver2008_cm2012) neste tópico.|  
+|Certificado de serviço para clientes que ligam a pontos de distribuição baseados na nuvem|Para obter os passos de configuração e instalação deste certificado, consulte [implementar o certificado de serviço para pontos de distribuição baseado na nuvem](#BKMK_clouddp2008_cm2012) neste tópico.<br /><br /> **Importante:** Este certificado é utilizado em conjunto com o certificado de gestão do Windows Azure. Para mais informações sobre o certificado de gestão, consulte [como criar um certificado de gestão](http://go.microsoft.com/fwlink/p/?LinkId=220281) e [como adicionar um certificado de gestão a uma subscrição do Windows Azure](http://go.microsoft.com/fwlink/?LinkId=241722) na secção plataforma Windows Azure da biblioteca MSDN.|  
+|Certificado de cliente para computadores com o Windows|Este certificado é utilizado para autenticar computadores de cliente do System Center Configuration Manager para sistemas de sites que estão configurados para utilizar HTTPS. Também pode ser utilizado para pontos de gestão e pontos de migração de estado para monitorizar o respetivo estado operacional quando estão configurados para utilizar HTTPS. Tem de ser instalado externamente do System Center Configuration Manager em computadores.<br /><br /> Para obter os passos configurar e instalação deste certificado, consulte [implementar o certificado de cliente para computadores Windows](#BKMK_client2008_cm2012) neste tópico.|  
+|Certificado de cliente para pontos de distribuição|Este certificado tem duas finalidades:<br /><br /> O certificado é utilizado para autenticar o ponto de distribuição para um ponto de gestão ativado para HTTPS antes de o ponto de distribuição enviar mensagens de estado.<br /><br /> Quando a opção do ponto de distribuição **Ativar suporte PXE para clientes** está selecionada, o certificado é enviado para computadores com arranque PXE para que liguem a um ponto de gestão ativado para HTTPS durante a implementação do sistema operativo.<br /><br /> Para obter os passos configurar e instalação deste certificado, consulte [implementar o certificado de cliente para pontos de distribuição](#BKMK_clientdistributionpoint2008_cm2012) neste tópico.|  
+|Certificado de inscrição para dispositivos móveis|Este certificado é utilizado para autenticar clientes de dispositivo móvel do System Center Configuration Manager para sistemas de sites que estão configurados para utilizar HTTPS. Tem de ser instalado como parte da inscrição de dispositivos móveis no System Center Configuration Manager e escolha o modelo de certificado configurado como uma definição de cliente de dispositivo móvel.<br /><br /> Para obter os passos configurar este certificado, consulte [implementar o certificado de inscrição para dispositivos móveis](#BKMK_mobiledevices2008_cm2012) neste tópico.|  
+|Certificados para o Intel AMT|Três certificados estão relacionadas com a gestão fora de banda para computadores baseados em Intel AMT:<ul><li>Um certificado de aprovisionamento Active Management Technology (AMT)</li><li>Um certificado de servidor de web AMT</li><li>Opcionalmente, um certificado de autenticação de cliente para redes com ou sem fios 802.1 X</li></ul>O certificado de aprovisionamento de AMT deve ser instalado externamente do System Center Configuration Manager no computador do ponto de serviço fora de banda e, em seguida, escolha o certificado instalado nas propriedades do ponto de serviço fora de banda. O certificado de servidor de web AMT e o certificado de autenticação de cliente são instaladas durante o aprovisionamento de AMT e de gestão e escolha os modelos de certificado configurado nas propriedades do componente de gestão fora de banda.<br /><br /> Para obter os passos configurar estes certificados, consulte [implementar os certificados para AMT](#BKMK_AMT2008_cm2012) neste tópico.|  
+|Certificado de cliente para computadores Mac|Pode pedir e instalar este certificado a partir de um computador Mac quando utiliza a inscrição do System Center Configuration Manager e escolha o modelo de certificado configurado como uma definição de cliente de dispositivo móvel.<br /><br /> Para obter os passos configurar este certificado, consulte [implementar o certificado de cliente para computadores Mac](#BKMK_MacClient_SP1) neste tópico.|  
 
-##  <a name="BKMK_webserver2008_cm2012"></a>Wdrażanie certyfikatu serwera sieci web dla systemów lokacji z usługami IIS  
- Wdrożenie tego certyfikatu jest objęte następującymi procedurami:  
+##  <a name="BKMK_webserver2008_cm2012"></a>Implementar o certificado de servidor web para sistemas de sites que executam o IIS  
+ Esta implementação de certificados possui os seguintes procedimentos:  
 
--   Utworzyć i wystawić szablon certyfikatu w urzędzie certyfikacji serwera sieci web  
+-   Criar e emitir o modelo de certificado na autoridade de certificação de servidor web  
 
--   Żądanie certyfikatu serwera sieci web  
+-   Pedir o certificado de servidor web  
 
--   Konfigurowanie usługi IIS do używania certyfikatu serwera sieci web  
+-   Configurar o IIS para utilizar o certificado de servidor web  
 
-###  <a name="BKMK_webserver22008"></a>Utworzyć i wystawić szablon certyfikatu w urzędzie certyfikacji serwera sieci web  
- Ta procedura powoduje utworzenie szablonu certyfikatu dla systemów lokacji programu System Center Configuration Manager i dodanie go do urzędu certyfikacji.  
+###  <a name="BKMK_webserver22008"></a>Criar e emitir o modelo de certificado na autoridade de certificação de servidor web  
+ Este procedimento cria um modelo de certificado para sistemas de sites do System Center Configuration Manager e adiciona-o à autoridade de certificação.  
 
-##### <a name="to-create-and-issue-the-web-server-certificate-template-on-the-certification-authority"></a>Aby utworzyć i wystawić szablon certyfikatu serwera sieci Web w urzędzie certyfikacji  
+##### <a name="to-create-and-issue-the-web-server-certificate-template-on-the-certification-authority"></a>Para criar e emitir o modelo de certificado de servidor Web na autoridade de certificação  
 
-1.  Utwórz grupę zabezpieczeń o nazwie **serwery IIS programu ConfigMgr** zawierającej serwery Członkowskie do zainstalowania systemów lokacji programu System Center Configuration Manager, z uruchomionymi usługami IIS.  
+1.  Crie um grupo de segurança denominado **servidores IIS do ConfigMgr** com os servidores membro para instalar sistemas de sites do System Center Configuration Manager que executam o IIS.  
 
-2.  Na serwerze członkowskim z usługami certyfikatów zainstalowane, w konsoli Urząd certyfikacji kliknij prawym przyciskiem myszy **szablonów certyfikatów** , a następnie wybierz **Zarządzaj** załadować **szablonów certyfikatów** konsoli.  
+2.  No servidor membro que tem os serviços de certificados instalados, a consola da autoridade de certificação, clique com botão direito **modelos de certificado** e, em seguida, escolha **gerir** ao carregar o **modelos de certificado** consola.  
 
-3.  W okienku wyników kliknij prawym przyciskiem myszy wpis **serwera sieci Web** w **Nazwa wyświetlana szablonu** kolumny, a następnie wybierz **Duplikuj szablon**.  
+3.  No painel de resultados, faça duplo clique na entrada que tem **servidor Web** no **nome a apresentar do modelo** coluna e, em seguida, escolha **Duplicar modelo**.  
 
-4.  W **Duplikuj szablon** dialogowe Sprawdź, czy **systemu Windows Server 2003, Enterprise Edition** jest zaznaczone, a następnie wybierz **OK**.  
+4.  No **Duplicar modelo** diálogo caixa, certifique-se de que **Windows 2003 Server, Enterprise Edition** está selecionada e, em seguida, escolha **OK**.  
 
     > [!IMPORTANT]  
-    >  Nie wybieraj systemu **Windows 2008 Server, Enterprise Edition**.  
+    >  Não selecione **Windows 2008 Server, Enterprise Edition**.  
 
-5.  W **właściwości nowego szablonu** okna dialogowego na **ogólne** , wprowadź nazwę szablonu, jak **certyfikatu serwera sieci Web programu ConfigMgr**, w celu wygenerowania certyfikatów sieci web, które będą używane w systemach lokacji programu Configuration Manager.  
+5.  No **propriedades de novo modelo** caixa de diálogo a **geral** separador, introduza um nome de modelo, tal como **certificado de servidor Web do ConfigMgr**para gerar os certificados web que serão utilizados nos sistemas de sites do Configuration Manager.  
 
-6.  Wybierz **nazwa podmiotu** karcie i upewnij się, że **Dostarcz w żądaniu** jest zaznaczone.  
+6.  Escolha o **nome do requerente** separador e certifique-se de que **fornecer no pedido** está selecionada.  
 
-7.  Wybierz **zabezpieczeń** karcie, a następnie usuń **rejestracja** zgody **Administratorzy domeny** i **Administratorzy przedsiębiorstwa** grup zabezpieczeń.  
+7.  Escolha o **segurança** separador e, em seguida, remova o **inscrever** permissão a partir do **Admins do domínio** e **Admins de empresa** grupos de segurança.  
 
-8.  Wybierz **Dodaj**, wprowadź **serwery IIS programu ConfigMgr** w tekście pole, a następnie wybierz **OK**.  
+8.  Escolha **adicionar**, introduza **servidores IIS do ConfigMgr** no texto da caixa e, em seguida, escolha **OK**.  
 
-9. Wybierz **rejestracja** dla tej grupy uprawnienie i nie usuwaj **odczytu** uprawnienia.  
+9. Escolha o **inscrever** permissão para este grupo e não desmarque a **leitura** permissão.  
 
-10. Wybierz **OK**, a następnie Zamknij **konsoli Szablony certyfikatów**.  
+10. Escolha **OK**e, em seguida, feche o **consola de modelos de certificado**.  
 
-11. W konsoli Urząd certyfikacji kliknij prawym przyciskiem myszy **szablonów certyfikatów**, wybierz **nowy**, a następnie wybierz **szablon certyfikatu do wystawienia**.  
+11. Na consola de autoridade de certificação, clique com botão direito **modelos de certificado**, escolha **novo**e, em seguida, escolha **modelo de certificado a emitir**.  
 
-12. W **Włączanie szablonu certyfikatu** okno dialogowe, wybierz nowego szablonu, który został właśnie utworzony, **certyfikatu serwera sieci Web programu ConfigMgr**, a następnie wybierz **OK**.  
+12. No **ativar modelos de certificado** diálogo caixa, selecione o novo modelo que acabou de criar, **certificado de servidor Web do ConfigMgr**e, em seguida, escolha **OK**.  
 
-13. Jeśli nie ma potrzeby tworzenia i wystawiania certyfikatów Zamknij **urząd certyfikacji**.  
+13. Se não precisar de criar e emitir mais certificados, feche **autoridade de certificação**.  
 
-###  <a name="BKMK_webserver32008"></a>Żądanie certyfikatu serwera sieci web  
- Ta procedura pozwala określić wartości intranetowej i internetowej nazwy FQDN zdefiniowanych we właściwościach serwera systemu lokacji, a następnie instaluje certyfikat serwera sieci web na serwerze członkowskim z uruchomionymi usługami IIS.  
+###  <a name="BKMK_webserver32008"></a>Pedir o certificado de servidor web  
+ Este procedimento permite-lhe especificar os valores de FQDN de Internet que irão configurar as propriedades de servidor do sistema de sites e da intranet e, em seguida, instala o certificado de servidor web no servidor membro que executa o IIS.  
 
-##### <a name="to-request-the-web-server-certificate"></a>Aby zażądać certyfikatu serwera sieci Web  
+##### <a name="to-request-the-web-server-certificate"></a>Para pedir o certificado de servidor Web  
 
-1.  Uruchom ponownie serwer członkowski, z uruchomionymi usługami IIS, aby upewnić się, że komputer ma dostęp do szablonu certyfikatu, który został utworzony za pomocą **odczytu** i **rejestracja** skonfigurowanych uprawnień.  
+1.  Reinicie o servidor membro que executa o IIS para se certificar de que o computador pode aceder o modelo de certificado que criou utilizando o **leitura** e **inscrever** permissões que configurou.  
 
-2.  Wybierz **Start**, wybierz **Uruchom**, a następnie wpisz **mmc.exe.** W pustej konsoli kliknij **pliku**, a następnie wybierz **Dodaj/Usuń przystawkę**.  
+2.  Escolha **iniciar**, escolha **executar**e, em seguida, escreva **mmc.exe.** Na consola vazia, escolha **ficheiro**e, em seguida, escolha **Adicionar/Remover Snap-in**.  
 
-3.  W **Dodawanie lub usuwanie przystawek** okno dialogowe Wybierz **certyfikaty** z listy **dostępne przystawki**, a następnie wybierz **Dodaj**.  
+3.  No **adicionar ou Remover Snap-ins** diálogo caixa, escolha **certificados** da lista de **snap-ins disponíveis**e, em seguida, escolha **adicionar**.  
 
-4.  W **certyfikatów w przystawce** okno dialogowe Wybierz **konto komputera**, a następnie wybierz **dalej**.  
+4.  No **snap-in de certificados** diálogo caixa, escolha **conta de computador**e, em seguida, escolha **seguinte**.  
 
-5.  W **wybierz komputer** okna dialogowego Sprawdź, czy **komputer lokalny: (komputer ten jest uruchomiona konsola)** jest zaznaczone, a następnie wybierz **Zakończ**.  
+5.  No **selecionar computador** diálogo caixa, certifique-se de que **computador Local: (o computador onde esta consola está em execução no)** está selecionada e, em seguida, escolha **concluir**.  
 
-6.  W **Dodawanie lub usuwanie przystawek** okno dialogowe Wybierz **OK**.  
+6.  No **adicionar ou Remover Snap-ins** diálogo caixa, escolha **OK**.  
 
-7.  W konsoli rozwiń **certyfikaty (komputer lokalny)**, a następnie wybierz **osobiste**.  
+7.  Na consola, expanda **certificados (computador Local)**e, em seguida, escolha **pessoais**.  
 
-8.  Kliknij prawym przyciskiem myszy **certyfikaty**, wybierz **wszystkie zadania**, a następnie wybierz **Żądaj nowego certyfikatu**.  
+8.  Clique com botão direito **certificados**, escolha **todas as tarefas**e, em seguida, escolha **requisitar um novo certificado**.  
 
-9. Na **przed rozpoczęciem** wybierz **dalej**.  
+9. No **antes de começar** página, escolha **seguinte**.  
 
-10. Jeśli widzisz **wybierz zasady rejestracji certyfikatu** wybierz **dalej**.  
+10. Se vir o **selecionar política de inscrição de certificado** página, escolha **seguinte**.  
 
-11. Na **Żądaj certyfikatów** Znajdź **certyfikatu serwera sieci Web programu ConfigMgr** z listy dostępnych certyfikatów, a następnie wybierz **do zarejestrowania tego certyfikatu jest wymaganych więcej informacji. Kliknij tutaj, aby skonfigurować ustawienia**.  
+11. No **pedir certificados** página, identifique o **certificado de servidor Web do ConfigMgr** da lista de certificados disponíveis e, em seguida, escolha **são necessárias mais informações para fazer a inscrição deste certificado. Clique aqui para configurar as definições**.  
 
-12. W **właściwości certyfikatu** dialogowym **podmiotu** karcie, nie należy wprowadzać żadnych zmian do **nazwa podmiotu**. Inaczej mówiąc, pole **Wartość** w sekcji **Nazwa podmiotu** pozostanie puste. Zamiast tego w **alternatywna nazwa** wybierz **typu** listy rozwijanej, a następnie wybierz **DNS**.  
+12. No **propriedades do certificado** caixa de diálogo a **requerente** separador, não faça quaisquer alterações aos **nome do requerente**. Isto significa que a caixa **Valor** para a secção **Nome do requerente** permanece em branco. Em vez disso, a partir de **nome alternativo** secção, escolha o **tipo** pendente lista e, em seguida, escolha **DNS**.  
 
-13. W **wartość** określ te wartości nazw FQDN, które zostaną określone we właściwościach systemu lokacji programu System Center Configuration Manager, a następnie wybierz **OK** zamknąć **właściwości certyfikatu** okno dialogowe.  
+13. No **valor** caixa, especifique os valores FQDN que irá especificar nas propriedades do sistema de site do System Center Configuration Manager e, em seguida, escolha **OK** para fechar o **propriedades do certificado** caixa de diálogo.  
 
-     Przykłady:  
+     Exemplos:  
 
-    -   Jeśli system lokacji przyjmuje tylko połączenia klienckie z intranetu, a intranetowa nazwa FQDN serwera systemu lokacji to **server1.internal.contoso.com**, wprowadź **server1.internal.contoso.com**, a następnie wybierz **Dodaj**.  
+    -   Se o sistema de sites apenas aceitar ligações de cliente a partir da intranet e o FQDN da intranet do servidor do sistema de sites é **server1.internal.contoso.com**, introduza **server1.internal.contoso.com**e, em seguida, escolha **adicionar**.  
 
-    -   Jeśli system lokacji przyjmuje połączenia klienckie i z intranetu, i z Internetu, przy czym intranetowa nazwa FQDN serwera systemu lokacji to **server1.internal.contoso.com** , a internetowa nazwa FQDN serwera systemu lokacji to **server.contoso.com**:  
+    -   Se o sistema de sites aceitar ligações de cliente a partir da intranet e da Internet e o FQDN de intranet do servidor do sistema de sites for **server1.internal.contoso.com** e o FQDN de Internet do servidor do sistema de sites for **server.contoso.com**:  
 
-        1.  Wprowadź **server1.internal.contoso.com**, a następnie wybierz **Dodaj**.  
+        1.  Introduza **server1.internal.contoso.com**e, em seguida, escolha **adicionar**.  
 
-        2.  Wprowadź **server.contoso.com**, a następnie wybierz **Dodaj**.  
+        2.  Introduza **server.contoso.com**e, em seguida, escolha **adicionar**.  
 
         > [!NOTE]  
-        >  Można określić nazwy FQDN dla programu System Center Configuration Manager w dowolnej kolejności. Należy jednak sprawdzić, czy wszystkie urządzenia, które będą posługiwać się certyfikatem, takie jak urządzenia przenośne i serwery proxy sieci web, można użyć nazwy alternatywnej podmiotu (SAN) certyfikatu oraz wielu wartości w sieci SAN. Jeśli urządzenia obsługują ograniczoną liczbę wartości SAN w certyfikatach, może zajść potrzeba zmiany kolejności nazw FQDN lub użycia zamiast nich wartości Podmiot.  
+        >  Pode especificar o FQDN para o System Center Configuration Manager por qualquer ordem. No entanto, verifique se todos os dispositivos que irão utilizar o certificado, tais como dispositivos móveis e servidores web proxy, podem utilizar um nome alternativo do requerente de certificado (SAN) e múltiplos valores no SAN. Se os dispositivos têm suporte limitado para valores de SAN nos certificados, terá de alterar a ordem dos FQDN ou utilizar em vez disso o valor Requerente.  
 
-14. Na **Żądaj certyfikatów** wybierz **certyfikatu serwera sieci Web programu ConfigMgr** z listy dostępnych certyfikatów, a następnie wybierz **rejestracja**.  
+14. No **pedir certificados** página, escolha **certificado de servidor Web do ConfigMgr** da lista de certificados disponíveis e, em seguida, escolha **inscrever**.  
 
-15. Na **wyniki instalacji certyfikatów** , poczekaj, aż certyfikat został zainstalowany, a następnie wybierz **Zakończ**.  
+15. No **resultados da instalação de certificados** página, aguarde até que o certificado está instalado e, em seguida, escolha **concluir**.  
 
-16. Zamknij konsolę **Certyfikaty (komputer lokalny)**.  
+16. Feche **Certificados (Computador Local)**.  
 
-###  <a name="BKMK_webserver42008"></a>Konfigurowanie usługi IIS do używania certyfikatu serwera sieci web  
- Ta procedura wiąże zainstalowany certyfikat z **Domyślną witryną sieci Web**usług IIS.  
+###  <a name="BKMK_webserver42008"></a>Configurar o IIS para utilizar o certificado de servidor web  
+ Este procedimento vincula o certificado instalado ao **Web Site Predefinido**do IIS.  
 
-##### <a name="to-set-up-iis-to-use-the-web-server-certificate"></a>Aby skonfigurować usługi IIS do używania certyfikatu serwera sieci web  
+##### <a name="to-set-up-iis-to-use-the-web-server-certificate"></a>Para configurar o IIS para utilizar o certificado de servidor web  
 
-1.  Na serwerze członkowskim, na którym są zainstalowane usługi IIS, wybierz **Start**, wybierz **programy**, wybierz **narzędzia administracyjne**, a następnie wybierz **Internet Information Services (IIS) Manager**.  
+1.  No servidor membro que tem o IIS instalado, escolha **iniciar**, escolha **programas**, escolha **ferramentas administrativas**e, em seguida, escolha **Gestor dos serviços de informação Internet (IIS)**.  
 
-2.  Rozwiń węzeł **witryny**, kliknij prawym przyciskiem myszy **domyślna witryna sieci Web**, a następnie wybierz **Edytuj powiązania**.  
+2.  Expanda **Sites**, faça duplo clique **Web Site predefinido**e, em seguida, escolha **editar enlaces**.  
 
-3.  Wybierz **https** wpis, a następnie wybierz **edytować**.  
+3.  Escolha o **https** entrada e, em seguida, escolha **editar**.  
 
-4.  W **edytowanie powiązań witryny** okno dialogowe, wybierz certyfikat, którego zażądano za pomocą szablonu certyfikat serwera sieci Web programu ConfigMgr, a następnie wybierz **OK**.  
+4.  No **Editar enlace de Site** caixa de diálogo, selecione o certificado que pediu, através do modelo de certificados de servidor Web do ConfigMgr e, em seguida, escolha **OK**.  
 
     > [!NOTE]  
-    >  Jeśli nie masz pewności, który jest poprawny certyfikat, wybierz jedną, a następnie wybierz **widoku**. Pozwala to porównać szczegóły wybranego certyfikatu certyfikatów w przystawce Certyfikaty. Na przykład przystawki Certyfikaty zawiera szablon certyfikatu, który został użyty do żądania certyfikatu. Możesz następnie porównać odcisk palca certyfikatu, którego zażądano za pomocą szablonu certyfikat serwera sieci Web programu ConfigMgr do odcisk palca certyfikatu aktualnie wybranego w **edytowanie powiązań witryny** okno dialogowe.  
+    >  Se não tem a certeza de que é o certificado correto, escolha um e, em seguida, escolha **vista**. Isto permite-lhe comparar os detalhes do certificado selecionado para os certificados no snap-in certificados. Por exemplo, o snap-in de certificados mostra o modelo de certificado que foi utilizado para pedir o certificado. Poderá então comparar a thumbprint do certificado que foi pedido utilizando o modelo de certificados de servidor Web do ConfigMgr para o thumbprint do certificado atualmente selecionado no **Editar enlace de Site** caixa de diálogo.  
 
-5.  Wybierz **OK** w **edytowanie powiązań witryny** okna dialogowego pole, a następnie wybierz **Zamknij**.  
+5.  Escolha **OK** no **Editar enlace de Site** diálogo caixa e, em seguida, escolha **fechar**.  
 
-6.  Zamknij **Menedżera internetowych usług informacyjnych (IIS)**.  
+6.  Feche o **Gestor de Serviços de Informação Internet (IIS)**.  
 
- Serwer członkowski jest teraz skonfigurowane przy użyciu certyfikatu serwera sieci web programu System Center Configuration Manager.  
+ O servidor membro está agora definido com um certificado de servidor web do System Center Configuration Manager.  
 
 > [!IMPORTANT]  
->  Po zainstalowaniu serwera systemu lokacji programu System Center Configuration Manager na tym komputerze, upewnij się, określić tej samej nazwy FQDN we właściwościach systemu lokacji, ponieważ określone podczas żądania certyfikatu.  
+>  Quando instala o servidor de sistema de sites do System Center Configuration Manager neste computador, certifique-se de que especifica os mesmos FQDN nas propriedades do sistema de sites que especificou quando pediu o certificado.  
 
-##  <a name="BKMK_clouddp2008_cm2012"></a>Wdrażanie certyfikatu usługi dla punktów dystrybucji w chmurze  
+##  <a name="BKMK_clouddp2008_cm2012"></a>Implementar o certificado de serviço para pontos de distribuição baseado na nuvem  
 
-Wdrożenie tego certyfikatu jest objęte następującymi procedurami:  
+Esta implementação de certificados possui os seguintes procedimentos:  
 
--   [Utwórz i wystaw szablon certyfikatu w urzędzie certyfikacji serwera sieci web niestandardowe](#BKMK_clouddpcreating2008)  
+-   [Criar e emitir o modelo de certificado na autoridade de certificação de um servidor web personalizado](#BKMK_clouddpcreating2008)  
 
--   [Żądanie certyfikatu serwera sieci web niestandardowe](#BKMK_clouddprequesting2008)  
+-   [Pedir o certificado de servidor web personalizado](#BKMK_clouddprequesting2008)  
 
--   [Eksportowanie certyfikatu serwera sieci web niestandardowe dla punktów dystrybucji w chmurze](#BKMK_clouddpexporting2008)  
+-   [Exportar o certificado de servidor web personalizado para pontos de distribuição baseado na nuvem](#BKMK_clouddpexporting2008)  
 
-###  <a name="BKMK_clouddpcreating2008"></a>Utwórz i wystaw szablon certyfikatu w urzędzie certyfikacji serwera sieci web niestandardowe  
- Ta procedura powoduje utworzenie niestandardowego szablonu certyfikatu opartego na szablonie certyfikatu serwera sieci web. Certyfikat jest przeznaczony dla punktów dystrybucji w chmurze programu System Center Configuration Manager, a klucz prywatny musi być eksportowalny. Po utworzeniu szablon certyfikatu jest dodawany do urzędu certyfikacji.  
+###  <a name="BKMK_clouddpcreating2008"></a>Criar e emitir o modelo de certificado na autoridade de certificação de um servidor web personalizado  
+ Este procedimento cria um modelo de certificado personalizado baseado no modelo de certificado de servidor web. O certificado é para os pontos de distribuição baseados na nuvem do System Center Configuration Manager e a chave privada tem de ser exportável. Após a criação do modelo de certificado, este é adicionado à autoridade de certificação.  
 
 > [!NOTE]  
->  Ta procedura używa innego szablonu certyfikatu z utworzonego szablonu certyfikatu serwera sieci web dla systemów lokacji z usługami IIS. Mimo że oba certyfikaty wymagają funkcji uwierzytelniania serwera, certyfikat dla punktów dystrybucji w chmurze wymaga wprowadzenia niestandardowej wartości parametru Nazwa podmiotu i klucz prywatny musi zostać wyeksportowany. Zabezpieczeń najlepszym rozwiązaniem, czy nie skonfigurowane szablony certyfikatów, aby wyeksportować klucza prywatnego, chyba że taka konfiguracja jest wymagana. Punkt dystrybucji w chmurze wymaga tej konfiguracji, ponieważ należy zaimportować certyfikat jako plik, zamiast wybierz go z magazynu certyfikatów.  
+>  Este procedimento utiliza um modelo de certificado diferente do modelo de certificado de servidor web que criou para sistemas de sites que executam o IIS. Embora ambos os certificados necessitem de capacidade de autenticação de servidor, o certificado para pontos de distribuição baseados na nuvem requer que introduza um valor personalizado para o nome do requerente e a chave privada tem de ser exportada. Como melhor prática de segurança, efetue não configurar modelos de certificado para que a chave privada pode ser exportada, a menos que esta configuração é necessária. O ponto de distribuição baseado na nuvem necessita desta configuração porque é necessário importar o certificado como um ficheiro, vez escolhê-lo a partir do arquivo de certificados.  
 >   
->  Podczas tworzenia nowego szablonu certyfikatu dla tego certyfikatu pozwala ograniczyć komputerów, które można zażądać certyfikatu, którego klucz prywatny można eksportować. W sieci produkcyjnej można także rozważyć wprowadzenie następujących zmian dla tego certyfikatu:  
+>  Quando cria um novo modelo de certificado para este certificado, pode restringir os computadores que podem solicitar um certificado cujo chave privada pode ser exportada. Numa rede de produção, também poderá considerar adicionar as seguintes alterações para este certificado:  
 >   
->  -   Wymaganie zatwierdzenia instalacji certyfikatu w celu zapewnienia dodatkowych zabezpieczeń.  
-> -   Wydłużenie okresu ważności certyfikatu. Ponieważ należy wyeksportować i zaimportować certyfikat za każdym razem przed wygaśnięciem, wzrost okresu ważności zmniejsza częstotliwość powtarzania tej procedury. Jednak wzrost okresu ważności również zmniejszenie bezpieczeństwa certyfikatu, ponieważ zapewnia to osobie atakującej na odszyfrowanie klucza prywatnego i kradzież certyfikatu więcej czasu.  
-> -   Użycie niestandardowej wartości nazwa alternatywnej podmiotu (SAN) w celu łatwiejszego odróżnienia tego certyfikatu od standardowych certyfikatów serwera sieci Web używanego z programem IIS.  
+>  -   Exigir a aprovação para instalar o certificado para segurança adicional.  
+> -   Aumente o período de validade do certificado. Porque tem de exportar e importar o certificado de cada vez antes de expirar, um aumento do período de validade reduz a frequência tem de repetir este procedimento. No entanto, um aumento do período de validade também reduz a segurança do certificado porque fornece mais algum tempo para um atacante desencriptar a chave privada e roubar o certificado.  
+> -   Utilize um valor personalizado no Nome Alternativo do Requerente (SAN) do certificado para ajudar a identificar este certificado entre certificados de servidor Web padrão que utiliza com o IIS.  
 
-##### <a name="to-create-and-issue-the-custom-web-server-certificate-template-on-the-certification-authority"></a>Aby utworzyć i wystawić szablon certyfikatu w urzędzie certyfikacji serwera sieci web niestandardowe  
+##### <a name="to-create-and-issue-the-custom-web-server-certificate-template-on-the-certification-authority"></a>Para criar e emitir o modelo de certificado na autoridade de certificação de servidor web personalizado  
 
-1.  Utwórz grupę zabezpieczeń o nazwie **serwerów lokacji programu ConfigMgr** zawierającej serwery Członkowskie do zainstalowania serwerów lokacji podstawowej programu System Center Configuration Manager, które będą zarządzać punktami dystrybucji w chmurze.  
+1.  Crie um grupo de segurança denominado **servidores do Site ConfigMgr** com os servidores membro para instalar servidores de site primário do System Center Configuration Manager que irão gerir pontos de distribuição baseados na nuvem.  
 
-2.  Na serwerze członkowskim, na którym jest uruchomiona konsola urzędu certyfikacji, kliknij prawym przyciskiem myszy **szablonów certyfikatów**, a następnie wybierz **Zarządzaj** załadować Konsolę zarządzania szablonami certyfikatów.  
+2.  No servidor membro que está a executar a consola da autoridade de certificação, clique com botão direito **modelos de certificado**e, em seguida, escolha **gerir** para carregar a consola de gestão de modelos de certificado.  
 
-3.  W okienku wyników kliknij prawym przyciskiem myszy wpis **serwera sieci Web** w **Nazwa wyświetlana szablonu** kolumny, a następnie wybierz **Duplikuj szablon**.  
+3.  No painel de resultados, faça duplo clique na entrada que tem **servidor Web** no **nome a apresentar do modelo** coluna e, em seguida, escolha **Duplicar modelo**.  
 
-4.  W **Duplikuj szablon** dialogowe Sprawdź, czy **systemu Windows Server 2003, Enterprise Edition** jest zaznaczone, a następnie wybierz **OK**.  
+4.  No **Duplicar modelo** diálogo caixa, certifique-se de que **Windows 2003 Server, Enterprise Edition** está selecionada e, em seguida, escolha **OK**.  
 
     > [!IMPORTANT]  
-    >  Nie wybieraj systemu **Windows 2008 Server, Enterprise Edition**.  
+    >  Não selecione **Windows 2008 Server, Enterprise Edition**.  
 
-5.  W **właściwości nowego szablonu** okna dialogowego na **ogólne** , wprowadź nazwę szablonu, jak **certyfikat punktu dystrybucji w chmurze programu ConfigMgr**, w celu wygenerowania certyfikatu serwera sieci web dla punktów dystrybucji w chmurze.  
+5.  No **propriedades de novo modelo** caixa de diálogo a **geral** separador, introduza um nome de modelo, tal como **certificado de ponto de distribuição baseado na nuvem do ConfigMgr**para gerar o certificado de servidor web para pontos de distribuição baseado na nuvem.  
 
-6.  Wybierz **obsługiwanie żądań** karcie, a następnie wybierz **Zezwalaj na eksportowanie klucza prywatnego**.  
+6.  Escolha o **processamento de pedidos** separador e, em seguida, escolha **permitir que a chave privada seja exportada**.  
 
-7.  Wybierz **zabezpieczeń** karcie, a następnie usuń **rejestracja** zgody **Administratorzy przedsiębiorstwa** grupy zabezpieczeń.  
+7.  Escolha o **segurança** separador e, em seguida, remova o **inscrever** permissão a partir do **Admins de empresa** grupo de segurança.  
 
-8.  Wybierz **Dodaj**, wprowadź **serwerów lokacji programu ConfigMgr** w tekście pole, a następnie wybierz **OK**.  
+8.  Escolha **adicionar**, introduza **servidores do Site ConfigMgr** no texto da caixa e, em seguida, escolha **OK**.  
 
-9. Wybierz dla tej grupy uprawnienie **Rejestracja** i nie usuwaj zaznaczenia uprawnienia **Odczyt** .  
+9. Selecione a permissão **Inscrever** para este grupo e não desmarque a permissão **Leitura** .  
 
-10. Wybierz **OK**, a następnie Zamknij **konsoli Szablony certyfikatów**.  
+10. Escolha **OK**e, em seguida, feche **consola de modelos de certificado**.  
 
-11. W konsoli Urząd certyfikacji kliknij prawym przyciskiem myszy **szablonów certyfikatów**, wybierz **nowy**, a następnie wybierz **szablon certyfikatu do wystawienia**.  
+11. Na consola de autoridade de certificação, clique com botão direito **modelos de certificado**, escolha **novo**e, em seguida, escolha **modelo de certificado a emitir**.  
 
-12. W **Włączanie szablonu certyfikatu** okno dialogowe, wybierz nowego szablonu, który został właśnie utworzony, **certyfikat punktu dystrybucji w chmurze programu ConfigMgr**, a następnie wybierz **OK**.  
+12. No **ativar modelos de certificado** diálogo caixa, selecione o novo modelo que acabou de criar, **certificado de ponto de distribuição baseado na nuvem do ConfigMgr**e, em seguida, escolha **OK**.  
 
-13. Jeśli nie masz tworzenia i wystawiania certyfikatów Zamknij **urząd certyfikacji**.  
+13. Se não necessitar de criar e emitir mais certificados, feche **autoridade de certificação**.  
 
-###  <a name="BKMK_clouddprequesting2008"></a>Żądanie certyfikatu serwera sieci web niestandardowe  
- Tej procedury żądanie, a następnie instaluje certyfikat serwera sieci web niestandardowe na serwerze członkowskim, który będzie uruchamiany na serwerze lokacji.  
+###  <a name="BKMK_clouddprequesting2008"></a>Pedir o certificado de servidor web personalizado  
+ Este procedimento pede e, em seguida, instala o certificado de servidor web personalizado no servidor membro que irá executar o servidor do site.  
 
-##### <a name="to-request-the-custom-web-server-certificate"></a>Aby zażądać niestandardowego certyfikatu serwera sieci Web  
+##### <a name="to-request-the-custom-web-server-certificate"></a>Para pedir o certificado de servidor Web personalizado  
 
-1.  Uruchom ponownie serwer członkowski po utworzeniu i skonfigurowaniu **serwerów lokacji programu ConfigMgr** grupy zabezpieczeń, aby upewnić się, że komputer ma dostęp do szablonu certyfikatu, który został utworzony za pomocą **odczytu** i **rejestracja** skonfigurowanych uprawnień.  
+1.  Reinicie o servidor membro depois de criar e configurar o **servidores do Site ConfigMgr** grupo de segurança para se certificar de que o computador pode aceder o modelo de certificado que criou utilizando o **leitura** e **inscrever** permissões que configurou.  
 
-2.  Wybierz **Start**, wybierz **Uruchom**, a następnie wprowadź **mmc.exe.** W pustej konsoli kliknij **pliku**, a następnie wybierz **Dodaj/Usuń przystawkę**.  
+2.  Escolha **iniciar**, escolha **executar**e, em seguida, introduza **mmc.exe.** Na consola vazia, escolha **ficheiro**e, em seguida, escolha **Adicionar/Remover Snap-in**.  
 
-3.  W **Dodawanie lub usuwanie przystawek** okno dialogowe Wybierz **certyfikaty** z listy **dostępne przystawki**, a następnie wybierz **Dodaj**.  
+3.  No **adicionar ou Remover Snap-ins** diálogo caixa, escolha **certificados** da lista de **snap-ins disponíveis**e, em seguida, escolha **adicionar**.  
 
-4.  W **certyfikatów w przystawce** okno dialogowe Wybierz **konto komputera**, a następnie wybierz **dalej**.  
+4.  No **snap-in de certificados** diálogo caixa, escolha **conta de computador**e, em seguida, escolha **seguinte**.  
 
-5.  W **wybierz komputer** okna dialogowego Sprawdź, czy **komputer lokalny: (komputer ten jest uruchomiona konsola)** jest zaznaczone, a następnie wybierz **Zakończ**.  
+5.  No **selecionar computador** diálogo caixa, certifique-se de que **computador Local: (o computador onde esta consola está em execução no)** está selecionada e, em seguida, escolha **concluir**.  
 
-6.  W **Dodawanie lub usuwanie przystawek** okno dialogowe Wybierz **OK**.  
+6.  No **adicionar ou Remover Snap-ins** diálogo caixa, escolha **OK**.  
 
-7.  W konsoli rozwiń **certyfikaty (komputer lokalny)**, a następnie wybierz **osobiste**.  
+7.  Na consola, expanda **certificados (computador Local)**e, em seguida, escolha **pessoais**.  
 
-8.  Kliknij prawym przyciskiem myszy **certyfikaty**, wybierz **wszystkie zadania**, a następnie wybierz **Żądaj nowego certyfikatu**.  
+8.  Clique com botão direito **certificados**, escolha **todas as tarefas**e, em seguida, escolha **requisitar um novo certificado**.  
 
-9. Na **przed rozpoczęciem** wybierz **dalej**.  
+9. No **antes de começar** página, escolha **seguinte**.  
 
-10. Jeśli widzisz **wybierz zasady rejestracji certyfikatu** wybierz **dalej**.  
+10. Se vir o **selecionar política de inscrição de certificado** página, escolha **seguinte**.  
 
-11. Na **Żądaj certyfikatów** Znajdź **certyfikat punktu dystrybucji w chmurze programu ConfigMgr** z listy dostępnych certyfikatów, a następnie wybierz **więcej informacji jest wymagany do zarejestrowania dla tego certyfikatu. Wybierz tutaj skonfigurować ustawienia**.  
+11. No **pedir certificados** página, identifique o **certificado de ponto de distribuição baseado na nuvem do ConfigMgr** da lista de certificados disponíveis e, em seguida, escolha **mais informação é necessária a inscrição para este certificado. Escolha aqui configurar as definições**.  
 
-12. W **właściwości certyfikatu** okna dialogowego, **podmiotu** karcie dla **nazwa podmiotu**, wybierz **nazwa pospolita** jako **typu**.  
+12. No **propriedades do certificado** caixa de diálogo a **requerente** separador, para o **nome do requerente**, escolha **nome comum** como o **tipo**.  
 
-13. W polu **Wartość** określ wybór nazwy usługi i nazwy domeny, używając formatu FQDN. Na przykład: **clouddp1.contoso.com**.  
-
-    > [!NOTE]  
-    >  Unikatowość nazwy usługi w danym obszarze nazw. Zostanie użyty system DNS w celu utworzenia aliasu (rekordu CNAME) i odwzorowania tej nazwy usługi na automatycznie generowany identyfikator (GUID) i adres IP z usługi Windows Azure.  
-
-14. Wybierz **Dodaj**, a następnie wybierz **OK** zamknąć **właściwości certyfikatu** okno dialogowe.  
-
-15. Na **Żądaj certyfikatów** wybierz **certyfikat punktu dystrybucji w chmurze programu ConfigMgr** z listy dostępnych certyfikatów, a następnie wybierz **rejestracja**.  
-
-16. Na **wyniki instalacji certyfikatów** , poczekaj, aż certyfikat został zainstalowany, a następnie wybierz **Zakończ**.  
-
-17. Zamknij konsolę **Certyfikaty (komputer lokalny)**.  
-
-###  <a name="BKMK_clouddpexporting2008"></a>Eksportowanie certyfikatu serwera sieci web niestandardowe dla punktów dystrybucji w chmurze  
- Ta procedura umożliwia wyeksportowanie niestandardowego certyfikatu serwera sieci Web do pliku, aby można go było zaimportować po utworzeniu chmurowego punktu dystrybucji.  
-
-##### <a name="to-export-the-custom-web-server-certificate-for-cloud-based-distribution-points"></a>Aby wyeksportować niestandardowy certyfikat serwera sieci Web dla chmurowych punktów dystrybucji  
-
-1.  W **certyfikaty (komputer lokalny)** konsoli, kliknij prawym przyciskiem myszy właśnie zainstalowany certyfikat, wybierz polecenie **wszystkie zadania**, a następnie wybierz **wyeksportować**.  
-
-2.  W Kreatorze eksportu certyfikatów wybierz **dalej**.  
-
-3.  Na **eksportowanie klucza prywatnego** wybierz **tak, Eksportuj klucz prywatny**, a następnie wybierz **dalej**.  
+13. Na caixa **Valor** , especifique a sua escolha de nome de serviço e o nome do domínio utilizando um formato FQDN. Por exemplo: **pdnuvem1.contoso.com**.  
 
     > [!NOTE]  
-    >  Jeżeli ta opcja nie jest dostępna, certyfikat został utworzony bez opcji eksportu klucza prywatnego. W tym scenariuszu nie można wyeksportować certyfikatu w wymaganym formacie. Należy skonfigurować szablon certyfikatu, aby klucz prywatny można eksportować, a następnie zażądać certyfikatu ponownie.  
+    >  Certifique-o nome do serviço exclusivo no seu espaço de nomes. Irá utilizar DNS para criar um alias (registo CNAME) para mapear este nome de serviço para um identificador (GUID) gerado automaticamente e um endereço IP do Windows Azure.  
 
-4.  Na **Format pliku eksportu** strony, upewnij się, że **wymiany informacji osobistych — PKCS #12 (. PFX)** opcja jest zaznaczona.  
+14. Escolha **adicionar**e, em seguida, escolha **OK** para fechar o **propriedades do certificado** caixa de diálogo.  
 
-5.  Na **hasło** Określ silne hasło, aby zabezpieczyć wyeksportowany certyfikat kluczem prywatnym, a następnie wybierz **dalej**.  
+15. No **pedir certificados** página, escolha **certificado de ponto de distribuição baseado na nuvem do ConfigMgr** da lista de certificados disponíveis e, em seguida, escolha **inscrever**.  
 
-6.  Na **Eksport pliku** Określ nazwę pliku, który chcesz wyeksportować, a następnie wybierz **dalej**.  
+16. No **resultados da instalação de certificados** página, aguarde até que o certificado está instalado e, em seguida, escolha **concluir**.  
 
-7.  Aby zamknąć kreatora, wybierz **Zakończ** w **Kreatora eksportu certyfikatów** , a następnie wybierz **OK** w oknie dialogowym potwierdzenia.  
+17. Feche **Certificados (Computador Local)**.  
 
-8.  Zamknij konsolę **Certyfikaty (komputer lokalny)**.  
+###  <a name="BKMK_clouddpexporting2008"></a>Exportar o certificado de servidor web personalizado para pontos de distribuição baseado na nuvem  
+ Este procedimento exporta o certificado de servidor Web personalizado para um ficheiro para que possa ser importado quando criar o ponto de distribuição baseado na nuvem.  
 
-9. Zapisz plik w bezpiecznym miejscu i upewnij się, że można do niego dostęp z konsoli programu System Center Configuration Manager.  
+##### <a name="to-export-the-custom-web-server-certificate-for-cloud-based-distribution-points"></a>Para exportar o certificado de servidor Web personalizado para pontos de distribuição baseados na nuvem  
 
- Certyfikat jest teraz gotowy do zaimportowania po utworzeniu chmurowego punktu dystrybucji.  
+1.  No **certificados (computador Local)** consola, faça duplo clique no certificado que acabou de instalar, escolha **todas as tarefas**e, em seguida, escolha **exportar**.  
 
-##  <a name="BKMK_client2008_cm2012"></a>Wdrażanie certyfikatu klienta dla komputerów z systemem Windows  
- Wdrożenie tego certyfikatu jest objęte następującymi procedurami:  
+2.  No Assistente para exportar certificados, escolha **seguinte**.  
 
--   Utwórz i wystaw szablon certyfikatu uwierzytelniania stacji roboczej w urzędzie certyfikacji  
+3.  No **exportar chave privada** página, escolha **Sim, exportar a chave privada**e, em seguida, escolha **seguinte**.  
 
--   Konfigurowanie automatycznej rejestracji szablonu uwierzytelniania stacji roboczej za pomocą zasad grupy  
+    > [!NOTE]  
+    >  Se esta opção não estiver disponível, o certificado foi criado sem a opção para exportar a chave privada. Neste cenário, não é possível exportar o certificado no formato necessário. Tem de configurar o modelo de certificado para que a chave privada pode ser exportado e, em seguida, pedir o certificado novamente.  
 
--   Automatyczne rejestrowanie certyfikatu uwierzytelniania stacji roboczej i zweryfikować jego instalację na komputerach  
+4.  No **exportar formato de ficheiro** página, certifique-se de que o **Personal Information Exchange - PKCS #12 (. PFX)** opção está selecionada.  
 
-###  <a name="BKMK_client02008"></a>Utwórz i wystaw szablon certyfikatu uwierzytelniania stacji roboczej w urzędzie certyfikacji  
- Ta procedura powoduje utworzenie szablonu certyfikatu dla klienta programu System Center Configuration Manager z komputerów i dodanie go do urzędu certyfikacji.  
+5.  No **palavra-passe** página, especifique uma palavra-passe segura para proteger o certificado exportado com a respetiva chave privada e, em seguida, escolha **seguinte**.  
 
-##### <a name="to-create-and-issue-the-workstation-authentication-certificate-template-on-the-certification-authority"></a>Aby utworzyć i wydać szablon certyfikatu uwierzytelniania stacji roboczej w urzędzie certyfikacji  
+6.  No **ficheiro a exportar** página, especifique o nome do ficheiro que pretende exportar e, em seguida, escolha **seguinte**.  
 
-1.  Na serwerze członkowskim, na którym jest uruchomiona konsola urzędu certyfikacji, kliknij prawym przyciskiem myszy **szablonów certyfikatów**, a następnie wybierz **Zarządzaj** załadować Konsolę zarządzania szablonami certyfikatów.  
+7.  Para fechar o assistente, escolha **concluir** no **Assistente para exportar certificados** página e, em seguida, escolha **OK** na caixa de diálogo de confirmação.  
 
-2.  W okienku wyników kliknij prawym przyciskiem myszy wpis **Uwierzytelnianie stacji roboczej** w **Nazwa wyświetlana szablonu** kolumny, a następnie wybierz **Duplikuj szablon**.  
+8.  Feche **Certificados (Computador Local)**.  
 
-3.  W **Duplikuj szablon** dialogowe Sprawdź, czy **systemu Windows Server 2003, Enterprise Edition** jest zaznaczone, a następnie wybierz **OK**.  
+9. Guarde o ficheiro de forma segura e certifique-se de que consegue aceder-lhe a partir da consola do System Center Configuration Manager.  
+
+ O certificado está agora pronto para ser importado quando criar um ponto de distribuição baseado na nuvem.  
+
+##  <a name="BKMK_client2008_cm2012"></a>Implementar o certificado de cliente para computadores Windows  
+ Esta implementação de certificados possui os seguintes procedimentos:  
+
+-   Criar e emitir o modelo de certificado de autenticação de estação de trabalho na autoridade de certificação  
+
+-   Configurar a inscrição automática do modelo de autenticação de estação de trabalho utilizando a política de grupo  
+
+-   Inscrever o certificado de autenticação de estação de trabalho e certifique-se a instalação nos computadores automaticamente  
+
+###  <a name="BKMK_client02008"></a>Criar e emitir o modelo de certificado de autenticação de estação de trabalho na autoridade de certificação  
+ Este procedimento cria um modelo de certificado para o cliente do System Center Configuration Manager, computadores e adiciona-o à autoridade de certificação.  
+
+##### <a name="to-create-and-issue-the-workstation-authentication-certificate-template-on-the-certification-authority"></a>Para criar e emitir o modelo de certificado de Autenticação de Estação de Trabalho na autoridade de certificação  
+
+1.  No servidor membro que está a executar a consola da autoridade de certificação, clique com botão direito **modelos de certificado**e, em seguida, escolha **gerir** para carregar a consola de gestão de modelos de certificado.  
+
+2.  No painel de resultados, faça duplo clique na entrada que tem **autenticação de estação de trabalho** no **nome a apresentar do modelo** coluna e, em seguida, escolha **Duplicar modelo**.  
+
+3.  No **Duplicar modelo** diálogo caixa, certifique-se de que **Windows 2003 Server, Enterprise Edition** está selecionada e, em seguida, escolha **OK**.  
 
     > [!IMPORTANT]  
-    >  Nie wybieraj systemu **Windows 2008 Server, Enterprise Edition**.  
+    >  Não selecione **Windows 2008 Server, Enterprise Edition**.  
 
-4.  W **właściwości nowego szablonu** okna dialogowego na **ogólne** , wprowadź nazwę szablonu, jak **certyfikat klienta programu ConfigMgr**, w celu wygenerowania certyfikatów klienta, które będą używane na komputerach klienckich programu Configuration Manager.  
+4.  No **propriedades de novo modelo** caixa de diálogo a **geral** separador, introduza um nome de modelo, tal como **certificado de cliente do ConfigMgr**, para gerar os certificados de cliente que serão utilizados nos computadores de cliente do Configuration Manager.  
 
-5.  Wybierz **zabezpieczeń** zaznacz **komputerów w domenie** grupę, a następnie wybierz dodatkowe uprawnienia **odczytu** i **Autorejestrowanie**. Nie usuwaj zaznaczenia opcji **Rejestracja**.  
+5.  Escolha o **segurança** separador, selecione o **computadores de domínio** grupo e, em seguida, selecione as permissões adicionais **leitura** e **inscrever automaticamente**. Não desmarque **Inscrever**.  
 
-6.  Wybierz **OK**, a następnie Zamknij **konsoli Szablony certyfikatów**.  
+6.  Escolha **OK**e, em seguida, feche **consola de modelos de certificado**.  
 
-7.  W konsoli Urząd certyfikacji kliknij prawym przyciskiem myszy **szablonów certyfikatów**, wybierz **nowy**, a następnie wybierz **szablon certyfikatu do wystawienia**.  
+7.  Na consola de autoridade de certificação, clique com botão direito **modelos de certificado**, escolha **novo**e, em seguida, escolha **modelo de certificado a emitir**.  
 
-8.  W **Włączanie szablonu certyfikatu** okno dialogowe, wybierz nowego szablonu, który został właśnie utworzony, **certyfikat klienta programu ConfigMgr**, a następnie wybierz **OK**.  
+8.  No **ativar modelos de certificado** diálogo caixa, selecione o novo modelo que acabou de criar, **certificado de cliente do ConfigMgr**e, em seguida, escolha **OK**.  
 
-9. Jeśli nie ma potrzeby tworzenia i wystawiania certyfikatów Zamknij **urząd certyfikacji**.  
+9. Se não precisar de criar e emitir mais certificados, feche **autoridade de certificação**.  
 
-###  <a name="BKMK_client12008"></a>Konfigurowanie automatycznej rejestracji szablonu uwierzytelniania stacji roboczej za pomocą zasad grupy  
- Ta procedura konfiguruje zasady grupy celu autorejestracji certyfikatu klienta na komputerach.  
+###  <a name="BKMK_client12008"></a>Configurar a inscrição automática do modelo de autenticação de estação de trabalho utilizando a política de grupo  
+ Este procedimento configura a política de grupo para inscrever automaticamente o certificado de cliente em computadores.  
 
-##### <a name="to-set-up-autoenrollment-of-the-workstation-authentication-template-by-using-group-policy"></a>Aby skonfigurować autorejestrację szablonu uwierzytelniania stacji roboczej za pomocą zasad grupy  
+##### <a name="to-set-up-autoenrollment-of-the-workstation-authentication-template-by-using-group-policy"></a>Para configurar a inscrição automática do modelo de autenticação de estação de trabalho utilizando a política de grupo  
 
-1.  Na kontrolerze domeny, wybierz **Start**, wybierz **narzędzia administracyjne**, a następnie wybierz **Zarządzanie zasadami grupy**.  
+1.  No controlador de domínio, escolha **iniciar**, escolha **ferramentas administrativas**e, em seguida, escolha **gestão de políticas de grupo**.  
 
-2.  Przejdź do odpowiedniej domeny, kliknij prawym przyciskiem myszy domenę, a następnie wybierz **Utwórz obiekt GPO w tej domenie i umieść tu łącze**.  
-
-    > [!NOTE]  
-    >  W tym kroku wykorzystano najlepsze rozwiązanie dotyczące tworzenia nowej zasady grupy dla ustawień niestandardowych zamiast edycji domyślnych zasad domeny instalowanych za pomocą usług domenowych w usłudze Active Directory. Po przypisaniu zasad grupy na poziomie domeny spowoduje ich zastosowania do wszystkich komputerów w domenie. W środowisku produkcyjnym można ograniczyć autorejestrację tak, aby dotyczyła ona tylko wybranych komputerów. Można przypisać zasad grupy na poziomie jednostki organizacyjnej, lub można filtrować zasady grupy za pomocą grupy zabezpieczeń domeny, dzięki czemu dotyczy tylko komputerów w grupie. W przypadku ograniczenia autorejestracji należy pamiętać o uwzględnieniu serwera skonfigurowanego jako punkt zarządzania.  
-
-3.  W **nowego obiektu zasad grupy** okna dialogowego wprowadź nazwę, jak **autorejestrowanie certyfikatów**, nowych zasad grupy, a następnie wybierz **OK**.  
-
-4.  W okienku wyników na **powiązane obiekty zasad grupy** karcie, kliknij prawym przyciskiem myszy nową zasadę grupy, a następnie wybierz **edytować**.  
-
-5.  W **Edytor zarządzania zasadami grupy**, rozwiń węzeł **zasad** pod **konfiguracji komputera**, a następnie przejdź do **ustawienia systemu Windows** / **ustawienia zabezpieczeń** / **zasady kluczy publicznych**.  
-
-6.  Kliknij prawym przyciskiem myszy typ obiektu o nazwie **klient usług certyfikatów — automatyczne rejestrowanie**, a następnie wybierz **właściwości**.  
-
-7.  Z **Model konfiguracji** listy rozwijanej wybierz pozycję **włączone**, wybierz **Odnów wygasłe certyfikaty, aktualizuj oczekujące certyfikaty, usuń odwołane certyfikaty**, wybierz **Aktualizuj certyfikaty, które używają szablonów certyfikatów**, a następnie wybierz **OK**.  
-
-8.  Zamknij okno **Zarządzanie zasadami grupy**.  
-
-###  <a name="BKMK_client22008"></a>Automatyczne rejestrowanie certyfikatu uwierzytelniania stacji roboczej i zweryfikować jego instalację na komputerach  
- Ta procedura powoduje zainstalowanie certyfikatu klienta na komputerach i weryfikację instalacji.  
-
-##### <a name="to-automatically-enroll-the-workstation-authentication-certificate-and-verify-its-installation-on-the-client-computer"></a>Aby automatycznie zarejestrować certyfikat uwierzytelniania stacji roboczej i zweryfikować jego instalację na komputerze klienckim  
-
-1.  Uruchom ponownie stację roboczą i poczekaj kilka minut przed zalogowaniem.  
+2.  Aceda ao seu domínio, clique com botão direito do domínio e, em seguida, escolha **criar um GPO neste domínio e ligá-lo aqui**.  
 
     > [!NOTE]  
-    >  Ponowne uruchomienie komputera to najbardziej niezawodna metoda zapewnienia pomyślnej autorejestracji certyfikatu.  
+    >  Este passo utiliza a melhor prática de criar uma nova Política de Grupo para definições personalizadas, em vez de editar a Política de Domínios Predefinida que é instalada com os Serviços de Domínio do Active Directory. Ao atribuir esta política de grupo ao nível do domínio, irá aplicá-la a todos os computadores no domínio. Num ambiente de produção, pode restringir a inscrição automática, de modo a que inscreva apenas computadores selecionados. Pode atribuir a política de grupo ao nível de uma unidade organizacional ou pode filtrar o política de grupo com um grupo de segurança do domínio para que aplica-se apenas aos computadores no grupo. Se restringir a inscrição automática, não se esqueça de incluir o servidor que está configurado como ponto de gestão.  
 
-2.  Zaloguj się przy użyciu konta z uprawnieniami administracyjnymi.  
+3.  No **novo GPO** caixa de diálogo, introduza um nome, como **certificados de inscrição automática**, para a nova política de grupo e, em seguida, escolha **OK**.  
 
-3.  W polu wyszukiwania wprowadź **mmc.exe.**, a następnie naciśnij klawisz **Enter**.  
+4.  No painel de resultados, no **objetos de política de grupo ligados** separador, clique com o botão direito a nova política de grupo e, em seguida, escolha **editar**.  
 
-4.  W pustej konsoli zarządzania, wybierz **pliku**, a następnie wybierz **Dodaj/Usuń przystawkę**.  
+5.  No **Editor de gestão de políticas de grupo**, expanda **políticas** em **configuração do computador**e, em seguida, aceda a **definições do Windows** / **definições de segurança** / **políticas de chaves públicas**.  
 
-5.  W **Dodawanie lub usuwanie przystawek** okno dialogowe Wybierz **certyfikaty** z listy **dostępne przystawki**, a następnie wybierz **Dodaj**.  
+6.  Clique com o botão direito do tipo de objeto com o nome **cliente de serviços de certificados - inscrição automática**e, em seguida, escolha **propriedades**.  
 
-6.  W **certyfikatów w przystawce** okno dialogowe Wybierz **konto komputera**, a następnie wybierz **dalej**.  
+7.  Do **modelo de configuração** pendente lista, escolha **ativado**, escolha **renovar certificados expirados, atualizar certificados pendentes, remover certificados revogados**, escolha **atualizar certificados que utilizam modelos de certificado**e, em seguida, escolha **OK**.  
 
-7.  W **wybierz komputer** okna dialogowego Sprawdź, czy **komputer lokalny: (komputer ten jest uruchomiona konsola)** jest zaznaczone, a następnie wybierz **Zakończ**.  
+8.  Feche a **Gestão de Políticas de Grupo**.  
 
-8.  W **Dodawanie lub usuwanie przystawek** okno dialogowe Wybierz **OK**.  
+###  <a name="BKMK_client22008"></a>Inscrever o certificado de autenticação de estação de trabalho e certifique-se a instalação nos computadores automaticamente  
+ Este procedimento instala o certificado de cliente nos computadores e verifica a instalação.  
 
-9. W konsoli rozwiń **certyfikaty (komputer lokalny)**, rozwiń węzeł **osobiste**, a następnie wybierz **certyfikaty**.  
+##### <a name="to-automatically-enroll-the-workstation-authentication-certificate-and-verify-its-installation-on-the-client-computer"></a>Para inscrever o certificado de autenticação de estação de trabalho e verificar a instalação no computador cliente automaticamente  
 
-10. W okienku wyników sprawdź, czy certyfikat ma **uwierzytelnianie klienta** w **zamierzony cel** kolumny, a **certyfikat klienta programu ConfigMgr** w **szablonu certyfikatu** kolumny.  
+1.  Reinicie o computador de estação de trabalho e aguarde alguns minutos antes de iniciar sessão.  
 
-11. Zamknij konsolę **Certyfikaty (komputer lokalny)**.  
+    > [!NOTE]  
+    >  Reiniciar um computador é o método mais fiável de garantir o sucesso da inscrição automática de certificados.  
 
-12. Powtórz kroki od 1 do 11 dla serwera członkowskiego sprawdzić, czy serwer, który zostanie skonfigurowany jako punkt zarządzania także zawiera certyfikat klienta.  
+2.  Inicie sessão com uma conta que tenha privilégios administrativos.  
 
- Komputer jest skonfigurowany z certyfikatem klienta programu System Center Configuration Manager.  
+3.  Na caixa de pesquisa, introduza **mmc.exe.**e, em seguida, prima **Enter**.  
 
-##  <a name="BKMK_clientdistributionpoint2008_cm2012"></a>Wdrażanie certyfikatu klienta dla punktów dystrybucji  
+4.  Na consola de gestão vazia, escolha **ficheiro**e, em seguida, escolha **Adicionar/Remover Snap-in**.  
+
+5.  No **adicionar ou Remover Snap-ins** diálogo caixa, escolha **certificados** da lista de **snap-ins disponíveis**e, em seguida, escolha **adicionar**.  
+
+6.  No **snap-in de certificados** diálogo caixa, escolha **conta de computador**e, em seguida, escolha **seguinte**.  
+
+7.  No **selecionar computador** diálogo caixa, certifique-se de que **computador Local: (o computador onde esta consola está em execução no)** está selecionada e, em seguida, escolha **concluir**.  
+
+8.  No **adicionar ou Remover Snap-ins** diálogo caixa, escolha **OK**.  
+
+9. Na consola, expanda **certificados (computador Local)**, expanda **pessoais**e, em seguida, escolha **certificados**.  
+
+10. No painel de resultados, confirme que tem um certificado **autenticação de cliente** no **objetivo pretendido** coluna e que **certificado de cliente do ConfigMgr** está a ser o **modelo de certificado** coluna.  
+
+11. Feche **Certificados (Computador Local)**.  
+
+12. Repita os passos 1 a 11 para o servidor de membro verificar se o servidor que irá ser configurado como ponto de gestão também tem um certificado de cliente.  
+
+ O computador está agora definido com um certificado de cliente do System Center Configuration Manager.  
+
+##  <a name="BKMK_clientdistributionpoint2008_cm2012"></a>Implementar o certificado de cliente para pontos de distribuição  
 
 > [!NOTE]  
->  Tego certyfikatu można także użyć dla obrazów nośników, które nie używają rozruchu PXE, ponieważ wymagania dotyczące certyfikatu są takie same.  
+>  Este certificado também pode ser utilizado para imagens de suportes de dados que não utilizem o arranque PXE, uma vez que os requisitos de certificados são os mesmos.  
 
- Wdrożenie tego certyfikatu jest objęte następującymi procedurami:  
+ Esta implementação de certificados possui os seguintes procedimentos:  
 
--   Utworzyć i wydać niestandardowy szablon certyfikatu uwierzytelniania stacji roboczej w urzędzie certyfikacji  
+-   Criar e emitir um modelo de certificado de autenticação de estação de trabalho personalizado na autoridade de certificação  
 
--   Żądanie niestandardowego certyfikatu uwierzytelniania stacji roboczej  
+-   Pedir o certificado de autenticação de estação de trabalho personalizado  
 
--   Eksportowanie certyfikatu klienta dla punktów dystrybucji  
+-   Exportar o certificado de cliente para pontos de distribuição  
 
-###  <a name="BKMK_clientdistributionpoint02008"></a>Utworzyć i wydać niestandardowy szablon certyfikatu uwierzytelniania stacji roboczej w urzędzie certyfikacji  
- Ta procedura powoduje utworzenie niestandardowego szablonu certyfikatu dla punktów dystrybucji programu System Center Configuration Manager, aby klucz prywatny można eksportować i dodanie szablonu certyfikatu do urzędu certyfikacji.  
+###  <a name="BKMK_clientdistributionpoint02008"></a>Criar e emitir um modelo de certificado de autenticação de estação de trabalho personalizado na autoridade de certificação  
+ Este procedimento cria um modelo de certificado personalizado para pontos de distribuição do System Center Configuration Manager para que a chave privada pode ser exportada e adiciona o modelo de certificado à autoridade de certificação.  
 
 > [!NOTE]  
->  Ta procedura wykorzystuje inny szablon certyfikatu z szablonu certyfikatu, który został utworzony dla komputerów klienckich. Mimo że oba certyfikaty wymagają możliwości uwierzytelniania klienta, certyfikat dla punktów dystrybucji wymaga wyeksportowania klucza prywatnego. Zabezpieczeń najlepszym rozwiązaniem, czy nie skonfigurowane szablony certyfikatów, więc klucz prywatny można eksportować, chyba że taka konfiguracja jest wymagana. Punkt dystrybucji wymaga tej konfiguracji, ponieważ należy zaimportować certyfikat jako plik zamiast wybierz go z magazynu certyfikatów.  
+>  Este procedimento utiliza um modelo de certificado diferente do modelo de certificado que criou para computadores cliente. Embora ambos os certificados necessitem de capacidade de autenticação de cliente, o certificado para pontos de distribuição requer que a chave privada é exportada. Como melhor prática de segurança, efetue não configurar modelos de certificado para a chave privada pode ser exportada, a menos que esta configuração é necessária. O ponto de distribuição necessita desta configuração porque é necessário importar o certificado como um ficheiro vez escolhê-lo a partir do arquivo de certificados.  
 >   
->  Podczas tworzenia nowego szablonu certyfikatu dla tego certyfikatu pozwala ograniczyć komputerów, które można zażądać certyfikatu, którego klucz prywatny można eksportować. W naszym przykładowym wdrożeniu będzie to grupa zabezpieczeń utworzona uprzednio dla serwerów systemu lokacji programu System Center Configuration Manager z usługami IIS. W używanej sieci, która dystrybuuje role systemu lokacji usług IIS, należy rozważyć utworzenie nowej grupy zabezpieczeń dla serwerów, na których działają punkty dystrybucji, aby można było ograniczyć certyfikaty tylko do tych serwerów systemu lokacji. Można także rozważyć wprowadzenie następujących modyfikacji certyfikatu:  
+>  Quando cria um novo modelo de certificado para este certificado, pode restringir os computadores que podem solicitar um certificado cujo chave privada pode ser exportada. No nosso exemplo de implementação, este será o grupo de segurança que criou anteriormente para servidores de sistema de sites do System Center Configuration Manager que executam o IIS. Numa rede de produção que distribua as funções de sistema de sites do IIS, considere criar um novo grupo de segurança para os servidores que executam pontos de distribuição para poder restringir o certificado apenas a estes servidores do sistema de sites. Também poderá considerar adicionar as seguintes alterações a este certificado:  
 >   
->  -   Wymaganie zatwierdzenia instalacji certyfikatu w celu zapewnienia dodatkowych zabezpieczeń.  
-> -   Wydłużenie okresu ważności certyfikatu. Ponieważ należy wyeksportować i zaimportować certyfikat za każdym razem przed wygaśnięciem, wzrost okresu ważności zmniejsza częstotliwość powtarzania tej procedury. Jednak wzrost okresu ważności również zmniejszenie bezpieczeństwa certyfikatu, ponieważ zapewnia to osobie atakującej na odszyfrowanie klucza prywatnego i kradzież certyfikatu więcej czasu.  
-> -   Użycie niestandardowej wartości w polu Podmiot certyfikatu lub nazwy alternatywnej podmiotu (SAN), aby ułatwić odróżnienie tego certyfikatu od standardowych certyfikatów klientów. Może to być szczególnie przydatne, jeżeli ten sam certyfikat jest używany dla kilku punktów dystrybucji.  
+>  -   Exigir a aprovação para instalar o certificado para segurança adicional.  
+> -   Aumente o período de validade do certificado. Porque tem de exportar e importar o certificado de cada vez antes de expirar, um aumento do período de validade reduz a frequência tem de repetir este procedimento. No entanto, um aumento do período de validade também reduz a segurança do certificado porque fornece mais algum tempo para um atacante desencriptar a chave privada e roubar o certificado.  
+> -   Utilize um valor personalizado no campo Requerente ou Nome Alternativo do Requerente (SAN) do certificado para ajudar a identificar este certificado entre os certificados de cliente padrão. Isto pode ser particularmente útil se pretender utilizar o mesmo certificado para vários pontos de distribuição.  
 
-##### <a name="to-create-and-issue-the-custom-workstation-authentication-certificate-template-on-the-certification-authority"></a>Aby utworzyć i wydać niestandardowy szablon certyfikatu uwierzytelniania stacji roboczej w urzędzie certyfikacji  
+##### <a name="to-create-and-issue-the-custom-workstation-authentication-certificate-template-on-the-certification-authority"></a>Para criar e emitir o modelo de certificado de Autenticação de Estação de Trabalho personalizado na autoridade de certificação  
 
-1.  Na serwerze członkowskim, na którym jest uruchomiona konsola urzędu certyfikacji, kliknij prawym przyciskiem myszy **szablonów certyfikatów**, a następnie wybierz **Zarządzaj** załadować Konsolę zarządzania szablonami certyfikatów.  
+1.  No servidor membro que está a executar a consola da autoridade de certificação, clique com botão direito **modelos de certificado**e, em seguida, escolha **gerir** para carregar a consola de gestão de modelos de certificado.  
 
-2.  W okienku wyników kliknij prawym przyciskiem myszy wpis **Uwierzytelnianie stacji roboczej** w **Nazwa wyświetlana szablonu** kolumny, a następnie wybierz **Duplikuj szablon**.  
+2.  No painel de resultados, faça duplo clique na entrada que tem **autenticação de estação de trabalho** no **nome a apresentar do modelo** coluna e, em seguida, escolha **Duplicar modelo**.  
 
-3.  W **Duplikuj szablon** dialogowe Sprawdź, czy **systemu Windows Server 2003, Enterprise Edition** jest zaznaczone, a następnie wybierz **OK**.  
+3.  No **Duplicar modelo** diálogo caixa, certifique-se de que **Windows 2003 Server, Enterprise Edition** está selecionada e, em seguida, escolha **OK**.  
 
     > [!IMPORTANT]  
-    >  Nie wybieraj systemu **Windows 2008 Server, Enterprise Edition**.  
+    >  Não selecione **Windows 2008 Server, Enterprise Edition**.  
 
-4.  W **właściwości nowego szablonu** okna dialogowego na **ogólne** , wprowadź nazwę szablonu, jak **certyfikat punktu dystrybucji klienta programu ConfigMgr**, aby wygenerować certyfikat uwierzytelniania klienta dla punktów dystrybucji.  
+4.  No **propriedades de novo modelo** caixa de diálogo a **geral** separador, introduza um nome de modelo, tal como **certificado de ponto de distribuição de cliente do ConfigMgr**para gerar o certificado de autenticação de cliente para pontos de distribuição.  
 
-5.  Wybierz **obsługiwanie żądań** karcie, a następnie wybierz **Zezwalaj na eksportowanie klucza prywatnego**.  
+5.  Escolha o **processamento de pedidos** separador e, em seguida, escolha **permitir que a chave privada seja exportada**.  
 
-6.  Wybierz **zabezpieczeń** karcie, a następnie usuń **rejestracja** zgody **Administratorzy przedsiębiorstwa** grupy zabezpieczeń.  
+6.  Escolha o **segurança** separador e, em seguida, remova o **inscrever** permissão a partir do **Admins de empresa** grupo de segurança.  
 
-7.  Wybierz **Dodaj**, wprowadź **serwery IIS programu ConfigMgr** w tekście pole, a następnie wybierz **OK**.  
+7.  Escolha **adicionar**, introduza **servidores IIS do ConfigMgr** no texto da caixa e, em seguida, escolha **OK**.  
 
-8.  Wybierz dla tej grupy uprawnienie **Rejestracja** i nie usuwaj zaznaczenia uprawnienia **Odczyt** .  
+8.  Selecione a permissão **Inscrever** para este grupo e não desmarque a permissão **Leitura** .  
 
-9. Wybierz **OK**, a następnie Zamknij **konsoli Szablony certyfikatów**.  
+9. Escolha **OK**e, em seguida, feche **consola de modelos de certificado**.  
 
-10. W konsoli Urząd certyfikacji kliknij prawym przyciskiem myszy **szablonów certyfikatów**, wybierz **nowy**, a następnie wybierz **szablon certyfikatu do wystawienia**.  
+10. Na consola de autoridade de certificação, clique com botão direito **modelos de certificado**, escolha **novo**e, em seguida, escolha **modelo de certificado a emitir**.  
 
-11. W **Włączanie szablonu certyfikatu** okno dialogowe, wybierz nowego szablonu, który został właśnie utworzony, **certyfikat punktu dystrybucji klienta programu ConfigMgr**, a następnie wybierz **OK**.  
+11. No **ativar modelos de certificado** diálogo caixa, selecione o novo modelo que acabou de criar, **certificado de ponto de distribuição de cliente do ConfigMgr**e, em seguida, escolha **OK**.  
 
-12. Jeśli nie masz tworzenia i wystawiania certyfikatów Zamknij **urząd certyfikacji**.  
+12. Se não necessitar de criar e emitir mais certificados, feche **autoridade de certificação**.  
 
-###  <a name="BKMK_clientdistributionpoint12008"></a>Żądanie niestandardowego certyfikatu uwierzytelniania stacji roboczej  
- Ta procedura żądanie, a następnie instalację niestandardowego certyfikatu klienta na serwerze członkowskim z systemem usług IIS, który zostanie skonfigurowany jako punkt dystrybucji.  
+###  <a name="BKMK_clientdistributionpoint12008"></a>Pedir o certificado de autenticação de estação de trabalho personalizado  
+ Este procedimento pede e, em seguida, instala o certificado de cliente personalizadas no servidor membro que executa o IIS e que irá ser configurado como um ponto de distribuição.  
 
-##### <a name="to-request-the-custom-workstation-authentication-certificate"></a>Aby zażądać niestandardowego certyfikatu uwierzytelniania stacji roboczej  
+##### <a name="to-request-the-custom-workstation-authentication-certificate"></a>Para pedir o certificado de Autenticação de Estação de Trabalho personalizado  
 
-1.  Wybierz **Start**, wybierz **Uruchom**, a następnie wprowadź **mmc.exe.** W pustej konsoli kliknij **pliku**, a następnie wybierz **Dodaj/Usuń przystawkę**.  
+1.  Escolha **iniciar**, escolha **executar**e, em seguida, introduza **mmc.exe.** Na consola vazia, escolha **ficheiro**e, em seguida, escolha **Adicionar/Remover Snap-in**.  
 
-2.  W **Dodawanie lub usuwanie przystawek** okno dialogowe Wybierz **certyfikaty** z listy **dostępne przystawki**, a następnie wybierz **Dodaj**.  
+2.  No **adicionar ou Remover Snap-ins** diálogo caixa, escolha **certificados** da lista de **snap-ins disponíveis**e, em seguida, escolha **adicionar**.  
 
-3.  W **certyfikatów w przystawce** okno dialogowe Wybierz **konto komputera**, a następnie wybierz **dalej**.  
+3.  No **snap-in de certificados** diálogo caixa, escolha **conta de computador**e, em seguida, escolha **seguinte**.  
 
-4.  W **wybierz komputer** okna dialogowego Sprawdź, czy **komputer lokalny: (komputer ten jest uruchomiona konsola)** jest zaznaczone, a następnie wybierz **Zakończ**.  
+4.  No **selecionar computador** diálogo caixa, certifique-se de que **computador Local: (o computador onde esta consola está em execução no)** está selecionada e, em seguida, escolha **concluir**.  
 
-5.  W **Dodawanie lub usuwanie przystawek** okno dialogowe Wybierz **OK**.  
+5.  No **adicionar ou Remover Snap-ins** diálogo caixa, escolha **OK**.  
 
-6.  W konsoli rozwiń **certyfikaty (komputer lokalny)**, a następnie wybierz **osobiste**.  
+6.  Na consola, expanda **certificados (computador Local)**e, em seguida, escolha **pessoais**.  
 
-7.  Kliknij prawym przyciskiem myszy **certyfikaty**, wybierz **wszystkie zadania**, a następnie wybierz **Żądaj nowego certyfikatu**.  
+7.  Clique com botão direito **certificados**, escolha **todas as tarefas**e, em seguida, escolha **requisitar um novo certificado**.  
 
-8.  Na **przed rozpoczęciem** wybierz **dalej**.  
+8.  No **antes de começar** página, escolha **seguinte**.  
 
-9. Jeśli widzisz **wybierz zasady rejestracji certyfikatu** wybierz **dalej**.  
+9. Se vir o **selecionar política de inscrição de certificado** página, escolha **seguinte**.  
 
-10. Na **Żądaj certyfikatów** wybierz **certyfikat punktu dystrybucji klienta programu ConfigMgr** z listy dostępnych certyfikatów, a następnie wybierz **rejestracja**.  
+10. No **pedir certificados** página, escolha **certificado de ponto de distribuição de cliente do ConfigMgr** da lista de certificados disponíveis e, em seguida, escolha **inscrever**.  
 
-11. Na **wyniki instalacji certyfikatów** , poczekaj, aż certyfikat został zainstalowany, a następnie wybierz **Zakończ**.  
+11. No **resultados da instalação de certificados** página, aguarde até que o certificado está instalado e, em seguida, escolha **concluir**.  
 
-12. W okienku wyników sprawdź, czy certyfikat ma **uwierzytelnianie klienta** w **zamierzony cel** kolumny i że **certyfikat punktu dystrybucji klienta programu ConfigMgr** w **szablonu certyfikatu** kolumny.  
+12. No painel de resultados, confirme que tem um certificado **autenticação de cliente** no **objetivo pretendido** e que a coluna **certificado de ponto de distribuição de cliente do ConfigMgr** está a ser o **modelo de certificado** coluna.  
 
-13. Nie zamykaj konsoli **Certyfikaty (komputer lokalny)**.  
+13. Não feche **Certificados (Computador Local)**.  
 
-###  <a name="BKMK_exportclientdistributionpoint22008"></a>Eksportowanie certyfikatu klienta dla punktów dystrybucji  
- Ta procedura umożliwia wyeksportowanie niestandardowego certyfikatu uwierzytelniania stacji roboczej do pliku, można go zaimportować do właściwości punktu dystrybucji.  
+###  <a name="BKMK_exportclientdistributionpoint22008"></a>Exportar o certificado de cliente para pontos de distribuição  
+ Este procedimento exporta o certificado de autenticação de estação de trabalho personalizado para um ficheiro para que possa ser importado nas propriedades do ponto de distribuição.  
 
-##### <a name="to-export-the-client-certificate-for-distribution-points"></a>Aby wyeksportować certyfikat klienta dla punktów dystrybucji  
+##### <a name="to-export-the-client-certificate-for-distribution-points"></a>Para exportar o certificado de cliente para pontos de distribuição  
 
-1.  W **certyfikaty (komputer lokalny)** konsoli, kliknij prawym przyciskiem myszy właśnie zainstalowany certyfikat, wybierz polecenie **wszystkie zadania**, a następnie wybierz **wyeksportować**.  
+1.  No **certificados (computador Local)** consola, faça duplo clique no certificado que acabou de instalar, escolha **todas as tarefas**e, em seguida, escolha **exportar**.  
 
-2.  W Kreatorze eksportu certyfikatów wybierz **dalej**.  
+2.  No Assistente para exportar certificados, escolha **seguinte**.  
 
-3.  Na **eksportowanie klucza prywatnego** wybierz **tak, Eksportuj klucz prywatny**, a następnie wybierz **dalej**.  
+3.  No **exportar chave privada** página, escolha **Sim, exportar a chave privada**e, em seguida, escolha **seguinte**.  
 
     > [!NOTE]  
-    >  Jeżeli ta opcja nie jest dostępna, certyfikat został utworzony bez opcji eksportu klucza prywatnego. W tym scenariuszu nie można wyeksportować certyfikatu w wymaganym formacie. Należy skonfigurować szablon certyfikatu, aby klucz prywatny można eksportować i zażądać certyfikatu ponownie.  
+    >  Se esta opção não estiver disponível, o certificado foi criado sem a opção para exportar a chave privada. Neste cenário, não é possível exportar o certificado no formato necessário. Tem de configurar o modelo de certificado para que a chave privada pode ser exportado e, em seguida, pedir o certificado novamente.  
 
-4.  Na **Format pliku eksportu** strony, upewnij się, że **wymiany informacji osobistych — PKCS #12 (. PFX)** opcja jest zaznaczona.  
+4.  No **exportar formato de ficheiro** página, certifique-se de que o **Personal Information Exchange - PKCS #12 (. PFX)** opção está selecionada.  
 
-5.  Na **hasło** Określ silne hasło, aby zabezpieczyć wyeksportowany certyfikat kluczem prywatnym, a następnie wybierz **dalej**.  
+5.  No **palavra-passe** página, especifique uma palavra-passe segura para proteger o certificado exportado com a respetiva chave privada e, em seguida, escolha **seguinte**.  
 
-6.  Na **Eksport pliku** Określ nazwę pliku, który chcesz wyeksportować, a następnie wybierz **dalej**.  
+6.  No **ficheiro a exportar** página, especifique o nome do ficheiro que pretende exportar e, em seguida, escolha **seguinte**.  
 
-7.  Aby zamknąć kreatora, wybierz **Zakończ** na **Kreatora eksportu certyfikatów** strony i wybierz polecenie **OK** w oknie dialogowym potwierdzenia.  
+7.  Para fechar o assistente, escolha **concluir** no **Assistente para exportar certificados** página e escolha **OK** na caixa de diálogo de confirmação.  
 
-8.  Zamknij konsolę **Certyfikaty (komputer lokalny)**.  
+8.  Feche **Certificados (Computador Local)**.  
 
-9. Zapisz plik w bezpiecznym miejscu i upewnij się, że można do niego dostęp z konsoli programu System Center Configuration Manager.  
+9. Guarde o ficheiro de forma segura e certifique-se de que consegue aceder-lhe a partir da consola do System Center Configuration Manager.  
 
- Certyfikat jest teraz gotowy do zaimportowania podczas konfigurowania punktu dystrybucji.  
+ O certificado está agora pronto para ser importado quando configurar o ponto de distribuição.  
 
 > [!TIP]  
->  Można użyć tego samego pliku certyfikatu, konfigurując obrazy nośników do wdrożenia systemu operacyjnego, które nie używają rozruchu PXE i sekwencji zadań w celu instalacji obrazu musi kontaktować się z punktem zarządzania wymagającym połączeń klienckich HTTPS.  
+>  Pode utilizar o mesmo ficheiro de certificado quando configurar imagens de suportes de dados para uma implementação de sistema operativo que não utilize arranque PXE e a sequência de tarefas para instalar a imagem tem de contactar um ponto de gestão requer ligações de cliente HTTPS.  
 
-##  <a name="BKMK_mobiledevices2008_cm2012"></a>Wdrażanie certyfikatu rejestracji dla urządzeń przenośnych  
- W tym wdrożeniu certyfikatu zarówno utworzenie, jak i wystawienie szablonu certyfikatu rejestracji w urzędzie certyfikacji jest objęte tą samą procedurą.  
+##  <a name="BKMK_mobiledevices2008_cm2012"></a>Implementar o certificado de inscrição para dispositivos móveis  
+ Esta implementação de certificado tem um procedimento único para criar e emitir o modelo de certificado de inscrição na autoridade de certificação.  
 
-### <a name="create-and-issue-the-enrollment-certificate-template-on-the-certification-authority"></a>Utwórz i wystaw szablon certyfikatu rejestracji w urzędzie certyfikacji  
- Ta procedura powoduje utworzenie szablonu certyfikatu rejestracji dla urządzeń przenośnych programu System Center Configuration Manager i dodanie go do urzędu certyfikacji.  
+### <a name="create-and-issue-the-enrollment-certificate-template-on-the-certification-authority"></a>Criar e emitir o modelo de certificado de inscrição na autoridade de certificação  
+ Este procedimento cria um modelo de certificado de inscrição para dispositivos móveis do System Center Configuration Manager e adiciona-o à autoridade de certificação.  
 
-##### <a name="to-create-and-issue-the-enrollment-certificate-template-on-the-certification-authority"></a>Aby utworzyć i wystawić szablon certyfikatu rejestracji w urzędzie certyfikacji  
+##### <a name="to-create-and-issue-the-enrollment-certificate-template-on-the-certification-authority"></a>Para criar e emitir o modelo de certificado de inscrição na autoridade de certificação  
 
-1.  Utwórz grupę zabezpieczeń zawierającą użytkowników, którzy będą rejestrować urządzenia przenośne w programie System Center Configuration Manager.  
+1.  Crie um grupo de segurança que tenha os utilizadores que irão inscrever dispositivos móveis no System Center Configuration Manager.  
 
-2.  Na serwerze członkowskim z usługami certyfikatów zainstalowane, w konsoli Urząd certyfikacji kliknij prawym przyciskiem myszy **szablonów certyfikatów**, a następnie wybierz **Zarządzaj** załadować Konsolę zarządzania szablonami certyfikatów.  
+2.  No servidor membro que tem os serviços de certificados instalados, a consola da autoridade de certificação, clique com botão direito **modelos de certificado**e, em seguida, escolha **gerir** para carregar a consola de gestão de modelos de certificado.  
 
-3.  W okienku wyników kliknij prawym przyciskiem myszy wpis **sesja uwierzytelniona** w **Nazwa wyświetlana szablonu** kolumny, a następnie wybierz **Duplikuj szablon**.  
+3.  No painel de resultados, faça duplo clique na entrada que tem **sessão autenticada** no **nome a apresentar do modelo** coluna e, em seguida, escolha **Duplicar modelo**.  
 
-4.  W **Duplikuj szablon** dialogowe Sprawdź, czy **systemu Windows Server 2003, Enterprise Edition** jest zaznaczone, a następnie wybierz **OK**.  
+4.  No **Duplicar modelo** diálogo caixa, certifique-se de que **Windows 2003 Server, Enterprise Edition** está selecionada e, em seguida, escolha **OK**.  
 
     > [!IMPORTANT]  
-    >  Nie wybieraj systemu **Windows 2008 Server, Enterprise Edition**.  
+    >  Não selecione **Windows 2008 Server, Enterprise Edition**.  
 
-5.  W **właściwości nowego szablonu** okna dialogowego na **ogólne** , wprowadź nazwę szablonu, jak **certyfikat rejestracji urządzeń przenośnych programu ConfigMgr**, w celu wygenerowania certyfikatów rejestracji dla urządzeń przenośnych, które mają być zarządzane przez program System Center Configuration Manager.  
+5.  No **propriedades de novo modelo** caixa de diálogo a **geral** separador, introduza um nome de modelo, tal como **certificado de inscrição de dispositivos do ConfigMgr móvel**para gerar os certificados de inscrição para os dispositivos móveis para serem geridos pelo System Center Configuration Manager.  
 
-6.  Wybierz **nazwa podmiotu** i upewnij się, że **Konstruuj z tej informacji usługi Active Directory** jest wybrany, wybierz pozycję **nazwa pospolita** dla **format nazwy podmiotu:**, a następnie wyczyść **główna nazwa użytkownika (UPN)** z **Dołącz tę informację do alternatywnej nazwy podmiotu**.  
+6.  Escolha o **nome do requerente** separador, certifique-se de que **incorporar a partir destas informações do Active Directory** está selecionado, selecione **nome comum** para o **formato de nome do requerente:**e, em seguida, desmarque **nome principal de utilizador (UPN)** de **incluir estas informações no nome do requerente alternativo**.  
 
-7.  Wybierz **zabezpieczeń** karcie, wybrać grupę zabezpieczeń zawierającą użytkowników z urządzeniami przenośnymi do zarejestrowania i wybierz uprawnienie dodatkowe **rejestracja**. Nie usuwaj zaznaczenia opcji **Odczyt**.  
+7.  Escolha o **segurança** separador, escolha o grupo de segurança que tenha os utilizadores que tenham dispositivos móveis para inscrever e, em seguida, escolha a permissão adicional de **inscrever**. Não desmarque **Leitura**.  
 
-8.  Wybierz **OK**, a następnie Zamknij **konsoli Szablony certyfikatów**.  
+8.  Escolha **OK**e, em seguida, feche **consola de modelos de certificado**.  
 
-9. W konsoli Urząd certyfikacji kliknij prawym przyciskiem myszy **szablonów certyfikatów**, wybierz **nowy**, a następnie wybierz **szablon certyfikatu do wystawienia**.  
+9. Na consola de autoridade de certificação, clique com botão direito **modelos de certificado**, escolha **novo**e, em seguida, escolha **modelo de certificado a emitir**.  
 
-10. W **Włączanie szablonu certyfikatu** okno dialogowe, wybierz nowego szablonu, który został właśnie utworzony, **certyfikat rejestracji urządzeń przenośnych programu ConfigMgr**, a następnie wybierz **OK**.  
+10. No **ativar modelos de certificado** diálogo caixa, selecione o novo modelo que acabou de criar, **certificado de inscrição de dispositivos do ConfigMgr móvel**e, em seguida, escolha **OK**.  
 
-11. Jeśli nie są potrzebne do tworzenia i wystawiania certyfikatów, zamknij konsolę Urząd certyfikacji.  
+11. Se não for necessário criar e emitir mais certificados, feche a consola de autoridade de certificação.  
 
- Szablon certyfikatu rejestracji urządzeń przenośnych jest teraz gotowy do wybrania podczas konfigurowania profilu rejestracji urządzenia przenośnego w ustawieniach klienta.  
+ O modelo de certificado de inscrição de dispositivos móveis está agora pronto para ser selecionado quando configurar um perfil de inscrição de dispositivos móveis nas definições do cliente.  
 
-##  <a name="BKMK_AMT2008_cm2012"></a>Wdrażanie certyfikatów dla komputerów AMT  
- Wdrożenie tego certyfikatu jest objęte następującymi procedurami:  
+##  <a name="BKMK_AMT2008_cm2012"></a>Implementar os certificados para AMT  
+ Esta implementação de certificados possui os seguintes procedimentos:  
 
--   Tworzenie, wydawania i instalowanie certyfikatu udostępniania AMT  
+-   Criar, emitir e instalar o certificado de aprovisionamento de AMT  
 
--   Utwórz i wystaw certyfikat serwera sieci web dla komputerów opartych na technologii AMT  
+-   Criar e emitir o certificado de servidor web para computadores baseados em AMT  
 
--   Utwórz i wystaw certyfikaty uwierzytelniania 802.1 X AMT komputery klienta  
+-   Criar e emitir certificados de autenticação 802.1 X AMT em computadores de cliente  
 
-###  <a name="BKMK_AMTprovisioning2008"></a>Tworzenie, wydawania i instalowanie certyfikatu udostępniania AMT  
- Z wewnętrznego urzędu certyfikacji należy utworzyć certyfikat udostępniania, gdy komputery oparte na technologii AMT są skonfigurowane z odciskiem palca wewnętrzny główny urząd certyfikacji. Kiedy nie jest to i należy użyć zewnętrznego urzędu certyfikacji, należy postępować zgodnie z instrukcjami firmy, który wystawił certyfikat udostępniania AMT, co może często oznaczać między innymi żądanie certyfikatu za pośrednictwem publicznej witryny sieci web danej firmy. Można także znaleźć szczegółowe informacje na temat wybranego zewnętrznego urzędu certyfikacji [Intel vPro Expert Center: Witryny sieci web Microsoft vPro Manageability](http://go.microsoft.com/fwlink/?LinkId=132001).  
+###  <a name="BKMK_AMTprovisioning2008"></a>Criar, emitir e instalar o certificado de aprovisionamento de AMT  
+ Crie o certificado de aprovisionamento com a AC interna quando os computadores baseados em AMT estão configurados com o thumbprint do certificado da sua AC de raiz interna. Quando não for este o caso e tem de utilizar uma autoridade de certificação externa, utilize as instruções da empresa que emitiu o certificado de aprovisionamento de AMT, que geralmente envolverá pedir o certificado de web site público da empresa. Também poderá encontrar instruções detalhadas para sua escolhida AC externa no [Intel vPro Expert Center: Capacidade de gestão web site do Microsoft vPro](http://go.microsoft.com/fwlink/?LinkId=132001).  
 
 > [!IMPORTANT]  
->  Zewnętrzne urzędy certyfikacji mogą nie obsługiwać identyfikatora obiektu udostępniania Intel AMT. W takim przypadku należy podać **Intel(R) Client Setup Certificate** atrybut jednostki Organizacyjnej.  
+>  As ACs externas poderão não suportar o identificador do objeto de aprovisionamento de AMT da Intel. Quando for este o caso, forneça o **Intel (r) Client Setup Certificate** atributo UO.  
 
- W przypadku żądania certyfikatu udostępniania AMT od zewnętrznego urzędu certyfikacji, należy zainstalować certyfikat w magazynie certyfikatów osobistych komputera na serwerze członkowskim, który będzie hostem punktu Usługi poza pasmem.  
+ Quando solicitar um certificado de uma AC externa de aprovisionamento de AMT, instale o certificado no arquivo de certificados pessoais do computador no servidor membro que irá alojar o ponto de serviço fora de banda.  
 
-##### <a name="to-request-and-issue-the-amt-provisioning-certificate"></a>Aby zażądać certyfikatu udostępniania AMT i go wystawić  
+##### <a name="to-request-and-issue-the-amt-provisioning-certificate"></a>Para pedir e emitir o certificado de aprovisionamento de AMT  
 
-1.  Utwórz grupę zabezpieczeń zawierającą konta komputerów serwerów systemu lokacji, z których będzie uruchamiany punkt obsługi poza pasmem.  
+1.  Crie um grupo de segurança que tenha as contas de computador dos servidores do sistema de sites que executarão o ponto de serviço fora de banda.  
 
-2.  Na serwerze członkowskim z usługami certyfikatów zainstalowane, w konsoli Urząd certyfikacji kliknij prawym przyciskiem myszy **szablonów certyfikatów**, a następnie wybierz **Zarządzaj** załadować **szablonów certyfikatów** konsoli.  
+2.  No servidor membro que tem os serviços de certificados instalados, a consola da autoridade de certificação, clique com botão direito **modelos de certificado**e, em seguida, escolha **gerir** ao carregar o **modelos de certificado** consola.  
 
-3.  W okienku wyników kliknij prawym przyciskiem myszy wpis **serwera sieci Web** w **Nazwa wyświetlana szablonu** kolumny, a następnie wybierz **Duplikuj szablon**.  
+3.  No painel de resultados, faça duplo clique na entrada que tem **servidor Web** no **nome a apresentar do modelo** coluna e, em seguida, escolha **Duplicar modelo**.  
 
-4.  W **Duplikuj szablon** dialogowe Sprawdź, czy **systemu Windows Server 2003, Enterprise Edition** jest zaznaczone, a następnie wybierz **OK**.  
+4.  No **Duplicar modelo** diálogo caixa, certifique-se de que **Windows 2003 Server, Enterprise Edition** está selecionada e, em seguida, escolha **OK**.  
 
     > [!IMPORTANT]  
-    >  Nie wybieraj systemu **Windows 2008 Server, Enterprise Edition**.  
+    >  Não selecione **Windows 2008 Server, Enterprise Edition**.  
 
-5.  W **właściwości nowego szablonu** okna dialogowego na **ogólne** , wprowadź nazwę szablonu, jak **udostępniania AMT programu ConfigMgr**, dla szablonu certyfikatu udostępniania AMT.  
+5.  No **propriedades de novo modelo** caixa de diálogo a **geral** separador, introduza um nome de modelo, tal como **aprovisionamento de AMT do ConfigMgr**, para o modelo de certificado de aprovisionamento de AMT.  
 
-6.  Wybierz **nazwa podmiotu** , wybierz **Konstruuj z tej informacji usługi Active Directory**, a następnie wybierz **nazwa pospolita**.  
+6.  Escolha o **nome do requerente** separador, escolha **incorporar a partir destas informações do Active Directory**e, em seguida, escolha **nome comum**.  
 
-7.  Wybierz **rozszerzenia** i upewnij się, że **zasady aplikacji** jest zaznaczone, a następnie wybierz **edytować**.  
+7.  Escolha o **extensões** separador, certifique-se de que **políticas de aplicações** está selecionada e, em seguida, escolha **editar**.  
 
-8.  W **Edytowanie rozszerzenia zasad aplikacji** okno dialogowe Wybierz **Dodaj**.  
+8.  No **Editar extensão de políticas de aplicação** diálogo caixa, escolha **adicionar**.  
 
-9. W **Dodawanie zasady aplikacji** okno dialogowe Wybierz **nowy**.  
+9. No **Adicionar política de aplicação** diálogo caixa, escolha **novo**.  
 
-10. W **Nowa zasada aplikacji** dialogowe wprowadź **udostępniania AMT** w **nazwa** pola, a następnie wpisz następujący ciąg liczb w **identyfikator obiektu**: **2.16.840.1.113741.1.2.3**.  
+10. No **nova política de aplicação** caixa de diálogo, introduza **aprovisionamento de AMT** no **nome** campo e, em seguida, introduza o número seguinte para o **identificador de objeto**: **2.16.840.1.113741.1.2.3**.  
 
-11. Wybierz **OK**, a następnie wybierz **OK** w **Dodawanie zasady aplikacji** okno dialogowe.  
+11. Escolha **OK**e, em seguida, escolha **OK** no **Adicionar política de aplicação** caixa de diálogo.  
 
-12. Wybierz **OK** w **Edytowanie rozszerzenia zasad aplikacji** okno dialogowe.  
+12. Escolha **OK** no **Editar extensão de políticas de aplicação** caixa de diálogo.  
 
-13. W **właściwości nowego szablonu** następujące okno dialogowe jest wyświetlane jako **zasady aplikacji** opis: **Uwierzytelnianie serwera** i **udostępniania AMT**.  
+13. No **propriedades de novo modelo** caixa de diálogo, o seguinte está listado como o **políticas de aplicações** Descrição: **Autenticação de servidor** e **aprovisionamento de AMT**.  
 
-14. Wybierz **zabezpieczeń** karcie, a następnie usuń **rejestracja** zgody **Administratorzy domeny** i **Administratorzy przedsiębiorstwa** grup zabezpieczeń.  
+14. Escolha o **segurança** separador e, em seguida, remova o **inscrever** permissão a partir do **Admins do domínio** e **Admins de empresa** grupos de segurança.  
 
-15. Wybierz **Dodaj**, wprowadź nazwę grupy zabezpieczeń, która ma konto komputera dla roli systemu lokacji punktu Usługi poza pasmem, a następnie wybierz **OK**.  
+15. Escolha **adicionar**, introduza o nome de um grupo de segurança que tenha a conta de computador para a função de sistema de sites de ponto de serviço fora de banda e, em seguida, escolha **OK**.  
 
-16. Wybierz **rejestracja** dla tej grupy uprawnienie i nie usuwaj **odczytu** uprawnienie...  
+16. Escolha o **inscrever** permissão para este grupo e não desmarque a **leitura** permissão...  
 
-17. Wybierz **OK**, a następnie Zamknij **szablonów certyfikatów** konsoli.  
+17. Escolha **OK**e, em seguida, feche o **modelos de certificado** consola.  
 
-18. W **urząd certyfikacji**, kliknij prawym przyciskiem myszy **szablonów certyfikatów**, wybierz **nowy**, a następnie wybierz **szablon certyfikatu do wystawienia**.  
+18. No **autoridade de certificação**, faça duplo clique **modelos de certificado**, escolha **novo**e, em seguida, escolha **modelo de certificado a emitir**.  
 
-19. W **Włączanie szablonu certyfikatu** okno dialogowe, wybierz nowego szablonu, który został właśnie utworzony, **udostępniania AMT programu ConfigMgr**, a następnie wybierz **OK**.  
+19. No **ativar modelos de certificado** diálogo caixa, selecione o novo modelo que acabou de criar, **aprovisionamento de AMT do ConfigMgr**e, em seguida, escolha **OK**.  
 
     > [!NOTE]  
-    >  Jeśli nie możesz ukończyć kroku 18 lub 19, sprawdź, czy na pewno korzystasz z systemu Windows Server 2008 w wersji Enterprise Edition. Mimo że można skonfigurować szablony z systemu Windows Server Standard Edition oraz usług certyfikatów, nie można wdrażać certyfikatów przy użyciu zmodyfikowanych szablonów certyfikatów, chyba że w przypadku korzystania z systemu Windows Server 2008 Enterprise Edition.  
+    >  Se não conseguir concluir o passo 18 ou 19, certifique-se de que está a utilizar a Enterprise Edition do Windows Server 2008. Apesar de poder configurar modelos com o Windows Server Standard Edition e os serviços de certificados, não é possível implementar certificados utilizando os modelos de certificado modificados, exceto se estiver a utilizar a Enterprise Edition do Windows Server 2008.  
 
-20. Nie zamykaj konsoli **Urząd certyfikacji**.  
+20. Não feche a **Autoridade de Certificação**.  
 
- Certyfikat udostępniania AMT z wewnętrznego urzędu certyfikacji jest teraz gotowy do zainstalowania na komputerze punktu obsługi poza pasmem.  
+ O certificado de aprovisionamento de AMT da AC interna está agora pronto para ser instalada no computador do ponto de serviço fora de banda.  
 
-##### <a name="to-install-the-amt-provisioning-certificate"></a>Aby zainstalować certyfikat udostępniania AMT  
+##### <a name="to-install-the-amt-provisioning-certificate"></a>Para instalar o certificado de aprovisionamento de AMT  
 
-1.  Uruchom ponownie serwer członkowski, z uruchomionymi usługami IIS, aby upewnić się, że można uzyskać dostęp do szablonu certyfikatu przy użyciu skonfigurowanych uprawnień.  
+1.  Reinicie o servidor membro que executa o IIS para garantir que este consegue aceder ao modelo de certificado com a permissão configurada.  
 
-2.  Wybierz **Start**, wybierz **Uruchom**, a następnie wprowadź **mmc.exe.** W pustej konsoli kliknij **pliku**, a następnie wybierz **Dodaj/Usuń przystawkę**.  
+2.  Escolha **iniciar**, escolha **executar**e, em seguida, introduza **mmc.exe.** Na consola vazia, escolha **ficheiro**e, em seguida, escolha **Adicionar/Remover Snap-in**.  
 
-3.  W **Dodawanie lub usuwanie przystawek** okno dialogowe Wybierz **certyfikaty** z listy **dostępne przystawki**, a następnie wybierz **Dodaj**.  
+3.  No **adicionar ou Remover Snap-ins** diálogo caixa, escolha **certificados** da lista de **snap-ins disponíveis**e, em seguida, escolha **adicionar**.  
 
-4.  W **certyfikatów w przystawce** okno dialogowe Wybierz **konto komputera**, a następnie wybierz **dalej**.  
+4.  No **snap-in de certificados** diálogo caixa, escolha **conta de computador**e, em seguida, escolha **seguinte**.  
 
-5.  W **wybierz komputer** okna dialogowego Sprawdź, czy **komputer lokalny: (komputer ten jest uruchomiona konsola)** jest zaznaczone, a następnie wybierz **Zakończ**.  
+5.  No **selecionar computador** diálogo caixa, certifique-se de que **computador Local: (o computador onde esta consola está em execução no)** está selecionada e, em seguida, escolha **concluir**.  
 
-6.  W **Dodawanie lub usuwanie przystawek** okno dialogowe Wybierz **OK**.  
+6.  No **adicionar ou Remover Snap-ins** diálogo caixa, escolha **OK**.  
 
-7.  W konsoli rozwiń **certyfikaty (komputer lokalny)**, a następnie wybierz **osobiste**.  
+7.  Na consola, expanda **certificados (computador Local)**e, em seguida, escolha **pessoais**.  
 
-8.  Kliknij prawym przyciskiem myszy **certyfikaty**, wybierz **wszystkie zadania**, a następnie wybierz **Żądaj nowego certyfikatu**.  
+8.  Clique com botão direito **certificados**, escolha **todas as tarefas**e, em seguida, escolha **requisitar um novo certificado**.  
 
-9. Na **przed rozpoczęciem** wybierz **dalej**.  
+9. No **antes de começar** página, escolha **seguinte**.  
 
-10. Jeśli widzisz **wybierz zasady rejestracji certyfikatu** wybierz **dalej**.  
+10. Se vir o **selecionar política de inscrição de certificado** página, escolha **seguinte**.  
 
-11. Na **Żądaj certyfikatów** wybierz opcję **udostępniania AMT** z listy dostępnych certyfikatów, a następnie wybierz **rejestracja**.  
+11. No **pedir certificados** página, selecione **aprovisionamento de AMT** da lista de certificados disponíveis e, em seguida, escolha **inscrever**.  
 
-12. Na **wyniki instalacji certyfikatów** , poczekaj, aż certyfikat został zainstalowany, a następnie wybierz **Zakończ**.  
+12. No **resultados da instalação de certificados** página, aguarde até que o certificado está instalado e, em seguida, escolha **concluir**.  
 
-13. Zamknij konsolę **Certyfikaty (komputer lokalny)**.  
+13. Feche **Certificados (Computador Local)**.  
 
- Certyfikat udostępniania AMT z wewnętrznego urzędu certyfikacji jest teraz zainstalowany i jest gotowy do wybrania we właściwościach punktu obsługi poza pasmem.  
+ O certificado de aprovisionamento de AMT da AC interna está agora instalado e está pronto para ser selecionado nas propriedades do ponto de serviço fora de banda.  
 
-### <a name="create-and-issue-the-web-server-certificate-for-amt-based-computers"></a>Utwórz i wystaw certyfikat serwera sieci web dla komputerów opartych na technologii AMT  
- Użyj poniższej procedury, aby przygotować certyfikaty serwera sieci Web dla komputerów opartych na technologii AMT.  
+### <a name="create-and-issue-the-web-server-certificate-for-amt-based-computers"></a>Criar e emitir o certificado de servidor web para computadores baseados em AMT  
+ Utilize o procedimento seguinte para preparar os certificados de servidor Web para computadores baseados em AMT.  
 
-##### <a name="to-create-and-issue-the-web-server-certificate-template"></a>Aby utworzyć i wystawić szablon certyfikatu serwera sieci web  
+##### <a name="to-create-and-issue-the-web-server-certificate-template"></a>Para criar e emitir o modelo de certificado de servidor web  
 
-1.  Utwórz grupy zabezpieczeń pusty, która zawiera konta komputerów AMT tworzone podczas udostępniania AMT System Center Configuration Manager.  
+1.  Crie um grupo de segurança vazio com as contas de computador AMT System Center Configuration Manager cria durante o aprovisionamento de AMT.  
 
-2.  Na serwerze członkowskim z usługami certyfikatów zainstalowane, w konsoli Urząd certyfikacji kliknij prawym przyciskiem myszy **szablonów certyfikatów**, a następnie wybierz **Zarządzaj** załadować **szablonów certyfikatów** konsoli.  
+2.  No servidor membro que tem os serviços de certificados instalados, a consola da autoridade de certificação, clique com botão direito **modelos de certificado**e, em seguida, escolha **gerir** ao carregar o **modelos de certificado** consola.  
 
-3.  W okienku wyników kliknij prawym przyciskiem myszy wpis **serwera sieci Web** w **Nazwa wyświetlana szablonu** kolumny, a następnie wybierz **Duplikuj szablon**.  
+3.  No painel de resultados, faça duplo clique na entrada que tem **servidor Web** no **nome a apresentar do modelo** coluna e, em seguida, escolha **Duplicar modelo**.  
 
-4.  W **Duplikuj szablon** dialogowe Sprawdź, czy **systemu Windows Server 2003, Enterprise Edition** jest zaznaczone, a następnie wybierz **OK**.  
-
-    > [!IMPORTANT]  
-    >  Nie wybieraj systemu **Windows 2008 Server, Enterprise Edition.**  
-
-5.  W **właściwości nowego szablonu** okna dialogowego na **ogólne** , wprowadź nazwę szablonu, jak **certyfikatu serwera sieci Web AMT programu ConfigMgr**, w celu wygenerowania certyfikatów sieci web, które będą używane do zarządzania poza pasmem na komputerach AMT.  
-
-6.  Wybierz **nazwa podmiotu** , wybierz **Konstruuj z tej informacji usługi Active Directory**, wybierz **nazwa pospolita** dla **format nazwy podmiotu**, a następnie wyczyść **główna nazwa użytkownika (UPN)** dla alternatywnej nazwy podmiotu.  
-
-7.  Wybierz **zabezpieczeń** karcie, a następnie usuń **rejestracja** zgody **Administratorzy domeny** i **Administratorzy przedsiębiorstwa** grup zabezpieczeń.  
-
-8.  Wybierz **Dodaj**i wprowadź nazwę grupy zabezpieczeń utworzonej dla udostępniania AMT, a następnie wybierz **OK**.  
-
-9. Wybierz następujące **Zezwalaj** uprawnienia dla tej grupy zabezpieczeń: **Odczyt** i **zarejestrować**.  
-
-10. Wybierz **OK**, a następnie Zamknij **szablonów certyfikatów** konsoli.  
-
-11. W **urząd certyfikacji** konsoli, kliknij prawym przyciskiem myszy **szablonów certyfikatów**, wybierz **nowy**, a następnie wybierz **szablon certyfikatu do wystawienia**.  
-
-12. W **Włączanie szablonu certyfikatu** okno dialogowe, wybierz nowego szablonu, który został właśnie utworzony, **certyfikatu serwera sieci Web AMT programu ConfigMgr**, a następnie wybierz **OK**.  
-
-13. Jeśli nie masz tworzenia i wystawiania certyfikatów Zamknij **urząd certyfikacji**.  
-
- Szablon serwera sieci Web AMT jest teraz gotowy do konfigurowania komputerów opartych na technologii AMT certyfikatów serwera sieci web. Wybierz ten szablon certyfikatu we właściwościach składnika zarządzania poza pasmem.  
-
-### <a name="create-and-issue-the-client-authentication-certificates-for-8021x-amt-based-computers"></a>Utwórz i wystaw certyfikaty uwierzytelniania 802.1 X AMT komputery klienta  
- Użyj poniższej procedury, jeśli komputery oparte na technologii AMT będą używać certyfikatów klienta dla uwierzytelnianych sieci przewodowych i bezprzewodowych 802.1X.  
-
-##### <a name="to-create-and-issue-the-client-authentication-certificate-template-on-the-ca"></a>Aby utworzyć i wydać szablon certyfikatu uwierzytelniania klienta w urzędzie certyfikacji  
-
-1.  Na serwerze członkowskim z usługami certyfikatów zainstalowane, w konsoli Urząd certyfikacji kliknij prawym przyciskiem myszy **szablonów certyfikatów**, a następnie wybierz **Zarządzaj** załadować **szablonów certyfikatów** konsoli.  
-
-2.  W okienku wyników kliknij prawym przyciskiem myszy wpis **Uwierzytelnianie stacji roboczej** w **Nazwa wyświetlana szablonu** kolumny, a następnie wybierz **Duplikuj szablon**.  
+4.  No **Duplicar modelo** diálogo caixa, certifique-se de que **Windows 2003 Server, Enterprise Edition** está selecionada e, em seguida, escolha **OK**.  
 
     > [!IMPORTANT]  
-    >  Nie wybieraj systemu **Windows 2008 Server, Enterprise Edition.**  
+    >  Não selecione **Windows 2008 Server, Enterprise Edition.**  
 
-3.  W **właściwości nowego szablonu** okna dialogowego na **ogólne** , wprowadź nazwę szablonu, jak **certyfikat uwierzytelniania klienta programu ConfigMgr AMT 802.1 X**, w celu wygenerowania certyfikatów klienta, które będą używane do zarządzania poza pasmem na komputerach AMT.  
+5.  No **propriedades de novo modelo** caixa de diálogo a **geral** separador, introduza um nome de modelo, tal como **certificado de servidor Web de AMT do ConfigMgr**para gerar os certificados web que serão utilizados para gestão fora de banda em computadores AMT.  
 
-4.  Wybierz **nazwa podmiotu** , wybierz **Konstruuj z tej informacji usługi Active Directory**, a następnie wybierz **nazwa pospolita** dla **format nazwy podmiotu**. Wyczyść **nazwy DNS** dla podmiotu alternatywnych nazw, a następnie wybierz **główna nazwa użytkownika (UPN)**.  
+6.  Escolha o **nome do requerente** separador, escolha **incorporar a partir destas informações do Active Directory**, escolha **nome comum** para o **formato de nome de requerente**e, em seguida, desmarque **nome principal de utilizador (UPN)** para o nome alternativo do requerente.  
 
-5.  Wybierz **zabezpieczeń** karcie, a następnie usuń **rejestracja** zgody **Administratorzy domeny** i **Administratorzy przedsiębiorstwa** grup zabezpieczeń.  
+7.  Escolha o **segurança** separador e, em seguida, remova o **inscrever** permissão a partir do **Admins do domínio** e **Admins de empresa** grupos de segurança.  
 
-6.  Wybierz **Dodaj**, wprowadź nazwę grupy zabezpieczeń, który zostanie określone we właściwościach składnika zarządzania poza pasmem zawiera konta komputerów opartych na technologii AMT, a następnie wybierz **OK**.  
+8.  Escolha **adicionar**, introduza o nome do grupo de segurança que criou para o aprovisionamento de AMT e, em seguida, escolha **OK**.  
 
-7.  Wykonaj następujące czynności **Zezwalaj** uprawnienia dla tej grupy zabezpieczeń: **Odczyt** i **zarejestrować**.  
+9. Escolha o seguinte **permitir** permissões para este grupo de segurança: **Leitura** e **inscrever**.  
 
-8.  Wybierz **OK**, a następnie Zamknij **szablonów certyfikatów** konsoli zarządzania **certtmpl - [szablony certyfikatów]**.  
+10. Escolha **OK**e, em seguida, feche o **modelos de certificado** consola.  
 
-9. W **urząd certyfikacji** konsoli zarządzania kliknij prawym przyciskiem myszy **szablonów certyfikatów**, wybierz **nowy**, a następnie wybierz **szablon certyfikatu do wystawienia**.  
+11. No **autoridade de certificação** consola, faça duplo clique **modelos de certificado**, escolha **novo**e, em seguida, escolha **modelo de certificado a emitir**.  
 
-10. W **Włączanie szablonu certyfikatu** okno dialogowe, wybierz nowego szablonu, który został właśnie utworzony, **certyfikat uwierzytelniania klienta programu ConfigMgr AMT 802.1 X**, a następnie wybierz **OK**.  
+12. No **ativar modelos de certificado** diálogo caixa, selecione o novo modelo que acabou de criar, **certificado de servidor Web de AMT do ConfigMgr**e, em seguida, escolha **OK**.  
 
-11. Jeśli nie ma potrzeby tworzenia i wystawiania certyfikatów Zamknij **urząd certyfikacji**.  
+13. Se não necessitar de criar e emitir mais certificados, feche **autoridade de certificação**.  
 
- Szablon certyfikatu uwierzytelniania klienta jest teraz gotowy do wystawiania komputerom opartym na technologii AMT certyfikatów, których można będzie użyć do uwierzytelniania klientów 802.1X. Wybierz ten szablon certyfikatu we właściwościach składnika zarządzania poza pasmem.  
+ O modelo de servidor AMT Web está agora preparado para configurar computadores baseados em AMT com certificados de servidor web. Escolha este modelo de certificado no propriedades do componente de gestão fora de banda.  
 
-##  <a name="BKMK_MacClient_SP1"></a>Wdrażanie certyfikatu klienta dla komputerów Mac  
+### <a name="create-and-issue-the-client-authentication-certificates-for-8021x-amt-based-computers"></a>Criar e emitir certificados de autenticação 802.1 X AMT em computadores de cliente  
+ Utilize o procedimento seguinte se os computadores baseados em AMT forem utilizar certificados de cliente para redes com ou sem fios com autenticação 802.1X.  
 
-W tym wdrożeniu certyfikatu zarówno utworzenie, jak i wystawienie szablonu certyfikatu rejestracji w urzędzie certyfikacji jest objęte tą samą procedurą.  
+##### <a name="to-create-and-issue-the-client-authentication-certificate-template-on-the-ca"></a>Para criar e emitir o modelo de certificado de autenticação de cliente da AC  
 
-###  <a name="BKMK_MacClient_CreatingIssuing"></a>Utwórz i wystaw szablon certyfikatu w urzędzie certyfikacji klienta Mac  
- Ta procedura powoduje utworzenie niestandardowego szablonu certyfikatu dla komputerów Mac programu System Center Configuration Manager i dodanie szablonu certyfikatu do urzędu certyfikacji.  
+1.  No servidor membro que tem os serviços de certificados instalados, a consola da autoridade de certificação, clique com botão direito **modelos de certificado**e, em seguida, escolha **gerir** ao carregar o **modelos de certificado** consola.  
+
+2.  No painel de resultados, faça duplo clique na entrada que tem **autenticação de estação de trabalho** no **nome a apresentar do modelo** coluna e, em seguida, escolha **Duplicar modelo**.  
+
+    > [!IMPORTANT]  
+    >  Não selecione **Windows 2008 Server, Enterprise Edition.**  
+
+3.  No **propriedades de novo modelo** caixa de diálogo a **geral** separador, introduza um nome de modelo, tal como **certificado de autenticação de cliente do ConfigMgr AMT 802.1 X**, para gerar os certificados de cliente que serão utilizados para gestão fora de banda em computadores AMT.  
+
+4.  Escolha o **nome do requerente** separador, escolha **incorporar a partir destas informações do Active Directory**e, em seguida, escolha **nome comum** para o **formato de nome de requerente**. Limpar **nome DNS** para o requerente alternativo nome e, em seguida, escolha **nome principal de utilizador (UPN)**.  
+
+5.  Escolha o **segurança** separador e, em seguida, remova o **inscrever** permissão a partir do **Admins do domínio** e **Admins de empresa** grupos de segurança.  
+
+6.  Escolha **adicionar**, introduza o nome do grupo de segurança que irá especificar nas propriedades do componente de gestão fora de banda para conter as contas de computador dos computadores baseados em AMT e, em seguida, escolha **OK**.  
+
+7.  Selecione o seguinte **permitir** permissões para este grupo de segurança: **Leitura** e **inscrever**.  
+
+8.  Escolha **OK**e, em seguida, feche o **modelos de certificado** consola de gestão, **certtmpl - [modelos de certificado]**.  
+
+9. No **autoridade de certificação** consola de gestão, faça duplo clique **modelos de certificado**, escolha **novo**e, em seguida, escolha **modelo de certificado a emitir**.  
+
+10. No **ativar modelos de certificado** diálogo caixa, selecione o novo modelo que acabou de criar, **certificado de autenticação de cliente do ConfigMgr AMT 802.1 X**e, em seguida, escolha **OK**.  
+
+11. Se não precisar de criar e emitir mais certificados, feche **autoridade de certificação**.  
+
+ O modelo de certificado de autenticação de cliente está agora pronto para emitir certificados para computadores baseados em AMT que podem ser utilizados para autenticação 802.1 X de clientes. Escolha este modelo de certificado no propriedades do componente de gestão fora de banda.  
+
+##  <a name="BKMK_MacClient_SP1"></a>Implementar o certificado de cliente para computadores Mac  
+
+Esta implementação de certificado tem um procedimento único para criar e emitir o modelo de certificado de inscrição na autoridade de certificação.  
+
+###  <a name="BKMK_MacClient_CreatingIssuing"></a>Criar e emitir o modelo de certificado na autoridade de certificação de um cliente de Mac  
+ Este procedimento cria um modelo de certificado personalizado para computadores Mac do System Center Configuration Manager e adiciona o modelo de certificado à autoridade de certificação.  
 
 > [!NOTE]  
->  Ta procedura korzysta z innego szablonu certyfikatu niż szablony certyfikatów, które być może utworzono wcześniej dla klientów z systemem Windows lub dla punktów dystrybucji.  
+>  Este procedimento utiliza um modelo de certificado diferente do modelo de certificado que pode ter criado para computadores cliente com Windows ou para pontos de distribuição.  
 >   
->  Podczas tworzenia nowego szablonu certyfikatu dla tego certyfikatu, możesz ograniczyć żądanie certyfikatu do użytkowników autoryzowanych.  
+>  Quando cria um novo modelo de certificado para este certificado, pode restringir o pedido de certificado para os utilizadores autorizados.  
 
-##### <a name="to-create-and-issue-the-mac-client-certificate-template-on-the-certification-authority"></a>Aby utworzyć i wydać szablon certyfikatu klienta Mac w urzędzie certyfikacji  
+##### <a name="to-create-and-issue-the-mac-client-certificate-template-on-the-certification-authority"></a>Para criar e emitir o modelo de certificado de cliente Mac na autoridade de certificação  
 
-1.  Utwórz grupę zabezpieczeń zawierającą konta użytkownika dla użytkowników administracyjnych, którzy będą rejestrowali ten certyfikat na komputerze Mac za pomocą programu System Center Configuration Manager.  
+1.  Crie um grupo de segurança que tenha as contas de utilizador para os utilizadores administrativos que irão inscrever o certificado no computador Mac utilizando o System Center Configuration Manager.  
 
-2.  Na serwerze członkowskim, na którym jest uruchomiona konsola urzędu certyfikacji, kliknij prawym przyciskiem myszy **szablonów certyfikatów**, a następnie wybierz **Zarządzaj** załadować Konsolę zarządzania szablonami certyfikatów.  
+2.  No servidor membro que está a executar a consola da autoridade de certificação, clique com botão direito **modelos de certificado**e, em seguida, escolha **gerir** para carregar a consola de gestão de modelos de certificado.  
 
-3.  W okienku wyników kliknij prawym przyciskiem myszy wpis opisany jako **sesja uwierzytelniona** w **Nazwa wyświetlana szablonu** kolumny, a następnie wybierz **Duplikuj szablon**.  
+3.  No painel de resultados, faça duplo clique na entrada que apresenta **sessão autenticada** no **nome a apresentar do modelo** coluna e, em seguida, escolha **Duplicar modelo**.  
 
-4.  W **Duplikuj szablon** dialogowe Sprawdź, czy **systemu Windows Server 2003, Enterprise Edition** jest zaznaczone, a następnie wybierz **OK**.  
+4.  No **Duplicar modelo** diálogo caixa, certifique-se de que **Windows 2003 Server, Enterprise Edition** está selecionada e, em seguida, escolha **OK**.  
 
     > [!IMPORTANT]  
-    >  Nie wybieraj systemu **Windows 2008 Server, Enterprise Edition**.  
+    >  Não selecione **Windows 2008 Server, Enterprise Edition**.  
 
-5.  W **właściwości nowego szablonu** okna dialogowego na **ogólne** , wprowadź nazwę szablonu, jak **certyfikat klienta Mac ConfigMgr**, aby wygenerować certyfikat klienta Mac.  
+5.  No **propriedades de novo modelo** caixa de diálogo a **geral** separador, introduza um nome de modelo, tal como **certificado de cliente Mac do ConfigMgr**para gerar o certificado de cliente Mac.  
 
-6.  Wybierz **nazwa podmiotu** i upewnij się, że **Konstruuj z tej informacji usługi Active Directory** jest zaznaczony, wybierz **nazwa pospolita** dla **format nazwy podmiotu:**, a następnie wyczyść **główna nazwa użytkownika (UPN)** z **Dołącz tę informację do alternatywnej nazwy podmiotu**.  
+6.  Escolha o **nome do requerente** separador, certifique-se de que **incorporar a partir destas informações do Active Directory** é selecionado, escolher **nome comum** para o **formato de nome do requerente:**e, em seguida, desmarque **nome principal de utilizador (UPN)** de **incluir estas informações no nome alternativo do requerente**.  
 
-7.  Wybierz **zabezpieczeń** karcie, a następnie usuń **rejestracja** zgody **Administratorzy domeny** i **Administratorzy przedsiębiorstwa** grup zabezpieczeń.  
+7.  Escolha o **segurança** separador e, em seguida, remova o **inscrever** permissão a partir do **Admins do domínio** e **Admins de empresa** grupos de segurança.  
 
-8.  Wybierz **Dodaj**, określ grupę zabezpieczeń utworzoną w pierwszym kroku, a następnie wybierz **OK**.  
+8.  Escolha **adicionar**, especifique o grupo de segurança que criou no passo um e, em seguida, escolha **OK**.  
 
-9. Wybierz **rejestracja** dla tej grupy uprawnienie i nie usuwaj **odczytu** uprawnienia.  
+9. Escolha o **inscrever** permissão para este grupo e não desmarque a **leitura** permissão.  
 
-10. Wybierz **OK**, a następnie Zamknij **konsoli Szablony certyfikatów**.  
+10. Escolha **OK**e, em seguida, feche **consola de modelos de certificado**.  
 
-11. W konsoli Urząd certyfikacji kliknij prawym przyciskiem myszy **szablonów certyfikatów**, wybierz **nowy**, a następnie wybierz **szablon certyfikatu do wystawienia**.  
+11. Na consola de autoridade de certificação, clique com botão direito **modelos de certificado**, escolha **novo**e, em seguida, escolha **modelo de certificado a emitir**.  
 
-12. W **Włączanie szablonu certyfikatu** okno dialogowe, wybierz nowego szablonu, który został właśnie utworzony, **certyfikat klienta Mac ConfigMgr**, a następnie wybierz **OK**.  
+12. No **ativar modelos de certificado** diálogo caixa, selecione o novo modelo que acabou de criar, **certificado de cliente Mac do ConfigMgr**e, em seguida, escolha **OK**.  
 
-13. Jeśli nie masz tworzenia i wystawiania certyfikatów Zamknij **urząd certyfikacji**.  
+13. Se não necessitar de criar e emitir mais certificados, feche **autoridade de certificação**.  
 
- Szablon certyfikatu klienta Mac jest teraz gotowy do wybrania podczas konfigurowania ustawień klienta do rejestracji.
-
+ O modelo de certificado de cliente Mac está agora pronto para ser selecionado quando configurar as definições de cliente para inscrição.

@@ -1,459 +1,456 @@
 ---
-title: "Możliwości w Technical Preview 1609 programu Configuration Manager"
-description: "Informacje na temat funkcji dostępnych w Technical Preview programu System Center Configuration Manager, wersja 1609."
+title: "Capacidades na pré-visualização técnica 1609 do Configuration Manager"
+description: "Saiba mais sobre as funcionalidades disponíveis no Technical Preview do System Center Configuration Manager, versão 1609."
 ms.custom: na
 ms.date: 01/23/2017
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.topic: article
 ms.assetid: e2a59116-b2e5-4dd2-90eb-0b8a5eb50b56
-caps.latest.revision: 2
+caps.latest.revision: "2"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5d08d1f9ccd995d544c3c21c4af52ede73343077
 ms.openlocfilehash: 89a41c8a3137d0e54011ddf9a1d9b4894ecb7df8
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1609-for-system-center-configuration-manager"></a>Możliwości w Technical Preview 1609 System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1609-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1609 do System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (Technical Preview)*
-
-
-
-Ten artykuł wprowadza do funkcji, które są dostępne w Technical Preview programu System Center Configuration Manager, wersja 1609. Można zainstalować tę wersję, aby zaktualizować i dodawać nowe funkcje do lokacji programu Configuration Manager technical preview.      Przed zainstalowaniem tej wersji technical preview, przejrzyj temat wprowadzające [Technical Preview dla programu System Center Configuration Manager](../../core/get-started/technical-preview.md), aby zapoznać się z ogólnym wymagania i ograniczenia dotyczące używania technical preview, jak zaktualizować między wersjami i jak Wyraź swoją opinię dotyczącą funkcji w technical preview.    
-
-**Znane problemy w tym Technical Preview:**  
-*  Po uaktualnieniu do programu Configuration Manager 1609 Technical Preview dowolnej wersji uaktualnienia zostały wdrożone zasady zostaną usunięte. Aby nadal korzystać z tych zasad, należy ponownie utworzyć i wdrożyć je.
+*Aplica-se a: O System Center Configuration Manager (Technical Preview)*
 
 
-**Poniżej przedstawiono nowe funkcje, które można wypróbować z tą wersją.**  
 
-## <a name="improvements-to-endpoint-protection"></a>Ulepszenia Endpoint Protection
-Poprawy do ustawień zasad ochrony przed złośliwym oprogramowaniem Endpoint Protection — można teraz określić poziom jaką usługi Endpoint Protection chmury ochrony zablokuje podejrzanych plików. Nowe ustawienie umożliwia administratorom określenie "ryzykowne" komputery oparte na wysoki ilości złośliwego oprogramowania, które napotkają.
+Este artigo apresenta as funcionalidades que estão disponíveis no Technical Preview do System Center Configuration Manager, versão 1609. Pode instalar esta versão para atualizar e adicionar novas capacidades ao seu local de pré-visualização técnica do Configuration Manager.      Antes de instalar esta versão do technical preview, reveja o tópico introdutórias, [pré-visualização técnica do System Center Configuration Manager](../../core/get-started/technical-preview.md), para se familiarizar com os requisitos gerais e limitações para utilizar como uma pré-visualização técnica, ao atualizar entre versões e como fornecer comentários sobre as funcionalidades de um technical preview.    
 
-## <a name="increased-number-of-enrolled-devices"></a>Zwiększenie liczby zarejestrowanych urządzeń
-Administratorzy mogą teraz włączyć użytkownikom na rejestrację maksymalnie 15 urządzeń w hybrydowe zarządzanie urządzeniami przenośnymi za pomocą usługi Intune. Limit został wcześniej 5 urządzeń dla poszczególnych użytkowników.
+**Problemas conhecidos neste Technical Preview:**  
+*  Quando atualizar para a pré-visualização técnica do Configuration Manager 1609, serão eliminadas quaisquer políticas de atualização de edição que implementou. Para continuar a utilizar estas políticas, tem de recriar e implementá-las.
 
-## <a name="additional-apple-dep-settings"></a>Dodatkowe ustawienia DEP firmy Apple
 
-Administratorzy mogą teraz skonfigurować następujące ustawienia programu rejestracji urządzeń firmy Apple (DEP) w profilu DEP dla systemów iOS i Mac urządzenia:
+**Seguem-se novas funcionalidades que pode experimentar com esta versão.**  
+
+## <a name="improvements-to-endpoint-protection"></a>Melhoramentos ao Endpoint Protection
+Melhoramento às definições de política de antimalware do Endpoint Protection - pode agora especificar o nível no qual o serviço de proteção de nuvem do Endpoint Protection irá impedir que ficheiros suspeitos. Uma nova definição permite aos administradores especificar "duvidosos" computadores com base nas quantidades elevadas de software maligno que se deparam.
+
+## <a name="increased-number-of-enrolled-devices"></a>Aumento do número de dispositivos inscritos
+Os administradores podem agora ativar aos utilizadores a inscrição até 15 dispositivos em gestão de dispositivos móveis híbrida com o Intune. O limite era anteriormente 5 dispositivos por utilizador.
+
+## <a name="additional-apple-dep-settings"></a>Definições adicionais do DEP da Apple
+
+Os administradores podem configurar agora as seguintes definições do programa de inscrição de dispositivos da Apple (DEP) no perfil do DEP para dispositivos iOS e Mac:
 - **Touch ID**
-- **Powiększenie**
+- **Zoom**
 - **Siri**
 
-Jeśli włączona, firmy Apple Asystenta monituje o tej usługi podczas aktywacji urządzenia.
+Se estiver ativada, Assistente da Apple de configuração solicita este serviço durante a ativação do dispositivo.
 
-## <a name="integration-with-upgrade-analytics"></a>Integracja z analizy uaktualnienia
+## <a name="integration-with-upgrade-analytics"></a>Integração com a análise de atualização
 
-Analiza uaktualnienia umożliwia oceny i analizowanie gotowości urządzenia i zgodności z systemem Windows 10, aby umożliwić łatwiejsze i sprawniej uaktualnień. Dzięki integracji z programami Analytics uaktualniania z programu Configuration Manager można uzyskać dostęp do danych zgodności z uaktualnieniem w konsoli administracyjnej programu Configuration Manager i następnie z listy urządzeń docelowych urządzeń do uaktualnienia lub korygowania.
+Análise de atualização permite-lhe avaliar e analisar a preparação do dispositivo e a compatibilidade com o Windows 10, para permitir atualizações smoother e mais fácil. Com a integração de análise de atualização com o Configuration Manager, pode aceder aos dados de compatibilidade da atualização na consola de administração do Configuration Manager e, em seguida, na lista de dispositivos de destino dispositivos para atualização ou correção.
 
-Więcej informacji dotyczących uaktualniania Analytics w [wprowadzenie uaktualnienia Analytics](https://technet.microsoft.com/itpro/windows/deploy/upgrade-analytics-get-started).
+Pode ler mais sobre a análise de atualização no [introdução à análise de atualização](https://technet.microsoft.com/itpro/windows/deploy/upgrade-analytics-get-started).
 
-## <a name="native-connection-types-for-windows-10-vpn-hybrid-profiles"></a>Profile VPN hybrydowe typy połączeń macierzystego for Windows 10
+## <a name="native-connection-types-for-windows-10-vpn-hybrid-profiles"></a>Perfis de VPN híbrida de tipos de ligação de nativo para Windows 10
 
-Korzystając z programu Configuration Manager za pomocą usługi Intune, możesz teraz utworzyć profile sieci VPN systemu Windows 10 Automatic firmy Microsoft, IKEv2, PPTP i L2TP dla typów połączenia w konsoli programu Configuration Manager bez użycia OMA-URI.
+Quando utilizar o Configuration Manager com o Intune, agora, pode criar perfis de VPN do Windows 10 com o Microsoft Automatic, IKEv2, PPTP e L2TP tipos de ligação na consola do Configuration Manager sem utilizar definições OMA-URI.
 
-## <a name="enhancements-to-windows-store-for-business-integration-with-configuration-manager"></a>Rozszerzenia do Sklepu Windows biznesowych integracji z programem Configuration Manager
+## <a name="enhancements-to-windows-store-for-business-integration-with-configuration-manager"></a>Melhoramentos à loja Windows para integração de negócios com o Configuration Manager
 
-W tej wersji Zaktualizowaliśmy [Sklep Windows dla integracji Business](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business) z tych nowych funkcji:
+Nesta versão, atualizámos [da loja Windows para integração de negócios](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business) com estas novas funcionalidades:
 
-**Aktualizacja:** W bieżącej wersji technical preview natychmiastową synchronizację funkcja nie działa.
+**Atualização:** A versão de pré-visualização técnica atual, a funcionalidade de sincronização imediata não está funcional.
 
-- Wcześniej można wdrożyć tylko bezpłatnej aplikacji ze Sklepu Windows dla firm. Program Configuration Manager teraz ponadto obsługuje wdrażanie płatności online licencjonowane aplikacje (tylko w przypadku zarejestrowanych w usłudze Intune urządzeń).
-- Teraz można zainicjować natychmiastową synchronizację między Sklepu Windows dla firm i Configuration Manager.
-- Można również zmodyfikować klucz tajny klienta został pobrany z usługi Azure Active Directory
+- Anteriormente, só foi possível implementar aplicações gratuitas da loja Windows para empresas. Gestor de configuração agora adicionalmente suporta a implementação de paga online licenciado aplicações (apenas para dispositivos inscritos no Intune).
+- Agora, pode iniciar uma sincronização imediata entre a loja Windows para empresas e o Configuration Manager.
+- Agora pode modificar a chave secreta do cliente que obteve do Azure Active Directory
 
-### <a name="try-it-out"></a>Wypróbuj to!
+### <a name="try-it-out"></a>Experimente!
 
-#### <a name="purchase-and-sync-a-paid-online-licensed-app"></a>Zakup i synchronizacji płatnego online licencjonowane aplikacji
+#### <a name="purchase-and-sync-a-paid-online-licensed-app"></a>Comprar e sincronizar uma aplicações licenciadas online paga
 
-1. Zakupów online płatną licencjonowanego aplikacji ze Sklepu Windows dla firm.
-2. W **Administracja** obszaru roboczego w konsoli programu Configuration Manager, kliknij przycisk **usług w chmurze** > **aktualizacji i obsługi** > **Sklepu Windows dla firm**.
-3. Na **Home** w karcie **synchronizacji** , kliknij przycisk **Synchronizuj teraz**.
-4. Wkrótce po zakupiono aplikacja pojawi się w **informacji o licencji dla aplikacji do sklepu** węzła **zarządzania aplikacjami** obszaru roboczego.
+1. Compre uma aplicações licenciadas online paga da loja Windows para empresas.
+2. No **administração** área de trabalho da consola do Configuration Manager, clique em **serviços em nuvem** > **atualizações e manutenção** > **loja Windows para empresas**.
+3. No **home page** separador o **sincronização** , clique em **sincronizar agora**.
+4. Em breve, em seguida, a aplicação que comprou será apresentado o **informações de licença para aplicações da loja** o nó do **gestão de aplicações** área de trabalho.
 
-#### <a name="create-and-deploy-a-configuration-manager-application-from-the-synchronized-app-data"></a>Tworzenie i wdrażanie aplikacji programu Configuration Manager z danych zsynchronizowanych aplikacji
+#### <a name="create-and-deploy-a-configuration-manager-application-from-the-synchronized-app-data"></a>Criar e implementar uma aplicação do Configuration Manager de dados da aplicação sincronizados
 
-Procedura tworzenia i wdrażania aplikacji programu Configuration Manager z płatnych sklepu jest taki sam, jak w przypadku tworzenia aplikacji z bezpłatnej aplikacji. Zobacz sekcję **tworzenie i wdrażanie aplikacji programu Configuration Manager w Sklepie Windows dla aplikacji biznesowych** w [zarządzania aplikacjami ze Sklepu Windows dla firm z System Center Configuration Manager](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
+O procedimento para criar e implementar uma aplicação do Configuration Manager de uma aplicação da loja paga é igual para criar uma aplicação a partir de uma aplicação gratuita. Consulte a secção **criar e implementar uma aplicação do Configuration Manager de uma loja Windows para a aplicação de negócio** no [gerir aplicações da loja Windows para empresas com o System Center Configuration Manager](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
 
 
-#### <a name="modify-the-client-secret-key-from-azure-active-directory"></a>Zmodyfikuj klucz tajny klienta z usługi Azure Active Directory
+#### <a name="modify-the-client-secret-key-from-azure-active-directory"></a>Modificar a chave secreta do cliente do Azure Active Directory
 
-1. W **Administracja** obszaru roboczego w konsoli programu Configuration Manager, kliknij przycisk **usług w chmurze** > **aktualizacji i obsługi** > **Sklepu Windows dla firm**.
-2. Wybierz Sklepu Windows dla konta firmowego, a następnie kliknij przycisk **właściwości**.
-3. W **Sklep Windows dla właściwości konta firmy** okna dialogowego wprowadź nowy klucz w **klucz tajny klienta** , a następnie kliknij przycisk **Sprawdź**. Po zweryfikowaniu, kliknij przycisk **Zastosuj**, zamknij okno dialogowe.
+1. No **administração** área de trabalho da consola do Configuration Manager, clique em **serviços em nuvem** > **atualizações e manutenção** > **loja Windows para empresas**.
+2. Selecione a loja Windows para a conta de empresa e, em seguida, clique em **propriedades**.
+3. No **da loja Windows para empresas propriedades da conta** caixa de diálogo, introduza uma nova chave no **chave secreta do cliente** campo e, em seguida, clique em **verifique**. Depois de verificar, clique em **aplicar**, em seguida, feche a caixa de diálogo.
 
 
-## <a name="new-compliance-settings-for-configuration-items"></a>Nowe ustawienia zgodności dla elementów konfiguracji
+## <a name="new-compliance-settings-for-configuration-items"></a>Novas definições de conformidade para itens de configuração
 
-Dodaliśmy wiele nowych ustawień, którego można użyć w swoich elementów konfiguracji dla różnych platform urządzeń.
-Są to ustawienia, które wcześniej były dostępne w programie Microsoft Intune w konfiguracji autonomicznej i są teraz dostępne przy użyciu usługi Intune z programem Configuration Manager.
-Jeśli potrzebujesz pomocy przy użyciu tych ustawień, otwórz [zarządzać ustawieniami i funkcjami urządzeń z zasadami firmy Microsoft Intune](https://docs.microsoft.com/en-us/intune/deploy-use/manage-settings-and-features-on-your-devices-with-microsoft-intune-policies) a następnie wybierz podrzędny ustawień mają platformy.
+Adicionámos muitas novas definições, que pode utilizar os itens de configuração para várias plataformas de dispositivos.
+Estas são as definições que existiam no Microsoft Intune numa configuração autónoma e anteriormente estão agora disponíveis ao utilizar o Intune com o Configuration Manager.
+Se precisar de ajuda com qualquer uma destas definições, abra [gerir definições e funcionalidades nos seus dispositivos com políticas do Microsoft Intune](https://docs.microsoft.com/en-us/intune/deploy-use/manage-settings-and-features-on-your-devices-with-microsoft-intune-policies) e, em seguida, selecione o subtopic definições para a plataforma que pretende.
 
 
-### <a name="new-settings-for-android-devices"></a>Nowe ustawienia dla urządzeń z systemem Android
+### <a name="new-settings-for-android-devices"></a>Novas definições para dispositivos Android
 
-#### <a name="password-settings"></a>Ustawienia hasła
+#### <a name="password-settings"></a>Definições de palavra-passe
 
-- **Pamiętaj historię haseł**
-- **Zezwalaj na podstawie linii papilarnych odblokowania**
+- **Memorizar histórico de palavra-passe**
+- **Permitir impressões digitais desbloquear**
 
-#### <a name="security-settings"></a>Ustawienia zabezpieczeń
+#### <a name="security-settings"></a>Definições de segurança
 
-- **Wymagaj szyfrowania kart pamięci**
-- **Zezwalaj na przechwytywanie ekranu**
-- **Zezwalaj na przesłanie danych diagnostycznych**
+- **Exigir encriptação em cartões de armazenamento**
+- **Permitir captura de ecrã**
+- **Permitir submissão de dados de diagnóstico**
 
-#### <a name="browser-settings"></a>Ustawienia przeglądarki
+#### <a name="browser-settings"></a>Definições do browser
 
-- **Zezwalaj na używanie przeglądarki sieci web**
-- **Zezwalaj na automatyczne uzupełnianie**
-- **Zezwalaj na blokowanie wyskakujących okienek**
-- **Zezwalaj na pliki cookie**
-- **Zezwalaj na wykonywanie aktywnych skryptów**
+- **Permitir browser**
+- **Permitir Preenchimento automático**
+- **Permitir Bloqueador de janelas de pop-up**
+- **Permitir cookies**
+- **Permitir scripting ativo**
 
-#### <a name="app-settings"></a>Ustawienia aplikacji
+#### <a name="app-settings"></a>Definições de aplicação
 
-- **Zezwalaj na sklep Google Play**
+- **Permitir loja do Google Play**
 
-#### <a name="device-capability-settings"></a>Ustawienia możliwości urządzenia
+#### <a name="device-capability-settings"></a>Definições de capacidade de dispositivo
 
-- **Zezwalaj na używanie magazynu wymiennego**
-- **Zezwalaj na tethering Wi-Fi**
-- **Zezwalaj na używanie funkcji geolokalizacji**
-- **Zezwalaj na komunikację NFC**
-- **Zezwalaj na połączenia Bluetooth**
-- **Zezwalaj na Roaming połączeń głosowych**
-- **Zezwalaj na roaming danych**
-- **Zezwalaj na obsługę wiadomości SMS/MMS**
-- **Zezwalaj na Asystenta głosowego**
-- **Zezwalaj na wybieranie głosowe**
-- **Zezwalaj na kopiowanie i wklejanie**
+- **Permitir armazenamento amovível**
+- **Permitir tethering Wi-Fi**
+- **Permitir geolocalização**
+- **Permitir NFC**
+- **Permitir Bluetooth**
+- **Permitir chamadas em roaming**
+- **Permitir roaming de dados**
+- **Permitir mensagens SMS/MMS**
+- **Permitir Assistente de voz**
+- **Permitir marcação por voz**
+- **Permitir copiar e colar**
 
 
-### <a name="new-settings-for-ios-devices"></a>Nowe ustawienia dla urządzeń z systemem iOS
+### <a name="new-settings-for-ios-devices"></a>Novas definições para dispositivos iOS
 
-#### <a name="password-settings"></a>Ustawienia hasła
+#### <a name="password-settings"></a>Definições de palavra-passe
 
-- **Złożone wymagana liczba znaków w haśle**
-- **Zezwalaj na proste hasła**
-- **Liczba minut braku aktywności, zanim będzie wymagane hasło**
-- **Pamiętaj historię haseł**
+- **Número de carateres complexos necessários na palavra-passe**
+- **Permitir palavras-passe simples**
+- **Minutos de inatividade antes da palavra-passe é exigida**
+- **Memorizar histórico de palavra-passe**
 
-### <a name="new-settings-for-mac-os-x-devices"></a>Nowe ustawienia dla urządzeń z systemem Mac OS X
+### <a name="new-settings-for-mac-os-x-devices"></a>Novas definições para dispositivos Mac OS X
 
-#### <a name="password-settings"></a>Ustawienia hasła
+#### <a name="password-settings"></a>Definições de palavra-passe
 
-- **Złożone wymagana liczba znaków w haśle**
-- **Zezwalaj na proste hasła**
-- **Pamiętaj historię haseł**
-- **Liczba minut braku aktywności przed włączeniem wygaszacza**
+- **Número de carateres complexos necessários na palavra-passe**
+- **Permitir palavras-passe simples**
+- **Memorizar histórico de palavra-passe**
+- **Minutos de inatividade antes da proteção de ecrã ser ativada**
 
-### <a name="new-settings-for-windows-10-desktop-and-mobile-devices"></a>Nowe ustawienia dla urządzeń z systemem Windows 10 Desktop oraz Mobile
+### <a name="new-settings-for-windows-10-desktop-and-mobile-devices"></a>Novas definições para dispositivos Windows 10 Desktop e Mobile
 
-#### <a name="password-settings"></a>Ustawienia hasła
+#### <a name="password-settings"></a>Definições de palavra-passe
 
-- **Minimalna liczba zestawów znaków**
-- **Pamiętaj historię haseł**
-- **Wymagaj hasła, gdy urządzenie powraca ze stanu bezczynności**
+- **Número mínimo de conjuntos de carateres**
+- **Memorizar histórico de palavra-passe**
+- **Exigir uma palavra-passe quando o dispositivo regressa de um estado inativo**
 
-#### <a name="security-settings"></a>Ustawienia zabezpieczeń
+#### <a name="security-settings"></a>Definições de segurança
 
-- **Wymagaj szyfrowania na urządzeniu przenośnym**
-- **Zezwalaj na ręczne unenrollment**
+- **Encriptação obrigatória no dispositivo móvel**
+- **Permitir anular inscrições**
 
-#### <a name="device-capability-settings"></a>Ustawienia możliwości urządzenia
+#### <a name="device-capability-settings"></a>Definições de capacidade de dispositivo
 
-- **Zezwalaj na sieć VPN przez sieć komórkową**
-- **Zezwalaj na roaming sieci VPN przez sieć komórkową**
-- **Zezwalaj na resetowanie telefonu**
-- **Zezwalaj na połączenie USB**
-- **Zezwalaj na Cortana**
-- **Zezwalaj na powiadomienia Centrum akcji**
+- **Permitir VPN sobre redes móveis**
+- **Permitir roaming do VPN sobre redes móveis**
+- **Permitir reposição do telefone**
+- **Permitir ligação USB**
+- **Permitir Cortana**
+- **Permitir notificações de centro de ação**
 
-### <a name="new-settings-for-windows-10-team-devices"></a>Nowe ustawienia dla urządzeń z systemem Windows 10 Team
+### <a name="new-settings-for-windows-10-team-devices"></a>Novas definições para dispositivos Windows 10 Team
 
-#### <a name="device-settings"></a>Ustawienia urządzeń
+#### <a name="device-settings"></a>Definições do dispositivo
 
-- **Włącz usługi Azure Operational Insights**
-- **Włącz Miracast projekcji bezprzewodowej**
-- **Wybierz spotkania informacje wyświetlane na ekranie powitalnym**
-- **Adres URL obrazu tła Lockscreen**
+- **Ativar a informações operacionais do Azure**
+- **Ativar projeção sem fios Miracast**
+- **Escolha as informações de reunião apresentadas no ecrã de boas-vindas**
+- **URL de imagem de fundo do ecrã de bloqueio**
 
 
-### <a name="new-settings-for-windows-81-devices"></a>Nowe ustawienia dla urządzeń Windows 8.1
+### <a name="new-settings-for-windows-81-devices"></a>Novas definições para dispositivos Windows 8.1
 
-#### <a name="applicability-settings"></a>Stosowanie ustawień
+#### <a name="applicability-settings"></a>Definições de aplicabilidade
 
-- **Zastosuj wszystkie konfiguracje dla systemu Windows 10**
+- **Aplicar todas as configurações ao Windows 10**
 
-#### <a name="password-settings"></a>Ustawienia hasła
+#### <a name="password-settings"></a>Definições de palavra-passe
 
-- **Wymagany typ hasła**
-- **Minimalna liczba zestawów znaków**
-- **Minimalna długość hasła**
-- **Liczba dopuszczalnych nieudanych logowań przed wyczyszczeniem danych z urządzenia**
-- **Liczba minut braku aktywności przed wyłączeniem ekranu**
-- **Wygaśnięcie hasła (dni)**
-- **Pamiętaj historię haseł**
-- **Zapobiegaj ponownemu używaniu poprzednich haseł**
-- **Zezwalaj na hasło obrazkowe i numer PIN**
+- **Tipo de palavra-passe obrigatório**
+- **Número mínimo de conjuntos de carateres**
+- **Comprimento mínimo da palavra-passe**
+- **Número de falhas de início de sessão repetidas permitidas antes do dispositivo ser apagado**
+- **Minutos de inatividade antes do ecrã se desligar**
+- **Expiração da palavra-passe (dias)**
+- **Memorizar histórico de palavra-passe**
+- **Impedir a reutilização de palavras-passe anteriores**
+- **Permitir palavra-passe de imagem e PIN**
 
-#### <a name="browser-settings"></a>Ustawienia przeglądarki
+#### <a name="browser-settings"></a>Definições do browser
 
-- **Zezwalaj na automatyczne wykrywanie sieci intranet**
+- **Permitir deteção automática de rede intranet**
 
 
-### <a name="new-settings-for-windows-phone-81-devices"></a>Nowe ustawienia dla urządzeń Windows Phone 8.1
+### <a name="new-settings-for-windows-phone-81-devices"></a>Novas definições para dispositivos Windows Phone 8.1
 
-#### <a name="applicability-settings"></a>Stosowanie ustawień
+#### <a name="applicability-settings"></a>Definições de aplicabilidade
 
-- **Zastosuj wszystkie konfiguracje dla systemu Windows 10**
+- **Aplicar todas as configurações ao Windows 10**
 
-#### <a name="password-settings"></a>Ustawienia hasła
+#### <a name="password-settings"></a>Definições de palavra-passe
 
-- **Minimalna liczba zestawów znaków**
-- **Zezwalaj na proste hasła**
-- **Pamiętaj historię haseł**
+- **Número mínimo de conjuntos de carateres**
+- **Permitir palavras-passe simples**
+- **Memorizar histórico de palavra-passe**
 
-#### <a name="device-capability-settings"></a>Ustawienia możliwości urządzenia
+#### <a name="device-capability-settings"></a>Definições de capacidade de dispositivo
 
-- **Zezwalaj na automatyczne łączenie z bezpłatnymi punktami HotSpot Wi-Fi**
+- **Permitir ligação automática a hotspots Wi-Fi**
 
 
-## <a name="improvements-for-boundary-groups"></a>Udoskonalenia w zakresie grup granic
-Ta wersja zapoznawcza wprowadza ważne zmiany do grupy granic oraz ich współdziałaniu z punktami dystrybucji. Te zmiany uprości projektowania infrastruktury zawartości podczas co daje większą kontrolę nad jak i kiedy klienci powrotu do wyszukiwania dystrybucji dodatkowych punktów jako lokalizacji źródła zawartości. Obejmuje to zarówno lokalnie, jak i punkty dystrybucji w chmurze.
+## <a name="improvements-for-boundary-groups"></a>Melhoramentos para os grupos de limites
+Esta pré-visualização introduz alterações importantes para os grupos de limites e como funcionam com pontos de distribuição. Estas alterações ajudará a simplificar a estrutura da sua infraestrutura de conteúdo ao dando-lhe mais controlo sobre como e quando os pontos de contingência de clientes para procurar distribuição adicionais como localizações de origem de conteúdo. Isto inclui pontos de distribuição baseado na nuvem e no local.
 
-Te ulepszenia zastąpić pojęcia i zachowania może być znasz już dziś (np. Konfigurowanie punktów dystrybucji za dużą lub małą) i zastępuje je nowy model, który powinien być łatwiejsze do instalacji i konserwacji. Zmiany te są również przygotowawczych przyszłe zmiany zwiększające inne role systemu lokacji, którą można skojarzyć do grup granic.  
+Estas melhorias substituir conceitos e comportamentos poderá estar familiarizado com hoje em dia (como configurar pontos de distribuição para ser rápida ou lenta) e substitui-os com um novo modelo que deve ser mais fácil de configurar e manter. Estas alterações também são base para as alterações futuras que irá melhorar outras funções de sistema de sites, que associar a grupos de limites.  
 
-Podczas uaktualniania do 1609 uaktualnienia konwertuje bieżącej konfiguracji grupy granic do nowego modelu, aby te zmiany nie przeszkadzać konfiguracje dystrybucji zawartości (zobacz [aktualizowanie istniejących grup granic do nowego modelu](/sccm/core/get-started/capabilities-in-technical-preview-1609#bkmk_update)).
+Durante a atualização 1609, a atualização converte das configurações de grupo de limites atuais para ajustar o novo modelo de modo a que estas alterações não disturb as configurações de distribuição de conteúdo (consulte [atualizar os grupos de limites existentes para o novo modelo](/sccm/core/get-started/capabilities-in-technical-preview-1609#bkmk_update)).
 
-W poniższych sekcjach opisano zmiany wprowadzone w programie Podgląd, jak działa nowy model i czego można oczekiwać po uaktualnieniu lokacji, która już ma skonfigurowane grupy granic.
+As secções seguintes pormenorizadamente as alterações introduzidas com esta pré-visualização, como funciona o novo modelo e o que pode esperar quando atualizar um site que já tenha configurados os grupos de limites.
 
 
 
-### <a name="changes-in-ui-and-behavior-for-boundary-groups-and-content-locations"></a>Zmiany w interfejsie użytkownika i zachowanie dla grupy granic i lokalizacji zawartości
-Dostępne są następujące zmiany klucza do grupy granic i znajdowania zawartości klientom. Wiele z tych zmian i pojęcia współpracują ze sobą.
--    **Konfiguracje szybko lub wolno zostaną usunięte:** Można już konfigurować poszczególne punkty dystrybucji do szybkiego lub powolnego.  Zamiast tego każdy system lokacji skojarzone z grupą granic jest traktowany takie same. Z powodu tej zmiany **odwołania** karta właściwości grupy granic nie obsługuje już konfiguracji Fast lub niska.
--     **Nową grupę granic domyślne w każdej lokacji:**  Każda lokacja główna ma nowej grupy granic domyślna o nazwie ***granicy grupy, domyślne lokacji w-\<kod_lokacji >***.  Gdy klient nie jest w lokalizacji sieciowej, która jest przypisana do grupy granic, ten klient użyje systemy lokacji skojarzone z grupą domyślne z przypisanej mu lokacji. Zaplanuj użycie tej grupy granic zastępujący koncepcję rezerwowej lokalizacji zawartości.      
- -    **"Zezwalaj na lokalizacje rezerwowego źródła zawartości"** zostanie usunięty: Nie jest już jawnie skonfigurować punkt dystrybucji ma być używany dla powrotu i opcje tę są usuwane z interfejsu użytkownika.
+### <a name="changes-in-ui-and-behavior-for-boundary-groups-and-content-locations"></a>Alterações na IU e o comportamento para grupos de limites e localizações de conteúdo
+Seguem-se chave alterações aos grupos de limites e a forma como os clientes localizam os conteúdos. Muitas destas alterações e conceitos funcionam em conjunto.
+-   **Configurações para rápida ou lenta são removidas:** Já não está a configurar pontos de distribuição individuais para serem rápida ou lenta.  Em vez disso, cada sistema de sites associado a um grupo de limites é Tratado da mesma. Devido a esta alteração, o **referências** separador das propriedades do grupo de limites já não suporta a configuração rápida ou lenta.
+-   **Novo grupo de limites de predefinição em cada site:**  Cada site primário tem um novo grupo de limites de predefinição com o nome ***predefinição-Site-limite-grupo\<sitecode >***.  Quando um cliente não está numa localização de rede que está atribuída a um grupo de limites, esse cliente utilizará os sistemas de sites associados ao grupo predefinido do seu site atribuído. Planear a utilização deste grupo de limites como uma substituição para o conceito de localização de conteúdo de contingência.    
+ -  **'Permitir que as localizações de origem de contingência para conteúdo'** for removido: Já não está explicitamente a configurar um ponto de distribuição para ser utilizado para contingência e as opções para configurar esta são removidas da IU.
 
-    Ponadto wynik ustawienie **Zezwalaj klientom na użycie rezerwowej lokalizacji źródła zawartości** na wdrożenie zmienił się typ dla aplikacji. To ustawienie w typie wdrożenia teraz umożliwia klienta do używania domyślnej grupy granic lokacji jako lokalizację źródła zawartości.
+    Além disso, o resultado da definição **permitir que os clientes utilizem uma localização de origem de contingência para conteúdo** numa implementação tipo para aplicações foi alterada. Esta definição num tipo de implementação agora permite que um cliente para utilizar o grupo de limites de site predefinido como uma localização de origem de conteúdo.
 
- -    **Relacje grupy granic:** Każda grupa granic może zostać powiązany z co najmniej jedną grupę granic dodatkowe. Te łącza tworzą relacje, które są skonfigurowane na karcie właściwości nowej grupy granic o nazwie **relacje**:
-     -    Każdą grupą granic, klient jest bezpośrednio z którym skojarzony jest nazywany **bieżącej** grupy granic.  
-    -     Każda grupa granic klient może korzystać z powodu skojarzenia między ten klient *bieżącej* nosi nazwę grupy granic i innej grupy **sąsiada** grupy granic.
-    -  Znajduje się ona na **relacji** kartę dodawanej grupy granic, które mogą być używane jako *sąsiada* grupy granic. Można również skonfigurować czas w minutach, które określa, kiedy klient, który nie może odnaleźć zawartości z punktu dystrybucji w *bieżącej* grupy rozpocznie się wyszukiwanie lokalizacji zawartości z tymi *sąsiada* grup granic.
+ -  **Relações de grupos de limites:** Cada grupo de limites pode ser associado a um ou mais grupos de limites adicionais. Estas ligações formam relações que estão configuradas no novo limite grupo separador de propriedades com o nome **relações**:
+    -   Cada grupo de limites que um cliente é diretamente associado é chamado um **atual** grupo de limites.  
+    -   Nenhum grupo de limites pode utilizar um cliente devido a uma associação entre esse cliente *atual* grupo de limites e outro grupo é chamado um **vizinho** grupo de limites.
+    -  É o **relações** separador adicionar grupos de limites que podem ser utilizados como um *vizinho* grupo de limites. Também pode configurar um período de tempo em minutos que determina quando um cliente que não consegue localizar o conteúdo a partir de um ponto de distribuição no *atual* grupo irá começar a procurar nas localizações de conteúdo das *vizinho* grupos de limites.
 
-        Podczas dodawania lub zmiany konfiguracji grupy granic, trzeba będzie opcja powrotu do tej grupy granic określone z bieżącej grupy, które są konfigurowane w bloku.
+        Quando adicionar ou alterar uma configuração do grupo de limites, terá a opção para o bloco de contingência para esse grupo de limites específico do grupo atual que estiver a configurar.
 
-    Aby użyć nowej konfiguracji, definiowanie skojarzeń jawne (linki) z jednej grupy granic do innego i skonfiguruj wszystkie punkty dystrybucji w tej grupie skojarzone z tym samym czasie, w minutach. Podczas konfigurowania Określa, kiedy klient, który nie może odnaleźć Źródło zawartości z jej *bieżącej* grupy granic można rozpocząć wyszukiwanie źródła zawartości z tej grupy granic sąsiada.
+    Para utilizar a nova configuração, pode define associações explícitas (ligações) a partir de um grupo de limites para outro e configura todos os pontos de distribuição nesse grupo associados com o mesmo tempo em minutos. O tempo que configura determina quando um cliente que não consegue encontrar uma origem de conteúdo do respetivo *atual* grupo de limites pode começar a pesquisar origens de conteúdo desse grupo de limites de vizinho.
 
-    Oprócz grup granic, które jawnie skonfigurować każdą grupą granic ma dorozumianych łącze do domyślnej grupy granic lokacji. To łącze staje się aktywny po 120 minut po tym czasie domyślna grupa granic lokacji staje się grupie granic sąsiada, która umożliwia klientom korzystanie z punktów dystrybucji skojarzone z daną grupą granic jako lokalizacji źródła zawartości.
+    Além dos grupos de limites que configurar explicitamente, cada grupo de limites tem uma ligação implícita para o grupo de limites de site predefinido. Esta ligação fica ativa depois de 120 minutos em que momento o grupo de limites de site predefinido torna-se um grupo de limites de vizinho que permite que os clientes utilizar os pontos de distribuição associados esse grupo de limites como localizações de origem de conteúdo.
 
-    To zachowanie zastępuje, co było wcześniej nazywane rezerwowych dla zawartości.  Można zastąpić to domyślne zachowanie 120 minut dokonując jawnie domyślna grupa granic lokacji do *bieżącej* grupy i ustawienie określony czas w minutach lub blokowanie powrotu całkowicie uniemożliwić korzystanie z niego.
+    Este comportamento substitui que anteriormente foi referido como contingência para conteúdo.  Pode substituir este comportamento predefinido de 120 minutos associando explicitamente o grupo de limites de site predefinido para um *atual* grupo e definir uma hora específica em minutos ou bloquear contingência inteiramente para impedir a sua utilização.
 
 
--     **Klienci próbują uzyskać zawartości z poszczególnych punktów dystrybucji przez maksymalnie 2 minuty:** Gdy klient wyszukuje lokalizacji źródła zawartości, podejmie dostępu do poszczególnych punktów dystrybucji przez 2 minut przed podjęciem próby następnie innego punktu dystrybucji. Jest zmiany z poprzednich wersji, której klienci próbował łączyć się z punktem dystrybucji przez maksymalnie 2 godziny.
+-   **Os clientes tentam obter conteúdos de cada ponto de distribuição para 2 minutos:** Quando um cliente procura de uma localização de origem de conteúdo, este tenta aceder a cada ponto de distribuição para 2 minutos antes de, em seguida, tentar outro ponto de distribuição. Esta é uma alteração de versões anteriores onde os clientes tentaram ligar a um ponto de distribuição de até 2 horas.
 
-    - Pierwszy punkt dystrybucji, klient próbuje użyć losowo z puli dostępnych punktów dystrybucji na komputerze klienckim *bieżącej* grupy granic (lub grup).
+    - O primeiro ponto de distribuição que um cliente tenta utilizar aleatoriamente está selecionado do agrupamento de pontos de distribuição disponíveis do cliente *atual* grupo de limites (ou grupos).
 
-    - Po upływie dwóch minut Jeśli klient ma nie można odnaleźć zawartości, go przełącza się do nowego punktu dystrybucji i próbuje pobrać zawartości z tego serwera. Ten proces jest powtarzany co dwie minuty, dopóki klient znajdzie zawartość lub osiągnie ostatniego serwera jej puli.
+    - Depois de dois minutos, se o cliente não foi encontrado o conteúdo, muda para um novo ponto de distribuição e tenta obter conteúdo a partir desse servidor. Este processo repete-se a cada dois minutos até que o cliente localiza o conteúdo ou atinge o último servidor no seu conjunto.
 
-    - Jeśli klient nie może znaleźć lokalizację prawidłowego źródła zawartości z jego *bieżącej* puli przed okres powrotu do *sąsiada* osiągnięciu grupy granic, klient następnie dodaje punktów dystrybucji niż *sąsiada* grupę w celu jego bieżącej listy, a następnie będzie szukał rozwiniętej grupy lokalizacje źródłowe, która zawiera punkty dystrybucji z obu grup granic.
+    - Se um cliente não é possível encontrar uma localização de origem de conteúdo válida a partir do respetivo *atual* agrupamento antes do período de contingência para um *vizinho* for atingido o grupo de limites, o cliente, em seguida, adiciona os pontos de distribuição do *vizinho* até ao fim da respetiva lista atual de grupo e, em seguida, irá procurar o grupo expandido das localizações de origem que inclua os pontos de distribuição a partir de ambos os grupos de limites.
 
         > [!TIP]  
-        > Po utworzeniu jawne łącze z bieżącej grupy granic do domyślnej grupy granic lokacji i zdefiniować rezerwowy godzinę, która jest mniejsza niż czas rezerwowy dla łącza do grupy granic sąsiada, klienci rozpocznie się wyszukiwanie lokalizacje źródłowe do domyślnej grupy granic lokacji przed tym grupy sąsiada.
+        > Quando criar uma ligação explícita do grupo de limites atuais para o grupo de limites de site predefinido e definir uma hora de contingência que é inferior à hora de contingência para uma ligação a um grupo de limites de vizinho, os clientes começam a pesquisar localizações de origem do grupo de limites de site predefinido antes, incluindo o grupo de vizinho.
 
-    - Gdy klient nie może pobrać zawartości z ostatnich serwera w puli, rozpoczyna proces ponownie.
+    - Quando o cliente não consegue obter conteúdos do último servidor no agrupamento, começar o processo de novo.
 
 
-### <a name="how-the-new-model-works"></a>Jak działa nowy model
-Podczas konfigurowania grup granic można skojarzyć granic (lokalizacje sieciowe) i role systemu lokacji, takich jak punkty dystrybucji do grupy granic. Pozwala to klientów na serwerach systemu lokacji, takich jak punkty dystrybucji, które znajdują się w pobliżu klientów w sieci.   
--    Tej samej granicy można przypisać do wielu grup granic
--    Serwery systemu lokacji, takich jak punkty dystrybucji można skojarzyć z wielu grup granic w celu udostępnienia większej liczbie lokalizacji sieciowych
--    Jeśli punkt dystrybucji nie jest skojarzony z grupą granic, klienci nie będą mogli używać tego punktu dystrybucji jako lokalizacji źródła zawartości.
+### <a name="how-the-new-model-works"></a>Como funciona o novo modelo
+Quando configura grupos de limites, associar limites (localizações de rede) e funções de sistema de sites, como pontos de distribuição, para o grupo de limites. Isto ajuda os clientes de ligação a servidores do sistema de sites como perto de pontos de distribuição que estão localizados os clientes na rede.   
+-   É possível atribuir o mesmo limite a vários grupos de limites
+-   Servidores do sistema de sites, como pontos de distribuição, podem ser associados a vários grupos de limites, disponibilizando-as para uma vasta gama de localizações de rede
+-   Se um ponto de distribuição não estiver associado a um grupo de limites, os clientes não poderão utilizar esse ponto de distribuição como localização de origem de conteúdo.
 
-Począwszy od tej technical preview, należy zdefiniować relacje grupy granic, aby skonfigurować zachowanie rezerwowej lokalizacji źródła zawartości. To nowe zachowanie jest skonfigurowany na nowym **relacje** na karcie właściwości grupy granic i zamienia Konfigurowanie systemów lokacji jako wolne lub szybkiego i konfigurowania grupy granic, aby zezwolić na rezerwową lokalizację źródła zawartości.
+A partir desta pré-visualização técnica, é possível definir relações de grupo de limites para configurar o comportamento de contingência para localizações de origem de conteúdo. Este novo comportamento está configurado no novo **relações** separador de propriedades do grupo de limites e substitui a configuração de sistemas de sites para ser rápida ou lenta e configurar um grupo de limites para permitir a localização de origem de contingência para conteúdo.
 
-Na karcie relacje można dodać inne grupy granic do konfigurowania relacji do tych grup. Każda relacja jest jednokierunkowe łącze z **bieżącej** grupy granic do grupy granic można dodać, która jest wywoływana **sąsiada**. Dla każdego tworzonego łącza można skonfigurować punkty dystrybucji z rezerwowego czas w minutach. Ten czas jest używana do określenia po ile klientów w *bieżącej* grupy granic można rozpocząć korzystanie z punktów dystrybucji w *sąsiada* grupy granic, jeśli nie można odnaleźć lokalizacji prawidłowego źródła zawartości z ich bieżącej grupy granic.
+No separador relações adicionar outros grupos de limites para configurar uma relação a esses grupos. Cada relação é uma hiperligação unidirecional do **atual** grupo de limites para o grupo de limites que adiciona, que é chamado um **vizinho**. Para cada ligação de que criar, pode configurar pontos de distribuição com um tempo de contingência em minutos. Este tempo é utilizado para determinar após clientes quanto a *atual* grupo de limites pode começar a utilizar pontos de distribuição a *vizinho* grupo de limites que se encontrem não é possível encontrar uma localização de origem de conteúdo válida do respetivo grupo de limites atual.
 
-Gdy klient nie może odnaleźć zawartości i rozpocznie się wyszukiwanie lokalizacji z grupy granic sąsiada, zwiększa puli dostępnych punktów dystrybucji dla tego klienta w kontrolowany sposób.  
+Quando um cliente não é possível localizar o conteúdo e começa a procurar nas localizações dos grupos de limites de vizinho, aumenta o conjunto de pontos de distribuição disponíveis para que o cliente de forma controlada.  
 
--    Grupa granic może mieć więcej niż jedną relację. Dzięki temu można skonfigurować powrotu do różnych sąsiadów nastąpi po różnych okresach czasu.
--    Klienci będą tylko powrotu do grupy granic, która jest bezpośrednie sąsiada ich bieżącej grupy granic.
--    Gdy klient jest członkiem wielu grup granic, bieżącą grupę granic jest zdefiniowany jako sumę tego klienta grup granic.  Ten klient może następnie powrotu do sąsiada któregokolwiek z tych grup granic oryginalnej.
+-   Um grupo de limites pode ter mais de uma relação. Isto permite-lhe configurar contingência aos diferentes vizinhos para ocorrer após os períodos de tempo diferentes.
+-   Os clientes irão contingência apenas a um grupo de limites que é um vizinho direto do respetivo grupo de limites atuais.
+-   Quando um cliente é um membro de vários grupos de limites, o grupo de limites atual está definido como uma União de tudo o que os grupos de limites do cliente.  Que o cliente pode, em seguida, contingência para um vizinho de qualquer um desses grupos de limites original.
 
-Oprócz łącza, które należy zdefiniować istnieje dorozumianych łącze, które jest tworzone automatycznie między grupami granic, tworzonych i domyślnej grupy granic są tworzone dla każdej lokacji. To łącze automatyczne:
--    Jest używana przez klientów, którzy są nie w granicach automatycznie skojarzony z żadną inną grupą granic w hierarchii używają domyślnej grupy granic z przypisanej lokacji do identyfikowania lokalizacji prawidłowego źródła zawartości.   
--     To domyślne opcji rezerwowej z bieżącej grupy granic do domyślnej grupy granic lokacji jest używana po 120 minut.
+Para além das ligações que define, há uma ligação implícita que é criada automaticamente entre os grupos de limites que cria e o grupo de limites predefinido que é criado automaticamente para cada site. Esta ligação automática:
+-   É utilizado por clientes que são não num limite associado a nenhum grupo de limites na hierarquia automaticamente utilizar o grupo de limites predefinidos do respetivo site atribuído para identificar as localizações de origem de conteúdo válida.   
+-   É uma opção de contingência de predefinição do grupo de limites atuais ao grupo de limites de sites predefinido que é utilizado depois de 120 minutos.
 
-**Przykład użycia nowego modelu:**     
-Utwórz trzy grupy granic, które nie mają granice lub serwerów systemu lokacji:
--    Grupa BG_A z punktami dystrybucji DP_A1 i DP_A2 skojarzonego z grupą
--    Grupa BG_B z punktami dystrybucji DP_B1 i DP_B2 skojarzonego z grupą
--    Grupa BG_C z punktami dystrybucji DP_C1 i DP_C2 skojarzonego z grupą
+**Exemplo de como utilizar o novo modelo:**     
+Crie três grupos de limites que não partilham limites ou servidores de sistema de sites:
+-   Grupo BG_A com pontos de distribuição DP_A1 e DP_A2 associados ao grupo
+-   Grupo BG_B com pontos de distribuição DP_B1 e DP_B2 associados ao grupo
+-   Grupo BG_C com pontos de distribuição DP_C1 e DP_C2 associados ao grupo
 
-Dodaj lokalizacje sieci klientów tylko do grupy granic BG_A i można następnie skonfigurować relacji z tej grupy granic do innych dwóch grup granic:
--    Konfigurowanie punktów dystrybucji w pierwszym *sąsiada* grupy (BG_B) do użycia po 10 minutach. Ta grupa zawiera punkty dystrybucji DP_B1 i DP_B2. Oba są dobrze połączony z pierwszym lokalizacje granic grup.
--    Skonfiguruj drugi *sąsiada* grupy (BG_C) do użycia po upływie 20 minut. Ta grupa zawiera punkty dystrybucji DP_C1 i DP_C2. Oba są w sieci WAN z innych dwóch grup granic.
--    Również dodać punkt dystrybucji dodatkowe znajdujący się na serwerze lokacji do grupy granic lokacji domyślnej witryny. To jest najmniej polecana lokalizacji źródła zawartości, ale znajduje centralnie do grup granic.
+A adicionar as localizações de rede dos clientes como limites para apenas o grupo de limites BG_A e, em seguida, configurar relações desse grupo de limites para os outros dois grupos de limites:
+-   Configurar pontos de distribuição para o primeiro *vizinho* grupo (BG_B) a ser utilizada após 10 minutos. Este grupo contém pontos de distribuição DP_B1 e DP_B2. Ambos são boas ligações para as localizações de limites de grupos primeiro.
+-   Configurar a segunda *vizinho* grupo (BG_C) a ser utilizada após 20 minutos. Este grupo contém pontos de distribuição DP_C1 e DP_C2. Ambos são através de uma WAN dos outros grupos de limites de dois.
+-   Pode também adiciona um ponto de distribuição adicionais que está localizado no servidor do site ao grupo de limites de site de sites predefinido. Esta é a localização de origem de conteúdo menos preferencial, mas está centralmente localizado para todos os grupos de limites.
 
-    Przykład grupy granic i czasy rezerwowego:
+    Exemplo de grupos de limites e tempos de contingência:
 
      ![BG_Fallack](media/BG_Fallback.png)
 
 
-W przypadku tej konfiguracji:
--    Klient rozpoczyna wyszukiwanie zawartości z punktów dystrybucji w jego *bieżącej* grupy granic (BG_A), wyszukiwanie dystrybucji każdego punktu dla dwóch minut przed przejściem do następnego punktu dystrybucji w grupie granic. Pula klientów z lokalizacji prawidłowego źródła zawartości zawiera DP_A1 i DP_A2.
--    Jeśli klient nie może odnaleźć zawartości z jego *bieżącej* grupy granic po przeszukaniu przez 10 minut, następnie dodaje punkty dystrybucji z grupy granic BG_B do wyszukiwania. Następnie nadal wyszukiwania zawartości z punktu dystrybucji w jego połączonych puli punktów dystrybucji, która zawiera te z BG_A i BG_B grup granic. Klient w dalszym ciągu skontaktować się z każdym punkcie dystrybucji dla dwóch minut przed przejściem do następnego punktu dystrybucji z puli. Pula klientów z lokalizacji prawidłowego źródła zawartości obejmuje DP_A1, DP_A2, DP_B1 i DP_B2.
--    Po 10 minutach dodatkowe (całkowita liczba 20 minut) Jeśli klient nadal ma nie można odnaleźć punktu dystrybucji z zawartością, rozszerza puli dostępnych punktów dystrybucji te od drugiego *sąsiada* grupie grupy granic BG_C. Klient jest teraz ma 6 punktów dystrybucji do wyszukiwania (DP_A1, DP_A2, DP_B2, DP_B2, DP_C1 i DP_C2) i kontynuuje wprowadzanie zmian do nowego punktu dystrybucji, co dwie minuty, aż do znalezienia zawartości.
--    Jeśli klient nie odnalazł zawartości po łącznie 120 minut, jego powraca do obejmują *domyślna grupa granic lokacji* w ramach jego ciągłego wyszukiwania. Teraz puli punktów dystrybucji zawiera wszystkie punkty dystrybucji z trzech skonfigurowanych grup granic i punktu końcowego dystrybucji znajdujących się na komputerze serwera lokacji.  Klient kontynuuje wyszukiwanie zawartości, zmiana punktów dystrybucji, co dwie minuty, aż do znalezienia zawartości.
+Com esta configuração:
+-   O cliente começa a procurar conteúdo dos pontos de distribuição no respetivo *atual* pesquisar a distribuição de cada grupo de limites (BG_A), para que aponte do dois minutos antes de mudar para o próximo ponto de distribuição no grupo de limites. O conjunto de clientes de localizações de origem de conteúdo válida inclui DP_A1 e DP_A2.
+-   Se o cliente não conseguir localizar o conteúdo do respetivo *atual* grupo de limites depois de procurar durante 10 minutos, em seguida, adiciona os pontos de distribuição do grupo de limites BG_B para a sua pesquisa. Em seguida, continua a pesquisar conteúdo a partir de um ponto de distribuição no respetivo conjunto combinado de pontos de distribuição que inclui os grupos de limites BG_A tanto BG_B agora. O cliente continua a contactar cada ponto de distribuição de dois minutos antes de mudar para o próximo ponto de distribuição do seu conjunto. O conjunto de clientes de localizações de origem de conteúdo válida inclui DP_A1, DP_A2, DP_B1 e DP_B2.
+-   Após um adicionais de 10 minutos (totais de 20 minutos) se o cliente ainda não encontrou um ponto de distribuição com conteúdo, que expande o conjunto de pontos de distribuição disponíveis para incluir as da segunda *vizinho* grupo, o grupo de limites BG_C. O cliente agora tem 6 pontos de distribuição para pesquisa (DP_A1, DP_A2, DP_B2, DP_B2, DP_C1 e DP_C2) e continua a alteração cada dois minutos até ser encontrado conteúdo para um novo ponto de distribuição.
+-   Se o cliente não foi encontrado conteúdo depois de um total de 120 minutos, fica novamente para incluir o *grupo de limites de site predefinido* como parte da sua pesquisa contínua. O conjunto de pontos de distribuição inclui agora todos os pontos de distribuição dos três grupos de limites configurado e o ponto de distribuição final localizado no computador do servidor do site.  O cliente, em seguida, continua a pesquisa de conteúdo, alterar a cada dois minutos até ser encontrado conteúdo de pontos de distribuição.
 
-Konfigurując grupy różnych sąsiada była dostępna w różnym czasie kontrolować po dodaniu konkretnych punktów dystrybucji jako lokalizacji źródła zawartości i gdy lub jeśli klient korzysta z powrotu do domyślnej grupy granic lokacji jako zabezpieczenie zawartości, które nie są dostępne z innej lokalizacji.
+Ao configurar os grupos de vizinho diferentes para estar disponível em alturas diferentes, pode controlar quando são adicionados como uma localização de origem de conteúdo, pontos de distribuição específico e quando, ou se, o cliente utiliza a contingência para o grupo de limites de site predefinido como uma rede de segurança para o conteúdo que não está disponível a partir de qualquer outra localização.
 
 
-### <a name="bkmk_update"></a>Aktualizowanie istniejących grup granic do nowego modelu
-Po zainstalowaniu wersji 1609 i zaktualizować witryny, automatycznie stają się następujące konfiguracje. Są one przeznaczone do upewnij się, że Twoje bieżące zachowanie rezerwowego, pozostaje dostępna, dopóki nie zostanie skonfigurowana nowej grupy granic i relacje.  
--    Punkty dystrybucji niechronionych w lokacji są dodawane do *granicy grupy, domyślne lokacji w-\<kod lokacji >* grupy granic tej lokacji.
--    Kopię składa się z każdej istniejącej grupy granic, która zawiera serwer lokacji, skonfigurowany z wolnego połączenia. Nazwa nowej grupy jest *** \<oryginalna nazwa grupy granic > - wolno — Tmp***:  
-    -    Systemy lokacji z szybkim połączeniu są pozostawiane w oryginalnej grupie granic.
-    -    Kopię systemów lokacji, które ma powolne połączenie są dodawane do skopiowania grupy granic. Oryginalny systemów lokacji, skonfigurowany jako wolne pozostają w oryginalnej grupie granic dla zgodności z poprzednimi wersjami, ale nie są używane z tej grupy granic.
-    -     Ta kopia grupy granic nie ma granicach skojarzonych z nim. Jednakże tworzone jest połączenie rezerwowy między oryginalna grupa i nową kopię grupa granic zawiera rezerwowy czas, należy ustawić na zero.
+### <a name="bkmk_update"></a>Atualizar os grupos de limites existentes para o novo modelo
+Quando instalar a versão 1609 e atualizar o site, as seguintes configurações são efetuadas automaticamente. Estes são concebidas para Certifique-se de que o comportamento de contingência atual permanece disponível, até configurar novos grupos de limites e relações.  
+-   Pontos de distribuição não protegido num site são adicionados para o *predefinição-Site-limite-grupo\<sitecode >* grupo de limites desse site.
+-   É efetuada uma cópia de cada grupo de limites existentes, que inclui um servidor de site configurado com uma ligação lenta. O nome do novo grupo é *** \<nome original do grupo de limites > Tmp - lenta -***:  
+    -   Sistemas de sites que tenham uma ligação rápida são mantidos no grupo de limites original.
+    -   Uma cópia dos sistemas de sites que tenham uma ligação lenta são adicionadas para a cópia do grupo de limites. Os sistemas de site original configurados como lenta permanecem no grupo de limites original para compatibilidade com versões anteriores, mas não são utilizados desse grupo de limites.
+    -   Esta cópia do grupo de limites não tem limites associados à mesma. No entanto, é criada uma ligação de contingência entre o grupo original e a nova cópia do grupo de limites com o tempo de contingência definido como zero.
 
- W poniższej tabeli przedstawiono nowe zachowanie rezerwowego można spodziewać się z kombinacji oryginalnego ustawienia wdrożenia i punktu dystrybucji konfiguracje:
+ A tabela seguinte identifica o novo comportamento contingência pode esperar da combinação de definições de implementação original e a distribuição de configurações de pontos:
 
-"Nie uruchamiaj programu" w sieci o niskiej prędkości oryginalna konfiguracja wdrożenia  |Punkt dystrybucji oryginalna konfiguracja "Client Zezwalaj na użycie rezerwowej lokalizacji źródła zawartości"  |Nowe działanie rezerwowe  
+Configuração de implementação original "não executaram" na rede lenta  |Configuração para "Permitir ao utilizar uma localização de origem de contingência para conteúdo de cliente" do ponto de distribuição original  |Novo comportamento de contingência  
 ---------|---------|---------
-Wybrane     |  Wybrane    |  **Nie powrotu** -punktów dystrybucji należy używać tylko w bieżącej grupie granic       
-Wybrane     |  Nie wybrano|  **Nie powrotu** -punktów dystrybucji należy używać tylko w bieżącej grupie granic       
-Nie wybrano |  Nie wybrano|  **Powrót do sąsiada** — używać punktów dystrybucji w bieżącej grupie granic, a następnie dodaj punkty dystrybucji z grupy granic sąsiada. Chyba że jawne łącze do domyślnej grupy granic lokacji jest skonfigurowany, klienci nie będą powrotu do tej grupy.    
-Nie wybrano | Wybrane        |   **Normalne powrotu** -używać punktów dystrybucji w bieżącej grupie granic, a następnie te z sąsiada i lokacji domyślne grupy granic
+Selecionado     |  Selecionado    |  **Não existem contingência** -utilizar apenas os pontos de distribuição no grupo de limites atual       
+Selecionado     |  Não selecionada|  **Não existem contingência** -utilizar apenas os pontos de distribuição no grupo de limites atual       
+Não selecionada |  Não selecionada|  **Contingência para vizinho** - utilizar os pontos de distribuição no grupo de limites atual e, em seguida, adicione os pontos de distribuição do grupo de limites de vizinho. A menos que uma ligação explícita para o grupo de limites de site predefinido está configurada, os clientes irão não contingência a esse grupo.    
+Não selecionada | Selecionado     |   **Contingência normal** -utilizar pontos de distribuição no grupo de limites atual, em seguida, os do site e vizinho predefinido de grupos de limites
 
- Inne konfiguracje wdrożenia spowodować **normalnego powrotu**.  
+ Todas as outras configurações de implementação resultam em **contingência Normal**.  
 
 
 
-## <a name="office-365-client-management-dashboard"></a>Pulpit nawigacyjny zarządzania klientami usługi Office 365  
-Program Configuration Manager 1609 Technical Preview wprowadzono nowy pulpit nawigacyjny. Aby wyświetlić pulpit nawigacyjny, w konsoli programu Configuration Manager przejdź do **Biblioteka oprogramowania** > **Przegląd** > **Zarządzanie klientem usługi Office 365**.
+## <a name="office-365-client-management-dashboard"></a>Dashboard de gestão de clientes do Office 365  
+O Configuration Manager 1609 Technical Preview introduz um novo dashboard. Para ver o dashboard, na consola do Configuration Manager vá para **biblioteca de Software** > **descrição geral** > **gestão de clientes do Office 365**.
 >[!NOTE]
->W **What's New** obszaru roboczego w konsoli programu Configuration Manager, nowy pulpit nawigacyjny jest niepoprawna **Office 365 obsługi pulpitu nawigacyjnego**.
+>No **Novidades** área de trabalho na consola do Configuration Manager, o novo dashboard incorretamente denominado **dashboard de manutenção do Office 365**.
 
-Na pulpicie nawigacyjnym wykresy dla następujących elementów:
+O dashboard apresenta gráficos para o seguinte:
 
-- Liczba klientów usługi Office 365
-- Wersje klienta usługi Office 365
-- Języki klienta usługi Office 365
-- Kanały klienta usługi Office 365     
-Aby uzyskać więcej informacji, zobacz [kanały przegląd aktualizacji dla Office 365 ProPlus](https://technet.microsoft.com/library/mt455210.aspx).
-- Reguły automatycznego wdrażania pakietu Office 365 klienta wybrana w zestawie produktów.
+- Número de clientes do Office 365
+- Versões de cliente do Office 365
+- Idiomas de cliente do Office 365
+- Canais de cliente do Office 365     
+Para obter mais informações, consulte [canais de consumo de descrição geral da atualização para o Office 365 ProPlus](https://technet.microsoft.com/library/mt455210.aspx).
+- Regras de implementação automática que tenham o cliente do Office 365 selecionadas no conjunto de produtos disponíveis.
 
-Na pulpicie nawigacyjnym, można wykonać następujące czynności:
-- W górnej części pulpitu nawigacyjnego, należy użyć **kolekcji** ustawienie listy rozwijanej do filtrowania danych pulpitu nawigacyjnego przez elementy członkowskie określonej kolekcji.
-- W prawej górnej części pulpitu nawigacyjnego kliknij polecenie **Office 365 Instalator** uruchomić Kreatora instalacji pakietu Office 365 klienta do wdrażania aplikacji Office 365 na klientach. Aby uzyskać szczegółowe informacje, zobacz [aplikacje wdrażania usługi Office 365 klientom](#deploy-office-365-apps-to-clients).
-- Na środku po prawej stronie pulpitu nawigacyjnego, kliknij przycisk **utworzyć ADR** otworzyć kreatorze reguły wdrażania automatycznego, aby utworzyć nową regułę automatycznego wdrażania (ADR). Aby utworzyć ADR dla aplikacji usługi Office 365, wybierz **Office 365 klienta** po wybraniu produktu. Aby uzyskać więcej informacji, zobacz [automatyczne wdrażanie aktualizacji oprogramowania](/sccm/sum/deploy-use/automatically-deploy-software-updates).
-- W prawej dolnej części pulpitu nawigacyjnego kliknij polecenie **utworzyć ustawienia agenta klienta** otworzyć ustawienia agenta klienta. Aby uzyskać więcej informacji, zobacz [informacje o ustawieniach klienta](/sccm/core/clients/deploy/about-client-settings).
+Pode efetuar as seguintes ações no dashboard:
+- Na parte superior do dashboard, utilize o **coleção** definição de lista pendente para filtrar os dados de dashboard por membros da coleção específica.
+- No lado superior direito do dashboard, clique em **instalador do Office 365** para iniciar o Assistente de instalação de cliente do Office 365 para implementar aplicações do Office 365 nos clientes. Para obter mais informações, consulte [aplicações de implementar o Office 365 para clientes](#deploy-office-365-apps-to-clients).
+- No lado direito de meio do dashboard, clique em **criar uma ADR** para abrir o Assistente de regra de implementação automática para criar uma nova regra de implementação automática (ADR). Para criar uma ADR para aplicações do Office 365, selecione **cliente do Office 365** quando escolhe o produto. Para obter mais informações, consulte [implementar automaticamente atualizações de software](/sccm/sum/deploy-use/automatically-deploy-software-updates).
+- No lado direito de inferior do dashboard, clique em **criar definições de agente de cliente** para abrir as definições do agente de cliente. Para obter mais informações, consulte [sobre definições de cliente](/sccm/core/clients/deploy/about-client-settings).
 
 
 
-Aby uzyskać więcej informacji o aktualizacjach Office 365 ProPlus, zobacz [zarządzania Office 365 ProPlus aktualizacji z programu Configuration Manager](/sccm/sum/deploy-use/manage-office-365-proplus-updates).
+Para obter mais informações sobre as atualizações do Office 365 ProPlus, consulte [gerir o Office 365 ProPlus atualizações com o Configuration Manager](/sccm/sum/deploy-use/manage-office-365-proplus-updates).
 
-## <a name="deploy-office-365-apps-to-clients"></a>Wdrażanie aplikacji Office 365 na klientów
-W tej wersji z poziomu pulpitu nawigacyjnego zarządzania klientami usługi Office 365 można uruchomić Instalatora 365 pakietu Office, który pozwala skonfigurować ustawienia instalacji usługi Office 365, pobierać pliki z pakietu Office sieci dostarczania zawartości (CDN) i wdrożyć pliki aplikacji w programie Configuration Manager.
+## <a name="deploy-office-365-apps-to-clients"></a>Implementar aplicações do Office 365 nos clientes
+Nesta versão, a partir do dashboard de gestão de clientes do Office 365, pode iniciar o instalador de 365 do Office que lhe permite configurar definições de instalação do Office 365, transfira ficheiros a partir de redes de entrega de conteúdo (CDNs) do Office e implementar os ficheiros como uma aplicação no Configuration Manager.
 
-### <a name="limitations-of-office-365-deployment"></a>Ograniczenia dotyczące wdrażania usługi Office 365
-- Konieczne może być problemy podczas próby zaimportowania istniejących ustawień klienta (XML) w Kreatorze instalacji programu Office 365 aplikacji. Można ręcznie skonfigurować ustawienia klienta bez problemu.
+### <a name="limitations-of-office-365-deployment"></a>Limitações da implementação do Office 365
+- Poderá ter problemas ao tentar importar as definições de cliente existente (XML) no Assistente de instalação de aplicações do Office 365. Pode configurar manualmente as definições de cliente sem um problema.
 
-#### <a name="to-deploy-office-365-apps-to-clients"></a>Do wdrażania aplikacji Office 365 na klientach
-1. W konsoli programu Configuration Manager, przejdź do **Biblioteka oprogramowania** > **Przegląd** > **Zarządzanie klientem usługi Office 365**.
-2. Kliknij przycisk **Office 365 Instalator** w prawym górnym okienku. Zostanie otwarty Kreator instalacji klienta Office 365.
-3. Na **ustawienia aplikacji** , podaj nazwę i opis aplikacji, wprowadź lokalizację pobierania plików, a następnie kliknij przycisk **dalej**. Należy zauważyć, że lokalizacja musi być określony w formie &#92; &#92; *server*&#92; *udostępnianie*.
-4. Na **importowania ustawień klienta** wybierz, czy do importowania ustawień klienta usługi Office 365 z istniejący plik konfiguracyjny XML lub ręcznie określ ustawienia, a następnie kliknij przycisk **dalej**.
-Gdy istniejący plik konfiguracyjny, wprowadź lokalizację pliku, a następnie przejdź do kroku 7. Należy zauważyć, że lokalizacja musi być określony w formie &#92; &#92; *server*&#92; *udostępnianie*&#92;* Nazwa pliku*. PLIK XML.
+#### <a name="to-deploy-office-365-apps-to-clients"></a>Para implementar aplicações do Office 365 nos clientes
+1. Na consola do Configuration Manager, navegue até à **biblioteca de Software** > **descrição geral** > **gestão de clientes do Office 365**.
+2. Clique em **instalador do Office 365** no painel superior direito. É aberto o Assistente de instalação de cliente do Office 365.
+3. No **definições da aplicação** página, forneça um nome e descrição para a aplicação, introduza a localização de transferência para os ficheiros e, em seguida, clique em **seguinte**. Tenha em atenção que a localização tem de ser especificada no formulário &#92; &#92; *servidor*&#92; *partilhar*.
+4. No **importar as definições de cliente** página, escolha se importar as definições de cliente do Office 365 a partir de um ficheiro de configuração XML existente ou especifique manualmente as definições e, em seguida, clique em **seguinte**.
+Quando tiver um ficheiro de configuração existente, introduza a localização do ficheiro e avance para o passo 7. Tenha em atenção que a localização tem de ser especificada no formulário &#92; &#92; *server*&#92; *partilhar*&#92; *nome de ficheiro*. XML.
 
     > [!IMPORTANT]
-    >Konieczne może być problemy podczas próby zaimportowania istniejących ustawień klienta (XML) w tym technical preview.
+    >Poderá ter problemas ao tentar importar as definições de cliente existente (XML) nesta pré-visualização técnica.
 
-5. Na **produkty klienta** , Office 365 wybierz pakiet, który można użyć, wybierz aplikacje, które chcesz dołączyć, zaznacz dodatkowe produkty pakietu Office, które powinny być uwzględnione, a następnie kliknij **dalej**.
-6. Na **ustawień klienta** wybierz ustawienia do uwzględnienia, a następnie kliknij przycisk **dalej**.
-7. Na **wdrożenia** wybierz, czy wdrożyć aplikację, a następnie kliknij przycisk **dalej**.
-Jeśli nie wdrożyć pakiet w kreatorze, przejdź do kroku 9.
-8. W pozostałej części strony kreatora należy skonfigurować, tak jak w przypadku wdrażania Typowa aplikacja. Aby uzyskać więcej informacji, zobacz [tworzenia i wdrażania aplikacji](/sccm/apps/get-started/create-and-deploy-an-application).
-9. Ukończ pracę kreatora.
-10. Można wdrożyć lub edytować aplikację, podobnie jak dowolnej innej aplikacji w programie Configuration Manager z **Biblioteka oprogramowania** > **Przegląd** > **zarządzania aplikacjami** > **aplikacji**.
+5. No **cliente produtos** página, selecione o Office 365 suite que utilizar, selecione as aplicações que pretende incluir, selecione os produtos de Office adicionais que devem ser incluídos e, em seguida, clique em **seguinte**.
+6. No **as definições de cliente** página, escolha as definições para incluir e, em seguida, clique em **seguinte**.
+7. No **implementação** página, escolha se pretende implementar a aplicação e, em seguida, clique em **seguinte**.
+Se optar por não implementar o pacote no assistente, avance para o passo 9.
+8. Configure as restantes páginas do assistente, tal como faria para uma implementação de aplicação típica. Para obter mais informações, consulte [criar e implementar uma aplicação](/sccm/apps/get-started/create-and-deploy-an-application).
+9. Conclua o assistente.
+10. Pode implementar ou editar a aplicação, tal como faria com qualquer outra aplicação no Configuration Manager de **biblioteca de Software** > **descrição geral** > **gestão de aplicações** > **aplicações**.
 
 >[!NOTE]
->Po wdrożeniu aplikacji Office 365, można utworzyć reguły automatycznego wdrażania do obsługi aplikacji. Aby utworzyć ADR dla aplikacji usługi Office 365, kliknij przycisk **utworzyć ADR**i wybierz **Office 365 klienta** po wybraniu produktu. Aby uzyskać więcej informacji, zobacz [automatyczne wdrażanie aktualizacji oprogramowania](/sccm/sum/deploy-use/automatically-deploy-software-updates).
+>Depois de implementar aplicações do Office 365, pode criar regras de implementação automática para manter as aplicações. Para criar uma ADR para aplicações do Office 365, clique em **criar uma ADR**e selecione **cliente do Office 365** quando escolhe o produto. Para obter mais informações, consulte [implementar automaticamente atualizações de software](/sccm/sum/deploy-use/automatically-deploy-software-updates).
 
-## <a name="BKMK_UEFIConversion"></a>Ulepszenia systemu BIOS z interfejsem UEFI konwersji
-Teraz można dostosować sekwencję zadań wdrażania systemu operacyjnego za pomocą nowej zmiennej TSUEFIDrive, tak, aby krok Uruchom ponownie komputer będzie przygotować przejścia do UEFI FAT32 partycji na dysku twardym. Poniższa procedura zawiera przykładowy sposób tworzenia kroki sekwencji zadań, aby przygotować dysk twardy do systemu BIOS z interfejsem UEFI konwersji.
+## <a name="BKMK_UEFIConversion"></a>Melhoramentos para BIOS para conversão de UEFI
+Agora, pode personalizar uma sequência de tarefas de implementação do sistema operativo com uma nova variável, TSUEFIDrive, para que o passo de reiniciar o computador irá preparar uma partição FAT32 no disco rígido para transição para UEFI. O procedimento seguinte fornece um exemplo de como pode criar os passos de sequência de tarefas para preparar a unidade de disco rígido para o BIOS para conversão de UEFI.
 
-#### <a name="to-prepare-the-fat32-partition-for-the-conversion-to-uefi"></a>Aby przygotować partycji FAT32 do konwersji na UEFI:
-W istniejącej sekwencji zadań w celu zainstalowania systemu operacyjnego dodasz nową grupę czynności BIOS z interfejsem UEFI konwersji.
+#### <a name="to-prepare-the-fat32-partition-for-the-conversion-to-uefi"></a>Para preparar a partição FAT32 para a conversão para UEFI:
+Uma sequência de tarefas existente para instalar um sistema operativo, irá adicionar um novo grupo com os passos para fazer o BIOS para conversão de UEFI.
 
-1. Utwórz nową grupę sekwencji zadań, po kroki, aby przechwytywać pliki i ustawienia, a przed czynności w celu zainstalowania systemu operacyjnego. Na przykład utwórz grupę po **Przechwyć pliki i ustawienia** grupy o nazwie **z systemu BIOS z interfejsem UEFI**.
-2. Na **opcje** kartę w nowej grupie, należy dodać zmienną sekwencji zadań jako warunek gdzie **_SMSTSBootUEFI** jest **jest równa** do **true**. Zapobiega to uruchomione, gdy komputer jest już w trybie UEFI czynności w grupie.
-![System BIOS z interfejsem UEFI grupy](media/BIOS-to-UEFI-group.png)
-3. W ramach nowej grupy, należy dodać **Uruchom ponownie komputer** sekwencji zadań. W **Określ, co uruchomić po ponownym uruchomieniu**, wybierz opcję **obraz rozruchowy przypisany do tej sekwencji zadań jest wybrane** do uruchomienia komputera w środowisku Windows PE.  
-4. Na **opcje** , Dodaj zmienną sekwencji zadań jako warunek gdzie **_SMSTSInWinPE jest równa false**. Ten krok to zapobiega uruchamianiu, jeśli komputer jest już w środowisku Windows PE.
+1. Crie um novo grupo de sequência de tarefas depois dos passos para capturar ficheiros e definições e antes dos passos para instalar o sistema operativo. Por exemplo, crie um grupo depois do **capturar ficheiros e definições** com o nome de grupo **BIOS para UEFI**.
+2. No **opções** separador do novo grupo, adicione uma nova variável de sequência de tarefas como uma condição em que **smstsbootuefi sempre** é **não igual a** para **verdadeiro**. Isto impede que os passos no grupo de executar quando um computador já está no modo UEFI.
+![BIOS para o grupo de UEFI](media/BIOS-to-UEFI-group.png)
+3. No novo grupo, adicione o **reiniciar o computador** passo de sequência de tarefas. No **especificam o que executar após o reinício**, selecione **a imagem de arranque atribuída a esta sequência de tarefas está selecionada** para iniciar o computador no Windows PE.  
+4. No **opções** separador, adicione uma variável de sequência de tarefas como uma condição em que **smstsinwinpe é igual a FALSO**. Isto impede que este passo em execução se o computador já está no Windows PE.
 
-    ![Uruchom ponownie komputer](media/Restart-in-Windows-PE.png)
-5. Dodaj krok, aby uruchomić narzędzie OEM, który przekonwertuje oprogramowania sprzętowego BIOS z interfejsem UEFI. Są to zazwyczaj **Uruchom wiersz polecenia** sekwencji zadań przy użyciu wiersza polecenia, aby uruchomić narzędzie OEM.
-5.    Dodaj krok sekwencji zadań Formatuj dysk partycji i podzielić na partycje i sformatuj dysk twardy. W kroku wykonaj następujące czynności:
-    1.    Utwórz partycję FAT32, który zostanie przekonwertowany na UEFI, przed zainstalowaniem systemu operacyjnego. Wybierz **GPT** dla **dysku typu**.
-    ![Format i partycji dysku kroku](media/Format-and-partition-disk.png)
-    2.    Przejdź do właściwości partycji FAT32. Wprowadź **TSUEFIDrive** w **zmiennej** pola. Jeśli sekwencja zadań wykryje tej zmiennej, przygotuje przejścia UEFI przed ponownym uruchomieniem komputera.
-    ![Właściwości partycji.](media/Partition-properties.png)
-    3. Utwórz partycję NTFS używany przez aparat sekwencji zadań do zapisania stanu oraz do przechowywania plików dziennika.
-6.    Dodaj **Uruchom ponownie komputer** sekwencji zadań. W **Określ, co uruchomić po ponownym uruchomieniu**, wybierz opcję **obraz rozruchowy przypisany do tej sekwencji zadań jest wybrane** do uruchomienia komputera w środowisku Windows PE.  
-
-
+    ![Reinicie o passo de computador](media/Restart-in-Windows-PE.png)
+5. Adicione um passo para iniciar a ferramenta de OEM converterá o firmware da BIOS em UEFI. Normalmente, este será um **executar linha de comandos** passo de sequência de tarefas com uma linha de comandos para iniciar a ferramenta OEM.
+5.  Adicione o passo de sequência de tarefas formatar e particionar disco que será particionar e formatar o disco rígido. No passo, efetue o seguinte:
+    1.  Crie a partição de FAT32 será convertida em UEFI antes do sistema operativo está instalado. Escolha **GPT** para **tipo de disco**.
+    ![Formatar e particionar passo de disco](media/Format-and-partition-disk.png)
+    2.  Vá para as propriedades para a partição FAT32. Introduza **TSUEFIDrive** no **variável** campo. Quando a sequência de tarefas Deteta esta variável, irá preparar para a transição de UEFI antes de reiniciar o computador.
+    ![Propriedades da partição](media/Partition-properties.png)
+    3. Crie uma partição NTFS que o motor de sequência de tarefas utiliza para guardar o estado e armazenar ficheiros de registo.
+6.  Adicionar o **reiniciar o computador** passo de sequência de tarefas. No **especificam o que executar após o reinício**, selecione **a imagem de arranque atribuída a esta sequência de tarefas está selecionada** para iniciar o computador no Windows PE.  
 
 
-## <a name="intune-compliance-charts"></a>Wykresy zgodności Intune
-W tej wersji można uzyskać szybki widok ogólnej zgodności dla urządzeń i do górnej przyczyn braku zgodności, za pomocą nowych wykresów w obszarze **obszaru roboczego monitorowanie** w konsoli programu Configuration Manager.
 
-#### <a name="to-view-the-intune-compliance-charts"></a>Aby wyświetlać wykresy zgodności Intune
-1. W konsoli programu Configuration Manager, przejdź do **monitorowanie** > **Przegląd** > **ustawień zgodności**.
-2. **Ogólnej zgodności urządzenia** wykresu jest wyświetlana.
-3. Kliknij przycisk **zasady zgodności** węzeł, aby wyświetlić **ogólnej zgodności urządzenia** i **przyczyn niezgodność pierwszych** wykresów.
 
-### <a name="limitations-of-intune-compliance-charts-in-tp-1609"></a>Ograniczenia Intune zgodności wykresy w TP 1609
-- Przejście do **ogólnej zgodności urządzenia** wykresu aktualnie generuje błąd.
-- **Najważniejsze powody niezgodność** wykres zawiera nazwę zasady i nie poszczególnych przyczyn braku zgodności. Możesz kliknąć zasady przechodzenia i urządzenia, które są niezgodne dla tej zasady.
+## <a name="intune-compliance-charts"></a>Gráficos de conformidade do Intune
+Nesta versão, pode obter uma vista rápida do gerais de conformidade para dispositivos e principais razões para inconformidade utilizando o novo gráficos em **área de trabalho de monitorização** na consola do Configuration Manager.
 
-### <a name="try-it-out"></a>Wypróbuj to
-Wykonaj poniższe sekcje w kolejności:
+#### <a name="to-view-the-intune-compliance-charts"></a>Para ver os gráficos de conformidade do Intune
+1. Na consola do Configuration Manager, vá para **monitorização** > **descrição geral** > **as definições de compatibilidade**.
+2. O **gerais de conformidade de dispositivo** gráfico é apresentado.
+3. Clique em de **políticas de conformidade** nó para ver o **gerais de conformidade de dispositivo** e **por motivos de não conformidade superior** gráficos.
 
-#### <a name="check-overall-compliance-chart"></a>Sprawdzanie zgodności ogólnej wykresu
-1. Dodać na dwa iOS zasady zgodności w programie Configuration Manager. Jedna zasada powinien mieć jeden zestaw ustawień dla urządzeń (na przykład zestaw długość numeru PIN do 6). Inne zasady powinien mieć inny zestaw ustawień (na przykład złożoności numeru PIN). Ustawienia zasad nie nakładają się ani wystąpił konflikt.
-2. Wdrażanie zasad dwóch zestawu użytkowników.
-3. Zarejestruj dwa urządzenia z systemem iOS w usłudze Intune przy użyciu tego samego konta użytkownika, a konta, które otrzymał zasady w poprzednim kroku. Urządzenia nie powinny spełniać kryteria zasady zgodności.
-4. Sprawdź w Menedżerze konfiguracji **ogólnej zgodności urządzenia** wykresu. Oba urządzenia należy zgłaszać jako niezgodny.
+### <a name="limitations-of-intune-compliance-charts-in-tp-1609"></a>Limitações de gráficos de conformidade do Intune no TP 1609
+- Desagregar para o **gerais de conformidade de dispositivo** gráfico atualmente produz um erro.
+- O **principais razões de não conformidade** gráfico apresenta o nome da política e não as razões de não conformidade individuais. Pode clicar a política para desagregar e ver os dispositivos que são incompatíveis para essa política.
+
+### <a name="try-it-out"></a>Experimente
+Conclua as seguintes secções por ordem:
+
+#### <a name="check-overall-compliance-chart"></a>Gráfico da conformidade global de verificação
+1. Adicione no duas iOS políticas de conformidade no Configuration Manager. Uma política deve ter um conjunto de definições para dispositivos (por exemplo, conjunto de comprimento do PIN 6). A outra política deve ter outro conjunto de definições (por exemplo, a complexidade PIN). As definições de política não devem sobrepor-se ou em conflito.
+2. Implemente as duas políticas para um conjunto de utilizadores.
+3. Inscrever-se dois dispositivos iOS no Intune com a mesma conta de utilizador e uma conta que receberam as políticas no passo anterior. Os dispositivos devem não cumpre os critérios da política de conformidade.
+4. No Configuration Manager, verifique o **gerais de conformidade de dispositivo** gráfico. Ambos os dispositivos devem reportar como não conforme.
 <!-- 5. Click the **Non-compliant** section of the chart. Both devices should appear in the filtered view under **Assets and Compliance** > **Overview** > **Device**. -->
 
-#### <a name="check-the-top-non-compliance-reasons-chart"></a>Sprawdź wykres najważniejsze powody niezgodność
-5. Sprawdź **najważniejsze powody niezgodność** wykresu. Ten wykres zawiera listę pierwsze 5 przyczyn braku zgodności, ale tylko dwa ustawienia zgodności zostały ustawione przez zasady tylko pierwszych 2 niezgodności przyczyny są wyświetlane.
-6. Kliknij jedną z sekcji na wykresie. Oba urządzenia powinny być wyświetlane w filtrowanym widoku w obszarze **zasoby i zgodność** > **Przegląd** > **urządzenia**.
+#### <a name="check-the-top-non-compliance-reasons-chart"></a>Verifique o gráfico de principais razões de não conformidade
+5. Verifique o **principais razões de não conformidade** gráfico. Este gráfico apresenta uma lista de 5 principais razões para não conformidade, mas quando apenas duas definições de conformidade foram definidas através de políticas apenas parte superior 2 inconformidade motivos são apresentados.
+6. Clique das secções no gráfico. Ambos os dispositivos devem aparecer na vista filtrada em **ativos e compatibilidade** > **descrição geral** > **dispositivo**.
 
-#### <a name="make-devices-compliant-and-check-the-charts"></a>Zapewnienia zgodności urządzenia i sprawdź wykresów
-7. Wprowadź jedną z urządzenia zgodne z jedną z zasad. Sprawdź **ogólnej zgodności urządzenia** ponownie wykresu. Jedno urządzenie zgodnych i niezgodnych jeden wykres powinien być wyświetlany.
-8. Inne urządzenie zapewnienia zgodności z tych samych zasad. Spowoduje to jedno urządzenie zgodne z zasadami i jednego urządzenia zgodne z tylko jedną z zasad.
-9. Sprawdź **najważniejsze powody niezgodność** wykresu. Należy tylko jedną z wymienionych przyczyn braku zgodności.
+#### <a name="make-devices-compliant-and-check-the-charts"></a>Tornar os dispositivos em conformidade e consulte os gráficos
+7. -Um dos dispositivos compatíveis com uma das políticas. Verifique o **gerais de conformidade de dispositivo** gráfico novamente. O gráfico deve apresentar um dispositivo compatível e dispositivos não conformes.
+8. -O outros dispositivos compatíveis com a mesma política. Isto faz com que um dispositivo compatível com as políticas e de um dispositivo compatível com apenas uma das políticas.
+9. Verifique o **principais razões de não conformidade** gráfico. Só deve ser um motivo de não conformidade listado.
 <!--7. Click the **Compliant** section of the chart. Only the compliant device should appear in the filtered view. -->
 
 
 
 
 
-## <a name="see-also"></a>Zobacz też
-[Technical Preview dla programu System Center Configuration Manager](../../core/get-started/technical-preview.md)
-
+## <a name="see-also"></a>Consulte Também
+[Pré-visualização técnica do System Center Configuration Manager](../../core/get-started/technical-preview.md)

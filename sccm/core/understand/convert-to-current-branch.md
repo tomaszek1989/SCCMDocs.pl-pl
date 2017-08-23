@@ -1,59 +1,54 @@
 ---
-title: "Uaktualnij długoterminowej obsługi gałęzi do bieżącej gałęzi | Dokumentacja firmy Microsoft"
-description: "Dowiedz się, jak przekonwertować oddziale długoterminowe obsługi do bieżącego oddziale."
+title: "Atualizar o ramo de manutenção longo prazo para o ramo atual | Microsoft Docs"
+description: "Saiba como converter um site de sucursal de manutenção de longo prazo para um site do ramo atual."
 ms.custom: na
 ms.date: 2/8/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ec5b54cf-62b7-4ed1-9bb3-e8c63b9641c8
-caps.latest.revision: 0
+caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 60631bc0346bd78d704e7129bb755af504c59b1b
 ms.openlocfilehash: 6e7edc85630d22c5bbba1ff66bd1199903db76db
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 08/07/2017
 ---
+# <a name="upgrade-the-long-term-servicing-branch-to-the-current-branch"></a>Atualizar o ramo de manutenção longo prazo para o ramo atual
 
+*Aplica-se a: O System Center Configuration Manager (ramo de manutenção longo prazo)*
 
-# <a name="upgrade-the-long-term-servicing-branch-to-the-current-branch"></a>Uaktualnij długoterminowej obsługi gałęzi do bieżącej gałęzi
+Utilize este tópico para saber como atualizar (converter), um site e hierarquia que executa a longo prazo Servicing Branch (LTSB) do Configuration Manager para o ramo atual.
 
-*Dotyczy: System Center Configuration Manager (długoterminowej obsługi oddziału)*
+Quando tiver um contrato de Software Assurance atual (ou semelhantes direitos licenciamento) que lhe concede direitos para utilizar o ramo atual, pode converter a instalação do LTSB para o ramo atual.  Esta é uma conversão unidirecional porque não há nenhum suporte para a conversão de um site do ramo atual para o LTSB.
 
-Umożliwia w tym temacie Informacje o sposobie uaktualniania (przekształcić) lokacji i hierarchii programu długoterminowe obsługi gałęzi (LTSB) programu Configuration Manager do bieżącej gałęzi.
+Se tiver vários sites, apenas terá de converter o site de nível superior da hierarquia. Depois do site de nível superior é convertido:
+- Os sites primários subordinados converter automaticamente.
+-   Tem de atualizar manualmente sites secundários a partir da consola do Configuration Manager.
 
-Jeśli masz aktualną umowę Software Assurance (lub podobne licencja), które udziela użytkownikowi praw do korzystania z bieżącej gałęzi z LTSB bieżącej gałęzi można przekonwertować instalacji.  Jest to jednokierunkowe konwersji, ponieważ nie obsługuje konwersji do LTSB lokacji bieżącej gałęzi.
+## <a name="run-setup-to-convert-the-long-term-servicing-branch"></a>Execute a configuração para converter o ramo de manutenção de longo prazo
+No site de nível superior da hierarquia, pode executar a configuração do Configuration Manager de elegíveis suporte de dados de linha de base e selecionar **manutenção do Site**.  Em seguida, quando apresentado com a página de licenciamento, selecione a opção para o ramo atual e conclua o assistente.
 
-Jeśli masz wiele lokacji, wystarczy przekonwertować lokacja najwyższego poziomu w hierarchii. Po przekonwertowaniu lokacji najwyższego poziomu:
-- Podrzędne Lokacje główne automatycznie przekonwertować.
--    Należy ręcznie zaktualizować dodatkowej lokacji z konsoli programu Configuration Manager.
-
-## <a name="run-setup-to-convert-the-long-term-servicing-branch"></a>Uruchom Instalatora, aby przekonwertować gałęzi obsługi długoterminowe
-W witrynie najwyższego poziomu w hierarchii, uruchom Instalatora programu Configuration Manager z kwalifikujących się nośnik linii bazowej i wybierz **lokacji konserwacji**.  Następnie gdy prezentowany stronie licencjonowania, wybierz opcję dla bieżącej gałęzi i Ukończ pracę kreatora.
-
-Jeśli witryny został przekonwertowany na bieżącej gałęzi, wcześniej niedostępne funkcje i możliwości są dostępne do użycia.
+Quando o site foi convertido para o ramo atual, anteriormente disponíveis funcionalidades e capacidades estará disponíveis para utilização.
 
 > [!NOTE]  
-> Kwalifikowanie nośnika linii bazowej jest nośnika, który ma wersji, która jest równa lub późniejsza niż LTSB instalacji.
+> Elegíveis suporte de dados de linha de base é um suporte de dados que tenha uma versão igual ou posterior à sua instalação LTSB.
 
-Na przykład ponieważ LTSB wersji 1606 nośnika 1511 linii bazowej nie można użyć do konwersji na bieżącej gałęzi. Zamiast tego należy uruchomić Instalatora z tej samej wersji 1606 linii bazowej nośnik użytej do instalacji lokacji LTSB i wybierz opcję licencjonowania dla bieżącej gałęzi.  Alternatywnie został wydany później linii bazowej bieżącego gałęzi, można uruchomić Instalatora z tego nośnika linii bazowej.
+Por exemplo, porque o LTSB baseiam-se a versão 1606, não é possível utilizar o suporte de dados de linha de base 1511 converter para o ramo atual. Em vez disso, pode executar a configuração do mesmo versão 1606 da linha de base suporte de dados que utilizou para instalar o site LTSB e escolha a opção de licenciamento para o ramo atual.  Em alternativa, se uma linha de base posterior da filial atual foi lançada, pode executar a configuração do suporte de dados nessa linha de base.
 
-Listę wersji linii bazowej, można znaleźć w temacie **linii bazowej i aktualizacji wersji** w [aktualizacji programu Configuration Manager](/sccm/core/servers/manage/updates).
+Para obter uma lista das versões de linha de base, consulte **versões de linha de base e atualização** no [atualizações para o Configuration Manager](/sccm/core/servers/manage/updates).
 
-## <a name="use-the-configuration-manager-console-to-convert-the-long-term-servicing-branch"></a>Konwertuj długoterminowej gałęzi obsługi za pomocą konsoli programu Configuration Manager
-Jeśli witryna działa LTSB, służy Poniższa opcja w konsoli programu Configuration Manager do konwersji na bieżącej gałęzi:
+## <a name="use-the-configuration-manager-console-to-convert-the-long-term-servicing-branch"></a>Utilize a consola do Configuration Manager para converter o ramo de manutenção longo prazo
+Se o seu site executa o LTSB, pode utilizar a seguinte opção na consola do Configuration Manager para converter para o ramo atual:
 
- 1. W konsoli, przejdź do **Administracja** > **konfiguracja lokacji** > **witryny**, a następnie otwórz **ustawienia hierarchii**.  
+ 1. Na consola, aceda a **administração** > **configuração do Site** > **Sites**e, em seguida, abra **definições de hierarquia**.  
 
- 2. Wybierz opcję, aby przekonwertować bieżącej gałęzi, a następnie wybierz **Zastosuj**.  
+ 2. Selecione a opção para converter para o ramo atual e, em seguida, escolha **aplicar**.  
 
-Jeśli witryny został przekonwertowany na bieżącej gałęzi, wcześniej niedostępne funkcje i możliwości są dostępne do użycia.
-
+Quando o site foi convertido para o ramo atual, anteriormente disponíveis funcionalidades e capacidades estará disponíveis para utilização.

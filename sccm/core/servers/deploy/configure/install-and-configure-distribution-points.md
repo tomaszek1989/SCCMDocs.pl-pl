@@ -1,6 +1,6 @@
 ---
-title: "Zarządzaj punktami dystrybucji | Dokumentacja firmy Microsoft"
-description: "Obsługujące zawartość (pliki i oprogramowanie), wdrażanego na urządzeniach i użytkowników przy użyciu punktów dystrybucji. Poniżej przedstawiono sposób instalowania i konfigurowania ich."
+title: "Gerir pontos de distribuição | Microsoft Docs"
+description: "Receber o conteúdo (ficheiros e software) que implementa nos dispositivos e utilizadores através da utilização de pontos de distribuição. Eis como instalar e configurá-las."
 ms.custom: na
 ms.date: 2/14/2017
 ms.prod: configuration-manager
@@ -17,374 +17,374 @@ manager: angrobe
 ms.openlocfilehash: 4c94e4de5bbfe621492e8682c9424a48eb38196d
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pl-PL
+ms.contentlocale: pt-PT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="install-and-configure-distribution-points-for-system-center-configuration-manager"></a>Instalowanie i konfigurowanie punktów dystrybucji programu System Center Configuration Manager
+# <a name="install-and-configure-distribution-points-for-system-center-configuration-manager"></a>Instalar e configurar pontos de distribuição para o System Center Configuration Manager
 
-*Dotyczy: Program System Center Configuration Manager (Current Branch)*
+*Aplica-se a: O System Center Configuration Manager (ramo atual)*
  
-Należy zainstalować System Center Configuration Manager punkty dystrybucji obsługujące zawartość (pliki i oprogramowanie), który można wdrożyć na urządzeniach i użytkowników. Można również utworzyć dystrybucji grupy punktów, które upraszcza sposób zarządzania punktami dystrybucji i sposób dystrybucji zawartości do punktów dystrybucji.  
+Instalar pontos de distribuição do System Center Configuration Manager para alojar o conteúdo (ficheiros e software) que pode implementar em dispositivos e utilizadores. Também pode criar distribuição grupos de pontos que simplificam a forma como gerir os pontos de distribuição e, como distribuir conteúdo para pontos de distribuição.  
 
- Gdy użytkownik *instalowania nowego punktu dystrybucji* (przy użyciu Kreatora instalacji) lub *zarządzania właściwościami istniejącego punktu dystrybucji* (edytując właściwości punktu dystrybucji), można skonfigurować większość ustawień punktu dystrybucji. Kilka ustawienia są dostępne tylko wtedy, gdy użytkownik w przypadku instalowania lub edytowania, ale nie obu:  
+ Quando lhe *instalar um novo ponto de distribuição* (utilizando o Assistente de instalação) ou *gerir as propriedades de um ponto de distribuição existente* (editando as propriedades do ponto de distribuição), pode configurar a maioria das definições de ponto de distribuição. Algumas definições estão disponíveis apenas quando estiver a instalar ou editar, mas não ambos:  
 
--   Ustawienia, które są dostępne tylko podczas instalowania punktu dystrybucji:  
+-   Definições que estão disponíveis apenas quando estiver a instalar um ponto de distribuição:  
 
-    -   **Zezwalaj na zainstalowanie usług IIS na komputerze punktu dystrybucji program Configuration Manager**
+    -   **Permitir que o Configuration Manager para instalar o IIS no computador do ponto de distribuição**
 
-    -   **Konfiguruj ustawienia miejsca na dysku dla punktu dystrybucji**  
+    -   **Configurar definições de espaço na unidade para o ponto de distribuição**  
 
--   Ustawienia, które są dostępne tylko podczas edytowania właściwości punktu dystrybucji:  
+-   Definições que estão disponíveis apenas quando que estiver a editar as propriedades de um ponto de distribuição:  
 
-    -   **Zarządzanie relacjami grupy punktów dystrybucji**  
+    -   **Gerir relações de grupo de ponto de distribuição**  
 
-    -   **Wyświetl zawartość wdrożoną w punkcie dystrybucji**  
+    -   **Ver conteúdo implementado no ponto de distribuição**  
 
-    -   **Konfiguruj limity szybkości transferu danych do punktów dystrybucji**  
+    -   **Configurar limites de velocidade para transferências de dados para pontos de distribuição**  
 
-    -   **Konfiguruj harmonogramy transferów danych do punktów dystrybucji**  
+    -   **Configurar agendamentos para transferências de dados para pontos de distribuição**  
 
-##  <a name="bkmk_install"></a>Instalowanie punktu dystrybucji  
- Należy wyznaczyć serwer systemu lokacji jako punktu dystrybucji przed zawartości mogą zostać udostępnione na komputerach klienckich. Możesz dodać roli lokacji punktu dystrybucji do nowego serwera systemu lokacji lub dodać rolę lokacji do istniejącego serwera systemu lokacji.  
+##  <a name="bkmk_install"></a>Instalar um ponto de distribuição  
+ Tem de designar um servidor de sistema de sites como ponto de distribuição antes de conteúdo pode ser disponibilizado para os computadores cliente. Pode adicionar a função de site do ponto de distribuição para um novo servidor de sistema de sites ou adicionar a função de site para um servidor de sistema de sites existente.  
 
- Podczas instalowania nowego punktu dystrybucji, należy użyć Kreatora instalacji, który przeprowadzi Cię przez kolejne dostępne ustawienia. Przed rozpoczęciem należy rozważyć następujące kwestie:  
+ Quando instala um novo ponto de distribuição, utiliza um Assistente de instalação que explica como as definições disponíveis. Antes de começar, considere o seguinte:  
 
--   Musi mieć następujące uprawnienia zabezpieczeń, aby utworzyć i skonfigurować punkt dystrybucji:  
+-   Tem de ter as seguintes permissões de segurança para criar e configurar um ponto de distribuição:  
 
-    -   **Odczyt** dla **punktu dystrybucji** obiektu  
+    -   **Leitura** para o **ponto de distribuição** objeto  
 
-    -   **Kopiuj do punktu dystrybucji** dla **punktu dystrybucji** obiektu  
+    -   **Copiar para ponto de distribuição** para o **ponto de distribuição** objeto  
 
-    -   **Modyfikowanie** dla **lokacji** obiektu  
+    -   **Modificar** para o **Site** objeto  
 
-    -   **Zarządzaj certyfikatami wdrożenia systemu operacyjnego** dla **lokacji** obiektu  
+    -   **Gerir certificados para implementação do sistema operativo** para o **Site** objeto  
 
--   Internet Information Services (IIS) musi być zainstalowany na serwerze, który będzie hostem punktu dystrybucji. Podczas instalowania roli systemu lokacji programu Configuration Manager można zainstalować i skonfigurować usługi IIS.  
+-   Serviços de informação Internet (IIS) tem de estar instalado no servidor que irá alojar o ponto de distribuição. Quando instalar a função de sistema de sites, o Configuration Manager pode instalar e configurar o IIS para si.  
 
-Aby zainstalować lub zmienić punkt dystrybucji, należy użyć poniższych procedur podstawowych. Aby uzyskać szczegółowe informacje na temat dostępnych opcji konfiguracji, zobacz [konfigurowania punktu dystrybucji](#bkmk_configs) tego tematu.  
+Utilize os seguintes procedimentos básicos para instalar ou alterar um ponto de distribuição. Para obter detalhes sobre as opções de configuração disponíveis, consulte o [configurar um ponto de distribuição](#bkmk_configs) secção deste tópico.  
 
-#### <a name="to-install-a-distribution-point"></a>Aby zainstalować punkt dystrybucji  
+#### <a name="to-install-a-distribution-point"></a>Para instalar um ponto de distribuição  
 
-1.  W konsoli programu Configuration Manager wybierz **administracji** >  **konfiguracja lokacji** > **serwery i role systemu lokacji**.  
+1.  Na consola do Configuration Manager, escolha **administração** >  **configuração do Site** > **servidores e funções de sistema de sites**.  
 
-2.  Dodaj rolę systemu lokacji punktu dystrybucji do serwera systemu lokacji do nowego lub istniejącego:  
+2.  Adicione a função de sistema de sites de ponto de distribuição a um servidor de sistema de sites novo ou existente:  
 
-    -   **Nowy serwer systemu lokacji**: Na **Home** karcie **Utwórz** grupy, wybierz **Utwórz serwer systemu lokacji**. Otworzy się Kreator tworzenia serwera systemu lokacji.  
+    -   **Novo servidor do sistema de sites**: No **home page** separador o **criar** grupo, escolha **criar servidor do sistema de sites**. Abre o Assistente para Criar Servidor do Sistema de Sites.  
 
-    -   **Istniejący serwer systemu lokacji**: Wybierz serwer, w którym chcesz zainstalować rolę systemu lokacji punktu dystrybucji. Po wybraniu serwera w okienku wyników zostanie wyświetlona lista ról systemu lokacji, które są już zainstalowane na serwerze.  
+    -   **Servidor do sistema de sites existente**: Selecione o servidor no qual pretende instalar a função de sistema de sites de ponto de distribuição. Ao escolher um servidor, é apresentada uma lista das funções de sistema de sites que já se encontram instaladas no servidor no painel de resultados.  
 
-         Na **Home** karcie **serwera** grupy, wybierz **Dodaj rolę systemu lokacji**. Otworzy się Kreator dodawania ról systemu lokacji.  
+         No **home page** separador o **servidor** grupo, escolha **Adicionar função de sistema de sites**. Abre o Assistente para Adicionar Funções ao Sistema de Sites.  
 
-3.  Na stronie **Ogólne** określ ustawienia ogólne serwera systemu lokacji. Po dodaniu punktu dystrybucji do istniejącego serwera systemu lokacji należy sprawdzić wcześniej skonfigurowane wartości.  
+3.  Na página **Geral** , especifique as definições gerais para o servidor de sistema de sites. Quando adiciona o ponto de distribuição a um servidor de sistema de sites existente, verifique os valores que foram anteriormente configurados.  
 
-4.  Na **Wybór roli systemu** wybierz pozycję **punktu dystrybucji** z listy dostępnych ról, a następnie wybierz pozycję **dalej**.  
+4.  No **seleção da função do sistema** página, escolha **ponto de distribuição** da lista de funções disponíveis e, em seguida, escolha **seguinte**.  
 
-5.  Na kolejnych stronach kreatora, zobacz informacje w [konfigurowania punktu dystrybucji](#bkmk_configs) sekcji.  
+5.  Para as páginas subsequentes do assistente, consulte as informações de [configurar um ponto de distribuição](#bkmk_configs) secção.  
 
-     Na przykład, jeśli chcesz zainstalować punkt dystrybucji jako punktu dystrybucji ściągania, możesz wybrać **Włącz ten punkt dystrybucji do ściągania zawartości z innych punktów dystrybucji** , a następnie wprowadź dodatkowe konfiguracje, które wymagają ściągających punktów dystrybucji.  
+     Por exemplo, se pretender instalar o ponto de distribuição como um ponto de distribuição de solicitação, escolher **ativar este ponto de distribuição para conteúdo de outros pontos de distribuição de extração** e, em seguida, efetue as configurações adicionais que necessitar de pontos de distribuição de solicitação.  
 
-6.  Po zakończeniu działania kreatora roli lokacji punktu dystrybucji jest dodawany do serwera systemu lokacji.  
+6.  Depois de concluir o assistente, a função de site do ponto de distribuição é adicionada ao servidor de sistema do site.  
 
-#### <a name="to-change-a-distribution-point"></a>Aby zmienić punkt dystrybucji  
+#### <a name="to-change-a-distribution-point"></a>Para alterar um ponto de distribuição  
 
-1.  W konsoli programu Configuration Manager wybierz **administracji** >  **punktów dystrybucji**, a następnie wybierz punkt dystrybucji, który chcesz skonfigurować.  
+1.  Na consola do Configuration Manager, escolha **administração** >  **pontos de distribuição**e, em seguida, selecione o ponto de distribuição que pretende configurar.  
 
-2.  Na **Home** karcie **właściwości** grupy, wybierz **właściwości**.  
+2.  No **home page** separador o **propriedades** grupo, escolha **propriedades**.  
 
-3.  Skorzystaj z informacji w [konfigurowania punktu dystrybucji](#bkmk_configs) sekcji podczas edytowania właściwości punktu dystrybucji.  
+3.  Utilize as informações de [configurar um ponto de distribuição](#bkmk_configs) secção quando estiver a editar as propriedades do ponto de distribuição.  
 
-4.  Po wprowadzeniu zmian, które chcesz zapisać ustawienia i zamknij właściwości punktu dystrybucji.  
+4.  Depois de efetuar as alterações pretendidas, guarde as suas definições e fechar as propriedades do ponto de distribuição.  
 
-##  <a name="bkmk_manage"></a>Zarządzanie grupami punktów dystrybucji  
- Grupy punktów dystrybucji umożliwiają logiczne grupowanie punktów dystrybucji w dystrybucji zawartości. Zarządzanie i monitorowanie zawartości z centralnej lokalizacji punktów dystrybucji, obejmującej wiele lokacji można używać tych grup. Należy pamiętać, że:
+##  <a name="bkmk_manage"></a>Gerir grupos de pontos de distribuição  
+ Grupos de pontos de distribuição permitem um agrupamento lógico de pontos de distribuição para distribuição de conteúdos. Pode utilizar estes grupos para gerir e monitorizar conteúdos a partir de uma localização central de pontos de distribuição que abranjam vários sites. Tenha em atenção o seguinte:
 
--   Do grupy punktów dystrybucji, można dodać jeden lub więcej punktów dystrybucji z dowolnej lokacji w hierarchii.  
+-   Pode adicionar um ou mais pontos de distribuição de qualquer site na hierarquia para um grupo de pontos de distribuição.  
 
--   Punkt dystrybucji można dodać do więcej niż jednej grupy punktów dystrybucji.  
+-   Pode adicionar um ponto de distribuição a mais do que um grupo de pontos de distribuição.  
 
--   Podczas dystrybucji zawartości do grupy punktów dystrybucji programu Configuration Manager dystrybuuje zawartość do wszystkich punktów dystrybucji, które są elementami członkowskimi grupy punktów dystrybucji.  
+-   Quando distribui conteúdo a um grupo de pontos de distribuição, o Configuration Manager distribui o conteúdo por todos os pontos de distribuição que são membros do grupo de pontos de distribuição.  
 
--   Jeśli dodasz po początkowej dystrybucji zawartości punktu dystrybucji do grupy punktów dystrybucji programu Configuration Manager automatycznie dystrybuuje zawartość do nowego członka punktu dystrybucji.  
+-   Se adicionar um ponto de distribuição para o grupo de pontos de distribuição após uma distribuição de conteúdo inicial, o Configuration Manager distribui automaticamente o conteúdo para o novo membro do ponto de distribuição.  
 
--   Można skojarzyć kolekcję z grupą punktów dystrybucji. Podczas dystrybucji zawartości do kolekcji programu Configuration Manager określa grupy punktów dystrybucji, które są skojarzone z tą kolekcją. Zawartość jest dystrybuowana do wszystkich punktów dystrybucji należących do tych grup punktów dystrybucji.  
+-   Pode associar uma coleção um grupo de pontos de distribuição. Quando distribui conteúdo por essa coleção, o Configuration Manager determina os grupos de pontos de distribuição estão associados à coleção. Os conteúdos são posteriormente distribuídos a todos os pontos de distribuição que são membros desses grupos de pontos de distribuição.  
 
     > [!NOTE]  
-    >  Po dystrybucji zawartości do kolekcji, jeśli kolekcja następnie skojarzona z grupą punktów dystrybucji, należy ponownie rozesłać zawartość do kolekcji przed zawartość jest dystrybuowana do nowej grupy punktów dystrybucji.  
+    >  Após distribuir conteúdos a uma coleção, se, em seguida, associar a coleção com um novo grupo de pontos de distribuição, tem de redistribuir os conteúdos à coleção antes do conteúdo é distribuído para o novo grupo de pontos de distribuição.  
 
-#### <a name="to-create-and-configure-a-new-distribution-point-group"></a>Aby utworzyć i skonfigurować nową grupę punktów dystrybucji  
+#### <a name="to-create-and-configure-a-new-distribution-point-group"></a>Para criar e configurar um novo grupo de pontos de distribuição  
 
-1.  W konsoli programu Configuration Manager wybierz **administracji** > **grup punktów dystrybucji**.  
+1.  Na consola do Configuration Manager, escolha **administração** > **grupos de pontos de distribuição**.  
 
-2.  Na **Home** karcie **Utwórz** grupy, wybierz **Utwórz grupę**.  
+2.  No **home page** separador o **criar** grupo, escolha **criar grupo**.  
 
-3.  Wprowadź nazwę i opis grupy punktów dystrybucji.  
+3.  Introduza o nome e descrição para o grupo de pontos de distribuição.  
 
-4.  Na **kolekcje** , wybierz pozycję **Dodaj**, wybierz kolekcje, które chcesz skojarzyć z grupą punktów dystrybucji, a następnie wybierz pozycję **OK**.  
+4.  No **coleções** separador, escolha **adicionar**, selecione as coleções que pretende associar o grupo de pontos de distribuição e, em seguida, escolha **OK**.  
 
-5.  Na **członków** , wybierz pozycję **Dodaj**, wybierz punkty dystrybucji, które chcesz dodać jako członków grupy punktów dystrybucji, a następnie wybierz pozycję **OK**.  
+5.  No **membros** separador, escolha **adicionar**, selecione os pontos de distribuição que pretende adicionar como membros do grupo de pontos de distribuição e, em seguida, escolha **OK**.  
 
-6.  Wybierz **OK** Aby utworzyć grupę punktów dystrybucji.  
+6.  Escolha **OK** para criar o grupo de pontos de distribuição.  
 
-#### <a name="to-add-distribution-points-and-associate-collections-with-an-existing-distribution-point-group"></a>Aby dodać punkty dystrybucji i skojarzyć kolekcje z istniejącą grupę punktów dystrybucji  
+#### <a name="to-add-distribution-points-and-associate-collections-with-an-existing-distribution-point-group"></a>Para adicionar pontos de distribuição e associar coleções um grupo de pontos de distribuição existente  
 
-1.  W konsoli programu Configuration Manager wybierz **administracji** > **grup punktów dystrybucji**.  
+1.  Na consola do Configuration Manager, escolha **administração** > **grupos de pontos de distribuição**.  
 
-2.  Na **Home** karcie **właściwości** grupy, wybierz **właściwości**.  
+2.  No **home page** separador o **propriedades** grupo, escolha **propriedades**.  
 
-3.  Na **kolekcje** , wybierz pozycję **Dodaj** aby wybrać kolekcje, które chcesz skojarzyć z grupą punktów dystrybucji, a następnie wybierz pozycję **OK**.  
+3.  No **coleções** separador, escolha **adicionar** para selecionar as coleções que pretende associar o grupo de pontos de distribuição e, em seguida, escolha **OK**.  
 
-4.  Na **członków** , wybierz pozycję **Dodaj** aby wybrać punkty dystrybucji, które chcesz dodać jako członków grupy punktów dystrybucji, a następnie wybierz pozycję **OK**.  
+4.  No **membros** separador, escolha **adicionar** para selecionar os pontos de distribuição que pretende adicionar como membros do grupo de pontos de distribuição e, em seguida, escolha **OK**.  
 
-5.  Wybierz **OK** można zapisać zmian w grupie punktów dystrybucji.  
+5.  Escolha **OK** para guardar as alterações ao grupo de pontos de distribuição.  
 
-#### <a name="to-add-selected-distribution-points-to-a-new-distribution-point-group"></a>Aby dodać wybrane dystrybucji punkty do nowej grupy punktów dystrybucji  
+#### <a name="to-add-selected-distribution-points-to-a-new-distribution-point-group"></a>Para adicionar distribuição selecionados aponta para um novo grupo de pontos de distribuição  
 
-1.  W konsoli programu Configuration Manager wybierz **administracji** > **punktów dystrybucji**, a następnie wybierz punkty dystrybucji, które chcesz dodać do nowej grupy punktów dystrybucji.  
+1.  Na consola do Configuration Manager, escolha **administração** > **pontos de distribuição**e, em seguida, selecione os pontos de distribuição que pretende adicionar ao novo grupo de pontos de distribuição.  
 
-2.  Na **Home** karcie **punktu dystrybucji** grupy, rozwiń węzeł **Dodaj wybrane elementy**, a następnie wybierz pozycję **Dodaj wybrane elementy do nowej grupy punktów dystrybucji**.  
+2.  No **home page** separador o **ponto de distribuição** grupo, expanda **adicionar itens selecionados**e, em seguida, escolha **adicionar itens selecionados ao novo grupo de pontos de distribuição**.  
 
-3.  Wprowadź nazwę i opis grupy punktów dystrybucji.  
+3.  Introduza o nome e descrição para o grupo de pontos de distribuição.  
 
-4.  Na **kolekcje** , wybierz pozycję **Dodaj** aby wybrać kolekcje, które chcesz skojarzyć z grupą punktów dystrybucji, a następnie wybierz pozycję **OK**.  
+4.  No **coleções** separador, escolha **adicionar** para selecionar as coleções que pretende associar o grupo de pontos de distribuição e, em seguida, escolha **OK**.  
 
-5.  Na **członków** karcie, upewnij się, że program Configuration Manager, aby dodać punkty dystrybucji znajdujące się jako członków grupy punktów dystrybucji. Wybierz **Dodaj** dodać punkty dystrybucji, a następnie wybierz pozycję **OK**.  
+5.  No **membros** separador, certifique-se de que pretende que o Configuration Manager para adicionar os pontos de distribuição listados como membros do grupo de pontos de distribuição. Escolha **adicionar** para adicionar os pontos de distribuição e, em seguida, escolha **OK**.  
 
-6.  Wybierz **OK** Aby utworzyć grupę punktów dystrybucji.  
+6.  Escolha **OK** para criar o grupo de pontos de distribuição.  
 
-#### <a name="to-add-selected-distribution-points-to-existing-distribution-point-groups"></a>Aby dodać wybrane dystrybucji punkty do istniejących grup punktów dystrybucji  
+#### <a name="to-add-selected-distribution-points-to-existing-distribution-point-groups"></a>Para adicionar distribuição selecionados aponta para grupos de pontos de distribuição existentes  
 
-1.  W konsoli programu Configuration Manager wybierz **administracji** > **punktów dystrybucji**, a następnie wybierz punkty dystrybucji, które chcesz dodać do nowej grupy punktów dystrybucji.  
+1.  Na consola do Configuration Manager, escolha **administração** > **pontos de distribuição**e, em seguida, selecione os pontos de distribuição que pretende adicionar ao novo grupo de pontos de distribuição.  
 
-2.  Na **Home** karcie **punktu dystrybucji** grupy, rozwiń węzeł **Dodaj wybrane elementy**, a następnie wybierz pozycję **Dodaj wybrane elementy do istniejących grup punktów dystrybucji**.  
+2.  No **home page** separador o **ponto de distribuição** grupo, expanda **adicionar itens selecionados**e, em seguida, escolha **adicionar itens selecionados a grupos de pontos de distribuição existentes**.  
 
-3.  W **dostępne grupy punktów dystrybucji**, wybierz grupy punktów dystrybucji, do których wybrane punkty dystrybucji są dodawane jako elementy członkowskie, a następnie wybierz **OK**.  
+3.  No **grupos de pontos de distribuição disponíveis**, selecione os grupos de pontos de distribuição aos quais os pontos de distribuição selecionados são adicionados como membros e, em seguida, escolha **OK**.  
 
-##  <a name="bkmk_configs"></a>Skonfiguruj punkt dystrybucji  
- Poszczególne punkty dystrybucji obsługują szereg różnych konfiguracji. Jednak nie wszystkie typy punktów dystrybucji obsługują wszystkie konfiguracje. Na przykład punkty dystrybucji w chmurze nie obsługują wdrożeń zawartości z obsługą środowiska PXE lub multiemisji. Informacje o ograniczeniach określonych można znaleźć w następujących tematach:  
+##  <a name="bkmk_configs"></a>Configurar um ponto de distribuição  
+ Pontos de distribuição individuais suportam uma variedade de configurações diferentes. No entanto, nem todos os tipos de ponto de distribuição suportam todas as configurações. Por exemplo, pontos de distribuição baseado na nuvem não suportam implementações de conteúdo que estão ativadas para PXE ou multicast. Pode encontrar informações sobre limitações específicas nos seguintes tópicos:  
 
--   [Użyj punktu dystrybucji w chmurze w programie System Center Configuration Manager](../../../../core/plan-design/hierarchy/use-a-cloud-based-distribution-point.md)  
+-   [Utilizar um ponto de distribuição baseado na nuvem com o System Center Configuration Manager](../../../../core/plan-design/hierarchy/use-a-cloud-based-distribution-point.md)  
 
--   [Użyj punktu dystrybucji ściągania w programie System Center Configuration Manager](/sccm/core/plan-design/hierarchy/use-a-pull-distribution-point)  
+-   [Utilizar um ponto de distribuição de extração com o System Center Configuration Manager](/sccm/core/plan-design/hierarchy/use-a-pull-distribution-point)  
 
-W poniższych sekcjach opisano konfiguracje, które można wybrać podczas instalowania nowego punktu dystrybucji lub edytowania właściwości istniejącego punktu dystrybucji.  
+As secções seguintes descrevem as configurações que pode selecionar quando estiver a instalar um novo ponto de distribuição ou editar as propriedades de um ponto de distribuição existente.  
 
-### <a name="general"></a>Ogólne  
- Skonfiguruj ogólne ustawienia punktu dystrybucji:  
+### <a name="general"></a>Geral  
+ Configure as definições de ponto de distribuição geral:  
 
--   **Instalowanie i konfigurowanie usług IIS, jeśli jest to wymagane przez program Configuration Manager**: Wybierz to ustawienie, aby umożliwić programowi Configuration Manager zainstalowanie i skonfigurowanie usług IIS na serwerze, jeśli nie jest już zainstalowany. Usługi IIS muszą być zainstalowane we wszystkich punktach dystrybucji. Jeśli na serwerze nie zainstalowano usług IIS i to ustawienie nie zostanie wybrane, należy zainstalować usług IIS, aby można było pomyślnie zainstalować punkt dystrybucji.  
+-   **Instalar e configurar o IIS se exigido pelo Configuration Manager**: Escolha esta definição para permitir que o Configuration Manager instalar e configurar o IIS no servidor se não estiver já instalado. IIS tem de ser instalado em todos os pontos de distribuição. Se o IIS não está instalado no servidor e não Escolha esta definição, deve instalar o IIS para que o ponto de distribuição possa ser instalado com êxito.  
 
     > [!NOTE]  
-    >  Ta opcja jest dostępna tylko w przypadku instalowania nowego punktu dystrybucji.  
+    >  Esta opção só está disponível quando estiver a instalar um novo ponto de distribuição.  
 
-- **Włącz i skonfiguruj usługę BranchCache dla tego punktu dystrybucji**: Wybierz to ustawienie, aby umożliwić programowi Configuration Manager, skonfiguruj usługi Windows BranchCache na serwerze punktu dystrybucji. Aby uzyskać więcej informacji o programie System Center Configuration Manager za pomocą usługi Windows BranchCache, zobacz [usługi BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#a-namebkmkbranchcachea-branchcache) w *funkcji pomocy technicznej dla systemu Windows i sieci w programie System Center Configuration Manager*.
+- **Ativar e configurar o BranchCache para este ponto de distribuição**: Escolha esta definição para permitir ao configurar o Windows BranchCache no servidor do ponto de distribuição do Configuration Manager. Para obter mais informações sobre como utilizar o Windows BranchCache com o System Center Configuration Manager, consulte [BranchCache](/sccm/core/plan-design/configs/support-for-windows-features-and-networks#a-namebkmkbranchcachea-branchcache) no *funcionalidades de suporte para Windows e redes no System Center Configuration Manager*.
 
--   **Skonfiguruj sposób komunikacji urządzeń klienckich z punktem dystrybucji**: Brak zalety i wady przy użyciu protokołu HTTP i HTTPS. Aby uzyskać więcej informacji, zobacz "Najlepsze rozwiązania w zakresie zabezpieczeń dotyczące zarządzania zawartością" w [podstawowe pojęcia związane z zarządzaniem zawartością w programie System Center Configuration Manager](../../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md).  
+-   **Configurar a forma como os dispositivos cliente comunicam com o ponto de distribuição**: Existem vantagens e desvantagens para utilizar HTTP e HTTPS. Para obter mais informações, consulte "Melhores práticas de segurança para gestão de conteúdos" em [conceitos fundamentais da gestão de conteúdos no System Center Configuration Manager](../../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md).  
 
--   **Zezwalaj klientom na anonimowe połączenia**: To ustawienie określa, czy punkt dystrybucji będzie zezwalał na anonimowe połączenia od klientów programu Configuration Manager do biblioteki zawartości.  
+-   **Permitir a ligação anónima dos clientes**: Esta definição especifica se o ponto de distribuição irá permitir ligações anónimas de clientes do Configuration Manager para a biblioteca de conteúdos.  
 
     > [!IMPORTANT]  
-    >  Naprawa aplikacji Instalatora systemu Windows może zakończyć się niepowodzeniem na komputerze klienckim, gdy to ustawienie nie jest używana.  
+    >  A reparação de uma aplicação do Windows Installer pode falhar num cliente quando utiliza esta definição.  
     >   
-    >  Podczas wdrażania aplikacji Instalatora Windows na kliencie programu Configuration Manager, Configuration Manager pobierze plik do lokalnej pamięci podręcznej na kliencie. Pliki zostaną usunięte po zakończeniu instalacji.
+    >  Quando implementa uma aplicação do Windows Installer num cliente do Configuration Manager, o Configuration Manager transfere o ficheiro para a cache local no cliente. Os ficheiros são eventualmente removidos depois da conclusão da instalação.
     >  
-    >  Klient programu Configuration Manager aktualizacji listy źródłowej Instalatora Windows dla zainstalowanych aplikacji Instalatora systemu Windows ze ścieżką do biblioteki zawartości w skojarzonych punktach dystrybucji. Później po uruchomieniu akcji naprawy z apletu Dodaj lub usuń programy na komputerze klienckim programu Configuration Manager, plik MSIExec spróbuje uzyskać dostęp do ścieżki zawartości przy użyciu anonimowego użytkownika.  
+    >  O cliente do Configuration Manager atualiza a lista de origem do Windows Installer para as aplicações do Windows Installer instaladas com o caminho de conteúdo da biblioteca de conteúdos nos pontos de distribuição associados. Mais tarde, se iniciar a ação de reparação em Adicionar ou remover programas num cliente do Configuration Manager, o MSIExec tenta aceder ao caminho de conteúdo através da utilização de um utilizador anónimo.  
     >   
-    >  Można jednak zainstalować aktualizację opisaną w artykule bazy wiedzy Microsoft Knowledge Base [2619572](http://go.microsoft.com/fwlink/?LinkId=279699) , a następnie zmodyfikować klucz rejestru, aby zmienić to zachowanie.  
+    >  No entanto, pode instalar a atualização descrita no artigo da Base de dados de Conhecimento Microsoft [2619572](http://go.microsoft.com/fwlink/?LinkId=279699) e, em seguida, modificar uma chave de registo para alterar este comportamento.  
     >   
-    >  Po zainstalowaniu aktualizacji na klientach plik MSIExec będą uzyskiwać dostęp do ścieżki zawartości przy użyciu konta zalogowanego użytkownika, jeśli nie wybierzesz **Zezwalaj klientom na anonimowe połączenia** ustawienie.  
+    >  Após a atualização está instalada nos clientes, o MSIExec acederá ao caminho de conteúdo utilizando a conta de utilizador com sessão iniciada quando não seleciona a **permitir a ligação anónima dos clientes** definição.  
 
--   **Utwórz certyfikat z podpisem własnym lub zaimportuj certyfikat klienta infrastruktury kluczy publicznych (PKI) dla punktu dystrybucji**: Certyfikat ma następujące cele:  
+-   **Criar um certificado autoassinado ou importe um certificado de cliente de infraestrutura de chaves públicas (PKI) para o ponto de distribuição**: O certificado tem os seguintes fins:  
 
-    -   Uwierzytelnia punkt dystrybucji do punktu zarządzania przed wysłaniem przez dany punkt dystrybucji komunikatów o stanie.  
+    -   Autentica o ponto de distribuição para um ponto de gestão antes do ponto de distribuição envia mensagens de estado.  
 
-    -   Sprawdzenie **Włącz obsługę środowiska PXE dla klientów** polu na **ustawienia środowiska PXE** strony, certyfikat zostanie wysłany do komputerów przeprowadzających rozruch w środowisku PXE, aby umożliwić im połączenie z punktem zarządzania podczas wdrażania systemu operacyjnego.  
+    -   Quando seleciona o **ativar suporte PXE para clientes** caixa no **definições do PXE** página, o certificado é enviado para computadores que realizam um arranque PXE para que liguem ao ponto de gestão durante a implementação do sistema operativo.  
 
-    Jeżeli wszystkie punkty zarządzania w lokacji są skonfigurowane do obsługi protokołu HTTP, należy utworzyć certyfikat z podpisem własnym. Jeżeli punkty zarządzania są skonfigurowane dla protokołu HTTPS, zaimportuj certyfikat klienta infrastruktury kluczy publicznych.  
+    Quando todos os seus pontos de gestão no site são configurados para HTTP, crie um certificado autoassinado. Quando os pontos de gestão estiverem configurados para HTTPS, importe um certificado de cliente PKI.  
 
-    Aby zaimportować certyfikat, przejdź do pliku publicznego klucza Cryptography Standard (PKCS #12), który ma certyfikat PKI z następującymi wymaganiami programu Configuration Manager:  
+    Para importar o certificado, procure um ficheiro de Public Key Cryptography Standard (PKCS #12) que tenha um certificado PKI com os seguintes requisitos para o Configuration Manager:  
 
-    -   Zamierzone użycie musi obejmować uwierzytelnianie klienta.  
+    -   Utilização prevista deve incluir a autenticação de cliente.  
 
-    -   Klucz prywatny musi być włączony do wyeksportowania.  
+    -   Deve ser ativada a chave privada seja exportada.  
 
     > [!TIP]  
-    >  Nie istnieją określone wymagania dla podmiotu certyfikatu lub alternatywnej nazwy podmiotu (SAN), a następnie można użyć tego samego certyfikatu dla wielu punktów dystrybucji.  
+    >  Existem não requisitos específicos para o requerente do certificado ou nome alternativo do requerente (SAN), e pode utilizar o mesmo certificado para vários pontos de distribuição.  
 
-     Więcej informacji o wymaganiach dla certyfikatów znajduje się w temacie [Wymagania dotyczące certyfikatu PKI dla programu System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
+     Para obter mais informações sobre os requisitos de certificado, veja [Requisitos de certificado PKI para o System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
 
-     Przykład wdrożenia tego certyfikatu, zobacz sekcję "Wdrażanie klienta certyfikatu dla punktów dystrybucji" w [krok Przykładowe wdrożenie infrastruktury kluczy publicznych certyfikatów dla programu System Center Configuration Manager: Urząd certyfikacji systemu Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
+     Para um exemplo de implementação deste certificado, consulte a secção "A implementar o cliente certificado para pontos de distribuição" [exemplo passo a passo de implementação da PKI certificados para o System Center Configuration Manager: Autoridade de certificação do Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
 
--   **Włącz ten punkt dystrybucji dla wstępnie przygotowanej zawartości**: Wybierz to ustawienie, aby włączyć punkt dystrybucji dla wstępnie przygotowanej zawartości. Po wybraniu tego ustawienia można skonfigurować sposób działania dystrybucji podczas dystrybucji zawartości. Użytkownik może zawsze wykonaj jedną z następujących czynności:
+-   **Ativar conteúdo pré-configurado para este ponto de distribuição**: Escolha esta definição para ativar o ponto de distribuição para conteúdo pré-configurado. Quando esta definição está selecionada, pode configurar o comportamento de distribuição quando distribuir conteúdos. Pode optar por sempre efetue um dos seguintes procedimentos:
 
- - Wstępne przygotowanie zawartości w punkcie dystrybucji.
- - Wstępne przygotowanie początkowej zawartości pakietu, ale użyj normalny proces dystrybucji, gdy są dostępne aktualizacje zawartości.
- - Stosować normalny proces dystrybucji zawartości w pakiecie.  
+ - Pré-configurar o conteúdo no ponto de distribuição.
+ - Pré-configurar o conteúdo inicial para o pacote, mas utilize o processo normal de distribuição de conteúdo caso existam atualizações ao conteúdo.
+ - Utilize o processo normal de distribuição de conteúdo para o conteúdo no pacote.  
 
-### <a name="drive-settings"></a>Ustawienia dysku  
-
-> [!NOTE]  
->  Te opcje są dostępne tylko w przypadku instalowania nowego punktu dystrybucji.  
-
-Określ ustawienia dysku dla punktu dystrybucji. Można skonfigurować maksymalnie dwóch dysków dla biblioteki zawartości oraz dwóch dysków dla udziału pakietu. Menedżer konfiguracji może używać dodatkowych dysków, gdy dwa pierwsze osiągną skonfigurowaną rezerwę wolnego miejsca. **Ustawienia dysku** strony skonfigurować priorytet dysków oraz ilość wolnego miejsca, które pozostają na każdym z dysków.  
-
--   **Rezerwacja miejsca (MB) na dysku**: Wartość skonfigurowana w tym ustawieniu określa ilość wolnego miejsca na dysku przed programu Configuration Manager wybierze inny dysk, aby kontynuować proces kopiowania do tego dysku. Pliki zawartości mogą znajdować się na wielu dyskach.  
-
--   **Lokalizacje zawartości**: Określ lokalizacje zawartości dla zawartości biblioteki i udziału pakietu. Menedżer konfiguracji kopiuje zawartość do lokalizacji głównej zawartości do momentu osiągnięcia ilości wolnego miejsca ustawieniu wartość określona dla **Rezerwacja miejsca na dysku (MB)**. Domyślnie lokalizacje zawartości są skonfigurowane **automatyczne**. Lokalizacją główną zawartości jest ustawiona na dysk o największej ilości wolnego miejsca podczas instalacji, a lokalizacja dodatkowa zostanie przypisana do dysku, w którym jest najbardziej sekundę wolnego miejsca na dysku. Gdy podstawowych i pomocniczych osiągną rezerwę wolnego miejsca, programu Configuration Manager wybierze inny dostępny dysk o największej ilości wolnego miejsca, aby kontynuować proces kopiowania.  
+### <a name="drive-settings"></a>Definições de unidade  
 
 > [!NOTE]  
->  Aby zapobiec instalacji na określonym dysku programu Configuration Manager, Utwórz pusty plik o nazwie **no_sms_on_drive.sms** i skopiować go do folderu głównego dysku przed zainstalowaniem punktu dystrybucji.  
+>  Estas opções estão disponíveis apenas quando estiver a instalar um novo ponto de distribuição.  
 
-### <a name="pull-distribution-point"></a>Ściągający punkt dystrybucji  
-Po wybraniu **Włącz ten punkt dystrybucji do ściągania zawartości z innych punktów dystrybucji**, zmiany zachowania jak komputera pobiera zawartości dystrybuowanej do punktu dystrybucji. Staje się on punktem dystrybucji ściągania.  
+Especifique as definições de unidade para o ponto de distribuição. Pode configurar até duas unidades de disco para a biblioteca de conteúdos e duas unidades de disco para a partilha de pacote. O Configuration Manager possa utilizar unidades adicionais quando as duas primeiras atingem a reserva do espaço de unidade configurada. O **definições de unidade** página configura a prioridade das unidades de disco e a quantidade de espaço livre em disco que sobra em cada unidade de disco.  
 
-Dla każdego punktu dystrybucji ściągania, które można skonfigurować należy określić co najmniej jeden źródłowe punkty dystrybucji spośród których ściągający punkt dystrybucji pobiera zawartość:  
+-   **(MB) de reserva do espaço na unidade**: O valor que configurar para esta definição determina a quantidade de espaço livre numa unidade antes do Configuration Manager escolher uma unidade diferente e continuar o processo de cópia para essa unidade. Ficheiros de conteúdo podem abranger várias unidades.  
 
--   Wybierz **Dodaj**, a następnie wybierz co najmniej jeden dostępny punkt dystrybucji jako źródłowy punkt dystrybucji.  
-
--   Wybierz **Usuń** można usunąć wybranego punktu dystrybucji jako źródłowy punkt dystrybucji.  
-
--   Użyj przycisków strzałek, aby dostosować kolejność, w jakiej ściągający punkt dystrybucji kontaktów punkty dystrybucji źródła, gdy punkt dystrybucji ściągania podejmie próbę transferu zawartości. Punkty dystrybucji o najniższej wartości są najpierw kontakt.  
-
-### <a name="pxe"></a>Opcja PXE  
-Określ, czy włączyć obsługę środowiska PXE w punkcie dystrybucji. Po włączeniu obsługi środowiska PXE programu Configuration Manager instaluje usługi wdrażania systemu Windows na serwerze, jeśli jest to wymagane. Usługi wdrażania systemu Windows to usługa, która wykonuje rozruch w środowisku PXE w celu instalacji systemów operacyjnych. Po ukończeniu czynności kreatora tworzenia punktu dystrybucji programu Configuration Manager zainstaluje dostawcę w ramach usług wdrażania systemu Windows używającego funkcji rozruchu środowiska PXE.  
-
-Po wybraniu **Włącz obsługę środowiska PXE dla klientów**, skonfiguruj następujące ustawienia:  
-
--   **Zezwól temu punktowi dystrybucji na odpowiadanie na przychodzące żądania środowiska PXE**: Określ, czy włączyć usługi wdrażania systemu Windows, tak aby odpowiadały na żądania usługi PXE. Użyj tego pola, aby włączać i wyłączać usługę bez usuwania funkcji PXE z punktu dystrybucji.  
-
--   **Włącz obsługę nieznanych komputerów**: Określ, czy włączyć obsługę komputerów, które nie zarządza programu Configuration Manager.  
-
--   **Wymagaj hasła, kiedy komputery używają środowiska PXE**: Aby zapewnić dodatkową ochronę wdrożeń PXE, należy określić silne hasło.  
-
--   **Koligacja urządzenia użytkownika**: Określ, jak punkt dystrybucji ma skojarzyć użytkowników z komputerem docelowym w ramach wdrożeń PXE. Wybierz jedną z następujących opcji:  
-
-    -   **Zezwalaj na koligację urządzenia użytkownika z automatycznym zatwierdzeniem**: Wybierz to ustawienie, aby automatycznie kojarzyć użytkowników z komputerem docelowym bez czekania na zatwierdzenie.  
-
-    -   **Zezwalaj na koligację urządzenia użytkownika w oczekiwaniu na zatwierdzenie przez administratora**: Wybierz to ustawienie, aby czekać na zatwierdzenie przez użytkownika administracyjnego przed użytkowników skojarzonych z komputerem docelowym.  
-
-    -   **Nie zezwalaj na koligację urządzenia użytkownika**: Wybierz to ustawienie, aby określić, że użytkownicy nie są skojarzone z komputerem docelowym.  
-
-     Aby uzyskać więcej informacji o koligacji urządzenia użytkownika, zobacz [Łączenie użytkowników i urządzeń za pomocą koligacji urządzenia użytkownika w programie System Center Configuration Manager](../../../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md).  
-
--   **Interfejsy sieciowe**: Określ, czy punkt dystrybucji ma odpowiadać na żądania PXE ze wszystkich interfejsów sieciowych, czy tylko z konkretnych interfejsów sieciowych. Jeśli punkt dystrybucji ma odpowiadać na określonych interfejsach sieciowych, podaj adres MAC każdego interfejsu sieciowego.  
-
--   **Określ opóźnienie reakcji serwera PXE (sekundy)**: Określ w sekundach opóźnienie oczekiwania punktu dystrybucji przed udzieleniem odpowiedzi na żądanie komputera, gdy jest używanych wiele punktów dystrybucji z włączoną funkcją PXE. Domyślnie punkt obsługi środowiska PXE programu Configuration Manager odpowiada w pierwszej kolejności na żądania sieciowe środowiska PXE.  
+-   **Localizações de conteúdo**: Especifique as localizações de conteúdos para a partilha de biblioteca e o pacote de conteúdos. O Configuration Manager copia os conteúdos para localização de conteúdos primária até a quantidade de espaço livre atingir o valor especificado para **reserva de espaço na unidade (MB)**. Por predefinição, as localizações de conteúdo estão definidas como **automática**. A localização primária de conteúdos é definida para a unidade de disco que tem mais espaço de disco durante a instalação e a localização secundária é atribuída à unidade de disco que tenha o segundo mais espaço livre em disco. Quando as unidades principais e secundárias atingem a reserva do espaço na unidade, o Configuration Manager seleciona uma outra unidade disponível com mais disco espaço livre e continua o processo de cópia.  
 
 > [!NOTE]  
->  Można użyć protokołu PXE można uruchomić wdrożeń systemu operacyjnego na komputerach klienckich programu Configuration Manager. Configuration Manager używa roli lokacji punktu dystrybucji z włączoną obsługą środowiska PXE do zainicjowania procesu wdrażania systemu operacyjnego. Punkt dystrybucji z włączoną obsługą środowiska PXE należy skonfigurować w taki sposób, aby:
+>  Para impedir que o Configuration Manager instalar numa unidade específica, crie um ficheiro vazio designado **no_sms_on_drive.sms** e copie-o para a pasta raiz da unidade antes de instalar o ponto de distribuição.  
+
+### <a name="pull-distribution-point"></a>Ponto de distribuição de solicitação  
+Quando escolhe **ativar este ponto de distribuição para conteúdo de outros pontos de distribuição de extração**, alterar o comportamento da forma como esse computador obtém o conteúdo distribuído ao ponto de distribuição. Torna-se um ponto de distribuição de solicitação.  
+
+Para cada ponto de distribuição de extração que configurar, tem de especificar um ou mais pontos de distribuição origem partir do qual o ponto de distribuição de solicitação obtém o conteúdo:  
+
+-   Escolha **adicionar**e, em seguida, selecione um ou mais dos pontos de distribuição disponíveis para serem pontos de distribuição de origem.  
+
+-   Escolha **remover** para remover o ponto de distribuição selecionado como ponto de distribuição de origem.  
+
+-   Utilize os botões de seta para ajustar a ordem na qual contactos quando o ponto de distribuição de solicitação tenta transferir conteúdo de pontos de distribuição de origem de ponto de distribuição de solicitação. Pontos de distribuição com o valor mais baixo são contactados pela primeira vez.  
+
+### <a name="pxe"></a>PXE  
+Especifique se pretende ativar o PXE no ponto de distribuição. Quando ativa o PXE, o Configuration Manager instala serviços de implementação do Windows no servidor, se necessário. Serviços de implementação do Windows é o serviço que efetua o arranque PXE para instalar sistemas operativos. Depois de concluir o Assistente para criar o ponto de distribuição, o Configuration Manager instala um fornecedor nos serviços de implementação do Windows que utiliza as funções de arranque PXE.  
+
+Quando escolhe **ativar suporte PXE para clientes**, configure as seguintes definições:  
+
+-   **Permitir que este ponto de distribuição responder a pedidos PXE recebidos**: Especifique se pretende ativar os serviços de implementação do Windows, de modo a que responda a pedidos de serviço PXE. Utilize esta caixa para ativar e desativar o serviço sem remover a funcionalidade PXE a partir do ponto de distribuição.  
+
+-   **Ativar suporte para computadores desconhecidos**: Especifique se pretende ativar o suporte para computadores que não gere a Configuration Manager.  
+
+-   **Exigir uma palavra-passe quando os computadores utilizam PXE**: Para fornecer segurança adicional às implementações PXE, especifique uma palavra-passe segura.  
+
+-   **Afinidade dispositivo / utilizador**: Especifique como pretende que o ponto de distribuição associe utilizadores ao computador de destino para implementações de PXE. Escolha uma das seguintes opções:  
+
+    -   **Permitir afinidade de dispositivo / utilizador com aprovação automática**: Escolha esta definição para associar automaticamente os utilizadores ao computador de destino sem aguardar aprovação.  
+
+    -   **Permitir afinidade de dispositivo / utilizador com aprovação do administrador pendente**: Escolha esta definição para aguardar a aprovação de um utilizador administrativo antes dos utilizadores estão associados ao computador de destino.  
+
+    -   **Não permitir afinidade dispositivo / utilizador**: Escolha esta definição para especificar que os utilizadores não estão associados ao computador de destino.  
+
+     Para obter mais informações sobre a afinidade de dispositivo de utilizador, veja [Associar utilizadores e dispositivos à afinidade de dispositivo do utilizador no System Center Configuration Manager](../../../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md).  
+
+-   **Interfaces de rede**: Especifique que o ponto de distribuição responde a pedidos PXE de todas as interfaces de rede ou de interfaces de rede específicas. Se o ponto de distribuição responda a interfaces de rede específico, tem de fornecer o endereço MAC para cada interface de rede.  
+
+-   **Especificar o atraso da resposta do servidor PXE (segundos)**: Especifique em segundos o tempo de atraso do ponto de distribuição antes de responder a pedidos do computador quando são utilizados vários pontos de distribuição preparados para PXE. Por predefinição, o ponto de serviço PXE do Configuration Manager responde primeiro a pedidos PXE.  
+
+> [!NOTE]  
+>  Pode utilizar o protocolo PXE para iniciar as implementações de sistema operativo para computadores de cliente do Configuration Manager. Configuration Manager utiliza a função de site do ponto de distribuição com PXE ativado para iniciar o processo de implementação do sistema operativo. O ponto de distribuição com PXE ativado deve ser configurado para:
 >
-> 1. Odpowiadanie na żądania rozruchu środowiska PXE, które klientów programu Configuration Manager w sieci.
-> 2. Interakcje z infrastrukturą programu Configuration Manager, aby określić, jakie akcje wdrażania należy podjąć.  
+> 1. Responda a pedidos de arranque PXE, que clientes do Configuration Manager na rede.
+> 2. Interagir com a infraestrutura do Configuration Manager para determinar as ações de implementação adequada.  
 
-### <a name="multicast"></a>Multiemisji  
-Określ, czy włączyć obsługę multiemisji w punkcie dystrybucji. Po włączeniu obsługi multiemisji, Configuration Manager instaluje usługi wdrażania systemu Windows na serwerze, jeśli jest to wymagane.  
+### <a name="multicast"></a>Multicast  
+Especifique se pretende ativar o multicast no ponto de distribuição. Quando ativa o multicast, Configuration Manager instala os serviços de implementação do Windows no servidor, se necessário.  
 
-Sprawdzenie **Włącz multiemisję w celu jednoczesnego wysyłania danych do wielu klientów** skonfiguruj następujące ustawienia:  
+Quando seleciona o **ativar multicast para enviar dados em simultâneo a múltiplos clientes** caixa, configure as seguintes definições:  
 
--   **Konto połączenia multiemisji**: Określ konto do użycia podczas konfigurowania połączenia z bazą danych programu Configuration Manager do multiemisji.  
+-   **Conta de ligação de multicast**: Especifique a conta a utilizar quando configurar ligações de base de dados do Configuration Manager para multicast.  
 
--   **Ustawienia adresu multiemisji**: Określ adresy IP do wysyłania danych do komputerów docelowych. Domyślnie adres IP jest pobierany z serwera DHCP, na którym jest włączona funkcja dystrybucji adresów multiemisji. W zależności od środowiska sieciowego można określić zakres adresów IP od 239.0.0.0 do 239.255.255.255.  
-
-    > [!IMPORTANT]  
-    >  Należy skonfigurować adresy IP muszą być dostępne dla komputerów docelowych, które żądają obrazu systemu operacyjnego. Sprawdź, czy routery i zapory zezwalają na ruch multiemisji między komputerem docelowym a serwerem lokacji.  
-
--   **Zakres portów UDP dla multiemisji**: Określ porty zakresu z User Datagram Protocol (UDP), które są używane do wysyłania danych do komputerów docelowych.  
+-   **Definições de endereço multicast**: Especifique os endereços IP para enviar dados para os computadores de destino. Por predefinição, o endereço IP é obtido a partir de um servidor DHCP que se encontra ativado para distribuir endereços multicast. Dependendo do ambiente de rede, pode especificar um intervalo de endereços IP da 239.0.0.0 através de 239.255.255.255.  
 
     > [!IMPORTANT]  
-    >  Porty UDP muszą być dostępne dla komputerów docelowych, które żądają obrazu systemu operacyjnego. Sprawdź, czy routery i zapory zezwalają na ruch multiemisji między komputerem docelowym a serwerem lokacji.  
+    >  Os endereços IP que configura devem ser acessíveis aos computadores de destino que pedem a imagem do sistema operativo. Certifique-se de que os routers e firewalls permitem tráfego multicast entre o computador de destino e o servidor do site.  
 
--   **Szybkość przesyłu klientów**: Wybierz szybkość transferu, który służy do pobierania danych do komputerów docelowych.  
+-   **Intervalo de portas UDP para multicast**: Especifique o intervalo de utilizador Datagram Protocol (UDP) de portas que são utilizadas para enviar dados para os computadores de destino.  
 
--   **Maksymalna liczba klientów**: Określ maksymalną liczbę komputerów docelowych, które mogą pobierać system operacyjny z tego punktu dystrybucji.  
+    > [!IMPORTANT]  
+    >  As portas UDP devem ser acessíveis aos computadores de destino que pedem a imagem do sistema operativo. Certifique-se de que os routers e firewalls permitem tráfego multicast entre o computador de destino e o servidor do site.  
 
--   **Włącz zaplanowaną multiemisję**: Określ, jak programu Configuration Manager sterować uruchamianiem wdrażania systemów operacyjnych na komputerach docelowych. Skonfiguruj następujące opcje:  
+-   **Velocidade de transferência do cliente**: Selecione a velocidade de transferência que é utilizada para transferir dados para os computadores de destino.  
 
-    -   **Opóźnienie rozpoczęcia sesji (minuty)**: Określ liczbę minut, przez które programu Configuration Manager czeka przed nią odpowiada na pierwsze żądanie wdrożenia.  
+-   **Máximo de clientes**: Especifique o número máximo de computadores de destino que pode transferir o sistema operativo a partir deste ponto de distribuição.  
 
-    -   **Minimalna wielkość sesji (liczba klientów)**: Określ, ile żądań musi odebrać przed uruchomieniem programu Configuration Manager do wdrażania systemu operacyjnego.  
+-   **Ativar multicast agendado**: Especifique como o Configuration Manager controla quando iniciar a implementação de sistemas operativos em computadores de destino. Configure as seguintes opções:  
 
-> [!NOTE]  
->  Wdrożenia multiemisyjne oszczędzenia przepustowości sieci przez wysyłają dane jednocześnie do wielu klientów programu Configuration Manager, zamiast wysyłać kopię danych do każdego klienta przez oddzielne połączenie. Aby uzyskać więcej informacji o używaniu multiemisji do wdrażania systemu operacyjnego, zobacz [użyć multiemisji do wdrażania systemu Windows za pośrednictwem sieci w programie System Center Configuration Manager](../../../../osd/deploy-use/use-multicast-to-deploy-windows-over-the-network.md).  
+    -   **Atraso (minutos) de início de sessão**: Especifique o número de minutos do Configuration Manager aguarda antes de este responder ao primeiro pedido de implementação.  
 
-### <a name="group-relationships"></a>Relacje grupy  
-
-> [!NOTE]  
->  Te opcje są dostępne tylko podczas edytowania właściwości uprzednio zainstalowanego punktu dystrybucji.  
-
-Zarządzanie grupami punktów dystrybucji, których członkiem jest ten punkt dystrybucji.  
-
-Aby dodać ten punkt dystrybucji jako członka do istniejącej grupy punktów dystrybucji, wybierz **Dodaj**. Wybierz istniejącą grupę punktów dystrybucji na liście w **dodać do grupy punktów dystrybucji** okna dialogowego polu, a następnie wybierz pozycję **OK**.  
-
-Aby usunąć ten punkt dystrybucji z grupy punktów dystrybucji, wybierz grupę punktów dystrybucji na liście, a następnie wybierz pozycję **Usuń**.  
-
-### <a name="content"></a>Zawartość  
+    -   **Tamanho mínimo da sessão (clientes)**: Especifique o número de pedidos deve ser recebido antes de começar a Configuration Manager implementar o sistema operativo.  
 
 > [!NOTE]  
->  Te opcje są dostępne tylko podczas edytowania właściwości uprzednio zainstalowanego punktu dystrybucji.  
+>  As implementações multicast conservam a largura de banda de rede ao enviarem dados simultaneamente a múltiplos clientes do Configuration Manager em vez de enviarem uma cópia dos dados para cada cliente através de uma ligação separada. Para obter mais informações sobre a utilização de multicast para implementação do sistema operativo, consulte [utilizar multicast para implementar o Windows através da rede com o System Center Configuration Manager](../../../../osd/deploy-use/use-multicast-to-deploy-windows-over-the-network.md).  
 
-Zarządzanie zawartości dystrybuowanej do punktu dystrybucji. **Pakiety wdrożeniowe** sekcja zawiera listę pakietów do tego punktu dystrybucji. Możesz wybrać pakiet z listy i wykonaj następujące czynności:  
+### <a name="group-relationships"></a>Relações de grupo  
 
--   **Sprawdź poprawność**: Uruchamia procesy weryfikacji integralność plików zawartości w pakiecie. Aby wyświetlić wyniki procesu weryfikacji zawartości w **monitorowanie** obszaru roboczego, rozwiń węzeł **stan dystrybucji**, a następnie wybierz pozycję **stan zawartości** węzła.  
+> [!NOTE]  
+>  Estas opções estão disponíveis apenas quando estiver a editar as propriedades de um ponto de distribuição anteriormente instalado.  
 
--   **Ponowna dystrybucja**: Kopiuje wszystkie pliki zawartości w pakiecie do punktu dystrybucji i zastępuje istniejące pliki. Ta akcja jest zazwyczaj służy do naprawienia plików zawartości w pakiecie.  
+Gerir os grupos de pontos de distribuição nos quais este ponto de distribuição é membro.  
 
--   **Usuń**: Usuwa pliki zawartości z punktu dystrybucji dla pakietu.  
+Para adicionar este ponto de distribuição como um membro a um grupo de pontos de distribuição existente, escolha **adicionar**. Selecione um grupo de ponto de distribuição existente na lista no **adicionar a grupos de pontos de distribuição** diálogo caixa e, em seguida, escolha **OK**.  
 
-### <a name="content-validation"></a>Sprawdzanie poprawności zawartości  
-Określ, czy skonfigurować harmonogram, aby zweryfikować integralność plików zawartości w punkcie dystrybucji. Po włączeniu weryfikacji zawartości zgodnie z harmonogramem, programu Configuration Manager rozpoczyna proces w zaplanowanym czasie, a cała zawartość w punkcie dystrybucji zostanie poddana weryfikacji. Można również skonfigurować priorytet weryfikacji zawartości. Domyślnie priorytet ma ustawioną **najniższy**.  
+Para remover este ponto de distribuição de um grupo de pontos de distribuição, selecione o grupo de pontos de distribuição na lista e, em seguida, escolha **remover**.  
 
-Aby wyświetlić wyniki procesu weryfikacji zawartości w **monitorowanie** obszaru roboczego, rozwiń węzeł **stan dystrybucji**, a następnie wybierz pozycję **stan zawartości** węzła. Jest wyświetlana zawartość poszczególnych typów pakietu (na przykład aplikacja, pakiet aktualizacji oprogramowania i obraz rozruchowy).  
+### <a name="content"></a>Conteúdo  
+
+> [!NOTE]  
+>  Estas opções estão disponíveis apenas quando estiver a editar as propriedades de um ponto de distribuição anteriormente instalado.  
+
+Gerir o conteúdo que tenha sido distribuído ao ponto de distribuição. O **pacotes de implementação** secção fornece uma lista dos pacotes distribuídos a este ponto de distribuição. Pode selecionar um pacote a partir da lista e efetuar as seguintes ações:  
+
+-   **Validar**: Inicia o processo para validar a integridade dos ficheiros de conteúdo no pacote. Para ver os resultados do processo de validação de conteúdo, no **monitorização** área de trabalho, expanda **estado da distribuição**e, em seguida, escolha o **estado do conteúdo** nós.  
+
+-   **Redistribuir**: Copia todos os ficheiros de conteúdo no pacote para o ponto de distribuição e substitui os ficheiros existentes. Esta ação é normalmente utilizada para reparar ficheiros de conteúdo no pacote.  
+
+-   **Remover**: Remove os ficheiros de conteúdo do ponto de distribuição para o pacote.  
+
+### <a name="content-validation"></a>Validação de conteúdo  
+Especifique se pretende definir uma agenda para validar a integridade dos ficheiros de conteúdo no ponto de distribuição. Quando ativa a validação de conteúdo com base numa agenda, o Configuration Manager inicia o processo à hora agendada e todo o conteúdo no ponto de distribuição é verificado. Também pode configurar a prioridade de validação de conteúdos. Por predefinição, a prioridade é definida **mais baixa**.  
+
+Para ver os resultados do processo de validação de conteúdo, no **monitorização** área de trabalho, expanda **estado da distribuição**e, em seguida, escolha o **estado do conteúdo** nós. O conteúdo para cada tipo de pacote (por exemplo, aplicação, pacote de atualização de software e imagem de arranque) é apresentado.  
 
 > [!WARNING]  
->  Mimo że można określić harmonogramu weryfikacji zawartości przy użyciu czasu lokalnego na komputerze, konsola programu Configuration Manager zawiera harmonogram w formacie UTC.  
+>  Embora especificar a agenda de validação de conteúdo utilizando a hora local para o computador, a consola do Configuration Manager mostra a agenda em UTC.  
 
-### <a name="boundary-group"></a>Grupy granic  
-Zarządzanie grupami granic, do których jest przypisany ten punkt dystrybucji. Grupy granic można skojarzyć z punktem dystrybucji. Podczas wdrażania zawartości klienci muszą być w grupie granic skojarzonej z punktem dystrybucji można używać go jako źródłowej lokalizacji zawartości.
+### <a name="boundary-group"></a>Grupo de limites  
+Gira os grupos de limites aos quais este ponto de distribuição está atribuído. Pode associar grupos de limites com um ponto de distribuição. Durante a implementação de conteúdos, os clientes devem estar no grupo de limites com o ponto de distribuição para utilizá-la como uma localização de origem para o conteúdo.
 
-Dodatkowo:
+Além disso,
 
-- Przed wersją 1610, można sprawdzić **Zezwalaj klientom na używanie tego systemu lokacji jako rezerwowej lokalizacji źródła zawartości** pole, aby umożliwić klientom spoza grup granic na rezerwowe używanie punktu dystrybucji jako lokalizacji źródłowej zawartości, jeśli preferowane punkty dystrybucji nie są dostępne. Aby uzyskać więcej informacji o grupach granic, zobacz [grup granic dla wersji 1511, 1602 i 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606). Do preferowanych punktów dystrybucji, zobacz [podstawowe pojęcia związane z zarządzaniem zawartością w programie System Center Configuration Manager](../../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md).
+- Antes de versão 1610, pode verificar o **permitir que os clientes utilizem este sistema de sites como uma localização de origem de contingência para conteúdo** caixa para permitir que os clientes fora destes grupos de limites de contingência e utilizem o ponto de distribuição como uma localização de origem de conteúdo quando não houver outros pontos de distribuição disponíveis. Para obter mais informações sobre grupos de limites, consulte [grupos de limites para as versões 1511, 1602 e 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606). Para pontos de distribuição preferenciais, consulte [conceitos fundamentais da gestão de conteúdos no System Center Configuration Manager](../../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md).
 
-- Z wersji 1610 lub nowszej, skonfiguruj grupy granic *relacje* definiującą po i do grupy granic, które klient może przełączyć się na znajdowanie zawartości. Aby uzyskać więcej informacji, zobacz [grup granic](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
+- Com a versão 1610 ou posterior, pode configura o grupo de limites *relações* que define os grupos de limites e quando um cliente pode reverter para localizar o conteúdo. Para obter mais informações, consulte [grupos de limites](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
 
 
-### <a name="schedule"></a>Harmonogram  
+### <a name="schedule"></a>Agenda  
 
 > [!NOTE]  
->  Te opcje są dostępne tylko podczas edytowania właściwości uprzednio zainstalowanego punktu dystrybucji.  
+>  Estas opções estão disponíveis apenas quando estiver a editar as propriedades de um ponto de distribuição anteriormente instalado.  
 
 > [!TIP]  
->  Ta karta jest dostępna tylko podczas edytowania właściwości punktu dystrybucji, sterowanym zdalnie z komputera serwera lokacji.  
+>  Este separador só está disponível quando edita as propriedades para um ponto de distribuição que esteja remotos a partir do computador do servidor do site.  
 
- Określ, czy skonfigurować harmonogram ograniczający podczas przesyłania danych programu Configuration Manager do punktu dystrybucji.  
+ Especifique se pretende configurar uma agenda que restringe quando o Configuration Manager pode transferir dados para o ponto de distribuição.  
 
 > [!IMPORTANT]  
->  Harmonogram jest oparty na strefie czasowej witryny wysyłania, a nie punktu dystrybucji.  
+>  A agenda baseia-se no fuso horário do site de envio, não o ponto de distribuição.  
 
-Aby ograniczyć dane, wybierz okres, a następnie wybierz jedną z następujących ustawień **dostępności**:  
+Para restringir dados, selecione o período de tempo e, em seguida, escolha uma das seguintes definições para **disponibilidade**:  
 
--   **Otwarty dla wszystkich priorytetów**: Określa, że programu Configuration Manager wysyła dane do punktu dystrybucji bez żadnych ograniczeń.  
+-   **Aberto para todas as prioridades**: Especifica que o Configuration Manager envia dados para o ponto de distribuição sem restrições.  
 
--   **Zezwalaj na Średni i wysoki priorytet**: Określa, że programu Configuration Manager przesyłał do punktu dystrybucji jedynie dane średnim i wysokim priorytecie.  
+-   **Permitir a prioridade média e alta**: Especifica que o Configuration Manager envia apenas dados de prioridade média e alta prioridade para o ponto de distribuição.  
 
--   **Zezwalaj tylko na wysoki priorytet**: Określa, że programu Configuration Manager wysyła dane tylko o wysokim priorytecie, punkt dystrybucji.  
+-   **Permitir apenas alta prioridade**: Especifica que o Configuration Manager envia dados de apenas alta prioridade para o ponto de distribuição.  
 
--   **Zamknięte**: Określa, że Menedżer konfiguracji nie wysyła żadnych danych do punktu dystrybucji.  
+-   **Fechado**: Especifica que o Configuration Manager não envia quaisquer dados para o ponto de distribuição.  
 
-Można ograniczyć dane według priorytetu lub zamknąć połączenie na wybrany okres.  
+Pode restringir os dados por prioridade ou fechar a ligação para períodos de tempo selecionado.  
 
-### <a name="rate-limits"></a>Limity szybkości  
+### <a name="rate-limits"></a>Limites de velocidade  
 
 > [!NOTE]  
->  Te opcje są dostępne tylko podczas edytowania właściwości uprzednio zainstalowanego punktu dystrybucji.  
+>  Estas opções estão disponíveis apenas quando estiver a editar as propriedades de um ponto de distribuição anteriormente instalado.  
 
 > [!TIP]  
->  Ta karta jest dostępna tylko podczas edytowania właściwości punktu dystrybucji, sterowanym zdalnie z komputera serwera lokacji.  
+>  Este separador só está disponível quando edita as propriedades para um ponto de distribuição que esteja remotos a partir do computador do servidor do site.  
 
-Określ, czy skonfigurować limity szybkości do kontroli przepustowości sieci, który jest używany w przypadku programu Configuration Manager jest przesyłania zawartości do punktu dystrybucji. Można wybrać następujące opcje:  
+Especifique se pretende configurar limites de velocidade para controlar a largura de banda de rede que está a ser utilizado quando o Configuration Manager está a transferir conteúdo para o ponto de distribuição. Pode selecionar de entre as seguintes opções:  
 
--   **Bez ograniczeń przy wysyłaniu do tego miejsca docelowego**: Ta opcja określa, że Menedżera konfiguracji wysyła zawartość do punktu dystrybucji bez żadnych limitów szybkości.  
+-   **Ilimitada ao enviar para este destino**: Esta opção especifica que o Configuration Manager envia conteúdo ao ponto de distribuição sem restrições de limite de taxa.  
 
--   **Tryb impulsu**: Ta opcja określa rozmiar bloków danych wysyłanych do punktu dystrybucji. Można również określić opóźnienie między wysłaniem kolejnych bloków danych. Użyj tej opcji, po wysłaniu danych przez połączenie sieciowe o bardzo niskiej przepustowości do punktu dystrybucji. Może na przykład ustawić ograniczenie zezwalające na przesyłanie 1 KB danych co pięć sekund, niezależnie od szybkości łącza lub jego obciążenia w danym momencie.  
+-   **Modo de impulso**: Esta opção especifica o tamanho dos blocos de dados que são enviados para o ponto de distribuição. Também pode especificar um atraso de tempo entre o envio de cada bloco de dados. Utilize esta opção quando tiver de enviar dados através de uma ligação de rede muito pouca largura de banda para o ponto de distribuição. Por exemplo, poderá ter limitações para enviar 1 KB de dados a cada cinco segundos, independentemente da velocidade da ligação ou da respetiva utilização num determinado momento.  
 
--   **Ograniczone do podanych maksymalnych szybkości transferu wg godziny**: Określ to ustawienie, aby dane były wysyłane do punktu dystrybucji przy użyciu tylko procent czasu, które można skonfigurować. Tej opcji programu Configuration Manager nie będzie rozpoznawał dostępnej przepustowości sieci, ale podzieli dostępny czas przesyłania danych. Następnie dane są wysyłane przez krótki czas, po której następuje przedziałów czasu, gdy dane nie są wysyłane. Na przykład maksymalna szybkość wynosi **50%**, programu Configuration Manager nieprzesyłania danych przez sam okres czasu, gdy żadne dane nie są wysyłane. Zarządzanie nie dotyczy rzeczywistej ilości danych lub rozmiaru bloku danych, lecz jedynie czasu przesyłania danych.  
+-   **Limitado a velocidades máximas de transferência especificado por hora**: Especifique esta definição para que um site envie dados para um ponto de distribuição utilizando apenas a percentagem de tempo que configurar. Quando utilizar esta opção, o Configuration Manager não identifica a largura de banda disponível da rede, mas em vez disso, divide o tempo que pode enviar dados. Em seguida, os dados são enviados por um curto bloco de tempo, o que é seguido de blocos de tempo quando não são enviados dados. Por exemplo, se a velocidade máxima for definida como **50%**, Configuration Manager transmite dados durante um período de tempo seguido por um período de tempo quando não são enviados dados igual. A quantidade real de dados ou o tamanho do bloco de dados não são geridos. Em vez disso, apenas é gerida a quantidade de tempo durante a qual são enviados dados.  

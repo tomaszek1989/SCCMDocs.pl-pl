@@ -1,6 +1,6 @@
 ---
-title: "Migracja obiektów | Dokumentacja firmy Microsoft"
-description: "Dowiedz się, jak planowanie migracji obiektów między hierarchiami w środowisku programu System Center Configuration Manager."
+title: Migrar objetos | Microsoft Docs
+description: "Saiba como planear a migração de objetos entre hierarquias num ambiente do System Center Configuration Manager."
 ms.custom: na
 ms.date: 1/12/2017
 ms.prod: configuration-manager
@@ -18,170 +18,170 @@ manager: angrobe
 ms.openlocfilehash: 17f3955aa7c63a13bab03b46002f7de0b0ec38fe
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pl-PL
+ms.contentlocale: pt-PT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-for-the-migration-of-configuration-manager-objects-to-system-center-configuration-manager"></a>Planowanie migracji obiektów programu Configuration Manager do programu System Center Configuration Manager
+# <a name="plan-for-the-migration-of-configuration-manager-objects-to-system-center-configuration-manager"></a>Planear a migração de objetos do Configuration Manager para o System Center Configuration Manager
 
-*Dotyczy: Program System Center Configuration Manager (Current Branch)*
+*Aplica-se a: O System Center Configuration Manager (ramo atual)*
 
-Z programem System Center Configuration Manager można migrować wiele różnych obiektów, które są skojarzone z różnymi funkcjami znalezionymi w lokacji źródłowej. Informacje w poniższych sekcjach ułatwią planowanie migracji obiektów między hierarchiami.  
+Com o System Center Configuration Manager, é possível migrar muitos dos diversos objetos associados às diferentes funcionalidades presentes num site de origem. Utilize as secções seguintes para o ajudar a planear a migração de objetos entre hierarquias.  
 
--   [Planowanie migracji aktualizacji oprogramowania](#Plan_migrate_Software_updates)  
+-   [Planear a migração de atualizações de software](#Plan_migrate_Software_updates)  
 
--   [Planowanie migracji zawartości](#Plan_Migrate_content)  
+-   [Planear a migração de conteúdo](#Plan_Migrate_content)  
 
--   [Planowanie migracji kolekcji](#BKMK_MigrateCollections)  
+-   [Planear a migração de coleções](#BKMK_MigrateCollections)  
 
--   [Planowanie migracji wdrożeń systemu operacyjnego](#Plan_migrate_OSD)  
+-   [Planear a migração de implementações do sistema operativo](#Plan_migrate_OSD)  
 
--   [Planowanie migracji zarządzania wymaganą konfiguracją](#Plan_Migrate_Compliance_settings)  
+-   [Planear a migração da gestão de configuração pretendida](#Plan_Migrate_Compliance_settings)  
 
--   [Planowanie migracji granic](#Plan_migrate_Boundaries)  
+-   [Planear a migração de limites](#Plan_migrate_Boundaries)  
 
--   [Planowanie migracji raportów](#Plan_Migrate_reports)  
+-   [Planear a migração de relatórios](#Plan_Migrate_reports)  
 
--   [Planowanie migracji folderów wyszukiwania i organizacyjnych](#Plan_Migrate_Org_Folders)  
+-   [Planear a migração organizacionais e pastas de procura](#Plan_Migrate_Org_Folders)  
 
--   [Planowanie migracji dostosowań analizy zasobów](#Plan_Migrate_AI)  
+-   [Planear a migração de personalizações do Asset Intelligence](#Plan_Migrate_AI)  
 
--   [Planowanie migracji dostosowań reguł pomiaru użytkowania oprogramowania](#Plan_Migrate_SWM_Rules)  
+-   [Planear a migração de personalizações de regras de medição de software](#Plan_Migrate_SWM_Rules)  
 
-##  <a name="Plan_migrate_Software_updates"></a>Planowanie migracji aktualizacji oprogramowania  
- Można migrować obiekty aktualizacji oprogramowania, takie jak pakiety aktualizacji oprogramowania i wdrożenia aktualizacji oprogramowania.  
+##  <a name="Plan_migrate_Software_updates"></a>Planear a migração de atualizações de software  
+ Pode migrar objetos de atualização de software, como implementações de atualizações de software e os pacotes de atualização de software.  
 
- Aby pomyślnie migrować obiekty aktualizacji oprogramowania, należy najpierw skonfigurować hierarchię docelową z konfiguracjami, które odpowiadają środowiskiem hierarchii źródłowej. Wymaga to wykonania następujących akcji:  
+ Para migrar com êxito objetos de atualização de software, tem de configurar primeiro a hierarquia de destino com configurações que correspondam ao ambiente da hierarquia de origem. Isso requer as seguintes ações:  
 
--   Wdrażanie aktywnego punktu aktualizacji oprogramowania w hierarchii docelowej  
+-   Implementar um ponto de atualização de software ativo na hierarquia de destino  
 
--   Konfigurowanie katalogu produktów i języków odpowiadający konfiguracji hierarchii źródłowej  
+-   Configurar o catálogo de produtos e idiomas para corresponderem à configuração da hierarquia de origem  
 
--   Synchronizacji punktu aktualizacji oprogramowania w hierarchii docelowej z systemu Windows Server Update Services (WSUS)  
+-   Sincronizar o ponto de atualização de software na hierarquia de destino com o Windows Server Update Services (WSUS)  
 
-Podczas migracji aktualizacji oprogramowania należy uwzględnić następujące kwestie:  
+Ao migrar atualizações de software, tenha em consideração:  
 
--   Migracja obiektów aktualizacji oprogramowania może zakończyć się niepowodzeniem, gdy informacje nie zostały zsynchronizowane w hierarchii docelowej odpowiadający konfiguracji hierarchii źródłowej.  
+-   Migração de objetos de atualização de software pode falhar quando não tiver sincronizado informações na sua hierarquia de destino para corresponderem à configuração da hierarquia de origem.  
 
     > [!WARNING]  
-    >  Menedżer konfiguracji nie obsługuje użycia narzędzia WSUSutil do synchronizacji danych między hierarchią źródłową i docelową.  
+    >  O Configuration Manager não suporta a utilização da ferramenta WSUSutil para sincronizar os dados entre uma hierarquia de origem e de destino.  
 
--   Nie można migrować aktualizacji niestandardowych opublikowanych przy użyciu programu System Center Updates Publisher. Zamiast tego należy ponownie opublikować aktualizacje niestandardowe w hierarchii docelowej.  
+-   Não é possível migrar atualizações personalizadas que tenham sido publicadas utilizando o System Center Updates Publisher. Em vez disso, as atualizações personalizadas devem ser republicadas na hierarquia de destino.  
 
-W przypadku migracji z hierarchii źródłowej programu Configuration Manager 2007, proces migracji modyfikuje niektóre obiekty aktualizacji oprogramowania do formatu używanego przez hierarchię docelową. Skorzystaj z poniższej tabeli ułatwią planowanie migracji obiektów aktualizacji oprogramowania z programu Configuration Manager 2007.  
+Quando migra de uma hierarquia de origem do Configuration Manager 2007, o processo de migração modifica alguns objetos de atualização de software para o formato utilizado pela hierarquia de destino. Utilize a tabela seguinte para ajudar a planear a migração de objetos de atualização de software do Configuration Manager 2007.  
 
-|Obiekt programu Configuration Manager 2007|Nazwa obiektu po migracji|  
+|Objeto do Configuration Manager 2007|Nome do objeto após a migração|  
 |-----------------------------------|---------------------------------|  
-|Listy aktualizacji oprogramowania|Listy aktualizacji oprogramowania są konwertowane na grupy aktualizacji oprogramowania.|  
-|Wdrożenia aktualizacji oprogramowania|Wdrożenia aktualizacji oprogramowania są konwertowane na wdrożenia i grupy aktualizacji.<br /><br /> Po przeprowadzeniu migracji wdrożenia aktualizacji oprogramowania z programu Configuration Manager 2007, należy włączyć ją w hierarchii docelowej przed jego wdrożeniem.|  
-|Pakiety aktualizacji oprogramowania|Pakiety aktualizacji oprogramowania nie ulegają zmianie.|  
-|Szablony aktualizacji oprogramowania|Szablony aktualizacji oprogramowania nie ulegają zmianie.<br /><br /> **Czas trwania** wartość w szablonach wdrożenia programu Configuration Manager 2007 nie może przeprowadzić migracji.|  
+|Listas de atualização de software|As listas de atualização de software são convertidas em grupos de atualização de software.|  
+|Implementações de atualizações de software|As implementações de atualização de software são convertidas em implementações e grupos de atualização.<br /><br /> Depois de migrar uma implementação de atualização de software do Configuration Manager 2007, tem de ativá-la na hierarquia de destino antes de poder implementá-la.|  
+|Pacotes de atualização de software|Os pacotes de atualização de software mantêm a mesma designação.|  
+|Modelos de atualização de software|Os modelos de atualização de software mantêm a sua designação.<br /><br /> O **duração** valor em modelos de implementação do Configuration Manager 2007 não são migrados.|  
 
-Przy migracji obiektów z hierarchii źródłowej programu System Center 2012 Configuration Manager lub System Center Configuration Manager, obiekty aktualizacji oprogramowania nie są modyfikowane.  
+Quando migra objetos de uma hierarquia de origem do System Center 2012 Configuration Manager ou System Center Configuration Manager, os objetos de atualizações de software não são modificados.  
 
-##  <a name="Plan_Migrate_content"></a>Planowanie migracji zawartości  
- Zawartość można migrować z obsługiwanej hierarchii źródłowej do hierarchii docelowej. Dla hierarchii źródłowej programu Configuration Manager 2007 ta zawartość obejmuje pakiety dystrybucji oprogramowania oraz programy i aplikacje wirtualne, takie jak Microsoft Application Virtualization (App-V). Dla programu System Center 2012 Configuration Manager i System Center Configuration Manager hierarchii źródłowej ta zawartość obejmuje aplikacje i aplikacje wirtualne App-V. Podczas migrowania zawartości między hierarchiami, skompresowane pliki źródłowe migracji do hierarchii docelowej.  
+##  <a name="Plan_Migrate_content"></a>Planear a migração de conteúdo  
+ É possível migrar conteúdo de uma hierarquia de origem suportada para a hierarquia de destino. Para uma hierarquia de origem do Configuration Manager 2007, este conteúdo inclui pacotes de distribuição de software, programas e aplicações virtuais, como o Microsoft Application Virtualization (App-V). Para hierarquias de origem do System Center 2012 Configuration Manager e o System Center Configuration Manager, este conteúdo inclui aplicações e aplicações virtuais App-V. Ao migrar conteúdo entre hierarquias, os ficheiros de origem comprimidos migrar para a hierarquia de destino.  
 
-### <a name="packages-and-programs"></a>Pakiety i programy  
- Migracja nie powoduje modyfikacji pakietów i programów. Jednakże przed ich migracją, należy skonfigurować każdy pakiet korzystającej ze ścieżki Universal Naming Convention (UNC) do lokalizacji pliku źródłowego. W ramach konfigurowania migracji pakietów i programów należy przypisać w hierarchii docelowej lokację, która będzie zarządzać tą zawartością. Zawartość nie jest migrowana z przypisanej lokacji, ale po migracji, przypisana lokacja uzyskuje dostęp do lokalizacji oryginalnych plików źródłowych przy użyciu mapowania UNC.  
+### <a name="packages-and-programs"></a>Pacotes e programas  
+ Ao migrar pacotes e programas, estes não são modificados pela migração. No entanto, antes de as migrar, tem de configurar cada pacote para utilizar um caminho de convenção de Nomenclatura Universal (UNC) para a localização do ficheiro de origem. Como parte da configuração para migrar pacotes e programas, terá de atribuir um site na hierarquia de destino para gerir este conteúdo. O conteúdo não é migrado do site atribuído, mas após a migração, o site atribuído acede a localização do ficheiro de origem original utilizando o mapeamento UNC.  
 
- Po przeprowadzeniu migracji pakietu i programu do hierarchii docelowej, a podczas migracji z hierarchii źródłowej pozostaje aktywna, można udostępnić zawartość klientom w tej hierarchii przy użyciu współużytkowanego punktu dystrybucji. Aby można było użyć współużytkowanego punktu dystrybucji, zawartość musi pozostać dostępna w punkcie dystrybucji w lokacji źródłowej. Aby uzyskać więcej informacji o współużytkowanych punktów dystrybucji, zobacz [współużytkowane punkty dystrybucji między hierarchiami źródłową i docelową](../../core/migration/planning-a-content-deployment-migration-strategy.md#About_Shared_DPs_in_Migration) w [Planowanie strategii migracji wdrożenia zawartości w programie System Center Configuration Manager](../../core/migration/planning-a-content-deployment-migration-strategy.md).  
+ Depois de migrar um pacote e programa para a hierarquia de destino e enquanto a migração da hierarquia de origem permanece ativa, é possível disponibilizar o conteúdo aos clientes dessa hierarquia utilizando um ponto de distribuição partilhado. Para utilizar um ponto de distribuição partilhado, o conteúdo terá de permanecer acessível no ponto de distribuição do site de origem. Para mais informações sobre pontos de distribuição partilhados, consulte [partilhar pontos de distribuição entre hierarquias de origem e destino](../../core/migration/planning-a-content-deployment-migration-strategy.md#About_Shared_DPs_in_Migration) no [planear uma estratégia de migração de implementação de conteúdos no System Center Configuration Manager](../../core/migration/planning-a-content-deployment-migration-strategy.md).  
 
- Dla zawartości migrowanej, jeśli zmiany wersji zawartości w hierarchii źródłowej lub hierarchii docelowej, klienci nie jest już dostęp do zawartości ze współużytkowanego punktu dystrybucji w hierarchii docelowej. W tym scenariuszu należy ponownie migrować zawartość, aby przywrócić zgodny wersji pakietu między hierarchią źródłową i hierarchią docelową. Te informacje jest synchronizowane podczas cyklu zbierania danych.  
-
-> [!TIP]  
->  Dla każdego migrowanego pakietu zaktualizuj pakiet w hierarchii docelowej. Ta akcja może zapobiec problemom dotyczącym wdrażania pakietu w punktach dystrybucji w hierarchii docelowej. Jednak po zaktualizowaniu pakietu w punkcie dystrybucji w hierarchii docelowej, klienci w tej hierarchii nie będą już mieć możliwość pobrania tego pakietu ze współużytkowanego punktu dystrybucji. Aby zaktualizować pakiet w hierarchii docelowej, w konsoli programu Configuration Manager przejdź do biblioteki oprogramowania, kliknij prawym przyciskiem myszy pakiet, a następnie wybierz **Aktualizuj punkty dystrybucji**. Wykonaj tę akcję dla każdego migrowanego pakietu.  
+ Para o conteúdo que tenha migrado, se as alterações de versão do conteúdo na hierarquia de origem ou a hierarquia de destino, os clientes já não podem aceder ao conteúdo a partir do ponto de distribuição partilhado na hierarquia de destino. Neste cenário, terá de migrar novamente o conteúdo para restaurar uma versão consistente do pacote entre a hierarquia de origem e a hierarquia de destino. Estas informações sincroniza-se durante o ciclo de recolha de dados.  
 
 > [!TIP]  
->  Microsoft System Center Configuration Manager Package Conversion Manager można użyć w celu skonwertowania pakietów i programów do aplikacji programu System Center Configuration Manager. Program Package Conversion Manager można pobrać z witryny [Centrum pobierania Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=212950). Aby uzyskać więcej informacji, zobacz [Program Configuration Manager Package Conversion Manager](http://go.microsoft.com/fwlink/p/?LinkId=247245).  
+>  Por cada pacote que migrar, atualize o pacote na hierarquia de destino. Esta ação pode evitar problemas na implementação do pacote nos pontos de distribuição na hierarquia de destino. No entanto, quando atualizar um pacote no ponto de distribuição na hierarquia de destino, os clientes nessa hierarquia deixarão de ser capaz de obter esse pacote a partir de um ponto de distribuição partilhado. Para atualizar um pacote na hierarquia de destino, na consola do Configuration Manager, vá para a biblioteca de Software, faça duplo clique no pacote e, em seguida, selecione **atualizar pontos de distribuição**. Execute esta ação para cada pacote que migrar.  
 
-### <a name="virtual-applications"></a>Aplikacje wirtualne  
-Podczas migracji pakietów aplikacji App-V z obsługiwanej lokacji programu Configuration Manager 2007, proces migracji powoduje ich konwersję do aplikacji w hierarchii docelowej. Ponadto na podstawie istniejących anonsów pakietu aplikacji App-V, są tworzone następujące typy wdrożeń w hierarchii docelowej:  
+> [!TIP]  
+>  Pode utilizar a conversão de pacote de Gestor do Microsoft System Center Configuration Manager para converter pacotes e programas em aplicações do System Center Configuration Manager. Transfira o Package Conversion Manager a partir do site do [Centro de Transferências da Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=212950). Para obter mais informações, veja [Gestor de Conversão de Pacotes do Configuration Manager](http://go.microsoft.com/fwlink/p/?LinkId=247245).  
 
--   Jeżeli nie ma żadnych anonsów, tworzony jest jeden typ wdrożenia, który używa domyślnych ustawień typu wdrożenia.  
+### <a name="virtual-applications"></a>Aplicações virtuais  
+Quando migra pacotes de App-V de um site suportado do Configuration Manager 2007, o processo de migração converte-os em aplicações na hierarquia de destino. Além disso, com base nos anúncios existentes para o pacote de App-V, são criados os seguintes tipos de implementação na hierarquia de destino:  
 
--   Jeżeli istnieje jeden anons, tworzony jest jeden typ wdrożenia, który używa tych samych ustawień co anons programu Configuration Manager 2007.  
+-   Se não existirem anúncios, é criado um tipo de implementação que utilize as predefinições do tipo de implementação.  
 
--   Jeśli istnieje kilka anonsów, typ wdrożenia jest tworzony dla każdego anonsu programu Configuration Manager 2007, korzystając z ustawień tego anonsu.  
+-   Se existir um anúncio, é criado um tipo de implementação que utiliza as mesmas definições como o anúncio do Configuration Manager 2007.  
+
+-   Se existirem vários anúncios, é criado um tipo de implementação para cada anúncio do Configuration Manager 2007, utilizando as definições desse anúncio.  
 
 > [!IMPORTANT]  
->  Jeśli migracja uprzednio zmigrowanych pakietu programu Configuration Manager 2007 App-V, migracja nie powiedzie się, ponieważ pakiety aplikacji wirtualnej nie obsługują migracji zastępującej. W tym scenariuszu należy usunąć migrowany pakiet aplikacji wirtualnej z hierarchii docelowej, a następnie utworzyć nowe zadanie migracji w celu migracji aplikacji wirtualnej.  
+>  Se migrar um pacote de Configuration Manager 2007 App-V anteriormente migrado, a migração falhará porque os pacotes de aplicações virtuais não suportam o comportamento de migração de substituição. Neste cenário, terá de eliminar o pacote de aplicação virtual migrado da hierarquia de destino e, em seguida, criar uma nova tarefa de migração para migrar a aplicação virtual.  
 
 > [!NOTE]  
->  Po przeprowadzeniu migracji pakietu aplikacji App-V, służy Kreator aktualizacji zawartości można zmienić ścieżkę źródłową typów wdrożeń App-V. Aby uzyskać więcej informacji o sposobie aktualizowania zawartości dla typu wdrożenia, zobacz jak zarządzać typami wdrożeń w [zadania zarządzania dla aplikacji programu System Center Configuration Manager](../../apps/deploy-use/management-tasks-applications.md).  
+>  Depois de migrar um pacote de App-V, pode utilizar o Assistente de atualização de conteúdo para alterar o caminho de origem para os tipos de implementação de App-V. Para obter mais informações sobre como atualizar conteúdo para um tipo de implementação, consulte como gerir tipos de implementação [tarefas de gestão do System Center Configuration Manager aplicações](../../apps/deploy-use/management-tasks-applications.md).  
 
-W przypadku migracji z hierarchii źródłowej programu System Center 2012 Configuration Manager lub System Center Configuration Manager, można migrować obiekty dla środowiska wirtualnego App-V oprócz typów wdrożeń App-V i aplikacji. Aby uzyskać więcej informacji o środowiskach App-V, zobacz [aplikacje wirtualne App-V wdrażania z System Center Configuration Manager](../../apps/get-started/deploying-app-v-virtual-applications.md).  
+Quando migra de uma hierarquia de origem do System Center 2012 Configuration Manager ou System Center Configuration Manager, pode migrar objetos do ambiente virtual de App-V, além dos tipos de implementação de App-V e aplicações. Para obter mais informações sobre os ambientes App-V, consulte [aplicações virtuais do App-V implementar com o System Center Configuration Manager](../../apps/get-started/deploying-app-v-virtual-applications.md).  
 
-### <a name="advertisements"></a>Anonse  
-Anonse można migrować z obsługiwanej lokacji źródłowej programu Configuration Manager 2007 do hierarchii docelowej, używając migracji opartej na kolekcji. Po uaktualnieniu klienta zachowuje on historię poprzednio uruchomionych anonsów, aby zapobiec ponownemu uruchomieniu przez klienta migrowanych anonsów.  
+### <a name="advertisements"></a>Anúncios  
+Pode migrar anúncios a partir de um site de origem suportado do Configuration Manager 2007 para a hierarquia de destino utilizando a migração baseada em coleções. Se atualizar um cliente, este manterá o histórico dos anúncios anteriormente executados, para impedir que o cliente volte a executar os anúncios migrados.  
 
 > [!NOTE]  
->  Nie można migrować anonsów dla pakietów wirtualnych. Jest to wyjątek dotyczący migracji anonsów.  
+>  Não é possível migrar anúncios para pacotes virtuais. Esta é uma exceção à migração de anúncios.  
 
-### <a name="applications"></a>Aplikacje  
- Aplikacje można migrować z obsługiwanej hierarchii źródłowej programu System Center 2012 Configuration Manager lub System Center Configuration Manager do hierarchii docelowej. Po ponownym przypisaniu klienta z hierarchii źródłowej do hierarchii docelowej zachowuje on historię poprzednio zainstalowanych aplikacji, aby zapobiec ponownemu uruchomieniu migrowanych aplikacji.  
+### <a name="applications"></a>Aplicações  
+ Pode migrar aplicações de uma hierarquia de origem suportada do System Center 2012 Configuration Manager ou System Center Configuration Manager para uma hierarquia de destino. Se reatribuir um cliente da hierarquia de origem para a hierarquia de destino, o cliente manterá o histórico das aplicações anteriormente instaladas, para impedir que o cliente volte a executar as aplicações migradas.  
 
-##  <a name="BKMK_MigrateCollections"></a>Planowanie migracji kolekcji  
- Kryteria kolekcji można migrować z obsługiwanej hierarchii źródłowej programu System Center 2012 Configuration Manager lub System Center Configuration Manager. W tym celu należy użyć zadania migracji obiektów. Migracja kolekcji oznacza migrację jej zasad, a nie informacji o członkach kolekcji ani informacji lub obiektów dotyczących członków kolekcji.  
+##  <a name="BKMK_MigrateCollections"></a>Planear a migração de coleções  
+ Pode migrar os critérios de coleções de uma hierarquia de origem suportada do System Center 2012 Configuration Manager ou System Center Configuration Manager. Para tal, utilize uma tarefa de migração baseada em objetos. Ao migrar uma coleção migrará as respetivas regras, e não as informações sobre os membros da coleção nem as informações ou objetos relacionados com os membros da coleção.  
 
- Migracja obiektu kolekcji nie jest obsługiwana w przypadku migracji z hierarchii źródłowej programu Configuration Manager 2007.  
+ Migração de objeto da coleção não é suportada ao migrar a partir de uma hierarquia de origem do Configuration Manager 2007.  
 
-##  <a name="Plan_migrate_OSD"></a>Planowanie migracji wdrożeń systemu operacyjnego  
-Z obsługiwanej hierarchii źródłowej można migrować następujące obiekty wdrożenia systemu operacyjnego:  
+##  <a name="Plan_migrate_OSD"></a>Planear a migração de implementações do sistema operativo  
+É possível migrar os seguintes objetos de implementação de sistemas operativos a partir de uma hierarquia de origem suportada:  
 
--   Obrazy i pakiety systemów operacyjnych. Ścieżka źródłowa obrazów rozruchowych jest aktualizowane do domyślnej lokalizacji obraz dla systemu Windows administracyjne zestawie instalacji (systemu Windows Windows AIK) w lokacji docelowej. Poniżej przedstawiono wymagania i ograniczenia dotyczące migracji obrazów i pakietów systemu operacyjnego:  
+-   Imagens e pacotes de sistemas operativos. O caminho de origem das imagens de arranque é atualizado para a localização da imagem predefinida para o Windows Administrative Installation Kit (Windows AIK) no site de destino. Eis os requisitos e limitações da migração de imagens e pacotes de sistemas operativos:  
 
-    -   Aby pomyślnie migrować pliki obrazów, konto komputera serwera dostawcy programu SMS dla lokacji najwyższego poziomu w hierarchii docelowej musi mieć **odczytu** i **zapisu** uprawnienia do plików źródłowych obrazu w lokacji źródłowej lokalizacji zestawu Windows AIK.  
+    -   Para migrar com êxito os ficheiros de imagem, a conta de computador do servidor do fornecedor de SMS para o site de nível superior da hierarquia de destino tem de ter **leitura** e **escrever** permissão para os ficheiros de origem da imagem da localização do Windows AIK do site de origem.  
 
-    -   Podczas migracji pakietu instalacji systemu operacyjnego, upewnij się, że konfiguracja pakietu lokacji źródłowej wskazuje folder zawierający plik WIM, a nie sam plik WIM. Jeżeli pakiet instalacji wskazuje plik WIM, migracja pakietu instalacji nie powiedzie się.  
+    -   Quando migra um pacote de instalação do sistema operativo, certifique-se de que a configuração do pacote nos pontos de site de origem para a pasta que tenha o ficheiro WIM e não no próprio ficheiro WIM. Se o pacote de instalação apontar para o ficheiro WIM, a migração do pacote de instalação falhará.  
 
-    -   Podczas migracji pakietu obrazu rozruchowego z lokacji źródłowej programu Configuration Manager 2007, identyfikator pakietu ID nie jest zachowywany w lokacji docelowej. Z tego powodu klienci w hierarchii docelowej nie mogą użyć pakietów obrazu rozruchowego dostępnych we współużytkowanych punktach dystrybucji.  
+    -   Quando migra um pacote de imagem de arranque a partir de um site de origem do Configuration Manager 2007, o ID de pacote do pacote não será mantido no site de destino. O resultado é que os clientes da hierarquia de destino não poderão utilizar pacotes de imagens de arranque que estejam disponíveis em pontos de distribuição partilhados.  
 
--   Sekwencje zadań. Podczas migracji sekwencji zadań, która zawiera odwołanie do pakietu instalacyjnego klienta tego odwołania jest zastępowany odwołanie do pakietu instalacyjnego klienta w hierarchii docelowej.  
+-   Sequências de tarefas. Quando migra uma sequência de tarefas que contém uma referência a um pacote de instalação de cliente, esse referência é substituída por uma referência ao pacote de instalação de cliente da hierarquia de destino.  
 
     > [!NOTE]  
-    >  Podczas migracji sekwencji zadań programu Configuration Manager może migrować obiekty, które nie są wymagane w hierarchii docelowej. Te obiekty obejmują obrazy rozruchowe i pakiety instalacyjne klienta programu Configuration Manager 2007.  
+    >  Quando migra uma sequência de tarefas, o Configuration Manager poderá migrar objetos que não sejam necessários na hierarquia de destino. Tais objetos incluem imagens de arranque e pacotes de instalação de cliente do Configuration Manager 2007.  
 
--   Sterowniki i pakiety sterowników. Podczas migracji pakietów sterowników, konto komputera dostawcy programu SMS w hierarchii docelowej musi mieć pełną kontrolę do źródła pakietu.
+-   Controladores e pacotes de controladores. Quando migra pacotes de controladores, a conta de computador do fornecedor de SMS da hierarquia de destino tem de ter controlo total para a origem do pacote.
 
-##  <a name="Plan_Migrate_Compliance_settings"></a>Planowanie migracji zarządzania wymaganą konfiguracją  
-Można migrować elementy konfiguracji i linie bazowe konfiguracji.  
-
-> [!NOTE]  
->  Niezinterpretowane elementy konfiguracji z hierarchii źródłowej programu Configuration Manager 2007 nie są obsługiwane przez migrację. Nie można migrować ani importować tych elementów konfiguracji do hierarchii docelowej. Aby uzyskać więcej informacji o niezinterpretowanych elementów konfiguracji, zobacz Niezinterpretowane elementy konfiguracji w [About Configuration Items in Desired Configuration Management](http://go.microsoft.com/fwlink/?LinkId=103846) w bibliotece dokumentacji programu Configuration Manager 2007.  
-
-Można importować pakiety konfiguracyjne programu Configuration Manager 2007. Proces importowania powoduje automatyczną konwersję pakiety konfiguracyjne, aby był zgodny z System Center Configuration Manager.  
-
-##  <a name="Plan_migrate_Boundaries"></a>Planowanie migracji granic  
- Granice można migrować między hierarchiami. Podczas migracji z programu Configuration Manager 2007, wszystkie granice z lokacji źródłowej są migrowane jednocześnie oraz dodawane do nowej grupy granic utworzonej w hierarchii docelowej. Podczas migracji z hierarchii programu System Center 2012 Configuration Manager lub System Center Configuration Manager, wszystkie granice, którą wybierzesz jest dodawany do nowej grupy granic w hierarchii docelowej.  
-
- Każda automatycznie utworzona grupa granic może być lokalizacją zawartości, jednak nie może być używana do przypisywania lokacji. Zapobiega to nakładaniu się granic podczas przypisywania lokacji między hierarchiami źródłową i docelową. W przypadku migracji z lokacji źródłowej programu Configuration Manager 2007, to zapobiega nowych klientów programu Configuration Manager 2007, które zainstalować nieprawidłowemu przypisywaniu do hierarchii docelowej. Domyślnie klienci programu System Center Configuration Manager nie są automatycznie przypisywani do lokacji programu Configuration Manager 2007.  
-
- Podczas migracji, jeśli współużytkujesz punkt dystrybucji z hierarchią docelową, wszystkie granice skojarzone z tą dystrybucją automatycznie migrują do hierarchii docelowej. W hierarchii docelowej proces migracji tworzy nową grupę granic tylko do odczytu dla każdego współużytkowanego punktu dystrybucji. Jeśli zmienisz granice punktu dystrybucji w hierarchii źródłowej, grupa granic w hierarchii docelowej zostanie zaktualizowana tymi zmianami podczas następnego cyklu zbierania danych.  
-
-##  <a name="Plan_Migrate_reports"></a>Planowanie migracji raportów  
-Menedżer konfiguracji nie obsługuje migracji raportów. W tej sytuacji raporty można eksportować z hierarchii źródłowej za pomocą narzędzia SQL Server Reporting Services Report Builder, a następnie zaimportować je do hierarchii docelowej.  
+##  <a name="Plan_Migrate_Compliance_settings"></a>Planear a migração da gestão de configuração pretendida  
+É possível migrar itens de configuração e linhas de base de configuração.  
 
 > [!NOTE]  
->  Ponieważ istnieją zmiany schematu dla między wersjami programu Configuration Manager 2007 i System Center Configuration Manager, należy sprawdzić każdy raport zaimportowany z hierarchii programu Configuration Manager 2007, aby upewnić się, że działa zgodnie z oczekiwaniami.  
+>  Itens de configuração não interpretados a partir de hierarquias de origem do Configuration Manager 2007 não são suportadas para migração. Não é possível migrar nem importar estes itens de configuração para a hierarquia de destino. Para mais informações sobre itens de configuração não interpretados, consulte itens de configuração não interpretados a [sobre itens de configuração de gestão de configuração pretendida](http://go.microsoft.com/fwlink/?LinkId=103846) tópico da biblioteca de documentação do Configuration Manager 2007.  
 
-Aby uzyskać więcej informacji o raportach zobacz [raportowania w programie System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+Pode importar pacotes de configuração do Configuration Manager 2007. O processo de importação converte automaticamente os pacotes de configuração para ser compatível com o System Center Configuration Manager.  
 
-##  <a name="Plan_Migrate_Org_Folders"></a>Planowanie migracji folderów wyszukiwania i organizacyjnych  
- Foldery organizacyjne i folder wyszukiwania można migrować z obsługiwanej hierarchii źródłowej do hierarchii docelowej. Dodatkowo z hierarchii źródłowej programu System Center 2012 Configuration Manager lub System Center Configuration Manager, kryteria dla zapisanego wyszukiwania można migrować do hierarchii docelowej.  
+##  <a name="Plan_migrate_Boundaries"></a>Planear a migração de limites  
+ É possível migrar limites entre hierarquias. Quando migra limites do Configuration Manager 2007, cada limite do site de origem migrada em simultâneo e é adicionada ao novo grupo de limites que é criado na hierarquia de destino. Quando migra limites de uma hierarquia do System Center 2012 Configuration Manager ou System Center Configuration Manager, cada limite selecionado é adicionado a um novo grupo de limites na hierarquia de destino.  
 
- Domyślnie proces migracji obsługuje obiekty i kolekcje ze struktur folderu wyszukiwania i folderu organizacyjnego. Jednak w kreatorze tworzenia zadania migracji na **ustawienia** strony, można skonfigurować zadania migracji, aby nie migrowało organizacyjnej struktury obiektów, usuwając zaznaczenie pola wyboru pole dla tej opcji. Struktury organizacyjne kolekcji są zawsze obsługiwane.  
+ Cada grupo de limites criado automaticamente está ativado para localização de conteúdo, mas não para atribuição de site. Deste modo, é evitada a sobreposição de limites para atribuição de sites entre as hierarquias de origem e de destino. Quando migra a partir de um site de origem do Configuration Manager 2007, isto ajuda a impedir que novos clientes do Configuration Manager 2007 que instale a partir de incorretamente à hierarquia de destino. Por predefinição, os clientes do System Center Configuration Manager não são automaticamente atribuídos a sites do Configuration Manager 2007.  
 
- Jedynym wyjątkiem jest folder wyszukiwania, który zawiera aplikacje wirtualne. Podczas migrowania pakietu App-V pakietu App-V jest on przekształcany w aplikację w programie System Center Configuration Manager. Po przeprowadzeniu migracji folderu wyszukiwania zostaną znalezione tylko pozostałe pakiety, a folder wyszukiwania nie może zlokalizować pakietu App-V z powodu konwersji do aplikacji, podczas migracji pakietu aplikacji App-V.  
+ Durante a migração, se partilhar um ponto de distribuição com a hierarquia de destino, todos os limites associados a essa distribuição migram automaticamente para a hierarquia de destino. Na hierarquia de destino, a migração cria um novo grupo de limites de só de leitura para cada ponto de distribuição partilhado. Se alterar os limites do ponto de distribuição da hierarquia de destino, o grupo de limites da hierarquia de destino será atualizado com estas alterações durante o próximo ciclo de recolha de dados.  
 
- Podczas migracji zapisanego kryterium wyszukiwania z hierarchii źródłowej programu System Center 2012 Configuration Manager lub System Center Configuration Manager, można migrować kryteria wyszukiwania, a nie informacje o wynikach wyszukiwania. Migracja zapisanego kryterium wyszukiwania nie ma zastosowania z lokacji źródłowej programu Configuration Manager 2007.  
-
-##  <a name="Plan_Migrate_AI"></a>Planowanie migracji dostosowań analizy zasobów  
- Dostosowania analizy zasobów można migrować z obsługiwanej hierarchii źródłowej do hierarchii docelowej. Nie wprowadzono żadnych ważnych zmian w strukturze dostosowań analizy zasobów między programu Configuration Manager 2007 i System Center Configuration Manager.  
+##  <a name="Plan_Migrate_reports"></a>Planear a migração de relatórios  
+O Configuration Manager não suporta a migração de relatórios. Em alternativa, utilize o SQL Server Reporting Services Report Builder para exportar relatórios da hierarquia de origem e, em seguida, importá-los para a hierarquia de destino.  
 
 > [!NOTE]  
->  System Center Configuration Manager nie obsługuje migracji obiektów analizy zasobów z lokacji programu Configuration Manager 2007, która jest używa usługi w wersji 2.0 (AIS 2.0).  
+>  Como existem alterações de esquema para os relatórios entre o Configuration Manager 2007 e o System Center Configuration Manager, teste todos os relatórios importados de uma hierarquia do Configuration Manager 2007 para garantir que funciona conforme esperado.  
 
-##  <a name="Plan_Migrate_SWM_Rules"></a>Planowanie migracji dostosowań reguł pomiaru użytkowania oprogramowania  
- Nie wprowadzono żadnych ważnych zmian dotyczących pomiaru użytkowania oprogramowania między programu Configuration Manager 2007 i System Center Configuration Manager. Zasady pomiaru użytkowania oprogramowania można migrować z obsługiwanej hierarchii źródłowej do hierarchii docelowej.  
+Para obter mais informações sobre os relatórios, consulte [relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).  
 
- Domyślnie zasady pomiaru użytkowania oprogramowania, które można migrować do hierarchii docelowej, nie są skojarzone z konkretną lokacją w hierarchii docelowej, lecz mają zastosowanie do wszystkich klientów w hierarchii. Aby zastosować zasadę pomiaru użytkowania oprogramowania do klientów w konkretnej lokacji, należy edytować zasadę pomiaru po jej zmigrowaniu.  
+##  <a name="Plan_Migrate_Org_Folders"></a>Planear a migração organizacionais e pastas de procura  
+ É possível migrar pastas organizacionais e pastas de procura de uma hierarquia de origem suportada para uma hierarquia de destino. Além disso, de uma hierarquia de origem do System Center 2012 Configuration Manager ou System Center Configuration Manager, pode migrar os critérios para uma pesquisa guardada para uma hierarquia de destino.  
+
+ Por predefinição, o processo de migração mantém as estruturas de pastas de procura e de pastas administrativas de objetos e coleções. No entanto, no Assistente Criar tarefa de migração, no **definições** página, pode configurar uma tarefa de migração para não migrar a estrutura organizacional de objetos desmarcando a caixa para esta opção. As estruturas organizacionais das coleções são sempre mantidas.  
+
+ Uma exceção a esta regra é uma pasta de procura com aplicações virtuais. Quando é migrado um pacote de App-V, o pacote de App-V é transformado numa aplicação no System Center Configuration Manager. Após a migração da pasta de pesquisa, encontram-se apenas os pacotes restantes e a pasta de pesquisa não é possível localizar um pacote de App-V devido a esta conversão para uma aplicação quando migra o pacote de App-V.  
+
+ Quando migra uma procura guardada de uma hierarquia de origem do System Center 2012 Configuration Manager ou System Center Configuration Manager, migrar os critérios de pesquisa e não as informações sobre os resultados da pesquisa. Migração de uma procura guardada não se aplica a partir de um site de origem do Configuration Manager 2007.  
+
+##  <a name="Plan_Migrate_AI"></a>Planear a migração de personalizações do Asset Intelligence  
+ É possível migrar personalizações do Asset Intelligence de uma hierarquia de origem suportada para uma hierarquia de destino. Não foram efetuadas alterações significativas a estrutura de personalizações do Asset Intelligence entre o Configuration Manager 2007 e o System Center Configuration Manager.  
+
+> [!NOTE]  
+>  System Center Configuration Manager não suporta a migração de objetos do Asset Intelligence de um site do Configuration Manager 2007 que está a utilizar o Asset Intelligence Service 2.0 (AIS 2.0).  
+
+##  <a name="Plan_Migrate_SWM_Rules"></a>Planear a migração de personalizações de regras de medição de software  
+ Não existem não existem alterações significativas na medição de software entre o Configuration Manager 2007 e o System Center Configuration Manager. É possível migrar as regras de medição de software de uma hierarquia de origem suportada para uma hierarquia de destino.  
+
+ Por predefinição, as regras de medição de software que migra para uma hierarquia de destino não estão associadas a um site específico da hierarquia de destino e, em vez disso, aplicam-se a todos os clientes da hierarquia. Para aplicar uma regra de medição de software a clientes de um site específico, tem de editar a regra de medição após a respetiva migração.  

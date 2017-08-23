@@ -1,6 +1,6 @@
 ---
-title: "Wdrażanie aplikacji wirtualnych App-V | Dokumentacja firmy Microsoft"
-description: "Zobacz uwagi, które należy wziąć pod uwagę podczas tworzenia i wdrażania aplikacji wirtualnych."
+title: "Implementar aplicações virtuais App-V | Microsoft Docs"
+description: "Consulte as considerações deve ter em conta quando criar e implementar aplicações virtuais."
 ms.custom: na
 ms.date: 02/16/2017
 ms.prod: configuration-manager
@@ -18,196 +18,196 @@ manager: angrobe
 ms.openlocfilehash: 0808edbb9a0433dd658d37e8d005c89a4778735c
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pl-PL
+ms.contentlocale: pt-PT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="deploy-app-v-virtual-applications-with-system-center-configuration-manager"></a>Wdrażać aplikacje wirtualne App-V w programie System Center Configuration Manager
+# <a name="deploy-app-v-virtual-applications-with-system-center-configuration-manager"></a>Implementar aplicações virtuais App-V com o System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (wersji current branch)*
+*Aplica-se a: System Center Configuration Manager (ramo atual)*
 
-Jeśli używasz programu Configuration Manager do zarządzania aplikacjami wirtualnymi, uzyskasz następujące korzyści:  
+Quando utilizar o Configuration Manager para gerir aplicações virtuais, obtém os seguintes benefícios:  
 
--   Pojedynczej infrastruktury zarządzania  
+-   Uma única infraestrutura de gestão  
 
--   Skalowalności, wdrażania i dystrybucji zawartości funkcje, takie jak kolekcje i koligacja urządzenia użytkownika  
+-   Escalabilidade, implementação e a distribuição de conteúdo funcionalidades, como coleções e afinidade dispositivo / utilizador  
 
--   Zaawansowanych funkcji zarządzania aplikacjami  
+-   Funcionalidades de gestão de aplicações avançadas  
 
--   Wdrożenie systemu operacyjnego, spis oprogramowania i sprzętu, pomiaru użytkowania oprogramowania i analizy zasobów w celu obsługi aplikacji wirtualnych  
+-   Implementação do sistema operativo, inventário de hardware e software, medição de software e asset intelligence para suportar aplicações virtuais  
 
-Aby uzyskać więcej informacji o tworzeniu i sekwencjonowaniu aplikacji przy użyciu programu Microsoft Application Virtualization (App-V), zobacz [Application Virtualization](https://technet.microsoft.com/library/cc843848.aspx) w bibliotece TechNet.  
+Para obter mais informações sobre como criar e sequenciar aplicações com o Microsoft Application Virtualization (App-V), consulte [Application Virtualization](https://technet.microsoft.com/library/cc843848.aspx) na Biblioteca TechNet.  
 
-Oprócz innych wymagań programu System Center Configuration Manager i procedury dotyczące tworzenia aplikacji podczas tworzenia i wdrażania aplikacji wirtualnych należy wziąć pod uwagę następujące kwestie:
+Para além de outros requisitos do System Center Configuration Manager e procedimentos para criar uma aplicação, tem de ter em conta as seguintes considerações ao criar e implementar aplicações virtuais:
 
--   Aby wdrożyć aplikacje wirtualne na komputerach, musi mieć klienta programu Configuration Manager i zainstalowane na komputerze klienta App-V. Urządzeniami klienckimi mogą być komputery stacjonarne i przenośne oraz klienci infrastruktury pulpitu wirtualnego (VDI). Oprogramowanie Configuration Manager i App-V Client współdziałają ze sobą do dostarczania, Znajdź i uruchom pakietów aplikacji wirtualnych. Klient programu Configuration Manager zarządza dostarczaniem pakietów aplikacji wirtualnych do klienta App-V. Klient App-V Client uruchamia aplikację wirtualną na kliencie.  
+-   Para implementar aplicações virtuais em computadores, tem de ter o cliente do Configuration Manager e o cliente de App-V instalado nos seus computadores. Os dispositivos cliente podem incluir computadores de secretária e portáteis e clientes VDI (Infraestrutura de Ambiente de Trabalho Virtual). O software do Configuration Manager e o cliente de App-V funcionam em conjunto para fornecer, localizar e iniciar pacotes de aplicação virtual. O cliente do Configuration Manager gere o fornecimento de pacotes de aplicações virtuais para o cliente de App-V. O Cliente de App-V executa a aplicação virtual no cliente.  
 
--   Aby wdrożyć aplikację wirtualną, należy najpierw ją utworzyć przy użyciu sekwensera App-V Application Virtualization Sequencer. Sekwenser monitoruje proces instalacji i konfiguracji aplikacji oraz rejestruje informacje niezbędne do uruchomienia aplikacji w środowisku wirtualnym. Umożliwia także program sequencer do ustawienia, które pliki i konfiguracje mają zastosowanie do wszystkich użytkowników i które konfiguracje mogą być dostosowywane.  
+-   Para implementar uma aplicação virtual, terá de criar primeiro a aplicação virtual utilizando o Sequenciador do Application Virtualization (App-V). O sequenciador monitoriza o processo de instalação e configuração para uma aplicação e regista a informação que é necessária para que a aplicação seja executada num ambiente virtual. Também pode utilizar o sequencer para definir quais os ficheiros e as configurações aplicam-se a todos os utilizadores e que os utilizadores de configurações podem personalizar.  
 
--   Podczas sekwencjonowania aplikacji należy zapisać pakiet do lokalizacji dostępnej dla programu Configuration Manager. Następnie można utworzyć wdrożenie aplikacji zawierające tę aplikację wirtualną.  
+-   Quando sequencia uma aplicação, terá de guardar o pacote para uma localização que o Configuration Manager pode aceder. Em seguida, pode criar uma implementação da aplicação que contém esta aplicação virtual.  
 
--   Menedżer konfiguracji nie obsługuje korzystanie z funkcji współużytkowanej pamięci podręcznej tylko do odczytu programu App-V.  
+-   O Configuration Manager não suporta a utilização da funcionalidade partilhada de cache só de leitura do App-V.  
 
--   Program Configuration Manager obsługuje funkcję magazynu zawartości udostępnione w App-V 5.  
+-   O Configuration Manager suporta a funcionalidade arquivo de conteúdo partilhado no App-V 5.  
 
--   Podczas tworzenia typu wdrożenia dla aplikacji wirtualnych programu Configuration Manager tworzy typ wdrożenia przy użyciu zawartości pliku manifestu aplikacji. Jest to plik XML, który zawiera informacje dotyczące aplikacji wirtualnej. Ponadto programu Configuration Manager tworzy wymagań dotyczących typu wdrożenia na podstawie zawartości pliku .osd programu App-V z informacjami o obsługiwanych systemów operacyjnych dla aplikacji wirtualnej.  
+-   Quando cria um tipo de implementação para uma aplicação virtual, o Configuration Manager cria o tipo de implementação utilizando os conteúdos do ficheiro de manifesto da aplicação. Este é um ficheiro XML que contém informações sobre a aplicação virtual. Além disso, o Configuration Manager cria requisitos para o tipo de implementação baseado nos conteúdos do ficheiro App-V. OSD que contém informações sobre os sistemas operativos suportados para a aplicação virtual.  
 
--   Aby wdrożyć aplikacje wirtualne w programie Configuration Manager, komputery klienckie musi mieć co najmniej App-V 4.6 z dodatkiem SP1 lub nowszym z zainstalowanym klientem.  
+-   Para implementar aplicações virtuais no Configuration Manager, computadores cliente devem ter no mínimo, o App-V 4.6 SP1 ou uma versão posterior do cliente instalada.  
 
--   Przed wdrożeniem aplikacji wirtualnych, należy zaktualizować klienta App-V poprawką opisaną w artykule bazy wiedzy [2645225](https://support.microsoft.com/kb/2645225).  
+-   Antes de poder implementar com sucesso aplicações virtuais, tem de atualizar o cliente de App-V com a correção descrita no artigo da Base de dados de conhecimento [2645225](https://support.microsoft.com/kb/2645225).  
 
--   Dzięki użyciu grup połączeń w programie App-V 5.0, wdrożone aplikacje wirtualne mogą współużytkować ten sam system plików i rejestr na komputerach klienckich. W przeciwieństwie do standardowych aplikacji wirtualnych te aplikacje mogą udostępniać wzajemnie dane. Funkcja grup połączeń umożliwia również zachowanie ustawień użytkownika w odniesieniu do zawartych w nich aplikacji. Środowiska wirtualne App-V w programie Configuration Manager służą do skonfigurowania grup połączeń na komputerach klienckich. Środowiska wirtualne są tworzone i zmieniane na komputerach klienckich w momencie instalowania aplikacji oraz gdy następny klient oceni zainstalowane aplikacje. Aplikacjom można przypisać priorytety. Gdy wiele aplikacji próbuje zmienić system plików lub wartość rejestru, pierwszeństwo ma aplikacja o najwyższym priorytecie. Aby uzyskać więcej informacji, zobacz [środowisk wirtualnych App-V Utwórz](../../apps/deploy-use/create-app-v-virtual-environments.md).  
+-   Quando utiliza grupos de ligação no App-V 5.0, as suas aplicações virtuais implementadas podem partilhar o mesmo sistema de ficheiros e registo nos computadores cliente. Contrariamente às aplicações virtuais padrão, estas aplicações podem partilhar dados entre si. Além disso, os grupos de ligação preservam as definições do utilizador para as aplicações que contêm. Ambientes virtuais App-V no Configuration Manager são utilizados para configurar grupos de ligação em computadores cliente. Os ambientes virtuais são criados ou alterados em computadores cliente quando a aplicação é instalada ou quando os clientes avaliam as aplicações instaladas. Pode atribuir prioridades a estas aplicações para que, quando várias aplicações tentam alterar o valor de um sistema ou registo de ficheiros, tenha precedência a aplicação com a prioridade mais alta. Para obter mais informações, consulte [ambientes virtuais App-V criar](../../apps/deploy-use/create-app-v-virtual-environments.md).  
 
-##  <a name="supported-app-v-versions"></a>Obsługiwane wersje programu App-V  
- Program Configuration Manager obsługuje następujące wersje programu App-V:  
+##  <a name="supported-app-v-versions"></a>Versões suportadas do App-V  
+ O Configuration Manager suporta as seguintes versões do App-v:  
 
--   **App-V 4.6**: Używanie aplikacji wirtualnych w programie Configuration Manager, komputery klienckie muszą mieć zainstalowanego klienta App-V 4.6 z dodatkiem SP1, App-V 4.6 z dodatkiem SP2 lub App-V 4.6 z dodatkiem SP3.  
+-   **App-V 4.6**: Para utilizar aplicações virtuais no Configuration Manager, computadores cliente tem de ter o cliente de App-V 4.6 SP1, App-V 4.6 SP2 ou App-V 4.6 SP3 instalado.  
 
-     Przed wdrożeniem aplikacji wirtualnych, należy również zaktualizować klienta App-V 4.6 z dodatkiem SP1 z poprawką opisaną w artykule bazy wiedzy [2645225](http://go.microsoft.com/fwlink/p/?LinkId=237322).  
+     Antes de poder implementar com sucesso aplicações virtuais, tem também de atualizar o cliente de App-V 4.6 SP1 com a correção descrita no artigo da Base de dados de conhecimento [2645225](http://go.microsoft.com/fwlink/p/?LinkId=237322).  
 
--   **App-V 5, App-V 5.0 z dodatkiem SP1, App-V 5.0 z dodatkiem SP2, App-V 5.0 z dodatkiem SP3 i App-V 5.1**: App-V 5.0 z dodatkiem SP2 należy zainstalować [pakiet poprawek 5](https://support.microsoft.com/en-us/kb/2963211) lub użyć programu App-V 5.0 z dodatkiem SP3.  
--   **App-V 5.2**: To jest wbudowana w system Windows 10 Enterprise (rocznicy aktualizacji i nowsze).
+-   **App-V 5, App-V 5.0 SP1, App-V 5.0 SP2, App-V 5.0 SP3 e App-V 5.1**: Para o App-V 5.0 SP2, tem de instalar [pacote de correções 5](https://support.microsoft.com/en-us/kb/2963211) ou utilizar o App-V 5.0 SP3.  
+-   **App-V 5.2**: Isto está incorporado no Windows 10 Enterprise (aniversário da atualização e posterior).
 
-Aby uzyskać więcej informacji na temat programu App-V w systemie Windows 10 zobacz następujące tematy:
+Para obter mais informações sobre o App-V no Windows 10, consulte os tópicos seguintes:
 
-- [Co to jest nowa w programie App-V](https://technet.microsoft.com/itpro/windows/manage/appv-about-appv)
-- [Wprowadzenie do korzystania z programu App-V dla systemu Windows 10](https://technet.microsoft.com/itpro/windows/manage/appv-getting-started)
-- [Uaktualnianie do programu App-V dla systemu Windows 10 z istniejącej instalacji](https://technet.microsoft.com/itpro/windows/manage/appv-upgrading-to-app-v-for-windows-10-from-an-existing-installation)
+- [Novidades no App-V](https://technet.microsoft.com/itpro/windows/manage/appv-about-appv)
+- [Introdução ao App-V para Windows 10](https://technet.microsoft.com/itpro/windows/manage/appv-getting-started)
+- [Atualizar para o App-V para Windows 10, a partir de uma instalação existente](https://technet.microsoft.com/itpro/windows/manage/appv-upgrading-to-app-v-for-windows-10-from-an-existing-installation)
 
-##  <a name="steps-to-manage-app-v-virtual-applications"></a>Kroki, aby zarządzać aplikacjami wirtualnymi App-V  
- Aby zarządzać aplikacjami wirtualnymi App-V, wykonaj następujące kroki:  
+##  <a name="steps-to-manage-app-v-virtual-applications"></a>Passos para gerir aplicações virtuais App-V  
+ Para gerir aplicações virtuais App-V, siga estes passos:  
 
-1.   **Sekwencja**: Sekwencjonowanie to proces konwertowania aplikacji na aplikację wirtualną za pomocą programu App-V sequencer.
+1.   **Sequência**: Sequenciação é o processo de conversão de uma aplicação numa aplicação virtual através do App-V sequencer.
 
-2.   **Utwórz**: Umożliwia Kreatora tworzenia typów wdrożeń zaimportuj sekwencjonowaną aplikację do typu wdrożenia programu Configuration Manager, który można następnie dodać do aplikacji. Istnieje także możliwość dodania środowisk wirtualnych umożliwiających współużytkowanie ustawień przez wiele aplikacji wirtualnych.
+2.   **Criar**: Utilize o Assistente para criar tipo de implementação para importar a aplicação sequenciada para um tipo de implementação do Configuration Manager, em seguida, pode adicionar a uma aplicação. Também pode criar ambientes virtuais que permitam a partilha de definições por várias aplicações virtuais.
 
-3.   **Dystrybuuj**: Dystrybucja to proces udostępniania aplikacji App-V w punktach dystrybucji programu Configuration Manager.
+3.   **Distribuir**: Distribuição é o processo de disponibilizar aplicações de App-V em pontos de distribuição do Configuration Manager.
 
-4.   **Wdrażanie**: Wdrażanie to proces udostępniania aplikacji na komputerach klienckich. Jest on nazywany przesyłaniem strumieniowym w pełnej infrastrukturze App-V.  
+4.   **Implementar**: Implementação é o processo de disponibilizar a aplicação em computadores cliente. Esta opção é denominada de transmissão em fluxo numa infraestrutura completa de App-V.  
 
-##  <a name="configuration-manager-virtual-application-delivery-methods"></a>Metody dostarczania aplikacji wirtualnych programu Configuration Manager  
-Program Configuration Manager obsługuje dwie metody dostarczania klientom aplikacji wirtualnych: przesyłanie strumieniowe oraz dostarczanie lokalne (Pobieranie i uruchamianie).
+##  <a name="configuration-manager-virtual-application-delivery-methods"></a>Métodos de entrega de aplicações virtuais do Configuration Manager  
+O Configuration Manager suporta dois métodos de fornecimento de aplicações virtuais aos clientes: fornecimento local e entrega de transmissão em fluxo (transferir e executar).
 
-Podejmując jest metody dostarczenia porównać zmniejszenie wymaganego miejsca na dysku w celu dostarczania transmisji strumieniowej z gwarantowaną dostępnością aplikacji App-V w dostarczanie lokalne. Zwiększenie ilości miejsca na dysku klienta wymagane w przypadku dostarczania lokalnego może być korzystniejsze od dostarczania strumieniowego, ponieważ użytkownicy będą mieli wtedy dostęp do aplikacji w każdej lokalizacji.  
+Quando estiver a decidir qual o método de entrega a utilizar, compare o requisito de espaço em disco reduzida para a entrega de transmissão em fluxo com a disponibilidade garantida das aplicações de App-V no fornecimento local. O maior espaço em disco necessário no cliente para a entrega local poderá ser preferível para a transmissão em fluxo da entrega, para que os utilizadores tenham sempre a aplicação disponível a partir de qualquer localização.  
 
-###  <a name="streaming-delivery"></a>Dostarczania strumieniowego
-Korzystając z programu Configuration Manager do zarządzania klientem programu App-V, obsługuje on przesyłanie strumieniowe aplikacji wirtualnych za pośrednictwem protokołu HTTP lub HTTPS z punktu dystrybucji. Strumieniowanie za pośrednictwem protokołu HTTP lub HTTPS jest domyślnie włączona i jest ustawiany w oknie dialogowym Właściwości punktu dystrybucji. Kiedy po wdrożeniu aplikacji wirtualnej na komputery klienckie użytkownik uruchomi aplikację wirtualną, klient programu Configuration Manager kontaktuje się z punktem zarządzania w celu określenia punktu dystrybucji, który umożliwia. Następnie aplikacja jest strumieniowana z punktu dystrybucji.  
+###  <a name="streaming-delivery"></a>Entrega de transmissão em fluxo
+Quando utilizar o Configuration Manager para gerir o cliente de App-V, suporta a transmissão em fluxo de aplicações virtuais através de HTTP ou HTTPS a partir de um ponto de distribuição. Transmissão em fluxo através de HTTP ou HTTPS está ativada por predefinição e está configurado na caixa de diálogo de propriedades do ponto de distribuição. Quando implementar uma aplicação virtual em computadores cliente e um utilizador executa a aplicação virtual, o cliente do Configuration Manager contacta um ponto de gestão para determinar o ponto de distribuição a utilizar. Em seguida, a aplicação é transmitida em fluxo do ponto de distribuição.  
 
-Użyj informacji w tej tabeli, aby określić, czy dostarczania strumieniowego jest najlepszą metodę dostarczania dla Ciebie:
+Utilize as informações nesta tabela para o ajudar a decidir se a entrega de transmissão em fluxo é o melhor método de entrega para:
 
-|Zalety|Wady|  
+|Vantagens|Desvantagens|  
 |----------------|-------------------|  
-|W ramach tej metody do strumieniowania zawartości pakietu z punktów dystrybucyjnych są używane standardowe protokoły sieciowe.<br /><br /> Skróty programów dla aplikacji wirtualnych wywołują połączenie z punktem dystrybucji, dzięki czemu aplikacja wirtualna jest dostarczana na żądanie.<br /><br /> Ta metoda jest najlepsza w przypadku klientów mających szerokopasmowe połączenie z punktami dystrybucji.<br /><br /> Zaktualizowane aplikacje wirtualne dystrybuowane w całym przedsiębiorstwie stają się dostępne, kiedy klienci otrzymują zasady informujące o zastąpieniu bieżącej wersji i pobierają tylko zmiany względem poprzedniej.<br /><br /> Uprawnienia dostępu są definiowane w punkcie dystrybucji w celu uniemożliwienia użytkownikom dostępu aplikacji lub pakietów, do których nie ma ją uprawnień.|Aplikacje wirtualne są strumieniowane dopiero po pierwszym uruchomieniu. W takim scenariuszu użytkownik może otrzymać skróty programu dla aplikacji wirtualnych i odłączyć się od sieci przed ich pierwszym uruchomieniem. Jeśli użytkownik spróbuje uruchomić aplikację wirtualną, gdy klient jest w trybie offline, użytkownik widzi błąd i nie można uruchomić zwirtualizowanej aplikacji, ponieważ punkt dystrybucji programu Configuration Manager nie jest dostępne do przesyłania strumieniowego aplikacji. Aplikacja będzie niedostępna, dopóki użytkownik nie nawiąże połączenia z siecią i nie uruchomi aplikacji.<br /><br /> Aby tego uniknąć, można dostarczyć aplikację wirtualną klientom za pomocą metody lokalnego dostarczania, a także można włączyć internetowe zarządzanie klientami na potrzeby dostarczania strumieniowego.|  
+|Este método utiliza protocolos de rede padrão para a transmissão em fluxo de conteúdo de pacotes a partir de pontos de distribuição.<br /><br /> Os atalhos de programa para aplicações virtuais invocam uma ligação ao ponto de distribuição para que o fornecimento da aplicação virtual seja a pedido.<br /><br /> Este método funciona bem para clientes com ligações de banda larga aos pontos de distribuição.<br /><br /> As aplicações virtuais atualizadas distribuídas por toda a empresa são disponibilizadas quando os clientes recebem a política que os informa de que a versão atual foi substituída e os clientes transferem apenas as alterações relativamente à versão anterior.<br /><br /> As permissões de acesso são definidas no ponto de distribuição para impedir que os utilizadores acedam a aplicações ou pacotes não autorizados.|As aplicações virtuais não são transmitidas em fluxo até que o utilizador execute a aplicação pela primeira vez. Neste cenário, um utilizador pode receber atalhos de programa para aplicações virtuais e, em seguida, desligar da rede antes de executar as aplicações virtuais pela primeira vez. Se o utilizador tentar executar a aplicação virtual enquanto o cliente estiver offline, o utilizador verá um erro e não é possível executar a aplicação virtualizada porque um ponto de distribuição do Configuration Manager não está disponível para transmitir a aplicação. A aplicação não estará disponível até o utilizador voltar a ligar à rede e executar a aplicação.<br /><br /> Para evitar isto, pode utilizar o método de entrega local para entregar aplicações virtuais a clientes ou pode ativar a gestão de clientes baseada na Internet para a entrega por transmissão em fluxo.|  
 
-###  <a name="local-delivery-download-and-execute"></a>Dostarczanie lokalne (Pobieranie i uruchamianie)  
-Korzystając z metody lokalnego dostarczania, klient programu Configuration Manager najpierw pobiera cały pakiet aplikacji wirtualnej do pamięci podręcznej klienta programu Configuration Manager. Menedżer konfiguracji następnie instruuje klienta App-V, aby strumieniował aplikację z pamięci podręcznej programu Configuration Manager do pamięci podręcznej programu App-V. Jeśli wdrożyć aplikację wirtualną na komputerach klienckich i jego zawartość nie jest w pamięci podręcznej programu App-V, App-V Client prześle strumieniowo zawartość aplikacji z pamięci podręcznej klienta programu Configuration Manager do pamięci podręcznej programu App-V, a następnie uruchomi aplikację. Po udanym uruchomieniu aplikacji, można ustawić klienta programu Configuration Manager, aby usuwał starsze wersje pakietu w kolejnych cyklach usuwania, albo zachowywał je w pamięci podręcznej klienta programu Configuration Manager.  
+###  <a name="local-delivery-download-and-execute"></a>Fornecimento local (transferir e executar)  
+Quando utiliza o método de fornecimento local, o cliente do Configuration Manager transfere primeiro o pacote de aplicação virtual completo para a cache do cliente do Configuration Manager. O Configuration Manager, em seguida, instrui o cliente de App-V que transmita a aplicação da cache do Configuration Manager para a cache de App-V. Se implementar uma aplicação virtual em computadores cliente e respetivo conteúdo não estiver na cache de App-V, o cliente de App-V fluxos o conteúdo da aplicação da cache do cliente do Configuration Manager para a cache de App-V e, em seguida, executa a aplicação. Depois da aplicação é executada com êxito, pode definir o cliente do Configuration Manager para eliminar versões antigas do pacote no próximo ciclo de eliminação ou para as manter na cache de cliente do Configuration Manager.  
 
-Użyj informacji w tej tabeli, aby określić, czy dostarczanie lokalne jest najlepszą metodę dostarczania dla Ciebie:   
+Utilize as informações nesta tabela para o ajudar a decidir se o fornecimento local é o melhor método de entrega para:   
 
-|Zalety|Wady|  
+|Vantagens|Desvantagens|  
 |----------------|-------------------|  
-|Standardowe funkcje punktu dystrybucji służą do pobrania pakietu za pośrednictwem usługi inteligentnego transferu w tle (BITS).<br /><br /> Zawartość pakietu aplikacji wirtualnej jest dostarczana lokalnie do klienta. Oznacza to, że użytkownicy mogą ją uruchamiać ich komputer nie jest połączony z siecią.<br /><br /> Ta metoda jest przydatna w przypadku korzystania z powolnych lub zawodnych sieci oraz użytkowania komputerów sporadycznie łączących się z siecią.<br /><br /> Program Configuration Manager używa zdalnego kompresji RDC (RDC) do wysyłania do klientów tylko bajty plików, które uległy zmianie po zaktualizowaniu zawartości pakietu aplikacji wirtualnej. Klient programu Configuration Manager korzysta z kompresji RDC w celu skompilowania nowej wersji pakietu aplikacji wirtualnej, w oparciu o bieżącą wersję pakietu oraz wszelkie zmiany wysłane do klienta.<br /><br /> Ta metoda zapewnia odporność aplikacji użytkowników urządzeń przenośnych lub odłączonych. Administratorzy mogą wybrać zachowanie pakietu w pamięci podręcznej programu Configuration Manager po dostarczeniu, jeśli aplikacja wirtualna została wdrożona za pomocą działania instalacji. Pakiet w pamięci podręcznej klienta programu Configuration Manager służy jako lokalne, niezawodne źródło strumieniowania dla klienta App-V umieścić w swojej pamięci podręcznej.|Miejsce na dysku jest równe maksymalnie dwa razy rozmiar pakietu aplikacji wirtualnej jest wymagana na kliencie zachowania aplikacji wirtualnej w pamięci podręcznej programu Configuration Manager.|  
+|A funcionalidade de ponto de distribuição padrão é utilizada para transferir o pacote utilizando o Serviço de Transferência Inteligente em Segundo Plano (BITS).<br /><br /> Conteúdo do pacote de aplicação virtual é fornecido localmente ao cliente. Isto significa que os utilizadores podem executar quando o computador não está ligado à rede.<br /><br /> Este método é adequado para ligações de rede lentas ou pouco fiáveis e para computadores que ligam à rede ocasionalmente.<br /><br /> O Configuration Manager utiliza compressão de diferencial remota (RDC) para enviar aos clientes apenas os bytes dos ficheiros que foram alterados quando o conteúdo do pacote de aplicação virtual é atualizado. O cliente do Configuration Manager utiliza a RDC para criar uma nova versão de um pacote de aplicação virtual com base na versão atual do pacote e nas alterações enviadas ao cliente.<br /><br /> Este método proporciona aplicações resilientes a utilizadores móveis ou utilizadores desligados. Administradores podem optar por manter o pacote na cache do Configuration Manager após o fornecimento se a aplicação virtual tiver sido implementada com uma ação de instalação. O pacote na cache do cliente do Configuration Manager funciona como uma origem de transmissão em fluxo local e fiável para o cliente de App-V extraia o pacote para a sua cache.|Espaço em disco que é igual a até duas vezes o tamanho do pacote de aplicação virtual é necessário no cliente quando a aplicação virtual é mantida na cache do Configuration Manager.|  
 
-###  <a name="deployment-from-an-image"></a>Wdrożenia z obrazu
+###  <a name="deployment-from-an-image"></a>Implementação a partir de uma imagem
 
-Aplikacje wirtualne można także preinstalować na komputerze, a następnie utworzyć obraz tego komputera w celu wdrożenia na innych. Ale jeśli pakiet aplikacji wirtualnej został utworzony w innej lokacji, binarna replikacja różnicowa nie będą używane do pobierania aktualizacji do aplikacji. Ta opcja może być przydatna w infrastrukturze pulpitu wirtualnego, gdzie aplikacje mają być dostępne natychmiast, a nie po ich pobraniu po zalogowaniu.    
+Também é possível pré-instalar aplicações virtuais num computador e, em seguida, criar uma imagem desse computador para implementação noutros. Mas se o pacote de aplicação virtual tiver sido criado noutro site, a replicação diferencial binária não será utilizada para transferir atualizações para a aplicação. Esta opção pode ser útil numa infraestrutura de ambiente de trabalho virtual, quando pretender que as aplicações estejam disponíveis imediatamente em vez de as transferir após o utilizador iniciar sessão.    
 
-##  <a name="migrating-from-an-app-v-infrastructure-to-a-configuration-manager-and-app-v-infrastructure"></a>Migracja z infrastruktury App-V do infrastruktury programu Configuration Manager i App-V  
-Skorzystaj z poniższej tabeli ułatwią planowanie migracji z istniejącej infrastruktury programu App-V do zarządzania aplikacjami wirtualnymi w programie Configuration Manager.  
+##  <a name="migrating-from-an-app-v-infrastructure-to-a-configuration-manager-and-app-v-infrastructure"></a>Migrar a partir de uma infraestrutura de App-V para uma infraestrutura do Configuration Manager e App-V  
+Utilize a tabela seguinte para o ajudar a planear uma migração de uma infraestrutura de App-V existente para gestão de aplicações virtuais com o Configuration Manager.  
 
-|Krok|Więcej informacji|  
+|Passo|Mais informações|  
 |----------|----------------------|  
-|Sprawdź bieżące aplikacje wirtualne, aby wybrać aplikacje, które chcesz przeprowadzić migrację do infrastruktury programu Configuration Manager.|Brak dodatkowych informacji.|  
-|Oceń użytkowników i urządzenia, dla których aplikacje wirtualne zostaną wdrożone.|Utwórz kolekcje programu Configuration Manager, aby zgrupować użytkowników oraz urządzenia, do których chcesz wdrożyć aplikacje wirtualne. Zobacz [wprowadzenie do kolekcji](/sccm/core/clients/manage/collections/introduction-to-collections).|  
-|Przeprowadź migrację grupy połączeń programu App-V 5 do środowisk wirtualnych programu Configuration Manager.|Zobacz [grup połączeń migracji App-V 5 do środowisk wirtualnych programu Configuration Manager](/sccm/apps/get-started/deploying-app-v-virtual-applications#migrate-app-v-5-connection-groups-to-configuration-manager-virtual-environments) w tym temacie.|  
-|Sprawdź, czy którekolwiek aplikacje wirtualne istnieją jako pełne aplikacje w infrastrukturze programu Configuration Manager.|Aby ułatwić zarządzanie, można dodać aplikację wirtualną jako nowy typ wdrożenia do istniejącej pełnej aplikacji. Zobacz [tworzenie aplikacji](../../apps/deploy-use/create-applications.md).|  
-|Utwórz aplikacje zastępujące istniejące pakiety programu App-V.|Zobacz [wprowadzenie do zarządzania aplikacjami](/sccm/apps/understand/introduction-to-application-management) i [tworzenie aplikacji](../../apps/deploy-use/create-applications.md).|  
-|Rozpoczyna programu Configuration Manager do zarządzania aplikacjami wirtualnymi na kliencie po ich pierwszym wdrożeniu aplikacji wirtualnej. Dzięki temu programu Configuration Manager należy zarządzać wszystkie aplikacje App-V na komputerze.|Brak dodatkowych informacji.|  
-|Przekaż zawartość do odpowiednich punktów dystrybucji, aby umożliwić dostarczanie lokalne aplikacji.|Zobacz [zarządzanie zawartością i infrastrukturą zawartości](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).|  
-|Wdróż aplikację na klientów programu Configuration Manager.<br /><br /> Jeśli aplikacja App-V została utworzona we wcześniejszej wersji programu sequencer, która nie tworzy pliku XML manifestu, można go otworzyć i zapisać go w nowszej wersji programu sequencer w celu utworzenia pliku. Ten plik jest wymagany do wdrażania aplikacji wirtualnych z programem Configuration Manager.<br /><br /> App-V obsługuje pakietów aplikacji wirtualnych utworzonych za pomocą 4.1 SoftGrid z dodatkiem SP1 lub wersji 4.2 programu sequencer.<br /><br /> Jeśli aplikacje zostały wcześniej zainstalowane lokalnie, należy je odinstalować przed wdrożeniem wirtualnej wersji danej aplikacji.|Zobacz [wdrażania aplikacji](../../apps/deploy-use/deploy-applications.md).|  
-|System Center Configuration Manager nie obsługuje już pakietów i programów zawierających aplikacje wirtualne. Podczas migracji z programu Configuration Manager 2007 do programu System Center Configuration Manager, Configuration Manager konwertuje te pakiety na aplikacje.<br /><br /> Anonse programu Configuration Manager 2007 są konwertowane na następujące typy wdrożeń:<br /><br /> -Migrowanie pakietów programu App-V bez anonsów:  Jeden typ wdrożenia korzystający domyślnych ustawień typu wdrożenia.<br /><br /> -Migrowanie pakietów programu App-V z jednym anonsem: Jeden typ wdrożenia korzystającą z tych samych ustawień <br />                Anonsów programu Configuration Manager 2007.<br /><br /> -Migrowanie pakietów programu App-V wieloma anonsami: Typ wdrożenia dla każdego <br />                Anonsów programu Configuration Manager 2007, który korzysta z ustawień tego anonsu.|Zobacz [planowanie migracji obiektów programu Configuration Manager do programu System Center Configuration Manager](../../core/migration/planning-for-the-migration-of-objects.md).|  
+|Examine as aplicações virtuais atuais para escolher as aplicações que pretende migrar para a sua infraestrutura do Configuration Manager.|Não existem informações adicionais.|  
+|Avaliar os utilizadores e os dispositivos em que as aplicações virtuais serão implementadas.|Crie coleções do Configuration Manager para agrupar os utilizadores e dispositivos nos quais pretende implementar as aplicações virtuais. Consulte [introdução às coleções](/sccm/core/clients/manage/collections/introduction-to-collections).|  
+|Migre grupos de ligação do App-V 5 para ambientes virtuais do Configuration Manager.|Consulte o [grupos de ligação de migrar o App-V 5 para ambientes virtuais do Configuration Manager](/sccm/apps/get-started/deploying-app-v-virtual-applications#migrate-app-v-5-connection-groups-to-configuration-manager-virtual-environments) deste tópico.|  
+|Investigar se as suas aplicações virtuais existem como aplicações completas na infraestrutura do Configuration Manager.|Para facilitar a gestão, pode adicionar a aplicação virtual como um novo tipo de implementação à aplicação completa existente. Consulte [criar aplicações](../../apps/deploy-use/create-applications.md).|  
+|Criar aplicações para substituir os pacotes de App-V existentes.|Consulte [introdução à gestão de aplicações](/sccm/apps/understand/introduction-to-application-management) e [criar aplicações](../../apps/deploy-use/create-applications.md).|  
+|O Configuration Manager começa a gerir aplicações virtuais num cliente após a primeira implementação de uma aplicação virtual. Depois da primeira, o Configuration Manager tem de gerir todas as aplicações de App-V no computador.|Não existem informações adicionais.|  
+|Distribuir o conteúdo pelos pontos de distribuição adequados para ativar o fornecimento local de aplicações.|Consulte [gerir a infraestrutura de conteúdo e conteúda](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).|  
+|Implemente a aplicação para clientes do Configuration Manager.<br /><br /> Se a aplicação de App-V foi criada com uma versão anterior do sequencer que não crie um ficheiro de manifesto XML, pode abri-lo e guardá-lo numa versão mais recente do sequencer para criar o ficheiro. Este ficheiro é necessário para implementar aplicações virtuais com o Configuration Manager.<br /><br /> App-V suporta os pacotes de aplicações virtuais que são criados com a versão SoftGrid 4.1 SP1 ou 4.2 do sequencer.<br /><br /> Se as aplicações já tiverem sido instaladas localmente, terá de desinstalá-las antes de implementar uma versão virtual da aplicação.|Consulte [implementar aplicações](../../apps/deploy-use/deploy-applications.md).|  
+|System Center Configuration Manager já não suporta a utilização de pacotes e programas que contenham aplicações virtuais. Quando migrar do Configuration Manager 2007 para o System Center Configuration Manager, o Configuration Manager converte estes pacotes em aplicações.<br /><br /> Anúncios do Configuration Manager 2007 são convertidos nos seguintes tipos de implementação:<br /><br /> -Migração de pacotes de App-V sem anúncio:  Um tipo de implementação que utiliza as predefinições de tipo de implementação.<br /><br /> -Migração de pacotes de App-V com um anúncio: Um tipo de implementação que utiliza as mesmas definições que o <br />                Anúncios do Configuration Manager 2007.<br /><br /> -Migração de pacotes de App-V com vários anúncios: Um tipo de implementação, para cada <br />                Anúncios do Configuration Manager 2007, que utiliza as definições desse anúncio.|Consulte [planear a migração de objetos do Configuration Manager para o System Center Configuration Manager](../../core/migration/planning-for-the-migration-of-objects.md).|  
 
-##  <a name="migrating-app-v-5-connection-groups-to-configuration-manager-virtual-environments"></a>Migrowanie grupy połączeń programu App-V 5 do środowisk wirtualnych programu Configuration Manager  
-Środowiska wirtualne App-V w programie Configuration Manager umożliwiają aplikacjom wirtualnym wdrożono współużytkowanie tego samego systemu plików i rejestru na komputerach klienckich. Oznacza to, że w przeciwieństwie do standardowych aplikacji wirtualnych te aplikacje mogą udostępniać sobie dane. Środowiska wirtualne są tworzone i zmieniane na komputerach klienckich w momencie instalowania aplikacji oraz gdy następny klient oceni zainstalowane aplikacje. Środowiska wirtualne są podobne do grup połączeń w autonomicznym App-V 5.  
+##  <a name="migrating-app-v-5-connection-groups-to-configuration-manager-virtual-environments"></a>Migrar grupos de ligação do App-V 5 para ambientes virtuais do Configuration Manager  
+Ambientes virtuais App-V no Configuration Manager permitem às aplicações virtuais que tenha implementado para partilhar o mesmo sistema de ficheiros e registo nos computadores cliente. Isto significa que, contrariamente às aplicações virtuais padrão, estas aplicações podem partilhar dados entre si. Os ambientes virtuais são criados ou alterados em computadores cliente quando a aplicação é instalada ou quando os clientes avaliam as aplicações instaladas. Ambientes virtuais são semelhantes aos grupos de ligação no App-V 5 autónomo.  
 
-Podczas przeprowadzania migracji grup połączeń z autonomicznego programu App-V 5 do środowisk wirtualnych programu Configuration Manager, musisz zapewnić, że programu Configuration Manager zarządza poprawnie grupy połączeń, które już istnieją na komputerach klienckich i że środowisko użytkownika w tych grupach połączeń zostanie zachowane.  
+Quando migrar grupos de ligação do App-V 5 autónomo para ambientes virtuais do Configuration Manager, tem de garantir que o Configuration Manager gere corretamente os grupos de ligação que já existem nos computadores cliente e que o ambiente do utilizador nesses grupos de ligação é mantido.  
 
-Aby przekonwertować grupy połączeń programu App-V 5 do środowisk wirtualnych programu Configuration Manager:  
+Para converter grupos de ligação do App-V 5 para ambientes virtuais do Configuration Manager:  
 
-1.  Tworzenie aplikacji programu Configuration Manager dla wszystkich aplikacji, które były dostępne w programie App-V.  
+1.  Crie aplicações do Configuration Manager para todas as aplicações que existiam no App-V.  
 
-2.  Wdróż te aplikacje dla użytkowników lub urządzeń z celem wdrożenia **Wymagane**. Wdrożenia dla użytkowników należy wdrożyć na tym użytkownikom, którzy korzystali z aplikacji w programie App-V. Wdrożenia na komputerach należy wdrożyć w tej samej komputery, na których były zainstalowane aplikacje App-V.  
+2.  Implemente as aplicações para utilizadores e dispositivos com um objetivo de implementação de **Necessário**. As implementações para utilizadores tem de ser implementadas nos mesmos utilizadores que utilizavam a aplicação no App-V. Implementações de computadores tem de ser implementadas nos mesmos computadores que tinham a aplicação no App-V.  
 
-3.  Po zakończeniu wdrożenia Utwórz środowiska wirtualne zgodne z grupami połączeń, które są publikowane w autonomicznej aplikacji App-V. Środowisko wirtualne musi mieć te same pakiety (w szczególności typy wdrożeń programu App-V 5) w tej samej kolejności.  
+3.  Uma vez concluída a implementação, crie ambientes virtuais que correspondam aos grupos de ligação publicados no App-V autónomos. O ambiente virtual tem de ter os mesmos pacotes (especificamente, tipos de implementação de App-V 5) na mesma ordem.  
 
-Aby uzyskać informacje o sposobie tworzenia środowisk wirtualnych App-V, zobacz [jak utworzyć środowiska wirtualne App-V](../../apps/deploy-use/create-app-v-virtual-environments.md).  
+Para obter informações sobre como criar um ambiente virtual App-V, consulte [como criar ambientes virtuais App-V](../../apps/deploy-use/create-app-v-virtual-environments.md).  
 
-Można też usunąć wszystkie grupy połączeń z klienta App-V, przed rozpoczęciem wdrażania aplikacji w programie Configuration Manager. Jednak wszystkie ustawienia, które użytkownicy zapisanych w grupach połączeń App-V zostaną utracone.  
+Em alternativa, pode eliminar todos os grupos de ligação do cliente de App-V antes de começar a implementar aplicações com o Configuration Manager. Mas as definições que os utilizadores poderão ter guardados nos grupos de ligação do App-V serão perdidas.  
 
-##  <a name="dynamic-suite-composition-in-app-v-46"></a>Funkcję tworzenia pakietów dynamicznych programu App-v 4.6  
-Tworzenie pakietów dynamicznych to funkcja, która pozwala zdefiniować jeden pakiet aplikacji wirtualnej jako mające zależności na inny pakiet aplikacji wirtualnej. W czasie wykonywania aplikacji klient App-V obsługuje pakiet główny i pakiet zależny w tym samym środowisku wirtualnym aplikacji.  
+##  <a name="dynamic-suite-composition-in-app-v-46"></a>Dynamic Suite Composition no App-V 4.6  
+Dynamic Suite Composition é uma funcionalidade que permite-lhe definir um pacote de aplicação virtual como tendo uma dependência noutro pacote de aplicação virtual. Quando a aplicação é executada, o Cliente de App-V aloja o pacote primário e o pacote dependente no mesmo ambiente virtual para a aplicação.  
 
-Można użyć tej funkcji w programie Configuration Manager oba pakiety muszą wdrożone i zarejestrowane za pomocą klienta App-V. Aby upewnić się, że zawartość pakietu zależnego jest obsługiwana lokalnie na komputerze klienckim, skonfigurować wdrożenie aplikacji umożliwiające dostarczanie lokalne (Pobieranie i uruchamianie).  
+Para que possa utilizar esta funcionalidade com o Configuration Manager, ambos os pacotes devem ser implementados e registados com o cliente de App-V. Para garantir que o conteúdo de pacote dependente é alojado localmente no computador cliente, configurar a implementação de aplicação para o fornecimento local (transferir e executar).  
 
-Więcej informacji o funkcji tworzenia pakietów dynamicznych programu App-V znajduje się w dokumentacji programu App-V.  
+Para mais informações sobre o Dynamic Suite Composition no App-V, consulte a documentação do App-V.  
 
-##  <a name="converting-app-v-46-applications-to-app-v-5-applications"></a>Konwertowanie aplikacji App-V 4.6 do aplikacji App-V 5  
-W klientach App-V 4.6 i App-V 5 jest używany inny format pakietu aplikacji. Aplikacje sekwencjonowane za pomocą klienta App-V 4.6 nie są już obsługiwane. Ale App-V 5 zawiera narzędzie do konwersji pakietu, który można przekonwertować aplikacje. Więcej informacji zawiera [dokumentacja programu App-V 5](http://technet.microsoft.com/library/jj713472.aspx).  
+##  <a name="converting-app-v-46-applications-to-app-v-5-applications"></a>Converter aplicações App-V 4.6 em aplicações de App-V 5  
+O formato do pacote de aplicações foi alterado entre App-V 4.6 e App-V 5. As aplicações sequenciadas ao utilizar o App-V 4.6 já não são suportadas. Mas App-V 5 tem uma ferramenta Conversora de pacotes que pode utilizar para converter aplicações. Para obter mais informações, consulte a [documentação do App-V 5](http://technet.microsoft.com/library/jj713472.aspx).  
 
-Aby skonwertować aplikację App-V 4.6 do aplikacji App-V 5, wykonaj poniższe czynności:  
+Utilize os seguintes passos para converter aplicações App-V 4.6 em aplicações App-V 5:  
 
-1.  Konwertuj lub zsekwencjonować pakiety App-V 4.6 do formatu App-V 5.  
+1.  Converter ou resequence os pacotes de App-V 4.6 para o formato de App-V 5.  
 
-2.  Wdróż klienta App-V 5 na komputerach w hierarchii.  
+2.  Implemente o Cliente de App-V 5 em computadores da hierarquia.  
 
-3.  Utwórz nowe aplikacje, które zawierają typy wdrożeń dla aplikacji App-V 5, a następnie utwórz reguły zastępowania w celu zastąpienia aplikacji App-V 4.6.  
+3.  Crie novas aplicações que contêm tipos de implementação para as aplicações App-V 5 e crie regras de substituição para substituir as aplicações 4.6 App-V.  
 
-4.  Utwórz środowiska wirtualne zgodnie z potrzebami.  
+4.  Crie ambientes virtuais conforme necessário.  
 
-5.  Wdróż nowe aplikacje App-V 5 na komputerach.  
+5.  Implemente as novas aplicações App-V 5 nos computadores.  
 
-##  <a name="user-and-deployment-configuration-files"></a>Pliki konfiguracji użytkownika i wdrożenia  
-Użytkownik i plikach konfiguracji wdrożenia mają ustawienia, które kontrolują sposób działania aplikacji. Aby zmienić ustawienia aplikacji bez ponownie określanie kolejności aplikacji, można użyć tych plików.  
+##  <a name="user-and-deployment-configuration-files"></a>Ficheiros de configuração de utilizador e a implementação  
+Utilizador e os ficheiros de configuração de implementação tem as definições que controlam a forma como se comporta uma aplicação. Pode utilizar estes ficheiros para alterar as definições da aplicação sem resequencing a aplicação.  
 
-Typowa aplikacja App-V 5 może zawierać następujące pliki:  
+Uma aplicação App-V 5 normal pode conter os seguintes ficheiros:  
 
--   Plik aplikacji pakietu (*.appv)  
+-   Um ficheiro de pacote (. appv)  
 
--   Plik konfiguracji użytkownika  
+-   Um ficheiro de configuração do utilizador  
 
--   Plik konfiguracji wdrożenia  
+-   Um ficheiro de configuração de implementação  
 
-Plik konfiguracji użytkownika zawiera ustawienia, które mają zastosowanie tylko do zalogowanego użytkownika. Można na przykład edytować pliki konfiguracji, aby zmienić informacje o skrócie aplikacji, które zostanie wdrożone dla użytkowników. Można również utworzyć aplikację programu Configuration Manager z wieloma typami wdrożeń. Każdego typu wdrożenia może zawierać różne pliki konfiguracji użytkownika oraz zastosować reguły wymagań i upewnij się, że te pliki są zainstalowane dla odpowiednich użytkowników.  
+O ficheiro de configuração do utilizador tem definições que se aplicam apenas ao utilizador com sessão iniciada. Pode, por exemplo, editar os ficheiros de configuração para alterar as informações sobre o atalho da aplicação que será implementada para utilizadores. Também pode criar uma aplicação do Configuration Manager com vários tipos de implementação. Cada tipo de implementação pode conter um ficheiro de configuração de utilizador diferente e utilizar regras de requisitos para se certificar de que estão instalados nos utilizadores relevantes.  
 
-Plik konfiguracji wdrożenia zawiera ustawienia, które są stosowane do komputera, takich jak ustawienia rejestru. Plik może być również ustawienia użytkownika, które są stosowane do wszystkich użytkowników.  
+O ficheiro de configuração de implementação tem as definições que se aplicam ao computador, como definições de registo. O ficheiro também pode ter definições de utilizador que são aplicadas a todos os utilizadores.  
 
-Jeśli chcesz wdrożyć aplikacje wirtualne App-V 5 z programem Configuration Manager, wszystkie trzy pliki muszą znajdować się w tym samym folderze podczas tworzenia typu wdrożenia App-V 5. Jeśli w folderze jest wiele plików, Configuration Manager będzie używać najnowszej.  
+Se pretender implementar aplicações virtuais do App-V 5 com o Configuration Manager, todos os três ficheiros tem de existir na mesma pasta quando criar o tipo de implementação de App-V 5. Se existirem vários ficheiros na pasta, o Configuration Manager irá utilizar o mais recente.  
 
-Więcej informacji zawiera [dokumentacja programu App-V 5](http://technet.microsoft.com/library/jj713466.aspx).  
+Para obter mais informações, consulte a [documentação do App-V 5](http://technet.microsoft.com/library/jj713466.aspx).  
 
-##  <a name="app-v-local-interaction"></a>Lokalna interakcja klienta App-V  
-W niektórych scenariuszach wdrażania aplikacje są instalowane lokalnie na komputerach klienckich, a inne są wdrażane jako aplikacje wirtualne na tym samym komputerze klienckim. Domyślnie aplikacje zainstalowane lokalnie nie widzą aplikacji zwirtualizowanych ani nie mogą się z nimi komunikować. Jest to oczekiwane zachowanie funkcji izolacji aplikacji, która zapewnia App-V. Interakcja lokalna to funkcja klienta App-V, który można włączyć dla poszczególnych aplikacji umożliwić lokalnie zainstalowane aplikacje, które są uruchamiane na komputerze klienckim, aby wyświetlić i komunikować się z zwirtualizowanych aplikacji. Program Configuration Manager i App-V pełni obsługują funkcję interakcji lokalnej.  
+##  <a name="app-v-local-interaction"></a>Interação local de App-V  
+Em alguns cenários de implementação de aplicação, as aplicações são instaladas localmente em computadores cliente e outras aplicações são implementadas como aplicações virtuais no mesmo computador cliente. Por predefinição, as aplicações que foram instaladas localmente não conseguem ver nem comunicar diretamente com aplicações virtualizadas. Este é o comportamento previsto do isolamento de aplicações App-V fornece de. Interação local é uma funcionalidade do cliente de App-V que pode ativar para cada aplicação para permitir que aplicações instaladas localmente e executadas num computador cliente possam ver e comunicar com aplicações virtualizadas. O Configuration Manager e App-V suportam totalmente a interação local.  
 
-Aby uzyskać więcej informacji na temat funkcji lokalna interakcja klienta App-V Zobacz dokumentacji klienta App-V.  
+Para obter mais informações sobre a funcionalidade interação local de App-V, consulte a documentação do App-V.  
 
-##  <a name="app-v-5-shared-content-store"></a>App-V 5 udostępniony magazyn zawartości  
-Program Configuration Manager obsługuje funkcję App-V 5 magazynu zawartości udostępnionej klienta. Więcej informacji zawiera temat [Planowanie udostępnionego magazynu zawartości (SCS) programu App-V 5.0](http://technet.microsoft.com/library/jj713431.aspx).  
+##  <a name="app-v-5-shared-content-store"></a>Arquivo de conteúdo partilhado do App-V 5  
+O Configuration Manager suporta a funcionalidade de App-V 5 arquivo de conteúdo partilhado. Para mais informações, consulte [Planear a Loja de Conteúdo Partilhado (SCS) do App-V 5.0](http://technet.microsoft.com/library/jj713431.aspx).  
 
-##  <a name="monitoring-virtual-applications"></a>Monitorowanie aplikacji wirtualnych  
+##  <a name="monitoring-virtual-applications"></a>Monitorizar aplicações virtuais  
 
-### <a name="virtual-application-reports"></a>Raporty aplikacji wirtualnych  
-Następujące raporty służy do monitorowania aplikacji App-V w środowisku programu Configuration Manager:  
+### <a name="virtual-application-reports"></a>Relatórios de aplicações virtuais  
+Pode utilizar os seguintes relatórios para monitorizar o App-V no seu ambiente do Configuration Manager:  
 
-|Nazwa raportu|Opis|  
+|Nome do Relatório|Descrição|  
 |-----------------|-----------------|  
-|Wyniki środowiska wirtualnego App-V|Przedstawia informacje o wybranym środowisku wirtualnym, który znajduje się w określonym stanie dla wybranej kolekcji (tylko App-V 5).|  
-|Wyniki środowiska wirtualnego App-V dla zasobu|Przedstawia informacje o wybranym środowisku wirtualnym przy określonym zasobie i dowolnym typie wdrożenia wybranym środowisku wirtualnym (tylko App-V 5).|  
-|Status środowiska wirtualnego App-V|Przedstawia informacje o zgodności dla wybranego środowiska wirtualnego w wybranej kolekcji. **Zachowywane** kolumny w tym raporcie zawiera zasoby, w których uprzednio skonfigurowane środowisko wirtualne nie ma już zastosowania, ale jest zachowane w celu utrzymania ustawień użytkownika w aplikacjach wykonywanych w środowisku wirtualnym (tylko App-V 5).|  
-|Komputery z określoną aplikacją wirtualną|Przedstawia podsumowanie komputerów z określonym skrótem programu App-V, utworzony za pomocą aplikacji Application Virtualization Management Sequencer (tylko App-V 4.6).|  
-|Komputery z określonym pakietem aplikacji wirtualnych|Przedstawia listę komputerów, które mają określony App-V pakiet aplikacji zainstalowane (tylko App-V 4.6).|  
-|Liczba wszystkich wystąpień pakietów aplikacji wirtualnych|Pokazuje liczbę wszystkich wykryto pakietów aplikacji App-V (tylko App-V 4.6).|  
-|Liczba wszystkich wystąpień aplikacji wirtualnych|Pokazuje liczbę wszystkich wykryto aplikacji App-V (tylko App-V 4.6).|  
+|Resultados do Ambiente Virtual de App-V|Mostra informações sobre um ambiente virtual selecionado que está num estado especificado para uma coleção selecionada (apenas App-V 5).|  
+|Resultados do Ambiente Virtual de App-V Para Ativo|Mostra informações sobre um ambiente virtual selecionado para um ativo especificado e quaisquer tipos de implementação para o ambiente virtual selecionado (apenas App-V 5).|  
+|Estado do Ambiente Virtual de App-V|Mostra informações de conformidade para um ambiente virtual selecionado para uma coleção selecionada. O **retidos** coluna este relatório mostra os ativos em que um ambiente virtual que foi anteriormente configurado já não é aplicável, mas retido para manter as definições de utilizador nas aplicações executadas no ambiente virtual (apenas App-V 5).|  
+|Computadores com uma aplicação virtual específica|Mostra um resumo de computadores que têm o atalho do App-V especificada que o Application Virtualization Management Sequencer criado (apenas App-V 4.6).|  
+|Computadores com um pacote específico de aplicação virtual|Mostra uma lista de computadores que têm o App-V aplicação pacote especificado instalado (apenas App-V 4.6).|  
+|Contar todas as instâncias de pacotes de aplicação virtual|Mostra uma contagem de todas as detetada pacotes de aplicações de App-V (apenas App-V 4.6).|  
+|Contar todas as instâncias de aplicações virtuais|Mostra uma contagem de todas as detetadas aplicações de App-V (apenas App-V 4.6).|  
 
-### <a name="log-files"></a>Pliki dziennika  
-Configuration Manager rejestruje informacje o wdrożeniach aplikacji wirtualnych w plikach dziennika. Aby uzyskać informacje o dzienniku plików tej aplikacji wirtualnych i zarządzania stosowania programu Configuration Manager, zobacz [pliki dziennika w programie System Center Configuration Manager](../../core/plan-design/hierarchy/log-files.md).  
+### <a name="log-files"></a>Ficheiros de registo  
+O Configuration Manager regista informações sobre implementações de aplicações virtuais nos ficheiros de registo. Para obter informações sobre o registo de ficheiros que aplicações virtuais e a utilização de gestão de aplicações do Configuration Manager, consulte [ficheiros de registo no System Center Configuration Manager](../../core/plan-design/hierarchy/log-files.md).  
 
-Windows Vista, Windows 7 i Windows 8 można znaleźć dzienniki klienta App-V w C:\ProgramData\Microsoft\Application wirtualizacji klienta.  
+Para o Windows Vista, Windows 7 e Windows 8, pode encontrar registos para o cliente de App-V no cliente de Virtualização C:\ProgramData\Microsoft\Application.  

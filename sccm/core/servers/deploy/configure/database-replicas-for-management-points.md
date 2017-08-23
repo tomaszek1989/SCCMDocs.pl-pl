@@ -1,6 +1,6 @@
 ---
-title: "Repliki bazy danych punktu zarządzania | Dokumentacja firmy Microsoft"
-description: "Użyj repliki bazy danych, aby zmniejszyć obciążenie procesora CPU umieszczone na serwerze bazy danych lokacji przez punkty zarządzania."
+title: "Réplicas de base de dados do ponto de gestão | Microsoft Docs"
+description: "Utilize uma réplica de base de dados para reduzir a carga de CPU colocada no servidor de base de dados do site por pontos de gestão."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,235 +17,235 @@ manager: angrobe
 ms.openlocfilehash: 130c053c9f2a1817dd85b1f3c01285aab19d59cb
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pl-PL
+ms.contentlocale: pt-PT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="database-replicas-for-management-points-for-system-center-configuration-manager"></a>Repliki bazy danych dla punktów zarządzania programu System Center Configuration Manager
+# <a name="database-replicas-for-management-points-for-system-center-configuration-manager"></a>Réplicas de bases de dados para pontos de gestão do System Center Configuration Manager
 
-*Dotyczy: Program System Center Configuration Manager (Current Branch)*
+*Aplica-se a: O System Center Configuration Manager (ramo atual)*
 
-Lokacje główne programu System Center Configuration Manager można użyć repliki bazy danych, aby zmniejszyć obciążenie procesora CPU umieszczone na serwerze bazy danych lokacji przez punkty zarządzania realizujące żądania od klientów usługi.  
+Sites primários do System Center Configuration Manager podem utilizar uma réplica de base de dados para reduzir a carga da CPU colocada no servidor de base de dados do site por pontos de gestão à medida que atendem pedidos de clientes.  
 
--   Kiedy punkt zarządzania korzysta z repliki bazy danych, żąda danych od komputera z programem SQL Server hostującego replikę bazy danych zamiast od serwera bazy danych lokacji.  
+-   Quando um ponto de gestão utiliza uma réplica de base de dados, esse ponto de gestão solicita dados ao computador com o SQL Server que aloja a réplica da base de dados em vez de solicitar ao servidor da base de dados do site.  
 
--   Może to pomóc w zmniejszeniu zapotrzebowania na moc obliczeniową procesora CPU na serwerze bazy danych lokacji dzięki przeniesieniu częstych zadań przetwarzania związanych z klientami.  Przykładem częstych zadań przetwarzania dla klientów są lokacje, w których istnieje duża liczba klientów wysyłających częste żądania dotyczące zasad klienta.  
+-   Isto pode ajudar a reduzir os requisitos de processamento da CPU no servidor da base de dados do site ao descarregar tarefas de processamento frequentes relacionadas com clientes.  Um exemplo de tarefas de processamento frequentes para clientes inclui sites onde existe um grande número de clientes que efetuam pedidos frequentes de política de cliente  
 
 
-##  <a name="bkmk_Prepare"></a> Przygotowanie do korzystania z replik bazy danych  
-**Informacje o replikach bazy danych dla punktów zarządzania:**  
+##  <a name="bkmk_Prepare"></a> Preparar a utilização de réplicas de bases de dados  
+**Acerca das réplicas de bases de dados para pontos de gestão:**  
 
--   Repliki to częściowe kopie bazy danych lokacji, które są replikowane do osobnego wystąpienia programu SQL Server:  
+-   Réplicas são uma cópia parcial da base de dados do site que é replicada para uma instância separada do SQL Server:  
 
-    -   Lokacje główne obsługują dedykowaną replikę bazy danych dla każdego punktu zarządzania w lokacji (lokacje dodatkowe nie obsługują replik bazy danych)  
+    -   Os sites primários suportam uma réplica de base de dados dedicado para cada ponto de gestão no site (os sites secundários não suportam réplicas de base de dados)  
 
-    -   Jedna replika bazy danych może być używana przez więcej niż jeden punkt zarządzania w tej samej lokacji.  
+    -   Uma réplica de base de dados única pode ser utilizada por mais de um ponto de gestão do mesmo site  
 
-    -   Serwer SQL może hostować wiele replik bazy danych do użycia przez różne punkty zarządzania, dopóki każda z nich jest uruchamiana w oddzielnym wystąpieniu programu SQL Server.  
+    -   Um SQL Server pode alojar várias réplicas de base de dados para utilização por pontos de gestão diferentes, desde que cada uma seja executada numa instância separada do SQL Server  
 
--   Repliki synchronizują kopię bazy danych lokacji zgodnie z ustalonym harmonogramem z danymi opublikowanymi w tym celu przez serwer bazy danych lokacji.  
+-   As réplicas sincronizam uma cópia da base de dados do site numa agenda fixa a partir dos dados publicados pelo servidor da base de dados do site para este fim.  
 
--   Punkty zarządzania można skonfigurować do korzystania z repliki podczas instalacji punktu zarządzania lub w późniejszym czasie, przez ponowne skonfigurowanie wcześniej zainstalowanego punktu zarządzania do korzystania z repliki bazy danych.  
+-   Os pontos de gestão podem ser configurados para utilizar uma réplica quando o utilizador instala o ponto de gestão ou numa altura posterior ao reconfigurar o ponto de gestão anteriormente instalado para utilizar a réplica da base de dados  
 
--   Należy regularnie monitorować serwer bazy danych lokacji i każdy serwer repliki bazy danych, aby mieć pewność, że zachodzi replikacja między nimi i że wydajność serwera repliki bazy danych jest wystarczająca dla wymaganej wydajności lokacji i klientów.  
+-   Monitorize regularmente o servidor da base de dados do site e todos os servidores de réplicas da base de dados para garantir que a replicação ocorre entre eles e que o desempenho do servidor de réplicas da base de dados é suficiente para o desempenho pretendido para o site e cliente  
 
-**Wymagania wstępne dotyczące replik bazy danych:**  
+**Pré-requisitos para réplicas de base de dados:**  
 
--   **Wymagania dotyczące programu SQL Server:**  
+-   **Requisitos do SQL Server:**  
 
-    -   Wystąpienie programu SQL Server hostujące replikę bazy danych musi spełniać te same wymagania co serwer bazy danych lokacji. Na serwerze repliki może być jednak uruchomiona inna wersja lub edycja programu SQL Server niż na serwerze bazy danych lokacji, o ile tylko jest to obsługiwana wersja i wydanie programu SQL Server. Aby uzyskać więcej informacji, zobacz [Obsługiwane konfiguracje programu SQL Server dla programu System Center Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md).  
+    -   O SQL Server que aloja a réplica da base de dados tem de preencher os mesmos requisitos que o servidor da base de dados do site. No entanto, o servidor da réplica não precisa de executar a mesma versão ou edição do SQL Server que o servidor da base de dados do site, desde que execute uma versão e edição suportadas do SQL Server. Para obter informações, veja [Suporte para versões do SQL Server para o System Center Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md)  
 
-    -   Usługa programu SQL Server na komputerze hostującym replikę bazy danych musi być uruchomiona za pomocą konta **System** .  
+    -   O Serviço SQL Server no computador que aloja a réplica da base de dados tem de ser executado como a conta do **Sistema** .  
 
-    -   Zarówno w programie SQL Server hostującym bazę danych lokacji, jak i hostującym replikę bazy danych musi być zainstalowana funkcja **replikacji programu SQL Server** .  
+    -   O SQL Server que aloja a base de dados do site e que aloja uma réplica de base de dados têm de ter **replicação do SQL Server** instalada.  
 
-    -   Baza danych lokacji musi **publikować** replikę bazy danych, a każdy serwer zdalnej repliki bazy danych musi **subskrybować** publikowane dane.  
+    -   A base de dados do site tem de **publicar** a réplica da base de dados e cada servidor de réplica de base de dados remota tem de **subscrever** os dados publicados.  
 
-    -   Zarówno program SQL Server hostujący bazę danych lokacji, jak i hostujący replikę bazy danych należy skonfigurować do obsługi parametru **Max Text Repl Size** o wartości 2 GB. Przykład sposobu konfigurowania tej opcji dla programu SQL Server 2012 znajduje się w temacie [Konfigurowanie opcji max text repl size konfiguracji serwera](http://go.microsoft.com/fwlink/p/?LinkId=273960).  
+    -   O SQL Server que aloja a base de dados do site e que aloja uma réplica da base de dados têm de estar configurados para suportar um **Tamanho de Replicação de Texto Máx.** de 2 GB. Para ver um exemplo desta configuração para o SQL Server 2012, veja [Configure the max text repl size Server Configuration Option (Configurar a Opção de Configuração de Servidor max text repl size)](http://go.microsoft.com/fwlink/p/?LinkId=273960).  
 
--   **Certyfikat z podpisem własnym:** Aby skonfigurować replikę bazy danych, należy utworzyć certyfikat z podpisem własnym na serwerze repliki bazy danych i udostępnić ten certyfikat każdemu punktowi zarządzania, który będzie korzystał z tego serwera repliki bazy danych.  
+-   **Certificado autoassinado:** Para configurar uma réplica de base de dados, tem de criar um certificado autoassinado no servidor de réplica de base de dados e disponibilizar este certificado para cada ponto de gestão que irão utilizar esse servidor de réplica de base de dados.  
 
-    -   Ten certyfikat jest automatycznie dostępny dla punktu zarządzania zainstalowanego na serwerze repliki bazy danych.  
+    -   O certificado é automaticamente disponibilizado aos pontos de gestão que estejam instalados no servidor de réplicas da base de dados.  
 
-    -   Aby jednak udostępnić ten certyfikat zdalnym punktom zarządzania, należy go wyeksportować, a potem dodać do magazynu certyfikatów **Osoby zaufane** w zdalnym punkcie zarządzania.  
+    -   Para disponibilizar este certificado a pontos de gestão remotos, terá de exportar o certificado e adicioná-lo ao arquivo de certificados **Pessoas Fidedignas** no ponto de gestão remoto.  
 
--   **Powiadomienie klienta:** Aby zapewnić obsługę powiadomień klienta z repliką bazy danych dla punktu zarządzania, należy skonfigurować komunikację między serwerem bazy danych lokacji i serwerze repliki bazy danych dla **SQL Server Service Broker**. Wymaga to:  
+-   **Notificação do cliente:** Para suportar a notificação do cliente com uma réplica de base de dados para um ponto de gestão, tem de configurar a comunicação entre o servidor de base de dados do site e o servidor de réplica de base de dados para o **SQL Server Service Broker**. Isto requer a:  
 
-    -   Skonfigurowania w każdej bazie danych informacji o drugiej bazie danych  
+    -   Configuração de cada base de dados com informações sobre a outra base de dados  
 
-    -   Wymiany certyfikatów między dwiema bazami danych na potrzeby bezpiecznej komunikacji  
+    -   Troca de certificados entre as duas bases de dados para comunicação segura  
 
-**Ograniczenia w przypadku używania replik bazy danych:**  
+**Limitações ao utilizar réplicas de base de dados:**  
 
--   Gdy lokacja jest skonfigurowana do publikowania replik baz danych, należy użyć następującej procedury zamiast normalnych wskazówek:  
+-   Quando o site está configurado para publicar réplicas de base de dados, devem ser utilizados os procedimentos seguintes em vez dos procedimentos normais:  
 
-    -   [Odinstalowywanie serwera lokacji publikującego replikę bazy danych](#BKMK_DBReplicaOps_Uninstall)  
+    -   [Desinstalar um servidor do site que publica uma réplica de base de dados](#BKMK_DBReplicaOps_Uninstall)  
 
-    -   [Przenoszenie bazy danych serwera lokacji publikującej replikę bazy danych](#BKMK_DBReplicaOps_Move)  
+    -   [Mover um servidor do site que publica uma réplica de base de dados](#BKMK_DBReplicaOps_Move)  
 
--   **Uaktualnienia do programu System Center Configuration Manager**: Przed uaktualnieniem lokacji programu System Center 2012 Configuration Manager do programu System Center Configuration Manager, należy wyłączyć repliki bazy danych dla punktów zarządzania.  Po uaktualnieniu lokacji możesz ponownie skonfigurować repliki bazy danych dla punktów zarządzania.  
+-   **Atualizações para o System Center Configuration Manager**: Antes de atualizar um site do System Center 2012 Configuration Manager para o System Center Configuration Manager, tem de desativar as réplicas de base de dados para pontos de gestão.  Após a atualização do site, pode reconfigurar as réplicas de base de dados para pontos de gestão.  
 
--   **Wiele replik na jednym serwerze SQL:**  Jeśli skonfigurujesz serwer repliki bazy danych jako hosta wielu replik bazy danych dla punktów zarządzania (każda replika musi być w oddzielnym wystąpieniu) należy użyć zmodyfikowanego skryptu konfiguracji (z kroku 4 z sekcji poniżej) aby zapobiec zastąpieniu certyfikatu z podpisem własnym używany przez wcześniej skonfigurowane repliki bazy danych na tym serwerze.  
+-   **Várias réplicas num único SQL Server:**  Se configurar um servidor de réplica de base de dados para alojar várias réplicas de base de dados para pontos de gestão (cada réplica tem de estar numa instância separada) tem de utilizar um script de configuração modificado (no passo 4 da secção seguinte) para impedir a substituição do certificado autoassinado em utilização por réplicas de base de dados anteriormente configuradas nesse servidor.  
 
-##  <a name="BKMK_DBReplica_Config"></a> Konfigurowanie replik bazy danych  
-Aby korzystać z konfigurowania repliki bazy danych, wymagane są następujące kroki:  
+##  <a name="BKMK_DBReplica_Config"></a> Configurar réplicas de base de dados  
+Para configurar uma réplica de base de dados, são necessários os passos seguintes:  
 
--   [Krok 1 — Konfigurowanie serwera bazy danych lokacji do publikowania repliki bazy danych](#BKMK_DBReplica_ConfigSiteDB)  
+-   [Passo 1 - Configurar o servidor da base de dados do site para publicar a réplica da base de dados](#BKMK_DBReplica_ConfigSiteDB)  
 
--   [Krok 2 — Konfigurowanie serwera repliki bazy danych](#BKMK_DBReplica_ConfigSrv)  
+-   [Passo 2 - Configurar o servidor de réplicas da base de dados](#BKMK_DBReplica_ConfigSrv)  
 
--   [Krok 3 — Konfigurowanie punktów zarządzania do korzystania z repliki bazy danych](#BKMK_DBReplica_ConfigMP)  
+-   [Passo 3 - Configurar pontos de gestão para utilizar a réplica da base de dados](#BKMK_DBReplica_ConfigMP)  
 
--   [Krok 4 — Konfigurowanie certyfikatu z podpisem własnym dla serwera repliki bazy danych](#BKMK_DBReplica_Cert)  
+-   [Passo 4 - Configurar um certificado autoassinado para o servidor de réplica da base de dados](#BKMK_DBReplica_Cert)  
 
--   [Krok 5 — Konfigurowanie brokera usług serwera SQL dla serwera repliki bazy danych](#BKMK_DBreplica_SSB)  
+-   [Passo 5 - Configurar o SQL Server Service Broker para o servidor de réplica da base de dados](#BKMK_DBreplica_SSB)  
 
-###  <a name="BKMK_DBReplica_ConfigSiteDB"></a> Krok 1 — Konfigurowanie serwera bazy danych lokacji do publikowania repliki bazy danych  
- Poniższa procedura przedstawia przykład sposobu konfigurowania serwera bazy danych lokacji na komputerze z systemem Windows Server 2008 R2 pod kątem publikowania repliki bazy danych. W przypadku innej wersji systemu operacyjnego należy zapoznać się z jego dokumentacją w celu odpowiedniego dostosowania kroków poniższej procedury w razie potrzeby.  
+###  <a name="BKMK_DBReplica_ConfigSiteDB"></a> Passo 1 - Configurar o servidor da base de dados do site para publicar a réplica da base de dados  
+ Utilize o procedimento seguinte como exemplo de como configurar o servidor da base de dados do site num computador com o Windows Server 2008 R2 para publicar a réplica da base de dados. Se tiver outra versão do sistema operativo, consulte a respetiva documentação e ajuste os passos deste procedimento conforme necessário.  
 
-##### <a name="to-configure-the-site-database-server"></a>Aby skonfigurować serwer bazy danych lokacji  
+##### <a name="to-configure-the-site-database-server"></a>Para configurar o servidor da base de dados do site  
 
-1.  Na serwerze bazy danych lokacji ustaw automatyczne uruchamianie programu SQL Server Agent.  
+1.  No servidor da base de dados do site, defina o SQL Server Agent para ser iniciado automaticamente.  
 
-2.  Na serwerze bazy danych lokacji Utwórz lokalną grupę użytkowników o nazwie **ConfigMgr_MPReplicaAccess**. Musisz dodać do tej grupy konto komputera każdego z serwerów repliki bazy danych używanych w tej lokacji, aby umożliwić tym serwerom repliki bazy danych synchronizację z opublikowaną repliką bazy danych.  
+2.  No servidor de base de dados do site, crie um grupo de utilizadores local com o nome **ConfigMgr_MPReplicaAccess**. Terá de adicionar a este grupo a conta de computador de cada servidor de réplicas da base de dados que utiliza neste site, para permitir que esses servidores de réplicas sincronizem com a réplica da base de dados publicada.  
 
-3.  Na serwerze bazy danych lokacji skonfiguruj udział plików o nazwie **ConfigMgr_MPReplica**.  
+3.  No servidor de base de dados do site, configure uma partilha de ficheiros com o nome **ConfigMgr_MPReplica**.  
 
-4.  Dodaj następujące uprawnienia do **ConfigMgr_MPReplica** udziału:  
+4.  Adicione as seguintes permissões para o **ConfigMgr_MPReplica** partilhar:  
 
     > [!NOTE]  
-    >  Jeśli program SQL Server Agent używa innego konta niż konto systemu lokalnego, zastąp nazwą tego konta wyraz SYSTEM na poniższej liście.  
+    >  Se o SQL Server Agent utilizar uma conta diferente da conta do sistema local, substitua SYSTEM por esse nome de conta na lista seguinte.  
 
-    -   **Uprawnienia udziału**:  
+    -   **Permissões de Partilha**:  
 
-        -   SYSTEM: **Zapisu**  
+        -   SYSTEM: **Escrita**  
 
-        -   ConfigMgr_MPReplicaAccess: **Odczyt**  
+        -   ConfigMgr_MPReplicaAccess: **Leitura**  
 
-    -   **Uprawnienia NTFS**:  
+    -   **Permissões de NTFS**:  
 
-        -   SYSTEM: **Pełna kontrola**  
+        -   SYSTEM: **Controlo total**  
 
-        -   ConfigMgr_MPReplicaAccess: **Odczyt**, **odczytu & wykonać**, **wyświetlanie zawartości folderu**  
+        -   ConfigMgr_MPReplicaAccess: **Leitura**, **leitura & executar**, **listar conteúdo da pasta**  
 
-5.  Za pomocą programu **SQL Server Management Studio** połącz się z bazą danych lokacji i uruchom następującą procedurę składowaną jako zapytanie: **spCreateMPReplicaPublication**  
+5.  Utilize o **SQL Server Management Studio** para estabelecer ligação à base de dados do site e execute o seguinte procedimento armazenado como uma consulta: **spCreateMPReplicaPublication**  
 
-Po ukończeniu działania procedury składowanej serwer bazy danych lokacji będzie skonfigurowany do publikowania repliki bazy danych.  
+Quando o procedimento armazenado for concluído, o servidor da base de dados do site estará configurado para publicar a réplica da base de dados.  
 
-###  <a name="BKMK_DBReplica_ConfigSrv"></a> Krok 2 — Konfigurowanie serwera repliki bazy danych  
-Serwer repliki bazy danych to komputer, na którym działa program SQL Server i który jest hostem repliki bazy danych lokacji przeznaczonej na użytek punktów zarządzania. Zgodnie z ustalonym harmonogramem serwer repliki bazy danych synchronizuje własną kopię bazy danych z repliką bazy danych opublikowaną przez serwer bazy danych lokacji.  
+###  <a name="BKMK_DBReplica_ConfigSrv"></a> Passo 2 - Configurar o servidor de réplicas da base de dados  
+O servidor de réplica da base de dados é um computador que executa o SQL Server e que aloja uma réplica da base de dados do site para utilização pelos pontos de gestão. Numa agenda fixa, o servidor de réplicas da base de dados sincroniza a sua cópia da base de dados com a réplica da base de dados que é publicada pelo servidor da base de dados do site.  
 
-Serwer repliki bazy danych musi spełniać te same wymagania co serwer bazy danych lokacji. Na serwerze repliki bazy danych może jednak być uruchomiona inna edycja czy też wersja programu SQL Server niż ta, z której korzysta serwer bazy danych lokacji. Informacje o obsługiwanych wersjach programu SQL Server można znaleźć w temacie [Obsługiwane konfiguracje programu SQL Server dla programu System Center Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md).  
+O servidor de réplicas da base de dados tem de satisfazer os mesmos requisitos que o servidor da base de dados do site. No entanto, o servidor de réplica da base de dados poderá executar uma edição ou versão do SQL Server diferente da utilizada pelo servidor da base de dados do site. Para obter informações sobre as versões suportadas do SQL Server, veja o tópico [Suporte para versões do SQL Server para o System Center Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md).  
 
 > [!IMPORTANT]  
->  Usługa SQL Server na komputerze hostującym replikę bazy danych musi być uruchomiona za pomocą konta System.  
+>  O Serviço do SQL Server no computador que aloja a réplica da base de dados tem de ser executado como a conta do Sistema.  
 
-Poniższa procedura przedstawia przykład sposobu konfigurowania serwera repliki bazy danych na komputerze z systemem Windows Server 2008 R2. W przypadku innej wersji systemu operacyjnego należy zapoznać się z jego dokumentacją w celu odpowiedniego dostosowania kroków poniższej procedury w razie potrzeby.  
+Utilize o seguinte procedimento como exemplo de como configurar um servidor de réplica da base de dados num computador com o Windows Server 2008 R2. Se tiver outra versão do sistema operativo, consulte a respetiva documentação e ajuste os passos deste procedimento conforme necessário.  
 
-##### <a name="to-configure-the-database-replica-server"></a>Aby skonfigurować serwer repliki bazy danych  
+##### <a name="to-configure-the-database-replica-server"></a>Para configurar o servidor de réplicas da base de dados  
 
-1.  Na serwerze repliki bazy danych ustaw automatyczne uruchamianie programu SQL Server Agent.  
+1.  No servidor de réplicas da base de dados, defina o SQL Server Agent para arrancar automaticamente.  
 
-2.  Na serwerze repliki bazy danych za pomocą programu **SQL Server Management Studio** połącz się z serwerem lokalnym, w trybie przeglądania przejdź do folderu **Replikacja** , kliknij pozycję Subskrypcje lokalne i wybierz opcję **Nowe subskrypcje** , aby uruchomić **Kreatora nowej subskrypcji**:  
+2.  No servidor de réplica da base de dados, utilize o **SQL Server Management Studio** para estabelecer ligação ao servidor local, navegue para a pasta **Replicação** , clique em Subscrições Locais e selecione **Novas Subscrições** para iniciar o **Assistente de Nova Subscrição**:  
 
-    1.  Na stronie **Publikacja** w polu listy **Wydawca** wybierz opcję **Znajdź wydawcę programu SQL Server**, wprowadź nazwę serwera bazy danych lokacji, a następnie kliknij przycisk **Połącz**.  
+    1.  Na página **Publicação** , na caixa de listagem **Publicador** , selecione **Procurar Publicador do SQL Server**, introduza o nome do servidor da base de dados do site e clique em **Ligar**.  
 
-    2.  Wybierz **ConfigMgr_MPReplica**, a następnie kliknij przycisk **dalej**.  
+    2.  Selecione **ConfigMgr_MPReplica**e, em seguida, clique em **seguinte**.  
 
-    3.  Na **lokalizacja agenta dystrybucji** wybierz pozycję **Uruchom każdego agenta jako jego subskrybent (subskrypcje wciągane)**i kliknij przycisk **dalej**.  
+    3.  No **localização do agente de distribuição** página, selecione **executar cada agente no seu subscritor (subscrições de solicitação)**e clique em **seguinte**.  
 
-    4.  Na stronie **Subskrybenci** wykonaj jedną z następujących czynności:  
+    4.  Na página **Subscritores** , execute um dos seguintes procedimentos:  
 
-        -   Wybierz z serwera repliki bazy danych jedną z istniejących baz danych do użycia dla repliki bazy danych, a następnie kliknij przycisk **OK**.  
+        -   Selecione uma base de dados existente no servidor de réplica da base de dados a utilizar para a réplica da base de dados e clique em **OK**.  
 
-        -   Wybierz opcję **Nowa baza danych** , aby utworzyć nową bazę danych dla repliki bazy danych. Na stronie **Nowa baza danych** określ nazwę bazy danych, a następnie kliknij przycisk **OK**.  
+        -   Selecione **Nova base de dados** para criar uma nova base de dados para a réplica da base de dados. Na página **Nova Base de Dados** , especifique um nome para a base de dados e clique em **OK**.  
 
-    5.  Kliknij przycisk **Dalej**, aby kontynuować.  
+    5.  Clique em **Seguinte** para continuar.  
 
-    6.  Na **zabezpieczenia agenta dystrybucji** strony, kliknij przycisk Właściwości **(...)**  w wierszu połączenie z subskrybentem okna dialogowego polu, a następnie skonfiguruj ustawienia zabezpieczeń dla tego połączenia.  
+    6.  No **segurança do agente de distribuição** página, clique no botão de propriedades **(…)**  na linha ligação do subscritor da caixa de diálogo caixa e, em seguida, configure as definições de segurança para a ligação.  
 
         > [!TIP]  
-        >  Przycisk Właściwości **(...)** , znajduje się w czwartej kolumnie wyświetlanego pola.  
+        >  O botão de propriedades **(…)** , está na quarta coluna da caixa de visualização.  
 
-        **Ustawienia zabezpieczeń:**  
+        **Definições de segurança:**  
 
-        -   Skonfiguruj konto, na którym uruchomiono proces agenta dystrybucji (konto procesu):  
+        -   Configure a conta que executa o processo de agente de distribuição (a conta de processo):  
 
-            -   Jeśli programu SQL Server Agent działa jako system lokalny, wybierz opcję **uruchamiana na koncie usługi SQL Server Agent (to nie jest najlepszą zalecaną praktyką zabezpieczeń.)**  
+            -   Se o SQL Server Agent for executado como sistema local, selecione **executado sob a conta de serviço do SQL Server Agent (não é uma melhor prática de segurança recomendado.)**  
 
-            -   Jeśli program SQL Server Agent działa na innym koncie, wybierz opcję **Uruchom na następującym koncie systemu Windows**, po czym skonfiguruj to konto. Możesz określić konto systemu Windows lub konto programu SQL Server.  
+            -   Se o SQL Server Agent for executado utilizando outra conta, selecione **Executar sob a seguinte conta do Windows**e configure essa conta. Poderá especificar uma conta do Windows ou uma conta do SQL Server.  
 
             > [!IMPORTANT]  
-            >  Kontu służącemu do uruchamiania agenta dystrybucji należy przyznać na użytek wydawcy uprawnienia subskrypcji wciąganej. Informacje o konfigurowaniu tych uprawnień znajdują się w temacie [Zabezpieczenia agenta dystrybucji](http://go.microsoft.com/fwlink/p/?LinkId=238463) w bibliotece TechNet poświęconej programowi SQL Server.  
+            >  Terá de conceder à conta que executa o Agente de Distribuição permissões para o publicador como subscrição de solicitação. Para obter informações sobre a configuração destas permissões, veja [Distribution Agent Security (Segurança do Agente de Distribuição)](http://go.microsoft.com/fwlink/p/?LinkId=238463) na Biblioteca TechNet do SQ Server.  
 
-        -   Dla opcji **Połącz z dystrybutorem**wybierz ustawienie **Personifikując konto procesu**.  
+        -   Em **Ligar ao Distribuidor**, selecione **Representando a conta de processo**.  
 
-        -   Dla opcji **Połącz z subskrybentem**wybierz ustawienie **Personifikując konto procesu**.  
+        -   Em **Ligar ao Subscritor**, selecione **Representando a conta de processo**.  
 
-         Po skonfigurowaniu ustawień zabezpieczeń połączenia kliknij przycisk **OK** , aby je zapisać, a następnie kliknij przycisk **Dalej**.  
+         Após configurar as definições de segurança da ligação, clique em **OK** para guardá-las e clique em **Seguinte**.  
 
-    7.  Na stronie **Harmonogram synchronizacji** w polu listy **Harmonogram agenta** wybierz opcję **Zdefiniuj harmonogram**, a następnie skonfiguruj **Nowy harmonogram zadania**. Ustaw częstotliwość występowania **codzienne**, powtarzanie co **5 minut**, a czas trwania na **bez daty zakończenia**. Kliknij przycisk **Dalej** , aby zapisać harmonogram, a następnie ponownie kliknij przycisk **Dalej** .  
+    7.  Na página **Agendamento da Sincronização** , na caixa de listagem **Agenda do Agente** , selecione **Definir agenda**e configure a **Nova Agenda de Tarefa**. Defina a frequência como **diária**, repetir cada **5 minuto (s)**e a duração como **sem data de fim**. Clique em **Seguinte** para guardar o agendamento e clique novamente em **Seguinte** .  
 
-    8.  Na **akcje kreatora** strony, zaznacz pole wyboru dla **tworzyć subskrypcje (s)**, a następnie kliknij przycisk **dalej**.  
+    8.  No **ações do assistente** página, selecione a caixa de verificação **criar as subscrições (s)**e, em seguida, clique em **seguinte**.  
 
-    9. Na stronie **Zakończ pracę kreatora** kliknij przycisk **Zakończ**, a następnie kliknij przycisk **Zamknij** , aby zakończyć działanie kreatora.  
+    9. Na página **Concluir o Assistente** , clique em **Concluir**e em **Fechar** para concluir o Assistente.  
 
-3.  Natychmiast po zakończeniu pracy Kreatora nowej subskrypcji użyj programu **SQL Server Management Studio** w celu ustanowienia połączenia z bazą danych serwera repliki bazy danych i uruchom następujące zapytanie, aby włączyć właściwość TRUSTWORTHY bazy danych:  `ALTER DATABASE <MP Replica Database Name> SET TRUSTWORTHY ON;`  
+3.  Imediatamente depois de concluir o Assistente de nova subscrição, utilize **SQL Server Management Studio** para estabelecer ligação à base de dados do servidor de réplica da base de dados e execute a seguinte consulta para ativar a propriedade de base de dados TRUSTWORTHY:  `ALTER DATABASE <MP Replica Database Name> SET TRUSTWORTHY ON;`  
 
-4.  Sprawdź stan synchronizacji, aby potwierdzić, że subskrypcja zakończyła się powodzeniem:  
+4.  Consulte o estado da sincronização para confirmar que a subscrição teve êxito:  
 
-    -   Na komputerze subskrybenta:  
+    -   No computador subscritor:  
 
-        -   W programie **SQL Server Management Studio**połącz się z serwerem repliki bazy danych i rozwiń węzeł **Replikacja**.  
+        -   No **SQL Server Management Studio**, estabeleça ligação ao servidor de réplica da base de dados e expanda **Replicação**.  
 
-        -   Rozwiń węzeł **subskrypcje lokalne**, kliknij prawym przyciskiem myszy subskrypcję publikacji bazy danych lokacji, a następnie wybierz **Wyświetl stan synchronizacji**.  
+        -   Expanda **subscrições locais**, faça duplo clique a subscrição da publicação de base de dados do site e, em seguida, selecione **Ver estado da sincronização**.  
 
-    -   Na komputerze wydawcy:  
+    -   No computador publicador:  
 
-        -   W **programu SQL Server Management Studio**, połącz się z komputerem bazy danych lokacji, kliknij prawym przyciskiem myszy **replikacji** folder, a następnie wybierz **Uruchom Monitor replikacji**.  
+        -   No **SQL Server Management Studio**, estabeleça ligação ao computador da base de dados do site, clique com botão direito do **replicação** pasta e, em seguida, selecione **iniciar o Monitor de replicação**.  
 
-5.  Aby włączyć integrację środowiska uruchomieniowego (języka wspólnego CLR) repliki bazy danych, należy użyć **programu SQL Server Management Studio** Połącz się z repliką bazy danych na serwerze repliki bazy danych i uruchom następującą procedurę składowaną jako zapytanie: **exec sp_configure 'clr enabled', 1; SKONFIGURUJ PONOWNIE ZA ZASTĄPIENIA**  
+5.  Para ativar a integração language runtime (CLR) para a réplica de base de dados, utilize **SQL Server Management Studio** para estabelecer ligação à réplica da base de dados no servidor de réplica de base de dados e execute o seguinte procedimento armazenado como uma consulta: **exec sp_configure 'clr enabled', 1; RECONFIGURAR COM SUBSTITUIÇÃO**  
 
-6.  Dla każdego punktu zarządzania wykorzystującego serwer repliki bazy danych dodaj konto komputera punktu zarządzania do lokalnej grupy **Administratorzy** na serwerze repliki bazy danych.  
+6.  Para cada ponto de gestão que utilize um servidor de réplica da base de dados, adicione a respetiva conta de computador ao grupo local **Administradores** desse servidor de réplica da base de dados.  
 
     > [!TIP]  
-    >  Ten krok jest zbędny w punkcie zarządzania działającym na serwerze repliki bazy danych.  
+    >  Este passo não é necessário para pontos de gestão que sejam executados no servidor de réplicas da base de dados.  
 
- Replika bazy danych jest teraz gotowa do użycia przez punkt zarządzania.  
+ A réplica da base de dados está agora pronta para ser utilizada por um ponto de gestão.  
 
-###  <a name="BKMK_DBReplica_ConfigMP"></a> Krok 3 — Konfigurowanie punktów zarządzania do korzystania z repliki bazy danych  
- Korzystanie z repliki bazy danych można skonfigurować w punkcie zarządzania lokacji głównej podczas instalowania roli punktu zarządzania albo poprzez ponowną konfigurację istniejącego punktu zarządzania pod kątem użycia repliki bazy danych.  
+###  <a name="BKMK_DBReplica_ConfigMP"></a> Passo 3 - Configurar pontos de gestão para utilizar a réplica da base de dados  
+ Poderá configurar um ponto de gestão num site primário para utilizar uma réplica da base de dados quando instalar a função de ponto de gestão, ou poderá reconfigurar um ponto de gestão existente para utilizar uma réplica da base de dados.  
 
- Do skonfigurowania punktu zarządzania pod kątem korzystania z repliki bazy danych służą następujące informacje:  
+ Utilize as informações seguintes para configurar um ponto de gestão para utilizar uma réplica da base de dados:  
 
--   **Aby skonfigurować nowy punkt zarządzania:** Na **baza danych punktu zarządzania** kreatora używanego do instalacji punktu zarządzania, wybierz **korzystania z repliki bazy danych**, i określ nazwę FQDN komputera hostującego replikę bazy danych. Następnie w polu **Nazwa bazy danych lokacji programu ConfigMgr**podaj nazwę bazy danych repliki bazy danych na tym komputerze.  
+-   **Para configurar um novo ponto de gestão:** No **base de dados de ponto de gestão** página do assistente que utilizar para instalar o ponto de gestão, selecione **utilizar uma réplica de base de dados**, e especifique o FQDN do computador que aloja a réplica de base de dados. Em seguida, em **Nome da base de dados do site do ConfigMgr**, especifique o nome da base de dados da réplica da base de dados nesse computador.  
 
--   **Aby skonfigurować wcześniej zainstalowany punkt zarządzania**: Otwórz stronę właściwości punktu zarządzania, wybierz **baza danych punktu zarządzania** wybierz opcję **korzystania z repliki bazy danych**, a następnie określ nazwę FQDN komputera hostującego replikę bazy danych. Następnie w polu **Nazwa bazy danych lokacji programu ConfigMgr**podaj nazwę bazy danych repliki bazy danych na tym komputerze.  
+-   **Para configurar um ponto de gestão instalado anteriormente**: Abrir a página de propriedades do ponto de gestão, selecione o **base de dados de ponto de gestão** separador, selecione **utilizar uma réplica de base de dados**, e, em seguida, especifique o FQDN do computador que aloja a réplica de base de dados. Em seguida, em **Nome da base de dados do site do ConfigMgr**, especifique o nome da base de dados da réplica da base de dados nesse computador.  
 
--   **Dla każdego punktu zarządzania, który używa repliki bazy danych**, należy ręcznie dodać konto komputera serwera punktu zarządzania **db_datareader** roli repliki bazy danych.  
+-   **Para cada ponto de gestão que utiliza uma réplica de base de dados**, tem de adicionar manualmente a conta de computador do servidor de ponto de gestão para o **db_datareader** função para a réplica de base de dados.  
 
-Oprócz skonfigurowania punktu zarządzania pod kątem użycia serwera repliki bazy danych należy włączyć opcję **Uwierzytelnianie systemu Windows** w usłudze **IIS** w punkcie zarządzania:  
+Além de configurar o ponto de gestão para utilizar o servidor de réplica da base de dados, terá de ativar a **Autenticação do Windows** no **IIS** no ponto de gestão:  
 
-1.  Otwórz **internetowych usług informacyjnych (IIS) Manager**.  
+1.  Abra **serviços de informação Internet (IIS) Manager**.  
 
-2.  Wybierz witrynę sieci Web używaną przez punkt zarządzania i otwórz element **Uwierzytelnianie**.  
+2.  Selecione o site utilizado pelo ponto de gestão e abra **Autenticação**.  
 
-3.  Ustaw **uwierzytelniania systemu Windows** do **włączone**, a następnie Zamknij **Internet Information Services (IIS) Manager**.  
+3.  Definir **autenticação do Windows** para **ativado**e, em seguida, feche **Gestor dos serviços de informação Internet (IIS)**.  
 
-###  <a name="BKMK_DBReplica_Cert"></a> Krok 4 — Konfigurowanie certyfikatu z podpisem własnym dla serwera repliki bazy danych  
- Należy utworzyć certyfikat z podpisem własnym na serwerze repliki bazy danych i udostępnić ten certyfikat każdemu punktowi zarządzania, który będzie korzystał z tego serwera repliki bazy danych.  
+###  <a name="BKMK_DBReplica_Cert"></a> Passo 4 - Configurar um certificado autoassinado para o servidor de réplica da base de dados  
+ Tem de criar um certificado autoassinado no servidor de réplica de base de dados e disponibilizar este certificado para cada ponto de gestão que irão utilizar esse servidor de réplica de base de dados.  
 
- Ten certyfikat jest automatycznie dostępny dla punktu zarządzania zainstalowanego na serwerze repliki bazy danych. Aby jednak udostępnić ten certyfikat zdalnym punktom zarządzania, należy go wyeksportować, a potem dodać do magazynu certyfikatów Osoby zaufane w zdalnym punkcie zarządzania.  
+ O certificado é automaticamente disponibilizado aos pontos de gestão que estejam instalados no servidor de réplicas da base de dados. No entanto, para disponibilizar o certificado aos pontos de gestão remotos, terá de exportar o certificado e adicioná-lo ao arquivo de certificados de Pessoas Fidedignas no ponto de gestão remoto.  
 
- Na przykład sposobu konfigurowania certyfikatu z podpisem własnym na serwerze repliki bazy danych dla komputera z systemem Windows Server 2008 R2, należy użyć poniższych procedur. W przypadku innej wersji systemu operacyjnego należy zapoznać się z jego dokumentacją w celu odpowiedniego dostosowania kroków poniższych procedur w razie potrzeby.  
+ Utilize os procedimentos seguintes como um exemplo de como configurar o certificado autoassinado no servidor de réplica de base de dados para um computador Windows Server 2008 R2. Se tiver outra versão do sistema operativo, consulte a respetiva documentação e ajuste os passos destes procedimentos conforme necessário.  
 
-##### <a name="to-configure-a-self-signed-certificate-for-the-database-replica-server"></a>Aby skonfigurować certyfikatu z podpisem własnym dla serwera repliki bazy danych  
+##### <a name="to-configure-a-self-signed-certificate-for-the-database-replica-server"></a>Para configurar um certificado autoassinado para o servidor de réplica de base de dados  
 
-1.  Na serwerze repliki bazy danych otwórz wiersz polecenia programu PowerShell z uprawnieniami administracyjnymi, a następnie uruchom następujące polecenie: **set-executionpolicy UnRestricted**  
+1.  No servidor de réplica de base de dados, abra uma linha de comandos do PowerShell com privilégios administrativos e, em seguida, execute o seguinte comando: **set-executionpolicy UnRestricted**  
 
-2.  Skopiuj poniższy skrypt programu PowerShell i zapisz go jako plik o nazwie **CreateMPReplicaCert.ps1**. Umieść kopię tego pliku w folderze głównym na partycji systemowej serwera repliki bazy danych.  
+2.  Copie o seguinte script do PowerShell e guarde-o como um ficheiro com o nome **CreateMPReplicaCert.ps1**. Coloque uma cópia deste ficheiro na pasta raiz da partição do sistema do servidor de réplicas da base de dados.  
 
     > [!IMPORTANT]  
-    >  W przypadku konfigurowania więcej niż jednej repliki bazy danych w pojedynczym wystąpieniu programu SQL Server dla każdej kolejnej konfigurowanej repliki należy użyć zmodyfikowanej wersji tego skryptu do wykonania tej procedury. Zobacz  [Dodatkowy skrypt dla dodatkowych replik bazy danych w jednym wystąpieniu programu SQL Server](#bkmk_supscript)  
+    >  Se estiver a configurar mais do que uma réplica de base de dados num único SQL Server, para cada réplica subsequente que configurar tem de utilizar uma versão modificada deste script para este procedimento. Veja  [Script suplementar para réplicas de base de dados adicionais num único SQL Server](#bkmk_supscript)  
 
     ```  
     # Script for creating a self-signed certificate for the local machine and configuring SQL Server to use it.  
@@ -372,140 +372,140 @@ Oprócz skonfigurowania punktu zarządzania pod kątem użycia serwera repliki b
     Restart-Service $SQLServiceName -Force  
     ```  
 
-3.  Na serwerze repliki bazy danych uruchom następujące polecenie, które dotyczy konfiguracji programu SQL Server:  
+3.  No servidor de réplica da base de dados, execute o seguinte comando que se aplica à configuração do SQL Server:  
 
-    -   Aby użyć domyślnego wystąpienia programu SQL Server: Kliknij prawym przyciskiem myszy plik **CreateMPReplicaCert.ps1** i wybierz **Uruchom przy użyciu programu PowerShell**. Po uruchomieniu skryptu, tworzy certyfikat z podpisem własnym i konfiguruje program SQL Server do używania certyfikatu.  
+    -   Para uma instância predefinida do SQL Server: O ficheiro com o botão direito **CreateMPReplicaCert.ps1** e selecione **executar com PowerShell**. Quando o script é executado, cria o certificado autoassinado e configura o SQL Server para utilizar o certificado.  
 
-    -   Dla wystąpienia nazwanego programu SQL Server: Przy użyciu programu PowerShell Uruchom polecenie **%path%\CreateMPReplicaCert.ps1 xxxxxx** gdzie **xxxxxx** to nazwa wystąpienia programu SQL Server.  
+    -   Para uma instância nomeada do SQL Server: Utilizar o PowerShell para executar o comando **%path%\CreateMPReplicaCert.ps1 xxxxxx** onde **xxxxxx** é o nome da instância do SQL Server.  
 
-    -   Po zakończeniu wykonywania skryptu sprawdź, czy program SQL Server Agent jest uruchomiony. Jeśli nie, uruchom ponownie program SQL Server Agent.  
+    -   Após a conclusão do script, certifique-se de que o SQL Server Agent está em execução. Se não estiver, reinicie o SQL Server Agent.  
 
-##### <a name="to-configure-remote-management-points-to-use-the-self-signed-certificate-of-the-database-replica-server"></a>Aby skonfigurować punkty zarządzania zdalnego do używania certyfikatu z podpisem własnym z serwera repliki bazy danych  
+##### <a name="to-configure-remote-management-points-to-use-the-self-signed-certificate-of-the-database-replica-server"></a>Para configurar pontos de gestão remota para utilizar o certificado autoassinado do servidor de réplica de base de dados  
 
-1.  Na serwerze repliki bazy danych, aby wyeksportować certyfikat z podpisem własnym serwera, wykonaj następujące czynności:  
+1.  Execute os seguintes passos no servidor de réplica de base de dados para exportar o certificado autoassinado do servidor:  
 
-    1.  Kliknij przycisk **Start**, kliknij **Uruchom**i wpisz **mmc.exe**. W pustej konsoli kliknij menu **Plik**, a następnie kliknij polecenie **Dodaj/Usuń przystawkę**.  
+    1.  Clique em **Iniciar**, clique em **Executar**e escreva **mmc.exe**. Na consola vazia, clique em **Ficheiro**e clique em **Adicionar/Remover Snap-in**.  
 
-    2.  W oknie dialogowym **Dodawanie lub usuwanie przystawek** wybierz z listy **Dostępne przystawki** pozycję **Certyfikaty**, a następnie kliknij przycisk **Dodaj**.  
+    2.  Na caixa de diálogo **Adicionar ou Remover Snap-ins** , selecione **Certificados** na lista de **Snap-ins disponíveis**e clique em **Adicionar**.  
 
-    3.  W oknie dialogowym **Przystawka certyfikatów** wybierz pozycję **Konto komputera**, a następnie kliknij przycisk **Dalej**.  
+    3.  Na caixa de diálogo **Snap-in de certificado** , selecione **Conta de computador**e clique em **Seguinte**.  
 
-    4.  W oknie dialogowym **Wybieranie komputera** sprawdź, czy pozycja **Komputer lokalny: (komputer, na którym uruchomiona jest ta konsola)** jest wybrana, a następnie kliknij przycisk **Zakończ**.  
+    4.  Na caixa de diálogo **Selecionar Computador** , certifique-se de que **Computador local: (o computador onde esta consola está a ser executada)** está selecionado e, em seguida, clique em **Concluir**.  
 
-    5.  W oknie dialogowym **Dodawanie lub usuwanie przystawek** kliknij przycisk **OK**.  
+    5.  Na caixa de diálogo **Adicionar ou Remover Snap-ins** , clique em **OK**.  
 
-    6.  W konsoli rozwiń węzeł **certyfikaty (komputer lokalny)**, rozwiń węzeł **osobistych**i wybierz **certyfikaty**.  
+    6.  Na consola, expanda **certificados (computador Local)**, expanda **pessoais**e selecione **certificados**.  
 
-    7.  Kliknij prawym przyciskiem myszy certyfikat o przyjaznej nazwie **ConfigMgr SQL Server Identification Certificate**, kliknij przycisk **wszystkie zadania**, a następnie wybierz **wyeksportować**.  
+    7.  Faça duplo clique no certificado com o nome amigável da **ConfigMgr SQL Server Identification Certificate**, clique em **todas as tarefas**e, em seguida, selecione **exportar**.  
 
-    8.  Ukończ pracę **Kreatora eksportu certyfikatu** , używając domyślnych opcji, a następnie zapisz certyfikat z rozszerzeniem nazwy pliku **.cer** .  
+    8.  Conclua o **Assistente para Exportar Certificados** , utilizando as opções predefinidas, e guarde o certificado com a extensão de nome de ficheiro **.cer** .  
 
-2.  Na komputerze punktu zarządzania, aby dodać certyfikat z podpisem własnym dla serwera repliki bazy danych do magazynu certyfikatów Zaufane osoby w punkcie zarządzania, należy wykonać następujące czynności:  
+2.  Execute os seguintes passos no computador do ponto de gestão para adicionar o certificado autoassinado para o servidor de réplica de base de dados para o arquivo de certificados de pessoas fidedignas no ponto de gestão:  
 
-    1.  Powtórz poprzednie kroki od 1.a do 1.e, Aby skonfigurować **certyfikatu** przystawki MMC na komputerze punktu zarządzania.  
+    1.  Repita os passos anteriores de 1.a a 1.e Para configurar o **certificado** snap-in MMC no computador do ponto de gestão.  
 
-    2.  W konsoli rozwiń listę **Certyfikaty (komputer lokalny)**, rozwiń opcję **Zaufane osoby**, kliknij prawym przyciskiem myszy polecenie **Certyfikaty**, wybierz opcję **Wszystkie zadania**i polecenie **Importuj** . Zostanie uruchomiony **Kreator importowania certyfikatów**.  
+    2.  Na consola, expanda **Certificados (Computador Local)**, expanda **Pessoas Fidedignas**, clique com o botão direito do rato em **Certificados**, selecione **Todas as Tarefas**e, em seguida, selecione **Importar** para iniciar o **Assistente para Importar Certificados**.  
 
-    3.  Na stronie **Pliki do importu** wybierz certyfikat zapisany w kroku 1.h i kliknij przycisk **Dalej**.  
+    3.  Na página **Ficheiro a Importar** , selecione o certificado guardado no passo 1.h e, em seguida, clique em **Seguinte**.  
 
-    4.  Na stronie **Magazyn certyfikatów** wybierz opcję **Umieść wszystkie certyfikaty w następującym magazynie**, z opcją **Magazyn certyfikatów** ustawioną na **Osoby zaufane**. Następnie kliknij przycisk **Dalej**.  
+    4.  Na página **Arquivo de Certificados** , selecione **Colocar todos os certificados no seguinte arquivo**, com o **Arquivo de certificados** definido como **Pessoas Fidedignas**e clique em **Seguinte**.  
 
-    5.  Kliknij przycisk **Zakończ** , aby zamknąć kreatora i zakończyć konfigurację certyfikatu w punkcie zarządzania.  
+    5.  Clique em **Concluir** para fechar o assistente e concluir a configuração do certificado no ponto de gestão.  
 
-###  <a name="BKMK_DBreplica_SSB"></a> Krok 5 — Konfigurowanie brokera usług serwera SQL dla serwera repliki bazy danych  
-Aby włączyć obsługę powiadomień klienta z repliką bazy danych dla punktu zarządzania, należy skonfigurować komunikację między serwerem bazy danych lokacji i serwerem repliki bazy danych dla usługi SQL Server Service Broker. Wymaga to wprowadzenia w każdej bazie danych informacji o drugiej bazie oraz wymiany certyfikatów między dwiema bazami danych tak, co pozwoli na nawiązanie bezpiecznej komunikacji między nimi.  
-
-> [!NOTE]  
->  Przed użyciem poniższej procedury serwer z repliką baz danych musi pomyślnie wykonać synchronizację początkową z serwerem baz danych lokacji.  
-
- Poniższa procedura nie modyfikuje portu usługi Service Broker skonfigurowanego w programie SQL Server dla serwera bazy danych lokacji lub serwera repliki bazy danych. Zamiast tego procedura ta konfiguruje poszczególne bazy danych pod kątem komunikacji z drugą bazą za pomocą poprawnego portu broker usługi.  
-
- Użyj poniższej procedury, aby skonfigurować usługę Service Broker dla serwera bazy danych lokacji i serwera repliki bazy danych.  
-
-##### <a name="to-configure-the-service-broker-for-a-database-replica"></a>Aby skonfigurować brokera usługi dla repliki baz danych  
-
-1.  Użyj **programu SQL Server Management Studio** można nawiązać połączenia z bazą danych serwera repliki bazy danych, a następnie uruchom następujące zapytanie, aby włączyć brokera usługi na serwerze repliki bazy danych: **ALTER DATABASE &lt;nazwa repliki bazy danych\> SET ENABLE_BROKER, HONOR_BROKER_PRIORITY na WITH ROLLBACK IMMEDIATE**  
-
-2.  Następnie na serwerze z repliką baz danych skonfiguruj brokera usługi dla powiadomień klienta i wyeksportuj certyfikat brokera usługi. Aby to zrobić, uruchom procedurę składowaną programu SQL Server, która w ramach jednej akcji konfiguruje usługę Service Broker i eksportuje certyfikat. Po uruchomieniu procedury składowanej należy określić nazwę FQDN serwera z repliką baz danych, nazwę bazy danych z replik baz danych oraz określić lokalizację eksportu pliku certyfikatu.  
-
-     Uruchom następującą kwerendę, aby skonfigurować wymagane szczegóły serwera repliki bazy danych i wyeksportować certyfikat serwera repliki bazy danych: **EXEC sp_BgbConfigSSBForReplicaDB '&lt;nazwa FQDN serwera SQL repliki\>","&lt;nazwa repliki bazy danych\>","&lt;ścieżka do pliku kopii zapasowej certyfikatu\>"**  
-
-    > [!NOTE]  
-    >  Jeśli serwer repliki bazy danych nie znajduje się w domyślnym wystąpieniu programu SQL Server, należy w tym kroku obok nawy bazy danych repliki podać nazwę wystąpienia. W tym celu zastąp wartość **&lt;nazwa bazy danych repliki\>** wartością **&lt;nazwa wystąpienia\\nazwa bazy danych repliki\>**.  
-
-     Po wyeksportowaniu certyfikatu z serwera z repliką baz danych umieść kopię certyfikatu na serwerze baz danych w lokacjach głównych.  
-
-3.  Użyj programu **SQL Server Management Studio** , aby połączyć się z bazą danych lokacji głównej. Po połączeniu się z bazą danych lokacji głównych, uruchom zapytanie, które pozwoli zaimportować certyfikat oraz określić port brokera usługi używany w serwerze z repliką bazy danych, nazwą FQDN serwera z repliką baz danych oraz nazwę bazy danych na serwerze z repliką baz danych. Pozwoli to na skonfigurowanie baz danych lokacji głównych pod kątem wykorzystania brokera usługi do komunikacji z bazami danych z serwera z repliką baz danych.  
-
-     Uruchom następującą kwerendę, aby zaimportować certyfikat z serwera repliki bazy danych, podając wymagane szczegóły: **EXEC sp_BgbConfigSSBForRemoteService 'REPLICA', '&lt;Port brokera usługi SQL\>","&lt;ścieżka do pliku certyfikatu\>","&lt;nazwa FQDN serwera SQL repliki\>","&lt;nazwa repliki bazy danych\>"**  
-
-    > [!NOTE]  
-    >  Jeśli serwer repliki bazy danych nie znajduje się w domyślnym wystąpieniu programu SQL Server, należy w tym kroku obok nawy bazy danych repliki podać nazwę wystąpienia. Aby to zrobić, Zamień  **&lt;nazwa repliki bazy danych\>**  z **nazwa \Instance\\nazwa repliki bazy danych\>**.  
-
-4.  Następnie na serwerze bazy danych lokacji, uruchom następujące polecenie, aby wyeksportować certyfikat serwera bazy danych lokacji: **EXEC sp_BgbCreateAndBackupSQLCert '&lt;ścieżka do pliku kopii zapasowej certyfikatu\>"**  
-
-     Po wyeksportowaniu certyfikatu z serwera baz danych lokacji umieść kopię certyfikatu na serwerze z repliką baz danych.  
-
-5.  Użyj programu **SQL Server Management Studio** , aby połączyć się z bazą danych serwera repliki bazy danych. Po połączeniu się z bazą danych na serwerze z repliką baz danych, uruchom zapytanie, które pozwoli zaimportować certyfikat oraz określić kod lokacji dla lokacji głównej i port brokera usługi używany przez serwer baz danych lokacji. Pozwoli to na skonfigurowanie serwera z repliką baz danych pod kątem wykorzystania brokera usługi do komunikacji z bazą danych w lokacji głównej.  
-
-     Uruchom następującą kwerendę, aby zaimportować certyfikat z serwera bazy danych lokacji: **EXEC sp_BgbConfigSSBForRemoteService '&lt;kod lokacji\>","&lt;Port brokera usługi SQL\>","&lt;ścieżka do pliku certyfikatu\>"**  
-
- Kilka minut po skonfigurowaniu baz danych lokacji głównej oraz serwera z repliką baz danych menedżer powiadomień w lokacji głównej ustawia w brokerze usługi konwersację obejmującą przesyłanie powiadomień klienta z baz danych lokacji głównej do repliki baz danych.  
-
-###  <a name="bkmk_supscript"></a> Dodatkowy skrypt dla dodatkowych replik bazy danych w jednym wystąpieniu programu SQL Server  
- Użycie skryptu z kroku 4 do konfigurowania certyfikatu z podpisem własnym dla serwera repliki bazy danych na serwerze SQL Server, który ma już zaplanować kontynuować korzystanie z repliki bazy danych, należy użyć zmodyfikowanej wersji oryginalnego skryptu. Poniższe modyfikacje uniemożliwiają skryptowi usunięcie istniejącego certyfikatu na serwerze i powodują utworzenie kolejnych certyfikatów z unikatowymi przyjaznymi nazwami.  Edytuj oryginalny skrypt w następujący sposób:  
-
--   Oznacz jako komentarz (uniemożliwiając wykonanie) każdy wiersz między wpisami skryptu **# usunąć istniejącego certyfikatu, jeśli istnieje** i **# utworzyć nowego certyfikatu**. Aby to zrobić, dodaj znak  **#**  na początku każdego wiersza, którego to dotyczy.  
-
--   Dla każdej kolejnej repliki bazy danych konfigurowanej przy użyciu tego skryptu zaktualizuj przyjazną nazwę certyfikatu.  Aby to zrobić, Edytuj wiersz **$enrollment. CertificateFriendlyName = "ConfigMgr SQL Server Identification Certificate"** i Zastąp **ConfigMgr SQL Server Identification Certificate** pod nową nazwą, takich jak **Certificate1 identyfikacji serwera SQL programu ConfigMgr**.  
-
-##  <a name="BKMK_DBReplicaOps"></a> Zarządzanie konfiguracjami repliki bazy danych  
- W przypadku używania repliki bazy danych w lokacji, skorzystaj z informacji w poniższych sekcjach, aby uzupełnić proces odinstalowywania repliki bazy danych, odinstalowywania lokacji używającej repliki bazy danych lub przenoszenia bazy danych lokacji do nowej instalacji programu SQL Server. Wykorzystując informacje z poniższych sekcji do usunięcia publikacji, należy użyć wskazówek dotyczących usuwania replikacji transakcyjnej dla wersji programu SQL Server używanej w replice baz danych. Na przykład, jeśli używasz programu SQL Server 2008 R2, zobacz [jak: Usuwanie publikacji (Programowanie replikacji Transact-SQL)](http://go.microsoft.com/fwlink/p/?LinkId=273934).  
+###  <a name="BKMK_DBreplica_SSB"></a> Passo 5 - Configurar o SQL Server Service Broker para o servidor de réplica da base de dados  
+Para suportar a notificação de cliente com uma réplica de base de dados para um ponto de gestão, é necessário configurar a comunicação entre o servidor da base de dados do site e o servidor de réplica de base de dados para o SQL Server Service Broker. Isto requer a configuração de cada base de dados com informações sobre a outra base de dados e a troca de certificados entre as duas bases de dados para uma comunicação segura.  
 
 > [!NOTE]  
->  Po przywróceniu baz danych lokacji skonfigurowanych pod kątem replik baz danych przed użyciem tych replik należy ponownie skonfigurować każdą replikę baz danych, tworząc jeszcze raz zarówno publikacje, jak i subskrypcje.  
+>  Para poder utilizar o procedimento seguinte, o servidor de réplica de base de dados deve concluir com êxito a sincronização inicial com o servidor de base de dados do site.  
 
-###  <a name="BKMK_UninstallDbReplica"></a> Odinstalowywanie repliki bazy danych  
- Podczas używania repliki baz danych z punktu zarządzania konieczne może być odinstalowanie repliki baz danych na pewien czas i ponowne jej skonfigurowanie. Na przykład należy usunąć repliki bazy danych przed uaktualnieniem lokacji programu Configuration Manager do nowego dodatku service pack. Po zakończeniu uaktualnienia lokacji możliwe jest przywrócenie repliki baz danych.  
+ O procedimento seguinte não modifica a porta do Service Broker que está configurada no SQL Server para o servidor de base de dados do site ou para o servidor de réplica de base de dados. Em vez disso, este procedimento configura cada base de dados para comunicar com a outra base de dados, utilizando a porta correta do Service Broker.  
 
- Aby odinstalować replikę baz danych, wykonaj następujące czynności.  
+ Utilize o procedimento seguinte para configurar o Service Broker para o servidor da base de dados e para o servidor de réplica da base de dados.  
 
-1.  W **administracji** obszaru roboczego w konsoli programu Configuration Manager, rozwiń węzeł **konfiguracja lokacji**, a następnie wybierz pozycję **serwery i role systemu lokacji**, a następnie w okienku szczegółów wybierz serwer systemu lokacji hostujący punkt zarządzania, który używa odinstalowywanej repliki bazy danych.  
+##### <a name="to-configure-the-service-broker-for-a-database-replica"></a>Para configurar o Service Broker para uma réplica de base de dados  
 
-2.  W okienku **Role systemu lokacji** kliknij prawym przyciskiem myszy pozycję **Punkt zarządzania** i wybierz polecenie **Właściwości**.  
+1.  Utilize **SQL Server Management Studio** para ligar à base de dados de servidor de réplica de base de dados e, em seguida, execute a seguinte consulta para ativar o Service Broker no servidor de réplica de base de dados: **Alterar base de dados &lt;nome de base de dados de réplica\> SET ENABLE_BROKER, HONOR_BROKER_PRIORITY no WITH ROLLBACK IMMEDIATE**  
 
-3.  Na karcie **Baza danych punktu zarządzania** wybierz opcję **Użyj bazy danych lokacji** w celu skonfigurowania punktu zarządzania tak, aby używał bazy danych lokacji, a nie repliki bazy danych. Następnie kliknij przycisk **OK** , aby zapisać konfigurację.  
+2.  Em seguida, no servidor de réplica de base de dados, configure o Service Broker para notificação de cliente e exporte o certificado do Service Broker. Para isso, execute um procedimento armazenado do SQL Server que configura o Service Broker e exporta o certificado numa única ação. Ao executar o procedimento armazenado, deve especificar o FQDN do servidor de réplica de base de dados, o nome da base de dados de réplicas de bases de dados e uma localização para a exportação do ficheiro de certificado.  
 
-4.  Następnie wykonaj następujące zadania za pomocą programu **SQL Server Management Studio** :  
+     Execute a consulta seguinte para configurar os detalhes necessários no servidor de réplica de base de dados e para exportar o certificado para o servidor de réplica de base de dados: **EXEC sp_BgbConfigSSBForReplicaDB '&lt;FQDN do servidor de SQL Server de réplica\>','&lt;nome de base de dados de réplica\>','&lt;caminho do ficheiro de cópia de segurança de certificado\>'**  
 
-    -   Usuń publikację repliki baz danych z bazy danych serwera lokacji.  
+    > [!NOTE]  
+    >  Para este passo, se o servidor de réplica da base de dados não estiver na instância predefinida do SQL Server, é necessário especificar também o nome da instância além do nome da base de dados de réplica. Para isso, substitua o **&lt;Nome da Base de Dados de Réplica\>** por **&lt;Nome da Instância\\Nome da Base de Dados de Réplica\>**.  
 
-    -   Usuń subskrypcję repliki baz danych z serwera z repliką baz danych.  
+     Depois de exportar o certificado do servidor de réplica de base de dados, coloque uma cópia do certificado no servidor de base de dados de sites primários.  
 
-    -   Usuń replikę bazy danych z serwera z repliką baz danych.  
+3.  Utilize o **SQL Server Management Studio** para ligar à base de dados do site primário. Depois de ligar à base de dados de sites primários, execute uma consulta para importar o certificado e especificar a porta do Service Broker que está a ser utilizada no servidor de réplica de base de dados, o FQDN do servidor de réplica de base de dados e o nome da base de dados de réplicas de bases de dados. Isto configura a base de dados de sites primários que o Service Broker utilizará para comunicar com a base de dados do servidor de réplica de base de dados.  
 
-    -   Wyłącz publikowanie i dystrybucję na serwerze baz danych lokacji. Aby wyłączyć publikowanie i dystrybucję, kliknij prawym przyciskiem myszy folder Replikacja i kliknij przycisk **wyłącz publikowanie i dystrybucję**.  
+     Execute a consulta seguinte para importar o certificado do servidor de réplica de base de dados e especificar os detalhes necessários: **EXEC sp_BgbConfigSSBForRemoteService 'REPLICA', '&lt;porta do SQL Server Service Broker\>','&lt;caminho do ficheiro de certificado\>','&lt;FQDN do servidor de SQL Server de réplica\>','&lt;nome de base de dados de réplica\>'**  
 
-5.  Po usunięciu publikacji, subskrypcji, baz danych repliki i wyłączeniu publikacji na serwerze baz danych lokacji replika baz danych jest odinstalowana.  
+    > [!NOTE]  
+    >  Para este passo, se o servidor de réplica da base de dados não estiver na instância predefinida do SQL Server, é necessário especificar também o nome da instância além do nome da base de dados de réplica. Para isso, substitua  **&lt;nome de base de dados de réplica\>**  com **\Instance nome\\nome de base de dados de réplica\>**.  
 
-###  <a name="BKMK_DBReplicaOps_Uninstall"></a> Odinstalowywanie serwera lokacji publikującego replikę bazy danych  
- Przed odinstalowaniem lokacji publikującej replikę bazy danych wykonaj następujące czynności, aby usunąć publikację i wszystkie subskrypcje.  
+4.  Em seguida, no servidor de base de dados do site, execute o seguinte comando para exportar o certificado para o servidor de base de dados do site: **EXEC sp_BgbCreateAndBackupSQLCert '&lt;caminho do ficheiro de cópia de segurança de certificado\>'**  
 
-1.  Za pomocą programu **SQL Server Management Studio** usuń publikację repliki bazy danych z bazy danych serwera lokacji.  
+     Depois de exportar o certificado do servidor de base de dados do site, coloque uma cópia do certificado no servidor de réplica de base de dados.  
 
-2.  Za pomocą programu **SQL Server Management Studio** usuń subskrypcję repliki bazy danych z każdego zdalnego programu SQL Server, który hostuje replikę bazy danych dla danej lokacji.  
+5.  Utilize o **SQL Server Management Studio** para ligar à base de dados do servidor de réplica da base de dados. Depois de ligar à base de dados do servidor de réplica de base de dados, execute uma consulta para importar o certificado e especificar o código do site do site primário e a porta do Service Broker que está a ser utilizada no servidor de base de dados do site. Isto configura o servidor de réplica de base de dados para utilizar o Service Broker para comunicar com a base de dados do site primário.  
 
-3.  Odinstaluj lokację.  
+     Execute a consulta seguinte para importar o certificado do servidor de base de dados do site: **EXEC sp_BgbConfigSSBForRemoteService '&lt;código do Site\>','&lt;porta do SQL Server Service Broker\>','&lt;caminho do ficheiro de certificado\>'**  
 
-###  <a name="BKMK_DBReplicaOps_Move"></a> Przenoszenie bazy danych serwera lokacji publikującej replikę bazy danych  
- W celu przeniesienia bazy danych lokacji na nowy komputer, wykonaj następujące czynności:  
+ Alguns minutos depois de concluir a configuração da base de dados do site e da base de dados de réplica de base de dados, o Notification Manager do site primário configura a conversação do Service Broker para notificação de cliente da base de dados do site primário para a réplica de base de dados.  
 
-1.  Za pomocą programu **SQL Server Management Studio** usuń publikację repliki bazy danych z bazy danych serwera lokacji.  
+###  <a name="bkmk_supscript"></a> Script suplementar para réplicas de base de dados adicionais num único SQL Server  
+ Quando utilizar o script do passo 4 para configurar um certificado autoassinado para o servidor de réplica de base de dados num SQL Server que já tenha uma réplica de base de dados que pretende continuar a utilizar, tem de utilizar uma versão modificada do original script. As seguintes modificações impedem o script de eliminar um certificado existente no servidor e criam certificados subsequentes com nomes amigáveis exclusivos.  Edite o script original da seguinte forma:  
 
-2.  Za pomocą programu **SQL Server Management Studio** usuń subskrypcję repliki bazy danych z każdego serwera z repliką bazy danych dla danej lokacji.  
+-   Comente (impedir a execução) cada linha entre as entradas de script **# eliminar o certificado existente se existir** e **# criar o novo certificado**. Para tal, adicione um  **#**  como o primeiro caráter de cada linha aplicável.  
 
-3.  Przenieś bazę danych na nowy komputer z programem SQL Server. Aby uzyskać więcej informacji, zobacz sekcję [Modyfikowanie konfiguracji bazy danych lokacji](../../../../core/servers/manage/modify-your-infrastructure.md#bkmk_dbconfig) w temacie [Modyfikowanie infrastruktury programu System Center Configuration Manager](../../../../core/servers/manage/modify-your-infrastructure.md).  
+-   Para cada réplica de base de dados subsequente, utilize este script para configurar, atualizar e atribuir um nome amigável ao certificado.  Para fazê-lo, edite a linha **$enrollment. CertificateFriendlyName = "ConfigMgr SQL Server Identification Certificate"** e substitua **ConfigMgr SQL Server Identification Certificate** com um novo nome, como **ConfigMgr SQL Server identificação Certificate1**.  
 
-4.  Utwórz ponownie publikację repliki bazy danych na serwerze z bazami danych lokacji. Aby uzyskać więcej informacji, zobacz [Krok 1 — Konfigurowanie serwera bazy danych lokacji do publikowania repliki bazy danych](#BKMK_DBReplica_ConfigSiteDB) w tym temacie.  
+##  <a name="BKMK_DBReplicaOps"></a> Gerir configurações de réplica de base de dados  
+ Quando utilizar uma réplica de base de dados num site, utilize as informações das secções seguintes para complementar o processo de desinstalação de uma réplica de base de dados, o processo de desinstalação de um site que utiliza uma réplica de base de dados ou o processo de transferência da base de dados do site para uma nova instalação do SQL Server. Quando utilizar informações das secções seguintes para eliminar publicações, utilize as orientações para eliminar a replicação transacional para a versão do SQL Server utilizada para a réplica de base de dados. Por exemplo, se utilizar o SQL Server 2008 R2, consulte o artigo [como: Eliminar uma publicação (programação do Transact-SQL de replicação)](http://go.microsoft.com/fwlink/p/?LinkId=273934).  
 
-5.  Utwórz ponownie subskrypcje repliki baz danych na każdym serwerze z repliką baz danych. Aby uzyskać więcej informacji, zobacz [Krok 2 — Konfigurowanie serwera repliki bazy danych](#BKMK_DBReplica_ConfigSrv) w tym temacie.  
+> [!NOTE]  
+>  Depois de restaurar uma base de dados do site configurada para réplicas de bases de dados, antes de poder utilizar as réplicas de bases de dados, tem de reconfigurar cada réplica de base de dados, recriando as publicações e as subscrições.  
+
+###  <a name="BKMK_UninstallDbReplica"></a> Desinstalar uma réplica de base de dados  
+ Ao utilizar uma réplica de base de dados para um ponto de gestão, poderá ser necessário desinstalar a réplica de base de dados durante um período de tempo e depois reconfigurá-la para utilização. Por exemplo, tem de remover as réplicas de base de dados antes de atualizar um site do Configuration Manager para um novo service pack. Após a conclusão da atualização do site, pode restaurar a réplica de base de dados para utilização.  
+
+ Utilize os passos seguintes para desinstalar uma réplica de base de dados.  
+
+1.  No **administração** área de trabalho da consola do Configuration Manager, expanda **configuração do Site**, em seguida, selecione **servidores e funções de sistema de sites**e, em seguida, no painel de detalhes, selecione o servidor de sistema de sites que aloja o ponto de gestão que utiliza a réplica de base de dados que irá desinstalar.  
+
+2.  No painel **Funções de Sistema de Sites** , clique com o botão direito do rato em **Ponto de gestão** e selecione **Propriedades**.  
+
+3.  No separador **Base de Dados do Ponto de Gestão** , selecione **Utilizar a base de dados do site** para configurar o ponto de gestão para utilizar a base de dados em vez da réplica da base de dados. Em seguida, clique em **OK** para guardar a configuração.  
+
+4.  Depois, utilize o **SQL Server Management Studio** para executar as seguintes tarefas:  
+
+    -   Eliminar a publicação da réplica de base de dados na base de dados de servidor do site.  
+
+    -   Eliminar a subscrição da réplica de base de dados no servidor de réplica de base de dados.  
+
+    -   Eliminar a base de dados de réplica no servidor de réplica de base de dados.  
+
+    -   Desativar a publicação e a distribuição no servidor de base de dados do site. Para desativar a publicação e distribuição, clique com o botão direito na pasta replicação e, em seguida, clique em **Desativar publicação e distribuição**.  
+
+5.  Depois de eliminar a publicação, a subscrição e a base de dados de réplica e de desativar a publicação no servidor de base de dados do site, a réplica de base de dados é desinstalada.  
+
+###  <a name="BKMK_DBReplicaOps_Uninstall"></a> Desinstalar um servidor do site que publica uma réplica de base de dados  
+ Antes de desinstalar um site que publica uma réplica de base de dados, utilize os passos seguintes para limpar a publicação e quaisquer subscrições.  
+
+1.  Utilize o **SQL Server Management Studio** para eliminar a publicação da réplica de base de dados na base de dados do servidor do site.  
+
+2.  Utilize o **SQL Server Management Studio** para eliminar a subscrição da réplica de base de dados de cada SQL Server remoto que aloja uma réplica de base de dados deste site.  
+
+3.  Desinstale o site.  
+
+###  <a name="BKMK_DBReplicaOps_Move"></a> Mover um servidor do site que publica uma réplica de base de dados  
+ Quando mover a base de dados do site para um novo computador, utilize os seguintes passos:  
+
+1.  Utilize o **SQL Server Management Studio** para eliminar a publicação da réplica de base de dados na base de dados do servidor do site.  
+
+2.  Utilize o **SQL Server Management Studio** para eliminar a subscrição da réplica de base de dados em cada servidor de réplica de base de dados deste site.  
+
+3.  Mova a base de dados para o novo computador com SQL Server. Para obter mais informações, veja a secção [Modificar a configuração da base de dados do site](../../../../core/servers/manage/modify-your-infrastructure.md#bkmk_dbconfig) do tópico [Modificar a infraestrutura do System Center Configuration Manager](../../../../core/servers/manage/modify-your-infrastructure.md).  
+
+4.  Recrie a publicação da réplica de base de dados no servidor da base de dados do site. Para obter mais informações, veja o [Passo 1 - Configurar o servidor da base de dados do site para publicar a réplica da base de dados](#BKMK_DBReplica_ConfigSiteDB) deste tópico.  
+
+5.  Recrie as subscrições para a réplica de base de dados em cada servidor de réplica de base de dados. Para obter mais informações, veja o [Passo 2 - Configurar o servidor de réplica da base de dados](#BKMK_DBReplica_ConfigSrv) deste tópico.  

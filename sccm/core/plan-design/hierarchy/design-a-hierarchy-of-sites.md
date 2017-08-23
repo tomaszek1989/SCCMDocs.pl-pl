@@ -1,6 +1,6 @@
 ---
-title: "Projektowanie hierarchii lokacji — programu Configuration Manager | Dokumentacja firmy Microsoft"
-description: "Zrozumieć topologie dostępne i opcje zarządzania dla programu System Center Configuration Manager, co umożliwia planowanie hierarchii lokacji."
+title: Estruturar uma hierarquia do site - Configuration Manager | Microsoft Docs
+description: "Compreenda as topologias disponíveis e as opções de gestão do System Center Configuration Manager, pelo que pode planear a hierarquia de sites."
 ms.custom: na
 ms.date: 6/16/2017
 ms.prod: configuration-manager
@@ -18,170 +18,170 @@ manager: angrobe
 ms.openlocfilehash: 4710b1b89eb50cb7bcf4c4ee50c12a96b6561bc9
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pl-PL
+ms.contentlocale: pt-PT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="design-a-hierarchy-of-sites-for-system-center-configuration-manager"></a>Projektowanie hierarchii lokacji dla programu System Center Configuration Manager
+# <a name="design-a-hierarchy-of-sites-for-system-center-configuration-manager"></a>Estruturar uma hierarquia de sites do System Center Configuration Manager
 
-*Dotyczy: Program System Center Configuration Manager (Current Branch)*
+*Aplica-se a: O System Center Configuration Manager (ramo atual)*
 
-Przed rozpoczęciem instalacji pierwszej lokacji nowej hierarchii programu System Center Configuration Manager, to warto poznać topologie dostępne dla programu Configuration Manager, typy dostępnych lokacji i ich relacje ze sobą i zakresu zarządzania zapewnia każdego typu lokacji.
-Następnie po uwzględnieniu opcji zarządzania zawartością, która pozwala zmniejszyć liczbę witryn, które należy zainstalować, można zaplanować topologii, wydajne pełniącą bieżącego potrzeb biznesowych i później rozszerzyć do zarządzania rozwój w przyszłości.  
+Antes de instalar o primeiro site numa nova hierarquia do System Center Configuration Manager, é boa ideia compreender as topologias disponíveis para o Configuration Manager, os tipos de sites disponíveis e relações entre si e o âmbito de gestão que cada tipo de site fornece.
+Em seguida, após a consideração dos opções de gestão de conteúdo que podem reduzir o número de sites que tem de instalar, que pode planear a topologia de forma eficiente serve as necessidades atuais e pode expandir mais tarde para gerir o crescimento futuro.  
 
 > [!NOTE]
-> Podczas planowania nowej instalacji programu Configuration Manager, należy pamiętać o [informacje o wersji]( /sccm/core/servers/deploy/install/release-notes), które szczegółowo bieżących problemach w aktywnych wersji. Informacje o wersji dotyczą wszystkie gałęzie programu Configuration Manager.  Jednak jeśli używasz [Technical Preview gałęzi]( /sccm/core/get-started/technical-preview), można znaleźć problemy specyficzne tylko dla tej gałęzi w dokumentacji dla każdej wersji Technical Preview.  
+> Quando planear uma nova instalação do Configuration Manager, tenha em atenção o [notas de versão]( /sccm/core/servers/deploy/install/release-notes), que detalhe atuais problemas nas versões do Active Directory. As notas de versão aplicam-se a todos os ramos do Configuration Manager.  No entanto, quando utiliza o [ramo de pré-visualização técnica]( /sccm/core/get-started/technical-preview), irá encontrar problemas específicos apenas nessa sucursal na documentação de cada versão do Technical Preview.  
 
-##  <a name="bkmk_topology"></a>Topologia hierarchii  
- Różne topologie hierarchii — od pojedynczej autonomicznej lokacji głównej do grupy połączonych lokacji głównych i dodatkowych z centralną lokacją administracyjną w lokacji najwyższego poziomu (w najwyższej warstwie) hierarchii.   Kluczowym czynnikiem decydującym o typie i liczbie lokacji używanych w hierarchii jest zwykle liczba i typ urządzeń, które należy obsługiwać, w następujący sposób:   
+##  <a name="bkmk_topology"></a>Topologia de hierarquia  
+ Hierarquia topologias intervalo de um único site primário autónomo a um grupo de sites primários e secundários ligados com um site de administração central no site de nível superior (camada superior) da hierarquia.   O controlador de chave do tipo e contagem de sites que utiliza numa hierarquia é, normalmente, o número e tipo de dispositivos que têm de suportar, da seguinte forma:   
 
- **Autonomiczna lokacja główna:** Użyj autonomicznej lokacji głównej, gdy pojedyncza lokacja główna może obsługiwać zarządzanie wszystkimi urządzeniami i użytkownikami (zobacz [rozmiaru i skali liczby](/sccm/core/plan-design/configs/size-and-scale-numbers)). Ta topologia jest pomyślne również w przypadku, gdy w firmie różne lokalizacje geograficzne mogą być pomyślnie przekazywane przez jedną lokację główną.  Aby ułatwić zarządzanie ruchu sieciowego, można użyć preferowanych punktów zarządzania i dokładnie zaplanować infrastrukturę zawartości (zobacz [podstawowe pojęcia związane z zarządzaniem zawartością w programie System Center Configuration Manager](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md)).  
+ **Site primário autónomo:** Utilizar um site primário autónomo, quando um único site primário pode suportar a gestão de todos os seus dispositivos e utilizadores (consulte [dimensionamento e números da escala](/sccm/core/plan-design/configs/size-and-scale-numbers)). Esta topologia também é efetuada com êxito quando as diferentes localizações geográficas da sua empresa podem ser com êxito efetuadas por um único site primário.  Para ajudar a gerir o tráfego de rede, pode utilizar pontos de gestão preferenciais e uma infraestrutura de conteúdo cuidadosamente planeada (consulte [conceitos fundamentais da gestão de conteúdos no System Center Configuration Manager](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md)).  
 
- Zalety tej topologii obejmują:  
+ As vantagens desta topologia incluem:  
 
--   Uproszczony koszty administracyjne.  
+-   Overhead administrativo simplificado.  
 
--   Uproszczone przypisania lokacji klienta i wykrywanie dostępnych zasobów i usług.  
+-   A atribuição de site do cliente simplificada e a deteção de serviços e recursos disponíveis.  
 
--   Eliminacja możliwe opóźnienia wprowadzone za pomocą replikacji bazy danych między lokacjami.
+-   Eliminação de possível desfasamento introduzido pela replicação de base de dados entre sites.
 
--   Opcję, aby rozszerzyć autonomiczną hierarchię główną do większej hierarchii z centralną lokacją administracyjną. Dzięki temu można następnie instalować nowe lokacje główne, aby rozszerzyć skalę wdrożenia.  
+-   Opção de expandir uma hierarquia primária autónoma para uma hierarquia maior com um site de administração central. o que lhe permite, depois, instalar novos sites primários para expandir a escala da implementação.  
 
 
-**Centralna lokacja administracyjna z co najmniej jedną podrzędną lokacją główną:** Jeśli wymagane jest więcej niż jedną lokację główną do obsługi zarządzania urządzeniami i użytkownikami za pomocą tej topologii.  Są wymagane, gdy konieczne jest użycie więcej niż jednej lokacji głównej. Zalety tej topologii obejmują:  
+**Site de administração central com um ou mais sites primários subordinados:** Utilize esta topologia quando precisa de mais do que um site primário para suportar a gestão de todos os seus dispositivos e utilizadores.  Que é necessário quando tiver de utilizar mais do que um único site primário. As vantagens desta topologia incluem:  
 
 
--   Obsługuje maksymalnie 25 lokacji głównych, które umożliwiają rozszerzyć skalę hierarchii.  
+-   Suporta até 25 sites primários que permitem-lhe expandir a escala da sua hierarquia.  
 
--   Centralna lokacja administracyjna będzie zawsze używana (bez ponownego zainstalowania lokacji). Jest to opcja trwałych. Nie można odłączyć podrzędnej lokacji głównej dokonanie autonomicznej lokacji głównej.
+-   Utilizará sempre o site de administração central (a menos que reinstale os sites). Esta é uma opção permanente. Não é possível anular a exposição de um site primário subordinado para torná-lo um site primário autónomo.
 
- Poniższe sekcje ułatwią zrozumienie, kiedy należy użyć określonej lokacji lub opcji zarządzania zawartością zamiast dodatkowej lokacji.  
+ As secções seguintes podem ajudá-lo a compreender quando deve utilizar um site específico ou a opção de gestão de conteúdos em vez de um site adicional.  
 
-##  <a name="BKMK_ChooseCAS"></a>Ustalanie, kiedy należy użyć witryny Administracja centralna  
- Do konfigurowania ustawień całej hierarchii oraz monitorowania wszystkich lokacji i obiektów w hierarchii, należy użyć witryny Administracja centralna. Ten typ lokacji nie bezpośrednie zarządzanie klientami, ale koordynuje replikację danych między lokacjami, w tym konfiguracji lokacji i klientów w całej hierarchii.  
+##  <a name="BKMK_ChooseCAS"></a>Determinar quando deve utilizar um site de administração central  
+ Utilize um site de administração central para configurar as definições de toda a hierarquia e para monitorizar todos os sites e objetos na hierarquia. Este tipo de site não gere diretamente os clientes mas coordenar a replicação de dados entre sites, que inclui a configuração de sites e clientes em toda a hierarquia.  
 
-**Poniższe informacje ułatwią podjęcie decyzji dotyczącej instalacji centralnej lokacji administracyjnej:**  
+**As seguintes informações podem ajudar a decidir quando instalar um site de administração central:**  
 
--   Centralna lokacja administracyjna jest lokacją najwyższego poziomu w hierarchii.  
+-   O site de administração central é o site de nível superior numa hierarquia.  
 
--   Podczas konfigurowania hierarchii, która ma więcej niż jedną lokację główną, należy zainstalować centralną lokację administracyjną. Jeśli będziesz potrzebować co najmniej dwie lokacje główne bezpośrednio, najpierw zainstalować centralną lokację administracyjną. Gdy już istnieje lokacja główna i następnie zainstalować centralną lokację administracyjną, należy najpierw [rozszerzenia autonomicznej lokacji głównej](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#bkmk_expand) do zainstalowania centralnej lokacji administracyjnej. 
+-   Quando configura uma hierarquia que tenha mais do que um site primário, tem de instalar um site de administração central. Se precisar de dois ou mais sites primários imediatamente, instale primeiro o site de administração central. Quando já tiver um site primário e para, em seguida, instalar um site de administração central, deve [expandir o site primário autónomo](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#bkmk_expand) para instalar o site de administração central. 
 
--   Centralna lokacja administracyjna obsługuje tylko Lokacje główne jako Lokacje podrzędne.  
+-   O site de administração central suporta apenas sites primários como sites subordinados.  
 
--   Centralna lokacja administracyjna nie może mieć przypisanych klientów.  
+-   O site de administração central não pode ter clientes atribuídos ao mesmo.  
 
--   Centralna lokacja administracyjna nie obsługuje ról systemu lokacji, które obsługują bezpośrednio klientów, takie jak punkty zarządzania i punktów dystrybucji.  
+-   O site de administração central não suporta funções de sistema de sites que suportem diretamente clientes, tais como pontos de gestão e pontos de distribuição.  
 
--   Można zarządzać wszystkimi klientami w hierarchii i wykonywać zadania zarządzania lokacjami dla dowolnej lokacji podrzędnej, korzystając z konsoli programu Configuration Manager, która jest połączona z lokacją administracji centralnej. Może to obejmować instalowanie punktów zarządzania lub inne role systemu lokacji w lokacjach podrzędnych podstawowy lub pomocniczy.  
+-   Pode gerir todos os clientes na hierarquia e efetuar tarefas de gestão do site para qualquer site subordinado quando utiliza uma consola do Configuration Manager que está ligada ao site de administração central. Isto pode incluir a instalação de pontos de gestão ou de outras funções de sistema de sites em sites primários ou secundários subordinados.  
 
--   Gdy jest używana centralna lokacja administracyjna, tylko w tej lokacji można wyświetlać dane ze wszystkich lokacji w hierarchii. Te dane obejmują informacje takie jak magazynu danych i komunikatów o stanie.  
+-   Quando utiliza um site de administração central, este é o único local onde pode ver os dados de todos os sites na hierarquia. Estes dados incluem informações como o inventário dados e mensagens de estado.  
 
--   Można konfigurować operacje wykrywania w całej hierarchii z centralną lokacją administracyjną, przypisując metody odnajdywania poszczególnym lokacjom.  
+-   Pode configurar operações de Deteção em toda a hierarquia do site de administração central através da atribuição de métodos de deteção a executar em sites individuais.  
 
--   Zabezpieczeniami w hierarchii można zarządzać, przypisując różne role zabezpieczeń, zakresy zabezpieczeń i kolekcje do różnych użytkowników administracyjnych. Te konfiguracje mają zastosowanie w każdej lokacji w hierarchii.  
+-   Pode gerir a segurança em toda a hierarquia atribuindo diferentes funções de segurança, âmbitos de segurança e coleções a diferentes utilizadores administrativos. Estas configurações aplicam-se em cada site na hierarquia.  
 
--   W ramach kontroli komunikacji między lokacjami w hierarchii istnieje możliwość skonfigurowania replikacji plików i bazy danych. Obejmuje to planowanie replikacji bazy danych lokacji i zarządzanie przepustowością transferu danych opartych na plikach między lokacjami.  
+-   Pode configurar a replicação de ficheiros e a replicação de base de dados para controlar a comunicação entre sites na hierarquia. Isto inclui agendar a replicação de base de dados para dados do site e gerir a largura de banda para a transferência de dados baseada em ficheiros entre sites.  
 
-##  <a name="BKMK_ChoosePriimary"></a>Ustalanie, kiedy należy używać lokacji głównej  
- Lokacje główne służą do zarządzania klientami. Lokację główną można zainstalować jako lokację podrzędną względem centralnej lokacji administracyjnej, a w przypadku nowej hierarchii — jako pierwszą lokację. Lokacji głównej, która jest zainstalowana jako pierwsza lokacja hierarchii tworzy autonomicznej lokacji głównej. Zarówno podrzędnych lokacji głównych, jak i autonomiczne Lokacje główne obsługują Lokacje dodatkowe jako Lokacje podrzędne względem lokacji głównej.  
+##  <a name="BKMK_ChoosePriimary"></a>Determinar quando deve utilizar um site primário  
+ Utilize sites primários para gerir clientes. Pode instalar um site primário como site primário subordinado abaixo de um site de administração central ou como o primeiro site numa nova hierarquia. Um site primário que é instalado como o primeiro site de uma hierarquia cria um site primário autónomo. Os sites primários subordinados e sites primários autónomos suportam sites secundários como sites subordinados do site primário.  
 
- Użycie lokacji głównej zaleca się z następujących powodów:  
+ Considere a utilização de um site primário por qualquer um dos seguintes motivos:  
 
--   Do zarządzania urządzeniami i użytkownikami.  
+-   Para gerir dispositivos e utilizadores.  
 
--   Aby zwiększyć liczbę urządzeń, którymi można zarządzać w ramach jednej hierarchii.  
+-   Para aumentar o número de dispositivos que pode gerir com uma única hierarquia.  
 
--   Aby zapewnić dodatkowy punkt łączności do administrowania wdrożeniem.  
+-   Para fornecer um ponto adicional de conectividade para administração da implementação.  
 
--   Umożliwia spełnienie wymagań organizacyjnych w zakresie zarządzania. Na przykład może zainstalować lokacji głównej w lokalizacji zdalnej do zarządzania transferem zawartości wdrożenia w sieci o niskiej przepustowości. Jednak z programem System Center Configuration Manager służy opcje ograniczania przepustowości sieci używanej podczas transferu danych do punktu dystrybucji. Tej możliwości zarządzania zawartością można zastąpić potrzebę instalowania dodatkowych lokacji.  
+-   Para satisfazer requisitos de gestão organizacional. Por exemplo, poderá instalar um site primário numa localização remota para gerir a transferência de conteúdo de implementação numa rede de largura de banda baixa. No entanto, com o System Center Configuration Manager, pode utilizar as opções para limitar a utilização de largura de banda de rede ao transferir dados para um ponto de distribuição. Se a capacidade de gestão de conteúdo pode substituir a necessidade de instalar sites adicionais.  
 
 
-**Poniższe informacje ułatwią podjęcie decyzji dotyczącej instalacji lokacji głównej:**  
+**As seguintes informações podem ajudar a decidir quando instalar um site primário:**  
 
--   Lokacja główna może być autonomicznej lokacji głównej lub podrzędnej lokacji głównej w dużej hierarchii. Jeżeli lokacja główna należy do hierarchii z centralną lokacją administracyjną, replikacja danych między lokacjami odbywa się w ramach replikacji bazy danych. Jeśli nie ma konieczności obsługi większej liczby klientów i urządzeń niż pojedyncza lokacja główna może obsługiwać, zaleca się zainstalowanie autonomicznej lokacji głównej.  Po zainstalowaniu autonomicznej lokacji głównej można ją rozszerzyć w zgłoszenia do nowej centralnej lokacji administracyjnej, aby skalować wdrożenie w górę.  
+-   Um site primário pode ser um site primário autónomo ou um site primário subordinado numa hierarquia maior. Quando um site primário é um membro de uma hierarquia com um site de administração central, os sites utilizam a replicação de base de dados para replicar dados entre os sites. A menos que seja necessário suportar mais clientes e dispositivos que um único site primário pode suportar, considere a instalação de um site primário autónomo.  Depois de um site primário autónomo estiver instalado, pode expandi-lo para comunicar para um novo site de administração central para aumentar verticalmente a sua implementação.  
 
--   Lokacja główna obsługuje tylko centralną lokację administracyjną jako lokację nadrzędną.  
+-   Um site primário suporta apenas um site de administração central como site principal.  
 
--   Lokacja główna obsługuje tylko Lokacje dodatkowe jako Lokacje podrzędne i może również obsługiwać wielu podrzędnych lokacji dodatkowych.  
+-   Um site primário suporta apenas sites secundários como sites subordinados e também pode suportar vários sites subordinados secundários.  
 
--   Lokacje główne są odpowiedzialne za przetwarzanie wszystkich danych z przypisanych im klientów.  
+-   Os sites primários são responsáveis por processar todos os dados de cliente dos respetivos clientes atribuídos.  
 
--   Lokacje główne replikacji bazy danych do komunikowania się bezpośrednio z centralną lokacją administracyjną (która jest konfigurowana automatycznie podczas instalowania nowej lokacji).  
+-   Sites primários utilizam a replicação de base de dados para comunicar diretamente com o respetivo site de administração central (que é configurado automaticamente quando instala um novo site).  
 
-##  <a name="BKMK_ChooseSecondary"></a>Ustalanie, kiedy należy używać lokacji dodatkowej  
- Lokacje dodatkowe służą do zarządzania transferem zawartości wdrożenia oraz klienta danymi w sieciach o niskiej przepustowości.  
+##  <a name="BKMK_ChooseSecondary"></a>Determinar quando deve utilizar um site secundário  
+ Utilize sites secundários para gerir a transferência de dados de cliente e de conteúdo de implementação em redes com pouca largura de banda.  
 
- Lokacją dodatkową zarządza się z centralnej lokacji administracyjnej lub lokacji głównej bezpośrednio nadrzędnej lokacji dodatkowej. Lokacje dodatkowe muszą być dołączone do lokacji głównej, a nie można przenieść je do innej lokacji nadrzędnej bez je odinstalować, a następnie zainstalować ponownie jako Lokacje podrzędne względem nowej lokacji głównej.
+ Gerir um site secundário a partir de um site de administração central ou site primário do principal do site secundário. Sites secundários têm de estar associados a um site primário e não é possível movê-los para outro site principal sem os desinstalar e reinstalar como site subordinado abaixo do novo site primário.
 
-Jednak mogą przesyłać zawartość między dwiema równorzędnymi lokacjami dodatkowymi ułatwia zarządzanie replikacją zawartości wdrożenia opartą na plikach. Transferuje dane klienta do lokacji głównej, lokacja dodatkowa używa replikacji plikowej. Lokacja dodatkowa używa replikacji bazy danych również do komunikacji z jej nadrzędną lokacją główną.  
+No entanto, pode encaminhar conteúdos entre dois sites secundários membros para ajudar a gerir a replicação baseada em ficheiros de conteúdo de implementação. Para transferir dados de cliente a um site primário, o site secundário utiliza a replicação baseada em ficheiros. Um site secundário também utiliza a replicação de base de dados para comunicar com o respetivo site primário principal.  
 
- Zaleca się zainstalowanie lokacji dodatkowej w przypadku spełnienia jednego z następujących warunków:  
+ Considere a instalação de um site secundário se qualquer uma das seguintes condições se aplicar:  
 
--   Nie wymagają lokalny punkt łączności dla użytkownika administracyjnego.  
+-   Não necessita de um ponto local de conectividade para um utilizador administrativo.  
 
--   Należy zarządzać transferem zawartości wdrożenia do niższych lokacji w hierarchii.  
+-   Tem de gerir a transferência de conteúdo de implementação para sites num nível inferior da hierarquia.  
 
--   Informacje o kliencie, który jest wysyłany do wyższych lokacji w hierarchii należy zarządzać.  
+-   Tem de gerir informações de cliente que são enviadas para sites num nível superior da hierarquia.  
 
- Aby uniknąć instalowania lokacji dodatkowej, gdy w lokalizacjach zdalnych znajdują się klienci, należy rozważyć użycie usługi Windows BranchCache lub instalację punktów dystrybucji z możliwością sterowania przepustowością i planowania. Możesz użyć tych opcji zarządzania zawartością z lub bez dodatkowej lokacji, a ich może pomóc zmniejszyć liczbę lokacji i serwerów, które należy zainstalować. Aby uzyskać informacje o opcjach zarządzania zawartością w programie Configuration Manager, zobacz [ustalanie, kiedy należy używać opcji zarządzania zawartością](#BKMK_ChooseSecondaryorDP).  
+ Se não pretender instalar um site secundário e tiver clientes em localizações remotas, considere utilizar o Windows BranchCache ou instalar pontos de distribuição ativados para o controlo da largura de banda e agendamento. Pode utilizar estas opções de gestão de conteúdo com ou sem sites secundários e podem ajudar a reduzir o número de sites e servidores que tem de instalar. Para obter informações sobre as opções de gestão de conteúdos no Configuration Manager, consulte [determinar quando deve utilizar as opções de gestão de conteúdos](#BKMK_ChooseSecondaryorDP).  
 
 
-**Poniższe informacje ułatwią podjęcie decyzji dotyczącej instalacji lokacji dodatkowej:**  
+**As seguintes informações podem ajudar a decidir quando instalar um site secundário:**  
 
--   Lokacje dodatkowe automatycznie instalują program SQL Server Express podczas instalacji lokacji Jeśli lokalne wystąpienie programu SQL Server nie jest dostępna.  
+-   Sites secundários instalam automaticamente do SQL Server Express durante a instalação de site se não estiver disponível uma instância local do SQL Server.  
 
--   Instalacja lokacji dodatkowej jest inicjowana z konsoli programu Configuration Manager, zamiast uruchamiania Instalatora bezpośrednio na komputerze.  
+-   Instalação do site secundário é iniciada a partir da consola do Configuration Manager, em vez de executar o programa de configuração diretamente num computador.  
 
--   Lokacje dodatkowe korzystają z podzbioru informacji w bazie danych lokacji, co zmniejsza ilość danych, które są replikowane w ramach replikacji bazy danych między nadrzędnej lokacji głównej i dodatkowej lokacji.  
+-   Os sites secundários utilizam um subconjunto das informações na base de dados do site, que reduz a quantidade de dados que replica através da replicação de base de dados entre o site primário principal e o site secundário.  
 
--   Lokacje dodatkowe obsługują przesyłanie zawartości opartej na plikach do innych lokacji dodatkowych ze wspólną nadrzędną lokacją główną.  
+-   Os sites secundários suportam o encaminhamento de conteúdo baseado em ficheiros para outros sites secundários que tenham um site primário principal comum.  
 
--   Instalacja lokacji dodatkowej powoduje automatyczne wdrażanie punkt zarządzania i punkt dystrybucji, które znajdują się na serwerze lokacji dodatkowej.  
+-   Instalações de site secundário implementam automaticamente um ponto de gestão e um ponto de distribuição que estão localizados no servidor do site secundário.  
 
-##  <a name="BKMK_ChooseSecondaryorDP"></a>Ustalanie, kiedy należy używać opcji zarządzania zawartością  
- Jeżeli klienci znajdują się w zdalnych lokalizacjach sieciowych, zaleca się użycie co najmniej jednej opcji zarządzania zawartością zamiast lokacji głównej lub dodatkowej. Często można usunąć konieczności instalowania lokacji, gdy usługa Windows BranchCache, konfigurując punkty dystrybucji do kontroli przepustowości lub ręcznie skopiuj zawartość do punktów dystrybucji (wstępne przygotowywanie zawartości).  
+##  <a name="BKMK_ChooseSecondaryorDP"></a>Determinar quando deve utilizar as opções de gestão de conteúdo  
+ Se tiver clientes em localizações de rede remotas, considere utilizar uma ou mais opções de gestão de conteúdo em vez de um site primário ou secundário. Muitas vezes, pode remover a necessidade de instalar um site quando utiliza o Windows BranchCache, configura pontos de distribuição para controlo de largura de banda ou copia manualmente conteúdo para pontos de distribuição (conteúdo pré-configurado).  
 
 
-**Należy rozważyć wdrożenie punktu dystrybucji zamiast instalowania innej lokacji w przypadku spełnienia jednego z następujących warunków:**  
+**Considere implementar um ponto de distribuição em vez de instalar outro site, se qualquer uma das seguintes condições se aplicar:**  
 
--   Przepustowość sieci wystarcza komputerom klienckim w lokalizacjach zdalnych do komunikowania się z punktem zarządzania w celu pobrania zasad klienta oraz wysyłania spisu, stanu raportowania i informacji dotyczących odnajdywania.  
+-   A largura de banda de rede é suficiente para computadores cliente na localização remota comuniquem com um ponto de gestão para transferir a política de cliente e enviar o inventário, comunicar o estado e as informações de deteção.  
 
--   Usługa inteligentnego transferu w tle (BITS) nie zapewnia odpowiedniej kontroli przepustowości do wymagań sieci.  
+-   Serviço de transferência inteligente em segundo plano (BITS) não fornece controlo de largura de banda suficiente para os seus requisitos de rede.  
 
- Aby uzyskać więcej informacji o opcjach zarządzania zawartością w programie Configuration Manager, zobacz [podstawowe pojęcia związane z zarządzaniem zawartością w programie System Center Configuration Manager](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md).  
+ Para obter mais informações sobre as opções de gestão de conteúdos no Configuration Manager, consulte [conceitos fundamentais da gestão de conteúdos no System Center Configuration Manager](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md).  
 
-##  <a name="bkmk_beyond"></a>Poza topologia hierarchii  
- Oprócz topologii początkowej hierarchii należy wziąć pod uwagę usług lub możliwości, które będą dostępne w różnych lokacjach w hierarchii (Role systemu lokacji) i konfiguracji i możliwości jak całej hierarchii, będą zarządzane w infrastrukturze. W osobnych tematach opisano następujące typowe kwestie wymagające rozważenia. Są to ważne, ponieważ mogą mieć wpływ lub mieć wpływ na projekt hierarchii:  
+##  <a name="bkmk_beyond"></a>Para além da topologia da hierarquia  
+ Para além de uma topologia de hierarquia inicial, considere os serviços ou funcionalidades que estarão disponíveis de diferentes sites numa hierarquia (funções do sistema de sites) e os como ao nível da hierarquia de configurações e as funções serão geridas na sua infraestrutura. As seguintes considerações comuns são abordadas em tópicos separados. Estes são importantes porque eles podem influenciar ou ser influenciados pela estrutura da hierarquia:  
 
--   Podczas przygotowywania [zarządzania komputerami i urządzeniami w programie System Center Configuration Manager](/sccm/core/clients/manage/manage-clients), należy wziąć pod uwagę zarządzanych urządzeń lokalnych, w chmurze, czy obejmują urządzenia należące do użytkowników (BYOD).  Ponadto należy wziąć pod uwagę sposób będą zarządzać urządzeniami, które są obsługiwane przez wiele opcji zarządzania, takich jak komputery z systemem Windows 10, które mogą być zarządzane bezpośrednio przez program Configuration Manager lub że integracja z usługą Microsoft Intune.  
+-   Quando estiver a preparar para [gerir computadores e dispositivos com o System Center Configuration Manager](/sccm/core/clients/manage/manage-clients), considere se os dispositivos que gere estão no local, na nuvem, ou incluem os dispositivos propriedade do utilizador (BYOD).  Além disso, considere a forma como irá gerir dispositivos que são suportados por várias opções de gestão, tais como computadores Windows 10 que podem ser geridos diretamente pelo Configuration Manager ou apesar de integração com o Microsoft Intune.  
 
--   Zrozumienie, jak dostępna infrastruktura sieci może wpływać na przepływ danych między lokacjami zdalnymi (zobacz [przygotowanie środowiska sieciowego dla programu System Center Configuration Manager](/sccm/core/plan-design/network/configure-firewalls-ports-domains)). Należy również rozważyć, gdzie znajdują się geograficznie użytkowników i urządzeń, którymi zarządzasz, i czy uzyskują oni dostęp do infrastruktury za pośrednictwem domeny firmowej lub Internetu.  
+-   Compreender a forma como a infraestrutura de rede disponível pode afetar o fluxo de dados entre localizações remotas (consulte [preparar o ambiente de rede para o System Center Configuration Manager](/sccm/core/plan-design/network/configure-firewalls-ports-domains)). Considere também onde estão localizados geograficamente os utilizadores e dispositivos que gere e se acedem à sua infraestrutura através do seu domínio empresarial ou da Internet.  
 
--   Plan infrastruktury zawartości umożliwiająca efektywną dystrybucję informacje, Wdróż (plików i aplikacji) do urządzeń zarządzanych (zobacz [zarządzanie zawartością i infrastrukturą zawartości programu System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)).  
+-   Plano para uma infraestrutura de conteúdo para distribuir de forma eficiente as informações que implementa (ficheiros e aplicações) nos dispositivos que gere (consulte [gerir a infraestrutura de conteúdo e o conteúdo para o System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md)).  
 
--   Określenie, które [funkcje i możliwości programu System Center Configuration Manager](../../../core/plan-design/changes/features-and-capabilities.md) planujesz użyć, infrastruktury systemu Windows lub role systemu lokacji wymagają i w których lokacjach w hierarchii wielu lokacji może wdrożyć je dla najbardziej efektywne wykorzystanie zasobów sieci i serwera.  
+-   Determinar qual [funcionalidades e capacidades do System Center Configuration Manager](../../../core/plan-design/changes/features-and-capabilities.md) que pretende utilizar, a infraestrutura do Windows ou funções de sistema de sites que necessitam e, em que sites numa hierarquia vários sites pode implementá-las para a utilização mais eficaz dos seus recursos de rede e servidor.  
 
--   Należy rozważyć zabezpieczenia danych i urządzeń, w tym użycie infrastruktury kluczy publicznych. Zobacz [wymagania dotyczące certyfikatu PKI dla programu System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md).  
+-   Considere a segurança dos dados e dispositivos, incluindo a utilização de um PKI. Consulte [requisitos de certificado PKI para o System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md).  
 
 
-**Przejrzyj poniższe zasoby konfiguracje specyficzne dla lokacji:**  
+**Reveja os seguintes recursos para configurações especificas de sites:**  
 
--   [Planowanie dostawcy programu SMS dla programu System Center Configuration Manager](../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md)  
+-   [Planear o fornecedor de SMS para o System Center Configuration Manager](../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md)  
 
--   [Planowanie bazy danych lokacji programu System Center Configuration Manager](../../../core/plan-design/hierarchy/plan-for-the-site-database.md)  
+-   [Planear a base de dados do site para o System Center Configuration Manager](../../../core/plan-design/hierarchy/plan-for-the-site-database.md)  
 
--   [Planowanie serwerów systemu lokacji i ról systemu lokacji dla programu System Center Configuration Manager](../../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md)  
+-   [Planear servidores de sistema de sites e funções de sistema de sites para o System Center Configuration Manager](../../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md)  
 
--   [Planowanie zabezpieczeń w programie System Center Configuration Manager](../../../core/plan-design/security/plan-for-security.md)  
+-   [Planear a segurança no System Center Configuration Manager](../../../core/plan-design/security/plan-for-security.md)  
 
--   [Zarządzanie przepustowością sieci](../../../core/plan-design/hierarchy/manage-network-bandwidth.md) podczas wdrażania zawartości w obrębie lokacji  
+-   [Gerir a largura de banda da rede](../../../core/plan-design/hierarchy/manage-network-bandwidth.md) ao implementar conteúdos num site  
 
 
-**Należy wziąć pod uwagę konfiguracje obejmujące Lokacje i hierarchie:**  
+**Considere as configurações que abrangem sites e hierarquias:**  
 
--   [Opcje wysokiej dostępności dla programu System Center Configuration Manager](/sccm/protect/understand/high-availability-options) dla lokacji i hierarchii
+-   [Opções de elevada disponibilidade para o System Center Configuration Manager](/sccm/protect/understand/high-availability-options) para sites e hierarquias
 
--   [Rozszerzenie schematu usługi Active Directory dla programu System Center Configuration Manager](../../../core/plan-design/network/extend-the-active-directory-schema.md) oraz konfigurowanie lokacji do [publikowania danych lokacji programu System Center Configuration Manager](../../../core/servers/deploy/configure/publish-site-data.md)  
+-   [Expandir o esquema do Active Directory para o System Center Configuration Manager](../../../core/plan-design/network/extend-the-active-directory-schema.md) e configurar sites para [publicar dados do site para o System Center Configuration Manager](../../../core/servers/deploy/configure/publish-site-data.md)  
 
--   [Transfer danych między lokacjami w programie System Center Configuration Manager](../../../core/servers/manage/data-transfers-between-sites.md)  
+-   [Transferência de dados entre sites no System Center Configuration Manager](../../../core/servers/manage/data-transfers-between-sites.md)  
 
--   [Podstawowe informacje dotyczące administrowania opartego na rolach dla programu System Center Configuration Manager](../../../core/understand/fundamentals-of-role-based-administration.md)
+-   [Noções básicas da administração baseada em funções para o System Center Configuration Manager](../../../core/understand/fundamentals-of-role-based-administration.md)

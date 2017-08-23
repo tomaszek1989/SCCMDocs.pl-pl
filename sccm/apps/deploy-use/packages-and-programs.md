@@ -1,368 +1,365 @@
 ---
-title: Pakiety i programy | Dokumentacja firmy Microsoft
-description: "Obsługuje wdrożenia z wykorzystaniem pakietów i programów lub aplikacji z System Center Configuration Manager."
+title: Pacotes e programas | Microsoft Docs
+description: "Suportam implementações que utilizem pacotes e programas ou aplicações com o System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-app
+ms.technology: configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: caad0507-9913-415a-b13d-d36f8f0a1b80
-caps.latest.revision: 8
-caps.handback.revision: 0
+caps.latest.revision: "8"
+caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 6c5b23270501c11ed5aba9a6045734c73095d1bf
 ms.openlocfilehash: 6146bcf4e5aa9df6fe0b8cf71898e488ecf217cc
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="packages-and-programs-in-system-center-configuration-manager"></a>Pakiety i programy w programie System Center Configuration Manager
+# <a name="packages-and-programs-in-system-center-configuration-manager"></a>Pacotes e programas no System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Aplica-se a: O System Center Configuration Manager (ramo atual)*
 
-System Center Configuration Manager nadal obsługuje pakiety i programy, które były używane w programie Configuration Manager 2007. Wdrożenie korzystające z pakietów i programów może być odpowiedniejsze od wdrożenia korzystającego z aplikacji, gdy wdraża się poniższe elementy:  
+System Center Configuration Manager continua a suportar pacotes e programas que eram utilizados no Configuration Manager 2007. Uma implementação que utiliza pacotes e programas pode ser mais adequada do que uma implementação que utiliza uma aplicação quando implementa qualquer um dos seguintes procedimentos:  
 
-- Aplikacje na serwerach z systemem Linux i UNIX
-- Skrypty nieinstalujące aplikacji na komputerze, na przykład skrypt defragmentacji dysku komputera.
-- „Jednorazowe” skrypty, które nie muszą być stale monitorowane.  
-- Skrypty uruchamiane zgodnie z cyklicznym harmonogramem, które nie mogą korzystać z globalnej ewaluacji.
+- Aplicações em servidores Linux e UNIX
+- Scripts que não instalam uma aplicação num computador, tal como um script para desfragmentar a unidade de disco do computador
+- Scripts "pontuais" que não têm de ser monitorizados continuamente  
+- Scripts que são executados num agendamento periódico e não podem utilizar a avaliação global
 
-W przypadku migracji pakietów z wcześniejszej wersji programu Configuration Manager, można je wdrożyć w hierarchii programu Configuration Manager. Po zakończeniu migracji pakiety są widoczne w węźle **Pakiety** w obszarze roboczym **Biblioteka oprogramowania**.
+Quando migra pacotes de uma versão anterior do Configuration Manager, pode implementá-los na sua hierarquia do Configuration Manager. Quando a migração é concluída, os pacotes são apresentados no nó **Pacotes** na área de trabalho**Biblioteca de Software**.
 
-Można modyfikować i wdrażać te pakiety w taki sam sposób jak przy użyciu dystrybucji oprogramowania. **Importuj pakiet w Kreatorze definicji** pozostaje w programie Configuration Manager do importowania pakietów starszej wersji. Anonse są konwertowane na wdrożenia podczas migracji z programu Configuration Manager 2007 do hierarchii programu Configuration Manager.  
+Pode modificar e implementar estes pacotes da mesma forma que fez ao utilizar a distribuição de software. O **importar Assistente de pacote de definição** permanece no Configuration Manager para importar pacotes legados. Os anúncios são convertidos em implementações quando são migrados do Configuration Manager 2007 para uma hierarquia do Configuration Manager.  
 
 > [!NOTE]  
->  Do konwersji pakietów i programów do aplikacji programu Configuration Manager, można użyć Menedżera konwersji pakietu Microsoft System Center Configuration Manager.  
+>  Pode utilizar a conversão de pacote de Gestor do Microsoft System Center Configuration Manager para converter pacotes e programas em aplicações do Configuration Manager.  
 >   
->  Aby uzyskać więcej informacji, zobacz [Configuration Manager Package Conversion Manager](https://technet.microsoft.com/library/hh531519.aspx).  
+>  Para obter mais informações, veja [Gestor de Conversão de Pacotes do Configuration Manager](https://technet.microsoft.com/library/hh531519.aspx).  
 
-Pakiety można użyć nowe funkcje programu Configuration Manager, łącznie z grupami punktów dystrybucji i monitorowania. Nie można dystrybuować aplikacji Microsoft Application Virtualization (App-V) przy użyciu pakietów i programów w programie Configuration Manager. Do rozsyłania aplikacji wirtualnej, należy utworzyć je jako aplikacji programu Configuration Manager.  
+Os pacotes podem utilizar algumas novas funcionalidades do Configuration Manager, incluindo grupos de pontos de distribuição e monitorização. Aplicações do Microsoft Application Virtualization (App-V) não podem ser distribuídas utilizando pacotes e programas no Configuration Manager. Para distribuir aplicações virtuais, tem de criá-los como aplicações do Configuration Manager.  
 
-##  <a name="create-a-package-and-program"></a>Tworzenie pakietu i programu  
- Użyj jednej z tych procedur ułatwiających tworzenie lub importowanie pakietów i programów.  
+##  <a name="create-a-package-and-program"></a>Criar um pacote e programa  
+ Utilize um dos seguintes procedimentos para ajudar a criar ou importar pacotes e programas.  
 
-### <a name="create-a-package-and-program-using-the-create-package-and-program-wizard"></a>Tworzenie pakietu i programu za pomocą Kreatora tworzenia pakietu i programu.  
+### <a name="create-a-package-and-program-using-the-create-package-and-program-wizard"></a>Criar um pacote e um programa utilizando o Assistente para Criar Pacote e Programa  
 
-1.  W konsoli programu Configuration Manager wybierz **Biblioteka oprogramowania** > **zarządzania aplikacjami** > **pakiety**.  
+1.  Na consola do Configuration Manager, escolha **biblioteca de Software** > **gestão de aplicações** > **pacotes**.  
 
-3.  W **Home** w karcie **Utwórz** grupy, wybierz **Tworzenie pakietu**.  
+3.  No **home page** separador o **criar** grupo, escolha **criar pacote**.  
 
-4.  Na **pakietu** strony **Kreatora tworzenia pakietu i programu**, podaj następujące informacje:  
+4.  No **pacote** página do **criar pacote e programa assistente**, especifique as seguintes informações:  
 
-    -   **Nazwa**: Określ nazwę pakietu z maksymalnie 50 znaków.  
+    -   **Nome**: Especifique um nome para o pacote com um máximo de 50 carateres.  
 
-    -   **Opis**: Określ opis dla tego pakietu z maksymalnie 128 znaków.  
+    -   **Descrição**: Especifique uma descrição para este pacote com um máximo de 128 carateres.  
 
-    -   **Producent** (opcjonalnie): Określ nazwę producenta, aby pomóc w zidentyfikowaniu pakiet w konsoli programu Configuration Manager. Ta nazwa może się składać z maksymalnie 32 znaków.
+    -   **Fabricante** (opcional): Especifique um nome de fabricante para o ajudar a identificar o pacote na consola do Configuration Manager. Este nome pode ter um máximo de 32 carateres.
 
-    -   **Język** (opcjonalnie): Określ wersję językową pakietu o maksymalnej długości 32 znaków.  
+    -   **Idioma** (opcional): Especifique a versão de idioma do pacote com um máximo de 32 carateres.  
 
-    -   **Wersja** (opcjonalnie):  Określ numer wersji pakietu o maksymalnej długości 32 znaków.
+    -   **Versão** (opcional):  Especifique um número de versão para o pacote com um máximo de 32 carateres.
 
-    -   **Ten pakiet zawiera pliki źródłowe**: To ustawienie wskazuje, czy pakiet wymaga pliki źródłowe do znajdować się na urządzeniach klienckich. Domyślnie to pole wyboru jest zaznaczone, a Menedżer konfiguracji nie używa punktów dystrybucji pakietu. Gdy to pole wyboru jest zaznaczone, punkty dystrybucji są używane.  
+    -   **Este pacote contém ficheiros de origem**: Esta definição indica se o pacote requer ficheiros de origem estejam presentes nos dispositivos cliente. Por predefinição, esta caixa de verificação está desmarcada e o Configuration Manager não utiliza pontos de distribuição para o pacote. Quando esta caixa de verificação está selecionada, são utilizados pontos de distribuição.  
 
-    -   **Folder źródłowy**: Jeżeli pakiet zawiera pliki źródłowe, wybierz **Przeglądaj** otworzyć **Ustaw Folder źródłowy** okna dialogowego, a następnie wskaż lokalizację plików źródłowych pakietu.  
+    -   **Pasta de origem**: Se o pacote contém ficheiros de origem, escolha **procurar** para abrir o **definir pasta de origem** diálogo caixa e, em seguida, especifique a localização dos ficheiros de origem para o pacote.  
 
         > [!NOTE]  
-        >  Konto komputera serwera lokacji musi mieć uprawnienia dostępu Odczyt we wskazanym folderze źródłowym.  
+        >  A conta de computador do servidor do site deve ter permissões de acesso de leitura para a pasta de origem que especificar.  
 
-5.  Na **typu programu** strony **Kreatora tworzenia pakietu i programu**, wybierz typ programu do tworzenia, a następnie wybierz **dalej**. Można utworzyć program dla komputera lub urządzenia albo pominąć ten krok i utworzyć program później.  
+5.  No **tipo de programa** página do **criar pacote e programa assistente**, selecione o tipo de programa para criar e, em seguida, escolha **seguinte**. Pode criar um programa para um computador ou dispositivo, ou pode ignorar este passo e criar um programa mais tarde.  
 
     > [!TIP]  
-    >  Aby utworzyć nowy program dla istniejącego pakietu, należy najpierw zaznaczyć pakietu. Następnie w **Home** w karcie **pakietu** grupy, wybierz **utworzyć Program** otworzyć **Kreatora tworzenia programu**.  
+    >  Para criar um novo programa para um pacote existente, selecione primeiro o pacote. Em seguida, no **home page** separador o **pacote** grupo, escolha **criar programa** para abrir o **Assistente para criar programa**.  
 
-6.  Użyj jednej z następujących procedur, aby utworzyć program standardowy lub program urządzenia.  
+6.  Utilize um dos seguintes procedimentos para criar um programa padrão ou um programa de dispositivo.  
 
-    #### <a name="create-a-standard-program"></a>Tworzenie standardowego programu  
+    #### <a name="create-a-standard-program"></a>Criar um programa padrão  
 
-  1.  Na **typu programu** strony **Kreatora tworzenia pakietu i programu**, wybierz **standardowego programu**, a następnie wybierz **dalej**.     
+  1.  No **tipo de programa** página do **criar pacote e programa assistente**, escolha **programa padrão**e, em seguida, escolha **seguinte**.     
 
-    2.  Na **standardowego programu** określ następujące informacje:  
+    2.  No **programa padrão** página, especifique as seguintes informações:  
 
-        -   **Nazwa:** Określ nazwę programu z maksymalnie 50 znaków.  
+        -   **Nome:** Especifique um nome para o programa com um máximo de 50 carateres.  
 
             > [!NOTE]  
-            >  Nazwa programu musi być unikatowa w ramach pakietu. Po utworzeniu programu nie można zmodyfikować jego nazwy.  
+            >  O nome do programa deve ser exclusivo num pacote. Depois de criar um programa, não é possível modificar o respetivo nome.  
 
-        -   **Wiersz polecenia**: Wprowadź wiersza polecenia do uruchamiania tego programu lub wybierz **Przeglądaj** przejdź do lokalizacji pliku.  
+        -   **Linha de comandos**: Introduza a linha de comandos utilizada para iniciar este programa, ou escolha **procurar** para procurar a localização do ficheiro.  
 
-            Jeśli nazwa pliku nie ma rozszerzenia, które jest określony, program Configuration Manager próbuje użyć .com, .exe i .bat jako możliwe rozszerzenia.  
+            Se um nome de ficheiro não tiver uma extensão especificada, o Configuration Manager tenta utilizar. com, .exe e. bat como extensões possíveis.  
 
-             Gdy program jest uruchamiany na komputerze klienckim, program Configuration Manager najpierw szuka nazwę wiersza polecenia pliku w pakiecie wyszukiwania obok w lokalnym folderze systemu Windows i wyszukuje w lokalnej *% path %*. Jeśli pliku nie uda się znaleźć, działanie programu zakończy się niepowodzeniem.  
+             Quando o programa é executado num cliente, o Configuration Manager procura primeiro para o nome de ficheiro da linha de comandos no pacote, pesquisa numa pasta local do Windows e, em seguida, procura no local *% path %*. Se o ficheiro não for encontrado, o programa irá falhar.  
 
-        -   **Folder początkowy** (opcjonalnie): Określ folder, z którego program działa, maksymalnie 127 znaków. Ten folder może być ścieżką bezwzględną na kliencie lub ścieżką względną do folderu punktu dystrybucji, który zawiera pakiet.
+        -   **Pasta de arranque** (opcional): Especifique a pasta a partir do qual o programa é executado, até 127 carateres. Esta pasta pode ser um caminho absoluto no cliente ou um caminho relativo para a pasta do ponto de distribuição que contém o pacote.
 
-        -   **Uruchom**: Określ tryb wykonywania programu na komputerach klienckich. Wybierz jedną z poniższych opcji:  
+        -   **Executar**: Especifique o modo no qual o programa é executado em computadores cliente. Selecione um dos seguintes procedimentos:  
 
-            -   **Normalny**: Program jest uruchamiany w trybie normalnym na podstawie ustawień domyślnych systemu i programu. Jest to tryb domyślny.  
+            -   **Normal**: O programa é executado no modo normal, com base nas predefinições do sistema e do programa. Este é o modo predefinido.  
 
-            -   **Zminimalizowane**: Program jest uruchamiany w trybie zminimalizowanym na urządzeniach klienckich. Użytkownicy mogą widzieć działania instalacyjne w obszarze powiadomień lub na pasku zadań.  
+            -   **Minimizado**: O programa é executado minimizado nos dispositivos cliente. Os utilizadores poderão ver a atividade de instalação na área de notificação ou na barra de tarefas.  
 
-            -   **Zmaksymalizowane**: Program jest uruchamiany w trybie zmaksymalizowanym na urządzeniach klienckich. Użytkownicy widzą wszystkie działania instalacyjne.  
+            -   **Maximizado**: O programa é executado maximizado nos dispositivos cliente. Os utilizadores veem todas as atividades de instalação.  
 
-            -   **Ukryte**: Program uruchamiany ukryte na urządzeniach klienckich. Użytkownicy nie będą widzieli żadnych działań instalacyjnych.  
+            -   **Oculto**: O programa é executado oculto nos dispositivos cliente. Os utilizadores não verão qualquer atividade de instalação.  
 
-        -   **Program można uruchomić**: Określ, czy program ma być uruchamiany tylko wtedy, gdy użytkownik jest zalogowany, tylko wtedy, gdy żaden użytkownik nie jest podpisany w lub niezależnie od tego, czy użytkownik jest zalogowany na komputerze klienckim.  
+        -   **Programa pode ser executado**: Especifique se o programa é executado apenas quando um utilizador tem sessão iniciado, só quando nenhum utilizador tem sessão iniciada no, ou independentemente de um utilizador com sessão iniciado computador cliente.  
 
-        -   **Tryb uruchamiania**: Określ, czy program ma być uruchamiany z uprawnieniami administracyjnymi lub z uprawnieniami użytkownika, który jest obecnie zalogowany.  
+        -   **Modo de execução**: Especifique se o programa é executado com permissões administrativas ou com as permissões do utilizador que tem atualmente sessão iniciada.  
 
-        -   **Zezwalaj użytkownikom na wyświetlanie i interakcję z instalacji programu**: Użyj tego ustawienia, jeśli jest dostępne określić, czy zezwalać użytkownikom na interakcję z instalacji programu. To pole wyboru jest dostępne tylko wtedy, gdy **tylko, gdy żaden użytkownik nie jest zalogowany** lub **, czy użytkownik jest zalogowany** został wybrany do **Program można uruchomić** i kiedy **Uruchom z prawami administracyjnymi** został wybrany do **tryb uruchamiania**.  
+        -   **Permitir que os utilizadores visualizem e interajam com a instalação do programa**: Utilize esta definição, se estiver disponível, para especificar se pretende permitir que os utilizadores interajam com a instalação do programa. Esta caixa de verificação só está disponível quando **só quando nenhum utilizador iniciado** ou **se deve ou não um utilizador iniciado** está selecionado para **programa pode ser executado** e quando **executar com direitos administrativos** está selecionado para **modo de execução**.  
 
-        -   **Tryb dysku**: Określ informacje dotyczące działania tego programu w sieci. Wybierz jedną z następujących opcji:  
+        -   **Modo de unidade**: Especificar informação sobre a forma como este programa é executado na rede. Escolha uma das seguintes opções:  
 
-            -   **Jest uruchamiany z nazwą UNC**: Określ, czy program jest uruchamiany z nazwą Universal Naming Convention (UNC). To jest ustawienie domyślne.  
+            -   **Executa com nome UNC**: Especifique se o programa é executado com um nome de convenção de Nomenclatura Universal (UNC). Esta é a predefinição.  
 
-            -   **Wymaga litery dysku**: Określ, czy program wymaga literę dysku do pełnej kwalifikacji jego lokalizacji. Dla tego ustawienia programu Configuration Manager można użyć dowolnej litery dysku na komputerze klienckim.  
+            -   **Necessita letra de unidade**: Especifique que o programa requer uma letra de unidade para qualificar completamente a respetiva localização. Para esta definição, o Configuration Manager pode utilizar qualquer letra de unidade disponível no cliente.  
 
-            -   **Wymaga określonej litery dysku** : Określ, czy program wymaga określonej litery dysku przez użytkownika do pełnej kwalifikacji lokalizacji (na przykład **Z:**). Jeśli określona litera dysku będzie już używana na kliencie, program nie zostanie uruchomiony.  
+            -   **Requer letra de unidade específica** : Especifique que o programa requer uma letra de unidade específica que especificar para qualificar completamente a respetiva localização (por exemplo, **z**). Se a letra de unidade especificada já estiver a ser utilizada num cliente, o programa não é executado.  
 
-        -   **Połącz ponownie do punktu dystrybucji w dzienniku na**: To pole wyboru służy do wskazania, czy komputer kliencki ponownie nawiąże połączenie z punktem dystrybucji podczas logowania użytkownika. To pole wyboru jest domyślnie wyczyszczone.  
+        -   **Restabelecer ligação ao ponto de distribuição no início de sessão no**: Utilize esta caixa de verificação para indicar se o computador cliente volta a ligar ao ponto de distribuição quando o utilizador inicia sessão. Por predefinição, esta caixa de verificação está desmarcada.  
 
-  3.  Na **wymagania** strony **Program kreatora tworzenia pakietu i** Podaj następujące informacje:  
+  3.  No **requisitos** página do **criar pacote e programa assistente,** especifique as seguintes informações:  
 
-        -   **Uruchom najpierw inny program**: To ustawienie umożliwia określenie pakiet i program uruchamiany przed uruchomieniem tego pakietu i programu.  
+        -   **Executar outro programa primeiro**: Utilize esta definição para identificar um pacote e programa que é executado antes deste pacote e programa é executado.  
 
-        -   **Wymagania dotyczące platformy**: Wybierz **ten program można uruchomić na dowolnej platformie** lub **ten program można uruchomić tylko na określonych platformach**, a następnie wybierz systemy operacyjne, klienci muszą być uruchomione, aby można było zainstalować pakiet i program.  
+        -   **Requisitos de plataforma**: Selecione **este programa pode ser executado em qualquer plataforma** ou **este programa pode ser executado apenas nas plataformas especificadas**e, em seguida, selecione os sistemas operativos que os clientes devem executar para ser possível instalar o pacote e programa.  
 
-        -   **Szacowane miejsce na dysku**: Określ ilość miejsca na dysku przez oprogramowanie wymaga do uruchomienia na komputerze. Dla tego ustawienia można wybrać opcję **Unknown** (ustawienie domyślne) lub ustawić liczbę całkowitą nie mniejszą od zera. Jeśli zostanie podana wartość, należy wskazać dla niej jednostkę.  
+        -   **Espaço em disco estimado**: Especifique a quantidade de espaço em disco que o programa de software necessita para ser executado no computador. Pode especificá-lo como **Desconhecido** (a predefinição) ou como um número inteiro igual ou superior a zero. Se for especificado um valor, é necessário especificar também as unidades para o valor.  
 
-        -   **Maksymalny dozwolony czas wykonywania (w minutach)**: Określ maksymalny czas program jest uruchamiany na komputerze klienckim. Dla tego ustawienia można wybrać opcję **Unknown** (ustawienie domyślne) lub ustawić liczbę całkowitą większą od zera.  
+        -   **Máximo tempo de execução permitido (minutos)**: Especifique o tempo máximo que o programa poderá demorar a ser executado no computador cliente. Pode especificá-lo como **Desconhecido** (a predefinição) ou como um número inteiro superior a zero.  
 
-             Wartością domyślną jest 120 minut.  
+             Por predefinição, este valor é definido para 120 minutos.  
 
             > [!IMPORTANT]  
-            >  Jeśli używasz okna obsługi dla kolekcji, na którym ten program jest uruchomiony, może wystąpić konflikt, jeśli **maksymalny dozwolony czas wykonywania** jest większa od czasu zaplanowanego okna obsługi. Jednak jeśli maksymalny czas wykonywania ustawiono **nieznany**, program zaczyna działać podczas okna obsługi i kontynuuje działanie w razie potrzeby po zamknięciu okna obsługi. Jeżeli użytkownik ustawi maksymalnego czasu działania określonego okresu przekracza długość dowolnej z dostępnych okien obsługi, program nie działa.  
+            >  Se estiver a utilizar janelas de manutenção para a coleção onde este programa é executado, pode ocorrer um conflito se o **máximo tempo de execução permitido** é superior à janela de manutenção agendada. No entanto, se o número máximo de tempo de execução estiver definido como **desconhecido**, o programa começa a ser executada durante a janela de manutenção e continua a ser executado conforme necessário depois de fechar a janela de manutenção. Se o utilizador definir o tempo de execução máximo para um período que exceda a duração de qualquer janela de manutenção disponível, em seguida, o programa não é executado.  
 
-             Jeśli wartość jest równa **nieznany**, Configuration Manager Ustawia maksymalny dozwolony czas wykonywania jako 12 godzin (720 minut).  
-
-            > [!NOTE]  
-            >  Po przekroczeniu maksymalnego czasu (ustawionego przez użytkownika lub jako wartość domyślna) wykonywania programu Configuration Manager zatrzymuje program, jeśli **Uruchom z prawami administracyjnymi** jest zaznaczone i **Zezwalaj użytkownikom na wyświetlanie i interakcję z instalacji programu** nie jest zaznaczone.  
-
-  4.  Wybierz **dalej**.  
-
-    #### <a name="create-a-device-program"></a>Tworzenie programu urządzenia  
-
-  1.  Na **typ programu** strony **Kreatora tworzenia pakietu i programu**, wybierz opcję **programu dla urządzenia**, a następnie wybierz **dalej**.  
-
-  2.  Na **programu dla urządzenia** strony, podaj następujące informacje:  
-
-        -   **Nazwa**: Określ nazwę programu z maksymalnie 50 znaków.  
+             Se o valor estiver definido como **desconhecido**, tempo de execução do Configuration Manager define o número máximo 12 horas (720 minutos).  
 
             > [!NOTE]  
-            >  Nazwa programu musi być unikatowa w ramach pakietu. Po utworzeniu programu nie można zmodyfikować jego nazwy.  
+            >  Se o tempo máximo de execução (definido pelo utilizador ou como valor predefinido) for excedido, o Configuration Manager interrompe o programa se **executar com direitos administrativos** está selecionado e **permitir que os utilizadores visualizem e interajam com a instalação do programa** não está selecionada.  
 
-        -   **Komentarz** (opcjonalnie): Określ komentarz dotyczący tego programu urządzenia z maksymalnie 127 znaków.  
+  4.  Escolha **seguinte**.  
 
-        -   **Pobierz folder**: Podaj nazwę folderu na urządzeniu Windows CE, w którym będą przechowywane pliki źródłowe pakietu. Wartość domyślna to **\Temp\\\**.  
+    #### <a name="create-a-device-program"></a>Criar um programa de dispositivo  
 
-        -   **Wiersz polecenia**: Wprowadź wiersza polecenia do uruchamiania tego programu lub wybierz **Przeglądaj** przejdź do lokalizacji pliku.  
+  1.  No **tipo de programa** página do **criar pacote e programa assistente**, selecione **programa para dispositivo**e, em seguida, escolha **seguinte**.  
 
-        -   **Uruchom wiersz polecenia w folderze pobierania**: Wybierz tę opcję, aby uruchomić program z folderu wcześniej pobierania.  
+  2.  No **programa para dispositivo** página, especifique o seguinte:  
 
-        -   **Uruchom wiersz polecenia z tego folderu**: Wybierz tę opcję, aby określić inny folder, z którym ma być uruchamiany program.  
+        -   **Nome**: Especifique um nome para o programa com um máximo de 50 carateres.  
 
-    3.  Na **wymagania** strony, podaj następujące informacje:  
+            > [!NOTE]  
+            >  O nome do programa deve ser exclusivo num pacote. Depois de criar um programa, não é possível modificar o respetivo nome.  
 
-        -   **Szacowane miejsce na dysku**: Określ ilość miejsca na dysku wymaganego oprogramowania. To jest wyświetlana dla użytkowników urządzeń przenośnych, przed zainstalowaniem programu.  
+        -   **Comentário** (opcional): Especifique um comentário para este programa de dispositivo com um máximo de 127 carateres.  
 
-        -   **Pobierz program**: Określ informacje dotyczące gdy można pobrać ten program na urządzeniach przenośnych. Do wyboru są następujące opcje: **Jak najszybciej**, **Tylko przez szybką sieć** i **Tylko gdy urządzenie jest zadokowane**.  
+        -   **Pasta de transferência**: Especifique o nome da pasta no dispositivo Windows CE onde serão armazenados os ficheiros de origem do pacote. O valor predefinido é **\Temp\\**.  
 
-        -   **Dodatkowe wymagania**: Określ wszelkie dodatkowe wymagania dla tego programu. Są one widoczne dla użytkowników przed zainstalowaniem oprogramowania. Na przykład można powiadamiać użytkowników, że przed uruchomieniem tego programu trzeba zamknąć wszystkie inne aplikacje.  
+        -   **Linha de comandos**: Introduza a linha de comandos utilizada para iniciar este programa, ou escolha **procurar** para procurar a localização do ficheiro.  
 
-  4.  Wybierz **dalej**.  
+        -   **Executar linha de comandos na pasta da transferência**: Selecione esta opção para executar o programa a partir da pasta de transferência especificada anteriormente.  
 
-  7.  Na **Podsumowanie** Przejrzyj akcje, które zostaną wykonane, a następnie Zakończ pracę kreatora.  
+        -   **Executar linha de comandos a partir desta pasta**: Selecione esta opção para especificar uma pasta diferente a partir da qual pode executar o programa.  
 
- Sprawdź, czy nowy pakiet i program są wyświetlane w **pakiety** węzła **Biblioteka oprogramowania** obszaru roboczego.  
+    3.  No **requisitos** página, especifique o seguinte:  
 
-## <a name="create-a-package-and-program-from-a-package-definition-file"></a>Tworzenie pakietu i programu na podstawie pliku definicji pakietu  
+        -   **Espaço em disco estimado**: Especifique a quantidade de espaço em disco necessária para o software. Este é apresentado aos utilizadores de dispositivos móveis antes de instalarem o programa.  
 
-1.  W konsoli programu Configuration Manager wybierz **Biblioteka oprogramowania** > **zarządzania aplikacjami** > **pakiety**.  
+        -   **Transferir programa**: Especifique as informações sobre quando este programa pode ser transferido para dispositivos móveis. Pode especificar **Assim que possível**, **Apenas sobre uma rede rápida** ou **Apenas quando o dispositivo estiver ancorado**.  
 
-3.  Na **Home** w karcie **Utwórz** grupy, wybierz **Utwórz pakiet z definicji**.  
+        -   **Requisitos adicionais**: Especifique quaisquer requisitos adicionais para este programa. Estes são apresentados aos utilizadores antes de instalarem o software. Por exemplo, pode indicar os utilizadores que necessitam de fechar todas as outras aplicações antes de executar o programa.  
 
-4.  Na **definicji pakietu** strony **Utwórz pakiet z definicji kreatora**, wybierz istniejący plik definicji pakietu lub **Przeglądaj** do otwierania pliku definicji pakietu. Po określeniu pliku definicji pakietu, wybierz go z **pakiet definicji** , a następnie wybierz **dalej**.  
+  4.  Escolha **seguinte**.  
 
-5.  Na **pliki źródłowe** strony, podaj informacje o wszelkie pliki źródłowe wymagane przez pakiet i program, a następnie wybierz **dalej**.  
+  7.  No **resumo** , reveja as ações que serão tomadas e, em seguida, conclua o assistente.  
 
-6.  Jeśli pakiet wymaga plików źródłowych na **Folder źródłowy** Określ lokalizację, z której pliki źródłowe mają można uzyskać, a następnie wybierz **dalej**.  
+ Certifique-se de que o pacote e programa novos são apresentados no **pacotes** o nó do **biblioteca de Software** área de trabalho.  
 
-7.  Na **Podsumowanie** Przejrzyj akcje, które zostaną wykonane, a następnie Zakończ pracę kreatora. Nowy pakiet i program są wyświetlane w **pakiety** węzła **Biblioteka oprogramowania** obszaru roboczego.  
+## <a name="create-a-package-and-program-from-a-package-definition-file"></a>Criar um pacote e um programa a partir de um ficheiro de definição de pacote  
 
- Aby uzyskać więcej informacji na temat plików definicji pakietu, zobacz [o formacie pliku definicji pakietu](/sccm/apps/deploy-use/packages-and-programs#about-the-package-definition-file-format) w tym temacie.  
+1.  Na consola do Configuration Manager, escolha **biblioteca de Software** > **gestão de aplicações** > **pacotes**.  
 
-##  <a name="deploy-packages-and-programs"></a>Wdrażanie pakietów i programów  
+3.  No **home page** separador o **criar** grupo, escolha **criar pacote a partir da definição**.  
 
-1.  W konsoli programu Configuration Manager wybierz **Biblioteka oprogramowania** > **zarządzania aplikacjami** > **pakiety**.  
+4.  No **definição de pacote** página do **criar pacote a partir do Assistente de definição**, escolha um ficheiro de definição de pacote existente ou escolha **procurar** para abrir um novo ficheiro de definição de pacote. Depois de especificar um novo ficheiro de definição de pacote, selecione-à partir de **definição do pacote** lista e, em seguida, escolha **seguinte**.  
 
-2.  Wybierz pakiet, który chcesz wdrożyć, a następnie w **Home** karcie w **wdrożenia** grupy, wybierz **Wdróż**.  
+5.  No **ficheiros de origem** página, especifique as informações sobre os ficheiros de origem necessários para o pacote e programa e, em seguida, escolha **seguinte**.  
 
-3.  Na **ogólne** strony **Kreatora wdrażania oprogramowania**, określ nazwę pakietu i programu chcesz wdrożyć kolekcji, do której chcesz wdrożyć pakiet i program i opcjonalne komentarze dla wdrożenia.  
+6.  Se o pacote requer ficheiros de origem no **pasta de origem** página, especifique a localização a partir da qual os ficheiros de origem devem ser obtidos e, em seguida, escolha **seguinte**.  
 
-     Wybierz opcję **Użyj domyślnych grup punktów dystrybucji powiązanych z tą kolekcją**, jeśli chcesz umieścić zawartość pakietu w domyślnej grupie punktów dystrybucji kolekcji. Jeśli wybrana Kolekcja nie skojarzono z grupą punktów dystrybucji, ta opcja jest niedostępna.  
+7.  No **resumo** , reveja as ações que serão tomadas e, em seguida, conclua o assistente. O pacote e programa novos são apresentados no **pacotes** o nó do **biblioteca de Software** área de trabalho.  
 
-4.  Na **zawartości** wybierz **Dodaj**, a następnie wybierz punkty dystrybucji lub grupy punktów dystrybucji, do których chcesz wdrożyć zawartość, która jest skojarzona z tym pakietem i programem.  
+ Para mais informações sobre os ficheiros de definição de pacote, consulte [sobre o formato de ficheiro de definição de pacote](/sccm/apps/deploy-use/packages-and-programs#about-the-package-definition-file-format) neste tópico.  
 
-5.  Na **ustawienia wdrażania** strony, wybierz cel dla tego wdrożenia i określ opcje dla pakietów wznawiania i mierzonych połączeń:  
+##  <a name="deploy-packages-and-programs"></a>Implementar pacotes e programas  
 
-    -   **Cel**: Wybierz spośród opcji:  
+1.  Na consola do Configuration Manager, escolha **biblioteca de Software** > **gestão de aplicações** > **pacotes**.  
 
-        -   **Dostępne**: Jeśli aplikacja jest wdrażana dla użytkownika, użytkownik będzie widział opublikowany pakiet i program w katalogu aplikacji i może ją na żądanie. Jeśli pakiet i program jest wdrażana na urządzeniu, użytkownik będzie ją widział w Centrum oprogramowania i można ją zainstalować na żądanie.  
+2.  Selecione o pacote que pretende implementar, e, em seguida, no **home page** separador o **implementação** grupo, escolha **implementar**.  
 
-        -   **Wymagane**: Pakiet i program zostanie wdrożona automatycznie zgodnie ze skonfigurowanym harmonogramem. Użytkownik może jednak śledzić stan wdrożenia pakietu i programu oraz zainstalować je przed upływem ostatecznego terminu przy użyciu Centrum oprogramowania.  
+3.  No **geral** página do **Assistente de implementação de Software**, especifique o nome do pacote e programa que pretende implementar, a coleção à qual pretende implementar o pacote e programa e comentários opcionais para a implementação.  
 
-    -   **Wyślij pakiety wzbudzania**: Jeśli w celu wdrożenia wybrano opcję **wymagane** i wybrano tę opcję, przed zainstalowaniem wdrożenia do wznowienia w ostatecznym terminie instalacji do komputerów zostanie wysłany pakiet wznawiania. Aby użyć tej opcji, należy skonfigurować komputery do używania funkcji Wake On LAN.  
+     Selecione **Utilizar grupos de pontos de distribuição predefinidos associados a esta coleção** se quiser armazenar o conteúdo do pacote no grupo de pontos de distribuição predefinido da coleção. Se não associou a coleção selecionada um grupo de pontos de distribuição, esta opção estará desativada.  
 
-    -  **Zezwalaj klientom mierzonego połączenia internetowego na pobieranie zawartości po upływie ostatecznego terminu instalacji, co może pociągnąć za sobą dodatkowe koszty**: Wybierz, jeśli są wymagane.  
+4.  No **conteúdo** página, escolha **adicionar**e, em seguida, selecione os pontos de distribuição ou grupos de pontos de distribuição nos quais pretende implementar o conteúdo que está associado este pacote e programa.  
+
+5.  No **definições de implementação** página, escolha um objetivo para esta implementação e especifique as opções para dos pacotes de reativação e ligações com tráfego limitado:  
+
+    -   **Objetivo**: Escolha entre:  
+
+        -   **Disponível**: Se a aplicação for implementada para um utilizador, o utilizador verá o pacote publicado e o programa no catálogo de aplicações e poderá solicitá-la a pedido. Se o pacote e programa for implementado num dispositivo, o utilizador vê-lo no Centro de Software e pode instalá-la a pedido.  
+
+        -   **Necessário**: O pacote e programa são implementados automaticamente, de acordo com a agenda configurada. No entanto, um utilizador poderá controlar o estado de implementação do pacote e programa e instalá-los antes do prazo, utilizando o Centro de Software.   
+
+    -   **Enviar pacotes de reativação**: Se o objetivo da implementação estiver definido como **necessário** e esta opção estiver selecionada, é enviado um pacote de reativação para computadores antes da instalação da implementação para reativar o computador da suspensão quando for atingido o prazo instalação. Para poder utilizar esta opção, os computadores devem ser configurados para Wake On LAN.  
+
+    -  **Permitir que os clientes numa ligação à Internet limitada para transferir conteúdo após o prazo de instalação, o que pode implicar custos adicionais**: Selecione esta opção se tiver necessária.  
 
     > [!NOTE]  
-    >  Opcja **Wykonaj wstępne wdrożenie oprogramowania na główne urządzenie użytkownika** nie jest dostępna podczas wdrażania pakietów i programów.  
+    >  A opção **Pré-implementar software no dispositivo primário do utilizador** não está disponível ao implementar um pacote e um programa.  
 
-6.  Na **Planowanie** skonfiguruj, czy ten pakiet i program zostanie wdrożone lub udostępnione na urządzeniach klienckich.  
+6.  No **agendamento** página, configure quando este pacote e programa serão implementados ou disponibilizados aos dispositivos cliente.  
 
-     Opcje na tej stronie są różne, w zależności od tego, czy ustawiono akcję wdrożenia **dostępne** lub **wymagane**.  
+     As opções nesta página variam consoante a ação de implementação esteja definida **disponível** ou **necessário**.  
 
-7.  Jeśli w celu wdrożenia wybrano opcję **wymagane**, skonfigurować zachowanie ponownie uruchom program z **zachowanie ponownego uruchamiania** menu rozwijanego. Wybierz jedną z następujących opcji:  
+7.  Se o objetivo da implementação estiver definido como **necessário**, configurar o comportamento para o programa a partir da nova execução o **comportamento da nova execução** menu pendente. Pode escolher uma das seguintes opções:  
 
-    |Zachowanie ponownego uruchamiania|Więcej informacji|  
+    |Comportamento da nova execução|Mais informações|  
     |--------------------|----------------------|  
-    |Nigdy nie uruchamiaj ponownie wdrożonego programu|Program nie będzie można ponownie uruchomić na kliencie, nawet jeśli program pierwotnie nie powiodła się lub zostały zmienione pliki programu.|  
-    |Zawsze uruchamiaj ponownie program|Program będzie zawsze uruchamiana ponownie na kliencie podczas planowania wdrożenia, nawet jeśli program został uruchomiony pomyślnie. Może to być przydatne w przypadku używania wdrożeń cyklicznych, w ramach których program jest aktualizowany, na przykład o oprogramowanie antywirusowe.|  
-    |Uruchom ponownie, jeśli poprzednia próba nie powiodła się|Program zostanie uruchomiona ponownie, gdy wdrożenie jest zaplanowane tylko wtedy, gdy nie można go na Poprzednia próba uruchomienia.|  
-    |Uruchom ponownie, jeśli poprzednia próba powiodła się|Program zostanie uruchomiona ponownie tylko wtedy, gdy wcześniej uruchomiony pomyślnie na kliencie. To ustawienie jest przydatne w przypadku używania cyklicznych anonsów, w których program jest cyklicznie aktualizowany, gdy każda aktualizacja wymaga pomyślnego zainstalowania poprzedniej aktualizacji.|  
+    |Nunca voltar a executar o programa implementado|O programa não será executado novamente no cliente, mesmo que o programa tenha falhado inicialmente ou se os ficheiros de programa tenham sido alterados.|  
+    |Executar sempre novamente o programa|O programa será sempre novamente executado no cliente quando a implementação estiver agendada, mesmo que o programa tenha sido executado com êxito. Isto pode ser útil quando utilizar implementações periódicas no qual o programa é atualizado, por exemplo, com software antivírus.|  
+    |Executar novamente se a tentativa anterior falhar|O programa é executado novamente se a implementação é agendada apenas se ocorrido uma falha na tentativa de execução anterior.|  
+    |Executar novamente se a tentativa anterior tiver êxito|O programa é executado novamente apenas se tiver sido executado com êxito no cliente. Isto é útil se utilizar anúncios periódicos nos quais o programa é atualizado regularmente, e em que cada atualização necessitar que a atualização anterior tenha sido instalada com êxito.|  
 
-8. Na stronie **Środowisko użytkownika** określ następujące informacje:  
+8. Na página **Experiência de Utilizador** , especifique as seguintes informações:  
 
-    -   **Zezwalaj użytkownikom na uruchamianie programu niezależnie od przypisań**: Jeśli włączona, użytkownicy mogą instalować to oprogramowanie z Centrum oprogramowania niezależnie od wszelkich zaplanowany czas instalacji.  
+    -   **Permitir que os utilizadores executem o programa independentemente das atribuições**: Se estiver ativada, os utilizadores podem instalar este software a partir do Centro de Software, independentemente da hora de instalação agendada.  
 
-    -   **Instalacja oprogramowania**: Umożliwia zainstalowanie poza oknami obsługi skonfigurowane oprogramowanie.  
+    -   **Instalação de software**: Permite que o software seja instalado fora de quaisquer janelas de manutenção configurada.  
 
-    -   **Ponowne uruchomienie systemu (jeśli jest to wymagane do ukończenia instalacji)**: Jeżeli instalacja oprogramowania wymaga ponownego uruchomienia urządzenia w celu zakończenia, pozwala to niepożądane poza skonfigurowanymi oknami obsługi.  
+    -   **Reinício do sistema (se for necessário para concluir a instalação)**: Se a instalação de software exigir um reinício de dispositivo para concluir, permita Isto deve ocorrer fora de quaisquer janelas de manutenção configurada.  
 
-    -   **Urządzenia osadzone**: Podczas wdrażania pakietów i programów na urządzeniach Windows Embedded, które są włączone filtrów zapisu, można określić, pakiety i programy zainstalowania na tymczasowej nakładce i zatwierdzić zmiany później. Alternatywnie zatwierdzasz zmiany w ostatecznym terminie instalacji bądź w oknie obsługi. Po zatwierdzeniu zmian w ostatecznym terminie instalacji bądź w oknie obsługi, wymagane jest ponowne uruchomienie i trwale zapisać zmiany na urządzeniu.  
+    -   **Dispositivos Embedded**: Quando implementa pacotes e programas em dispositivos Windows Embedded que com filtro escrita ativado, pode especificar que pacotes e programas ser instalada em temporária sobreposição e confirmar as alterações mais tarde. Em alternativa, consolidar as alterações no prazo de instalação ou durante uma janela de manutenção. Ao consolidar alterações no prazo de instalação ou durante uma janela de manutenção, é necessário um reinício e as alterações sejam mantidas no dispositivo.  
 
         > [!NOTE]  
-        >  Po wdrożeniu pakietu lub programu na urządzeniu z systemem Windows Embedded upewnij się, że urządzenie należy do kolekcji ze skonfigurowanym oknem obsługi. Aby uzyskać więcej informacji dotyczących sposobu obsługi systemu windows są używane podczas wdrażania pakietów i programów na urządzeniach Windows Embedded, zobacz [tworzenie Windows Embedded aplikacji](../../apps/get-started/creating-windows-embedded-applications.md).  
+        >  Quando implementa um pacote ou programa num dispositivo Windows Embedded, certifique-se de que o dispositivo é membro de uma coleção que tenha uma janela de manutenção configurada. Para obter mais informações sobre como janelas de manutenção quando implementa pacotes e programas em dispositivos Windows Embedded, consulte [aplicações criar Windows Embedded](../../apps/get-started/creating-windows-embedded-applications.md).  
 
-9. Na stronie **Punkty dystrybucji** określ następujące informacje:  
+9. Na página **Pontos de Distribuição** , especifique as seguintes informações:  
 
-    -   **Opcje wdrażania**: Określ akcje, które klient powinien wykonać do uruchomienia programu zawartości. Można określić zachowanie klienta znajdującego się w granicach szybkiej sieci lub wolnej bądź zawodnej sieci.  
+    -   **Opções de implementação**: Especifique as ações que um cliente deve tomar para executar o conteúdo do programa. Pode especificar o comportamento quando o cliente está numa zona de rede rápida ou numa zona de rede lenta ou pouco fiável.  
 
-    -   **Zezwalaj klientom na współużytkowanie zawartości z innymi klientami w tej samej podsieci**: Wybierz tę opcję, aby zmniejszyć obciążenie sieci, zezwalając klientom na pobieranie zawartości z innych klientów w sieci, na których już pobrana zawartość w pamięci podręcznej. Ta opcja korzysta z usługi Windows BranchCache i jest dostępna na komputerach z systemem operacyjnym Windows Vista SP2 lub nowszym.  
+    -   **Permitir que os clientes partilhem conteúdos com outros clientes na mesma sub-rede**: Selecione esta opção para reduzir a carga na rede ao permitir que os clientes transfiram conteúdos a partir de outros clientes na rede que já tenham transferido e colocado o conteúdo na cache. Esta opção utiliza o Windows BranchCache e pode ser utilizada em computadores que executam o Windows Vista SP2 e posterior.  
 
-    -   **Zezwalaj klientom na użycie rezerwowej lokalizacji źródła zawartości**:  
+    -   **Permitir que os clientes utilizem uma localização de origem de contingência para conteúdo**:  
 
-        -  **W wersji wcześniejszej niż 1610**: Możesz wybrać **Zezwalaj na rezerwową lokalizację źródła zawartości pola wyboru** aby umożliwić klientom spoza granic grup na powrót i używanie dystrybucji jako punktu lokalizacji źródła zawartości podczas inne punkty dystrybucji nie są dostępne.
+        -  **Versões anteriores ao 1610**: Pode selecionar o **permitir a localização de origem de contingência para conteúdo de caixa de verificação** para permitir que os clientes fora destes limites grupos recorram à contingência e utilizar a distribuição de ponto de como uma localização de origem para o conteúdo quando não houver outros pontos de distribuição disponíveis.
 
-        - **Wersja 1610 i nowsze**: Nie można skonfigurować **Zezwalaj na rezerwową lokalizację źródła zawartości**.  Zamiast tego należy skonfigurować relacje między grupami granic, które określają, gdy klient można rozpocząć wyszukiwanie grup dodatkowe granic dla lokalizacji prawidłowego źródła zawartości.
+        - **Versão 1610 e posterior**: Já não pode configurar **permitir a localização de origem de contingência para conteúdo**.  Em vez disso, configure as relações entre grupos de limites que determinam quando um cliente pode começar a procurar grupos de limites adicionais para uma localização de origem de conteúdo válida.
 
-10. Na **Podsumowanie** Przejrzyj akcje, które zostaną wykonane, a następnie Zakończ pracę kreatora.  
+10. No **resumo** , reveja as ações que serão tomadas e, em seguida, conclua o assistente.  
 
-     Wdrożenia można obejrzeć w węźle **Wdrożenia** obszaru roboczego **Monitorowanie** i w okienku szczegółów na karcie wdrożenia pakietu po wybraniu wdrożenia. Aby uzyskać więcej informacji, zobacz [monitorować pakiety i programy](/sccm/apps/deploy-use/packages-and-programs#monitor-packages-and-programs) w tym temacie.  
+     Pode ver a implementação no nó **Implementações** da área de trabalho **Monitorização** e no painel de detalhes no separador de implementação do pacote quando seleciona a implementação. Para obter mais informações, consulte [monitorizar pacotes e programas](/sccm/apps/deploy-use/packages-and-programs#monitor-packages-and-programs) neste tópico.  
 
 > [!IMPORTANT]  
->  Jeśli została skonfigurowana opcja **Uruchom program z punktu dystrybucji** na **punktów dystrybucji** strony **Kreatora wdrażania oprogramowania**, nie należy wyczyścić opcję **skopiuj zawartość tego pakietu do udziału pakietu w punktach dystrybucji** ponieważ sprawia to, że niedostępny uruchamiała się z punktami dystrybucji pakietu.  
+>  Se configurou a opção **executar programa a partir do ponto de distribuição** no **pontos de distribuição** página do **Assistente de implementação de Software**, desmarque a opção **copiar o conteúdo deste pacote para uma partilha de pacote em pontos de distribuição** porque isto faz com que o pacote indisponível para execução a partir de pontos de distribuição.  
 
-##  <a name="monitor-packages-and-programs"></a>Monitor pakietów i programów  
- Aby monitorować wdrożenia pakietów i programów, należy użyć tej samej procedury, które służy do monitorowania aplikacji, jak określono w [monitorowania aplikacji](/sccm/apps/deploy-use/monitor-applications-from-the-console).  
+##  <a name="monitor-packages-and-programs"></a>Monitorizar pacotes e programas  
+ Para monitorizar implementações de pacote e programa, utilize os procedimentos aplicados para monitorizar aplicações, conforme detalhado no [monitorizar aplicações](/sccm/apps/deploy-use/monitor-applications-from-the-console).  
 
- Pakiety i programy zawiera także szereg wbudowanych raportów, które umożliwiają monitorowanie informacji o stanie wdrożenia pakietów i programów. Te raporty mają kategorię **Dystrybucja oprogramowania — pakiety i programy** oraz **Dystrybucja oprogramowania — stan wdrażania pakietów i programów**.  
+ Pacotes e programas também inclui um número de relatórios incorporados que permitem monitorizar informações sobre o estado de implementação de pacotes e programas. Estes relatórios têm a categoria de relatório de **Distribuição de Software – Pacotes e Programas** e **Distribuição de Software - Estado de Implementação do Pacote e do Programa**.  
 
- Aby uzyskać więcej informacji o sposobie konfiguracji raportowania w programie Configuration Manager, zobacz [raportowania w programie System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+ Para obter mais informações sobre como configurar relatórios no Configuration Manager, consulte [relatórios no System Center Configuration Manager](../../core/servers/manage/reporting.md).  
 
-##  <a name="manage-packages-and-programs"></a>Zarządzanie pakietów i programów  
- W **Biblioteka oprogramowania** obszaru roboczego, rozwiń węzeł **zarządzania aplikacjami**, wybierz **pakiety**, wybierz pakiet, który chcesz zarządzać, a następnie wybierz zadanie zarządzania z poniższej tabeli:  
+##  <a name="manage-packages-and-programs"></a>Gerir pacotes e programas  
+ No **biblioteca de Software** área de trabalho, expanda **gestão de aplicações**, escolha **pacotes**, escolha o pacote que pretende gerir e, em seguida, escolha uma tarefa de gestão da tabela seguinte:  
 
-|Zadanie|Więcej informacji|  
+|Tarefa|Mais informações|  
 |----------|----------------------|  
-|**Utwórz wstępnie przygotowany plik zawartości**|Otwiera **Tworzenie kreatora przygotowanego pliku zawartości**, co umożliwia tworzenie pliku zawierającego zawartości pakietu, które mogą być importowane ręcznie do innej lokacji. Przydaje się to, gdy przepustowość sieci między serwerem lokacji i punktem dystrybucji jest mała.|  
-|**Tworzenie programów**|Otwiera **Kreatora tworzenia programu**, które umożliwia utworzenie nowego programu dla tego pakietu.|  
-|**Eksportowanie**|Otwiera **Kreator eksportu pakietu**, co umożliwia eksportowanie wybranego pakietu i jego zawartość do pliku.<br /><br /> Aby uzyskać informacje o sposobie importowania pakietów i programów, zobacz [tworzenie pakietów i programów](/sccm/apps/deploy-use/packages-and-programs#create-packages-and-programs) w tym temacie.|  
-|**Wdrażanie**|Otwiera **Kreatora wdrażania oprogramowania**, co umożliwia wdrażanie wybranych pakietów i programów do kolekcji. Aby uzyskać więcej informacji, zobacz [wdrażania pakietów i programów](/sccm/apps/deploy-use/packages-and-programs#deploy-packages-and-programs) w tym temacie.|  
-|**Dystrybuuj zawartość**|Otwiera **kreatora dystrybucji zawartości**, co umożliwia wysyłanie zawartość, która jest skojarzona z pakietu i programu do wybranych punktów dystrybucji lub grupy punktów dystrybucji.|  
-|**Aktualizuj punkty dystrybucji**|Aktualizuje punkty dystrybucji o najnowszą zawartość dla wybranego pakietu i programu.|  
+|**Criar Ficheiro de Conteúdo Pré-configurado**|Abre o **criar Assistente de ficheiro de conteúdo pré-configurado**, que lhe permite criar um ficheiro que contém o conteúdo do pacote que pode ser manualmente é importado para outro site. Isto é útil em situações onde a largura de banda de rede seja fraca entre o servidor do site e o ponto de distribuição.|  
+|**Criar programa**|Abre o **Assistente para criar programa**, que lhe permite criar um novo programa para este pacote.|  
+|**Exportarar**|Abre o **Assistente Exportar pacote**, que lhe permite exportar o pacote selecionado e o respetivo conteúdo para um ficheiro.<br /><br /> Para obter informações sobre como importar pacotes e programas, consulte [criar pacotes e programas](/sccm/apps/deploy-use/packages-and-programs#create-packages-and-programs) neste tópico.|  
+|**Implementar**|Abre o **Assistente de implementação de Software**, que lhe permite implementar o pacote selecionado e o programa numa coleção. Para obter mais informações, consulte [implementar pacotes e programas](/sccm/apps/deploy-use/packages-and-programs#deploy-packages-and-programs) neste tópico.|  
+|**Distribuir Conteúdo**|Abre o **Assistente para distribuir conteúdo**, que lhe permite enviar o conteúdo que está associado ao pacote e programa para pontos de distribuição selecionados ou grupos de pontos de distribuição.|  
+|**Atualizar Pontos de Distribuição**|Atualiza pontos de distribuição com o conteúdo mais recente para o pacote e o programa selecionados.|  
 
-##  <a name="about-the-package-definition-file-format"></a>O formacie pliku definicji pakietu  
- Pliki definicji pakietu, które są skrypty można użyć w celu automatyzacji tworzenia pakietów i programów z programu Configuration Manager. Zapewniają one wszystkich danych programu Configuration Manager musi utworzyć pakiet i program, z wyjątkiem lokalizacji plików źródłowych pakietu. Każdy plik definicji pakietu jest plik tekstowy ASCII lub UTF-8 używające formatu pliku .ini i zawiera następujące sekcje:  
+##  <a name="about-the-package-definition-file-format"></a>Sobre o formato de ficheiro de definição de pacote  
+ Ficheiros de definição do pacote são scripts que pode utilizar para ajudar a automatizar a criação do pacote e programa com o Configuration Manager. Fornecem todas as informações que o Configuration Manager tem de criar um pacote e programa, exceto para a localização dos ficheiros de origem do pacote. Cada ficheiro de definição do pacote é um ficheiro de texto ASCII ou UTF-8 que utiliza o formato de ficheiro. ini e que contém as seguintes secções:  
 
 ###  <a name="pdf"></a>[PDF]  
- W tej sekcji wskazywany jest plik definicji pakietu. Zawiera ona następujące informacje:  
+ Esta secção identifica o ficheiro como um ficheiro de definição de pacote. Contém as seguintes informações:  
 
--   **Wersja**: Określ wersję używanego przy użyciu pliku formatu pliku definicji pakietu. Odpowiada to wersję System Management Server (SMS) lub Configuration Manager, dla której został zapisany. Ten wpis jest wymagany.  
+-   **Versão**: Especifique a versão do formato do ficheiro de definição de pacote que é utilizado pelo ficheiro. Isto corresponde à versão do System Management Server (SMS) ou o Configuration Manager para o qual foi escrito. Esta entrada é necessária.  
 
-###  <a name="package-definition"></a>[Package Definition]  
- Określ właściwości pakietów i programów. Udostępnia ona następujące informacje:  
+###  <a name="package-definition"></a>[Definição de Pacote]  
+ Especificar as propriedades do pacote e programa. Fornece as seguintes informações:  
 
--   **Nazwa**: Nazwa pakietu maksymalnie 50 znaków.  
+-   **Nome**: O nome do pacote, até 50 carateres.  
 
--   **Wersja** (opcjonalnie): Wersja pakietu do 32 znaków.  
+-   **Versão** (opcional): A versão do pacote, até 32 carateres.  
 
--   **Ikona** (opcjonalnie): Plik, który zawiera ikonę, aby użyć tego pakietu. Jeśli jest określony, ta ikona zastępuje domyślną ikonę pakietu w konsoli programu Configuration Manager.
+-   **Ícone** (opcional): O ficheiro que contém o ícone utilizado para este pacote. Se for especificado, este ícone substitui o ícone de pacote predefinido na consola do Configuration Manager.
 
--   **Wydawca**: Wydawca pakietu do 32 znaków.
+-   **Publicador**: O publicador do pacote, até 32 carateres.
 
--   **Język**: Wersja językowa pakietu do 32 znaków.
+-   **Idioma**: A versão de idioma do pacote, até 32 carateres.
 
--   **Komentarz** (opcjonalnie): Komentarz dotyczący pakietu do 127 znaków.
+-   **Comentário** (opcional): Um comentário sobre o pacote, até 127 carateres.
 
--   **ContainsNoFiles**: Ten wpis wskazuje, czy źródło jest skojarzone z pakietem.  
+-   **ContainsNoFiles**: Esta entrada indica se é ou não uma origem associada ao pacote.  
 
--   **Programy**: Programy, które są zdefiniowane dla tego pakietu. Każda nazwa programu odpowiada sekcji **[Program]** w tym pliku definicji pakietu.  
+-   **Programas**: Os programas definidos para este pacote. Cada nome do programa corresponde a uma secção **[Programa]** neste ficheiro de definição de pacote.  
 
-     Przykład:  
+     Exemplo:  
 
      `Programs=Typical, Custom, Uninstall`  
 
--   **MIFFileName**: Nazwa pliku formatu MIF (Management Information), który zawiera stan pakietu, maksymalnie 50 znaków.  
+-   **MIFFileName**: O nome do ficheiro de formato MIF (Management Information Format) que contém o estado de pacote, até 50 carateres.  
 
--   **MIFName**: Nazwa pakietu (do dopasowania pliku MIF), maksymalnie 50 znaków.  
+-   **MIFName**: O nome do pacote (para correspondência MIF), até 50 carateres.  
 
--   **MIFVersion**: Numer wersji pakietu (do dopasowania pliku MIF), maksymalnie 32 znaki.  
+-   **MIFVersion**: O número de versão do pacote (para correspondência MIF), até 32 carateres.  
 
--   **MIFPublisher**: Wydawca oprogramowania pakietu (do dopasowania pliku MIF), maksymalnie 32 znaki.  
+-   **MIFPublisher**: O publicador de software do pacote (para correspondência MIF), até 32 carateres.  
 
-###  <a name="program"></a>[Program]  
- Dla każdego programu, który określono w **programy** wpisowi **[Package Definition]** sekcji pliku definicji pakietu musi zawierać sekcję [Program], która definiuje tego programu. Każda sekcja Program zawiera następujące informacje:  
+###  <a name="program"></a>[Programa]  
+ Para cada programa que é especificado o **programas** entrada no **[definição de pacote]** secção, o ficheiro de definição de pacote tem de incluir uma secção [programa] que define esse programa. Cada secção Programa fornece as seguintes informações:  
 
--   **Nazwa**: Nazwa programu, do 50 znaków. Ten wpis musi być unikatowy w ramach pakietu. Ta nazwa jest używana podczas definiowania anonsów. Na komputerach klienckich nazwa programu jest pokazywana w obszarze **Uruchom programy anonsowane** w Panelu sterowania.  
+-   **Nome**: O nome do programa, até 50 carateres. Esta entrada deve ser exclusiva num pacote. Este nome é utilizado quando se definem anúncios. Em computadores cliente, o nome do programa é mostrado em **Executar Programas Anunciados**, no Painel de Controlo.  
 
--   **Ikona** (opcjonalnie): Określ plik, który zawiera ikonę dla tego programu. Jeśli określony, ta ikona zastępuje domyślne ikona programu w konsoli programu Configuration Manager i jest wyświetlana na komputerach klienckich, gdy program jest anonsowana.
+-   **Ícone** (opcional): Especifique o ficheiro que contém o ícone utilizado para este programa. Se for especificado, este ícone substitui o ícone do programa predefinido na consola do Configuration Manager e é apresentado nos computadores cliente quando o programa for anunciado.
 
--   **Komentarz** (opcjonalnie): Komentarz dotyczący programu do 127 znaków.
+-   **Comentário** (opcional): Um comentário sobre o programa, até 127 carateres.
 
--   **Wiersz polecenia**: Określ wiersz polecenia dla programu do 127 znaków. To polecenie jest względne wobec folderu źródłowego pakietu.
+-   **CommandLine**: Especifique a linha de comandos do programa, até 127 carateres. O comando é relativo à pasta de origem do pacote.
 
--   **Uruchamianego**: Określ folder roboczy program do 127 znaków. Ten wpis może być ścieżką bezwzględną na kliencie lub ścieżką względną do folderu źródłowego pakietu.
+-   **StartIn**: Especifique a pasta de trabalho para o programa, até 127 carateres. Esta entrada pode ser um caminho absoluto no computador cliente ou um caminho relativo para a pasta de origem do pacote.
 
--   **Uruchom**: Określ tryb programu, w którym działa program. Można określić wartość **Minimized**, **Maximized** lub **Hidden**. Jeśli nie dołączono ten wpis, program jest uruchamiany w trybie normalnym.  
+-   **Executar**: Especifique o modo de programa no qual o programa é executado. Pode especificar **Minimizado**, **Maximizado** ou **Oculto**. Se esta entrada não estiver incluída, o programa é executado no modo normal.  
 
--   **AfterRunning**: Określ specjalnej operacji, który następuje po pomyślnym zakończeniu działania programu. Dostępne opcje to **SMSRestart**, **ProgramRestart** i **SMSLogoff**. Jeśli nie dołączono ten wpis, program nie działa żadnych specjalnych czynności.  
+-   **AfterRunning**: Especificar qualquer ação especial que ocorre após o programa é concluído com êxito. As opções disponíveis são **SMSRestart**, **ProgramRestart** ou **SMSLogoff**. Se esta entrada não estiver incluída, o programa não executar uma ação especial.  
 
--   **EstimatedDiskSpace**: Określ ilość miejsca na dysku przez oprogramowanie wymaga do uruchomienia na komputerze. Dla tego ustawienia można wybrać opcję **Unknown** (ustawienie domyślne) lub ustawić liczbę całkowitą nie mniejszą od zera. Jeśli zostanie podana wartość, należy wskazać dla niej jednostkę.  
+-   **EstimatedDiskSpace**: Especifique a quantidade de espaço em disco que o programa de software necessita para ser executado no computador. Pode especificá-lo como **Desconhecido** (a predefinição) ou como um número inteiro igual ou superior a zero. Se for especificado um valor, é necessário especificar também as unidades para o valor.  
 
-     Przykład:  
+     Exemplo:  
 
      `EstimatedDiskSpace=38MB`  
 
--   **EstimatedRunTime**: Określ szacowany czas trwania (w minutach) oczekiwanej program do uruchomienia na komputerze klienckim. Dla tego ustawienia można wybrać opcję **Unknown** (ustawienie domyślne) lub ustawić liczbę całkowitą większą od zera.  
+-   **EstimatedRunTime**: Especifique a duração estimada (em minutos) que o programa poderá demorar a ser executado no computador cliente. Pode especificá-lo como **Desconhecido** (a predefinição) ou como um número inteiro superior a zero.  
 
-     Przykład:  
+     Exemplo:  
 
      `EstimatedRunTime=25`  
 
--   **SupportedClients**: Określ procesory i systemów operacyjnych, na których jest uruchomiony ten program. Podawane platformy muszą być rozdzielane przecinkami. Jeśli nie dołączono ten wpis, sprawdzania obsługiwanych platform jest wyłączona dla tego programu.  
+-   **SupportedClients**: Especifica os processadores e sistemas operativos em que este programa é executado. As plataformas especificadas devem ser separadas por vírgulas. Se esta entrada não estiver incluída, a verificação de plataforma suportada está desativada para este programa.  
 
--   **SupportedClientMinVersionX**, **SupportedClientMaxVersionX**: Określ zakres początkowego do końcowego numery wersji systemów operacyjnych, które są określone w **SupportedClients** wpis.  
+-   **SupportedClientMinVersionX**, **SupportedClientMaxVersionX**: Especifique o intervalo de início ao fim para números de versão para os sistemas operativos que são especificados no **SupportedClients** entrada.  
 
-     Przykład:  
+     Exemplo:  
 
     ```  
     SupportedClients=Win NT (I386),Win NT (IA64),Win NT (x64)  
@@ -388,30 +385,29 @@ Pakiety można użyć nowe funkcje programu Configuration Manager, łącznie z g
     Win NT (x64) MaxVersion4=6.00.9999.9999   
     ```  
 
--   **AdditionalProgramRequirements** (opcjonalnie): Podaj wszelkie inne dane i wymagania dotyczące komputerów klienckich do 127 znaków.
+-   **AdditionalProgramRequirements** (opcional): Forneça quaisquer informações ou outros requisitos para computadores cliente, até 127 carateres.
 
--   **CanRunWhen**: Określ stan użytkownika, który program wymaga do uruchomienia na komputerze klienckim. Dostępne wartości to **UserLoggedOn**, **NoUserLoggedOn** i **AnyUserStatus**. Wartość domyślna to **UserLoggedOn**.  
+-   **CanRunWhen**: Especifique o estado de utilizador que o programa requer para ser executada no computador cliente. Os valores disponíveis são **UserLoggedOn**, **NoUserLoggedOn** ou **AnyUserStatus**. O valor predefinido é **UserLoggedOn**.  
 
--   **UserInputRequired**: Określ, czy program wymaga interakcji z użytkownikiem. Dostępne wartości to **True** i **False**. Wartość domyślna to **True**. Ten wpis jest ustawiony na wartość **False**, jeśli wpis **CanRunWhen** nie jest ustawiony na wartość **UserLoggedOn**.  
+-   **UserInputRequired**: Especifique se o programa requer interação com o utilizador. Os valores disponíveis são **Verdadeiro** ou **Falso**. O valor predefinido é **Verdadeiro**. Esta entrada é definida como **Falso** se **CanRunWhen** não estiver definido como **UserLoggedOn**.  
 
--   **AdminRightsRequired**: Określ, czy program wymaga poświadczeń administracyjnych na komputerze do uruchomienia. Dostępne wartości to **True** i **False**. Wartość domyślna to **False**. Ten wpis jest ustawiony na wartość **True**, jeśli wpis **CanRunWhen** nie jest ustawiony na wartość **UserLoggedOn**.  
+-   **AdminRightsRequired**: Especifique se o programa requer credenciais administrativas no computador para executar. Os valores disponíveis são **Verdadeiro** ou **Falso**. O valor predefinido é **Falso**. Esta entrada é definida como **Verdadeiro** se **CanRunWhen** não estiver definido como **UserLoggedOn**.  
 
--   **UseInstallAccount**: Określ, czy program używa konta instalacji oprogramowania klienta na komputerach klienckich. Wartością domyślną jest **False**. Ten wpis jest też ustawiony na wartość **False**, jeśli wpis **CanRunWhen** jest ustawiony na wartość **UserLoggedOn**.  
+-   **UseInstallAccount**: Especifique se o programa utiliza a conta de instalação do Software de cliente quando é executada em computadores cliente. Por predefinição, este valor é **Falso**. Este valor é também **Falso** se **CanRunWhen** estiver definido como **UserLoggedOn**.  
 
--   **DriveLetterConnection**: Określ, czy program wymaga połączenia literę dysku do plików pakietu, które znajdują się w punkcie dystrybucji. Można określić wartość **True** lub **False**. Wartość domyślna to **False**, dzięki czemu program do używania połączenia Universal Naming Convention (UNC). Jeśli ta wartość jest równa **True**, służy następną dostępną literę dysku (począwszy od z: i nastąpi przejście wstecz).  
+-   **DriveLetterConnection**: Especifique se o programa requer uma ligação de letra de unidade para os ficheiros de pacote localizados no ponto de distribuição. Pode especificar **Verdadeiro** ou **Falso**. O valor predefinido é **falso**, que permite ao programa utilizar uma ligação de convenção de Nomenclatura Universal (UNC). Quando este valor é definido como **verdadeiro**, a letra de unidade disponível seguinte é utilizada (começando com o z e).  
 
--   **SpecifyDrive** (opcjonalnie): Określ literę dysku, który program wymaga, aby nawiązać połączenie plików pakietu w punkcie dystrybucji. Określenie tej wartości wymusza stosowanie wskazanej litery dysku w połączeniach klienta z punktami dystrybucji.
+-   **SpecifyDrive** (opcional): Especificar uma letra de unidade que o programa requer para ligar aos ficheiros do pacote no ponto de distribuição. Esta especificação força a utilização da letra de unidade especificada para ligações de cliente para pontos de distribuição.
 
--   **ReconnectDriveAtLogon**: Określ, czy komputer ponownie łączy do punktu dystrybucji, gdy użytkownik loguje się. Dostępne wartości to **True** i **False**. Wartość domyślna to **False**.  
+-   **ReconnectDriveAtLogon**: Especifique se o computador volta a ligar ao ponto de distribuição quando o utilizador inicia sessão. Os valores disponíveis são **Verdadeiro** ou **Falso**. O valor predefinido é **Falso**.  
 
--   **DependentProgram**: Określ program tego pakietu, który należy uruchomić przed bieżącego programu. Ten wpis ma format **DependentProgram**=<**nazwa_programu>**, gdzie **<nazwa_programu\>** to wpis **Name** dla danego programu w pliku definicji pakietu. Jeśli nie ma żadnych programów zależnych, ten wpis należy pozostawić pusty.  
+-   **DependentProgram**: Especifique um programa neste pacote que tem de executar antes do programa atual. Esta entrada utiliza o formato **DependentProgram**=<**NomedoPrograma>**, em que **<NomedoPrograma\>** é a entrada **Nome** do programa no ficheiro de definição do pacote. Se não houver programas dependentes, deixe esta entrada em branco.  
 
-     Przykład:  
+     Exemplo:  
 
      DependentProgram=Admin  
     DependentProgram=  
 
--   **Przypisanie**: Określ, jak program jest przypisane do użytkowników. Ta wartość może być: **FirstUser** (tylko pierwszy użytkownik, który zaloguje się klient uruchamia program) lub **EveryUser** (każdy użytkownik, który zaloguje się uruchamia program). Gdy wpis **CanRunWhen** nie jest ustawiony na wartość **UserLoggedOn**, ten wpis jest ustawiony na wartość **FirstUser**.  
+-   **Atribuição**: Especifique a forma como o programa é atribuído aos utilizadores. Este valor pode ser: **FirstUser** (apenas o primeiro utilizador que inicia sessão para o cliente executa o programa) ou **EveryUser** (todos os utilizadores que inicia sessão executarem o programa). Quando **CanRunWhen** não está definido como **UserLoggedOn**, esta entrada é definida como **FirstUser**.  
 
--   **Wyłączone**: Określ, czy ten program może być anonsowany klientom. Dostępne wartości to **True** i **False**. Wartość domyślna to **False**.  
-
+-   **Desativado**: Especifique se este programa pode ser publicitado aos clientes. Os valores disponíveis são **Verdadeiro** ou **Falso**. O valor predefinido é **Falso**.  

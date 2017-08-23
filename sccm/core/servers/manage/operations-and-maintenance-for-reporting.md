@@ -1,366 +1,362 @@
 ---
-title: "Operacje i Obsługa raportowania | Dokumentacja firmy Microsoft"
-description: "Dowiedz się, szczegółowe informacje o zarządzaniu raportami i subskrypcjami raportów w programie System Center Configuration Manager."
+title: "Operações e manutenção de relatórios | Microsoft Docs"
+description: "Saiba os detalhes da gestão de relatórios e subscrições de relatórios no System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b89bcfbf-f5b6-4fb1-bb5e-a5cc18ec0c78
-caps.latest.revision: 5
+caps.latest.revision: "5"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: f62d969dd49fb00b688602128df74b28ff551135
 ms.openlocfilehash: df572cd0c64c82e25164430a53e1b893b3ba3cf5
-ms.contentlocale: pl-pl
-ms.lasthandoff: 06/07/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="operations-and-maintenance-for-reporting-in-system-center-configuration-manager"></a>Operacje i Obsługa raportowania w programie System Center Configuration Manager
+# <a name="operations-and-maintenance-for-reporting-in-system-center-configuration-manager"></a>Operações e manutenção de relatórios no System Center Configuration Manager
 
-*Dotyczy: Program System Center Configuration Manager (Current Branch)*
+*Aplica-se a: O System Center Configuration Manager (ramo atual)*
 
-Po odpowiedniej infrastruktury w celu raportowania w programie System Center Configuration Manager, istnieje wiele operacji wykonywanych zwykle do zarządzania raportami i subskrypcjami raportów.  
+Depois da infraestrutura no local para relatórios no System Center Configuration Manager, há um número de operações que são geralmente efetuadas para gerir relatórios e subscrições de relatórios.  
 
-##  <a name="BKMK_ManageReports"></a>Zarządzanie raportami programu Configuration Manager  
- Configuration Manager udostępnia ponad 400 wstępnie zdefiniowanych raportów, które ułatwiają gromadzić, organizować i prezentować informacje o użytkownikach, sprzętu i spisu oprogramowania, aktualizacje oprogramowania, aplikacje, stan lokacji i innych operacji programu Configuration Manager w organizacji. Za pomocą wstępnie zdefiniowanych raportów, ponieważ są one lub zmodyfikować raport, zgodnie z wymaganiami. Można również tworzyć niestandardowe modelu\-na podstawie i SQL\-na podstawie raportów zgodnie z wymaganiami. Poniższe sekcje umożliwiają pomocne w zarządzaniu raportami programu Configuration Manager.  
+##  <a name="BKMK_ManageReports"></a>Gerir relatórios do Configuration Manager  
+ Configuration Manager fornece mais de 400 relatórios predefinidos que o ajudam a recolher, organizam e apresentam informações sobre utilizadores, hardware e inventário de software, atualizações de software, aplicações, estado do site e outras operações do Configuration Manager na sua organização. Pode utilizar os relatórios predefinidos tal como estão ou pode modificar um relatório para satisfazer os seus requisitos. Também pode criar o modelo personalizado\-com base e SQL\-com base em relatórios que satisfaçam os requisitos. Utilize as secções seguintes para ajudar a gerir relatórios do Configuration Manager.  
 
-###  <a name="BKMK_RunReport"></a>Uruchamianie raportu programu Configuration Manager  
- Raporty w programie Configuration Manager są przechowywane w usługach SQL Server Reporting Services, a dane renderowane w raporcie są pobierane z bazy danych lokacji programu Configuration Manager. Dostępne raporty w konsoli programu Configuration Manager lub za pomocą Menedżera raportów, otwieranego w przeglądarce sieci web. Możesz otworzyć raporty na dowolnym komputerze, który ma dostęp do komputera, na którym działa program SQL Server Reporting Services, a musi mieć wystarczające uprawnienia do wyświetlania raportów. Po uruchomieniu raportu, tytuł, opis i kategoria są wyświetlane w języku lokalnego systemu operacyjnego.  
+###  <a name="BKMK_RunReport"></a>Executar um relatório do Configuration Manager  
+ Relatórios no Configuration Manager são armazenados no SQL Server Reporting Services e os dados compostos no relatório obtidos da base de dados do site do Configuration Manager. Pode aceder a relatórios na consola do Configuration Manager ou utilizando o Gestor de relatórios, que poderá aceder num browser. Pode abrir relatórios em qualquer computador que tenha acesso ao computador que está a executar o SQL Server Reporting Services e tem de ter direitos suficientes para ver os relatórios. Quando executar um relatório, o título do relatório, a descrição e a categoria são apresentados no idioma do sistema operativo local.  
 
 > [!NOTE]  
->  W niektórych z systemem innym niż\-angielski języków, znaki mogą być wyświetlane prawidłowo w raportach.  W takim przypadku raporty można wyświetlać przy użyciu sieci web\-na podstawie Menedżera raportów lub za pośrednictwem zdalnej konsoli administratora.  
+>  Em algumas não\-inglês idiomas, os carateres poderão não ser corretamente apresentados nos relatórios.  Neste caso, relatórios podem ser visualizados através da web\-com base em Gestor de relatórios ou através da consola do administrador remoto.  
 
 > [!WARNING]  
->  Aby uruchamiać raporty, musisz mieć **odczytu** prawa dla **lokacji** uprawnień i **Uruchom raport** skonfigurowane pod kątem konkretnych obiektów.  
+>  Para executar relatórios, tem de ter **leitura** direitos para o **Site** permissão e o **executar relatório** permissão que está configurado para objetos específicos.  
 
 > [!IMPORTANT]    
-> Musi istnieć zaufanie dwukierunkowe dla użytkowników z innej domeny niż konto punktu Servicies raportowania do pomyślnego uruchomienia raportów.
+> Tem de existir uma confiança bidirecional estabelecida para os utilizadores de um domínio diferente do que a conta de ponto de Reporting Services Servicies com êxito executar relatórios.
 
 > [!NOTE]  
->  Menedżer raportów to sieci web\-narzędzia dostępu i zarządzania raport, który służy do administrowania pojedynczym wystąpieniem serwera raportów w zdalnej lokalizacji za pośrednictwem połączenia HTTP. Służy Menedżer raportów do zadań operacyjnych, na przykład do wyświetlania raportów, modyfikowania właściwości raportu i zarządzanie subskrypcjami raportów skojarzone. W tym temacie przedstawiono procedury wyświetlania raportu i modyfikowania właściwości raportu w Menedżerze raportów, ale więcej informacji o innych opcjach dostępnych w Menedżerze raportów znajduje, zobacz [Menedżera raportów](http://go.microsoft.com/fwlink/p/?LinkId=224916) w dokumentacji SQL Server 2008 — książki Online.  
+>  Gestor de relatórios é uma web\-com base a ferramenta de gestão e acesso de relatório que utilizar para administrar uma instância de servidor único relatório numa localização remota através de uma ligação HTTP. Pode utilizar Gestor de relatórios para tarefas operacionais, por exemplo, para ver relatórios, modificar propriedades de relatórios e gerir subscrições de relatórios associada. Este tópico fornece os passos para visualizar um relatório e modificar propriedades de relatórios no Gestor de relatórios para mais informações sobre as restantes opções que o Gestor de relatórios fornece, consulte [Gestor de relatórios](http://go.microsoft.com/fwlink/p/?LinkId=224916) no SQL Server 2008 Books Online.  
 
- Użyj poniższych procedur do uruchamiania raportu programu Configuration Manager.  
+ Utilize os procedimentos seguintes para executar um relatório do Configuration Manager.  
 
-##### <a name="to-run-a-report-in-the-configuration-manager-console"></a>Aby uruchomić raport w konsoli programu Configuration Manager  
+##### <a name="to-run-a-report-in-the-configuration-manager-console"></a>Para executar um relatório na consola do Configuration Manager  
 
-1.  W konsoli programu Configuration Manager kliknij **monitorowanie**.  
+1.  Na consola do Configuration Manager, clique em **monitorização**.  
 
-2.  W **monitorowanie** obszaru roboczego, rozwiń węzeł **raportowania**, a następnie kliknij przycisk **raporty** Aby wyświetlić listę dostępnych raportów.  
+2.  No **monitorização** área de trabalho, expanda **relatórios**e, em seguida, clique em **relatórios** para listar os relatórios disponíveis.  
 
     > [!IMPORTANT]  
-    >  W tej wersji programu Configuration Manager **całą zawartość** wyświetlają tylko pakiety, nie aplikacje.  
+    >  Nesta versão do Configuration Manager, o **todo o conteúdo** apresentam apenas pacotes, e não aplicações.  
 
     > [!TIP]  
-    >  Jeśli nie są wyświetlane żadne raporty, sprawdź, czy punkt usług raportowania jest zainstalowana i skonfigurowana. Aby uzyskać więcej informacji, zobacz [konfigurowanie raportowania](configuring-reporting.md).  
+    >  Se forem listados quaisquer relatórios, certifique-se de que o ponto do reporting services está instalado e configurado. Para obter mais informações, consulte [configurar relatórios](configuring-reporting.md).  
 
-3.  Wybierz raport, który chcesz uruchomić, a następnie na **Home** karcie **Grupa raportów** , kliknij przycisk **Uruchom** aby otworzyć raport.  
+3.  Selecione o relatório que pretende executar, e, em seguida, no **home page** separador o **grupo de relatórios** secção, clique em **executar** para abrir o relatório.  
 
-4.  Gdy są wymagane jakieś parametry, określ parametry, a następnie kliknij przycisk **Wyświetl raport**.  
+4.  Se existirem parâmetros necessários, especifique os parâmetros e, em seguida, clique em **Ver relatório**.  
 
-#### <a name="to-run-a-report-in-a-web-browser"></a>Aby uruchomić raport w przeglądarce sieci web  
+#### <a name="to-run-a-report-in-a-web-browser"></a>Para executar um relatório num browser  
 
-1.  W przeglądarce sieci web wprowadź adres URL Menedżera raportów, na przykład **http:\/\/serwer1\/raporty**. Adres URL Menedżera raportów możesz ustalić na **adres URL Menedżera raportów** strony w Reporting Services Configuration Manager.  
+1.  No seu browser, introduza o URL do Gestor de relatórios, por exemplo, **http:\/\/servidor1\/relatórios**. Pode determinar o URL do Gestor de relatórios no **URL do Gestor de relatórios** página no Reporting Services Configuration Manager.  
 
-2.  W Menedżerze raportów kliknij folder raportów dla programu Configuration Manager, na przykład **ConfigMgr\_urzędów certyfikacji**.  
-
-    > [!TIP]  
-    >  Jeśli nie są wyświetlane żadne raporty, sprawdź, czy punkt usług raportowania jest zainstalowana i skonfigurowana. Aby uzyskać więcej informacji, zobacz [konfigurowanie raportowania](configuring-reporting.md).  
-
-3.  Kliknij kategorię raportu, który chcesz uruchomić, a następnie kliknij łącze raportu. Raport zostanie otwarty w Menedżerze raportów.  
-
-4.  Gdy są wymagane jakieś parametry, określ parametry, a następnie kliknij przycisk **Wyświetl raport**.  
-
-###  <a name="BKMK_ModifyReportProperties"></a>Modyfikowanie właściwości raportu programu Configuration Manager  
- W konsoli programu Configuration Manager można wyświetlać właściwości raportu, takie jak nazwa i opis, ale aby zmienić właściwości, należy użyć Menedżera raportów. Użyj poniższej procedury można zmodyfikować właściwości raportu programu Configuration Manager.  
-
-#### <a name="to-modify-report-properties-in-report-manager"></a>Aby zmodyfikować właściwości raportu w Menedżerze raportów  
-
-1.  W przeglądarce sieci web wprowadź adres URL Menedżera raportów, na przykład **http:\/\/serwer1\/raporty**. Adres URL Menedżera raportów możesz ustalić na **adres URL Menedżera raportów** strony w Reporting Services Configuration Manager.  
-
-2.  W Menedżerze raportów kliknij folder raportów dla programu Configuration Manager, na przykład **ConfigMgr\_urzędów certyfikacji**.  
+2.  No Gestor de relatórios, clique na pasta de relatórios no Configuration Manager, por exemplo, **ConfigMgr\_ACs**.  
 
     > [!TIP]  
-    >  Jeśli nie są wyświetlane żadne raporty, sprawdź, czy punkt usług Reporting Services jest zainstalowana i skonfigurowana. Aby uzyskać więcej informacji, zobacz [konfigurowanie raportowania](configuring-reporting.md)  
+    >  Se forem listados quaisquer relatórios, certifique-se de que o ponto do reporting services está instalado e configurado. Para obter mais informações, consulte [configurar relatórios](configuring-reporting.md).  
 
-3.  Kliknij kategorię raportu, dla której chcesz zmodyfikować właściwości raportu, a następnie kliknij łącze raportu. Raport zostanie otwarty w Menedżerze raportów.  
+3.  Clique na categoria de relatório para o relatório que pretende executar e, em seguida, clique na ligação para o relatório. O relatório é apresentado no Gestor de relatórios.  
 
-4.  Kliknij przycisk **właściwości** kartę. Nazwa i opis można zmodyfikować.  
+4.  Se existirem parâmetros necessários, especifique os parâmetros e, em seguida, clique em **Ver relatório**.  
 
-5.  Gdy skończysz, kliknij przycisk **Zastosuj**. Właściwości raportu zostają zapisane na serwerze raportów i konsoli programu Configuration Manager pobiera zaktualizowane właściwości raportu.  
+###  <a name="BKMK_ModifyReportProperties"></a>Modificar as propriedades de um relatório do Configuration Manager  
+ Na consola do Configuration Manager, pode ver as propriedades de um relatório, tais como o nome do relatório e a descrição, mas para alterar as propriedades, utilize o Gestor de relatórios. Utilize o procedimento seguinte para modificar as propriedades de um relatório do Configuration Manager.  
 
-###  <a name="BKMK_EditReport"></a>Edytowanie raportu programu Configuration Manager  
- Jeśli istniejący raport programu Configuration Manager nie pobiera informacje, które muszą mieć albo nie oferuje układu lub struktury, która ma, można edytować raportu w programie Report Builder.  
+#### <a name="to-modify-report-properties-in-report-manager"></a>Para modificar propriedades de relatório no Gestor de relatórios  
+
+1.  No seu browser, introduza o URL do Gestor de relatórios, por exemplo, **http:\/\/servidor1\/relatórios**. Pode determinar o URL do Gestor de relatórios no **URL do Gestor de relatórios** página no Reporting Services Configuration Manager.  
+
+2.  No Gestor de relatórios, clique na pasta de relatórios no Configuration Manager, por exemplo, **ConfigMgr\_ACs**.  
+
+    > [!TIP]  
+    >  Se forem listados quaisquer relatórios, certifique-se de que o ponto do Reporting Services está instalado e configurado. Para obter mais informações, consulte [configurar relatórios](configuring-reporting.md)  
+
+3.  Clique na categoria de relatório para o relatório para o qual pretende modificar as propriedades e, em seguida, clique na ligação para o relatório. O relatório é apresentado no Gestor de relatórios.  
+
+4.  Clique em de **propriedades** separador. Pode modificar o nome do relatório e a descrição.  
+
+5.  Quando tiver terminado, clique em **aplicar**. As propriedades de relatório são guardadas no servidor de relatórios e consola do Configuration Manager obtém as propriedades atualizadas para o relatório.  
+
+###  <a name="BKMK_EditReport"></a>Editar um relatório do Configuration Manager  
+ Quando um relatório existente do Configuration Manager não obtiver as informações que tem de ter ou não fornecer o esquema ou estrutura pretendidos, pode editar o relatório no Report Builder.  
 
 > [!NOTE]  
->  Istnieje również możliwość Sklonowanie istniejącego raportu, otwierając go w celu edycji, a następnie klikając polecenie **Zapisz jako** ją zapisać jako nowy raport.  
+>  Também pode optar por clonar um relatório existente, abrindo-o para edição e clicando em **guardar como** para guardá-lo como um novo relatório.  
 
 > [!IMPORTANT]  
->  Konto użytkownika musi mieć **modyfikacja lokacji** uprawnień i **modyfikowanie raportu** uprawnienia do konkretnych obiektów skojarzonych z raportem, który chcesz zmodyfikować.  
+>  A conta de utilizador tem de ter **modificar Site** permissão e **modificar relatório** permissões nos objetos específicos associados ao relatório que pretende modificar.  
 
 > [!IMPORTANT]  
->  Po uaktualnieniu programu Configuration Manager do nowszej wersji, nowe raporty zastępują raporty wstępnie zdefiniowane. W przypadku zmodyfikowanego wstępnie zdefiniowanego raportu należy wykonać kopię raportu przed zainstalowanie nowej wersji, a potem Przywróć raport w usługach Reporting Services. Jeśli są istotne zmiany wstępnie zdefiniowanych raportów, należy wziąć pod uwagę zamiast tworzenia nowego raportu. Nowe raporty utworzone przed uaktualniania lokacji nie zostaną zastąpione.  
+>  Quando o Configuration Manager é atualizado para uma versão mais recente, os novos relatórios substituem os relatórios predefinidos. Se modificar um relatório predefinido, tem de copiar o relatório antes de instalar a nova versão e, em seguida, restaure o relatório no Reporting Services. Se estiver a efetuar alterações significativas a um relatório predefinido, considere criar um novo relatório em vez disso. Os novos relatórios que criar antes de atualizar um site não são substituídos.  
 
- Użyj poniższej procedury, aby edytować właściwości raportu programu Configuration Manager.  
+ Utilize o procedimento seguinte para editar as propriedades de um relatório do Configuration Manager.  
 
-#### <a name="to-edit-report-properties"></a>Aby edytować właściwości raportu  
+#### <a name="to-edit-report-properties"></a>Para editar as propriedades de relatório  
 
-1.  W konsoli programu Configuration Manager kliknij **monitorowanie**.  
+1.  Na consola do Configuration Manager, clique em **monitorização**.  
 
-2.  W **monitorowanie** obszaru roboczego, rozwiń węzeł **raportowania**, a następnie kliknij przycisk **raporty** Aby wyświetlić listę dostępnych raportów.  
+2.  No **monitorização** área de trabalho, expanda **relatórios**e, em seguida, clique em **relatórios** para listar os relatórios disponíveis.  
 
-3.  Wybierz raport, który chcesz zmodyfikować, a następnie na **Home** karcie **Grupa raportów** , kliknij przycisk **Edytuj**. Wprowadź konto użytkownika i hasło, jeśli są monitowani o, a następnie kliknij przycisk **OK**. Jeśli na komputerze nie zainstalowano programu Report Builder, są monit o jej zainstalowanie. Kliknij przycisk **Uruchom** Aby zainstalować program Report Builder, który jest wymagany do modyfikowania i tworzenia raportów.  
+3.  Selecione o relatório que pretende modificar, e, em seguida, no **home page** separador o **grupo de relatórios** secção, clique em **editar**. Introduza a conta de utilizador e a palavra-passe se for pedido e, em seguida, clique em **OK**. Se o Report Builder não está instalado no computador, lhe for pedido para instalá-lo. Clique em **executar** para instalar o Report Builder, necessário para modificar e criar relatórios.  
 
-4.  W programie Report Builder zmodyfikuj odpowiednie ustawienia raportu, a następnie kliknij przycisk **zapisać** Aby zapisać raport na serwerze raportów.  
+4.  No Report Builder, modifique as definições de relatório adequadas e, em seguida, clique em **guardar** para guardar o relatório para o servidor de relatórios.  
 
-###  <a name="BKMK_CreateModelBasedReport"></a>Tworzenie modelu\-na podstawie raportu  
- Model\-na podstawie raportu pozwala interaktywnie wybierać elementy mają zostać uwzględnione w raporcie. Aby uzyskać więcej informacji o tworzeniu niestandardowych modeli raportów, zobacz [Tworzenie niestandardowych modeli raportów programu System Center Configuration Manager w SQL Server Reporting Services](creating-custom-report-models-in-sql-server-reporting-services.md).  
-
-> [!IMPORTANT]  
->  Konto użytkownika musi mieć **modyfikacja lokacji** uprawnienia do tworzenia nowego raportu. Użytkownik może utworzyć raport tylko w folderach, do których użytkownik ma **modyfikowanie raportu** uprawnienia.  
-
- Poniższa procedura umożliwia utworzenie modelu\-na podstawie raportu programu Configuration Manager.  
-
-#### <a name="to-create-a-model-based-report"></a>Aby utworzyć model\-na podstawie raportu  
-
-1.  W konsoli programu Configuration Manager kliknij **monitorowanie**.  
-
-2.  W **monitorowanie** obszaru roboczego, rozwiń węzeł **raportowania** i kliknij przycisk **raporty**.  
-
-3.  Na **Home** karcie **Utwórz** , kliknij przycisk **Utwórz raport** otworzyć **Kreatora tworzenia raportu**.  
-
-4.  Na **informacji** skonfiguruj następujące ustawienia:  
-
-    -   **Typ**: Wybierz **modelu\-na podstawie raportu** Aby utworzyć raport w programie Report Builder z wykorzystaniem modelu usług Reporting Services.  
-
-    -   **Nazwa**: Określ nazwę dla raportu.  
-
-    -   **Opis elementu**: Określ opis raportu.  
-
-    -   **Serwer**: Wyświetla nazwę serwera raportów, na którym jest tworzony dany raport.  
-
-    -   **Ścieżka**: Kliknij przycisk **Przeglądaj** Aby określić folder, w którym mają być przechowywane w raporcie.  
-
-     Kliknij przycisk **Dalej**.  
-
-5.  Na **wybór modelu** stronie, wybierz dostępny model z listy używanej do tworzenia tego raportu. Kiedy wybierzesz model raportu **Podgląd** wyświetlą się widoki programu SQL Server i jednostek, które są udostępniane przez wybrany model raportu.  
-
-6.  Na stronie **Podsumowanie** przejrzyj ustawienia. Kliknij przycisk **Wstecz** Aby zmienić ustawienia, lub kliknij przycisk **dalej** Aby utworzyć raport w programie Configuration Manager.  
-
-7.  Na **potwierdzenie** kliknij przycisk **Zamknij** aby zakończyć pracę kreatora, a następnie otwórz program Report Builder, aby skonfigurować ustawienia raportu. Wprowadź konto użytkownika i hasło, jeśli są monitowani o, a następnie kliknij przycisk **OK**. Jeśli na komputerze nie zainstalowano programu Report Builder, są monit o jej zainstalowanie. Kliknij przycisk **Uruchom** Aby zainstalować program Report Builder, który jest wymagany do modyfikowania i tworzenia raportów.  
-
-8.  W programie Microsoft Report Builder Utwórz układ raportu, wybierz dane w dostępnych widokach programu SQL Server Dodaj do raportu parametry i tak dalej. Aby uzyskać więcej informacji na temat do utworzenia nowego raportu przy użyciu programu Report Builder zobacz temat Pomocy programu Report Builder.  
-
-9. Kliknij przycisk **Uruchom** do uruchomienia raportu. Sprawdź, czy raport podaje oczekiwane informacje. Kliknij przycisk **projekt** aby powrócić do widoku projektu i zmodyfikować raport, jeśli to konieczne.  
-
-10. Kliknij przycisk **zapisać** Aby zapisać raport na serwerze raportów. Mogą uruchamiać i modyfikować nowy raport w **raporty** w węźle **monitorowanie** obszaru roboczego.  
-
-###  <a name="BKMK_CreateSQLBasedReport"></a>Utwórz SQL\-na podstawie raportu  
- SQL\-na podstawie raportu pozwala pobierać dane oparte na instrukcji SQL raportu.  
+###  <a name="BKMK_CreateModelBasedReport"></a>Criar um modelo\-relatório baseado em  
+ Um modelo\-com base permite de relatório selecionar interativamente os itens que pretende incluir no relatório. Para obter mais informações sobre como criar modelos de relatórios personalizados, consulte [criar modelos de relatórios personalizados para o System Center Configuration Manager no SQL Server Reporting Services](creating-custom-report-models-in-sql-server-reporting-services.md).  
 
 > [!IMPORTANT]  
->  Podczas tworzenia instrukcji SQL dla raportu niestandardowego, nie należy bezpośrednio odwoływać tabel programu SQL Server. Zamiast tego należy odwoływać raportowania widoki programu SQL Server \(wyświetlić nazwy zaczynające się od v\_ \) z bazy danych lokacji. Można także odwoływać się do publicznych procedur składowanych \(przechowywane procedury o nazwach zaczynających sp\_ \) z bazy danych lokacji.  
+>  A conta de utilizador tem de ter **modificar Site** permissão para criar um novo relatório. O utilizador só pode criar um relatório em pastas para a qual o utilizador tem **modificar relatório** permissões.  
+
+ Utilize o procedimento seguinte para criar um modelo\-com base relatório do Configuration Manager.  
+
+#### <a name="to-create-a-model-based-report"></a>Para criar um modelo\-relatório baseado em  
+
+1.  Na consola do Configuration Manager, clique em **monitorização**.  
+
+2.  No **monitorização** área de trabalho, expanda **relatórios** e clique em **relatórios**.  
+
+3.  No **home page** separador o **criar** secção, clique em **criar relatório** para abrir o **Assistente para criar relatório**.  
+
+4.  No **informações** página, configure as seguintes definições:  
+
+    -   **Tipo**: Selecione **modelo\-relatório baseado em** para criar um relatório no Report Builder utilizando um modelo do Reporting Services.  
+
+    -   **Nome**: Especifique um nome para o relatório.  
+
+    -   **Descrição**: Especifique uma descrição para o relatório.  
+
+    -   **Servidor**: Apresenta o nome do servidor de relatórios no qual está a criar este relatório.  
+
+    -   **Caminho**: Clique em **procurar** para especificar uma pasta na qual pretende armazenar o relatório.  
+
+     Clique em **Seguinte**.  
+
+5.  No **seleção do modelo** página, selecione um modelo disponível na lista que é utilizado para criar este relatório. Quando seleciona o modelo de relatório, o **pré-visualização** secção apresenta as vistas do SQL Server e entidades que são disponibilizadas pelo modelo de relatório selecionado.  
+
+6.  Na página **Resumo** , reveja as definições. Clique em **anterior** para alterar as definições ou clique em **seguinte** para criar o relatório no Configuration Manager.  
+
+7.  No **confirmação** página, clique em **fechar** para sair do assistente e reabrir o Report Builder para configurar as definições do relatório. Introduza a conta de utilizador e a palavra-passe se for pedido e, em seguida, clique em **OK**. Se o Report Builder não está instalado no computador, lhe for pedido para instalá-lo. Clique em **executar** para instalar o Report Builder, necessário para modificar e criar relatórios.  
+
+8.  No Microsoft Report Builder, criar o esquema do relatório, selecione os dados nas vistas do SQL Server disponíveis, adicione parâmetros ao relatório e assim sucessivamente. Para obter mais informações sobre como utilizar o Report Builder para criar um novo relatório, consulte a ajuda do Report Builder.  
+
+9. Clique em **executar** para executar o relatório. Certifique-se de que o relatório fornece informações que pretende. Clique em **Design** para regressar à vista estrutura e modificar o relatório, se necessário.  
+
+10. Clique em **guardar** para guardar o relatório para o servidor de relatórios. Pode executar e modificar o novo relatório no **relatórios** no nó de **monitorização** área de trabalho.  
+
+###  <a name="BKMK_CreateSQLBasedReport"></a>Criar um SQL\-relatório baseado em  
+ Um SQL\-com base permite relatório obter dados com base na instrução SQL de relatório.  
 
 > [!IMPORTANT]  
->  Konto użytkownika musi mieć **modyfikacja lokacji** uprawnienia do tworzenia nowego raportu. Użytkownik może utworzyć raport tylko w folderach, do których użytkownik ma **modyfikowanie raportu** uprawnienia.  
+>  Quando cria uma instrução SQL para um relatório personalizado, não faça diretamente referência a tabelas do SQL Server. Em alternativa, fazer referência a vistas do SQL Server Reporting Services \(ver os nomes que começam por v\_ \) da base de dados do site. Também pode referenciar procedimentos armazenados públicos \(armazenados nomes que começam por sp\_ \) da base de dados do site.  
 
- Poniższa procedura umożliwia utworzenie SQL\-na podstawie raportu programu Configuration Manager.  
+> [!IMPORTANT]  
+>  A conta de utilizador tem de ter **modificar Site** permissão para criar um novo relatório. O utilizador só pode criar um relatório em pastas para a qual o utilizador tem **modificar relatório** permissões.  
 
-#### <a name="to-create-a-sql-based-report"></a>Aby utworzyć SQL\-na podstawie raportu  
+ Utilize o procedimento seguinte para criar um SQL\-com base relatório do Configuration Manager.  
 
-1.  W konsoli programu Configuration Manager kliknij **monitorowanie**.  
+#### <a name="to-create-a-sql-based-report"></a>Para criar um SQL\-relatório baseado em  
 
-2.  W obszarze roboczym **Monitorowanie** rozwiń węzeł **Raportowanie**, a następnie kliknij przycisk **Raporty**.  
+1.  Na consola do Configuration Manager, clique em **monitorização**.  
 
-3.  Na **Home** karcie **Utwórz** , kliknij przycisk **Utwórz raport** otworzyć **Kreatora tworzenia raportu**.  
+2.  Na área de trabalho **Monitorização** , expanda **Comunicar**e clique em **Relatórios**.  
 
-4.  Na **informacji** skonfiguruj następujące ustawienia:  
+3.  No **home page** separador o **criar** secção, clique em **criar relatório** para abrir o **Assistente para criar relatório**.  
 
-    -   **Typ**: Wybierz **SQL\-na podstawie raportu** Aby utworzyć raport w programie Report Builder z wykorzystaniem instrukcji SQL.  
+4.  No **informações** página, configure as seguintes definições:  
 
-    -   **Nazwa**: Określ nazwę dla raportu.  
+    -   **Tipo**: Selecione **SQL\-relatório baseado em** para criar um relatório no Report Builder utilizando uma instrução SQL.  
 
-    -   **Opis elementu**: Określ opis raportu.  
+    -   **Nome**: Especifique um nome para o relatório.  
 
-    -   **Serwer**: Wyświetla nazwę serwera raportów, na którym jest tworzony dany raport.  
+    -   **Descrição**: Especifique uma descrição para o relatório.  
 
-    -   **Ścieżka**: Kliknij przycisk **Przeglądaj** Aby określić folder, w którym mają być przechowywane w raporcie.  
+    -   **Servidor**: Apresenta o nome do servidor de relatórios no qual está a criar este relatório.  
 
-     Kliknij przycisk **Dalej**.  
+    -   **Caminho**: Clique em **procurar** para especificar uma pasta na qual pretende armazenar o relatório.  
 
-5.  Na stronie **Podsumowanie** przejrzyj ustawienia. Kliknij przycisk **Wstecz** Aby zmienić ustawienia, lub kliknij przycisk **dalej** Aby utworzyć raport w programie Configuration Manager.  
+     Clique em **Seguinte**.  
 
-6.  Na **potwierdzenie** kliknij przycisk **Zamknij** aby zakończyć działanie kreatora i Otwórz program Report Builder, aby skonfigurować ustawienia raportu. Wprowadź konto użytkownika i hasło, jeśli są monitowani o, a następnie kliknij przycisk **OK**. Jeśli na komputerze nie zainstalowano programu Report Builder, są monit o jej zainstalowanie. Kliknij przycisk **Uruchom** Aby zainstalować program Report Builder, który jest wymagany do modyfikowania i tworzenia raportów.  
+5.  Na página **Resumo** , reveja as definições. Clique em **anterior** para alterar as definições ou clique em **seguinte** para criar o relatório no Configuration Manager.  
 
-7.  W programie Microsoft Report Builder Podaj instrukcję SQL dla raportu lub Skonstruuj instrukcję SQL przy użyciu kolumn w dostępnych widokach programu SQL Server, Dodaj do raportu parametry i tak dalej.  
+6.  No **confirmação** página, clique em **fechar** para sair do assistente e reabrir o Report Builder para configurar as definições de relatório. Introduza a conta de utilizador e a palavra-passe se for pedido e, em seguida, clique em **OK**. Se o Report Builder não está instalado no computador, lhe for pedido para instalá-lo. Clique em **executar** para instalar o Report Builder, necessário para modificar e criar relatórios.  
 
-8.  Kliknij przycisk **Uruchom** do uruchomienia raportu. Sprawdź, czy raport podaje oczekiwane informacje. Kliknij przycisk **projekt** aby powrócić do widoku projektu i zmodyfikować raport, jeśli to konieczne.  
+7.  No Microsoft Report Builder, forneça a instrução SQL para o relatório ou crie-a utilizando colunas nas vistas do SQL Server disponíveis, adicione parâmetros ao relatório e assim sucessivamente.  
 
-9. Kliknij przycisk **zapisać** Aby zapisać raport na serwerze raportów. Nowy raport możesz uruchamiać **raporty** w węźle **monitorowanie** obszaru roboczego.  
+8.  Clique em **executar** para executar o relatório. Certifique-se de que o relatório fornece informações que pretende. Clique em **Design** para regressar à vista estrutura e modificar o relatório, se necessário.  
 
-##  <a name="BKMK_ManageReportSubscriptions"></a>Zarządzanie subskrypcjami raportów  
- Subskrypcje raportów w usługach SQL Server Reporting Services pozwalają skonfigurować automatyczne dostarczanie określonych raportów pocztą e-mail lub do udziału plików w zaplanowanych odstępach czasu. Użyj **Kreatora tworzenia subskrypcji** w System Center 2012 Configuration Manager do konfigurowania subskrypcji raportów.  
+9. Clique em **guardar** para guardar o relatório para o servidor de relatórios. Pode executar o novo relatório no **relatórios** no nó de **monitorização** área de trabalho.  
 
-###  <a name="BKMK_ReportSubscriptionFileShare"></a>Tworzenie subskrypcji raportów w celu dostarczania raportu do udziału plików  
- Podczas tworzenia subskrypcji raportów w celu dostarczania raportu do udziału plików raport jest kopiowany do określonego udziału plików w określonym formacie. Można subskrybować i żądanie dostarczania dla tylko jednego raportu naraz.  
+##  <a name="BKMK_ManageReportSubscriptions"></a>Gerir subscrições de relatórios  
+ Subscrições de relatórios no SQL Server Reporting Services permitem configurar a entrega automática de relatórios especificados por correio eletrónico ou uma partilha de ficheiros em intervalos agendados. Utilize o **Assistente para criar subscrição** no System Center 2012 Configuration Manager para configurar subscrições de relatórios.  
 
- W przeciwieństwie do raportów, które są obsługiwane i zarządzane przez serwer raportów raporty, które są dostarczane do folderu udostępnionego są plikami statycznymi. Są zdefiniowane dla raportu funkcje interaktywne nie działają w przypadku raportów, które są przechowywane jako pliki w systemie plików. Funkcje interakcji są reprezentowane jako elementy statyczne. Jeśli raport zawiera wykresy, jest używany domyślny sposób ich prezentacji. Jeśli raport zawiera łącza do innego raportu, łącze jest renderowane jako tekst statyczny. Jeśli chcesz zachować funkcje interaktywne, aby w dostarczanym raporcie, należy użyć dostarczania poczty e-mail. Aby uzyskać więcej informacji o dostarczaniu pocztą e-mail, zobacz [Tworzenie subskrypcji raportów w celu dostarczenia raportu pocztą e-mail](#BKMK_ReportSubscriptionEmail) później w tym temacie.  
+###  <a name="BKMK_ReportSubscriptionFileShare"></a>Criar uma subscrição de relatório para entregar um relatório numa partilha de ficheiros  
+ Quando cria uma subscrição de relatório para entregar um relatório para uma partilha de ficheiros, o relatório é copiado no formato especificado para a partilha de ficheiros que especificar. Pode subscrever e solicitar a entrega de apenas um relatório a uma hora.  
 
- Podczas tworzenia subskrypcji, która używa dostarczania udziału pliku należy określić istniejący folder jako folder docelowy. Serwer raportów nie tworzy folderów w systemie plików. Folder, w którym można określić muszą być dostępne za pośrednictwem połączenia sieciowego. Po określeniu folder docelowy w ramach subskrypcji, użyć ścieżki UNC i końcowych ukośników odwrotnych w ścieżce folderu. Na przykład jest prawidłowa ścieżka UNC do folderu docelowego: \\ \\ &lt;servername\>\\reportfiles\\operacji\\2011.  
+ Ao contrário dos relatórios alojados e geridos por um servidor de relatórios, relatórios que são entregues a uma pasta partilhada são ficheiros estáticos. As funcionalidades interativas definidas para o relatório não funcionam em relatórios que são armazenados como ficheiros no sistema de ficheiros. As funcionalidades de interação são representadas como elementos estáticos. Se o relatório incluir gráficos, é utilizada a apresentação predefinida. Se o relatório ligar a outro relatório, a ligação é apresentada como texto estático. Se pretender manter as funcionalidades interativas num relatório entregue, utilize em vez disso, entrega de correio eletrónico. Para obter mais informações sobre a entrega de correio eletrónico, consulte o [criar uma subscrição de relatório para entregar um relatório por correio eletrónico](#BKMK_ReportSubscriptionEmail) posterior deste tópico.  
 
- Raporty mogą być renderowane w różnych formatach, takich jak MHTML czy Excel. Aby zapisać raport w określonym formacie pliku, należy wybrać ten format renderowania podczas tworzenia subskrypcji. Na przykład wybranie opcji Excel zapisuje raport w formacie programu Microsoft Excel. Chociaż możesz użyć dowolnego z obsługiwanych formatów renderowania, niektóre formaty działają lepiej od innych podczas renderowania do pliku.  
+ Quando cria uma subscrição que utiliza a entrega em partilha de ficheiros, tem de especificar uma pasta existente como a pasta de destino. O servidor de relatórios não cria pastas no sistema de ficheiros. A pasta que especificar tem de estar acessível através de uma ligação de rede. Quando especificar a pasta de destino numa subscrição, utilize um caminho UNC e não inclua barras invertidas no caminho da pasta. Por exemplo, é um caminho UNC válido para a pasta de destino: \\ \\ &lt;servername\>\\reportfiles\\operações\\2011.  
 
- Poniższa procedura umożliwia utworzenie subskrypcji raportów w celu dostarczania raportu do udziału plików.  
+ Relatórios podem ser compostos numa variedade de formatos de ficheiro, tais como MHTML ou Excel. Para guardar o relatório no formato de ficheiro específico, selecione esse formato de composição ao criar a sua subscrição. Por exemplo, escolher Excel guarda o relatório como um ficheiro do Microsoft Excel. Embora possa selecionar qualquer formato de composição suportado, alguns formatos funcionam melhor do que outros durante a composição para um ficheiro.  
 
-#### <a name="to-create-a-report-subscription-to-deliver-a-report-to-a-file-share"></a>Aby utworzyć subskrypcję raportów w celu dostarczania raportu do udziału plików  
+ Utilize o procedimento seguinte para criar uma subscrição de relatório para entregar um relatório para uma partilha de ficheiros.  
 
-1.  W konsoli programu Configuration Manager kliknij **monitorowanie**.  
+#### <a name="to-create-a-report-subscription-to-deliver-a-report-to-a-file-share"></a>Para criar uma subscrição de relatório para entregar um relatório para uma partilha de ficheiros  
 
-2.  W **monitorowanie** obszaru roboczego, rozwiń węzeł **raportowania** i kliknij przycisk **raporty** Aby wyświetlić listę dostępnych raportów. Można wybrać folder raportów, aby wyświetlić tylko raporty, które są skojarzone z danym folderem.  
+1.  Na consola do Configuration Manager, clique em **monitorização**.  
 
-3.  Wybierz raport, który chcesz dodać do subskrypcji, a następnie na **Home** karcie **Grupa raportów** , kliknij przycisk **Utwórz subskrypcję** otworzyć **Kreatora tworzenia subskrypcji**.  
+2.  No **monitorização** área de trabalho, expanda **relatórios** e clique em **relatórios** para listar os relatórios disponíveis. Pode selecionar uma pasta de relatório para listar apenas os relatórios que estão associados essa pasta.  
 
-4.  Na **dostarczanie subskrypcji** skonfiguruj następujące ustawienia:  
+3.  Selecione o relatório que pretende adicionar à subscrição e, em seguida, no **home page** separador o **grupo de relatórios** secção, clique em **criar subscrição** para abrir o **Assistente para criar subscrição**.  
 
-    -   Raport dostarczony przez: Wybierz **udostępnianie plików systemu Windows** aby dostarczyć raport do udziału plików.  
+4.  No **entrega de subscrição** página, configure as seguintes definições:  
 
-    -   **Nazwa pliku**: Określ nazwę pliku raportu. Domyślnie plik raportu nie zawiera rozszerzenia nazwy pliku. Wybierz **Dodaj rozszerzenie pliku po utworzeniu** można automatycznie dodać rozszerzenie nazwy pliku do tego raportu na podstawie formatu renderowania.  
+    -   Relatório entregue por: Selecione **partilha de ficheiros Windows** para entregar o relatório para uma partilha de ficheiros.  
 
-    -   **Ścieżka**: Określ ścieżkę UNC do istniejącego folderu, w którym chcesz dostarczyć ten raport \(na przykład \\ \\ &lt;nazwy serwera\>\\&lt;udział serwera\>\\&lt;folder raportów\>\).  
+    -   **Nome de ficheiro**: Especifique o nome de ficheiro para o relatório. Por predefinição, o ficheiro de relatório não inclui uma extensão de nome de ficheiro. Selecione **Adicionar extensão de ficheiro ao criar** para adicionar automaticamente uma extensão de nome de ficheiro a esse relatório com base no formato de composição.  
+
+    -   **Caminho**: Especifique um caminho UNC para uma pasta existente em que pretende enviar o relatório \(por exemplo, \\ \\ &lt;nome do servidor\>\\&lt;partilha de servidor\>\\&lt;à pasta de relatórios\>\).  
 
         > [!NOTE]  
-        >  Nazwa użytkownika określona dalej na tej strony musi mieć dostęp do tego udziału serwera i uprawnienia zapisu do folderu docelowego.  
+        >  O nome de utilizador especificado posteriormente nesta página tem de ter acesso a esta partilha de servidor e permissões de escrita na pasta de destino.  
 
-    -   **Format renderowania**: Wybierz jedną z następujących formatów pliku raportu:  
+    -   **Formato de composição**: Selecione um dos seguintes formatos para o ficheiro de relatório:  
 
-        -   **Plik XML z danymi raportu**: Raport jest zapisywany w formacie Extensible Markup Language.  
+        -   **Ficheiro XML com dados de relatório**: Guarda o relatório no formato Extensible Markup Language.  
 
-        -   **CSV \(rozdzielany przecinkami\)**: Raport jest zapisywany w przecinkami\-oddzielone\-format wartości.  
+        -   **CSV \(delimitado por vírgulas\)**: Guarda o relatório no vírgulas\-separados\-formato de valores.  
 
-        -   **Plik TIFF**: Raport jest zapisywany w formacie Tagged Image File Format.  
+        -   **Ficheiro TIFF**: Guarda o relatório no formato de ficheiro de imagem etiquetados.  
 
-        -   **Acrobat \(PDF\) pliku**: Raport jest zapisywany w formacie Acrobat Portable Document Format.  
+        -   **Acrobat \(PDF\) ficheiro**: Guarda o relatório no formato de documento portátil Acrobat.  
 
-        -   **HTML 4.0**: Raport jest zapisywany jako strona sieci Web możliwa do wyświetlenia wyłącznie w przeglądarkach obsługujących język HTML 4.0. Internet Explorer 5 i nowsze wersje obsługują język HTML 4.0.  
+        -   **HTML 4.0**: Guarda o relatório como uma página Web visualizável apenas em browsers que suportam HTML 4.0. O Internet Explorer 5 e versões posteriores suportam HTML 4.0.  
 
             > [!NOTE]  
-            >  Jeśli w raporcie znajdują się obrazy, format HTML 4.0 nie ma ich w pliku.  
+            >  Se tiver imagens no relatório, o formato HTML 4.0 não as inclui no ficheiro.  
 
-        -   **MHTML \(archiwum sieci web\)**: Raport jest zapisywany w formacie MIME HTML \(mhtml\), która jest możliwa do wyświetlenia w wielu przeglądarkach sieci web.  
+        -   **MHTML \(arquivo da web\)**: Guarda o relatório no formato MIME HTML \(mhtml\), que é visualizável em muitos browsers.  
 
-        -   **Moduł renderowania RPL**: Raport jest zapisywany w układ strony raportu \(RPL\) format.  
+        -   **Compositor de RPL**: Guarda o relatório no esquema de página do relatório \(RPL\) formato.  
 
-        -   **Excel**: Raport jest zapisywany jako arkusz kalkulacyjny programu Microsoft Excel.  
+        -   **Excel**: Guarda o relatório como uma folha de cálculo do Microsoft Excel.  
 
-        -   **Word**: Raport jest zapisywany jako dokument programu Microsoft Word.  
+        -   **Word**: Guarda o relatório como um documento do Microsoft Word.  
 
-    -   **Nazwa użytkownika**: Określ konto użytkownika systemu Windows z uprawnieniami dostępu do folderu i udziału na serwerze docelowym. Konto użytkownika musi mieć dostęp do tego udziału serwera i uprawnień do zapisu w folderze docelowym.  
+    -   **Nome de utilizador**: Especifique uma conta de utilizador do Windows com permissões para aceder a partilha de servidor de destino e a pasta. A conta de utilizador tem de ter acesso a esta partilha de servidor e permissão de escrita na pasta de destino.  
 
-    -   **Hasło**: Określ hasło dla konta użytkownika systemu Windows. W **Potwierdź hasło**, re\-wprowadź hasło.  
+    -   **Palavra-passe**: Especifique a palavra-passe da conta de utilizador do Windows. No **Confirmar palavra-passe**, re\-introduza a palavra-passe.  
 
-    -   Wybierz jedną z poniższych opcji, aby skonfigurować działanie, gdy w folderze docelowym istnieje plik o takiej samej nazwie:  
+    -   Selecione uma das seguintes opções para configurar o comportamento quando existe um ficheiro com o mesmo nome na pasta de destino:  
 
-        -   **Zastąp istniejący plik nowszą wersją**: Określa, że jeśli plik raportu już istnieje, zostanie zastąpiony nową wersją go.  
+        -   **Substituir ficheiro existente com uma versão mais recente**: Especifica que quando o ficheiro de relatório já existe, a nova versão substitui-lo.  
 
-        -   **Nie zastępuj istniejącego pliku**: Określa, jeśli plik raportu już istnieje, nie zostanie żadnej akcji.  
+        -   **Não substituir um ficheiro existente**: Não especifica que quando o ficheiro de relatório já existe, não existe nenhuma ação.  
 
-        -   **Zwiększaj przyrostowo nazwy plików w miarę dodawania nowszych wersji**: Określa, jeśli plik raportu już istnieje, nowy raport do nazwy pliku do odróżnienia go od innych wersji jest dodawany numer.  
+        -   **Incrementar nomes de ficheiro são adicionadas novas versões**: Especifica que, quando o ficheiro de relatório já existe, um número é adicionado para o novo relatório para o nome de ficheiro para o distinguir de outras versões.  
 
-    -   **Opis elementu**: Określa opis subskrypcji raportów.  
+    -   **Descrição**: Especifica a descrição para a subscrição do relatório.  
 
-     Kliknij przycisk **Dalej**.  
+     Clique em **Seguinte**.  
 
-5.  Na **harmonogram subskrypcji** wybierz jedną z następujących opcji harmonogramu dostaw dla subskrypcji raportów:  
+5.  No **agendamento da subscrição** página, selecione uma das seguintes opções de agendamento de entrega para a subscrição de relatório:  
 
-    -   **Użyj harmonogramu współużytkowanego**: Udostępniony harmonogram to uprzednio zdefiniowany harmonogram, które mogą być używane przez inne Subskrypcje raportów. Zaznacz to pole wyboru, a następnie wybierz udostępniony harmonogram na liście, jeśli jest dostępny.  
+    -   **Utilizar agendamento partilhado**: Um agendamento partilhado é um agendamento definido anteriormente que pode ser utilizado por outras subscrições de relatório. Selecione esta caixa de verificação e, em seguida, selecione um agendamento partilhado na lista se tiver sido especificado algum.  
 
-    -   **Utwórz nowy harmonogram**: Skonfiguruj harmonogram, na którym ten raport jest uruchomiony, w tym interwał, godzinę rozpoczęcia i Data oraz datę zakończenia subskrypcji.  
+    -   **Criar novo agendamento**: Configurar a agenda em que executa este relatório, incluindo o intervalo, inicie a hora e data e a data de fim para esta subscrição.  
 
-6.  Na **parametry subskrypcji** Określ parametry tego raportu, które są używane podczas nienadzorowanego uruchamiania. Jeśli nie ma żadnych parametrów dla raportu, ta strona nie jest wyświetlana.  
+6.  No **parâmetros de subscrições** página, especifique os parâmetros deste relatório, que são utilizados quando é executado de forma automática. Quando não existem sem parâmetros para o relatório, esta página não é apresentada.  
 
-7.  Na **Podsumowanie** Przejrzyj ustawienia subskrypcji raportów. Kliknij przycisk **Wstecz** Aby zmienić ustawienia, lub kliknij przycisk **dalej** do utworzenia subskrypcji raportu.  
+7.  No **resumo** , reveja as definições de subscrição de relatório. Clique em **anterior** para alterar as definições ou clique em **seguinte** para criar a subscrição de relatório.  
 
-8.  Aby zamknąć kreatora, kliknij na stronie **Ukończenie** przycisk **Zamknij** . Sprawdź, czy subskrypcja raportów została utworzona pomyślnie. Można wyświetlać i modyfikować subskrypcji raportów w **subskrypcje** węźle **raportowania** w **monitorowanie** obszaru roboczego.  
+8.  Na página **Conclusão** , clique em **Fechar** para sair do assistente. Certifique-se de que a subscrição do relatório foi criada com êxito. Pode ver e modificar subscrições de relatórios no **subscrições** nó **relatórios** no **monitorização** área de trabalho.  
 
-###  <a name="BKMK_ReportSubscriptionEmail"></a>Tworzenie subskrypcji raportów w celu dostarczenia raportu pocztą e-mail  
- Podczas tworzenia subskrypcji raportów w celu dostarczenia raportu pocztą e-mail zostanie wysłana wiadomość e-mail do odbiorców, które można skonfigurować, a raport jest dołączony jako załącznik. Serwer raportów nie weryfikuje adresów e-mail lub uzyskać adresy e-mail z serwera e-mail. Wcześniej należy znać, których chcesz używać adresów e-mail. Domyślnie poczty e-mail raporty na dowolne prawidłowe konta e-mail wewnątrz lub na zewnątrz organizacji. Możesz wybrać jedną lub obie następujące opcje dostawy poczty e-mail:  
+###  <a name="BKMK_ReportSubscriptionEmail"></a>Criar uma subscrição de relatório para entregar um relatório por correio eletrónico  
+ Quando cria uma subscrição de relatório para entregar um relatório por correio eletrónico, é enviado um e-mail para destinatários que configurou e o relatório é incluído como um anexo. O servidor de relatórios não validar endereços de e-mail ou obter endereços de e-mail a partir de um servidor de correio eletrónico. Tem de saber antecipadamente qual e-mail endereços que pretende utilizar. Por predefinição, pode enviar por e-mail relatórios a qualquer conta de e-mail válido dentro ou fora da organização. Pode selecionar uma ou ambas as seguintes opções de entrega de e-mail:  
 
--   Wysłanie powiadomienia i hiperłącza do wygenerowanego raportu.  
+-   Envie uma notificação e uma hiperligação para o relatório gerado.  
 
--   Wysłanie osadzonego lub dołączonego raportu. Format renderowania i przeglądarki sprawdzenia, czy raport jest osadzony dołączony. Jeśli przeglądarka obsługuje język HTML 4.0 i MHTML i wybierz MHTML \(archiwum sieci web\) renderowania format, raport zostanie osadzony jako część komunikatu. Wszystkich pozostałych formatów renderowania \(CSV, PDF, Word, i tak dalej\) dostarczania raportów jako załączniki. Usługi Reporting Services nie sprawdza rozmiaru załącznika ani wiadomości przed wysłaniem raportu. Jeśli załącznik lub wiadomość przekracza maksymalny limit dozwolony przez serwer poczty, raport nie zostanie dostarczony.  
+-   Envie um relatório incorporado ou anexado. O formato de composição e o browser determinam se o relatório é incorporado ou anexado. Se o browser suporta HTML 4.0 e MHTML e selecione o MHTML \(arquivo da web\) formato de composição, o relatório é incorporado como parte da mensagem. Todos os outros formatos de composição \(CSV, PDF, Word, e assim sucessivamente\) fornecem relatórios como anexos. O Reporting Services não verifica se o tamanho do anexo ou da mensagem antes de enviar o relatório. Se o anexo ou da mensagem excede o limite máximo permitido pelo servidor de correio, o relatório não for entregue.  
 
 > [!IMPORTANT]  
->  Należy skonfigurować ustawienia poczty e-mail w usługach Reporting Services dla **E-mail** opcja dostawy, które mają być dostępne. Aby uzyskać więcej informacji o konfigurowaniu ustawień poczty e-mail w usługach Reporting Services, zobacz [konfigurowania serwera raportów w celu dostarczania poczty E-mail](http://go.microsoft.com/fwlink/p/?LinkId=226668) w dokumentacji SQL Server — książki Online.  
+>  Tem de configurar as definições de correio eletrónico no Reporting Services para o **E-Mail** opção de entrega para estar disponível. Para obter mais informações sobre como configurar as definições de correio eletrónico no Reporting Services, consulte [configurar um servidor de relatórios para entrega de correio eletrónico](http://go.microsoft.com/fwlink/p/?LinkId=226668) no SQL Server Books Online.  
 
- Poniższa procedura umożliwia utworzenie subskrypcji raportów w celu dostarczenia raportu za pomocą poczty e-mail.  
+ Utilize o procedimento seguinte para criar uma subscrição de relatório para entregar um relatório por correio eletrónico.  
 
-#### <a name="to-create-a-report-subscription-to-deliver-a-report-by-email"></a>Aby utworzyć subskrypcję raportów w celu dostarczenia raportu pocztą e-mail  
+#### <a name="to-create-a-report-subscription-to-deliver-a-report-by-email"></a>Para criar uma subscrição de relatório para entregar um relatório por correio eletrónico  
 
--   W konsoli programu Configuration Manager kliknij **monitorowanie**.  
+-   Na consola do Configuration Manager, clique em **monitorização**.  
 
--   W **monitorowanie** obszaru roboczego, rozwiń węzeł **raportowania** i kliknij przycisk **raporty** Aby wyświetlić listę dostępnych raportów. Można wybrać folder raportów wyświetlający tylko raporty, które są skojarzone z danym folderem.  
+-   No **monitorização** área de trabalho, expanda **relatórios** e clique em **relatórios** para listar os relatórios disponíveis. Pode selecionar uma pasta de relatório para listar apenas os relatórios que estão associados essa pasta.  
 
--   Wybierz raport, który chcesz dodać do subskrypcji, a następnie na **Home** karcie **Grupa raportów** , kliknij przycisk **Utwórz subskrypcję** otworzyć **Kreatora tworzenia subskrypcji**.  
+-   Selecione o relatório que pretende adicionar à subscrição e, em seguida, no **home page** separador o **grupo de relatórios** secção, clique em **criar subscrição** para abrir o **Assistente para criar subscrição**.  
 
--   Na **dostarczanie subskrypcji** skonfiguruj następujące ustawienia:  
+-   No **entrega de subscrição** página, configure as seguintes definições:  
 
-    -   **Raport dostarczony przez**: Wybierz **E\-poczty** aby dostarczyć raport jako załącznik do wiadomości e-mail.  
+    -   **Relatório entregue por**: Selecione **i\-correio** para entregar o relatório como um anexo numa mensagem de e-mail.  
 
-    -   **To**: Określ prawidłowy adres e-mail do wysłania tego raportu.  
+    -   **Para**: Especifique um endereço de e-mail válido para enviar este relatório.  
 
         > [!NOTE]  
-        >  Możesz wprowadzić wielu adresatów wiadomości e-mail, Oddziel poszczególne adresy e-mail średnikami.  
+        >  Pode introduzir vários destinatários de correio eletrónico, separando cada endereço de correio eletrónico com ponto e vírgula.  
 
-    -   **Cc**: Opcjonalnie określ adres e-mail, aby kopia tego raportu.  
+    -   **Cc**: Opcionalmente, especifique um endereço de correio eletrónico para copiar este relatório.  
 
-    -   **Bcc**: Opcjonalnie określ adres e-mail, aby zostać wysłana ukryta kopia tego raportu.  
+    -   **Bcc**: Opcionalmente, especifique um endereço de correio eletrónico para enviar uma cópia oculta do relatório.  
 
-    -   **Udzielenie odpowiedzi na**: Określ adres zwrotny do użycia, jeśli adresat odpowiedzi do wiadomości e-mail.  
+    -   **Responda a**: Especifique o endereço de resposta a utilizar se o destinatário responder à mensagem de e-mail.  
 
-    -   **Temat**: Określ wiersz tematu wiadomości e-mail subskrypcji.  
+    -   **Requerente**: Especifique uma linha de assunto para a mensagem de correio eletrónico de subscrição.  
 
-    -   **Priorytet**: Wybierz flagę priorytetu dla tej wiadomości e-mail. Select **Low**, **Normal**, or **High**. Ustawienie priorytetu jest używane przez program Microsoft Exchange do ustawienia flagi informującej o ważności wiadomości e-mail.  
+    -   **Prioridade**: Selecione o sinalizador de prioridade desta mensagem de correio eletrónico. Selecione **baixa**, **Normal**, ou **elevada**. A definição de prioridade é utilizada pelo Microsoft Exchange para definir um sinalizador que indica a importância da mensagem de e-mail.  
 
-    -   **Komentarz**: Określ tekst, który ma być dodany do treści wiadomości e-mail subskrypcji.  
+    -   **Comentário**: Especifique o texto a ser adicionado ao corpo da mensagem de correio eletrónico de subscrição.  
 
-    -   **Opis elementu**: Określ opis dla tej subskrypcji raportu.  
+    -   **Descrição**: Especifique a descrição para esta subscrição de relatório.  
 
-    -   **Dołącz łącze**: Zawiera adres URL subskrybowanego raportu w treści wiadomości e-mail.  
+    -   **Incluir ligação**: Inclui um URL para o relatório subscrito no corpo da mensagem de correio eletrónico.  
 
-    -   **Dołącz raport**: Określ, czy raport jest dołączony do e\-wiadomości e-mail. Format dołączany raport został określony w **Format renderowania** listy.  
+    -   **Incluir relatório**: Especifique que o relatório é anexado ao i\-mensagem de correio. O formato no qual o relatório será anexado é especificado no **formato de composição** lista.  
 
-    -   **Format renderowania**: Wybierz jedną z następujących formatów dla dołączanego raportu:  
+    -   **Formato de composição**: Selecione um dos seguintes formatos para o relatório anexado:  
 
-        -   **Plik XML z danymi raportu**: Raport jest zapisywany w formacie Extensible Markup Language.  
+        -   **Ficheiro XML com dados de relatório**: Guarda o relatório no formato Extensible Markup Language.  
 
-        -   **CSV \(rozdzielany przecinkami\)**: Raport jest zapisywany w przecinkami\-oddzielone\-format wartości.  
+        -   **CSV \(delimitado por vírgulas\)**: Guarda o relatório no vírgulas\-separados\-formato de valores.  
 
-        -   **Plik TIFF**: Raport jest zapisywany w formacie Tagged Image File Format.  
+        -   **Ficheiro TIFF**: Guarda o relatório no formato de ficheiro de imagem etiquetados.  
 
-        -   **Acrobat \(PDF\) pliku**: Raport jest zapisywany w formacie Acrobat Portable Document Format.  
+        -   **Acrobat \(PDF\) ficheiro**: Guarda o relatório no formato de documento portátil Acrobat.  
 
-        -   **MHTML \(archiwum sieci web\)**: Raport jest zapisywany w formacie MIME HTML \(mhtml\), która jest możliwa do wyświetlenia w wielu przeglądarkach sieci web.  
+        -   **MHTML \(arquivo da web\)**: Guarda o relatório no formato MIME HTML \(mhtml\), que é visualizável em muitos browsers.  
 
-        -   **Excel**: Raport jest zapisywany jako arkusz kalkulacyjny programu Microsoft Excel.  
+        -   **Excel**: Guarda o relatório como uma folha de cálculo do Microsoft Excel.  
 
-        -   **Word**: Raport jest zapisywany jako dokument programu Microsoft Word.  
+        -   **Word**: Guarda o relatório como um documento do Microsoft Word.  
 
--   Na **harmonogram subskrypcji** wybierz jedną z następujących opcji harmonogramu dostaw dla subskrypcji raportów:  
+-   No **agendamento da subscrição** página, selecione uma das seguintes opções de agendamento de entrega para a subscrição de relatório:  
 
-    -   **Użyj harmonogramu współużytkowanego**: Udostępniony harmonogram to uprzednio zdefiniowany harmonogram, które mogą być używane przez inne Subskrypcje raportów. Zaznacz to pole wyboru, a następnie wybierz udostępniony harmonogram na liście, jeśli jest dostępny.  
+    -   **Utilizar agendamento partilhado**: Um agendamento partilhado é um agendamento definido anteriormente que pode ser utilizado por outras subscrições de relatório. Selecione esta caixa de verificação e, em seguida, selecione um agendamento partilhado na lista se tiver sido especificado algum.  
 
-    -   **Utwórz nowy harmonogram**: Skonfiguruj harmonogram uruchamiania tego raportu, w tym interwał, godzinę rozpoczęcia i Data oraz datę zakończenia subskrypcji.  
+    -   **Criar novo agendamento**: Configure a agenda de execução deste relatório, incluindo o intervalo, a hora de início e a data e a data de fim para esta subscrição.  
 
--   Na **parametry subskrypcji** Określ parametry tego raportu, które są używane podczas nienadzorowanego uruchamiania. Jeśli nie ma żadnych parametrów dla raportu, ta strona nie jest wyświetlana.  
+-   No **parâmetros de subscrições** página, especifique os parâmetros deste relatório, que são utilizados quando é executado de forma automática. Quando não existem sem parâmetros para o relatório, esta página não é apresentada.  
 
--   Na **Podsumowanie** Przejrzyj ustawienia subskrypcji raportów. Kliknij przycisk **Wstecz** Aby zmienić ustawienia, lub kliknij przycisk **dalej** do utworzenia subskrypcji raportu.  
+-   No **resumo** , reveja as definições de subscrição de relatório. Clique em **anterior** para alterar as definições ou clique em **seguinte** para criar a subscrição de relatório.  
 
--   Aby zamknąć kreatora, kliknij na stronie **Ukończenie** przycisk **Zamknij** . Sprawdź, czy subskrypcja raportów została utworzona pomyślnie. Można wyświetlać i modyfikować subskrypcji raportów w **subskrypcje** węźle **raportowania** w **monitorowanie** obszaru roboczego.  
-
+-   Na página **Conclusão** , clique em **Fechar** para sair do assistente. Certifique-se de que a subscrição do relatório foi criada com êxito. Pode ver e modificar subscrições de relatórios no **subscrições** nó **relatórios** no **monitorização** área de trabalho.  

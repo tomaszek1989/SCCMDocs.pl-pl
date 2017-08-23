@@ -1,6 +1,6 @@
 ---
-title: Nowa wersja 1702 | Dokumentacja firmy Microsoft
-description: "Uzyskiwanie szczegółowych informacji dotyczących zmian i nowych możliwości wprowadzonych w wersji 1702 programu System Center Configuration Manager."
+title: "Nova versão 1702 | Microsoft Docs"
+description: "Obter informações sobre as alterações e novas funcionalidades introduzidas na versão 1702 do System Center Configuration Manager."
 ms.custom: na
 ms.date: 05/02/2017
 ms.reviewer: na
@@ -15,319 +15,319 @@ manager: angrobe
 ms.openlocfilehash: a2954b3c6f9a09b7246347e780c4cfc49ba39ca1
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pl-PL
+ms.contentlocale: pt-PT
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="what39s-new-in-version-1702-of-system-center-configuration-manager"></a>Jaki &#39; s nowego w wersji 1702 programu System Center Configuration Manager
+# <a name="what39s-new-in-version-1702-of-system-center-configuration-manager"></a>O que &#39; s novidade na versão 1702 do System Center Configuration Manager
 
-*Dotyczy: Program System Center Configuration Manager (Current Branch)*
+*Aplica-se a: O System Center Configuration Manager (ramo atual)*
 
-Zaktualizuj 1702 dla bieżącej gałęzi programu System Center Configuration Manager jest dostępna jako aktualizacja w konsoli dla zainstalowanych wcześniej lokacji, w których jest uruchomiona wersja 1602, 1606 lub 1610. Jest również dostępny jako wersji linii bazowej, używanego podczas instalowania nowego wdrożenia.
+Atualize 1702 para o ramo atual do System Center Configuration Manager está disponível como uma atualização na consola para sites anteriormente instalados com a versão 1602, 1606 ou 1610. Também está disponível como uma versão de linha de base que pode utilizar ao instalar uma nova implementação.
 
 > [!TIP]  
-> Aby zainstalować nową lokację, należy użyć wersji bazowej programu Configuration Manager.  
->  Dowiedz się więcej o:    
->   - [Instalowanie nowej lokacji](https://technet.microsoft.com/library/mt590197.aspx)  
->   - [Instalowanie aktualizacji w lokacjach](https://technet.microsoft.com/library/mt607046.aspx)  
->   - [Wersje linii bazowej i aktualizacji](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions)  
+> Para instalar um novo site, tem de utilizar uma versão de linha de base do Configuration Manager.  
+>  Saiba mais sobre:    
+>   - [Instalar novos sites](https://technet.microsoft.com/library/mt590197.aspx)  
+>   - [Instalar atualizações em sites](https://technet.microsoft.com/library/mt607046.aspx)  
+>   - [Versões de linha de base e atualização](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions)  
 
-Poniższe sekcje zawierają szczegółowe informacje dotyczące zmian i nowych możliwości wprowadzonych w wersji 1702 programu Configuration Manager.  
+As secções seguintes fornecem detalhes sobre as alterações e novas funcionalidades introduzidas na versão 1702 do Configuration Manager.  
 
-## <a name="deprecated-features-and-operating-systems"></a>Przestarzałe funkcje i systemów operacyjnych
-Dowiedz się więcej o obsługę zmiany przed ich wdrożeniem w [usunięte i przestarzałe funkcje](/sccm/core/plan-design/changes/removed-and-deprecated-features).
+## <a name="deprecated-features-and-operating-systems"></a>Funcionalidades preteridas e sistemas operativos
+Saiba mais sobre as alterações de suporte antes de são implementados no [funcionalidades removidas e preteridas](/sccm/core/plan-design/changes/removed-and-deprecated-features).
 
-Wersja 1702 porzucania obsługę następujących produktów:
-- **SQL Server 2008 R2**, serwerów baz danych lokacji. Zaniechania obsługi został [najpierw ogłoszenia](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-support-for-sql-server-versions-as-a-site-database) na 10 lipca 2015 r. Ta wersja programu SQL Server jest obsługiwany w przypadku korzystania z wersji programu Configuration Manager, poprzedzające wersję 1702.
-- **Windows Server 2008 R2**dla serwerów systemu lokacji i większości ról systemu lokacji. Zaniechania obsługi został [najpierw ogłoszenia](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-operating-systems) na 10 lipca 2015 r. Ta wersja systemu Windows jest obsługiwany w przypadku korzystania z wersji programu Configuration Manager, poprzedzające wersję 1702.  
-- **Windows Server 2008**dla serwerów systemu lokacji i większości ról systemu lokacji. Zaniechania obsługi został [najpierw ogłoszenia](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-operating-systems) na 10 lipca 2015 r.
-- **Windows XP Embedded**, jako systemu operacyjnego klienta. Oczekiwany był [najpierw ogłoszenia](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-operating-systems) na 10 lipca 2015 r. Ta wersja systemu Windows jest obsługiwany w przypadku korzystania z wersji programu Configuration Manager, poprzedzające wersję 1702.
-
-
+1702 remoções versão suportem para os seguintes produtos:
+- **SQL Server 2008 R2**, para os servidores de base de dados do site. Descontinuação do suporte foi [anunciada pela primeira vez](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-support-for-sql-server-versions-as-a-site-database) no dia 10 de Julho de 2015. Esta versão do SQL Server continua a ser suportada quando utiliza uma versão do Configuration Manager antes da versão 1702.
+- **Windows Server 2008 R2**para servidores do sistema de sites e a maioria das funções de sistema de sites. Descontinuação do suporte foi [anunciada pela primeira vez](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-operating-systems) no dia 10 de Julho de 2015. Esta versão do Windows continua a ser suportada quando utiliza uma versão do Configuration Manager antes da versão 1702.  
+- **Windows Server 2008**para servidores do sistema de sites e a maioria das funções de sistema de sites. Descontinuação do suporte foi [anunciada pela primeira vez](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-operating-systems) no dia 10 de Julho de 2015.
+- **Windows XP Embedded**, como um sistema operativo cliente. Descontinuação foi [anunciada pela primeira vez](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-operating-systems) no dia 10 de Julho de 2015. Esta versão do Windows continua a ser suportada quando utiliza uma versão do Configuration Manager antes da versão 1702.
 
 
-## <a name="site-infrastructure"></a>Infrastruktura lokacji
-
-### <a name="improvements-for-in-console-search"></a>Ulepszenia wyszukiwania w konsoli
-Ulepszenia za pomocą wyszukiwania w konsoli programu Configuration Manager są następujące:
- - **Ścieżka obiektu:**  
-  Wiele obiektów obsługuje teraz kolumny o nazwie **ścieżki obiektu**.  Podczas wyszukiwania i zawierało tej kolumny w wynikach wyświetlania, można wyświetlić ścieżkę do każdego obiektu. Na przykład, jeśli podczas wykonywania wyszukiwania dla aplikacji w węźle aplikacje są również wyszukiwanie węzły podrzędne *ścieżki obiektu* kolumny w okienku wyników zostanie wyświetlona ścieżka do każdego obiektu, który jest zwracany.   
-
-- **Zachowanie szukany tekst:**  
-  Podczas wprowadzania tekstu w polu tekstowym wyszukiwania, a następnie przełączać się między wyszukiwanie węzła podrzędnego i bieżącego węzła, tekst, który został wpisany teraz utrwalić i pozostają dostępne dla nowego wyszukiwania bez konieczności ponownego wprowadzania go.
-
-- **Zachowanie zdecydować, czy wyszukiwanie węzły podrzędne:**  
- Wybraną opcję wyszukiwania *bieżącego węzła* lub *wszystkie węzły podrzędne* teraz będzie nadal występować po zmianie pracujesz w węźle. To nowe zachowanie oznacza, że nie muszą stale zresetować tej decyzji podczas przenoszenia wokół konsoli. Domyślnie po otwarciu konsoli jest opcja wyszukiwania z bieżącego węzła.
 
 
-### <a name="send-feedback-from-the-configuration-manager-console"></a>Wyślij opinię z konsoli programu Configuration Manager
+## <a name="site-infrastructure"></a>Infraestrutura de sites
 
- Opcje opinii w konsoli aby wysłać opinię bezpośrednio do zespołu deweloperów.
+### <a name="improvements-for-in-console-search"></a>Melhoramentos para pesquisa na consola
+Seguem-se melhoramentos ao utilizar a procura na consola do Configuration Manager:
+ - **Caminho do objeto:**  
+  Muitos objetos suportam agora uma coluna chamada **caminho de objecto**.  Quando pesquisar e inclua esta coluna nos resultados a apresentar, pode ver o caminho para cada objeto. Por exemplo, se executar uma pesquisa de aplicações no nó de aplicações e também procura nodes secundárias, a *caminho de objecto* coluna no painel de resultados mostra o caminho para cada objeto que é devolvido.   
 
- Można znaleźć **opinii** opcji:
- -  Na Wstążce, w lewym karcie Narzędzia główne w każdym węźle.  
-    ![Wstążka](./media/feedback-home.png)
+- **Preservação de texto de pesquisa:**  
+  Quando introduzir o texto na caixa de texto de pesquisa e, em seguida, alternar entre a procurar nó secundárias e o nó atual, o texto que introduziu serão agora persistem e permanecem disponível para uma nova procura sem ter de reintroduzi-lo.
 
- -  Po kliknięciu prawym przyciskiem myszy dowolnego obiektu w konsoli.   
-     ![Kopiowanie kliknięcia](./media/feedback-option.png)   
-
- Wybieranie **opinii** Otwiera przeglądarkę, aby [witryny sieci Web programu Configuration Manager UserVoice opinii](https://go.microsoft.com/fwlink/?linkid=617029).
-
-
-###  <a name="changes-for-updates-and-servicing"></a>Zmiany dotyczące aktualizacji i obsługi
-Dostępne są następujące zmiany w aktualizacji i obsługi:
-
-- **Lokalizacja węzła**   
-  Po zainstalowaniu wersji 1702, **aktualizacje i obsługa** węzeł jest wyświetlany jako węzeł najwyższego poziomu w obszarze **administracji**. Nie jest już elementem podrzędnym poniżej **usługi w chmurze**.
-
-- **Nowe stany aktualizacji**  
-  Po wyświetleniu dostępne aktualizacje w konsoli, istnieją dwie nowe stany:  
-  - **Dostępne do instalacji** — jest to aktualizacja, które zostały pobrane i są gotowe do zainstalowania.
-  - **Gotowy do pobrania** — ta aktualizacja jest dostępna, ale nie została pobrana. Można wybrać pobrać tę aktualizację, ale została zastąpiona przez najnowszą aktualizację.
+- **Preservação de sua decisão para procurar nodes secundárias:**  
+ A opção que escolher para procurar o *atual nó* ou *todos os nós secundárias* agora persistir quando altera o nó que está a trabalhar. Este novo comportamento significa que não é necessário repor constantemente esta decisão como mover-se a consola. Por predefinição, quando abrir a consola, a opção é procurar apenas o nó atual.
 
 
-- **Prostsze opcje aktualizacji**  
-  Przy następnym infrastruktury kwalifikuje się w przypadku aktualizacji co najmniej dwa pobrać tylko najnowszą aktualizację. Na przykład, jeśli bieżąca wersja lokacji jest dwa lub więcej starsze niż najnowszej wersji, która jest dostępna, tylko że najnowsza wersja aktualizacji jest pobierany automatycznie.  
+### <a name="send-feedback-from-the-configuration-manager-console"></a>Enviar comentários a partir da consola do Configuration Manager
 
-  Możesz pobrać i zainstalować inne dostępne aktualizacje, nawet wtedy, gdy nie są one najbardziej aktualnej wersji. Jeśli aktualizacja starsze otrzyma ostrzeżenie, że aktualizacja została zastąpiona nowszą. Aby pobrać aktualizację, która jest *dostępne do pobrania*, wybierz aktualizację, w konsoli, a następnie kliknij przycisk **Pobierz**.
+ Pode utilizar as opções de comentários na consola para enviar comentários diretamente para a equipa de desenvolvimento.
 
-- **Ulepszone czyszczenie starszych aktualizacji**   
-  Dodano funkcję automatycznego czyszczenia, która usuwa zbędne pobrane pliki z folderu "EasySetupPayload" na serwerze lokacji. Ponieważ jest to wprowadzonym w wersji 1702, oczyszczania zaczyna działać po zainstalowaniu kolejnych aktualizacji, takich jak pakiet zbiorczy aktualizacji lub wersji przyszłej aktualizacji.  
+ Pode encontrar o **comentários** opção:
+ -  No Friso, na extremidade esquerda do separador de início de cada nó.  
+    ![Friso](./media/feedback-home.png)
 
+ -  Quando lhe com o botão direito em qualquer objeto na consola do.   
+     ![Opção de clique ecrãs](./media/feedback-option.png)   
 
-### <a name="data-warehouse-service-point"></a>Punkt usługi magazynu danych
- Korzystanie z punktu usługi Magazyn danych, do przechowywania i raport dotyczący długoterminowe dane historyczne dla danego wdrożenia programu Configuration Manager.
-
- Magazyn danych obsługuje maksymalnie 2 TB danych z sygnaturami czasowymi, śledzenie zmian. Przechowywanie danych odbywa się przez automatyczne synchronizacje z bazy danych lokacji programu Configuration Manager do bazy danych magazynu danych. Te informacje są dostępne z punktu usług Reporting Services.
-
- Aby uzyskać więcej informacji, zobacz [punktu usługi Magazyn danych](/sccm/core/servers/manage/data-warehouse).
+ Escolher **comentários** abre o seu browser para o [Web site de comentários do UserVoice do Configuration Manager](https://go.microsoft.com/fwlink/?linkid=617029).
 
 
-### <a name="peer-cache-improvements"></a>Ulepszenia pamięci podręcznej elementów równorzędnych
- Począwszy od wersji 1702 komputerze źródła równorzędnej pamięci podręcznej żądania zawartości podczas odrzuci komputer źródłowy równorzędnej pamięci podręcznej spełnia żadnego z następujących warunków:  
-  -  Jest w trybie niskim poziomie naładowania baterii.
-  -  Obciążenie procesora CPU przekracza 80% w czasie żądanej zawartości.
-  -  We/Wy dysku ma *AvgDiskQueueLength* przekraczający 10.
-  -  Brak dostępnego połączenia z tym komputerem.   
-Aby uzyskać więcej informacji, zobacz **ograniczony dostęp do źródła równorzędnej pamięci podręcznej** w [buforowania równorzędnego klientów programu Configuration Manager](/sccm/core/plan-design/hierarchy/client-peer-cache).   
+###  <a name="changes-for-updates-and-servicing"></a>Alterações para atualizações e manutenção
+Seguem-se as alterações para atualizações e manutenção:
 
-Ponadto trzy nowe raporty są dodawane do punktu raportowania. Te raporty można użyć, aby poznać więcej szczegółów na temat odrzuconych żądań zawartości, w tym granic, których uczestniczyła grupy, komputera i zawartości. Zobacz [monitorowanie](/sccm/core/plan-design/hierarchy/client-peer-cache#monitoring) w temacie równorzędnej pamięci podręcznej.
+- **Localização do nó**   
+  Depois de instalar a versão 1702, o **atualizações e manutenção** nó aparece como um nó de nível superior em **administração**. Já não se trata de um nó subordinado abaixo **serviços em nuvem**.
 
-### <a name="content-library-cleanup-tool"></a>Narzędzia do oczyszczania biblioteki zawartości
- Użyj [narzędzia do oczyszczania biblioteki zawartości](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool) Aby usunąć zawartość z punktów dystrybucji, gdy zawartość nie jest już skojarzony z aplikacją.
+- **Novos Estados da atualização**  
+  Ao ver as atualizações disponíveis na consola, existem dois novos Estados:  
+  - **Disponível para instalação** -esta é uma atualização que foi transferido e pronto para instalar.
+  - **Pronto para transferência** -esta atualização está disponível, mas não foi transferida. Pode optar por transferir esta atualização, mas foi substituída por uma atualização mais recente.
 
 
-### <a name="use-the-oms-connector-with-the-azure-government-cloud"></a>Korzystania z łącznika OMS z chmury Azure dla instytucji rządowych
-Łącznik OMS służy do nawiązania połączenia analizy dzienników OMS w chmurze Microsoft Azure dla instytucji rządowych. Należy zmodyfikować plik konfiguracji, przed zainstalowaniem łącznika OMS, tak aby łącznik może współpracować z chmury dla instytucji rządowych. Aby uzyskać więcej informacji, zobacz [korzystania z łącznika OMS z chmury Azure dla instytucji rządowych](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite#fairfaxconfig).
+- **Opções de atualização mais simples**  
+  Da próxima vez que qualificam da sua infraestrutura de dois ou mais atualizações, só a atualização mais recente é transferida. Por exemplo, se a versão atual do site é dois ou mais antiga que a versão mais recente está disponível, apenas esse mais recente versão de atualização é transferida automaticamente.  
 
-### <a name="software-update-points-are-added-to-boundary-groups"></a>Punkty aktualizacji oprogramowania są dodawane do grupy granic
-Począwszy od wersji 1702, klienci używają grup granic w celu znalezienia punktu aktualizacji oprogramowania, a powrotu i Znajdź nowej aktualizacji oprogramowania punktu, jeśli ich aktualny plan nie jest już dostępny. Punkty aktualizacji oprogramowania można dodać do różnych grup granic do serwerów, które klient można znaleźć formantu. Aby uzyskać więcej informacji, zobacz [punktów aktualizacji oprogramowania](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points) w [konfigurowania grup granic](/sccm/core/servers/deploy/configure/boundary-groups) tematu.
+  Pode optar por transferir e instalar as outras atualizações disponíveis, mesmo quando não estão a versão mais atual. Se transferir uma atualização mais antiga, receberá um aviso que a atualização foi substituída por uma mais recente. Para transferir uma atualização que é *disponível para transferência*, selecione a atualização na consola e, em seguida, clique em **transferir**.
+
+- **Limpeza melhorada de atualizações anteriores**   
+  Adicionámos uma função de limpeza automática, que elimina as transferências desnecessárias da pasta 'EasySetupPayload' no seu servidor do site. Porque esta é introduzida com a versão 1702, limpeza começa a funcionar depois de instalar uma atualização subsequente como um rollup de atualização ou a versão de atualização futura.  
+
+
+### <a name="data-warehouse-service-point"></a>Ponto de serviço do armazém de dados
+ Utilize o ponto de serviço do armazém de dados para armazenar e elaborar relatórios sobre dados históricos a longo prazo para a sua implementação do Configuration Manager.
+
+ O armazém de dados suporta até 2 TB de dados, com carimbos de registo de alterações. Armazenamento de dados é conseguido ao sincronizações automáticas da base de dados do site do Configuration Manager para a base de dados do armazém de dados. Esta informação, em seguida, é acessível a partir do seu ponto de Reporting Services.
+
+ Para obter mais informações, consulte [ponto de serviço do armazém de dados](/sccm/core/servers/manage/data-warehouse).
+
+
+### <a name="peer-cache-improvements"></a>Melhorias da Cache ponto a ponto
+ A partir da versão 1702, um computador de origem de cache ponto a ponto irão rejeitar um pedido para o conteúdo quando o computador de origem de cache ponto a ponto cumpre qualquer uma das seguintes condições:  
+  -  Está no modo de bateria baixo.
+  -  Carga da CPU excede 80% momento solicitados.
+  -  E/s de disco tem um *AvgDiskQueueLength* excede que 10.
+  -  Não existem ligações mais não disponíveis para o computador.   
+Para obter mais informações, consulte **acesso a uma origem de cache ponto a ponto limitado** no [Cache ponto a ponto para clientes do Configuration Manager](/sccm/core/plan-design/hierarchy/client-peer-cache).   
+
+Além disso, as três novos relatórios são adicionados para o ponto de Reporting Services. Pode utilizar estes relatórios para obter mais detalhes sobre pedidos de conteúdo rejeitados, incluindo o limite de grupo, o computador e o conteúdo foi envolvido de compreender. Consulte [monitorização](/sccm/core/plan-design/hierarchy/client-peer-cache#monitoring) no tópico de cache ponto a ponto.
+
+### <a name="content-library-cleanup-tool"></a>Ferramenta de limpeza da biblioteca de conteúdos
+ Utilize o [ferramenta de limpeza da biblioteca de conteúdos](/sccm/core/plan-design/hierarchy/content-library-cleanup-tool) para remover o conteúdo dos pontos de distribuição quando esse conteúdo já não está associado uma aplicação.
+
+
+### <a name="use-the-oms-connector-with-the-azure-government-cloud"></a>Utilizar o conector do OMS com a nuvem do Azure Government
+Pode utilizar o conector do OMS para ligar ao OMS Log Analytics na nuvem do Microsoft Azure Government. Isto requer a modificar um ficheiro de configuração antes de instalar o conector do OMS, para que o conector pode trabalhar com a nuvem do Governo dos EUA. Para obter mais informações, consulte [utilizar o conector do OMS com a nuvem do Azure Government](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite#fairfaxconfig).
+
+### <a name="software-update-points-are-added-to-boundary-groups"></a>Pontos de atualização de software são adicionados a grupos de limites
+A partir da versão 1702, os clientes utilizam grupos de limites para localizar um novo ponto de atualização de software e de contingência e localizar uma nova atualização de software ponto, se os respetivos um atual já não está acessível. Pode adicionar pontos de atualização de individual software para diferentes grupos de limites para controlar quais os servidores de um cliente pode localizar. Para obter mais informações, consulte [pontos de atualização de software](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points) no [configurar grupos de limites](/sccm/core/servers/deploy/configure/boundary-groups) tópico.
 
 
 <!-- ## Migration  -->
 
 <!-- ## Client management  -->
 
-## <a name="compliance-settings"></a>Ustawienia zgodności
+## <a name="compliance-settings"></a>Definições de compatibilidade
 
-### <a name="new-compliance-settings-for-ios"></a>Nowe ustawienia zgodności dla systemu iOS
+### <a name="new-compliance-settings-for-ios"></a>Novas definições de conformidade para iOS
 
-Dodaliśmy wiele nowych ustawień dla urządzeń z systemem iOS do zgodne z tymi, które są dostępne w usłudze Microsoft Intune.
-Aby uzyskać listę wszystkich dostępnych ustawień, zobacz [tworzenie elementów konfiguracji dla systemów iOS i Mac OS X urządzeń zarządzanych przez usługę Intune](/sccm/mdm/deploy-use/create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client).
-
-
-## <a name="application-management"></a>Zarządzanie aplikacjami
-
-### <a name="improved-support-for-windows-store-for-business-apps"></a>Ulepszona obsługa aplikacji biznesowych dla Sklepu Windows
-
-Teraz można wdrożyć licencjonowane aplikacje ze Sklepu Windows dla firm komputerów z systemem Windows 10 można zarządzać za pomocą klienta programu Configuration Manager.
-Aby uzyskać więcej informacji, zobacz [Zarządzanie aplikacjami ze Sklepu Windows dla firm](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
-
-### <a name="check-for-running-executable-files-before-installing-an-application"></a>Sprawdź, czy uruchamianie plików wykonywalnych przed zainstalowaniem aplikacji
-
-W **właściwości** okno dialogowe wdrożenia wpisz na **zainstalować zachowanie** kartę, można teraz określić jedną więcej pliki wykonywalne, jeśli uruchomiony, blokuje instalację typu wdrożenia. Użytkownik musi zamknąć plik wykonywalny uruchomiona (lub może zostać zamknięty w automatycznie w przypadku wdrożeń z celem wymagane) przed wdrożeniem można było zainstalować typ.
-
-Jeśli aplikacja została wdrożona jako **dostępne**i użytkownik końcowy próbuje zainstalować aplikację, będą oni musieli podać do Zamknij wszystkie uruchomione pliki wykonywalne określona zanim można kontynuować instalacji.
-
-Jeśli aplikacja została wdrożona jako **wymagane**wraz z opcją **automatycznie Zamknij wszystkie uruchomione pliki wykonywalne określone na karcie zachowanie instalacji okna dialogowego właściwości typu wdrożenia** jest zaznaczone, zobaczą okno dialogowe, które informuje, że pliki wykonywalne określonego zostaną automatycznie zamknięte po osiągnięciu ostatecznego terminu instalacji aplikacji.
-
-### <a name="app-management-improvements-for-hybrid-mdm"></a>Ulepszenia zarządzania aplikacji hybrydowego zarządzania urządzeniami Przenośnymi
-
-- [Wdrażanie aplikacji dla systemu iOS zakupionymi zbiorczo do kolekcji urządzeń](#deploy-volume-purchased-ios-apps-to-device-collections)
-- [Obsługa systemu iOS Volume Purchase Program dla instytucji edukacyjnych](#support-for-ios-volume-purchase-program-for-education)
-- [Obsługa wielu tokenów program zakupów zbiorczych](#support-for-multiple-volume-purchase-program-tokens)
+Adicionámos muitas novas definições para dispositivos iOS para corresponderem às disponível com o Microsoft Intune.
+Para obter uma lista de todas as definições disponíveis, consulte [criar itens de configuração para iOS e dispositivos Mac OS X geridos com o Intune](/sccm/mdm/deploy-use/create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client).
 
 
-## <a name="operating-system-deployment"></a>Wdrożenie systemu operacyjnego
+## <a name="application-management"></a>Gestão de Aplicações
 
-### <a name="expire-stand-alone-media"></a>Nośnik samodzielny wygaśnie
-Podczas tworzenia nośnika autonomicznego, istnieją nowe opcje można ustawić opcjonalny daty rozpoczęcia i wygaśnięcia na nośniku. Te ustawienia są domyślnie wyłączone. Dane są porównywane z czasem systemowym na komputerze przed uruchomieniem nośnika autonomicznego. Gdy czas systemowy jest wcześniejsza niż godzina rozpoczęcia lub późniejsza niż godzina wygaśnięcia, nośnika samodzielnego nie jest uruchomiona. Te opcje są również dostępne za pomocą polecenia cmdlet New-CMStandaloneMedia środowiska PowerShell. Aby uzyskać więcej informacji, zobacz [tworzenia nośnika samodzielnego](/sccm/osd/deploy-use/create-stand-alone-media).
+### <a name="improved-support-for-windows-store-for-business-apps"></a>Suporte melhorado para a loja Windows para as aplicações da empresa
 
-### <a name="package-id-displayed-in-task-sequence-steps"></a>Identyfikator pakietu wyświetlany w krokach sekwencji zadań
-Dowolny etap sekwencji zadań odwołuje się do pakietu, pakietu sterowników, obrazu systemu operacyjnego, obraz rozruchowy lub pakiet uaktualnienia systemu operacyjnego będzie teraz wyświetlany identyfikator pakietu odwołuje się do obiektu. Gdy krok sekwencji zadań odwołuje się do aplikacji, będą wyświetlane identyfikatora obiektu.
+Agora pode implementar as aplicações licenciadas online da loja Windows para empresas para Windows 10 PCs que gere com o cliente do Configuration Manager.
+Para obter mais informações, consulte [gerir aplicações da loja Windows para empresas](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business).
 
-### <a name="support-for-additional-content-in-stand-alone-media"></a>Obsługę dodatkowej zawartości w nośniku samodzielnym
-Dodatkowa zawartość jest teraz obsługiwana w przypadku nośników autonomicznych. Możesz wybrać dodatkowe pakiety, pakiety sterowników i aplikacji do przemieszczony na nośniku oraz zawartość, do którego odwołuje się sekwencja zadań. Wcześniej tylko zawartość, do którego odwołuje się sekwencja zadań została umieszczone na nośniku autonomicznym. Aby uzyskać więcej informacji, zobacz [tworzenia nośnika samodzielnego](/sccm/osd/deploy-use/create-stand-alone-media).
+### <a name="check-for-running-executable-files-before-installing-an-application"></a>Verifique a existência de executar ficheiros executáveis antes de instalar uma aplicação
 
-### <a name="hardware-inventory-collects-uefi-information"></a>Spisu sprzętu zbiera informacje z interfejsem UEFI
-Nową klasę spisu sprzętu (**SMS_Firmware**), a właściwość (**UEFI**) są dostępne pomóc w określeniu, czy komputer jest uruchamiany w trybie UEFI. Gdy komputer jest uruchamiany w trybie UEFI, **UEFI** właściwość jest ustawiona na **TRUE**. Ta opcja jest włączona w spisie sprzętu, domyślnie. Aby uzyskać więcej informacji dotyczących zapasów sprzętu, zobacz [jak skonfigurować spis sprzętu](/sccm/core/clients/manage/inventory/configure-hardware-inventory).
+No **propriedades** , na caixa de diálogo de uma implementação de tipo de **instalar comportamento** separador, pode agora especificar um dos ficheiros executáveis mais que, se em execução, irão bloquear a instalação do tipo de implementação. O utilizador tem de fechar o ficheiro executável está em execução (ou pode ser fechada automaticamente para implementações com um objetivo necessário) antes da implementação tipo pode ser instalado.
 
-### <a name="improvements-to-software-center-warning-messages-for-high-impact-task-sequences"></a>Ulepszenia Centrum oprogramowania ostrzeżenia o dużym znaczeniu sekwencji zadań
-Ta wersja zawiera wprowadzono następujące ulepszenia Centrum oprogramowania ostrzeżenia o dużym znaczeniu wdrożenia sekwencji zadań:
+Se a aplicação foi implementada como **disponível**e um utilizador final tenta instalar uma aplicação, será pedido para fechar a qualquer executáveis em execução, especificado antes de poderão avançar com a instalação.
 
-- W oknie właściwości dla sekwencji zadań można teraz skonfigurować wszystkie sekwencje zadań, w tym sekwencji zadań systemu operacyjnego jako wdrożenie wysokiego ryzyka. Wszystkie sekwencje zadań, która spełnia określone warunki automatycznie jest zdefiniowany jako dużym znaczeniu. Aby uzyskać więcej informacji, zobacz [zarządzania wdrożeniami o wysokim ryzyku](/sccm/protect/understand/settings-to-manage-high-risk-deployments).
-- W oknie właściwości dla sekwencji zadań można użyć domyślnego komunikatu powiadomienia lub utworzyć własne niestandardowe powiadomienie w przypadku wdrożeń o dużym znaczeniu.
-- We właściwościach sekwencji zadań można skonfigurować właściwości, które obejmują upewnij ponownego uruchomienia wymaganych, Centrum oprogramowania rozmiar pobierania sekwencji zadań i szacowany czas wykonywania.
-- W komunikacie wdrożenia poważnych domyślne w miejscu uaktualnia teraz stanów automatycznie migracji aplikacji, danych i ustawień. Wcześniej, domyślną wiadomość do wszelkich instalacji systemu operacyjnego wskazuje, że wszystkie aplikacje, dane i ustawienia, może spowodować utratę, który nie jest spełniony dla uaktualnienia w miejscu.
+Se a aplicação foi implementada como **necessário**e a opção **fechar automaticamente quaisquer executáveis em execução, especificado no separador de comportamento de instalação de caixa de diálogo de propriedades do tipo de implementação** é selecionado, verá uma caixa de diálogo que os informa de que executáveis que especificou são fechados automaticamente quando é atingido o prazo de instalação da aplicação.
 
-Aby uzyskać więcej informacji, zobacz [Konfigurowanie ustawień sekwencji zadań o dużym wpływie na działanie](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#set-a-task-sequence-as-a-high-impact-task-sequence)
+### <a name="app-management-improvements-for-hybrid-mdm"></a>Melhorias de gestão de aplicações para MDM híbrida
 
-### <a name="return-to-previous-page-when-a-task-sequence-fails"></a>Powrót do poprzedniej strony, gdy sekwencja zadań nie powiodło się.
-Można teraz wróć do poprzedniej strony po uruchomieniu sekwencji zadań i awarii. Przed tą wersją trzeba było ponownego uruchomienia sekwencji zadań, jeśli wystąpił błąd. Na przykład można użyć **Wstecz** przycisk w następujących scenariuszach:
+- [Implementar aplicações iOS compradas em volume para coleções de dispositivos](#deploy-volume-purchased-ios-apps-to-device-collections)
+- [Suporte para iOS Volume Purchase Program para as educação](#support-for-ios-volume-purchase-program-for-education)
+- [Suporte para vários tokens do volume-purchase program](#support-for-multiple-volume-purchase-program-tokens)
 
-- Gdy komputer jest uruchamiany w środowisku Windows PE, dialogowym bootstrap sekwencji zadań może być wyświetlany, zanim sekwencja zadań będzie dostępna. Po kliknięciu przycisku Dalej w tym scenariuszu sekwencja zadań na ostatniej stronie wyświetla komunikat, że nie dostępnych sekwencji zadań. Teraz, możesz kliknąć **Wstecz** ponowić wyszukiwanie uzyskać dostępne sekwencje zadań. Ten proces można powtarzać do czasu udostępnienia sekwencji zadań.
-- Po uruchomieniu sekwencji zadań, ale zależnych pakietów zawartości nie są jeszcze dostępne w punktach dystrybucji, sekwencja zadań kończy się niepowodzeniem. Możesz teraz dystrybuować brakującą zawartość (jeśli go nie została jeszcze rozesłana) lub poczekaj, aż zawartości, które mają być dostępne w punktach dystrybucji, a następnie kliknij **Wstecz** mają wyszukiwania sekwencji zadań ponownie dla zawartości.
 
-### <a name="pre-cache-content-for-available-deployments-and-task-sequences"></a>Wstępne wypełnienie pamięci podręcznej dla wdrożeń dostępnych i sekwencji zadań
-Począwszy od wersji 1702, w przypadku wdrożeń dostępnych sekwencji zadań, można użyć wstępne wypełnienie pamięci podręcznej. Wstępne wypełnienie pamięci podręcznej udostępnia opcję, aby umożliwić klientom pobieranie tylko zawartość dotyczy zaraz po otrzymaniu wdrożenia. W związku z tym, kiedy użytkownik kliknie **zainstalować** w programie Software Center zawartości są gotowe, a instalacja uruchamia się szybko, ponieważ zawartość znajduje się na lokalnym dysku twardym. Aby uzyskać więcej informacji, zobacz [skonfigurować wstępne wypełnienie pamięci podręcznej](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content).
+## <a name="operating-system-deployment"></a>Implementação do sistema operativo
 
-### <a name="convert-from-bios-to-uefi-during-an-in-place-upgrade"></a>Konwertowanie systemu BIOS na UEFI podczas uaktualniania w miejscu
-Windows 10 twórców aktualizacji wprowadzono narzędzie konwersji proste automatyzuje proces ponownego podziału dysku twardego z obsługą interfejsu UEFI sprzętu i integruje narzędzia konwersji system Windows 7 do procesu uaktualniania w miejscu systemu Windows 10. Połączenie to narzędzie z sekwencji zadań uaktualniania systemu operacyjnego i narzędzie OEM, który konwertuje oprogramowanie układowe BIOS z interfejsem UEFI, można przekonwertować komputerów z systemem BIOS na UEFI podczas uaktualniania w miejscu do systemu Windows 10 twórców aktualizacji. Aby uzyskać więcej informacji, zobacz [zadania sekwencji kroki, aby zarządzać systemu BIOS z interfejsem UEFI konwersji](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion#convert-from-bios-to-uefi-during-an-in-place-upgrade).
+### <a name="expire-stand-alone-media"></a>Expirar suportes de dados autónomos
+Quando cria suporte de dados autónomo, existem novas opções para definir opcionais datas de início e de expiração no suporte de dados. Estas definições estão desativadas por predefinição. As datas são em comparação com a hora do sistema no computador antes do suporte de dados autónomo é executado. Quando a hora do sistema é anterior à hora de início ou posterior à hora de expiração, o suporte de dados autónomo não foi iniciado. Estas opções também estão disponíveis utilizando o cmdlet New-CMStandaloneMedia PowerShell. Para obter mais informações, consulte [criar suportes de dados autónomos](/sccm/osd/deploy-use/create-stand-alone-media).
 
-### <a name="improvements-to-the-install-applications-task-sequence-step"></a>Ulepszenia dotyczące instalowania aplikacji sekwencji zadań krok
-Tej wersji wprowadzono następujące ulepszenia:
-- Zwiększyć maksymalną liczbę aplikacji, które można zainstalować do 99 w **instalowanie aplikacji** krok sekwencji zadań. Poprzednie maksymalną liczbę został 9 aplikacji.
-- Po dodaniu aplikacji do **instalowanie aplikacji** krok sekwencji zadań w edytorze sekwencji zadań, możesz teraz wybrać wiele aplikacji z **wybierz aplikację do zainstalowania** okienka.
+### <a name="package-id-displayed-in-task-sequence-steps"></a>ID de pacote apresentado nos passos de sequência de tarefas
+Qualquer passo de sequência de tarefas que faça referência a um pacote, o pacote de controladores, a imagem do sistema operativo, a imagem de arranque ou o pacote de atualização do sistema operativo irá apresentar agora o ID de pacote do objeto referenciado. Quando um passo de sequência de tarefas faz referência a uma aplicação, apresentará o ID de objeto.
 
-### <a name="improvements-to-the-auto-apply-driver-task-sequence"></a>Ulepszenia dotyczące sekwencji zadań automatycznie Zastosuj sterowniki
-Nowe zmienne sekwencji zadań są teraz dostępne do konfigurowania wartość limitu czasu w kroku sekwencji zadań automatycznie Zastosuj sterownik podczas tworzenia żądania HTTP katalogu. Dostępne są następujące zmienne i wartości domyślnych (w sekundach):
+### <a name="support-for-additional-content-in-stand-alone-media"></a>Suporte para conteúdo adicional no suporte de dados autónomo
+Conteúdo adicional é agora suportado no suporte de dados autónomo. Pode selecionar pacotes adicionais, pacotes de controladores e aplicações para testado no suporte de dados, juntamente com outros conteúdos referenciados na sequência de tarefas. Anteriormente, apenas os conteúdos referenciados na sequência de tarefas foi testado no suporte de dados autónomo. Para obter mais informações, consulte [criar suportes de dados autónomos](/sccm/osd/deploy-use/create-stand-alone-media).
+
+### <a name="hardware-inventory-collects-uefi-information"></a>Inventário de hardware recolhe informações de UEFI
+Uma nova classe de inventário de hardware (**SMS_Firmware**) e a propriedade (**UEFI**) estão disponíveis para o ajudar a determinar se um computador é iniciado no modo UEFI. Quando um computador for iniciado no modo UEFI, o **UEFI** propriedade está definida como **verdadeiro**. Esta opção estiver ativada no inventário de hardware por predefinição. Para obter mais informações sobre o inventário de hardware, consulte [como configurar inventário de hardware](/sccm/core/clients/manage/inventory/configure-hardware-inventory).
+
+### <a name="improvements-to-software-center-warning-messages-for-high-impact-task-sequences"></a>Melhoramentos para mensagens de aviso do Centro de Software para sequências de tarefas de elevado impacto
+Esta versão inclui os seguintes melhoramentos para mensagens de aviso do Centro de Software para sequências de tarefas de implementação de elevado impacto:
+
+- Nas propriedades para a sequência de tarefas, agora pode configurar qualquer sequência de tarefas, incluindo sequências de tarefas de sistema não operacionais, como uma implementação de alto risco. Qualquer sequência de tarefas que cumpra determinadas condições é automaticamente definida como impacto elevado. Para obter mais informações, consulte [gerir implementações de alto risco](/sccm/protect/understand/settings-to-manage-high-risk-deployments).
+- Nas propriedades para a sequência de tarefas, pode optar por utilizar a mensagem de notificação predefinidas ou criar a sua própria mensagem de notificação personalizada para implementações de elevado impacto.
+- Nas propriedades para a sequência de tarefas, pode configurar o Centro de Software propriedades, que incluem efetuar um reinício necessário, o tamanho de transferência da sequência de tarefas, e o estimado tempo de execução.
+- A mensagem de implementação de elevado impacto predefinida para direta atualiza agora os Estados que as aplicações, dados e definições são migradas automaticamente. Anteriormente, a mensagem predefinida para qualquer instalação do sistema operativo for indicado que todas as aplicações, dados e as definições serão perdidas, que não era aplica-se uma atualização no local.
+
+Para obter mais informações, consulte [configurar as definições de sequência de tarefas de elevado impacto](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#set-a-task-sequence-as-a-high-impact-task-sequence)
+
+### <a name="return-to-previous-page-when-a-task-sequence-fails"></a>Regressar à página anterior, quando ocorre uma falha de uma sequência de tarefas
+Agora pode regressar a uma página anterior quando executa uma sequência de tarefas e não existe uma falha. Antes desta versão, era necessário reiniciar a sequência de tarefas quando ocorreu uma falha. Por exemplo, pode utilizar o **anterior** botão nos seguintes cenários:
+
+- Quando um computador é iniciado no Windows PE, o diálogo de arranque de configuração de sequência de tarefas pode apresentar antes da sequência de tarefas está disponível. Quando clicar em seguinte neste cenário, a página final da sequência de tarefas é apresentada uma mensagem que existem não existem sequências de tarefas disponíveis. Agora, pode clicar em **anterior** para novamente procurar sequências de tarefas disponíveis. Pode repetir este processo até que a sequência de tarefas esteja disponível.
+- Quando executa uma sequência de tarefas, mas os pacotes de conteúdos dependentes ainda não estão disponíveis nos pontos de distribuição, a sequência de tarefas falhará. Pode agora distribuir o conteúdo em falta (se não foi distribuída ainda) ou aguardar que o conteúdo fique disponível nos pontos de distribuição e, em seguida, clique em **anterior** ter a pesquisa de sequência de tarefas novamente para o conteúdo.
+
+### <a name="pre-cache-content-for-available-deployments-and-task-sequences"></a>Pré-armazenar conteúdo em cache para as implementações disponíveis e sequências de tarefas
+A partir da versão 1702, para as implementações disponíveis de sequências de tarefas, pode optar por utilizar pré-armazenar conteúdo em cache. Pré-armazenar conteúdo em cache dá-lhe a opção para permitir que o cliente transferir apenas o conteúdo aplicável logo que recebe a implementação. Por conseguinte, quando o utilizador clica em **instalar** no Centro de Software, o conteúdo está pronto e a instalação inicia rapidamente porque o conteúdo no disco rígido local. Para obter mais informações, consulte [configurar pré-armazenar conteúdo em cache](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content).
+
+### <a name="convert-from-bios-to-uefi-during-an-in-place-upgrade"></a>A conversão de BIOS em UEFI durante uma atualização no local
+Atualização do Windows 10 criadores introduz uma ferramenta de conversão simples que automatiza o processo para reparticionar o disco rígido para hardware ativado para UEFI e integra-se a ferramenta de conversão para o Windows 7 para o processo de atualização do Windows 10 no local. Ao combinar esta ferramenta com a sequência de tarefas de atualização do sistema operativo e a ferramenta do OEM que converte o firmware de BIOS para UEFI, pode converter os seus computadores de BIOS para UEFI durante uma atualização no local para o Windows 10 criadores Update. Para obter mais informações, consulte [para gerir o BIOS para conversão de UEFI, os passos de sequência de tarefas](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion#convert-from-bios-to-uefi-during-an-in-place-upgrade).
+
+### <a name="improvements-to-the-install-applications-task-sequence-step"></a>Passo de melhorias à sequência de tarefas instalar aplicações
+Esta versão introduziu os seguintes melhoramentos:
+- Aumentar o número máximo de aplicações que pode instalar a 99 no **instalar aplicações** passo de sequência de tarefas. O número máximo anterior foi 9 aplicações.
+- Ao adicionar aplicações para o **instalar aplicações** passo de sequência de tarefas no editor de sequência de tarefas, agora, pode selecionar a várias aplicações a **selecionar a aplicação a instalar** painel.
+
+### <a name="improvements-to-the-auto-apply-driver-task-sequence"></a>Melhoramentos à sequência de tarefas aplicar controladores automaticamente
+Novas variáveis de sequência de tarefas estão agora disponíveis para configurar o valor de tempo limite no passo de sequência de tarefas aplicar controladores automaticamente quando são efetuados pedidos do catálogo HTTP. As seguintes variáveis e valores predefinidos (em segundos) estão disponíveis:
    - SMSTSDriverRequestResolveTimeOut  
-     Wartość domyślna: 60
+     Predefinição: 60
    - SMSTSDriverRequestConnectTimeOut  
-     Wartość domyślna: 60
+     Predefinição: 60
    - SMSTSDriverRequestSendTimeOut  
-     Wartość domyślna: 60
+     Predefinição: 60
    - SMSTSDriverRequestReceiveTimeOut  
-     Wartość domyślna: 480
+     Predefinição: 480
 
-### <a name="windows-10-adk-tracked-by-build-version"></a>Windows 10 ADK śledzone przez wersję kompilacji
-Zestaw Windows 10 ADK teraz jest śledzony przez wersję kompilacji, aby zapewnić więcej dostępnych możliwości dostosowywania obrazów rozruchowych systemu Windows 10. Na przykład jeśli witryna korzysta z systemu Windows ADK dla systemu Windows 10, wersji 1607, tylko obrazy rozruchowe z wersją 10.0.14393 można dostosować w konsoli. Aby uzyskać więcej informacji dotyczących dostosowywania wersje środowiska WinPE, zobacz [dostosowywanie obrazów rozruchowych](/sccm/osd/get-started/customize-boot-images).
+### <a name="windows-10-adk-tracked-by-build-version"></a>Windows 10 ADK controlada pela versão de compilação
+O Windows 10 ADK agora é controlado pela versão de compilação para garantir uma experiência mais suportada ao personalizar imagens de arranque do Windows 10. Por exemplo, se o site utiliza o Windows ADK para Windows 10, versão 1607, imagens de arranque com a versão 10.0.14393 podem ser personalizadas na consola do. Para obter mais informações sobre como personalizar versões do WinPE, consulte [personalizar imagens de arranque](/sccm/osd/get-started/customize-boot-images).
 
-### <a name="default-boot-image-source-path-can-no-longer-be-changed"></a>Nie można zmienić ścieżki źródłowej obrazu rozruchowego domyślne
-Domyślne obrazy rozruchowe są zarządzane przez program Configuration Manager i nie można zmienić ścieżki źródłowej obrazu rozruchowego domyślne, w konsoli programu Configuration Manager lub przy użyciu zestawu SDK programu Configuration Manager. Możesz skonfigurować ścieżkę źródła niestandardowego dla niestandardowych obrazów rozruchowych.
+### <a name="default-boot-image-source-path-can-no-longer-be-changed"></a>Já não é possível alterar o caminho de origem de imagem de arranque predefinido
+Imagens de arranque predefinidas são geridas pelo Configuration Manager e o caminho de origem de imagem de arranque predefinido já não pode ser alterado na consola do Configuration Manager ou utilizando o SDK do Configuration Manager. Pode continuar a configurar um caminho de origem personalizada para imagens de arranque personalizadas.
 
-### <a name="default-boot-images-are-regenerated-after-upgrading-configuration-manager-to-a-new-version"></a>Domyślne obrazy rozruchowe są generowane po uaktualnieniu do nowej wersji programu Configuration Manager
-Począwszy od tej wersji, podczas uaktualniania wersji zestawu Windows ADK i użyj aktualizacje i obsługa, aby zainstalować najnowszą wersję programu Configuration Manager, Configuration Manager generuje domyślne obrazy rozruchowe. W tym nową wersją środowiska Windows PE z zaktualizowany zestaw Windows ADK, nowej wersji klienta programu Configuration Manager, sterowniki, dostosowywanie, itp. Niestandardowe obrazy rozruchowe nie są modyfikowane. Aby uzyskać więcej informacji, zobacz [zarządzanie obrazami rozruchowymi](/sccm/osd/get-started/manage-boot-images#BKMK_BootImageDefault).
+### <a name="default-boot-images-are-regenerated-after-upgrading-configuration-manager-to-a-new-version"></a>Imagens de arranque predefinidas são regeneradas após atualizar o Configuration Manager para uma nova versão
+A partir desta versão, quando atualizar a versão do Windows ADK e, em seguida, utilizar as atualizações e manutenção para instalar a versão mais recente do Configuration Manager, Configuration Manager gera de novo as imagens de arranque predefinidas. Isto inclui a nova versão do PE de janela do Windows ADK atualizado, a nova versão do cliente do Configuration Manager, controladores, personalizações, etc. Imagens de arranque personalizadas não são modificadas. Para obter mais informações, consulte [gerir imagens de arranque](/sccm/osd/get-started/manage-boot-images#BKMK_BootImageDefault).
 
-## <a name="software-updates"></a>Aktualizacje oprogramowania
+## <a name="software-updates"></a>Atualizações de software
 
-### <a name="deploy-office-365-apps-to-clients"></a>Wdrażanie aplikacji usługi Office 365 na klientach
-Począwszy od wersji 1702, z poziomu pulpitu nawigacyjnego zarządzania klienta usługi Office 365, możesz uruchomić Instalatora 365 pakietu Office, które umożliwia konfigurowanie ustawień instalacji usługi Office 365, pobierania plików z pakietu Office sieci dostarczania zawartości (CDN) i wdrożenia plików jako aplikacji w programie Configuration Manager. Aby uzyskać więcej informacji, zobacz [aktualizacji z zarządzania usługi Office 365 ProPlus](/sccm/sum/deploy-use/manage-office-365-proplus-updates#deploy-office-365-apps).
+### <a name="deploy-office-365-apps-to-clients"></a>Implementar aplicações do Office 365 nos clientes
+A partir da versão 1702, a partir do dashboard de gestão de clientes do Office 365, pode iniciar o instalador de 365 do Office que lhe permite configurar definições de instalação do Office 365, transfira ficheiros a partir de redes de entrega de conteúdo (CDNs) do Office e implementar os ficheiros como uma aplicação no Configuration Manager. Para obter mais informações, consulte [de atualizações de gerir o Office 365 ProPlus](/sccm/sum/deploy-use/manage-office-365-proplus-updates#deploy-office-365-apps).
 
 > [!IMPORTANT]
-> Tworzenie i wdrażanie za pomocą Kreatora aplikacji pakietu Office 365 w Menedżerze konfiguracji aplikacji usługi Office 365 nie jest automatycznie zarządzane przez program Configuration Manager do momentu włączenia **Włącz zarządzanie Office 365 klienta ponownie** ustawienia agenta klienta aktualizacji oprogramowania. Aby uzyskać więcej informacji, zobacz [informacje o ustawieniach klienta](/sccm/core/clients/deploy/about-client-settings).
+> A aplicação do Office 365 que criar e implementar utilizando o Assistente de aplicação do Office 365 no Configuration Manager não é automaticamente gerida pelo Configuration Manager até que tenha ativado a **ativar a gestão de cliente de 365 do Office novamente** definição de agente de cliente de atualizações de software. Para obter mais informações, consulte [sobre definições de cliente](/sccm/core/clients/deploy/about-client-settings).
 
-### <a name="manage-express-installation-files-for-windows-10-updates"></a>Zarządzanie plikami instalacji ekspresowej aktualizacji systemu Windows 10
-Począwszy od wersji 1702, program Configuration Manager obsługuje pliki instalacji ekspresowej aktualizacji systemu Windows 10. Korzystając z obsługiwanej wersji systemu Windows 10, umożliwia ustawień programu Configuration Manager Pobierz tylko zmiany między bieżącego miesiąca systemu Windows 10 aktualizacji zbiorczej i aktualizacją poprzedniego miesiąca. Bez plików instalacji ekspresowej programu Configuration Manager pobiera pełnego systemu Windows 10 aktualizacji zbiorczej (w tym wszystkie aktualizacje z ostatnich miesięcy) każdego miesiąca. Przy użyciu plików instalacji ekspresowej zapewnia mniejsze pliki do pobrania i instalacji szybsze na klientach. Aby uzyskać więcej informacji, zobacz [Zarządzanie plików instalacji ekspresowej, aktualizacji systemu Windows 10](/sccm/sum/deploy-use/manage-express-installation-files-for-windows-10-updates).
+### <a name="manage-express-installation-files-for-windows-10-updates"></a>Gerir ficheiros de instalação rápida para atualizações do Windows 10
+A partir da versão 1702, o Configuration Manager suporta ficheiros de instalação rápida para atualizações do Windows 10. Quando utiliza uma versão suportada do Windows 10, pode utilizar definições de Configuration Manager para transferir apenas as alterações entre Windows 10 atualização o mês atual cumulativa e a atualização do mês anterior. Sem ficheiros de instalação rápida, o Configuration Manager transfere a completa Windows 10 atualização cumulativa (incluindo todas as atualizações de meses anteriores) por mês. A utilização de ficheiros de instalação rápida fornece para transferências mais pequenas e tempos de instalação mais rápidos nos clientes. Para obter mais informações, consulte [gerir ficheiros de instalação rápida para atualizações do Windows 10](/sccm/sum/deploy-use/manage-express-installation-files-for-windows-10-updates).
 
 
 <!-- ## Reporting  -->
 
 <!-- ## Inventory  -->
 
-## <a name="mobile-device-management"></a>Zarządzanie urządzeniami przenośnymi
+## <a name="mobile-device-management"></a>Gestão de dispositivos móveis
 
-### <a name="android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm"></a>Wersje systemów android i iOS nie są już targetable w kreatorach tworzenia dla hybrydowego zarządzania urządzeniami Przenośnymi
+### <a name="android-and-ios-versions-are-no-longer-targetable-in-creation-wizards-for-hybrid-mdm"></a>Android e iOS versões deixam de ser targetable em assistentes de criação para MDM híbrida
 
-Począwszy od wersji 1702 hybrydowego zarządzania urządzeniami przenośnymi (MDM), nie trzeba docelowych określonych wersji systemu Android i iOS, podczas tworzenia nowych zasad i profilów dla urządzeń zarządzanych przez usługę Intune. Zamiast tego należy wybrać jedną z następujących typów urządzeń:
+A partir da versão 1702 híbrida gestão de dispositivos móveis (MDM), já não tem como destino a versões específicas do Android e iOS, quando criar novas políticas e perfis de dispositivos geridos pelo Intune. Em vez disso, escolha um dos seguintes tipos de dispositivos:
 
 - Android
-- Samsung KNOX Standard 4.0 lub nowszy
-- urządzenia iPhone
+- Samsung KNOX Standard 4.0 e posterior
+- iPhone
 - iPad
 
-Ta zmiana wpływa na kreatorów tworzenia następujące elementy:
+Esta alteração afeta os assistentes para criar os seguintes itens:
 
-- Elementy konfiguracji
-- Zasady zgodności
-- Profile certyfikatów
-- Profile poczty e-mail
-- Profile sieci VPN
-- Profile sieci Wi-Fi
+- Itens de configuração
+- Políticas de conformidade
+- Perfis de certificado
+- Perfis de e-mail
+- Perfis da VPN
+- Perfis de Wi-Fi
 
-Dzięki tej zmianie hybrydowych wdrożeń można zapewnić obsługę szybciej nowe wersje systemów Android i iOS bez konieczności nową wersję programu Configuration Manager lub rozszerzenia. Gdy nowa wersja jest obsługiwana w autonomicznej usługi Intune, użytkownicy będą mogli uaktualnić swoje urządzenia przenośne do tej wersji.
+Com esta alteração, implementações híbridas podem fornecer suporte mais rapidamente para novas versões de Android e iOS sem necessitar de uma nova versão do Configuration Manager ou a extensão. Depois de uma nova versão é suportada no Intune autónomo, os utilizadores conseguirão atualizar os respetivos dispositivos móveis para essa versão.
 
-Aby zapobiec problemom podczas uaktualniania z wcześniejszych wersji programu Configuration Manager, wersje systemów operacyjnych urządzeń przenośnych są nadal dostępne na stronach właściwości dla tych elementów. Jeśli nadal potrzebujesz pod kątem określonej wersji, można utworzyć nowego elementu, a następnie określ wersję docelową na stronie właściwości nowo utworzonego elementu.
+Para evitar problemas ao atualizar a partir de versões anteriores do Configuration Manager, versões de sistema operativo móvel ainda estão disponíveis as páginas de propriedades para estes itens. Se ainda precisar de uma versão específica de destino, pode criar o novo item e, em seguida, especifique a versão especificada na página de propriedades do item criado recentemente.
 
-### <a name="android-for-work-support"></a>Android obsługę pracy
-Począwszy od 1702 hybrydowego zarządzania urządzeniami przenośnymi w usłudze Microsoft Intune obsługuje teraz system Android rejestracji urządzeń w pracy i zarządzania. Android zarządzanych orientacji urządzenia roboczych:
+### <a name="android-for-work-support"></a>Android para o suporte de trabalho
+A partir do 1702, gestão de dispositivos móveis híbrida com o Microsoft Intune suporta agora Android para gestão e de inscrição de dispositivos de trabalho. Android gerido para obter orientações de dispositivos de trabalho:
 
-- [Rejestrowanie pracy urządzeń systemu Android](/sccm/mdm/deploy-use/enroll-hybrid-android#enable-android-enrollment)
-- [Zatwierdzanie i wdrażanie systemu Android dla aplikacji służbowych](/sccm/mdm/deploy-use/creating-android-applications#approve-and-deploy-android-for-work-apps)
-- [Tworzenie elementów konfiguracji dla systemu Android for Work](/sccm/mdm/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client#android-for-work-configuration-items)
-- [Selektywne czyszczenie danych w systemie Android pracy urządzeń](/sccm/mdm/deploy-use/wipe-lock-reset-devices#selective-wipe)
-- [Profile poczty e-mail dla systemu Android for Work](/sccm/mdm/deploy-use/create-exchange-activesync-profiles)
-- [Zasady zgodności dla systemu Android for Work](/sccm/mdm/deploy-use/create-compliance-policy)
+- [Inscrição Android para dispositivos de trabalho](/sccm/mdm/deploy-use/enroll-hybrid-android#enable-android-enrollment)
+- [Aprovar e implementar Android para aplicações de trabalho](/sccm/mdm/deploy-use/creating-android-applications#approve-and-deploy-android-for-work-apps)
+- [Criar itens de configuração para Android para o trabalho](/sccm/mdm/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client#android-for-work-configuration-items)
+- [Eliminação seletiva no Android para dispositivos de trabalho](/sccm/mdm/deploy-use/wipe-lock-reset-devices#selective-wipe)
+- [Perfis de e-mail para Android para o trabalho](/sccm/mdm/deploy-use/create-exchange-activesync-profiles)
+- [Políticas de conformidade para Android para o trabalho](/sccm/mdm/deploy-use/create-compliance-policy)
 
 
-### <a name="deploy-volume-purchased-ios-apps-to-device-collections"></a>Wdrażanie aplikacji dla systemu iOS zakupionymi zbiorczo do kolekcji urządzeń
+### <a name="deploy-volume-purchased-ios-apps-to-device-collections"></a>Implementar aplicações iOS compradas em volume para coleções de dispositivos
 
-Teraz można wdrożyć licencjonowane aplikacje na urządzeniach, jak i użytkowników. W zależności od aplikacji możliwość obsługi urządzenia licencjonowania odpowiednią licencję będzie wymagana, wdrażając go w następujący sposób:
+Pode agora implementar aplicações licenciadas para dispositivos, bem como os utilizadores. Consoante a capacidade de aplicações para suportar o dispositivo de licenciamento, uma licença adequada irá ser reclamada quando a implementá-la, da seguinte forma:
 
 |||||
 |-|-|-|-|
-|Wersja programu Configuration Manager|Aplikacja obsługuje licencjonowania urządzeń?|Typ kolekcji wdrażania|Oświadczeniem licencji|
-|Wcześniejsza niż 1702|Tak|Użytkownik|Licencja użytkownika|
-|Wcześniejsza niż 1702|Nie|Użytkownik|Licencja użytkownika|
-|Wcześniejsza niż 1702|Tak|Urządzenie|Licencja użytkownika|
-|Wcześniejsza niż 1702|Nie|Urządzenie|Licencja użytkownika|
-|1702 i nowsze|Tak|Użytkownik|Licencja użytkownika|
-|1702 i nowsze|Nie|Użytkownik|Licencja użytkownika|
-|1702 i nowsze|Tak|Urządzenie|Licencja urządzenia|
-|1702 i nowsze|Nie|Urządzenie|Licencja użytkownika|
+|Versão do Configuration Manager|Aplicação suporta o licenciamento do dispositivo?|Tipo de coleção de implementação|Licença pedida|
+|Anteriores ao 1702|Sim|Utilizador|Licença de utilizador|
+|Anteriores ao 1702|Não|Utilizador|Licença de utilizador|
+|Anteriores ao 1702|Sim|Dispositivo|Licença de utilizador|
+|Anteriores ao 1702|Não|Dispositivo|Licença de utilizador|
+|1702 e posterior|Sim|Utilizador|Licença de utilizador|
+|1702 e posterior|Não|Utilizador|Licença de utilizador|
+|1702 e posterior|Sim|Dispositivo|Licença de dispositivo|
+|1702 e posterior|Não|Dispositivo|Licença de utilizador|
 
-Aby uzyskać więcej informacji o aplikacji dla systemu iOS zakupionymi zbiorczo, zobacz [Zarządzanie aplikacjami zakupionymi zbiorczo systemu iOS](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps).
+Para mais informações sobre as aplicações iOS compradas em volume, consulte [gerir aplicações iOS compradas em volume](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps).
 
-### <a name="support-for-ios-volume-purchase-program-for-education"></a>Obsługa systemu iOS Volume Purchase Program dla instytucji edukacyjnych
+### <a name="support-for-ios-volume-purchase-program-for-education"></a>Suporte para iOS Volume Purchase Program para as educação
 
-Teraz można również wdrożyć i śledzenie aplikacji, które zostały zakupione od iOS Volume Purchase Program dla instytucji edukacyjnych.
-Aby uzyskać więcej informacji o aplikacji dla systemu iOS zakupionymi zbiorczo, zobacz [Zarządzanie aplikacjami zakupionymi zbiorczo systemu iOS](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps).
+Pode também implementar e controlar aplicações compradas do iOS Volume Purchase Program para Education.
+Para mais informações sobre as aplicações iOS compradas em volume, consulte [gerir aplicações iOS compradas em volume](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps).
 
-### <a name="support-for-multiple-volume-purchase-program-tokens"></a>Obsługa wielu tokenów program zakupów zbiorczych
+### <a name="support-for-multiple-volume-purchase-program-tokens"></a>Suporte para vários tokens do volume-purchase program
 
-Teraz można skojarzyć wiele tokenów program zakupów zbiorczych firmy Apple z programem Configuration Manager.
-Aby uzyskać więcej informacji o aplikacji dla systemu iOS zakupionymi zbiorczo, zobacz [Zarządzanie aplikacjami zakupionymi zbiorczo systemu iOS](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps).
+Agora pode associar vários tokens de programa de compra da Apple com o Configuration Manager.
+Para mais informações sobre as aplicações iOS compradas em volume, consulte [gerir aplicações iOS compradas em volume](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps).
 
-### <a name="support-for-line-of-business-apps-in-windows-store-for-business"></a>Obsługa aplikacji biznesowych w Sklepie Windows dla firm
+### <a name="support-for-line-of-business-apps-in-windows-store-for-business"></a>Suporte para a linha de negócio aplicações na loja Windows para empresas
 
-Niestandardowe aplikacje biznesowe w Sklepie Windows dla firm mogą teraz synchronizować.
+Agora pode sincronizar personalizada aplicações de linha de negócio da loja Windows para empresas.
 
-### <a name="conditional-access-device-compliance-policy-improvements"></a>Ulepszenia zasad zgodności urządzenia dostępu warunkowego
+### <a name="conditional-access-device-compliance-policy-improvements"></a>Melhoramentos de política de conformidade de dispositivos de acesso condicional
 
-Dostępny jest nowy reguły zasad zgodności urządzenia możesz zablokować dostęp do zasobów firmy, które obsługują dostęp warunkowy, gdy użytkownicy korzystają z aplikacji, które są częścią listę niezgodnych aplikacji. Lista niezgodnych aplikacji można definiować przez administratora podczas dodawania nowej reguły zgodne **aplikacji, których nie można zainstalować**. Ta zasada wymaga administratora, aby wprowadzić **Nazwa aplikacji**, **identyfikator aplikacji**i **wydawcę aplikacji** (opcjonalnie), podczas dodawania do listy niezgodnych aplikacji. To ustawienie dotyczy tylko urządzeń iOS i Android.
+Uma nova regra de política de conformidade de dispositivo está disponível para ajudar a bloquear o acesso aos recursos empresariais que suportam o acesso condicional, quando os utilizadores estão a utilizar aplicações que fazem parte de uma lista de aplicações não conformes. A lista de aplicações não conformes pode ser definida pelo administrador ao adicionar a nova regra de conformidade **aplicações que não não possível instalar**. Esta regra requer que o administrador para introduzir o **nome da aplicação**, a **ID da aplicação**e o **fabricante da aplicação** (opcional) quando adicionar uma aplicação à lista de não conformidade. Esta definição aplica-se apenas a dispositivos iOS e Android.
 
-Ponadto pomaga organizacjom ograniczyć wycieku danych za pośrednictwem niezabezpieczonej aplikacji i zapobiec zużycie nadmiernej ilości danych za pośrednictwem niektórych aplikacji.
+Além disso, ajuda as organizações a mitigar a fuga de dados através de aplicações não segura e impedir que o consumo excessivo de dados através de determinadas aplicações.
 
-- Dowiedz się więcej [sposób działania zasad zgodności urządzenia](/sccm/mdm/deploy-use/device-compliance-policies).
-- Dowiedz się więcej [jak utworzyć zasady zgodności urządzeń](/sccm/mdm/deploy-use/create-compliance-policy).
+- Saiba mais [como funcionam as políticas de conformidade do dispositivo](/sccm/mdm/deploy-use/device-compliance-policies).
+- Saiba mais [como criar políticas de conformidade de dispositivo](/sccm/mdm/deploy-use/create-compliance-policy).
 
-### <a name="new-mobile-threat-defense-monitoring-tools"></a>Nowe przed zagrożeniami Mobile narzędzia do monitorowania
+### <a name="new-mobile-threat-defense-monitoring-tools"></a>Defesa de ameaça Mobile novas ferramentas de monitorização
 
-Począwszy od wersji 1702, masz nowe sposoby monitorowania stanu zgodności z dostawcą usług Mobile przed zagrożeniami.
+A partir da versão 1702, terá de novas formas para monitorizar o estado de compatibilidade com o fornecedor de serviços móveis defesa de ameaça.
 
-- Dowiedz się więcej [sposobu monitorowania zgodności przed zagrożeniami Mobile](https://docs.microsoft.com/sccm/mdm/deploy-use/monitor-mobile-threat-defense-compliance).
+- Saiba mais [como monitorizar a conformidade de defesa de ameaça Mobile](https://docs.microsoft.com/sccm/mdm/deploy-use/monitor-mobile-threat-defense-compliance).
 
-## <a name="protect-devices"></a>Ochrona urządzeń
+## <a name="protect-devices"></a>Proteger dispositivos
 
-### <a name="detect-outdated-antimalware-client-versions"></a>Wykrywanie wersji klienta nieaktualne ochrony przed złośliwym oprogramowaniem
-Począwszy od wersji 1702, możesz skonfigurować alert, aby upewnić się, że klientów programu Endpoint Protection nie są przestarzałe. Aby uzyskać więcej informacji, zobacz [alertu nieaktualne przed złośliwym oprogramowaniem klienta](/sccm/protect/deploy-use/endpoint-configure-alerts#detect-outdated-antimalware-client-versions).
+### <a name="detect-outdated-antimalware-client-versions"></a>Detetar as versões de cliente Desatualizadas antimalware
+A partir da versão 1702, pode configurar um alerta para garantir que os clientes de Endpoint Protection não estão desatualizados. Para obter mais informações, consulte [alertas para o cliente de software maligno Desatualizadas](/sccm/protect/deploy-use/endpoint-configure-alerts#detect-outdated-antimalware-client-versions).
 
-### <a name="device-health-attestation-updates"></a>Aktualizacje zaświadczania o kondycji urządzenia
-Usługi zaświadczania o kondycji urządzenia dla lokalnych klientów teraz można konfigurować i zarządzać z punktu zarządzania. Aby uzyskać więcej informacji, zobacz [zaświadczania o kondycji](/sccm/core/servers/manage/health-attestation).
+### <a name="device-health-attestation-updates"></a>Atualizações de atestado de estado de funcionamento do dispositivo
+Serviço de atestado de estado de funcionamento do dispositivo no local clientes agora podem ser configurados e geridos a partir do ponto de gestão. Para obter mais informações, consulte [atestado de estado de funcionamento](/sccm/core/servers/manage/health-attestation).
 
-### <a name="certificate-profiles-for-windows-hello-for-business"></a>Profile certyfikatów dla usługi Windows Hello dla firm
+### <a name="certificate-profiles-for-windows-hello-for-business"></a>Perfis de certificado para o Windows Hello para empresas
 
-Jeśli zamierzasz profile certyfikatów są przechowywane w usługi Windows Hello dla firm kontenera kluczy i rozszerzenie EKU logowania karty inteligentnej korzysta z profilu certyfikatu, należy skonfigurować uprawnienia dla klucza rejestracji upewnij się, że certyfikat jest zweryfikowany pomyślnie.
-Aby uzyskać więcej informacji, zobacz [usługi Windows Hello dla firm ustawienia](/sccm/protect/deploy-use/windows-hello-for-business-settings).
+Se pretende armazenar os perfis de certificado no Windows Hello para o contentor de chaves de negócio e o perfil de certificado utiliza a EKU de início de sessão de Smart Card, tem de configurar permissões para o registo de chave garantir que o certificado é validado corretamente.
+Para obter mais informações, consulte [Windows Hello para definições da empresa](/sccm/protect/deploy-use/windows-hello-for-business-settings).
 
-### <a name="new-windows-hello-for-business-notification-for-end-users"></a>Nowe usługi Windows Hello dla firm powiadomienia dla użytkowników końcowych
-Nowe powiadomienie systemu Windows 10 informuje o użytkowników końcowych, że ich należy wykonać dodatkowe akcje do wykonania Windows Hello dla firm Instalatora (na przykład konfigurowania numeru PIN).
+### <a name="new-windows-hello-for-business-notification-for-end-users"></a>Novo do Windows Hello para notificação de negócio para os utilizadores finais
+Uma nova notificação do Windows 10 informa os utilizadores finais que requerem ações adicionais para concluir Windows Hello para a configuração de negócio (por exemplo, definição de um PIN).
