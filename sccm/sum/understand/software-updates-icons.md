@@ -1,6 +1,6 @@
 ---
-title: "Ikony używane dla aktualizacji oprogramowania | Dokumentacja firmy Microsoft"
-description: "Konsola programu Configuration Manager zawiera ikony wskazujące stanu zsynchronizowanych grupy aktualizacji oprogramowania lub aktualizacji."
+title: Ikony stosowane przy aktualizacjach oprogramowania | Dokumentacja firmy Microsoft
+description: "Konsola programu Configuration Manager zawiera ikony, które wskazują stan synchronizowane grupy aktualizacji update lub oprogramowania."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -9,28 +9,25 @@ ms.date: 10/06/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: 63c5ef72-5715-4d86-85a2-71beba469fab
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e6cf8c799b5be2f7dbb6fadadddf702ec974ae45
 ms.openlocfilehash: 04c5ccc53263b2672096b564695a636bfb28d952
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="icons-used-for-software-updates-in-system-center-configuration-manager"></a>Ikony używane dla aktualizacji oprogramowania System Center Configuration Manager
+# <a name="icons-used-for-software-updates-in-system-center-configuration-manager"></a>Ikony stosowane przy aktualizacjach oprogramowania w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Zsynchronizowane aktualizacje oprogramowania są wyświetlane w konsoli programu Configuration Manager, a pierwsza kolumna dla każdej aktualizacji oprogramowania zawiera ikonę, która wskazuje określonego stanu. Grupy aktualizacji oprogramowania również są przedstawiane za pomocą ikony, która zawiera informacje o stanie aktualizacji oprogramowania należących do grupy. Ta sekcja zawiera informacje o ikonach aktualizacji oprogramowania oraz znaczeniu poszczególnych ikon.  
+Synchronizowane aktualizacje oprogramowania są wyświetlane w konsoli programu Configuration Manager, a pierwsza kolumna każdej aktualizacji oprogramowania zawiera ikonę, która wskazuje określony stan. Grupy aktualizacji oprogramowania również są przedstawiane za pomocą ikony, która zawiera informacje o stanie aktualizacji oprogramowania należących do grupy. Ta sekcja zawiera informacje o ikonach aktualizacji oprogramowania oraz znaczeniu poszczególnych ikon.  
 
 ## <a name="icons-for-software-updates"></a>Ikony aktualizacji oprogramowania  
  Synchronizowane aktualizacje oprogramowania są reprezentowane przez jedną z następujących ikon.  
 
 ### <a name="normal-icon"></a>Ikona elementów normalnych  
- ![ikona](../media/Normal.jpg "normalna ikona") ikonę z zieloną strzałkę reprezentuje aktualizacji oprogramowania normalnego.  
+ ![ikona](../media/Normal.jpg "ikona elementów normalnych") ikona z zieloną strzałką reprezentuje normalną aktualizację oprogramowania.  
 
  **Opis:**  
 
@@ -41,18 +38,18 @@ Zsynchronizowane aktualizacje oprogramowania są wyświetlane w konsoli programu
  Brak problemów operacyjnych.  
 
 ### <a name="expired-icon"></a>Ikona elementów wygasłych  
- ![ikona](../media/Expired.jpg "ikona wygasłe") ikonę z czarny symbol X reprezentuje wygasłą aktualizację oprogramowania. Wygasłe aktualizacje oprogramowania można też wskazać, wyświetlając **wygasłe** kolumny dla aktualizacji oprogramowania, gdy są wyświetlane w konsoli programu Configuration Manager.  
+ ![ikona](../media/Expired.jpg "ikona wygasłe") ikona z czarnym symbolem X reprezentuje wygasłą aktualizację oprogramowania. Wygasłe aktualizacje oprogramowania można zidentyfikować także przy **wygasłe** kolumnę do aktualizacji oprogramowania wyświetlanych w konsoli programu Configuration Manager.  
 
  **Opis:**  
 
- Wygasłe aktualizacje oprogramowania były wcześniej dostępne do wdrożenia na komputerach klienckich, ale po wygaśnięciu aktualizacji oprogramowania nie można tworzyć nowych wdrożeń aktualizacji oprogramowania. Wygasłe oprogramowania aktualizacje zostaną usunięte z aktywnego wdrożenia i nie będą dostępne dla klientów.  
+ Wygasłe aktualizacje oprogramowania były wcześniej dostępne do wdrożenia na komputerach klienckich, ale po wygaśnięciu aktualizacji oprogramowania nie można tworzyć nowych wdrożeń aktualizacji oprogramowania. Wygasłe aktualizacje oprogramowania są usuwane z aktywnych wdrożeń i nie będą dostępne dla klientów.  
 
  **Problemy operacyjne:**  
 
  Brak problemów operacyjnych.
 
 ### <a name="superseded-icon"></a>Ikona elementów zastąpionych  
- ![ikona](../media/Superseded.jpg "ikona zastąpione") ikonę z żółtą gwiazdkę reprezentuje zastąpionej aktualizacji oprogramowania. Można również zidentyfikować zastąpione aktualizacje oprogramowania, wyświetlając **zastąpione** kolumny dla aktualizacji oprogramowania, gdy są wyświetlane w konsoli programu Configuration Manager.  
+ ![ikona](../media/Superseded.jpg "ikona zastąpione") ikona z żółtą gwiazdką reprezentuje zastąpioną aktualizację oprogramowania. Zastąpione aktualizacje oprogramowania można zidentyfikować także przy **zastąpione** kolumnę do aktualizacji oprogramowania wyświetlanych w konsoli programu Configuration Manager.  
 
  **Opis:**  
 
@@ -71,7 +68,7 @@ Zsynchronizowane aktualizacje oprogramowania są wyświetlane w konsoli programu
  Jeśli to możliwe, należy wdrożyć zastępującą aktualizację oprogramowania na komputerach klienckich zamiast zastąpionej aktualizacji oprogramowania. Listę aktualizacji oprogramowania, które zastępują daną aktualizację oprogramowania, można wyświetlić na karcie **Informacje o zastępowaniu** we właściwościach aktualizacji oprogramowania.  
 
 ### <a name="invalid-icon"></a>Ikona elementów nieprawidłowych  
- ![ikona](../media/Invalid.jpg "ikona nieprawidłowy") ikoną z czerwonym znakiem X reprezentuje Nieprawidłowa aktualizacja oprogramowania.  
+ ![ikona](../media/Invalid.jpg "ikona elementów nieprawidłowych") ikona z czerwonym symbolem X reprezentuje nieprawidłową aktualizację oprogramowania.  
 
  **Opis:**  
 
@@ -83,14 +80,14 @@ Zsynchronizowane aktualizacje oprogramowania są wyświetlane w konsoli programu
 
  **Problemy operacyjne:**  
 
- W przypadku braku zawartości aktualizacji oprogramowania klienci nie są w stanie zainstalować aktualizacji do momentu udostępnienia zawartości w punkcie dystrybucji. Ponowną dystrybucję zawartości do punktów dystrybucji można przeprowadzić przy użyciu akcji **Ponowna dystrybucja** . Jeśli brakuje zawartości dla aktualizacji oprogramowania we wdrożeniu utworzonym w lokacji nadrzędnej, konieczna jest replikacja lub ponowna dystrybucja aktualizacji oprogramowania do lokacji podrzędnej. Aby uzyskać więcej informacji dotyczących ponownej dystrybucji zawartości, zobacz [zarządzanie zawartością, których dystrybucja](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_manage).  
+ W przypadku braku zawartości aktualizacji oprogramowania klienci nie są w stanie zainstalować aktualizacji do momentu udostępnienia zawartości w punkcie dystrybucji. Ponowną dystrybucję zawartości do punktów dystrybucji można przeprowadzić przy użyciu akcji **Ponowna dystrybucja** . Jeśli brakuje zawartości dla aktualizacji oprogramowania we wdrożeniu utworzonym w lokacji nadrzędnej, konieczna jest replikacja lub ponowna dystrybucja aktualizacji oprogramowania do lokacji podrzędnej. Aby uzyskać więcej informacji o ponownej dystrybucji zawartości, zobacz [zarządzania zawartością zostały rozproszonych](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_manage).  
 
 ### <a name="metadata-only-icon"></a>Ikona elementów zawierających tylko metadane
- ![ikona](../media/MetadataOnly.png "ikona tylko metadane") ikona ze strzałką niebieski reprezentuje aktualizacji oprogramowania tylko metadane.
+ ![ikona](../media/MetadataOnly.png "ikona elementów zawierających tylko metadane") ikona z niebieską strzałką reprezentuje aktualizację oprogramowania zawierające tylko metadane.
 
  **Opis:**  
 
- Aktualizacje oprogramowania tylko metadane są dostępne w konsoli programu Configuration Manager do raportowania. Aktualizacji oprogramowania zawierających tylko metadane nie można wdrożyć ani pobrać, ponieważ żaden plik aktualizacji oprogramowania nie jest skojarzony z metadanymi aktualizacji oprogramowania.  
+ Aktualizacje oprogramowania zawierające tylko metadane są dostępne w konsoli programu Configuration Manager do raportowania. Aktualizacji oprogramowania zawierających tylko metadane nie można wdrożyć ani pobrać, ponieważ żaden plik aktualizacji oprogramowania nie jest skojarzony z metadanymi aktualizacji oprogramowania.  
 
  **Problemy operacyjne:**  
 
@@ -100,30 +97,29 @@ Zsynchronizowane aktualizacje oprogramowania są wyświetlane w konsoli programu
  Grupy aktualizacji oprogramowania są reprezentowane przez jedną z następujących ikon.  
 
 ### <a name="normal-icon"></a>Ikona elementów normalnych  
- ![ikona](../media/Normal.jpg "normalna ikona") ikonę z zieloną strzałkę reprezentuje grupę aktualizacji oprogramowania zawierającej aktualizacje oprogramowania tylko normalne.  
+ ![ikona](../media/Normal.jpg "ikona elementów normalnych") ikona z zieloną strzałką reprezentuje grupę aktualizacji oprogramowania zawierającą tylko normalne aktualizacje oprogramowania.  
 
  **Problemy operacyjne:**  
 
  Brak problemów operacyjnych.  
 
 ### <a name="expired-icon"></a>Ikona elementów wygasłych  
- ![ikona](../media/Expired.jpg "ikona wygasłe") ikonę z czarny symbol X reprezentuje grupy aktualizacji oprogramowania, który zawiera co najmniej jeden Wygasłe aktualizacje oprogramowania.  
+ ![ikona](../media/Expired.jpg "ikona wygasłe") ikona z czarnym symbolem X reprezentuje grupę aktualizacji oprogramowania, który zawiera co najmniej jeden Wygasłe aktualizacje oprogramowania.  
 
  **Problemy operacyjne:**  
 
  Jeśli to możliwe, należy usunąć lub zamienić wygasłe aktualizacje oprogramowania w grupie aktualizacji oprogramowania.  
 
 ### <a name="superseded-icon"></a>Ikona elementów zastąpionych  
- ![ikona](../media/Superseded.jpg "ikona zastąpione") ikonę z żółtą gwiazdkę reprezentuje grupę aktualizacji, która zawiera jeden lub więcej zastąpione aktualizacje oprogramowania.  
+ ![ikona](../media/Superseded.jpg "ikona zastąpione") ikona z żółtą gwiazdką reprezentuje grupę aktualizacji oprogramowania, która zawiera jeden lub więcej zastąpione aktualizacje oprogramowania.  
 
  **Problemy operacyjne:**  
 
  Jeśli to możliwe, zastąpioną aktualizację oprogramowania w grupie aktualizacji oprogramowania należy zamienić na zastępującą aktualizację oprogramowania.  
 
 ### <a name="invalid-icon"></a>Ikona elementów nieprawidłowych  
- ![ikona](../media/Invalid.jpg "ikona nieprawidłowy") ikoną z czerwonym znakiem X reprezentuje grupę aktualizacji oprogramowania zawierającą co najmniej jeden nieprawidłowy aktualizacje.  
+ ![ikona](../media/Invalid.jpg "ikona elementów nieprawidłowych") ikona z czerwonym symbolem X reprezentuje grupę aktualizacji oprogramowania, który zawiera co najmniej jednej aktualizacji oprogramowania nieprawidłowy.  
 
  **Problemy operacyjne:**  
 
- W przypadku braku zawartości aktualizacji oprogramowania klienci nie są w stanie zainstalować aktualizacji do momentu udostępnienia zawartości w punkcie dystrybucji. Ponowną dystrybucję zawartości do punktów dystrybucji można przeprowadzić przy użyciu akcji **Ponowna dystrybucja** . Jeśli brakuje zawartości dla aktualizacji oprogramowania we wdrożeniu utworzonym w lokacji nadrzędnej, konieczna jest replikacja lub ponowna dystrybucja aktualizacji oprogramowania do lokacji podrzędnej. Aby uzyskać więcej informacji dotyczących ponownej dystrybucji zawartości, zobacz [zarządzanie zawartością, których dystrybucja](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_manage).  
-
+ W przypadku braku zawartości aktualizacji oprogramowania klienci nie są w stanie zainstalować aktualizacji do momentu udostępnienia zawartości w punkcie dystrybucji. Ponowną dystrybucję zawartości do punktów dystrybucji można przeprowadzić przy użyciu akcji **Ponowna dystrybucja** . Jeśli brakuje zawartości dla aktualizacji oprogramowania we wdrożeniu utworzonym w lokacji nadrzędnej, konieczna jest replikacja lub ponowna dystrybucja aktualizacji oprogramowania do lokacji podrzędnej. Aby uzyskać więcej informacji o ponownej dystrybucji zawartości, zobacz [zarządzania zawartością zostały rozproszonych](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_manage).  

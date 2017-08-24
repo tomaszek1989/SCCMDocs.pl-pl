@@ -1,6 +1,6 @@
 ---
-title: "Capacidades na pré-visualização técnica 1605 do Configuration Manager"
-description: "Saiba mais sobre as funcionalidades disponíveis no Technical Preview do System Center Configuration Manager, versão 1605."
+title: Funkcje w wersji zapoznawczej Technical Preview 1605 programu Configuration Manager
+description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersja 1605."
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
@@ -17,206 +17,206 @@ manager: angrobe
 ms.openlocfilehash: 8b3d472c586e704ee48e9825138c72f655d89492
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pt-PT
+ms.contentlocale: pl-PL
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1605-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1605 do System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1605-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1605 programu System Center Configuration Manager
 
-*Aplica-se a: O System Center Configuration Manager (Technical Preview)*
+*Dotyczy: System Center Configuration Manager (wersja zapoznawcza Technical Preview)*
 
-Este artigo apresenta as funcionalidades que estão disponíveis no Technical Preview do System Center Configuration Manager, versão 1605. Pode instalar esta versão para atualizar e adicionar novas capacidades ao seu local de pré-visualização técnica do Configuration Manager.      Antes de instalar esta versão do technical preview, reveja o tópico introdutórias, [pré-visualização técnica do System Center Configuration Manager](../../core/get-started/technical-preview.md), para se familiarizar com os requisitos gerais e limitações para utilizar como uma pré-visualização técnica, ao atualizar entre versões e como fornecer comentários sobre as funcionalidades de um technical preview.  
+W tym artykule przedstawiono funkcje, które są dostępne w wersji Technical Preview programu System Center Configuration Manager, wersja 1605. Można zainstalować tę wersję, aby zaktualizować i dodać nowe funkcje do lokacji programu Configuration Manager technical preview.      Przed zainstalowaniem tej wersji technical Preview, przejrzyj temat wprowadzający [Technical Preview programu System Center Configuration Manager](../../core/get-started/technical-preview.md), aby zapoznać się z ogólne wymagania i ograniczenia dotyczące używania wersji technical preview, jak zaktualizować między wersjami i sposobu wyrazić swoją opinię na temat funkcji w wersji technical preview.  
 
- **Problemas conhecidos neste Technical Preview:**  
+ **Znane problemy w tej wersji Technical Preview:**  
 
--   Com o Technical Preview 1605, se atualizar as propriedades de um ponto de gestão depois de ser instalado, poderá ver um erro de consola que força a consola para fechar.  Se isto acontecer, pode desinstalar o ponto de gestão e, em seguida, reinstalar o ponto de gestão utilizando as definições pretendidas. Em alternativa, pode modificar o ponto de gestão antes de instalar 1605 de pré-visualização técnica.  
+-   Z 1605 Technical Preview Jeśli zaktualizować właściwości punktu zarządzania po jego zainstalowaniu, mogą występować błąd konsoli, co wymusza konsolę, aby zamknąć.  W takim przypadku można odinstalować punkt zarządzania i ponownie zainstaluj punkt zarządzania za pomocą odpowiednie ustawienia. Alternatywnie można zmodyfikować punktu zarządzania przed zainstalowaniem Technical Preview 1605.  
 
--   Quando utilizar a loja Windows para a funcionalidade de negócio com 1604 de pré-visualização técnica e, em seguida, atualizar para o Technical Preview 1605, já não pode ver os dados de integração. Todos os outros funcionalmente continua a trabalhar. Se integrado com o 1604 de pré-visualização técnica, permanecem integrado depois de instalar 1605 de pré-visualização técnica e não precisa de tomar nenhuma ação adicional.  
+-   Gdy korzystanie ze Sklepu Windows dla firm funkcji z 1604 Technical Preview, a następnie uaktualnić Technical Preview 1605, nie będzie mógł wyświetlać dane dołączania. Wszystkie inne funkcjonalnie pozostaje uruchomiona. Jeśli użytkownik został załadowany z 1604 Technical Preview, użytkownik pozostanie został załadowany po zainstalowaniu Technical Preview 1605 i muszą podejmować żadnych dodatkowych czynności.  
 
- **Seguem-se novas funcionalidades que pode experimentar com esta versão.**  
+ **Poniżej przedstawiono nowe funkcje, które można wypróbować z tą wersją.**  
 
-##  <a name="BKMK_PerAppVPN"></a>Dispositivos de VPN para Windows 10 por aplicação  
- Para dispositivos do Windows 10 geridos com o Configuration Manager com o Intune, pode adicionar uma lista de aplicações que abra automaticamente uma ligação de VPN que tiver configurado através da consola de administração do Configuration Manager. Tem a opção de restringir o tráfego VPN para essas aplicações, ou pode continuar a permitir todo o tráfego através da ligação VPN.  
+##  <a name="BKMK_PerAppVPN"></a>Urządzenia sieci VPN dla systemu Windows 10 dla aplikacji  
+ Dla urządzeń z systemem Windows 10 zarządzane przy użyciu programu Configuration Manager z usługą Intune możesz dodać listę aplikacji, które automatycznie otwarte połączenie sieci VPN, który został skonfigurowany za pomocą konsoli administracyjnej programu Configuration Manager. Istnieje możliwość ograniczenia ruchu sieci VPN do aplikacji, lub możesz zezwolić na cały ruch przez połączenie VPN.  
 
- **Requisitos**:  
+ **Wymagania dotyczące**:  
 
--   Configuration Manager com Intune  
+-   Program Configuration Manager z usługą Intune  
 
--   Um perfil de VPN do Windows 10 que tenha sido implementado, pelo menos, um dispositivo  
+-   Profil sieci VPN systemu Windows 10, który został wdrożony co najmniej jedno urządzenie  
 
-##  <a name="BKMK_InstallSU"></a>Melhoramentos para a sequência de tarefas instalar atualizações de software  
- Foram efetuadas as seguintes melhorias à sequência de tarefas instalar atualizações de Software:  
+##  <a name="BKMK_InstallSU"></a>Ulepszenia sekwencja zadań instalacji aktualizacji oprogramowania  
+ Do sekwencji zadań Zainstaluj aktualizacje oprogramowania zostały wprowadzone następujące udoskonalenia:  
 
--   Uma variável de sequência de tarefas novo, SMSTSSoftwareUpdateScanTimeout, está disponível para lhe fornecer a capacidade para controlar o tempo limite a análise de atualizações de software durante o passo de sequência de tarefas de atualizações de software de instalação. O valor predefinido é 30 minutos.  
+-   Nową zmienną sekwencji zadań, SMSTSSoftwareUpdateScanTimeout, jest dostępna daje możliwość kontrolowania limitu czasu na skanowanie aktualizacji oprogramowania podczas kroku sekwencji zadań instalacji oprogramowania aktualizacji. Wartość domyślna to 30 minut.  
 
--   Foram melhoramentos ao registo. O ficheiro de registo smsts.log irá conter novas entradas de registo referenciam outros ficheiros de registo que o irão ajudar a resolver problemas durante o processo de instalação de atualizações de software.  
+-   Zostały ulepszenia rejestrowania. Plik dziennika smsts.log będzie zawierać nowych wpisów dziennika, które odwołują się do innych plików dziennika, które ułatwią rozwiązywanie problemów podczas procesu instalacji aktualizacji oprogramowania.  
 
-##  <a name="BKMK_PrepareConfigMgrClient"></a>Melhoramentos ao preparar ConfigMgr Client para captura de passo de sequência de tarefas  
- O passo de preparar ConfigMgr Client agora removerá totalmente o cliente do Configuration Manager, em vez de apenas remover informações de chave. Quando a sequência de tarefas, implementa a imagem do sistema operativo capturada, instalará um novo cliente de Configuration Manager cada vez.  
+##  <a name="BKMK_PrepareConfigMgrClient"></a>Ulepszenia, aby przygotować klienta programu ConfigMgr dla kroku sekwencji zadań przechwytywania  
+ Przygotuj klienta programu ConfigMgr krok teraz spowoduje całkowite usunięcie klienta programu Configuration Manager, a nie tylko usunięcie informacji o kluczu. Jeśli sekwencja zadań wdrażania przechwyconego obrazu systemu operacyjnego zainstaluje nowy klient programu Configuration Manager zawsze.  
 
-##  <a name="BKMK_Grace"></a>Período de tolerância para implementações de aplicações necessárias  
- Em alguns casos, poderá conceder aos utilizadores mais tempo a instalar as implementações de aplicações necessárias, para além de qualquer prazos que configurou. Por exemplo, se um utilizador final tiver apenas devolvido de férias, poderá ter de aguardar algum enquanto como uma aplicação em atraso implementações estão instaladas. No entanto, ainda imediatamente podem instalar a aplicação em qualquer altura em que pretende.  
+##  <a name="BKMK_Grace"></a>Okres prolongaty dla wymaganych wdrożeń aplikacji  
+ W niektórych przypadkach może być zapewniają użytkownikom więcej czasu w celu zainstalowania wymaganych wdrożeń aplikacji poza wszystkie terminy, które zostały skonfigurowane. Na przykład jeśli użytkownik końcowy zwrócił się tylko z urlopu, ich może być konieczne Zaczekaj, aż do postaci długiej jako zaległe aplikacji są zainstalowane wdrożeń. Jednak nadal natychmiast mogą zainstalować aplikację w dowolnym momencie, które mają.  
 
- Para ajudar a resolver este problema, agora pode definir um **período de tolerância** ao implementar as definições de cliente do Configuration Manager para uma coleção.  
+ Aby rozwiązać ten problem, można zdefiniować **okres prolongaty** przez wdrożenie ustawienia klienta programu Configuration Manager do kolekcji.  
 
- Para configurar o período de tolerância, efetuar as seguintes ações:  
+ Aby skonfigurować okres prolongaty, należy wykonać następujące czynności:  
 
-1.  No **agente do computador** página de definições de cliente, configure a nova propriedade **período de tolerância para a imposição após a implementação do prazo (horas)** com um valor entre **1** e **120** horas.  
+1.  Na **Agent komputera** strony ustawień klienta, należy skonfigurować nową właściwość **okres prolongaty wymuszania po wdrożeniu terminu wdrożenia (godziny)** z wartością pomiędzy **1** i **120** godzin.  
 
-2.  Numa nova implementação de aplicação ou nas propriedades de uma implementação existente, no **agendamento** página, selecione a caixa de verificação **atrasar imposição para esta implementação, de acordo com as preferências do utilizador**, até ao período de tolerância definido nas definições do cliente.  
+2.  W ramach nowego wdrożenia aplikacji lub we właściwościach istniejącego wdrożenia na **Planowanie** strony, zaznacz pole wyboru **Opóźnij wymuszenie dotyczące tego wdrożenia zgodnie z preferencjami użytkownika**, do okresu prolongaty zdefiniowanego w ustawieniach klienta.  
 
-     Todas as implementações que tenham esta caixa de verificação selecionada e são os que são direcionadas para os dispositivos nos quais tiver implementado também a definição de cliente utilizará o período de tolerância.  
+     Wszystkie wdrożenia, które mają to pole wyboru zaznaczone i które są przeznaczone dla urządzeń, na których wdrożono również ustawienie klienta będzie używać okresu prolongaty.  
 
- Nesta versão, o período de tolerância que configurar não é utilizado pelos dispositivos cliente. Se configurar um período de tolerância e selecione a caixa de verificação, a aplicação será instalada na primeira janela de empresa-empresa que o utilizador configurado após o prazo.  
+ W tej wersji okres prolongaty, które można skonfigurować nie jest używany przez urządzenia klienckie. Skonfiguruj okres prolongaty, zaznacz pole wyboru aplikacja zostanie zainstalowana w pierwszym oknie-business skonfigurowanego przez użytkownika po upływie ostatecznego terminu.  
 
- Foram adicionadas opções semelhantes para o Assistente de implementação de atualizações de software, o Assistente de regras de implementação automática e páginas de propriedades. No entanto, estes não estão implementados nesta pré-visualização técnica.  
+ Podobne opcje zostały dodane do Kreatora wdrażania aktualizacji oprogramowania, Kreator reguł wdrażania automatycznego i strony właściwości. Jednak te nie są obecnie implementowane w tej wersji technical preview.  
 
-##  <a name="BKMK_Remote"></a>Nova experiência para as ações do dispositivo remoto  
- A experiência para efetuar ações do dispositivo remoto a partir da consola do Configuration Manager foi melhorada.  
-Ações comuns, tais como **extinguir/limpar**, **repor código de acesso**, **bloqueio remoto**, e **ignorar bloqueio de ativação** agora podem ser encontrados no **ações do dispositivo remoto** acedido a partir do menu de **ativos e compatibilidade** área de trabalho.  
+##  <a name="BKMK_Remote"></a>Nowe środowisko dla akcji urządzeniu zdalnym  
+ Udoskonalono obsługę wykonywania akcji urządzenia zdalnego z konsoli programu Configuration Manager.  
+Typowe akcje, takie jak **Wycofaj/wyczyść**, **resetowania kodu dostępu**, **zdalne blokowanie**, i **obejścia blokady aktywacji** można znaleźć w **akcje urządzeń zdalnych** menu użytkowcy **zasoby i zgodność** obszaru roboczego.  
 
- ![Captura de ecrã de ações do dispositivo remoto novo](media/New-Remote-Device-Actions.png)  
+ ![Nowe akcje urządzeń zdalnych zrzut ekranu](media/New-Remote-Device-Actions.png)  
 
- Pode encontrar o estado para cada uma destas operações nos seguintes locais:  
+ Stan dla każdego z tych działań można znaleźć w następujących miejscach:  
 
--   No painel de detalhes, quando seleciona um dispositivo a partir do **dispositivos** nós.  
+-   W okienku szczegółów, po wybraniu urządzenia z **urządzeń** węzła.  
 
--   No **propriedades** página para um dispositivo.  
+-   Na **właściwości** strony dla urządzenia.  
 
--   Na página principal do **dispositivos** nó (nem todas as colunas poderão ser visíveis por predefinição).  
+-   Na stronie głównej **urządzeń** węzła (nie wszystkie kolumny mogą być widoczne domyślnie).  
 
- Para obter mais informações sobre a desativação do bloqueio de ativação de iOS, consulte [ajudar a proteger dispositivos iOS com o bloqueio de ativação desativando para o Configuration Manager](/sccm/mdm/deploy-use/manage-ios-activation-lock), em particular, a **ignorar atuais problemas conhecidos com o bloqueio de ativação no Configuration Manager Technical Preview** secção.  
+ Aby uzyskać więcej informacji na temat obejścia blokady aktywacji systemu iOS, zobacz [Łatwiejsza ochrona urządzeń z blokady aktywacji obejścia dla programu Configuration Manager dla systemu iOS](/sccm/mdm/deploy-use/manage-ios-activation-lock), w szczególności **obejście obecnie znane problemy z blokady aktywacji w programu Configuration Manager Technical Preview** sekcji.  
 
-##  <a name="BKMK_WSFB"></a>Loja Windows para as aplicações da empresa  
- O [loja Windows para empresas](https://www.microsoft.com/business-store) é onde pode encontrar e adquirir aplicações para a sua organização, individualmente ou em volume. Ao ligar a loja ao Configuration Manager, pode gerir aplicações compradas em volume da consola do Configuration Manager, por exemplo:  
+##  <a name="BKMK_WSFB"></a>Sklep Windows dla aplikacji biznesowych  
+ [Sklep Windows dla firm](https://www.microsoft.com/business-store) jest, gdzie można znaleźć i zakupić aplikacje dla Twojej organizacji, pojedynczo lub zbiorczo. Łącząc Sklep do programu Configuration Manager, można zarządzać aplikacjami zakupionymi zbiorczo z poziomu konsoli programu Configuration Manager, na przykład:  
 
--   Pode sincronizar a lista de aplicações adquiridas com o Configuration Manager  
+-   Możesz zsynchronizować listę zakupionych aplikacji z programu Configuration Manager  
 
--   As aplicações que são sincronizadas aparecem na consola do Configuration Manager e pode implementá-las como todas as outras aplicações  
+-   Aplikacje, które są synchronizowane są wyświetlane w konsoli programu Configuration Manager i można wdrażać je tak jak wszystkie inne aplikacje  
 
--   A cada 24 horas, Configuration Manager transfere as informações de licenciamento de aplicações da loja e pode rever este na consola do Configuration Manager  
+-   Co 24 godziny, Configuration Manager pobiera informacje o licencji aplikacji ze sklepu i można to sprawdzić w konsoli programu Configuration Manager  
 
- Na versão 1604 technical preview, pode sincronizar e ver as aplicações da loja Windows para empresas na consola do Configuration Manager. Nesta versão, foi adicionado a capacidade de criar e implementar aplicações do Configuration Manager a partir de aplicações da loja sincronizados.  
+ W wersji 1604 technical preview można zsynchronizować i wyświetlić aplikacje w Sklepie Windows dla firm w konsoli programu Configuration Manager. W tej wersji dodano możliwość tworzenia i wdrażania aplikacji programu Configuration Manager z aplikacji ze sklepu zsynchronizowane.  
 
-### <a name="set-up-windows-store-for-business-synchronization"></a>Configurar a loja Windows para a sincronização de negócio  
+### <a name="set-up-windows-store-for-business-synchronization"></a>Konfigurowanie Sklepu Windows dla firm synchronizacji  
 
-1.  No Azure Active Directory, registe o Configuration Manager como uma ferramenta de gestão "Aplicação Web e/ou API Web". Isto irá dar-lhe um ID de cliente que irá precisar mais tarde.  
+1.  W usłudze Azure Active Directory należy zarejestrować programu Configuration Manager jako narzędzie do zarządzania "API sieci Web i/lub aplikacji sieci Web". Otrzymasz identyfikator klienta, który będzie potrzebny później.  
 
-    1.  No nó do Active Directory da [https://manage.windowsazure.com](https://manage.windowsazure.com), selecione o seu Azure Active Directory, em seguida, clique em **aplicações** > **adicionar**.  
+    1.  W węźle usługi Active Directory [https://manage.windowsazure.com](https://manage.windowsazure.com), wybierz w usłudze Azure Active Directory, a następnie kliknij przycisk **aplikacji** > **Dodaj**.  
 
-    2.  Clique em **adicionar uma aplicação que a minha organização está a desenvolver**.  
+    2.  Kliknij przycisk **Dodaj aplikację moją organizację**.  
 
-    3.  Introduza um nome para a aplicação, selecione **aplicação Web** e/ou **Web API**, em seguida, clique o **seguinte** seta.  
+    3.  Wprowadź nazwę aplikacji, wybierz pozycję **aplikacji sieci Web** i/lub **interfejsu API sieci Web**, następnie kliknij przycisk **dalej** strzałki.  
 
-    4.  Introduza o mesmo URL para ambos os **URL de início de sessão** e **URI de ID de aplicação**. O URL pode ser qualquer coisa e não precisa de resolver para um endereço real. Por exemplo, pode introduzir **https://&lt;oseudomínio > / sccm**.  
+    4.  Wprowadź ten sam adres URL dla obu **adres URL logowania** i **identyfikator URI aplikacji**. Adres URL może być dowolny i nie musi prowadzić do faktycznego adresu. Na przykład można wprowadzić **https://&lt;domena > / sccm**.  
 
-    5.  Conclua o assistente.  
+    5.  Ukończ pracę kreatora.  
 
-2.  No Azure Active Directory, crie uma chave de cliente para a ferramenta de gestão registada.  
+2.  W usłudze Azure Active Directory Utwórz klucz klienta dla zarejestrowanego narzędzia do zarządzania.  
 
-    1.  Realce a aplicação que acabou de criar e clique em **configurar**.  
+    1.  Wyróżnij utworzoną aplikację i kliknij przycisk **Konfiguruj**.  
 
-    2.  Em **chaves**, selecione uma duração da lista e clique em **guardar**. Isto irá criar uma nova chave de cliente. Não saia desta página até ter com êxito integrado da loja Windows para empresas para o Configuration Manager.  
+    2.  W obszarze **klucze**, wybierz czas trwania z listy i kliknij przycisk **zapisać**. Spowoduje to utworzenie nowego klucza klienta. Nie opuścić tę stronę, dopóki nie zakończysz dołączania Sklepu Windows dla firm do programu Configuration Manager.  
 
-3.  Na loja Windows para empresas, configure o Configuration Manager como a ferramenta de gestão de armazenamento.  
+3.  W Sklepie Windows dla firm należy skonfigurować programu Configuration Manager jako narzędzie do zarządzania magazynami.  
 
-    1.  Abra [https://businessstore.microsoft.com/en-us/managementtools](https://businessstore.microsoft.com/managementtools) e início de sessão se lhe for pedido.  
+    1.  Otwórz [https://businessstore.microsoft.com/en-us/managementtools](https://businessstore.microsoft.com/managementtools) i zaloguj się w przypadku wyświetlenia monitu.  
 
-    2.  Aceite os termos de utilização, se necessário.  
+    2.  Zaakceptuj warunki użytkowania, jeśli jest to wymagane.  
 
-    3.  Em **ferramentas de gestão**, clique em **adicionar uma ferramenta de gestão**.  
+    3.  W obszarze **narzędzia do zarządzania**, kliknij przycisk **Dodaj narzędzie do zarządzania**.  
 
-    4.  No **pesquisar a ferramenta por nome**, escreva o nome da aplicação que criou anteriormente no AAD, em seguida, clique em **adicionar**.  
+    4.  W **Wyszukaj narzędzie według nazwy**, wpisz nazwę aplikacji wcześniej utworzony w usłudze AAD, a następnie kliknij przycisk **Dodaj**.  
 
-    5.  Clique em **ativar** junto da aplicação que acabou de importar.  
+    5.  Kliknij przycisk **Aktywuj** obok zaimportowanej aplikacji.  
 
-    6.  No **aplicações licenciadas offline** assistente, clique em **Sim** se pretender permitir que as aplicações licenciadas offline sejam compradas.  
+    6.  W **Pokaż aplikacje** kreatora, kliknij przycisk **tak** Jeśli chcesz zezwolić na można kupić aplikacji licencjonowanych w trybie offline.  
 
-4.  Compre pelo menos uma aplicação da loja Windows para empresas.  
+4.  Zakup co najmniej jedną aplikację ze Sklepu Windows dla firm.  
 
-5.  No **administração** área de trabalho da consola do Configuration Manager, expanda **serviços em nuvem**, em seguida, clique em **loja Windows para empresas.**  
+5.  W **administracji** obszaru roboczego w konsoli programu Configuration Manager, rozwiń węzeł **usługi w chmurze**, następnie kliknij przycisk **Sklep Windows dla firm.**  
 
-6.  No **home page** separador o **criar** , clique em **adicionar da loja Windows para empresas conta**.  
+6.  Na **Home** karcie **Utwórz** kliknij przycisk **Dodaj Sklepu Windows dla firm**.  
 
-7.  Adicione o ID do inquilino, o id de cliente e a chave de cliente do Azure Active Directory, em seguida, conclua o assistente.  
+7.  Dodaj identyfikator dzierżawy, identyfikator klienta i klucz klienta z usługi Azure Active Directory, a następnie Ukończ pracę kreatora.  
 
-8.  Quando tiver terminado, verá a conta configurada no **da loja Windows para empresas contas** lista na consola do Configuration Manager.  
+8.  Gdy wszystko będzie gotowe, zobaczysz skonfigurowane konto **Sklepu Windows dla firm kont** listy w konsoli programu Configuration Manager.  
 
-### <a name="try-it-out"></a>Experimente!  
- Tentar concluir a seguinte tarefa e, em seguida, informe-nos como correu utilizando o nosso formulário de comentários no [programa de feedback do Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) página no site Microsoft Connect:  
+### <a name="try-it-out"></a>Wypróbuj  
+ Spróbuj wykonać poniższe zadanie, a następnie Daj nam znać, jak Ci poszło za pomocą formularza opinii na [programu przekazywania opinii dotyczących programu Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) w witrynie Microsoft Connect:  
 
- Criar e implementar uma aplicação do Configuration Manager de uma loja Windows para empresas as aplicações licenciadas offline.  
+ Tworzenie i wdrażanie aplikacji programu Configuration Manager w Sklepie Windows dla firm w trybie offline licencjonowanej aplikacji.  
 
-1.  No **biblioteca de Software** área de trabalho da consola do Configuration Manager, expanda **gestão de aplicações**, em seguida, clique em **informações de licença para aplicações da loja**.  
+1.  W **Biblioteka oprogramowania** obszaru roboczego w konsoli programu Configuration Manager, rozwiń węzeł **Zarządzanie aplikacjami**, następnie kliknij przycisk **informacji o licencji dla aplikacji ze sklepu**.  
 
-2.  Escolha a aplicação que pretende implementar, em seguida, no **home page** separador o **criar** , clique em **Criar aplicação**.  
+2.  Wybierz aplikację, którą chcesz wdrożyć, a następnie na **Home** karcie **Utwórz** kliknij przycisk **tworzenie aplikacji**.  
 
- Uma aplicação do Configuration Manager é criada que contém a loja Windows para a aplicação de negócio. Em seguida, pode implementar e monitorizar esta aplicação como faria com qualquer outra aplicação do Configuration Manager.  
+ Tworzenia aplikacji programu Configuration Manager zawierający Sklepu Windows dla aplikacji biznesowych. Można następnie wdrożyć i monitorować tej aplikacji, jak w przypadku innych aplikacji programu Configuration Manager.  
 
 > [!IMPORTANT]  
->  Quando cria uma aplicação do Configuration Manager com um tipo de implementação única a partir de uma aplicação com licença offline, isto pode ser implementado em dispositivos que tenham MDM gerida e também são geridos com o cliente do Configuration Manager. Se tentar implementar uma aplicação com vários tipos de implementação, a instalação irá falhar.  
+>  Podczas tworzenia aplikacji programu Configuration Manager z pojedynczym typem wdrożenia aplikacji licencjonowanych w trybie offline, to można wdrożyć na urządzeniach, które są MDM zarządzane, a także zarządzać za pomocą klienta programu Configuration Manager. Jeśli spróbujesz wdrożenia aplikacji z wieloma typami wdrożeń, instalacja nie powiedzie się.  
 >   
->  Atualmente não é possível implementar as aplicações licenciadas online com o Configuration Manager.  
+>  Obecnie nie można wdrożyć aplikacji licencjonowanych online z programem Configuration Manager.  
 
-##  <a name="BKMK_VPP2"></a>Melhoramentos gerais para as aplicações compradas em volume  
+##  <a name="BKMK_VPP2"></a>Ogólne poprawki dotyczące aplikacje nabyte zbiorczo  
 
--   Nesta versão, as aplicações compradas na loja Windows para empresas e a aplicação iOS arquivo ter sido consolidados na mesma vista, **informações de licença para armazenar aplicações**.  
+-   W tej wersji, aplikacjami zakupionymi zbiorczo w Sklepie Windows dla firm i aplikacji dla systemu iOS magazynu zostały skonsolidowane do tego samego widoku **informacji o licencji dla aplikacji do przechowywania**.  
 
--   Para aplicações compradas em volume do iOS, no separador de Apple Volume Purchase Program foi removido do **pacote de aplicação para o iOS Browser** caixa de diálogo no Assistente para criar aplicação. Para criar uma aplicação comprada em volume para iOS, utilize estes passos:  
+-   Dla aplikacji systemu iOS zakupionymi zbiorczo, na karcie Apple Volume Purchase Program został usunięty z **pakiet aplikacji dla systemu iOS — przeglądarka** okno dialogowe, w kreatorze tworzenia aplikacji. Aby utworzyć aplikację zakupów zbiorczych dla systemu iOS, wykonaj następujące kroki:  
 
-    1.  1.  No **biblioteca de Software** área de trabalho da consola do Configuration Manager, expanda **gestão de aplicações**, em seguida, clique em **informações de licença para aplicações da loja**.  
+    1.  1.  W **Biblioteka oprogramowania** obszaru roboczego w konsoli programu Configuration Manager, rozwiń węzeł **Zarządzanie aplikacjami**, następnie kliknij przycisk **informacji o licencji dla aplikacji ze sklepu**.  
 
-    2.  2.  Escolha a aplicação que pretende implementar, em seguida, no **home page** separador o **criar** , clique em **Criar aplicação**.  
+    2.  2.  Wybierz aplikację, którą chcesz wdrożyć, a następnie na **Home** karcie **Utwórz** kliknij przycisk **tworzenie aplikacji**.  
 
--   A localização que utilizar para obter e carregar um token VPP da Apple para aplicações compradas em volume na consola do Configuration Manager foi alterada. Agora pode fazer isto no **Admin** área de trabalho no **serviços Cloud** > **Tokens do Apple Volume Purchase Program** nós.  
+-   Lokalizacja, używaną do pobrania i przekaż token VPP firmy Apple dla aplikacjami zakupionymi zbiorczo w konsoli programu Configuration Manager została zmieniona. Teraz można to zrobić w **Admin** obszarze roboczym **usługi w chmurze** > **tokenów Program zakupu woluminu Apple** węzła.  
 
-##  <a name="BKMK_VPP"></a>Proteção de dados empresariais (EDP)  
- Pode criar itens de configuração que permitem-lhe implementar as políticas de proteção (EDP) de dados empresariais, incluindo, permitindo-lhe escolher as aplicações protegidas, o nível de proteção de EDP e como dados empresariais são localizados na rede. Para obter mais informações sobre EDP, consulte os tópicos seguintes:  
+##  <a name="BKMK_VPP"></a>Ochrona danych przedsiębiorstwa (EDP)  
+ Możesz utworzyć elementy konfiguracji, które pozwalają na wdrożenie zasad ochrony (EDP) danych przedsiębiorstwa, tym, co pozwala wybrać chronionych aplikacji, poziom ochrony EDP i jak znaleźć dane organizacji w sieci. Aby uzyskać więcej informacji na temat ochrony danych przedsiębiorstwa zobacz następujące tematy:  
 
--   [Proteger os dados de enterprise através de proteção de dados empresariais (EDP)](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-edp)  
+-   [Chroń dane przedsiębiorstwa przy użyciu ochrony danych przedsiębiorstwa (EDP)](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-edp)  
 
--   [Criar e implementar uma política de proteção (EDP) de dados empresariais com o System Center Configuration Manager](https://technet.microsoft.com/itpro/windows/keep-secure/create-edp-policy-using-sccm)  
+-   [Tworzenie i wdrażanie zasad ochrony (EDP) dane przedsiębiorstwa przy użyciu programu System Center Configuration Manager](https://technet.microsoft.com/itpro/windows/keep-secure/create-edp-policy-using-sccm)  
 
-##  <a name="BKMK_End"></a>Os utilizadores finais podem instalar aplicações a partir do Portal da empresa  
- No local MDM foi introduzida do System Center Configuration Manager versão 1511. Em versões anteriores, pode implementar aplicações em dispositivos Windows 10 geridos por MDM com um objetivo de implementação **necessário** instalar para dispositivos de geridos por MDM no local.  
+##  <a name="BKMK_End"></a>Użytkownicy końcowi mogą instalować aplikacje z portalu firmy  
+ Lokalna Usługa zarządzania urządzeniami Przenośnymi została wprowadzona w System Center Configuration Manager w wersji 1511. W poprzednich wersjach, można wdrażać aplikacji dla urządzeń zarządzanych MDM systemu Windows 10 z celem wdrożenia **wymagane** zainstalować dla urządzeń zarządzanych MDM lokalnych.  
 
- Nesta versão, pode agora implementar aplicações com um objetivo de implementação **disponível** MDM utilizadores no local geridas computadores Windows 10 e os utilizadores podem agora instalar estas aplicações próprios no Portal da empresa.
-Nesta pré-visualização técnica, se o Portal da empresa está aberto durante mais de 15 minutos, o utilizador final verá uma mensagem de erro. Para contornar este problema, reinicie o Portal da empresa.  
+ W tej wersji, mogą obecnie wdrażać aplikacje z celem wdrożenia **dostępne** dla użytkowników lokalnych MDM zarządzanych komputerów z systemem Windows 10, a użytkownicy mogą teraz instalować te same aplikacje z portalu firmy.
+W tej wersji technical preview Jeśli Portal firmy jest otwarty przez ponad 15 minut, użytkownik końcowy zostanie wyświetlony komunikat o błędzie. Aby obejść ten problem, uruchom ponownie Portal firmy.  
 
-### <a name="before-you-start"></a>Antes de começar  
+### <a name="before-you-start"></a>Przed rozpoczęciem  
 
-#### <a name="server-prerequisites"></a>Pré-requisitos do  
+#### <a name="server-prerequisites"></a>Wymagania wstępne serwera  
 
--   .NET 4.5 ou superior (necessita de reinicialização)  
+-   .NET 4.5 lub wyższej (wymaga ponownego uruchomienia)  
 
--   PowerShell 3.0 para o script de configuração (necessita de reinicialização)  
+-   PowerShell 3.0 dla skryptu konfiguracji (wymaga ponownego uruchomienia)  
 
-#### <a name="client-prerequisites"></a>Pré-requisitos do cliente  
+#### <a name="client-prerequisites"></a>Wymagania wstępne klienta  
 
--   Windows 10 Desktop 1511 (compilação 10586.218 SO) ou posterior  
+-   Systemu Windows 10 Desktop 1511 (kompilacja 10586.218 systemu operacyjnego) lub nowszy  
 
-#### <a name="general-prerequisites"></a>Pré-requisitos gerais  
+#### <a name="general-prerequisites"></a>Ogólne wymagania wstępne  
 
--   Certifique-se de que concluiu o [passos de preparação para gestão de dispositivos móveis no local](https://technet.microsoft.com/library/mt613153.aspx) e [inscrito os seus dispositivos](https://technet.microsoft.com/library/mt627870.aspx).  
+-   Upewnij się, zostały ukończone [kroki przygotowania do zarządzania urządzeniami przenośnymi lokalnymi](https://technet.microsoft.com/library/mt613153.aspx) i [zarejestrowaniu urządzeń](https://technet.microsoft.com/library/mt627870.aspx).  
 
--   Para a aplicação melhor instalar a experiência de utilização ao utilizar o Portal da empresa, certifique-se de que o Configuration Manager tem uma ligação ativa para o Microsoft Intune.  
+-   Stosowania najlepszych zainstalować środowisko podczas korzystania z portalu firmy, upewnij się, że programu Configuration Manager ma aktywnego połączenia w usłudze Microsoft Intune.  
 
--   Se escolher a opção de inscrição em massa, configure a afinidade de dispositivo / utilizador para o dispositivo inscrito antes de tentar este cenário.  
+-   Po wybraniu opcji rejestracji zbiorczej, należy skonfigurować koligację urządzenia użytkownika dla zarejestrowanych urządzeń przed podjęciem próby tego scenariusza.  
 
-### <a name="configuration-steps"></a>Passos de configuração  
+### <a name="configuration-steps"></a>Kroki konfiguracji  
 
-#### <a name="install-the-application-catalog-roles-and-enable-mobile-device-management-support"></a>Instalar as funções de catálogo de aplicações e ativar o suporte de gestão de dispositivos móveis  
+#### <a name="install-the-application-catalog-roles-and-enable-mobile-device-management-support"></a>Zainstalowanie ról wykazu aplikacji i włączyć obsługę zarządzania urządzeniami przenośnymi  
 
-1.  Adicione as funções do serviço de Web do catálogo de aplicações e Web Site  
+1.  Dodawanie ról Usługa sieci Web wykazu aplikacji i witrynę sieci Web  
 
-    1.  Selecione **modo HTTPS** e **permitir que os dispositivos móveis utilizem este ponto de serviço de Web do catálogo de aplicações** opção.  
+    1.  Wybierz **tryb HTTPS** i **Zezwalaj urządzeniom przenośnym na korzystanie z tego punktu usługi sieci Web katalogu aplikacji** opcji.  
 
-    2.  Limitações nesta pré-visualização técnica:  
+    2.  Ograniczenia w tej wersji Technical Preview:  
 
-        -   Tem de desinstalar quaisquer funções de catálogo de aplicações existentes antes de selecionar a opção para permitir que dispositivos móveis se liguem.  
+        -   Przed wybraniem opcji, aby umożliwić urządzeniom przenośnym na łączenie odinstaluj wszelkie istniejące role katalogu aplikacji.  
 
-        -   Certifique-se de que existe apenas um conjunto de funções de catálogo de aplicações e as funções estão colocalizadas no mesmo sistema de sites com o ponto de registo e as funções de ponto de Proxy de registo.  
+        -   Upewnij się, istnieje tylko jeden zestaw ról wykazu aplikacji i role wspólnie znajdują się w systemie lokacji punktu rejestracji i ról punktu Proxy rejestracji.  
 
-2.  Certifique-se de que os seguintes componentes estão operacionais nó Estado do componente na consola do Configuration Manager:  
+2.  Sprawdź, czy działają następujące składniki w węźle stan składnika w konsoli programu Configuration Manager:  
 
     -   **SMS_AWEBSVC_CONTROL_MANAGER**  
 
@@ -226,88 +226,88 @@ Nesta pré-visualização técnica, se o Portal da empresa está aberto durante 
 
     -   **SMS_PORTALWEB_CONTROL_MANAGER**  
 
-### <a name="configure-boundaries"></a>Configurar limites  
- Configure limites necessários apenas de intranet para pontos de distribuição.  
+### <a name="configure-boundaries"></a>Konfigurowanie granic  
+ Skonfiguruj wymagane granice dla intranetowe punkty dystrybucji.  
 
 > [!NOTE]  
->  Limites de intervalo IPv4 apenas são suportados neste momento para gestão de dispositivos móveis.  
+>  Tylko granice zakresów IPv4, są obsługiwane w tej chwili do zarządzania urządzeniami przenośnymi.  
 
-### <a name="deploy-the-company-portal-application-and-configuration"></a>Implementar a aplicação Portal da empresa e a configuração  
+### <a name="deploy-the-company-portal-application-and-configuration"></a>Wdrażanie aplikacji Portal firmy i konfiguracji  
 
-1.  Utilize o script de configuração incluído com o technical preview para preparar a implementação do Portal da empresa e a configuração:  
+1.  Użyj skryptu konfiguracji dołączone do wersji zapoznawczej technical preview do przygotowania wdrożenia aplikacji Portal firmy i konfiguracji:  
 
-    1.  Abra uma janela de comandos elevada do PowerShell.  
+    1.  Otwórz okno polecenia programu PowerShell z podwyższonym poziomem uprawnień programu.  
 
-    2.  Executar **set-executionPolicy RemoteSigned**  
+    2.  Uruchom **set-executionPolicy RemoteSigned**  
 
-    3.  Na pasta  **&lt;diretório de instalação do SCCM\>\cd.latest\SMSSETUP\TOOLS\MDM** executar **.\ConfigurationScript.ps1**  
+    3.  Z folderu  **&lt;katalog instalacyjny programu SCCM\>\cd.latest\SMSSETUP\TOOLS\MDM** Uruchom **.\ConfigurationScript.ps1**  
 
-     O script de configuração faz o seguinte:  
+     Skrypt konfiguracji wykonuje następujące czynności:  
 
-    1.  Cria uma aplicação do Configuration Manager com um Windows aplicação pacote implementação tipo utilizando **CompanyPortalOnPremisesMDM.appx** na mesma pasta.  
+    1.  Tworzy aplikacji programu Configuration Manager z systemu Windows aplikacja pakietu wdrożenia typu za pomocą **CompanyPortalOnPremisesMDM.appx** w tym samym folderze.  
 
-    2.  Cria um item de configuração e a linha de base de configuração configura o Portal da empresa.  
+    2.  Tworzy element konfiguracji i linii bazowej konfiguracji, który konfiguruje portalu firmy.  
 
-    3.  Implementa a linha de base de configuração e a aplicação e adiciona a aplicação por todos os pontos de distribuição.  
+    3.  Wdraża zarówno linii bazowej konfiguracji, jak i aplikacji, a następnie dodaje aplikację do wszystkich punktów dystrybucji.  
 
     > [!NOTE]  
-    >  Se as funções de catálogo de aplicações não estão colocalizadas com o site primário, execute as ações seguintes:  
+    >  Jeśli role katalogu aplikacji nie znajdują się w lokacji głównej, należy wykonać następujące czynności:  
     >   
-    >  -   No **ativos e compatibilidade** área de trabalho, localize o **CI de configuração do Portal OnPremMDM - urls do servidor** item de configuração  
-    > -   Alterar o **regras de compatibilidade** valor para o nome de domínio completamente qualificado do sistema de sites onde estão localizadas as funções de catálogo de aplicações.  
+    >  -   W **zasoby i zgodność** obszaru roboczego, zlokalizuj **OnPremMDM Portal konfiguracji CI - adresów URL serwera** elementu konfiguracji  
+    > -   Zmień **reguły zgodności** wartość do w pełni kwalifikowaną nazwą domeny systemu lokacji, w którym ról katalogu aplikacji znajdują się.  
 
-2.  Depois da aplicação Portal da empresa e a respetiva configuração são implementados, certifique-se a linha de base de configuração e aplicações são compatíveis para utilizar o dispositivo determinado **implementações** secção da consola do Configuration Manager. O Portal da empresa irá aparecer como **Portal da empresa (pré-visualização técnica)** no menu Iniciar no dispositivo.  
+2.  Po aplikacji Portal firmy i jego konfiguracja są wdrożone, należy sprawdzić, aplikacji i konfiguracji planu bazowego są zgodne dla określonego urządzenia za pomocą **wdrożeń** sekcji konsoli programu Configuration Manager. Portal firmy będzie wyświetlany jako **Portal firmy (wersja zapoznawcza Technical Preview)** w menu Start na urządzeniu.  
 
-### <a name="try-it-out"></a>Experimente!  
- Experimente concluir as seguintes tarefas e, em seguida, informe-nos como correu utilizando o nosso formulário de comentários no [programa de feedback do Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) página no site Microsoft Connect:  
+### <a name="try-it-out"></a>Wypróbuj  
+ Spróbuj wykonać następujące zadania, a następnie Daj nam znać, jak Ci poszło za pomocą formularza opinii na [programu przekazywania opinii dotyczących programu Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) w witrynie Microsoft Connect:  
 
-1.  Implementar várias aplicações com tipos de implementação suportado para uma coleção de utilizadores com um objetivo de implementação **disponível**. Para esta pré-visualização técnica, as aplicações que necessitem de aprovação do admin não são suportadas e não serão apresentadas no Portal da empresa.  
+1.  Wdrażanie kilka aplikacji typy wdrożeń obsługiwane w kolekcji użytkowników z celem wdrożenia **dostępne**. Dla tej wersji technical preview aplikacje, które wymagają zatwierdzenia administratora nie są obsługiwane i nie będą wyświetlane w portalu firmy.  
 
-2.  Os utilizadores podem, em seguida, procurar e instalar aplicações a partir do Portal da empresa.  
+2.  Użytkownicy mogą, a następnie Przeglądaj w poszukiwaniu i instalować aplikacje z portalu firmy.  
 
-     Depois de abrir o Portal da empresa, verá uma caixa de diálogo de autenticação com o nome **System Center Configuration Manager** especificar as credenciais do utilizador do Active Directory (no formato user@domain ou domínio \ utilizador) para iniciar sessão.  
+     Po otwarciu portalu firmy, zobaczą okno dialogowe uwierzytelniania o nazwie **System Center Configuration Manager** Określ poświadczenia użytkownika usługi Active Directory (albo w formie user@domain lub domena\użytkownik) do logowania.  
 
-##  <a name="BKMK_SW1"></a>Separadores novas atualizações e sistemas operativos no Centro de Software  
- Nesta versão, as seguintes alterações foram efetuadas para melhorar o esquema da aplicação Centro de Software:  
+##  <a name="BKMK_SW1"></a>Nowe karty aktualizacji i systemów operacyjnych w programie Software Center  
+ W tej wersji wprowadzono następujące zmiany zwiększające układ aplikacji programu Software Center:  
 
--   O **aplicações** separador foi foi dividido em três separadores separados para **atualizações**, **sistemas operativos** (que foram ambos anteriormente encontradas no **filtros** lista), e **aplicações**.  
+-   **Aplikacji** kartę podzielone na trzy oddzielne karty **aktualizacje**, **systemów operacyjnych** (który zarówno wcześniej znaleziono w **filtry** listy), i **aplikacji**.  
 
-##  <a name="BKMK_ServerGroups"></a>Um grupo de servidores de serviço  
- Pré-visualização técnica do System Center Configuration Manager, versão 1511, incluída a capacidade de criar uma coleção em que todos os dispositivos na coleção constituem um grupo de servidor. Em seguida, pode configurar as definições do grupo de servidor para utilizar quando implementa atualizações de software para o grupo de servidor, o controlo a percentagem de computadores que são atualizadas em qualquer momento, e configurar scripts do PowerShell de pré-implementação e pós-implementação para executar ações personalizadas.  
+##  <a name="BKMK_ServerGroups"></a>Usługa grupy serwerów  
+ Technical Preview programu System Center Configuration Manager, w wersji 1511, uwzględnione możliwość tworzenia kolekcji, w której wszystkie urządzenia w kolekcji tworzą grupę serwerów. Następnie można skonfigurować ustawienia grupy serwerów do użycia podczas wdrażania aktualizacji oprogramowania do grupy serwerów, kontroli procent komputerów, które zostały zaktualizowane w dowolnej chwili, i skonfigurować przed wdrożeniem i po wdrożeniu skrypty programu PowerShell do uruchamiania działań niestandardowych.  
 
- Pré-visualização técnica do System Center Configuration Manager, versão 1605, adiciona a capacidade para atualizar os computadores no grupo de servidor por uma ordem especificada definir, adiciona a monitorização avançada para ver o estado para os computadores no grupo de servidor e fornece a capacidade de limpar os bloqueios de implementação que é útil quando os clientes não tem conseguido instalar as atualizações de software e estão a impedir outros clientes instalar as atualizações de software.  
+ Technical Preview programu System Center Configuration Manager, wersja 1605, dodaje możliwość aktualizowania komputerów w grupie serwerów w określonej kolejności definiowanie, dodaje monitorowaniu do wyświetlenia stanu dla komputerów w grupie serwerów i zapewnia możliwość to wyczyszczenie blokad wdrożenia, który jest przydatne w przypadku klientów nie można zainstalować aktualizacji oprogramowania i uniemożliwiają innym klientom zainstalowanie ich aktualizacji oprogramowania.  
 
-### <a name="try-it-out"></a>Experimente!  
- Experimente concluir as seguintes tarefas e, em seguida, informe-nos como correu utilizando o nosso formulário de comentários no [programa de feedback do Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) página no site Microsoft Connect:  
+### <a name="try-it-out"></a>Wypróbuj  
+ Spróbuj wykonać następujące zadania, a następnie Daj nam znać, jak Ci poszło za pomocą formularza opinii na [programu przekazywania opinii dotyczących programu Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) w witrynie Microsoft Connect:  
 
--   Pode criar uma coleção que representa um grupo de servidor. Para este teste, pode configurar as regras de associação recolhidas para ter 2 computadores nesta coleção.   
+-   Mogę utworzyć kolekcję, która reprezentuje grupę serwera. Dla tego testu można skonfigurować reguł członkostwa zbieranie ma 2 maszyn w tej kolekcji.   
 
--   Consigo especificar que os computadores no grupo de servidor instalar atualizações de software por uma ordem específica, com base nas definições do grupo de servidor para a coleção. Utilize os scripts de exemplo no procedimento para especificar os scripts de pré-implementação e pós-implementação.  
+-   Można określić, że komputery w grupie serwerów zainstalować aktualizacje oprogramowania w określonej kolejności, w oparciu o ustawienia grupy serwerów dla kolekcji. Użyj przykładowych skryptów w procedurze, aby określić skrypty przed wdrożeniem i po wdrożeniu.  
 
--   Pode implementar uma atualização de software desta coleção. Consulte os ficheiros de hora e end.txt (criados a partir os scripts de exemplo) em C:\temp e verifique se os tempos de início e de fim para a implementação nos computadores no grupo de servidor. Reveja o ficheiro UpdatesDeployment.log para mais informações.  
+-   Mogę wdrożyć aktualizacji oprogramowania do tej kolekcji. Przejrzyj pliki aby i end.txt (utworzone na podstawie przykładowe skrypty) w C:\temp i Sprawdź godziny rozpoczęcia i zakończenia wdrożenia na komputerach w grupie serwerów. Przejrzyj plik dziennika UpdatesDeployment.log, aby uzyskać więcej informacji.  
 
-#### <a name="to-create-a-collection-for-a-server-group"></a>Para criar uma coleção para um grupo de servidores  
+#### <a name="to-create-a-collection-for-a-server-group"></a>Aby utworzyć kolekcję grupy serwerów  
 
-1.  [Criar uma coleção de dispositivos](https://technet.microsoft.com/library/gg712295.aspx) que contenha os computadores no grupo de servidor.  
+1.  [Utwórz kolekcję urządzeń](https://technet.microsoft.com/library/gg712295.aspx) zawierający komputery w grupie serwerów.  
 
-2.  No **ativos e compatibilidade** área de trabalho, clique em **coleções de dispositivos**, faça duplo clique na coleção que contém os computadores no grupo de servidor e, em seguida, clique em **propriedades**.  
+2.  W **zasoby i zgodność** obszaru roboczego kliknij **kolekcje urządzeń**, kliknij prawym przyciskiem myszy kolekcję zawierającą komputery w grupie serwerów, a następnie kliknij przycisk **właściwości**.  
 
-3.  No **geral** separador, selecione **todos os dispositivos fazem parte do mesmo grupo de servidor**e, em seguida, clique em **definições**.  
+3.  Na **ogólne** wybierz opcję **wszystkie urządzenia są częścią tej samej grupy serwerów**, a następnie kliknij przycisk **ustawienia**.  
 
-4.  No **as definições do grupo de servidor** página, especifique uma das seguintes definições:  
+4.  Na **ustawienia grupy serwerów** Określ jeden z następujących ustawień:  
 
-    -   **Permitir que uma percentagem das máquinas seja atualizada ao mesmo tempo**: Especifica que apenas determinada percentagem de clientes são atualizadas ao mesmo tempo. Se, por exemplo, a coleção tem 10 clientes, e a coleção é configurada para atualização 30% de clientes ao mesmo tempo, em seguida, apenas 3 clientes irão instalar atualizações de software em qualquer momento.  
+    -   **Zezwalaj na procent maszyny do aktualizacji w tym samym czasie**: Określa, że tylko niektórych odsetek klientów, są aktualizowane w dowolnym momencie. Jeśli na przykład kolekcja zawiera 10 klientów, a kolekcja jest skonfigurowana do aktualizowania 30% klientów w tym samym czasie, tylko 3 klientów zainstaluje aktualizacje oprogramowania w danym momencie.  
 
-    -   **Permitir que um número de máquinas seja atualizada ao mesmo tempo**: Especifica que apenas um determinado número de clientes é atualizado ao mesmo tempo.  
+    -   **Zezwalaj na wiele maszyn do aktualizacji w tym samym czasie**: Określa, że tylko określonej liczby klientów są aktualizowane w dowolnym momencie.  
 
-    -   **Especifique a sequência de manutenção**: Especifica que os clientes na coleção será atualizado um de cada vez na sequência que configurar. Um cliente apenas irá instalar atualizações de software depois do cliente que está à frente das-la na lista concluiu a instalação respetivas atualizações de software.  
+    -   **Określ sekwencję konserwacji**: Określa, że klienci w kolekcji będą zaktualizowane pojedynczo w sekwencji, które można skonfigurować. Klient zainstaluje tylko aktualizacje oprogramowania, po klienta, który znajduje się przed jej na liście zakończył instalowanie aktualizacji jej oprogramowania.  
 
-5.  Especifique se pretende utilizar um script de pré-implementação (drenagem do nó) ou um script de pós-implementação (retoma do nó).  
+5.  Określ, czy użyć skryptu przed wdrożeniem (opróżnianie węzła) czy skrypt po wdrożeniu (wznawianie węzła).  
 
     > [!TIP]  
-    >  Seguem-se exemplos que pode utilizar no teste de pré-implementação e pós-implementação scripts que escrevem a hora atual para um ficheiro de texto:  
+    >  Poniżej przedstawiono przykłady, że można używać podczas testowania dla przed wdrożeniem i skryptów po wdrożeniu zapisujących bieżący czas do pliku tekstowego:  
     >   
-    >  **Pré-implementação**  
+    >  **Przed wdrożeniem**  
     >   
     >  `#Start`  
     >   
@@ -317,7 +317,7 @@ Nesta pré-visualização técnica, se o Portal da empresa está aberto durante 
     >   
     >  `Out-File C:\temp\start.txt`  
     >   
-    >  **Pós-implementação**  
+    >  **Po wdrożeniu**  
     >   
     >  `#End`  
     >   
@@ -327,144 +327,144 @@ Nesta pré-visualização técnica, se o Portal da empresa está aberto durante 
     >   
     >  `Out-File C:\temp\end.txt`  
 
-#### <a name="to-deploy-software-updates-to-the-server-group-and-monitor-status"></a>Para implementar atualizações de software para o estado do monitor e o grupo de servidor  
+#### <a name="to-deploy-software-updates-to-the-server-group-and-monitor-status"></a>Aby wdrożyć aktualizacje oprogramowania do grupy i monitorowanie stanu możliwości zarządzania serwerem  
 
-1.  [Implementar atualizações de software](https://technet.microsoft.com/library/gg712304.aspx) na coleção de grupo do servidor.  
+1.  [Wdrażanie aktualizacji oprogramowania](https://technet.microsoft.com/library/gg712304.aspx) do kolekcji grupy serwera.  
 
-2.  [Monitorizar a implementação de atualização de software](https://technet.microsoft.com/library/gg712304.aspx). Para além das vistas de monitorização padrão para a implementação de atualizações de software, uma nova descrição de estado é apresentada quando um cliente está a aguardar a ativar instalar as atualizações de software. **À espera de bloqueio** é apresentada para este novo Estado.  
+2.  [Monitorowanie wdrożenia aktualizacji oprogramowania](https://technet.microsoft.com/library/gg712304.aspx). Oprócz standardowych widoków monitorowania dla wdrożenia aktualizacji oprogramowania nowy opis stanu jest wyświetlane, gdy klient oczekuje na jego Włącz instalacji aktualizacji oprogramowania. **Oczekiwanie na blokadę** jest wyświetlana dla tego nowego stanu.  
 
-#### <a name="to-clear-the-deployment-locks-for-computers-in-a-server-group"></a>Para limpar os bloqueios de implementação para computadores num grupo de servidor  
+#### <a name="to-clear-the-deployment-locks-for-computers-in-a-server-group"></a>Aby wyczyścić blokad wdrożenia dla komputerów w grupie serwerów  
 
-1.  No **ativos e compatibilidade** área de trabalho, clique em **coleções de dispositivos**e clique na coleção para limpar os bloqueios de implementação.  
+1.  W **zasoby i zgodność** obszaru roboczego kliknij **kolekcje urządzeń**i kliknij kolekcję, aby wyczyścić blokad wdrożenia.  
 
-2.  No **home page** separador o **implementação** , clique em **bloqueia de implementação de grupo de servidor limpar**. Quando os clientes não tem conseguido instalar as atualizações de software e estão a impedir outros clientes instalar as atualizações de software, os bloqueios de implementação podem ser eliminados manualmente.  
+2.  Na **Home** karcie **wdrożenia** kliknij przycisk **wyczyść blokady wdrożenia grupy serwera**. Gdy klienci nie można zainstalować aktualizacji oprogramowania i uniemożliwiają innym klientom zainstalowanie ich aktualizacji oprogramowania, blokad wdrożenia można ręcznie wyczyścić.  
 
-##  <a name="BKMK_ATP"></a>Suporte para o serviço do Windows Defender Advanced Threat Protection  
- Avançadas Threat Protection (ATP do Windows Defender) é um novo serviço que o irão ajudar as empresas para detetar, analisar e responder a ataques avançados nas respetivas redes. Saiba mais sobre [Windows Defender ATP](https://blogs.windows.com/windowsexperience/2016/03/01/announcing-windows-defender-advanced-threat-protection). O Configuration Manager pode ajudá-lo com a sua integração e monitorizar dispositivos de cliente de edição do Windows 10 Anniversary geridos.  
+##  <a name="BKMK_ATP"></a>Obsługa usługi Windows Defender Advanced Threat Protection  
+ Windows Defender Advanced Threat Protection (ATP) to nowa usługa, która pomaga firmom wykrywania, badanie i odpowiadać na zaawansowanych ataków w swoich sieciach. Dowiedz się więcej o [Windows Defender ATP](https://blogs.windows.com/windowsexperience/2016/03/01/announcing-windows-defender-advanced-threat-protection). Configuration Manager może pomóc dołączyć i monitorowanie zarządzanych urządzeń klienckich z systemem Windows 10 Anniversary Edition.  
 
-### <a name="try-it-now"></a>Experimente agora!  
- Experimente concluir as seguintes tarefas e, em seguida, informe-nos como correu utilizando o nosso formulário de comentários no [programa de feedback do Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) página no site Microsoft Connect:  
+### <a name="try-it-now"></a>Wypróbuj teraz!  
+ Spróbuj wykonać następujące zadania, a następnie Daj nam znać, jak Ci poszło za pomocą formularza opinii na [programu przekazywania opinii dotyczących programu Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) w witrynie Microsoft Connect:  
 
--   Carregar dispositivos para o serviço online do Windows Defender Advanced Threat Protection (ATP)  
+-   Urządzenia zintegrowane z usługą online Windows Defender Advanced Threat Protection (ATP)  
 
--   Monitorizar a implementação do Windows Defender ATP em dispositivos geridos  
+-   Monitorowanie wdrożenia Windows Defender ATP do zarządzanych urządzeń  
 
- **Pré-requisitos**  
+ **Wymagania wstępne**  
 
--   Subscrição do serviço online do Windows Defender Advanced Threat Protection  
+-   Subskrypcja usługi online Windows Defender Advanced Threat Protection  
 
--   Clientes que executam o Windows 10, aniversário da edição (compilação 14328 e superior)  
+-   Klienci z systemem Windows 10 Anniversary Edition (kompilacja 14328 lub nowszej)  
 
--   Criar um ficheiro de configuração de integração do cliente  
+-   Utwórz plik konfiguracji klienta dołączania  
 
-    ##### <a name="how-to-create-an-onboarding-configuration-file"></a>Como criar um ficheiro de configuração de integração  
+    ##### <a name="how-to-create-an-onboarding-configuration-file"></a>Jak utworzyć plik konfiguracji dołączania  
 
-    1.  Início de sessão para o serviço online do Windows Defender ATP  
+    1.  Zaloguj się do usługi online Windows Defender ATP  
 
-    2.  Clique em de **cliente Dependency** item de menu  
+    2.  Polecenie **klienta dołączania** elementu menu  
 
-    3.  Selecione **System Center Configuration Manager** e clique em **pacote de transferência**.  
+    3.  Wybierz **System Center Configuration Manager** i kliknij przycisk **pakiet pobierania**.  
 
-    4.  Transfira o ficheiro de arquivo comprimido (. zip) e extraia os conteúdos.  
+    4.  Pobierz plik archiwum skompresowany (.zip) i Wyodrębnij zawartość.  
 
 
-##### <a name="onboard-devices-for-windows-defender-atp"></a>Carregar dispositivos para o Windows Defender ATP  
+##### <a name="onboard-devices-for-windows-defender-atp"></a>Urządzenia zintegrowane dla Windows Defender ATP  
 
-1.  Na consola do Configuration Manager, navegue **ativos e compatibilidade** > **descrição geral** > **Endpoint Protection** > **Windows Defender ATP políticas** e clique em **criar Windows Defender ATP Policy**. É aberto o Assistente de política do Windows Defender ATP.  
+1.  W konsoli programu Configuration Manager Przejdź **zasoby i zgodność** > **omówienie** > **programu Endpoint Protection** > **Windows Defender ATP zasady** i kliknij przycisk **utworzyć zasady usługi Windows Defender ATP**. Zostanie otwarty Kreator zasad systemu Windows Defender ATP.  
 
-2.  Tipo de **nome** e **Descrição** para o Windows Defender ATP policy selecione **integração**. Clique em Seguinte.  
+2.  Typ **nazwa** i **opis** dla Windows Defender ATP zasad i wybierz **dołączania**. Kliknij przycisk Dalej.  
 
-3.  **Procurar** para o ficheiro de configuração fornecido pelo inquilino de serviço de nuvem de Windows Defender ATP da sua organização. Clique em **Seguinte**.  
+3.  **Przeglądaj** do pliku konfiguracji dostarczane przez dzierżawcę usługi chmury Windows Defender ATP Twojej organizacji. Kliknij przycisk **Dalej**.  
 
-4.  Especifique os exemplos de ficheiros que são recolhidos e partilhados a partir dos dispositivos geridos para análise.  
+4.  Określ próbki plików, są zbierane i udostępnione z zarządzanych urządzeń do analizy.  
 
-    -   **Nenhum** – não existem ficheiros de exemplo são recolhidos para análise  
+    -   **Brak** — żadne pliki przykładowe są pobierane do analizy  
 
-    -   **Ficheiros executáveis portátil** – ficheiros, tais como programas (.exe), ficheiros de ligação dinâmica de biblioteca (. dll), ficheiros de tipo de letra e se os ficheiros semelhantes que podem ser forem explorados no cyberattacks são recolhidos e partilhados para análise  
+    -   **Przenośne pliki wykonywalne** — pliki takie jak program plików (.exe), łącze dynamicznie biblioteka (dll), pliki czcionki i podobnych plików, które można wykorzystać w cyberattacks są pobierane i udostępniane do analizy  
 
-     Clique em **Seguinte**.  
+     Kliknij przycisk **Dalej**.  
 
-5.  Reveja o resumo e conclua o assistente.  
+5.  Przejrzyj podsumowanie, a następnie Zakończ pracę kreatora.  
 
-6.  Agora pode implementar a política Windows Defender ATP para os computadores cliente geridos clicando **implementar**.  
+6.  Teraz można wdrożyć zasady Windows Defender ATP na komputerach klienckich zarządzanych przez kliknięcie przycisku **Wdróż**.  
 
-##### <a name="monitor-windows-defender-atp"></a>Monitorizar o Windows Defender ATP  
+##### <a name="monitor-windows-defender-atp"></a>Monitor usługi Windows Defender ATP  
 
-1.  Na consola do Configuration Manager, navegue **monitorização** > **descrição geral** > **segurança** e, em seguida, clique em **Windows Defender ATP**.  
+1.  W konsoli programu Configuration Manager Przejdź **monitorowanie** > **omówienie** > **zabezpieczeń** , a następnie kliknij przycisk **Windows Defender ATP**.  
 
-2.  Reveja o dashboard do Windows Defender Advanced Threat Protection.  
+2.  Przejrzyj pulpitu nawigacyjnego systemu Windows Defender Advanced Threat Protection.  
 
-    -   **Estado de implementação de agente do Windows Defender** – o número e a percentagem de computadores elegíveis cliente gerido com o Active Directory integrado de política Windows Defender ATP  
+    -   **Stan wdrożenia agenta usługi Windows Defender** — liczbę i odsetek komputerów klientów zarządzanych kwalifikujących się z active został załadowany z zasad programu Windows Defender ATP  
 
-    -   **Estado de funcionamento do agente do Windows Defender ATP** – percentagem de clientes de computador a comunicar o estado para os respetivos agente do Windows Defender ATP  
+    -   **Kondycja agenta programu Windows Defender ATP** — procent komputerów klienckich raportowanie stanu dla ich agenta Windows Defender ATP  
 
-        -   **Bom estado de funcionamento** -a funcionar corretamente  
+        -   **Dobra** — działa prawidłowo  
 
-        -   **Inativa** -não existem dados enviados ao serviço durante o período de tempo  
+        -   **Nieaktywne** — żadne dane wysyłane do usługi w czasie  
 
-        -   **Estado do agente** -o serviço de sistema para o agente do Windows não está em execução  
+        -   **Stan agenta** — nie jest uruchomiona usługa systemowa programu Agent w systemie Windows  
 
-        -   **Não existem integrado** - foi aplicada a política, mas o agente não comunicou carregar política  
+        -   **Nie został załadowany** — zasady zostały zastosowane, ale agent nie zgłosił dołączyć zasad  
 
-##  <a name="BKMK_DHA"></a>Atestado de estado de funcionamento de dispositivos no local  
- Atestado de estado de funcionamento para dispositivos Windows 10 pode agora ser configurado para comunicar utilizando a infraestrutura no local. Os administradores podem especificar se comunicação é efetuada através da nuvem ou recursos no local. Se estiver selecionada no local para fins de atestado de estado de funcionamento de relatórios, um URL pode ser especificado para o serviço. Isto permite que os computadores cliente sem acesso à internet ativar e gerir dispositivos através de atestado de estado de funcionamento.  
+##  <a name="BKMK_DHA"></a>Zaświadczanie o kondycji urządzenia lokalnego  
+ Zaświadczanie o kondycji dla urządzeń z systemem Windows 10 można teraz skonfigurować do komunikacji za pomocą infrastruktury lokalnej. Administratorzy mogą określić, czy raportowania odbywa się za pośrednictwem chmury lub zasobów lokalnych. Jeśli lokalne jest wybrana na potrzeby raportowania zaświadczania o kondycji, adres URL można określić dla usługi. Dzięki temu komputery klienckie bez dostępu do Internetu włączyć i zarządzać urządzeniami przy użyciu zaświadczania o kondycji.  
 
-### <a name="enable-health-attestation-for-on-premises-devices"></a>Ativar o atestado de estado de funcionamento de dispositivos no local  
- No 1605, iremos tiver fixo alguns erros detetados no 1604 Technical Preview.  Para experimentá-lo, configure o serviço de atestado de estado de funcionamento no local utilizando as definições de agente do cliente.  
+### <a name="enable-health-attestation-for-on-premises-devices"></a>Włączanie zaświadczania o kondycji urządzeń lokalnych  
+ W 1605 Naprawiono kilka błędów w wersji 1604 Technical Preview.  Aby wypróbować tę funkcję, należy skonfigurować usługę zaświadczania o kondycji lokalnej za pomocą ustawień agenta klienta.  
 
-1.  Na consola do Configuration Manager, navegue **administração** > **descrição geral** > **as definições de cliente**e, em seguida, defina **utilizar no local o serviço de atestado de estado de funcionamento** para **Sim**.  
+1.  W konsoli programu Configuration Manager Przejdź **administracji** > **omówienie** > **ustawień klienta**, a następnie ustaw **Użyj lokalnej usługi zaświadczania o kondycji** do **tak**.  
 
-2.  Especifique o **URL do Serviço de Atestado de Estado de Funcionamento no Local**e, em seguida, clique em **OK**.  
+2.  Określ adres w polu **Adres URL lokalnej usługi zaświadczania o kondycji**, a następnie kliknij przycisk **OK**.  
 
-##  <a name="BKMK_RestartOptions"></a>Novo as opções para clientes Windows 10 de reinício após a instalação de atualização de software  
- Quando uma atualização de software que requer um reinício é implementado utilizando o Gestor de configuração e instalado num computador, um reinício pendente está agendado e é apresentada uma caixa de diálogo de reinício. Atualmente, para o Windows 8 e superior, se lhe encerrar ou reiniciar o computador utilizando as opções de energia do Windows (em vez da caixa de diálogo de reinício), os permanecem de caixa de diálogo de reinício após os reinícios de computador e o computador serão necessário reiniciar no prazo de configurado. Nesta pré-visualização técnica, a opção de **atualizar e reinicie** e **Update e no encerramento** estará disponível em computadores Windows 10 opções de energia do Windows sempre que há um reinício pendente para uma atualização de software do Configuration Manager. Depois de utilizar uma destas opções, a caixa de diálogo de reinício não será apresentada depois do reinício do computador.  
+##  <a name="BKMK_RestartOptions"></a>Nowe opcje dla klientów systemu Windows 10 ponownego uruchamiania po zainstalowaniu aktualizacji oprogramowania  
+ Gdy aktualizacja oprogramowania wymaga ponowne uruchomienie jest wdrażany przy użyciu programu Configuration Manager i zainstalowany na komputerze, oczekuje na ponowne uruchomienie zostało zaplanowane i zostanie wyświetlone okno dialogowe ponownego uruchomienia. Obecnie dla systemu Windows 8 lub nowszym, jeśli zamknięcie lub ponowne uruchomienie komputera przy użyciu opcji zasilania systemu Windows (a nie z okna dialogowego ponownego uruchomienia), pozostaje okno dialogowe ponownego uruchomienia po ponownym uruchomieniu komputera, a komputer wymaga ponownego uruchomienia po osiągnięciu terminu. W tej wersji technical preview, opcja **zaktualizować i ponownie uruchom** i **aktualizacji i zamykania** będą dostępne na komputerach z systemem Windows 10 w opcji zasilania systemu Windows, gdy istnieje oczekujące ponowne uruchomienie komputera dla aktualizacji oprogramowania programu Configuration Manager. W przypadku skorzystania z dowolnej z tych opcji okno dialogowe ponownego uruchamiania nie zostanie wyświetlone po ponownym uruchomieniu komputera.  
 
-##  <a name="BKMK_IMEI"></a>Pré-declarar dispositivos pertencentes à empresa com o número de série iOS ou IMEI  
- Agora pode identificar dispositivos pertencentes ao importar os respetivos números de identidade (IMEI) estação internacional do equipamento móvel. Pode carregar um ficheiro de valores separados por vírgulas (. csv) contendo os números IMEI de dispositivo ou pode introduzir manualmente as informações do dispositivo.  Também pode importar os números de série para dispositivos iOS.  Informação importada definirá a propriedade dos dispositivos inscritos como "Empresa".  Uma licença do Intune é ainda necessária para cada utilizador que acede ao serviço.  
+##  <a name="BKMK_IMEI"></a>Wstępnie Zadeklaruj urządzenia należące do firmy z numerami IMEI lub iOS  
+ Teraz możesz zidentyfikować urządzenia należące do firmy przez zaimportowanie ich stacji międzynarodowe numery identyfikujące (IMEI) urządzenia przenośne. Możesz przekazać plik wartości rozdzielanych przecinkami (.csv) zawierający numery IMEI lub możesz ręcznie wprowadzić informacje o urządzeniu.  Można również zaimportować numerów seryjnych urządzeń z systemem iOS.  Zaimportowane informacje ustawią własność rejestrowanych jako "Firmowe" urządzeń.  Licencji usługi Intune są nadal wymagane dla każdego użytkownika uzyskującego dostęp do usługi.  
 
-### <a name="try-it-out"></a>Experimente!  
- Experimente concluir as seguintes tarefas e, em seguida, informe-nos como correu utilizando o nosso formulário de comentários no [programa de feedback do Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) página no site Microsoft Connect:  
+### <a name="try-it-out"></a>Wypróbuj  
+ Spróbuj wykonać następujące zadania, a następnie Daj nam znać, jak Ci poszło za pomocą formularza opinii na [programu przekazywania opinii dotyczących programu Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/ConfigMgr%20Customer%20Feedback) w witrynie Microsoft Connect:  
 
--   Importe um conjunto de números IMEI num ficheiro. csv. Cada linha pode conter o número IMEI seguido de um campo de detalhes.  
+-   Importowanie zestawu numerów IMEI w pliku CSV. Każdy wiersz może zawierać numer IMEI, a następnie pole szczegółów.  
 
--   Importe os números IMEI manualmente a partir da consola do Configuration Manager.  
+-   Ręcznie zaimportować numery IMEI z konsoli programu Configuration Manager.  
 
--   Importe um conjunto de números de série iOS num ficheiro. csv. Novamente, cada linha contém um número seguido por quaisquer detalhes para o dispositivo.  
+-   Importowanie zestawu iOS numerów seryjnych w pliku CSV. Ponownie każdy wiersz zawiera wiele następuje żadnych szczegółów urządzenia.  
 
-##### <a name="pre-declare-corporate-owned-devices-with-imei-or-ios-serial-number"></a>Pré-declarar dispositivos pertencentes à empresa com o número de série IMEI ou iOS  
+##### <a name="pre-declare-corporate-owned-devices-with-imei-or-ios-serial-number"></a>Wstępne deklarowanie urządzeń należących do przedsiębiorstwa przy użyciu numeru IMEI lub numeru seryjnego systemu iOS  
 
-1.  Na consola do Configuration Manager, vá **ativos e compatibilidade** > **descrição geral** > **todos os dispositivos pertencentes** > **Pre-declared dispositivos**e, em seguida, clique em **criar dispositivos de Pre-declared**. É aberto o Assistente de Pre-declared dispositivos.  
+1.  W konsoli programu Configuration Manager Przejdź **zasoby i zgodność** > **— omówienie** > **wszystkie urządzenia należące** > **Pre-declared urządzeń**, a następnie kliknij przycisk **tworzenia urządzenia Pre-declared**. Zostanie otwarty Kreator Pre-declared urządzeń.  
 
-2.  Especifique como pretende adicionar informações do dispositivo:  
+2.  Określ, jak dodać informacje o urządzeniu:  
 
-    -   **Carregar um ficheiro. csv contendo os números IMEI e os detalhes** - para carregar uma lista de números, consulte o passo 3.  
+    -   **Przekaż plik CSV zawierający szczegóły i numery IMEI** — Aby przekazać listę liczb, zobacz krok nr 3.  
 
-    -   **Adicionar manualmente os números IMEI e os detalhes** - para introduzir manualmente as informações, escreva o número IMEI ou número de série iOS e os detalhes para os dispositivos e, em seguida, avance para o passo n. º 4.  
+    -   **Ręcznie Dodaj szczegóły i numery IMEI** — Aby ręcznie wprowadzić informacje o, wpisz numer IMEI lub numer seryjny systemu iOS i szczegóły dla urządzeń, a następnie przejdź do kroku 4.  
 
-3.  Para os ficheiros carregados, procure o ficheiro. csv que contém informações de pré-declarar dispositivos pertencentes à empresa. O ficheiro tem de ter o seguinte formato, excluindo a linha superior (fornecida para obter orientações sobre apenas):  
+3.  W przypadku przekazanych plików wyszukać plik CSV zawierający informacje do wstępnie Zadeklaruj urządzenia należące do firmy. Nazwa pliku musi mieć następujący format, z wyłączeniem górnym wierszu (udostępnione tylko do celów informacyjnych):  
 
-    |**IMEI N. º**|**Série de iOS**|**SO**|**Detalhes**|
+    |**IMEI #**|**Seryjny systemu iOS**|**SYSTEM OPERACYJNY**|**Szczegóły**|
     |---|---|---|---|
-    |123456789012345||WINDOWS|Dispositivo de Windows pertencentes à empresa|
-    |123456789012|A0BCD0EFGH0J|IOS|Dispositivos iOS pertencentes à empresa|
-    |123456789012346||ANDROID|Dispositivo Android da empresa|
+    |123456789012345||SYSTEMU WINDOWS|Należące do firmy urządzenia z systemem Windows|
+    |123456789012|A0BCD0EFGH0J|DLA SYSTEMU IOS|Urządzenia z systemem iOS należące do firmy|
+    |123456789012346||ANDROID|Należące do firmy urządzenia z systemem Android|
 
-     **Colunas:**  
+     **Kolumny:**  
 
-    -   Coluna 1: Número IMEI – ou um número ou iOS série número IMEI é necessário para cada linha  
+    -   Kolumna 1: Numer IMEI — albo IMEI numer lub iOS numer seryjny jest wymagany dla każdego wiersza  
 
-    -   A coluna 2: número de série iOS – apenas os números de série iOS pode ser declarados previamente. Utilize o número IMEI para outras plataformas de dispositivos  
+    -   Kolumna 2: numeru seryjnego systemu iOS — tylko numery seryjne iOS może być wstępnie zadeklarowane. Użyj numeru IMEI dla innych platform urządzenia  
 
-    -   Coluna 3: Sistema operativo do dispositivo (maiúsculas/minúsculas necessário):  
+    -   Kolumna 3: System operacyjny urządzenia (wymagane wielkości liter):  
 
-        -   IOS – todos os dispositivos iOS  
+        -   IOS — wszystkie urządzenia z systemem iOS  
 
-        -   WINDOWS – inclui Windows Phone, Windows 10 Mobile e Windows PCs  
+        -   System WINDOWS — zawiera Windows Phone, Windows 10 Mobile i komputerów z systemem Windows  
 
-        -   ANDROID – todos os dispositivos Android  
+        -   ANDROID — wszystkie urządzenia z systemem Android  
 
-    -   Coluna 4: Detalhes – informações de dispositivo adicionais que aparece na consola do Configuration Manager  
+    -   Kolumna 4: Szczegóły — informacje o urządzeniu dodatkowe, która jest wyświetlana w konsoli programu Configuration Manager  
 
-     Clique em **Seguinte**.  
+     Kliknij przycisk **Dalej**.  
 
-4.  Reveja os resultados da importação de ficheiro. Anteriormente os números de série ou IMEI importados terão os respetivos detalhes atualizados com detalhes de novo.  Clique em **seguinte** para continuar ou **novamente** para manter atualizados detalhes e, em seguida, conclua o assistente.  
+4.  Przejrzyj wyniki importowania z pliku. Wcześniej zaimportowanych IMEI lub numery seryjne ma ich szczegóły zaktualizowano o nowe szczegółowe informacje.  Kliknij przycisk **dalej** kontynuowanie lub **ponownie** do zachowania zaktualizowanych szczegółów, a następnie Zakończ pracę kreatora.  

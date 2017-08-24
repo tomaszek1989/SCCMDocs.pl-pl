@@ -1,6 +1,6 @@
 ---
-title: Atualizar para o System Center Configuration Manager | Microsoft Docs
-description: "Saiba os passos para executar uma atualização no local com êxito a partir de um site e hierarquia que executa o System Center 2012 Configuration Manager."
+title: Uaktualnianie do programu System Center Configuration Manager | Dokumentacja firmy Microsoft
+description: "Dowiedz się więcej czynności umożliwiające uruchamianie pomyślne uaktualnienie w miejscu lokacji i hierarchii programu System Center 2012 Configuration Manager."
 ms.custom: na
 ms.date: 6/6/2017
 ms.prod: configuration-manager
@@ -17,43 +17,43 @@ manager: angrobe
 ms.openlocfilehash: 1166b739e1e8d667172d97883f484fdbc3a142c1
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pt-PT
+ms.contentlocale: pl-PL
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="upgrade-to-system-center-configuration-manager"></a>Atualizar para o System Center Configuration Manager
+# <a name="upgrade-to-system-center-configuration-manager"></a>Uaktualnianie do programu System Center Configuration Manager
 
-*Aplica-se a: O System Center Configuration Manager (ramo atual)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Pode executar uma atualização no local a atualização para System Center Configuration Manager de um site e hierarquia que executa o System Center 2012 Configuration Manager.  
+Można uruchomić uaktualnienia i uaktualnienia w miejscu do programu System Center Configuration Manager z lokacji i hierarchii programu System Center 2012 Configuration Manager.  
 
- Antes de atualizar do System Center 2012 Configuration Manager, tem de preparar sites que requer a remoção de configurações específicas que podem impedir uma atualização com êxito e, em seguida, siga a sequência de atualização quando mais do que um único site está envolvida.  
+ Przed rozpoczęciem uaktualniania programu System Center 2012 Configuration Manager, należy przygotować Lokacje wymagające usunięcia konkretnych konfiguracji, które mogą uniemożliwiać pomyślne uaktualnienie, a następnie wykonaj sekwencji uaktualniania, gdy jest używany więcej niż jednej lokacji.  
 
  > [!TIP]
- > Ao gerir o site do System Center Configuration Manager e a infraestrutura de hierarquia, os termos de licenciamento *atualizar*, *atualizar*, e *instalar* são utilizados para descrever três conceitos diferentes. Para saber como cada termo é utilizado, consulte [sobre a atualização, atualização e instalação](/sccm/core/understand/upgrade-update-install).
+ > Podczas zarządzania w lokacji programu System Center Configuration Manager i infrastruktury hierarchii, warunki *uaktualnienia*, *aktualizacji*, i *zainstalować* służą do opisywania trzy oddzielne pojęcia. Aby dowiedzieć się, jak każdego terminu jest używany, zobacz [o uaktualnienie, aktualizacji i instalacji](/sccm/core/understand/upgrade-update-install).
 
-##  <a name="bkmk_path"></a> Caminhos de atualização no local  
+##  <a name="bkmk_path"></a> Ścieżki uaktualnienia w miejscu  
 
-**Atualize para versão 1702**   
-Quando tiver versão 1702 da linha de base de dados, pode atualizar o seguinte para uma versão totalmente licenciada do System Center Configuration Manager versão 1702:   
--     Uma instalação de avaliação do System Center Configuration Manager versão 1702
--     System Center 2012 Configuration Manager sem Service Pack 1
--     System Center 2012 Configuration Manager sem Service Pack 2
+**Uaktualnienie do wersji 1702**   
+Jeśli masz nośnika linii bazowej 1702 wersji możesz uaktualnić następujące do pełni licencjonowanej wersji programu System Center Configuration Manager wersji 1702:   
+-     Instalacja ewaluacyjna programu System Center Configuration Manager wersji 1702
+-     System Center 2012 Configuration Manager z dodatkiem Service Pack 1
+-     System Center 2012 Configuration Manager z dodatkiem Service Pack 2
 -     System Center 2012 R2 Configuration Manager
--     System Center 2012 R2 Configuration Manager sem Service Pack 1
+-     System Center 2012 R2 Configuration Manager z dodatkiem Service Pack 1
 
-**Atualize para versão 1606**  
-No dia 15 de Dezembro de 2016, o suporte de dados de linha de base para a versão 1606 foi rereleased para adicionar suporte para cenários de atualização adicionais. Esta nova versão suporta a atualização dos seguintes procedimentos para uma versão totalmente licenciada do System Center Configuration Manager versão 1606 de:  
--   Uma instalação de avaliação do System Center Configuration Manager versão 1606
--   Uma instalação de release candidate do System Center Configuration Manager  
--   System Center 2012 Configuration Manager sem Service Pack 1  
--   System Center 2012 Configuration Manager sem Service Pack 2  
+**Uaktualnienie do wersji 1606**  
+Na 15 grudnia 2016 wydano nośnika linii bazowej dla wersji 1606, aby dodać obsługę dodatkowych scenariuszy uaktualniania. Nowe wydanie obsługuje uaktualnienie następujące polecenie, aby w pełni licencjonowanej wersji programu System Center Configuration Manager wersji 1606:  
+-   Instalacja ewaluacyjna programu System Center Configuration Manager wersji 1606
+-   Instalacja wersji release candidate programu System Center Configuration Manager  
+-   System Center 2012 Configuration Manager z dodatkiem Service Pack 1  
+-   System Center 2012 Configuration Manager z dodatkiem Service Pack 2  
 -   System Center 2012 R2 Configuration Manager  
--   System Center 2012 R2 Configuration Manager sem Service Pack 1  
+-   System Center 2012 R2 Configuration Manager z dodatkiem Service Pack 1  
 
-Se utilizar o suporte de dados de linha de base 1606 versão transferido antes do dia 15 de Dezembro de 2016, pode atualizar apenas o seguinte para uma versão totalmente licenciada do System Center Configuration Manager versão 1606 de:
--   Uma instalação de avaliação do System Center Configuration Manager versão 1606
--   System Center 2012 Configuration Manager sem Service Pack 2
--   System Center 2012 R2 Configuration Manager sem Service Pack 1
+Jeśli używasz wersji linii bazowej 1606 nośnika pobrane przed 15 grudnia 2016 do pełni licencjonowanej wersji programu System Center Configuration Manager wersji 1606 można uaktualnić tylko następujące:
+-   Instalacja ewaluacyjna programu System Center Configuration Manager wersji 1606
+-   System Center 2012 Configuration Manager z dodatkiem Service Pack 2
+-   System Center 2012 R2 Configuration Manager z dodatkiem Service Pack 1
 
 <!-- Version 1511 has now dropped out of support
 **Upgrade to version 1511**  
@@ -68,334 +68,334 @@ When you have version 1511 baseline media, you can upgrade the following to a fu
 
 
 > [!TIP]  
->  Ao atualizar a partir de uma versão do System Center 2012 Configuration Manager Current Branch, poderá simplificar o processo de atualização. Para obter mais informações, consulte o seguinte:  
+>  Po uaktualnieniu z wersji System Center 2012 Configuration Manager do bieżącej gałęzi może być usprawnić proces uaktualniania. Aby uzyskać więcej informacji, zobacz następujące tematy:  
 >   
->  -   A secção [Versões de linha de base e de atualização](../../../../core/servers/manage/updates.md#bkmk_Baselines) em [Atualizações para o System Center Configuration Manager](../../../../core/servers/manage/updates.md)  
->  -   [CD. Pasta mais recente para o System Center Configuration Manager](../../../../core/servers/manage/the-cd.latest-folder.md)  
+>  -   Sekcja [Wersje linii bazowej i aktualizacji](../../../../core/servers/manage/updates.md#bkmk_Baselines) w temacie [Aktualizacje programu System Center Configuration Manager](../../../../core/servers/manage/updates.md)  
+>  -   [Dysk CD. Najnowszy folder programu System Center Configuration Manager](../../../../core/servers/manage/the-cd.latest-folder.md)  
 
- **As seguintes ações não são suportadas:**  
--   Não é suportada para atualizar uma versão de pré-visualização técnica do System Center Configuration Manager para uma instalação totalmente licenciada.  Uma versão de Technical Preview só pode atualizar para uma versão posterior do Technical Preview.  
+ **Nie są obsługiwane następujące scenariusze:**  
+-   Uaktualnienie programu System Center Configuration Manager Technical Preview do w pełni licencjonowanej instalacji nie jest obsługiwane.  Wersja Technical Preview może zostać uaktualniona tylko do nowszej wersji Technical Preview.  
 
--   A migração de um Technical Preview para uma versão totalmente licenciada não é suportada.  
+-   Migracja z wersji Technical Preview do w pełni licencjonowanej wersji nie jest obsługiwana.  
 
-##  <a name="bkmk_checklist"></a> Listas de verificação de atualização  
- As listas de verificação seguintes podem ajudar a planear uma atualização com êxito para o System Center Configuration Manager.  
+##  <a name="bkmk_checklist"></a> Listy kontrolne uaktualniania  
+ Na poniższych listach wyboru ułatwiają zaplanowanie pomyślnego uaktualnienia do programu System Center Configuration Manager.  
 
-### <a name="before-you-upgrade"></a>Antes da atualização  
+### <a name="before-you-upgrade"></a>Przed uaktualnieniem  
 
-**Reveja o seu ambiente do System Center 2012 Configuration Manager** e resolver problemas conforme detalhado no KB4018655: [Clientes do Configuration Manager reinstale a cada cinco horas devido a uma tarefa de repetição periódica e pode provocar uma atualização de cliente inadvertida](https://support.microsoft.com/help/4018655).
+**Przegląd środowiska System Center 2012 Configuration Manager** i rozwiązywanie problemów dotyczących zgodnie z opisem w KB4018655: [Klientów programu Configuration Manager z powodu cyklicznego zadania spróbuj ponownie zainstalować ponownie co pięć godzin i może spowodować uaktualnienie klienta przypadkowej](https://support.microsoft.com/help/4018655).
 
-**Certifique-se de que o ambiente informático satisfaz as configurações suportadas** que são necessárias para atualizar para o System Center Configuration Manager:  
+**Upewnij się, że środowisko przetwarzania danych spełnia wymagania dotyczące obsługiwanych konfiguracji** są niezbędne do uaktualnienia do programu System Center Configuration Manager:  
 
-Reveja os sistemas operativos de servidor utilizados para alojar funções do sistema de sites:  
+Sprawdź systemy operacyjne serwerów używane do hostowania ról systemu lokacji:  
 
--   Alguns sistemas operativos suportados pelo System Center 2012 Configuration Manager não são suportados pelo System Center Configuration Manager e funções de sistema de sites nesses sistemas operativos têm de ser relocalizadas ou removidas antes da atualização. Reveja o [sistemas operativos suportados pelo servidores do sistema de sites](../../../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md) documentação.   
--   Verificador de pré-requisitos para o Configuration Manager não verificar os pré-requisitos de funções de sistema de sites no servidor do site ou nos sistemas de sites remoto  
+-   Niektóre starsze systemy operacyjne obsługiwane przez System Center 2012 Configuration Manager nie są obsługiwane przez program System Center Configuration Manager, a role systemu lokacji w tych systemach operacyjnych należy przenieść lub usunąć przed przeprowadzeniem uaktualnienia. Przegląd [systemy operacyjne obsługiwane przez serwery systemu lokacji](../../../../core/plan-design/configs/supported-operating-systems-for-site-system-servers.md) dokumentacji.   
+-   Narzędzie sprawdzania wymagań wstępnych dla programu Configuration Manager nie weryfikuje wymagań wstępnych dotyczących ról systemu lokacji na serwerze lokacji lub na zdalnych systemów lokacji  
 
-Reveja os pré-requisitos necessários de cada computador que aloje uma função do sistema de sites:  
+Sprawdź wymagania wstępne dla wszystkich komputerów hostujących role systemu lokacji:  
 
--   Por exemplo, para implementar um sistema operativo, System Center Configuration Manager utiliza o Windows 10 Assessment and Deployment Kit (Windows ADK). Antes de executar o Programa de Configuração, tem de transferir e instalar o Windows 10 ADK no servidor do site e em cada computador que execute uma instância do Fornecedor de SMS.  
+-   Na przykład aby wdrożyć system operacyjny, System Center Configuration Manager korzysta z systemu Windows 10 Assessment and Deployment Kit (Windows ADK). Przed uruchomieniem Instalatora należy pobrać zestaw Windows 10 ADK i zainstalować go na serwerze lokacji i na każdym komputerze, na którym jest uruchamiane wystąpienie dostawcy programu SMS.  
 
-Para obter informações gerais sobre as plataformas suportadas e configurações de pré-requisitos, veja [Configurações suportadas do System Center Configuration Manager](../../../../core/plan-design/configs/supported-configurations.md).  
+Ogólne informacje o obsługiwanych platformach i konfiguracjach wymagań wstępnych znajdują się w temacie [Obsługiwane konfiguracje programu System Center Configuration Manager](../../../../core/plan-design/configs/supported-configurations.md).  
 
-Para obter informações sobre como utilizar o Windows ADK com o Configuration Manager, consulte [requisitos de infraestrutura de implementação do sistema operativo no System Center Configuration Manager](../../../../osd/plan-design/infrastructure-requirements-for-operating-system-deployment.md).  
+Aby dowiedzieć się, jak za pomocą zestawu Windows ADK z programem Configuration Manager, zobacz [wymagania dotyczące infrastruktury dla wdrożenia systemu operacyjnego w programie System Center Configuration Manager](../../../../osd/plan-design/infrastructure-requirements-for-operating-system-deployment.md).  
 
-**Rever o estado de site e da hierarquia e certifique-se de que existem não existem problemas por resolver:**  
-Antes de atualizar um site, resolva todos os problemas operacionais do servidor do site, do servidor da base de dados do site e de funções de sistema de sites que se encontrem instaladas em computadores remotos. Uma atualização de site pode falhar devido a problemas operacionais existentes.  
+**Sprawdź stan lokacji i hierarchii, a następnie sprawdź, czy nie występują żadne nierozwiązane problemy:**  
+Przed uaktualnieniem lokacji należy rozwiązać wszystkie problemy z działaniem serwera lokacji, serwera bazy danych lokacji i ról systemu lokacji zainstalowanych na komputerach zdalnych. Problemy z działaniem mogą spowodować niepowodzenie uaktualniania lokacji.  
 
-**Instale todas as atualizações críticas aplicáveis para sistemas operativos em computadores que alojam o site, o servidor de base de dados do site e as funções do sistema de sites remoto:**  
-Antes de atualizar um site, instale as atualizações críticas em cada sistema de sites aplicável. Se uma atualização que instalar necessitar de um reinício, reinicie os computadores aplicáveis antes de iniciar a atualização do service pack.  
+**Zainstaluj wszystkie odpowiednie aktualizacje krytyczne dla systemów operacyjnych na komputerach hostujących lokację, serwer bazy danych lokacji i role zdalnego systemu lokacji:**  
+Przed uaktualnieniem lokacji zainstaluj wszystkie aktualizacje krytyczne przeznaczone do odpowiednich systemów lokacji. Instalowana aktualizacja może wymagać ponownego uruchomienia odpowiednich komputerów przed rozpoczęciem aktualizacji dodatku Service Pack.  
 
-Para obter mais informações, consulte [Windows Update](http://go.microsoft.com/fwlink/p/?LinkId=105851).  
+Aby uzyskać więcej informacji, zobacz [usługi Windows Update](http://go.microsoft.com/fwlink/p/?LinkId=105851).  
 
-**Desinstale as funções de sistema de sites não suportadas pelo System Center Configuration Manager:**  
-As seguintes funções do sistema de sites já não são utilizadas no System Center Configuration Manager e tem de ser desinstaladas antes de atualizar do System Center 2012 Configuration Manager:  
+**Odinstaluj role systemu lokacji, które są nieobsługiwane przez program System Center Configuration Manager:**  
+Następujące role systemu lokacji nie są już używane w programie System Center Configuration Manager i musi zostać odinstalowane przed uaktualnieniem programu System Center 2012 Configuration Manager:  
 
--   Ponto de Gestão Fora de Banda  
--   Ponto de Validação do Estado de Funcionamento do Sistema  
+-   Punkt zarządzania poza pasmem  
+-   Punkt modułu sprawdzania kondycji systemu  
 
-**Desative réplicas de base de dados para pontos de gestão em sites primários:**  
-O Configuration Manager não é possível atualizar com êxito um site primário que tenha uma réplica de base de dados para pontos de gestão ativada. Desative a replicação de base de dados antes de:  
+**Wyłącz repliki bazy danych dla punktów zarządzania w lokacjach głównych:**  
+Menedżer konfiguracji nie może pomyślnie uaktualnić lokacji głównej, z repliki bazy danych dla punktów zarządzania włączone. Wyłącz replikację bazy danych przed:  
 
--   Criar uma cópia de segurança da base de dados do site para testar a atualização da base de dados  
--   Atualizar o site de produção para o System Center Configuration Manager  
+-   Utworzeniem kopii zapasowej bazy danych lokacji w celu przetestowania uaktualnienia bazy danych  
+-   Uaktualnieniem lokacji produkcyjnej do programu System Center Configuration Manager  
 
-Para obter mais informações, consulte o seguinte:  
--   System Center 2012 Configuration Manager:  [Configurar réplicas de base de dados para pontos de gestão](https://technet.microsoft.com/library/hh846234.aspx)  
--   O System Center Configuration Manager: [Réplicas de base de dados para pontos de gestão do System Center Configuration Manager](../../../../core/servers/deploy/configure/database-replicas-for-management-points.md)  
+Aby uzyskać więcej informacji, zobacz następujące tematy:  
+-   System Center 2012 Configuration Manager:  [Konfigurowanie replik bazy danych dla punktów zarządzania](https://technet.microsoft.com/library/hh846234.aspx)  
+-   System Center Configuration Manager: [Repliki bazy danych dla punktów zarządzania programu System Center Configuration Manager](../../../../core/servers/deploy/configure/database-replicas-for-management-points.md)  
 
-**Reconfigure os pontos de atualização de software que utilizem NLB:**  
-O Configuration Manager não consegue atualizar um site que utiliza um cluster de balanceamento de carga na rede (NLB) para alojar pontos de atualização de software.  
+**Skonfiguruj ponownie punkty aktualizacji oprogramowania, które używają usługi równoważenia obciążenia sieciowego:**  
+Menedżer konfiguracji nie może uaktualnić lokacji hostującej punkty aktualizacji oprogramowania klastra równoważenia obciążenia sieciowego (NLB).  
 
-Se utilizar clusters de NLB em pontos de atualização de software, utilize o PowerShell para remover o cluster de NLB. (A partir do System Center 2012 Configuration Manager SP1, não havia nenhuma opção na consola do Configuration Manager para configurar um cluster NLB)  
+W przypadku używania klastrów równoważenia obciążenia sieciowego w punktach aktualizacji oprogramowania należy usunąć te klastry za pomocą programu PowerShell. (Nie począwszy od programu System Center 2012 Configuration Manager SP1 było możliwości skonfigurowania klastra równoważenia obciążenia Sieciowego w konsoli programu Configuration Manager)  
 
-**Desative todas as tarefas de manutenção do site em cada site durante a atualização desse site:**  
-Antes de atualizar para o System Center Configuration Manager, desative as tarefas de manutenção do site que possam ser executadas enquanto o que o processo de atualização estiver ativo. Estas incluem as seguintes, entre outras:  
+**Wyłącz wszystkie zadania konserwacji w poszczególnych lokacjach na czas trwania uaktualniania lokacji:**  
+Przed uaktualnieniem do programu System Center Configuration Manager, należy wyłączyć wszystkie zadania konserwacji lokacji, które mogą zostać uruchomione w czasie, gdy proces uaktualniania jest aktywny. Dotyczy to m.in. następujących zadań:  
 
--   Servidor do Site de Reserva  
--   Eliminar Operações de Cliente Desatualizadas  
--   Eliminar Dados de Deteção Desatualizados  
+-   Wykonaj kopię zapasową serwera lokacji  
+-   Usuń przedawnione operacje klienta  
+-   Usuń przedawnione dane odnajdywania  
 
-Se uma tarefa de manutenção de base de dados do site for executada durante o processo de atualização, a atualização do site poderá falhar.  
+Proces uaktualniania lokacji może zakończyć się niepowodzeniem, jeżeli w czasie jego trwania zostanie uruchomione zadanie obsługi bazy danych lokacji.  
 
-Antes de desativar uma tarefa, registe a agenda da tarefa para que possa restaurar a respetiva configuração uma vez concluída a atualização do site.  
+Przed wyłączeniem zadania zarejestruj jego harmonogram, aby przywrócić jego konfigurację po ukończeniu uaktualniania lokacji.  
 
-Para obter mais informações sobre tarefas de manutenção do site, consulte:  
+Więcej informacji o zadaniach obsługi lokacji znajduje się w temacie:  
 
--   System Center 2012 Configuration Manager:  [Planear tarefas de manutenção para o Configuration Manager](https://technet.microsoft.com/library/gg712686.aspx)  
--   O System Center Configuration Manager:  [Referência das tarefas de manutenção do System Center Configuration Manager](../../../../core/servers/manage/reference-for-maintenance-tasks.md)  
+-   System Center 2012 Configuration Manager:  [Planowanie zadań konserwacji programu Configuration Manager](https://technet.microsoft.com/library/gg712686.aspx)  
+-   System Center Configuration Manager:  [Informacje o zadaniach konserwacji programu System Center Configuration Manager](../../../../core/servers/manage/reference-for-maintenance-tasks.md)  
 
-**Execute o Verificador de Pré-requisitos da Configuração**:  
-Antes de atualizar um site, pode executar o **Verificador de Pré-requisitos** independentemente da Configuração para confirmar que o site cumpre os pré-requisitos. Mais tarde, quando atualizar o site, o Verificador de pré-requisitos é executado novamente.  
+**Uruchom Narzędzie sprawdzania wymagań wstępnych Instalatora**:  
+Aby sprawdzić, czy lokacja spełnia wymagania wstępne, przed uaktualnieniem lokacji można uruchomić **Narzędzie sprawdzania wymagań wstępnych** niezależnie od Instalatora. Później podczas uaktualniania lokacji narzędzie sprawdzania wymagań wstępnych zostanie ponownie uruchomione.  
 
-Se utilizar o suporte de dados de linha de base para a versão 1606 a partir da versão de Outubro de 2016, a verificação de pré-requisitos independente avalia o site para atualizar para o ramo atual e a longo prazo Servicing Branch (LTSB) do System Center Configuration gerir. Porque algumas funcionalidades não são suportadas pelo LTSB, poderá ver entradas no *ConfigMgrPrereq.log* que são semelhante ao seguinte:
- - INFO: O site é uma edição de LTSB.
- - Função de sistema de sites não suportada 'Ponto de sincronização do Asset Intelligence' para a edição de LTSB;    Erro;    Configuration Manager detetou que o 'ponto de sincronização do Asset Intelligence' está instalado. Asset Intelligence não é suportado na edição LTSB. Tem de desinstalar a função de sistema de sites do ponto de sincronização do Asset Intelligence antes de poder continuar.
+Jeśli używasz nośnika linii bazowej dla wersji 1606 z wersji z października 2016 niezależne sprawdzenie wymagań wstępnych oblicza lokacji do uaktualnienia do bieżącej gałęzi i długoterminowe Servicing Branch (LTSB) z zarządzania programu System Center Configuration. Niektóre funkcje nie są obsługiwane przez LTSB, mogą pojawić wpisy w *ConfigMgrPrereq.log* będących podobnie do następującej:
+ - INFORMACJE: Witryna jest LTSB edition.
+ - Nieobsługiwana Rola systemu lokacji "Punkt synchronizacji analizy zasobów" dla wersji LTSB;    Błąd;    Configuration Manager wykrył, że zainstalowano punkt synchronizacji analizy zasobów. Analiza zasobów nie jest obsługiwana w wersji LTSB. Przed kontynuowaniem należy odinstalować rolę systemu lokacji punktu synchronizacji analizy zasobów.
 
-Se pretender atualizar para o ramo atual, o erros para a edição de LTSB podem ser ignorados. Apenas aplicam-se de que pretende atualizar para o LTSB.
+Jeśli planujesz uaktualnić do wersji bieżącej gałęzi, błędów dla wersji LTSB można bezpiecznie zignorować. Mają one zastosowanie tylko wtedy, jeśli planowane jest uaktualnienie do LTSB.
 
-Mais tarde, quando executar a configuração do Configuration Manager para efetuar a atualização, a verificação de pré-requisitos irá executar novamente e avaliar o seu site com base no ramo do System Center Configuration Manager optar por instalar (ramo atual, ou LTSB). Se optar por atualizar para o ramo atual, a verificação de funcionalidades que não são suportadas pelo LTSB não são executadas.
+Później po uruchomieniu Instalatora programu Configuration Manager w celu uaktualnienia Sprawdzanie wymagań wstępnych Uruchom ponownie i ocenić witryny utworzonej w gałęzi programu System Center Configuration Manager zostanie zainstalowana (Current Branch lub LTSB). Jeśli chcesz uaktualnić do wersji bieżącej gałęzi wyboru funkcji, które nie są obsługiwane przez LTSB nie są uruchamiane.
 
-Para obter mais informações, consulte o [Verificador de pré-requisitos](/sccm/core/servers/deploy/install/prerequisite-checker) e [lista de pré-requisitos verifica para o System Center Configuration Manager](/sccm/core/servers/deploy/install/list-of-prerequisite-checks).  
+Aby uzyskać więcej informacji, zobacz [narzędzie sprawdzania wymagań wstępnych](/sccm/core/servers/deploy/install/prerequisite-checker) i [listy z wymagań wstępnych sprawdza programu System Center Configuration Manager](/sccm/core/servers/deploy/install/list-of-prerequisite-checks).  
 
-**Transfira os ficheiros de pré-requisitos e os ficheiros redistribuíveis para o System Center Configuration Manager:**    
-Utilize **dispositivo de transferência da configuração** para transferir os ficheiros redistribuíveis de pré-requisitos, pacotes de idiomas e as atualizações de produto mais recentes para o System Center Configuration Manager.  
+**Pobierz pliki wymagań wstępnych oraz pliki redystrybucyjne programu System Center Configuration Manager:**    
+Użyj **Narzędzie pobierania Instalatora** pobierania wstępnie wymagane liki redystrybucyjne, pakiety językowe i najnowsze aktualizacje produktu System Center Configuration Manager.  
 
-Para informações, consulte [dispositivo de transferência da configuração](/sccm/core/servers/deploy/install/setup-downloader).  
+Aby uzyskać informacje, zobacz [Narzędzie pobierania Instalatora](/sccm/core/servers/deploy/install/setup-downloader).  
 
-**Planeie a gestão do servidor e dos idiomas de cliente**:  
-Quando atualiza um site, a atualização do site instala apenas as versões do pacote de idiomas que selecionar durante a atualização.  
+**Zaplanuj zarządzanie językami klienta i serwera**:  
+W przypadku uaktualnienia lokacji uaktualnienie powoduje tylko zainstalowanie wersji pakietów językowych wybranych podczas uaktualniania.  
 
--   O Programa de Configuração analisa a configuração de idioma atual do site e, em seguida, identifica os pacotes de idiomas que estão disponíveis na pasta onde armazenou os ficheiros de pré-requisitos previamente transferidos.  
--   Em seguida, poderá confirmar a seleção dos pacotes de idiomas atuais do servidor e dos clientes, ou alterar as seleções de forma a adicionar ou remover o suporte para idiomas.  
--   Apenas pode selecionar os pacotes de idiomas que estão disponíveis quando executa o Programa de Configuração (os quais obtém juntamente com os ficheiros dos pré-requisitos que transfere).  
+-   Instalator sprawdza bieżącą konfigurację języka w lokacji, a następnie identyfikuje pakiety językowe dostępne w folderze z zapisanymi wcześniej pobranymi plikami wymagań wstępnych.  
+-   Następnie można potwierdzić wybór bieżących pakietów językowych klienta i serwera lub zmienić wybrane opcje w celu dodania albo usunięcia obsługi danych języków.  
+-   Można wybrać tylko te pakiety językowe, które są dostępne po uruchomieniu Instalatora (uzyskane razem z pobranymi plikami wymaganymi).  
 
 > [!NOTE]  
->  Não é possível utilizar pacotes de idiomas do System Center 2012 Configuration Manager para ativar idiomas num site do System Center Configuration Manager.  
+>  Pakiety językowe programu System Center 2012 Configuration Manager nie można użyć w celu włączenia obsługi języków w witrynie System Center Configuration Manager.  
 
-Para obter mais informações sobre pacotes de idiomas, consulte [pacotes de idiomas no System Center Configuration Manager](../../../../core/servers/deploy/install/language-packs.md).  
+Aby uzyskać więcej informacji o pakietach językowych, zobacz [pakiety językowe w programie System Center Configuration Manager](../../../../core/servers/deploy/install/language-packs.md).  
 
-**Reveja as considerações sobre as atualizações de sites**:  
-Ao atualizar um site, algumas funcionalidades e configurações são repostas para uma configuração predefinida. Para o ajudar a preparar-se para estas e outras alterações relacionadas, reveja a informação disponível em  [Considerações sobre atualizações](#bkmk_considerations).  
+**Zapoznaj się z uwagami dotyczącymi uaktualniania lokacji**:  
+Podczas uaktualniania lokacji programu w niektórych funkcjach i konfiguracjach jest przywracana konfiguracja domyślna. Aby ułatwić przygotowanie tych i powiązanych zmian, zapoznaj się z informacjami w temacie  [Zagadnienia dotyczące uaktualniania](#bkmk_considerations).  
 
-**Crie uma cópia de segurança da base de dados do site no site de administração central e sites primários:**  
-Antes de atualizar um site, efetue uma cópia de segurança da base de dados do site para garantir que poderá utilizar uma cópia de segurança válida em caso de recuperação de desastres.  
+**Utwórz kopię zapasową bazy danych lokacji w centralnej lokacji administracyjnej i lokacjach głównych:**  
+Przed uaktualnieniem lokacji utwórz kopię zapasową bazy danych lokacji, której będzie można użyć do odzyskiwania awaryjnego.  
 
-Consulte [cópia de segurança e recuperação para o System Center Configuration Manager](../../../../protect/understand/backup-and-recovery.md).  
+Zobacz [kopii zapasowych i odzyskiwania dla programu System Center Configuration Manager](../../../../protect/understand/backup-and-recovery.md).  
 
-**Cópia de segurança de um ficheiro Configuration.mof personalizado**:  
-Se utilizar um ficheiro Configuration.mof personalizado para definir as classes de dados que utiliza com o inventário de hardware, crie uma cópia de segurança deste ficheiro antes de atualizar o site. Em seguida, após a atualização, restaure este ficheiro para o seu site. Para obter mais informações sobre como utilizar este ficheiro consulte [como expandir o inventário de hardware no System Center Configuration Manager](../../../../core/clients/manage/inventory/extend-hardware-inventory.md).  
+**Wykonaj kopię zapasową dostosowanego pliku Configuration.mof**:  
+Jeśli dostosowany plik Configuration.mof jest używany do definiowania klas danych używanych w spisie sprzętu, utwórz kopię zapasową tego pliku przed uaktualnieniem lokacji. Następnie po uaktualnieniu odtwórz ten plik w lokacji. Aby uzyskać więcej informacji na temat korzystania z tego pliku zobacz [jak rozszerzyć spis sprzętu w programie System Center Configuration Manager](../../../../core/clients/manage/inventory/extend-hardware-inventory.md).  
 
-**Teste o processo de atualização de base de dados numa cópia da cópia de segurança de base de dados site mais recente:**  
-Antes de atualizar um site de administração central do Configuration Manager ou um site primário, teste o processo de atualização da base de dados do site numa cópia da base de dados do site.  
+**Przetestuj proces uaktualnienia bazy danych na kopii najnowszej kopii zapasowej bazy danych lokacji:**  
+Przetestuj proces uaktualnienia bazy danych za pomocą najnowszej kopii zapasowej bazy danych lokacji przed uaktualnieniem centralnej lokacji administracyjnej programu lub lokacji głównej programu Configuration Manager.  
 
--   Deve testar o processo de atualização da base de dados do site porque, ao atualizar um site, a base de dados do mesmo pode ser modificada  
--   Embora não seja necessário testar a atualização da base de dados, o teste pode identificar problemas da atualização antes que a base de dados de produção seja afetada  
--   Uma atualização da base de dados do site efetuada incorretamente pode deixar a base de dados do site inoperável, podendo ser necessário efetuar uma recuperação do site de forma a restaurar o funcionamento  
--   Embora a base de dados do site seja partilhada entre os sites de uma hierarquia, planeie o teste da base de dados em cada site aplicável antes de atualizar esse site  
--   Se utiliza réplicas de bases de dados para pontos de gestão num site primário, desative a replicação antes de criar a cópia de segurança da base de dados do site  
+-   Należy przetestować proces uaktualniania bazy danych lokacji, ponieważ uaktualnienie lokacji może spowodować modyfikację bazy danych  
+-   Test uaktualnienia bazy danych nie jest wymagany, ale pozwala wykryć problemy z uaktualnieniem przed wdrożeniem w produkcyjnej bazie danych  
+-   Nieudane uaktualnienie bazy danych lokacji może uniemożliwić korzystanie z bazy danych lokacji i może wymagać przeprowadzenia odzyskiwania lokacji w celu przywrócenia jej funkcjonalności  
+-   Choć baza danych lokacji jest udostępniana między lokacjami hierarchii, warto zaplanować testowanie bazy danych oddzielnie w każdej uaktualnianej lokacji  
+-   W przypadku używania replik bazy danych dla punktów zarządzania w lokacji głównej przed utworzeniem kopii zapasowej bazy danych lokacji należy wyłączyć replikację  
 
-O Configuration Manager não suporta a cópia de segurança dos sites secundários nem o teste da atualização de uma base de dados do site secundário.  
+Menedżer konfiguracji nie obsługuje kopii zapasowych lokacji dodatkowych ani testowego uaktualniania bazy danych lokacji dodatkowej.  
 
-A execução de um teste de atualização da base de dados na base de dados do site de produção não é suportada. Tal procedimento atualiza a base de dados do site, podendo fazer com que este deixe de funcionar.  
+Wykonanie testowego uaktualnienia bazy danych na produkcyjnych bazach danych lokacji nie jest obsługiwane. Wykonanie tej czynności powoduje uaktualnienie bazy danych lokacji, przez co lokacja może przestać działać.  
 
-Para obter mais informações, veja [Testar a atualização da base de dados do site](#bkmk_test).  
+Aby uzyskać więcej informacji, zobacz [Test uaktualnienia bazy danych lokacji](#bkmk_test).  
 
-**Reinicie o servidor de site e cada computador que aloje uma função de sistema de sites**:  
-Isto é feito para se certificar de que existe existem ações pendentes de uma instalação recente de atualizações ou de pré-requisitos e é um processo interno específico da empresa.  
+**Uruchom ponownie serwer lokacji i każdy komputer hostujący rolę systemu lokacji**:  
+Można to zrobić, aby upewnić się, że żadnych oczekujących akcji z ostatnio instalowane aktualizacje lub realizowane wymagania wstępne i jest proces wewnętrzny specyficzny dla firmy.  
 
-**Atualizar sites**:  
-Começando no site de nível superior na hierarquia, execute Setup.exe a partir do suporte de dados de origem do System Center Configuration Manager.  
+**Uaktualnianie lokacji**:  
+Począwszy od lokacji najwyższego poziomu w hierarchii, uruchom Setup.exe z nośnika źródłowego programu System Center Configuration Manager.  
 
-Após a atualização do site de nível superior, pode começar a atualização de cada site subordinado. Conclua a atualização de cada site antes de iniciar a atualização do site seguinte  
+Po ukończeniu uaktualniania lokacji najwyższego poziomu możesz przystąpić do uaktualniania poszczególnych lokacji podrzędnych. Uaktualnienia poszczególnych lokacji należy wykonywać po kolei i nie realizować ich równolegle  
 
-Até que todos os sites na sua hierarquia atualizam para o System Center Configuration Manager, a hierarquia funciona num modo com versões mistas.  
+Dopóki wszystkie lokacje w hierarchii uaktualnienia do programu System Center Configuration Manager, hierarchia działa w trybie mieszanej wersji.  
 
-Para obter informações sobre como executar a atualização, consulte [atualizar sites](#bkmk_upgrade).  
+Informacje dotyczące sposobu uruchamiania uaktualniania, zobacz [uaktualnienia lokacji](#bkmk_upgrade).  
 
-### <a name="after-you-upgrade"></a>Depois da atualização  
-**Atualizar consolas do Configuration Manager autónomo**:  
-Por predefinição, quando atualizar um site de administração central ou site primário, a instalação também atualiza as consola do Configuration Manager que está instalada no servidor do site. No entanto, tem de atualizar manualmente cada consola que esteja instalada num computador que não seja o servidor do site.  
-
-> [!TIP]  
->  Feche cada consola aberta antes de iniciar a atualização.  
-
-Para obter mais informações, veja [Instalar consolas do System Center Configuration Manager](../../../../core/servers/deploy/install/install-consoles.md).  
-
-**Reconfigure réplicas de base de dados para pontos de gestão em sites primários:**  
-Se utilizar réplicas de base de dados para pontos de gestão em sites primários, necessitará de desinstalar as réplicas de base de dados antes de atualizar o site. Após atualizar um site primário, reconfigure a réplica da base de dados para pontos de gestão.   
-Para obter mais informações, veja [Réplicas de bases de dados para pontos de gestão do System Center Configuration Manager](../../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
-
-**Reconfigure as tarefas de manutenção de base de dados desativadas antes da atualização:**  
-Se tiver desativado [tarefas de manutenção da base de dados para o System Center Configuration Manager](../../../../core/servers/manage/reference-for-maintenance-tasks.md) num site antes da atualização, reconfigure essas tarefas no site com as definições que estavam aplicadas antes da atualização do site.  
-
-**Atualizar clientes**:  
-Depois de todos os seus sites atualizam para o System Center Configuration Manager, planeie a atualização dos clientes.  
-
-Ao atualizar um cliente, o software atual do cliente é desinstalado e é instalada a nova versão do software de cliente. Para atualizar os clientes, pode utilizar qualquer método suportado pelo Configuration Manager.  
+### <a name="after-you-upgrade"></a>Po uaktualnieniu  
+**Uaktualnić autonomiczne konsole programu Configuration Manager**:  
+Domyślnie po uaktualnieniu centralnej lokacji administracyjnej lub lokacji głównej program instalacyjny uaktualnia także konsolę programu Configuration Manager, który jest zainstalowany na serwerze lokacji. Jednak każdą konsolę zainstalowaną na komputerze innym niż serwer lokacji należy uaktualnić ręcznie.  
 
 > [!TIP]  
->  Ao atualizar o site de nível superior de uma hierarquia, também é atualizado o pacote de instalação de cliente de cada ponto de distribuição da hierarquia. Ao atualizar um site primário, o pacote de atualização de cliente disponível nesse site primário é atualizado.  
+>  Przed rozpoczęciem uaktualniania zamknij otwarte konsole.  
 
-Para obter informações sobre como atualizar clientes existentes e sobre como instalar novos clientes, veja [Como atualizar clientes em computadores Windows no System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md).  
+Aby uzyskać więcej informacji, zobacz [Instalowanie konsol programu System Center Configuration Manager](../../../../core/servers/deploy/install/install-consoles.md).  
 
-##  <a name="bkmk_considerations"></a> Considerações sobre atualizações  
-**Ações automáticas**:  
-Quando atualizar para o System Center Configuration Manager, as seguintes ações ocorrem automaticamente:  
+**Skonfiguruj ponownie repliki bazy danych dla punktów zarządzania w lokacjach głównych:**  
+W przypadku używania replik bazy danych dla punktów zarządzania w lokacjach głównych należy odinstalować te repliki przed uaktualnieniem lokacji. Po uaktualnieniu lokacji głównej skonfiguruj ponownie repliki bazy danych dla punktów zarządzania.   
+Aby uzyskać więcej informacji, zobacz [Repliki bazy danych dla punktów zarządzania programu System Center Configuration Manager](../../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
 
--   O site efetua uma reposição do site, a qual inclui uma reinstalação de todas as funções do sistema de sites.  
--   Caso o site seja o site de nível superior de uma hierarquia, atualizará o pacote de instalação de cliente em todos os pontos de distribuição da hierarquia. O site também atualiza as imagens de arranque predefinidas para utilizar a nova versão do Windows PE incluída no Windows Assessment and Deployment Kit 10. No entanto, a atualização não atualiza suportes de dados existentes para utilização com implementação de imagens.  
--   Caso o site seja um site primário, atualizará o pacote de atualização de cliente para esse site.  
+**Skonfiguruj ponownie wszystkie wyłączone przed uaktualnieniem zadania konserwacji bazy danych:**  
+Jeśli przed uaktualnieniem w lokacji wyłączono zadania obsługi bazy danych ([Informacje o zadaniach konserwacji programu System Center Configuration Manager](../../../../core/servers/manage/reference-for-maintenance-tasks.md)), skonfiguruj je ponownie w lokacji przy użyciu ustawień stosowanych wcześniej przed uaktualnieniem.  
 
-**Ações manuais para o utilizador administrativo após uma atualização**   
-Depois de atualizar um site, certifique-se de que as seguintes ações são efetuadas:  
+**Uaktualnij klientów**:  
+Po uaktualnieniu wszystkich lokacji do programu System Center Configuration Manager, Zaplanuj uaktualnienie klientów.  
 
--   Certifique-se de que os clientes atribuídos a cada site primário atualizam e instalam o software de cliente da nova versão  
--   Atualizar cada consola do Configuration Manager que liga ao site e que é executado no computador que esteja remoto a partir do servidor do site  
--   Nos sites primários onde utiliza réplicas de bases de dados para pontos de gestão, reconfigure as réplicas de base de dados  
--   Depois da atualização do site, tem de atualizar manualmente os suportes de dados físicos, tais como ficheiros ISO para CD e DVD ou pens USB, ou suportes de dados pré-configurados utilizados para implementações do Windows To Go ou fornecidos a fornecedores de hardware. Embora a atualização do site atualiza as imagens de arranque predefinidas, não pode atualizar estes ficheiros de suporte de dados ou dispositivos utilizados externamente em relação ao Configuration Manager  
--   Planeie a atualização de imagens de arranque não predefinidas quando não precisa da versão original (mais antiga) do Windows PE.  
-
-**Ações que afetam configurações e definições**   
-Quando um site é atualizado para o System Center Configuration Manager, algumas configurações e definições não são mantidas após a atualização ou são definidas para uma nova configuração predefinida. A tabela seguinte inclui as definições que não são mantidas ou que são alteradas, bem como informações que o ajudam a efetuar o planeamento das mesmas durante a atualização de sites:  
-
--   **Centro de Software:**  
-    Os seguintes itens do Centro de Software são repostos nos valores predefinidos:  
-    -   A opção**Informação de trabalho** é reposta para um horário de expediente das **5h00** às **22h00** Monday às Friday.  
-    -   O valor de **Manutenção do computador** é definido como **Suspender as atividades do Centro de Software quando o computador estiver em modo de apresentação**.  
-    -   O valor de **Controlo remoto** é definido com o valor existente nas definições de cliente que foram atribuídas ao computador.  
--   **Agendamentos de resumo de atualização de software:**  
-     Os agendamentos de resumo personalizados para atualizações de software ou grupos de atualizações de software são repostos no valor predefinido de 1 hora. Após a conclusão da atualização, reponha os valores de resumo personalizados na frequência pretendida.  
-
-##  <a name="bkmk_test"></a> Testar a atualização da base de dados do site  
-As seguintes informações aplicam-se apenas quando estiver a atualizar uma versão anterior, como o System Center 2012 Configuration Manager para o System Center Configuration Manager.
-
-Antes de atualizar um site, teste uma cópia da base de dados desse site para a atualização.  
-
-Para testar a base de dados para uma atualização, restaure primeiro uma cópia da base de dados do site para uma instância do SQL Server que não aloje um site do Configuration Manager. A versão do SQL Server que utiliza para alojar a cópia da base de dados tem de ser uma versão do SQL Server que suporta a origem da cópia da base de dados que é a versão do Configuration Manager.  
-
-Em seguida, depois de restaurar a base de dados do site, no computador do SQL Server, execute a configuração do Configuration Manager da pasta de suporte de dados de origem para o System Center Configuration Manager com o **/testdbupgrade.** opção da linha de comandos.  
-
--   Para obter informações sobre como criar e restaurar uma cópia de segurança da base de dados do site, veja [Opções da linha de comandos para Configuração](../../../../core/servers/deploy/install/command-line-options-for-setup.md).  
--   Para obter informações sobre a opção da linha de comandos **/TESTDBUPGRADE**, veja a tabela da secção [Opções da linha de comandos para Configuração](../../../../core/servers/deploy/install/command-line-options-for-setup.md).  
--   Para obter informações sobre as versões suportadas do SQL Server, veja o tópico [Suporte para versões do SQL Server para o System Center Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md).  
+Podczas uaktualniania bieżące oprogramowanie klienta zostaje odinstalowane i zastąpione nową wersją oprogramowania. Aby uaktualnić klientów, można zastosować dowolną metodę obsługiwaną przez program Configuration Manager.  
 
 > [!TIP]  
->  Se integrar o Microsoft Intune com o Configuration Manager:  
+>  W przypadku uaktualniania lokacji najwyższego poziomu w hierarchii zostaje również zaktualizowany pakiet instalacyjny klienta w każdym punkcie dystrybucji w hierarchii. W ramach uaktualniania lokacji głównej zostaje zaktualizowany pakiet uaktualniający klienta dostępny w tej lokacji głównej.  
+
+Aby uzyskać więcej informacji o sposobie uaktualniania istniejących klientów i instalowaniu nowych klientów, zobacz [Uaktualnianie klientów komputerów z systemem Windows w programie System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md).  
+
+##  <a name="bkmk_considerations"></a> Zagadnienia dotyczące uaktualniania  
+**Akcje automatyczne**:  
+Po uaktualnieniu do programu System Center Configuration Manager automatycznie wykonywane następujące akcje:  
+
+-   Lokacja samodzielnie się resetuje, jednocześnie instalując ponownie wszystkie role systemu lokacji.  
+-   Lokacja najwyższego poziomu w hierarchii aktualizuje pakiet instalacyjny klienta w każdym punkcie dystrybucji w hierarchii. Lokacja aktualizuje także domyślne obrazy rozruchowe tak, aby była w nich używana nowa wersja systemu Windows PE dołączona do Zestawu do oceny i wdrażania systemu Windows 10. Jednak proces uaktualniania nie uaktualnia istniejących nośników służących do wdrażania obrazów.  
+-   Lokacja główna aktualizuje pakiet uaktualniający klienta dla tej lokacji.  
+
+**Ręczne akcje wykonywane przez użytkownika administracyjnego po uaktualnieniu**   
+Po uaktualnieniu lokacji upewnij się, że są wykonywane następujące czynności:  
+
+-   Sprawdź, czy w przypadku klientów przypisanych do poszczególnych lokacji głównych zostało wykonane uaktualnienie i zainstaluj oprogramowanie klienta z nową wersją  
+-   Uaktualnienia poszczególnych konsoli programu Configuration Manager, która połączy się z lokacją i uruchomione na komputerze sterowanym zdalnie z serwera lokacji  
+-   W lokacjach głównych, w których są używane repliki bazy danych dla punktów zarządzania, skonfiguruj ponownie repliki bazy danych  
+-   Po uaktualnieniu lokacji należy ręcznie uaktualnić nośniki fizyczne, takie jak pliki ISO dysków CD lub DVD, dyski flash USB lub wcześniej przygotowane nośniki używane do wdrożeń funkcji Windows To Go lub udostępniane dostawcom sprzętu. Chociaż proces uaktualniania lokacji aktualizuje domyślne obrazy rozruchowe nie może uaktualnić plików nośników lub urządzeń używanych zewnętrznie w stosunku do programu Configuration Manager  
+-   Aktualizowanie obrazów rozruchowych innych niż domyślne należy zaplanować, gdy oryginalne (starsze) wersje systemu Windows PE nie są potrzebne.  
+
+**Akcje, które wpływają na konfiguracje i ustawienia**   
+Podczas uaktualniania lokacji do programu System Center Configuration Manager, niektóre konfiguracje i ustawienia nie zostaną utrwalone po uaktualnieniu lub ustawiono Nowa domyślna konfiguracja. Poniższa tabela zawiera ustawienia, które nie są trwałe i mogą ulec zmianie, a także szczegółowe informacje ułatwiające zaplanowanie ich podczas uaktualniania lokacji:  
+
+-   **Software Center:**  
+    Następujące elementy programu Software Center są resetowane do wartości domyślnych:  
+    -   Wardości w pozycji**Informacje o pracy** zostają zresedowane do godzin pracy od **5:00** do **22:00** Monday do Friday.  
+    -   W pozycji **Konserwacja komputera** zostaje ustawiona wartość **Wstrzymaj działania programu Software Center, jeżeli mój komputer jest w trybie prezentacji**.  
+    -   W pozycji **Zdalne sterowanie** zostaje ustawiona wartość ustawień klienta przypisanych do komputera.  
+-   **Harmonogramy podsumowania aktualizacji oprogramowania:**  
+     Niestandardowe harmonogramy podsumowania aktualizacji oprogramowania lub grup aktualizacji oprogramowania zostają zresetowane do wartości domyślnej równej 1 godz. Po zakończeniu uaktualniania należy zresetować niestandardowe wartości podsumowania do wymaganej częstotliwości.  
+
+##  <a name="bkmk_test"></a> Testowanie uaktualnienia bazy danych lokacji  
+Poniższe informacje dotyczą tylko wtedy, gdy są uaktualnianie poprzednich wersji, takich jak System Center 2012 Configuration Manager do programu System Center Configuration Manager.
+
+Przed uaktualnieniem lokacji należy przetestować kopię bazy danych tej lokacji do uaktualnienia.  
+
+Aby przetestować bazę danych do uaktualnienia, należy najpierw przywrócić kopię bazy danych lokacji do wystąpienia programu SQL Server, który nie jest hostem lokacji programu Configuration Manager. Wersja programu SQL Server używanego do hostowania kopii bazy danych musi być wersją programu SQL Server, czy wersja programu Configuration Manager obsługuje oznacza to kopia bazy danych.  
+
+Następnie po przywróceniu bazy danych lokacji na komputerze programu SQL Server, uruchom Instalatora programu Configuration Manager z folderu nośnika źródłowego programu System Center Configuration Manager z **polecenia/testdbupgrade** opcji wiersza polecenia.  
+
+-   Informacje o sposobie tworzenia i przywracania kopii zapasowej bazy danych lokacji znajdują się w temacie [Opcje wiersza polecenia dla Instalatora](../../../../core/servers/deploy/install/command-line-options-for-setup.md).  
+-   Informacje o używaniu opcji wiersza polecenia **/TESTDBUPGRADE** znajdują się w tabeli w temacie [Opcje wiersza polecenia dla Instalatora](../../../../core/servers/deploy/install/command-line-options-for-setup.md).  
+-   Informacje o obsługiwanych wersjach programu SQL Server można znaleźć w temacie [Obsługiwane konfiguracje programu SQL Server dla programu System Center Configuration Manager](../../../../core/plan-design/configs/support-for-sql-server-versions.md).  
+
+> [!TIP]  
+>  Po zintegrowaniu programu Microsoft Intune z programem Configuration Manager:  
 >   
->  Quando executa um teste de atualização da base de dados numa cópia da base de dados do site com 5 ou mais dias, poderá receber uma das seguintes mensagens:  
+>  Po uruchomieniu testu uaktualnienia bazy danych na kopii bazy danych lokacji utworzonej 5 dni temu lub wcześniej może zostać wyświetlony jeden z następujących komunikatów:  
 >   
->  -   AVISO: Atualização irá forçar a sincronização completa com a nuvem.  
->  -   ERRO: Atualização de base de dados irá forçar a sincronização completa com a nuvem.  
+>  -   OSTRZEŻENIE: Uaktualnienie wymusza pełną synchronizację z chmurą.  
+>  -   BŁĄD: Uaktualnienie bazy danych wymusza pełną synchronizację z chmurą.  
 >   
-> Ambos podem ser ignoradas durante o teste de uma atualização de base de dados que não indicam uma falha ou um problema com o teste da atualização. Em vez disso, indicam que, durante a atualização real, dados a partir de **nuvem** grupo de replicação de base de dados poderão ser sincronizados com o Microsoft Intune.  
+> Jednocześnie można bezpiecznie zignorować podczas testowania uaktualnienia bazy danych, ponieważ nie wskazują błędu lub problemu z uaktualnieniem testowym. Zamiast tego wskazują, że podczas rzeczywistego uaktualnienia dane z **chmury** grupy replikacji bazy danych mogą zostać zsynchronizowane w usłudze Microsoft Intune.  
 
-Utilize o seguinte procedimento em cada site de administração central e site primário que pretenda atualizar.  
+W każdej centralnej lokacji administracyjnej i lokacji głównej, która ma zostać uaktualniona, wykonaj następującą procedurę.  
 
-#### <a name="to-test-a-site-database-for-upgrade"></a>Para testar uma base de dados do site para atualização  
+#### <a name="to-test-a-site-database-for-upgrade"></a>Aby przetestować bazę danych lokacji dla uaktualnienia  
 
-1.  Faça uma cópia da base de dados do site e, em seguida, restaure-a para uma instância do SQL Server que utilize a mesma edição que a base de dados do site e que não aloje um site do Configuration Manager. Por exemplo, se a base de dados do site for executada numa instância da edição Enterprise do SQL Server, certifique-se de que restaura a base de dados para uma instância do SQL Server que também execute a edição Enterprise do SQL Server.  
+1.  Wykonaj kopię bazy danych lokacji, a następnie przywróć ją do wystąpienia programu SQL Server, który używa tej samej wersji co baza danych lokacji i nie jest hostem lokacji programu Configuration Manager. Przykładowo kopia bazy danych lokacji uruchomionej w wystąpieniu programu SQL Server w wersji Enterprise musi być przywrócona w innym wystąpieniu programu SQL Server w wersji Enterprise.  
 
-2.  Depois de restaurar a cópia da base de dados, execute a configuração do suporte de dados de origem para o System Center Configuration Manager. Ao executar a Configuração, utilize a opção da linha de comandos **/TESTDBUPGRADE** . Se a instância do SQL Server que aloja a cópia da base de dados não for a instância predefinida, terá de fornecer também os argumentos da linha de comandos para identificar a instância que aloja a cópia da base de dados do site.  
+2.  Po przywróceniu kopii bazy danych, uruchom Instalatora z nośnika źródłowego programu System Center Configuration Manager. Podczas uruchamiania Instalatora użyj opcji wiersza polecenia **/TESTDBUPGRADE** . Jeśli wystąpienie programu SQL Server, które hostuje kopię bazy danych, nie jest wystąpieniem domyślnym, musisz także podać argumenty wiersza polecenia identyfikujące wystąpienie hostujące kopię bazy danych lokacji.  
 
-     Por exemplo, planeia atualizar uma base de dados do site denominada SMS_ABC. Restaura uma cópia desta base de dados do site para uma instância suportada do SQL Server com o nome de instância DBTest. Para testar uma atualização desta cópia da base de dados do site, use a seguinte linha de comandos: **Setup.exe /testdbupgrade. DBtest\CM_ABC**  
+     Przykładowo chcesz przeprowadzić uaktualnienie bazy danych lokacji z nazwą bazy danych SMS_ABC. Wykonano przywrócenie kopii bazy danych lokacji na obsługiwane wystąpienie serwera SQL Server o nazwie DBTest. Aby przetestować uaktualnienie kopii bazy danych lokacji, należy użyć następującego polecenia: **Setup.exe polecenia/testdbupgrade DBtest\CM_ABC**  
 
-     Pode encontrar o Setup.exe na seguinte localização no suporte de dados de origem para o System Center Configuration Manager: **SMSSETUP\BIN\X64**.  
+     Setup.exe można znaleźć w następującej lokalizacji na nośniku źródłowym programu System Center Configuration Manager: **SMSSETUP\BIN\X64**.  
 
-3.  Na instância do SQL Server em que executou o teste da atualização da base de dados, monitorize o progresso e êxito do ficheiro ConfigMgrSetup.log, na raiz da unidade do sistema:  
+3.  Na komputerze z wystąpieniem programu SQL Server realizującym test uaktualnienia bazy danych otwórz zapisany w głównym folderze dysku plik ConfigMgrSetup.log i sprawdź zapisywane w nim informacje:  
 
-    -   Se o teste da atualização falhar, resolva eventuais problemas relacionados com a falha da atualização da base de dados do site, crie uma nova cópia de segurança da base de dados do site e teste a atualização da nova cópia da base de dados do site.  
-    -   Após a conclusão do processo com êxito, poderá eliminar a cópia da base de dados.  
+    -   Jeśli testowe uaktualnienie nie powiedzie się, usuń problemy związane z awarią uaktualnienia bazy danych lokacji, utwórz nową kopię zapasową bazy danych lokacji i przetestuj uaktualnienie nowej kopii bazy danych lokacji.  
+    -   Gdy proces powiedzie się, możesz usunąć kopię bazy danych lokacji.  
 
         > [!NOTE]  
-        >  O restauro da cópia da base de dados do site utilizada para o teste da atualização não é suportado para utilização como base de dados de qualquer site.  
+        >  Przywracanie kopii bazy danych lokacji użytej do testu uaktualnienia jako bazy danych dowolnej lokacji nie jest obsługiwane.  
 
-Depois de atualizar com êxito uma cópia da base de dados do site, prossiga com a atualização do site do Configuration Manager e a respetiva base de dados do site.  
+Po pomyślnym uaktualnieniu kopii bazy danych lokacji, należy kontynuować proces uaktualniania lokacji programu Configuration Manager i jego bazy danych lokacji.  
 
-##  <a name="bkmk_upgrade"></a> Atualizar sites  
-Depois de concluir as configurações de pré-atualização para o seu site, testar a atualização da base de dados do site numa cópia da base de dados e transferir ficheiros de pré-requisitos e pacotes de idiomas da versão do service pack que planeia instalar, estará pronto atualizar o seu site do Configuration Manager.  
+##  <a name="bkmk_upgrade"></a> Uaktualnianie lokacji  
+Po zakończeniu poprzedzających uaktualnienie czynności konfiguracyjnych lokacji należy sprawdzić uaktualnienie bazy danych lokacji na kopii bazy danych i pobrać wymagane pliki oraz pakiety językowe dla wersji dodatku service pack, które zamierzasz zainstalować można przystąpić do uaktualnienia tej lokacji programu Configuration Manager.  
 
-Ao atualizar um site numa hierarquia, deverá atualizar primeiro o site de nível superior da hierarquia. Este site de nível superior é um site de administração central ou um site primário autónomo. Após a conclusão da atualização de um site de administração central, será possível atualizar os sites primários subordinados pela ordem que entender. Depois de atualizar um site primário, pode atualizar os sites secundários subordinados desse site ou atualizar sites primários adicionais antes de atualizar quaisquer sites secundários.  
+Uaktualniając lokację umieszczoną w hierarchii, należy najpierw uaktualnić lokację najwyższego poziomu. Lokacja najwyższego to centralna lokacja administracyjna lub autonomiczna lokacja główna. Po zakończeniu uaktualniania centralnej lokacji administracyjnej można uaktualnić w dowolnej kolejności podrzędne lokacje główne. Po uaktualnieniu lokacji głównej można uaktualnić tej lokacji podrzędnych lokacji dodatkowych lub uaktualnić dodatkowe Lokacje główne, przed uaktualnieniem wszystkich lokacji dodatkowych.  
 
-Para atualizar um site de administração central ou site primário, executar a configuração do suporte de dados de origem do System Center Configuration Manager. No entanto, não deverá executar o Programa de Configuração para atualizar sites secundários. Em alternativa, utilize a consola do Configuration Manager para atualizar um site secundário após concluir a atualização do respetivo site primário principal.  
+Aby uaktualnić centralną lokację administracyjną lub lokację główną, należy uruchomić instalację z nośnika źródłowego programu System Center Configuration Manager. Nie należy tego robić w celu uaktualnienia lokacji dodatkowych. Zamiast tego użyj konsoli programu Configuration Manager do uaktualnienia lokacji dodatkowej po zakończeniu uaktualnienia nadrzędnej lokacji głównej.  
 
-Antes de atualizar um site, feche a consola do Configuration Manager que está instalada no servidor de site até que a atualização do site esteja concluída. Além disso, feche cada consola do Configuration Manager que é executada em computadores que não seja o servidor do site. Poderá voltar a ligar a consola após a conclusão da atualização do site. No entanto, enquanto não atualizar uma consola do Configuration Manager para a nova versão do Configuration Manager, essa consola não é possível apresentar alguns objetos e informações que estão disponíveis na nova versão do Configuration Manager.  
+Przed uaktualnieniem lokacji zamknij konsolę programu Configuration Manager, który jest zainstalowany na serwerze lokacji, aż do zakończenia uaktualnienia lokacji. Należy także zamknąć każdą konsolę programu Configuration Manager działa na komputerach innych niż serwer lokacji. Ponowne nawiązanie połączenia z konsolą będzie możliwe po zakończeniu uaktualnienia lokacji. Jednakże do momentu uaktualnienia konsoli programu Configuration Manager do nowej wersji programu Configuration Manager, nie będzie możliwe wyświetlenie niektórych obiektów i informacji dostępnych w nowej wersji programu Configuration Manager.  
 
-Utilize os procedimentos seguintes para atualizar sites do Configuration Manager:  
+Użyj poniższych procedur do uaktualnienia lokacji programu Configuration Manager:  
 
-#### <a name="to-upgrade-a-central-administration-site-or-primary-site"></a>Para atualizar um site de administração central ou site primário  
+#### <a name="to-upgrade-a-central-administration-site-or-primary-site"></a>Aby uaktualnić centralną lokację administracyjną lub lokację główną  
 
-1.  Certifique-se de que o utilizador que executa o Programa de Configuração possui os seguintes direitos de segurança:  
+1.  Sprawdź, czy użytkownik, który uruchamia instalatora, ma następujące prawa zabezpieczeń:  
 
-    -   Direitos de Administrador Local no computador do servidor de site.  
-    -   Direitos de Administrador Local no servidor da base de dados do site remoto, se for remoto.    </br></br>
+    -   Uprawnienia administratora lokalnego na komputerze serwera lokacji.  
+    -   Uprawnienia administratora lokalnego na zdalnym serwerze bazy danych lokacji (jeśli jest zdalna).    </br></br>
 
-2.  No computador do servidor do site, abra o Explorador do Windows e navegue para  **&lt;ConfigMgSourceMedia\>\SMSSETUP\BIN\X64**.  
+2.  Na komputerze serwera lokacji Otwórz Eksploratora Windows i przejdź do  **&lt;Nośnik_źródłowy_programu_configmgr\>\SMSSETUP\BIN\X64**.  
 
-3.  Faça duplo clique em **Setup.exe**. É aberto o Assistente de configuração do Configuration Manager.  
+3.  Kliknij dwukrotnie plik **Setup.exe**. Otworzy się Kreator instalacji programu Configuration Manager.  
 
-4.  Na página **Antes de Começar** , clique em **Seguinte**.  
+4.  Na stronie **Zanim rozpoczniesz** kliknij przycisk **Dalej**.  
 
-5.  Na página **Introdução** , selecione **Atualizar este site do Configuration Manager**e clique em **Seguinte**.  
+5.  Na stronie **Wprowadzenie** wybierz polecenie **Uaktualnij tę lokację programu Configuration Manager**i kliknij przycisk **Dalej**.  
 
-6.  Na página **Chave de Produto** , clique em **Seguinte**.  
+6.  Na stronie **Klucz produktu** kliknij przycisk **Dalej**.  
 
-     Se instalou anteriormente a avaliação do Configuration Manager, pode selecionar **instalar a edição licenciada deste produto**e, em seguida, introduza a chave de produto para a instalação completa do Configuration Manager para converter o site para a versão completa.  
+     Jeśli wcześniej została zainstalowana wersja ewaluacyjna Configuration Manager, możesz wybrać **Instaluj licencjonowaną wersję tego produktu**, a następnie wprowadź klucz produktu w celu uruchomienia pełnej instalacji programu Configuration Manager skonwertuje wówczas lokację do wersji pełnej.  
 
-     Começando com a versão de Outubro de 2016 do suporte de dados de linha de base do versão 1606 para o System Center Configuration Manager, pode especificar a data de expiração do seu contrato de Software Assurance. Também tem a opção de especificar o **data de expiração do Software Assurance** do seu contrato de licenciamento em como um lembrete para si conveniente dessa data. Se não introduzir este durante a configuração, pode especificá-la mais tarde a partir da consola do Configuration Manager.
+     Począwszy od wersji października 2016 nośnika linii bazowej 1606 wersji programu System Center Configuration Manager, można określić datę wygaśnięcia umowy Software Assurance. Masz również opcję, aby określić **Data wygaśnięcia Software Assurance** umowy licencyjnej jako wygodny monitu dla użytkownika z tą datą. Jeśli nie podasz to podczas instalacji, możesz podać go później z w konsoli programu Configuration Manager.
 
      >  [!NOTE]   
-     >  Microsoft não valida a data de expiração introduzido e não utilize esta data para validação da licença.  Em vez disso, pode utilizá-lo como um lembrete da sua data de expiração. Isto é útil porque o Configuration Manager periodicamente verifica a existência de novas atualizações de software disponibilizadas online e o estado de licença do software assurance deve ser atual para serem elegíveis para utilizar estas atualizações adicionais.    
+     >  Microsoft Data wygaśnięcia wprowadzone i nie będzie używać tej daty sprawdzanie oryginalności licencji nie można zweryfikować.  Należy zamiast tego należy używać go jako przypomnienie daty wygaśnięcia. Jest to przydatne, ponieważ stan licencji gwarancji oprogramowania należy bieżącego na kwalifikować się do korzystania z tych dodatkowych aktualizacji i programu Configuration Manager okresowo sprawdza, czy nowe aktualizacje oprogramowania oferowanych online.    
 
-     Para obter mais informações, consulte [licenciamento e ramos para o System Center Configuration Manager](/sccm/core/understand/learn-more-editions).
+     Aby uzyskać więcej informacji, zobacz [licencjonowania i gałęzi programu System Center Configuration Manager](/sccm/core/understand/learn-more-editions).
 
-7.  Na página **Termos de Licenciamento para Software Microsoft** , leia e aceite os termos de licenciamento e clique em **Seguinte**.  
+7.  Na stronie **Postanowienia licencyjne dotyczące oprogramowania firmy Microsoft** przeczytaj i zaakceptuj postanowienia licencyjne, a następnie kliknij przycisk **Dalej**.  
 
-8.  Na página **Licenças de Pré-requisitos** , leia e aceite os termos de licenciamento do software de pré-requisito e clique em **Seguinte**. O programa de configuração transfere e instala automaticamente o software em sistemas de sites ou clientes, quando necessário. Tem de selecionar todas as caixas de verificação para avançar para a página seguinte.  
+8.  Na stronie **Licencje wymagań wstępnych** przeczytaj i zaakceptuj postanowienia licencyjne wstępnie wymaganego oprogramowania, a następnie kliknij przycisk **Dalej**. Instalator pobiera i automatycznie instaluje oprogramowanie w systemach lokacji lub na klientach, gdy jest to wymagane. Przed kontynuowaniem do następnej strony należy zaznaczyć wszystkie pola wyboru.  
 
-9. Na página **Transferências de Pré-requisitos** , especifique se a Configuração deverá transferir os ficheiros redistribuíveis de pré-requisitos, pacotes de idiomas e atualizações de produto mais recentes a partir da Internet ou utilizar ficheiros transferidos anteriormente, e clique em **Seguinte**. Se tiver transferido anteriormente os ficheiros através do Dispositivo de Transferência da Configuração, selecione **Utilizar ficheiros anteriormente transferidos** e especifique a pasta para transferência. Para obter mais informações, consulte [dispositivo de transferência da configuração](/sccm/core/servers/deploy/install/setup-downloader).
+9. Na stronie **Pobieranie plików wymaganych wstępnie** określ, czy instalator ma pobrać najnowsze wymagane wstępnie pliki, pakiety językowe i aktualizacje produktów z Internetu, czy mają być użyte poprzednio pobrane pliki, i kliknij przycisk **Dalej**. Jeżeli pliki zostały wcześniej pobrane przy użyciu Narzędzia pobierania Instalatora, wybierz opcję **Użyj wcześniej pobranych plików** i określ folder pobierania. Aby uzyskać więcej informacji, zobacz [Narzędzie pobierania Instalatora](/sccm/core/servers/deploy/install/setup-downloader).
 
     > [!NOTE]  
-    >  Quando utilizar ficheiros transferidos anteriormente, verifique se o caminho para a pasta de transferência contém a versão mais recente dos ficheiros.  
+    >  W przypadku używania wcześniej pobranych plików sprawdź, czy ścieżka do folderu pobierania zawiera najnowszą wersję plików.  
 
-10. Na página **Seleção do Idioma do Servidor** , veja a lista de idiomas atualmente instalados para o site. Selecione idiomas adicionais disponíveis neste site para a consola do Configuration Manager e para relatórios ou desmarque os idiomas que já não é necessário suportar no site e, em seguida, clique em **seguinte**. Por predefinição, está seleccionado o inglês e não pode ser removido.  
-
-    > [!IMPORTANT]  
-    >  Cada versão do Configuration Manager não é possível utilizar pacotes de idiomas de uma versão anterior do Configuration Manager. Para ativar o suporte para um idioma num site do Configuration Manager que atualizar, tem de utilizar a versão do pacote de idiomas dessa nova versão. Para o exemplo, durante a atualização do System Center 2012 Configuration Manager para System Center Configuration Manager, se a versão do System Center Configuration Manager de um pacote de idiomas não está disponível com os ficheiros de pré-requisitos que transferir, suporte para esse idioma não pode ser instalado.  
-
-11. Na página **Seleção do Idioma do Cliente** , veja a lista de idiomas atualmente instalados para o site. Selecione idiomas adicionais disponíveis neste site para computadores cliente ou desmarque os idiomas que já não seja necessário suportar no site. Especifique se pretende ativar todos os idiomas de cliente para clientes de dispositivos móveis e clique em **Seguinte**. Por predefinição, está seleccionado o inglês e não pode ser removido.  
+10. Na stronie **Wybór języka serwera** wyświetl listę języków zainstalowanych obecnie w tej lokacji. Wybierz dodatkowe języki, które są dostępne w tej lokacji dla konsoli programu Configuration Manager i raporty, oraz usuń języki, które mają już w tej lokacji, a następnie kliknij przycisk **dalej**. Język angielski jest wybrany domyślnie i nie można go usunąć.  
 
     > [!IMPORTANT]  
-    >  Cada versão do Configuration Manager não é possível utilizar pacotes de idiomas de uma versão anterior do Configuration Manager. Para ativar o suporte para um idioma num site do Configuration Manager que atualizar, tem de utilizar a versão do pacote de idiomas dessa nova versão. Para o exemplo, durante a atualização do System Center 2012 Configuration Manager para System Center Configuration Manager, se a versão do System Center Configuration Manager de um pacote de idiomas não está disponível com os ficheiros de pré-requisitos que transferir, suporte para esse idioma não pode ser instalado.  
+    >  Każda wersja programu Configuration Manager nie może używać pakietów językowych z poprzednich wersji programu Configuration Manager. Aby włączyć obsługę języka w lokacji programu Configuration Manager, która uaktualnieniu, należy użyć wersji pakietu językowego dla nowej wersji. Na przykład podczas uaktualniania programu System Center 2012 Configuration Manager do System Center Configuration Manager, jeśli wersja pakietu językowego programu System Center Configuration Manager nie jest dostępna z plikami wymagań wstępnych, które można pobrać obsługę danego języka nie zostanie zainstalowane.  
 
-12. Na página **Resumo de Definições** , clique em **Seguinte** para iniciar o Verificador de Pré-requisitos para verificar a prontidão do servidor para a atualização do site.  
+11. Na stronie **Wybór języka klienta** wyświetl listę języków zainstalowanych obecnie w tej lokacji. Wybierz dodatkowe języki, które mają być dostępne w tej lokacji dla klientów, oraz usuń języki, które nie są już potrzebne w tej lokacji. Określ, czy w klientach urządzeń przenośnych mają zostać włączone wszystkie języki klienckie, i kliknij przycisk **Dalej**. Język angielski jest wybrany domyślnie i nie można go usunąć.  
 
-13. Se não forem listados problemas na página **Verificação da Instalação de Pré-requisitos** , clique em **Seguinte** para atualizar o site e as funções do sistema de sites. Quando o Verificador de Pré-requisitos detetar um problema, clique num item da lista para obter detalhes sobre como resolver o problema. Antes de continuar a Configuração, resolva todos os itens da lista com estado de **Erro** . Depois de resolver o problema, clique em **Executar Verificação** para reiniciar a verificação de pré-requisitos. Pode também abrir o ficheiro ConfigMgrPrereq.log na raiz da unidade do sistema para rever os resultados do Verificador de Pré-requisitos. O ficheiro de registo pode conter informações adicionais que não são apresentadas na interface de utilizador. Para obter uma lista de regras de pré-requisitos de instalação e as descrições, consulte [verificador](/sccm/core/servers/deploy/install/list-of-prerequisite-checks).  
+    > [!IMPORTANT]  
+    >  Każda wersja programu Configuration Manager nie może używać pakietów językowych z poprzednich wersji programu Configuration Manager. Aby włączyć obsługę języka w lokacji programu Configuration Manager, która uaktualnieniu, należy użyć wersji pakietu językowego dla nowej wersji. Na przykład podczas uaktualniania programu System Center 2012 Configuration Manager do System Center Configuration Manager, jeśli wersja pakietu językowego programu System Center Configuration Manager nie jest dostępna z plikami wymagań wstępnych, które można pobrać obsługę danego języka nie zostanie zainstalowane.  
 
-Na página **Atualizar** , a Configuração apresenta o estado do progresso global. Quando o Programa de Configuração concluir a instalação do servidor do site principal e do sistema de sites, pode fechar o assistente. A configuração do site continua em segundo plano.  
+12. Na stronie **Podsumowanie ustawień** kliknij przycisk **Dalej** . Zostanie uruchomione Narzędzie sprawdzania wymagań wstępnych, które potwierdzi gotowość serwera do uaktualnienia danej lokacji.  
 
-#### <a name="to-upgrade-a-secondary-site"></a>Para atualizar um site secundário  
+13. Jeśli na stronie **Sprawdzenie instalacji wymagań wstępnych** nie zostały podane żadne problemy, kliknij przycisk **Dalej** , aby uaktualnić lokację i role systemu lokacji. Gdy Narzędzie sprawdzania wymagań wstępnych wykryje problem, kliknij element na liście w celu uzyskania szczegółów dotyczących sposobu rozwiązania problemu. Przed kontynuowaniem instalacji usuń przyczyny wszystkich pozycji o statusie **Błąd** . Po rozwiązaniu problemu kliknij przycisk **Uruchom sprawdzenie** , aby ponownie uruchomić sprawdzenie wymagań wstępnych. Aby przejrzeć wyniki zwrócone przez Narzędzie sprawdzania wymagań wstępnych, możesz również otworzyć plik ConfigMgrPrereq.log w katalogu głównym dysku systemowego. Plik dziennika może zawierać dodatkowe informacje, które nie są wyświetlane w interfejsie użytkownika. Aby uzyskać listę reguły wymagań wstępnych instalacji i opisy, zobacz [narzędzie sprawdzania wymagań wstępnych](/sccm/core/servers/deploy/install/list-of-prerequisite-checks).  
 
-1.  Certifique-se de que o utilizador administrativo que executa o Programa de Configuração possui os seguintes direitos de segurança:  
+Na stronie **Uaktualnienie** instalator wyświetli ogólny postęp całej procedury. Gdy Instalator ukończy instalację podstawowego serwera lokacji i systemu lokacji, możesz zamknąć kreatora. Konfiguracja lokacji odbywa się w tle.  
 
-    -   Direitos de Administrador Local no computador do site secundário  
-    -   Administrador de Infraestrutura ou um direito de acesso de Administrador Total no site primário principal  
-    -   Direitos de administrador de sistema (AS) na base de dados do site secundário  
+#### <a name="to-upgrade-a-secondary-site"></a>Aby uaktualnić lokację dodatkową  
+
+1.  Sprawdź, czy użytkownik administracyjny uruchamiający Instalatora ma następujące prawa zabezpieczeń:  
+
+    -   Uprawnienia administratora lokalnego na komputerze serwera lokacji dodatkowej  
+    -   Administrator infrastruktury lub administrator o pełnych uprawnieniach w głównym elemencie nadrzędnym  
+    -   Uprawnienia administratora systemu w bazie danych lokacji dodatkowej  
     </br>
-2.  Na consola do Configuration Manager, clique em **Administração**.  
+2.  W konsoli programu Configuration Manager kliknij przycisk **Administracja**.  
 
-3.  Na área de trabalho **Administração** , expanda **Configuração do Site**e clique em **Sites**.  
+3.  W obszarze roboczym **Administracja** rozwiń węzeł **Konfiguracja lokacji**, a następnie kliknij przycisk **Lokacje**.  
 
-4.  Selecione o site secundário que pretende atualizar e, no separador **Home Page** , no grupo **Site** , clique em **Atualizar**.  
+4.  Wybierz lokację dodatkową do uaktualnienia, a następnie na karcie **Narzędzia główne** w grupie **Lokacja** kliknij przycisk **Uaktualnij**.  
 
-5.  Clique em **Sim** para confirmar a decisão e iniciar a atualização do site secundário.  
+5.  Potwierdź decyzję, klikając przycisk **Tak** , i rozpocznij uaktualnienie lokacji dodatkowej.  
 
-A atualização do site secundário continuará em segundo plano. Após a conclusão da atualização, pode confirmar o estado na consola do Configuration Manager. Para confirmar o estado, selecione o servidor do site secundário e, no separador **Home Page** , no grupo **Site** , clique em **Mostrar Estado da Instalação**.  
+Uaktualnienie lokacji dodatkowej będzie realizowane w tle. Po zakończeniu uaktualnienia można potwierdzenie stanu konsoli programu Configuration Manager. Aby potwierdzić stan konsoli, wybierz serwer lokacji dodatkowej, a następnie na karcie **Narzędzia główne** w grupie **Lokacja** kliknij przycisk **Pokaż stan instalacji**.  
 
-##  <a name="BKMK_PostUpgrade"></a> Efetuar tarefas pós-atualização  
-Após atualizar um site para um novo Service Pack, poderá ter de executar tarefas adicionais para concluir a atualização ou reconfigurar o site. Estas tarefas podem incluir a atualização de clientes do Configuration Manager ou de consolas do Configuration Manager, voltando a reativar réplicas de base de dados para pontos de gestão ou o restauro de definições para a funcionalidade do Configuration Manager que utilize e que não sejam mantidas após a atualização do pacote de serviço.  
+##  <a name="BKMK_PostUpgrade"></a> Wykonywanie zadań po uaktualnieniu  
+Po uaktualnieniu lokacji do nowego dodatku Service Pack może być konieczne wykonanie dodatkowych zadań konfiguracyjnych wymaganych do skończenia uaktualnienia lub zmiany konfiguracji lokacji. Może to obejmować uaktualnienie klientów programu Configuration Manager lub konsoli programu Configuration Manager, ponowne włączenie replik bazy danych dla punktów zarządzania i przywrócenie ustawień dla funkcji programu Configuration Manager, należy używać i które nie zostaną utrwalone po uaktualnienia z dodatkiem service pack.  
 
-**Problemas conhecidos para sites secundários:**  
-- **Ao atualizar a versão 1511:** Para garantir que os clientes em sites secundários pode localizar o ponto de gestão do site secundário (ponto de gestão do proxy), adicione manualmente o ponto de gestão para grupos de limites que incluam também os pontos de distribuição no site secundário.  
+**Znane problemy dotyczące Lokacje dodatkowe:**  
+- **Po uaktualnieniu do wersji 1511:** Aby zapewnić klientom w lokacjach dodatkowych można znaleźć punktu zarządzania z lokacji dodatkowej (punkt zarządzania proxy), ręcznie dodać punkt zarządzania do grup granic obejmujących punkty dystrybucji w lokacji dodatkowej.  
 
-- **Ao atualizar a versão 1606 ou posterior:** Pontos de gestão do proxy são automaticamente adicionados a grupos de limites que incluam pontos de distribuição no site secundário.
+- **Po uaktualnieniu do wersji 1606 lub nowszy:** Punkty zarządzania serwera proxy są automatycznie dodawane do grupy granic, które zawierają punkty dystrybucji w lokacji dodatkowej.

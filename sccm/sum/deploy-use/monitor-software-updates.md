@@ -1,7 +1,6 @@
 ---
-
 title: Monitorowanie aktualizacji oprogramowania | Dokumentacja firmy Microsoft
-description: "Konsola programu System Center Configuration Manager zapewnia alertów i stany do monitorowania zgodności i aktualizacji."
+description: "Konsoli programu System Center Configuration Manager udostępnia alarmy i Stany monitorowania aktualizacji i zgodności."
 keywords: 
 author: dougeby
 ms.author: dougeby
@@ -10,29 +9,27 @@ ms.date: 11/10/2016
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology:
-- configmgr-sum
+ms.technology: configmgr-sum
 ms.assetid: 9afd7b0f-5c8e-48bc-9a65-1f7d74103688
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 1a4a9da88caba55d9e340c7fb1f31f4e3b957f3e
 ms.openlocfilehash: 956ef263a1c178b5ab5926705859f4b2d0ae5bc7
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
-# <a name="monitor-software-updates-in-system-center-configuration-manager"></a>Monitorowanie aktualizacji oprogramowania System Center Configuration Manager
+# <a name="monitor-software-updates-in-system-center-configuration-manager"></a>Monitorowanie aktualizacji oprogramowania w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager oferuje wiele sposobów ułatwiają monitorowanie obiektów aktualizacji oprogramowania, procesów i informacje o zgodności. Poniższe sekcje służą do monitorowania aktualizacji oprogramowania.
+System Center Configuration Manager zawiera wiele sposobów ułatwiają monitorowanie obiektów aktualizacji oprogramowania, procesów i informacji o zgodności. Poniższe sekcje umożliwiają monitorowanie aktualizacji oprogramowania.
 
 ## <a name="software-updates-dashboard"></a>Pulpit nawigacyjny aktualizacji oprogramowania
-Począwszy od programu Configuration Manager w wersji 1610 umożliwia pulpitu nawigacyjnego aktualizacje oprogramowania wyświetlić bieżący stan zgodności urządzeń w Twojej organizacji i szybsze analizowanie danych, aby zobaczyć, które urządzenia są zagrożone. Aby wyświetlić pulpit nawigacyjny, przejdź do **monitorowanie** > **Przegląd** > **zabezpieczeń** > **pulpitu nawigacyjnego aktualizacji oprogramowania**.   
+Począwszy od 1610 wersji programu Configuration Manager można użyć pulpitu nawigacyjnego aktualizacje oprogramowania można wyświetlić bieżący stan zgodności urządzeń w Twojej organizacji i szybkie analizowanie danych, aby sprawdzić, które urządzenia są narażeni na. Aby wyświetlić pulpit nawigacyjny, przejdź do **monitorowanie** > **omówienie** > **zabezpieczeń** > **pulpitu nawigacyjnego aktualizacje oprogramowania**.   
 
 ##  <a name="BKMK_SUAlerts"></a> Alerty dotyczące aktualizacji oprogramowania  
  Można skonfigurować alerty dotyczące aktualizacji oprogramowania w celu powiadamiania użytkowników administracyjnych, gdy poziom zgodności wdrożeń aktualizacji oprogramowania będzie niższy od skonfigurowanej wartości procentowej. Można skonfigurować alerty dotyczące wdrożeń aktualizacji oprogramowania w następujących lokalizacjach:  
 
--   Ustawienie ADR: Można skonfigurować ustawienia alertów w kreatorze reguły wdrażania automatycznego oraz właściwościach dla ADR.  
+-   Ustawienie ADR: Można skonfigurować ustawienia alertów w kreatorze reguły wdrażania automatycznego oraz we właściwościach reguły ADR.  
 
 -   Ustawienie wdrożenia: Można skonfigurować ustawienia alertów w Kreatorze wdrażania aktualizacji oprogramowania oraz właściwościach wdrożenia.  
 
@@ -47,16 +44,16 @@ Po skonfigurowaniu ustawień alertów po wystąpieniu określonego warunku, prog
 
 #### <a name="to-monitor-the-software-updates-synchronization-process"></a>Aby monitorować proces synchronizacji aktualizacji oprogramowania  
 
-- W konsoli programu Configuration Manager, przejdź do **monitorowanie** > **Przegląd** > **stan synchronizacji punktu aktualizacji oprogramowania**.  
+- W konsoli programu Configuration Manager, przejdź do **monitorowanie** > **omówienie** > **stan synchronizacji punktu aktualizacji oprogramowania**.  
 
-    Punkty aktualizacji oprogramowania w hierarchii programu Configuration Manager są wyświetlane w okienku wyników. Z poziomu tego widoku możesz monitorować stan synchronizacji wszystkich punktów aktualizacji oprogramowania. Aby wyświetlić bardziej szczegółowe informacje na temat procesu synchronizacji, można przejrzeć plik wsyncmgr.log file, znajdujący się w <*Ścieżkainstalacjiprogramuconfigmgr*> \Logs na każdym serwerze lokacji.  
+    Punkty aktualizacji oprogramowania w hierarchii programu Configuration Manager są wyświetlane w okienku wyników. Z poziomu tego widoku możesz monitorować stan synchronizacji wszystkich punktów aktualizacji oprogramowania. Aby wyświetlić bardziej szczegółowe informacje na temat procesu synchronizacji, można przejrzeć plik wsyncmgr.log, znajdujący się w <*Ścieżka_instalacji_programu_configmgr*> \Logs na każdym serwerze lokacji.  
 
 ##  <a name="BKMK_SUDeployStatus"></a> stan wdrożenia aktualizacji oprogramowania,  
  Po wdrożeniu aktualizacji oprogramowania w grupie aktualizacji lub pojedynczej aktualizacji oprogramowania można monitorować stan wdrożenia. Aby monitorować stan wdrożenia grupy aktualizacji oprogramowania lub pojedynczej aktualizacji oprogramowania, należy wykonać następującą procedurę.  
 
 #### <a name="to-monitor-deployment-status"></a>Aby monitorować stan wdrożenia  
 
-1.  W konsoli programu Configuration Manager, przejdź do **monitorowanie** > **Przegląd** > **wdrożeń**.  
+1.  W konsoli programu Configuration Manager, przejdź do **monitorowanie** > **omówienie** > **wdrożeń**.  
 
 2.  Kliknij grupę aktualizacji oprogramowania lub aktualizację oprogramowania, których stan wdrożenia chcesz monitorować.  
 
@@ -73,7 +70,7 @@ Po skonfigurowaniu ustawień alertów po wystąpieniu określonego warunku, prog
 
 #### <a name="to-monitor-content-status"></a>Aby monitorować stan zawartości  
 
-1.  W konsoli programu Configuration Manager, przejdź do **monitorowanie** > **Przegląd** > **stan dystrybucji** > **stan zawartości**. Są wyświetlane pakiety.  
+1.  W konsoli programu Configuration Manager, przejdź do **monitorowanie** > **omówienie** > **stan dystrybucji** > **stanu zawartości**. Są wyświetlane pakiety.  
 
 2.  Wybierz pakiet, dla którego chcesz wyświetlić szczegółowe informacje o stanie.  
 
@@ -84,7 +81,7 @@ Po skonfigurowaniu ustawień alertów po wystąpieniu określonego warunku, prog
 
 #### <a name="to-monitor-distribution-point-group-status"></a>Aby monitorować stan grupy punktów dystrybucji  
 
-1.  W konsoli programu Configuration Manager, przejdź do **monitorowanie** > **Przegląd** > **stan dystrybucji** > **stan grupy punktów dystrybucji**. Zostaną wyświetlone grupy punktów dystrybucji.  
+1.  W konsoli programu Configuration Manager, przejdź do **monitorowanie** > **omówienie** > **stan dystrybucji** > **stan grupy punktów dystrybucji**. Zostaną wyświetlone grupy punktów dystrybucji.  
 
 2.  Wybierz grupę punktów dystrybucji, dla której chcesz wyświetlić szczegółowe informacje o stanie.  
 
@@ -95,9 +92,8 @@ Po skonfigurowaniu ustawień alertów po wystąpieniu określonego warunku, prog
 
 #### <a name="to-monitor-distribution-point-configuration-status"></a>Aby monitorować stan konfiguracji punktów dystrybucji  
 
-1.  W konsoli programu Configuration Manager, przejdź do **monitorowanie** > **Przegląd** > **stan dystrybucji** > **stan konfiguracji punktów dystrybucji**. Zostaną wyświetlone punkty dystrybucji.  
+1.  W konsoli programu Configuration Manager, przejdź do **monitorowanie** > **omówienie** > **stan dystrybucji** > **stan konfiguracji punktów dystrybucji**. Zostaną wyświetlone punkty dystrybucji.  
 
 2.  Wybierz punkt dystrybucji, dla którego mają być wyświetlone informacje o stanie punktu dystrybucji.  
 
 3.  W okienku wyników kliknij kartę **Szczegóły** . Zostaną wyświetlone informacje o stanie punktu dystrybucji.  
-

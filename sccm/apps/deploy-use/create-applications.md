@@ -1,6 +1,6 @@
 ---
-title: "Criar aplicações | Microsoft Docs"
-description: "Criar e implementar aplicações e tipos de implementação com o System Center Configuration Manager."
+title: Tworzenie aplikacji | Dokumentacja firmy Microsoft
+description: "Tworzenie i wdrażanie aplikacji i typów wdrożeń w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -18,460 +18,460 @@ manager: angrobe
 ms.openlocfilehash: 4d048d4f9ab01b28e6c21a38cca4d82c85030618
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pt-PT
+ms.contentlocale: pl-PL
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="create-applications-with-system-center-configuration-manager"></a>Criar aplicações com o System Center Configuration Manager
+# <a name="create-applications-with-system-center-configuration-manager"></a>Tworzenie aplikacji w programie System Center Configuration Manager
 
-*Aplica-se a: O System Center Configuration Manager (ramo atual)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Uma aplicação do System Center Configuration Manager tem os ficheiros e informações necessários para implementar software num dispositivo. Uma aplicação tem um ou mais tipos de implementação que compõem os ficheiros de instalação e informações que são necessários para instalar o software. Um tipo de implementação tem também as regras que especificam quando e como o software é implementado.  
+Aplikacji programu System Center Configuration Manager zawiera pliki i informacje, które są wymagane do wdrożenia oprogramowania na urządzeniu. Aplikacja ma co najmniej jeden typ wdrożenia obejmujący pliki instalacyjne i informacje niezbędne do zainstalowania oprogramowania. Typ wdrożenia ma również zasady określające, kiedy i jak oprogramowanie zostanie wdrożone.  
 
- Pode criar aplicações utilizando os seguintes métodos:  
+ Aplikacje można utworzyć przy użyciu następujących metod:  
 
--   Crie automaticamente os tipos de aplicação e implementação ao ler os ficheiros de instalação da aplicação.  
+-   Automatyczne tworzenie aplikacji i typów wdrożenia przez odczytanie plików instalacyjnych aplikacji.  
 
--   Criar manualmente a aplicação e adicionar posteriormente os tipos de implementação.  
+-   ręczne utworzenie aplikacji, a następnie dodanie typów wdrożenia.  
 
--   Importe uma aplicação de um ficheiro.  
+-   Zaimportowanie aplikacji z pliku.  
 
 > [!NOTE]  
->  [Criar aplicações para dispositivos móveis](../../mdm/deploy-use/create-applications.md) fornece informações detalhadas sobre como criar aplicações Android, iOS e Windows Phone.  
+>  [Tworzenie aplikacji dla urządzeń przenośnych](../../mdm/deploy-use/create-applications.md) zawiera szczegółowe informacje dotyczące tworzenia systemu iOS, Windows Phone i aplikacji systemu Android.  
 
-Utilize os seguintes passos para criar aplicações do Configuration Manager e tipos de implementação.  
+Poniższe kroki umożliwiają utworzenie aplikacji programu Configuration Manager i typów wdrożeń.  
 
-## <a name="start-the-create-application-wizard"></a>Iniciar o Assistente para criar aplicação  
+## <a name="start-the-create-application-wizard"></a>Uruchom Kreatora tworzenia aplikacji  
 
-1.  Na consola do Configuration Manager, escolha **biblioteca de Software** > **gestão de aplicações** > **aplicações**.  
+1.  W konsoli programu Configuration Manager wybierz **Biblioteka oprogramowania** > **Zarządzanie aplikacjami** > **aplikacji**.  
 
-3.  No **home page** separador o **criar** grupo, escolha **Criar aplicação**.  
+3.  Na **Home** karcie **Utwórz** grupy, wybierz **tworzenie aplikacji**.  
 
-## <a name="specify-whether-you-want-to-automatically-detect-application-information-or-manually-define-the-information"></a>Especifique se pretende detetar automaticamente informações sobre a aplicação ou definir manualmente as informações  
+## <a name="specify-whether-you-want-to-automatically-detect-application-information-or-manually-define-the-information"></a>Określ, czy chcesz automatycznie Wykryj informacje o aplikacji, lub ręcznie zdefiniować informacji o  
 
--   Deteta automaticamente informações sobre a aplicação quando pretender criar uma aplicação simples que tem um tipo de implementação única, como um ficheiro do Windows Installer sem dependências ou requisitos. Depois de criar uma aplicação utilizando este procedimento, pode editá-la conforme necessário para adicionar ou alterar tipos de implementação e adicionar métodos de deteção, dependências ou requisitos.  
+-   Automatycznie wykryj informacje o aplikacji, jeśli chcesz utworzyć prostą aplikację z pojedynczym typem wdrożenia, takich jak plik Instalatora Windows, który nie ma zależności ani wymagań. Po utworzeniu aplikacji przy użyciu tej procedury można ją edytować w miarę potrzeby, aby dodawać lub zmieniać typy wdrożeń oraz dodawać metody wykrywania, zależności lub wymagania.  
 
--   Especificar manualmente informações sobre a aplicação para criar aplicações mais complexas que possuem vários tipos de implementação, dependências, métodos de deteção ou requisitos.  
+-   Ręcznie określ informacje o aplikacji do tworzenia bardziej złożone aplikacje mające wiele typów wdrożeń, zależności, metod wykrywania lub wymagań.  
 
-### <a name="automatically-detect-application-information"></a>Detetar automaticamente informações sobre a aplicação  
+### <a name="automatically-detect-application-information"></a>Automatycznie wykryj informacje o aplikacji  
 
-1.  No **geral** página do Assistente Criar aplicação, selecione **detetar automaticamente informação sobre esta aplicação nos ficheiros de instalação**.  
+1.  Na **ogólne** strony kreatora tworzenia aplikacji wybierz **automatycznie Wykryj informacje o tej aplikacji z plików instalacyjnych**.  
 
-2.  No **tipo** na lista pendente, selecione a instalação da aplicação tipo de ficheiro que pretende utilizar para detetar informações sobre a aplicação. Para obter informações sobre os tipos de instalação disponíveis, veja [Tipos de implementação suportados pelo Configuration Manager](/sccm/apps/deploy-use/create-applications#deployment-types-supported-by-configuration-manager) neste tópico.  
+2.  W **typu** listy rozwijanej, wybierz typ pliku instalacyjnego aplikacji którego chcesz użyć do wykrywania informacji o aplikacji. Informacje o dostępnych typach instalacji znajdują się w sekcji [Typy wdrożeń obsługiwane przez program Configuration Manager](/sccm/apps/deploy-use/create-applications#deployment-types-supported-by-configuration-manager) w tym temacie.  
 
-3.  No **localização** caixa, especifique o caminho UNC (no formato  *\\ \\servidor\\partilhar\\\filename*) ou a hiperligação do arquivo para o ficheiro de instalação da aplicação que pretende utilizar para detetar informações sobre a aplicação. Em alternativa, clique em **Procurar** para procurar o ficheiro de instalação.  
+3.  W **lokalizacji** Określ ścieżkę UNC (w postaci  *\\ \\serwera\\udostępnianie\\\filename*) lub łącze do pliku instalacyjnego aplikacji, które chcesz użyć do wykrywania informacji o aplikacji magazynu. Można też kliknąć przycisk **Przeglądaj**, aby przejść do lokalizacji pliku instalacyjnego.  
 
     > [!IMPORTANT]  
-    >  Quando seleciona **do Windows Installer (\*ficheiro. msi)** como um tipo de aplicação, todos os ficheiros na pasta que especificar serão importados com a aplicação e serão enviados para os pontos de distribuição. Certifique-se de que a pasta que especificou contém apenas os ficheiros que são necessários para instalar a aplicação. O Configuration Manager é testado para suportar até 20.000 ficheiros de aplicação no pacote de aplicação. Se a sua aplicação tiver mais ficheiros, considere criar múltiplas aplicações que têm um número mais pequeno de ficheiros.  
+    >  Po wybraniu **Instalatora Windows (\*pliku .msi)** w ustawieniu typu aplikacji wszystkie pliki w folderze określonym przez użytkownika zostaną zaimportowane z aplikacją i będą wysyłane do punktów dystrybucji. Upewnij się, że folder zostanie zawiera tylko pliki, które są niezbędne do zainstalowania aplikacji. Menedżer konfiguracji został sprawdzony pod kątem obsługi maksymalnie 20 000 plików aplikacji w pakiecie aplikacji. Jeśli aplikacja ma więcej plików, należy rozważyć utworzenie wielu aplikacji zawierających mniejszą liczbę plików.  
 
-    >  Tem de ter acesso ao caminho UNC que tenha a aplicação e eventuais subpastas que contêm o conteúdo da aplicação.  
+    >  Musi mieć dostęp do ścieżki UNC, do której ma aplikacji i wszelkich podfolderów z zawartością aplikacji.  
 
-4.  No **importar informação** página do Assistente para criar aplicação, reveja as informações que foi importadas e, em seguida, escolha **seguinte**. Se necessário, pode escolher **anterior** para voltar atrás e corrigir os eventuais erros.  
+4.  Na **Importuj informacje** strony kreatora tworzenia aplikacji przejrzyj informacje, które zostały zaimportowane, a następnie wybierz pozycję **dalej**. Jeśli to konieczne, możesz wybrać **Wstecz** aby wrócić do poprzedniej strony i poprawić błędy.  
 
-5.  No **informações gerais** página do Assistente para criar aplicação, especifique as seguintes informações:  
+5.  Na **ogólne informacje** strony kreatora tworzenia aplikacji Podaj następujące informacje:  
 
     > [!NOTE]  
-    >  Algumas dessas informações poderão já ter sido preenchidas se tiverem sido obtidas automaticamente a partir dos ficheiros de instalação da aplicação. Além disso, as opções apresentadas poderão ser diferentes dependendo do tipo de aplicação que criou.  
+    >  Niektóre z tych informacji mogą już być podane, jeśli zostały uzyskane automatycznie z plików instalacyjnych aplikacji. Wyświetlane opcje mogą się ponadto różnić w zależności od typu tworzonej aplikacji.  
 
-    -   Informações gerais acerca da aplicação, como o nome da aplicação, comentários, versão e uma referência opcional para ajudar a encontrar a aplicação na consola do Configuration Manager.  
+    -   Ogólne informacje o aplikacji, takie jak nazwa aplikacji, komentarze, wersja i opcjonalne informacje w celu znalezienia aplikacji w konsoli programu Configuration Manager.  
 
-    -   **Programa de instalação**– especifique o programa de instalação e quaisquer necessárias propriedades que são necessários para instalar o tipo de implementação de aplicação.  
+    -   **Program instalacyjny**— Określ program instalacyjny oraz wszelkie wymagane właściwości, które są niezbędne do zainstalowania typu wdrożenia aplikacji.  
 
         > [!TIP]  
-        >  Se o programa de instalação não aparecer, escolha **procurar** e navegue até à localização do programa de instalação.  
+        >  Jeśli program instalacyjny nie jest wyświetlana, wybierz **Przeglądaj** i przejdź do lokalizacji programu instalacyjnego.  
 
-    -   **Comportamento de instalação**-especificar se o tipo de implementação de aplicação será instalado para apenas o utilizador com sessão atualmente iniciada ou para todos os utilizadores. Também pode especificar que o tipo de implementação será instalado para todos os utilizadores se for implementado num dispositivo ou apenas a um utilizador específico se for implementado num utilizador.  
+    -   **Zachowanie podczas instalowania**— Określ, czy typ wdrożenia aplikacji zostanie zainstalowany tylko dla obecnie zalogowanego użytkownika lub dla wszystkich użytkowników. Można również określić, że typ wdrożenia zostanie zainstalowany dla wszystkich użytkowników, jeśli Jeśli jest wdrażana dla użytkownika jest wdrożony na urządzeniu lub tylko do określonego użytkownika.  
 
-    -   **Utilizar uma ligação VPN automática (se configurada)**– se um perfil da VPN tiver sido implementado no dispositivo onde a aplicação foi lançada, lance a ligação VPN quando a aplicação for iniciada (Windows 8.1 e Windows Phone 8.1 apenas).  
+    -   **Użyj automatycznego połączenia VPN (jeśli jest skonfigurowane)**— Jeśli profil sieci VPN został wdrożony na urządzeniu, na którym uruchomiono aplikację, uruchom połączenie sieci VPN po uruchomieniu aplikacji (Windows 8.1 i Windows Phone 8.1 tylko).  
 
-         Em dispositivos Windows Phone 8.1, as ligações VPN automáticas não são suportadas se mais do que um perfil da VPN tiver sido implementado no dispositivo.  
+         Na urządzeniach Windows Phone 8.1 automatyczne połączenia VPN nie są obsługiwane, jeśli więcej niż jeden profil sieci VPN został wdrożony na urządzeniu.  
 
-         Para obter mais informações sobre perfis da VPN, consulte [perfis VPN](../../protect/deploy-use/vpn-profiles.md).  
+         Aby uzyskać więcej informacji na temat profilów sieci VPN, zobacz [profilów sieci VPN](../../protect/deploy-use/vpn-profiles.md).  
 
-6.  Escolha **seguinte**, reveja as informações da aplicação no **resumo** página e, em seguida, conclua o Assistente para criar aplicação.  
+6.  Wybierz **dalej**, przejrzyj informacje o aplikacji na **Podsumowanie** strony, a następnie Zakończ pracę Kreatora tworzenia aplikacji.  
 
-A nova aplicação aparece no **aplicações** nós da consola do Configuration Manager e concluir a criação de uma aplicação. Se pretender adicionar mais tipos de implementação à aplicação, veja [Criar tipos de implementação para a aplicação](/sccm/apps/deploy-use/create-applications#create-deployment-types-for-the-application) neste tópico.  
+Nowa aplikacja pojawi się w **aplikacji** węzła konsoli programu Configuration Manager, i ukończeniu tworzenia aplikacji. Informacje o dodawaniu większej liczby typów wdrożenia do aplikacji znajdują się w sekcji [Tworzenie typów wdrożenia aplikacji](/sccm/apps/deploy-use/create-applications#create-deployment-types-for-the-application) w tym temacie.  
 
-### <a name="manually-specify-application-information"></a>Especificar manualmente informações sobre a aplicação  
+### <a name="manually-specify-application-information"></a>Ręcznie określ informacje o aplikacji  
 
-1.  No **geral** página do Assistente Criar aplicação, selecione **especificar manualmente as informações da aplicação**e, em seguida, escolha **seguinte**.  
+1.  Na **ogólne** strony kreatora tworzenia aplikacji wybierz **ręcznie określ informacje o aplikacji**, a następnie wybierz pozycję **dalej**.  
 
-2.  Especificar informações gerais acerca da aplicação, como o nome da aplicação, comentários, versão e uma referência opcional para ajudar a encontrar a aplicação na consola do Configuration Manager.  
+2.  Określ ogólne informacje o aplikacji, takie jak nazwa aplikacji, komentarze, wersja i opcjonalne informacje w celu znalezienia aplikacji w konsoli programu Configuration Manager.  
 
-3.  No **catálogo de aplicações** página do Assistente para criar aplicação, especifique as seguintes informações:  
+3.  Na **katalogu aplikacji** strony kreatora tworzenia aplikacji Podaj następujące informacje:  
 
-    -   **Idioma selecionado**– na lista pendente, selecione a versão de idioma da aplicação que pretende configurar. Escolha **Adicionar/remover** para configurar mais idiomas para esta aplicação.  
+    -   **Wybrany język**— z listy rozwijanej wybierz wersję językową aplikacji, którą chcesz skonfigurować. Wybierz **Dodaj lub usuń** Aby skonfigurować więcej języków aplikacji.  
 
-    -   **Nome da aplicação localizada**– especifique o nome da aplicação no idioma que selecionou no **idioma selecionado** na lista pendente.  
+    -   **Nazwa zlokalizowanej aplikacji**— Określ nazwę aplikacji w języku wybranym **wybrany język** listy rozwijanej.  
 
         > [!IMPORTANT]  
-        >  Tem de especificar um nome da aplicação localizada para cada versão de idioma que configurou.  
+        >  Podaj zlokalizowaną nazwę aplikacji dla każdej skonfigurowanej wersji.  
 
-    -   **Categorias de utilizador**– escolha **editar** para especificar categorias de aplicação no idioma que selecionou no **idioma selecionado** na lista pendente. Os utilizadores do Centro de Software podem utilizar estas categorias selecionadas para ajudar a filtrar e ordenar as aplicações disponíveis.  
+    -   **Kategorie użytkowników**— wybierz **Edytuj** Aby określić kategorie aplikacji w języku wybranym **wybrany język** listy rozwijanej. Użytkownicy Centrum oprogramowania można używać owych wybranych kategorii do filtrowania i sortowania dostępnych aplikacji.  
 
-    -   **Documentação do utilizador**– escolha **procurar** para especificar o URL ou o nome de ficheiro e caminho UNC de um ficheiro que os utilizadores do Centro de Software podem ler para obter mais informações sobre esta aplicação.  
+    -   **Dokumentacja użytkownika**— wybierz **Przeglądaj** Aby określić adres URL lub ścieżkę UNC i plik nazwę pliku, który użytkownicy Centrum oprogramowania mogą odczytać w celu uzyskania dodatkowych informacji o tej aplikacji.  
 
-    -   **Texto da hiperligação**– especifique o texto que irá aparecer em vez do URL da aplicação.  
+    -   **Tekst łącza**— Określ tekst, który będzie wyświetlany zamiast adresu URL aplikacji.  
 
-    -   **URL de privacidade da aplicação**– Especifique um URL que liga à declaração de privacidade para a aplicação.  
+    -   **Adres URL aplikacji prywatności**— Określ adres URL prowadzący do zasad zachowania poufności informacji dla aplikacji.  
 
-    -   **Descrição localizada**-introduza uma descrição para esta aplicação no idioma que selecionou no **idioma selecionado** na lista pendente.  
+    -   **Zlokalizowany opis**— wprowadź opis dla tej aplikacji w języku wybranym **wybrany język** listy rozwijanej.  
 
-    -   **As palavras-chave**-introduza uma lista de palavras-chave no idioma que selecionou no **idioma selecionado** na lista pendente. Estas palavras-chave vai ajudar os utilizadores de pesquisa de centro de Software para a aplicação.  
+    -   **Słowa kluczowe**— wprowadź listę słów kluczowych w języku wybranym **wybrany język** listy rozwijanej. Słowa kluczowe ułatwią użytkownikom Centrum oprogramowania wyszukiwanie aplikacji.  
 
-    -   **Ícone**– escolha **procurar** para selecionar um ícone para esta aplicação a partir dos ícones disponíveis. Se não especificar um ícone, será utilizado um ícone predefinido para esta aplicação.  
+    -   **Ikona**— wybierz **Przeglądaj** aby wybrać ikonę tej aplikacji spośród dostępnych ikon. Jeśli nie określisz ikony, ikona domyślna będzie używany dla tej aplikacji.  
 
-    -   **Apresentar esta aplicação como uma aplicação em destaque e destacá-la no portal da empresa**– Selecione esta opção para apresentar a aplicação de forma destacada no portal da empresa.  
+    -   **Wyświetlaj jako polecaną aplikację i wyróżnij w portalu firmy**— wybierz tę opcję, aby wyróżnić aplikację w portalu firmy.  
 
-4.  No **tipos de implementação** página do Assistente para criar aplicação, escolha **adicionar** para criar um novo tipo de implementação.  
+4.  Na **typy wdrożeń** strony kreatora tworzenia aplikacji wybierz **Dodaj** do utworzenia nowego typu wdrożenia.  
 
- Para obter mais informações, consulte [criar tipos de implementação para a aplicação](/sccm/apps/deploy-use/create-applications#create-deployment-types-for-the-application).  
+ Aby uzyskać więcej informacji, zobacz [tworzenia typów wdrożenia dla aplikacji](/sccm/apps/deploy-use/create-applications#create-deployment-types-for-the-application).  
 
-5.  Escolha **seguinte**, reveja as informações da aplicação no **resumo** página e, em seguida, conclua o Assistente para criar aplicação.  
+5.  Wybierz **dalej**, przejrzyj informacje o aplikacji na **Podsumowanie** strony, a następnie Zakończ pracę Kreatora tworzenia aplikacji.  
 
-A nova aplicação aparece no **aplicações** nós da consola do Configuration Manager.  
+Nowa aplikacja pojawi się w **aplikacji** węzła konsoli programu Configuration Manager.  
 
-##  <a name="create-deployment-types-for-the-application"></a>Criar tipos de implementação para a aplicação  
- Se selecionar **identificar automaticamente informações sobre este tipo de implementação nos ficheiros de instalação** no **geral** página do Assistente para criar tipo de implementação, poderá não ser necessário concluir a alguns dos passos nos seguintes procedimentos.  
+##  <a name="create-deployment-types-for-the-application"></a>Tworzenie typów wdrożenia dla aplikacji  
+ W przypadku wybrania **automatycznie Zidentyfikuj informacje o tym typie wdrożenia z plików instalacyjnych** na **ogólne** strony kreatora tworzenia typu wdrożenia nie należy zakończyć niektórych czynności następujących procedur.  
 
-## <a name="start-the-create-deployment-type-wizard"></a>Iniciar o assistente para criar tipo de implementação  
+## <a name="start-the-create-deployment-type-wizard"></a>Uruchomienie Kreatora tworzenia typu wdrożenia  
 
-1.  Na consola do Configuration Manager, escolha **biblioteca de Software** > **gestão de aplicações** > **aplicações**.  
+1.  W konsoli programu Configuration Manager wybierz **Biblioteka oprogramowania** > **Zarządzanie aplikacjami** > **aplikacji**.  
 
-3.  Selecione uma aplicação e, em seguida, no **home page** separador o **aplicação** grupo, escolha **criar tipo de implementação**.  
+3.  Wybierz aplikację, a następnie na **Home** karcie **aplikacji** grupy, wybierz **Utwórz typ wdrożenia**.  
 
 > [!TIP]  
->  Também pode iniciar o Assistente para criar tipo de implementação do Assistente para criar aplicação e do **tipos de implementação** separador do *< nome da aplicação\>*  **propriedades** caixa de diálogo.  
+>  Można również uruchomić Kreatora tworzenia typu wdrożenia z Kreatora tworzenia aplikacji i **typy wdrożeń** karcie *< nazwa aplikacji\>*  **właściwości** okno dialogowe.  
 
-## <a name="specify-whether-you-want-to-automatically-detect-deployment-type-information-or-manually-set-up-the-information"></a>Especifique se pretende detetar automaticamente informações de tipo de implementação ou configurar manualmente as informações  
- Utilize um dos seguintes procedimentos para detetar automaticamente ou definir manualmente informações de tipo de implementação.  
+## <a name="specify-whether-you-want-to-automatically-detect-deployment-type-information-or-manually-set-up-the-information"></a>Określ, czy mają być automatycznie Wykryj informacje o typie wdrożenia, lub ręcznie skonfigurować informacje  
+ Użyj jednej z następujących procedur, aby wykrywać automatycznie lub ręcznie skonfigurować informacje o typie wdrożenia.  
 
-### <a name="automatically-detect-deployment-type-information"></a>Detetar automaticamente informações de tipo de implementação  
+### <a name="automatically-detect-deployment-type-information"></a>Automatycznie wykryj informacje o typie wdrożenia  
 
-1.  No **geral** página do assistente criar tipo de implementação, selecione **identificar automaticamente informações sobre este tipo de implementação nos ficheiros de instalação**.  
+1.  Na **ogólne** strony kreatora tworzenia typu wdrożenia wybierz **automatycznie Zidentyfikuj informacje o tym typie wdrożenia z plików instalacyjnych**.  
 
-2.  No **tipo** caixa, selecione o tipo de ficheiro de instalação de aplicações que pretende utilizar para detetar as informações de tipo de implementação.  
+2.  W **typu** wybierz typ pliku instalacyjnego aplikacji, którego chcesz użyć do wykrywania informacji o typie wdrożenia.  
 
-3.  No **localização** caixa, especifique o caminho UNC (no formato  *\\ \\servidor\\partilhar\\filename*) ou especificar a hiperligação do arquivo para os ficheiros de instalação da aplicação e o conteúdo que pretende utilizar para detetar as informações de tipo de implementação. Também pode optar por **procurar** para localizar o ficheiro de instalação.  
-
-    > [!NOTE]  
-    >  Tem de ter acesso ao caminho UNC que tenha a aplicação e eventuais subpastas que contêm o conteúdo da aplicação.  
-
-4.  No **importar informação** página do Assistente para criar tipo de implementação, reveja as informações que foi importadas e, em seguida, escolha **seguinte**. Também pode optar por **anterior** para voltar atrás e corrigir os eventuais erros.  
-
-5.  No **informações gerais** página do Assistente para criar tipo de implementação, especifique as seguintes informações:  
+3.  W **lokalizacji** Określ ścieżkę UNC (w postaci  *\\ \\serwera\\udostępnianie\\filename*) lub określić linku do plików instalacyjnych aplikacji oraz zawartość, której chcesz użyć do wykrywania informacji o typie wdrożenia w sklepie. Można również wybrać **Przeglądaj** aby wskazać plik instalacyjny.  
 
     > [!NOTE]  
-    >  Algumas das informações sobre o tipo de implementação podem já estar presentes se já foram lidas nos ficheiros de instalação da aplicação. Além disso, as opções apresentadas poderão diferir, consoante o tipo de implementação que está a criar.  
+    >  Musi mieć dostęp do ścieżki UNC, do której ma aplikacji i wszelkich podfolderów z zawartością aplikacji.  
 
-    -   Informações gerais sobre o tipo de implementação, como o nome, comentários de administrador e idiomas disponíveis.  
+4.  Na **Importuj informacje** strony kreatora tworzenia typu wdrożenia Przejrzyj informacje, które zostały zaimportowane, a następnie wybierz pozycję **dalej**. Można również wybrać **Wstecz** aby wrócić do poprzedniej strony i poprawić błędy.  
 
-    -   **Programa de instalação**– especifique o programa de instalação e eventuais propriedades de que necessita para instalar o tipo de implementação.  
+5.  Na **ogólne informacje** strony kreatora tworzenia typu wdrożenia Podaj następujące informacje:  
 
-    -   **Comportamento de instalação**-especificar se pretende instalar o tipo de implementação para o utilizador atual, ou para todos os utilizadores. Também pode especificar se pretende instalar o tipo de implementação para todos os utilizadores se for implementado num dispositivo, ou se pretende instalar a implementação de tipo para um utilizador apenas se for implementado num utilizador.  
+    > [!NOTE]  
+    >  Niektóre informacje o typie wdrożenia mogą już być obecne, jeśli zostały odczytane z plików instalacyjnych aplikacji. Ponadto wyświetlane opcje mogą się różnić w zależności od tworzonego typu wdrożenia.  
 
-    -   **Utilizar uma ligação VPN automática (se configurada)**– se um perfil da VPN tiver sido implementado no dispositivo onde a aplicação foi lançada, lance a ligação VPN quando a aplicação for iniciada (Windows 8.1 e Windows Phone 8.1 apenas). Se múltiplos perfis da VPN tiverem sido implementados num dispositivo Windows 8.1, o primeiro perfil da VPN implementado é utilizado por predefinição.  
+    -   Ogólne informacje o typie wdrożenia, takie jak nazwa, komentarze administratora oraz dostępne języki.  
 
-         Em dispositivos Windows Phone 8.1, as ligações VPN automáticas não são suportadas se mais do que um perfil da VPN tiver sido implementado no dispositivo.  
+    -   **Program instalacyjny**— Określ program instalacyjny oraz wszelkie właściwości niezbędne do zainstalowania typu wdrożenia.  
 
-         Para obter mais informações sobre perfis da VPN, consulte [perfis VPN no System Center Configuration Manager](../../protect/deploy-use/vpn-profiles.md).  
+    -   **Zachowanie podczas instalowania**— Określ, czy do zainstalowania typu wdrożenia dla bieżącego użytkownika lub dla wszystkich użytkowników. Można również określić, czy do zainstalowania typu wdrożenia dla wszystkich użytkowników, jeśli jest wdrażana na urządzeniu, lub czy zainstalować wdrożenia wpisz do użytkownika tylko wtedy, gdy jest wdrożony dla użytkownika.  
 
-6.  Escolha **seguinte**e, em seguida, continuar a [especificar opções de conteúdo para o tipo de implementação](/sccm/apps/deploy-use/create-applications#specify-content-options-for-the-deployment-type).  
+    -   **Użyj automatycznego połączenia VPN (jeśli jest skonfigurowane)**— Jeśli profil sieci VPN został wdrożony na urządzeniu, na którym uruchomiono aplikację, uruchom połączenie sieci VPN po uruchomieniu aplikacji (Windows 8.1 i Windows Phone 8.1 tylko). Jeśli wiele profilów sieci VPN zostały wdrożone na urządzeniu Windows 8.1, pierwszy wdrożonego profilu sieci VPN jest używany domyślnie.  
 
-### <a name="manually-set-up-the-deployment-type-information"></a>Configurar manualmente as informações de tipo de implementação  
+         Na urządzeniach Windows Phone 8.1 automatyczne połączenia VPN nie są obsługiwane, jeśli więcej niż jeden profil sieci VPN został wdrożony na urządzeniu.  
 
-1.  No **geral** página do assistente criar tipo de implementação, selecione **especificar manualmente as informações de tipo de implementação**.  
+         Aby uzyskać więcej informacji na temat profilów sieci VPN, zobacz [profilów sieci VPN w programie System Center Configuration Manager](../../protect/deploy-use/vpn-profiles.md).  
 
-2.  No **tipo** caixa, escolha o tipo de ficheiro de instalação de aplicações que pretende utilizar para detetar as informações de tipo de implementação. Pode escolher os mesmos tipos de instalação que utilizaria quando detetar automaticamente as informações de tipo de implementação e também pode especificar um script para instalar o tipo de implementação.  
+6.  Wybierz **dalej**, a następnie przejdź do [określenie opcji zawartości typu wdrożenia](/sccm/apps/deploy-use/create-applications#specify-content-options-for-the-deployment-type).  
 
-3.  No **informações gerais** página do Assistente para criar tipo de implementação, especifique um nome para o tipo de implementação, uma descrição opcional e os idiomas em que pretende disponibilizar este tipo de implementação e, em seguida, escolha **seguinte**.  
+### <a name="manually-set-up-the-deployment-type-information"></a>Ręcznie skonfigurować informacje o typie wdrożenia  
 
-4.  Continue para [Especificar as opções de conteúdo do tipo de implementação](/sccm/apps/deploy-use/create-applications#specify-content-options-for-the-deployment-type).  
+1.  Na **ogólne** strony kreatora tworzenia typu wdrożenia wybierz **ręcznie określ informacje o typie wdrożenia**.  
 
-##  <a name="specify-content-options-for-the-deployment-type"></a>Especificar opções de conteúdo para o tipo de implementação  
+2.  W **typu** , wybierz typ pliku instalacyjnego aplikacji, którego chcesz użyć do wykrywania informacji o typie wdrożenia. Można wybrać typy instalacji używane w przypadku automatycznego wykrywania informacji o typie wdrożenia, a można też określić skrypt instalacji typu wdrożenia.  
 
-1.  No **conteúdo** página do Assistente para criar tipo de implementação, especifique as seguintes informações:  
+3.  Na **ogólne informacje** strony kreatora tworzenia typu wdrożenia Określ nazwę typu wdrożenia, opcjonalny opis oraz języki, w których chcesz udostępnić ten typ wdrożenia, a następnie wybierz **dalej**.  
 
-    -   **Localização de conteúdo**– especifique a localização do conteúdo para este tipo de implementação, ou selecione **procurar** para escolher a pasta de conteúdo de tipo de implementação.  
+4.  Przejdź do sekcji [Określenie opcji zawartości typu wdrożenia](/sccm/apps/deploy-use/create-applications#specify-content-options-for-the-deployment-type).  
+
+##  <a name="specify-content-options-for-the-deployment-type"></a>Określenie opcji zawartości typu wdrożenia  
+
+1.  Na **zawartości** strony kreatora tworzenia typu wdrożenia Podaj następujące informacje:  
+
+    -   **Lokalizacja zawartości**— Określ lokalizację zawartości dla tego typu wdrożenia, lub wybierz **Przeglądaj** wybrać folder zawartości typu wdrożenia.  
 
         > [!IMPORTANT]  
-        >  A conta de sistema do computador do servidor do site tem de ter permissões para a localização de conteúdos que especificar.  
+        >  Konto System na komputerze serwera lokacji musi mieć uprawnienia do określonej lokalizacji zawartości.  
 
-    -   **Definições de conteúdo de desinstalação**-especifique uma das seguintes opções:
-        - **Igual à instalar conteúdo**– Selecione esta opção se a instalação e desinstalação de conteúdo são os mesmos. Este é o comportamento predefinido.
-        - **Não desinstale conteúdo**– Selecione esta opção se a aplicação não precisa de conteúdo de desinstalação.
-        - **Diferente do conteúdo de instalação**– Selecione esta opção se o conteúdo de desinstalação é diferente do conteúdo de instalação.
+    -   **Odinstaluj ustawienia zawartości**— określ jedną z następujących opcji:
+        - **Taka sama, jak zainstalować zawartość**— wybierz tę opcję, jeśli instalowania i odinstalowywania zawartości są takie same. Jest to zachowanie domyślne.
+        - **Nie odinstalowania zawartości**— wybierz tę opcję, jeśli aplikacja nie wymaga zawartości do odinstalowania.
+        - **Inna niż instalacja zawartości**— wybierz tę opcję, jeśli zawartość Odinstaluj różni się od instalacji zawartości.
 
-4. Se tiver selecionado **Different do conteúdo de instalação**, navegue para ou introduza a localização do conteúdo de aplicação que é utilizado para desinstalar a aplicação.
-5. Clique em **OK** para fechar a caixa de diálogo de propriedades de tipo de implementação.
+4. W przypadku wybrania **różne od instalacji zawartości**, przejdź do, lub wprowadź lokalizację zawartości aplikacji, który służy do odinstalowania aplikacji.
+5. Kliknij przycisk **OK** aby zamknąć okno dialogowe właściwości typu wdrożenia.
 
-    -   **Manter conteúdo na cache do cliente**– Selecione esta opção para especificar se o conteúdo deve ser mantido na cache no computador cliente indefinidamente, mesmo que já tenha sido executado. Embora esta opção pode ser útil em algumas implementações, como software baseado no Windows Installer que necessita de uma cópia local da origem fique disponível para aplicar atualizações, reduzirá o espaço disponível na cache. Se selecionar esta opção, pode provocar uma implementação de grande dimensão falhar posteriormente caso a cache não tem espaço livre suficiente.  
+    -   **Utrwal zawartość w pamięci podręcznej klienta**— wybierz tę opcję, aby określić, czy zawartość powinna być przechowywana w pamięci podręcznej na komputerze klienckim przez czas nieokreślony, nawet jeśli została już uruchomiona. Mimo że ta opcja może być przydatne w przypadku niektórych wdrożeń, takich jak Instalator Windows — oprogramowania wymagającego kopii lokalnej był dostępny do zastosowania aktualizacji, zmniejsza ilości dostępnej pamięci podręcznej. Wybierz tę opcję, może spowodować dużego wdrożenia Niepowodzenie w późniejszym czasie, jeśli pamięć podręczna nie ma wystarczająco dużo miejsca.  
 
-    -   **Permitir que os clientes partilhem conteúdos com outros clientes na mesma sub-rede**– Selecione esta opção para reduzir a carga na rede ao permitir que os clientes transfiram conteúdos a partir de outros clientes na rede que já tenham transferido e colocado o conteúdo na cache locais. Esta opção utiliza a tecnologia BranchCache do Windows.  
+    -   **Zezwalaj klientom na współużytkowanie zawartości z innymi klientami w tej samej podsieci**— wybierz tę opcję, aby zmniejszyć obciążenie sieci, zezwalając klientom na pobieranie zawartości z innych klientów lokalnych w sieci, w których znajduje się już pobrana zawartość w pamięci podręcznej. Ta opcja korzysta z technologii Windows BranchCache.  
 
-    -   **Programa de instalação**– especifique o nome do programa de instalação e quaisquer parâmetros de instalação necessários ou escolha **procurar** para localizar o ficheiro de instalação.  
+    -   **Program instalacyjny**— Określ nazwę programu instalacyjnego oraz wszelkie wymagane parametry instalacji lub wybierz **Przeglądaj** aby wskazać plik instalacyjny.  
 
-    -   **Início da instalação em**-opcionalmente, especifique a pasta que tem o programa de instalação para o tipo de implementação. Esta pasta pode ser um caminho absoluto no cliente ou um caminho para a pasta do ponto de distribuição que tenha os ficheiros de instalação.  
+    -   **Instalacja rozpocznie się za**— Opcjonalnie określ folder zawierający program instalacyjny typu wdrożenia. Ten folder może być ścieżką bezwzględną na kliencie lub ścieżką do folderu punktu dystrybucji, który zawiera pliki instalacyjne.  
 
-    -   **Desinstalar programa**-opcionalmente, especifique o nome do programa de desinstalação e quaisquer parâmetros necessários, ou escolha **procurar** a localizá-la.  
+    -   **Program dezinstalacyjny**— Opcjonalnie określ nazwę programu dezinstalacyjnego oraz wszelkie wymagane parametry, lub wybierz **Przeglądaj** ich wyszukanie.  
 
-    -   **Iniciar desinstalação em**-opcionalmente, especifique a pasta que tem o programa de desinstalação para o tipo de implementação. Esta pasta pode ser um caminho absoluto no cliente ou um caminho relativo para a pasta do ponto de distribuição que tenha o pacote.  
+    -   **Dezinstalacja rozpocznie się za**— Opcjonalnie określ folder zawierający program dezinstalacyjny typu wdrożenia. Ten folder może być ścieżką bezwzględną na kliencie lub ścieżką względną wobec folderu punktu dystrybucji, który zawiera pakiet.  
 
-    -   **Execute a instalação e desinstalação como um processo de 32 bits em clientes de 64 bits**-utilize as localizações de ficheiros e registo de 32 bits em computadores baseados em Windows para executar o programa de instalação para o tipo de implementação.  
+    -   **Uruchom program instalacyjny i dezinstalacyjny jako proces 32-bitowy na klientach 64-bitowych**— Użyj 32-bitowych lokalizacje plików i rejestru na komputerach z systemem Windows, aby uruchomić program instalacyjny typu wdrożenia.  
 
-2.  Escolha **seguinte**.  
+2.  Wybierz **dalej**.  
 
-## <a name="set-up-detection-methods-to-indicate-the-presence-of-the-deployment-type-windows-pcs-only"></a>Configurar métodos de deteção para indicar a presença do tipo de implementação (apenas PCs Windows)  
- Este procedimento configura um método de deteção que indica se o tipo de implementação já está instalado.  
+## <a name="set-up-detection-methods-to-indicate-the-presence-of-the-deployment-type-windows-pcs-only"></a>Konfigurowanie metod wykrywania obecności typu wdrożenia (tylko komputery z systemem Windows)  
+ Ta procedura konfiguruje metodę wykrywania, która wskazuje, czy typ wdrożenia jest już zainstalowany.  
 
-1.  No **método de deteção** página do assistente criar tipo de implementação, selecione **configurar regras para detetar a presença deste tipo de implementação**e, em seguida, escolha **Adicionar cláusula**.  
+1.  Na **metody wykrywania** strony kreatora tworzenia typu wdrożenia wybierz **Konfiguruj reguły do wykrycia obecności tego typu wdrożenia**, a następnie wybierz pozycję **Dodaj klauzulę**.  
 
     > [!NOTE]  
-    >  Também pode selecionar **Utilizar um script personalizado para detetar a presença deste tipo de implementação**. Para obter mais informações, consulte [utilizar um script personalizado para verificar a presença de um tipo de implementação](/sccm/apps/deploy-use/create-applications#Use-a-custom-script-to-check-for-the-presence-of-a-deployment-type).  
+    >  Można również wybrać opcję **Użyj skryptu niestandardowego do wykrycia obecności tego typu wdrożenia**. Aby uzyskać więcej informacji, zobacz [Użyj niestandardowego skryptu w celu sprawdzenia obecności typu wdrożenia](/sccm/apps/deploy-use/create-applications#Use-a-custom-script-to-check-for-the-presence-of-a-deployment-type).  
 
-2.  Na caixa de diálogo **Regra de Deteção**, na lista pendente **Tipo de definição**, selecione o método que pretende utilizar para detetar a presença do tipo de implementação. Pode optar por um dos seguintes métodos disponíveis:  
+2.  W oknie dialogowym **Reguła wykrywania** z listy rozwijanej **Typ ustawienia** wybierz metodę, której chcesz używać do wykrywania obecności typu wdrożenia. Można wybrać jedną z następujących metod:  
 
-    -   **Sistema de ficheiros**-Utilize este método para detetar se uma pasta ou ficheiro específicos existe num dispositivo cliente, indicará que a aplicação está instalada.  
+    -   **System plików**— ta metoda służy do wykrywania, czy określony plik lub folder istnieje na urządzeniu klienckim, co wskazuje, że aplikacja jest zainstalowana.  
 
         > [!NOTE]  
-        >  O **sistema de ficheiros** tipo de definição não suporta a especificação de um caminho UNC para uma partilha de rede no campo do caminho. Apenas pode especificar um caminho local no dispositivo cliente.  
+        >  **System plików** typ nie obsługuje określania w polu Ścieżka ścieżki UNC do udziału sieciowego. Na urządzeniu klienta można określić wyłącznie ścieżkę lokalną.  
         >   
-        >  Para verificar as localizações de ficheiros de 32 bits para a pasta ou ficheiro especificados, selecione a opção **este ficheiro ou pasta está associada a uma aplicação de 32 bits em sistemas de 64 bits** primeiro. Se ficheiro ou pasta não forem encontrados, serão procurados nas localizações de 64 bits.  
+        >  Aby sprawdzić lokalizacje plików 32-bitowych pod kątem określonego pliku lub folderu, wybierz opcję **ten plik lub folder jest skojarzony z aplikacją 32-bitowych na 64-bitowym** pierwszy. Jeśli plik lub folder nie zostaną znalezione, zostaną przeszukane lokalizacje plików 64-bitowych.  
 
-    -   **Registo**-utilizar este método para detetar se uma chave de registo ou valor de registo existe num dispositivo cliente, indicará que a aplicação está instalada.  
+    -   **Rejestru**— ta metoda służy do wykrywania, czy określony klucz rejestru lub wartość rejestru istnieje na urządzeniu klienckim, co wskazuje, że aplikacja jest zainstalowana.  
 
         > [!NOTE]  
-        >  Para verificar as localizações de registo de 32 bits para a chave de registo, selecione a opção **esta chave de registo está associada uma aplicação de 32 bits em sistemas de 64 bits** primeiro. Se a chave de registo não for encontrada, será procurada nas localizações de 64 bits.  
+        >  Aby sprawdzić lokalizacje 32-bitowego rejestru pod kątem obecności określonego klucza rejestru, wybierz opcję **ten klucz rejestru jest skojarzony z aplikacją 32-bitowych na 64-bitowym** pierwszy. Jeśli klucz rejestru nie zostaną znaleziony, zostaną przeszukane lokalizacje plików 64-bitowych.  
 
-    -   **Windows Installer**-Utilize este método para detetar a existência de um ficheiro do Windows Installer especificado num dispositivo cliente, indicará que a aplicação está instalada.  
+    -   **Instalator Windows**— ta metoda służy do wykrywania, czy określony plik Instalatora Windows istnieje na urządzeniu klienckim, co wskazuje, że aplikacja jest zainstalowana.  
 
-3.  Especifique os detalhes sobre o item que pretende utilizar para detetar se este tipo de implementação está instalado. Por exemplo, pode utilizar um ficheiro, pasta, chave do registo, valor do registo ou um código de produto do Windows Installer.  
+3.  Określ informacje szczegółowe dotyczące pozycji, której chcesz użyć do wykrywania, czy ten typ wdrożenia został zainstalowany. Możesz na przykład użyć pliku, folderu, klucza rejestru, wartości rejestru lub kodu produktu Instalatora Windows.  
 
-4.  Especifique detalhes sobre o valor que pretende avaliar em comparação com o item que utilizar para detetar se o tipo de implementação está instalado. Por exemplo, se utilizar um ficheiro para verificar se o tipo de implementação está instalado, pode selecionar **a definição de sistema de ficheiros deve existir no sistema de destino para indicar a presença desta aplicação**.  
+4.  Określ szczegóły dotyczące wartości, którą chcesz ocenić na podstawie pozycji użytej do wykrycia, czy dany typ wdrożenia został zainstalowany. Na przykład, jeśli używany plik, aby sprawdzić, czy dany typ wdrożenia został zainstalowany, możesz wybrać **aby wskazywanie obecności tej aplikacji w systemie docelowym musi istnieć ustawienie systemu plików**.  
 
-5.  Escolha **seguinte** para fechar o **regra de deteção** caixa de diálogo.  
+5.  Wybierz **dalej** zamknąć **reguły wykrywania** okno dialogowe.  
 
-###  <a name="use-a-custom-script-to-check-for-the-presence-of-a-deployment-type"></a>Utilizar um script personalizado para verificar a presença de um tipo de implementação  
+###  <a name="use-a-custom-script-to-check-for-the-presence-of-a-deployment-type"></a>Użyj niestandardowego skryptu w celu sprawdzenia obecności typu wdrożenia  
 
-1.  No **método de deteção** página do assistente criar tipo de implementação, selecione o **utilizar um script personalizado para detetar a presença deste tipo de implementação** caixa e, em seguida, escolha **editar**.  
+1.  Na **metody wykrywania** strony kreatora tworzenia typu wdrożenia wybierz **Użyj skryptu niestandardowego do wykrycia obecności tego typu wdrożenia** polu, a następnie wybierz pozycję **Edytuj**.  
 
-2.  Na caixa de diálogo **Editor de Scripts**, na lista pendente **Tipo de Script**, selecione o idioma de script que pretende utilizar para detetar o tipo de implementação.  
+2.  W oknie dialogowym **Edytor skryptów** z listy rozwijanej **Typ skryptu** wybierz język skryptu, którego chcesz używać do wykrywania obecności typu wdrożenia.  
 
-3.  No **conteúdo do Script** box, introduza o script que pretende utilizar. Também pode colar o conteúdo de um script existente neste campo, ou escolha **abra** para procurar um script existente já guardado. O Configuration Manager verifica os resultados do script ao ler os valores que são escritos no fluxo de saída Standard Out (STDOUT), o fluxo de saída Standard Error (STDERR) e o código de saída do script. Se o código de saída for um valor diferente de zero, o script falhou e o estado de deteção de aplicação é desconhecido. Se o código de saída for zero e STDOUT tem dados, o estado de deteção de aplicação é instalado.  
+3.  W **skryptu zawartość** wprowadź skrypt, którego chcesz użyć. Możesz również wkleić w tym polu zawartość istniejącego skryptu lub wybrać **Otwórz** aby przejść do istniejącego zapisanego skryptu. Program Configuration Manager sprawdza wyniki skryptu, odczytując wartości zapisane w strumieniu wyjściowym Standard Out (STDOUT), w strumieniu wyjściowym Standard Error (STDERR) oraz kod zakończenia ze skryptu. Jeśli kod zakończenia ma wartość niezerową, oznacza to, że działanie skryptu zakończyło się niepowodzeniem, a stan wykrywania aplikacji jest nieznany. Jeśli kod zakończenia to zero, a STDOUT zawiera dane, stan wykrywania aplikacji jest zainstalowany.  
 
- Utilize a tabela seguinte para ver como utilizar a saída de um script para verificar se uma aplicação é instalada.  
+ Skorzystaj z poniższej tabeli, aby zobaczyć sposób użycia dane wyjściowe skryptu, aby sprawdzić, czy aplikacja jest zainstalowana.  
 
-|Código de saída do script|Detalhes|
+|Kod zakończenia skryptu|Szczegóły|
 |--------------------------------|-----------------|
-|0|**Dados lidos em STDOUT**-vazio<br /><br /> **Dados lidos em STDERR**-vazio<br /><br /> **Resultado do script**-êxito<br /><br /> **Estado de deteção de aplicação**-não instalado|  
-|0|**Dados lidos em STDOUT**-vazio<br /><br /> **Dados lidos em STDERR**-não vazio<br /><br /> **Resultado do script**-falha<br /><br /> **Estado de deteção de aplicação**-desconhecido|  
-|0|**Dados lidos em STDOUT**-não vazio<br /><br /> **Dados lidos em STDERR**-vazio<br /><br /> **Resultado do script**-êxito<br /><br /> **Estado de deteção de aplicação**-instalado|  
-|0|**Dados lidos em STDOUT**-não vazio<br /><br /> **Dados lidos em STDERR**-não vazio<br /><br /> **Resultado do script**-êxito<br /><br /> **Estado de deteção de aplicação**-instalado|  
-|Valor diferente de zero|**Dados lidos em STDOUT**-vazio<br /><br /> **Dados lidos em STDERR**-vazio<br /><br /> **Resultado do script**-falha<br /><br /> **Estado de deteção de aplicação**-desconhecido|  
-|Valor diferente de zero|**Dados lidos em STDOUT**-vazio<br /><br /> **Dados lidos em STDERR**-não vazio<br /><br /> **Resultado do script**-falha<br /><br /> **Estado de deteção de aplicação**-desconhecido|  
-|Valor diferente de zero|**Dados lidos em STDOUT**-não vazio<br /><br /> **Dados lidos em STDERR**-vazio<br /><br /> **Resultado do script**-falha<br /><br /> **Estado de deteção de aplicação**-desconhecido|  
-|Valor diferente de zero|**Dados lidos em STDOUT**-não vazio<br /><br /> **Dados lidos em STDERR**-não vazio<br /><br /> **Resultado do script**-falha<br /><br /> **Estado de deteção de aplicação**-desconhecido|  
+|0|**Dane odczytane ze strumienia wyjściowego STDOUT**— pusty<br /><br /> **Dane odczytane ze strumienia wyjściowego STDERR**— pusty<br /><br /> **Wynik skryptu**— Powodzenie<br /><br /> **Stan wykrywania aplikacji**— nie jest zainstalowany|  
+|0|**Dane odczytane ze strumienia wyjściowego STDOUT**— pusty<br /><br /> **Dane odczytane ze strumienia wyjściowego STDERR**— niepuste<br /><br /> **Wynik skryptu**— błąd<br /><br /> **Stan wykrywania aplikacji**— nieznany|  
+|0|**Dane odczytane ze strumienia wyjściowego STDOUT**— niepuste<br /><br /> **Dane odczytane ze strumienia wyjściowego STDERR**— pusty<br /><br /> **Wynik skryptu**— Powodzenie<br /><br /> **Stan wykrywania aplikacji**— zainstalowany|  
+|0|**Dane odczytane ze strumienia wyjściowego STDOUT**— niepuste<br /><br /> **Dane odczytane ze strumienia wyjściowego STDERR**— niepuste<br /><br /> **Wynik skryptu**— Powodzenie<br /><br /> **Stan wykrywania aplikacji**— zainstalowany|  
+|Wartość niezerowa|**Dane odczytane ze strumienia wyjściowego STDOUT**— pusty<br /><br /> **Dane odczytane ze strumienia wyjściowego STDERR**— pusty<br /><br /> **Wynik skryptu**— błąd<br /><br /> **Stan wykrywania aplikacji**— nieznany|  
+|Wartość niezerowa|**Dane odczytane ze strumienia wyjściowego STDOUT**— pusty<br /><br /> **Dane odczytane ze strumienia wyjściowego STDERR**— niepuste<br /><br /> **Wynik skryptu**— błąd<br /><br /> **Stan wykrywania aplikacji**— nieznany|  
+|Wartość niezerowa|**Dane odczytane ze strumienia wyjściowego STDOUT**— niepuste<br /><br /> **Dane odczytane ze strumienia wyjściowego STDERR**— pusty<br /><br /> **Wynik skryptu**— błąd<br /><br /> **Stan wykrywania aplikacji**— nieznany|  
+|Wartość niezerowa|**Dane odczytane ze strumienia wyjściowego STDOUT**— niepuste<br /><br /> **Dane odczytane ze strumienia wyjściowego STDERR**— niepuste<br /><br /> **Wynik skryptu**— błąd<br /><br /> **Stan wykrywania aplikacji**— nieznany|  
 
-A tabela seguinte tem scripts de exemplo do Microsoft Visual Basic (VB) que pode utilizar para escrever os seus próprios scripts de deteção de aplicação.  
+Poniższa tabela zawiera Microsoft Visual Basic (VB) przykładowe skrypty, które służy do pisania własnych skryptów wykrywania aplikacji.  
 
-|Script de exemplo do Visual Basic|Descrição|  
+|Przykładowy skrypt Visual Basic|Opis|  
 |--------------------------------|-----------------|  
-|**WScript.Quit(1)**|O script devolve um código de saída diferente de zero, o que significa que não foi executado com êxito. Neste caso, o estado de deteção de aplicação é desconhecido.|  
-|**WScript.StdErr.Write "O Script falhou"**<br /><br /> **WScript.Quit(0)**|O script devolve um código de saída zero, mas o valor de STDERR não está vazio, o que significa que o script não foi executado com êxito. Neste caso, o estado de deteção de aplicação é desconhecido.|  
-|**WScript.Quit(0)**|O script devolve um código de saída de zero, o que indica que foi executado com êxito. No entanto, o valor de STDOUT está vazio, o que significa que a aplicação não está instalada.|  
-|**WScript.StdOut.Write "a aplicação está instalada"**<br /><br /> **WScript.Quit(0)**|O script devolve um código de saída de zero, o que indica que foi executado com êxito. O valor de STDOUT não está vazio, o que significa que a aplicação está instalada.|  
-|**WScript.StdOut.Write "a aplicação está instalada"**<br /><br /> **WScript.StdErr.Write "Concluída"**<br /><br /> **WScript.Quit(0)**|O script devolve um código de saída de zero, o que indica que foi executado com êxito. Os valores de STDOUT e STDERR não estão vazios, o que significa que a aplicação está instalada.|  
+|**WScript.Quit(1)**|Skrypt zwraca kod zakończenia o wartości innej niż zero, co oznacza, że jego niepomyślne wykonanie. W takiej sytuacji stan wykrywania aplikacji będzie nieznany.|  
+|**WScript.StdErr.Write "Skrypt nie powiodło się"**<br /><br /> **WScript.Quit(0)**|Skrypt zwraca kod zakończenia o wartości wynoszącej zero, jednak wartość strumienia wyjściowego STDERR nie będzie pusta, co oznacza niepomyślne wykonanie skryptu. W takiej sytuacji stan wykrywania aplikacji będzie nieznany.|  
+|**WScript.Quit(0)**|Skrypt zwraca kod zakończenia o wartości zero, co oznacza jego pomyślne wykonanie. Wartość strumienia wyjściowego STDOUT jest jednak pusta, co oznacza, że aplikacja nie jest zainstalowana.|  
+|**WScript.StdOut.Write "aplikacja jest zainstalowane"**<br /><br /> **WScript.Quit(0)**|Skrypt zwraca kod zakończenia o wartości zero, co oznacza jego pomyślne wykonanie. Wartość strumienia wyjściowego STDOUT nie jest pusta, co oznacza, że aplikacja jest zainstalowana.|  
+|**WScript.StdOut.Write "aplikacja jest zainstalowane"**<br /><br /> **WScript.StdErr.Write "Ukończone"**<br /><br /> **WScript.Quit(0)**|Skrypt zwraca kod zakończenia o wartości zero, co oznacza jego pomyślne wykonanie. Wartości strumieni wyjściowych STDOUT i STDERR nie są puste, co oznacza, że aplikacja jest zainstalowana.|  
 
  > [!NOTE]  
- >  O tamanho máximo que pode utilizar para um script é 32 kilobytes (KB).  
+ >  Maksymalny rozmiar skryptu, jakiego można użyć, to 32 kilobajty (KB).  
 
-4.  Escolha **OK** para fechar o **Editor de scripts** caixa de diálogo.  
+4.  Wybierz **OK** zamknąć **Edytor skryptów** okno dialogowe.  
 
-## <a name="specify-user-experience-options-for-the-deployment-type"></a>Especificar opções de experiência de utilizador para o tipo de implementação  
- Estas definições especificam como a aplicação será instalada nos dispositivos e que o utilizador irá ver.  
+## <a name="specify-user-experience-options-for-the-deployment-type"></a>Określenie opcji czynności użytkownika dotyczących typu wdrożenia  
+ Te ustawienia określają, jak aplikacja zostanie zainstalowana na urządzeniach i jakie użytkownik będzie widział.  
 
-1.  No **experiência de utilizador** página do Assistente para criar tipo de implementação, especifique as seguintes informações:  
+1.  Na **środowisko użytkownika** strony kreatora tworzenia typu wdrożenia Podaj następujące informacje:  
 
-    -   **Comportamento de instalação**– na lista pendente, selecione uma das seguintes opções:  
+    -   **Zachowanie podczas instalacji**— z listy rozwijanej wybierz jedną z następujących opcji:  
 
-        -   **Instalar para utilizador**– a aplicação é instalada apenas para o utilizador a quem a aplicação é implementada.  
+        -   **Zainstaluj dla użytkownika**— aplikacja zostanie zainstalowana tylko dla użytkownika, do której aplikacja jest wdrażana.  
 
-        -   **Instalar para o sistema**– a aplicação é instalada apenas uma vez e fica disponível para todos os utilizadores.  
+        -   **Zainstaluj dla systemu**— aplikacja zostanie zainstalowana tylko raz i będzie dostępna dla wszystkich użytkowników.  
 
-        -   **Instalar para o sistema se o recurso for o dispositivo; caso contrário instalar como utilizador**-se a aplicação é implementada num dispositivo, será instalada para todos os utilizadores. Se a aplicação for implementada para um utilizador, será instalada apenas para esse utilizador.  
+        -   **Zainstaluj dla systemu, jeśli zasób jest urządzeniem; w przeciwnym razie zainstaluj dla użytkownika**— Jeśli aplikacja jest wdrażana na urządzeniu, zostanie zainstalowany dla wszystkich użytkowników. Jeśli aplikacja jest wdrażana dla użytkownika, zostanie zainstalowana tylko dla tego użytkownika.  
 
-    -   **Requisito de início de sessão**– especificar os requisitos de início de sessão para este tipo de implementação das seguintes opções:  
+    -   **Wymagane zalogowanie**— Określ wymagania dotyczące logowania dla tego typu wdrożenia przy użyciu następujących opcji:  
 
-        -   **Apenas quando um utilizador com sessão iniciada**  
+        -   **Tylko wtedy, gdy użytkownik jest zalogowany**  
 
-        -   **Se pretende ou não um utilizador tenha iniciado sessão**  
+        -   **Określa, czy użytkownik jest zalogowany**  
 
-        -   **Só quando nenhum utilizador com sessão iniciada**  
-
-        > [!NOTE]  
-        >  Esta opção, será assumida a **apenas quando um utilizador é iniciado**, e não pode ser alterada se tiver selecionado **instalar para utilizador** no **comportamento de instalação** na lista pendente.  
-
-    -   **Visibilidade do programa de instalação**– especifique o modo no qual o tipo de implementação será executado nos dispositivos cliente. Estão disponíveis as seguintes opções:  
-
-        -   **Maximizado**– o tipo de implementação é executado maximizado nos dispositivos cliente. Os utilizadores verão todas as atividades de instalação.  
-
-        -   **Normal**– o tipo de implementação é executado no modo normal, com base nas predefinições do sistema e do programa. Este é o modo predefinido.  
-
-        -   **Minimizado**– o tipo de implementação é executado minimizado nos dispositivos cliente. Os utilizadores poderão ver a atividade de instalação na área de notificação ou na barra de tarefas.  
-
-        -   **Oculto**– o tipo de implementação é executado ocultado nos dispositivos cliente e os utilizadores verão qualquer atividade de instalação.  
-
-    -   **Permitir que os utilizadores visualizem e interajam com a instalação do programa**-especificar se um utilizador pode interagir com a instalação do tipo de implementação para configurar as opções de instalação.  
+        -   **Tylko wtedy, gdy użytkownik nie jest zalogowany**  
 
         > [!NOTE]  
-        >  Esta opção está ativada por predefinição, se tiver selecionado o **instalar para utilizador** opção o **comportamento de instalação** na lista pendente.  
+        >  Domyślnie ta opcja **tylko, gdy użytkownik jest zalogowany**, i nie można zmienić, jeśli wybrano **zainstaluj dla użytkownika** w **zachowanie podczas instalacji** listy rozwijanej.  
 
-    -   **Máximo tempo de execução permitido (minutos)**– especifique o tempo máximo que o programa poderá demorar a ser executado no computador cliente. Pode especificar esta definição no formato de número inteiro maior que zero. A predefinição é 120 minutos.  
+    -   **Widoczność programu instalacyjnego**— Określ tryb, w którym typ wdrażania będzie uruchamiany na urządzeniach klienckich. Dostępne są następujące opcje:  
 
-         Este valor é utilizado para:  
+        -   **Zmaksymalizowane**— typ wdrożenia zostanie uruchomiony w trybie zmaksymalizowanym na urządzeniach klienckich. Użytkownicy będą widzieć wszystkie działania instalacyjne.  
 
-        -   Monitorize os resultados do tipo de implementação.  
+        -   **Normalny**— typ wdrożenia zostanie uruchomiony w trybie normalnym na podstawie ustawień domyślnych systemu i programu. Jest to tryb domyślny.  
 
-        -   Verifique se um tipo de implementação será instalado quando janelas de manutenção são definidas nos dispositivos cliente. Quando uma janela de manutenção no local, um programa apenas será iniciado se houver tempo suficiente está disponível na janela de manutenção para contemplar a **máximo tempo de execução permitido** definição.  
+        -   **Zminimalizowany**— typ wdrożenia zostanie uruchomiony w trybie zminimalizowanym na urządzeniach klienckich. Użytkownicy będą widzieć działanie instalacji w obszarze powiadomień lub na pasku zadań.  
+
+        -   **Ukryte**— typ wdrożenia zostanie ukryta na urządzeniach klienckich, a użytkownicy nie będą widzieć żadnych działań instalacyjnych.  
+
+    -   **Zezwalaj użytkownikom na wyświetlanie i interakcji z instalacją programu**— Określ, czy użytkownik może interakcyjnie przeprowadzić instalację typu wdrożenia, aby skonfigurować opcje instalacji.  
+
+        > [!NOTE]  
+        >  Ta opcja jest włączona domyślnie w przypadku wybrania **zainstaluj dla użytkownika** opcji **zachowanie podczas instalacji** listy rozwijanej.  
+
+    -   **Maksymalny dozwolony czas wykonywania (w minutach)**— Podaj maksymalny czas, który program powinien być wykonywany na komputerze klienckim. To ustawienie musi być liczbą całkowitą większą niż zero. Domyślne ustawienie to 120 minut.  
+
+         Ta wartość jest używana do:  
+
+        -   Monitorowania wyników typu wdrożenia.  
+
+        -   Sprawdź, czy typ wdrożenia zostanie zainstalowany, gdy na urządzeniach klienckich są zdefiniowane okna obsługi. Jeśli okno obsługi, program zostanie uruchomiony tylko wtedy, gdy jest wystarczająco dużo czasu jest dostępna w oknie obsługi, aby pomieścić **maksymalny dozwolony czas wykonywania** ustawienie.  
 
         > [!IMPORTANT]  
-        >  Poderá ocorrer um conflito se o **máximo tempo de execução permitido** é superior à janela de manutenção agendada. Se o utilizador definir o tempo máximo de execução para um período que exceda a duração de qualquer janela de manutenção disponível, esse tipo de implementação não será executado.  
+        >  Może wystąpić konflikt, jeśli **maksymalny dozwolony czas wykonywania** jest większa od czasu zaplanowanego okna obsługi. Jeśli maksymalny czas wykonywania ustawiony przez użytkownika będzie większy od długości każdego z dostępnych okien obsługi, typ wdrożenia nie zostanie uruchomiony.  
 
-2.  **Instalação tempo estimado (minutos)**– especifique o tempo estimado que a instalação do tipo de implementação irá demorar. Esta informação é apresentada aos utilizadores do Centro de Software.  
+2.  **Szacowany czas instalacji (w minutach)**— Określ szacowany czas trwania instalacji typu wdrożenia. Ta informacja będzie wyświetlana użytkownikom Centrum oprogramowania.  
 
-## <a name="specify-requirements-for-the-deployment-type"></a>Especificar requisitos para o tipo de implementação  
+## <a name="specify-requirements-for-the-deployment-type"></a>Określenie wymagań dotyczących typu wdrożenia  
 
-1.  No **requisitos** página do Assistente para criar tipo de implementação, escolha **adicionar** para abrir o **criar requisito** diálogo caixa e adicionar um novo requisito.  
+1.  Na **wymagania** strony kreatora tworzenia typu wdrożenia wybierz **Dodaj** otworzyć **tworzenie wymagania** okna dialogowego i Dodaj nowe wymaganie.  
 
     > [!NOTE]  
-    >  Também pode adicionar novos requisitos no **requisitos** separador do *< nome do tipo de implementação\>*  **propriedades** caixa de diálogo.  
+    >  Możesz także dodać nowe wymagania na **wymagania** karcie *< Nazwa typu wdrożenia\>*  **właściwości** okno dialogowe.  
 
-2.  Na lista pendente **Categoria**, indique se este requisito corresponde a um dispositivo ou utilizador, ou selecione **Personalizada** para utilizar uma condição global criada anteriormente. Quando seleciona **personalizada**, também pode optar por **criar** para criar uma nova condição global. Para obter mais informações sobre as condições globais, consulte [como criar condições globais](../../apps/deploy-use/create-global-conditions.md).  
+2.  Z listy rozwijanej **Kategoria** wybierz, czy wymaganie dotyczy urządzenia, czy użytkownika, lub wybierz opcję **Niestandardowe**, aby użyć poprzednio utworzonego warunku globalnego. Po wybraniu **niestandardowy**, można także **Utwórz** Aby utworzyć nowy warunek globalny. Aby uzyskać więcej informacji o warunkach globalnych, zobacz [tworzenie warunków globalnych](../../apps/deploy-use/create-global-conditions.md).  
 
     > [!IMPORTANT]  
-    >  Qualquer requisito da categoria **utilizador** e a condição **dispositivo primário** será ignorado se implementar a aplicação a uma coleção de dispositivos.  
+    >  Wszystkie wymagania należącego do kategorii **użytkownika** i warunku **urządzenie podstawowe** zostanie zignorowana, jeśli wdrożysz aplikację w kolekcji urządzeń.  
     >   
-    >  Se tiver criado um pacote do Windows e uma sequência de programas ou tarefas com o Windows 10 como requisito utilizando o System Center 2012 R2 Configuration Manager SP1 e, em seguida, atualizar para o System Center Configuration Manager, os requisitos para o Windows 10 poderão ser removidos. Para corrigir este problema, especifique os requisitos novamente. Tenha em atenção que apesar do requisito de foi removido a apresentação de requisitos, é ainda processado corretamente nos dispositivos.  
+    >  Jeśli utworzono pakiet systemu Windows oraz program lub sekwencję zadań wymagającą systemu Windows 10 przy użyciu programu System Center 2012 R2 Configuration Manager SP1, a następnie dokonano aktualizacji programu System Center Configuration Manager, wymagania dotyczące systemu Windows 10 mogą zostać usunięte. Aby rozwiązać ten problem, należy ponownie określić wymagania. Należy pamiętać, że chociaż wymaganie został usunięty z wyświetlania wymagania, są nadal przetwarzane prawidłowo na urządzeniach.  
 
-3.  No **condição** pendente lista, selecione a condição que pretende utilizar para avaliar se o utilizador ou dispositivo satisfaz os requisitos de instalação. O conteúdo desta lista varia consoante a categoria selecionada.  
+3.  W **warunku** listy rozwijanej wybierz warunek, którego chcesz użyć do oceny, czy użytkownik lub urządzenie spełnia wymagania instalacyjne. Zawartość tej listy różni się w zależności od wybranej kategorii.  
 
-4.  No **operador** pendente lista, selecione o operador que será utilizado para comparar a condição selecionada com o valor especificado para avaliar se o utilizador ou dispositivo satisfaz os requisitos de instalação. Os operadores disponíveis variam consoante a condição selecionada.  
+4.  W **Operator** listy rozwijanej wybierz operator, który zostanie użyty do porównania wybranego warunku z podaną wartością w celu oceny, czy użytkownik lub urządzenie spełnia wymagania instalacyjne. Dostępni operatorzy różnią się w zależności od wybranego warunku.  
 
     > [!IMPORTANT]  
-    >  Os requisitos disponíveis irão variar consoante o tipo de dispositivo que utiliza o tipo de implementação.  
+    >  Dostępne wymagania będą się różnić w zależności od typu urządzenia, która używa typu wdrożenia.  
 
-5.  No **valor** caixa, especifique os valores que serão utilizados com a condição e operador selecionados para avaliar se o utilizador ou dispositivo cumpre os requisitos de instalação. Os valores disponíveis variam consoante a condição selecionada e o operador selecionado.  
+5.  W **wartość** określ wartości, które będą używane z wybranym warunkiem i Operator służący do oceny, czy użytkownik lub urządzenie spełnia wymagania instalacyjne. Dostępne wartości różnią się w zależności od wybranych warunku i operatora.  
 
-6.  Escolha **OK** para guardar o requisito e fechar o **criar requisito** caixa de diálogo.  
+6.  Wybierz **OK** Aby zapisać wymaganie i zamknąć **tworzenie wymagania** okno dialogowe.  
 
-## <a name="specify-dependencies-for-the-deployment-type"></a>Especificar dependências para o tipo de implementação  
- As dependências definem um ou mais tipos de implementação a partir de outra aplicação que tem de ser instalada antes de um tipo de implementação ser instalado. Pode configurar os tipos de implementação dependentes para serem automaticamente instalados antes de um tipo de implementação está instalado.  
+## <a name="specify-dependencies-for-the-deployment-type"></a>Określenie zależności dotyczących typu wdrożenia  
+ Zależności definiują jeden lub więcej typów wdrożeń z innej aplikacji, którą należy zainstalować przed zainstalowaniem typu wdrożenia. Można ustawić zależnych typów wdrożeń można automatycznie zainstalować przed zainstalowaniem typu wdrożenia.  
 
 > [!IMPORTANT]  
->  Em alguns casos, um tipo de implementação está dependente de um tipo de implementação que também tenha dependências. O número máximo de dependências suportadas na cadeia é cinco.  
+>  W niektórych przypadkach typ wdrożenia jest zależny od typu wdrożenia, który również ma zależności. Maksymalna liczba obsługiwanych zależności w łańcuchu wynosi pięć.  
 
-1.  No **dependências** página do Assistente para criar tipo de implementação, escolha **adicionar** se pretender especificar os tipos de implementação que devem ser instalados antes de instalar este tipo de implementação.  
+1.  Na **zależności** strony kreatora tworzenia typu wdrożenia wybierz **Dodaj** Jeśli chcesz określić typy wdrożeń, które należy zainstalować przed zainstalowaniem tego typu wdrożenia.  
 
     > [!IMPORTANT]  
-    >  Também pode adicionar novas dependências no **dependências** separador do *< nome do tipo de implementação\>*  **propriedades** caixa de diálogo.  
+    >  Można także dodać nowe zależności na **zależności** karcie *< Nazwa typu wdrożenia\>*  **właściwości** okno dialogowe.  
 
-2.  No **adicionar dependência** diálogo caixa, escolha **adicionar**.  
+2.  W **Dodawanie zależności** oknie dialogowym wybierz **Dodaj**.  
 
-3.  No **especificar aplicação necessária** caixa de diálogo, selecione os tipos de uma aplicação existente e um da implementação da aplicação a utilizar como uma dependência.  
+3.  W **Określ wymaganą aplikację** okno dialogowe, wybierz istniejącą aplikację i jedno wdrożenie aplikacji typów do użycia jako zależność.  
 
     > [!TIP]  
-    >  Pode escolher **vista** para apresentar as propriedades do tipo de aplicação ou implementação selecionado.  
+    >  Możesz wybrać **widoku** Aby wyświetlić właściwości wybranej aplikacji lub typu wdrożenia.  
 
-4.  Escolha **OK** para fechar o **especificar aplicação necessária** caixa de diálogo.  
+4.  Wybierz **OK** zamknąć **Określ wymaganą aplikację** okno dialogowe.  
 
-5.  Se pretender que uma aplicação dependente seja instalada automaticamente, selecione **instalação automática** junto da aplicação dependente.  
+5.  Jeśli chcesz, aby aplikacja zależna była instalowana automatycznie, wybierz opcję **automatyczna instalacja** obok aplikacji.  
 
     > [!NOTE]  
-    >  Uma aplicação dependente não necessita de ser implementada para ser instalada automaticamente.  
+    >  Aplikacja zależna nie trzeba wdrażać była instalowana automatycznie.  
 
-6.  No **adicionar dependência** caixa de diálogo em **nome do grupo de dependência**, introduza um nome para fazer referência a este grupo de dependências de aplicações.  
+6.  W **Dodawanie zależności** okno dialogowe, w obszarze **Nazwa grupy zależności**, wprowadź nazwę umożliwiającą odwoływanie się do tej grupy zależności aplikacji.  
 
-7.  Opcionalmente, utilize o **aumentar prioridade** e **diminuir prioridade** botões para alterar a ordem de avaliação de cada dependência.  
+7.  Można też użyć **Zwiększ priorytet** i **Zmniejsz priorytet** przycisków, aby zmienić kolejność, w jakiej są oceniane poszczególne zależności.  
 
-8.  Escolha **OK** para fechar o **adicionar dependência** caixa de diálogo.  
+8.  Wybierz **OK** zamknąć **Dodawanie zależności** okno dialogowe.  
 
-## <a name="confirm-the-deployment-type-settings-and-finish-the-wizard"></a>Confirme as definições de tipo de implementação e concluir o Assistente  
+## <a name="confirm-the-deployment-type-settings-and-finish-the-wizard"></a>Potwierdzenie ustawień typu wdrożenia i Zakończ pracę kreatora  
 
-1.  No **resumo** página do Assistente para criar tipo de implementação, reveja as ações que o assistente executará. Escolha **seguinte** para criar o tipo de implementação, ou escolha **anterior** para voltar atrás e alterar as definições para o tipo de implementação.  
+1.  Na **Podsumowanie** strony kreatora tworzenia typu wdrożenia Przejrzyj akcje wykonywane przez kreatora. Wybierz **dalej** do utworzenia typu wdrożenia, lub wybierz **Wstecz** aby wrócić i zmienić ustawienia typu wdrożenia.  
 
-2.  Depois do **progresso** página depois de concluída, reveja as ações efetuadas pelo assistente e, em seguida, escolha **fechar** para concluir o assistente.  
+2.  Po **postępu** Przejrzyj akcje wykonane przez kreatora, a następnie wybierz pozycję zakończenie, **Zamknij** aby zakończyć pracę kreatora.  
 
-3.  Se tiver iniciado o Assistente para criar tipo de implementação a partir do Assistente para criar aplicação, regressará ao **tipos de implementação** página do Assistente para criar aplicação.  
+3.  Jeśli Kreator tworzenia typu wdrożenia został uruchomiony z Kreatora tworzenia aplikacji, nastąpi powrót do **typy wdrożeń** strony kreatora tworzenia aplikacji.  
 
-## <a name="set-up-additional-options-for-deployment-types-that-contain-virtual-applications"></a>Configurar opções adicionais para tipos de implementação que contêm aplicações virtuais  
- Utilize os procedimentos seguintes para configurar opções adicionais para tipos de implementação que contêm aplicações virtuais.  
+## <a name="set-up-additional-options-for-deployment-types-that-contain-virtual-applications"></a>Konfigurowanie dodatkowych opcji typów wdrożeń zawierających aplikacje wirtualne  
+ Poniższe procedury umożliwiają konfigurowanie dodatkowych opcji typów wdrożeń zawierających aplikacje wirtualne.  
 
-### <a name="set-up-content-options-for-application-virtualization-app-v-deployment-types"></a>Configurar opções de conteúdo para os tipos de implementação de Application Virtualization (App-V)  
+### <a name="set-up-content-options-for-application-virtualization-app-v-deployment-types"></a>Ustaw opcje zawartości dla typów wdrożeń Application Virtualization (App-V)  
 
-1.  Na consola do Configuration Manager, escolha **biblioteca de Software** > **aplicações**.  
+1.  W konsoli programu Configuration Manager wybierz **Biblioteka oprogramowania** > **aplikacji**.  
 
-2.  No **aplicações** lista, selecione uma aplicação que tenha um tipo de implementação de App-V. Em seguida, no **home page** separador o **propriedades** grupo, escolha **propriedades**.  
+2.  W **aplikacji** listy, wybierz aplikację, która ma typ wdrożenia programu App-V. Następnie na **Home** karcie **właściwości** grupy, wybierz **właściwości**.  
 
-3.  No *< nome da aplicação\>*  **propriedades** caixa de diálogo a **tipos de implementação** separador, selecione um tipo de implementação de App-V e, em seguida, escolha **editar**.  
+3.  W *< nazwa aplikacji\>*  **właściwości** na okna dialogowego **typy wdrożeń** karcie, wybierz typ wdrożenia programu App-V, a następnie wybierz **Edytuj**.  
 
-4.  No *< nome do tipo de implementação\>*  **propriedades** caixa de diálogo a **conteúdo** separador, configure as seguintes opções, se necessário:  
+4.  W *< Nazwa typu wdrożenia\>*  **właściwości** na okna dialogowego **zawartości** kartę, skonfiguruj następujące opcje, jeśli jest to wymagane:  
 
-    -   **Manter conteúdo na cache do cliente**– Selecione esta opção para garantir que o conteúdo para este tipo de implementação não é eliminado da cache do cliente do Configuration Manager.  
+    -   **Utrwal zawartość w pamięci podręcznej klienta**— wybierz tę opcję, aby upewnić się, że zawartość dla tego typu wdrożenia nie zostanie usunięta z pamięci podręcznej klienta programu Configuration Manager.  
 
-    -   **Carregar conteúdo para a cache de App-V antes de iniciar**– Selecione esta opção para garantir que todo o conteúdo da aplicação virtual é carregado para a cache de App-V antes de iniciar a aplicação. A seleção desta opção também garante que o conteúdo da aplicação não seja fixado na cache e pode ser eliminado conforme necessário.  
+    -   **Załaduj zawartość do pamięci podręcznej programu App-V przed uruchomieniem**— wybierz tę opcję, aby upewnić się, że cała zawartość dla aplikacji wirtualnej zostanie załadowana do pamięci podręcznej programu App-V przed uruchomieniem aplikacji. Zaznaczenie tej opcji gwarantuje również, że zawartość aplikacji nie jest przypięty w pamięci podręcznej i można je usunąć zgodnie z wymaganiami.  
 
-5.  Escolha **OK** para fechar o *< nome do tipo de implementação\>*  **propriedades** caixa de diálogo.  
+5.  Wybierz **OK** zamknąć *< Nazwa typu wdrożenia\>*  **właściwości** okno dialogowe.  
 
-6.  Escolha **OK** para fechar o *< nome da aplicação\>*  **propriedades** caixa de diálogo.  
+6.  Wybierz **OK** zamknąć *< nazwa aplikacji\>*  **właściwości** okno dialogowe.  
 
-### <a name="set-up-publishing-options-for-app-v-deployment-types"></a>Configurar as opções para tipos de implementação de App-V de publicação  
+### <a name="set-up-publishing-options-for-app-v-deployment-types"></a>Ustawianie opcji typów wdrożeń App-V publikowania  
 
-1.  Na consola do Configuration Manager, escolha **biblioteca de Software** > **aplicações**.  
+1.  W konsoli programu Configuration Manager wybierz **Biblioteka oprogramowania** > **aplikacji**.  
 
-3.  No **aplicações** lista, selecione uma aplicação que tenha um tipo de implementação de App-V. Em seguida, no **home page** separador o **propriedades** grupo, escolha **propriedades**.  
+3.  W **aplikacji** listy, wybierz aplikację, która ma typ wdrożenia programu App-V. Następnie na **Home** karcie **właściwości** grupy, wybierz **właściwości**.  
 
-4.  No *< nome da aplicação\>*  **propriedades** caixa de diálogo a **tipos de implementação** separador, selecione um tipo de implementação de App-V e, em seguida, escolha **editar**.  
+4.  W *< nazwa aplikacji\>*  **właściwości** na okna dialogowego **typy wdrożeń** karcie, wybierz typ wdrożenia programu App-V, a następnie wybierz **Edytuj**.  
 
-5.  No *< nome do tipo de implementação\>*  **propriedades** caixa de diálogo a **publicação** separador, selecione os itens na aplicação virtual que pretende publicar.  
+5.  W *< Nazwa typu wdrożenia\>*  **właściwości** na okna dialogowego **publikowania** , a następnie wybierz elementy aplikacji wirtualnej, który chcesz opublikować.  
 
-6.  Escolha **OK** para fechar o *< nome do tipo de implementação\>*  **propriedades** caixa de diálogo.  
+6.  Wybierz **OK** zamknąć *< Nazwa typu wdrożenia\>*  **właściwości** okno dialogowe.  
 
-7.  Escolha **OK** para fechar o *< nome da aplicação\>*  **propriedades** caixa de diálogo.  
+7.  Wybierz **OK** zamknąć *< nazwa aplikacji\>*  **właściwości** okno dialogowe.  
 
-## <a name="import-an-application"></a>Importar uma aplicação  
- Utilize o procedimento seguinte para importar uma aplicação para o Configuration Manager. Para obter informações sobre como exportar uma aplicação, consulte [tarefas de gestão do System Center Configuration Manager aplicações](../../apps/deploy-use/management-tasks-applications.md).  
+## <a name="import-an-application"></a>Importuj aplikację  
+ Użyj poniższej procedury, aby zaimportować aplikację do programu Configuration Manager. Aby uzyskać informacje o sposobie eksportowania aplikacji, zobacz [zadania zarządzania dla aplikacji programu System Center Configuration Manager](../../apps/deploy-use/management-tasks-applications.md).  
 
-1.  Na consola do Configuration Manager, escolha **biblioteca de Software** > **gestão de aplicações** > **aplicações**.   
+1.  W konsoli programu Configuration Manager wybierz **Biblioteka oprogramowania** > **Zarządzanie aplikacjami** > **aplikacji**.   
 
-3.  No **home page** separador o **criar** grupo, escolha **importar aplicação**.  
+3.  Na **Home** karcie **Utwórz** grupy, wybierz **Importuj aplikację**.  
 
-4.  No **geral** página do **Assistente para importar aplicação**, escolha **procurar**e, em seguida, especifique um caminho UNC para o ficheiro. zip que tenha a aplicação que pretende importar.  
+4.  Na **ogólne** strony **Kreatora importowania aplikacji**, wybierz **Przeglądaj**, a następnie określ ścieżkę UNC do pliku zip, który ma aplikacji do zaimportowania.  
 
-5.  No **conteúdo do ficheiro** página, selecione a ação que irá ser executada se a aplicação que está a tentar importar for um duplicado da aplicação existente. Pode criar uma nova aplicação ou ignorar o duplicado e adicionar uma nova revisão à aplicação existente.  
+5.  Na **zawartość pliku** wybierz akcję, która będzie wykonywana, gdy aplikację, którą próbowano zaimportować jest duplikatem istniejącej aplikacji. Możesz utworzyć nową aplikację lub zignorować duplikat i dodać nową poprawkę do istniejącej aplikacji.  
 
-6.  No **resumo** página, reveja as ações a executar e, em seguida, conclua o assistente.  
+6.  Na **Podsumowanie** Przejrzyj akcje wykonywane, a następnie Zakończ pracę kreatora.  
 
- A nova aplicação aparece no nó **Aplicações**.  
+ Nowa aplikacja pojawi się w węźle **Aplikacje**.  
 
 > [!TIP]  
->  O cmdlet Windows PowerShell **Import-CMApplication** tem a mesma função que este procedimento. Para obter mais informações, consulte [Import-CMApplication](https://technet.microsoft.com/library/jj821738.aspx) no Microsoft System Center 2012 Configuration Manager SP1 referência de cmdlets.  
+>  Polecenia cmdlet programu Windows PowerShell **Export-CMApplication** ma taką samą funkcję jak tej procedury. Aby uzyskać więcej informacji, zobacz [Export-CMApplication](https://technet.microsoft.com/library/jj821738.aspx) w Microsoft System Center 2012 Configuration Manager z dodatkiem SP1 Cmdlet Reference.  
 
-##  <a name="deployment-types-supported-by-configuration-manager"></a>Tipos de implementação suportados pelo Gestor de Configuração  
+##  <a name="deployment-types-supported-by-configuration-manager"></a>Typy wdrożeń obsługiwane przez program Configuration Manager  
 
-|Nome do tipo de implementação|Mais informações|  
+|Nazwa typu wdrożenia|Więcej informacji|  
 |--------------------------|----------------------|  
-|**Windows Installer (\*ficheiro. msi)**|Cria um tipo de implementação a partir de um ficheiro do Windows Installer.|  
-|**Pacote de aplicação do Windows (\*. AppX, \*. appxbundle)**|Cria um tipo de implementação para o Windows 8, Windows RT a partir de um ficheiro de pacote de aplicações do Windows ou de um pacote de grupos de aplicações.|  
-|**Pacote de aplicação do Windows (na loja Windows)**|Cria um tipo de implementação para o Windows 8, Windows RT, ou posterior, especificando uma ligação para a aplicação na loja Windows ou navegando na loja para selecionar a aplicação pretendida.<br /><br /> Se pretender implementar a aplicação como uma hiperligação para a loja Windows, certifique-se de que a definição de política de grupo **desativar a aplicação de arquivo** está definido como **desativado** ou **não configurado**. Se esta definição estiver ativada, os clientes não conseguirão estabelecer ligação com a Loja Windows para transferir e instalar aplicações.<br /><br /> Os tipos de implementação do Windows 8 que utilizam uma ligação para um arquivo são sempre avaliados antes de outros tipos de implementação, independentemente da sua prioridade.|  
-|**Instalador de script**|Cria um tipo de implementação que especifica um script que é executado nos dispositivos cliente para instalar o conteúdo ou para efetuar uma ação.|  
-|**Microsoft Application Virtualization 4**|Cria um tipo de implementação a partir de um manifesto do Microsoft Application Virtualization 4|  
-|**Microsoft Application Virtualization 5**|Cria um tipo de implementação a partir de um ficheiro de pacote do Microsoft Application Virtualization 5.|  
-|**Pacote de aplicação do Windows Phone (\*ficheiro. xap)**|Cria um tipo de implementação a partir de um ficheiro de pacote de aplicação do Windows Phone.|  
-|**Pacote de aplicação do Windows Phone (na loja Windows Phone)**|Cria um tipo de implementação, ao especificar uma ligação para a aplicação na loja do Windows Phone.|  
-|**Ficheiro CAB móveis do Windows**|Cria um tipo de implementação para dispositivos do Windows Mobile a partir de um ficheiro CAB (Windows Mobile Cabinet).|  
-|**Pacote de aplicação para iOS (\*ficheiro. IPA)**|Cria um tipo de implementação a partir de um ficheiro de pacote de aplicação do iOS.|  
-|**Pacote de aplicação para iOS da App Store**|Cria um tipo de implementação, especificando uma ligação para a aplicação do iOS na App Store.|  
-|**Pacote de aplicação para Android (\*ficheiro. apk)**|Cria um tipo de implementação a partir de um ficheiro de pacote de aplicação do Android.|  
-|**Pacote de aplicação para Android no Google Play**|Cria um tipo de implementação, especificando uma ligação para a aplicação no Google Play.|  
-|**Mac OS X**|Cria um tipo de implementação para computadores Mac a partir de um ficheiro .cmmac que tenha criado com a ferramenta CMAppUtil.<br /><br /> Aplica-se apenas a computadores Mac que executem o cliente do Configuration Manager.|  
-|**Aplicação Web**|Cria um tipo de implementação que especifica uma ligação para uma aplicação Web. O tipo de implementação instala um atalho para a aplicação web no dispositivo do utilizador.<br /><br /> Se tiver instalado o browser gerido do Intune no iOS ou Android dispositivos que gere, pode certificar-se de que os utilizadores só podem utilizar o browser gerido para abrir a aplicação. Para tal, utilize um dos seguintes formatos quando especificar uma ligação para a aplicação, substituindo **http:** com **http-intunemam:** ou **https:** com **https-intunemam:**<br /><br /> - **http-intunemam: / / < caminho para a aplicação web\>**<br /><br /> - **https-intunemam: / / < caminho para a aplicação web\>**<br /><br /> Pode utilizar os requisitos da aplicação do Configuration Manager para se certificar de que as aplicações que pretende associar o browser gerido só são instaladas em dispositivos iOS e Android.<br /><br /> Para obter mais informações sobre o Intune managed browser, consulte [Internet gerir o acesso através de políticas de browser gerido](../../apps/deploy-use/manage-internet-access-using-managed-browser-policies.md).|  
-|**Windows Installer através de MDM (\*. msi)**|Este tipo de instalador permite-lhe criar e implementar aplicações baseadas no Windows Installer em PCs com Windows 10.<br /><br /> As considerações seguintes são aplicáveis quando utiliza este tipo de instalador:<br><br>-Só pode carregar um único ficheiro com a extensão. msi.<br /><br /> -Código de produto o ficheiro e a versão do produto são utilizados para deteção da aplicação.<br /><br /> -O comportamento de reinício predefinido da aplicação será utilizado. O Configuration Manager não controla este procedimento.<br /><br /> -Serão instalados pacotes MSI de por utilizador para um único utilizador.<br /><br /> -Serão instalados pacotes MSI de por máquina para todos os utilizadores no dispositivo.<br /><br /> -Pacotes MSI de modo duplo atualmente instalados apenas para todos os utilizadores do dispositivo.<br /><br /> -As atualizações de aplicações são suportadas quando o código de produto MSI de cada versão for igual.|  
+|**Instalator systemu Windows (\*pliku .msi)**|Tworzy typ wdrożenia na podstawie pliku Instalatora systemu Windows.|  
+|**Pakiet aplikacji systemu Windows (\*appx, \*.appxbundle)**|Tworzy typ wdrożenia dla systemu operacyjnego Windows 8 lub Windows RT albo nowszego na podstawie pliku pakietu aplikacji systemu Windows lub pakietu zbioru aplikacji systemu Windows.|  
+|**Pakiet aplikacji systemu Windows (w Sklepie Windows)**|Tworzy typ wdrożenia dla systemu Windows 8, Windows RT lub nowszego przez określenie linku do aplikacji w Sklepie Windows lub przejrzenie sklepu i wskazanie wymaganej aplikacji, które są wymagane.<br /><br /> Jeśli chcesz wdrożyć aplikację jako łącze do Sklepu Windows, upewnij się, że ustawienie zasad grupy **Wyłącz aplikację sklep** ustawiono **wyłączone** lub **nieskonfigurowane**. Jeśli to ustawienie jest włączone, klienci nie będą mogli połączyć się ze Sklepem Windows w celu pobrania i zainstalowania aplikacji.<br /><br /> Typy wdrożeń systemu Windows 8 korzystające z linku do sklepu są zawsze oceniane przed innymi typami wdrożeń, niezależnie od ich priorytetu.|  
+|**Instalator skryptowy**|Tworzy typ wdrożenia określający skrypt uruchamiany na urządzeniach klienckich w celu zainstalowania zawartości lub wykonaj akcję.|  
+|**Microsoft Application Virtualization 4**|Tworzy typ wdrożenia na podstawie manifestu aplikacji Microsoft Application Virtualization 4|  
+|**Microsoft Application Virtualization 5**|Tworzy typ wdrożenia na podstawie pliku pakietu aplikacji Microsoft Application Virtualization 5.|  
+|**Pakiet aplikacji Windows Phone (\*plik xap)**|Tworzy typ wdrożenia na podstawie pliku pakietu aplikacji systemu Windows Phone.|  
+|**Pakiet aplikacji Windows Phone (w Sklepie Windows Phone)**|Tworzy typ wdrożenia przez określenie linku do aplikacji w sklepie Windows Phone Store.|  
+|**Przenośne pliku Cabinet systemu Windows**|Tworzy typ wdrożenia dla urządzeń z systemem Windows Mobile na podstawie pliku cabinet systemu Windows Mobile (CAB).|  
+|**Pakiet aplikacji dla systemu iOS (\*plik IPA)**|Tworzy typ wdrożenia na podstawie pliku pakietu aplikacji dla systemu iOS.|  
+|**Pakiet aplikacji dla systemu iOS ze sklepu z aplikacjami**|Tworzy typ wdrożenia za pośrednictwem łącza do aplikacji dla systemu iOS ze sklepu App Store.|  
+|**Pakiet aplikacji dla systemu Android (\*pliku apk)**|Tworzy typ wdrożenia na podstawie pliku pakietu aplikacji dla systemu Android.|  
+|**Pakiet aplikacji dla systemu Android w witrynie Google Play**|Tworzy typ wdrożenia za pośrednictwem łącza do aplikacji w witrynie Google Play.|  
+|**Mac OS X**|Tworzy typ wdrożenia dla komputerów Mac na podstawie pliku *.cmmac, który został utworzony przy użyciu narzędzia CMAppUtil.<br /><br /> Dotyczy tylko na komputerach Mac, na którym jest uruchomiony klient programu Configuration Manager.|  
+|**Aplikacja sieci Web**|Tworzy typ wdrożenia określający łącze do aplikacji sieci web. Typ wdrożenia instaluje skrót do aplikacji sieci web na urządzeniu użytkownika.<br /><br /> Po zainstalowaniu programu Intune managed browser dla systemu iOS lub urządzeń z systemem Android, którymi zarządzasz, można zapewnić, że użytkowników tylko przy użyciu programu managed browser do otwarcia aplikacji. Aby to zrobić, należy użyć jednej z następujących formatów wystarczy podać link do aplikacji przez zastąpienie **http:** z **http-intunemam:** lub **https:** z **https-intunemam:**<br /><br /> - **http-intunemam: / / < ścieżka do aplikacji sieci web\>**<br /><br /> - **HTTPS-intunemam: / / < ścieżka do aplikacji sieci web\>**<br /><br /> Aby upewnić się, że aplikacje, które chcesz skojarzyć z przeglądarką zarządzaną są instalowane tylko na urządzeń iOS i Android, można użyć wymagań aplikacji programu Configuration Manager.<br /><br /> Aby uzyskać więcej informacji o usłudze Intune managed browser, zobacz [Zarządzanie Internetu dostępu za pomocą zasad programu managed browser](../../apps/deploy-use/manage-internet-access-using-managed-browser-policies.md).|  
+|**Instalator Windows korzystający z zarządzania urządzeniami Przenośnymi (\*.msi)**|Ten typ Instalatora umożliwia tworzenie i wdrażanie aplikacji opartych na Instalatorze Windows na komputerach z systemem Windows 10.<br /><br /> W przypadku korzystania z instalatora tego typu należy wziąć pod uwagę następujące kwestie:<br><br>-Należy przekazać tylko pojedynczy plik z rozszerzeniem msi.<br /><br /> Kod produktu i wersja produktu pliku są używane do wykrywania aplikacji.<br /><br /> Domyślne zachowanie ponownego uruchamiania aplikacji będą używane. Menedżer konfiguracji nie jest to kontrolowane.<br /><br /> -Dla pojedynczego użytkownika zostaną zainstalowane pakiety MSI poszczególnych użytkowników.<br /><br /> Dla wszystkich użytkowników urządzenia zostaną zainstalowane pakiety MSI na maszynach.<br /><br /> -Pakiety MSI podwójne obecnie instalować tylko dla wszystkich użytkowników na urządzeniu.<br /><br /> — Aktualizacje aplikacji są obsługiwane, jeśli kod produktu MSI dla każdej wersji jest taki sam.|  

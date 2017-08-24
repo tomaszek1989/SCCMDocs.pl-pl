@@ -1,6 +1,6 @@
 ---
-title: "Armazém de dados | Microsoft Docs"
-description: "Ponto de serviço do armazém de dados e base de dados para o System Center Configuration Manager"
+title: Magazyn danych | Dokumentacja firmy Microsoft
+description: "Punkt usługi magazynu danych i bazy danych programu System Center Configuration Manager"
 ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
@@ -17,178 +17,178 @@ manager: angrobe
 ms.openlocfilehash: eedbf12d3bf628666efc90c85a8dfab37e4dc9ab
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pt-PT
+ms.contentlocale: pl-PL
 ms.lasthandoff: 08/07/2017
 ---
-#  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>O ponto de serviço do armazém de dados para o System Center Configuration Manager
-*Aplica-se a: O System Center Configuration Manager (ramo atual)*
+#  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>Punkt usługi Magazyn danych programu System Center Configuration Manager
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-A partir da versão 1702 que pode utilizar o ponto de serviço do armazém de dados para armazenar e elaborar relatórios sobre dados históricos de longo prazo para a sua implementação do Configuration Manager.
+Począwszy od wersji 1702, punkt usługi Magazyn danych można użyć do przechowywania i raport dotyczący długoterminowe dane historyczne dla danego wdrożenia programu Configuration Manager.
 
 > [!TIP]
-> O ponto de serviço do armazém de dados é uma funcionalidade de pré-lançamento introduzida na versão 1702. Para ativá-la, consulte o artigo [utilizar funcionalidades de pré-lançamento](/sccm/core/servers/manage/pre-release-features).
+> Punkt usługi Magazyn danych jest wprowadzonych w wersji 1702 funkcji wersji wstępnej. Aby ją włączyć, zobacz [korzystanie z funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features).
 
-> A partir da versão 1706, esta funcionalidade já não é uma funcionalidade de pré-lançamento.
+> Począwszy od wersji 1706, ta funkcja nie jest już funkcji wersji wstępnej.
 
-O armazém de dados suporta até 2 TB de dados, com carimbos de registo de alterações. Armazenamento de dados é conseguido ao sincronizações automáticas da base de dados do site do Configuration Manager para a base de dados do armazém de dados. Esta informação, em seguida, é acessível a partir do seu ponto de Reporting Services. Dados que são sincronizados para a base de dados do armazém de dados são mantidos três anos. Periodicamente, uma tarefa incorporada remove os dados que é mais antigos do que três anos.
+Magazyn danych obsługuje maksymalnie 2 TB danych z sygnaturami czasowymi, śledzenie zmian. Przechowywanie danych odbywa się przez automatyczne synchronizacje z bazy danych lokacji programu Configuration Manager do bazy danych magazynu danych. Te informacje są dostępne z punktu usług Reporting Services. Dane, które są synchronizowane z bazy danych magazynu danych jest zachowywana przez 3 lata. Okresowo wbudowanego zadania usuwa dane starsze niż trzy lata.
 
-Dados que são sincronizados incluem o seguinte dos grupos de dados globais e dados do Site:
-- Estado de funcionamento da infraestrutura
-- Segurança
-- Conformidade
-- Software maligno   
-- Implementações de software
-- Detalhes de inventário (no entanto, o histórico de inventário não está sincronizado)
+Dane, które są synchronizowane obejmuje następujące elementy z grup danych globalnych i danych lokacji:
+- Kondycja infrastruktury
+- Zabezpieczenia
+- Zgodność
+- Złośliwe oprogramowanie   
+- Wdrożenia oprogramowania
+- Szczegóły spisu (jednak historię spisu nie jest zsynchronizowany)
 
-Quando instala a função de sistema de sites, instala e configura a base de dados do armazém de dados. Instala também vários relatórios para que possam procurar facilmente e relatórios sobre estes dados.
+Podczas instalowania roli systemu lokacji, instaluje i konfiguruje bazę danych magazynu danych. Kilka raportów, można łatwo wyszukiwać i raportu także instalacji na tych danych.
 
 
 
-## <a name="prerequisites-for-the-data-warehouse-service-point"></a>Pré-requisitos para o ponto de serviço do armazém de dados
-- A função de sistema de sites de armazém de dados é suportada apenas no site de nível superior da hierarquia. (Um site de administração central ou site primário autónomo).
-- O computador onde instalou a função de sistema de sites requer o .NET Framework 4.5.2 ou posterior.
-- A conta de computador do computador onde instalou a função de sistema de sites é utilizada para sincronizar dados com a base de dados do armazém de dados. Esta conta necessita das seguintes permissões:  
-  - **Administrador** no computador que alojará a base de dados do armazém de dados.
-  - **DB_owner** permissão na base de dados de armazém de dados.
-  - **DB_reader** e **executar** permissões para os sites de nível superior da base de dados do site.
-- A base de dados do armazém de dados requer a utilização do SQL Server 2012 ou posterior. A edição pode ser Standard, Enterprise ou Datacenter.
-- As seguintes configurações do SQL Server são suportadas para alojar a base de dados do armazém:  
-  - Uma instância predefinida
-  - Instância nomeada
-  - SQL Server Always On o grupo de disponibilidade
-  - Cluster de ativação pós-falha do SQL Server
--   Quando a base de dados do armazém de dados remota da base de dados de servidor do site, tem de ter uma licença separada para cada SQL Server que aloja a base de dados.
-- Se utilizar [vistas distribuídas](/sccm/core/servers/manage/data-transfers-between-sites#bkmk_distviews), função de sistema de sites de ponto de dados do armazém serviço tem de instalar no mesmo servidor que aloja a base de dados de site dos sites de administração central.
+## <a name="prerequisites-for-the-data-warehouse-service-point"></a>Wymagania wstępne dotyczące punktu usługi magazynu danych
+- Rola systemu lokacji magazynu danych jest obsługiwana tylko w lokacji najwyższego poziomu w hierarchii. (Centralnej lokacji administracyjnej lub autonomicznej lokacji głównej).
+- Komputer, na którym zainstalowano rolę systemu lokacji wymaga programu .NET Framework 4.5.2 lub nowszej.
+- Aby zsynchronizować dane z bazy danych magazynu danych jest używane konto komputera komputera, na którym zainstalowano rolę systemu lokacji. To konto wymaga następujących uprawnień:  
+  - **Administrator** na komputerze, który będzie hostem bazy danych magazynu danych.
+  - **DB_owner** uprawnień w bazie danych magazynu danych.
+  - **DB_reader** i **wykonania** baza danych lokacji uprawnienia do lokacji najwyższego poziomu.
+- Baza danych magazynu danych wymaga użycia programu SQL Server 2012 lub nowszym. Wersja może być Standard, Enterprise lub Datacenter.
+- Obsługiwane są następujące konfiguracje programu SQL Server do hostowania bazy danych magazynu:  
+  - Domyślne wystąpienie
+  - Nazwane wystąpienie
+  - SQL Server zawsze włączone grupy dostępności
+  - Klaster pracy awaryjnej programu SQL Server
+-   Gdy baza danych magazynu danych jest zdalnie z serwera bazy danych lokacji, musi mieć oddzielnej licencji dla każdego serwera SQL hostującego bazę danych.
+- Jeśli używasz [widoki rozproszone](/sccm/core/servers/manage/data-transfers-between-sites#bkmk_distviews), roli systemu lokacji punktu usług danych magazynu należy zainstalować na tym samym serwerze, który udostępnia bazę danych witryny Administracja centralna.
 
 
 
 > [!IMPORTANT]  
-> O armazém de dados não é suportado quando o computador que executa o ponto de serviço do armazém de dados ou que aloja a base de dados do armazém de dados é executada uma das seguintes idiomas:
-> - JPN – Japonês
-> - KOR – Coreano
-> - CHS – Chinês simples
-> - CHT – Chinês tradicional, este problema será resolvido numa versão futura.
+> Magazyn danych nie jest obsługiwana, gdy komputer z uruchomioną punktu usługi Magazyn danych lub obsługującego bazę danych magazynu danych ma jeden z następujących języków:
+> - JPN — japoński
+> - KOR — koreański
+> - CHS — chiński proste
+> - (CHT) — Chiński tradycyjny, ten problem zostanie rozwiązany w przyszłej wersji.
 
 
-## <a name="install-the-data-warehouse"></a>Instalar o armazém de dados
-Cada hierarquia suporta uma única instância desta função, em qualquer sistema de site do site de nível superior. O SQL Server que aloja a base de dados para o armazém pode ser local para a função de sistema de sites ou remoto. Embora o armazém de dados funciona com o ponto do Reporting Services que está instalado no mesmo site, as funções de sistema de dois sites não tem de ser instalado no mesmo servidor.   
+## <a name="install-the-data-warehouse"></a>Zainstalować Magazyn danych
+Każda hierarchia obsługuje jedno wystąpienie tej roli w każdym systemie lokacji w lokacji najwyższego poziomu. SQL Server, który jest hostem bazy danych dla magazynu może być lokalnym do roli systemu lokacji lub zdalnym. Chociaż w magazynie danych działa z zainstalowanym w tej samej lokacji punkt usług raportowania, dwie role systemu lokacji nie jest konieczne można zainstalować na tym samym serwerze.   
 
-Para instalar a função, utilize o **Adicionar Assistente de funções de sistema de Site** ou **criar Assistente de servidor de sistema de Site**. Consulte [instalar funções do sistema de sites](/sccm/core/servers/deploy/configure/install-site-system-roles) para obter mais informações.  
+Aby zainstalować rolę, użyj **lokacji Kreator dodawania ról systemu** lub **lokacji Kreator tworzenia serwera systemu**. Zobacz [zainstalować role systemu lokacji](/sccm/core/servers/deploy/configure/install-site-system-roles) Aby uzyskać więcej informacji.  
 
-Quando instalar a função, o Configuration Manager cria a base de dados do armazém de dados para si na instância do SQL Server que especificou. Se especificar o nome da base de dados existente (como iria fazer se a [mover a base de dados do armazém de dados para um novo SQL Server](#move-the-data-warehouse-database)), do Configuration Manager não criar uma nova base de dados, mas em vez disso, utiliza um que especificar.
+Po zainstalowaniu roli programu Configuration Manager utworzy bazę danych magazynu danych w wystąpieniu programu SQL Server, który określisz. Jeśli określono nazwę istniejącej bazy danych (w sposób jak w przypadku należy [przenieść bazę danych magazynu danych na nowy serwer SQL](#move-the-data-warehouse-database)), programu Configuration Manager nie tworzy nową bazę danych, ale zamiast tego używa jednego użytkownika.
 
-### <a name="configurations-used-during-installation"></a>Configurações utilizadas durante a instalação
-**Seleção da função do sistema** página:  
+### <a name="configurations-used-during-installation"></a>Konfiguracje używane podczas instalacji
+**Wybór roli systemu** strony:  
 
-**Geral** página:
--   **Definições de ligação de base de dados do armazém de dados do Configuration Manager**:
- - **SQL Server nome de domínio completamente qualificado**:  
- Especifique o nome de domínio totalmente qualificado (FQDN) do servidor que aloja a base de dados do ponto de serviço do armazém de dados.
- - **Nome da instância do SQL Server, se aplicável**:   
- Se utilizar uma instância predefinida do SQL Server, tem de especificar a instância.
- - **Nome da base de dados**:   
- Especifique um nome para a base de dados do armazém de dados. O nome de base de dados não pode exceder 10 carateres. (Será possível aumentar o comprimento do nome suportados numa versão futura).
- O Configuration Manager cria a base de dados do armazém de dados com este nome. Se especificar um nome de base de dados que já existe na instância do SQL server, o Configuration Manager utiliza essa base de dados.
- - **Porta do SQL Server utilizada para ligação**:   
- Especifique o número de porta de TCP/IP que está configurado para o SQL Server que aloja a base de dados do armazém de dados. Esta porta é utilizada pelo serviço de sincronização do armazém de dados para ligar à base de dados do armazém de dados.  
+**Ogólne** strony:
+-   **Ustawienia połączenia bazy danych magazynu danych programu Configuration Manager**:
+ - **Program SQL Server w pełni kwalifikowana nazwa domeny**:  
+ Określ w pełni kwalifikowanej nazwy domeny (FQDN) serwera, który hostuje bazę danych magazynu danych usługi punktu.
+ - **Nazwa wystąpienia serwera SQL, jeśli ma to zastosowanie**:   
+ Jeśli nie używasz domyślnego wystąpienia programu SQL Server, należy określić wystąpienie.
+ - **Nazwa bazy danych**:   
+ Określ nazwę bazy danych magazynu danych. Nazwa bazy danych nie może przekraczać 10 znaków. (Długość nazwy obsługiwanych zostanie zwiększony w przyszłej wersji).
+ Configuration Manager tworzy bazę danych magazynu danych o tej nazwie. Jeśli określisz nazwy bazy danych, która już istnieje w wystąpieniu programu SQL server Configuration Manager korzysta z tej bazy danych.
+ - **Port serwera SQL używane do łączenia**:   
+ Określ numer portu TCP/IP, który jest skonfigurowany dla programu SQL Server, który jest hostem bazy danych magazynu danych. Port ten jest używany przez usługę synchronizacji magazynu danych do nawiązania połączenia bazy danych magazynu danych.  
 
-**Agenda de sincronização** página:   
-- **Agenda de sincronização**:
- - **Hora de início**:  
- Especifique o tempo que pretende que a sincronização do armazém de dados para iniciar.
- - **Padrão de periodicidade**:
-    - **Diária**: Especifique que a sincronização é executada diariamente.
-    - **Semanalmente**: Especifique um único dia cada semana e a periodicidade semanal para sincronização.
+**Harmonogram synchronizacji** strony:   
+- **Harmonogram synchronizacji**:
+ - **Godzina rozpoczęcia**:  
+ Określ czas, który ma synchronizacji magazynu danych, aby uruchomić.
+ - **Wzorzec cyklu**:
+    - **Codzienne**: Określ, że synchronizacja jest uruchamiana codziennie.
+    - **Co tydzień**: Określ jeden dzień w każdej tydzień i cyklu tygodniowego synchronizacji.
 
-## <a name="reporting"></a>Relatórios
-Depois de instalar um ponto de serviço do armazém de dados, vários relatórios fiquem disponíveis no ponto de Reporting Services está instalado no mesmo site. Se instalar o ponto de serviço do armazém de dados antes de instalar um ponto do Reporting Services, os relatórios serão adicionados automaticamente quando, posteriormente, instalar o ponto do Reporting Services.
+## <a name="reporting"></a>Raportowanie
+Po zainstalowaniu punktu usługi Data Warehouse kilka raportów stają się dostępne w punkcie usług Reporting Services, w którym jest zainstalowany w tej samej lokacji. Po zainstalowaniu punktu usługi magazynu danych przed zainstalowaniem punktu usług raportowania raporty zostaną dodane automatycznie po zainstalowaniu punktu usług Reporting Services.
 
-A função de sistema de sites do armazém de dados inclui os seguintes relatórios, que tem uma categoria de **do armazém de dados**:
- - **Implementação da aplicação - histórica**:   
- Ver os detalhes para a implementação de aplicação para uma aplicação específica e a máquina.
- - **Proteção de ponto final e atualização de Software conformidade - histórica**: Computadores de vista que estão em falta atualizações de software.  
- - **Inventário de Hardware geral - históricos**:   
- Ver todo o inventário de hardware para um computador específico.
- - **Inventário de Software geral - históricos**:   
- Ver todo o inventário de software para uma máquina específica.
- - **Descrição geral de estado de funcionamento do infraestrutura - histórico**:  
- Apresenta uma descrição geral do Estado de funcionamento da infraestrutura do Configuration Manager
- - **Lista de software maligno detetado - históricos**:    
- Software maligno de vista que foi detetado na organização.
- - **Resumo de distribuição de software - histórico**:   
- Um resumo de distribuição de software para um anúncio específico e a máquina.
-
-
-## <a name="expand-an-existing-stand-alone-primary-into-a-hierarchy"></a>Expandir um site primário autónomo existente numa hierarquia
-Antes de poder instalar um site de administração central para expandir um site primário autónomo existente, tem primeiro de desinstalar a função de ponto de serviço do armazém de dados. Depois de instalar o site de administração central, em seguida, pode instalar a função de sistema de sites no site de administração central.  
-
-Ao contrário de uma mudança da base de dados de armazém de dados, esta alteração resulta em perda de dados históricos que tiver sincronizado anteriormente no site primário. Não é suportada para a base de dados do site primário de cópia de segurança e restaurá-lo no site de administração central.
+Rola systemu lokacji magazynu danych obejmuje następujące raporty, które mają kategorię z **hurtowni danych**:
+ - **Wdrażanie aplikacji — historycznych**:   
+ Przejrzyj szczegóły dotyczące wdrażania aplikacji dla określonej aplikacji i komputera.
+ - **Program Endpoint Protection i aktualizacji oprogramowania zgodności - historycznych**: Wyświetl komputery, których brakuje aktualizacji oprogramowania.  
+ - **Spis sprzętu ogólne — historycznych**:   
+ Wyświetl wszystkie spisu sprzętu dla określonej maszyny.
+ - **Spis oprogramowania ogólne — historycznych**:   
+ Wyświetl wszystkie spisu oprogramowania dla określonej maszyny.
+ - **Przegląd kondycji infrastruktury — historycznych**:  
+ Wyświetla Przegląd kondycji infrastruktury programu Configuration Manager
+ - **Lista złośliwego oprogramowania wykryto - historycznych**:    
+ Widok złośliwego oprogramowania, która została wykryta w organizacji.
+ - **Podsumowanie dystrybucji oprogramowania - historycznych**:   
+ Podsumowanie dystrybucji oprogramowania dla określonych anonsów i komputera.
 
 
+## <a name="expand-an-existing-stand-alone-primary-into-a-hierarchy"></a>Rozszerzyć istniejącą autonomiczną lokację główną do hierarchii
+Przed zainstalowaniem centralnej lokacji administracyjnej można rozszerzyć istniejącą autonomiczną lokację główną, należy najpierw odinstalować rolę punktu usługi Magazyn danych. Po zainstalowaniu centralnej lokacji administracyjnej można następnie zainstalować rolę systemu lokacji w centralnej lokacji administracyjnej.  
+
+Inaczej niż w przypadku przenoszenia bazy danych magazynu danych ta zmiana powoduje utratę danych historycznych, który zsynchronizowane w lokacji głównej. Nie jest obsługiwane kopii zapasowej bazy danych z lokacji głównej i przywrócenie go w witrynie Administracja centralna.
 
 
-## <a name="move-the-data-warehouse-database"></a>Mover a base de dados do armazém de dados
-Utilize os seguintes passos para mover a base de dados do armazém de dados para um novo SQL Server:
 
-1.  Utilize o SQL Server Management Studio para a base de dados do armazém de dados de cópia de segurança. Em seguida, restaure a base de dados para um SQL Server no novo computador que aloja o armazém de dados.   
+
+## <a name="move-the-data-warehouse-database"></a>Przenoszenie bazy danych magazynu danych
+Aby przenieść bazę danych magazynu danych na nowy serwer SQL, wykonaj następujące kroki:
+
+1.  Aby utworzyć kopię zapasową bazy danych magazynu danych, należy użyć programu SQL Server Management Studio. Następnie Przywróć tę bazę danych do programu SQL Server na nowym komputerze, który obsługuje magazyn danych.   
 > [!NOTE]     
-> Depois de restaurar a base de dados para o novo servidor, certifique-se de que as permissões de acesso de base de dados são os mesmos na nova base de dados de armazém de dados idênticos na base de dados de armazém de dados original.  
+> Po przywróceniu bazy danych na nowy serwer, upewnij się, że uprawnienia dostępu do bazy danych są takie same na nową bazę danych magazynu danych, jakie były na oryginalnej bazy danych magazynu danych.  
 
-2.  Utilize a consola do Configuration Manager para remover a função de sistema de sites do ponto de serviço do armazém de dados do servidor atual.
-3.  Reinstalar o ponto de serviço do armazém de dados e especifique o nome do novo SQL Server e instância que aloja a base de dados do armazém de dados que é restaurada.
-4.  Após a instalação da função de sistema de sites, a mudança está concluída.
+2.  Użyj konsoli programu Configuration Manager, aby usunąć rolę systemu lokacji punktu usługi Magazyn danych z bieżącego serwera.
+3.  Ponownie zainstaluj punkt usługi Magazyn danych i określ nazwę nowego serwera SQL i wystąpienia, który jest hostem bazy danych magazynu danych, możesz przywrócić.
+4.  Po zainstalowaniu roli systemu lokacji, przeniesienie zostało ukończone.
 
-## <a name="troubleshooting-data-warehouse-issues"></a>Resolução de problemas do armazém de dados
-**Ficheiros de registo**:  
-Utilize os seguintes registos para investigar problemas com a instalação do ponto de serviço do armazém de dados, ou uma sincronização de dados:
- - *DWSSMSI.log* e *DWSSSetup.log* -utilizar estes registos para investigar erros ao instalar o ponto de serviço do armazém de dados.
- - *Microsoft.ConfigMgrDataWarehouse.log* – utilizar este registo para investigar a sincronização de dados entre a base de dados do site para a base de dados do armazém de dados.
+## <a name="troubleshooting-data-warehouse-issues"></a>Rozwiązywanie problemów z magazynem danych
+**Pliki dziennika**:  
+Użyj następujących dzienników do badania problemów dotyczących instalacji punktu usługi Magazyn danych lub synchronizacji danych:
+ - *DWSSMSI.log* i *DWSSSetup.log* -zbadaj błędy podczas instalowania punktu usługi Magazyn danych za pomocą tych dzienników.
+ - *Microsoft.ConfigMgrDataWarehouse.log* — ten dziennik umożliwia badanie synchronizacji danych między programami bazy danych lokacji do bazy danych magazynu danych.
 
-**Falha de multimédia**  
- A instalação do ponto de serviço do armazém de dados de falha num servidor de sistema de sites remoto quando o armazém de dados é a primeira função do sistema de sites que instala nesse computador.  
-  - **Solução**:   
-    Certifique-se de que o computador que estiver a instalar o ponto de serviço do armazém de dados num já aloja pelo menos uma outra função do sistema de sites.  
-
-
-**Problemas de sincronização conhecidos**:   
-A sincronização falhar com a seguinte mensagem no *Microsoft.ConfigMgrDataWarehouse.log*: **"Falha ao povoar objetos de esquema"**  
- - **Solução**:  
-    Certifique-se de que a conta de computador do computador que aloja a função de sistema de sites é um **db_owner** na base de dados de armazém de dados.
-
-Relatórios de armazém de dados não abrirá quando a base de dados do armazém de dados e o ponto de serviço Reporting Services estão em diferentes sistemas de site.  
-
- - **Solução**:  
-    Conceda o **conta de ponto do Reporting Services** o **db_datareader** permissão na base de dados de armazém de dados.
-
-Quando abre um relatório de armazém de dados, é devolvido o erro seguinte:
-
-*Ocorreu um erro durante o processamento do relatório. (rsProcessingAborted) Não é possível criar uma ligação à origem de dados 'AutoGen__39B693BB_524B_47DF_9FDB_9000C3118E82_'. (rsErrorOpeningConnection) Uma ligação foi estabelecida com êxito o servidor, mas, em seguida, Ocorreu um erro durante o handshake de Pré-início de sessão. (fornecedor: Fornecedor de SSL, erro: 0 - a cadeia de certificados foi emitida por uma autoridade de que não é fidedigna.)*
-
-- **Solução**: Utilize os seguintes passos para configurar certificados:
-
-  1. No computador que aloja a base de dados do armazém de dados:
-
-    1. Abra o IIS, clique em **certificados de servidor**, faça duplo clique no **Criar certificado autoassinado**e, em seguida, especifique o "nome amigável" o nome do certificado como **dados do armazém de SQL Server Identification Certificate**. Selecione o arquivo de certificados como **pessoais**.
-    2. Abra **Gestor de configuração do SQL Server**, em **configuração de rede do SQL Server**, rato para selecionar **propriedades** em **protocolos para MSSQLSERVER**. Em seguida, no **certificado** separador, selecione **dados do armazém de SQL Server Identification Certificate** como o certificado e, em seguida, guarde as alterações.  
-    3. Abra **Gestor de configuração do SQL Server**, em **do SQL Server Services**, reinicie **serviço do SQL Server** e **Reporting Service**.
-    4.  Abra a consola de gestão da Microsoft (MMC) e adicione o snap-in **certificados**, selecione para gerir o certificado para **conta de computador** do computador local. Em seguida, na MMC, expanda o **pessoais** pasta > **certificados**e exportar o **dados do armazém de SQL Server Identification Certificate** como um **x. 509 binário codificado de DER (. CER)** ficheiro.    
-  2.    No computador que aloja o SQL Server Reporting Services, abra a MMC e adicionar o snap-in para **certificados**. Em seguida, selecione para gerir os certificados **conta de computador**. Sob o **autoridades de certificação de raiz fidedigna** pasta, importar o **dados do armazém de SQL Server Identification Certificate**.
+**Konfigurowanie awarii**  
+ Instalacja punktu usługi Magazyn danych nie powiedzie się na zdalnym serwerze systemu lokacji w magazynie danych po pierwszym Rola systemu lokacji, która instaluje na tym komputerze.  
+  - **Rozwiązanie**:   
+    Upewnij się, że komputer, na którym instalujesz punktu usługi Magazyn danych na już znajduje się co najmniej jeden innych ról systemu lokacji.  
 
 
-## <a name="data-warehouse-dataflow"></a>Fluxo de dados de armazém de dados   
+**Znane problemy z synchronizacją**:   
+Synchronizacja nie powiedzie się następujący komunikat o błędzie w *Microsoft.ConfigMgrDataWarehouse.log*: **"nie powiodło się wypełnienie obiektów schematu"**  
+ - **Rozwiązanie**:  
+    Upewnij się, że konto komputera komputera hostującego rolę systemu lokacji jest **db_owner** na bazę danych magazynu danych.
+
+Raporty magazynu danych nie można otworzyć bazy danych magazynu danych i punkt usług raportowania znajdują się na innych systemów lokacji.  
+
+ - **Rozwiązanie**:  
+    Udziel **konta punktu usług raportowania** **db_datareader** uprawnień w bazie danych magazynu danych.
+
+Po otwarciu raportu magazynu danych, jest zwracany następujący błąd:
+
+*Wystąpił błąd podczas przetwarzania raportu. (rsProcessingAborted) Nie można utworzyć połączenia ze źródłem danych "AutoGen__39B693BB_524B_47DF_9FDB_9000C3118E82_". (rsErrorOpeningConnection) Pomyślnie ustanowiono połączenie z serwerem, ale wystąpił błąd podczas uzgadniania przed logowaniem. (Dostawca: Dostawca protokołu SSL, błąd: 0 — łańcuch certyfikatów został wystawiony przez urząd certyfikacji, który nie jest zaufany.)*
+
+- **Rozwiązanie**: Aby skonfigurować certyfikaty, wykonaj następujące kroki:
+
+  1. Na komputerze, który jest hostem bazy danych magazynu danych:
+
+    1. Otwórz usług IIS, kliknij przycisk **certyfikaty serwera**, kliknij prawym przyciskiem myszy **Tworzenie certyfikatu z podpisem własnym**, a następnie określ "przyjazną nazwę" w nazwie certyfikatu jako **danych magazynu SQL Server Identification Certificate**. Wybierz magazyn certyfikatów jako **osobistych**.
+    2. Otwórz **SQL Server Configuration Manager**w obszarze **konfigurację sieci programu SQL Server**, kliknij prawym przyciskiem myszy, aby wybrać **właściwości** w obszarze **protokoły dla elementu MSSQLSERVER**. Następnie na **certyfikatu** wybierz opcję **danych magazynu SQL Server Identification Certificate** jako certyfikat, a następnie zapisz zmiany.  
+    3. Otwórz **SQL Server Configuration Manager**w obszarze **usług SQL Server**, uruchom ponownie **usługi SQL Server** i **usługi raportowania**.
+    4.  Otwórz program Microsoft Management Console (MMC) i Dodaj przystawkę dla **certyfikaty**, wybierz pozycję Zarządzanie certyfikatami dla **konto komputera** komputera lokalnego. Następnie, w konsoli MMC rozwiń węzeł **osobistych** folder > **certyfikaty**i eksportowanie **danych magazynu SQL Server Identification Certificate** jako **certyfikat x.509 szyfrowany binarnie algorytmem DER (. CER)** pliku.    
+  2.    Na komputerze, który jest hostem usług SQL Server Reporting Services, Otwórz program MMC i dodać przystawkę dla **certyfikaty**. Następnie wybierz opcję, aby zarządzać certyfikatami dla **konto komputera**. W obszarze **zaufane główne urzędy certyfikacji** folder importu **danych magazynu SQL Server Identification Certificate**.
+
+
+## <a name="data-warehouse-dataflow"></a>Biblioteka przepływu danych magazynu danych   
 ![Datawarehouse_flow](./media/datawarehouse.png)
 
-**Armazenamento de dados e sincronização**
+**Magazyn danych i synchronizacji**
 
-| Passo   | Detalhes  |
+| Krok   | Szczegóły  |
 |:------:|-----------|  
-| **1**  |  O servidor do site transfere e armazena dados na base de dados do site.  |  
-| **2**  |      Com base na respetiva agenda e a configuração, o ponto de serviço do Data Warehouse obtém dados da base de dados do site.  |  
-| **3**  |  O ponto de serviço do armazém de dados é transferida e armazena uma cópia dos dados sincronizados na base de dados do armazém de dados. |  
-**Relatórios**
+| **1**  |  Serwer lokacji przesyła i przechowuje dane w bazie danych lokacji.  |  
+| **2**  |      Punkt usługi Magazyn danych na podstawie harmonogramu i konfiguracji, pobiera dane z bazy danych lokacji.  |  
+| **3**  |  Punkt usługi Magazyn danych przesyła i przechowuje kopię zsynchronizowane dane w bazie danych magazynu danych. |  
+**Raportowanie**
 
-| Passo   | Detalhes  |
+| Krok   | Szczegóły  |
 |:------:|-----------|  
-| **A**  |  Utilizar relatórios incorporados, um utilizador solicita dados. Este pedido é passado para o Reporting Services ponto utilizando o SQL Server Reporting Services. |  
-| **B**  |      A maioria dos relatórios são para obter informações atuais e estes pedidos são executados na base de dados do site. |  
-| **C**  | Quando um relatório solicita dados históricos, utilizando um dos relatórios com um *categoria* de **do armazém de dados**, o pedido é executado na base de dados do armazém de dados.   |  
+| **A**  |  Za pomocą wbudowanych raportów, użytkownik zażąda danych. To żądanie jest przekazywana do usług Reporting Services punktu, przy użyciu programu SQL Server Reporting Services. |  
+| **B**  |      Większość raporty są aktualne informacje, a te żądania są uruchamiane w bazie danych lokacji. |  
+| **C**  | Gdy raport żąda danych historycznych, za pomocą jednej z raporty z *kategorii* z **hurtowni danych**, żądanie jest uruchamiana dla bazy danych magazynu danych.   |  

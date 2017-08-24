@@ -6,22 +6,19 @@ ms.date: 5/10/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f0f818d4-7f45-402f-8758-dc88bc024953
-caps.latest.revision: 0
+caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: b0ba955aa7f854c3fa2c06ccf9ccd8ed354758b0
 ms.openlocfilehash: 31bddee83b2365cfa903077ffaa1d7116b194378
-ms.contentlocale: pl-pl
-ms.lasthandoff: 06/12/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="supported-configurations-for-the-long-term-servicing-branch-of-system-center-configuration-manager"></a>Obsługiwane konfiguracje dla długoterminowego gałęzi obsługi programu System Center Configuration Manager
 
@@ -335,4 +332,3 @@ Informacje zawarte w następujących tematach Current Branch dotyczą LTSB:
 - [Zalecany sprzęt](/sccm/core/plan-design/configs/recommended-hardware)
 - [Obsługa funkcji systemu Windows i sieci](/sccm/core/plan-design/configs/support-for-windows-features-and-networks)
 - [Obsługa środowisk wirtualizacji](/sccm/core/plan-design/configs/support-for-virtualization-environments)
-

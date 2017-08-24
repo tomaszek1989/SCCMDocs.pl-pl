@@ -1,6 +1,6 @@
 ---
-title: "Noções básicas do System Center Configuration Manager | Microsoft Docs"
-description: "Saiba mais sobre conceitos básicos para o System Center Configuration Manager."
+title: "Podstawowe informacje dotyczące programu System Center Configuration Manager | Dokumentacja firmy Microsoft"
+description: "Poznaj podstawowe pojęcia dotyczące programu System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/30/2016
 ms.prod: configuration-manager
@@ -18,32 +18,32 @@ manager: angrobe
 ms.openlocfilehash: 662ac092746f37c354e5accf288e3375c16b9c72
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pt-PT
+ms.contentlocale: pl-PL
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="fundamentals-of-system-center-configuration-manager"></a>Noções Básicas do System Center Configuration Manager
+# <a name="fundamentals-of-system-center-configuration-manager"></a>Podstawowe informacje dotyczące programu System Center Configuration Manager
 
-*Aplica-se a: O System Center Configuration Manager (ramo atual)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Se não estiver familiarizado para o System Center Configuration Manager, leia os tópicos fundamentais para saber mais sobre conceitos básicos para o Configuration Manager antes de executar o programa de configuração para instalar o primeiro site. Se estiver familiarizado com o Configuration Manager, em seguida, pode começar à direita em. Recomendamos que comece com [que há de novo no System Center Configuration Manager](/sccm/core/plan-design/changes/what-has-changed-from-configuration-manager-2012).  
+Jeśli dopiero zaczynasz do programu System Center Configuration Manager, przeczytaj podstawowe tematy, aby dowiedzieć się więcej o podstawowych pojęciach programu Configuration Manager przed uruchomieniem Instalatora w celu zainstalowania pierwszej lokacji. Jeśli masz doświadczenia z programem Configuration Manager, a następnie użytkownik może zajrzyj prawo dostęp w. Zalecamy rozpocząć od [nowości w programie System Center Configuration Manager](/sccm/core/plan-design/changes/what-has-changed-from-configuration-manager-2012).  
 
- Para obter mais informações sobre sistemas operativos e ambientes suportados, requisitos de hardware e informações de capacidade, veja [Configurações suportadas do System Center Configuration Manager](../../core/plan-design/configs/supported-configurations.md).  
+ Informacje dotyczące obsługiwanych systemów operacyjnych i środowisk, wymagań sprzętowych oraz wydajności znajdują się w dokumencie [Obsługiwane konfiguracje programu System Center Configuration Manager](../../core/plan-design/configs/supported-configurations.md).  
 
- Quando implementar o Configuration Manager, implementar um ou mais sites:  
+ Podczas wdrażania programu Configuration Manager, wdrażania jednej lub kilku lokacji:  
 
--   **Quando implementa vários sites**, os sites formam relações de subordinados para principais, coletivamente referidas como hierarquias. Utilize uma hierarquia para gerir centralmente um grande número de sites e dispositivos.  Dados e as informações fluem no sentido descendente da hierarquia para chegarem aos dispositivos que gere. Informações sobre dispositivos e resultados de configuração tarefas e os pedidos fluem no sentido ascendente da hierarquia.  
+-   **Jeśli wdrażanych jest wiele lokacji**, tworzą one relacje obiektów podrzędnych z nadrzędnymi, które są nazywane zbiorczo hierarchią. Hierarchia umożliwia centralne zarządzanie dużą liczbą lokacji i urządzeń.  Dane i informacje przepływają w dół hierarchii do zarządzanego urządzenia, którymi zarządzasz. Informacje dotyczące urządzeń oraz wyniki zadań i żądań przepływu konfiguracji w hierarchii.  
 
--   **Ao implementar um único site**, este também é referido como uma hierarquia.  
+-   **Gdy wdrażana jest pojedyncza lokacja**, jest ona również określana jako hierarchia.  
 
- Algumas tarefas e definições de configuração serão aplicadas a todos os sites numa hierarquia, enquanto outras se aplicam a sites individuais.  
+ Niektóre zadania i ustawienia konfiguracyjne dotyczą wszystkich lokacji w hierarchii, podczas gdy inne dotyczą indywidualnych lokacji.  
 
-## <a name="fundamental-concepts-for-system-center-configuration-manager"></a>Conceitos fundamentais do System Center Configuration Manager
-Ver os seguintes tópicos para saber mais sobre conceitos fundamentais do System Center Configuration Manager:  
+## <a name="fundamental-concepts-for-system-center-configuration-manager"></a>Podstawowe pojęcia dla programu System Center Configuration Manager
+Wyświetl następujące tematy, aby dowiedzieć się więcej o podstawowych pojęciach programu System Center Configuration Manager:  
 
--   [Noções básicas sobre sites e hierarquias do System Center Configuration Manager](../../core/understand/fundamentals-of-sites-and-hierarchies.md)  
+-   [Podstawowe pojęcia dotyczące lokacji i hierarchii programu System Center Configuration Manager](../../core/understand/fundamentals-of-sites-and-hierarchies.md)  
 
--   [Noções básicas de gestão de dispositivos com o System Center Configuration Manager](../../core/understand/fundamentals-of-managing-devices.md)  
+-   [Podstawy zarządzania urządzeniami w programie System Center Configuration Manager](../../core/understand/fundamentals-of-managing-devices.md)  
 
--   [Noções básicas de tarefas de gestão de cliente para o System Center Configuration Manager](../../core/understand/fundamentals-of-client-management-tasks.md)  
+-   [Podstawy zadań zarządzania klientami programu System Center Configuration Manager](../../core/understand/fundamentals-of-client-management-tasks.md)  
 
--   [Noções básicas de segurança para o System Center Configuration Manager](../../core/understand/fundamentals-of-security.md)  
+-   [Podstawowe informacje na temat zabezpieczeń programu System Center Configuration Manager](../../core/understand/fundamentals-of-security.md)  

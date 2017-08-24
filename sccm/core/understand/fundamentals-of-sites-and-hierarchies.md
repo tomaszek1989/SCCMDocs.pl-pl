@@ -1,6 +1,6 @@
 ---
-title: "Noções básicas sobre sites e hierarquias | Microsoft Docs"
-description: "Obter informações básicas sobre o System Center Configuration Manager sites e hierarquias."
+title: "Podstawowe pojęcia dotyczące lokacji i hierarchii | Dokumentacja firmy Microsoft"
+description: "Uzyskać podstawowe informacje o programie System Center Configuration Manager Lokacje i hierarchie."
 ms.custom: na
 ms.date: 12/30/2016
 ms.prod: configuration-manager
@@ -17,57 +17,57 @@ manager: angrobe
 ms.openlocfilehash: f13f38be2a19ab8a1ead246e5272515dd0570984
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pt-PT
+ms.contentlocale: pl-PL
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="fundamentals-of-sites-and-hierarchies-for-system-center-configuration-manager"></a>Noções básicas sobre sites e hierarquias do System Center Configuration Manager
+# <a name="fundamentals-of-sites-and-hierarchies-for-system-center-configuration-manager"></a>Podstawowe pojęcia dotyczące lokacji i hierarchii w programie System Center Configuration Manager
 
-*Aplica-se a: O System Center Configuration Manager (ramo atual)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Uma implementação do System Center Configuration Manager tem de ser instalada num domínio do Active Directory. A base desta implementação inclui um ou mais sites do Configuration Manager que formam uma hierarquia de sites. Desde um único site a uma hierarquia de vários sites, o tipo e a localização dos sites que instala proporcionam a capacidade de aumentar verticalmente a implementação quando necessário, bem como fornecer serviços principais a utilizadores e dispositivos geridos.
+Wdrażanie programu System Center Configuration Manager musi być zainstalowany w domenie usługi Active Directory. Foundation tego wdrożenia zawiera Lokacje programu Configuration Manager, które tworzą hierarchii lokacji. Od jednej lokacji do hierarchii wielu lokacji — typ i lokalizacja instalowanych lokacji zapewniają możliwość skalowania (rozbudowy i rozszerzenia) wdrożenia w razie potrzeby i dostarczają kluczowe usługi dla zarządzanych użytkowników i urządzeń.
 
-## <a name="hierarchies-of-sites"></a>Hierarquias de sites
-Quando instalar o System Center Configuration Manager pela primeira vez, o primeiro site do Configuration Manager que instalar determina o âmbito da sua hierarquia. O primeiro site do Configuration Manager é o alicerce partir do qual irá gerir dispositivos e utilizadores na sua empresa. Este primeiro site tem de ser um site de administração central ou um site primário autónomo.  
+## <a name="hierarchies-of-sites"></a>Hierarchie lokacji
+Po zainstalowaniu programu System Center Configuration Manager po raz pierwszy, pierwszy instalowanej lokacji programu Configuration Manager określa zakres hierarchii. Pierwszej lokacji programu Configuration Manager to podstawę, z którego będą zarządzać urządzeniami i użytkownikami w przedsiębiorstwie. Pierwsza lokacja musi być centralnej lokacji administracyjnej lub autonomicznej lokacji głównej.  
 
- A *site de administração central* é adequado para implementações em larga escala, fornece um ponto central de administração e fornece a flexibilidade para suportar dispositivos que estão distribuídos numa infraestrutura de rede global. Depois de instalar um site de administração central, terá de instalar um ou mais sites primários como sites subordinados. Esta configuração é necessária porque o site de administração central não suporta diretamente a gestão de dispositivos, que é a função de um site primário. Um site de administração central suporta vários sites primários subordinados. Os sites primários subordinados são utilizados para gerir dispositivos diretamente e controlar a largura de banda de rede quando os dispositivos geridos se encontram em localizações geográficas diferentes.  
+ A *centralnej lokacji administracyjnej* jest przydatna przy dużych wdrożeniach, zapewnia centralny punkt administracji i zapewnia elastyczność do obsługi urządzeń rozproszonych w globalnej infrastrukturze sieciowej. Po zainstalowaniu centralnej lokacji administracyjnej, należy zainstalować jeden lub więcej lokacji głównych jako lokacji podrzędnych. Ta konfiguracja jest niezbędne, ponieważ centralna lokacja administracyjna nie obsługuje bezpośrednio zarządzania urządzeniami, ponieważ jest to funkcja lokacji głównej. Centralna lokacja administracyjna obsługuje wiele podrzędnych lokacji głównych. Podrzędnych lokacji głównych są używane do bezpośredniego zarządzania urządzeniami i sterowania przepustowością sieci w przypadku urządzeń zarządzanych znajdujących się w różnych lokalizacjach geograficznych.  
 
- A *site primário autónomo* é adequado para implementações mais pequenas e pode ser utilizado para gerir dispositivos sem ter de instalar sites adicionais. Embora um site primário autónomo pode limitar o tamanho da sua implementação, suporta um cenário para expandir a hierarquia mais tarde instalando um novo site de administração central. Com este cenário de expansão do site, o site primário autónomo passa a ser um site primário subordinado e, em seguida, pode instalar sites primários subordinados adicionais abaixo do novo site de administração central. Em seguida, pode expandir a implementação inicial para o crescimento futuro da sua empresa.  
+ A *autonomicznej lokacji głównej* jest przydatna przy mniejszych wdrożeniach i może służyć do zarządzania urządzeniami bez konieczności instalowania dodatkowych lokacji. Mimo że autonomiczna lokacja główna umożliwia ograniczenie rozmiaru wdrożenia, obsługuje scenariusza rozszerzania hierarchii w późniejszym czasie, instalując nową centralną lokację administracyjną. W tym scenariuszu rozszerzania lokacji autonomiczna lokacja główna staje się podrzędną lokacją główną, a można zainstalować dodatkowe podrzędnych lokacji głównych poniżej nowej centralnej lokacji administracyjnej. Następnie można rozszerzyć początkowe wdrożenie na potrzeby przyszłego rozwoju przedsiębiorstwa.  
 
 > [!TIP]  
->  Um site primário autónomo e um site primário subordinado são, de facto o mesmo tipo de site: um site primário. A diferença no nome baseia-se na relação hierárquica que é criada quando utiliza também um site de administração central. Esta relação hierárquica também pode limitar a instalação de determinadas funções de sistema de sites que expandem a funcionalidade do Configuration Manager. Esta limitação das funções ocorre porque determinadas funções de sistema de sites apenas podem ser instaladas num site de nível superior da hierarquia, um site de administração central ou um site primário autónomo.  
+>  Autonomicznej lokacji głównej i lokacji podrzędnej naprawdę są tego samego typu lokacji: lokacji głównej. Różnica nazw wynika z relacji w hierarchii, tworzonej wówczas, gdy używana jest również centralna lokacja administracyjna. Relacja w hierarchii może również ograniczać instalację określonych ról systemu lokacji rozszerzających funkcje programu Configuration Manager. To ograniczenie ról występuje, ponieważ określone role systemu lokacji można zainstalować tylko w lokacji najwyższego poziomu w hierarchii, centralnej lokacji administracyjnej lub autonomicznej lokacji głównej.  
 
- Depois de instalar o primeiro site, pode instalar sites adicionais. Se o primeiro site era um site de administração central, em seguida, pode instalar um ou mais sites primários subordinados. Depois de instalar um site primário (autónomo ou principal subordinado), em seguida, pode instalar um ou mais sites secundários.  
+ Po zainstalowaniu pierwszej lokacji można zainstalować dodatkowe lokacje. Jeśli pierwsza lokacja była centralną lokację administracyjną, można zainstalować jeden lub więcej podrzędnych lokacji głównych. Po zainstalowaniu lokacji głównej (autonomicznej lub podrzędnej) można zainstalować co najmniej jednej lokacji dodatkowej.  
 
- Um *site secundário* só pode ser instalado como site subordinado abaixo de um site primário. Este tipo de sites aumentam o alcance de um site primário para gerir dispositivos em locais com ligação de rede lenta ao site primário. Apesar de um site secundário expande o site primário, o site primário gere todos os clientes. O site secundário fornece suporte para dispositivos na localização remota. Fornece suporte através da compressão e, em seguida, gerir a transferência de informações através da rede que envia (implementa) para clientes, e que os clientes enviam para o site.  
+ *Lokację dodatkową* można zainstalować tylko jako lokację podrzędną względem lokacji głównej. Lokacja tego typu rozszerza zasięg lokacji głównej w celu zarządzania urządzeniami z wolnym połączeniem sieciowym. Mimo że lokacja dodatkowa rozszerza lokację główną, lokacji głównej zarządza wszystkich klientów. Lokacja dodatkowa zapewnia obsługę urządzeń w lokalizacjach zdalnych. Zapewnia obsługę kompresowania, a następnie zarządzanie transferem danych w sieci, który możesz wysłać (wdrażanych) do klientów, i że klienci wysyłają do witryny.  
 
- Os diagramas seguintes mostram alguns exemplos de estruturas de sites.  
+ Na poniższych diagramach przedstawiono przykładowe schematy lokacji.  
 
- ![Exemplos de hierarquia](media/Hierarchy_examples.png)  
+ ![Przykłady hierarchii](media/Hierarchy_examples.png)  
 
- Para obter mais informações, consulte os tópicos seguintes:  
+ Więcej informacji znajduje się w następujących tematach:  
 
--   [Introdução ao System Center Configuration Manager](../../core/understand/introduction.md)  
+-   [Wprowadzenie do programu System Center Configuration Manager](../../core/understand/introduction.md)  
 
--   [Estruturar uma hierarquia de sites para o System Center Configuration Manager](../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md)  
+-   [Projektowanie hierarchii lokacji programu System Center Configuration Manager](../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md)  
 
--   [Instalar sites do System Center Configuration Manager](/sccm/core/servers/deploy/install/installing-sites)  
+-   [Instalowanie lokacji programu System Center Configuration Manager](/sccm/core/servers/deploy/install/installing-sites)  
 
-## <a name="site-system-servers-and-site-system-roles"></a>Servidores do sistema de sites e funções do sistema de sites  
- Cada site do Configuration Manager instala *funções do sistema de sites* que suporte operações de gestão. As seguintes funções são instaladas por predefinição quando instala um site:
+## <a name="site-system-servers-and-site-system-roles"></a>Serwery systemu lokacji i role systemu lokacji  
+ Każda lokacja programu Configuration Manager instaluje *role systemu lokacji* obsługujące operacje zarządzania. Następujące role są instalowane domyślnie podczas instalowania lokacji:
 
--   A função de servidor do site é atribuída ao computador onde instalou o site.
+-   Rola serwera lokacji jest przypisana do komputera, w którym zostanie zainstalowana lokacja.
 
--   A função de servidor de base de dados do site é atribuída ao SQL Server que aloja a base de dados do site.
+-   Rola serwera bazy danych lokacji jest przypisany do programu SQL Server, który jest hostem bazy danych lokacji.
 
-Outras funções de sistema de sites são opcionais e são apenas utilizadas quando pretende utilizar as funcionalidades que estão ativa na função de sistema de sites. Qualquer computador que aloje uma função de sistema de sites é referido como um servidor de sistema de sites.  
+Inne role systemu lokacji są opcjonalne i są używane tylko, jeśli chcesz korzystać z funkcji, który jest aktywny w roli systemu lokacji. Dowolny komputer hostujący rolę systemu lokacji jest określany jako serwer systemu lokacji.  
 
- Para uma implementação mais pequena do Configuration Manager, poderá executar inicialmente todas do seu site as funções do sistema diretamente no computador do servidor do site. Em seguida, como o ambiente gerido e as necessidades aumentam, pode instalar servidores do sistema de sites adicionais para alojar funções do sistema de sites adicionais para melhorar a eficiência do site no fornecimento de serviços para mais dispositivos.  
+ Przypadku mniejszego wdrożenia programu Configuration Manager można początkowo uruchamiać wszystkie witryny role systemu bezpośrednio na komputerze serwera lokacji. Następnie jako zarządzanego środowiska i wzrostu potrzeb, można zainstalować dodatkowe serwery systemu lokacji do obsługi ról systemu lokacji dodatkowej w celu poprawy wydajności witryny w zapewnianiu usług dla większej liczby urządzeń.  
 
- Para obter informações sobre as funções de sistema de sites diferentes, consulte [funções do sistema de sites](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md#bkmk_planroles) no [planear servidores de sistema de sites e funções de sistema de sites para o System Center Configuration Manager](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).
+ Aby uzyskać informacje o różnych rolach systemu lokacji, zobacz [role systemu lokacji](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md#bkmk_planroles) w [Planowanie serwerów systemu lokacji i ról systemu lokacji dla programu System Center Configuration Manager](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).
 
-## <a name="publishing-site-information-to-active-directory-domain-services"></a>Publicação de informações de sites nos Serviços de Domínio do Active Directory  
- Para simplificar a gestão do Configuration Manager, pode expandir o esquema do Active Directory para suportar os detalhes que são utilizados pelo Configuration Manager e, em seguida, tiver sites publiquem as respetivas informações chaves nos serviços de domínio do Active Directory (AD DS). Em seguida, os computadores que pretende gerir podem obter de forma segura informações relacionadas com o site de origem fidedigna dos AD DS. As informações que os clientes podem obter identificam sites disponíveis, servidores do sistema de sites e os serviços que esses servidores de sistema de sites fornecem.  
+## <a name="publishing-site-information-to-active-directory-domain-services"></a>Publikowanie informacji o lokacji w Usługach domenowych Active Directory  
+ Uproszczenie zarządzania programu Configuration Manager, można rozszerzyć schemat usługi Active Directory w celu obsługi szczegółów używanych przez program Configuration Manager, a następnie nakazać lokacjom publikowanie ich kluczowych informacji do usług domenowych w usłudze Active Directory (AD DS). Następnie komputery, które mają być zarządzane mogą bezpieczne pobieranie informacji dotyczących lokacji z zaufanego źródła, usług AD DS. Informacje dostępne do pobrania przez klienty identyfikują dostępne lokacje, serwery systemu lokacji i usługi udostępniane przez te serwery.  
 
- *Expandir o esquema do Active Directory* é efetuado apenas uma vez para cada floresta e pode ser efetuado antes ou depois de instalar o Configuration Manager.   Quando expande o esquema, tem de criar um novo contentor do Active Directory com o nome de gestão do sistema em cada domínio. O contentor contém um site do Configuration Manager que irá publicar dados para os clientes localizarem. Para obter mais informações, consulte [preparar um Active Directory para publicação de site](../../core/plan-design/network/extend-the-active-directory-schema.md).  
+ *Rozszerzanie schematu usługi Active Directory* odbywa się tylko jeden raz dla każdego lasu i może odbywać się przed lub po zainstalowaniu programu Configuration Manager.   Po rozszerzeniu schematu należy utworzyć nowy kontener usługi Active Directory o nazwie System zarządzania w każdej domenie. Kontener zawiera lokację programu Configuration Manager, która będzie publikować dane wyszukiwania przez klientów. Aby uzyskać więcej informacji, zobacz [Przygotowanie usługi Active Directory do publikowania witryny](../../core/plan-design/network/extend-the-active-directory-schema.md).  
 
- *Publicar dados do site* melhora a segurança da sua hierarquia do Configuration Manager e reduz a sobrecarga administrativa, mas não é necessário para funcionalidades básicas do Configuration Manager.  
+ *Publikowanie danych lokacji* zwiększa bezpieczeństwo hierarchii programu Configuration Manager i zmniejsza narzuty administracyjne, ale nie jest wymagany do podstawowych funkcji programu Configuration Manager.  

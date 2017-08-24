@@ -1,74 +1,72 @@
 ---
 title: Opcje wiersza polecenia Instalatora | Dokumentacja firmy Microsoft
-description: "Użyj informacje w tym artykule skonfigurować skrypty lub do zainstalowania programu System Center Configuration Manager z wiersza polecenia."
+description: "Aby skonfigurować skrypty lub do zainstalowania programu System Center Configuration Manager z wiersza polecenia, użyj informacji w tym artykule."
 ms.custom: na
 ms.date: 03/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-other
+ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0da167f1-52cf-4dfd-8f73-833ca3eb8478
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: dab5da5a4b5dfb3606a8a6bd0c70a0b21923fff9
 ms.openlocfilehash: 04fe7b3e674287c4255563ab4a308e54d0b6c3aa
-ms.contentlocale: pl-pl
-ms.lasthandoff: 05/17/2017
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="command-line-options-for-setup-in-system-center-configuration-manager"></a>Opcje wiersza polecenia instalacji w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (bieżącej gałęzi)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
- Użyj poniższych informacji, aby skonfigurować skrypty lub do zainstalowania programu System Center Configuration Manager z wiersza polecenia.  
+ Skorzystaj z poniższych informacji, aby skonfigurować skrypty lub do zainstalowania programu System Center Configuration Manager z wiersza polecenia.  
 
-##  <a name="bkmk_setup"></a>Opcje wiersza polecenia Instalatora  
+##  <a name="bkmk_setup"></a>Opcje wiersza polecenia dla Instalatora  
  **/ DEINSTALL**  
- Odinstalowanie lokacji. Należy uruchomić Instalatora z komputera serwera lokacji.  
+ Powoduje odinstalowanie lokacji. Należy uruchomić Instalatora z komputera serwera lokacji.  
 
  **/ DONTSTARTSITECOMP**  
- Instaluje lokację, lecz zapobiega uruchomieniu usługi Menedżer składników lokacji. Do momentu uruchomienia usługi Menedżera składników lokacji lokacja będzie nieaktywna. Menedżer składników lokacji jest odpowiedzialny za instalację i uruchomienie usługi SMS_Executive oraz dodatkowych procesów w lokacji. Po zakończeniu instalacji lokacji, po uruchomieniu usługi Menedżer składników lokacji, instaluje usługi SMS_Executive oraz dodatkowych procesów, które są niezbędne do funkcjonowania lokacji.  
+ Instaluje witrynę, lecz zapobiega uruchomieniu usługi Menedżer składników lokacji. Do czasu uruchamiania usługi Menedżer składników lokacji, lokacji nie jest aktywne. Menedżer składników lokacji jest odpowiedzialny za instalację i uruchomienie usługi SMS_Executive oraz dodatkowych procesów w lokacji. Po zakończeniu instalacji lokacji, po uruchomieniu usługi Menedżer składników lokacji, instaluje usługę SMS_Executive oraz dodatkowych procesów, które są niezbędne do funkcjonowania lokacji.  
 
  **/ UKRYTE**  
- Służy do ukrycia interfejsu użytkownika podczas instalacji. Użyj tej opcji tylko w połączeniu z **/SCRIPT** opcji. Plik skryptu instalacji nienadzorowanej musi zawierać wszystkie wymagane opcje lub instalacja nie powiedzie się.  
+ Powoduje ukrycie interfejsu użytkownika podczas instalacji. Użyj tej opcji tylko w połączeniu z **/SCRIPT** opcji. Plik skryptu instalacji nienadzorowanej musi zawierać wszystkie wymagane opcje lub instalacja zakończy się niepowodzeniem.  
 
  **/ NOUSERINPUT**  
- Wyłącza dane wejściowe użytkownika podczas instalacji, ale wyświetla Kreatora instalacji. Użyj tej opcji tylko w połączeniu z **/SCRIPT** opcji. Plik skryptu instalacji nienadzorowanej musi zawierać wszystkie wymagane opcje lub instalacja nie powiedzie się.  
+ Wyłącza dane wejściowe użytkownika podczas instalacji, ale wyświetla Kreatora instalacji. Użyj tej opcji tylko w połączeniu z **/SCRIPT** opcji. Plik skryptu instalacji nienadzorowanej musi zawierać wszystkie wymagane opcje lub instalacja zakończy się niepowodzeniem.  
 
  **/ RESETSITE**  
- Wykonuje lokacji resetowania powodującego zresetowanie bazy danych oraz kont usług lokacji. Należy uruchomić Instalatora z  **<* ścieżkę instalacji programu Configuration Manager*> \BIN\X64** na serwerze lokacji. Aby uzyskać więcej informacji na temat resetowania lokacji, zobacz [Uruchom reset lokacji](../../../../core/servers/manage/modify-your-infrastructure.md#bkmk_reset) w sekcji [zmodyfikować infrastruktury programu System Center Configuration Manager](../../../../core/servers/manage/modify-your-infrastructure.md).  
+ Przeprowadza lokacji resetowania, która służy do resetowania konta bazy danych i usługi dla tej lokacji. Należy uruchomić Instalatora z  **<* ścieżki instalacji programu Configuration Manager*> \BIN\X64** na serwerze lokacji. Aby uzyskać więcej informacji na temat resetowania lokacji, zobacz [uruchamiania resetowania lokacji](../../../../core/servers/manage/modify-your-infrastructure.md#bkmk_reset) sekcji [modyfikowanie infrastruktury programu System Center Configuration Manager](../../../../core/servers/manage/modify-your-infrastructure.md).  
 
  **/ TESTDBUPGRADE <*nazwa wystąpienia*>\\<*Nazwa bazy danych*>**  
- Służy do wykonania testu na kopii zapasowej bazy danych lokacji w celu zapewnienia można przeprowadzić uaktualnienie bazy danych. Należy podać nazwę wystąpienia i nazwę bazy danych dla bazy danych lokacji. Jeśli określisz nazwę bazy danych Instalator użyje domyślnej nazwy wystąpienia.  
+ Wykonuje test na kopii zapasowej bazy danych lokacji, aby upewnić się, że bazy danych jest zdolny do uaktualnienia. Należy podać nazwę wystąpienia i nazwę bazy danych dla bazy danych lokacji. Jeśli określisz tylko nazwa bazy danych Instalator użyje nazwa wystąpienia domyślnego.  
 
 > [!IMPORTANT]  
->  Nie wolno uruchamiać tej opcji wiersza polecenia w produkcyjnej bazy danych lokacji. Uruchamianie tej opcji wiersza polecenia w produkcyjnej bazy danych lokacji uaktualnienie bazy danych lokacji i może przestać witryny.  
+>  Nie wolno uruchamiać tej opcji wiersza polecenia w produkcyjnej bazie danych lokacji. Uruchomienie tej opcji wiersza polecenia w produkcyjnej bazie danych lokacji uaktualniania bazy danych lokacji i może uniemożliwić korzystanie z witryny.  
 
  **/ UPGRADE**  
- Uruchamia do przeprowadzenia nienadzorowanego uaktualnienia lokacji. Kiedy używasz **/UPGRADE**, należy określić klucz produktu, łącznie z myślnikami (-). Ponadto należy określić ścieżkę do uprzednio pobranych wstępnie wymaganych plików instalacji.  
+ Uruchamia do przeprowadzenia nienadzorowanego uaktualnienia lokacji. Jeśli używasz **/UPGRADE**, należy określić klucz produktu, łącznie z myślnikami (-). Ponadto należy określić ścieżkę do uprzednio pobranych plików wymagań wstępnych Instalatora.  
 
  Przykład: `setupwpf.exe /UPGRADE xxxxx-xxxxx-xxxxx-xxxxx-xxxxx <path to external component files>`  
 
  Aby uzyskać więcej informacji na temat plików wymagań wstępnych instalacji, zobacz [Narzędzie pobierania Instalatora](setup-downloader.md).  
 
- **/ SCRIPT <*ścieżka skryptu Instalatora*>**  
- Służy do przeprowadzenia instalacji nienadzorowanej. Plik inicjujący Instalatora jest wymagany w przypadku używania **/SCRIPT** opcji. Aby uzyskać więcej informacji na temat uruchamiania instalacji nienadzorowanej, zobacz [pobranych przy użyciu wiersza polecenia](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md).  
+ **/ SCRIPT <*ścieżka skryptu konfiguracji*>**  
+ Wykonuje instalacji nienadzorowanej. Plik inicjujący Instalatora jest wymagany, gdy używasz **/SCRIPT** opcji. Aby uzyskać więcej informacji na temat uruchamiania instalacji nienadzorowanej, zobacz [instalowanie lokacji za pomocą wiersza polecenia](../../../../core/servers/deploy/install/use-a-command-line-to-install-sites.md).  
 
  **/ SDKINST <*dostawcy programu SMS w pełni kwalifikowaną nazwę domeny*>**  
- Instaluje dostawcę programu SMS na określonym komputerze. Należy podać w pełni kwalifikowaną nazwę domeny (FQDN) komputera dostawcy programu SMS. Aby uzyskać więcej informacji na temat dostawcy programu SMS, zobacz [planowanie dostawcy programu SMS dla programu System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
+ Zainstalowany dostawca programu SMS na określonym komputerze. Należy podać pełną nazwę domeny (FQDN) komputera dostawcy programu SMS. Aby uzyskać więcej informacji na temat dostawcy programu SMS, zobacz [planowanie dostawcy programu SMS dla programu System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
 
  **/ SDKDEINST <*dostawcy programu SMS w pełni kwalifikowaną nazwę domeny*>**  
- Służy do odinstalowania dostawcy programu SMS na określonym komputerze. Należy podać nazwę FQDN komputera dostawcy programu SMS.  
+ Odinstalowuje dostawcy programu SMS na określonym komputerze. Należy podać nazwę FQDN komputera dostawcy programu SMS.  
 
  **/ MANAGELANGS <*ścieżka skryptu języka*>**  
- Służy do zarządzania językami zainstalowanymi w uprzednio zainstalowanej lokacji. Aby użyć tej opcji, należy uruchomić Instalatora z  **<* ścieżkę instalacji programu Configuration Manager*> \BIN\X64** na serwerze lokacji i podać lokalizację pliku skryptu języka zawierającego ustawienia języka. Aby uzyskać więcej informacji na temat dostępnych opcji języka w pliku skryptu Instalatora języka, zobacz [opcji wiersza polecenia do zarządzania językami](#bkmk_Lang) w tym temacie.  
+ Służy do zarządzania językami zainstalowanymi w uprzednio zainstalowanej lokacji. Aby użyć tej opcji, należy uruchomić Instalatora z  **<* ścieżki instalacji programu Configuration Manager*> \BIN\X64** na serwerze lokacji i podać lokalizację pliku skryptu języka zawierającego ustawienia języka. Aby uzyskać więcej informacji na temat dostępnych opcji języka w pliku skryptu Instalatora języka, zobacz [opcji wiersza polecenia do zarządzania językami](#bkmk_Lang) w tym temacie.  
 
 ##  <a name="bkmk_Lang"></a>Opcje wiersza polecenia do zarządzania językami  
  **Identyfikacja**  
@@ -89,7 +87,7 @@ ms.lasthandoff: 05/17/2017
 
     -   **Wartości:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK lub ZHH  
 
-    -   **Szczegóły:** Określa języki serwera, które będą dostępne dla konsoli programu Configuration Manager, raporty i obiektów programu Configuration Manager. Język angielski jest dostępny domyślnie.  
+    -   **Szczegóły:** Określa języki serwera, które będą dostępne dla konsoli programu Configuration Manager, raportach ani obiektach programu Configuration Manager. Język angielski jest dostępny domyślnie.  
 
 -   **Nazwa klucza:** AddClientLanguages  
 
@@ -105,7 +103,7 @@ ms.lasthandoff: 05/17/2017
 
     -   **Wartości:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK lub ZHH  
 
-    -   **Szczegóły:** Określa języki do usunięcia, a które nie będzie już dostępny dla konsoli programu Configuration Manager, raporty i obiektów programu Configuration Manager. Język angielski jest dostępny domyślnie i nie można go usunąć.  
+    -   **Szczegóły:** Określa języki do usunięcia, które nie będą dostępne dla konsoli programu Configuration Manager, raportach ani obiektach programu Configuration Manager. Język angielski jest dostępny domyślnie i nie można usunąć.  
 
 -   **Nazwa klucza:** DeleteClientLanguages  
 
@@ -113,7 +111,7 @@ ms.lasthandoff: 05/17/2017
 
     -   **Wartości:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK lub ZHH  
 
-    -   **Szczegóły:** Określa języki do usunięcia, a które nie będzie już dostępne na komputerach klienckich. Język angielski jest dostępny domyślnie i nie można go usunąć.  
+    -   **Szczegóły:** Określa języki do usunięcia, które nie będą dostępne na komputerach klienckich. Język angielski jest dostępny domyślnie i nie można usunąć.  
 
 -   **Nazwa klucza:** MobileDeviceLanguage  
 
@@ -123,7 +121,7 @@ ms.lasthandoff: 05/17/2017
 
          0 = nie instaluj  
 
-         1 = instalacji  
+         1 = install  
 
     -   **Szczegóły:** Określa, czy mają zostać zainstalowane języki klienta urządzenia przenośnego.  
 
@@ -143,15 +141,15 @@ ms.lasthandoff: 05/17/2017
 
     -   **Wymagane:** Tak  
 
-    -   **Wartości:** <*ścieżkę do plików wymagań wstępnych instalacji*>  
+    -   **Wartości:** <*ścieżkę do plików wymagań wstępnych Instalatora*>  
 
     -   **Szczegóły:** Określa ścieżkę do plików wymagań wstępnych Instalatora. W zależności od wartości **PrerequisiteComp** Instalator używa tej ścieżki do przechowywania pobranych plików lub lokalizowania wcześniej pobranych plików.  
 
 ##  <a name="bkmk_Unattended"></a>Klucze plików skryptu instalacji nienadzorowanej  
- Użyj następujące sekcje zawierają informacje pomocne w tworzeniu skryptu instalacji nienadzorowanej. Listy Pokaż dostępnych kluczy skryptu instalacji, odpowiadające im wartości, czy są one wymagane, jakiego typu instalację służą one do realizacji i krótki opis klucza.  
+ Użyj następujące sekcje zawierają informacje pomocne w tworzeniu skryptu instalacji nienadzorowanej. Przedstawiono dostępnych kluczy skryptu instalacji, ich wartości, czy są one wymagane, jakiego typu instalację są używane do i krótki opis klucza.  
 
-### <a name="unattended-install-for-a-central-administration-site"></a>Instalacji nienadzorowanej dla witryny administracji centralnej  
- Następujące informacje należy zainstalować centralnej lokacji administracyjnej przy użyciu pliku instalacji nienadzorowanej.  
+### <a name="unattended-install-for-a-central-administration-site"></a>Instalacja nienadzorowana centralnej lokacji administracyjnej  
+ Następujące dane należy zainstalować centralną lokację administracyjną przy użyciu pliku skryptu instalacji nienadzorowanej.  
 
 **Identyfikacja**  
 
@@ -161,15 +159,15 @@ ms.lasthandoff: 05/17/2017
 
     -   **Wartości:** InstallCAS  
 
-    -   **Szczegóły:** Instaluje lokację administracji centralnej.  
+    -   **Szczegóły:** Instaluje centralną lokację administracyjną.  
 
 -   **Nazwa klucza:** CDLatest  
 
     -   **Wymagane:** Tak — tylko w przypadku używania nośnika z dysku CD. Najnowszy folder.    
 
-    -   **Wartości:** 1 wartości innej niż 1 jest uważany za nie można przy użyciu dysku CD. Najnowsze.
+    -   **Wartości:** 1 wartości innej niż 1 jest uważana za nie można przy użyciu dysku CD. Najnowsze.
 
-    -   **Szczegóły:** Skrypt musi zawierać ten klucz i wartość po uruchomieniu Instalatora z nośnika na dysku CD. Najnowsze folderu na potrzeby instalowania lokacji głównej lub centralnej administracji lub odzyskiwania lokacji głównej lub centralnej administracji. Ta wartość informuje Instalatora że nośnik tworzą dysku CD. R jest używany.
+    -   **Szczegóły:** Skrypt musi zawierać ten klucz i wartość po uruchomieniu Instalatora z nośnika na dysku CD. Najnowszy folder na potrzeby instalowania lokacji głównej lub centralnej administracji lub lokacji głównej lub centralnej administracji odzyskiwania. Ta wartość informuje Instalatora czy multimediów tworzą dysku CD. Jest używana najnowsza.
 
 **Opcje**  
 
@@ -179,7 +177,7 @@ ms.lasthandoff: 05/17/2017
 
     -   **Wartości:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *lub* Eval  
 
-    -   **Szczegóły:** Określa klucz produktu instalacji programu Configuration Manager, wraz z kreskami. Wprowadź **Eval** zainstalować wersję ewaluacyjną programu Configuration Manager.  
+    -   **Szczegóły:** Określa klucz produktu instalacji programu Configuration Manager, wraz z kreskami. Wprowadź **Eval** Aby zainstalować wersję ewaluacyjną programu Configuration Manager.  
 
 -   **Nazwa klucza:** Kod lokacji  
 
@@ -201,7 +199,7 @@ ms.lasthandoff: 05/17/2017
 
     -   **Wymagane:** Tak  
 
-    -   **Wartości:** <*ścieżkę instalacji programu Configuration Manager*>  
+    -   **Wartości:** <*ścieżki instalacji programu Configuration Manager*>  
 
     -   **Szczegóły:** Określa folder instalacji plików programu Configuration Manager.  
 
@@ -211,7 +209,7 @@ ms.lasthandoff: 05/17/2017
 
     -   **Wartości:** <*dostawcy programu SMS w pełni kwalifikowaną nazwę domeny*>  
 
-    -   **Szczegóły:** Określa nazwę FQDN serwera, który będzie hostem dostawcy programu SMS. Po instalacji początkowej możesz skonfigurować dodatkowych dostawców programu SMS dla lokacji.  
+    -   **Szczegóły:** Określa nazwę FQDN serwera, który będzie hostował dostawcę programu SMS. Po instalacji początkowej możesz skonfigurować dodatkowych dostawców programu SMS dla lokacji.  
 
 -   **Nazwa klucza:** PrerequisiteComp  
 
@@ -229,7 +227,7 @@ ms.lasthandoff: 05/17/2017
 
     -   **Wymagane:** Tak  
 
-    -   **Wartości:** <*ścieżkę do plików wymagań wstępnych instalacji*>  
+    -   **Wartości:** <*ścieżkę do plików wymagań wstępnych Instalatora*>  
 
     -   **Szczegóły:** Określa ścieżkę do plików wymagań wstępnych Instalatora. W zależności od wartości **PrerequisiteComp** Instalator używa tej ścieżki do przechowywania pobranych plików lub lokalizowania wcześniej pobranych plików.  
 
@@ -241,9 +239,9 @@ ms.lasthandoff: 05/17/2017
 
          0 = nie instaluj  
 
-         1 = instalacji  
+         1 = install  
 
-    -   **Szczegóły:** Określa, czy należy zainstalować konsolę programu Configuration Manager.  
+    -   **Szczegóły:** Określa, czy instalować konsolę programu Configuration Manager.  
 
 -   **Nazwa klucza:** JoinCEIP  
 
@@ -263,7 +261,7 @@ ms.lasthandoff: 05/17/2017
 
     -   **Wartości:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK lub ZHH  
 
-    -   **Szczegóły:** Określa języki serwera, które będą dostępne dla konsoli programu Configuration Manager, raporty i obiektów programu Configuration Manager. Język angielski jest dostępny domyślnie.  
+    -   **Szczegóły:** Określa języki serwera, które będą dostępne dla konsoli programu Configuration Manager, raportach ani obiektach programu Configuration Manager. Język angielski jest dostępny domyślnie.  
 
 -   **Nazwa klucza:** AddClientLanguages  
 
@@ -279,7 +277,7 @@ ms.lasthandoff: 05/17/2017
 
     -   **Wartości:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK lub ZHH  
 
-    -   **Szczegóły:** Modyfikuje lokację po jej zainstalowaniu. Określa języki do usunięcia, a które nie będzie już dostępny dla konsoli programu Configuration Manager, raporty i obiektów programu Configuration Manager. Język angielski jest dostępny domyślnie i nie można go usunąć.  
+    -   **Szczegóły:** Modyfikuje lokację po jej zainstalowaniu. Określa języki do usunięcia, które nie będą dostępne dla konsoli programu Configuration Manager, raportach ani obiektach programu Configuration Manager. Język angielski jest dostępny domyślnie i nie można usunąć.  
 
 -   **Nazwa klucza:** DeleteClientLanguages  
 
@@ -287,7 +285,7 @@ ms.lasthandoff: 05/17/2017
 
     -   **Wartości:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK lub ZHH  
 
-    -   **Szczegóły:** Modyfikuje lokację po jej zainstalowaniu. Określa języki do usunięcia, a które nie będzie już dostępne na komputerach klienckich. Język angielski jest dostępny domyślnie i nie można go usunąć.  
+    -   **Szczegóły:** Modyfikuje lokację po jej zainstalowaniu. Określa języki do usunięcia, które nie będą dostępne na komputerach klienckich. Język angielski jest dostępny domyślnie i nie można usunąć.  
 
 -   **Nazwa klucza:** MobileDeviceLanguage  
 
@@ -297,7 +295,7 @@ ms.lasthandoff: 05/17/2017
 
          0 = nie instaluj  
 
-         1 = instalacji  
+         1 = install  
 
     -   **Szczegóły:** Określa, czy mają zostać zainstalowane języki klienta urządzenia przenośnego.  
 
@@ -328,23 +326,23 @@ ms.lasthandoff: 05/17/2017
 
     -   **Wartości:** <*numer portu SSB*>  
 
-    -   **Szczegóły:** Określa port usługi SQL Server Service Broker (SSB) używany przez program SQL Server. SSB zazwyczaj jest skonfigurowany do używania portu TCP 4022, ale można użyć innego portu.  
+    -   **Szczegóły:** Określa port usługi SQL Server Service Broker (SSB) używany przez program SQL Server. SSB jest zazwyczaj skonfigurowany do używania portu TCP 4022, ale można użyć innego portu.  
 
 -   **Nazwa klucza:** SQLDataFilePath  
 
     -   **Wymagane:** Nie  
 
-    -   **Wartości:** <*ścieżkę do pliku MDB bazy danych*>  
+    -   **Wartości:** <*ścieżka do pliku MDB bazy danych*>  
 
-    -   **Szczegóły:** Określa alternatywną lokalizację do utworzenia pliku MDB bazy danych.  
+    -   **Szczegóły:** Określa alternatywną lokalizację, aby utworzyć plik mdb bazy danych.  
 
 -   **Nazwa klucza:** SQLLogFilePath  
 
     -   **Wymagane:** Nie  
 
-    -   **Wartości:** <*ścieżkę do pliku .ldf bazy danych*>  
+    -   **Wartości:** <*ścieżka do pliku ldf bazy danych*>  
 
-    -   **Szczegóły:** Określa alternatywną lokalizację do utworzenia pliku .ldf bazy danych.  
+    -   **Szczegóły:** Określa alternatywną lokalizację, aby utworzyć plik ldf bazy danych.  
 
 **CloudConnectorOptions**  
 
@@ -356,33 +354,33 @@ ms.lasthandoff: 05/17/2017
 
          0 = nie instaluj  
 
-         1 = instalacji  
+         1 = install  
 
     -   **Szczegóły:** Określa, czy zainstalować punktu połączenia usługi w tej lokacji. Ponieważ punktu połączenia usługi można zainstalować tylko w lokacji najwyższego poziomu w hierarchii, ta wartość musi być **0** dla podrzędnej lokacji głównej.  
 
 -   **Nazwa klucza:** CloudConnectorServer  
 
-    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równe 1  
+    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równa 1  
 
     -   **Wartości:** <*nazwa FQDN serwera punktu połączenia usługi*>  
 
-    -   **Szczegóły:** Określa nazwę FQDN serwera obsługującego rolę systemu lokacji punktu połączenia usługi.  
+    -   **Szczegóły:** Określa nazwę FQDN serwera, który będzie hostem roli systemu lokacji punktu połączenia usługi.  
 
 -   **Nazwa klucza:** UseProxy  
 
-    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równe 1  
+    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równa 1  
 
     -   **Wartości:** 0 lub 1  
 
          0 = nie instaluj  
 
-         1 = instalacji  
+         1 = install  
 
     -   **Szczegóły:** Określa, czy punkt połączenia usługi będzie używać serwera proxy.  
 
 -   **Nazwa klucza:** ProxyName  
 
-    -   **Wymagane:** Wymagany, gdy **UseProxy** jest równe 1  
+    -   **Wymagane:** Wymagany, gdy **UseProxy** jest równa 1  
 
     -   **Wartości:** <*nazwa FQDN serwera Proxy*>  
 
@@ -390,14 +388,14 @@ ms.lasthandoff: 05/17/2017
 
 -   **Nazwa klucza:** ProxyPort  
 
-    -   **Wymagane:** Wymagany, gdy **UseProxy** jest równe 1  
+    -   **Wymagane:** Wymagany, gdy **UseProxy** jest równa 1  
 
     -   **Wartości:** <*numer portu*>  
 
-    -   **Szczegóły:** Określa numer portu używany do portu serwera proxy.  
+    -   **Szczegóły:** Określa numer portu na potrzeby port serwera proxy.  
 
-### <a name="unattended-install-for-a-primary-site"></a>Instalacji nienadzorowanej dla lokacji głównej  
-Następujące informacje należy zainstalować lokacji głównej przy użyciu pliku instalacji nienadzorowanej.  
+### <a name="unattended-install-for-a-primary-site"></a>Instalacja nienadzorowana lokacji głównej  
+Następujące dane należy zainstalować lokacji głównej przy użyciu pliku skryptu instalacji nienadzorowanej.  
 
 **Identyfikacja**  
 
@@ -413,9 +411,9 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wymagane:** Tak — tylko w przypadku używania nośnika z dysku CD. Najnowszy folder.    
 
-    -   **Wartości:** 1 wartości innej niż 1 jest uważany za nie można przy użyciu dysku CD. Najnowsze.
+    -   **Wartości:** 1 wartości innej niż 1 jest uważana za nie można przy użyciu dysku CD. Najnowsze.
 
-    -   **Szczegóły:** Skrypt musi zawierać ten klucz i wartość po uruchomieniu Instalatora z nośnika na dysku CD. Najnowsze folderu na potrzeby instalowania lokacji głównej lub centralnej administracji lub odzyskiwania lokacji głównej lub centralnej administracji. Ta wartość informuje Instalatora że nośnik tworzą dysku CD. R jest używany.
+    -   **Szczegóły:** Skrypt musi zawierać ten klucz i wartość po uruchomieniu Instalatora z nośnika na dysku CD. Najnowszy folder na potrzeby instalowania lokacji głównej lub centralnej administracji lub lokacji głównej lub centralnej administracji odzyskiwania. Ta wartość informuje Instalatora czy multimediów tworzą dysku CD. Jest używana najnowsza.
 
 **Opcje**  
 
@@ -425,7 +423,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *lub* Eval  
 
-    -   **Szczegóły:** Określa klucz produktu instalacji programu Configuration Manager, wraz z kreskami. Wprowadź **Eval** zainstalować wersję ewaluacyjną programu Configuration Manager.  
+    -   **Szczegóły:** Określa klucz produktu instalacji programu Configuration Manager, wraz z kreskami. Wprowadź **Eval** Aby zainstalować wersję ewaluacyjną programu Configuration Manager.  
 
 -   **Nazwa klucza:** Kod lokacji  
 
@@ -447,7 +445,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wymagane:** Tak  
 
-    -   **Wartości:** <*ścieżkę instalacji programu Configuration Manager*>
+    -   **Wartości:** <*ścieżki instalacji programu Configuration Manager*>
 
     -   **Szczegóły:** Określa folder instalacji plików programu Configuration Manager.  
 
@@ -457,7 +455,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** <*dostawcy programu SMS w pełni kwalifikowaną nazwę domeny*>  
 
-    -   **Szczegóły:** Określa nazwę FQDN serwera, który będzie hostem dostawcy programu SMS. Po instalacji początkowej możesz skonfigurować dodatkowych dostawców programu SMS dla lokacji.  
+    -   **Szczegóły:** Określa nazwę FQDN serwera, który będzie hostował dostawcę programu SMS. Po instalacji początkowej możesz skonfigurować dodatkowych dostawców programu SMS dla lokacji.  
 
 -   **Nazwa klucza:** PrerequisiteComp  
 
@@ -475,7 +473,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wymagane:** Tak  
 
-    -   **Wartości:** <*ścieżkę do plików wymagań wstępnych instalacji*>  
+    -   **Wartości:** <*ścieżkę do plików wymagań wstępnych Instalatora*>  
 
     -   **Szczegóły:** Określa ścieżkę do plików wymagań wstępnych Instalatora. W zależności od wartości **PrerequisiteComp** Instalator używa tej ścieżki do przechowywania pobranych plików lub lokalizowania wcześniej pobranych plików.  
 
@@ -487,9 +485,9 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
          0 = nie instaluj  
 
-         1 = instalacji  
+         1 = install  
 
-    -   **Szczegóły:** Określa, czy należy zainstalować konsolę programu Configuration Manager.  
+    -   **Szczegóły:** Określa, czy instalować konsolę programu Configuration Manager.  
 
 -   **Nazwa klucza:** JoinCEIP  
 
@@ -501,7 +499,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
          1 = sprzężenia  
 
-    -   **Szczegóły:** Określa, czy dołączyć do programu CEIP.  
+    -   **Szczegóły:** Określa, czy do dołączenia do programu CEIP.  
 
 -   **Nazwa klucza:** ManagementPoint  
 
@@ -509,7 +507,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** <*nazwa FQDN serwera lokacji punktu zarządzania*>  
 
-    -   **Szczegóły:** Określa nazwę FQDN serwera obsługującego rolę systemu lokacji punktu zarządzania.  
+    -   **Szczegóły:** Określa nazwę FQDN serwera, który będzie obsługiwać rolę systemu lokacji punktu zarządzania.  
 
 -   **Nazwa klucza:** ManagementPointProtocol  
 
@@ -517,7 +515,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** HTTPS *lub* HTTP  
 
-    -   **Szczegóły:** Określa protokół używany do punktu zarządzania.  
+    -   **Szczegóły:** Określa protokół do użycia w punkcie zarządzania.  
 
 -   **Nazwa klucza:** W Krakowie  
 
@@ -525,7 +523,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** <*nazwa FQDN serwera lokacji punktu dystrybucji*>  
 
-    -   **Szczegóły:** Określa protokół używany do punktu dystrybucji.  
+    -   **Szczegóły:** Określa protokół do użycia w punkcie dystrybucji.  
 
 -   **Nazwa klucza:** DistributionPointProtocol  
 
@@ -533,7 +531,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** HTTPS *lub* HTTP  
 
-    -   **Szczegóły:** Określa protokół używany do punktu dystrybucji.  
+    -   **Szczegóły:** Określa protokół do użycia w punkcie dystrybucji.  
 
 -   **Nazwa klucza:** RoleCommunicationProtocol  
 
@@ -541,7 +539,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** EnforceHTTPS *lub* HTTPorHTTPS  
 
-    -   **Szczegóły:** Określa, czy skonfigurować wszystkie systemy lokacji, aby akceptowały wyłącznie komunikację HTTPS od klientów lub metoda komunikacji ma być skonfigurowana dla poszczególnych ról systemu lokacji. Po wybraniu do **EnforceHTTPS**, komputer kliencki musi mieć prawidłowy infrastruktury kluczy publicznych (PKI) certyfikatu uwierzytelniania klienta.  
+    -   **Szczegóły:** Określa, czy skonfigurować wszystkie systemy lokacji, aby akceptowały wyłącznie komunikację HTTPS od klientów lub metoda komunikacji ma być skonfigurowana dla poszczególnych ról systemu lokacji. Po wybraniu do **EnforceHTTPS**, komputer kliencki musi mieć prawidłową infrastruktury kluczy publicznych (PKI) certyfikatu uwierzytelniania klienta.  
 
 -   **Nazwa klucza:** ClientsUsePKICertificate  
 
@@ -561,7 +559,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK lub ZHH  
 
-    -   **Szczegóły:** Określa języki serwera, które będą dostępne dla konsoli programu Configuration Manager, raporty i obiektów programu Configuration Manager. Język angielski jest dostępny domyślnie.  
+    -   **Szczegóły:** Określa języki serwera, które będą dostępne dla konsoli programu Configuration Manager, raportach ani obiektach programu Configuration Manager. Język angielski jest dostępny domyślnie.  
 
 -   **Nazwa klucza:** AddClientLanguages  
 
@@ -577,7 +575,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK lub ZHH  
 
-    -   **Szczegóły:** Modyfikuje lokację po jej zainstalowaniu. Określa języki do usunięcia, a które nie będzie już dostępny dla konsoli programu Configuration Manager, raporty i obiektów programu Configuration Manager. Język angielski jest dostępny domyślnie i nie można go usunąć.  
+    -   **Szczegóły:** Modyfikuje lokację po jej zainstalowaniu. Określa języki do usunięcia, które nie będą dostępne dla konsoli programu Configuration Manager, raportach ani obiektach programu Configuration Manager. Język angielski jest dostępny domyślnie i nie można usunąć.  
 
 -   **Nazwa klucza:** DeleteClientLanguages  
 
@@ -585,7 +583,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** DEU, FRA, RUS, CHS, JPN, CHT, CSY, ESN, HUN, ITA, KOR, NLD, PLK, PTB, PTG, SVE, TRK lub ZHH  
 
-    -   **Szczegóły:** Modyfikuje lokację po jej zainstalowaniu. Określa języki do usunięcia, a które nie będzie już dostępne na komputerach klienckich. Język angielski jest dostępny domyślnie i nie można go usunąć.  
+    -   **Szczegóły:** Modyfikuje lokację po jej zainstalowaniu. Określa języki do usunięcia, które nie będą dostępne na komputerach klienckich. Język angielski jest dostępny domyślnie i nie można usunąć.  
 
 -   **Nazwa klucza:** MobileDeviceLanguage  
 
@@ -595,7 +593,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
          0 = nie instaluj  
 
-         1 = instalacji  
+         1 = install  
 
     -   **Szczegóły:** Określa, czy mają zostać zainstalowane języki klienta urządzenia przenośnego.  
 
@@ -615,7 +613,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** <*Nazwa bazy danych lokacji*> lub <*nazwa wystąpienia*>\\<*Nazwa bazy danych lokacji*>  
 
-    -   **Szczegóły:** Określa nazwę bazy danych programu SQL Server do utworzenia lub bazy danych programu SQL Server do użycia podczas instalowania bazy danych lokacji głównej.  
+    -   **Szczegóły:** Określa nazwę bazy danych programu SQL Server, aby utworzyć lub bazy danych programu SQL Server do użycia podczas instalowania bazy danych lokacji głównej.  
 
         > [!IMPORTANT]  
         >  Jeżeli nie używasz domyślnego wystąpienia, należy określić nazwy wystąpienia i lokacji.  
@@ -626,23 +624,23 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** <*numer portu SSB*>  
 
-    -   **Szczegóły:** Określa port SSB, który używa programu SQL Server. SSB zazwyczaj jest skonfigurowany do używania portu TCP 4022, ale można użyć innego portu.  
+    -   **Szczegóły:** Określa port SBB, który używa programu SQL Server. SSB jest zazwyczaj skonfigurowany do używania portu TCP 4022, ale można użyć innego portu.  
 
 -   **Nazwa klucza:** SQLDataFilePath  
 
     -   **Wymagane:** Nie  
 
-    -   **Wartości:** <*ścieżkę do pliku MDB bazy danych*>  
+    -   **Wartości:** <*ścieżka do pliku MDB bazy danych*>  
 
-    -   **Szczegóły:** Określa alternatywną lokalizację do utworzenia pliku MDB bazy danych.  
+    -   **Szczegóły:** Określa alternatywną lokalizację, aby utworzyć plik mdb bazy danych.  
 
 -   **Nazwa klucza:** SQLLogFilePath  
 
     -   **Wymagane:** Nie  
 
-    -   **Wartości:** <*ścieżkę do pliku .ldf bazy danych*>  
+    -   **Wartości:** <*ścieżka do pliku ldf bazy danych*>  
 
-    -   **Szczegóły:** Określa alternatywną lokalizację do utworzenia pliku .ldf bazy danych.  
+    -   **Szczegóły:** Określa alternatywną lokalizację, aby utworzyć plik ldf bazy danych.  
 
 **HierarchyExpansionOption**  
 
@@ -650,9 +648,9 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wymagane:** Nie  
 
-    -   **Wartości:** <*witryny Administracja centralna w pełni kwalifikowaną nazwę domeny*>  
+    -   **Wartości:** <*centralnej lokacji administracyjnej FQDN*>  
 
-    -   **Szczegóły:** Określa, który po dołączeniu hierarchii programu Configuration Manager wstawi do lokacji głównej witryny administracji centralnej. Podczas instalacji, należy określić witryny administracji centralnej.  
+    -   **Szczegóły:** Określa lokację administracji centralnej, który będzie dołączać lokacja główna po dołączeniu do hierarchii programu Configuration Manager. Należy określić podczas instalacji centralnej lokacji administracyjnej.  
 
 -   **Nazwa klucza:** CASRetryInterval  
 
@@ -660,7 +658,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** <*Interval*>  
 
-    -   **Szczegóły:** Określa interwał ponawiania prób (w minutach) prób połączenia z witryną Administracja centralna, po niepowodzeniu. Na przykład, jeśli połączenie z centralnej lokacji administracyjnej nie powiedzie się, lokacji głównej czeka liczbę minut, które określisz dla **CASRetryInterval** wartości, a następnie ponowne próby nawiązania połączenia.  
+    -   **Szczegóły:** Określa interwał ponawiania prób (w minutach) prób połączenia z lokacją administracji centralnej po niepowodzeniu. Na przykład, jeśli nie może nawiązać połączenia z lokacją administracji centralnej, lokacji głównej czeka liczbę minut, które określają dla **CASRetryInterval** wartość, a następnie ponowne próby nawiązania połączenia.  
 
 -   **Nazwa klucza:** WaitForCASTimeout  
 
@@ -670,7 +668,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
          Wartość **0** do **100**  
 
-    -   **Szczegóły:** Określa maksymalną wartość limitu czasu (w minutach) dla lokacji głównej połączyć się z witryną Administracja centralna. Na przykład, jeśli lokacji głównej nie może połączyć się z witryną Administracja centralna, lokacja główna ponowi próbę połączenia witryny administracji centralnej, na podstawie **CASRetryInterval** wartości do **WaitForCASTimeout** czasu. Można określić wartość **0** do **100**.  
+    -   **Szczegóły:** Określa maksymalną wartość limitu czasu (w minutach) dla lokacji głównej połączyć się z witryną Administracja centralna. Na przykład, jeśli w lokacji głównej nie może połączyć się z centralną lokacją administracyjną, lokacja główna ponowi próbę połączenia centralnej lokacji administracyjnej na podstawie **CASRetryInterval** wartości do **WaitForCASTimeout** upływem czasu. Można określić wartość **0** do **100**.  
 
 **CloudConnectorOptions**  
 
@@ -682,33 +680,33 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
          0 = nie instaluj  
 
-         1 = instalacji  
+         1 = install  
 
     -   **Szczegóły:** Określa, czy zainstalować punktu połączenia usługi w tej lokacji. Ponieważ punktu połączenia usługi można zainstalować tylko w lokacji najwyższego poziomu w hierarchii, ta wartość musi być **0** dla podrzędnej lokacji głównej.  
 
 -   **Nazwa klucza:** CloudConnectorServer  
 
-    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równe 1  
+    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równa 1  
 
     -   **Wartości:** <*nazwa FQDN serwera punktu połączenia usługi*\>  
 
-    -   **Szczegóły:** Określa nazwę FQDN serwera obsługującego rolę systemu lokacji punktu połączenia usługi.  
+    -   **Szczegóły:** Określa nazwę FQDN serwera, który będzie hostem roli systemu lokacji punktu połączenia usługi.  
 
 -   **Nazwa klucza:** UseProxy  
 
-    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równe 1  
+    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równa 1  
 
     -   **Wartości:** 0 lub 1  
 
          0 = nie instaluj  
 
-         1 = instalacji  
+         1 = install  
 
     -   **Szczegóły:** Określa, czy punkt połączenia usługi będzie używać serwera proxy.  
 
 -   **Nazwa klucza:** ProxyName  
 
-    -   **Wymagane:** Wymagany, gdy **UseProxy** jest równe 1  
+    -   **Wymagane:** Wymagany, gdy **UseProxy** jest równa 1  
 
     -   **Wartości:** <*nazwa FQDN serwera Proxy*>  
 
@@ -716,14 +714,14 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
 -   **Nazwa klucza:** ProxyPort  
 
-    -   **Wymagane:** Wymagany, gdy **UseProxy** jest równe 1  
+    -   **Wymagane:** Wymagany, gdy **UseProxy** jest równa 1  
 
     -   **Wartości:** <*numer portu*>  
 
-    -   **Szczegóły:** Określa numer portu używany do portu serwera proxy.  
+    -   **Szczegóły:** Określa numer portu na potrzeby port serwera proxy.  
 
-### <a name="unattended-recovery-for-a-central-administration-site"></a>Nienadzorowane Odzyskiwanie witryny Administracja centralna  
- Użyj następujące szczegóły do odzyskiwania centralnej lokacji administracyjnej przy użyciu pliku instalacji nienadzorowanej.  
+### <a name="unattended-recovery-for-a-central-administration-site"></a>Odzyskiwanie nienadzorowane centralnej lokacji administracyjnej  
+ Użyj poniższe szczegóły służą do odzyskiwania centralnej lokacji administracyjnej przy użyciu pliku skryptu instalacji nienadzorowanej.  
 
 **Identyfikacja**  
 
@@ -733,15 +731,15 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** RecoverCCAR  
 
-    -   **Szczegóły:** Odzyskuje lokację administracji centralnej.  
+    -   **Szczegóły:** Odzyskuje centralną lokację administracyjną.  
 
 -   **Nazwa klucza:** CDLatest  
 
     -   **Wymagane:** Tak — tylko w przypadku używania nośnika z dysku CD. Najnowszy folder.    
 
-    -   **Wartości:** 1 wartości innej niż 1 jest uważany za nie można przy użyciu dysku CD. Najnowsze.
+    -   **Wartości:** 1 wartości innej niż 1 jest uważana za nie można przy użyciu dysku CD. Najnowsze.
 
-    -   **Szczegóły:** Skrypt musi zawierać ten klucz i wartość po uruchomieniu Instalatora z nośnika na dysku CD. Najnowsze folderu na potrzeby instalowania lokacji głównej lub centralnej administracji lub odzyskiwania lokacji głównej lub centralnej administracji. Ta wartość informuje Instalatora że nośnik tworzą dysku CD. R jest używany.
+    -   **Szczegóły:** Skrypt musi zawierać ten klucz i wartość po uruchomieniu Instalatora z nośnika na dysku CD. Najnowszy folder na potrzeby instalowania lokacji głównej lub centralnej administracji lub lokacji głównej lub centralnej administracji odzyskiwania. Ta wartość informuje Instalatora czy multimediów tworzą dysku CD. Jest używana najnowsza.
 
 **RecoveryOptions**  
 
@@ -757,11 +755,11 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
          4 = odzyskiwanie tylko programu SQL Server.  
 
-    -   **Szczegóły:** Określa, czy Instalator będzie przeprowadzał odzyskiwanie serwera lokacji i programu SQL Server. Skojarzone klucze są wymagane podczas ustawiania poniższej wartości dla **ServerRecoveryOptions** ustawienie:  
+    -   **Szczegóły:** Określa, czy Instalator będzie przeprowadzał odzyskiwanie serwera lokacji i programu SQL Server. Skojarzone klucze są wymagane podczas ustawiania poniższej wartości dla **ServerRecoveryOptions** ustawienia:  
 
-        -   Wartość = 1: Istnieje możliwość określenia wartości **SiteServerBackupLocation** klawisz, aby odzyskiwać lokację przy użyciu kopii zapasowej lokacji. Jeżeli nie określisz wartości, lokacja zostanie ponownie zainstalowana bez przywracania jej z zestawu kopii zapasowych.  
+        -   Wartość = 1: Użytkownik może określić wartość dla **SiteServerBackupLocation** klawisz, aby odzyskiwać lokację przy użyciu kopii zapasowej lokacji. Jeżeli nie określisz wartości, lokacja zostanie ponownie zainstalowana bez przywracania jej z zestawu kopii zapasowych.  
 
-        -   Wartość = 2: Istnieje możliwość określenia wartości **SiteServerBackupLocation** klawisz, aby odzyskiwać lokację przy użyciu kopii zapasowej lokacji. Jeżeli nie określisz wartości, lokacja zostanie ponownie zainstalowana bez przywracania jej z zestawu kopii zapasowych.  
+        -   Wartość = 2: Użytkownik może określić wartość dla **SiteServerBackupLocation** klawisz, aby odzyskiwać lokację przy użyciu kopii zapasowej lokacji. Jeżeli nie określisz wartości, lokacja zostanie ponownie zainstalowana bez przywracania jej z zestawu kopii zapasowych.  
 
         -   Wartość = 4: Klucz **BackupLocation** jest wymagany w przypadku skonfigurowania dla klucza **DatabaseRecoveryOptions** wartości **10** , która umożliwia przywracanie bazy danych lokacji z kopii zapasowej.  
 
@@ -787,25 +785,25 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** <*nazwa FQDN lokacji odniesienia*>  
 
-    -   **Szczegóły:** Określa lokację główną odniesienia do odzyskiwania danych globalnych, jeśli kopia zapasowa bazy danych jest starsza od okresu przechowywania śledzenia zmian lub w przypadku odzyskiwania lokacji bez kopii zapasowej używany w witrynie Administracja centralna.  
+    -   **Szczegóły:** Określa lokację główną odniesienia używaną przez centralną lokację administracyjną do odzyskiwania danych globalnych, jeśli kopia zapasowa bazy danych jest starsza od okresu przechowywania śledzenia zmian lub w przypadku odzyskiwania lokacji bez kopii zapasowej.  
 
-         Jeśli nie określisz lokacji odniesienia, a kopia zapasowa jest starsza od okresu przechowywania śledzenia zmian, wszystkie lokacje główne zostaną zainicjowane ponownie przy użyciu danych przywróconych z centralnej lokacji administracyjnej.  
+         Jeśli nie określisz lokacji odniesienia i tworzenia kopii zapasowej jest starsza od okresu przechowywania śledzenia zmian, wszystkie lokacje główne zostaną zainicjowane ponownie przy użyciu danych przywróconych z centralnej lokacji administracyjnej.  
 
-         Gdy nie zostanie określona lokacja odniesienia i kopia zapasowa będzie okresu przechowywania śledzenia zmian, tylko zmiany wprowadzone po kopii zapasowej są replikowane z lokacji głównych. W przypadku wystąpienia konfliktu między zmianami z różnych lokacji głównych centralna lokacja administracyjna użyje danych otrzymanych w pierwszej kolejności.  
+         Jeśli nie zostanie określona lokacja odniesienia i kopia zapasowa pochodzi okresu przechowywania śledzenia zmian, tylko zmiany wprowadzone po kopii zapasowej są replikowane w lokacjach głównych. W przypadku wystąpienia konfliktu między zmianami z różnych lokacji głównych centralna lokacja administracyjna użyje danych otrzymanych w pierwszej kolejności.  
 
 -   **Nazwa klucza:** SiteServerBackupLocation  
 
     -   **Wymagane:** Nie  
 
-    -   **Wartości:** <*ścieżkę do zestawu kopii zapasowych serwera lokacji*>  
+    -   **Wartości:** <*ścieżka do zestawu kopii zapasowych serwera lokacji*>  
 
     -   **Szczegóły:** Określa ścieżkę do zestawu kopii zapasowych serwera lokacji. Ten klucz jest opcjonalny, gdy ustawienie **ServerRecoveryOptions** ma wartość **1** lub **2**. Określ wartość dla klucza **SiteServerBackupLocation** , aby odzyskiwać lokację przy użyciu kopii zapasowej lokacji. Jeżeli nie określisz wartości, lokacja zostanie ponownie zainstalowana bez przywracania jej z zestawu kopii zapasowych.  
 
 -   **Nazwa klucza:** BackupLocation  
 
-    -   **Wymagane:** Ten klucz jest wymagany podczas konfigurowania wartość **1** lub **4** dla **ServerRecoveryOptions** klucz i skonfiguruj wartość **10** dla **DatabaseRecoveryOptions** klucza.  
+    -   **Wymagane:** Ten klucz jest wymagany w przypadku skonfigurowania wartości **1** lub **4** dla **ServerRecoveryOptions** klucza i skonfigurować wartość **10** dla **DatabaseRecoveryOptions** klucza.  
 
-    -   **Wartości:** <*ścieżkę do zestawu kopii zapasowych bazy danych lokacji*>  
+    -   **Wartości:** <*ścieżka do zestawu kopii zapasowych bazy danych lokacji*>  
 
     -   **Szczegóły:** Określa ścieżkę do zestawu kopii zapasowych bazy danych lokacji.  
 
@@ -817,7 +815,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** <*xxxxx-xxxxx-xxxxx-xxxxx-xxxxx*> *lub* Eval  
 
-    -   **Szczegóły:** Określa klucz produktu instalacji programu Configuration Manager, wraz z kreskami. Wprowadź **Eval** zainstalować wersję ewaluacyjną programu Configuration Manager.  
+    -   **Szczegóły:** Określa klucz produktu instalacji programu Configuration Manager, wraz z kreskami. Wprowadź **Eval** Aby zainstalować wersję ewaluacyjną programu Configuration Manager.  
 
 -   **Nazwa klucza:** Kod lokacji  
 
@@ -839,7 +837,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wymagane:** Tak  
 
-    -   **Wartości:** <*ścieżkę instalacji programu Configuration Manager*>  
+    -   **Wartości:** <*ścieżki instalacji programu Configuration Manager*>  
 
     -   **Szczegóły:** Określa folder instalacji plików programu Configuration Manager.  
 
@@ -849,7 +847,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** <*dostawcy programu SMS w pełni kwalifikowaną nazwę domeny*>  
 
-    -   **Szczegóły:** Określa nazwę FQDN serwera, który będzie hostem dostawcy programu SMS. Należy określić serwer, który hostował dostawcę programu SMS przed awarią.  
+    -   **Szczegóły:** Określa nazwę FQDN serwera, który będzie hostował dostawcę programu SMS. Należy określić serwer, który hostował dostawcę programu SMS przed awarią.  
 
          Po instalacji początkowej możesz skonfigurować dodatkowych dostawców programu SMS dla lokacji. Aby uzyskać więcej informacji na temat dostawcy programu SMS, zobacz [planowanie dostawcy programu SMS dla programu System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
 
@@ -869,7 +867,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wymagane:** Tak  
 
-    -   **Wartości:** <*ścieżkę do plików wymagań wstępnych instalacji*>  
+    -   **Wartości:** <*ścieżkę do plików wymagań wstępnych Instalatora*>  
 
     -   **Szczegóły:** Określa ścieżkę do plików wymagań wstępnych Instalatora. W zależności od wartości **PrerequisiteComp** Instalator używa tej ścieżki do przechowywania pobranych plików lub lokalizowania wcześniej pobranych plików.  
 
@@ -881,9 +879,9 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
          0 = nie instaluj  
 
-         1 = instalacji  
+         1 = install  
 
-    -   **Szczegóły:** Określa, czy należy zainstalować konsolę programu Configuration Manager.  
+    -   **Szczegóły:** Określa, czy instalować konsolę programu Configuration Manager.  
 
 -   **Nazwa klucza:** JoinCEIP  
 
@@ -895,7 +893,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
          1 = sprzężenia  
 
-    -   **Szczegóły:** Określa, czy dołączyć do programu CEIP.  
+    -   **Szczegóły:** Określa, czy do dołączenia do programu CEIP.  
 
 **SQLConfigOptions**  
 
@@ -924,23 +922,23 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** <*numer portu SSB*>  
 
-    -   **Szczegóły:** Określa port SSB, który używa programu SQL Server. SSB zazwyczaj jest skonfigurowany do używania portu TCP 4022. Należy określić ten sam port SBB, który był używany przed awarią.  
+    -   **Szczegóły:** Określa port SBB, który używa programu SQL Server. SSB jest zazwyczaj skonfigurowany do używania portu TCP 4022. Należy określić ten sam port SBB, który był używany przed awarią.  
 
 -   **Nazwa klucza:** SQLDataFilePath  
 
     -   **Wymagane:** Nie  
 
-    -   **Wartości:** <*ścieżkę do pliku MDB bazy danych*>  
+    -   **Wartości:** <*ścieżka do pliku MDB bazy danych*>  
 
-    -   **Szczegóły:** Określa alternatywną lokalizację do utworzenia pliku MDB bazy danych.  
+    -   **Szczegóły:** Określa alternatywną lokalizację, aby utworzyć plik mdb bazy danych.  
 
 -   **Nazwa klucza:** SQLLogFilePath  
 
     -   **Wymagane:** Nie  
 
-    -   **Wartości:** <*ścieżkę do pliku .ldf bazy danych*>  
+    -   **Wartości:** <*ścieżka do pliku ldf bazy danych*>  
 
-    -   **Szczegóły:** Określa alternatywną lokalizację do utworzenia pliku .ldf bazy danych.  
+    -   **Szczegóły:** Określa alternatywną lokalizację, aby utworzyć plik ldf bazy danych.  
 
 **CloudConnectorOptions**  
 
@@ -952,33 +950,33 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
          0 = nie instaluj  
 
-         1 = instalacji  
+         1 = install  
 
     -   **Szczegóły:** Określa, czy zainstalować punktu połączenia usługi w tej lokacji. Ponieważ punktu połączenia usługi można zainstalować tylko w lokacji najwyższego poziomu w hierarchii, ta wartość musi być **0** dla podrzędnej lokacji głównej.  
 
 -   **Nazwa klucza:** CloudConnectorServer  
 
-    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równe 1  
+    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równa 1  
 
     -   **Wartości:** <*nazwa FQDN serwera punktu połączenia usługi*>  
 
-    -   **Szczegóły:** Określa nazwę FQDN serwera obsługującego rolę systemu lokacji punktu połączenia usługi.  
+    -   **Szczegóły:** Określa nazwę FQDN serwera, który będzie hostem roli systemu lokacji punktu połączenia usługi.  
 
 -   **Nazwa klucza:** UseProxy  
 
-    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równe 1  
+    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równa 1  
 
     -   **Wartości:** 0 lub 1  
 
          0 = nie instaluj  
 
-         1 = instalacji  
+         1 = install  
 
     -   **Szczegóły:** Określa, czy punkt połączenia usługi będzie używać serwera proxy.  
 
 -   **Nazwa klucza:** ProxyName  
 
-    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równe 1  
+    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równa 1  
 
     -   **Wartości:** <*nazwa FQDN serwera Proxy*>  
 
@@ -986,14 +984,14 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
 -   **Nazwa klucza:** ProxyPort  
 
-    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równe 1  
+    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równa 1  
 
     -   **Wartości:** <*numer portu*>  
 
-    -   **Szczegóły:** Określa numer portu używany do portu serwera proxy.  
+    -   **Szczegóły:** Określa numer portu na potrzeby port serwera proxy.  
 
-### <a name="unattended-recovery-for-a-primary-site"></a>Nienadzorowane odzyskiwanie lokacji głównej  
- Następujące szczegóły umożliwia odzyskiwanie lokacji głównej przy użyciu pliku instalacji nienadzorowanej.  
+### <a name="unattended-recovery-for-a-primary-site"></a>Odzyskiwanie nienadzorowane lokacji głównej  
+ Użyj poniższe szczegóły służą do odzyskiwania lokacji głównej przy użyciu pliku skryptu instalacji nienadzorowanej.  
 
 **Identyfikacja**  
 
@@ -1009,9 +1007,9 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wymagane:** Tak — tylko w przypadku używania nośnika z dysku CD. Najnowszy folder.    
 
-    -   **Wartości:** 1 wartości innej niż 1 jest uważany za nie można przy użyciu dysku CD. Najnowsze.
+    -   **Wartości:** 1 wartości innej niż 1 jest uważana za nie można przy użyciu dysku CD. Najnowsze.
 
-    -   **Szczegóły:** Skrypt musi zawierać ten klucz i wartość po uruchomieniu Instalatora z nośnika na dysku CD. Najnowsze folderu na potrzeby instalowania lokacji głównej lub centralnej administracji lub odzyskiwania lokacji głównej lub centralnej administracji. Ta wartość informuje Instalatora że nośnik tworzą dysku CD. R jest używany.    
+    -   **Szczegóły:** Skrypt musi zawierać ten klucz i wartość po uruchomieniu Instalatora z nośnika na dysku CD. Najnowszy folder na potrzeby instalowania lokacji głównej lub centralnej administracji lub lokacji głównej lub centralnej administracji odzyskiwania. Ta wartość informuje Instalatora czy multimediów tworzą dysku CD. Jest używana najnowsza.    
 
 **RecoveryOptions**  
 
@@ -1027,11 +1025,11 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
          4 = odzyskiwanie tylko programu SQL Server.  
 
-    -   **Szczegóły:** Określa, czy Instalator będzie przeprowadzał odzyskiwanie serwera lokacji i programu SQL Server. Skojarzone klucze są wymagane podczas ustawiania poniższej wartości dla **ServerRecoveryOptions** ustawienie:  
+    -   **Szczegóły:** Określa, czy Instalator będzie przeprowadzał odzyskiwanie serwera lokacji i programu SQL Server. Skojarzone klucze są wymagane podczas ustawiania poniższej wartości dla **ServerRecoveryOptions** ustawienia:  
 
-        -   Wartość = 1: Istnieje możliwość określenia wartości **SiteServerBackupLocation** klawisz, aby odzyskiwać lokację przy użyciu kopii zapasowej lokacji. Jeżeli nie określisz wartości, lokacja zostanie ponownie zainstalowana bez przywracania jej z zestawu kopii zapasowych.  
+        -   Wartość = 1: Użytkownik może określić wartość dla **SiteServerBackupLocation** klawisz, aby odzyskiwać lokację przy użyciu kopii zapasowej lokacji. Jeżeli nie określisz wartości, lokacja zostanie ponownie zainstalowana bez przywracania jej z zestawu kopii zapasowych.  
 
-        -   Wartość = 2: Istnieje możliwość określenia wartości **SiteServerBackupLocation** klawisz, aby odzyskiwać lokację przy użyciu kopii zapasowej lokacji. Jeżeli nie określisz wartości, lokacja zostanie ponownie zainstalowana bez przywracania jej z zestawu kopii zapasowych.  
+        -   Wartość = 2: Użytkownik może określić wartość dla **SiteServerBackupLocation** klawisz, aby odzyskiwać lokację przy użyciu kopii zapasowej lokacji. Jeżeli nie określisz wartości, lokacja zostanie ponownie zainstalowana bez przywracania jej z zestawu kopii zapasowych.  
 
         -   Wartość = 4: Klucz **BackupLocation** jest wymagany w przypadku skonfigurowania dla klucza **DatabaseRecoveryOptions** wartości **10** , która umożliwia przywracanie bazy danych lokacji z kopii zapasowej.  
 
@@ -1055,7 +1053,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wymagane:** Nie  
 
-    -   **Wartości:** <*ścieżkę do zestawu kopii zapasowych serwera lokacji*>  
+    -   **Wartości:** <*ścieżka do zestawu kopii zapasowych serwera lokacji*>  
 
     -   **Szczegóły:**  
 
@@ -1063,9 +1061,9 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
 -   **Nazwa klucza:** BackupLocation  
 
-    -   **Wymagane:** Ten klucz jest wymagany podczas konfigurowania wartość **1** lub **4** dla **ServerRecoveryOptions** , a wartość **10** dla **DatabaseRecoveryOptions** klucza.  
+    -   **Wymagane:** Ten klucz jest wymagany w przypadku skonfigurowania wartości **1** lub **4** dla **ServerRecoveryOptions** klucza i wartości **10** dla **DatabaseRecoveryOptions** klucza.  
 
-    -   **Wartości:** <*ścieżkę do zestawu kopii zapasowych bazy danych lokacji*>  
+    -   **Wartości:** <*ścieżka do zestawu kopii zapasowych bazy danych lokacji*>  
 
     -   **Szczegóły:** Określa ścieżkę do zestawu kopii zapasowych bazy danych lokacji.  
 
@@ -1077,7 +1075,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** *xxxxx-xxxxx-xxxxx-xxxxx-xxxxx* lub *Eval*  
 
-    -   **Szczegóły:** Określa klucz produktu instalacji programu Configuration Manager, wraz z kreskami. Wprowadź **Eval** zainstalować wersję ewaluacyjną programu Configuration Manager.  
+    -   **Szczegóły:** Określa klucz produktu instalacji programu Configuration Manager, wraz z kreskami. Wprowadź **Eval** Aby zainstalować wersję ewaluacyjną programu Configuration Manager.  
 
 -   **Nazwa klucza:** Kod lokacji  
 
@@ -1099,7 +1097,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wymagane:** Tak  
 
-    -   **Wartości:** <*ścieżkę instalacji programu Configuration Manager*>  
+    -   **Wartości:** <*ścieżki instalacji programu Configuration Manager*>  
 
     -   **Szczegóły:** Określa folder instalacji plików programu Configuration Manager.  
 
@@ -1109,7 +1107,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** <*dostawcy programu SMS w pełni kwalifikowaną nazwę domeny*>  
 
-    -   **Szczegóły:** Określa nazwę FQDN serwera, który będzie hostem dostawcy programu SMS. Należy określić serwer, który hostował dostawcę programu SMS przed awarią. Po instalacji początkowej możesz skonfigurować dodatkowych dostawców programu SMS dla lokacji. Aby uzyskać więcej informacji na temat dostawcy programu SMS, zobacz [planowanie dostawcy programu SMS dla programu System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
+    -   **Szczegóły:** Określa nazwę FQDN serwera, który będzie hostował dostawcę programu SMS. Należy określić serwer, który hostował dostawcę programu SMS przed awarią. Po instalacji początkowej możesz skonfigurować dodatkowych dostawców programu SMS dla lokacji. Aby uzyskać więcej informacji na temat dostawcy programu SMS, zobacz [planowanie dostawcy programu SMS dla programu System Center Configuration Manager](../../../../core/plan-design/hierarchy/plan-for-the-sms-provider.md).  
 
 -   **Nazwa klucza:** PrerequisiteComp  
 
@@ -1127,7 +1125,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wymagane:** Tak  
 
-    -   **Wartości:** <*ścieżkę do plików wymagań wstępnych instalacji*>  
+    -   **Wartości:** <*ścieżkę do plików wymagań wstępnych Instalatora*>  
 
     -   **Szczegóły:** Określa ścieżkę do plików wymagań wstępnych Instalatora. W zależności od wartości **PrerequisiteComp** Instalator używa tej ścieżki do przechowywania pobranych plików lub lokalizowania wcześniej pobranych plików.  
 
@@ -1139,9 +1137,9 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
          0 = nie instaluj  
 
-         1 = instalacji  
+         1 = install  
 
-    -   **Szczegóły:** Określa, czy należy zainstalować konsolę programu Configuration Manager.  
+    -   **Szczegóły:** Określa, czy instalować konsolę programu Configuration Manager.  
 
 -   **Nazwa klucza:** JoinCEIP  
 
@@ -1153,7 +1151,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
          1 = sprzężenia  
 
-    -   **Szczegóły:** Określa, czy dołączyć do programu CEIP.  
+    -   **Szczegóły:** Określa, czy do dołączenia do programu CEIP.  
 
 **SQLConfigOptions**  
 
@@ -1184,33 +1182,33 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** <*numer portu SSB*>  
 
-    -   **Szczegóły:** Określa port SSB, który używa programu SQL Server. Zazwyczaj port SSB jest skonfigurowany do używania portu TCP 4022. Należy określić ten sam port SBB, który był używany przed awarią.  
+    -   **Szczegóły:** Określa port SBB, który używa programu SQL Server. Zazwyczaj SSB jest skonfigurowana do używania portu TCP 4022. Należy określić ten sam port SBB, który był używany przed awarią.  
 
 -   **Nazwa klucza:** SQLDataFilePath  
 
     -   **Wymagane:** Nie  
 
-    -   **Wartości:** <*ścieżkę do pliku MDB bazy danych*>  
+    -   **Wartości:** <*ścieżka do pliku MDB bazy danych*>  
 
-    -   **Szczegóły:** Określa alternatywną lokalizację do utworzenia pliku MDB bazy danych.  
+    -   **Szczegóły:** Określa alternatywną lokalizację, aby utworzyć plik mdb bazy danych.  
 
 -   **Nazwa klucza:** SQLLogFilePath  
 
     -   **Wymagane:** Nie  
 
-    -   **Wartości:** <*ścieżkę do pliku .ldf bazy danych*>  
+    -   **Wartości:** <*ścieżka do pliku ldf bazy danych*>  
 
-    -   **Szczegóły:** Określa alternatywną lokalizację do utworzenia pliku .ldf bazy danych.  
+    -   **Szczegóły:** Określa alternatywną lokalizację, aby utworzyć plik ldf bazy danych.  
 
 **HierarchyExpansionOptions**  
 
 -   **Nazwa klucza:** CCARSiteServer  
 
-    -   **Wymagane:** Zobacz szczegóły.  
+    -   **Wymagane:** Zobacz szczegółowe informacje.  
 
-    -   **Wartości:** <*kod dla witryny administracji centralnej lokacji*>  
+    -   **Wartości:** <*kod centralnej lokacji administracyjnej lokacji*>  
 
-    -   **Szczegóły:** Określa lokację administracji centralnej, z którym połączy się lokacja główna po dołączeniu hierarchii programu Configuration Manager. To ustawienie jest wymagane, jeśli lokacja główna była połączona z centralną lokacją administracyjną przed awarią. Należy określić kod lokacji używany w odniesieniu do centralnej lokacji administracyjnej przed awarią.  
+    -   **Szczegóły:** Określa lokację administracji centralnej, z którą połączy się lokacja główna po dołączeniu do hierarchii programu Configuration Manager. To ustawienie jest wymagane, jeśli lokacja główna była połączona z centralną lokacją administracyjną przed awarią. Należy określić kod lokacji używany w odniesieniu do centralnej lokacji administracyjnej przed awarią.  
 
 -   **Nazwa klucza:** CASRetryInterval  
 
@@ -1218,7 +1216,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** <*Interval*>  
 
-    -   **Szczegóły:** Określa interwał ponawiania prób (w minutach) prób połączenia z witryną Administracja centralna, po niepowodzeniu. Na przykład, jeśli połączenie z centralnej lokacji administracyjnej nie powiedzie się, lokacji głównej czeka liczbę minut, które określisz dla **CASRetryInterval** wartości i podejmuje próbę połączenia.  
+    -   **Szczegóły:** Określa interwał ponawiania prób (w minutach) prób połączenia z lokacją administracji centralnej po niepowodzeniu. Na przykład, jeśli nie może nawiązać połączenia z lokacją administracji centralnej, lokacji głównej czeka liczbę minut, które określają dla **CASRetryInterval** wartość, a następnie próbuje ponownie nawiązać połączenie.  
 
 -   **Nazwa klucza:** WaitForCASTimeout  
 
@@ -1226,7 +1224,7 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
     -   **Wartości:** <*Timeout*>  
 
-    -   **Szczegóły:** Określa maksymalną wartość limitu czasu (w minutach) dla lokacji głównej połączyć się z witryną Administracja centralna. Na przykład, jeśli lokacji głównej nie może połączyć się z witryną Administracja centralna, lokacja główna ponowi próbę połączenia witryny administracji centralnej, na podstawie **CASRetryInterval** wartości do **WaitForCASTimeout** czasu. Można określić wartość **0** do **100**.  
+    -   **Szczegóły:** Określa maksymalną wartość limitu czasu (w minutach) dla lokacji głównej połączyć się z witryną Administracja centralna. Na przykład, jeśli w lokacji głównej nie może połączyć się z centralną lokacją administracyjną, lokacja główna ponowi próbę połączenia centralnej lokacji administracyjnej na podstawie **CASRetryInterval** wartości do **WaitForCASTimeout** upływem czasu. Można określić wartość **0** do **100**.  
 
 **CloudConnectorOptions**  
 
@@ -1238,33 +1236,33 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
          0 = nie instaluj  
 
-         1 = instalacji  
+         1 = install  
 
     -   **Szczegóły:** Określa, czy zainstalować punktu połączenia usługi w tej lokacji. Ponieważ punktu połączenia usługi można zainstalować tylko w lokacji najwyższego poziomu w hierarchii, ta wartość musi być **0** dla podrzędnej lokacji głównej.  
 
 -   **Nazwa klucza:** CloudConnectorServer  
 
-    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równe 1  
+    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równa 1  
 
     -   **Wartości:** <*nazwa FQDN serwera punktu połączenia usługi*>  
 
-    -   **Szczegóły:** Określa nazwę FQDN serwera obsługującego rolę systemu lokacji punktu połączenia usługi.  
+    -   **Szczegóły:** Określa nazwę FQDN serwera, który będzie hostem roli systemu lokacji punktu połączenia usługi.  
 
 -   **Nazwa klucza:** UseProxy  
 
-    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równe 1  
+    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równa 1  
 
     -   **Wartości:** 0 lub 1  
 
          0 = nie instaluj  
 
-         1 = instalacji  
+         1 = install  
 
     -   **Szczegóły:** Określa, czy punkt połączenia usługi będzie używać serwera proxy.  
 
 -   **Nazwa klucza:** ProxyName  
 
-    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równe 1  
+    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równa 1  
 
     -   **Wartości:** <*nazwa FQDN serwera Proxy*>  
 
@@ -1272,9 +1270,8 @@ Następujące informacje należy zainstalować lokacji głównej przy użyciu pl
 
 -   **Nazwa klucza:** ProxyPort  
 
-    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równe 1  
+    -   **Wymagane:** Wymagany, gdy **CloudConnector** jest równa 1  
 
     -   **Wartości:** <*numer portu*>  
 
-    -   **Szczegóły:** Określa numer portu używany do portu serwera proxy.  
-
+    -   **Szczegóły:** Określa numer portu na potrzeby port serwera proxy.  

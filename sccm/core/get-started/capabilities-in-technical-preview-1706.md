@@ -1,6 +1,6 @@
 ---
-title: "Pré-visualização técnica 1706 | Microsoft Docs"
-description: "Saiba mais sobre as funcionalidades disponíveis na versão de pré-visualização técnica 1706 para o System Center Configuration Manager."
+title: Technical Preview 1706 | Dokumentacja firmy Microsoft
+description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview 1706 programu System Center Configuration Manager."
 ms.custom: na
 ms.date: 06/30/2017
 ms.prod: configuration-manager
@@ -16,14 +16,14 @@ manager: angrobe
 ms.openlocfilehash: d45f504dfe0a4c7852b0e2c8ff60d54005346c02
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pt-PT
+ms.contentlocale: pl-PL
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="capabilities-in-technical-preview-1706-for-system-center-configuration-manager"></a>Funcionalidades no Technical Preview 1706 do System Center Configuration Manager
+# <a name="capabilities-in-technical-preview-1706-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1706 programu System Center Configuration Manager
 
-*Aplica-se a: O System Center Configuration Manager (Technical Preview)*
+*Dotyczy: System Center Configuration Manager (wersja zapoznawcza Technical Preview)*
 
-Este artigo apresenta as funcionalidades que estão disponíveis no Technical Preview do System Center Configuration Manager, versão 1706. Pode instalar esta versão para atualizar e adicionar novas capacidades ao seu local de pré-visualização técnica do Configuration Manager. Antes de instalar esta versão do technical preview, reveja [pré-visualização técnica do System Center Configuration Manager](../../core/get-started/technical-preview.md) para se familiarizar com os requisitos gerais e limitações para utilizar como uma pré-visualização técnica, ao atualizar entre versões e como fornecer comentários sobre as funcionalidades de um technical preview.     
+W tym artykule przedstawiono funkcje, które są dostępne w wersji Technical Preview programu System Center Configuration Manager, wersja 1706. Można zainstalować tę wersję, aby zaktualizować i dodać nowe funkcje do lokacji programu Configuration Manager technical preview. Przed zainstalowaniem tej wersji technical Preview, przejrzyj [Technical Preview programu System Center Configuration Manager](../../core/get-started/technical-preview.md) zapoznać się z ogólne wymagania i ograniczenia dotyczące używania wersji technical preview, jak zaktualizować między wersjami i sposobu wyrazić swoją opinię na temat funkcji w wersji technical preview.     
 
 
 <!--  Known Issues Template   
@@ -31,17 +31,17 @@ Este artigo apresenta as funcionalidades que estão disponíveis no Technical Pr
 -   **Issue Name**. Details
     Workaround details.
 -->
-**Problemas conhecidos neste Technical Preview:**
+**Znane problemy w tej wersji Technical Preview:**
 
--   **Move o ponto de distribuição** -não não possível utilizar as opções na consola para mover um ponto de distribuição entre sites com esta versão devido ao limite de pré-visualização técnica de um único site primário.
+-   **Przenieś punkt dystrybucji** — nie można użyć opcji w konsoli, aby przenieść punkt dystrybucji między lokacjami w tej wersji z powodu ograniczenia wersji zapoznawczej technical preview z jednej lokacji głównej.
 
--   **As definições de compatibilidade do dispositivo** -podem ocorrer comportamento oposto ao utilizar as duas das novas definições de conformidade do dispositivo:
-    - **Bloquear a depuração USB no dispositivo**
-    - **Impedir as aplicações de origens desconhecidas**
+-   **Ustawienia zgodności urządzeń** -przeciwną zachowanie mogą wystąpić przy użyciu dwa nowe ustawienia zgodności urządzeń:
+    - **Blokuj debugowanie USB na urządzeniu**
+    - **Blokuj aplikacji z nieznanych źródeł**
 
-        Por exemplo, se definir admins **depuração USB de bloco no dispositivo** para **verdadeiro**, todos os dispositivos que não têm a depuração de USB ativada são marcados como não conformes.
+        Na przykład, jeśli ustawiona Administratorzy **debugowanie USB bloku na urządzeniu** do **true**, wszystkie urządzenia, które nie mają włączonej obsługi debugowania USB są oznaczone jako niezgodne.
 
-**Seguem-se novas funcionalidades que pode experimentar com esta versão.**  
+**Poniżej przedstawiono nowe funkcje, które można wypróbować z tą wersją.**  
 
 <!--  Rough Section Template
 ##  FEATURE
@@ -53,530 +53,530 @@ Este artigo apresenta as funcionalidades que estão disponíveis no Technical Pr
  -  Task 2              
 -->
 
-## <a name="improved-boundary-groups-for-software-update-points"></a>Grupos de limites melhorada para pontos de atualização de software
+## <a name="improved-boundary-groups-for-software-update-points"></a>Grupy granic ulepszone dla punktów aktualizacji oprogramowania
 <!-- 1324591 -->
-Esta versão inclui melhoramentos para como funcionam os pontos de atualização de software com grupos de limites. O seguinte resume o novo comportamento de contingência:
--   Agora, a contingência para pontos de atualização de software utiliza um período de tempo configurável para contingência aos grupos de limites de vizinho, com um tempo mínimo de 120 minutos.
+Ta wersja zawiera ulepszenia działania punktów aktualizacji oprogramowania z grupy granic. Poniżej przedstawiono podsumowanie nowe działanie rezerwowe:
+-   Używane dla punktów aktualizacji oprogramowania używa teraz można skonfigurować czas powrotu do grup granic sąsiada, minimalny czas 120 minut.
 
--   Independentemente da configuração de contingência, um cliente tenta contactar o último ponto de atualização de software que é utilizado para 120 minutos. Após a conseguir aceder esse servidor para 120 minutos, o cliente procurará em seguida o conjunto de pontos de atualização de software disponíveis, para que possa encontrar um novo.
+-   Niezależne od konfiguracji rezerwowej, klient próbuje osiągnąć ostatniego punktu aktualizacji oprogramowania używanych przez 120 minut. Po nieudanym do tego serwera na 120 minut, klient sprawdzi puli punktów aktualizacji oprogramowania, aby umożliwić znalezienie nowy.
 
-  -   Todos os pontos de atualização de software no grupo de limites atual do cliente são adicionados ao agrupamento do cliente imediatamente.
+  -   Wszystkie punkty aktualizacji oprogramowania w bieżącej grupie granic klienta są dodawane do puli klienta natychmiast.
 
-  -   Porque um cliente tenta utilizar o respetivo servidor original para 120 minutos antes de pesquisa um novo, não existem servidores adicionais são contactados até depois de ter decorrido duas horas.
+  -   Ponieważ klient próbuje użyć oryginalnego serwera na 120 minut przed znalezienia nowy, żadne dodatkowe serwery kontaktować się ze dopiero po upływie dwóch godzin.
 
-  -   Se a contingência para um grupo de elementos vizinhos está configurada para o mínimo de 120 minutos, pontos de atualização de software desse grupo de limites de vizinho fará parte do conjunto do cliente de servidores disponíveis.
+  -   Jeśli powrotu do grupy sąsiada jest skonfigurowana co najmniej 120 minut, punkty aktualizacji oprogramowania z tej grupy granic sąsiada będzie częścią puli klienta dostępnych serwerów.
 
--   Depois de conseguir contactar o respetivo servidor original de duas horas, o cliente muda para um ciclo mais curto para contactar um ponto de atualização de software novo.
+-   Po awarii do oryginalnego serwera przez 2 godziny, klient przełącza się do krótszej cykl w celu kontaktowania się nowego punktu aktualizacji oprogramowania.
 
-    Isto significa que o se um cliente não conseguir estabelecer ligação com um novo servidor, rapidamente seleciona o servidor seguinte do seu agrupamento de servidores disponíveis e tentará entrar em contacto de um.
+    Oznacza to, jeśli klient nie może nawiązać połączenia z nowym serwerze, szybko wybiera kolejny serwer z puli serwerów dostępnych i próbuje skontaktować się z co.
 
-  -   Este ciclo continua até o cliente se liga a um software que pode utilizar de ponto de atualização.
-  -   Até que o cliente localiza um ponto de atualização de software, servidores adicionais são adicionados ao agrupamento de servidores disponíveis quando o tempo de contingência para cada grupo de limites de vizinho for satisfeito.
+  -   Ten cykl będzie wykonywany do momentu klient łączy się oprogramowania może użyć punktu aktualizacji.
+  -   Dopóki klient znajdzie punkt aktualizacji oprogramowania, dodatkowe serwery są dodawane do puli serwerów dostępnych po spełnieniu rezerwowy czasu dla każdej grupy granic sąsiedniego.
 
-Para obter mais informações, consulte [pontos de atualização de software](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points) o tópico de grupos de limites para o ramo atual.
+Aby uzyskać więcej informacji, zobacz [punktów aktualizacji oprogramowania](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points) w temacie grup granic dla bieżącej gałęzi.
 
 
-## <a name="site-server-role-high-availability"></a>Disponibilidade elevada de função do servidor de site
+## <a name="site-server-role-high-availability"></a>Wysoką dostępność roli serwera lokacji
 <!-- 1128774 -->
-Elevada disponibilidade para a função de servidor do site é uma solução de baseado no Gestor de configuração para instalar um servidor de site primário adicional no *passivo* modo. O servidor de site de modo passivo Ademais é ao seu servidor de site primário existente que está a ser *Active Directory* modo. Um servidor de site de modo passivo está disponível para utilização imediata, quando necessário.
+Wysoka dostępność dla roli serwera lokacji jest rozwiązania na podstawie programu Configuration Manager do zainstalowania serwera lokacji głównej w *pasywnym* tryb. Serwer lokacji w trybie pasywnym jest dodatkowo do istniejącego serwera lokacji głównej w *Active* tryb. W trybie pasywnym serwera lokacji jest dostępna do użycia, w razie potrzeby.
 
-Um servidor de site primário em modo passivo:
--   Utiliza a mesma base de dados do site como o servidor do site do Active Directory.
--   Recebe uma cópia do site do Active Directory servidores biblioteca de conteúdos, que, em seguida, é guardada sincronizada.
--   Não escrever dados na base de dados do site, desde que está no modo passivo.
--   Não suporta a instalação ou remoção das funções do sistema de sites opcionais, desde que está no modo passivo.
+Serwer lokacji podstawowej w trybie pasywnym:
+-   Używa tej samej bazy danych lokacji, co serwer aktywnej lokacji.
+-   Odbiera kopii aktywnej lokacji serwery biblioteki zawartości, który jest przechowywany następnie zsynchronizowany.
+-   Nie zapisuje dane do bazy danych lokacji, tak długo, jak jest w trybie pasywnym.
+-   Nie obsługuje instalacji lub usunięcia opcjonalne role systemu lokacji tak długo, jak jest w trybie pasywnym.
 
-Para tornar o servidor de site do Active Directory de modo de servidor do site de modo passivo, manualmente promovê-lo. Isto muda o servidor do site do Active Directory para o servidor de site passiva. As funções de sistema de sites que estão disponíveis no servidor original do Active Directory de modo permanecem disponíveis desde que o computador está acessível. Apenas a função de servidor do site é mudada entre o modo de ativo e passivo.
+Aby serwer lokacji w trybie pasywnym aktywny tryb serwera lokacji, należy ręcznie Podwyższ go. Przełącza się na serwer aktywnej lokacji serwer lokacji pasywnych. Role systemu lokacji, które są dostępne na oryginalnym serwerze w trybie aktywnym pozostają dostępne pod warunkiem, że komputer jest dostępny. Rola serwera lokacji przełączania między trybem aktywnych i pasywnych.
 
-Para instalar um servidor de site de modo passivo, utilize o **criar Assistente de servidor de sistema de Site** para configurar um novo servidor de site com um tipo de **servidor do site primário** e um modo de **passivo**. O assistente, em seguida, executa a configuração do Configuration Manager no servidor especificado para instalar o novo servidor de site no modo passivo. Após a instalação estiver concluída, o servidor de site do Active Directory de modo mantém o servidor do site de modo passivo e respetiva biblioteca de conteúdos sincronizadas com as alterações ou as configurações que efetuar ao servidor do site ativa.
+Aby zainstalować serwer lokacji w trybie pasywnym, należy użyć **lokacji Kreator tworzenia serwera systemu** do skonfigurowania nowego serwera lokacji z typem **serwera lokacji głównej** i tryb **pasywnym**. Następnie Kreator uruchamia Instalator programu Configuration Manager na określonym serwerze, aby zainstalować nowy serwer lokacji w trybie pasywnym. Po zakończeniu instalacji serwera lokacji w trybie aktywnym zachowuje w trybie pasywnym serwera lokacji i jej do biblioteki zawartości zsynchronizowane z zmiany lub konfiguracje, które można wprowadzić na serwerze aktywnej lokacji.
 
-### <a name="prerequisites-and-limitations"></a>Pré-requisitos e limitações
--   Um único servidor de sites no modo passivo é suportado em cada site primário.
+### <a name="prerequisites-and-limitations"></a>Wymagania wstępne i ograniczenia
+-   Jednym serwerze lokacji w trybie pasywnym jest obsługiwane w każdej lokacji głównej.
 
--   O servidor do site no modo passivo pode estar no local ou baseado na nuvem no Azure.
+-   Serwer lokacji w trybie pasywnym może być lokalnym lub w chmurze na platformie Azure.
 
--   O modo de Active Directory e a servidores de sites de modo passivo devem estar no mesmo domínio.
+-   Zarówno w trybie aktywnym, jak i serwerów lokacji w trybie pasywnym musi być w tej samej domenie.
 
--   O modo de Active Directory e a servidores de sites de modo passivo tem de utilizar a mesma base de dados, que tem de ser remota dos computadores de cada servidor de site.
+-   Zarówno w trybie aktywnym, jak i serwerów lokacji w trybie pasywnym musi używać tej samej bazy danych lokacji, który musi być zdalnego z komputerów wszystkich serwerów lokacji.
 
-    -   O SQL Server que aloja a base de dados pode utilizar uma instância predefinida, com o nome de instância, o cluster do SQL Server ou o sempre no grupo de disponibilidade.
+    -   SQL Server obsługującym bazę danych można użyć domyślnego wystąpienia o nazwie wystąpienia klastra programu SQL Server i zawsze włączonej grupy dostępności.
 
-    -   O servidor do site no modo passivo está configurado para utilizar a mesma base de dados do site do servidor do site de modo de Active Directory. No entanto, o servidor do site de modo passivo não utiliza a base de dados até depois-é promovido para o modo de Active Directory.
+    -   Aby użyć tej samej bazy danych lokacji jako aktywny tryb serwera lokacji jest skonfigurowany serwer lokacji, w trybie pasywnym. Jednak serwer lokacji w trybie pasywnym nie używa tej bazy danych do czasu po jest podwyższany do aktywnego trybu.
 
--   O computador que irá executar o servidor do site de modo passivo:
+-   Komputer, który zostanie uruchomiony w trybie pasywnym serwera lokacji:
 
-    -   Tem de cumprir os [pré-requisitos para instalar um site primário](https://docs.microsoft.com/en-us/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#primary-sites-and-the-central-administration-site).
+    -   Musi spełniać [wymagania wstępne dotyczące instalowania lokacji głównej](https://docs.microsoft.com/en-us/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#primary-sites-and-the-central-administration-site).
 
-    -   Instala ficheiros de origem que corresponde à versão do servidor do site de Active Directory de modo a utilizar.
+    -   Instaluje przy użyciu plików źródłowych odpowiadających wersji serwera lokacji w trybie aktywnym.
 
-    -   Não pode ter uma função de sistema de sites a partir de qualquer site antes de instalar o site de modo passivo.
+    -   Nie może mieć roli systemu lokacji z dowolnej lokacji przed zainstalowaniem lokacji w trybie pasywnym.
 
--   Os computadores de servidor de sites de modo passivo e Active Directory podem executar sistemas operativos diferentes ou versões de service pack, desde que ambas as permanecem suportadas pela versão do Configuration Manager.
+-   Komputerach serwera lokacji w trybie aktywnym i pasywnym można uruchomić w różnych systemach operacyjnych lub wersji dodatku service pack, tak długo, jak mogą w dalszym ciągu obsługiwany przez używaną wersję programu Configuration Manager.
 
--   O servidor do site de modo passivo para o servidor do Active Directory de modo a promoção é manual. Não há nenhum ativação pós-falha automática.
+-   Podwyższanie poziomu serwera lokacji w trybie pasywnym trybie aktywnym serwerem jest ręcznie. Nie ma żadnych automatycznej pracy awaryjnej.
 
--   Funções do sistema de sites podem ser instaladas apenas no servidor do site que está no modo de Active Directory.
+-   Role systemu lokacji można zainstalować tylko na serwerze lokacji, który jest w trybie aktywnym.
 
-    -   Um servidor de site no modo de Active Directory suporta todas as funções de sistema de sites. Não é possível instalar funções do sistema de sites no servidor quando estiver no modo passivo.
+    -   Serwer lokacji w trybie aktywnym obsługuje wszystkie role systemu lokacji. Nie można zainstalować role systemu lokacji na serwerze, gdy jest on w trybie pasywnym.
 
-    -   Funções de sistema de sites que utilizam uma base de dados (por exemplo, o ponto de Reporting Services) tem de ter a base de dados num servidor remoto do tanto o modo Active Directory e servidores de sites de modo passivo.
+    -   Role systemu lokacji, które używają bazy danych (na przykład punkt raportowania) musi mieć tej bazy danych na serwerze, na którym znajduje się poza zarówno aktywny tryb i serwery lokacji w trybie pasywnym.
 
-    -   O SMS_Provider não instalar no servidor do site no modo passivo. Uma vez que tem de ligar a um SMS_Provider para o site para promover manualmente o servidor do site de modo passivo para o modo de Active Directory, recomendamos [instalar pelo menos uma instância adicional do fornecedor de](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider) num computador adicional.
+    -   Element SMS_Provider nie spowoduje zainstalowania na serwerze lokacji w trybie pasywnym. Należy nawiązać połączenie SMS_Provider witryny na ręczne podwyższenie poziomu serwera lokacji w trybie pasywnym na tryb aktywny, dlatego zaleca się [zainstalowanie co najmniej jednego dodatkowego wystąpienia dostawcy](/sccm/core/plan-design/hierarchy/plan-for-the-sms-provider) na dodatkowych komputerach.
 
-**Problema de conhecido**:   
-Com esta versão, **estado** para as seguintes condições são apresentados na consola do como valores de numérico em vez de texto legível:
--   131071 – falha na instalação do servidor de site
--   720895 – falha na desinstalação de função de servidor site
--   851967 – falha na ativação pós-falha
+**Znany problem**:   
+W tej wersji **stan** dla następujące warunki są wyświetlane w konsoli jako wartości liczbowe zamiast tekstu do odczytu:
+-   131071 — nie można zainstalować serwera lokacji
+-   720895 — Dezinstalacja roli serwera lokacji nie powiodła się
+-   851967 — trybu Failover nie powiodła się.
 
-### <a name="add-a-site-server-in-passive-mode"></a>Adicionar um servidor de site no modo passivo
-1.  Na consola, aceda a **administração** > **configuração do Site** > **Sites** e iniciar o [Adicionar Assistente de funções de sistema de Site](/sccm/core/servers/deploy/configure/install-site-system-roles). Também pode utilizar o **criar Assistente de servidor de sistema de Site**.
+### <a name="add-a-site-server-in-passive-mode"></a>Dodawanie serwera lokacji w trybie pasywnym
+1.  W konsoli przejdź do **administracji** > **konfiguracja lokacji** > **witryny** i uruchomić [lokacji Kreator dodawania ról systemu](/sccm/core/servers/deploy/configure/install-site-system-roles). Można również użyć **lokacji Kreator tworzenia serwera systemu**.
 
-2.  No **geral** página, especifique o servidor que irá alojar o servidor de site de modo passivo. O servidor que especificar não é possível alojar quaisquer funções de sistema de sites antes de instalar um servidor de site no modo passivo.
+2.  Na **ogólne** Określ serwer, który będzie hostować serwer lokacji w trybie pasywnym. Serwer, z którym określisz nie może obsługiwać wszystkie role systemu lokacji, przed zainstalowaniem serwera lokacji w trybie pasywnym.
 
-3.  No **seleção da função do sistema** página, selecione apenas **servidor do site primário em modo passivo**.
+3.  Na **Wybór roli systemu** wybierz tylko **serwera lokacji głównej w trybie pasywnym**.
 
-4.  Para concluir o assistente, tem de fornecer as seguintes informações que são utilizadas para executar a configuração e instalar a função de servidor do site no servidor especificado:
-    -   Optar por copiar os ficheiros de instalação do servidor do site do Active Directory para o novo servidor de site de modo passivo, ou especifique um caminho para uma localização que contém o conteúdo do servidor do site do Active Directory **CD. Mais recente** pasta.
+4.  Aby ukończyć pracę kreatora, należy podać następujące informacje, które służy do uruchamiania Instalatora i zainstaluj rolę serwera lokacji na określonym serwerze:
+    -   Skopiuj pliki instalacyjne z serwera aktywnej lokacji do nowego serwera lokacji w trybie pasywnym, lub określ ścieżkę do lokalizacji, która zawiera zawartość serwera aktywnej lokacji **dysku CD. Najnowsze** folderu.
 
-    -   Especifique o mesmo servidor de base de dados do site e o nome de base de dados como utilizadas pelo servidor de site do Active Directory de modo.
+    -   Określ tego samego serwera bazy danych lokacji i nazwa bazy danych używane przez serwer lokacji w trybie aktywnym.
 
-5.  Em seguida, o Configuration Manager instala o servidor do site no modo passivo no servidor especificado.
+5.  Configuration Manager instaluje serwer lokacji w trybie pasywnym na określonym serwerze.
 
-Para o estado de instalação de detalhado, aceda a **administração** > **configuração do Site** > **Sites**.
--   Apresenta o estado para o servidor de site em modo passivo como **instalar**.
+Stan instalacji szczegółowe, przejdź do **administracji** > **konfiguracja lokacji** > **witryny**.
+-   Wyświetla stan serwera lokacji w trybie pasywnym jako **instalowanie**.
 
--   Selecione o servidor e, em seguida, clique em **Mostrar estado** para abrir **estado de instalação do servidor de Site** para informações mais detalhadas.
-
-
-
-### <a name="promote-the-passive-mode-site-server-to-active-mode"></a>Promover o servidor de site de modo passivo para o modo de Active Directory
-Quando pretender alterar o servidor de site de modo passivo para o modo de Active Directory, fazê-lo do **nós** painel **administração** > **configuração do Site** > **Sites**. Desde que pode aceder a uma instância do SMS_Provider, pode aceder ao site para fazer esta alteração.
-1.  No **nós** painel da consola do Configuration Manager, selecione o servidor do site no modo passivo e, em seguida, a partir do Friso, escolha **promover para ativo**.
-
-2.  O simples **estado** para o servidor que está a promover apresenta na **nós** painel como **promoção**.
-
-3.  Depois de concluída, a promoção de **estado** coluna mostra **OK** para ambas as novas *Active Directory* servidor do site de modo e para o novo *passivo* servidor do site de modo.
-
-4.  No **administração** > **configuração do Site** > **Sites**, o nome do servidor do site primário agora apresenta o nome do novo *Active Directory* servidor do site de modo.
-Para o estado detalhado, aceda a **monitorização** > **estado do servidor de Site**.
-    -   O **modo** coluna identifica que servidor *Active Directory* ou *passivo*.
-
-    -   Ao promover um servidor de modo passivo para o modo de Active Directory, selecione o servidor de site que está a promover ao Active Directory e, em seguida, escolha **Mostrar estado** a partir do Friso. Esta ação abre o **estado de promoção de servidor do Site** janela que apresenta detalhes adicionais sobre o processo.
-
-Quando um servidor de site no modo de Active Directory passa para o modo passivo, apenas a função de sistema de sites é efetuada passiva. Todas as outras funções do sistema de sites que estão instaladas nesse computador permanecem acessíveis para os clientes e Active Directory.
+-   Wybierz serwer, a następnie kliknij przycisk **Pokaż stan** otworzyć **stan instalacji serwera lokacji** więcej szczegółowych informacji.
 
 
-### <a name="daily-monitoring"></a>Diariamente monitorização
-Quando tiver um site primário em modo passivo, monitorize-diárias para garantir que continua a ser sincronizado com o servidor de site do Active Directory de modo e pronto a utilizar. Para fazê-lo, aceda a **monitorização** > **estado do servidor de Site**. Aqui pode ver o modo de Active Directory e a servidores de sites de modo passivo.
 
-O **resumo** separador:
--   O **modo** coluna identifica o servidor está ativo ou passivo.
--   O **estado** listas de coluna **OK** quando o servidor de modo passivo estiver sincronizado com o servidor de modo de Active Directory.
--   Para ver detalhes adicionais sobre o estado da sincronização de conteúdo, clique em **Mostrar estado** do Estado de sincronização de conteúdo. Esta ação abre o separador de biblioteca de conteúdos onde pode tentar para corrigir problemas de sincronização de conteúdo.
+### <a name="promote-the-passive-mode-site-server-to-active-mode"></a>Serwer lokacji w trybie pasywnym na tryb aktywny
+Jeśli chcesz zmienić serwer w trybie pasywnym na tryb aktywny, możesz to zrobić z **węzłów** okienka w **administracji** > **konfiguracja lokacji** > **witryny**. Tak długo, jak można uzyskać dostęp do wystąpienia element SMS_Provider, można uzyskać dostępu do witryny, aby wprowadzić tę zmianę.
+1.  W **węzłów** okienku konsoli programu Configuration Manager, wybierz serwer lokacji w trybie pasywnym, a następnie na Wstążce wybierz **Podnieś poziom aktywny**.
 
-O **biblioteca de conteúdos** separador:
--   Ver o **estado** para conteúdo que sincroniza a partir do servidor de site do Active Directory para o servidor de site de modo passivo.
--   Pode selecionar o conteúdo com um Estado de **falha**e, em seguida, escolha **sincronizar os itens selecionados** a partir do Friso. Esta ação tenta ressincronizar esse conteúdo a partir da origem de conteúdo para o servidor de site de modo passivo. Durante a recuperação, o estado apresentado como **em curso**, e quando é sincronizado, é apresentado como **êxito**.
+2.  Prosty **stan** dla serwera podwyższasz wyświetla w **węzłów** okienko jako **promowanie**.
 
-### <a name="try-it-out"></a>Experimente!
-Experimente concluir as seguintes tarefas e, em seguida, envie-nos **comentários** do **home page** separador do friso para nos informar como correu:
--   Pode instalar um site primário em modo passivo.
--   Posso pode utilizar a consola para promover o servidor de site de modo passivo para tornar o servidor de site do Active Directory de modo e confirmar a alteração do Estado de ambos os servidores de site.
+3.  Po zakończeniu podwyższenia poziomu **stan** przedstawia kolumny **OK** dla obu nowego *Active* tryb serwera lokacji i nowy *pasywnym* tryb serwera lokacji.
+
+4.  W **administracji** > **konfiguracja lokacji** > **witryny**, nazwę serwera lokacji głównej zawiera teraz nazwę nowej *Active* tryb serwera lokacji.
+Aby uzyskać szczegółowe informacje o tym, **monitorowanie** > **stan serwera lokacji**.
+    -   **Tryb** kolumny identyfikuje serwer, który jest *Active* lub *pasywnym*.
+
+    -   Podczas podwyższania poziomu serwera w trybie pasywnym na tryb aktywny, wybierz serwer lokacji, które są podwyższania poziomu aktywny, a następnie wybierz **Pokaż stan** na Wstążce. Spowoduje to otwarcie **stan podwyższania poziomu serwera lokacji** okna dodatkowych szczegółów na temat procesu.
+
+Serwer lokacji w trybie aktywnym przełącza na tryb pasywny, się pasywnym Rola systemu lokacji. Wszystkie inne role systemu lokacji zainstalowanych na tym komputerze pozostają aktywne i dostępne dla klientów.
 
 
-## <a name="include-trust-for-specific-files-and-folders-in-a-device-guard-policy"></a>Incluir confiança para pastas e ficheiros específicos numa política de proteção de dispositivos
+### <a name="daily-monitoring"></a>Codziennie monitorowania
+Jeśli masz lokacji głównej w trybie pasywnym, należy go monitorować codziennie, aby upewnić się, że pozostaje w trybie aktywnym serwera lokacji i gotowe do użycia. Aby to zrobić, przejdź do **monitorowanie** > **stan serwera lokacji**. W tym miejscu można wyświetlić zarówno w trybie aktywnym, jak i serwerów lokacji w trybie pasywnym.
+
+**Podsumowanie** karty:
+-   **Tryb** kolumny identyfikuje serwer, który jest aktywny i pasywne.
+-   **Stan** kolumny list **OK** gdy serwer w trybie pasywnym jest zsynchronizowane z serwerem trybie aktywnym.
+-   Aby wyświetlić dodatkowe informacje o stanie synchronizacji zawartości, kliknij przycisk **Pokaż stan** ze stanu synchronizacji zawartości. Spowoduje to otwarcie karty Biblioteka zawartości, której możesz spróbować rozwiązać problemy z synchronizacją zawartości.
+
+**Biblioteki zawartości** karty:
+-   Widok **stanu** zawartości, który jest synchronizowany z serwera lokacji aktywny na serwerze lokacji w trybie pasywnym.
+-   Można wybrać zawartości ze stanem ****, a następnie wybierz pozycję **Synchronizuj wybrane elementy** na Wstążce. Ta akcja próbuje ponownie zsynchronizować tę zawartość ze źródła zawartości na serwerze lokacji w trybie pasywnym. Podczas odzyskiwania, stan jest wyświetlany jako **w toku**, i gdy jest ona zsynchronizowana, wyświetlane jako **Powodzenie**.
+
+### <a name="try-it-out"></a>Wypróbuj
+Spróbuj wykonać następujące zadania, a następnie wyślij do nas **opinii** z **Home** kartę na Wstążce, aby poinformować nas, jak Ci poszło:
+-   Lokację główną można zainstalować w trybie pasywnym.
+-   I podwyższyć poziom serwera lokacji w trybie pasywnym, aby stał się aktywny tryb serwera lokacji przy użyciu konsoli i Potwierdź zmianę stanu dla obu serwerów lokacji.
+
+
+## <a name="include-trust-for-specific-files-and-folders-in-a-device-guard-policy"></a>Obejmują zaufania dla określonych plików i folderów w zasadach ochrony urządzeń
 <!-- 1324676 -->
-Nesta versão, adicionámos mais capacidades para [Device Guard](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager) gestão de políticas
+W tej wersji dodano więcej możliwości [ochrony urządzeń](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager) Zarządzanie zasadami
 
-Opcionalmente, agora pode adicionar o confiança para ficheiros específicos para pastas numa política Device Guard. Isto permite-lhe:
+Teraz można opcjonalnie dodawać zaufania dla określonych plików, folderów w zasadach ochrony urządzeń. Dzięki temu można:
 
-1.  Ultrapassar problemas com os comportamentos de instalador gerido
-2.  Aplicações de linha de negócio de confiança que não não possível implementar com o Configuration Manager
-3.  As aplicações que estão incluídas numa imagem de implementação do sistema operativo de confiança.
+1.  Rozwiązać problemy za pomocą zachowań zarządzanych Instalatora
+2.  Zaufanie aplikacji z biznesowych, których nie można wdrożyć z programu Configuration Manager
+3.  Zaufanie aplikacji, które są objęte obrazu wdrożenia systemu operacyjnego.
 
-### <a name="try-it-out"></a>Experimente!
+### <a name="try-it-out"></a>Wypróbuj
 
-1.  Enquanto estiver a criar uma política de Device Guard, no separador as inclusões Device Guard criar Assistente de política, clique em **adicionar**.
-2.  No **adicionar confiança de ficheiro ou pasta** diálogo caixa, especifique informações sobre o ficheiro ou pasta que pretende confiança. Pode especificar um caminho de ficheiro ou pasta local ou ligar a um dispositivo remoto para o qual tem permissão para ligar e especifique um caminho de ficheiro ou pasta em que o dispositivo.
-3.  Conclua o assistente.
+1.  Podczas tworzenia zasad ochrony urządzeń, na karcie dołączenia Kreatora zasad tworzenia ochrony urządzeń, kliknij przycisk **Dodaj**.
+2.  W **Dodawanie zaufanego pliku lub folderu** okna dialogowego wprowadź informacje o pliku lub folderu, który ma zostać zaufania. Można określić ścieżkę lokalną pliku lub folderu lub połączyć do zdalnego urządzenia, do którego masz uprawnienia do połączenia i określ ścieżkę pliku lub folderu na tym urządzeniu.
+3.  Ukończ pracę kreatora.
 
 
-## <a name="hide-task-sequence-progress"></a>Ocultar o progresso da sequência de tarefas
+## <a name="hide-task-sequence-progress"></a>Ukryj postęp sekwencji zadań
 <!-- 1354291 -->
-Nesta versão, pode controlar quando o progresso da sequência de tarefas é apresentado aos utilizadores finais através da utilização de uma nova variável. Na sua sequência de tarefas, utilize o **definir variável da sequência de tarefas** passo para definir o valor para o **TSDisableProgressUI** variável para ocultar ou mostrar progresso da sequência de tarefas. Pode utilizar o passo Definir variável da sequência de tarefas múltiplas vezes numa sequência de tarefas para alterar o valor da variável. Isto permite-lhe ocultar ou mostrar progresso da sequência de tarefas nas secções diferentes da sequência de tarefas.
+W tej wersji możesz kontrolować termin jego postęp sekwencji zadań jest wyświetlana dla użytkowników końcowych za pomocą nowej zmiennej. W sekwencji zadań, użyj **Ustaw zmienną sekwencji zadań** krok, aby ustawić wartość **TSDisableProgressUI** zmiennej, aby ukryć lub wyświetlić postęp sekwencji zadań. Służy Ustaw zmienną sekwencji zadań krok wiele razy w sekwencji zadań można zmienić wartości dla zmiennej. Dzięki temu można ukrywać lub wyświetlać postęp sekwencji zadań w różne sekcje sekwencji zadań.
 
-#### <a name="to-hide-task-sequence-progress"></a>Para ocultar o progresso da sequência de tarefas
-No editor de sequência de tarefas, utilize o [definir variável da sequência de tarefas](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) passo para definir o valor da **TSDisableProgressUI** variável à **verdadeiro** para ocultar o progresso da sequência de tarefas.
+#### <a name="to-hide-task-sequence-progress"></a>Aby ukryć postęp sekwencji zadań
+W edytorze sekwencji zadań, użyj [Ustaw zmienną sekwencji zadań](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) krok, aby ustawić wartość **TSDisableProgressUI** zmienną **True** ukrycia postęp sekwencji zadań.
 
-#### <a name="to-display-task-sequence-progress"></a>Para apresentar o progresso da sequência de tarefas
-No editor de sequência de tarefas, utilize o [definir variável da sequência de tarefas](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) passo para definir o valor da **TSDisableProgressUI** variável à **falso** para apresentar o progresso da sequência de tarefas.
+#### <a name="to-display-task-sequence-progress"></a>Aby wyświetlić postęp sekwencji zadań
+W edytorze sekwencji zadań, użyj [Ustaw zmienną sekwencji zadań](/sccm/osd/understand/task-sequence-steps#BKMK_SetTaskSequenceVariable) krok, aby ustawić wartość **TSDisableProgressUI** zmienną **False** Aby wyświetlić postęp sekwencji zadań.
 
-## <a name="specify-a-different-content-location-for-install-content-and-uninstall-content"></a>Especificar uma localização de conteúdo diferente para o conteúdo de instalação e desinstalação de conteúdo
+## <a name="specify-a-different-content-location-for-install-content-and-uninstall-content"></a>Określ inną lokalizację zawartości dla zawartości instalacji i odinstalowywania zawartości
 <!-- 1097546 -->
-No Configuration Manager hoje em dia, especificar a localização de instalação que contém os ficheiros de configuração para uma aplicação. Quando especificar uma localização de instalação, este também é utilizado como a localização de desinstalação para o conteúdo da aplicação.
-Com base nos seus comentários, quando pretender desinstalar uma aplicação implementada, e o conteúdo da aplicação não se encontra no computador cliente, em seguida, o cliente irá transferir todos os ficheiros de configuração de aplicação novamente antes da aplicação é desinstalada.
-Para resolver este problema, pode agora especificar ambos os uma instalação de conteúdo de localização e opcional desinstalar a localização de conteúdo. Além disso, pode optar por não especificar uma localização de conteúdo de desinstalação.
+W programie Configuration Manager dzisiaj, można określić lokalizacji instalacji, który zawiera pliki instalacyjne aplikacji. Po określeniu lokalizacji instalacji to również służy jako lokalizacji Odinstaluj zawartości aplikacji.
+Na podstawie opinii, gdy chcesz odinstalować wdrożonej aplikacji i zawartość aplikacji nie znajduje się na komputerze klienckim, następnie klient pobierze wszystkie pliki instalacyjne aplikacji ponownie, zanim aplikacja zostanie odinstalowana.
+Aby rozwiązać ten problem, można teraz określić zarówno instalację zawartości, lokalizacji i opcjonalnie odinstalować lokalizacji zawartości. Ponadto można nie określić lokalizację zawartości Odinstaluj.
 
-### <a name="try-it-out"></a>Experimente!
+### <a name="try-it-out"></a>Wypróbuj
 
-1. Nas propriedades do tipo de implementação de uma aplicação, clique em de **conteúdo** separador.
-2. Configurar o **localização de conteúdo de instalação** como normal.
-3. Para **desinstalar definições de conteúdo**, escolha um dos seguintes:
-    - **Igual à instalar conteúdo** -será utilizada a mesma localização de conteúdo, independentemente se estiver a instalar ou desinstalar a aplicação.
-    - **Nenhum conteúdo de desinstalação** -Escolha esta opção se não quiser fornecer uma localização de conteúdo de desinstalação da aplicação.
-    - **Diferente do conteúdo de instalação** -Escolha esta opção se pretender especificar uma localização de conteúdo de desinstalação é diferente da localização de conteúdo de instalação.
-5. Se tiver selecionado **Different do conteúdo de instalação**, navegue para ou introduza a localização do conteúdo de aplicação que será utilizado para desinstalar a aplicação.
-6. Clique em **OK** para fechar a caixa de diálogo de propriedades de tipo de implementação.
+1. We właściwościach typu wdrożenia aplikacji, kliknij przycisk **zawartości** kartę.
+2. Skonfiguruj **zainstalować lokalizacji zawartości** normalnego.
+3. Aby uzyskać **odinstalować ustawienia zawartości**, wybierz jedną z następujących czynności:
+    - **Taka sama, jak zainstalować zawartość** — tej samej lokalizacji zawartości będzie używany niezależnie od tego, czy podczas instalowania lub odinstalowywania aplikacji.
+    - **Brak zawartości Odinstaluj** — wybierz tę opcję, jeśli nie chcesz podać Odinstaluj lokalizacji zawartości dla aplikacji.
+    - **Inna niż instalacja zawartości** — wybierz tę opcję, jeśli chcesz określić Odinstaluj lokalizacji zawartości, która różni się od lokalizacji instalacji zawartości.
+5. W przypadku wybrania **różne od instalacji zawartości**, przejdź do, lub wprowadź lokalizację zawartości aplikacji, która będzie służyć do odinstalowania aplikacji.
+6. Kliknij przycisk **OK** aby zamknąć okno dialogowe właściwości typu wdrożenia.
 
 
-## <a name="accessibility-improvements"></a>Melhoramentos de acessibilidade  
+## <a name="accessibility-improvements"></a>Ulepszenia ułatwień dostępu  
 <!--1253000 -->
-Esta pré-visualização disponibiliza vários melhoramentos para o [funcionalidades de acessibilidade](/sccm/core/understand/accessibility-features) na consola do Configuration Manager. Estas atualizações incluem:     
+Tej wersji zapoznawczej wprowadzono kilka ulepszeń [funkcje ułatwień dostępu](/sccm/core/understand/accessibility-features) w konsoli programu Configuration Manager. Należą do nich następujące elementy:     
 
-**Novos atalhos de teclado para mover-se a consola:**
--   CTRL + M - conjuntos focar-se no painel principal (central).
--   CTRL + T - o foco de conjuntos para o nó superior do painel de navegação. Se o foco já foi nesse painel, o foco está definido para o último nó que é visitada.
--   CTRL + I - foco define a barra de trilho, abaixo do Friso.
--   CTRL + L - foco de conjuntos para o **pesquisa** campo, quando disponível.
--   CTRL + D - foco de conjuntos para o painel de detalhes, quando disponível.
--   ALT – foco de alterações que entra e sai do Friso.
+**Nowe skróty klawiaturowe do przenoszenia konsoli:**
+-   CTRL + M - zestawy skupić się w okienku głównym (centralna).
+-   CTRL + T - ustawia okno górny węzeł w okienku nawigacji. Jeśli fokus znajduje się już w tym okienku, fokus jest ustawiona na ostatni węzeł odwiedzonych.
+-   CTRL + I - zestawy fokus na pasek stron nadrzędnych poniżej Wstążki.
+-   CTRL + L - ustawia okno **wyszukiwania** pola, jeśli jest dostępna.
+-   CTRL + D - fokus zestawów do okienka szczegółów, jeśli jest dostępna.
+-   ALT — zmiany fokusu i Wstążki.
 
-**Melhoramentos gerais:**
--   Melhorado navegação no painel de navegação quando escreva as letras de um nome de nó.
--   Navegação do teclado através da vista principal e o Friso estão agora circular.
--   Agora é circular navegação do teclado no painel de detalhes. Para voltar para o objeto anterior ou painel, utilize Ctrl + D, em seguida, Shift + SEPARADOR.
--   Depois de atualizar uma vista da área de trabalho, o foco está definido para o painel principal da área de trabalho.
--   Foi corrigido um problema ao ativar leitores de ecrã anunciar os nomes dos itens de lista.
--   Foram adicionados nomes acessíveis para vários controlos na página que permite aos leitores de ecrã anunciar informações importantes.
+**Ogólne ulepszenia:**
+-   Ulepszona nawigacji w okienku nawigacji po wpisaniu liter nazwy węzła.
+-   Nawigacji klawiatury za pośrednictwem widoku głównego i wstążki są teraz cykliczne.
+-   Nawigacji klawiatury w okienku szczegółów jest teraz cykliczne. Aby powrócić do poprzedniego obiektu lub okienko, użyj klawiszy Ctrl + D, a następnie Shift + TAB.
+-   Po odświeżeniu widoku obszaru roboczego, fokus jest ustawiony w okienku głównym tego obszaru roboczego.
+-   Rozwiązano problem umożliwiające czytników ekranu zawiera informacje o nazwach elementów listy.
+-   Dodano nazw dostępnych dla wielu formantów strony, który umożliwia czytników ekranu zawiera informacje o ważnych informacji.
 
 
-## <a name="changes-to-the-azure-services-wizard-to-support-upgrade-readiness"></a>Alterações ao Assistente de serviços do Azure para suportar a preparação de atualização
+## <a name="changes-to-the-azure-services-wizard-to-support-upgrade-readiness"></a>Zmiany w Kreatorze usług Azure do obsługi gotowości do uaktualnienia
 <!-- 1353331 -->
-A partir desta versão, utilize o Assistente de serviços do Azure para configurar uma ligação do Configuration Manager para [atualizar preparação](/sccm/core/clients/manage/upgrade/upgrade-analytics). A utilização do assistente simplifica a configuração do conector utilizando um assistente comuns para serviços do Azure relacionados.   
+Począwszy od tej wersji, użyj Kreatora usługi Azure do skonfigurowania połączenia z programu Configuration Manager do [gotowości do uaktualnienia](/sccm/core/clients/manage/upgrade/upgrade-analytics). Użyj Kreatora upraszcza konfigurację łącznika, za pomocą Kreatora wspólne dla usług Azure powiązane.   
 
-Embora o método para configurar a ligação foi alterada, pré-requisitos para a ligação e como utilizar atualizar preparação permanecem inalterados.   
+Mimo że zmieniono metodę, aby skonfigurować połączenie, wymagania wstępne dotyczące połączenia i sposobie korzystania z gotowości do uaktualnienia pozostają niezmienione.   
 
-### <a name="prerequisites-for-upgrade-readiness"></a>Pré-requisitos para a preparação da atualização
-Os pré-requisitos para um [ligação para atualizar preparação](/sccm/core/clients/manage/upgrade/upgrade-analytics#create-a-connection-to-upgrade-readiness) são iguais às detalhadas para a atual filial do Configuration Manager. São repetidos aqui para sua comodidade:  
+### <a name="prerequisites-for-upgrade-readiness"></a>Wymagania wstępne dotyczące gotowości do uaktualnienia
+Wymagania wstępne dotyczące [połączenie gotowości do uaktualnienia](/sccm/core/clients/manage/upgrade/upgrade-analytics#create-a-connection-to-upgrade-readiness) uległy zmianie w porównaniu szczegółowe dla bieżącej gałęzi programu Configuration Manager. Są one powtarzane tutaj dla wygody:  
 
-**Pré-requisitos**
--   Para poder adicionar a ligação, o ambiente do Configuration Manager primeiro tem de configurar um [ponto de ligação de serviço](/sccm/core/servers/deploy/configure/about-the-service-connection-point) num [modo online](/sccm/core/servers/deploy/configure/about-the-service-connection-point#a-namebkmkmodesa-modes-of-operation). Quando adicionar a ligação ao seu ambiente, este irá também instalar o Microsoft Monitoring Agent no computador que executa esta função de sistema de sites.
--   Registe o Configuration Manager como uma ferramenta de gestão "Aplicação Web e/ou API Web" e obter o [ID de cliente deste registo](https://azure.microsoft.com/documentation/articles/active-directory-integrating-applications/).
--   Crie uma chave de cliente para a ferramenta de gestão registado no Azure Active Directory.
--   No Portal de gestão do Azure, forneça a aplicação web registado com permissão para aceder à OMS, conforme descrito em [fornecer do Configuration Manager com permissões para OMS](https://azure.microsoft.com/documentation/articles/log-analytics-sccm/#provide-configuration-manager-with-permissions-to-oms).
+**Wymagania wstępne**
+-   Aby dodać połączenie, najpierw należy skonfigurować środowiska programu Configuration Manager [punkt połączenia z usługą](/sccm/core/servers/deploy/configure/about-the-service-connection-point) w [trybu online](/sccm/core/servers/deploy/configure/about-the-service-connection-point#a-namebkmkmodesa-modes-of-operation). Po dodaniu połączenia ze środowiskiem go spowoduje także zainstalowanie programu Microsoft Monitoring Agent na komputerze, na którym działa ta rola systemu lokacji.
+-   Zarejestruj programu Configuration Manager jako narzędzie do zarządzania "API sieci Web i/lub aplikacji sieci Web" oraz możliwość uzyskania [identyfikator klienta z tej rejestracji](https://azure.microsoft.com/documentation/articles/active-directory-integrating-applications/).
+-   Utwórz klucz klienta dla zarejestrowanego narzędzia do zarządzania w usłudze Azure Active Directory.
+-   W portalu zarządzania Azure, podaj aplikacji sieci web w zarejestrowany z uprawnieniami do OMS, zgodnie z opisem w [Podaj programu Configuration Manager z uprawnieniami do OMS](https://azure.microsoft.com/documentation/articles/log-analytics-sccm/#provide-configuration-manager-with-permissions-to-oms).
 
 > [!IMPORTANT]       
-> Quando configurar permissões para aceder à OMS, lembre-se de que escolha o **contribuinte** função e atribua-lhe as permissões para o grupo de recursos da aplicação registada.
+> Podczas konfigurowania uprawnień dostępu OMS, należy wybrać **współautora** roli i przypisz mu uprawnienia do grupy zasobów w zarejestrowany aplikacji.
 
-Depois dos pré-requisitos estiverem configurados, está pronto para utilizar o Assistente para criar a ligação.
+Po skonfigurowaniu wymagań wstępnych, można przystąpić do utworzenia połączenia za pomocą kreatora.
 
-### <a name="use-the-azure-services-wizard-to-configure-upgrade-readiness"></a>Utilize o Assistente de serviços do Azure para configurar a preparação de atualização
-1.  Na consola, aceda a **administração** > **descrição geral** > **serviços em nuvem** > **serviços do Azure**e, em seguida, escolha **configurar os serviços do Azure** do **home page** separador do Friso, para iniciar o **Assistente de serviços do Azure**.
+### <a name="use-the-azure-services-wizard-to-configure-upgrade-readiness"></a>Użyj kreatora usług Azure, aby skonfigurować gotowości do uaktualnienia
+1.  W konsoli przejdź do **administracji** > **omówienie** > **usługi w chmurze** > **usług Azure**, a następnie wybierz **Konfigurowanie usług Azure** z **Home** karty wstążki, aby uruchomić **Kreator usług Azure**.
 
-2.  No **serviços do Azure** página, selecione o **conector de preparação de atualização**e, em seguida, clique em **seguinte**.
+2.  Na **usług Azure** wybierz pozycję **uaktualnienia łącznik gotowości**, a następnie kliknij przycisk **dalej**.
 
-3.  No **aplicação** página, especifique o **ambiente do Azure** (technical preview suporta apenas na nuvem pública). Em seguida, clique em **importação** para abrir o **importar aplicações** janela.
+3.  Na **aplikacji** Określ Twojej **środowiska platformy Azure** (wersja zapoznawcza technical preview obsługuje tylko chmury publicznej). Następnie kliknij przycisk **importu** otworzyć **importowania aplikacji** okna.
 
-4.  No **importar aplicações** janela, especifique os detalhes para uma aplicação web que já existe no seu Azure AD.
-    -   Forneça um nome amigável para o nome de inquilino do Azure AD. Em seguida, especifique o ID do inquilino, o nome da aplicação, ID de cliente, chave secreta para a aplicação web do Azure e o URI de ID de aplicação.
-    -   Clique em **verifique**e se tiver êxito, clique em **OK** para continuar.
+4.  W **importowania aplikacji** okna, określ szczegóły dla aplikacji sieci web, która już istnieje w usługi Azure AD.
+    -   Podaj przyjazną nazwę dla nazwy dzierżawy Azure AD. Następnie należy określić identyfikator dzierżawcy, nazwa aplikacji, Identyfikatora klienta, klucz tajny dla aplikacji sieci web platformy Azure i identyfikator URI aplikacji.
+    -   Kliknij przycisk **Sprawdź**, a jeśli to się powiedzie, kliknij przycisk **OK** aby kontynuować.
 
-5.   No **configuração** página, especifique a subscrição, o grupo de recursos e a área de análise do Windows que pretende utilizar com esta ligação para atualizar preparação.  
+5.   Na **konfiguracji** Określ subskrypcji, grupy zasobów i mają być używane dla tego połączenia, aby uaktualnić gotowości obszaru roboczego analizy systemu Windows.  
 
-6.  Clique em **seguinte** para ir para o **resumo** página e, em seguida, conclua o Assistente para criar a ligação.
+6.  Kliknij przycisk **dalej** można przejść do **Podsumowanie** strony, a następnie Ukończ pracę kreatora, aby utworzyć połączenie.
 
 
-## <a name="new-client-settings-for-cloud-services"></a>Novas definições de cliente para serviços em nuvem
+## <a name="new-client-settings-for-cloud-services"></a>Nowe ustawienia klienta dla usługi w chmurze
 <!-- 1319883 -->
 
-Nesta versão, adicionámos duas novas definições de cliente do Configuration Manager. Encontrará estes no **serviços em nuvem** secção.  Estas definições proporcionam-lhe as seguintes capacidades:
+W tej wersji dodano dwa nowe ustawienia klienta programu Configuration Manager. Znajdują się one w **usługi w chmurze** sekcji.  Te ustawienia zapewniają następujące możliwości:
 
-- Controlo que os clientes do Configuration Manager podem aceder a um gateway de gestão de nuvem configurado.
-- Os clientes do Configuration Manager associado a um domínio Windows 10 ser registado automaticamente no Azure Active Directory.
+- Formant klientów programu Configuration Manager, które mogą uzyskiwać dostęp do bramy zarządzania skonfigurowanym chmury.
+- Automatyczne rejestrowanie klientów programu Configuration Manager przyłączonych do domeny systemu Windows 10 w usłudze Azure Active Directory.
 
-Estas novas definições de ajudam a realizar as funcionalidades descritas o [1705 do Configuration Manager Technical Preview](/sccm/core/get-started/capabilities-in-technical-preview-1705#new-capabilities-for-azure-ad-and-cloud-management).
+Te nowe ustawienia ułatwić wykonywanie funkcji opisanych w [Technical Preview programu Configuration Manager 1705](/sccm/core/get-started/capabilities-in-technical-preview-1705#new-capabilities-for-azure-ad-and-cloud-management).
 
-### <a name="before-you-start"></a>Antes de começar
+### <a name="before-you-start"></a>Przed rozpoczęciem
 
-Tem de ter instalado e configurado o Azure AD Connect entre o Active Directory no local e de inquilino do Azure AD.
+Musi mieć zainstalowane i skonfigurowane Azure AD Connect między lokalnymi usługi Active Directory i dzierżawy usługi Azure AD.
 
-Se remover a ligação, os dispositivos não são não registados, mas não novos dispositivos irão registar.
+Jeśli usuniesz połączenia urządzenia nie są wyrejestrowane, ale zarejestruje żadnych nowych urządzeń.
 
-### <a name="try-it-out"></a>Experimente!
+### <a name="try-it-out"></a>Wypróbuj
 
-1. Configurar a secção de definições (que se encontra nos serviços de nuvem) do cliente utilizando as informações [como configurar as definições de cliente](/sccm/core/clients/deploy/configure-client-settings).
-    -   **Registar automaticamente novos dispositivos do Windows 10 associados a um domínio com o Azure Active Directory** – definido como **Sim** (predefinição), ou **não**.
-    -   **Permitir que os clientes utilizar um gateway de gestão de nuvem** – definido como **Sim** (predefinição), ou **não**.
-2.  Implemente as definições de cliente na coleção de dispositivos necessária.
+1. Skonfiguruj w poniższej sekcji (znalezione w usługach chmury) ustawienia klienta, korzystając z informacji w [sposób konfigurowania ustawień klienta](/sccm/core/clients/deploy/configure-client-settings).
+    -   **Automatycznego rejestrowania nowych urządzeń przyłączonych do domeny systemu Windows 10 w usłudze Azure Active Directory** — ustawioną **tak** (ustawienie domyślne) lub **nr**.
+    -   **Umożliwia klientom używać bramy zarządzania chmury** — ustawioną **tak** (ustawienie domyślne) lub **nr**.
+2.  Wdróż ustawienia klienta w wymaganej kolekcji urządzeń.
 
-Para confirmar que o dispositivo é associado para o Azure AD, execute o comando **dsregcmd.exe /status** numa janela de linha de comandos. O **AzureAdjoined** campo nos resultados da mostrará **Sim** se o dispositivo estiver do Azure AD associado.
+Aby upewnić się, że urządzenie jest dołączane do usługi Azure AD, uruchom polecenie **/status dsregcmd.exe** w oknie wiersza polecenia. **AzureAdjoined** pole w wynikach **tak** Jeśli urządzenie jest usługi Azure AD przyłączony.
 
-## <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Criar e executar scripts do PowerShell a partir da consola do Configuration Manager
+## <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Tworzenie i uruchamianie skryptów programu PowerShell z poziomu konsoli programu Configuration Manager
 <!-- 1236459 -->
 
-No Configuration Manager, pode implementar scripts de utilização de pacotes e programas em dispositivos cliente. Esta pré-visualização técnica, adicionámos novas funcionalidades que lhe permite efetuar as seguintes ações:
+W programie Configuration Manager można wdrożyć skryptów na urządzeniach klienckich przy użyciu pakietów i programów. W tej wersji technical preview dodaliśmy nowe funkcje, które można wykonać następujące czynności:
 
-- Importar Scripts do PowerShell para o Configuration Manager
-- Editar os scripts a partir da consola do Configuration Manager (para apenas scripts não assinados)
-- Scripts de marca como aprovado ou negado, para melhorar a segurança
-- Executar scripts em coleções de computadores de cliente do Windows e no local geridos Windows PCs. Não implementa scripts, em vez disso, são sejam executados em tempo real nos dispositivos cliente.
-- Examine os resultados devolvidos pelo script na consola do Configuration Manager.
-
-
-### <a name="prerequisites"></a>Pré-requisitos
-
-Para utilizar scripts, tem de ser um membro da função de segurança adequado do Configuration Manager.
-
-- **Para importar e criar scripts** -a conta tem de ter **criar** permissões para **SMS Scripts** no **Gestor de definições de compatibilidade** função de segurança.
-- **Para aprovar ou negar scripts** -a conta tem de ter **aprovar** permissões para **SMS Scripts** no **Gestor de definições de compatibilidade** função de segurança.
-- **Para executar scripts** -a conta tem de ter **executar Script** permissões para **coleções** no **Gestor de definições de compatibilidade** função de segurança.
-
-Para mais informações sobre funções de segurança do Configuration Manager, consulte [Noções básicas da administração baseada em funções](/sccm/core/understand/fundamentals-of-role-based-administration).
-
-Por predefinição, os utilizadores não podem aprovar um script que tenham criado. Uma vez que os scripts são poderosa, versátil e podem ser implementados em vários dispositivos, tiver introduzimos um novo conceito de fornecer a capacidade de separar as funções entre a pessoa que autores o script e de que a pessoa que aprove o script. Isto proporciona o nível adicional de segurança contra a execução de um script sem supervisão. Pode desativar esta aprovação secundária, para facilitar a testar, particularmente durante a versão de pré-visualização técnica.
-
-Para permitir aos utilizadores aprovar os seus próprios scripts:
-
-1. Na consola do Configuration Manager, clique em **Administração**.
-2. Na área de trabalho **Administração** , expanda **Configuração do Site**e clique em **Sites**.
-3. Na lista de sites, selecione o site e, em seguida, no **home page** separador o **Sites** , clique em **definições de hierarquia**.
-4. No **geral** separador do **propriedades de definições de hierarquia** diálogo caixa, desmarque a caixa de verificação **não permitir autores de script aprovar os seus próprios scripts**.
+- Importuj skryptów programu PowerShell dla programu Configuration Manager
+- Edytowanie skryptów z poziomu konsoli programu Configuration Manager (w przypadku niepodpisanych skryptów tylko)
+- Skrypty Oznacz jako zatwierdzone lub zabroniona, zwiększające bezpieczeństwo
+- Uruchamianie skryptów w kolekcji komputerom klienckim z systemem Windows oraz lokalnych zarządzanych komputerów z systemem Windows. Nie można wdrożyć skrypty, zamiast tego są uruchamiane w najbliższym czasie rzeczywistym na urządzeniach klienckich.
+- Zbadanie wyników zwróconych przez skrypt w konsoli programu Configuration Manager.
 
 
-### <a name="try-it-out"></a>Experimente!
+### <a name="prerequisites"></a>Wymagania wstępne
 
-#### <a name="import-and-edit-a-script"></a>Importar e editar um script
+Używać skryptów, użytkownik musi należeć do odpowiedniej roli zabezpieczeń programu Configuration Manager.
 
-1. Na consola do Configuration Manager, clique em **Biblioteca de Software**.
-2. No **biblioteca de Software** área de trabalho, clique em **Scripts**.
-3. No **home page** separador o **criar** , clique em **criar Script**.
-4. No **Script** página do **criar Script** assistente, configure o seguinte:
-    - **Nome do script** -introduza um nome para o script. Embora possa criar vários scripts com o mesmo nome, Isto fará mais difícil localizar o script que terá na consola do Configuration Manager.
-    - **Idioma de script** - atualmente, apenas **PowerShell** scripts são suportados.
-    - **Importar** -importar um script do PowerShell para a consola. O script é apresentado no **Script** campo.
-    - **Limpar** -remove o script atual do **Script** campo.
-    - **Script** -apresenta o script atualmente importado. Pode editar o script neste campo, conforme necessário.
-5. Conclua o assistente. O novo script é apresentado no **Script** lista com um Estado de **aguardar aprovação**. Antes de poder executar este script nos dispositivos cliente, terá de o aprovar.
+- **Do zaimportowania, a także tworzenie skryptów** -Twoje konto musi mieć **Utwórz** uprawnienia dla **skryptów programu SMS** w **Menedżer ustawień zgodności** roli zabezpieczeń.
+- **Do zatwierdzenia lub odmowy skrypty** -Twoje konto musi mieć **Zatwierdź** uprawnienia dla **skryptów programu SMS** w **Menedżer ustawień zgodności** roli zabezpieczeń.
+- **Do uruchamiania skryptów** -Twoje konto musi mieć **Uruchom skrypt** uprawnienia dla **kolekcje** w **Menedżer ustawień zgodności** roli zabezpieczeń.
+
+Aby uzyskać więcej informacji na temat ról zabezpieczeń programu Configuration Manager, zobacz [podstawowe informacje dotyczące administrowania opartego na rolach](/sccm/core/understand/fundamentals-of-role-based-administration).
+
+Domyślnie użytkownicy nie można zatwierdzić skryptu, który one utworzone przez użytkownika. Ponieważ skrypty są wydajne, elastyczne i można wdrożyć na wielu urządzeniach, dodaliśmy nowe podejście daje możliwość rozdzielić role między osoby autorom tego skryptu i osoby, które zatwierdza skryptu. Zapewnia dodatkowy poziom zabezpieczeń przed uruchomieniem skryptu bez nadzoru. Można wyłączyć tego dodatkowej zatwierdzenia, aby ułatwić testowanie, szczególnie w wersji Technical Preview.
+
+Aby umożliwić użytkownikom zatwierdzać własnych skryptów:
+
+1. W konsoli programu Configuration Manager kliknij przycisk **Administracja**.
+2. W obszarze roboczym **Administracja** rozwiń węzeł **Konfiguracja lokacji**, a następnie kliknij przycisk **Lokacje**.
+3. Na liście witryn, wybierz witryny, a następnie na **Home** karcie **witryny** kliknij przycisk **ustawienia hierarchii**.
+4. Na **ogólne** karcie **właściwości ustawień hierarchii** okna dialogowego polu, wyczyść pole wyboru **nie zezwalaj na skryptu autorzy mogą zatwierdzać własnych skryptów**.
 
 
-#### <a name="approve-or-deny-a-script"></a>Aprovar ou recusar um script
+### <a name="try-it-out"></a>Wypróbuj
+
+#### <a name="import-and-edit-a-script"></a>Importowanie i edytowanie skryptu
+
+1. W konsoli programu Configuration Manager kliknij przycisk **Biblioteka oprogramowania**.
+2. W **Biblioteka oprogramowania** obszaru roboczego kliknij **skryptów**.
+3. Na **Home** karcie **Utwórz** kliknij przycisk **Tworzenie skryptu**.
+4. Na **skryptu** strony **Tworzenie skryptu** kreatora skonfiguruj następujące opcje:
+    - **Nazwa skryptu** — wprowadź nazwę skryptu. Mimo że można tworzyć wiele skryptów o takiej samej nazwie, to zostanie utrudnić wyszukiwanie skryptów, które są potrzebne w konsoli programu Configuration Manager.
+    - **Język skryptów** — obecnie tylko **PowerShell** skrypty są obsługiwane.
+    - **Importuj** — importowanie skrypt programu PowerShell do konsoli. Skrypt jest wyświetlany w **skryptu** pola.
+    - **Wyczyść** — usuwa bieżący skrypt z **skryptu** pola.
+    - **Skrypt** -wyświetla skrypt aktualnie zaimportowany. Skrypt w tym polu, w razie potrzeby można edytować.
+5. Ukończ pracę kreatora. Nowy skrypt jest wyświetlany w **skryptu** liście ze stanem **oczekiwanie na zatwierdzenie**. Zanim można było uruchomić ten skrypt na urządzeniach klienckich, należy ją zatwierdzić.
+
+
+#### <a name="approve-or-deny-a-script"></a>Zatwierdzanie lub odrzucanie skryptu
 
 
 
-Antes de poder executar um script, deve ser aprovado. Para aprovar um script:
+Przed uruchomieniem skryptu, musi być zatwierdzony. Aby zatwierdzić skryptu:
 
-1. Na consola do Configuration Manager, clique em **Biblioteca de Software**.
-2. No **biblioteca de Software** área de trabalho, clique em **Scripts**.
-3. No **Script** lista, selecione o script que pretende aprovar ou recusar e, em seguida, no **home page** separador o **Script** , clique em **aprovar/negação**.
-4. No **aprovar ou negar o script** caixa de diálogo, **aprovar**, ou **negar** o script e, opcionalmente, introduza um comentário sobre a sua decisão. Se negar um script, não pode ser executado nos dispositivos cliente.
-5. Conclua o assistente. No **Script** lista, verá o **estado de aprovação** alteração de coluna consoante a ação que demorou.
+1. W konsoli programu Configuration Manager kliknij przycisk **Biblioteka oprogramowania**.
+2. W **Biblioteka oprogramowania** obszaru roboczego kliknij **skryptów**.
+3. W **skryptu** wybierz skrypt, aby zaakceptować lub odrzucić, a następnie na **Home** karcie **skryptu** kliknij przycisk **Zatwierdź/Deny**.
+4. W **Zatwierdź lub odmówić skryptu** okno dialogowe **Zatwierdź**, lub **Odmów** skryptu i opcjonalnie wprowadź komentarz dotyczący decyzji. Jeśli użytkownik zezwoli na skryptu, nie można uruchomić na urządzeniach klienckich.
+5. Ukończ pracę kreatora. W **skryptu** listy, zobaczysz **stan zatwierdzenia** zmiany kolumny w zależności od akcja została wykonana.
 
-#### <a name="run-a-script"></a>Executar um script
+#### <a name="run-a-script"></a>Uruchom skrypt
 
-Quando um script for aprovado, podem ser executada em relação a uma coleção que escolher.
+Po zatwierdzeniu skryptu, mogą być uruchamiane na kolekcję, którą wybierzesz.
 
-1. Na consola do Configuration Manager, clique em **Ativos e Compatibilidade**.
-2. Na área de trabalho **Ativos e Compatibilidade** , clique em **Coleções de Dispositivos**.
-3. No **coleções de dispositivos** lista, clique na coleção de dispositivos nos quais pretende executar o script.
-3. No **home page** separador o **todos os sistemas** , clique em **executar Script**.
-4. No **Script** página do **executar Script** assistente, escolha um script da lista. Apenas aprovados scripts são apresentados. Clique em **seguinte**e, em seguida, conclua o assistente.
+1. W konsoli programu Configuration Manager kliknij przycisk **Zasoby i zgodność**.
+2. W obszarze roboczym **Zasoby i zgodność** kliknij przycisk **Kolekcje urządzeń**.
+3. W **kolekcje urządzeń** kliknij kolekcję urządzeń, na których chcesz uruchomić skrypt.
+3. Na **Home** karcie **wszystkie systemy** kliknij przycisk **Uruchom skrypt**.
+4. Na **skryptu** strony **Uruchom skrypt** kreatora wybierz skrypt z listy. Wyświetlane są tylko zatwierdzone skrypty. Kliknij przycisk **dalej**, a następnie Zakończ pracę kreatora.
 
-#### <a name="monitor-a-script"></a>Monitorizar um script
+#### <a name="monitor-a-script"></a>Monitor skryptu
 
-Depois de executar um script em dispositivos cliente, utilize este procedimento para monitorizar o êxito da operação.
+Po uruchomieniu skryptu na urządzeniach klienckich, użyj tej procedury, aby monitorować powodzenie operacji.
 
-1. Na consola do Configuration Manager, clique em **monitorização**.
-2. No **monitorização** área de trabalho, clique em **resultados de Script**.
-3. No **resultados de Script** lista, poderá ver os resultados para cada script executado nos dispositivos cliente. Um código de saída do script de **0**, geralmente, indica que o script é executado com êxito.
+1. W konsoli programu Configuration Manager kliknij **monitorowanie**.
+2. W **monitorowanie** obszaru roboczego kliknij **wyniki skryptu**.
+3. W **wyniki skryptu** listy, wyświetlania wyników dla każdego skryptu uruchomionego na urządzeniach klienckich. Kod zakończenia skryptu **0**, zwykle wskazuje, czy skrypt został uruchomiony pomyślnie.
 
-## <a name="pxe-network-boot-support-for-ipv6"></a>Suporte de arranque de rede do PXE para IPv6
+## <a name="pxe-network-boot-support-for-ipv6"></a>Obsługa rozruchu środowiska PXE sieci IPv6
 <!-- 1269793 -->
-Agora, pode ativar o suporte de arranque de rede do PXE para IPv6 iniciar uma implementação de sistema operativo de sequência de tarefas. Quando utiliza esta definição, os pontos de distribuição com PXE ativado irão suportar IPv4 e IPv6. Esta opção não necessita de WDS e deixarão o WDS se estiver presente.
+Można teraz włączyć obsługę rozruchu środowiska PXE sieci dla protokołu IPv6 uruchomić wdrożenia systemu operacyjnego sekwencji zadań. Po wybraniu tego ustawienia, punkty dystrybucji z włączoną obsługą środowiska PXE będzie obsługiwać protokoły IPv4 i IPv6. Ta opcja nie wymaga usług wdrażania systemu Windows i zatrzymać usług wdrażania systemu Windows, jeśli jest obecny.
 
-#### <a name="to-enable-pxe-boot-support-for-ipv6"></a>Para ativar o suporte de arranque PXE para IPv6
-Utilize o procedimento seguinte para ativar a opção de suporte de IPv6 para PXE.
+#### <a name="to-enable-pxe-boot-support-for-ipv6"></a>Aby włączyć obsługę rozruchu środowiska PXE dla protokołu IPv6
+Poniższa procedura umożliwia włączenie opcji do obsługi protokołu IPv6 dla środowiska PXE.
 
-1. Na consola do Configuration Manager, vá para **administração** > **descrição geral** > **pontos de distribuição**e clique em **propriedades** para pontos de distribuição com PXE ativado.
-2. No **PXE** separador, selecione **suportar IPv6** para ativar o suporte de IPv6 para PXE.
+1. W konsoli programu Configuration Manager, przejdź do **administracji** > **omówienie** > **punktów dystrybucji**i kliknij przycisk **właściwości** dla punktów dystrybucji z włączoną obsługą środowiska PXE.
+2. Na **PXE** wybierz opcję **obsługuje protokół IPv6** włączyć IPv6 obsługę środowiska PXE.
 
-## <a name="manage-microsoft-surface-driver-updates"></a>Gerir atualizações de controladores Microsoft Surface
+## <a name="manage-microsoft-surface-driver-updates"></a>Zarządzanie aktualizacjami sterownik Microsoft Surface
 <!-- 1098490 -->
-Agora, pode utilizar o Configuration Manager para gerir atualizações de controladores Microsoft Surface.
+Można teraz używać programu Configuration Manager do zarządzania aktualizacjami sterownik Microsoft Surface.
 
-### <a name="prerequisites"></a>Pré-requisitos
-Todos os pontos de atualização de software devem executar o Windows Server 2016.
+### <a name="prerequisites"></a>Wymagania wstępne
+Wszystkie punkty aktualizacji oprogramowania, należy uruchomić system Windows Server 2016.
 
-### <a name="try-it-out"></a>Experimente!
-Experimente concluir as seguintes tarefas e, em seguida, envie-nos **comentários** do **home page** separador do friso para nos informar como correu:
-1. Ative a sincronização para o Microsoft Surface. Utilize o procedimento no [configurar classificação e produtos](/sccm/sum/get-started/configure-classifications-and-products) e selecione **incluem o Microsoft Surface controladores e as atualizações de firmware** no **classificações** separador para ativar a superfície controladores.
-2. [Sincronizar os controladores Microsoft Surface](/sccm/sum/get-started/synchronize-software-updates.md).
-3. [Implementar controladores de Microsoft Surface sincronizadas](/sccm/sum/deploy-use/deploy-software-updates)
+### <a name="try-it-out"></a>Wypróbuj
+Spróbuj wykonać następujące zadania, a następnie wyślij do nas **opinii** z **Home** kartę na Wstążce, aby poinformować nas, jak Ci poszło:
+1. Włącz synchronizację dla Microsoft Surface sterowników. Użyj procedury [Konfigurowanie klasyfikacji i produktów](/sccm/sum/get-started/configure-classifications-and-products) i wybierz **obejmują Microsoft Surface sterowniki i aktualizacje oprogramowania układowego** na **klasyfikacje** kartę, aby włączyć sterowniki powierzchni.
+2. [Synchronizuj sterowniki Microsoft Surface](/sccm/sum/get-started/synchronize-software-updates.md).
+3. [Wdrażanie zsynchronizowane Microsoft Surface sterowniki](/sccm/sum/deploy-use/deploy-software-updates)
 
-## <a name="configure-windows-update-for-business-deferral-policies"></a>Configurar o Windows Update para as políticas de diferimento por de negócio
+## <a name="configure-windows-update-for-business-deferral-policies"></a>Konfigurowanie usługi Windows Update dla zasad wykluczenia biznesowych
 <!-- 1290890 -->
-Agora, pode configurar políticas de diferimento por para atualizações de funcionalidade do Windows 10 ou qualidade atualizações para o Windows 10 dispositivos geridos diretamente pelo Windows Update for Business. Pode gerir as políticas de diferimento por na nova **Windows Update para as políticas de negócio** nó **biblioteca de Software** > **manutenção do Windows 10**.
+Można teraz skonfigurować zasady odroczenia urządzeń aktualizacje funkcji systemu Windows 10 lub jakości aktualizacji dla systemu Windows 10 zarządzane bezpośrednio przez usługę Windows Update dla firm. Zasadami odroczenia można zarządzać w nowym **Windows Update dla firm, zasady** węźle **Biblioteka oprogramowania** > **obsługi systemu Windows 10**.
 
-### <a name="prerequisites"></a>Pré-requisitos
-Dispositivos Windows 10 geridos pelo Windows Update para empresas tem de ter conectividade à Internet.
+### <a name="prerequisites"></a>Wymagania wstępne
+Urządzenia z systemem Windows 10 zarządzane przez usługę Windows Update dla firm musi mieć połączenie z Internetem.
 
-#### <a name="to-create-a-windows-update-for-business-deferral-policy"></a>Para criar uma atualização do Windows para a política de diferimento por de negócio
-1. No **biblioteca de Software** > **manutenção do Windows 10** > **Windows Update para as políticas de negócio**
-2. No **home page** separador o **criar** grupo, selecione **criar Windows Update para empresas política** para abrir o Windows Update criar para o Assistente de política de negócio.
-3. No **geral** , indique um nome e descrição para a política.
-4. No **diferimento por políticas** página, configure se pretende diferir ou colocar em pausa as atualizações de funcionalidade.    
-    Atualizações de funcionalidade são geralmente novas funcionalidades do Windows. Depois de configurar o **sucursal nível de preparação** , em seguida, pode definir se e para o período de tempo, gostaria diferir atualizações de funcionalidades a seguir a respetiva disponibilidade da Microsoft a receber.
-    - **Nível de preparação de sucursal**: Defina o ramo para o qual o dispositivo irá receber atualizações do Windows (Current Branch ou Current Branch for Business).
-    - **Período de diferimento por (dias)**:  Especifique o número de dias para o qual vai ser diferidas atualizações de funcionalidade. Pode diferir receber estas atualizações de funcionalidade durante um período de 180 dias a partir da respetiva versão.
-    - **Iniciar de atualizações de funcionalidades de pausa**: Selecione se para colocar em pausa dispositivos de receber atualizações de funcionalidade durante um período de 60 dias desde o momento em coloque em pausa as atualizações. Após ter passado o máximo de dias, a funcionalidade de pausa automaticamente irá expirar e o dispositivo irá analisar as atualizações do Windows para detetar atualizações aplicáveis. Seguir esta análise, pode colocar em pausa as atualizações de novo. Pode unpause atualizações de funcionalidade desmarcando a caixa de verificação.   
-5. Escolha se pretende diferir ou atualizações de qualidade de colocar em pausa.     
-    Atualizações de qualidade são, geralmente, correções e melhoramentos a funcionalidades existentes do Windows e, normalmente, são publicadas primeira Terça-feira de cada mês, que podem ser libertadas em qualquer altura ao Microsoft. Pode definir se e para o período de tempo, gostaria diferir atualizações de qualidade após a respetiva disponibilidade a receber.
-    - **Período de diferimento por (dias)**: Especifique o número de dias para o qual vai ser diferidas atualizações de funcionalidade. Pode diferir receber estas atualizações de funcionalidade durante um período de 180 dias a partir da respetiva versão.
-    - **Iniciar de atualizações de qualidade de pausa**: Selecione se para colocar em pausa dispositivos a partir da qualidade a receber atualizações durante um período de 35 dias desde o momento em coloque em pausa as atualizações. Após ter passado o máximo de dias, a funcionalidade de pausa automaticamente irá expirar e o dispositivo irá analisar as atualizações do Windows para detetar atualizações aplicáveis. Seguir esta análise, pode colocar em pausa as atualizações de novo. Pode unpause qualidade atualizações ao desmarcar a caixa de verificação.
-6. Selecione **instalar atualizações a partir de outros Microsoft Products** para ativar a definição de política de grupo que as definições de diferimento por aplicável ao Microsoft Update, bem como as atualizações do Windows.
-7. Selecione **incluir controladores com o Windows Update** para atualizar automaticamente os controladores de atualizações do Windows. Se desmarcar esta definição, as atualizações de controladores não são transferidas atualizações do Windows.
-8. Conclua o Assistente para criar a nova política de diferimento por.
+#### <a name="to-create-a-windows-update-for-business-deferral-policy"></a>Aby utworzyć Windows Update dla firm, zasady odroczenia
+1. W **Biblioteka oprogramowania** > **obsługi systemu Windows 10** > **usługi Windows Update dla firm zasad**
+2. Na **Home** karcie **Utwórz** grupy wybierz **tworzenia usługi Windows Update dla firm zasady** otworzyć utworzyć Windows Update dla firm Kreatora zasad.
+3. Na **ogólne** Podaj nazwę i opis zasad.
+4. Na **zasady odroczenia** skonfiguruj, czy mają być odroczone lub wstrzymać aktualizacje funkcji.    
+    Aktualizacje funkcji są zazwyczaj nowe funkcje w systemie Windows. Po skonfigurowaniu **gałąź gotowości poziom** ustawienie, można zdefiniować czy i jak długo ma być odroczenie odbieranie aktualizacje funkcji po ich dostępności firmy Microsoft.
+    - **Gałąź gotowości poziom**: Ustaw gałąź w przypadku którego urządzenia będzie odbierać aktualizacje systemu Windows (Current Branch lub Current Branch for Business).
+    - **Okres odroczenia (dni)**:  Określ liczbę dni, dla których aktualizacje funkcji zostanie opóźnione. W przypadku opóźnienia, otrzymywać te aktualizacje funkcji na okres 180 dni od ich wydania.
+    - **Uruchamianie funkcji aktualizacji Wstrzymaj**: Określ, czy można wstrzymać urządzeń z otrzymywania aktualizacji funkcji na okres maksymalnie 60 dni od czasu w przypadku wstrzymania aktualizacji. Po upływie maksymalna liczba dni, automatycznie wygaśnie funkcji Wstrzymaj i urządzenia rozpocznie skanowanie aktualizacji do zastosowania aktualizacji systemu Windows. Po tym skanowanie w przypadku wstrzymania aktualizacji ponownie. Aktualizacje funkcji można wznowić, usuwając zaznaczenie pola wyboru.   
+5. Określ, czy mają być odroczone lub wstrzymać aktualizacje jakości.     
+    Jakość aktualizacji są zwykle poprawki i ulepszenia istniejących funkcji systemu Windows i zwykle są publikowane pierwszy wtorek każdego miesiąca, jednak może być zwolnione w dowolnym momencie przez firmę Microsoft. Można określić, czy i jak długo ma być odroczenie pobiera jakość aktualizacje po ich dostępności.
+    - **Okres odroczenia (dni)**: Określ liczbę dni, dla których aktualizacje funkcji zostanie opóźnione. W przypadku opóźnienia, otrzymywać te aktualizacje funkcji na okres 180 dni od ich wydania.
+    - **Wstrzymaj aktualizacje jakości uruchamianie**: Określ, czy można wstrzymać urządzeniom otrzymywanie aktualizacji jakości przez okres do 35 dni od czasu w przypadku wstrzymania aktualizacji. Po upływie maksymalna liczba dni, automatycznie wygaśnie funkcji Wstrzymaj i urządzenia rozpocznie skanowanie aktualizacji do zastosowania aktualizacji systemu Windows. Po tym skanowanie w przypadku wstrzymania aktualizacji ponownie. Można wznowić jakości aktualizacji, usuwając zaznaczenie pola wyboru.
+6. Wybierz **instalować aktualizacje z innymi Products Microsoft** Aby włączyć ustawienie zasad grupy, która odroczenia ustawienia mające zastosowanie do witryny Microsoft Update, a także aktualizacje systemu Windows.
+7. Wybierz **zawierają sterowniki z witryny Windows Update** do automatycznego aktualizowania sterowników z aktualizacji systemu Windows. Jeśli wyczyścisz to ustawienie, aktualizacji sterownika nie można pobrać z witryny Windows Update.
+8. Ukończ pracę kreatora, aby utworzyć nowe zasady opóźnienia.
 
-#### <a name="to-deploy-a-windows-update-for-business-deferral-policy"></a>Implementar uma atualização do Windows para a política de diferimento por de negócio
-1. No **biblioteca de Software** > **manutenção do Windows 10** > **Windows Update para as políticas de negócio**
-2. No **home page** separador o **implementação** grupo, selecione **implementar o Windows Update para empresas política**.
-3. Configure as seguintes definições:
-    - **Política de configuração para implementar**: Selecione a atualização do Windows para a política de negócio que gostaria de implementar.
-    - **Coleção**: Clique em **procurar** para selecionar a coleção onde pretende implementar a política.
-    - **Remediar regras incompatíveis quando suportado**: Selecione esta opção para retificar automaticamente quaisquer regras não compatíveis para o Windows Management Instrumentation (WMI), o registo, scripts e todas as definições para dispositivos móveis que são inscritos pelo Configuration Manager.
-    - **Permitir remediação fora da janela de manutenção**: Se uma janela de manutenção tiver sido configurada para a coleção à qual está a implementar a política, ative esta opção para que as definições de conformidade retifiquem o valor fora da janela de manutenção. Para obter mais informações sobre janelas de manutenção, consulte [como utilizar janelas de manutenção](/sccm/core/clients/manage/collections/use-maintenance-windows).
-    - **Gerar um alerta**: Configura um alerta que é gerado se a compatibilidade da linha de base de configuração for inferior a uma percentagem especificada por uma data e hora especificadas. Também pode especificar se pretende que seja enviado um alerta para o System Center Operations Manager.
-    - **Atraso aleatório (horas)**: Especifica uma janela de atraso para evitar processamento excessivo no serviço de inscrição de dispositivos de rede. O valor predefinido é 64 horas.
-    - **Agenda**: Especifique o agendamento de avaliação de compatibilidade através do qual o perfil implementado é avaliado nos computadores cliente. O agendamento pode ser simples ou personalizado. O perfil é avaliado por computadores cliente quando o utilizador inicia sessão.
-4.  Conclua o Assistente para implementar o perfil.
+#### <a name="to-deploy-a-windows-update-for-business-deferral-policy"></a>Do wdrażania aktualizacji systemu Windows dla firm, zasady odroczenia
+1. W **Biblioteka oprogramowania** > **obsługi systemu Windows 10** > **usługi Windows Update dla firm zasad**
+2. Na **Home** karcie **wdrożenia** grupy wybierz **wdrażania usługi Windows Update dla firm zasady**.
+3. Skonfiguruj następujące ustawienia:
+    - **Zasady konfiguracji do wdrożenia**: Wybierz usługi Windows Update dla firm zasady, którą chcesz wdrożyć.
+    - **Kolekcja**: Kliknij przycisk **Przeglądaj** aby wybrać kolekcję, w której chcesz wdrożyć zasady.
+    - **Koryguj niezgodne reguły, jeśli są obsługiwane**: Zaznacz, aby automatycznie korygować wszystkie reguły, które są niezgodne dla Instrumentacji zarządzania Windows (WMI), rejestru, skrypty i wszystkich ustawień dla urządzeń przenośnych, które są zarejestrowane przez program Configuration Manager.
+    - **Zezwalaj na korygowanie poza oknem obsługi**: Jeśli okno obsługi zostało skonfigurowane dla kolekcji, w której wdrażasz zasady, Włącz tę opcję, aby pozwolić na korygowanie poza oknem obsługi wartości przy użyciu ustawień zgodności. Aby uzyskać więcej informacji dotyczących okien obsługi, zobacz [używanie okien obsługi](/sccm/core/clients/manage/collections/use-maintenance-windows).
+    - **Generuj alert**: Konfiguruje alert jest generowany, gdy zgodności linii bazowej konfiguracji jest mniejsza niż określony procent określonej daty i godziny. Możesz również określić, czy chcesz wysyłać alert do programu System Center Operations Manager.
+    - **Opóźnienie losowe (godziny)**: Określa okno opóźnienia, aby uniknąć nadmiernego przetwarzania w usłudze rejestracji urządzeń sieciowych. Wartość domyślna to 64 godzin.
+    - **Harmonogram**: Określ harmonogram oceny zgodności oceny wdrożonego profilu na komputerach klienckich. Harmonogram może być prosty lub niestandardowy. Klienci oceniają profile po zalogowaniu się użytkownika.
+4.  Ukończ pracę kreatora, aby wdrożyć profil.
 
 
 
-## <a name="support-for-entrust-certification-authorities"></a>Suporte para Entrust autoridades de certificação
+## <a name="support-for-entrust-certification-authorities"></a>Obsługa Entrust urzędów certyfikacji
 <!-- 1350740 -->
-O Configuration Manager suporta agora autoridades de certificação Entrust; Isto permite que a entrega de certificado PFX para dispositivos inscritos no Microsoft Intune.
+Program Configuration Manager obsługuje teraz Entrust urzędów certyfikacji; Dzięki temu dostarczania certyfikatów PFX na urządzeniach zarejestrowanych w programie Microsoft Intune.
 
-Pode configurar Entrust como a autoridade de certificação quando adicionar uma função de ponto de registo de certificados no Configuration Manager. Ao adicionar um novo perfil de certificado que emite certificados PFX, pode selecionar um Microsoft ou Entrust autoridade de certificação.
+Podczas dodawania roli punktu rejestracji certyfikatu w programie Configuration Manager, można skonfigurować Entrust jako urząd certyfikacji. Podczas dodawania nowego profilu certyfikatu, który wystawia certyfikaty PFX, możesz wybrać Microsoft lub Entrust urzędu certyfikacji.
 
-**Problema de conhecido**: No 1706 technical preview, os certificados PFX não são emitidos para autoridades de certificação da Microsoft. Isto não afeta os certificados PFX importados ou perfis SCEP.
+**Znany problem**: W 1706 technical preview certyfikaty PFX nie są wystawiane na potrzeby urzędów certyfikacji firmy Microsoft. Nie dotyczy to profilów SCEP lub importowanych certyfikatów PFX.
 
 
-## <a name="cisco-ipsec-support-for-macos-vpn-profiles"></a>Suporte para perfis VPN macOS Cisco (IPsec)
+## <a name="cisco-ipsec-support-for-macos-vpn-profiles"></a>Obsługa Cisco (IPsec) macOS profilów sieci VPN
 <!-- 1321367 -->
 
-Pode criar um macOS perfil da VPN com o Cisco (IPsec) como o tipo de ligação. Para obter mais informações, consulte [criar perfis VPN](https://docs.microsoft.com/en-us/sccm/mdm/deploy-use/create-vpn-profiles#create-vpn-profiles).
+Można utworzyć macOS profil sieci VPN z Cisco (IPsec) jako typ połączenia. Aby uzyskać więcej informacji, zobacz [tworzenie profilów sieci VPN](https://docs.microsoft.com/en-us/sccm/mdm/deploy-use/create-vpn-profiles#create-vpn-profiles).
 
 
-## <a name="new-windows-configuration-item-settings"></a>Novas definições de item de configuração do Windows
+## <a name="new-windows-configuration-item-settings"></a>Nowe ustawienia elementu konfiguracji systemu Windows
 <!-- 1354715 -->
 
-Nesta versão, adicionámos as seguintes definições novas, que pode utilizar itens de configuração do Windows:
+W tej wersji dodano następujące nowe ustawienia, których można użyć w elementach konfiguracji systemu Windows:
 
-### <a name="password"></a>Palavra-passe
+### <a name="password"></a>Hasło
 
-- **Encriptação de dispositivos**
+- **Szyfrowanie urządzenia**
 
-### <a name="device"></a>Dispositivo
+### <a name="device"></a>Urządzenie
 
-- **Modificação de definições de região (apenas ambiente de trabalho)**
-- **Modificação de definições de energia e o modo de suspensão**
-- **Modificação das definições de idioma**
-- **Modificação de hora do sistema**
-- **Modificação de nome de dispositivo**
+- **Modyfikacja ustawień regionie (tylko wersja desktop)**
+- **Modyfikacja ustawień zasilania i uśpienia**
+- **Modyfikacja ustawień języka**
+- **System czas modyfikacji**
+- **Zmiana nazwy urządzenia**
 
-### <a name="store"></a>Arquivo
+### <a name="store"></a>Magazyn
 
-- **As aplicações da loja de atualização automática**
-- **Utilizar apenas o arquivo privado**
-- **Armazenar iniciação da aplicação teve origem**
+- **Automatyczna aktualizacja aplikacji ze sklepu**
+- **Użyj tylko prywatnego magazynu**
+- **Uruchamianie aplikacji zdalnych magazynu**
 
 ### <a name="microsoft-edge"></a>Microsoft Edge
 
-- **Bloquear o acesso ao sobre: sinalizadores**
-- **Substituição de linha de comandos do SmartScreen**
-- **Substituição de linha de comandos SmartScreen de ficheiros**
-- **Endereço IP localhost WebRTC**
-- **Motor de busca predefinido**
-- **URL de OpenSearch XML**
-- **Homepages (apenas ambiente de trabalho)**
+- **Blokowanie dostępu do informacji o: flagi**
+- **Filtr SmartScreen monitu o zastąpienie**
+- **Filtr SmartScreen monitu o zastąpienie plików**
+- **Adres IP hosta lokalnego WebRTC**
+- **Domyślny aparat wyszukiwania**
+- **Adres URL OpenSearch XML**
+- **Strony główne (tylko wersja desktop)**
 
-Para mais informações sobre as definições de compatibilidade, consulte [garantir a conformidade de dispositivo](/sccm/compliance/understand/ensure-device-compliance).
+Aby uzyskać więcej informacji na temat ustawień zgodności, zobacz [zapewnianie zgodności urządzeń](/sccm/compliance/understand/ensure-device-compliance).
 
 
-## <a name="new-device-compliance-policy-rules"></a>Novas regras de política de conformidade de dispositivo
+## <a name="new-device-compliance-policy-rules"></a>Nowe reguły zasad zgodności urządzenia
 
-* **Tipo de palavra-passe obrigatório**. Especifique se o utilizador tem de criar uma palavra-passe alfanumérica ou uma palavra-passe numérico. Palavras-passe alfanuméricos, também especificar o número mínimo de conjuntos de carateres que a palavra-passe tem de ter. Os quatro conjuntos de carateres são: Letras minúsculas, maiúsculas, símbolos e números.
+* **Wymagany typ hasła**. Określ, czy użytkownik muszą utworzyć hasła alfanumerycznego i numeryczne hasła. Alfanumeryczne haseł również określić minimalną liczbę zestawów znaków, które muszą mieć hasłem. Są cztery zestawy znaków: Małe litery, wielkie litery, symbole i cyfry.
 
-    **Suportado no:**
+    **Obsługiwane na:**
     * Windows Phone 8+
     * Windows 8.1 +
     * iOS 6+
 <br></br>
-* **Depuração USB de bloco no dispositivo**. Não é necessário configurar esta definições como a depuração USB já está desativada no Android para dispositivos de trabalho.
+* **Debugowanie USB bloku na urządzeniu**. Nie masz ustawień jako debugowanie USB już jest wyłączona w systemie Android pracy urządzeń.
 
-    **Suportado no:**
+    **Obsługiwane na:**
     * Android 4.0+
-    * Samsung KNOX Standard 4.0+
+    * Samsung Knox Standard 4.0+
 <br></br>
-* **Impedir que as aplicações a partir de origens desconhecidas**. Exigir que os dispositivos impeçam a instalação de aplicações a partir de origens desconhecidas. Não é necessário configurar esta definição, tal como Android, para dispositivos de trabalho sempre restringir a instalação a partir de origens desconhecidas.
+* **Blokowanie aplikacji z nieznanych źródeł**. Wymagaj, aby urządzenia uniemożliwiały instalację aplikacji z nieznanych źródeł. Nie masz Skonfiguruj to ustawienie, jak Android pracy urządzeń zawsze ograniczyć instalacja z nieznanych źródeł.
 
-    **Suportado no:**
+    **Obsługiwane na:**
     * Android 4.0+
-    * Samsung KNOX Standard 4.0+
+    * Samsung Knox Standard 4.0+
 <br></br>
-* **Necessária análise de ameaças nas aplicações**. Esta definição especifica que a funcionalidade de aplicações de Verifique está ativada no dispositivo.
+* **Wymagaj skanowania zagrożeń na aplikacje**. To ustawienie określa, że funkcja aplikacji Sprawdź, czy jest włączona na urządzeniu.
 
-    **Suportado no:**
-    * Android 4.2 através de 4.4
-    * Samsung KNOX Standard 4.0+
+    **Obsługiwane na:**
+    * System android 4.2 za pośrednictwem 4.4
+    * Samsung Knox Standard 4.0+
 
-Consulte [criar e implementar uma política de conformidade do dispositivo](https://docs.microsoft.com/sccm/mdm/deploy-use/create-compliance-policy) para experimentar as novas regras de conformidade do dispositivo.
+Zobacz [tworzenie i wdrażanie zasad zgodności urządzenia](https://docs.microsoft.com/sccm/mdm/deploy-use/create-compliance-policy) próby nowe reguły zgodności urządzenia.
 
-## <a name="new-mobile-application-management-policy-settings"></a>Novas definições de política de gestão de aplicações móveis
-A partir desta versão, pode utilizar três novas aplicações móveis (MAM) definições de política:
+## <a name="new-mobile-application-management-policy-settings"></a>Nowe ustawienia zasad zarządzania aplikacjami mobilnymi
+Począwszy od tej wersji, można użyć trzech nowe ustawienia zasad zarządzania aplikacjami mobilnymi:
 
-- **Bloquear captura de ecrã (apenas dispositivos Android):** Especifica que as funcionalidades de captura de ecrã do dispositivo estão bloqueadas durante a utilização desta aplicação.
+- **Zablokuj Przechwytywanie ekranu (tylko urządzenia z systemem Android):** Określa, że możliwości przechwytywania ekranu urządzenia są blokowane podczas korzystania z tej aplikacji.
 
-- **Desative a sincronização de contactos:** Impede a aplicação de guardar os dados para a aplicação de contactos nativa no dispositivo.
+- **Wyłącz synchronizację kontaktów:** Aplikacja uniemożliwia zapisywania danych do aplikacji natywnej kontaktów na urządzeniu.
 
-- **Desative a impressão:** Impede que a aplicação de trabalho de impressão ou dados escola.
+- **Wyłącz drukowanie:** Zapobiega aplikacji z drukowaniem pracy lub szkoły danych.
 
-Consulte [proteger aplicações ao utilizar políticas de proteção de aplicações no Configuration Manager](https://docs.microsoft.com/sccm/mdm/deploy-use/protect-apps-using-mam-policies) para experimentar as novas definições de política de proteção de aplicação.
+Zobacz [ochrona aplikacji przy użyciu zasad ochrony aplikacji w programie Configuration Manager](https://docs.microsoft.com/sccm/mdm/deploy-use/protect-apps-using-mam-policies) próby nowe ustawienia zasad ochrony aplikacji.
 
-## <a name="android-and-ios-enrollment-restrictions"></a>Restrições de inscrição do Android e iOS
+## <a name="android-and-ios-enrollment-restrictions"></a>Android i iOS ograniczenia rejestracji
 <!-- 1290826 -->
-A partir desta versão, admins pode agora especificar que os utilizadores não é possível inscrever dispositivos Android ou iOS pessoais no respetivo ambiente híbrido. Isto permite-lhe limite inscritos dispositivos predeclared, dispositivos pertencentes à empresa ou os dispositivos iOS inscritos com o programa de inscrição de dispositivos apenas.
+Począwszy od tej wersji, Administratorzy mogą teraz określić czy użytkowników nie można zarejestrować urządzeń osobistych Android lub iOS w środowisku hybrydowym. Dzięki temu limit zarejestrowane urządzenia do predeclared, urządzenia należące do firmy lub zarejestrowane w usłudze Device Enrollment Program tylko urządzeń z systemem iOS.
 
-### <a name="try-it-out"></a>Experimente
-1. Na consola do Configuration Manager, na área de trabalho **Administração** , aceda a **Serviços Cloud** > **Subscrição do Microsoft Intune**.
-2. No **home page** separador o **subscrição** grupo, escolha **configurar plataformas** e, em seguida, selecione **Android** ou **iOS**.
-3. Selecione **bloco pessoal dispositivos pertencentes à empresa**.
+### <a name="try-it-out"></a>Podczas próby
+1. W konsoli programu Configuration Manager, w obszarze roboczym **Administracja** , wybierz pozycję **Usługi w chmurze** > **Subskrypcja usługi Microsoft Intune**.
+2. Na **Home** karcie **subskrypcji** grupy, wybierz **Konfiguruj platformy** , a następnie wybierz **Android** lub **iOS**.
+3. Wybierz **osobiście urządzenia należące do bloku**.
 
-## <a name="android-for-work-application-management-policy-for-copy-paste"></a>Android para a política de gestão de aplicações de trabalho para copiar-colar
-Iremos foi atualizado com as descrições de definição para Android para itens de configuração de trabalho para o **permitir partilha de dados entre a vida profissional e a pessoal perfil**.
+## <a name="android-for-work-application-management-policy-for-copy-paste"></a>Android pracy zasad zarządzania aplikacjami do kopiowania i wklejania
+Zaktualizowaliśmy opisy ustawień dla systemu Android dla elementów roboczych konfiguracji dla **Zezwalaj na udostępnianie między pracą a profilu osobistego danych**.
 
-|Antes de pré-visualização técnica 1706 | Novo nome de opção | Comportamento|
+|Przed 1706 Technical Preview | Nowa nazwa opcji | Zachowanie|
 |-|-|-|
-|Impedir a qualquer partilha através de limites| Predefinição restrições de partilha| Trabalho ao pessoal: Predefinição (esperada até ser bloqueado em todas as versões) <br>Pessoal para trabalho: Predefinido (permitido 6.x+, bloqueada no 5. x)|
-|Sem restrições|   Aplicações pessoais perfil podem processar pedidos de perfil de trabalho de partilha| Trabalho ao pessoal: Permitido  <br>Pessoal para trabalho: Permitido|
-|As aplicações no perfil de trabalho podem processar pedidos de perfil de pessoal de partilha |As aplicações no perfil de trabalho podem processar pedidos de perfil de pessoal de partilha |Trabalho ao pessoal: Predefinição<br>Pessoal para trabalho: Permitido<br>(Apenas é útil em 5. x onde pessoal para o trabalho está bloqueado)|
+|Zapobieganie udostępnianiu wszelkie bariery| Domyślne ograniczenia udostępniania| Pracy na osobistych: Domyślne (Oczekiwano zablokowanie we wszystkich wersjach) <br>Osobiste do pracy: Domyślne (dozwolone w 6.x+, zablokowane na 5.x)|
+|Bez ograniczeń|   Aplikacje w profilu osobistego może obsłużyć żądania z profilu pracy udostępniania| Pracy na osobistych: Dozwolone  <br>Osobiste do pracy: Dozwolone|
+|Aplikacje w profilu pracy może obsłużyć żądania z osobistego udostępniania |Aplikacje w profilu pracy może obsłużyć żądania z osobistego udostępniania |Pracy na osobistych: Domyślny<br>Osobiste do pracy: Dozwolone<br>(Tylko na 5.x przydatne w przypadku, gdy osobiste do pracy jest zablokowana)|
 
-Nenhuma destas opções diretamente impedir o comportamento de copiar-colar. Foi adicionada uma definição personalizada para o serviço e a aplicação Portal da empresa em 1704 que podem ser configurados para impedir a copiar-colar. Isto pode ser definido através de URI personalizada.
+Żadna z tych opcji bezpośrednio zapobiec kopiowania i wklejania. Dodaliśmy niestandardową wartość ustawienia usługi i aplikacji Portal firmy w 1704, które można skonfigurować w celu zapobieżenia kopiowania i wklejania. Można to skonfigurować w niestandardowy identyfikator URI.
 
 -   OMA-URI: ./Vendor/MSFT/WorkProfile/DisallowCrossProfileCopyPaste
--   Tipo de valor: Booleano
+-   Typ wartości: Boolean
 
-Definição DisallowCrossProfileCopyPaste para verdadeiro impede o comportamento de copiar-colar entre Android para trabalho pessoal e perfis de trabalho.
+Ustawienie DisallowCrossProfileCopyPaste true zapobiega zachowanie kopiowania i wklejania między Android for Work osobistych i profili pracy.
 
-### <a name="try-it-out"></a>Experimente
-1. Na consola do Configuration Manager, selecione **ativos e compatibilidade** > **descrição geral** > **as definições de compatibilidade** > **itens de configuração**.
-2. Escolha **criar** para criar um novo item de configuração e especificar **nome** e **Android para trabalho**.
-3. No dispositivo grupos para configurar a definição, selecione **trabalho perfil**e escolha **seguinte**.
-4. Selecione o valor para **permitir partilha de dados entre a vida profissional e a pessoais perfis**e, em seguida, conclua o assistente.
+### <a name="try-it-out"></a>Podczas próby
+1. W konsoli programu Configuration Manager wybierz **zasoby i zgodność** > **omówienie** > **ustawień zgodności** > **elementy konfiguracji**.
+2. Wybierz **Utwórz** Aby utworzyć nowy element konfiguracji oraz określić **nazwa** i **Android for Work**.
+3. Grupy do konfigurowania ustawień urządzenia, wybierz **profilu pracy**i wybierz polecenie **dalej**.
+4. Wybierz wartość dla **Zezwalaj na udostępnianie między pracą a Profile osobiste danych**, a następnie Zakończ pracę kreatora.
 
-## <a name="device-health-attestation-assessment-for-compliance-policies-for-conditional-access"></a>Avaliação de atestado de estado de funcionamento do dispositivo para as políticas de conformidade de acesso condicional
+## <a name="device-health-attestation-assessment-for-compliance-policies-for-conditional-access"></a>Ocena zaświadczania o kondycji urządzenia dla zasady zgodności dla dostępu warunkowego
 <!-- 1097546 -->
-A partir desta versão, pode utilizar o estado de atestado de estado de funcionamento do dispositivo como uma regra de política de conformidade de acesso condicional aos recursos da empresa.
+Począwszy od tej wersji możesz użyć stan zaświadczania o kondycji jako reguły zasad zgodności dla warunkowego dostępu do zasobów firmy.
 
-### <a name="try-it-out"></a>Experimente
-Selecione uma regra de atestado de estado de funcionamento do dispositivo como parte de uma avaliação da política de conformidade.
+### <a name="try-it-out"></a>Podczas próby
+Wybierz regułę zaświadczania o kondycji w ramach oceny zasad zgodności.

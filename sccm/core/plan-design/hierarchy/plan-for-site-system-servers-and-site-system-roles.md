@@ -1,6 +1,6 @@
 ---
-title: "Planear funções do sistema de sites | Microsoft Docs"
-description: "Ter em consideração servidores do sistema de sites e funções de sistema de site quando planear a hierarquia do System Center Configuration Manager."
+title: "Planowanie ról systemu lokacji | Dokumentacja firmy Microsoft"
+description: "Podczas planowania hierarchii programu System Center Configuration Manager, należy rozważyć serwery systemu lokacji i role systemu lokacji."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,137 +17,137 @@ manager: angrobe
 ms.openlocfilehash: 0a3704a2d3b75ed7e0a7f718b681448ab6fc078d
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pt-PT
+ms.contentlocale: pl-PL
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="plan-for-site-system-servers-and-site-system-roles-for-system-center-configuration-manager"></a>Planear os servidores do sistema de sites e as funções do sistema de sites para o System Center Configuration Manager
+# <a name="plan-for-site-system-servers-and-site-system-roles-for-system-center-configuration-manager"></a>Planowanie serwerów i ról systemu lokacji w programie System Center Configuration Manager
 
-*Aplica-se a: O System Center Configuration Manager (ramo atual)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Cada site do System Center Configuration Manager que instalar inclui um servidor de site que seja um **servidor do sistema de sites**. O site também pode incluir servidores do sistema de sites adicionais em computadores que são remotos em relação ao servidor do site. Os servidores do sistema de sites (o servidor do site ou um servidor do sistema de sites remoto) suportam **funções do sistema de sites**.
+Każda lokacja programu System Center Configuration Manager, należy zainstalować obejmuje serwer lokacji, który jest **serwera systemu lokacji**. Lokacja może obejmować także dodatkowe serwery systemu lokacji na komputerach zdalnych względem serwera lokacji. Serwery systemu lokacji (serwer lokacji lub zdalny serwer systemu lokacji) obsługują **role systemu lokacji**.
 
 
-##  <a name="bkmk_siteservers"></a> Servidores do sistema de sites  
- Quando instala uma função de sistema de sites num computador, esse computador torna-se um servidor de sistema de sites. Em cada site, pode instalar um ou mais servidores de sistema de sites adicionais. Pode também optar por não instalar servidores do sistema de sites adicionais e executar todas as funções de sistema de sites diretamente no computador do servidor do site. Cada servidor do sistema de sites suporta uma ou mais funções de sistema de sites. Servidores adicionais podem ajudá-lo a expandir as capacidades e a capacidade de um site por partilhar a carga de processamento de CPU que colocar as funções do sistema de sites num servidor.  
+##  <a name="bkmk_siteservers"></a> Serwery systemu lokacji  
+ Podczas instalowania roli systemu lokacji na komputerze komputer ten staje się serwerem systemu lokacji. W każdej lokacji można zainstalować jeden lub więcej dodatkowych serwerów systemu lokacji. Można także zainstalować dodatkowe serwery systemu lokacji i uruchamiać wszystkie role systemu lokacji bezpośrednio na komputerze serwera lokacji. Każdy serwer systemu lokacji obsługuje jedną lub więcej ról systemu lokacji. Dodatkowe serwery mogą pomóc rozszerzyć możliwości i wydajność lokacji za pomocą udostępniania obciążenie procesora CPU, że role systemu lokacji na serwerze.  
 
- Ao considerar a adição de um servidor de sistema de sites, certifique-se de que o servidor cumpre os pré-requisitos para a utilização pretendida. Também é uma boa ideia adicioná-lo numa localização de rede com largura de banda suficiente para comunicar com os pontos finais esperados, incluindo o servidor do site, recursos de domínio, uma localização baseado na nuvem, servidores do sistema de sites e clientes).  
+ Podczas rozważania dodania serwera systemu lokacji, upewnij się, że serwer spełnia wymagania wstępne związane z zamierzonym użyciem. Jest również dobrym rozwiązaniem, aby dodać go w lokalizacji sieciowej dysponującej przepustowością wystarczającą do komunikacji z oczekiwanymi punktami końcowymi, łącznie z serwera lokacji, domeny zasobów lokalizacji usługi opartej na chmurze, serwery systemu lokacji i klientów).  
 
- Se configurar o servidor de sistema de sites com um proxy para utilização por funções de sistema de sites, consulte [funções do sistema que podem utilizar um proxy de servidor do Site](#bkmk_proxy).  
+ Jeśli skonfigurujesz serwer systemu lokacji z serwerem proxy do użytku przez role systemu lokacji, zobacz [lokacji role systemu, które mogą używać serwera proxy](#bkmk_proxy).  
 
 ##  <a name="bkmk_planroles"></a> Site system roles  
- As funções do sistema de sites são instaladas num computador para fornecer capacidades adicionais ao site. Alguns exemplos:  
+ Role systemu lokacji są instalowane na komputerze, aby zapewnić lokacji dodatkowe możliwości. Przykłady obejmują:  
 
--   Pontos de gestão adicional para que o site consegue suportar mais dispositivos, até capacidade suportada para o site.  
+-   Dodatkowe Zarządzanie punktów tak, aby lokacji może obsługiwać więcej urządzeń do witryny obsługiwana pojemność.  
 
--   Pontos de distribuição adicionais para expandir a sua infraestrutura de conteúdo, melhorando o desempenho das distribuições de conteúdo em dispositivos e utilizadores.  
+-   Dodatkowych punktów dystrybucji aby rozwinąć infrastruktury zawartości poprawia wydajność dystrybucji zawartości do urządzeń i użytkowników.  
 
--   Uma ou mais funções de sistema de sites específicos de funcionalidades. Por exemplo, um ponto de atualização de software permite-lhe gerir atualizações de software para dispositivos geridos, ou um ponto do Reporting Services permite-lhe executar relatórios para monitorizar e compreender ou partilhar informações sobre a implementação.  
-
-
-Diferentes sites do Configuration Manager podem suportar a diferentes conjuntos de funções de sistema de sites. O conjunto suportado de funções de sistema de sites depende do tipo de site (um site de administração central, site primário ou site secundário). A topologia da sua hierarquia pode limitar a colocação de algumas funções em determinados tipos de site. Por exemplo, o ponto de ligação de serviço só é suportado no site de nível superior da hierarquia, que poderá ser um site de administração central ou um site primário autónomo. Esta função não é suportada num site primário subordinado nem em sites secundários.  
-
-Após a instalação de um site, pode mover a localização de algumas funções de sistema de sites da localização predefinida no servidor do site para outro servidor. Por exemplo, isto é verdadeiro do ponto de gestão ou ponto de distribuição que instalar por predefinição num servidor de site primário ou secundário. Também pode instalar instâncias adicionais de algumas funções de sistema de sites para expandir as capacidades do seu site (fornecer mais serviços aos clientes) e para cumprir os seus requisitos empresariais. Algumas funções são necessárias, enquanto outras são opcionais.  
-
--   **Servidor de site do Configuration Manager.** Esta função identifica o servidor em que a configuração do Configuration Manager é executada para instalar um site ou o servidor no qual instala um site secundário. Esta função não pode ser movida ou desinstalada até o site ser desinstalado.  
-
--   **Sistema de sites do Configuration Manager.** Esta função é atribuída a qualquer computador no qual se instala um site ou instala uma função de sistema de sites. Esta função não pode ser movida ou desinstalada até que a última função do sistema de sites seja removida do computador.  
-
--   **Função de sistema de sites de componente do Configuration Manager.** Esta função identifica um sistema de sites que executa uma instância do serviço SMS Executive e é necessário para suportar outras funções, como pontos de gestão. Esta função não pode ser movida ou desinstalada até que a última função do sistema de sites aplicável seja removida do computador.  
-
--   **Servidor de base de dados de site do Configuration Manager.** Esta função é atribuída a servidores de sistema de sites que contenham uma instância de base de dados do site para um site. Esta função pode apenas ser movida para um novo servidor, modificando o site para utilizar uma instância diferente do SQL Server para alojar a base de dados do site.  
-
--   **Fornecedor de SMS.** A função de fornecedor de SMS é atribuída a cada computador que aloje uma instância do fornecedor de SMS, a interface entre uma consola do Configuration Manager e a base de dados do site. Por predefinição, esta função é instalada automaticamente no servidor do site de um site de administração central e sites primários. Pode instalar instâncias adicionais em cada site para fornecer acesso a utilizadores administrativos adicionais.  
-
-     Para instalar fornecedores adicionais, tem de executar o programa de configuração do Configuration Manager para [gerir o fornecedor de SMS](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ManageSMSprovider). Em seguida, instalar fornecedores adicionais em computadores adicionais. Só pode instalar uma instância do fornecedor de SMS num computador e esse computador tem de estar no mesmo domínio que o servidor do site.  
-
--   **Ponto de serviço de web de catálogo de aplicações.** Uma função do sistema de sites que fornece informações sobre software ao Web site do Catálogo de Aplicações a partir da Biblioteca de Software. Embora esta função só seja suportada em sites primários, pode instalar várias instâncias desta função num site ou em vários sites na mesma hierarquia.  
-
--   **Ponto de Web site do catálogo de aplicações.** Uma função do sistema de sites que fornece aos utilizadores uma lista de software disponível a partir do Catálogo de Aplicações. Embora esta função só seja suportada em sites primários, pode instalar várias instâncias desta função num site ou em vários sites na mesma hierarquia.  
-
-     Quando o catálogo de aplicações suporta computadores cliente na Internet, é melhor prática de segurança para instalar o ponto de Web site do catálogo de aplicações numa rede de perímetro para segurança e para instalar o ponto de serviço web do catálogo de aplicações na intranet.  
-
--   **Ponto de sincronização do Asset Intelligence.** Uma função de sistema de sites liga à Microsoft para transferir informações de catálogo do Asset Intelligence. Esta função também carrega títulos não categorizados, para que possam ser contemplados para inclusão futura no catálogo. A hierarquia suporta apenas uma única instância desta função e tem de estar no site de nível superior da sua hierarquia (um site de administração central ou site primário autónomo). Se expandir um site primário autónomo para uma hierarquia maior, tem de desinstalar esta função do site primário e, em seguida, instalá-la no site de administração central.   Para obter mais informações, veja [Asset Intelligence no System Center Configuration Manager](../../../core/clients/manage/asset-intelligence/introduction-to-asset-intelligence.md).  
-
--   **Ponto de registo de certificados.** Uma função de sistema de sites que comunica com um servidor que executa o serviço de inscrição de dispositivos de rede. Esta função gere os pedidos de certificado de dispositivo que utilizam o protocolo de inscrição de certificados (SCEP) simples. Esta função só é suportada em sites primários e no site de administração central.
-
-     Embora um ponto de registo de certificados único possa fornecer funcionalidade a uma hierarquia completa, poderá querer instalar várias instâncias desta função num site e em vários sites na mesma hierarquia. Isto pode ajudar com balanceamento de carga. Quando existem várias instâncias numa hierarquia, os clientes são atribuídos aleatoriamente a um dos pontos de registo de certificados.  
-
-     Cada ponto de registo de certificados necessita de acesso a uma instância separada do serviço de registo de dispositivos de rede. Não é possível configurar dois ou mais pontos de registo de certificados para utilizarem o mesmo serviço de registo de dispositivos de rede. Além disso, o ponto de registo de certificados não pode ser instalado no mesmo servidor que executa o Serviço de Inscrição de Dispositivos de Rede.  
-
-- **Ponto do conector de gateway de gestão da nuvem.** Uma função de sistema de sites para comunicação com o [gateway de gestão de nuvem](/sccm/core/clients/manage/setup-cloud-management-gateway).
-
--   **Ponto de distribuição.** Uma função do sistema de sites que contém ficheiros de origem para os clientes transferirem, como por exemplo, o conteúdo da aplicação, pacotes de software, atualizações de software, imagens do sistema operativo e imagens de arranque. Por predefinição, esta função é instalada no computador do servidor do site de novos sites primários e secundários quando o site é instalado. Esta função não é suportada num site de administração central. Pode instalar várias instâncias desta função num site suportado e em vários sites na mesma hierarquia. Para obter mais informações, veja [Conceitos fundamentais da gestão de conteúdos no System Center Configuration Manager](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md) e [Gerir conteúdo e a infraestrutura de conteúdo do System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
-
--   **Ponto de estado de contingência.** Uma função de sistema de sites que o ajuda a monitorizar a instalação do cliente e identificar os clientes que não são geridos porque não conseguem comunicar com o respetivo ponto de gestão. Embora esta função só seja suportada em sites primários, pode instalar várias instâncias desta função num site e em vários sites na mesma hierarquia.     
+-   Jeden lub więcej ról systemu lokacji właściwych dla funkcji. Na przykład punkt aktualizacji oprogramowania umożliwia zarządzanie aktualizacjami oprogramowania dla zarządzanych urządzeń lub punkt usług raportowania pozwala uruchamiać raporty, aby monitorować i zrozumieć lub udostępniania informacji o wdrożeniu.  
 
 
--   **Ponto de Endpoint Protection.** Uma função de sistema de sites do Configuration Manager utiliza para aceitar os termos de licenciamento do Endpoint Protection e para configurar a associação predefinida para o serviço de proteção de nuvem. A hierarquia suporta apenas uma única instância desta função e tem de estar no site de nível superior da sua hierarquia (um site de administração central ou site primário autónomo). Se expandir um site primário autónomo para uma hierarquia maior, tem de desinstalar esta função do site primário e, em seguida, instalá-la no site de administração central. Para obter mais informações, consulte [Endpoint Protection no System Center Configuration Manager](../../../protect/deploy-use/endpoint-protection.md).  
+Różne lokacje programu Configuration Manager może obsługiwać różne zestawy ról systemu lokacji. Zestaw obsługiwanych ról systemu lokacji zależy od typu lokacji (centralnej lokacji administracyjnej, lokacji głównej lub dodatkowej lokacji). Topologia hierarchii może ograniczać rozmieszczanie niektórych ról w określonych typów lokacji. Na przykład punkt połączenia usługi jest obsługiwany tylko w lokacji najwyższego poziomu w hierarchii, która może być centralną lokacją administracyjną lub autonomiczną lokacją główną. Ta rola nie jest obsługiwana w podrzędnej lokacji głównej ani w lokacjach dodatkowych.  
 
--   **Ponto de registo.** Uma função de sistema de sites que utiliza certificados PKI para o Configuration Manager para inscrever dispositivos móveis e computadores Mac. Embora esta função só seja suportada em sites primários, pode instalar várias instâncias desta função num site ou em vários sites na mesma hierarquia.  
+Po zainstalowaniu lokacji, należy przenieść lokalizację niektórych ról systemu lokacji z lokalizacji domyślnej na serwerze lokacji do innego serwera. Na przykład dotyczy to punkt zarządzania lub punktu dystrybucji, które są domyślnie instalowane na serwerze lokacji głównej lub dodatkowej. Można także zainstalować dodatkowe wystąpienia niektórych ról systemu lokacji, aby rozszerzyć możliwości lokacji (zapewnić więcej usług klientom) i w celu spełnienia wymagań biznesowych. Niektóre role są wymagane, a inne opcjonalne.  
 
-     Se um utilizador inscreve dispositivos móveis utilizando o Gestor de configuração e a conta de utilizador do Active Directory numa floresta que não é fidedigna pela floresta do servidor do site, tem de instalar um ponto de registo na floresta do utilizador. O utilizador possa ser autenticado.  
+-   **Serwer lokacji programu Configuration Manager.** Ta rola identyfikuje serwer, na którym uruchomiono Instalatora programu Configuration Manager do zainstalowania lokacji lub serwerze, na którym należy zainstalować lokacji pomocniczej. Tej roli nie można przenieść ani odinstalować do momentu odinstalowania lokacji.  
 
--   **Ponto de proxy de registo.** Uma função de sistema de sites que gere os pedidos de inscrição do Gestor de configuração de dispositivos móveis e computadores Mac. Embora esta função só seja suportada em sites primários, pode instalar várias instâncias desta função num site ou em vários sites na mesma hierarquia.  
+-   **System lokacji programu Configuration Manager.** Ta rola jest przypisywana do dowolnego komputera, na którym należy zainstalować lokację albo zainstalować rolę systemu lokacji. Tej roli nie można przenieść ani odinstalować do momentu usunięcia z komputera ostatniej roli systemu lokacji.  
 
-     Se forem suportados dispositivos móveis na Internet, instale o ponto de proxy de registo numa rede de perímetro para segurança e instalar o ponto de registo na intranet.  
+-   **Rola systemu lokacji składnika programu Configuration Manager.** Ta rola identyfikuje system lokacji, który jest uruchamiane wystąpienie usługi głównej programu SMS, a jest wymagany do obsługi innych ról, takich jak punkty zarządzania. Tej roli nie można przenieść ani odinstalować do momentu usunięcia z komputera ostatniej stosownej roli systemu lokacji.  
 
--   **Conector do Exchange Server.** Para obter informações sobre esta função, consulte [gerir dispositivos móveis com o System Center Configuration Manager e o Exchange](../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)  
+-   **Serwer bazy danych lokacji programu Configuration Manager.** Ta rola jest przypisywana do serwerów systemu lokacji zawierających wystąpienie bazy danych lokacji dla lokacji. Ta rola tylko można przenieść do nowego serwera przez modyfikację lokacji do używania innego wystąpienia programu SQL Server do hostowania bazy danych lokacji.  
 
--   **Ponto de gestão.** Uma função de sistema de sites que fornece informações de localização de serviços e políticas a clientes e recebe dados de configuração de clientes.  
+-   **Dostawca programu SMS.** Rola dostawcy programu SMS jest przypisywana do każdego komputera, który hostuje wystąpienie dostawcy programu SMS, interfejs pomiędzy konsolą programu Configuration Manager i bazy danych lokacji. Domyślnie ta rola jest instalowana automatycznie na serwerze lokacji centralnej lokacji administracyjnej i lokacji głównych. Można zainstalować dodatkowe wystąpienia w każdej lokacji w celu zapewnienia dostępu do dodatkowych użytkowników administracyjnych.  
 
-    Por predefinição, esta função é instalada no computador do servidor do site de novos sites primários e secundários quando o site é instalado. Os sites primários suportam várias instâncias desta função. Os sites secundários suportam um único ponto de gestão fornecer um ponto local de contacto para os clientes obterem o computador e utilizador políticas (um ponto de gestão num site secundário é referido como um ponto de gestão do proxy).  
+     Aby zainstalować dodatkowych dostawców, należy uruchomić Instalatora programu Configuration Manager [zarządzania dostawcą programu SMS](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ManageSMSprovider). Następnie możesz zainstalować dodatkowych dostawców na dodatkowych komputerach. Na komputerze można zainstalować tylko jedno wystąpienie dostawcy programu SMS, a komputer ten musi być w tej samej domenie co serwer lokacji.  
 
-     Pontos de gestão podem ser configurados para suportar HTTP ou HTTPs, bem como para suportar dispositivos móveis que gere com gestão de dispositivos móveis no local do System Center Configuration Manager. Pode utilizar o tópico [Réplicas de bases de dados para pontos de gestão do System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md) para ajudar a reduzir a carga da CPU colocada no servidor da base de dados do site por pontos de gestão à medida que atendem pedidos de clientes.  
+-   **Punkt usługi sieci web katalogu aplikacji.** Rola systemu lokacji, która dostarcza do witryny sieci Web katalogu aplikacji informacje o oprogramowaniu z biblioteki oprogramowania. Ta rola jest obsługiwana tylko w lokacjach głównych, ale można zainstalować wiele wystąpień tej roli w lokacji lub w wielu lokacjach w tej samej hierarchii.  
 
--   **Ponto do Reporting Services.** Uma função de sistema de sites que se integra com o SQL Server Reporting Services para criar e gerir relatórios para o Configuration Manager. Esta função é suportada em sites primários e o site de administração central e pode instalar várias instâncias desta função num site suportado. Para obter mais informações, veja [Planeamento de relatórios no System Center Configuration Manager](../../../core/servers/manage/planning-for-reporting.md).  
+-   **Punkt witryny sieci Web katalogu aplikacji.** Rola systemu lokacji, która dostarcza użytkownikom listę dostępnego oprogramowania z katalogu aplikacji. Ta rola jest obsługiwana tylko w lokacjach głównych, ale można zainstalować wiele wystąpień tej roli w lokacji lub w wielu lokacjach w tej samej hierarchii.  
 
--   **Ponto de ligação de serviço.** Uma função de sistema de sites que utiliza para gerir dispositivos móveis com MDM do Microsoft Intune e no local. Esta função também carrega dados de utilização do seu site e é necessário para disponibilizar as atualizações para o Configuration Manager na consola do Configuration Manager. A hierarquia suporta apenas uma única instância desta função e tem de estar no site de nível superior da sua hierarquia (um site de administração central ou site primário autónomo). Se expandir um site primário autónomo para uma hierarquia maior, tem de desinstalar esta função do site primário e, em seguida, instalá-la no site de administração central. Para obter mais informações, veja [Sobre o ponto de ligação de serviço no System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md).  
+     Jeśli katalog aplikacji obsługuje komputery klienckie w Internecie, jest najlepszą praktyką zabezpieczeń zainstalować punkt witryny sieci Web katalogu aplikacji w sieci obwodowej, zabezpieczeń i zainstaluj punkt usługi sieci web katalogu aplikacji w sieci intranet.  
 
--   **Ponto de atualização de software.** Uma função de sistema de sites que se integra com o Windows Server Update Services (WSUS) para disponibilizar atualizações de software a clientes do Configuration Manager. Esta função é suportada em todos os sites:  
+-   **Punkt synchronizacji analizy zasobów.** Rola systemu lokacji, która łączy się Microsoft w celu pobrania informacji o katalogu analizy zasobów. Ta rola przekazuje również nieskategoryzowanych tytułów, które mogą zostać uwzględnione w przyszłości w katalogu. Hierarchia obsługuje tylko jedno wystąpienie tej roli, a które musi znajdować się w lokacji najwyższego poziomu w hierarchii (centralnej lokacji administracyjnej lub autonomicznej lokacji głównej). Po rozwinięciu autonomicznej lokacji głównej do większej hierarchii, należy odinstalować tę rolę z lokacji głównej, a następnie zainstalować ją w centralnej lokacji administracyjnej.   Aby uzyskać więcej informacji, zobacz [Analiza zasobów w programie System Center Configuration Manager](../../../core/clients/manage/asset-intelligence/introduction-to-asset-intelligence.md).  
 
-    -   Instale este sistema de sites no site de administração central para sincronizar com o WSUS.  
+-   **Punkt rejestracji certyfikatu.** Rola systemu lokacji, która komunikuje się z serwerem, na którym działa usługa rejestracji urządzeń sieciowych. Ta rola zarządza żądaniami certyfikatów urządzeń używających prostego protokołu rejestrowania certyfikatów (SCEP). Ta rola jest obsługiwana tylko w lokacjach głównych i centralnej lokacji administracyjnej.
 
-    -   Configure cada instância desta função em sites primários subordinados para sincronizar com o site de administração central.  
+     Mimo że jeden punkt rejestracji certyfikatu może zapewniać funkcje całej hierarchii, można zainstalować wiele wystąpień tej roli w lokacji oraz w wielu lokacjach w tej samej hierarchii. Może to ułatwić równoważenia obciążenia. Jeśli w hierarchii istnieje wiele wystąpień, klienci są losowo przydzielani do jednego z punktów rejestracji certyfikatu.  
 
-    -   Considere a instalação de um ponto de atualização de software em sites secundários, quando a transferência de dados através da rede for lenta.  
+     Każdy punkt rejestracji certyfikatu wymaga dostępu do oddzielnego wystąpienia usługi rejestracji urządzeń sieciowych. Nie można skonfigurować, aby dwa lub więcej punktów rejestracji certyfikatu korzystało z tej samej usługi rejestracji urządzeń sieciowych. Ponadto punktu rejestracji certyfikatu nie można zainstalować na serwerze z uruchomioną usługą rejestracji urządzeń sieciowych.  
 
-    Para obter mais informações, veja [Planear atualizações de software no System Center Configuration Manager](../../../sum/plan-design/plan-for-software-updates.md).  
+- **Punkt łącznika bramy zarządzania w chmurze.** Rola systemu lokacji do komunikowania się z [brama zarządzania chmury](/sccm/core/clients/manage/setup-cloud-management-gateway).
 
--   **Ponto de migração de estado.** Uma função do sistema de sites que armazena dados de estado dos utilizadores quando um computador é migrado para um novo sistema operativo. Esta função é suportada em sites primários e em sites secundários. Pode instalar várias instâncias desta função num site e em vários sites na mesma hierarquia. Para obter mais informações sobre o armazenamento do estado do utilizador ao implementar sistemas operativos, veja [Gerir o estado do utilizador no System Center Configuration Manager](../../../osd/get-started/manage-user-state.md).  
+-   **Punkt dystrybucji.** Rola systemu lokacji zawierająca pliki źródłowe do pobrania przez klientów, takie jak zawartość aplikacji, pakiety oprogramowania, aktualizacje oprogramowania, obrazy systemu operacyjnego i obrazy rozruchowe. Domyślnie ta rola jest instalowana na komputerze serwera lokacji nowych lokacji głównych i dodatkowych w momencie instalacji lokacji. Ta rola nie jest obsługiwana w witrynie Administracja centralna. Można zainstalować wiele wystąpień tej roli w obsługiwanej lokacji oraz w wielu lokacjach w tej samej hierarchii. Aby uzyskać więcej informacji, zobacz temat [Podstawowe pojęcia związane z zarządzaniem zawartością w programie System Center Configuration Manager](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md) oraz [Zarządzanie zawartością i infrastrukturą zawartości programu System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
--   **Ponto do validador de estado de funcionamento do sistema.** Embora esta função de sistema de sites permanece visível na consola do Configuration Manager, já não é utilizado.  
-
-###  <a name="bkmk_proxy"></a> Funções do sistema de sites que podem utilizar um servidor proxy  
- Algumas funções de sistema de sites do Configuration Manager necessitam de ligações à Internet e irão utilizar um servidor proxy quando o servidor de sistema de sites que aloja a função está configurado para um. Normalmente, esta ligação é efetuada no **sistema** contexto do computador onde está instalada a função de sistema de sites. A ligação não é possível utilizar uma configuração de proxy para contas de utilizador normais. Quando é necessário um servidor proxy para estabelecer uma ligação à Internet, tem de configurar o computador para utilizar um servidor proxy:  
-
--   Pode configurar um servidor proxy ao instalar uma função de sistema de sites.  
-
--   Pode adicionar ou modificar uma configuração de servidor proxy quando utilizar a consola do Configuration Manager.  
-
--   A mesma configuração do servidor proxy é utilizada para todas as funções de sistema de sites num servidor de sistema de sites que pode utilizar uma configuração de servidor proxy. Se necessitar de diferentes funções do sistema utilizem diferentes servidores proxy, tem de instalar as funções de sistema de sites em computadores de servidor do sistema de sites diferentes.  
-
--   Se modificar a configuração do servidor proxy ou instalar uma nova função de sistema de sites num computador que já tenha uma configuração de servidor proxy, a configuração original é substituída pela nova configuração.  
+-   **Rezerwowy punkt stanu.** Rola systemu lokacji, która pomaga monitorować instalacje klienta i identyfikować klientów, które nie są zarządzane, ponieważ nie mogli komunikować się ze swoim punktem zarządzania. Ta rola jest obsługiwana tylko w lokacjach głównych, ale można zainstalować wiele wystąpień tej roli w lokacji oraz w wielu lokacjach w tej samej hierarchii.     
 
 
-Para obter procedimentos sobre como configurar o servidor proxy para funções do sistema de sites, consulte o [adicionar funções do sistema de site para o System Center Configuration Manager](../../../core/servers/deploy/configure/add-site-system-roles.md) tópico.  
+-   **Punkt ochrony punktu końcowego.** Rola systemu lokacji, która korzysta z programu Configuration Manager do akceptowania postanowień licencyjnych programu Endpoint Protection i konfigurowania domyślnego członkostwa w usłudze ochrony chmury. Hierarchia obsługuje tylko jedno wystąpienie tej roli, a które musi znajdować się w lokacji najwyższego poziomu w hierarchii (centralnej lokacji administracyjnej lub autonomicznej lokacji głównej). Po rozwinięciu autonomicznej lokacji głównej do większej hierarchii, należy odinstalować tę rolę z lokacji głównej, a następnie zainstalować ją w centralnej lokacji administracyjnej. Aby uzyskać więcej informacji, zobacz [programu Endpoint Protection w programie System Center Configuration Manager](../../../protect/deploy-use/endpoint-protection.md).  
 
-A seguir, são indicadas as funções do sistema de sites que podem utilizar um servidor proxy:  
+-   **Punkt rejestracji.** Rola systemu lokacji, która korzysta z certyfikatów PKI dla programu Configuration Manager do rejestracji urządzeń przenośnych i komputerów Mac. Ta rola jest obsługiwana tylko w lokacjach głównych, ale można zainstalować wiele wystąpień tej roli w lokacji lub w wielu lokacjach w tej samej hierarchii.  
 
--   **Ponto de sincronização do Asset Intelligence.** Esta função de sistema de sites liga à Microsoft, utiliza uma configuração de servidor proxy no computador que aloja o ponto de sincronização do Asset Intelligence.  
+     Jeżeli użytkownik rejestruje urządzenia przenośne za pomocą programu Configuration Manager, a konto użytkownika usługi Active Directory znajduje się w niezaufanym lesie serwera lokacji, punkt rejestracyjny należy zainstalować w lesie użytkownika. Użytkownik mógł zostać uwierzytelniony.  
 
--   **Ponto de distribuição baseado na nuvem.** Quando utiliza um ponto de distribuição baseado na nuvem, o site primário que gere o ponto de distribuição baseados na nuvem tem de ser capaz de ligar ao Microsoft Azure para aprovisionar, monitorizar e distribuir conteúdo ao ponto de distribuição. Se um servidor proxy for necessário para esta ligação, tem de configurar o servidor de proxy no servidor do site primário. Não é possível configurar um servidor proxy no ponto de distribuição em nuvem com base no Azure. Para obter mais informações, consulte o [configurar definições de proxy para sites primários que gerem serviços em nuvem](../../../core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure.md#BKMK_ConfigProxyforCloud) secção o [instalar pontos de distribuição baseado na nuvem no Microsoft Azure para o System Center Configuration Manager](../../../core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure.md) tópico.  
+-   **Punkt proxy rejestracji.** Rola systemu lokacji, która zarządza żądaniami rejestrowania programu Configuration Manager z urządzeń przenośnych i komputerów Mac. Ta rola jest obsługiwana tylko w lokacjach głównych, ale można zainstalować wiele wystąpień tej roli w lokacji lub w wielu lokacjach w tej samej hierarchii.  
 
--   **Conector do Exchange Server.** Esta função de sistema de sites liga a um Exchange Server e utiliza uma configuração de servidor proxy no computador que aloja o conector do Exchange Server.  
+     W przypadku obsługi urządzeń przenośnych w Internecie, zainstalować punkt proxy rejestracji w sieci obwodowej zabezpieczeń i zainstalować punkt rejestracyjny w intranecie.  
 
--   **Ponto de atualização de software.** Esta função de sistema de sites pode exigir ligações ao Microsoft Update para transferir patches e sincronizar informações sobre atualizações. Normalmente, quando configurar o servidor proxy, cada função do sistema de sites nesse computador que suporta a utilização do servidor proxy utiliza o servidor proxy. É necessária nenhuma configuração adicional. Uma exceção a isto é o ponto de atualizações de software. Por predefinição, um ponto de atualizações de software não utiliza um servidor proxy disponível, exceto se também ativar as seguintes opções quando configura o ponto de atualizações de software:  
+-   **Łącznik serwera Exchange.** Aby uzyskać informacje o tej roli, zobacz [zarządzanie urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Exchange](../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)  
 
-    -   **Utilizar um servidor proxy para sincronizar atualizações de software**  
+-   **Punkt zarządzania.** Rola systemu lokacji, która dostarcza klientom informacji o lokalizacji zasad i usług oraz odbiera od klientów dane konfiguracji.  
 
-    -   **Utilizar um servidor proxy quando transferir conteúdo usando regras de implementação automática**  
+    Domyślnie ta rola jest instalowana na komputerze serwera lokacji nowych lokacji głównych i dodatkowych w momencie instalacji lokacji. Lokacje główne obsługują wiele wystąpień tej roli. Lokacje dodatkowe obsługują pojedynczy punkt zarządzania, aby zapewnia lokalny punkt kontaktu dla klientów w celu uzyskania komputera i użytkownika zasady (punkt zarządzania w lokacji dodatkowej jest określone jako punkt zarządzania proxy).  
+
+     Punkty zarządzania można skonfigurować do obsługi protokołu HTTP lub HTTPs, a także do obsługi urządzeń przenośnych, którymi można zarządzać z System Center Configuration Manager na — lokalne zarządzanie urządzeniami przenośnymi. Możliwe jest użycie [replik bazy danych dla punktów zarządzania programu System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md), aby zmniejszyć obciążenie procesora CPU serwera bazy danych lokacji powodowanego przez punkty zarządzania obsługujące żądania od klientów.  
+
+-   **Punkt usług raportowania.** Rola systemu lokacji, która integruje się z programem SQL Server Reporting Services do tworzenia i zarządzania raportami programu Configuration Manager. Ta rola jest obsługiwana w lokacjach głównych i centralnej lokacji administracyjnej, a można zainstalować wiele wystąpień tej roli w obsługiwanej lokacji. Aby uzyskać więcej informacji, zobacz [Planowanie raportowania w programie System Center Configuration Manager](../../../core/servers/manage/planning-for-reporting.md).  
+
+-   **Punkt połączenia usługi.** Rola systemu lokacji, który umożliwia zarządzanie urządzeniami przenośnymi za pomocą Microsoft Intune i dla lokalnego zarządzania urządzeniami przenośnymi. Ta rola również przekazuje dane użycia z lokacji i jest wymagana do udostępnienia aktualizacji programu Configuration Manager dostępne w konsoli programu Configuration Manager. Hierarchia obsługuje tylko jedno wystąpienie tej roli, a które musi znajdować się w lokacji najwyższego poziomu w hierarchii (centralnej lokacji administracyjnej lub autonomicznej lokacji głównej). Po rozwinięciu autonomicznej lokacji głównej do większej hierarchii, należy odinstalować tę rolę z lokacji głównej, a następnie zainstalować ją w centralnej lokacji administracyjnej. Aby uzyskać więcej informacji, zobacz [Informacje o punkcie połączenia z usługą w programie System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md).  
+
+-   **Punkt aktualizacji oprogramowania.** Rola systemu lokacji, która integruje się z systemu Windows Server Update Services (WSUS) w celu zapewniania aktualizacji oprogramowania dla klientów programu Configuration Manager. Ta rola jest obsługiwana we wszystkich lokacjach:  
+
+    -   Zainstaluj ten system lokacji w centralnej lokacji administracyjnej do synchronizowania z serwerem WSUS.  
+
+    -   Skonfiguruj każde wystąpienie tej roli w podrzędnych lokacjach głównych do synchronizacji z centralnej lokacji administracyjnej.  
+
+    -   W przypadku wolnego transferu danych za pośrednictwem sieci należy rozważyć zainstalowanie punktu aktualizacji oprogramowania w lokacjach dodatkowych.  
+
+    Aby uzyskać więcej informacji, zobacz [Planowanie aktualizacji oprogramowania w programie System Center Configuration Manager](../../../sum/plan-design/plan-for-software-updates.md).  
+
+-   **Punkt migracji stanu.** Rola systemu lokacji, która przechowuje dane o stanie użytkownika podczas migrowania komputera do nowego systemu operacyjnego. Ta rola jest obsługiwana w lokacjach głównych, jak i w lokacjach dodatkowych. Można zainstalować wiele wystąpień tej roli w lokacji i w wielu lokacjach w tej samej hierarchii. Aby uzyskać więcej informacji o zapisywaniu stanu użytkownika podczas wdrażania systemu operacyjnego, zobacz [Zarządzanie stanem użytkownika w programie System Center Configuration Manager](../../../osd/get-started/manage-user-state.md).  
+
+-   **Punkt modułu sprawdzania kondycji systemu.** Mimo że ta rola systemu lokacji pozostaje widoczna w konsoli programu Configuration Manager, jest już używany.  
+
+###  <a name="bkmk_proxy"></a> Role systemu lokacji, które mogą używać serwera proxy  
+ Niektóre role systemu lokacji programu Configuration Manager wymagają połączenia z Internetem, a używany serwer proxy, jeśli serwer systemu lokacji, który jest hostem roli jest skonfigurowany do jednego. Zwykle to połączenie jest nawiązywane w **systemu** kontekstu komputera, na którym zainstalowano rolę systemu lokacji. Połączenie nie korzysta z konfiguracji serwera proxy dla typowych kont użytkowników. Gdy serwer proxy jest wymagany do nawiązania połączenia z Internetem, należy skonfigurować komputer do korzystania z serwera proxy:  
+
+-   Można skonfigurować serwera proxy podczas instalowania roli systemu lokacji.  
+
+-   Można dodać lub zmodyfikować konfigurację serwera proxy, korzystając z konsoli programu Configuration Manager.  
+
+-   Tej samej konfiguracji serwera proxy jest używany dla wszystkich ról systemu lokacji na serwerze systemu lokacji, które mogą używać konfiguracji serwera proxy. Jeśli potrzebujesz różnych rolach systemu lokacji można używać różnych serwerów proxy, należy zainstalować role systemu lokacji na komputerach serwera systemu lokacji.  
+
+-   W przypadku zmodyfikowania konfiguracji serwera proxy lub zainstalowania nowej roli systemu lokacji na komputerze dysponującym już konfiguracją serwera proxy oryginalna konfiguracja jest zastępowana nową.  
+
+
+Procedury dotyczące konfigurowania serwera proxy dla ról systemu lokacji, zobacz [Dodaj role systemu lokacji dla programu System Center Configuration Manager](../../../core/servers/deploy/configure/add-site-system-roles.md) tematu.  
+
+Poniżej opisano role systemu lokacji, które mogą korzystać z serwera proxy:  
+
+-   **Punkt synchronizacji analizy zasobów.** Ta rola systemu lokacji łączy do firmy Microsoft, używa konfiguracji serwera proxy na komputerze, który hostuje punkt synchronizacji analizy zasobów.  
+
+-   **Punkt dystrybucji w chmurze.** Korzystając z punktu dystrybucji w chmurze, lokacji głównej zarządzającej punktem dystrybucji w chmurze musi być można nawiązać połączenia z programem Microsoft Azure w celu udostępniania, monitorowania i dystrybucji zawartości do punktu dystrybucji. Jeśli serwer proxy jest wymagane dla tego połączenia, należy skonfigurować serwer proxy na serwerze lokacji głównej. Nie można skonfigurować serwera proxy w chmurze na podstawie — punkt dystrybucji na platformie Azure. Aby uzyskać więcej informacji, zobacz [Skonfiguruj ustawienia serwera proxy dla lokacji głównych zarządzających usługami w chmurze](../../../core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure.md#BKMK_ConfigProxyforCloud) sekcji [zainstalować punkty dystrybucji w chmurze w systemie Microsoft Azure dla programu System Center Configuration Manager](../../../core/servers/deploy/configure/install-cloud-based-distribution-points-in-microsoft-azure.md) tematu.  
+
+-   **Łącznik serwera Exchange.** Ta rola systemu lokacji łączy się z serwerem programu Exchange i używa konfiguracji serwera proxy na komputerze, który hostuje łącznik serwera Exchange.  
+
+-   **Punkt aktualizacji oprogramowania.** Ta rola systemu lokacji może wymagać połączeń z witryną Microsoft Update, w celu pobrania poprawek i synchronizowania informacji dotyczących aktualizacji. Zazwyczaj podczas konfigurowania serwera proxy każda rola systemu lokacji na tym komputerze obsługującym używanie serwera proxy używa serwera proxy. Dodatkowa konfiguracja nie jest wymagane. Wyjątkiem jest punkt aktualizacji oprogramowania. Domyślnie punkt aktualizacji oprogramowania nie używa dostępnego serwera proxy, jeśli nie włączono również następujące opcje podczas konfigurowania punktu aktualizacji oprogramowania:  
+
+    -   **Użyj serwera proxy podczas synchronizowania aktualizacji oprogramowania**  
+
+    -   **Do pobierania zawartości za pomocą reguł wdrażania automatycznego użyj serwera proxy**  
 
     > [!TIP]  
-    >  Para poder selecionar qualquer uma das opções, um servidor proxy tem de ser configurado no servidor do sistema de sites que aloja o ponto de atualizações de software. O servidor proxy só é utilizado para as opções específicas que selecionar.  
+    >  Zanim będzie można wybrać jedną z opcji, serwer proxy musi skonfigurować na serwerze systemu lokacji, który jest hostem punktu aktualizacji oprogramowania. Serwer proxy jest używany tylko zgodnie z wybranymi opcjami.  
 
- Para obter mais informações sobre servidores proxy para pontos de atualização de software, consulte a secção "Definições do servidor Proxy" [instalar um ponto de atualização de software](../../../sum/get-started/install-a-software-update-point.md) tópico.  
+ Aby uzyskać więcej informacji o serwerach proxy punktów aktualizacji oprogramowania, zobacz sekcję "Ustawienia serwera Proxy" w [instalacji punktu aktualizacji oprogramowania](../../../sum/get-started/install-a-software-update-point.md) tematu.  
 
--   **Ponto de ligação de serviço.** Quando configurar para estar online (não offline), esta função de sistema de sites liga-se ao Microsoft Intune e o serviço de nuvem da Microsoft.  
+-   **Punkt połączenia usługi.** Kiedy skonfigurować w trybie online (nie w trybie offline), ta rola systemu lokacji łączy się z Microsoft Intune i usługą w chmurze firmy Microsoft.  

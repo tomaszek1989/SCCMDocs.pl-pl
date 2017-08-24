@@ -1,6 +1,6 @@
 ---
-title: "Novo no System Center Configuration Manager versão 1602 | Microsoft Docs"
-description: "Obter informações sobre as alterações e novas funcionalidades introduzidas na versão 1602 do System Center Configuration Manager."
+title: Nowe w programie System Center Configuration Manager wersji 1602 | Dokumentacja firmy Microsoft
+description: "Uzyskiwanie szczegółowych informacji dotyczących zmian i nowych możliwości wprowadzonych w wersji 1602 programu System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/30/2016
 ms.reviewer: na
@@ -18,204 +18,204 @@ robots: noindex,nofollow
 ms.openlocfilehash: 9a548f43625a907173e7b967d26356bd80f1c5d9
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pt-PT
+ms.contentlocale: pl-PL
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="what39s-new-in-version-1602-of-system-center-configuration-manager"></a>O que &#39; s novidade na versão 1602 do System Center Configuration Manager
+# <a name="what39s-new-in-version-1602-of-system-center-configuration-manager"></a>Jaki &#39; s nowego w wersji 1602 programu System Center Configuration Manager
 
-*Aplica-se a: O System Center Configuration Manager (ramo atual)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
-Atualize para o System Center Configuration Manager só está disponível como uma atualização na consola para sites anteriormente instalados com a versão 1511 a 1602. A versão 1511 é a versão de linha de base inicial, que utiliza para instalar novos sites do Configuration Manager.  
+Aktualizacji 1602 dla programu System Center Configuration Manager jest tylko dostępna jako aktualizacja w konsoli dla zainstalowanych wcześniej lokacji w wersji 1511. Wersja 1511 to początkowa, wersji linii bazowej, używaną do zainstalowania nowych lokacji programu Configuration Manager.  
 
 
 > [!TIP]  
->  Saiba mais sobre:  
+>  Dowiedz się więcej o:  
 >   
->   -   [Instalar novos sites](/sccm/core/servers/deploy/install) (utilizando uma versão de linha de base como a versão 1511)  
->   -   [Instalar atualizações em sites](/sccm/core/servers/manage/updates) (como a atualização 1602)  
+>   -   [Instalowanie nowej lokacji](/sccm/core/servers/deploy/install) (przy użyciu wersji linii bazowej, np. 1511)  
+>   -   [Instalowanie aktualizacji w lokacjach](/sccm/core/servers/manage/updates) (np. aktualizacji 1602)  
 
- As secções seguintes fornecem detalhes sobre as alterações e novas funcionalidades introduzidas na versão 1602 do Configuration Manager.  
+ Poniższe sekcje zawierają szczegółowe informacje dotyczące zmian i nowych możliwości wprowadzonych w wersji 1602 programu Configuration Manager.  
 
-## <a name="site-infrastructure"></a>Infraestrutura de sites  
+## <a name="site-infrastructure"></a>Infrastruktura lokacji  
 
-###  <a name="bkmk_UpgradeOS"></a>No local atualizar o sistema operativo de servidores de sites que executam o Windows Server 2008 R2  
- Os sites do Configuration Manager com a versão 1602 ou posterior suportam a atualização no local do sistema de sites servidores operativo do Windows Server 2008 R2 para o Windows Server 2012 R2.  
+###  <a name="bkmk_UpgradeOS"></a>Uaktualnienie w miejscu systemu operacyjnego serwerów lokacji, z systemem Windows Server 2008 R2  
+ Lokacje programu Configuration Manager, na których jest uruchomiona wersja 1602 lub nowszej obsługują uaktualnienie w miejscu lokacji serwery systemu operacyjnego z systemu Windows Server 2008 R2 do systemu Windows Server 2012 R2.  
 
 > [!WARNING]  
->  Antes de atualizar para o Windows Server 2012 R2, tem de desinstalar o WSUS 3.2 a partir do servidor.  
+>  Przed uaktualnieniem do systemu Windows Server 2012 R2, należy odinstalować usługi WSUS 3.2 z serwera.  
 >   
->  Para obter informações sobre este passo crítico, consulte a secção "Funcionalidades novas e alteradas" [descrição geral do Windows Server Update Services](https://technet.microsoft.com/library/hh852345.aspx), na documentação do Windows Server.  
+>  Aby uzyskać informacje o tym krytycznym kroku, zobacz sekcję "Nowe i zmienione funkcje" w [Omówienie usług Windows Server Update Services](https://technet.microsoft.com/library/hh852345.aspx), w dokumentacji systemu Windows Server.  
 
- Para atualizar um servidor, utilize os procedimentos de atualização do Windows Server 2012 R2. Não é necessário executar o restauro do servidor de site após a atualização do Configuration Manager. Para saber quais são os procedimentos de atualização, veja [Opções de Atualização do Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx) na documentação do Windows Server.  
+ Aby uaktualnić serwer, wykorzystywane procedury uaktualniania systemu Windows Server 2012 R2. Nie trzeba uruchomić przywracania serwera lokacji po uaktualnieniu programu Configuration Manager. Informacje dotyczące procedur uaktualniania można znaleźć w temacie [Opcje uaktualniania do systemu Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx) w dokumentacji systemu Windows Server.  
 
-###  <a name="bkmk_AOAG"></a>Grupos de Disponibilidade AlwaysOn do SQL Server  
- Utilize grupos de Disponibilidade AlwaysOn do SQL Server para alojar a base de dados do site em sites primários e o site de administração central como uma solução de elevada disponibilidade e recuperação após desastre.  
+###  <a name="bkmk_AOAG"></a>Grupy dostępności AlwaysOn programu SQL Server  
+ Użyj grup dostępności AlwaysOn programu SQL Server do hostowania bazy danych lokacji w lokacjach głównych i centralnej lokacji administracyjnej jako rozwiązania wysokiej dostępności i odzyskiwania po awarii.  
 
- Para obter mais informações, consulte [SQL Server AlwaysOn para uma base de dados do site de elevada disponibilidade para o System Center Configuration Manager](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).  
+ Aby uzyskać więcej informacji, zobacz [AlwaysOn programu SQL Server dla bazy danych lokacji o wysokiej dostępności programu System Center Configuration Manager](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).  
 
-## <a name="operating-system-deployment"></a>Implementação do sistema operativo  
+## <a name="operating-system-deployment"></a>Wdrożenie systemu operacyjnego  
 
-### <a name="windows-10-servicing"></a>Manutenção do Windows 10  
- Os seguintes melhoramentos para a manutenção do Windows 10 foram adicionados na versão 1602 do Configuration Manager versão:  
+### <a name="windows-10-servicing"></a>Obsługa systemu Windows 10  
+ Następujące ulepszenia obsługi systemu Windows 10 zostały dodane w programie Configuration Manager w wersji 1602:  
 
--   Novas opções de filtro estão disponíveis para a manutenção planos que permitem-lhe filtrar **idioma**, **necessário**, e **título**. Apenas as atualizações que cumprem os critérios especificados serão adicionadas à implementação associada.  
+-   Nowe opcje filtrowania są dostępne dla planów, które umożliwiają filtrowanie dla obsługi **języka**, **wymagane**, i **tytuł**. Tylko uaktualnienia zgodne z określonymi kryteriami zostaną dodane do skojarzonego wdrożenia.  
 
--   Quando seleciona o **atualizações** sincronização de atualizações de classificação de recursos de software, é apresentado um aviso. Este aviso permite-lhe saber que [correção 3095113](https://support.microsoft.com/kb/3095113) para Windows Server Update Services (WSUS) 4.0 é necessário antes de pode sincronizar as atualizações de software com êxito e a manutenção do Windows 10 funcionar corretamente. A mensagem de aviso, pode aceder ao artigo da base de dados de conhecimento associado.  
+-   Po wybraniu **uaktualnień** synchronizacji aktualizacji oprogramowania klasyfikacji, wyświetlane jest ostrzeżenie. To ostrzeżenie informujące, że [poprawkę 3095113](https://support.microsoft.com/kb/3095113) dla systemu Windows Server Update Services (WSUS) 4.0 jest wymagany, zanim można pomyślnie zsynchronizować aktualizacje oprogramowania i obsługi systemu Windows 10 działała poprawnie. W komunikacie ostrzegawczym można przejść do skojarzonego artykułu bazy wiedzy.  
 
--   Windows 10 disponíveis agora, as atualizações apenas são apresentadas no **manutenção do Windows 10** \ **todas as atualizações do Windows 10** nós da consola do Configuration Manager. Estas atualizações já não aparecem no **atualizações de Software** \ **todas as atualizações de Software** nós da consola.  
+-   10 systemu Windows dostępne uaktualnienia są teraz wyświetlane tylko w **obsługi systemu Windows 10** \ **wszystkie aktualizacje systemu Windows 10** węzła konsoli programu Configuration Manager. Te aktualizacje nie są już wyświetlane w **aktualizacji oprogramowania** \ **wszystkie aktualizacje oprogramowania** węzła konsoli.  
 
--   Um plano de manutenção é considerado uma implementação de alto risco e o **selecionar coleção** janela apresenta apenas as coleções personalizadas que cumprem as definições de verificação de implementação que estão configuradas nas propriedades do site. Para obter mais informações, veja [Definições para gerir implementações de alto risco para o System Center Configuration Manager](../../../protect/understand/settings-to-manage-high-risk-deployments.md).  
+-   Plan obsługi jest uznawana za wdrożenie wysokiego ryzyka oraz **Wybieranie kolekcji** wyświetlane tylko kolekcje niestandardowe zgodne z ustawieniami weryfikacji wdrożenia skonfigurowanymi we właściwościach lokacji. Aby uzyskać więcej informacji, zobacz [Ustawienia zarządzania wdrożeniami o wysokim ryzyku dla programu System Center Configuration Manager](../../../protect/understand/settings-to-manage-high-risk-deployments.md).  
 
--   Os utilizadores que começar agora um pacote de atualização do Windows 10 recebem uma mensagem que que actualizará o sistema operativo.  
+-   Użytkownicy, którzy teraz uruchomić pakiet uaktualnienia systemu Windows 10 komunikat że będą uaktualniać ich systemu operacyjnego.  
 
-## <a name="application-management"></a>Gestão de aplicações  
+## <a name="application-management"></a>Zarządzanie aplikacjami  
 
-### <a name="ios-app-configuration-policies"></a>Políticas de configuração de aplicações iOS  
- Utilize políticas de configuração de aplicação do Configuration Manager para fornecer definições que poderão ser necessárias quando o utilizador executa uma aplicação iOS. Por exemplo, uma aplicação poderá requerer que o utilizador especifique um número de porta personalizado, idioma, definições de segurança ou definições de imagem corporativa (como um logótipo de empresa). Se estas definições forem introduzidas incorretamente, isto pode aumentar a carga sobre o suporte técnico e também tornar mais lenta a adoção de novas aplicações.  
+### <a name="ios-app-configuration-policies"></a>Zasady konfiguracji aplikacji systemu iOS  
+ Użyj zasad konfiguracji aplikacji programu Configuration Manager umożliwiają określanie wartości ustawień, które mogą być wymagane, jeśli użytkownik uruchamia aplikację systemu iOS. Na przykład aplikacja może wymagać użytkownikowi określić niestandardowy numer portu, języka, ustawień zabezpieczeń i ustawień oznaczania marką (takich jak logo firmy). Jeśli te ustawienia są niepoprawnie wprowadzona, to zwiększyć obciążenie działu pomocy technicznej i zwolnić rozpowszechnianie nowych aplikacji.  
 
- Políticas de configuração de aplicação podem ajudar a eliminar estes problemas, permitindo-lhe implementar estas definições em utilizadores de uma política, antes que executar a aplicação. As definições são então fornecidas automaticamente e o utilizador não tem de efetuar qualquer ação. Para obter mais informações, consulte [configurar aplicações iOS com políticas de configuração de aplicações no System Center Configuration Manager](../../../apps/deploy-use/configure-ios-apps-with-app-configuration-policies.md).  
+ Zasady konfiguracji aplikacji mogą pomóc wyeliminować te problemy, umożliwiając wdrażanie tych ustawień do użytkowników w zasadach, zanim uruchomią oni aplikację. Ustawienia są następnie określane automatycznie, a użytkownik nie musi wykonywać żadnych czynności. Aby uzyskać więcej informacji, zobacz [Konfigurowanie aplikacji systemu iOS przy użyciu zasad konfiguracji aplikacji w programie System Center Configuration Manager](../../../apps/deploy-use/configure-ios-apps-with-app-configuration-policies.md).  
 
-### <a name="manage-volume-purchased-ios-apps"></a>Gerir aplicações iOS adquiridas em volume  
- O Configuration Manager pode ajudar a implementar e gerir aplicações adquiridas em volume da Apple Volume-Purchase Program (VPP). Configuration Manager importa as informações da licença da loja de aplicações e controla a quantidade de licenças utilizou.  
+### <a name="manage-volume-purchased-ios-apps"></a>Zarządzanie aplikacjami systemu iOS nabytymi w ramach zakupów zbiorczych  
+ Menedżer konfiguracji ułatwiają wdrażanie i zarządzanie aplikacjami zakupionymi zbiorczo w od firmy Apple Volume Purchase Program (VPP). Configuration Manager importuje informacje o licencji ze sklepu z aplikacjami i śledzenie, ile licencji jest używanych.  
 
- Para obter mais informações, consulte [gerir aplicações iOS compradas em volume com o System Center Configuration Manager](../../../apps/deploy-use/manage-volume-purchased-ios-apps.md).  
+ Aby uzyskać więcej informacji, zobacz [Zarządzanie zbiorczo zakupionymi aplikacjami systemu iOS z System Center Configuration Manager](../../../apps/deploy-use/manage-volume-purchased-ios-apps.md).  
 
-### <a name="automatic-creation-of-office-mobile-apps"></a>Criação automática de aplicações móveis do Office  
- Quando atualizar para a versão 1602 da versão 1511, o Configuration Manager cria automaticamente as seguintes aplicações móveis do Microsoft Office para Android e iOS:  
+### <a name="automatic-creation-of-office-mobile-apps"></a>Automatyczne tworzenie aplikacji mobilnych pakietu Office  
+ Podczas aktualizacji do wersji 1602 z 1511 programu Configuration Manager automatycznie tworzy następujące aplikacje mobilne Microsoft Office dla systemów Android i iOS:  
 
--   Microsoft Word  
+-   Program Microsoft Word  
 
--   Microsoft Excel  
+-   Program Microsoft Excel  
 
--   Microsoft PowerPoint  
+-   Program Microsoft PowerPoint  
 
 -   Microsoft OneDrive  
 
--   Microsoft OneNote (apenas iOS)  
+-   Microsoft OneNote (tylko iOS)  
 
--   Microsoft Outlook  
+-   Program Microsoft Outlook  
 
-Poderá encontrar estas aplicações o **aplicações** nó da consola do Configuration Manager.  
+Dostępne są te aplikacje w **aplikacji** węzła konsoli programu Configuration Manager.  
 
- Para obter mais informações sobre como implementar aplicações, consulte [como implementar aplicações com o System Center Configuration Manager](../../../apps/deploy-use/deploy-applications.md).  
+ Aby uzyskać więcej informacji na temat wdrażania aplikacji, zobacz [sposobu wdrażania aplikacji w programie System Center Configuration Manager](../../../apps/deploy-use/deploy-applications.md).  
 
-## <a name="software-updates"></a>Atualizações de software  
+## <a name="software-updates"></a>Aktualizacje oprogramowania  
 
-### <a name="manage-office-365-client-updates"></a>Gerir atualizações de cliente do Office 365  
- O System Center Configuration Manager tem a capacidade para gerir atualizações de cliente do Office 365, utilizando o fluxo de trabalho de gestão de atualização de software. Para obter mais informações, consulte [gerir o Office 365 ProPlus atualizações com o System Center Configuration Manager](/sccm/sum/deploy-use/manage-office-365-proplus-updates).  
+### <a name="manage-office-365-client-updates"></a>Zarządzanie aktualizacjami klienta usługi Office 365  
+ System Center Configuration Manager ma możliwość zarządzania aktualizacjami klienta usługi Office 365 za pomocą przepływu pracy zarządzania aktualizacjami oprogramowania. Aby uzyskać więcej informacji, zobacz [zarządzania usługi Office 365 ProPlus aktualizacji w programie System Center Configuration Manager](/sccm/sum/deploy-use/manage-office-365-proplus-updates).  
 
-## <a name="compliance-settings"></a>Definições de compatibilidade  
+## <a name="compliance-settings"></a>Ustawienia zgodności  
 
-### <a name="compliance-settings-for-devices-running-windows-10-team"></a>Definições de compatibilidade para dispositivos que executam o Windows 10 Team  
- Foram adicionadas novas definições para o **Windows 8.1 e Windows 10** item de configuração. Estas definições ajudam a controlar dispositivos que executem o Windows 10 Team, tais como um dispositivo Surface Hub.  
+### <a name="compliance-settings-for-devices-running-windows-10-team"></a>Ustawienia zgodności dla urządzeń z systemem Windows 10 Team  
+ Nowe ustawienia zostały dodane do **Windows 8.1 i Windows 10** elementu konfiguracji. Te ustawienia ułatwiają kontrolowanie urządzeń z systemem Windows 10 Team, takich jak urządzenia Surface Hub.  
 
- Para obter mais informações, consulte [como criar itens de configuração para dispositivos Windows 8.1 e Windows 10 geridos sem o cliente do System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
+ Aby uzyskać więcej informacji, zobacz [jak utworzyć elementy konfiguracji dla urządzeń Windows 8.1 i Windows 10 zarządzanych bez klienta programu System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md).  
 
-### <a name="kiosk-mode-settings-for-android-samsung-knox-standard-devices"></a>Definições do modo de local público para dispositivos Android Samsung KNOX Standard  
- Modo de local público permite-lhe bloquear um dispositivo para que apenas determinadas funcionalidades funcionem. Por exemplo, pode permitir que um dispositivo execute apenas uma aplicação gerida que especificar ou pode desativar os botões de volume num dispositivo. Estas definições podem ser utilizadas para um modelo de demonstração de um dispositivo ou um dispositivo com a finalidade de desempenhar apenas uma função, como um dispositivo de ponto de venda. No Configuration Manager, pode agora especificar definições do modo de local público para dispositivos Samsung KNOX Standard.  
+### <a name="kiosk-mode-settings-for-android-samsung-knox-standard-devices"></a>Ustawienia trybu kiosku dla urządzeń z systemem Android Samsung KNOX Standard  
+ Tryb kiosku umożliwia blokowanie urządzenia, tak aby tylko niektóre funkcje działają. Na przykład można zezwolić na uruchamianie tylko określonej zarządzanej aplikacji przez użytkownika na urządzeniu, lub można wyłączyć przyciski regulacji głośności na urządzeniu. Można użyć tych ustawień dla modeli pokazowych urządzenia lub urządzenia służącego do wykonywania tylko jednej funkcji, takich jak urządzeń w punkcie sprzedaży. W programie Configuration Manager można teraz określić ustawienia trybu kiosku dla urządzenia Samsung KNOX Standard.  
 
- Para obter mais informações, consulte [como criar itens de configuração para dispositivos Android e Samsung KNOX Standard geridos sem o cliente do System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md).  
+ Aby uzyskać więcej informacji, zobacz [jak utworzyć elementy konfiguracji dla urządzeń z systemami Android i Samsung KNOX Standard zarządzanych bez klienta programu System Center Configuration Manager](../../../compliance/deploy-use/create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-client.md).  
 
-## <a name="conditional-access"></a>Acesso condicional  
+## <a name="conditional-access"></a>Dostęp warunkowy  
 
-### <a name="conditional-access-for-pcs-managed-by-system-center-configuration-manager"></a>Acesso condicional para PCs geridos pelo System Center Configuration Manager  
- Incorrectas nesta versão, para configurar o acesso condicional para PC, o PC tinha de estar inscritos no Intune ou que tiveram de ser um PC associado a um domínio. Começando com a atualização 1602, o acesso condicional para PCs geridos pelo System Center Configuration manager é suportado. Para os computadores que são geridos pelo System Center Configuration Manager, pode restringir o acesso ao Exchange Online e SharePoint Online apenas a dispositivos conformes com as políticas de conformidade definidas.  
+### <a name="conditional-access-for-pcs-managed-by-system-center-configuration-manager"></a>Dostęp warunkowy dla komputerów zarządzanych przez program System Center Configuration Manager  
+ Przed tą wersją Konfigurowanie dostępu warunkowego na komputerze, do komputera musiały być zarejestrowane w usłudze Intune albo muszą być przyłączone do domeny komputera. Począwszy od aktualizacji 1602, dostęp warunkowy dla komputerów zarządzanych przez program System Center Configuration manager jest obsługiwana. W przypadku komputerów zarządzanych przez program System Center Configuration Manager można ograniczyć dostęp do usługi Exchange Online i SharePoint Online tylko do urządzeń, które są zgodne z ustawionymi zasadami zgodności.  
 
- Para obter mais informações, consulte [gerir o acesso aos serviços do O365 para PCs geridos pelo System Center Configuration Manager](../../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md).  
+ Aby uzyskać więcej informacji, zobacz [zarządzanie dostępem do usług O365 dla komputerów zarządzanych przez program System Center Configuration Manager](../../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md).  
 
-### <a name="restricting-access-based-on-the-health-of-devices"></a>Restringir o acesso com base no estado de funcionamento de dispositivos  
- Agora pode restringir o acesso ao e-mail e 0ffice 365 aos serviços com base no estado de funcionamento dos dispositivos, conforme comunicado pelo serviço de atestado do Estado de funcionamento. Além disso, os dispositivos geridos pelo Intune são incluídos nos relatórios de estado de funcionamento do dispositivo.  
+### <a name="restricting-access-based-on-the-health-of-devices"></a>Ograniczanie dostępu na podstawie kondycji urządzeń  
+ Można teraz ograniczyć dostęp do poczty e-mail i 0ffice 365 usługi na podstawie kondycji urządzeń zgłoszonej przez usługę zaświadczania o kondycji. Ponadto urządzenia zarządzane przez usługę Intune są ujęte w raportach o kondycji urządzeń.  
 
- Consola do Configuration Manager inclui uma nova regra de compatibilidade, que permite-lhe especificar se os dispositivos devem ser permitidos ou bloqueados acesso com base no respetivo estado de funcionamento. Para obter detalhes sobre o serviço de atestado de estado de funcionamento e sobre como o estado de funcionamento de dispositivos é reportado no Intune, consulte [atestado de estado de funcionamento para o System Center Configuration Manager](../../../core/servers/manage/health-attestation.md).  
+ Nowa reguła zgodności, który służy do określenia, czy urządzeniu powinno być dozwolone, czy zablokowała dostęp na podstawie stanu kondycji funkcjami, konsoli programu Configuration Manager. Aby uzyskać szczegółowe informacje o usłudze zaświadczania o kondycji i sposobie zgłaszania kondycji urządzeń w usłudze Intune, zobacz [zaświadczania o kondycji programu System Center Configuration Manager](../../../core/servers/manage/health-attestation.md).  
 
-### <a name="new-compliance-policy-rules"></a>Novas regras de política de conformidade  
- Foram adicionadas novas regras de política de conformidade, como as atualizações automáticas e exigir uma palavra-passe para desbloquear dispositivos, para suportar os requisitos de segurança melhores.
+### <a name="new-compliance-policy-rules"></a>Nowe reguły zasad zgodności  
+ Nowe reguły zasad zgodności, takie jak aktualizacje automatyczne i wymaganie hasła do odblokowania urządzeń, zostały dodane do obsługi lepsze wymagań w zakresie zabezpieczeń.
 
- Para obter mais detalhes, consulte [políticas de conformidade de dispositivos no System Center Configuration Manager](../../../protect/deploy-use/device-compliance-policies.md).  
+ Aby uzyskać więcej informacji, zobacz [zasady zgodności urządzeń w programie System Center Configuration Manager](../../../protect/deploy-use/device-compliance-policies.md).  
 
-### <a name="make-sure-enrolled-and-compliant-devices-always-have-access-to-exchange-on-premises"></a>Certifique-se de que os dispositivos inscritos e compatíveis tenham sempre acesso ao Exchange no local  
- Quando seleciona a opção seguinte, os dispositivos inscritos no Intune e em conformidade com as políticas de conformidade estão autorizados a aceder ao Exchange no local: **Substituição da regra predefinida - permitir sempre inscritos no Intune e dispositivos conformes ao Exchange no local de acesso:**. Esta regra está disponível na **página ' Geral '** do **configurar Assistente de política de acesso condicional** para o Exchange no local.
+### <a name="make-sure-enrolled-and-compliant-devices-always-have-access-to-exchange-on-premises"></a>Upewnij się, że zarejestrowane i zgodne urządzenia zawsze miały dostęp do lokalnego programu Exchange  
+ Jeśli zaznaczysz poniższą opcję, urządzenia zarejestrowane w usłudze Intune i zgodne z zasadami zgodności, mogą uzyskiwać dostęp do lokalnego programu Exchange: **Przesłonięcie reguły domyślnej — zawsze Zezwalaj zarejestrowanym w usłudze Intune i zgodnym urządzeniom na dostęp do lokalnego programu Exchange:**. Ta reguła jest dostępna na **strony Ogólne** z **warunkowego Kreatora konfiguracji zasad dostępu** dla lokalnego programu Exchange.
 
- Esta regra substitui a regra predefinida, o que significa que mesmo que defina a regra predefinida para colocar em quarentena ou bloquear o acesso, inscritos e conformes ainda será capazes de aceder ao Exchange no local. Utilize esta definição quando quiser inscrito e os dispositivos compatíveis tenham sempre acesso ao e-mail através do Exchange no local.   
+ Ta reguła zastępuje regułę domyślną, co oznacza, że nawet jeśli domyślna reguła jest ustawiona na kwarantannę lub blokowanie dostępu, zarejestrowane i zgodne urządzenia nadal będzie można uzyskać dostęp do lokalnego programu Exchange. Użyj tego ustawienia, aby zarejestrowane i zgodne urządzenia zawsze miały dostęp do poczty e-mail za pośrednictwem lokalnego programu Exchange.   
 
- Para instruções detalhadas, consulte [gerir o acesso ao e-mail no System Center Configuration Manager](../../../protect/deploy-use/manage-email-access.md).  
+ Aby uzyskać szczegółowe wskazówki, zobacz [zarządzanie dostępem do poczty e-mail w programie System Center Configuration Manager](../../../protect/deploy-use/manage-email-access.md).  
 
-## <a name="client-management"></a>Gestão de clientes  
+## <a name="client-management"></a>Zarządzanie klientami  
 
-### <a name="client-online-status"></a>Estado online do cliente  
- Um novo estado de clientes está disponível para monitorização se um computador está online ou não. Um computador é considerado online se estiver ligado ao respetivo ponto de gestão atribuído. Para indicar que o computador está online, o cliente envia mensagens do tipo ping ao ponto de gestão. Se o ponto de gestão não receber uma mensagem após 5 minutos, o cliente é considerado offline.  
+### <a name="client-online-status"></a>Stan online klienta  
+ Nowy stan dla klientów jest dostępna do monitorowania, jeśli komputer jest w trybie online lub nie. Komputer jest uznawany za online, jeśli jest ona połączona z przypisanym punkcie zarządzania. Aby wskazać, że komputer jest w trybie online, klient wysyła komunikaty typu ping do punktu zarządzania. Jeśli punkt zarządzania nie odbierze komunikatu po 5 minutach, klient jest traktowany jako w trybie offline.  
 
- Para obter mais informações, consulte [como monitorizar clientes no System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md).  
+ Aby uzyskać więcej informacji, zobacz [jak monitorować klientów w programie System Center Configuration Manager](../../../core/clients/manage/monitor-clients.md).  
 
-### <a name="refresh-pc-machine-and-user-policy-from-software-center"></a>Atualizar a política de computador e utilizador de PC do Centro de Software  
- Uma nova opção **sincronizar política**, foi adicionada para o **opções** > **manutenção do computador** página do Centro de Software que faz com que o PC Atualize o Gestor de configuração de política de computador e utilizador.  
+### <a name="refresh-pc-machine-and-user-policy-from-software-center"></a>Odświeżanie zasad użytkownika i komputera PC z Centrum oprogramowania  
+ Nowa opcja **zasady synchronizacji**, został dodany do **opcje** > **Konserwacja komputera** w Centrum oprogramowania, który powoduje odświeżenie jej programu Configuration Manager na komputerze zasad użytkownika i komputera.  
 
-### <a name="software-center-branding-changes"></a>Alterações de imagem corporativa do Centro de software  
- Pode alterar a cor, o nome da organização e o ícone que são apresentados no Centro de Software. Estas definições são aplicadas de acordo com as seguintes regras:  
+### <a name="software-center-branding-changes"></a>Zmiany znakowania programu Centrum oprogramowania  
+ Można zmienić kolor, nazwę organizacji i ikony wyświetlane w programie Software Center. Te ustawienia są stosowane zgodnie z następującymi zasadami:  
 
-- Se a função de servidor de sites do ponto de Web site do catálogo de aplicações não está instalada, em seguida, o Centro de Software apresenta o nome da organização especificado no **agente do computador** chamado de definição de cliente **nome da organização apresentada no Centro de Software**.  
+- Jeśli nie zainstalowano roli serwera lokacji punktu witryny sieci Web katalogu aplikacji, a następnie Centrum oprogramowania wyświetlana nazwa organizacji określona w **Agent komputera** klienta nosi nazwę **nazwa organizacji wyświetlana w Centrum oprogramowania**.  
 
-- Se a função de servidor de sites do ponto de Web site do catálogo de aplicações estiver instalada, em seguida, o Centro de Software apresenta o nome da organização e cor especificados nas propriedades da função de servidor de site de ponto de Web site de catálogo de aplicações.  
+- Po zainstalowaniu roli serwera lokacji punktu witryny sieci Web katalogu aplikacji programu Software Center wyświetla nazwę organizacji i kolor określone we właściwościach roli serwera lokacji punktu witryny sieci Web katalogu aplikacji.  
 
-- Se uma subscrição do Microsoft Intune estiver configurada e ligada ao ambiente do Configuration Manager, em seguida, o Centro de Software apresenta o nome da organização, a cor e o logótipo da empresa especificados nas propriedades de subscrição do Intune.  
+- Jeśli subskrypcję Microsoft Intune jest skonfigurowana i podłączone do środowiska programu Configuration Manager, programu Software Center wyświetla nazwę organizacji, kolor i logo firmy określone we właściwościach subskrypcji usługi Intune.  
 
-### <a name="health-attestation"></a>Atestado de estado de funcionamento  
- Os administradores podem ver o estado do atestado de estado de funcionamento de dispositivo do Windows 10 na consola do Configuration Manager. Isto está disponível para o Configuration Manager, bem como do Configuration Manager com o Microsoft Intune. O atestado de estado de funcionamento permite ao administrador garantir que os computadores cliente têm as seguintes configurações fidedignas de BIOS, TPM e software de arranque ativadas:  
+### <a name="health-attestation"></a>Zaświadczanie o kondycji  
+ Administratorzy mogą wyświetlać stan zaświadczania o kondycji urządzenia systemu Windows 10 w konsoli programu Configuration Manager. To jest dostępna dla programu Configuration Manager, a także programu Configuration Manager w usłudze Microsoft Intune. Zaświadczanie o kondycji urządzenia umożliwia administratorowi upewnienie się, że komputery klienckie mają włączone następujące godne zaufania konfiguracje systemu BIOS, modułu TPM i oprogramowania rozruchowego:  
 
--   Antimalware de início antecipado  
+-   Usługa wczesnej ochrony przed złośliwym oprogramowaniem  
 
--   BitLocker  
+-   Funkcja BitLocker  
 
--   Arranque seguro  
+-   Bezpieczny rozruch  
 
--   Integridade do código  
+-   Integralność kodu  
 
-Para obter mais informações, consulte [atestado de estado de funcionamento para o System Center Configuration Manager](../../../core/servers/manage/health-attestation.md).  
+Aby uzyskać więcej informacji, zobacz [zaświadczania o kondycji programu System Center Configuration Manager](../../../core/servers/manage/health-attestation.md).  
 
-### <a name="improvements-to-endpoint-protection-antimalware-settings"></a>Melhoramentos às definições de antimalware do Endpoint Protection  
- 1602 adiciona as seguintes definições novas de política antimalware do Endpoint Protection para o Windows Defender:  
+### <a name="improvements-to-endpoint-protection-antimalware-settings"></a>Udoskonalenia ustawień ochrony przed złośliwym kodem programu Endpoint Protection  
+ 1602 dodano następujące nowe ustawienia w zasadach ochrony przed złośliwym kodem Endpoint Protection dla usługi Windows Defender:  
 
--   Proteção em tempo real: Bloquear aplicações potencialmente indesejáveis ao transferir, antes da instalação.  
+-   Ochrona w czasie rzeczywistym: Blokuj potencjalnie niechciane aplikacje podczas pobierania przed instalacją.  
 
--   Definições de análise: Analise unidades de rede mapeadas durante uma análise completa.  
+-   Ustawienia skanowania: Skanuj zamapowane dyski sieciowe podczas pełnego skanowania.  
 
--   Definições de submissão de ficheiros de exemplo automática:  
+-   Przykładowy automatycznej ustawień przesyłania plików:  
 
-     O motor antimalware pode solicitar exemplos de ficheiros para serem enviados à Microsoft para análise adicional. Por predefinição, será sempre apresentado um aviso antes de enviar esses exemplos. Os administradores podem agora gerir as seguintes definições para configurar este comportamento:  
+     Aparat ochrony przed złośliwym kodem może prosić o przesyłanie plików próbek do firmy Microsoft w celu dalszej analizy. Domyślnie przed wysłaniem takich próbek zawsze wyświetlany jest monit. Administratorzy mogą teraz zarządzać następującymi ustawieniami w celu skonfigurowania tego zachowania:  
 
-    -   Avançado: Ative a submissão automática de ficheiros ajudar a Microsoft a determinar se certos itens detetados são maliciosos.  
+    -   Zaawansowane: Włącz przesyłanie plików próbek automatycznego pomóc firmie Microsoft w określeniu, czy konkretne wykryte elementy są złośliwe.  
 
-    -   Avançado: Permita aos utilizadores modificar definições de submissão de ficheiros de exemplo automática.  
+    -   Zaawansowane: Zezwalaj użytkownikom na modyfikowanie ustawień przesyłania automatyczne przykładowych plików.  
 
-    Além disso, na secção "Definições de exclusão" da política de antimalware de proteção de ponto final, o existente **excluir ficheiros e pastas** definição agora permite exclusões de dispositivos.  
+    Ponadto w sekcji "Ustawienia wykluczania" zasad ochrony przed złośliwym kodem ochrony punktu końcowego, istniejące **wykluczyć pliki i foldery** ustawienie teraz umożliwia teraz wykluczanie urządzeń.  
 
-Para obter mais informações, consulte [como criar e implementar políticas antimalware do Endpoint Protection no System Center Configuration Manager](../../../protect/deploy-use/endpoint-antimalware-policies.md).  
+Aby uzyskać więcej informacji, zobacz [tworzenie i wdrażanie zasad ochrony przed złośliwym kodem programu Endpoint Protection w programie System Center Configuration Manager](../../../protect/deploy-use/endpoint-antimalware-policies.md).  
 
-## <a name="mobile-device-management"></a>Gestão de dispositivos móveis  
+## <a name="mobile-device-management"></a>Zarządzanie urządzeniami przenośnymi  
 
-### <a name="ios-activation-lock"></a>Bloqueio de ativação de iOS  
- O Configuration Manager pode ajudar a gerir o bloqueio de ativação, uma funcionalidade de encontrar iOS a minha aplicação iPhone para iOS 7.1 ou dispositivos posteriores. O Bloqueio de Ativação é ativado automaticamente ao utilizar a aplicação Encontrar o Meu iPhone num dispositivo. Depois de estar ativado, o Apple ID e a palavra-passe do utilizador têm de ser introduzidos primeiro para que qualquer pessoa possa:  
+### <a name="ios-activation-lock"></a>Blokady aktywacji systemu iOS  
+ Configuration Manager ułatwia zarządzanie blokadą aktywacji, funkcja Znajdź systemu iOS aplikacja Mój iPhone dla systemu iOS 7.1 i nowszym. Blokada aktywacji jest włączana automatycznie w przypadku użycia aplikacji Znajdź mój iPhone na urządzeniu. Jeśli ta funkcja została włączona, należy podać identyfikator Apple ID i hasło użytkownika, aby można było wykonać następujące czynności:  
 
--   Desative encontrar o meu iPhone.  
+-   Wyłączenie aplikacji Znajdź mój iPhone.  
 
--   Apagar o dispositivo.  
+-   Usunięcie z urządzenia.  
 
--   Reative o dispositivo.  
+-   Ponownego uaktywnienia urządzenia.  
 
-O Configuration Manager pode pedir o estado de bloqueio de ativação de dispositivos supervisionados e não supervisionados que executam o iOS 7.1 e posterior. Para dispositivos supervisionados, o Configuration Manager pode obter o código de desativação do bloqueio de ativação e enviá-lo diretamente para o dispositivo.  
+Menedżer konfiguracji może wysłać żądanie stanu blokady aktywacji na nadzorowanych i nienadzorowanych urządzeniach z systemem iOS 7.1 lub nowszy. W przypadku urządzeń nadzorowanych programu Configuration Manager może pobrać kod obejścia blokady aktywacji i wystawić go bezpośrednio na urządzeniu.  
 
- Para obter mais informações, consulte [ajudar a proteger dispositivos iOS com o bloqueio de ativação desativando no System Center Configuration Manager](/sccm/mdm/deploy-use/manage-ios-activation-lock).  
+ Aby uzyskać więcej informacji, zobacz [Łatwiejsza ochrona urządzeń z blokady aktywacji obejścia w programie System Center Configuration Manager dla systemu iOS](/sccm/mdm/deploy-use/manage-ios-activation-lock).  
 
-### <a name="monitor-terms-and-conditions-deployments"></a>Monitorizar implementações de termos e condições  
- Pode monitorizar implementações de termos e condições na consola do Configuration Manager.  
+### <a name="monitor-terms-and-conditions-deployments"></a>Monitorować wdrożenia warunków i postanowień  
+ Możesz monitorować wdrożenia warunków i postanowień w konsoli programu Configuration Manager.  
 
- Selecione a implementação de termos e condições da lista de implementações. A área de resumo mostra as estatísticas seguintes:  
+ Wybierz wdrożenie warunków i postanowień, z listy wdrożeń. Obszar podsumowania przedstawia następujące statystyki:  
 
--   **Em conformidade**: Os utilizadores aceitaram a versão mais recente dos termos e condições.  
+-   **Zgodne**: Użytkownicy zaakceptowali najnowszą wersję warunków i postanowień.  
 
--   **Erro**  
+-   **Błąd**  
 
--   **Não compatível**: Os utilizadores aceitaram uma versão dos termos e condições, mas não a versão mais recente.  
+-   **Niezgodne**: Użytkownicy zaakceptowali wersję warunków i postanowień, ale nie najnowszą wersję.  
 
--   **Desconhecido**: Os utilizadores nunca aceitaram os termos e condições, incluindo as pessoas sem um dispositivo inscrito.  
+-   **Nieznany**: Użytkownicy nigdy nie zaakceptowali warunków i postanowień, w tym użytkownicy bez zarejestrowanego urządzenia.  

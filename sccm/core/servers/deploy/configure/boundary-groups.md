@@ -1,6 +1,6 @@
 ---
-title: Definir grupos de limites | Microsoft Docs
-description: "Compreenda os grupos de limites com ligação de clientes para sistemas de sites no System Center Configuration Manager."
+title: Definiowanie grup granic | Dokumentacja firmy Microsoft
+description: "Zrozumienie grup granic, połączonych klientów z systemami lokacji w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
@@ -17,344 +17,344 @@ manager: angrobe
 ms.openlocfilehash: 5debc6559f4b1c213e8ca513d685941c9e669063
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pt-PT
+ms.contentlocale: pl-PL
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="configure-boundary-groups-for-system-center-configuration-manager"></a>Configurar grupos de limites para o System Center Configuration Manager
+# <a name="configure-boundary-groups-for-system-center-configuration-manager"></a>Konfigurowanie grup granic dla programu System Center Configuration Manager
 
 
-*Aplica-se a: O System Center Configuration Manager (ramo atual)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Utilizar grupos de limites no System Center Configuration Manager para agrupar logicamente relacionadas com as localizações de rede ([limites](/sccm/core/servers/deploy/configure/boundaries)) torna mais fácil de gerir a sua infraestrutura. Limites devem ser atribuídos a grupos de limites, antes de poder utilizar o grupo de limites.
+Używasz grup granic w programie System Center Configuration Manager do logicznego pogrupowania powiązanych lokalizacji sieciowych ([granice](/sccm/core/servers/deploy/configure/boundaries)) aby ułatwić zarządzanie infrastrukturą. Granice można przypisać do grup granic, zanim będzie możliwe użycie grupy granic.
 
-Por predefinição, o Configuration Manager cria um grupo de limites de site predefinido em cada site.
+Domyślnie program Configuration Manager tworzy domyślną grupę granic lokacji w każdej lokacji.
 
 > [!IMPORTANT]  
->  **As informações nesta secção de grupos de limites e respetivas secções subordinado aplica-se a versão 1610 ou posterior.** Este conteúdo tiver sido revisto para ser específico a alterações estruturais introduzidas para grupos de limites com esta versão de atualização.
+>  **Informacje przedstawione w tej sekcji grupy granic i jego sekcje podrzędnych dotyczy wersji 1610 lub nowszej.** Ta zawartość została zmieniona jest specyficzny dla zmian projektowych wprowadzonych w grupach granic w tej wersji aktualizacji.
 >
-> **Se utilizar versões anteriores à 1610**, consulte [grupos de limites para as versões do System Center Configuration Manager versão 1511, 1602 e 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606) para obter informações sobre como utilizar e configurar grupos de limites com essas versões de produto.
+> **Jeśli używasz wersji przed 1610**, zobacz [grup granic dla programu System Center Configuration Manager w wersji 1511, 1602 i 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606) informacji na temat użycia i konfigurowania grup granic z tymi wersjami produktu.
 
-Para configurar grupos de limites, associar limites (localizações de rede) e funções de sistema de sites, como pontos de distribuição, para o grupo de limites. Isto ajuda a associar clientes para servidores do sistema de sites como perto de pontos de distribuição que estão localizados os clientes na rede.
+Aby skonfigurować grupy granic, należy skojarzyć granic (lokalizacje sieciowe) i role systemu lokacji, takich jak punkty dystrybucji do grupy granic. Dzięki temu można skojarzyć klientów na serwerach systemu lokacji, takich jak punkty dystrybucji, które znajdują się w pobliżu klientów w sieci.
 
-Ao atribuir o mesmo limite a vários grupos de limites e atribuir o mesmo site servidores do sistema, como pontos de distribuição a vários grupos de limites, aumentar a disponibilidade dos sistemas de sites para uma vasta gama de localizações de rede.
+Należy przypisać tej samej granicy do wielu grup granic, a tej samej lokacji serwery systemu, takich jak punkty dystrybucji do wielu grup granic zwiększa dostępność systemów lokacji dla szerszej grupy lokalizacji sieciowych.
 
-Os clientes utilizam um grupo de limites para:  
+Klienci używają grupę granic:  
 
--   Atribuição automática de site  
--   Para localizar um servidor de sistema de sites que pode fornecer um serviço, incluindo:
-    - Pontos de distribuição para localização de conteúdo
-    -   Pontos de atualização de software (início com a versão 1702)
-    - Pontos de migração de estado
-    - Pontos de gestão preferenciais (se utilizar pontos de gestão preferidos, tem de ativar esta opção para a hierarquia e não a partir da configuração do grupo de limites. Consulte [para ativar a utilização de pontos de gestão preferenciais](#to-enable-use-of-preferred-management-points) neste tópico.)
+-   Automatycznego przypisywania lokacji  
+-   Aby znaleźć serwer systemu lokacji, która może zapewnić usługę, w tym:
+    - Punkty dystrybucji dla lokalizacji zawartości
+    -   Punkty aktualizacji oprogramowania (począwszy od wersji 1702)
+    - Punkty migracji stanu
+    - Preferowanych punktów zarządzania (Jeśli używasz preferowane punkty zarządzania, należy włączyć tę opcję dla hierarchii, a nie za pomocą konfiguracji grupy granic. Zobacz [umożliwia korzystanie z preferowanych punktów zarządzania](#to-enable-use-of-preferred-management-points) w tym temacie.)
 
-##  <a name="boundary-groups-and-relationships"></a>Grupos de limites e relações
-Para cada grupo de limites na hierarquia, pode atribuir:
+##  <a name="boundary-groups-and-relationships"></a>Grupy granic i relacje
+Dla każdej grupy granic w hierarchii można przypisać:
 
--  Um ou mais limites. Quando um cliente estiver numa localização de rede que está definida como um limite atribuído a um grupo de limites específico, que é chamado o **atual** grupo de limites. Um cliente pode ter mais do que um grupo de limites atuais.
-- Uma ou mais funções de sistema de sites.  Os clientes podem sempre utilizar funções de sistema de sites associadas com o respetivo grupo de limites atuais. Dependendo das configurações adicionais, poderá seria capazes de utilizar as funções do sistema de sites em grupos de limites adicionais.  
+-  Co najmniej jedną granicę. Kiedy klient znajduje się w lokalizacji sieciowej, która jest zdefiniowana jako granicę przypisane do określonej grupy, która jest wywoływana **bieżącego** grupy granic. Klient może mieć więcej niż jednej grupy granic bieżącej.
+- Jeden lub więcej ról systemu lokacji.  Klienci mogą zawsze używać ról systemu lokacji skojarzone z ich bieżącą grupę granic. W zależności od dodatkowe konfiguracje mogą one można używać w grupach granic dodatkowe role systemu lokacji.  
 
-Para cada grupo de limites que cria, pode configurar uma ligação unidirecional para outro grupo de limites. A ligação é chamada um **relação**. Os grupos de limites a associar ao são denominados **vizinho** grupos de limites. Um grupo de limites pode ter várias relações, cada um com um grupo de limites de vizinho específico.
+Dla każdej grupy granic, które możesz utworzyć można skonfigurować jednokierunkowe łącze do innej grupy granic. Łącze jest nazywany **relacji**. Łącze do grupy granic są nazywane **sąsiada** grup granic. Grupa granic może mieć wiele relacji, każdy z grupą granic określonych sąsiedniego.
 
-A configuração de cada relação determina quando um cliente que não consegue localizar que um servidor do sistema de sites disponíveis no seu grupo de limites atual pode começar a pesquisar um grupo de limites de vizinho para localizar um sistema de sites disponíveis. Esta pesquisa de grupos adicionais denomina **contingência**.
+Konfiguracja każdej relacji określa, kiedy klient, który zakończy się niepowodzeniem, aby dowiedzieć się, że serwer systemu lokacji dostępne w jego bieżącej grupy granic można rozpocząć wyszukiwania sąsiada grupy granic można znaleźć systemu lokacji. To wyszukiwanie dodatkowych grup jest nazywany **rezerwowy**.
 
-## <a name="fallback"></a>Contingência
-Para evitar problemas para clientes quando estes não é possível localizar um sistema de sites disponíveis no respetivo grupo de limites atual, é possível definir a relação entre grupos de limites que define o comportamento de contingência. Contingência permite que um cliente expandir a sua pesquisa para grupos de limites adicionais para localizar um sistema de sites disponíveis.
+## <a name="fallback"></a>Opcja rezerwowa
+Aby zapobiec problemom dla klientów, gdy system lokacji dostępny nie znajduje się w ich bieżącej grupy granic, należy zdefiniować relacji między grupami granic, które definiuje zachowanie rezerwowego. Rezerwa umożliwia klienta rozwiń wyszukiwanie do grup granic dodatkowe można znaleźć systemu lokacji.
 
-As relações estão configuradas em Propriedades do grupo de limites **relações** separador. Quando configurar uma relação, é possível definir uma ligação a um grupo de limites de vizinho. Para cada tipo de função de sistema de sites que é suportada, pode configurar definições independentes para reversão para esse grupo de limites de vizinho. Por exemplo, quando configurar uma relação a um grupo de limites específico pode definir contingência para pontos de distribuição para ocorrer após 20 minutos, em vez da predefinição de 120. Consulte [exemplo de como utilizar grupos de limites](#example-of-using-boundary-groups) para obter um exemplo mais extenso.
+Relacje są skonfigurowane na właściwości grupy granic **relacje** kartę. Po skonfigurowaniu relacji z grupą granic sąsiada należy zdefiniować łącza. Dla każdego typu Rola systemu lokacji, która jest obsługiwana można skonfigurować niezależnie od ustawień powrotu do tej grupy granic sąsiedniego. Na przykład po skonfigurowaniu relacji z grupą granic określonych można ustawić rezerwowy dla punktów dystrybucji zostać przeprowadzone po upływie 20 minut, zamiast domyślnej 120. Zobacz [przykład za pomocą grup granic](#example-of-using-boundary-groups) szerszej np.
 
-Se um cliente não conseguir localizar uma função de sistema de sites disponíveis no seu grupo de limites atual, o cliente utiliza o contingência tempo em minutos para determinar após o período de tempo pode começar a pesquisar um sistema de sites disponíveis que está associado esse grupo de limites de vizinho.  
+Jeśli klient nie może znaleźć dostępna Rola systemu lokacji w jego bieżącej grupy granic, klient używa rezerwowej czas w minutach do określenia po jak długo można rozpocząć wyszukiwania system lokacji dostępny, który jest skojarzony z tej grupy granic sąsiedniego.  
 
-Quando um cliente não é possível localizar um sistema de sites disponíveis e começa a procurar nas localizações dos grupos de limites de vizinho, aumenta o conjunto de sistemas de sites disponíveis que pode utilizar de forma que é definida pela sua configuração de grupos de limites e relações.
+Gdy klient nie może znaleźć system lokacji dostępny i rozpocznie się wyszukiwanie w lokalizacjach od sąsiada grup granic, zwiększa puli systemy lokacji dostępne, które mogą być używane w taki sposób, który jest zdefiniowany w bieżącej konfiguracji grupy granic i ich relacji.
 
-- Um grupo de limites pode ter mais de uma relação. As relações de múltiplos pode configurar a contingência para cada tipo de sistema de sites para diferentes vizinhos para ocorrer após os períodos de tempo diferentes.    
-- Clientes só contingência para um grupo de limites que é um vizinho direto do respetivo grupo de limites atuais.
-- Quando um cliente é um membro de vários grupos de limites, o grupo de limites atual está definido como uma União de tudo o que os grupos de limites do cliente. Que o cliente pode, em seguida, contingência para vizinhos de qualquer um desses grupos de limites original.
+- Grupa granic może mieć więcej niż jedną relację. Relacje wiele można skonfigurować używane dla każdego typu systemu lokacji z różnych sąsiadów występuje po różnych okresach czasu.    
+- Klienci tylko powrotu do grupy granic, która jest bezpośrednio sąsiada ich bieżącej grupy granic.
+- Gdy klient jest członkiem wielu grup granic, bieżącą grupę granic jest zdefiniowany jako Unii całkowicie grup granic klienta. Klient może następnie powrotu do sąsiadów któregokolwiek z tych oryginalnego grup granic.
 
-### <a name="the-default-site-boundary-group"></a>O grupo de limites de site predefinido
-Para além dos grupos de limites que cria, cada site tem um grupo de limites de site predefinido que é criado pelo Configuration Manager. Este grupo é designado ***predefinição-Site-limite-grupo&lt;sitecode >***. Por exemplo, o grupo para o site ABC seria possível designado *predefinição-Site-limite-grupo&lt;ABC >.*
+### <a name="the-default-site-boundary-group"></a>Domyślna grupa granic lokacji
+Oprócz grup granic, które możesz utworzyć każda lokacja ma domyślne grupy granic lokacji jest tworzony przez program Configuration Manager. Ta grupa ma nazwę ***domyślna--grupy granic lokacji&lt;kod lokacji >***. Na przykład, czy nazwę grupy w lokacji ABC *domyślna--grupy granic lokacji —&lt;ABC >.*
 
-Para cada grupo de limites que cria, o Configuration Manager cria automaticamente uma ligação implícita para cada grupo de limites de site predefinido na hierarquia.
--   A hiperligação implícita é uma opção de contingência de predefinido de um grupo de limites atuais ao grupo de limites de sites predefinido, que tem um tempo de contingência da predefinição de 120 minutos.
--   Os clientes que não estão num limite associado a nenhum grupo de limites na hierarquia utilizam o grupo de limites de site predefinido do respetivo site atribuído para identificar funções do sistema de sites válidos podem utilizar.
+Dla każdej grupy granic tworzonych programu Configuration Manager automatycznie tworzy domniemanych łącze do każdej grupy granic lokacji domyślnej w hierarchii.
+-   Dorozumiany łącze jest domyślne opcji rezerwowej z bieżącej grupy granic do domyślnej grupy granic lokacji rezerwowego czasu domyślne 120 minut.
+-   Klienci, którzy nie znajdują się na granicy skojarzony z żadną inną grupą granic w hierarchii umożliwia domyślnej grupy granic lokacji w przypisanej lokacji zidentyfikowanie role systemu lokacji prawidłowy, którego mogą używać.
 
-Para gerir a contingência para o grupo de limites de site predefinido:
-- Pode aceder às propriedades do site predefinido limites do grupo e alterar os valores no **comportamento predefinido** separador. Alterações efetuadas aqui aplicam-se a *todos os* implícito ligações a este grupo de limites. Estas definições podem ser substituídas quando configurar a ligação explícita para este grupo de limites de site predefinido do outro grupo de limites.
-- Pode aceder às propriedades de um grupo de limites que criou e alterar os valores para a ligação explícita que passa para um grupo de limites de site predefinido. Quando definir um novo período de tempo em minutos para contingência ou bloco de contingência, essa alteração afeta apenas a ligação que está a configurar. Configurações da ligação explícita substituem as que no **comportamento predefinido** separador de um grupo de limites de site predefinido.
-
-
-## <a name="site-assignment"></a>Atribuição de site  
- É possível configurar cada grupo de limites com um site atribuído para clientes.  
-
--   Um cliente recentemente instalado que utilize a atribuição automática de site é associado ao site atribuído de um grupo de limites que contém a localização de rede atual do cliente.  
--   Depois da atribuição a um site, um cliente não altera a sua atribuição de site ao alterar a respetiva localização de rede. Por exemplo, se o cliente fizer roaming para uma nova localização de rede que é representada por um limite num grupo de limites com uma atribuição de site diferente, não altere permanece de site atribuído do cliente.  
--   Quando a Deteção de Sistemas do Active Directory deteta um novo recurso, as informações de rede do recurso detetado são comparadas com os limites dos grupos de limites. Este processo associa o novo recurso a um site atribuído que será utilizado pelo método de instalação push do cliente.  
--   Quando um limite é um membro de vários grupos de limites que possuem diferentes sites atribuídos, os clientes aleatoriamente selecionam um dos sites.  
--   As alterações efetuadas a um site atribuído de um grupo de limites apenas são aplicáveis a novas ações de atribuição de site. Os clientes atribuídos anteriormente a um site, não reevaluate a atribuição do site com base nas alterações à configuração de um grupo de limites (ou para sua própria localização de rede).  
-
-Para obter mais informações sobre a atribuição de sites do cliente, consulte [utilizando a atribuição de Site automática para computadores](../../../../core/clients/deploy/assign-clients-to-a-site.md#BKMK_AutomaticAssignment) no [como atribuir clientes a um site no System Center Configuration Manager](../../../../core/clients/deploy/assign-clients-to-a-site.md).  
-
-## <a name="distribution-points"></a>Pontos de distribuição
-
-Quando um cliente solicita a localização de um ponto de distribuição, o Configuration Manager envia ao cliente uma lista que inclui os sistemas de sites do tipo adequado que estão associados a cada grupo de limites que inclui a localização de rede atual:
-
--   **Durante a distribuição de software**, os clientes solicitam uma localização para o conteúdo de implementação que está disponível a partir de um ponto de distribuição ou outra origem de conteúdo válida (por exemplo, um cliente configurado para a Cache ponto a ponto).
-
--   **Durante a implementação do sistema operativo**, os clientes solicitam uma localização para enviar ou receber as respetivas informações de migração de estado.  
-
-Durante a implementação de conteúdos, se um cliente solicita conteúdo que não está disponível de uma origem no seu grupo de limites atual, o cliente continua a pedir esse conteúdo tentar diferentes origens de conteúdo no seu grupo de limites atual até que o período de contingência para um grupo de limites de vizinho ou o grupo de limites de site predefinido for atingido. Se o cliente ainda não encontrar o conteúdo, em seguida, expandir a pesquisa de origens de conteúdo incluir os grupos de limites de vizinho.
-
-No entanto, se o conteúdo é distribuído a pedido e não está disponível num ponto de distribuição quando solicitado por um cliente, o processo para transferir o conteúdo para esse ponto de distribuição começa e é possível que o cliente irá encontrar este servidor como uma origem de conteúdo antes de reverter para utilizar um grupo de limites de vizinho.
-
-## <a name="software-update-points"></a>Pontos de atualização de software
-A partir da versão 1702, os clientes utilizam grupos de limites para localizar um novo ponto de atualização de software. Pode adicionar pontos de atualização de individual software para diferentes grupos de limites para controlar quais os servidores de um cliente pode localizar.
-
-Se atualizar a partir de uma versão antes de 1702, todos os pontos de atualização de software existentes são adicionados ao grupo de limites do site predefinido em cada site. Isto mantém o comportamento de pré-atualização onde os clientes selecionam um ponto de atualização de software do agrupamento de pontos de atualização de software disponíveis que configurou para a sua hierarquia.  Este comportamento é mantido até optar por adicionar pontos de atualização de individual software para diferentes grupos de limites para seleção controlada e o comportamento de contingência.
-
-Se instalar um novo site que executa a versão 1702 ou posterior, os pontos de atualização de software não foram adicionados ao grupo de limites de site predefinido. Atribua os pontos de atualização de software a um grupo de limites para que os clientes possam localizar e utilizá-los.
-
-### <a name="fallback-for-software-update-points"></a>Contingência para pontos de atualização de software
-Contingência para pontos de atualização de software está configurada como outras funções de sistema de sites, mas tem os seguintes avisos:
-- **Novos clientes utilizam grupos de limites para selecionar pontos de atualização de software.** Depois de instalar a versão 1702, os clientes novos que instalar selecionam um ponto de atualização de software encontram associadas os grupos de limites que configurou. Esta ação substitui o anterior comportamento onde os clientes selecionam um ponto de atualização de software aleatoriamente uma lista dos partilhar na floresta do cliente.
-
-- **Os clientes continuam a utilizar um ponto de atualização de software boa último conhecido até que a contingência para localizar um novo.** Clientes que já tenham um ponto de atualização de software continuam a utilizar esse ponto de atualização de software até que o servidor não é possível aceder.  Isto inclui a utilização contínua de um ponto de atualização de software que não está associada ao grupo de limites atual do cliente.
-
-  A utilização contínua de um ponto de atualização de software existente, mesmo quando nesse servidor não está no grupo de limites atual do cliente é intencional. Isto acontece porque uma alteração de ponto de atualização de software pode resultar numa grande utilização de largura de banda de rede, como o cliente sincroniza os dados com o novo ponto de atualização de software. O atraso em transição pode ajudar a evitar saturating a sua rede, se todos os seus clientes mudarem para um novo software de um ponto de atualização em simultâneo.
-
-- **Um cliente tenta sempre alcançar o último ponto de atualização de software boa conhecida para 120 minutos antes de começar contingência.** Depois de 120 minutos, se o cliente não tenha estabelecido contacte, em seguida, começa contingência. Quando inicia a reversão, o cliente recebe uma lista de todos os pontos de atualização de software do respetivo grupo de limites atuais. Pontos de atualização de software adicionais de grupos de limites de vizinho e grupo de limites do site predefinido estão disponíveis com base nas configurações de contingência.
-
-### <a name="fallback-configurations-for-software-update-points"></a>Configurações de contingência para pontos de atualização de software
-#### <a name="beginning-with-version-1706"></a>A partir da versão 1706   
-Pode configurar **contingência exceder o tempo (em minutos)** para atualização de software pontos para ser inferior a 120 minutos. No entanto, o cliente tem continuam a tentar contactar o respetivo ponto de atualização de software original para 120 minutos antes que expande-pesquisa para servidores adicionais. Porque os tempos de contingência de grupo de limites iniciar quando o cliente primeiro não consegue contactar o respetivo servidor original, quaisquer grupos de limites que estão configurados para menos de 120 minutos são fornecidos para o cliente, quando expandir a pesquisa depois de conseguir contactar o respetivo servidor original para 120 minutos.
-
-Pode configurar **nunca contingência** para o bloco de contingência para o software de um ponto de atualização para um grupo de limites de vizinho.
-
-Depois de conseguir contactar o respetivo servidor original de duas horas, o cliente utiliza um ciclo mais curto para estabelecer uma ligação para um novo ponto de atualização de software. Isto permite ao cliente procurar rapidamente a lista de expansão de potenciais pontos de atualização de software.
-
- -  **Exemplo de contingência:**  
-    Grupo de limites atuais de um cliente tem de contingência para pontos de atualização de software que está configurado como *10* minutos para o grupo de limites *A*, e *130* minutos para o grupo de limites *B*. Quando o cliente não conseguir alcançar o último ponto de atualização de software boas:
-    -   O cliente tenta aceder apenas o servidor original para os seguintes 120 minutos.  Após 10 minutos, o software de pontos de atualização do grupo de limites A são adicionados ao agrupamento de servidores disponíveis. No entanto, o cliente não é possível tentar contactá-los ou qualquer outro servidor, enquanto tiver decorrido o período inicial de 120 minutos para restabelecer a ligação com o servidor original.
-    -   Após a tentar localizar esse ponto de atualização de software original para 120 minutos, o cliente, em seguida, pode expandir a pesquisa. Nessa altura, foram adicionados servidores no grupo de limites atual do cliente e quaisquer grupos de limites de vizinho que estão configuradas para 120 minutos ou menos, para o conjunto de pontos de atualização de software disponível. Isto inclui os servidores do grupo de limites A que tenham sido previamente adicionados ao agrupamento de servidores disponíveis.
-    -       Depois de 10 minutos (130 minutos tempo total após o cliente primeiro não conseguiu contactar o último ponto de atualização de software boas), o cliente expande a pesquisa para incluir os pontos de atualização de software do grupo de limites B.  
-
-#### <a name="prior-to-version-1706"></a>Antes de versão 1706
-Antes de versão 1706, configurações de contingência para pontos de atualização de software não suportam um período de tempo configurável em minutos. Em vez disso, o comportamento de contingência está limitado a:
-
-  - **Tempos de contingência (em minutos):**  Esta opção está desativada para pontos de atualização de software e não pode ser configurada. Está definido para 120 minutos.
-  -     **Nunca contingência:** Pode bloquear a contingência para um ponto de atualização de software a um grupo de limites de vizinho quando utiliza esta configuração.
-
-Quando um cliente que já tem um ponto de atualização de software não consegue contactar, o cliente pode contingência, em seguida, para localizar outro. Quando utiliza a contingência, o cliente recebe uma lista de todos os pontos de atualização de software do respetivo grupo de limites atuais. Se não conseguir encontrar um servidor disponível para 120 minutos, irá, em seguida, contingência respetivos grupos de limites de vizinho e o grupo de limites de site predefinido. Acontece contingência para ambos os grupos de limites ao mesmo tempo, porque o software de atualizar os pontos de tempo de contingência para grupos de elementos vizinhos está definido para 120 minutos e não pode ser alterado. 120 minutos também é o período predefinido utilizado para contingência para o grupo de limites de site predefinido. Quando um cliente retrocede para ambos os um vizinho e grupo de limites de site predefinido, o cliente tenta contactar os pontos de atualização de software do grupo de limites de vizinho antes de tentar utilizar um grupo de limites de site predefinido.
-
-### <a name="manually-switch-to-a-new-software-update-point"></a>Mudar manualmente para um novo ponto de atualização de software
-Além da utilização de contingência, pode utilizar *notificação do cliente* para forçar manualmente um dispositivo para mudar para um novo ponto de atualização de software.
-
-Quando mudar para um novo servidor, os dispositivos utilizam contingência localizar esse servidor novo. Por conseguinte, reveja as configurações do grupo de limites e certifique-se de que os seus pontos de atualização de software estão nos grupos de limites correto antes de começar esta alteração.
-
-Para obter mais informações, consulte [mudar manualmente os clientes para um novo ponto de atualização de software](/sccm/sum/plan-design/plan-for-software-updates#manually-switch-clients-to-a-new-software-update-point).
+Aby zarządzać powrotu do domyślnej grupy granic lokacji:
+- Można przejść do właściwości grupy granic domyślnej witryny i zmień wartości w **domyślne zachowanie** kartę. Zmiany wprowadzone w tym miejscu dotyczą *wszystkie* niejawnego łącza do tej grupy granic. Te ustawienia mogą zostać zastąpione podczas konfigurowania jawne łącze do tej grupy granic lokacji domyślnej z innej grupy granic.
+- Przejdź do okna właściwości grupy granic utworzonej i zmień wartości jawne łącza, który jest przesyłany do domyślnej grupy granic lokacji. Po ustawieniu nowego czas w minutach, powrotu lub bloku powrotu tej wpływa tylko łącze, które są konfigurowane. Konfiguracje wyraźnego związku przesłaniają akcje na **domyślne zachowanie** kartę domyślne grupy granic lokacji.
 
 
-## <a name="preferred-management-points"></a>Pontos de gestão preferenciais
+## <a name="site-assignment"></a>Przypisanie lokacji  
+ Do każdej grupy granic można wprowadzić przypisaną lokację do klientów.  
 
- Os pontos de gestão preferenciais permitem a um cliente identificar um ponto de gestão que esteja associado à sua localização de rede atual (limite).  
+-   Nowo zainstalowanego klienta, który używa automatycznego przypisania lokacji łączy przypisanej lokacji grupę granic zawierającą bieżącą lokalizację sieciową klienta.  
+-   Po przypisaniu do lokacji klient nie zmienia przypisania lokacji, gdy zmienia lokalizację sieciową. Na przykład, jeśli klient przejdzie do nowej lokalizacji sieciowej, która jest reprezentowana przez granicę w grupie granic z innym przypisaniem lokacji, klienta przypisanej lokacji pozostaną bez zmian.  
+-   Kiedy funkcja odnajdowania systemu usługi Active Directory odnajdzie nowy zasób, informacje o sieci odnalezionego zasobu zostaną ocenione względem granic w grupach granic. Ten proces powoduje skojarzenie nowego zasobu z przypisaną lokacją w celu użycia przez metodę instalacji klienta w trybie wypychania.  
+-   Gdy granicy do wielu grup granic, które mają przypisane różne lokacje, klientów losowo wybierać jedną z lokacji.  
+-   Zmiany lokacji przypisanej do grup granic dotyczą tylko nowych akcji przypisania lokacji. Klienci, którzy wcześniej przypisani do lokacji, nie obliczyć ponownie przypisania lokacji na podstawie zmian w konfiguracji grupy granic (lub do lokalizacji sieciowej).  
 
--   Um cliente tenta utilizar um ponto de gestão preferidos do respetivo site atribuído antes de utilizar um ponto de gestão do respetivo site atribuído que não está configurado como preferencial.  
--   Para utilizar esta opção, tem de ativá-la para a hierarquia e, em seguida, configurar grupos de limites em sites primários individuais para incluir os pontos de gestão que devem ser associados aos limites associados do grupo de limites.  
--   Quando os pontos de gestão preferenciais são configurados e um cliente organiza a respetiva lista de pontos de gestão, o cliente coloca os pontos de gestão preferenciais no topo da lista de pontos de gestão atribuídos (que inclui todos os pontos de gestão do site atribuído do cliente).  
+Aby uzyskać więcej informacji o przypisywaniu lokacji klienta, zobacz [przy użyciu automatycznego przypisania lokacji komputerów](../../../../core/clients/deploy/assign-clients-to-a-site.md#BKMK_AutomaticAssignment) w [jak przypisać klientów do lokacji w programie System Center Configuration Manager](../../../../core/clients/deploy/assign-clients-to-a-site.md).  
+
+## <a name="distribution-points"></a>Punkty dystrybucji
+
+Gdy klient żąda lokalizacji punktu dystrybucji, programu Configuration Manager wysyła klientowi listę, która obejmuje systemy lokacji odpowiedniego typu, które są skojarzone z każdą grupą granic, co obejmuje także bieżącą lokalizację sieciową klientów:
+
+-   **Podczas dystrybucji oprogramowania**, klient żąda lokacji wdrożenia zawartości, która jest dostępna z punktem dystrybucji lub innych poprawne źródło zawartości (na przykład klient skonfigurowany na potrzeby równorzędnej pamięci podręcznej).
+
+-   **Podczas wdrażania systemu operacyjnego**, klienci żądają lokalizacji do wysłania lub odebrania informacji o migracji stanu.  
+
+Podczas wdrażania zawartości Jeśli klient żąda zawartości, który nie jest dostępny ze źródła w jego bieżącej grupy granic, klient w dalszym ciągu zażądać tej zawartości do momentu osiągnięcia okres rezerwowy dla grupy granic sąsiada lub domyślna grupa granic lokacji w trakcie różnych źródeł zawartości w jego bieżącej grupy granic. Jeśli klient nie odnalazł jeszcze zawartość, następnie rozwija wyszukiwanie źródeł zawartości uwzględnić sąsiada grupy granic.
+
+Jednak jeśli zawartość będzie rozmieszczona na żądanie i nie jest dostępna w punkcie dystrybucji, gdy żądany przez klienta, rozpoczyna proces transferu zawartości do tego punktu dystrybucji i jest możliwe, klient będzie znaleźć ten serwer jako źródła zawartości przed powrotem do używania grupy granic sąsiedniego.
+
+## <a name="software-update-points"></a>Punkty aktualizacji oprogramowania
+Począwszy od wersji 1702, klienci używają grup granic do znajdowania punktu aktualizacji oprogramowania. Punkty aktualizacji oprogramowania można dodać do różnych grup granic do serwerów, które klient można znaleźć formantu.
+
+Po aktualizacji z wersji przed 1702 wszystkie istniejące punkty aktualizacji oprogramowania są dodawane do domyślnej grupy granic lokacji w każdej lokacji. Zapewnia to dostępność zachowanie przed aktualizacją, gdzie klienci wybierają punkt aktualizacji oprogramowania z puli punktów aktualizacji oprogramowania dostępne, które zostały skonfigurowane dla danej hierarchii.  To zachowanie jest zachowywana do momentu dodania do różnych grup granic zaznaczenia kontrolowane i działanie rezerwowe punkty aktualizacji oprogramowania.
+
+W przypadku instalowania nowej lokacji, na którym działa wersja 1702 lub później, punkty aktualizacji oprogramowania nie są dodawane do domyślnej grupy granic lokacji. Przypisać punkty aktualizacji oprogramowania do grupy granic, tak aby klienci mogą znaleźć i używać ich.
+
+### <a name="fallback-for-software-update-points"></a>Używane dla punktów aktualizacji oprogramowania
+Używane dla punktów aktualizacji oprogramowania jest skonfigurowane tak jak inne role systemu lokacji, ale ma następujące ostrzeżenia:
+- **Nowi klienci używają grup granic, aby wybrać punkty aktualizacji oprogramowania.** Po zainstalowaniu wersji 1702 nowych klientów, które można zainstalować, wybierz punkt aktualizacji oprogramowania z skojarzonych z grupami granic, które zostały skonfigurowane. Spowoduje to zastąpienie poprzedniego zachowanie, gdy klienci wybierają punkt aktualizacji oprogramowania losowo z listy osób, które współużytkują lesie klienta.
+
+- **Klienci w dalszym ciągu korzystać punktu aktualizacji oprogramowania dobrej Ostatnia znana do nich rezerwowy można znaleźć nową.** Klienci, którzy już mają punkt aktualizacji oprogramowania w dalszym ciągu używać tego punktu aktualizacji oprogramowania, dopóki nie może uzyskać dostępu do tego serwera.  Dotyczy to również dalsze używanie punkt aktualizacji oprogramowania, który nie jest skojarzony z bieżącą grupę granic klienta.
+
+  Dalsze używanie istniejącego punktu aktualizacji oprogramowania nawet wtedy, gdy ten serwer nie jest w bieżącej grupie granic klienta jest zamierzone. Jest to spowodowane Zmiana punktu aktualizacji oprogramowania może spowodować duże wykorzystanie przepustowości sieci, jak klient synchronizuje dane z nowego punktu aktualizacji oprogramowania. Opóźnienie w przejście może pomóc uniknąć nasycenia sieci, jeśli wszystkich klientów przełącznik nowe oprogramowanie punktu aktualizacji w tym samym czasie.
+
+- **Klient zawsze próbuje nawiązać połączenie jego ostatnim punktem aktualizacji oprogramowania znanego dobrego na 120 minut przed uruchomieniem rezerwowego.** Po 120 minut Jeśli klient nie ma nawiązać kontaktu, następnie rozpoczyna powrotu. Po uruchomieniu rezerwowe, klient odbierze listę wszystkich punktów aktualizacji oprogramowania z jego bieżącej grupy granic. Dodatkowe punkty aktualizacji oprogramowania od sąsiada grupy granic i grupy granic lokacji domyślne dostępnych konfiguracji rezerwowego.
+
+### <a name="fallback-configurations-for-software-update-points"></a>Konfiguracje rezerwowy dla punktów aktualizacji oprogramowania
+#### <a name="beginning-with-version-1706"></a>Począwszy od wersji 1706   
+Można skonfigurować **powrotu czas (w minutach)** na aktualizacji oprogramowania punktów za mniej niż 120 minut. Jednak klient musi nadal próbują uzyskać dostęp jego oryginalnej punktu aktualizacji oprogramowania na 120 minut przed rozszerza on wyszukiwania do dodatkowych serwerów. Ponieważ razy rezerwowy grupy granic uruchomić, gdy klient nie dokona najpierw do oryginalnego serwera, tych grup granic, które są skonfigurowane do 120 minut są dostarczane do klienta podczas rozszerza on wyszukiwanie po awarii do oryginalnego serwera na 120 minut.
+
+Można skonfigurować **nigdy rezerwowy** blok rezerwowy dla oprogramowania punktu z grupą granic sąsiada aktualizacji.
+
+Po awarii do oryginalnego serwera przez 2 godziny, klient używa następnie wywołania skrócenie cyklu nawiązanie połączenia punktu aktualizacji oprogramowania. Dzięki temu klientowi szybko przeszukiwać rosnącą listę potencjalnych punktów aktualizacji oprogramowania.
+
+ -  **Przykład powrotu:**  
+    Bieżącą grupę granic klienta jest używane dla punktów aktualizacji oprogramowania, które są skonfigurowane jako *10* minut dla grupy granic *A*, i *130* minut dla grupy granic *B*. Gdy klient nie może nawiązać jego ostatnim punktem aktualizacji oprogramowania znanego dobrego:
+    -   Klient próbuje osiągnąć jego oryginalny serwer dalej 120 minut.  Po 10 minutach punktów z grupą granic, są dodawane do puli serwerów dostępnych aktualizacji oprogramowania. Klient nie może jednak próbę skontaktowania się z ich lub na innym serwerze przed upływem okresu wstępnego 120 minut połączyć się ponownie z oryginalnego serwera.
+    -   Po próbuje zlokalizować tego oryginalnego punktu aktualizacji oprogramowania na 120 minut, klient może rozszerzyć poszukiwania. W tym czasie serwerów w bieżącej grupie granic klienta i wszelkie sąsiada grup granic, które są skonfigurowane do 120 minut lub mniej, są dodawane do dostępnej puli punktów aktualizacji oprogramowania. Dotyczy to serwery A grupy granic, które zostały wcześniej dodane do puli dostępnych serwerów.
+    -       Po 10 minutach (130 minut całkowity czas po klient najpierw nie może połączyć się jego ostatnim punktem aktualizacji oprogramowania znanego dobrego) klient rozszerza wyszukiwania w celu uwzględnienia punktów aktualizacji oprogramowania z grupy granic B.  
+
+#### <a name="prior-to-version-1706"></a>Przed wersją 1706
+Poprzedzające wersję 1706 rezerwowej konfiguracji punktów aktualizacji oprogramowania nie obsługują można skonfigurować czas w minutach. Zamiast tego zachowania alternatywnego jest ograniczona do:
+
+  - **Rezerwowy czas (w minutach):**  Ta opcja jest niedostępny dla punktów aktualizacji oprogramowania i nie można skonfigurować. Jest ustawiona na 120 minut.
+  -     **Nigdy nie rezerwowej:** Możesz zablokować używane dla punktu aktualizacji oprogramowania do grupy granic sąsiada używania tej konfiguracji.
+
+Gdy klient, który ma już punkt aktualizacji oprogramowania nie można uzyskać do niej dostęp, klient może następnie powrotu można znaleźć innego. Korzystając z metody rezerwowej, klient odbiera listę wszystkich punktów aktualizacji oprogramowania z jego bieżącej grupy granic. W przypadku niepowodzenia można znaleźć dostępnego serwera na 120 minut zostanie następnie powrotu do jego grupę granic sąsiada i domyślnej grupy granic lokacji. Powrót do obu grup granic odbywa się w tym samym czasie, ponieważ punkty rezerwowy czas sąsiada grup jest ustawiona na 120 minut i nie można zmienić aktualizacji oprogramowania. 120 minut jest również domyślny okres używane powrotu do domyślnej grupy granic lokacji. Gdy klient powraca do obu sąsiada i domyślnej grupy granic lokacji, klient próbuje skontaktować się z punktów aktualizacji oprogramowania z grupy granic sąsiada przed podjęciem próby użycia jednej z domyślnej grupy granic lokacji.
+
+### <a name="manually-switch-to-a-new-software-update-point"></a>Ręcznie przełączać się do nowego punktu aktualizacji oprogramowania
+Oprócz używania rezerwowego, można użyć *powiadomienie klienta* ręcznie wymusić urządzenia, aby przełączyć się do nowego punktu aktualizacji oprogramowania.
+
+Przełączenie do nowego serwera urządzenia używają rezerwowego do znajdowania ten nowy serwer. W związku z tym Przejrzyj konfiguracji grupy granic i upewnij się, że punkty aktualizacji oprogramowania znajdują się w grupach granic poprawne przed rozpoczęciem tej zmiany.
+
+Aby uzyskać więcej informacji, zobacz [ręcznie przełączać klientów do nowego punktu aktualizacji oprogramowania](/sccm/sum/plan-design/plan-for-software-updates#manually-switch-clients-to-a-new-software-update-point).
+
+
+## <a name="preferred-management-points"></a>Preferowane punkty zarządzania
+
+ Preferowane punkty zarządzania umożliwiają klientom identyfikowanie punktów zarządzania skojarzonych z ich bieżącą lokalizacją sieciową (granicą).  
+
+-   Klienci podejmują próbę użycia preferowanego punktu zarządzania z przypisanej do niego lokacji, zanim użyją punktów zarządzania z przypisanej lokacji, który nie jest skonfigurowany jako preferowane.  
+-   Aby użyć tej opcji, możesz ją włączyć w hierarchii, a następnie skonfiguruj grup granic w poszczególnych lokacjach głównych w celu uwzględnienia punktów zarządzania, które powinny być skojarzone ze skojarzonymi granicami tej grupy granic.  
+-   Gdy preferowane punkty zarządzania są skonfigurowane, a klient organizuje swoją listę punktów zarządzania, klient umieszcza preferowane punkty zarządzania u góry listy przypisanych punktów zarządzania (zawierającej wszystkie punkty zarządzania z przypisanej lokacji klienta).  
 
 > [!NOTE]  
->  Quando um cliente fizer roaming (o que significa alterar as respetivas localizações de rede, tais como quando um computador portátil circula para uma localização de escritório remoto), poderá utilizar um ponto de gestão (ou ponto de gestão do proxy) a partir do site local na nova localização antes de tentar utilizar um ponto de gestão a partir do respetivo site atribuído (que inclui os pontos de gestão preferenciais).  Consulte [compreender a forma como os clientes localizam os recursos de site e os serviços do System Center Configuration Manager](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md) para obter mais informações.  
+>  Gdy klient przemieszcza się (co oznacza, że zmienia lokalizację sieciową, np. laptop pojawia się w lokalizacji biura zdalnego), może w nowej lokalizacji używać punktu zarządzania (lub punktu zarządzania serwera proxy) z lokacji lokalnej przed podjęciem próby użycia punktu zarządzania z przypisanej lokacji (która obejmuje preferowane punkty zarządzania).  Zobacz [zrozumieć, jak klienci znajdują zasoby i usługi programu System Center Configuration Manager lokacji](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md) Aby uzyskać więcej informacji.  
 
-### <a name="overlapping-boundaries"></a>Sobreposição de limites  
- O Configuration Manager suporta configurações de limites sobrepostos para localização de conteúdo:  
+### <a name="overlapping-boundaries"></a>Nakładanie się granic  
+ Program Configuration Manager obsługuje nakładających się granic konfiguracje lokalizacji zawartości:  
 
--   **Quando um cliente solicita conteúdo**e a localização de rede do cliente pertence a vários grupos de limites, o Configuration Manager envia ao cliente uma lista de todos os pontos de distribuição que possuem o conteúdo.  
--   **Quando um cliente solicita a um servidor para enviar ou receber as informações de migração de estado**e a localização de rede do cliente pertence a vários grupos de limites, o Configuration Manager envia ao cliente uma lista de todos os pontos de migração de estado que estão associados um grupo de limites que inclui a localização de rede atual do cliente.  
+-   **Gdy klient żąda zawartości**, a lokalizacja sieciowa klienta należy do wielu grup granic, programu Configuration Manager wysyła klientowi listę wszystkich punktów dystrybucji zawierających daną zawartość.  
+-   **Gdy klient żąda serwera, aby wysłać lub odebrać informacje o migracji stanu**, a lokalizacja sieciowa klienta należy do wielu grup granic, programu Configuration Manager wysyła klientowi listę punktów migracji stanu skojarzonych z grupą granic zawierającą bieżącą lokalizację sieciową klienta.  
 
-Este comportamento permite que o cliente selecione o servidor mais próximo para transferir o conteúdo ou as informações de migração de estado.  
+Pozwala to klientowi na wybranie najbliższego serwera, z którego można przetransferować zawartość lub informacje o migracji stanu.  
 
 
 
-## <a name="example-of-using-boundary-groups"></a>Exemplo de como utilizar grupos de limites
-O exemplo seguinte utiliza um cliente procurar conteúdo a partir de um ponto de distribuição. Este exemplo pode ser aplicado a outras funções de sistema de sites que utilizam grupos de limites. No entanto, como se aplica aos pontos de atualização de software, tenha em atenção que os pontos de atualização de software não suporta a configuração de um período de tempo em minutos para contingência para um grupo de vizinho e utilize sempre um período de 120 minutos.
+## <a name="example-of-using-boundary-groups"></a>Przykład użycia grup granic
+W poniższym przykładzie użyto wyszukiwanie zawartości z punktu dystrybucji klienta. W tym przykładzie można zastosować do innych ról systemu lokacji, które używają grup granic. Jednak ponieważ dotyczy punktów aktualizacji oprogramowania, należy pamiętać, punktów aktualizacji oprogramowania nie obsługuje konfiguracji czas w minutach powrotu do grupy sąsiada czy należy zawsze używać 120 minut.
 
-Crie três grupos de limites que não partilham limites ou servidores de sistema de sites:
--   Grupo BG_A com pontos de distribuição DP_A1 e DP_A2 associados ao grupo
--   Grupo BG_B com pontos de distribuição DP_B1 e DP_B2 associados ao grupo
--   Grupo BG_C com pontos de distribuição DP_C1 e DP_C2 associados ao grupo
+Możesz tworzyć trzech grup granic, które nie udostępniają granic lub serwerów systemu lokacji:
+-   Grupy BG_A z punktami dystrybucji DP_A1 i DP_A2 skojarzonego z grupy
+-   Grupy BG_B z punktami dystrybucji DP_B1 i DP_B2 skojarzonego z grupy
+-   Grupy BG_C z punktami dystrybucji DP_C1 i DP_C2 skojarzonego z grupy
 
-A adicionar as localizações de rede dos clientes como limites para apenas o grupo de limites BG_A e, em seguida, configurar relações desse grupo de limites para os outros dois grupos de limites:
--   Configurar pontos de distribuição para o primeiro *vizinho* grupo (BG_B) a ser utilizada após 10 minutos. Este grupo contém pontos de distribuição DP_B1 e DP_B2. Ambos são boas ligações para as localizações de limites de grupos primeiro.
--   Configurar a segunda *vizinho* grupo (BG_C) a ser utilizada após 20 minutos. Este grupo contém pontos de distribuição DP_C1 e DP_C2. Ambos são através de uma WAN dos outros grupos de limites de dois.
--   Pode também adiciona um ponto de distribuição adicionais que está localizado no servidor do site ao grupo de limites de site de sites predefinido. Esta é a localização de origem de conteúdo menos preferencial, mas está centralmente localizado para todos os grupos de limites.
+Dodawanie lokalizacje sieciowe klientów jako granic tylko grupy granic BG_A, i można następnie skonfigurować relacje z tej grupy granic do innych grup granic dwóch:
+-   Konfigurowanie punktów dystrybucji w pierwszym *sąsiada* grupy (BG_B) do użycia po 10 minutach. Ta grupa zawiera punkty dystrybucji DP_B1 i DP_B2. Oba są dobrze połączonych do pierwszej grupy lokalizacje granic.
+-   Skonfiguruj drugi *sąsiada* grupy (BG_C) do użycia po upływie 20 minut. Ta grupa zawiera punkty dystrybucji DP_C1 i DP_C2. Są w sieci WAN z innych grup granic dwa.
+-   Można również dodać dodatkowe punkt dystrybucji znajdującego się na serwerze lokacji do grupy granic lokacji domyślnej witryny. Jest to najmniej preferowanych lokalizacji źródła zawartości, ale jest on umieszczony centralnie do grup granic.
 
-    Exemplo de grupos de limites e tempos de contingência:
+    Przykład grupy granic i rezerwowy razy:
 
      ![BG_Fallack](media/BG_Fallback.png)
 
 
-Com esta configuração:
--   O cliente começa a procurar conteúdo dos pontos de distribuição no respetivo *atual* pesquisar a distribuição de cada grupo de limites (BG_A), para que aponte do dois minutos antes de mudar para o próximo ponto de distribuição no grupo de limites. O conjunto de clientes de localizações de origem de conteúdo válida inclui DP_A1 e DP_A2.
--   Se o cliente não conseguir localizar o conteúdo do respetivo *atual* grupo de limites depois de procurar durante 10 minutos, em seguida, adiciona os pontos de distribuição do grupo de limites BG_B para a sua pesquisa. Em seguida, continua a pesquisar conteúdo a partir de um ponto de distribuição no respetivo conjunto combinado de pontos de distribuição que inclui os grupos de limites BG_A tanto BG_B agora. O cliente continua a contactar cada ponto de distribuição de dois minutos antes de mudar para o próximo ponto de distribuição do seu conjunto. O conjunto de clientes de localizações de origem de conteúdo válida inclui DP_A1, DP_A2, DP_B1 e DP_B2.
--   Após um adicionais de 10 minutos (totais de 20 minutos) se o cliente ainda não encontrou um ponto de distribuição com conteúdo, que expande o conjunto de pontos de distribuição disponíveis para incluir as da segunda *vizinho* grupo, o grupo de limites BG_C. O cliente agora tem 6 pontos de distribuição para pesquisa (DP_A1, DP_A2, DP_B2, DP_B2, DP_C1 e DP_C2) e continua a alteração cada dois minutos até ser encontrado conteúdo para um novo ponto de distribuição.
--   Se o cliente não foi encontrado conteúdo depois de um total de 120 minutos, fica novamente para incluir o *grupo de limites de site predefinido* como parte da sua pesquisa contínua. O conjunto de pontos de distribuição inclui agora todos os pontos de distribuição dos três grupos de limites configurado e o ponto de distribuição final localizado no computador do servidor do site.  O cliente, em seguida, continua a pesquisa de conteúdo, alterar a cada dois minutos até ser encontrado conteúdo de pontos de distribuição.
+W tej konfiguracji:
+-   Klient rozpocznie się wyszukiwanie zawartości z punktów dystrybucji w jego *bieżącego* grupy granic (BG_A), wyszukiwanie każdego dystrybucji punkt dla dwóch minut przed przełączeniem do następnego punktu dystrybucji w grupie granic. Pula klientów lokalizacji poprawne źródło zawartości zawiera DP_A1 i DP_A2.
+-   Jeśli klient nie można odnaleźć zawartości z jego *bieżącego* grupy granic po przeszukaniu przez 10 minut, następnie dodaje punkty dystrybucji z grupy granic BG_B do jego wyszukiwania. Następnie kontynuuje do wyszukiwania zawartości z punktu dystrybucji w jego Scalonej puli punktów dystrybucji, która zawiera teraz od BG_A i BG_B grup granic. Klient w dalszym ciągu do kontaktowania się z poszczególnych punktów dystrybucji dla dwóch minut przed przełączeniem do następnego punktu dystrybucji z puli. Pula klientów lokalizacji poprawne źródło zawartości zawiera DP_A1, DP_A2 DP_B1 i DP_B2.
+-   Po 10 minutach dodatkowe (całkowita liczba 20 minut), jeśli klient nadal nie odnalazł do punktu dystrybucji z zawartością, zostanie on rozszerzony puli dostępnych punktów dystrybucji te od drugiego *sąsiada* grupy, grupa granic BG_C. Klient teraz ma 6 punktów dystrybucji do wyszukiwania (DP_A1, DP_A2 DP_B2, DP_B2, DP_C1 i DP_C2) i kontynuuje wprowadzanie zmian do nowego punktu dystrybucji co dwie minuty, aż do znalezienia zawartości.
+-   Jeśli klient nie odnalazł zawartości po łącznie 120 minut, jego powraca do uwzględnienia *domyślnej grupy granic lokacji* jako część jej ciągłego wyszukiwania. Pula punktów dystrybucji zawiera teraz wszystkie punkty dystrybucji z trzech skonfigurowanych grup granic i punktu końcowego dystrybucji znajdujących się na komputerze serwera lokacji.  Klient kontynuuje wyszukiwanie zawartości, zmiana co dwie minuty, aż do znalezienia zawartości w punktach dystrybucji.
 
-Ao configurar os grupos de vizinho diferentes para estar disponível em alturas diferentes, pode controlar quando são adicionados como uma localização de origem de conteúdo, pontos de distribuição específico e quando, ou se, o cliente utiliza a contingência para o grupo de limites de site predefinido como uma rede de segurança para o conteúdo que não está disponível a partir de qualquer outra localização.
-
-
+Konfigurując grupy różnych sąsiada mają być dostępne w różnych momentach kontrolować woluminowi konkretnych punktów dystrybucji jako lokalizacji źródła zawartości i gdy lub jeśli klient używa powrotu do domyślnej grupy granic lokacji zabezpieczenie na zawartość, która nie jest dostępna w innej lokalizacji.
 
 
 
 
-### <a name="update-existing-boundary-groups-to-the-new-model"></a>Atualizar os grupos de limites existentes para o novo modelo
-Quando atualizar para versão antes de 1610, as seguintes configurações são efetuadas automaticamente. Estes são concebidas para Certifique-se de que o comportamento de contingência atual permanece disponível até configurar novos grupos de limites e relações.
-
--   É criado um grupo de limites de site predefinido para cada site primário, o nome é ***predefinição-Site-limite-grupo&lt;sitecode >.***
-  - Pontos de distribuição com *permitir a localização de origem de contingência para conteúdo* marcada e pontos de migração de estado em sites primários são adicionados para o *grupo-de-Site-limites-predefinição&lt;sitecode >* grupo de limites desse site.
-  - A partir da versão 1702, pontos de atualização de software são adicionados para cada sites *predefinição-Site-limite-grupo&lt;sitecode >*.
--   É efetuada uma cópia de cada grupo de limites existentes, que inclui um servidor de site configurado com uma ligação lenta. O nome do novo grupo é *** &lt;nome original do grupo de limites >-&lt;ID do grupo de limites original >***:  
-    -   Sistemas de sites que tenham uma ligação rápida são mantidos no grupo de limites original.
-    -   Uma cópia dos sistemas de sites (pontos de distribuição, pontos de gestão) que tenham uma ligação lenta são adicionadas para a cópia do grupo de limites. Os sistemas de site original configurados como lenta permanecem no respetivos original grupos de limites para compatibilidade com versões anteriores, mas não são utilizados a partir desses grupos de limites.
-    - Esta cópia do grupo de limites não tem limites associados à mesma. No entanto, é criada uma ligação de contingência entre o grupo original e a nova cópia do grupo de limites com o tempo de contingência definido como zero.  
 
 
-- **Sites específicos para secundário:**
-  - É criado um grupo de limites, se um site secundário tem, pelo menos, um ponto com de distribuição *permitir a localização de origem de contingência para conteúdo* ponto de migração de estado ou marcada. O nome do grupo de limites é ***secundária-Site-vizinho – Tmp&lt;Sitecode >.***
-  - Pontos de distribuição de todos os com *permitir a localização de origem de contingência para conteúdo* marcado e os pontos de migração de estado são adicionados a este grupo de limites de site secundário recentemente criado.
-  - É criada uma ligação de contingência entre o grupo de limites original e o grupo de limites de vizinho recentemente criado e a hora de contingência está definida para zero.
+### <a name="update-existing-boundary-groups-to-the-new-model"></a>Aktualizowanie istniejących grup granic do nowego modelu
+Podczas aktualizacji do wersji przed 1610 następujące konfiguracje zostaną zastosowane automatycznie. Są one przeznaczone do upewnij się, że Twoje bieżące działanie rezerwowe pozostaje dostępna, dopóki nie skonfigurujesz nowych grup granic i relacje.
+
+-   Grupy granic lokacji domyślnej jest tworzona dla każdej lokacji głównej, nazwa jest ***domyślna--grupy granic lokacji —&lt;kod lokacji >.***
+  - Punkty dystrybucji z *Zezwalaj na rezerwową lokalizację źródła zawartości* zaznaczone i punktów migracji stanu w lokacjach głównych są dodawane do *domyślna--grupy granic lokacji&lt;kod lokacji >* grupy granic w tej lokacji.
+  - Począwszy od wersji 1702, punkty aktualizacji oprogramowania są dodawane do każdej lokacji *domyślna--grupy granic lokacji&lt;kod lokacji >*.
+-   Kopia składa się z każdej istniejącej grupy granic, która obejmuje serwer lokacji skonfigurowany z wolnego połączenia. Nazwa nowej grupy jest *** &lt;oryginalna nazwa grupy granic >-&lt;pierwotny identyfikator grupy granic >***:  
+    -   Systemy lokacji, które mają szybkiego połączenia są pozostawiane w oryginalnej grupy granic.
+    -   Kopię systemy lokacji (punkty dystrybucji, punkty zarządzania), które mają wolne połączenia są dodawane do kopii grupy granic. Systemy lokacji oryginalnej skonfigurowana jako niska pozostają w jego oryginalnej grup granic w celu zgodności z poprzednimi wersjami, ale nie są używane z tych grup granic.
+    - Ta kopia grupy granic nie ma granicach skojarzonych z nim. Jednak tworzone jest połączenie rezerwowy między oryginalnej grupy i nową kopię grupy granic o czasie rezerwowy ustawić na zero.  
 
 
- A tabela seguinte identifica o novo comportamento contingência pode esperar da combinação de definições de implementação original e a distribuição de configurações de pontos:
+- **Specyficzne dla dodatkowej lokacji:**
+  - Grupy granic jest tworzony, jeśli Lokacja pomocnicza ma co najmniej jeden punkt z dystrybucji *Zezwalaj na rezerwową lokalizację źródła zawartości* punktu migracji zaznaczone lub stanu. Nazwa grupy granic to ***pomocniczy-witryny-sąsiada — Tmp&lt;kod lokacji >.***
+  - Punkty dystrybucji wszystkich z *Zezwalaj na rezerwową lokalizację źródła zawartości* zaznaczone i punktów migracji stanu zostaną dodane do tej grupy granic nowo utworzony lokacji dodatkowej.
+  - Tworzone jest połączenie rezerwowy między oryginalnej grupy granic i grupy granic sąsiada nowo utworzony i czas rezerwowego jest ustawiony na zero.
 
-Configuração de implementação original "não executaram" na rede lenta  |Configuração para "Permitir ao utilizar uma localização de origem de contingência para conteúdo de cliente" do ponto de distribuição original  |Novo comportamento de contingência  
+
+ W poniższej tabeli przedstawiono nowe działanie rezerwowe można spodziewać się z kombinacji oryginalne ustawienia wdrożenia i punktu dystrybucji konfiguracje:
+
+Oryginalna konfiguracja wdrożenia "Nie należy uruchamiać program" w wolnej sieci  |Punkt dystrybucji oryginalnej konfiguracji "Client Zezwalaj na użycie rezerwowej lokalizacji źródła zawartości"  |Nowe działanie rezerwowe  
 ---------|---------|---------
-Selecionado     |  Selecionado    |  **Não existem contingência** -utilizar apenas os pontos de distribuição no grupo de limites atual       
-Selecionado     |  Não selecionada|  **Não existem contingência** -utilizar apenas os pontos de distribuição no grupo de limites atual       
-Não selecionada |  Não selecionada|  **Contingência para vizinho** - utilizar os pontos de distribuição no grupo de limites atual e, em seguida, adicione os pontos de distribuição do grupo de limites de vizinho. A menos que uma ligação explícita para o grupo de limites de site predefinido está configurada, os clientes irão não contingência a esse grupo.    
-Não selecionada | Selecionado     |   **Contingência normal** -utilizar pontos de distribuição no grupo de limites atual, em seguida, os do site e vizinho predefinido de grupos de limites
+Wybrane     |  Wybrane    |  **Rezerwowe nie** -punktów dystrybucji należy używać tylko w bieżącej grupie granic       
+Wybrane     |  Nie wybrano|  **Rezerwowe nie** -punktów dystrybucji należy używać tylko w bieżącej grupie granic       
+Nie wybrano |  Nie wybrano|  **Powrót do sąsiada** — używać punktów dystrybucji w bieżącej grupie granic, a następnie dodaj punkty dystrybucji z grupy granic sąsiedniego. Chyba że jawne łącze do domyślnej grupy granic lokacji jest skonfigurowany, klienci nie będą powrotu do tej grupy.    
+Nie wybrano | Wybrane     |   **Normalne powrotu** -używać punktów dystrybucji w bieżącej grupie granic, a następnie od sąsiada i lokacji domyślnych grup granic
 
- Todas as outras configurações de implementação resultam em **contingência Normal**.  
-
-
+ Wszystkie konfiguracje wdrożenia powoduje **normalne powrotu**.  
 
 
-## <a name="changes-from-prior-versions-for-ui-and-behavior-for-content-locations"></a>Alterações de versões anteriores para a IU e o comportamento para localizações de conteúdo
-Seguem-se as alterações principais grupos de limites e a forma como os clientes localizam os conteúdos. Estas alterações são introduzidas com a versão 1610. Muitas destas alterações e conceitos funcionam em conjunto.
 
 
--   **Configurações para rápida ou lenta são removidas:** Já não está a configurar pontos de distribuição individuais para serem rápida ou lenta.  Em vez disso, cada sistema de sites associado a um grupo de limites é Tratado da mesma. Devido a esta alteração, o **referências** separador das propriedades do grupo de limites já não suporta a configuração rápida ou lenta.
--   **Novo grupo de limites de predefinição em cada site:**  Cada site primário tem um novo grupo de limites de predefinição com o nome ***predefinição-Site-limite-grupo&lt;sitecode >***.  Quando um cliente não está numa localização de rede que está atribuída a um grupo de limites, esse cliente utilizará os sistemas de sites associados ao grupo predefinido do seu site atribuído. Planear a utilização deste grupo de limites como uma substituição para o conceito de localização de conteúdo de contingência.      
- -  **'Permitir que as localizações de origem de contingência para conteúdo'** for removido: Já não está explicitamente a configurar um ponto de distribuição para ser utilizado para contingência e as opções para configurar esta são removidas da IU.
-
-    Além disso, o resultado da definição **permitir que os clientes utilizem uma localização de origem de contingência para conteúdo** numa implementação tipo para aplicações foi alterada. Esta definição num tipo de implementação agora permite que um cliente para utilizar o grupo de limites de site predefinido como uma localização de origem de conteúdo.
-
- -  **Relações de grupos de limites:** Cada grupo de limites pode ser associado a um ou mais grupos de limites adicionais. Estas ligações formam relações que estão configuradas no novo limite grupo separador de propriedades com o nome **relações**:
-    -   Cada grupo de limites que um cliente é diretamente associado é chamado um **atual** grupo de limites.  
-    -   Nenhum grupo de limites pode utilizar um cliente devido a uma associação entre esse cliente *atual* grupo de limites e outro grupo é chamado um **vizinho** grupo de limites.
-    -  É o **relações** separador adicionar grupos de limites que podem ser utilizados como um *vizinho* grupo de limites. Também pode configurar um período de tempo em minutos que determina quando um cliente que não consegue localizar o conteúdo a partir de um ponto de distribuição no *atual* grupo irá começar a procurar nas localizações de conteúdo das *vizinho* grupos de limites.
-
-        Quando adicionar ou alterar uma configuração do grupo de limites, terá a opção para o bloco de contingência para esse grupo de limites específico do grupo atual que estiver a configurar.
-
-    Para utilizar a nova configuração, pode define associações explícitas (ligações) a partir de um grupo de limites para outro e configura todos os pontos de distribuição nesse grupo associados com o mesmo tempo em minutos. O tempo que configura determina quando um cliente que não consegue encontrar uma origem de conteúdo do respetivo *atual* grupo de limites pode começar a pesquisar origens de conteúdo desse grupo de limites de vizinho.
-
-    Além dos grupos de limites que configurar explicitamente, cada grupo de limites tem uma ligação implícita para o grupo de limites de site predefinido. Esta ligação fica ativa depois de 120 minutos em que momento o grupo de limites de site predefinido torna-se um grupo de limites de vizinho que permite que os clientes utilizar os pontos de distribuição associados esse grupo de limites como localizações de origem de conteúdo.
-
-    Este comportamento substitui que anteriormente foi referido como contingência para conteúdo.  Pode substituir este comportamento predefinido de 120 minutos associando explicitamente o grupo de limites de site predefinido para um *atual* grupo e definir uma hora específica em minutos ou bloquear contingência inteiramente para impedir a sua utilização.
+## <a name="changes-from-prior-versions-for-ui-and-behavior-for-content-locations"></a>Zmiany z wcześniejszych wersji interfejsu użytkownika i zachowanie dla lokalizacji zawartości
+Poniżej przedstawiono zmiany klucza do grupy granic i jak klienci znajdują zawartości. Zmiany zostaną wprowadzone w wersji 1610. Wiele z tych zmian i pojęcia współdziałają ze sobą.
 
 
--   **Os clientes tentam obter conteúdos de cada ponto de distribuição para 2 minutos:** Quando um cliente procura de uma localização de origem de conteúdo, este tenta aceder a cada ponto de distribuição para 2 minutos antes de, em seguida, tentar outro ponto de distribuição. Esta é uma alteração de versões anteriores onde os clientes tentaram ligar a um ponto de distribuição de até 2 horas.
+-   **Konfiguracje dla Fast lub wolno zostaną usunięte:** Można już konfigurować poszczególne punkty dystrybucji można dużą lub małą.  Zamiast tego jest traktowany każdego systemu lokacji skojarzone z grupą granic takie same. Z powodu tej zmiany **odwołania** na karcie właściwości grupy granic już nie obsługuje konfiguracji Fast lub niska.
+-   **Nową grupę granic domyślne w każdej lokacji:**  Każda lokacja główna ma nowej grupy granic domyślny o nazwie ***domyślna--grupy granic lokacji&lt;kod lokacji >***.  Gdy klient nie jest w lokalizacji sieciowej, która jest przypisana do grupy granic, klient użyje systemy lokacji skojarzone z domyślnej grupy z przypisanej lokacji. Zaplanuj użycie tej grupy granic w zastępstwie koncepcję rezerwowej lokalizacji zawartości.      
+ -  **"Zezwalaj na lokalizacji rezerwowej dla zawartości"** zostaną usunięte: Nie jest już jawnie skonfigurować punkt dystrybucji do użycia jako metody rezerwowej i opcji, aby ustawić to są usuwane z interfejsu użytkownika.
 
-    - O primeiro ponto de distribuição que um cliente tenta utilizar aleatoriamente está selecionado do agrupamento de pontos de distribuição disponíveis do cliente *atual* grupo de limites (ou grupos).
+    Ponadto wynik ustawienie **Zezwalaj klientom na użycie rezerwowej lokalizacji źródła zawartości** w ramach wdrożenia zmienił się typ dla aplikacji. To ustawienie w typie wdrożenia teraz umożliwia klienta do używania domyślnej grupy granic lokacji jako lokalizacji źródła zawartości.
 
-    - Depois de dois minutos, se o cliente não foi encontrado o conteúdo, muda para um novo ponto de distribuição e tenta obter conteúdo a partir desse servidor. Este processo repete-se a cada dois minutos até que o cliente localiza o conteúdo ou atinge o último servidor no seu conjunto.
+ -  **Relacje grupy granic:** Każda grupa granic może odnosić się do co najmniej jednej grupy granic dodatkowe. Łącza te tworzą relacje, które są skonfigurowane na karcie właściwości nowej grupy granic o nazwie **relacje**:
+    -   Każdą grupą granic, klient jest bezpośrednio z którym skojarzony jest nazywany **bieżącego** grupy granic.  
+    -   Żadną inną grupą granic klient może korzystać z powodu skojarzenia między tego klienta *bieżącego* nosi nazwę grupy granic i innej grupy **sąsiada** grupy granic.
+    -  Znajduje się na **relacje** kartę Dodaj grupy granic, które mogą być używane jako *sąsiada* grupy granic. Można również skonfigurować czas w minutach, które określa, kiedy klient, który nie może odnaleźć zawartości z punktu dystrybucji w *bieżącego* grupy rozpocznie się wyszukiwanie lokalizacji zawartości od tych *sąsiada* grup granic.
 
-    - Se um cliente não é possível encontrar uma localização de origem de conteúdo válida a partir do respetivo *atual* agrupamento antes do período de contingência para um *vizinho* for atingido o grupo de limites, o cliente, em seguida, adiciona os pontos de distribuição do *vizinho* até ao fim da respetiva lista atual de grupo e, em seguida, irá procurar o grupo expandido das localizações de origem que inclua os pontos de distribuição a partir de ambos os grupos de limites.
+        Podczas dodawania lub zmienić konfigurację grupy granic, konieczne będzie opcja powrotu do tej grupy granic określone z bieżącej grupy, który jest konfigurowany bloku.
+
+    Aby korzystać z nowej konfiguracji, zdefiniować jawnej skojarzenia (linki) z jednej grupy granic i skonfiguruj wszystkie punkty dystrybucji w tej grupie skojarzony z tym samym czasie w minutach. Określa czas, należy skonfigurować, gdy klient, który nie uda się znaleźć źródła zawartości z jego *bieżącego* grupy granic można rozpocząć wyszukiwanie źródła zawartości z tej grupy granic sąsiedniego.
+
+    Oprócz grup granic, które jawnie skonfigurować każdą grupą granic ma domniemanych łącze do domyślnej grupy granic lokacji. To łącze staje się aktywny po 120 minut po tym czasie domyślnej grupy granic lokacji staje się sąsiada grupy granic, która umożliwia klientom korzystanie z punktów dystrybucji skojarzone z daną grupą granic jako lokalizacji źródła zawartości.
+
+    To zachowanie zastępuje, co zostało wcześniej określone jako metody rezerwowej dla zawartości.  Można zastąpić to domyślne zachowanie 120 minut, kojarząc jawnie domyślnej grupy granic lokacji do *bieżącego* grupy i ustawienie określony czas w minutach lub blokuje powrotu całkowicie uniemożliwić korzystanie z niego.
+
+
+-   **Klienci próbują pobrać zawartości z poszczególnych punktów dystrybucji przez maksymalnie 2 minuty:** Gdy klient wyszukuje lokalizacji źródła zawartości, próbuje uzyskiwać dostęp do poszczególnych punktów dystrybucji dla dwóch minut przed podjęciem próby następnie innego punktu dystrybucji. Jest to zmiana z poprzednich wersji, której klienci nastąpiła próba połączenia do punktu dystrybucji przez maksymalnie 2 godziny.
+
+    - Pierwszy punkt dystrybucji, który klient próbuje użyć jest wybierane losowo z puli dostępnych punktów dystrybucji na komputerze klienckim *bieżącego* grupy granic (lub grupy).
+
+    - Po dwóch minut Jeśli klient nie odnalazł zawartości, go przełącza się do nowego punktu dystrybucji i próbuje pobrać zawartość z tego serwera. Ten proces jest powtarzany co dwie minuty, aż do klienta znajduje się zawartość lub osiągnie ostatni serwer w jego puli.
+
+    - Jeśli klient nie może znaleźć lokalizację poprawne źródło zawartości z jego *bieżącego* puli przed okresem powrotu do *sąsiada* osiągnięciu grupy granic, klient następnie dodaje punktów dystrybucji niż *sąsiada* grupy w celu jego bieżącej listy i będzie wyszukiwać rozwiniętej grupy lokalizacje źródłowe zawiera punkty dystrybucji z obu tych grup granic.
 
         > [!TIP]  
-        > Quando criar uma ligação explícita do grupo de limites atuais para o grupo de limites de site predefinido e definir uma hora de contingência que é inferior à hora de contingência para uma ligação a um grupo de limites de vizinho, os clientes começam a pesquisar localizações de origem do grupo de limites de site predefinido antes, incluindo o grupo de vizinho.
+        > Podczas tworzenia wyraźnego związku z bieżącej grupy granic do domyślnej grupy granic lokacji i rezerwowy czasu, która jest mniejsza niż rezerwowy czasu dla łącza do grupy granic sąsiada, klienci rozpocznie się wyszukiwanie źródła lokalizacji do domyślnej grupy granic lokacji przed dołączeniem grupy sąsiedniego.
 
-    - Quando o cliente não consegue obter conteúdos do último servidor no agrupamento, começar o processo de novo.
-
-
-## <a name="procedures-for-boundary-groups"></a>Procedimentos para grupos de limites
-Os procedimentos seguintes aplicam-se à versão 1610 ou posterior. Se utilizar a versão antes de 1610, consulte os procedimentos [grupos de limites para as versões do System Center Configuration Manager versão 1511, 1602 e 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606).
+    - Gdy klient nie można pobrać zawartości z ostatniego serwera w puli, rozpoczyna proces ponownie.
 
 
-### <a name="to-create-a-boundary-group"></a>Para criar um grupo de limites  
-1.  Na consola do Configuration Manager, clique em **administração** > **configuração da hierarquia** >  **grupos de limites**.  
-
-2.  No separador **Home Page** , no grupo **Criar** , clique em **Criar Grupo de Limites**.  
-
-3.  Na caixa de diálogo **Criar Grupo de Limites** , selecione o separador **Geral** e especifique um **Nome** para este grupo de limites.  
-
-4.  Clique em **OK** para guardar o novo grupo de limites.  
+## <a name="procedures-for-boundary-groups"></a>Procedury dotyczące grup granic
+Poniższe procedury dotyczą wersji 1610 lub nowszej. Jeśli używasz wersji przed 1610, zapoznaj się z procedurami w [grup granic dla programu System Center Configuration Manager w wersji 1511, 1602 i 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606).
 
 
-### <a name="to-configure-a-boundary-group"></a>Para configurar um grupo de limites  
- 1.  Na consola do Configuration Manager, clique em **administração** > **configuração da hierarquia** >  **grupos de limites**.  
+### <a name="to-create-a-boundary-group"></a>Aby utworzyć grupę granic  
+1.  W konsoli programu Configuration Manager kliknij **administracji** > **Konfiguracja hierarchii** >  **grup granic**.  
 
- 2.  Selecione o grupo de limites que pretende modificar.  
+2.  Na karcie **Narzędzia główne** w grupie **Tworzenie** kliknij przycisk **Utwórz grupę granicę**.  
 
- 3.  No separador **Home Page** , no grupo **Propriedades** , clique em **Propriedades**.  
+3.  W oknie dialogowym **Utwórz grupę granicę** wybierz kartę **Ogólne** i określ **nazwę** tej grupy granic.  
 
- 4.  Na caixa de diálogo **Propriedades** do grupo de limites, selecione o separador **Geral** para modificar os limites que são membros deste grupo de limites:  
+4.  Kliknij przycisk **OK** , aby zapisać nową grupę granic.  
 
-     -   Para adicionar limites, clique em **Adicionar**, selecione a caixa de verificação de um ou mais limites e clique em **OK**.  
 
-     -   Para remover limites, selecione o limite e clique em **Remover**.  
+### <a name="to-configure-a-boundary-group"></a>Aby skonfigurować grupę granic  
+ 1.  W konsoli programu Configuration Manager kliknij **administracji** > **Konfiguracja hierarchii** >  **grup granic**.  
 
- 5.  Selecione o separador **Referências** para modificar a atribuição de sites e a configuração do servidor do sistema de sites associada:  
+ 2.  Wybierz grupę granic, którą chcesz zmodyfikować.  
 
-     -   Para permitir que este grupo seja utilizado pelos clientes para atribuição de site, selecione a caixa de verificação **Utilizar este grupo de limites para atribuição de site**e, em seguida, selecione um site na caixa pendente **Site atribuído** .  
+ 3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
 
-     -   Para configurar que servidores do sistema de sites disponíveis estão associados a este grupo de limites:  
+ 4.  W oknie dialogowym **Właściwości** dla grupy granic wybierz kartę **Ogólne** , aby zmodyfikować granice należące do tej grupy granic:  
 
-     1.  Clique em **Adicionar**e, em seguida, selecione a caixa de verificação de um ou mais servidores. Os servidores são adicionados como servidores do sistema de sites associados a este grupo de limites. Só estão disponíveis os servidores que têm a função de sistema de sites instalada.  
+     -   Aby dodać granice, kliknij przycisk **Dodaj**, zaznacz pole wyboru przynajmniej jednej granicy, a następnie kliknij przycisk **OK**.  
 
-         > [!NOTE]  
-         >  Pode selecionar uma combinação de sistemas de sites disponíveis a partir de qualquer site na hierarquia. Os sistemas de sites selecionados são listados no separador **Sistemas de Sites** nas propriedades de cada limite que seja membro deste grupo de limites.  
+     -   Aby usunąć granicę, wybierz granicę i kliknij przycisk **Usuń**.  
 
-     2.  Para remover um servidor deste grupo de limites, selecione o servidor e, em seguida, clique em **Remover**.  
+ 5.  Wybierz kartę **Odwołania** , aby zmodyfikować konfigurację przypisania lokacji i konfigurację skojarzonego serwera systemu lokacji:  
+
+     -   Aby umożliwić użycie tej grupy granic przez klientów do przypisania lokacji, zaznacz pole wyboru **Użyj tej grupy granic do przypisania lokacji**, a następnie wypisz lokację z listy rozwijanej **Przypisana lokacja** .  
+
+     -   Aby skonfigurować dostępne serwery systemu lokacji, które będą skojarzone z tą grupą granic:  
+
+     1.  Kliknij przycisk **Dodaj**, a następnie zaznacz pole wyboru dla przynajmniej jednego serwera. Serwery zostaną dodane jako skojarzone serwery systemu lokacji dla tej grupy granic. Dostępne będą tylko serwery, na których zainstalowano obsługiwaną rolę systemu lokacji.  
 
          > [!NOTE]  
-         >  Para parar a utilização deste grupo de limites para associar sistemas de sites, tem de remover todos os servidores listados como servidores do sistema de sites associados.  
+         >  Można wybrać dowolną kombinację dostępnych systemów lokacji z dowolnej lokacji w hierarchii. Wybrane systemy lokacji są wyświetlane na karcie **Systemy lokacji** we właściwościach wszystkich granic należących do tej grupy granic.  
 
- 6.  Selecione o **relações** separador para configurar o comportamento de contingência:  
+     2.  Aby usunąć serwer z grupy granic, wybierz serwer i kliknij przycisk **Usuń**.  
 
-     - Clique em **adicionar**e, em seguida, selecione o grupo de limites que pretende configurar.
+         > [!NOTE]  
+         >  Aby przestać używać tej grupy granic na potrzeby kojarzenia systemów lokacji, należy usunąć wszystkie serwery wyświetlane jako skojarzone serwery systemu lokacji.  
 
-     - Defina uma hora para pontos de distribuição de contingência. Após este período de tempo, os clientes num grupo de limites que está a configurar relações, será possível iniciar a pesquisa de conteúdo dos pontos de distribuição do grupo de limites que está a adicionar.
+ 6.  Wybierz **relacje** kartę, aby skonfigurować działanie rezerwowe:  
 
-     - Para impedir a contingência para um grupo de limites específico, incluindo o *grupo de limites de site predefinido* que está configurado por predefinição, selecione o grupo de limites e, em seguida, selecione a caixa para **nunca contingência**.   
+     - Kliknij przycisk **Dodaj**, a następnie wybierz grupę granic, w której chcesz skonfigurować.
 
- 7.  Clique em **OK** para fechar as propriedades do grupo de limites e guardar a configuração.  
+     - Ustaw czas rezerwowy dla punktów dystrybucji. Po tym okresie klienci w grupie granic, konfigurowanej relacji, będzie można rozpocząć wyszukiwanie zawartości z punktów dystrybucji do grupy granic, który dodajesz.
 
-#### <a name="to-associate-a-site-systme-server-with-a-boundary-group"></a>Para associar um servidor de sistema de sites um grupo de limites  
- 1.  Na consola do Configuration Manager, clique em **administração** > **configuração da hierarquia** >  **grupos de limites**.  
+     - Aby zapobiec powrotu do określonej grupy, łącznie z *domyślnej grupy granic lokacji* jest domyślnie skonfigurowany, wybierz grupę granic, a następnie zaznacz pole wyboru, aby uzyskać **nigdy rezerwowy**.   
 
- 2.  Selecione o grupo de limites que pretende modificar.  
+ 7.  Kliknij przycisk **OK** , aby zamknąć właściwości grupy granic i zapisać konfigurację.  
 
- 3.  No separador **Home Page** , no grupo **Propriedades** , clique em **Propriedades**.  
+#### <a name="to-associate-a-site-systme-server-with-a-boundary-group"></a>Aby skojarzyć z grupą granic serwera systemu lokacji  
+ 1.  W konsoli programu Configuration Manager kliknij **administracji** > **Konfiguracja hierarchii** >  **grup granic**.  
 
- 4.  Na caixa de diálogo **Propriedades** do grupo de limites, selecione o separador **Referências** .  
+ 2.  Wybierz grupę granic, którą chcesz zmodyfikować.  
 
- 5.  Em **Selecionar servidores do sistema de sites**, clique em **Adicionar**, selecione a caixa de verificação dos servidores do sistema de sites que pretende associar a este grupo de limites e, em seguida, clique em **OK**.  
+ 3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
 
- 6.  Clique em **OK** para fechar a caixa de diálogo e guardar a configuração do grupo de limites.  
+ 4.  W oknie dialogowym **Właściwości** dla grupy granic wybierz kartę **Odwołania** .  
+
+ 5.  W sekcji **Wybierz serwery systemu lokacji**kliknij przycisk **Dodaj**, zaznacz pola wyboru dla serwerów systemu lokacji, które chcesz skojarzyć z tą grupą granic, a następnie kliknij przycisk **OK**.  
+
+ 6.  Kliknij przycisk **OK** , aby zamknąć okno dialogowe i zapisać konfigurację grupy granic.  
 
 
-#### <a name="to-configure-a-fallback-site-for-automatic-site-assignment"></a>Para configurar um site de contingência para atribuição automática de sites  
+#### <a name="to-configure-a-fallback-site-for-automatic-site-assignment"></a>Aby skonfigurować lokację rezerwową na użytek automatycznego przypisywania lokacji  
 
-  1.  Na consola do Configuration Manager, clique em **administração** > **configuração do Site** >  **Sites**.  
+  1.  W konsoli programu Configuration Manager kliknij **administracji** > **konfiguracja lokacji** >  **witryny**.  
 
-  2.  No separador **Home Page** , no grupo **Sites** , clique em **Definições de Hierarquia**.  
+  2.  Na karcie **Narzędzia główne** w grupie **Lokacje** kliknij przycisk **Ustawienia hierarchii**.  
 
-  3.  No separador **Geral** , selecione a caixa de verificação para **Utilizar um site de contingência**e selecione um site na lista pendente **Site de contingência** .  
+  3.  Na karcie **Ogólne** zaznacz pole wyboru **Użyj lokacji rezerwowej**, a następnie wybierz lokację z listy rozwijanej **Lokacja rezerwowa** .  
 
-  4.  Clique em **OK** para guardar a configuração.  
+  4.  Kliknij przycisk **OK** , aby zapisać konfigurację.  
 
-#### <a name="to-enable-use-of-preferred-management-points"></a>Para ativar a utilização de pontos de gestão preferenciais  
+#### <a name="to-enable-use-of-preferred-management-points"></a>Aby włączyć korzystanie z preferowanych punktów zarządzania  
 
- 1.  Na consola do Configuration Manager, clique em **administração** > **configuração do Site** > **Sites**e, em seguida, no **home page** separador selecione **definições de hierarquia**.  
+ 1.  W konsoli programu Configuration Manager kliknij **administracji** > **konfiguracja lokacji** > **witryny**, a następnie na **Home** wybierz pozycję **ustawienia hierarchii**.  
 
- 2.  No separador **Geral** das Definições de Hierarquia, selecione **Os clientes preferem utilizar pontos de gestão especificados em grupos de limites**.  
+ 2.  Na karcie **Ogólne** w obszarze Ustawienia hierarchii wybierz pozycję **Klienci wolą używać punktów zarządzania określonych w grupach granic**.  
 
- 3.  Clique em **OK** para fechar a caixa de diálogo e guardar a configuração.  
+ 3.  Kliknij przycisk **OK** , aby zamknąć okno dialogowe i zapisać konfigurację.  

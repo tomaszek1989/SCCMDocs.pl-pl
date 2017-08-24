@@ -1,6 +1,6 @@
 ---
-title: Gerir clientes | Microsoft Docs
-description: Saiba como gerir clientes no System Center Configuration Manager.
+title: "Zarządzanie klientami | Dokumentacja firmy Microsoft"
+description: "Dowiedz się, jak zarządzać klientami w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
@@ -17,201 +17,201 @@ manager: angrobe
 ms.openlocfilehash: 3a86924b2e5db3ac16eeda78b95ae6747ffd656f
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pt-PT
+ms.contentlocale: pl-PL
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>Como gerir clientes no System Center Configuration Manager
+# <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>Jak zarządzać klientami w programie System Center Configuration Manager
 
-*Aplica-se a: O System Center Configuration Manager (ramo atual)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Quando um cliente do System Center Configuration Manager está instalado e atribuído com êxito a um site do Configuration Manager, verá o dispositivo no **ativos e compatibilidade** área de trabalho a **dispositivos** nó e numa ou mais coleções no **coleções de dispositivos** nós. Quando seleciona uma coleção ou do dispositivo, pode efetuar operações de gestão. No entanto, existem outras formas de gerir o cliente, que poderão envolver outras áreas de trabalho na consola ou tarefas que não utilizem a consola do Configuration Manager.  
+Po zainstalowaniu klienta programu System Center Configuration Manager i przypisane do lokacji programu Configuration Manager, urządzenie będzie widoczne **zasoby i zgodność** obszaru roboczego w **urządzeń** węzła w co najmniej jednej kolekcji w **kolekcje urządzeń** węzła. Po wybraniu urządzenia lub kolekcji, mogą wykonywać operacje zarządzania. Istnieją także inne sposoby zarządzania klientem, które mogą dotyczyć innych obszarów roboczych w konsoli lub zadań, które nie używają konsoli programu Configuration Manager.  
 
 > [!NOTE]  
->  Um cliente do Configuration Manager poderá estar instalado mas não é apresentada na consola do Configuration Manager. Isto pode acontecer se o cliente ainda não foram atribuídas com êxito a um site, ou a consola deve ser atualizada ou uma associação de coleção atualizados.  
+>  Klient programu Configuration Manager może być zainstalowany, ale nie są wyświetlane w konsoli programu Configuration Manager. Może to nastąpić, jeśli klient jeszcze nie pomyślnie przypisany do lokacji, konsola musi zostać odświeżona lub członkostwo w kolekcji zaktualizowane.  
 >   
->  Além disso, um dispositivo também pode apresentar na consola quando o cliente do Configuration Manager não está instalado. Isto pode acontecer se o dispositivo for detetado mas o cliente do Configuration Manager não está instalado e atribuído. Dispositivos móveis que são geridos utilizando o conector do Exchange Server e os dispositivos inscritos pelo Microsoft Intune, não instalam o cliente do Configuration Manager.  
+>  Ponadto urządzenie może również wyświetlane w konsoli, gdy nie jest zainstalowany klient programu Configuration Manager. Może to nastąpić, jeśli urządzenie zostało wykryte, ale klient programu Configuration Manager nie jest zainstalowany i przypisany. Urządzenia przenośne, które są zarządzane przy użyciu łącznika serwera Exchange i urządzeń, które są zarejestrowane w usłudze Microsoft Intune, nie instaluj klienta programu Configuration Manager.  
 >   
->  Utilize o **cliente** coluna na consola do Configuration Manager para determinar se o cliente do Configuration Manager está instalado para que a geri-lo a partir da consola do Configuration Manager.  
+>  Użyj **klienta** kolumny w konsoli programu Configuration Manager w celu ustalenia, czy klient programu Configuration Manager jest zainstalowany, aby można było zarządzać nim z konsoli programu Configuration Manager.  
 
-##  <a name="BKMK_ManagingClients_DevicesNode"></a> Gerir Clientes a partir do Nó Dispositivos  
+##  <a name="BKMK_ManagingClients_DevicesNode"></a> Zarządzanie klientami z poziomu węzła Urządzenia  
 
-Tenha em atenção que, dependendo do tipo de dispositivo, algumas destas opções poderão não estar disponíveis.  
+Należy zauważyć, że w zależności od typu urządzenia, niektóre z tych opcji mogą być niedostępne.  
 
-1.  Na consola do Configuration Manager, escolha **ativos e compatibilidade** >  **dispositivos**.  
+1.  W konsoli programu Configuration Manager wybierz **zasoby i zgodność** >  **urządzeń**.  
 
-3.  Selecione um ou mais dispositivos e, em seguida, selecione uma destas tarefas de gestão de cliente a partir do Friso, ou clicando com o dispositivo:  
+3.  Wybierz co najmniej jedno urządzenie, a następnie wybierz jedną z tych zadań zarządzania klientami na Wstążce lub klikając prawym przyciskiem myszy urządzenie:  
 
-    -   **Gerir as informações de afinidade dispositivo/utilizador**  
+    -   **Zarządzanie informacjami o koligacji urządzenia użytkownika**  
 
-         Configure as associações entre utilizadores e dispositivos, de modo a forma eficiente poderá implementar software nos utilizadores.  
+         Konfigurowanie skojarzenia między użytkownikami a urządzeniami, można efektywnie wdrażania oprogramowania dla użytkowników.  
 
-         Veja [Associar utilizadores e dispositivos à afinidade de dispositivo do utilizador no System Center Configuration Manager](../../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md)  
+         Zobacz [Łączenie użytkowników i urządzeń za pomocą koligacji urządzenia użytkownika w programie System Center Configuration Manager](../../../apps/deploy-use/link-users-and-devices-with-user-device-affinity.md)  
 
-    -   **Adicionar o dispositivo a uma coleção nova ou existente**  
+    -   **Dodanie urządzenia do nowej lub istniejącej kolekcji**  
 
-         Adicione o dispositivo a uma coleção com uma regra direta.  
+         Urządzenia można dodać do kolekcji przy użyciu reguły bezpośredniej.  
          
-    -   **Instalar e reinstalar o cliente utilizando o assistente Push do Cliente**  
+    -   **Instalacja i ponowna instalacja klienta za pomocą kreatora wypychania klienta**  
 
-         Instalar e reinstalar o cliente do Configuration Manager para o reparar ou reconfigurar em computadores que executam o Windows. Inclui opções de configuração do site e as propriedades de client.msi que definiu para a instalação push do cliente.  
+         Instalację i ponowną instalację klienta programu Configuration Manager w celu jego naprawy lub ponownej konfiguracji na komputerach z systemem Windows. Zawiera opcje konfiguracji lokacji i właściwości pliku client.msi, które można ustawić dla instalacji wypychanej klienta.  
 
         > [!TIP]  
-        >  Existem muitas formas diferentes de instalar (e reinstalar) o cliente do Configuration Manager. Embora o assistente Push do cliente oferece uma conveniente método de instalação do cliente porque pode executá-lo a partir da consola, este método tem muitas dependências e não é adequado para todos os ambientes. Para obter mais informações sobre as dependências, veja [Pré-requisitos para implementar clientes em computadores Windows no System Center Configuration Manager](../../../core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers.md). Para obter mais informações sobre os outros métodos de instalação do cliente, veja [Métodos de instalação de cliente no System Center Configuration Manager](../../../core/clients/deploy/plan/client-installation-methods.md).  
+        >  Istnieje wiele różnych sposobów instalacji (i ponownej instalacji) klienta programu Configuration Manager. Mimo że Kreator wypychania klienta stanowi wygodny sposób metody instalacji klienta, ponieważ można go uruchomić z konsoli, ta metoda ma wiele zależności i nie jest odpowiednia dla wszystkich środowisk. Aby uzyskać więcej informacji o zależnościach, zobacz [Wymagania wstępne dotyczące wdrażania klientów na komputerach z systemem Windows w programie System Center Configuration Manager](../../../core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers.md). Aby uzyskać więcej informacji o innych metodach instalowania klientów, zobacz [Metody instalacji klientów w programie System Center Configuration Manager](../../../core/clients/deploy/plan/client-installation-methods.md).  
 
-         Veja [Como Instalar Clientes do Configuration Manager Utilizando Push de Cliente](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientPush).  
+         Zobacz [Jak zainstalować klientów programu Configuration Manager za pomocą instalacji wypychanej klienta](../../../core/clients/deploy/deploy-clients-to-windows-computers.md#BKMK_ClientPush).  
 
-    -   **Reatribuir o Site**  
+    -   **Ponowne przypisanie lokacji**  
 
-         Reatribui um ou mais clientes, incluindo dispositivos móveis geridos, a outro site primário da hierarquia. Os clientes podem ser reatribuídos individualmente ou podem ser selecionados várias vezes e reatribuídos em massa a um novo site.  
+         Można ponownie przypisać jednego lub kilku klientów do innej lokacji głównej w hierarchii, uwzględniając zarządzane urządzenia przenośne. Klientów można przypisywać ponownie pojedynczo lub wybierać wielu klientów i przypisywać ich zbiorczo do nowej lokacji.  
 
-    -   **Administrar o cliente remotamente**  
+    -   **Zdalne administrowanie klientem**  
 
-         Pode executar o Explorador de Recursos para consultar informações sobre o inventário de hardware e software a partir de um cliente Windows e para o administrar remotamente utilizando o Controlo Remoto, Assistência Remota ou Ambiente de Trabalho Remoto.  
+         Można uruchomić Eksplorator zasobów, aby zobaczyć informacje o spisie sprzętu i oprogramowania z klienta z systemem Windows i zarządzać nim zdalnie, używając funkcji Zdalne sterowanie, Pomoc zdalna lub Pulpit zdalny.  
 
-         Veja [Como utilizar o Explorador de Recursos para ver o inventário de hardware no System Center Configuration Manager](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md) e [Como utilizar o Explorador de Recursos para ver o inventário de software no System Center Configuration Manager](../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md).  
+         Zobacz [Jak używać Eksploratora zasobów do wyświetlania spisu sprzętu w programie System Center Configuration Manager](../../../core/clients/manage/inventory/use-resource-explorer-to-view-hardware-inventory.md) i [Jak używać Eksploratora zasobów do wyświetlania spisu oprogramowania w programie System Center Configuration Manager](../../../core/clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md).  
 
-         Veja [Como administrar remotamente um computador cliente Windows utilizando o System Center Configuration Manager](../../../core/clients/manage/remote-control/remotely-administer-a-windows-client-computer.md).  
+         Zobacz [Zdalne administrowanie komputerem klienckim z systemem Windows za pomocą programu System Center Configuration Manager](../../../core/clients/manage/remote-control/remotely-administer-a-windows-client-computer.md).  
 
-    -   **Aprovar um cliente**  
+    -   **Zatwierdzenie klienta**  
 
-         Quando o cliente comunica com os sistemas de site utilizando HTTP e um certificado autoassinado, tem de aprovar esses clientes para os identificar como computadores fidedignos. Por predefinição, a configuração do site aprova automaticamente os clientes da mesma floresta do Active Directory e de florestas fidedignas, pelo que não terá de aprovar manualmente cada cliente. No entanto, terá de aprovar manualmente os computadores do grupo de trabalho que considere fidedignos e quaisquer outros computadores fidedignos mas que não se encontrem aprovados.  
-
-        > [!WARNING]  
-        >  Apesar de algumas funções de gestão poderem funcionar para clientes não aprovados, este é um cenário não suportado para o Configuration Manager.  
-
-         Terá de aprovar os clientes que comuniquem sempre com através de HTTPS de sistemas de sites ou clientes que utilizam um certificado PKI quando comunicam com sistemas de site utilizando HTTP. Estes clientes estabelecem fidedignidade utilizando os certificados PKI.  
-
-    -   **Bloquear ou desbloquear um cliente**  
-
-         Bloqueie os clientes deixe de considerar fidedignos para os impedir de receber a política de cliente e para impedir que os sistemas de sites do Configuration Manager comunicar com o mesmo.  
+         Gdy klient komunikuje się z systemami lokacji przy użyciu protokołu HTTP i certyfikatu z podpisem własnym, należy zatwierdzić tych klientów, aby zidentyfikować ich jako zaufane komputery. Domyślnie konfiguracja lokacji powoduje automatyczne zatwierdzenie klientów z tego samego lasu usługi Active Directory i zaufanych lasów, aby nie trzeba było ręcznie zatwierdzać każdego klienta. Należy jednak ręcznie zatwierdzić zaufane komputery grupy roboczej i inne zaufane, ale niezatwierdzone komputery.  
 
         > [!WARNING]  
-        >  Bloquear um cliente apenas impede a comunicação entre o cliente para sistemas de sites do Configuration Manager e não impedindo a comunicação com outros dispositivos. Além disso, quando o cliente comunica com os sistemas de site utilizando HTTP em vez de HTTPS, existem algumas limitações de segurança.  
+        >  Mimo że niektóre funkcje zarządzania mogą działać w przypadku niezatwierdzonych klientów, jest to nieobsługiwany scenariusz dla programu Configuration Manager.  
 
-         Pode desbloquear um cliente que tenha sido bloqueado. No entanto, se desbloquear um computador baseado em Intel AMT que tenha sido aprovisionado para AMT quando foi bloqueado, terá de efetuar passos adicionais para poder gerir novamente esse computador fora de banda.  
+         Jest konieczne zatwierdzanie klientów, którzy zawsze komunikują się z systemami lokacji przy użyciu protokołu HTTPS lub klientów, którzy używają certyfikatów PKI podczas komunikowania się z systemami lokacji przy użyciu protokołu HTTP. Ci klienci ustanawiają zaufania za pomocą certyfikatów PKI.  
 
-         Veja [Determinar se deve bloquear clientes no System Center Configuration Manager](../../../core/clients/deploy/plan/determine-whether-to-block-clients.md).  
+    -   **Zablokowanie lub odblokowanie klienta**  
 
-    -   **Limpar uma implementação de PXE necessária**  
-
-         Volte a implementar as implementações de PXE necessárias para o computador.  
-
-         Veja [Utilizar o PXE para implementar o Windows na rede com o System Center Configuration Manager](../../../osd/deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
-
-    -   **Gerir as propriedades do cliente**  
-
-         Ver os dados de deteção e as implementações direcionadas para o cliente. Também pode configurar variáveis que utilizam sequências de tarefas para implementar um sistema operativo no dispositivo.  
-
-    -   **Eliminar o cliente**  
+         Klienta, który nie jest już zaufany, aby uniemożliwić mu odebranie zasad klienta i zapobiec systemy lokacji programu Configuration Manager komunikację z jej zablokować.  
 
         > [!WARNING]  
-        >  Não elimine um cliente se pretender desinstalar o cliente do Configuration Manager ou removê-lo a partir de uma coleção.  
+        >  Tylko zablokowanie klienta zapobiega komunikacji z klienta z systemami lokacji programu Configuration Manager i nie zapobiega komunikacji z innymi urządzeniami. Ponadto, gdy klient komunikuje się z systemami lokacji za pomocą protokołu HTTP zamiast HTTPS, istnieją pewne ograniczenia dotyczące zabezpieczeń.  
 
-         O **eliminar** ação elimina manualmente o registo de cliente da base de dados do Configuration Manager e, normalmente, não deve utilizar esta ação, exceto em cenários de resolução de problemas. Se eliminar o registo do cliente e o cliente estiver ainda instalado e ao comunicar com o Configuration Manager, a deteção de Heartbeat recriará o registo de cliente e este voltará na consola do Configuration Manager, embora o histórico do cliente e eventuais associações anteriores sejam perdidas.  
+         Można odblokować zablokowanego klienta. Jednakże, jeżeli zostanie odblokowany komputer Intel AMT udostępniony dla funkcji AMT, gdy był zablokowany, aby ponownie zarządzać tym komputerem poza pasmem, należy wykonać dodatkowe czynności.  
+
+         Zobacz [Określanie, czy blokować klientów w programie System Center Configuration Manager](../../../core/clients/deploy/plan/determine-whether-to-block-clients.md).  
+
+    -   **Usunięcie wymaganego wdrożenia PXE**  
+
+         Należy ponownie wdrożyć wymagane wdrożenia PXE dla komputera.  
+
+         Zobacz [Wdrażanie systemu Windows za pośrednictwem sieci przy użyciu środowiska PXE w programie System Center Configuration Manager](../../../osd/deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
+
+    -   **Zarządzanie właściwościami klienta**  
+
+         Wyświetl dane wykrywania i wdrożenia docelowe dla klienta. Można również skonfigurować zmienne używane przez sekwencje zadań do wdrożenia systemu operacyjnego na urządzeniu.  
+
+    -   **Usunięcie klienta**  
+
+        > [!WARNING]  
+        >  Nie należy usuwać klienta, aby odinstalować klienta programu Configuration Manager lub usuń go z kolekcji.  
+
+         **Usunąć** akcja umożliwia ręczne usunięcie rekordu klienta z bazy danych programu Configuration Manager i zwykle, nie należy używać tej akcji, z wyjątkiem w rozwiązywaniu problemów. Jeśli rekord klienta zostanie usunięty, a klient jest nadal zainstalowany i komunikacji z programem Configuration Manager, wykrywanie interwału czasowego ponownie utworzy rekord klienta i pojawi się on w konsoli programu Configuration Manager, ale Historia klienta i poprzednie skojarzenia zostaną utracone.  
 
         > [!NOTE]  
-        >  Quando eliminar um cliente de dispositivo móvel que tenha sido inscrito pelo Configuration Manager, esta ação revogará também o certificado PKI emitido para o dispositivo móvel e este certificado será então rejeitado pelo ponto de gestão, mesmo que o IIS não verifique o CRL. Os certificados em clientes legados de dispositivos móveis não são revogados quando elimina esses clientes.  
+        >  Po usunięciu klienta urządzenia przenośnego, które było rejestrowane przez program Configuration Manager, ta akcja powoduje także odwołanie certyfikatu PKI wydanego dla urządzenia przenośnego, a certyfikat następnie zostanie odrzucony przez punkt zarządzania nawet wtedy, gdy usługi IIS nie sprawdza listy CRL. Po usunięciu tych klientów certyfikaty na starszych klientach urządzeń przenośnych nie zostaną odwołane.  
 
-         Para desinstalar o cliente, veja [Desinstalar o Cliente do Configuration Manager](#BKMK_UninstalClient).  
+         Aby odinstalować klienta, patrz [Dezinstalacja klienta programu Configuration Manager](#BKMK_UninstalClient).  
 
-         Para atribuir o cliente a um novo site primário, veja [Como atribuir clientes a um site no Configuration Manager](../../../core/clients/deploy/assign-clients-to-a-site.md).  
+         Aby przypisać klienta do nowej lokacji głównej, zobacz [Jak przypisać klientów do lokacji w programie System Center Configuration Manager](../../../core/clients/deploy/assign-clients-to-a-site.md).  
 
-         Para remover o cliente de uma coleção, reconfigure as propriedades da coleção. Veja [Como gerir coleções no System Center Configuration Manager](../../../core/clients/manage/collections/manage-collections.md).  
+         Aby usunąć klienta z kolekcji, należy ponownie skonfigurować właściwości kolekcji. Zobacz [Zarządzanie kolekcjami w programie System Center Configuration Manager](../../../core/clients/manage/collections/manage-collections.md).  
 
-    -   **Eliminar os dados de um dispositivo móvel**  
+    -   **Wymazanie urządzenia przenośnego**  
 
-         É possível eliminar os dados de dispositivos móveis que suportem o comando de eliminação de dados.  
+         Można wymazać urządzenia przenośne, które obsługują polecenia wymazywania.  
 
-         Esta ação remove de forma permanente todos os dados no dispositivo móvel, incluindo definições pessoais e dados pessoais. Normalmente, esta ação repõe as predefinições de fábrica do dispositivo móvel. Limpar um dispositivo móvel quando o dispositivo móvel já não é considerado fidedigno, exemplo, se tiver sido perdido ou roubado.  
+         Ta akcja powoduje trwałe usunięcie wszystkich danych na urządzeniu przenośnym, w tym ustawienia osobiste i dane osobiste. Zwykle wykonanie tej akcji powoduje przywrócenie domyślnych ustawień fabrycznych urządzenia przenośnego. Czyszczenie urządzeń przenośnych, gdy urządzenie przenośne nie jest już zaufany, przykład w przypadku utraty lub kradzieży.  
 
         > [!TIP]  
-        >  Consulte a documentação do fabricante para obter mais informações sobre como o dispositivo móvel processa um comando de eliminação remota de dados.  
+        >  Sprawdź w dokumentacji producenta Aby uzyskać więcej informacji na temat sposobu przetwarzania przez urządzenie przenośne polecenia wymazywania.  
 
-         Não há frequentemente um atraso até que o dispositivo móvel recebe o comando de eliminação de dados:  
+         Występuje często opóźnienie, dopóki urządzenie przenośne odbierze polecenie wymazania:  
 
-        -   Se o dispositivo móvel estiver inscrito pelo Configuration Manager ou pelo Microsoft Intune, o cliente receberá o comando quando transfere a política de cliente.  
+        -   Jeśli urządzenie przenośne zostało zarejestrowane przez program Configuration Manager lub Microsoft Intune, klient odbierze polecenie po pobraniu zasad klienta.  
 
-        -   Se o dispositivo móvel for gerido pelo conector do Exchange Server, receberá o comando de sincronizar com o Exchange.  
+        -   Jeśli urządzenie przenośne jest zarządzane przez łącznik serwera Exchange, odbierze polecenie podczas synchronizacji z programem Exchange.  
 
-         Pode utilizar o **apagar estado** coluna para monitorizar quando o dispositivo recebe o comando de eliminação de dados. Até que o dispositivo envie uma confirmação da eliminação para o Configuration Manager, pode cancelar o comando de eliminação de dados.  
+         Można użyć **stan wymazania** kolumny w celu monitorowania odebrania polecenia wymazania przez urządzenie. Polecenie wymazania można anulować do momentu wysłania przez urządzenie potwierdzenia wymazania do programu Configuration Manager.  
 
-    -   **Extinguir um dispositivo móvel**  
+    -   **Wycofanie urządzenia przenośnego**  
 
-         O **extinguir** opção só é suportada por dispositivos móveis inscritos pelo Intune ou no\-no local a gestão de dispositivos móveis.  
+         **Wycofaj** opcja jest obsługiwana tylko przez urządzenia przenośne, które są zarejestrowane przez usługę Intune lub usługę na\-lokalnych zarządzanie urządzeniami przenośnymi.  
 
-         Para obter mais informações, veja [Ajudar a proteger os seus dados através de eliminação remota de dados, bloqueio remoto ou reposição do código de acesso com o System Center Configuration Manager](../../../mdm/deploy-use/wipe-lock-reset-devices.md).  
+         Aby uzyskać więcej informacji, zobacz [Łatwiejsza ochrona danych dzięki funkcjom czyszczenia danych, zdalnego blokowania lub resetowania kodu dostępu przy użyciu programu System Center Configuration Manager](../../../mdm/deploy-use/wipe-lock-reset-devices.md).  
 
-    -   **Alterar a propriedade de um dispositivo**  
+    -   **Zmiana własności urządzenia**  
 
-         Pode alterar a propriedade dos dispositivos para **empresa** ou **pessoais** se um dispositivo não estiver associado ao domínio e tiver o cliente do Configuration Manager instalado.  
+         Własność urządzeń można zmienić **firmy** lub **osobistych** Jeśli urządzenie nie jest przyłączony do domeny i nie jest zainstalowany klient programu Configuration Manager.  
 
-         Pode utilizar este valor nos requisitos de aplicações para controlar as implementações e para controlar a quantidade inventário é recolhido dos dispositivos dos utilizadores.  
+         Tej wartości można użyć w wymaganiach aplikacji w celu kontroli wdrożeń oraz do sterowania ilości zapasów zbieranych z urządzeń użytkowników.  
 
-        Poderá ter de adicionar o **proprietário do dispositivo** coluna para a vista, clique em qualquer cabeçalho de coluna e escolhê-lo.
+        Może być konieczne dodanie **właściciel urządzenia** kolumny do widoku, klikając prawym przyciskiem myszy nagłówek dowolnej kolumny, a następnie wybierając go.
 
-         Para obter mais informações, veja [Gestão de dispositivos móveis (MDM) híbrida com o System Center Configuration Manager e o Microsoft Intune](../../../mdm/understand/hybrid-mobile-device-management.md).  
+         Aby uzyskać więcej informacji, zobacz [Hybrydowe zarządzanie urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i usługi Microsoft Intune](../../../mdm/understand/hybrid-mobile-device-management.md).  
 
-##  <a name="BKMK_ManagingClients_DeviceCollectionsNode"></a> Gerir Clientes a partir do Nó Coleções de Dispositivos  
-  Muitas das tarefas que pode realizar num único dispositivo ou em vários dispositivos no **dispositivos** nó pode ser efetuado em coleções. Isto aplica automaticamente a operação para todos os dispositivos elegíveis da coleção. Tenha em atenção que isto gera uma grande quantidade de pacotes de rede e aumenta a utilização da CPU no servidor do site.  
+##  <a name="BKMK_ManagingClients_DeviceCollectionsNode"></a> Zarządzanie klientami z poziomu węzła Kolekcje urządzeń  
+  Wiele zadań, które można wykonać na jednym urządzeniu lub na wielu urządzeniach w **urządzeń** węzeł może odbywać się w kolekcji. Operacja zostanie automatycznie stosuje do wszystkich kwalifikujących się urządzeń w kolekcji. Należy pamiętać, że generuje dużą liczbę pakietów sieciowych i zwiększa użycie procesora CPU na serwerze lokacji.  
 
-  Antes de executar tarefas de gestão de clientes ao nível da coleção, considere o número de dispositivos da coleção, se se encontram ligados por ligações de rede com baixa largura de banda e quanto tempo demorará a tarefa a ser concluída em todos os dispositivos. Depois de iniciado, não é possível parar a tarefa a partir da consola.  
+  Przed wykonaniem zadań zarządzania na poziomie kolekcji należy uwzględnić liczbę zadań w kolekcji, określić, czy korzystają z połączeń sieciowych o niskiej przepustowości oraz czas wykonania zadania dla wszystkich urządzeń. Po rozpoczęciu nie można zatrzymać zadania z poziomu konsoli.  
 
-#### <a name="to-manage-clients-from-the-device-collections-node"></a>Para gerir os clientes a partir do nó Coleções de Dispositivos  
+#### <a name="to-manage-clients-from-the-device-collections-node"></a>Aby zarządzać klientami z węzła Kolekcje urządzeń  
 
-1.  Na consola do Configuration Manager, escolha **ativos e compatibilidade** > **coleções de dispositivos**.  
+1.  W konsoli programu Configuration Manager wybierz **zasoby i zgodność** > **kolekcje urządzeń**.  
 
-3.  Selecione uma coleção e, em seguida, selecione uma das seguintes tarefas de gestão de cliente a partir do Friso, ou clicando na coleção. Estas tarefas de gestão do cliente podem *apenas* ser executadas ao nível da coleção.  
+3.  Wybierz kolekcję, a następnie wybierz jedną z następujących zadań zarządzania klientami na Wstążce lub klikając prawym przyciskiem myszy kolekcję. Te zadania zarządzania klientami można *tylko* można wykonać na poziomie kolekcji.  
 
-    -   **Analisar os computadores quanto a software maligno e transferir os ficheiros de definições antimalware.**  
+    -   **Skanowanie komputerów pod kątem złośliwego oprogramowania i pobranie plików definicji oprogramowania chroniącego przed złośliwym kodem**  
 
-         Consulte [Endpoint Protection no System Center Configuration Manager](../../../protect/deploy-use/endpoint-protection.md).  
+         Zobacz [programu Endpoint Protection w programie System Center Configuration Manager](../../../protect/deploy-use/endpoint-protection.md).  
 
-    -   **Implementar software, linhas de base de configuração e sequências de tarefas.**  
+    -   **Wdrożenie oprogramowania, linii bazowych konfiguracji i sekwencji zadań.**  
 
-         Consulte:  
+         Zobacz:  
 
-        -   [Implementar atualizações de software no System Center Configuration Manager](../../../sum/deploy-use/deploy-software-updates.md)  
+        -   [Wdrażanie aktualizacji oprogramowania w programie System Center Configuration Manager](../../../sum/deploy-use/deploy-software-updates.md)  
 
-        -   [Planear e configurar as definições de compatibilidade no System Center Configuration Manager](../../../compliance/plan-design/plan-for-and-configure-compliance-settings.md)  
+        -   [Planowanie i konfigurowanie ustawień zgodności w programie System Center Configuration Manager](../../../compliance/plan-design/plan-for-and-configure-compliance-settings.md)  
 
-    -   **Configurar as definições de gestão de energia.**  
+    -   **Konfigurowanie ustawień zarządzania energią**  
 
-         Veja [Como criar e aplicar esquemas de energia no System Center Configuration Manager](../../../core/clients/manage/power/create-and-apply-power-plans.md). Os esquemas de energia só podem ser utilizados em computadores com o Windows.  
+         Zobacz [Tworzenie i stosowanie planów zasilania w programie System Center Configuration Manager](../../../core/clients/manage/power/create-and-apply-power-plans.md). Planów zasilania można użyć tylko w przypadku komputerów z systemem Windows.  
 
-    -   **Notificar os computadores para que transfiram a política o mais brevemente possível.**  
+    -   **Powiadomienie komputerów o jak najszybszym pobraniu zasad**  
 
-         Utilize a notificação de cliente para notificar os clientes Windows selecionados para transferirem a política de computador logo que possível, fora do intervalo de consulta da política de cliente.  
+         Powiadomić wybranych klientów systemu Windows w celu pobierania zasad komputera, jak najszybciej poza interwał sondowania zasad klienta za pomocą powiadomień klienta.  
 
-         As tarefas de notificação do cliente são apresentadas no nó **Operações do Cliente** , na área de trabalho **Monitorização** .  
+         Zadania powiadamiania klientów są wyświetlane w węźle **Operacje klienta** w obszarze roboczym **Monitorowanie** .  
 
-##  <a name="BKMK_ClientCache"></a> Configurar a Cache do Cliente para Clientes do Configuration Manager  
-A cache do cliente armazena ficheiros temporários para quando os clientes instalam as aplicações e programas. As atualizações de software também utilizam a cache do cliente, mas não estão restringidas pelo tamanho da cache configurado e tentarão sempre transferir para a cache. Pode configurar as definições de cache do cliente, por exemplo, tamanho e localização, quando instala o cliente do Configuration Manager manualmente, quando utilizar a instalação de push de cliente ou após a instalação do cliente.
+##  <a name="BKMK_ClientCache"></a> Konfiguracja pamięci podręcznej klienta w klientach programu Configuration Manager  
+Pamięci podręcznej klienta są przechowywane pliki tymczasowe dla instalowania klientów, aplikacje i programy. Choć aktualizacje oprogramowania również używają pamięci podręcznej klienta, to nie są ograniczone jej rozmiarem i zawsze będą do niej pobierane. Można skonfigurować ustawienia pamięci podręcznej klienta, takich jak rozmiar i położenie, po zainstalowaniu klienta programu Configuration Manager ręcznie, korzystając z instalacji wypychanej klienta lub po zainstalowaniu klienta.
 
-A partir do Configuration Manager versão 1606, pode especificar o tamanho da pasta cache utilizando as definições de cliente da consola do Configuration Manager.   
+Począwszy od programu Configuration Manager 1606 wersji, można określić rozmiar folderu pamięci podręcznej przy użyciu ustawień klienta w konsoli programu Configuration Manager.   
 
- A localização predefinida para a cache do cliente do Configuration Manager é de %*windir*%\ccmcache e o espaço de disco predefinido é 5120 MB.  
+ Lokalizacja domyślna pamięci podręcznej klienta programu Configuration Manager to %*windir*%\ccmcache a domyślna ilość miejsca to 5120 MB.  
 
 > [!IMPORTANT]  
->  Não encripte a pasta utilizada para a cache do cliente. O Configuration Manager não consegue transferir conteúdo para uma pasta encriptada.  
+>  Nie należy szyfrować folderu, w którym znajduje się pamięć podręczna klienta. Program Configuration Manager nie może pobierać zawartości do folderu szyfrowanego.  
 
-### <a name="about-client-cache"></a>Sobre a cache do cliente  
+### <a name="about-client-cache"></a>Informacje o pamięci podręcznej klienta  
 
-O cliente do Configuration Manager transfere o conteúdo do software necessário logo que recebe a implementação, mas aguarda para executá-lo a implementação da hora agendada. Na hora agendada, o cliente do Configuration Manager verifica se o conteúdo está disponível na cache. Se o conteúdo está na cache e é a versão correta, o cliente utiliza os conteúdos em cache. Quando a versão necessária do conteúdo tiver sido alterado ou se o conteúdo foi eliminado para disponibilizar espaço para outro pacote, o conteúdo é transferido novamente para a cache.  
+Klient programu Configuration Manager pobiera zawartość do wymaganego oprogramowania zaraz po otrzymaniu wdrożenia, ale uruchamia go do momenty określonej godziny wdrożenia. Klienta programu Configuration Manager w zaplanowanym terminie, sprawdza, czy zawartość jest dostępna w pamięci podręcznej. Jeśli zawartość znajduje się w pamięci podręcznej jest niepoprawna, klient korzysta z zawartości w pamięci podręcznej. Gdy wymagana wersja zawartości została zmieniona lub zawartość została usunięta w celu przygotowania miejsca na inny pakiet, zawartość zostanie ponownie pobrana do pamięci podręcznej.  
 
-Se o cliente tenta transferir conteúdo para um programa ou aplicação que é superior ao tamanho da cache, a implementação falha devido ao tamanho insuficiente da cache e o Configuration Manager gera o ID de mensagem de estado 10050. Se o tamanho da cache for aumentado posteriormente, o resultado é:  
+Jeśli klient próbuje pobrać zawartość dla programu lub aplikacji, która jest większa niż rozmiar pamięci podręcznej, wdrożenie zakończy się niepowodzeniem ze względu na rozmiar za mało pamięci podręcznej i program Configuration Manager generuje identyfikator komunikatu o stanie 10050. Po późniejszym zwiększeniu rozmiaru pamięci podręcznej, wynik jest:  
 
--   Para um programa necessário: O cliente não tenta automaticamente repetir a transferência do conteúdo. É necessário voltar a implementar o pacote e o programa no cliente.  
--   Para uma aplicação necessária: O cliente tenta automaticamente repetir a transferência do conteúdo quando transfere a política de cliente.  
+-   Dla wymaganego programu: Klient nie rozpocznie automatycznego ponownego pobierania zawartości. Należy ponownie wdrożyć pakiet i program do klienta.  
+-   Dla wymaganej aplikacji: Klient automatycznie ponowi próbę pobrania zawartości po pobraniu zasad klienta.  
 
-Se o cliente tenta transferir um pacote que é inferior ao tamanho da cache, mas a cache está cheia, todas as implementações necessárias continuará a tentar até que o espaço da cache esteja disponível, até que a transferência expira ou até que seja atingido o limite de repetição para a falha de espaço da cache. Se o tamanho da cache for aumentado posteriormente, o cliente do Configuration Manager tenta transferir o pacote novamente durante o próximo intervalo entre tentativas. O cliente tenta transferir o conteúdo de quatro em quatro horas até atingir 18 tentativas.  
+Jeśli klient spróbuje pobrać pakiet, który jest mniejszy od rozmiaru pamięci podręcznej, ale pamięć podręczna jest pełna, wszystkie wymagane wdrożenia ponawiać dopóki miejsca w pamięci podręcznej jest dostępne, dopóki nie upłynie limit czasu pobierania lub aż do osiągnięcia limitu ponownych prób niepowodzenia miejsca w pamięci podręcznej. Po późniejszym zwiększeniu rozmiaru pamięci podręcznej klienta programu Configuration Manager próbuje pobrać pakiet ponownie podczas kolejnego interwału ponownej próby. Klient próbuje pobrać zawartość co 4 godziny i maksymalnie 18 razy.  
 
-O conteúdo em cache não é eliminado automaticamente. Permanece na cache durante, pelo menos, um dia após o cliente ter utilizado esse conteúdo. Se configurar as propriedades do pacote com a opção para manter conteúdo na cache do cliente, este não elimina automaticamente o conteúdo do pacote na cache. Se o espaço da cache do cliente estiver utilizado por pacotes que foram transferidos nas últimas 24 horas e o cliente tiver de transferir novos pacotes, é possível aumentar o tamanho da cache do cliente ou escolher a opção de eliminação para eliminar o conteúdo mantido na cache.  
+Zawartość z pamięci podręcznej nie jest automatycznie usuwana, lecz pozostaje w pamięci podręcznej przynajmniej przez jeden dzień po jej użyciu. Konfigurowanie właściwości pakietu z opcją trwałości zawartości w pamięci podręcznej oznacza, że klient nie usunie automatycznie zawartości pakietu z pamięci podręcznej. Jeśli przestrzeń na pamięć podręczną klienta jest zajęta przez pakiety pobrane w ciągu ostatnich 24 godzin, a klient musi pobrać nowe pakiety, możesz zwiększyć rozmiar pamięci podręcznej klienta lub usunąć zapisaną w pamięci podręcznej zawartość.  
 
- Utilize os procedimentos seguintes para configurar a cache do cliente durante a instalação manual do cliente ou após a instalação do cliente.  
+ Aby skonfigurować pamięć podręczną klienta przy ręcznej instalacji klienta lub po jego zainstalowaniu, wykonaj następującą procedurę.  
 
-### <a name="to-configure-the-client-cache-when-you-install-clients-by-using-manual-client-installation"></a>Para configurar a cache do cliente quando os clientes são instalados através da instalação manual  
+### <a name="to-configure-the-client-cache-when-you-install-clients-by-using-manual-client-installation"></a>Aby skonfigurować pamięć podręczną klienta przy ręcznej instalacji klientów  
 
-Execute o comando CCMSetup.exe a partir da localização de origem da instalação e, entre as seguintes propriedades, especifique as que forem necessárias, separadas por espaços:  
+Uruchom polecenie CCMSetup.exe z lokalizacji źródłowej i podaj wartości potrzebnych z poniższych właściwości, rozdzielając je spacjami:  
 
    -   DISABLECACHEOPT  
 
@@ -222,17 +222,17 @@ Execute o comando CCMSetup.exe a partir da localização de origem da instalaç�
     -   SMSCACHESIZE  
 
         > [!NOTE]
-        > Para a versão 1606, utilize as definições de tamanho da cache disponíveis no **as definições de cliente** na consola do Configuration Manager em vez de SMSCACHESIZE. Para obter mais informações, veja [Definições da Cache do Cliente](../../../core/clients/deploy/about-client-settings.md#client-cache-settings).
+        > Dla wersji 1606, użyj ustawienia rozmiaru pamięci podręcznej dostępne w **ustawień klienta** w konsoli programu Configuration Manager, zamiast SMSCACHESIZE. Aby uzyskać więcej informacji, zobacz [Ustawienia pamięci podręcznej klienta](../../../core/clients/deploy/about-client-settings.md#client-cache-settings).
 
-Para obter mais informações sobre como utilizar estas propriedades de linha de comandos para CCMSetup.exe, veja [Acerca das propriedades de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
+Aby uzyskać więcej informacji o sposobie używania tych właściwości wiersza polecenia programu CCMSetup.exe, zobacz [Informacje o właściwościach instalacji klientów w programie System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
 
-### <a name="to-configure-the-client-cache-folder-when-you-install-clients-by-using-client-push-installation"></a>Para configurar a pasta da cache do cliente quando os clientes são instalados através da instalação push de cliente  
+### <a name="to-configure-the-client-cache-folder-when-you-install-clients-by-using-client-push-installation"></a>Aby skonfigurować pamięć podręczną klienta przy wypychanej instalacji klientów  
 
-1.  Na consola do Configuration Manager, escolha **administração** > **configuração do Site** > **Sites**.  
+1.  W konsoli programu Configuration Manager wybierz **administracji** > **konfiguracja lokacji** > **witryny**.  
 
-3.  Selecione o site apropriado e no **home page** separador o **definições** grupo, escolha **definições de instalação de cliente** > **separador de propriedades de instalação**.  
+3.  Wybierz odpowiednią witrynę i na **Home** karcie **ustawienia** grupy, wybierz **ustawienia instalacji klienta** > **właściwości instalacji**.  
 
-5.  Especifique as seguintes propriedades, separadas por espaços:  
+5.  Określ następujące właściwości, rozdzielając je spacjami:  
 
     -   DISABLECACHEOPT  
 
@@ -243,125 +243,125 @@ Para obter mais informações sobre como utilizar estas propriedades de linha de
     -   SMSCACHESIZE  
 
         > [!NOTE]
-        > Para a versão 1606, utilize as definições de tamanho da cache disponíveis no **as definições de cliente** na consola do Configuration Manager em vez de SMSCACHESIZE. Para obter mais informações, veja [Definições da Cache do Cliente](../../../core/clients/deploy/about-client-settings.md#client-cache-settings).
+        > Dla wersji 1606, użyj ustawienia rozmiaru pamięci podręcznej dostępne w **ustawień klienta** w konsoli programu Configuration Manager, zamiast SMSCACHESIZE. Aby uzyskać więcej informacji, zobacz [Ustawienia pamięci podręcznej klienta](../../../core/clients/deploy/about-client-settings.md#client-cache-settings).
 
-       Para obter mais informações sobre como utilizar estas propriedades de linha de comandos para CCMSetup.exe, veja [Acerca das propriedades de instalação do cliente no System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
+       Aby uzyskać więcej informacji o sposobie używania tych właściwości wiersza polecenia programu CCMSetup.exe, zobacz [Informacje o właściwościach instalacji klientów w programie System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
 
-### <a name="to-configure-the-client-cache-folder-on-the-client-computer"></a>Para configurar a pasta da cache do cliente no computador cliente  
+### <a name="to-configure-the-client-cache-folder-on-the-client-computer"></a>Aby skonfigurować folder pamięci podręcznej klienta na komputerze klienckim  
 
-1.  No computador cliente, navegue para **do Configuration Manager** no painel de controlo e faça duplo clique para abrir as propriedades.  
+1.  Na komputerze klienckim, przejdź do **programu Configuration Manager** w Panelu sterowania i kliknij dwukrotnie, aby wyświetlić właściwości.  
 
-2.  No **Cache** separador definir as propriedades de espaço e a localização. A localização predefinida é *%windir%*\ccmcache.  
+2.  Na **pamięci podręcznej** kartę Ustaw właściwości miejsca i lokalizacji. Lokalizacja domyślna to *%windir%*\ccmcache.  
 
-5.  Para eliminar os ficheiros na pasta de cache, escolha **eliminar ficheiros**.  
+5.  Aby usunąć pliki w folderze pamięci podręcznej, wybierz pozycję **Usuń pliki**.  
 
     > [!NOTE]
     > 
-    > A pasta de cache é uma pasta de Windows regular, para que possa automatizar a eliminação do conteúdo da pasta através de um script, um utilitário ou com o cmdlet do PowerShell `Remove-Item`. 
+    > Folder pamięci podręcznej jest regularne folderze systemu Windows, co umożliwia automatyzację usunięcie zawartości folderu za pomocą skryptu, narzędzia, lub za pomocą polecenia cmdlet programu PowerShell `Remove-Item`. 
 
 
-### <a name="to-configure-client-cache-size-in-client-settings"></a>Para configurar o tamanho da cache do cliente nas Definições do Cliente
+### <a name="to-configure-client-cache-size-in-client-settings"></a>Aby skonfigurować rozmiar pamięci podręcznej klienta w ustawieniach klienta
 
-A partir da versão 1606, pode ajustar o tamanho da pasta de cache do cliente sem ter de reinstalar o cliente. Para tal, configure o tamanho da cache do cliente na consola do Configuration Manager com as Definições do Cliente.  
+Począwszy od wersji 1606, można dostosować rozmiar folderu pamięci podręcznej klienta bez konieczności ponownej instalacji klienta. W tym celu należy skonfigurować rozmiar pamięci podręcznej klienta w konsoli programu Configuration Manager w obszarze Ustawienia klienta.  
 
-1. Na consola do Configuration Manager, aceda a **Administração** > **Definições do Cliente**.
+1. W konsoli programu Configuration Manager przejdź do obszaru **Administracja** > **Ustawienia klienta**.
 
-2. Faça duplo clique em **Predefinições de Cliente**.
-  Também pode criar definições personalizadas de cliente para aplicar o tamanho da cache mais seletivamente. Para obter mais informações sobre predefinições e definições de cliente personalizadas, veja [Como configurar as definições do cliente no System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md).
+2. Kliknij dwukrotnie przycisk **Ustawienia domyślne klienta**.
+  Można również utworzyć niestandardowe ustawienia klienta, aby zastosować rozmiar pamięci podręcznej bardziej selektywnie. Aby uzyskać więcej informacji na temat domyślnych i niestandardowych ustawień klienta, zobacz [Jak skonfigurować ustawienia klienta w programie System Center Configuration Manager](../../../core/clients/deploy/configure-client-settings.md).
 
- 3. Escolha **as definições de Cache do cliente** e escolha **Sim** para **configurar o tamanho da cache do cliente**, em seguida, utilizar um o **MB** ou **percentagem das definições de disco**. A cache é ajustada para o tamanho que for menor.
+ 3. Wybierz **ustawienia pamięci podręcznej klienta** i wybierz polecenie **tak** dla **skonfiguruj rozmiar pamięci podręcznej klienta**, następnie użyć **MB** lub **odsetek ustawień dysku**. Rozmiar pamięci podręcznej jest dostosowywany do mniejszego z tych rozmiarów.
 
-     O cliente do Configuration Manager irá configurar o tamanho da cache com estas definições, quando a política de cliente seguinte é transferida.
+     Klient programu Configuration Manager skonfiguruje rozmiar pamięci podręcznej za pomocą tych ustawień podczas następnego pobierania zasad klienta.
 
-##  <a name="BKMK_UninstalClient"></a> Desinstalar o Cliente do Configuration Manager  
- Pode desinstalar o software de cliente do Gestor de configuração do Windows a partir de um computador utilizando **CCMSetup.exe** com o **/desinstalar** propriedade. Execute o ficheiro CCMSetup.exe num computador individual a partir da linha de comandos ou implemente um pacote e um programa para desinstalar o cliente para uma coleção de computadores.  
+##  <a name="BKMK_UninstalClient"></a> Dezinstalacja klienta programu Configuration Manager  
+ Można odinstalować oprogramowanie klienckie programu Configuration Manager systemu Windows z komputera przy użyciu **CCMSetup.exe** z **/Uninstall** właściwości. Uruchom program CCMSetup.exe z komputera z wiersza polecenia lub wdróż pakiet i program dezinstalacji klienta z kolekcji komputerów.  
 
 > [!WARNING]  
->  Não é possível desinstalar o cliente do Configuration Manager a partir de um dispositivo móvel. Se for necessário remover o cliente do Configuration Manager a partir de um dispositivo móvel, tem de apagar o dispositivo, o que elimina todos os dados no dispositivo móvel.  
+>  Nie można odinstalować klienta programu Configuration Manager z urządzenia przenośnego. Jeśli musisz usunąć klienta programu Configuration Manager z urządzeń przenośnych, należy wyczyścić urządzenia, co spowoduje usunięcie wszystkich danych na urządzeniu przenośnym.  
 
-#### <a name="to-uninstall-the-configuration-manager-client-from-the-command-prompt"></a>Para desinstalar o cliente do Configuration Manager a partir da linha de comandos  
+#### <a name="to-uninstall-the-configuration-manager-client-from-the-command-prompt"></a>Aby odinstalować klienta programu Configuration Manager z wiersza polecenia  
 
-1.  Abra uma linha de comandos do Windows e altere a pasta para a localização em que se encontra o ficheiro CCMSetup.exe.  
+1.  Otwórz wiersz polecenia systemu Windows i wejdź do folderu, w którym znajduje się plik CCMSetup.exe.  
 
-2.  Escreva **Ccmsetup.exe /uninstall**e prima **Enter.**  
+2.  Wpisz polecenie **Ccmsetup.exe /uninstall**i naciśnij klawisz **Enter**.  
 
 > [!NOTE]  
->  O processo de desinstalação não apresenta qualquer resultado no ecrã. Para verificar se a desinstalação do cliente foi bem sucedida, examine o ficheiro de registo **CCMSetup.log** na pasta *%windir%\ ccmsetup* no computador cliente.  
+>  Proces dezinstalacji wyświetla nie zwróciło żadnych wyników na ekranie. Aby sprawdzić, czy Dezinstalacja klienta zakończyła się pomyślnie, zapoznaj się z plikiem dziennika **CCMSetup.log** w folderze *%windir%\ ccmsetup* na komputerze klienckim.  
 
-##  <a name="BKMK_ConflictingRecords"></a> Gerir Registos em Conflito para Clientes do Configuration Manager  
- O Configuration Manager utiliza o ID de hardware para tentar identificar clientes que possam ser duplicados e alertá-lo para os registos em conflito. Por exemplo, se reinstalar um computador, o ID de hardware será o mesmo, mas o GUID utilizado pelo Configuration Manager poderá ter sido alterado.  
+##  <a name="BKMK_ConflictingRecords"></a> Zarządzanie rekordami powodującymi konflikt w klientach programu Configuration Manager  
+ Configuration Manager używa Identyfikatora sprzętu próbuje identyfikować klientów, którzy mogą stanowić duplikaty, alertów rekordy powodujące konflikt. Na przykład jeśli ponownej instalacji komputera jego identyfikator sprzętu będzie taki sam, ale identyfikator GUID używany przez program Configuration Manager może ulec zmianie.  
 
- Quando o Configuration Manager pode resolver um conflito através da autenticação do Windows da conta de computador ou um certificado PKI de uma origem fidedigna, o conflito é resolvido automaticamente. No entanto, quando o Configuration Manager não é possível resolver o conflito, utiliza uma definição que ou intercala automaticamente os registos quando Deteta IDs de hardware duplicados (a predefinição) ou lhe permite decidir quando intercalar, bloquear ou criar registos de cliente novo da hierarquia. Se optar por gerir manualmente os registos duplicados, tem de resolver manualmente os registos em conflito na consola do Configuration Manager.  
-
-
-#### <a name="to-change-the-hierarchy-setting-for-managing-conflicting-records"></a>Para alterar a definição da hierarquia para gerir registos em conflito  
-
-1.  Na consola do Configuration Manager, escolha **administração** > **configuração do Site** > **Sites** > **definições de hierarquia**
-2.  No **aprovação do cliente e registos em conflito** separador, escolha o **resolver automaticamente registos em conflito**, ou **resolver manualmente registos em conflito**.  
-
-#### <a name="to-manually-resolve-conflicting-records"></a>Para resolver manualmente registos em conflito  
-
-1.  Na consola do Configuration Manager, escolha **monitorização** > **estado do sistema** > **registos em conflito**.  
-
-3.  Selecione um ou mais registos em conflito e, em seguida, escolha **registo em conflito**.  
-
-4.  Selecione um dos seguintes procedimentos:  
-
-    -   **Intercalar** combinar o registo detetado recentemente com o registo de cliente existente.  
-
-    -   **Novo** para criar um novo registo para o registo do cliente em conflito.  
-
-    -   **Bloquear** para criar um novo registo para o registo do cliente em conflito, mas marcá-lo como bloqueado.  
-
-## <a name="manage-duplicate-hardware-identifiers"></a>Gerir os identificadores de hardware duplicados
-A partir do Configuration Manager versão 1610, pode fornecer uma lista de IDs do Configuration Manager irá ignorar para fins de registo de cliente e de arranque PXE de hardware. Existem dois problemas comuns que ajuda a endereço.
-
-1. Muitos dispositivos novos, como o 3 Surface Pro, não incluam uma porta Ethernet carregar. Um adaptador USB para Ethernet é geralmente utilizado para estabelecer uma ligação com fios para fins de implementação do sistema operativo. No entanto, estes são frequentemente adaptadores partilhados devido ao custo e a facilidade de utilização geral. Como o endereço MAC deste adaptador é utilizado para identificar o dispositivo, a reutilizar o adaptador torna-se problemático sem ações adicionais administrador entre cada implementação. Da versão 1610, pode excluir o endereço MAC deste adaptador para que possa ser reutilizado neste cenário.
-2. Enquanto o ID de SMBIOS deveria para ser um identificador de hardware exclusivos, alguns dispositivos de hardware specialty são criados com IDs duplicados. Enquanto não como comuns como o cenário de adaptador USB para Ethernet acima, a lista de IDs de hardware pode ser utilizada para resolver este problema também.
-
-#### <a name="to-add-hardware-identifiers-for-configuration-manager-to-ignore"></a>Para adicionar os identificadores de hardware para o Configuration Manager para ignorar  
-1. Na consola do Configuration Manager, vá para **administração** > **descrição geral** > **configuração do Site** > **Sites**.
-2. No **home page** separador o **Sites** grupo, escolha **definições de hierarquia**.
-3. No **aprovação do cliente e registos em conflito** separador, escolha **adicionar** no **duplicado identificadores de hardware** secção para adicionar os identificadores de hardware novo.
-
-##  <a name="BKMK_PolicyRetrieval"></a> Iniciar a Obtenção de Política para um Cliente do Configuration Manager  
- Um cliente Windows Configuration Manager transfere a política de cliente com base numa agenda configurada como uma definição de cliente. No entanto, poderá haver ocasiões em que pretende iniciar a obtenção da política ad-hoc do cliente, por exemplo, para resolução de problemas ou testes.  
-
-Pode iniciar a obtenção de política utilizar:
+ W przypadku programu Configuration Manager może rozwiązać konflikt, stosując uwierzytelnianie systemu Windows dla konta komputera lub certyfikat PKI z zaufanego źródła, konflikt zostaje automatycznie rozwiązany. Jednak gdy programu Configuration Manager nie może rozwiązać konfliktu, używa ustawienia, które albo automatycznie scala rekordy, kiedy wykryje zduplikowane identyfikatory sprzętu (ustawienie domyślne), albo pozwala zadecydować o czasie scalania, blokowania lub tworzenia nowych rekordów klientów hierarchii. Jeśli zdecydujesz o ręcznym zarządzaniu zduplikowanymi rekordami należy ręcznie rozwiązać rekordy powodujące konflikt w konsoli programu Configuration Manager.  
 
 
-- [Notificação do cliente](#initiate-client-policy-retrieval-using-client-notification) 
-- [O **ações** separador no cliente](#manually-initiate-client-policy-retrieval-on-the-actions-tab-of-the-configuration-manager-client)
-- [Um script](#manually-initiate-client-policy-retrieval-by-script)
+#### <a name="to-change-the-hierarchy-setting-for-managing-conflicting-records"></a>Aby zmienić hierarchię ustawień przy zarządzaniu rekordami powodującymi konflikt  
+
+1.  W konsoli programu Configuration Manager wybierz **administracji** > **konfiguracja lokacji** > **witryny** > **ustawienia hierarchii**
+2.  Na **zatwierdzania klienta i rekordy powodujące konflikt** , wybierz pozycję albo **automatycznie rozwiązuj rekordy powodujące konflikt**, lub **ręcznie rozwiązuj rekordy powodujące konflikt**.  
+
+#### <a name="to-manually-resolve-conflicting-records"></a>Aby ręcznie rozwiązać rekordy powodujące konflikt  
+
+1.  W konsoli programu Configuration Manager wybierz **monitorowanie** > **stan systemu** > **rekordy powodujące konflikt**.  
+
+3.  Wybierz co najmniej jeden rekordy powodujące konflikt, a następnie wybierz pozycję **rekord powodujący konflikt**.  
+
+4.  Wybierz jedną z poniższych opcji:  
+
+    -   **Scal** połączyć nowo wykryte rekordy z istniejącym rekordem klienta.  
+
+    -   **Nowy** , aby utworzyć nowy rekord dla rekordu powodującego konflikt.  
+
+    -   **Zablokuj** , aby utworzyć nowy rekord dla rekordu powodującego konflikt, ale oznaczyć go jako zablokowany.  
+
+## <a name="manage-duplicate-hardware-identifiers"></a>Zarządzanie sprzętu zduplikowane identyfikatory
+Począwszy od 1610 wersji programu Configuration Manager, musisz podać listę identyfikatorów, które zignoruje programu Configuration Manager na potrzeby rejestracji rozruchu i klient PXE sprzętu. Istnieją dwie typowe problemy, które ułatwia to adres.
+
+1. Wiele nowych urządzeń, takich jak 3 Surface Pro, nie dołączaj wewnętrznego portu sieci Ethernet. Karta USB do Ethernet jest zazwyczaj używany do ustanawiania połączenia przewodowego dla celów wdrożenia systemu operacyjnego. Jednak te są często udostępnionych kart z powodu kosztów i użyteczność ogólne. Ponieważ adresu MAC ta karta służy do identyfikowania urządzenia, ponowne użycie karty staje się problemem bez administratora dodatkowe akcje między każdym wdrożeniu. Z wersji 1610 dzięki czemu mogą być ponownie używane w tym scenariuszu można wykluczyć adres MAC tej karty.
+2. Gdy identyfikator SMBIOS powinien być unikatowy identyfikator sprzętu, niektóre urządzenia specjalistyczne są tworzone za zduplikowane identyfikatory. Gdy nie jako wspólne jak w scenariuszu karty USB do Ethernet powyżej, listę identyfikatorów sprzętu może służyć do rozwiązania tego problemu, a także.
+
+#### <a name="to-add-hardware-identifiers-for-configuration-manager-to-ignore"></a>Aby dodać identyfikatory sprzętu dla programu Configuration Manager do ignorowania  
+1. W konsoli programu Configuration Manager, przejdź do **administracji** > **omówienie** > **konfiguracja lokacji** > **witryny**.
+2. Na **Home** karcie **witryny** grupy, wybierz **ustawienia hierarchii**.
+3. Na **zatwierdzania klienta i rekordy powodujące konflikt** , wybierz pozycję **Dodaj** w **zduplikowane identyfikatory sprzętu** sekcji, aby dodać nowe identyfikatory sprzętu.
+
+##  <a name="BKMK_PolicyRetrieval"></a> Inicjowanie pobierania zasad dla klienta programu Configuration Manager  
+ Klient programu Configuration Manager systemu Windows pobiera zasady klienta zgodnie z harmonogramem skonfigurowanym jako ustawienie klienta. Jednak może być niektórych sytuacjach potrzebne, aby rozpocząć pobieranie zasad ad hoc z klienta, na przykład do rozwiązywania problemów lub testowania.  
+
+Możesz zainicjować pobieranie zasad przy użyciu opcji:
+
+
+- [Powiadomienie klienta](#initiate-client-policy-retrieval-using-client-notification) 
+- [**Akcje** kartę na kliencie](#manually-initiate-client-policy-retrieval-on-the-actions-tab-of-the-configuration-manager-client)
+- [Skrypt](#manually-initiate-client-policy-retrieval-by-script)
 
 > [!NOTE]  
 >   
->  Para obter informações sobre a obtenção de políticas para clientes com Linux e UNIX, veja [Política de computador para servidores Linux e UNIX](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_PolicyforLnU).  
+>  Informacje o ustawieniach pobierania zasad w klientach z systemem Linux i UNIX znajdują się w sekcji [Zasady komputera dla serwerów z systemami Linux i UNIX](../../../core/clients/manage/manage-clients-for-linux-and-unix-servers.md#BKMK_PolicyforLnU).  
 
-#### <a name="initiate-client-policy-retrieval-using-client-notification"></a>Iniciar a obtenção de política de cliente utilizando a notificação do cliente  
+#### <a name="initiate-client-policy-retrieval-using-client-notification"></a>Rozpocząć pobieranie zasad klienta za pomocą powiadomień klienta  
 
-1.  Na consola do Configuration Manager, escolha **ativos e compatibilidade** > **coleções de dispositivos**.  
+1.  W konsoli programu Configuration Manager wybierz **zasoby i zgodność** > **kolekcje urządzeń**.  
 
-3.  Selecione a coleção de dispositivos que contém os computadores que pretende transferir a política. No **home page** separador o **coleções** grupo, escolha **notificação do cliente** > **transferir política do computador**.  
+3.  Zaznacz kolekcję urządzeń zawierającą komputery, na których chcesz pobrać zasady. Na **Home** karcie **kolekcje** grupy, wybierz **powiadomienie klienta** > **Pobierz zasady komputera**.  
 
     > [!NOTE]  
-    >  Também pode utilizar a notificação do cliente para iniciar a obtenção da política para um ou mais dispositivos selecionados apresentados num nó de coleção temporário do nó **Dispositivos** .  
+    >  Istnieje także możliwość użycia powiadomień klienta do rozpoczęcia pobierania dla przynajmniej jednego wybranego urządzenia wyświetlanego w węźle kolekcji tymczasowej, w węźle **Urządzenia** .  
 
-#### <a name="manually-initiate-client-policy-retrieval-on-the-actions-tab-of-the-configuration-manager-client"></a>Iniciar manualmente a obtenção de política de cliente no separador ações do cliente do Configuration Manager  
+#### <a name="manually-initiate-client-policy-retrieval-on-the-actions-tab-of-the-configuration-manager-client"></a>Ręcznie rozpocząć pobieranie zasad klienta na karcie Akcje klienta programu Configuration Manager  
 
-1.  Selecione **Configuration Manager** no Painel de Controlo do computador.  
+1.  Wybierz polecenie **Configuration Manager** w Panelu sterowania komputera.  
 
-2.  No **ações** separador escolha **ciclo de avaliação de obtenção de política de máquina e** para iniciar a política de computador e, em seguida, escolha **executar agora**.  
+2.  Na **akcje** wybierz kartę **cykl maszyny zasady pobierania i szacowania** zainicjować zasady komputera, a następnie wybierz pozycję **Uruchom teraz**.  
 
-4.  Escolha **OK** para confirmar a linha de comandos.  
+4.  Wybierz **OK** aby potwierdzić monit.  
 
-5.  Repita os passos 3 e 4 para outras ações que sejam necessárias, tais como **Ciclo de Obtenção e Avaliação da Política de Utilizador** para definições de cliente do utilizador.  
+5.  Powtórz kroki 3 i 4 dla wszystkich potrzebnych działań, takich jak **Cykl pobierania i szacowania zasad użytkownika** w ustawieniach klienta u użytkownika.  
 
-#### <a name="manually-initiate-client-policy-retrieval-by-script"></a>Iniciar manualmente a obtenção de política de cliente por script  
+#### <a name="manually-initiate-client-policy-retrieval-by-script"></a>Ręcznie rozpocząć pobieranie zasad klienta za pomocą skryptu  
 
-1.  Abra um editor de texto, como o Bloco de Notas.  
+1.  Otwórz edytor tekstu, na przykład Notatnik.  
 
-2.  Copie e insira o seguinte no ficheiro:  
+2.  Skopiuj i wstaw do pliku następujący tekst:  
 
     ```  
     on error resume next  
@@ -398,12 +398,12 @@ Pode iniciar a obtenção de política utilizar:
     set oCPAppletMgr=nothing  
     ```  
 
-3.  Guarde o ficheiro com uma extensão .vbs.  
+3.  Zapisz plik z rozszerzeniem vbs.  
 
-4.  No computador cliente, execute o ficheiro utilizando um dos seguintes métodos:  
+4.  Uruchom na kliencie zapisany plik na jeden z następujących sposobów:  
 
-    -   Navegue para o ficheiro através do Explorador do Windows e faça duplo clique no ficheiro de script.  
+    -   Przejdź do pliku ze skryptem w Eksploratorze Windows i kliknij go dwukrotnie.  
 
-    -   Abra uma linha de comandos e escreva: **cscript &lt;path\filename.vbs >**.  
+    -   Otwórz wiersz polecenia i wpisz: **cscript &lt;ścieżka\nazwa_pliku.vbs >**.  
 
-5.  Escolha **OK** no **Windows Script Host** caixa de diálogo.  
+5.  Wybierz **OK** w **Host skryptów systemu Windows** okno dialogowe.  

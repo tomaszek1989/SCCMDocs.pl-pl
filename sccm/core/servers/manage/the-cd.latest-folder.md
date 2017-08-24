@@ -1,6 +1,6 @@
 ---
-title: CD. Pasta mais recente | Microsoft Docs
-description: "Saiba mais sobre o novo processo de atualização que disponibiliza atualizações do produto a partir do consola do Configuration Manager."
+title: Dysk CD. Najnowszy folder | Dokumentacja firmy Microsoft
+description: "Więcej informacji na temat nowy proces aktualizacji, który dostarcza aktualizacje produktu z poziomu konsoli programu Configuration Manager."
 ms.custom: na
 ms.date: 05/02/2017
 ms.prod: configuration-manager
@@ -17,47 +17,47 @@ manager: angrobe
 ms.openlocfilehash: 5c39e09b44500fa2f356f83579bb2fb2c1d0e937
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pt-PT
+ms.contentlocale: pl-PL
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="the-cdlatest-folder-for-system-center-configuration-manager"></a>A pasta CD.Latest do System Center Configuration Manager
+# <a name="the-cdlatest-folder-for-system-center-configuration-manager"></a>Folder CD.Latest programu System Center Configuration Manager
 
-*Aplica-se a: O System Center Configuration Manager (ramo atual)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-System Center Configuration Manager apresenta um novo processo de atualização que disponibiliza atualizações do produto a partir do consola do Configuration Manager. Para suportar este novo método de atualização do Configuration Manager, é criada uma nova pasta com nome **CD. Mais recente** que contém uma cópia dos ficheiros de instalação do Configuration Manager para a versão atualizada do seu site.  
+System Center Configuration Manager wprowadzono nowy proces aktualizacji, który dostarcza aktualizacje produktu z poziomu konsoli programu Configuration Manager. Do obsługi tej nowej metody aktualizacji programu Configuration Manager, tworzony jest nowy folder o nazwie **dysku CD. Najnowsze** zawierający kopię plików instalacyjnych programu Configuration Manager do zaktualizowanej wersji lokacji.  
 
-A partir da atualização 1606, a pasta CD.Latest contém uma pasta denominada **Redist** com os ficheiros redistribuíveis que o programa de configuração transfere e utiliza. Estes ficheiros correspondem à versão dos ficheiros do Configuration Manager localizados na pasta CD.Latest. Ao executar o programa de configuração a partir da pasta CD.Latest, tem de utilizar ficheiros que correspondem a essa versão do programa de configuração. Para tal, pode indicar ao programa de configuração para transferir ficheiros novos e atuais da Microsoft, ou indicar ao programa de configuração para utilizar os ficheiros da pasta Redist incluída na pasta CD.Latest.
+Począwszy od aktualizacji 1606, folder CD.Latest zawiera folder o nazwie **Redist** z plikami redystrybucyjnymi umożliwiającymi konfigurowanie plików do pobrania i używania. Te pliki są dopasowane do wersji plików programu Configuration Manager znajdujących się w folderze CD.Latest. Po uruchomieniu Instalatora z folderu CD.Latest musisz użyć plików dopasowanych do wersji Instalatora. W tym celu możesz przekierować Instalatora w celu pobrania nowych i bieżących plików od firmy Microsoft lub użycia plików z folderu Redist znajdującego się w folderze CD.Latest.
 
-No entanto, o suporte de dados de linha de base, incluindo a linha de base versão 1606 lançadas em Outubro de 2016, não inclui uma pasta de Redist. Não será possível criar a pasta de Redist até que instale uma atualização na consola. Entretanto, utilize a pasta de Redist que utilizou quando instalar sites a partir do suporte de dados de linha de base.  
+Jednak nośnika linii bazowej, takie jak wersji bazowej 1606 wydane w ramach października 2016, nie ma folderu redystrybucyjnego. Nie będzie można utworzyć folderu Redist, aż do zainstalowania aktualizacji w konsoli. W międzyczasie użyj folderu Redist, które zostały użyte podczas instalowania lokacji z nośnika linii bazowej.  
 
 > [!TIP]
-> Se ainda não instalou a versão 1606, certifique-se de que os ficheiros redist utilizados são atuais. Se não tiver transferido ficheiros redist recentemente, planeie permitir que o programa de configuração o faça a partir da Microsoft.   
+> Jeśli nie masz jeszcze zainstalowanej wersji 1606, upewnij się, że używane pliki redist są aktualne. Jeśli pliki redist nie były ostatnio pobierane, zaplanuj ich pobranie od firmy Microsoft przez Instalatora.   
 
- Seguem-se alguns cenários que criam ou atualizam a pasta CD.Latest num site de administração central ou servidor de site primário:  
+ Następujące scenariusze są związane z tworzeniem lub aktualizowaniem folderu CD.Latest na serwerze centralnej lokacji administracyjnej lub lokacji głównej:  
 
--   Instalar uma atualização ou correção a partir da consola do Configuration Manager: A pasta é criada ou atualizada na pasta de instalação do Configuration Manager.  
+-   Instalowania aktualizacji lub poprawki z poziomu konsoli programu Configuration Manager: Folder jest tworzony lub aktualizowany w folderze instalacyjnym programu Configuration Manager.  
 
--   Execute a tarefa de cópia de segurança do Configuration Manager incorporados: A pasta é criada ou atualizada na localização de pasta designada de cópia de segurança.  
+-   Możesz uruchomić wbudowanego zadania tworzenia kopii zapasowej programu Configuration Manager: Folder jest tworzony lub aktualizowany w lokalizacji wskazanego folderu kopii zapasowej.  
 
--  A partir da versão 1606, CD. Pasta mais recente é criada quando instala um novo site utilizar suportes de dados de linha de base (como a versão 1606 ou 1702).
+-  Począwszy od wersji 1606, dysku CD. Najnowszy folder jest tworzony podczas instalowania nowej lokacji za pomocą nośnika linii bazowej (np. wersja 1606 lub 1702).
 
-Os ficheiros de origem da pasta CD.Latest são suportadas para o seguinte:  
+Pliki źródłowe z folderu CD.Latest są obsługiwane w następujących przypadkach:  
 
-1.  **Cópia de segurança e recuperação:** Para recuperar um site, tem de utilizar os ficheiros de origem a partir de um CD. Pasta mais recente que corresponde ao seu site. Quando executa uma cópia de segurança do site utilizando a tarefa de cópia de segurança incorporada do site, CD. Pasta mais recente é incluída como parte da cópia de segurança.
+1.  **Tworzenie kopii zapasowej i odzyskiwanie:** Aby odzyskać lokację, należy użyć plików źródłowych z dysku CD. Najnowszy folder zgodnej z lokacją. Po uruchomieniu kopii zapasowej lokacji przy użyciu witryny wbudowanego zadania tworzenia kopii zapasowej dysku CD. Najnowszy folder wchodzi w skład kopii zapasowej.
 
-    -   **Quando reinstala um site como parte de uma recuperação de site,** instala o site a partir da pasta CD.Latest incluída na sua cópia de segurança. Esta ação instala o site utilizando as versões de ficheiro que correspondem à sua cópia de segurança do site e à base de dados do site.  Se não tiver acesso CD correto. Versão mais recente da pasta, pode obter um CD. Pasta mais recente com as versões de ficheiro corretos ao instalar um site num ambiente de laboratório e, em seguida, atualizar esse site para corresponderem à versão que pretende recuperar.
+    -   **Podczas ponownego instalowania lokacji w ramach odzyskiwania lokacji** jest ona instalowana z folderu CD.Latest zawartego w kopii zapasowej. To powoduje zainstalowanie lokacji przy użyciu wersji plików zgodnych z kopią zapasową lokacji i bazą danych lokacji.  Jeśli nie masz dostępu poprawny dysk CD. Najnowszą wersję folderu, możesz uzyskać dysku CD. Najnowszy folder o poprawne wersje plików instalacji lokacji w środowisku laboratoryjnym, a następnie zaktualizować zgodna z wersją z tej lokacji, do której chcesz odzyskać.
 
         > [!IMPORTANT]  
-        >  Se não tiver a pasta CD.Latest correta e o respetivo conteúdo disponível, não é possível recuperar um site e tem de ser reinstalado.  
+        >  Jeśli nie masz poprawnego folderu CD.Latest z dostępną zawartością, nie możesz odzyskać lokacji, a lokacja wymaga ponownego zainstalowania.  
 
-    -   Se não tiver uma pasta CD.Latest, mas tiver um site primário subordinado ou um site de administração central em funcionamento, pode utilizar esse site como referência para uma recuperação do site.  
+    -   Jeśli nie masz folderu CD.Latest, ale masz działającą podrzędną lokację główną lub centralną lokację administracyjną, możesz użyć tej lokacji jako lokacji odniesienia w procesie odzyskiwania lokacji.  
 
-2.  **Para instalar um site primário subordinado:** Quando pretende instalar um novo site primário subordinado abaixo de um site de administração central que tem instalado uma ou mais atualizações na consola, tem de utilizar o programa de configuração e os ficheiros de origem a partir do CD. Pasta mais recente do site de administração central. Quando a Configuração é executada a partir de uma cópia da pasta CD.Latest a partir do site de administração central, utiliza ficheiros de origem de instalação que correspondem à versão do site de administração central. Para mais informações consulte [Utilizar o Assistente de Configuração para instalar sites](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md).  
+2.  **Aby zainstalować podrzędną lokację główną:** Jeśli chcesz zainstalować nową podrzędną lokację główną lokacji administracji centralnej, który ma zainstalowany co najmniej jednej aktualizacji w konsoli, należy użyć Instalatora i plików źródłowych z dysku CD. Najnowszy folder z centralnej lokacji administracyjnej. Gdy Instalator zostaje uruchomiony z kopii folderu CD.Latest z centralnej lokacji administracyjnej, używa plików źródłowych instalacji, które są zgodne z wersją centralnej lokacji administracyjnej. Aby uzyskać więcej informacji, zobacz [Use the Setup Wizard to install sites](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md) (Instalowanie lokacji za pomocą Kreatora instalacji).  
 
-3.  **Para expandir um site primário autónomo:** Quando está a expandir um site primário autónomo, instalando um novo site de administração central, tem de utilizar o programa de configuração e os ficheiros de origem a partir do CD. Pasta mais recente do site primário para instalar o novo site de administração central. Quando executa a partir de uma cópia da pasta CD.Latest a partir do site primário, utiliza ficheiros de origem de instalação que correspondem à versão do site primário. Para obter mais informações, consulte [Expandir um site primário autónomo](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_expand)) no tópico [Utilizar o Assistente de Configuração para instalar sites](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md)
+3.  **Aby rozszerzyć autonomiczną lokację główną:** Jeśli rozszerzasz autonomiczną lokację główną, instalując nową centralną lokację administracyjną, musisz użyć Instalatora i plików źródłowych z dysku CD. Najnowszy folder z lokacji głównej w celu zainstalowania nowej centralnej lokacji administracyjnej. W przypadku uruchomienia z kopii folderu CD.Latest z lokacji głównej zostaną użyte pliki źródłowe instalacji, które są zgodne z wersją lokacji głównej. Aby uzyskać więcej informacji, zobacz sekcję [Expand a stand-alone primary site](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_expand) (Rozszerzanie autonomicznej lokacji głównej) w temacie [Use the Setup Wizard to install sites](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md) (Instalowanie lokacji za pomocą Kreatora instalacji)
 
 > [!IMPORTANT]  
->  Os ficheiros de origem CD.Latest atualizados não são suportados para:  
+>  Zaktualizowane pliki źródłowe folderu CD.Latest nie są obsługiwane w następujących przypadkach:  
 >   
->  -   Instalar um novo site para uma nova hierarquia  
->  -   Atualizar um site do Microsoft System Center 2012 Configuration Manager para o System Center Configuration Manager
+>  -   Instalowanie nowej lokacji do nowej hierarchii  
+>  -   Uaktualnianie lokacji programu Microsoft System Center 2012 Configuration Manager do programu System Center Configuration Manager

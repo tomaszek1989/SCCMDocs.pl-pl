@@ -6,23 +6,20 @@ ms.date: 06/15/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- configmgr-osd
+ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: da5f8b61-2386-4530-ad54-1a5c51911f07
-caps.latest.revision: 19
-caps.handback.revision: 0
+caps.latest.revision: "19"
+caps.handback.revision: "0"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: f4c46bfab9b40b29654f4e883817a5508ab25b74
 ms.openlocfilehash: b88ab3799027c78a8c605e934b247097b31e1d21
-ms.contentlocale: pl-pl
-ms.lasthandoff: 06/28/2017
-
-
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="use-pxe-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Użyj środowiska PXE, aby wdrożyć system Windows przez sieć przy użyciu programu System Center Configuration Manager
 
@@ -107,4 +104,3 @@ Gdy klient jest uruchamiany w środowisku PXE, Configuration Manager udostępnia
 3. Na liście w punkcie 2 sekwencji zadań programu Configuration Manager szuka obrazu rozruchowego odpowiadającego architekturze klienta, która próbuje go uruchomić. Jeśli obraz rozruchowy zostanie znaleziony o takiej samej architekturze, że obraz rozruchowy jest używany.
 
 4. Jeśli nie ma obrazu rozruchowego z taką samą architekturę, programu Configuration Manager szuka obraz rozruchowy, który jest zgodna z architekturą klienta. Wygląda na liście w punkcie 2 sekwencji zadań. Na przykład klient 64-bitowy jest zgodny z obrazów rozruchowych 32-bitowe i 64-bitowych. 32-bitowego klienta jest zgodny z tylko obrazy rozruchowe 32-bitowych. Klient z interfejsem UEFI jest zgodny z tylko obrazy rozruchowe 64-bitowych.
-

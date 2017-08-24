@@ -1,6 +1,6 @@
 ---
-title: "Configurar a deteção | Microsoft Docs"
-description: "Configure métodos de deteção para ser executada num site do Configuration Manager para localizar os recursos que pode gerir a partir da sua infraestrutura de rede e do Active Directory."
+title: Konfigurowanie odnajdywania | Dokumentacja firmy Microsoft
+description: "Skonfiguruj metody odnajdywania w lokacji programu Configuration Manager w celu odnalezienia zasobów, którymi można zarządzać z infrastruktury sieci i usługi Active Directory."
 ms.custom: na
 ms.date: 7/31/2017
 ms.prod: configuration-manager
@@ -17,450 +17,450 @@ manager: angrobe
 ms.openlocfilehash: 34a539ceaea6b070f81a28d2c0a9ce388e26cfeb
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pt-PT
+ms.contentlocale: pl-PL
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="configure-discovery-methods-for-system-center-configuration-manager"></a>Configurar métodos de deteção para o System Center Configuration Manager
+# <a name="configure-discovery-methods-for-system-center-configuration-manager"></a>Skonfiguruj metody odnajdywania dla programu System Center Configuration Manager
 
-*Aplica-se a: O System Center Configuration Manager (ramo atual)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
-Configurar métodos de deteção a executar um site do System Center Configuration Manager para localizar os recursos que pode gerir a partir da sua infraestrutura de rede e do Active Directory. Isto requer que ative e, em seguida, configurar cada método que pretende utilizar para pesquisar o seu ambiente. (Também pode desativar um método utilizando o mesmo procedimento utilizado para o ativar.)  São as únicas exceções a esta deteção de Heartbeat e deteção de servidores:  
+Możesz skonfigurować metod odnajdywania do uruchamiania w witrynie System Center Configuration Manager, aby znaleźć zasoby, które można zarządzać za pomocą infrastruktury sieci i usługi Active Directory. Należy włączyć, a następnie skonfiguruj każdej metody, która ma być używany do wyszukiwania środowiska. (Można również wyłączyć metodę przy użyciu tej samej procedury, która umożliwia ją włączyć.)  Jedynym wyjątkiem od tej są odnajdywania pulsu i odnajdowanie serwera:  
 
--   Por predefinição, a deteção de Heartbeat é já ativada quando instala um site primário do Configuration Manager e configurada para ser executado numa agenda básica. É aconselhável manter a deteção de Heartbeat ativada porque garante que os registos de dados de deteção (DDR) para os dispositivos estão atualizados. Para obter mais informações sobre a deteção de Heartbeat, consulte [sobre a deteção de Heartbeat](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutHeartbeat).  
+-   Domyślnie odnajdywanie pulsu jest już włączona po zainstalowaniu lokacji głównej programu Configuration Manager i skonfigurowane do uruchamiania na podstawowe harmonogramu. Należy dobrze jest włączone, ponieważ zapewnia, że rekordy danych odnajdywania (DDR) dla urządzeń są aktualne odnajdywanie pulsu warto pozostawić. Aby uzyskać więcej informacji dotyczących odnajdywania pulsu, zobacz [o odnajdywaniu pulsu](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutHeartbeat).  
 
--   Deteção de servidores é um método de deteção automática, que localiza computadores que utilizam como sistemas de sites. Não é possível configurar ou desativá-lo.  
+-   Odnajdowanie serwera jest metodę automatycznego wykrywania, która umożliwia znalezienie komputerów, które używają jako systemy lokacji. Nie można skonfigurować lub go wyłączyć.  
 
-**Para ativar um método de deteção configuráveis:**  
+**Aby włączyć metodę odnajdywania można skonfigurować:**  
  > [!NOTE]  
- > As seguintes informações não se aplica a deteção de utilizador do Active Directory do Azure. Em vez disso, consulte [configurar o Azure AD User Discovery](#azureaadisc) mais adiante neste tópico.
+ > Następujące informacje nie dotyczą odnajdywania użytkownika usługi Azure Active Directory. Zamiast tego zobacz [odnajdywania Skonfiguruj użytkownika programu Azure AD](#azureaadisc) dalszej części tego tematu.
 
-1.  Na consola do Configuration Manager, escolha **administração** > **configuração da hierarquia**e, em seguida, escolha **métodos de deteção**.  
+1.  W konsoli programu Configuration Manager wybierz **administracji** > **Konfiguracja hierarchii**, a następnie wybierz pozycję **metod odnajdywania**.  
 
-2.  Selecione o método de deteção para o site onde pretende ativar a deteção.  
+2.  Wybierz metodę odnajdywania dla lokacji, w której chcesz włączyć odnajdywanie.  
 
-3.  No **home page** separador o **propriedades** grupo, escolha **propriedades**e, em seguida, no **geral** separador, verifique o **ativar&lt;método de deteção\>**  caixa.  
+3.  Na **Home** karcie **właściwości** grupy, wybierz **właściwości**, a następnie na **ogólne** karcie wyboru **włączyć&lt;metody odnajdywania\>**  pole.  
 
-     Se esta caixa já está selecionada, pode desativar o método de deteção desmarcando a caixa.  
+     Jeśli to pole jest już zaznaczone, można wyłączyć metodę odnajdywania, usuwając zaznaczenie pola wyboru pole.  
 
-4.  Escolha **OK** para guardar a configuração.  
+4.  Wybierz **OK** Aby zapisać konfigurację.  
 
 
-##  <a name="BKMK_ConfigADForestDisc"></a>Configurar a deteção de florestas do Active Directory  
-Para concluir a configuração da deteção de floresta do Active Directory, tem de configurar as definições em duas localizações:  
+##  <a name="BKMK_ConfigADForestDisc"></a>Konfigurowanie odnajdywania lasu usługi Active Directory  
+Aby ukończyć konfigurację odnajdywania lasu usługi Active Directory, należy skonfigurować ustawienia w dwóch miejscach:  
 
--   No **métodos de deteção** nós, pode:
+-   W **metod odnajdywania** węzła, można wykonywać następujące czynności:
 
-    - Ative este método de deteção.
-    - Defina uma agenda de consulta.
-    - Selecione se a deteção automática cria limites para os sites do Active Directory e sub-redes que Deteta.  
+    - Włączenie tej metody odnajdywania.
+    - Ustaw harmonogram sondowania.
+    - Wybierz, czy odnajdywanie ma automatycznie tworzyć granice lokacji usługi Active Directory i podsieci, które wykryje.  
 
--   No **florestas do Active Directory** nós, pode:
+-   W **lasy usługi Active Directory** węzła, można wykonywać następujące czynności:
 
-    - Adicione florestas que pretenda detetar.
-    - Ative a deteção de sites e sub-redes nessa floresta do Active Directory.
-    - Configure as definições que permitem sites do Configuration Manager publicar as suas informações de site na floresta.
-    - Atribua uma conta a utilizar como conta de floresta do Active Directory para cada floresta.  
+    - Dodać lasy, które chcesz odnajdywać.
+    - Włącz odnajdywanie lokacji usługi Active Directory i podsieci, w tym lesie.
+    - Skonfiguruj ustawienia, które umożliwiają Lokacje programu Configuration Manager do publikowania swoich informacji o lokacji w lesie.
+    - Przypisywanie konta do użycia jako konto lasu usługi Active Directory dla każdego lasu.  
 
-Utilize os procedimentos seguintes para ativar a deteção de floresta do Active Directory e configurar florestas individuais para utilização com deteção de floresta do Active Directory.  
+Użyj poniższych procedur, aby włączyć odnajdowanie lasu usługi Active Directory oraz do skonfigurowania poszczególnych lasów na użytek z odnajdywaniem lasu usługi Active Directory.  
 
-#### <a name="to-enable-active-directory-forest-discovery"></a>Para ativar a deteção de floresta do Active Directory  
+#### <a name="to-enable-active-directory-forest-discovery"></a>Aby włączyć odnajdowanie lasu usługi Active Directory  
 
-1.  Na consola do Configuration Manager, escolha **administração** > **configuração da hierarquia**e, em seguida, escolha **métodos de deteção**.  
+1.  W konsoli programu Configuration Manager wybierz **administracji** > **Konfiguracja hierarchii**, a następnie wybierz pozycję **metod odnajdywania**.  
 
-2.  Selecione o método de deteção de floresta do Active Directory para o site onde pretende configurar a deteção.  
+2.  Wybierz metodę odnajdywania lasu usługi Active Directory dla lokacji, w której chcesz skonfigurować odnajdywanie.  
 
-3.  No **home page** separador o **propriedades** grupo, escolha **propriedades**.  
+3.  Na **Home** karcie **właściwości** grupy, wybierz **właściwości**.  
 
-4.  No **geral** separador, selecione a caixa para ativar a deteção. Ou pode configurar a deteção agora e, em seguida, regressar para ativar a deteção mais tarde.  
+4.  Na **ogólne** karcie, pole wyboru, aby włączyć odnajdywanie. Lub skonfigurować odnajdywanie teraz, a następnie włączyć je później.  
 
-5.  Especifique as opções para criar limites de sites para localizações detetadas.  
+5.  Określ opcje dotyczące tworzenia granic lokacji dla odnajdywanych lokalizacji.  
 
-6.  Especifique uma agenda para quando a deteção é executada.  
+6.  Określ harmonogram uruchamiania odnajdywania.  
 
-7.  Quando concluir a configuração da deteção de floresta do Active Directory para este site, escolha **OK** para guardar a configuração.  
+7.  Po zakończeniu konfigurowania odnajdywania lasu usługi Active Directory dla tej lokacji, wybierz **OK** Aby zapisać konfigurację.  
 
-#### <a name="to-configure-a-forest-for-active-directory-forest-discovery"></a>Para configurar uma floresta para deteção de floresta do Active Directory  
+#### <a name="to-configure-a-forest-for-active-directory-forest-discovery"></a>Aby skonfigurować las dla odnajdywania lasu usługi Active Directory  
 
-1.  No **administração** área de trabalho, escolha **florestas do Active Directory**. Se a Deteção de Florestas do Active Directory tiver sido executada anteriormente, as florestas detetadas serão apresentadas no painel de resultados. A floresta local e quaisquer florestas fidedignas são detetadas quando a Deteção de Florestas do Active Directory é executada. Apenas é necessário adicionar manualmente as florestas não fidedignas.  
+1.  W **administracji** obszaru roboczego wybierz **lasy usługi Active Directory**. Jeśli odnajdywanie lasu za pomocą usługi Active Directory było wcześniej uruchamiane, wszystkie odnalezione lasy zostaną wyświetlone w okienku wyników. Uruchomienie odnajdywania lasu za pomocą usługi Active Directory powoduje odnalezienie lasu lokalnego oraz wszystkich lasów zaufanych. Ręcznie należy dodać tylko lasy niezaufane.  
 
-    -   Para configurar uma floresta detetada anteriormente, selecione uma floresta no painel de resultados. Em seguida, no **home page** separador o **propriedades** grupo, escolha **propriedades** para abrir as propriedades da floresta. Continue com o passo 3.  
+    -   W celu skonfigurowania poprzednio odnalezionego lasu wybierz go w okienku wyników. Następnie na **Home** karcie **właściwości** grupy, wybierz **właściwości** aby otworzyć właściwości lasu. Przejdź do kroku 3.  
 
-    -   Para configurar uma nova floresta que não está listada, no **home page** separador o **criar** grupo, escolha **adicionar floresta** para abrir o **adicionar florestas** caixa de diálogo. Continue com o passo 3.  
+    -   Do skonfigurowania nowego lasu, który nie ma na liście, na **Home** karcie **Utwórz** grupy, wybierz **Dodaj las** otworzyć **Dodawanie lasów** okno dialogowe. Przejdź do kroku 3.  
 
-2.  No **geral** separador, concluir as configurações da floresta que pretende detetar e especifique o **conta de floresta do Active Directory**.  
-
-    > [!NOTE]  
-    >  A Deteção de Florestas do Active Directory requer uma conta global para detetar e publicar em florestas não fidedignas. Se não utilizar a conta de computador do servidor do site, pode selecionar apenas uma conta global.  
-
-3.  Se pretende permitir que os sites publiquem dados do site nesta floresta no **publicação** separador, concluir as configurações para publicação nesta floresta.  
+2.  Na **ogólne** pozycję Zakończ konfigurację lasu, który chcesz odnaleźć i określ **konto lasu usługi Active Directory**.  
 
     > [!NOTE]  
-    >  Se permitir que os sites publiquem numa floresta, tem de expandir o esquema do Active Directory dessa floresta para o Configuration Manager. A conta de floresta do Active Directory tem de ter permissões de controlo total ao contentor do sistema dessa floresta.  
+    >  Aby odnajdywać lasy niezaufane i w nich publikować, odnajdywanie lasu usługi Active Directory wymaga konta globalnego. Jeśli nie używasz konta komputera serwera lokacji, można wybrać tylko konto globalne.  
 
-4.  Quando concluir a configuração desta floresta para utilização com deteção de floresta do Active Directory, escolha **OK** para guardar a configuração.  
+3.  Jeśli zamierzasz umożliwić publikowanie danych lokacji w tym lesie na Lokacje **publikowania** pozycję Zakończ konfigurację publikowania w tym lesie.  
 
-##  <a name="BKMK_ConfigADDiscGeneral"></a>Configurar a deteção do Active Directory para computadores, utilizadores ou grupos  
- Utilize as informações nas secções seguintes para configurar a deteção de computadores, utilizadores ou grupos. Irá utilizar estes métodos de Deteção:  
+    > [!NOTE]  
+    >  Jeśli umożliwisz lokacji publikowanie w lesie, należy rozszerzyć schemat usługi Active Directory tego lasu dla programu Configuration Manager. Konto lasu usługi Active Directory musi mieć uprawnienia pełnej kontroli do kontenera systemu w tym lesie.  
 
--   Deteção de Grupos do Active Directory  
+4.  Po zakończeniu konfiguracji tego lasu do stosowania z odnajdywaniem lasu usługi Active Directory, wybierz **OK** Aby zapisać konfigurację.  
 
--   Deteção de Sistemas do Active Directory  
+##  <a name="BKMK_ConfigADDiscGeneral"></a>Konfigurowanie odnajdywania usługi Active Directory dla komputerów, użytkowników lub grup  
+ Skorzystaj z informacji w poniższych sekcjach, aby skonfigurować odnajdywanie komputerów, użytkowników lub grup. Użyjesz tych metod odnajdywania:  
 
--   Deteção de Utilizadores do Active Directory  
+-   Odnajdywanie grupy usługi Active Directory  
+
+-   Odnajdywanie systemu usługi Active Directory  
+
+-   odnajdywanie użytkownika usługi Active Directory  
 
 > [!NOTE]  
->  As informações nesta secção não se aplica a deteção de floresta do Active Directory.  
+>  Informacje przedstawione w tej sekcji nie dotyczą odnajdywania lasu usługi Active Directory.  
 
- Embora cada um destes métodos de deteção seja independente dos outros, partilham opções semelhantes. Para obter mais informações sobre estas opções de configuração, consulte [partilhado opções para a deteção de grupo, o sistema e o utilizador](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_shared).  
+ Mimo że każda z tych metod odnajdywania jest niezależna od innych, mają podobne opcje. Aby uzyskać więcej informacji o tych opcjach konfiguracji, zobacz [udostępniane opcje odnajdywania grupy, systemu i użytkownika](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_shared).  
 
 > [!WARNING]  
->  A consulta do Active Directory por cada um destes métodos de deteção pode gerar tráfego de rede significativo. Considere o agendamento de cada método de deteção para ser executada com um período de tempo quando este tráfego de rede não prejudique as utilizações empresariais da sua rede.  
+>  Sondowanie usługi Active Directory każdą z tych metod odnajdywania może powodować znaczne obciążenie sieci. Warto pomyśleć o zaplanowaniu każdej metody odnajdywania w czasie, gdy ruch sieciowy nie wpływa na firm korzystanie z sieci.  
 
-#### <a name="to-configure-active-directory-group-discovery"></a>Para configurar a deteção de grupo do Active Directory  
+#### <a name="to-configure-active-directory-group-discovery"></a>Aby skonfigurować odnajdywanie grupy usługi Active Directory  
 
-1.  Na consola do Configuration Manager, escolha **administração** > **configuração da hierarquia**e, em seguida, escolha **métodos de deteção**.  
+1.  W konsoli programu Configuration Manager wybierz **administracji** > **Konfiguracja hierarchii**, a następnie wybierz pozycję **metod odnajdywania**.  
 
-2.  Escolha o **deteção de grupo do Active Directory** método para o site onde pretende configurar a deteção.  
+2.  Wybierz **odnajdowanie grup usługi Active Directory** metodę dla lokacji, w której chcesz skonfigurować odnajdywanie.  
 
-3.  No **home page** separador o **propriedades** grupo, escolha **propriedades**.  
+3.  Na **Home** karcie **właściwości** grupy, wybierz **właściwości**.  
 
-4.  No **geral** separador, selecione a caixa para ativar a deteção. Ou pode configurar a deteção agora e, em seguida, regressar para ativar a deteção mais tarde.  
+4.  Na **ogólne** karcie, pole wyboru, aby włączyć odnajdywanie. Lub skonfigurować odnajdywanie teraz, a następnie włączyć je później.  
 
-5.  Escolha **adicionar** para configurar um âmbito de deteção, escolha o **grupos** ou **localização**e concluir as seguintes configurações no **adicionar grupos** ou **adicionar localização do Active Directory** caixa de diálogo:  
+5.  Wybierz **Dodaj** do skonfigurowania zakresu odnajdywania, wybierz **grup** lub **lokalizacji**i Zakończ następujące konfiguracje w **Dodawanie grup** lub **Dodawanie lokalizacji usługi Active Directory** okno dialogowe:  
 
-    1.  Especifique um **nome** para este âmbito de deteção.  
+    1.  Określ **nazwa** dla tego zakresu odnajdywania.  
 
-    2.  Especifique um **domínio do Active Directory** ou **localização** para procurar:  
+    2.  Określ **domeny usługi Active Directory** lub **lokalizacji** do wyszukania:  
 
-        -   Se tiver escolhido **grupos**, especifique um ou mais grupos do Active Directory a detetar.  
+        -   Jeśli została wybrana opcja **grup**, określ jedną lub więcej grup usługi Active Directory do odnalezienia.  
 
-        -   Se tiver escolhido **localização**, especifique um contentor do Active Directory como uma localização a detetar. Também pode ativar uma pesquisa recursiva dos contentores subordinados do Active Directory para esta localização.  
+        -   Jeśli została wybrana opcja **lokalizacji**, określ kontener usługi Active Directory jako lokalizację do odnalezienia. Można również włączyć wyszukiwanie cykliczne we wszystkich kontenerach podrzędnych usługi Active Directory dla tej lokalizacji.  
 
-    3.  Especifique o **conta de deteção de grupo do Active Directory** que é utilizada para procurar este âmbito de deteção.  
+    3.  Określ **konto odnajdywania grup usługi Active Directory** używane do przeszukiwania tego zakresu odnajdywania.  
 
-    4.  Escolha **OK** para guardar a configuração de âmbito de deteção.  
+    4.  Wybierz **OK** Aby zapisać konfigurację zakresu odnajdywania.  
 
-6.  Repita o passo 6 para cada âmbito de deteção adicionais que pretenda definir.  
+6.  Powtórz krok 6 dla każdego dodatkowego zakresu odnajdywania, który chcesz zdefiniować.  
 
-7.  No **agenda de consulta** separador, configure a deteção completa deteção agenda e diferenças de consulta.  
+7.  Na **harmonogram sondowania** skonfiguruj zarówno sondowania pełnego odnajdywania, harmonogram i odnajdywanie zmian.  
 
-8.  Opcionalmente, no **opção** separador, pode configurar as opções para filtrar ou excluir os registos de computadores obsoletos da deteção e para detetar a associação dos grupos de distribuição.  
+8.  Opcjonalna metoda polega na **opcji** kartę, można skonfigurować opcje odfiltrowywania, czyli wykluczania starych rekordów z procesu odnajdywania i odnajdywania członkostwa w grupach dystrybucyjnych.  
 
     > [!NOTE]  
-    >  Por predefinição, a deteção de grupo do Active Directory Deteta apenas a associação dos grupos de segurança.  
+    >  Domyślnie odnajdywanie grupy usługi Active Directory odnajduje tylko członkostwo grup zabezpieczeń.  
 
-9. Quando tiver concluído a configuração da deteção de grupo do Active Directory para este site, escolha **OK** para guardar a configuração.  
+9. Po zakończeniu konfigurowania odnajdywania grupy usługi Active Directory dla tej lokacji wybrać **OK** Aby zapisać konfigurację.  
 
-#### <a name="to-configure-active-directory-system-discovery"></a>Para configurar a deteção de sistema do Active Directory  
+#### <a name="to-configure-active-directory-system-discovery"></a>Aby skonfigurować odnajdywanie systemu usługi Active Directory  
 
-1.  Na consola do Configuration Manager, escolha **administração** > **configuração da hierarquia**e, em seguida, escolha **métodos de deteção**.  
+1.  W konsoli programu Configuration Manager wybierz **administracji** > **Konfiguracja hierarchii**, a następnie wybierz pozycję **metod odnajdywania**.  
 
-2.  Selecione o método para o site onde pretende configurar a deteção.  
+2.  Wybierz metodę dla lokacji, w której chcesz skonfigurować odnajdywanie.  
 
-3.  No **home page** separador o **propriedades** grupo, escolha **propriedades**.  
+3.  Na **Home** karcie **właściwości** grupy, wybierz **właściwości**.  
 
-4.  No **geral** separador, selecione a caixa para ativar a deteção. Ou pode configurar a deteção agora e, em seguida, regressar para ativar a deteção mais tarde.  
+4.  Na **ogólne** karcie, pole wyboru, aby włączyć odnajdywanie. Lub skonfigurować odnajdywanie teraz, a następnie włączyć je później.  
 
-5.  Escolha o **novo** ícone ![novo ícone](media/Disc_new_Icon.gif) para especificar um novo contentor do Active Directory. No **contentor do Active Directory** diálogo caixa, conclua as configurações seguintes:  
+5.  Wybierz **nowy** ikona ![nową ikonę](media/Disc_new_Icon.gif) Aby określić nowy kontener usługi Active Directory. W **kontener usługi Active Directory** okna dialogowego pozycję Zakończ następujące konfiguracje:  
 
-    1.  Especifique um ou mais localizações para procurar.  
+    1.  Określ co najmniej jedna lokalizacja do wyszukiwania.  
 
-    2.  Para cada localização, especifique as opções que se alterar o comportamento de procura.  
+    2.  Dla każdej lokalizacji określ opcje, które należy zmienić to zachowanie wyszukiwania.  
 
-    3.  Para cada localização, especifique a conta a utilizar como o **conta de deteção do Active Directory**.  
+    3.  Dla każdej lokalizacji określ konto do użycia jako **konto odnajdywania usługi Active Directory**.  
 
         > [!TIP]  
-        >  Para cada localização que especificar, pode configurar um conjunto de opções de deteção e uma conta de deteção do Active Directory exclusiva.  
+        >  Dla każdej lokalizacji można skonfigurować zestaw opcji odnajdywania i unikatowe konto odnajdywania Active Directory.  
 
-    4.  Escolha **OK** para guardar a configuração do contentor do Active Directory.  
+    4.  Wybierz **OK** Aby zapisać konfigurację kontenera usługi Active Directory.  
 
-6.  No **agenda de consulta** separador, configure a deteção completa deteção agenda e diferenças de consulta.  
+6.  Na **harmonogram sondowania** skonfiguruj zarówno sondowania pełnego odnajdywania, harmonogram i odnajdywanie zmian.  
 
-7.  Opcionalmente, no **atributos do Active Directory** separador, pode configurar atributos adicionais do Active Directory para computadores que pretende detetar. Os atributos de objetos predefinidos também são listados.  
+7.  Opcjonalna metoda polega na **atrybuty usługi Active Directory** kartę, można skonfigurować dodatkowe atrybuty usługi Active Directory dla komputerów, które chcesz odnajdywać. Są także wyświetlane domyślne atrybuty obiektów.  
 
-8.  Opcionalmente, no **opção** separador, pode configurar opções para filtrar ou excluir os registos de computadores obsoletos da deteção.  
+8.  Opcjonalna metoda polega na **opcji** kartę, można skonfigurować opcje odfiltrowywania, czyli wykluczania starych rekordów z procesu odnajdywania.  
 
-9. Quando tiver concluído a configuração da deteção de sistema do Active Directory para este site, escolha **OK** para guardar a configuração.  
+9. Po zakończeniu konfigurowania odnajdywania systemu usługi Active Directory dla tej lokacji wybrać **OK** Aby zapisać konfigurację.  
 
-#### <a name="to-configure-active-directory-user-discovery"></a>Para configurar a deteção de utilizador do Active Directory  
+#### <a name="to-configure-active-directory-user-discovery"></a>Aby skonfigurować odnajdowanie użytkowników usługi Active Directory  
 
-1.  Na consola do Configuration Manager, escolha **administração** > **configuração da hierarquia**e, em seguida, escolha **métodos de deteção**.  
+1.  W konsoli programu Configuration Manager wybierz **administracji** > **Konfiguracja hierarchii**, a następnie wybierz pozycję **metod odnajdywania**.  
 
-2.  Escolha o **deteção de utilizador do Active Directory** método para o site onde pretende configurar a deteção.  
+2.  Wybierz **odnajdywania użytkownika usługi Active Directory** metodę dla lokacji, w której chcesz skonfigurować odnajdywanie.  
 
-3.  No **home page** separador o **propriedades** grupo, escolha **propriedades**.  
+3.  Na **Home** karcie **właściwości** grupy, wybierz **właściwości**.  
 
-4.  No **geral** separador, selecione a caixa para ativar a deteção. Ou pode configurar a deteção agora e, em seguida, regressar para ativar a deteção mais tarde.  
+4.  Na **ogólne** karcie, pole wyboru, aby włączyć odnajdywanie. Lub skonfigurować odnajdywanie teraz, a następnie włączyć je później.  
 
-5.  Escolha o **novo** ícone ![novo ícone](media/Disc_new_Icon.gif) para especificar um novo contentor do Active Directory. No **contentor do Active Directory** diálogo caixa, conclua as configurações seguintes:  
+5.  Wybierz **nowy** ikona ![nową ikonę](media/Disc_new_Icon.gif) Aby określić nowy kontener usługi Active Directory. W **kontener usługi Active Directory** okna dialogowego pozycję Zakończ następujące konfiguracje:  
 
-    1.  Especifique um ou mais localizações para procurar.  
+    1.  Określ co najmniej jedna lokalizacja do wyszukiwania.  
 
-    2.  Para cada localização, especifique as opções que se alterar o comportamento de procura.  
+    2.  Dla każdej lokalizacji określ opcje, które należy zmienić to zachowanie wyszukiwania.  
 
-    3.  Para cada localização, especifique a conta a utilizar como o **conta de deteção do Active Directory**.  
+    3.  Dla każdej lokalizacji określ konto do użycia jako **konto odnajdywania usługi Active Directory**.  
 
         > [!NOTE]  
-        >  Para cada localização que especificar, pode configurar um conjunto exclusivo de opções de deteção e uma conta de deteção do Active Directory exclusiva.  
+        >  Dla każdej lokalizacji można skonfigurować unikatowy zestaw opcji odnajdywania i unikatowe konto odnajdywania Active Directory.  
 
-    4.  Escolha **OK** para guardar a configuração do contentor do Active Directory.  
+    4.  Wybierz **OK** Aby zapisać konfigurację kontenera usługi Active Directory.  
 
-6.  No **agenda de consulta** separador, configure a deteção completa deteção agenda e diferenças de consulta.  
+6.  Na **harmonogram sondowania** skonfiguruj zarówno sondowania pełnego odnajdywania, harmonogram i odnajdywanie zmian.  
 
-7.  Opcionalmente, no **atributos do Active Directory** separador, pode configurar atributos adicionais do Active Directory para computadores que pretende detetar. Os atributos de objetos predefinidos também são listados.  
+7.  Opcjonalna metoda polega na **atrybuty usługi Active Directory** kartę, można skonfigurować dodatkowe atrybuty usługi Active Directory dla komputerów, które chcesz odnajdywać. Są także wyświetlane domyślne atrybuty obiektów.  
 
-8.  Quando tiver concluído a configuração da deteção de utilizador do Active Directory para este site, escolha **OK** para guardar a configuração.  
+8.  Po zakończeniu konfigurowania odnajdywania użytkownika usługi Active Directory dla tej lokacji wybrać **OK** Aby zapisać konfigurację.  
 
-## <a name="azureaadisc"></a>Configurar a deteção de utilizador do Azure AD
-A partir da versão 1706, pode configurar deteção de utilizador do Active Directory do Azure quando se liga o Configuration Manager para o [subscrição do Azure e o Azure Active Directory](/sccm/core/servers/deploy/configure/azure-services-wizard).
+## <a name="azureaadisc"></a>Konfigurowanie odnajdywania użytkownika usługi Azure AD
+Począwszy od wersji 1706, można skonfigurować odnajdowanie użytkowników usługi Active Directory Azure podczas łączenia programu Configuration Manager do Twojej [subskrypcji platformy Azure i usługi Azure Active Directory](/sccm/core/servers/deploy/configure/azure-services-wizard).
 
-Deteção de utilizadores do Azure AD é configurada como parte da *gestão de nuvem*. O procedimento para fazê-lo está detalhado na [criar a aplicação web do Azure para utilização com o Configuration Manager](/sccm/core/servers/deploy/configure/Azure-services-wizard#webapp) no tópico *serviços do Azure configurar para utilização com o Configuration Manager*.
-
-
+Odnajdowanie użytkowników usługi Azure AD jest skonfigurowany jako część *zarządzania chmurą*. Procedury w tym celu została szczegółowo opisana w [tworzenie aplikacji sieci web platformy Azure do użytku w programie Configuration Manager](/sccm/core/servers/deploy/configure/Azure-services-wizard#webapp) w temacie *usług Azure skonfigurować do użytku z programem Configuration Manager*.
 
 
-##  <a name="BKMK_ConfigHBDisc"></a>Configurar a deteção de Heartbeat  
- Por predefinição, a deteção de Heartbeat é ativada quando instala um site primário do Configuration Manager. Como resultado, só tem de configurar a agenda para como frequentemente de envio de clientes, registo de dados de deteção de Heartbeat para um ponto de gestão quando não pretender utilizar a predefinição de sete em sete dias.  
 
-> [!NOTE]  
->  Se a tarefa de instalação push do cliente e a manutenção do site para **Limpar sinalizador de instalação** estão ativadas no mesmo site defina a agenda da deteção de Heartbeat para ser inferior à **período de Redeteção do cliente** do **Limpar sinalizador de instalação** tarefa de manutenção do site. Para obter mais informações sobre tarefas de manutenção do site, consulte [tarefas de manutenção do System Center Configuration Manager](../../../../core/servers/manage/maintenance-tasks.md).  
 
-#### <a name="to-configure-the-heartbeat-discovery-schedule"></a>Para configurar a agenda de deteção de Heartbeat  
-
-1.  Na consola do Configuration Manager, escolha **administração** > **configuração da hierarquia**e, em seguida, escolha **métodos de deteção**.  
-
-2.  Escolha **deteção de Heartbeat** para o site onde pretende configurar a deteção de Heartbeat.  
-
-3.  No **home page** separador o **propriedades** grupo, escolha **propriedades**.  
-
-4.  Configurar a frequência com que os clientes submeterem um registo de dados de deteção de Heartbeat e, em seguida, escolha **OK** para guardar a configuração.  
-
-##  <a name="BKMK_ConfigNetworkDisc"></a>Configurar a deteção de rede  
- Utilize as informações nas secções seguintes para ajudar a configurar a deteção de rede.  
-
-###  <a name="BKMK_AboutConfigNetworkDisc"></a>Sobre como configurar a deteção de rede  
- Antes de configurar a deteção de rede, tem de compreender o seguinte:  
-
--   Disponíveis níveis de deteção de rede  
-
--   Opções de deteção de rede disponíveis  
-
--   Limitar a deteção de rede na rede  
-
-Para obter mais informações, consulte [sobre a deteção de rede](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutNetwork).  
-
- As secções seguintes fornecem informações sobre configurações comuns para a deteção de rede. Pode configurar um ou mais destas configurações para utilização durante a mesma deteção a executar. Se utilizar várias configurações, terá de planear as interações que podem afetar os resultados da deteção.  
-
- Por exemplo, pode querer detetar todos os dispositivos Simple Network Management Protocol (SNMP) que utilizam um nome de Comunidade SNMP específico. Além disso, para a mesma execução da deteção, poderá desativar a deteção numa sub-rede específica. Quando a deteção é executada, a deteção de rede não Deteta os dispositivos SNMP com o nome de Comunidade especificado na sub-rede que tiver desativado.  
-
-####  <a name="BKMK_DetermineNetTopology"></a>Determinar a topologia de rede  
- Pode utilizar uma deteção só de topologia para mapear a rede. Este tipo de deteção não Deteta potenciais clientes. A deteção de rede só de topologia depende do SNMP.  
-
- Quando estiver a mapear a topologia de rede, tem de configurar o **saltos máximos** no **SNMP** separador o **propriedades da deteção de rede** caixa de diálogo. Apenas alguns saltos podem ajudar a controlar a largura de banda de rede que é utilizada quando a deteção é executada. Como descobrir mais da sua rede, pode aumentar o número de saltos para obter uma melhor compreensão da topologia de rede.  
-
- Depois de compreender a topologia de rede, pode configurar propriedades adicionais para deteção de rede para detetar potenciais clientes e os respetivos sistemas operativos enquanto estiver a utilizar configurações disponíveis para limitar os segmentos de rede pode procurar a deteção de rede.  
-
-####  <a name="BKMK_LimitBySubnet"></a>Limitar pesquisas através da utilização de sub-redes  
- Pode configurar a deteção de rede para pesquisar sub-redes específicas durante uma deteção. Por predefinição, a deteção de rede procura a sub-rede do servidor que executa a deteção. As sub-redes adicionais que forem configuradas e ativadas aplicam-se apenas ao SNMP e o protocolo de configuração dinâmica de anfitrião (DHCP) opções de pesquisa. Quando a deteção de rede procura domínios, não está limitada por configurações para sub-redes.  
-
- Se especificar uma ou mais sub-redes no **sub-redes** separador o **propriedades da deteção de rede** caixa de diálogo, apenas as sub-redes que estão marcados como **ativado** serão pesquisados.  
-
- Quando desativa uma sub-rede, este é excluído da deteção e são aplicáveis as seguintes condições:  
-
--   As consultas baseadas em SNMP não são executados na sub-rede.  
-
--   Servidores DHCP não respondem com uma lista de recursos localizados na sub-rede.  
-
--   As consultas baseadas em domínio podem detetar recursos que estão localizados na sub-rede.  
-
-####  <a name="BKMK_SearchByDomain"></a>Procurar num domínio específico  
- Pode configurar a deteção de rede para pesquisar um domínio específico ou um conjunto de domínios durante a execução da deteção. Por predefinição, a deteção de rede pesquisa o domínio local do servidor que executa a deteção.  
-
- Se especificar um ou mais domínios no **domínios** separador o **propriedades da deteção de rede** caixa de diálogo, apenas os domínios que estão marcados como **ativado** serão pesquisados.  
-
- Quando desativa um domínio, este é excluído da deteção e são aplicáveis as seguintes condições:  
-
--   Deteção de rede não consulta controladores de domínio nesse domínio.  
-
--   As consultas baseadas em SNMP ainda podem executar em sub-redes do domínio.  
-
--   Servidores DHCP podem responder com uma lista de recursos localizados no domínio.  
-
-####  <a name="BKMK_LimitBySNMPname"></a>Limitar procuras utilizando nomes de comunidades SNMP  
- Configurar a deteção de rede para pesquisar uma Comunidade SNMP específico ou um conjunto de Comunidades durante a execução da deteção. Por predefinição, o nome de Comunidade **pública** está configurada para utilização.  
-
- Deteção de rede utiliza nomes de Comunidades para obter acesso a routers que sejam dispositivos SNMP. Um router pode fornecer a deteção de rede com informações sobre outros routers e sub-redes que estejam ligadas ao primeiro router.  
+##  <a name="BKMK_ConfigHBDisc"></a>Konfigurowanie odnajdywania pulsu  
+ Domyślnie odnajdywanie pulsu jest włączane podczas instalowania lokacji głównej programu Configuration Manager. W związku z tym wystarczy tylko skonfigurować harmonogram jak często klienci wysyłania danych odnajdywania pulsu rekordów z punktem zarządzania, jeśli nie chcesz użyć wartości domyślnej co siedem dni.  
 
 > [!NOTE]  
->  Nomes de comunidades SNMP assemelham-se às palavras-passe. Deteção de rede pode obter informações apenas a partir de um dispositivo SNMP que especificou um nome de Comunidade. Cada dispositivo SNMP pode ter o seu próprio nome de Comunidade, mas, muitas vezes, o mesmo nome de Comunidade é partilhado por vários dispositivos. Além disso, a maioria dos dispositivos SNMP tem um nome de Comunidade predefinido de **pública**. Mas algumas organizações eliminam o **pública** nome da Comunidade a partir dos seus dispositivos como precaução de segurança.  
+>  Jeśli zarówno wypychana instalacja klienta, jak i obsługi lokacji zadanie **Wyczyść flagę instalacji** są włączone w tej samej lokacji, ustawić harmonogram odnajdywania pulsu należy mniejszej niż **okres ponownego odnajdywania klienta** z **Wyczyść flagę instalacji** zadanie obsługi lokacji. Aby uzyskać więcej informacji na temat zadań konserwacji lokacji, zobacz [zadania konserwacji programu System Center Configuration Manager](../../../../core/servers/manage/maintenance-tasks.md).  
 
- Se forem apresentadas várias comunidades SNMP no **SNMP** separador o **propriedades da deteção de rede** caixa de diálogo, a deteção de rede pesquisará as mesmas pela ordem em que são apresentadas. Para ajudar a minimizar o tráfego de rede que é gerado pelas tentativas de contacto com um dispositivo utilizando diferentes nomes, certifique-se de que os nomes mais frequentemente utilizados no topo da lista.  
+#### <a name="to-configure-the-heartbeat-discovery-schedule"></a>Aby skonfigurować harmonogram odnajdywania pulsu  
+
+1.  W konsoli programu Configuration Manager wybierz **administracji** > **Konfiguracja hierarchii**, a następnie wybierz pozycję **metod odnajdywania**.  
+
+2.  Wybierz **odnajdywania pulsu** dla witryny, w której chcesz skonfigurować odnajdywanie pulsu.  
+
+3.  Na **Home** karcie **właściwości** grupy, wybierz **właściwości**.  
+
+4.  Skonfiguruj częstotliwość, z jaką klienci przesłali rekordu danych odnajdywania pulsu, a następnie wybierz **OK** Aby zapisać konfigurację.  
+
+##  <a name="BKMK_ConfigNetworkDisc"></a>Konfigurowanie odnajdywania sieci  
+ Skorzystaj z informacji w poniższych sekcjach ułatwiają konfigurowanie odnajdywania sieci.  
+
+###  <a name="BKMK_AboutConfigNetworkDisc"></a>Informacje o konfigurowaniu odnajdywania sieci  
+ Przed rozpoczęciem konfigurowania odnajdywania sieci, należy zrozumieć następujące kwestie:  
+
+-   Dostępne poziomy odnajdywania sieci  
+
+-   Dostępne opcje odnajdywania sieci  
+
+-   Ograniczanie odnajdywania sieci w sieci  
+
+Aby uzyskać więcej informacji, zobacz [o odnajdywania sieci](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutNetwork).  
+
+ Poniższe sekcje zawierają informacje o popularnych konfiguracjach odnajdywania sieci. Można skonfigurować jeden lub więcej z tych konfiguracji do użycia podczas odnajdowania tego samego uruchomienia. Jeśli używasz wielu konfiguracji należy zaplanować interakcje, które mogą wpłynąć na wyniki odnajdywania.  
+
+ Na przykład możesz chcieć odnaleźć wszystkie urządzenia zarządzania protokołu SNMP (Simple Network), używające określonej nazwy wspólnoty SNMP. Ponadto na tym samym uruchomieniu odnajdywania można wyłączyć odnajdywanie w określonej podsieci. Podczas odnajdywania odnajdywania sieci nie odnajdzie urządzeń SNMP o określonej nazwie Wspólnoty w podsieci, która została wyłączona.  
+
+####  <a name="BKMK_DetermineNetTopology"></a>Ustalenie topologii sieci  
+ Odnajdowanie tylko topologii służy do mapowania sieci. Ten rodzaj odnajdywania nie odnajduje potencjalnych klientów. Tylko topologii odnajdowania sieci korzysta z protokołu SNMP.  
+
+ W przypadku mapowania topologii sieci, należy skonfigurować **maksymalna liczba przeskoków** na **SNMP** karcie **odnajdowanie sieci: właściwości** okno dialogowe. Wystarczy kilka przeskoków, aby pomóc kontroli przepustowości sieci, który jest używany podczas odnajdywania. W miarę odnajdywania dalszych obszarów sieci, można zwiększyć liczbę przeskoków w celu uzyskania lepszej orientacji w topologii sieci.  
+
+ Po zidentyfikowaniu topologii sieci można skonfigurować dodatkowe właściwości odnajdywania sieci w celu odnalezienia potencjalnych klientów i ich systemy operacyjne, podczas używania dostępnych konfiguracji do ograniczania segmentów sieci, które odnajdywanie sieci może przeszukiwać.  
+
+####  <a name="BKMK_LimitBySubnet"></a>Ograniczanie wyszukiwań za pomocą podsieci  
+ Można skonfigurować odnajdywanie sieci w celu przeszukiwania określonych podsieci podczas odnajdywania. Domyślnie funkcja odnajdowania sieci przeszukuje podsieć serwera, na którym działa odnajdywanie. Dodatkowe podsieci, które można skonfigurować i włączyć mają zastosowanie tylko do protokołu SNMP protokołu dynamicznej konfiguracji hosta (DHCP) opcje wyszukiwania. Gdy funkcja odnajdowania sieci przeszukuje domeny, nie jest ograniczone konfiguracjami dotyczącymi podsieci.  
+
+ W przypadku określenia co najmniej jednej podsieci **podsieci** karcie **odnajdowanie sieci: właściwości** okno dialogowe, tylko podsieci oznaczone jako **włączone** są przeszukiwane.  
+
+ Po wyłączeniu podsieci jest ona wykluczana z odnajdywania i mają zastosowanie następujące warunki:  
+
+-   W podsieci nie są uruchamiane zapytania oparte na protokole SNMP.  
+
+-   Serwery DHCP nie odpowiadają wyświetleniem listy zasobów znajdujących się w podsieci.  
+
+-   Zapytania oparte na domenie umożliwia odnalezienie zasobów, które znajdują się w podsieci.  
+
+####  <a name="BKMK_SearchByDomain"></a>Przeszukiwanie określonej domeny  
+ Można skonfigurować odnajdywanie sieci w celu przeszukania określonej domeny lub zestawu domen podczas pracy odnajdywania. Domyślnie funkcja odnajdowania sieci przeszukuje lokalną domenę serwera, na którym działa odnajdywanie.  
+
+ Po określeniu jednej lub kilku domen na **domen** karcie **odnajdowanie sieci: właściwości** okno dialogowe, tylko domeny oznaczone jako **włączone** są przeszukiwane.  
+
+ Po wyłączeniu domeny jest wykluczana z odnajdywania i mają zastosowanie następujące warunki:  
+
+-   Odnajdywania sieci nie odpytuje kontrolerów domeny w tej domenie.  
+
+-   Zapytania oparte na protokole SNMP mogą nadal działać w podsieci w domenę.  
+
+-   Serwery DHCP nadal mogą odpowiedzieć listę zasobów znajdujących się w domenie.  
+
+####  <a name="BKMK_LimitBySNMPname"></a>Ograniczanie wyszukiwań za pomocą nazw wspólnot SNMP  
+ Możesz skonfigurować odnajdywanie sieci w celu przeszukania określonej Wspólnoty SNMP lub zestawów Wspólnot podczas pracy odnajdywania. Domyślnie nazwa Wspólnoty **publicznego** jest skonfigurowana do użycia.  
+
+ Funkcja odnajdowania sieci korzysta z nazw Wspólnot w celu uzyskania dostępu do routerów, które są urządzeniami SNMP. Router może udostępnić funkcji odnajdowania sieci informacje o innych routerach i podsieciach połączonych z pierwszym routerem.  
 
 > [!NOTE]  
->  Além de utilizar o nome de Comunidade SNMP, pode especificar o endereço IP ou nome resolúvel de um dispositivo SNMP específico. Pode fazê-lo no **dispositivos SNMP** separador o **propriedades da deteção de rede** caixa de diálogo.  
+>  Nazwy wspólnot SNMP przypominają hasła. Funkcja odnajdowania sieci informacji można uzyskać tylko z urządzenia SNMP, dla którego określono nazwę Wspólnoty. Każde urządzenie SNMP może mieć własną nazwę Wspólnoty, ale często jest udostępniany tej samej nazwy Wspólnoty korzysta kilka urządzeń. Ponadto większość urządzeń SNMP ma domyślną nazwę Wspólnoty **publicznego**. Niektóre organizacje usuwania **publicznego** nazwę Wspólnoty ze swoich urządzeń w celu zapewnienia bezpieczeństwa.  
 
-####  <a name="BKMK_SearchByDHCP"></a>Procurar um servidor DHCP específico  
- Pode configurar a deteção de rede para utilizar um servidor DHCP específico ou vários servidores para detetar clientes DHCP durante uma deteção.  
-
- Deteção de rede pesquisa cada servidor DHCP que especificar no **DHCP** separador o **propriedades da deteção de rede** caixa de diálogo. Se o servidor que executa a deteção obtiver a concessão dos seus endereços IP a partir de um servidor DHCP, pode configurar a deteção para pesquisar esse servidor DHCP, verificando o **incluem o servidor DHCP que o servidor do site está configurado para utilizar** caixa.  
+ Jeśli kilka Wspólnot SNMP są pokazywane na **SNMP** karcie **odnajdowanie sieci: właściwości** okno dialogowe, funkcja odnajdowania sieci przeszukuje je w kolejności, w którym są wyświetlane. Aby zminimalizować ruch sieciowy, który jest generowany przez próby połączenia z urządzeniem przy użyciu różnych nazw, upewnij się, że najczęściej używane nazwy znajdowały się u góry listy.  
 
 > [!NOTE]  
->  Para configurar com êxito um servidor DHCP na deteção de rede, o seu ambiente tem de suportar IPv4. Não é possível configurar a deteção de rede para utilizar um servidor DHCP num ambiente IPv6 nativo.  
+>  Oprócz przy użyciu nazwy wspólnoty SNMP, możesz określić adres IP lub rozpoznawalną nazwę urządzenia SNMP. Możesz to zrobić na **urządzeń SNMP** karcie **odnajdowanie sieci: właściwości** okno dialogowe.  
 
-###  <a name="BKMK_HowToConfigNetDisc"></a>Como configurar a deteção de rede  
- Utilize os procedimentos seguintes para começar por detetar apenas a topologia de rede e, em seguida, para configurar a deteção de rede para detetar potenciais clientes utilizando um ou mais das opções de deteção de rede disponíveis.  
+####  <a name="BKMK_SearchByDHCP"></a>Przeszukiwanie określonego serwera DHCP  
+ Można skonfigurować odnajdywania sieci do używania określonego serwera DHCP lub wiele serwerów do odnajdywania klientów DHCP podczas pracy odnajdywania.  
 
-##### <a name="to-determine-your-network-topology"></a>Para determinar a topologia de rede  
+ Funkcja odnajdowania sieci przeszukuje każdy serwer DHCP, który określisz na **DHCP** karcie **odnajdowanie sieci: właściwości** okno dialogowe. Jeśli serwer, na którym działa odnajdywanie wydzierżawi swój adres IP od serwera DHCP, można skonfigurować odnajdywanie do przeszukania tego serwera DHCP, zaznaczając **Dołącz serwer DHCP, który serwer lokacji jest skonfigurowany do użycia** pole.  
 
-1.  Na consola do Configuration Manager, escolha **administração** > **configuração da hierarquia**e, em seguida, escolha **métodos de deteção**.  
+> [!NOTE]  
+>  Aby pomyślnie skonfigurować serwer DHCP w ramach odnajdywania sieci, środowisko musi obsługiwać protokół IPv4. Nie można skonfigurować odnajdowania sieci w celu korzystania z serwera DHCP w macierzystym środowisku IPv6.  
 
-2.  Escolha **deteção de rede** para o site onde pretende executar a deteção de rede.  
+###  <a name="BKMK_HowToConfigNetDisc"></a>Jak skonfigurować odnajdywanie sieci  
+ Poniższe procedury umożliwiają najpierw wykrycie tylko topologii sieci, a następnie skonfigurowanie funkcji odnajdowania sieci w celu odnalezienia potencjalnych klientów przy użyciu co najmniej jeden z dostępnych opcji odnajdowania sieci.  
 
-3.  No **home page** separador o **propriedades** grupo, escolha **propriedades**.  
+##### <a name="to-determine-your-network-topology"></a>Ustalenie topologii sieci  
 
-    -   No **geral** separador, verifique o **ativar a deteção de rede** caixa e, em seguida, escolha **topologia** do **tipo de deteção** opções.  
+1.  W konsoli programu Configuration Manager wybierz **administracji** > **Konfiguracja hierarchii**, a następnie wybierz pozycję **metod odnajdywania**.  
 
-    -   No **sub-redes** separador, verifique o **procurar sub-redes locais** caixa.  
+2.  Wybierz **odnajdywania sieci** dla lokacji, na którym chcesz uruchomić odnajdowanie sieci.  
+
+3.  Na **Home** karcie **właściwości** grupy, wybierz **właściwości**.  
+
+    -   Na **ogólne** karcie wyboru **Włącz odnajdowanie sieci** polu, a następnie wybierz pozycję **topologii** z **typ odnajdowania** opcje.  
+
+    -   Na **podsieci** karcie wyboru **przeszukiwania podsieci lokalnej** pole.  
 
         > [!TIP]  
-        >  Se conhecer as sub-redes específicas que constituem a sua rede, pode desmarcar a **procurar sub-redes locais** caixa e utilizar o **novo** ícone ![novo ícone](media/Disc_new_Icon.gif) para adicionar as sub-redes específicas que pretende procurar. Para redes de grandes dimensões, muitas vezes, é melhor pesquisar apenas uma ou duas sub-redes de cada vez para minimizar a utilização de largura de banda de rede.  
+        >  Jeśli znasz określonych podsieci, które tworzą używaną sieć, można usunąć zaznaczenie **przeszukiwania podsieci lokalnej** polu i użyj **nowy** ikona ![nową ikonę](media/Disc_new_Icon.gif) można dodać podsieci do przeszukania. W przypadku dużych sieci warto często przeszukiwania tylko jednego lub dwóch podsieci naraz w celu zminimalizowania użycia przepustowości sieci.  
 
-    -   No **domínios** separador, verifique o **Procurar domínio local** caixa.  
+    -   Na **domen** karcie wyboru **Przeszukaj domenę lokalną** pole.  
 
-    -   No **SNMP** separador, utilize o **saltos máximos** na lista pendente para especificar a deteção de rede de saltos de router quantos pode efetuar para mapear a topologia.  
+    -   Na **SNMP** użyj **maksymalna liczba przeskoków** listy rozwijanej, aby określić liczbę przeskoków odnajdowania sieci może wykonać podczas mapowania topologii.  
 
         > [!TIP]  
-        >  Quando mapear a topologia de rede pela primeira vez, configure apenas alguns saltos de router para minimizar a utilização de largura de banda de rede.  
+        >  Przed pierwszym mapowaniem topologii sieci, należy skonfigurować tylko kilka przeskoków, aby zminimalizować wykorzystanie przepustowości sieci.  
 
-4.  No **agenda** separador, escolha o **novo** ícone ![novo ícone](media/Disc_new_Icon.gif) para agendar a execução da deteção de rede.  
-
-    > [!NOTE]  
-    >  Não é possível atribuir uma configuração de deteção diferente a separar as agendas de deteção de rede. Sempre que a deteção de rede é executada, utiliza a configuração de deteção atual.  
-
-5.  Escolha **OK** para guardar as configurações. Deteção de rede é executada na hora agendada.  
-
-##### <a name="to-configure-network-discovery"></a>Para configurar a deteção de rede  
-
-1.  Na consola do Configuration Manager, escolha **administração** > **configuração da hierarquia**e, em seguida, escolha **métodos de deteção**.  
-
-2.  Escolha **deteção de rede** para o site onde pretende executar a deteção de rede.  
-
-3.  No **home page** separador o **propriedades** grupo, escolha **propriedades**.  
-
-4.  No **geral** separador, verifique o **ativar a deteção de rede** caixa e, em seguida, selecione o tipo de deteção que pretende executar a partir de **tipo de deteção** opções.  
-
-5.  Para configurar a deteção para pesquisar sub-redes, escolha o **sub-redes** separador e, em seguida, configure uma ou mais das seguintes opções:  
-
-    -   Para executar a deteção em sub-redes locais no computador que executa a deteção, verifique o **procurar sub-redes locais** caixa.  
-
-    -   Para pesquisar uma sub-rede específica, certifique-se de que a sub-rede está listada em **sub-rede a procurar** e tem um **pesquisa** valor **ativado**:  
-
-        1.  Se a sub-rede não estiver listada, escolha o **novo** ícone ![novo ícone](media/Disc_new_Icon.gif). No **nova atribuição de sub-rede** caixa de diálogo, introduza o **sub-rede** e **máscara** informações e, em seguida, escolha **OK**. Por predefinição, uma nova sub-rede está ativada para pesquisa.  
-
-        2.  Para alterar o **pesquisa** valor para uma sub-rede listada, selecione a sub-rede e, em seguida, escolha o **alternar** ícone para alternar o valor entre **desativado** e **ativado**.  
-
-6.  Para configurar a deteção para pesquisar domínios, escolha o **domínios** separador e, em seguida, configure uma ou mais das seguintes opções:  
-
-    -   Para executar a deteção no domínio do computador que executa a deteção, verifique o **Procurar domínio local** caixa.  
-
-    -   Para pesquisar um domínio específico, certifique-se de que o domínio está listado em **domínios** e tem um **pesquisa** valor **ativado**:  
-
-        1.  Se o domínio não estiver listado, escolha o **novo** ícone ![novo ícone](media/Disc_new_Icon.gif). No **domínio propriedades** caixa de diálogo, introduza o **domínio** informações e, em seguida, escolha **OK**. Por predefinição, um novo domínio está ativado para pesquisa.  
-
-        2.  Para alterar o **pesquisa** valor para um domínio listado, selecione o domínio e, em seguida, escolha o **alternar** ícone para alternar o valor entre **desativado** e **ativado**.  
-
-7.  Para configurar a deteção para pesquisar nomes de comunidades SNMP específicos para os dispositivos SNMP, escolha o **SNMP** separador e, em seguida, configure uma ou mais das seguintes opções:  
-
-    -   Para adicionar um nome de Comunidade SNMP à lista de **nomes da Comunidade SNMP**, escolha o **novo** ícone ![novo ícone](media/Disc_new_Icon.gif). No **novo nome de Comunidade SNMP** diálogo caixa, especifique o **nome** da Comunidade SNMP e, em seguida, escolha **OK**.  
-
-    -   Para remover um nome de Comunidade SNMP, selecione o nome de Comunidade e, em seguida, escolha o **eliminar** ícone ![ícone Eliminar](media/Disc_delete_Icon.gif).  
-
-    -   Para ajustar a ordem de pesquisa dos nomes de comunidades SNMP, selecione um nome de Comunidade e, em seguida, escolha o **Mover Item para cima** ícone ![mover a cópia de segurança de ícone](media/Disc_moveUp_Icon.gif) ou **Mover Item para baixo** ícone ![mover o ícone](media/Disc_moveDown_Icon.gif). Quando a deteção é executada, nomes de Comunidades são pesquisados por uma ordem da parte superior para parte inferior. Tenha os seguintes pontos em mente.
-
-        > [!NOTE]  
-        >  Deteção de rede utiliza nomes de comunidades SNMP, para obter acesso a routers que sejam dispositivos SNMP. Um router pode informar a deteção de rede sobre outros routers e sub-redes ligadas ao primeiro router.  
-
-        -   Nomes de comunidades SNMP assemelham-se às palavras-passe.  
-
-        -   Deteção de rede pode obter informações apenas a partir de um dispositivo SNMP que especificou um nome de Comunidade.  
-
-        -   Cada dispositivo SNMP pode ter o seu próprio nome de Comunidade, mas, muitas vezes, o mesmo nome de Comunidade é partilhado por vários dispositivos.  
-
-        -   A maioria dos dispositivos SNMP tem um nome de Comunidade predefinido de **pública**. Pode utilizar que o se não souber outros nomes de Comunidade. No entanto, algumas organizações eliminam o **pública** nome da Comunidade a partir dos seus dispositivos como precaução de segurança.  
-
-8.  Para configurar o número máximo de saltos de routers para utilização pelas pesquisas de SNMP, escolha o **SNMP** separador e, em seguida, selecione o número de saltos de **saltos máximos** na lista pendente.  
-
-9. Para configurar um dispositivo SNMP, escolha o **dispositivos SNMP** separador. Se o dispositivo não estiver indicado não existe, escolha o **novo** ícone ![novo ícone](media/Disc_new_Icon.gif). No **novo dispositivo SNMP** caixa de diálogo, especifique o nome de dispositivo ou endereço IP do dispositivo SNMP e, em seguida, escolha **OK**.  
+4.  Na **harmonogram** , wybierz pozycję **nowy** ikona ![nową ikonę](media/Disc_new_Icon.gif) Aby ustawić harmonogram uruchamiania funkcji odnajdowania sieci.  
 
     > [!NOTE]  
-    >  Se especificar um nome de dispositivo, o Configuration Manager tem de ser capaz de resolver o nome NetBIOS para um endereço IP.  
+    >  Nie można przypisać różnych konfiguracji odnajdywania do oddzielnych harmonogramów funkcji odnajdowania sieci. Każdym uruchomieniu funkcja odnajdowania sieci korzysta z bieżącej konfiguracji odnajdywania.  
 
-10. Para configurar a deteção para consultar servidores DHCP específicos sobre clientes DHCP, escolha o **DHCP** separador e, em seguida, configure uma ou mais das seguintes opções:  
+5.  Wybierz **OK** aby zaakceptować konfiguracje. Funkcja odnajdywania sieci działa w zaplanowanym terminie.  
 
-    -   Para consultar o servidor DHCP no computador que executa a deteção, verifique o **utilizar sempre o servidor DHCP do servidor de site** caixa.  
+##### <a name="to-configure-network-discovery"></a>Aby skonfigurować odnajdywanie sieci  
+
+1.  W konsoli programu Configuration Manager wybierz **administracji** > **Konfiguracja hierarchii**, a następnie wybierz pozycję **metod odnajdywania**.  
+
+2.  Wybierz **odnajdywania sieci** dla lokacji, na którym chcesz uruchomić odnajdowanie sieci.  
+
+3.  Na **Home** karcie **właściwości** grupy, wybierz **właściwości**.  
+
+4.  Na **ogólne** karcie wyboru **Włącz odnajdowanie sieci** , a następnie wybierz typ odnajdywania, która ma zostać uruchomione z **typ odnajdowania** opcje.  
+
+5.  Aby skonfigurować odnajdywanie w celu przeszukiwania podsieci, wybierz **podsieci** karcie, a następnie skonfiguruj jedną lub więcej z następujących opcji:  
+
+    -   Aby uruchomić odnajdywanie w podsieciach lokalnych dla komputera, na którym działa odnajdywanie, zaznacz **przeszukiwania podsieci lokalnej** pole.  
+
+    -   Aby przeszukać określoną podsieć, upewnij się, że podsieci jest wymieniony w **podsieci do przeszukania** i ma **wyszukiwania** wartość **włączone**:  
+
+        1.  Jeżeli podsieć nie jest widoczna na liście, wybierz **nowy** ikona ![nową ikonę](media/Disc_new_Icon.gif). W **nowe przypisanie podsieci** okna dialogowego wprowadź **podsieci** i **maski** informacje, a następnie wybierz pozycję **OK**. Domyślnie nowa podsieć jest włączona do przeszukiwania.  
+
+        2.  Aby zmienić **wyszukiwania** wartość dla podsieci widocznej na liście, wybierz podsieć, a następnie wybierz **Przełącz** ikonę, aby przełączyć między wartością **wyłączone** i **włączone**.  
+
+6.  Aby skonfigurować odnajdywanie w celu przeszukiwania domen, należy wybrać **domen** karcie, a następnie skonfiguruj jedną lub więcej z następujących opcji:  
+
+    -   Aby uruchomić odnajdywanie w domenie komputera, na którym działa odnajdowanie, zaznacz **Przeszukaj domenę lokalną** pole.  
+
+    -   Aby przeszukać określoną domenę, upewnij się, że domeny jest wymieniony w **domen** i ma **wyszukiwania** wartość **włączone**:  
+
+        1.  Jeśli domena nie jest widoczna na liście, wybierz **nowy** ikona ![nową ikonę](media/Disc_new_Icon.gif). W **właściwości domeny** okna dialogowego wprowadź **domeny** informacje, a następnie wybierz pozycję **OK**. Domyślnie nowa domena jest włączona do przeszukiwania.  
+
+        2.  Aby zmienić **wyszukiwania** wartość dla domeny widocznej na liście, wybierz domenę, a następnie wybierz pozycję **Przełącz** ikonę, aby przełączyć między wartością **wyłączone** i **włączone**.  
+
+7.  Aby skonfigurować odnajdywanie w celu przeszukiwania nazw wspólnot SNMP dla urządzeń SNMP, wybierz **SNMP** karcie, a następnie skonfiguruj jedną lub więcej z następujących opcji:  
+
+    -   Aby dodać nazwę wspólnoty SNMP do listy **nazw wspólnot SNMP**, wybierz **nowy** ikona ![nową ikonę](media/Disc_new_Icon.gif). W **Nowa nazwa wspólnoty SNMP** oknie dialogowym Określ **nazwa** Wspólnoty SNMP, a następnie wybierz pozycję **OK**.  
+
+    -   Aby usunąć nazwę wspólnoty SNMP, wybierz nazwę Wspólnoty, a następnie wybierz pozycję **usunąć** ikona ![ikonę Usuń](media/Disc_delete_Icon.gif).  
+
+    -   Aby dostosować kolejność przeszukiwania nazw wspólnot SNMP, wybierz nazwę Wspólnoty, a następnie wybierz pozycję **Przenieś element w górę** ikona ![Przenieś ikonę](media/Disc_moveUp_Icon.gif) lub **Przenieś element w dół** ikona ![Przenieś ikonę](media/Disc_moveDown_Icon.gif). Po uruchomieniu odnajdywania nazwy Wspólnot są przeszukiwane w kolejności od góry do dołu. Następujące kwestie należy wziąć pod uwagę.
 
         > [!NOTE]  
-        >  Para utilizar esta opção, o servidor tem concessão o respetivo endereço IP de um servidor DHCP e não é possível utilizar um endereço IP estático.  
+        >  Funkcja odnajdowania sieci korzysta z nazw wspólnot SNMP do uzyskania dostępu do routerów, które są urządzeniami SNMP. Router może przekazać funkcji odnajdowania sieci o innych routerach i podsieciach połączonych z pierwszym routerem.  
 
-    -   Para consultar um servidor DHCP específico, escolha o **novo** ícone ![novo ícone](media/Disc_new_Icon.gif). No **novo servidor DHCP** caixa de diálogo, especifique o nome de servidor ou endereço IP do servidor DHCP e, em seguida, escolha **OK**.  
+        -   Nazwy wspólnot SNMP przypominają hasła.  
 
-        > [!NOTE]  
-        >  Se especificar um nome de servidor, tem de ser capaz de resolver o nome NetBIOS para um endereço IP do Configuration Manager.  
+        -   Funkcja odnajdowania sieci informacji można uzyskać tylko z urządzenia SNMP, dla którego określono nazwę Wspólnoty.  
 
-11. Para configurar quando a deteção é executada, escolha o **agenda** separador e, em seguida, escolha o **novo** ícone ![novo ícone](media/Disc_new_Icon.gif) para agendar a execução da deteção de rede.  
+        -   Każde urządzenie SNMP może mieć własną nazwę Wspólnoty, ale często jest udostępniany tej samej nazwy Wspólnoty korzysta kilka urządzeń.  
 
-     Pode configurar vários agendamentos periódicos e vários agendamentos sem periodicidade.  
+        -   Większość urządzeń SNMP ma domyślną nazwę Wspólnoty **publicznego**. Można go używać, jeśli nie znasz inne nazwy Wspólnot. Jednak niektóre organizacje usunąć **publicznego** nazwę Wspólnoty ze swoich urządzeń w celu zapewnienia bezpieczeństwa.  
+
+8.  Aby skonfigurować maksymalną liczbę przeskoków między routerami używany przez wyszukiwania SNMP, wybierz **SNMP** , a następnie wybierz liczbę przeskoków z **maksymalna liczba przeskoków** listy rozwijanej.  
+
+9. Aby skonfigurować urządzenia SNMP, wybierz **urządzeń SNMP** kartę. Jeśli urządzenie nie znajduje się tam, wybierz **nowy** ikona ![nową ikonę](media/Disc_new_Icon.gif). W **nowe urządzenie SNMP** okno dialogowe, określ adres IP lub urządzenie nazwę urządzenia SNMP, a następnie wybierz **OK**.  
 
     > [!NOTE]  
-    >  Se forem apresentadas várias agendas no **agenda** separador mesmo tempo, todos os agendamentos resultarão numa execução da deteção de rede conforme a configuração à hora indicada na agenda. Isto também se verifica para agendamentos periódicos.  
+    >  Określenia nazwy urządzenia, programu Configuration Manager musi być w stanie rozpoznać nazwę NetBIOS na adres IP.  
 
-12. Escolha **OK** para guardar as configurações.  
+10. Aby skonfigurować odnajdywanie w celu odpytywania określonych serwerów DHCP dla klientów DHCP, wybierz **DHCP** karcie, a następnie skonfiguruj jedną lub więcej z następujących opcji:  
 
-###  <a name="BKMK_HowToVerifyNetDisc"></a>Como verificar se a deteção de rede foi concluída  
- O tempo que a deteção de rede necessita para concluir pode variar, dependendo de vários fatores. Estes fatores podem incluir um ou mais dos seguintes procedimentos:  
+    -   Aby odpytać serwer DHCP na komputerze, na którym działa odnajdowanie, zaznacz **zawsze używaj serwer DHCP serwera lokacji** pole.  
 
--   O tamanho da sua rede  
+        > [!NOTE]  
+        >  Aby użyć tej opcji, serwer musi wydzierżawić swój adres IP od serwera DHCP i nie może używać statycznego adresu IP.  
 
--   A topologia da rede  
+    -   Aby odpytać określony serwer DHCP, należy wybrać **nowy** ikona ![nową ikonę](media/Disc_new_Icon.gif). W **nowy serwer DHCP** okno dialogowe, określ adres IP lub serwera nazwę serwera DHCP, a następnie wybierz **OK**.  
 
--   O número máximo de saltos configurados para localizar routers na rede  
+        > [!NOTE]  
+        >  Jeśli określono nazwę serwera, programu Configuration Manager musi być w stanie rozpoznać nazwę NetBIOS na adres IP.  
 
--   O tipo de deteção que está a ser executado  
+11. Aby skonfigurować czas uruchamiania wyszukiwania, wybierz **harmonogram** karcie, a następnie wybierz pozycję **nowy** ikona ![nową ikonę](media/Disc_new_Icon.gif) Aby ustawić harmonogram uruchamiania funkcji odnajdowania sieci.  
 
-Porque a deteção de rede não cria mensagens para o alertar quando a deteção foi concluída, pode utilizar o procedimento seguinte para verificar se a deteção foi concluída.  
+     Można skonfigurować kilka harmonogramów cyklicznych i kilka harmonogramów bez cyklu.  
 
-##### <a name="to-verify-that-network-discovery-has-finished"></a>Para verificar se a deteção de rede foi concluída  
+    > [!NOTE]  
+    >  Jeśli wiele harmonogramów są pokazywane na **harmonogram** kartę w tym samym czasie wszystkich harmonogramów odnajdowania sieci działa dla zgodnie z konfiguracją o godzinie określonej w harmonogramie. Dotyczy to również harmonogramów cyklicznych.  
 
-1.  Na consola do Configuration Manager, escolha **monitorização**.  
+12. Wybierz **OK** Aby zapisać konfiguracje.  
 
-2.  No **monitorização** área de trabalho, expanda **estado do sistema**e, em seguida, escolha **consultas de mensagens de estado**.  
+###  <a name="BKMK_HowToVerifyNetDisc"></a>Jak sprawdzić, czy odnajdywanie sieci zostało zakończone  
+ Czas odnajdowania sieci wymaga, aby zakończyć zależy od różnych czynników. Czynniki te mogą obejmować co najmniej jeden z następujących czynności:  
 
-3.  Escolha **todas as mensagens de estado**.  
+-   Rozmiar sieci  
 
-4.  No **home page** separador o **consultas de mensagens de estado** grupo, escolha **Mostrar mensagens**.  
+-   Topologia sieci  
 
-5.  No **selecionar data e hora** na lista pendente, selecione um valor que inclua há quanto tempo a deteção foi iniciada e, em seguida, escolha **OK** para abrir o **Configuration Manager Status Message Viewer**.  
+-   Maksymalna liczba przeskoków skonfigurowanych do znalezienia routerów w sieci  
+
+-   Typ odnajdywania, które zostało uruchomione  
+
+Ponieważ funkcja odnajdowania sieci nie tworzy komunikatów powiadamiających o zakończeniu odnajdowania, służy poniższej procedury można zweryfikować, czy odnajdowanie zostało zakończone.  
+
+##### <a name="to-verify-that-network-discovery-has-finished"></a>Aby sprawdzić, czy odnajdywanie sieci zostało zakończone  
+
+1.  W konsoli programu Configuration Manager wybierz **monitorowanie**.  
+
+2.  W **monitorowanie** obszaru roboczego, rozwiń węzeł **stan systemu**, a następnie wybierz pozycję **kwerendy komunikatów o stanie**.  
+
+3.  Wybierz **wszystkie komunikaty o stanie**.  
+
+4.  Na **Home** karcie **kwerendy komunikatów o stanie** grupy, wybierz **Pokaż komunikaty**.  
+
+5.  W **wybierz datę i godzinę** listy rozwijanej, wybierz wartość zawierającą czas przed rozpoczęto odnajdowanie, a następnie wybierz **OK** otworzyć **Podgląd komunikatów o stanie Menedżera konfiguracji**.  
 
     > [!TIP]  
-    >  Também pode utilizar o **especifique a data e hora** opção para selecionar uma determinada data e hora em que executou a deteção. Esta opção é útil quando executou a deteção de rede numa determinada data e pretender obter mensagens apenas dessa data.  
+    >  Można również użyć **Określ datę i godzinę** opcję, aby wybrać daną datę i godzinę uruchomienia odnajdowania. Ta opcja jest przydatne w przypadku uruchomienia odnajdowania sieci danego dnia i chcesz pobierać wiadomości z tylko tej daty.  
 
-6.  Para validar que a deteção de rede foi concluída, procure uma mensagem de estado que tenha os seguintes detalhes:  
+6.  Aby sprawdzić, czy odnajdywanie sieci zostało zakończone, wyszukaj komunikat o stanie zawierający następujące informacje:  
 
-    -   ID da mensagem: **502**  
+    -   Identyfikator komunikatu: **502**  
 
-    -   Componente: **SMS_NETWORK_DISCOVERY**  
+    -   Składnik: **SMS_NETWORK_DISCOVERY**  
 
-    -   Descrição: **Este componente parada**  
+    -   Opis: **Ten składnik został zatrzymany**  
 
-    Se esta mensagem de estado não estiver presente, a deteção de rede não foi concluída.  
+    Jeśli ten komunikat o stanie nie jest obecny, funkcja odnajdywania sieci nie zostało ukończone.  
 
-7.  Para validar quando a deteção de rede iniciado, procure uma mensagem de estado que tenha os seguintes detalhes:  
+7.  Aby sprawdzić, gdy uruchomienie funkcji odnajdowania sieci, wyszukaj komunikat o stanie zawierający następujące informacje:  
 
-    -   ID da mensagem: **500**  
+    -   Identyfikator komunikatu: **500**  
 
-    -   Componente: **SMS_NETWORK_DISCOVERY**  
+    -   Składnik: **SMS_NETWORK_DISCOVERY**  
 
-    -   Descrição: **Este componente foi iniciado**  
+    -   Opis: **Ten składnik został rozpoczęty**  
 
-    Esta informação confirma que a deteção de rede foi iniciada. Se esta informação não estiver presente, reagende a deteção de rede.  
+    Te informacje oznaczają uruchomienie funkcji odnajdowania sieci. Jeśli te informacje nie jest obecny, harmonogram odnajdywania sieci.  

@@ -1,6 +1,6 @@
 ---
-title: "Atualizar e extinguir aplicações | Microsoft Docs"
-description: "Rever, substituir ou desinstalar aplicações implementadas através do System Center Configuration Manager."
+title: Aktualizowanie i wycofywanie aplikacji | Dokumentacja firmy Microsoft
+description: "Popraw, zastępowanie lub Odinstaluj aplikacje wdrożone za pomocą programu System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,24 +17,24 @@ manager: angrobe
 ms.openlocfilehash: 805e04c447747b4d12350b692880dbc005bd7168
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pt-PT
+ms.contentlocale: pl-PL
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="update-and-retire-applications-with-system-center-configuration-manager"></a>Atualizar e extinguir aplicações com o System Center Configuration Manager
+# <a name="update-and-retire-applications-with-system-center-configuration-manager"></a>Aktualizowanie i wycofywanie aplikacji w programie System Center Configuration Manager
 
-*Aplica-se a: O System Center Configuration Manager (ramo atual)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
-É provável que, eventualmente, poderá ser útil efetuar alterações a uma aplicação, desinstalar uma aplicação ou substituir uma aplicação já implementada por uma nova aplicação. System Center Configuration Manager dá-lhe estas capacidades, para o ajudar a atualizar e extinguir aplicações:  
+Istnieje prawdopodobieństwo, że po pewnym czasie można wprowadzać zmian w aplikacji, odinstalowanie aplikacji lub Zastąp już wdrożonej aplikacji przez nową aplikację. System Center Configuration Manager umożliwia skorzystanie z tych funkcji, aby ułatwić aktualizowanie i wycofywanie aplikacji:  
 
--   **Rever aplicações**. Quando fizer alterações a uma aplicação ou um tipo de implementação, o Configuration Manager mantém um histórico de alterações. Pode reverter a aplicação para uma revisão anterior em qualquer altura. Também pode ver as respetivas propriedades, restaurar uma revisão anterior de uma aplicação ou eliminar uma revisão antiga.  
+-   **Stosowanie poprawek aplikacji**. Po wprowadzeniu zmian w aplikacji lub typu wdrożenia programu Configuration Manager przechowuje historię zmian. W dowolnym momencie można przywrócić wcześniejszą wersję aplikacji. Możesz również można wyświetlić jego właściwości, przywrócenie poprzedniej poprawki aplikacji lub usunięcie starej poprawki.  
 
-  Para obter mais informações, consulte [revisões de aplicações](revise-and-supersede-applications.md#application-revisions).  
+  Aby uzyskać więcej informacji, zobacz [wersje aplikacji](revise-and-supersede-applications.md#application-revisions).  
 
--   **Substituir aplicações**. Pode atualizar ou substituir as aplicações existentes utilizando uma relação de substituição. Se substituir uma aplicação, pode especificar um novo tipo de implementação para substituir o tipo de implementação da aplicação substituída. Além disso, pode definir se atualizar ou desinstalar a aplicação substituída antes da aplicação substituta está instalado.  
+-   **Zastępowanie aplikacji**. Można uaktualnić lub zastępowanie istniejących aplikacji przy użyciu relacji zastępowania. Podczas zastępowania aplikacji można określić nowy typ wdrożenia w celu zastąpienia typu wdrożenia zastępowanej aplikacji. Ponadto można określić, że aby uaktualnić lub odinstalować przed aplikacji zastępującej zastępowanej aplikacji jest zainstalowana.  
 
-  Para obter mais informações, consulte [substituição de aplicações](revise-and-supersede-applications.md#application-supersedence).  
+  Aby uzyskać więcej informacji, zobacz [zastępowania aplikacji](revise-and-supersede-applications.md#application-supersedence).  
 
--   **Desinstalar aplicações**. Gestor de configuração facilita a desinstalação de uma aplicação fácil. Isto pode ser conseguido de forma silenciosa, sem qualquer intervenção do utilizador do dispositivo ou aplicação.  
+-   **Odinstalowywanie aplikacji**. Menedżer konfiguracji umożliwia łatwe odinstalowywanie aplikacji. Można to zrobić w trybie dyskretnym, bez żadnej interwencji z aplikacji lub użytkownika urządzenia.  
 
-  Para obter mais informações, consulte [desinstalar aplicações](uninstall-applications.md).  
+  Aby uzyskać więcej informacji, zobacz [odinstalowania aplikacji](uninstall-applications.md).  

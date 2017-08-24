@@ -1,6 +1,6 @@
 ---
-title: "Fluxograma - replicação Update | Microsoft Docs"
-description: "Consulte o processo pelo qual uma atualização na consola que optar por instalar são replicados para sites adicionais."
+title: "Schemat blokowy — aktualizacja replikacji | Dokumentacja firmy Microsoft"
+description: "Zobacz proces, za pomocą którego wybranych do zainstalowania aktualizacji w konsoli są replikowane do lokacji dodatkowej."
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
@@ -17,13 +17,13 @@ manager: angrobe
 ms.openlocfilehash: cefde9fa6894e39715257f0453ccfe160a55919e
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pt-PT
+ms.contentlocale: pl-PL
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="flowchart---update-replication-for-system-center-configuration-manager"></a>Fluxograma - Replicação de atualizações para o System Center Configuration Manager
+# <a name="flowchart---update-replication-for-system-center-configuration-manager"></a>Schemat blokowy — replikacja aktualizacji programu System Center Configuration Manager
 
-*Aplica-se a: O System Center Configuration Manager (ramo atual)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Estes fluxos de dados apresentam o processo pelo qual uma atualização na consola que optar por instalar são replicados para sites adicionais. Estes fluxos também apresentam o processo de extrair a atualização para executar verificações de pré-requisitos e instalar as atualizações num site de administração central e em sites primários.  
+Przepływy danych wyświetlić proces, za pomocą którego wybranych do zainstalowania aktualizacji w konsoli są replikowane do lokacji dodatkowej. Te przepływy są także wyświetlane proces wyodrębniania aktualizacji, uruchom sprawdzanie wymagań wstępnych i zainstalować aktualizacje w centralnej lokacji administracyjnej i w lokacjach głównych.  
 
- ![Fluxograma - replicar atualizações](media/Flowchart---Replicate-updates.png)  
+ ![Schemat blokowy — replikowania aktualizacji](media/Flowchart---Replicate-updates.png)  

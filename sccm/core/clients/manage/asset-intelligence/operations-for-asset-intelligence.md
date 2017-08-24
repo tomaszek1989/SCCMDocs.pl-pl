@@ -1,6 +1,6 @@
 ---
-title: Utilizar o Asset Intelligence | Microsoft Docs
-description: Realizar tarefas comuns de Asset Intelligence no System Center Configuration Manager.
+title: "Użyj analizy zasobów | Dokumentacja firmy Microsoft"
+description: "Wykonywać typowe zadania analizy zasobów w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 2/22/2017
 ms.prod: configuration-manager
@@ -18,320 +18,320 @@ manager: angrobe
 ms.openlocfilehash: 17168e26f13340847928f6e3623115cd4b55997b
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pt-PT
+ms.contentlocale: pl-PL
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="how-to-use-asset-intelligence-in-system-center-configuration-manager"></a>Como utilizar o Asset Intelligence no System Center Configuration Manager
+# <a name="how-to-use-asset-intelligence-in-system-center-configuration-manager"></a>Jak używać analizy zasobów w programie System Center Configuration Manager
 
-*Aplica-se a: O System Center Configuration Manager (ramo atual)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Este tópico contém informações para ajudar a gerir as tarefas comuns do Asset Intelligence na sua hierarquia do System Center Configuration Manager:  
+Ten temat zawiera informacje ułatwiające zarządzanie typowych zadań analizy zasobów w hierarchii programu System Center Configuration Manager:  
 
-##  <a name="BKMK_ViewInformation"></a> Ver informações do Asset Intelligence  
- Pode ver informações do Asset Intelligence na home page do **Asset Intelligence** e nos relatórios do Asset Intelligence.  
+##  <a name="BKMK_ViewInformation"></a> Wyświetlanie informacji o analizie zasobów  
+ Informacje dotyczące analizy zasobów możesz wyświetlać na stronie głównej **Analiza zasobów** oraz w raportach analizy zasobów.  
 
-###  <a name="BKMK_AssetIntelligenceHomePage"></a> Home page do Asset Intelligence  
- A home page do **Asset Intelligence** apresenta um dashboard de resumo de informações do catálogo do Asset Intelligence. Na home page, pode ver informações sobre a sincronização do catálogo e o estado do software inventariado. A home page do **Asset Intelligence** está dividida nas secções seguintes:  
+###  <a name="BKMK_AssetIntelligenceHomePage"></a> Strona główna Analiza zasobów  
+ Na stronie głównej **Analiza zasobów** jest wyświetlany pulpit nawigacyjny podsumowania zawierający informacje o katalogu analizy zasobów. Na stronie głównej możesz wyświetlać informacje o synchronizacji katalogu i stanie spisanego oprogramowania. Strona główna **Analiza zasobów** jest podzielona na następujące sekcje:  
 
--   **Sincronização do catálogo**: Fornece informações sobre se o Asset Intelligence está ativado, o estado atual do ponto de sincronização do Asset Intelligence, a agenda de sincronização, se a declaração de licença de cliente é importada, quando o estado da última foi atualizado e a hora para a próxima atualização agendada e o número de alterações que ocorreram após o sistema de sites do ponto de sincronização do Asset Intelligence foi instalado.  
+-   **Synchronizacja katalogu**: Informacje na temat tego, czy analiza zasobów jest włączona, bieżący stan punktu synchronizacji analizy zasobów, harmonogramie synchronizacji, czy zestawienie licencji klienta jest zaimportowane, ostatniej aktualizacji stanu i podczas następnej zaplanowanej aktualizacji oraz liczbę zmian, które wystąpiły po zainstalowaniu systemu lokacji punktu synchronizacji analizy zasobów.  
 
     > [!NOTE]  
-    >  A secção de sincronização do catálogo do Asset Intelligence da home page do **Asset Intelligence** só é apresentada se tiver sido instalada uma função de sistema de sites do ponto de sincronização do Asset Intelligence.  
+    >  Sekcja synchronizacji katalogu analizy zasobów jest wyświetlana na stronie **Analiza zasobów** tylko wtedy, gdy zainstalowano rolę systemu lokacji punktu synchronizacji analizy zasobów.  
 
--   **Estado de Software inventariado**: Fornece a contagem e a percentagem de software inventariado, categorias de software e famílias de software que são identificadas pela Microsoft, identificada por um utilizador administrativo, com identificação online pendente ou não identificadas e não pendentes. As informações apresentadas em formato de tabela mostram a contagem de cada uma, enquanto as informações apresentadas no gráfico mostram a percentagem de cada uma.  
+-   **Stan spisanego oprogramowania**: Zawiera ilość i odsetek spisanego oprogramowania, kategorie oprogramowania i rodziny oprogramowania, które są identyfikowane przez firmę Microsoft, zidentyfikowane przez użytkownika administracyjnego, będące w toku identyfikacji online lub niezidentyfikowane i nieoczekujące. Informacje wyświetlane w formacie tabeli zawierają liczbę elementów w każdej kategorii, natomiast informacje wyświetlane na wykresie przedstawiają odsetek dla każdej z nich.  
 
- Utilize o procedimento seguinte para ver informações do Asset Intelligence na home page do **Asset Intelligence** .  
+ Poniższa procedura umożliwia wyświetlenie informacji dotyczących analizy zasobów na stronie głównej **Analiza zasobów** .  
 
-##### <a name="to-view-asset-intelligence-information-on-the-asset-intelligence-home-page"></a>Para ver informações do Asset Intelligence na home page do Asset Intelligence  
+##### <a name="to-view-asset-intelligence-information-on-the-asset-intelligence-home-page"></a>Aby wyświetlić informacje dotyczące analizy zasobów na stronie głównej Analiza zasobów  
 
-1.  Na consola do Configuration Manager, clique em **Ativos e Compatibilidade**.  
+1.  W konsoli programu Configuration Manager kliknij przycisk **Zasoby i zgodność**.  
 
-2.  Na área de trabalho **Ativos e Compatibilidade** , clique em **Asset Intelligence**. Os relatórios do Asset Intelligence são apresentados.  
+2.  W obszarze roboczym **Zasoby i zgodność** kliknij pozycję **Analiza zasobów**. Zostaną wyświetlone raporty analizy zasobów.  
 
-###  <a name="BKMK_AssetIntelligenceReports"></a> Relatórios do Asset Intelligence  
- Existem mais de 60 relatórios do Asset Intelligence que apresentam as informações recolhidas pelo Asset Intelligence. Muitos destes relatórios incluem uma ligação para relatórios mais específicos nos quais pode consultar informações gerais e desagregar para obter informações mais detalhadas. Relatórios do Asset Intelligence estão localizados na consola do Configuration Manager, no **monitorização** área de trabalho, sob o **relatórios** nó. Os relatórios fornecem informações sobre hardware, gestão de licenças e software. Para obter mais informações sobre os relatórios no Configuration Manager, consulte [relatórios no System Center Configuration Manager](../../../../core/servers/manage/reporting.md).  
+###  <a name="BKMK_AssetIntelligenceReports"></a> Raporty analizy zasobów  
+ Istnieje ponad 60 raportów analizy zasobów, które przedstawiają informacje zebrane w ramach analizy zasobów. Wiele z tych raportów łączy się z bardziej szczegółowymi raportami, w których możesz znaleźć ogólne informacje, a następnie przejść do informacji bardziej szczegółowych. Raporty analizy zasobów znajdują się w konsoli programu Configuration Manager w **monitorowanie** obszaru roboczego, w obszarze **raportowania** węzła. Raporty zapewniają informacje dotyczące sprzętu, zarządzania licencjami oraz oprogramowania. Aby uzyskać więcej informacji o raportach w programie Configuration Manager, zobacz [raportowania w programie System Center Configuration Manager](../../../../core/servers/manage/reporting.md).  
 
 > [!NOTE]  
->  A precisão das quantidades de títulos de software instalado e das informações de licença apresentadas nos relatórios do Asset Intelligence podem variar em relação ao número real de títulos de software instalados ou de licenças em utilização no ambiente devido às complexas dependências e limitações envolvidas no inventário de informações de licença de software para títulos de software instalado em ambientes empresariais. Os relatórios do Asset Intelligence não devem ser utilizados como única fonte para determinar o cumprimento das licenças de software adquiridas.  
+>  Informacje o liczbach i licencjach zainstalowanych tytułów oprogramowania wyświetlane w raportach analizy zasobów mogą się różnić od rzeczywistej liczby zainstalowanych tytułów oprogramowania lub licencji używanych w środowisku z powodu złożonych zależności i ograniczeń występujących podczas tworzenia spisu informacji o licencjach dla tytułów oprogramowania zainstalowanych w środowiskach przedsiębiorstw. Raportów analizy zasobów nie należy używać jako jedynego źródła informacji podczas określania zgodności zakupionych licencji na oprogramowanie.  
 
- Utilize o procedimento seguinte para ver informações do Asset Intelligence, utilizando relatórios do Asset Intelligence.  
+ Poniższa procedura umożliwia wyświetlenie informacji dotyczących analizy zasobów za pomocą raportów analizy zasobów.  
 
-##### <a name="to-view-collected-asset-intelligence-information-by-using-asset-intelligence-reports"></a>Para ver informações do Asset Intelligence recolhidas através de relatórios do Asset Intelligence  
+##### <a name="to-view-collected-asset-intelligence-information-by-using-asset-intelligence-reports"></a>Aby wyświetlić zebrane informacje dotyczące analizy zasobów za pomocą raportów analizy zasobów  
 
-1.  Na consola do Configuration Manager, clique em **monitorização**.  
+1.  W konsoli programu Configuration Manager kliknij **monitorowanie**.  
 
-2.  Na área de trabalho **Monitorização** , expanda **A relatar**, expanda **Relatórios**e clique em **Asset Intelligence**. Os relatórios do Asset Intelligence são apresentados.  
+2.  W obszarze roboczym **Monitorowanie** rozwiń węzeł **Raportowanie**i węzeł **Raporty**, a następnie kliknij pozycję **Analiza zasobów**. Zostaną wyświetlone raporty analizy zasobów.  
 
     > [!WARNING]  
-    >  Se não existirem pastas de relatórios no nó **Relatórios** , verifique se configurou os relatórios. Para obter mais informações, consulte [configurar relatórios no System Center Configuration Manager](../../../../core/servers/manage/configuring-reporting.md).  
+    >  Jeśli w węźle **Raporty** nie istnieją żadne foldery raportów, sprawdź, czy skonfigurowano raportowanie. Aby uzyskać więcej informacji, zobacz [konfigurowanie raportowania w programie System Center Configuration Manager](../../../../core/servers/manage/configuring-reporting.md).  
 
-3.  Selecione o relatório do Asset Intelligence que pretende executar e, em seguida, no separador **Home Page** , no grupo **Grupo de Relatórios** , clique em **Executar**.  
+3.  Wybierz raport analizy zasobów, który chcesz uruchomić, a następnie na karcie **Narzędzia główne** w grupie **Grupa raportów** kliknij polecenie **Uruchom**.  
 
-##  <a name="BKMK_SynchronizeTheCatalog"></a> Sincronizar o catálogo do Asset Intelligence  
- Pode sincronizar o catálogo do Asset Intelligence local com o System Center Online para obter a categorização mais recente de títulos de software. Quando solicitar manualmente a sincronização do catálogo com o System Center Online, pode demorar 15 minutos ou mais a concluir o processo de sincronização com o System Center Online. Atualizações do Configuration Manager a **última atualização bem sucedida** definição o **do Asset Intelligence** home page com a hora atual para quando sincronização for concluída com êxito.  
+##  <a name="BKMK_SynchronizeTheCatalog"></a> Synchronizacja katalogu analizy zasobów  
+ Możesz zsynchronizować lokalny katalog analizy zasobów z programem System Center Online, aby pobrać najnowszą kategoryzację tytułów oprogramowania. W przypadku ręcznego zażądania synchronizacji katalogu z programem System Center Online wykonanie procesu synchronizacji z programem System Center Online może zająć 15 minut lub dłużej. Aktualizacje programu Configuration Manager **Ostatnia pomyślna aktualizacja** ustawienie **analizy zasobów** strony głównej przy użyciu bieżącego czasu po pomyślnym zakończeniu synchronizacji.  
 
 > [!NOTE]  
->  Uma função de sistema de sites do ponto de sincronização do Asset Intelligence tem de ser instalada primeiro através dos procedimentos. Para obter informações sobre como instalar um ponto de sincronização do Asset Intelligence, consulte [configurar do Asset Intelligence no System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md).  
+>  Przed użyciem procedur należy zainstalować rolę systemu lokacji punktu synchronizacji analizy zasobów. Aby uzyskać informacje o instalowaniu punktu synchronizacji analizy zasobów, zobacz [Konfigurowanie analizy zasobów w programie System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/configuring-asset-intelligence.md).  
 
- Utilize o procedimento seguinte para criar um agendamento de sincronização para o catálogo do Asset Intelligence.  
+ Poniższa procedura umożliwia utworzenie harmonogramu synchronizacji katalogu analizy zasobów.  
 
-#### <a name="to-create-a-synchronization-schedule-for-the-asset-intelligence-catalog"></a>Para criar um agendamento de sincronização para o catálogo do Asset Intelligence  
+#### <a name="to-create-a-synchronization-schedule-for-the-asset-intelligence-catalog"></a>Aby utworzyć harmonogram synchronizacji katalogu analizy zasobów  
 
-1.  Na consola do Configuration Manager, clique em **Ativos e Compatibilidade**.  
+1.  W konsoli programu Configuration Manager kliknij przycisk **Zasoby i zgodność**.  
 
-2.  Na área de trabalho **Ativos e Compatibilidade** , clique em **Asset Intelligence**.  
+2.  W obszarze roboczym **Zasoby i zgodność** kliknij pozycję **Analiza zasobów**.  
 
-3.  No separador **Home Page** , no grupo **Criar** , clique em **Sincronizar**e, em seguida, clique em **Agendar Sincronização**.  
+3.  Na karcie **Narzędzia główne** w grupie **Tworzenie** kliknij polecenie **Synchronizuj**, a następnie kliknij pozycję **Synchronizacja według harmonogramu**.  
 
-4.  Na caixa de diálogo **Agendamento do Ponto de Sincronização do Asset Intelligence** , selecione **Ativar sincronização num agendamento**e configure um agendamento simples ou personalizado.  
+4.  W oknie dialogowym **Harmonogram punktu synchronizacji analizy zasobów** wybierz polecenie **Włącz synchronizację według harmonogramu**, a następnie skonfiguruj harmonogram prosty lub niestandardowy.  
 
-5.  Clique em **OK** para guardar as alterações.  
+5.  Kliknij przycisk **OK** , aby zapisać zmiany.  
 
     > [!NOTE]  
-    >  Para obter informações sobre o agendamento da sincronização, incluindo a próxima sincronização agendada, consulte o nó **Asset Intelligence** na área de trabalho **Ativos e Compatibilidade** , no site de nível superior da hierarquia.  
+    >  Informacje o harmonogramie synchronizacji, w tym o następnej zaplanowanej synchronizacji, zawiera węzeł **Analiza zasobów** w obszarze roboczym **Zasoby i zgodność** lokacji najwyższego poziomu w hierarchii.  
 
- Utilize o procedimento seguinte para sincronizar manualmente o catálogo do Asset Intelligence.  
+ Poniższa procedura umożliwia ręczne zsynchronizowanie katalogu analizy zasobów.  
 
 > [!WARNING]  
->  O System Center Online só aceita um pedido de sincronização manual num período de 12 horas.  
+>  Program System Center Online akceptuje tylko jedno żądanie ręcznej synchronizacji w okresie 12-godzinnym.  
 
-###  <a name="BKMK_ManuallySynchronizeCatalog"></a> Para sincronizar manualmente o catálogo do Asset Intelligence  
+###  <a name="BKMK_ManuallySynchronizeCatalog"></a> Aby ręcznie zsynchronizować katalog analizy zasobów  
 
-1.  Na consola do Configuration Manager, clique em **Ativos e Compatibilidade**.  
+1.  W konsoli programu Configuration Manager kliknij przycisk **Zasoby i zgodność**.  
 
-2.  Na área de trabalho **Ativos e Compatibilidade** , clique em **Asset Intelligence**.  
+2.  W obszarze roboczym **Zasoby i zgodność** kliknij pozycję **Analiza zasobów**.  
 
-3.  No separador **Home Page** , no grupo **Criar** , clique em **Sincronizar**, clique em **Sincronizar Catálogo do Asset Intelligence**e, em seguida, clique em **OK**.  
+3.  Na karcie **Narzędzia główne** w grupie **Tworzenie** kliknij polecenie **Synchronizuj**, kliknij pozycję **Synchronizuj katalog analizy zasobów**, a następnie kliknij przycisk **OK**.  
 
-##  <a name="BKMK_CustomizeCatalog"></a> Personalizar o catálogo do Asset Intelligence  
- As informações de categorização do catálogo do Asset Intelligence recebidas do System Center Online são armazenadas na base de dados do site com permissões só de leitura e não podem ser modificadas nem eliminadas. No entanto, pode criar, modificar e eliminar categorias de software personalizadas, famílias de software, etiquetas de software e informações do catálogo de requisitos de hardware. Em seguida, pode utilizar os dados de categorização personalizada em vez das informações fornecidas pelo System Center Online para informações sobre títulos de software existentes ou definidas pelo utilizador. Quando alterar ou adicionar informações de categorização, as informações do catálogo são consideradas definidas pelo utilizador. As informações de categorização definidas pelo utilizador são armazenadas em tabelas de base de dados diferentes do que as informações do catálogo validadas.  
+##  <a name="BKMK_CustomizeCatalog"></a> Dostosowywanie katalogu analizy zasobów  
+ Informacje o kategoryzacji katalogu analizy zasobów odebrane z programu System Center Online są przechowywane w bazie danych lokacji z uprawnieniami tylko do odczytu. Nie można ich modyfikować ani usuwać. Możesz jednak tworzyć, modyfikować i usuwać niestandardowe kategorie oprogramowania, rodziny oprogramowania, etykiety oprogramowania i informacje katalogu wymagań dotyczących sprzętu. Następnie możesz używać niestandardowych danych kategoryzacji zamiast informacji dostarczonych przez program System Center Online na potrzeby informacji o istniejących lub zdefiniowanych przez użytkownika tytułach oprogramowania. Po zmianie lub dodaniu informacji o kategoryzacji informacje katalogu są uznawane za zdefiniowane przez użytkownika. Informacje o kategoryzacji zdefiniowane przez użytkownika są przechowywane w innych tabelach bazy danych niż zweryfikowane informacje katalogu.  
 
-###  <a name="BKMK_SoftwareCategories"></a> Categorias de software  
- As categorias de software do Asset Intelligence são utilizadas para categorizar amplamente títulos de software inventariado e são também utilizadas como agrupamentos de alto nível de famílias de software mais específicas. Por exemplo, uma categoria de software poderá ser empresas de energia e uma família de software dentro dessa categoria de software poderá ser petróleo e gás ou hidroelétrica. Muitas categorias de software estão predefinidas no catálogo do Asset Intelligence e outras categorias definidas pelo utilizador podem ser criadas para definir mais pormenorizadamente o software inventariado. O estado de validação para todas as categorias predefinidas de software é sempre **Validado**, enquanto as informações de categorias personalizadas de software adicionadas ao catálogo do Asset Intelligence são **Definidas pelo Utilizador**.  
+###  <a name="BKMK_SoftwareCategories"></a> Kategorie oprogramowania  
+ Kategorie oprogramowania analizy zasobów służą do ogólnego kategoryzowania spisanych tytułów oprogramowania i są również używane jako ogólne grupy dla bardziej konkretnych rodzin oprogramowania. Na przykład kategorią oprogramowania mogą być firmy z branży elektroenergetycznej, a rodziną oprogramowania w ramach tej kategorii oprogramowania — ropa naftowa i gaz lub elektrownie wodne. Wiele kategorii oprogramowania jest wstępnie zdefiniowanych w katalogu analizy zasobów, a użytkownik może utworzyć dodatkowe kategorie, aby lepiej zdefiniować spisane oprogramowanie. Stan sprawdzania poprawności dla wszystkich wstępnie zdefiniowanych kategorii oprogramowania to zawsze **Zweryfikowane**, a informacje o niestandardowych kategoriach oprogramowania dodane do katalogu analizy zasobów mają stan **Zdefiniowane przez użytkownika**.  
 
- Utilize o procedimento seguinte para criar uma categoria de software definida pelo utilizador.  
+ Poniższa procedura umożliwia utworzenie zdefiniowanej przez użytkownika kategorii oprogramowania.  
 
-##### <a name="to-create-a-user-defined-software-category"></a>Para criar uma categoria de software definida pelo utilizador  
+##### <a name="to-create-a-user-defined-software-category"></a>Aby utworzyć zdefiniowaną przez użytkownika kategorię oprogramowania  
 
-1.  Na consola do Configuration Manager, clique em **Ativos e Compatibilidade**.  
+1.  W konsoli programu Configuration Manager kliknij przycisk **Zasoby i zgodność**.  
 
-2.  Na área de trabalho **Ativos e Compatibilidade** , clique em **Asset Intelligence**e, em seguida, clique em **Catálogo**.  
+2.  W obszarze roboczym **Zasoby i zgodność** kliknij pozycję **Analiza zasobów**, a następnie kliknij pozycję **Katalog**.  
 
-3.  No separador **Home Page** , no grupo **Criar** , clique em **Criar Categoria de Software**.  
+3.  Na karcie **Narzędzia główne** w grupie **Tworzenie** kliknij polecenie **Utwórz kategorię oprogramowania**.  
 
-4.  Na página **Geral** , introduza um nome para a nova categoria de software e, opcionalmente, uma descrição.  
-
-    > [!NOTE]  
-    >  O estado de validação para todas as novas categorias personalizadas de software está sempre definido como **Definido pelo Utilizador**.  
-
-     Clique em **Seguinte**.  
-
-5.  Na página **Resumo** , reveja as definições e clique em **Seguinte**.  
-
-6.  Na página **Conclusão** , clique em **Fechar** para sair do assistente.  
-
-###  <a name="BKMK_SoftwareFamilies"></a> Famílias de software  
- As famílias de software do Asset Intelligence são utilizadas para definir mais pormenorizadamente os títulos de software inventariado dentro de categorias de software. Por exemplo, uma categoria de software poderá ser empresas de energia e uma família de software dentro dessa categoria de software poderá ser petróleo e gás ou hidroelétrica. Muitas famílias de software estão predefinidas no catálogo do Asset Intelligence e outras famílias definidas pelo utilizador podem ser criadas para definir mais pormenorizadamente o software inventariado. O estado de validação para todas as famílias predefinidas de software é sempre **Validado**, enquanto o estado das informações de famílias personalizadas de software adicionadas ao catálogo do Asset Intelligence é **Definido pelo Utilizador**.  
-
- Utilize o procedimento seguinte para criar uma família de software definida pelo utilizador.  
-
-##### <a name="to-create-a-user-defined-software-family"></a>Para criar uma família de software definida pelo utilizador  
-
-1.  Na consola do Configuration Manager, clique em **Ativos e Compatibilidade**.  
-
-2.  Na área de trabalho **Ativos e Compatibilidade** , clique em **Asset Intelligence**e, em seguida, clique em **Catálogo**.  
-
-3.  No separador **Home Page** , no grupo **Criar** , clique em **Criar Família de Software**.  
-
-4.  Na página **Geral** , introduza um nome para a nova família de software e, opcionalmente, uma descrição.  
+4.  Na stronie **Ogólne** wprowadź nazwę nowej kategorii oprogramowania i, opcjonalnie, opis.  
 
     > [!NOTE]  
-    >  O estado de validação para todas as novas famílias personalizadas de software está sempre definido como **Definido pelo Utilizador**.  
+    >  Stan sprawdzania poprawności dla wszystkich nowych niestandardowych kategorii oprogramowania ma zawsze wartość **Zdefiniowane przez użytkownika**.  
 
-5.  Na página **Resumo** , reveja as definições e clique em **Seguinte**.  
+     Kliknij przycisk **Dalej**.  
 
-6.  Na página **Conclusão** , clique em **Fechar** para sair do assistente.  
+5.  Sprawdź ustawienia na stronie **Podsumowanie** , a następnie kliknij przycisk **Dalej**.  
 
-###  <a name="BKMK_SoftwareLabels"></a> Etiquetas de software  
- As etiquetas personalizadas de software do Asset Intelligence permitem criar filtros que poderá utilizar para agrupar títulos de software e visualizá-los através de relatórios do Asset Intelligence. Por exemplo, pode criar uma etiqueta de software denominada shareware, associá-la a um número de aplicações e, em seguida, executar um relatório que mostre todos os títulos com a etiqueta de software «shareware». O estado de validação é **Definido pelo Utilizador** para todas as etiquetas personalizadas de software que adiciona ao catálogo do Asset Intelligence.  
+6.  Aby zamknąć kreatora, kliknij na stronie **Ukończenie** przycisk **Zamknij** .  
 
- Utilize o procedimento seguinte para criar uma etiqueta personalizada definida pelo utilizador.  
+###  <a name="BKMK_SoftwareFamilies"></a> Rodziny oprogramowania  
+ Rodziny oprogramowania analizy zasobów są używane do dokładniejszego definiowania spisanych tytułów oprogramowania w ramach kategorii oprogramowania. Na przykład kategorią oprogramowania mogą być firmy z branży elektroenergetycznej, a rodziną oprogramowania w ramach tej kategorii oprogramowania — ropa naftowa i gaz lub elektrownie wodne. Wiele rodzin oprogramowania jest wstępnie zdefiniowanych w katalogu analizy zasobów, a użytkownik może utworzyć dodatkowe rodziny, aby zdefiniować spisane oprogramowanie. Stan sprawdzania poprawności dla wszystkich wstępnie zdefiniowanych rodzin oprogramowania to zawsze **Zweryfikowane**, a informacje o niestandardowych rodzinach oprogramowania dodane do katalogu analizy zasobów mają stan **Zdefiniowane przez użytkownika**.  
 
-##### <a name="to-create-a-user-defined-software-label"></a>Para criar uma etiqueta de software definida pelo utilizador  
+ Poniższa procedura umożliwia utworzenie zdefiniowanej przez użytkownika rodziny oprogramowania.  
 
-1.  Na consola do Configuration Manager, clique em **Ativos e Compatibilidade**.  
+##### <a name="to-create-a-user-defined-software-family"></a>Aby utworzyć zdefiniowaną przez użytkownika rodzinę oprogramowania  
 
-2.  Na área de trabalho **Ativos e Compatibilidade** , clique em **Asset Intelligence**e, em seguida, clique em **Catálogo**.  
+1.  W konsoli programu Configuration Manager kliknij przycisk **Zasoby i zgodność**.  
 
-3.  No separador **Home Page** , no grupo **Criar** , clique em **Criar Etiqueta de Software**.  
+2.  W obszarze roboczym **Zasoby i zgodność** kliknij pozycję **Analiza zasobów**, a następnie kliknij pozycję **Katalog**.  
 
-4.  Na página **Geral** , introduza um nome para a nova família de software e, opcionalmente, uma descrição.  
+3.  Na karcie **Narzędzia główne** w grupie **Tworzenie** kliknij polecenie **Utwórz rodzinę oprogramowania**.  
+
+4.  Na stronie **Ogólne** wprowadź nazwę nowej rodziny oprogramowania i, opcjonalnie, opis.  
 
     > [!NOTE]  
-    >  O estado de validação para todas as novas etiquetas personalizadas de software está sempre definido como **Definido pelo Utilizador**.  
+    >  Stan sprawdzania poprawności dla wszystkich nowych niestandardowych rodzin oprogramowania ma zawsze wartość **Zdefiniowane przez użytkownika**.  
 
-5.  Na página **Resumo** , reveja as definições e clique em **Seguinte**.  
+5.  Sprawdź ustawienia na stronie **Podsumowanie** , a następnie kliknij przycisk **Dalej**.  
 
-6.  Na página **Conclusão** , clique em **Fechar** para sair do assistente.  
+6.  Aby zamknąć kreatora, kliknij na stronie **Ukończenie** przycisk **Zamknij** .  
 
-###  <a name="BKMK_HardwareRequirements"></a> Requisitos de hardware  
- As informações de requisitos de hardware podem ajudar a verificar se os computadores cumprem os requisitos de hardware para títulos de software antes de terem como destino implementações de software. Muitos requisitos de hardware estão predefinidos no catálogo do Asset Intelligence e poderá criar novas informações de requisitos de hardware definidos pelo utilizador para satisfazer requisitos personalizados. O estado de validação para todos os requisitos de hardware predefinidos é sempre **Validado**, enquanto o estado das informações de requisitos de hardware definidos pelo utilizador adicionados ao catálogo do Asset Intelligence é **Definido pelo Utilizador**.  
+###  <a name="BKMK_SoftwareLabels"></a> Etykiety oprogramowania  
+ Niestandardowe etykiety oprogramowania analizy zasobów pozwalają tworzyć filtry służące do grupowania tytułów oprogramowania i wyświetlania ich w raportach analizy zasobów. Możesz na przykład utworzyć etykietę oprogramowania o nazwie „shareware”, skojarzyć ją z kilkoma aplikacjami, a następnie uruchomić raport pokazujący wszystkie tytuły z etykietą oprogramowania „shareware”. Stan sprawdzania poprawności dla wszystkich niestandardowych etykiet oprogramowania dodanych do katalogu analizy zasobów to **Zdefiniowane przez użytkownika** .  
+
+ Poniższa procedura umożliwia utworzenie zdefiniowanej przez użytkownika etykiety niestandardowej.  
+
+##### <a name="to-create-a-user-defined-software-label"></a>Aby utworzyć zdefiniowaną przez użytkownika etykietę oprogramowania  
+
+1.  W konsoli programu Configuration Manager kliknij przycisk **Zasoby i zgodność**.  
+
+2.  W obszarze roboczym **Zasoby i zgodność** kliknij pozycję **Analiza zasobów**, a następnie kliknij pozycję **Katalog**.  
+
+3.  Na karcie **Narzędzia główne** w grupie **Tworzenie** kliknij polecenie **Utwórz etykietę oprogramowania**.  
+
+4.  Na stronie **Ogólne** wprowadź nazwę nowej rodziny oprogramowania i, opcjonalnie, opis.  
+
+    > [!NOTE]  
+    >  Stan sprawdzania poprawności dla wszystkich nowych niestandardowych etykiet oprogramowania ma zawsze wartość **Zdefiniowane przez użytkownika**.  
+
+5.  Sprawdź ustawienia na stronie **Podsumowanie** , a następnie kliknij przycisk **Dalej**.  
+
+6.  Aby zamknąć kreatora, kliknij na stronie **Ukończenie** przycisk **Zamknij** .  
+
+###  <a name="BKMK_HardwareRequirements"></a> Wymagania sprzętowe  
+ Informacje o wymaganiach sprzętowych mogą pomóc w sprawdzeniu, czy komputery spełniają wymagania sprzętowe tytułów oprogramowania zanim zostaną wyznaczone w celu wdrożenia oprogramowania. Wiele wymagań sprzętowych jest wstępnie zdefiniowanych w katalogu analizy zasobów, a użytkownik może utworzyć dodatkowe informacje o wymaganiach sprzętowych, aby spełnić wymagania niestandardowe. Stan sprawdzania poprawności dla wszystkich wstępnie zdefiniowanych wymagań sprzętowych to zawsze **Zweryfikowane**, a zdefiniowane przez użytkownika informacje o wymaganiach sprzętowych dodane do katalogu analizy zasobów mają stan **Zdefiniowane przez użytkownika**.  
 
 > [!IMPORTANT]  
->  Os requisitos de hardware apresentados na consola do Configuration Manager são obtidos a partir do catálogo do Asset Intelligence no computador local e não se baseiam em informações de títulos de software inventariado de clientes do System Center 2012 Configuration Manager. As informações de requisitos de hardware não são atualizadas como parte do processo de sincronização com o System Center Online. Pode criar requisitos de hardware definidos pelo utilizador para software inventariado, que não tenham requisitos de hardware associados.  
+>  Wymagania sprzętowe wyświetlane w konsoli programu Configuration Manager są pobierane z katalogu analizy zasobów na komputerze lokalnym i nie są oparte na informacjach dotyczących tytułów oprogramowania spisanych z klientów programu System Center 2012 Configuration Manager. Informacje dotyczące wymagań sprzętowych nie są aktualizowane w ramach procesu synchronizacji z usługą System Center Online. Możesz utworzyć zdefiniowane przez użytkownika wymagania sprzętowe dla spisanego oprogramowania, które nie ma skojarzonych wymagań sprzętowych.  
 
- Utilize o procedimento seguinte para criar um requisito de hardware definido pelo utilizador.  
+ Poniższa procedura umożliwia utworzenie zdefiniowanych przez użytkownika wymagań sprzętowych.  
 
-##### <a name="to-create-a-user-defined-hardware-requirements"></a>Para criar um requisito de hardware definido pelo utilizador  
+##### <a name="to-create-a-user-defined-hardware-requirements"></a>Aby utworzyć wymagania sprzętowe zdefiniowane przez użytkownika  
 
-1.  Na consola do Configuration Manager, clique em **Ativos e Compatibilidade**.  
+1.  W konsoli programu Configuration Manager kliknij przycisk **Zasoby i zgodność**.  
 
-2.  Na área de trabalho **Ativos e Compatibilidade** , clique em **Asset Intelligence**e, em seguida, clique em **Requisitos de Hardware**.  
+2.  W obszarze roboczym **Zasoby i zgodność** kliknij pozycję **Analiza zasobów**, a następnie kliknij pozycję **Wymagania sprzętowe**.  
 
-3.  No separador **Home Page** , no grupo **Criar** , clique em **Criar Requisitos de Hardware**.  
+3.  Na karcie **Narzędzia główne** w grupie **Tworzenie** kliknij polecenie **Utwórz wymagania sprzętowe**.  
 
-4.  Na página **Geral** , introduza as seguintes informações:  
+4.  Na stronie **Ogólne** podaj następujące informacje:  
 
-    1.  **Título de software**: Especifica o título de software para os quais os requisitos de hardware estão associados. O título de software não pode existir já no catálogo do Asset Intelligence.  
+    1.  **Tytuł oprogramowania**: Określa tytuł oprogramowania, dla której są skojarzone wymagania sprzętowe. Tytuł oprogramowania nie może istnieć w katalogu analizy zasobów.  
 
-    2.  **Estado de validação**: Apresenta o estado de validação como **definido pelo utilizador** para os requisitos de hardware. Não é possível modificar esta definição.  
+    2.  **Stan sprawdzania poprawności**: Wyświetla stan sprawdzania poprawności jako **zdefiniowane przez użytkownika** wymagań sprzętowych. Nie można modyfikować tego ustawienia.  
 
-    3.  **Mínima da CPU (MHz)**: Especifica a velocidade mínima do processador, em megahertz (MHz), necessária para o título de software.  
+    3.  **Minimalna szybkość CPU (MHz)**: Określa minimalną szybkość procesora w megahercach (MHz) wymaganą przez tytuł oprogramowania.  
 
-    4.  **RAM mínima (KB)**: Especifica a RAM mínima, em quilobytes (KB), necessárias para o título de software.  
+    4.  **Minimalna ilość pamięci RAM (KB)**: Określa minimalną ilość pamięci RAM w kilobajtach (KB) wymaganą przez tytuł oprogramowania.  
 
-    5.  **Espaço mínimo em disco (KB)**: Especifica o espaço mínimo livre em disco, em KB, necessário ao título de software.  
+    5.  **Minimalna ilość miejsca (KB)**: Określa minimalną ilość wolnego miejsca, w artykule bazy wiedzy wymaganą przez tytuł oprogramowania.  
 
-    6.  **Tamanho mínimo do disco (KB)**: Especifica o tamanho de mínima de disco rígido, em KB, necessário ao título de software.  
+    6.  **Minimalny rozmiar dysku (KB)**: Określa minimalny rozmiar dysku twardego, w artykule bazy wiedzy wymaganą przez tytuł oprogramowania.  
 
-     Clique em **Seguinte**.  
+     Kliknij przycisk **Dalej**.  
 
-5.  Na página **Resumo** , reveja as definições e clique em **Seguinte**.  
+5.  Sprawdź ustawienia na stronie **Podsumowanie** , a następnie kliknij przycisk **Dalej**.  
 
-6.  Na página **Conclusão** , clique em **Fechar** para sair do assistente.  
+6.  Aby zamknąć kreatora, kliknij na stronie **Ukończenie** przycisk **Zamknij** .  
 
-###  <a name="BKMK_ModifyCategorization"></a> Modificar informações de categorização para software inventariado  
- O software predefinido no catálogo do Asset Intelligence está configurado com informações de categorização específicas, tais como o nome do produto, fornecedor, categoria de software e família de software. Quando as informações de categorização predefinidas não cumprem os requisitos, pode modificar as informações nas propriedades para o título de software. Quando modificar as informações de categorização para software predefinido, o estado de validação do software é alterado de **Validado** para **Definido pelo Utilizador**.  
+###  <a name="BKMK_ModifyCategorization"></a> Modyfikowanie informacji o kategoryzacji spisanego oprogramowania  
+ Dla wstępnie zdefiniowanego oprogramowania w katalogu analizy zasobów skonfigurowano określone informacje o kategoryzacji, takie jak nazwa produktu, dostawca, kategoria oprogramowania i rodzina oprogramowania. Jeśli wstępnie zdefiniowane informacje o kategoryzacji nie spełniają Twoich wymagań, możesz je zmodyfikować we właściwościach tytułu oprogramowania. Po zmodyfikowaniu informacji o kategoryzacji wstępnie zdefiniowanego oprogramowania jego stan sprawdzania poprawności zmienia się z **Zweryfikowane** na **Zdefiniowane przez użytkownika**.  
 
 > [!IMPORTANT]  
->  As informações de categorização só podem ser modificadas no site de nível superior.  
+>  Informacje o kategoryzacji można modyfikować tylko w lokacji najwyższego poziomu.  
 
- Utilize o procedimento seguinte para modificar informações de categorização para software inventariado.  
+ Poniższa procedura umożliwia zmodyfikowanie informacji o kategoryzacji spisanego oprogramowania.  
 
-##### <a name="to-modify-the-categorizations-for-software-titles"></a>Para modificar as categorizações para títulos de software  
+##### <a name="to-modify-the-categorizations-for-software-titles"></a>Aby zmodyfikować kategoryzacje tytułów oprogramowania  
 
-1.  Na consola do Configuration Manager, clique em **Ativos e Compatibilidade**.  
+1.  W konsoli programu Configuration Manager kliknij przycisk **Zasoby i zgodność**.  
 
-2.  Na área de trabalho **Ativos e Compatibilidade** , clique em **Asset Intelligence**e, em seguida, clique em **Software inventariado**.  
+2.  W obszarze roboczym **Zasoby i zgodność** kliknij pozycję **Analiza zasobów**, a następnie kliknij pozycję **Spisane oprogramowanie**.  
 
-3.  Selecione um título de software ou vários títulos de software para os quais pretenda modificar as categorizações.  
+3.  Wybierz jeden lub większą liczbę tytułów oprogramowania, dla których chcesz zmodyfikować kategoryzacje.  
 
-4.  No separador **Home Page** , no grupo **Propriedades** , clique em **Propriedades**.  
+4.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
 
-5.  No separador **Geral** , pode modificar as seguintes informações de categorização:  
+5.  Na karcie **Ogólne** możesz zmodyfikować następujące informacje o kategoryzacji:  
 
-    -   **Nome do produto**: Especifica o nome do título de software inventariado.  
+    -   **Nazwa produktu**: Określa nazwę spisanego tytułu oprogramowania.  
 
-    -   **Fornecedor**: Especifica o nome do fornecedor que desenvolveu o título de software inventariado.  
+    -   **Dostawcy**: Określa nazwę dostawcy, który opracował spisany tytuł oprogramowania.  
 
-    -   **Categoria**: Especifica a categoria de software que está atualmente atribuída ao título de software inventariado.  
+    -   **Kategoria**: Określa kategorię oprogramowania, która jest aktualnie przypisana do spisanego tytułu oprogramowania.  
 
-    -   **Família**: Especifica a família de software que está atualmente atribuída ao título de software inventariado.  
+    -   **Rodzina**: Określa rodziny oprogramowania, który jest aktualnie przypisana do spisanego tytułu oprogramowania.  
 
-6.  Clique em **OK** para guardar as alterações.  
+6.  Kliknij przycisk **OK** , aby zapisać zmiany.  
 
- Utilize o procedimento seguinte para reverter o software para as informações de categorização originais.  
+ Poniższa procedura umożliwia przywrócenie pierwotnych informacji o kategoryzacji danego oprogramowania.  
 
-### <a name="revert-categorization-information-to-original-settings-for-software"></a>Reverter informações de categorização para as definições originais do software  
- O Configuration Manager armazena informações de categorização obtidas a partir do System Center Online na base de dados. Não é possível eliminar as informações. Depois de as informações terem sido modificadas, pode reverter as informações de categorização novamente para a categorização do System Center Online. Também é possível reverter o software inventariado que não se encontra no catálogo do Asset Intelligence para as definições originais.  
+### <a name="revert-categorization-information-to-original-settings-for-software"></a>Przywracanie pierwotnych ustawień informacji o kategoryzacji danego oprogramowania  
+ Program Configuration Manager przechowuje informacje o kategorii uzyskane z programu System Center Online w bazie danych. Tych informacji nie można usunąć. Po zmodyfikowaniu informacji o kategoryzacji można przywrócić informacje o kategoryzacji pochodzące z programu System Center Online. Pierwotne ustawienia można przywrócić również w przypadku spisanego oprogramowania, które nie znajduje się w katalogu analizy zasobów.  
 
- Utilize o procedimento seguinte para reverter informações de categorização para as definições originais.  
+ Poniższa procedura umożliwia przywrócenie pierwotnych ustawień informacji o kategoryzacji.  
 
-##### <a name="to-revert-categorization-information-to-original-settings"></a>Para reverter informações de categorização para as definições originais  
+##### <a name="to-revert-categorization-information-to-original-settings"></a>Aby przywrócić pierwotne ustawienia informacji o kategoryzacji  
 
-1.  Na consola do Configuration Manager, clique em **Ativos e Compatibilidade**.  
+1.  W konsoli programu Configuration Manager kliknij przycisk **Zasoby i zgodność**.  
 
-2.  Na área de trabalho **Ativos e Compatibilidade** , clique em **Asset Intelligence**e, em seguida, clique em **Software inventariado**.  
+2.  W obszarze roboczym **Zasoby i zgodność** kliknij pozycję **Analiza zasobów**, a następnie kliknij pozycję **Spisane oprogramowanie**.  
 
-3.  Selecione um título de software ou vários títulos de software que pretenda reverter para as definições originais. Só é possível reverter software com o estado **Definido pelo Utilizador** .  
+3.  Wybierz jeden lub większą liczbę tytułów oprogramowania, dla których chcesz przywrócić pierwotne ustawienia. Przywrócenie jest możliwe tylko w przypadku oprogramowania o stanie **Zdefiniowane przez użytkownika** .  
 
     > [!TIP]  
-    >  Clique na coluna **Estado** para ordenar pelo estado de validação. A ordenação permite-lhe ver todo o software por estado de validação e selecionar rapidamente vários itens para reverter para as definições originais.  
+    >  Kliknij kolumnę **Stan** , aby posortować według stanu sprawdzania poprawności. Sortowanie pozwala wyświetlić całe oprogramowanie według stanu sprawdzania poprawności i szybko zaznaczyć wiele pozycji, aby przywrócić ich pierwotne ustawienia.  
 
-4.  No separador **Home Page** , no grupo **Produto** , clique em **Reverter**.  
+4.  Na karcie **Narzędzia główne** w grupie **Produkt** kliknij polecenie **Przywróć**.  
 
-5.  Clique em **Sim** para reverter o software para as informações de categorização originais.  
+5.  Kliknij przycisk **Tak** , aby przywrócić pierwotne informacje o kategoryzacji danego oprogramowania.  
 
-6.  Ao reverter as informações de categorização de software que se encontra no catálogo do Asset Intelligence, o estado de validação é alterado de **Definido pelo Utilizador** para **Validado**. Ao reverter software que não se encontra no catálogo, o estado de validação é alterado de **Definido pelo Utilizador** para **Não Categorizado**.  
+6.  Po przywróceniu informacji o kategoryzacji oprogramowania znajdującego się w katalogu analizy zasobów jego stan sprawdzania poprawności zostanie zmieniony z **Zdefiniowane przez użytkownika** na **Zweryfikowane**. Po przywróceniu oprogramowania, które nie znajduje się w katalogu, jego stan sprawdzania poprawności zostanie zmieniony z **Zdefiniowane przez użytkownika** na **Bez kategorii**.  
 
-##  <a name="BKMK_RequestCatalogUpdate"></a> Pedir uma atualização de catálogo para títulos de software não categorizados  
- As informações de títulos de software não categorizados podem ser submetidas para o System Center Online para investigação e categorização. Depois de um título de software não categorizado ser submetido, e caso existam, pelo menos, 4 pedidos de categorização de clientes para o mesmo título de software, os investigadores identificam, categorizam e disponibilizam as informações de categorização do título de software para todos os clientes que estejam a utilizar o serviço System Center Online. A Microsoft dá máxima prioridade aos títulos de software que tenham o maior número de pedidos de categorização. É improvável que as aplicações personalizadas de linha de negócio e de software recebam uma categoria e, como melhor prática, o utilizador não deve enviar estes títulos de software à Microsoft para categorização.  
+##  <a name="BKMK_RequestCatalogUpdate"></a> Żądanie aktualizacji katalogu dla tytułów oprogramowania bez kategorii  
+ Informacje o tytule oprogramowania bez kategorii można przesłać do programu System Center Online w celu zbadania i kategoryzacji. Po przesłaniu tytułu oprogramowania bez kategorii, gdy istnieją co najmniej 4 żądania kategoryzacji tego samego tytułu oprogramowania pochodzące od innych klientów, pracownicy naukowo-badawczy zidentyfikują i skategoryzują tytuł oprogramowania, a następnie udostępnią informacje o kategoryzacji tego tytułu dla wszystkich klientów korzystających z usługi System Center Online. Firma Microsoft daje najwyższy priorytet tytułom oprogramowania, dla których istnieje najwięcej żądań kategoryzacji. Oprogramowanie niestandardowe i aplikacje biznesowe najprawdopodobniej nie zostaną skategoryzowane, dlatego najlepiej nie przesyłać tych tytułów oprogramowania do firmy Microsoft w celu kategoryzacji.  
 
- Quando as informações de título de software são submetidas ao System Center Online para categorização, aplicam-se as seguintes condições:  
+ Podczas przesyłania informacji o tytule oprogramowania do programu System Center Online w celu kategoryzacji mają zastosowanie następujące warunki:  
 
--   Apenas as informações básicas de títulos de software são transmitidas ao System Center Online e as informações de títulos de software a categorizar podem ser revistas antes do envio.  
+-   Do programu System Center Online są przesyłane tylko podstawowe informacje o tytule oprogramowania. Przed przesłaniem informacji o tytule oprogramowania, które ma zostać skategoryzowane, można przejrzeć te informacje.  
 
--   As informações de licença de software nunca são transmitidas.  
+-   Nigdy nie są przesyłane informacje o licencji oprogramowania.  
 
--   Qualquer título de software que seja carregado fica publicamente disponível como parte do catálogo do System Center Online e pode ser transferido por outros clientes.  
+-   Każdy przekazany tytuł oprogramowania staje się publicznie dostępny w ramach katalogu programu System Center Online i może być pobierany przez innych klientów.  
 
--   A origem do título de software não é armazenada no catálogo do System Center Online. No entanto, os títulos de aplicações que contenham informações confidenciais ou de propriedade não devem ser submetidos para categorização pelo System Center Online.  
+-   Źródło tytułu oprogramowania nie jest przechowywane w katalogu programu System Center Online. Jednak tytułów aplikacji zawierających informacje poufne lub zastrzeżone nie należy przesyłać do kategoryzacji przez program System Center Online.  
 
 > [!NOTE]  
->  Para obter mais informações sobre as informações de privacidade do Asset Intelligence, consulte [segurança e privacidade do Asset Intelligence no System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/security-and-privacy-for-asset-intelligence.md).  
+>  Aby uzyskać więcej informacji dotyczących prywatności analizy zasobów, zobacz [bezpieczeństwo i prywatność analizy zasobów w programie System Center Configuration Manager](../../../../core/clients/manage/asset-intelligence/security-and-privacy-for-asset-intelligence.md).  
 
- Utilize o procedimento seguinte para pedir a categorização de títulos de software do catálogo do Asset Intelligence a partir do System Center Online.  
+ Poniższa procedura umożliwia zażądanie kategoryzacji tytułu oprogramowania w katalogu analizy zasobów przez program System Center Online.  
 
-#### <a name="to-request-a-catalog-update-for-uncategorized-software-titles"></a>Para pedir uma atualização de catálogo para títulos de software não categorizados  
+#### <a name="to-request-a-catalog-update-for-uncategorized-software-titles"></a>Aby zażądać aktualizacji katalogu dla tytułów oprogramowania bez kategorii  
 
-1.  Na consola do Configuration Manager, clique em **Ativos e Compatibilidade**.  
+1.  W konsoli programu Configuration Manager kliknij przycisk **Zasoby i zgodność**.  
 
-2.  Na área de trabalho **Ativos e Compatibilidade** , clique em **Asset Intelligence**e, em seguida, clique em **Software inventariado**.  
+2.  W obszarze roboczym **Zasoby i zgodność** kliknij pozycję **Analiza zasobów**, a następnie kliknij pozycję **Spisane oprogramowanie**.  
 
-3.  Selecione o nome de um produto ou vários nomes de produtos para submeter para o System Center Online para categorização. Apenas os títulos de software inventariado não categorizados podem ser submetidos para o System Center Online for categorização. Se um título de software inventariado tiver sido categorizado por um administrador, resultando num estado definido pelo utilizador, terá de clicar com o botão direito do rato no título de software inventariado e, em seguida, clicar em **Reverter** para reverter o título de software para o estado **Não Categorizado** , para que possa ser submetido para o System Center Online para categorização.  
+3.  Wybierz jedną lub wiele nazw produktów do przesłania do programu System Center Online w celu kategoryzacji. Tylko tytuły oprogramowania bez kategorii można przesyłać do programu System Center Online w celu kategoryzacji. Jeśli spisany tytuł oprogramowania został skategoryzowany przez administratora i, w wyniku tego, ma stan Zdefiniowane przez użytkownika, przed przesłaniem do programu System Center Online w celu kategoryzacji kliknij prawym przyciskiem myszy spisany tytuł oprogramowania, a następnie kliknij polecenie **Przywróć** , aby przywrócić tytuł oprogramowania do stanu **Bez kategorii** .  
 
     > [!NOTE]  
-    >  Gestor de configuração pode processar até 100 títulos de software para categorização de cada vez. Se selecionar mais do que 100 títulos de software, apenas são processados os primeiros 100 títulos de software. Tem de selecionar os restantes títulos de software para categorização em lotes de menos de 100.  
+    >  Menedżer konfiguracji może przetwarzać maksymalnie 100 tytułów oprogramowania do kategoryzacji naraz. Jeśli wybierzesz więcej niż 100 tytułów oprogramowania, tylko pierwsze 100 tytułów zostanie przetworzonych. Aby skategoryzować pozostałe tytuły oprogramowania, należy je przesłać w partiach zawierających mniej niż 100 tytułów.  
 
     > [!TIP]  
-    >  Clique na coluna **Estado** para ordenar pelo estado de validação. Isto permite-lhe ver todos os nomes de produto não categorizados e selecionar rapidamente vários itens para submeter para categorização.  
+    >  Kliknij kolumnę **Stan** , aby posortować według stanu sprawdzania poprawności. Pozwala to wyświetlić wszystkie nazwy produktów bez kategorii i szybko wybrać wiele pozycji, aby je przesłać w celu kategoryzacji.  
 
-4.  No separador **Home Page** , no grupo **Produto** , clique em **Pedir Atualização de Catálogo**.  
+4.  Na karcie **Narzędzia główne** w grupie **Produkt** kliknij polecenie **Zażądaj aktualizacji katalogu**.  
 
-5.  Reveja a mensagem de privacidade de submissão de categorização do System Center Online. Clique em **Detalhes** para ver as informações que serão enviadas para o System Center Online.  
+5.  Zapoznaj się z komunikatem dotyczącym zachowania poufności informacji podczas przesyłania informacji do programu System Center Online w celu kategoryzacji. Kliknij pozycję **Szczegóły** , aby wyświetlić informacje, które zostaną przesłane do programu System Center Online.  
 
-6.  Selecione **Li e compreendi esta mensagem**e, em seguida, clique em **OK** para permitir que os títulos de software selecionados sejam submetidos para categorização.  
+6.  Wybierz pozycję **Potwierdzam przeczytanie i zrozumienie tego komunikatu**, a następnie kliknij przycisk **OK** , aby zezwolić na przesłanie wybranych tytułów oprogramowania w celu kategoryzacji.  
 
-7.  Verifique se o estado dos nomes de produtos de software inventariado submetidos para o System Center Online para categorização mudou de **Não Categorizado** para **Pendente**.  
+7.  Sprawdź, czy stan nazw produktów spisanego oprogramowania przesłanych do programu System Center Online w celu kategoryzacji został zmieniony z **Bez kategorii** na **Oczekujące**.  
 
     > [!NOTE]  
-    >  O software submetido para o System Center Online para categorização com o estado de validação **Pendente** num site de administração central ainda é apresentado com o estado de validação **Não Categorizado** em sites primários subordinados.  
+    >  Oprogramowanie przesłane do programu System Center Online w celu kategoryzacji ma stan sprawdzania poprawności **Oczekujące** w centralnej lokacji administracyjnej, ale w podrzędnych lokacjach głównych jest nadal wyświetlany stan **Bez kategorii** .  
 
-##  <a name="BKMK_ResolveSoftwareDetails"></a> Resolver conflitos de detalhes de software  
- Depois de os detalhes de categorização de software recentemente atualizados serem recebidos do System Center Online, que estão em conflito com os detalhes de software existentes, pode escolher como resolver o conflito. O software que tem um conflito atual tem o estado de validação **Atualizável**. Depois de um conflito de detalhes de software ser resolvido, as informações de categorização de software são mantidas no catálogo do Asset Intelligence, de acordo com a definição que especificar. Um conflito de detalhes de software não ocorrerá novamente para o mesmo valor de categorização de software, a menos que o valor do System Center Online seja alterado após a resolução do conflito.  
+##  <a name="BKMK_ResolveSoftwareDetails"></a> Rozwiązywanie konfliktów dotyczących szczegółów oprogramowania  
+ Po odebraniu z programu System Center Online zaktualizowanych szczegółów dotyczących kategoryzacji oprogramowania, które są sprzeczne z istniejącymi szczegółami oprogramowania, możesz wybrać sposób rozwiązania konfliktu. Oprogramowanie, w przypadku którego występuje konflikt, ma stan sprawdzania poprawności **Aktualizowalne**. Po rozwiązaniu konfliktu szczegółów oprogramowania w katalogu analizy zasobów są przechowywane informacje o kategoryzacji oprogramowania zgodne z określonym ustawieniem. Konflikt dotyczący szczegółów oprogramowania nie wystąpi ponownie dla tej samej wartości kategoryzacji oprogramowania, chyba że wartość w programie System Center Online ulegnie zmianie po rozwiązaniu konfliktu.  
 
- Utilize o procedimento seguinte para resolver um conflito de detalhes de software.  
+ Poniższa procedura umożliwia rozwiązanie konfliktu szczegółów oprogramowania.  
 
-#### <a name="to-resolve-a-software-details-conflict"></a>Para resolver um conflito de detalhes de software  
+#### <a name="to-resolve-a-software-details-conflict"></a>Aby rozwiązać konflikt szczegółów oprogramowania  
 
-1.  Na consola do Configuration Manager, clique em **Ativos e Compatibilidade**.  
+1.  W konsoli programu Configuration Manager kliknij przycisk **Zasoby i zgodność**.  
 
-2.  Na área de trabalho **Ativos e Compatibilidade** , clique em **Asset Intelligence**e, em seguida, clique em **Software inventariado**.  
+2.  W obszarze roboczym **Zasoby i zgodność** kliknij pozycję **Analiza zasobów**, a następnie kliknij pozycję **Spisane oprogramowanie**.  
 
-3.  Reveja a coluna **Estado** para ver os títulos de software no estado **Atualizável** .  
+3.  Przejrzyj kolumnę **Stan** , aby znaleźć tytuły oprogramowania w stanie **Aktualizowalne** .  
 
-4.  Selecione o título de software para o qual tenha de resolver um conflito e, em seguida, no separador **Home Page** , no grupo **Produto** , clique em **Resolver Conflito**.  
+4.  Wybierz tytuł oprogramowania, dla którego chcesz rozwiązać konflikt, a następnie na karcie **Narzędzia główne** w grupie **Produkt** kliknij polecenie **Rozwiąż konflikt**.  
 
-5.  Reveja as seguintes informações:  
+5.  Przejrzyj następujące informacje:  
 
-    -   **Valor local**: Especifica as informações de categorização de software existentes no catálogo do Asset Intelligence que entram em conflito com detalhes de categorização de software do System Center Online mais recentes.  
+    -   **Wartości lokalnej**: Określa informacje o kategoryzacji oprogramowania w katalogu analizy zasobów powodujący konflikt z nowszej szczegółami kategoryzacji oprogramowania System Center Online.  
 
-    -   **Valor transferido**: Especifica as novas informações de categorização de software System Center Online para em conflito informações de categorização do software de catálogo do Asset Intelligence.  
+    -   **Pobrana wartość**: Określa nowy System Center Online informacje o kategoryzacji oprogramowania powodujące konflikt analizy zasobów katalogu informacje o kategoryzacji oprogramowania.  
 
-6.  Selecione uma das seguintes definições para resolver o conflito de detalhes de software:  
+6.  Wybierz jedno z następujących ustawień, aby rozwiązać konflikt szczegółów oprogramowania:  
 
-    -   **Não altere o valor de informações de catálogo localmente editado**: Resolve o conflito de detalhes de software ao manter as existentes informações de categorização de software do catálogo do Asset Intelligence. Quando seleciona esta definição, o estado do título de software é alterado de **Atualizável** para **Definido pelo Utilizador**.  
+    -   **Nie zmieniaj lokalnie edytowanej wartości informacji katalogu**: Rozwiązuje konflikt szczegółów oprogramowania przez zachowanie istniejące informacje o kategoryzacji oprogramowania katalogu analizy zasobów. Po wybraniu tego ustawienia stan tytułu oprogramowania zostanie zmieniony z **Aktualizowalne** na **Zdefiniowane przez użytkownika**.  
 
-    -   **Substituir o valor de informações de catálogo localmente editado com o valor de System Center Online transferido**: Resolve o conflito de detalhes de software ao substituir as existentes informações de categorização de software do catálogo do Asset Intelligence pelas novas informações obtidas do System Center Online. Quando seleciona esta definição, o estado do título de software é alterado de **Atualizável** para **Validado**.  
+    -   **Zastąp lokalnie edytowaną wartość informacji katalogu pobrany System Center Online wartość**: Rozwiązuje konflikt szczegółów oprogramowania przez zastąpienie istniejącej informacje o kategoryzacji oprogramowania katalogu analizy zasobów z nowymi informacjami uzyskanymi z programu System Center Online. Po wybraniu tego ustawienia stan tytułu oprogramowania zostanie zmieniony z **Aktualizowalne** na **Zweryfikowane**.  
 
-     Clique em **OK** para guardar a resolução de conflito.  
+     Kliknij przycisk **OK** , aby zapisać rozwiązanie konfliktu.  

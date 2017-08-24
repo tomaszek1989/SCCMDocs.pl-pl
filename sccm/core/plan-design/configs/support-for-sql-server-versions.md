@@ -1,6 +1,6 @@
 ---
-title: "Versões do SQL Server suportadas | Microsoft Docs"
-description: "Obter os requisitos de configuração e a versão do SQL Server para alojar uma base de dados do site do System Center Configuration Manager."
+title: "Obsługiwane wersje programu SQL Server | Dokumentacja firmy Microsoft"
+description: Pobierz wymagania konfiguracji i wersji programu SQL Server do hostowania bazy danych lokacji programu System Center Configuration Manager.
 ms.custom: na
 ms.date: 05/10/2017
 ms.prod: configuration-manager
@@ -17,99 +17,99 @@ manager: angrobe
 ms.openlocfilehash: b35e45b9514297e2f9ce405a3244462ed735f39f
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pt-PT
+ms.contentlocale: pl-PL
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="supported-sql-server-versions-for-system-center-configuration-manager"></a>Versões suportadas do SQL Server para o System Center Configuration Manager
+# <a name="supported-sql-server-versions-for-system-center-configuration-manager"></a>Obsługiwane wersje programu SQL Server dla programu System Center Configuration Manager
 
-*Aplica-se a: O System Center Configuration Manager (ramo atual)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Cada site do System Center Configuration Manager requer uma versão do SQL Server suportadas e a configuração para alojar a base de dados do site.  
+Każda lokacja programu System Center Configuration Manager wymaga obsługiwana wersja programu SQL Server i konfigurację do obsługi bazy danych lokacji.  
 
-##  <a name="bkmk_Instances"></a> Instâncias e localizações do SQL Server  
- **Site de administração central e sites primários:**  
-A base de dados do site tem de utilizar uma instalação completa do SQL Server.  
+##  <a name="bkmk_Instances"></a> Wystąpienia i lokalizacje programu SQL Server  
+ **Centralna lokacja administracyjna i lokacje główne:**  
+Bazy danych lokacji musi używać pełnej instalacji programu SQL Server.  
 
- SQL Server pode estar localizada em:  
+ SQL Server może znajdować się na:  
 
--   O computador de servidor do site.  
--   Um computador que seja remoto do servidor do site.  
+-   Komputer serwera lokacji.  
+-   Komputer zdalnie z serwera lokacji.  
 
-São suportadas as seguintes instâncias:  
+Obsługiwane są następujące wystąpienia:  
 
--   A instância predefinida ou nomeada do SQL Server.  
--   Configurações de várias instâncias.  
--   Um cluster do SQL Server. Consulte [utilizar um cluster do SQL Server para alojar a base de dados do site](../../../core/servers/deploy/configure/use-a-sql-server-cluster-for-the-site-database.md).
--   Um grupo de Disponibilidade AlwaysOn do SQL Server. Esta opção requer o Configuration Manager versão 1602 ou posterior. Para obter mais informações, consulte [SQL Server AlwaysOn para uma base de dados do site de elevada disponibilidade para o System Center Configuration Manager](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).
-
-
- **Sites secundários:**  
- A base de dados do site pode utilizar a instância predefinida de uma instalação completa do SQL Server ou SQL Server Express.  
-
- SQL Server tem de estar localizado no computador do servidor do site.  
-
- **Limitações para suportar**   
- Não são suportadas as seguintes configurações:
- -   Um cluster do SQL Server numa configuração de cluster de balanceamento de carga na rede (NLB)
- -   Um cluster do SQL Server num Cluster partilhado Volume (CSV)
- -   Base de dados do SQL Server espelhamento de tecnologia e replicação ponto-a-ponto
-
-Replicação transacional do SQL Server só é suportada para replicar objetos para pontos de gestão que estão configurados para utilizar [réplicas de base de dados](https://technet.microsoft.com/library/mt608546.aspx).  
-
-##  <a name="bkmk_SQLVersions"></a> Versões suportadas do SQL Server  
- Numa hierarquia com múltiplos sites, sites diferentes podem utilizar diferentes versões do SQL Server para alojar a base de dados do site, desde que os seguintes são verdadeiras:
- -  O Configuration Manager suporta as versões do SQL Server que utilizar.
- -  Versões do SQL Server que utilizar permanecem no suporte de pela Microsoft.
- -  SQL Server suporta a replicação entre duas versões do SQL Server.  Por exemplo, [do SQL Server não suporta a replicação entre SQL Server 2008 R2 e o SQL Server 2016](https://docs.microsoft.com/sql/relational-databases/replication/deprecated-features-in-sql-server-replication).
+-   Domyślne lub nazwane wystąpienie programu SQL Server.  
+-   Konfiguracje z wieloma wystąpieniami.  
+-   Klaster programu SQL Server. Zobacz [używać klastra programu SQL Server do hostowania bazy danych lokacji](../../../core/servers/deploy/configure/use-a-sql-server-cluster-for-the-site-database.md).
+-   Grupa dostępności AlwaysOn programu SQL Server. Ta opcja wymaga programu Configuration Manager w wersji 1602 lub nowszej. Aby uzyskać więcej informacji, zobacz [AlwaysOn programu SQL Server dla bazy danych lokacji o wysokiej dostępności programu System Center Configuration Manager](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).
 
 
+ **Lokacje dodatkowe:**  
+ Bazy danych lokacji można użyć domyślnego wystąpienia pełnej instalacji programu SQL Server lub SQL Server Express.  
 
- Salvo especificação em contrário, as seguintes versões do SQL Server são suportadas com todas as versões de Active Directory do System Center Configuration Manager. Se suportar para uma nova versão do SQL Server ou o pacote de serviço é adicionado, a versão do Configuration Manager que adiciona que suportam será indicada. Da mesma forma, se o suporte foi preterido, em seguida, procure detalhes sobre as versões afetados do Configuration Manager.   
+ Program SQL Server musi znajdować się na komputerze serwera lokacji.  
 
-Suporte para um pacote de serviço do SQL Server específico inclui atualizações cumulativas para esse pacote de serviço, a menos que uma atualização cumulativa interrompe o com versões anteriores para essa versão do pacote de serviço de base. Quando é indicado versão sem service pack, o suporte destina-se que a versão do SQL Server sem nenhum service pack. No futuro, se um service pack for lançado para essa versão, uma declaração de suporte separado será de ser declarada antes dessa nova versão do pacote de serviço é suportada.
+ **Ograniczenia dotyczące obsługi**   
+ Nie są obsługiwane następujące konfiguracje:
+ -   Klastra programu SQL Server w konfiguracji klastra równoważenia obciążenia sieciowego (NLB)
+ -   Klastra programu SQL Server na udostępnionego woluminu klastra (CSV)
+ -   Dublowanie technologii i peer-to-peer replikacji bazy danych SQL Server
+
+Replikacja transakcyjna programu SQL Server jest obsługiwana tylko na potrzeby replikacji obiektów do punktów zarządzania, które są skonfigurowane do używania [replik bazy danych](https://technet.microsoft.com/library/mt608546.aspx).  
+
+##  <a name="bkmk_SQLVersions"></a> Obsługiwane wersje programu SQL Server  
+ W hierarchii z wieloma lokacjami różnych lokacji możesz użyć innej wersji programu SQL Server do hostowania bazy danych lokacji, tak długo, jak zostały spełnione następujące warunki:
+ -  Program Configuration Manager obsługuje wersje programu SQL Server, którego używasz.
+ -  Wersje programu SQL Server, którego używasz pozostają w pomocy technicznej firmy Microsoft.
+ -  SQL Server obsługuje replikację między dwoma wersjami programu SQL Server.  Na przykład [programu SQL Server nie obsługuje replikacji między programu SQL Server 2008 R2 i SQL Server 2016](https://docs.microsoft.com/sql/relational-databases/replication/deprecated-features-in-sql-server-replication).
+
+
+
+ O ile nie określono inaczej, następujące wersje programu SQL Server są obsługiwane przez wszystkie aktywne wersje programu System Center Configuration Manager. Jeśli obsługa nowej wersji programu SQL Server lub z dodatkiem Service pack jest dodawany, wersji programu Configuration Manager, który dodaje obsługę zostanie zapisany. Podobnie jeśli obsługa jest przestarzała, poszukaj informacji o usterce wersje programu Configuration Manager.   
+
+Obsługa określonego dodatku service pack programu SQL Server obejmuje aktualizacje zbiorcze tego dodatku service pack, chyba, że aktualizacja zbiorcza dzieli wstecz do tej usługi podstawowej wersji pakietu. Nie wersji dodatku service pack należy zauważyć, obsługi dotyczy tej wersji programu SQL Server bez dodatku service pack. W przyszłości Jeśli wydaniem dodatku service pack dla danej wersji instrukcji obsługi oddzielnych będą deklarowane przed tej nowej wersji dodatku service pack jest obsługiwany.
 
 
 > [!IMPORTANT]  
->  Quando utiliza o SQL Server Standard para a base de dados no site de administração central, limitar o número total de clientes que uma hierarquia consegue suportar. Consulte [Dimensionamento e números da escala](../../../core/plan-design/configs/size-and-scale-numbers.md).
+>  Korzystając z programu SQL Server Standard dla bazy danych w centralnej lokacji administracyjnej, należy ograniczyć całkowitą liczbę klientów obsługiwanych w hierarchii. Zobacz [Wartości dotyczące rozmiarów i skalowania](../../../core/plan-design/configs/size-and-scale-numbers.md).
 
-### <a name="sql-server-2016-sp1-standard-enterprise"></a>SQL Server 2016 SP1: Standard, Enterprise  
-Pode utilizar esta versão do SQL Server sem versão de atualização cumulativa mínima para o seguinte:  
+### <a name="sql-server-2016-sp1-standard-enterprise"></a>SQL Server 2016 z dodatkiem SP1: Wersje Standard, Enterprise  
+Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:  
 
--   Um site de administração central  
--   Um site primário  
--   Um site secundário  
+-   Centralna lokacja administracyjna  
+-   Lokacja główna  
+-   Lokację dodatkową  
 
-### <a name="sql-server-2016-standard-enterprise"></a>SQL Server 2016: Standard, Enterprise  
-Pode utilizar esta versão do SQL Server sem versão de atualização cumulativa mínima para o seguinte:  
+### <a name="sql-server-2016-standard-enterprise"></a>Program SQL Server 2016: Wersje Standard, Enterprise  
+Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:  
 
--   Um site de administração central  
--   Um site primário  
--   Um site secundário  
-
-
-### <a name="sql-server-2014-sp2-standard-enterprise"></a>SQL Server 2014 SP2: Standard, Enterprise  
-Pode utilizar esta versão do SQL Server sem versão de atualização cumulativa mínima para o seguinte:  
-
--   Um site de administração central  
--   Um site primário  
--   Um site secundário
+-   Centralna lokacja administracyjna  
+-   Lokacja główna  
+-   Lokację dodatkową  
 
 
+### <a name="sql-server-2014-sp2-standard-enterprise"></a>Program SQL Server 2014 SP2: Wersje Standard, Enterprise  
+Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:  
 
-### <a name="sql-server-2014-sp1-standard-enterprise"></a>SQL Server 2014 SP1: Standard, Enterprise  
- Pode utilizar esta versão do SQL Server sem versão de atualização cumulativa mínima para o seguinte:  
-
--   Um site de administração central  
--   Um site primário  
--   Um site secundário
+-   Centralna lokacja administracyjna  
+-   Lokacja główna  
+-   Lokację dodatkową
 
 
-### <a name="sql-server-2012-sp3-standard-enterprise"></a>SQL Server 2012 SP3: Standard, Enterprise  
- Pode utilizar esta versão do SQL Server sem versão de atualização cumulativa mínima para o seguinte:  
 
--   Um site de administração central  
--   Um site primário  
--   Um site secundário  
+### <a name="sql-server-2014-sp1-standard-enterprise"></a>SQL Server 2014 z dodatkiem SP1: Wersje Standard, Enterprise  
+ Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:  
+
+-   Centralna lokacja administracyjna  
+-   Lokacja główna  
+-   Lokację dodatkową
+
+
+### <a name="sql-server-2012-sp3-standard-enterprise"></a>SQL Server 2012 z dodatkiem SP3: Wersje Standard, Enterprise  
+ Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:  
+
+-   Centralna lokacja administracyjna  
+-   Lokacja główna  
+-   Lokację dodatkową  
 
 <!-- Support for this service pack version has been dropped by Microsoft    
 ### SQL Server 2012 SP2: Standard, Enterprise   
@@ -120,42 +120,42 @@ Pode utilizar esta versão do SQL Server sem versão de atualização cumulativa
 -   A secondary site  
 -->
 
-### <a name="sql-server-2008-r2-sp3-standard-enterprise-datacenter"></a>SQL Server 2008 R2 SP3: Standard, Enterprise, Datacenter     
-  Não é suportada nesta versão do SQL Server [a partir da versão 1702](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-support-for-sql-server-versions-as-a-site-database).  
- Esta versão do SQL Server continua a ser suportada quando utiliza uma versão do Configuration Manager antes de 1702.
+### <a name="sql-server-2008-r2-sp3-standard-enterprise-datacenter"></a>SQL Server 2008 R2 z dodatkiem SP3: Standard, Enterprise i Datacenter     
+  Ta wersja programu SQL Server nie jest obsługiwana [począwszy od wersji 1702](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-support-for-sql-server-versions-as-a-site-database).  
+ Ta wersja programu SQL Server jest obsługiwany w przypadku korzystania z wersji programu Configuration Manager przed 1702.
 
-Quando suportado pela versão do Configuration Manager, pode utilizar esta versão do SQL Server sem versão de atualização cumulativa mínima para o seguinte:  
+Jeśli są obsługiwane przez używaną wersję programu Configuration Manager, można użyć tej wersji programu SQL Server bez wersji minimalnej wersji aktualizacji zbiorczej dla następujących:  
 
--   Um site de administração central  
--   Um site primário
--   Um site secundário
-
-
-
-### <a name="sql-server-2016-express-sp1"></a>SP1 Express do SQL Server 2016  
-Pode utilizar esta versão do SQL Server sem versão de atualização cumulativa mínima para o seguinte:
--   Um site secundário
-
-### <a name="sql-server-2016-express"></a>Express do SQL Server 2016
-Pode utilizar esta versão do SQL Server sem versão de atualização cumulativa mínima para o seguinte:
--   Um site secundário
+-   Centralna lokacja administracyjna  
+-   Lokacja główna
+-   Lokację dodatkową
 
 
-### <a name="sql-server-2014-express-sp2"></a>SQL Server 2014 SP2 rápida   
-Pode utilizar esta versão do SQL Server sem versão de atualização cumulativa mínima para o seguinte:  
 
--   Um site secundário  
+### <a name="sql-server-2016-express-sp1"></a>SQL Server 2016 Express z dodatkiem SP1  
+Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:
+-   Lokację dodatkową
+
+### <a name="sql-server-2016-express"></a>Program SQL Server 2016 Express
+Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:
+-   Lokację dodatkową
+
+
+### <a name="sql-server-2014-express-sp2"></a>SQL Server 2014 Express z dodatkiem SP2   
+Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:  
+
+-   Lokację dodatkową  
 
 
 ### <a name="sql-server-2014-express-sp1"></a>SQL Server 2014 Express SP1   
- Pode utilizar esta versão do SQL Server sem versão de atualização cumulativa mínima para o seguinte:  
+ Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:  
 
--   Um site secundário  
+-   Lokację dodatkową  
 
 ### <a name="sql-server-2012-express-sp3"></a>SQL Server 2012 Express SP3  
-Pode utilizar esta versão do SQL Server sem versão de atualização cumulativa mínima para o seguinte:  
+Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:  
 
--   Um site secundário  
+-   Lokację dodatkową  
 
 <!-- Support for this service pack version has been dropped by Microsoft   
 ### SQL Server 2012 Express SP2   
@@ -165,98 +165,98 @@ Pode utilizar esta versão do SQL Server sem versão de atualização cumulativa
 -->
 
 
-##  <a name="bkmk_SQLConfig"></a> Configurações necessárias para o SQL Server  
- O seguinte é necessário para todas as instalações do SQL Server que utiliza para uma base de dados do site (incluindo o SQL Server Express). Quando o Configuration Manager instala o SQL Server Express como parte de uma instalação de site secundário, estas configurações são criadas automaticamente para si.  
+##  <a name="bkmk_SQLConfig"></a> Konfiguracje wymagane dla programu SQL Server  
+ Poniższe elementy są wymagane przez wszystkie instalacje programu SQL Server, której użyjesz dla bazy danych lokacji (w tym programu SQL Server Express). Program Configuration Manager instaluje program SQL Server Express w ramach instalacji lokacji dodatkowej, te konfiguracje są tworzone automatycznie dla Ciebie.  
 
- **Versão de arquitetura do SQL Server:**  
- O Configuration Manager requer uma versão de 64 bits do SQL Server para alojar a base de dados do site.  
+ **Wersja architektury programu SQL Server:**  
+ Configuration Manager wymaga 64-bitowej wersji programu SQL Server do obsługi bazy danych lokacji.  
 
- **Agrupamento da base de dados:**  
- Em cada site, a instância do SQL Server que é utilizado para o site e a base de dados do site tem de utilizar o seguinte agrupamento: **SQL_Latin1_General_CP1_CI_AS**.  
+ **Sortowanie bazy danych:**  
+ W każdej lokacji zarówno wystąpienie programu SQL Server, który jest używany dla lokacji i bazy danych lokacji musi używać następującego sortowania: **SQL_Latin1_General_CP1_CI_AS**.  
 
- O Configuration Manager suporta duas exceções a este agrupamento para cumprir as normas definidas na GB18030 para utilização na China. Para obter mais informações, veja [Suporte internacional no System Center Configuration Manager](../../../core/plan-design/hierarchy/international-support.md).  
+ Program Configuration Manager obsługuje dwa wyjątki związane z tym sortowaniem, aby spełniać normy, które są zdefiniowane w GB18030 w Chinach. Aby uzyskać więcej informacji, zobacz [Obsługa wymagań międzynarodowych w programie System Center Configuration Manager](../../../core/plan-design/hierarchy/international-support.md).  
 
- **Funcionalidades do SQL Server:**  
- Só é necessária a funcionalidade **Serviços de Motor da Base de Dados** para cada servidor do site.  
+ **Funkcje programu SQL Server:**  
+ Każdy serwer lokacji wymaga tylko funkcji **Usługi aparatu bazy danych** .  
 
- Replicação de base de dados do Configuration Manager não requer o **replicação do SQL Server** funcionalidade. No entanto, esta configuração de SQL Server é necessária se utilizar [da base de dados réplicas para pontos de gestão do System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
+ Replikacja bazy danych programu Configuration Manager nie wymaga **replikacji programu SQL Server** funkcji. Jednak taka konfiguracja programu SQL Server jest wymagana, jeśli używasz [replik bazy danych dla punktów zarządzania programu System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
 
- **Autenticação do Windows:**  
- O Configuration Manager requer **autenticação do Windows** para validar as ligações à base de dados.  
+ **Uwierzytelnianie systemu Windows:**  
+ Program Configuration Manager wymaga **uwierzytelniania systemu Windows** do weryfikowania połączeń z bazą danych.  
 
- **Instância do SQL Server:**  
- Tem de utilizar uma instância dedicada do SQL Server para cada site. Isto pode ser uma **instância nomeada** ou a **instância predefinida**.  
+ **Wystąpienie programu SQL Server:**  
+ Musisz użyć dedykowanego wystąpienia programu SQL Server dla każdej lokacji. Może to być **nazwane wystąpienie** lub **wystąpienie domyślne**.  
 
- **Memória do SQL Server:**  
- Reserve memória para o SQL Server utilizando o SQL Server Management Studio e definição de **memória de servidor mínima** em **opções de memória de servidor**. Para obter mais informações sobre como definir uma quantidade fixa de memória, consulte [como: Definir uma quantidade fixa de memória (SQL Server Management Studio)](http://go.microsoft.com/fwlink/p/?LinkId=233759).  
+ **Pamięć programu SQL Server:**  
+ Zarezerwuj pamięć dla programu SQL Server przy użyciu programu SQL Server Management Studio i ustawienie **minimalna ilość pamięci serwera** w obszarze **opcje pamięci serwera**. Aby uzyskać więcej informacji na temat sposobu ustawiania stałej ilości pamięci, zobacz [jak: Ustawianie stałej ilości pamięci (SQL Server Management Studio)](http://go.microsoft.com/fwlink/p/?LinkId=233759).  
 
--   **Para um servidor de base de dados que está instalado no mesmo computador do servidor do site:** Limite a memória do SQL Server para 50 a 80 por cento da memória de sistema acessível disponível.  
+-   **Dla serwera bazy danych, który jest zainstalowany na tym samym komputerze co serwer lokacji:** Ogranicz pamięć programu SQL Server z 50 do 80 procent dostępnej adresowalnej pamięci systemu.  
 
--   **Para um servidor de base de dados dedicado (remoto a partir do servidor do site):** Limite a memória do SQL Server para 80 a 90 por cento da memória de sistema acessível disponível.  
+-   **Serwer dedykowany bazy danych (poza komputerem serwera lokacji):** Ogranicz pamięć programu SQL Server z 80 do 90 procent dostępnej adresowalnej pamięci systemu.  
 
--   **Para uma reserva de memória para o conjunto de memória intermédia de cada instância do SQL Server em utilização:**  
+-   **Dla rezerwa pamięci dla puli buforów dla każdego wystąpienia programu SQL Server w użyciu:**  
 
-    -   Para um site de administração central: Defina um mínimo de 8 gigabytes (GB).  
-    -   Para um site primário: Defina um mínimo de 8 gigabytes (GB).  
-    -   Para um site secundário: Defina um mínimo de 4 gigabytes (GB).  
+    -   Dla centralnej lokacji administracyjnej: Ustaw co najmniej 8 gigabajtów (GB).  
+    -   Dla lokacji głównej: Ustaw co najmniej 8 gigabajtów (GB).  
+    -   Dla lokacji dodatkowej: Ustaw co najmniej 4 gigabajty (GB).  
 
-**Acionadores aninhados SQL:**  
- Os[acionadores aninhados SQL](http://go.microsoft.com/fwlink/?LinkId=528802) têm de estar ativados.  
+**Zagnieżdżone wyzwalacze SQL:**  
+ [Zagnieżdżone wyzwalacze SQL](http://go.microsoft.com/fwlink/?LinkId=528802) muszą być włączone.  
 
- **Integração de CLR do SQL Server**  
-  A base de dados de sites necessita do tempo de execução de idioma comum (CLR) do SQL Server para ser ativada. Isto é ativado automaticamente quando instala o Configuration Manager. Para obter mais informações sobre o CLR, consulte [introdução à integração do CLR do SQL Server](https://msdn.microsoft.com/library/ms254498\(v=vs.110\).aspx).  
+ **Integracja środowiska CLR programu SQL Server**  
+  Baza danych lokacji wymaga włączenia środowiska uruchomieniowego języka wspólnego (CLR, common language runtime) programu SQL Server. Ta opcja jest włączona automatycznie po zainstalowaniu programu Configuration Manager. Aby uzyskać więcej informacji na temat środowiska CLR, zobacz [wprowadzenie do integracji środowiska CLR programu SQL Server](https://msdn.microsoft.com/library/ms254498\(v=vs.110\).aspx).  
 
-##  <a name="bkmk_optional"></a> Configurações necessárias para o SQL Server  
- As seguintes configurações são opcionais para cada base de dados que utiliza uma instalação completa do SQL Server.  
+##  <a name="bkmk_optional"></a> Konfiguracje opcjonalne dla programu SQL Server  
+ Następujące konfiguracje są opcjonalne dla poszczególnych baz danych korzystających z pełnej instalacji programu SQL Server.  
 
- **Serviço do SQL Server:**  
- Pode configurar o serviço do SQL Server para executar utilizando:  
+ **Usługa SQL Server:**  
+ Można skonfigurować usługę SQL Server, aby była uruchamiana przy użyciu:  
 
--   O **utilizador de domínio local** conta:  
+-   **Użytkownika lokalnego domeny** konta:  
 
-    -   Esta é uma melhor prática e pode implicar registar manualmente o nome principal de serviço (SPN) para a conta.  
+    -   Najlepszym rozwiązaniem jest i może wymagać ręcznej rejestracji główna nazwa usługi (SPN) dla konta.  
 
--   O **sistema local** conta do computador que executa o SQL Server:  
+-   **Systemu lokalnego** konta komputera, na którym działa program SQL Server:  
 
-    -   Utilize a conta de sistema local para simplificar o processo de configuração.  
-    -   Quando utiliza a conta de sistema local, o Configuration Manager regista automaticamente o SPN para o serviço SQL Server.  
-    -   Tenha em atenção que utilizar uma conta de sistema local para o serviço do SQL Server não é uma melhor prática do SQL Server.  
+    -   Użyj konta systemu lokalnego, aby uprościć proces konfigurowania.  
+    -   Korzystając z konta system lokalny, programu Configuration Manager automatycznie rejestruje główną nazwę usługi programu SQL Server.  
+    -   Pamiętaj, że korzystanie z lokalnego konta systemowego na potrzeby usługi SQL Server nie jest najlepszym rozwiązaniem dla programu SQL Server.  
 
-Quando o computador a executar o SQL Server não utiliza a respetiva conta de sistema local para executar o serviço do SQL Server, tem de configurar o SPN da conta que executa o serviço do SQL Server nos serviços de domínio do Active Directory. (Quando é utilizada a conta de sistema, o SPN é automaticamente registado.)
+W przypadku komputera z programem SQL Server nie używa swojego konta systemu lokalnego do uruchamiania usługi programu SQL Server, należy skonfigurować nazwę SPN konta, na którym jest uruchomiona usługa SQL Server w usługach domenowych w usłudze Active Directory. (W przypadku konta systemowego nazwy SPN jest rejestrowana automatycznie.)
 
-Para obter informações sobre SPNs para a base de dados do site, consulte [gerir o SPN para o servidor de base de dados do site](../../../core/servers/manage/modify-your-infrastructure.md#bkmk_SPN) no [modificar a infraestrutura do System Center Configuration Manager](../../../core/servers/manage/modify-your-infrastructure.md) tópico.  
+Informacje o nazwach SPN dla bazy danych lokacji, zobacz [zarządzać nazwami SPN dla serwera bazy danych lokacji](../../../core/servers/manage/modify-your-infrastructure.md#bkmk_SPN) w [modyfikowanie infrastruktury programu System Center Configuration Manager](../../../core/servers/manage/modify-your-infrastructure.md) tematu.  
 
-Para obter informações sobre como alterar a conta que é utilizada pelo serviço do SQL Server, consulte [como: Alterar a conta de arranque do serviço do SQL Server (SQL Server do Configuration Manager)](http://go.microsoft.com/fwlink/p/?LinkId=237661).  
+Aby uzyskać informacje na temat zmieniania konta używanego przez usługi SQL Server, zobacz [jak: Zmienianie konta uruchamiania usługi programu SQL Server (SQL Server Configuration Manager)](http://go.microsoft.com/fwlink/p/?LinkId=237661).  
 
-**SQL Server Reporting Services:**  
-SQL Server Reporting Services é necessário para instalar um ponto do Reporting Services que lhe permite executar relatórios.  
+**Usługi Usługi SQL Server Reporting Services:**  
+SQL Server Reporting Services jest wymagany do zainstalowania punktu usług raportowania, który umożliwia uruchamianie raportów.  
 
 > [!IMPORTANT]  
-> Depois de atualizar o SQL Server de uma versão anterior, poderá ver o seguinte erro:  *Report Builder não existe*.    
-> Para resolver este erro, terá de reinstalar a função de sistema de sites de ponto do Reporting Services serviços.
+> Po uaktualnieniu z poprzedniej wersji programu SQL Server, może zostać wyświetlony następujący błąd:  *Raport nie istnieje konstruktor*.    
+> Aby rozwiązać ten problem, należy ponownie zainstalować rolę systemu lokacji punktu usług raportowania.
 
-**Portas do SQL Server:**  
-Para comunicação com o motor de base de dados do SQL Server e para replicação entre sites, pode utilizar as configurações de porta do SQL Server predefinida ou especificar portas personalizadas:  
+**Porty programu SQL Server:**  
+Do komunikacji z aparatem bazy danych programu SQL Server oraz replikacji między lokacjami można użyć w domyślnej konfiguracji portów programu SQL Server lub określić porty niestandardowe:  
 
--   **Comunicações entre sites** utilizar o SQL Server Service Broker, que utiliza a porta TCP 4022 por predefinição.  
--   **Comunicações intra-site** entre o motor de base de dados do SQL Server e o sistema de sites do Configuration Manager várias funções de utilizam a porta TCP 1433, por predefinição. As seguintes funções do sistema de sites comunicam diretamente com a base de dados do SQL Server:  
+-   **Komunikacji między lokacjami** Użyj programu SQL Server Service Broker, która używa portu TCP 4022 domyślnie.  
+-   **Komunikacja wewnątrzlokacyjna** między aparatem bazy danych programu SQL Server i systemu lokacji programu Configuration Manager różne role używają domyślnie z portu TCP 1433. Następujące role systemu lokacji komunikują się bezpośrednio z bazą danych program SQL Server:  
 
-    -   Ponto de gestão  
-    -   Computador do Fornecedor de SMS  
-    -   Ponto do Reporting Services  
-    -   Servidor do site  
+    -   Punkt zarządzania  
+    -   Komputer dostawcy programu SMS  
+    -   Punkt usług raportowania  
+    -   Serwer lokacji  
 
-Quando um computador com o SQL Server aloja bases de dados de mais de um site, cada base de dados tem de utilizar uma instância separada do SQL Server. Além disso, cada instância tem de ser configurada para utilizar um conjunto exclusivo de portas.  
+Gdy komputer z uruchomionym programem SQL Server hostuje bazę danych z więcej niż jednej lokacji, każda baza danych musi używać osobnego wystąpienia programu SQL Server. Ponadto każde wystąpienie musi być skonfigurowana do używania unikatowego zestawu portów.  
 
 > [!WARNING]  
->  O Configuration Manager não suporta portas dinâmicas. Uma vez que, por predefinição, as instâncias nomeadas de SQL Server utilizam portas dinâmicas para ligações ao motor da base de dados, quando utilizar uma instância nomeada tem de configurar manualmente a porta estática que pretende utilizar para comunicação entre sites.  
+>  Program Configuration Manager nie obsługuje portów dynamicznych. Nazwane wystąpienia (gdy są używane) programu SQL Server domyślnie używają portów dynamicznych do połączeń z aparatem bazy danych, dlatego należy ręcznie skonfigurować port statyczny, który będzie używany do komunikacji wewnątrzlokacyjnej.  
 
-Se tiver uma firewall ativada no computador que está a executar o SQL Server, certifique-se de que está configurada para permitir as portas que estão a ser utilizadas pela sua implementação e quaisquer localizações na rede entre computadores que comunicam com o SQL Server.  
+Jeśli na komputerze z programem SQL Server jest włączona zapora, upewnij się, że jest skonfigurowana, aby zezwalać na ruch na portach używanych przez wdrożenie oraz we wszystkich lokalizacjach sieciowych między komputerami komunikującymi się z programem SQL Server.  
 
-Para obter um exemplo de como configurar o SQL Server para utilizar uma porta específica, consulte [como: Configurar um servidor para escutar numa porta TCP específica (SQL Server Configuration Manager)](http://go.microsoft.com/fwlink/p/?LinkID=226349) na Biblioteca TechNet do SQL Server.  
+Na przykład sposobu konfigurowania programu SQL Server do używania konkretnego portu zobacz [jak: Konfigurowanie serwera do nasłuchiwania na konkretnym porcie TCP (SQL Server Configuration Manager)](http://go.microsoft.com/fwlink/p/?LinkID=226349) w bibliotece TechNet programu SQL Server.  
 
-## <a name="upgrade-options-for-sql-server"></a>Opções de atualização para o SQL Server
-Se precisar de atualizar a sua versão do SQL Server, recomendamos os seguintes métodos, de fácil mais complexas.
-1. [Atualizar o SQL Server no local](/sccm/core/servers/manage/upgrade-on-premises-infrastructure#a-namebkmksupconfigupgradedbsrva-upgrade-sql-server-on-the-site-database-server) (recomendado).
-2. Instalar uma nova versão do SQL Server num novo computador e, em seguida, [utilizar a opção de mover a base de dados](/sccm/core/servers/manage/modify-your-infrastructure#a-namebkmkdbconfiga-modify-the-site-database-configuration) de configuração do Configuration Manager para apontar o seu servidor do site para o novo SQL Server.
-3. Utilize [cópia de segurança e recuperação](/sccm/protect/understand/backup-and-recovery).
+## <a name="upgrade-options-for-sql-server"></a>Opcje uaktualniania dla programu SQL Server
+Należy uaktualnić używanej wersji programu SQL Server, zalecamy następujących metod z ułatwia bardziej złożonych.
+1. [Uaktualnienie programu SQL Server w miejscu](/sccm/core/servers/manage/upgrade-on-premises-infrastructure#a-namebkmksupconfigupgradedbsrva-upgrade-sql-server-on-the-site-database-server) (zalecane).
+2. Instalowanie nowej wersji programu SQL Server na nowym komputerze, a następnie [opcja przenoszenia bazy danych](/sccm/core/servers/manage/modify-your-infrastructure#a-namebkmkdbconfiga-modify-the-site-database-configuration) Instalatora programu Configuration Manager, aby wskazywały nowy serwer SQL serwera lokacji.
+3. Użyj [kopii zapasowych i odzyskiwania](/sccm/protect/understand/backup-and-recovery).

@@ -1,6 +1,6 @@
 ---
-title: Atualizar a ferramenta de registo | Microsoft Docs
-description: "Determinar quando e como utilizar a ferramenta de registo de atualização para importar manualmente uma atualização para a consola do Configuration Manager."
+title: "Narzędzia rejestracji aktualizacji | Dokumentacja firmy Microsoft"
+description: "Dowiedz się, kiedy i jak używać narzędzia rejestracji aktualizacji ręcznie zaimportować aktualizację do konsoli programu Configuration Manager."
 ms.custom: na
 ms.date: 3/27/2017
 ms.prod: configuration-manager
@@ -17,55 +17,55 @@ manager: angrobe
 ms.openlocfilehash: 35a4c201f73469fdfaa5bb8629e91886f7ae8751
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
 ms.translationtype: MT
-ms.contentlocale: pt-PT
+ms.contentlocale: pl-PL
 ms.lasthandoff: 08/07/2017
 ---
-# <a name="use-the-update-registration-tool-to-import-hotfixes-to-system-center-configuration-manager"></a>Utilizar a Ferramenta de Registo de Atualização para importar correções para o System Center Configuration Manager
+# <a name="use-the-update-registration-tool-to-import-hotfixes-to-system-center-configuration-manager"></a>Używanie narzędzia rejestracji aktualizacji do importowania poprawek do programu System Center Configuration Manager
 
-*Aplica-se a: O System Center Configuration Manager (ramo atual)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Algumas atualizações do Configuration Manager não estão disponíveis no serviço em nuvem Microsoft e só são obtidas fora de banda. Um exemplo é uma correção de versão limitada para resolver um problema específico.   
-Quando tem de instalar uma versão de fora de banda e o nome de ficheiro de atualização ou correção termina com a extensão **update.exe**, utilize o **ferramenta de registo de atualização** para importar manualmente a atualização para a consola do Configuration Manager. A ferramenta permite extrair e transferir o pacote de atualização para o servidor do site e registar a atualização na consola do Configuration Manager.  
+Niektóre aktualizacje programu Configuration Manager nie są dostępne z usługi w chmurze firmy Microsoft i są pobierane tylko poza pasmem. Przykładem jest ograniczona wersja poprawki rozwiązującej określony problem.   
+Kiedy należy zainstalować wersji poza pasmem i nazwa pliku aktualizacji lub poprawki kończy się rozszerzeniem **update.exe**, możesz użyć **narzędzia rejestracji aktualizacji** ręcznie zaimportować aktualizację do konsoli programu Configuration Manager. Narzędzie pozwala wyodrębnić i przenieść pakiet aktualizacji do serwera lokacji i zarejestrować aktualizację za pomocą konsoli programu Configuration Manager.  
 
- Se o ficheiro de correção tiver a **.exe** extensão de ficheiro (não **update.exe**), consulte [utilizar o instalador de correções para instalar atualizações para o System Center Configuration Manager](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md)  
+ Jeśli plik poprawki ma **.exe** rozszerzenie pliku (nie **update.exe**), zobacz [używania Instalatora poprawek do instalowania aktualizacji dla programu System Center Configuration Manager](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md)  
 
 > [!NOTE]  
->  Este tópico fornece orientações gerais sobre como instalar correções que atualizam o System Center Configuration Manager. Para obter detalhes sobre uma correção ou atualização específica, consulte o artigo da Base de dados de conhecimento (KB) correspondente no Support da Microsoft.  
+>  W tym temacie przedstawiono ogólne wskazówki dotyczące sposobu instalacji poprawek, które aktualizują program System Center Configuration Manager. Szczegółowe informacje o konkretnej poprawki lub aktualizacji można znaleźć jego odpowiedni artykuł bazy wiedzy Knowledge Base (KB) w programie Microsoft Support.  
 
- **Pré-requisitos para utilizar a ferramenta de registo de atualização:**  
+ **Wymagania wstępne dotyczące korzystania z narzędzia rejestracji aktualizacji:**  
 
--   Apenas fora de banda de atualizações que terminam com o **. update.exe** extensão pode ser instalada utilizando esta ferramenta  
+-   Tylko poza pasmem aktualizacji w tym celu **. update.exe** rozszerzenia można zainstalować za pomocą tego narzędzia  
 
--   A ferramenta é autónoma e contém as atualizações individuais que obtém diretamente da Microsoft  
+-   Narzędzie to jest autonomicznym środowiskiem z poszczególnymi aktualizacjami, które uzyskuje się bezpośrednio od firmy Microsoft  
 
--   A ferramenta não tem uma dependência sobre o modo do ponto de ligação de serviço  
+-   Narzędzie nie ma zależności związanej z trybem punktu połączenia z usługą.  
 
--   A ferramenta deve ser executada no computador que aloja o ponto de ligação de serviço  
+-   Narzędzie należy uruchomić na komputerze hostującym punkt połączenia z usługą.  
 
--   O computador onde a ferramenta é executada (o computador de ponto de serviço do ligação) tem de ter o Framework .NET 4.52 instalado  
+-   Na komputerze, na którym działa narzędzie (komputer punktu połączenia usługi) musi być zainstalowane środowisko .NET Framework 4.52  
 
--   A conta que utiliza para executar a ferramenta tem de ter **administrador local** permissões no computador que aloja o ponto de ligação de serviço (onde a ferramenta é executada)  
+-   Konto używane do uruchamiania narzędzia musi mieć **administratora lokalnego** uprawnienia na komputerze, który hostuje punkt połączenia usługi (w którym narzędzie jest uruchamiane)  
 
--   A conta que utiliza para executar a ferramenta tem de ter **escrever** permissões para a seguinte pasta no computador que aloja o ponto de ligação de serviço:  **&lt;Diretório de instalação do ConfigMgr\>\EasySetupPayload\offline**  
+-   Konto używane do uruchamiania narzędzia musi mieć **zapisu** uprawnienia do folderu na komputerze, który hostuje punkt połączenia z usługą:  **&lt;Katalog instalacyjny programu ConfigMgr\>\EasySetupPayload\offline**  
 
-### <a name="to-use-the-update-registration-tool"></a>Utilizar a ferramenta de registo de atualização  
+### <a name="to-use-the-update-registration-tool"></a>Aby użyć narzędzia rejestracji aktualizacji  
 
-1.  No computador que aloja o ponto de ligação de serviço:  
+1.  Na komputerze hostującym punkt połączenia z usługą:  
 
-    -   Abra uma linha de comandos com privilégios administrativos e, em seguida, altere os diretórios para a localização que contém  **&lt;produto\>-&lt;versão do produto\>-&lt;ID do artigo KB\>-ConfigMgr.Update.exe**  
+    -   Otwórz wiersz polecenia z uprawnieniami administracyjnymi, a następnie przejdź do lokalizacji zawierającej  **&lt;produktu\>-&lt;wersji produktu\>-&lt;identyfikator artykułu bazy wiedzy\>-ConfigMgr.Update.exe**  
 
-2.  Execute o seguinte comando para iniciar a ferramenta de registo de atualização:  
+2.  Uruchom następujące polecenie, aby uruchomić narzędzie rejestracji aktualizacji:  
 
-    -   **&lt;Produto\>-&lt;versão do produto\>-&lt;ID do artigo KB\>-ConfigMgr.Update.exe**  
+    -   **&lt;Produkt\>-&lt;wersji produktu\>-&lt;identyfikator artykułu bazy wiedzy\>-ConfigMgr.Update.exe**  
 
-    Depois de a correção ser registada, é apresentada como uma nova atualização na consola no prazo de 24 horas.  Pode acelerar o processo:
+    Po zarejestrowaniu poprawki pojawi się ona jako nowa aktualizacja w konsoli w ciągu 24 godzin.  Można przyspieszyć ten proces:
 
-    - Abra a consola do Configuration Manager e aceda a **administração** > **atualizações e manutenção**e, em seguida, clique em **procurar atualizações**. (Antes da versão 1702, atualizações e manutenção estava **administração** > **serviços em nuvem**.) 
+    - Otwórz konsolę programu Configuration Manager i przejdź do do **administracji** > **aktualizacje i obsługa**, a następnie kliknij przycisk **Sprawdź aktualizacje**. (Przed wersji 1702, aktualizacje i obsługa znajdowało się pod **administracji** > **usługi w chmurze**.) 
 
-    A ferramenta de registo de atualização regista as ações num ficheiro .log no computador local. O ficheiro de registo tem o mesmo nome como ficheiro .exe e é escrito o **%SystemRoot%/Temp** pasta.  
+    Narzędzie rejestracji aktualizacji rejestruje swoje działania w pliku LOG na komputerze lokalnym. Plik dziennika ma taką samą nazwę jak plik .exe poprawki i jest zapisywany w **%SystemRoot%/Temp** folderu.  
 
-     Depois de a atualização ser registada, pode fechar a ferramenta de registo de atualização.  
+     Po zarejestrowaniu aktualizacji możesz zamknąć narzędzie rejestracji aktualizacji.  
 
-3.  Abra a consola do Configuration Manager e navegue para **administração** > **atualizações e manutenção**. As correções importadas estão agora disponíveis para instalação. (Antes da versão 1702, atualizações e manutenção estava **administração** > **serviços em nuvem**.)
+3.  Otwórz konsolę programu Configuration Manager i przejdź do **administracji** > **aktualizacje i obsługa**. Poprawki, które zostały zaimportowane, są teraz dostępne do zainstalowania. (Przed wersji 1702, aktualizacje i obsługa znajdowało się pod **administracji** > **usługi w chmurze**.)
 
- Para obter informações sobre a instalação de atualizações, consulte [instalar atualizações na consola do System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md)  
+ Aby uzyskać informacje o instalowaniu aktualizacji, zobacz [instalacja aktualizacji w konsoli programu System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md)  
