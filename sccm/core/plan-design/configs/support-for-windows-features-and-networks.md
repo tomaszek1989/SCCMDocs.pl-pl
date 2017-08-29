@@ -2,7 +2,7 @@
 title: "Obsługa funkcji systemu Windows | Dokumentacja firmy Microsoft"
 description: "Dowiedz się, które systemu Windows i sieci programu System Center Configuration Manager obsługuje funkcje."
 ms.custom: na
-ms.date: 3/30/2017
+ms.date: 8/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: e040552dab21ba9a71e06a78f6acc2ffe1b0eb61
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: be9b7e84fecfa7a07c411c3d46168e5485e0dfab
+ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/28/2017
 ---
 # <a name="support-for-windows-features-and-networks-in-system-center-configuration-manager"></a>Obsługa funkcji systemu Windows i sieci w programie System Center Configuration Manager
 
@@ -49,7 +49,7 @@ Ci klienci także pamięci podręcznej zawartości. Dzięki temu kolejni klienci
 -   **Konfigurowanie klientów:**    
     -   Klienci, którzy mogą obsługiwać usługę BranchCache, musi być skonfigurowany dla trybu rozproszonej pamięci podręcznej usługi BranchCache.  
     -   Ustawienia systemu operacyjnego dla ustawień klienta usługi BITS musi być włączony do obsługi usługi BranchCache.   <br /> <br />
-        
+
     Aby uzyskać informacje dotyczące sposobu konfigurowania klientów do obsługi usługi BranchCache, zobacz [skonfigurować klientów](https://technet.microsoft.com/itpro/windows/manage/waas-branchcache#configure-clients-for-branchcache) sekcji [aktualizuje konfigurowania usługi BranchCache dla systemu Windows 10](https://technet.microsoft.com/itpro/windows/manage/waas-branchcache).
 
 
@@ -80,9 +80,11 @@ Configuration Manager obsługuje klientów w grupach roboczych.
 ##  <a name="bkmmk_datadedup"></a> Deduplikacja danych  
 Program Configuration Manager obsługuje używanie deduplikacji danych dla punktów dystrybucji w następujących systemach operacyjnych:  
 
+-   Windows Server 2016
+-   Windows Server 2012 R2  
 -   Windows Server 2012  
 
--   Windows Server 2012 R2  
+
 
 > [!IMPORTANT]  
 >  Woluminu udostępniającego pliki źródłowe pakietu nie można wybrać do deduplikacji. Jest tak, ponieważ funkcja deduplikacji danych używa punktów ponownej analizy, a Configuration Manager nie obsługuje używania lokalizacji źródła zawartości z plikami przechowywanymi w punktach ponownej analizy.  

@@ -14,11 +14,11 @@ caps.latest.revision: "4"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: f539e2d282b56e56a9c58c773788325b27ea6b37
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 9c50f6633a5ca04b62f4c3b06119fb1fbcab2643
+ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/28/2017
 ---
 # <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>Numery rozmiaru i skali dla programu System Center Configuration Manager
 
@@ -56,18 +56,9 @@ Następujące numery pomocy technicznej są oparte na użyciu zalecany sprzęt d
 
 -   Centralna lokacja administracyjna obsługuje do 25 podrzędnych lokacji głównych.  
 
-**Punkt witryny sieci Web katalogu aplikacji:**  
-
--   Można zainstalować wiele wystąpień punktu witryny sieci Web katalogu aplikacji w lokacjach głównych.  
-
-    > [!TIP]  
-    >  Najlepszym rozwiązaniem zainstalować punkt witryny sieci Web katalogu aplikacji i punkt usługi sieci web wykazu aplikacji razem w tym samym systemie lokacji gdy udostępniają usługi klientom, którzy znajdują się w intranecie.  
-
-    -   Aby poprawić wydajność Zaplanuj do obsługi maksymalnie 50 000 klientów dla każdego wystąpienia.  
-
-    -   Każde wystąpienie tej roli systemu lokacji obsługuje maksymalną liczbę klientów obsługiwanych przez hierarchię.  
 
 ## <a name="bkmk_roles"></a>Role systemu lokacji    
+
 
 **Punkt usługi sieci web katalogu aplikacji:**  
 
@@ -79,6 +70,18 @@ Następujące numery pomocy technicznej są oparte na użyciu zalecany sprzęt d
     -   Aby poprawić wydajność Zaplanuj do obsługi maksymalnie 50 000 klientów dla każdego wystąpienia.  
 
     -   Każde wystąpienie tej roli systemu lokacji obsługuje maksymalną liczbę klientów obsługiwanych przez hierarchię.  
+
+**Punkt witryny sieci Web katalogu aplikacji:**  
+
+-   Można zainstalować wiele wystąpień punktu witryny sieci Web katalogu aplikacji w lokacjach głównych.  
+
+    > [!TIP]  
+    >  Najlepszym rozwiązaniem zainstalować punkt witryny sieci Web katalogu aplikacji i punkt usługi sieci web wykazu aplikacji razem w tym samym systemie lokacji gdy udostępniają usługi klientom, którzy znajdują się w intranecie.  
+
+    -   Aby poprawić wydajność Zaplanuj do obsługi maksymalnie 50 000 klientów dla każdego wystąpienia.  
+
+    -   Każde wystąpienie tej roli systemu lokacji obsługuje maksymalną liczbę klientów obsługiwanych przez hierarchię.  
+
 
 **Punkt dystrybucji:**  
 

@@ -13,11 +13,11 @@ ms.assetid: cb405ba0-8792-4ab7-988b-2f835f3a9550
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 7ee2fd78c6c502394016ba077d42714041ad01c6
-ms.sourcegitcommit: 10f17229c5a359f040cb7f8f5e7bd868a34ac086
+ms.openlocfilehash: 3572004fa43db3e84295b68599dd95e0447f4c65
+ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/15/2017
+ms.lasthandoff: 08/28/2017
 ---
 # <a name="capabilities-in-technical-preview-1707-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1707 programu System Center Configuration Manager
 
@@ -35,7 +35,7 @@ W tym artykule przedstawiono funkcje, które są dostępne w wersji Technical Pr
 **Znane problemy w tej wersji Technical Preview:**
 -   **Aktualizacja do wersji 1707 podglądu zakończy się niepowodzeniem, jeśli masz serwer lokacji w trybie pasywnym**. Po uruchomieniu wersji zapoznawczej 1706 i mieć [serwera lokacji głównej w trybie pasywnym](/sccm/core/get-started/capabilities-in-technical-preview-1706#site-server-role-high-availability), aby może pomyślnie zaktualizować lokację preview do wersji 1707 należy najpierw odinstalować serwer lokacji w trybie pasywnym. Po lokalizacji uruchomiono wersję 1707 można ponownie zainstalować serwer lokacji w trybie pasywnym.
 
-  Aby odinstalować lokacji w trybie pasywnym:
+  Aby odinstalować serwer lokacji w trybie pasywnym:
   1. W konsoli przejdź do **administracji** > **omówienie** > **konfiguracja lokacji** > **serwery i role systemu lokacji**, a następnie wybierz serwer lokacji w trybie pasywnym.
   2. W **ról systemu lokacji** okienku, kliknij prawym przyciskiem myszy **serwera lokacji** roli, a następnie wybierz pozycję **Usuń rolę**.
   3. Kliknij prawym przyciskiem myszy na serwerze lokacji w trybie pasywnym, a następnie wybierz pozycję **usunąć**.

@@ -2,7 +2,7 @@
 title: "Wymagania wstępne dotyczące lokacji | Dokumentacja firmy Microsoft"
 description: "Dowiedz się, jak skonfigurować komputer z systemem Windows jako serwera systemu lokacji programu System Center Configuration Manager."
 ms.custom: na
-ms.date: 1/17/2017
+ms.date: 8/25/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 0b1d2d619d6cdaf36cc22ef461ea1505b5cacc41
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 09749a3045ca6eebf1363b6e53cd8607b5f32578
+ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/28/2017
 ---
 # <a name="site-and-site-system-prerequisites-for-system-center-configuration-manager"></a>Witryny i wymagania wstępne systemu lokacji dla programu System Center Configuration Manager
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 08/07/2017
 
  Komputery z systemem Windows muszą mieć określone konfiguracje, aby zapewnić obsługę ich użycia jako serwery systemu lokacji programu System Center Configuration Manager.  
 
-
+ 
  Dla niektórych produktów takie jak Windows Server Update Services (WSUS) dla oprogramowania punktu aktualizacji, należy zapoznać się z dokumentacją produktu, aby zidentyfikować dodatkowe wymagania wstępne i ograniczenia dotyczące użycia tego produktu. W tym miejscu są uwzględniane tylko konfiguracje, które są stosowane bezpośrednio do użytku z programem Configuration Manager.   
 
 > [!NOTE]  
@@ -66,9 +66,7 @@ ms.lasthandoff: 08/07/2017
 
 **Zestaw Windows ADK:**  
 
--   Przed zainstalowaniem lub uaktualnieniem centralnej lokacji administracyjnej lub lokacji głównej, należy zainstalować wersję systemu Windows Assessment and Deployment Kit (ADK), który wymaga wersji programu Configuration Manager w przypadku instalowania lub uaktualniania do.  
-
-    -   Wersja 1511 programu Configuration Manager wymaga wersji systemu Windows 10 RTM (10.0.10240) zestawu Windows adk.  
+-   Przed zainstalowaniem lub uaktualnieniem centralnej lokacji administracyjnej lub lokacji głównej, należy zainstalować wersję systemu Windows Assessment and Deployment Kit (ADK), który wymaga wersji programu Configuration Manager w przypadku instalowania lub uaktualniania do. Zobacz [zestawu Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) w pomocy technicznej dla systemu Windows 10 jako temat klienta.  
 
 -   Aby uzyskać więcej informacji na temat tego wymagania, zobacz [wymagania dotyczące infrastruktury dla wdrożenia systemu operacyjnego](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
@@ -115,9 +113,7 @@ ms.lasthandoff: 08/07/2017
 ###  <a name="bkmk_2012smsprovpreq"></a>Serwer dostawcy programu SMS  
 **Zestaw Windows ADK:**  
 
--   Komputer, na którym jest instalowane wystąpienie dostawcy programu SMS musi mieć wymaganą wersję zestawu Windows ADK, który wymaga programu Configuration Manager w przypadku instalowania lub uaktualniania do wersji.  
-
-    -   Wersja 1511 programu Configuration Manager wymaga wersji systemu Windows 10 RTM (10.0.10240) zestawu Windows adk.  
+-   Komputer, na którym jest instalowane wystąpienie dostawcy programu SMS musi mieć wymaganą wersję zestawu Windows ADK, który wymaga programu Configuration Manager w przypadku instalowania lub uaktualniania do wersji. Zobacz [zestawu Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) w pomocy technicznej dla systemu Windows 10 jako temat klienta.
 
 -   Aby uzyskać więcej informacji na temat tego wymagania, zobacz [wymagania dotyczące infrastruktury dla wdrożenia systemu operacyjnego](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
@@ -448,9 +444,7 @@ Windows Server 2008 i Windows Server 2008 R2 znajdują się teraz w rozszerzonej
 
 **Zestaw Windows ADK:**  
 
--   Przed zainstalowaniem lub uaktualnieniem centralnej lokacji administracyjnej lub lokacji głównej, należy zainstalować wersję zestawu Windows ADK, który wymaga programu Configuration Manager w przypadku instalowania lub uaktualniania do wersji.  
-
-    -   Wersja 1511 programu Configuration Manager wymaga wersji systemu Windows 10 RTM (10.0.10240) zestawu Windows adk.  
+-   Przed zainstalowaniem lub uaktualnieniem centralnej lokacji administracyjnej lub lokacji głównej, należy zainstalować wersję zestawu Windows ADK, który wymaga programu Configuration Manager w przypadku instalowania lub uaktualniania do wersji.  Zobacz [zestawu Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) w pomocy technicznej dla systemu Windows 10 jako temat klienta.  
 
 -   Aby uzyskać więcej informacji na temat tego wymagania, zobacz [wymagania dotyczące infrastruktury dla wdrożenia systemu operacyjnego](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
@@ -495,9 +489,7 @@ Windows Server 2008 i Windows Server 2008 R2 znajdują się teraz w rozszerzonej
 ###  <a name="bkmk_2008smsprovpreq"></a>Serwer dostawcy programu SMS  
 **Zestaw Windows ADK:**  
 
--   Komputer, na którym jest instalowane wystąpienie dostawcy programu SMS musi mieć wymaganą wersję zestawu Windows ADK, który wymaga programu Configuration Manager w przypadku instalowania lub uaktualniania do wersji.  
-
-    -   Wersja 1511 programu Configuration Manager wymaga wersji systemu Windows 10 RTM (10.0.10240) zestawu Windows adk.  
+-   Komputer, na którym jest instalowane wystąpienie dostawcy programu SMS musi mieć wymaganą wersję zestawu Windows ADK, który wymaga programu Configuration Manager w przypadku instalowania lub uaktualniania do wersji. Zobacz [zestawu Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) w pomocy technicznej dla systemu Windows 10 jako temat klienta.  
 
 -   Aby uzyskać więcej informacji na temat tego wymagania, zobacz [wymagania dotyczące infrastruktury dla wdrożenia systemu operacyjnego](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 

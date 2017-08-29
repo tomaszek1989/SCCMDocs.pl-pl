@@ -9,33 +9,34 @@ ms.topic: article
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: cc397ab5-125f-4f17-905b-fab980194f49
-ms.openlocfilehash: 74b9dbb1ed0172d99956e726fca3aec2b658ce77
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 55f25239dc80641b2f5f7bf1c9d753b146269886
+ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/28/2017
 ---
 # <a name="change-your-mdm-authority"></a>Zmienić urzędu zarządzania urządzeniami Przenośnymi
-Począwszy od 1610 wersji programu Configuration Manager i Microsoft Intune version 1705, można zmienić urzędu zarządzania urządzeniami Przenośnymi bez konieczności kontaktowania się Microsoft Support i bez konieczności wyrejestrowywania i Zarejestruj ponownie istniejących zarządzanych urządzeń.
+Począwszy od programu Configuration Manager 1610 wersji, można zmienić urzędu zarządzania urządzeniami Przenośnymi bez konieczności kontaktowania się Microsoft Support i bez konieczności wyrejestrowywania i Zarejestruj ponownie istniejących zarządzanych urządzeń.
 
 ## <a name="change-the-mdm-authority-to-intune-standalone"></a>Zmień autonomicznej usługi Intune urząd zarządzania urządzeniami Przenośnymi
 Ta sekcja umożliwia zmiana dzierżawy usługi Microsoft Intune istniejące skonfigurowane z konsoli programu Configuration Manager (rozwiązanie hybrydowe) do autonomicznej usługi Intune bez konieczności wyrejestrowywania i Zarejestruj ponownie istniejących zarządzanych urządzeń.
 
 ### <a name="key-considerations"></a>Najważniejsze kwestie związane z
-Po zmianie nowego urzędu zarządzania urządzeniami Przenośnymi, prawdopodobnie będą się czas przejścia (maksymalnie 8 godzin) przed urządzenie sprawdza i synchronizuje się z usługą. Będzie wymagana do konfigurowania ustawień nowego urzędu zarządzania urządzeniami Przenośnymi (autonomicznej usługi Intune), aby upewnić się, że zarejestrowane urządzenia będą nadal zarządzane i chronione po zmianie. Należy pamiętać o następujących kwestiach:
-- Urządzenia muszą połączyć z usługą po zmianie tak, aby ustawienia z nowego urzędu zarządzania urządzeniami Przenośnymi (autonomicznej usługi Intune) spowoduje zastąpienie istniejących ustawień na urządzeniu.
-- Po zmianie urząd zarządzania urządzeniami Przenośnymi, niektóre z podstawowych ustawień (takich jak profile) z poprzednich urząd zarządzania urządzeniami Przenośnymi (rozwiązanie hybrydowe) pozostanie na urządzeniu przez okres do 7 dni. Zaleca się, jak najszybciej skonfigurowanie aplikacji i ustawień (zasady, profile, aplikacje itd.) nowego urzędu zarządzania urządzeniami Przenośnymi i wdrożyć ustawienia dla grupy użytkowników, które zawiera użytkowników, którzy mają istniejących zarejestrowanych urządzeń. Jak urządzenie łączy się z usługą po zmianie urzędu zarządzania urządzeniami Przenośnymi, spowoduje to odbieranie nowych ustawień z nowego urzędu zarządzania urządzeniami Przenośnymi i uniknąć przerw w zarządzaniem i ochroną. Wszystkie nowo docelowych zasady spowoduje zastąpienie istniejących zasad na urządzeniu.
+Po zmianie do nowego urzędu zarządzania urządzeniami Przenośnymi, będą prawdopodobnie być przejścia (maksymalnie osiem godzin) przed urządzenie sprawdza i synchronizuje się z usługą. Należy skonfigurować ustawienia nowego urzędu zarządzania urządzeniami Przenośnymi (autonomicznej usługi Intune), aby upewnić się, zarejestrowane urządzenia są nadal zarządzane i chronione po zmianie. Należy uwzględnić następujące kwestie:
+- Urządzenia muszą połączyć z usługą po zmianie tak, aby ustawienia z nowego urzędu zarządzania urządzeniami Przenośnymi (autonomicznej usługi Intune) zastępuje istniejące ustawienia na urządzeniu.
+- Po zmianie urząd zarządzania urządzeniami Przenośnymi, niektóre z podstawowych ustawień (takich jak profile) z poprzednich urząd zarządzania urządzeniami Przenośnymi (rozwiązanie hybrydowe) pozostają na urządzeniu przez maksymalnie 7 dni. Zaleca się, jak najszybciej skonfigurowanie aplikacji i ustawień (zasady, profile, aplikacje itd.) nowego urzędu zarządzania urządzeniami Przenośnymi i wdrożyć ustawienia dla grupy użytkowników, które zawiera użytkowników, którzy mają istniejących zarejestrowanych urządzeń. Gdy urządzenie łączy się z usługą po zmianie urzędu zarządzania urządzeniami Przenośnymi, odbiera nowe ustawienia z nowego urzędu zarządzania urządzeniami Przenośnymi. Wszystkie nowo docelowych zasady spowoduje zastąpienie istniejących zasad na urządzeniu.
 - Po zmianie nowego urzędu zarządzania urządzeniami Przenośnymi, dane zgodności w konsoli administracyjnej Microsoft Intune może potrwać do tygodnia do precyzyjnie. Jednak stanów zgodności w usłudze Azure Active Directory i na urządzeniu będą dokładne, urządzenia będą nadal chronione.
+- Urządzenia, które nie mają skojarzonych użytkowników (zazwyczaj gdy masz iOS Device Enrollment Program lub scenariusze rejestracji zbiorczej) nie są migrowane do nowego urzędu zarządzania urządzeniami Przenośnymi. Dla tych urządzeń należy się z działem pomocy technicznej, aby uzyskać pomoc przenieść je do nowego urzędu zarządzania urządzeniami Przenośnymi.
 
 ### <a name="prepare-to-change-the-mdm-authority-to-intune-standalone"></a>Przygotowanie do zmienić urząd zarządzania urządzeniami Przenośnymi do autonomicznej usługi Intune
 Przejrzyj następujące informacje w celu przygotowania do zmiany urząd zarządzania urządzeniami Przenośnymi:
 - Musi mieć Configuration Manager w wersji 1610 lub wyższą, aby zmienić urząd zarządzania urządzeniami Przenośnymi, które mają być dostępne.
-- Może potrwać maksymalnie 8 godzin dla urządzeń połączyć się z usługą po przejściu do nowego urzędu zarządzania urządzeniami Przenośnymi.
-- Upewnij się, że wszyscy użytkownicy, którzy są obecnie zarządzane przez hybrydowego ma licencję usługi Intune/EMS specjalnie do nich przypisane przed zmianą urzędu zarządzania urządzeniami Przenośnymi. Daje to pewność, że użytkownik i ich urządzenia będą zarządzane przez autonomicznej usługi Intune po zmianie urzędu zarządzania urządzeniami Przenośnymi. Aby uzyskać więcej informacji, zobacz [przypisywanie licencji usługi Intune do kont użytkowników](https://docs.microsoft.com/intune/get-started/start-with-a-paid-subscription-to-microsoft-intune-step-4).
+- Może potrwać maksymalnie osiem godzin dla urządzeń połączyć się z usługą po przejściu do nowego urzędu zarządzania urządzeniami Przenośnymi.
+- Upewnij się, że wszyscy użytkownicy, którzy są obecnie zarządzane przez hybrydowego mają licencji usługi Intune/EMS do nich przypisane przed zmianą urzędu zarządzania urządzeniami Przenośnymi. Licencja gwarantuje, że użytkownik i ich urządzenia są zarządzane przez autonomicznej usługi Intune po zmianie urzędu zarządzania urządzeniami Przenośnymi. Aby uzyskać więcej informacji, zobacz [przypisywanie licencji usługi Intune do kont użytkowników](https://docs.microsoft.com/intune/get-started/start-with-a-paid-subscription-to-microsoft-intune-step-4).
 - Upewnij się, że konto użytkownika Administrator ma przypisanej licencji usługi Intune/EMS i Potwierdź, czy konto użytkownika Administrator zalogować się do usługi Intune przed zmianą do urząd zarządzania urządzeniami Przenośnymi. Urząd zarządzania urządzeniami Przenośnymi powinien być wyświetlany **ustawiony program Configuration Manager** (hybrydowego dzierżawcy) w konsoli administracyjnej Microsoft Intune, przed zmianą urzędu zarządzania urządzeniami Przenośnymi.
 - W konsoli programu Configuration Manager usuń wszystkie role menedżera rejestracji urządzeń. Przejdź do **administracji** > **usługi w chmurze** > **subskrypcje usługi Microsoft Intune**, wybierz subskrypcję Microsoft Intune, kliknij przycisk **właściwości**, kliknij przycisk **Menedżera rejestracji urządzeń** i Usuń wszystkie role menedżera rejestracji urządzeń.
 - W konsoli programu Configuration Manager należy usunąć istniejące kategorie urządzeń. Przejdź do **zasoby i zgodność** > **omówienie** > **kolekcje urządzeń**, wybierz **Zarządzanie kategorie urządzeń**i Usuń istniejące kategorie urządzeń.
-- Podczas zmiany urzędu zarządzania urządzeniami Przenośnymi powinien istnieć bez zauważalnego wpływu dla użytkowników końcowych. Można jednak komunikować się ta zmiana na użytkowników, aby upewnić się, że ich urządzeń są włączone i czy łączą z usługą wkrótce po zmianie. To zapewnia, że dowolną liczbę urządzeń, jak to możliwe będzie połączenia i jak najszybciej rejestrowanie za pomocą usługi za pomocą nowego urzędu.
+- Powinien istnieć bez zauważalnego wpływu użytkownikom końcowym podczas zmiany urzędu zarządzania urządzeniami Przenośnymi. 
 - Jeśli używasz programu Configuration Manager (hybrydowego dzierżawcy) do zarządzania urządzeniami z systemem iOS przed zmianą urzędu zarządzania urządzeniami Przenośnymi, należy się upewnić, że tego samego certyfikatu firmy Apple Push Notification service (APNs), który był wcześniej używany w programie Configuration Manager jest odnowiony i użyty do skonfigurowania dzierżawy ponownie w autonomicznej usługi Intune.
 
     > [!IMPORTANT]  
@@ -74,13 +75,13 @@ Jeśli masz urządzenia z systemem iOS, należy skonfigurować certyfikat APNs w
     **Microsoft Intune administration console**   -->
     W [konsoli administracyjnej Microsoft Intune](http://manage.microsoft.com), przejdź do **administracji** &gt; **zarządzanie urządzeniami przenośnymi** &gt; **z systemem iOS i Mac OS X** &gt; **Przekaż certyfikat APNs**, a następnie wybierz pozycję **Pobierz żądanie certyfikatu APNs**. Zapisz lokalnie plik żądania podpisania certyfikatu (CSR).
     > [!IMPORTANT]    
-    > Należy pobrać nowe żądanie podpisania certyfikatu. Nie należy używać istniejącego pliku, lub zakończy się niepowodzeniem.
+    > Pobierz żądanie podpisania certyfikatu nowe. Nie należy używać istniejącego pliku, lub zakończy się niepowodzeniem.
 
     ![Pobierz żądanie certyfikatu APNs](/sccm/mdm/deploy-use/media/mdm-change-download-apns-certificate.png)
 
-2.  Przejdź do [Apple Push Certificates Portal](http://go.microsoft.com/fwlink/?LinkId=269844)i zaloguj się przy użyciu **tego samego** Apple ID, który został użyty do wcześniej tworzenia i odnawiania certyfikatu APNs, który został użyty w programie Configuration Manager (rozwiązanie hybrydowe).
+2.  Przejdź do [Apple Push Certificates Portal](http://go.microsoft.com/fwlink/?LinkId=269844)i zaloguj się przy **tego samego** Apple ID, który został użyty do wcześniej tworzenia i odnawiania certyfikatu APNs, który został użyty w programie Configuration Manager (rozwiązanie hybrydowe).
 
-    ![Strona logowania portalu Apple Push Certificates](/sccm/mdm/deploy-use/media/mdm-change-apns-portal.png)
+    ![Stronę logowania w portalu Apple Push Certificates](/sccm/mdm/deploy-use/media/mdm-change-apns-portal.png)
 
 3.  Wybierz certyfikat APNs, który został użyty w programie Configuration Manager (rozwiązanie hybrydowe), a następnie kliknij przycisk **odnawiania**.   
 
@@ -88,10 +89,10 @@ Jeśli masz urządzenia z systemem iOS, należy skonfigurować certyfikat APNs w
 
 4.  Wybierz APNs plik żądania podpisania certyfikatu (CSR) pobranego lokalnie, a następnie kliknij przycisk **przekazać**.
 
-    ![Strona logowania portalu Apple Push Certificates](/sccm/mdm/deploy-use/media/mdm-change-renew-apns-upload.png)  
+    ![Stronę logowania w portalu Apple Push Certificates](/sccm/mdm/deploy-use/media/mdm-change-renew-apns-upload.png)  
 5.  Wybierz tej samej usługi APNs, a następnie kliknij przycisk **Pobierz**. Pobierz certyfikat usługi APN (PEM) i Zapisz plik lokalnie.  
 
-    ![Strona logowania portalu Apple Push Certificates](/sccm/mdm/deploy-use/media/mdm-change-renew-apns-download.png)
+    ![Stronę logowania w portalu Apple Push Certificates](/sccm/mdm/deploy-use/media/mdm-change-renew-apns-download.png)
 
 6.  Przekazać odnowiony certyfikat APNs do dzierżawy usługi Intune przy użyciu tego samego Identyfikatora Apple jako przed.
 <!--The process is different depending on how to connect to Intune:  
@@ -105,17 +106,17 @@ Jeśli masz urządzenia z systemem iOS, należy skonfigurować certyfikat APNs w
 
 ### <a name="next-steps"></a>Następne kroki
 Po zakończeniu zmiany urzędu zarządzania urządzeniami Przenośnymi, przejrzyj poniższe kroki:
-- Gdy usługi Intune wykryje, że urząd zarządzania urządzeniami Przenośnymi dzierżawy została zmieniona, będą wysyłane powiadomienie na wszystkich zarejestrowanych urządzeniach ewidencjonowania i zsynchronizować z usługą (jest to poza zaplanowanego zaewidencjonowania). W związku z tym po urząd zarządzania urządzeniami Przenośnymi dla dzierżawy została zmieniona z hybrydowego do autonomicznej usługi Intune, wszystkie urządzenia, które są włączone i online będą łączyć się z usługą, odbierania nowego urzędu zarządzania urządzeniami Przenośnymi i zarządzany przez autonomiczną usługę Intune w przyszłości. Nie będzie żadnych przeszkód do zarządzania i ochrony tych urządzeń.
-- Urządzenia, które są zasilane poza lub w trybie offline podczas (lub wkrótce po) Zmień urzędu zarządzania urządzeniami Przenośnymi będzie nawiązać połączenie i synchronizacji z usługi w obszarze nowe urzędu zarządzania urządzeniami Przenośnymi, gdy są włączone i online.  
+- Gdy usługi Intune wykryje, że urząd zarządzania urządzeniami Przenośnymi dzierżawy została zmieniona, wysyła powiadomienie do wszystkich zarejestrowanych urządzeń można sprawdzić i zsynchronizować z usługą (jest to poza zaplanowanego zaewidencjonowania). W związku z tym po urząd zarządzania urządzeniami Przenośnymi dla dzierżawy została zmieniona z hybrydowego do autonomicznej usługi Intune, wszystkie urządzenia, które są włączone i online będą łączyć się z usługą, odbierania nowego urzędu zarządzania urządzeniami Przenośnymi i zarządzany przez autonomiczną usługę Intune w przyszłości. Nie będzie żadnych przeszkód do zarządzania i ochrony tych urządzeń.
+- Urządzenia, które są zasilane poza lub w trybie offline podczas (lub wkrótce po) Zmień urzędu zarządzania urządzeniami Przenośnymi nawiązać połączenie i synchronizacji z usługi w obszarze nowe urzędu zarządzania urządzeniami Przenośnymi, gdy są włączone i online.  
 
-  urządzenia z systemem iOS wymaga dodatkowego czasu, aby odnowić i skonfiguruj certyfikat APN. W związku z tym urządzenia z systemem iOS nie będą otrzymywać żądania początkowego wyboru. Nawet jeśli urządzenia z systemem iOS jest włączona i w trybie online podczas (lub wkrótce po) zmiany urzędu zarządzania urządzeniami Przenośnymi, będą występować opóźnienie maksymalnie 8 godzin (w zależności od czas następnego zaplanowanego regularne zaewidencjonowania) urządzenia są zarejestrowane w usłudze nowego urzędu zarządzania urządzeniami Przenośnymi z systemem iOS.    
+  urządzenia z systemem iOS wymaga dodatkowego czasu, aby odnowić i skonfiguruj certyfikat APN. W związku z tym urządzenia z systemem iOS nie będą otrzymywać początkowej wyboru w żądaniu. Nawet jeśli urządzenia z systemem iOS jest włączona i w trybie online podczas (lub wkrótce po) zmiany urzędu zarządzania urządzeniami Przenośnymi, nastąpi opóźnienie maksymalnie osiem godzin (w zależności od czasu następnego zaplanowanego sprawdzania regularne w) przed zarejestrowanych urządzeń z systemem iOS w usłudze nowego urzędu zarządzania urządzeniami Przenośnymi.    
 
   > [!IMPORTANT]
-  > Czas, po zmianie zarządzania urządzeniami Przenośnymi między urzędu i po przekazaniu odnowionego certyfikatu APN do nowego urzędu, nowe rejestracje urządzenia i zaewidencjonowania urządzenia dla urządzeń z systemem iOS nie powiedzie się. Dlatego jest ważne, możesz sprawdzić i przekaż certyfikat APNs do nowego urzędu certyfikacji, jak najszybciej po zmianie urzędu zarządzania urządzeniami Przenośnymi.   
+  > Czas, po zmianie zarządzania urządzeniami Przenośnymi między urzędu i po przekazaniu odnowionego certyfikatu APN do nowego urzędu, nowe rejestracje urządzenia i urządzenia Wyszukaj w zakończą się urządzeń z systemem iOS. Dlatego jest ważne, możesz sprawdzić i przekaż certyfikat APNs do nowego urzędu certyfikacji, jak najszybciej po zmianie urzędu zarządzania urządzeniami Przenośnymi.   
 
-- Użytkowników można szybko zmienić nowego urzędu zarządzania urządzeniami Przenośnymi należy ręcznie uruchomić ewidencjonowania z urządzenia do usługi. Użytkownicy można łatwo to zrobić przy użyciu aplikacji Portal firmy i Inicjowanie sprawdzenie zgodności urządzenia.
+- Użytkowników można szybko zmienić nowego urzędu zarządzania urządzeniami Przenośnymi należy ręcznie uruchomić wyboru w z urządzenia do usługi. Użytkownicy można łatwo to zrobić przy użyciu aplikacji Portal firmy i Inicjowanie sprawdzenie zgodności urządzenia.
 - Aby sprawdzić, czy elementy działają prawidłowo po urządzenia mają zaewidencjonowania i zsynchronizowane z usługą po zmianie urzędu zarządzania urządzeniami Przenośnymi, wyszukaj urządzenia [konsoli administracyjnej Microsoft Intune](http://manage.microsoft.com). Urządzenia, które wcześniej były zarządzane przez program Configuration Manager (rozwiązanie hybrydowe) zostaną wyświetlone jako zarządzanych urządzeń.    
-- Brak okres przejściowy, gdy urządzenie jest w trybie offline podczas zmiany urzędu zarządzania urządzeniami Przenośnymi i zaewidencjonowaniu tego urządzenia do usługi. Aby upewnić się, że urządzenie pozostaje chroniony i funkcjonalności w tym okresie przejściowym, następujące pozostanie na urządzeniu przez maksymalnie 7 dni (lub dopóki urządzenie łączy się z nowego urzędu zarządzania urządzeniami Przenośnymi i odbiera nowe ustawienia, które zastąpią istniejące):
+- Brak okres przejściowy, gdy urządzenie jest w trybie offline podczas zmiany urzędu zarządzania urządzeniami Przenośnymi i zaewidencjonowaniu tego urządzenia do usługi. Aby upewnić się, że urządzenie pozostaje chroniony i funkcjonalności w tym okresie przejściowym, następujące pozostanie na urządzeniu przez siedem dni (lub dopóki urządzenie łączy się z nowego urzędu zarządzania urządzeniami Przenośnymi i odbiera nowe ustawienia, które zastąpią istniejące):
     - Profil poczty e-mail
     - Profil sieci VPN
     - Profil certyfikatu
@@ -130,7 +131,7 @@ Po zakończeniu zmiany urzędu zarządzania urządzeniami Przenośnymi, przejrzy
     - Wykonaj akcję, takie jak zdalne blokowanie za pomocą konsoli administracyjnej na urządzeniu. Jeśli ten zakończy się powodzeniem, urządzenie jest zarządzany przez nowego urzędu zarządzania urządzeniami Przenośnymi.
 - Jeśli masz problemy z określonymi urządzeniami, musisz wyrejestrować i Zarejestruj ponownie urządzenia do ich podłączenie do nowego urzędu certyfikacji i zarządzanie nimi tak szybko, jak to możliwe.
 
-<!-- After the change in MDM authority and devices check-in with the service, note the following:      - The updated compliance status of devices will only display in the Azure portal immediately.
+<!-- After the change in MDM authority and devices check in with the service, note the following:      - The updated compliance status of devices will only display in the Azure portal immediately.
 - There will be a delay for compliance status of devices to display in the Intune administrative console.-->
 
 
@@ -138,14 +139,15 @@ Po zakończeniu zmiany urzędu zarządzania urządzeniami Przenośnymi, przejrzy
 Użyj tej sekcji, aby zmienić dzierżawy usługi Microsoft Intune istniejące skonfigurowane z usługi Intune i z urzędu zarządzania urządzeniami Przenośnymi ustawiono **Microsoft Intune** (autonomiczna) do **programu Configuration Manager** (rozwiązanie hybrydowe) bez konieczności wyrejestrowywania i Zarejestruj ponownie istniejących zarządzanych urządzeń.
 
 ### <a name="key-considerations"></a>Najważniejsze kwestie związane z
-Po przejściu do nowego urzędu zarządzania urządzeniami Przenośnymi, prawdopodobnie będą się czas przejścia (maksymalnie 8 godzin) przed urządzenie sprawdza i synchronizuje się z usługą. Będzie wymagana do konfigurowania ustawień nowego urzędu zarządzania urządzeniami Przenośnymi (rozwiązanie hybrydowe), aby upewnić się, że zarejestrowane urządzenia będą nadal zarządzane i chronione po zmianie. Należy pamiętać o następujących kwestiach:
+Po przejściu do nowego urzędu zarządzania urządzeniami Przenośnymi, będą prawdopodobnie być przejścia (maksymalnie osiem godzin) przed urządzenia kontroli w i synchronizuje się z usługą. Będzie wymagana do konfigurowania ustawień nowego urzędu zarządzania urządzeniami Przenośnymi (rozwiązanie hybrydowe), aby upewnić się, że zarejestrowane urządzenia będą nadal zarządzane i chronione po zmianie. Należy pamiętać o następujących kwestiach:
 - Urządzenia muszą połączyć z usługą po zmianie tak, aby ustawienia z nowego urzędu zarządzania urządzeniami Przenośnymi (autonomicznej usługi Intune) spowoduje zastąpienie istniejących ustawień na urządzeniu.
 - Po zmianie urząd zarządzania urządzeniami Przenośnymi, pozostanie niektórych podstawowych ustawień (takich jak profile) z poprzednich urząd zarządzania urządzeniami Przenośnymi (autonomicznej usługi Intune) na urządzeniu przez maksymalnie 7 dni lub urządzenie łączy się z usługą po raz pierwszy. Zaleca się, jak najszybciej skonfigurowanie aplikacji i ustawień (zasady, profile, aplikacje itd.) nowego urzędu zarządzania urządzeniami Przenośnymi (rozwiązanie hybrydowe) i wdrożyć ustawienia dla grupy użytkowników, które zawiera użytkowników, którzy mają istniejących zarejestrowanych urządzeń. Jak urządzenie łączy się z usługą po zmianie urzędu zarządzania urządzeniami Przenośnymi, spowoduje to odbieranie nowych ustawień z nowego urzędu zarządzania urządzeniami Przenośnymi i uniknąć przerw w zarządzaniem i ochroną.
+- Urządzenia, które nie mają skojarzonych użytkowników (zazwyczaj gdy masz iOS Device Enrollment Program lub scenariusze rejestracji zbiorczej) nie są migrowane do nowego urzędu zarządzania urządzeniami Przenośnymi. Dla tych urządzeń należy się z działem pomocy technicznej, aby uzyskać pomoc przenieść je do nowego urzędu zarządzania urządzeniami Przenośnymi.
 
 ### <a name="prepare-to-change-the-mdm-authority-to-configuration-manager-hybrid"></a>Przygotowanie do zmienić urząd zarządzania urządzeniami Przenośnymi do programu Configuration Manager (rozwiązanie hybrydowe)
 Przejrzyj następujące informacje w celu przygotowania do zmiany urząd zarządzania urządzeniami Przenośnymi:
 - Musi mieć Configuration Manager w wersji 1610 lub wyższą, aby zmienić urząd zarządzania urządzeniami Przenośnymi, które mają być dostępne.
-- Może potrwać maksymalnie 8 godzin dla urządzeń połączyć się z usługą po przejściu do nowego urzędu zarządzania urządzeniami Przenośnymi.
+- Może potrwać maksymalnie osiem godzin dla urządzeń połączyć się z usługą po przejściu do nowego urzędu zarządzania urządzeniami Przenośnymi.
 - Utwórz kolekcję użytkowników programu Configuration Manager z wszystkich użytkowników, w obecnie zarządzany przez autonomiczną usługę Intune, która będzie używana podczas konfigurowania subskrypcji usługi Intune w konsoli programu Configuration Manager. Dzięki temu, sprawdź, czy użytkownik i ich urządzeń będzie mieć przypisanej licencji programu Configuration Manager i można zarządzać w środowisku hybrydowym, po zastosowaniu zmiany do urząd zarządzania urządzeniami Przenośnymi.
 - Upewnij się, że administrator IT jest w tej kolekcji użytkownika za.  
 - Przed zmianą, Urząd zarządzania urządzeniami Przenośnymi zostanie pokazany jako **ustawić w usłudze Microsoft Intune** (autonomiczna) w konsoli administracyjnej usługi Intune.
@@ -155,24 +157,24 @@ Przejrzyj następujące informacje w celu przygotowania do zmiany urząd zarząd
 
 - W [konsoli administracyjnej Microsoft Intune](http://manage.microsoft.com), Usuń rolę menedżera rejestracji urządzeń. Aby uzyskać więcej informacji, zobacz [usuwanie Menedżera rejestracji urządzeń z usługi Intune](/intune-classic/deploy-use/enroll-corporate-owned-devices-with-the-device-enrollment-manager-in-microsoft-intune#delete-a-device-enrollment-manager-from-intune).
 - Wyłącz mapowań grupy urządzeń, które są skonfigurowane. Aby uzyskać więcej informacji, zobacz [kategoryzowanie urządzeń za pomocą mapowania grup urządzeń w programie Microsoft Intune](/intune-classic/deploy-use/categorize-devices-with-device-group-mapping-in-microsoft-intune).
-- Podczas zmiany urzędu zarządzania urządzeniami Przenośnymi powinien istnieć bez zauważalnego wpływu dla użytkowników końcowych. Można jednak komunikować się ta zmiana na użytkowników, aby upewnić się, że ich urządzeń są włączone i czy łączą z usługą wkrótce po zmianie. To zapewnia, że dowolną liczbę urządzeń, jak to możliwe będzie połączenia i jak najszybciej rejestrowanie za pomocą usługi za pomocą nowego urzędu.
+- Powinien istnieć bez zauważalnego wpływu użytkownikom końcowym podczas zmiany urzędu zarządzania urządzeniami Przenośnymi. Można jednak komunikować się ta zmiana na użytkowników, aby upewnić się, że ich urządzeń są włączone i czy łączą z usługą wkrótce po zmianie. Gwarantuje to, że wiele urządzeń, jak to możliwe połączenia i jak najszybciej rejestrowanie za pomocą usługi za pomocą nowego urzędu.
 - Jeśli używasz autonomicznej usługi Intune do zarządzania urządzeniami z systemem iOS przed zmianą urzędu zarządzania urządzeniami Przenośnymi, należy się upewnić, że tego samego certyfikatu firmy Apple Push Notification service (APNs), który był wcześniej używany w usłudze Intune jest odnowiony i użyty do skonfigurowania dzierżawy ponownie w programie Configuration Manager (rozwiązanie hybrydowe).    
 
     > [!IMPORTANT]  
-    > Jeśli inny certyfikat usługi APN jest używany dla hybrydowych, a następnie wszystkie wcześniej zarejestrowane urządzenia z systemem iOS będzie anulowana i będzie musiał przejść przez proces, aby zarejestruj je ponownie. Przed wykonaniem urząd zarządzania urządzeniami Przenośnymi zmian, upewnij się, że znasz dokładnie APNs certyfikat, który został użyty do zarządzania urządzeniami z systemem iOS w usłudze Intune. Znajdź tego samego certyfikatu, które są wyświetlane w portalu Apple Push Certificates (https://identity.apple.com) i upewnij się, że użytkownik o identyfikatorze firmy Apple użyty do tworzenia oryginalnego certyfikatu usługi APN jest zidentyfikowane i dostępne, aby odnowić ten sam certyfikat APNs w ramach przejścia do nowego urzędu zarządzania urządzeniami Przenośnymi.  
+    > Jeśli inny certyfikat usługi APN jest używany w hybrydowym, wszystkie wcześniej zarejestrowane urządzenia z systemem iOS stają się niezarejestrowane i musi przechodzić przez proces zarejestruj je ponownie. Przed wykonaniem urząd zarządzania urządzeniami Przenośnymi zmian, upewnij się, że znasz dokładnie APNs certyfikat, który został użyty do zarządzania urządzeniami z systemem iOS w usłudze Intune. Znajdź tego samego certyfikatu, które są wyświetlane w portalu Apple Push Certificates (https://identity.apple.com) i upewnij się, że użytkownik o identyfikatorze firmy Apple użyty do tworzenia oryginalnego certyfikatu usługi APN jest zidentyfikowane i dostępne, aby odnowić ten sam certyfikat APNs w ramach przejścia do nowego urzędu zarządzania urządzeniami Przenośnymi.  
 
 ### <a name="change-the-mdm-authority-to-configuration-manager"></a>Zmienić urząd zarządzania urządzeniami Przenośnymi do programu Configuration Manager
 Proces, aby zmienić urząd zarządzania urządzeniami Przenośnymi do programu Configuration Manager (rozwiązanie hybrydowe) obejmuje następujące ogólne kroki:  
 - W konsoli programu Configuration Manager należy dodać subskrypcję Microsoft Intune.
 - Konfigurowanie certyfikatu Apple APNs przy użyciu tego samego zostanie odnowiony certyfikat APNs.
 - W konsoli programu Configuration Manager Konfigurowanie i wdrażanie nowych ustawień i aplikacji z nowego urzędu zarządzania urządzeniami Przenośnymi (rozwiązanie hybrydowe).
-- Dalej urządzeń czas połączyć się z usługą, zostanie synchronizacji i zastosować nowe ustawienia z nowego urzędu zarządzania urządzeniami Przenośnymi.
+- Dalej urządzeń czas połączyć się z usługą, synchronizacji i odbiera nowe ustawienia z nowego urzędu zarządzania urządzeniami Przenośnymi.
 
 #### <a name="to-change-the-mdm-authority-to-configuration-manager"></a>Aby zmienić urząd zarządzania urządzeniami Przenośnymi do programu Configuration Manager
 1.  W konsoli programu Configuration Manager, przejdź do **administracji** &gt; **omówienie** &gt; **usługi w chmurze** &gt; **subskrypcję usługi Microsoft Intune**, a następnie wybierz pozycję, aby dodać subskrypcję usługi Intune.
 2.  Zaloguj się do dzierżawy usługi Intune, który pierwotnie używana podczas ustawić urząd zarządzania urządzeniami Przenośnymi w usłudze Intune i kliknij przycisk **dalej**.
 3.  Wybierz **zmienić Mój urząd zarządzania urządzeniami Przenośnymi do programu Configuration Manager**i kliknij przycisk **dalej**.
-4.  Wybierz kolekcję użytkowników, która będzie zawierać wszystkich użytkowników, które będą w dalszym ciągu zarządzany przez nowe hybrydowego urzędu zarządzania urządzeniami Przenośnymi.
+4.  Wybierz kolekcję użytkowników, aby zawierała wszystkich użytkowników, które będą w dalszym ciągu zarządzany przez nowe hybrydowego urzędu zarządzania urządzeniami Przenośnymi.
 5.  Kliknij przycisk **Dalej** i ukończ pracę kreatora.  
 5.  Urząd zarządzania urządzeniami Przenośnymi zostanie zmienione na **programu Configuration Manager**.
 6.  Zaloguj się do [konsoli administracyjnej Microsoft Intune](http://manage.microsoft.com) przy użyciu tej samej usługi Intune dzierżawy i upewnij się, że urząd MDM został zmieniony na **ustawiony program Configuration Manager**.
@@ -192,9 +194,9 @@ Jeśli masz urządzenia z systemem iOS, należy skonfigurować certyfikat APNs w
     > [!IMPORTANT]
     > Należy pobrać nowe żądanie podpisania certyfikatu. Nie należy używać istniejącego pliku, lub zakończy się niepowodzeniem.  
 
-2.  Przejdź do [Apple Push Certificates Portal](http://go.microsoft.com/fwlink/?LinkId=269844)i zaloguj się przy użyciu **tego samego** Apple ID, który został użyty do wcześniej tworzenia i odnawiania certyfikatu APNs używanej w autonomicznej usługi Intune.
+2.  Przejdź do [Apple Push Certificates Portal](http://go.microsoft.com/fwlink/?LinkId=269844)i zaloguj się przy **tego samego** Apple ID, który został użyty do wcześniej tworzenia i odnawiania certyfikatu APNs używanej w autonomicznej usługi Intune.
 
-    ![Strona logowania portalu Apple Push Certificates](/sccm/mdm/deploy-use/media/mdm-change-apns-portal.png)
+    ![Stronę logowania w portalu Apple Push Certificates](/sccm/mdm/deploy-use/media/mdm-change-apns-portal.png)
 
 3.  Wybierz certyfikat APNs, który został użyty w autonomicznej usługi Intune, a następnie kliknij przycisk **odnawiania**.   
 
@@ -202,10 +204,10 @@ Jeśli masz urządzenia z systemem iOS, należy skonfigurować certyfikat APNs w
 
 4.  Wybierz APNs plik żądania podpisania certyfikatu (CSR) pobranego lokalnie, a następnie kliknij przycisk **przekazać**.
 
-    ![Strona logowania portalu Apple Push Certificates](/sccm/mdm/deploy-use/media/mdm-change-renew-apns-upload.png)  
+    ![Stronę logowania w portalu Apple Push Certificates](/sccm/mdm/deploy-use/media/mdm-change-renew-apns-upload.png)  
 5.  Wybierz tej samej usługi APNs, a następnie kliknij przycisk **Pobierz**. Pobierz certyfikat usługi APN (PEM) i Zapisz plik lokalnie.  
 
-    ![Strona logowania portalu Apple Push Certificates](/sccm/mdm/deploy-use/media/mdm-change-renew-apns-download.png)
+    ![Stronę logowania w portalu Apple Push Certificates](/sccm/mdm/deploy-use/media/mdm-change-renew-apns-download.png)
 
 6.  Przekazać odnowiony certyfikat APNs do dzierżawy hybrydowych przy użyciu tego samego Identyfikatora Apple jako przed.
 
@@ -230,13 +232,13 @@ Jeśli masz urządzenia z systemem iOS, należy skonfigurować certyfikat APNs w
 
 ### <a name="next-steps"></a>Następne kroki
 Po zakończeniu zmiany urzędu zarządzania urządzeniami Przenośnymi, przejrzyj poniższe kroki:
-- Gdy usługi Intune wykryje, że urząd zarządzania urządzeniami Przenośnymi dzierżawy została zmieniona, będą wysyłane powiadomienie na wszystkich zarejestrowanych urządzeniach ewidencjonowania i zsynchronizować z usługą (jest to poza zaplanowanego zaewidencjonowania). W związku z tym po urząd zarządzania urządzeniami Przenośnymi dla dzierżawy została zmieniona z autonomicznej usługi Intune do hybrydowych, wszystkie urządzenia, które są włączone i online będą łączyć się z usługą, odbierania nowego urzędu zarządzania urządzeniami Przenośnymi i zarządza hybrydowych w przyszłości. Nie będzie żadnych przeszkód do zarządzania i ochrony tych urządzeń.
-- Nawet w przypadku urządzeń, które jest włączona i w trybie online podczas (lub wkrótce po) Zmień urzędu zarządzania urządzeniami Przenośnymi, będą występować opóźnienie (w zależności od czas następnego zaplanowanego regularne zaewidencjonowania) do 8 godzin urządzenia są zarejestrowane w usłudze w obszarze nowe urząd zarządzania urządzeniami Przenośnymi.    
+- Gdy usługi Intune wykryje, że urząd zarządzania urządzeniami Przenośnymi dzierżawy została zmieniona, będą wysyłane powiadomienie na wszystkich zarejestrowanych urządzeniach można zaewidencjonować i przeprowadzić synchronizacji z usługą (jest to poza zaplanowanego zaewidencjonowania). W związku z tym po urząd zarządzania urządzeniami Przenośnymi dla dzierżawy została zmieniona z autonomicznej usługi Intune do hybrydowych, wszystkie urządzenia, które są włączone i online będą łączyć się z usługą, odbierania nowego urzędu zarządzania urządzeniami Przenośnymi i zarządza hybrydowych w przyszłości. Nie będzie żadnych przeszkód do zarządzania i ochrony tych urządzeń.
+- Nawet w przypadku urządzeń, które jest włączona i w trybie online podczas (lub wkrótce po) zmiany urzędu zarządzania urządzeniami Przenośnymi, nastąpi opóźnienie maksymalnie osiem godzin (w zależności od czasu następnego zaplanowanego sprawdzania regularne w) przed urządzenia są zarejestrowane w usłudze nowego urzędu zarządzania urządzeniami Przenośnymi.    
 
   > [!IMPORTANT]
-  > Czas, po zmianie zarządzania urządzeniami Przenośnymi między urzędu i po przekazaniu odnowionego certyfikatu APN do nowego urzędu, nowe rejestracje urządzenia i zaewidencjonowania urządzenia dla urządzeń z systemem iOS nie powiedzie się. Dlatego jest ważne, możesz sprawdzić i przekaż certyfikat APNs do nowego urzędu certyfikacji, jak najszybciej po zmianie urzędu zarządzania urządzeniami Przenośnymi.
+  > Czas, po zmianie zarządzania urządzeniami Przenośnymi między urzędu i po przekazaniu odnowionego certyfikatu APN do nowego urzędu, nowe rejestracje urządzenia i urządzenia Wyszukaj w zakończą się urządzeń z systemem iOS. Dlatego jest ważne, możesz sprawdzić i przekaż certyfikat APNs do nowego urzędu certyfikacji, jak najszybciej po zmianie urzędu zarządzania urządzeniami Przenośnymi.
 
-- Użytkowników można szybko zmienić nowego urzędu zarządzania urządzeniami Przenośnymi należy ręcznie uruchomić ewidencjonowania z urządzenia do usługi. Użytkownicy można łatwo to zrobić przy użyciu aplikacji Portal firmy i Inicjowanie sprawdzenie zgodności urządzenia.
+- Użytkowników można szybko zmienić nowego urzędu zarządzania urządzeniami Przenośnymi należy ręcznie uruchomić wyboru w z urządzenia do usługi. Użytkownicy można łatwo to zrobić przy użyciu aplikacji Portal firmy i Inicjowanie sprawdzenie zgodności urządzenia.
 - Aby sprawdzić, czy elementy działają prawidłowo po urządzenia mają zaewidencjonowania i zsynchronizowane z usługą po zmianie urzędu zarządzania urządzeniami Przenośnymi, wyszukaj urządzenia konsoli programu Configuration Manager. Urządzenia, które wcześniej były zarządzane przez usługę Intune zostaną wyświetlone jako urządzenia zarządzane w konsoli programu Configuration Manager.    
 - Brak okres przejściowy, gdy urządzenie jest w trybie offline podczas zmiany urzędu zarządzania urządzeniami Przenośnymi i zaewidencjonowaniu tego urządzenia do usługi. Aby upewnić się, że urządzenie pozostaje chroniony i funkcjonalności w tym okresie przejściowym, następujące pozostanie na urządzeniu przez maksymalnie 7 dni (lub dopóki urządzenie łączy się z nowego urzędu zarządzania urządzeniami Przenośnymi i odbiera nowe ustawienia, które zastąpią istniejące):
     - Profil poczty e-mail

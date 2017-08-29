@@ -2,7 +2,7 @@
 title: "Projektowanie hierarchii lokacji — programu Configuration Manager | Dokumentacja firmy Microsoft"
 description: "Zrozumieć topologie dostępne i opcje zarządzania dla programu System Center Configuration Manager, co umożliwia planowanie hierarchii lokacji."
 ms.custom: na
-ms.date: 6/16/2017
+ms.date: 8/24/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 4710b1b89eb50cb7bcf4c4ee50c12a96b6561bc9
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 2c587c0ad894dc567a6f1804626db611ff9a1013
+ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/28/2017
 ---
 # <a name="design-a-hierarchy-of-sites-for-system-center-configuration-manager"></a>Projektowanie hierarchii lokacji dla programu System Center Configuration Manager
 
@@ -27,6 +27,13 @@ ms.lasthandoff: 08/07/2017
 
 Przed rozpoczęciem instalacji pierwszej lokacji nowej hierarchii programu System Center Configuration Manager, to warto poznać topologie dostępne dla programu Configuration Manager, typy dostępnych lokacji i ich relacje ze sobą i zakresu zarządzania zapewnia każdego typu lokacji.
 Następnie po uwzględnieniu opcji zarządzania zawartością, która pozwala zmniejszyć liczbę witryn, które należy zainstalować, można zaplanować topologii, wydajne pełniącą bieżącego potrzeb biznesowych i później rozszerzyć do zarządzania rozwój w przyszłości.  
+
+Podczas planowania należy mieć na uwadze ograniczenia dotyczące dodawania dodatkowych lokacji do hierarchii lub autonomicznej lokacji:
+-   Można zainstalować nową lokację główną poniżej centralnej lokacji administracyjnej, do [obsługiwane liczby lokacji głównych](/sccm/core/plan-design/configs/size-and-scale-numbers) dla hierarchii.
+-   Możesz [rozszerzenia autonomicznej lokacji głównej w celu zainstalowania nowej centralnej lokacji administracyjnej](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#bkmk_expand), dzięki czemu można zainstalować dodatkowe Lokacje główne.
+-   Można zainstalować nowych lokacji dodatkowych, lokacji głównej, do [obsługiwane limity dla lokacji głównej](/sccm/core/plan-design/configs/size-and-scale-numbers) i ogólnej hierarchii.
+-   Nie można dodać uprzednio zainstalowanej lokacji do istniejącej hierarchii można scalić dwóch lokacji autonomicznej. Tylko instalacja nowej lokacji do istniejącej hierarchii lokacji jest obsługiwana.
+
 
 > [!NOTE]
 > Podczas planowania nowej instalacji programu Configuration Manager, należy pamiętać o [informacje o wersji]( /sccm/core/servers/deploy/install/release-notes), które szczegółowo bieżących problemach w aktywnych wersji. Informacje o wersji dotyczą wszystkie gałęzie programu Configuration Manager.  Jednak jeśli używasz [Technical Preview gałęzi]( /sccm/core/get-started/technical-preview), można znaleźć problemy specyficzne tylko dla tej gałęzi w dokumentacji dla każdej wersji Technical Preview.  
@@ -63,7 +70,7 @@ Następnie po uwzględnieniu opcji zarządzania zawartością, która pozwala zm
 
 -   Centralna lokacja administracyjna jest lokacją najwyższego poziomu w hierarchii.  
 
--   Podczas konfigurowania hierarchii, która ma więcej niż jedną lokację główną, należy zainstalować centralną lokację administracyjną. Jeśli będziesz potrzebować co najmniej dwie lokacje główne bezpośrednio, najpierw zainstalować centralną lokację administracyjną. Gdy już istnieje lokacja główna i następnie zainstalować centralną lokację administracyjną, należy najpierw [rozszerzenia autonomicznej lokacji głównej](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#bkmk_expand) do zainstalowania centralnej lokacji administracyjnej. 
+-   Podczas konfigurowania hierarchii, która ma więcej niż jedną lokację główną, należy zainstalować centralną lokację administracyjną. Jeśli będziesz potrzebować co najmniej dwie lokacje główne bezpośrednio, najpierw zainstalować centralną lokację administracyjną. Gdy już istnieje lokacja główna i następnie zainstalować centralną lokację administracyjną, należy najpierw [rozszerzenia autonomicznej lokacji głównej](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#bkmk_expand) do zainstalowania centralnej lokacji administracyjnej.
 
 -   Centralna lokacja administracyjna obsługuje tylko Lokacje główne jako Lokacje podrzędne.  
 

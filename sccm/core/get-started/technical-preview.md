@@ -2,7 +2,7 @@
 title: Technical Preview programu Configuration Manager | Dokumentacja firmy Microsoft
 description: "Więcej informacji o wersji Technical Preview że teraz musisz test-drive nowe funkcje i możliwości w programie System Center Configuration Manager."
 ms.custom: na
-ms.date: 08/11/2017
+ms.date: 08/25/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "157"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 6d7bac392cf5a4ba01b25758fd91f1003b153589
-ms.sourcegitcommit: 398e30ec703218c4b3680bbb055d686807ca7f1d
+ms.openlocfilehash: 0cdbccc0147cb1f4d5130863b9610d0b190d6658
+ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 08/28/2017
 ---
 # <a name="technical-preview-for-system-center-configuration-manager"></a>Wersja zapoznawcza Technical Preview programu System Center Configuration Manager
 
@@ -84,7 +84,7 @@ Następujące produkty i technologie, są obsługiwane przez gałęzi programu C
 
  Aby użyć wersji zapoznawczej Technical Preview, należy najpierw zainstalować **wersję bazową** kompilacji wersji zapoznawczej Technical Preview. Po zainstalowaniu wersji bazowej należy uaktualnić tę kompilację za pomocą **aktualizacji w konsoli** , aby upewnić się, że instalacja będzie zgodna z najnowszą wersją zapoznawczą.     Zazwyczaj nowe wersje Technical Preview są dostępne w każdym miesiącu.
 
-Każdej wersji zapoznawczej jest obsługiwany, dopóki dostępne są trzy kolejne wersje. To znaczy, w wersjach 1702, wersja 1610 nie będzie go w obsłudze, ale wersje 1611, 1612 i 1701 pozostanie w obsłudze. Linii bazowej przypada poza pomocy technicznej (takie jak wersja 1610), jest nadal obsługiwane instalowania nowej lokacji Technical Preview, aż do nowej wersji linii bazowej jest dostępna, pod warunkiem, następnie zaktualizuj tę instalację do obsługiwanej wersji. Podczas aktualizacji, jeśli nie widzisz najnowszej wersji dostępnej w konsoli aktualizacji do najnowszej wersji i następnie powtórzyć ten proces, przed zainstalowaniem najnowszej wersji technical preview.
+Każdej wersji zapoznawczej jest obsługiwany, dopóki dostępne są trzy kolejne wersje. To znaczy, w wersjach 1708, wersja 1704 nie będzie go w obsłudze, ale wersje 1705, 1706 i 1707 pozostanie w obsłudze. Linii bazowej przypada poza pomocy technicznej (takie jak wersja 1703), jest nadal obsługiwane instalowania nowej lokacji Technical Preview, aż do nowej wersji linii bazowej jest dostępna, pod warunkiem, następnie zaktualizuj tę instalację do obsługiwanej wersji. Podczas aktualizacji, jeśli nie widzisz najnowszej wersji dostępnej w konsoli aktualizacji do najnowszej wersji i następnie powtórzyć ten proces, przed zainstalowaniem najnowszej wersji technical preview.
 
 > [!TIP]  
 >  Po zainstalowaniu aktualizacji wersji zapoznawczej Technical Preview należy zaktualizować instalację wersji wstępnej do nowej wersji zapoznawczej Technical Preview.    W przypadku instalacji wersji zapoznawczej Technical Preview nigdy nie ma możliwości uaktualnienia do instalacji Current Branch ani otrzymania aktualizacji z wersji Current Branch.  
@@ -93,8 +93,9 @@ Każdej wersji zapoznawczej jest obsługiwany, dopóki dostępne są trzy kolejn
 Można zainstalować wersji linii bazowej dla maksymalnie 1 rok po ich wydaniu. Jednak podczas instalowania nowej lokacji wersji zapoznawczej technical preview, firma Microsoft zaleca się, że używasz najnowszej wersji linii bazowej, która jest dostępna.
 -  **Technical Preview 1703** — Configuration Manager Technical Preview 1703 jest dostępna jako zarówno aktualizacja w konsoli programu Configuration Manager Technical Preview, jak i nowa wersja bazowa jest [dostępne w witrynie TechNet Evaluation Center](http://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
 
--  **Technical Preview 1610** — Configuration Manager Technical Preview 1610 była dostępna jako zarówno aktualizacja w konsoli programu Configuration Manager Technical Preview, jak i wersji linii bazowej. Jeśli masz nośnika instalacji 1610, zaleca się pobrać wersję 1703 i zainstalowanie tej wersji.
-
+<!-- out of support. Use baseline 1703
+-  **Technical Preview 1610** - The Configuration Manager Technical Preview 1610 was available as both an in-console update for the Configuration Manager Technical Preview, and as a baseline version. If you have media for installing 1610, we recommend you download version 1703 and install that version instead.
+-->
 
 
 
@@ -113,10 +114,10 @@ Można zainstalować wersji linii bazowej dla maksymalnie 1 rok po ich wydaniu. 
 
  |Możliwość |Wersji Technical Preview |Bieżącą wersję gałęzi|  
  |----------------|---------------------|--------------------|
- |Klient równorzędnej pamięci podręcznej obsługę plików instalacji ekspresowej dla systemu Windows 10 i usługi Office 365|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#client-peer-cache-support-for-express-installation-files-for-windows-10-and-office-365)|![Nie dodano](media/Red_X.gif)|
- |Powierzchni urządzenia pulpitu nawigacyjnego|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#surface-device-dashboard)|![Nie dodano](media/Red_X.gif)|
- |Konfigurowanie i wdrażanie zasad Guard aplikacji programu Windows Defender|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#configure-and-deploy-windows-defender-application-guard-policies)|![Nie dodano](media/Red_X.gif)|
- |Dodawanie parametrów podczas wdrażania skryptów programu PowerShell z programu Configuration Manager|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#add-parameters-when-you-deploy-powershell-scripts-from-configuration-manager)|![Nie dodano](media/Red_X.gif)|
+ |Ulepszenia określając Parametry skryptu, podczas wdrażania skryptów programu PowerShell z programu Configuration Manager<!-- 1236459 -->|[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#improvements-for-specifying-script-parameters-when-you-deploy-powershell-scripts-from-configuration-manager)|![Nie dodano](media/Red_X.gif)|
+ |Informacje na temat technologii zarządzania<!-- 1353967 --> |[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#management-insights)|![Nie dodano](media/Red_X.gif)|
+ |Uruchom ponownie komputer za pomocą konsoli programu Configuration Manager<!-- 1356283 --> |[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#restart-computers-from-the-configuration-manager-console)|![Nie dodano](media/Red_X.gif)|
+ |Dostosowywanie Centrum oprogramowania<!-- 1351224 --> |[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#software-center-customization)|![Nie dodano](media/Red_X.gif)|
 
 
 ## <a name="capabilities-delivered-in-previous-technical-previews"></a>Możliwości oferowane w poprzednich wersjach technical Preview
@@ -124,6 +125,10 @@ Można zainstalować wersji linii bazowej dla maksymalnie 1 rok po ich wydaniu. 
 
  |Możliwość |Wersji Technical Preview |Bieżącą wersję gałęzi|  
  |----------------|---------------------|--------------------|
+ |Klient równorzędnej pamięci podręcznej obsługę plików instalacji ekspresowej dla systemu Windows 10 i usługi Office 365|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#client-peer-cache-support-for-express-installation-files-for-windows-10-and-office-365)|![Nie dodano](media/Red_X.gif)|
+ |Powierzchni urządzenia pulpitu nawigacyjnego|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#surface-device-dashboard)|![Nie dodano](media/Red_X.gif)|
+ |Konfigurowanie i wdrażanie zasad Guard aplikacji programu Windows Defender|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#configure-and-deploy-windows-defender-application-guard-policies)|![Nie dodano](media/Red_X.gif)|
+ |Dodawanie parametrów podczas wdrażania skryptów programu PowerShell z programu Configuration Manager|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#add-parameters-when-you-deploy-powershell-scripts-from-configuration-manager)|![Nie dodano](media/Red_X.gif)|
  |Nowe ustawienia zasad zarządzania aplikacjami mobilnymi|[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#new-mobile-application-management-policy-settings)|![Nie dodano](media/Red_X.gif)|
  |Grupy granic ulepszone dla punktów aktualizacji oprogramowania|[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#improved-boundary-groups-for-software-update-points)|[Wersja 1706](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points)|
  |Wysoką dostępność roli serwera lokacji|[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#site-server-role-high-availability) |![Nie dodano](media/Red_X.gif)|

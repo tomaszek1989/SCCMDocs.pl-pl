@@ -2,7 +2,7 @@
 title: Magazyn danych | Dokumentacja firmy Microsoft
 description: "Punkt usługi magazynu danych i bazy danych programu System Center Configuration Manager"
 ms.custom: na
-ms.date: 7/31/2017
+ms.date: 8/25/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision:
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: eedbf12d3bf628666efc90c85a8dfab37e4dc9ab
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 744614d7e1ec97a4d4b4646c45cb41d734c6be34
+ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/28/2017
 ---
 #  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>Punkt usługi Magazyn danych programu System Center Configuration Manager
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
@@ -49,8 +49,8 @@ Podczas instalowania roli systemu lokacji, instaluje i konfiguruje bazę danych 
 - Komputer, na którym zainstalowano rolę systemu lokacji wymaga programu .NET Framework 4.5.2 lub nowszej.
 - Aby zsynchronizować dane z bazy danych magazynu danych jest używane konto komputera komputera, na którym zainstalowano rolę systemu lokacji. To konto wymaga następujących uprawnień:  
   - **Administrator** na komputerze, który będzie hostem bazy danych magazynu danych.
-  - **DB_owner** uprawnień w bazie danych magazynu danych.
-  - **DB_reader** i **wykonania** baza danych lokacji uprawnienia do lokacji najwyższego poziomu.
+  - **DB_Creator** uprawnień w bazie danych magazynu danych.
+  - Albo **DB_owner** lub **DB_reader** z **wykonania** baza danych lokacji uprawnienia do lokacji najwyższego poziomu.
 - Baza danych magazynu danych wymaga użycia programu SQL Server 2012 lub nowszym. Wersja może być Standard, Enterprise lub Datacenter.
 - Obsługiwane są następujące konfiguracje programu SQL Server do hostowania bazy danych magazynu:  
   - Domyślne wystąpienie

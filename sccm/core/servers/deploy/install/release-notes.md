@@ -2,7 +2,7 @@
 title: "Informacje o wersji — programu Configuration Manager | Dokumentacja firmy Microsoft"
 description: "Te informacje można uzyskać pilnych problemów, które nie zostały jeszcze rozwiązane w produkcie lub omówione w artykule bazy wiedzy Microsoft Knowledge Base."
 ms.custom: na
-ms.date: 08/21/2017
+ms.date: 08/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 24f30bddb345e3a08d4b655d89693c226005cb0e
-ms.sourcegitcommit: 06aef618f72c700f8a716a43fb8eedf97c62a72b
+ms.openlocfilehash: e54c2cd1c3e83609bff6a8cb64fb3c23b26a4eaa
+ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 08/28/2017
 ---
 # <a name="release-notes-for-system-center-configuration-manager"></a>Informacje o wersji dla programu System Center Configuration Manager
 
@@ -27,15 +27,23 @@ ms.lasthandoff: 08/21/2017
 
 Z programem System Center Configuration Manager informacje o wersji produktu są ograniczone do pilnych problemów, które nie zostały jeszcze rozwiązane w produkcie (udostępnione za pośrednictwem aktualizacji w konsoli), lub szczegółowo opisane w artykule bazy wiedzy Microsoft Knowledge Base.  
 
- W przypadku znanych problemów wpływających na podstawowe scenariusze te informacje zamieszczono w dokumentacji online produktu w bibliotece dokumentacji programu System Center Configuration Manager.  
+Informacje o znanych problemach, które mają wpływ na podstawowe scenariusze jest przekazywany w dokumentacji online produktu w bibliotece dokumentacji programu System Center Configuration Manager.  
 
 > [!TIP]  
 >  Ten temat zawiera informacje o wersji dla bieżącej gałęzi programu System Center Configuration Manager. Technical Preview programu System Center Configuration Manager, zobacz [Technical Preview programu System Center Configuration Manager](../../../../core/get-started/technical-preview.md)  
+
+Aby uzyskać informacje o nowych funkcjach wprowadzona z różnymi wersjami zobacz następujące tematy:
+- [Co nowego w wersji 1706](/sccm/core/plan-design/changes/whats-new-in-version-1706)  
+- [Co nowego w wersji 1702](/sccm/core/plan-design/changes/whats-new-in-version-1702)
+- [Co nowego w wersji 1610](/sccm/core/plan-design/changes/whats-new-in-version-1610)
+   
+
 
 ## <a name="setup-and-upgrade"></a>Instalowanie i uaktualnianie  
 
 ### <a name="after-you-update-a-configuration-manager-console-using-consolesetupexe-from-the-site-server-folder-recent-language-pack-changes-are-not-available"></a>Po zaktualizowaniu konsoli programu Configuration Manager za pomocą ConsoleSetup.exe z folderu serwera lokacji najnowsze zmiany w pakiecie językowym nie są dostępne
 <!--  SMS 486420  Applicability should be 1610 and 1702.  -->
+*Poniższe informacje dotyczą wersji 1610 i 1702.*   
 Po uruchomieniu aktualizacji w miejscu do konsoli przy użyciu ConsoleSetup.exe z folderu instalacji serwerów lokacji, ostatnio zainstalowanych pakietów językowych mogą nie być dostępne. W takim przypadku:
 - Lokalizacji uruchomiono wersję 1610 lub 1702.
 - Konsola jest aktualizowany w miejscu przy użyciu ConsoleSetup.exe z folderu instalacji serwera lokacji.
@@ -47,7 +55,8 @@ Gdy wystąpi ten problem, ponownie konsoli nie używa najnowszy zestaw pakietów
 
 ### <a name="with-version-1702-the-default-site-boundary-group-is-configured-for-use-for-site-assignment"></a>Wersją 1702 domyślnej grupy granic lokacji jest skonfigurowana do użycia dla przypisania lokacji
 <!--  SMS 486380   Applicability should only be to 1702. -->
-Wersją 1702 karcie odwołania grupy granic lokacji domyślne ma sprawdzenia **Użyj tej grupy granic do przypisania lokacji**, wyświetla listę lokacji jako **przypisana lokacja**i jest niedostępne, tak aby konfiguracji nie można edytować ani usunąć.
+*Poniższe informacje dotyczą wersji 1702.*  
+Karcie odwołania grupy granic lokacji domyślne ma sprawdzenia **Użyj tej grupy granic do przypisania lokacji**, wyświetla listę lokacji jako **przypisana lokacja**i jest niedostępne, tak aby konfiguracji nie można edytować ani usunąć.
 
 **Obejście problemu:** Brak. Możesz zignorować to ustawienie. Mimo że grupy jest włączona dla przypisania lokacji, domyślna grupa granic lokacji nie jest używany do przypisania lokacji. Z 1702 ta konfiguracja zapewnia, że domyślna grupa granic lokacji jest skojarzony z odpowiedniej lokacji.
 
@@ -104,7 +113,8 @@ W przypadku uruchamiania Instalatora z dysku CD. Najnowszy folder utworzona dla 
 
 ### <a name="service-connection-tool-throws-an-exception-when-sql-server-is-remote-or-when-shared-memory-is-disabled"></a>Narzędzia połączenia z usługą zgłasza wyjątek w przypadku zdalnego programu SQL server lub po wyłączeniu pamięci Shared Memory
 <!-- 479223   Fixed in 1702 and later   -->
-Począwszy od wersji 1606 narzędzia połączenia z usługą generuje wyjątek, gdy spełniony jest jeden z następujących czynności:  
+*Poniższe informacje dotyczą wersji 1610 i wcześniejszych.*  
+Narzędzia połączenia z usługą generuje wyjątek, gdy spełniony jest jeden z następujących czynności:  
  -  Baza danych lokacji znajduje się zdalnie z komputera, który hostuje punkt połączenia usługi i używa niestandardowego portu (portu innego niż 1433)
  -  Baza danych lokacji znajduje się na tym samym serwerze co punkt połączenia usługi, ale protokół SQL **pamięci Shared Memory** jest wyłączona
 
@@ -131,8 +141,9 @@ Wyjątkiem jest podobny do następującego:
 ## <a name="client-deployment-and-upgrade"></a>Wdrażanie i uaktualnianie klientów  
 
 ### <a name="client-installation-fails-with-error-code-0x8007064c"></a>Instalacja klienta kończy się niepowodzeniem z kodem błędu 0x8007064c
-<!--- SMS 486973 -->
-Podczas wdrażania klienta na komputerach z systemem Windows, instalacja nie powiedzie się. Plik ccmsetup.log zawiera wpis "pliku"C:\WINDOWS\ccmsetup\Silverlight.exe"zwrócił kod zakończenia błędu 1612. Niepowodzenie instalacji"następuje"InstallFromManifest nie powiodło się 0x8007064c".
+<!--- SMS 486973  applies 1606 to 1706. Not yet fixed. -->
+*Poniższe informacje dotyczą wszystkich wersji aktywnych programu Configuration Manager.*   
+W wersjach wszystkie aktywne podczas wdrażania klienta na komputerach z systemem Windows Instalacja nie powiedzie się. Plik ccmsetup.log zawiera wpis "pliku"C:\WINDOWS\ccmsetup\Silverlight.exe"zwrócił kod zakończenia błędu 1612. Niepowodzenie instalacji"następuje"InstallFromManifest nie powiodło się 0x8007064c".
 
 **Obejście** przyczyną jest uszkodzony, wcześniej zainstalowanej wersji programu Silverlight. Można spróbować uruchomić następujące narzędzia na danym komputerze, aby rozwiązać ten problem: [https://support.microsoft.com/help/17588/fix-problems-that-block-programs-from-being-installed-or-removed](https://support.microsoft.com/help/17588/fix-problems-that-block-programs-from-being-installed-or-removed)
 
@@ -158,6 +169,7 @@ po utworzeniu planu obsługi otwórz właściwości planu, przejdź do karty **H
 
 ### <a name="when-a-high-risk-deployment-dialog-is-visible-to-a-user-subsequent-high-risk-dialogs-with-a-sooner-deadline-are-not-displayed"></a>Jeśli okno dialogowe wdrożenie wysokiego ryzyka jest widoczny dla użytkownika, kolejne o wysokim ryzyku okien dialogowych z ostatecznym terminem przypadającym wcześniej nie są wyświetlane
 <!-- Fixed in 1702 and later -->
+*Poniższe informacje dotyczą wersji 1610 i wcześniejszych.*   
 Po utworzeniu i wdrożenia o wysokim ryzyku zadań do użytkowników o wysokim ryzyku okno dialogowe jest wyświetlany użytkownikowi. Jeśli użytkownik nie zamknąć okno dialogowe, tworzenie i wdrażanie inne wdrożenie o wysokim ryzyku z ostatecznym terminem przypadającym wcześniej niż pierwszy, użytkownik nie otrzyma okno dialogowe zaktualizowane dopóki zamknąć okno dialogowe oryginalnego. Wdrożenia będą nadal działać w skonfigurowanym terminów.
 
 **Obejście**:  
@@ -169,6 +181,7 @@ Użytkownik należy zamknąć okno dialogowe dla pierwszego wdrożenia wysokiego
 
 ### <a name="importing-an-office-365-client-settings-from-a-configuration-file-fails-when-it-contains-unsupported-languages"></a>Importowanie ustawień klienta usługi Office 365 z pliku konfiguracji nie powiedzie się, gdy zawiera nieobsługiwanych językach
 <!-- 489258  Fixed in 1706  -->
+*Poniższe informacje dotyczą wersji 1702 i wcześniejszych.*   
 Podczas importowania ustawień klienta usługi Office 365 z istniejący plik konfiguracyjny XML, a plik zawiera języki, które nie są obsługiwane przez klienta usługi Office 365 ProPlus, wystąpi błąd. Aby uzyskać więcej informacji, zobacz [wdrażania aplikacji usługi Office 365 na klientach z poziomu pulpitu nawigacyjnego zarządzania klienta usługi Office 365](/sccm/sum/deploy-use/manage-office-365-proplus-updates#to-deploy-office-365-apps-to-clients-from-the-office-365-client-management-dashboard).
 
 **Obejście**:    
@@ -207,6 +220,7 @@ Po utworzeniu systemu Android dla profilu poczty e-mail z pracy, dostępne są d
 
 ### <a name="antimalware-policy-fails-to-apply-on-windows-server-2016-core"></a>Zasady ochrony przed złośliwym kodem nie powiedzie się do zastosowania w systemie Windows Server 2016 Core
 <!--  Product Studio bug 485370 added 04 19 2017   Fixed in 1702 -->
+*Poniższe informacje dotyczą wersji 1610 i wcześniejszych.*  
 Zasady ochrony przed złośliwym oprogramowaniem nie powiodło się zastosować w systemie Windows Server 2016 Core.  Kod błędu to 0x80070002.  Brakująca zależność ConfigSecurityPolicy.exe nie istnieje.
 
 **Obejście problemu:**  Ten problem został rozwiązany przez [artykułu bazy wiedzy 4019472](https://support.microsoft.com/help/4019472/windows-10-update-kb4019472) rozproszonych 9 maja 2017 r.
