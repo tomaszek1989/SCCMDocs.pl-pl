@@ -107,7 +107,7 @@ Aby umożliwić wykonanie operacji, komputera, który jest hostem punktu połąc
 
 -   *manage.microsoft.com  
 -   https://bspmts.MP.microsoft.com/V
--   https://login.microsoftonline.com/ {TenantID}
+-   https://login.microsoftonline.com/{TenantID}
 
 
 **Obsługa systemu Windows 10**  
