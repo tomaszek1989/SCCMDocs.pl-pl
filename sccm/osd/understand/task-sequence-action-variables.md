@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 6049ec2369e0a97b21ce6523ba8448335385ab9a
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 675ebf053de98c6ad93a53ae218696012aef96f7
+ms.sourcegitcommit: 5b4fd2d36f06be5bcc7f8ebbfb92c48b7240085d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/30/2017
 ---
 # <a name="task-sequence-action-variables-in-system-center-configuration-manager"></a>Zmienne akcji sekwencji zadań w programie System Center Configuration Manager
 
@@ -187,15 +187,6 @@ Zmienne akcji sekwencji zadań Określ ustawienia konfiguracji, które są używ
 |SMSConnectNetworkFolderPassword<br /><br /> (dane wejściowe)|Określa hasło dostępu do sieci używane do nawiązania połączenia z udziałem sieciowym.|  
 |SMSConnectNetworkFolderPath<br /><br /> (dane wejściowe)|Określa ścieżkę sieciową dla połączenia.<br /><br /> Przykład:<br /><br /> **"\\\servername\sharename"**|  
 
-###  <a name="BKMK_ConvertDisk"></a> Zmienne akcji sekwencji zadań Konwertuj dysk na dynamiczny  
- Zmienna tej akcji określa numer dysku fizycznego do przekonwertowania z podstawowego na dynamiczny. Aby uzyskać więcej informacji o kroku sekwencji zadań skojarzonym z tymi zmiennymi, zobacz [Konwertuj dysk na dynamiczny](task-sequence-steps.md#BKMK_ConvertDisktoDynamic).  
-
-#### <a name="details"></a>Szczegóły  
-
-|Nazwa zmiennej akcji|Opis|  
-|--------------------------|-----------------|  
-|OSDConvertDiskIndex<br /><br /> (dane wejściowe)|Określa numer dysku fizycznego do przekonwertowania.|  
-
 ###  <a name="BKMK_EnableBitLocker"></a> Zmienne akcji sekwencji zadań Włącz funkcję BitLocker  
  Zmienne tej akcji określają opcje odzyskiwania hasła i klucza uruchomienia używane do włączenia funkcji BitLocker na komputerze docelowym. Aby uzyskać więcej informacji o kroku sekwencji zadań skojarzonym z tymi zmiennymi, zobacz [Włącz funkcję BitLocker](task-sequence-steps.md#BKMK_EnableBitLocker).  
 
@@ -276,7 +267,7 @@ Zmienne akcji sekwencji zadań Określ ustawienia konfiguracji, które są używ
 |OSDStateStorePath<br /><br /> (dane wyjściowe)|Ścieżka UNC do folderu w punkcie migracji stanu, w którym jest przechowywany stan użytkownika.|  
 
 ###  <a name="BKMK_RestartComputer"></a> Zmienne akcji sekwencji zadań Uruchom ponownie komputer  
- Zmienne tej akcji określają informacje używane do ponownego uruchomienia komputera docelowego. Aby uzyskać więcej informacji o kroku sekwencji zadań skojarzonym z tymi zmiennymi, zobacz [Uruchom ponownie komputer](task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer).  
+ Zmienne tej akcji określają informacje używane do ponownego uruchomienia komputera docelowego. Aby uzyskać więcej informacji o kroku sekwencji zadań skojarzonym z tymi zmiennymi, zobacz [Uruchom ponownie komputer](task-sequence-steps.md#BKMK_RestartComputer).  
 
 #### <a name="details"></a>Szczegóły  
 

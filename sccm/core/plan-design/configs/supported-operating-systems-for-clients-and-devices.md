@@ -2,7 +2,7 @@
 title: "Obsługiwane klientów i urządzeń | Dokumentacja firmy Microsoft"
 description: "Dowiedz się, które systemy operacyjne, w programie System Center Configuration Manager obsługuje klientów i urządzeń."
 ms.custom: na
-ms.date: 8/16/2017
+ms.date: 8/30/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -11,14 +11,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 87f4e041-67df-4c61-aa98-7444faffe565
 caps.latest.revision: "5"
-author: arob98
-ms.author: angrobe
+author: robstackmsft
+ms.author: robstack
 manager: angrobe
-ms.openlocfilehash: f9dd3b3e8f7a2878cd549bf289e1ee5536ee73fc
-ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
+ms.openlocfilehash: 4c7e0aaed816e45c8770d1cb9fb21d6dcd63f3a3
+ms.sourcegitcommit: 5b4fd2d36f06be5bcc7f8ebbfb92c48b7240085d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 08/30/2017
 ---
 # <a name="supported-operating-systems-for-clients-and-devices-for-system-center-configuration-manager"></a>Obsługiwane systemy operacyjne dla klientów i urządzeń dla programu System Center Configuration Manager
 
@@ -213,7 +213,6 @@ Następujące systemy operacyjne są oparte na systemie Windows XP Embedded i ob
 
 |||  
 |-|-|  
-|W wersji 5.3 (Power)|CCM-Aix53ppc. &lt;kompilacji\>tar|  
 |W wersji 6.1 (Power)|CCM-Aix61ppc. &lt;kompilacji\>tar|  
 |W wersji 7.1 (Power)|CCM-Aix71ppc. &lt;kompilacji\>tar|  
 
@@ -244,10 +243,7 @@ Następujące systemy operacyjne są oparte na systemie Windows XP Embedded i ob
 
 |||  
 |-|-|  
-|Wersja 11iv2 IA64|CCM-HpuxB.11.23i64. &lt;kompilacji\>tar|  
-|Wersja 11iv2 PA-RISC|CCM-HpuxB.11.23PA. &lt;kompilacji\>tar|  
 |Wersja 11iv3 IA64|CCM-HpuxB.11.31i64. &lt;kompilacji\>tar|  
-|Wersja 11iv3 PA-RISC|CCM-HpuxB.11.31PA. &lt;kompilacji\>tar|  
 
 ### <a name="oracle-linux"></a>Oracle Linux  
 
@@ -263,8 +259,6 @@ Następujące systemy operacyjne są oparte na systemie Windows XP Embedded i ob
 
 |||  
 |-|-|  
-|W wersji 4 x86|CCM-RHEL4x86. &lt;kompilacji\>tar|  
-|W wersji 4 x64|CCM-RHEL4x64. &lt;kompilacji\>tar|  
 |W wersji 5 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
 |W wersji 5 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 |W wersji 6 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
@@ -275,7 +269,6 @@ Następujące systemy operacyjne są oparte na systemie Windows XP Embedded i ob
 
 |||  
 |-|-|  
-|W wersji 9 SPARC|CCM-Sol9sparc. &lt;kompilacji\>tar|  
 |W wersji 10 x86|CCM-Sol10x86. &lt;kompilacji\>tar|  
 |W wersji 10 SPARC|CCM-Sol10sparc. &lt;kompilacji\>tar|  
 |W wersji 11 x86|CCM-Sol11x86. &lt;kompilacji\>tar|  
@@ -285,7 +278,6 @@ Następujące systemy operacyjne są oparte na systemie Windows XP Embedded i ob
 
 |||  
 |-|-|  
-|W wersji 9 x86|CCM-SLES9x86. &lt;kompilacji\>tar|  
 |Z dodatkiem SP1 w wersji 10 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
 |Z dodatkiem SP1 w wersji 10 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 |Z dodatkiem SP1 w wersji 11 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
@@ -302,6 +294,9 @@ Następujące systemy operacyjne są oparte na systemie Windows XP Embedded i ob
 |Wersja 12.04 LTS x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 |Wersja 14.04 LTS x86|CCM-Universalx86. &lt;kompilacji\>tar|  
 |Wersja 14.04 LTS x64|CCM-Universalx64. &lt;kompilacji\>tar|  
+|Wersja 16.04 LTS x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|Wersja 16.04 LTS x64|CCM-Universalx64. &lt;kompilacji\>tar|  
+
 
 ##  <a name="mobile-devices-enrolled-by-microsoft-intune"></a>Urządzenia przenośne zarejestrowane przez program Microsoft Intune  
  Aby uzyskać szczegółowe informacje dotyczące komputerów i urządzeń, którymi można zarządzać po zintegrowaniu programu Microsoft Intune z programem Configuration Manager Zobacz dwa następujące tematy w bibliotece dokumentacji programu Microsoft Intune:  

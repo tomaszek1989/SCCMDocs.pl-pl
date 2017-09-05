@@ -2,7 +2,7 @@
 title: "Planowanie wdrożenia klientów na komputerach z systemami Linux i UNIX | Dokumentacja firmy Microsoft"
 description: "Planowanie wdrażania klientów na komputerach UNIX i Linux w programie System Center Configuration Manager."
 ms.custom: na
-ms.date: 04/23/2017
+ms.date: 08/30/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: robstackmsft
 ms.author: robstack
 manager: angrobe
-ms.openlocfilehash: 367ffb919a1adb9a0530f7357a0fcf1e6636af08
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: c5385ec5d7e41812df5c2a33d528614547819157
+ms.sourcegitcommit: 5b4fd2d36f06be5bcc7f8ebbfb92c48b7240085d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/30/2017
 ---
 # <a name="planning-for-client-deployment-to-linux-and-unix-computers-in-system-center-configuration-manager"></a>Planowanie wdrożenia klientów na komputerach z systemami Linux i UNIX w programie System Center Configuration Manager
 
@@ -51,14 +51,6 @@ Klienta programu System Center Configuration Manager można zainstalować na kom
 ###  <a name="BKMK_ClientDeployExternalforLnU"></a>Zależności poza programem Configuration Manager:  
  Poniższe tabele zawierają opis wymaganych systemów operacyjnych UNIX i Linux oraz zależności pakietów.  
 
- **Red Hat Enterprise Linux ES wersji 4**  
-
-|Wymagany pakiet|Opis|Minimalna wersja|  
-|----------------------|-----------------|---------------------|  
-|glibc|Biblioteki standardowe C Standard|2.3.4-2|  
-|Openssl|Biblioteki protokołu OpenSSL; protokół bezpiecznej komunikacji sieciowej (Secure Network Communications, SNC)|0.9.7a-43.1|  
-|PAM|Podłączane moduły uwierzytelniania (PAM)|0.77-65.1|  
-
  **Wersja Red Hat Enterprise Linux Server 5.1 (Tikanga)**  
 
 |Wymagany pakiet|Opis|Minimalna wersja|  
@@ -75,15 +67,6 @@ Klienta programu System Center Configuration Manager można zainstalować na kom
 |Openssl|Biblioteki protokołu OpenSSL; protokół bezpiecznej komunikacji sieciowej (Secure Network Communications, SNC)|1.0.0-4|  
 |PAM|Podłączane moduły uwierzytelniania (PAM)|1.1.1-4|  
 
- **Solaris 9 SPARC**  
-
-|Wymagany pakiet|Opis|Minimalna wersja|  
-|----------------------|-----------------|---------------------|  
-|Wymagana poprawka systemu operacyjnego|Przeciek pamięci w modułach PAM|112960-48|  
-|SUNWlibC|Biblioteka libC pakietu kompilatorów Sun Workshop (sparc)|5.9,REV=2002.03.18|  
-|SUNWlibms|Biblioteka udostępniona libm pakietu Forte Developer (sparc)|5.9,REV=2001.12.10|  
-|OpenSSL|SMCosslg (sparc)<br /><br /> System Sun nie udostępnia wersji OpenSSL dla systemu Solaris 9 SPARC. Dostępna jest wersja udostępniana przez Sunfreeware.|0.9.7g|  
-|PAM|Podłączane moduły uwierzytelniania (PAM)<br /><br /> SUNWcsl, Core Solaris, (biblioteki udostępnione) (sparc)|11.9.0,REV=2002.04.06.15.27|  
 
  **Solaris 10 SPARC**  
 
@@ -132,15 +115,6 @@ Klienta programu System Center Configuration Manager można zainstalować na kom
 |SUNWcsr|Core Solaris (Root)|11.11, REV=2009.11.11|  
 |SUNWopenssl-libraries|Biblioteki OpenSSL (Usr)|11.11.0,REV=2010.05.25.01.00|  
 
- **SUSE Linux Enterprise Server 9 (i586)**  
-
-|Wymagany pakiet|Opis|Minimalna wersja|  
-|----------------------|-----------------|---------------------|  
-|Service Pack 4|SUSE Linux Enterprise Server 9||  
-|OS Patch lib gcc-41.rpm|Standardowa biblioteka udostępniana|41-4.1.2_20070115-0.6|  
-|OS Patch lib stdc++-41.rpm|Standardowa biblioteka udostępniana|41-4.1.2_20070115-0.6|  
-|Openssl|Biblioteki protokołu OpenSSL; protokół bezpiecznej komunikacji sieciowej (Secure Network Communications, SNC)|0.9.7d-15.35|  
-|PAM|Podłączane moduły uwierzytelniania (PAM)|0.77-221-11|  
 
  **SUSE Linux Enterprise Server 10 SP1 (i586)**  
 
@@ -173,13 +147,6 @@ Klienta programu System Center Configuration Manager można zainstalować na kom
 |OpenSSL|Biblioteki protokołu OpenSSL; protokół bezpiecznej komunikacji sieciowej (Secure Network Communications, SNC)|0.9.8 lub 1.0|  
 |PAM|Podłączane moduły uwierzytelniania (PAM)|0.99.6.2-3.14|  
 
- **IBM AIX 5L 5.3**  
-
-|Wymagany pakiet|Opis|Minimalna wersja|  
-|----------------------|-----------------|---------------------|  
-|Wersja systemu operacyjnego|Wersja systemu operacyjnego|AIX 5.3, Technology Level 6, dodatek Service Pack 5|  
-|xlC.rte|Środowisko uruchomieniowe XL C/C++|9.0.0.2|  
-|openssl.base|Biblioteki protokołu OpenSSL; protokół bezpiecznej komunikacji sieciowej (Secure Network Communications, SNC)|0.9.8.4|  
 
  **IBM AIX 6.1**  
 
@@ -197,33 +164,6 @@ Klienta programu System Center Configuration Manager można zainstalować na kom
 |xlC.rte|Środowisko uruchomieniowe XL C/C++||  
 |OpenSSL/openssl.base|Biblioteki protokołu OpenSSL; protokół bezpiecznej komunikacji sieciowej (Secure Network Communications, SNC)||  
 
- **HP-UX 11i v2 IA 64**  
-
-|Wymagany pakiet|Opis|Minimalna wersja|  
-|----------------------|-----------------|---------------------|  
-|HPUXBaseOS|Podstawowy system operacyjny|B.11.23|  
-|HPUXBaseAux|Składnik pomocniczy podstawowego systemu operacyjnego HP-UX|B.11.23.0706|  
-|HPUXBaseAux.openssl|Biblioteki protokołu OpenSSL; protokół bezpiecznej komunikacji sieciowej (Secure Network Communications, SNC)|A.00.09.07l.003|  
-|PAM|Podłączane moduły uwierzytelniania (PAM)|W systemie operacyjnym HP-UX moduły PAM są częścią podstawowych składników systemu operacyjnego. Nie ma innych zależności.|  
-
- **HP-UX 11i v2 PA-RISC**  
-
-|Wymagany pakiet|Opis|Minimalna wersja|  
-|----------------------|-----------------|---------------------|  
-|HPUX11i-OE|Środowisko operacyjne Foundation Operating Environment systemu operacyjnego HP-UX|B.11.23.0706|  
-|OS-Core.MinimumRuntime.CORE-SHLIBS|Biblioteki zgodnych narzędzi programistycznych|B.11.23|  
-|HPUXBaseAux|Składnik pomocniczy podstawowego systemu operacyjnego HP-UX|B.11.23.0706|  
-|HPUXBaseAux.openssl|Biblioteki protokołu OpenSSL; protokół bezpiecznej komunikacji sieciowej (Secure Network Communications, SNC)|A.00.09.071.003|  
-|PAM|Podłączane moduły uwierzytelniania (PAM)|W systemie operacyjnym HP-UX moduły PAM są częścią podstawowych składników systemu operacyjnego. Nie ma innych zależności.|  
-
- **HP-UX 11i v3 PA-RISC**  
-
-|Wymagany pakiet|Opis|Minimalna wersja|  
-|----------------------|-----------------|---------------------|  
-|HPUX11i-OE|Środowisko operacyjne Foundation Operating Environment systemu operacyjnego HP-UX|B.11.31.0709|  
-|OS-Core.MinimumRuntime.CORE2-SHLIBS|Biblioteki emulatora określonej architektury IA|B.11.31|  
-|openssl/Openssl.openssl|Biblioteki protokołu OpenSSL; protokół bezpiecznej komunikacji sieciowej (Secure Network Communications, SNC)|A.00.09.08d.002|  
-|PAM|Podłączane moduły uwierzytelniania (PAM)|W systemie operacyjnym HP-UX moduły PAM są częścią podstawowych składników systemu operacyjnego. Nie ma innych zależności.|  
 
  **HP-UX 11i v3 IA64**  
 
@@ -285,13 +225,8 @@ Klienta programu System Center Configuration Manager można zainstalować na kom
 ##  <a name="BKMK_NoSHA-256"></a>O systemu Linux i UNIX systemów operacyjnych, że czy nie obsługi algorytmu SHA-256  
  Następujących systemów Linux i UNIX systemów operacyjnych, które są obsługiwane jako klienci programu Configuration Manager zostały wydane z wersjami biblioteki OpenSSL, które nie obsługują algorytmu SHA-256:  
 
--   Red Hat Enterprise Linux 4 (x86/x64)  
+-   Wersja systemu Solaris 10 (SPARC/x86)  
 
--   Solaris 9 (SPARC) i Solaris 10 (SPARC/x86)  
-
--   SUSE Linux Enterprise Server 9 (x86)  
-
--   HP-UX 11iv2 (PA-RISC/IA64)  
 
  Do zarządzania tymi systemami operacyjnymi z programem Configuration Manager, należy zainstalować klienta programu Configuration Manager dla systemów Linux i UNIX z przełącznikiem wiersza polecenia, który określa, że klient ma pomijać weryfikację algorytmu SHA-256. Klienci programu Configuration Manager, które są uruchamiane w tych wersjach systemu operacyjnego działają w trybie mniej bezpiecznym niż klienci, którzy obsługują algorytm SHA-256. Ten mniej bezpieczny tryb działania ma następującą charakterystykę:  
 

@@ -4,7 +4,7 @@ description: "Więcej informacji o wersji Technical Preview że teraz musisz tes
 ms.custom: na
 ms.date: 08/25/2017
 ms.prod: configuration-manager
-ms.reviewer: na
+ms.reviewer: nab
 ms.suite: na
 ms.technology: configmgr-other
 ms.tgt_pltfrm: na
@@ -14,11 +14,11 @@ caps.latest.revision: "157"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 0cdbccc0147cb1f4d5130863b9610d0b190d6658
-ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
+ms.openlocfilehash: 1335794bde7805e5fb2899ca685e985afee13c4e
+ms.sourcegitcommit: 5b4fd2d36f06be5bcc7f8ebbfb92c48b7240085d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 08/30/2017
 ---
 # <a name="technical-preview-for-system-center-configuration-manager"></a>Wersja zapoznawcza Technical Preview programu System Center Configuration Manager
 
@@ -226,7 +226,7 @@ Można zainstalować wersji linii bazowej dla maksymalnie 1 rok po ich wydaniu. 
  |Ulepszenia dotyczące analizy zasobów|[Podgląd techniczna 1608](capabilities-in-technical-preview-1608.md#improvements-to-asset-intelligence)|![Nie dodano](media/Red_X.gif)|
  |Translacja klawiatury zdalnego sterowania|[Podgląd techniczna 1608](capabilities-in-technical-preview-1608.md#remote-control-keyboard-translation)|![Nie dodano](media/Red_X.gif)|
  |Ulepszenia zasad uaktualniania wersji systemu Windows 10|[Podgląd techniczna 1607](capabilities-in-technical-preview-1607.md#dmp_edition)|[Wersja 1610](/sccm/compliance/deploy-use/upgrade-windows-version)|
- |Możliwość dostosowania znaków firmowych w oknach dialogowych Centrum oprogramowania|[Podgląd techniczna 1607](capabilities-in-technical-preview-1607.md#customizable-branding-for-software-center-dialogs)|![Nie dodano](media/Red_X.gif)|  
+ |Możliwość dostosowania znaków firmowych w oknach dialogowych Centrum oprogramowania|[Podgląd techniczna 1607](capabilities-in-technical-preview-1607.md#customizable-branding-for-software-center-dialogs)|[Wersja 1610](/sccm/core/plan-design/changes/whats-new-in-version-1610#customizable-branding-for-software-center-dialogs)|  
  |Wiele punktów zarządzania urządzeniami w ramach lokalnego zarządzania urządzeniami przenośnymi|[Podgląd techniczna 1606](capabilities-in-technical-preview-1606.md#dmp_onprem)|[Wersja 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606#on-premises-mobile-device-management)|
  |Automatyczne kategoryzowanie urządzeń do kolekcji|[Podgląd techniczna 1606](capabilities-in-technical-preview-1606.md#dmp_category)|[Wersja 1606](/sccm/core/clients/manage/collections/automatically-categorize-devices-into-collections) |
  |Okres prolongaty wymuszania dla wdrożeń wymaganych aplikacji i aktualizacji oprogramowania|[Podgląd techniczna 1606](capabilities-in-technical-preview-1606.md#dmp_grace)|[Wersja 1610](/sccm/apps/deploy-use/deploy-applications)|

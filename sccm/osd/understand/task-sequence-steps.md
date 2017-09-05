@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: e0726febc4c36a26c5e067914734838bf2681e6c
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 18a987141e212158424924402859799ba42f8eae
+ms.sourcegitcommit: 5b4fd2d36f06be5bcc7f8ebbfb92c48b7240085d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 08/30/2017
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Kroki sekwencji zadań w programie System Center Configuration Manager
 
@@ -139,7 +139,7 @@ Następujące kroki sekwencji zadań można dodać do sekwencji zadań programu 
  Wybierz tę opcję, aby przyłączyć komputer docelowy do określonej grupy roboczej. Wprowadź nazwę grupy roboczej w wierszu **Grupa robocza**. Ta wartość może zostać przesłonięta przez wartość przechwyconą przez krok sekwencji zadań **Przechwyć ustawienia sieci**.  
 
  **Przyłącz do domeny**  
- Wybierz tę opcję, aby przyłączyć komputer docelowy do określonej domeny. Określ lub wyszukaj domenę, taką jak *fabricam.com*. Określ lub wyszukaj ścieżkę protokołu LDAP (Lightweight Directory Access Protocol) dla jednostki organizacyjnej (tj. LDAP//OU=computers, DC=Fabricam.com, C=com).  
+ Wybierz tę opcję, aby przyłączyć komputer docelowy do określonej domeny. Określ lub wyszukaj domenę, taką jak *fabricam.com*. Określ lub wyszukaj ścieżkę dostępu protokołu LDAP (Lightweight Directory) dla jednostki organizacyjnej (tj. LDAP / / OU = computers, DC=Fabricam.com, C = com).  
 
  **Konta**  
  Kliknij pozycję **Ustaw**, aby określić konto z uprawnieniami przyłączania komputera do domeny. W **konta użytkownika systemu Windows** okno dialogowe, które można wprowadzić nazwę użytkownika w następującym formacie: **DOMENA\UŻYTKOWNIK** .  
@@ -551,31 +551,6 @@ Ten krok sekwencji zadań działa tylko w środowisku Windows PE. Nie działa on
 
 -   Określenie warunków, które muszą zostać spełnione, aby można było wykonać krok.  
 
-##  <a name="BKMK_ConvertDisktoDynamic"></a>Konwertuj dysk na dynamiczny  
- Krok sekwencji zadań **Konwertuj dysk na dynamiczny** umożliwia przekonwertowanie dysku fizycznego z dysku podstawowego na dysk dynamiczny.  
-
- Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows PE. Aby uzyskać więcej informacji na temat zmiennych sekwencji zadań dla tej akcji, zobacz [Zmienne akcji sekwencji zadań Przekonwertuj dysk na dynamiczny](task-sequence-action-variables.md#BKMK_ConvertDisk).  
-
-### <a name="details"></a>Szczegóły  
- Na karcie **Właściwości** tego kroku można skonfigurować ustawienia opisane w tej sekcji.  
-
- Jest też dostępna karta **Opcje**, która umożliwia wykonywanie następujących czynności:  
-
--   Wyłączenie kroku.  
-
--   Określenie, czy sekwencja zadań ma kontynuować działanie w przypadku wystąpienia błędu podczas wykonywania kroku.  
-
--   Określenie warunków, które muszą zostać spełnione, aby można było wykonać krok.  
-
- **Nazwa**  
- Zdefiniowana przez użytkownika krótka nazwa opisująca akcję wykonywaną w tym kroku.  
-
- **Opis**  
- Bardziej szczegółowe informacje dotyczące akcji wykonywanej w tym kroku.  
-
- **Numer dysku**  
- Numer dysku fizycznego, który zostanie przekonwertowany.  
-
 ##  <a name="BKMK_DisableBitLocker"></a>Wyłącz funkcję BitLocker  
  Krok sekwencji zadań **Wyłącz funkcję BitLocker** umożliwia wyłączenie szyfrowania za pomocą funkcji BitLocker na bieżącym dysku systemu operacyjnego albo na określonym dysku. Po wykonaniu tej akcji funkcje ochrony kluczy są widoczne w postaci zwykłego tekstu na dysku twardym, ale zawartość dysku nie jest odszyfrowywana. W związku z tym ta akcja jest wykonywana niemal natychmiast.  
 
@@ -874,35 +849,6 @@ Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows P
  **Jeśli aplikacja nie powiedzie się, kontynuuj instalowanie pozostałych aplikacji z listy**  
  To ustawienie określa, że krok ma kontynuować działanie w przypadku niepowodzenia instalacji aplikacji. Jeśli to ustawienie zostanie określone, sekwencja zadań będzie kontynuować działanie niezależnie od zwracanych błędów instalacji. Jeśli to ustawienie nie zostanie określone i instalacja zakończy się niepowodzeniem, krok sekwencji zadań zakończy się natychmiast.  
 
-##  <a name="BKMK_InstallDeploymentTools"></a>Instalowanie narzędzi wdrażania  
- Użyj **Zainstaluj narzędzia wdrażania** krok sekwencji zadań umożliwia zainstalowanie pakietu programu Configuration Manager zawierający narzędzia wdrażania Sysprep.  
-
-### <a name="details"></a>Szczegóły  
- Na karcie **Właściwości** tego kroku można skonfigurować ustawienia opisane w tej sekcji.  
-
- Jest też dostępna karta **Opcje**, która umożliwia wykonywanie następujących czynności:  
-
--   Wyłączenie kroku.  
-
--   Określenie, czy sekwencja zadań ma kontynuować działanie w przypadku wystąpienia błędu podczas wykonywania kroku.  
-
--   Określenie warunków, które muszą zostać spełnione, aby można było wykonać krok.  
-
- **Nazwa**  
- Zdefiniowana przez użytkownika krótka nazwa opisująca akcję wykonywaną w tym kroku.  
-
- **Opis**  
- Bardziej szczegółowe informacje dotyczące akcji wykonywanej w tym kroku.  
-
- **Pakiet programu Sysprep**  
- To ustawienie określa pakiet programu Configuration Manager zawierający narzędzia wdrażania Sysprep dla następujących systemów operacyjnych:  
-
--   Windows XP z dodatkiem SP3  
-
--   Windows XP X64 z dodatkiem SP2  
-
--   Windows Server 2003 SP2  
-
 ##  <a name="BKMK_InstallPackage"></a>Zainstaluj pakiet
 
  Krok sekwencji zadań **Zainstaluj pakiet** umożliwia zainstalowanie oprogramowania w ramach sekwencji zadań. Gdy ten krok zostanie uruchomiony, instalacja rozpocznie się natychmiast bez oczekiwania na interwał sondowania zasad.  
@@ -1068,6 +1014,9 @@ W programie Configuration Manager w wersji 1606 wprowadzono nową zmienną sekwe
 Użyj **przygotować klienta programu ConfigMgr do przechwycenia** krok, aby usunąć klienta programu Configuration Manager lub konfigurowania klienta na komputerze odniesienia, aby przygotować go do przechwycenia w ramach procesu przetwarzania obrazów.
 
 Począwszy od programu Configuration Manager w wersji 1610 krok przygotować klienta programu ConfigMgr powoduje całkowite usunięcie klienta programu Configuration Manager, a nie tylko usunięcie informacji o kluczu. Jeśli sekwencja zadań wdrażania przechwyconego obrazu systemu operacyjnego zainstaluje nowy klient programu Configuration Manager zawsze.  
+
+> [!Note]  
+>  Klient jest tylko usunięte podczas **Utwórz i Przechwyć referencyjny obraz systemu operacyjnego** sekwencji zadań. Inne metody przechwytywania, takie jak nośniki przechwytywania lub niestandardową sekwencję zadań, nie spowoduje usunięcia klienta.
 
 Przed 1610 wersji programu Configuration Manager w tym kroku wykonuje następujące zadania:  
 
