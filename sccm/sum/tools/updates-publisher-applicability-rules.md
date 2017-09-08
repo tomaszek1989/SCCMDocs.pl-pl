@@ -65,7 +65,7 @@ Następujące informacje są podobne do tworzenia reguł za pomocą [kreatora Ut
 
     -   **System —** ta zasada używa szczegóły systemu w celu określenia możliwości zastosowania. Można wybrać Definiowanie wersji systemu Windows, Windows języka, architektury procesora, lub określ kwerendę usługi WMI, aby zidentyfikować system operacyjny urządzenia.
 
-    -   **Instalator Windows —** ta reguła służy do określenia zastosowania oparte na zainstalowanym. Poprawka MSI lub Instalatora systemu Windows (. MSP). Można również określić, czy określone składniki i funkcje są instalowane jako część wymagań.
+    -   **Instalator Windows —** ta reguła służy do określenia zastosowania oparte na zainstalowanym. Poprawka MSI lub Instalatora systemu Windows (.MSP). Można również określić, czy określone składniki i funkcje są instalowane jako część wymagań.
 
        > [!IMPORTANT]   
        > Z zarządzanych deices, Windows Update Agent nie może wykryć pakietów instalacji systemu Windows, które są zainstalowane dla poszczególnych użytkowników. Korzystając z tego typu reguł, należy skonfigurować reguły stosowania dodatkowych, takich jak wersji plików lub wartości klucza rejestru, aby pakiet Instalatora Windows, które mogą być poprawnie wykrywane niezależnie od tego, bazując na użytkownika lub systemu.
