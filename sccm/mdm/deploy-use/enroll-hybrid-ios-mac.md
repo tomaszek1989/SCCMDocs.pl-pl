@@ -81,4 +81,4 @@ Można ograniczyć urządzeń, które można zarejestrować blokując osobiście
 3.  Wybierz **osobiście urządzenia należące do bloku** limit rejestracji urządzeń należących do firmy.
 
 > [!div class="button"]
-[< Wstecz krok](create-service-connection-point.md)[następny krok >  ](set-up-additional-management.md)
+[< Wstecz krok](create-service-connection-point.md)  [następny krok >  ](set-up-additional-management.md)

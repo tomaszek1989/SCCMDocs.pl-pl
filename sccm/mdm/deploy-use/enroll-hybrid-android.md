@@ -75,4 +75,4 @@ Po włączeniu systemu Android dla rejestracji pracy można wykonać następują
 - [Selektywne czyszczenie profilu pracy](/sccm/mdm/deploy-use/wipe-lock-reset-devices#selective-wipe)
 
 > [!div class="button"]
-[< Wstecz krok](create-service-connection-point.md)[następny krok >  ](set-up-additional-management.md)
+[< Wstecz krok](create-service-connection-point.md)  [następny krok >  ](set-up-additional-management.md)

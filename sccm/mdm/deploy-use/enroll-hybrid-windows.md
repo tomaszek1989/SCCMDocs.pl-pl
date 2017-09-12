@@ -127,4 +127,4 @@ Zmiany rekordów DNS może potrwać do 72 godzin propagacji. Nie można zweryfik
  Po zakończeniu konfiguracji musisz poinformować użytkowników, jak mogą rejestrować swoje urządzenia. Zobacz [co mówić użytkownikom na temat rejestrowania ich urządzeń](https://docs.microsoft.com/intune/deploy-use/what-to-tell-your-end-users-about-using-microsoft-intune) orientacji. Można przekierować użytkowników do [rejestrować urządzenia z systemem Windows w usłudze Intune](https://docs.microsoft.com/intune/enduser/enroll-your-device-in-intune-windows). Te informacje dotyczą urządzeń przenośnych zarządzanych zarówno przez usługę Microsoft Intune, jak i program Configuration Manager.
 
 > [!div class="button"]
-[< Wstecz krok](create-service-connection-point.md)[następny krok >  ](set-up-additional-management.md)
+[< Wstecz krok](create-service-connection-point.md)  [następny krok >  ](set-up-additional-management.md)

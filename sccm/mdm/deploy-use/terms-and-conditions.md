@@ -120,4 +120,4 @@ System Center Configuration Manager warunków i postanowień można wdrożyć w 
      Zaleca się, aby zwiększać numer wersji i wymagać akceptacji po każdym wprowadzeniu znaczących zmian warunków i postanowień. Jeśli zmiany obejmują na przykład poprawki błędów pisowni lub zmiany formatowania, zachowaj bieżący numer wersji.
 
 > [!div class="button"]
-[< Wstecz krok](configure-intune-subscription.md)[następny krok >  ](create-service-connection-point.md)
+[< Wstecz krok](configure-intune-subscription.md)  [następny krok >  ](create-service-connection-point.md)
