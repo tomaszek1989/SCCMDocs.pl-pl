@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: e4a53caab7d76b604a3fee7dcfc4dc48f22b0fb0
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 23ff28189c8010c21ed8b23c35598746a4f09fe7
+ms.sourcegitcommit: 13599667ea77c16db1aebe64f8a6748c268f0b45
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/11/2017
 ---
 # <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Profile sieci VPN na urządzeniach przenośnych w programie System Center Configuration Manager
 
@@ -37,20 +37,20 @@ Profile sieci VPN w programie System Center Configuration Manager możesz wdraż
 
  |Typ połączenia|iOS i macOS X|Android|Windows 8.1|Windows RT|Windows RT 8.1|Windows Phone 8,1|Windows 10 Desktop i Mobile|  
  |---------------------|----------------------|-------------|-----------------|----------------|--------------------|-----------------------|-----------------------------------|  
- |Cisco AnyConnect|Tak|Tak|Nie|Nie|Nie|Nie|Tak (OMA-URI)|
+ |Cisco AnyConnect|Tak|Tak|Nie|Nie|Nie|Nie|Tak|
  |Cisco (IPSec)|tylko system iOS|Nie|Nie|Nie|Nie|Nie|Nie|  
  |Pulse Secure|Tak|Tak|Tak|Nie|Tak|Tak|Tak|  
  |F5 Edge Client|Tak|Tak|Tak|Nie|Tak|Tak|Tak|  
  |Dell SonicWALL Mobile Connect|Tak|Tak|Tak|Nie|Tak|Tak|Tak|  
  |Check Point Mobile VPN|Tak|Tak|Tak|Nie|Tak|Tak|Tak|  
  |Microsoft SSL (SSTP)|Nie|Nie|Tak|Tak|Tak|Nie|Nie|  
- |Tryb automatyczny firmy Microsoft|Nie|Nie|Tak|Tak|Tak|Nie|Tak (OMA-URI)|  
- |IKEv2|Tak (zasady niestandardowe)|Nie|Tak|Tak|Tak|Tak|Tak (OMA-URI)|  
- |PPTP|Tak|Nie|Tak|Tak|Tak|Nie|Tak (OMA-URI)|  
+ |Tryb automatyczny firmy Microsoft|Nie|Nie|Tak|Tak|Tak|Nie|Tak|  
+ |IKEv2|Tak (zasady niestandardowe systemu iOS 9 i nowszych)|Nie|Tak|Tak|Tak|Tak|Tak|  
+ |PPTP|Tak|Nie|Tak|Tak|Tak|Nie|Tak|  
  |L2TP|Tak|Nie|Tak|Tak|Tak|Nie|Tak (OMA-URI)|  
 
 ## <a name="create-vpn-profiles"></a>Tworzenie profilów sieci VPN
-[Jak tworzyć profile sieci VPN w programie System Center Configuration Manager](../../protect/deploy-use/create-vpn-profiles.md) zawiera ogólne informacje o sposobie tworzenie profilów sieci VPN.
+[Jak tworzyć profile sieci VPN w programie System Center Configuration Manager](../../protect/deploy-use/create-vpn-profiles.md) zawiera ogólne informacje o sposobie tworzenia profili sieci VPN.
 
 ###   <a name="windows-10-vpn-features-available-when-using-configuration-manager-with-intune"></a>Funkcje sieci VPN systemu Windows 10, dostępne podczas korzystania z programu Configuration Manager z usługą Intune  
 

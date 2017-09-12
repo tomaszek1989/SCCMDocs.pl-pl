@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: cc678c1133b1944f55bcad309cf9ede9f0660b57
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 5668ba3ead3b7415508f9ecf02f2e119c3cd9cc6
+ms.sourcegitcommit: 2a1328da3facb20b0c78f3b12adbb5fdbe0dcc11
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="manage-boot-images-with-system-center-configuration-manager"></a>Zarządzanie obrazami rozruchowymi przy użyciu programu System Center Configuration Manager
 
@@ -49,11 +49,10 @@ Przed wersją 1702 programu Configuration Manager aktualizuje istniejący obraz 
 Po uaktualnieniu programu Configuration Manager 2012 CB programu Configuration Manager przy użyciu procesu instalacji programu Configuration Manager spowoduje ponowne wygenerowanie domyślne obrazy rozruchowe. Dotyczy to również nową wersję środowiska Windows PE z zaktualizowany zestaw Windows ADK, nowej wersji klienta programu Configuration Manager i wszystkie dostosowania pozostają niezmienione. Niestandardowe obrazy rozruchowe nie są modyfikowane.
 
 ### <a name="update-distribution-points-with-the-boot-image"></a>Aktualizuj punkty dystrybucji o obraz rozruchowy
-Jeśli używasz **Aktualizuj punkty dystrybucji** akcji z **obrazów rozruchowych** węzeł w konsoli programu Configuration Manager, Configuration Manager aktualizuje domyślne obrazy rozruchowe składników klienta, sterowniki, dostosowywanie, itp.    
+Jeśli używasz **Aktualizuj punkty dystrybucji** akcji z **obrazów rozruchowych** węzeł w konsoli programu Configuration Manager, Configuration Manager aktualizacji obrazu rozruchowego docelowego ze składnikami klienta sterowniki dostosowań, itp.    
 
 Począwszy od programu Configuration Manager 1706 wersji, można ponownie załadować najnowszą wersję środowiska Windows PE (w katalogu instalacyjnym zestawu Windows ADK) do obrazu rozruchowego. **Ogólne** Kreatora aktualizacji punktów dystrybucji zawiera informacje o wersji zestawu Windows ADK na serwerze lokacji, wersja zestawu Windows ADK, w którym użyto środowiska Windows PE w obrazie rozruchowym i wersja klienta programu Configuration Manager. Można użyć te informacje ułatwiające podjęcie decyzji o ponowne załadowanie obrazu rozruchowego. Ponadto nową kolumnę (**wersji klienta**) został dodany podczas wyświetlania obrazów rozruchowych w **obrazów rozruchowych** węzeł, aby wiedzieć, jakiej wersji klienta programu Configuration Manager korzysta z każdego obrazu rozruchowego.    
 
-Niestandardowe obrazy rozruchowe nie są modyfikowane.
 
 ##  <a name="BKMK_BootImageCustom"></a>Dostosowanie obrazu rozruchowego  
  Obraz rozruchowy można dostosować lub [zmodyfikować obraz rozruchowy](#BKMK_ModifyBootImages), z poziomu konsoli programu Configuration Manager, gdy jest on oparty na wersji środowiska Windows PE z obsługiwanej wersji zestawu Windows adk. Po uaktualnieniu lokacji do nowej wersji i zainstalowaniu nowej wersji zestawu Windows ADK niestandardowe obrazy rozruchowe (znajdujące się poza lokalizacją domyślnego obrazu rozruchowego) nie są aktualizowane przy użyciu nowej wersji zestawu Windows ADK. W takim przypadku nie będzie można dostosować obrazy rozruchowe w konsoli programu Configuration Manager. Będą jednak nadal działać tak samo jak przed uaktualnieniem.  

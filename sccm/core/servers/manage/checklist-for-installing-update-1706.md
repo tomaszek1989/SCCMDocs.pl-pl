@@ -14,11 +14,11 @@ caps.latest.revision:
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: dab99748902df0fad32a1e2adad0c05e0dd8bdc9
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: c8110d9f5fec9027d34570623c32a7474e01b9af
+ms.sourcegitcommit: 2a1328da3facb20b0c78f3b12adbb5fdbe0dcc11
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="checklist-for-installing-update-1706-for-system-center-configuration-manager"></a>Lista kontrolna dotycząca instalowania aktualizacji 1706 programu System Center Configuration Manager
 
@@ -62,7 +62,6 @@ Użycie konsoli programu Configuration Manager po zakończeniu aktualizacji po r
 > - **Łącza replikacji** między centralną lokacją administracyjną i podrzędne Lokacje główne wyświetlane jako nie uaktualniony. Spowoduje to wyświetlenie w stan instalacji pakietu aktualizacji stanu ukończone z ostrzeżeniem na potrzeby inicjowania replikacji monitorowanie. W węźle Monitorowanie w konsoli jest wyświetlana *Trwa konfiguracja łącza*.
 
 
-
 ## <a name="checklist"></a>Lista kontrolna
 
 **Upewnij się, że wszystkie lokacje z wersją programu System Center Configuration Manager czy obsługuje aktualizacji do 1706:**   
@@ -86,9 +85,9 @@ Ta instalacja można umieścić serwer systemu lokacji do na ponowne uruchomieni
 
 Aby uzyskać więcej informacji, zobacz [Site and site system prerequisites](/sccm/core/plan-design/configs/site-and-site-system-prerequisites) (Wymagania wstępne dotyczące lokacji i systemu lokacji).
 
-**Przejrzyj wersje systemu Windows Assessment and Deployment Kit (ADK) dla systemu Windows 10** Windows 10 ADK powinna być w wersji 1607 lub nowszej. Jeśli musisz zaktualizować ADK, to zrobić przed rozpoczęciem aktualizacji programu Configuration Manager. Dzięki temu domyślne obrazy rozruchowe są automatycznie aktualizowane do najnowszej wersji systemu Windows PE. (Niestandardowe obrazy rozruchowe należy zaktualizować ręcznie.)
+**Przejrzyj wersje systemu Windows Assessment and Deployment Kit (ADK) dla systemu Windows 10** Windows 10 ADK powinna być wersji 1703 lub nowszej. (Aby uzyskać więcej informacji o obsługiwanych wersjach zestawu Windows ADK, zobacz [zestawu Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk).) Jeśli musisz zaktualizować zestawu Windows ADK, to zrobić przed rozpoczęciem aktualizacji programu Configuration Manager. Dzięki temu domyślne obrazy rozruchowe są automatycznie aktualizowane do najnowszej wersji systemu Windows PE. (Niestandardowe obrazy rozruchowe należy zaktualizować ręcznie.)
 
-Przed zaktualizowaniem ADK aktualizacji witryny, znajduje się we wpisie [programu Configuration Manager i Windows ADK dla systemu Windows 10, wersji 1607](https://blogs.technet.microsoft.com/enterprisemobility/2016/09/09/configuration-manager-and-the-windows-adk-for-windows-10-version-1607/) skryptu, który można ponownie wygenerować obrazów rozruchowych.
+Po zaktualizowaniu lokacji przed zaktualizowaniem zestawu Windows ADK, zobacz [Aktualizuj punkty dystrybucji o obraz rozruchowy](/sccm/osd/get-started/manage-boot-images#update-distribution-points-with-the-boot-image) ulepszeń do tego procesu w 1706 wersji programu Configuration Manager.
 
 **Sprawdź stan lokacji i hierarchii, a następnie sprawdź, czy nie występują żadne nierozwiązane problemy:** Przed uaktualnieniem lokacji należy rozwiązać wszystkie problemy z działaniem serwera lokacji, serwera bazy danych lokacji i ról systemu lokacji, które są zainstalowane na komputerach zdalnych. Problemy z działaniem mogą spowodować niepowodzenie aktualizacji lokacji.
 

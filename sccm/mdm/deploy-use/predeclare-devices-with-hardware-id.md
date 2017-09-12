@@ -2,7 +2,7 @@
 title: "Wstępna deklaracja urządzeń z numery IMEI lub iOS za | Dokumentacja firmy Microsoft"
 description: "Wstępna deklaracja urządzeń firmowych z ich numerami IMEI lub iOS za."
 ms.custom: na
-ms.date: 08/15/2017
+ms.date: 09/01/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -14,11 +14,11 @@ caps.latest.revision: "3"
 author: nathbarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: 7d139a2c74c0f29604f2f3d9b8e2739364633f17
-ms.sourcegitcommit: db7b7ec347638efd05cdba474e8a8f8535516116
+ms.openlocfilehash: 424f04b2b3ad4c7ef91f884bbf5bae3580ea6b85
+ms.sourcegitcommit: cd1f9c58e55f1c9a19acd743ec6a8824c39fd3a1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/16/2017
+ms.lasthandoff: 09/05/2017
 ---
 # <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Wstępna deklaracja urządzeń z numery IMEI lub iOS za
 
@@ -29,7 +29,7 @@ Można zidentyfikować urządzenia należące do firmy przez zaimportowanie ich 
 Podczas przekazywania numerów seryjnych urządzeń z systemem iOS należące do firmy, muszą być skojarzone z profilem rejestracji w firmie. Następnie można zarejestrować urządzeń, przy użyciu programu device enrollment program (DEP) albo firmy Apple lub narzędziu Apple Configurator, aby wyświetlać je jako należące do firmy.
 
 >[!NOTE]
->Urządzenia z systemem android, z wyjątkiem urządzeń Samsung Knox Standard, musi mieć kartę SIM predeclare i zarejestrować jako urządzenia należące do firmy z numerem IMEI.
+>Urządzenia z systemem android, z wyjątkiem urządzeń Samsung Knox Standard, musi mieć przypisany numer telefonu do nich predeclare i zarejestrować jako urządzenia należące do firmy z numerem IMEI.
 
 ## <a name="how-to-predeclare-corporate-owned-devices"></a>Jak wstępna deklaracja urządzeń należących do firmy za
 

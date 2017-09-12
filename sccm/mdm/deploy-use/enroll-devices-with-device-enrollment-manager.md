@@ -2,7 +2,7 @@
 title: "Rejestrować urządzenia za pomocą Menedżera rejestracji urządzeń — programu Configuration Manager | Dokumentacja firmy Microsoft"
 description: "Rejestrowanie firmowych urządzeń przy użyciu konta Menedżera rejestracji urządzeń z System Center Configuration Manager."
 ms.custom: na
-ms.date: 08/15/2017
+ms.date: 09/08/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "8"
 author: nathbarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: c90ecca1ee46523d16fc1cf11495e40707631e03
-ms.sourcegitcommit: db7b7ec347638efd05cdba474e8a8f8535516116
+ms.openlocfilehash: dcc35fb6ebe385d07a3b60e8968e06dec8ad60af
+ms.sourcegitcommit: 40f2a4e3cc546e6bfd10f195a8e87af2b0780928
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/16/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="enroll-devices-with-device-enrollment-manager-with-configuration-manager"></a>Rejestrować urządzenia za pomocą Menedżera rejestracji urządzeń z programem Configuration Manager
 
@@ -40,7 +40,7 @@ Na urządzeniach zarządzanych za pomocą konta Menedżera rejestracji urządze�
 -  Aby wdrożyć aplikacje firmowe do urządzeń zarządzanych za pomocą Menedżera rejestracji urządzeń, Wdróż aplikację Portal firmy jako **wymagana instalacja** do konta użytkownika Menedżera rejestracji urządzeń. Menedżer rejestracji urządzeń można następnie uruchom aplikację Portal firmy, aby zainstalować dodatkowe aplikacje.
 - Aby zwiększyć wydajność, aplikacja Portal firmy wyświetlane są tylko urządzenie lokalne. Zdalne zarządzanie innymi urządzeniami Menedżera rejestracji urządzeń jest możliwe tylko z konsoli programu Configuration Manager i administratora
 - Witryny sieci Web Portal firmy nie jest dostępny dla konta Menedżera rejestracji urządzeń. Użyj aplikacji Portal firmy.
-- (tylko iOS) Jeśli używasz Menedżera rejestracji urządzeń do zarejestrowania urządzenia z systemem iOS do rejestracji urządzeń nie można użyć narzędzia Apple Configurator lub Apple Device Enrollment Program (DEP).
+- Jeśli używasz Menedżera rejestracji urządzeń do zarejestrowania urządzenia z systemem iOS do rejestracji urządzeń nie można użyć narzędzia Apple Configurator lub Apple Device Enrollment Program (DEP). (dotyczy tylko urządzeń z systemem iOS) 
 
  **Przykłady scenariusza Menedżera rejestracji urządzeń:**   
 Restauracja potrzebuje tabletów do punktów sprzedaży dla swoich kelnerów oraz monitorów zamówień dla personelu w kuchni. Pracownicy nigdy nie potrzebują dostępu do danych firmowych lub zaloguj się jako użytkownik. Administrator usługi Intune tworzy konto menedżera rejestracji urządzeń i rejestruje urządzenia należące do firmy za pomocą tego konta. Alternatywnie administrator może zapewnić rejestracji urządzeń poświadczenia Menedżera do Menedżera restauracji, zbliża się do zarejestrowania i zarządzania urządzeniami.  

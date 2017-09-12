@@ -2,7 +2,7 @@
 title: "Narzędzie połączenia usługi | Dokumentacja firmy Microsoft"
 description: "Dowiedz się więcej o tym narzędziu, dzięki którym będzie się połączyć z usługą chmury programu Configuration Manager w celu ręcznego przekazania informacji o użyciu."
 ms.custom: na
-ms.date: 4/7/2017
+ms.date: 09/06/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "11"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 0da80521bf223a765c3731f8ad59623d85a4c9fa
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 8039ee0c704bbe570ec3e45ba648f779923087c6
+ms.sourcegitcommit: 2a1328da3facb20b0c78f3b12adbb5fdbe0dcc11
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="use-the-service-connection-tool-for-system-center-configuration-manager"></a>Używanie narzędzia połączenia z usługą w programie System Center Configuration Manager
 
@@ -81,7 +81,7 @@ Po uruchomieniu poniższego polecenia narzędzie przygotowuje plik cab, który z
 Musisz także skopiować folder ServiceConnectionTool wraz z całą zawartością na dysk USB lub w inny sposób udostępnić go na komputerze, na którym zostaną wykonane kroki 3 i 4.  
 
 ### <a name="overview"></a>Omówienie
-**Aby użyć narzędzia połączenia z usługą, należy wykonać trzy podstawowe kroki:**  
+#### <a name="there-are-three-primary-steps-to-using-the-service-connection-tool"></a>Istnieją trzy podstawowe kroki, aby przy użyciu narzędzia połączenia usługi  
 
 1.  **Przygotowanie**:  Ten krok działa na komputerze, który hostuje punkt połączenia usługi. Po uruchomieniu narzędzia umieszcza dane użycia pliku cab i zapisze go na dysku USB (lub określ innej wybranej lokalizacji transferowej).  
 
@@ -91,15 +91,28 @@ Musisz także skopiować folder ServiceConnectionTool wraz z całą zawartości�
 
 Począwszy od wersji 1606, podczas nawiązywania połączenia z firmą Microsoft można przekazać wiele plików cab jednocześnie (każdy z innej hierarchii), a także określić serwer proxy i użytkownika serwera proxy.   
 
-**Aby przekazać wiele plików cab:**
+#### <a name="to-upload-multiple-cab-files"></a>Przekazywania wielu plików cab
  -  Umieść każdy plik cab wyeksportowany z oddzielnych hierarchii w tym samym folderze. Nazwa każdego pliku musi być unikatowa i można ją zmienić ręcznie, jeśli to konieczne.
  -  Następnie po uruchomieniu polecenia przekazywania danych do firmy Microsoft określ folder, w którym znajdują się pliki cab. Przed aktualizacją 1606 dane można było przekazywać tylko z jednej hierarchii jednocześnie, a narzędzie wymagało, aby określić nazwę pliku cab w folderze.
  -  Następnie podczas uruchamiania zadania importu w punkcie połączenia usługi hierarchii narzędzie automatycznie importuje tylko dane dla tej hierarchii.  
 
-**Aby określić serwer proxy:**  
+#### <a name="to-specify-a-proxy-server"></a>Aby określić serwer proxy
 Aby określić serwer proxy, można użyć następujących parametrów opcjonalnych (więcej informacji dotyczących używania tych parametrów jest dostępnych w sekcji Parametry wiersza polecenia w tym temacie):
   - **-proxyserveruri [nazwa_FQDN_serwera_proxy]**  Użyj tego parametru, aby określić serwer proxy, który zostanie użyty na potrzeby tego połączenia.
   -  **-proxyusername [nazwa_użytkownika]**  Użyj tego parametru w przypadku konieczności określenia użytkownika serwera proxy.
+
+#### <a name="specify-the-type-of-updates-to-download"></a>Określ typ aktualizacje do pobrania
+Począwszy od wersji 1706, zmieniono domyślne zachowanie pobierania narzędzia i narzędzie obsługuje opcje kontroli, które możesz pobrać pliki.
+-   Domyślnie narzędzie pobierze tylko najnowszych dostępnych aktualizacji, do której ma zastosowanie do wersji witryny. Nie pobiera poprawki.
+
+Aby zmienić to zachowanie, użyj jednej z następujących parametrów do zmiany, które pliki są pobierane. Wersji lokacji jest określana na podstawie danych w pliku cab, który jest przekazywany po uruchomieniu narzędzia.
+-   **-downloadall** tej opcji pliki do pobrania wszystkim łącznie aktualizacje i poprawki, niezależnie od wersji lokacji.
+-   **-downloadhotfix** ta opcja pobiera wszystkie poprawki niezależnie od wersji lokacji.
+-   **-downloadsiteversion** tej opcji pliki do pobrania, aktualizacje i poprawki, które mają wersję, która jest wyższa niż wersja lokacji.
+
+Przykład wiersz polecenia, który używa *- downloadsiteversion*:
+- **serviceconnectiontool.exe — Połącz *- downloadsiteversion* - usagedatasrc D:\USB - updatepackdest D:\USB\UpdatePacks**
+
 
 
 

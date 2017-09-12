@@ -2,7 +2,7 @@
 title: "Wprowadzenie do profilów certyfikatów | Dokumentacja firmy Microsoft"
 description: "Dowiedz się, jak profile certyfikatów w programie System Center Configuration Manager działają z usługami certyfikatów w usłudze Active Directory."
 ms.custom: na
-ms.date: 07/25/2017
+ms.date: 09/11/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,18 +14,18 @@ caps.latest.revision: "7"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: 7b1c0e449f3d1ef42e279e8707df6bf1df163b3f
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: e269b5836648d0d227e91a017512c16217e42646
+ms.sourcegitcommit: 13599667ea77c16db1aebe64f8a6748c268f0b45
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/11/2017
 ---
 # <a name="introduction-to-certificate-profiles-in-system-center-configuration-manager"></a>Wprowadzenie do profilów certyfikatów w programie System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
-Profile certyfikatów współpracować z usługi certyfikatów Active Directory i rolą usługi rejestracji urządzeń sieciowych, aby udostępnić certyfikaty uwierzytelniania dla zarządzanych urządzeń, dzięki czemu użytkownicy mogą bezproblemowo dostęp do zasobów firmy. Można na przykład utworzyć i wdrożyć profile certyfikatów, aby udostępnić użytkownikom certyfikaty potrzebne do inicjowania połączeń VPN i bezprzewodowych. 
+Profile certyfikatów współpracować z usługi certyfikatów Active Directory i rolą usługi rejestracji urządzeń sieciowych, aby udostępnić certyfikaty uwierzytelniania dla zarządzanych urządzeń, dzięki czemu użytkownicy mogą bezproblemowo dostęp do zasobów firmy. Można na przykład utworzyć i wdrożyć profile certyfikatów, aby udostępnić użytkownikom certyfikaty potrzebne do inicjowania połączeń VPN i bezprzewodowych.
 
 Profile certyfikatów umożliwiają automatyczne konfigurowanie urządzeń użytkowników w taki sposób, aby zasoby firmowe, na przykład sieci Wi-Fi i serwery sieci VPN, były dostępne bez konieczności ręcznego instalowania certyfikatów ani używania procesu obsługi poza pasmem. Profile certyfikatów ułatwiają także ochronę zasobów firmowych, ponieważ umożliwiają korzystanie z bardziej bezpiecznych ustawień, które są obsługiwane przez infrastrukturę kluczy publicznych (PKI) przedsiębiorstwa. Można na przykład wymagać uwierzytelniania serwera w przypadku wszystkich połączeń Wi-Fi i VPN po uprzednim udostępnieniu wymaganych certyfikatów zarządzanym urządzeniom.   
 
@@ -52,7 +52,7 @@ Profile certyfikatów zapewniają następujące możliwości zarządzania:
 
 -   **Wymiana informacji osobistych (pfx)** — umożliwia zażądanie certyfikatu pfx (znanej także jako PKCS #12) dla określonego urządzenia lub użytkownika.
 
-    Może tworzyć profile certyfikatów PFX przez ether [importowanie poświadczenia](/sccm/mdm/deploy-use/import-pfx-certificate-profiles.md) z istniejących certyfikatów lub przez [Definiowanie certyfikatu](/sccm/mdm/deploy-use/create-pfx-certificate-profiles.md) uprawnienia do przetwarzania żądań.
+    Może tworzyć profile certyfikatów PFX przez [importowanie poświadczenia](/sccm/mdm/deploy-use/import-pfx-certificate-profiles) z istniejących certyfikatów lub przez [Definiowanie certyfikatu](/sccm/mdm/deploy-use/create-pfx-certificate-profiles) uprawnienia do przetwarzania żądań.
 
     Począwszy od wersji 1706, możesz użyć programu Microsoft lub Entrust jako urzędów certyfikacji dla **wymiana informacji osobistych (pfx)** certyfikatów.
 

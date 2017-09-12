@@ -14,11 +14,11 @@ caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 22203b358830903cf2e531c0532ae3111b8265fc
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 3046003f000c8abde28a5b6e3bcb88b159be5357
+ms.sourcegitcommit: 2a1328da3facb20b0c78f3b12adbb5fdbe0dcc11
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="configure-azure-services-for-use-with-configuration-manager"></a>Konfigurowanie usług platformy Azure do użytku z programem Configuration Manager
 
@@ -30,7 +30,7 @@ Ten kreator zapewnia typowych konfiguracji za pomocą **aplikacji sieci web Azur
 
 Następujących usług platformy Azure są konfigurowane za pomocą Kreatora konfigurowania usług Azure:
 -   **Zarządzanie chmury**   
-    [Włącz klientów z uwierzytelniania za pomocą usługi Azure Active Directory]() (Azure AD). Możesz również [skonfigurować odnajdowanie użytkowników usługi AD Azure](/sccm/core/servers/deploy/configure/configure-discovery-methods#azureaadisc).
+    [Włącz klientów z uwierzytelniania za pomocą usługi Azure Active Directory](/sccm/core/clients/deploy/deploy-clients-cmg-azure) (Azure AD). Możesz również [skonfigurować odnajdowanie użytkowników usługi AD Azure](/sccm/core/servers/deploy/configure/configure-discovery-methods#azureaadisc).
 -   **Łącznik OMS**
     [Połącz z programu Operations Manager Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) (OMS) i synchronizowanie danych, takich jak kolekcje w celu analizy dzienników OMS.
 -   **Gotowość do uaktualnienia**
@@ -85,7 +85,7 @@ Aplikacja sieci web usług Azure łączy z tej lokacji programu Configuration Ma
 
 6.  Na **odnajdywania** strony kreatora, kliknij przycisk **włączyć Azure użytkownika odnajdywania usługi Active Directory**, a następnie kliknij przycisk **ustawienia**.
 W **ustawienia odnajdywania usługi Azure AD użytkownika** okna dialogowego Skonfiguruj harmonogram po wystąpieniu odnajdywania. Można również włączyć odnajdowania różnicowego, który sprawdza, czy tylko nowe lub zmienione kont w usłudze Azure AD. Dowiedz się więcej o [odnajdowanie użytkowników usługi AD Azure](/sccm/core/servers/deploy/configure/about-discovery-methods#azureaddisc).
- 
+
  7. Ukończ pracę kreatora.
 
 W tym momencie połączyły tej lokacji programu Configuration Manager z usługą Azure AD.

@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: e54c2cd1c3e83609bff6a8cb64fb3c23b26a4eaa
-ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
+ms.openlocfilehash: 4e818ffd943208eab323b1558f825bd87f3ddc4c
+ms.sourcegitcommit: 13599667ea77c16db1aebe64f8a6748c268f0b45
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 09/11/2017
 ---
 # <a name="release-notes-for-system-center-configuration-manager"></a>Informacje o wersji dla programu System Center Configuration Manager
 
@@ -148,17 +148,6 @@ W wersjach wszystkie aktywne podczas wdrażania klienta na komputerach z systeme
 **Obejście** przyczyną jest uszkodzony, wcześniej zainstalowanej wersji programu Silverlight. Można spróbować uruchomić następujące narzędzia na danym komputerze, aby rozwiązać ten problem: [https://support.microsoft.com/help/17588/fix-problems-that-block-programs-from-being-installed-or-removed](https://support.microsoft.com/help/17588/fix-problems-that-block-programs-from-being-installed-or-removed)
 
 ## <a name="operating-system-deployment"></a>Wdrożenie systemu operacyjnego  
-
-### <a name="if-the-boot-image-contains-drivers-the-image-fails-to-reload-the-current-windows-pe-version-from-the-windows-assessment-and-deployment-kit-adk"></a>Jeśli obraz rozruchowy zawiera sterowniki, obrazu nie powiodło się ponowne załadowanie bieżącą wersję środowiska Windows PE z systemu Windows Assessment and Deployment Kit (ADK)
-<!-- 495087 -->
-Kreator aktualizacji punktu dystrybucji służy do zaktualizowania punktów dystrybucji o obraz rozruchowy przechowywany za pomocą najnowszej wersji systemu Windows PE z katalogu instalacyjnego systemu Windows Assessment and Deployment Kit (ADK). Aby zaktualizować, otwórz Kreatora aktualizacji punktów dystrybucji i wybierz **ponownie załadować ten obraz rozruchowy z bieżącą wersją PE z zestawu Windows ADK**.
-
-Jednak jeśli obraz rozruchowy zawiera sterowniki, aktualizacja nie powiedzie się. Zamiast tego kreatora ładuje obraz z zestawu ADK, wyświetla okno dialogowe wyjątek użytkownika można odrzucić, a następnie wyświetla ekran Powodzenie. Jednak najnowsze składniki klienta programu Configuration Manager nie można dodać do obrazu rozruchowego. Obraz rozruchowy nie będzie aktualizowana w punkcie dystrybucji
-
-**Obejście**: Uruchom Kreatora aktualizacji punktów dystrybucji dwa razy.
-
-1. Uruchom kreatora **ponownie załadować ten obraz rozruchowy z bieżącą wersją środowiska Preinstalacyjnego systemu Windows z zestawu Windows ADK** wybrane. Spowoduje to pobrać najnowszą wersję środowiska Windows PE.
-2. Uruchom kreatora ponownie, podając **ponownie załadować ten obraz rozruchowy z bieżącą wersją środowiska Preinstalacyjnego systemu Windows z zestawu Windows ADK** niezaznaczone. Ten znacząco Pobierz najnowszego klienta pliki binarne i zaktualizować obraz wysięgnik w punkcie dystrybucji.
 
 ### <a name="servicing-plans-create-a-lot-of-duplicate-software-update-groups-and-deployments-by-default"></a>Plany obsługi tworzą domyślnie wiele powielonych grup aktualizacji oprogramowania i wdrożeń  
 Domyślnie kreator tworzenia planów obsługi jest uruchamiany obecnie po każdej synchronizacji aktualizacji oprogramowania. Przy każdym uruchomieniu tworzy on nową grupę aktualizacji oprogramowania i wdrożenia. W przypadku harmonogramu synchronizacji aktualizacji oprogramowania uruchamianego kilka razy dzienne kreator tworzenia planów obsługi każdego dnia będzie tworzył wiele prawdopodobnie identycznych grup aktualizacji oprogramowania i wdrożeń.  
