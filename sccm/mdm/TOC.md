@@ -49,6 +49,7 @@
 ### [Aplikacje systemu iOS nabyte w ramach zakupów zbiorczych](deploy-use/manage-volume-purchased-ios-apps.md)
 ### [Tworzenie aplikacji systemu Windows Phone](deploy-use/creating-windows-phone-applications.md)
 ### [Tworzenie aplikacji systemu Android](deploy-use/creating-android-applications.md)
+### [Zasady konfiguracji aplikacji systemu Android](deploy-use/configure-android-apps-with-app-configuration-policies.md)
 ### [Zasady zarządzania aplikacjami mobilnymi](deploy-use/protect-apps-using-mam-policies.md)
 ### [Zasady programu Managed Browser](deploy-use/manage-internet-access-using-managed-browser-policies.md)
 ### [Aplikacje ze Sklepu Windows dla firm](deploy-use/windows-store-for-business.md)
