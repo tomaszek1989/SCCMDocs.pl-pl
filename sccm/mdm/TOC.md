@@ -55,8 +55,12 @@
 ### [Aplikacje ze Sklepu Windows dla firm](deploy-use/windows-store-for-business.md)
 
 ## [Zarządzanie subskrypcją usługi Intune](deploy-use/manage-intune-subscriptions.md)
-
 ## [Change your MDM authority (Zmiana urzędu MDM)](deploy-use/change-mdm-authority.md)
+## [Rozpoczynanie migracji z hybrydowego zarządzania urządzeniami przenośnymi do autonomicznej usługi Intune](deploy-use/migrate-hybridmdm-to-intunesa.md) 
+### [Importowanie danych programu Configuration Manager do usługi Microsoft Intune](deploy-use/migrate-import-data.md)
+### [Przygotowywanie usługi Intune do migracji użytkowników](deploy-use/migrate-prepare-intune.md)
+### [Zmienianie urzędu zarządzania urządzeniami przenośnymi dla określonych użytkowników (urząd mieszany zarządzania urządzeniami przenośnymi)](deploy-use/migrate-mixed-authority.md)
+### [Change your MDM authority (Zmiana urzędu MDM)](deploy-use/migrate-change-mdm-authority.md)
 
 ## Zarządzenie dostępem do zasobów
 ### [Tworzenie profilów sieci Wi-Fi](deploy-use/create-wifi-profiles.md)
