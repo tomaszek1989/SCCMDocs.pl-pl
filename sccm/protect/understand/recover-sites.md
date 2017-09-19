@@ -14,11 +14,11 @@ caps.latest.revision:
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 49eea15ea2888f8f93c33eb771c09147ba21529e
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: f5aff56e9948536944140fbadb0539c7a4e20f26
+ms.sourcegitcommit: 5ca89204716750eaaceb01bba40b35b85c7122ba
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/18/2017
 ---
 #  <a name="recover-a-configuration-manager-site"></a>Odzyskiwanie lokacji programu Configuration Manager
 
@@ -29,7 +29,7 @@ Uruchom odzyskiwanie lokacji programu Configuration Manager po awarii lokacji pr
 Sekcje w tym temacie ułatwiają odzyskiwanie lokacji programu Configuration Manager. Aby utworzyć kopię zapasową, zobacz [kopii zapasowej programu Configuration Manager](/sccm/protect/understand/backup-and-recovery).
 
 ## <a name="considerations-before-recovering-a-site"></a>Zagadnienia dotyczące przed odzyskaniem lokacji
-**Należy użyć tej samej wersji i wydania programu SQL Server:** Na przykład przywracanie bazy danych uruchamianej w programie SQL Server 2014 do 2016is programu SQL Server nie jest obsługiwane. Podobnie Przywracanie bazy danych lokacji uruchamianej w wersji Standard programu SQL Server 2016 do wersji Enterprise programu SQL Server 2016 nie jest obsługiwane.
+**Należy użyć tej samej wersji i wydania programu SQL Server:** Na przykład przywracanie bazy danych uruchamianej w programie SQL Server 2014 do programu SQL Server 2016 nie jest obsługiwane. Podobnie Przywracanie bazy danych lokacji uruchamianej w wersji Standard programu SQL Server 2016 do wersji Enterprise programu SQL Server 2016 nie jest obsługiwane.
 -   Program SQL Server nie może działać w **trybie jednego użytkownika**.
 -   Upewnij się, że pliki MDF i LDF są prawidłowe. W przypadku odzyskiwania lokacji nie ma żadnych sprawdzenia stanu przywracanych plików.
 

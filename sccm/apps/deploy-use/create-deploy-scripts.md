@@ -2,7 +2,7 @@
 title: "Tworzenie i uruchamianie skryptów w programie Configuration Manager | Dokumentacja firmy Microsoft"
 description: "Tworzenie i uruchamianie skryptów na urządzeniach klienckich w programie Configuration Manager."
 ms.custom: na
-ms.date: 08/09/2017
+ms.date: 09/15/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,14 +12,14 @@ ms.topic: article
 ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
 caps.latest.revision: "14"
 caps.handback.revision: "0"
-author: robstackmsft
-ms.author: robstack
+author: lleonard-msft
+ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: ed84f7900eee5c04728d0e4d1b46027c36327bec
-ms.sourcegitcommit: b41d3e5c7f0c87f9af29e02de3e6cc9301eeafc4
+ms.openlocfilehash: e6b29cd85504742e8638a55db2f6c4ecc8ab3e55
+ms.sourcegitcommit: 5ca89204716750eaaceb01bba40b35b85c7122ba
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/18/2017
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Tworzenie i uruchamianie skryptów programu PowerShell z poziomu konsoli programu Configuration Manager
 
@@ -44,8 +44,8 @@ Klienci programu Configuration Manager musi być uruchomiona klienta z wersji 17
 
 Używać skryptów, użytkownik musi należeć do odpowiedniej roli zabezpieczeń programu Configuration Manager.
 
-- Do zaimportowania, a także tworzenie skryptów — Twoje konto musi mieć **Utwórz** uprawnienia dla **skryptów programu SMS** w **Menedżer ustawień zgodności** roli zabezpieczeń.
-- Aby zaakceptować lub odrzucić skryptów — Twoje konto musi mieć **Zatwierdź** uprawnienia dla **skryptów programu SMS** w **Menedżer ustawień zgodności** roli zabezpieczeń.
+- Do zaimportowania, a także tworzenie skryptów — Twoje konto musi mieć **Utwórz** uprawnienia dla **skryptów programu SMS** w **administrator o pełnych uprawnieniach** roli zabezpieczeń.
+- Aby zaakceptować lub odrzucić skryptów — Twoje konto musi mieć **Zatwierdź** uprawnienia dla **skryptów programu SMS** w **administrator o pełnych uprawnieniach** roli zabezpieczeń.
 - Aby uruchamiać skrypty - Twoje konto musi mieć **Uruchom skrypt** uprawnienia dla **kolekcje** w **Menedżer ustawień zgodności** roli zabezpieczeń.
 
 Aby uzyskać więcej informacji na temat ról zabezpieczeń programu Configuration Manager, zobacz [podstawowe informacje dotyczące administrowania opartego na rolach](/sccm/core/understand/fundamentals-of-role-based-administration).
@@ -78,9 +78,9 @@ Oto przykłady ilustrujące skrypty, które można korzystać z tej funkcji.
 
 #### <a name="create-a-folder"></a>Utwórz folder
 
-*Nowy element "c:\scripts"-Nazwa folderu typu* 
- 
- 
+*Nowy element "c:\scripts"-Nazwa folderu typu*
+
+
 #### <a name="create-a-file"></a>Utwórz plik
 
 *Nowy element c:\scripts\new_file.txt — Nazwa typu pliku*

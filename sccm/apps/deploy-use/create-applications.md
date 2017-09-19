@@ -12,14 +12,14 @@ ms.topic: article
 ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
 caps.latest.revision: "14"
 caps.handback.revision: "0"
-author: robstackmsft
-ms.author: robstack
+author: mattbriggs
+ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 4d048d4f9ab01b28e6c21a38cca4d82c85030618
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 41563624700510e92332b6939d38d902e7dffb94
+ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="create-applications-with-system-center-configuration-manager"></a>Tworzenie aplikacji w programie System Center Configuration Manager
 
@@ -58,7 +58,7 @@ Poniższe kroki umożliwiają utworzenie aplikacji programu Configuration Manage
 
 2.  W **typu** listy rozwijanej, wybierz typ pliku instalacyjnego aplikacji którego chcesz użyć do wykrywania informacji o aplikacji. Informacje o dostępnych typach instalacji znajdują się w sekcji [Typy wdrożeń obsługiwane przez program Configuration Manager](/sccm/apps/deploy-use/create-applications#deployment-types-supported-by-configuration-manager) w tym temacie.  
 
-3.  W **lokalizacji** Określ ścieżkę UNC (w postaci  *\\ \\serwera\\udostępnianie\\\filename*) lub łącze do pliku instalacyjnego aplikacji, które chcesz użyć do wykrywania informacji o aplikacji magazynu. Można też kliknąć przycisk **Przeglądaj**, aby przejść do lokalizacji pliku instalacyjnego.  
+3.  W **lokalizacji** Określ ścieżkę UNC (w postaci * \\ \\serwera\\udostępnianie\\\filename*) lub łącze do pliku instalacyjnego aplikacji, które chcesz użyć do wykrywania informacji o aplikacji magazynu. Można też kliknąć przycisk **Przeglądaj**, aby przejść do lokalizacji pliku instalacyjnego.  
 
     > [!IMPORTANT]  
     >  Po wybraniu **Instalatora Windows (\*pliku .msi)** w ustawieniu typu aplikacji wszystkie pliki w folderze określonym przez użytkownika zostaną zaimportowane z aplikacją i będą wysyłane do punktów dystrybucji. Upewnij się, że folder zostanie zawiera tylko pliki, które są niezbędne do zainstalowania aplikacji. Menedżer konfiguracji został sprawdzony pod kątem obsługi maksymalnie 20 000 plików aplikacji w pakiecie aplikacji. Jeśli aplikacja ma więcej plików, należy rozważyć utworzenie wielu aplikacji zawierających mniejszą liczbę plików.  
@@ -140,7 +140,7 @@ Nowa aplikacja pojawi się w **aplikacji** węzła konsoli programu Configuratio
 3.  Wybierz aplikację, a następnie na **Home** karcie **aplikacji** grupy, wybierz **Utwórz typ wdrożenia**.  
 
 > [!TIP]  
->  Można również uruchomić Kreatora tworzenia typu wdrożenia z Kreatora tworzenia aplikacji i **typy wdrożeń** karcie *< nazwa aplikacji\>*  **właściwości** okno dialogowe.  
+>  Można również uruchomić Kreatora tworzenia typu wdrożenia z Kreatora tworzenia aplikacji i **typy wdrożeń** karcie *< nazwa aplikacji\> * **właściwości** okno dialogowe.  
 
 ## <a name="specify-whether-you-want-to-automatically-detect-deployment-type-information-or-manually-set-up-the-information"></a>Określ, czy mają być automatycznie Wykryj informacje o typie wdrożenia, lub ręcznie skonfigurować informacje  
  Użyj jednej z następujących procedur, aby wykrywać automatycznie lub ręcznie skonfigurować informacje o typie wdrożenia.  
@@ -151,7 +151,7 @@ Nowa aplikacja pojawi się w **aplikacji** węzła konsoli programu Configuratio
 
 2.  W **typu** wybierz typ pliku instalacyjnego aplikacji, którego chcesz użyć do wykrywania informacji o typie wdrożenia.  
 
-3.  W **lokalizacji** Określ ścieżkę UNC (w postaci  *\\ \\serwera\\udostępnianie\\filename*) lub określić linku do plików instalacyjnych aplikacji oraz zawartość, której chcesz użyć do wykrywania informacji o typie wdrożenia w sklepie. Można również wybrać **Przeglądaj** aby wskazać plik instalacyjny.  
+3.  W **lokalizacji** Określ ścieżkę UNC (w postaci * \\ \\serwera\\udostępnianie\\filename*) lub określić linku do plików instalacyjnych aplikacji oraz zawartość, której chcesz użyć do wykrywania informacji o typie wdrożenia w sklepie. Można również wybrać **Przeglądaj** aby wskazać plik instalacyjny.  
 
     > [!NOTE]  
     >  Musi mieć dostęp do ścieżki UNC, do której ma aplikacji i wszelkich podfolderów z zawartością aplikacji.  
@@ -343,7 +343,7 @@ Poniższa tabela zawiera Microsoft Visual Basic (VB) przykładowe skrypty, któr
 1.  Na **wymagania** strony kreatora tworzenia typu wdrożenia wybierz **Dodaj** otworzyć **tworzenie wymagania** okna dialogowego i Dodaj nowe wymaganie.  
 
     > [!NOTE]  
-    >  Możesz także dodać nowe wymagania na **wymagania** karcie *< Nazwa typu wdrożenia\>*  **właściwości** okno dialogowe.  
+    >  Możesz także dodać nowe wymagania na **wymagania** karcie *< Nazwa typu wdrożenia\> * **właściwości** okno dialogowe.  
 
 2.  Z listy rozwijanej **Kategoria** wybierz, czy wymaganie dotyczy urządzenia, czy użytkownika, lub wybierz opcję **Niestandardowe**, aby użyć poprzednio utworzonego warunku globalnego. Po wybraniu **niestandardowy**, można także **Utwórz** Aby utworzyć nowy warunek globalny. Aby uzyskać więcej informacji o warunkach globalnych, zobacz [tworzenie warunków globalnych](../../apps/deploy-use/create-global-conditions.md).  
 
@@ -372,7 +372,7 @@ Poniższa tabela zawiera Microsoft Visual Basic (VB) przykładowe skrypty, któr
 1.  Na **zależności** strony kreatora tworzenia typu wdrożenia wybierz **Dodaj** Jeśli chcesz określić typy wdrożeń, które należy zainstalować przed zainstalowaniem tego typu wdrożenia.  
 
     > [!IMPORTANT]  
-    >  Można także dodać nowe zależności na **zależności** karcie *< Nazwa typu wdrożenia\>*  **właściwości** okno dialogowe.  
+    >  Można także dodać nowe zależności na **zależności** karcie *< Nazwa typu wdrożenia\> * **właściwości** okno dialogowe.  
 
 2.  W **Dodawanie zależności** oknie dialogowym wybierz **Dodaj**.  
 
@@ -411,17 +411,17 @@ Poniższa tabela zawiera Microsoft Visual Basic (VB) przykładowe skrypty, któr
 
 2.  W **aplikacji** listy, wybierz aplikację, która ma typ wdrożenia programu App-V. Następnie na **Home** karcie **właściwości** grupy, wybierz **właściwości**.  
 
-3.  W *< nazwa aplikacji\>*  **właściwości** na okna dialogowego **typy wdrożeń** karcie, wybierz typ wdrożenia programu App-V, a następnie wybierz **Edytuj**.  
+3.  W *< nazwa aplikacji\> * **właściwości** na okna dialogowego **typy wdrożeń** karcie, wybierz typ wdrożenia programu App-V, a następnie wybierz **Edytuj**.  
 
-4.  W *< Nazwa typu wdrożenia\>*  **właściwości** na okna dialogowego **zawartości** kartę, skonfiguruj następujące opcje, jeśli jest to wymagane:  
+4.  W *< Nazwa typu wdrożenia\> * **właściwości** na okna dialogowego **zawartości** kartę, skonfiguruj następujące opcje, jeśli jest to wymagane:  
 
     -   **Utrwal zawartość w pamięci podręcznej klienta**— wybierz tę opcję, aby upewnić się, że zawartość dla tego typu wdrożenia nie zostanie usunięta z pamięci podręcznej klienta programu Configuration Manager.  
 
     -   **Załaduj zawartość do pamięci podręcznej programu App-V przed uruchomieniem**— wybierz tę opcję, aby upewnić się, że cała zawartość dla aplikacji wirtualnej zostanie załadowana do pamięci podręcznej programu App-V przed uruchomieniem aplikacji. Zaznaczenie tej opcji gwarantuje również, że zawartość aplikacji nie jest przypięty w pamięci podręcznej i można je usunąć zgodnie z wymaganiami.  
 
-5.  Wybierz **OK** zamknąć *< Nazwa typu wdrożenia\>*  **właściwości** okno dialogowe.  
+5.  Wybierz **OK** zamknąć *< Nazwa typu wdrożenia\> * **właściwości** okno dialogowe.  
 
-6.  Wybierz **OK** zamknąć *< nazwa aplikacji\>*  **właściwości** okno dialogowe.  
+6.  Wybierz **OK** zamknąć *< nazwa aplikacji\> * **właściwości** okno dialogowe.  
 
 ### <a name="set-up-publishing-options-for-app-v-deployment-types"></a>Ustawianie opcji typów wdrożeń App-V publikowania  
 
@@ -429,13 +429,13 @@ Poniższa tabela zawiera Microsoft Visual Basic (VB) przykładowe skrypty, któr
 
 3.  W **aplikacji** listy, wybierz aplikację, która ma typ wdrożenia programu App-V. Następnie na **Home** karcie **właściwości** grupy, wybierz **właściwości**.  
 
-4.  W *< nazwa aplikacji\>*  **właściwości** na okna dialogowego **typy wdrożeń** karcie, wybierz typ wdrożenia programu App-V, a następnie wybierz **Edytuj**.  
+4.  W *< nazwa aplikacji\> * **właściwości** na okna dialogowego **typy wdrożeń** karcie, wybierz typ wdrożenia programu App-V, a następnie wybierz **Edytuj**.  
 
-5.  W *< Nazwa typu wdrożenia\>*  **właściwości** na okna dialogowego **publikowania** , a następnie wybierz elementy aplikacji wirtualnej, który chcesz opublikować.  
+5.  W *< Nazwa typu wdrożenia\> * **właściwości** na okna dialogowego **publikowania** , a następnie wybierz elementy aplikacji wirtualnej, który chcesz opublikować.  
 
-6.  Wybierz **OK** zamknąć *< Nazwa typu wdrożenia\>*  **właściwości** okno dialogowe.  
+6.  Wybierz **OK** zamknąć *< Nazwa typu wdrożenia\> * **właściwości** okno dialogowe.  
 
-7.  Wybierz **OK** zamknąć *< nazwa aplikacji\>*  **właściwości** okno dialogowe.  
+7.  Wybierz **OK** zamknąć *< nazwa aplikacji\> * **właściwości** okno dialogowe.  
 
 ## <a name="import-an-application"></a>Importuj aplikację  
  Użyj poniższej procedury, aby zaimportować aplikację do programu Configuration Manager. Aby uzyskać informacje o sposobie eksportowania aplikacji, zobacz [zadania zarządzania dla aplikacji programu System Center Configuration Manager](../../apps/deploy-use/management-tasks-applications.md).  
