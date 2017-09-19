@@ -14,11 +14,11 @@ caps.latest.revision: "26"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 2c2c0f81736c1b00ea487ae1261803a8105bb5e4
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: fe02981433482ebf6880feec3e1822e6e8f4550f
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>Zarządzanie systemem Windows jako usługą za pomocą programu System Center Configuration Manager
 
@@ -40,7 +40,7 @@ ms.lasthandoff: 08/07/2017
 
 -   Program WSUS 4.0 z [poprawkę 3159706](https://support.microsoft.com/kb/3159706) musi być zainstalowany w punktach aktualizacji oprogramowania i serwery do uaktualnienia komputerów z systemem Windows 10 Anniversary aktualizacji, a także wersje podsekwencji lokacji. Są wymagane ręczne wykonanie czynności opisanych w artykule pomocy technicznej, że należy wykonać, aby zainstalować tę poprawkę. Aby uzyskać więcej informacji, zobacz [pakietu Enterprise Mobility and Security Blog](https://blogs.technet.microsoft.com/enterprisemobility/2016/08/05/update-your-configmgr-1606-sup-servers-to-deploy-the-windows-10-anniversary-update/).
 
--   Włącz odnajdywanie pulsu. Dane wyświetlane na pulpicie nawigacyjnym obsługi systemu Windows 10 są wyszukiwane przy użyciu odnajdywania. Aby uzyskać więcej informacji, zobacz [Konfigurowanie odnajdywania pulsu](../../core/servers/deploy/configure/configure-discovery-methods.md#a-namebkmkconfighbdisca-configure-heartbeat-discovery).  
+-   Włącz odnajdywanie pulsu. Dane wyświetlane na pulpicie nawigacyjnym obsługi systemu Windows 10 są wyszukiwane przy użyciu odnajdywania. Aby uzyskać więcej informacji, zobacz [Konfigurowanie odnajdywania pulsu](../../core/servers/deploy/configure/configure-discovery-methods.md#BKMK_ConfigHBDisc).  
 
      Następujące informacje dotyczące gałęzi i kompilacji systemu Windows 10 są odnajdywane i przechowywane w następujących atrybutach:  
 

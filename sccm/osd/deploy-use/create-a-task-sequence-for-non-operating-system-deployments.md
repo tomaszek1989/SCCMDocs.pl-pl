@@ -14,11 +14,11 @@ caps.latest.revision: "6"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: b4b04907f2cd48d81e864e46ca47c14a0b98a9f7
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: a50354070c03ad8acbd21432a192f949c0a196fa
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="create-a-task-sequence-for-non-operating-system-deployments-with-system-center-configuration-manager"></a>Tworzenie sekwencji zadań dla wdrożeń systemu operacyjnego z System Center Configuration Manager
 
@@ -42,7 +42,7 @@ Power sekwencji zadań znajduje się w ich elastyczność i jak ich używać do 
 
 -   [Instalacja aktualizacji oprogramowania](../understand/task-sequence-steps.md#BKMK_InstallSoftwareUpdates)  
 
--   [Uruchom ponownie komputer](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer)  
+-   [Uruchom ponownie komputer](../understand/task-sequence-steps.md#BKMK_RestartComputer)   
 
 -   [Uruchom wiersz polecenia](../understand/task-sequence-steps.md#BKMK_RunCommandLine)  
 
@@ -52,5 +52,5 @@ Power sekwencji zadań znajduje się w ich elastyczność i jak ich używać do 
 
 -   [Ustaw zmienną sekwencji zadań](../understand/task-sequence-steps.md#BKMK_SetTaskSequenceVariable)  
 
-## <a name="next-steps"></a>Następne kroki
-[Wdrożenie sekwencji zadań](manage-task-sequences-to-automate-tasks.md#a-namebkmkdeploytsa-deploy-a-task-sequence)
+## <a name="next-steps"></a>Następne kroki 
+[Wdrożenie sekwencji zadań](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS)

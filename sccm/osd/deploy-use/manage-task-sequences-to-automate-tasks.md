@@ -14,11 +14,11 @@ caps.latest.revision: "10"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 2f3d66362c49d28a52d7f9c535eb0b3b4cc4eaf7
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: c9d94ffb61ed7a7fa40a01eedc763a16a8df30cb
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="manage-task-sequences-to-automate-tasks-in-system-center-configuration-manager"></a>Zarządzanie sekwencjami zadań w celu zautomatyzowania zadań w programie System Center Configuration Manager
 
@@ -196,7 +196,7 @@ Pojawi się następujący komunikat powiadomienia, gdy użytkownik końcowy otwo
 
 8.  Ukończ pracę kreatora.  
 
- Można wstępnie przygotować zawartość, do której odwołuje się sekwencja zadań. Configuration Manager tworzy skompresowany, wstępnie przygotowany plik zawartości zawierający pliki, skojarzone zależności i skojarzone metadane wybranej zawartości. Następnie możesz ręcznie zaimportować zawartość na serwer lokacji, do lokacji dodatkowej albo punktu dystrybucji. Aby uzyskać więcej informacji na temat wstępnego przygotowania plików zawartości, zobacz [wstępnie przygotować zawartość](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkprestagea-use-prestaged-content).  
+ Można wstępnie przygotować zawartość, do której odwołuje się sekwencja zadań. Configuration Manager tworzy skompresowany, wstępnie przygotowany plik zawartości zawierający pliki, skojarzone zależności i skojarzone metadane wybranej zawartości. Następnie możesz ręcznie zaimportować zawartość na serwer lokacji, do lokacji dodatkowej albo punktu dystrybucji. Aby uzyskać więcej informacji na temat wstępnego przygotowania plików zawartości, zobacz [wstępnie przygotować zawartość](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_prestage).  
 
 ##  <a name="BKMK_DeployTS"></a> Wdrażanie sekwencji zadań  
  Aby wdrożyć sekwencję zadań na komputerach w kolekcji, należy wykonać następującą procedurę.  
@@ -464,7 +464,7 @@ Zmiennymi dla komputera można zarządzać w lokacji głównej lub w centralnej 
 |**Kopiuj**|Wykonuje kopię wybranej sekwencji zadań. Ta akcja może się przydać, gdy chcesz utworzyć nową sekwencję zadań na podstawie istniejącej sekwencji.<br /><br /> W przypadku kopiowania sekwencji zadań w folderze kopia będzie widoczna w tym folderze, aż do chwili odświeżenia węzła sekwencji zadań.  Po odświeżeniu kopia stanie się widoczna w folderze głównym.|  
 |**Wyłącz**|Wyłącza sekwencję zadań, tak aby nie można jej było uruchomić na komputerach. Wyłączone sekwencje zadań można wdrażać na komputerach, jednak komputery nie mogą jej uruchamiać, aż do jej włączenia.|  
 |**Włączenie**|Włącza sekwencję zadań, tak aby można ją było uruchamiać. Po włączeniu wdrożonej sekwencji zadań jej ponowne wdrożenie nie jest konieczne.|  
-|**Tworzenie wstępnie przygotowanego pliku zawartości**|Uruchamia Kreatora tworzenia przygotowanego pliku zawartości w celu wstępnego przygotowania zawartości sekwencji zadań. Aby uzyskać informacje o sposobie tworzenia wstępnie przygotowanego pliku zawartości, zobacz [wstępnie przygotować zawartość](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkprestagea-use-prestaged-content).|  
+|**Tworzenie wstępnie przygotowanego pliku zawartości**|Uruchamia Kreatora tworzenia przygotowanego pliku zawartości w celu wstępnego przygotowania zawartości sekwencji zadań. Aby uzyskać informacje o sposobie tworzenia wstępnie przygotowanego pliku zawartości, zobacz [wstępnie przygotować zawartość](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_prestage).|  
 |**Przenieś**|Przenosi wybraną sekwencję zadań do innego folderu.|  
 
 ## <a name="next-steps"></a>Następne kroki

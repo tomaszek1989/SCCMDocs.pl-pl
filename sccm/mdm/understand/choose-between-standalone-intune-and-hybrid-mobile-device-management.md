@@ -14,18 +14,18 @@ caps.latest.revision: "10"
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 26c36df77c21254c7ad2b8a45906bd3706f9ec65
-ms.sourcegitcommit: 06aef618f72c700f8a716a43fb8eedf97c62a72b
+ms.openlocfilehash: 5c9e80fc5bc3f0629e1c27a4928b8a51cfe1ee7e
+ms.sourcegitcommit: 948644072bd158b156f782a4376bcd50fac7c73a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="choose-between-microsoft-intune-standalone-and-hybrid-mobile-device-management-with-system-center-configuration-manager"></a>Wybór między Microsoft Intune autonomiczne, jak i hybrydowe zarządzanie urządzeniami przenośnymi z System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 Jednym z najbardziej często zadawane pytania dotyczące zarządzania urządzeniami przenośnymi (MDM) w usłudze Microsoft Intune jest "Powinien I integracji usługi Intune z programem Configuration Manager (hybrydowego zarządzania urządzeniami Przenośnymi) lub uruchomić autonomiczną usługę Intune w konfiguracji tylko w chmurze?" Odpowiedzi na to pytanie, należy ostrożnie porównać dwóch opcji.
-
+ 
 ## <a name="intune-standalone"></a>Autonomicznej usługi Intune.
 Autonomicznej usługi Intune jest topologia wdrożenia zalecane przez firmę Microsoft. Autonomicznej usługi Intune jest tylko na chmurze rozwiązanie MDM i odbywa się przy użyciu konsoli sieci web, który można uzyskać z dowolnego miejsca na świecie. Usługi Intune w centrach danych znajdują się w Ameryce Północnej, Europie i Azji. Ponieważ usługa Intune jest usługą w chmurze, zarządzania usługi Intune można wdrożyć na urządzeniach w względnie krótkim przedziale czasu.
 

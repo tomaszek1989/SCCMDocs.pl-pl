@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 5fef04f26b12bced073332fd1f7b4e7c7bd7d398
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 35f527f83799125aa298b99e2cc56867435272ec
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="manage-operating-system-upgrade-packages-with-system-center-configuration-manager"></a>Zarządzanie pakietami uaktualnień systemu operacyjnego w programie System Center Configuration Manager
 
@@ -59,7 +59,7 @@ Pakiet uaktualnienia w programie System Center Configuration Manager zawiera pli
  Teraz można dokonać dystrybucji instalatora systemu operacyjnego do punktów dystrybucji, do których dostęp uzyskują sekwencje zadań wdrażania.  
 
 ##  <a name="BKMK_DistributeBootImages"></a> Dystrybuowanie obrazów systemu operacyjnego do punktu dystrybucji  
- Dystrybuowanie obrazów systemu operacyjnego do punktów dystrybucji przebiega tak samo jak w przypadku zawartości innego typu. W większości przypadków przed wdrożeniem systemu operacyjnego musisz przeprowadzić dystrybucję obrazu systemu operacyjnego do co najmniej jednego punktu dystrybucji. Aby zapoznać się z procedurą dystrybucji obrazu systemu operacyjnego, zobacz temat [Dystrybucja zawartości](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).  
+ Dystrybuowanie obrazów systemu operacyjnego do punktów dystrybucji przebiega tak samo jak w przypadku zawartości innego typu. W większości przypadków przed wdrożeniem systemu operacyjnego musisz przeprowadzić dystrybucję obrazu systemu operacyjnego do co najmniej jednego punktu dystrybucji. Aby zapoznać się z procedurą dystrybucji obrazu systemu operacyjnego, zobacz temat [Dystrybucja zawartości](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute).  
 
 ##  <a name="BKMK_OSUpgradePkgApplyUpdates"></a> Stosowanie aktualizacji oprogramowania do pakietów uaktualnień systemu operacyjnego  
  Począwszy od programu Configuration Manager w wersji 1602, można stosować nowe aktualizacje oprogramowania do obrazu systemu operacyjnego do pakietu uaktualnienia systemu operacyjnego. Przed zainstalowaniem aktualizacji oprogramowania do pakietu uaktualnienia, który musi mieć oprogramowanie aktualizacji infrastruktury w miejscu, pomyślnie zsynchronizować aktualizacje oprogramowania i pobrane aktualizacje oprogramowania do biblioteki zawartości na serwerze lokacji. Aby uzyskać więcej informacji, zobacz [wdrażania aktualizacji oprogramowania](../../sum/deploy-use/deploy-software-updates.md).  

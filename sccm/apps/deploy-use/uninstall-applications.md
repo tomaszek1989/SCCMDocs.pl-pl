@@ -12,14 +12,14 @@ ms.topic: article
 ms.assetid: 0ea3edaa-27c6-4391-9896-cd97d9c5d06d
 caps.latest.revision: "4"
 caps.handback.revision: "0"
-author: robstackmsft
-ms.author: robstack
+author: mattbriggs
+ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: f42fee5974567f667c015a6b0bf34d9a9a7d2dab
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 1e9c5506b94eecc1c95af5f31ad4c2d923c2b74f
+ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="uninstall-applications-with-system-center-configuration-manager"></a>Odinstalowywanie aplikacji w programie System Center Configuration Manager
 
@@ -63,7 +63,7 @@ Należy wykonać następujące czynności, aby odinstalować aplikację, którą
         > [!NOTE]  
         >  **Zawartości** strona jest wyświetlana tylko wtedy, gdy zostanie wybrana opcja **ręcznie określ informacje o typie wdrożenia** na **ogólne** strony kreatora tworzenia typu wdrożenia.  
 
-    -   Na **programy** karcie  **<* Nazwa typu wdrożenia*> okno dialogowe Właściwości ** Określ wiersz poleceń do odinstalowania aplikacji w **program dezinstalacyjny** pola.  
+    -   Na **programy** karcie * * < *Nazwa typu wdrożenia*> okno dialogowe Właściwości ** Określ wiersz poleceń do odinstalowania aplikacji w **program dezinstalacyjny** pola.  
 
 2.  Wdrażanie aplikacji, a następnie wybierz akcję wdrożenia **Odinstaluj** na **ustawienia wdrażania** strony Kreatora wdrażania oprogramowania.  
 

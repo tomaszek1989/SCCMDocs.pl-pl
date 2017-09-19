@@ -12,14 +12,14 @@ ms.topic: get-started-article
 ms.assetid: a2275ba2-c83d-43e7-90ed-418963a707fe
 caps.latest.revision: "6"
 caps.handback.revision: "0"
-author: robstackmsft
-ms.author: robstack
+author: arob98
+ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 060d63ab8bce9c3bb39d2db404580b9f59416d33
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: fc898bf2433ab99eb0da9c60bd0e890bba97a415
+ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="how-to-configure-client-status-in-system-center-configuration-manager"></a>Jak skonfigurować stan klienta w programie System Center Configuration Manager
 
@@ -76,7 +76,7 @@ Aby można było monitorowania stanu klienta programu System Center Configuratio
     > [!NOTE]  
     >  Nie można skonfigurować alertów dla kolekcji użytkowników.  
 
-4.  Na **alerty** karcie  *&lt;kolekcji nazwa\>***właściwości** okno dialogowe, kliknij przycisk **Dodaj**.  
+4.  Na **alerty** karcie * &lt;kolekcji nazwa\>***właściwości** okno dialogowe, kliknij przycisk **Dodaj**.  
 
     > [!NOTE]  
     >  Karta **Alerty** jest widoczna tylko w przypadku, gdy rola zabezpieczeń, z którą została skojarzony użytkownik, ma uprawnienia do alertów.  
@@ -91,7 +91,7 @@ Aby można było monitorowania stanu klienta programu System Center Configuratio
 
     -   **Zgłoś alert** — Określ procentowy próg alertu.  
 
-7.  Kliknij przycisk **OK** zamknąć  *&lt;kolekcji nazwa\>***właściwości** okno dialogowe.  
+7.  Kliknij przycisk **OK** zamknąć * &lt;kolekcji nazwa\>***właściwości** okno dialogowe.  
 
 ##  <a name="BKMK_3"></a>Aby wykluczyć komputery z automatycznego korygowania  
 

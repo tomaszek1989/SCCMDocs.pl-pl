@@ -12,14 +12,14 @@ ms.topic: get-started-article
 ms.assetid: 341f0d0b-f907-44cf-9e10-e1b41fc15f82
 caps.latest.revision: "13"
 caps.handback.revision: "0"
-author: robstackmsft
-ms.author: robstack
+author: arob98
+ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 9ac54136b93ee366c16cafe89036a79e808980dc
-ms.sourcegitcommit: 06aef618f72c700f8a716a43fb8eedf97c62a72b
+ms.openlocfilehash: f03102c170e1e7de3a11349f4a66380c4291dcac
+ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="how-to-deploy-clients-to-windows-computers-in-system-center-configuration-manager"></a>Jak wdrożyć klientów na komputerach z systemem Windows w programie System Center Configuration Manager
 
@@ -159,7 +159,7 @@ Aktualizacja oprogramowania dla klienta programu Configuration Manager nie jest 
 ##  <a name="BKMK_ClientGP"></a>Jak instalować klientów przy użyciu zasad grupy  
  Do opublikowania lub przypisania klienta programu Configuration Manager można zainstalować na komputerach w przedsiębiorstwie, można użyć zasad grupy w usługach domenowych w usłudze Active Directory. Klient zostanie zainstalowany podczas uruchamiania komputera. Jeśli używasz zasad grupy klient jest wyświetlany w Panelu sterowania **Dodaj lub usuń programy** dla użytkownika do zainstalowania.  
 
- Instalacje oparte na zasadach grupy należy wykonywać za pomocą pakietu Instalatora Windows (CCMSetup.msi). Ten plik znajduje się w folderze  **&lt;katalog instalacyjny programu ConfigMgr\>\bin\i386** na serwerze lokacji programu Configuration Manager. Nie można dodać właściwości do tego pliku, aby zmodyfikować zachowanie podczas instalacji.  
+ Instalacje oparte na zasadach grupy należy wykonywać za pomocą pakietu Instalatora Windows (CCMSetup.msi). Ten plik znajduje się w folderze ** &lt;katalog instalacyjny programu ConfigMgr\>\bin\i386** na serwerze lokacji programu Configuration Manager. Nie można dodać właściwości do tego pliku, aby zmodyfikować zachowanie podczas instalacji.  
 
 > [!IMPORTANT]  
 >  Musi mieć uprawnienia administratora na dostęp do plików instalacji klienta.  
@@ -175,14 +175,14 @@ Informacje o sposobach używania zasad grupy w usługach domenowych Active Dire
 
  \\\\*&lt;Nazwa serwera lokacji\>*\SMS_*&lt;kod lokacji\>*\Client\  
 
- gdzie  *&lt;nazwa serwera lokacji\>*  jest nazwą jednego z serwerów obsługujących punkt zarządzania i  *&lt;kod lokacji\>*  jest kodem lokacji głównej klienta będą należeć do.  Aby uruchomić program CCMSetup.exe z wiersza polecenia na komputerze klienckim, musisz zamapować dysk sieciowy do tej lokalizacji, a następnie uruchomić to polecenie.  
+ gdzie * &lt;nazwa serwera lokacji\> * jest nazwą jednego z serwerów obsługujących punkt zarządzania i * &lt;kod lokacji\> * jest kodem lokacji głównej klienta będą należeć do.  Aby uruchomić program CCMSetup.exe z wiersza polecenia na komputerze klienckim, musisz zamapować dysk sieciowy do tej lokalizacji, a następnie uruchomić to polecenie.  
 
 > [!IMPORTANT]  
 >  Musi mieć uprawnienia administratora na dostęp do plików instalacji klienta.  
 
  CCMSetup.exe kopiuje wszystkie niezbędne wymagania wstępne dotyczące komputera klienckiego i wywołuje pakiet Instalatora Windows (Client.msi), aby zainstalować klienta. Pliku Client.msi nie można modyfikować bezpośrednio.  
 
- Aby zmodyfikować zachowanie instalacji klienta, w wierszu polecenia można określić właściwości dla programów CCMSetup.exe i Client.msi. Upewnij się, że możesz określić właściwości programu CCMSetup (właściwości rozpoczynające się od  **/** ) należy określić przed właściwościami programu Client.msi. Na przykład:  
+ Aby zmodyfikować zachowanie instalacji klienta, w wierszu polecenia można określić właściwości dla programów CCMSetup.exe i Client.msi. Upewnij się, że możesz określić właściwości programu CCMSetup (właściwości rozpoczynające się od ** / **) należy określić przed właściwościami programu Client.msi. Na przykład:  
 
 ```  
 CCMSetup.exe /mp:SMSMP01 /logon SMSSITECODE=AUTO FSP=SMSFP01  
@@ -342,7 +342,7 @@ Sprawdź wymagania wstępne, a następnie postępuj zgodnie z instrukcjami w sek
 ##  <a name="BKMK_ClientInternet"></a>Jak zainstalować klientów do zarządzania internetowego  
  Gdy lokacji programu Configuration Manager obsługuje klienta internetowego zarządzania klientami, którzy są czasami w intranecie, a czasem z Internetem, są dostępne dwie opcje instalacji klientów w intranecie:  
 
--   Można dodać właściwość pliku Client.msi ccmhostname =*&lt;internetowej nazwy FQDN punktu zarządzania internetowego\>*  po zainstalowaniu klienta, na przykład za pomocą ręcznej lub instalacji wypychanej klienta. Jeżeli używana jest ta metoda, należy także bezpośrednio przypisać klienta do lokacji i nie można użyć automatycznego przypisywania lokacji. Przykład tej metody konfiguracji zawiera sekcja [Jak instalować klientów programu Configuration Manager ręcznie](#BKMK_Manual).  
+-   Można dodać właściwość pliku Client.msi ccmhostname =*&lt;internetowej nazwy FQDN punktu zarządzania internetowego\> * po zainstalowaniu klienta, na przykład za pomocą ręcznej lub instalacji wypychanej klienta. Jeżeli używana jest ta metoda, należy także bezpośrednio przypisać klienta do lokacji i nie można użyć automatycznego przypisywania lokacji. Przykład tej metody konfiguracji zawiera sekcja [Jak instalować klientów programu Configuration Manager ręcznie](#BKMK_Manual).  
 
 -   Można zainstalować klienta dla zarządzania klientami w sieci intranet, a następnie przypisać punkt zarządzania klientami internetowymi do klienta, używając właściwości klienta programu Configuration Manager w Panelu sterowania lub za pomocą skryptu. Jeżeli stosowana jest ta metoda, można użyć automatycznego przypisania klienta. Więcej informacji zawiera sekcja [Jak skonfigurować klientów pod kątem internetowego zarządzania klientami po zainstalowaniu klienta](#BKMK_ConfigureIBCM_MP) w tym temacie.  
 
@@ -350,7 +350,7 @@ Sprawdź wymagania wstępne, a następnie postępuj zgodnie z instrukcjami w sek
 
 -   Mechanizm umożliwiający tych klientów, aby tymczasowo łączenia się z intranetem, z wirtualnej sieci prywatnej (VPN), a następnie zainstaluj je przy użyciu dowolnej metody instalacji odpowiedniego klienta.  
 
--   Użyj metody instalacji, która jest niezależna od programu Configuration Manager, np. instalując pliki źródłowe instalacji klienta na nośniku wymiennym, który możesz wysłać do użytkowników z instrukcjami instalacji. Pliki źródłowe instalacji klienta znajdują się w  *&lt;Ścieżka_instalacji\>*folderu \Client na punktach serwera oraz zarządzania lokacji programu Configuration Manager. Umieść na nośniku skrypt ręcznego kopiowania do i z folderu klienta, zainstaluj klienta, używając programu CCMSetup.exe i wszystkie odpowiednie właściwości wiersza polecenia programu CCMSetup.  
+-   Użyj metody instalacji, która jest niezależna od programu Configuration Manager, np. instalując pliki źródłowe instalacji klienta na nośniku wymiennym, który możesz wysłać do użytkowników z instrukcjami instalacji. Pliki źródłowe instalacji klienta znajdują się w * &lt;Ścieżka_instalacji\>*folderu \Client na punktach serwera oraz zarządzania lokacji programu Configuration Manager. Umieść na nośniku skrypt ręcznego kopiowania do i z folderu klienta, zainstaluj klienta, używając programu CCMSetup.exe i wszystkie odpowiednie właściwości wiersza polecenia programu CCMSetup.  
 
 > [!NOTE]  
 >  Menedżer konfiguracji nie obsługuje instalacji klienta bezpośrednio z punktu zarządzania internetowego ani z punktu aktualizacji oprogramowania z internetowego.  

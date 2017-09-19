@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 4b3668094d576b1b8710f08b384aa2f7c5eb0cca
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 3a8e2759812dae2a328cd09efdc13f8534d14379
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="create-a-task-sequence-to-capture-and-restore-user-state-in-system-center-configuration-manager"></a>Tworzenie sekwencji zadań w celu przechwycenia i przywrócenia stanu użytkownika w programie System Center Configuration Manager
 
@@ -56,7 +56,7 @@ Do przechwytywania i przywracania stanu danych użytkownika w środowiskach wdro
 
     -   W polu **Opóźnienie ponowienia próby (w sekundach)** wprowadź liczbę sekund oczekiwania przez sekwencję zadań przed kolejną próbą przechwycenia danych.  
 
-    -   Wybierz **Jeśli konto komputera nie może nawiązać połączenia z magazynem stanów, użyj konta dostępu do sieci** pole wyboru, aby określić, czy używać programu Configuration Manager [konta dostępu do sieci](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#a-namebkmknaaa-network-access-account) nawiązywania połączenia z magazynem stanów.  
+    -   Wybierz **Jeśli konto komputera nie może nawiązać połączenia z magazynem stanów, użyj konta dostępu do sieci** pole wyboru, aby określić, czy używać programu Configuration Manager [konta dostępu do sieci](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#bkmk_NAA) nawiązywania połączenia z magazynem stanów.  
 
      Na karcie **Opcje** określ następujące opcje:  
 
@@ -141,7 +141,7 @@ Do przechwytywania i przywracania stanu danych użytkownika w środowiskach wdro
 
     -   Wybierz opcję **Kontynuuj, jeśli niektórych plików nie można przywrócić** , jeśli chcesz, aby krok **Przywróć stan użytkownika** kontynuował pracę, gdy nie przywrócenie pliku nie jest możliwe.  
 
-         Jeśli stan użytkownika jest przechowywany za pomocą lokalnych łączy, a operacja przywracania się nie powiedzie, użytkownik administracyjny może ręcznie usunąć twarde łącze utworzone w celu przechowania danych. Inną metodą jest uruchomienie narzędzia USMTUtils w sekwencji zadań. Jeśli używasz narzędzia USMTUtils usuwania twardych łączy, Dodaj [Uruchom ponownie komputer](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer) kroku po uruchomieniu narzędzia USMTUtils.  
+         Jeśli stan użytkownika jest przechowywany za pomocą lokalnych łączy, a operacja przywracania się nie powiedzie, użytkownik administracyjny może ręcznie usunąć twarde łącze utworzone w celu przechowania danych. Inną metodą jest uruchomienie narzędzia USMTUtils w sekwencji zadań. Jeśli używasz narzędzia USMTUtils usuwania twardych łączy, Dodaj [Uruchom ponownie komputer](../understand/task-sequence-steps.md#BKMK_RestartComputer) kroku po uruchomieniu narzędzia USMTUtils.  
 
     -   Wybierz opcję **Włącz pełne rejestrowanie** , aby określić, ile informacji ma zostać zapisanych w plikach dziennika w przypadku wystąpienia błędu.  
 

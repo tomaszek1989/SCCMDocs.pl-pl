@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: 23ff28189c8010c21ed8b23c35598746a4f09fe7
-ms.sourcegitcommit: 13599667ea77c16db1aebe64f8a6748c268f0b45
+ms.openlocfilehash: 5b5385cebe7952e519d59a239983733dd93e661e
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/11/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Profile sieci VPN na urządzeniach przenośnych w programie System Center Configuration Manager
 
@@ -52,7 +52,7 @@ Profile sieci VPN w programie System Center Configuration Manager możesz wdraż
 ## <a name="create-vpn-profiles"></a>Tworzenie profilów sieci VPN
 [Jak tworzyć profile sieci VPN w programie System Center Configuration Manager](../../protect/deploy-use/create-vpn-profiles.md) zawiera ogólne informacje o sposobie tworzenia profili sieci VPN.
 
-###   <a name="windows-10-vpn-features-available-when-using-configuration-manager-with-intune"></a>Funkcje sieci VPN systemu Windows 10, dostępne podczas korzystania z programu Configuration Manager z usługą Intune  
+## <a name="windows-10-vpn-features-available-when-using-configuration-manager-with-intune"></a>Funkcje sieci VPN systemu Windows 10, dostępne podczas korzystania z programu Configuration Manager z usługą Intune  
 
 
 > [!NOTE]  
@@ -157,7 +157,7 @@ Profile sieci VPN w programie System Center Configuration Manager możesz wdraż
 
 **Wdrażanie**: Zobacz [wdrażania sieci Wi-Fi, VPN, poczty e-mail i profilów certyfikatów](../../protect/deploy-use/deploy-wifi-vpn-email-cert-profiles.md) Aby uzyskać więcej informacji o tym, jak wdrażać profile sieci VPN.
 
-### <a name="next-steps"></a>Następne kroki  
+## <a name="next-steps"></a>Następne kroki  
  Użyj następujących tematach ułatwiają planowanie, konfigurowanie, obsługę i konserwację profili sieci VPN w programie Configuration Manager.  
 
 -   [Wymagania wstępne dotyczące profilów sieci VPN w programie System Center Configuration Manager](../../protect/plan-design/prerequisites-for-wifi-vpn-profiles.md)  

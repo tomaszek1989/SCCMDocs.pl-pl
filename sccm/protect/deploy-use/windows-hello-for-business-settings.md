@@ -11,14 +11,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a95bc292-af10-4beb-ab56-2a815fc69304
 caps.latest.revision: "17"
-author: robstackmsft
-ms.author: robstack
+author: lleonard-msft
+ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: 696edcf33936c705984d1168b2f15dd862d90d0e
-ms.sourcegitcommit: 4ec2fccb2d471ba9a91fe73df01b7e96efc62594
+ms.openlocfilehash: 1985428df0f82ef2e0a92fdec86189d5ffa03aee
+ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="windows-hello-for-business-settings-in-system-center-configuration-manager"></a>Ustawienia funkcji Windows Hello dla firm w programie System Center Configuration Manager
 
@@ -73,9 +73,9 @@ Niektóre konfiguracje nie może być konieczne można skonfigurować uprawnieni
 1.  Zaloguj się do kontrolera lub zarządzania stacjach roboczych z administratora domeny lub równoważne poświadczeń.
 2.  Otwórz **użytkowników usługi Active Directory i komputery**.
 3.  W okienku nawigacji kliknij prawym przyciskiem myszy nazwę domeny, a następnie kliknij przycisk **właściwości**.
-4.  Na **zabezpieczeń** karcie  *<domain name>*  **właściwości** okno dialogowe, kliknij przycisk **zaawansowane**. Jeśli **zabezpieczeń** karta nie jest wyświetlana, Włącz **funkcje zaawansowane** z **widoku** menu **użytkownicy usługi Active Directory i komputery**.
+4.  Na **zabezpieczeń** karcie * <domain name> * **właściwości** okno dialogowe, kliknij przycisk **zaawansowane**. Jeśli **zabezpieczeń** karta nie jest wyświetlana, Włącz **funkcje zaawansowane** z **widoku** menu **użytkownicy usługi Active Directory i komputery**.
 5.  Kliknij pozycję **Dodaj**.
-6.  W **wpis uprawnienia dla**  *<domain name>*  okno dialogowe, kliknij przycisk **Wybierz podmiot zabezpieczeń**.
+6.  W **wpis uprawnienia dla** * <domain name> * okno dialogowe, kliknij przycisk **Wybierz podmiot zabezpieczeń**.
 7.  W **wybierz użytkownika, komputera, konto usługi lub grupy** okno dialogowe, typ **Administratorzy klucza** w **wprowadź nazwę obiektu do wybrania** pola tekstowego.  Kliknij przycisk **OK**.
 8.  Z **dotyczy** listy, wybierz **obiekty użytkownika podrzędnym**.
 9.  Przewiń do dołu strony, a następnie kliknij przycisk **Wyczyść wszystko**.

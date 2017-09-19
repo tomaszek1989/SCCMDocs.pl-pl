@@ -12,14 +12,14 @@ ms.topic: article
 ms.assetid: 30170d70-489f-47f7-bebf-9ed0115db26b
 caps.latest.revision: "7"
 caps.handback.revision: "0"
-author: robstackmsft
-ms.author: robstack
+author: mattbriggs
+ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 28bea9210c9c58dabbb00a995e78cfedd1738291
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: c0a43ac7b529444b33edf8afbf52911127226f88
+ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="revise-and-supersede-applications-in-system-center-configuration-manager"></a>Korygowanie i zastępowanie aplikacji w programie System Center Configuration Manager
 
@@ -102,7 +102,7 @@ W tym temacie dowiesz się, jak pracować z wersjami aplikacji programu System C
 
 3.  Na **Home** karcie **właściwości** grupy, wybierz **właściwości** otworzyć nazwę aplikacji **właściwości** okno dialogowe.  
 
-4.  Na **zastępowania** karcie *< nazwa aplikacji\>*  **właściwości** oknie dialogowym wybierz **Dodaj**.  
+4.  Na **zastępowania** karcie *< nazwa aplikacji\> * **właściwości** oknie dialogowym wybierz **Dodaj**.  
 
 5.  W oknie dialogowym **Określ relację zastępowania** kliknij przycisk **Przeglądaj**.  
 
@@ -115,7 +115,7 @@ W tym temacie dowiesz się, jak pracować z wersjami aplikacji programu System C
 
 8.  Wybierz **OK** zamknąć **Określ relację zastępowania** okno dialogowe.  
 
-9. Wybierz **OK** zamknąć *< nazwa aplikacji\>*  **właściwości** okno dialogowe.  
+9. Wybierz **OK** zamknąć *< nazwa aplikacji\> * **właściwości** okno dialogowe.  
 
 ### <a name="to-display-applications-that-supersede-the-current-application"></a>Aby wyświetlić aplikacje, które zastępują bieżącą aplikację  
 
@@ -123,8 +123,8 @@ W tym temacie dowiesz się, jak pracować z wersjami aplikacji programu System C
 
 2.  W **Biblioteka oprogramowania** obszaru roboczego, rozwiń węzeł **Zarządzanie aplikacjami**, wybierz **aplikacji**, a następnie wybierz aplikację, którą chcesz.  
 
-3.  Na **Home** karcie **właściwości** grupy, wybierz **właściwości** otworzyć *< nazwa aplikacji\>*  **właściwości** okno dialogowe.  
+3.  Na **Home** karcie **właściwości** grupy, wybierz **właściwości** otworzyć *< nazwa aplikacji\> * **właściwości** okno dialogowe.  
 
-4.  Na **odwołania** karcie *< nazwa aplikacji\>*  **właściwości** okno dialogowe Wybierz **aplikacje zastępujące tę aplikację** z **typ relacji** listy rozwijanej.  
+4.  Na **odwołania** karcie *< nazwa aplikacji\> * **właściwości** okno dialogowe Wybierz **aplikacje zastępujące tę aplikację** z **typ relacji** listy rozwijanej.  
 
-5.  Przejrzyj listę aplikacji, które zastępują wybraną aplikację, a następnie wybierz pozycję **OK** zamknąć *< nazwa aplikacji\>*  **właściwości** okno dialogowe.  
+5.  Przejrzyj listę aplikacji, które zastępują wybraną aplikację, a następnie wybierz pozycję **OK** zamknąć *< nazwa aplikacji\> * **właściwości** okno dialogowe.  

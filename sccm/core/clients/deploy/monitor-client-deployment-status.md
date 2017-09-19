@@ -12,14 +12,14 @@ ms.topic: get-started-article
 ms.assetid: 20a573b3-53cb-4ed5-bae1-7542f533ed20
 caps.latest.revision: "11"
 caps.handback.revision: "0"
-author: robstackmsft
-ms.author: robstack
+author: arob98
+ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 3d9d02d8c56aea17e563112f92173c2b56781da6
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: bddc2cf4ae335a8b407035a90818d7fa01dcc398
+ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="how-to-monitor-client-deployment-status-in-system-center-configuration-manager"></a>Jak monitorować stan wdrażania klientów w programie System Center Configuration Manager
 
@@ -52,7 +52,7 @@ Wdrażanie klientów w lokacji jest czasochłonne, a niektóre instalacje kończ
 
 -   Przejrzyj wykresy stanu wdrożenia klientów i niepowodzeń wdrażania klientów.  
 
--   Jeśli chcesz zmienić zakres raportu, kliknij przycisk **Przeglądaj...**  i wybierz inną kolekcję.  
+-   Jeśli chcesz zmienić zakres raportu, kliknij przycisk **Przeglądaj... ** i wybierz inną kolekcję.  
 
  Aby dowiedzieć się więcej na temat wdrożeń klientów przedprodukcyjnych, zobacz [testowanie uaktualnień klienta w kolekcji przedprodukcyjnej w programie System Center Configuration Manager](../../../core/clients/manage/upgrade/test-client-upgrades.md).
 

@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 830f715b688cc9929a179da94eba9c81de8db11a
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: f44fa4ef0946d3500d15db536333adab571a5f64
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="planning-considerations-for-automating-tasks-in-system-center-configuration-manager"></a>Zagadnienia związane z planowaniem automatyzacji zadań w programie System Center Configuration Manager
 
@@ -282,7 +282,7 @@ Można tworzyć sekwencje zadań do automatyzacji zadań w środowisku programu 
 ##  <a name="BKMK_TSNetworkAccessAccount"></a> Sekwencje zadań i konto dostępu do sieci  
  Mimo że sekwencje zadań są uruchamiane tylko w kontekście konta systemu lokalnego, może być konieczne konfigurowanie konta dostępu do sieci w następujących okolicznościach:  
 
--   Należy poprawnie skonfigurować konto dostępu do sieci lub sekwencja zadań zakończy się niepowodzeniem, jeśli próby uzyskiwania dostępu do pakietów programu Configuration Manager w punktach dystrybucji zakończy się. Aby uzyskać więcej informacji o koncie dostępu do sieci, zobacz [konta dostępu do sieci](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#a-namebkmknaaa-network-access-account).  
+-   Należy poprawnie skonfigurować konto dostępu do sieci lub sekwencja zadań zakończy się niepowodzeniem, jeśli próby uzyskiwania dostępu do pakietów programu Configuration Manager w punktach dystrybucji zakończy się. Aby uzyskać więcej informacji o koncie dostępu do sieci, zobacz [konta dostępu do sieci](../../core/plan-design/hierarchy/manage-accounts-to-access-content.md#bkmk_NAA).  
 
     > [!NOTE]  
     >  Konto dostępu do sieci nigdy nie jest używana jako kontekst zabezpieczeń dla uruchamiania programów, instalowania aplikacji, instalowania aktualizacji ani uruchamiania sekwencji zadań; jednak konta dostępu do sieci umożliwia dostęp do skojarzonych zasobów w sieci.  

@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-ms.openlocfilehash: ad4b923bd6d3e8acfe799a4ebe2adec737939d75
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: f50331f107ead5f83c3f76658718ff3ad6a2f4d7
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="verify-mdm-configuration-with-system-center-configuration-manager"></a>Sprawdzanie konfiguracji zarządzania urządzeniami Przenośnymi z System Center Configuration Manager
 
@@ -31,7 +31,7 @@ Niektóre składniki zarządzania urządzeniami przenośnymi można sprawdzić, 
 
 -   Sprawdź plik Sitecomp.log, aby upewnić się, że punkt połączenia z usługą został pomyślnie utworzony.
 
-Możesz przejrzeć [pliki dziennika w programie System Center Configuration Manager](../../core/plan-design/hierarchy/log-files.md#a-namebkmkfunctionlogsa-log-files-for-configuration-manager-functionality) uzyskać więcej informacji o tych określone pliki dziennika i sposób ich wyświetlania.
+Możesz przejrzeć [pliki dziennika w programie System Center Configuration Manager](../../core/plan-design/hierarchy/log-files.md##BKMK_FunctionLogs) uzyskać więcej informacji o tych określone pliki dziennika i sposób ich wyświetlania. 
 
 > [!div class="button"]
 [< Wstecz kroku](set-up-additional-management.md)

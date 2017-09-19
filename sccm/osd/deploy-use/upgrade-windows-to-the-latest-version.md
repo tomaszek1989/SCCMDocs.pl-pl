@@ -14,11 +14,11 @@ caps.latest.revision: "13"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 026d61113a918e43ac4395ef092b1931f33f16d3
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 412c2c644cc7f17f307c02b84471f3ee494045ec
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager"></a>Uaktualnianie systemu Windows do najnowszej wersji przy użyciu programu System Center Configuration Manager
 
@@ -74,7 +74,7 @@ Ten temat zawiera opis czynności w System Center Configuration Manager do uaktu
     > Korzystając z nośników autonomicznych, musi zawierać obraz rozruchowy w sekwencji zadań dla powinna być dostępna w Kreatorze nośnika sekwencji zadań.
 
     > [!NOTE]  
-    > Zwykle Użyj kroków w [tworzenia sekwencji zadań w celu uaktualnienia systemu operacyjnego](create-a-task-sequence-to-upgrade-an-operating-system.md) do tworzenia sekwencji zadań w celu uaktualnienia systemu operacyjnego do systemu Windows 10. Sekwencja zadań zawiera krok uaktualniania systemu operacyjnego, a także dodatkowe zalecane kroki i grupy służące do obsługi end-to-end procesu uaktualniania. Można jednak utworzyć niestandardową sekwencję zadań i dodać [Uaktualnij System operacyjny](../understand/task-sequence-steps.md#BKMK_UpgradeOS) krok sekwencji zadań w celu uaktualnienia systemu operacyjnego. Jest to jedyny krok wymagany do uaktualnienia systemu operacyjnego do systemu Windows 10. W przypadku wybrania tej metody, również dodać [Uruchom ponownie komputer](../understand/task-sequence-steps.md#a-namebkmkrestartcomputera-restart-computer) krok po kroku uaktualniania systemu operacyjnego w celu ukończenia uaktualniania. Należy użyć **aktualnie zainstalowany domyślny system operacyjny** ustawienie, aby ponownie uruchomić komputer w zainstalowanego systemu operacyjnego i nie środowiska Preinstalacyjnego systemu Windows.  
+    > Zwykle Użyj kroków w [tworzenia sekwencji zadań w celu uaktualnienia systemu operacyjnego](create-a-task-sequence-to-upgrade-an-operating-system.md) do tworzenia sekwencji zadań w celu uaktualnienia systemu operacyjnego do systemu Windows 10. Sekwencja zadań zawiera krok uaktualniania systemu operacyjnego, a także dodatkowe zalecane kroki i grupy służące do obsługi end-to-end procesu uaktualniania. Można jednak utworzyć niestandardową sekwencję zadań i dodać [Uaktualnij System operacyjny](../understand/task-sequence-steps.md#BKMK_UpgradeOS) krok sekwencji zadań w celu uaktualnienia systemu operacyjnego. Jest to jedyny krok wymagany do uaktualnienia systemu operacyjnego do systemu Windows 10. W przypadku wybrania tej metody, również dodać [Uruchom ponownie komputer](../understand/task-sequence-steps.md#BKMK_RestartComputer) krok po kroku uaktualniania systemu operacyjnego w celu ukończenia uaktualniania. Należy użyć **aktualnie zainstalowany domyślny system operacyjny** ustawienie, aby ponownie uruchomić komputer w zainstalowanego systemu operacyjnego i nie środowiska Preinstalacyjnego systemu Windows.  
 
 ##  <a name="BKMK_Deploy"></a> Wdróż  
 

@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: b88ab3799027c78a8c605e934b247097b31e1d21
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 57292b1c6f6e8b6be91eace06dbf12d788522e0b
+ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="use-pxe-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Użyj środowiska PXE, aby wdrożyć system Windows przez sieć przy użyciu programu System Center Configuration Manager
 
@@ -46,7 +46,7 @@ Aby używać środowiska PXE do wdrażania systemu operacyjnego, należy umieśc
 
 -   Aby włączyć funkcję PXE dla obrazu rozruchowego, wybierz **Wdróż ten obraz rozruchowy z punktu dystrybucji z włączoną obsługą środowiska PXE** z **źródła danych** we właściwościach obrazu rozruchowego.
 
--   Jeśli zmienisz właściwości obrazu rozruchowego, należy ponownie rozesłać obraz rozruchowy do punktów dystrybucji. Aby uzyskać więcej informacji, zobacz [dystrybucji zawartości](../../core/servers/deploy/configure/deploy-and-manage-content.md#a-namebkmkdistributea-distribute-content).
+-   Jeśli zmienisz właściwości obrazu rozruchowego, należy ponownie rozesłać obraz rozruchowy do punktów dystrybucji. Aby uzyskać więcej informacji, zobacz [dystrybucji zawartości](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute).
 
 ##  <a name="BKMK_PXEExclusionList"></a> Tworzenie listy wykluczeń dla wdrożeń środowiska PXE
 Podczas wdrażania systemów operacyjnych w środowisku PXE, można utworzyć listę wykluczeń w każdym punkcie dystrybucji. Dodaj adresy MAC do listy wykluczeń komputery, które mają być ignorowane przez punkt dystrybucji. Komputery z listy nie będzie odbierać sekwencje zadań wdrożenia używanych do wdrożenia środowiska PXE programu Configuration Manager.
