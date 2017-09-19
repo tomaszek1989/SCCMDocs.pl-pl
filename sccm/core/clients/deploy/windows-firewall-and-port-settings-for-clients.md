@@ -12,14 +12,14 @@ ms.topic: article
 ms.assetid: dce4b640-c92f-401a-9873-ce9aa9262014
 caps.latest.revision: "8"
 caps.handback.revision: "0"
-author: robstackmsft
-ms.author: robstack
+author: arob98
+ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 79686514efcba344c4babc3d3be03b48adca7132
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: d04fa417b311dc9f20e0691f6edffcf287cf43b8
+ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="windows-firewall-and-port-settings-for-clients-in-system-center-configuration-manager"></a>Ustawienia zapory systemu Windows i portu dla klientów w programie System Center Configuration Manager
 
@@ -149,7 +149,7 @@ Komputery klienckie w programie System Center Configuration Manager, w których 
 
 |Opis|UDP|TCP|  
 |-----------------|---------|---------|  
-|Blok komunikatów serwera (SMB) między komputerem klienckim a udziałem sieciowym, z którego uruchomiono program CCMSetup.exe.<br /><br /> Podczas instalowania programu Configuration Manager, pliki źródłowe instalacji klienta są kopiowane i automatycznie udostępniane z  *&lt;Ścieżka_instalacji\>*folderu \Client na punktach zarządzania. Można jednak skopiować te pliki i utworzyć nowy udział na komputerze w sieci. Można także wyeliminować ten ruch sieciowy, uruchamiając program CCMSetup.exe lokalnie, na przykład z nośnika wymiennego.|--|445|  
+|Blok komunikatów serwera (SMB) między komputerem klienckim a udziałem sieciowym, z którego uruchomiono program CCMSetup.exe.<br /><br /> Podczas instalowania programu Configuration Manager, pliki źródłowe instalacji klienta są kopiowane i automatycznie udostępniane z * &lt;Ścieżka_instalacji\>*folderu \Client na punktach zarządzania. Można jednak skopiować te pliki i utworzyć nowy udział na komputerze w sieci. Można także wyeliminować ten ruch sieciowy, uruchamiając program CCMSetup.exe lokalnie, na przykład z nośnika wymiennego.|--|445|  
 |Protokół HTTP (Hypertext Transfer) z komputera klienckiego do punktu zarządzania, jeżeli połączenie wykorzystuje protokół HTTP i nie należy określać właściwości wiersza polecenia CCMSetup **/source:&lt;ścieżki\>**.|--|80 (zobacz uwaga 1, **Dostępny alternatywny port**)|  
 |Secure Hypertext Transfer Protocol (HTTPS) z komputera klienckiego do punktu zarządzania, jeśli połączenie wykorzystuje protokół HTTPS i nie należy określać właściwości wiersza polecenia programu CCMSetup **/source:&lt;ścieżki\>**.|--|443 (zobacz uwaga 1, **Dostępny alternatywny port**)|  
 |Blok komunikatów serwera (SMB) między serwerem źródłowym i komputer kliencki w przypadku określenia właściwości wiersza polecenia CCMSetup **/source:&lt;ścieżki\>**.|--|445|  

@@ -12,14 +12,14 @@ ms.topic: article
 ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
 caps.latest.revision: "15"
 caps.handback.revision: "0"
-author: robstackmsft
-ms.author: robstack
+author: arob98
+ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: a8233c361e1a78b14a02f328da445814624e38d8
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 5eeeb9337926b983c26f681bff043fa1598dd4ee
+ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Informacje o ustawieniach klienta w programie System Center Configuration Manager
 
@@ -524,7 +524,7 @@ Umożliwia elementu równorzędnego pamięci podręcznej klientów programu Conf
 
     -   Wybierz **nowy** ikonę, aby dodać do spisu nowy typ pliku. Następnie określ następujące informacje w **właściwości zinwentaryzowanych plików** okno dialogowe:  
 
-        -   **Nazwa**: Podaj nazwę pliku, który chcesz dodać do spisu. Można użyć * *\**  znak oznaczającego dowolny ciąg tekstu i **?** oznaczającego pojedynczy znak. Na przykład, jeśli chcesz dodać do spisu wszystkie pliki z rozszerzeniem doc, określ nazwę pliku  **\*doc**.  
+        -   **Nazwa**: Podaj nazwę pliku, który chcesz dodać do spisu. Można użyć ** \* * znak oznaczającego dowolny ciąg tekstu i **?** oznaczającego pojedynczy znak. Na przykład, jeśli chcesz dodać do spisu wszystkie pliki z rozszerzeniem doc, określ nazwę pliku ** \*doc**.  
 
         -   **Lokalizacja**: Wybierz **ustawić** otworzyć **właściwości ścieżki** okno dialogowe. Można skonfigurować spis oprogramowania w celu wyszukania na dyskach twardych wszystkich klientów określonego pliku, określonej ścieżki (na przykład **C:\Folder**), lub Wyszukaj określonej zmiennej (na przykład *% windir %*). Można także przeszukać wszystkie podfoldery w określonej ścieżce.  
 
@@ -547,7 +547,7 @@ Umożliwia elementu równorzędnego pamięci podręcznej klientów programu Conf
 
     -   W oknie dialogowym **Właściwości zebranych plików** wprowadź następujące informacje:  
 
-        -   **Nazwa**: Podaj nazwę pliku, który chcesz zebrać. Można użyć * *\**  znak oznaczającego dowolny ciąg tekstu i **?** oznaczającego pojedynczy znak.  
+        -   **Nazwa**: Podaj nazwę pliku, który chcesz zebrać. Można użyć ** \* * znak oznaczającego dowolny ciąg tekstu i **?** oznaczającego pojedynczy znak.  
 
         -   **Lokalizacja**: Wybierz **ustawić** otworzyć **właściwości ścieżki** okno dialogowe. Można skonfigurować spis oprogramowania, aby wyszukać dyskach twardych wszystkich klientów pliku do zebrania, określonej ścieżki (na przykład **C:\Folder**), lub Wyszukaj określonej zmiennej (na przykład *% windir %*). Można także przeszukać wszystkie podfoldery w określonej ścieżce.  
 
@@ -556,7 +556,7 @@ Umożliwia elementu równorzędnego pamięci podręcznej klientów programu Conf
         -   **Zatrzymaj zbieranie plików, gdy łączny rozmiar plików przekracza (KB)**: Określ rozmiar pliku (w kilobajtach), po przekroczeniu którego kolejne pliki określone w obszarze **nazwa** zostaną zebrane.  
 
           > [!NOTE]  
-          >  Serwer lokacji zbiera pięć ostatnio zmienionych wersji zebranych plików i zapisuje je w  *&lt;katalog instalacyjny programu ConfigMgr\>*\Inboxes\Sinv.box\Filecol katalogu. Jeżeli plik nie został zmieniony od momentu ostatniego zebrania spisu oprogramowania, plik nie zostanie zebrany ponownie.  
+          >  Serwer lokacji zbiera pięć ostatnio zmienionych wersji zebranych plików i zapisuje je w * &lt;katalog instalacyjny programu ConfigMgr\>*\Inboxes\Sinv.box\Filecol katalogu. Jeżeli plik nie został zmieniony od momentu ostatniego zebrania spisu oprogramowania, plik nie zostanie zebrany ponownie.  
           >   
           >  Spis oprogramowania nie zbiera pliki większe niż 20 MB.  
           >   

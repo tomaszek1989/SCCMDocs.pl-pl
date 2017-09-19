@@ -11,14 +11,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ab1aecdd-d943-44f5-b0a9-e8fe7439e5d6
 caps.latest.revision: "9"
-author: robstackmsft
-ms.author: robstack
+author: mattbriggs
+ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: ffd66a4047ec253704e9772e2c3e3a4d9db7c46f
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 703f2d4d73334ef66a7c217c04e66658a7b56157
+ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="create-mac-computer-applications-with-system-center-configuration-manager"></a>Tworzenie aplikacji dla komputerów Mac w programie System Center Configuration Manager
 
@@ -117,7 +117,7 @@ Użyj poniższej procedury ułatwiające tworzenie aplikacji dla komputerów Mac
 
 5.  Z listy rozwijanej **Typ** wybierz pozycję **Mac OS X**.  
 
-6.  W **lokalizacji** Określ ścieżkę UNC w postaci  *\\ \\< server\>\\< udziału\>\\< nazwa pliku\>*  do pliku instalacji aplikacji dla komputerów Mac (**cmmac** pliku) który wykryje informacje o aplikacji. Możesz też wybrać **Przeglądaj** wskaż i określ lokalizację pliku instalacyjnego.  
+6.  W **lokalizacji** Określ ścieżkę UNC w postaci * \\ \\< server\>\\< udziału\>\\< nazwa pliku\> * do pliku instalacji aplikacji dla komputerów Mac (**cmmac** pliku) który wykryje informacje o aplikacji. Możesz też wybrać **Przeglądaj** wskaż i określ lokalizację pliku instalacyjnego.  
 
     > [!NOTE]  
     >  Wymagany jest dostęp do ścieżki UNC zawierającej aplikację.  
@@ -146,7 +146,7 @@ Użyj poniższej procedury ułatwiające tworzenie aplikacji dla komputerów Mac
 3.  Wybierz aplikację. Następnie na **Home** karcie **aplikacji** grupy, wybierz **Utwórz typ wdrożenia** do utworzenia nowego typu wdrożenia dla tej aplikacji.  
 
     > [!NOTE]  
-    >  Można również uruchomić **Kreatora tworzenia typu wdrożenia** z **Kreatora tworzenia aplikacji** i z **typy wdrożeń** karcie *< nazwa aplikacji\>*  **właściwości** okno dialogowe.  
+    >  Można również uruchomić **Kreatora tworzenia typu wdrożenia** z **Kreatora tworzenia aplikacji** i z **typy wdrożeń** karcie *< nazwa aplikacji\> * **właściwości** okno dialogowe.  
 
 4.  Na **ogólne** strony **Kreatora tworzenia typu wdrożenia**w **typu** listy rozwijanej wybierz **systemu Mac OS X**.  
 
@@ -171,7 +171,7 @@ Użyj poniższej procedury ułatwiające tworzenie aplikacji dla komputerów Mac
 11. Wybierz **Dodaj** otworzyć **tworzenie wymagania** okno dialogowe i dodać nowe wymaganie.  
 
     > [!NOTE]  
-    >  Możesz także dodać nowe wymagania na **wymagania** karcie *< Nazwa typu wdrożenia\>*  **właściwości** okno dialogowe.  
+    >  Możesz także dodać nowe wymagania na **wymagania** karcie *< Nazwa typu wdrożenia\> * **właściwości** okno dialogowe.  
 
 12. Na liście rozwijanej **Kategoria** zaznacz, że to wymaganie dotyczy urządzenia.  
 

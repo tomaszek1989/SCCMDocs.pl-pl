@@ -2,7 +2,7 @@
 title: Aktualizacje w konsoli | Dokumentacja firmy Microsoft
 description: "System Center Configuration Manager synchronizuje się z usługą firmy Microsoft w chmurze do pobierania aktualizacji, które można zainstalować w konsoli."
 ms.custom: na
-ms.date: 06/13/2017
+ms.date: 09/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "36"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 2bbc8935bee306ed0bc312cc43b8f5374a8df7ff
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 10ddbcc19da8c5fc6451f62500f17790a0349389
+ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="install-in-console-updates-for-system-center-configuration-manager"></a>Instalacja aktualizacji w konsoli programu System Center Configuration Manager
 
@@ -106,6 +106,9 @@ Przed zainstalowaniem aktualizacji warto rozważyć uruchomienie narzędzie spra
 
 -   Sprawdzanie wymagań wstępnych automatycznie uruchomiony ponownie w przypadku zainstalowania aktualizacji.  
 
+> [!NOTE]
+> Po uruchomieniu sprawdzania wymagań wstępnych i następnie wyświetlić stan, **instalacji** fazy wydaje się być aktywne, jednak aktualizacja nie jest w rzeczywistości zainstalowano. Wyświetla listę fazy instalacji, ponieważ niektóre zadania, takie jak wyodrębnianie plików binarnych niezbędne do uruchomienia sprawdzania, będą również należeli fazy instalacji.  
+
 Później po zainstalowaniu aktualizacji można skonfigurować aktualizacji do ignorowania ostrzeżeń sprawdzania wymagań wstępnych.  
 
 #### <a name="to-run-the-prerequisite-checker-before-installing-an-update"></a>Aby uruchomić narzędzie sprawdzania wymagań wstępnych przed instalacją aktualizacji  
@@ -183,7 +186,7 @@ Postęp można monitorować przy użyciu następujących elementów:
 
     -   **Po zakończeniu instalacji** ([zadań po instalacji](#post-installation-tasks) są dostępne począwszy od wersji 1610.)  
 
--   Możesz wyświetlić **CMUpdate.log** w pliku  **&lt;Katalog_instalacyjny_programu_configmgr > \Logs**  
+-   Możesz wyświetlić **CMUpdate.log** w pliku ** &lt;Katalog_instalacyjny_programu_configmgr > \Logs**  
 
 **4. Po zakończeniu instalacji aktualizacji**  
 Po zakończeniu instalacji aktualizacji pierwszej lokacji:  
@@ -288,7 +291,7 @@ Zadań po instalacji obejmują:
 W przypadku niepowodzenia aktualizacji do zainstalowania, przejrzyj opinii w konsoli, by określić rozwiązania ostrzeżeń i błędów. Możesz również wyświetlić dziennik ConfigMgrPrereq.log na serwerze lokacji, aby uzyskać dodatkowe informacje. Przed ponowieniem instalacji aktualizacji należy naprawić błędy, a powinno rozwiązać ostrzeżenia.  
 
 > [!TIP]  
-> Jeśli aktualizacja ma problemów z pobieraniem lub replikację, można użyć [aktualizacji zresetuj narzędzie](/sccm/core/servers/manage/update-reset-tool). To narzędzie jest dostępne z lokacji, na których jest uruchomiona wersja 1706 lub nowszego. 
+> Jeśli aktualizacja ma problemów z pobieraniem lub replikację, można użyć [aktualizacji zresetuj narzędzie](/sccm/core/servers/manage/update-reset-tool). To narzędzie jest dostępne z lokacji, na których jest uruchomiona wersja 1706 lub nowszego.
 
 Gdy wszystko będzie gotowe do ponowienia instalacji aktualizacji, wybierz aktualizację, nie powiodło się, a następnie wybierz odpowiednią opcję. Zachowania ponawiania instalacji aktualizacji zależy od węzła, gdzie uruchomić retry wraz z opcją ponownych prób, używanej.  
 

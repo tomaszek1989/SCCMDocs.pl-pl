@@ -12,14 +12,14 @@ ms.topic: article
 ms.assetid: 3bd1e487-ea18-43c1-b7c3-acbd9b86d429
 caps.latest.revision: "15"
 caps.handback.revision: "0"
-author: robstackmsft
-ms.author: robstack
+author: mattbriggs
+ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: bbbf278f5d31c51bfe061dd44e170f7ab1ca70ad
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: f52dbb5e89746e30562132d4fe19886e7d9b5ea7
+ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="create-and-deploy-an-application-with-system-center-configuration-manager"></a>Tworzenie i wdrażanie aplikacji przy użyciu programu System Center Configuration Manager
 
@@ -60,7 +60,7 @@ Upewnij się, że zostało sprawdzone informacje w [wprowadzenie do zarządzania
 
     -   **Typ**: Wybierz **Instalatora Windows (\*pliku .msi)**.  
 
-    -   **Lokalizacja**: Wpisz lokalizację (lub wybierz **Przeglądaj** celu jej wybrania) pliku instalacyjnego **Contoso.msi**. Należy pamiętać, że lokalizacja musi być określona w postaci  *\\\Server\Share\File* programu Configuration Manager można znaleźć plików instalacyjnych.  
+    -   **Lokalizacja**: Wpisz lokalizację (lub wybierz **Przeglądaj** celu jej wybrania) pliku instalacyjnego **Contoso.msi**. Należy pamiętać, że lokalizacja musi być określona w postaci * \\\Server\Share\File* programu Configuration Manager można znaleźć plików instalacyjnych.  
 
     Zostanie wyświetlone okno z coś, która wygląda podobnie Poniższy zrzut ekranu:  
 
