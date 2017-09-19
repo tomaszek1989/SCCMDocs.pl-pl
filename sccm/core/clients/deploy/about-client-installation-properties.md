@@ -11,14 +11,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c890fd27-7a8c-4f51-bbe2-f9908af1f42b
 caps.latest.revision: "15"
-author: robstackmsft
-ms.author: robstack
+author: arob98
+ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 36bcbbca4fdee3e95d293c436a105a41a6e3953e
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 5148fe852e4d63e1cfd2d5b9c62369155dbecb89
+ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="about-client-installation-properties-in-system-center-configuration-manager"></a>Informacje o właściwościach instalacji klientów w programie System Center Configuration Manager
 
@@ -45,7 +45,7 @@ Polecenie programu System Center Configuration Manager CCMSetup.exe do ręcznej 
 > [!IMPORTANT]  
 >  Przed określeniem właściwości pliku Client.msi, należy określić właściwości programu CCMSetup.  
 
- CCMSetup.exe i towarzyszące mu pliki znajdują się na serwerze lokacji programu Configuration Manager w **klienta** folderu w folderze instalacyjnym programu Configuration Manager. Ten folder jest udostępniany w sieci jako  **&lt;nazwa serwera lokacji\>\SMS_&lt;kod lokacji\>\Client**.  
+ CCMSetup.exe i towarzyszące mu pliki znajdują się na serwerze lokacji programu Configuration Manager w **klienta** folderu w folderze instalacyjnym programu Configuration Manager. Ten folder jest udostępniany w sieci jako ** &lt;nazwa serwera lokacji\>\SMS_&lt;kod lokacji\>\Client**.  
 
  W wierszu polecenia polecenie CCMSetup.exe posługuje się następującym formatem:  
 
@@ -267,7 +267,7 @@ Przykład: **CCMSetup.exe CCMALLOWSILENTREBOOT**
  `CCMCERTISSUERS=”CN=Contoso Root CA; OU=Servers; O=Contoso, Ltd; C=US &#124; CN=Litware Corporate Root CA; O=Litware, Inc.”`  
 
 > [!TIP]  
->  Przywołaj plik mobileclient.tcf z folderu &lt;katalog programu Configuration Manager\>\bin\\&lt;platformy\> folderu na komputerze serwera lokacji, aby skopiować **CertificateIssuers =&lt;ciąg\>**  skonfigurowany dla lokacji.  
+>  Przywołaj plik mobileclient.tcf z folderu &lt;katalog programu Configuration Manager\>\bin\\&lt;platformy\> folderu na komputerze serwera lokacji, aby skopiować **CertificateIssuers =&lt;ciąg\> ** skonfigurowany dla lokacji.  
 
 ### <a name="ccmcertsel"></a>CCMCERTSEL
 

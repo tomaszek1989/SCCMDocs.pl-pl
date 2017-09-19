@@ -11,14 +11,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e46ad501-5d73-44ac-92de-0de14ef72b83
 caps.latest.revision: "12"
-author: robstackmsft
-ms.author: robstack
+author: arob98
+ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 6ce212c6745b70a47553891e5dbc124b4c4e50fa
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: af6faf4cd317452f635ec30e74a3aa2e14f1662a
+ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="how-to-deploy-clients-to-macs"></a>Jak wdrożyć klientów na komputerach Mac
 
@@ -164,7 +164,7 @@ Użyj tej procedury do automatyzacji instalacji klienta i żądania i rejestracj
      Przykład: Jeśli nosi nazwę serwera punktu proxy rejestracji **server02.contoso.com**i nazwę użytkownika **contoso\mnorth** zostało udzielone uprawnienia do szablonu certyfikatu klienta Mac, wpisz następujące polecenie: **sudo. / CMEnroll -s server02.contoso.com - ignorecertchainvalidation -u 'contoso\mnorth'**  
 
     > [!NOTE]  
-    >  Jeśli nazwa użytkownika zawiera którykolwiek ze znaków  **&lt;> "+=,** rejestracja zakończy się niepowodzeniem. Uzyskaj certyfikat poza pasmem z nazwą użytkownika, który nie zawiera tych znaków.  
+    >  Jeśli nazwa użytkownika zawiera którykolwiek ze znaków ** &lt;> "+=,** rejestracja zakończy się niepowodzeniem. Uzyskaj certyfikat poza pasmem z nazwą użytkownika, który nie zawiera tych znaków.  
     >  
     >  Aby usprawnić środowisko użytkownika, można utworzyć skrypt kroków instalacji i poleceń, aby użytkownicy musieli jedynie podać nazwę użytkownika i hasło.  
 
