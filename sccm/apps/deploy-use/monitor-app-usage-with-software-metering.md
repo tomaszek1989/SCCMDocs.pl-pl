@@ -2,7 +2,7 @@
 title: "Monitorowanie użycia aplikacji za pomocą funkcji pomiaru użytkowania oprogramowania | Dokumentacja firmy Microsoft"
 description: 
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 09/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "8"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: d7bc0bebeb0355156553376a3535ed76d5e44835
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 87bafd8ce28d58993666057b6c5bfd8bdc0c4ed9
+ms.sourcegitcommit: 51654bf8b5615eb99084d0a20d18ca3fccfa83a1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="software-metering-in-system-center-configuration-manager"></a>Pomiar użytkowania oprogramowania w programie System Center Configuration Manager
 
@@ -86,7 +86,7 @@ Pomiar użytkowania oprogramowania nie ma zależności zewnętrznych — ma on t
         >
         >  To pole jest opcjonalne, jeśli określono wartość ustawienia **Nazwa pliku** .
 
-    -   **Wersja** — wersja pliku wykonywalnego, dla którego chcesz dokonać pomiaru. Możesz użyć symbolu wieloznacznego (*) odpowiadającego dowolnemu ciągowi znaków lub symbolu wieloznacznego (?) odpowiadającego pojedynczemu znakowi. Jeśli chcesz dokonać pomiaru dla wszystkich wersji pliku wykonywalnego, użyj wartości domyślnej (\*).
+    -   **Wersja** — wersja pliku wykonywalnego, dla którego chcesz dokonać pomiaru. Można użyć znaku wieloznacznego (&#42;) odpowiadającego dowolnemu ciągowi znaków lub symbolu wieloznacznego znaku (? ) do reprezentowania dowolny pojedynczy znak. Jeśli chcesz dokonać pomiaru dla wszystkich wersji pliku wykonywalnego, użyj wartości domyślnej (&#42;).
 
     -   **Język** — język pliku wykonywalnego, dla którego chcesz dokonać pomiaru. Wartością domyślną są bieżące ustawienia regionalne używanego systemu operacyjnego. W przypadku wybrania pliku wykonywalnego do pomiaru przez kliknięcie przycisku **Przeglądaj** to pole zostanie wypełnione automatycznie, jeśli nagłówek pliku zawiera informacje o języku. Aby dokonać pomiaru dla wszystkich wersji językowych pliku, wybierz z listy rozwijanej pozycję **Każdy** .
 

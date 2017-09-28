@@ -14,11 +14,11 @@ caps.latest.revision: "36"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 10ddbcc19da8c5fc6451f62500f17790a0349389
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 5302b5712e33c753d0193a32498bc02a2241428c
+ms.sourcegitcommit: 474e6ddbaaeac4ba17d8172321e08deeb0140d0a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="install-in-console-updates-for-system-center-configuration-manager"></a>Instalacja aktualizacji w konsoli programu System Center Configuration Manager
 
@@ -106,8 +106,8 @@ Przed zainstalowaniem aktualizacji warto rozważyć uruchomienie narzędzie spra
 
 -   Sprawdzanie wymagań wstępnych automatycznie uruchomiony ponownie w przypadku zainstalowania aktualizacji.  
 
-> [!NOTE]
-> Po uruchomieniu sprawdzania wymagań wstępnych i następnie wyświetlić stan, **instalacji** fazy wydaje się być aktywne, jednak aktualizacja nie jest w rzeczywistości zainstalowano. Wyświetla listę fazy instalacji, ponieważ niektóre zadania, takie jak wyodrębnianie plików binarnych niezbędne do uruchomienia sprawdzania, będą również należeli fazy instalacji.  
+> [!NOTE]   
+> Po uruchomieniu sprawdzania wymagań wstępnych i następnie wyświetlić stan, **instalacji** fazy wydaje się być aktywne, jednak aktualizacja nie jest w rzeczywistości zainstalowano. Do sprawdzania wymagań wstępnych, proces aktualizacji wyodrębnia pakiet z biblioteki zawartości i umieszczenie go do folderu przemieszczania, gdzie można uzyskać dostęp do bieżącej Sprawdzanie wymagań wstępnych.  Ten sam proces jest uruchamiana po zainstalowaniu aktualizacji. Z tego powodu instalacja jest pokazywana jako "W toku". Tylko *pakiet aktualizacji wyodrębnij* kroku jest wyświetlany w kategorii instalacji.  
 
 Później po zainstalowaniu aktualizacji można skonfigurować aktualizacji do ignorowania ostrzeżeń sprawdzania wymagań wstępnych.  
 

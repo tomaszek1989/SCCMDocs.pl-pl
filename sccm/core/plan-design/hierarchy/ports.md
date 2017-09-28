@@ -2,7 +2,7 @@
 title: "Porty używane przez program Configuration Manager | Dokumentacja firmy Microsoft"
 description: "Więcej informacji na temat portów wymaganych i dostosowania, które korzysta z programu System Center Configuration Manager dla połączeń."
 ms.custom: na
-ms.date: 3/20/2017
+ms.date: 09/19/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,18 +15,18 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 78caa69e10f5d386daab1e61e484d4d134469708
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: ac443971a725a7eeecaeea877b8e9636ebb4990b
+ms.sourcegitcommit: 51654bf8b5615eb99084d0a20d18ca3fccfa83a1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="ports-used-in-system-center-configuration-manager"></a>Porty używane w programie System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 System Center Configuration Manager jest systemem rozproszonych klient/serwer. Rozproszony charakter programu Configuration Manager oznacza, że można nawiązać połączenia między serwerami lokacji, systemami lokacji i klientami. Niektóre połączenia używają portów, których nie można skonfigurować, a niektóre obsługują niestandardowe porty określone. Należy sprawdzić, czy są dostępne porty wymagane użycie technologii, takich jak zapory, routery, serwery proxy lub protokołu IPsec filtrowania portów.  
-
+    
 > [!NOTE]  
 >  Jeśli obsługa klientów internetowych przy użyciu mostkowania SSL, oprócz wymagań dotyczących portów, masz może umożliwia niektórych czasownikom i nagłówkom HTTP na przechodzenie przez zaporę.   
 
@@ -167,7 +167,7 @@ Ta komunikacja służy do potwierdzenia, czy drugi komputer kliencki w sieci zos
 |Opis|UDP|TCP|  
 |-----------------|---------|---------|  
 |Protokół LDAP wykazu globalnego|--|3268|  
-|Protokół LDAP SSL wykazu globalnego|--|3269|  
+
 
 ###  <a name="BKMK_PortsClient-MP"></a>Klient--> Punkt zarządzania  
 
@@ -295,9 +295,7 @@ Ta komunikacja służy do potwierdzenia, czy drugi komputer kliencki w sieci zos
 |Opis|UDP|TCP|  
 |-----------------|---------|---------|  
 |Protokół LDAP (Lightweight Directory Access Protocol)|--|389|  
-|Protokół LDAP (połączenie Secure Sockets Layer [SSL])|636|636|  
 |Protokół LDAP wykazu globalnego|--|3268|  
-|Protokół LDAP SSL wykazu globalnego|--|3269|  
 |Mapowanie punktów końcowych wywołań RPC|135|135|  
 |Zdalne wywołanie procedury|--|DYNAMICZNE (patrz adnotacja 6, **Porty dynamiczne**)|  
 
@@ -391,9 +389,7 @@ Aby uzyskać więcej informacji, zobacz [wymagania dotyczące dostępu do Intern
 |Opis|UDP|TCP|  
 |-----------------|---------|---------|  
 |Protokół LDAP (Lightweight Directory Access Protocol)|--|389|  
-|Protokół LDAP (połączenie Secure Sockets Layer [SSL])|636|636|  
 |Protokół LDAP wykazu globalnego|--|3268|  
-|Protokół LDAP SSL wykazu globalnego|--|3269|  
 |Mapowanie punktów końcowych wywołań RPC|135|135|  
 |Zdalne wywołanie procedury|--|DYNAMICZNE (patrz adnotacja 6, **Porty dynamiczne**)|  
 
@@ -641,17 +637,9 @@ Na przykład sposobu konfigurowania programu SQL Server do używania konkretnego
 ### <a name="bkmk_discovery"></a> Odnajdywania i publikowania
 Następujące porty są używane do odnajdywania i publikowaniu informacji o lokacji:
  - Lightweight Directory Access Protocol (LDAP): 389
- - LDAP (połączenie Secure Sockets Layer [SSL]): 636
-
-
  - Protokół LDAP wykazu globalnego: 3268
- - Protokół LDAP SSL wykazu globalnego: 3269
-
-
  - Program mapowania punktów końcowych RPC: 135
  - RPC: Dynamicznie przydzielane porty TCP wysoka
-
-
  - TCP: 1024: 5000
  - TCP:  49152: 65535
 

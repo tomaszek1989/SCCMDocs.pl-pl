@@ -2,7 +2,7 @@
 title: "Usługi Windows Hello dla firm ustawienia | Dokumentacja firmy Microsoft"
 description: "Dowiedz się, jak zintegrować Windows Hello dla firm z System Center Configuration Manager."
 ms.custom: na
-ms.date: 08/10/2017
+ms.date: 09/21/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "17"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: 1985428df0f82ef2e0a92fdec86189d5ffa03aee
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 43586e55f2c0c5cf117b94c61250f26ba4233f53
+ms.sourcegitcommit: 4c3906cf9614420cb8527da9e48978eb0b8f0e7a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="windows-hello-for-business-settings-in-system-center-configuration-manager"></a>Ustawienia funkcji Windows Hello dla firm w programie System Center Configuration Manager
 
@@ -65,8 +65,11 @@ Niektóre konfiguracje nie może być konieczne można skonfigurować uprawnieni
 |||||
 |-|-|-|-|
 |Wersja klienta systemu Windows|Configuration Manager 1602 lub 1606|Menedżer konfiguracji 1610|Menedżer konfiguracji 1702 lub nowszy|
-|Windows 10 Anniversary aktualizacji|Wymagana poprawka<br><br>Brak wymaganych uprawnień<br><br>Wymagana aktualizacja schematu systemu Windows|Wymagana poprawka<br><br>Brak wymaganych uprawnień<br><br>Wymagana aktualizacja schematu systemu Windows|Jest wymagana żadna akcja|
+|Windows 10 Anniversary aktualizacji|Wymagana poprawka<br><br>Brak wymaganych uprawnień<br><br>Wymagana aktualizacja schematu systemu Windows|Wymagana poprawka (zobacz **ostrzeżenie**)<br><br>Brak wymaganych uprawnień<br><br>Wymagana aktualizacja schematu systemu Windows|Konfigurowanie uprawnień<br><br>Dotyczy systemu Windows Server 2016 schematu usługi Active Directory|
 |Windows 10 twórców Update lub nowszy|Nieobsługiwane|Zainstaluj [tej poprawki](https://support.microsoft.com/help/4010155/update-rollup-for-system-center-configuration-manager-current-branch-v)<br><br>Konfigurowanie uprawnień<br><br>Dotyczy systemu Windows Server 2016 schematu usługi Active Directory|Konfigurowanie uprawnień<br><br>Dotyczy systemu Windows Server 2016 schematu usługi Active Directory|
+
+> [!WARNING]
+> Gdy [poprawkę](https://support.microsoft.com/help/4010155/update-rollup-for-system-center-configuration-manager-current-branch-v) jest nie wymaga 1610 Menedżera konfiguracji i Windows 10 Anniversary Update, mógł zostać zainstalowany.  Po zainstalowaniu poprawki należy skonfigurować uprawnienia i dotyczą systemu Windows Server 2016 schematu usługi Active Directory.
 
 ## <a name="to-configure-permissions"></a>Aby skonfigurować uprawnienia
 

@@ -2,7 +2,7 @@
 title: Konfigurowanie laboratorium programu System Center Configuration Manager | Dokumentacja firmy Microsoft
 description: "Konfigurowanie laboratorium oceny programu Configuration Manager z symulowanymi działaniami rzeczywistymi."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 09/21/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 11f5d0c3c61d675a8182e985f82e6af363b34592
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: a8bacdbde00973cfd45963b355c8f810ab06a83d
+ms.sourcegitcommit: 4c3906cf9614420cb8527da9e48978eb0b8f0e7a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="set-up-your-system-center-configuration-manager-lab"></a>Konfigurowanie laboratorium programu System Center Configuration Manager
 
@@ -52,7 +52,7 @@ Postępując zgodnie ze wskazówkami w tym temacie umożliwi skonfigurować labo
 
     -   Nie ograniczaj **adresowalnej pamięci systemu** dla programu SQL Server.  
 
-    -   Skonfiguruj **konto usługi programu SQL Server** przy użyciu **użytkownika lokalnego domeny** konta.  
+    -   Skonfiguruj **konto usługi programu SQL Server** przy użyciu niski praw konta użytkownika domeny.  
 
     -   Musisz zainstalować **programu SQL Server reporting services**.  
 
@@ -80,7 +80,7 @@ Chociaż nie jest wymagane dla tego laboratorium, możesz przejrzeć [obsługiwa
 
 Po zainstalowaniu wszystkich tych składników są dodatkowe czynności, które należy wykonać, aby skonfigurować środowisko systemu Windows dla programu Configuration Manager:  
 
-###  <a name="BKMK_LabADPrep"></a> Przygotowanie zawartości usługi Active Directory na potrzeby laboratorium  
+##  <a name="BKMK_LabADPrep"></a> Przygotowanie zawartości usługi Active Directory na potrzeby laboratorium  
  W przypadku tego laboratorium należy utworzyć grupę zabezpieczeń, a następnie dodać do niej użytkownika domeny.  
 
 -   Grupa zabezpieczeń: **Ocena**  
@@ -95,12 +95,12 @@ Po zainstalowaniu wszystkich tych składników są dodatkowe czynności, które 
 
 Następne kroki wymagane do włączenia klientów programu Configuration Manager do zapytania Active Directory Domain Services pozwalają lokalizować zasoby lokacji znajdują się w ramach kolejnych procedur.  
 
-###  <a name="BKMK_CreateSysMgmtLab"></a> Tworzenie kontenera zarządzania systemem  
+##  <a name="BKMK_CreateSysMgmtLab"></a> Tworzenie kontenera zarządzania systemem  
  Menedżer konfiguracji nie automatycznie utworzy kontenera zarządzania systemem w usługach domenowych w usłudze Active Directory podczas rozszerzania schematu. Z tego względu należy utworzyć kontener do użycia w laboratorium. Ten krok wymaga [zainstalowania programu ADSI Edit.](https://technet.microsoft.com/en-us/library/cc773354\(WS.10\).aspx#BKMK_InstallingADSIEdit)  
 
  Upewnij się, że podczas logowania użyto konta, które ma uprawnienie **Tworzenie wszystkich obiektów podrzędnych** w kontenerze **System** w usługach domenowych Active Directory.  
 
-##### <a name="to-create-the-system-management-container"></a>Aby utworzyć kontener zarządzania systemem:  
+#### <a name="to-create-the-system-management-container"></a>Aby utworzyć kontener zarządzania systemem:  
 
 1.  Uruchom program **ADSI Edit**i połącz się z domeną, w której znajduje się serwer lokacji.  
 
@@ -112,13 +112,13 @@ Następne kroki wymagane do włączenia klientów programu Configuration Manager
 
 5.  Kliknij przycisk **Zakończ** , aby ukończyć procedurę.  
 
-###  <a name="BKMK_SetSecPermLab"></a> Ustawianie uprawnień zabezpieczeń w kontenerze zarządzania systemem  
+##  <a name="BKMK_SetSecPermLab"></a> Ustawianie uprawnień zabezpieczeń w kontenerze zarządzania systemem  
  W ramach konta komputera na serwerze lokacji należy przyznać uprawnienia wymagane do publikowania informacji o lokacji do kontenera. Podczas wykonywania tego zadania zostanie również użyty program ADSI Edit.  
 
 > [!IMPORTANT]  
 >  Przed rozpoczęciem poniższej procedury upewnij się, że nawiązano połączenie z domeną serwera lokacji.  
 
-##### <a name="to-set-security-permissions-for-the-system-management-container"></a>Aby ustawić uprawnienia zabezpieczeń w kontenerze zarządzania systemem:  
+#### <a name="to-set-security-permissions-for-the-system-management-container"></a>Aby ustawić uprawnienia zabezpieczeń w kontenerze zarządzania systemem:  
 
 1.  W okienku konsoli rozwiń **domeną serwera lokacji**, rozwiń węzeł **DC =&lt;nazwa wyróżniająca serwera\>**, a następnie rozwiń węzeł **CN = System**. Kliknij węzeł **CN=Zarządzanie systemem**prawym przyciskiem myszy, a następnie kliknij polecenie **Właściwości**.  
 
@@ -132,13 +132,13 @@ Następne kroki wymagane do włączenia klientów programu Configuration Manager
 
      Dodatkowe szczegółowe informacje na temat tej procedury, zapoznaj się z tematem [rozszerzyć schemat usługi Active Directory dla programu System Center Configuration Manager](../../core/plan-design/network/extend-the-active-directory-schema.md)  
 
-###  <a name="BKMK_ExtADSchLab"></a> Rozszerzanie schematu usługi Active Directory za pomocą programu extadsch.exe  
+##  <a name="BKMK_ExtADSchLab"></a> Rozszerzanie schematu usługi Active Directory za pomocą programu extadsch.exe  
  Rozszerzenie schematu usługi Active Directory dla tego laboratorium, ponieważ dzięki temu można używać wszystkich funkcji programu Configuration Manager i funkcji przy minimalnej liczbie czynności administracyjnych. Rozszerzenie schematu usługi Active Directory to konfiguracja obejmująca cały las, którą można wykonać tylko jeden raz w odniesieniu do jednego lasu. Rozszerzanie schematu powoduje trwałe zmodyfikowanie zestawu klas i atrybutów w podstawowej konfiguracji usługi Active Directory. Ta akcja jest nieodwracalna. Rozszerzenie schematu umożliwia programowi Configuration Manager dostęp do składników, które umożliwią funkcji najbardziej efektywny sposób w środowisku laboratoryjnym.  
 
 > [!IMPORTANT]  
 >  Zaloguj się na głównym kontrolerze domeny schematu za pomocą konta, które jest członkiem grupy zabezpieczeń **Administratorzy schematu** (o ile jeszcze nie zostało to zrobione). Próba użycia alternatywnych poświadczeń zakończy się niepowodzeniem.  
 
-##### <a name="to-extend-the-active-directory-schema-using-extadschexe"></a>Aby rozszerzyć schemat usługi Active Directory za pomocą programu extadsch.exe:  
+#### <a name="to-extend-the-active-directory-schema-using-extadschexe"></a>Aby rozszerzyć schemat usługi Active Directory za pomocą programu extadsch.exe:  
 
 1.  Utwórz kopię zapasową stanu systemu kontrolera domeny wzorca schematu. Aby uzyskać więcej informacji o tworzeniu kopii zapasowej głównego kontrolera domeny, zapoznaj się z tematem [Kopia zapasowa systemu Windows Server](https://technet.microsoft.com/en-us/library/cc770757.aspx)  
 
@@ -150,7 +150,7 @@ Następne kroki wymagane do włączenia klientów programu Configuration Manager
 
      Dodatkowe szczegółowe informacje na temat tej procedury, zapoznaj się z tematem [rozszerzyć schemat usługi Active Directory dla programu System Center Configuration Manager](../../core/plan-design/network/extend-the-active-directory-schema.md).  
 
-###  <a name="BKMK_OtherTasksLab"></a> Inne wymagane zadania  
+##  <a name="BKMK_OtherTasksLab"></a> Inne wymagane zadania  
  Przed instalacją należy również wykonać poniższe zadania.  
 
  **Utworzenie folderu do przechowywania wszystkich materiałów do pobrania**  
@@ -161,7 +161,7 @@ Następne kroki wymagane do włączenia klientów programu Configuration Manager
 
  Konieczne będzie zainstalowanie dwóch platform .NET Framework: najpierw .NET 3.5.1, a następnie .NET 4.5.2+. Należy również aktywować technologię Windows Communication Foundation (WCF). Technologia WCF oferuje proste w zarządzaniu podejście do rozproszonego przetwarzania danych, współdziałanie w szerokim zakresie i bezpośrednią obsługę orientacji usługi, a także upraszcza tworzenie połączonych aplikacji za pomocą modelu programowania zorientowanego na usługę. Dodatkowe informacje na temat technologii WCF można znaleźć w temacie [What Is Windows Communication Foundation?](https://technet.microsoft.com/en-us/subscriptions/ms731082\(v=vs.90\).aspx) (Co to jest Windows Communication Foundation?).  
 
-##### <a name="to-install-net-and-activate-windows-communication-foundation"></a>Aby zainstalować program .NET i aktywować technologię Windows Communication Foundation  
+#### <a name="to-install-net-and-activate-windows-communication-foundation"></a>Aby zainstalować program .NET i aktywować technologię Windows Communication Foundation  
 
 1.  Otwórz program **Server Manager**, a następnie przejdź do pozycji **Zarządzaj**. Kliknij pozycję **Dodaj role i funkcje** , aby otworzyć **Dodaj role i funkcje Wizard**.  
 
@@ -221,7 +221,7 @@ Usługi Internet Information Services (IIS) to elastyczny, skalowalny serwer sie
 
 [Kompresja RDC](https://technet.microsoft.com/en-us/library/cc754372.aspx) to zestaw interfejsów API, z którego aplikacje mogą korzystać w celu określenia, czy wprowadzono zmiany do zestawu plików. Kompresja RDC umożliwia aplikacji replikowanie tylko zmienionych części pliku, a dzięki temu ograniczanie ruchu sieciowego do minimum.  
 
-##### <a name="to-enable-bits-iis-and-rdc-site-server-roles"></a>Aby włączyć role serwerów lokacji związane z usługą BITS, usługami IIS i kompresją RDC:  
+#### <a name="to-enable-bits-iis-and-rdc-site-server-roles"></a>Aby włączyć role serwerów lokacji związane z usługą BITS, usługami IIS i kompresją RDC:  
 
 1.  Na serwerze lokacji otwórz pozycję **Server Manager**. Przejdź do pozycji **Zarządzaj**. Kliknij pozycję **Dodaj role i funkcje** , aby otworzyć **Kreatora dodawania ról i funkcji**.  
 
@@ -319,21 +319,21 @@ Usługi Internet Information Services (IIS) to elastyczny, skalowalny serwer sie
 
 6.  Dodaj następujące **funkcje** , wybierając je z listy:  
 
-    -   -   **Usługa inteligentnego transferu w tle (BITS)**  
+    -   **Usługa inteligentnego transferu w tle (BITS)**  
 
-            -   **Rozszerzenie serwera IIS**  
+          -   **Rozszerzenie serwera IIS**  
 
-        -   **Narzędzia do zdalnego administrowania serwerem**  
+    -   **Narzędzia do zdalnego administrowania serwerem**  
 
-            -   **Narzędzia do administrowania funkcjami**  
+          -   **Narzędzia do administrowania funkcjami**  
 
-                -   **Narzędzia do obsługi rozszerzeń serwera BITS**  
+          -   **Narzędzia do obsługi rozszerzeń serwera BITS**  
 
 7.  Kliknij pozycję **Zainstaluj** i w okienku **Powiadomienia** **Menedżera serwera**sprawdź, czy instalacja zakończyła się pomyślnie.  
 
 Domyślnie usługi IIS blokują możliwość uzyskiwania dostępu do niektórych typów lokalizacji i rozszerzeń nazw w ramach komunikacji HTTP lub HTTPS. Aby umożliwić rozpowszechnianie plików w systemach klientów, należy skonfigurować filtrowanie żądań dla usług IIS w punkcie dystrybucji. Aby uzyskać więcej informacji, zapoznaj się z tematem [Filtrowanie żądań usług IIS w punktach dystrybucji](../../core/plan-design/network/prepare-windows-servers.md#BKMK_IISFiltering).  
 
-##### <a name="to-configure-iis-filtering-on-distribution-points"></a>Aby skonfigurować filtrowanie usług IIS w punktach dystrybucji:  
+#### <a name="to-configure-iis-filtering-on-distribution-points"></a>Aby skonfigurować filtrowanie usług IIS w punktach dystrybucji:  
 
 1.  Otwórz pozycję **IIS Manager** i wybierz nazwę serwera na pasku bocznym. Spowoduje to przejście do ekranu **Strona główna** .  
 
@@ -343,13 +343,13 @@ Domyślnie usługi IIS blokują możliwość uzyskiwania dostępu do niektórych
 
 4.  Wpisz **.msi** w oknie dialogowym i kliknij przycisk **OK**.  
 
-###  <a name="BKMK_InstallCMLab"></a> Instalowanie programu Configuration Manager  
+##  <a name="BKMK_InstallCMLab"></a> Instalowanie programu Configuration Manager  
 Utworzysz [ustalanie, kiedy należy używać lokacji głównej](../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md#BKMK_ChoosePriimary) umożliwia bezpośrednie zarządzanie klientami. Dzięki temu w środowisku laboratoryjnym w celu obsługi zarządzania dla [Skala systemu lokacji](/sccm/core/plan-design/configs/size-and-scale-numbers) potencjalnych urządzeń.  
 W trakcie tego procesu spowoduje także zainstalowanie konsoli programu Configuration Manager, która będzie używana do zarządzania urządzeniami w wersji ewaluacyjnej idąc dalej.  
 
 Przed rozpoczęciem instalacji należy uruchomić [narzędzie sprawdzania wymagań wstępnych](/sccm/core/servers/deploy/install/prerequisite-checker) na serwerze przy użyciu systemu Windows Server 2012, aby upewnić się, że wszystkie ustawienia zostały prawidłowo włączone.  
 
-##### <a name="to-download-and-install-configuration-manager"></a>Aby pobrać i zainstalować program Configuration Manager:  
+#### <a name="to-download-and-install-configuration-manager"></a>Aby pobrać i zainstalować program Configuration Manager:  
 
 1.  Przejdź do [System Center ocen](https://www.microsoft.com/evalcenter/evaluate-system-center-2012-configuration-manager-and-endpoint-protection) strony, aby pobrać najnowszą wersję ewaluacyjną programu System Center Configuration Manager.  
 
@@ -369,10 +369,10 @@ Przed rozpoczęciem instalacji należy uruchomić [narzędzie sprawdzania wymaga
     |Krok 15. **Ustawienia komunikacji klienta**|Upewnij się, że pole **Wszystkie role systemu lokacji akceptują tylko komunikację HTTPS od klientów** nie zostało zaznaczone|  
     |Krok 16. **Role systemu lokacji**|Wprowadź nazwę FQDN i sprawdź, czy pole **Wszystkie role systemu lokacji akceptują tylko komunikację HTTPS od klientów** pozostało niezaznaczone.|  
 
-###  <a name="BKMK_EnablePubLab"></a>Włączanie publikowania dla lokacji programu Configuration Manager  
+##  <a name="BKMK_EnablePubLab"></a>Włączanie publikowania dla lokacji programu Configuration Manager  
 Każda lokacja programu Configuration Manager publikuje swoje informacje do kontenera zarządzania systemem w swojej partycji domeny w schemacie usługi Active Directory. Do obsługi zwiększonego ruchu, należy otworzyć dwukierunkowe kanały do komunikacji między usługi Active Directory i program Configuration Manager. Dodatkowo włączysz też funkcję odnajdywania lasu, aby określić pewne składniki usługi Active Directory i infrastruktury sieci.  
 
-##### <a name="to-configure-active-directory-forests-for-publishing"></a>Aby skonfigurować lasy usługi Active Directory do publikowania:  
+#### <a name="to-configure-active-directory-forests-for-publishing"></a>Aby skonfigurować lasy usługi Active Directory do publikowania:  
 
 1.  W lewym dolnym rogu konsoli programu Configuration Manager, kliknij przycisk **administracji**.  
 
@@ -388,7 +388,7 @@ Każda lokacja programu Configuration Manager publikuje swoje informacje do kont
 
 7.  W obszarze roboczym **Administracja** rozwiń węzeł **Konfiguracja hierarchii**, a następnie kliknij pozycję **Lasy usługi Active Directory**.  
 
-##### <a name="to-enable-a-configuration-manager-site-to-publish-site-information-to-your-active-directory-forest"></a>Aby umożliwić lokacji programu Configuration Manager publikowanie informacji o lokacji do lasu usługi Active Directory:  
+#### <a name="to-enable-a-configuration-manager-site-to-publish-site-information-to-your-active-directory-forest"></a>Aby umożliwić lokacji programu Configuration Manager publikowanie informacji o lokacji do lasu usługi Active Directory:  
 
 1.  W konsoli programu Configuration Manager kliknij przycisk **Administracja**.  
 

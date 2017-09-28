@@ -14,11 +14,11 @@ caps.latest.revision: "40"
 author: Mtillman
 ms.author: mtillman
 manager: angrobe
-ms.openlocfilehash: c93ba688ba33c309e4d12e924061718e5a33759e
-ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
+ms.openlocfilehash: 2ef4964a74e000feac029b158f6fe0c52e3de370
+ms.sourcegitcommit: 51654bf8b5615eb99084d0a20d18ca3fccfa83a1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>What's new in hybrydowego zarządzania urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Microsoft Intune
 
@@ -36,9 +36,30 @@ Ten artykuł zawiera szczegółowe informacje na urządzeniu przenośnym, nowe f
 |**Nowość w programie Configuration Manager Technical Preview**| Wszystkie funkcje wymienione w tej kategorii są prawidłowe tylko w określonej wersji Technical Preview. Aby wypróbować te funkcje, należy zainstalować wersję Technical Preview określony w opisie funkcji. Aby uzyskać więcej informacji, zobacz [Technical Preview programu System Center Configuration Manager](../../core/get-started/technical-preview.md).|
 |**Nowe w programie Configuration Manager (wersji current branch)**| Wszystkie funkcje wymienione w tej kategorii pracować tylko z określonej wersji programu Configuration Manager (wersji current branch), np. w wersji 1511 lub 1602. Jeśli używasz starszej wersji programu Configuration Manager dla danego wdrożenia hybrydowego, należy uaktualnić do wersji Configuration Manager (wersji current branch) określona w opisie funkcji. Aby uzyskać więcej informacji, zobacz [uaktualnienia do programu System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|
 
+## <a name="september-2017"></a>2017 września
+
+### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune     
+
+- **Powiadomienia wypychane dodatkowych dla użytkowników końcowych w aplikacji Portal firmy dla systemu Android Oreo**<!--1475932-->    
+    Dodatkowe powiadomienia do wskazania je, gdy aplikacja Portal firmy dla systemu Android Oreo wykonuje zadania w tle, takie jak pobieranie zasad z usługi Intune będzie widoczny dla użytkowników. Powoduje to zwiększenie przezroczystości dla użytkowników końcowych o do portalu firmy jest wykonywania zadań administracyjnych na urządzeniu. Jest to część ogólnych [optymalizacji interfejsu użytkownika portalu firmy](https://blogs.technet.microsoft.com/intunesupport/2017/08/21/android-8-0-o-behaviour-changes-and-microsoft-intune) aplikacji Portal firmy dla systemu Android Oreo. 
+
+- **Powiadamia użytkowników końcowych, jakie informacje o urządzeniu są widoczne dla systemu iOS**<!--739894-->    
+    Dodaliśmy **typ własności** do ekranu szczegóły urządzenia w aplikacji Portal firmy dla systemu iOS. Dzięki temu użytkownicy dowiedzieć się więcej o ochronie prywatności bezpośrednio z tej strony z dokumentów użytkownika usługi Intune. Również będą oni mogli zlokalizować te informacje na ekranie informacje. 
+
+- **Łatwiejsze do zrozumienia właściwej dla aplikacji Portal firmy dla systemu Android**<!---1396349-->       
+    Proces rejestracji w aplikacji Portal firmy dla systemu Android został uproszczony na nowy tekst w celu ułatwienia dla użytkowników końcowych zarejestrowania. Jeśli masz dokumentacji rejestrowania niestandardowego, należy zaktualizować je, aby uwzględnić nowe ekrany. Przykładowe obrazy można znaleźć w naszych [aktualizacje interfejsu użytkownika dla aplikacji użytkownika końcowego Intune](https://docs.microsoft.com/intune/whats-new-app-ui#week-of-september-11-2017) strony.
+
+- **Zezwalaj na zasady w aplikacji Portal firmy dla systemu Windows 10 dodane do systemu Windows Information Protection**<!-- 677129 -->    
+    Aplikacja Portal firmy dla systemu Windows 10 została zaktualizowana do obsługi systemu Windows informacji ochrony (pracy w toku). Aplikację można dodać do pracy w toku Zezwalaj na zasady. Dzięki tej zmianie aplikacji nie ma już ma zostać dodany do **wykluczone** listy. 
+
+- **Powiadomienie o pomocy technicznej dodane dla systemu iOS 8.0 zakończeniu**    
+    Zostanie wyświetlone powiadomienie została dodana do zakończenia wsparcia dla systemu iOS 8.0. Aby uzyskać więcej informacji, zobacz [powiadomienia](#notices).
+
 ## <a name="august-2017"></a>2017 sierpnia
 
-### <a name="new-signed-in-experience-for-android-company-portal-users-and-app-protection-policy-users----621669---"></a>Nowe zalogowany środowisko dla użytkowników portalu firmy Android i użytkownikom zasady ochrony aplikacji<!-- 621669 -->
+### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune     
+
+- **Nowe zalogowany środowisko dla użytkowników portalu firmy Android i zasady ochrony aplikacji użytkownicy**<!-- 621669 -->    
 Użytkownicy końcowi mogą teraz przeglądać aplikacje, zarządzać urządzeniami i wyświetlić kontakt z działem IT informacje przy użyciu aplikacji Portal firmy dla systemu Android bez rejestrowania swoich urządzeń z systemem Android. Ponadto jeśli użytkownik końcowy używa aplikacji są chronione przez zasady aplikacji usługi Intune, a uruchamia Portal firmy dla systemu Android, użytkownik końcowy nie jest już wyświetlony monit o zarejestrowanie urządzenia.
 
 
@@ -311,6 +332,10 @@ Następujące funkcje dodatkowe hybrydowego znajdują się również w wersji 17
 
 
 ## <a name="notices"></a>Powiadomienia
+
+### <a name="end-of-support-for-ios-80"></a>Wsparcie dla systemu iOS 8.0 
+<!---1164477--->
+Zarządzane aplikacje i aplikacji Portal firmy dla systemu iOS będą musieli iOS 9.0 lub nowszej, dostęp do zasobów firmy. Urządzenia, które nie są aktualizowane września nie będą już mogli uzyskać dostęp do portalu firmy lub aplikacji. 
 
 ### <a name="platform-support-reminder-windows-phone-81-mainstream-support-ended-july-11-2017"></a>Przypomnienie pomocy technicznej platformy: Windows Phone 8.1 dostępne podstawowe wsparcie zakończył 11 lipca 2017 r.
 <!-- 1327781 -->

@@ -14,11 +14,11 @@ caps.latest.revision: "21"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 1166b739e1e8d667172d97883f484fdbc3a142c1
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: e65c22240555563cdb011849562069baf5d5887f
+ms.sourcegitcommit: 4c3906cf9614420cb8527da9e48978eb0b8f0e7a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="upgrade-to-system-center-configuration-manager"></a>Uaktualnianie do programu System Center Configuration Manager
 
@@ -47,7 +47,7 @@ Na 15 grudnia 2016 wydano nośnika linii bazowej dla wersji 1606, aby dodać obs
 -   Instalacja wersji release candidate programu System Center Configuration Manager  
 -   System Center 2012 Configuration Manager z dodatkiem Service Pack 1  
 -   System Center 2012 Configuration Manager z dodatkiem Service Pack 2  
--   System Center 2012 R2 Configuration Manager  
+-   System Center 2012 R2 Configuration Manager bez dodatku service pack
 -   System Center 2012 R2 Configuration Manager z dodatkiem Service Pack 1  
 
 Jeśli używasz wersji linii bazowej 1606 nośnika pobrane przed 15 grudnia 2016 do pełni licencjonowanej wersji programu System Center Configuration Manager wersji 1606 można uaktualnić tylko następujące:
@@ -330,7 +330,7 @@ Użyj poniższych procedur do uaktualnienia lokacji programu Configuration Manag
     -   Uprawnienia administratora lokalnego na komputerze serwera lokacji.  
     -   Uprawnienia administratora lokalnego na zdalnym serwerze bazy danych lokacji (jeśli jest zdalna).    </br></br>
 
-2.  Na komputerze serwera lokacji Otwórz Eksploratora Windows i przejdź do  **&lt;Nośnik_źródłowy_programu_configmgr\>\SMSSETUP\BIN\X64**.  
+2.  Na komputerze serwera lokacji Otwórz Eksploratora Windows i przejdź do ** &lt;Nośnik_źródłowy_programu_configmgr\>\SMSSETUP\BIN\X64**.  
 
 3.  Kliknij dwukrotnie plik **Setup.exe**. Otworzy się Kreator instalacji programu Configuration Manager.  
 

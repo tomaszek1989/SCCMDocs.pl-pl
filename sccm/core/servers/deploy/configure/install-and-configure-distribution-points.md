@@ -2,7 +2,7 @@
 title: "Zarządzaj punktami dystrybucji | Dokumentacja firmy Microsoft"
 description: "Obsługujące zawartość (pliki i oprogramowanie), wdrażanego na urządzeniach i użytkowników przy użyciu punktów dystrybucji. Poniżej przedstawiono sposób instalowania i konfigurowania ich."
 ms.custom: na
-ms.date: 2/14/2017
+ms.date: 09/18/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,16 +14,16 @@ caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 4c94e4de5bbfe621492e8682c9424a48eb38196d
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 0213b48c24461cbab5a9acab720064e0e26fa568
+ms.sourcegitcommit: 474e6ddbaaeac4ba17d8172321e08deeb0140d0a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="install-and-configure-distribution-points-for-system-center-configuration-manager"></a>Instalowanie i konfigurowanie punktów dystrybucji programu System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
- 
+
 Należy zainstalować System Center Configuration Manager punkty dystrybucji obsługujące zawartość (pliki i oprogramowanie), który można wdrożyć na urządzeniach i użytkowników. Można również utworzyć dystrybucji grupy punktów, które upraszcza sposób zarządzania punktami dystrybucji i sposób dystrybucji zawartości do punktów dystrybucji.  
 
  Gdy użytkownik *instalowania nowego punktu dystrybucji* (przy użyciu Kreatora instalacji) lub *zarządzania właściwościami istniejącego punktu dystrybucji* (edytując właściwości punktu dystrybucji), można skonfigurować większość ustawień punktu dystrybucji. Kilka ustawienia są dostępne tylko wtedy, gdy użytkownik w przypadku instalowania lub edytowania, ale nie obu:  
@@ -45,7 +45,8 @@ Należy zainstalować System Center Configuration Manager punkty dystrybucji obs
     -   **Konfiguruj harmonogramy transferów danych do punktów dystrybucji**  
 
 ##  <a name="bkmk_install"></a>Instalowanie punktu dystrybucji  
- Należy wyznaczyć serwer systemu lokacji jako punktu dystrybucji przed zawartości mogą zostać udostępnione na komputerach klienckich. Możesz dodać roli lokacji punktu dystrybucji do nowego serwera systemu lokacji lub dodać rolę lokacji do istniejącego serwera systemu lokacji.  
+Należy wyznaczyć serwer systemu lokacji jako punktu dystrybucji przed zawartości mogą zostać udostępnione na komputerach klienckich. Należy również przypisać do co najmniej jednego punktu dystrybucji [grupy granic](/sccm/core/servers/deploy/configure/boundary-groups#distribution-points) przed lokalnymi komputery klienckie mogą używać tego punktu dystrybucji jako lokalizacji źródła zawartości. Możesz dodać roli lokacji punktu dystrybucji do nowego serwera systemu lokacji lub dodać rolę lokacji do istniejącego serwera systemu lokacji.
+
 
  Podczas instalowania nowego punktu dystrybucji, należy użyć Kreatora instalacji, który przeprowadzi Cię przez kolejne dostępne ustawienia. Przed rozpoczęciem należy rozważyć następujące kwestie:  
 
@@ -339,7 +340,7 @@ Aby wyświetlić wyniki procesu weryfikacji zawartości w **monitorowanie** obsz
 >  Mimo że można określić harmonogramu weryfikacji zawartości przy użyciu czasu lokalnego na komputerze, konsola programu Configuration Manager zawiera harmonogram w formacie UTC.  
 
 ### <a name="boundary-group"></a>Grupy granic  
-Zarządzanie grupami granic, do których jest przypisany ten punkt dystrybucji. Grupy granic można skojarzyć z punktem dystrybucji. Podczas wdrażania zawartości klienci muszą być w grupie granic skojarzonej z punktem dystrybucji można używać go jako źródłowej lokalizacji zawartości.
+Zarządzanie grupami granic, do których jest przypisany ten punkt dystrybucji. Planowanie dodać punkt dystrybucji do co najmniej jednej grupy granic. Podczas wdrażania zawartości klienci muszą być w grupie granic skojarzonej z punktem dystrybucji na użycie tego punktu dystrybucji jako lokalizacji źródłowej zawartości.
 
 Dodatkowo:
 

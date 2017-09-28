@@ -14,11 +14,11 @@ caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 82ec84923cc60e7a91d4afa4e9f59564fd416055
-ms.sourcegitcommit: 2a1328da3facb20b0c78f3b12adbb5fdbe0dcc11
+ms.openlocfilehash: 06565bc52e2c409b905bbc448262cf9da25eabb0
+ms.sourcegitcommit: 4c3906cf9614420cb8527da9e48978eb0b8f0e7a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="install-and-upgrade-with-the-version-1606-baseline-media-for-system-center-configuration-manager"></a>Instalowanie i uaktualnianie z wersji 1606 nośnika linii bazowej programu System Center Configuration Manager
 
@@ -126,7 +126,7 @@ Podczas uaktualniania programu System Center 2012 Configuration Manager, użyj w
 ### <a name="in-place-upgrade-paths-for-the-1606-baseline-media"></a>Ścieżki uaktualniania dla nośnika linii bazowej 1606 w miejscu
 Nośnika linii bazowej 1606 służy do uaktualnienia do wersji licencjonowanej programu System Center Configuration Manager następujące:
 - System Center 2012 R2 Configuration Manager z dodatkiem Service Pack 1
-- System Center 2012 R2 Configuration Manager (bez dodatku service pack)
+- System Center 2012 R2 Configuration Manager bez dodatku service pack (wymaga użycia nośnika linii bazowej dla wersji 1606, która została ponownie wydana 15 grudnia 2016).
 - System Center 2012 Configuration Manager z dodatkiem Service Pack 2
 - System Center 2012 Configuration Manager z dodatkiem Service Pack 1
 

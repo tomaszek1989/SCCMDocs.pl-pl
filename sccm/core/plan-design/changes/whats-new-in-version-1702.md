@@ -12,11 +12,11 @@ ms.assetid: 409e26e1-7716-4f1d-a0ee-34feabf20792
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: a2954b3c6f9a09b7246347e780c4cfc49ba39ca1
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: ff7f6c3b9f183502c95a2c551b1131c5abf1dd90
+ms.sourcegitcommit: 474e6ddbaaeac4ba17d8172321e08deeb0140d0a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="what39s-new-in-version-1702-of-system-center-configuration-manager"></a>Jaki &#39; s nowego w wersji 1702 programu System Center Configuration Manager
 
@@ -256,7 +256,13 @@ Ta zmiana wpływa na kreatorów tworzenia następujące elementy:
 
 Dzięki tej zmianie hybrydowych wdrożeń można zapewnić obsługę szybciej nowe wersje systemów Android i iOS bez konieczności nową wersję programu Configuration Manager lub rozszerzenia. Gdy nowa wersja jest obsługiwana w autonomicznej usługi Intune, użytkownicy będą mogli uaktualnić swoje urządzenia przenośne do tej wersji.
 
-Aby zapobiec problemom podczas uaktualniania z wcześniejszych wersji programu Configuration Manager, wersje systemów operacyjnych urządzeń przenośnych są nadal dostępne na stronach właściwości dla tych elementów. Jeśli nadal potrzebujesz pod kątem określonej wersji, można utworzyć nowego elementu, a następnie określ wersję docelową na stronie właściwości nowo utworzonego elementu.
+Aby zapobiec problemom podczas uaktualniania z wcześniejszych wersji programu Configuration Manager, wersje systemów operacyjnych urządzeń przenośnych są nadal dostępne na stronach właściwości dla tych elementów. Jeśli nadal potrzebujesz pod kątem określonej wersji, można utworzyć nowego elementu, a następnie określ wersję docelową na stronie właściwości nowo utworzonego elementu. 
+
+> [!NOTE]
+> Ostatnia wersja przenośnego systemu operacyjnego, dostępnych na stronach właściwości ma zastosowanie do tej wersji i wszystkie kolejne wersje. Strony właściwości podanie przeznaczonych dla systemów operacyjnych starszych niż 7 dla systemu Android i iOS 10 następujące opcje: 
+> - **Android 7 lub nowszej**
+> - **Wszystkie z systemem iOS 10 i wyższe urządzenia iPhone i iPod touch**
+> - **Wszystkie z systemem iOS 10 i wyższe urządzenia iPad**
 
 ### <a name="android-for-work-support"></a>Android obsługę pracy
 Począwszy od 1702 hybrydowego zarządzania urządzeniami przenośnymi w usłudze Microsoft Intune obsługuje teraz system Android rejestracji urządzeń w pracy i zarządzania. Android zarządzanych orientacji urządzenia roboczych:

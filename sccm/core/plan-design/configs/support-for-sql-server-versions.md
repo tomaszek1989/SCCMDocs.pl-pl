@@ -2,7 +2,7 @@
 title: "Obsługiwane wersje programu SQL Server | Dokumentacja firmy Microsoft"
 description: Pobierz wymagania konfiguracji i wersji programu SQL Server do hostowania bazy danych lokacji programu System Center Configuration Manager.
 ms.custom: na
-ms.date: 05/10/2017
+ms.date: 09/21/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "21"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: b35e45b9514297e2f9ce405a3244462ed735f39f
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 0e6613873c09b5e5df4f25ce0dbc16c289ccbd41
+ms.sourcegitcommit: b13fa2885acaa21f16c48df789f1edacb5a4f7cc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/21/2017
 ---
 # <a name="supported-sql-server-versions-for-system-center-configuration-manager"></a>Obsługiwane wersje programu SQL Server dla programu System Center Configuration Manager
 
@@ -212,7 +212,7 @@ Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersj
  **Usługa SQL Server:**  
  Można skonfigurować usługę SQL Server, aby była uruchamiana przy użyciu:  
 
--   **Użytkownika lokalnego domeny** konta:  
+-   A *niskich prawach użytkownika domeny* konta:  
 
     -   Najlepszym rozwiązaniem jest i może wymagać ręcznej rejestracji główna nazwa usługi (SPN) dla konta.  
 
