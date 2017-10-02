@@ -140,7 +140,7 @@ Oprócz pobierania nowych informacji z katalogu analizy zasobów punkt synchroni
 
 2.  Na **Home** karcie **analizy zasobów** grupy, wybierz **importowania licencji na oprogramowanie**.   
 
-4.  Na stronie **Importowanie** określ, czy importowany jest plik licencjonowania zbiorowego firmy Microsoft (MVLS) (xml lub csv) czy plik ogólnego zestawienia licencji (csv). Więcej informacji na temat tworzenia pliku ogólnego zestawienia licencji można znaleźć w sekcji [Create a general license statement information file for import](#BKMK_CreateGeneralLicenseStatement) w dalszej części tego tematu.  
+4.  Na stronie **Importowanie** określ, czy importowany jest plik licencjonowania zbiorowego firmy Microsoft (MVLS) (xml lub csv) czy plik ogólnego zestawienia licencji (csv). Więcej informacji na temat tworzenia pliku ogólnego zestawienia licencji można znaleźć w sekcji [Tworzenie pliku ogólnego zestawienia licencji informacje do zaimportowania](#BKMK_CreateGeneralLicenseStatement) w dalszej części tego tematu.  
 
     > [!WARNING]  
     >  Aby pobrać plik licencjonowania zbiorowego firmy Microsoft w formacie csv, który można zaimportować do katalogu analizy zasobów, odwiedź witrynę [Microsoft Volume Licensing Service Center](http://go.microsoft.com/fwlink/p/?LinkId=226547). Aby uzyskać dostęp do tych informacji, musisz mieć zarejestrowane konto w tej witrynie sieci Web. Skontaktuj się z przedstawicielem klienta firmy Microsoft, aby uzyskać informacje na temat sposobu pobierania pliku licencjonowania zbiorowego firmy Microsoft w formacie xml.  
@@ -152,7 +152,7 @@ Oprócz pobierania nowych informacji z katalogu analizy zasobów punkt synchroni
 
 6. Ukończ pracę kreatora.  
 
-###  <a name="BKMK_CreateGeneralLicenseStatement"></a> Create a general license statement information file for import  
+###  <a name="BKMK_CreateGeneralLicenseStatement"></a>Tworzenie pliku ogólnego zestawienia licencji informacje do zaimportowania  
  Ogólne zestawienie licencji można również zaimportować do katalogu analizy zasobów przy użyciu ręcznie utworzonego pliku importowania licencji w formacje pliku rozdzielanego przecinkami (csv).  
 
 > [!NOTE]  
