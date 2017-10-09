@@ -222,7 +222,7 @@ Ten temat zawiera procedurę udostępniania funkcji Windows To Go w programie Sy
     > [!NOTE]  
     >  Konto komputera serwera lokacji musi mieć uprawnienia dostępu **Odczyt** w folderze źródłowym.  
 
-2.  Skopiuj utworzony w sekcji [Create prestaged media](#BKMK_CreatePrestagedMedia) plik wstępnie przygotowanego nośnika do folderu źródłowego pakietu.  
+2.  Skopiuj utworzony w sekcji [Tworzenie wstępnie przygotowanego nośnika](#BKMK_CreatePrestagedMedia) plik wstępnie przygotowanego nośnika do folderu źródłowego pakietu.  
 
 3.  Skopiuj narzędzie Windows To Go Creator (WTGCreator.exe) do folderu źródłowego pakietu. Narzędzie do tworzenia jest dostępne na każdym serwerze lokacji głównej w następującej lokalizacji: <*Folder_instalacji_programu_configuration_manager*> \OSD\Tools\WTG\Creator.  
 
@@ -281,7 +281,7 @@ Ten temat zawiera procedurę udostępniania funkcji Windows To Go w programie Sy
  Windows To Go włącza funkcję BitLocker na zewnętrznym dysku rozruchowym bez użycia modułu TPM. Dlatego do skonfigurowania funkcji BitLocker na dysku Windows To Go należy użyć osobnego narzędzia. Aby włączyć funkcję BitLocker, należy dodać do sekwencji zadań akcję po kroku **Zainstaluj system Windows i program ConfigMgr** .  
 
 > [!NOTE]  
->  Funkcja BitLocker dla funkcji Windows To Go wymaga hasła. W kroku [Create prestaged media](#BKMK_CreatePrestagedMedia) należy określić hasło w ramach polecenia przeduruchomieniowego przy użyciu zmiennej OSDBitLockerPIN.  
+>  Funkcja BitLocker dla funkcji Windows To Go wymaga hasła. W kroku [Tworzenie wstępnie przygotowanego nośnika](#BKMK_CreatePrestagedMedia) należy określić hasło w ramach polecenia przeduruchomieniowego przy użyciu zmiennej OSDBitLockerPIN.  
 
  Aby zaktualizować sekwencję zadań systemu Windows 8 w celu włączenia funkcji BitLocker dla funkcji Windows To Go, wykonaj czynności opisane w poniższej procedurze.  
 
@@ -410,7 +410,7 @@ Ten temat zawiera procedurę udostępniania funkcji Windows To Go w programie Sy
     2.  **Kolekcja**: Kliknij przycisk **Przeglądaj** aby wybrać kolekcję zawierającą wszystkie urządzenia, dla których użytkownik może aprowizować funkcję Windows To Go.  
 
         > [!IMPORTANT]  
-        >  Jeżeli wstępnie przygotowany nośnik utworzony w sekcji [Create prestaged media](#BKMK_CreatePrestagedMedia) używa zmiennej SMSTSPreferredAdvertID, sekwencję zadań można wdrożyć do kolekcji **Wszystkie systemy** i wybrać na stronie **Zawartość** ustawienie **Tylko Windows PE (ukryte)** . Sekwencja zadań jest ukryta i będzie dostępna tylko na nośniku.  
+        >  Jeżeli wstępnie przygotowany nośnik utworzony w sekcji [Tworzenie wstępnie przygotowanego nośnika](#BKMK_CreatePrestagedMedia) używa zmiennej SMSTSPreferredAdvertID, sekwencję zadań można wdrożyć do kolekcji **Wszystkie systemy** i wybrać na stronie **Zawartość** ustawienie **Tylko Windows PE (ukryte)** . Sekwencja zadań jest ukryta i będzie dostępna tylko na nośniku.  
 
     3.  **Użyj domyślnych grup punktów dystrybucji powiązanych z tą kolekcją**: Wybierz tę opcję, jeśli chcesz umieścić zawartość pakietu w domyślnej kolekcji grupie punktów dystrybucji. Jeśli wybrana kolekcja nie została skojarzona z grupą punktów dystrybucji, ta opcja będzie niedostępna.  
 
@@ -421,7 +421,7 @@ Ten temat zawiera procedurę udostępniania funkcji Windows To Go w programie Sy
     -   **Udostępnij dla następujących**: Określ, czy sekwencja zadań będzie dostępna do klientów programu Configuration Manager, nośników lub środowiska PXE.  
 
         > [!IMPORTANT]  
-        >  W przypadku zautomatyzowanych wdrożeń sekwencji zadań należy użyć ustawienia **Tylko nośniki i PXE (ukryte)** . Wybierz opcję **Zezwól na nienadzorowane wdrożenie systemu operacyjnego** i ustaw zmienną SMSTSPreferredAdvertID w ramach tego wstępnie przygotowanego nośnika, aby komputer automatycznie przeprowadził rozruch do wdrożenia Windows To Go bez interakcji ze strony użytkownika po wykryciu dysku Windows To Go. Więcej informacji o tych ustawieniach wstępnie przygotowanego nośnika znajduje się w sekcji [Create prestaged media](#BKMK_CreatePrestagedMedia) .  
+        >  W przypadku zautomatyzowanych wdrożeń sekwencji zadań należy użyć ustawienia **Tylko nośniki i PXE (ukryte)** . Wybierz opcję **Zezwól na nienadzorowane wdrożenie systemu operacyjnego** i ustaw zmienną SMSTSPreferredAdvertID w ramach tego wstępnie przygotowanego nośnika, aby komputer automatycznie przeprowadził rozruch do wdrożenia Windows To Go bez interakcji ze strony użytkownika po wykryciu dysku Windows To Go. Więcej informacji o tych ustawieniach wstępnie przygotowanego nośnika znajduje się w sekcji [Tworzenie wstępnie przygotowanego nośnika](#BKMK_CreatePrestagedMedia) .  
 
 7.  Na stronie **Planowanie** skonfiguruj poniższe ustawienia, a następnie kliknij przycisk **Dalej**.  
 
@@ -459,7 +459,7 @@ Ten temat zawiera procedurę udostępniania funkcji Windows To Go w programie Sy
  Po wdrożeniu pakietu Windows To Go i sekwencji zadań systemu Windows 8 program Windows To Go Creator zostanie udostępniony użytkownikowi. Po wdrożeniu programu Windows To Go Creator na urządzeniach użytkownik może przejść do katalogu oprogramowania lub Centrum oprogramowania i uruchomić ten program. Po pobraniu pakietu twórcy na pasku zadań miga ikona. Po kliknięciu tej ikony zostanie wyświetlone okno dialogowe, w którym użytkownik może wybrać dysk Windows To Go do udostępnienia (jeżeli nie wybrano opcji wiersza polecenia /drive). Jeżeli dysk nie spełnia wymagań funkcji Windows To Go lub nie ma wystarczającej ilości wolnego miejsca do zainstalowania obrazu, program do tworzenia wyświetli komunikat o błędzie. Użytkownik może sprawdzić na stronie potwierdzenia dysk i obraz do zastosowania. W trakcie konfigurowania i wstępnego przygotowywania zawartości na dysku Windows To Go twórca wyświetla okno dialogowe postępu. Po wstępnym przygotowaniu zawartości twórca wyświetla monit o ponowne uruchomienie komputera w celu przeprowadzenia rozruchu w ramach dysku Windows To Go.  
 
 > [!NOTE]  
->  Jeżeli w sekcji [Create a Windows To Go Creator package](#BKMK_CreatePackage) nie włączono w wierszu polecenia przekierowania rozruchu programu do tworzenia, istnieje możliwość, że podczas każdego ponownego uruchomienia systemu użytkownik będzie musiał ręcznie przeprowadzić rozruch do każdego dysku Windows To Go  
+>  Jeżeli w sekcji [Tworzenie pakietu Windows To Go Creator](#BKMK_CreatePackage) nie włączono w wierszu polecenia przekierowania rozruchu programu do tworzenia, istnieje możliwość, że podczas każdego ponownego uruchomienia systemu użytkownik będzie musiał ręcznie przeprowadzić rozruch do każdego dysku Windows To Go  
 
 ###  <a name="BKMK_ConfigureStageDrive"></a> Program Configuration Manager konfiguruje i przygotowuje dysk Windows To Go  
  Po ponownym uruchomieniu komputera do dysku Windows To Go dysk ten wykona rozruch do środowiska Windows PE i połączy się z punktem zarządzania, aby pobrać zasady wymagane do wdrożenia systemu operacyjnego. Configuration Manager konfiguruje i przygotowuje dysk. Po programu Configuration Manager przygotuje dysk, użytkownik może ponownie uruchomić komputer w celu zakończenia procesu udostępniania (na przykład w ramach dołączania do domeny lub instalowania aplikacji). Ten proces odbywa się tak samo w przypadku wszystkich wstępnie przygotowanych nośników.  

@@ -103,6 +103,7 @@
 ###  [Konfigurowanie laboratorium](get-started/set-up-your-lab.md)
 
 ##   [Technical Preview](get-started/technical-preview.md)
+###  [Możliwości w wersji 1709](get-started/capabilities-in-technical-preview-1709.md)
 ###  [Możliwości w wersji 1708](get-started/capabilities-in-technical-preview-1708.md)
 ###  [Możliwości w wersji 1707](get-started/capabilities-in-technical-preview-1707.md)
 ###  [Capabilities in 1706 (Możliwości w wersji 1706)](get-started/capabilities-in-technical-preview-1706.md)
@@ -115,12 +116,12 @@
 ###  [Możliwości w wersji 1611](get-started/capabilities-in-technical-preview-1611.md)
 ###  [Możliwości w wersji 1610](get-started/capabilities-in-technical-preview-1610.md)
 ###  [Możliwości w wersji 1609](get-started/capabilities-in-technical-preview-1609.md)
-###  [Możliwości w wersji 1608](get-started/capabilities-in-technical-preview-1608.md)
-###  [Możliwości w wersji 1607](get-started/capabilities-in-technical-preview-1607.md)
-###  [Możliwości w wersji 1606](get-started/capabilities-in-technical-preview-1606.md)
-###  [Możliwości w wersji 1605](get-started/capabilities-in-technical-preview-1605.md)
 
 <!-- No longer in support, and all features are in the Current Branch
+###  [Capabilities in 1608](get-started/capabilities-in-technical-preview-1608.md)
+###  [Capabilities in 1607](get-started/capabilities-in-technical-preview-1607.md)
+###  [Capabilities in 1606](get-started/capabilities-in-technical-preview-1606.md)
+###  [Capabilities in 1605](get-started/capabilities-in-technical-preview-1605.md)
 ###  [Capabilities in 1604](get-started/capabilities-in-technical-preview-1604.md)
 ###  [Capabilities in 1603](get-started/capabilities-in-technical-preview-1603.md)
 ###  [Capabilities in 1602](get-started/capabilities-in-technical-preview-1602.md)
