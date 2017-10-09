@@ -1,18 +1,18 @@
 ---
 title: "Planowanie brama zarządzania chmurze | Dokumentacja firmy Microsoft"
 description: 
-ms.date: 06/07/2017
+ms.date: 10/06/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: d3e658714c30a1eba64f94e248d5e11095ca1dcb
-ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
+ms.openlocfilehash: c3d036eb91d16ed95c26bbf2bcce1e37851f90a2
+ms.sourcegitcommit: 8ac9c2c9ba1fdcbb7cc8d5be898586865fcf67c0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 10/07/2017
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Planowanie brama zarządzania chmury w programie Configuration Manager
 
@@ -46,9 +46,9 @@ Certyfikaty klienta i certyfikatów Secure Socket Layer (SSL) są wymagane do uw
 
     -   Wdrażanie klientów
     -   Automatycznego przypisywania lokacji
-    -   Zasady użytkownika
     -   Katalog aplikacji (w tym żądania zatwierdzenia oprogramowania)
     -   Wdrożenie pełnego systemu operacyjnego (OSD)
+    -   Sekwencje zadań (wszystkie wersje)
     -   Konsola programu Configuration Manager
     -   Zdalne narzędzia
     -   Witryny sieci Web raportowania
@@ -61,7 +61,7 @@ Certyfikaty klienta i certyfikatów Secure Socket Layer (SSL) są wymagane do uw
 ## <a name="cost-of-cloud-management-gateway"></a>Koszt brama zarządzania w chmurze
 
 >[!IMPORTANT]
->Informacje o kosztach poniżej jest tylko do celów szacowania. Środowiska mogą mieć inne zmienne, które mają wpływ na całkowity koszt używania bramy zarządzania w chmurze.
+>Następujące informacje o koszcie jest tylko do celów szacowania. Środowiska mogą mieć inne zmienne, które mają wpływ na całkowity koszt używania bramy zarządzania w chmurze.
 
 Brama zarządzania chmury wykorzystuje następujące funkcje Microsoft Azure wiąże się z opłat do konta subskrypcji platformy Azure:
 
@@ -78,7 +78,7 @@ Brama zarządzania chmury wykorzystuje następujące funkcje Microsoft Azure wi�
 
 -   Transfer danych wychodzących
 
-    -   Jest obciążany dla dane przepływające z usługi. Zobacz [Azure przepustowości szczegóły cennika](https://azure.microsoft.com/en-us/pricing/details/bandwidth/) w celu określenia potencjalne koszty.
+    -   Jest obciążany dla dane przepływające z usługi. Zobacz [Azure przepustowości szczegóły cennika](https://azure.microsoft.com/pricing/details/bandwidth/) w celu określenia potencjalne koszty.
 
     -   Podczas szacowania tylko do celów, oczekiwano około 100 MB na klienta miesięcznie dla klientów internetowych podczas odświeżania zasad co godzinę.
 
@@ -93,7 +93,7 @@ Brama zarządzania chmury wykorzystuje następujące funkcje Microsoft Azure wi�
 
     - Zobacz kosztów [chmurowych punktów dystrybucji](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point#cost-of-using-cloud-based-distribution) więcej szczegółów.
 
-## <a name="frequently-asked-questions-about-the-cloud-management-gateway-cmg"></a>Często zadawane pytania dotyczące chmury zarządzania bramy (CMG)
+## <a name="frequently-asked-questions-about-the-cloud-management-gateway-cmg"></a>Często zadawane pytania dotyczące chmury brama zarządzania (CMG)
 
 ### <a name="why-use-the-cloud-management-gateway"></a>Dlaczego warto używać bramy zarządzania w chmurze?
 
@@ -105,25 +105,25 @@ Tej roli można użyć w celu uproszczenia zarządzania klientami internetowymi 
 
 ### <a name="how-does-the-cloud-management-gateway-work"></a>Jak działa brama zarządzania w chmurze?
 
-- Punkt połączenia z chmurą zarządzania bramy umożliwia połączenie spójne i wysokiej wydajności z Internetu z bramą zarządzania w chmurze.
+- Punkt połączenia z chmurą zarządzania bramy umożliwia spójne i wysokiej wydajności połączenie z Internetem z bramą zarządzania w chmurze.
 - Configuration Manager publikuje ustawienia CMG tym połączenia informacji i ustawień zabezpieczeń.
 - CMG uwierzytelnianie i przekazuje żądania klientów programu Configuration Manager do punktu połączenia bramy zarządzania chmury. Te żądania są przekazywane do ról w sieci firmowej, zgodnie z mapowania adresów URL.
 
 ### <a name="how-is-the-cloud-management-gateway-deployed"></a>Sposób wdrażania bramy zarządzania w chmurze?
 
-Składnik menedżera usługi chmury w punkcie połączenia usługi obsługuje wszystkie zadania wdrażania CMG. Ponadto monitoruje i raportuje usługi kondycji i rejestrowanie informacji z usługi Azure AD.
+Składnik menedżera usługi chmury w punkcie połączenia usługi obsługuje wszystkie zadania wdrażania CMG. Ponadto monitoruje i raportuje usługi kondycji i rejestrowanie informacji z usługi Azure AD. Upewnij się, że punkt połączenia usługi jest w [trybu online](/sccm/core/servers/deploy/configure/about-the-service-connection-point#bkmk_modes).
 
 #### <a name="certificate-requirements"></a>Wymagania certyfikatu
 
-Będą potrzebne do zabezpieczania CMG następujących certyfikatów:
+Należy zabezpieczyć CMG następujących certyfikatów:
 
 - **Certyfikat zarządzania** — może to być dowolny certyfikat, tym certyfikaty z podpisem własnym. Można użyć certyfikatu publicznego przekazane do usługi Azure AD lub [PFX z kluczem prywatnym](/sccm/mdm/deploy-use/create-pfx-certificate-profiles) zaimportowane do programu Configuration Manager do uwierzytelniania za pomocą usługi Azure AD.
-- **Certyfikat usługi sieci Web** -zalecane jest użycie certyfikatu publicznego urzędu certyfikacji do uzyskania natywnego zaufania przez klientów. CName musi zostać utworzone w publicznych registar DNS. Symbol wieloznaczny certyfikaty nie są obsługiwane.
+- **Certyfikat usługi sieci Web** -zalecane jest użycie certyfikatu publicznego urzędu certyfikacji do uzyskania natywnego zaufania przez klientów. Należy utworzyć CName w publicznych rejestratora DNS. Symbol wieloznaczny certyfikaty nie są obsługiwane.
 - **Certyfikaty głównego/SubCA przekazać do CMG** -CMG musi przeprowadzić pełne sprawdzanie poprawności łańcucha certyfikatów PKI klienta. Jeśli używasz urzędu certyfikacji przedsiębiorstwa do wystawiania certyfikatów PKI klienta i jego główny lub podrzędny urząd certyfikacji nie jest dostępna w Internecie, użytkownik musi przekaż go do CMG.
 
 #### <a name="deployment-process"></a>Proces wdrażania
 
-Dostępne są dwie fazy do wdrożenia:
+Istnieją dwie fazy do wdrożenia:
 
 - Wdrażanie usługi w chmurze
     - Przekazywanie z [schematu definicji usługi Azure](https://msdn.microsoft.com/library/azure/ee758711.aspx) pliku (csdef)
@@ -131,6 +131,9 @@ Dostępne są dwie fazy do wdrożenia:
 - Konfigurowanie składników CMG na serwerze usługi Azure AD i skonfigurować punkty końcowe, programów obsługi HTTP i usług w Internet Information Services (IIS)
 
 Jeśli zmienisz konfigurację CMG wdrożenia konfiguracji jest inicjowana na CMG.
+
+### <a name="where-do-i-set-up-the-cloud-management-gateway"></a>Gdzie Skonfiguruj bramę zarządzania chmury?
+Brama zarządzania chmury można utworzyć w lokacji najwyższego poziomu w hierarchii. Jeśli to znaczy centralnej lokacji administracyjnej, następnie możesz utworzyć punkty połączenia CMG w podrzędnych lokacjach głównych.
 
 ### <a name="how-does-the-cloud-management-gateway-help-ensure-security"></a>Jak brama zarządzania chmury ułatwiają zapewnienie bezpieczeństwa?
 
@@ -147,10 +150,10 @@ CMG pomaga zapewnić bezpieczeństwo w następujący sposób:
 
 - Zabezpiecza CMG punktu połączenia
     - Tworzy spójne połączenia HTTP/TCP wszystkie wirtualne wystąpienia CMG nawiązującego połączenie. Sprawdza i obsługuje połączenia co minutę.
-    - Wzajemnie autheticates uwierzytelniania SSL z CMG przy użyciu certyfikatów wewnętrznych.
+    - Wzajemnie uwierzytelnia uwierzytelniania SSL z CMG przy użyciu certyfikatów wewnętrznych.
     - Przekazuje HTTP na podstawie mapowania adresów URL.
     - Raport stanu połączenia w celu określenia stanu kondycji usługi administratora.
-    - Raporty z raportu ruchu punktu końcowego na punkt końcowy co 5 minut.
+    - Raporty z raportu ruchu punktu końcowego na punkt końcowy co pięć minut.
 
 - Zabezpiecz publikowania punktu końcowego klienta programu Configuration Manager po role, takie jak punkt zarządzania i oprogramowania aktualizacji punktu hosta punktów końcowych w usługach IIS do obsługi żądań klientów. Każdy punkt końcowy opublikowane CMG ma mapowanie adresu URL.
 Zewnętrzny adres URL jest ten, który klient używa do komunikacji z CMG.
@@ -159,12 +162,12 @@ Wewnętrzny adres URL jest punkt połączenia CMG używany do przekazywania żą
 #### <a name="example"></a>Przykład:
 Po włączeniu CMG ruchu w punkcie zarządzania programu Configuration Manager tworzy zbiór mapowania adresów URL wewnętrznie dla każdego serwera punktu zarządzania, takich jak ccm_system, ccm_incoming i sms_mp.
 Zewnętrzny adres URL punktu końcowego ccm_system punkt zarządzania może wyglądać **https://<CMG service name>/CCM_Proxy_MutualAuth/<MP Role ID>/CCM_System**.
-Adres URL jest unikatowy dla każdego punktu zarządzania. Klient programu Configuration Manager, a następnie naraża CMG włączone nazwa pakietu administracyjnego, takich jak ** <CMG service name>/CCM_Proxy_MutualAuth/<MP Role ID> ** do listy punktów zarządzania internetowego.
+Adres URL jest unikatowy dla każdego punktu zarządzania. Klient programu Configuration Manager, a następnie naraża CMG włączone nazwa pakietu administracyjnego, takich jak  **<CMG service name>/CCM_Proxy_MutualAuth/<MP Role ID>**  do listy punktów zarządzania internetowego.
 Wszystkie opublikowane zewnętrzne adresy URL są przekazywane do CMG automatycznie, a następnie CMG jest w stanie wykonać filtrowanie adresów URL. Wszystkie replikacja mapowanie adresu URL do CMG punktu połączenia, dzięki czemu może przekazywać do serwerów wewnętrznych, zgodnie z zewnętrznego adresu URL żądania klienta.
 
 ### <a name="what-ports-are-used-by-the-cloud-management-gateway"></a>Jakie porty są używane przez bramę zarządzania w chmurze?
 
-- Nie portów przychodzących wymagana w sieci lokalnej. Wdrożenie CMG utworzy licznych na CMG automatycznie.
+- Nie portów przychodzących są niezbędne do sieci lokalnej. Wdrożenie CMG utworzy licznych na CMG automatycznie.
 - Oprócz 443 Niektóre porty wyjściowe są wymagane przez punkt połączenia CMG.
 
 |||||
@@ -177,9 +180,9 @@ Wszystkie opublikowane zewnętrzne adresy URL są przekazywane do CMG automatycz
 
 ### <a name="how-can-you-improve-performance-of-the-cloud-management-gateway"></a>Jak można poprawić wydajność bramy zarządzania chmury
 
-- Jeśli to możliwe, skonfiguruj CMG, punkt połączenia CMG a serwerem lokacji programu Configuration Manager w samym regionu w celu zmniejszenia opóźnień w sieci.
+- Jeśli to możliwe, skonfiguruj CMG, CMG punktu połączenia, a serwerem lokacji programu Configuration Manager w tym samym regionie sieci, aby zmniejszyć opóźnienia.
 - Połączenie między klientem programu Configuration Manager i CMG nie jest obecnie obsługujący regionu.
-- Aby uzyskać wysoką dostępność, zaleca się co najmniej 2 wystąpienia wirtualne CMG i dwoma punktami połączenia CMG dla każdej witryny
+- Aby uzyskać wysoką dostępność, zaleca się co najmniej dwa wystąpienia wirtualne CMG i dwoma punktami połączenia CMG dla każdej witryny
 - Możesz skalować CMG w celu obsługi większej liczby klientów, dodając więcej wystąpień maszyny Wirtualnej. Są one równoważone przez moduł równoważenia obciążenia usługi Azure AD.
 - Utwórz więcej punktów połączenia CMG rozłożenie obciążenia między nimi. CMG będzie "okrężnego" ruchu do łączenia CMG punktów połączenia.
 - Numer pomocy technicznej klienta dla każdego wystąpienia CMG maszyny Wirtualnej jest k 6 w wersji 1702. Gdy kanał CMG jest mocno obciążony, żądanie będzie nadal obsługiwane, ale może trwać dłużej niż normalnie.

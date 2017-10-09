@@ -14,11 +14,11 @@ caps.latest.revision: "13"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: c8034497299a9b5646674031a40fdee49d55ff7c
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 1519ec79eb6b1da6b9666b2ce12a46553116b364
+ms.sourcegitcommit: c145e515843a0f37c2e5ca5dbd22072a219d06b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/03/2017
 ---
 # <a name="plan-for-and-configure-application-management-in-system-center-configuration-manager"></a>Planowanie konfiguracji zarządzania aplikacjami w programie System Center Configuration Manager i przeprowadzanie konfiguracji
 
@@ -181,9 +181,9 @@ Skorzystaj z informacji w tym artykule ułatwiają zaimplementowanie zależnośc
 
 Znakowanie niestandardowych w programie Software Center jest stosowane zgodnie z następującymi zasadami:
 
-1. Jeśli nie zainstalowano roli serwera lokacji punktu witryny sieci Web katalogu aplikacji, a następnie Centrum oprogramowania będzie wyświetlana nazwa organizacji określona w **Agent komputera** ustawienia klienta **nazwa organizacji** wyświetlana w Centrum oprogramowania. Aby uzyskać instrukcje, zobacz [sposób konfigurowania ustawień klienta](https://docs.microsoft.com/en-us/sccm/core/clients/deploy/configure-client-settings).
-2. Po zainstalowaniu roli serwera lokacji punktu witryny sieci Web katalogu aplikacji, Centrum oprogramowania będzie wyświetlana nazwa organizacji i kolor określone we właściwościach roli serwera lokacji katalogu aplikacji witryny sieci Web punktu. Aby uzyskać więcej informacji, zobacz [opcji konfiguracji dla punktu witryny sieci Web katalogu aplikacji](https://docs.microsoft.com/en-us/sccm/core/servers/deploy/configure/configuration-options-for-site-system-roles#BKMK_ApplicationCatalog_Website).
-3. Jeśli subskrypcję Microsoft Intune jest skonfigurowana i połączona do programu Configuration Manager, Centrum oprogramowania będzie wyświetlana nazwa organizacji, kolor i logo firmy określone we właściwościach subskrypcji usługi Intune. Aby uzyskać więcej informacji, zobacz [Konfigurowanie subskrypcji usługi Microsoft Intune](https://docs.microsoft.com/en-us/sccm/mdm/deploy-use/setup-hybrid-mdm#step-3-configure-intune-subscription).
+1. Jeśli nie zainstalowano roli serwera lokacji punktu witryny sieci Web katalogu aplikacji, a następnie Centrum oprogramowania będzie wyświetlana nazwa organizacji określona w **Agent komputera** ustawienia klienta **nazwa organizacji** wyświetlana w Centrum oprogramowania. Aby uzyskać instrukcje, zobacz [sposób konfigurowania ustawień klienta](https://docs.microsoft.com/sccm/core/clients/deploy/configure-client-settings).
+2. Po zainstalowaniu roli serwera lokacji punktu witryny sieci Web katalogu aplikacji, Centrum oprogramowania będzie wyświetlana nazwa organizacji i kolor określone we właściwościach roli serwera lokacji katalogu aplikacji witryny sieci Web punktu. Aby uzyskać więcej informacji, zobacz [opcji konfiguracji dla punktu witryny sieci Web katalogu aplikacji](https://docs.microsoft.com/sccm/core/servers/deploy/configure/configuration-options-for-site-system-roles#BKMK_ApplicationCatalog_Website).
+3. Jeśli subskrypcję Microsoft Intune jest skonfigurowana i połączona do programu Configuration Manager, Centrum oprogramowania będzie wyświetlana nazwa organizacji, kolor i logo firmy określone we właściwościach subskrypcji usługi Intune. Aby uzyskać więcej informacji, zobacz [Konfigurowanie subskrypcji usługi Microsoft Intune](https://docs.microsoft.com/sccm/mdm/deploy-use/setup-hybrid-mdm#step-3-configure-intune-subscription).
 
 > [!IMPORTANT]  
 >  Znakowanie Centrum oprogramowania są synchronizowane z usługą Intune na 14 dni w związku z tym może wystąpić opóźnienie przed zmiany wprowadzone w usłudze Intune są wyświetlane w programie Configuration Manager.

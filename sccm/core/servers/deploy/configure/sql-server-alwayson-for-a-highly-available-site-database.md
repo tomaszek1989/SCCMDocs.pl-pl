@@ -2,7 +2,7 @@
 title: "Zawsze włączone w programie SQL Server | Dokumentacja firmy Microsoft"
 description: "Zaplanuj użycie programu SQL Server zawsze w grupie dostępności wraz z programem SCCM."
 ms.custom: na
-ms.date: 7/31/2017
+ms.date: 09/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "16"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: c746365238e1255d73387a9496521bb03a56b21b
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 3e275f6203a9e0b9210bfbadbf9addf64f6533d8
+ms.sourcegitcommit: 8faf42135a8dc9c384407e64f3f8ba204fb15847
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Przygotowanie do korzystania z programu SQL Server zawsze włączonych grup dostępności z programu Configuration Manager
 
@@ -210,8 +210,11 @@ Można uruchomić następujący skrypt, aby zweryfikować konfiguracji bazy dany
 ## <a name="limitations-and-known-issues"></a>Ograniczenia i znane problemy
 Następujące ograniczenia mają zastosowanie do wszystkich scenariuszy.   
 
-**Grupy dostępności podstawowych nie są obsługiwane:**  
-Programu Microsoft SQL Server 2016 Standard edition [grup dostępności podstawowe](https://msdn.microsoft.com/library/mt614935.aspx) nie obsługuje dostęp do odczytu replikach pomocniczych, wymagane do użytku z programem Configuration Manager.
+**Opcje programu SQL Server i konfiguracje, które nie są obsługiwane:**
+- **Grupy dostępności podstawowe**  
+  Programu Microsoft SQL Server 2016 Standard edition [grup dostępności podstawowe](https://msdn.microsoft.com/library/mt614935.aspx) nie obsługuje dostęp do odczytu replikach pomocniczych, wymagane do użytku z programem Configuration Manager.
+- **Wystąpienia klastra trybu failover**  
+  [Wystąpienia klastra trybu failover](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server) nie są obsługiwane dla repliki używane z programem Configuration Manager.
 
 **Serwerami SQL, które zawierają grupy dostępności dodatkowe:**   
 Przed 1610 wersji programu Configuration Manager gdy grupy dostępności na hostach programu SQL Server, co najmniej jedną grupę dostępności, oprócz używanego programu Configuration Manager, każdej repliki w każdej z tych grup dostępności dodatkowe grupy musi mieć następującą konfigurację ustawione w czasie uruchamiania Instalatora programu Configuration Manager lub instalowania aktualizacji programu Configuration Manager:

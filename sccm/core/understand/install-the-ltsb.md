@@ -14,11 +14,11 @@ caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 06565bc52e2c409b905bbc448262cf9da25eabb0
-ms.sourcegitcommit: 4c3906cf9614420cb8527da9e48978eb0b8f0e7a
+ms.openlocfilehash: 247fbe5313c17be906802acfaa6952ab3358122e
+ms.sourcegitcommit: a17f5dece340a70cedbec03d19938dab90ae60b1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 10/06/2017
 ---
 # <a name="install-and-upgrade-with-the-version-1606-baseline-media-for-system-center-configuration-manager"></a>Instalowanie i uaktualnianie z wersji 1606 nośnika linii bazowej programu System Center Configuration Manager
 
@@ -121,14 +121,14 @@ Podczas uaktualniania programu System Center 2012 Configuration Manager, użyj w
 **Uaktualnij do LTSB:**  
 - Dodatkowe kroki polegające na poniższe liście kontrolnej przed uaktualnieniem.
 - Podczas instalacji należy wybrać LTSB i określeniu szczegółów umowy programu Software Assurance.
-- Można uaktualnić tylko lokacji z uruchomionym programem System Center 2012 Configuration Manager z dodatkiem Service Pack 2 lub System Center 2012 R2 Configuration Manager z dodatkiem Service Pack 1.
+- Można uaktualnić tylko lokacji z uruchomionym programem System Center 2012 Configuration Manager z dodatkiem Service Pack 1, System Center 2012 Configuration Manager z dodatkiem Service Pack 2, program System Center 2012 R2 Configuration Manager z dodatkiem Service Pack 1 lub System Center 2012 R2 Configuration Manager bez dodatku service pack.
 
 ### <a name="in-place-upgrade-paths-for-the-1606-baseline-media"></a>Ścieżki uaktualniania dla nośnika linii bazowej 1606 w miejscu
 Nośnika linii bazowej 1606 służy do uaktualnienia do wersji licencjonowanej programu System Center Configuration Manager następujące:
 - System Center 2012 R2 Configuration Manager z dodatkiem Service Pack 1
 - System Center 2012 R2 Configuration Manager bez dodatku service pack (wymaga użycia nośnika linii bazowej dla wersji 1606, która została ponownie wydana 15 grudnia 2016).
 - System Center 2012 Configuration Manager z dodatkiem Service Pack 2
-- System Center 2012 Configuration Manager z dodatkiem Service Pack 1
+- System Center 2012 Configuration Manager z dodatkiem Service Pack 1 (wymaga użycia nośnika linii bazowej dla wersji 1606 który wydano na 15 grudnia 2016).
 
 
 Umożliwia także ten nośnik do uaktualnienia wersji ewaluacyjnej nielicencjonowane bieżącej gałęzi do w pełni licencjonowanej wersji Current Branch.

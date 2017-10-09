@@ -2,7 +2,7 @@
 title: "Definicje złośliwego oprogramowania program Endpoint Protection | Dokumentacja firmy Microsoft"
 description: "Dowiedz się skonfigurować aktualizacje oprogramowania Configuration Manager w celu dostarczenia aktualizacji do komputerów klienckich."
 ms.custom: na
-ms.date: 02/14/2017
+ms.date: 10/06/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "21"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: ca40c2c745ea516b56b637249b892cd44e570a9d
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: d2c29ea4c2b49142c6e63e2b5e829271098eac70
+ms.sourcegitcommit: 8ac9c2c9ba1fdcbb7cc8d5be898586865fcf67c0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/07/2017
 ---
 #  <a name="using-configuration-manager-software-updates-to-deliver-definition-updates"></a>Przy użyciu aktualizacji oprogramowania programu Configuration Manager w celu dostarczenia aktualizacji
 
@@ -68,15 +68,15 @@ ms.lasthandoff: 08/07/2017
 
 13. Kliknij przycisk **OK** , aby zamknąć okno dialogowe **Kryteria wyszukiwania** , a następnie kliknij przycisk **Dalej**.
 
-14. Na liście **Filtry właściwości** zaznacz pole wyboru **Zastąpienie nowszą wersją** .
+14. Opcjonalnie można odfiltrować zastąpionych aktualizacji.   Aby to zrobić:
+  1.  Na liście **Filtry właściwości** zaznacz pole wyboru **Zastąpienie nowszą wersją** .
+  2.  W **kryteria wyszukiwania** kliknij **< elementy do wyszukania\>**. Następnie w oknie dialogowym **Kryteria wyszukiwania** na liście **Określ wartość do wyszukania** wybierz pozycję **Nie**.  <br><br>
 
-15. W **kryteria wyszukiwania** kliknij **< elementy do wyszukania\>**. Następnie w oknie dialogowym **Kryteria wyszukiwania** na liście **Określ wartość do wyszukania** wybierz pozycję **Nie**.
+15. Kliknij przycisk **OK** , aby zamknąć okno dialogowe **Kryteria wyszukiwania** , a następnie kliknij przycisk **Dalej**.
 
-16. Kliknij przycisk **OK** , aby zamknąć okno dialogowe **Kryteria wyszukiwania** , a następnie kliknij przycisk **Dalej**.
+16. Na stronie **Harmonogram oceny** kreatora wybierz pozycję **Włącz regułę do uruchomienia zgodnie z harmonogramem**, a następnie skonfiguruj harmonogram, według którego będą pobierane aktualizacje definicji. Musisz ustawić minimalnie uruchamianie reguły po dwóch godzinach od każdej synchronizacji punktu aktualizacji oprogramowania. Kliknij przycisk **Dalej**.
 
-17. Na stronie **Harmonogram oceny** kreatora wybierz pozycję **Włącz regułę do uruchomienia zgodnie z harmonogramem**, a następnie skonfiguruj harmonogram, według którego będą pobierane aktualizacje definicji. Musisz ustawić minimalnie uruchamianie reguły po dwóch godzinach od każdej synchronizacji punktu aktualizacji oprogramowania. Kliknij przycisk **Dalej**.
-
-18. Na stronie **Harmonogram wdrożenia** kreatora skonfiguruj następujące ustawienia:
+17. Na stronie **Harmonogram wdrożenia** kreatora skonfiguruj następujące ustawienia:
 
     -   **Na podstawie czasu**: Wybierz **UTC** Jeśli chcesz, aby wszyscy klienci w hierarchii, aby zainstalować najnowsze definicje w tym samym czasie. Rzeczywisty czas instalacji różni się w przedziale dwóch godzin. To ustawienie jest zalecanym najlepszym rozwiązaniem.
 
@@ -87,28 +87,28 @@ ms.lasthandoff: 08/07/2017
         > [!NOTE]
         >  Terminy aktualizacji oprogramowania są różne w okresie dwóch godzin, co uniemożliwia klientom żądanie aktualizacji w tym samym czasie.
 
-19. Kliknij przycisk **Dalej**.
+18. Kliknij przycisk **Dalej**.
 
-20. Na stronie **Środowisko użytkownika** kreatora na liście **Powiadomienia użytkownika** wybierz pozycję **Ukryj w programie Software Center i ukryj wszystkie powiadomienia**.   Dzięki temu aktualizacje definicji zostaną zainstalowane w sposób dyskretny. Kliknij przycisk **Dalej**.
+19. Na stronie **Środowisko użytkownika** kreatora na liście **Powiadomienia użytkownika** wybierz pozycję **Ukryj w programie Software Center i ukryj wszystkie powiadomienia**.   Dzięki temu aktualizacje definicji zostaną zainstalowane w sposób dyskretny. Kliknij przycisk **Dalej**.
 
-21. Na stronie **Alerty** kreatora nie trzeba konfigurować żadnych alertów. Program Endpoint Protection w programie Configuration Manager generuje alerty, które mogą być wymagane. Kliknij przycisk **Dalej**.
+20. Na stronie **Alerty** kreatora nie trzeba konfigurować żadnych alertów. Program Endpoint Protection w programie Configuration Manager generuje alerty, które mogą być wymagane. Kliknij przycisk **Dalej**.
 
-22. Na stronie **Ustawienia pobierania** kreatora wybierz niezbędne aktualizacje oprogramowania związane z zachowaniem podczas pobierania, a następnie kliknij pozycję **Dalej**.
+21. Na stronie **Ustawienia pobierania** kreatora wybierz niezbędne aktualizacje oprogramowania związane z zachowaniem podczas pobierania, a następnie kliknij pozycję **Dalej**.
 
-23. Na stronie **Pakiet wdrożeniowy** kreatora wybierz istniejący pakiet wdrożeniowy lub utwórz nowy pakiet wdrożeniowy, który ma zawierać pliki aktualizacji oprogramowania skojarzone z regułą.
+22. Na stronie **Pakiet wdrożeniowy** kreatora wybierz istniejący pakiet wdrożeniowy lub utwórz nowy pakiet wdrożeniowy, który ma zawierać pliki aktualizacji oprogramowania skojarzone z regułą.
 
     > [!NOTE]
     >  Rozważ umieszczenie aktualizacji definicji w pakiecie, który nie zawiera innych aktualizacji oprogramowania. Ta strategia umożliwia zachowanie mniejszego rozmiaru pakietu aktualizacji definicji, dzięki czemu replikacja punktów dystrybucji może przebiegać szybciej.
 
-24. Na stronie **Punkty dystrybucji** kreatora wybierz co najmniej jeden punkt dystrybucji, do którego zostanie skopiowana zawartość tego pakietu, a następnie kliknij pozycję **Dalej**.
+23. Na stronie **Punkty dystrybucji** kreatora wybierz co najmniej jeden punkt dystrybucji, do którego zostanie skopiowana zawartość tego pakietu, a następnie kliknij pozycję **Dalej**.
 
-25. Na stronie **Lokalizacja pobierania** kreatora wybierz pozycję **Pobierz aktualizacje oprogramowania z Internetu**, a następnie kliknij przycisk **Dalej**.
+24. Na stronie **Lokalizacja pobierania** kreatora wybierz pozycję **Pobierz aktualizacje oprogramowania z Internetu**, a następnie kliknij przycisk **Dalej**.
 
-26. Na stronie **Wybieranie języka** kreatora wybierz każdą wersję językową aktualizacji do pobrania, a następnie kliknij przycisk **Dalej**.
+25. Na stronie **Wybieranie języka** kreatora wybierz każdą wersję językową aktualizacji do pobrania, a następnie kliknij przycisk **Dalej**.
 
-27. Wykonaj pozostałe kroki pracy z Kreatorem tworzenia reguły wdrażania automatycznego.
+26. Wykonaj pozostałe kroki pracy z Kreatorem tworzenia reguły wdrażania automatycznego.
 
-28. Sprawdź, czy nowa reguła jest wyświetlana w **reguły wdrażania automatycznego** węzła konsoli programu Configuration Manager.
+27. Sprawdź, czy nowa reguła jest wyświetlana w **reguły wdrażania automatycznego** węzła konsoli programu Configuration Manager.
 
 
 > [!div class="button"]

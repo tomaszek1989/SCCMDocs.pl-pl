@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 8dac6df60b07461d6410d305723b3f03fb09fa16
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 0619da4cba35d6163761a90e28b39c1976f61b48
+ms.sourcegitcommit: 96b79fa091f44e8e6ac5652f6cbbb4b873a8bad9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/09/2017
 ---
 # <a name="recommended-hardware-for-system-center-configuration-manager"></a>Zalecany sprzęt dla programu System Center Configuration Manager
 
@@ -43,7 +43,7 @@ Aby uzyskać najlepszą wydajność należy używać konfiguracji RAID 10 dla ws
 
 ###  <a name="bkmk_ScaleSiteServer"></a>Serwery lokacji  
 
-|Autonomiczna lokacja główna|Procesor CPU (rdzenie)|Pamięć (GB)|Alokacja pamięci dla programu SQL Server (%)|  
+|Konfiguracja lokacji|Procesor CPU (rdzenie)|Pamięć (GB)|Alokacja pamięci dla programu SQL Server (%)|  
 |-------------------------------|---------------|---------------|----------------------------------------|  
 |Serwer autonomicznej lokacji głównej z rolą lokacji bazy danych na tym samym serwerze<sup>1</sup>|16|96|80|  
 |Serwer autonomicznej lokacji głównej ze zdalną bazą danych lokacji|8|16|-|  

@@ -2,7 +2,7 @@
 title: Technical Preview programu Configuration Manager | Dokumentacja firmy Microsoft
 description: "Więcej informacji o wersji Technical Preview że teraz musisz test-drive nowe funkcje i możliwości w programie System Center Configuration Manager."
 ms.custom: na
-ms.date: 08/25/2017
+ms.date: 09/28/2017
 ms.prod: configuration-manager
 ms.reviewer: nab
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "157"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: e471e11b3c61172b4e9fcae74944d39aa0ab702f
-ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
+ms.openlocfilehash: 429e20185bd23519f78c37ded39f2638d0c80ced
+ms.sourcegitcommit: 8ac9c2c9ba1fdcbb7cc8d5be898586865fcf67c0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 10/07/2017
 ---
 # <a name="technical-preview-for-system-center-configuration-manager"></a>Wersja zapoznawcza Technical Preview programu System Center Configuration Manager
 
@@ -114,10 +114,8 @@ Można zainstalować wersji linii bazowej dla maksymalnie 1 rok po ich wydaniu. 
 
  |Możliwość |Wersji Technical Preview |Bieżącą wersję gałęzi|  
  |----------------|---------------------|--------------------|
- |Ulepszenia określając Parametry skryptu, podczas wdrażania skryptów programu PowerShell z programu Configuration Manager<!-- 1236459 -->|[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#improvements-for-specifying-script-parameters-when-you-deploy-powershell-scripts-from-configuration-manager)|![Nie dodano](media/Red_X.gif)|
- |Informacje na temat technologii zarządzania<!-- 1353967 --> |[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#management-insights)|![Nie dodano](media/Red_X.gif)|
- |Uruchom ponownie komputer za pomocą konsoli programu Configuration Manager<!-- 1356283 --> |[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#restart-computers-from-the-configuration-manager-console)|![Nie dodano](media/Red_X.gif)|
- |Dostosowywanie Centrum oprogramowania<!-- 1351224 --> |[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#software-center-customization)|![Nie dodano](media/Red_X.gif)|
+ |VPN udoskonalone środowisko profilu w konsoli programu Configuration Manager<!-- 1313282 --> | [Podgląd techniczna 1709](capabilities-in-technical-preview-1709.md) |![Nie dodano](media/Red_X.gif)    |
+ |Jednoczesne zarządzania dla urządzeń z systemem Windows 10|[Podgląd techniczna 1709](capabilities-in-technical-preview-1709.md#co-management-for-windows-10-devices)|![Nie dodano](media/Red_X.gif)    |
 
 
 ## <a name="capabilities-delivered-in-previous-technical-previews"></a>Możliwości oferowane w poprzednich wersjach technical Preview
@@ -125,7 +123,11 @@ Można zainstalować wersji linii bazowej dla maksymalnie 1 rok po ich wydaniu. 
 
  |Możliwość |Wersji Technical Preview |Bieżącą wersję gałęzi|  
  |----------------|---------------------|--------------------|
- |Klient równorzędnej pamięci podręcznej obsługę plików instalacji ekspresowej dla systemu Windows 10 i usługi Office 365|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#client-peer-cache-support-for-express-installation-files-for-windows-10-and-office-365)|![Nie dodano](media/Red_X.gif)|
+ |Ulepszenia określając Parametry skryptu, podczas wdrażania skryptów programu PowerShell z programu Configuration Manager<!-- 1236459 -->|[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#improvements-for-specifying-script-parameters-when-you-deploy-powershell-scripts-from-configuration-manager)|![Nie dodano](media/Red_X.gif)|
+ |Informacje na temat technologii zarządzania<!-- 1353967 --> |[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#management-insights)|![Nie dodano](media/Red_X.gif)|
+ |Uruchom ponownie komputer za pomocą konsoli programu Configuration Manager<!-- 1356283 --> |[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#restart-computers-from-the-configuration-manager-console)|![Nie dodano](media/Red_X.gif)|
+ |Dostosowywanie Centrum oprogramowania<!-- 1351224 --> |[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#software-center-customization)|![Nie dodano](media/Red_X.gif)|
+|Klient równorzędnej pamięci podręcznej obsługę plików instalacji ekspresowej dla systemu Windows 10 i usługi Office 365|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#client-peer-cache-support-for-express-installation-files-for-windows-10-and-office-365)|![Nie dodano](media/Red_X.gif)|
  |Powierzchni urządzenia pulpitu nawigacyjnego|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#surface-device-dashboard)|![Nie dodano](media/Red_X.gif)|
  |Konfigurowanie i wdrażanie zasad Guard aplikacji programu Windows Defender|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#configure-and-deploy-windows-defender-application-guard-policies)|![Nie dodano](media/Red_X.gif)|
  |Dodawanie parametrów podczas wdrażania skryptów programu PowerShell z programu Configuration Manager|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#add-parameters-when-you-deploy-powershell-scripts-from-configuration-manager)|![Nie dodano](media/Red_X.gif)|
@@ -221,37 +223,38 @@ Można zainstalować wersji linii bazowej dla maksymalnie 1 rok po ich wydaniu. 
  |Wdrażanie aplikacji usługi Office 365 na klientach|[Podgląd techniczna 1609](capabilities-in-technical-preview-1609.md#deploy-office-365-apps-to-clients)|[Wersja 1702](/sccm/sum/deploy-use/manage-office-365-proplus-updates#deploy-office-365-apps)|
  |Ulepszenia systemu BIOS z interfejsem UEFI konwersji|[Podgląd techniczna 1609](capabilities-in-technical-preview-1609.md#BKMK_UEFIConversion)|[Wersja 1610](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion)|
  |Wykresy zgodności usługi Intune|[Podgląd techniczna 1609](capabilities-in-technical-preview-1609.md#intune-compliance-charts)|[Wersja 1610](/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy)|
- |Ulepszenia kroku sekwencji zadań Przygotuj klienta programu ConfigMgr do przechwycenia|[Podgląd techniczna 1608](capabilities-in-technical-preview-1608.md#improvements-to-the-prepare-configmgr-client-for-capture-task-sequence-step)|[Wersja 1610](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareConfigMgrClientforCapture)|
- |Ulepszenia Centrum oprogramowania|[Podgląd techniczna 1608](capabilities-in-technical-preview-1608.md#improvements-to-software-center)|[Wersja 1610](/sccm/core/plan-design/changes/whats-new-in-version-1610#general-improvements-to-software-center)|
- |Ulepszenia dotyczące analizy zasobów<!-- Listed as TBD. No planned addition to Current Branch -->|[Podgląd techniczna 1608](capabilities-in-technical-preview-1608.md#improvements-to-asset-intelligence)|![Nie dodano](media/Red_X.gif)|
- |Translacja klawiatury zdalnego sterowania|[Podgląd techniczna 1608](capabilities-in-technical-preview-1608.md#remote-control-keyboard-translation)| [Wersja 1610](/sccm/core/clients/manage/remote-control/configuring-remote-control#enable-keyboard-translation)|
- |Ulepszenia zasad uaktualniania wersji systemu Windows 10|[Podgląd techniczna 1607](capabilities-in-technical-preview-1607.md#dmp_edition)|[Wersja 1610](/sccm/compliance/deploy-use/upgrade-windows-version)|
- |Możliwość dostosowania znaków firmowych w oknach dialogowych Centrum oprogramowania|[Podgląd techniczna 1607](capabilities-in-technical-preview-1607.md#customizable-branding-for-software-center-dialogs)|[Wersja 1610](/sccm/core/plan-design/changes/whats-new-in-version-1610#customizable-branding-for-software-center-dialogs)|  
- |Wiele punktów zarządzania urządzeniami w ramach lokalnego zarządzania urządzeniami przenośnymi|[Podgląd techniczna 1606](capabilities-in-technical-preview-1606.md#dmp_onprem)|[Wersja 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606#on-premises-mobile-device-management)|
- |Automatyczne kategoryzowanie urządzeń do kolekcji|[Podgląd techniczna 1606](capabilities-in-technical-preview-1606.md#dmp_category)|[Wersja 1606](/sccm/core/clients/manage/collections/automatically-categorize-devices-into-collections) |
- |Okres prolongaty wymuszania dla wdrożeń wymaganych aplikacji i aktualizacji oprogramowania|[Podgląd techniczna 1606](capabilities-in-technical-preview-1606.md#dmp_grace)|[Wersja 1610](/sccm/apps/deploy-use/deploy-applications)|
- |Korzystanie z programu Configuration Manager jako zarządzanego instalatora z funkcją ochrony urządzeń|[Podgląd techniczna 1606](capabilities-in-technical-preview-1606.md#dmp_devg)|[Wersja 1702](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager )|
- |Brama zarządzania chmury (dawniej serwera Proxy usługi w chmurze)|[Podgląd techniczna 1606](capabilities-in-technical-preview-1606.md#cloud_proxy) | [Wersja 1610](/sccm/core/clients/manage/plan-cloud-management-gateway)|  
- |Zarządzanie agentem klienta usługi Office 365 w programie Configuration Manager|[Podgląd techniczna 1606](capabilities-in-technical-preview-1606.md#manage_o365) |[Wersja 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606#software-updates)|  
- |Zmienna sekwencji zadań OSDPreserveDriveLetter została uznana za przestarzałą|[Podgląd techniczna 1606](capabilities-in-technical-preview-1606.md#osdpreservedriveletter) |[Wersja 1606](/sccm/osd/understand/task-sequence-built-in-variables) |
- |Zmiany dotyczące węzła Aktualizacje i obsługa|[Podgląd techniczna 1606](capabilities-in-technical-preview-1606.md#updatesandservicing)|[Wersja 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606#updates-and-servicing) |
- |Sieć VPN dla aplikacji dla urządzeń z systemem Windows 10|[Podgląd techniczna 1605](capabilities-in-technical-preview-1605.md#BKMK_PerAppVPN)|[Wersja 1606](/sccm/protect/deploy-use/create-vpn-profiles)|  
- |Ulepszenia sekwencji zadań Zainstaluj aktualizacje oprogramowania|[Podgląd techniczna 1605](capabilities-in-technical-preview-1605.md#BKMK_InstallSU)|[Wersja 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606#operating-system-deployment)|  
- |Ulepszenia kroku sekwencji zadań Przygotuj klienta programu ConfigMgr do przechwycenia |[Podgląd techniczna 1605](capabilities-in-technical-preview-1605.md#BKMK_PrepareConfigMgrClient)|[Wersja 1610](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareConfigMgrClientforCapture) |
- |Okres prolongaty dla wdrożeń wymaganych aplikacji |[Podgląd techniczna 1605](capabilities-in-technical-preview-1605.md#BKMK_Grace)|![Nie dodano](media/Red_X.gif)|  
- |Nowe środowisko dla akcji urządzeń zdalnych |[Podgląd techniczna 1605](capabilities-in-technical-preview-1605.md#BKMK_Remote)|[Wersja 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606#device-configuration-and-protection)|  
- |Aplikacje ze Sklepu Windows dla firm |[Podgląd techniczna 1605](capabilities-in-technical-preview-1605.md#BKMK_WSFB)|[Wersja 1606](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)|  
- |Ogólne ulepszenia dotyczące aplikacji nabytych w ramach programu zakupów zbiorczych|[Podgląd techniczna 1605](capabilities-in-technical-preview-1605.md#BKMK_VPP2)|[Wersja 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606)|  
- |Ochrona danych w przedsiębiorstwie (EDP)|[Podgląd techniczna 1605](capabilities-in-technical-preview-1605.md#BKMK_VPP)|[Wersja 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606)|  
- |Użytkownicy końcowi nie mogą instalować aplikacji z poziomu Portalu firmy |[Podgląd techniczna 1605](capabilities-in-technical-preview-1605.md#BKMK_End)|![Nie dodano](media/Red_X.gif)|  
- |Nowe karty aktualizacji i systemów operacyjnych w Centrum oprogramowania|[Podgląd techniczna 1605](capabilities-in-technical-preview-1605.md#BKMK_SW1)|[Wersja 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606#application-management)|  
- |Obsługa grupy serwerów |[Podgląd techniczna 1605](capabilities-in-technical-preview-1605.md#BKMK_ServerGroups)|[Wersja 1606](/sccm/sum/deploy-use/service-a-server-group)|   
- |Obsługa usługi Zaawansowana ochrona przed zagrożeniami programu Windows Defender |[Podgląd techniczna 1605](capabilities-in-technical-preview-1605.md#BKMK_ATP)|[Wersja 1606](/sccm/protect/deploy-use/windows-defender-advanced-threat-protection)|  
- |Nowe opcje ponownego uruchamiania dla klientów z systemem Windows 10 po instalacji aktualizacji oprogramowania|[Podgląd techniczna 1605](capabilities-in-technical-preview-1605.md#BKMK_RestartOptions)|[Wersja 1606](/sccm/sum/plan-design/plan-for-software-updates#restart-options-for-Windows-10-clients-after-software-update-installation)|  
- |Zaświadczanie o kondycji urządzenia lokalnego |[Podgląd techniczna 1605](capabilities-in-technical-preview-1605.md#BKMK_DHA)|[Wersja 1606](/sccm/core/servers/manage/health-attestation)|  
- |Wstępne deklarowanie urządzeń należących do przedsiębiorstwa przy użyciu numeru IMEI lub numeru seryjnego systemu iOS|[Podgląd techniczna 1605](capabilities-in-technical-preview-1605.md#BKMK_IMEI)|[Wersja 1606](/sccm/mdm/deploy-use/predeclare-devices-with-hardware-id)|  
 
- <!--  TP 1604 and earlier has aged out of support and all features are in Current Branch builds:
+
+ <!--  TP 1608 and earlier have aged out of support. Features from these previews are either in the minimum supported Current Branch version, or are not scheduled for inclusion.
+ |Improvements to the Prepare ConfigMgr Client for Capture task sequence step|[Tech Preview 1608](capabilities-in-technical-preview-1608.md#improvements-to-the-prepare-configmgr-client-for-capture-task-sequence-step)|[Version 1610](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareConfigMgrClientforCapture)|
+ |Improvements to Software Center|[Tech Preview 1608](capabilities-in-technical-preview-1608.md#improvements-to-software-center)|[Version 1610](/sccm/core/plan-design/changes/whats-new-in-version-1610#general-improvements-to-software-center)|
+ |Improvements to Asset Intelligence|[Tech Preview 1608](capabilities-in-technical-preview-1608.md#improvements-to-asset-intelligence)|N/A|
+ |Remote control keyboard translation|[Tech Preview 1608](capabilities-in-technical-preview-1608.md#remote-control-keyboard-translation)|[Version 1702](/sccm/core/clients/manage/remote-control/configuring-remote-control#enable-keyboard-translation)|
+ |Improvements to the Windows 10 Edition Upgrade Policy|[Tech Preview 1607](capabilities-in-technical-preview-1607.md#dmp_edition)|[Version 1610](/sccm/compliance/deploy-use/upgrade-windows-version)|
+ |Customizable Branding for Software Center Dialogs|[Tech Preview 1607](capabilities-in-technical-preview-1607.md#customizable-branding-for-software-center-dialogs)|[Version 1610](/sccm/core/plan-design/changes/whats-new-in-version-1610#customizable-branding-for-software-center-dialogs)|  
+ |Multiple device management points for On-premises Mobile Device Management|[Tech Preview 1606](capabilities-in-technical-preview-1606.md#dmp_onprem)|[Version 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606#on-premises-mobile-device-management)|
+ |Automatically categorize devices into collections|[Tech Preview 1606](capabilities-in-technical-preview-1606.md#dmp_category)|[Version 1606](/sccm/core/clients/manage/collections/automatically-categorize-devices-into-collections) |
+ |Enforcement grace period for required application and software update deployments|[Tech Preview 1606](capabilities-in-technical-preview-1606.md#dmp_grace)|[Version 1610](/sccm/apps/deploy-use/deploy-applications)|
+ |Using Configuration Manager as a Managed Installer with Device Guard|[Tech Preview 1606](capabilities-in-technical-preview-1606.md#dmp_devg)|[Version 1702](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)|
+ |Cloud management gateway (formerly Cloud Proxy Service)|[Tech Preview 1606](capabilities-in-technical-preview-1606.md#cloud_proxy) | [Version 1610](/sccm/core/clients/manage/plan-cloud-management-gateway)|  
+ |Manage the Office 365 client agent in Configuration Manager|[Tech Preview 1606](capabilities-in-technical-preview-1606.md#manage_o365) |[Version 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606#software-updates)|  
+ |The OSDPreserveDriveLetter task sequence variable has been deprecated|[Tech Preview 1606](capabilities-in-technical-preview-1606.md#osdpreservedriveletter) |[Version 1606](/sccm/osd/understand/task-sequence-built-in-variables) |
+ |Changes for the Updates and Servicing Node|[Tech Preview 1606](capabilities-in-technical-preview-1606.md#updatesandservicing)|[Version 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606#updates-and-servicing) |
+ |Per-app VPN for Windows 10 devices|[Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_PerAppVPN)|[Version 1606](/sccm/protect/deploy-use/create-vpn-profiles)|  
+ |Improvements to the Install software updates task sequence|[Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_InstallSU)|[Version 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606#operating-system-deployment)|  
+ |Improvements to the Prepare ConfigMgr Client for Capture task sequence step |[Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_PrepareConfigMgrClient)|[Version 1610](/sccm/osd/understand/task-sequence-steps#BKMK_PrepareConfigMgrClientforCapture) |
+ |Grace period for required application deployments |[Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_Grace)|N/A|  
+ |New experience for remote device actions |[Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_Remote)|[Version 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606#device-configuration-and-protection)|  
+ |Windows Store for Business apps |[Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_WSFB)|[Version 1606](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)|  
+ |General improvements for volume-purchased apps|[Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_VPP2)|[Version 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606)|  
+ |Enterprise Data Protection (EDP)|[Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_VPP)|[Version 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606)|  
+ |End users can install apps from the Company Portal |[Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_End)|N/A|  
+ |New tabs for Updates and Operating Systems in Software Center|[Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_SW1)|[Version 1606 ](/sccm/core/plan-design/changes/whats-new-in-version-1606#application-management)|  
+ |Service a server group |[Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_ServerGroups)|[Version 1606](/sccm/sum/deploy-use/service-a-server-group)|   
+ |Support for Windows Defender Advanced Threat Protection service |[Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_ATP)|[Version 1606](/sccm/protect/deploy-use/windows-defender-advanced-threat-protection)|  
+ |New restart options for Windows 10 clients after software update installation|[Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_RestartOptions)|[Version 1606](/sccm/sum/plan-design/plan-for-software-updates#restart-options-for-Windows-10-clients-after-software-update-installation)|  
+ |On-premises Device Health Attestation |[Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_DHA)|[Version 1606](/sccm/core/servers/manage/health-attestation)|  
+ |Pre-declare corporate-owned devices with IMEI or iOS serial number|[Tech Preview 1605](capabilities-in-technical-preview-1605.md#BKMK_IMEI)|[Version 1606](/sccm/mdm/deploy-use/predeclare-devices-with-hardware-id)|  
  |Manage volume-purchased apps from the Windows Store for Business| [Tech Preview 1604](capabilities-in-technical-preview-1604.md#BKMK_WindowsVPP)|[Version 1606](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)|  
  |Improvements to Microsoft Passport for Work management|[Tech Preview 1604](capabilities-in-technical-preview-1604.md#BKMK_PFW)|[Version 1606](/sccm/core/plan-design/changes/whats-new-in-version-1606#device-configuration-and-protection)|  
  |Option for clients to switch to a new software update point|[Tech Preview 1604](capabilities-in-technical-preview-1604.md#bkmk_switchsup)|[Version 1606](/sccm/sum/plan-design/plan-for-software-updates#BKMK_ManuallySwitchSUPs)|  

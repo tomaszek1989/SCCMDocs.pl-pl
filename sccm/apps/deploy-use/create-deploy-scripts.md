@@ -15,11 +15,11 @@ caps.handback.revision: "0"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: e6b29cd85504742e8638a55db2f6c4ecc8ab3e55
-ms.sourcegitcommit: 5ca89204716750eaaceb01bba40b35b85c7122ba
+ms.openlocfilehash: 4c90617890ba3751a7215e9ac54042d64cc1a227
+ms.sourcegitcommit: 96b79fa091f44e8e6ac5652f6cbbb4b873a8bad9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/18/2017
+ms.lasthandoff: 10/09/2017
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Tworzenie i uruchamianie skryptów programu PowerShell z poziomu konsoli programu Configuration Manager
 
@@ -59,9 +59,12 @@ Domyślnie użytkownicy nie można zatwierdzić skryptu, który one utworzone pr
 3. Na liście witryn, wybierz witryny, a następnie na **Home** karcie **witryny** kliknij przycisk **ustawienia hierarchii**.
 4. Na **ogólne** karcie **właściwości ustawień hierarchii** okna dialogowego polu, wyczyść pole wyboru **nie zezwalaj na skryptu autorzy mogą zatwierdzać własnych skryptów**.
 
+>[!IMPORTANT]
+>Najlepszym rozwiązaniem nie należy zezwalać na autorowi skryptu zatwierdzać własnych skryptów. To powinno być dozwolone tylko w środowisku laboratoryjnym. Starannie rozważ potencjalny wpływ zmiany tego ustawienia w środowisku produkcyjnym.
+
 ## <a name="import-and-edit-a-script"></a>Importowanie i edytowanie skryptu
 
-1. W konsoli programu Configuration Manager kliknij **Librar oprogramowania**y.
+1. W konsoli programu Configuration Manager kliknij przycisk **Biblioteka oprogramowania**.
 2. W **Biblioteka oprogramowania** obszaru roboczego kliknij **skryptów**.
 3. Na **Home** karcie **Utwórz** kliknij przycisk **Tworzenie skryptu**.
 4. Na **skryptu** tworzenia **skryptu** kreatora skonfiguruj następujące ustawienia:
@@ -108,6 +111,9 @@ Po zatwierdzeniu skryptu mogą być uruchamiane na kolekcję, którą wybierzesz
 
 >[!IMPORTANT]
 >Skrypt znajduje się w przedziale czasu godziny, w którym ma być uruchamiany. Jeśli nie działa on (na przykład jeśli komputer jest wyłączony) w tym okresie, należy uruchomić je ponownie.
+
+>[!IMPORTANT]
+>Skrypt zostanie wykonany jako konto system lub komputer na docelowych klientów. To konto ma bardzo ograniczony dostęp do sieci. Dostęp do systemów zdalnych i lokalizacje przez skrypt musi zostać zainicjowana obsługa to pamiętać.
 
 ## <a name="next-steps"></a>Następne kroki
 

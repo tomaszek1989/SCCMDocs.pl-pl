@@ -2,7 +2,7 @@
 title: "Zaświadczanie o kondycji | Dokumentacja firmy Microsoft"
 description: "Więcej informacji na temat funkcji zaświadczania o kondycji, można wyświetlić w konsoli programu Configuration Manager."
 ms.custom: na
-ms.date: 03/27/2017
+ms.date: 10/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ caps.latest.revision: "17"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: 54b3433a002b8ef29059bab04458138348f95d66
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 11d58237ea1e88785f6991450b3e898562b23918
+ms.sourcegitcommit: a17f5dece340a70cedbec03d19938dab90ae60b1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/06/2017
 ---
 # <a name="health-attestation-for-system-center-configuration-manager"></a>Zaświadczanie o kondycji dla programu System Center Configuration Manager
 
@@ -37,9 +37,9 @@ Ta funkcja jest dostępna dla komputerów i zasobów lokalnych zarządzanych prz
 
  **Wymagania:**  
 
--   Urządzenia klienckie z systemem Windows 10 w wersji 1607 lub Windows Server 2016 1607 z [zaświadczania o kondycji włączone](https://technet.microsoft.com/windows-server-docs/security/device-health-attestation)
--    Moduł TPM 1.2 lub urządzeń z włączonym modułem TPM 2
--   Komunikacja między agentem klienta programu Configuration Manager i has.spserv.microsoft.com (port 443) usługi zaświadczania o kondycji (zarządzania chmurą) lub z punktem zarządzania z włączoną obsługą zaświadczania o kondycji urządzenia (lokalnego)
+-   Urządzenia klienckie z systemem Windows 10 w wersji 1607 lub Windows Server 2016 1607 z [zaświadczania o kondycji włączone](https://technet.microsoft.com/windows-server-docs/security/device-health-attestation).
+-   Urządzeniami z obsługą modułu TPM 1.2 lub modułem TPM 2.
+-   Korzystając z zarządzania chmurą, komunikacja między agentem klienta programu Configuration Manager i zarządzania punktów z *has.spserv.microsoft.com* usługi zaświadczania o kondycji (port 443) (Zarządzanie chmury). Gdy lokalnie, klient musi mieć możliwość komunikacji z punktem zarządzania z włączoną obsługą zaświadczania o kondycji urządzenia.
 
 ### <a name="how-to-enable-health-attestation-service-communication-on-configuration-manager-client-computers"></a>Jak włączyć komunikację usługi zaświadczania o kondycji na komputerach klienckich z programem Configuration Manager
 

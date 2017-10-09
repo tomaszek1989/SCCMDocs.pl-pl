@@ -14,17 +14,17 @@ caps.latest.revision:
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: 298d879638a2d20d421b19752cb5f20f6725df14
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 25d68e7b16afe8e24939897f01f173d3daa7fa09
+ms.sourcegitcommit: 621b9f8fedf7f1d53ea7abd804af4b63c85dbeb1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/02/2017
 ---
 # <a name="intune-mobile-threat-defense-connectors-in-configuration-manager"></a>Ochrona przed zagrożeniami Mobile Intune łączniki w programie Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-[Hybrydowego wdrożenia zarządzania urządzeniami Przenośnymi (SCCM przy użyciu usługi Intune)](https://docs.microsoft.com/en-us/sccm/mdm/understand/choose-between-standalone-intune-and-hybrid-mobile-device-management) i integrację między usługami Intune i partnerów przed zagrożeniami Mobile zapewniają możliwość kontrolowania dostępu do zasobów firmy i danych na podstawie oceny ryzyka urządzenia.
+[Hybrydowego wdrożenia zarządzania urządzeniami Przenośnymi (SCCM przy użyciu usługi Intune)](https://docs.microsoft.com/sccm/mdm/understand/choose-between-standalone-intune-and-hybrid-mobile-device-management) i integrację między usługami Intune i partnerów przed zagrożeniami Mobile zapewniają możliwość kontrolowania dostępu do zasobów firmy i danych na podstawie oceny ryzyka urządzenia.
 
 Łączniki przed zagrożeniami Intune Mobile pozwala korzystać z wybranym dostawcą przed zagrożeniami Mobile jako źródło informacji dla zasady zgodności i zasad dostępu warunkowego. To pozwala administratorom IT dodać warstwę ochrony do ich zasobów firmy, takich jak programy Exchange i Sharepoint, w szczególności z naruszenia zabezpieczeń urządzeń przenośnych.
 

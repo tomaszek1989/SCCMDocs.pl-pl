@@ -2,7 +2,7 @@
 title: "What's new in hybrydowego zarządzania urządzeniami Przenośnymi w programie Configuration Manager | Dokumentacja firmy Microsoft"
 description: "Poznaj nowe funkcje zarządzania urządzeniami przenośnymi dostępne dla hybrydowych wdrożeń z programu Configuration Manager i usługi Intune."
 ms.custom: na
-ms.date: 06/30/2017
+ms.date: 10/04/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -10,25 +10,29 @@ ms.technology: configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
-caps.latest.revision: "40"
-author: Mtillman
-ms.author: mtillman
+author: dougeby
+ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 2ef4964a74e000feac029b158f6fe0c52e3de370
-ms.sourcegitcommit: 51654bf8b5615eb99084d0a20d18ca3fccfa83a1
+ms.openlocfilehash: 6c2c6ffee3b2084ede61e5602a78bf5ca82446f6
+ms.sourcegitcommit: 6c70e0af8d9af208009641786a3b555db4482e97
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/20/2017
+ms.lasthandoff: 10/05/2017
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>What's new in hybrydowego zarządzania urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Microsoft Intune
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Ten artykuł zawiera szczegółowe informacje na urządzeniu przenośnym, nowe funkcje zarządzania urządzeniami Przenośnymi jest dostępne dla hybrydowych wdrożeń z programu System Center Configuration Manager i Microsoft Intune.  
+Ten artykuł zawiera szczegółowe informacje na urządzeniu przenośnym, nowe funkcje zarządzania urządzeniami Przenośnymi jest dostępne dla hybrydowych wdrożeń z programu System Center Configuration Manager i Microsoft Intune.     
+
+> [!Note]    
+> Usługa Intune na platformie Azure jest zalecanym rozwiązaniem MDM firmy Microsoft.     
+> - Aby uzyskać szczegółowe informacje o nowych funkcjach i aktualizacje w autonomicznej usługi Intune, zobacz [What's new in Intune](https://docs.microsoft.com/intune/whats-new).    
+> - Aby uzyskać szczegółowe informacje o tym, jak przeprowadzić migrację do autonomicznej usługi Intune, zobacz [migracji hybrydowego zarządzania urządzeniami Przenośnymi użytkowników i urządzeń do autonomicznej usługi Intune](https://docs.microsoft.com/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa).
+> - Aby uzyskać szczegółowe informacje o aktualizacjach interfejsu użytkownika dla usługi Intune i hybrydowego zarządzania urządzeniami Przenośnymi, zobacz [aktualizacje interfejsu użytkownika dla aplikacji użytkownika końcowego Intune](https://docs.microsoft.com/intune/whats-new-app-ui). 
 
 ##  <a name="compatibility-with-configuration-manager-versions"></a>Zgodność z wersjami programu Configuration Manager  
-
- Każda sekcja w tym artykule wymieniono funkcje hybrydowych w trzech różnych kategorii. Aby sprawdzić zgodność funkcji w każdej kategorii z różnych wersji programu Configuration Manager, użyj poniższych wskazówek:  
+Każda sekcja w tym artykule wymieniono funkcje hybrydowych w trzech różnych kategorii. Aby sprawdzić zgodność funkcji w każdej kategorii z różnych wersji programu Configuration Manager, użyj poniższych wskazówek:  
 
 |Funkcja kategorii|Opis|
 |-|-|
@@ -40,8 +44,8 @@ Ten artykuł zawiera szczegółowe informacje na urządzeniu przenośnym, nowe f
 
 ### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune     
 
-- **Powiadomienia wypychane dodatkowych dla użytkowników końcowych w aplikacji Portal firmy dla systemu Android Oreo**<!--1475932-->    
-    Dodatkowe powiadomienia do wskazania je, gdy aplikacja Portal firmy dla systemu Android Oreo wykonuje zadania w tle, takie jak pobieranie zasad z usługi Intune będzie widoczny dla użytkowników. Powoduje to zwiększenie przezroczystości dla użytkowników końcowych o do portalu firmy jest wykonywania zadań administracyjnych na urządzeniu. Jest to część ogólnych [optymalizacji interfejsu użytkownika portalu firmy](https://blogs.technet.microsoft.com/intunesupport/2017/08/21/android-8-0-o-behaviour-changes-and-microsoft-intune) aplikacji Portal firmy dla systemu Android Oreo. 
+- **Akcja dodaje do aplikacji Portal firmy dla systemu Windows 10 odświeżania**<!-- 1132468 -->    
+    Aplikacja Portal firmy dla systemu Windows 10 umożliwia odświeżanie danych w aplikacji, przenosząc albo odświeżyć lub na pulpitach, naciskając klawisz F5.
 
 - **Powiadamia użytkowników końcowych, jakie informacje o urządzeniu są widoczne dla systemu iOS**<!--739894-->    
     Dodaliśmy **typ własności** do ekranu szczegóły urządzenia w aplikacji Portal firmy dla systemu iOS. Dzięki temu użytkownicy dowiedzieć się więcej o ochronie prywatności bezpośrednio z tej strony z dokumentów użytkownika usługi Intune. Również będą oni mogli zlokalizować te informacje na ekranie informacje. 

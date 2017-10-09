@@ -1,6 +1,6 @@
 ---
 title: "Zmienić urzędu zarządzania urządzeniami Przenośnymi | Dokumentacja firmy Microsoft"
-description: "Dowiedz się, jak zmienić urząd zarządzania urządzeniami Przenośnymi z programu Configuration Manager (rozwiązanie hybrydowe) do autonomicznej usługi Intune lub na odwrót."
+description: "Dowiedz się, jak zmienić urząd zarządzania urządzeniami Przenośnymi z programu Configuration Manager (rozwiązanie hybrydowe) do autonomicznej usługi Intune"
 keywords: 
 author: dougeby
 manager: angrobe
@@ -9,14 +9,17 @@ ms.topic: article
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: cc397ab5-125f-4f17-905b-fab980194f49
-ms.openlocfilehash: d24e6e736397a4612db7b47e997d8cb1f97c4de9
-ms.sourcegitcommit: 948644072bd158b156f782a4376bcd50fac7c73a
+ms.openlocfilehash: 489c01f92d42ed12ac5464307a16713ca898d251
+ms.sourcegitcommit: 8ac9c2c9ba1fdcbb7cc8d5be898586865fcf67c0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 10/07/2017
 ---
 # <a name="change-your-mdm-authority"></a>Zmienić urzędu zarządzania urządzeniami Przenośnymi
 Począwszy od programu Configuration Manager 1610 wersji, można zmienić urzędu zarządzania urządzeniami Przenośnymi bez konieczności kontaktowania się Microsoft Support i bez konieczności wyrejestrowywania i Zarejestruj ponownie istniejących zarządzanych urządzeń. Ten temat zawiera kroki, aby zmienić dzierżawy usługi Microsoft Intune istniejące skonfigurowane z konsoli programu Configuration Manager (rozwiązanie hybrydowe) do autonomicznej usługi Intune.
+
+> [!Note]    
+> Jeśli chcesz zmienić istniejącej dzierżawy Microsoft Intune, przy użyciu zestawu urzędu zarządzania urządzeniami Przenośnymi do usługi Intune, programu Configuration Manager (rozwiązanie hybrydowe), zobacz [zmienić urząd zarządzania urządzeniami Przenośnymi](https://docs.microsoft.com/intune-classic/deploy-use/change-mdm-authority).
 
 > [!Important]    
 > Ten temat dotyczy można zmienić urzędu zarządzania urządzeniami Przenośnymi, gdy użytkownicy nie zostały wcześniej migrowane. Aby zmienić urzędu zarządzania urządzeniami Przenośnymi, po [migracji podzbiór użytkowników](migrate-hybridmdm-to-intunesa.md), zobacz [zmienić urzędu zarządzania urządzeniami Przenośnymi](migrate-change-mdm-authority.md).

@@ -14,11 +14,11 @@ caps.latest.revision:
 author: mtillman
 ms.author: mtillman
 manager: angrobe
-ms.openlocfilehash: 4fd2d3b8aae6a2f42e7c6a87723d16368be30984
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: d353f47671a0c1e67c34bb9641fa9dd007b9f8be
+ms.sourcegitcommit: c145e515843a0f37c2e5ca5dbd22072a219d06b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/03/2017
 ---
 # <a name="troubleshoot-lookout-integration-with-intune"></a>Rozwiązywanie problemów z integracją Lookout przy użyciu usługi Intune
 
@@ -34,7 +34,7 @@ Można się z pomocą techniczną Lookout za pomocą następujących metod:
 
 * Adres e-mail:enterprisesupport@lookout.com
 * Zaloguj się do [konsoli z MTP](http://aad.lookout.com), a następnie przejdź do **pomocy technicznej** modułu.
-* Przejdź do: https://enterprise.support.lookout.com/hc/en-us/requests i Utwórz żądanie obsługi.
+* Przejdź do: https://enterprise.support.lookout.com/hc/requests i Utwórz żądanie obsługi.
 
 ### <a name="unable-to-sign-in"></a>Nie można zalogować
 Może zostać wyświetlony następujący błąd podczas użytkownika administratora globalnego usługi Azure AD nie zaakceptował początkowej konfiguracji Lookout.
@@ -73,7 +73,7 @@ Odłączony oznacza, że Lookout MTP ma niektórzy z urządzenia dla przedziała
 Z **urządzeń** modułu Lookout MTP konsoli administratora programu można wybrać urządzenie i wybierz go usunąć.   Przy następnym właściciel urządzenia otwiera Zaczekaj na pracę aplikacji i funkcji podsłuchu **Aktywuj**, stan urządzenia spowoduje wykonanie pełnej ponownej synchronizacji.
 
 ### <a name="the-owner-of-the-device-is-no-longer-using-this-device"></a>Właścicielem urządzenia nie używa już tego urządzenia
-Należy wyczyścić urządzenie i poproś nowego użytkownika, aby zarejestrować zgodnie z opisem w [w tym temacie](https://docs.microsoft.com/en-us/sccm/mdm/deploy-use/wipe-lock-reset-devices#full-wipe).
+Należy wyczyścić urządzenie i poproś nowego użytkownika, aby zarejestrować zgodnie z opisem w [w tym temacie](https://docs.microsoft.com/sccm/mdm/deploy-use/wipe-lock-reset-devices#full-wipe).
 
 
 Można także przejść do **urządzeń** modułu Lookout MTP konsoli i wybierz polecenie **usunąć**.

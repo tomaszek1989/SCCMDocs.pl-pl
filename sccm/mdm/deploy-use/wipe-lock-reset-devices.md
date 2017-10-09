@@ -2,7 +2,7 @@
 title: "Ochrona danych za pomocą czyszczenia danych, blokowania lub resetowania za pomocą programu System Center Configuration Manager kodu dostępu | Dokumentacja firmy Microsoft"
 description: "Ochrona danych urządzenia za pomocą pełnego czyszczenia danych, selektywnego czyszczenia danych, zdalnego blokowania lub resetowania kodu dostępu przy użyciu programu System Center Configuration Manager."
 ms.custom: na
-ms.date: 03/27/2017
+ms.date: 09/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,14 +12,14 @@ ms.topic: article
 ms.assetid: 770da7bd-02dd-474a-9604-93ff1ea0c1e4
 caps.latest.revision: "18"
 caps.handback.revision: "0"
-author: nathbarn
-ms.author: nathbarn
+author: dougeby
+ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 351fdc6328dd0859d60e00b128963df738e69f81
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: ea92d7b4656a04f312f04c19cac6b17df931c9c5
+ms.sourcegitcommit: db079cd7322e7d4926b2df0ccb37e752c570d902
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-system-center-configuration-manager"></a>Ochrona danych za pomocą czyszczenia danych, blokowania lub resetowania za pomocą programu System Center Configuration Manager kodu dostępu
 
@@ -179,6 +179,9 @@ Jeśli użytkownik zapomni swój kod dostępu, możesz mu pomóc przez usunięci
 |Windows RT 8.1 |Nieobsługiwane.|  
 |Komputery Windows 8.1 |Nieobsługiwane.|  
 
+> [!Note]    
+> Należy wykonać akcję resetowania kodu dostępu z lokacji najwyższego poziomu w danym środowisku. Na przykład jeśli korzystasz z centralną lokacją administracyjną akcję można wykonać tylko w tej witrynie. Jeśli używasz autonomiczną lokacją główną akcję można wykonać tylko w tej witrynie.
+
 #### <a name="to-reset-the-passcode-on-a-mobile-device-remotely-in-configuration-manager"></a>Aby zdalnie zresetować kod dostępu na urządzeniu przenośnym w programie Configuration Manager  
 
 1. W konsoli programu Configuration Manager wybierz **zasoby i zgodność** i wybierz polecenie **urządzeń**. Alternatywnie można wybrać **kolekcje urządzeń** i wybrać odpowiednią kolekcję.  
@@ -206,6 +209,9 @@ Jeśli użytkownik utraci urządzenie, można zdalnie zablokować urządzenie. W
 |Windows Phone 8 i Windows Phone 8.1|Obsługiwane.|  
 |Windows RT 8.1 |Obsługiwane, jeśli bieżący użytkownik urządzenia jest tym samym użytkownikiem, który zarejestrował urządzenie.|  
 |Windows 8.1|Obsługiwane, jeśli bieżący użytkownik urządzenia jest tym samym użytkownikiem, który zarejestrował urządzenie.|  
+
+> [!Note]    
+> Należy wykonać akcję zdalne blokowanie z lokacji najwyższego poziomu w danym środowisku. Na przykład jeśli korzystasz z centralną lokacją administracyjną akcję można wykonać tylko w tej witrynie. Jeśli używasz autonomiczną lokacją główną akcję można wykonać tylko w tej witrynie.
 
 #### <a name="to-lock-a-mobile-device-remotely-through-the-configuration-manager-console"></a>Aby zdalnie zablokować urządzenie przenośne za pośrednictwem konsoli programu Configuration Manager  
 

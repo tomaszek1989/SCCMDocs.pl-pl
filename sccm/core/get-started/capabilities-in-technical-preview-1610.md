@@ -14,11 +14,11 @@ caps.latest.revision: "2"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 59633ce68e2bb2d722900215751f345d6d098721
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: b164b6a177b8b4d1eebd0bbd54e67e90376929be
+ms.sourcegitcommit: c145e515843a0f37c2e5ca5dbd22072a219d06b4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/03/2017
 ---
 # <a name="capabilities-in-technical-preview-1610-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1610 programu System Center Configuration Manager
 
@@ -63,7 +63,7 @@ Jako administrator możesz teraz odrzucanie żądań wcześniej zatwierdzonych a
 #### <a name="try-it-out"></a>Podczas próby
 Odrzucanie aplikacji zatwierdził żądanie:
 
-1.  W konsoli programu Configuration Manager [tworzenie i wdrażanie aplikacji](https://docs.microsoft.com/en-us/sccm/apps/deploy-use/create-applications) który wymaga zatwierdzenia.
+1.  W konsoli programu Configuration Manager [tworzenie i wdrażanie aplikacji](https://docs.microsoft.com/sccm/apps/deploy-use/create-applications) który wymaga zatwierdzenia.
 2.  Na komputerze klienckim otwórz Centrum oprogramowania i prześlij żądanie do aplikacji.
 3.  W konsoli programu Configuration Manager zatwierdzić żądań aplikacji.
 4.  Odrzucanie żądań zatwierdzonych aplikacji: W konsoli programu Configuration Manager Przejdź **Biblioteka oprogramowania** > **omówienie** > **Zarządzanie aplikacjami** > **żądań zatwierdzenia** i wybierz żądanie aplikacji chcesz odmówić.  Na wstążce kliknij **Odmów**.
