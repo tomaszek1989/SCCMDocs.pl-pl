@@ -14,11 +14,11 @@ caps.latest.revision: "15"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 5148fe852e4d63e1cfd2d5b9c62369155dbecb89
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: ef515da67a7293de60a7678dee69e9785d339352
+ms.sourcegitcommit: 96b79fa091f44e8e6ac5652f6cbbb4b873a8bad9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/09/2017
 ---
 # <a name="about-client-installation-properties-in-system-center-configuration-manager"></a>Informacje o właściwościach instalacji klientów w programie System Center Configuration Manager
 
@@ -45,7 +45,7 @@ Polecenie programu System Center Configuration Manager CCMSetup.exe do ręcznej 
 > [!IMPORTANT]  
 >  Przed określeniem właściwości pliku Client.msi, należy określić właściwości programu CCMSetup.  
 
- CCMSetup.exe i towarzyszące mu pliki znajdują się na serwerze lokacji programu Configuration Manager w **klienta** folderu w folderze instalacyjnym programu Configuration Manager. Ten folder jest udostępniany w sieci jako ** &lt;nazwa serwera lokacji\>\SMS_&lt;kod lokacji\>\Client**.  
+ CCMSetup.exe i towarzyszące mu pliki znajdują się na serwerze lokacji programu Configuration Manager w **klienta** folderu w folderze instalacyjnym programu Configuration Manager. Ten folder jest udostępniany w sieci jako  **&lt;nazwa serwera lokacji\>\SMS_&lt;kod lokacji\>\Client**.  
 
  W wierszu polecenia polecenie CCMSetup.exe posługuje się następującym formatem:  
 
@@ -179,7 +179,7 @@ Przykład: `ccmsetup.exe /downloadtimeout:100`
 
  Jeśli nie zostanie określony, klient sprawdza listę CRL przed nawiązaniem połączenia HTTPS.  
 
- Więcej informacji o sprawdzaniu listy CRL przez klienta znajduje się w sekcji [Planowanie odwoływania certyfikatów PKI](../../plan-design/security/plan-for-security.md#BKMK_PlanningForCRLs) w temacie [Planowanie zabezpieczeń w programie System Center Configuration Manager](../../plan-design/security/plan-for-security.md).  
+ Aby uzyskać więcej informacji o sprawdzaniu listy CRL klienta, zobacz [planowanie odwoływania certyfikatów PKI](../../plan-design/security/plan-for-security.md#BKMK_PlanningForCRLs) w [Planowanie zabezpieczeń w programie System Center Configuration Manager](../../plan-design/security/plan-for-security.md).  
 
  Przykład: `CCMSetup.exe /UsePKICert /NoCRLCheck`  
 
@@ -267,7 +267,7 @@ Przykład: **CCMSetup.exe CCMALLOWSILENTREBOOT**
  `CCMCERTISSUERS=”CN=Contoso Root CA; OU=Servers; O=Contoso, Ltd; C=US &#124; CN=Litware Corporate Root CA; O=Litware, Inc.”`  
 
 > [!TIP]  
->  Przywołaj plik mobileclient.tcf z folderu &lt;katalog programu Configuration Manager\>\bin\\&lt;platformy\> folderu na komputerze serwera lokacji, aby skopiować **CertificateIssuers =&lt;ciąg\> ** skonfigurowany dla lokacji.  
+>  Przywołaj plik mobileclient.tcf z folderu &lt;katalog programu Configuration Manager\>\bin\\&lt;platformy\> folderu na komputerze serwera lokacji, aby skopiować **CertificateIssuers =&lt;ciąg\>**  skonfigurowany dla lokacji.  
 
 ### <a name="ccmcertsel"></a>CCMCERTSEL
 
@@ -332,7 +332,7 @@ Przykład: **CCMSetup.exe CCMALLOWSILENTREBOOT**
 
  Nie należy określać tej opcji wraz z właściwością instalacyjną SMSSITECODE=AUTO. Klientów internetowych należy przypisać bezpośrednio do odpowiedniej lokacji internetowej.  
 
- Przykład: `CCMSetup.exe  /UsePKICert/ CCMHOSTNAME="SMSMP01.corp.contoso.com"`  
+ Przykład: `CCMSetup.exe  /UsePKICert CCMHOSTNAME="SMSMP01.corp.contoso.com"`  
 
 ### <a name="ccmhttpport"></a>CCMHTTPPORT
 
@@ -402,7 +402,7 @@ Przykład: `CCMSetup.exe DISABLECACHEOPT=TRUE`
 
 Określa rezerwowy punkt stanu odbierający i przetwarzający komunikaty o stanie wysyłane przez komputery klienckie programu Configuration Manager.  
 
-Aby uzyskać więcej informacji na temat rezerwowego punktu stanu, zobacz [stwierdzić, czy wymagane rezerwowy punkt stanu](/sccm/core/clients/deploy/plan#determine-if-you-need-a-fallback-status-point).  
+Aby uzyskać więcej informacji na temat rezerwowego punktu stanu, zobacz [stwierdzić, czy wymagane rezerwowy punkt stanu](/sccm/core/clients/deploy/plan/determine-the-site-system-roles-for-clients#determine-if-you-need-a-fallback-status-point).  
 
 Przykład: `CCMSetup.exe FSP=SMSFP01`  
 
