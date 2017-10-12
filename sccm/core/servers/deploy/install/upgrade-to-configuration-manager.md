@@ -16,7 +16,7 @@ ms.author: brenduns
 manager: angrobe
 ms.openlocfilehash: e65c22240555563cdb011849562069baf5d5887f
 ms.sourcegitcommit: 4c3906cf9614420cb8527da9e48978eb0b8f0e7a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 09/22/2017
 ---
@@ -330,7 +330,7 @@ Użyj poniższych procedur do uaktualnienia lokacji programu Configuration Manag
     -   Uprawnienia administratora lokalnego na komputerze serwera lokacji.  
     -   Uprawnienia administratora lokalnego na zdalnym serwerze bazy danych lokacji (jeśli jest zdalna).    </br></br>
 
-2.  Na komputerze serwera lokacji Otwórz Eksploratora Windows i przejdź do ** &lt;Nośnik_źródłowy_programu_configmgr\>\SMSSETUP\BIN\X64**.  
+2.  Na komputerze serwera lokacji Otwórz Eksploratora Windows i przejdź do  **&lt;Nośnik_źródłowy_programu_configmgr\>\SMSSETUP\BIN\X64**.  
 
 3.  Kliknij dwukrotnie plik **Setup.exe**. Otworzy się Kreator instalacji programu Configuration Manager.  
 
