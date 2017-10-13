@@ -16,7 +16,7 @@ ms.author: alleonar
 manager: angrobe
 ms.openlocfilehash: 43586e55f2c0c5cf117b94c61250f26ba4233f53
 ms.sourcegitcommit: 4c3906cf9614420cb8527da9e48978eb0b8f0e7a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 09/22/2017
 ---
@@ -76,9 +76,9 @@ Niektóre konfiguracje nie może być konieczne można skonfigurować uprawnieni
 1.  Zaloguj się do kontrolera lub zarządzania stacjach roboczych z administratora domeny lub równoważne poświadczeń.
 2.  Otwórz **użytkowników usługi Active Directory i komputery**.
 3.  W okienku nawigacji kliknij prawym przyciskiem myszy nazwę domeny, a następnie kliknij przycisk **właściwości**.
-4.  Na **zabezpieczeń** karcie * <domain name> * **właściwości** okno dialogowe, kliknij przycisk **zaawansowane**. Jeśli **zabezpieczeń** karta nie jest wyświetlana, Włącz **funkcje zaawansowane** z **widoku** menu **użytkownicy usługi Active Directory i komputery**.
+4.  Na **zabezpieczeń** karcie  *<domain name>*  **właściwości** okno dialogowe, kliknij przycisk **zaawansowane**. Jeśli **zabezpieczeń** karta nie jest wyświetlana, Włącz **funkcje zaawansowane** z **widoku** menu **użytkownicy usługi Active Directory i komputery**.
 5.  Kliknij pozycję **Dodaj**.
-6.  W **wpis uprawnienia dla** * <domain name> * okno dialogowe, kliknij przycisk **Wybierz podmiot zabezpieczeń**.
+6.  W **wpis uprawnienia dla**  *<domain name>*  okno dialogowe, kliknij przycisk **Wybierz podmiot zabezpieczeń**.
 7.  W **wybierz użytkownika, komputera, konto usługi lub grupy** okno dialogowe, typ **Administratorzy klucza** w **wprowadź nazwę obiektu do wybrania** pola tekstowego.  Kliknij przycisk **OK**.
 8.  Z **dotyczy** listy, wybierz **obiekty użytkownika podrzędnym**.
 9.  Przewiń do dołu strony, a następnie kliknij przycisk **Wyczyść wszystko**.
