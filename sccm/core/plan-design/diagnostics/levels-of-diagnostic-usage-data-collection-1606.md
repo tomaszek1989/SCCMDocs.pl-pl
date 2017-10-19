@@ -108,7 +108,7 @@ Zmiany z wcześniejszych wersji są oznaczane przy użyciu ***[New]***, ***[zakt
      -  Statystyka połączenia konsoli (wersja systemu operacyjnego, języka, jednostki SKU i architektury, pamięci, liczbę procesorów logicznych, podłącz identyfikator witryny, zainstalowanych wersji platformy .NET i pakiety językowe konsoli)    
 
 
-- ***[New] *** Wersji, poziom dodatku service pack, wersji, identyfikator sortowania i znak SQL
+- ***[New]***  Wersji, poziom dodatku service pack, wersji, identyfikator sortowania i znak SQL
 
 
 ##  <a name="bkmk_level2"></a> Poziom 2 — rozszerzony
@@ -142,17 +142,17 @@ W programie System Center Configuration Manager wersji 1606, ten poziom obejmuje
 
     -  Statystyk rozmiar i złożoność zasad aplikacji
 
-    - ***[New] *** Liczba Sklep Windows dla aplikacji biznesowych i statystyki synchronizacji (w tym podsumowane typy aplikacji)  
+    - ***[New]***  Liczba Sklep Windows dla aplikacji biznesowych i statystyki synchronizacji (w tym podsumowane typy aplikacji)  
 
-    - ***[New] *** Statystyki grupy granic (ile szybko, jak wiele powolne i liczba dla każdej grupy)
+    - ***[New]***  Statystyki grupy granic (ile szybko, jak wiele powolne i liczba dla każdej grupy)
 
-    - ***[New] *** Konfiguracji MSI liczby i opcje
+    - ***[New]***  Konfiguracji MSI liczby i opcje
 
-    - ***[New] *** Wymagania dotyczące aplikacji (liczba wbudowanych warunkach odwołuje się do niego technologii wdrażania)
+    - ***[New]***  Wymagania dotyczące aplikacji (liczba wbudowanych warunkach odwołuje się do niego technologii wdrażania)
 
-    - ***[New] *** Zastępowania aplikacji, maksymalną głębokość łańcucha
+    - ***[New]***  Zastępowania aplikacji, maksymalną głębokość łańcucha
 
-    - ***[New] *** Użycia Uniwersalny dostęp do danych (UDA) i jak utworzony
+    - ***[New]***  Użycia Uniwersalny dostęp do danych (UDA) i jak utworzony
 
 
 
@@ -164,43 +164,43 @@ W programie System Center Configuration Manager wersji 1606, ten poziom obejmuje
 
     -   Liczba błędów instalacji klienta  
 
-    -  ***[New] *** Konfiguracji wdrażania automatycznego uaktualnienia klienta, w tym wdrażania pilotażowego klienta
+    -  ***[New]***  Konfiguracji wdrażania automatycznego uaktualnienia klienta, w tym wdrażania pilotażowego klienta
 
-    -  ***[New] *** Statystyki kondycji klienta i streszczenie górnego problem
+    -  ***[New]***  Statystyki kondycji klienta i streszczenie górnego problem
 
-    - ***[New] *** Wieku systemu BIOS w latach
+    - ***[New]***  Wieku systemu BIOS w latach
 
-    - ***[New] *** Wieku systemu operacyjnego, w miesiącach
+    - ***[New]***  Wieku systemu operacyjnego, w miesiącach
 
-    - ***[New] *** Akcje liczba Centrum oprogramowania
+    - ***[New]***  Akcje liczba Centrum oprogramowania
 
-    - ***[New] *** Wersji klienta technologii zarządzania aktywnego (AMT)
+    - ***[New]***  Wersji klienta technologii zarządzania aktywnego (AMT)
 
-    - ***[New] *** Błędy pobierania wdrożenia klienta
+    - ***[New]***  Błędy pobierania wdrożenia klienta
 
-    - ***[New] *** Klienta powiadomień stan operacji dla akcji (uruchamiania, maksymalna liczba docelowych klientów i Częstotliwość powodzeń średnia jest ile razy)
+    - ***[New]***  Klienta powiadomień stan operacji dla akcji (uruchamiania, maksymalna liczba docelowych klientów i Częstotliwość powodzeń średnia jest ile razy)
 
-    - ***[New] *** Metody wdrażania klienta i liczba klientów na metodę wdrażania
+    - ***[New]***  Metody wdrażania klienta i liczba klientów na metodę wdrażania
 
-    - ***[New] *** Konfigurację rozmiar pamięci podręcznej klienta
+    - ***[New]***  Konfigurację rozmiar pamięci podręcznej klienta
 
 
 
-- ***[New] *** **Usługi w chmurze:**
+- ***[New]***  **Usługi w chmurze:**
 
-  - ***[New] *** Liczba kolekcji, które są synchronizowane z usługi Operations Management Suite
+  - ***[New]***  Liczba kolekcji, które są synchronizowane z usługi Operations Management Suite
 
-  - ***[New] *** Łącznika w chmurze czy Operations Management Suite jest włączona.
+  - ***[New]***  Łącznika w chmurze czy Operations Management Suite jest włączona.
 
 
 
 - ***[New] Kolekcje:***
 
-    -  ***[Przenieść] *** Statystyki oceny kolekcji (czas przypisane w zależności od liczby nieprzypisane liczba wg typu, przerzucania identyfikator i stosowania reguły zapytania)
+    -  ***[Przenieść]***  Statystyki oceny kolekcji (czas przypisane w zależności od liczby nieprzypisane liczba wg typu, przerzucania identyfikator i stosowania reguły zapytania)
 
-    - ***[New] *** Kolekcji bez wdrożenia
+    - ***[New]***  Kolekcji bez wdrożenia
 
-    - ***[New] *** Użycie Identyfikatora kolekcji (nie kończy identyfikatory)
+    - ***[New]***  Użycie Identyfikatora kolekcji (nie kończy identyfikatory)
 
 
 
@@ -210,14 +210,14 @@ W programie System Center Configuration Manager wersji 1606, ten poziom obejmuje
 
     -   Podstawowe informacje o linii bazowej konfiguracji (liczba, liczba wdrożeń i liczba odwołań)  
 
-    -   ***[Zaktualizowane] *** Liczba wdrożeń, które odwołują się do ustawień wbudowanych (teraz Przechwytywanie skorygować ustawienie)  
+    -   ***[Zaktualizowane]***  Liczba wdrożeń, które odwołują się do ustawień wbudowanych (teraz Przechwytywanie skorygować ustawienie)  
 
-    -   ***[Zaktualizowane] *** Liczba reguł i wdrożeń utworzonych dla ustawień niestandardowych (teraz Przechwytywanie skorygować ustawienie)  
+    -   ***[Zaktualizowane]***  Liczba reguł i wdrożeń utworzonych dla ustawień niestandardowych (teraz Przechwytywanie skorygować ustawienie)  
     -   Liczba wdrożonych szablonów prostego protokołu rejestrowania certyfikatów (SCEP), sieci VPN, Wi-Fi, certyfikatu (pfx) i zasad zgodności
 
     -  Liczba SCEP certyfikatu, sieci VPN, Wi-Fi, certyfikatu (pfx) i wdrożenia zasad zgodności przez platformę
 
-    - ***[New] *** Usługi passport for Work zasad (utworzone, wdrożony)
+    - ***[New]***  Usługi passport for Work zasad (utworzone, wdrożony)
 
 
 
@@ -244,21 +244,21 @@ W programie System Center Configuration Manager wersji 1606, ten poziom obejmuje
 
     -   Liczba alertów, które są skonfigurowane dla funkcji programu Endpoint Protection  
 
-    - ***[New] *** Zasady advanced Threat Protection (ATP) (liczba zasad i określa, czy zasady są wdrażane)
+    - ***[New]***  Zasady advanced Threat Protection (ATP) (liczba zasad i określa, czy zasady są wdrażane)
 
 
--   ***[Usunięte] *** **Zarządzania aplikacjami mobilnymi (MAM):**  
+-   ***[Usunięte]***  **Zarządzania aplikacjami mobilnymi (MAM):**  
 
-    -   ***[Usunięte] *** Aplikacji pakietu Office z możliwością liczba MAM, aplikacji biznesowych z i zasad przez system operacyjny  
+    -   ***[Usunięte]***  Aplikacji pakietu Office z możliwością liczba MAM, aplikacji biznesowych z i zasad przez system operacyjny  
 
-    -   ***[Usunięte] *** Liczba MAM wdrożeń zasad/aplikacji  
+    -   ***[Usunięte]***  Liczba MAM wdrożeń zasad/aplikacji  
 
-    -   ***[Usunięte] *** Liczby reguł, które są tworzone na ustawienie zarządzania aplikacjami Mobilnymi  
+    -   ***[Usunięte]***  Liczby reguł, które są tworzone na ustawienie zarządzania aplikacjami Mobilnymi  
 
 
-- ***[New] *** **Migracji:**
+- ***[New]***  **Migracji:**
 
-  -  ***[New] *** Liczby migrowanych obiektów (Użyj Kreatora migracji)
+  -  ***[New]***  Liczby migrowanych obiektów (Użyj Kreatora migracji)
 
 
 
@@ -295,7 +295,7 @@ W programie System Center Configuration Manager wersji 1606, ten poziom obejmuje
 
     -   Liczba obrazów rozruchowych, sterowników, pakietów sterowników, punktów dystrybucji z obsługą multiemisji, punktów dystrybucji obsługujących środowisko PXE i sekwencji zadań  
 
-    -   ***[New] *** Liczby sekwencji zadań krok użycia
+    -   ***[New]***  Liczby sekwencji zadań krok użycia
 
 
 
@@ -348,7 +348,7 @@ W programie System Center Configuration Manager wersji 1606, ten poziom obejmuje
 
     -   Klasyfikacje, które są synchronizowane przez punkt aktualizacji oprogramowania
 
-    -   ***[New] *** Statystyki równoważenia obciążenia punktu aktualizacji oprogramowania
+    -   ***[New]***  Statystyki równoważenia obciążenia punktu aktualizacji oprogramowania
 
 
 
@@ -360,17 +360,17 @@ W programie System Center Configuration Manager wersji 1606, ten poziom obejmuje
 
     -  Okresu przechowywania śledzenia zmian programu SQL
 
-    - ***[New] *** Włączone typy odnajdywania i harmonogram (full, przyrostowa)
+    - ***[New]***  Włączone typy odnajdywania i harmonogram (full, przyrostowa)
 
-    - ***[New] *** Operacyjne statystyki odnajdywania (liczba znalezionych)
+    - ***[New]***  Operacyjne statystyki odnajdywania (liczba znalezionych)
 
-    - ***[New] *** Śledzenia problemów z wydajnością, okres przechowywania i stanu automatycznego czyszczenia zmian SQL
+    - ***[New]***  Śledzenia problemów z wydajnością, okres przechowywania i stanu automatycznego czyszczenia zmian SQL
 
 
 
-- ***[New] *** **Różne**
+- ***[New]***  **Różne**
 
-    - ***[New] *** Liczbie lokacji z wznawiania pracy w sieci Lan (WOL)
+    - ***[New]***  Liczbie lokacji z wznawiania pracy w sieci Lan (WOL)
 
 
 
@@ -391,7 +391,7 @@ W programie System Center Configuration Manager wersji 1606, ten poziom obejmuje
 
 -   Informacje dotyczące harmonogramu oceny reguły wdrażania automatycznego
 
--   ***[USUNIĘTE] *** Liczba klientów, którzy mają zasad ochrony dostępu do sieci
+-   ***[USUNIĘTE]***  Liczba klientów, którzy mają zasad ochrony dostępu do sieci
 
 -   Liczby i kody błędów wdrażania aktualizacji oprogramowania
 
@@ -410,12 +410,12 @@ W programie System Center Configuration Manager wersji 1606, ten poziom obejmuje
 
 -    Typ zasad dostępu warunkowego EAS (blokowanie lub kwarantannę) dla urządzeń zarządzanych przez usługę Intune
 
--   ***[New] *** Top 50 procesorów w środowisku
+-   ***[New]***  Top 50 procesorów w środowisku
 
--   ***[New] *** Pakiet config DCM użycia programu System Center Configuration Manager
+-   ***[New]***  Pakiet config DCM użycia programu System Center Configuration Manager
 
--   ***[New] *** Kod produktu MSI (typowych aplikacji, którymi klienci wdrażać)
+-   ***[New]***  Kod produktu MSI (typowych aplikacji, którymi klienci wdrażać)
 
--   ***[New] *** Podsumowanie kondycji ATP
+-   ***[New]***  Podsumowanie kondycji ATP
 
--   ***[New] *** Szczegółowe błędy instalacji wdrożenia klienta
+-   ***[New]***  Szczegółowe błędy instalacji wdrożenia klienta

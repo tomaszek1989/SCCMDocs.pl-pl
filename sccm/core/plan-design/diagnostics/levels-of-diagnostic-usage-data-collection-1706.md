@@ -79,7 +79,7 @@ Programu System Center Configuration Manager wersji 1706 ten poziom obejmuje nas
 
 - Wdrożenie podstawowego systemu operacyjnego (OSD) liczby (obrazy)
 
-- ***[Zaktualizowane] *** Podstawowa systemu informacji o serwerze lokacji (używane role systemu lokacji, stan internetowego i protokołu SSL, system operacyjny, procesory, fizyczne lub maszyny wirtualnej i użycia wysokiej dostępności serwera lokacji)
+- ***[Zaktualizowane]***  Podstawowa systemu informacji o serwerze lokacji (używane role systemu lokacji, stan internetowego i protokołu SSL, system operacyjny, procesory, fizyczne lub maszyny wirtualnej i użycia wysokiej dostępności serwera lokacji)
 
 - Schemat bazy danych programu Configuration Manager (skrót wszystkich definicji obiektu)
 
@@ -97,7 +97,7 @@ Programu System Center Configuration Manager wersji 1706 ten poziom obejmuje nas
 
 - Punkt dystrybucji i punktów zarządzania typy i podstawowe informacje o konfiguracji (chronione, wstępnie przygotowane, środowisko PXE, multiemisja, stan SSL, punkty dystrybucji ściągania/równorzędne, zarządzania urządzeniami Przenośnymi, włączyć protokołu SSL itd.)
 
-- ***[New] *** Hashed Lista rozszerzeń strony właściwości konsoli administratora i kreatorów
+- ***[New]***  Hashed Lista rozszerzeń strony właściwości konsoli administratora i kreatorów
 
 - Informacje na temat instalacji:
      - Tworzenie, zainstaluj typu, pakiety językowe, funkcje, które są włączone   
@@ -135,7 +135,7 @@ Programu System Center Configuration Manager wersji 1706 ten poziom obejmuje nas
 
    - Częstotliwość statystyk i użycia zatwierdzenie aplikacji
 
-   - ***[New] *** Statystyk rozmiar zawartości aplikacji
+   - ***[New]***  Statystyk rozmiar zawartości aplikacji
 
    - Informacje na temat wdrażania aplikacji (Użyj instalacji i dezinstalacji, wymaga zatwierdzenia, włączona/wyłączona interakcja użytkownika zależności, zastępowanie i liczba przypadków użycia funkcji zachowanie instalacji)  
 
@@ -155,9 +155,9 @@ Programu System Center Configuration Manager wersji 1706 ten poziom obejmuje nas
 
    - Liczba aplikacji, do których odwołuje się sekwencja zadań
 
-   - ***[New] *** Liczba unikatowych znakowanie dla katalogu aplikacji
+   - ***[New]***  Liczba unikatowych znakowanie dla katalogu aplikacji
 
-   - ***[New] *** Liczba usługi Office 365 aplikacje utworzone przy użyciu pulpitu nawigacyjnego
+   - ***[New]***  Liczba usługi Office 365 aplikacje utworzone przy użyciu pulpitu nawigacyjnego
 
    - Liczba pakietów według typu  
 
@@ -165,7 +165,7 @@ Programu System Center Configuration Manager wersji 1706 ten poziom obejmuje nas
 
    - Liczba licencji aplikacji licencjonowanych w systemie Windows 10  
 
-   - ***[New] *** Typy wdrożeń liczba Instalatora Windows Odinstaluj przez ustawienia zawartości
+   - ***[New]***  Typy wdrożeń liczba Instalatora Windows Odinstaluj przez ustawienia zawartości
 
    - Liczba Sklep Windows dla aplikacji biznesowych i statystyki synchronizacji (łącznie z podsumowaniem typy aplikacji, licencjonowane stanu aplikacji i liczba online i offline licencjonowane aplikacje)  
 
@@ -190,9 +190,9 @@ Programu System Center Configuration Manager wersji 1706 ten poziom obejmuje nas
 
    - Wiek systemu BIOS w latach
    
-   - ***[New] *** Liczba urządzeń włączono Bezpieczny rozruch
+   - ***[New]***  Liczba urządzeń włączono Bezpieczny rozruch
    
-   - ***[New] *** Liczba urządzeń według stanu modułu TPM
+   - ***[New]***  Liczba urządzeń według stanu modułu TPM
 
    - Automatycznej aktualizacji klienta: Konfiguracja wdrożenia pilotażowego i wykluczenia wykorzystania (rozszerzonej współdziałanie klienta) w tym
 
@@ -227,11 +227,11 @@ Programu System Center Configuration Manager wersji 1706 ten poziom obejmuje nas
 
 - **Usługi w chmurze:**
 
-  - ***[New] *** Statystyki odnajdywania usługi azure Active Directory
+  - ***[New]***  Statystyki odnajdywania usługi azure Active Directory
 
-  - ***[Zaktualizowane] *** Konfiguracji i użytkowania statystyki bramy zarządzania chmury, w tym liczby regionów i środowisk oraz statystyki uwierzytelniania/autoryzacji
+  - ***[Zaktualizowane]***  Konfiguracji i użytkowania statystyki bramy zarządzania chmury, w tym liczby regionów i środowisk oraz statystyki uwierzytelniania/autoryzacji
 
-  - ***[New] *** Liczby z usługą Azure Active Directory aplikacji i usług podłączony do programu Configuration Manager
+  - ***[New]***  Liczby z usługą Azure Active Directory aplikacji i usług podłączony do programu Configuration Manager
 
   - Liczba klientów przyłączone do usług Azure Active Directory
 
@@ -260,7 +260,7 @@ Programu System Center Configuration Manager wersji 1706 ten poziom obejmuje nas
 
     - Podstawowe informacje o linii bazowej konfiguracji (liczba, liczba wdrożeń i liczba odwołań)
 
-    - ***[New] *** Statystyki błędu zasad zgodności
+    - ***[New]***  Statystyki błędu zasad zgodności
 
     - Liczba elementów konfiguracji według typu  
 
@@ -285,7 +285,7 @@ Programu System Center Configuration Manager wersji 1706 ten poziom obejmuje nas
 
     - Liczba granic według typu  
 
-    - ***[Zaktualizowane] *** Liczba klientów równorzędnej pamięci podręcznej, statystyki użycia i pobierania z częściowa statystyki
+    - ***[Zaktualizowane]***  Liczba klientów równorzędnej pamięci podręcznej, statystyki użycia i pobierania z częściowa statystyki
 
     - Informacje o konfiguracji Menedżera dystrybucji (wątki, opóźnienie, liczba ponownych prób i ustawienia ściągającego punktu dystrybucji)  
 
@@ -353,19 +353,19 @@ Programu System Center Configuration Manager wersji 1706 ten poziom obejmuje nas
 
     - Liczba obrazów rozruchowych, sterowników, pakietów sterowników, punktów dystrybucji z obsługą multiemisji, punktów dystrybucji obsługujących środowisko PXE i sekwencji zadań  
 
-    - ***[New] *** Liczba rozruchu obrazy według wersji klienta programu Configuration Manager
+    - ***[New]***  Liczba rozruchu obrazy według wersji klienta programu Configuration Manager
 
-    - ***[New] *** Liczba rozruchu obrazy przez wersję systemu Windows PE
+    - ***[New]***  Liczba rozruchu obrazy przez wersję systemu Windows PE
 
     - Liczba zasad uaktualniania wersji
 
-    - ***[New] *** Liczba identyfikatorów sprzętu wykluczone ze środowiska PXE
+    - ***[New]***  Liczba identyfikatorów sprzętu wykluczone ze środowiska PXE
 
-    - ***[New] *** Liczba wdrożeń sekwencji zadań przy użyciu opcji można wstępnie pobrać zawartości
+    - ***[New]***  Liczba wdrożeń sekwencji zadań przy użyciu opcji można wstępnie pobrać zawartości
 
     - Licznik użycia krok sekwencji zadań
 
-    - ***[New] *** Wersji z zestawu Windows ADK zainstalowanej
+    - ***[New]***  Wersji z zestawu Windows ADK zainstalowanej
 
 
 - **Aktualizacje lokacji:**
@@ -392,7 +392,7 @@ Programu System Center Configuration Manager wersji 1706 ten poziom obejmuje nas
 
     - Liczba wdrożonych aktualizacji usługi Office 365  
 
-    - ***[New] *** Sterowniki liczba Microsoft Surface zsynchronizowane
+    - ***[New]***  Sterowniki liczba Microsoft Surface zsynchronizowane
 
     - Liczba przydziałów i grup aktualizacji  
 
@@ -402,7 +402,7 @@ Programu System Center Configuration Manager wersji 1706 ten poziom obejmuje nas
 
     - Liczba systemu Windows 10 klientów, którzy za pomocą usługi Windows Update dla firm  
 
-    - ***[New] *** Liczba Windows Update dla firm zasady utworzeniu i wdrożeniu
+    - ***[New]***  Liczba Windows Update dla firm zasady utworzeniu i wdrożeniu
 
     - Liczba reguł wdrażania automatycznego, które są powiązane z synchronizacji  
 
@@ -427,7 +427,7 @@ Programu System Center Configuration Manager wersji 1706 ten poziom obejmuje nas
 
 - **Dane wydajności/SQL:**  
 
-    - ***[New] *** Konfiguracji i czas trwania podsumowania lokacji
+    - ***[New]***  Konfiguracji i czas trwania podsumowania lokacji
 
     - Liczba największych tabel bazy danych  
 
@@ -449,7 +449,7 @@ Programu System Center Configuration Manager wersji 1706 ten poziom obejmuje nas
 
     - Konfiguracja punktu usługi magazynu danych w tym harmonogram i Średni czas synchronizacji
 
-    - ***[New] *** Liczby skryptów i statystyk wykonywania
+    - ***[New]***  Liczby skryptów i statystyk wykonywania
 
     - Liczba witryn z wznawiania pracy w sieci Lan (WOL)
 
@@ -468,7 +468,7 @@ Programu System Center Configuration Manager wersji 1706 ten poziom obejmuje nas
 
 - Dane statystyczne odświeżania i oceny kolekcji
 
-- ***[New] *** Statystyki zgodności zasad zgodności i błędów
+- ***[New]***  Statystyki zgodności zasad zgodności i błędów
 
 - Ustawienia zgodności: SCEP, sieci VPN, Wi-Fi i zasad zgodności szczegółów konfiguracji szablonu liczba grup, które wygasły aktualizacji oprogramowania
 

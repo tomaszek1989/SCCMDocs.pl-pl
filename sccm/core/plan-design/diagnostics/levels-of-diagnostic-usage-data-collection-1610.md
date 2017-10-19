@@ -70,9 +70,9 @@ Począwszy od wersji 1610, zmień poziom zbierania danych z poziomu konsoli prze
 
       - Użyj szybkiego pierścienia aktualizacji
 
-    - ***[New] *** Wersji wstępnej, użycie, typ nośnika instalacji, typ gałęzi
+    - ***[New]***  Wersji wstępnej, użycie, typ nośnika instalacji, typ gałęzi
 
-    - ***[New] *** Software Assurance Data wygaśnięcia
+    - ***[New]***  Software Assurance Data wygaśnięcia
 
 - Metryki wydajności bazy danych (informacje na temat przetwarzania replikacji, najważniejsze procedury składowane programu SQL według użycia dysku i procesora)
 
@@ -145,7 +145,7 @@ Programu System Center Configuration Manager wersji 1610 ten poziom obejmuje nas
 
     -  Statystyk rozmiar i złożoność zasad aplikacji
 
-    - ***[Zaktualizowane] *** Liczba Sklep Windows dla aplikacji biznesowych i statystyki synchronizacji (łącznie z podsumowaniem typy aplikacji, licencjonowane stanu aplikacji i liczba online i offline licencjonowane aplikacje)  
+    - ***[Zaktualizowane]***  Liczba Sklep Windows dla aplikacji biznesowych i statystyki synchronizacji (łącznie z podsumowaniem typy aplikacji, licencjonowane stanu aplikacji i liczba online i offline licencjonowane aplikacje)  
 
     - Statystyki grupy granic (ile szybko, jak wiele powolne i liczba dla każdej grupy)
 
@@ -157,7 +157,7 @@ Programu System Center Configuration Manager wersji 1610 ten poziom obejmuje nas
 
     - Użycie uniwersalnego dostępu do danych (UDA), jak utworzone
 
-    - ***[New] *** Częstotliwość statystyk i użycia zatwierdzenie aplikacji
+    - ***[New]***  Częstotliwość statystyk i użycia zatwierdzenie aplikacji
 
 
 
@@ -169,7 +169,7 @@ Programu System Center Configuration Manager wersji 1610 ten poziom obejmuje nas
 
     -   Liczba błędów instalacji klienta  
 
-    -  ***[Zaktualizowane] *** Automatycznej aktualizacji klienta: Konfiguracja wdrożenia pilotażowego i wykluczenia wykorzystania (rozszerzonej współdziałanie klienta) w tym
+    -  ***[Zaktualizowane]***  Automatycznej aktualizacji klienta: Konfiguracja wdrożenia pilotażowego i wykluczenia wykorzystania (rozszerzonej współdziałanie klienta) w tym
 
     -  Statystyki kondycji klienta i streszczenie górnego problem
 
@@ -189,7 +189,7 @@ Programu System Center Configuration Manager wersji 1610 ten poziom obejmuje nas
 
     - Konfiguracja rozmiar pamięci podręcznej klienta
 
-    - ***[New] *** Liczbę klas spisu sprzętu, reguły spisu oprogramowania i zasad zbierania plików
+    - ***[New]***  Liczbę klas spisu sprzętu, reguły spisu oprogramowania i zasad zbierania plików
 
 
 
@@ -200,9 +200,9 @@ Programu System Center Configuration Manager wersji 1610 ten poziom obejmuje nas
 
   -  Określa, czy jest włączony łącznik chmurze Operations Management Suite
 
-  - ***[New] *** Konfiguracji i użytkowania statystyki brama zarządzania w chmurze
+  - ***[New]***  Konfiguracji i użytkowania statystyki brama zarządzania w chmurze
 
-  - ***[New] *** Liczba łączników uaktualnienia analityka
+  - ***[New]***  Liczba łączników uaktualnienia analityka
 
 
 
@@ -240,7 +240,7 @@ Programu System Center Configuration Manager wersji 1610 ten poziom obejmuje nas
 
     -   Informacje o grupach granic (liczba granic i systemy lokacji, które są przypisane do każdej grupy granic)  
 
-    - ***[New] *** Relacje grupy granic i rezerwowej konfiguracji
+    - ***[New]***  Relacje grupy granic i rezerwowej konfiguracji
 
     -   Informacje o grupie punktów dystrybucji (liczba pakietów i punktów dystrybucji, które są przypisane do każdej grupy punktów dystrybucji)  
 
@@ -248,9 +248,9 @@ Programu System Center Configuration Manager wersji 1610 ten poziom obejmuje nas
 
     -   Informacje o konfiguracji Menedżera dystrybucji (wątki, opóźnienie, liczba ponownych prób i ustawienia ściągającego punktu dystrybucji)  
 
-    - ***[New] *** Liczba klientów równorzędnej pamięci podręcznej i statystyki użycia
+    - ***[New]***  Liczba klientów równorzędnej pamięci podręcznej i statystyki użycia
 
-    - ***[New] *** Statystyki pobierania zawartości klienta
+    - ***[New]***  Statystyki pobierania zawartości klienta
 
 
 -   **Program Program Endpoint Protection:**  
@@ -274,7 +274,7 @@ Programu System Center Configuration Manager wersji 1610 ten poziom obejmuje nas
 
 -   **Zarządzanie urządzeniami przenośnymi:**  
 
-    -   ***[Zaktualizowane] *** Liczba wydanych akcji urządzenia przenośnego: blokowanie, przypiąć rest czyszczenie, wycofanie i Synchronizuj teraz poleceń  
+    -   ***[Zaktualizowane]***  Liczba wydanych akcji urządzenia przenośnego: blokowanie, przypiąć rest czyszczenie, wycofanie i Synchronizuj teraz poleceń  
 
     -   Liczba urządzeń przenośnych, które są zarządzane przez program Configuration Manager i Microsoft Intune i jak zostały zarejestrowane (zbiorczego, oparta na użytkowniku)  
 
@@ -307,7 +307,7 @@ Programu System Center Configuration Manager wersji 1610 ten poziom obejmuje nas
 
     -   Licznik użycia krok sekwencji zadań
 
-    - ***[New] *** Liczba zasad uaktualniania wersji
+    - ***[New]***  Liczba zasad uaktualniania wersji
 
 
 
@@ -362,7 +362,7 @@ Programu System Center Configuration Manager wersji 1610 ten poziom obejmuje nas
 
     -   Statystyki równoważenia obciążenia punktu aktualizacji oprogramowania
 
-    -  ***[New] *** Konfiguracji systemu Windows 10 express aktualizacji
+    -  ***[New]***  Konfiguracji systemu Windows 10 express aktualizacji
 
 
 
@@ -371,7 +371,7 @@ Programu System Center Configuration Manager wersji 1610 ten poziom obejmuje nas
 
     -   Liczba największych tabel bazy danych  
 
-    -   ***[Zaktualizowane] *** Stanu informacje, użycia i kondycji repliki funkcji SQL AlwaysOn
+    -   ***[Zaktualizowane]***  Stanu informacje, użycia i kondycji repliki funkcji SQL AlwaysOn
 
     -  Okresu przechowywania śledzenia zmian programu SQL
 
@@ -387,7 +387,7 @@ Programu System Center Configuration Manager wersji 1610 ten poziom obejmuje nas
 
     - Liczba witryn z wznawiania pracy w sieci Lan (WOL)
 
-    - ***[New] *** Raportowania statystyk użycia i wydajności  
+    - ***[New]***  Raportowania statystyk użycia i wydajności  
 
 
 
@@ -435,4 +435,4 @@ Programu System Center Configuration Manager wersji 1610 ten poziom obejmuje nas
 
 -   Błędy instalacji klienta szczegółowe wdrożenia
 
-- ***[New] *** Sklep Windows dla firm szczegóły aplikacji (niezagregowanym listę zsynchronizowanych aplikacji, w tym AppID stanie online lub do trybu offline i liczby całkowitej zakupionych licencji)
+- ***[New]***  Sklep Windows dla firm szczegóły aplikacji (niezagregowanym listę zsynchronizowanych aplikacji, w tym AppID stanie online lub do trybu offline i liczby całkowitej zakupionych licencji)

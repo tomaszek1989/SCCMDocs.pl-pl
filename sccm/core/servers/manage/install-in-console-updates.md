@@ -16,7 +16,7 @@ ms.author: brenduns
 manager: angrobe
 ms.openlocfilehash: 5302b5712e33c753d0193a32498bc02a2241428c
 ms.sourcegitcommit: 474e6ddbaaeac4ba17d8172321e08deeb0140d0a
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 09/19/2017
 ---
@@ -186,7 +186,7 @@ Postęp można monitorować przy użyciu następujących elementów:
 
     -   **Po zakończeniu instalacji** ([zadań po instalacji](#post-installation-tasks) są dostępne począwszy od wersji 1610.)  
 
--   Możesz wyświetlić **CMUpdate.log** w pliku ** &lt;Katalog_instalacyjny_programu_configmgr > \Logs**  
+-   Możesz wyświetlić **CMUpdate.log** w pliku  **&lt;Katalog_instalacyjny_programu_configmgr > \Logs**  
 
 **4. Po zakończeniu instalacji aktualizacji**  
 Po zakończeniu instalacji aktualizacji pierwszej lokacji:  

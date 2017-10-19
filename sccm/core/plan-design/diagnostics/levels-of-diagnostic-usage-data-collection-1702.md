@@ -73,7 +73,7 @@ Programu System Center Configuration Manager wersji 1702 ten poziom obejmuje nas
 
 - Podstawowa konfiguracja bazy danych (procesory, konfiguracja klastra i konfiguracja widoków rozproszonych)
 
-- ***[Zaktualizowane] *** Statystyki odnajdywania podstawowe (odnajdywania i minimalna/maksymalna/średnia liczba rozmiar grupy) w tym gdy witryna działa wyłącznie z usług Azure Active Directory.
+- ***[Zaktualizowane]***  Statystyki odnajdywania podstawowe (odnajdywania i minimalna/maksymalna/średnia liczba rozmiar grupy) w tym gdy witryna działa wyłącznie z usług Azure Active Directory.
 
 - Podstawowe informacje programu Endpoint Protection (wersje klienta ochrony przed złośliwym oprogramowaniem)
 
@@ -133,13 +133,13 @@ Programu System Center Configuration Manager wersji 1702 ten poziom obejmuje nas
 
    - Częstotliwość statystyk i użycia zatwierdzenie aplikacji
 
-   - ***[Zaktualizowane] *** Informacji o wdrożeniu aplikacji (Użyj instalacji i dezinstalacji, wymaga zatwierdzenia, włączona/wyłączona interakcja użytkownika zależności, zastępowanie i liczba przypadków użycia funkcji zachowanie instalacji)  
+   - ***[Zaktualizowane]***  Informacji o wdrożeniu aplikacji (Użyj instalacji i dezinstalacji, wymaga zatwierdzenia, włączona/wyłączona interakcja użytkownika zależności, zastępowanie i liczba przypadków użycia funkcji zachowanie instalacji)  
 
    - Statystyk rozmiar i złożoność zasad aplikacji
 
    - Dostępne dane statystyczne żądań dotyczących aplikacji
 
-   - ***[New] *** Podstawowe informacje o konfiguracji dla pakietów i programów (opcje wdrażania i flagi programów)
+   - ***[New]***  Podstawowe informacje o konfiguracji dla pakietów i programów (opcje wdrażania i flagi programów)
 
    - Informacje podstawowe użycia/elementów docelowych dla typów wdrożeń, które są używane w organizacji (użytkowników lub urządzeń docelowych, wymagane zależności od dostępności i uniwersalnej aplikacji)
 
@@ -149,7 +149,7 @@ Programu System Center Configuration Manager wersji 1702 ten poziom obejmuje nas
 
    - Liczba zastosowań aplikacji według systemu operacyjnego  
 
-   - ***[New] *** Liczba aplikacji, do których odwołuje się sekwencja zadań
+   - ***[New]***  Liczba aplikacji, do których odwołuje się sekwencja zadań
 
    - Liczba pakietów według typu  
 
@@ -163,11 +163,11 @@ Programu System Center Configuration Manager wersji 1702 ten poziom obejmuje nas
 
    - Minimalna/Maksymalna/średnia liczba wdrożeń aplikacji na użytkownika/urządzenie w danym okresie
 
-   - ***[New] *** Najbardziej typowe kody błędów instalacji aplikacji przez technologią wdrożenia
+   - ***[New]***  Najbardziej typowe kody błędów instalacji aplikacji przez technologią wdrożenia
 
    - Opcje konfiguracji MSI i liczby
 
-   - ***[New] *** Statystyk dotyczących interakcje użytkownika końcowego z powiadomień w celu wdrożenia oprogramowania wymagany   
+   - ***[New]***  Statystyk dotyczących interakcje użytkownika końcowego z powiadomień w celu wdrożenia oprogramowania wymagany   
 
    - Użycie uniwersalnego dostępu do danych (UDA), jak utworzone
 
@@ -193,11 +193,11 @@ Programu System Center Configuration Manager wersji 1702 ten poziom obejmuje nas
 
    - Liczba błędów instalacji klienta  
 
-   - ***[New] *** Liczba urządzeń z obsługą funkcji Hyper-V lub Azure  
+   - ***[New]***  Liczba urządzeń z obsługą funkcji Hyper-V lub Azure  
 
    - Akcje liczba Centrum oprogramowania   
 
-   - ***[New] *** Urządzenia z włączoną obsługą liczba UEFI
+   - ***[New]***  Urządzenia z włączoną obsługą liczba UEFI
 
    - Metody wdrażania klienta i liczba klientów na metodę wdrażania
 
@@ -207,7 +207,7 @@ Programu System Center Configuration Manager wersji 1702 ten poziom obejmuje nas
 
    - Liczba klasy spisu sprzętu, oprogramowania spisu reguł i zasad zbierania plików
 
-   - ***[New] *** Kody statystyki dotyczące zaświadczania o kondycji w tym typowych błędów, liczba serwerów lokalnych i liczby urządzeń w zależności od różnych stanów.
+   - ***[New]***  Kody statystyki dotyczące zaświadczania o kondycji w tym typowych błędów, liczba serwerów lokalnych i liczby urządzeń w zależności od różnych stanów.
 
 
 
@@ -215,7 +215,7 @@ Programu System Center Configuration Manager wersji 1702 ten poziom obejmuje nas
 
   - Statystyki konfiguracji i użytkowania brama zarządzania w chmurze
 
-  - ***[New] *** Liczba klientów przyłączone do usług Azure Active Directory
+  - ***[New]***  Liczba klientów przyłączone do usług Azure Active Directory
 
   - Liczba kolekcji zsynchronizowane z pakietem Operations Management Suite
 
@@ -393,7 +393,7 @@ Programu System Center Configuration Manager wersji 1702 ten poziom obejmuje nas
 
 - **Dane wydajności/SQL:**  
 
-    - ***[New] *** Konfiguracji i czas trwania podsumowania lokacji
+    - ***[New]***  Konfiguracji i czas trwania podsumowania lokacji
 
     - Liczba największych tabel bazy danych  
 
@@ -407,13 +407,13 @@ Programu System Center Configuration Manager wersji 1702 ten poziom obejmuje nas
 
     - Okresu przechowywania śledzenia zmian programu SQL
 
-    - ***[New] *** Stan i stan komunikatu statystyki wydajności, łącznie z najbardziej typowych i najbardziej kosztownych typów wiadomości
+    - ***[New]***  Stan i stan komunikatu statystyki wydajności, łącznie z najbardziej typowych i najbardziej kosztownych typów wiadomości
 
 
 
 - **Różne**
 
-    - ***[New] *** Konfiguracji z magazynu usługi punktu danych w tym harmonogram i Średni czas synchronizacji
+    - ***[New]***  Konfiguracji z magazynu usługi punktu danych w tym harmonogram i Średni czas synchronizacji
 
     - Liczba witryn z wznawiania pracy w sieci Lan (WOL)
 
@@ -441,7 +441,7 @@ Programu System Center Configuration Manager wersji 1702 ten poziom obejmuje nas
 
 - Konfiguracja zasad programu Endpoint Protection
 
-- ***[New] *** Listy procesów skonfigurowano zachowanie podczas instalacji aplikacji
+- ***[New]***  Listy procesów skonfigurowano zachowanie podczas instalacji aplikacji
 
 - Minimalna/maksymalna/średnia liczba godzin od ostatniego skanowania aktualizacji oprogramowania
 

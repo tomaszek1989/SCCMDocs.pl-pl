@@ -65,11 +65,11 @@ Zmiany z wcześniejszych wersji są oznaczane przy użyciu ***[New]*** lub ***[z
  -   Informacje na temat instalacji:
     - Tworzenie, zainstaluj typu, pakiety językowe, funkcje, które są włączone  
 
-    - ***[Zaktualizowane] *** Zaktualizować stan wdrożenia pakietów i błędy, postęp pobierania i błędy wymagań wstępnych     
+    - ***[Zaktualizowane]***  Zaktualizować stan wdrożenia pakietów i błędy, postęp pobierania i błędy wymagań wstępnych     
 
-    - ***[New] *** Wersji skryptu po uaktualnieniu
+    - ***[New]***  Wersji skryptu po uaktualnieniu
 
-    - ***[New] *** Użyj szybkiego pierścienia aktualizacji
+    - ***[New]***  Użyj szybkiego pierścienia aktualizacji
 
 -   Metryki wydajności bazy danych (replikacja przetwarzania informacje, top procedur składowanych serwera SQL przez procesora i użycie dysku)
 
@@ -101,10 +101,10 @@ Zmiany z wcześniejszych wersji są oznaczane przy użyciu ***[New]*** lub ***[z
 
 -   Dane statystyczne telemetrii (uruchamiania, środowisko uruchomieniowe i błędy)
 
-- ***[New] *** Skonfigurować poziom telemetrii, tryb (w trybie online lub offline) i szybkie aktualizacji konfiguracji
+- ***[New]***  Skonfigurować poziom telemetrii, tryb (w trybie online lub offline) i szybkie aktualizacji konfiguracji
 
-- ***[New] *** Użycia z funkcja odnajdowania sieci (włączona lub wyłączona)
-- ***[New] *** Konsoli administracyjnej:
+- ***[New]***  Użycia z funkcja odnajdowania sieci (włączona lub wyłączona)
+- ***[New]***  Konsoli administracyjnej:
 
     -  Statystyka połączenia konsoli (opeating wersji systemu, języka, jednostki SKU i architektury, pamięci, liczbę procesorów logicznych, podłącz identyfikator witryny, zainstalowanych wersji platformy .NET i pakiety językowe konsoli)
 
@@ -117,9 +117,9 @@ W programie System Center Configuration Manager w wersji 1602, ten poziom obejmu
 
 -   **Zarządzanie aplikacjami:**
 
-  -   ***[Zaktualizowane] *** Informacje podstawowe użycia/elementów docelowych dla typów wdrożeń, które są używane w organizacji (użytkowników lub urządzeń docelowych, wymagane zależności od dostępności i uniwersalnej aplikacji)  
+  -   ***[Zaktualizowane]***  Informacje podstawowe użycia/elementów docelowych dla typów wdrożeń, które są używane w organizacji (użytkowników lub urządzeń docelowych, wymagane zależności od dostępności i uniwersalnej aplikacji)  
 
-  -  ***[Zaktualizowane] *** Informacji o wdrożeniu aplikacji (Instalowanie/Odinstalowywanie, wymaga zatwierdzenia, włączona/wyłączona interakcja użytkownika, zależności i zastąpienia)  
+  -  ***[Zaktualizowane]***  Informacji o wdrożeniu aplikacji (Instalowanie/Odinstalowywanie, wymaga zatwierdzenia, włączona/wyłączona interakcja użytkownika, zależności i zastąpienia)  
 
   -   Dostępne dane statystyczne żądań dotyczących aplikacji  
 
@@ -133,11 +133,11 @@ W programie System Center Configuration Manager w wersji 1602, ten poziom obejmu
 
   -   Liczba licencji aplikacji licencjonowanych w systemie Windows 10  
 
-  -   ***[Zaktualizowane] *** Minimalna/maksymalna/średnia liczba wdrożeń aplikacji na użytkownika/urządzenie w danym okresie
+  -   ***[Zaktualizowane]***  Minimalna/maksymalna/średnia liczba wdrożeń aplikacji na użytkownika/urządzenie w danym okresie
 
   -   Typ i czas trwania okna obsługi  
 
-  -  ***[New] *** Statystyk rozmiar i złożoność zasad aplikacji
+  -  ***[New]***  Statystyk rozmiar i złożoność zasad aplikacji
 
 -   **Klient:**
 
@@ -157,9 +157,9 @@ W programie System Center Configuration Manager w wersji 1602, ten poziom obejmu
 
     -   Liczba reguł i wdrożeń utworzonych dla ustawień niestandardowych
 
-    -   ***[Zaktualizowane] *** Liczba wdrożonych szablonów prostego protokołu rejestrowania certyfikatów, sieci VPN, Wi-Fi, certyfikatu (pfx) i zasad zgodności   
+    -   ***[Zaktualizowane]***  Liczba wdrożonych szablonów prostego protokołu rejestrowania certyfikatów, sieci VPN, Wi-Fi, certyfikatu (pfx) i zasad zgodności   
 
-    -  ***[New] *** Certyfikatu liczby z prostego protokołu rejestrowania certyfikatów (SCEP), sieci VPN, Wi-Fi, certyfikatu (pfx) i wdrożenia zasad zgodności przez platformę
+    -  ***[New]***  Certyfikatu liczby z prostego protokołu rejestrowania certyfikatów (SCEP), sieci VPN, Wi-Fi, certyfikatu (pfx) i wdrożenia zasad zgodności przez platformę
 
 -   **Zawartość:**
 
@@ -261,7 +261,7 @@ W programie System Center Configuration Manager w wersji 1602, ten poziom obejmu
 
     -   Liczba wdrożonych aktualizacji usługi Office 365
 
-    -   ***[New] *** Klasyfikacji, które są synchronizowane przez punkt aktualizacji oprogramowania
+    -   ***[New]***  Klasyfikacji, które są synchronizowane przez punkt aktualizacji oprogramowania
 
 -   **Dane wydajności/SQL:**
 
@@ -271,13 +271,13 @@ W programie System Center Configuration Manager w wersji 1602, ten poziom obejmu
 
     -   Liczba kolekcji według typu
 
-    -   ***[Zaktualizowane] *** Statystyki oceny kolekcji (czas przypisane w zależności od liczby nieprzypisane liczba wg typu, przerzucania identyfikator i stosowania reguły zapytania)
+    -   ***[Zaktualizowane]***  Statystyki oceny kolekcji (czas przypisane w zależności od liczby nieprzypisane liczba wg typu, przerzucania identyfikator i stosowania reguły zapytania)
 
-    - ***[New] *** Okresu przechowywania śledzenia zmian programu SQL
+    - ***[New]***  Okresu przechowywania śledzenia zmian programu SQL
 
 -   ***[New] Aktualizacje lokacji:***
 
-    - ***[New] *** Wersje zainstalowanych poprawek Configuration Manager
+    - ***[New]***  Wersje zainstalowanych poprawek Configuration Manager
 
 ##  <a name="bkmk_level3"></a> Poziom 3 — pełny
 Poziom pełny obejmuje wszystkie dane na poziomie podstawowy i rozszerzony. Zawiera on również dodatkowe informacje na temat programu Endpoint Protection, wartości procentowe zgodności aktualizacji i informacje na temat aktualizacji oprogramowania. Ten poziom może obejmować zaawansowane informacje diagnostyczne, takie jak pliki systemowe i migawki pamięci, które mogą zawierać informacje osobiste, które istniały w pamięci lub plikach dziennika w czasie przechwytywania.
@@ -310,7 +310,7 @@ W programie System Center Configuration Manager w wersji 1602, ten poziom obejmu
 
 -   Minimalna/maksymalna/średnia liczba godzin od ostatniego skanowania aktualizacji oprogramowania
 
--   ***[New] *** Aktualizacji oprogramowania, zsynchronizować przez punkt aktualizacji oprogramowania
--   ***[New] *** Ustawień zgodności: Szczegóły konfiguracji szablonu SCEP, sieci VPN, Wi-Fi i zasad zgodności
+-   ***[New]***  Aktualizacji oprogramowania, zsynchronizować przez punkt aktualizacji oprogramowania
+-   ***[New]***  Ustawień zgodności: Szczegóły konfiguracji szablonu SCEP, sieci VPN, Wi-Fi i zasad zgodności
 
--   ***[New] *** Typu programu EAS zasady dostępu warunkowego (blokowanie lub kwarantannę) dla urządzeń zarządzanych przez usługę Intune
+-   ***[New]***  Typu programu EAS zasady dostępu warunkowego (blokowanie lub kwarantannę) dla urządzeń zarządzanych przez usługę Intune
