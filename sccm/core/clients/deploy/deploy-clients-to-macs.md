@@ -16,7 +16,7 @@ ms.author: angrobe
 manager: angrobe
 ms.openlocfilehash: af6faf4cd317452f635ec30e74a3aa2e14f1662a
 ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 09/15/2017
 ---
@@ -125,7 +125,7 @@ Automatyzacji, która umożliwia rejestrację wielu klientów, należy użyć [n
 
         -   "domena\nazwa". Na przykład: 'contoso\mnorth'  
 
-        -   'user@domain'. Na przykład: "mnorth@contoso.com"  
+        -   'user@domain'.  Na przykład: "mnorth@contoso.com"  
 
             > [!IMPORTANT]  
             >  Jeśli używasz adresu e-mail do wypełnienia **nazwy użytkownika** pola, Configuration Manager automatycznie używa nazwy domeny adresu e-mail i nazwy domyślnej serwera punktu proxy rejestracji do wypełnienia **nazwy serwera** pola. Jeśli ta nazwa domeny i nazwę serwera niezgodna z nazwą serwera punktu proxy rejestracji, poproś użytkowników, poprawną nazwę do użycia podczas rejestrowania komputerów Mac.  
@@ -157,14 +157,14 @@ Użyj tej procedury do automatyzacji instalacji klienta i żądania i rejestracj
 
     -   "domena\nazwa". Na przykład: 'contoso\mnorth'  
 
-    -   'user@domain'. Na przykład: "mnorth@contoso.com"  
+    -   'user@domain'.   Na przykład: "mnorth@contoso.com"  
 
      Nazwa użytkownika i odpowiednie hasło muszą być zgodne z kontem użytkownika usługi Active Directory, któremu przyznano uprawnienia do odczytu i rejestracji na szablonie certyfikatu klienta na komputery Mac.  
 
      Przykład: Jeśli nosi nazwę serwera punktu proxy rejestracji **server02.contoso.com**i nazwę użytkownika **contoso\mnorth** zostało udzielone uprawnienia do szablonu certyfikatu klienta Mac, wpisz następujące polecenie: **sudo. / CMEnroll -s server02.contoso.com - ignorecertchainvalidation -u 'contoso\mnorth'**  
 
     > [!NOTE]  
-    >  Jeśli nazwa użytkownika zawiera którykolwiek ze znaków ** &lt;> "+=,** rejestracja zakończy się niepowodzeniem. Uzyskaj certyfikat poza pasmem z nazwą użytkownika, który nie zawiera tych znaków.  
+    >  Jeśli nazwa użytkownika zawiera którykolwiek ze znaków  **&lt;> "+=,** rejestracja zakończy się niepowodzeniem. Uzyskaj certyfikat poza pasmem z nazwą użytkownika, który nie zawiera tych znaków.  
     >  
     >  Aby usprawnić środowisko użytkownika, można utworzyć skrypt kroków instalacji i poleceń, aby użytkownicy musieli jedynie podać nazwę użytkownika i hasło.  
 
