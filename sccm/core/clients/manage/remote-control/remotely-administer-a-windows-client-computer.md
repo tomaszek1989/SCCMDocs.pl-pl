@@ -17,7 +17,7 @@ ms.author: angrobe
 manager: angrobe
 ms.openlocfilehash: 9ce5adccb9944daa4fb2b0ab132fc7cf52bd7b1b
 ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 09/14/2017
 ---
@@ -94,4 +94,4 @@ Program CmRcViewer.exe obsługuje następujące opcje wiersza polecenia:
 - *Nazwa serwera lokacji* — Określa nazwę serwera lokacji programu System Center Configuration Manager, do którego chcesz wysyłać komunikaty o stanie, które są powiązane z sesji zdalnego sterowania.
 - **/?** — Wyświetla opcje wiersza polecenia dla przeglądarki zdalnego sterowania.  
      
-**Example:CmRcViewer.exe** *< adres\> * * < \\\Site nazwa serwera >*  
+**Example:CmRcViewer.exe** *< adres\>*   *< \\\Site nazwa serwera >*  

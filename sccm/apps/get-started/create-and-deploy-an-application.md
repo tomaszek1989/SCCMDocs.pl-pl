@@ -17,7 +17,7 @@ ms.author: mabrigg
 manager: angrobe
 ms.openlocfilehash: f52dbb5e89746e30562132d4fe19886e7d9b5ea7
 ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 09/15/2017
 ---
@@ -60,7 +60,7 @@ Upewnij się, że zostało sprawdzone informacje w [wprowadzenie do zarządzania
 
     -   **Typ**: Wybierz **Instalatora Windows (\*pliku .msi)**.  
 
-    -   **Lokalizacja**: Wpisz lokalizację (lub wybierz **Przeglądaj** celu jej wybrania) pliku instalacyjnego **Contoso.msi**. Należy pamiętać, że lokalizacja musi być określona w postaci * \\\Server\Share\File* programu Configuration Manager można znaleźć plików instalacyjnych.  
+    -   **Lokalizacja**: Wpisz lokalizację (lub wybierz **Przeglądaj** celu jej wybrania) pliku instalacyjnego **Contoso.msi**. Należy pamiętać, że lokalizacja musi być określona w postaci  *\\\Server\Share\File* programu Configuration Manager można znaleźć plików instalacyjnych.  
 
     Zostanie wyświetlone okno z coś, która wygląda podobnie Poniższy zrzut ekranu:  
 

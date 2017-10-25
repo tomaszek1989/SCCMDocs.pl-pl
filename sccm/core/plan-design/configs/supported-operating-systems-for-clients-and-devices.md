@@ -16,7 +16,7 @@ ms.author: angrobe
 manager: angrobe
 ms.openlocfilehash: 4763043354f5a8418364e54543cfb7115a24b29b
 ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 09/14/2017
 ---
@@ -73,7 +73,7 @@ ms.lasthandoff: 09/14/2017
 -   **Instalacja Server Core systemu Windows Server 2012** (x64) <sup>2</sup>    
 
 -   **Instalacja Server Core systemu Windows Server 2008 R2**  
-    **(bez dodatku service pack lub z dodatkiem SP1) ** (x64)    
+    **(bez dodatku service pack lub z dodatkiem SP1)**  (x64)    
 
 -   **Instalacja Server Core systemu Windows Server 2008 z dodatkiem SP2** (x86, x64)  
 

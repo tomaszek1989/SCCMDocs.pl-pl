@@ -17,7 +17,7 @@ ms.author: mabrigg
 manager: angrobe
 ms.openlocfilehash: 801c21e0015d63f736fb2207e85f484dc50d56dc
 ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 09/15/2017
 ---
@@ -175,9 +175,9 @@ Ponadto dla wysokiego ryzyka, takiego jak wdrożenie sekwencji zadań, która wd
 W **właściwości** okno dialogowe wdrożenia wpisz na **zainstalować zachowanie** kartę, można określić jedną lub więcej pliki wykonywalne, jeśli uruchomiony, blokuje to instalacji typu wdrożenia. Użytkownik musi zamknąć plik wykonywalny uruchomiona (lub może zostać zamknięty w automatycznie w przypadku wdrożeń z celem wymagane) przed wdrożeniem można było zainstalować typ. Aby skonfigurować to:
 
 1. Otwórz **właściwości** okno dialogowe dla każdego typu wdrożenia.
-2. Na **zainstalować zachowanie** karcie * <deployment type name> * **właściwości** okno dialogowe, kliknij przycisk **Dodaj**.
+2. Na **zainstalować zachowanie** karcie  *<deployment type name>*  **właściwości** okno dialogowe, kliknij przycisk **Dodaj**.
 3. W **Dodaj lub Edytuj plik wykonywalny** okna dialogowego wprowadź nazwę pliku wykonywalnego, że jeśli uruchomiona, blokuje instalację aplikacji. Opcjonalnie można także wprowadzić przyjazną nazwę dla aplikacji, aby ułatwić jego identyfikację na liście.
-4. Kliknij przycisk **OK**, następnie Zamknij * <deployment type name> * **właściwości** okno dialogowe.
+4. Kliknij przycisk **OK**, następnie Zamknij  *<deployment type name>*  **właściwości** okno dialogowe.
 5. Następnie podczas wdrażania aplikacji na **ustawienia wdrażania** strony Kreatora wdrażania oprogramowania, wybierz **automatycznie Zamknij wszystkie uruchomione pliki wykonywalne określone na karcie zachowanie instalacji okna dialogowego właściwości typu wdrożenia**, następnie kontynuuj wdrożyć aplikację.
 
 Po aplikacja osiągnie komputerów klienckich, stosuje się następujące działania:

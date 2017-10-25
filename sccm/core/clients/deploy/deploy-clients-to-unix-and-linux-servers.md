@@ -16,7 +16,7 @@ ms.author: angrobe
 manager: angrobe
 ms.openlocfilehash: 1741506f390430c85dab9a5b8e8cc26dda7b57e3
 ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 09/15/2017
 ---
@@ -57,7 +57,7 @@ Każdy pakiet instalacyjny klienta zawiera wszystkie pliki niezbędne do ukończ
 
      Przykład: smsmp.contoso.com  
 
--   **-sitecode &lt;kod lokacji\> ** Określa, czy klient jest przypisany do kod lokacji.  
+-   **-sitecode &lt;kod lokacji\>**  Określa, czy klient jest przypisany do kod lokacji.  
 
      Przykład: S01  
 

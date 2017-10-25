@@ -16,7 +16,7 @@ ms.author: brenduns
 manager: angrobe
 ms.openlocfilehash: 89a41c8a3137d0e54011ddf9a1d9b4894ecb7df8
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 08/07/2017
 ---
@@ -322,7 +322,7 @@ Konfigurując grupy różnych sąsiada mają być dostępne w różnych momentac
 ### <a name="bkmk_update"></a>Aktualizowanie istniejących grup granic do nowego modelu
 Po zainstalowaniu wersji 1609 i zaktualizować lokację, następujące konfiguracje zostaną zastosowane automatycznie. Są one przeznaczone do upewnij się, że Twoje bieżące działanie rezerwowe pozostaje dostępna, w przypadku konfigurowania nowej grupy granic i relacje.  
 -   Punkty dystrybucji niechronione w lokacji są dodawane do *domyślna--grupy granic lokacji\<kod lokacji >* grupy granic w tej lokacji.
--   Kopia składa się z każdej istniejącej grupy granic, która obejmuje serwer lokacji skonfigurowany z wolnego połączenia. Nazwa nowej grupy jest *** \<oryginalna nazwa grupy granic > - wolno — Tmp***:  
+-   Kopia składa się z każdej istniejącej grupy granic, która obejmuje serwer lokacji skonfigurowany z wolnego połączenia. Nazwa nowej grupy jest  ***\<oryginalna nazwa grupy granic > - wolno — Tmp***:  
     -   Systemy lokacji, które mają szybkiego połączenia są pozostawiane w oryginalnej grupy granic.
     -   Kopiuj systemów lokacji, które mają wolne połączenia są dodawane do kopii grupy granic. Oryginalne systemy lokacji skonfigurowana jako niska pozostają w grupie granic oryginalnego dla zgodności z poprzednimi wersjami, ale nie są używane z tej grupy granic.
     -   Ta kopia grupy granic nie ma granicach skojarzonych z nim. Jednak tworzone jest połączenie rezerwowy między oryginalnej grupy i nową kopię grupy granic o czasie rezerwowy ustawić na zero.

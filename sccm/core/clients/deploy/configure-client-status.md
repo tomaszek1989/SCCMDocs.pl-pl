@@ -17,7 +17,7 @@ ms.author: angrobe
 manager: angrobe
 ms.openlocfilehash: fc898bf2433ab99eb0da9c60bd0e890bba97a415
 ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 09/15/2017
 ---
@@ -76,7 +76,7 @@ Aby można było monitorowania stanu klienta programu System Center Configuratio
     > [!NOTE]  
     >  Nie można skonfigurować alertów dla kolekcji użytkowników.  
 
-4.  Na **alerty** karcie * &lt;kolekcji nazwa\>***właściwości** okno dialogowe, kliknij przycisk **Dodaj**.  
+4.  Na **alerty** karcie  *&lt;kolekcji nazwa\>***właściwości** okno dialogowe, kliknij przycisk **Dodaj**.  
 
     > [!NOTE]  
     >  Karta **Alerty** jest widoczna tylko w przypadku, gdy rola zabezpieczeń, z którą została skojarzony użytkownik, ma uprawnienia do alertów.  
@@ -91,7 +91,7 @@ Aby można było monitorowania stanu klienta programu System Center Configuratio
 
     -   **Zgłoś alert** — Określ procentowy próg alertu.  
 
-7.  Kliknij przycisk **OK** zamknąć * &lt;kolekcji nazwa\>***właściwości** okno dialogowe.  
+7.  Kliknij przycisk **OK** zamknąć  *&lt;kolekcji nazwa\>***właściwości** okno dialogowe.  
 
 ##  <a name="BKMK_3"></a>Aby wykluczyć komputery z automatycznego korygowania  
 

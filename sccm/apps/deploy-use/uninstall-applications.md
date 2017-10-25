@@ -17,7 +17,7 @@ ms.author: mabrigg
 manager: angrobe
 ms.openlocfilehash: 1e9c5506b94eecc1c95af5f31ad4c2d923c2b74f
 ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 09/15/2017
 ---
@@ -63,7 +63,7 @@ Należy wykonać następujące czynności, aby odinstalować aplikację, którą
         > [!NOTE]  
         >  **Zawartości** strona jest wyświetlana tylko wtedy, gdy zostanie wybrana opcja **ręcznie określ informacje o typie wdrożenia** na **ogólne** strony kreatora tworzenia typu wdrożenia.  
 
-    -   Na **programy** karcie * * < *Nazwa typu wdrożenia*> okno dialogowe Właściwości ** Określ wiersz poleceń do odinstalowania aplikacji w **program dezinstalacyjny** pola.  
+    -   Na **programy** karcie  **<* Nazwa typu wdrożenia*> okno dialogowe Właściwości ** Określ wiersz poleceń do odinstalowania aplikacji w **program dezinstalacyjny** pola.  
 
 2.  Wdrażanie aplikacji, a następnie wybierz akcję wdrożenia **Odinstaluj** na **ustawienia wdrażania** strony Kreatora wdrażania oprogramowania.  
 

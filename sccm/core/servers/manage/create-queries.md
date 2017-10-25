@@ -17,7 +17,7 @@ ms.author: andredm
 manager: angrobe
 ms.openlocfilehash: e6886f3a9292fcb70e385959f8dab952219761f8
 ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 09/15/2017
 ---
@@ -48,9 +48,9 @@ Można użyć w tym temacie ułatwiają tworzenie lub importowanie zapytań w pr
     |**Zasób użytkownika**|Służy do wyszukiwania typowych informacji o użytkownikach, takich jak nazwy użytkowników, nazwy grup użytkowników i nazwy grup zabezpieczeń.|  
     |**wdrażania**|Służy do wyszukiwania typowych atrybutów wdrożenia, takie jak nazwa wdrożenia, harmonogram i kolekcji, który został wdrożony.|  
 
-6.  Wybierz **Edytuj instrukcję zapytania** otworzyć * &lt;nazwa zapytania\> * **— właściwości instrukcji** okno dialogowe.  
+6.  Wybierz **Edytuj instrukcję zapytania** otworzyć  *&lt;nazwa zapytania\>*  **— właściwości instrukcji** okno dialogowe.  
 
-7.  Na **ogólne** karcie * &lt;nazwa zapytania\> * **— właściwości instrukcji** oknie dialogowym Określ atrybuty zwracane przez zapytanie i jak mają być wyświetlane. Wybierz **nowy** ikonę, aby dodać nowy atrybut. Można również wybrać **Pokaż język zapytań** Aby wprowadzić lub edytować zapytanie bezpośrednio w WMI Query Language (WQL). Przykłady zapytań usługi WMI można znaleźć w sekcji [Example WQL queries](#BKMK_Example) tego tematu.  
+7.  Na **ogólne** karcie  *&lt;nazwa zapytania\>*  **— właściwości instrukcji** oknie dialogowym Określ atrybuty zwracane przez zapytanie i jak mają być wyświetlane. Wybierz **nowy** ikonę, aby dodać nowy atrybut. Można również wybrać **Pokaż język zapytań** Aby wprowadzić lub edytować zapytanie bezpośrednio w WMI Query Language (WQL). Przykłady zapytań usługi WMI można znaleźć w sekcji [Example WQL queries](#BKMK_Example) tego tematu.  
 
     > [!TIP]  
     > W następujących dokumentach dotyczących MSDN można znaleźć informacje ułatwiające tworzenie własnych zapytań WQL:  
@@ -59,12 +59,12 @@ Można użyć w tym temacie ułatwiają tworzenie lub importowanie zapytań w pr
     > -   [Klauzula WHERE](http://go.microsoft.com/fwlink/p/?LinkId=256654)  
     > -   [Operatorzy WQL](http://go.microsoft.com/fwlink/p/?LinkId=256655)  
 
-8.  Na **kryteria** karcie * &lt;nazwa zapytania\> * **— właściwości instrukcji** oknie dialogowym Określ kryteria używane w celu ograniczenia wyników zapytania. Możesz na przykład wybrać zwracanie tylko tych zasobów, które mają kod lokacji **XYZ** w wynikach zapytania. Dla zapytania można skonfigurować wiele kryteriów.  
+8.  Na **kryteria** karcie  *&lt;nazwa zapytania\>*  **— właściwości instrukcji** oknie dialogowym Określ kryteria używane w celu ograniczenia wyników zapytania. Możesz na przykład wybrać zwracanie tylko tych zasobów, które mają kod lokacji **XYZ** w wynikach zapytania. Dla zapytania można skonfigurować wiele kryteriów.  
 
     > [!IMPORTANT]  
     > Zapytanie niezawierające kryteriów zwraca wszystkie urządzenia z kolekcji **Wszystkie systemy** .  
 
-9. Na **sprzężenia** karcie * &lt;nazwa zapytania\> * **— właściwości instrukcji** okno dialogowe, można połączyć dane z dwóch różnych atrybutów w wynikach zapytania. Mimo że w przypadku wybrania różnych atrybutów wyników zapytania, programu Configuration Manager automatycznie tworzy sprzężenia zapytania **sprzężenia** karta zawiera bardziej zaawansowane opcje. W poniższej tabeli przedstawiono klasy atrybutów obsługiwanych przez usługę System Center 2012 Configuration Manager:  
+9. Na **sprzężenia** karcie  *&lt;nazwa zapytania\>*  **— właściwości instrukcji** okno dialogowe, można połączyć dane z dwóch różnych atrybutów w wynikach zapytania. Mimo że w przypadku wybrania różnych atrybutów wyników zapytania, programu Configuration Manager automatycznie tworzy sprzężenia zapytania **sprzężenia** karta zawiera bardziej zaawansowane opcje. W poniższej tabeli przedstawiono klasy atrybutów obsługiwanych przez usługę System Center 2012 Configuration Manager:  
 
     |Typ sprzężenia|Opis|  
     |---------------|-----------------|  
@@ -75,7 +75,7 @@ Można użyć w tym temacie ułatwiają tworzenie lub importowanie zapytań w pr
 
      Aby uzyskać więcej informacji o sposobie korzystania z operacji sprzężenia zawiera dokumentacja programu SQL Server.  
 
-10. Wybierz **OK** zamknąć * &lt;nazwa zapytania\> * **— właściwości instrukcji** okno dialogowe.  
+10. Wybierz **OK** zamknąć  *&lt;nazwa zapytania\>*  **— właściwości instrukcji** okno dialogowe.  
 
 11. Na **ogólne** karcie **Kreatora tworzenia zapytania**, określ, czy wyniki tego zapytania nie są ograniczone do elementów członkowskich kolekcji, czy są one ograniczone do elementów członkowskich w określonej kolekcji lub czy istnieje wiersz dla kolekcji po każdym uruchomieniu zapytania.  
 
@@ -159,7 +159,7 @@ Typy urządzeń są przechowywane w bazie danych programu Configuration Manager 
 Select SMS_R_System.ClientEdition from SMS_R_System where SMS_R_System.ClientEdition = <Device ID>  
 ```  
 
-Użyj jednej z następujących wartości * &lt;identyfikator urządzenia\>*:  
+Użyj jednej z następujących wartości  *&lt;identyfikator urządzenia\>*:  
 
 |Typ urządzenia|Wartość wersji agenta|  
 |-----------------|---------------------------|  

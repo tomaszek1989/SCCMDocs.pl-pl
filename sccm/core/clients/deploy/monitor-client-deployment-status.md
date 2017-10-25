@@ -17,7 +17,7 @@ ms.author: angrobe
 manager: angrobe
 ms.openlocfilehash: bddc2cf4ae335a8b407035a90818d7fa01dcc398
 ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 09/14/2017
 ---
@@ -52,7 +52,7 @@ Wdrażanie klientów w lokacji jest czasochłonne, a niektóre instalacje kończ
 
 -   Przejrzyj wykresy stanu wdrożenia klientów i niepowodzeń wdrażania klientów.  
 
--   Jeśli chcesz zmienić zakres raportu, kliknij przycisk **Przeglądaj... ** i wybierz inną kolekcję.  
+-   Jeśli chcesz zmienić zakres raportu, kliknij przycisk **Przeglądaj...**  i wybierz inną kolekcję.  
 
  Aby dowiedzieć się więcej na temat wdrożeń klientów przedprodukcyjnych, zobacz [testowanie uaktualnień klienta w kolekcji przedprodukcyjnej w programie System Center Configuration Manager](../../../core/clients/manage/upgrade/test-client-upgrades.md).
 

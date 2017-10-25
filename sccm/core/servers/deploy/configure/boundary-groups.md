@@ -16,7 +16,7 @@ ms.author: brenduns
 manager: angrobe
 ms.openlocfilehash: 5debc6559f4b1c213e8ca513d685941c9e669063
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 08/07/2017
 ---
@@ -210,7 +210,7 @@ Podczas aktualizacji do wersji przed 1610 następujące konfiguracje zostaną za
 -   Grupy granic lokacji domyślnej jest tworzona dla każdej lokacji głównej, nazwa jest ***domyślna--grupy granic lokacji —&lt;kod lokacji >.***
   - Punkty dystrybucji z *Zezwalaj na rezerwową lokalizację źródła zawartości* zaznaczone i punktów migracji stanu w lokacjach głównych są dodawane do *domyślna--grupy granic lokacji&lt;kod lokacji >* grupy granic w tej lokacji.
   - Począwszy od wersji 1702, punkty aktualizacji oprogramowania są dodawane do każdej lokacji *domyślna--grupy granic lokacji&lt;kod lokacji >*.
--   Kopia składa się z każdej istniejącej grupy granic, która obejmuje serwer lokacji skonfigurowany z wolnego połączenia. Nazwa nowej grupy jest *** &lt;oryginalna nazwa grupy granic >-&lt;pierwotny identyfikator grupy granic >***:  
+-   Kopia składa się z każdej istniejącej grupy granic, która obejmuje serwer lokacji skonfigurowany z wolnego połączenia. Nazwa nowej grupy jest  ***&lt;oryginalna nazwa grupy granic >-&lt;pierwotny identyfikator grupy granic >***:  
     -   Systemy lokacji, które mają szybkiego połączenia są pozostawiane w oryginalnej grupy granic.
     -   Kopię systemy lokacji (punkty dystrybucji, punkty zarządzania), które mają wolne połączenia są dodawane do kopii grupy granic. Systemy lokacji oryginalnej skonfigurowana jako niska pozostają w jego oryginalnej grup granic w celu zgodności z poprzednimi wersjami, ale nie są używane z tych grup granic.
     - Ta kopia grupy granic nie ma granicach skojarzonych z nim. Jednak tworzone jest połączenie rezerwowy między oryginalnej grupy i nową kopię grupy granic o czasie rezerwowy ustawić na zero.  

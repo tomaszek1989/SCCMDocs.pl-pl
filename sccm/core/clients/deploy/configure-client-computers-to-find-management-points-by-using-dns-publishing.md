@@ -16,7 +16,7 @@ ms.author: angrobe
 manager: angrobe
 ms.openlocfilehash: 0526dccc21be8419bf772374a67bc7cd262e6375
 ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 09/15/2017
 ---
@@ -43,7 +43,7 @@ Klienci w programie System Center Configuration Manager muszą lokalizować punk
 
 -   Zainstaluj klienta za pomocą następującej właściwości pliku Client.msi programu CCMSetup:  
 
-    -   **DNSSUFFIX =** * &lt;domeny punktu zarządzania\>*  
+    -   **DNSSUFFIX =**  *&lt;domeny punktu zarządzania\>*  
 
          Jeśli w lokacji jest więcej niż jeden punkt zarządzania i znajdują się one w więcej niż jednej domenie, wystarczy określić tylko jedną domenę. Jeśli klienci łączą się z punktem zarządzania w bieżącej domenie, pobierają listę dostępnych punktów zarządzania, która zawiera punkty z innych domen.  
 
