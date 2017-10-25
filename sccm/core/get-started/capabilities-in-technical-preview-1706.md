@@ -177,7 +177,7 @@ Jeśli masz lokacji głównej w trybie pasywnym, należy go monitorować codzien
 
 **Biblioteki zawartości** karty:
 -   Widok **stanu** zawartości, który jest synchronizowany z serwera lokacji aktywny na serwerze lokacji w trybie pasywnym.
--   Można wybrać zawartości ze stanem ****, a następnie wybierz pozycję **Synchronizuj wybrane elementy** na Wstążce. Ta akcja próbuje ponownie zsynchronizować tę zawartość ze źródła zawartości na serwerze lokacji w trybie pasywnym. Podczas odzyskiwania, stan jest wyświetlany jako **w toku**, i gdy jest ona zsynchronizowana, wyświetlane jako **Powodzenie**.
+-   Można wybrać zawartości ze stanem **niepowodzeniem**, a następnie wybierz pozycję **Synchronizuj wybrane elementy** na Wstążce. Ta akcja próbuje ponownie zsynchronizować tę zawartość ze źródła zawartości na serwerze lokacji w trybie pasywnym. Podczas odzyskiwania, stan jest wyświetlany jako **w toku**, i gdy jest ona zsynchronizowana, wyświetlane jako **Powodzenie**.
 
 ### <a name="try-it-out"></a>Wypróbuj
 Spróbuj wykonać następujące zadania, a następnie wyślij do nas **opinii** z **Home** kartę na Wstążce, aby poinformować nas, jak Ci poszło:

@@ -202,11 +202,11 @@ Jeśli instalujesz centralną lokację administracyjną w ramach scenariusza roz
 
     -   Gdy narzędzie sprawdzania wymagań wstępnych wykryje problem, wybierz element na liście, aby uzyskać więcej informacji dotyczących sposobu rozwiązania problemu.  
 
-    -   Musisz rozwiązać każdy element ze stanem **** przed kontynuowaniem instalacji lokacji. Elementy ze stanem **ostrzeżenie** powinny zostać rozwiązane, ale nie blokują instalacji lokacji.  
+    -   Musisz rozwiązać każdy element ze stanem **niepowodzeniem** przed kontynuowaniem instalacji lokacji. Elementy ze stanem **ostrzeżenie** powinny zostać rozwiązane, ale nie blokują instalacji lokacji.  
 
     -   Po rozwiązaniu problemów, wybierz **Uruchom sprawdzanie** Aby ponownie uruchomić narzędzie sprawdzania wymagań wstępnych.  
 
-     Po uruchomieniu narzędzia sprawdzania wymagań wstępnych i odbierania nie są sprawdzane **** stanu, możesz wybrać **Rozpocznij instalację** do rozpoczęcia instalacji lokacji.  
+     Po uruchomieniu narzędzia sprawdzania wymagań wstępnych i odbierania nie są sprawdzane **niepowodzeniem** stanu, możesz wybrać **Rozpocznij instalację** do rozpoczęcia instalacji lokacji.  
 
     > [!TIP]  
     > Oprócz uwag, które jest dostępne w kreatorze, można znaleźć dodatkowe informacje na temat problemów z wymaganiami wstępnymi, przeglądając **ConfigMgrPrereq.log** pliku w folderze głównym dysku systemowego komputera, instalowana na. Aby uzyskać listę reguły wymagań wstępnych instalacji i opisy, zobacz [listy z Sprawdzanie wymagań wstępnych programu System Center Configuration Manager](../../../../core/servers/deploy/install/list-of-prerequisite-checks.md).  

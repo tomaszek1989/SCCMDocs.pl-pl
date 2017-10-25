@@ -98,7 +98,7 @@ Po uruchomieniu Instalatora programu Configuration Manager, wyświetlany jest mo
 
 Aby wprowadzić kod lokacji dla lokacji, po uruchomieniu Instalatora programu Configuration Manager, należy wprowadzić trzy znaki alfanumeryczne. Tylko litery *A* za pośrednictwem *Z* i numery *0* za pośrednictwem *9*, w dowolnej kombinacji są dozwolone w kody lokacji. Sekwencja liter i cyfr nie ma wpływu na komunikacji między lokacjami. Na przykład nie jest konieczne nazwanie lokacji głównej *ABC* a lokacją dodatkową *DEF*.
 
-Nazwa lokacji jest identyfikatorem przyjazną nazwę witryny. Można używać tylko znaków *A* za pośrednictwem *Z*, ** za pośrednictwem *z*, *0* za pośrednictwem *9*oraz znaki łącznika (*-*) w nazwach lokacji.
+Nazwa lokacji jest identyfikatorem przyjazną nazwę witryny. Można używać tylko znaków *A* za pośrednictwem *Z*, *a* za pośrednictwem *z*, *0* za pośrednictwem *9*oraz znaki łącznika (*-*) w nazwach lokacji.
 
 > [!IMPORTANT]
 > Zmiana nazwy lokacji po zainstalowaniu lokacji lub kod lokacji nie jest obsługiwane.
