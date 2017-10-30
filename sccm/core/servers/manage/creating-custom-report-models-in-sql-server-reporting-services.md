@@ -17,7 +17,7 @@ ms.author: dougeby
 manager: angrobe
 ms.openlocfilehash: 9951dd9333ebef00c7acd5d72b20a02382e3206c
 ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 08/07/2017
 ---
@@ -28,7 +28,7 @@ ms.lasthandoff: 08/07/2017
 W programie System Center Configuration Manager są dostępne przykładowe modele raportów, ale można również zdefiniować modele, aby spełnić wymagania biznesowe, a następnie Wdróż model raportu do programu Configuration Manager do użycia podczas tworzenia nowych raportów na podstawie modelu. W poniższej tabeli przedstawiono opis kroków składających się na tworzenie i wdrożenie podstawowego modelu raportu.  
 
 > [!NOTE]  
->  Opis kroków służących do utworzenia bardziej zaawansowanego modelu raportu znajduje się w sekcji [Steps for Creating an Advanced Report Model in SQL Server Reporting Services](#AdvancedReportModel) w tym temacie.  
+>  Opis kroków służących do utworzenia bardziej zaawansowanego modelu raportu znajduje się w sekcji [Kroki tworzenia zaawansowanego modelu raportu w usługach SQL Server Reporting Services](#AdvancedReportModel) w tym temacie.  
 
 |Krok|Opis|Więcej informacji|  
 |----------|-----------------|----------------------|  
@@ -37,7 +37,7 @@ W programie System Center Configuration Manager są dostępne przykładowe model
 |Zdefiniuj źródło danych dla modelu raportu|Po utworzeniu projektu modelu raportu należy zdefiniować jedno źródło danych, z którego będą wyodrębniane dane biznesowe. Zazwyczaj jest to bazy danych lokacji programu Configuration Manager.|Więcej informacji można znaleźć w sekcji [Aby zdefiniować źródło danych dla modelu raportu](#BKMK_DefineReportModelDataSource) w tym temacie.|  
 |Zdefiniuj widok źródła danych dla modelu raportu|Po zdefiniowaniu źródeł danych do wykorzystania w projekcie modelu raportu następnym krokiem jest zdefiniowanie widoku źródła danych dla projektu. Widok źródła danych to model danych logicznych oparty na jednym lub większej liczbie źródeł danych. Widoki źródeł danych reprezentują dostęp do obiektów fizycznych, takich jak tabele i widoki, zawartych w odnośnych źródłach danych. Z widoku źródła danych usługi SQL Server Reporting Services generują model raportu.<br /><br /> Widoki źródła danych umożliwiają proces projektowania modelu, zapewniając praktyczne odwzorowanie określonych danych. Nie zmieniając odnośnych źródeł danych, w widoku źródła danych można zmieniać nazwy tabel i pól oraz dodawać pola zbiorcze i tabele pochodne. Aby tworzony model działał sprawnie, do widoku źródła danych warto dodawać tylko te tabele, z których planuje się korzystać.|Więcej informacji można znaleźć w sekcji [Aby zdefiniować widok źródła danych dla modelu raportu](#BKMK_DefineReportModelDataSourceView) w tym temacie.|  
 |Utwórz model raportu|Model raportu to wierzchnia warstwa bazy danych, która identyfikuje jednostki biznesowe, pola i role. Posługując się tymi modelami po ich opublikowaniu, użytkownicy programu Report Builder mogą opracowywać raporty bez potrzeby zaznajamiania się ze strukturami baz danych i bez potrzeby rozumienia kwerend czy umiejętności ich pisania. Modele składają się z zestawów powiązanych ze sobą elementów raportów, które zgrupowano pod przyjazną nazwą, ze wstępnie zdefiniowanymi relacjami między tymi elementami biznesowymi i ze wstępnie zdefiniowanymi obliczeniami. Modele definiuje się w odmianie języka XML zwanej językiem definiowania modeli semantycznych (ang. Semantic Model Definition Language, SMDL). Rozszerzenie nazwy pliku modelu raportu to .smdl.|Więcej informacji można znaleźć w sekcji [To create the report model](#BKMK_CreateReportModel) w tym temacie.|  
-|Opublikuj model raportu|Aby utworzyć raport na podstawie właśnie utworzonego modelu, należy opublikować ten model na serwerze raportów. Źródło danych i widok źródła danych są dołączane do modelu w czasie jego publikacji.|Więcej informacji można znaleźć w sekcji [To publish the report model for use in SQL Server Reporting Services](#BKMK_PublishReportModel) w tym temacie.|  
+|Opublikuj model raportu|Aby utworzyć raport na podstawie właśnie utworzonego modelu, należy opublikować ten model na serwerze raportów. Źródło danych i widok źródła danych są dołączane do modelu w czasie jego publikacji.|Więcej informacji można znaleźć w sekcji [Aby opublikować model raportu w programie SQL Server Reporting Services](#BKMK_PublishReportModel) w tym temacie.|  
 |Wdróż model raportu do programu Configuration Manager|Przed użyciem niestandardowego modelu raportu w **Kreatora tworzenia raportu** do utworzenia raportu na podstawie modelu, należy wdrożyć model raportu do programu Configuration Manager.|Więcej informacji można znaleźć w sekcji [To deploy the custom report model to Configuration Manager](#BKMK_DeployReportModel) w tym temacie.|  
 
 ## <a name="steps-for-creating-a-basic-report-model-in-sql-server-reporting-services"></a>Procedury tworzenia podstawowego modelu raportu w usługach SQL Server Reporting Services  
