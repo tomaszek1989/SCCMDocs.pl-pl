@@ -1,5 +1,6 @@
 ---
-title: "Tworzenie aplikacji dla komputerów Mac | Dokumentacja firmy Microsoft"
+title: "Tworzenie aplikacji dla komputerów Mac"
+titleSuffix: Configuration Manager
 description: "Zobacz uwagi, które należy wziąć pod uwagę podczas tworzenia i wdrażania aplikacji dla komputerów Mac."
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "9"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 703f2d4d73334ef66a7c217c04e66658a7b56157
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
-ms.translationtype: HT
+ms.openlocfilehash: 912632c672c49deefc946e089dad6a82454c4b67
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="create-mac-computer-applications-with-system-center-configuration-manager"></a>Tworzenie aplikacji dla komputerów Mac w programie System Center Configuration Manager
 

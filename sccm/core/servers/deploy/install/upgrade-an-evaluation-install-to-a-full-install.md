@@ -1,5 +1,6 @@
 ---
-title: Uaktualnienie instalacji wersji ewaluacyjnej | Dokumentacja firmy Microsoft
+title: Instaluje uaktualnienia wersji ewaluacyjnej
+titleSuffix: Configuration Manager
 description: "Dowiedz się, jak uaktualnić instalację w wersji ewaluacyjnej do pełnej instalacji programu System Center Configuration Manager."
 ms.custom: na
 ms.date: 2/7/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "3"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 8f951805c2fc25059965c15c94934c0f8546735c
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 942ac0a1d7681cb1efb06ff477a27a7c5c57654b
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="upgrade-an-evaluation-installation-of-system-center-configuration-manager-to-a-full-installation"></a>Uaktualnienie instalacji wersji ewaluacyjnej programu System Center Configuration Manager do instalacji pełnej
 

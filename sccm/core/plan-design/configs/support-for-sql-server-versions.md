@@ -1,8 +1,9 @@
 ---
-title: "Obsługiwane wersje programu SQL Server | Dokumentacja firmy Microsoft"
+title: "Obsługiwane wersje programu SQL Server"
+titleSuffix: Configuration Manager
 description: Pobierz wymagania konfiguracji i wersji programu SQL Server do hostowania bazy danych lokacji programu System Center Configuration Manager.
 ms.custom: na
-ms.date: 09/21/2017
+ms.date: 10/10/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +15,11 @@ caps.latest.revision: "21"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 0e6613873c09b5e5df4f25ce0dbc16c289ccbd41
-ms.sourcegitcommit: b13fa2885acaa21f16c48df789f1edacb5a4f7cc
+ms.openlocfilehash: 740a37478b4159fb9dcbfd9eaceeeaa307edd745
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/21/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="supported-sql-server-versions-for-system-center-configuration-manager"></a>Obsługiwane wersje programu SQL Server dla programu System Center Configuration Manager
 
@@ -103,6 +104,12 @@ Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersj
 -   Lokacja główna  
 -   Lokację dodatkową
 
+### <a name="sql-server-2012-sp4-standard-enterprise"></a>SQL Server 2012 z dodatkiem SP4: Wersje Standard, Enterprise  
+ Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:  
+
+-   Centralna lokacja administracyjna  
+-   Lokacja główna  
+-   Lokację dodatkową  
 
 ### <a name="sql-server-2012-sp3-standard-enterprise"></a>SQL Server 2012 z dodatkiem SP3: Wersje Standard, Enterprise  
  Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:  

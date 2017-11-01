@@ -1,5 +1,6 @@
 ---
-title: "Obsługuje domen usługi Active Directory | Dokumentacja firmy Microsoft"
+title: "Obsługiwane domeny usługi Active Directory"
+titleSuffix: Configuration Manager
 description: "Pobierz wymagania dotyczące członkostwa systemu lokacji programu System Center Configuration Manager w domenie usługi Active Directory."
 ms.custom: na
 ms.date: 9/18/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 813c2f55a5815ae3739149abc3f650a750d52cd8
-ms.sourcegitcommit: 474e6ddbaaeac4ba17d8172321e08deeb0140d0a
+ms.openlocfilehash: d4862a3354717a603535b6ad0de42f24c67cc314
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="supported-active-directory-domains-for-system-center-configuration-manager"></a>Obsługiwane domeny usługi Active Directory dla programu System Center Configuration Manager
 

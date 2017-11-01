@@ -1,5 +1,6 @@
 ---
-title: "Zasady zgodności urządzeń | Dokumentacja firmy Microsoft"
+title: "Zasady zgodności urządzeń"
+titleSuffix: Configuration Manager
 description: "Dowiedz się, jak zarządzanie zasadami zgodności programu System Center Configuration Manager w celu zapewnienia zgodności z dostępu warunkowego urządzeń zasady."
 ms.custom: na
 ms.date: 03/05/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: bcaa2a9b5474e06bf344dc4fd47dbb160ea36297
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: d9811d81987e8531ee48a07a6855b337fdccb73b
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="device-compliance-policies-in-system-center-configuration-manager"></a>Zasady zgodności urządzeń w programie System Center Configuration Manager
 

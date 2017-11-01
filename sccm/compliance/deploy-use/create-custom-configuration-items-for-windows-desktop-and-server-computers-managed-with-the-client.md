@@ -1,5 +1,6 @@
 ---
-title: "Tworzenie elementów konfiguracji dla klientów zarządzanych komputerów z systemem Windows — programu Configuration Manager | Dokumentacja firmy Microsoft"
+title: "Tworzenie elementów konfiguracji dla komputerów zarządzanych przez klienta systemu Windows "
+titleSuffix: Configuration Manager
 description: "Zarządzaj ustawieniami dla serwerów z niestandardowego elementu konfiguracji systemu Windows, komputerów stacjonarnych i serwerów i komputerów z systemem Windows."
 ms.custom: na
 ms.date: 11/18/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: 9fe28782744a419acad9c1acec49ff8db6c0eaa6
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
-ms.translationtype: HT
+ms.openlocfilehash: ed3aa1ce9e21c7c486cc40deb804a8687a1cd4f2
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-to-create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-system-center-configuration-manager-client"></a>Tworzenie niestandardowych elementów konfiguracji dla komputerów stacjonarnych i serwerów z systemem Windows zarządzanych za pomocą klienta programu System Center Configuration Manager
 

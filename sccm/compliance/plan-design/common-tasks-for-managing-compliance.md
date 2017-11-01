@@ -1,5 +1,6 @@
 ---
-title: "Typowe zadania zarządzania zgodnością | Dokumentacja firmy Microsoft"
+title: "Typowe zadania zarządzania zgodnością"
+titleSuffix: Configuration Manager
 description: "Dowiedz się, jak używać ustawień zgodności w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "5"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: 2bd917ad4d18d815a53d9bfba97da41c6385877d
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 605495038c540467c4313b3f41a7f6ccd525ab37
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="common-tasks-for-managing-compliance-with-system-center-configuration-manager"></a>Typowe zadania zarządzania zgodnością w programie System Center Configuration Manager
 

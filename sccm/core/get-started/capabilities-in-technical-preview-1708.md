@@ -1,5 +1,6 @@
 ---
-title: Technical Preview 1708 | Dokumentacja firmy Microsoft
+title: Technical Preview 1708
+titleSuffix: Configuration Manager
 description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview 1708 programu System Center Configuration Manager."
 ms.custom: na
 ms.date: 08/25/2017
@@ -13,11 +14,11 @@ ms.assetid: 3c061ceb-3bdb-4d4f-8c60-344964bd416b
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 022c9b2540f7ed403c38521c8e68f6c416c15c7c
-ms.sourcegitcommit: 974fbc4408028c8be28911e5cd646efcf47c7f15
+ms.openlocfilehash: b6868221f2efb766cf6a96e844617c75ad1e4c50
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/26/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="capabilities-in-technical-preview-1708-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1708 programu System Center Configuration Manager
 

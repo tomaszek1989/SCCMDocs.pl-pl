@@ -1,5 +1,6 @@
 ---
-title: Pobierz programu Configuration Manager | Dokumentacja firmy Microsoft
+title: "Pobierz nośnika instalacyjnego"
+titleSuffix: Configuration Manager
 description: "Gdzie można znaleźć nośnik instalacyjny dla nowych instalacji programu System Center Configuration Manager."
 ms.custom: na
 ms.date: 1/11/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "3"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: be02514591881049fabc00baae9de70a8380aa9a
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 0b03f33642d543e362cba38c464713e077fa6b07
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="where-to-get-installation-media-for-system-center-configuration-manager"></a>Skąd uzyskać nośnika instalacyjnego programu System Center Configuration Manager
 

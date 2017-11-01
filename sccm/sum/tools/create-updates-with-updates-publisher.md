@@ -1,5 +1,6 @@
 ---
-title: "Utwórz aktualizacje | Dokumentacja firmy Microsoft"
+title: "Utwórz aktualizacji"
+titleSuffix: Configuration Manager
 description: "Tworzenie i udostępnianie pakietów aktualizacji oprogramowania z programem System Center Updates Publisher"
 ms.custom: na
 ms.date: 4/29/2017
@@ -15,11 +16,11 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: NOINDEX, NOFOLLOW
-ms.openlocfilehash: 98e490d7f5ca17dcf2a0aaa848f14e789f214123
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: HT
+ms.openlocfilehash: 37e2d83dd463f4ffe71fa09ab68b94be980d434b
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="create--software-updates-and-update-bundles-with-updates-publisher"></a>Utwórz aktualizacji oprogramowania i pakietów aktualizacji przez program Updates Publisher
 
@@ -154,7 +155,7 @@ Ponieważ tych dwóch kreatorów mają podobne przepływu pracy, procedura tworz
 
     -   **System —** ta zasada używa szczegóły systemu w celu określenia możliwości zastosowania. Można wybrać Definiowanie wersji systemu Windows, Windows języka, architektury procesora, lub określ kwerendę usługi WMI, aby zidentyfikować system operacyjny urządzenia.
 
-    -   **Instalator Windows —** ta reguła służy do określenia zastosowania oparte na zainstalowanym. Poprawka MSI lub Instalatora systemu Windows (. MSP). Można również określić, czy określone składniki i funkcje są instalowane jako część wymagań.
+    -   **Instalator Windows —** ta reguła służy do określenia zastosowania oparte na zainstalowanym. Poprawka MSI lub Instalatora systemu Windows (.MSP). Można również określić, czy określone składniki i funkcje są instalowane jako część wymagań.
 
         > [!IMPORTANT]  
         > Z zarządzanych deices, Windows Update Agent nie może wykryć pakietów instalacji systemu Windows, które są zainstalowane dla poszczególnych użytkowników. Korzystając z tego typu reguł, należy skonfigurować reguły stosowania dodatkowych, takich jak wersji plików lub wartości klucza rejestru, aby pakiet Instalatora Windows, które mogą być poprawnie wykrywane niezależnie od tego, bazując na użytkownika lub systemu.

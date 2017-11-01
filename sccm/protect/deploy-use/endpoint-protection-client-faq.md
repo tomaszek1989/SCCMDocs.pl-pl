@@ -1,5 +1,6 @@
 ---
-title: "Klient programu Endpoint Protection — często zadawane pytania | Dokumentacja firmy Microsoft"
+title: "Klient programu Endpoint Protection — często zadawane pytania"
+titleSuffix: Configuration Manager
 description: "Odpowiedzi na często zadawane pytania dotyczące usługi Windows Defender oraz programu Endpoint Protection."
 ms.custom: na
 ms.date: 02/14/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "15"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: b88bc5f734b85527b81e5848deb0617db4c8dfbc
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: HT
+ms.openlocfilehash: de813a38d6278a60189667165bf4911bd314f14a
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="endpoint-protection-client-frequently-asked-questions"></a>Klient programu Endpoint Protection — często zadawane pytania
 

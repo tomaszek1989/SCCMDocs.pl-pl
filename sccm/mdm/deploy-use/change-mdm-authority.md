@@ -1,19 +1,20 @@
 ---
-title: "Zmienić urzędu zarządzania urządzeniami Przenośnymi | Dokumentacja firmy Microsoft"
+title: "Zmienić urzędu zarządzania urządzeniami Przenośnymi"
+titleSuffix: Configuration Manager
 description: "Dowiedz się, jak zmienić urząd zarządzania urządzeniami Przenośnymi z programu Configuration Manager (rozwiązanie hybrydowe) do autonomicznej usługi Intune"
 keywords: 
 author: dougeby
 manager: angrobe
-ms.date: 09/14/2017
+ms.date: 10/04/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: cc397ab5-125f-4f17-905b-fab980194f49
-ms.openlocfilehash: 489c01f92d42ed12ac5464307a16713ca898d251
-ms.sourcegitcommit: 8ac9c2c9ba1fdcbb7cc8d5be898586865fcf67c0
+ms.openlocfilehash: cbf45c5f9f04affc65243fdc4c8410d4ff033c1e
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="change-your-mdm-authority"></a>Zmienić urzędu zarządzania urządzeniami Przenośnymi
 Począwszy od programu Configuration Manager 1610 wersji, można zmienić urzędu zarządzania urządzeniami Przenośnymi bez konieczności kontaktowania się Microsoft Support i bez konieczności wyrejestrowywania i Zarejestruj ponownie istniejących zarządzanych urządzeń. Ten temat zawiera kroki, aby zmienić dzierżawy usługi Microsoft Intune istniejące skonfigurowane z konsoli programu Configuration Manager (rozwiązanie hybrydowe) do autonomicznej usługi Intune.
@@ -75,7 +76,7 @@ Jeśli masz urządzenia z systemem iOS, należy skonfigurować certyfikat APNs w
     In the [Azure portal](https://azure.portal.com), choose **More Services** &gt; **Monitoring + Management** &gt; **Intune**. On the **Intune** blade, choose **Device enrollment** &gt; **Apple Enrollment** &gt; **Apple MDM Push Certificate**, and then select **Download your CSR** to download and save the .csr file locally.   
     <br/>
     **Microsoft Intune administration console**   -->
-   W [konsoli administracyjnej Microsoft Intune](http://manage.microsoft.com), przejdź do **administracji** &gt; **zarządzanie urządzeniami przenośnymi** &gt; **z systemem iOS i Mac OS X** &gt; **Przekaż certyfikat APNs**, a następnie wybierz pozycję **Pobierz żądanie certyfikatu APNs**. Zapisz lokalnie plik żądania podpisania certyfikatu (CSR).
+   W [konsoli administracyjnej Microsoft Intune](http://manage.microsoft.com), przejdź do **administracji** &gt; **zarządzanie urządzeniami przenośnymi** &gt; **z systemem iOS i Mac OS X** &gt; **Przekaż certyfikat APNs**, a następnie wybierz pozycję **Pobierz żądanie certyfikatu APNs**. Zapisz lokalnie plik żądania podpisania certyfikatu (CSR).    
    > [!IMPORTANT]    
    > Pobierz żądanie podpisania certyfikatu nowe. Nie należy używać istniejącego pliku, lub zakończy się niepowodzeniem.
 

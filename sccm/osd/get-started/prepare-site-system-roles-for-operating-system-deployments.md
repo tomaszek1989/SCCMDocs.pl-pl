@@ -1,5 +1,6 @@
 ---
-title: "Przygotowanie ról systemu lokacji dla wdrożenia systemu operacyjnego | Dokumentacja firmy Microsoft"
+title: "Przygotowanie roli systemu lokacji do wdrażania systemów operacyjnych"
+titleSuffix: Configuration Manager
 description: "Przed przystąpieniem do wdrażania systemów operacyjnych w programie System Center Configuration Manager, należy skonfigurować role systemu lokacji."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 11c0f169afebdb071fefb5ce300fd1ae3481a94f
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: HT
+ms.openlocfilehash: c07172bec1032b021c2d7b7ccaabe33c96b930d2
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="prepare-site-system-roles-for-operating-system-deployments-with-system-center-configuration-manager"></a>Przygotowanie ról systemu lokacji do wdrożeń systemu operacyjnego w programie System Center Configuration Manager
 
@@ -67,7 +68,7 @@ Do wdrażania systemów operacyjnych w programie System Center Configuration Man
 
 2.  Wybierz punkt dystrybucji, który chcesz skonfigurować, i na karcie **Narzędzia główne** w grupie **Właściwości** kliknij pozycję **Właściwości**.  
 
-3.  Na stronie właściwości punktu dystrybucji kliknij kartę **PXE** . Wybierz pozycję **Włącz obsługę środowiska PXE dla klientów** , aby włączyć obsługę środowiska PXE w tym punkcie dystrybucji.  
+3.  Na stronie właściwości punktu dystrybucji, kliknij przycisk **PXE** kartę i wybierz **Włącz obsługę środowiska PXE dla klientów** włączania obsługi środowiska PXE w tym punkcie dystrybucji.  
 
 4.  Kliknij pozycję **Tak** w oknie dialogowym **Sprawdzenie wymaganych portów dla środowiska PXE** , aby potwierdzić, że chcesz włączyć obsługę środowiska PXE. Menedżer konfiguracji automatycznie konfiguruje domyślnych portów w Zaporze systemu Windows. Jeśli jednak używasz innej zapory, musisz ręcznie skonfigurować porty.  
 

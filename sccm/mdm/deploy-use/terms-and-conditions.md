@@ -1,5 +1,6 @@
 ---
-title: Warunki i postanowienia w System Center Configuration Manager | Dokumentacja firmy Microsoft
+title: Warunki i postanowienia
+titleSuffix: Configuration Manager
 description: "Wdrożenie warunków i postanowień w grupach użytkowników w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 03/05/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "9"
 author: nathbarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: 20be68496099a67ad2d475067f073da2cef16c86
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: f616212b216ad4c94b60c7a805e2f45071947e81
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="add-terms-and-conditions-with-system-center-configuration-manager"></a>Dodawanie warunków i postanowień w programie System Center Configuration Manager
 
@@ -120,4 +121,4 @@ System Center Configuration Manager warunków i postanowień można wdrożyć w 
      Zaleca się, aby zwiększać numer wersji i wymagać akceptacji po każdym wprowadzeniu znaczących zmian warunków i postanowień. Jeśli zmiany obejmują na przykład poprawki błędów pisowni lub zmiany formatowania, zachowaj bieżący numer wersji.
 
 > [!div class="button"]
-[< Wstecz krok](configure-intune-subscription.md)  [następny krok >  ](create-service-connection-point.md)
+[< Wstecz krok](configure-intune-subscription.md)[następny krok >  ](create-service-connection-point.md)

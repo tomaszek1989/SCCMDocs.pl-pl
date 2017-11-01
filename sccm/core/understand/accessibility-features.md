@@ -1,5 +1,6 @@
 ---
-title: "Ułatwienia dostępu | Dokumentacja firmy Microsoft"
+title: "Ułatwienia dostępu"
+titleSuffix: Configuration Manager
 description: "Informacje o funkcjach, które ułatwiają dostęp do programu System Center Configuration Manager osobom niepełnosprawnym."
 ms.custom: na
 ms.date: 7/31/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "6"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: ca518796477dda149a9f4c0ebd65f0a082eab806
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 303b58ddea7bc26a38dde2075eb78d1053069c25
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="accessibility-features-in-system-center-configuration-manager"></a>Funkcje ułatwień dostępu w programie System Center Configuration Manager
 

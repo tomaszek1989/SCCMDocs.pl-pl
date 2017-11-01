@@ -1,5 +1,6 @@
 ---
-title: "Planowanie zabezpieczeń w programie System Center Configuration Manager | Dokumentacja firmy Microsoft"
+title: "Planowanie zabezpieczeń"
+titleSuffix: Configuration Manager
 description: "Pobierz najlepszych rozwiązań i inne informacje dotyczące zabezpieczeń w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 01/04/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 6145cb69c69dba1eb1b9842079ee1a33686bb18a
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 8f63d1b762b296cb6b6aa56480a5cddf7a3249dc
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="plan-for-security-in-system-center-configuration-manager"></a>Planowanie zabezpieczeń w programie System Center Configuration Manager
 

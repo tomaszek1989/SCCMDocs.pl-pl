@@ -1,5 +1,6 @@
 ---
-title: "Tworzenie sekwencji zadań w celu uaktualnienia systemu operacyjnego | Dokumentacja firmy Microsoft"
+title: "Tworzenie sekwencji zadań w celu uaktualnienia systemu operacyjnego"
+titleSuffix: Configuration Manager
 description: "Sekwencje zadań w programie System Center Configuration Manager może automatycznie Uaktualnij system operacyjny z systemu Windows 7 lub nowszym do systemu Windows 10."
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "12"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 4a3c69edc85a4ea7501510b6b3f12c72ad3a24ff
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 2787c8a692321a49cf287fc2f09858690360dc25
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="create-a-task-sequence-to-upgrade-an-operating-system-in-system-center-configuration-manager"></a>Tworzenie sekwencji zadań w celu uaktualnienia systemu operacyjnego w programie System Center Configuration Manager
 

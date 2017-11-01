@@ -1,5 +1,6 @@
 ---
-title: "Przykładowy plik importu ogólnej licencji analizy zasobów | Dokumentacja firmy Microsoft"
+title: "Przykładowy plik importu ogólnej licencji analizy zasobów"
+titleSuffix: Configuration Manager
 description: "Użyj przykładowy plik ogólnej licencji analizy zasobów w celu zaimportowania licencji na oprogramowanie w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 2/22/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: 400afbe8c09b80985187a34b0dd0f3f8581c7d4e
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 8537622a418a141abf2b564b6211604ea85f7bab
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="example-asset-intelligence-general-license-import-file-in-system-center-configuration-manager"></a>Przykładowy plik importu ogólnej licencji analizy zasobów w programie System Center Configuration Manager
 

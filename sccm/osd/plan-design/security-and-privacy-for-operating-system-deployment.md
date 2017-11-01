@@ -1,5 +1,6 @@
 ---
-title: "Bezpieczeństwo i ochrona prywatności dotyczące wdrażania systemu operacyjnego | Dokumentacja firmy Microsoft"
+title: "Bezpieczeństwo i ochrona prywatności przy wdrażaniu systemów operacyjnych"
+titleSuffix: Configuration Manager
 description: "Dowiedz się więcej o zabezpieczeniach i prywatności najlepsze rozwiązania dotyczące wdrażania systemu operacyjnego w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 5632a753fc565312a80b2ed69ce438335b3fad50
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: HT
+ms.openlocfilehash: f3286fb0afc5a5023ecd725e74606a585c5fa478
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="security-and-privacy-for-operating-system-deployment-in-system-center-configuration-manager"></a>Bezpieczeństwo i ochrona prywatności przy wdrażaniu systemów operacyjnych w programie System Center Configuration Manager
 

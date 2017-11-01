@@ -1,8 +1,9 @@
 ---
-title: Technical Preview programu Configuration Manager | Dokumentacja firmy Microsoft
+title: Wersje Technical Preview
+titleSuffix: Configuration Manager
 description: "Więcej informacji o wersji Technical Preview że teraz musisz test-drive nowe funkcje i możliwości w programie System Center Configuration Manager."
 ms.custom: na
-ms.date: 09/28/2017
+ms.date: 10/30/2017
 ms.prod: configuration-manager
 ms.reviewer: nab
 ms.suite: na
@@ -14,11 +15,11 @@ caps.latest.revision: "157"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 429e20185bd23519f78c37ded39f2638d0c80ced
-ms.sourcegitcommit: 8ac9c2c9ba1fdcbb7cc8d5be898586865fcf67c0
+ms.openlocfilehash: 0f6fb329dae1dda18bbb1869dc77872a2a6a1b98
+ms.sourcegitcommit: 5437b2823bada8f8c9e67940f584953b9d190628
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/07/2017
+ms.lasthandoff: 10/31/2017
 ---
 # <a name="technical-preview-for-system-center-configuration-manager"></a>Wersja zapoznawcza Technical Preview programu System Center Configuration Manager
 
@@ -93,10 +94,6 @@ Każdej wersji zapoznawczej jest obsługiwany, dopóki dostępne są trzy kolejn
 Można zainstalować wersji linii bazowej dla maksymalnie 1 rok po ich wydaniu. Jednak podczas instalowania nowej lokacji wersji zapoznawczej technical preview, firma Microsoft zaleca się, że używasz najnowszej wersji linii bazowej, która jest dostępna.
 -  **Technical Preview 1703** — Configuration Manager Technical Preview 1703 jest dostępna jako zarówno aktualizacja w konsoli programu Configuration Manager Technical Preview, jak i nowa wersja bazowa jest [dostępne w witrynie TechNet Evaluation Center](http://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview).
 
-<!-- out of support. Use baseline 1703
--  **Technical Preview 1610** - The Configuration Manager Technical Preview 1610 was available as both an in-console update for the Configuration Manager Technical Preview, and as a baseline version. If you have media for installing 1610, we recommend you download version 1703 and install that version instead.
--->
-
 
 
 ##  <a name="BKMK_TPFeedback"></a> Przekazywanie opinii  
@@ -110,19 +107,26 @@ Można zainstalować wersji linii bazowej dla maksymalnie 1 rok po ich wydaniu. 
 
 
 ##  <a name="bkmk_tpCaps"></a>Możliwości oferowane przez najnowszej wersji zapoznawczej technical preview  
- Poniżej przedstawiono możliwości oferowane w poszczególnych wersjach technical preview programu Configuration Manager.  Możliwości, które są dostępne od wersji zapoznawczej Technical Preview, pozostają dostępne w kolejnych wersjach. Podobnie możliwości, które zostały dodane do wersji System Center programu Configuration Manager (wersji current branch) pozostają dostępne w kolejnych wersjach technical Preview.  Kliknij informacje o poszczególnych wersjach zapoznawczych, aby uzyskać więcej informacji o określonej możliwości.  
+Poniżej przedstawiono możliwości oferowane w poszczególnych wersjach technical preview programu Configuration Manager.  Możliwości, które są dostępne od wersji zapoznawczej Technical Preview, pozostają dostępne w kolejnych wersjach. Podobnie możliwości, które zostały dodane do wersji System Center programu Configuration Manager (wersji current branch) pozostają dostępne w kolejnych wersjach technical Preview.  Kliknij informacje o poszczególnych wersjach zapoznawczych, aby uzyskać więcej informacji o określonej możliwości.  
 
  |Możliwość |Wersji Technical Preview |Bieżącą wersję gałęzi|  
  |----------------|---------------------|--------------------|
- |VPN udoskonalone środowisko profilu w konsoli programu Configuration Manager<!-- 1313282 --> | [Podgląd techniczna 1709](capabilities-in-technical-preview-1709.md) |![Nie dodano](media/Red_X.gif)    |
- |Jednoczesne zarządzania dla urządzeń z systemem Windows 10|[Podgląd techniczna 1709](capabilities-in-technical-preview-1709.md#co-management-for-windows-10-devices)|![Nie dodano](media/Red_X.gif)    |
-
-
+ |Dane telemetryczne systemu Windows 10 dotyczące kondycji urządzeń Analytics systemu Windows<!--1356148 --> | [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md#limit-windows-10-enhanced-telemetry-to-only-send-data-relevant-to-windows-analytics-device-health) |![Nie dodano](media/Red_X.gif)    |
+ |Ulepszenia Centrum oprogramowania ikon<!-- 1356194 --> | [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md#software-center-no-longer-distorts-icons-larger-than-250x250) |![Nie dodano](media/Red_X.gif)    |
+ |Sprawdź zgodność z Centrum oprogramowania dla tej samej zarządzanych urządzeń<!-- 1356374 -->| [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md#check-compliance-from-software-center-for-co-managed-devices)|![Nie dodano](media/Red_X.gif)    |
+ |Ograniczona obsługa certyfikatów CNG<!-- 1356191 -->| [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md#limited-support-for-cng-certificates)|![Nie dodano](media/Red_X.gif)    |
+ |Obsługa wykorzystać zabezpieczenia<!--1355468 --> | [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md#support-for-exploit-guard) |![Nie dodano](media/Red_X.gif)    |
+ |Ulepszone opisy do czasu ponownego uruchomienia komputera<!-- 1356283  -->| [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md)|![Nie dodano](media/Red_X.gif)    |
+ |Zmiany zasad ochrona urządzeń<!-- 1355092  -->| [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md)|![Nie dodano](media/Red_X.gif)    |
+ |Konfigurowanie i wdrażanie zasad Guard aplikacji programu Windows Defender<!-- 1351960  -->| [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md)|![Dodaje nie](media/Red_X.gif)    |
+ 
 ## <a name="capabilities-delivered-in-previous-technical-previews"></a>Możliwości oferowane w poprzednich wersjach technical Preview
  Gdy wszystkie funkcje z wersji technical preview są dostępne w minimalna obsługiwana wersja Current Branch, szczegóły dotyczące tej wersji zapoznawczej są usuwane z poniższej tabeli.  
 
  |Możliwość |Wersji Technical Preview |Bieżącą wersję gałęzi|  
  |----------------|---------------------|--------------------|
+ |VPN udoskonalone środowisko profilu w konsoli programu Configuration Manager<!-- 1313282 --> | [Podgląd techniczna 1709](capabilities-in-technical-preview-1709.md) |![Nie dodano](media/Red_X.gif)    |
+ |Jednoczesne zarządzania dla urządzeń z systemem Windows 10|[Podgląd techniczna 1709](capabilities-in-technical-preview-1709.md#co-management-for-windows-10-devices)|![Nie dodano](media/Red_X.gif)    |
  |Ulepszenia określając Parametry skryptu, podczas wdrażania skryptów programu PowerShell z programu Configuration Manager<!-- 1236459 -->|[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#improvements-for-specifying-script-parameters-when-you-deploy-powershell-scripts-from-configuration-manager)|![Nie dodano](media/Red_X.gif)|
  |Informacje na temat technologii zarządzania<!-- 1353967 --> |[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#management-insights)|![Nie dodano](media/Red_X.gif)|
  |Uruchom ponownie komputer za pomocą konsoli programu Configuration Manager<!-- 1356283 --> |[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#restart-computers-from-the-configuration-manager-console)|![Nie dodano](media/Red_X.gif)|
@@ -272,3 +276,4 @@ Można zainstalować wersji linii bazowej dla maksymalnie 1 rok po ich wydaniu. 
 ## <a name="see-also"></a>Zobacz też  
 [Co to jest nowe w programie System Center Configuration Manager](/sccm/core/plan-design/changes/whats-new-incremental-versions)  
  [Wprowadzenie do programu System Center Configuration Manager](../../core/understand/introduction.md)
+

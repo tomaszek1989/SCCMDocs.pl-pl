@@ -1,5 +1,6 @@
 ---
-title: Dane diagnostyczne dla 1702 | System Center Configuration Manager
+title: Dane diagnostyczne dla 1702
+titleSuffix: Configuration Manager
 description: "Więcej informacji na temat poziomy danych diagnostycznych i danych użycia, która gromadzi System Center Configuration Manager w wersji 1702."
 ms.custom: na
 ms.date: 3/27/2017
@@ -32,11 +33,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 0e1d93712150fb3d6fabc3f057711eba1194c3ad
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: HT
+ms.openlocfilehash: a8a3f143acd34f370ebf6187cdb7dcaefcefe5eb
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1702-of-system-center-configuration-manager"></a>Poziomy zbierania diagnostycznych danych użycia dla wersji 1702 programu System Center Configuration Manager
 

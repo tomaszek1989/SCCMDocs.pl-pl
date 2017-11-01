@@ -1,5 +1,6 @@
 ---
-title: "Zarządzanie plikami instalacji ekspresowej, aktualizacji systemu Windows 10 | Dokumentacja firmy Microsoft"
+title: "Zarządzanie plikami instalacji ekspresowej aktualizacji systemu Windows 10"
+titleSuffix: Configuration Manager
 description: "Program Configuration Manager obsługuje pliki instalacji ekspresowej dla systemu Windows 10, która zapewnia mniejsze pliki do pobrania i instalacji szybsze na klientach."
 keywords: 
 author: dougeby
@@ -11,11 +12,11 @@ ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: b8d8af88-e8ac-4deb-921b-975e2d2afd80
-ms.openlocfilehash: baffb5f026bd63c50f878214e71d2c9e9b8b51c2
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: HT
+ms.openlocfilehash: 1ec69b5679f726f20da4ff0f63d9271e5d06cee3
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="manage-express-installation-files-for-windows-10-updates"></a>Zarządzanie plikami instalacji ekspresowej aktualizacji systemu Windows 10
 Począwszy od 1702 wersji programu Configuration Manager, Configuration Manager obsługuje pliki instalacji ekspresowej aktualizacji systemu Windows 10. Korzystając z obsługiwanej wersji systemu Windows 10, umożliwia ustawień programu Configuration Manager Pobierz tylko zmiany między bieżącego miesiąca systemu Windows 10 aktualizacji zbiorczej i aktualizacją poprzedniego miesiąca. Bez plików instalacji ekspresowej programu Configuration Manager pobiera pełnego systemu Windows 10 aktualizacji zbiorczej (w tym wszystkie aktualizacje z ostatnich miesięcy) każdego miesiąca. Przy użyciu plików instalacji ekspresowej zapewnia mniejsze pliki do pobrania i instalacji szybsze na klientach.

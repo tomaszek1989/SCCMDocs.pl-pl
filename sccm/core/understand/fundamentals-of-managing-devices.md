@@ -1,5 +1,6 @@
 ---
-title: "Podstawy zarządzania urządzeniami | Dokumentacja firmy Microsoft"
+title: "Podstawy zarządzania urządzeniami"
+titleSuffix: Configuration Manager
 description: "Dowiedz się, jak używać programu System Center Configuration Manager do zarządzania urządzeniami."
 ms.custom: na
 ms.date: 12/04/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "6"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 45d84122a86da880268c93ecd994250df6b76c8a
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: b8859537bd213928df3b4388ccbedb871e43c336
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="fundamentals-of-managing-devices-with-system-center-configuration-manager"></a>Podstawy zarządzania urządzeniami w programie System Center Configuration Manager
 

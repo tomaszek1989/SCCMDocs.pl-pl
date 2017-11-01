@@ -1,5 +1,6 @@
 ---
-title: "Narzędzie sprawdzania wymagań wstępnych | Dokumentacja firmy Microsoft"
+title: "Narzędzie sprawdzania wymagań wstępnych"
+titleSuffix: Configuration Manager
 description: "Dowiedz się, jak używać narzędzia sprawdzania wymagań wstępnych można zidentyfikować i rozwiązać problemy, które mogłyby zablokować lokacji lub instalacji roli systemu lokacji."
 ms.custom: na
 ms.date: 3/1/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "3"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: f0d44f82a0b6068f8cecc5808774677eccb0f8d9
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: HT
+ms.openlocfilehash: 7481da26a2dcbbc215750ed8363a9481bae1138a
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="prerequisite-checker-for-system-center-configuration-manager"></a>Narzędzie sprawdzania wymagań wstępnych programu System Center Configuration Manager
 

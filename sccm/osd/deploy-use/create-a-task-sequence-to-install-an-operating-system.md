@@ -1,5 +1,6 @@
 ---
-title: "Tworzenie sekwencji zadań w celu zainstalowania systemu operacyjnego | Dokumentacja firmy Microsoft"
+title: "Tworzenie sekwencji zadań instalacji systemu operacyjnego"
+titleSuffix: Configuration Manager
 description: "Użyj sekwencji zadań w programie System Center Configuration Manager automatyczne zainstalowanie obrazu systemu operacyjnego i innej zawartości na komputerze docelowym."
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "13"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 41aa6cf69a746f0ab67d804f1ee0c70db05d65ee
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: HT
+ms.openlocfilehash: 47210939c66bb31d173c7e406a66c764d5008879
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="create-a-task-sequence-to-install-an-operating-system-in-system-center-configuration-manager"></a>Tworzenie sekwencji zadań instalacji systemu operacyjnego w programie System Center Configuration Manager
 

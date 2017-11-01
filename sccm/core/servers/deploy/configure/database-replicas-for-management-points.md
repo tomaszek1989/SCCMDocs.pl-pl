@@ -1,5 +1,6 @@
 ---
-title: "Repliki bazy danych punktu zarządzania | Dokumentacja firmy Microsoft"
+title: "Repliki bazy danych punktu zarządzania"
+titleSuffix: Configuration Manager
 description: "Użyj repliki bazy danych, aby zmniejszyć obciążenie procesora CPU umieszczone na serwerze bazy danych lokacji przez punkty zarządzania."
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "9"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 130c053c9f2a1817dd85b1f3c01285aab19d59cb
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: HT
+ms.openlocfilehash: c33bed2244e259edc0c5a7bb547be8bf69213920
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="database-replicas-for-management-points-for-system-center-configuration-manager"></a>Repliki bazy danych dla punktów zarządzania programu System Center Configuration Manager
 
@@ -455,7 +456,7 @@ Aby włączyć obsługę powiadomień klienta z repliką bazy danych dla punktu 
 ###  <a name="bkmk_supscript"></a> Dodatkowy skrypt dla dodatkowych replik bazy danych w jednym wystąpieniu programu SQL Server  
  Użycie skryptu z kroku 4 do konfigurowania certyfikatu z podpisem własnym dla serwera repliki bazy danych na serwerze SQL Server, który ma już zaplanować kontynuować korzystanie z repliki bazy danych, należy użyć zmodyfikowanej wersji oryginalnego skryptu. Poniższe modyfikacje uniemożliwiają skryptowi usunięcie istniejącego certyfikatu na serwerze i powodują utworzenie kolejnych certyfikatów z unikatowymi przyjaznymi nazwami.  Edytuj oryginalny skrypt w następujący sposób:  
 
--   Oznacz jako komentarz (uniemożliwiając wykonanie) każdy wiersz między wpisami skryptu **# usunąć istniejącego certyfikatu, jeśli istnieje** i **# utworzyć nowego certyfikatu**. Aby to zrobić, dodaj znak  **#**  na początku każdego wiersza, którego to dotyczy.  
+-   Oznacz jako komentarz (uniemożliwiając wykonanie) każdy wiersz między wpisami skryptu **# usunąć istniejącego certyfikatu, jeśli istnieje** i **# utworzyć nowego certyfikatu**. Aby to zrobić, dodaj znak **#** na początku każdego wiersza, którego to dotyczy.  
 
 -   Dla każdej kolejnej repliki bazy danych konfigurowanej przy użyciu tego skryptu zaktualizuj przyjazną nazwę certyfikatu.  Aby to zrobić, Edytuj wiersz **$enrollment. CertificateFriendlyName = "ConfigMgr SQL Server Identification Certificate"** i Zastąp **ConfigMgr SQL Server Identification Certificate** pod nową nazwą, takich jak **Certificate1 identyfikacji serwera SQL programu ConfigMgr**.  
 

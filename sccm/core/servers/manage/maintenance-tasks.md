@@ -1,5 +1,6 @@
 ---
-title: Zadania konserwacji | Dokumentacja firmy Microsoft
+title: Zadania konserwacji
+titleSuffix: Configuration Manager
 description: "Dowiedz się, jakie konserwacji zadań do wykonania dla lokacji programu Configuration Manager i hierarchii i przeprowadzania je."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 90b6e4434abc5573a364c769bd835e08e5dff16d
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 37937ef36d3b9a9dd48e6ab23ac9ce3be894f957
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="maintenance-tasks-for-system-center-configuration-manager"></a>Zadania konserwacji programu System Center Configuration Manager
 

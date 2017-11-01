@@ -1,5 +1,6 @@
 ---
-title: "Monitorowanie klientów - module analiz systemu Windows używana z programem Configuration Manager | Dokumentacja firmy Microsoft"
+title: Monitor klientom module analiz systemu Windows
+titleSuffix: Configuration Manager
 description: "Module analiz systemu Windows to zestaw rozwiązań działające na Operations Management Suite, które zezwala na rysowanie wartościowe informacje do bieżącego stanu środowiska dzięki wykorzystaniu danych telemetrycznych Windows zgłaszany przez urządzenia w danym środowisku."
 ms.custom: na
 ms.date: 07/31/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "23"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: adabe8f475eb12dd44005ec07344e8565be20582
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 99c65b876f4a2424db5dd4d2943f8ea3edfb1227
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="use-windows-analytics-with-configuration-manager"></a>Użyj module analiz systemu Windows z programem Configuration Manager
 

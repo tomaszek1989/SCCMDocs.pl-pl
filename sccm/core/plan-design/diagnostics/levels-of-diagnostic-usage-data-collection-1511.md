@@ -1,5 +1,6 @@
 ---
-title: Dane diagnostyczne dla 1511 | Dokumentacja firmy Microsoft
+title: Dane diagnostyczne dla 1511
+titleSuffix: Configuration Manager
 description: "Więcej informacji na temat poziomy danych diagnostycznych i danych użycia, która gromadzi System Center Configuration Manager w wersji 1511."
 ms.custom: na
 ms.date: 12/29/2016
@@ -33,11 +34,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 215ca2a10c50da08d2265ec0926c0310883588ba
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 4d1b9419a71701fdc29b100e5aec880787e54d8f
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1511-of-system-center-configuration-manager"></a>Poziomy zbierania diagnostycznych danych użycia dla wersji 1511 programu System Center Configuration Manager
 

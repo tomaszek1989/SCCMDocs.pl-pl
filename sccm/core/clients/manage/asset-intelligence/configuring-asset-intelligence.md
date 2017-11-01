@@ -1,5 +1,6 @@
 ---
-title: "Konfigurowanie analizy zasobów | Dokumentacja firmy Microsoft"
+title: "Konfigurowanie analizy zasobów"
+titleSuffix: Configuration Manager
 description: "Konfigurowanie analizy zasobów w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 2/22/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: d2704e0f93ad9748f7eb06d714b3754463cb3bdb
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: HT
+ms.openlocfilehash: d6137426c4960d0e9a9117fc78d3f26803b4f001
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="configure-asset-intelligence-in-system-center-configuration-manager"></a>Konfigurowanie analizy zasobów w programie System Center Configuration Manager
 

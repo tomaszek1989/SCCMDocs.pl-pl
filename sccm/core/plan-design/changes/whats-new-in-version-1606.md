@@ -1,5 +1,6 @@
 ---
-title: "Nowość w programie System Center Configuration Manager aktualizacja 1606 | Dokumentacja firmy Microsoft"
+title: "Nowość w wersji 1606"
+titleSuffix: Configuraton Manager
 description: "Uzyskiwanie szczegółowych informacji dotyczących zmian i nowych możliwości wprowadzonych w wersji 1606 programu System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/30/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "40"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 9fdff6049d6e5cde1032864e5d7aa8df71e53686
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 346a1c7199a2d9dbb2cb174502adbb8d03a39f86
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="what39s-new-in-version-1606-of-system-center-configuration-manager"></a>Jaki &#39; s nowego w wersji 1606 programu System Center Configuration Manager
 

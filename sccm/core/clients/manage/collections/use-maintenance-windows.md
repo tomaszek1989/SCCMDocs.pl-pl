@@ -1,5 +1,6 @@
 ---
-title: "Używanie okien obsługi | Dokumentacja firmy Microsoft"
+title: "Używanie okien obsługi"
+titleSuffix: Configuration Manager
 description: "Efektywnie zarządzać klientami w programie System Center Configuration Manager, należy użyć kolekcji i okna obsługi."
 ms.custom: na
 ms.date: 02/22/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: fa67cf597c73bab47209c9b98539f97e174ae70b
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: HT
+ms.openlocfilehash: 960955af87cdae9c43b5b520c348e32e1f48ef32
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-to-use-maintenance-windows-in-system-center-configuration-manager"></a>Używanie okien obsługi w programie System Center Configuration Manager
 

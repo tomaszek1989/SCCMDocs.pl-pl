@@ -1,5 +1,6 @@
 ---
-title: "Zdalnie zsynchronizować zasad na urządzeniach zarejestrowanych w usłudze Intune | Dokumentacja firmy Microsoft"
+title: "Zdalnie zsynchronizować zasad na urządzeniach zarejestrowanych w usłudze Intune"
+titleSuffix: Configuration Manager
 description: "Dowiedz się, jak zsynchronizować zasad zarejestrowane w usłudze Intune urządzenia z konsoli programu Configuration Manager"
 ms.custom: na
 ms.date: 03/05/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 387f6303611010ab3d72f796455409ebfff65099
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: a03ba69c679bcfdc54744314c7a4cb3ef8b2a7a0
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="remotely-synchronize-policy-on-intune-enrolled-devices-from-the-configuration-manager-console"></a>Zdalnie synchronizować zasady na zarejestrowane w usłudze Intune urządzenia z konsoli programu Configuration Manager
 

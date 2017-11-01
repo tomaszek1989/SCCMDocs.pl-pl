@@ -1,5 +1,6 @@
 ---
-title: "Utwórz środowiska wirtualne App-V | Dokumentacja firmy Microsoft"
+title: "Utwórz środowiska wirtualne App-V"
+titleSuffix: Configuration Manager
 description: "Utwórz środowiska wirtualne z programu Microsoft Application Virtualization, więc aplikacje mogą udostępniać dane ze sobą."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: f672bb5bdea0878bfc38575840f0c8f8c7f065b6
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 2b831f4302657e8338dddea32bca26677472bd42
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="create-app-v-virtual-environments-in-system-center-configuration-manager"></a>Utwórz środowiska wirtualne App-V w programie System Center Configuration Manager
 

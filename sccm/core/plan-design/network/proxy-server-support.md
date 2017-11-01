@@ -1,5 +1,6 @@
 ---
-title: "Obsługa serwerów proxy | Dokumentacja firmy Microsoft"
+title: "Obsługa serwerów proxy"
+titleSuffix: Configuration Manager
 description: "Więcej informacji na temat obsługi programu System Center Configuration Manager dla serwerów proxy, korzystających z serwerami systemu lokacji i klientów."
 ms.custom: na
 ms.date: 2/7/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: dc36be47310d2c2178c974a2b503d0b5f9f6e2ec
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 909c56f6087b6ed7b6600b6f3fc693dbd5b4d1b5
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="proxy-server-support-in-system-center-configuration-manager"></a>Obsługa serwerów proxy w programie System Center Configuration Manager
 

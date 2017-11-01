@@ -1,5 +1,6 @@
 ---
-title: "Wprowadzenie do wdrażania systemu operacyjnego | Dokumentacja firmy Microsoft"
+title: "Wprowadzenie do wdrażania systemów operacyjnych"
+titleSuffix: Configuration Manager
 description: "Zrozumienie pojęć przed przystąpieniem do wdrażania systemów operacyjnych w środowisku programu Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "12"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 2baa6b7dbd66ab41bc9b67e8f43c313be233153c
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 5835bde38cb940d2e38df4a38146753a6842f1d7
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="introduction-to-operating-system-deployment-in-system-center-configuration-manager"></a>Wprowadzenie do wdrażania systemu operacyjnego w programie System Center Configuration Manager
 

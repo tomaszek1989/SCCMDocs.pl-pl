@@ -1,5 +1,6 @@
 ---
-title: "Konfigurowanie dla aplikacji służbowych przy użyciu zasad konfiguracji aplikacji systemu Android | Dokumentacja firmy Microsoft"
+title: "Konfigurowanie systemu Android dla aplikacji służbowych przy użyciu zasad konfiguracji aplikacji"
+titleSuffix: Configuration Manager
 description: "Wyeliminować problemy z konfiguracją na urządzeniach z systemem Android for Work przez wdrożenie zasad konfiguracji aplikacji dla użytkowników przed ich uruchomieniem aplikacji."
 ms.custom: na
 ms.date: 09/12/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: NathBarn
 ms.author: NathBarn
 manager: angrobe
-ms.openlocfilehash: bd8388689a49873860fa9951b7d522f9d96fc11f
-ms.sourcegitcommit: 31c670a4bce74fd64a7d46ebf7702f65b80d4147
+ms.openlocfilehash: 79d1b3fed3baa74c8ad195925ccda35713cb8865
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="apply-settings-to-android-for-work-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Ustawienia dotyczą systemu Android dla aplikacji służbowych przy użyciu zasad konfiguracji aplikacji w programie System Center Configuration Manager
 

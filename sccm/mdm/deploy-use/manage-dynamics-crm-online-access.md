@@ -1,5 +1,6 @@
 ---
-title: "Zarządzanie dostępem do usługi Dynamics CRM Online | Dokumentacja firmy Microsoft"
+title: "Zarządzanie dostępem do usługi Dynamics CRM Online"
+titleSuffix: Configuration Manager
 description: "Informacje o sposobie kontrolowania dostępu do programu Microsoft Dynamics CRM Online z urządzeń iOS i Android przy użyciu dostępu warunkowego Microsoft Intune."
 ms.custom: na
 ms.date: 03/05/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "5"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: bd00f12ae3bc14a34d24c22c3d5277d275d51e85
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 556bb29918327499cc9262a44b9810269d84822a
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="manage-dynamics-crm-online-access-in-system-center-configuration-manager"></a>Zarządzanie dostępem do usługi Dynamics CRM Online w programie System Center Configuration Manager
 

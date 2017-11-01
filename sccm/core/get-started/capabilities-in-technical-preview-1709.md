@@ -1,5 +1,6 @@
 ---
-title: Technical Preview 1709 | Dokumentacja firmy Microsoft
+title: Technical Preview 1709
+titleSuffix: Configuration Manager
 description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview 1709 programu System Center Configuration Manager."
 ms.custom: na
 ms.date: 09/28/2017
@@ -13,11 +14,11 @@ ms.assetid: a3ef6bdc-a204-4c4c-a02f-2bd03f35183e
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 3348bc91e6810c873d50cb4efd3efb9fbd024bd3
-ms.sourcegitcommit: 96b79fa091f44e8e6ac5652f6cbbb4b873a8bad9
+ms.openlocfilehash: 90e31c26204323e33560270044ebac7dfe135684
+ms.sourcegitcommit: 1573a1bd0bd58fefb1ea651b3ea8d6fd53eff546
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 10/17/2017
 ---
 # <a name="capabilities-in-technical-preview-1709-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1709 programu System Center Configuration Manager
 
@@ -43,8 +44,8 @@ W tym artykule przedstawiono funkcje, które są dostępne w wersji Technical Pr
 
 **Poniżej przedstawiono nowe funkcje, które można wypróbować z tą wersją.**  
 
-## <a name="improved-vpn-profile-experience-in-configuration-manager-console----1313282---"></a>Udoskonalone środowisko profil sieci VPN w konsoli programu Configuration Manager<!-- 1313282 -->
-
+## <a name="improved-vpn-profile-experience-in-configuration-manager-console"></a>Udoskonalone środowisko profil sieci VPN w konsoli programu Configuration Manager
+<!-- 1313282 -->
 W tej wersji Zaktualizowaliśmy VPN profilu Kreatora właściwości strony i aby wyświetlić ustawienia odpowiednie dla wybranej platformy. W szczególności:
 
 - Dotyczy wszystkich platform własną przepływu pracy, co oznacza, że nowych profilów sieci VPN zawiera tylko ustawienia, które są obsługiwane przez platformę.
@@ -80,8 +81,7 @@ Po wybraniu różnych platform, zwróć uwagę, tylko ustawienia odpowiednie do 
 
 ## <a name="co-management-for-windows-10-devices"></a>Jednoczesne zarządzania dla urządzeń z systemem Windows 10    
 <!-- 1350871 -->
-Wielu klientów chcesz zarządzać urządzeniami z systemem Windows 10 w taki sam sposób ich zarządzania urządzeniami przenośnymi za pomocą uproszczonego, ekonomiczne, oparte na chmurze rozwiązanie. Jednak przejścia z tradycyjnego zarządzania do zarządzania nowoczesnymi może być trudne. Zarządzanie wspólnej to rozwiązanie gdzie urządzeń z systemem Windows 10 może być jednocześnie zarządzane przez program Configuration Manager i usługi Intune, a także przyłączony do usługi Active Directory (AD) i Azure Active Directory (Azure AD), aby umożliwić umożliwiające modernizacji wraz z upływem czasu. Jest rozwiązaniem w celu zapewnienia mostek z tradycyjnego zarządzania nowoczesnymi i zawiera ścieżkę do dokonania zmiany przy użyciu podejście etapowe.  
-
+Wielu klientów chcesz zarządzać urządzeniami z systemem Windows 10 w taki sam sposób ich zarządzania urządzeniami przenośnymi za pomocą uproszczonego, ekonomiczne, oparte na chmurze rozwiązanie. Jednak przejścia z tradycyjnego zarządzania do zarządzania nowoczesnymi może być trudne. Począwszy od systemu Windows 10 w wersji 1607 (znanej także jako aktualizacja rocznicy), można dołączyć urządzenie z systemem Windows 10 do lokalnej usługi Active Directory (AD) i oparta na chmurze usługi Azure AD, w tym samym czasie (rozwiązanie hybrydowe usługi Azure AD). Wspólnej zarządzania korzysta z tego ulepszenia i umożliwia jednocześnie zarządzać urządzeniami z systemem Windows 10, używając programu Configuration Manager i usługi Intune. To rozwiązanie, które zapewnia mostek z tradycyjnego zarządzania nowoczesnymi i umożliwia ścieżki do dokonania zmiany przy użyciu podejście etapowe. 
 
 ### <a name="prerequisites"></a>Wymagania wstępne
 Musi mieć następujące wymagania wstępne w miejscu, aby można było włączyć zarządzania wspólnej. Istnieją ogólne wymagania wstępne i inne wymagania wstępne dla istniejących klientów programu Configuration Manager i urządzeń, które nie są klientami.
@@ -200,7 +200,7 @@ Dla urządzeń z systemem Windows 10, które nie są zarejestrowane w usłudze I
 Dla urządzeń z systemem Windows 10, które są już zarejestrowane w usłudze Intune należy utworzyć aplikację w usłudze Intune do wdrażania klienta programu Configuration Manager. Użyj [wiersza polecenia do zainstalowania klienta programu Configuration Manager](#command-line-to-install-configuration-manager-client) po przejściu przez proces [instalowania klientów z Internetu przy użyciu usługi Azure AD](https://docs.microsoft.com/en-us/sccm/core/clients/deploy/deploy-clients-cmg-azure).  
 
 ### <a name="switch-configuration-manager-workloads-to-intune"></a>Przełącz obciążeń programu Configuration Manager do usługi Intune
-W poprzedniej sekcji przygotowywania urządzenia z systemem Windows 10 do zarządzania wspólnej. Te urządzenia są przyłączone do usługi AD i Azure AD i są one rejestrowane w usłudze Intune klienta programu Configuration Manager. Prawdopodobnie nadal masz urządzenia z systemem Windows 10, które dołączyły do usługi AD i klienta programu Configuration Manager, ale nie zostały dołączone do usługi Azure AD lub zarejestrowane w usłudze Intune. Poniższa procedura zawiera kroki, aby włączyć zarządzanie wspólnej przygotowanie pozostałe urządzenia z systemem Windows 10 (klientów programu Configuration Manager bez rejestracji w usłudze Intune) do wspólnego zarządzania i umożliwia rozpoczęcie przełączania określonego programu Configuration Manager obciążeń do usługi Intune.
+W poprzedniej sekcji przygotowywania urządzenia z systemem Windows 10 do zarządzania wspólnej. Te urządzenia są przyłączone do usługi AD i Azure AD i są zarejestrowane w usłudze Intune i zainstalować klienta Configuration Manager. Prawdopodobnie nadal masz urządzenia z systemem Windows 10, które dołączyły do usługi AD i klienta programu Configuration Manager, ale nie zostały dołączone do usługi Azure AD lub zarejestrowane w usłudze Intune. Poniższa procedura zawiera kroki, aby włączyć zarządzanie wspólnej przygotowanie pozostałe urządzenia z systemem Windows 10 (klientów programu Configuration Manager bez rejestracji w usłudze Intune) do wspólnego zarządzania i umożliwia rozpoczęcie przełączania określonego programu Configuration Manager obciążeń do usługi Intune.
 
 1. W konsoli programu Configuration Manager, przejdź do **administracji** > **omówienie** > **usługi w chmurze**  >  **Zarządzania wspólnej**.    
 2. Na karcie Narzędzia główne w grupie zarządzania, wybierz **konfigurowania zarządzania wspólnej** aby otworzyć Kreator przechodzenia do wspólnego zarządzania.    
@@ -210,7 +210,6 @@ W poprzedniej sekcji przygotowywania urządzenia z systemem Windows 10 do zarzą
     - **Produkcji**: Po wybraniu tego ustawienia Wszystkie obsługiwane urządzenia z systemem Windows 10 są włączone do wspólnego zarządzania. Skonfiguruj **grupie wykluczenia** z co najmniej jedną kolekcję. Urządzenia, które są członkami kolekcji w tej grupie są wykluczone z za pomocą zarządzania wspólnej. 
 5. Na stronie aktywacji wybierz **pilotażu** lub **wszystkie** (w zależności od ustawienia skonfigurowane na stronie przemieszczania) Włączanie automatycznej rejestracji w usłudze Intune, a następnie kliknij przycisk **dalej**. Po wybraniu **pilotażu**, tylko klienci programu Configuration manager, które są elementami członkowskimi grupy pilotażu automatycznie zarejestrowane w usłudze Intune. Dzięki temu można włączyć zarządzanie wspólnej w podzestawie klientów do początkowego testowania wspólnego zarządzania i zarządzania wspólnej wdrożenia przy użyciu podejście etapowe. 
 6. Na stronie obciążeń wybierz, czy przełączyć obciążeń programu Configuration Manager mają być zarządzane przez usługę Intune, a następnie kliknij przycisk **dalej**. Za pomocą suwaków wybierz, czy przełączyć obciążenia do grupy pilotażu lub dla wszystkich klientów systemu Windows 10 (w zależności od ustawienia, które można skonfigurować na stronie przemieszczania). 
-
 7. Aby włączyć zarządzanie wspólnej, Zakończ pracę kreatora.  
 
 <!--### Modify your co-management settings

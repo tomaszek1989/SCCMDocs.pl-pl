@@ -1,5 +1,6 @@
 ---
-title: "Dane diagnostyczne i dane użycia | Dokumentacja firmy Microsoft"
+title: "Dane diagnostyczne i dane użycia"
+titleSuffix: Configuration Manager
 description: "Więcej informacji na temat diagnostycznych i danych użycia programu System Center Configuration Manager umożliwia zbieranie informacji o sobie samym."
 ms.custom: na
 ms.date: 3/27/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 4a4b7c9c0d40b6bd3ea2f318e37d744f1a0cc084
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 478951f274c48424a3da0b8803968c2a51c93b76
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="diagnostics-and-usage-data-for-system-center-configuration-manager"></a>Dane diagnostyczne i dane użycia dla programu System Center Configuration Manager
 

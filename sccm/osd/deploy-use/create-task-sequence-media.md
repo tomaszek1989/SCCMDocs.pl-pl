@@ -1,5 +1,6 @@
 ---
-title: "Utwórz nośnik sekwencji zadań w programie System Center Configuration Manager | Dokumentacja firmy Microsoft"
+title: "Tworzenie nośnika sekwencji zadań"
+titleSuffix: Configuration Manager
 description: "Utwórz nośnik sekwencji zadań, takich jak dysk CD, aby wdrożyć system operacyjny na komputerze docelowym w środowisku programu Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: bd5448d70c2d465347de840cb197d4c33075c90a
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: d3ba78ae32f62a74b73d7b1387d11265a9e41f77
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="create-task-sequence-media-with-system-center-configuration-manager"></a>Tworzenie nośnika sekwencji zadań w programie System Center Configuration Manager
 

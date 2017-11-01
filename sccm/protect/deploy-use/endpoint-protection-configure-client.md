@@ -1,5 +1,6 @@
 ---
-title: Konfigurowanie klienta Endpoint Protection | Dokumentacja firmy Microsoft
+title: Konfigurowanie klienta Endpoint Protection
+titleSuffix: Configuration Manager
 description: "Dowiedz się, jak skonfigurować niestandardowe ustawienia klienta programu Endpoint Protection, które można wdrożyć do kolekcji komputerów w hierarchii."
 ms.custom: na
 ms.date: 02/14/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "21"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: 1488aaa465fb9810bc1b641d41dad95189d37418
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: HT
+ms.openlocfilehash: de8f7411219446420a8c8bca00799d8d7d18fd2f
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="configure-custom-client-settings-for-endpoint-protection"></a>Konfigurowanie niestandardowych ustawień klienta programu Endpoint Protection
 

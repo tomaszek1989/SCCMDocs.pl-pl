@@ -1,5 +1,6 @@
 ---
-title: "Wymagania wstępne dotyczące profilów certyfikatów | Dokumentacja firmy Microsoft"
+title: "Wymagania wstępne dotyczące profilów certyfikatów"
+titleSuffix: Configuration Manager
 description: "Więcej informacji na temat profili certyfikatów w programie System Center Configuration Manager oraz ich zależności zewnętrzne i zależności w produkcie."
 ms.custom: na
 ms.date: 03/29/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "9"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: fba52ee305fe67418f2fe544bfe94d10467236d0
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: a7316171430f0276a33d917794a7eb0b95666bcd
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="prerequisites-for-certificate-profiles-in-system-center-configuration-manager"></a>Wymagania wstępne dotyczące profilów certyfikatów w programie System Center Configuration Manager
 

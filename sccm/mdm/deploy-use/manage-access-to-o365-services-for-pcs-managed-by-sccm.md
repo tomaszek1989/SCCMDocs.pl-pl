@@ -1,5 +1,6 @@
 ---
-title: "Zarządzanie dostępem do usług O365 dla komputerów zarządzanych | Dokumentacja firmy Microsoft"
+title: "Zarządzanie dostępem do usług O365 dla komputerów zarządzanych"
+titleSuffix: Configuration Manager
 description: "Dowiedz się, jak skonfigurować dostęp warunkowy dla komputerów, które są zarządzane przez program System Center Configuration Manager."
 ms.custom: na
 ms.date: 03/05/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "15"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: aede531a0406c3d30c9cca957896e002ed22ae51
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: HT
+ms.openlocfilehash: a49e53ca81d8bd01747c41ab9c25de7fd6396f32
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="manage-access-to-o365-services-for-pcs-managed-by-system-center-configuration-manager"></a>Zarządzanie dostępem do usług O365 dla komputerów zarządzanych przez program System Center Configuration Manager
 

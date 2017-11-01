@@ -1,5 +1,6 @@
 ---
-title: "Która gałąź należy używać | Dokumentacja firmy Microsoft"
+title: "Która gałąź należy używać"
+titleSuffix: Configuration Manager
 description: "Dowiedz się różnic między dostępne gałęzi programu System Center Configuration Manager."
 ms.custom: na
 ms.date: 05/02/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 26356a80bd8c78d4517253bae73e53d8d8f3a73a
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 047ffc0953db4a4cc5d543d880136ce61fa99fa7
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="which-branch-of-configuration-manager-should-i-use"></a>Które gałęzi programu Configuration Manager należy użyć?
 
@@ -149,5 +150,4 @@ Możesz wyświetlić informacje o wersji dla lokacji programu Configuration Mana
 Aby sprawdzić wersję lokacji, w konsoli przejdź do **System Center Configuration Manager** w lewym górnym rogu konsoli gdzie **wersja lokacji** pojawi się. Zobacz [ ]() listę wersji lokacji.
 
 **Gałęzi**  
-Aby potwierdzić gałąź witryny (jako LTSB lub Current Branch), w konsoli przejdź do **administracji** > **konfiguracja lokacji** > **witryny**i Otwórz **ustawienia hierarchii**. Jeśli ma tej opcji można przekonwertować na bieżącej gałęzi i jest aktywna, w lokacji działa wersja LTSB. Gdy w lokacji działa bieżącej gałęzi, ta opcja jest wyszarzony.
-Aby uzyskać informacje o różnych wersji programu Configuration Manager, zobacz "wersje linii bazowej i aktualizacji" w [aktualizacji programu Configuration Manager](/sccm/core/servers/manage/updates).
+Aby potwierdzić gałąź witryny (jako LTSB lub Current Branch), w konsoli przejdź do **administracji** > **konfiguracja lokacji** > **witryny**i Otwórz **ustawienia hierarchii**. Jeśli ma tej opcji można przekonwertować na bieżącej gałęzi i jest aktywna, w lokacji działa wersja LTSB. Gdy w lokacji działa bieżącej gałęzi, ta opcja jest wyszarzony. Aby uzyskać informacje o różnych wersji programu Configuration Manager, zobacz "wersje linii bazowej i aktualizacji" w [aktualizacji programu Configuration Manager](/sccm/core/servers/manage/updates).

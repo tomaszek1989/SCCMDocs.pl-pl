@@ -1,5 +1,6 @@
 ---
-title: "Schemat blokowy — aktualizacja replikacji | Dokumentacja firmy Microsoft"
+title: "Schemat blokowy — aktualizacja replikacji"
+titleSuffix: Configuration Manager
 description: "Zobacz proces, za pomocą którego wybranych do zainstalowania aktualizacji w konsoli są replikowane do lokacji dodatkowej."
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: cefde9fa6894e39715257f0453ccfe160a55919e
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 6a4c55701e3b023029c36d2ad81b21193e94fd64
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="flowchart---update-replication-for-system-center-configuration-manager"></a>Schemat blokowy — replikacja aktualizacji programu System Center Configuration Manager
 

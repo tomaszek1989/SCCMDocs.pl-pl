@@ -1,5 +1,6 @@
 ---
-title: Aktualizacje | Dokumentacja firmy Microsoft
+title: Aktualizacje
+titleSuffix: Configuration Manager
 description: "Więcej informacji na temat metody obsługi w konsoli o nazwie ** aktualizacje i obsługa ** który można łatwo zlokalizować i zainstalować zalecane aktualizacje."
 ms.custom: na
 ms.date: 07/31/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: d46aca88111d4ee0e96b75ca5a3ec57aa4274d6d
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: HT
+ms.openlocfilehash: bca724f15dc18d7273bbca122b6428b4704a5d43
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="updates-for-system-center-configuration-manager"></a>Aktualizacje programu System Center Configuration Manager
 
@@ -111,7 +112,7 @@ Aktualizacje w konsoli zapewniają większą stabilność i zawierają rozwiąza
 
 Configuration Manager odnajduje nowe aktualizacje podczas synchronizacji z roli systemu lokacji punktu Usługi połączenia z usługą w chmurze firmy Microsoft i Centrum pobierania:  
 
--   Gdy punkt połączenia usługi jest w trybie online, lokacja jest codziennie synchronizowana z firmą Microsoft w celu automatycznego wyszukiwania nowych aktualizacji dotyczących danej infrastruktury.  Aby pobrać aktualizacje i plików redystrybucyjnych aktualizacji, korzysta z komputera, który hostuje rolę systemu lokacji punktu połączenia usługi **systemu** kontekstu do poniższej lokalizacji w Internecie: go.microsoft.com i witrynie download.microsoft.com. Aby uzyskać informacje o dodatkowych lokalizacji punktu połączenia usługi łączy się z, zobacz [wymagania dotyczące dostępu do Internetu](../../../core/servers/deploy/configure/about-the-service-connection-point.md#bkmk_urls) w [o połączenia z usługą punktu w programie System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md).  
+-   Gdy punkt połączenia usługi jest w trybie online, lokacja jest codziennie synchronizowana z firmą Microsoft w celu automatycznego wyszukiwania nowych aktualizacji dotyczących danej infrastruktury.  Aby pobrać aktualizacje i plików redystrybucyjnych aktualizacji, korzysta z komputera, który hostuje rolę systemu lokacji punktu połączenia usługi **systemu** kontekstu do poniższej lokalizacji w Internecie: go.microsoft.com i witrynie download.microsoft.com. Aby uzyskać informacje o dodatkowych lokalizacji punktu połączenia usługi łączy się z, zobacz [wymagania dotyczące dostępu do Internetu](../../../core/servers/deploy/configure/about-the-service-connection-point.md#bkmk_urls) w [o połączenia z usługą punktu w programie System Center Configuration Manager](../../../core/servers/deploy/configure/about-the-service-connection-point.md) .  
 
 -   Gdy punkt połączenia usługi jest w trybie offline, użyj narzędzia połączenia usługi, aby ręcznie zsynchronizować zawartość z usługą firmy Microsoft w chmurze. Aby uzyskać więcej informacji, zobacz [Używanie narzędzia połączenia z usługą w programie System Center Configuration Manager](../../../core/servers/manage/use-the-service-connection-tool.md).  
 

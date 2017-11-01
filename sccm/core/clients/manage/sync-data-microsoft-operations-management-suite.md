@@ -1,5 +1,6 @@
 ---
-title: 'Synchronizowanie danych | Dokumentacja firmy Microsoft | Microsoft Operations Management Suite '
+title: 'Synchronizowanie danych programu Microsoft Operations Management Suite '
+titleSuffix: Configuration Manager
 description: Synchronizowanie danych z programu System Center Configuration Manager do programu Microsoft Operations Management Suite.
 ms.custom: na
 ms.date: 7/31/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "9"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 608a9893011c6500d5d4cd2f756a124db66b1858
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: HT
+ms.openlocfilehash: bbb76fda4ef831f358923946b3c16b821194bf6b
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 #  <a name="sync-data-from-configuration-manager-to-the-microsoft-operations-management-suite"></a>Synchronizowanie danych z programu Configuration Manager do programu Microsoft Operations Management Suite
 

@@ -1,5 +1,6 @@
 ---
-title: "E-mail profil zabezpieczeń i prywatności | Dokumentacja firmy Microsoft"
+title: "Bezpieczeństwo profilu poczty e-mail i ochrona prywatności"
+titleSuffix: Configuration Manager
 description: "Więcej informacji na temat zabezpieczeń najlepsze rozwiązania dotyczące zarządzania profilami poczty e-mail urządzeń w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/28/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Nbigman
 ms.author: nbigman
 manager: angrobe
-ms.openlocfilehash: 17707f931a4fa58b225ce14f04c2a19648585bc4
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 0faa84a53fba59b81156ef21d73fbed24cc9961a
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="security-and-privacy-for-email-profiles-in-system-center-configuration-manager"></a>Bezpieczeństwo i prywatność profilów poczty e-mail w programie System Center Configuration Manager
 

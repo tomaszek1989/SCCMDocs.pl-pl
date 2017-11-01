@@ -1,5 +1,6 @@
 ---
-title: "Rozpoczynanie pracy z ustawieniami zgodności | Dokumentacja firmy Microsoft"
+title: "Wprowadzenie do ustawień zgodności"
+titleSuffix: Configuration Manager
 description: "Dowiedz się, jak działają ustawienia zgodności w programie System Center Configuration Manager. Poznaj także podstawowe koncepcje, które trzeba znać."
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "11"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: b9f997caf5ca4753f95ab2e2cf680bdac40d29b7
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: b1171f806d1bda9671fd5817362285a461ee2d44
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="get-started-with-compliance-settings-in-system-center-configuration-manager"></a>Wprowadzenie do ustawień zgodności w programie System Center Configuration Manager
 

@@ -1,8 +1,8 @@
 ---
-title: "System Center Configuration Manager privacy statement — informacje dodatkowe | Dokumentacja firmy Microsoft"
+title: "System Center Configuration Manager privacy statement — informacje dodatkowe"
 description: "Więcej informacji na temat jak firma Microsoft zbiera i korzysta z danych z wdrożenia programu System Center Configuration Manager."
 ms.custom: na
-ms.date: 12/30/2016
+ms.date: 10/13/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -34,11 +34,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.openlocfilehash: ef7b3656f9b4a31e07227aa4e864448d0dd1fcdc
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 28caf163507692ad7d7b3cfa85536a88d94584ec
+ms.sourcegitcommit: 18ac58374d2d513fe2a197c80f7c8c6890a7d612
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/16/2017
 ---
 # <a name="additional-information-about-privacy-for-system-center-configuration-manager"></a>Dodatkowe informacje o ochronie prywatności dla programu System Center Configuration Manager
 
@@ -107,7 +107,7 @@ Można zrezygnować z używania widoku geograficznego hierarchii lokacji. Widok 
 ## <a name="microsoft-intune-subscription"></a>Subskrypcja usługi Microsoft Intune
 Klienci, którzy kupili subskrypcję Microsoft Intune można używać programu Configuration Manager do zarządzania urządzeniami przenośnymi podłączonymi przy użyciu programu Microsoft Intune. [Microsoft Online Services Privacy Statement](http://go.microsoft.com/fwlink/?LinkId=262214) ma zastosowanie do usług online firmy Microsoft, w tym programu Microsoft Intune. Jeśli klienci mają też subskrypcję Microsoft Intune [Microsoft Online Services Privacy Statement](http://go.microsoft.com/fwlink/?LinkId=262214) należy przeczytać łącznie z te zasady zachowania poufności.
 
-Cała komunikacja z usługą Microsoft Intune używać protokołu HTTPS. Aby skonfigurować subskrypcję Microsoft Intune i pobrać podpisywania żądanie certyfikatu (CSR) potrzebne do skonfigurowania obsługi systemu iOS, administrator zalogować się do programu Microsoft Intune za pomocą konta organizacyjnego i hasła. Te poświadczenia nie są przechowywane w programie Configuration Manager. Cała pozostała komunikacja w usłudze Microsoft Intune jest uwierzytelniana za pomocą certyfikatów PKI, które automatycznie generuje Microsoft Intune.
+Cała komunikacja z usługą Microsoft Intune używać protokołu HTTPS. Aby skonfigurować subskrypcję Microsoft Intune i pobrać podpisywania żądanie certyfikatu (CSR) potrzebne do skonfigurowania obsługi systemu iOS, administrator zalogować się do programu Microsoft Intune za pomocą konta służbowego i hasła. Te poświadczenia nie są przechowywane w programie Configuration Manager. Cała pozostała komunikacja w usłudze Microsoft Intune jest uwierzytelniana za pomocą certyfikatów PKI, które automatycznie generuje Microsoft Intune.
 
 Do zarządzania urządzeniami, które są połączone w usłudze Microsoft Intune, niektóre informacje są wysyłane do i odbierane z firmy Microsoft Intune. Informacje te obejmują główną nazwę użytkownika (UPN) wszystkich użytkowników, którzy są przypisani do usługi i informacje spisu urządzeń dla tych urządzeń, które są zarządzane przez program Microsoft Intune. Metadane, takie jak nazwa aplikacji, Wydawca i wersja, dla zawartości przypisanych do punktów dystrybucji Manage.Microsoft.com są wysyłane do firmy Microsoft Intune. Rzeczywista zawartość binarna przypisana do punktu dystrybucji Manage.Microsoft.com jest szyfrowana przed przesłaniem do firmy Microsoft Intune.
 

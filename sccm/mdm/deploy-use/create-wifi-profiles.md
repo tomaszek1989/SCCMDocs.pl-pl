@@ -1,5 +1,6 @@
 ---
-title: "Tworzenie profilów sieci Wi-Fi w programie System Center Configuration Manager | Dokumentacja firmy Microsoft"
+title: "Tworzenie profilów sieci Wi-Fi"
+titleSuffix: Configuration Manager
 description: "Dowiedz się, jak profile sieci Wi-Fi w programie Configuration Manager umożliwiają wdrażanie ustawień sieci bezprzewodowej dla użytkowników urządzeń przenośnych w organizacji."
 ms.custom: na
 ms.date: 03/05/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: 101ffde99b3fc88fe352120c3fd8fb3ef7a4efc0
-ms.sourcegitcommit: 13599667ea77c16db1aebe64f8a6748c268f0b45
+ms.openlocfilehash: 3f4f25d39fd7f4106ec6f7a1d6ebe4716be067ad
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/11/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-to-create-wi-fi-profiles-for-mobile-devices-in-system-center-configuration-manager"></a>Jak tworzyć profile sieci Wi-Fi dla urządzeń przenośnych w programie System Center Configuration Manager
 

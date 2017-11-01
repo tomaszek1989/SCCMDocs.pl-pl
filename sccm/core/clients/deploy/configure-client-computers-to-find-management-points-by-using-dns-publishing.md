@@ -1,5 +1,6 @@
 ---
-title: "Konfigurowanie publikowania DNS punktów zarządzania Znajdź klientów | Dokumentacja firmy Microsoft"
+title: "Konfigurowanie publikowania DNS punktów zarządzania znajdowanie klientów"
+titleSuffix: Configuration Manager
 description: "Ustaw komputery klienckie pod kątem wyszukiwania punktów zarządzania przy użyciu publikowania DNS w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 04/23/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "6"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 0526dccc21be8419bf772374a67bc7cd262e6375
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
-ms.translationtype: HT
+ms.openlocfilehash: d2462c282b5b979177fda735847279a12208ba6d
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-to-configure-client-computers-to-find-management-points-by-using-dns-publishing-in-system-center-configuration-manager"></a>Jak skonfigurować komputery klienckie pod kątem wyszukiwania punktów zarządzania przy użyciu publikowania DNS w programie System Center Configuration Manager
 

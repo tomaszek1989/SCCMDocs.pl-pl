@@ -1,5 +1,6 @@
 ---
-title: "Przygotowywanie równorzędnej pamięci podręcznej systemu Windows PE celu zmniejszenie ruchu w sieci WAN | Dokumentacja firmy Microsoft"
+title: "Przygotowywanie równorzędnej pamięci podręcznej systemu Windows PE w celu zredukowania ruchu w sieci WAN"
+titleSuffix: Configuration Manager
 description: "Równorzędna pamięć podręczna systemu Windows PE działa w środowisku Windows PE pobierać zawartość z lokalnego elementu równorzędnego i zminimalizować ruch w sieci WAN, gdy jest żaden lokalny punkt dystrybucji."
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "11"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 814c6133a30b1116d05aaeafddb0dfb7fe2a390e
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: bb0ed6809d1350c4ce28e20d1a83082a51c2e687
+ms.sourcegitcommit: 1132886e07d0c0a87dcc7eeef4577dd8d8840023
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/01/2017
 ---
 # <a name="prepare-windows-pe-peer-cache-to-reduce-wan-traffic-in-system-center-configuration-manager"></a>Przygotowywanie równorzędnej pamięci podręcznej systemu Windows PE w celu zredukowania ruchu w sieci WAN w programie System Center Configuration Manager
 
@@ -26,7 +27,7 @@ ms.lasthandoff: 08/07/2017
 
 Podczas wdrażania nowego systemu operacyjnego w programie System Center Configuration Manager, komputery z systemem sekwencji zadań można użyć równorzędnej pamięci podręcznej systemu Windows PE pobierać zawartość z lokalnego elementu równorzędnego (źródła równorzędnej pamięci podręcznej) zamiast z punktu dystrybucji. Minimalizuje to ruch w sieci rozległej w scenariuszach oddziału firmy bez lokalnego punktu dystrybucji.  
 
- Równorzędna pamięć podręczna systemu Windows PE przypomina [usługi Windows BranchCache](http://technet.microsoft.com/library/mt617255\(TechNet.10\).aspx#bkmk_branchcache), ale działa w środowisku preinstalacji systemu Windows (Windows PE). W przypadku uruchomienia sekwencji zadań w kontekście systemu operacyjnego, na przykład z poziomu programu Software Center na kliencie, równorzędna pamięć podręczna systemu Windows PE nie jest używana. Poniższe terminy są używane do opisywania klientów korzystających z równorzędnej pamięci podręcznej systemu Windows PE:  
+ Równorzędna pamięć podręczna systemu Windows PE przypomina [usługi Windows BranchCache](http://technet.microsoft.com/library/mt617255\(TechNet.10\).aspx#bkmk_branchcache), ale działa w środowisku preinstalacji systemu Windows (Windows PE). Poniższe terminy są używane do opisywania klientów korzystających z równorzędnej pamięci podręcznej systemu Windows PE:  
 
 -   **Klient równorzędnej pamięci podręcznej** to komputer skonfigurowany do używania równorzędnej pamięci podręcznej systemu Windows PE.  
 

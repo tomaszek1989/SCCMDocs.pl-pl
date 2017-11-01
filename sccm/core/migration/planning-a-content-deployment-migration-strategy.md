@@ -1,5 +1,6 @@
 ---
-title: "Migracji zawartości | Dokumentacja firmy Microsoft"
+title: "Migracji zawartości"
+titleSuffix: Configuration Manager
 description: "Punkty dystrybucji umożliwia zarządzanie zawartością podczas migracji danych do hierarchii docelowej programu System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/30/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 25619d91522193178e0415f649ca4b34c94ecc89
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: HT
+ms.openlocfilehash: 09e4fd0237d16cdaa25ba3c26a8661bd14fd6692
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="plan-a-content-deployment-migration-strategy-in-system-center-configuration-manager"></a>Planowanie strategii migracji wdrożenia zawartości w programie System Center Configuration Manager
 
@@ -113,7 +114,7 @@ W poniższej tabeli wymieniono obsługiwane lokalizacje dla każdego typu punktu
 > [!WARNING]  
 >  Przed uaktualnieniem punktu dystrybucji gałęzi należy odinstalować oprogramowanie klienckie programu Configuration Manager 2007. Po uaktualnieniu punktu dystrybucji gałęzi, który ma zainstalowane oprogramowanie klienckie programu Configuration Manager 2007, zawartość wcześniej wdrożona na komputerze jest usuwana z komputera, a uaktualnienie punktu dystrybucji kończy się niepowodzeniem.  
 
-Aby zidentyfikować punkty dystrybucji, które kwalifikują się do uaktualnienia, w konsoli programu Configuration Manager w **hierarchii źródłowej** węzła, wybierz lokację źródłową, a następnie wybierz **współużytkowane punkty dystrybucji** kartę. Obok kwalifikujących się punktów dystrybucji w kolumnie **Kwalifikuje się do uaktualnienia** wyświetlane będzie słowo **Tak** .  
+Aby zidentyfikować punkty dystrybucji, które kwalifikują się do uaktualnienia, w konsoli programu Configuration Manager w **hierarchii źródłowej** węzła, wybierz lokację źródłową, a następnie wybierz **współużytkowane punkty dystrybucji** kartę. Punktów dystrybucji **tak** w **kwalifikuje się do uaktualnienia** kolumny.  
 
 Po uaktualnieniu punktu dystrybucji, który jest zainstalowany na serwerze lokacji dodatkowej programu Configuration Manager 2007, lokacja dodatkowa zostanie odinstalowana z hierarchii źródłowej. Ten scenariusz jest nazywany uaktualnieniem lokacji dodatkowej, jednak dotyczy tylko roli systemu lokacji punktu dystrybucji. W jego wyniku lokacja dodatkowa nie zostanie uaktualniona, lecz odinstalowana. Spowoduje to pozostawienie punktu dystrybucji z hierarchii docelowej na komputerze, który był serwera lokacji dodatkowej. Jeśli planujesz uaktualnić punkt dystrybucji w lokacji dodatkowej, zobacz [zaplanować uaktualnienie lokacji dodatkowych programu Configuration Manager 2007](#BKMK_UpgradeSS) w tym temacie.  
 
@@ -180,7 +181,7 @@ Jeśli zdecydujesz się z uaktualnienia współużytkowanego punktu dystrybucji,
 
 -   Współużytkowany punkt dystrybucji nie może być przydzielony wspólnie z innymi rolami systemu lokacji.  
 
-Aby zidentyfikować punkty dystrybucji, które kwalifikują się do ponownego przypisania, w konsoli programu Configuration Manager w **hierarchii źródłowej** węzła, wybierz lokację źródłową, a następnie wybierz **współużytkowane punkty dystrybucji** kartę. Punktów dystrybucji **tak** w **kwalifikuje się do ponownego przypisania** kolumny (Ta kolumna nosiła nazwę **kwalifikuje się do uaktualnienia** przed System Center 2012 R2 Configuration Manager).  
+Aby zidentyfikować punkty dystrybucji, które kwalifikują się do ponownego przypisania, w konsoli programu Configuration Manager w **hierarchii źródłowej** węzła, wybierz lokację źródłową, a następnie wybierz **współużytkowane punkty dystrybucji** kartę. Punktów dystrybucji **tak** w **kwalifikuje się do ponownego przypisania** kolumny (Ta kolumna nosiła nazwę **kwalifikuje się do uaktualnienia** przed System Center 2012 R2 Program Configuration Manager).  
 
 ###  <a name="BKMK_ReassignProcess"></a> Proces ponownego przypisywania punktu dystrybucji  
  Do ponownego przypisania punktów dystrybucji, współużytkowanych z aktywnej hierarchii źródłowej, można użyć konsoli programu Configuration Manager. Podczas ponownego przypisania współużytkowanego punktu dystrybucji, punktu dystrybucji jest odinstalowany z lokacji źródłowej, a następnie zainstalowany jako punkt dystrybucji, która jest połączona z lokacją główną lub dodatkową określoną w hierarchii docelowej.  

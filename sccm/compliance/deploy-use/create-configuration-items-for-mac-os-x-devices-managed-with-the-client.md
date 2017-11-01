@@ -1,5 +1,6 @@
 ---
-title: "Tworzenie elementów konfiguracji dla komputerów Mac zarządzanych przez klienta — programu Configuration Manager | Dokumentacja firmy Microsoft"
+title: "Tworzenie elementów konfiguracji dla komputerów zarządzanych przez klienta Mac "
+titleSuffix: Configuration Manager
 description: "Umożliwia zarządzanie ustawieniami urządzeń z systemem Mac OS X, należy użyć elementu konfiguracji programu System Center Configuration Manager Mac OS X."
 ms.custom: na
 ms.date: 03/28/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: 6910710badd0937cbdf1471e4f3f050590e2e769
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 1947bc8907d00a2f6d78acee5f563fa9b7f6cf78
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-to-create-configuration-items-for-mac-os-x-devices-managed-with-the-system-center-configuration-manager-client"></a>Tworzenie elementów konfiguracji dla urządzeń z systemem Mac OS X zarządzanych za pomocą klienta programu System Center Configuration Manager
 Użyj programu System Center Configuration Manager**systemu Mac OS X (niestandardowy)** element konfiguracji do zarządzania ustawieniami urządzeń systemu Mac OS X, które są zarządzane przez klienta programu Configuration Manager.  

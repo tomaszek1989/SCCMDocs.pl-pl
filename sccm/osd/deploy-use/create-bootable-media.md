@@ -1,5 +1,6 @@
 ---
-title: "Tworzenie nośnika rozruchowego — Configuration Manager | Dokumentacja firmy Microsoft"
+title: "Tworzenie nośnika rozruchowego "
+titleSuffix: Configuration Manager
 description: "Nośnik rozruchowy w programie Configuration Manager ułatwiają instalowanie nowej wersji systemu Windows lub zastąpić ustawienia komputera i transferu."
 ms.custom: na
 ms.date: 01/23/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 9032698fa12bf453041ea06bf330d3b4687c2a97
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: HT
+ms.openlocfilehash: f75a29ff27a1f806d4329bd2dfc5e30a8991fac9
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="create-bootable-media-with-system-center-configuration-manager"></a>Tworzenie nośnika rozruchowego w programie System Center Configuration Manager
 

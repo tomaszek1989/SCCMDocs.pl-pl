@@ -1,5 +1,6 @@
 ---
-title: "Dodawanie ról systemu lokacji | Dokumentacja firmy Microsoft"
+title: "Dodawanie ról systemu lokacji"
+titleSuffix: Configuration Manager
 description: "Dowiedz się, role systemu lokacji programu Configuration Manager oraz jak dodawać je, aby rozszerzyć funkcjonalność i wydajność lokacji."
 ms.custom: na
 ms.date: 2/7/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 1ad4abf1f06ed24bd1d505648280b5e5d80220c7
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 780e9ed6965ed72578964fbea2fb2e9a281ebd68
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="add-site-system-roles-for-system-center-configuration-manager"></a>Dodawanie ról systemu lokacji dla programu System Center Configuration Manager
 

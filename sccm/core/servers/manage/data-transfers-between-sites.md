@@ -1,5 +1,6 @@
 ---
-title: Transfery danych | Dokumentacja firmy Microsoft
+title: Transfer danych
+titleSuffix: Configuration Manager
 description: "Dowiedz się, jak programu Configuration Manager przenosi dane między lokacjami oraz sposobu zarządzania transferem danych w sieci."
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "12"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: bf0fdc8d4b4a72760b2cfb91231378a17df01594
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 29e15b9ebe01e9e266df24267bf402e3d07de095
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="data-transfers-between-sites-in-system-center-configuration-manager"></a>Transfer danych między lokacjami w programie System Center Configuration Manager
 

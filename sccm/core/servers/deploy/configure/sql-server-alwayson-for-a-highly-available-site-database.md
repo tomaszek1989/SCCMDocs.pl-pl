@@ -1,5 +1,6 @@
 ---
-title: "Zawsze włączone w programie SQL Server | Dokumentacja firmy Microsoft"
+title: "Opcja Zawsze włączone programu SQL Server"
+titleSuffix: Configuration Manager
 description: "Zaplanuj użycie programu SQL Server zawsze w grupie dostępności wraz z programem SCCM."
 ms.custom: na
 ms.date: 09/22/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "16"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 3e275f6203a9e0b9210bfbadbf9addf64f6533d8
-ms.sourcegitcommit: 8faf42135a8dc9c384407e64f3f8ba204fb15847
+ms.openlocfilehash: 24eaa33f1f9b333894817f089149e2cbed35df75
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Przygotowanie do korzystania z programu SQL Server zawsze włączonych grup dostępności z programu Configuration Manager
 
@@ -75,7 +76,7 @@ Aby uzyskać więcej informacji, zobacz [Tworzenie punktu końcowego dublowania 
 -   Przed wersją 1706 może mieć maksymalnie dwóch synchronicznych replik pomocniczych.
 -   Począwszy od wersji 1706, używając samą liczbę i rodzaj replik w grupie dostępności jako obsługiwany przez wersję programu SQL Server, którego używasz.
 
-    Możesz użyć repliki zatwierdzania asynchronicznego, aby odzyskać repliki synchroniczne. Zobacz [opcje odzyskiwania bazy danych lokacji]( /sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption) w temacie kopii zapasowych i odzyskiwania, aby uzyskać informacje o tym.
+-   Począwszy od wersji 1706, możesz użyć zatwierdzania asynchronicznego replika Aby odzyskać repliki synchroniczne. Zobacz [opcje odzyskiwania bazy danych lokacji]( /sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption) w temacie kopii zapasowych i odzyskiwania, aby uzyskać informacje o tym.
     > [!CAUTION]  
     > Menedżer konfiguracji nie obsługuje trybu failover do korzystania z repliki zatwierdzania asynchronicznego jako bazy danych lokacji.
 Ponieważ programu Configuration Manager nie można zweryfikować stanu repliki zatwierdzania asynchronicznego, aby upewnić się, że jest aktualny, i [zgodnie z założeniami takie repliki może być zsynchronizowane]( https://msdn.microsoft.com/library/ff877884(SQL.120).aspx(d=robot)#Availability%20Modes), użycie zatwierdzania asynchronicznego replika jako bazy danych lokacji można umieścić integralność danych lokacji i na ryzyko.

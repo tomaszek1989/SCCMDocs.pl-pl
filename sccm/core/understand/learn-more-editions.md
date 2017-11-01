@@ -1,5 +1,6 @@
 ---
-title: "Dowiedz się więcej o licencjonowania i gałęzie | Dokumentacja firmy Microsoft"
+title: "Dowiedz się więcej na temat licencjonowania i gałęzie"
+titleSuffix: Configuration Manager
 description: "Użyj tego tematu, aby poznać wymagania licencyjne opcjami instalacji wraz z wydaniem października 2016 programu System Center Configuration Manager, które dotyczą wersji Current Branch 1606, długoterminowe Servicing Branch (LTSB) i instalacja dotyczy wersji ewaluacyjnej bieżącej gałęzi."
 ms.custom: na
 ms.date: 10/12/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 90e16b316872cb370c9c2e645f46ac12afab7107
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 88cc85a98b9281ec07ead766c415bebe46c5a82c
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="licensing-and-branches-for-system-center-configuration-manager"></a>Licencjonowanie i gałęzi programu System Center Configuration Manager
 

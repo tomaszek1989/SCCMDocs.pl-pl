@@ -1,5 +1,6 @@
 ---
-title: Skonfigurowanie programu Endpoint Protection | Dokumentacja firmy Microsoft
+title: Skonfigurowanie programu Endpoint Protection
+titleSuffix: Configuration Manager
 description: "Dowiedz się, jak konfigurowanie programu Configuration Manager aby aktualizował i rozpowszechniał definicje złośliwego oprogramowania dla usługi Windows Defender."
 ms.custom: na
 ms.date: 02/14/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "21"
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: 6917644d6719a1ca636713aa5aebf277927123c8
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 5f005e7cd9c396fcf7e02aafefcb34c37ddab901
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="configure-endpoint-protection"></a>Skonfigurowanie programu Endpoint Protection
 

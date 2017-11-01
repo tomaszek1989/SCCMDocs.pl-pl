@@ -1,5 +1,6 @@
 ---
-title: Przygotowanie do zainstalowania lokacji | Dokumentacja firmy Microsoft
+title: Przygotowanie do zainstalowania lokacji
+titleSuffix: Configuration Manager
 description: "Jeśli planujesz zainstalować wiele lokacji programu Configuration Manager, przeczytaj te informacje, aby zaoszczędzić czas i aby zapobiec wystąpieniu błędów."
 ms.custom: na
 ms.date: 3/1/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 829f2d44a9b8d203a5b753ebb6d8f759b1a05111
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: HT
+ms.openlocfilehash: 56dc57a487e78948538a25d48c344f0ed424b692
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="prepare-to-install-system-center-configuration-manager-sites"></a>Przygotowanie do instalacji lokacji programu System Center Configuration Manager
 

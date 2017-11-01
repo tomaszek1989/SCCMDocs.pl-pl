@@ -1,5 +1,6 @@
 ---
-title: "Zarządzanie aplikacjami ze Sklepu Windows dla firm | Dokumentacja firmy Microsoft"
+title: "Zarządzanie aplikacjami zakupionymi w Sklepie Windows dla firm"
+titleSuffix: Configuration Manager
 description: "Zarządzanie i wdrażanie aplikacji w Sklepie Windows dla firm za pomocą programu System Center Configuration Manager."
 ms.custom: na
 ms.date: 7/31/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "11"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: ed7c3724e4804911f713e1239661fc53514300b2
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.openlocfilehash: 2dd6a2f9c62903119ba8c8374dcf222199c19fd5
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="manage-apps-from-the-windows-store-for-business-with-system-center-configuration-manager"></a>Zarządzanie aplikacjami zakupionymi w Sklepie Windows dla firm przy użyciu programu System Center Configuration Manager
 [Sklep Windows dla firm](https://www.microsoft.com/business-store) jest, gdzie można znaleźć i zakupić aplikacje systemu Windows w Twojej organizacji, pojedynczo lub zbiorczo. Łącząc Sklep do programu Configuration Manager, można zsynchronizować listę aplikacji, które zostały zakupione w programie Configuration Manager. Następnie można wyświetlić tych aplikacji w konsoli programu Configuration Manager i wdrażać je tak, jaki wdraża się innych aplikacji.

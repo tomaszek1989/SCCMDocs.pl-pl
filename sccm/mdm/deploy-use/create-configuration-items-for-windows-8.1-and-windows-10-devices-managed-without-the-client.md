@@ -1,5 +1,6 @@
 ---
-title: "Tworzenie elementów konfiguracji dla urządzeń Windows 8.1 i Windows 10 zarządzanych za pomocą usługi Intune | Dokumentacja firmy Microsoft"
+title: "Tworzenie elementów konfiguracji dla Windows 8.1 i Windows 10 urządzeń zarządzanych za pomocą usługi Intune"
+titleSuffix: Configuration Manager
 description: "Aby zarządzać ustawieniami komputerów z systemem Windows 10, należy użyć elementu konfiguracji System Center Configuration Manager systemu Windows 10."
 ms.custom: na
 ms.date: 07/31/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: f691ef725e969f55044bafef3fdd66ead2366a6c
-ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
-ms.translationtype: HT
+ms.openlocfilehash: 7f5a50ae6ea05af7e864cf94df3063d70bd737b4
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-to-create-configuration-items-for-windows-81-and-windows-10-devices-managed-without-the-system-center-configuration-manager-client"></a>Jak utworzyć elementy konfiguracji dla urządzeń z systemem Windows 8.1 lub Windows 10 zarządzanych bez klienta programu System Center Configuration Manager
 

@@ -1,5 +1,6 @@
 ---
-title: "Tworzenie i wdrażanie aplikacji | Dokumentacja firmy Microsoft"
+title: "Tworzenie i wdrażanie aplikacji"
+titleSuffix: Configuration Manager
 description: "Tworzenie i wdrażanie aplikacji zawierającej aplikacji biznesowych z i Dowiedz się, jak skutecznie zarządzać aplikacjami."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: f52dbb5e89746e30562132d4fe19886e7d9b5ea7
-ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
-ms.translationtype: HT
+ms.openlocfilehash: a9f8a54400897e30d01d97f81b98e0e539fc86a7
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="create-and-deploy-an-application-with-system-center-configuration-manager"></a>Tworzenie i wdrażanie aplikacji przy użyciu programu System Center Configuration Manager
 

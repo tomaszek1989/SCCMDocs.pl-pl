@@ -1,5 +1,6 @@
 ---
-title: Nowe w programie System Center Configuration Manager wersji 1602 | Dokumentacja firmy Microsoft
+title: "Nowość w wersji 1602"
+titleSuffix: Configuraton Manager
 description: "Uzyskiwanie szczegółowych informacji dotyczących zmian i nowych możliwości wprowadzonych w wersji 1602 programu System Center Configuration Manager."
 ms.custom: na
 ms.date: 12/30/2016
@@ -15,11 +16,11 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: noindex,nofollow
-ms.openlocfilehash: 9a548f43625a907173e7b967d26356bd80f1c5d9
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 0e151b01d3399dafc6ed3962560e8e9975a37a8e
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="what39s-new-in-version-1602-of-system-center-configuration-manager"></a>Jaki &#39; s nowego w wersji 1602 programu System Center Configuration Manager
 

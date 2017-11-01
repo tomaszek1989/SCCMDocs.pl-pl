@@ -1,5 +1,6 @@
 ---
-title: Scenariusze instalacji | Dokumentacja firmy Microsoft
+title: Scenariusze instalacji
+titleSuffix: Configuration Manager
 description: "Dowiedz się więcej metod dotyczących instalacji nowej hierarchii programu Configuration Manager podczas aktualizowania lub uaktualniania lokacji."
 ms.custom: na
 ms.date: 10/06/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "6"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 938b2970e4d8534fdd5f3daf0c9a5ddb1f576e60
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 9e7cdd08ba7850f4cb3558c7474c0583e4411b98
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="scenarios-to-streamline-your-installation-of-system-center-configuration-manager"></a>Scenariusze umożliwiające usprawnienie instalowania programu System Center Configuration Manager
 

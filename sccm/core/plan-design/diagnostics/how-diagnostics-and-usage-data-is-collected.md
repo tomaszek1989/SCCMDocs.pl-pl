@@ -1,5 +1,6 @@
 ---
-title: Zbieranie danych diagnostycznych | Dokumentacja firmy Microsoft
+title: Zbieranie danych diagnostycznych
+titleSuffix: Configuration Manager
 description: "Więcej informacji na temat sposobu System Center Configuration Manager zbiera dane diagnostyczne i dane użycia o sobie samym."
 ms.custom: na
 ms.date: 12/29/2016
@@ -14,11 +15,11 @@ caps.latest.revision: "5"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 9c0165212fe34f460be2ce870d0542b616f3bc4d
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: e83588ebff1238b308ab9cf99fb3593df7a27efa
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-diagnostics-and-usage-data-is-collected-by-system-center-configuration-manager"></a>Jak zbierane są dane diagnostyczne i dane użycia dla programu System Center Configuration Manager
 

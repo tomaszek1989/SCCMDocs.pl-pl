@@ -1,5 +1,6 @@
 ---
-title: "Konfigurowanie aplikacji systemu iOS przy użyciu zasad konfiguracji aplikacji | Dokumentacja firmy Microsoft"
+title: "Konfigurowanie aplikacji systemu iOS przy użyciu zasad konfiguracji aplikacji"
+titleSuffix: Configuration Manager
 description: "Wyeliminować problemy z konfiguracją na urządzeniach z systemem iOS 8 lub nowszym, wdrażając zasady konfiguracji aplikacji dla użytkowników przed ich uruchomieniem aplikacji."
 ms.custom: na
 ms.date: 03/05/2017
@@ -12,14 +13,14 @@ ms.topic: article
 ms.assetid: f0a78038-ea22-4826-9c07-1771b7dd2e8d
 caps.latest.revision: "18"
 caps.handback.revision: "0"
-author: mtillman
-ms.author: mtillman
+author: dougeby
+ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 50aea2afaf34974ca92ac58b6569bff56403a9ab
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 905b0925f88395942c954561aa0828c15d3ba758
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="apply-settings-to-ios-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Zastosuj ustawienia aplikacji dla systemu iOS przy użyciu zasad konfiguracji aplikacji w programie System Center Configuration Manager
 

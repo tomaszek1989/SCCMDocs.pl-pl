@@ -1,8 +1,9 @@
 ---
-title: "Obsługa systemu Windows 10 | Dokumentacja firmy Microsoft"
+title: "Obsługa systemu Windows 10"
+titleSuffix: Configuration Manager
 description: "Informacje o wersji systemu Windows 10, które są obsługiwane jako klienci i dla wdrożenia systemu operacyjnego w programie System Center Configuration Manager."
 ms.custom: na
-ms.date: 7/31/2017
+ms.date: 10/11/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +15,11 @@ caps.latest.revision: "5"
 author: brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 1d2e6e128531237ed76f94584aa42f76067db164
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 8ce7230a3aa64b78937b305fee4dc8e3f38abead
+ms.sourcegitcommit: f9c38b87fcd543ab8a5d7a7f446b42fd3e55450c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/19/2017
 ---
 # <a name="support-for-windows-10-for-system-center-configuration-manager"></a>Obsługa systemu Windows 10 dla programu System Center Configuration Manager  
 
@@ -40,10 +41,11 @@ Na przykład wersji programu Configuration Manager spowoduje porzucenie macierzy
 |Wersja systemu Windows 10                    |Menedżer konfiguracji 1610          |    Menedżer konfiguracji 1702          |    Menedżer konfiguracji 1706 |
 |---------------------|-----|-----|-----|
 |Enterprise 2015 LTSB                   |![Obsługiwane](media/green_check.png) |![Obsługiwane](media/green_check.png) |![Obsługiwane](media/green_check.png) |
-|1511  <br />(*Zobacz wersje*)           |![Obsługiwane](media/green_check.png) |![Obsługiwane](media/green_check.png) |![Obsługiwane](media/green_check.png) |
 |Enterprise 2016 LTSB                   |![Obsługiwane](media/green_check.png) |![Obsługiwane](media/green_check.png) |![Obsługiwane](media/green_check.png) |
-|1607   <br />Aktualizacja rozliczenia<br />(*Zobacz wersje*)   |![Obsługiwane](media/green_check.png) |![Obsługiwane](media/green_check.png)            |![Obsługiwane](media/green_check.png) |
-|1703   <br />Twórcy aktualizacji<br />(*Zobacz wersje*)      |![Nieobsługiwane](media/Red_X.png)   |![Wstecznie zgodne](media/blue_compat.png) |![Obsługiwane](media/green_check.png) |
+|1607   <br />(Znanej także jako aktualizacja rocznicy)<br />(*Zobacz wersje*)   |![Obsługiwane](media/green_check.png) |![Obsługiwane](media/green_check.png)            |![Obsługiwane](media/green_check.png) |
+|1703   <br />(Znanej także jako aktualizacja twórców)<br />(*Zobacz wersje*)      |![Nieobsługiwane](media/Red_X.png)   |![Wstecznie zgodne](media/blue_compat.png) |![Obsługiwane](media/green_check.png) |
+|1709   <br />(Znanej także jako aktualizacja twórców spadek)<br />(*Zobacz wersje*) |![Nieobsługiwane](media/Red_X.png)   |![Nieobsługiwane](media/Red_X.png)   |![Wstecznie zgodne](media/blue_compat.png) |
+
 
 
 **Wersje:** Enterprise, Education Pro Pro, Education,   
@@ -62,9 +64,9 @@ Następująca tabela zawiera listę wersji zestawu Windows 10 ADK korzystające 
 
 |Wersja zestawu Windows 10 ADK  |Menedżer konfiguracji 1610 |Menedżer konfiguracji 1702   |Menedżer konfiguracji 1706 |
 |--------------------|-----|-----|-----|
-|1511  |![Nieobsługiwane](media/Red_X.png)             |![Nieobsługiwane](media/Red_X.png)              |![Nieobsługiwane](media/Red_X.png)|
 |1607  |![Obsługiwane](media/green_check.png)           |![Wstecznie zgodne](media/blue_compat.png) |![Nieobsługiwane](media/Red_X.png)|
 |1703  |![Nieobsługiwane](media/Red_X.png)             |![Obsługiwane](media/green_check.png)            |![Obsługiwane](media/green_check.png) |  
+|1709  |![Nieobsługiwane](media/Red_X.png)             |![Nieobsługiwane](media/Red_X.png)              |![Obsługiwane](media/green_check.png) |  
 
 |Klucz|
 |--|

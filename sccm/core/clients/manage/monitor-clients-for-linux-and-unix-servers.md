@@ -1,5 +1,6 @@
 ---
-title: "Monitorowanie klientów systemu Linux/UNIX — Configuration Manager | Dokumentacja firmy Microsoft"
+title: "Monitorowanie klientów systemu Linux/UNIX "
+titleSuffix: Configuration Manager
 description: "Monitorowanie klientów na serwerach Linux i UNIX w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 08/04/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "6"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 5ce1452b0fa197d1ba424e6c4e0f5f0895a9018a
-ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
+ms.openlocfilehash: 777842307b280a4f269d68bcb993f3cec6f2e3e3
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-to-monitor-clients-for-linux-and-unix-servers-in-system-center-configuration-manager"></a>Jak monitorować klientów dla serwerów z systemami Linux i UNIX w programie System Center Configuration Manager
 

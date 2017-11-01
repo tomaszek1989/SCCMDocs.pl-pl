@@ -1,5 +1,6 @@
 ---
-title: Monitorowanie replikacji | Dokumentacja firmy Microsoft
+title: Monitor replikacji
+titleSuffix: Configuration Manager
 description: "Dowiedz się, jak monitorować infrastrukturę i operacje w programie Configuration Manager za pomocą obszaru roboczego monitorowania w konsoli."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 132803a1aa9aad5c5462686bd656688418e47d07
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 5b3a85e6aebcfeb9c302273d717554f8a18e14ee
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="monitor-hierarchy-and-replication-infrastructure-in-system-center-configuration-manager"></a>Monitorowanie infrastruktury hierarchii i replikacji w programie System Center Configuration Manager
 

@@ -1,5 +1,6 @@
 ---
-title: Funkcje w wersji zapoznawczej Technical Preview 1601 programu Configuration Manager
+title: Funkcje w wersji zapoznawczej Technical Preview 1601
+titleSuffix: Configuration Manager
 description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersja 1601."
 ms.custom: na
 ms.date: 01/23/2017
@@ -15,11 +16,11 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: noindex,nofollow
-ms.openlocfilehash: ef0db5b11ae2be5edcb4db87400c5c273c89972e
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: d673fce313ca0cfb0a001dac9bbe296f883a4871
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="capabilities-in-technical-preview-1601-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1601 programu System Center Configuration Manager
 

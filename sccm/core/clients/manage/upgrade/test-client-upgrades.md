@@ -1,5 +1,6 @@
 ---
-title: "Klient testowy uaktualnia kolekcji środowiska przedprodukcyjnego | Dokumentacja firmy Microsoft"
+title: "Test kolekcji środowiska przedprodukcyjnego uaktualnienia klienta"
+titleSuffix: Configuration Manager
 description: "Testowanie uaktualnień klienta w kolekcji przedprodukcyjnej w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 05/04/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 5b6e60e7c6225e37dd345e99c703505e346cd0a4
-ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
-ms.translationtype: HT
+ms.openlocfilehash: e301c3df57d3f625157015692374e512e00dfc60
+ms.sourcegitcommit: 1132886e07d0c0a87dcc7eeef4577dd8d8840023
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 11/01/2017
 ---
 # <a name="how-to-test-client-upgrades-in-a-pre-production-collection-in-system-center-configuration-manager"></a>Testowanie uaktualnień klienta w kolekcji przedprodukcyjnej w programie System Center Configuration Manager
 
@@ -39,8 +40,10 @@ Można przetestować nową wersję klienta programu Configuration Manager w kole
 3.  Podwyższ poziom nowego klienta do środowiska produkcyjnego.  
 
 ##  <a name="to-configure-automatic-client-upgrades-to-use-a-pre-production-collection"></a>Aby skonfigurować automatyczne uaktualnienia klienta do użycia kolekcji przedprodukcyjnej  
+> [!IMPORTANT]
+> Wdrożenia klienta przedprodukcyjnego nie jest obsługiwana dla komputerów grupy roboczej. Uwierzytelniania wymagany dla punktu dystrybucji korzystają nie może uzyskać dostępu do pakietu klienta środowiska przedprodukcyjnego.  Otrzymają najnowszego klienta, gdy zostanie podwyższony do klienta produkcyjnego.
 
-1. [Konfigurowanie kolekcji](..\collections\create-collections.md) zawierającą komputery, którą chcesz wdrożyć klienta przedprodukcyjnego do. Nie dołączaj komputerów grupy roboczej w kolekcji przedprodukcyjnej. Uwierzytelniania wymagany dla punktu dystrybucji korzystają nie może uzyskać dostępu do pakietu klienta środowiska przedprodukcyjnego.   
+1. [Konfigurowanie kolekcji](..\collections\create-collections.md) zawierającą komputery, którą chcesz wdrożyć klienta przedprodukcyjnego do.   
 
 1.  W konsoli programu Configuration Manager Otwórz **administracji** > **konfiguracja lokacji** > **witryny**i wybierz polecenie **ustawienia hierarchii**.  
 

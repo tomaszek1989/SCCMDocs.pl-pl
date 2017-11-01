@@ -1,5 +1,6 @@
 ---
-title: "Obsługa wirtualizacji | Dokumentacja firmy Microsoft"
+title: "Obsługa wirtualizacji"
+titleSuffix: Configuration Manager
 description: "Pobierz wymagania dotyczące instalowania programu System Center Configuration Manager klienta a role systemu lokacji w środowisku wirtualizacji."
 ms.custom: na
 ms.date: 1/12/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "6"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: b49bd179da850cee35b2487a353bb1788df03d58
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 25806078d0133c188918f788c543fa86db5b3be8
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="support-for-virtualization-environments-for-system-center-configuration-manager"></a>Obsługa środowisk wirtualizacji dla programu System Center Configuration Manager
 
