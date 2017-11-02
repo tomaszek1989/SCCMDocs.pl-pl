@@ -1,5 +1,6 @@
 ---
-title: Pliki dziennika programu Configuration Manager | Dokumentacja firmy Microsoft
+title: "Pliki dzienników w celu rozwiązywania problemów"
+titleSuffix: Configuration Manager
 description: "Pliki dziennika umożliwia rozwiązywanie problemów w hierarchii programu System Center Configuration Manager."
 ms.custom: na
 ms.date: 7/03/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 28597cf1cb269fff0872c7f79ef961496aea32ab
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: b9c0425b00e707e8ccdacd9315a82b0293593aea
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="log-files-in-system-center-configuration-manager"></a>Pliki dziennika w programie System Center Configuration Manager
 

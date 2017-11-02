@@ -1,5 +1,6 @@
 ---
-title: "Migracja obiektów | Dokumentacja firmy Microsoft"
+title: "Migracja obiektów"
+titleSuffix: Configuration Manager
 description: "Dowiedz się, jak planowanie migracji obiektów między hierarchiami w środowisku programu System Center Configuration Manager."
 ms.custom: na
 ms.date: 1/12/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 17f3955aa7c63a13bab03b46002f7de0b0ec38fe
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 74fe97e13ba876763159480d0a28445b30d834d2
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="plan-for-the-migration-of-configuration-manager-objects-to-system-center-configuration-manager"></a>Planowanie migracji obiektów programu Configuration Manager do programu System Center Configuration Manager
 

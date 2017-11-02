@@ -1,5 +1,6 @@
 ---
-title: "Właściwości instalacji klienta | Dokumentacja firmy Microsoft"
+title: "Właściwości instalacji klienta"
+titleSuffix: Configuration Manager
 description: "Więcej informacji na temat właściwości instalacji klienta w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 01/04/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "15"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: ef515da67a7293de60a7678dee69e9785d339352
-ms.sourcegitcommit: 96b79fa091f44e8e6ac5652f6cbbb4b873a8bad9
-ms.translationtype: HT
+ms.openlocfilehash: 903a415a936bc62aad5c889d5d8f6572ba9759c1
+ms.sourcegitcommit: 5437b2823bada8f8c9e67940f584953b9d190628
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 10/31/2017
 ---
 # <a name="about-client-installation-properties-in-system-center-configuration-manager"></a>Informacje o właściwościach instalacji klientów w programie System Center Configuration Manager
 
@@ -53,7 +54,7 @@ Polecenie programu System Center Configuration Manager CCMSetup.exe do ręcznej 
 
  Przykład:  
 
- "CCMSetup.exe/MP: smsmp01/Logon SMSSITECODE = S01 FSP = SMSFSP01"  
+      'CCMSetup.exe /mp:SMSMP01 /logon SMSSITECODE=S01 FSP=SMSFSP01`  
 
  W tym przykładzie przeprowadza następujące działania:  
 

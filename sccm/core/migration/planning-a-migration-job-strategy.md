@@ -1,5 +1,6 @@
 ---
-title: "Planowanie zadań migracji | Dokumentacja firmy Microsoft"
+title: "Planowanie zadań migracji"
+titleSuffix: Configuration Manager
 description: "Aby skonfigurować dane, które chcesz migrować do środowiska programu System Center Configuration Manager, należy użyć zadania migracji."
 ms.custom: na
 ms.date: 10/06/2016
@@ -16,11 +17,11 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: noindex
-ms.openlocfilehash: 4c83540db763bea039a92633a1d1a808e60e27ad
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
-ms.translationtype: HT
+ms.openlocfilehash: 87f0af8b1a8f2dc136f6c90f36dcc828b67f97e9
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="plan-a-migration-job-strategy-in-system-center-configuration-manager"></a>Planowanie strategii zadania migracji w programie System Center Configuration Manager
 
