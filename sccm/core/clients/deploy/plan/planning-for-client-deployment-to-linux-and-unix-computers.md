@@ -1,5 +1,6 @@
 ---
-title: "Planowanie wdrożenia klientów na komputerach z systemami Linux i UNIX | Dokumentacja firmy Microsoft"
+title: "Planowanie wdrożenia klientów na komputerach z systemami Linux i UNIX"
+titleSuffix: Configuration Manager
 description: "Planowanie wdrażania klientów na komputerach UNIX i Linux w programie System Center Configuration Manager."
 ms.custom: na
 ms.date: 08/30/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 488173a64c25e1e3b3e715228bdb46df9acd9e7d
-ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
+ms.openlocfilehash: d96a8aedd046e3a8dcd12e711ae19f53a901fceb
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="planning-for-client-deployment-to-linux-and-unix-computers-in-system-center-configuration-manager"></a>Planowanie wdrożenia klientów na komputerach z systemami Linux i UNIX w programie System Center Configuration Manager
 

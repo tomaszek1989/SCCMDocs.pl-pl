@@ -1,8 +1,9 @@
 ---
-title: "Ochrona danych za pomocą czyszczenia danych, blokowania lub resetowania za pomocą programu System Center Configuration Manager kodu dostępu | Dokumentacja firmy Microsoft"
+title: "Ochrona danych za pomocą zdalnego czyszczenia danych, blokowanie lub resetowania kodu dostępu"
+titleSuffix: Configuration Manager
 description: "Ochrona danych urządzenia za pomocą pełnego czyszczenia danych, selektywnego czyszczenia danych, zdalnego blokowania lub resetowania kodu dostępu przy użyciu programu System Center Configuration Manager."
 ms.custom: na
-ms.date: 09/28/2017
+ms.date: 10/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: ea92d7b4656a04f312f04c19cac6b17df931c9c5
-ms.sourcegitcommit: db079cd7322e7d4926b2df0ccb37e752c570d902
+ms.openlocfilehash: 55d49c388b4ea60627f72ffe61796c70de6f9416
+ms.sourcegitcommit: a5f8b5cfdabf0298e4302e24210e725a06a9de82
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/30/2017
 ---
 # <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-system-center-configuration-manager"></a>Ochrona danych za pomocą czyszczenia danych, blokowania lub resetowania za pomocą programu System Center Configuration Manager kodu dostępu
 
@@ -39,6 +40,9 @@ System Center Configuration Manager udostępnia selektywnego czyszczenia danych,
 Możesz wydać polecenie czyszczenia urządzenia, gdy zaistnieje potrzeba zabezpieczenia utraconego urządzenia lub wycofania urządzenia z aktywnego użycia.  
 
 Wydaj polecenie **pełnego czyszczenia** urządzenia, aby przywrócić domyślne ustawienia fabryczne urządzenia. Spowoduje to usunięcie wszystkich danych firmowych oraz danych i ustawień użytkownika. Można wykonać pełne czyszczenie na urządzeniach Windows Phone, iOS, Android i Windows 10.  
+
+> [!NOTE]
+> Pełne czyszczenie danych można wykonać tylko na urządzeniach należących do firmy.
 
 > [!NOTE]
 > Czyszczenie urządzeń z systemem Windows 10 w wersji wcześniejszej niż wersja 1511 z mniej niż 4 GB pamięci RAM może spowodować, że urządzenia będą odpowiadać. [Dowiedz się więcej](https://technet.microsoft.com/library/mt592024.aspx#full-wipe-disables-windows-10-devices-with-less-than-4-gb-ram).

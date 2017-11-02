@@ -1,5 +1,6 @@
 ---
-title: "Wybierz autonomicznej usługi Intune lub hybrydowego zarządzania urządzeniami Przenośnymi | Dokumentacja firmy Microsoft"
+title: "Wybierz autonomicznej usługi Intune lub hybrydowego zarządzania urządzeniami Przenośnymi"
+titleSuffix: Configuration Manager
 description: "Określ, czy wdrożenia hybrydowego zarządzania urządzeniami przenośnymi z usługą Intune i programu Configuration Manager lub uruchomić autonomiczną usługę Intune."
 ms.custom: na
 ms.date: 07/18/2017
@@ -14,11 +15,11 @@ caps.latest.revision: "10"
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 5c9e80fc5bc3f0629e1c27a4928b8a51cfe1ee7e
-ms.sourcegitcommit: 948644072bd158b156f782a4376bcd50fac7c73a
+ms.openlocfilehash: 993a3ada8b887adb52be468ea4e936140a455bca
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="choose-between-microsoft-intune-standalone-and-hybrid-mobile-device-management-with-system-center-configuration-manager"></a>Wybór między Microsoft Intune autonomiczne, jak i hybrydowe zarządzanie urządzeniami przenośnymi z System Center Configuration Manager
 

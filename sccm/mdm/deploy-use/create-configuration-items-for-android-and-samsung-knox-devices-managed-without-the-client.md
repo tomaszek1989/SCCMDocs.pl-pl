@@ -1,5 +1,6 @@
 ---
-title: "Tworzenie elementów konfiguracji dla urządzeń z systemami Android i Samsung KNOX Standard zarządzanych za pomocą usługi Intune | Dokumentacja firmy Microsoft"
+title: "Tworzenie elementów konfiguracji dla urządzeń z systemami Android i Samsung KNOX Standard zarządzanych za pomocą usługi Intune"
+titleSuffix: Configuration Manager
 description: "Element konfiguracji System Center Configuration Manager dla systemu Android i Samsung KNOX Standard umożliwia zarządzanie ustawieniami urządzeń."
 ms.custom: na
 ms.date: 03/27/2017
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: e58d84542d5c475fef6c2c04676c50a150681099
-ms.sourcegitcommit: f6a428a8db7145affa388f59e0ad880bdfcf17b5
-ms.translationtype: HT
+ms.openlocfilehash: 3fa824c94b02ed7141c7051bab86fa64a4a9ee49
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="how-to-create-configuration-items-for-android-and-samsung-knox-devices-managed-without-the-system-center-configuration-manager-client"></a>Jak utworzyć elementy konfiguracji dla urządzeń z systemem Android lub Samsung KNOX zarządzanych bez klienta programu System Center Configuration Manager
 

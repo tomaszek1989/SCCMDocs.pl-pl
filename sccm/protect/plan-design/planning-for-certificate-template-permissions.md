@@ -1,5 +1,6 @@
 ---
-title: "Planowanie uprawnień szablonów certyfikatów | Dokumentacja firmy Microsoft"
+title: "Planowanie uprawnień szablonów certyfikatów"
+titleSuffix: Configuration Manager
 description: "Więcej informacji na temat planowania uprawnień, które należy skonfigurować szablony certyfikatów, które korzysta z programu System Center Configuration Manager."
 ms.custom: na
 ms.date: 10/06/2016
@@ -15,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 832be8c9fda727804f57e83768cd8799db722c67
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: e5c748297b318e5256f2064811151ae96a55fccd
+ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="planning-for-certificate-template-permissions-for-certificate-profiles-in-system-center-configuration-manager"></a>Planowanie dotyczące uprawnień szablonów certyfikatów dla profilów certyfikatów w programie System Center Configuration Manager
 
