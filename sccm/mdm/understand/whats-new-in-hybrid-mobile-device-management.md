@@ -14,11 +14,11 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 74b7578610f60bc9d5692f90227aa11da592efcf
-ms.sourcegitcommit: b9c1c9ca5aaf806e8beee2709ed15392ee3e19fe
+ms.openlocfilehash: 515aa4ae71a4e8b8bdfa3bbe693386c5ddf44223
+ms.sourcegitcommit: e858bacecf0f964ed619b3c2f83663c4dab92998
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>What's new in hybrydowego zarządzania urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Microsoft Intune
 
@@ -47,10 +47,12 @@ Każda sekcja w tym artykule wymieniono funkcje hybrydowych w trzech różnych k
 ### <a name="new-in-configuration-manager-technical-preview-1709"></a>Nowość w programie Configuration Manager Technical Preview 1709
 
 - **Ulepszona obsługa profilu sieci VPN w konsoli programu Configuration Manager**<!-- 1313282 -->     
-    Ustawienia profilu sieci VPN, teraz są filtrowane zgodnie z platform. Podczas tworzenia nowych profilów sieci VPN każdej z obsługiwanych platform zawiera tylko ustawienia odpowiednie dla platformy. Nie dotyczy istniejących profilów sieci VPN. Więcej o tej zmianie [tutaj](/sccm/core/get-started/capabilities-in-technical-preview-1709#improved-vpn-profile-experience-in-configuration-manager-console).
+  Ustawienia profilu sieci VPN, teraz są filtrowane zgodnie z platform. Podczas tworzenia nowych profilów sieci VPN każdej z obsługiwanych platform zawiera tylko ustawienia odpowiednie dla platformy. Nie dotyczy istniejących profilów sieci VPN. Więcej o tej zmianie [tutaj](/sccm/core/get-started/capabilities-in-technical-preview-1709#improved-vpn-profile-experience-in-configuration-manager-console).
 
 
 ### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune  
+
+- **Obsługę uwierzytelniania opartego na certyfikatach w portalu firmy dla systemu iOS** <!--1029830--> dodano obsługę uwierzytelniania opartego na certyfikatach (CBA) w aplikacji Portal firmy dla systemu iOS. Użytkownicy z CBA wprowadzić swoją nazwę użytkownika, a następnie wybrać link "Zaloguj się przy użyciu certyfikatu". CBA jest już obsługiwana w aplikacji Portal firmy dla systemu Android i Windows. Aby dowiedzieć się więcej na [logowania do aplikacji Portal firmy](https://docs.microsoft.com/intune-user-help/sign-in-to-the-company-portal) strony.
 
 - **Ulepszenia urządzenia Konfiguracja przepływu pracy w portalu firmy**<!--1490692-->    
   Ulepszono przepływu pracy ustawień urządzenia w aplikacji Portal firmy dla systemu Android. Język jest bardziej przyjazny dla użytkownika i specyficzne dla firmy, a w miarę możliwości zostały połączyć ekranów. Można je wyświetlić na [nowości w aplikacji interfejsu użytkownika](https://docs.microsoft.com/intune/whats-new-app-ui#week-of-october-2-2017) strony.
@@ -82,8 +84,6 @@ Każda sekcja w tym artykule wymieniono funkcje hybrydowych w trzech różnych k
 
 - **Powiadamia użytkowników końcowych w informacjach urządzenia są widoczne na zarejestrowanych urządzeniach**<!--1165314-->    
   Dodajemy **typ własności** do ekranu szczegóły urządzenia na wszystkie aplikacje portalu firmy. Dzięki temu użytkownicy dowiedzieć się więcej o ochronie prywatności bezpośrednio z [informacjach można wyświetlić firmie?](https://docs.microsoft.com/intune-user-help/what-info-can-your-company-see-when-you-enroll-your-device-in-intune) artykułu. To będzie można zetknie we wszystkich aplikacjach Portal firmy w najbliższej przyszłości. Wprowadziliśmy to dla systemu iOS w [września](https://docs.microsoft.com/intune/whats-new#week-of-september-11-2017). 
-
-
 
 
 ## <a name="september-2017"></a>2017 września
@@ -173,16 +173,6 @@ Następujące funkcje, które były wcześniej dostępne w wersjach Configuratio
   Naszego nowego konta selektora mogą zobaczyć użytkownicy urządzeń z systemem iOS, podczas logowania się do portalu firmy Jeżeli Użyj ich pracy lub szkołą konta do logowania się do innych aplikacji firmy Microsoft. Aby uzyskać więcej informacji, zobacz [nowości w aplikacji interfejsu użytkownika](https://docs.microsoft.com/intune/whats-new-app-ui).
 
 ### <a name="new-in-configuration-manager-technical-preview-1706"></a>Nowość w programie Configuration Manager Technical Preview 1706
-
-- **Nowe ustawienia zasad zarządzania aplikacjami mobilnymi**    
-
-  Dostępne są następujące ustawienia zasad zarządzania (aplikacjami mobilnymi MAM) aplikacji mobilnej:
-
-  - **Zablokuj Przechwytywanie ekranu (tylko urządzenia z systemem Android):** Określa, że możliwości przechwytywania ekranu urządzenia są blokowane podczas korzystania z tej aplikacji.
-  - **Wyłącz synchronizację kontaktów:** Aplikacja uniemożliwia zapisywania danych do aplikacji natywnej kontaktów na urządzeniu.
-  - **Wyłącz drukowanie:** Zapobiega aplikacji z drukowaniem pracy lub szkoły danych.
-
-  Zobacz [ochrona aplikacji przy użyciu zasad ochrony aplikacji w programie Configuration Manager](https://docs.microsoft.com/sccm/mdm/deploy-use/protect-apps-using-mam-policies) próby nowe ustawienia zasad ochrony aplikacji.
 
 - **Nowe ustawienia elementu konfiguracji systemu Windows**  <!-- 1354715 -->    
 
