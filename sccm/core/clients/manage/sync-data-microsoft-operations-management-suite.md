@@ -15,11 +15,11 @@ caps.latest.revision: "9"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: bbb76fda4ef831f358923946b3c16b821194bf6b
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 166f7c73f2050657a85bd5160f74c40cfd87fd7f
+ms.sourcegitcommit: 922d6d9c91ba2158b938df381277be1b5f1d434a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/13/2017
 ---
 #  <a name="sync-data-from-configuration-manager-to-the-microsoft-operations-management-suite"></a>Synchronizowanie danych z programu Configuration Manager do programu Microsoft Operations Management Suite
 
@@ -90,7 +90,7 @@ Począwszy od wersji 1702, można użyć łącznika OMS nawiązać obszar robocz
 
 ### <a name="install-the-oms-connector"></a>Instalowanie łącznika OMS  
 1. W konsoli programu Configuration Manager, należy skonfigurować z [hierarchii w celu korzystania z funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features), a następnie Włącz użycie łącznika OMS.  
-
+0
 2. Następnie należy przejść do **administracji** > **usługi w chmurze** > **łącznik OMS**. Na wstążce kliknij przycisk "Utwórz połączenia na Operations Management Suite". Spowoduje to otwarcie **połączenie Kreator operacji Management Suite**. Wybierz **dalej**.  
 
 
@@ -134,13 +134,13 @@ Po połączeniu programu Configuration Manager z usługą OMS Dodaj lub usuń ko
       &lt;Nazwa ustawienia = "FairFaxArmResourceId" serializeAs = "String" > &lt;wartość > https://management.usgovcloudapi.net/ &lt; /value >  
       &lt;/ Ustawienia >
 
-  Zmień wartość atrybutu Nazwa ustawienia *FairFaxAuthorityResource* powinna być równa "https://login.microsoftonline.com/"
+  Zmień wartość atrybutu Nazwa ustawienia *FairFaxAuthorityResource* powinna być równa "https://login.microsoftonline.us/"
 
   - **Oryginalne:** &lt;ustawienie name = "FairFaxAuthorityResource" serializeAs = "String" >   
     &lt;wartość > &lt; /value >
 
     - **Edytowane:** &lt;ustawienie name = "FairFaxAuthorityResource" serializeAs = "String" >   
-    &lt;wartość > https://login.microsoftonline.com/ &lt; /value >
+    &lt;wartość > https://login.microsoftonline.us/ &lt; /value >
 
 2.  Po zapisaniu pliku z dwie zmiany ponownie uruchomić konsolę programu Configuration Manager na tym samym komputerze, a następnie użyj konsoli, aby zainstalować łącznik OMS. Aby zainstalować łącznik, skorzystaj z informacji w [synchronizowanie danych z programu Configuration Manager do programu Microsoft Operations Management Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite)i wybierz **obszar roboczy usługi Operations Management Suite** znajdujący się w chmurze Microsoft Azure dla instytucji rządowych.
 

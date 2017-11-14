@@ -3,7 +3,7 @@ title: "What's new in hybrydowego zarządzania urządzeniami Przenośnymi"
 titleSuffix: Configuration Manager
 description: "Poznaj nowe funkcje zarządzania urządzeniami przenośnymi dostępne dla hybrydowych wdrożeń z programu Configuration Manager i usługi Intune."
 ms.custom: na
-ms.date: 10/04/2017
+ms.date: 11/12/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 102a84c4bc850ca7aef7dfd8bd6271b6feee0b18
-ms.sourcegitcommit: b517c791554500209435bca21fbf3ef8a26828c9
+ms.openlocfilehash: 29dd4bff6d35712c23d66751db16a00aa761b8b4
+ms.sourcegitcommit: 922d6d9c91ba2158b938df381277be1b5f1d434a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>What's new in hybrydowego zarządzania urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Microsoft Intune
 
@@ -110,6 +110,8 @@ Każda sekcja w tym artykule wymieniono funkcje hybrydowych w trzech różnych k
 
 - **Zezwalaj na zasady w aplikacji Portal firmy dla systemu Windows 10 dodane do systemu Windows Information Protection**<!-- 677129 -->    
     Aplikacja Portal firmy dla systemu Windows 10 została zaktualizowana do obsługi systemu Windows informacji ochrony (pracy w toku). Aplikację można dodać do pracy w toku Zezwalaj na zasady. Dzięki tej zmianie aplikacji nie ma już ma zostać dodany do **wykluczone** listy. 
+
+     Tylko jeden element konfiguracji pracy w toku mogą być dostarczane na urządzeniu.  Jeśli dwa elementy konfiguracji pracy w toku są przeznaczone do tego samego urządzenia, zastosowanie żadne zasady pracy w toku.
 
 - **Powiadomienie o pomocy technicznej dodane dla systemu iOS 8.0 zakończeniu**    
     Zostanie wyświetlone powiadomienie została dodana do zakończenia wsparcia dla systemu iOS 8.0. Aby uzyskać więcej informacji, zobacz [powiadomienia](#notices).

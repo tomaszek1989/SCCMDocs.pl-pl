@@ -15,11 +15,11 @@ caps.latest.revision: "24"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: 8ab177067d0308b863274a7ae05574374b0af4ba
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: a83c2030de8a146dad7bf2258e8a983c8ab6c45e
+ms.sourcegitcommit: 922d6d9c91ba2158b938df381277be1b5f1d434a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="manage-email-access-in-system-center-configuration-manager"></a>Zarządzanie dostępem do poczty e-mail w programie System Center Configuration Manager
 
@@ -39,7 +39,7 @@ Dostęp do programu Exchange Online i lokalnego programu Exchange można kontrol
 
 -   System android 4.0 i nowsze, Samsung KNOX Standard 4.0 lub nowszy  
 
--   System iOS 7.1 lub nowszy  
+-   System iOS 9.0 lub nowszy  
 
 -   System Windows Phone 8.1 lub nowszy  
 
@@ -93,13 +93,13 @@ Nieobsługiwane przeglądarki zostaną zablokowane. Aplikacje programu OWA dla s
 
 -   System android 4.0 i nowsze, Samsung KNOX Standard 4.0 lub nowszy  
 
--   System iOS 7.1 lub nowszy  
+-   System iOS 9.0 lub nowszy  
 
 -   System Windows Phone 8.1 lub nowszy  
 
 -   Aplikacja **Poczta** w systemie Windows 8.1 lub nowszym  
 
- Aplikacja Outlook dla systemów iOS i Android oraz aplikacja klasyczna Outlook w wersji 2013 lub nowszej są obsługiwane tylko w usłudze Exchange Online.  
+ Aplikacja Outlook dla systemów iOS i Android oraz aplikacja klasyczna Outlook 2013 lub nowszym są obsługiwane tylko usługi Exchange Online.  
 
  **Lokalnego programu Exchange connector** programu Configuration Manager i Exchange jest wymagana do działania dostępu warunkowego.  
 

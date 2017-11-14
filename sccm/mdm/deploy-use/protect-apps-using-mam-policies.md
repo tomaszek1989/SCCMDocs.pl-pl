@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 12633eced1850b718bf7cad019cd943305a7d9fb
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 4eedd96fd399cf9577da8069bd0c8d5702f50d7b
+ms.sourcegitcommit: 922d6d9c91ba2158b938df381277be1b5f1d434a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="protect-apps-using-mobile-application-management-policies-in-system-center-configuration-manager"></a>Ochrona aplikacji przy użyciu zasad zarządzania aplikacjami mobilnymi w programie System Center Configuration Manager
 
@@ -30,7 +30,7 @@ Zasady zarządzania aplikacjami programu System Center Configuration Manager umo
 
 -   Urządzenia z systemem Android 4 i nowszym  
 
--   Urządzenia z systemem iOS 7 i nowszym  
+-   Urządzenia z systemem iOS 9 lub nowszy  
 
 Umożliwia także zasady zarządzania aplikacjami mobilnymi można chronić aplikacje na urządzeniach, które nie są zarządzane przez usługę Intune. Przy użyciu tej nowej możliwości, możesz zastosować zasady zarządzania aplikacjami mobilnymi do aplikacji łączących się z usługami Office 365. To nie jest obsługiwana w przypadku aplikacji łączących się do lokalnego programu Exchange lub SharePoint.  
 

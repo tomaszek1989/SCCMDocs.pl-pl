@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: 3f4f25d39fd7f4106ec6f7a1d6ebe4716be067ad
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 5780eb6da6e6a72b7fb3504283ef5362842c9ef7
+ms.sourcegitcommit: 922d6d9c91ba2158b938df381277be1b5f1d434a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/13/2017
 ---
 # <a name="how-to-create-wi-fi-profiles-for-mobile-devices-in-system-center-configuration-manager"></a>Jak tworzyć profile sieci Wi-Fi dla urządzeń przenośnych w programie System Center Configuration Manager
 
@@ -34,9 +34,9 @@ Można skonfigurować następujące typy urządzeń przenośnych przy użyciu pr
 
 -   Urządzenia z systemem Windows 10 Desktop lub Mobile  
 
--   Urządzenia IPhone z systemem iOS 8  
+-   Urządzenia IPhone z systemem iOS 9  
 
--   Urządzenia IPad z systemem iOS 8  
+-   Urządzenia IPad z systemem iOS 9  
 
 -   Urządzenia z systemem android z systemem w wersji 4 lub nowszy
 
