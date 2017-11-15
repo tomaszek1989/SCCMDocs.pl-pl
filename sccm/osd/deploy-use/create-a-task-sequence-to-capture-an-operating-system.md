@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 98f9f44373b854b61714c21105a28b3240b4a7f7
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 48530c177a03b66dbc126025ca61e0078bc89d9f
+ms.sourcegitcommit: 5ec9f8c312688bf7f4de4d6007b121d743b80c4d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="create-a-task-sequence-to-capture-an-operating-system-in-system-center-configuration-manager"></a>Tworzenie sekwencji zadań w celu przechwycenia systemu operacyjnego w programie System Center Configuration Manager
 
@@ -171,6 +171,9 @@ Korzystając z sekwencji zadań do wdrażania systemu operacyjnego do komputera 
 9. Ten krok należy używać tylko wtedy, gdy klient programu Configuration Manager jest zainstalowany na komputerze odniesienia.  
 
      Kliknij przycisk **Dodaj**, kliknij przycisk **obrazów**, a następnie kliknij przycisk [przygotować klienta programu ConfigMgr do przechwycenia](../understand/task-sequence-steps.md#BKMK_PrepareConfigMgrClientforCapture). Ten krok sekwencji zadań pobiera klienta programu Configuration Manager na komputerze odniesienia i przygotowuje go do przechwycenia w ramach procesu przetwarzania obrazów.  
+
+    > [!Note]  
+    >  Sekwencja zadań nie obsługuje odinstalowanie klienta programu Configuration Manager.
 
 10. Kliknij przycisk **Dodaj**, kliknij przycisk **obrazów**, a następnie kliknij przycisk [Przygotuj system Windows do przechwycenia](../understand/task-sequence-steps.md#BKMK_PrepareWindowsforCapture). Ta akcja sekwencji zadań uruchamia narzędzie Sysprep, a następnie ponownie uruchamia komputer za pomocą obrazu rozruchowego środowiska Windows PE określonego dla sekwencji zadań. Jeśli k omputer odniesienia jest przyłączony do domeny, ta akcja nie zostanie ukończona pomyślnie.  
 
