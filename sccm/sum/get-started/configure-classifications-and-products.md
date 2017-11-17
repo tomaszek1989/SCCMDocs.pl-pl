@@ -1,21 +1,22 @@
 ---
-title: "Konfigurowanie klasyfikacji i produktów do synchronizacji | Dokumentacja firmy Microsoft"
+title: "Konfigurowanie klasyfikacji i produktów do synchronizacji"
+titleSuffix: Configuration Manager
 description: "Wykonaj następujące kroki, aby skonfigurować klasyfikacje i produkty do zsynchronizowania w konsoli programu Configuration Manager."
 keywords: 
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 10/06/2016
+ms.date: 10/04/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
-ms.openlocfilehash: 2da61e6e06850b36543b9fd41bd9a7d2368006fb
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 7e12cc7deeb86ebd222e0acd02e570d32b7518d3
+ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/17/2017
 ---
 #  <a name="configure-classifications-and-products-to-synchronize"></a>Konfigurowanie klasyfikacji i produktów do synchronizacji  
 
@@ -52,16 +53,16 @@ ms.lasthandoff: 08/07/2017
     >       
 
     > [!NOTE]    
-    > Począwszy od programu Configuration Manager 1706 wersji, można również wybrać **obejmują Microsoft Surface sterowniki i aktualizacje oprogramowania układowego** pole wyboru, aby zsynchronizować Microsoft Surface sterowniki. Wszystkich punktów aktualizacji oprogramowania, należy uruchomić system Windows Server 2016 do pomyślnej synchronizacji powierzchni sterowniki.     
-    >    
-    > Jest to funkcja wersji wstępnej. Funkcje wersji wstępnej są zawarte w produkcie do wczesnego testowania w środowisku produkcyjnym, ale nie powinny być uznawane za gotowe do produkcji. Należy włączyć tę funkcję dla powinna być dostępna. Aby uzyskać więcej informacji, zobacz sekcję dotyczącą [używania funkcji w wersjach wstępnych z poziomu aktualizacji](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
+    > Począwszy od programu Configuration Manager 1706 wersji, można wybrać **obejmują Microsoft Surface sterowniki i aktualizacje oprogramowania układowego** pole wyboru, aby zsynchronizować Microsoft Surface sterowniki. Wszystkich punktów aktualizacji oprogramowania, należy uruchomić system Windows Server 2016 do pomyślnej synchronizacji powierzchni sterowniki. Po włączeniu punktu aktualizacji oprogramowania na komputerze z systemem Windows Server 2012, po włączeniu powierzchni sterowniki nie są dokładne wyniki skanowania aktualizacji sterownika. Powoduje to dane zgodności niepoprawne wyświetlana w konsoli programu Configuration Manager i w raportach programu Configuration Manager.  
+    > 
+    > Funkcje wersji wstępnej są funkcje, które znajdują się w bieżącej gałęzi do wczesnego testowania w środowisku produkcyjnym. Te funkcje są w pełni obsługiwane, ale są nadal w fazie projektowania active i może odbierać zmiany, dopóki ich wychodzenia z kategorii wersji wstępnej. Włącz tę funkcję dla powinna być dostępna. Aby uzyskać więcej informacji, zobacz sekcję dotyczącą [używania funkcji w wersjach wstępnych z poziomu aktualizacji](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
 
 5.  Na karcie **Produkty** określ produkty, w ramach których mają zostać zsynchronizowane aktualizacje oprogramowania, a następnie kliknij przycisk **Zamknij**.  
 
     > [!NOTE]  
-    >  Metadane każdej aktualizacji oprogramowania definiują produkty, których dotyczy dana aktualizacja. Produkt to konkretna wersja systemu operacyjnego lub aplikacji, na przykład Windows Server 2012. Rodzina produktów to podstawowy system operacyjny lub podstawowa aplikacja, od których pochodzą produkty indywidualne. Przykładem rodziny produktów jest Windows, do której należy system operacyjny Windows Server 2012. Można określać rodziny produktów lub należące do nich produkty indywidualne. Im więcej produktów zostanie wybranych, tym dłużej potrwa synchronizacja aktualizacji oprogramowania.  
+    >  Metadane każdej aktualizacji oprogramowania definiują produkty, których dotyczy dana aktualizacja. Produkt to konkretna wersja systemu operacyjnego lub aplikacji, na przykład Windows Server 2012. Rodzina produktów to podstawowy system operacyjny lub podstawowa aplikacja, od których pochodzą produkty indywidualne. Przykładem rodziny produktów jest Windows, do której należy system operacyjny Windows Server 2012. Można określać rodziny produktów lub należące do nich produkty indywidualne. Im więcej produktów zostanie wybranych, tym dłużej będzie przebiegać synchronizowanie aktualizacji oprogramowania.  
     >   
-    >  Gdy aktualizacje oprogramowania dotyczą wielu produktów, a co najmniej jeden z nich zostanie wybrany do synchronizacji, wszystkie produkty będą wyświetlane w konsoli programu Configuration Manager, nawet jeśli część z nich nie zostały wybrane. Na przykład jeśli system Windows Server 2012 jest jedynym systemem operacyjnym, które wybrano, a aktualizacja oprogramowania dotyczy systemów Windows 8 i Windows Server 2012, obydwa te produkty będą wyświetlane w konsoli programu Configuration Manager.  
+    >  Jeśli aktualizacje oprogramowania dotyczą wielu produktów, a co najmniej jeden z nich zostanie wybrany do synchronizacji, wszystkie produkty pojawią się w konsoli programu Configuration Manager, nawet jeśli część z nich nie zostały wybrane. Na przykład jeśli system Windows Server 2012 jest jedynym systemem operacyjnym, które wybrano, a aktualizacja oprogramowania dotyczy systemów Windows 8 i Windows Server 2012, obydwa te produkty są wyświetlane w konsoli programu Configuration Manager.  
 
     > [!IMPORTANT]  
     >  Program Configuration Manager przechowuje listę produktów i rodzin produktów, spośród których można wybrać podczas pierwszej instalacji oprogramowania punktu aktualizacji. Produkty i rodziny produktów wydane po wydaniu programu Configuration Manager mogą nie być dostępne do wybrania, dopóki nie zostanie ukończona synchronizacja aktualizacji oprogramowania, które aktualizuje listę dostępnych produktów i rodzin produktów, spośród których można dokonać wyboru.  

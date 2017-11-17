@@ -1,21 +1,22 @@
 ---
-title: Wprowadzenie do aktualizacji oprogramowania | Dokumentacja firmy Microsoft
+title: Wprowadzenie do aktualizacji oprogramowania
+titleSuffix: Configuration Manager
 description: Poznaj podstawy aktualizacji oprogramowania w programie System Center Configuration Manager.
 keywords: 
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 10/06/2016
+ms.date: 10/30/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: e9778b13-c8a3-40eb-8655-34ac8ce9cdaa
-ms.openlocfilehash: 2904b904bbaf155f016f55fbd36af80308a42d76
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 66aa73e5c1aae68feeacb0eabe6233845289d104
+ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="introduction-to-software-updates-in-system-center-configuration-manager"></a>Wprowadzenie do aktualizacji oprogramowania w programie System Center Configuration Manager
 
@@ -254,7 +255,7 @@ Przykładowy scenariusz przedstawiający sposób demonstrujący wdrażanie aktua
 ##  <a name="BKMK_DeploymentProcess"></a> Proces wdrażania aktualizacji oprogramowania  
  Po wdrożeniu aktualizacji oprogramowania lub po uruchomieniu zasady wdrażania automatycznego, która wdraża aktualizacje oprogramowania, do zasad komputera dla danej lokacji zostają dodane zasady przypisywania wdrożenia. Aktualizacje oprogramowania zostają pobrane z lokalizacji pobierania, Internetu lub udostępnionego folderu sieciowego do źródła pakietu. Aktualizacje oprogramowania zostają skopiowane ze źródła pakietu do biblioteki zawartości na serwerze lokacji, a następnie do biblioteki zawartości w punkcie dystrybucji.  
 
- Gdy komputer kliencki w kolekcji docelowej wdrożenia otrzyma zasady komputera, agent klienta aktualizacji oprogramowania rozpocznie skanowanie w celu przeprowadzenia oceny. Agent klienta pobierze zawartość wymaganych aktualizacji oprogramowania z punktu dystrybucji do pamięci podręcznej klienta lokalnego wkrótce po otrzymaniu wdrożenia, jednak aktualizacje oprogramowania będą dostępne dopiero po upływie określonego czasu zgodnie z ustawieniem **Czas dostępności oprogramowania** wdrożenia. Aktualizacje oprogramowania we wdrożeniach opcjonalnych (bez ostatecznego terminu instalacji) nie zostaną pobrane do momentu ręcznego rozpoczęcia instalacji przez użytkownika.  
+ Gdy komputer kliencki w kolekcji docelowej wdrożenia otrzyma zasady komputera, agent klienta aktualizacji oprogramowania rozpocznie skanowanie w celu przeprowadzenia oceny. Agent klienta pobierze zawartość wymaganych aktualizacji oprogramowania z dystrybucji wskaż pamięci podręcznej na **czas dostępności oprogramowania** ustawienie dla wdrożenia, a następnie oprogramowania aktualizacje są dostępne do zainstalowania . Aktualizacje oprogramowania we wdrożeniach opcjonalnych (bez ostatecznego terminu instalacji) nie zostaną pobrane do momentu ręcznego rozpoczęcia instalacji przez użytkownika.  
 
  Po upływie skonfigurowanego terminu ostatecznego agent klienta aktualizacji oprogramowania przeprowadzi skanowanie w celu sprawdzenia, czy aktualizacje oprogramowania są nadal wymagane. Następnie sprawdzi lokalną pamięć podręczną na komputerze klienckim, aby potwierdzić, czy pliki źródłowe aktualizacji oprogramowania są wciąż dostępne. Następnie zainstaluje aktualizacje oprogramowania. Jeśli usunięto zawartość z pamięci podręcznej klienta, aby pomieścić inne wdrożenie, aktualizacje oprogramowania zostaną pobrane ponownie z punktu dystrybucji do pamięci podręcznej klienta. Aktualizacje oprogramowania są zawsze pobierane do pamięci podręcznej klienta, niezależnie od jej skonfigurowanego maksymalnego rozmiaru. Po ukończeniu instalacji agent klienta sprawdzi, czy aktualizacje oprogramowania są nadal wymagane, a następnie prześle komunikat o stanie do punktu zarządzania w celu potwierdzenia, że aktualizacje oprogramowania zostały zainstalowane na kliencie.  
 

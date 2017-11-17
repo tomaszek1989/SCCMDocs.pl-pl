@@ -1,21 +1,22 @@
 ---
-title: "Zarządzanie aktualizacjami usługi Office 365 ProPlus | Dokumentacja firmy Microsoft"
+title: "Zarządzanie aktualizacjami usługi Office 365 ProPlus"
+titleSuffix: Configuration Manager
 description: "Menedżer konfiguracji synchronizuje aktualizacje klienta usługi Office 365 z katalogu WSUS na serwerze lokacji, aby aktualizacje dostępne do wdrażania na klientach."
 keywords: 
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 05/31/2017
+ms.date: 10/04/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
-ms.openlocfilehash: 902d7f7216ca7bb585afae587a6706e2332da9d3
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: a1ac97e60bc35ee3e98212cf17e33ed2b73301b9
+ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="manage-office-365-proplus-with-configuration-manager"></a>Zarządzanie usługą Office 365 ProPlus w programie Configuration Manager
 
@@ -46,7 +47,7 @@ Pulpit nawigacyjny zarządzania klienta usługi Office 365 zawiera wykresy nast�
 Aby wyświetlić pulpit nawigacyjny zarządzania usługi Office 365 klienta w konsoli programu Configuration Manager, przejdź do **Biblioteka oprogramowania** > **omówienie** > **zarządzania klienta usługi Office 365**. W górnej części pulpitu nawigacyjnego, należy użyć **kolekcji** ustawienie listy rozwijanej, aby filtrować dane pulpitu nawigacyjnego przez członków określonej kolekcji.
 
 ### <a name="display-data-in-the-office-365-client-management-dashboard"></a>Wyświetl dane na pulpicie nawigacyjnym zarządzania klienta usługi Office 365
-Dane, które jest wyświetlane na pulpicie nawigacyjnym zarządzania klienta usługi Office 365 pochodzi ze spisu sprzętu. Należy włączyć spis sprzętu i wybrać **Office 365 ProPlus konfiguracje** klasy spisu sprzętu przed dane wyświetlane na pulpicie nawigacyjnym.
+Dane, które jest wyświetlane na pulpicie nawigacyjnym zarządzania klienta usługi Office 365 pochodzi ze spisu sprzętu. Włącz spis sprzętu i wybierz **Office 365 ProPlus konfiguracje** klasy spisu sprzętu dla danych do wyświetlenia na pulpicie nawigacyjnym.
 #### <a name="to-display-data-in-the-office-365-client-management-dashboard"></a>Aby wyświetlić dane na pulpicie nawigacyjnym zarządzania klienta usługi Office 365
 1. Włącz spis sprzętu, jeśli nie jest jeszcze włączona. Aby uzyskać więcej informacji, zobacz [Konfigurowanie spisu sprzętu](\sccm\core\clients\manage\configure-hardware-inventory).
 2. W konsoli programu Configuration Manager, przejdź do **administracji** > **ustawień klienta** > **domyślne ustawienia klienta**.  
@@ -80,7 +81,7 @@ W poprzednich wersjach programu Configuration Manager należy wykonać następuj
 3. Na **ustawienia aplikacji** , podaj nazwę i opis aplikacji, wprowadź lokalizację pobierania dla plików, a następnie kliknij przycisk **dalej**. Lokalizacja musi być określona jako &#92; &#92; *server*&#92; *udostępnianie*.
 4. Na **importowania ustawień klienta** strony wybierz, czy do zaimportowania ustawień klienta usługi Office 365 z istniejącego pliku konfiguracji XML lub ręcznie określ ustawienia, a następnie kliknij przycisk **dalej**.  
 
-    Jeśli masz istniejący plik konfiguracyjny wprowadź lokalizację pliku, a następnie przejdź do kroku 7. Należy pamiętać, że lokalizacja musi być określony w formularzu &#92; &#92; *server*&#92; *udostępnianie*&#92; *Nazwa pliku*. KOD XML.
+    Jeśli masz istniejący plik konfiguracyjny wprowadź lokalizację pliku, a następnie przejdź do kroku 7. Należy określić lokalizację w postaci &#92; &#92; *serwera*&#92; *udostępnianie*&#92; *Nazwa pliku*. KOD XML.
     > [!IMPORTANT]    
     > Plik konfiguracji XML musi zawierać tylko [języki obsługiwane przez klienta usługi Office 365 ProPlus](https://technet.microsoft.com/library/cc179219&#40;v=office.16&#41;.aspx).
 
@@ -104,7 +105,7 @@ Do wdrażania aktualizacji usługi Office 365 z programem Configuration Manager,
 1.  [Sprawdź wymagania](https://technet.microsoft.com/library/mt628083.aspx) dla programu Configuration Manager do zarządzania aktualizacjami klienta usługi Office 365 w **wymagania dotyczące korzystania z programu Configuration Manager do zarządzania aktualizacjami klienta usługi Office 365** sekcji tego tematu.  
 
 2.  [Skonfiguruj punkty aktualizacji oprogramowania](../get-started/configure-classifications-and-products.md) celu synchronizowania klienta usługi Office 365 aktualizacji. Ustaw **aktualizacje** dla klasyfikacji i wybierz **klienta usługi Office 365** dla produktu. Synchronizowanie aktualizacji oprogramowania po skonfigurowaniu punktów aktualizacji oprogramowania do używania **aktualizacje** klasyfikacji.
-3.  Włącz klientów usługi Office 365 w celu otrzymywania aktualizacji programu Configuration Manager. Można to zrobić przy użyciu ustawień klienta programu Configuration Manager lub zasad grupy. Aby włączyć klienta, użyj jednej z następujących metod:   
+3.  Włącz klientów usługi Office 365 w celu otrzymywania aktualizacji programu Configuration Manager. Użyj Menedżera konfiguracji ustawień klienta lub zasad grupy klienta.   
 
     **Metoda 1**: Począwszy od programu Configuration Manager 1606 wersji, można użyć klienta programu Configuration Manager ustawienie do zarządzania agenta klienta usługi Office 365. Po skonfigurowaniu tego ustawienia i wdrażania aktualizacji usługi Office 365, agenta klienta programu Configuration Manager komunikuje się z agentem klienta usługi Office 365 do pobierania aktualizacji usługi Office 365 z punktu dystrybucji i zainstaluj je. Menedżer konfiguracji wykonuje spis ustawień klienta usługi Office 365 ProPlus.    
 
@@ -131,9 +132,22 @@ Podczas wdrażania aktualizacji klienta usługi Office 365, powiadomienia klient
 |1610 z aktualizacją <br/>1702|Ustawiono flagi ponownego uruchomienia i zainstalowaniu aktualizacji po ponownym uruchomieniu komputera.|
 |1706|Klient odbiera powiadomienia wyskakującego i w aplikacji, a także okno odliczania, przed zainstalowaniem aktualizacji.|
 
+> [!Important]
+> 1706 wersji programu Configuration Manager zanotuj następujące informacje:
+>
+>- Wyświetla ikony powiadomień w obszarze powiadomień na pasku zadań dla wymaganych aplikacji, gdzie jest ostatecznym w ciągu 48 godzin w przyszłości i zawartość aktualizacji została pobrana. 
+>- Wyświetla okno odliczania dla wymaganych aplikacji, gdzie ostatecznym mieści się w przyszłości 7,5 godziny, a aktualizacja została pobrana. Użytkownika można odroczyć okno odliczania maksymalnie trzy razy przed upływem określonego terminu. Odroczone, odliczania Wyświetla ponownie po dwóch godzinach. Jeśli nie odłożyć, istnieje odliczania 30-minutowych i aktualizacji są instalowane, po wygaśnięciu odliczania.
+>- Wyskakujących powiadomień nie może być wyświetlany, dopóki użytkownik kliknie ikonę w obszarze powiadomień. Ponadto jeśli w obszarze powiadomień minimalnej ilości miejsca, ikony powiadomień może nie być widoczne chyba że użytkownik otwiera lub rozwijane w obszarze powiadomień. 
+>- Okno dialogowe powiadomień i odlicza czas można uruchomić, gdy użytkownik nie jest aktywnie działa na urządzeniu, na przykład, gdy urządzenie jest zablokowane przez noc, zatem możliwe jest uruchomione na urządzeniu aplikacje pakietu Office może wystąpić konieczność Zamknij, aby zainstalować aktualizację. Przed zamknięciem aplikacji, pakietu Office zapisuje dane aplikacji, aby zapobiec utracie danych. 
+>- Jeśli ostatecznym znajduje się w ciągu ostatnich lub skonfigurowany do uruchomienia tak szybko, jak to możliwe, uruchomione aplikacje pakietu Office może wymusić bez powiadomienia. 
+>- Jeśli użytkownik zainstaluje aktualizacji dla pakietu Office przed upływem ostatecznego terminu, Configuration Manager weryfikuje, czy aktualizacja jest zainstalowana, po osiągnięciu terminu ostatecznego. Jeśli aktualizacja nie zostanie wykryta na urządzeniu, aktualizacja jest zainstalowana. 
+>- Na pasku powiadomień w aplikacji nie są wyświetlane w aplikacji pakietu Office, która jest uruchomiona, przed pobraniem aktualizacji. Po pobraniu aktualizacji w aplikacji powiadomienie będzie wyświetlane tylko w przypadku nowo otwieranych aplikacji.
+>- W przypadku aktualizacji pakietu Office wyzwalane przez okno usługi lub zaplanowane dla poza godzinami pracy jest możliwe, że uruchomione aplikacje pakietu Office może wymusić Zamknij, aby zainstalować tę aktualizację bez powiadomienia. 
+
+
 
 ## <a name="add-languages-for-office-365-update-downloads"></a>Dodaj języki do pobrania aktualizacji usługi Office 365
-Począwszy od programu Configuration Manager 1610 wersji, można dodać obsługę programu Configuration Manager mógł pobierać aktualizacje dla dowolnego języki obsługiwane przez usługę Office 365, niezależnie od tego, czy są obsługiwane w programie Configuration Manager.    
+Począwszy od programu Configuration Manager 1610 wersji, można dodać obsługę programu Configuration Manager do pobierania aktualizacji dla żadnych języków, które są obsługiwane przez usługi Office 365, niezależnie od tego, czy są obsługiwane w programie Configuration Manager.    
 
 > [!IMPORTANT]  
 > Konfigurowanie dodatkowych języków aktualizacji usługi Office 365 jest ustawienie całej lokacji. Po dodaniu języków przy użyciu poniższej procedury, wszystkie aktualizacje usługi Office 365 są pobierane w tych językach oraz języki, które wybiera się na **wybór języka** stronie kreatorów pobierania aktualizacji oprogramowania lub wdrażania aktualizacji oprogramowania.

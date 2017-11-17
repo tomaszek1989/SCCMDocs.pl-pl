@@ -1,5 +1,6 @@
 ---
-title: "Grupy serwerów usługi | Dokumentacja firmy Microsoft"
+title: "Obsługa grupy serwerów"
+titleSuffix: Configuration Manager
 description: "Konsoli programu System Center Configuration Manager udostępnia alarmy i Stany monitorowania aktualizacji i zgodności."
 keywords: 
 author: dougeby
@@ -11,19 +12,18 @@ ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: 304a83ea-0f72-437d-9688-2e6e0c7526dd
-ms.openlocfilehash: ae09a02dd5d67113b9a7e2ce146c844efa4caf55
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: 12382015f2b673103c3c0d8fc9c0cbf29511a434
+ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/17/2017
 ---
->[!IMPORTANT]
->To jest dostępne w 1606 wersji programu Configuration Manager i wersji 1610 funkcji wersji wstępnej. Funkcje wersji wstępnej są zawarte w produkcie do wczesnego testowania w środowisku produkcyjnym, ale nie powinny być uznawane za gotowe do produkcji. Należy włączyć tę funkcję dla powinna być dostępna. Aby uzyskać więcej informacji, zobacz sekcję dotyczącą [używania funkcji w wersjach wstępnych z poziomu aktualizacji](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
-
-
 # <a name="service-a-server-group"></a>Obsługa grupy serwerów
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
+
+>[!IMPORTANT]
+>Funkcje wersji wstępnej są funkcje, które znajdują się w bieżącej gałęzi do wczesnego testowania w środowisku produkcyjnym. Te funkcje są w pełni obsługiwane, ale są nadal w fazie projektowania active i może odbierać zmiany, dopóki ich wychodzenia z kategorii wersji wstępnej. Należy włączyć tę funkcję dla powinna być dostępna. Aby uzyskać więcej informacji, zobacz sekcję dotyczącą [używania funkcji w wersjach wstępnych z poziomu aktualizacji](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
 
 Uruchomienie programu System Center Configuration Manager w wersji 1606, można skonfigurować ustawienia grupy serwerów dla kolekcji, aby określić czas, jaki procent lub w jakiej kolejności komputery w kolekcji zainstaluje aktualizacje oprogramowania. Można również skonfigurować akcje niestandardowe były uruchamiane przed wdrożeniem i po wdrożeniu skrypty programu PowerShell.
 

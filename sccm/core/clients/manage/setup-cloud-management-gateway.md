@@ -1,42 +1,41 @@
 ---
-title: "Skonfiguruj bramę zarządzania chmurze | Dokumentacja firmy Microsoft"
+title: "Skonfiguruj bramę zarządzania w chmurze"
+titleSuffix: Configuration Manager
 description: 
-author: robstackmsft
-ms.author: robstack
+author: arob98
+ms.author: angrobe
 manager: angrobe
-ms.date: 05/01/2017
+ms.date: 09/26/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-client
 ms.assetid: e0ec7d66-1502-4b31-85bb-94996b1bc66f
-ms.openlocfilehash: 84b617b3e83636ab4578174ef40e786dcf1178cd
-ms.sourcegitcommit: 06aef618f72c700f8a716a43fb8eedf97c62a72b
+ms.openlocfilehash: 7463cd7199098b21843fd5b99ed284a12ff91e00
+ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="set-up-cloud-management-gateway-for-configuration-manager"></a>Konfigurowanie bramy zarządzania w chmurze programu Configuration Manager
 
-*Dotyczy: Program System Center Configuration Manager (Current Branch)*
-
-Począwszy od wersji 1610, proces konfigurowania bramy zarządzania w chmurze w programie Configuration Manager obejmuje następujące kroki:
+*Dotyczy: System Center Configuration Manager (Current Branch)* proces konfigurowania bramy zarządzania w chmurze w programie Configuration Manager obejmuje następujące kroki:
 
 ## <a name="step-1-configure-required-certificates"></a>Krok 1. Skonfiguruj wymagane certyfikaty
 
 > [!TIP]  
-> Przed wysłaniem żądania certyfikatu, upewnij się, że nazwa żądanej domeny platformy Azure (na przykład GraniteFalls.CloudApp.Net) jest unikatowa. Aby zrobić to Zaloguj do [portalu Microsoft Azure](https://manage.windowsazure.com), kliknij przycisk **nowy**, wybierz pozycję **usługi w chmurze** , a następnie **Utwórz niestandardowy**. W **adres URL** nazwy domeny żądany typ pola (nie kliknij znacznik wyboru, aby utworzyć usługę). Portalu będzie odzwierciedlać czy nazwa domeny jest niedostępna lub jest już używany przez inną usługę.
+> Przed wysłaniem żądania certyfikatu, upewnij się, że nazwa żądanej domeny platformy Azure (na przykład GraniteFalls.CloudApp.Net) jest unikatowa. Aby to zrobić, zaloguj się do [portalu Microsoft Azure](https://manage.windowsazure.com), kliknij przycisk **nowy**, wybierz pozycję **usługi w chmurze**, a następnie **Utwórz niestandardowy**. W **adres URL** nazwy domeny żądany typ pola (nie kliknij znacznik wyboru, aby utworzyć usługę). Portalu będzie odzwierciedlać czy nazwa domeny jest niedostępna lub jest już używany przez inną usługę.
 
-## <a name="option-1-preferred---use-the-server-authentication-certificate-from-a-public-and-globally-trusted-certificate-provider-like-verisign"></a>Opcja 1 (preferowane) - używać certyfikatu uwierzytelniania serwera od dostawcy publicznego i globalnie zaufanego certyfikatu (na przykład VeriSign)
+### <a name="option-1-preferred---use-the-server-authentication-certificate-from-a-public-and-globally-trusted-certificate-provider-like-verisign"></a>Opcja 1 (preferowane) - używać certyfikatu uwierzytelniania serwera od dostawcy publicznego i globalnie zaufanego certyfikatu (na przykład VeriSign)
 
-Korzystając z tej metody, klienci będą automatycznie ufać certyfikatowi i nie trzeba samodzielnie utworzyć niestandardowego certyfikatu SSL.
+Korzystając z tej metody, klienci automatycznie ufać certyfikatowi i nie trzeba samodzielnie utworzyć niestandardowego certyfikatu SSL.
 
 1. Utwórz rekord nazwę kanoniczną (CNAME) w Twojej organizacji w domenie publicznej nazwy service (DNS), aby utworzyć alias przyjazną nazwę, która będzie używana w usłudze bramy zarządzania chmury w certyfikatu publicznego.
-Na przykład Contoso nazwy usługi bramy zarządzania ich chmury **GraniteFalls** który na platformie Azure będzie **GraniteFalls.CloudApp.Net**. W firmy Contoso publicznego contoso.com obszar nazw DNS, administrator usługi DNS tworzy nowy rekord CNAME dla **GraniteFalls.Contoso.com** dla nazwy hosta rzeczywistych **GraniteFalls.CloudApp.net**.
+Na przykład Contoso nazwy usługi bramy zarządzania ich chmury **GraniteFalls**, który na platformie Azure będzie **GraniteFalls.CloudApp.Net**. W firmy Contoso publicznego contoso.com obszar nazw DNS, administrator usługi DNS tworzy nowy rekord CNAME dla **GraniteFalls.Contoso.com** dla nazwy hosta rzeczywistych **GraniteFalls.CloudApp.net**.
 2. Ponownie zażądać certyfikatu uwierzytelniania serwera z publicznego dostawcę przy użyciu nazwa pospolita (CN) aliasu CNAME.
 Na przykład firma Contoso używa **GraniteFalls.Contoso.com** CN certyfikatu.
 3. Tworzenie usługi bramy zarządzania chmury w konsoli programu Configuration Manager przy użyciu tego certyfikatu.
-    - Na **ustawienia** utworzyć chmury zarządzania bramy kreatora po dodaniu certyfikatu serwera dla tej usługi w chmurze (z **plik certyfikatu**), Kreator wyodrębniania nazwy hosta z certyfikatu CN nazwy usługi, a następnie dołącz do **cloudapp.net** (lub **usgovcloudapp.net** chmury Azure instytucji rządowych Stanów Zjednoczonych) jako nazwa FQDN usługi można utworzyć usługi na platformie Azure.
+    - Na **ustawienia** strony kreatora tworzenia bramy zarządzania chmury: Po dodaniu certyfikatu serwera dla tej usługi w chmurze (z **plik certyfikatu**), Kreator wyodrębniania nazwy hosta z certyfikatu CN nazwy usługi, a następnie dołącz do **cloudapp.net**(lub **usgovcloudapp.net** chmury Azure instytucji rządowych Stanów Zjednoczonych) jako nazwa FQDN usługi można utworzyć usługi na platformie Azure.
 Na przykład podczas tworzenia bramy zarządzania chmury w firmie Contoso, nazwa hosta **GraniteFalls** jest wyodrębniana z certyfikatu CN, dzięki czemu rzeczywiste usługi na platformie Azure, zostanie utworzona jako **GraniteFalls.CloudApp.net**.
 
 ### <a name="option-2---create-a-custom-ssl-certificate-for-cloud-management-gateway-in-the-same-way-as-for-a-cloud-based-distribution-point"></a>Opcja 2 — Tworzenie niestandardowego certyfikatu SSL dla bramy zarządzania w chmurze w taki sam sposób jak w przypadku punktu dystrybucji w chmurze
@@ -48,17 +47,17 @@ W ten sam sposób, który należy do punktu dystrybucji w chmurze, można utworz
 
 ## <a name="step-2-export-the-client-certificates-root"></a>Krok 2. Eksportuj głównego certyfikatu klienta
 
-Najprostszym sposobem pobrania eksportu głównego certyfikatów klientów w sieci, należy otworzyć certyfikat klienta na jednym maszyn przyłączonych do domeny, które ma jeden i skopiować go.
+Najprostszym sposobem, aby wyeksportować główny certyfikatów klientów w sieci, jest Otwórz certyfikat klienta na jednym maszyn przyłączonych do domeny, które ma jeden i skopiuj go.
 
-> [!NOTE] 
+> [!NOTE]
 >
 > Certyfikaty klienta są wymagane na każdym komputerze, który chcesz zarządzać za pomocą bramy zarządzania w chmurze i na serwerze systemu lokacji hostującym łącznika bramy zarządzania w chmurze punktu. Jeśli musisz dodać certyfikat klienta do dowolnego z tych urządzeń, zobacz [wdrażanie klienta certyfikatu na komputerach z systemem Windows](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_client2008_cm2012).
 
 1.  W oknie Uruchamianie wpisz **mmc** i naciśnij klawisz Return.
 
-2.  W menu Plik wybierz **Dodaj/Usuń przystawkę...** .
+2.  Z menu Plik wybierz **Dodaj/Usuń przystawkę...** .
 
-3.  W oknie dialogowym Dodawanie lub usuwanie przystawek wybierz **certyfikaty** > **Dodaj &gt;**   >  **konto komputera** > **dalej** > **komputera lokalnego** > **Zakończ**. 
+3.  W oknie dialogowym Dodawanie lub usuwanie przystawek wybierz **certyfikaty** > **Dodaj &gt;**   >  **konto komputera** > **dalej** > **komputera lokalnego** > **Zakończ**.
 
 4.  Przejdź do **certyfikaty** &gt; **osobistych** &gt; **certyfikaty**.
 
@@ -66,7 +65,7 @@ Najprostszym sposobem pobrania eksportu głównego certyfikatów klientów w sie
 
 6.  Na karcie Szczegóły wybierz **Kopiuj do pliku...** .
 
-7.  Ukończ Kreatora eksportu certyfikatów przy użyciu domyślnego formatu certyfikatu. Upewnij się, zanotuj nazwę i lokalizację certyfikatu głównego, którą utworzysz. Będą potrzebne, aby skonfigurować bramę zarządzania chmury w [później krok](#step-4-set-up-cloud-management-gateway).
+7.  Ukończ Kreatora eksportu certyfikatów przy użyciu domyślnego formatu certyfikatu. Upewnij się, zanotuj nazwę i lokalizację certyfikatu głównego, którą utworzysz. Aby skonfigurować bramę zarządzania chmury w [później krok](#step-4-set-up-cloud-management-gateway).
 
 >[!NOTE]
 >Jeśli certyfikat klienta został wystawiony przez urząd certyfikacji podrzędnego należy powtórzyć ten krok dla każdego certyfikatu w łańcuchu.
@@ -122,7 +121,7 @@ Certyfikat zarządzania platformy Azure jest wymagany dla programu Configuration
 
 5. Jeśli chcesz monitorować ruch bramy zarządzania chmury z progiem 14 dni, wybierz pole wyboru, aby włączyć alertu progu. Następnie należy określić próg i procent w którego zostanie wywołane na różnych poziomach alertów. Wybierz **dalej** po zakończeniu.
 
-6. Przejrzyj ustawienia, a następnie wybierz pozycję **dalej**. Configuration Manager rozpoczyna się ustawienie usługi. Po zamknięciu kreatora potrwa od 5 do 15 minut do udostępniania usługi całkowicie na platformie Azure. Sprawdź **stan** kolumny dla nowo ustawienia zarządzania bramy chmury ustalenie, kiedy usługa jest gotowa.
+6. Przejrzyj ustawienia, a następnie wybierz pozycję **dalej**. Configuration Manager rozpoczyna się ustawienie usługi. Po zamknięciu kreatora potrwa od 5 do 15 minut do udostępniania usługi całkowicie na platformie Azure. Sprawdź **stan** kolumny w nową bramę zarządzania chmury ustalenie, kiedy usługa jest gotowa.
 
 ## <a name="step-5-configure-primary-site-for-client-certification-authentication"></a>Krok 5. Konfigurowanie lokacji głównej do uwierzytelniania klientów certyfikacji
 
@@ -141,7 +140,7 @@ Punkt łącznika chmury zarządzania bramą jest nowa rola systemu lokacji do ko
 
 ## <a name="step-7-configure-roles-for-cloud-management-gateway-traffic"></a>Krok 7. Konfigurowanie ról dla ruchu w chmurze zarządzania bramy
 
-Ostatnim krokiem w procesie konfigurowania bramy zarządzania w chmurze jest do konfigurowania ról systemu lokacji do akceptowania ruchu bramy zarządzania w chmurze. Tylko punkt i oprogramowania aktualizacji roli zarządzania punktu są obsługiwane dla bramy zarządzania w chmurze. Każda rola należy skonfigurować osobno.
+Ostatnim krokiem w procesie konfigurowania bramy zarządzania w chmurze jest do konfigurowania ról systemu lokacji do akceptowania ruchu bramy zarządzania w chmurze. Tylko punkt i oprogramowania aktualizacji roli zarządzania punktu są obsługiwane dla bramy zarządzania w chmurze. Każda rola skonfigurować osobno.
 
 1. W konsoli programu Configuration Manager, przejdź do **administracji** > **konfiguracja lokacji** > **serwery i role systemu lokacji**.
 
@@ -155,7 +154,7 @@ Ostatnim krokiem w procesie konfigurowania bramy zarządzania w chmurze jest do 
 
 Po zarządzania chmurą bramy a role systemu lokacji są w pełni skonfigurowany i uruchomiony, klienci otrzymają lokalizacji usługi bramy zarządzania w chmurze automatycznie przy kolejnym żądaniu lokalizacji. Klienci muszą być w sieci firmowej do odbierania lokalizacji usługi bramy zarządzania w chmurze. Cykl sondowania żądań lokalizacji jest co 24 godziny. Jeśli nie chcesz czekać na żądanie zwykle zaplanowane lokalizacji, możesz wymusić żądanie przez ponowne uruchomienie usługi hosta agenta programu SMS (ccmexec.exe) na komputerze.
 
-Z lokalizacją usługi bramy zarządzania w chmurze skonfigurowany na komputerze klienckim automatycznie może ustalić, czy jest ono w intranecie lub Internecie. Jeśli klient może kontaktować się z kontrolerem domeny lub lokalnego punktu zarządzania, użyje on do komunikowania się z programem Configuration Manager, w przeciwnym razie go będzie uwzględniać go jest w Internecie i użyj lokalizacji bramy zarządzania chmury usługi do komunikacji.
+Z lokalizacją usługi bramy zarządzania w chmurze skonfigurowany na komputerze klienckim automatycznie może ustalić, czy jest ono w intranecie lub Internecie. Jeśli klient można skontaktować się z kontrolerem domeny lub lokalną punktu zarządzania, użyje on do komunikowania się z programem Configuration Manager. W przeciwnym razie będzie uwzględniać znajduje się w Internecie i użyć lokalizacji usługi w chmurze zarządzania bramy do komunikacji.
 
 >[!NOTE]
 > Można wymusić klientowi zawsze używać bramy zarządzania chmury niezależnie od tego, czy jest w intranecie lub Internecie. Aby to zrobić, ustaw następujący klucz rejestru na komputerze klienckim: \

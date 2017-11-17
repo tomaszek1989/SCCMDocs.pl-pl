@@ -1,5 +1,6 @@
 ---
-title: "Gotowość do uaktualnienia | System Center Configuration Manager"
+title: "Gotowości do uaktualnienia"
+titleSuffix: Configuration Manager
 description: "Integracja z programem Configuration Manager gotowości do uaktualnienia. Dane zgodności z uaktualnieniem dostępu w konsoli administracyjnej. Urządzenia docelowe dla uaktualnienia lub korygowania."
 keywords: 
 author: mattbriggs
@@ -11,115 +12,63 @@ ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-client
 ms.assetid: 68407ab8-c205-44ed-9deb-ff5714451624
-ms.openlocfilehash: b1f4cd4a6f19a02d2b2dc3f9a841aeeb2a1403dd
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.openlocfilehash: df2950551e527788aeb01d57cdbf01ad19817ccd
+ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="integrate-upgrade-readiness-with-system-center-configuration-manager"></a>Integracja gotowości do uaktualnienia z programu System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Gotowości do uaktualnienia (dawniej uaktualnienia Analytics) umożliwia ocenę i analizowania gotowości urządzenia z systemem Windows 10. Integracja z programem Configuration Manager dostępu do danych zgodności z uaktualnieniem klienta w konsoli administracyjnej programu Configuration Manager gotowości do uaktualnienia. Jesteś w stanie na urządzenia docelowe dla uaktualnienia lub korygowanie z listy urządzeń.
+Gotowości do uaktualnienia (dawniej uaktualnienia Analytics) jest częścią [module analiz systemu Windows](https://www.microsoft.com/WindowsForBusiness/windows-analytics) umożliwiająca do oceny i analizowania gotowości urządzeń w środowisku do uaktualnienia do systemu Windows 10. Można skonfigurować określonej wersji. Gotowości do uaktualnienia można zintegrować z programem Configuration Manager dostępu do danych zgodności z uaktualnieniem klienta w konsoli administracyjnej programu Configuration Manager. Można na urządzenia docelowe do uaktualnienia lub korygowania przy użyciu kolekcji dynamiczne utworzone na podstawie tego danych.
 
-Gotowości do uaktualnienia to rozwiązanie pakiet zarządzania Operations (OMS) firmy Microsoft. Więcej o uaktualnienie gotowości w [wprowadzenie gotowości do uaktualnienia](https://technet.microsoft.com/itpro/windows/deploy/manage-windows-upgrades-with-upgrade-readiness).
+Gotowości do uaktualnienia to rozwiązanie, które działa na [Operations Management Suite (OMS)](/azure/operations-management-suite/operations-management-suite-overview). Więcej o uaktualnienie gotowości w [uaktualnia Zarządzanie systemem Windows z gotowości do uaktualnienia](/windows/deployment/upgrade/manage-windows-upgrades-with-upgrade-readiness).
 
 ## <a name="configure-clients"></a>Konfigurowanie klientów
 
-Istnieje kilka kroków konfiguracji, które należy wykonać, aby upewnić się, że klientów można udostępniać danych gotowości do uaktualnienia:
+Gotowości do uaktualnienia, podobnie jak wszystkie rozwiązania w module analiz systemu Windows, zależy od danych telemetrycznych systemu Windows. Aby uaktualnić gotowości do odbierania wystarczającą ilość danych telemetrii muszą być spełnione następujące wymagania wstępne:
 
--  Skonfiguruj ustawienia klienta telemetrii w sposób opisany w [telemetrii Konfigurowanie systemu Windows w Twojej organizacji](https://technet.microsoft.com/itpro/windows/manage/configure-windows-telemetry-in-your-organization).
--  Zainstaluj KB/s, opisanego w * wdrażanie zgodności aktualizacji i powiązane KB/s * sekcji [wprowadzenie gotowości do uaktualnienia](https://technet.microsoft.com/itpro/windows/deploy/manage-windows-upgrades-with-upgrade-readiness).
+- Wszyscy klienci muszą mieć skonfigurowaną **komercyjnych klucza Identyfikatora**. 
+- Klienci systemu Windows 10 muszą mieć telemetrii skonfigurowany tak, aby zgłosić co najmniej podstawowego poziomu danych telemetrycznych.
+-  Klienci z wcześniejszymi wersjami w systemie Windows muszą mieć zainstalowany określonych KB/s zgodnie z opisem w [wprowadzenie gotowości do uaktualnienia](/windows/deployment/upgrade/upgrade-readiness-get-started#deploy-the-compatibility-update-and-related-kbs). Muszą mieć włączone w danych telemetrycznych **ustawień klienta**.
 
-    > [!NOTE]
-    > Można pobrać skryptu można zautomatyzować wiele zadań instalacji klienta. Zobacz *Uruchom skrypt wdrażania gotowości do uaktualnienia* sekcji [wprowadzenie gotowości do uaktualnienia](https://technet.microsoft.com/itpro/windows/deploy/manage-windows-upgrades-with-upgrade-readiness) informacji o skrypcie.
+Komercyjnych klucza Identyfikatora i dane telemetryczne systemu Windows można skonfigurować w **ustawień klienta**. Aby dowiedzieć się więcej, zobacz [module analiz systemu Windows używana z programem Configuration Manager](../monitor-windows-analytics.md).
 
-## <a name="connect-to-upgrade-readiness"></a>Nawiązać gotowości do uaktualnienia
+>[!NOTE]
+>Jeśli wystąpią problemy z gotowości uaktualnienia nie odbiera danych telemetrycznych z urządzeń w danym środowisku, zgodnie z oczekiwaniami, niektóre z tych problemów może być kierowane za pomocą [skrypt wdrożenia uaktualnienia gotowości](/windows/deployment/upgrade/upgrade-readiness-deployment-script). Jednak w większości środowisk wdrażania poprawne KB/s, konfigurowanie komercyjnych klucza Identyfikatora i telemetrii w **ustawień klienta** powinno wystarczyć.
 
-### <a name="prerequisites"></a>Wymagania wstępne
+## <a name="connect-configuration-manager-to-upgrade-readiness"></a>Połącz gotowości do uaktualnienia program Configuration Manager
 
-Począwszy od wersji Current Branch 1706, Kreator usług Azure jest używana w celu uproszczenia procesu konfigurowania usług platformy Azure, których korzystasz z programu Configuration Manager. Aby można było używać kreatora, musisz skonfigurować aplikację sieci web platformy Azure. Aby uzyskać więcej informacji zobacz, [Kreator usług Azure](/sccm/core/servers/deploy/configureazure-services-wizard).
+Począwszy od wersji Current Branch 1706, [Kreator usług Azure](../../../servers/deploy/configure/azure-services-wizard.md) jest używany w celu uproszczenia procesu konfigurowania usług platformy Azure, możesz korzystać z programu Configuration Manager. Do łączenia programu Configuration Manager z gotowości do uaktualnienia, rejestracji aplikacji usługi Azure AD typu *aplikacji sieci Web / interfejs API* muszą być tworzone w [portalu Azure](https://portal.azure.com). Aby przeczytać więcej informacji na temat sposobu tworzenia rejestracji aplikacji, zobacz [zarejestrować aplikację z dzierżawą usługi Azure Active Directory](/azure/active-directory/active-directory-app-registration). W **portalu Azure**, należy również podać aplikacji sieci web nowo zarejestrowanych *współautora* uprawnienia na grupę zasobów, która zawiera obszar roboczy OMS służącą do hostowania danych gotowości do uaktualnienia. **Kreator usług Azure** użyje tej rejestracji aplikacji można umożliwić programowi Configuration Manager do bezpiecznego komunikowania się z usługą Azure AD i Połącz z danymi gotowości do uaktualnienia infrastruktury.
+
+>[!IMPORTANT]
+>*Współautor* muszą mieć uprawnienia do aplikacji w przeciwieństwie do usługi Azure AD tożsamości użytkownika. Jest tak, ponieważ jest on zarejestrowany aplikacji i nie użytkownika usługi Azure AD, który uzyskuje dostęp do danych w imieniu infrastruktury programu Configuration Manager. Aby to zrobić, należy wyszukać nazwę rejestracji aplikacji w **dodawania użytkowników** bloku podczas przypisywania uprawnień. To tego samego procesu, który musi występować po [zapewnianie programu Configuration Manager z uprawnieniami do OMS](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm#provide-configuration-manager-with-permissions-to-oms) dla połączeń z [analizy dzienników](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm). Te kroki należy wykonać przed rejestracji aplikacji jest importowany do programu Configuration Manager z *Kreator usług Azure*.
 
 ### <a name="use-the-azure-wizard-to-create-the-connection"></a>Kreator Azure do utworzenia połączenia
 
-1.  W **administracji** obszaru roboczego w konsoli programu Configuration Manager, rozwiń węzeł **usługi w chmurze**, a następnie kliknij przycisk **usług Azure**.
-2.  Na **Home** karcie **usług Azure** kliknij przycisk **Konfigurowanie usług Azure**.
-3.  Wprowadź przyjazną nazwę, na stronie usług Azure. Możesz również wpisać opis. Następnie wybierz **uaktualnienia łącznik gotowości** i kliknij przycisk **dalej**.
-4.  Określ środowisku platformy Azure na stronie aplikacji. Kliknij przycisk **Przeglądaj** do konfigurowania aplikacji serwera.
-5.  Kliknij przycisk **importu** do nawiązania połączenia aplikacji sieci Web na platformie Azure.
-    -  Typ **nazwa dzierżawy usługi Azure AD**.
-    -  Typ **Identyfikatora dzierżawy usługi Azure AD**.
-    -  Typ **Nazwa aplikacji**.
-    -  Typ **identyfikator klienta**.
-    -  Typ **klucz tajny**.
-    -  Wybierz datę **wygaśnięcia klucz tajny** daty.
-    -  Wpisz dowolny adres URL dla **aplikacji identyfikator URI**.
-    -  Kliknij przycisk **Sprawdź**, a następnie kliknij przycisk **OK**.
+Postępuj zgodnie z instrukcjami [usług Azure skonfigurować do użytku z programem Configuration Manager](../../../servers/deploy/configure/azure-services-wizard.md) utworzyć połączenie gotowości do uaktualnienia, importując rejestracji aplikacji sieci web utworzone powyżej. 
 
-6.  Na stronie konfiguracji, należy określić połączenie gotowości do uaktualnienia. Wybierz następujące wartości:  
-    -  Subskrypcje platformy Azure
-    -  Grupy zasobów platformy Azure
-    -  Obszar roboczy w module analiz systemu Windows
-8.  Kliknij przycisk **Dalej**. Możesz przejrzeć połączenia, na stronie podsumowania. 
+Na *konfiguracji* strony, są następujące wartości wstępnie wypełnione importowanie aplikacji sieci web zakończyło się pomyślnie, jeśli przypisano odpowiednie uprawnienia w **portalu Azure**. 
+-  Subskrypcje platformy Azure
+-  Grupy zasobów platformy Azure
+-  Obszar roboczy w module analiz systemu Windows
 
-## <a name="complete-upgrade-readiness-tasks"></a>Wykonywanie zadań uaktualniania gotowości  
+Więcej niż jednej grupy zasobów lub obszar roboczy będzie tylko w przypadku aplikacji sieci web zarejestrowane usługi Azure AD ma *współautora* uprawnienia do więcej niż jednej grupy zasobów lub jeśli wybranej grupy zasobów zawiera więcej niż jeden obszar roboczy OMS.
+ 
+## <a name="view-and-use-upgrade-readiness-information-in-configuration-manager"></a>Wyświetlanie i używanie informacji gotowości do uaktualnienia w programie Configuration Manager
 
-Po utworzeniu już połączenia, należy wykonać te zadania, zgodnie z opisem w [wprowadzenie gotowości do uaktualnienia](https://technet.microsoft.com/itpro/windows/deploy/manage-windows-upgrades-with-upgrade-readiness).  
-
-1. Dodaj usługę UpgradeReadiness z obszarem roboczym pakietu OMS.  
-2. Generowanie komercyjnych identyfikatora.  
-3. Subskrybuj gotowości do uaktualnienia.   
-
-## <a name="use-the-upgrade-readiness-deployment-script"></a>Użyj skryptu wdrażania gotowości do uaktualnienia  
-
-Można zautomatyzować wiele zadań uaktualniania gotowości i rozwiązywanie problemów z danych udostępnianie problemy dotyczące programu Microsoft **skrypt wdrożenia uaktualnienia gotowości**.  
-Skrypt wdrożenia uaktualnienia gotowości wykonuje następujące czynności:  
-
-- Ustawia komercyjnych klucza Identyfikatora + CommercialDataOptIn + RequestAllAppraiserVersions kluczy.  
-- Sprawdza, czy komputery użytkownik może wysyłać dane do firmy Microsoft.  
-- Sprawdza, czy komputer ma oczekuje na ponowne uruchomienie.   
-- Sprawdza, czy najnowszą wersję KB pakietu 10.0.x zainstalowano (wymaga 10.0.14913 lub kolejnych wersjach).  
-- U możliwia powoduje włączenie trybu informacji pełnej do rozwiązywania problemów.  
-- Powoduje zainicjowanie zbierania danych telemetrii, wymagającym firmy Microsoft do oceny gotowości do uaktualnienia danej organizacji.  
-- Po włączeniu są wyświetlane w oknie cmd postępu skryptu. To zapewnia wgląd w problemów (powodzenie lub Niepowodzenie dla każdego kroku) i/lub zapisuje w pliku dziennika.  
-
-## <a name="to-run-the-upgrade-readiness-deployment-script"></a>Aby uruchomić skrypt wdrożenia gotowości do uaktualnienia:  
-
-1. Pobierz [skrypt wdrożenia uaktualnienia gotowości](https://go.microsoft.com/fwlink/?LinkID=822966&clcid=0x409) i wyodrębniać UpgradeReadiness.zip. Pliki w **diagnostyki** folderu są wymagane tylko wtedy, gdy planujesz uruchamianie skryptu w trybie awaryjnym.  
-2. Edytowanie tych parametrów w RunConfig.bat:  
-- Lokalizacja przechowywania informacji dziennika. Przykład: % SystemDrive%\URDiagnostics. Informacje dziennika można przechowywać na zdalnym udziale plików lub katalogiem lokalnym. Jeśli skrypt jest zablokowany z tworzenia dla podanej ścieżki pliku dziennika, tworzy pliki dziennika na dysku z katalogu systemu Windows.  
-- Komercyjnych identyfikator klucza.  
-- Domyślnie skrypt wysyła informacje dziennika do konsoli i pliku dziennika. Aby zmienić domyślne zachowanie, użyj jednej z następujących opcji:  
-    - logMode = 0 dziennik, aby tylko konsoli  
-    - logMode = 1 dziennik do pliku i konsoli  
-    - logMode = 2 dziennik do pliku tylko  
-    - Do rozwiązywania problemów, należy ustawić **isVerboseLogging** do **$true** do generowania informacji dziennika, która może pomóc w diagnozowaniu problemów. Domyślnie **isVerboseLogging** ustawiono **$false**. Upewnij się, że folder diagnostycznych jest zainstalowany w tym samym katalogu co skrypt, który chcesz użyć w tym trybie.  
-    - Powiadom użytkowników w przypadku konieczności ponownego uruchomienia komputera. To jest domyślnie wyłączone.  
-
-3. Po zakończeniu edycji parametrów w RunConfig.bat, uruchom skrypt jako administrator.  
-
-
-## <a name="view-microsoft-upgrade-readiness-properties-in-configuration-manager"></a>Wyświetl właściwości Microsoft gotowości uaktualnienia w programie Configuration Manager  
-
-1.  W konsoli programu Configuration Manager, przejdź do **usługi w chmurze**, a następnie wybierz **łącznik OMS** otworzyć **właściwości połączenia OMS** strony.  
-
-2.  Na tej stronie istnieją dwie karty:
-  * **Usługi Azure Active Directory** karcie pokazuje Twojej **dzierżawy**, **identyfikator klienta**, **wygaśnięcia klucza tajnego klienta**, i umożliwia **Sprawdź** Twojego **klucza tajnego klienta** Jeśli wygasł.
-  * **Gotowości do uaktualnienia** karcie pokazuje Twojej **subskrypcji platformy Azure**, **grupy zasobów platformy Azure**, i **obszar roboczy usługi Operations Management Suite**.
-
-## <a name="view-and-use-the-upgrade-information"></a>Wyświetlanie i używanie informacje o uaktualnianiu
-
-Po gotowości do uaktualnienia został zintegrowany z programem Configuration Manager, możesz wyświetlić analizy gotowości do uaktualnienia klientów i podjąć odpowiednie działania.
+Po gotowości do uaktualnienia został zintegrowany z programem Configuration Manager, można wyświetlić analizy gotowości do uaktualnienia klientów.
 
 1. W konsoli programu Configuration Manager wybierz **monitorowanie** > **omówienie** > **gotowości do uaktualnienia**.
 2. Przejrzyj dane, w tym stan gotowości do uaktualnienia i odsetek urządzeń z systemem Windows, które są raportowania danych telemetrycznych.
 3. Można filtrować pulpit nawigacyjny, aby wyświetlić dane dla urządzenia w określonej kolekcji.
-4. Możesz wyświetlić stan gotowości danego urządzenia i tworzenie kolekcji dynamicznych dla tych urządzeń, tak, aby uaktualnić tych urządzeń, jeśli jest to gotowe lub podjąć działania w celu dostosowania ich do stanu gotowości.
+4. Możesz wyświetlić stan gotowości określonego urządzenia i tworzenie kolekcji dynamicznych dla tych urządzeń, tak, aby uaktualnić tych urządzeń, jeśli jest to gotowe lub podjąć działania w celu korygowania urządzeń z zablokowanym dostępem do uaktualnienia.
 
-## <a name="create-a-connection-to-upgrade-readiness-1702-and-earlier"></a>Utwórz połączenie gotowości do uaktualnienia (1702 i starsze)
+## <a name="using-the-upgrade-readiness-connector-version-1702-and-earlier"></a>Za pomocą łącznika gotowości uaktualnienia (wersja 1702 i starsze)
 
-Przed 1706 gałęzi programu Configuration Manager, aby utworzyć połączenie do uaktualnienia gotowości wymagane następujące kroki.
+1702 wersji programu Configuration Manager lub wcześniej zestaw kroków i wymagania są niezbędne do utworzenia połączenia gotowości do uaktualnienia.
 
 ### <a name="prerequisites"></a>Wymagania wstępne
 
