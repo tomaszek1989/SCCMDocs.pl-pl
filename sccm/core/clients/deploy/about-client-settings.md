@@ -3,7 +3,7 @@ title: Ustawienia klienta
 titleSuffix: Configuration Manager
 description: "Wybierz ustawienia klienta przy użyciu konsoli administracyjnej programu System Center Configuration Manager."
 ms.custom: na
-ms.date: 08/01/2017
+ms.date: 11/17/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: f34479d6cf0c1153615c612480f204b71a8d84cb
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 46429a02debaaaa90562b9586af57e43a9aab92c
+ms.sourcegitcommit: b74c1beaabbb628fdf5d6948fa9a6ad719fd5035
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Informacje o ustawieniach klienta w programie System Center Configuration Manager
 
@@ -71,7 +71,7 @@ Włącza funkcję BranchCache na komputerach klienckich.
 - **Skonfiguruj rozmiar pamięci podręcznej klienta**
 
   Pamięci podręcznej klienta na komputerach z systemem Windows są przechowywane tymczasowe pliki służące do instalacji aplikacji i programów. Wybierz **tak** następnie określ:
-    - **Maksymalny rozmiar pamięci podręcznej** (MB). 
+    - **Maksymalny rozmiar pamięci podręcznej** (MB).
     - **Maksymalny rozmiar pamięci podręcznej** (procent dysku).
 Rozmiar pamięci podręcznej klienta można rozszerzyć do maksymalnego rozmiaru w Megabajtach lub wartość procentowa dysku, **ta wartość jest mniejsza**. Jeśli ta opcja jest **nr**, domyślny rozmiar to 5,120 MB.
 
@@ -288,6 +288,8 @@ Umożliwia elementu równorzędnego pamięci podręcznej klientów programu Conf
  Aby uzyskać więcej informacji o korzystaniu z okien obsługi, zobacz [Używanie okien obsługi w programie System Center Configuration Manager](../../../core/clients/manage/collections/use-maintenance-windows.md).  
 
 ##  <a name="endpoint-protection"></a>Program Endpoint Protection  
+>  [!Tip]   
+> Oprócz poniższych informacji, można znaleźć dodatkowe informacje dotyczące korzystania z ustawienia klienta programu Endpoint Protection [przykładowy scenariusz: Używanie programu System Center Endpoint Protection do ochrony komputerów przed złośliwym oprogramowaniem w programie System Center Configuration Manager](/sccm/protect/deploy-use/scenarios-endpoint-protection).
 
 -   **Zarządzanie klientem programu Endpoint Protection na komputerach klienckich**  
 
