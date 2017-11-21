@@ -15,11 +15,11 @@ caps.latest.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 047ffc0953db4a4cc5d543d880136ce61fa99fa7
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: a1d9144db864d261c13992a2ef4d01223d927d88
+ms.sourcegitcommit: c4a1bafcd004638d264a93d307c70d8b6f7fe023
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="which-branch-of-configuration-manager-should-i-use"></a>Które gałęzi programu Configuration Manager należy użyć?
 
@@ -147,7 +147,7 @@ Aby uzyskać więcej informacji, zobacz [Technical Preview programu System Cente
 Możesz wyświetlić informacje o wersji dla lokacji programu Configuration Manager, można również upewnić gałęzi.
 
 **Wersja**   
-Aby sprawdzić wersję lokacji, w konsoli przejdź do **System Center Configuration Manager** w lewym górnym rogu konsoli gdzie **wersja lokacji** pojawi się. Zobacz [ ]() listę wersji lokacji.
+Aby sprawdzić wersję lokacji, w konsoli przejdź do **System Center Configuration Manager** w lewym górnym rogu konsoli gdzie **wersja lokacji** pojawi się. Zobacz [wersje linii bazowej i aktualizacji](/sccm/core/servers/manage/updates#bkmk_Baselines) listę wersji lokacji.
 
 **Gałęzi**  
 Aby potwierdzić gałąź witryny (jako LTSB lub Current Branch), w konsoli przejdź do **administracji** > **konfiguracja lokacji** > **witryny**i Otwórz **ustawienia hierarchii**. Jeśli ma tej opcji można przekonwertować na bieżącej gałęzi i jest aktywna, w lokacji działa wersja LTSB. Gdy w lokacji działa bieżącej gałęzi, ta opcja jest wyszarzony. Aby uzyskać informacje o różnych wersji programu Configuration Manager, zobacz "wersje linii bazowej i aktualizacji" w [aktualizacji programu Configuration Manager](/sccm/core/servers/manage/updates).

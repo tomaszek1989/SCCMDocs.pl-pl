@@ -3,7 +3,7 @@ title: "Tworzenie profilów sieci VPN "
 titleSuffix: Configuration Manager
 description: "Dowiedz się, jak utworzyć profile sieci VPN w programie System Center Configuration Manager."
 ms.custom: 
-ms.date: 4/19/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ author: lleonard-msft
 caps.handback.revision: "0"
 ms.author: alleonar
 ms.manager: angrobe
-ms.openlocfilehash: 4e8a082bff8b0f734da620669ddf403c0fe3eca6
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 21fc286cdcc05244e1895ded5623d346e6cb8ebe
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-create-vpn-profiles-in-system-center-configuration-manager"></a>Jak tworzyć profile sieci VPN w programie System Center Configuration Manager
 
@@ -34,16 +34,19 @@ Dla połączeń sieci VPN innych firm należy przeprowadzić dystrybucję aplika
 
 1.  W konsoli programu Configuration Manager wybierz **zasoby i zgodność** > **ustawień zgodności** > **dostęp do zasobów firmy** > **profilów sieci VPN**.  
 
-3.  Na **Home** karcie **Utwórz** grupy, wybierz **Tworzenie profilu sieci VPN**.  
+2.  Na **Home** karcie **Utwórz** grupy, wybierz **Tworzenie profilu sieci VPN**.  
 
 
-1.  Zakończenie **ogólne** strony. Należy pamiętać o następujących kwestiach:  
+3.  Zakończenie **ogólne** strony. Należy pamiętać o następujących kwestiach:  
+
+    - Wybierz odpowiednie **platformy**.
+
+       - W przypadku wybrania platformy Windows 8.1, masz możliwość wybrania **Importuj istniejący element profilu VPN z pliku** Aby zaimportować informacje o profilu sieci VPN, który został wyeksportowany do pliku XML.
 
     - Nie używaj znaków \\/ :*?&lt; > &#124; lub spacja w nazwie profilu sieci VPN. Następujące znaki nie są obsługiwane przez profil sieci VPN w systemie Windows Server.  
 
-     -   Wybierz **Importuj istniejący element profilu VPN z pliku** Aby zaimportować informacje o profilu sieci VPN, które zostały wyeksportowane do pliku XML (Windows 8.1 i Windows RT).  
 
-1.  Na **połączenia** określ:  
+4.  Na **połączenia** określ:  
 
     -   **Typ połączenia**: Wybierz typ połączenia VPN. Można wybrać typy połączeń w poniższej tabeli.  
 

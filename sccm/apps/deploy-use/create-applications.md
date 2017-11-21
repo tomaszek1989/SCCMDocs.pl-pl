@@ -3,7 +3,7 @@ title: Tworzenie aplikacji
 titleSuffix: Configuration Manager
 description: "Tworzenie i wdrażanie aplikacji i typów wdrożeń w programie System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 11/07/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 6896a4905b9eecf520dae2c887100df472963356
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: f680b692f3ae92fb8a5e8b6640ed053ceedba436
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="create-applications-with-system-center-configuration-manager"></a>Tworzenie aplikacji w programie System Center Configuration Manager
 
@@ -119,7 +119,7 @@ Nowa aplikacja pojawi się w **aplikacji** węzła konsoli programu Configuratio
 
     -   **Słowa kluczowe**— wprowadź listę słów kluczowych w języku wybranym **wybrany język** listy rozwijanej. Słowa kluczowe ułatwią użytkownikom Centrum oprogramowania wyszukiwanie aplikacji.  
 
-    -   **Ikona**— wybierz **Przeglądaj** aby wybrać ikonę tej aplikacji spośród dostępnych ikon. Jeśli nie określisz ikony, ikona domyślna będzie używany dla tej aplikacji.  
+    -   **Ikona**— wybierz **Przeglądaj** aby wybrać ikonę tej aplikacji spośród dostępnych ikon. Jeśli nie określisz ikony, ikona domyślna będzie używany dla tej aplikacji. Można teraz ustawić ikonę z wymiarów z maksymalnie 512 x 512.
 
     -   **Wyświetlaj jako polecaną aplikację i wyróżnij w portalu firmy**— wybierz tę opcję, aby wyróżnić aplikację w portalu firmy.  
 

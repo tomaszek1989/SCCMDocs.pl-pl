@@ -3,7 +3,7 @@ title: Wersje Technical Preview
 titleSuffix: Configuration Manager
 description: "Więcej informacji o wersji Technical Preview że teraz musisz test-drive nowe funkcje i możliwości w programie System Center Configuration Manager."
 ms.custom: na
-ms.date: 11/17/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: nab
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "157"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 1c09a8566fe309be651cc34f1261bd4fe021e554
-ms.sourcegitcommit: b74c1beaabbb628fdf5d6948fa9a6ad719fd5035
+ms.openlocfilehash: c03581ba5d582d6b86f17c7ec34c3e6e0e8d627e
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="technical-preview-for-system-center-configuration-manager"></a>Wersja zapoznawcza Technical Preview programu System Center Configuration Manager
 
@@ -123,23 +123,30 @@ Poniżej przedstawiono możliwości oferowane w poszczególnych wersjach technic
  |----------------|---------------------|--------------------|
  |Dane telemetryczne systemu Windows 10 dotyczące kondycji urządzeń Analytics systemu Windows<!--1356148 --> | [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md#limit-windows-10-enhanced-telemetry-to-only-send-data-relevant-to-windows-analytics-device-health) |![Nie dodano](media/Red_X.gif)    |
  |Ulepszenia Centrum oprogramowania ikon<!-- 1356194 --> | [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md#software-center-no-longer-distorts-icons-larger-than-250x250) |![Nie dodano](media/Red_X.gif)    |
- |Sprawdź zgodność z Centrum oprogramowania dla tej samej zarządzanych urządzeń<!-- 1356374 -->| [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md#check-compliance-from-software-center-for-co-managed-devices)|![Nie dodano](media/Red_X.gif)    |
+ |Sprawdź zgodność z Centrum oprogramowania dla tej samej zarządzanych urządzeń<!-- 1356374 -->|[Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md#check-compliance-from-software-center-for-co-managed-devices)|![Nie dodano](media/Red_X.gif)    |
  |Ograniczona obsługa certyfikatów CNG<!-- 1356191 -->| [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md#limited-support-for-cng-certificates)|![Nie dodano](media/Red_X.gif)    |
- |Obsługa wykorzystać zabezpieczenia<!--1355468 --> | [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md#support-for-exploit-guard) |![Nie dodano](media/Red_X.gif)    |
- |Ulepszone opisy do czasu ponownego uruchomienia komputera<!-- 1356283  -->| [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md)|![Nie dodano](media/Red_X.gif)    |
- |Zmiany zasad ochrona urządzeń<!-- 1355092  -->| [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md)|![Nie dodano](media/Red_X.gif)    |
- |Konfigurowanie i wdrażanie zasad Guard aplikacji programu Windows Defender<!-- 1351960  -->| [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md)|![Dodaje nie](media/Red_X.gif)    |
+ |Obsługa wykorzystać zabezpieczenia<!--1355468 --> | [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md#support-for-exploit-guard) |[Wersja 1710](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy)    |
+ |Ulepszone opisy do czasu ponownego uruchomienia komputera<!-- 1356283  -->| [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md)|[Wersja 1710](/sccm/core/clients/manage/manage-clients)    |
+ |Zmiany zasad ochrona urządzeń<!-- 1355092  -->| [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md)|[Wersja 1710](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)    |
+ |Konfigurowanie i wdrażanie zasad Guard aplikacji programu Windows Defender<!-- 1351960  -->| [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md)|[Wersja 1710](/sccm/protect/deploy-use/create-deploy-application-guard-policy)    |
+ |Ulepszenia dotyczące wdrażania skryptów programu PowerShell z programu Configuration Manager<!-- 1236459 -->| [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md#improvements-for-deploying-powershell-scripts-from-configuration-manager) | [Wersja 1710](/sccm/apps/deploy-use/create-deploy-scripts)
+
+## <a name="capabilities-delivered-in-previous-technical-previews"></a>Możliwości oferowane w poprzednich wersjach technical Preview
+ Gdy wszystkie funkcje z wersji technical preview są dostępne w minimalna obsługiwana wersja Current Branch, szczegóły dotyczące tej wersji zapoznawczej są usuwane z poniższej tabeli.  
+
+ |Możliwość |Wersji Technical Preview |Bieżącą wersję gałęzi|  
+ |----------------|---------------------|--------------------|
  |VPN udoskonalone środowisko profilu w konsoli programu Configuration Manager<!-- 1313282 --> | [Podgląd techniczna 1709](capabilities-in-technical-preview-1709.md) |![Nie dodano](media/Red_X.gif)    |
- |Jednoczesne zarządzania dla urządzeń z systemem Windows 10|[Podgląd techniczna 1709](capabilities-in-technical-preview-1709.md#co-management-for-windows-10-devices)|![Nie dodano](media/Red_X.gif)    |
- |Ulepszenia określając Parametry skryptu, podczas wdrażania skryptów programu PowerShell z programu Configuration Manager<!-- 1236459 -->|[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#improvements-for-specifying-script-parameters-when-you-deploy-powershell-scripts-from-configuration-manager)|![Nie dodano](media/Red_X.gif)|
+ |Jednoczesne zarządzania dla urządzeń z systemem Windows 10|[Podgląd techniczna 1709](capabilities-in-technical-preview-1709.md#co-management-for-windows-10-devices)|[Wersja 1710](/sccm/core/clients/manage/co-management-overview.md)|
+ |Ulepszenia określając Parametry skryptu, podczas wdrażania skryptów programu PowerShell z programu Configuration Manager<!-- 1236459 -->|[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#improvements-for-specifying-script-parameters-when-you-deploy-powershell-scripts-from-configuration-manager)|[Wersja 1710](/sccm/apps/deploy-use/create-deploy-scripts)|
  |Informacje na temat technologii zarządzania<!-- 1353967 --> |[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#management-insights)|![Nie dodano](media/Red_X.gif)|
- |Uruchom ponownie komputer za pomocą konsoli programu Configuration Manager<!-- 1356283 --> |[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#restart-computers-from-the-configuration-manager-console)|![Nie dodano](media/Red_X.gif)|
+ |Uruchom ponownie komputer za pomocą konsoli programu Configuration Manager<!-- 1356283 --> |[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#restart-computers-from-the-configuration-manager-console)|[Wersja 1710](/sccm/core/clients/manage/manage-clients) |
  |Dostosowywanie Centrum oprogramowania<!-- 1351224 --> |[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#software-center-customization)|![Nie dodano](media/Red_X.gif)|
-|Klient równorzędnej pamięci podręcznej obsługę plików instalacji ekspresowej dla systemu Windows 10 i usługi Office 365|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#client-peer-cache-support-for-express-installation-files-for-windows-10-and-office-365)|![Nie dodano](media/Red_X.gif)|
+|Klient równorzędnej pamięci podręcznej obsługę plików instalacji ekspresowej dla systemu Windows 10 i usługi Office 365|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#client-peer-cache-support-for-express-installation-files-for-windows-10-and-office-365)|[Wersja 1706](/sccm/core/plan-design/hierarchy/client-peer-cache#requirements-and-considerations-for-peer-cache)|
  |Powierzchni urządzenia pulpitu nawigacyjnego|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#surface-device-dashboard)|![Nie dodano](media/Red_X.gif)|
- |Konfigurowanie i wdrażanie zasad Guard aplikacji programu Windows Defender|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#configure-and-deploy-windows-defender-application-guard-policies)|![Nie dodano](media/Red_X.gif)|
- |Dodawanie parametrów podczas wdrażania skryptów programu PowerShell z programu Configuration Manager|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#add-parameters-when-you-deploy-powershell-scripts-from-configuration-manager)|![Nie dodano](media/Red_X.gif)|
- |Nowe ustawienia zasad zarządzania aplikacjami mobilnymi|[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#new-mobile-application-management-policy-settings)|![Nie dodano](media/Red_X.gif)|
+ |Konfigurowanie i wdrażanie zasad Guard aplikacji programu Windows Defender|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#configure-and-deploy-windows-defender-application-guard-policies)|[Wersja 1710](/sccm/protect/deploy-use/create-deploy-application-guard-policy)|
+ |Dodawanie parametrów podczas wdrażania skryptów programu PowerShell z programu Configuration Manager|[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#add-parameters-when-you-deploy-powershell-scripts-from-configuration-manager)|[Wersja 1710](/sccm/apps/deploy-use/create-deploy-scripts)|
+ |Nowe ustawienia zasad zarządzania aplikacjami mobilnymi|[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#new-mobile-application-management-policy-settings)|[Wersja 1710](/sccm/mdm/deploy-use/protect-apps-using-mam-policies#step-3-create-an-application-management-policy)|
  |Grupy granic ulepszone dla punktów aktualizacji oprogramowania|[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#improved-boundary-groups-for-software-update-points)|[Wersja 1706](/sccm/core/servers/deploy/configure/boundary-groups#software-update-points)|
  |Wysoką dostępność roli serwera lokacji|[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#site-server-role-high-availability) |![Nie dodano](media/Red_X.gif)|
  |Obejmują zaufania dla określonych plików i folderów w zasadach ochrony urządzeń|[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#include-trust-for-specific-files-and-folders-in-a-device-guard-policy)|[Wersja 1706](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)|
@@ -148,7 +155,7 @@ Poniżej przedstawiono możliwości oferowane w poszczególnych wersjach technic
  |Ulepszenia ułatwień dostępu |[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#accessibility-improvements)|[Wersja 1706](/sccm/core/understand/accessibility-features)|
  |Pomocy technicznej platformy Azure Kreator usług pod kątem gotowości do uaktualnienia |[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#changes-to-the-azure-services-wizard-to-support-upgrade-readiness)|[Wersja 1706](/sccm/core/servers/deploy/configure/azure-services-wizard)|
  |Nowe ustawienia klienta dla usługi w chmurze|[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#new-client-settings-for-cloud-services)|[Wersja 1706](/sccm/core/clients/deploy/deploy-clients-cmg-azure)|
- |Tworzenie i uruchamianie skryptów programu PowerShell z poziomu konsoli programu Configuration Manager|[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#create-and-run-powershell-scripts-from-the-configuration-manager-console)|[Wersja 1706](/sccm/apps/deploy-use/create-deploy-scripts)|
+ |Tworzenie i uruchamianie skryptów programu PowerShell z poziomu konsoli programu Configuration Manager|[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#create-and-run-powershell-scripts-from-the-configuration-manager-console)|[Wersja 1710](/sccm/apps/deploy-use/create-deploy-scripts)|
  |Obsługa rozruchu środowiska PXE sieci IPv6 |[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#pxe-network-boot-support-for-ipv6)|![Nie dodano](media/Red_X.gif)|
  |Zarządzanie aktualizacjami sterownik Microsoft Surface |[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#manage-microsoft-surface-driver-updates)|[Wersja 1706](/sccm/core/plan-design/changes/whats-new-in-version-1706#manage-microsoft-surface-driver-updates)|
  |Konfigurowanie usługi Windows Update dla zasad wykluczenia biznesowych |[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#configure-windows-update-for-business-deferral-policies)|[Wersja 1706](/sccm/sum/deploy-use/integrate-windows-update-for-business-windows-10#configure-windows-update-for-business-deferral-policies)|
@@ -161,7 +168,7 @@ Poniżej przedstawiono możliwości oferowane w poszczególnych wersjach technic
  |Obsługa Entrust urzędów certyfikacji|[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#support-for-entrust-certification-authorities)|[Wersja 1706](/sccm/mdm/deploy-use/create-pfx-certificate-profiles)|
  |Obsługa Cisco (IPSec) macOS profilów sieci VPN|[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#cisco-ipsec-support-for-macos-vpn-profiles)|[Wersja 1706](/sccm/protect/deploy-use/vpn-profiles)|
  |Nowe możliwości dla usługi Azure AD i zarządzania w chmurze|[Podgląd techniczna 1705](capabilities-in-technical-preview-1705.md#new-capabilities-for-azure-ad-and-cloud-management)|[Wersja 1706](/sccm/core/plan-design/changes/whats-new-in-version-1706#azure-ad-integration-with-configuration-manager)|
- |Konfigurowanie i wdrażanie zasad Guard aplikacji programu Windows Defender|[Podgląd techniczna 1705](capabilities-in-technical-preview-1705.md#configure-and-deploy-windows-defender-application-guard-policies)|![Nie dodano](media/Red_X.gif)|
+ |Konfigurowanie i wdrażanie zasad Guard aplikacji programu Windows Defender|[Podgląd techniczna 1705](capabilities-in-technical-preview-1705.md#configure-and-deploy-windows-defender-application-guard-policies)|[Wersja 1710](/sccm/protect/deploy-use/create-deploy-application-guard-policy)|
  |Narzędzie resetowania aktualizacji  |[Podgląd techniczna 1705](capabilities-in-technical-preview-1705.md#update-reset-tool)|[Wersja 1706](/sccm/core/servers/manage/update-reset-tool)|
  |Obsługa konsoli usługi wysokiej rozdzielczości  |[Podgląd techniczna 1705](capabilities-in-technical-preview-1705.md#high-dpi-console-support)|[Wersja 1706](/sccm/core/plan-design/changes/whats-new-in-version-1706#high-dpi-console-support)|
  |Ulepszenia pamięci podręcznej elementów równorzędnych  |[Podgląd techniczna 1705](capabilities-in-technical-preview-1705.md#peer-cache-improvements) |[Wersja 1706](/sccm/core/plan-design/hierarchy/client-peer-cache#requirements-and-considerations-for-peer-cache)|

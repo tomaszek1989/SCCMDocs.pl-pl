@@ -3,7 +3,7 @@ title: Profile sieci VPN
 titleSuffix: Configuration Manager
 description: "Profile sieci VPN na urządzeniach przenośnych w programie System Center Configuration Manager."
 ms.custom: na
-ms.date: 07/26/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: 40446ce656bd446f890b9b1349ab0b95742cadb8
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: b60a1b9e85b00cbaba54db4ea4cd92a1038c3fcf
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Profile sieci VPN na urządzeniach przenośnych w programie System Center Configuration Manager
 
@@ -71,8 +71,8 @@ Profile sieci VPN w programie System Center Configuration Manager możesz wdraż
 > [!IMPORTANT]
 > Zalecamy zabezpieczenie wszystkich list aplikacji kompilowanych do użytku w konfiguracji sieci VPN dla aplikacji. Jeśli nieautoryzowany użytkownik zmienia się na liście, a następnie zaimportować go do listy aplikacji sieci VPN dla aplikacji, możesz potencjalnie autoryzować dostęp VPN do aplikacji, które nie powinny mieć dostępu. Jednym ze sposobów na zabezpieczenie listy aplikacji jest użycie listy kontroli dostępu (ACL).
 
-
-1.  Na **metodę uwierzytelniania** strona kreatora określ:  
+1. Na **obsługiwane platformy** strony **Kreatora tworzenia profilu sieci VPN**, wybierz systemy operacyjne, na których zostanie zainstalowany profil sieci VPN, lub wybierz **Zaznacz wszystko** Aby zainstalować profil sieci VPN we wszystkich dostępnych systemach operacyjnych.  
+2.  Na **metodę uwierzytelniania** strona kreatora określ:  
 
     -   **Metoda uwierzytelniania**: Wybierz metodę uwierzytelniania, który będzie używany przez połączenie sieci VPN. Dostępne metody są zależne od typu połączenia, jak pokazano w poniższej tabeli.  
 
@@ -112,46 +112,13 @@ Profile sieci VPN w programie System Center Configuration Manager możesz wdraż
 
          Jeśli są obsługiwane przez wersję systemu Windows, który uruchamia Menedżera konfiguracji _i_ autoryzacji wybranej metody, można wybrać **Konfiguruj** aby otworzyć okno dialogowe Właściwości systemu Windows i skonfigurować właściwości metody uwierzytelniania.  Jeśli **Konfiguruj** jest wyłączona, użyj różne sposoby, aby skonfigurować właściwości metody uwierzytelniania.
 
-2.  Na **ustawienia serwera Proxy** strony **Kreatora tworzenia profilu sieci VPN**, sprawdź **Skonfiguruj ustawienia serwera proxy dla tego profilu VPN** pole, jeśli połączenie VPN używa serwera proxy. Następnie podaj serwer proxy informacji o serwerze. Więcej informacji znajduje się w dokumentacji systemu Windows Server.  
+3.  Na **ustawienia serwera Proxy** strony **Kreatora tworzenia profilu sieci VPN**, sprawdź **Skonfiguruj ustawienia serwera proxy dla tego profilu VPN** pole, jeśli połączenie VPN używa serwera proxy. Następnie podaj serwer proxy informacji o serwerze. Więcej informacji znajduje się w dokumentacji systemu Windows Server.  
 
     > [!NOTE]  
     >  Na komputerach Windows 8.1 profilu sieci VPN nie zostanie wyświetlone informacje o serwerze proxy, dopiero po nawiązaniu połączenia z siecią VPN za pomocą tego komputera.  
 
 
-3. Skonfigurować dodatkowe ustawienia DNS (jeśli jest to wymagane).  
- Na **skonfigurować automatyczne połączenie VPN** strony, można skonfigurować następujące elementy:  
-
-    -   **Włącz sieć VPN na żądanie**: Użyj, jeśli chcesz skonfigurować więcej ustawień DNS dla urządzeń Windows Phone 8.1. To ustawienie dotyczy tylko urządzeń systemu Windows Phone 8.1 i powinna być włączona tylko dla profilów sieci VPN, które mają zostać wdrożone na urządzeniach Windows Phone 8.1.
-
-    -   **Lista sufiksów DNS** (tylko urządzenia Windows Phone 8.1): Umożliwia skonfigurowanie, domen, które ustanowią połączenie VPN. Dla każdej domeny, który określisz należy dodać sufiks DNS, adres serwera DNS i jedną z następujących czynności na żądanie:  
-
-        -   **Nigdy nie łącz**: Nigdy nie otwieraj połączenia sieci VPN.  
-
-        -   **Ustanowić w razie potrzeby**: Połączenia sieci VPN należy otwierać tylko, gdy urządzenie musi łączyć się z zasobami.  
-
-        -   **Zawsze łącz**: Zawsze otwieraj połączenie sieci VPN.  
-
-    -   **Scal**: Kopiuje wszystkie sufiksy DNS, które są skonfigurowane pod kątem **liście zaufanych sieci**.  
-
-    -   **Lista zaufanych sieci** (tylko urządzenia Windows Phone 8.1): Wprowadź jeden sufiks DNS w każdym wierszu. Jeśli urządzenie jest w zaufanej sieci, połączenie sieci VPN nie zostanie otwarte.  
-
-    -   **Lista wyszukiwania sufiksów** (tylko urządzenia Windows Phone 8.1): Wprowadź jeden sufiks DNS w każdym wierszu. Wszystkie sufiksy DNS będą wyszukiwane podczas łączenia z witryną sieci Web za pomocą nazwy skróconej.  
-
-     Na przykład Podaj sufiksy DNS, **domena1.contoso.com** i **domena2.contoso.com**, a następnie przejdź do adresu URL **http://mywebsite**. Wyszukane zostaną następujące adresy:  
-
-    -   **http://mojawitryna.domena1.contoso.com**  
-
-    -   **http://mojawitryna.domena2.contoso.com**  
-
-    > [!NOTE]  
-    >  Tylko dla urządzeń z systemem Windows Phone 8.1  
-    >   
-    >  Gdy *Wyślij cały ruch sieciowy przez połączenie sieci VPN* wybrano opcję *i* połączenie sieci VPN korzysta z pełnego tunelowania, połączenie sieci VPN było nawiązywane automatycznie przy użyciu pierwszego profil urządzenia. Aby nawiązać połączenie z innym profilem, Ustaw żądany profil jako domyślny.  
-    >   
-    >  Gdy *Wyślij cały ruch sieciowy przez połączenie sieci VPN* jest opcja *nie* wybranego *i* połączenie sieci VPN korzysta z tunelowania podzielonego, skonfigurowanych tras lub sufiks DNS konkretnego połączenia automatycznego otwierania połączenia sieci VPN.  
-
-
-4. Na **obsługiwane platformy** strony **Kreatora tworzenia profilu sieci VPN**, wybierz systemy operacyjne, na których zostanie zainstalowany profil sieci VPN, lub wybierz **Zaznacz wszystko** Aby zainstalować profil sieci VPN we wszystkich dostępnych systemach operacyjnych.  
+4. Skonfigurować dodatkowe ustawienia DNS (jeśli jest to wymagane).  
 
 5. Zakończ pracę kreatora. **Profilów sieci VPN** w węźle **zasoby i zgodność** obszar roboczy zawiera nowy profil sieci VPN.  
 

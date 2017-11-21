@@ -3,7 +3,7 @@ title: "Ochrona aplikacji przy użyciu zasad zarządzania aplikacjami mobilnymi"
 titleSuffix: Configuration Manager
 description: "Modyfikowanie funkcji wdrażanych aplikacji wdrażanych, spełniają firmowych zgodności i zasady zabezpieczeń."
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 4eedd96fd399cf9577da8069bd0c8d5702f50d7b
-ms.sourcegitcommit: 922d6d9c91ba2158b938df381277be1b5f1d434a
+ms.openlocfilehash: 3365f46026178d30c9bffa5078d251186d0ffba3
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/13/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="protect-apps-using-mobile-application-management-policies-in-system-center-configuration-manager"></a>Ochrona aplikacji przy użyciu zasad zarządzania aplikacjami mobilnymi w programie System Center Configuration Manager
 
@@ -134,6 +134,8 @@ Aby zastosować ograniczenia dla aplikacji, aplikacja musi mieć Microsoft Intun
 |**Ponownie sprawdź wymagania dostępu po (w minutach)**|Określa okres czasu przed sprawdzeniem wymagań dostępu aplikacji po uruchomieniu aplikacji (w **limitu czasu** pól).<br /><br /> W **okres karencji w trybie Offline** pole, jeśli urządzenie jest w trybie offline, określa okres czasu przed sprawdzeniem wymagań dostępu aplikacji.|  
 |**Szyfruj dane aplikacji**|Określa, że wszystkie dane, które jest skojarzone z tą aplikacją jest szyfrowane, w tym dane przechowywane zewnętrznie, takich jak dane przechowywane na kartach SD.<br /><br /> **Szyfrowanie dla systemu iOS**<br /><br /> W przypadku aplikacji, które są skojarzone z zasadami zarządzania aplikacjami mobilnymi programu Configuration Manager dane są szyfrowane w stanie spoczynku za pomocą szyfrowania na poziomie urządzenia, które są dostarczane przez system operacyjny. Ta opcja jest włączona za pomocą zasad numeru PIN urządzenia musi być ustawiony przez administratora IT. Jeśli numer PIN jest wymagany, dane są szyfrowane zgodnie z ustawieniami w zasadach zarządzania aplikacjami mobilnymi. Zgodnie z dokumentacją firmy Apple, [modułów, które są używane przez system iOS 7 są FIPS 140-2 certyfikowanych](http://support.apple.com/en-us/HT202739).<br /><br /> **Szyfrowanie dla systemu Android**<br /><br /> W przypadku aplikacji, które są skojarzone z zasadami zarządzania aplikacjami mobilnymi programu Configuration Manager szyfrowanie jest obsługiwane przez firmę Microsoft. Dane są szyfrowane synchronicznie podczas operacji we/wy na plikach zgodnie z ustawieniem w zasadach zarządzania aplikacjami mobilnymi. Aplikacje zarządzane w systemie Android używają szyfrowania AES-128 w trybie CBC przy użyciu bibliotek kryptografii platformy. Metoda szyfrowania nie ma certyfikatu FIPS 140-2. Zawartość w magazynie urządzenia są zawsze szyfrowane.|  
     |**Zablokuj przechwytywanie ekranu** (tylko urządzenia z systemem Android)|Określa, że możliwości przechwytywania ekranu urządzenia są blokowane podczas korzystania z tej aplikacji.|  
+    |**Wyłącz synchronizację kontaktów**| Począwszy od wersji 1710, ta opcja uniemożliwia aplikacji zapisywania danych do aplikacji natywnej kontaktów na urządzeniu. Jeśli wybierzesz nie, aplikację można zapisać danych do natywnej aplikacji kontaktów na urządzeniu.|  
+    |**Wyłącz drukowanie**| Począwszy od wersji 1710, ta opcja uniemożliwia aplikacji z drukowaniem pracy lub szkoły danych. |  
 
 6)  Na **Managed Browser** wybierz zezwolić managed browser na otwieranie tylko adresów URL na liście lub Blokuj w zarządzanej przeglądarce otwieranie adresów URL na liście, a następnie wybierz pozycję **dalej**.  
 Aby uzyskać więcej informacji, zobacz [Zarządzanie Internetu dostępu za pomocą zasad programu managed browser](manage-internet-access-using-managed-browser-policies.md).  

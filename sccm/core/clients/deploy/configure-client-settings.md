@@ -15,11 +15,11 @@ caps.latest.revision: "5"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 7d63aa43062b331dde993ae5f59f1d2a7e846482
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 20a8f91d10d98542f08e440bcfbc1a6f98a51932
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-configure-client-settings-in-system-center-configuration-manager"></a>Jak skonfigurować ustawienia klienta w programie System Center Configuration Manager
 
@@ -66,6 +66,19 @@ Wdrożenie tych ustawień niestandardowych powoduje, że zastępują one ustawie
 10. Wyświetl kolejność niestandardowego ustawienia klienta, które zostało przed chwilą utworzone. W przypadku wielu niestandardowych ustawień klienta są one stosowanie zgodnie z ich liczbą porządkową. Jeżeli występują konflikty, ustawienie o najniższej liczbie porządkowej zastępuje pozostałe ustawienia. Aby zmienić liczbę porządkową, na **Home** karcie **ustawień klienta** grupy, wybierz **Przenieś element w górę** lub **Przenieś element w dół**.  
 
  Klienci zostaną skonfigurowani przy użyciu tych ustawień podczas następnego pobierania zasad klienta. Aby zainicjować pobieranie zasad dla jednego klienta, zobacz [inicjowanie pobierania zasad dla klienta programu Configuration Manager](../../../core/clients/manage/manage-clients.md#BKMK_PolicyRetrieval) w [jak zarządzać klientami w programie System Center Configuration Manager](../../../core/clients/manage/manage-clients.md).  
+
+## <a name="limit-windows-10-enhanced-telemetry-to-only-send-data-relevant-to-windows-analytics-device-health"></a>Ogranicz rozszerzony systemu Windows 10 telemetrię, aby wysyłać dane tylko istotne dla kondycji urządzenia Analytics systemu Windows
+<!-- 1356148 -->
+
+Aktualizacja 1710, można ustawić zbieranie danych telemetrii systemu Windows 10 do poziomu **rozszerzony (ograniczony)**. To ustawienie umożliwia uzyskania przydatnych wyników informacje na temat urządzeń w środowisku bez urządzenia podlegające wszystkie dane w **rozszerzony** telemetrii poziomu z systemem Windows 10 w wersji 1709 lub nowszej.
+
+Poziom telemetria rozszerzony (ograniczony) zawiera metryki z poziomu podstawowego, jak również podzbiór danych zbieranych z **rozszerzony** poziom zastosowanie w module analiz systemu Windows. Aby uzyskać więcej informacji dotyczących poziomów telemetrii, zobacz [poziomy Telemetrii](https://docs.microsoft.com/windows/configuration/configure-windows-telemetry-in-your-organization#telemetry-levels).
+
+1.  W konsoli programu Configuration Manager wybierz **administracji** > **ustawień klienta** > **domyślne ustawienia klienta**.  
+
+2.  Na **Home** , wybierz pozycję **właściwości**.  
+
+3.  Otwórz **usługi w chmurze**i ustaw telemetrii systemu Windows 10 **rozszerzony**.
 
 ##  <a name="view-client-settings"></a>Wyświetl ustawienia klienta  
  Jeśli do tego samego urządzenia, użytkownika lub grupy użytkowników wdrożono wiele ustawień klienta, ustalanie i łączenie priorytetów może być skomplikowane. Aby wyświetlić ustawienia klienta:  

@@ -3,7 +3,7 @@ title: "Obsługa systemu Windows 10"
 titleSuffix: Configuration Manager
 description: "Informacje o wersji systemu Windows 10, które są obsługiwane jako klienci i dla wdrożenia systemu operacyjnego w programie System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/11/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "5"
 author: brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 8ce7230a3aa64b78937b305fee4dc8e3f38abead
-ms.sourcegitcommit: f9c38b87fcd543ab8a5d7a7f446b42fd3e55450c
+ms.openlocfilehash: aae4a3d504ea5dad901a6248cb219aff7a03b585
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/19/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="support-for-windows-10-for-system-center-configuration-manager"></a>Obsługa systemu Windows 10 dla programu System Center Configuration Manager  
 
@@ -38,13 +38,13 @@ Na przykład wersji programu Configuration Manager spowoduje porzucenie macierzy
 -   Następujące dodatkowe informacje o [obsługiwane systemy operacyjne dla klientów i urządzeń](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices).
 -   Jeśli używasz długoterminowe obsługi gałęzi programu Configuration Manager, zobacz [obsługiwane konfiguracje dla gałęzi obsługi długoterminowe](/sccm/core/understand/supported-configurations-for-ltsb).
 
-|Wersja systemu Windows 10                    |Menedżer konfiguracji 1610          |    Menedżer konfiguracji 1702          |    Menedżer konfiguracji 1706 |
+|Wersja systemu Windows 10                    |  Menedżer konfiguracji 1702          |    Menedżer konfiguracji 1706 |Menedżer konfiguracji 1710          |  
 |---------------------|-----|-----|-----|
-|Enterprise 2015 LTSB                   |![Obsługiwane](media/green_check.png) |![Obsługiwane](media/green_check.png) |![Obsługiwane](media/green_check.png) |
-|Enterprise 2016 LTSB                   |![Obsługiwane](media/green_check.png) |![Obsługiwane](media/green_check.png) |![Obsługiwane](media/green_check.png) |
+|Enterprise 2015 LTSB                   |![Obsługiwane](media/green_check.png) |![Obsługiwane](media/green_check.png) | ![Obsługiwane](media/green_check.png) |
+|Enterprise 2016 LTSB                   |![Obsługiwane](media/green_check.png) |![Obsługiwane](media/green_check.png) | ![Obsługiwane](media/green_check.png) |
 |1607   <br />(Znanej także jako aktualizacja rocznicy)<br />(*Zobacz wersje*)   |![Obsługiwane](media/green_check.png) |![Obsługiwane](media/green_check.png)            |![Obsługiwane](media/green_check.png) |
-|1703   <br />(Znanej także jako aktualizacja twórców)<br />(*Zobacz wersje*)      |![Nieobsługiwane](media/Red_X.png)   |![Wstecznie zgodne](media/blue_compat.png) |![Obsługiwane](media/green_check.png) |
-|1709   <br />(Znanej także jako aktualizacja twórców spadek)<br />(*Zobacz wersje*) |![Nieobsługiwane](media/Red_X.png)   |![Nieobsługiwane](media/Red_X.png)   |![Wstecznie zgodne](media/blue_compat.png) |
+|1703   <br />(Znanej także jako aktualizacja twórców)<br />(*Zobacz wersje*)      |![Wstecznie zgodne](media/blue_compat.png) |![Obsługiwane](media/green_check.png) | ![Obsługiwane](media/green_check.png) |
+|1709   <br />(Znanej także jako aktualizacja twórców spadek)<br />(*Zobacz wersje*) |![Nieobsługiwane](media/Red_X.png)   |![Wstecznie zgodne](media/blue_compat.png) | ![Obsługiwane](media/green_check.png) |
 
 
 
@@ -62,11 +62,11 @@ Podczas wdrażania systemów operacyjnych w programie Configuration Manager [zes
 
 Następująca tabela zawiera listę wersji zestawu Windows 10 ADK korzystające z różnymi wersjami programu Configuration Manager.
 
-|Wersja zestawu Windows 10 ADK  |Menedżer konfiguracji 1610 |Menedżer konfiguracji 1702   |Menedżer konfiguracji 1706 |
+|Wersja zestawu Windows 10 ADK  |Menedżer konfiguracji 1702   |Menedżer konfiguracji 1706 |Menedżer konfiguracji 1710 |
 |--------------------|-----|-----|-----|
-|1607  |![Obsługiwane](media/green_check.png)           |![Wstecznie zgodne](media/blue_compat.png) |![Nieobsługiwane](media/Red_X.png)|
-|1703  |![Nieobsługiwane](media/Red_X.png)             |![Obsługiwane](media/green_check.png)            |![Obsługiwane](media/green_check.png) |  
-|1709  |![Nieobsługiwane](media/Red_X.png)             |![Nieobsługiwane](media/Red_X.png)              |![Obsługiwane](media/green_check.png) |  
+|1607  |![Wstecznie zgodne](media/blue_compat.png) |![Nieobsługiwane](media/Red_X.png)| ![Nieobsługiwane](media/Red_X.png) |
+|1703  |![Obsługiwane](media/green_check.png)            |![Obsługiwane](media/green_check.png) | ![Wstecznie zgodne](media/blue_compat.png)|
+|1709  |![Nieobsługiwane](media/Red_X.png)              |![Obsługiwane](media/green_check.png) | ![Obsługiwane](media/green_check.png)|
 
 |Klucz|
 |--|

@@ -6,17 +6,17 @@ keywords:
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.date: 10/04/2017
+ms.date: 11/20/2017
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: 5ddde4e6-d553-4182-b752-6bc8b4a26745
-ms.openlocfilehash: 7e12cc7deeb86ebd222e0acd02e570d32b7518d3
-ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
+ms.openlocfilehash: f36ff74b794e57b51742c40d10bd25a9cb4a13a5
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 11/21/2017
 ---
 #  <a name="configure-classifications-and-products-to-synchronize"></a>Konfigurowanie klasyfikacji i produktów do synchronizacji  
 
@@ -55,7 +55,7 @@ ms.lasthandoff: 11/17/2017
     > [!NOTE]    
     > Począwszy od programu Configuration Manager 1706 wersji, można wybrać **obejmują Microsoft Surface sterowniki i aktualizacje oprogramowania układowego** pole wyboru, aby zsynchronizować Microsoft Surface sterowniki. Wszystkich punktów aktualizacji oprogramowania, należy uruchomić system Windows Server 2016 do pomyślnej synchronizacji powierzchni sterowniki. Po włączeniu punktu aktualizacji oprogramowania na komputerze z systemem Windows Server 2012, po włączeniu powierzchni sterowniki nie są dokładne wyniki skanowania aktualizacji sterownika. Powoduje to dane zgodności niepoprawne wyświetlana w konsoli programu Configuration Manager i w raportach programu Configuration Manager.  
     > 
-    > Funkcje wersji wstępnej są funkcje, które znajdują się w bieżącej gałęzi do wczesnego testowania w środowisku produkcyjnym. Te funkcje są w pełni obsługiwane, ale są nadal w fazie projektowania active i może odbierać zmiany, dopóki ich wychodzenia z kategorii wersji wstępnej. Włącz tę funkcję dla powinna być dostępna. Aby uzyskać więcej informacji, zobacz sekcję dotyczącą [używania funkcji w wersjach wstępnych z poziomu aktualizacji](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
+    > **Obejmują Microsoft Surface sterowniki i aktualizacje oprogramowania układowego** pole wyboru jest zawsze dostępna w 1710 wersji programu Configuration Manager. Jednak jest to funkcja wersji wstępnej w 1706 wersji programu Configuration Manager i musi włączyć mają być dostępne. Funkcje wersji wstępnej są funkcje, które znajdują się w bieżącej gałęzi do wczesnego testowania w środowisku produkcyjnym. Te funkcje są w pełni obsługiwane, ale są nadal w fazie projektowania active i może odbierać zmiany, dopóki ich wychodzenia z kategorii wersji wstępnej. Aby uzyskać więcej informacji, zobacz sekcję dotyczącą [używania funkcji w wersjach wstępnych z poziomu aktualizacji](https://docs.microsoft.com/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease).
 
 5.  Na karcie **Produkty** określ produkty, w ramach których mają zostać zsynchronizowane aktualizacje oprogramowania, a następnie kliknij przycisk **Zamknij**.  
 

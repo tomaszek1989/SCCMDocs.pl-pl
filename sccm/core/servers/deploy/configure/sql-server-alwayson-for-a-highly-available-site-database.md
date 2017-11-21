@@ -3,7 +3,7 @@ title: "Opcja Zawsze włączone programu SQL Server"
 titleSuffix: Configuration Manager
 description: "Zaplanuj użycie programu SQL Server zawsze w grupie dostępności wraz z programem SCCM."
 ms.custom: na
-ms.date: 09/22/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "16"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 24eaa33f1f9b333894817f089149e2cbed35df75
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 93aec5773f56ad28950ae75db54739d04124794f
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Przygotowanie do korzystania z programu SQL Server zawsze włączonych grup dostępności z programu Configuration Manager
 
@@ -216,6 +216,11 @@ Następujące ograniczenia mają zastosowanie do wszystkich scenariuszy.
   Programu Microsoft SQL Server 2016 Standard edition [grup dostępności podstawowe](https://msdn.microsoft.com/library/mt614935.aspx) nie obsługuje dostęp do odczytu replikach pomocniczych, wymagane do użytku z programem Configuration Manager.
 - **Wystąpienia klastra trybu failover**  
   [Wystąpienia klastra trybu failover](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server) nie są obsługiwane dla repliki używane z programem Configuration Manager.
+
+- **MultiSubnetFailover**    
+    Nie jest obsługiwane używanie grupy dostępności w konfiguracji wielu podsieci lub [MutliSubnetFailover](/sql/database-engine/availability-groups/windows/create-or-configure-an-availability-group-listener-sql-server#MultiSubnetFailover) — słowo kluczowe parametrów połączenia.
+
+
 
 **Serwerami SQL, które zawierają grupy dostępności dodatkowe:**   
 Przed 1610 wersji programu Configuration Manager gdy grupy dostępności na hostach programu SQL Server, co najmniej jedną grupę dostępności, oprócz używanego programu Configuration Manager, każdej repliki w każdej z tych grup dostępności dodatkowe grupy musi mieć następującą konfigurację ustawione w czasie uruchamiania Instalatora programu Configuration Manager lub instalowania aktualizacji programu Configuration Manager:

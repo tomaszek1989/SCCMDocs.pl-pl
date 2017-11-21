@@ -3,7 +3,7 @@ title: "Usługa Site recovery"
 titleSuffix: Configuration Manager
 description: "Dowiedz się odzyskać witryn w programie System Center Configuration Manager."
 ms.custom: na
-ms.date: 6/5/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision:
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 96785ea5abcb4ae67952ad8243c36bf6b238daca
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 497860c9b5698271d7ca6e4683e99350100f596f
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 #  <a name="recover-a-configuration-manager-site"></a>Odzyskiwanie lokacji programu Configuration Manager
 
@@ -30,6 +30,12 @@ Uruchom odzyskiwanie lokacji programu Configuration Manager po awarii lokacji pr
 Sekcje w tym temacie ułatwiają odzyskiwanie lokacji programu Configuration Manager. Aby utworzyć kopię zapasową, zobacz [kopii zapasowej programu Configuration Manager](/sccm/protect/understand/backup-and-recovery).
 
 ## <a name="considerations-before-recovering-a-site"></a>Zagadnienia dotyczące przed odzyskaniem lokacji
+> [!Important]  
+> Te informacje dotyczą tylko scenariusze odzyskiwania lokacji.  Jeśli uaktualniasz infrastrukturę lokalną i nie są aktywnie odzyskiwanie lokacji nie powiodło się, zapoznaj się z informacjami w następujących tematach:
+> - [Uaktualnianie infrastruktury lokalnej](/sccm/core/servers/manage/upgrade-on-premises-infrastructure)
+> - [Modyfikowanie infrastruktury](/sccm/core/servers/manage/modify-your-infrastructure)
+
+
 **Należy użyć tej samej wersji i wydania programu SQL Server:** Na przykład przywracanie bazy danych uruchamianej w programie SQL Server 2014 do programu SQL Server 2016 nie jest obsługiwane. Podobnie Przywracanie bazy danych lokacji uruchamianej w wersji Standard programu SQL Server 2016 do wersji Enterprise programu SQL Server 2016 nie jest obsługiwane.
 -   Program SQL Server nie może działać w **trybie jednego użytkownika**.
 -   Upewnij się, że pliki MDF i LDF są prawidłowe. W przypadku odzyskiwania lokacji nie ma żadnych sprawdzenia stanu przywracanych plików.
@@ -124,7 +130,7 @@ Po przywróceniu bazy danych lokacji z kopii zapasowej programu Configuration Ma
 Aby odzyskać serwer lokacji i bazę danych lokacji, należy użyć jednej z poniższych procedur.
 
 ### <a name="to-start-a-site-recovery-in-the-setup-wizard"></a>Aby rozpocząć odzyskiwanie lokacji w Kreatorze instalacji:
-1.  Kopiuj [dysku CD. Najnowszy folder](/sccm/core/servers/manage/the-cd.latest-folde) do lokalizacji poza folderem instalacji programu Configuration Manager.
+1.  Kopiuj [dysku CD. Najnowszy folder](/sccm/core/servers/manage/the-cd.latest-folder) do lokalizacji poza folderem instalacji programu Configuration Manager.
 Z kopii dysku CD. Najnowszy folder, uruchom Kreatora instalacji programu Configuration Manager.
 
 2.  Na stronie **Wprowadzenie** wybierz opcję **Odzyskaj lokację**, a następnie kliknij przycisk **Dalej**.

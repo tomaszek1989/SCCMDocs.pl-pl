@@ -3,7 +3,7 @@ title: "Klient równorzędnej pamięci podręcznej"
 titleSuffix: Configuration Manager
 description: "Używanie równorzędnej pamięci podręcznej dla lokalizacji źródła zawartości klienta podczas wdrażania zawartości w programie System Center Configuration Manager."
 ms.custom: na
-ms.date: 7/31/2017
+ms.date: 11/20/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -15,11 +15,11 @@ caps.latest.revision: "3"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 20438f51a67fb29da21c879620870caf3328121d
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 2bf8f0e5a2636ffd92f8ba1898cc4f1b250f925f
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Buforowania równorzędnego klientów programu Configuration Manager
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 10/12/2017
 W programie System Center Configuration Manager wersji 1610, można użyć **równorzędnej pamięci podręcznej** pomagające w zarządzaniu wdrażaniem zawartości dla klientów w lokalizacjach zdalnych. Równorzędna pamięć podręczna jest wbudowanego rozwiązania programu Configuration Manager, która umożliwia klientom na współużytkowanie zawartości z innymi klientami bezpośrednio z lokalnej pamięci podręcznej.   
 
 > [!TIP]  
-> Wprowadzonym w wersji 1610, równorzędnej pamięci podręcznej i pulpit nawigacyjny źródła danych klienta są funkcje wersji wstępnej. Aby je włączyć, zobacz [korzystanie z funkcji wersji wstępnej aktualizacje](/sccm/core/servers/manage/pre-release-features).
+> Ta funkcja została wprowadzona w wersji 1610 jako [funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features). Począwszy od wersji 1710, ta funkcja nie jest już funkcji wersji wstępnej.
 
 ## <a name="overview"></a>Omówienie
 Klient równorzędnej pamięci podręcznej jest możliwość używania równorzędnej pamięci podręcznej klienta programu Configuration Manager. Równorzędnej pamięci podręcznej, który klient, który ma on zawartości mogą udostępniać dodatkowe klientach jest źródłem równorzędnej pamięci podręcznej.

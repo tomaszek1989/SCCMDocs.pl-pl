@@ -3,7 +3,7 @@ title: "Planowanie i konfigurowanie zarządzania aplikacjami"
 titleSuffix: Configuration Manager
 description: "Wdrożenie oraz skonfigurować zależności niezbędne do wdrażania aplikacji w programie System Center Configuration Manager."
 ms.custom: na
-ms.date: 02/09/2017
+ms.date: 11/07/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "13"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 66317bea84adbddf2d2e94c30a4a72e19229439b
-ms.sourcegitcommit: 18ac58374d2d513fe2a197c80f7c8c6890a7d612
+ms.openlocfilehash: cd06d3ee2ea14c9ff1b9cf09980c2b25a5263db9
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/16/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="plan-for-and-configure-application-management-in-system-center-configuration-manager"></a>Planowanie konfiguracji zarządzania aplikacjami w programie System Center Configuration Manager i przeprowadzanie konfiguracji
 
@@ -185,6 +185,26 @@ Znakowanie niestandardowych w programie Software Center jest stosowane zgodnie z
 1. Jeśli nie zainstalowano roli serwera lokacji punktu witryny sieci Web katalogu aplikacji, a następnie Centrum oprogramowania będzie wyświetlana nazwa organizacji określona w **Agent komputera** ustawienia klienta **nazwa organizacji** wyświetlana w Centrum oprogramowania. Aby uzyskać instrukcje, zobacz [sposób konfigurowania ustawień klienta](https://docs.microsoft.com/sccm/core/clients/deploy/configure-client-settings).
 2. Po zainstalowaniu roli serwera lokacji punktu witryny sieci Web katalogu aplikacji, Centrum oprogramowania będzie wyświetlana nazwa organizacji i kolor określone we właściwościach roli serwera lokacji katalogu aplikacji witryny sieci Web punktu. Aby uzyskać więcej informacji, zobacz [opcji konfiguracji dla punktu witryny sieci Web katalogu aplikacji](https://docs.microsoft.com/sccm/core/servers/deploy/configure/configuration-options-for-site-system-roles#BKMK_ApplicationCatalog_Website).
 3. Jeśli subskrypcję Microsoft Intune jest skonfigurowana i połączona do programu Configuration Manager, Centrum oprogramowania będzie wyświetlana nazwa organizacji, kolor i logo firmy określone we właściwościach subskrypcji usługi Intune. Aby uzyskać więcej informacji, zobacz [Konfigurowanie subskrypcji usługi Microsoft Intune](https://docs.microsoft.com/sccm/mdm/deploy-use/setup-hybrid-mdm#step-3-configure-intune-subscription).
+
+#### <a name="to-manually-set-software-center-branding"></a>Aby ręcznie ustawić znakowania programu Software Center
+<!-- 1351224 -->
+Wraz z wydaniem 1710 można ręcznie dodać znakowanie elementów przedsiębiorstwa i określ widoczność karty w Centrum oprogramowania. Można dodać nazwę firmy określonego programu Software Center, ustawić motyw kolorów konfiguracji programu Software Center, ustawienie logo firmy i ustawienie kartach widoczny na urządzeniach klienckich.
+
+1. W **programu Configuration Manager** konsoli, wybierz **administracji** > **ustawień klienta**. Polecenie wystąpienia ustawienie żądaną klienta.
+2. Na **Home** karcie **właściwości** grupy, wybierz **właściwości**.
+3. W **ustawienia domyślne** oknie dialogowym wybierz **Centrum oprogramowania**.
+4. Wybierz **tak** do **wybierz nowe ustawienia, aby określić informacje o firmie** Aby włączyć ustawienia dostosowywania Centrum oprogramowania.
+5. Typ użytkownika **nazwa firmy**.
+6. Wybierz użytkownika **schemat w programie Software Center kolorów**.
+7. Kliknij przycisk **Przeglądaj** można przejść do logo w programie Software Center. Logo musi być formatem JPEG lub PNG 400 x 100 pikseli o maksymalnym rozmiarze 750 KB.
+8. Wybierz **tak** uwidocznić karty w Centrum oprogramowania na urządzeniach klienckich. Co najmniej jedną kartę musi być widoczny:
+
+    -  Włącz kartę aplikacje
+    -  Włącz kartę Aktualizacje
+    -  Włącz kartę systemów operacyjnych
+    -  Włącz kartę Stan instalacji
+    -  Włącz kartę zgodności urządzenia
+    -  Włącz kartę Opcje
 
 > [!IMPORTANT]  
 >  Znakowanie Centrum oprogramowania są synchronizowane z usługą Intune na 14 dni. W związku z tym może wystąpić opóźnienie przed zmiany wprowadzone w usłudze Intune są wyświetlane w programie Configuration Manager.

@@ -3,7 +3,7 @@ title: "Bieżące wersje gałęzi"
 titleSuffix: Configuration Manager
 description: "Przejrzyj Historia wersji programu System Center Configuration Manager, a więcej informacji na temat usług oferowanych w fazach."
 ms.custom: na
-ms.date: 7/31/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,32 +16,37 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: noindex,nofollow
-ms.openlocfilehash: 3907a8f764ddd4dcea992875d0181b93d4760b42
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 628c01d3f746155076e5bab68a38c0a50c73697d
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="support-for-system-center-configuration-manager-current-branch-versions"></a>Obsługa bieżących wersji gałęzi programu System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Firma Microsoft planuje aktualizacje dla bieżącej gałęzi programu System Center Configuration Manager kilka razy w roku. Każda wersja aktualizacji pozostaje w pomocy technicznej przez 12 miesięcy od daty wersji ogólnodostępnej (GA). Pomoc techniczna jest dostępna dla całego 12 miesięcy. Jednak naszych struktury obsługi jest teraz dynamiczne zmieniających się na dwa różne etapy obsługi zależne od dostępności najnowszej wersji bieżącej gałęzi.  
+Firma Microsoft planuje aktualizacje dla bieżącej gałęzi programu System Center Configuration Manager kilka razy w roku. W wersji programu Configuration Manager wydane przed 1710 pomocy technicznej jest za 12 miesięcy. Począwszy od wersji 1710 każdej wersji aktualizacji pozostaje w obsługę 18 miesięcy od daty wersji ogólnodostępnej (GA). Pomoc techniczna jest dostępna dla całego okresu pomocy technicznej. Jednak naszych struktury obsługi jest dynamiczny, zmieniające się na dwa różne etapy obsługi zależne od dostępności najnowszej wersji bieżącej gałęzi.  
 
 -   Aktualizacje zabezpieczeń i krytyczne obsługi fazy — gdy z najnowszą wersją bieżącej gałęzi programu Configuration Manager, pojawi się zarówno zabezpieczeń i aktualizacje krytyczne.  
 
--   Aktualizacje zabezpieczeń (tylko) obsługi fazy — po zwalnia nowej wersji bieżącej gałęzi, obsługa starszych gałęzie zmniejszy się do aktualizacji tylko do końca cyklu pomocy technicznej 12-miesięczny (pokazano na rysunku 1).  
+-   Aktualizacje zabezpieczeń (tylko) obsługi fazy — po wydaniu nowej wersji gałęzi bieżący, obsługa starszych gałęzie zmniejsza z aktualizacjami zabezpieczeń tylko w pozostałej części które wersje obsługują cyklu życia (pokazano na rysunku 1).  
 
- ![CM &#95; Obsługa &#95; Obsługa &#95; osi czasu](../../../core/servers/manage/media/CM_Servicing_support_timeline.png "CM_Servicing_support_timeline")  
-Rysunek 1. Przykład nakładanie się cyklu wersji current Branch obsługi pomocy technicznej.
+ ![CM &#95; Obsługa &#95; Obsługa &#95; osi czasu](media/CM_Servicing_support_timeline1.png "CM_Servicing_support_timeline")  
+Rysunek 1. Przykład nakładanie się cyklu wersji current Branch obsługi pomocy technicznej. W tym przykładzie jest ilustracyjną cyklu, a nie reprezentuje dat rzeczywistych lub oczekiwanej wersji.
 
 > [!NOTE]  
->  Najnowszą wersję bieżącej gałęzi jest zawsze zabezpieczeń i aktualizacje krytyczne obsługi fazy. Oznacza to, że w przypadku, gdy wystąpią defektu kodu, która aktualizacji krytycznych, musi mieć bieżącej gałęzi zainstalowaną najnowszą wersję aby otrzymać poprawkę. Wszystkie inne obsługiwane bieżącej gałęzi wersje mogą otrzymywać tylko aktualizacje zabezpieczeń. Wszystkie obsługują kończy się po wygaśnięciu cykl 12 miesięcy dla bieżącej wersji gałęzi. W tym czasie klienci muszą zaktualizować do obsługiwanej wersji bieżącej gałęzi.  
+>  Najnowszą wersję bieżącej gałęzi jest zawsze zabezpieczeń i aktualizacje krytyczne obsługi fazy. To stwierdzenie oznacza, że jeśli wystąpią defektu kodu, która aktualizacji krytycznych, musi mieć bieżącej gałęzi zainstalowaną najnowszą wersję aby otrzymać poprawkę. Wszystkie inne obsługiwane bieżącej gałęzi wersje mogą otrzymywać tylko aktualizacje zabezpieczeń.
+> - Dla wersji 1710 i nowsze wszystkie obsługują kończy się po wygaśnięciu cykl 18 miesięcy dla bieżącej wersji gałęzi.
+> - Wersje przed 1710 obsługuje kończy się po wygaśnięciu 12-miesięczny użytkowania.
+
+> Firma Microsoft zaleca zaktualizowaniu wdrożenia programu Configuration Manager do najnowszej wersji przed pomocy technicznej dla wersji bieżącej wygasa.
 
  **Historia wersji**  
 
 |Wersja|Data udostępnienia|Data zakończenia wsparcia|  
 |-------------|-----------------------|----------------------|  
+|1710|20 listopada 2017 r.|20 listopada 2018|
 |1706|31 lipca 2017 r.|31 lipca 2018|
 |1702|27 marca 2017 r.|27 marca 2018|
 |1610|18 listopada 2016 r.|18 listopada 2017 r.|
@@ -52,4 +57,4 @@ Rysunek 1. Przykład nakładanie się cyklu wersji current Branch obsługi pomoc
 
 
 
-Aby uzyskać informacje o dostępności aktualizacji w konsoli lub linii bazowej i numery wersji, zobacz [wersje linii bazowej i aktualizacji](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions).
+Uzyskać informacje dotyczące numerów wersji i dostępności jako aktualizacja w konsoli lub jako linii bazowej, zobacz [wersje linii bazowej i aktualizacji](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions).

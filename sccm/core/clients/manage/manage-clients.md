@@ -3,7 +3,7 @@ title: "Zarządzanie klientami"
 titleSuffix: Configuration Manager
 description: "Dowiedz się, jak zarządzać klientami w programie System Center Configuration Manager."
 ms.custom: na
-ms.date: 04/23/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "17"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: d62138f573745a16634e06aeb9301a248f707cae
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: ae1bc53cf15b2a1746656667f7bf546742432c11
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>Jak zarządzać klientami w programie System Center Configuration Manager
 
@@ -51,7 +51,7 @@ Należy zauważyć, że w zależności od typu urządzenia, niektóre z tych opc
     -   **Dodanie urządzenia do nowej lub istniejącej kolekcji**  
 
          Urządzenia można dodać do kolekcji przy użyciu reguły bezpośredniej.  
-         
+
     -   **Instalacja i ponowna instalacja klienta za pomocą kreatora wypychania klienta**  
 
          Instalację i ponowną instalację klienta programu Configuration Manager w celu jego naprawy lub ponownej konfiguracji na komputerach z systemem Windows. Zawiera opcje konfiguracji lokacji i właściwości pliku client.msi, które można ustawić dla instalacji wypychanej klienta.  
@@ -185,6 +185,21 @@ Należy zauważyć, że w zależności od typu urządzenia, niektóre z tych opc
 
          Zadania powiadamiania klientów są wyświetlane w węźle **Operacje klienta** w obszarze roboczym **Monitorowanie** .  
 
+
+## <a name="restart-clients"></a>Uruchom ponownie klientów
+Począwszy od wersji 1710, można użyć konsoli programu Configuration Manager do identyfikowania urządzenia klienckie, które wymagają ponownego uruchomienia a następnie użyć akcji powiadamiania klienta uruchomić je ponownie.
+
+Aby zidentyfikować urządzenia, które oczekują na ponowne uruchomienie komputera, przejdź do **zasoby i zgodność** > **urządzeń** i wybrać odpowiednią kolekcję z urządzeniami, które mogą wymagać ponownego uruchomienia komputera. Po wybraniu kolekcji można wyświetlić stan dla każdego urządzenia w okienku szczegółów w nowej kolumnie o nazwie **oczekujące ponowne uruchomienie**. Każde urządzenie ma wartość **tak**, lub **nr**.
+
+**Aby utworzyć powiadomienie klienta, aby ponownie uruchomić urządzenie:**
+1.  Znajdź urządzenie, którego chcesz ponownie uruchomić komputer w węźle urządzenia w konsoli.
+2.  Kliknij prawym przyciskiem myszy na urządzeniu, wybierz opcję **powiadomienie klienta**, a następnie wybierz **ponownego uruchomienia**. Spowoduje to otwarcie okna informacje o ponownym uruchomieniu. Kliknij przycisk **OK** o potwierdzenie żądania ponownego uruchomienia.
+
+Po otrzymaniu powiadomienia przez klienta, **Centrum oprogramowania** zostanie otwarte okno powiadomienia informują użytkownika o ponowne uruchomienie. Domyślnie uruchomiony ponownie po upływie 90 minut. Można zmodyfikować czas ponownego uruchamiania, konfigurując [ustawień klienta](/sccm/core/clients/deploy/configure-client-settings). Ustawienia zachowania ponownego uruchamiania znajdują się na [ponownego uruchomienia komputera](/sccm/core/clients/deploy/about-client-settings#computer-restart) karta Ustawienia domyślne.
+
+
+
+
 ##  <a name="BKMK_ClientCache"></a> Konfiguracja pamięci podręcznej klienta w klientach programu Configuration Manager  
 Pamięci podręcznej klienta są przechowywane pliki tymczasowe dla instalowania klientów, aplikacje i programy. Choć aktualizacje oprogramowania również używają pamięci podręcznej klienta, to nie są ograniczone jej rozmiarem i zawsze będą do niej pobierane. Można skonfigurować ustawienia pamięci podręcznej klienta, takich jak rozmiar i położenie, po zainstalowaniu klienta programu Configuration Manager ręcznie, korzystając z instalacji wypychanej klienta lub po zainstalowaniu klienta.
 
@@ -257,8 +272,8 @@ Aby uzyskać więcej informacji o sposobie używania tych właściwości wiersza
 5.  Aby usunąć pliki w folderze pamięci podręcznej, wybierz pozycję **Usuń pliki**.  
 
     > [!NOTE]
-    > 
-    > Folder pamięci podręcznej jest regularne folderze systemu Windows, co umożliwia automatyzację usunięcie zawartości folderu za pomocą skryptu, narzędzia, lub za pomocą polecenia cmdlet programu PowerShell `Remove-Item`. 
+    >
+    > Folder pamięci podręcznej jest regularne folderze systemu Windows, co umożliwia automatyzację usunięcie zawartości folderu za pomocą skryptu, narzędzia, lub za pomocą polecenia cmdlet programu PowerShell `Remove-Item`.
 
 
 ### <a name="to-configure-client-cache-size-in-client-settings"></a>Aby skonfigurować rozmiar pamięci podręcznej klienta w ustawieniach klienta
@@ -273,6 +288,8 @@ Począwszy od wersji 1606, można dostosować rozmiar folderu pamięci podręczn
  3. Wybierz **ustawienia pamięci podręcznej klienta** i wybierz polecenie **tak** dla **skonfiguruj rozmiar pamięci podręcznej klienta**, następnie użyć **MB** lub **odsetek ustawień dysku**. Rozmiar pamięci podręcznej jest dostosowywany do mniejszego z tych rozmiarów.
 
      Klient programu Configuration Manager skonfiguruje rozmiar pamięci podręcznej za pomocą tych ustawień podczas następnego pobierania zasad klienta.
+
+
 
 ##  <a name="BKMK_UninstalClient"></a> Dezinstalacja klienta programu Configuration Manager  
  Można odinstalować oprogramowanie klienckie programu Configuration Manager systemu Windows z komputera przy użyciu **CCMSetup.exe** z **/Uninstall** właściwości. Uruchom program CCMSetup.exe z komputera z wiersza polecenia lub wdróż pakiet i program dezinstalacji klienta z kolekcji komputerów.  
@@ -331,7 +348,7 @@ Począwszy od 1610 wersji programu Configuration Manager, musisz podać listę i
 Możesz zainicjować pobieranie zasad przy użyciu opcji:
 
 
-- [Powiadomienie klienta](#initiate-client-policy-retrieval-using-client-notification) 
+- [Powiadomienie klienta](#initiate-client-policy-retrieval-using-client-notification)
 - [**Akcje** kartę na kliencie](#manually-initiate-client-policy-retrieval-on-the-actions-tab-of-the-configuration-manager-client)
 - [Skrypt](#manually-initiate-client-policy-retrieval-by-script)
 

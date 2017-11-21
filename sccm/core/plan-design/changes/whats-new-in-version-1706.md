@@ -13,11 +13,11 @@ ms.assetid: ac034143-003e-4629-aac2-99eaffef4db1
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 9b3248f30470ee8250efcbf171642ea476627d68
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 2889de0709096aa481ca6203c5ab2bac1f064d5e
+ms.sourcegitcommit: c4a1bafcd004638d264a93d307c70d8b6f7fe023
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/20/2017
 ---
 # <a name="what39s-new-in-version-1706-of-system-center-configuration-manager"></a>Jaki &#39; s nowego w wersji 1706 programu System Center Configuration Manager
 
@@ -189,10 +189,6 @@ Aby uzyskać więcej informacji, zobacz [tworzenia i uruchamiania skryptów prog
 Począwszy od tej wersji, można użyć trzech nowe ustawienia zasad zarządzania aplikacjami mobilnymi:
 
 - **Zablokuj Przechwytywanie ekranu (tylko urządzenia z systemem Android):** Określa, że możliwości przechwytywania ekranu urządzenia są blokowane podczas korzystania z tej aplikacji.
-
-- **Wyłącz synchronizację kontaktów:** Aplikacja uniemożliwia zapisywania danych do aplikacji natywnej kontaktów na urządzeniu.
-
-- **Wyłącz drukowanie:** Zapobiega aplikacji z drukowaniem pracy lub szkoły danych.
 
 Zobacz [ochrona aplikacji przy użyciu zasad ochrony aplikacji w programie Configuration Manager](https://docs.microsoft.com/sccm/mdm/deploy-use/protect-apps-using-mam-policies) próby nowe ustawienia zasad ochrony aplikacji.
 

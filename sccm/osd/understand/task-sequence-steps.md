@@ -3,7 +3,7 @@ title: "Kroki sekwencji zadań"
 titleSuffix: Configuration Manager
 description: "Więcej informacji na temat kroków sekwencji zadań, które można dodać do sekwencji zadań programu Configuration Manager."
 ms.custom: na
-ms.date: 03/26/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,17 +16,20 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 8bc73b8aaafa9af4e12589b2d2a742bfc18afd0e
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 02d3ca5ed494c20266125686f26b66cebcc7c2a2
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Kroki sekwencji zadań w programie System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 Następujące kroki sekwencji zadań można dodać do sekwencji zadań programu Configuration Manager. Aby uzyskać informacje na temat edytowania sekwencji zadań, zobacz [Edytowanie sekwencji zadań](../deploy-use/manage-task-sequences-to-automate-tasks.md#BKMK_ModifyTaskSequence).  
+
+> [!TIP]  
+> **Obsługa systemu Windows 10, wersja 1709 (znanej także jako aktualizacja twórców spadek)**.  Począwszy od tej wersji systemu Windows, Windows media zawiera wiele wersji. Podczas konfigurowania sekwencji zadań w celu za pomocą pakietu uaktualnienia systemu operacyjnego lub obrazu systemu operacyjnego, należy wybrać [wersję, która jest obsługiwana przez program Configuration Manager](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
 
 
 ##  <a name="BKMK_ApplyDataImage"></a>Zastosuj krok sekwencji zadań obraz danych  
@@ -536,6 +539,22 @@ Ten krok sekwencji zadań działa tylko w środowisku Windows PE. Nie działa on
  **Upewnij się, że bieżący system operacyjny do odświeżenia**  
  Wybierz to ustawienie, aby sprawdzić, czy system operacyjny zainstalowany na komputerze docelowym spełnia określone wymagania. Domyślnie to ustawienie jest wybrane i ma ustawioną wartość **KLIENT**.  
 
+##  <a name="child-task-sequence"></a>Sekwencja zadań podrzędnych
+
+Począwszy od programu Configuration Manager w wersji 1710, możesz dodać nowy krok sekwencji zadań uruchamiana innej sekwencji zadań. Spowoduje to utworzenie relacji nadrzędny podrzędny między sekwencji zadań. Z seqeucne zadań podrzędnych można tworzyć sekwencje zadań moduły, wielokrotnego użytku.
+
+Należy rozważyć dodanie sekwencji zadań podrzędnych do sekwencji zadań:
+
+ - Sekwencje zadań nadrzędnych i podrzędnych skutecznie są połączone w jedną zasadę, która działa na kliencie.
+ - Środowisko jest globalnego. Na przykład jeśli zmiennej jest ustawiany przez sekwencję zadań nadrzędny i następnie zmienić przez sekwencję zadań podrzędnych, pozostaje zmiennej zmienić przenoszenie do przodu. Podobnie jeśli sekwencja zadań podrzędnych tworzy nową zmienną, zmienna jest dostępne dla pozostałych kroków w sekwencji zadań nadrzędnej.
+ - Komunikaty o stanie są wysyłane na normalny dla operacji sekwencji pojedyncze zadanie.
+ - Sekwencje zadań tworzyć wpisy w pliku smsts.log w nowy dziennik wpisów, dzięki któremu można wyczyścić podczas sekwencji zadań podrzędnych rozpoczyna się.
+
+### <a name="details"></a>Szczegóły
+
+1. W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ogólne**i kliknij przycisk **uruchamiania sekwencji zadań**.
+2. Kliknij przycisk **Przeglądaj** do wybierania sekwencji zadań podrzędnych.  
+
 ##  <a name="BKMK_ConnectToNetworkFolder"></a>Połącz z folderem sieciowym  
  Akcja sekwencji zadań **Połącz z folderem sieciowym** umożliwia utworzenie połączenia z udostępnionym folderem sieciowym.  
 
@@ -745,7 +764,7 @@ Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows P
  Numer dysku fizycznego, który zostanie sformatowany. Jest on wyznaczany w kolejności wyliczania dysków systemu Windows.  
 
  **Typ dysku**  
- Typ formatowanego dysku. Na liście rozwijanej są dostępne dwie opcje do wyboru:  
+ Typ formatowanego dysku. Na liście rozwijanej są dostępne dwie opcje do wyboru: 
 
 -   Standardowa (MBR) — główny rekord rozruchowy.  
 

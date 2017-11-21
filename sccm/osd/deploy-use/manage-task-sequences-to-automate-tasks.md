@@ -3,9 +3,9 @@ title: "Zarządzanie sekwencjami zadań do automatyzowania zadań"
 titleSuffix: Configuration Manager
 description: "Można utworzyć, edytować, wdrażanie, zaimportować i wyeksportować sekwencje zadań, aby zarządzać nimi w środowisku programu System Center Configuration Manager."
 ms.custom: na
-ms.date: 03/24/2017
+ms.date: 11/15/2017
 ms.prod: configuration-manager
-ms.reviewer: na
+ms.reviewer: nac
 ms.suite: na
 ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
@@ -15,11 +15,11 @@ caps.latest.revision: "10"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 0174a95f1d3a487cab66d8152a3de70d91b07635
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 44e6afbfac3ef1e8318991854c8fdd22ead4c6ed
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="manage-task-sequences-to-automate-tasks-in-system-center-configuration-manager"></a>Zarządzanie sekwencjami zadań w celu zautomatyzowania zadań w programie System Center Configuration Manager
 
@@ -446,6 +446,22 @@ Zmiennymi dla komputera można zarządzać w lokacji głównej lub w centralnej 
 5.  Opcjonalnie określ priorytet dla programu Configuration Manager można używać w czasie oceny zmiennych sekwencji zadań.  
 
 6.  Po dodaniu wszystkich zmiennych do kolekcji kliknij przycisk **OK**.  
+
+## <a name="add-child-task-sequences-to-a-task-sequence"></a>Dodaj do sekwencji zadań sekwencje zadań podrzędnych
+
+Począwszy od programu Configuration Manager w wersji 1710, możesz dodać nowy krok sekwencji zadań uruchamiana innej sekwencji zadań. Spowoduje to utworzenie relacji nadrzędny podrzędny między sekwencji zadań. Dzięki temu można utworzyć więcej sekwencje zadań moduły, które można użyć ponownie.
+
+Należy rozważyć dodanie sekwencji zadań podrzędnych do sekwencji zadań:
+
+ - Sekwencje zadań nadrzędnych i podrzędnych skutecznie są połączone w jedną zasadę, która działa na kliencie.
+ - Środowisko jest globalnego. Na przykład jeśli zmiennej jest ustawiany przez sekwencję zadań nadrzędny i następnie zmienić przez sekwencję zadań podrzędnych, pozostaje zmiennej zmienić przenoszenie do przodu. Podobnie jeśli sekwencja zadań podrzędnych tworzy nową zmienną, zmienna jest dostępne dla pozostałych kroków w sekwencji zadań nadrzędnej.
+ - Komunikaty o stanie są wysyłane na normalny dla operacji sekwencji pojedyncze zadanie.
+ - Sekwencje zadań tworzyć wpisy w pliku smsts.log w nowy dziennik wpisów, dzięki któremu można wyczyścić podczas sekwencji zadań podrzędnych rozpoczyna się.
+
+### <a name="to-add-a-child-task-sequence-to-a-task-sequence"></a>Możesz dodać sekwencję zadań podrzędnych do sekwencji zadań
+
+1. W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ogólne**i kliknij przycisk **uruchamiania sekwencji zadań**.
+2. Kliknij przycisk **Przeglądaj** do wybierania sekwencji zadań podrzędnych.  
 
 ##  <a name="BKMK_AdditionalActionsTS"></a> Dodatkowe akcje zarządzania sekwencjami zadań  
  Sekwencje zadań można zarządzać za pomocą dodatkowych akcji po wybraniu sekwencji zadań.  

@@ -3,7 +3,7 @@ title: Aktualizacje
 titleSuffix: Configuration Manager
 description: "Więcej informacji na temat metody obsługi w konsoli o nazwie ** aktualizacje i obsługa ** który można łatwo zlokalizować i zainstalować zalecane aktualizacje."
 ms.custom: na
-ms.date: 07/31/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: bca724f15dc18d7273bbca122b6428b4704a5d43
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: ecd458cc5f86a65926d44481c894228bae5f5fbe
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="updates-for-system-center-configuration-manager"></a>Aktualizacje programu System Center Configuration Manager
 
@@ -75,12 +75,13 @@ Poniżej przedstawiono wersje programu Configuration Manager dostępne jako lini
 
 |Wersja |Data udostępnienia|[Data zakończenia wsparcia](/sccm/core/servers/manage/current-branch-versions-supported) |Linia bazowa|Aktualizacja w konsoli|  
 |-------------|-----------|------------|--------------|------------------------|  
+|[1710](/sccm/core/plan-design/changes/whats-new-in-version-1710)<br /><br /> 5.00.8577.1000|20 listopada 2017 r.|20 listopada 2018|Nie|Tak|
 |[1706](/sccm/core/plan-design/changes/whats-new-in-version-1706)<br /><br /> 5.00.8540.1000|31 lipca 2017 r.|31 lipca 2018|Nie|Tak|
 |[1702](/sccm/core/plan-design/changes/whats-new-in-version-1702)<br /><br /> 5.00.8498.1000|27 marca 2017 r.| 27 marca 2018|Tak|Tak|
 |[1610](/sccm/core/plan-design/changes/whats-new-in-version-1610)<br /><br /> 5.00.8458.1000|18 listopada 2016 r.| 18 listopada 2017 r.|Nie|Tak|
 |[1606](/sccm/core/plan-design/changes/whats-new-in-version-1606)<br /><br /> 5.00.8412.1000|22 lipca 2016 r.| 22 lipca 2017 r.|Nie|Tak|
 |[1606](/sccm/core/plan-design/changes/whats-new-in-version-1606) z pakiet zbiorczy poprawek 1606 (KB3186654) </br></br>5.00.8412.1307 *(Uwaga 1)* |12 października 2016 r.| 12 października 2017 r.|Tak|Nie|
-| 1602<br /><br /> 5.00.8355.1000|11 marca 2016 r.| 11 marca 2017 r.|Nie|Tak| 
+| 1602<br /><br /> 5.00.8355.1000|11 marca 2016 r.| 11 marca 2017 r.|Nie|Tak|
 | 1511 <br /><br /> 5.00.8325.1000|8 grudnia 2015 r.| 8 grudnia 2016 r.|Tak|Nie|  
 
 

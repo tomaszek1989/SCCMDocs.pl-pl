@@ -3,7 +3,7 @@ title: Technical Preview 1710 | Dokumentacja firmy Microsoft
 titleSuffix: Configuration Manager
 description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview 1710 programu System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/30/2017
+ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.reviewer: na
@@ -14,11 +14,11 @@ ms.assetid: f4706a58-1f11-4eab-b1eb-3d1a0da02d0f
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 813fdc40c4a0eb7c2dd3c1831bac1ba1667fe247
-ms.sourcegitcommit: 5437b2823bada8f8c9e67940f584953b9d190628
+ms.openlocfilehash: 309d677c0b8c692548d649346bb35bfa9d2a81f3
+ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="capabilities-in-technical-preview-1710-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1710 programu System Center Configuration Manager
 
@@ -52,6 +52,19 @@ W tym artykule przedstawiono funkcje, które są dostępne w wersji Technical Pr
  -  Task 1
  -  Task 2              
 -->
+
+## <a name="improvements-for-deploying-powershell-scripts-from-configuration-manager"></a>Ulepszenia dotyczące wdrażania skryptów programu PowerShell z programu Configuration Manager
+W tej wersji skryptów programu PowerShell, którą można wdrożyć teraz obsługuje następujące udoskonalenia: 
+- **Zakresy zabezpieczeń**.  Skrypty teraz zakresy zabezpieczeń do tworzenia skryptów kontroli i wykonywanie. Można to zrobić poprzez przypisywanie tagi, które reprezentują grup użytkowników. Aby uzyskać więcej informacji na temat używania zakresy zabezpieczeń, zobacz [Konfigurowanie administracji opartej na rolach dla programu System Center Configuration Manager](../../core/servers/deploy/configure/configure-role-based-administration.md).
+- **Monitorowanie w czasie rzeczywistym**. Podczas monitorowania Uruchom skrypt jest obecnie w czasie rzeczywistym jak skrypt jest uruchamiany.
+- **Sprawdzanie poprawności parametru**. Każdy parametr w skrypcie ma **właściwości parametru skryptu** okno dialogowe umożliwiające dodawanie sprawdzania poprawności dla tego parametru. Po dodaniu weryfikacji, należy pobrać błędy podczas wprowadzania wartości dla parametru, który nie spełnia jego poprawności.
+
+Wdrożenie skryptów programu PowerShell została wprowadzona w wersji zapoznawczej Technical Preview [techniczna wersja zapoznawcza 1706](/sccm/core/get-started/capabilities-in-technical-preview-1706#create-and-run-powershell-scripts-from-the-configuration-manager-console). Dodatkowe ulepszenia zostały dostarczone z [techniczna wersja zapoznawcza 1707](/sccm/core/get-started/capabilities-in-technical-preview-1707#add-parameters-when-you-deploy-powershell-scripts-from-configuration-manager) , a następnie [techniczna wersja zapoznawcza 1708](/sccm/core/get-started/capabilities-in-technical-preview-1708#improvements-for-specifying-script-parameters-when-you-deploy-powershell-scripts-from-configuration-manager).
+
+
+### <a name="try-it-out"></a>Wypróbuj
+
+Aby wypróbować przy użyciu funkcji Uruchom skrypty, zobacz [tworzenia i uruchamiania skryptów](../../apps/deploy-use/create-deploy-scripts.md).
 
 
 
@@ -116,7 +129,7 @@ Zarządzanych urządzeń należy uruchomić Windows 10 1709 spadek twórców Upd
 Po utworzeniu zasad wykorzystać zabezpieczenia, Kreator wdrażanie zasad Guard wykorzystać do ich wdrożenia. Aby to zrobić, otwórz konsolę programu Configuration Manager **zasoby i zgodność** > **programu Endpoint Protection**, a następnie kliknij przycisk **wdrażanie zasad Guard wykorzystać**.
 
 ## <a name="limited-support-for-cng-certificates"></a>Ograniczona obsługa certyfikatów CNG
-<!-- 1356191 --> 
+<!-- 1356191 -->
 Począwszy od tej wersji, można teraz używać [Cryptography API: Nowej generacji (CNG)](https://msdn.microsoft.com/library/windows/desktop/bb204775.aspx) certyfikatu szablonów w następujących scenariuszach:
 
 - Rejestracja klienta i komunikacji z punktem zarządzania HTTPS.   
@@ -184,13 +197,13 @@ Aby zezwolić urządzeniu z systemem Windows Defender SmartScreen zaufanych opro
 ## <a name="configure-and-deploy-windows-defender-application-guard-policies----1351960---"></a>Konfigurowanie i wdrażanie zasad Guard aplikacji programu Windows Defender<!-- 1351960 -->
 
 [Ochrona programu Windows Defender aplikacji](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97) jest nową funkcją systemu Windows, która pomaga chronić użytkowników przez otwarcie niezaufanych witryn sieci web w bezpiecznego kontenera izolowanym, który nie jest dostępny za pomocą innymi składnikami systemu operacyjnego. W tej wersji technical preview dodaliśmy pomocy technicznej, aby skonfigurować tę funkcję za pomocą ustawień zgodności programu Configuration Manager, które można skonfigurować, a następnie wdrożyć do kolekcji. Ta funkcja zostanie wydana w 64-bitowej wersji aktualizacji twórcy systemu Windows 10 w wersji zapoznawczej (nazwa kodowa: RS2). Do testowania tej funkcji teraz, możesz muszą używać wersji zapoznawczej tej aktualizacji.
- 
+
 ### <a name="before-you-start"></a>Przed rozpoczęciem
 Aby utworzyć i wdrożyć zasady Guard aplikacji programu Windows Defender, urządzenia systemu Windows 10, na których można wdrożyć zasady musi być skonfigurowany z zasadami izolacji sieci. Aby uzyskać więcej informacji zobacz blog post odwołuje się do później. Ta funkcja działa tylko dla bieżącej kompilacji systemu Windows 10 wewnętrznych. Aby ją przetestować, musi być uruchomiona klientów ostatnie systemu Windows 10 niejawnego kompilacji.
 
 ### <a name="try-it-out"></a>Wypróbuj
 
-Aby zrozumieć podstawowe informacje o Windows Defender aplikacji Guard, przeczytaj [wpis w blogu]((https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97)).
+Aby zrozumieć podstawowe informacje o Windows Defender aplikacji Guard, przeczytaj [wpis w blogu](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97).
 
 Aby utworzyć zasady i przeglądanie dostępnych ustawień:
 1. W **programu Configuration Manager** konsoli, wybierz **zasoby i zgodność**.
@@ -202,7 +215,7 @@ Aby utworzyć zasady i przeglądanie dostępnych ustawień:
     > [!NOTE]
     > Komputery z systemem Windows 10 przechowywać tylko jedną listę izolacji sieci na komputerze klienckim. W tej wersji można utworzyć dwa różne rodzaje list izolacji sieci (z systemem Windows Information Protection i z systemu Windows Defender aplikacji Guard) i wdrażać je do klienta. Jeśli obie zasady są wdrażane, te listy izolacji sieci muszą być zgodne. Jeśli wdrożono list, które nie pasują do tego samego klienta, wdrożenie zakończy się niepowodzeniem.
 
-    Można znaleźć więcej informacji o sposobie określania definicje sieci w [dokumentacji systemu Windows Information Protection](https://docs.microsoft.com/windows/threat-protection/windows-information-protection/create-wip-policy-using-sccm). 
+    Można znaleźć więcej informacji o sposobie określania definicje sieci w [dokumentacji systemu Windows Information Protection](https://docs.microsoft.com/windows/threat-protection/windows-information-protection/create-wip-policy-using-sccm).
 
 6. Gdy skończysz, Zakończ pracę kreatora i wdróż zasady w co najmniej jedno urządzenie z systemem Windows 10.
 
