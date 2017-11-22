@@ -14,11 +14,11 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 29dd4bff6d35712c23d66751db16a00aa761b8b4
-ms.sourcegitcommit: 922d6d9c91ba2158b938df381277be1b5f1d434a
+ms.openlocfilehash: 4877d05004bd883a3ae0ad353a78643cf559275e
+ms.sourcegitcommit: 536f7295e9ea361f1f9ead6c25f3685deb041ad8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/13/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>What's new in hybrydowego zarządzania urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Microsoft Intune
 
@@ -46,9 +46,42 @@ Każda sekcja w tym artykule wymieniono funkcje hybrydowych w trzech różnych k
 
 ### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune
 
+- **Aplikacja Portal firmy dla macOS jest dostępna** <!--1541700--> Portal firmy usługi Intune na macOS został zaktualizowany obsługi aplikacji, która została zoptymalizowana do prawidłowo wyświetlić wszystkie powiadomienia informacji i zgodności użytkownicy potrzebują dla wszystkich urządzeń mają one zarejestrowane. I po Portal firmy usługi Intune został wdrożony na urządzeniu, AutoUpdate firmy Microsoft dla macOS dostarczają aktualizacje, które do niego. Możesz pobrać nowego portalu firmy usługi Intune dla macOS, logując się do witryny sieci Web Portal firmy usługi Intune z urządzenia macOS.
+
+- **Microsoft Planner jest obecnie częścią zarządzania (aplikacjami mobilnymi MAM) aplikacji mobilnej listę zatwierdzonych aplikacji** <!-- 1248473 --> Planner Microsoft aplikacji dla systemu iOS i Android jest obecnie częścią zatwierdzonych aplikacji do zarządzania aplikacjami mobilnymi (MAM).   Aplikację można skonfigurować za pomocą bloku ochrony aplikacji usługi Intune w portalu Azure do wszystkich dzierżawców. Aby uzyskać więcej informacji, zobacz [MAM listę zatwierdzonych aplikacji](https://www.microsoft.com/cloud-platform/microsoft-intune-apps).
+
 - **Rejestruje dostęp do zarządzanych aplikacji dla systemu iOS** <!-- 1469920 --> użytkownikom końcowym z programu managed Browser zainstalowany może teraz widok stanu zarządzania Microsoft wszystkie opublikowane aplikacje i wysyłania dzienników do rozwiązywania problemów z ich zarządzane aplikacje systemu iOS.
   
   Dowiedz się, jak włączyć trybu rozwiązywania problemów w programie Managed Browser na urządzeniu z systemem iOS, zobacz [jak uzyskać dostęp do zarządzanych aplikacji dzienników przy użyciu programu Managed Browser w systemie iOS](https://docs.microsoft.com/intune/app-configuration-managed-browser#how-to-access-to-managed-app-logs-using-the-managed-browser-on-ios).
+
+- **Ulepszenia urządzenia Konfiguracja przepływu pracy w portalu firmy dla systemu iOS w wersji 2.9.0** ulepszono przepływu pracy ustawień urządzenia w aplikacji Portal firmy dla systemu iOS. Język jest bardziej przyjazny dla użytkownika i ekrany już połączyć w miarę możliwości. Również wprowadzono język dokładniej do firmy przy użyciu nazwy firmy przez cały tekst Instalatora. Ten zaktualizowany przepływ pracy można wyświetlić na [nowości w aplikacji interfejsu użytkownika](https://docs.microsoft.com/intune/whats-new-app-ui#week-of-november-13-2017) strony.
+
+- **Opinie wyświetla monit dotyczący aplikacji Portal firmy dla systemu Android** <!--1165249--> Aplikacja Portal firmy dla systemu Android teraz żądania opinii użytkowników końcowych. Tej opinii będą wysyłane bezpośrednio do firmy Microsoft i zapewnić użytkownikom końcowym możliwość Przegląd aplikacji w sklepie Google Play publicznego. Opinia nie jest wymagana i łatwo może być ukryty, dlatego użytkownicy mogą nadal używać aplikacji. 
+
+- **Powiadamia użytkowników końcowych, jakie informacje o urządzeniu są widoczne dla urządzeń z systemem Windows 10** <!--1337920--> dodaliśmy **typ własności** do ekranu szczegóły urządzenia w aplikacji Portal firmy dla systemu Windows 10. Dzięki temu użytkownicy dowiedzieć się więcej o ochronie prywatności bezpośrednio z tej strony z dokumentów użytkownika usługi Intune. Również będą w stanie zlokalizować tę informację na **o** ekranu.
+
+- **Nowy "rozwiązać" Akcja jest dostępna dla urządzeń z systemem Android** <!--1583480--> wprowadzają akcję "Usuń" Aplikacja Portal firmy dla systemu Android na _zaktualizować ustawienia urządzenia_ strony. Wybranie tej opcji spowoduje przejście użytkownika bezpośrednio do ustawienia powodującego swoje urządzenia jako niezgodne. Aplikacja Portal firmy dla systemu Android obsługuje obecnie tę akcję dla [kod dostępu urządzenia](https://docs.microsoft.com/intune-user-help/set-your-pin-or-password-android), [szyfrowania urządzenia](https://docs.microsoft.com/intune-user-help/encrypt-your-device-android), [debugowanie USB](https://docs.microsoft.com/intune-user-help/you-need-to-turn-off-usb-debugging-android), i [nieznany Źródła](https://docs.microsoft.com/intune-user-help/you-need-to-turn-off-unknown-sources-android) ustawienia. 
+
+
+### <a name="new-in-configuration-manager-current-branch"></a>Nowe w programie Configuration Manager (wersji current branch)
+
+- **Nowe ustawienia zasad zarządzania aplikacjami mobilnymi** <!-- 1324760 --> do ustawienia zasad zarządzania aplikacjami mobilnymi dodano następujące ustawienia:
+  - **Wyłącz synchronizację kontaktów**: Aplikacja uniemożliwia zapisywania danych do aplikacji natywnej kontaktów na urządzeniu.
+  - **Wyłącz drukowanie**: Zapobiega aplikacji z drukowaniem pracy lub szkoły danych.
+
+  Zobacz [ochrona aplikacji przy użyciu zasad ochrony aplikacji w programie Configuration Manager](/sccm/mdm/deploy-use/protect-apps-using-mam-policies) próby nowe ustawienia zasad ochrony aplikacji.
+
+- **Obsługa urządzeń z systemem Windows 10 ARM64** <!-- 1355000 --> hybrydowego scenariuszy zarządzania urządzeniami Przenośnymi urządzeniami przenośnymi będzie obsługiwane na urządzeniach ARM64 z systemem Windows 10, jeśli te urządzenia nie są dostępne. Aby uzyskać więcej informacji, zobacz [Obsługa urządzeń z systemem Windows 10 ARM64](/sccm/core/plan-design/changes/whats-new-in-version-1710#windows-10-arm64-device-support).
+
+- **Ulepszona obsługa profilu sieci VPN w konsoli programu Configuration Manager** <!-- 1318232 --> w tej wersji Zaktualizowaliśmy Kreatora profilu sieci VPN i strony właściwości, aby wyświetlić ustawienia odpowiednie dla wybranej platformy. Ta funkcja była wcześniej dostępne w wersji Configuration Manager Technical Preview 1709 i są teraz dostępne w przypadku wdrożeń hybrydowych usługi Intune i programu Configuration Manager (Current Branch) 1710:
+  - [Ulepszona obsługa profilu sieci VPN w konsoli programu Configuration Manager](/sccm/core/plan-design/changes/whats-new-in-version-1710#improved-vpn-profile-experience-in-configuration-manager-console).
+
+
+VPN udoskonalone środowisko profilu w konsoli programu Configuration Manager
+
+### <a name="new-in-configuration-manger-technical-preview-1711"></a>Nowa w programie Configuration Manager Technical Preview 1711
+
+- **Nowe opcje zasad zgodności dla systemu Windows 10** można teraz skonfigurować nowe opcje zasad zgodności dla urządzeń z systemem Windows 10. Nowe ustawienia wymuszania zasad zapory, Kontrola konta użytkownika systemu Windows Defender Anitivirus i przechowywanie wersji kompilacji systemu operacyjnego. Aby uzyskać więcej informacji, zobacz [nowe opcje zasad zgodności dla systemu Windows 10](/sccm/core/get-started/capabilities-in-technical-preview-1711#new-compliance-policy-options-for-windows-10).
 
 
 ## <a name="october-2017"></a>2017 października

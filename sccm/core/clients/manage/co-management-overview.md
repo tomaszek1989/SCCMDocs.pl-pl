@@ -10,15 +10,15 @@ ms.prod: configuration-manager
 ms.service: 
 ms.technology: 
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: e05c82be9bffd213d0452565e5c91cb008cbb5ff
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.openlocfilehash: c0a577c6076630f0615f953091f35c4f3c2d0a7d
+ms.sourcegitcommit: 536f7295e9ea361f1f9ead6c25f3685deb041ad8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 11/21/2017
 ---
 # <a name="co-management-for-windows-10-devices"></a>Jednoczesne zarządzania dla urządzeń z systemem Windows 10    
 <!-- 1350871 -->
-Wielu klientów chcesz zarządzać urządzeniami z systemem Windows 10 w taki sam sposób ich zarządzania urządzeniami przenośnymi za pomocą uproszczonego, ekonomiczne, oparte na chmurze rozwiązanie. Jednak przejścia z tradycyjnego zarządzania do zarządzania nowoczesnymi może być trudne. Począwszy od systemu Windows 10 w wersji 1607 (znanej także jako aktualizacja rocznicy), można dołączyć urządzenie z systemem Windows 10 do lokalnej usługi Active Directory (AD) i oparta na chmurze usługi Azure AD, w tym samym czasie (rozwiązanie hybrydowe usługi Azure AD). Począwszy od programu Configuration Manager w wersji 1710 wspólnej zarządzania korzysta z tego ulepszenia i umożliwia jednocześnie zarządzać urządzeniami z systemem Windows 10, używając programu Configuration Manager i usługi Intune. To rozwiązanie, które zapewnia mostek z tradycyjnego zarządzania nowoczesnymi i umożliwia ścieżki do dokonania zmiany przy użyciu podejście etapowe. 
+Wielu klientów chcesz zarządzać urządzeniami z systemem Windows 10 w taki sam sposób ich zarządzania urządzeniami przenośnymi za pomocą uproszczonego, ekonomiczne, oparte na chmurze rozwiązanie. Jednak przejścia z tradycyjnego zarządzania do zarządzania nowoczesnymi może być trudne. W systemie Windows 10, wersja 1709 (znanej także jako aktualizacja twórców spadek) i później, urządzenia z systemem Windows 10 można dołączyć do lokalnej usługi Active Directory (AD) i oparta na chmurze usługi Azure AD, w tym samym czasie (rozwiązanie hybrydowe usługi Azure AD). Począwszy od programu Configuration Manager w wersji 1710 wspólnej zarządzania korzysta z tego ulepszenia i umożliwia jednocześnie zarządzać urządzeniami z systemem Windows 10, używając programu Configuration Manager i usługi Intune. To rozwiązanie, które zapewnia mostek z tradycyjnego zarządzania nowoczesnymi i umożliwia ścieżki do dokonania zmiany przy użyciu podejście etapowe. 
 
 Istnieją dwa główne ścieżki do wspólnego zarządzania.  Jedna jest inicjowana zarządzania wspólnej gdzie przyłączone do urządzeń z systemem Windows 10 zarządzane przez program Configuration Manager i hybrydowe usługi Azure AD zarejestrować się w usłudze Intune w programie Configuration Manager. Druga to Intune zainicjowano obsługę administracyjną urządzeń, które są zarejestrowane w usłudze Intune, a następnie instalowany z zasięgu klienta programu Configuration Manager stanu zarządzania wspólnej.  
 
@@ -84,4 +84,4 @@ Po włączeniu urządzenia z systemem Windows 10 do zarządzania wspólnej masz 
 - [Nowa start](https://docs.microsoft.com/intune/device-fresh-start)
 
 ## <a name="next-steps"></a>Następne kroki
-[Przygotowywanie urządzenia z systemem Windows 10 do zarządzania wspólnej](co-management-prepare.md)
+[Przygotowywanie urządzeń z systemem Windows 10 pod kątem współzarządzania](co-management-prepare.md)

@@ -13,8 +13,8 @@ ms.assetid: bc6c3e5f-b9e2-400e-9d9d-446ff93c520c
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 310343a6dff97b240b319bed59994349cbd9ae7d
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.openlocfilehash: 33a5bff1e202822ce3ec5755958d34af461957e9
+ms.sourcegitcommit: 536f7295e9ea361f1f9ead6c25f3685deb041ad8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 11/21/2017
@@ -150,7 +150,8 @@ Te scenariusze obejmują:
 - [Konfigurowanie usługi Windows Hello dla firm zasady](../../../mdm/deploy-use/windows-hello-for-business-settings.md)
 - [Zarządzanie aplikacjami](../../../mdm/deploy-use/management-tasks-applications.md)
 
-### <a name="improved-vpn-profile-experience-in-configuration-manager-console----1318232---"></a>VPN udoskonalone środowisko profilu w konsoli programu Configuration Manager<!-- 1318232 -->
+### <a name="improved-vpn-profile-experience-in-configuration-manager-console"></a>VPN udoskonalone środowisko profilu w konsoli programu Configuration Manager 
+<!-- 1318232 -->
 
 W tej wersji Zaktualizowaliśmy VPN profilu Kreatora właściwości strony i aby wyświetlić ustawienia odpowiednie dla wybranej platformy:
 
