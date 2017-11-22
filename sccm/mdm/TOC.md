@@ -72,6 +72,7 @@
 
 ## [Zarządzanie dostępem warunkowym](deploy-use/manage-access-to-services.md)
 ### [Zasady zgodności urządzeń](deploy-use/device-compliance-policies.md)
+#### [Akcje w przypadku braku zgodności](deploy-use/actions-for-noncompliance.md)
 ### [Tworzenie zasad zgodności urządzenia](deploy-use/create-compliance-policy.md)
 ### [Zarządzanie dostępem do poczty e-mail](deploy-use/manage-email-access.md)
 ### [Zarządzanie dostępem do usługi SharePoint Online](deploy-use/manage-sharepoint-online-access.md)

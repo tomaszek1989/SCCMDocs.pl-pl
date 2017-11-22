@@ -52,6 +52,8 @@
 
 ### [Zasady zapory systemu Windows](deploy-use/create-windows-firewall-policies.md)
 ### [Zaawansowana ochrona przed zagrożeniami w usłudze Windows Defender](deploy-use/windows-defender-advanced-threat-protection.md)
+### [Tworzenie i wdrażanie zasad funkcji Exploit Guard](deploy-use/create-deploy-exploit-guard-policy.md)
+### [Tworzenie i wdrażanie zasad funkcji Application Guard](deploy-use/create-deploy-application-guard-policy.md)
 ### [Zadania ochrony przed złośliwym oprogramowaniem i zapory](deploy-use/endpoint-antimalware-firewall.md)
 ### [Scenariusz programu Endpoint Protection](deploy-use/scenarios-endpoint-protection.md)
 ### [Pomoc klienta programu Endpoint Protection](deploy-use/endpoint-protection-client-help.md)
