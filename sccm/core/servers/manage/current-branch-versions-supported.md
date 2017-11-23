@@ -3,7 +3,7 @@ title: "Bieżące wersje gałęzi"
 titleSuffix: Configuration Manager
 description: "Przejrzyj Historia wersji programu System Center Configuration Manager, a więcej informacji na temat usług oferowanych w fazach."
 ms.custom: na
-ms.date: 11/20/2017
+ms.date: 11/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ author: Brenduns
 ms.author: brenduns
 manager: angrobe
 robots: noindex,nofollow
-ms.openlocfilehash: 628c01d3f746155076e5bab68a38c0a50c73697d
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.openlocfilehash: 8909c4de81ef0ca914120a67be1634380dc50c53
+ms.sourcegitcommit: 29196ffba45b16b2b6a2dc71de981dead850c41c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 11/22/2017
 ---
 # <a name="support-for-system-center-configuration-manager-current-branch-versions"></a>Obsługa bieżących wersji gałęzi programu System Center Configuration Manager
 
@@ -44,9 +44,9 @@ Rysunek 1. Przykład nakładanie się cyklu wersji current Branch obsługi pomoc
 
  **Historia wersji**  
 
-|Wersja|Data udostępnienia|Data zakończenia wsparcia|  
+|Wersja |Data udostępnienia |Data zakończenia wsparcia|  
 |-------------|-----------------------|----------------------|  
-|1710|20 listopada 2017 r.|20 listopada 2018|
+|1710|20 listopada 2017 r.|20 maja 2019 |
 |1706|31 lipca 2017 r.|31 lipca 2018|
 |1702|27 marca 2017 r.|27 marca 2018|
 |1610|18 listopada 2016 r.|18 listopada 2017 r.|
