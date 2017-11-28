@@ -171,7 +171,7 @@ Użytkownik i plikach konfiguracji wdrożenia mają ustawienia, które kontroluj
 
 Typowa aplikacja App-V 5 może zawierać następujące pliki:  
 
--   Plik aplikacji pakietu (*.appv)  
+-   Plik aplikacji pakietu (.appv)  
 
 -   Plik konfiguracji użytkownika  
 

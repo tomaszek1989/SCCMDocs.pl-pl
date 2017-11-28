@@ -527,7 +527,7 @@ Umożliwia elementu równorzędnego pamięci podręcznej klientów programu Conf
 
     -   Wybierz **nowy** ikonę, aby dodać do spisu nowy typ pliku. Następnie określ następujące informacje w **właściwości zinwentaryzowanych plików** okno dialogowe:  
 
-        -   **Nazwa**: Podaj nazwę pliku, który chcesz dodać do spisu. Można użyć * *\**  znak oznaczającego dowolny ciąg tekstu i **?** oznaczającego pojedynczy znak. Na przykład, jeśli chcesz dodać do spisu wszystkie pliki z rozszerzeniem doc, określ nazwę pliku  **\*doc**.  
+        -   **Nazwa**: Podaj nazwę pliku, który chcesz dodać do spisu. Można użyć **\** znak oznaczającego dowolny ciąg tekstu i **?** oznaczającego pojedynczy znak. Na przykład, jeśli chcesz dodać do spisu wszystkie pliki z rozszerzeniem doc, określ nazwę pliku  **\*doc**.  
 
         -   **Lokalizacja**: Wybierz **ustawić** otworzyć **właściwości ścieżki** okno dialogowe. Można skonfigurować spis oprogramowania w celu wyszukania na dyskach twardych wszystkich klientów określonego pliku, określonej ścieżki (na przykład **C:\Folder**), lub Wyszukaj określonej zmiennej (na przykład *% windir %*). Można także przeszukać wszystkie podfoldery w określonej ścieżce.  
 
@@ -550,7 +550,7 @@ Umożliwia elementu równorzędnego pamięci podręcznej klientów programu Conf
 
     -   W oknie dialogowym **Właściwości zebranych plików** wprowadź następujące informacje:  
 
-        -   **Nazwa**: Podaj nazwę pliku, który chcesz zebrać. Można użyć * *\**  znak oznaczającego dowolny ciąg tekstu i **?** oznaczającego pojedynczy znak.  
+        -   **Nazwa**: Podaj nazwę pliku, który chcesz zebrać. Można użyć **\** znak oznaczającego dowolny ciąg tekstu i **?** oznaczającego pojedynczy znak.  
 
         -   **Lokalizacja**: Wybierz **ustawić** otworzyć **właściwości ścieżki** okno dialogowe. Można skonfigurować spis oprogramowania, aby wyszukać dyskach twardych wszystkich klientów pliku do zebrania, określonej ścieżki (na przykład **C:\Folder**), lub Wyszukaj określonej zmiennej (na przykład *% windir %*). Można także przeszukać wszystkie podfoldery w określonej ścieżce.  
 
