@@ -3,7 +3,7 @@ title: 'Informacje o wersji '
 titleSuffix: Configuration Manager
 description: "Te informacje można uzyskać pilnych problemów, które nie zostały jeszcze rozwiązane w produkcie lub omówione w artykule bazy wiedzy Microsoft Knowledge Base."
 ms.custom: na
-ms.date: 08/23/2017
+ms.date: 11/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: 2571cfbff1373db05279918af776d8be81a5c322
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: b156cd7762be59092bb46f4a4a992badcbd9d74a
+ms.sourcegitcommit: 1dd051d8548a19b724bb8f9e6a2278a4901ed916
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="release-notes-for-system-center-configuration-manager"></a>Informacje o wersji dla programu System Center Configuration Manager
 
@@ -37,30 +37,10 @@ Aby uzyskać informacje o nowych funkcjach wprowadzona z różnymi wersjami zoba
 - [Co nowego w wersji 1706](/sccm/core/plan-design/changes/whats-new-in-version-1706)  
 - [Co nowego w wersji 1702](/sccm/core/plan-design/changes/whats-new-in-version-1702)
 - [Co nowego w wersji 1610](/sccm/core/plan-design/changes/whats-new-in-version-1610)
-   
+
 
 
 ## <a name="setup-and-upgrade"></a>Instalowanie i uaktualnianie  
-
-### <a name="after-you-update-a-configuration-manager-console-using-consolesetupexe-from-the-site-server-folder-recent-language-pack-changes-are-not-available"></a>Po zaktualizowaniu konsoli programu Configuration Manager za pomocą ConsoleSetup.exe z folderu serwera lokacji najnowsze zmiany w pakiecie językowym nie są dostępne
-<!--  SMS 486420  Applicability should be 1610 and 1702.  -->
-*Poniższe informacje dotyczą wersji 1610 i 1702.*   
-Po uruchomieniu aktualizacji w miejscu do konsoli przy użyciu ConsoleSetup.exe z folderu instalacji serwerów lokacji, ostatnio zainstalowanych pakietów językowych mogą nie być dostępne. W takim przypadku:
-- Lokalizacji uruchomiono wersję 1610 lub 1702.
-- Konsola jest aktualizowany w miejscu przy użyciu ConsoleSetup.exe z folderu instalacji serwera lokacji.
-
-Gdy wystąpi ten problem, ponownie konsoli nie używa najnowszy zestaw pakietów językowych, które zostały skonfigurowane. Nie są zwracane nie błędy, ale nie ma zmieni pakiety językowe dostępne w konsoli.  
-
-**Obejście problemu:** Odinstaluj bieżącą konsolę, a następnie zainstalować ponownie jako nową instalację konsoli. Można użyć ConsoleSetup.exe z folderu instalacji serwerów lokacji. Podczas instalacji upewnij się wybrać pliki pakietu języka, który ma być używany.
-
-
-### <a name="with-version-1702-the-default-site-boundary-group-is-configured-for-use-for-site-assignment"></a>Wersją 1702 domyślnej grupy granic lokacji jest skonfigurowana do użycia dla przypisania lokacji
-<!--  SMS 486380   Applicability should only be to 1702. -->
-*Poniższe informacje dotyczą wersji 1702.*  
-Karcie odwołania grupy granic lokacji domyślne ma sprawdzenia **Użyj tej grupy granic do przypisania lokacji**, wyświetla listę lokacji jako **przypisana lokacja**i jest niedostępne, tak aby konfiguracji nie można edytować ani usunąć.
-
-**Obejście problemu:** Brak. Możesz zignorować to ustawienie. Mimo że grupy jest włączona dla przypisania lokacji, domyślna grupa granic lokacji nie jest używany do przypisania lokacji. Z 1702 ta konfiguracja zapewnia, że domyślna grupa granic lokacji jest skojarzony z odpowiedniej lokacji.
-
 
 
 ### <a name="when-installing-a-long-term-service-branch-site-using-version-1606-a-current-branch-site-is-installed"></a>Podczas instalowania lokacji oddziału usługi długoterminowe przy użyciu wersji 1606, Current Branch lokacji jest zainstalowany
@@ -112,29 +92,6 @@ W przypadku uruchamiania Instalatora z dysku CD. Najnowszy folder utworzona dla 
  - Ręcznie usuń *cd.latest\redist\languagepack\zhh* folder, a następnie uruchom ponownie Instalatora.
 
 
-### <a name="service-connection-tool-throws-an-exception-when-sql-server-is-remote-or-when-shared-memory-is-disabled"></a>Narzędzia połączenia z usługą zgłasza wyjątek w przypadku zdalnego programu SQL server lub po wyłączeniu pamięci Shared Memory
-<!-- 479223   Fixed in 1702 and later   -->
-*Poniższe informacje dotyczą wersji 1610 i wcześniejszych.*  
-Narzędzia połączenia z usługą generuje wyjątek, gdy spełniony jest jeden z następujących czynności:  
- -  Baza danych lokacji znajduje się zdalnie z komputera, który hostuje punkt połączenia usługi i używa niestandardowego portu (portu innego niż 1433)
- -  Baza danych lokacji znajduje się na tym samym serwerze co punkt połączenia usługi, ale protokół SQL **pamięci Shared Memory** jest wyłączona
-
-Wyjątkiem jest podobny do następującego:
- - *Nieobsługiwany wyjątek: System.Data.SqlClient.SqlException: Wystąpił błąd związany z siecią lub wystąpieniem podczas ustanawiania połączenia z programem SQL Server. Serwer nie został znaleziony lub był niedostępny. Sprawdź, czy nazwa wystąpienia jest poprawna i czy programu SQL Server jest skonfigurowany do zezwalania na połączenia zdalne. (Dostawca: Dostawca nazwanych potoków, błąd: 40 - nie można otworzyć połączenia z programem SQL Server)--*
-
-**Obejście**: Podczas używania narzędzia należy zmodyfikować rejestr serwera, który hostuje punkt połączenia usługi, aby uwzględnić informacje o porcie programu SQL Server:
-
-   1.   Przed użyciem tego narzędzia, należy edytować następujący klucz rejestru i dodać numer portu, który jest używany do nazwy programu SQL Server:
-    - Klucz:   HKLM\Microsoft\SMS\COMPONENTS\SMS_DMP_UPLOADER\
-      - Wartość: &lt;Nazwa programu SQL Server >
-    - Dodaj: **,&lt;PORT >**
-
-    Na przykład, aby dodać port *15001* z serwerem o nazwie *testserver.test.net*, wynikowy klucz będzie: ***HKLM\Software\Microsoft\SMS\COMPONENTS\SMS_DMP_UPLOADER\testserver.test.NET,15001***
-
-   2.   Po dodaniu portu w rejestrze, narzędzie powinny działać normalnie.  
-
-   3.   Po zakończeniu zarówno dla korzystanie z narzędzia **— Połącz** i **— importowanie** kroków, zmienić wartość klucza rejestru do oryginalnej wartości.  
-
 
 <!-- ## Backup and recovery  -->
 
@@ -157,15 +114,6 @@ Domyślnie kreator tworzenia planów obsługi jest uruchamiany obecnie po każde
 po utworzeniu planu obsługi otwórz właściwości planu, przejdź do karty **Harmonogram szacowania**, wybierz pozycję **Uruchom tę regułę według harmonogramu**, kliknij pozycję **Dostosuj** i utwórz harmonogram niestandardowy. Można na przykład określić uruchamianie planu obsługi co 60 dni.  
 
 
-### <a name="when-a-high-risk-deployment-dialog-is-visible-to-a-user-subsequent-high-risk-dialogs-with-a-sooner-deadline-are-not-displayed"></a>Jeśli okno dialogowe wdrożenie wysokiego ryzyka jest widoczny dla użytkownika, kolejne o wysokim ryzyku okien dialogowych z ostatecznym terminem przypadającym wcześniej nie są wyświetlane
-<!-- Fixed in 1702 and later -->
-*Poniższe informacje dotyczą wersji 1610 i wcześniejszych.*   
-Po utworzeniu i wdrożenia o wysokim ryzyku zadań do użytkowników o wysokim ryzyku okno dialogowe jest wyświetlany użytkownikowi. Jeśli użytkownik nie zamknąć okno dialogowe, tworzenie i wdrażanie inne wdrożenie o wysokim ryzyku z ostatecznym terminem przypadającym wcześniej niż pierwszy, użytkownik nie otrzyma okno dialogowe zaktualizowane dopóki zamknąć okno dialogowe oryginalnego. Wdrożenia będą nadal działać w skonfigurowanym terminów.
-
-**Obejście**:  
-Użytkownik należy zamknąć okno dialogowe dla pierwszego wdrożenia wysokiego ryzyka wyświetlić okno dialogowe dalej wdrożenia wysokiego ryzyka.
-
-
 
 ## <a name="software-updates"></a>Aktualizacje oprogramowania
 
@@ -180,6 +128,12 @@ Użyj tylko [języki obsługiwane przez klienta usługi Office 365 ProPlus](http
 
 
 ## <a name="mobile-device-management"></a>Zarządzanie urządzeniami przenośnymi  
+
+### <a name="beginning-with-version-1710-you-can-no-longer-deploy-windows-phone-81-vpn-profiles-to-windows-10------503274--should-be-fixed-by-1802-if-not-sooner---"></a>Począwszy od wersji 1710, możesz nie można wdrażać profile sieci VPN programu Windows Phone 8.1 do systemu Windows 10<!-- 503274  Should be fixed by 1802, if not sooner -->
+W 1710 go nie jest już możliwe utworzyć profil sieci VPN za pomocą przepływu pracy systemu Windows Phone 8.1, który jest również dotyczy urządzeń z systemem Windows 10. Dla tych profilów w kreatorze tworzenia nie jest wyświetlana strona obsługiwane platformy i Windows Phone 8.1 jest automatycznie wybierany w wewnętrznej; na stronach właściwości strona obsługiwane platformy jest dostępna, ale nie są wyświetlane opcje systemu Windows 10.
+
+**Obejście**: Użyj przepływu pracy profilu sieci VPN systemu Windows 10 dla urządzeń z systemem Windows 10. Jeśli nie jest to możliwe w danym środowisku, należy się z pomocą techniczną. Można pomóc dział pomocy technicznej można dodać wartości docelowej systemu Windows 10, w razie potrzeby.
+
 
 ### <a name="full-wipe-disables-windows-10-devices-with-less-than-4-gb-ram"></a>Całkowite wyczyszczenie powoduje wyłączenie urządzeń z systemem Windows 10 z pamięcią RAM mniejszą niż 4 GB
 Przeprowadzenie całkowitego czyszczenia danych w urządzeniu z systemem Windows 10 RTM (wersje starsze niż 1511) z pamięcią RAM mniejszą niż 4 GB sprawi, że urządzenie nie będzie nadawać się do użytku. Po podjęciu próby wyczyszczenia danych urządzenie nie reaguje i nie można go uruchomić.
@@ -204,20 +158,4 @@ Po utworzeniu systemu Android dla profilu poczty e-mail z pracy, dostępne są d
 
 <!-- ## Reports and monitoring    -->
 <!-- ## Conditional access   -->
-
-
-## <a name="endpoint-protection"></a>Program Endpoint Protection
-
-### <a name="antimalware-policy-fails-to-apply-on-windows-server-2016-core"></a>Zasady ochrony przed złośliwym kodem nie powiedzie się do zastosowania w systemie Windows Server 2016 Core
-<!--  Product Studio bug 485370 added 04 19 2017   Fixed in 1702 -->
-*Poniższe informacje dotyczą wersji 1610 i wcześniejszych.*  
-Zasady ochrony przed złośliwym oprogramowaniem nie powiodło się zastosować w systemie Windows Server 2016 Core.  Kod błędu to 0x80070002.  Brakująca zależność ConfigSecurityPolicy.exe nie istnieje.
-
-**Obejście problemu:**  Ten problem został rozwiązany przez [artykułu bazy wiedzy 4019472](https://support.microsoft.com/help/4019472/windows-10-update-kb4019472) rozproszonych 9 maja 2017 r.
-
-
-### <a name="windows-defender-advanced-threat-protection-policies-fail-on-older-client-agents"></a>Zasady usługi Windows Defender Advanced Threat Protection zakończyć się niepowodzeniem na starszą agentów klientów
-<!-- Product Studio bug 462286 added  05 25 2017 and valid until July 2017 GA release      Fixed in 1610 -->
-Zasady usługi Windows Defender Advanced Threat Protection utworzone na podstawie 1610 wersji programu Configuration Manager lub nowszego serwera lokacji nie dotyczą 1606 wersji programu Configuration Manager i starszych klientów.  Klienci są nie na dodawanej i oceny zasad zgłosi błąd. **Stan wdrożenia** w konfiguracji usługi Windows Defender Advanced Threat Protection zawiera **błąd**.
-
-**OBEJŚCIE**: Uaktualnij klienta programu Configuration Manager do wersji 1610 lub nowszej.
+<!-- ## Endpoint Protection -->

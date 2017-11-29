@@ -3,7 +3,7 @@ title: "Przygotowanie do wdrożenia oprogramowania klienta na komputerach Mac"
 titleSuffix: Configuration Manager
 description: "Zadania konfiguracji przed wdrożeniem klienta programu Configuration Manager na komputerach Mac."
 ms.custom: na
-ms.date: 05/04/2017
+ms.date: 11/28/2017
 ms.prod: configuration-manager
 ms.reviewer: aaroncz
 ms.suite: na
@@ -15,17 +15,17 @@ caps.latest.revision: "12"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: b878c7b0328e89ff7b12bf44167fd12444a0cba4
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 1d096111250af4061c94e71f8dc602ccae2d4607
+ms.sourcegitcommit: 1dd051d8548a19b724bb8f9e6a2278a4901ed916
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="prepare-to-deploy-client-software-to-macs"></a>Przygotowanie do wdrożenia oprogramowania klienta na komputerach Mac
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Wykonaj następujące kroki, aby upewnić się, że wszystko jest gotowe do [wdrażania klienta programu Configuration Manager na komputerach Mac](/sccm/core/clients/deploy/deploy-clients-to-macs). 
+Wykonaj następujące kroki, aby upewnić się, że wszystko jest gotowe do [wdrażania klienta programu Configuration Manager na komputerach Mac](/sccm/core/clients/deploy/deploy-clients-to-macs).
 
 ## <a name="mac-prerequisites"></a>Wymagania wstępne Mac
 
@@ -33,9 +33,9 @@ Pakiet instalacyjny klienta Mac nie jest dostarczany na nośnikach programu Conf
 
 **Obsługiwane wersje:**  
 
--   **System Mac OS X 10.6** (śniegu Leopard) 
+-   **System Mac OS X 10.6** (śniegu Leopard)
 
--   **System Mac OS X 10,7** (Lion) 
+-   **System Mac OS X 10,7** (Lion)
 
 -   **System Mac OS X 10.8** (Mountain Lion)
 
@@ -49,11 +49,13 @@ Pakiet instalacyjny klienta Mac nie jest dostarczany na nośnikach programu Conf
 
 -   **Mac OS X 10.12** (macOS Sierra)  
 
+-   **Mac OS X 10.13** (macOS Sierra wysoka)  
+
 ## <a name="certificate-requirements"></a>Wymagania certyfikatu
 Instalacja klienta i zarządzanie nim dla komputerów Mac wymaga certyfikatów infrastruktury kluczy publicznych (PKI). Certyfikaty PKI zabezpieczają komunikację między komputerami Mac i lokacją programu Configuration Manager przy użyciu wzajemnego uwierzytelniania i zaszyfrowanych transferów danych. Configuration Manager można żądania i instalowania certyfikatu klienta użytkownika za pomocą usług certyfikatów firmy Microsoft z urzędu certyfikacji przedsiębiorstwa (CA) i programu Configuration Manager rejestrację i punktu serwera proxy punktu ról systemu lokacji rejestracji. Alternatywnie można zażądać i zainstalować certyfikat komputera niezależnie od programu Configuration Manager, jeśli certyfikat spełnia wymagania programu Configuration Manager.   
-  
+
 Klienci programu Configuration Manager Mac zawsze wykonują sprawdzanie odwołania certyfikatu. Nie można wyłączyć tej funkcji.  
-  
+
 Jeśli klienci na komputery Mac nie mogą potwierdzić stanu odwołania certyfikatu dla certyfikatu serwera, ponieważ nie mogą zlokalizować listy CRL, nie będą oni mogli nawiązywać połączeń z systemami lokacji programu Configuration Manager. W szczególności w przypadku klientów na komputery Mac znajdujących się w innym lesie niż urząd wystawiający certyfikaty należy sprawdzić strukturę listy CRL, aby mieć pewność, że klienci na komputery Mac mogą zlokalizować punkt dystrybucji listy CRL (punkt CDP) i nawiązać z nim połączenie w celu połączenia z serwerami systemu lokacji.  
 
 Przed zainstalowaniem klienta programu Configuration Manager na komputerze Mac, należy określić sposób instalacji certyfikatu klienta:  
@@ -83,7 +85,7 @@ Jeśli te systemy lokacji nie jest, Wdróż certyfikat serwera sieci web na komp
 
 Certyfikat serwera sieci Web musi zawierać internetową nazwę FQDN określoną we właściwościach systemu lokacji. Serwer nie musi być dostępny z Internetu do obsługi komputerów Mac. Jeśli nie jest wymagane internetowe zarządzanie klientami, dla internetowej nazwy FQDN można określić wartość intranetowej nazwy FQDN.  
 
-Określ wartość internetowej nazwy FQDN systemu lokacji punktu zarządzania, punktu dystrybucji i punktu proxy rejestracji certyfikatu serwera sieci web. 
+Określ wartość internetowej nazwy FQDN systemu lokacji punktu zarządzania, punktu dystrybucji i punktu proxy rejestracji certyfikatu serwera sieci web.
 
 Przykład wdrożenia, które tworzy i instaluje certyfikat serwera sieci web, zobacz [wdrażanie certyfikatu serwera sieci Web dla systemów lokacji, który program IIS uruchom](../../plan-design/network/example-deployment-of-pki-certificates.md#BKMK_webserver2008_cm2012).  
 
@@ -119,10 +121,10 @@ Przykład wdrożenia, które tworzy i instaluje certyfikat serwera sieci web, zo
 
  Mimo że punkty dystrybucji nie są wymagane do zainstalowania klienta, należy skonfigurować punktów dystrybucji, aby zezwolić na połączenia klientów z Internetu, aby wdrożyć oprogramowanie na tych komputerach, po zainstalowaniu klienta.  
 
- 
+
 ### <a name="to-configure-management-points-and-distribution-points-to-support-macs"></a>Aby skonfigurować punkty zarządzania i punktów dystrybucji do obsługi komputerów Mac  
 
-Przed rozpoczęciem należy sprawdzić, czy serwer systemu lokacji, na którym są uruchomione punkt zarządzania i punkt dystrybucji, jest skonfigurowany z wykorzystaniem internetowej nazwy FQDN. Jeśli te serwery nie obsługują zarządzania klientami internetowymi, jako wartość internetowej nazwy FQDN można określić intranetową nazwę FQDN. 
+Przed rozpoczęciem należy sprawdzić, czy serwer systemu lokacji, na którym są uruchomione punkt zarządzania i punkt dystrybucji, jest skonfigurowany z wykorzystaniem internetowej nazwy FQDN. Jeśli te serwery nie obsługują zarządzania klientami internetowymi, jako wartość internetowej nazwy FQDN można określić intranetową nazwę FQDN.
 
 Role systemu lokacji muszą być w lokacji głównej.  
 

@@ -15,11 +15,11 @@ caps.latest.revision: "4"
 author: Brenduns
 ms.author: brenduns
 manager: angrobe
-ms.openlocfilehash: c0277fed7db5803aa2b2246ca879640136dce02a
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 2652a7353821c616ada2bf594073b13e327c93ee
+ms.sourcegitcommit: 1dd051d8548a19b724bb8f9e6a2278a4901ed916
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>Numery rozmiaru i skali dla programu System Center Configuration Manager
 
@@ -147,7 +147,10 @@ Centralna lokacja administracyjna obsługuje łączna liczba urządzeń zawieraj
  Na przykład w hierarchii można obsługiwać 700 000 komputerów stacjonarnych, maksymalnie 25 000 komputerów Mac lub Windows CE 7.0 oraz maksymalnie 300 000 urządzeń opartych na chmurze podczas integracji programów Microsoft Intune — łącznie 1 025 000 urządzeń. Jeśli w przypadku obsługi urządzeń, które są zarządzane przez lokalnego zarządzania urządzeniami Przenośnymi, łączna liczba dla hierarchii jest 825 000 urządzeń.  
 
 > [!IMPORTANT]  
->  W hierarchii, w której centralna lokacja administracyjna korzysta z wersji Standard programu SQL Server hierarchia obsługuje maksymalnie 50 000 komputerów stacjonarnych i urządzeń. Wersja programu SQL Server, który jest używany w autonomicznej lokacji głównej nie ograniczają pojemność tej lokacji do obsługi do określonej liczby klientów.  
+>  W hierarchii, w której centralna lokacja administracyjna korzysta z wersji Standard programu SQL Server hierarchia obsługuje maksymalnie 50 000 komputerów stacjonarnych i urządzeń. Aby obsługiwać więcej niż 50 000 komputerów stacjonarnych i urządzeń, należy użyć wersji Enterprise programu SQL Server. To wymaganie dotyczy tylko centralnej lokacji administracyjnej, a nie ma zastosowania do autonomicznej lokacji głównej lub podrzędnej lokacji głównej, której wersji programu SQL Server, należy użyć nie ogranicza pojemność tej lokacji do obsługi dla określonej liczby klientów.   
+
+
+ Wersja programu SQL Server, który jest używany w autonomicznej lokacji głównej nie ograniczają pojemność tej lokacji do obsługi do określonej liczby klientów.  
 
 
 ###  <a name="bkmk_chipri"></a>Podrzędna lokacja główna  
