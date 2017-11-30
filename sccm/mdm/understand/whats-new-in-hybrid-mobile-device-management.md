@@ -3,7 +3,7 @@ title: "What's new in hybrydowego zarządzania urządzeniami Przenośnymi"
 titleSuffix: Configuration Manager
 description: "Poznaj nowe funkcje zarządzania urządzeniami przenośnymi dostępne dla hybrydowych wdrożeń z programu Configuration Manager i usługi Intune."
 ms.custom: na
-ms.date: 11/12/2017
+ms.date: 11/29/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 4877d05004bd883a3ae0ad353a78643cf559275e
-ms.sourcegitcommit: 536f7295e9ea361f1f9ead6c25f3685deb041ad8
+ms.openlocfilehash: aa72e57077cbeba525895dd394720dc24f28568c
+ms.sourcegitcommit: 5d46ed593b1cc461ea3f6ff6917bcd272b095ed7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>What's new in hybrydowego zarządzania urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Microsoft Intune
 
@@ -48,7 +48,7 @@ Każda sekcja w tym artykule wymieniono funkcje hybrydowych w trzech różnych k
 
 - **Aplikacja Portal firmy dla macOS jest dostępna** <!--1541700--> Portal firmy usługi Intune na macOS został zaktualizowany obsługi aplikacji, która została zoptymalizowana do prawidłowo wyświetlić wszystkie powiadomienia informacji i zgodności użytkownicy potrzebują dla wszystkich urządzeń mają one zarejestrowane. I po Portal firmy usługi Intune został wdrożony na urządzeniu, AutoUpdate firmy Microsoft dla macOS dostarczają aktualizacje, które do niego. Możesz pobrać nowego portalu firmy usługi Intune dla macOS, logując się do witryny sieci Web Portal firmy usługi Intune z urządzenia macOS.
 
-- **Microsoft Planner jest obecnie częścią zarządzania (aplikacjami mobilnymi MAM) aplikacji mobilnej listę zatwierdzonych aplikacji** <!-- 1248473 --> Planner Microsoft aplikacji dla systemu iOS i Android jest obecnie częścią zatwierdzonych aplikacji do zarządzania aplikacjami mobilnymi (MAM).   Aplikację można skonfigurować za pomocą bloku ochrony aplikacji usługi Intune w portalu Azure do wszystkich dzierżawców. Aby uzyskać więcej informacji, zobacz [MAM listę zatwierdzonych aplikacji](https://www.microsoft.com/cloud-platform/microsoft-intune-apps).
+- **Microsoft Planner jest obecnie częścią zarządzania (aplikacjami mobilnymi MAM) aplikacji mobilnej listę zatwierdzonych aplikacji** <!-- 1248473 --> Planner Microsoft aplikacji dla systemu iOS i Android jest obecnie częścią zatwierdzonych aplikacji do zarządzania aplikacjami mobilnymi (MAM). Aplikację można skonfigurować za pomocą bloku ochrony aplikacji usługi Intune w portalu Azure do wszystkich dzierżawców. Aby uzyskać więcej informacji, zobacz [MAM listę zatwierdzonych aplikacji](https://www.microsoft.com/cloud-platform/microsoft-intune-apps).
 
 - **Rejestruje dostęp do zarządzanych aplikacji dla systemu iOS** <!-- 1469920 --> użytkownikom końcowym z programu managed Browser zainstalowany może teraz widok stanu zarządzania Microsoft wszystkie opublikowane aplikacje i wysyłania dzienników do rozwiązywania problemów z ich zarządzane aplikacje systemu iOS.
   
@@ -81,7 +81,7 @@ VPN udoskonalone środowisko profilu w konsoli programu Configuration Manager
 
 ### <a name="new-in-configuration-manger-technical-preview-1711"></a>Nowa w programie Configuration Manager Technical Preview 1711
 
-- **Nowe opcje zasad zgodności dla systemu Windows 10** można teraz skonfigurować nowe opcje zasad zgodności dla urządzeń z systemem Windows 10. Nowe ustawienia wymuszania zasad zapory, Kontrola konta użytkownika systemu Windows Defender Anitivirus i przechowywanie wersji kompilacji systemu operacyjnego. Aby uzyskać więcej informacji, zobacz [nowe opcje zasad zgodności dla systemu Windows 10](/sccm/core/get-started/capabilities-in-technical-preview-1711#new-compliance-policy-options-for-windows-10).
+- **Nowe opcje zasad zgodności dla systemu Windows 10** można teraz skonfigurować nowe opcje zasad zgodności dla urządzeń z systemem Windows 10. Nowe ustawienia wymuszania zasad zapory, Kontrola konta użytkownika systemu Windows Defender Antivirus i przechowywanie wersji kompilacji systemu operacyjnego. Aby uzyskać więcej informacji, zobacz [nowe opcje zasad zgodności dla systemu Windows 10](/sccm/core/get-started/capabilities-in-technical-preview-1711#new-compliance-policy-options-for-windows-10).
 
 
 ## <a name="october-2017"></a>2017 października
