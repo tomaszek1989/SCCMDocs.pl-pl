@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: c1ff371e-b0ad-4048-aeda-02a9ff08889e
 caps.latest.revision: "9"
 caps.handback.revision: "0"
-author: Brenduns
-ms.author: brenduns
+author: aaroncz
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: b9c0425b00e707e8ccdacd9315a82b0293593aea
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 1463aa5a64de50b31ad0fc94709e2b41fd1c3bb0
+ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="log-files-in-system-center-configuration-manager"></a>Pliki dziennika w programie System Center Configuration Manager
 
@@ -266,7 +266,7 @@ Klient programu Configuration Manager dla komputerów Mac rejestruje informacje 
 |Nazwa dziennika|Szczegóły|  
 |--------------|-------------|  
 |CCMClient -&lt;*data_godzina*> .log|Rejestruje działania związane z operacjami klienta Mac, w tym zarządzania aplikacjami, spisu i rejestrowania błędów.<br /><br /> Ten plik dziennika znajduje się w folderze/Library/Application Support/Microsoft/CCM/Logs na komputerze Mac.|  
-|CCMAgent -&lt;*data_godzina*> .log|Rejestruje informacje dotyczące operacji klienta, w tym logowania użytkownika i działania wylogowania oraz działań komputera Mac.<br /><br /> Ten plik dziennika znajduje się w folderze ~/Library/Logs na komputerze Mac.|  
+|CCMAgent -&lt;*data_godzina*> .log|Rejestruje informacje dotyczące operacji klienta, w tym logowania użytkownika i działania wylogowania oraz działań komputera Mac..<br /><br /> Ten plik dziennika znajduje się w folderze ~/Library/Logs na komputerze Mac.|  
 |CCMNotifications -&lt;*data_godzina*> .log|Rejestruje działania dotyczące powiadomień programu Configuration Manager na komputerze Mac.<br /><br /> Ten plik dziennika znajduje się w folderze ~/Library/Logs na komputerze Mac.|  
 |CCMPrefPane -&lt;*data_godzina*> .log|Rejestruje działania powiązane do okna dialogowego preferencji programu Configuration Manager na komputerze Mac, w tym stanu ogólnego i rejestrowania błędów.<br /><br /> Ten plik dziennika znajduje się w folderze ~/Library/Logs na komputerze Mac.|  
 

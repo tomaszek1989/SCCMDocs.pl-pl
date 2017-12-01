@@ -13,15 +13,15 @@ ms.topic: article
 ms.assetid: a70bfbd4-757a-4468-9312-1c3b373ef9fc
 caps.latest.revision: "6"
 caps.handback.revision: "0"
-author: Brenduns
-ms.author: brenduns
+author: aaroncz
+ms.author: aaroncz
 manager: angrobe
 robots: noindex
-ms.openlocfilehash: 87f0af8b1a8f2dc136f6c90f36dcc828b67f97e9
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: bd333d4417926514055195100791d630958797c2
+ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="plan-a-migration-job-strategy-in-system-center-configuration-manager"></a>Planowanie strategii zadania migracji w programie System Center Configuration Manager
 
@@ -261,7 +261,7 @@ Aby skonfigurować określone dane, które chcesz migrować do środowiska progr
 ##  <a name="About_Collection_Migration "></a>Planowanie zadań migracji kolekcji  
  Zadania migracji kolekcji są dostępne tylko w przypadku migracji danych z hierarchii źródłowej, która działa obsługiwana wersja programu Configuration Manager 2007. Podczas migracji kolekcji należy określić co najmniej jedną migrację, która ma być migrowana. W przypadku każdej określonej kolekcji zadanie migracji automatycznie wybierze do migracji wszystkie powiązane obiekty. Jeśli na przykład zostanie wybrana konkretna kolekcja użytkowników, nastąpi zidentyfikowanie członków tej kolekcji oraz będzie można migrować wdrożenia skojarzone z tą kolekcją. Opcjonalnie można wybrać do migracji także inne obiekty wdrożenia, które są skojarzone z tymi członkami. Wszystkie wybrane elementy są dodawane do listy obiektów przeznaczonych do migracji.  
 
- Podczas migracji kolekcji, System Center Configuration Manager migruje także ustawienia kolekcji, w tym okna obsługi i zmienne kolekcji, ale nie można migrować ustawień kolekcji dotyczących zapewniania udostępniania klientów AMT.  
+ Podczas migracji kolekcji, System Center Configuration Manager migruje także ustawienia kolekcji, w tym okna obsługi i zmienne kolekcji, ale nie można migrować ustawień kolekcji dotyczących zapewniania udostępniania klientów AMT..  
 
  Skorzystaj z informacji w poniższych sekcjach, aby dowiedzieć się więcej o dodatkowych konfiguracjach, które można zastosować do zadania migracji kolekcji.  
 

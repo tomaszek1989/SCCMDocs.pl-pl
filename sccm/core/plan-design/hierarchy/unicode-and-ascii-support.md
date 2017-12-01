@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: 2bdec799-905f-48bc-aed5-2d92134739e8
 caps.latest.revision: "6"
 caps.handback.revision: "0"
-author: Brenduns
-ms.author: brenduns
+author: aaroncz
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 1314c0bc8de25c343b80f40de7d2a007024a17dd
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: c35a33ffb20e548d4c9e51de01da803bdcf47f50
+ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="unicode-and-ascii-support-in-system-center-configuration-manager"></a>Obsługa standardów Unicode i ASCII w programie System Center Configuration Manager
 
@@ -71,7 +71,7 @@ System Center Configuration Manager tworzy większość obiektów przy użyciu z
     > [!NOTE]  
     >  Konta, które można określić dla administracji opartej na rolach obsługują znaki Unicode.  
     >   
-    >  Reporting Services punktu obsługuje konta Unicode, z wyjątkiem znaków RUS.  
+    >  Reporting Services punktu obsługuje konta Unicode, z wyjątkiem znaków RUS..  
 
 -   Pełni kwalifikowaną nazwą domeny (FQDN) dla serwerów lokacji i systemy lokacji  
 
