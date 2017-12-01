@@ -14,11 +14,11 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: aa72e57077cbeba525895dd394720dc24f28568c
-ms.sourcegitcommit: 5d46ed593b1cc461ea3f6ff6917bcd272b095ed7
+ms.openlocfilehash: f6ca5a7eb9befd82af3a54c6db868e15291b1621
+ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>What's new in hybrydowego zarządzania urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Microsoft Intune
 
@@ -46,38 +46,49 @@ Każda sekcja w tym artykule wymieniono funkcje hybrydowych w trzech różnych k
 
 ### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune
 
-- **Aplikacja Portal firmy dla macOS jest dostępna** <!--1541700--> Portal firmy usługi Intune na macOS został zaktualizowany obsługi aplikacji, która została zoptymalizowana do prawidłowo wyświetlić wszystkie powiadomienia informacji i zgodności użytkownicy potrzebują dla wszystkich urządzeń mają one zarejestrowane. I po Portal firmy usługi Intune został wdrożony na urządzeniu, AutoUpdate firmy Microsoft dla macOS dostarczają aktualizacje, które do niego. Możesz pobrać nowego portalu firmy usługi Intune dla macOS, logując się do witryny sieci Web Portal firmy usługi Intune z urządzenia macOS.
+- **Aplikacje zarządzane przez protokół tekstu od**<!-- 1414050  -->    
+  Aplikacje zarządzane przez zestaw SDK aplikacji usługi Intune mają możliwość wysyłania wiadomości SMS.
 
-- **Microsoft Planner jest obecnie częścią zarządzania (aplikacjami mobilnymi MAM) aplikacji mobilnej listę zatwierdzonych aplikacji** <!-- 1248473 --> Planner Microsoft aplikacji dla systemu iOS i Android jest obecnie częścią zatwierdzonych aplikacji do zarządzania aplikacjami mobilnymi (MAM). Aplikację można skonfigurować za pomocą bloku ochrony aplikacji usługi Intune w portalu Azure do wszystkich dzierżawców. Aby uzyskać więcej informacji, zobacz [MAM listę zatwierdzonych aplikacji](https://www.microsoft.com/cloud-platform/microsoft-intune-apps).
+- **Aplikacja Portal firmy dla macOS jest dostępna**<!--1541700-->    
+  Portal firmy usługi Intune na macOS ma zaktualizowany obsługi aplikacji, która została zoptymalizowana do prawidłowo wyświetlić wszystkie powiadomienia informacji i zgodności, które użytkownicy potrzebują dla wszystkich urządzeń, które mają one zarejestrowane. I po Portal firmy usługi Intune został wdrożony na urządzeniu, AutoUpdate firmy Microsoft dla macOS dostarczają aktualizacje, które do niego. Możesz pobrać nowego portalu firmy usługi Intune dla macOS, logując się do witryny sieci Web Portal firmy usługi Intune z urządzenia macOS.
 
-- **Rejestruje dostęp do zarządzanych aplikacji dla systemu iOS** <!-- 1469920 --> użytkownikom końcowym z programu managed Browser zainstalowany może teraz widok stanu zarządzania Microsoft wszystkie opublikowane aplikacje i wysyłania dzienników do rozwiązywania problemów z ich zarządzane aplikacje systemu iOS.
+- **Microsoft Planner jest obecnie częścią zarządzania (aplikacjami mobilnymi MAM) aplikacji mobilnej listę zatwierdzonych aplikacji**  <!-- 1248473 -->    
+  Aplikacja Microsoft Planner dla systemów iOS i Android jest obecnie częścią zatwierdzonych aplikacji do zarządzania aplikacjami mobilnymi (MAM). Aplikację można skonfigurować za pomocą bloku ochrony aplikacji usługi Intune w portalu Azure do wszystkich dzierżawców. Aby uzyskać więcej informacji, zobacz [MAM listę zatwierdzonych aplikacji](https://www.microsoft.com/cloud-platform/microsoft-intune-apps).
+
+- **Rejestruje dostęp do zarządzanych aplikacji dla systemu iOS**<!-- 1469920 -->    
+  Użytkownikom końcowym z zainstalowaną przeglądarkę zarządzane mogą teraz wyświetlanie stanu zarządzania Microsoft wszystkie opublikowane aplikacje i wyśle dzienniki do rozwiązywania problemów z ich zarządzane aplikacje systemu iOS.
   
   Dowiedz się, jak włączyć trybu rozwiązywania problemów w programie Managed Browser na urządzeniu z systemem iOS, zobacz [jak uzyskać dostęp do zarządzanych aplikacji dzienników przy użyciu programu Managed Browser w systemie iOS](https://docs.microsoft.com/intune/app-configuration-managed-browser#how-to-access-to-managed-app-logs-using-the-managed-browser-on-ios).
 
-- **Ulepszenia urządzenia Konfiguracja przepływu pracy w portalu firmy dla systemu iOS w wersji 2.9.0** ulepszono przepływu pracy ustawień urządzenia w aplikacji Portal firmy dla systemu iOS. Język jest bardziej przyjazny dla użytkownika i ekrany już połączyć w miarę możliwości. Również wprowadzono język dokładniej do firmy przy użyciu nazwy firmy przez cały tekst Instalatora. Ten zaktualizowany przepływ pracy można wyświetlić na [nowości w aplikacji interfejsu użytkownika](https://docs.microsoft.com/intune/whats-new-app-ui#week-of-november-13-2017) strony.
+- **Ulepszenia urządzenia Konfiguracja przepływu pracy w portalu firmy dla systemu iOS w wersji 2.9.0**    
+  Ulepszono przepływu pracy ustawień urządzenia w aplikacji Portal firmy dla systemu iOS. Język jest bardziej przyjazny dla użytkownika i ekrany już połączyć w miarę możliwości. Również wprowadzono język dokładniej do firmy przy użyciu nazwy firmy przez cały tekst Instalatora. Ten zaktualizowany przepływ pracy można wyświetlić na [nowości w aplikacji interfejsu użytkownika](https://docs.microsoft.com/intune/whats-new-app-ui#week-of-november-13-2017) strony.
 
-- **Opinie wyświetla monit dotyczący aplikacji Portal firmy dla systemu Android** <!--1165249--> Aplikacja Portal firmy dla systemu Android teraz żądania opinii użytkowników końcowych. Tej opinii będą wysyłane bezpośrednio do firmy Microsoft i zapewnić użytkownikom końcowym możliwość Przegląd aplikacji w sklepie Google Play publicznego. Opinia nie jest wymagana i łatwo może być ukryty, dlatego użytkownicy mogą nadal używać aplikacji. 
+- **Opinie wyświetla monit dotyczący aplikacji Portal firmy dla systemu Android**<!--1165249-->    
+Aplikacja Portal firmy dla systemu Android teraz żądania opinii użytkowników końcowych. Tej opinii będą wysyłane bezpośrednio do firmy Microsoft i zapewnić użytkownikom końcowym możliwość Przegląd aplikacji w sklepie Google Play publicznego. Opinia nie jest wymagana i łatwo może być ukryty, dlatego użytkownicy mogą nadal używać aplikacji. 
 
-- **Powiadamia użytkowników końcowych, jakie informacje o urządzeniu są widoczne dla urządzeń z systemem Windows 10** <!--1337920--> dodaliśmy **typ własności** do ekranu szczegóły urządzenia w aplikacji Portal firmy dla systemu Windows 10. Dzięki temu użytkownicy dowiedzieć się więcej o ochronie prywatności bezpośrednio z tej strony z dokumentów użytkownika usługi Intune. Również będą w stanie zlokalizować tę informację na **o** ekranu.
+- **Powiadamia użytkowników końcowych, jakie informacje o urządzeniu są widoczne dla urządzeń z systemem Windows 10**<!--1337920-->    
+Dodaliśmy **typ własności** do ekranu szczegóły urządzenia w aplikacji Portal firmy dla systemu Windows 10. Dzięki temu użytkownicy dowiedzieć się więcej o ochronie prywatności bezpośrednio z tej strony z dokumentów użytkownika usługi Intune. Również będą w stanie zlokalizować tę informację na **o** ekranu.
 
-- **Nowy "rozwiązać" Akcja jest dostępna dla urządzeń z systemem Android** <!--1583480--> wprowadzają akcję "Usuń" Aplikacja Portal firmy dla systemu Android na _zaktualizować ustawienia urządzenia_ strony. Wybranie tej opcji spowoduje przejście użytkownika bezpośrednio do ustawienia powodującego swoje urządzenia jako niezgodne. Aplikacja Portal firmy dla systemu Android obsługuje obecnie tę akcję dla [kod dostępu urządzenia](https://docs.microsoft.com/intune-user-help/set-your-pin-or-password-android), [szyfrowania urządzenia](https://docs.microsoft.com/intune-user-help/encrypt-your-device-android), [debugowanie USB](https://docs.microsoft.com/intune-user-help/you-need-to-turn-off-usb-debugging-android), i [nieznany Źródła](https://docs.microsoft.com/intune-user-help/you-need-to-turn-off-unknown-sources-android) ustawienia. 
+- **Nowy "rozwiązać" Akcja jest dostępna dla urządzeń z systemem Android**<!--1583480-->    
+  Aplikacja Portal firmy dla systemu Android wprowadzają akcję "Usuń" na _zaktualizować ustawienia urządzenia_ strony. Wybranie tej opcji spowoduje przejście użytkownika bezpośrednio do ustawienia powodującego swoje urządzenia jako niezgodne. Aplikacja Portal firmy dla systemu Android obsługuje obecnie tę akcję dla [kod dostępu urządzenia](https://docs.microsoft.com/intune-user-help/set-your-pin-or-password-android), [szyfrowania urządzenia](https://docs.microsoft.com/intune-user-help/encrypt-your-device-android), [debugowanie USB](https://docs.microsoft.com/intune-user-help/you-need-to-turn-off-usb-debugging-android), i [nieznany Źródła](https://docs.microsoft.com/intune-user-help/you-need-to-turn-off-unknown-sources-android) ustawienia. 
 
 
 ### <a name="new-in-configuration-manager-current-branch"></a>Nowe w programie Configuration Manager (wersji current branch)
 
-- **Nowe ustawienia zasad zarządzania aplikacjami mobilnymi** <!-- 1324760 --> do ustawienia zasad zarządzania aplikacjami mobilnymi dodano następujące ustawienia:
+- **Nowe ustawienia zasad zarządzania aplikacjami mobilnymi**<!-- 1324760 -->    
+  Następujące ustawienia zostały dodane do ustawienia zasad zarządzania aplikacjami mobilnymi:
   - **Wyłącz synchronizację kontaktów**: Aplikacja uniemożliwia zapisywania danych do aplikacji natywnej kontaktów na urządzeniu.
   - **Wyłącz drukowanie**: Zapobiega aplikacji z drukowaniem pracy lub szkoły danych.
 
   Zobacz [ochrona aplikacji przy użyciu zasad ochrony aplikacji w programie Configuration Manager](/sccm/mdm/deploy-use/protect-apps-using-mam-policies) próby nowe ustawienia zasad ochrony aplikacji.
 
-- **Obsługa urządzeń z systemem Windows 10 ARM64** <!-- 1355000 --> hybrydowego scenariuszy zarządzania urządzeniami Przenośnymi urządzeniami przenośnymi będzie obsługiwane na urządzeniach ARM64 z systemem Windows 10, jeśli te urządzenia nie są dostępne. Aby uzyskać więcej informacji, zobacz [Obsługa urządzeń z systemem Windows 10 ARM64](/sccm/core/plan-design/changes/whats-new-in-version-1710#windows-10-arm64-device-support).
+- **Obsługa urządzeń z systemem Windows 10 ARM64**<!-- 1355000 -->    
+  Scenariuszy zarządzania urządzeniami Przenośnymi urządzeniami przenośnymi hybrydowego będą obsługiwane na urządzeniach ARM64 z systemem Windows 10, jeśli te urządzenia nie są dostępne. Aby uzyskać więcej informacji, zobacz [Obsługa urządzeń z systemem Windows 10 ARM64](/sccm/core/plan-design/changes/whats-new-in-version-1710#windows-10-arm64-device-support).
 
-- **Ulepszona obsługa profilu sieci VPN w konsoli programu Configuration Manager** <!-- 1318232 --> w tej wersji Zaktualizowaliśmy Kreatora profilu sieci VPN i strony właściwości, aby wyświetlić ustawienia odpowiednie dla wybranej platformy. Ta funkcja była wcześniej dostępne w wersji Configuration Manager Technical Preview 1709 i są teraz dostępne w przypadku wdrożeń hybrydowych usługi Intune i programu Configuration Manager (Current Branch) 1710:
+- **Ulepszona obsługa profilu sieci VPN w konsoli programu Configuration Manager**<!-- 1318232 -->    
+  W tej wersji Zaktualizowaliśmy VPN profilu Kreatora właściwości strony i aby wyświetlić ustawienia odpowiednie dla wybranej platformy. Ta funkcja była wcześniej dostępne w wersji Configuration Manager Technical Preview 1709 i są teraz dostępne w przypadku wdrożeń hybrydowych usługi Intune i programu Configuration Manager (Current Branch) 1710:
   - [Ulepszona obsługa profilu sieci VPN w konsoli programu Configuration Manager](/sccm/core/plan-design/changes/whats-new-in-version-1710#improved-vpn-profile-experience-in-configuration-manager-console).
 
-
-VPN udoskonalone środowisko profilu w konsoli programu Configuration Manager
 
 ### <a name="new-in-configuration-manger-technical-preview-1711"></a>Nowa w programie Configuration Manager Technical Preview 1711
 
@@ -94,7 +105,11 @@ VPN udoskonalone środowisko profilu w konsoli programu Configuration Manager
 
 ### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune  
 
-- **Obsługę uwierzytelniania opartego na certyfikatach w portalu firmy dla systemu iOS** <!--1029830--> dodano obsługę uwierzytelniania opartego na certyfikatach (CBA) w aplikacji Portal firmy dla systemu iOS. Użytkownicy z CBA wprowadzić swoją nazwę użytkownika, a następnie wybrać link "Zaloguj się przy użyciu certyfikatu". CBA jest już obsługiwana w aplikacji Portal firmy dla systemu Android i Windows. Aby dowiedzieć się więcej na [logowania do aplikacji Portal firmy](https://docs.microsoft.com/intune-user-help/sign-in-to-the-company-portal) strony.
+- **Wskaźnik postępu instalacji urządzenia w portalu firmy Android**<!--1565657-->    
+  Aplikacja Portal firmy dla systemu Android zawiera wskaźnik postępu instalacji urządzenia, gdy użytkownik jest rejestrowanie swojego urządzenia. Wskaźnik przedstawia nowe stany, począwszy od "Konfigurowanie urządzenia...", a następnie "... rejestrowanie urządzenia", "Zakończył rejestrowanie urządzenia...", a następnie "Kończenie konfigurowania urządzenia...".  
+
+- **Obsługę uwierzytelniania opartego na certyfikatach w portalu firmy dla systemu iOS**<!--1029830-->    
+  Dodaliśmy obsługę uwierzytelniania opartego na certyfikatach (CBA) w aplikacji Portal firmy dla systemu iOS. Użytkownicy z CBA wprowadzić swoją nazwę użytkownika, a następnie wybrać link "Zaloguj się przy użyciu certyfikatu". CBA jest już obsługiwana w aplikacji Portal firmy dla systemu Android i Windows. Aby dowiedzieć się więcej na [logowania do aplikacji Portal firmy](https://docs.microsoft.com/intune-user-help/sign-in-to-the-company-portal) strony.
 
 - **Ulepszenia urządzenia Konfiguracja przepływu pracy w portalu firmy**<!--1490692-->    
   Ulepszono przepływu pracy ustawień urządzenia w aplikacji Portal firmy dla systemu Android. Język jest bardziej przyjazny dla użytkownika i specyficzne dla firmy, a w miarę możliwości zostały połączyć ekranów. Można je wyświetlić na [nowości w aplikacji interfejsu użytkownika](https://docs.microsoft.com/intune/whats-new-app-ui#week-of-october-2-2017) strony.

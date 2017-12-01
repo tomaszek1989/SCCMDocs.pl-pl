@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 02d3ca5ed494c20266125686f26b66cebcc7c2a2
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.openlocfilehash: 40a2d91baf8c02cdda96e9520ce155032272ebdd
+ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Kroki sekwencji zadań w programie System Center Configuration Manager
 
@@ -539,22 +539,6 @@ Ten krok sekwencji zadań działa tylko w środowisku Windows PE. Nie działa on
  **Upewnij się, że bieżący system operacyjny do odświeżenia**  
  Wybierz to ustawienie, aby sprawdzić, czy system operacyjny zainstalowany na komputerze docelowym spełnia określone wymagania. Domyślnie to ustawienie jest wybrane i ma ustawioną wartość **KLIENT**.  
 
-##  <a name="child-task-sequence"></a>Sekwencja zadań podrzędnych
-
-Począwszy od programu Configuration Manager w wersji 1710, możesz dodać nowy krok sekwencji zadań uruchamiana innej sekwencji zadań. Spowoduje to utworzenie relacji nadrzędny podrzędny między sekwencji zadań. Z seqeucne zadań podrzędnych można tworzyć sekwencje zadań moduły, wielokrotnego użytku.
-
-Należy rozważyć dodanie sekwencji zadań podrzędnych do sekwencji zadań:
-
- - Sekwencje zadań nadrzędnych i podrzędnych skutecznie są połączone w jedną zasadę, która działa na kliencie.
- - Środowisko jest globalnego. Na przykład jeśli zmiennej jest ustawiany przez sekwencję zadań nadrzędny i następnie zmienić przez sekwencję zadań podrzędnych, pozostaje zmiennej zmienić przenoszenie do przodu. Podobnie jeśli sekwencja zadań podrzędnych tworzy nową zmienną, zmienna jest dostępne dla pozostałych kroków w sekwencji zadań nadrzędnej.
- - Komunikaty o stanie są wysyłane na normalny dla operacji sekwencji pojedyncze zadanie.
- - Sekwencje zadań tworzyć wpisy w pliku smsts.log w nowy dziennik wpisów, dzięki któremu można wyczyścić podczas sekwencji zadań podrzędnych rozpoczyna się.
-
-### <a name="details"></a>Szczegóły
-
-1. W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ogólne**i kliknij przycisk **uruchamiania sekwencji zadań**.
-2. Kliknij przycisk **Przeglądaj** do wybierania sekwencji zadań podrzędnych.  
-
 ##  <a name="BKMK_ConnectToNetworkFolder"></a>Połącz z folderem sieciowym  
  Akcja sekwencji zadań **Połącz z folderem sieciowym** umożliwia utworzenie połączenia z udostępnionym folderem sieciowym.  
 
@@ -1023,7 +1007,7 @@ W programie Configuration Manager w wersji 1606 wprowadzono nową zmienną sekwe
  **Przyłącz do domeny**  
  Wybierz tę opcję, aby przyłączyć komputer docelowy do określonej domeny.  
 
- Opcjonalnie można wprowadzić lub wyszukać jednostkę organizacyjną w określonej domenie, do której ma zostać przyłączony komputer. Jeśli komputer należy obecnie do innej domeny lub grupy roboczej, spowoduje to ponowne uruchomienie komputera. Jeśli komputer należy już do innej jednostki organizacyjnej, usługi Active Directory Domain Services nie zezwolą na zmianę jednostki organizacyjnej i to ustawienie zostanie zignorowane.  
+ Opcjonalnie można wprowadzić lub wyszukać jednostkę organizacyjną w określonej domenie, do której ma zostać przyłączony komputer. Jeśli komputer należy obecnie do innej domeny lub grupy roboczej, spowoduje to ponowne uruchomienie komputera. Jeśli komputer należy już do innej jednostki organizacyjnej, usługi domenowe Active Directory nie zezwolą na zmianę jednostki organizacyjnej i to ustawienie zostanie zignorowane.  
 
  **Wprowadź konto z uprawnieniem do przyłączenia do domeny**  
  Kliknij pozycję **Ustaw**, aby wprowadzić konto i hasło z uprawnieniami do przyłączenia do domeny. Konto należy wprowadzić w następującym formacie:  
@@ -1423,6 +1407,22 @@ Przed 1610 wersji programu Configuration Manager w tym kroku wykonuje następuj�
 
 > [!IMPORTANT]  
 >  Program PowerShell 1.0 nie obsługuje zasad wykonywania Niezdefiniowane i Obejście.  
+
+##  <a name="child-task-sequence"></a>Uruchomienie sekwencji zadań
+
+Począwszy od programu Configuration Manager w wersji 1710, możesz dodać nowy krok sekwencji zadań uruchamiana innej sekwencji zadań. Spowoduje to utworzenie relacji nadrzędny podrzędny między sekwencji zadań. W ramach sekwencji zadań podrzędnych można tworzyć sekwencje zadań moduły, wielokrotnego użytku.
+
+Należy rozważyć dodanie sekwencji zadań podrzędnych do sekwencji zadań:
+
+ - Sekwencje zadań nadrzędnych i podrzędnych skutecznie są połączone w jedną zasadę, która działa na kliencie.
+ - Środowisko jest globalnego. Na przykład jeśli zmiennej jest ustawiany przez sekwencję zadań nadrzędny i następnie zmienić przez sekwencję zadań podrzędnych, pozostaje zmiennej zmienić przenoszenie do przodu. Podobnie jeśli sekwencja zadań podrzędnych tworzy nową zmienną, zmienna jest dostępne dla pozostałych kroków w sekwencji zadań nadrzędnej.
+ - Komunikaty o stanie są wysyłane na normalny dla operacji sekwencji pojedyncze zadanie.
+ - Sekwencje zadań tworzyć wpisy w pliku smsts.log w nowy dziennik wpisów, dzięki któremu można wyczyścić podczas sekwencji zadań podrzędnych rozpoczyna się.
+
+### <a name="details"></a>Szczegóły
+
+1. W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ogólne**i kliknij przycisk **uruchamiania sekwencji zadań**.
+2. Kliknij przycisk **Przeglądaj** do wybierania sekwencji zadań podrzędnych.  
 
 ##  <a name="BKMK_SetDynamicVariables"></a>Ustaw zmienne dynamiczne  
  Krok sekwencji zadań **Ustaw zmienne dynamiczne** umożliwia wykonywanie następujących czynności:  

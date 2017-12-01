@@ -10,14 +10,14 @@ ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bc6c3e5f-b9e2-400e-9d9d-446ff93c520c
-author: Brenduns
-ms.author: brenduns
+author: mstewart
+ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 33a5bff1e202822ce3ec5755958d34af461957e9
-ms.sourcegitcommit: 536f7295e9ea361f1f9ead6c25f3685deb041ad8
+ms.openlocfilehash: 5812133d183c76ab479d547e0f848c2287e5e950
+ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="what39s-new-in-version-1710-of-system-center-configuration-manager"></a>Jaki &#39; s nowego w wersji 1710 programu System Center Configuration Manager
 
@@ -28,8 +28,8 @@ Zaktualizuj 1710 dla bieżącej gałęzi programu System Center Configuration Ma
 > [!TIP]  
 > Aby zainstalować nową lokację, należy użyć wersji bazowej programu Configuration Manager.  
 >  Dowiedz się więcej o:    
->   - [Instalowanie nowej lokacji](https://technet.microsoft.com/library/mt590197.aspx)  
->   - [Instalowanie aktualizacji w lokacjach](https://technet.microsoft.com/library/mt607046.aspx)  
+>   - [Instalowanie nowej lokacji](/sccm/core/servers/deploy/install/installing-sites)  
+>   - [Instalowanie aktualizacji w lokacjach](/sccm/core/servers/manage/updates)  
 >   - [Wersje linii bazowej i aktualizacji](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions)  
 
 Poniższe sekcje zawierają szczegółowe informacje dotyczące zmian i nowych możliwości wprowadzonych w wersji 1710 programu Configuration Manager.  
@@ -60,7 +60,7 @@ Można teraz używać [punkty dystrybucji w chmurze](/sccm/core/plan-design/hier
 <!-- 1350871 -->
 Począwszy od systemu Windows 10 w wersji 1607 (znanej także jako aktualizacja rocznicy), można dołączyć urządzenie z systemem Windows 10 do lokalnej usługi Active Directory (AD) i oparta na chmurze usługi Azure AD, w tym samym czasie (rozwiązanie hybrydowe usługi Azure AD). Wspólnej zarządzania korzysta z tego ulepszenia i umożliwia jednocześnie zarządzać urządzeniami z systemem Windows 10, używając programu Configuration Manager i usługi Intune. To rozwiązanie, które zapewnia mostek z tradycyjnego zarządzania nowoczesnymi i umożliwia ścieżki do dokonania zmiany przy użyciu podejście etapowe. Aby uzyskać więcej informacji, zobacz [urządzenia zarządzania wspólnej dla systemu Windows 10](/sccm/core/clients/manage/co-management-overview).
 
-### <a name="restart-computers-form-the-configuration-manager-console-----1356283---"></a>Ponownie uruchom komputery formularza konsoli programu Configuration Manager<!-- 1356283 -->
+### <a name="restart-computers-from-the-configuration-manager-console-----1356283---"></a>Uruchom ponownie komputer za pomocą konsoli programu Configuration Manager<!-- 1356283 -->
 Począwszy od tej wersji, można użyć konsoli programu Configuration Manager do identyfikowania urządzenia klienckie, które wymagają ponownego uruchomienia a następnie użyć akcji powiadamiania klienta uruchomić je ponownie.
 
 Zobacz [jak zarządzać klientami w programie System Center Configuration Manager](/sccm/core/clients/manage/manage-clients#restart-clients)
