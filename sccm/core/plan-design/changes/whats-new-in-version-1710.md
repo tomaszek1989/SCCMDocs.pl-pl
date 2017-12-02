@@ -13,8 +13,8 @@ ms.assetid: bc6c3e5f-b9e2-400e-9d9d-446ff93c520c
 author: mstewart
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 5812133d183c76ab479d547e0f848c2287e5e950
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: 71510d7f28941bbac56888afcc2332ed1ebec3b8
+ms.sourcegitcommit: 4af1da9c18f5bdff31426cf1d58c7d949372292d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 12/01/2017
@@ -66,7 +66,7 @@ Począwszy od tej wersji, można użyć konsoli programu Configuration Manager d
 Zobacz [jak zarządzać klientami w programie System Center Configuration Manager](/sccm/core/clients/manage/manage-clients#restart-clients)
 
 
-<!--  ## Compliance settings  -->
+<!-- ## Compliance settings -->
 
 
 ## <a name="application-management"></a>Zarządzanie aplikacjami
@@ -130,6 +130,10 @@ Aby uzyskać więcej informacji, zobacz [sposób konfigurowania ustawień klient
 
 
 ## <a name="mobile-device-management"></a>Zarządzanie urządzeniami przenośnymi
+
+### <a name="actions-for-non-compliance"></a>Akcje dla braku zgodności 
+<!--1321366 -->    
+Można teraz skonfigurować uporządkowane czasu sekwencję akcji, które są stosowane do urządzeń, które stwierdzona zostanie niezgodność. Na przykład można powiadamiać użytkowników o niezgodnych urządzeń za pośrednictwem poczty e-mail lub oznaczyć te urządzenia niezgodne. Aby uzyskać więcej informacji, zobacz [ustawiania akcji dla zgodności z systemem innym niż](/sccm/mdm/deploy-use/actions-for-noncompliance).
 
 ### <a name="windows-10-arm64-device-support"></a>Obsługa urządzeń z systemem Windows 10 ARM64
 <!-- 1355000 -->

@@ -3,7 +3,7 @@ title: "Obsługiwane wersje programu SQL Server"
 titleSuffix: Configuration Manager
 description: Pobierz wymagania konfiguracji i wersji programu SQL Server do hostowania bazy danych lokacji programu System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/10/2017
+ms.date: 11/30/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,8 +15,8 @@ caps.latest.revision: "21"
 author: mstewart
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 9db753a7efb4a3fd56eaf38a31eb2b992c114ddc
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: f9edff3d50305a4166a6ea8e696e58a2120c4212
+ms.sourcegitcommit: 4af1da9c18f5bdff31426cf1d58c7d949372292d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 12/01/2017
@@ -95,8 +95,6 @@ Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersj
 -   Lokacja główna  
 -   Lokację dodatkową
 
-
-
 ### <a name="sql-server-2014-sp1-standard-enterprise"></a>SQL Server 2014 z dodatkiem SP1: Wersje Standard, Enterprise  
  Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:  
 
@@ -136,8 +134,6 @@ Jeśli są obsługiwane przez używaną wersję programu Configuration Manager, 
 -   Centralna lokacja administracyjna  
 -   Lokacja główna
 -   Lokację dodatkową
-
-
 
 ### <a name="sql-server-2016-express-sp1"></a>SQL Server 2016 Express z dodatkiem SP1  
 Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:

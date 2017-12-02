@@ -14,8 +14,8 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: f6ca5a7eb9befd82af3a54c6db868e15291b1621
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: 189e737eca5dee5bca3f0748cd1b4d944f868565
+ms.sourcegitcommit: 4af1da9c18f5bdff31426cf1d58c7d949372292d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 12/01/2017
@@ -74,6 +74,9 @@ Dodaliśmy **typ własności** do ekranu szczegóły urządzenia w aplikacji Por
 
 
 ### <a name="new-in-configuration-manager-current-branch"></a>Nowe w programie Configuration Manager (wersji current branch)
+
+- **Akcje dotyczące zgodności z systemem innym niż**<!--1321366 -->    
+  Można teraz skonfigurować uporządkowane czasu sekwencję akcji, które są stosowane do urządzeń, które stwierdzona zostanie niezgodność. Na przykład można powiadamiać użytkowników o niezgodnych urządzeń za pośrednictwem poczty e-mail lub oznaczyć te urządzenia niezgodne. Aby uzyskać więcej informacji, zobacz [ustawiania akcji dla zgodności z systemem innym niż](/sccm/mdm/deploy-use/actions-for-noncompliance).
 
 - **Nowe ustawienia zasad zarządzania aplikacjami mobilnymi**<!-- 1324760 -->    
   Następujące ustawienia zostały dodane do ustawienia zasad zarządzania aplikacjami mobilnymi:
