@@ -13,14 +13,14 @@ ms.topic: get-started-article
 ms.assetid: d8c8b44c-1e8a-42b6-bab4-23c72a0a6169
 caps.latest.revision: "15"
 caps.handback.revision: "0"
-author: mstewart
+author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 11d175a4ac42d62a440c6b374463c778b58b0973
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: 95df27d4bf21a2cb1b6d613415a3eff4c3a73552
+ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/04/2017
 ---
 # <a name="removed-and-deprecated-features-for-system-center-configuration-manager"></a>Usunięte i przestarzałe funkcje programu System Center Configuration Manager
 
@@ -55,7 +55,7 @@ Aby uzyskać więcej informacji, zobacz:
 |Windows Server 2008|10 lipca 2015 r.|Wersja 1511 </br></br>Obsługuje jako system lokacji zostanie usunięty. (Patrz Uwaga 1).|  
 |Windows Server 2008 R2|10 lipca 2015 r.| Wersja 1702 (patrz Uwaga 2)|  
 
--   Uwaga 1: Ten system operacyjny nie jest obsługiwany dla serwerów lokacji i ról systemu lokacji, z wyjątkiem punktu dystrybucji i punktu dystrybucji ściągania. Można nadal używać tego systemu operacyjnego jako punkt dystrybucji, do momentu ogłoszenia zaniechania tej obsługi lub zakończenia okresu rozszerzonej pomocy technicznej tego systemu operacyjnego. Aby uzyskać więcej informacji, zobacz [instalacji programu System Center Configuration Manager CB i LTSB zakończy się niepowodzeniem w systemie Windows Server 2008](https://support.microsoft.com/help/4015095).
+-   Uwaga 1: Ten system operacyjny nie jest obsługiwany dla serwerów lokacji i ról systemu lokacji punktu dystrybucji i punktu dystrybucji ściągania. Można nadal używać tego systemu operacyjnego jako punkt dystrybucji, do momentu ogłoszenia zaniechania tej obsługi lub zakończenia okresu rozszerzonej pomocy technicznej tego systemu operacyjnego. Aby uzyskać więcej informacji, zobacz [instalacji programu System Center Configuration Manager CB i LTSB zakończy się niepowodzeniem w systemie Windows Server 2008](https://support.microsoft.com/help/4015095).
 
 -   Uwaga 2:    Począwszy od wersji 1702, ten system operacyjny jest nieobsługiwane dla serwerów lokacji i większości ról systemu lokacji, jednak wersje poprzedzające 1702 w dalszym ciągu obsługuje jej użycia. Ten system operacyjny dalszym ciągu obsługiwany dla roli systemu lokacji punktu dystrybucji (w tym ściągające punkty dystrybucji i środowiska PXE i multiemisji) do momentu ogłoszenia zaniechania tej obsługi lub rozszerzony tego systemu operacyjnego wygaśnięciu okresu pomocy technicznej. Począwszy od wersji 1602, możesz przeprowadzić uaktualnienie w miejscu systemu operacyjnego serwera lokacji z systemem Windows Server 2008 R2 do systemu Windows Server 2012 R2.  
 
@@ -89,7 +89,7 @@ Aby uzyskać więcej informacji, zobacz:
 
 Należy uaktualnić używanej wersji programu SQL Server, zalecamy następujących metod z ułatwia bardziej złożonych.
 1. [Uaktualnienie programu SQL Server w miejscu](/sccm/core/servers/manage/upgrade-on-premises-infrastructure#a-namebkmksupconfigupgradedbsrva-upgrade-sql-server-on-the-site-database-server) (zalecane).
-2. Instalowanie nowej wersji programu SQL Server na nowym komputerze, a następnie [opcja przenoszenia bazy danych](/sccm/core/servers/manage/modify-your-infrastructure#a-namebkmkdbconfiga-modify-the-site-database-configuration) Instalatora programu Configuration Manager, aby wskazywały nowy serwer SQL serwera lokacji.
+2. Instalowanie nowej wersji programu SQL Server na nowym komputerze. Następnie [opcja przenoszenia bazy danych](/sccm/core/servers/manage/modify-your-infrastructure#a-namebkmkdbconfiga-modify-the-site-database-configuration) Instalatora programu Configuration Manager, aby wskazywały nowy serwer SQL serwera lokacji.
 3. Użyj [kopii zapasowych i odzyskiwania](/sccm/protect/understand/backup-and-recovery).
 
 
@@ -104,7 +104,7 @@ Należy uaktualnić używanej wersji programu SQL Server, zalecamy następujący
 |Program Software Center ma zmieniony, nowoczesny wygląd. W najbliższych miesiącach poprzedniej wersji Centrum oprogramowania nie będą już dostępne.<br><br>Aby użyć nowego centrum oprogramowania przez włączenie na kliencie ustawienia, można skonfigurować klientów **Agent komputera** > **Użyj nowego centrum oprogramowania**.<br><br>Aby uzyskać więcej informacji na temat Centrum oprogramowania, zobacz [planowanie i Konfigurowanie zarządzania aplikacjami w programie System Center Configuration Manager](https://docs.microsoft.com/sccm/apps/plan-design/plan-for-and-configure-application-management).|13 grudnia 2016 r.|Obsługa w poprzedniej wersji Centrum oprogramowania kończy się pierwszą aktualizacją wydaną po 1 stycznia 2018.|
 |Dzięki udostępnieniu nowe środowisko programu Software Center w wersji 1511 aplikacje, które wcześniej znajdowały się tylko w wykazie aplikacji (aplikacje dostępne dla użytkowników) teraz wyświetlane w Centrum oprogramowania. </br></br>Dzięki tej funkcji podstawowego katalogu aplikacji teraz zawarta w programie Software Center środowiska pracy opartego na sieci web katalogu aplikacji nie będą już dostępne w najbliższych miesiącach.|11 sierpnia 2017 r.| Obsługa środowiska użytkownika witryny sieci web kończy się wraz z pierwszą aktualizacją wydaną po 1 czerwca 2018 katalogu aplikacji|
 |Zarządzanie wirtualnych dysków twardych (VHD) z programu Configuration Manager. </br></br>Dotyczy to również usunięcie opcje tworzenia nowego wirtualnego dysku twardego lub dysk VHD za pomocą sekwencji zadań zarządzania i usunięcie węzła wirtualnych dysków twardych z konsoli programu Configuration Manager. </br></br>Ta obsługa zostanie usunięty, istniejące pliki VHD nie zostaną usunięte, ale nie będą już dostępne z poziomu konsoli programu Configuration Manager.  |6 stycznia 2017 r. |Obsługa kończy się wirtualne dyski twarde z pierwszą aktualizacją wydaną po 1 czerwca 2017 r.|
-|Narzędzie oceny uaktualniania programu Configuration Manager dla programu System Center. </br></br>Narzędzie oceny uaktualniania zależy od zarówno System Center Configuration Manager, jak i zestawu narzędzi zgodności aplikacji (ACT) 6.x. Dostarczono ACT z ostateczną wersją systemu Windows 10 ADK v1511. Ponieważ będzie żadnych aktualizacji dalsze działanie, obsługę narzędzia Upgrade Assessment Tool nie będzie już dostępna. </br></br>Zastępuje narzędzie oceny uaktualniania [gotowości do uaktualnienia](/sccm/core/clients/manage/upgrade/upgrade-analytics) funkcji. Powiadomienie o wycofaniu został dodany do [strony pobierania UAT](https://www.microsoft.com/download/details.aspx?id=37145) na 2016-9-12. |9/12/2016  | 11 lipca 2017 r. |
+|Narzędzie oceny uaktualniania programu Configuration Manager dla programu System Center. </br></br>Narzędzie oceny uaktualniania zależy od zarówno System Center Configuration Manager, jak i zestawu narzędzi zgodności aplikacji (ACT) 6.x. Dostarczono ACT z ostateczną wersją systemu Windows 10 ADK v1511. Ponieważ będzie żadnych aktualizacji dalsze działanie, obsługę narzędzia Upgrade Assessment Tool nie będzie już dostępna. </br></br>Zastępuje narzędzie oceny uaktualniania [gotowości do uaktualnienia](/sccm/core/clients/manage/upgrade/upgrade-analytics) funkcji. Powiadomienie o wycofaniu został dodany do [strony pobierania UAT](https://www.microsoft.com/download/details.aspx?id=37145) w dniu 12 września 2016 r. | 12 września 2016 roku.  | 11 lipca 2017 r. |
 
 
 <br></br>
