@@ -13,11 +13,11 @@ ms.assetid: bc6c3e5f-b9e2-400e-9d9d-446ff93c520c
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 83bd5fc972bc0bef07b206e160463db71837e827
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 8fca0aa86798023b92c1c16a893f9becf6ac444e
+ms.sourcegitcommit: 5f4a584d4a833b0cc22bd8c47da7dd55aced97fa
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 12/05/2017
 ---
 # <a name="what39s-new-in-version-1710-of-system-center-configuration-manager"></a>Jaki &#39; s nowego w wersji 1710 programu System Center Configuration Manager
 
@@ -58,7 +58,7 @@ Można teraz używać [punkty dystrybucji w chmurze](/sccm/core/plan-design/hier
 
 ### <a name="co-management-for-windows-10-devices"></a>Jednoczesne zarządzania dla urządzeń z systemem Windows 10    
 <!-- 1350871 -->
-Począwszy od systemu Windows 10 w wersji 1607 (znanej także jako aktualizacja rocznicy), można dołączyć urządzenie z systemem Windows 10 do lokalnej usługi Active Directory (AD) i oparta na chmurze usługi Azure AD, w tym samym czasie (rozwiązanie hybrydowe usługi Azure AD). Wspólnej zarządzania korzysta z tego ulepszenia i umożliwia jednocześnie zarządzać urządzeniami z systemem Windows 10, używając programu Configuration Manager i usługi Intune. To rozwiązanie, które zapewnia mostek z tradycyjnego zarządzania nowoczesnymi i umożliwia ścieżki do dokonania zmiany przy użyciu podejście etapowe. Aby uzyskać więcej informacji, zobacz [urządzenia zarządzania wspólnej dla systemu Windows 10](/sccm/core/clients/manage/co-management-overview).
+W poprzednich aktualizacje systemu Windows 10, urządzenia z systemem Windows 10 można już dołączyć do lokalnej usługi Active Directory (AD) i oparta na chmurze usługi Azure AD, w tym samym czasie (rozwiązanie hybrydowe usługi Azure AD). Począwszy od programu Configuration Manager w wersji 1710 wspólnej zarządzania korzysta z tego ulepszenia i umożliwia jednocześnie Zarządzanie systemem Windows 10 wersji 1709 (znanej także jako aktualizacja twórców spadek) urządzenia, używając programu Configuration Manager i usługi Intune. To rozwiązanie, które zapewnia mostek z tradycyjnego zarządzania nowoczesnymi i umożliwia ścieżki do dokonania zmiany przy użyciu podejście etapowe. Aby uzyskać więcej informacji, zobacz [urządzenia zarządzania wspólnej dla systemu Windows 10](/sccm/core/clients/manage/co-management-overview).
 
 ### <a name="restart-computers-from-the-configuration-manager-console-----1356283---"></a>Uruchom ponownie komputer za pomocą konsoli programu Configuration Manager<!-- 1356283 -->
 Począwszy od tej wersji, można użyć konsoli programu Configuration Manager do identyfikowania urządzenia klienckie, które wymagają ponownego uruchomienia a następnie użyć akcji powiadamiania klienta uruchomić je ponownie.

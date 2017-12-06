@@ -15,11 +15,11 @@ caps.latest.revision: "9"
 author: aaroncz
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: ea8eead4706472a02f216b432ea9f2e6bdf23f66
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: f0feba771dcc75d84cd1233fea562472ff6c1158
+ms.sourcegitcommit: 8c6e9355846ff6a73c534c079e3cdae09cf13c45
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="use-a-pull-distribution-point-with-system-center-configuration-manager"></a>Korzystanie z punktu dystrybucji ściągania w programie System Center Configuration Manager
 
@@ -105,8 +105,10 @@ Podczas pobierania zawartości ze źródłowego punktu dystrybucji punkt dystryb
 -   Ta struktura jest instalowana przez **Pulldp.msi** podczas konfigurowania punktu dystrybucji do punktu dystrybucji ściągania. Platformę nie wymaga klienta programu Configuration Manager.  
 
 -   Aby umożliwić działanie ściągającego punktu dystrybucji po jego zainstalowaniu na komputerze punktu dystrybucji musi być dostępna usługa CCMExec.  
+<!--sms.503672 -Clarified BITS use-->
+-   Gdy punkt dystrybucji ściągania przesyła zawartość, przesyłania przy użyciu **Usługa inteligentnego transferu w tle** (BITS) wbudowane w system operacyjny Windows. Punkt dystrybucji ściągania nie wymaga opcjonalna funkcja rozszerzenie serwera IIS usługi BITS do zainstalowania.
 
--   Zawartość będzie przesyłana do punktu dystrybucji ściągania przy użyciu **usługi inteligentnego transferu w tle (BITS)** , a działanie punktu dystrybucji ściągania będzie rejestrowane na komputerze punktu dystrybucji w plikach **datatransferservice.log** oraz **pulldp.log** .  
+-  Punkt dystrybucji ściągania zaloguje się jego operacji **datatransferservice.log** i **pulldp.log** na komputerze punktu dystrybucji.
 
 ## <a name="see-also"></a>Zobacz także  
  [Podstawowe pojęcia związane z zarządzaniem zawartością w programie System Center Configuration Manager](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management)   

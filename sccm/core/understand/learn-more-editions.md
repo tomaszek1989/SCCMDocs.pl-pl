@@ -3,7 +3,7 @@ title: "Dowiedz się więcej na temat licencjonowania i gałęzie"
 titleSuffix: Configuration Manager
 description: "Użyj tego tematu, aby poznać wymagania licencyjne opcjami instalacji wraz z wydaniem października 2016 programu System Center Configuration Manager, które dotyczą wersji Current Branch 1606, długoterminowe Servicing Branch (LTSB) i instalacja dotyczy wersji ewaluacyjnej bieżącej gałęzi."
 ms.custom: na
-ms.date: 10/12/2016
+ms.date: 12/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: aaroncz
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 0890b25f4b5b96a8d39b0dcf6f0aa659c07265db
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: bcb25fc6faad3d5f7162ae4ceb200c6de1c1c25b
+ms.sourcegitcommit: 8c6e9355846ff6a73c534c079e3cdae09cf13c45
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="licensing-and-branches-for-system-center-configuration-manager"></a>Licencjonowanie i gałęzi programu System Center Configuration Manager
 
@@ -42,7 +42,7 @@ W tym temacie odwołuje się do Umowy Software Assurance (lub równoważne subsk
 
 |Gałęzi|Licencjonowanie|Szczegóły|
 |----------------|---------------------|--------------------|
-|Bieżąca gałąź | Wymaga active umowę Software Assurance (lub równoważne uprawnienia) do programu Configuration Manager. </br></br> Zobacz [Software Assurance i bieżącej gałęzi](#software-assurance-and-the-current-Branch) w tym temacie.| Obsługiwane do użytku w środowiskach produkcyjnych, które chcesz otrzymywać regularne aktualizacje funkcji i jakości firmy Microsoft. </br></br> Tej gałęzi zapewnia dostęp do używania wszystkich funkcji i ulepszeń. </br></br> Każda wersja aktualizacji jest obsługiwana w przypadku roku jednego (1) po wydaniu przed upływem którego należy zaktualizować do nowszej wersji jest nadal [w obsłudze](/sccm/core/servers/manage/current-branch-versions-supported).|
+|Bieżąca gałąź | Wymaga active umowę Software Assurance (lub równoważne uprawnienia) do programu Configuration Manager. </br></br> Zobacz [Software Assurance i bieżącej gałęzi](#software-assurance-and-the-current-Branch) w tym temacie.| Obsługiwane do użytku w środowiskach produkcyjnych, które chcesz otrzymywać regularne aktualizacje funkcji i jakości firmy Microsoft. </br></br> Tej gałęzi zapewnia dostęp do używania wszystkich funkcji i ulepszeń. </br></br> W wersji programu Configuration Manager wydane przed 1710 pomocy technicznej jest za 12 miesięcy. Począwszy od wersji 1710 każdej wersji aktualizacji pozostaje w obsługę 18 miesięcy od jego data wydania ogólnej dostępności. Zobacz [pomocy technicznej dla programu System Center Configuration Manager bieżącej gałęzi wersji](/sccm/core/servers/manage/current-branch-versions-supported) więcej szczegółów.|
 |Długoterminowe obsługi Branch (LTSB)| Wymaga bieżącego Software Assurance umowę z firmą Microsoft w chwili wydania (1 października 2016) </br></br> Zobacz [Software Assurance i LTSB](#software-assurance-and-the-ltsb) w tym temacie. | Obsługiwane do użytku w środowiskach produkcyjnych. Przeznaczony do użycia przez klientów, które mają się, że ich Software Assurance (SA) lub równoważne subskrypcje prawa do programu Configuration Manager wygasają po 1 2016 października. </br></br> Tej gałęzi jest ograniczona w porównaniu z bieżącej gałęzi. </br></br> Krytyczne aktualizacje zabezpieczeń dla programu Configuration Manager są udostępnione do tego rozgałęzienia, ale żadne nowe funkcje stają się dostępne. |
 |Instalacja dotyczy wersji ewaluacyjnej bieżącej gałęzi| Nie wymagają umowy Software Assurance z firmą Microsoft. | [Instaluje oceny](https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection) są zawsze bieżącej gałęzi i może służyć do 180 dni. </br></br> Można uaktualnić instalacji wersji ewaluacyjnej do pełnej wersji instalacji bieżącej gałęzi. Nie można uaktualnić instalację w wersji ewaluacyjnej do gałęzi obsługi długoterminowe.|
 

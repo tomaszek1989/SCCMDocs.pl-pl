@@ -3,7 +3,7 @@ title: "Tworzenie i uruchamianie skryptów"
 titleSuffix: Configuration Manager
 description: "Tworzenie i uruchamianie skryptów programu Powershell na urządzeniach klienckich."
 ms.custom: na
-ms.date: 11/20/2017
+ms.date: 11/29/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,31 +16,31 @@ caps.handback.revision: "0"
 author: BrucePerlerMS
 ms.author: bruceper
 manager: angrobe
-ms.openlocfilehash: 964f6d39c4c1afc82ff4336821740923d27cd569
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.openlocfilehash: 1472f697ae8b82e6268433aa6398fcc10a429994
+ms.sourcegitcommit: 5f4a584d4a833b0cc22bd8c47da7dd55aced97fa
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/05/2017
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Tworzenie i uruchamianie skryptów programu PowerShell z poziomu konsoli programu Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Mamy teraz lepiej zintegrowana możliwość uruchamiać skrypty programu Powershell w programie System Center Configuration Manager. PowerShell ma Zaletą tworzenia zaawansowanych, zautomatyzowanych skryptów, Rozumiem i udostępnione z branży. Skrypty uprościć tworzenie niestandardowego narzędzia do administrowania oprogramowania i pozwalają osiągnąć żmudnych zadań, umożliwiając szybkie wykonywania obowiązków big łatwiejsze i bardziej spójnie.
+>[!TIP]
+>Możliwość uruchamiania skryptów programu PowerShell wprowadzonym w wersji 1706, to funkcja wersji wstępnej. Aby włączyć skryptów, zobacz [w programie System Center Configuration Manager funkcje wersji wstępnej](/sccm/core/servers/manage/pre-release-features).
+
+Mamy teraz lepiej zintegrowana możliwość uruchamiać skrypty programu Powershell w programie System Center Configuration Manager. PowerShell ma Zaletą tworzenia zaawansowanych, zautomatyzowanych skryptów, Rozumiem i udostępnione z branży. Skrypty uprościć tworzenie niestandardowego narzędzia do administrowania pozwalają osiągnąć żmudnych zadań szybkie, umożliwiając wykonywania obowiązków big łatwiejsze i bardziej spójnego i oprogramowania.
 
 Dzięki tej integracji w programie System Center Configuration Manager, można użyć *uruchamianie skryptów* funkcje można wykonywać następujące czynności:
 
-- Tworzenie i edytowanie skryptów do użytku z programem Configuration Manager.
-- Zarządzanie użyciem skryptu za pomocą ról i zakresów zabezpieczeń  
+- Tworzenie i edytowanie skryptów do użytku w programie System Center Configuration Manager.
+- Zarządzanie użyciem skryptu za pomocą ról i zakresów zabezpieczeń. 
 - Uruchamianie skryptów w kolekcji lub poszczególnych lokalnymi zarządzanych komputerów z systemem Windows.
 - Pobierz wyniki skryptu zagregowanej szybkiego z urządzeń klienckich.
 - Monitorowanie wykonania skryptu i wyświetlić wyniki raportowania z danych wyjściowych skryptu.
 
->[!IMPORTANT]
+>[!WARNING]
 >Podana moc skrypty, możemy przypominać zamierzone i zachować ostrożność przy ich użycia. Stworzyliśmy dodatkowe zabezpieczenia, aby ułatwić; rozdzielone ról i zakresów. Pamiętaj sprawdzić dokładność skryptów przed ich uruchomieniem i upewnij się, że pochodzą z zaufanego źródła, aby zapobiec wykonaniu script niezamierzone. Zachować ostrożność, znaki rozszerzone lub innych zaciemnienie i zapoznanie się z informacjami o zabezpieczaniu skryptów.
-
->[!TIP]
->Skrypty programu PowerShell wprowadzonym w wersji 1706, to funkcja wersji wstępnej. Aby włączyć skryptów, zobacz [w programie System Center Configuration Manager funkcje wersji wstępnej](/sccm/core/servers/manage/pre-release-features).
 
 ## <a name="prerequisites"></a>Wymagania wstępne
 
@@ -49,7 +49,7 @@ Dzięki tej integracji w programie System Center Configuration Manager, można u
 - Używać skryptów, użytkownik musi należeć do odpowiedniej roli zabezpieczeń programu Configuration Manager.
 - Aby zaimportować i tworzenia skryptów — Twoje konto musi mieć **Utwórz** uprawnienia dla **skryptów programu SMS** w **administrator o pełnych uprawnieniach** roli zabezpieczeń.
 - Do zatwierdzenia lub odrzucenia skryptów — Twoje konto musi mieć **Zatwierdź** uprawnienia dla **skryptów programu SMS** w **administrator o pełnych uprawnieniach** roli zabezpieczeń.
-- Aby uruchamiać skrypty - Twoje konto musi mieć **Uruchom skrypt** uprawnienia dla **kolekcje** w **Menedżer ustawień zgodności** roli zabezpieczeń.
+- Aby uruchamiać skrypty - Twoje konto musi mieć **Uruchom skrypt** uprawnienia dla **kolekcje** w **administrator o pełnych uprawnieniach** roli zabezpieczeń.
 
 Aby uzyskać więcej informacji na temat ról zabezpieczeń programu Configuration Manager, zobacz [podstawowe informacje dotyczące administrowania opartego na rolach](/sccm/core/understand/fundamentals-of-role-based-administration).
 
@@ -58,7 +58,7 @@ Aby uzyskać więcej informacji na temat ról zabezpieczeń programu Configurati
 Uruchom skrypty obecnie obsługuje:
 
 - Języki skryptów: PowerShell
-- Typ parametru: liczba całkowita i ciąg
+- Typ parametru: liczba całkowita, ciąg i listy
 
 ## <a name="run-script-authors-and-approvers"></a>Uruchom skrypt autorzy i osoby zatwierdzające
 
@@ -120,79 +120,83 @@ Każdy z parametrów skryptu ma własne okno dialogowe dodawania dalszych szczeg
 
 Każdy parametr w skrypcie ma **właściwości parametru skryptu** okno dialogowe umożliwiające dodawanie sprawdzania poprawności dla tego parametru. Po dodaniu weryfikacji, należy pobrać błędy podczas wprowadzania wartości dla parametru, który nie spełnia jego poprawności.
 
-#### <a name="example-firstname"></a>Przykład: Imię
+#### <a name="example-firstname"></a>Przykład: *Imię*
 
-W tym przykładzie jest możliwość ustawiania właściwości parametru ciągu *imię*. Zwróć uwagę, pole opcjonalne dla **błąd niestandardowy**. To pole jest przydatne w przypadku dodawania użytkownika wskazówek dotyczących określonego pola i Twoje wskazówki dla użytkownika o ich interakcji z parametru ciągu *imię* w takim przypadku.
+W tym przykładzie jest możliwość ustawiania właściwości parametru ciągu *imię*.
 
 ![Parametry skryptu — ciąg](./media/run-scripts/RS-parameters-string.png)
+
+
+Sprawdzanie poprawności części **właściwości parametru skryptu** okno dialogowe zawiera następujące pola do użycia:
+
+- **Minimalna długość** — minimalna liczba znaków *imię* pola.
+- **Maksymalna długość**— maksymalna liczba znaków *imię* pola
+- **Wyrażenie regularne** — skrót *wyrażenie regularne*. Aby uzyskać więcej informacji o korzystaniu z wyrażeniem regularnym, zobacz następną sekcję, *weryfikacji przy użyciu wyrażenia regularnego*.
+- **Błąd niestandardowy** — jest to przydatne w przypadku dodawania własny niestandardowy komunikat o błędzie, który zastępuje komunikaty o błędach weryfikacji systemu.
+
+#### <a name="using-regular-expression-validation"></a>Przy użyciu weryfikacji wyrażenia regularnego
+
+Wyrażenie regularne jest compact formularza programowania sprawdzania ciąg znaków względem zakodowanego sprawdzania poprawności. Na przykład można sprawdzić, czy brak kapitału litery w *imię* przez umieszczenie `[^A-Z]` w *RegEx* pola.
+
+Wyrażenie regularne przetwarzania dla tego okna dialogowego jest obsługiwana przez program .NET Framework. Aby uzyskać wskazówki dotyczące za pomocą wyrażeń regularnych, zobacz [wyrażenie regularne .NET](https://docs.microsoft.com/dotnet/standard/base-types/regular-expressions). 
+
 
 ## <a name="script-examples"></a>Przykłady skryptów
 
 Oto kilka przykładów ilustrujące skrypty, które można korzystać z tej funkcji.
 
-### <a name="create-a-folder"></a>Utwórz folder
+### <a name="create-a-new-folder-and-file"></a>Utwórz nowy folder i plików
+
+Ten skrypt tworzy nowy folder i plik w jego podane dane wejściowe pod kątem nazw.
 
 ``` powershell
-New-Item "c:\scripts" -type folder name
-```
-
-### <a name="create-a-file"></a>Utwórz plik
-
-```powershell
-New-Item "c:\scripts\new_file.txt" -type file name
-```
-
-### <a name="ping-a-given-computer"></a>Polecenie ping danego komputera
-
-Ten skrypt ciąg znaków i używa go jako parametru dla *ping* operacji.
-
-``` powershell
-Param
-(
- [String][Parameter(Mandatory=$True, Position=1)] $Computername
+Param(
+[Parameter(Mandatory=$True)]
+[string]$FolderName,
+[Parameter(Mandatory=$True)]
+[string]$FileName,
 )
 
-Ping $Computername
+New-Item $FolderName -type directory
+New-Item $FileName -type file
 ```
 
-### <a name="get-battery-status"></a>Pobierz stan baterii
+### <a name="get-os-version"></a>Pobieranie wersji systemu operacyjnego
 
-Ten skrypt używa usługi WMI do badania komputera w celu jego stan baterii.
+Ten skrypt używa usługi WMI do badania komputer, aby jego wersja systemu operacyjnego.
 
 ``` powershell
-Write-Output (Get-WmiObject -Class Win32_Battery).BatteryStatus
-
+Write-Output (Get-WmiObject -Class Win32_operatingSystem).Caption
 ```
 
 ## <a name="run-a-script"></a>Uruchom skrypt
 
-Po zatwierdzeniu skryptu mogą być uruchamiane na kolekcję, którą wybierzesz. Po rozpoczęciu wykonywania skryptu, jest uruchamiana szybko systemach o wysokim priorytecie i jest wykonywane w ciągu godziny. Zwracane są wyniki skryptu przy użyciu wiadomości wolniej, stan systemu.
+Po zatwierdzeniu skryptu mogą być uruchamiane na jednym urządzeniu lub kolekcji. Po rozpoczęciu wykonywania skryptu uruchomionego szybko za pośrednictwem systemu o wysokim priorytecie, w którym wychodzący razy w ciągu godziny. Zwracany są wyniki skryptu, za pomocą systemu komunikatów o stanie.
+
+Aby wybrać kolekcję elementów docelowych dla skryptu:
 
 1. W konsoli programu Configuration Manager kliknij przycisk **Zasoby i zgodność**.
 2. W zasoby i zgodność obszar roboczy, kliknij przycisk **kolekcje urządzeń**.
 3. W **kolekcje urządzeń** kliknij kolekcję urządzeń, na których chcesz uruchomić skrypt.
-4. Na **Home** karcie **wszystkie systemy** kliknij przycisk **Uruchom skrypt**.
+4. Wybierz kolekcję wybór, kliknij przycisk **Uruchom skrypt**.
 5. Na **skryptu** strony **Uruchom skrypt** kreatora wybierz skrypt z listy. Wyświetlane są tylko zatwierdzone skrypty.
 6. Kliknij przycisk **dalej**, a następnie Zakończ pracę kreatora.
 
 >[!IMPORTANT]
->Jeśli skrypt nie działa, na przykład ponieważ klienta docelowego jest wyłączone, w ciągu jednej godziny przedziale czasu, należy uruchomić je ponownie.
+>Jeśli skrypt nie działa, na przykład ponieważ urządzenia docelowego jest wyłączony w trakcie godzinę przedziale czasu, należy uruchomić je ponownie.
 
 ### <a name="target-machine-execution"></a>Wykonanie komputera docelowego
+
 Skrypt zostanie wykonany jako *systemu* lub *komputera* konta na docelowych klientów. To konto ma ograniczony dostęp do sieci. Dostęp do systemów zdalnych i lokalizacje przez skrypt muszą mieć odpowiednio przydzielone.
 
-## <a name="work-flow-and-monitoring"></a>Monitorowanie i przepływu pracy
+## <a name="script-monitoring"></a>Skrypt monitorowania
 
-Oto, jak wygląda uruchamianie skryptów jako przepływ pracy; Tworzenie, zatwierdzenia, uruchom i monitorowania.
+Po zainicjowaniu uruchomienie skryptu w kolekcji urządzeń, użyj poniższej procedury do monitorowania operacji. Począwszy od wersji 1710 jest jednocześnie możliwość monitorowania skryptu w czasie rzeczywistym wykonywania, a można także wrócić do raportu dla danego wykonywania Uruchom skrypt. <br>
 
-![Uruchom skrypty — przepływ pracy](./media/run-scripts/RS-run-scripts-work-flow.png)
-
-### <a name="script-monitoring"></a>Skrypt monitorowania
-
-Po zainicjowaniu uruchomienie skryptu w kolekcji urządzeń, użyj poniższej procedury do monitorowania operacji. Począwszy od wersji 1710 jest jednocześnie możliwość monitorowania skryptu w czasie rzeczywistym wykonywania, a można także wrócić do raportu dla danego wykonywania Uruchom skrypt.
+![Monitor skryptu — stan uruchomienia skryptu](./media/run-scripts/RS-monitoring-three-bar.png)
 
 1. W konsoli programu Configuration Manager kliknij **monitorowanie**.
-2. W **monitorowanie** obszaru roboczego kliknij **stanu skryptu**. ![Monitor skryptu — stan uruchomienia skryptu](./media/run-scripts/RS-monitoring-three-bar.png)
+2. W **monitorowanie** obszaru roboczego kliknij **stanu skryptu**.
 3. W **stanu skryptu** listy, wyświetlania wyników dla każdego skryptu uruchomionego na urządzeniach klienckich. Kod zakończenia skryptu **0** ogół wskazuje, że skrypt został uruchomiony pomyślnie.
 
 ## <a name="see-also"></a>Zobacz też

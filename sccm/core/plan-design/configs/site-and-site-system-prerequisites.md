@@ -15,11 +15,11 @@ caps.latest.revision: "5"
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 34886a38ed4b797b254e3fb83eb66588c7e1d116
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 2c87cf0e63e4b95f5b94b6cda9e2aa40c4389184
+ms.sourcegitcommit: 8c6e9355846ff6a73c534c079e3cdae09cf13c45
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="site-and-site-system-prerequisites-for-system-center-configuration-manager"></a>Witryny i wymagania wstępne systemu lokacji dla programu System Center Configuration Manager
 
@@ -258,8 +258,9 @@ ms.lasthandoff: 12/04/2017
     > [!NOTE]  
     >  Usługi wdrażania systemu Windows automatycznie instalowane i konfigurowane podczas konfigurowania punktu dystrybucji do obsługi środowiska PXE lub multiemisji na serwerze z systemem Windows Server 2012 lub nowszym.  
 
+<!--sms.503672 -Clarified BITS use-->
 > [!NOTE]  
-> Rola systemu lokacji punktu dystrybucji nie wymaga usługi inteligentnego transferu w tle (BITS). Po skonfigurowaniu usługi BITS na komputerze punktu dystrybucji usługi BITS na komputerze punktu dystrybucji nie jest używana do przyspieszania pobierania zawartości przez klientów używających usługi BITS.  
+> Podczas przesyłania zawartości z punktu dystrybucji, przesyłania przy użyciu **Usługa inteligentnego transferu w tle** (BITS) wbudowane w system operacyjny Windows. Rola punktu dystrybucji nie wymaga opcjonalna funkcja rozszerzenie serwera IIS usługi BITS do zainstalowania, ponieważ klient nie przekazuje informacje do niego.  
 
 ###  <a name="bkmk_2012EPPpreq"></a>Punkt programu Endpoint Protection  
 **Windows Server role i funkcje:**  
@@ -626,8 +627,9 @@ Użycie niestandardowej konfiguracji programu IIS, należy usunąć opcje, któr
     > [!NOTE]  
     >  Usługi wdrażania systemu Windows automatycznie instalowane i konfigurowane podczas konfigurowania punktu dystrybucji do obsługi środowiska PXE lub multiemisji na serwerze z systemem Windows Server 2012 lub nowszym.  
 
+<!--sms.503672 -Clarified BITS use-->
 > [!NOTE]  
-> Rola systemu lokacji punktu dystrybucji nie wymaga usługi inteligentnego transferu w tle (BITS). Po skonfigurowaniu usługi BITS na komputerze punktu dystrybucji usługi BITS na komputerze punktu dystrybucji nie jest używana do przyspieszania pobierania zawartości przez klientów używających usługi BITS.  
+> Podczas przesyłania zawartości z punktu dystrybucji, przesyłania przy użyciu **Usługa inteligentnego transferu w tle** (BITS) wbudowane w system operacyjny Windows. Rola punktu dystrybucji nie wymaga opcjonalna funkcja rozszerzenie serwera IIS usługi BITS do zainstalowania, ponieważ klient nie przekazuje informacje do niego.   
 
 
 ###  <a name="bkmk_2008EPPpreq"></a>Punkt programu Endpoint Protection  
