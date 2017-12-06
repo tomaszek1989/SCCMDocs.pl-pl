@@ -266,7 +266,7 @@ Klient programu Configuration Manager dla komputerów Mac rejestruje informacje 
 |Nazwa dziennika|Szczegóły|  
 |--------------|-------------|  
 |CCMClient -&lt;*data_godzina*> .log|Rejestruje działania związane z operacjami klienta Mac, w tym zarządzania aplikacjami, spisu i rejestrowania błędów.<br /><br /> Ten plik dziennika znajduje się w folderze/Library/Application Support/Microsoft/CCM/Logs na komputerze Mac.|  
-|CCMAgent -&lt;*data_godzina*> .log|Rejestruje informacje dotyczące operacji klienta, w tym logowania użytkownika i działania wylogowania oraz działań komputera Mac..<br /><br /> Ten plik dziennika znajduje się w folderze ~/Library/Logs na komputerze Mac.|  
+|CCMAgent -&lt;*data_godzina*> .log|Rejestruje informacje dotyczące operacji klienta, w tym logowania użytkownika i działania wylogowania oraz działań komputera Mac.<br /><br /> Ten plik dziennika znajduje się w folderze ~/Library/Logs na komputerze Mac.|  
 |CCMNotifications -&lt;*data_godzina*> .log|Rejestruje działania dotyczące powiadomień programu Configuration Manager na komputerze Mac.<br /><br /> Ten plik dziennika znajduje się w folderze ~/Library/Logs na komputerze Mac.|  
 |CCMPrefPane -&lt;*data_godzina*> .log|Rejestruje działania powiązane do okna dialogowego preferencji programu Configuration Manager na komputerze Mac, w tym stanu ogólnego i rejestrowania błędów.<br /><br /> Ten plik dziennika znajduje się w folderze ~/Library/Logs na komputerze Mac.|  
 

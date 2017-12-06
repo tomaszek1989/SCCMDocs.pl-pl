@@ -261,7 +261,7 @@ Aby skonfigurować określone dane, które chcesz migrować do środowiska progr
 ##  <a name="About_Collection_Migration "></a>Planowanie zadań migracji kolekcji  
  Zadania migracji kolekcji są dostępne tylko w przypadku migracji danych z hierarchii źródłowej, która działa obsługiwana wersja programu Configuration Manager 2007. Podczas migracji kolekcji należy określić co najmniej jedną migrację, która ma być migrowana. W przypadku każdej określonej kolekcji zadanie migracji automatycznie wybierze do migracji wszystkie powiązane obiekty. Jeśli na przykład zostanie wybrana konkretna kolekcja użytkowników, nastąpi zidentyfikowanie członków tej kolekcji oraz będzie można migrować wdrożenia skojarzone z tą kolekcją. Opcjonalnie można wybrać do migracji także inne obiekty wdrożenia, które są skojarzone z tymi członkami. Wszystkie wybrane elementy są dodawane do listy obiektów przeznaczonych do migracji.  
 
- Podczas migracji kolekcji, System Center Configuration Manager migruje także ustawienia kolekcji, w tym okna obsługi i zmienne kolekcji, ale nie można migrować ustawień kolekcji dotyczących zapewniania udostępniania klientów AMT..  
+ Podczas migracji kolekcji, System Center Configuration Manager migruje także ustawienia kolekcji, w tym okna obsługi i zmienne kolekcji, ale nie można migrować ustawień kolekcji dotyczących zapewniania udostępniania klientów AMT.  
 
  Skorzystaj z informacji w poniższych sekcjach, aby dowiedzieć się więcej o dodatkowych konfiguracjach, które można zastosować do zadania migracji kolekcji.  
 
