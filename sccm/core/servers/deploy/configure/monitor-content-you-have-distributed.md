@@ -3,7 +3,7 @@ title: "Monitorowanie zawartości"
 titleSuffix: Configuration Manager
 description: "Zrozumienie, jak monitorować dystrybuowaną zawartość przy użyciu konsoli programu Configuration Manager."
 ms.custom: na
-ms.date: 4/17/2017
+ms.date: 12/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "5"
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 5b1c0401c0b1ce2aa8765ccfb8898b90cf7a5c93
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 62d783735e64b6f3f11dae9af6ac5a7584d689ef
+ms.sourcegitcommit: 52b956cfe32c3f06ae68d6ba6fc3244ce5a66325
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="monitor-content-you-have-distributed-with-system-center-configuration-manager"></a>Monitorowanie zawartości dystrybuowaną z System Center Configuration Manager
 
@@ -155,7 +155,8 @@ Aby wyświetlić stan konfiguracji punktów dystrybucji, należy wykonać nastę
 Począwszy od wersji 1610, można użyć **źródła danych klienta** pulpit nawigacyjny, aby pomóc w zrozumieniu stosowania [równorzędnej pamięci podręcznej](/sccm/core/plan-design/hierarchy/client-peer-cache) w danym środowisku. Pulpit nawigacyjny rozpocznie się wyświetlanie danych po klienci pobierają zawartość i raportów, które informacje z powrotem do lokacji. To może potrwać do 24 godzin.
 
 > [!TIP]  
-> **Klient równorzędnej pamięci podręcznej** i **źródła danych klienta** pulpitu nawigacyjnego są wprowadzonych w wersji 1610 funkcje wersji wstępnej. Należy włączyć buforowania równorzędnego klienta, aby pulpit nawigacyjny źródła danych klienta staje się widoczna w konsoli. Aby włączyć buforowania równorzędnego klienta, zobacz [korzystanie z funkcji wersji wstępnej aktualizacje](/sccm/core/servers/manage/install-in-console-updates#bkmk_prerelease). Może potrwać do 24 godzin po włączeniu jej uruchamiania wyświetlanie danych.
+> **Klient równorzędnej pamięci podręcznej** i **źródła danych klienta** pulpitu nawigacyjnego zostały najpierw wprowadzone w wersji 1610 jako [funkcje wersji wstępnej](/sccm/core/servers/manage/pre-release-features). Począwszy od wersji 1710, te funkcje nie są już funkcje wersji wstępnej. Należy włączyć buforowania równorzędnego klienta, aby pulpit nawigacyjny źródła danych klienta staje się widoczna w konsoli.
+
 
 W konsoli przejdź do **monitorowanie** > **stan dystrybucji** > **źródła danych klienta**. W tym miejscu można wybrać okres czasu, aby zastosować do pulpitu nawigacyjnego. Następnie na ekranie można wybrać grupę granic lub pakiet, dla którego chcesz wyświetlić informacje. Podczas wyświetlania informacji może wskaźnika myszy powierzchnię, aby zobaczyć więcej szczegółów na temat różnych zawartości lub zasad źródła.
 

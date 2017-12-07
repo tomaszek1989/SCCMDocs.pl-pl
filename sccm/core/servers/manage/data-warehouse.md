@@ -3,7 +3,7 @@ title: Magazyn danych
 titleSuffix: Configuration Manager
 description: "Punkt usługi magazynu danych i bazy danych programu System Center Configuration Manager"
 ms.custom: na
-ms.date: 8/25/2017
+ms.date: 12/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision:
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 2e6ac983e5ca63dacb77f2e26515d7123748d64d
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 4d420ce623c834401383231d00e3f361342f2d2e
+ms.sourcegitcommit: 52b956cfe32c3f06ae68d6ba6fc3244ce5a66325
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 12/06/2017
 ---
 #  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>Punkt usługi Magazyn danych programu System Center Configuration Manager
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
@@ -27,9 +27,7 @@ ms.lasthandoff: 12/04/2017
 Począwszy od wersji 1702, punkt usługi Magazyn danych można użyć do przechowywania i raport dotyczący długoterminowe dane historyczne dla danego wdrożenia programu Configuration Manager.
 
 > [!TIP]
-> Punkt usługi Magazyn danych jest wprowadzonych w wersji 1702 funkcji wersji wstępnej. Aby ją włączyć, zobacz [korzystanie z funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features).
-
-> Począwszy od wersji 1706, ta funkcja nie jest już funkcji wersji wstępnej.
+> Ta funkcja została wprowadzona w wersji 1702 jako [funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features). Począwszy od wersji 1706, ta funkcja nie jest już funkcji wersji wstępnej.
 
 Magazyn danych obsługuje maksymalnie 2 TB danych z sygnaturami czasowymi, śledzenie zmian. Przechowywanie danych odbywa się przez automatyczne synchronizacje z bazy danych lokacji programu Configuration Manager do bazy danych magazynu danych. Te informacje są dostępne z punktu usług Reporting Services. Dane, które są synchronizowane z bazy danych magazynu danych jest zachowywana przez 3 lata. Okresowo wbudowanego zadania usuwa dane starsze niż trzy lata.
 
