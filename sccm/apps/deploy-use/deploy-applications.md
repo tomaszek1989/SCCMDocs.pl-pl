@@ -3,7 +3,7 @@ title: "Wdrażanie aplikacji"
 titleSuffix: Configuration Manager
 description: "Tworzenie typu wdrożenia lub symulować wdrożenie aplikacji za pomocą programu System Center Configuration Manager."
 ms.custom: na
-ms.date: 7/31/2017
+ms.date: 12/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 31c8a2e212de8c112b68d68e108db3463516142f
-ms.sourcegitcommit: b36f8c8b06e4b2e13f8c1500a82af79a071ab4f6
+ms.openlocfilehash: 97d1ac775a3b38f63372f0ab01243dfdfeb4edb5
+ms.sourcegitcommit: 52b956cfe32c3f06ae68d6ba6fc3244ce5a66325
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="deploy-applications-with-system-center-configuration-manager"></a>Wdrażanie aplikacji w programie System Center Configuration Manager
 
@@ -171,8 +171,7 @@ Ponadto dla wysokiego ryzyka, takiego jak wdrożenie sekwencji zadań, która wd
 ## <a name="how-to-check-for-running-executable-files-before-installing-an-application"></a>Jak sprawdzić uruchamiania plików wykonywalnych przed zainstalowaniem aplikacji
 
 >[!Tip]
->Z wersją 1702 jest to funkcja wersji wstępnej. Aby ją włączyć, zobacz [w programie System Center Configuration Manager funkcje wersji wstępnej](https://docs.microsoft.com/sccm/core/servers/manage/pre-release-features).
-> Począwszy od wersji 1706, ta funkcja nie jest już funkcji wersji wstępnej.
+> Ta funkcja została wprowadzona w wersji 1702 jako [funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features). Począwszy od wersji 1706, ta funkcja nie jest już funkcji wersji wstępnej.
 
 W **właściwości** okno dialogowe wdrożenia wpisz na **zainstalować zachowanie** kartę, można określić jedną lub więcej pliki wykonywalne, jeśli uruchomiony, blokuje to instalacji typu wdrożenia. Użytkownik musi zamknąć plik wykonywalny uruchomiona (lub może zostać zamknięty w automatycznie w przypadku wdrożeń z celem wymagane) przed wdrożeniem można było zainstalować typ. Aby skonfigurować to:
 

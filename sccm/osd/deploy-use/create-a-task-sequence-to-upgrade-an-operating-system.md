@@ -3,7 +3,7 @@ title: "Tworzenie sekwencji zadań w celu uaktualnienia systemu operacyjnego"
 titleSuffix: Configuration Manager
 description: "Sekwencje zadań w programie System Center Configuration Manager może automatycznie Uaktualnij system operacyjny z systemu Windows 7 lub nowszym do systemu Windows 10."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 12/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "12"
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 2787c8a692321a49cf287fc2f09858690360dc25
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 002acbcff01105e612e8c090606a6aa5d45a014b
+ms.sourcegitcommit: 52b956cfe32c3f06ae68d6ba6fc3244ce5a66325
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="create-a-task-sequence-to-upgrade-an-operating-system-in-system-center-configuration-manager"></a>Tworzenie sekwencji zadań w celu uaktualnienia systemu operacyjnego w programie System Center Configuration Manager
 
@@ -78,7 +78,7 @@ Użyj sekwencji zadań w programie System Center Configuration Manager automatyc
 ## <a name="configure-pre-cache-content"></a>Konfigurowanie wstępne wypełnienie pamięci podręcznej
 Począwszy od wersji 1702, w przypadku wdrożeń dostępnych sekwencji zadań, można korzystać z funkcji wstępne pamięci podręcznej klienci Pobierz tylko odpowiedniej zawartości, zanim użytkownik instaluje zawartości.
 > [!TIP]  
-> Wstępne pamięci podręcznej wprowadzonym w wersji 1702, to funkcja wersji wstępnej. Aby ją włączyć, zobacz [korzystanie z funkcji wersji wstępnej aktualizacje](/sccm/core/servers/manage/pre-release-features).
+> Ta funkcja została wprowadzona w wersji 1702 jako [funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features). Począwszy od wersji 1706, ta funkcja nie jest już funkcji wersji wstępnej.
 
 Załóżmy na przykład, że chcesz wdrożyć sekwencję zadań uaktualnienia w miejscu systemu Windows 10, tylko pojedynczej sekwencji zadań dla wszystkich użytkowników i mieć wiele architektur i języków. Przed wersją 1702, jeśli utworzenie dostępne wdrożenia, a następnie użytkownik klika polecenie **zainstalować** w Centrum oprogramowania, pobranie zawartości w tym czasie. Spowoduje to dodanie dodatkowych czas instalacji jest gotowy do uruchomienia. Ponadto cała zawartość, do którego odwołuje się sekwencja zadań zostanie pobrana. W tym pakiecie uaktualnienia systemu operacyjnego dla wszystkich języków i architektury. W przypadku każdego około trzech GB rozmiar, może być dość duży pakiet do pobrania.
 
