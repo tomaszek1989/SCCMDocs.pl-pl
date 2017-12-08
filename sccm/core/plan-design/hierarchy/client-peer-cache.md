@@ -3,7 +3,7 @@ title: "Klient równorzędnej pamięci podręcznej"
 titleSuffix: Configuration Manager
 description: "Używanie równorzędnej pamięci podręcznej dla lokalizacji źródła zawartości klienta podczas wdrażania zawartości w programie System Center Configuration Manager."
 ms.custom: na
-ms.date: 11/20/2017
+ms.date: 12/07/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -15,11 +15,11 @@ caps.latest.revision: "3"
 author: aaroncz
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 60f70d3e24f6290fb022b9bd8ca1512b0ed3d719
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: cadc62ab21ac8cd43120a5baa79dd635a12b4069
+ms.sourcegitcommit: 2dc9c83e57e9734ffc4a93f79cd71285036eeb8b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Buforowania równorzędnego klientów programu Configuration Manager
 
@@ -36,7 +36,7 @@ Klient równorzędnej pamięci podręcznej jest możliwość używania równorz�
  -  Aby udostępnić zawartość jako źródło równorzędnej pamięci podręcznej, klient równorzędnej pamięci podręcznej:
     -  Muszą być przyłączone do domeny. Jednak klient, który nie jest przyłączony do domeny mogą pobierać zawartość z domeny częścią źródła równorzędnej pamięci podręcznej.
     -  Musi należeć do bieżącej grupy granic klienta, który jest wyszukiwanie zawartości. Klient równorzędnej pamięci podręcznej sąsiada grupy granic nie jest dołączony puli lokalizacji źródła zawartości, gdy klient użyje powrotu do wyszukania zawartości z grupą granic sąsiedniego. Aby uzyskać więcej informacji o grupach granic bieżących i sąsiada, zobacz [grup granic](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups##a-namebkmkboundarygroupsa-boundary-groups).
- - Każdy typ zawartości, która jest przechowywana w pamięci podręcznej klienta programu Configuration Manager mogą być udostępniane innym klientom przy użyciu równorzędnej pamięci podręcznej.
+ - Każdy typ zawartości, która jest przechowywana w pamięci podręcznej klienta programu Configuration Manager mogą być udostępniane innym klientom przy użyciu równorzędnej pamięci podręcznej, w tym pliki usługi Office 365 i plików instalacji ekspresowej.<!--SMS.500850-->
  -  Buforowanie równorzędne nie zastępuje użycia innych rozwiązań, takich jak usługi BranchCache, ale działa side-by-side z nim więcej opcji rozszerzenia tradycyjnych rozwiązań wdrażania zawartości takie jak punkty dystrybucji. Jest to rozwiązanie niestandardowe z nie zależy od usługi BranchCache, więc jeśli nie włączysz lub użyć usługi Windows BranchCache, nadal działa.
 
 ### <a name="operations"></a>Operacje

@@ -13,11 +13,11 @@ ms.assetid: bc6c3e5f-b9e2-400e-9d9d-446ff93c520c
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 8fca0aa86798023b92c1c16a893f9becf6ac444e
-ms.sourcegitcommit: 5f4a584d4a833b0cc22bd8c47da7dd55aced97fa
+ms.openlocfilehash: 8431ebffc6d1aa463c5622bd67db8a140c0cfe69
+ms.sourcegitcommit: 2dc9c83e57e9734ffc4a93f79cd71285036eeb8b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="what39s-new-in-version-1710-of-system-center-configuration-manager"></a>Jaki &#39; s nowego w wersji 1710 programu System Center Configuration Manager
 
@@ -165,7 +165,6 @@ W tej wersji Zaktualizowaliśmy VPN profilu Kreatora właściwości strony i aby
 - Gdy ma wartość platformy **Android**, **Android for Work**, lub **Windows Phone 8.1**, **obsługiwane platformy** strona nie jest wymagana i jest nie są wyświetlane.
 - Przepływ pracy oparty na klienta programu Configuration Manager została połączona z hybrydowego urządzeniami przenośnymi (MDM) opartego na kliencie systemu Windows 10 przepływy pracy; obsługują one tych samych ustawień.
 - Każda platforma przepływ pracy zawiera tylko ustawienia odpowiednie dla tego przepływu pracy.  Na przykład Android przepływ pracy zawiera ustawienia właściwe dla systemu Android; Ustawienia właściwe dla systemu iOS lub Windows 10 Mobile są już wyświetlane w przepływie pracy z systemem Android.
-- Dla urządzeń Windows 8.1, typy połączeń zarządzanych przez klienta programu Configuration Manager tylko (nieobsługiwane przez usługę Intune) wyraźnie są oznaczone.
 - Na stronie automatyczne połączenie VPN jest przestarzały i został usunięty.
 
 Te zmiany dotyczą nowych profilów sieci VPN.  
