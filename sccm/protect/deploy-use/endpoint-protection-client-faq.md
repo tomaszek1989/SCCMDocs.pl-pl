@@ -3,7 +3,7 @@ title: "Klient programu Endpoint Protection — często zadawane pytania"
 titleSuffix: Configuration Manager
 description: "Odpowiedzi na często zadawane pytania dotyczące usługi Windows Defender oraz programu Endpoint Protection."
 ms.custom: na
-ms.date: 02/14/2017
+ms.date: 12/09/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e3aaa9d2-a40e-42b1-ad75-5a115351729e
 caps.latest.revision: "15"
-author: NathBarn
-ms.author: nathbarn
+author: arob98
+ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: a3fb0bc39f1606f1a65b5623c9567819b1a0c52e
-ms.sourcegitcommit: 5d46ed593b1cc461ea3f6ff6917bcd272b095ed7
+ms.openlocfilehash: 2656a5c40dbd2916ef36268936a4e2163ebde14d
+ms.sourcegitcommit: 372171a5cd8d143d6d47b651018cda0c91cad67c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="endpoint-protection-client-frequently-asked-questions"></a>Klient programu Endpoint Protection — często zadawane pytania
 
@@ -203,7 +203,7 @@ Aby szybko i łatwo usunąć wszystkie niechciane i potencjalnie szkodliwe eleme
 
 ##  <a name="what-is-real-time-protection"></a>Co to jest ochrona w czasie rzeczywistym?  
 
- Ochrona w czasie rzeczywistym umożliwia usłudze Windows Defender monitorowanie komputera przez cały czas i powiadamianie o próbie instalacji lub uruchomienia potencjalnie groźnego oprogramowania, takiego jak wirusy lub programy szpiegujące. Ponieważ ta funkcja stanowi istotny element metody używanej przez usługę Windows Defender w celu ułatwienia ochrony komputera, należy upewnić się, że ochrona w czasie rzeczywistym jest zawsze włączona. Jeżeli ochrony w czasie rzeczywistym jest wyłączona, usługa Windows Defender powiadamia użytkownika, a Twoje komputerze€™ â €œAt riskâ€ stan s.  
+ Ochrona w czasie rzeczywistym umożliwia usłudze Windows Defender monitorowanie komputera przez cały czas i powiadamianie o próbie instalacji lub uruchomienia potencjalnie groźnego oprogramowania, takiego jak wirusy lub programy szpiegujące. Ponieważ ta funkcja stanowi istotny element metody używanej przez usługę Windows Defender w celu ułatwienia ochrony komputera, należy upewnić się, że ochrona w czasie rzeczywistym jest zawsze włączona. Jeśli ochrona w czasie rzeczywistym jest wyłączona, usługa Windows Defender powiadamia użytkownika i zmienia stan komputera, aby **na ryzyko**.  
 
  Zawsze gdy ochrona w czasie rzeczywistym wykryje zagrożenie lub potencjalne zagrożenie, usługa Windows Defender wyświetli powiadomienie. Możesz wybrać następujące opcje:  
 

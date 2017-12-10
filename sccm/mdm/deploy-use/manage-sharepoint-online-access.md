@@ -3,7 +3,7 @@ title: "Zarządzanie dostępem do usługi SharePoint Online"
 titleSuffix: Configuration Manager
 description: "Dowiedz się, jak korzystać z programu System Center Configuration Manager SharePoint Online zasad dostępu warunkowego do zarządzania dostępem do usługi OneDrive."
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 12/09/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: 49cec466-1676-4fe2-a2fe-5004f01d735e
 caps.latest.revision: "11"
 caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
+author: arob98
+ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 2c1d7cd3462a54a064ec47d0b375ee4cdb25a4b4
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 99b2aca418b7ce28a4216b38e711b3d38973e2b7
+ms.sourcegitcommit: 372171a5cd8d143d6d47b651018cda0c91cad67c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="manage-sharepoint-online-access-in-system-center-configuration-manager"></a>Zarządzanie dostępem do usługi SharePoint Online w programie System Center Configuration Manager
 
@@ -164,7 +164,7 @@ Aplikacje komputerowe pakietu Office można uzyskać dostępu do usługi SharePo
 
 4.  W obszarze **dostęp za pomocą przeglądarki** do usługi SharePoint Online i OneDrive dla firm można zezwolić na dostęp do usługi Exchange Online tylko za pośrednictwem obsługiwanych przeglądarek: Safari (iOS) i Chrome (Android). Dostęp z innych przeglądarek zostanie zablokowany.  Ograniczenia platformy wybrane w przypadku dostępu do aplikacji usługi OneDrive mają zastosowanie również w tym miejscu.
 
-    Na urządzeniach z systemem **Android** użytkownicy muszą włączyć dostęp do przeglądarki.  W tym celu użytkownik końcowy musi włączyć model â €obiektów przeglądarki Accessâ€ opcji na zarejestrowanym urządzeniu w następujący sposób:
+    Na urządzeniach z systemem **Android** użytkownicy muszą włączyć dostęp do przeglądarki.  W tym celu użytkownik końcowy musi włączyć **włączyć dostęp za pomocą przeglądarki** opcji na zarejestrowanym urządzeniu w następujący sposób:
     1.  Otwórz aplikację **Portal firmy**.
     2.  Przejdź do **ustawienia** strony z przycisku wielokropka (â €¦) lub przycisku menu sprzętu.
     3.  Naciśnij przycisk **Włącz dostęp za pomocą przeglądarki** .
