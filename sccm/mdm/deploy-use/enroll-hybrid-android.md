@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 4b638b0325aa5f75d60a008ea60531a818ec76c2
-ms.sourcegitcommit: 1132886e07d0c0a87dcc7eeef4577dd8d8840023
+ms.openlocfilehash: c9b35122f6afbb4fffbbff48b919fd696939c897
+ms.sourcegitcommit: 51cfce302fa8ddf633ad1f379b1161c0617089b8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 12/11/2017
 ---
 # <a name="set-up-android-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Konfigurowanie hybrydowego zarządzania urządzeniami z systemem Android za pomocą programu System Center Configuration Manager i usługi Microsoft Intune
 
@@ -60,7 +60,7 @@ Poniższe kroki umożliwiają zarządzanie urządzeniami z systemem Android za p
 > Zapobiega to znany problem **Zarządzaj obsługiwanych urządzeniach użytkowników tylko w tych grupach jako Android for Work** opcję działać zgodnie z oczekiwaniami. Urządzenia użytkowników w określonym zarejestrować grup usługi Azure AD jako Android zamiast Android for Work. Aby włączyć Android for Work, należy użyć **Zarządzanie wszystkich obsługiwanych urządzeń jako Android for Work** opcji.
 
 
-Po skonfigurowaniu, należy poinformować użytkowników, jak zarejestrować swoje urządzenia. Zobacz [Co mówić użytkownikom na temat rejestrowania ich urządzeń](https://docs.microsoft.com/intune/deploy-use/what-to-tell-your-end-users-about-using-microsoft-intune). Te informacje dotyczą urządzeń przenośnych zarządzanych zarówno przez usługę Microsoft Intune, jak i program Configuration Manager.
+Po skonfigurowaniu, należy poinformować użytkowników, jak zarejestrować swoje urządzenia. Zobacz [Co mówić użytkownikom na temat rejestrowania ich urządzeń](https://docs.microsoft.com/en-us/intune/end-user-educate). Te informacje dotyczą urządzeń przenośnych zarządzanych zarówno przez usługę Microsoft Intune, jak i program Configuration Manager.
 
 Po zakończeniu wiązania, zobacz nazwę konta i nazwę organizacji w portalu usługi Intune. W tej chwili możesz zamknąć obie przeglądarki.
 
