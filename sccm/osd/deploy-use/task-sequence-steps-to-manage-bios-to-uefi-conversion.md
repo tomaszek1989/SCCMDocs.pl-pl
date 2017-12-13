@@ -11,14 +11,14 @@ ms.technology: configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bd3df04a-902f-4e91-89eb-5584b47d9efa
-author: Dougeby
-ms.author: dougeby
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 58a5c60e2d8b819051916b49911a236a9c5ac4ee
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: f2d53b7f525d4f827b78840a7f0d9482d203c08d
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="task-sequence-steps-to-manage-bios-to-uefi-conversion"></a>Kroki sekwencji zadań do zarządzania systemem BIOS do konwersji UEFI
 Windows 10 udostępnia wiele nowych funkcji zabezpieczeń, które wymagają urządzenia z włączoną obsługą interfejsu UEFI. Konieczne może być nowoczesnych komputerów z systemem Windows, które obsługują interfejs UEFI, ale używana jest starszy system BIOS. Konwertowanie urządzenia na UEFI są wymagane przejdź do każdego komputera na partycje dysk twardy, a następnie ponownie skonfigurować oprogramowanie układowe. Za pomocą sekwencji zadań w programie Configuration Manager, można przygotować dysk twardy dla systemu BIOS do konwersji UEFI, konwertowanie systemu BIOS na UEFI w ramach procesu uaktualniania w miejscu i zbierać informacje z interfejsem UEFI w ramach spisu sprzętu.

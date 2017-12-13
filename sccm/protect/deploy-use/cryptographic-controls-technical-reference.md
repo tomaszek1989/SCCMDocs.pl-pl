@@ -3,21 +3,21 @@ title: "Informacje techniczne dotyczące formantów kryptograficznych"
 titleSuffix: Configuration Manager
 description: "Dowiedz się, jak podpisywania i szyfrowania może pomóc chronić ataków odczytywania danych w programie System Center Configuration Manager."
 ms.custom: na
-ms.date: 12/5/2017
+ms.date: 12/8/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
 ms.technology: configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
-author: arob98
-ms.author: angrobe
+author: aczechowski
+ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: ebaff93d346b53afea8770fbe0634112bcecf82d
-ms.sourcegitcommit: 372171a5cd8d143d6d47b651018cda0c91cad67c
+ms.openlocfilehash: 2c1ed6f4c93f74719ab3fe5d723f7dc01eb1ede7
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="cryptographic-controls-technical-reference"></a>Informacje techniczne dotyczące formantów kryptograficznych
 
@@ -277,8 +277,8 @@ System Center Configuration Manager korzysta z podpisywania i szyfrowania, aby u
 
  Gdy punkt zarządzania po raz pierwszy uwierzytelnia klienta za pomocą certyfikatu klienta z podpisem własnym, ten mechanizm zapewnia minimalne bezpieczeństwo, ponieważ każdy komputer może wygenerować certyfikat z podpisem własnym. W tym scenariuszu proces identyfikacji klienta musi zostać rozszerzony o zatwierdzenie. Musi być zatwierdzony tylko zaufane komputery, automatycznie przez program Configuration Manager, albo ręcznie przez użytkownika administracyjnego. Aby uzyskać więcej informacji, zobacz sekcję zatwierdzenia w [komunikacja między punktami końcowymi w programie System Center Configuration Manager](../../core/plan-design/hierarchy/communications-between-endpoints.md).  
 
-## <a name="to-make-configuration-manager-servers-more-secure"></a>Aby zabezpieczyć serwery programu Configuration Manager  
-Aby wprowadzić bardziej bezpieczne serwery programu Configuration Manager, wykonaj następujące czynności:
+## <a name="about-ssl-vulnerabilities"></a>Temat luk w zabezpieczeniach protokołu SSL
+Aby zwiększyć bezpieczeństwo serwerów oraz klientów programu Configuration Manager, wykonaj następujące czynności:
 
 -   Włączenia protokołu TLS 1.2
 
@@ -286,5 +286,5 @@ Aby wprowadzić bardziej bezpieczne serwery programu Configuration Manager, wyko
 -   Wyłączenie protokołu SSL 3.0 i TLS 1.0, TLS 1.1 
 -   Zmiana kolejności mechanizmów szyfrowania związanych z protokołem TLS 
 
-Aby uzyskać więcej informacji zobacz następujący artykuł bazy wiedzy: [Jak ograniczyć stosowanie niektórych protokołów w bibliotece Schannel.dll i algorytmów kryptograficznych](https://support.microsoft.com/en-us/kb/245030/). Te procedury nie wpływa na działanie programu Configuration Manager.
+Aby uzyskać więcej informacji, zobacz [jak ograniczyć stosowanie niektórych protokołów w bibliotece Schannel.dll i algorytmów kryptograficznych](https://support.microsoft.com/en-us/kb/245030/) i [Priorytetyzowanie mechanizmy szyfrowania Schannel](https://msdn.microsoft.com/en-us/library/windows/desktop/bb870930.aspx). Te procedury nie wpływa na działanie programu Configuration Manager.
 

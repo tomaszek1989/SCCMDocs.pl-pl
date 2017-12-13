@@ -3,7 +3,7 @@ title: Nowa wersja 1710 | Dokumentacja firmy Microsoft
 titleSuffix: Configuration Manager
 description: "Uzyskiwanie szczegółowych informacji dotyczących zmian i nowych możliwości wprowadzonych w wersji 1710 programu System Center Configuration Manager."
 ms.custom: na
-ms.date: 11/20/2017
+ms.date: 12/08/2017
 ms.reviewer: na
 ms.suite: na
 ms.technology: configmgr-other
@@ -13,11 +13,11 @@ ms.assetid: bc6c3e5f-b9e2-400e-9d9d-446ff93c520c
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 8431ebffc6d1aa463c5622bd67db8a140c0cfe69
-ms.sourcegitcommit: 2dc9c83e57e9734ffc4a93f79cd71285036eeb8b
+ms.openlocfilehash: c09f401d3221aa8637eea57f91063387b612187d
+ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="what39s-new-in-version-1710-of-system-center-configuration-manager"></a>Jaki &#39; s nowego w wersji 1710 programu System Center Configuration Manager
 
@@ -49,6 +49,9 @@ Począwszy od tej wersji, równorzędna pamięć podręczna nie jest już funkcj
 
 ### <a name="cloud-distribution-point-support-for-azure-government-cloud------sms491428---"></a>Obsługa punktu dystrybucji chmury chmury Azure dla instytucji rządowych<!-- sms491428 -->
 Można teraz używać [punkty dystrybucji w chmurze](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) w chmurze Azure dla instytucji rządowych.   
+
+### <a name="inventory-default-unit-revision----sms503697---"></a>Poprawki jednostki domyślne spisu<!-- sms503697 -->
+Jako urządzenia zawierają teraz dysków twardych o rozmiarze gigabajt (GB), terabajtów (TB) i większej skali, tej wersji zmiany domyślnej jednostki (SMS_Units) używanych w widokach wiele z megabajtów (MB) w GB. Na przykład wartość v_gs_LogicalDisk.FreeSpace raporty teraz jednostki GB.
 
 
 <!-- ## Migration  -->
