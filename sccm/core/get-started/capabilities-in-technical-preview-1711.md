@@ -14,11 +14,11 @@ ms.assetid: 2e68dc12-6776-437a-9138-45cd7d4bf9cf
 author: erikje
 ms.author: erikje
 manager: angrobe
-ms.openlocfilehash: e970dff4ea295694fcc5cf80e238baf2c9d081b5
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: b740c422a71e625ccc110a043028cf986cdffb20
+ms.sourcegitcommit: ed8b2438ef85c9160741ef61f9171be41dd1ae0a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/17/2017
 ---
 # <a name="capabilities-in-technical-preview-1711-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1711 programu System Center Configuration Manager
 
@@ -109,20 +109,6 @@ Umożliwia także tej funkcji w przypadku wdrażania aplikacji za pomocą kreato
 1. Tworzenie lub edytowanie aplikacji.
 2. Wdrażanie aplikacji na kliencie.
 3. Instalować aplikacji z Centrum oprogramowania. Powinien zostać wyświetlony interfejs instalacji aplikacji. Użytkownik końcowy należy stosować Kreatora instalacji aplikacji i aplikacja zostanie zainstalowana pomyślnie.
-
-## <a name="new-compliance-policy-options-for-windows-10"></a>Nowe opcje zasad zgodności dla systemu Windows 10
-Poniżej przedstawiono nowe zasady zgodności można skonfigurować dla urządzeń z systemem Windows 10.
-- **Wymagaj zapory**.  Określ, czy urządzenie musi mieć zapory włączone oraz monitorowania wszystkich sieci.
-- **Kontrola konta użytkownika wymagają**. Określ, czy urządzeniu musi być włączona funkcja Kontrola konta użytkownika.
-- **Usługa Defender**:
-  - **Wymaga programu Windows Defender Antivirus**.  Wymagaj na urządzeniu ma Windows Defender Antivirus włączone.
-  - **Wersja programu Windows Defender Antivirus**.  Określ minimalną wersję definicji programów szpiegujących, urządzenie musi być zainstalowana.
-  - **Wymagaj bieżącego podpisu Windows Defender Antivirus**. Sprawdź, czy podpis okna Defender Antivirus urządzenia jest aktualne.
-  - **Wymagaj ochrony w czasie rzeczywistym**.  Określ, czy urządzenie musi mieć włączone usługi Windows Defender oprogramowania antywirusowego w czasie rzeczywistym Protection.
-- **Kompilacje poprawnym systemem operacyjnym**.  Określ wymagania dotyczące kompilacji systemu operacyjnego minimalną i maksymalną.  
-
-Do konfigurowania tych zasad, a następnie wybierz opcje te nowe, po dodaniu reguły do zasady, które są konfigurowane, użyj Kreatora tworzenia zasad zgodności.  
-Dowiedz się, jak [utworzyć](/sccm/mdm/deploy-use/create-compliance-policy#create-a-compliance-policy) i [wdrażanie](/sccm/mdm/deploy-use/create-compliance-policy#deploy-a-compliance-policy) zasady zgodności.
 
 
 
