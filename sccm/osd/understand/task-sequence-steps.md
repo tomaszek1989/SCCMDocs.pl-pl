@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 3dce1f322936b38580c29459c1a4746b9b835d27
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+ms.openlocfilehash: 77ce50cf363c9429f9ef38aa2acf5b898bc8052d
+ms.sourcegitcommit: b97aa456b392d817bc9723cbd5c0ce6602e7ae34
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 12/28/2017
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Kroki sekwencji zadań w programie System Center Configuration Manager
 
@@ -1477,7 +1477,7 @@ Należy rozważyć dodanie sekwencji zadań podrzędnych do sekwencji zadań:
 
 -   **Producent i Model**: Użyj ta kategoria reguł pozwala obliczyć wartości producenta i modelu komputera. Aby reguła mogła zwrócić wartość true, producent i model muszą zwrócić wartość true.   
 
-    Począwszy od programu Configuration Manager 1610 wersji, można określić znak gwiazdki (*) i znak zapytania (**?**) jako symbole wieloznaczne, gdzie *** odpowiada wielu znaków i **?** reprezentuje pojedynczy znak. Na przykład ciąg "DELL * 900?" będzie odpowiadała DELL-ABC-9001 i DELL9009.
+    Począwszy od programu Configuration Manager 1610 wersji, można określić znak gwiazdki (**&#42;**) i znak zapytania (**?**) jako symbole wieloznaczne, gdzie **&#42;** odpowiada wielu znaki i **?** reprezentuje pojedynczy znak. Na przykład ciąg "DELL * 900?" będzie odpowiadała DELL-ABC-9001 i DELL9009. 
 
 -   **Zmienna sekwencji zadań**: Ta kategoria reguł umożliwia dodawanie zmiennej sekwencji zadań, warunek i wartość do obliczenia. Reguła zwraca wartość true, gdy ustawiona wartość zmiennej spełnia określony warunek.  
 

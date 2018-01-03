@@ -3,7 +3,7 @@ title: Wersje Technical Preview
 titleSuffix: Configuration Manager
 description: "Więcej informacji o wersji Technical Preview że teraz musisz test-drive nowe funkcje i możliwości w programie System Center Configuration Manager."
 ms.custom: na
-ms.date: 12/15/2017
+ms.date: 12/22/2017
 ms.prod: configuration-manager
 ms.reviewer: nab
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "157"
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 31daf18a0b276b691e606ea2737ea1838dd8b211
-ms.sourcegitcommit: ed8b2438ef85c9160741ef61f9171be41dd1ae0a
+ms.openlocfilehash: c9650d202096b223baf9c62fef96c35ba6d245c2
+ms.sourcegitcommit: 92c3f916e6bbd35b6208463ff406e0247664543a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/17/2017
+ms.lasthandoff: 01/02/2018
 ---
 # <a name="technical-preview-for-system-center-configuration-manager"></a>Wersja zapoznawcza Technical Preview programu System Center Configuration Manager
 
@@ -96,9 +96,9 @@ Można zainstalować wersji linii bazowej maksymalnie jeden rok po ich wydaniu. 
 
 
 ##  <a name="BKMK_TPFeedback"></a> Przekazywanie opinii  
- Czekamy na Twoją opinię na temat wersji zapoznawczych Technical Preview. Aby przesłać opinię na temat funkcji poszczególnych wersji zapoznawczych, skorzystaj z linku do formularza opinii na stronie [programu przekazywania opinii dotyczących programu Configuration Manager](https://connect.microsoft.com/ConfigurationManagervnext/Feedback) w witrynie Microsoft Connect.  
+ Można przyłączyć czekamy na Twoją opinię o możliwościach w wersji zapoznawczych technical Preview. Aby uzyskać więcej informacji, zobacz [opinię o produkcie](../understand/find-help.md#product-feedback).
 
- Czekamy też na pomysły dotyczące nowych funkcji. Aby przesłać nowe pomysły i zagłosować na pomysły innych osób, [odwiedź stronę z opiniami użytkowników naszego oprogramowania](http://configurationmanager.uservoice.com).  
+Jeśli masz pomysły dotyczące nowych funkcji się, że chcesz zobaczyć chcemy wiedzieć, który również. Aby przesłać nowe pomysły i zagłosować na pomysły innych osób, [odwiedź stronę z opiniami użytkowników naszego oprogramowania](http://configurationmanager.uservoice.com).  
 
 <!--   ##  <a name="bdmk_tpknownissues"></a> General changes introduced in Technical Previews    -->
 

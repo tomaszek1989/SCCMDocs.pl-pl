@@ -15,11 +15,11 @@ caps.latest.revision: "5"
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 2875a90b1f2ae853563d7716fcfe634efd551fe5
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 07e57a15834d2f29444f47b9503cc04947f36150
+ms.sourcegitcommit: 92c3f916e6bbd35b6208463ff406e0247664543a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 01/02/2018
 ---
 # <a name="prerequisites-for-installing-system-center-configuration-manager-sites"></a>Wymagania wstępne dotyczące instalowania lokacji programu System Center Configuration Manager
 
@@ -106,7 +106,7 @@ Gdy użyj jednej z następujących usług platformy Azure z programem Configurat
 Usługi:  
 -       [Program Operations Manager Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) (OMS)
 -       [Gotowości do uaktualnienia](/sccm/core/clients/manage/upgrade/upgrade-analytics)
--       [Sklep Windows dla firm](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)
+-       [Microsoft sklepu dla firm](/sccm/apps/deploy-use/manage-apps-from-the-windows-store-for-business)
 
 Aby rozwiązać ten problem, wykonaj następujące kroki:
  1.    W konsoli programu Configuration Manager należy usunąć usługę Azure z węzła usług Azure.

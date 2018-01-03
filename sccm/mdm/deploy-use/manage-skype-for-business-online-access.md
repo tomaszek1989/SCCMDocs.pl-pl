@@ -3,7 +3,7 @@ title: "Zarządzanie dostępem do usługi Skype dla firm Online"
 titleSuffix: Configuration Manager
 description: "Dowiedz się, jak zarządzać dostępem do usługi Skype dla firm Online za pomocą zasad dostępu warunkowego."
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 12/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,67 +15,66 @@ caps.latest.revision: "6"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: b7886d3e8f181d6d9316c5438dd948b21a658648
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 3c1d0c84dc28fb886048cf8d7ea310c2b4dfc4aa
+ms.sourcegitcommit: 92c3f916e6bbd35b6208463ff406e0247664543a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 01/02/2018
 ---
 # <a name="manage-skype-for-business-online-access"></a>Zarządzanie dostępem do usługi Skype dla firm Online
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
-Użyj zasad dostępu warunkowego dla usługi  **Skype dla firm Online** , aby zarządzać dostępem do usługi Skype dla firm Online na podstawie określonych kryteriów.  
+Użyj zasad dostępu warunkowego dla usługi Skype dla firm Online, aby zarządzać dostępem do usługi Skype dla firm Online, na podstawie warunków, które określisz.  
 
 
  Gdy wybrany użytkownik próbuje użyć usługi Skype dla firm Online na swoim urządzeniu, sprawdzane są następujące kwestie:![ConditionalAccess&#95;SFBFlow](media/ConditionalAccess_SFBFlow.png)  
 
 ## <a name="prerequisites"></a>Wymagania wstępne  
 
--   Włącz nowoczesne uwierzytelnianie dla usługi Skype dla firm Online. Wypełnij ten [formularz Connect](https://connect.microsoft.com/office/Survey/NominationSurvey.aspx?SurveyID=17299&ProgramID=8715) , aby zarejestrować się w programie nowoczesnego uwierzytelniania.  
+-   Włącz [nowoczesnego uwierzytelniania](https://aka.ms/SkypeModernAuth) dla usługi Skype dla firm Online.   
 
--   Wszyscy użytkownicy końcowi muszą używać programu Skype dla firm Online. Jeśli masz wdrożenie z Skype dla firm Online i Skype dla firm lokalnymi, zasady dostępu warunkowego nie będą stosowane do użytkowników końcowych.  
+-   Każdy użytkownik musi użyć usługi Skype dla firm Online. Jeśli masz wdrożenie z Skype dla firm Online i Skype dla firm lokalnymi, zasady dostępu warunkowego nie dotyczą użytkowników lokalnych.  
 
 -   Urządzenie, które wymaga dostępu do usługi Skype dla firm Online, musi:  
 
-    -   być urządzeniem z systemem Android lub iOS,  
+    -   Urządzenie Android lub iOS
 
-    -   być zarejestrowane w usłudze Intune,  
+    -   Zostać zarejestrowane w usłudze Microsoft Intune
 
-    -   być zgodne z wdrożonymi zasadami zgodności usługi Intune.  
+    -   Być zgodne z wdrożonymi zasadami zgodności programu Microsoft Intune
 
- Stan urządzenia jest przechowywany w usłudze Azure Active Directory, która na podstawie określonych kryteriów blokuje dostęp lub go przydziela.  
-Jeśli warunek nie jest spełniony, użytkownik zobaczy podczas logowania jeden z następujących komunikatów:  
+ Usługa Azure Active Directory przechowuje stanu urządzenia, która blokuje dostęp na podstawie wybranych warunków, które określisz lub go przydziela.  
+Jeśli warunek nie jest spełniony, użytkownik zobaczy jeden z następujących komunikatów podczas logowania:  
 
--   Jeśli urządzenie nie zostało zarejestrowane w usłudze Intune lub Azure Active Directory, zostanie wyświetlony komunikat z instrukcjami dotyczącymi sposobu instalowania aplikacji portalu firmy i rejestrowania.  
+-   Jeśli urządzenie nie zostało zarejestrowane w usłudze Microsoft Intune lub nie jest zarejestrowany w usłudze Azure Active Directory, użytkownik widzi instrukcjami dotyczącymi sposobu instalowania aplikacji Portal firmy i rejestrowania.  
 
--   Jeśli urządzenie nie jest zgodne, zostanie wyświetlony komunikat kierujący użytkownika do witryny sieci Web portalu firmy usługi Intune lub aplikacji portalu firmy, gdzie można znaleźć informacje o problemie i sposobie jego rozwiązania.  
+-   Jeśli urządzenie nie jest zgodne, użytkownik zobaczy następujący komunikat, który kieruje je do aplikacji Portal firmy lub witryny sieci Web Portal firmy. Portal firmy ma informacje o problemie i sposobie jego rozwiązania.  
 
 ## <a name="configure-conditional-access-for-skype-for-business-online"></a>Konfigurowanie dostępu warunkowego do usługi Skype dla firm Online  
 
 ### <a name="step-1-configure-active-directory-security-groups"></a>Krok 1. Konfigurowanie grup zabezpieczeń usługi Active Directory  
- Przed rozpoczęciem skonfiguruj grupy zabezpieczeń usługi Azure Active Directory dla zasad dostępu warunkowego. Możesz skonfigurować te grupy w centrum administracyjnym usługi Office 365. Grupy te zawierają użytkowników, którzy będą objęci zasadami lub wykluczeni z nich. Jeśli zasady obejmują użytkownika, każde używane przez niego urządzenie musi być zgodne, aby mógł uzyskać dostęp do zasobów.  
+ Przed rozpoczęciem skonfiguruj grupy zabezpieczeń usługi Azure Active Directory dla zasad dostępu warunkowego. Skonfigurować te grupy w Centrum administracyjnym usługi Office 365. Grupy te zawierają użytkowników docelowych lub wykluczone z zasad. Jeśli zasady obejmują użytkownika, każde używane przez niego urządzenie musi być zgodne, aby mógł uzyskać dostęp do zasobów.  
 
  Możesz określić dwa typy grup, które mogą być używane w zasadach dotyczących programu Skype dla firm:  
 
--   Docelowe grupy â €"grupy użytkowników, do których zasady będą stosowane  
+-   **Grupy docelowe** zawierają użytkowników, których dotyczą zasady  
 
--   Wykluczone grupy â €"grupy użytkowników, którzy są wykluczeni z zasad (opcjonalnie)  
-    Jeśli użytkownik należy do obu grup, będzie wykluczony z zasad.  
+-   **Wykluczone grupy** zawierają użytkowników, które mają zostać wykluczone z zasad  
+    Jeśli użytkownik należy do obu grup, są wyłączone.  
 
 ### <a name="step-2-configure-and-deploy-a-compliance-policy"></a>Krok 2. Konfigurowanie i wdrażanie zasad zgodności  
- Upewnij się, że utworzono zasady zgodności i wdrożono je na wszystkich urządzeniach, które będą objęte zasadami usługi Skype dla firm Online.  
+ Tworzenie i wdrażanie zasad zgodności na wszystkich urządzeniach, do których podlega zasady usługi Skype dla firm Online.  
 
- Aby uzyskać szczegółowe informacje o tym, jak skonfigurować zasady zgodności, zobacz [Zarządzanie zasadami zgodności urządzeń za pomocą programu System Center Configuration Manager](../../protect/deploy-use/device-compliance-policies.md).  
+ Aby uzyskać więcej informacji o sposobie konfigurowania zasad zgodności, zobacz [Zarządzanie zasadami zgodności urządzeń](../../protect/deploy-use/device-compliance-policies.md).  
 
 > [!NOTE]  
->  Jeśli zasady zgodności nie zostaną wdrożone i włączysz zasady usługi Skype dla firm Online, wszystkie objęte nimi urządzenia będą mieć dostęp, jeśli zostaną zarejestrowane w usłudze Intune.  
+>  Jeśli zasady zgodności nie zostaną wdrożone i włączysz zasady usługi Skype dla firm Online, wszystkie objęte nimi urządzenia mają dostęp, jeśli są one rejestrowane w Microsoft Intune.  
 
- Gdy wszystko będzie gotowe, przejdź do kroku 3.  
 
 ### <a name="step-3-configure-the-skype-for-business-online-policy"></a>Krok 3. Skonfiguruj zasady usługi Skype dla firm Online  
- Skonfiguruj zasady wymagające, aby tylko urządzenia zarządzane i zgodne miały dostęp do usługi Skype dla firm Online. Te zasady będą przechowywane w usłudze Azure Active Directory.  
+ Skonfiguruj zasady wymagające, który tylko zarządzane i zgodne urządzenia mają dostęp do usługi Skype dla firm Online. Te zasady są przechowywane w usłudze Azure Active Directory.  
 
 1.  W [konsoli administracyjnej usługi Microsoft Intune](https://manage.microsoft.com)kliknij kolejno pozycje **Zasady** > **Dostęp warunkowy** > **Skype for Business Online Zasady**.  
 
@@ -89,7 +88,7 @@ Jeśli warunek nie jest spełniony, użytkownik zobaczy podczas logowania jeden 
 
     -   Android  
 
-4.  W obszarze **Grupy docelowe**kliknij pozycję **Modyfikuj** , aby wybrać grupy zabezpieczeń usługi Azure Active Directory, których będą dotyczyć zasady. Możesz objąć zasadami wszystkich użytkowników lub wybraną grupę.  
+4.  W obszarze **grupy docelowe**, kliknij przycisk **Modyfikuj** aby wybrać grupy zabezpieczeń usługi Azure Active Directory, do których ma zastosowanie zasad. Można wybrać wyeliminować te zasady do wszystkich użytkowników lub wybraną grupę użytkowników.  
 
 5.  W obszarze **Wykluczone grupy**możesz kliknąć pozycję **Modyfikuj** , aby wybrać grupy zabezpieczeń usługi Azure Active Directory wykluczone z tych zasad.  
 
@@ -102,11 +101,11 @@ Jeśli warunek nie jest spełniony, użytkownik zobaczy podczas logowania jeden 
 
  Wybierz dowolną grupę urządzeń przenośnych, a następnie na karcie **Urządzenia** wybierz jeden z następujących **filtrów**:  
 
--   **Urządzenia, które nie są zarejestrowane w usłudze AAD** â €"usługi Skype dla firm Online jest zablokowany tych urządzeń.  
+-   **Urządzenia, które nie są zarejestrowane w usłudze AAD** usługi Skype dla firm Online jest zablokowany
 
--   **Urządzenia, które nie są zgodne** â €"usługi Skype dla firm Online jest zablokowany tych urządzeń.  
+-   **Urządzenia, które nie są zgodne** usługi Skype dla firm Online jest zablokowany  
 
--   **Urządzenia, które są zarejestrowane w usłudze AAD i są zgodne** â €"te urządzenia mogą uzyskiwać dostęp do programu Skype dla firm Online.  
+-   **Urządzenia, które są zarejestrowane w usłudze AAD i są zgodne** można uzyskać dostęp do usługi Skype dla firm Online  
 
 ### <a name="see-also"></a>Zobacz także  
 

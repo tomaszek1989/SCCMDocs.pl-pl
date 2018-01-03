@@ -3,7 +3,7 @@ title: "Dostęp warunkowy"
 titleSuffix: Configuration Manager
 description: "Dowiedz się, jak używać dostępu warunkowego w programie System Center Configuration Manager ułatwia zabezpieczanie poczty e-mail i innych usług."
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 12/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "26"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: 4a14f18007524421058c6caf1ec8947cf34328e4
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: f215e1c22d40e1fe402084b665ae624bc0c21d97
+ms.sourcegitcommit: 92c3f916e6bbd35b6208463ff406e0247664543a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 01/02/2018
 ---
 # <a name="manage-access-to-services-in-system-center-configuration-manager"></a>Zarządzanie dostępem do usług w programie System Center Configuration Manager
 
@@ -27,9 +27,9 @@ ms.lasthandoff: 10/12/2017
 
 
 ## <a name="conditional-access-in-system-center-configuration-manager"></a>Dostęp warunkowy w programie System Center Configuration Manager
-Użyj **dostępu warunkowego** ułatwia zabezpieczanie poczty e-mail i innych usług na urządzeniach, które są zarejestrowane w usłudze Microsoft Intune, w zależności od określonych kryteriów.  
+Korzystaj z dostępu warunkowego do określenia warunków, aby ułatwić zabezpieczanie poczty e-mail i innych usług na urządzeniach zarejestrowanych w usłudze Microsoft Intune.  
 
- Aby uzyskać informacje o **dostępu warunkowego na komputerach, które są zarządzane z System Center Configuration Manager** i ocenić pod kątem zgodności, zobacz [zarządzanie dostępem do usług O365 dla komputerów zarządzanych przez program System Center Configuration Manager](../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md).  
+ Aby uzyskać informacje dotyczące dostępu warunkowego na urządzeniach, które są zarządzane przy użyciu klienta programu Configuration Manager, zobacz [zarządzanie dostępem do usług O365 dla komputerów zarządzanych przez program System Center Configuration Manager](../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md).  
 
 
  Typowy przepływ dla dostępu warunkowego może wyglądać następująco:  
@@ -60,19 +60,19 @@ Użyj **dostępu warunkowego** ułatwia zabezpieczanie poczty e-mail i innych us
 
     -   Określanie, czy urządzenie ma złamane zabezpieczenia lub odblokowany dostęp  
 
-    -   Określa, czy wiadomości e-mail na urządzeniu jest zarządzane przez zasady programu Configuration Manager lub usługi Intune  
+    -   Określa, czy wiadomości e-mail na urządzeniu jest zarządzany przez zasady programu Configuration Manager lub Microsoft Intune  
 
-     **Jeśli na urządzeniu nie jest wdrożono żadnych zasad zgodności, to wszystkie zasady dostępu warunkowego będą traktować to urządzenie jako zgodne**.  
+     Urządzenie zgłasza zgodne dla wszystkie zasady dostępu warunkowego, jeśli dowolne zasady zgodności nie są wdrażane do niego.
 
--   **Zasady dostępu warunkowego** są skonfigurowane dla określonej usługi i definiują reguły, takie jak które usługi Azure Active Directory grupy użytkowników zabezpieczeń lub kolekcje użytkowników programu Configuration Manager będzie docelowe lub wykluczone.  
+-   **Zasady dostępu warunkowego** są przeznaczone dla określonej usługi. Te zasady definiują reguły, takie jak które usługi Azure Active Directory grupy użytkowników zabezpieczeń lub kolekcje użytkowników programu Configuration Manager docelowe lub wykluczone.  
 
-     Możesz skonfigurować zasady dostępu warunkowego do lokalnego programu Exchange z poziomu konsoli programu Configuration Manager. Jednak podczas konfigurowania zasad usługi Exchange Online lub SharePoint Online, spowoduje to otwarcie konsoli administracyjnej usługi Intune, w którym możesz skonfigurować zasady.  
+     Możesz skonfigurować zasady dostępu warunkowego lokalnego programu Exchange z poziomu konsoli programu Configuration Manager. Jednak podczas konfigurowania zasad usługi Exchange Online lub SharePoint Online Microsoft Intune zostanie otwarta konsola pozwala skonfigurować zasady.  
 
-     W odróżnieniu od innych zasad usługi Intune lub programie Configuration Manager nie należy wdrażać zasad dostępu warunkowego. Zamiast tego użytkownik konfiguruje je jednorazowo, a następnie stosuje do wszystkich użytkowników docelowych.  
+     W odróżnieniu od innych zasad Microsoft Intune lub programie Configuration Manager nie należy wdrażać zasad dostępu warunkowego. Zamiast tego po skonfigurowaniu tych zasad i mają one zastosowanie do wszystkich użytkowników docelowych.  
 
- Gdy urządzenia nie spełniają skonfigurowanych warunków, użytkownik jest przeprowadzany przez procedurę rejestracji urządzenia i rozwiązywania problemu, w związku z którym urządzenie nie może być zgodne.  
+ Gdy urządzenia nie spełniają skonfigurowanych warunków, użytkownik jest jednak rejestracji urządzenia i rozwiązywania problemu zgodności urządzenia z przewodnikiem.  
 
-**Przed** rozpocząć korzystanie z dostępu warunkowego, upewnij się, że masz właściwą **wymagania** w miejscu:  
+Przed rozpoczęciem korzystania z dostępu warunkowego upewnij się, że zostały spełnione odpowiednie wymagania:  
 
 ## <a name="requirements-for-exchange-online-using-the-shared-multi-tenant-environment"></a>Wymagania dotyczące Usługa Exchange Online (korzystająca ze współużytkowanego środowiska z wieloma dzierżawami)
 Dostęp warunkowy do usługi Exchange Online obsługuje urządzenia, na których są uruchomione:
@@ -86,11 +86,11 @@ Dostęp warunkowy do usługi Exchange Online obsługuje urządzenia, na których
 -   Urządzenia muszą być dołączone do miejsca pracy, który rejestruje urządzenie w usłudze Azure Active Directory usługi rejestracji urządzeń (AAD DRS).<br />     
 - Komputery przyłączone do domeny muszą być automatycznie rejestrowane w usłudze Azure Active Directory za pomocą funkcji MSI lub zasad grupy.
 
-  W sekcji **Dostęp warunkowy dla komputerów** tego tematu opisano wszystkie wymagania dotyczące włączania dostępu warunkowego na komputerze.<br />     
-  Usługa AAD DRS zostanie automatycznie uaktywniona dla klientów usług Intune i Office 365. Klienci, którzy już wdrożyli usługę rejestrowania urządzeń usług AD FS, nie będą widzieć zarejestrowanych urządzeń w lokalnej usłudze Active Directory.
--   Należy użyć subskrypcji usługi Office 365 obejmującej usługę Exchange Online (na przykład E3), a użytkownicy muszą mieć licencję dla usługi Exchange Online.
--   Opcjonalny **łącznika serwera Exchange** jest opcjonalna i łączy program Configuration Manager do programu Microsoft Exchange Online i pomaga w monitorowaniu informacji o urządzeniu za pośrednictwem konsoli programu Configuration Manager (zobacz [zarządzanie urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)).
-Łącznik nie musi być używany do stosowania zasad zgodności lub dostępu warunkowego, ale jest wymagany do uruchamiania raportów umożliwiających ocenę wpływu dostępu warunkowego.
+  **Dostęp warunkowy dla komputerów** w tym artykule opisano wszystkie wymagania dotyczące włączania dostępu warunkowego na komputerze.<br />     
+  Usługa AAD DRS automatycznie aktywuje dla klientów firmy Microsoft Intune i Office 365. Klienci, którzy już wdrożyli usługę rejestracji urządzeń usług AD FS nie ma zarejestrowanych urządzeń w usłudze Active Directory ich lokalnych.
+-   Korzystanie z subskrypcji usługi Office 365, obejmującej usługę Exchange Online (na przykład E3). Użytkownicy muszą mieć licencję dla usługi Exchange Online.
+-   Łącznik programu Exchange Server jest opcjonalna i łączy program Configuration Manager do programu Microsoft Exchange Online. Ten łącznik pomaga w monitorowaniu informacji o urządzeniach za pośrednictwem konsoli programu Configuration Manager. Aby uzyskać więcej informacji, zobacz [Zarządzanie urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).
+Nie trzeba łącznika do stosowania zasad zgodności lub dostępu warunkowego. Uruchamianie raportów na temat wpływu dostępu warunkowego wymaga łącznika.
 
 ## <a name="requirements-for-exchange-online-dedicated"></a>Wymagania dotyczące usługi Exchange Online w wersji dedykowanej
 Dostęp warunkowy do usługi Exchange Online w wersji dedykowanej obsługuje urządzenia, na których są uruchomione:
@@ -101,31 +101,32 @@ Dostęp warunkowy do usługi Exchange Online w wersji dedykowanej obsługuje urz
 -   System Windows Phone 8 lub nowszy
 -   Dowolne urządzenie z systemem iOS, które używa klienta poczty e-mail programu Exchange ActiveSync (EAS)
 -   System android 4 lub nowszy.
--   W przypadku dzierżawców korzystających **starszej wersji środowiska usługi Exchange Online Dedicated**:    
+-   W przypadku dzierżawców korzystających ze starszej wersji środowiska usługi Exchange Online w wersji dedykowanej:    
 
-  Należy użyć **łącznika serwera Exchange** który łączy program Configuration Manager do programu Microsoft Exchange lokalnego. Pozwala to zarządzać urządzeniami przenośnymi i umożliwia dostęp warunkowy (zobacz [Zarządzanie urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)).
--   W przypadku dzierżawców korzystających **nowego środowiska usługi Exchange Online Dedicated**:     
-  Opcjonalny **łącznika serwera Exchange** łączy program Configuration Manager do programu Microsoft Exchange Online i ułatwia zarządzanie informacjami o urządzeniu (zobacz [zarządzanie urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)). Łącznik nie musi być używany do stosowania zasad zgodności lub dostępu warunkowego, ale jest wymagany do uruchamiania raportów umożliwiających ocenę wpływu dostępu warunkowego.  
+  Użyj łącznika serwera Exchange, który łączy program Configuration Manager do programu Microsoft Exchange lokalnego. Łącznik umożliwia zarządzanie urządzeniami przenośnymi i umożliwia dostęp warunkowy. Aby uzyskać więcej informacji, zobacz [Zarządzanie urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).
+-   W przypadku dzierżaw w nowym środowisku usługi Exchange Online w wersji dedykowanej:     
+  Łącznik serwera Exchange jest opcjonalny, który łączy program Configuration Manager do programu Microsoft Exchange Online i ułatwia zarządzanie informacjami o urządzeniu. Aby uzyskać więcej informacji, zobacz [Zarządzanie urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md). Nie trzeba łącznika do stosowania zasad zgodności lub dostępu warunkowego. Uruchamianie raportów na temat wpływu dostępu warunkowego wymaga łącznika.  
 
 ## <a name="requirements-for-exchange-on-premises"></a>Wymagania dla lokalnego programu Exchange
-Dostęp warunkowy do lokalnego programu Exchange obsługuje:
+Warunkowy dostęp do programu Exchange lokalnie obsługuje:
 -   System Windows 8 lub nowszy (jeśli jest zarejestrowane w usłudze Intune)
 -   System Windows Phone 8 lub nowszy
 -   Natywna aplikacja poczty e-mail w systemie iOS
 -   Natywna aplikacja poczty e-mail w systemie Android 4 lub nowszy
--   Aplikacja Microsoft Outlook nie jest obsługiwane (Android i iOS).
+-   Aplikacja Microsoft Outlook nie jest obsługiwane (Android i iOS)
 
 **Ponadto**:
 
--  Wersja programu Exchange musi być Exchange 2010 lub nowszej. Macierz serwerów dostępu klienta (CAS) serwera programu Exchange jest obsługiwana.
+- Wersja programu Exchange musi być programu Exchange 2010 lub nowszej.
+- Macierz serwerów dostępu klienta (CAS) serwera programu Exchange jest obsługiwana.
 
 > [!TIP]
 > Jeśli środowisko programu Exchange znajduje się w konfiguracji serwera CAS, musisz skonfigurować łącznik programu Exchange lokalnie, aby wskazywał jeden z serwerów CAS.
-- Należy użyć **łącznika serwera Exchange** który łączy program Configuration Manager do programu Microsoft Exchange lokalnego. Pozwala to zarządzać urządzeniami przenośnymi i umożliwia dostęp warunkowy (zobacz [Zarządzanie urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md)).
-  - Upewnij się, że używasz najnowszej wersji **łącznika lokalnego programu Exchange**. Łącznik lokalnego programu Exchange należy skonfigurować za pomocą konsoli programu Configuration Manager. Aby uzyskać szczegółowe wskazówki, zobacz [Zarządzanie urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).
-  - Łącznik może być skonfigurowany tylko w lokacji głównej programu System Center Configuration Manager.</li><li>Ten łącznik obsługuje środowisko serwera CAS programu Exchange. <br />        Podczas konfigurowania łącznika należy ustawić go tak, aby komunikował się z jednym z serwerów CAS programu Exchange.
+- Użyj łącznika serwera Exchange, który łączy program Configuration Manager do programu Microsoft Exchange lokalnego. Łącznik umożliwia zarządzanie urządzeniami przenośnymi i umożliwia dostęp warunkowy. Aby uzyskać więcej informacji, zobacz [Zarządzanie urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).
+  - Upewnij się, że używasz najnowszej wersji łącznika lokalnego programu Exchange. Skonfiguruj lokalny łącznik Exchange za pomocą konsoli programu Configuration Manager. Aby uzyskać szczegółowe wskazówki, zobacz [Zarządzanie urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Exchange](../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).
+  - Łącznik należy skonfigurować tylko w lokacji głównej programu Configuration Manager
 
-- Program Exchange ActiveSync można skonfigurować przy użyciu uwierzytelniania opartego na certyfikatach lub wpisu poświadczeń użytkownika.
+- Program Exchange ActiveSync można skonfigurować za pomocą uwierzytelniania opartego na certyfikatach lub wpisu poświadczeń użytkownika.
 
 
 ## <a name="requirements-for-skype-for-business-online"></a>Wymagania dotyczące usługi Skype dla firm Online
@@ -134,9 +135,9 @@ Dostęp warunkowy do usługi SharePoint Online obsługuje urządzenia, na który
  -   Android 4.0 i nowsze
  -   Samsung KNOX Standard 4.0 lub nowszy
 
-**Ponadto** należy włączyć nowoczesne uwierzytelnianie dla usługi Skype dla firm Online. Wypełnij ten [formularz Connect](https://connect.microsoft.com/office/Survey/NominationSurvey.aspx?SurveyID=17299&ProgramID=8715) , aby zarejestrować się w programie nowoczesnego uwierzytelniania.
+Włącz [nowoczesnego uwierzytelniania](https://aka.ms/SkypeModernAuth) dla usługi Skype dla firm Online. 
 
-Wszyscy użytkownicy końcowi muszą używać programu Skype dla firm Online. Jeśli masz wdrożenie z programem Skype dla firm Online oraz lokalną instalacją programu Skype dla firm, zasady dostępu warunkowego nie będą stosowane wobec użytkowników, którzy korzystają z lokalnego wdrożenia programu.
+Każdy użytkownik musi użyć usługi Skype dla firm Online. Jeśli masz wdrożenie z Skype dla firm Online i Skype dla firm lokalnymi, zasady dostępu warunkowego nie dotyczą użytkowników lokalnych.
 
 ## <a name="requirements-for-sharepoint-online"></a>Wymagania dotyczące programu SharePoint Online
 Dostęp warunkowy do usługi SharePoint Online obsługuje urządzenia, na których uruchomiono:
@@ -149,21 +150,21 @@ Dostęp warunkowy do usługi SharePoint Online obsługuje urządzenia, na który
  **Ponadto**:
  -   Urządzenia muszą być dołączone do miejsca pracy, który rejestruje urządzenie w usłudze Azure Active Directory usługi rejestracji urządzeń (AAD DRS).
 
- Komputery przyłączone do domeny muszą być automatycznie rejestrowane w usłudze Azure Active Directory za pomocą funkcji MSI lub zasad grupy. W sekcji **Dostęp warunkowy dla komputerów** tego tematu opisano wszystkie wymagania dotyczące włączania dostępu warunkowego na komputerze.
+ Komputery przyłączone do domeny muszą być automatycznie rejestrowane w usłudze Azure Active Directory za pomocą funkcji MSI lub zasad grupy. **Dostęp warunkowy dla komputerów** w tym artykule opisano wszystkie wymagania dotyczące włączania dostępu warunkowego na komputerze.
 
- Usługa AAD DRS zostanie automatycznie uaktywniona dla klientów usług Intune i Office 365. Klienci, którzy już wdrożyli usługę rejestrowania urządzeń usług AD FS, nie będą widzieć zarejestrowanych urządzeń w lokalnej usłudze Active Directory.
+ Usługa AAD DRS automatycznie aktywuje dla klientów firmy Microsoft Intune i Office 365. Klienci, którzy już wdrożyli usługę rejestracji urządzeń usług AD FS nie ma zarejestrowanych urządzeń w usłudze Active Directory ich lokalnych.
  -   Wymagana jest subskrypcja usługi SharePoint Online, a użytkownicy muszą mieć licencję na usługę SharePoint Online.
 
  ### <a name="conditional-access-for-pcs"></a>Dostęp warunkowy dla komputerów
 
- Dostęp warunkowy można skonfigurować dla komputerów z aplikacjami klasycznymi pakietu Office, aby uzyskiwać dostęp do usług **Exchange Online** i **SharePoint Online** na komputerach spełniających następujące wymagania:
- -   Na komputerze musi działać system Windows 7.0 lub Windows 8.1.
- -   Komputer musi być przyłączony do domeny lub zgodne.
+ Dostęp warunkowy można skonfigurować dla komputerów z aplikacjami klasycznymi pakietu Office i uzyskiwać dostęp do usługi Exchange Online lub SharePoint Online. Komputery muszą spełniać następujące wymagania:
+ -   Na komputerze musi działać system Windows 7.0 lub Windows 8.1
+ -   Komputer musi być albo przyłączone do domeny lub zgodne
 
- W celu zapewnienia zgodności komputer musi być zarejestrowane w usłudze Intune i zgodne z zasadami.
+ W celu zapewnienia zgodności komputer musi być zarejestrowane w programie Microsoft Intune i zgodne z zasadami.
 
  W przypadku komputerów przyłączonych do domeny musisz skonfigurować [automatyczne rejestrowanie urządzenia](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/) w usłudze Azure Active Directory.
- -   [Należy włączyć nowoczesne uwierzytelnianie usługi Office 365](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/) i zainstalować wszystkie najnowsze aktualizacje pakietu Office.<br />     Nowoczesne uwierzytelniane umożliwia logowanie do klientów systemu Windows z pakietem Office 2013 oparte na bibliotece Active Directory Authentication Library (ADAL), a także udostępnia lepsze zabezpieczenia, takie jak **uwierzytelnianie wieloskładnikowe**i **uwierzytelnianie oparte na certyfikatach**.
+ -   [Należy włączyć nowoczesne uwierzytelnianie usługi Office 365](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/) i zainstalować wszystkie najnowsze aktualizacje pakietu Office.<br />     Nowoczesnego uwierzytelniania umożliwia podstawie Active Directory Authentication Library ADAL logowanie do klientów systemu Windows z pakietu Office 2013 i zapewnia większe bezpieczeństwo dzięki zastosowaniu uwierzytelniania wieloskładnikowego oraz uwierzytelnianie oparte na certyfikatach.
  -   Aby zablokować nienowoczesne protokoły uwierzytelniania, należy skonfigurować reguły oświadczeń ADFS.  
 
 ## <a name="next-steps"></a>Następne kroki  

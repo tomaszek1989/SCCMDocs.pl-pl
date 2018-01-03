@@ -31,7 +31,7 @@
 ## Zarządzanie aplikacjami
 ### [Zadania zarządzania](deploy-use/management-tasks-applications.md)
 ### [Koligacja urządzenia użytkownika](deploy-use/link-users-and-devices-with-user-device-affinity.md)
-### [Aplikacje zakupione zbiorczo w Sklepie Windows dla firm](deploy-use/manage-apps-from-the-windows-store-for-business.md)
+### [Aplikacje kupione zbiorczo w sklepie Microsoft Store dla Firm](deploy-use/manage-apps-from-the-windows-store-for-business.md)
 ### [Środowiska wirtualne App-V](deploy-use/create-app-v-virtual-environments.md)
 
 ## Aktualizowanie i wycofywanie aplikacji

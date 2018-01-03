@@ -15,11 +15,11 @@ caps.latest.revision: "9"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 166f7c73f2050657a85bd5160f74c40cfd87fd7f
-ms.sourcegitcommit: 922d6d9c91ba2158b938df381277be1b5f1d434a
+ms.openlocfilehash: bfe500c160bf2ddffd060baabb44cda81337e1cc
+ms.sourcegitcommit: 92c3f916e6bbd35b6208463ff406e0247664543a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/13/2017
+ms.lasthandoff: 01/02/2018
 ---
 #  <a name="sync-data-from-configuration-manager-to-the-microsoft-operations-management-suite"></a>Synchronizowanie danych z programu Configuration Manager do programu Microsoft Operations Management Suite
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/13/2017
 
 Możesz użyć **Kreator usług Azure** do skonfigurowania połączenia z programu Configuration Manager do usługi w chmurze Operations Management Suite (OMS). Począwszy od wersji 1706, kreator zastępuje poprzednie przepływy pracy w celu skonfigurowania tego połączenia. W przypadku wcześniejszych wersji, zobacz [synchronizowanie danych z programu Configuration Manager do programu Microsoft Operations Management Suite (1702 i starszych)](#Sync-data-from-Configuration-Manager-to-the-Microsoft-Operations-Management-Suite-(1702-and-earlier)).
 
--   Kreator służy do konfigurowania usługi w chmurze dla programu Configuration Manager, takich jak OMS, Sklep Windows dla firm (WSfB) i Azure Active Directory (Azure AD).  
+-   Kreator służy do konfigurowania usługi w chmurze dla programu Configuration Manager, takich jak OMS, Microsoft Store dla firm i Azure Active Directory (Azure AD).  
 
 -   Configuration Manager łączy się z usługą OMS dla funkcji, takich jak [analizy dzienników](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite), lub [gotowości do uaktualnienia](/sccm/core/clients/manage/upgrade/upgrade-analytics).
 

@@ -15,11 +15,11 @@ caps.latest.revision: "9"
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: dd62748f853915d71fcbad1964f5a67785aaf3f6
-ms.sourcegitcommit: 1132886e07d0c0a87dcc7eeef4577dd8d8840023
+ms.openlocfilehash: 95808d4fd743d5cc18cacb69bb38bc729acdda25
+ms.sourcegitcommit: 92c3f916e6bbd35b6208463ff406e0247664543a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 01/02/2018
 ---
 # <a name="set-up-windows-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Konfigurowanie hybrydowego zarządzania urządzeniami z systemem Windows za pomocą programu System Center Configuration Manager i usługi Microsoft Intune
 
@@ -35,7 +35,7 @@ Aby włączyć zarządzanie urządzeniami z systemem Windows dla komputerów lub
 3.  Na wstążce kliknij **Konfiguruj platformy**, a następnie wybierz platformy systemu Windows:
     - **Windows** dla komputerów z systemem Windows i komputerów przenośnych, a następnie wykonaj następujące czynności:
       1. W **ogólne** , kliknij pozycję **Włącz rejestrację systemu Windows** wyboru.
-      2. Jeśli używany certyfikat do podpisania kodu i wdróż aplikację Portal firmy, przejdź do **certyfikat podpisywania kodu**. Użytkownicy urządzeń można także zainstalować aplikację Portal firmy ze Sklepu Windows lub aplikację ze Sklepu Windows dla firm można wdrożyć bez podpisywania kodu.
+      2. Jeśli używany certyfikat do podpisania kodu i wdróż aplikację Portal firmy, przejdź do **certyfikat podpisywania kodu**. Użytkownicy urządzeń można także zainstalować aplikację Portal firmy z Microsoft Store lub bez podpisywania kodu można wdrożyć aplikację z Microsoft Store dla firm.
       3. Można również skonfigurować [usługi Windows Hello dla firm ustawienia](windows-hello-for-business-settings.md).
     - **Windows Phone** dla systemu Windows, telefonów i tabletów, a następnie wykonaj następujące czynności:
       1. W **ogólne** , kliknij pozycję **Windows Phone 8.1 i Windows 10 Mobile** wyboru. Windows Phone 8.0 nie jest już obsługiwana.

@@ -33,11 +33,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.openlocfilehash: ce5239340032db7deb5bcb20d00aba77c9b140e2
-ms.sourcegitcommit: da27d37cc4e4e06cf23758846cdd7acb617f744b
+ms.openlocfilehash: 1129da43f9c50d21f2ce8392721c77a4e614e410
+ms.sourcegitcommit: 92c3f916e6bbd35b6208463ff406e0247664543a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 01/02/2018
 ---
 # <a name="levels-of-diagnostic-usage-data-collection-for-version-1710-of-system-center-configuration-manager"></a>Poziomy zbierania diagnostycznych danych użycia dla wersji 1710 programu System Center Configuration Manager
 
@@ -168,7 +168,7 @@ Programu System Center Configuration Manager wersji 1710 ten poziom obejmuje nas
 
    - Typy wdrożeń liczba Instalatora Windows przez odinstalowanie ustawienia zawartości
 
-   - Liczba Sklep Windows dla aplikacji biznesowych i statystyki synchronizacji (łącznie z podsumowaniem typy aplikacji, licencjonowane stanu aplikacji i liczba online i offline licencjonowane aplikacje)  
+   - Liczba Microsoft magazynu dla aplikacji biznesowych i statystyki synchronizacji (łącznie z podsumowaniem typy aplikacji, licencjonowane stanu aplikacji i liczba online i offline licencjonowane aplikacje)  
 
    - Typ i czas trwania okna obsługi  
 
@@ -519,4 +519,4 @@ Programu System Center Configuration Manager wersji 1710 ten poziom obejmuje nas
 
 - Typ zasad dostępu warunkowego EAS (blokowanie lub kwarantannę) dla urządzeń zarządzanych przez usługę Intune
 
-- Sklep Windows dla firm szczegóły aplikacji (niezagregowanym listę zsynchronizowanych aplikacji, w tym AppID stanie online lub do trybu offline i liczby całkowitej zakupionych licencji)
+- Microsoft Store szczegółowe aplikacji biznesowych (niezagregowanym listę zsynchronizowanych aplikacji, w tym AppID stanie online lub do trybu offline i liczby całkowitej zakupionych licencji)

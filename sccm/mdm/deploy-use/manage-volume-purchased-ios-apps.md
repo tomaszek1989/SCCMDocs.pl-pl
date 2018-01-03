@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: c5ce168afe8668c67d7a66aaf79fce91d082afd5
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 1411675b11074b610d7370f93eafd7359cfb46ee
+ms.sourcegitcommit: 92c3f916e6bbd35b6208463ff406e0247664543a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 01/02/2018
 ---
 # <a name="manage-volume-purchased-ios-apps-with-system-center-configuration-manager"></a>Zarządzanie aplikacjami systemu iOS, które zostały zakupione w ramach programu zakupów zbiorczych, w programie Configuration Manager
 
@@ -104,7 +104,7 @@ Pełni mogą synchronizować dane przechowywane przez firmę Apple z programem C
 1.  W konsoli programu Configuration Manager wybierz **Biblioteka oprogramowania** > **Zarządzanie aplikacjami** > **informacji o licencji dla aplikacji ze sklepu**.  
 
 3.  Wybierz aplikację, którą chcesz wdrożyć, a następnie w **Home** karcie **Utwórz** grupy, wybierz **tworzenie aplikacji**.
-Aplikacji programu Configuration Manager, który jest tworzony ma w Sklepie Windows dla aplikacji biznesowych. Można następnie wdrożyć i monitorować tej aplikacji, jak w przypadku innych aplikacji programu Configuration Manager.
+Aplikacji programu Configuration Manager, który jest tworzony ma Microsoft Store dla aplikacji biznesowych. Można następnie wdrożyć i monitorować tej aplikacji, jak w przypadku innych aplikacji programu Configuration Manager.
 
     > [!IMPORTANT]  
     > Musisz wybrać celem wdrożenia **wymagane**. Instalacje dostępne nie są obecnie obsługiwane.

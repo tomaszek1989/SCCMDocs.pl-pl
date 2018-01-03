@@ -52,7 +52,7 @@
 ### [Zasady konfiguracji aplikacji systemu Android](deploy-use/configure-android-apps-with-app-configuration-policies.md)
 ### [Zasady zarządzania aplikacjami mobilnymi](deploy-use/protect-apps-using-mam-policies.md)
 ### [Zasady programu Managed Browser](deploy-use/manage-internet-access-using-managed-browser-policies.md)
-### [Aplikacje ze Sklepu Windows dla firm](deploy-use/windows-store-for-business.md)
+### [Aplikacje ze sklepu Microsoft Store dla Firm](deploy-use/windows-store-for-business.md)
 
 ## [Zarządzanie subskrypcją usługi Intune](deploy-use/manage-intune-subscriptions.md)
 ## [Change your MDM authority (Zmiana urzędu MDM)](deploy-use/change-mdm-authority.md)

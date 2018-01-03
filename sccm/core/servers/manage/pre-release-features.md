@@ -3,7 +3,7 @@ title: "Funkcje wersji wstępnej"
 titleSuffix: Configuration Manager
 description: "Funkcje wersji wstępnej programu System Center Configuration Manager"
 ms.custom: na
-ms.date: 12/05/2017
+ms.date: 12/19/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "36"
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: c132f1512d8a1d6a4657079c8ecd2d7a050797b9
-ms.sourcegitcommit: 52b956cfe32c3f06ae68d6ba6fc3244ce5a66325
+ms.openlocfilehash: 2ef961732431bd4314229e3da6a65df58592342f
+ms.sourcegitcommit: 6c2aa79924c0e7fc64ef5e9003498fc00c349db9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="pre-release-features-in-system-center-configuration-manager"></a>Funkcje wersji wstępnej programu System Center Configuration Manager
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
@@ -48,7 +48,9 @@ Jeśli udzielił zgody w autonomicznej lokacji głównej, a następnie rozwiń w
 |------------------|---------------------|---------------------|
 | Uruchom sekwencję zadań<!-- 1261338 --> |  [Wersja 1710](/sccm/osd/understand/task-sequence-steps#child-task-sequence) |![Jeszcze nie](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Windows Defender wykorzystać zabezpieczenia<!-- 1355468 --> |  [Wersja 1710](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy) |![Jeszcze nie](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
+| Ocena zaświadczania o kondycji urządzenia dla zasad dostępu warunkowego zgodności<!-- 1235616 --> |  [Wersja 1710](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm) |![Jeszcze nie](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Tworzenie i uruchamianie skryptów programu PowerShell z poziomu konsoli programu Configuration Manager<!-- 1236459 --> |  [Wersja 1706](/sccm/apps/deploy-use/create-deploy-scripts)|![Jeszcze nie](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
+| Zarządzanie aktualizacjami sterownik Microsoft Surface<!-- 1098490 --> |  [Wersja 1706](/sccm/sum/get-started/configure-classifications-and-products) | [Wersja 1710](/sccm/sum/get-started/configure-classifications-and-products)|
 | Zarządzanie urządzeniami Guard z programu Configuration Manager<!-- 1319346 --> |  [Wersja 1702](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)|![Jeszcze nie](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Zadanie sekwencji wstępnie buforowanie zawartości<!-- 1021244 --> |  [Wersja 1702](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content) | [Wersja 1706](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content)|
 | Sprawdź, czy uruchamianie plików wykonywalnych przed zainstalowaniem aplikacji<!-- 1284624 --> |   [Wersja 1702](/sccm/apps/deploy-use/deploy-applications#how-to-check-for-running-executable-files-before-installing-an-application) |[Wersja 1706](/sccm/apps/deploy-use/deploy-applications#how-to-check-for-running-executable-files-before-installing-an-application)|
@@ -57,4 +59,4 @@ Jeśli udzielił zgody w autonomicznej lokacji głównej, a następnie rozwiń w
 | Brama zarządzania w chmurze<!-- 1101764 --> |  [Wersja 1610](/sccm/core/clients/manage/plan-cloud-management-gateway) |![Jeszcze nie](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Łącznika programu Microsoft Operations Management Suite<!-- 1236739 --> | [Wersja 1606](../../../core/clients/manage/sync-data-microsoft-operations-management-suite.md) |![Jeszcze nie](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Obsługa kolekcji wykrywania klastra (Usługa grupy serwera)<!-- 1081776 --> | [Wersja 1602](../../../core/get-started/capabilities-in-technical-preview-1605.md#BKMK_ServerGroups)|![Jeszcze nie](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-| Dostęp warunkowy dla komputerów zarządzanych przez program System Center Configuration Manager<!--  --> | [Wersja 1602](../../../protect/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm.md)     | [Wersja 1702](/sccm/mdm/deploy-use/manage-access-to-services)                     |
+| Dostęp warunkowy dla komputerów zarządzanych przez program System Center Configuration Manager<!--  --> | [Wersja 1602](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm)     | [Wersja 1702](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm)                     |

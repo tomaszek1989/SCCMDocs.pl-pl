@@ -14,11 +14,11 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 189e737eca5dee5bca3f0748cd1b4d944f868565
-ms.sourcegitcommit: 4af1da9c18f5bdff31426cf1d58c7d949372292d
+ms.openlocfilehash: bf07e4fd187a71e6c4270e62cfb9ba2f8b743519
+ms.sourcegitcommit: 92c3f916e6bbd35b6208463ff406e0247664543a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 01/02/2018
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>What's new in hybrydowego zarządzania urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Microsoft Intune
 
@@ -374,9 +374,9 @@ Następujące funkcje dodatkowe hybrydowego znajdują się również w wersji 17
 
   Aby uzyskać więcej informacji o aplikacji dla systemu iOS zakupionymi zbiorczo, zobacz [Zarządzanie aplikacjami zakupionymi zbiorczo systemu iOS](/sccm/mdm/deploy-use/manage-volume-purchased-ios-apps).
 
-- **Obsługa aplikacji biznesowych — w Sklepie Windows dla firm**
+- **Obsługa aplikacji biznesowych — w Microsoft Store dla firm**
 
-  Mogą teraz synchronizować niestandardowych aplikacji biznesowych — w Sklepie Windows dla firm.
+  Mogą teraz synchronizować niestandardowych aplikacji biznesowych z Microsoft Store dla firm.
 
 - **Nowe przed zagrożeniami Mobile narzędzia do monitorowania**
 
