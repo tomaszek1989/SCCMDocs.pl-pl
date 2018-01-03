@@ -3,7 +3,7 @@ title: "Obsługiwane wersje programu SQL Server"
 titleSuffix: Configuration Manager
 description: Pobierz wymagania konfiguracji i wersji programu SQL Server do hostowania bazy danych lokacji programu System Center Configuration Manager.
 ms.custom: na
-ms.date: 11/30/2017
+ms.date: 12/18/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "21"
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 7006d6cd03da53daf0f6cb59cc4ef83e7e800a1e
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: ccc07aa709c0a168a8df7a1bd7944e9399bec13f
+ms.sourcegitcommit: 3dea4342f79909c5064289bd18ed36269812e30c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 12/19/2017
 ---
 # <a name="supported-sql-server-versions-for-system-center-configuration-manager"></a>Obsługiwane wersje programu SQL Server dla programu System Center Configuration Manager
 
@@ -65,23 +65,31 @@ Replikacja transakcyjna programu SQL Server jest obsługiwana tylko na potrzeby 
 
 
 
- O ile nie określono inaczej, następujące wersje programu SQL Server są obsługiwane przez wszystkie aktywne wersje programu System Center Configuration Manager. Jeśli obsługa nowej wersji programu SQL Server lub z dodatkiem Service pack jest dodawany, wersji programu Configuration Manager, który dodaje obsługę zostanie zapisany. Podobnie jeśli obsługa jest przestarzała, poszukaj informacji o usterce wersje programu Configuration Manager.   
+ O ile nie określono inaczej, następujące wersje programu SQL Server są obsługiwane przez wszystkie aktywne wersje programu System Center Configuration Manager. Jeśli obsługa nowej wersji programu SQL Server lub z dodatkiem Service pack jest dodawany, wersji programu Configuration Manager, który dodaje obsługę zostanie zapisany. Podobnie jeśli obsługa jest przestarzała, znaleźć szczegółowe informacje o usterce wersje programu Configuration Manager.   
 
-Obsługa określonego dodatku service pack programu SQL Server obejmuje aktualizacje zbiorcze tego dodatku service pack, chyba, że aktualizacja zbiorcza dzieli wstecz do tej usługi podstawowej wersji pakietu. Nie wersji dodatku service pack należy zauważyć, obsługi dotyczy tej wersji programu SQL Server bez dodatku service pack. W przyszłości Jeśli wydaniem dodatku service pack dla danej wersji instrukcji obsługi oddzielnych będą deklarowane przed tej nowej wersji dodatku service pack jest obsługiwany.
+Obsługa określonego dodatku service pack programu SQL Server obejmuje aktualizacje zbiorcze, chyba że awarie zgodność ze starszymi wersjami usługi podstawowej wersji pakietu. Nie wersji dodatku service pack należy zauważyć, obsługa dotyczy wersji programu SQL Server bez dodatku service pack. W przyszłości Jeśli wydaniu dodatku service pack do wersji SQL Server instrukcji obsługi oddzielnych będą deklarowane przed nowej wersji dodatku service pack jest obsługiwany.
 
 
 > [!IMPORTANT]  
 >  Korzystając z programu SQL Server Standard dla bazy danych w centralnej lokacji administracyjnej, należy ograniczyć całkowitą liczbę klientów obsługiwanych w hierarchii. Zobacz [Wartości dotyczące rozmiarów i skalowania](../../../core/plan-design/configs/size-and-scale-numbers.md).
 
+### <a name="sql-server-2017-standard-enterprise"></a>Program SQL Server 2017: Wersje Standard, Enterprise  
+Ta wersja programu SQL Server, można użyć z co najmniej [wersji aktualizacji zbiorczej 2](https://support.microsoft.com/help/4052574), począwszy od [1710 wersji programu Configuration Manager](https://docs.microsoft.com/en-us/sccm/core/plan-design/changes/whats-new-in-version-1710) dla następujących witryn: 
+
+-   Centralna lokacja administracyjna  
+-   Lokacja główna  
+-   Lokację dodatkową  
+<!--SMS.498506-->
+
 ### <a name="sql-server-2016-sp1-standard-enterprise"></a>SQL Server 2016 z dodatkiem SP1: Wersje Standard, Enterprise  
-Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:  
+Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:  
 
 -   Centralna lokacja administracyjna  
 -   Lokacja główna  
 -   Lokację dodatkową  
 
 ### <a name="sql-server-2016-standard-enterprise"></a>Program SQL Server 2016: Wersje Standard, Enterprise  
-Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:  
+Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:  
 
 -   Centralna lokacja administracyjna  
 -   Lokacja główna  
@@ -89,28 +97,28 @@ Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersj
 
 
 ### <a name="sql-server-2014-sp2-standard-enterprise"></a>Program SQL Server 2014 SP2: Wersje Standard, Enterprise  
-Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:  
+Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:  
 
 -   Centralna lokacja administracyjna  
 -   Lokacja główna  
 -   Lokację dodatkową
 
 ### <a name="sql-server-2014-sp1-standard-enterprise"></a>SQL Server 2014 z dodatkiem SP1: Wersje Standard, Enterprise  
- Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:  
+ Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:  
 
 -   Centralna lokacja administracyjna  
 -   Lokacja główna  
 -   Lokację dodatkową
 
 ### <a name="sql-server-2012-sp4-standard-enterprise"></a>SQL Server 2012 z dodatkiem SP4: Wersje Standard, Enterprise  
- Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:  
+ Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:  
 
 -   Centralna lokacja administracyjna  
 -   Lokacja główna  
 -   Lokację dodatkową  
 
 ### <a name="sql-server-2012-sp3-standard-enterprise"></a>SQL Server 2012 z dodatkiem SP3: Wersje Standard, Enterprise  
- Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:  
+ Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:  
 
 -   Centralna lokacja administracyjna  
 -   Lokacja główna  
@@ -118,7 +126,7 @@ Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersj
 
 <!-- Support for this service pack version has been dropped by Microsoft    
 ### SQL Server 2012 SP2: Standard, Enterprise   
- You can use this version of SQL Server with no minimum cumulative update version for the following:  
+ You can use this version of SQL Server with no minimum cumulative update version for the following sites:  
 
 -   A central administration site  
 -   A primary site  
@@ -129,40 +137,45 @@ Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersj
   Ta wersja programu SQL Server nie jest obsługiwana [począwszy od wersji 1702](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-support-for-sql-server-versions-as-a-site-database).  
  Ta wersja programu SQL Server jest obsługiwany w przypadku korzystania z wersji programu Configuration Manager przed 1702.
 
-Jeśli są obsługiwane przez używaną wersję programu Configuration Manager, można użyć tej wersji programu SQL Server bez wersji minimalnej wersji aktualizacji zbiorczej dla następujących:  
+Jeśli są obsługiwane przez wersję programu Configuration Manager, można tej wersji programu SQL Server bez wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:  
 
 -   Centralna lokacja administracyjna  
 -   Lokacja główna
 -   Lokację dodatkową
 
+### <a name="sql-server-2017-express"></a>Program SQL Server 2017 Express   
+Ta wersja programu SQL Server, można użyć z co najmniej [wersji aktualizacji zbiorczej 2](https://support.microsoft.com/help/4052574), począwszy od [1710 wersji programu Configuration Manager](https://docs.microsoft.com/en-us/sccm/core/plan-design/changes/whats-new-in-version-1710) dla następujących witryn:
+-   Lokację dodatkową
+<!--SMS.498506-->
+
 ### <a name="sql-server-2016-express-sp1"></a>SQL Server 2016 Express z dodatkiem SP1  
-Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:
+Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:
 -   Lokację dodatkową
 
 ### <a name="sql-server-2016-express"></a>Program SQL Server 2016 Express
-Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:
+Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:
 -   Lokację dodatkową
 
 
 ### <a name="sql-server-2014-express-sp2"></a>SQL Server 2014 Express z dodatkiem SP2   
-Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:  
+Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:  
 
 -   Lokację dodatkową  
 
 
 ### <a name="sql-server-2014-express-sp1"></a>SQL Server 2014 Express SP1   
- Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:  
+ Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:  
 
 -   Lokację dodatkową  
 
 ### <a name="sql-server-2012-express-sp3"></a>SQL Server 2012 Express SP3  
-Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersji aktualizacji zbiorczej dla następujących elementów:  
+Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:  
 
 -   Lokację dodatkową  
 
 <!-- Support for this service pack version has been dropped by Microsoft   
 ### SQL Server 2012 Express SP2   
- You can use this version of SQL Server with no minimum cumulative update version for the following:  
+ You can use this version of SQL Server with no minimum cumulative update version for the following sites:  
 
 -   A secondary site  
 -->
@@ -188,7 +201,7 @@ Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersj
  Program Configuration Manager wymaga **uwierzytelniania systemu Windows** do weryfikowania połączeń z bazą danych.  
 
  **Wystąpienie programu SQL Server:**  
- Musisz użyć dedykowanego wystąpienia programu SQL Server dla każdej lokacji. Może to być **nazwane wystąpienie** lub **wystąpienie domyślne**.  
+ Musisz użyć dedykowanego wystąpienia programu SQL Server dla każdej lokacji. Wystąpienie może być **nazwane wystąpienie** lub **domyślnego wystąpienia**.  
 
  **Pamięć programu SQL Server:**  
  Zarezerwuj pamięć dla programu SQL Server przy użyciu programu SQL Server Management Studio i ustawienie **minimalna ilość pamięci serwera** w obszarze **opcje pamięci serwera**. Aby uzyskać więcej informacji na temat sposobu ustawiania stałej ilości pamięci, zobacz [jak: Ustawianie stałej ilości pamięci (SQL Server Management Studio)](http://go.microsoft.com/fwlink/p/?LinkId=233759).  
@@ -227,7 +240,7 @@ Tej wersji programu SQL Server możesz używać bez ograniczeń minimalnej wersj
 
 W przypadku komputera z programem SQL Server nie używa swojego konta systemu lokalnego do uruchamiania usługi programu SQL Server, należy skonfigurować nazwę SPN konta, na którym jest uruchomiona usługa SQL Server w usługach domenowych w usłudze Active Directory. (W przypadku konta systemowego nazwy SPN jest rejestrowana automatycznie.)
 
-Informacje o nazwach SPN dla bazy danych lokacji, zobacz [zarządzać nazwami SPN dla serwera bazy danych lokacji](../../../core/servers/manage/modify-your-infrastructure.md#bkmk_SPN) w [modyfikowanie infrastruktury programu System Center Configuration Manager](../../../core/servers/manage/modify-your-infrastructure.md) tematu.  
+Informacje o nazwach SPN dla bazy danych lokacji, zobacz [zarządzać nazwami SPN dla serwera bazy danych lokacji](../../../core/servers/manage/modify-your-infrastructure.md#bkmk_SPN) w [modyfikowanie infrastruktury programu System Center Configuration Manager](../../../core/servers/manage/modify-your-infrastructure.md) artykułu.  
 
 Aby uzyskać informacje na temat zmieniania konta używanego przez usługi SQL Server, zobacz [jak: Zmienianie konta uruchamiania usługi programu SQL Server (SQL Server Configuration Manager)](http://go.microsoft.com/fwlink/p/?LinkId=237661).  
 

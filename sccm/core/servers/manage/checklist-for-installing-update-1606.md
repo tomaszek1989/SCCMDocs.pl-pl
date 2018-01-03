@@ -15,11 +15,11 @@ caps.latest.revision: "7"
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 640267b1ff16ba3cc31296187e3e3b3bbe670faa
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: ce41852584f11d881c24c201867e13124595eba8
+ms.sourcegitcommit: 2867fd119256ec670fc5ae65cdc8a80d39f9b4d4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 12/20/2017
 ---
 # <a name="checklist-for-installing-update-1606-for-system-center-configuration-manager"></a>Lista kontrolna dotycząca instalowania aktualizacji 1606 programu System Center Configuration Manager
 
@@ -100,7 +100,9 @@ Korzystając z klastrami równoważenia obciążenia Sieciowego dla punktów akt
 
 Instalowanie aktualizacji może zakończyć się niepowodzeniem, jeżeli w czasie jego trwania zostanie uruchomione zadanie konserwacji bazy danych lokacji. Przed wyłączeniem zadania Zarejestruj jego harmonogram zadań, można przywrócić jego konfigurację po zainstalowaniu aktualizacji.  
 
-Aby uzyskać więcej informacji, zobacz [zadania konserwacji programu System Center Configuration Manager](../../../core/servers/manage/maintenance-tasks.md) i [odwołania do obsługi zadań programu System Center Configuration Manager](../../../core/servers/manage/reference-for-maintenance-tasks.md).  
+Aby uzyskać więcej informacji, zobacz [zadania konserwacji programu System Center Configuration Manager](../../../core/servers/manage/maintenance-tasks.md) i [odwołania do obsługi zadań programu System Center Configuration Manager](../../../core/servers/manage/reference-for-maintenance-tasks.md). 
+
+**Tymczasowo Zatrzymaj oprogramowanie antywirusowe na serwerach programu System Center Configuration Manager:** Przed zaktualizowaniem lokacji upewnij się, że zatrzymano oprogramowanie antywirusowe na serwerach programu Configuration Manager. <!--SMS.503481--> 
 
  **Utwórz kopię zapasową bazy danych lokacji w centralnej lokacji administracyjnej i lokacjach głównych:** Przed zaktualizowaniem lokacji Utwórz kopię zapasową bazy danych lokacji, upewnij się, że masz pomyślnego tworzenia kopii zapasowej do użycia podczas odzyskiwania po awarii.   
 

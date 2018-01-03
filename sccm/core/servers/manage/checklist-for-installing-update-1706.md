@@ -3,7 +3,7 @@ title: "Lista kontrolna dotycząca 1706"
 titleSuffix: Configuration Manager
 description: "Więcej informacji na temat działania należy podjąć przed zaktualizowaniem do System Center Configuration Manager w wersji 1706."
 ms.custom: na
-ms.date: 07/31/2017
+ms.date: 12/19/2017
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
@@ -15,11 +15,11 @@ caps.latest.revision:
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 7a3d3f127fe9555852d51981b16295dbd0b38903
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: b9acbf4a80bed52f0c720f70ee62042d1e90dd62
+ms.sourcegitcommit: 2867fd119256ec670fc5ae65cdc8a80d39f9b4d4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 12/20/2017
 ---
 # <a name="checklist-for-installing-update-1706-for-system-center-configuration-manager"></a>Lista kontrolna dotycząca instalowania aktualizacji 1706 programu System Center Configuration Manager
 
@@ -126,6 +126,8 @@ Przed zainstalowaniem aktualizacji Wyłącz wszystkie zadania konserwacji lokacj
 Instalowanie aktualizacji może zakończyć się niepowodzeniem, jeżeli w czasie jego trwania zostanie uruchomione zadanie konserwacji bazy danych lokacji. Przed wyłączeniem zadania Zarejestruj jego harmonogram zadań, można przywrócić jego konfigurację po zainstalowaniu aktualizacji.
 
 Aby uzyskać więcej informacji, zobacz [zadania konserwacji programu System Center Configuration Manager](/sccm/core/servers/manage/maintenance-tasks) i [odwołania do obsługi zadań programu System Center Configuration Manager](/sccm/core/servers/manage/reference-for-maintenance-tasks).
+
+**Tymczasowo Zatrzymaj oprogramowanie antywirusowe na serwerach programu System Center Configuration Manager:** Przed zaktualizowaniem lokacji upewnij się, że zatrzymano oprogramowanie antywirusowe na serwerach programu Configuration Manager. <!--SMS.503481--> 
 
 **Utwórz kopię zapasową bazy danych lokacji w centralnej lokacji administracyjnej i lokacjach głównych:** Przed zaktualizowaniem lokacji Utwórz kopię zapasową bazy danych lokacji, upewnij się, że masz pomyślnego tworzenia kopii zapasowej do użycia podczas odzyskiwania po awarii.
 
