@@ -3,7 +3,7 @@ title: "Opcja Zawsze włączone programu SQL Server"
 titleSuffix: Configuration Manager
 description: "Zaplanuj użycie programu SQL Server zawsze w grupie dostępności wraz z programem SCCM."
 ms.custom: na
-ms.date: 11/20/2017
+ms.date: 12/27/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ caps.latest.revision: "16"
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 42d5a059e11dffc7890ec78ce7361ebfe905a050
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 7efd0c76a0723a98661b0861eb16298eee524f35
+ms.sourcegitcommit: f1535281b2c3fecff773b722c3f7590bf6ba10a0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="prepare-to-use-sql-server-always-on-availability-groups-with-configuration-manager"></a>Przygotowanie do korzystania z programu SQL Server zawsze włączonych grup dostępności z programu Configuration Manager
 
@@ -78,7 +78,7 @@ Aby uzyskać więcej informacji, zobacz [Tworzenie punktu końcowego dublowania 
 
 -   Począwszy od wersji 1706, możesz użyć zatwierdzania asynchronicznego replika Aby odzyskać repliki synchroniczne. Zobacz [opcje odzyskiwania bazy danych lokacji]( /sccm/protect/understand/backup-and-recovery#BKMK_SiteDatabaseRecoveryOption) w temacie kopii zapasowych i odzyskiwania, aby uzyskać informacje o tym.
     > [!CAUTION]  
-    > Menedżer konfiguracji nie obsługuje trybu failover do korzystania z repliki zatwierdzania asynchronicznego jako bazy danych lokacji.
+    > Program Configuration Manager nie obsługuje [pracy awaryjnej](https://go.microsoft.com/fwlink/?linkid=626885) do korzystania z repliki zatwierdzania asynchronicznego jako bazy danych lokacji.
 Ponieważ programu Configuration Manager nie można zweryfikować stanu repliki zatwierdzania asynchronicznego, aby upewnić się, że jest aktualny, i [zgodnie z założeniami takie repliki może być zsynchronizowane]( https://msdn.microsoft.com/library/ff877884(SQL.120).aspx(d=robot)#Availability%20Modes), użycie zatwierdzania asynchronicznego replika jako bazy danych lokacji można umieścić integralność danych lokacji i na ryzyko.
 
 Każdy element członkowski repliki musi:
