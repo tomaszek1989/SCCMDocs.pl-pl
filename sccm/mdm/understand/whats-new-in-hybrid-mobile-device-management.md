@@ -14,11 +14,11 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: bf07e4fd187a71e6c4270e62cfb9ba2f8b743519
-ms.sourcegitcommit: 92c3f916e6bbd35b6208463ff406e0247664543a
+ms.openlocfilehash: af475bbc17fe1514dab626524007134be9b5f608
+ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/02/2018
+ms.lasthandoff: 01/04/2018
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>What's new in hybrydowego zarządzania urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Microsoft Intune
 
@@ -40,6 +40,12 @@ Każda sekcja w tym artykule wymieniono funkcje hybrydowych w trzech różnych k
 |**Nowość w usłudze Microsoft Intune** | Ogólnie rzecz biorąc wszystkie funkcje wymienione w tej kategorii powinny współpracować z wszystkie wersje programu Configuration Manager. Zwalnia to tym System Center 2012 R2 Configuration Manager, ponieważ te funkcje tylko wymagane przez usługę Intune i nie wymagają dodatkowych funkcji w programie Configuration Manager.|
 |**Nowość w programie Configuration Manager Technical Preview**| Wszystkie funkcje wymienione w tej kategorii są prawidłowe tylko w określonej wersji Technical Preview. Aby wypróbować te funkcje, należy zainstalować wersję Technical Preview określony w opisie funkcji. Aby uzyskać więcej informacji, zobacz [Technical Preview programu System Center Configuration Manager](../../core/get-started/technical-preview.md).|
 |**Nowe w programie Configuration Manager (wersji current branch)**| Wszystkie funkcje wymienione w tej kategorii pracować tylko z określonej wersji programu Configuration Manager (wersji current branch), np. w wersji 1511 lub 1602. Jeśli używasz starszej wersji programu Configuration Manager dla danego wdrożenia hybrydowego, należy uaktualnić do wersji Configuration Manager (wersji current branch) określona w opisie funkcji. Aby uzyskać więcej informacji, zobacz [uaktualnienia do programu System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|
+
+## <a name="december-2017"></a>2017 grudnia
+
+### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune
+
+- **Wdrożenia aplikacji dostępna teraz obsługiwane dla systemu Android Enterprise** teraz można wdrażać aplikacje dla systemu Android przedsiębiorstwa (dawniej Android for Work) jako **dostępne**, oprócz **wymagane**. Aby uzyskać więcej informacji, zobacz [utworzyć Android aplikacje z System Center Configuration Manager](/sccm/mdm/deploy-use/creating-android-applications.md).
 
 
 ## <a name="november-2017"></a>2017 listopada
