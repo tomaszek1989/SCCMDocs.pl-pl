@@ -15,11 +15,11 @@ caps.latest.revision: "157"
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: c9650d202096b223baf9c62fef96c35ba6d245c2
-ms.sourcegitcommit: 92c3f916e6bbd35b6208463ff406e0247664543a
+ms.openlocfilehash: 692cf74cbae3f176bab254aeec0e63c10929cfcc
+ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/02/2018
+ms.lasthandoff: 01/04/2018
 ---
 # <a name="technical-preview-for-system-center-configuration-manager"></a>Wersja zapoznawcza Technical Preview programu System Center Configuration Manager
 
@@ -141,7 +141,7 @@ Poniżej przedstawiono możliwości oferowane przez poprzednie wersje wersje tec
  |Zmiany zasad ochrona urządzeń<!-- 1355092  -->| [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md)|[Wersja 1710](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)    |
  |Konfigurowanie i wdrażanie zasad Guard aplikacji programu Windows Defender<!-- 1351960  -->| [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md)|[Wersja 1710](/sccm/protect/deploy-use/create-deploy-application-guard-policy)    |
  |Ulepszenia dotyczące wdrażania skryptów programu PowerShell z programu Configuration Manager<!-- 1236459 -->| [Podgląd techniczna 1710](capabilities-in-technical-preview-1710.md#improvements-for-deploying-powershell-scripts-from-configuration-manager) | [Wersja 1710](/sccm/apps/deploy-use/create-deploy-scripts)
- |VPN udoskonalone środowisko profilu w konsoli programu Configuration Manager<!-- 1313282 --> | [Podgląd techniczna 1709](capabilities-in-technical-preview-1709.md) |![Nie dodano](media/Red_X.gif)    |
+ |VPN udoskonalone środowisko profilu w konsoli programu Configuration Manager<!-- 1313282 --> | [Podgląd techniczna 1709](capabilities-in-technical-preview-1709.md) |[Wersja 1710](/sccm/protect/deploy-use/create-vpn-profiles)    |
  |Jednoczesne zarządzania dla urządzeń z systemem Windows 10|[Podgląd techniczna 1709](capabilities-in-technical-preview-1709.md#co-management-for-windows-10-devices)|[Wersja 1710](/sccm/core/clients/manage/co-management-overview.md)|
  
 

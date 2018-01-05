@@ -15,11 +15,11 @@ caps.latest.revision: "6"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: 2ec4f4fdd1e351379922302e81af88e311a37c8e
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: c512cba550e405c866204af981aba75639665de2
+ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 01/04/2018
 ---
 # <a name="create-android-applications-with-system-center-configuration-manager"></a>Tworzenie aplikacji systemu Android z System Center Configuration Manager
 
@@ -48,7 +48,7 @@ Obsługiwane są następujące akcje wdrażania:
 |Typ urządzenia|Obsługiwane akcje|
 |-|-|
 |Android|**Dostępne**, **wymagane** użytkownik musi wyrazić zgodę do instalacji i dezinstalacji.|
-|Android for Work | **Wymagane** |
+|Android for Work |**Dostępne**, **wymagane** |
 
 ## <a name="approve-and-deploy-android-for-work-apps"></a>Zatwierdzanie i wdrażanie systemu Android dla aplikacji służbowych
 Jako administrator programu Configuration Manager, należy również zatwierdzić aplikacji w [odtwarzania dla witryny sieci Web pracy](https://play.google.com/work)i wdrożyć aplikacje Android zarządzanych urządzeń w pracy.
@@ -65,3 +65,5 @@ Wykonaj poniższe kroki zatwierdzania aplikacji w Play pracy magazynu, zsynchron
 8. Przejdź do **Biblioteka oprogramowania** > **omówienie** > **Zarządzanie aplikacjami** > **aplikacji**, wybierz systemu Android dla aplikacji do pracy i wdrażanie w zwykły sposób.
 
 Aby zsynchronizować Play dla aplikacji do pracy z programem Configuration Manager, możesz musi zatwierdzić co najmniej jedną aplikację na Play pracy witryny sieci Web.
+
+Aplikacje wdrożone jako **dostępne** wyświetlane w aplikacji ze sklepu Google Play oznaczonego jako służbowy, zamiast portalu firmy. Dzięki temu można wdrażać aplikacje z zaufanego źródła (aplikacji ze sklepu Google Play oznaczonego jako służbowy jest zaufanym źródłem) i ma można umożliwić aplikacjom ze źródeł niezaufanych.

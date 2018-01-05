@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4db1e15f-e832-4cf9-be33-d3971e635a55
 caps.latest.revision: "6"
-author: aaroncz
+author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 3e1cd18a3791b6ad009ca21851bb7173f8510f71
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: 0355219b1270dd5fb9b0ed78406ee0059fbceeba
+ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 01/04/2018
 ---
 # <a name="fundamentals-of-sites-and-hierarchies-for-system-center-configuration-manager"></a>Podstawowe pojęcia dotyczące lokacji i hierarchii w programie System Center Configuration Manager
 
@@ -66,7 +66,7 @@ Inne role systemu lokacji są opcjonalne i są używane tylko, jeśli chcesz kor
 
  Aby uzyskać informacje o różnych rolach systemu lokacji, zobacz [role systemu lokacji](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md#bkmk_planroles) w [Planowanie serwerów systemu lokacji i ról systemu lokacji dla programu System Center Configuration Manager](../../core/plan-design/hierarchy/plan-for-site-system-servers-and-site-system-roles.md).
 
-## <a name="publishing-site-information-to-active-directory-domain-services"></a>Publikowanie informacji o lokacji w Usługach domenowych Active Directory  
+## <a name="publishing-site-information-to-active-directory-domain-services"></a>Publikowanie informacji o lokacji w usługach Active Directory Domain Services  
  Uproszczenie zarządzania programu Configuration Manager, można rozszerzyć schemat usługi Active Directory w celu obsługi szczegółów używanych przez program Configuration Manager, a następnie nakazać lokacjom publikowanie ich kluczowych informacji do usług domenowych w usłudze Active Directory (AD DS). Następnie komputery, które mają być zarządzane mogą bezpieczne pobieranie informacji dotyczących lokacji z zaufanego źródła, usług AD DS. Informacje dostępne do pobrania przez klienty identyfikują dostępne lokacje, serwery systemu lokacji i usługi udostępniane przez te serwery.  
 
  *Rozszerzanie schematu usługi Active Directory* odbywa się tylko jeden raz dla każdego lasu i może odbywać się przed lub po zainstalowaniu programu Configuration Manager.   Po rozszerzeniu schematu należy utworzyć nowy kontener usługi Active Directory o nazwie System zarządzania w każdej domenie. Kontener zawiera lokację programu Configuration Manager, która będzie publikować dane wyszukiwania przez klientów. Aby uzyskać więcej informacji, zobacz [Przygotowanie usługi Active Directory do publikowania witryny](../../core/plan-design/network/extend-the-active-directory-schema.md).  

@@ -3,7 +3,7 @@ title: Konfigurowanie spisu oprogramowania
 titleSuffix: Configuration Manager
 description: "Konfigurowanie spisu oprogramowania i wykluczyć foldery ze spisu oprogramowania w programie Configuration Manager."
 ms.custom: na
-ms.date: 02/22/2017
+ms.date: 01/03/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,17 +16,17 @@ caps.handback.revision: "0"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: 3aac8bdf45a90f0c9c734d2f796e590e5dc9b90e
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: afddcef2caab6e1af0aacdac91366fa430f21d85
+ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 01/04/2018
 ---
 # <a name="how-to-configure-software-inventory-in-system-center-configuration-manager"></a>Jak skonfigurować spis oprogramowania w programie System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
- Ta procedura umożliwia skonfigurowanie domyślnych ustawień klienta dla spisu oprogramowania i dotyczy wszystkich komputerów w hierarchii. Jeśli chcesz zastosować te ustawienia tylko do niektórych komputerów, Utwórz niestandardowe ustawienie urządzenia klienckiego i przypisz je do kolekcji zawierającej komputery, na których chcesz używać spisu oprogramowania. Aby uzyskać więcej informacji o sposobie tworzenia niestandardowych ustawień urządzenia, zobacz [sposób konfigurowania ustawień klienta w programie System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md).  
+Ta procedura umożliwia skonfigurowanie domyślnych ustawień klienta dla spisu oprogramowania i dotyczy wszystkich komputerów w hierarchii. Jeśli chcesz zastosować te ustawienia tylko do niektórych komputerów, Utwórz niestandardowe ustawienie urządzenia klienckiego i przypisz je do kolekcji. Aby uzyskać więcej informacji o sposobie tworzenia niestandardowych ustawień urządzenia, zobacz [sposób konfigurowania ustawień klienta w programie System Center Configuration Manager](../../../../core/clients/deploy/configure-client-settings.md).   
 
 ## <a name="to-configure-software-inventory"></a>Aby skonfigurować spis oprogramowania  
 
@@ -42,16 +42,23 @@ ms.lasthandoff: 10/12/2017
 
     -   **Harmonogram spisu, a plik kolekcji harmonogram oprogramowania** — konfiguruje interwał, w którym zbierania spisu oprogramowania i plików.   
 
-7.  Skonfiguruj wymagane ustawienia klienta. Aby uzyskać listę ustawień klienta spisu oprogramowania, które można skonfigurować, zobacz [spisu oprogramowania](../../../../core/clients/deploy/about-client-settings.md#software-inventory) sekcji [informacje o ustawieniach klienta w programie System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md) tematu.  
+7.  Skonfiguruj wymagane ustawienia klienta. [Spisu oprogramowania](../../../../core/clients/deploy/about-client-settings.md#software-inventory) sekcji [informacje o ustawieniach klienta w programie System Center Configuration Manager](../../../../core/clients/deploy/about-client-settings.md) artykuł zawiera listę ustawień klienta.  
 
  Klienci zostaną skonfigurowani przy użyciu tych ustawień podczas następnego pobierania zasad klienta. Aby dowiedzieć się, jak zainicjować pobieranie zasad dla jednego klienta, zobacz [Jak zarządzać klientami w programie System Center Configuration Manager](../../../../core/clients/manage/manage-clients.md).  
+
+ > [!TIP]  
+        >   Kod błędu 80041006 w inventoryprovider.log oznacza, że dostawca WMI jest za mało pamięci. To, że osiągnęła limit przydziału pamięci dla dostawcy i dostawca magazynu nie może kontynuować pracy.
+W takim przypadku agent inwentaryzacji tworzy raport z pozycji 0, więc nie zostały zgłoszone nie elementy spisu. <br/>
+Możliwe rozwiązania tego błędu jest ograniczyć zakres kolekcji spisu oprogramowania. W przypadku wystąpienia błędu po ograniczenie zakresu spisu zwiększenie [MemoryPerHost](https://blogs.technet.microsoft.com/askperf/2008/09/16/memory-and-handle-quotas-in-the-wmi-provider-service/) właściwość zdefiniowaną w [_ProviderHostQuotaConfiguration](https://msdn.microsoft.com/library/aa394671) klasy mogą zapewnić rozwiązanie.
+
+<!--SMS.480648 include WMI Out of memory tip -->
 
 
 ## <a name="to-exclude-folders-from-software-inventory"></a>Aby wykluczyć foldery ze spisu oprogramowania  
 
 1.  Używając programu Notepad.exe, utwórz pusty plik o nazwie **Skpswi.dat**.  
 
-2.  Kliknij prawym przyciskiem myszy plik **Skpswi.dat** , a następnie kliknij pozycję **Właściwości**. W oknie właściwości pliku Skpswi.dat wybierz atrybut **Ukryty** .  
+2.  Kliknij prawym przyciskiem myszy **Skpswi.dat** plik i kliknij przycisk **właściwości**. W oknie właściwości pliku Skpswi.dat wybierz atrybut **Ukryty** .  
 
 3.  Umieść plik **Skpswi.dat** w folderze głównym struktury folderów lub dysku twardego klienta w celu ich wykluczenia ze spisu oprogramowania.  
 
