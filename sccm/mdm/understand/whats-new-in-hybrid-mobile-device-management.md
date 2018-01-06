@@ -3,7 +3,7 @@ title: "What's new in hybrydowego zarządzania urządzeniami Przenośnymi"
 titleSuffix: Configuration Manager
 description: "Poznaj nowe funkcje zarządzania urządzeniami przenośnymi dostępne dla hybrydowych wdrożeń z programu Configuration Manager i usługi Intune."
 ms.custom: na
-ms.date: 11/29/2017
+ms.date: 01/04/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -14,11 +14,11 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: af475bbc17fe1514dab626524007134be9b5f608
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: 243daf8626e329214ce1b94f109d19773bbc57c5
+ms.sourcegitcommit: 2da6b06818371e93f28e36cadf3a154d50ce5bf4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>What's new in hybrydowego zarządzania urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Microsoft Intune
 
@@ -45,7 +45,8 @@ Każda sekcja w tym artykule wymieniono funkcje hybrydowych w trzech różnych k
 
 ### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune
 
-- **Wdrożenia aplikacji dostępna teraz obsługiwane dla systemu Android Enterprise** teraz można wdrażać aplikacje dla systemu Android przedsiębiorstwa (dawniej Android for Work) jako **dostępne**, oprócz **wymagane**. Aby uzyskać więcej informacji, zobacz [utworzyć Android aplikacje z System Center Configuration Manager](/sccm/mdm/deploy-use/creating-android-applications.md).
+- **Wdrożenia aplikacji dostępna teraz obsługiwane dla systemu Android przedsiębiorstwa**    
+  Teraz można wdrażać aplikacje dla systemu Android przedsiębiorstwa (dawniej Android for Work) jako **dostępne**, oprócz **wymagane**. Aby uzyskać więcej informacji, zobacz [utworzyć Android aplikacje z System Center Configuration Manager](/sccm/mdm/deploy-use/creating-android-applications).
 
 
 ## <a name="november-2017"></a>2017 listopada
