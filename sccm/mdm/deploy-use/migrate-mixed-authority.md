@@ -11,11 +11,11 @@ ms.prod: configmgr-hybrid
 ms.service: 
 ms.technology: 
 ms.assetid: 6f0201d7-5714-4ba0-b2bf-d1acd0203e9a
-ms.openlocfilehash: 643b33810c2862e2d1c602bfe941c36605ad2631
-ms.sourcegitcommit: 8c6e9355846ff6a73c534c079e3cdae09cf13c45
+ms.openlocfilehash: 59fb06d14002f781e0448a64bb0064b4add2f087
+ms.sourcegitcommit: ac9268e31440ffe91b133c2ba8405d885248d404
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 01/08/2018
 ---
 # <a name="change-the-mdm-authority-for-specific-users-mixed-mdm-authority"></a>Zmienić urząd zarządzania urządzeniami Przenośnymi dla określonych użytkowników (mieszane urzędu zarządzania urządzeniami Przenośnymi) 
 
@@ -49,6 +49,7 @@ Migrowanych użytkowników i urządzeń, które są zarządzane w usłudze Intun
       
   > [!Important]    
   > Nadal edytować zasady poziomie dzierżawy przy użyciu konsoli programu Configuration Manager. Po [zmienić urzędu zarządzania urządzeniami Przenośnymi na poziomie dzierżawy](change-mdm-authority.md) do usługi Intune, następnie można zarządzać tymi zasadami w usłudze Intune na platformie Azure. 
+-   Jeśli używasz certyfikaty podpisywania kodu, zaleca się przeprowadzenie migracji użytkowników etapami kolejnym. Po przeprowadzeniu migracji urządzenia przenośnego, ułatwia żądanie certyfikatu urzędu nowego certyfikatu. Za pomocą podejście etapowe migrację użytkowników (i ich urządzeniami), ogranicza liczbę jednoczesnych certyfikatu urzędu żądań.
 - Zaleca się, że nie dokonuj migracji kont użytkowników, które zostały dodane jako menedżerów rejestracji urządzeń w programie Configuration Manager. Później gdy zmieniasz urzędu zarządzania urządzeniami Przenośnymi na poziomie dzierżawy do usługi Intune, te konta użytkowników przeprowadzić migrację poprawnie. W przypadku migrowania konta użytkownika Menedżera rejestracji urządzeń przed zmianą urzędu zarządzania urządzeniami Przenośnymi poziomie dzierżawy, musisz ręcznie dodać użytkownika jako menedżera rejestracji urządzeń w usłudze Intune na platformie Azure. Jednak urządzenia zarejestrowane przy użyciu Menedżera rejestracji urządzeń nie są migrowane pomyślnie. Należy wywołać pomocy technicznej, aby przeprowadzić migrację tych urządzeń. Aby uzyskać więcej informacji, zobacz [dodać Menedżera rejestracji urządzeń](https://docs.microsoft.com/en-us/intune/device-enrollment-manager-enroll#add-a-device-enrollment-manager).
 - Urządzenia zarejestrowane przy użyciu Menedżera rejestracji urządzeń i urządzeń bez [koligacji użytkownika](/sccm/mdm/deploy-use/user-affinity-for-hybrid-managed-devices) nie są automatycznie migrowane do nowego urzędu zarządzania urządzeniami Przenośnymi. Aby zmienić urząd zarządzania dla tych urządzeń do zarządzania urządzeniami Przenośnymi, zobacz [migracji urządzeń bez koligacji użytkownika](#migrate-devices-without-user-affinity).
 

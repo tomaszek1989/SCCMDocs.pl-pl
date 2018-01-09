@@ -3,7 +3,7 @@ title: Ustawienia klienta
 titleSuffix: Configuration Manager
 description: "Wybierz ustawienia klienta przy użyciu konsoli administracyjnej programu System Center Configuration Manager."
 ms.custom: na
-ms.date: 12/29/2017
+ms.date: 01/05/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: fe6b3508b7d54dca1d80818c159cfd4b723f7986
-ms.sourcegitcommit: f1535281b2c3fecff773b722c3f7590bf6ba10a0
+ms.openlocfilehash: 230d608c9ebc8126d7d8e18f7211875a2155bb7b
+ms.sourcegitcommit: ac9268e31440ffe91b133c2ba8405d885248d404
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 01/08/2018
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Informacje o ustawieniach klienta w programie System Center Configuration Manager
 
@@ -552,7 +552,7 @@ Zarządzanie wszystkimi ustawieniami klienta w konsoli programu Configuration Ma
     - **Schemat kolorów w programie Software Center** </br>
         Kliknij przycisk **wybierz kolor** do definiowania kolor podstawowy używany przez Centrum oprogramowania.
     - **Wybierz logo, które w programie Software Center** </br>
-        Kliknij przycisk **Przeglądaj** wybierz obraz do wyświetlenia w programie Software Center. Logo musi być formatem JPEG lub PNG 400 x 100 pikseli o maksymalnym rozmiarze 750 KB.
+        Kliknij przycisk **Przeglądaj** wybierz obraz do wyświetlenia w programie Software Center. Logo musi być JPEG, PNG lub BMP 400 x 100 pikseli o maksymalnym rozmiarze 750 KB. Nazwa pliku logo nie powinna zawierać spacje. <!--SMS.503731 space in filename, noticed BMP missing as filetype-->
 
 -   Widoczność kartę Centrum oprogramowania </br>
     Skonfiguruj dodatkowe ustawienia w tej grupie mają **tak** uwidocznić w programie Software Center następujące karty:

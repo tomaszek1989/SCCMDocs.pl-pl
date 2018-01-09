@@ -10,11 +10,11 @@ ms.prod: configuration-manager
 ms.service: 
 ms.technology: 
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
-ms.openlocfilehash: b336b56cc34119a4acec8e798b8c59970f5c7dbf
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.openlocfilehash: d605dd4770be6878b08f4ac61da6ab27e3b6d61f
+ms.sourcegitcommit: ac9268e31440ffe91b133c2ba8405d885248d404
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/08/2018
 ---
 # <a name="prepare-windows-10-devices-for-co-management"></a>Przygotowywanie urządzenia z systemem Windows 10 do zarządzania wspólnej
 Można włączyć wspólnej zarządzania na urządzeniach z systemem Windows 10, które są przyłączone do usługi AD i Azure AD i zarejestrowane w usłudze Intune i klienta w programie Configuration Manager. Dla nowych urządzeń z systemem Windows 10, a w przypadku urządzeń, które są już zarejestrowane w usłudze Intune należy zainstalować klienta programu Configuration Manager, zanim zostaną umieszczone zarządzanych. Dla urządzeń z systemem Windows 10, które są już klientów programu Configuration Manager możesz zarejestrować urządzenia w usłudze Intune i włączyć wspólnej zarządzanie w konsoli programu Configuration Manager.
@@ -22,7 +22,7 @@ Można włączyć wspólnej zarządzania na urządzeniach z systemem Windows 10,
 ## <a name="command-line-to-install-configuration-manager-client"></a>Wiersz polecenia, aby zainstalować klienta programu Configuration Manager
 Należy utworzyć aplikację w usłudze Intune dla systemu Windows 10 urządzeń, które nie są już klientów programu Configuration Manager. Podczas tworzenia aplikacji w kolejnych sekcjach, należy użyć następującego polecenia:
 
-```ccmsetup.msi CCMSETUPCMD="/mp:&#60;*URL of cloud management gateway mutual auth endpoint*&#62;/ CCMHOSTNAME=&#60;*URL of cloud management gateway mutual auth endpoint*&#62; SMSSiteCode=&#60;*Sitecode*&#62; SMSMP=https:&#47;/&#60;*FQDN of MP*&#62; AADTENANTID=&#60;*AAD tenant ID*&#62; AADTENANTNAME=&#60;*Tenant name*&#62; AADCLIENTAPPID=&#60;*Server AppID for AAD Integration*&#62; AADRESOURCEURI=https:&#47;/&#60;*Resource ID*&#62;”```
+ccmsetup.msi CCMSETUPCMD = "/ mp: &#60; *Adres URL punktu końcowego w chmurze zarządzania bramy wzajemnego uwierzytelniania*&#62; / CCMHOSTNAME = &#60; *Adres URL punktu końcowego w chmurze zarządzania bramy wzajemnego uwierzytelniania*&#62; SMSSiteCode = &#60; *Kod_lokacji*&#62; SMSMP = https: &#47; / &#60; *FQDN punktu zarządzania*&#62; AADTENANTID = &#60; *Identyfikatora dzierżawy usługi AAD*&#62; AADTENANTNAME = &#60; *Nazwa dzierżawcy*&#62; AADCLIENTAPPID = &#60; *AppID server dla integracji usługi AAD*&#62; AADRESOURCEURI = https: &#47; / &#60; *Identyfikator zasobu*&#62; "
 
 Na przykład, jeśli masz następujące wartości:
 
@@ -43,15 +43,19 @@ Na przykład, jeśli masz następujące wartości:
 
 Należy użyć następującego polecenia:
 
-```ccmsetup.msi CCMSETUPCMD="/mp:https:/&#47;contoso.cloudapp.net/CCM_Proxy_MutualAuth/72057594037928100    CCMHOSTNAME=contoso.cloudapp.net/CCM_Proxy_MutualAuth/72057594037928100 SMSSiteCode=PS1 SMSMP=https:/&#47;sccmmp.corp.contoso.com AADTENANTID=72F988BF-86F1-41AF-91AB-2D7CD011XXXX AADTENANTNAME=contoso  AADCLIENTAPPID=bef323b3-042f-41a6-907a-f9faf0d1XXXX AADRESOURCEURI=https:/&#47;ConfigMgrServer”```
+ccmsetup.msi CCMSETUPCMD = "/ mp:https: / &#47;contoso.cloudapp.net/CCM_Proxy_MutualAuth/72057594037928100 CCMHOSTNAME=contoso.cloudapp.net/CCM_Proxy_MutualAuth/72057594037928100 SMSSiteCode = PS1 SMSMP = https: / &#47; sccmmp.corp.contoso.com AADTENANTID = AADTENANTNAME 72F988BF-86F1-41AF-91AB-2D7CD011XXXX = contoso AADCLIENTAPPID = AADRESOURCEURI bef323b3-042f-41a6-907a-f9faf0d1XXXX = https: / &#47; ConfigMgrServer"
 
 > [!Tip]
->Parametry wiersza polecenia można znaleźć w witrynie przy użyciu następujących kroków:     
+> Parametry wiersza polecenia można znaleźć w witrynie przy użyciu następujących kroków:     
 > 1. W konsoli programu Configuration Manager, przejdź do **administracji** > **omówienie** > **usługi w chmurze**  >  **Zarządzania wspólnej**.  
 > 2. Na karcie Narzędzia główne w grupie zarządzania, wybierz **konfigurowania zarządzania wspólnej** aby otworzyć Kreator przechodzenia do wspólnego zarządzania.    
 > 3. Na stronie subskrypcji kliknij **logowania** i zaloguj się do dzierżawy usługi Intune, a następnie kliknij przycisk **dalej**.    
 > 4. Na stronie aktywacji kliknij **kopiowania** w **urządzeń zarejestrowanych w usłudze Intune** sekcji można skopiować do Schowka w wierszu polecenia, a następnie zapisz wiersza polecenia do użycia w procedurze do utworzenia aplikacji.  
 > 5. Kliknij przycisk **anulować** aby zakończyć pracę kreatora.
+
+> [!Important]    
+> W przypadku dostosowania wiersza polecenia do zainstalowania klienta programu Configuration Manager, upewnij się, że wiersza polecenia nie może przekraczać 1024 znaków. W wierszu polecenia jest większa niż 1024 znaki, instalacja klienta nie powiedzie się.
+
 
 ## <a name="new-windows-10-devices"></a>Nowe urządzenia z systemem Windows 10
 Dla nowych urządzeń z systemem Windows 10 Usługa Autopilot służy do konfigurowania poza pole środowisko, w tym przyłączania urządzenia do usługi AD i Azure AD, a także rejestrowanie urządzenia w usłudze Intune. Następnie utwórz aplikację w usłudze Intune do wdrażania klienta programu Configuration Manager.  
@@ -68,4 +72,4 @@ Dla urządzeń z systemem Windows 10, które nie są zarejestrowane w usłudze I
 Dla urządzeń z systemem Windows 10, które są już zarejestrowane w usłudze Intune należy utworzyć aplikację w usłudze Intune do wdrażania klienta programu Configuration Manager. Użyj [wiersza polecenia do zainstalowania klienta programu Configuration Manager](#command-line-to-install-configuration-manager-client) po przejściu przez proces [instalowania klientów z Internetu przy użyciu usługi Azure AD](https://docs.microsoft.com/en-us/sccm/core/clients/deploy/deploy-clients-cmg-azure).  
 
 ## <a name="next-steps"></a>Następne kroki
-[Przełącz obciążeń programu Configuration Manager do usługi Intune](co-management-switch-workloads.md)
+[Przełączanie obciążeń programu Configuration Manager do usługi Intune](co-management-switch-workloads.md)
