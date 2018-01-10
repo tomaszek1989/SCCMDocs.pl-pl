@@ -3,7 +3,7 @@ title: Nowa wersja 1710 | Dokumentacja firmy Microsoft
 titleSuffix: Configuration Manager
 description: "Uzyskiwanie szczegółowych informacji dotyczących zmian i nowych możliwości wprowadzonych w wersji 1710 programu System Center Configuration Manager."
 ms.custom: na
-ms.date: 12/08/2017
+ms.date: 1/08/2018
 ms.reviewer: na
 ms.suite: na
 ms.technology: configmgr-other
@@ -13,11 +13,11 @@ ms.assetid: bc6c3e5f-b9e2-400e-9d9d-446ff93c520c
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: c09f401d3221aa8637eea57f91063387b612187d
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+ms.openlocfilehash: ac64ae3b49b94c0b0428d5268bd307823ae68c73
+ms.sourcegitcommit: d029b373113051634ed030545348a458eb7b25f4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="what39s-new-in-version-1710-of-system-center-configuration-manager"></a>Jaki &#39; s nowego w wersji 1710 programu System Center Configuration Manager
 
@@ -148,7 +148,7 @@ Te scenariusze obejmują:
 - [Rejestrowanie urządzeń](../../../mdm/deploy-use/enroll-hybrid-windows.md)
 - [Akcje pełnego i selektywnego czyszczenia danych](../../../mdm/deploy-use/wipe-lock-reset-devices.md)
 - [Zarządzanie ustawieniami za pomocą elementów konfiguracji i linii bazowych](../../../mdm/deploy-use/create-configuration-items-for-windows-8.1-and-windows-10-devices-managed-without-the-client.md)
-- [Zarządzanie zasadami zgodności](../../../mdm/deploy-use/device-compliance-policies.md)
+- [Zarządzanie zasadami zgodności](../../../mdm/deploy-use/device-compliance-policies.md) i [dostępu warunkowego](../../../protect/deploy-use/create-vpn-profiles.md)
 - Zarządzanie dostępem do zasobów firmy za pomocą:
    - [Profile certyfikatów](../../../mdm/deploy-use/create-pfx-certificate-profiles.md)
    - [Profile sieci VPN](../../../mdm/deploy-use/create-vpn-profiles.md)
@@ -156,6 +156,9 @@ Te scenariusze obejmują:
    - [Profile poczty e-mail](../../../mdm/deploy-use/create-exchange-activesync-profiles.md)
 - [Konfigurowanie usługi Windows Hello dla firm zasady](../../../mdm/deploy-use/windows-hello-for-business-settings.md)
 - [Zarządzanie aplikacjami](../../../mdm/deploy-use/management-tasks-applications.md)
+
+> [!NOTE]
+> Wdrażanie aplikacji .appxbundle przeznaczony dla wielu architektur może nie działać na tych urządzeniach, a ten scenariusz nie jest obsługiwany w tej chwili.
 
 ### <a name="improved-vpn-profile-experience-in-configuration-manager-console"></a>VPN udoskonalone środowisko profilu w konsoli programu Configuration Manager 
 <!-- 1318232 -->
