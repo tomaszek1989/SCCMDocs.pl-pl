@@ -3,7 +3,7 @@ title: "Tworzenie i uruchamianie skryptów"
 titleSuffix: Configuration Manager
 description: "Tworzenie i uruchamianie skryptów programu Powershell na urządzeniach klienckich."
 ms.custom: na
-ms.date: 11/29/2017
+ms.date: 01/05/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
 caps.latest.revision: "14"
 caps.handback.revision: "0"
-author: BrucePerlerMS
-ms.author: bruceper
+author: mestew
+ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 1472f697ae8b82e6268433aa6398fcc10a429994
-ms.sourcegitcommit: 5f4a584d4a833b0cc22bd8c47da7dd55aced97fa
+ms.openlocfilehash: b00dfb875ca032032a9782e9950247eb3fceb124
+ms.sourcegitcommit: 9de3d74030b7c3313c34b5cbe2dbe6e18a48c043
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Tworzenie i uruchamianie skryptów programu PowerShell z poziomu konsoli programu Configuration Manager
 
@@ -75,9 +75,9 @@ Skrypty musi być zatwierdzony przez *skryptu osoba zatwierdzająca* roli, aby m
 1. W konsoli programu Configuration Manager kliknij przycisk **Biblioteka oprogramowania**.
 2. W **Biblioteka oprogramowania** obszaru roboczego kliknij **skryptów**.
 3. W **skryptu** wybierz skrypt, aby zaakceptować lub odrzucić, a następnie na **Home** karcie **skryptu** kliknij przycisk **Zatwierdź/Deny**.
-4. W **Zatwierdź lub odmówić skryptu** okno dialogowe, wybierz opcję **Zatwierdź** lub **Odmów** skryptu i opcjonalnie wprowadź komentarz dotyczący decyzji.  Jeśli użytkownik zezwoli na skryptu, nie można uruchomić na urządzeniach klienckich. <br>
+4. W **zatwierdzanie lub odrzucanie skryptu** wybierz pozycję **Zatwierdź** lub **Odmów** dla skryptu. Opcjonalnie wprowadź komentarz dotyczący decyzji.  Jeśli użytkownik zezwoli na skryptu, nie można uruchomić na urządzeniach klienckich. <br>
 ![Skrypt - zatwierdzenia](./media/run-scripts/RS-approval.png)
-5. Ukończ pracę kreatora. W **skryptu** listy, zostanie wyświetlony **stan zatwierdzenia** zmiany kolumny w zależności od akcja została wykonana.
+1. Ukończ pracę kreatora. W **skryptu** listy, zostanie wyświetlony **stan zatwierdzenia** zmiany kolumny w zależności od akcja została wykonana.
 
 ### <a name="allow-users-to-approve-their-own-scripts"></a>Użytkownicy mogą zatwierdzać własnych skryptów
 
@@ -106,7 +106,11 @@ Uruchom używa skryptów zakresy zabezpieczeń istniejących funkcji programu Co
     - **Importuj** — importowanie skrypt programu PowerShell do konsoli. Skrypt jest wyświetlany w **skryptu** pola.
     - **Wyczyść** — usuwa bieżący skrypt pola skryptu.
     - **Skrypt** -wyświetla skrypt aktualnie zaimportowany. Skrypt w tym polu, w razie potrzeby można edytować.
-1. Ukończ pracę kreatora. Nowy skrypt jest wyświetlany w **skryptu** liście ze stanem **oczekiwanie na zatwierdzenie**. Zanim można było uruchomić ten skrypt na urządzeniach klienckich, należy ją zatwierdzić.
+5. Ukończ pracę kreatora. Nowy skrypt jest wyświetlany w **skryptu** liście ze stanem **oczekiwanie na zatwierdzenie**. Zanim można było uruchomić ten skrypt na urządzeniach klienckich, należy ją zatwierdzić. 
+
+> [!IMPORTANT]
+    >  Unikaj skryptów ponowne uruchomienie urządzenia lub ponownego uruchomienia agenta menedżera konfiguracji podczas korzystania z funkcji uruchamianie skryptów. To może prowadzić do ciągłego stanu rebooting. Jeśli to konieczne, istnieją ulepszenia funkcji powiadomienia klienta umożliwiające ponownie uruchomić urządzenia, począwszy od 1710 wersji programu Configuration Manager. [Do czasu ponownego uruchomienia kolumny](/sccm/core/clients/manage/manage-clients#Restart-clients) może ułatwić identyfikację urządzenia, które wymagają ponownego uruchomienia komputera. 
+<!--SMS503978--Script reboot warning-->
 
 ## <a name="script-parameters"></a>Parametry skryptu
 *(Wprowadzonym w wersji 1710)*  
@@ -132,7 +136,7 @@ Sprawdzanie poprawności części **właściwości parametru skryptu** okno dial
 - **Minimalna długość** — minimalna liczba znaków *imię* pola.
 - **Maksymalna długość**— maksymalna liczba znaków *imię* pola
 - **Wyrażenie regularne** — skrót *wyrażenie regularne*. Aby uzyskać więcej informacji o korzystaniu z wyrażeniem regularnym, zobacz następną sekcję, *weryfikacji przy użyciu wyrażenia regularnego*.
-- **Błąd niestandardowy** — jest to przydatne w przypadku dodawania własny niestandardowy komunikat o błędzie, który zastępuje komunikaty o błędach weryfikacji systemu.
+- **Błąd niestandardowy** — jest to przydatne w przypadku dodawania własny niestandardowy komunikat o błędzie zastępującym komunikaty o błędach weryfikacji systemu.
 
 #### <a name="using-regular-expression-validation"></a>Przy użyciu weryfikacji wyrażenia regularnego
 
@@ -191,7 +195,7 @@ Skrypt zostanie wykonany jako *systemu* lub *komputera* konta na docelowych klie
 
 ## <a name="script-monitoring"></a>Skrypt monitorowania
 
-Po zainicjowaniu uruchomienie skryptu w kolekcji urządzeń, użyj poniższej procedury do monitorowania operacji. Począwszy od wersji 1710 jest jednocześnie możliwość monitorowania skryptu w czasie rzeczywistym wykonywania, a można także wrócić do raportu dla danego wykonywania Uruchom skrypt. <br>
+Po zainicjowaniu uruchomienie skryptu w kolekcji urządzeń, użyj poniższej procedury do monitorowania operacji. Począwszy od wersji 1710, są, jednocześnie możliwość monitorowania skryptu w czasie rzeczywistym, wykonywania i można także wrócić do raportu dla danego wykonywania Uruchom skrypt. <br>
 
 ![Monitor skryptu — stan uruchomienia skryptu](./media/run-scripts/RS-monitoring-three-bar.png)
 

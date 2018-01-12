@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 55d49c388b4ea60627f72ffe61796c70de6f9416
-ms.sourcegitcommit: a5f8b5cfdabf0298e4302e24210e725a06a9de82
+ms.openlocfilehash: e8121480f3a9d61ba0a04667407a305119d80e12
+ms.sourcegitcommit: ba23ff90709a5fde1a63c650ab0d848f441afc43
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/30/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-system-center-configuration-manager"></a>Ochrona danych za pomocą czyszczenia danych, blokowania lub resetowania za pomocą programu System Center Configuration Manager kodu dostępu
 
@@ -171,17 +171,17 @@ Dane i aplikacje EFS selektywnego czyszczenia obecnie obsługuje są:
 ##  <a name="passcode-reset"></a>Resetowanie kodu dostępu  
 Jeśli użytkownik zapomni swój kod dostępu, możesz mu pomóc przez usunięcie kodu dostępu z urządzenia lub wymuszenie nowego hasła tymczasowego na urządzeniu. Poniższa tabela zawiera listę sposób resetowania kodu dostępu działa na różnych platformach mobilnych.  
 
-|Platforma|Resetowanie kodu dostępu|  
-|--------------|--------------------|  
-|iOS|Obsługiwane czyszczenie kodu dostępu z urządzenia. Nie powoduje utworzenia nowego hasła tymczasowego.|
-|System macOS| Nieobsługiwane.|
-|Android|Obsługiwane i zostanie utworzony tymczasowy kod dostępu.|
-|Android for Work | Nieobsługiwane.|
-|Komputery z systemem Windows 10|Nieobsługiwane.|  
-|Windows 10 mobile|Obsługiwane, z wyjątkiem usługi Azure AD przyłączone do urządzenia.|
-|Windows Phone 8,1|Obsługiwane.|  
-|Windows RT 8.1 |Nieobsługiwane.|  
-|Komputery Windows 8.1 |Nieobsługiwane.|  
+| Platforma                              | Resetowanie kodu dostępu                                                                               |
+|---------------------------------------|----------------------------------------------------------------------------------------------|
+| iOS                                   | Obsługiwane czyszczenie kodu dostępu z urządzenia. Nie powoduje utworzenia nowego hasła tymczasowego. |
+| System macOS                                 | Nieobsługiwane.                                                                               |
+| Android                               | Obsługiwane w wersjach wcześniejszych niż Android 7.0. Utworzenie tymczasowego kodu dostępu.                |
+| Android for Work                      | Nieobsługiwane.                                                                               |
+| Komputery z systemem Windows 10                        | Nieobsługiwane.                                                                               |
+| Windows 10 mobile                     | Obsługiwane, z wyjątkiem usługi Azure AD przyłączone do urządzenia.  |
+| Windows Phone 8 i Windows Phone 8.1 | Obsługiwane.                                                                                   |
+| Windows RT 8.1                        | Nieobsługiwane.                                                                               |
+| Komputery Windows 8.1                       | Nieobsługiwane.                                                                               |
 
 > [!Note]    
 > Należy wykonać akcję resetowania kodu dostępu z lokacji najwyższego poziomu w danym środowisku. Na przykład jeśli korzystasz z centralną lokacją administracyjną akcję można wykonać tylko w tej witrynie. Jeśli używasz autonomiczną lokacją główną akcję można wykonać tylko w tej witrynie.
