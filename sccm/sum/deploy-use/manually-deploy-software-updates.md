@@ -12,11 +12,11 @@ ms.prod: configuration-manager
 ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: 57184274-5fea-4d79-a2b4-22e08ed26daf
-ms.openlocfilehash: 6aaa15ff4908fe7e71e0b9c14fc021a57ccbb727
-ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
+ms.openlocfilehash: becab57c5f04bb67512d665175038f6c477b65b1
+ms.sourcegitcommit: e13bb2c86c40a88e5f4602beb1d31e4adc90e099
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 01/12/2018
 ---
 #  <a name="BKMK_ManualDeploy"></a> Ręczne wdrażanie aktualizacji oprogramowania  
 
@@ -232,10 +232,10 @@ ms.lasthandoff: 11/17/2017
 
     -   **Powiadomienia użytkowników**: Określ, czy mają być wyświetlane powiadomienia o aktualizacjach oprogramowania w programie Software Center na komputerze klienckim zgodnie ze skonfigurowanym ustawieniem **czas dostępności oprogramowania** oraz czy wyświetlać powiadomienia użytkowników na komputerach klienckich. Jeśli w ustawieniu **Typ wdrożenia** na stronie Ustawienia wdrożenia wybrano opcję **Dostępne** , nie będzie można wybrać opcji **Ukryj w programie Software Center i ukryj wszystkie powiadomienia**.  
 
-    -   **Zachowanie ostatecznego terminu wdrożenia**: * dostępne tylko wtedy, gdy **typu wdrożenia** * ustawiono **wymagane** *na stronie Ustawienia wdrożenia.*   
+    -   **Zachowanie ostatecznego terminu wdrożenia**: Dostępne tylko wtedy, gdy **typu wdrożenia** ustawiono **wymagane** na stronie Ustawienia wdrożenia.   
     Określ zachowanie pożądane po osiągnięciu ostatecznego terminu wdrożenia aktualizacji oprogramowania. Określ, czy zainstalować aktualizacje oprogramowania we wdrożeniu oraz czy uruchomić ponownie system po zainstalowaniu aktualizacji oprogramowania niezależnie od skonfigurowanego okna obsługi. Aby uzyskać więcej informacji dotyczących okien obsługi, zobacz [używanie okien obsługi](../../core/clients/manage/collections/use-maintenance-windows.md).  
 
-    -   **Zachowanie ponownego uruchamiania urządzenia**: * dostępne tylko wtedy, gdy **typu wdrożenia** * ustawiono **wymagane** *na stronie Ustawienia wdrożenia.*    
+    -   **Zachowanie ponownego uruchamiania urządzenia**: Dostępne tylko wtedy, gdy **typu wdrożenia** ustawiono **wymagane** na stronie Ustawienia wdrożenia.    
     Określ, czy pominąć ponowne uruchomienie systemu na serwerach i stacjach roboczych po zainstalowaniu aktualizacji oprogramowania i ponowne uruchomienie systemu jest wymagane do ukończenia instalacji.  
 
         > [!IMPORTANT]  
