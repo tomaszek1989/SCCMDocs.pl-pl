@@ -1,0 +1,88 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Dokumentacja programu Microsoft Deployment Toolkit
+metadata:
+  document_id: bfb05467-f6ec-4cb2-b108-254972de2d06
+  title: Dokumentacja programu Microsoft Deployment Toolkit
+  description: "Program Microsoft Deployment Toolkit udostępnia kolekcję ujednoliconego narzędzi, procesów i wskazówki dotyczące automatyzacji wdrożenia pulpitu i serwera."
+  keywords: "bezpłatne, narzędzia, proces, przepływ pracy, automatyzacji, wdrażania automatycznego, dystrybucji"
+  author: arob98
+  ms.author: angrobe
+  manager: angrobe
+  ms.date: 12/27/2017
+  ms.topic: article
+  ms.devlang: na
+  ms.prod: configuration-manager
+  ms.openlocfilehash: 03539d8bd316dead91ee08e596943bab41785a3d
+  ms.sourcegitcommit: 645cd5a324bdd299906efa27eaca5885eafc9e9c
+  ms.translationtype: MT
+  ms.contentlocale: pl-PL
+  ms.lasthandoff: 01/16/2018
+sections:
+- items:
+  - type: markdown
+    text: "Program Microsoft Deployment Toolkit udostępnia kolekcję ujednoliconego narzędzi, procesów i wskazówki dotyczące automatyzacji wdrożenia pulpitu i serwera."
+- items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 2
+    items:
+    - href: whats-new-in-mdt.md
+      html: "<p>Poznaj nowości.</p>"
+      image:
+        src: https://docs.microsoft.com/media/common/i_whats-new.svg
+      title: "Nowości"
+    - href: release-notes.md
+      html: "<p>Szczegółowe informacje o poprawki i usterki zawarte w tej wersji.</p>"
+      image:
+        src: https://docs.microsoft.com/media/common/i_whats-new.svg
+      title: Informacje o wersji
+    - href: samples-guide.md
+      html: "<p>Przykładowe ustawienia konfiguracji dla scenariuszy wdrażania.</p>"
+      image:
+        src: https://docs.microsoft.com/media/common/i_code-samples.svg
+      title: "Przewodnik próbek"
+    - href: user-driven-installation-developers-guide.md
+      html: "<p>Dostosowywanie instalacji za pomocą użytkownika dla Twojej organizacji.</p>"
+      image:
+        src: https://docs.microsoft.com/media/common/i_architecture.svg
+      title: Przewodnik dewelopera
+- title: Przewodniki Szybki Start
+  items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: lite-touch-installation-guide.md
+      title: "Instalowanie przy użyciu nośnika rozruchowego"
+      image:
+        src: https://docs.microsoft.com/media/common/i_get-started.svg
+    - href: user-driven-installation-guide.md
+      title: "Rozmieszczanie za pomocą instalacji opartej na użytkownika"
+      image:
+        src: https://docs.microsoft.com/media/common/i_get-started.svg
+    - href: sccm-guide.md
+      title: "Wdrażanie na nowym komputerze"
+      image:
+        src: https://docs.microsoft.com/media/common/i_get-started.svg
+- title: Dodatkowe zasoby
+  items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: use-the-mdt.md
+      title: "Przeprowadzanie wdrożenia przy użyciu Lite Touch bezobsługową i instalacji sterowanej wdrożeń."
+      image:
+        src: https://docs.microsoft.com/media/common/i_api-reference.svg
+    - href: toolkit-reference.md
+      title: "Ustawienia konfiguracji, które pomocy z wdrożeniami."
+      image:
+        src: https://docs.microsoft.com/media/common/i_download-install.svg
+    - href: troubleshooting-reference.md
+      title: "Pliki dziennika, kody błędów i inne szczegóły dotyczące rozwiązywania problemów."
+      image:
+        src: https://docs.microsoft.com/media/common/i_support.svg

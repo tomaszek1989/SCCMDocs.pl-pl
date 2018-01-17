@@ -15,11 +15,11 @@ caps.latest.revision: "44"
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: e7606e087e2540b49e8aa23c09d09831651ee48b
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 03618b541f8f00ccab69fa4ebcef81ffc146010c
+ms.sourcegitcommit: 645cd5a324bdd299906efa27eaca5885eafc9e9c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 01/16/2018
 ---
 # <a name="supported-operating-systems-for-system-center-configuration-manager-site-system-servers"></a>Obsługiwane systemy operacyjne dla serwerów systemu lokacji programu System Center Configuration Manager
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 12/04/2017
 Ten artykuł zawiera szczegóły dotyczące wersji systemu Windows, które służą do hostowania lokacji programu System Center Configuration Manager lub rola systemu lokacji.
 
 
-Użyj informacji przedstawionych w tym temacie w połączeniu z informacjami znajdującymi się w następujących artykułach:
+Informacje przedstawione w tym artykule z informacjami w następujących artykułach:
 -   [Zalecany sprzęt dla programu Configuration Manager](../../../core/plan-design/configs/recommended-hardware.md)
 -   [Witryny i wymagania wstępne systemu lokacji programu Configuration Manager](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)
 -   [Numery rozmiaru i skali dla programu Configuration Manager](../../../core/plan-design/configs/size-and-scale-numbers.md)
@@ -51,7 +51,7 @@ Począwszy od wersji 1606 z pakiet zbiorczy poprawek z KB3186654 (lub wersji lin
 
 -   Punkt usługi sieci Web Wykaz aplikacji  
 
--   Punkt witryny sieci Web katalogu aplikacji  
+-   Punkt witryny sieci Web wykazu aplikacji  
 
 -   Punkt synchronizacji analizy zasobów  
 
@@ -85,7 +85,7 @@ Począwszy od wersji 1606 z pakiet zbiorczy poprawek z KB3186654 (lub wersji lin
 
 -   punkt migracji stanu
 
-## <a name="windows-server-2012-r2-x64-standard-and-datacenter"></a>Windows Server 2012 R2 (x 64): Standard i Datacenter  
+## <a name="windows-server-2012-r2-x64-standard-and-datacenter"></a>Windows Server 2012 R2 (x64): Standard i Datacenter  
 **Serwery lokacji:**  
 
 -   Centralna lokacja administracyjna  
@@ -98,7 +98,7 @@ Począwszy od wersji 1606 z pakiet zbiorczy poprawek z KB3186654 (lub wersji lin
 
 -   Punkt usługi sieci Web Wykaz aplikacji  
 
--   Punkt witryny sieci Web katalogu aplikacji  
+-   Punkt witryny sieci Web wykazu aplikacji  
 
 -   Punkt synchronizacji analizy zasobów  
 
@@ -145,7 +145,7 @@ Począwszy od wersji 1606 z pakiet zbiorczy poprawek z KB3186654 (lub wersji lin
 
 -   Punkt usługi sieci Web Wykaz aplikacji  
 
--   Punkt witryny sieci Web katalogu aplikacji  
+-   Punkt witryny sieci Web wykazu aplikacji  
 
 -   Punkt synchronizacji analizy zasobów  
 
@@ -199,7 +199,7 @@ Począwszy od wersji 1606 z pakiet zbiorczy poprawek z KB3186654 (lub wersji lin
 
 -   Punkt usługi sieci Web Wykaz aplikacji  
 
--   Punkt witryny sieci Web katalogu aplikacji  
+-   Punkt witryny sieci Web wykazu aplikacji  
 
 -   Punkt synchronizacji analizy zasobów  
 
@@ -271,16 +271,18 @@ Ten system operacyjny nie jest obsługiwany dla serwerów lokacji i ról systemu
 
     -   Punkty dystrybucji obsługują kilka różnych konfiguracji czy o różnych wymaganiach. W niektórych przypadkach Instalacja obsługi tych konfiguracji nie tylko na serwerach, ale w systemach operacyjnych klienta. Aby uzyskać więcej informacji na temat opcji dostępnych dla punktów dystrybucji, zobacz [zarządzanie zawartością i infrastrukturą zawartości programu System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
-## <a name="windows-8-x86-x64-professional-and-enterprise"></a>Windows 8 (x86, x64): Professional i Enterprise
-**Serwery systemu lokacji:**  
+<!--## Windows 8 (x86, x64): Professional and Enterprise
+**Site system servers:**  
 
--   Punkt dystrybucji  
+-   Distribution point  
 
-    -   Punkty dystrybucji w tym systemie operacyjnym nie obsługują środowiska PXE.  
+    -   Distribution points on this operating system are not supported for PXE.  
 
-    -   Punkty dystrybucji w tym systemie operacyjnym nie obsługują multiemisji.  
+    -   Distribution points on this operating system version do not support Multicast.  
 
-    -   Punkty dystrybucji obsługują kilka różnych konfiguracji czy o różnych wymaganiach. W niektórych przypadkach te konfiguracje obsługują instalację nie tylko na serwerach, ale w systemach operacyjnych klienta. Aby uzyskać więcej informacji na temat opcji dostępnych dla punktów dystrybucji, zobacz [zarządzanie zawartością i infrastrukturą zawartości programu System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+    -   Distribution points support several different configurations that each have different requirements. In some cases, these configurations support installation not only on servers, but on client operating systems. For more information about the options that are available for distribution points, see [Manage content and content infrastructure for System Center Configuration Manager](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+   
+    -  - -removed Jan 12,2018 sms505863-->
 
 ## <a name="windows-7-with-sp1-x86-x64-professional-enterprise-and-ultimate"></a>W systemie Windows 7 z dodatkiem SP1 (x 86, x 64): Professional, Enterprise i Ultimate  
 **Serwery systemu lokacji:**  

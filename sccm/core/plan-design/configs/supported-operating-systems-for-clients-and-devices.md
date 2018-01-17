@@ -15,11 +15,11 @@ caps.latest.revision: "5"
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 412bddaa604c053662a605115acdabe76a2cb03c
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: c740e9b23cb2968463e8843b5f3cdcbaba7c4d91
+ms.sourcegitcommit: 645cd5a324bdd299906efa27eaca5885eafc9e9c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 01/16/2018
 ---
 # <a name="supported-operating-systems-for-clients-and-devices-for-system-center-configuration-manager"></a>Obsługiwane systemy operacyjne dla klientów i urządzeń dla programu System Center Configuration Manager
 
@@ -51,17 +51,17 @@ ms.lasthandoff: 12/04/2017
 
 -   **Windows Storage Server 2012** (x64)    
 
--   **Windows Server 2008 R2 z dodatkiem SP1** (x64): Standard, Enterprise i Datacenter <sup>1</sup>    
+-   **Windows Server 2008 R2 z dodatkiem SP1** (x64): Standard, Enterprise, Datacenter <sup>1</sup>    
 
--   **Windows Storage Server 2008 R2** (x86, x64): Workgroup, Standard i Enterprise    
+-   **Windows Storage Server 2008 R2** (x86, x64): Workgroup, Standard, Enterprise    
 
--   **Windows Server 2008 z dodatkiem SP2** (x86, x64): Standard, Enterprise i Datacenter <sup>1</sup>    
+-   **Windows Server 2008 z dodatkiem SP2** (x86, x64): Standard, Enterprise, Datacenter <sup>1</sup>    
 
 -   **Windows 10** zobacz [pomocy technicznej dla wersji systemu Windows 10](/sccm/core/plan-design/configs/support-for-windows-10) szczegółowe informacje o różnych wersji systemu Windows 10 obsługiwanych przez różne wersje programu Configuration Manager.
 
 -   **Windows 8.1** (x86, x64): Professional, Enterprise    
 
--   **Windows 8** (x86, x64): Professional, Enterprise    
+<!---   **Windows 8** (x86, x64): Professional, Enterprise  -removed Jan 12,2018 sms505863-->
 
 -   **Windows 7 z dodatkiem SP1** (x86, x64): Professional, Enterprise i Ultimate    
 
@@ -111,11 +111,11 @@ Pliki **WBEMDISP. Biblioteki DLL** i **WBEMDISP. TLB** musi istnieć i być zare
 
 -   **Windows Embedded 8.1 Industry** (x86, x64)    
 
--   **System Windows Embedded 8 Industry** (x86, x64)    
+   <!----   **Windows Embedded 8 Industry** (x86, x64)  -removed Jan 12,2018 sms505863-->
 
 -   **Windows Embedded 8 Standard** (x86, x64)    
 
--   **Windows Embedded 8 Pro** (x86, x64)    
+<!---   **Windows Embedded 8 Pro** (x86, x64)    -removed Jan 12,2018 sms505863-->
 
 -   **Windows elastycznej PC** (x86, x64)    
 
@@ -196,7 +196,7 @@ Następujące systemy operacyjne są oparte na systemie Windows XP Embedded i ob
 ##  <a name="linux-and-unix-servers"></a>Serwery z systemami Linux i UNIX  
  Serwery z systemami Linux i UNIX można zarządzać przy użyciu klienta programu Configuration Manager dla systemów Linux i UNIX.  
 
- Instalacja klienta systemów Linux i UNIX, pakiety nie są dostarczane na nośnikach programu Configuration Manager. Pobierz **klienci dla dodatkowych systemów operacyjnych** z [Centrum pobierania Microsoft](http://go.microsoft.com/fwlink/?LinkID=525184). Oprócz pakietów instalacyjnych klienta pobranie klienta obejmuje skrypt, który służy do zarządzania instalacją klienta na każdym komputerze.  
+ Pakiety instalacyjne klienta systemów Linux i UNIX nie są dostarczane na nośnikach programu Configuration Manager. Pobierz **klienci dla dodatkowych systemów operacyjnych** z [Centrum pobierania Microsoft](http://go.microsoft.com/fwlink/?LinkID=525184). Oprócz pakietów instalacyjnych klienta pobranie klienta obejmuje skrypt, który służy do zarządzania instalacją klienta na każdym komputerze.  
 
 **Wymagania i ograniczenia:**  
 
@@ -214,16 +214,16 @@ Następujące systemy operacyjne są oparte na systemie Windows XP Embedded i ob
 
 |||  
 |-|-|  
-|W wersji 6.1 (Power)|CCM-Aix61ppc. &lt;kompilacji\>tar|  
-|W wersji 7.1 (Power)|CCM-Aix71ppc. &lt;kompilacji\>tar|  
+|W wersji 6.1 (Power)|ccm-Aix61ppc.&lt;build\>.tar|  
+|W wersji 7.1 (Power)|ccm-Aix71ppc.&lt;build\>.tar|  
 
 ### <a name="centos"></a>CentOS  
 
 |||  
 |-|-|  
-|W wersji 5 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|W wersji 5 x86|ccm-Universalx86.&lt;build\>.tar|  
 |W wersji 5 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
-|W wersji 6 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|W wersji 6 x86|ccm-Universalx86.&lt;build\>.tar|  
 |W wersji 6 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 |Wersja 7 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 
@@ -231,28 +231,28 @@ Następujące systemy operacyjne są oparte na systemie Windows XP Embedded i ob
 
 |||  
 |-|-|  
-|W wersji 5 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|W wersji 5 x86|ccm-Universalx86.&lt;build\>.tar|  
 |W wersji 5 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
-|W wersji 6 x 86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|W wersji 6 x 86|ccm-Universalx86.&lt;build\>.tar|  
 |W wersji 6 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
-|Wersja 7 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|Wersja 7 x86|ccm-Universalx86.&lt;build\>.tar|  
 |Wersja 7 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
-|W wersji 8 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|W wersji 8 x86|ccm-Universalx86.&lt;build\>.tar|  
 |W wersji 8 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 
 ### <a name="hp-ux"></a>HP-UX  
 
 |||  
 |-|-|  
-|Wersja 11iv3 IA64|CCM-HpuxB.11.31i64. &lt;kompilacji\>tar|  
+|Wersja 11iv3 IA64|ccm-HpuxB.11.31i64.&lt;build\>.tar|  
 
 ### <a name="oracle-linux"></a>Oracle Linux  
 
 |||  
 |-|-|  
-|W wersji 5 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|W wersji 5 x86|ccm-Universalx86.&lt;build\>.tar|  
 |W wersji 5 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
-|W wersji 6 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|W wersji 6 x86|ccm-Universalx86.&lt;build\>.tar|  
 |W wersji 6 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 |Wersja 7 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 
@@ -260,9 +260,9 @@ Następujące systemy operacyjne są oparte na systemie Windows XP Embedded i ob
 
 |||  
 |-|-|  
-|W wersji 5 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|W wersji 5 x86|ccm-Universalx86.&lt;build\>.tar|  
 |W wersji 5 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
-|W wersji 6 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|W wersji 6 x86|ccm-Universalx86.&lt;build\>.tar|  
 |W wersji 6 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 |Wersja 7 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 
@@ -270,18 +270,18 @@ Następujące systemy operacyjne są oparte na systemie Windows XP Embedded i ob
 
 |||  
 |-|-|  
-|W wersji 10 x86|CCM-Sol10x86. &lt;kompilacji\>tar|  
-|W wersji 10 SPARC|CCM-Sol10sparc. &lt;kompilacji\>tar|  
-|W wersji 11 x86|CCM-Sol11x86. &lt;kompilacji\>tar|  
-|W wersji 11 SPARC|CCM-Sol11sparc. &lt;kompilacji\>tar|  
+|W wersji 10 x86|ccm-Sol10x86.&lt;build\>.tar|  
+|W wersji 10 SPARC|ccm-Sol10sparc.&lt;build\>.tar|  
+|W wersji 11 x86|ccm-Sol11x86.&lt;build\>.tar|  
+|W wersji 11 SPARC|ccm-Sol11sparc.&lt;build\>.tar|  
 
 ### <a name="suse-linux-enterprise-server-sles"></a>SUSE Linux Enterprise Server (SLES)  
 
 |||  
 |-|-|  
-|Z dodatkiem SP1 w wersji 10 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|Z dodatkiem SP1 w wersji 10 x86|ccm-Universalx86.&lt;build\>.tar|  
 |Z dodatkiem SP1 w wersji 10 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
-|Z dodatkiem SP1 w wersji 11 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|Z dodatkiem SP1 w wersji 11 x86|ccm-Universalx86.&lt;build\>.tar|  
 |Z dodatkiem SP1 w wersji 11 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 |W wersji 12 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 
@@ -289,13 +289,13 @@ Następujące systemy operacyjne są oparte na systemie Windows XP Embedded i ob
 
 |||  
 |-|-|  
-|Wersja 10.04 LTS x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|Wersja 10.04 LTS x86|ccm-Universalx86.&lt;build\>.tar|  
 |Wersja 10.04 LTS x64|CCM-Universalx64. &lt;kompilacji\>tar|  
-|Wersja 12.04 LTS x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|Wersja 12.04 LTS x86|ccm-Universalx86.&lt;build\>.tar|  
 |Wersja 12.04 LTS x64|CCM-Universalx64. &lt;kompilacji\>tar|  
-|Wersja 14.04 LTS x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|Wersja 14.04 LTS x86|ccm-Universalx86.&lt;build\>.tar|  
 |Wersja 14.04 LTS x64|CCM-Universalx64. &lt;kompilacji\>tar|  
-|Wersja 16.04 LTS x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|Wersja 16.04 LTS x86|ccm-Universalx86.&lt;build\>.tar|  
 |Wersja 16.04 LTS x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 
 
@@ -322,9 +322,9 @@ Następujące systemy operacyjne są oparte na systemie Windows XP Embedded i ob
 
 - **Windows 10 Mobile**  
 
-- **Windows 10 Enterprise przenośnych**  
+- **Windows 10 Mobile Enterprise**  
 
-- **Windows 10 Enterprise IoT Mobile**
+- **Windows 10 IoT Mobile Enterprise**
 
 - **System Windows 10 Team dla powierzchni Centrum**
 
@@ -339,10 +339,10 @@ Program Configuration Manager obsługuje ograniczone Zarządzanie urządzeń ł�
 
 **Obsługiwane wersje programu Exchange Server:**  
 
--   **Exchange Server 2010 z dodatkiem SP1**  
+-   **Exchange Server 2010 SP1**  
 
--   **Exchange Server 2010 z dodatkiem SP2**  
+-   **Exchange Server 2010 SP2**  
 
--   **Program Exchange Server 2013**  
+-   **Exchange Server 2013**  
 
 -   **Exchange Online (Office 365)**: Dotyczy to również Business Productivity Online Standard Suite  

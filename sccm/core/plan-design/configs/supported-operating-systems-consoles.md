@@ -15,11 +15,11 @@ caps.latest.revision: "3"
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: a9d2fddd1210fc9b83026e27aafefd50fc5aac4d
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 39a14ad732a4f932b05a66365fb52add2889efc8
+ms.sourcegitcommit: 645cd5a324bdd299906efa27eaca5885eafc9e9c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 01/16/2018
 ---
 # <a name="supported-operating-systems-for-system-center-configuration-manager-consoles"></a>Obsługiwane systemy operacyjne dla konsol programu System Center Configuration Manager
 
@@ -36,12 +36,12 @@ ms.lasthandoff: 12/04/2017
 
 -   **Windows Server 2012** (x64): Standard, Datacenter  
 
--   **Windows Server 2008 R2 z dodatkiem SP1** (x64): Standard, Enterprise i Datacenter  
+-   **Windows Server 2008 R2 z dodatkiem SP1** (x64): Standard, Enterprise, Datacenter  
 
--   **Windows 10** (x86, x64): Pro i Enterprise  
+-   **Windows 10** (x86, x64): Pro, Enterprise  
 
 -   **Windows 8.1** (x86, x64): Professional, Enterprise  
 
--   **Windows 8** (x86, x64): Professional, Enterprise  
+<!---   **Windows 8** (x86, x64): Professional, Enterprise  -removed Jan 12,2018 sms505863-->
 
--   **Windows 7 z dodatkiem SP1** (x86, x64): Professional, Enterprise i Ultimate  
+-   **Windows 7 z dodatkiem SP1** (x86, x64): Professional, Enterprise, Ultimate  
