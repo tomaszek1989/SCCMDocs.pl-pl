@@ -15,11 +15,11 @@ caps.latest.revision: "3"
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: fab460a18ce3729fbffa0228ad2b861b70b84e12
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: ca1c62fc6034b33380d9075c4f5430954537781f
+ms.sourcegitcommit: e121d8d3dd82b9f2dde2cb5206cbee602ab8e107
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="install-the-system-center-configuration-manager-console"></a>Zainstaluj konsolę programu System Center Configuration Manager
 
@@ -44,9 +44,9 @@ Administratorzy używać konsoli programu System Center Configuration Manager do
 
 2.  Przejdź do jednej z następujących lokalizacji:  
 
-    -   Na serwerze lokacji przejdź do  **<* ścieżkę instalacji serwera lokacji programu Configuration Manager*> \Tools\ConsoleSetup**.  
+    -   Na serwerze lokacji przejdź do  **< *ścieżkę instalacji serwera lokacji programu Configuration Manager*> \Tools\ConsoleSetup**.  
 
-    -   Z nośnika źródłowego programu Configuration Manager, przejdź do  **<* pliki źródłowe programu Configuration Manager*> \Smssetup\Bin\I386**.  
+    -   Z nośnika źródłowego programu Configuration Manager, przejdź do  **< *pliki źródłowe programu Configuration Manager*> \Smssetup\Bin\I386**.  
 
     > [!TIP]  
     >  Najlepszym rozwiązaniem jest zainicjowanie instalacji konsoli programu Configuration Manager z serwera lokacji, a nie z nośnika instalacyjnego programu System Center Configuration Manager. Metoda instalacji serwera lokacji kopiuje pliki instalacyjne konsoli programu Configuration Manager oraz obsługiwane pakiety językowe dla witryny, aby **Tools\ConsoleSetup** podfolderu. Instalowanie konsoli programu Configuration Manager z nośnika instalacyjnego zawsze instaluje wersji angielskiej niezależnie od języków obsługiwanych na serwerze lokacji lub ustawień języka systemu operacyjnego, który jest uruchomiony na komputerze. Opcjonalnie można skopiować **ConsoleSetup** folderu do alternatywnej lokalizacji do rozpoczęcia instalacji.
@@ -91,8 +91,8 @@ Administratorzy używać konsoli programu System Center Configuration Manager do
 
   **Przykłady:**
 
-  -  **consolesetup.exe /q TargetDir = "D:\Program Files\ConfigMgr" EnableSQM = 1 DefaultSiteServerName=MyServer.Contoso.com**  
+  -  **consolesetup.exe /q TargetDir="D:\Program Files\ConfigMgr" EnableSQM=1 DefaultSiteServerName=MyServer.Contoso.com**  
 
-  -  **consolesetup.exe LangPackDir/q = C:\Downloads\ConfigMgr TargetDir = "D:\Program Files\ConfigMgr" konsoli EnableSQM = 1 DefaultSiteServerName=MyServer.Contoso.com**  
+  -  **consolesetup.exe /q LangPackDir=C:\Downloads\ConfigMgr TargetDir="D:\Program Files\ConfigMgr Console" EnableSQM=1 DefaultSiteServerName=MyServer.Contoso.com**  
 
-  -  **consolesetup.exe / uninstall/q**  
+  -  **consolesetup.exe /uninstall /q**  

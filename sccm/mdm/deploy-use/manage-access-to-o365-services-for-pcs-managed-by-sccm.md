@@ -3,7 +3,7 @@ title: "Zarządzanie dostępem do usług O365 dla komputerów zarządzanych"
 titleSuffix: Configuration Manager
 description: "Dowiedz się, jak skonfigurować dostęp warunkowy dla komputerów, które są zarządzane przez program System Center Configuration Manager."
 ms.custom: na
-ms.date: 12/19/2017
+ms.date: 01/10/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,20 +15,22 @@ caps.latest.revision: "15"
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: bf38358d12c2617d924fe59bf7bf7457dfa95143
-ms.sourcegitcommit: 6c2aa79924c0e7fc64ef5e9003498fc00c349db9
+ms.openlocfilehash: e1f50ea65236473f059ded6ef85c37646e929e53
+ms.sourcegitcommit: e121d8d3dd82b9f2dde2cb5206cbee602ab8e107
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="manage-access-to-o365-services-for-pcs-managed-by-system-center-configuration-manager"></a>Zarządzanie dostępem do usług O365 dla komputerów zarządzanych przez program System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Począwszy od wersji 1602 programu Configuration Manager, można skonfigurować dostęp warunkowy dla komputerów zarządzanych przez program System Center Configuration Manager.  
+W tym artykule opisano sposób konfigurowania dostępu warunkowego dla komputerów zarządzanych przez program Configuration Manager.  
 
-> [!Tip]  
-> Ta funkcja została wprowadzona w wersji 1602, co [funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features). Począwszy od wersji 1702, ta funkcja nie jest już funkcji wersji wstępnej.
+<!--
+ >> [!Tip]  
+> This feature was first introduced in version 1602 as a [pre-release feature](/sccm/core/servers/manage/pre-release-features). Beginning with version 1702, this feature is no longer a pre-release feature.
+-->
 
 Aby uzyskać informacje na temat konfigurowania dostępu warunkowego dla urządzeń zarejestrowanych i zarządzanych przez program Microsoft Intune, zobacz [zarządzanie dostępem do usług w programie System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md). Ten artykuł obejmuje także urządzenia, które są domeny przyłączone i nie ocenione pod kątem zgodności.
 
@@ -45,16 +47,16 @@ Aby uzyskać informacje na temat konfigurowania dostępu warunkowego dla urządz
 
 ## <a name="supported-windows-servers"></a>Obsługiwane w systemach Windows Server
 
--   2008 R2
--   2012
--   2012 R2
--   2016
+-   Windows Server 2008 R2
+-   Windows Server 2012
+-   Windows Server 2012 R2
+-   Windows Server 2016
 
     > [!IMPORTANT]
-    > Dla serwerów systemu Windows, który może mieć wielu użytkowników jednocześnie zalogowany należy wdrożyć te same zasady dostępu warunkowego do wszystkich użytkowników zalogowany.
+    > Dla serwerów systemu Windows, który może mieć wielu użytkowników jednocześnie zalogowany należy wdrożyć te same zasady dostępu warunkowego dla wszystkich użytkowników.
 
 ## <a name="configure-conditional-access"></a>Konfigurowanie dostępu warunkowego  
- Aby skonfigurować dostęp warunkowy, należy najpierw utworzyć zasady zgodności i skonfigurować zasady dostępu warunkowego. Po skonfigurowaniu zasad dostępu warunkowego dla komputerów możesz wymagać, że komputery być zgodne z zasadami zgodności, aby uzyskać dostęp do usługi Exchange Online i SharePoint Online.  
+ Aby skonfigurować dostęp warunkowy, należy najpierw utworzyć zasady zgodności i skonfigurować zasady dostępu warunkowego. Po skonfigurowaniu zasad dostępu warunkowego dla komputerów można wymagać, aby komputery być zgodne, aby uzyskiwać dostęp do usług Exchange Online i SharePoint Online.  
 
 ### <a name="prerequisites"></a>Wymagania wstępne  
 
@@ -81,7 +83,7 @@ Aby uzyskać informacje na temat konfigurowania dostępu warunkowego dla urządz
 
 -   **Wymagaj rejestracji w usłudze Azure Active Directory:** Ta reguła sprawdza, czy urządzenie użytkownika jest miejscu pracy zostało dołączone do usługi Azure AD, a jeśli nie, urządzenie jest automatycznie rejestrowane w usłudze Azure AD. Automatyczna rejestracja jest obsługiwana tylko w systemie Windows 8.1. W przypadku komputerów z systemem Windows 7 należy wdrożyć instalatora MSI w celu przeprowadzenia rejestracji automatycznej. Aby uzyskać więcej informacji, zobacz [automatycznej rejestracji urządzeń z usługą Azure Active Directory](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup)  
 
--   **Zainstalowano wszystkie wymagane aktualizacje z ostatecznym terminem przypadającym wcześniej niż określona liczba dni temu:** Ta reguła sprawdza, czy urządzeniu użytkownika znajdują się wszystkie wymagane aktualizacje (określone w regule wymagane aktualizacje automatyczne) w ramach terminu ostatecznego i okresu prolongaty określonego przez użytkownika i automatycznie Zainstaluj wszystkie oczekujące wymagane aktualizacje.  
+-   **Zainstalowano wszystkie wymagane aktualizacje z ostatecznym terminem przypadającym wcześniej niż określona liczba dni temu:** Określ wartość dla okresu prolongaty od ostatecznego terminu wdrożenia wymagane aktualizacje na urządzeniu użytkownika. Dodanie tę regułę również automatycznie instaluje wszystkie oczekujące wymagane aktualizacje. Określ wymagane aktualizacje w **wymagane aktualizacje automatyczne** reguły.   
 
 -   **Wymagaj szyfrowania dysków funkcją BitLocker:** Ta reguła sprawdza, czy dysk podstawowy (na przykład C:\\) na urządzeniu jest funkcją BitLocker zaszyfrowany. Jeśli funkcja Bitlocker nie jest włączone szyfrowanie na urządzeniu podstawowym dostęp do poczty e-mail i usług SharePoint jest zablokowany.  
 
@@ -134,7 +136,7 @@ Aby uzyskać informacje na temat konfigurowania dostępu warunkowego dla urządz
 
 5.  Wybierz dla wymagań dla komputerów z systemem Windows opcję**Urządzenia muszą być zgodne**.  
 
-6.  W obszarze **Grupy docelowe**kliknij pozycję **Modyfikuj** , aby wybrać grupy zabezpieczeń usługi Azure Active Directory, których będą dotyczyć zasady.  
+6.  W obszarze **grupy docelowe**, kliknij przycisk **Modyfikuj** aby wybrać grupy zabezpieczeń usługi Azure Active Directory, do których ma zastosowanie zasad.  
 
     > [!NOTE]  
     >  Należy używać tej samej grupy użytkowników zabezpieczeń do wdrożenia zasad zgodności i Grupa docelowa dla zasad dostępu warunkowego.  

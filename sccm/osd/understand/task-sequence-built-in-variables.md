@@ -3,7 +3,7 @@ title: "Wbudowane zmienne sekwencji zadań"
 titleSuffix: Configuration Manager
 description: "Wbudowane zmienne sekwencji zadań zawierają informacje o środowisku, w którym sekwencja zadań uruchamia i są dostępne w całej sekwencji zadań."
 ms.custom: na
-ms.date: 03/26/2017
+ms.date: 01/12/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: e29efd4de847a861afa75a7a10868cad30e4cf97
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+ms.openlocfilehash: 29b2ae2a9a8ee41d11fbf7e032ef8262411f3dd0
+ms.sourcegitcommit: e121d8d3dd82b9f2dde2cb5206cbee602ab8e107
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="task-sequence-built-in-variables-in-system-center-configuration-manager"></a>Wbudowane zmienne sekwencji zadań w programie System Center Configuration Manager
 
@@ -81,8 +81,8 @@ ms.lasthandoff: 12/12/2017
 |SMSTSDriverRequestResolveTimeOut|Użyj tej zmiennej, aby określić liczbę sekund oczekiwania HTTP rozpoznawanie nazw podczas żądania katalogu sterowników podczas wykonywania kroku sekwencji zadań automatycznie Zastosuj sterowniki. Jeśli połączenie trwa dłużej niż ustawienie limitu czasu, żądanie zostało anulowane. Domyślny limit czasu wynosi 60 sekund.|
 |SMSTSDriverRequestSendTimeOut|Ta zmienna umożliwia określenie liczby sekund używanych podczas wysyłania żądania katalogu sterowników podczas wykonywania kroku sekwencji zadań automatycznie Zastosuj sterowniki. Jeśli wykonywanie żądania trwa dłużej niż ustawienie limitu czasu, żądanie zostało anulowane. Domyślny limit czasu wynosi 60 sekund.|
 |SMSTSErrorDialogTimeout|Po wystąpieniu błędu w sekwencji zadań jest wyświetlane okno dialogowe i jest ono automatycznie odrzucane po upływie liczby sekund określonej przez tę zmienną. Domyślnie okno dialogowe jest automatycznie odrzucane po **900** sekundach (15 minutach).|  
-| TSDisableProgressUI | Użyj tej zmiennej, aby ukryć lub wyświetlić postęp sekwencji zadań w różne sekcje sekwencji zadań. | 
-|TSErrorOnWarning|Użyj tej zmiennej, aby określić, czy aparat sekwencji zadań traktuje ostrzeżenie jako błąd podczas etapu instalowania aplikacji sekwencji zadań. Sekwencja zadań ustawia zmienną _TSAppInstallStatus na wartość **Warning** w przypadku, gdy co najmniej jedna aplikacja lub wymagana zależność nie została zainstalowana, ponieważ nie zostało spełnione wymaganie. W przypadku ustawienia zmiennej TSErrorOnWarning na wartość **True** i zmiennej _TSAppInstallStatus na wartość Warning opisana sytuacja będzie traktowana jako błąd. Wartość **False** jest zachowaniem domyślnym.| 
+| TSDisableProgressUI | <!-- 1354291 -->Począwszy od 1706 wersji programu Configuration Manager, użyj tej zmiennej do formantu, gdy sekwencja zadań wyświetla postęp dla użytkowników końcowych. Ustaw wartość tej zmiennej wiele razy w sekwencji zadań, aby ukryć lub wyświetlić postęp w różnym czasie. Aby ukryć postęp sekwencji zadań, należy ustawić wartość tej zmiennej do **True**. Aby wyświetlić postęp sekwencji zadań, należy ustawić wartość tej zmiennej do **False**. | 
+| TSErrorOnWarning |Użyj tej zmiennej, aby określić, czy aparat sekwencji zadań traktuje ostrzeżenie jako błąd podczas etapu instalowania aplikacji sekwencji zadań. Sekwencja zadań ustawia zmienną _TSAppInstallStatus na wartość **Warning** w przypadku, gdy co najmniej jedna aplikacja lub wymagana zależność nie została zainstalowana, ponieważ nie zostało spełnione wymaganie. W przypadku ustawienia zmiennej TSErrorOnWarning na wartość **True** i zmiennej _TSAppInstallStatus na wartość Warning opisana sytuacja będzie traktowana jako błąd. Wartość **False** jest zachowaniem domyślnym.| 
 |SMSTSLanguageFolder|ta zmienna umożliwia zmianę języka wyświetlania obrazu rozruchowego niezależnego od języka.|  
 |SMSTSLocalDataDrive|Określa, gdzie są przechowywane tymczasowe pliki na komputerze docelowym, gdy jest uruchomiona sekwencja zadań.<br /><br /> Ta zmienna musi zostać ustawiona przed uruchomieniem sekwencji zadań, na przykład przez ustawienie zmiennej kolekcji. Po uruchomieniu sekwencji zadań program Configuration Manager definiuje zmienną _SMSTSMDataPath, po uruchomieniu sekwencji zadań.|  
 |SMSTSMP|Ta zmienna umożliwia określenie adresu URL lub adres IP punktu zarządzania Configuration Manager.|  
