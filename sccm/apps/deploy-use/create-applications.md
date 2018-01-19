@@ -16,11 +16,11 @@ caps.handback.revision: "0"
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: f680b692f3ae92fb8a5e8b6640ed053ceedba436
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.openlocfilehash: d7073b397cdf7b233f8264bd07019303a77a610f
+ms.sourcegitcommit: 2f6a13d208dcd8aa59c88f107791f9c4388e78e2
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="create-applications-with-system-center-configuration-manager"></a>Tworzenie aplikacji w programie System Center Configuration Manager
 
@@ -337,7 +337,16 @@ Poniższa tabela zawiera Microsoft Visual Basic (VB) przykładowe skrypty, któr
         > [!IMPORTANT]  
         >  Może wystąpić konflikt, jeśli **maksymalny dozwolony czas wykonywania** jest większa od czasu zaplanowanego okna obsługi. Jeśli maksymalny czas wykonywania ustawiony przez użytkownika będzie większy od długości każdego z dostępnych okien obsługi, typ wdrożenia nie zostanie uruchomiony.  
 
-2.  **Szacowany czas instalacji (w minutach)**— Określ szacowany czas trwania instalacji typu wdrożenia. Ta informacja będzie wyświetlana użytkownikom Centrum oprogramowania.  
+    -   **Szacowany czas instalacji (w minutach)**— Określ szacowany czas trwania instalacji typu wdrożenia. Ta informacja będzie wyświetlana użytkownikom Centrum oprogramowania.  
+
+    -   **Określ zachowanie określonych ponowny rozruch**— Określ akcji po instalacji. Dostępne są następujące opcje:  
+
+        -   **Określ zachowanie na podstawie kodów powrotnych**--obsługi na podstawie kodów skonfigurowanego na karcie kody powrotne jest uruchamiany ponownie.  Centrum oprogramowania będzie wyświetlana **może wymagać ponownego uruchomienia**.  Jeśli użytkownik jest zalogowany podczas instalacji zostanie wyświetlony monit w zależności od konfiguracji środowiska użytkownika wdrożenia.  
+
+        -   **Nie określonej akcji**— wymagany po zakończeniu instalacji ponowny rozruch.  Centrum oprogramowania będzie zgłaszać nieprawidłowość wymagany ponowny rozruch.  
+        -   **Program instalacyjny oprogramowania może wymusić ponowne uruchomienie urządzenia**— programu Configuration Manager będzie kontrolować lub nie zainicjować ponowne uruchomienie komputera, ale rzeczywista instalacja może to zrobić bez ostrzeżenia.  Użyj tego ustawienia, aby zapobiec raportowania niepowodzenia instalacji, gdy Instalator inicjuje ponowne uruchomienie programu Configuration Manager.  Centrum oprogramowania będzie wyświetlana **może wymagać ponownego uruchomienia**.  
+
+        -   **Klient programu Configuration Manager wymusi obowiązkowe ponowne uruchomienie urządzenia**— programu Configuration Manager zostanie wymuszone ponowne uruchomienie urządzenia po pomyślnej instalacji.  Centrum oprogramowania zgłasza, że wymagane jest ponowne uruchomienie.  Jeśli użytkownik jest zalogowany podczas instalacji zostanie wyświetlony monit w zależności od konfiguracji środowiska użytkownika wdrożenia.
 
 ## <a name="specify-requirements-for-the-deployment-type"></a>Określenie wymagań dotyczących typu wdrożenia  
 
