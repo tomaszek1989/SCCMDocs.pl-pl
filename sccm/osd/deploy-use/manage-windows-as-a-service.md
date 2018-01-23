@@ -15,18 +15,18 @@ caps.latest.revision: "26"
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 3848d0d6a9f3b5d778879c598bf859fb1e8a7ac7
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+ms.openlocfilehash: a67d75f27cbc2d53cc5d8c418e25232d88b4f067
+ms.sourcegitcommit: db9978135d7a6455d83dbe4a5175af2bdeaeafd8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="manage-windows-as-a-service-using-system-center-configuration-manager"></a>Zarządzanie systemem Windows jako usługą za pomocą programu System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
- W programie System Center Configuration Manager, można wyświetlać stan systemu Windows jako usługi w danym środowisku, tworzyć plany obsługi w celu zdefiniowania pierścieni wdrażania i sprawdź, czy systemu Windows 10 bieżącej gałęzi, które systemy są aktualizowane podczas nowe kompilacje są wydawane i wyświetlać alerty, gdy klientów systemu Windows 10 zbliża się koniec obsługi kompilacji Current Branch (CB) lub Current Branch for Business (CBB).  
+ W programie System Center Configuration Manager, można wyświetlać stan systemu Windows jako usługi w danym środowisku, tworzyć plany obsługi w celu pierścieni wdrażania oraz sprawdź, czy systemu Windows 10 bieżącej gałęzi, które systemy są aktualizowane, gdy nowe kompilacje są wydawane i wyświetlić alerty, gdy dla klientów systemu Windows 10 zbliża się koniec obsługi kompilacji Current Branch (CB) lub Current Branch for Business (CBB).  
 
  Aby uzyskać więcej informacji na temat opcji obsługi systemu Windows 10, zobacz  [Opcje obsługi systemu Windows 10 dotyczące aktualizacji i uaktualnień](https://technet.microsoft.com/library/mt598226\(v=vs.85\).aspx).  
 
@@ -50,7 +50,7 @@ ms.lasthandoff: 12/12/2017
     -   **Kompilacji systemu operacyjnego**: Określony kompilacji systemu operacyjnego. Na przykład **10.0.10240** (RTM) lub **10.0.10586** (wersja 1511)  
 
 -   Punkt połączenia z usługą musi być zainstalowany i skonfigurowany dla trybu **Online, połączenie trwałe** , aby można było wyświetlać dane na pulpicie nawigacyjnym obsługi systemu Windows 10. Podczas pracy w trybie offline, należy aktualizacje nie będą wyświetlane dane na pulpicie nawigacyjnym do momentu uzyskania aktualizacji obsługi programu Configuration Manager.   
-     Aby uzyskać więcej informacji, zobacz [o punkt połączenia z usługą](../../core/servers/deploy/configure/about-the-service-connection-point.md).  
+      Aby uzyskać więcej informacji, zobacz [o punkt połączenia z usługą](../../core/servers/deploy/configure/about-the-service-connection-point.md).  
 
 
 -   Na komputerze, na którym jest uruchomiona konsola programu Configuration Manager musi być zainstalowany program Internet Explorer 9 lub nowszy.  
@@ -280,3 +280,6 @@ Aby zmodyfikować właściwości planu obsługi, wykonaj poniższą procedurę.
 
     > [!NOTE]  
     >  Ostatnie alerty dotyczące aktualizacji oprogramowania można wyświetlić w węźle **Aktualizacje oprogramowania** w obszarze roboczym **Biblioteka oprogramowania** .  
+
+**Aby uzyskać więcej informacji:** <br/>
+[Podstawowe informacje na temat programu Configuration Manager jako usługi z systemem Windows jako usługą](/sccm/core/understand/configuration-manager-and-windows-as-service.md)
