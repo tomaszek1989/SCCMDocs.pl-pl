@@ -29,7 +29,7 @@ ms.lasthandoff: 01/04/2018
 
 Narzędzie dotyczy tylko zawartość w punkcie dystrybucji można określić po uruchomieniu narzędzia. Narzędzie nie usuwa zawartości z biblioteki zawartości na serwerze lokacji.
 
-Można znaleźć **ContentLibraryCleanup.exe** w *%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* folderu na serwerze lokacji w centralnej lokacji administracyjnej lub lokacji głównej.
+Można znaleźć **ContentLibraryCleanup.exe** w \*%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* folderu na serwerze lokacji w centralnej lokacji administracyjnej lub lokacji głównej.
 
 ## <a name="requirements"></a>Wymagania  
  Narzędzie można uruchomić tylko dla pojedynczego punktu dystrybucji, w czasie.  
