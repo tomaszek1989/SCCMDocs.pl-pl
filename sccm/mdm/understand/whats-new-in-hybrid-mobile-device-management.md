@@ -14,11 +14,11 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 243daf8626e329214ce1b94f109d19773bbc57c5
-ms.sourcegitcommit: 2da6b06818371e93f28e36cadf3a154d50ce5bf4
+ms.openlocfilehash: 04ed2ac1abe54c3b8c7c86f210b35f5f52d80ef6
+ms.sourcegitcommit: c432624b8816f59d51a3c8ef68960ed4099d9124
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>What's new in hybrydowego zarządzania urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Microsoft Intune
 
@@ -40,6 +40,17 @@ Każda sekcja w tym artykule wymieniono funkcje hybrydowych w trzech różnych k
 |**Nowość w usłudze Microsoft Intune** | Ogólnie rzecz biorąc wszystkie funkcje wymienione w tej kategorii powinny współpracować z wszystkie wersje programu Configuration Manager. Zwalnia to tym System Center 2012 R2 Configuration Manager, ponieważ te funkcje tylko wymagane przez usługę Intune i nie wymagają dodatkowych funkcji w programie Configuration Manager.|
 |**Nowość w programie Configuration Manager Technical Preview**| Wszystkie funkcje wymienione w tej kategorii są prawidłowe tylko w określonej wersji Technical Preview. Aby wypróbować te funkcje, należy zainstalować wersję Technical Preview określony w opisie funkcji. Aby uzyskać więcej informacji, zobacz [Technical Preview programu System Center Configuration Manager](../../core/get-started/technical-preview.md).|
 |**Nowe w programie Configuration Manager (wersji current branch)**| Wszystkie funkcje wymienione w tej kategorii pracować tylko z określonej wersji programu Configuration Manager (wersji current branch), np. w wersji 1511 lub 1602. Jeśli używasz starszej wersji programu Configuration Manager dla danego wdrożenia hybrydowego, należy uaktualnić do wersji Configuration Manager (wersji current branch) określona w opisie funkcji. Aby uzyskać więcej informacji, zobacz [uaktualnienia do programu System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|
+
+
+## <a name="january-2018"></a>2018 stycznia
+
+### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune
+
+- **Zdalne blokowanie dostępne w aplikacji Portal firmy dla systemu Windows 10**<!--676506-->    
+  Użytkownicy końcowi teraz mogą zdalnie blokować swoje urządzenia w aplikacji Portal firmy dla systemu Windows 10. To nie będą wyświetlane dla wybranego urządzenia lokalnego aktywnie używany.
+
+- **Łatwiejsze Rozwiązywanie problemów zgodności aplikacji Portal firmy dla systemu Windows 10**<!--676546-->    
+  Użytkownicy końcowi z urządzeniami z systemem Windows będzie można naciśnij kolejno pozycje z powodu niezgodności w aplikacji Portal firmy. Jeśli to możliwe, to może potrwać je bezpośrednio do poprawnej lokalizacji w aplikacji ustawień, aby rozwiązać ten problem.
 
 ## <a name="december-2017"></a>2017 grudnia
 
@@ -114,6 +125,11 @@ Dodaliśmy **typ własności** do ekranu szczegóły urządzenia w aplikacji Por
 
 
 ### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune  
+
+- **Pomoc programu użytkowników samodzielne rozwiązywanie problemów z aplikacją Portal firmy dla systemu Android**<!-- 1573324, 1573150, 1558616, 1564878 -->      
+  Aplikacja Portal firmy dla systemu Android został dodany instrukcji dla użytkowników końcowych pomóc zrozumieć i w miarę możliwości własnym rozwiązania na nowe przypadki użycia.
+    - Użytkownicy końcowi będą wskazówki [portalu usługi Azure Active Directory](https://account.activedirectory.windowsazure.com/r/#/profile) Aby usunąć urządzenie, jeśli osiągnął maksymalną liczbę urządzeń, które mogą się dodać.
+    - Użytkownicy końcowi są podane kroki, aby wykonać, aby ułatwić im [błędy aktywacji na Samsung Knox urządzenia](https://go.microsoft.com/fwlink/?linkid=859718) lub [wyłączyć tryb oszczędzania energii](https://docs.microsoft.com/intune-user-help/power-saving-mode-android). Jeśli żadna z tych rozwiązań ich rozwiązać, firma Microsoft udostępni wyjaśnienie sposobu [dzienniki przesłać do firmy Microsoft](https://docs.microsoft.com/intune-user-help/send-logs-to-microsoft-android).
 
 - **Wskaźnik postępu instalacji urządzenia w portalu firmy Android**<!--1565657-->    
   Aplikacja Portal firmy dla systemu Android zawiera wskaźnik postępu instalacji urządzenia, gdy użytkownik jest rejestrowanie swojego urządzenia. Wskaźnik przedstawia nowe stany, począwszy od "Konfigurowanie urządzenia...", a następnie "... rejestrowanie urządzenia", "Zakończył rejestrowanie urządzenia...", a następnie "Kończenie konfigurowania urządzenia...".  
@@ -320,7 +336,7 @@ Następujące funkcje, które były wcześniej dostępne w wersjach Configuratio
 
   Z powodu braku sklepu Google Play w Chinach urządzenia z systemem Android musi uzyskać aplikacje z języka chińskiego rynków. Portal firmy obsługuje ten przepływ pracy dzięki przekierowaniu użytkowników systemu Android w Chinach pobrania aplikacji Portal firmy i Outlook z magazynów lokalnych aplikacji. Zwiększa to środowisko użytkownika, gdy zasady dostępu warunkowego są włączone, zarówno w przypadku zarządzania urządzeniami przenośnymi, jak i zarządzania aplikacjami mobilnymi. Aplikacji portalu firmy i Outlook dla systemu Android są dostępne w następujących przechowywanych w chińskiej wersji językowej aplikacji:
 
-  - [Usługi Baidu](https://go.microsoft.com/fwlink/?linkid=836946)
+  - [Baidu](https://go.microsoft.com/fwlink/?linkid=836946)
   - [Xiaomi](https://go.microsoft.com/fwlink/?linkid=836947)
   - [Tencent](https://go.microsoft.com/fwlink/?linkid=836949)
   - [Huawei](https://go.microsoft.com/fwlink/?linkid=836948)
