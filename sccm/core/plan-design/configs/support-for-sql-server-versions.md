@@ -14,12 +14,12 @@ ms.assetid: 35e237b6-9f7b-4189-90e7-8eca92ae7d3d
 caps.latest.revision: "21"
 author: mestew
 ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: ccc07aa709c0a168a8df7a1bd7944e9399bec13f
-ms.sourcegitcommit: 3dea4342f79909c5064289bd18ed36269812e30c
+manager: dougeby
+ms.openlocfilehash: 2dcf7ab67c0f57d442f6ab0a0ea9f0f476fe8415
+ms.sourcegitcommit: bc86be110c8d2a7a076e17f433d8c5ffd51a7d04
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="supported-sql-server-versions-for-system-center-configuration-manager"></a>Obsługiwane wersje programu SQL Server dla programu System Center Configuration Manager
 
@@ -73,7 +73,7 @@ Obsługa określonego dodatku service pack programu SQL Server obejmuje aktualiz
 > [!IMPORTANT]  
 >  Korzystając z programu SQL Server Standard dla bazy danych w centralnej lokacji administracyjnej, należy ograniczyć całkowitą liczbę klientów obsługiwanych w hierarchii. Zobacz [Wartości dotyczące rozmiarów i skalowania](../../../core/plan-design/configs/size-and-scale-numbers.md).
 
-### <a name="sql-server-2017-standard-enterprise"></a>Program SQL Server 2017: Wersje Standard, Enterprise  
+### <a name="sql-server-2017-standard-enterprise"></a>SQL Server 2017: Wersje Standard, Enterprise  
 Ta wersja programu SQL Server, można użyć z co najmniej [wersji aktualizacji zbiorczej 2](https://support.microsoft.com/help/4052574), począwszy od [1710 wersji programu Configuration Manager](https://docs.microsoft.com/en-us/sccm/core/plan-design/changes/whats-new-in-version-1710) dla następujących witryn: 
 
 -   Centralna lokacja administracyjna  
@@ -81,14 +81,14 @@ Ta wersja programu SQL Server, można użyć z co najmniej [wersji aktualizacji 
 -   Lokację dodatkową  
 <!--SMS.498506-->
 
-### <a name="sql-server-2016-sp1-standard-enterprise"></a>SQL Server 2016 z dodatkiem SP1: Wersje Standard, Enterprise  
+### <a name="sql-server-2016-sp1-standard-enterprise"></a>SQL Server 2016 SP1: Wersje Standard, Enterprise  
 Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:  
 
 -   Centralna lokacja administracyjna  
 -   Lokacja główna  
 -   Lokację dodatkową  
 
-### <a name="sql-server-2016-standard-enterprise"></a>Program SQL Server 2016: Wersje Standard, Enterprise  
+### <a name="sql-server-2016-standard-enterprise"></a>SQL Server 2016: Wersje Standard, Enterprise  
 Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:  
 
 -   Centralna lokacja administracyjna  
@@ -96,28 +96,28 @@ Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktu
 -   Lokację dodatkową  
 
 
-### <a name="sql-server-2014-sp2-standard-enterprise"></a>Program SQL Server 2014 SP2: Wersje Standard, Enterprise  
+### <a name="sql-server-2014-sp2-standard-enterprise"></a>SQL Server 2014 SP2: Wersje Standard, Enterprise  
 Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:  
 
 -   Centralna lokacja administracyjna  
 -   Lokacja główna  
 -   Lokację dodatkową
 
-### <a name="sql-server-2014-sp1-standard-enterprise"></a>SQL Server 2014 z dodatkiem SP1: Wersje Standard, Enterprise  
+### <a name="sql-server-2014-sp1-standard-enterprise"></a>SQL Server 2014 SP1: Wersje Standard, Enterprise  
  Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:  
 
 -   Centralna lokacja administracyjna  
 -   Lokacja główna  
 -   Lokację dodatkową
 
-### <a name="sql-server-2012-sp4-standard-enterprise"></a>SQL Server 2012 z dodatkiem SP4: Wersje Standard, Enterprise  
+### <a name="sql-server-2012-sp4-standard-enterprise"></a>SQL Server 2012 SP4: Wersje Standard, Enterprise  
  Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:  
 
 -   Centralna lokacja administracyjna  
 -   Lokacja główna  
 -   Lokację dodatkową  
 
-### <a name="sql-server-2012-sp3-standard-enterprise"></a>SQL Server 2012 z dodatkiem SP3: Wersje Standard, Enterprise  
+### <a name="sql-server-2012-sp3-standard-enterprise"></a>SQL Server 2012 SP3: Wersje Standard, Enterprise  
  Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:  
 
 -   Centralna lokacja administracyjna  
@@ -133,7 +133,7 @@ Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktu
 -   A secondary site  
 -->
 
-### <a name="sql-server-2008-r2-sp3-standard-enterprise-datacenter"></a>SQL Server 2008 R2 z dodatkiem SP3: Standard, Enterprise i Datacenter     
+### <a name="sql-server-2008-r2-sp3-standard-enterprise-datacenter"></a>SQL Server 2008 R2 SP3: Standard, Enterprise, Datacenter     
   Ta wersja programu SQL Server nie jest obsługiwana [począwszy od wersji 1702](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-support-for-sql-server-versions-as-a-site-database).  
  Ta wersja programu SQL Server jest obsługiwany w przypadku korzystania z wersji programu Configuration Manager przed 1702.
 
@@ -143,21 +143,21 @@ Jeśli są obsługiwane przez wersję programu Configuration Manager, można tej
 -   Lokacja główna
 -   Lokację dodatkową
 
-### <a name="sql-server-2017-express"></a>Program SQL Server 2017 Express   
+### <a name="sql-server-2017-express"></a>SQL Server 2017 Express   
 Ta wersja programu SQL Server, można użyć z co najmniej [wersji aktualizacji zbiorczej 2](https://support.microsoft.com/help/4052574), począwszy od [1710 wersji programu Configuration Manager](https://docs.microsoft.com/en-us/sccm/core/plan-design/changes/whats-new-in-version-1710) dla następujących witryn:
 -   Lokację dodatkową
 <!--SMS.498506-->
 
-### <a name="sql-server-2016-express-sp1"></a>SQL Server 2016 Express z dodatkiem SP1  
+### <a name="sql-server-2016-express-sp1"></a>SQL Server 2016 Express SP1  
 Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:
 -   Lokację dodatkową
 
-### <a name="sql-server-2016-express"></a>Program SQL Server 2016 Express
+### <a name="sql-server-2016-express"></a>SQL Server 2016 Express
 Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:
 -   Lokację dodatkową
 
 
-### <a name="sql-server-2014-express-sp2"></a>SQL Server 2014 Express z dodatkiem SP2   
+### <a name="sql-server-2014-express-sp2"></a>SQL Server 2014 Express SP2   
 Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:  
 
 -   Lokację dodatkową  
@@ -191,6 +191,9 @@ Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktu
  W każdej lokacji zarówno wystąpienie programu SQL Server, który jest używany dla lokacji i bazy danych lokacji musi używać następującego sortowania: **SQL_Latin1_General_CP1_CI_AS**.  
 
  Program Configuration Manager obsługuje dwa wyjątki związane z tym sortowaniem, aby spełniać normy, które są zdefiniowane w GB18030 w Chinach. Aby uzyskać więcej informacji, zobacz [Obsługa wymagań międzynarodowych w programie System Center Configuration Manager](../../../core/plan-design/hierarchy/international-support.md).  
+
+ **Poziom zgodności bazy danych:** </br>
+ Program Configuration Manager wymaga, aby poziom zgodności bazy danych lokacji być nie mniejszy niż najniższa obsługiwana wersja programu SQL Server dla używanej wersji programu Configuration Manager. Na przykład, począwszy od wersji 1702, musisz mieć [bazy danych ma poziom zgodności](https://docs.microsoft.com/sql/relational-databases/databases/view-or-change-the-compatibility-level-of-a-database) wynosił co najmniej 110. <!-- SMS.506266--> 
 
  **Funkcje programu SQL Server:**  
  Każdy serwer lokacji wymaga tylko funkcji **Usługi aparatu bazy danych** .  
