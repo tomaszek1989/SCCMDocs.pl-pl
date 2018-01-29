@@ -7,20 +7,21 @@ ms.date: 01/12/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-osd
+ms.technology:
+- configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
-caps.latest.revision: "26"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 695d21eb065f4d89143644dad28bfdb711392ab9
-ms.sourcegitcommit: e121d8d3dd82b9f2dde2cb5206cbee602ab8e107
+ms.openlocfilehash: 158817547d40f09fb8bd30ebedd5aea6420a8571
+ms.sourcegitcommit: aee9ac45c15f27d8cf827890edcae94c03f5fd5e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Kroki sekwencji zadań w programie System Center Configuration Manager
 
@@ -535,7 +536,7 @@ Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows P
 
  -   **Pamięć podręczna klienta programu Configuration Manager**: Ta opcja służy do przechowywania zawartości w pamięci podręcznej klienta. Klient działa jako źródło równorzędnej pamięci podręcznej dla innych klientów równorzędnej pamięci podręcznej. Aby uzyskać więcej informacji, zobacz [przygotowanie środowiska Windows PE równorzędnej pamięci podręcznej, aby zmniejszyć ruch w sieci WAN](../get-started/prepare-windows-pe-peer-cache-to-reduce-wan-traffic.md).  
 
- -   **Ścieżka niestandardowa**  
+ -    **Niestandardowa ścieżka**: Po wybraniu tej opcji aparat sekwencji zadań najpierw pobiera pakiet katalog roboczy sekwencji zadań, a następnie przenosi je do tej ścieżki, które określisz. Aparat sekwencji zadań dołącza ścieżki z identyfikatora pakietu. 
    
 **Zapisz ścieżkę jako zmienną**  
  Ścieżkę można zapisać jako zmienną do użycia w innym kroku sekwencji zadań. Menedżer konfiguracji dodaje sufiks numeryczny do nazwy zmiennej. Na przykład jeśli określisz zmienną %*mojazawartosc*% jako zmienną niestandardową, jest głównego, dla której przechowuje wszystkie przywoływanej zawartości w sekwencji zadań. Zawartość ta może zawierać wielu pakietów. Następnie w przypadku odwoływania się do zmiennej, należy dodać sufiksem numerycznym. Na przykład pierwszego pakietu, można znaleźć w temacie %*mojazawartosc01*%. Odwołań do zmiennych w kolejnych krokach, takich jak **Uaktualnij System operacyjny**, użyj %*mojazawartosc02*% lub %*mycontent03*%, gdzie numer odpowiada Aby **Pobierz zawartość pakietu** krok zawiera listę pakietów.  
