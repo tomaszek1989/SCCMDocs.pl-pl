@@ -7,20 +7,21 @@ ms.date: 6/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bc2282d5-0571-465b-9528-a555855eaacd
-caps.latest.revision: "18"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 145fe172665310caa48d8f152ad46d72df4168dd
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 9651694530d1258100c9c564bfc59447ac454a96
+ms.sourcegitcommit: ac20475ae9c1ea5ca3632cb6a44440c316f171f4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="about-the-service-connection-point-in-system-center-configuration-manager"></a>Informacje o punkcie połączenia z usługą w programie System Center Configuration Manager
 
@@ -84,13 +85,13 @@ Aby użyć Menedżera usług programu Configuration Manager, w konsoli przejdź 
 -   Menedżer dystrybucji na serwerze lokacji używa konta instalacji systemu lokacji do przesyłania aktualizacji z punktu połączenia usługi.
 
 ##  <a name="bkmk_urls"></a>Wymagania dotyczące dostępu do Internetu  
-Aby umożliwić wykonanie operacji, komputera, który jest hostem punktu połączenia usługi, a wszystkie zapory między tym komputerem i Internetu musi umożliwiała komunikację za pośrednictwem **port TCP 443** i **port TCP 443** w następujących lokalizacjach Internet. Punkt połączenia usługi również obsługuje przy użyciu serwera proxy sieci web (z lub bez uwierzytelniania) Aby użyć tych lokalizacji.  Jeśli konieczne jest skonfigurowanie konta serwera proxy sieci web, zobacz: [Obsługa serwerów proxy w programie System Center Configuration Manager](/sccm/core/plan-design/network/proxy-server-support).
+Aby umożliwić wykonanie operacji, komputera, który jest hostem punktu połączenia usługi, a wszystkie zapory między tym komputerem i Internetu musi umożliwiała komunikację za pomocą portu wychodzącego **TCP 443** dla protokołu HTTPS i wychodzący port  **TCP 80** dla protokołu HTTP do poniższej lokalizacji w Internecie. Punkt połączenia usługi również obsługuje przy użyciu serwera proxy sieci web (z lub bez uwierzytelniania) Aby użyć tych lokalizacji.  Jeśli konieczne jest skonfigurowanie konta serwera proxy sieci web, zobacz: [Obsługa serwerów proxy w programie System Center Configuration Manager](/sccm/core/plan-design/network/proxy-server-support).
 
 **Aktualizacje i obsługa**  
 
 -   *.akamaiedge.net  
 
--   *. akamaitechnologies.com 
+-   *.akamaitechnologies.com 
 
 -   *.manage.microsoft.com
 
@@ -100,14 +101,14 @@ Aby umożliwić wykonanie operacji, komputera, który jest hostem punktu połąc
 
 -   download.microsoft.com  
 
--   Download.windowsupdate.com
+-   download.windowsupdate.com
 
 -   sccmconnected-a01.cloudapp.net  
 
-**Usługa Microsoft Intune**  
+**Microsoft Intune**  
 
 -   *manage.microsoft.com  
--   https://bspmts.MP.microsoft.com/V
+-   https://bspmts.mp.microsoft.com/V
 -   https://login.microsoftonline.com/{TenantID}
 
 
