@@ -3,24 +3,25 @@ title: "Wymagania wstępne dotyczące raportowania"
 titleSuffix: Configuration Manager
 description: "Zrozumienie różnych zależności, które mają wpływ na korzystanie z raportowania w programie System Center Configuration Manager."
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 01/29/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 9cc508a5-5023-4833-b776-ae9a6971138f
-caps.latest.revision: "5"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 09f6ebd47070c63d238a74242d4b04b84c95ef49
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 3feafa8a20bedfba381c29a5d7fe80a47517b6ab
+ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="prerequisites-for-reporting-in-system-center-configuration-manager"></a>Wymagania wstępne dotyczące raportowania w programie System Center Configuration Manager
 
@@ -49,17 +50,19 @@ Raportowanie w programie System Center Configuration Manager istnieją zależno�
  Poniższa tabela zawiera listę wersji programu SQL Server obsługiwanych przez punkt usług raportowania.  
 
 |Wersja programu SQL|Punkt usług raportowania|  
-|------------------------|------------------------------|  
-|SQL Server 2008 z dodatkiem SP2 i co najmniej aktualizacją zbiorczą 9<br /><br /> -Standard<br />-Enterprise<br />-Centrum danych|Tak|  
-|SQL Server 2008 z dodatkiem SP3 i co najmniej aktualizacją zbiorczą 4<br /><br /> -Standard<br />-Enterprise<br />-Centrum danych|Tak|  
-|SQL Server 2008 R2 z dodatkiem SP1 i co najmniej aktualizacją zbiorczą 6<br /><br /> -Standard<br />-Enterprise<br />-Centrum danych|Tak|  
-|SQL Server 2008 R2 z dodatkiem SP2<br /><br /> -Standard<br />-Enterprise<br />-Centrum danych|Tak|  
-|SQL Server Express 2008 R2 z dodatkiem SP1 i co najmniej aktualizacją zbiorczą 4|Nieobsługiwane|  
-|SQL Server Express 2008 R2 z dodatkiem SP2|Nieobsługiwane|  
-|SQL Server 2012 z co najmniej aktualizacją zbiorczą 2<br /><br /> -Standard<br />-Enterprise|Tak|  
-|SQL Server 2012 z dodatkiem SP1 bez minimalnej wersji aktualizacji zbiorczej<br /><br /> -Standard<br />-Enterprise|Tak|  
-|SQL Server 2014<br /><br /> -Standard<br />-Enterprise|Tak|
-|SQL Server 2016<br /><br /> -Standard<br />-Enterprise|Tak|
-|SQL Server 2016 z dodatkiem SP1<br /><br /> -Standard<br />-Enterprise|Tak|
+|------------------------|------------------------------|
+|SQL Server 2017 z co najmniej aktualizacją zbiorczą 2<br /><br /> -Standard<br />-   Enterprise|Tak, począwszy od 1710 wersji programu Configuration Manager|  
+|SQL Server 2016 z dodatkiem SP1<br /><br /> -Standard<br />-   Enterprise|Tak| 
+|SQL Server 2016<br /><br /> -Standard<br />-   Enterprise|Tak|
+|SQL Server 2014 z dodatkiem SP2<br /><br /> -Standard<br />-   Enterprise|Tak|
+|SQL Server 2014 z dodatkiem SP1<br /><br /> -Standard<br />-   Enterprise|Tak|
+|SQL Server 2012 z dodatkiem SP4 <br /><br /> -Standard<br />-   Enterprise|Tak|  
+|SQL Server 2012 z dodatkiem SP3 <br /><br /> -Standard<br />-   Enterprise|Tak|  
+|SQL Server 2008 R2 z dodatkiem SP3<br /><br /> -Standard<br />-   Enterprise<br />-Centrum danych|Tak, obsługiwane wersje programu Configuration Manager przed 1702.|  
+|Program SQL Server Express 2008 R2 z dodatkiem SP3|Nieobsługiwane| 
+
+
+
+
 ## <a name="next-steps"></a>Następne kroki
 [Operacje i obsługa raportowania](operations-and-maintenance-for-reporting.md)

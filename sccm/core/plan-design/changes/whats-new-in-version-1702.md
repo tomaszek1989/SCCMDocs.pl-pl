@@ -6,18 +6,19 @@ ms.custom: na
 ms.date: 05/02/2017
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 409e26e1-7716-4f1d-a0ee-34feabf20792
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: aa8d80cf9c036e63dc74ffe78bc8d5b060d6053e
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: cf46bb32994ddb8a1fa3b9de0dbffc94228ad7fd
+ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="what39s-new-in-version-1702-of-system-center-configuration-manager"></a>Jaki &#39; s nowego w wersji 1702 programu System Center Configuration Manager
 
@@ -35,13 +36,13 @@ Zaktualizuj 1702 dla bieżącej gałęzi programu System Center Configuration Ma
 Poniższe sekcje zawierają szczegółowe informacje dotyczące zmian i nowych możliwości wprowadzonych w wersji 1702 programu Configuration Manager.  
 
 ## <a name="deprecated-features-and-operating-systems"></a>Przestarzałe funkcje i systemów operacyjnych
-Dowiedz się więcej o obsługę zmiany przed ich wdrożeniem w [usunięte i przestarzałe funkcje](/sccm/core/plan-design/changes/removed-and-deprecated-features).
+Dowiedz się więcej o obsługę zmiany przed ich wdrożeniem w [usunięte i przestarzałe elementy](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated).
 
 Wersja 1702 porzucania obsługę następujących produktów:
-- **SQL Server 2008 R2**, serwerów baz danych lokacji. Zaniechania obsługi został [najpierw ogłoszenia](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-support-for-sql-server-versions-as-a-site-database) na 10 lipca 2015 r. Ta wersja programu SQL Server jest obsługiwany w przypadku korzystania z wersji programu Configuration Manager, poprzedzające wersję 1702.
-- **Windows Server 2008 R2**dla serwerów systemu lokacji i większości ról systemu lokacji. Zaniechania obsługi został [najpierw ogłoszenia](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-operating-systems) na 10 lipca 2015 r. Ta wersja systemu Windows jest obsługiwany w przypadku korzystania z wersji programu Configuration Manager, poprzedzające wersję 1702.  
-- **Windows Server 2008**dla serwerów systemu lokacji i większości ról systemu lokacji. Zaniechania obsługi został [najpierw ogłoszenia](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-operating-systems) na 10 lipca 2015 r.
-- **Windows XP Embedded**, jako systemu operacyjnego klienta. Oczekiwany był [najpierw ogłoszenia](/sccm/core/plan-design/changes/removed-and-deprecated-features#deprecated-operating-systems) na 10 lipca 2015 r. Ta wersja systemu Windows jest obsługiwany w przypadku korzystania z wersji programu Configuration Manager, poprzedzające wersję 1702.
+- **SQL Server 2008 R2**, serwerów baz danych lokacji. Zaniechania obsługi został [najpierw ogłoszenia](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server#deprecated-support-for-sql-server-versions-as-a-site-database) na 10 lipca 2015 r. Ta wersja programu SQL Server jest obsługiwany w przypadku korzystania z wersji programu Configuration Manager, poprzedzające wersję 1702.
+- **Windows Server 2008 R2**dla serwerów systemu lokacji i większości ról systemu lokacji. Zaniechania obsługi został [najpierw ogłoszenia](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server#deprecated-server-operating-systems) na 10 lipca 2015 r. Ta wersja systemu Windows jest obsługiwany w przypadku korzystania z wersji programu Configuration Manager, poprzedzające wersję 1702.  
+- **Windows Server 2008**dla serwerów systemu lokacji i większości ról systemu lokacji. Zaniechania obsługi został [najpierw ogłoszenia](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server#deprecated-server-operating-systems) na 10 lipca 2015 r.
+- **Windows XP Embedded**, jako systemu operacyjnego klienta. Oczekiwany był [najpierw ogłoszenia](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-client#deprecated-client-operating-systems) na 10 lipca 2015 r. Ta wersja systemu Windows jest obsługiwany w przypadku korzystania z wersji programu Configuration Manager, poprzedzające wersję 1702.
 
 
 
@@ -243,7 +244,7 @@ Począwszy od wersji 1702 hybrydowego zarządzania urządzeniami przenośnymi (M
 
 - Android
 - Samsung KNOX Standard 4.0 lub nowszy
-- urządzenia iPhone
+- iPhone
 - iPad
 
 Ta zmiana wpływa na kreatorów tworzenia następujące elementy:

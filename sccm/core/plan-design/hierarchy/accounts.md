@@ -7,20 +7,21 @@ ms.date: 2/9/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 72d7b174-f015-498f-a0a7-2161b9929198
-caps.latest.revision: "7"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 518be0c1cb4c361d8802ed70779d192725eb8feb
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: 1b8248cbbade7d46d1a1ad41edd704b5ad8d49aa
+ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="accounts-used-in-system-center-configuration-manager"></a>Konta używane w programie System Center Configuration Manager
 
@@ -29,7 +30,7 @@ ms.lasthandoff: 01/04/2018
 Poniższe informacje umożliwiają poznanie grup systemu Windows oraz kont używanych w programie System Center Configuration Manager, sposobu ich używania i wszystkich wymagań.  
 
 ## <a name="windows-groups-that-configuration-manager-creates-and-uses"></a>Grupy systemu Windows tworzone i używane w programie Configuration Manager  
- Menedżer konfiguracji automatycznie tworzy, a w wielu przypadkach również automatycznie obsługuje, następujące grupy systemu Windows.  
+ Menedżer konfiguracji automatycznie tworzy, a w wielu przypadkach również automatycznie obsługuje, następujące grupy systemu Windows:  
 
 > [!NOTE]  
 >  W przypadku programu Configuration Manager tworzy grupę na komputerze, który jest członkiem domeny, grupa jest lokalną grupą zabezpieczeń. Jeżeli komputer jest kontrolerem domeny, grupa jest lokalną grupą domeny udostępnianą między wszystkimi kontrolerami w domenie.  
@@ -72,9 +73,9 @@ Poniższa tabela zawiera listę dodatkowych szczegółów dotyczących tej grupy
 |------------|----------------------|  
 |Typ i lokalizacja|Ta grupa jest lokalną grupą zabezpieczeń utworzoną na każdym komputerze, który ma dostawcę programu SMS.<br /><br /> Po odinstalowaniu lokacji ta grupa nie zostanie automatycznie usunięta. Należy go ręcznie usunąć.|  
 |Członkostwo|Menedżer konfiguracji automatycznie zarządza członkostwem grupy. Domyślnie każdy użytkownik administracyjny w hierarchii oraz konto komputera serwera lokacji należą do grupy administratorów programu SMS na każdym komputerze dostawcy programu SMS w lokacji.|  
-|Uprawnienia|Prawa i uprawnienia administratorów programu SMS są ustawiane w przystawce MMC sterowania usługą WMI. Domyślnie grupa Administratorzy SMS ma przyznane uprawnienia **włączanie konta** i **Włączanie zdalne** w przestrzeni nazw Root\SMS. Użytkownicy uwierzytelnieni mają **wykonywanie metod**, **zapis dostawcy**, i **włączanie konta**.<br /><br /> Użytkownicy administracyjni używający zdalnej konsoli programu Configuration Manager wymagają uprawnień modelu DCOM zdalnej aktywacji na komputerze serwera lokacji oraz komputerze dostawcy programu SMS. W celu ułatwienia administracji zaleca się przyznanie tych uprawnień administratorom programu SMS, a nie bezpośrednio użytkownikom lub grupom. Aby uzyskać więcej informacji, zobacz sekcję [Konfigurowanie uprawnień modelu DCOM dotyczących zdalnych konsol programu Configuration Manager](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ConfigDCOMforRemoteConsole) w temacie [Modyfikowanie infrastruktury programu System Center Configuration Manager](../../../core/servers/manage/modify-your-infrastructure.md).|  
+|Uprawnienia|Prawa i uprawnienia administratorów programu SMS są ustawiane w przystawce MMC sterowania usługą WMI. Domyślnie grupa Administratorzy SMS ma przyznane uprawnienia **włączanie konta** i **Włączanie zdalne** w przestrzeni nazw Root\SMS. Użytkownicy uwierzytelnieni mają **wykonywanie metod**, **zapis dostawcy**, i **włączanie konta**.<br /><br /> Użytkownicy administracyjni używający zdalnej konsoli programu Configuration Manager wymagają uprawnień modelu DCOM zdalnej aktywacji na komputerze serwera lokacji oraz komputerze dostawcy programu SMS. W celu ułatwienia administracji zaleca się przyznanie tych uprawnień administratorom programu SMS, a nie bezpośrednio użytkownikom lub grupom. Aby uzyskać więcej informacji, zobacz [skonfigurować uprawnienia modelu DCOM dla zdalnej konsoli programu Configuration Manager](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ConfigDCOMforRemoteConsole) sekcji [modyfikowanie infrastruktury programu System Center Configuration Manager](../../../core/servers/manage/modify-your-infrastructure.md) artykułu.|  
 
-### <a name="smssitesystemtositeserverconnectionmpltsitecode"></a>SMS_SiteSystemToSiteServerConnection_MP_&lt;kod_lokacji\>  
+### <a name="smssitesystemtositeserverconnectionmpltsitecode"></a>SMS_SiteSystemToSiteServerConnection_MP_&lt;sitecode\>  
  Punkty zarządzania programu Configuration Manager, sterowane zdalnie z serwera lokacji używają tej grupy do łączenia z bazą danych lokacji. Ta grupa umożliwia punktowi zarządzania dostęp do folderów skrzynki odbiorczej na serwerze lokacji i w bazie danych lokacji.  
 
  Poniższa tabela zawiera listę dodatkowych szczegółów dotyczących tej grupy:  
@@ -85,7 +86,7 @@ Poniższa tabela zawiera listę dodatkowych szczegółów dotyczących tej grupy
 |Członkostwo|Menedżer konfiguracji automatycznie zarządza członkostwem grupy. Domyślnie członkostwo obejmuje konta komputerów zdalnych, na których znajduje się punkt zarządzania dla danej lokacji.|  
 |Uprawnienia|Domyślnie ta grupa ma **odczytu**, **odczytu & wykonać**, i **wyświetlanie zawartości folderu** uprawnienia do **%path%\Microsoft Configuration Manager\inboxes** folderu na serwerze lokacji. Ta grupa ma dodatkowe uprawnienie **zapisu** w podfolderach należących do **skrzynek odbiorczych** w których punkt zarządzania zapisuje dane klienta.|  
 
-### <a name="smssitesystemtositeserverconnectionsmsprovltsitecode"></a>SMS_SiteSystemToSiteServerConnection_SMSProv_&lt;kod_lokacji\>  
+### <a name="smssitesystemtositeserverconnectionsmsprovltsitecode"></a>SMS_SiteSystemToSiteServerConnection_SMSProv_&lt;sitecode\>  
  Sterowane zdalnie z serwera lokacji komputery dostawcy programu SMS programu Configuration Manager, użyj tej grupy do łączenia się z serwerem lokacji.  
 
  Poniższa tabela zawiera listę dodatkowych szczegółów dotyczących tej grupy:  
@@ -96,7 +97,7 @@ Poniższa tabela zawiera listę dodatkowych szczegółów dotyczących tej grupy
 |Członkostwo|Menedżer konfiguracji automatycznie zarządza członkostwem grupy. Domyślnie członkostwo obejmuje konto komputera lub konto użytkownika domeny, który służy do łączenia się z serwerem lokacji z każdego komputera zdalnego, z zainstalowanym dostawcą programu SMS dla lokacji.|  
 |Uprawnienia|Domyślnie ta grupa ma **odczytu**, **odczytu & wykonać**, i **wyświetlanie zawartości folderu** uprawnienia do **%path%\Microsoft Configuration Manager\inboxes** folderu na serwerze lokacji. Ta grupa ma dodatkowe uprawnienie **zapisu** lub uprawnienia **zapisu** i **Modyfikuj** w podfolderach należących do **skrzynek odbiorczych** do których dostawca programu SMS wymaga dostępu.<br /><br /> Ta grupa ma również **odczytu**, **odczytu & wykonać**, **wyświetlanie zawartości folderu**, **zapisu**, i **Modyfikuj** uprawnienia do folderów poniżej **%path%\Microsoft Configuration Manager\OSD\boot** i **odczytu** uprawnienia do folderów poniżej **%path%\Microsoft Configuration Manager\OSD\Bin** na serwerze lokacji.|  
 
-### <a name="smssitesystemtositeserverconnectionstatltsitecode"></a>SMS_SiteSystemToSiteServerConnection_Stat_&lt;kod_lokacji\>  
+### <a name="smssitesystemtositeserverconnectionstatltsitecode"></a>SMS_SiteSystemToSiteServerConnection_Stat_&lt;sitecode\>  
  Menedżer wysyłania plików na komputerach systemu zdalnego lokacji programu Configuration Manager używa tej grupy do łączenia się z serwerem lokacji.  
 
  Poniższa tabela zawiera listę dodatkowych szczegółów dotyczących tej grupy:  
@@ -107,7 +108,7 @@ Poniższa tabela zawiera listę dodatkowych szczegółów dotyczących tej grupy
 |Członkostwo|Menedżer konfiguracji automatycznie zarządza członkostwem grupy. Domyślnie członkostwo obejmuje konto komputera lub konto użytkownika domeny używane do łączenia się z serwerem lokacji z każdego komputera zdalnego systemu lokacji z uruchomionym Menedżerem wysyłania plików.|  
 |Uprawnienia|Domyślnie ta grupa ma **odczytu**, **odczytu & wykonać**, i **wyświetlanie zawartości folderu** uprawnienia do **%path%\Microsoft Configuration Manager\inboxes** folderze i jego podfolderach należących do tej lokalizacji na serwerze lokacji. Ta grupa ma dodatkowe uprawnienia **zapisu** i **Modyfikuj** do **%path%\Microsoft Configuration Manager\inboxes\statmgr.box** folderu na serwerze lokacji.|  
 
-### <a name="smssitetositeconnectionltsitecode"></a>SMS_SiteToSiteConnection_&lt;kod_lokacji\>  
+### <a name="smssitetositeconnectionltsitecode"></a>SMS_SiteToSiteConnection_&lt;sitecode\>  
  Configuration Manager używa tej grupy, aby włączyć replikację opartą na plikach między lokacjami w hierarchii. Dla każdej lokacji zdalnej, która bezpośrednio przesyła pliki do tej witryny, ta grupa ma konta skonfigurowane jako **konta replikacji plików**.  
 
  Poniższa tabela zawiera listę dodatkowych szczegółów dotyczących tej grupy:  
@@ -163,7 +164,7 @@ Poniższa tabela zawiera listę dodatkowych szczegółów dotyczących tej grupy
 
  Konto musi mieć uprawnienia **Odczyt** i **Zapis** w udziale sieciowym, w którym jest przechowywany przechwycony obraz.  
 
- Jeśli hasło do konta zostanie zmienione w systemie Windows, należy zaktualizować sekwencję zadań przy użyciu nowego hasła. Klienta programu Configuration Manager odbierze nowe hasło, przy następnym pobraniu zasad klienta.  
+ Jeśli hasło do konta zostanie zmienione w systemie Windows, należy zaktualizować sekwencję zadań przy użyciu nowego hasła. Klienta programu Configuration Manager odbierze nowe hasło podczas następnego pobierania zasad klienta.  
 
  W przypadku używania tego konta można utworzyć jedno konto użytkownika domeny z minimalnymi uprawnienia dostępu do wymaganych zasobów sieciowych i używać go w ramach wszystkich kont sekwencji zadań.  
 
@@ -245,6 +246,8 @@ Poniższa tabela zawiera listę dodatkowych szczegółów dotyczących tej grupy
 
 ### <a name="reporting-services-point-account"></a>Konto punktu usług raportowania  
  SQL Server Reporting Services używa **konta punktu usług raportowania** do pobierania danych dla raportów programu Configuration Manager z bazy danych lokacji. Określone konto użytkownika systemu Windows i hasło są szyfrowane oraz przechowywane w bazie danych usług SQL Server Reporting Services.  
+>[!NOTE]
+>Konto, które określisz ma zalogować się lokalnie uprawnienia na komputerze obsługującym bazę danych usług Reporting Services.
 
 ### <a name="remote-tools-permitted-viewer-accounts"></a>Konta dopuszczonych poglądów narzędzi zdalnych  
  Konta określone jako **Dopuszczone podglądy** w ramach zdalnego sterowania stanowią listę użytkowników mogących korzystać z funkcji narzędzi zdalnych na klientach.  
@@ -255,7 +258,7 @@ Poniższa tabela zawiera listę dodatkowych szczegółów dotyczących tej grupy
  To konto wymaga lokalnych uprawnień administracyjnych, na które administratorzy będą Instalowanie i konfigurowanie systemów lokacji. Ponadto to konto musi mieć **dostęp do tego komputera z sieci** w zasadach zabezpieczeń w systemach lokacji, które administratorzy będą zainstalować i skonfigurować.  
 
 > [!TIP]  
->  Jeśli masz wiele kontrolerów domeny, a konta te będą używane między domenami, sprawdź, czy konta zostały zreplikowane przed skonfigurowaniem systemu lokacji.  
+>  Jeśli masz wiele kontrolerów domeny, a te konta są używane między domenami, sprawdź, czy konta zostały zreplikowane przed skonfigurowaniem systemu lokacji.  
 >   
 >  Konfiguracja z określonym kontem lokalnym w każdym zarządzanym systemie lokacji jest bezpieczniejsza niż używanie kont domeny, ponieważ ogranicza ryzyko uszkodzeń spowodowanych przez osoby atakujące w razie złamania zabezpieczeń konta. Jednak konta domeny są łatwiejsze w zarządzaniu. Należy rozważyć kompromis między bezpieczeństwem a efektywną administracją.  
 
@@ -306,7 +309,7 @@ To konto musi być administratorem lokalnym na komputerze, na którym zainstalow
 ### <a name="task-sequence-editor-domain-joining-account"></a>Konto dołączania do domeny edytora sekwencji zadań  
  **Konto dołączania do domeny edytora sekwencji zadań** pozwala w sekwencji zadań przyłączać do domeny komputery, w których przypadku utworzono nowe obrazy. To konto jest wymagane w przypadku dodania do sekwencji zadań kroku **Przyłącz do domeny lub grupy roboczej**, a następnie wybrania kroku **Przyłącz do domeny**. To konto można również łączyć po dodaniu kroku **Zastosuj ustawienia sieci** do zadania sekwencji, ale nie jest wymagana.  
 
- To konto wymaga uprawnienia **Przyłącz do domeny** względem domeny, do której będzie przyłączany komputer.  
+ To konto wymaga **przyłączanie do domeny** bezpośrednio w domenie, do której jest przyłączany komputer.  
 
 > [!TIP]  
 >  Jeśli potrzebujesz tego konta w sekwencjach zadań, możesz utworzyć jedno konto użytkownika domeny z minimalnymi uprawnieniami dostępu do wymaganych zasobów sieciowych i użyć go w odniesieniu do wszystkich kont sekwencji zadań.  
@@ -339,8 +342,8 @@ To konto musi być administratorem lokalnym na komputerze, na którym zainstalow
 >   
 >  Nie należy wprowadzać konta administratora domeny.  
 >   
->  Nigdy nie skonfigurowano profile mobilne dla tego konta. Po uruchomieniu sekwencji zadań, pobierze profil mobilny dla konta. Spowoduje to pozostawienie profil narażony na dostęp do komputera lokalnego.  
+>  Nigdy nie skonfigurowano profile mobilne dla tego konta. Po uruchomieniu sekwencji zadań pobiera profil mobilny dla konta. To sprawia, że profil narażony na dostęp do komputera lokalnego.  
 >   
 >  Ogranicz zakres konta. Utwórz na przykład różne konta Uruchom jako dla poszczególnych sekwencji zadań. W przypadku złamania zabezpieczeń jednego konta zostaną złamane wyłącznie zabezpieczenia komputerów klienckich, do których to konto ma dostęp.  
 >   
->  Jeśli wiersz polecenia wymaga dostępu administracyjnego na komputerze, należy rozważyć możliwość tworzenia konta administratora lokalnego przeznaczone wyłącznie na potrzeby zadania konta Uruchom jako sekwencji na wszystkich komputerach, który będzie uruchamiana sekwencja zadań. Usuń konto, gdy nie są już potrzebne.  
+>  Jeśli wiersz polecenia wymaga dostępu administracyjnego na komputerze, należy rozważyć utworzenie konta administratora lokalnego przeznaczone wyłącznie na potrzeby zadania konta Uruchom jako sekwencji na wszystkich komputerach, na których działa sekwencja zadań. Usuń konto, gdy nie są już potrzebne.  

@@ -3,7 +3,7 @@ title: "Punkt połączenia usługi"
 titleSuffix: Configuration Manager
 description: "Więcej informacji na temat tej roli systemu lokacji programu Configuration Manager i Poznaj i Zaplanuj zakres jego zastosowań."
 ms.custom: na
-ms.date: 6/28/2017
+ms.date: 1/29/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -17,23 +17,23 @@ caps.handback.revision:
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 9651694530d1258100c9c564bfc59447ac454a96
-ms.sourcegitcommit: ac20475ae9c1ea5ca3632cb6a44440c316f171f4
+ms.openlocfilehash: a029d54000dee669ae437a460ebcb31f359bfd27
+ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="about-the-service-connection-point-in-system-center-configuration-manager"></a>Informacje o punkcie połączenia z usługą w programie System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Punkt połączenia z usługą System Center Configuration Manager jest rolą systemu lokacji pełniącą kilka ważnych funkcji dla hierarchii. Przed skonfigurowaniem punktu połączenia z usługą Poznaj i Zaplanuj zakres jego zastosowań, które mogą mieć wpływ na sposób konfigurowania tej roli systemu lokacji:  
+Punkt połączenia z usługą System Center Configuration Manager jest rolą systemu lokacji pełniącą kilka ważnych funkcji dla hierarchii. Przed skonfigurowaniem punktu połączenia z usługą Poznaj i Zaplanuj zakres jego zastosowań.  Planowanie użycia może mieć wpływ na sposób konfigurowania tej roli systemu lokacji:  
 
 -   **Zarządzanie urządzeniami przenośnymi w usłudze Microsoft Intune** — ta rola zastępuje łącznik usługi Windows Intune, poprzednie wersje programu Configuration Manager używane, a także można skonfigurować za pomocą Szczegóły subskrypcji usługi Intune. Zobacz [hybrydowego zarządzania urządzeniami przenośnymi (MDM) z programu System Center Configuration Manager i Microsoft Intune](../../../../mdm/understand/hybrid-mobile-device-management.md).  
 
 -   **Zarządzanie urządzeniami przenośnymi za pomocą lokalnego zarządzania urządzeniami Przenośnymi** — ta rola zapewnia obsługę urządzeń lokalnych, które można zarządzać i które nie łączą się z Internetem. Zobacz [zarządzanie urządzeniami przenośnymi za pomocą infrastruktury lokalnej w programie System Center Configuration Manager](../../../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md).  
 
--   **Przekazywanie danych użycia z infrastruktury programu Configuration Manager** — można kontrolować poziom lub ilość szczegółów przekazywania. Przekazane dane ułatwiają firmie Microsoft realizację następujących celów:  
+-   **Przekazywanie danych użycia z infrastruktury programu Configuration Manager** — można kontrolować poziom lub ilość szczegółów przekazywania. Przekazane dane ułatwiają:  
 
     -   Aktywne identyfikowanie i rozwiązywanie problemów  
 
@@ -41,9 +41,9 @@ Punkt połączenia z usługą System Center Configuration Manager jest rolą sys
 
     -   Identyfikowanie aktualizacji dla programu Configuration Manager, które mają zastosowanie do wersji programu Configuration Manager używanej  
 
-  Aby uzyskać informacje o danych, która gromadzi każdy poziom oraz sposobu zmiany poziomie kolekcji po zainstalowaniu roli, zobacz [diagnostyczne i dane użycia](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data), a następnie wykonaj link dla programu Configuration Manager używanej wersji.  
+  Aby uzyskać informacje o danych, która gromadzi każdy poziom oraz sposobu zmiany poziomie kolekcji po zainstalowaniu roli, zobacz [diagnostyczne i dane użycia](/sccm/core/plan-design/diagnostics/diagnostics-and-usage-data). Następnie kliknij link dla programu Configuration Manager używanej wersji.  
 
-  Aby uzyskać dodatkowe informacje, zobacz [poziomy użycia danych i ustawień](../../../../core/servers/deploy/install/setup-reference.md#bkmk_usage).  
+  Aby uzyskać więcej informacji, zobacz [poziomy użycia danych i ustawień](../../../../core/servers/deploy/install/setup-reference.md#bkmk_usage).  
 
 -   **Pobierz aktualizacje, które są stosowane do infrastruktury programu Configuration Manager** — tylko odpowiednie aktualizacje dla infrastruktury są udostępniane na podstawie danych użycia, możesz przekazać.  
 
@@ -57,11 +57,11 @@ Punkt połączenia z usługą System Center Configuration Manager jest rolą sys
 ##  <a name="bkmk_modes"></a>Tryby pracy  
  Punkt połączenia z usługą obsługuje dwa tryby operacyjne:  
 
--   W **trybu online**, punkt połączenia z usługą automatycznie sprawdza co 24 godziny dla aktualizacji, a następnie pobiera nowe aktualizacje, które są dostępne dla bieżącej wersji infrastruktury i produktu udostępnić je w konsoli programu Configuration Manager.  
+-   W **trybu online**, punkt połączenia z usługą automatycznie sprawdza co 24 godziny dla aktualizacji. Pobiera nowe aktualizacje, które są dostępne dla bieżącej infrastruktury i wersji produktu, aby udostępnić je w konsoli programu Configuration Manager.  
 
--   W **w trybie offline**, punkt połączenia z usługą nie łączy się usługa w chmurze firmy Microsoft z i należy ręcznie [użyć narzędzia połączenia z usługą System Center Configuration Manager](../../../../core/servers/manage/use-the-service-connection-tool.md) importować dostępne aktualizacje.  
+-   W **w trybie offline**, punkt połączenia usługi nie połączyć z usługą w chmurze firmy Microsoft. [Użyj narzędzia połączenia z usługą System Center Configuration Manager](../../../../core/servers/manage/use-the-service-connection-tool.md) ręcznie importować dostępne aktualizacje.  
 
-Po zmianie między trybami online lub offline, po zainstalowaniu punktu połączenia usługi, należy ponownie uruchomić wątek SMS_DMP_DOWNLOADER usługi SMS_Executive programu Configuration Manager, zanim ta zmiana zacznie obowiązywać. Aby to zrobić, należy użyć Menedżera usług programu Configuration Manager do ponownego uruchomienia tylko wątku sms_dmp_downloader usługi SMS_Executive. Można również uruchomić ponownie usługę SMS_Executive dla programu Configuration Manager, co spowoduje ponowne uruchomienie większości składników lokacji, lub możesz poczekać zaplanowanego zadania, takie jak kopii zapasowej lokacji, które spowoduje zatrzymanie i później ponowne uruchomienie w usługę SMS_Executive dla Ciebie.  
+Jeśli zmienisz między trybami online lub offline, po zainstalowaniu punktu połączenia usługi przed zmiana zacznie obowiązywać należy ponownie uruchomić wątek SMS_DMP_DOWNLOADER usługi SMS_Executive programu Configuration Manager. Można użyć Menedżera usług programu Configuration Manager do ponownego uruchomienia tylko wątku sms_dmp_downloader usługi SMS_Executive. Można również uruchomić ponownie usługę SMS_Executive dla programu Configuration Manager, co spowoduje ponowne uruchomienie większości składników lokacji. Ewentualnie możesz poczekać zaplanowanego zadania, takie jak kopii zapasowej lokacji, które spowoduje zatrzymanie i później ponowne uruchomienie w usługę SMS_Executive dla Ciebie.  
 
 Aby użyć Menedżera usług programu Configuration Manager, w konsoli przejdź do **monitorowanie** > **stan systemu** > **stan składnika**, wybierz **Start**, a następnie wybierz pozycję **Menedżera usług programu Configuration Manager**. W menedżerze usług:  
 
@@ -71,7 +71,7 @@ Aby użyć Menedżera usług programu Configuration Manager, w konsoli przejdź 
 
 -   Po potwierdzeniu stanu składnika ponownie kliknij prawym przyciskiem myszy składnik, a następnie wybierz **zatrzymać**.  
 
--   **Zapytanie** składnik ponownie, aby potwierdzić, że zostanie zatrzymana, kliknij prawym przyciskiem myszy składnik jeszcze raz, a następnie wybierz **Start**.  
+-   **Zapytanie** składnik ponownie, aby potwierdzić, czy jest zatrzymana. Kliknij prawym przyciskiem myszy składnik jeszcze raz, a następnie wybierz pozycję **Start**.  
 
 > [!IMPORTANT]  
 >  Proces, który dodaje subskrypcję Microsoft Intune do punktu połączenia z usługą automatycznie ustawia rolę systemu lokacji w trybie online. Punkt połączenia usługi nie obsługuje w trybie offline, gdy jest skonfigurowana z subskrypcji usługi Intune.  
@@ -85,7 +85,7 @@ Aby użyć Menedżera usług programu Configuration Manager, w konsoli przejdź 
 -   Menedżer dystrybucji na serwerze lokacji używa konta instalacji systemu lokacji do przesyłania aktualizacji z punktu połączenia usługi.
 
 ##  <a name="bkmk_urls"></a>Wymagania dotyczące dostępu do Internetu  
-Aby umożliwić wykonanie operacji, komputera, który jest hostem punktu połączenia usługi, a wszystkie zapory między tym komputerem i Internetu musi umożliwiała komunikację za pomocą portu wychodzącego **TCP 443** dla protokołu HTTPS i wychodzący port  **TCP 80** dla protokołu HTTP do poniższej lokalizacji w Internecie. Punkt połączenia usługi również obsługuje przy użyciu serwera proxy sieci web (z lub bez uwierzytelniania) Aby użyć tych lokalizacji.  Jeśli konieczne jest skonfigurowanie konta serwera proxy sieci web, zobacz: [Obsługa serwerów proxy w programie System Center Configuration Manager](/sccm/core/plan-design/network/proxy-server-support).
+Aby umożliwić wykonanie operacji, komputera, który jest hostem punktu połączenia usługi, a wszystkie zapory między tym komputerem i Internetu musi umożliwiała komunikację za pomocą portu wychodzącego **TCP 443** dla protokołu HTTPS i wychodzący port  **TCP 80** dla protokołu HTTP do poniżej lokalizacji w Internecie. Punkt połączenia usługi również obsługuje przy użyciu serwera proxy sieci web (z lub bez uwierzytelniania) Aby użyć tych lokalizacji.  Jeśli musisz skonfigurować konto użytkownika serwera proxy sieci web, zobacz: [Obsługa serwerów proxy w programie System Center Configuration Manager](/sccm/core/plan-design/network/proxy-server-support).
 
 **Aktualizacje i obsługa**  
 
@@ -124,7 +124,7 @@ Po uruchomieniu **Instalator** Aby zainstalować lokację najwyższego poziomu h
 Po uruchomieniu instalacji lub ponownej instalacji roli systemu lokacji, należy użyć **dodawania ról systemu lokacji** kreatora lub **Utwórz serwer systemu lokacji** kreatora w celu zainstalowania systemu lokacji na serwerze w lokacji najwyższego poziomu w hierarchii, oznacza to, centralnej lokacji administracyjnej lub autonomicznej lokacji głównej. Oba znajdują się na **Home** w konsoli w **administracji** > **konfiguracja lokacji** > **serwery i role systemu lokacji**.
 
 ## <a name="log-files-used-by-the-service-connection-point"></a>Pliki dziennika używanych przez punkt połączenia usługi
-Aby wyświetlić informacje dotyczące przekazywania do firmy Microsoft, Wyświetl **Dmpuploader.log** na komputerze z uruchomionym programem punkt połączenia usługi.  Pliki do pobrania, w tym postęp pobierania aktualizacji, wyświetlić **Dmpdownloader.log**. Aby uzyskać pełną listę dzienników powiązane z punktem połączenia usługi, zobacz [punkt połączenia z usługą](/sccm/core/plan-design/hierarchy/log-files#BKMK_WITLog) w temacie pliki dziennika programu Configuration Manager.
+Aby wyświetlić informacje dotyczące przekazywania do firmy Microsoft, Wyświetl **Dmpuploader.log** na komputerze z uruchomionym programem punkt połączenia usługi.  Pliki do pobrania, w tym postęp pobierania aktualizacji, wyświetlić **Dmpdownloader.log**. Aby uzyskać pełną listę dzienników powiązane z punktem połączenia usługi, zobacz [punkt połączenia z usługą](/sccm/core/plan-design/hierarchy/log-files#BKMK_WITLog) w artykule pliki dziennika programu Configuration Manager.
 
 Umożliwia także następujące zaprezentowane przepływ procesu i wpisy dziennika klucza dla pobierania aktualizacji i replikacja aktualizacji do innych lokacji:
  - [Schemat blokowy — pobieranie aktualizacji](/sccm/core/servers/manage/download-updates-flowchart)

@@ -7,19 +7,20 @@ ms.date: 01/04/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c8534a1e-57b8-4688-b6e6-299d82cfcec9
-caps.latest.revision: "1"
+caps.latest.revision: 
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 90542085af2a1e5cf0701c5eac6d2625c23eb8c6
-ms.sourcegitcommit: db9978135d7a6455d83dbe4a5175af2bdeaeafd8
+ms.openlocfilehash: 40894c4ebb562e5c979f1226349ff91c38516618
+ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="keep-windows-10-up-to-date-in-the-enterprise-using-configuration-manager"></a>Aktualizowanie systemu Windows 10 w przedsiębiorstwie za pomocą programu Configuration Manager
 
@@ -33,7 +34,7 @@ System Center Configuration Manager umożliwia kompleksowe sterowanie aktualizac
 | ------------- |-------------|
 |[Omówienie programu Configuration Manager jako usługi](/sccm/core/plan-design/changes/whats-new-incremental-versions)|Zawiera krótkie podsumowanie najważniejszych dla nowego modelu obsługi programu Configuration Manager (Current Branch)|
 |[Cykl życia pomocy technicznej](/sccm/core/servers/manage/current-branch-versions-supported)|Wyjaśniono, nowa funkcja obsługi i modelu obsługi.|
-|[Usunięte i przestarzałe funkcje](/sccm/core/plan-design/changes/removed-and-deprecated-features)|Zapewnia wczesne powiadomienie na temat przyszłych zmian, które mogą mieć wpływ na korzystanie z programu Configuration Manager.|
+|[Elementy usunięte i przestarzałe](/sccm//core/plan-design/changes/deprecated/removed-and-deprecated)|Zapewnia wczesne powiadomienie na temat przyszłych zmian, które mogą mieć wpływ na korzystanie z programu Configuration Manager.|
 |[Menedżer konfiguracji jako usługa](/sccm/core/servers/manage/updates)|W tym artykule wyjaśniono łatwa metoda w konsoli stosowania funkcji aktualizacji programu Configuration Manager.|
 |[Pobierz dostępne aktualizacje](/core/servers/manage/install-in-console-updates#get-available-updates)|Opisano dwa tryby dostępne aktualizacje funkcji uzyskanie nowego programu Configuration Manager.|
 |[Lista kontrolna aktualizacji](/sccm/core/servers/manage/install-in-console-updates#bkmk_beforeinstall)|Udostępnia listy kontrolne dotyczące wersji aktualizacji, jeśli ma to zastosowanie.| 

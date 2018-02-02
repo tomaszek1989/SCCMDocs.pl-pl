@@ -7,18 +7,19 @@ ms.date: 01/04/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: 04ed2ac1abe54c3b8c7c86f210b35f5f52d80ef6
-ms.sourcegitcommit: c432624b8816f59d51a3c8ef68960ed4099d9124
+ms.openlocfilehash: aca30a199e38b2d4ed38a458694d98010b5e2496
+ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>What's new in hybrydowego zarządzania urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Microsoft Intune
 
@@ -45,6 +46,9 @@ Każda sekcja w tym artykule wymieniono funkcje hybrydowych w trzech różnych k
 ## <a name="january-2018"></a>2018 stycznia
 
 ### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune
+
+- **Nowa funkcja akcję "Usuń" dla urządzeń z systemem Android**<!--1583480-->    
+  Rozwija akcję "Usuń" dla aplikacji Portal firmy dla systemu Android **zaktualizować ustawienia urządzenia** rozwiązywać [problemy dotyczące szyfrowania urządzenia](https://docs.microsoft.com/intune-user-help/encrypt-your-device-android).
 
 - **Zdalne blokowanie dostępne w aplikacji Portal firmy dla systemu Windows 10**<!--676506-->    
   Użytkownicy końcowi teraz mogą zdalnie blokować swoje urządzenia w aplikacji Portal firmy dla systemu Windows 10. To nie będą wyświetlane dla wybranego urządzenia lokalnego aktywnie używany.
