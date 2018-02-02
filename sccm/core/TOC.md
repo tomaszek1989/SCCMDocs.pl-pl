@@ -36,8 +36,10 @@
 ###  [What's new in version 1606](plan-design/changes/whats-new-in-version-1606.md)
 ###  [What's new in version 1602](plan-design/changes/whats-new-in-version-1602.md)
 -->
-###  [Usunięte i przestarzałe funkcje](plan-design/changes/removed-and-deprecated-features.md)
-
+###  [Usunięte i przestarzałe](plan-design/changes/deprecated/removed-and-deprecated.md)
+#### [Usunięte i przestarzałe funkcje](plan-design/changes/deprecated/removed-and-deprecated-cmfeatures.md)
+#### [Usunięte i przestarzałe dla serwerów lokacji](plan-design/changes/deprecated/removed-and-deprecated-server.md)
+#### [Usunięte i przestarzałe dla klientów](plan-design/changes/deprecated/removed-and-deprecated-client.md)
 ##   [Obsługiwane konfiguracje](plan-design/configs/supported-configurations.md)
 ###  [Wartości dotyczące rozmiarów i skalowania](plan-design/configs/size-and-scale-numbers.md)
 ###  [Wymagania wstępne dla lokacji i systemu lokacji](plan-design/configs/site-and-site-system-prerequisites.md)
@@ -341,7 +343,7 @@
 ###  [Spis sprzętu dla systemów Linux i UNIX](clients/manage/inventory/hardware-inventory-for-linux-and-unix.md)
 ###  [Zabezpieczenia i prywatność spisu sprzętu](clients/manage/inventory/security-and-privacy-for-hardware-inventory.md)
 
-##   Zapasy oprogramowania
+##   Spis oprogramowania
 ###  [Wprowadzenie do spisu oprogramowania](clients/manage/inventory/introduction-to-software-inventory.md)
 ###  [Jak skonfigurować spis oprogramowania](clients/manage/inventory/configure-software-inventory.md)
 ###  [Korzystanie z Eksploratora zasobów do wyświetlania spisu oprogramowania](clients/manage/inventory/use-resource-explorer-to-view-software-inventory.md)
