@@ -17,11 +17,11 @@ caps.handback.revision:
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 158817547d40f09fb8bd30ebedd5aea6420a8571
-ms.sourcegitcommit: aee9ac45c15f27d8cf827890edcae94c03f5fd5e
+ms.openlocfilehash: 5320d7747f7e2c6164da8c1801e631b749935d6d
+ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Kroki sekwencji zadań w programie System Center Configuration Manager
 
@@ -465,7 +465,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ogó
 ### <a name="properties"></a>Właściwości  
  Na **właściwości** karta dla tego kroku, skonfigurować ustawienia opisane w tej sekcji.  
 
- **Ścieżka**  
+ **Path**  
  Kliknij przycisk **Przeglądaj** Aby określić ścieżkę do folderu sieciowego. Użyj formatu  *\\\server\share*.
 
  **Dysk**  
@@ -1313,7 +1313,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **obra
  Kliknij przycisk **Przeglądaj**, następnie wybierz pakiet instalacyjny klienta programu Configuration Manager do użycia w ramach tego kroku.  
 
  **Użyj pakietu przedprodukcyjnego klienta, jeśli jest dostępny**  
- Jeśli pakiet klienta środowiska przedprodukcyjnego jest dostępny, sekwencja zadań używa tego pakietu, a nie pakiet produkcyjny klienta. Klient przedprodukcyjny to nowsza wersja do testowania w środowisku produkcyjnym. Kliknij przycisk **Przeglądaj**, następnie wybierz pakiet instalacyjny klienta przedprodukcyjnego do użycia w ramach tego kroku.  
+ Jeśli pakiet klienta środowiska przedprodukcyjnego jest dostępny, a komputer jest elementem członkowskim kolekcji wdrażania pilotażowego, sekwencja zadań używa tego pakietu, a nie pakiet produkcyjny klienta. Klient przedprodukcyjny to nowsza wersja do testowania w środowisku produkcyjnym. Kliknij przycisk **Przeglądaj**, następnie wybierz pakiet instalacyjny klienta przedprodukcyjnego do użycia w ramach tego kroku.  
 
  **Właściwości instalacji**  
  Przypisanie lokacji i konfiguracja domyślna są automatycznie określane przez akcję sekwencji zadań. W tym polu można określić dodatkowe właściwości instalacji, które mają być używane podczas instalacji klienta. Aby wprowadzić wiele właściwości instalacji, oddziel je spacjami.  
