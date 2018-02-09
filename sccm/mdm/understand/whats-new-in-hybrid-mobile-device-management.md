@@ -3,7 +3,7 @@ title: "What's new in hybrydowego zarządzania urządzeniami Przenośnymi"
 titleSuffix: Configuration Manager
 description: "Poznaj nowe funkcje zarządzania urządzeniami przenośnymi dostępne dla hybrydowych wdrożeń z programu Configuration Manager i usługi Intune."
 ms.custom: na
-ms.date: 01/04/2018
+ms.date: 02/06/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: aca30a199e38b2d4ed38a458694d98010b5e2496
-ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
+ms.openlocfilehash: c724d9eafde6aa9abc0d3f9bfa867418046b2ecb
+ms.sourcegitcommit: 389c4e5b4e9953b74c13b1689195f99c526fa737
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>What's new in hybrydowego zarządzania urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Microsoft Intune
 
@@ -47,7 +47,17 @@ Każda sekcja w tym artykule wymieniono funkcje hybrydowych w trzech różnych k
 
 ### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune
 
-- **Nowa funkcja akcję "Usuń" dla urządzeń z systemem Android**<!--1583480-->    
+- **Zatwierdzenie aplikacji Portal firmy dla systemu Android for Work** <!--1797090 -->    
+  Jeśli Twoja organizacja korzysta z systemu Android do pracy, należy ręcznie zatwierdzić aplikacji Portal firmy dla systemu Android, dzięki czemu będzie otrzymywać aktualizacje automatyczne zarządzanych sklepu Google Play.
+
+- **Zasady dostępu warunkowego dla usługi Intune jest dostępna wyłącznie z portalu Azure**  <!-- 1737088 1634311 -->    
+  Począwszy od tej wersji, należy skonfigurować i zarządzać zasad dostępu warunkowego w [portalu Azure](https://portal.azure.com) z **usługi Azure Active Directory** > **dostępu warunkowego** . Dla wygody można także przejść tego bloku z usługi Intune w portalu Azure pod adresem **Intune** > **dostępu warunkowego**.
+
+- **Aktualizacje do wiadomości e-mail zgodności** <!--1637547 -->    
+  Po wysłaniu wiadomości e-mail na zgłaszanie niezgodnych urządzeń szczegółowe informacje o niezgodności urządzenia są uwzględniane. 
+
+
+- **Nowa funkcja akcję "Usuń" dla urządzeń z systemem Android** <!--1583480-->    
   Rozwija akcję "Usuń" dla aplikacji Portal firmy dla systemu Android **zaktualizować ustawienia urządzenia** rozwiązywać [problemy dotyczące szyfrowania urządzenia](https://docs.microsoft.com/intune-user-help/encrypt-your-device-android).
 
 - **Zdalne blokowanie dostępne w aplikacji Portal firmy dla systemu Windows 10**<!--676506-->    
