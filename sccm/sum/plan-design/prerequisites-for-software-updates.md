@@ -3,26 +3,27 @@ title: "Wymagania wstępne dotyczące aktualizacji oprogramowania"
 titleSuffix: Configuration Manager
 description: "Dowiedz się więcej na temat wymagań wstępnych dotyczących aktualizacji oprogramowania w programie System Center Configuration Manager."
 keywords: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.date: 10/06/2016
+author: mestew
+ms.author: mstewart
+manager: dougeby
+ms.date: 02/02/2018
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology: configmgr-sum
+ms.technology:
+- configmgr-sum
 ms.assetid: fdf05118-162a-411e-b72e-386b9dc9a5e1
-ms.openlocfilehash: 905ecc023dd181a8d4801860898b05aff5e4e07f
-ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
+ms.openlocfilehash: 1907ff5bf6b1146b967e64bd381915ac863b3e55
+ms.sourcegitcommit: 389c4e5b4e9953b74c13b1689195f99c526fa737
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="prerequisites-for-software-updates-in-system-center-configuration-manager"></a>Wymagania wstępne dotyczące aktualizacji oprogramowania w programie System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-W tym temacie wymieniono wymagania wstępne dotyczące aktualizacji oprogramowania w programie System Center Configuration Manager. Dla każdego wymagania podano zależności zewnętrzne i wewnętrzne w oddzielnych tabelach.  
+W tym artykule wymieniono wymagania wstępne dotyczące aktualizacji oprogramowania w programie System Center Configuration Manager. Dla każdego wymagania podano zależności zewnętrzne i wewnętrzne w oddzielnych tabelach.  
 
 ## <a name="software-update-dependencies-external-to-configuration-manager"></a>Zależności aktualizacji oprogramowania poza programem Configuration Manager  
  Poniższe sekcje zawierają listę zależności zewnętrznych dotyczących aktualizacji oprogramowania.  
@@ -31,10 +32,10 @@ W tym temacie wymieniono wymagania wstępne dotyczące aktualizacji oprogramowan
  Internet Information Services (IIS) musi być na serwerach systemu lokacji uruchomienie punktu aktualizacji oprogramowania, punkt zarządzania i punkt dystrybucji. Aby uzyskać więcej informacji, zobacz [wymagania wstępne dotyczące ról systemu lokacji](../../core/plan-design/configs/site-and-site-system-prerequisites.md).  
 
 ### <a name="windows-server-update-services-wsus"></a>Program Windows Server Update Services (WSUS)  
- Program WSUS jest wymagany do synchronizacji aktualizacji oprogramowania oraz skanowania w celu oceny zgodności aktualizacji oprogramowania na klientach. Zanim będzie można utworzyć rolę systemu lokacji punktu aktualizacji oprogramowania, musi zostać zainstalowany serwer WSUS. Obsługiwane są następujące wersje programu WSUS dla punktu aktualizacji oprogramowania:  
+ Program WSUS jest niezbędne dla synchronizacji aktualizacji oprogramowania oraz skanowanie możliwości zastosowania aktualizacji oprogramowania na klientach. Musi być zainstalowany serwer WSUS, aby utworzyć rolę punktu aktualizacji oprogramowania. Obsługiwane są następujące wersje programu WSUS dla punktu aktualizacji oprogramowania:  
 
--   WSUS 4 (rola w systemie Windows Server 2012 i Windows Server 2012 R2)  
-
+-   10.0 WSUS (rola w systemie Windows Server 2016)
+-   Usługi WSUS 6.2 i 6.3 (rola w systemie Windows Server 2012 i Windows Server 2012 R2)  
 -   Usługi WSUS 3.2 (rola w systemie Windows Server 2008 R2)  
 
  Jeśli masz wiele punktów aktualizacji oprogramowania w lokacji, upewnij się, że wszystkie działają tę samą wersję programu WSUS.  
@@ -54,7 +55,7 @@ W tym temacie wymieniono wymagania wstępne dotyczące aktualizacji oprogramowan
 >  Nie należy używać konsoli administracyjnej programu WSUS do konfigurowania ustawień programu WSUS. Configuration Manager łączy się z usługami WSUS uruchomionym w punkcie aktualizacji oprogramowania i konfiguruje odpowiednie ustawienia.  
 
 ### <a name="windows-update-agent-wua"></a>Usługa Windows Update Agent (WUA)  
- Na klientach wymagany jest klient WUA, który umożliwia im łączenie się z serwerem WSUS i pobieranie listy aktualizacji oprogramowania w celu sprawdzenia zgodności.  
+ Na klientach wymagany jest klient WUA, aby połączyć się z serwerem WSUS. WUA pobiera listę aktualizacji oprogramowania, które muszą być skanowane pod kątem zgodności.  
 
  Po zainstalowaniu programu Configuration Manager jest pobierana najnowsza wersja klienta WUA. Następnie po zainstalowaniu klienta programu Configuration Manager WUA zostaje uaktualniony w razie potrzeby. Jeśli jednak instalacja nie powiedzie się, należy użyć innej metody w celu uaktualnienia klienta WUA.  
 
@@ -71,19 +72,19 @@ W tym temacie wymieniono wymagania wstępne dotyczące aktualizacji oprogramowan
  Punkty dystrybucji są wymagane do przechowywania zawartości dla aktualizacji oprogramowania. Aby uzyskać więcej informacji o instalacji punktów dystrybucji i zarządzaniu zawartością, zobacz [zarządzanie zawartością i infrastrukturą zawartości](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
 ### <a name="client-settings-for-software-updates"></a>Ustawienia klienta dotyczące aktualizacji oprogramowania  
- Domyślnie aktualizacje oprogramowania są włączone dla klientów. Istnieją jednak także inne ustawienia, które określają, jak i kiedy klienci oceniają zgodność oprogramowania, aktualizacji i kontrolować sposób instalowania aktualizacji oprogramowania.  
+ Domyślnie aktualizacje oprogramowania są włączone dla klientów. Istnieją inne ustawienia, które kontroli, jak i kiedy klienci oceniają zgodność aktualizacji oprogramowania i kontrolować sposób instalowania aktualizacji oprogramowania.  
 
  Aby uzyskać więcej informacji, zobacz następujące tematy:  
 
 -   [Ustawienia klienta dotyczące aktualizacji oprogramowania](../get-started/manage-settings-for-software-updates.md#BKMK_ClientSettings).   
 
--   [Ustawienia klienta aktualizacji oprogramowania](../../core/clients/deploy/about-client-settings.md#software-updates) tematu.  
+-   [Ustawienia klienta aktualizacji oprogramowania](../../core/clients/deploy/about-client-settings.md#software-updates) artykułu.  
 
 ### <a name="reporting-services-point"></a>Punkt usług raportowania  
- Rola systemu lokacji punktu usług raportowania umożliwia wyświetlanie raportów dotyczących aktualizacji oprogramowania. Ta rola jest opcjonalna, ale zalecana. Aby uzyskać więcej informacji o sposobie tworzenia raportowania punktu usług, zobacz [konfigurowanie raportowania](../../core/servers/manage/configuring-reporting.md) .  
+ Rola systemu lokacji punktu usług raportowania umożliwia wyświetlanie raportów dotyczących aktualizacji oprogramowania. Ta rola jest opcjonalna, ale zalecana. Aby uzyskać więcej informacji o sposobie tworzenia usług raportowania punktu znajduje [konfigurowanie raportowania.  
 
 ##  <a name="BKMK_RecoverUpgrades"></a> Odzyskiwanie po nieudanym synchronizowaniu kategorii Uaktualnienia przed zainstalowaniem poprawki KB 3095113  
- Aby można było zsynchronizować klasyfikację [poprawkę 3095113](https://support.microsoft.com/kb/3095113) poprawkę 3095113 **Uaktualnienia** dla usług WSUS w punktach aktualizacji oprogramowania i na serwerach lokacji. Jeśli poprawka nie jest zainstalowana, gdy klasyfikacja **Uaktualnienia** jest włączona, usługi WSUS będą widzieć uaktualnienie funkcji do kompilacji 1511 systemu Windows 10, nawet jeśli nie mogą prawidłowo pobrać i wdrożyć skojarzonych pakietów. Jeśli uaktualnienia zostaną zsynchronizowane bez uprzedniego zainstalowania [poprawkę 3095113](https://support.microsoft.com/kb/3095113), baza danych programu WSUS (SUSDB) zostanie wypełniona bezużytecznymi danymi, które muszą zostać wyczyszczone, aby można było prawidłowo wdrożyć uaktualnienia.  Aby rozwiązać ten problem, należy użyć następującej procedury.  
+ Aby można było zsynchronizować klasyfikację [poprawkę 3095113](https://support.microsoft.com/kb/3095113) poprawkę 3095113 **Uaktualnienia** dla usług WSUS w punktach aktualizacji oprogramowania i na serwerach lokacji. Jeśli poprawka nie jest zainstalowana, gdy **uaktualnień** klasyfikacji jest włączona, uaktualnienie funkcji widzi WSUS kompilacji 1511 systemu Windows 10, nawet jeśli nie można prawidłowo pobrać i wdrożyć skojarzonych pakietów. Jeśli uaktualnienia zostaną zsynchronizowane bez uprzedniego zainstalowania [poprawkę 3095113](https://support.microsoft.com/kb/3095113), wypełniania bazy danych programu WSUS (SUSDB) korzystanie z niej danych. Te dane muszą zostać wyczyszczone, aby prawidłowo wdrożyć uaktualnienia. Aby rozwiązać ten problem, należy wykonać poniższą procedurę.  
 
 #### <a name="to-recover-from-synchronizing-the-upgrades-classification-before-you-install-kb-3095113"></a>Aby odzyskiwanie po nieudanym synchronizowaniu klasyfikacji uaktualnienia przed zainstalowaniem poprawki KB 3095113  
 
@@ -102,11 +103,11 @@ W tym temacie wymieniono wymagania wstępne dotyczące aktualizacji oprogramowan
 
      Aby zbiorczo usunąć aktualizacje oprogramowania z klasyfikacją Uaktualnienia, możesz zmodyfikować skrypt programu PowerShell, tak aby odczytywał wiele identyfikatorów GUID z pliku tekstowego.  
 
-2.  Usuń zaznaczenie pola wyboru **uaktualnień** klasyfikacji we właściwościach składnika punktu aktualizacji oprogramowania (Aby uzyskać więcej informacji, zobacz [skonfigurować klasyfikacje i produkty](../get-started/configure-classifications-and-products.md)), a następnie uruchom synchronizację aktualizacji oprogramowania (Aby uzyskać więcej informacji, zobacz [synchronizowanie aktualizacji oprogramowania](../get-started/synchronize-software-updates.md).  
+2.  Usuń zaznaczenie pola wyboru **uaktualnień** klasyfikacji we właściwościach składnika punktu aktualizacji oprogramowania (Aby uzyskać więcej informacji, zobacz [skonfigurować klasyfikacje i produkty](../get-started/configure-classifications-and-products.md)), a następnie uruchom (synchronizacji aktualizacji oprogramowania Aby uzyskać więcej informacji, zobacz [synchronizowanie aktualizacji oprogramowania](../get-started/synchronize-software-updates.md)).  
 
 3.  Zainstaluj [poprawkę 3095113](https://support.microsoft.com/kb/3095113) dla usług WSUS w punktach aktualizacji oprogramowania i serwerach lokacji.  
 
-4.  Wybierz **uaktualnień** klasyfikacji we właściwościach składnika punktu aktualizacji oprogramowania (Aby uzyskać więcej informacji, zobacz [skonfigurować klasyfikacje i produkty](../get-started/configure-classifications-and-products.md)), a następnie uruchom synchronizację aktualizacji oprogramowania (Aby uzyskać więcej informacji, zobacz [synchronizowanie aktualizacji oprogramowania](../get-started/synchronize-software-updates.md).  
+4.  Wybierz **uaktualnień** klasyfikacji we właściwościach składnika punktu aktualizacji oprogramowania (Aby uzyskać więcej informacji, zobacz [skonfigurować klasyfikacje i produkty](../get-started/configure-classifications-and-products.md)), a następnie uruchom (synchronizacji aktualizacji oprogramowania Aby uzyskać więcej informacji, zobacz [synchronizowanie aktualizacji oprogramowania](../get-started/synchronize-software-updates.md)).  
 
 ## <a name="next-steps"></a>Następne kroki
 [Przygotowanie do zarządzania aktualizacjami oprogramowania](../get-started/prepare-for-software-updates-management.md)
