@@ -3,29 +3,30 @@ title: Program Endpoint Protection
 titleSuffix: Configuration Manager
 description: "Dowiedz się, jak zarządzać zasadami ochrony przed złośliwym kodem i zabezpieczeniami zapory systemu Windows dla komputerów klienckich w hierarchii programu Configuration Manager."
 ms.custom: na
-ms.date: 02/6/2017
+ms.date: 02/09/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 76c90f64-d729-456b-8304-01852cd66fb6
-caps.latest.revision: "11"
-author: NathBarn
-ms.author: nathbarn
-manager: angrobe
-ms.openlocfilehash: 308c69f4631a1bcc28f7d8460a4aa3abb02f0650
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+caps.latest.revision: 
+author: mestew
+ms.author: mstewart
+manager: dougeby
+ms.openlocfilehash: 3f8d0d7934a539729793cd0307d6fa5d3e31bf3a
+ms.sourcegitcommit: fbde417e3c3002898bd216a7e110e725ae269893
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 02/12/2018
 ---
 # <a name="endpoint-protection"></a>Program Endpoint Protection
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Program Endpoint Protection w programie System Center Configuration Manager umożliwia zarządzanie zasadami ochrony przed złośliwym kodem i zabezpieczeniami zapory systemu Windows dla komputerów klienckich w hierarchii programu Configuration Manager.  
+Program Endpoint Protection zarządza zasadami ochrony przed złośliwym kodem i zabezpieczeniami zapory systemu Windows dla komputerów klienckich w hierarchii programu Configuration Manager.  
 
 > [!IMPORTANT]  
 >  Możesz muszą mieć licencję na potrzeby zarządzania klientami w hierarchii programu Configuration Manager przez program Endpoint Protection.  
@@ -34,7 +35,7 @@ Program Endpoint Protection w programie System Center Configuration Manager umo�
 
 -   Konfigurowanie zasad ochrony przed złośliwym kodem, ustawienia zapory systemu Windows i zarządzanie nimi Windows Defender Advanced Threat Protection do wybranych grup komputerów  
 -   Użyj Menedżera konfiguracji aktualizacji oprogramowania do pobrania najnowszych plików definicji ochrony przed złośliwym kodem w celu zapewnienia aktualności komputerów klienckich  
--   Wysyłanie powiadomień e-mail, korzystanie z monitorowania w konsoli i wyświetlanie raportów w celu informowania użytkowników administracyjnych na bieżąco o wykryciu złośliwego oprogramowania na komputerach klienckich  
+-   Wysyłanie powiadomień e-mail, użyj monitorowania w konsoli i wyświetlanie raportów. Te akcje poinformować użytkowników administracyjnych, po wykryciu złośliwego oprogramowania na komputerach klienckich.  
 
 Począwszy od systemu Windows 10 i Windows Server 2016 komputery, usługi Windows Defender jest już zainstalowana. Dla tych systemów operacyjnych klienta zarządzania dla usługi Windows Defender jest instalowana podczas instalacji klienta programu Configuration Manager. Windows 8.1 i starszych komputerów klient programu Endpoint Protection jest instalowany z klienta programu Configuration Manager. Usługa Windows Defender i klienta programu Endpoint Protection mają następujące możliwości:  
 
@@ -42,18 +43,18 @@ Począwszy od systemu Windows 10 i Windows Server 2016 komputery, usługi Window
 -   wykrywanie programów typu rootkit i wykonywanie działań korygujących,  
 -   ocena krytycznych luk w zabezpieczeniach i automatyczne aktualizowanie definicji oraz aparatu,  
 -   wykrywanie luk w zabezpieczeniach sieci przy użyciu systemu Network Inspection System.  
--   Integracja z usługą ochrony chmury w celu zgłaszania złośliwego oprogramowania do firmy Microsoft. Po dołączeniu do tej usługi klient programu Endpoint Protection lub usługa Windows Defender może pobierać najnowsze definicje z Centrum ds. ochrony przed złośliwym oprogramowaniem w przypadku wykrycia niezidentyfikowanego złośliwego oprogramowania na komputerze.  
+-   Integracja z usługą ochrony chmury w celu zgłaszania złośliwego oprogramowania do firmy Microsoft. Po dołączeniu do tej usługi klienta programu Endpoint Protection lub usługa Windows Defender pobiera najnowsze definicje z Centrum ochrony przed złośliwym oprogramowaniem w przypadku wykrycia niezidentyfikowanego złośliwego oprogramowania na komputerze.  
 
 > [!NOTE]  
 >  Klient programu Endpoint Protection można zainstalować na serwerze z uruchomioną funkcją Hyper-V oraz na maszynach wirtualnych gościa z obsługiwanymi systemami operacyjnymi. Aby uniknąć nadmiernego użycia procesora CPU, akcje programu Endpoint Protection ma wbudowane losowe opóźnienie, tak aby usługi ochrony nie były uruchamiane jednocześnie.  
 
- Ponadto program Endpoint Protection w programie Configuration Manager umożliwia zarządzanie ustawieniami Zapory systemu Windows w konsoli programu Configuration Manager.  
+ Ponadto należy zarządzać ustawienia zapory systemu Windows z programem Endpoint Protection w konsoli programu Configuration Manager.  
 
  [Przykładowy scenariusz: Używanie programu System Center Endpoint Protection do ochrony komputerów przed złośliwym oprogramowaniem w programie System Center Configuration Manager](scenarios-endpoint-protection.md) programu Endpoint Protection i Zaporą systemu Windows.  
 
 
 ## <a name="managing-malware-with-endpoint-protection"></a>Zarządzanie ochroną przed złośliwym kodem przy użyciu programu Endpoint Protection  
- Program Endpoint Protection w programie Configuration Manager umożliwia tworzenie zasad ochrony przed złośliwym oprogramowaniem, które zawierają ustawienia konfiguracji klienta programu Endpoint Protection. Następnie można wdrożyć te zasady ochrony przed złośliwym kodem na komputerach klienckich i monitorować je w **stan programu Endpoint Protection** węzeł w węźle **zabezpieczeń** w **monitorowanie** obszaru roboczego, lub za pomocą raportów programu Configuration Manager.  
+ Program Endpoint Protection w programie Configuration Manager umożliwia tworzenie zasad ochrony przed złośliwym oprogramowaniem, które zawierają ustawienia konfiguracji klienta programu Endpoint Protection. Te zasady ochrony przed złośliwym kodem można wdrożyć na komputerach klienckich. Następnie monitorowania zgodności w **stan programu Endpoint Protection** węźle **zabezpieczeń** w **monitorowanie** obszaru roboczego. Również Użyj raportów programu Endpoint Protection w **raportowania** węzła.  
 
  Informacje dodatkowe:  
 
@@ -77,12 +78,12 @@ Począwszy od systemu Windows 10 i Windows Server 2016 komputery, usługi Window
 >  Program Endpoint Protection obsługuje tylko zarządzanie Zaporą systemu Windows.  
 
 
- Aby uzyskać więcej informacji o sposobie tworzenia i wdrażania zasad zapory systemu Windows dla programu Endpoint Protection, zobacz [sposobu tworzenia i wdrażania zasad zapory systemu Windows dla programu Endpoint Protection w programie System Center Configuration Manager](create-windows-firewall-policies.md).  
+ Aby uzyskać więcej informacji, zobacz [sposobu tworzenia i wdrażania zasad zapory systemu Windows dla programu Endpoint Protection](create-windows-firewall-policies.md).  
 
 
 ## <a name="windows-defender-advanced-threat-protection"></a>Usługa Windows Defender Advanced Threat Protection
 
-Począwszy od wersji 1606 programu Configuration Manager (wersji current branch), program Endpoint Protection ułatwia zarządzanie i monitorowanie Windows Defender Advanced Threat Protection (ATP). Windows Defender ATP to nowa usługa, która pomaga firmom wykrywania, badanie i odpowiadać na zaawansowanych ataków w swoich sieciach. Zobacz [usługa Windows Defender Advanced Threat Protection](windows-defender-advanced-threat-protection.md).
+Program Endpoint Protection zarządza i monitoruje Windows Defender Advanced Threat Protection (ATP). Usługa Windows Defender ATP ułatwia przedsiębiorstwom wykrywania, badanie i odpowiadać na zaawansowanych ataków w sieci firmowej. Aby uzyskać więcej informacji, zobacz [Windows Defender Advanced Threat Protection](windows-defender-advanced-threat-protection.md).
 
 ## <a name="endpoint-protection-workflow"></a>Przepływ pracy w programie Endpoint Protection  
  Użyj poniższym diagramie, aby ułatwić zrozumienie przepływu pracy do implementacji programu Endpoint Protection w hierarchii programu Configuration Manager.  
@@ -109,13 +110,12 @@ Wykonaj następujące kroki, aby pobrać plik obrazu zawierającego oprogramowan
 2. Wybierz **pliki do pobrania i klucze** kartę w górnej części strony.
 3. Filtr produktu **programu System Center Endpoint Protection (wersji current branch)**.
 4. Kliknij łącze, aby **Pobierz**
-5. Kliknij przycisk **Kontynuuj**. Powinny pojawić kilka plików, w tym o nazwie: **System Center Endpoint Protection (bieżącej gałęzi — wersja 1606) dla systemu operacyjnego Linux i wielu języków systemu operacyjnego dla komputerów Macintosh 32/64-bitowy 1579 MB ISO**.
-6. Kliknij ikonę strzałki, aby pobrać plik. Nazwa pliku jest **SW_DVD5_Sys_Ctr_Endpnt_Prtctn_1606_MultiLang_-2_EptProt_Lin_Mac_MLF_X21-44498. ISO**.
+5. Kliknij przycisk **Kontynuuj**. Powinny pojawić kilka plików, w tym o nazwie: **System Center Endpoint Protection (bieżącej gałęzi — wersja 1606) dla systemu operacyjnego Linux i wielu języków systemu operacyjnego dla komputerów Macintosh 32/64-bitowy 1878 MB ISO**.
+6. Aby pobrać plik, kliknij ikonę strzałki. Nazwa pliku jest **SW_DVD5_Sys_Ctr_Endpnt_Prtctn_1606_MultiLang_-3_EptProt_Lin_Mac_MLF_X21-67050. ISO**.
 
-Ta lipca 2017 aktualizacji (X21 44498) obejmuje następujące elementy:
+Aktualizacja 2018 stycznia (X21 67050) obejmuje następujące wersje:
 
-- System Center Endpoint Protection dla komputerów Mac 4.5.28.1 (zaktualizowane instalacji certyfikatu)
-- System Center Endpoint Protection dla systemu Linux 4.5.18.0 (nowe pakiety językowe)
-- System Center Endpoint Protection dla systemu Linux dokumentacji (poprawione wskazówki dotyczące ochrony w czasie rzeczywistym)
+- System Center Endpoint Protection dla komputerów Mac 4.5.32.0 (obsługę 10.13 Sierra wysokiej macOS)
+- System Center Endpoint Protection dla systemu Linux 4.5.20.0 
 
- Więcej informacji o sposobie instalowania i zarządzania klientami programu Endpoint Protection dla komputerów z systemem Linux i komputerów Mac zawiera dokumentacja dostarczona z tymi produktami znajdująca się w folderze **Dokumentacja** .
+ Aby uzyskać więcej informacji o sposobie instalowania i zarządzania klientami programu Endpoint Protection dla komputerów z systemami Linux i komputerów Mac należy użyć zawiera dokumentacja dostarczona z tymi produktami. Niniejsza dokumentacja produktu jest w **dokumentacji** folderu. Plik ISO.
