@@ -24,7 +24,7 @@
     "live-oldev",
     "live"
   ],
-  "git_repository_url_open_to_public_contributors": "https://github.com/Microsoft/SCCMDocs-pr.pl-pl",
+  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/SCCMDocs.pl-pl",
   "git_repository_branch_open_to_public_contributors": "live",
   "continue_with_document_error": true,
   "skip_source_output_uploading": false,
@@ -41,7 +41,7 @@
     },
     {
       "path_to_root": "_themes.pdf",
-      "url": "https://github.com/Microsoft/templates.docs.msft.pdf", 
+      "url": "https://github.com/Microsoft/templates.docs.msft.pdf",
       "branch": "master",
       "branch_mapping": {}
     },
@@ -55,16 +55,16 @@
       }
     }
   ],
-"branch_target_mapping": {
-     "live-sxs": [
-           "Publish",
-           "Pdf" 
+  "branch_target_mapping": {
+    "live-sxs": [
+      "Publish",
+      "Pdf"
     ],
     "live": [
-           "Publish",
-           "Pdf"
+      "Publish",
+      "Pdf"
     ]
-},
+  },
   "need_generate_pdf_url_template": true,
   "need_generate_pdf": false,
   "need_generate_intellisense": false,
