@@ -3,7 +3,7 @@ title: "Obsługiwane wersje programu SQL Server"
 titleSuffix: Configuration Manager
 description: Pobierz wymagania konfiguracji i wersji programu SQL Server do hostowania bazy danych lokacji programu System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/18/2017
+ms.date: 02/14/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,11 +16,11 @@ caps.latest.revision:
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 82df06873449d538b7efbe414a451d746d48e11f
-ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
+ms.openlocfilehash: 5c17efa3498907fcc57d366965bec3b4198890bb
+ms.sourcegitcommit: 37e990d191028160486dbca286d2ea945bd5c8c3
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="supported-sql-server-versions-for-system-center-configuration-manager"></a>Obsługiwane wersje programu SQL Server dla programu System Center Configuration Manager
 
@@ -29,8 +29,8 @@ ms.lasthandoff: 02/01/2018
 Każda lokacja programu System Center Configuration Manager wymaga obsługiwana wersja programu SQL Server i konfigurację do obsługi bazy danych lokacji.  
 
 ##  <a name="bkmk_Instances"></a> Wystąpienia i lokalizacje programu SQL Server  
- **Centralna lokacja administracyjna i lokacje główne:**  
-Bazy danych lokacji musi używać pełnej instalacji programu SQL Server.  
+ **Centralna lokacja administracyjna i lokacje główne**  
+ Bazy danych lokacji musi używać pełnej instalacji programu SQL Server.  
 
  SQL Server może znajdować się na:  
 
@@ -45,7 +45,7 @@ Obsługiwane są następujące wystąpienia:
 -   Grupa dostępności AlwaysOn programu SQL Server. Ta opcja wymaga programu Configuration Manager w wersji 1602 lub nowszej. Aby uzyskać więcej informacji, zobacz [AlwaysOn programu SQL Server dla bazy danych lokacji o wysokiej dostępności programu System Center Configuration Manager](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).
 
 
- **Lokacje dodatkowe:**  
+ **Lokacje dodatkowe**  
  Bazy danych lokacji można użyć domyślnego wystąpienia pełnej instalacji programu SQL Server lub SQL Server Express.  
 
  Program SQL Server musi znajdować się na komputerze serwera lokacji.  
@@ -59,16 +59,16 @@ Obsługiwane są następujące wystąpienia:
 Replikacja transakcyjna programu SQL Server jest obsługiwana tylko na potrzeby replikacji obiektów do punktów zarządzania, które są skonfigurowane do używania [replik bazy danych](https://technet.microsoft.com/library/mt608546.aspx).  
 
 ##  <a name="bkmk_SQLVersions"></a> Obsługiwane wersje programu SQL Server  
- W hierarchii z wieloma lokacjami różnych lokacji możesz użyć innej wersji programu SQL Server do hostowania bazy danych lokacji, tak długo, jak zostały spełnione następujące warunki:
+ W hierarchii z wieloma lokacjami różnych lokacji możesz użyć innej wersji programu SQL Server do hostowania bazy danych lokacji. Tak długo, jak spełnione są następujące elementy:
  -  Program Configuration Manager obsługuje wersje programu SQL Server, którego używasz.
  -  Wersje programu SQL Server, którego używasz pozostają w pomocy technicznej firmy Microsoft.
  -  SQL Server obsługuje replikację między dwoma wersjami programu SQL Server.  Na przykład [programu SQL Server nie obsługuje replikacji między programu SQL Server 2008 R2 i SQL Server 2016](https://docs.microsoft.com/sql/relational-databases/replication/deprecated-features-in-sql-server-replication).
 
 
 
- O ile nie określono inaczej, następujące wersje programu SQL Server są obsługiwane przez wszystkie aktywne wersje programu System Center Configuration Manager. Jeśli obsługa nowej wersji programu SQL Server lub z dodatkiem Service pack jest dodawany, wersji programu Configuration Manager, który dodaje obsługę zostanie zapisany. Podobnie jeśli obsługa jest przestarzała, znaleźć szczegółowe informacje o usterce wersje programu Configuration Manager.   
+ O ile nie określono inaczej, następujące wersje programu SQL Server są obsługiwane przez wszystkie aktywne wersje programu System Center Configuration Manager. Jeśli obsługi nowej wersji programu SQL Server lub z dodatkiem Service pack jest dodawany, wersji programu Configuration Manager, który dodaje obsługę jest odnotowany. Podobnie jeśli obsługa jest przestarzała, znaleźć szczegółowe informacje o usterce wersje programu Configuration Manager.   
 
-Obsługa określonego dodatku service pack programu SQL Server obejmuje aktualizacje zbiorcze, chyba że awarie zgodność ze starszymi wersjami usługi podstawowej wersji pakietu. Nie wersji dodatku service pack należy zauważyć, obsługa dotyczy wersji programu SQL Server bez dodatku service pack. W przyszłości Jeśli wydaniu dodatku service pack do wersji SQL Server instrukcji obsługi oddzielnych będą deklarowane przed nowej wersji dodatku service pack jest obsługiwany.
+Obsługa określonego dodatku service pack programu SQL Server obejmuje aktualizacje zbiorcze, chyba że awarie zgodność ze starszymi wersjami usługi podstawowej wersji pakietu. Nie wersji dodatku service pack należy zauważyć, obsługa dotyczy wersji programu SQL Server bez dodatku service pack. W przyszłości Jeśli wydaniu dodatku service pack do wersji SQL Server instrukcji oddzielne obsługi jest zadeklarowany przed nowej wersji dodatku service pack jest obsługiwany.
 
 
 > [!IMPORTANT]  
@@ -135,7 +135,7 @@ Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktu
 -->
 
 ### <a name="sql-server-2008-r2-sp3-standard-enterprise-datacenter"></a>SQL Server 2008 R2 SP3: Standard, Enterprise, Datacenter     
-  Ta wersja programu SQL Server nie jest obsługiwana [począwszy od wersji 1702](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server#deprecated-support-for-sql-server-versions-as-a-site-database).  
+  Ta wersja programu SQL Server nie jest obsługiwana [począwszy od wersji 1702.](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server#deprecated-support-for-sql-server-versions-as-a-site-database)  
  Ta wersja programu SQL Server jest obsługiwany w przypadku korzystania z wersji programu Configuration Manager przed 1702.
 
 Jeśli są obsługiwane przez wersję programu Configuration Manager, można tej wersji programu SQL Server bez wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:  
@@ -185,34 +185,34 @@ Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktu
 ##  <a name="bkmk_SQLConfig"></a> Konfiguracje wymagane dla programu SQL Server  
  Poniższe elementy są wymagane przez wszystkie instalacje programu SQL Server, której użyjesz dla bazy danych lokacji (w tym programu SQL Server Express). Program Configuration Manager instaluje program SQL Server Express w ramach instalacji lokacji dodatkowej, te konfiguracje są tworzone automatycznie dla Ciebie.  
 
- **Wersja architektury programu SQL Server:**  
+ **Wersja architektury programu SQL Server**  
  Configuration Manager wymaga 64-bitowej wersji programu SQL Server do obsługi bazy danych lokacji.  
 
- **Sortowanie bazy danych:**  
+ **Sortowanie bazy danych**  
  W każdej lokacji zarówno wystąpienie programu SQL Server, który jest używany dla lokacji i bazy danych lokacji musi używać następującego sortowania: **SQL_Latin1_General_CP1_CI_AS**.  
 
  Program Configuration Manager obsługuje dwa wyjątki związane z tym sortowaniem, aby spełniać normy, które są zdefiniowane w GB18030 w Chinach. Aby uzyskać więcej informacji, zobacz [Obsługa wymagań międzynarodowych w programie System Center Configuration Manager](../../../core/plan-design/hierarchy/international-support.md).  
 
- **Poziom zgodności bazy danych:** </br>
+ **Poziom zgodności bazy danych** </br>
  Program Configuration Manager wymaga, aby poziom zgodności bazy danych lokacji być nie mniejszy niż najniższa obsługiwana wersja programu SQL Server dla używanej wersji programu Configuration Manager. Na przykład, począwszy od wersji 1702, musisz mieć [bazy danych ma poziom zgodności](https://docs.microsoft.com/sql/relational-databases/databases/view-or-change-the-compatibility-level-of-a-database) wynosił co najmniej 110. <!-- SMS.506266--> 
 
- **Funkcje programu SQL Server:**  
+ **Funkcje programu SQL Server**  
  Każdy serwer lokacji wymaga tylko funkcji **Usługi aparatu bazy danych** .  
 
- Replikacja bazy danych programu Configuration Manager nie wymaga **replikacji programu SQL Server** funkcji. Jednak taka konfiguracja programu SQL Server jest wymagana, jeśli używasz [replik bazy danych dla punktów zarządzania programu System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
+ Replikacja bazy danych programu Configuration Manager nie wymaga **replikacji programu SQL Server** funkcji. Jednak taka konfiguracja programu SQL Server jest wymagana, gdy używasz [replik bazy danych dla punktów zarządzania programu System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
 
- **Uwierzytelnianie systemu Windows:**  
+ **Uwierzytelnianie systemu Windows**  
  Program Configuration Manager wymaga **uwierzytelniania systemu Windows** do weryfikowania połączeń z bazą danych.  
 
- **Wystąpienie programu SQL Server:**  
+ **Wystąpienie programu SQL Server**  
  Musisz użyć dedykowanego wystąpienia programu SQL Server dla każdej lokacji. Wystąpienie może być **nazwane wystąpienie** lub **domyślnego wystąpienia**.  
 
- **Pamięć programu SQL Server:**  
- Zarezerwuj pamięć dla programu SQL Server przy użyciu programu SQL Server Management Studio i ustawienie **minimalna ilość pamięci serwera** w obszarze **opcje pamięci serwera**. Aby uzyskać więcej informacji na temat sposobu ustawiania stałej ilości pamięci, zobacz [jak: Ustawianie stałej ilości pamięci (SQL Server Management Studio)](http://go.microsoft.com/fwlink/p/?LinkId=233759).  
+ **Pamięć serwera SQL**  
+ Zarezerwuj pamięć dla programu SQL Server przy użyciu programu SQL Server Management Studio i ustawienie **minimalna ilość pamięci serwera** w obszarze **opcje pamięci serwera**. Aby uzyskać więcej informacji na temat ustawiania to zobacz [jak: Ustawianie stałej ilości pamięci (SQL Server Management Studio)](http://go.microsoft.com/fwlink/p/?LinkId=233759).  
 
--   **Dla serwera bazy danych, który jest zainstalowany na tym samym komputerze co serwer lokacji:** Ogranicz pamięć programu SQL Server z 50 do 80 procent dostępnej adresowalnej pamięci systemu.  
+-   **Dla serwera bazy danych, który jest zainstalowany na tym samym komputerze co serwer lokacji** Ogranicz pamięć programu SQL Server z 50 do 80 procent dostępnej adresowalnej pamięci systemu.  
 
--   **Serwer dedykowany bazy danych (poza komputerem serwera lokacji):** Ogranicz pamięć programu SQL Server z 80 do 90 procent dostępnej adresowalnej pamięci systemu.  
+-   **Na serwer dedykowany bazy danych (poza komputerem serwera lokacji)** Ogranicz pamięć programu SQL Server z 80 do 90 procent dostępnej adresowalnej pamięci systemu.  
 
 -   **Dla rezerwa pamięci dla puli buforów dla każdego wystąpienia programu SQL Server w użyciu:**  
 
@@ -220,7 +220,7 @@ Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktu
     -   Dla lokacji głównej: Ustaw co najmniej 8 gigabajtów (GB).  
     -   Dla lokacji dodatkowej: Ustaw co najmniej 4 gigabajty (GB).  
 
-**Zagnieżdżone wyzwalacze SQL:**  
+**Zagnieżdżone wyzwalacze SQL**  
  [Zagnieżdżone wyzwalacze SQL](http://go.microsoft.com/fwlink/?LinkId=528802) muszą być włączone.  
 
  **Integracja środowiska CLR programu SQL Server**  
@@ -229,7 +229,7 @@ Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktu
 ##  <a name="bkmk_optional"></a> Konfiguracje opcjonalne dla programu SQL Server  
  Następujące konfiguracje są opcjonalne dla poszczególnych baz danych korzystających z pełnej instalacji programu SQL Server.  
 
- **Usługa SQL Server:**  
+ **Usługi SQL Server**  
  Można skonfigurować usługę SQL Server, aby była uruchamiana przy użyciu:  
 
 -   A *niskich prawach użytkownika domeny* konta:  
@@ -248,14 +248,14 @@ Informacje o nazwach SPN dla bazy danych lokacji, zobacz [zarządzać nazwami SP
 
 Aby uzyskać informacje na temat zmieniania konta używanego przez usługi SQL Server, zobacz [jak: Zmienianie konta uruchamiania usługi programu SQL Server (SQL Server Configuration Manager)](http://go.microsoft.com/fwlink/p/?LinkId=237661).  
 
-**Usługi Usługi SQL Server Reporting Services:**  
+**SQL Server Reporting Services**  
 SQL Server Reporting Services jest wymagany do zainstalowania punktu usług raportowania, który umożliwia uruchamianie raportów.  
 
 > [!IMPORTANT]  
 > Po uaktualnieniu z poprzedniej wersji programu SQL Server, może zostać wyświetlony następujący błąd:  *Raport nie istnieje konstruktor*.    
 > Aby rozwiązać ten problem, należy ponownie zainstalować rolę systemu lokacji punktu usług raportowania.
 
-**Porty programu SQL Server:**  
+**Porty serwera SQL**  
 Do komunikacji z aparatem bazy danych programu SQL Server oraz replikacji między lokacjami można użyć w domyślnej konfiguracji portów programu SQL Server lub określić porty niestandardowe:  
 
 -   **Komunikacji między lokacjami** Użyj programu SQL Server Service Broker, która używa portu TCP 4022 domyślnie.  
@@ -279,4 +279,4 @@ Na przykład sposobu konfigurowania programu SQL Server do używania konkretnego
 Należy uaktualnić używanej wersji programu SQL Server, zalecamy następujących metod z ułatwia bardziej złożonych.
 1. [Uaktualnienie programu SQL Server w miejscu](/sccm/core/servers/manage/upgrade-on-premises-infrastructure#a-namebkmksupconfigupgradedbsrva-upgrade-sql-server-on-the-site-database-server) (zalecane).
 2. Instalowanie nowej wersji programu SQL Server na nowym komputerze, a następnie [opcja przenoszenia bazy danych](/sccm/core/servers/manage/modify-your-infrastructure#a-namebkmkdbconfiga-modify-the-site-database-configuration) Instalatora programu Configuration Manager, aby wskazywały nowy serwer SQL serwera lokacji.
-3. Użyj [kopii zapasowych i odzyskiwania](/sccm/protect/understand/backup-and-recovery).
+3. Użyj [kopii zapasowych i odzyskiwania](/sccm/protect/understand/backup-and-recovery). Za pomocą kopii zapasowych i odzyskiwania dla scenariusza uaktualniania programu SQL jest obsługiwana. Możesz zignorować wymaganie versioning SQL podczas przeglądania [zagadnienia przed odzyskaniem lokacji](/sccm/protect/understand/recover-sites.md#considerations-before-recovering-a-site). 
