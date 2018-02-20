@@ -18,15 +18,15 @@ author: mestew
 ms.author: mstewart
 manager: dougeby
 robots: noindex,nofollow
-ms.openlocfilehash: e077c83277e7ca2633ca29633327398b96e5e712
-ms.sourcegitcommit: e15516983883a4dd002c4bdd114147b04b811021
+ms.openlocfilehash: cfc54c1beb92d0102897f77ce3c287cc0ef9e0f4
+ms.sourcegitcommit: fbd4a9d2fa8ed4ddd3a0fecc4a2ec4fc0ccc3d0c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="use-the-product-lifecycle-dashboard-to-manage-microsoft-lifecycle-policy-in-system-center-configuration-manager"></a>Pulpit nawigacyjny cyklu życia produktów do zarządzania zasady cyklu pomocy firmy Microsoft w programie System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (wersja zapoznawcza Technical Preview)*
+Dotyczy: System Center Configuration Manager (wersja zapoznawcza Technical Preview)*
 
 Począwszy od [wersji zapoznawczej Technical Preview 1802](/sccm/core/get-started/capabilities-in-technical-preview-1802), korzystając z pulpitu nawigacyjnego cyklu życia produktów Configuration Manager. Pulpitu nawigacyjnego przedstawia stan zasad cykl życia produktów firmy Microsoft dla produktów firmy Microsoft zainstalowane na urządzeniach zarządzanych przez program Configuration Manager. Pulpit nawigacyjny udostępnia informacje o produktach firmy Microsoft w środowisku, możliwości obsługi stanu i daty zakończenia wsparcia. Pulpit nawigacyjny umożliwia zrozumieć dostępność obsługi dla każdego produktu. Pomaga zaplanować korzystając z aktualizacji produktów firmy Microsoft przed osiągnięciem ich bieżący koniec obsługi.  
 
@@ -40,6 +40,9 @@ Aby uzyskać więcej informacji na temat zasad cyklu życia produktów firmy Mic
 - Punkt synchronizacji analizy zasobów należy skonfigurowane i zsynchronizowane. Aby uzyskać więcej informacji, zobacz [Konfigurowanie analizy zasobów w programie System Center Configuration Manager](/sccm/core/clients/manage/asset-intelligence/configuring-asset-intelligence).
 
 Dane na pulpicie nawigacyjnym zależy od tego, o zainstalowany punkt synchronizacji analizy zasobów. Pulpit nawigacyjny korzysta z katalogu analizy zasobów jako metadanych tytuły produktów. Metadane zostaną porównane z magazynu danych w hierarchii. 
+
+>[!NOTE]
+>W przypadku konfigurowania punktu Usługi analizy zasobów po raz pierwszy, upewnij się, że [włączyć klasy spisu sprzętu analizy zasobów](/sccm/core/clients/manage/asset-intelligence/configuring-asset-intelligence#BKMK_EnableAssetIntelligence). Pulpit nawigacyjny cyklu życia jest zależna od tych klas spisu sprzętu analizy zasobów i zostanie nie wyświetlania danych, dopóki klienci mają skanowane pod kątem spisu sprzętu i zwróceniu.  
 
 ## <a name="use-the-microsoft-product-lifecycle-dashboard"></a>Pulpit nawigacyjny cykl życia produktów firmy Microsoft
 

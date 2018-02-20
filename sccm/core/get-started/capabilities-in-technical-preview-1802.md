@@ -15,15 +15,15 @@ ms.assetid: 4884a2d3-13ce-44e5-88c4-a66dc7ec6014
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 83648c791117dd537968e8c0b0d71203f14f1075
-ms.sourcegitcommit: e15516983883a4dd002c4bdd114147b04b811021
+ms.openlocfilehash: 1b5e8f744573680ab55fcfff26622e312206ca1a
+ms.sourcegitcommit: fbd4a9d2fa8ed4ddd3a0fecc4a2ec4fc0ccc3d0c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="capabilities-in-technical-preview-1802-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1802 programu System Center Configuration Manager
 
-*Dotyczy: System Center Configuration Manager (wersja zapoznawcza Technical Preview)*
+Dotyczy: System Center Configuration Manager (wersja zapoznawcza Technical Preview)*
 
 W tym artykule przedstawiono funkcje, które są dostępne w wersji Technical Preview programu System Center Configuration Manager, wersja 1802. Można zainstalować tę wersję, aby zaktualizować i dodać nowe funkcje do lokacji programu Configuration Manager technical preview. 
 
@@ -406,7 +406,7 @@ Począwszy od tej wersji klienta programu Configuration Manager jest obsługiwan
 
 ## <a name="changes-to-phased-deployments"></a>Zmiany do wdrożenia etapowego
 <!-- 1357405 -->
-Wdrożenia etapowego zautomatyzować skoordynowane, Sekwencyjna wdrażanie oprogramowania bez tworzenia wielu wdrożeń. W tej wersji Technical Preview można wykonać kreatora etapowego wdrażania dla sekwencji zadań w konsoli administracyjnej i wdrożenia są tworzone. Jednak na etapie produkcji nie zostanie uruchomiony automatycznie po spełniające kryteria sukcesu fazy pilotażowej. Na etapie produkcji można uruchomić ręcznie za pomocą instrukcji SQL.   
+Wdrożenia etapowego zautomatyzować skoordynowane, Sekwencyjna wdrażanie oprogramowania w wielu kolekcjach. W tej wersji Technical Preview można wykonać kreatora etapowego wdrażania dla sekwencji zadań w konsoli administracyjnej i wdrożenia są tworzone. Jednak na drugim etapie nie zostanie uruchomiony automatycznie po spełniające kryteria sukcesu fazy pierwszego. Na drugim etapie można uruchomić ręcznie za pomocą instrukcji SQL.   
 
 ### <a name="try-it-out"></a>Wypróbuj  
   Spróbuj wykonać zadania. Wyślij **opinii** z **Home** karty wstążki zawiadomienie nas o tym, jak Ci poszło.
@@ -414,14 +414,14 @@ Wdrożenia etapowego zautomatyzować skoordynowane, Sekwencyjna wdrażanie oprog
 **Utwórz etapowego wdrażania dla sekwencji zadań** </br>
 1. W **Biblioteka oprogramowania** obszaru roboczego, rozwiń węzeł **systemów operacyjnych**i wybierz **sekwencje zadań**.
 2. Kliknij prawym przyciskiem myszy na istniejącej sekwencji zadań i wybierz **tworzenia wdrożenia stopniowo**. 
-3. Na **ogólne** karcie, określ etapowego wdrażania nazwę, opis (opcjonalnie) i wybierz **automatycznie utworzyć domyślne pilotażowy i produkcyjny fazy**. 
-4. Wypełnij **pilotażowe kolekcji** i **kolekcji dla środowiska produkcyjnego** pola. Wybierz **dalej**.
+3. Na **ogólne** karcie, określ etapowego wdrażania nazwę, opis (opcjonalnie) i wybierz **automatycznie Utwórz wdrożenie fazy dwa domyślne**. 
+4. Wypełnij **pierwsza kolekcja** i **druga Kolekcja** pola. Wybierz **dalej**.
 5. Na **ustawienia** , wybierz jedną z opcji dla każdego ustawienia planowania i wybierz **dalej** po zakończeniu. 
 6. Na **fazy** karcie, Edytuj poszczególnych faz, jeśli to konieczne, a następnie kliknij przycisk **dalej**.
 7. Potwierdź wybrane opcje na **Podsumowanie** karcie, a następnie kliknij przycisk **dalej** aby kontynuować.
-8. Po osiągnięciu kryteria sukcesu fazy pilotażowej, postępuj zgodnie z instrukcjami, aby rozpoczynać się od instrukcji SQL na etapie produkcji.
+8. Po osiągnięciu kryteria sukcesu fazy pierwszego postępuj zgodnie z instrukcjami, można uruchomić na drugim etapie za pomocą instrukcji SQL.
  
-**Fazy produkcji rozpoczynać się od instrukcji SQL**
+**Drugi etap rozpoczynać się od instrukcji SQL**
 1. Zidentyfikuj PhasedDeploymentID wdrożenia utworzone za pomocą następującej kwerendy SQL:<br/> `Select * from PhasedDeployment`
 2. Uruchom następującą instrukcję można uruchomić na etapie produkcji:<br/> `UPDATE PhasedDeployment SET EvaluatePhasedDeployment = 1, Action = 3 WHERE PhasedDeploymentID = <Phased Deployment ID>`
 

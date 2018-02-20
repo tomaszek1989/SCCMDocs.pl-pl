@@ -3,36 +3,37 @@ title: Uaktualnianie infrastruktury lokalnej
 titleSuffix: Configuration Manager
 description: "Informacje o sposobie uaktualniania infrastruktury, takich jak SQL Server i systemu operacyjnego lokacji systemów lokacji."
 ms.custom: na
-ms.date: 06/05/2017
+ms.date: 02/15/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8ca970dd-e71c-404f-9435-d36e773a0db2
-caps.latest.revision: "7"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 3296fe01ebe7d3343a174ffd18483156683b69f7
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 8e17ffad2b972119c92e449bef8f086b950b106c
+ms.sourcegitcommit: fbd4a9d2fa8ed4ddd3a0fecc4a2ec4fc0ccc3d0c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="upgrade-on-premises-infrastructure-that-supports-system-center-configuration-manager"></a>Uaktualnianie infrastruktury lokalnej, która obsługuje program System Center Configuration Manager
 
-*Dotyczy: Program System Center Configuration Manager (Current Branch)*
+Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Skorzystaj z informacji w tym temacie, aby ułatwić uaktualnienie infrastruktury serwera, na którym działa System Center Configuration Manager.  
+Skorzystaj z informacji w tym artykule, aby ułatwić uaktualnienie infrastruktury serwera, na którym działa System Center Configuration Manager.  
 
  - Jeśli chcesz uaktualnić ze starszej wersji programu Configuration Manager do programu System Center Configuration Manager, zobacz [uaktualnienia do programu System Center Configuration Manager](/sccm/core/servers/deploy/install/upgrade-to-configuration-manager).
 
 - Jeśli chcesz zaktualizować infrastruktury programu System Center Configuration Manager do nowej wersji, zobacz [aktualizacji dla programu System Center Configuration Manager](/sccm/core/servers/manage/updates).
 
-##  <a name="BKMK_SupConfigUpgradeSiteSrv"></a>Uaktualnij system operacyjny systemów lokacji  
+##  <a name="BKMK_SupConfigUpgradeSiteSrv"></a> Uaktualnij system operacyjny systemów lokacji  
  Program Configuration Manager obsługuje uaktualnienie w miejscu systemu operacyjnego serwery obsługujące serwer lokacji i serwery zdalne, które host żadnych ról systemu lokacji w następujących sytuacjach:  
 
 -   Uaktualnienie w miejscu do nowszej dodatku service pack systemu Windows Server, gdy Wynikowy poziom dodatku service pack systemu Windows jest obsługiwany przez program Configuration Manager.  
@@ -43,20 +44,19 @@ Skorzystaj z informacji w tym temacie, aby ułatwić uaktualnienie infrastruktur
     - Jeśli używasz programu Configuration Manager w wersji 1602 lub później, jest też obsługiwana do uaktualnienia systemu Windows Server 2008 R2 do systemu Windows Server 2012 R2 ([dodatkowe szczegóły](#bkmk_from2008r2).
 
     > [!WARNING]  
-    >  Przed uaktualnieniem do systemu Windows Server 2012 R2 *należy odinstalować usługi WSUS 3.2* z serwera.  
-    >   
-    >  Aby uzyskać informacje o tym krytycznym kroku, zobacz sekcję "Nowe i zmienione funkcje" w [Omówienie usług Windows Server Update Services](https://technet.microsoft.com/library/hh852345.aspx) w dokumentacji systemu Windows Server.  
+    >  Przed uaktualnieniem do innego systemu operacyjnego, *należy odinstalować usługi WSUS* z serwera. Możesz zachować SUSDB i dołączyć go po ponownym zainstalowaniu programu WSUS. Aby uzyskać informacje o tym krytycznym kroku, zobacz sekcję "Nowe i zmienione funkcje" w [Omówienie usług Windows Server Update Services](https://technet.microsoft.com/library/hh852345.aspx) w dokumentacji systemu Windows Server.  
 
 Aby uaktualnić serwer, wykorzystywane procedury uaktualniania udostępnione przez system operacyjny, który jest uaktualniany do.  Zobacz następujące tematy:
   -  [Uaktualnij opcje dla systemu Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx) w dokumentacji systemu Windows Server.  
   - [Opcje uaktualniania i konwersji dla systemu Windows Server 2016](https://technet.microsoft.com/windows-server-docs/get-started/supported-upgrade-paths) w dokumentacji systemu Windows Server.
 
-### <a name="bkmk_2016"></a>Uaktualnienie systemu Windows Server 2012 lub Windows Server 2012 R2 i 2016
+### <a name="bkmk_2016"></a>  Uaktualnienie systemu Windows Server 2012 lub Windows Server 2012 R2 i 2016
 Podczas uaktualniania systemu Windows Server 2012 lub Windows Server 2012 R2 do systemu Windows Server 2016 następujących warunków:
 
 
 **Przed uaktualnieniem:**  
 -   Usuń klienta programu System Center Endpoint Protection (SCEP). Windows Server 2016 ma usługa Windows Defender wbudowane, która zastępuje SCEP klienta. Obecności klienta protokołu SCEP może uniemożliwić uaktualnienia do systemu Windows Server 2016.
+-   Usunięcie roli usług WSUS na serwerze jest zainstalowany. Możesz zachować SUSDB i dołączyć go po ponownym zainstalowaniu programu WSUS.
 
 **Po uaktualnieniu:**
 -   Upewnij się, że usługa Windows Defender jest włączona, Ustaw automatyczne uruchamianie i uruchomiona.
@@ -90,10 +90,10 @@ Po uaktualnieniu serwera lokacji lub serwera hostującego wystąpienie SMS_Provi
   -   Włączanie zdalne
 5. Zapisz te uprawnienia, aby przywrócić dostęp do konsoli programu Configuration Manager.
 
-### <a name="bkmk_2012r2"></a>Windows Server 2012 do systemu Windows Server 2012 R2
+### <a name="bkmk_2012r2"></a> Windows Server 2012 do systemu Windows Server 2012 R2
 
 **Przed uaktualnieniem:**
--  W przeciwieństwie do innych obsługiwanych scenariuszach ten scenariusz nie wymaga uwagi dodatkowe przed uaktualnieniem.
+-   Usunięcie roli usług WSUS na serwerze jest zainstalowany. Możesz zachować SUSDB i dołączyć go po ponownym zainstalowaniu programu WSUS.
 
 **Po uaktualnieniu:**
   - Sprawdź, czy usługi wdrażania systemu Windows jest uruchomiony i działa dla następujących ról systemu lokacji (ta usługa zostanie zatrzymana podczas uaktualniania):
@@ -113,7 +113,7 @@ Po uaktualnieniu serwera lokacji lub serwera hostującego wystąpienie SMS_Provi
 
   Po przywróceniu wszystkie brakujące wymagania wstępne, uruchom ponownie serwer jeszcze raz, aby upewnić się, że usługi jest uruchomiony i działa.
 
-### <a name="bkmk_from2008r2"></a>Uaktualnienie systemu Windows Server 2008 R2 do systemu Windows Server 2012 R2
+### <a name="bkmk_from2008r2"></a>  Uaktualnienie systemu Windows Server 2008 R2 do systemu Windows Server 2012 R2
 Ten scenariusz uaktualniania systemu operacyjnego ma następujące warunki:  
 
 **Przed uaktualnieniem:**
@@ -148,7 +148,7 @@ W następujących scenariuszach uaktualniania systemu Windows Server są najczę
 
 
 
-##  <a name="BKMK_SupConfigUpgradeClient"></a>Uaktualnij system operacyjny klientów programu Configuration Manager  
+##  <a name="BKMK_SupConfigUpgradeClient"></a> Uaktualnij system operacyjny klientów programu Configuration Manager  
  Program Configuration Manager obsługuje uaktualnienie w miejscu systemu operacyjnego klientów programu Configuration Manager w następujących sytuacjach:  
 
 -   Uaktualnienie w miejscu do nowszej dodatku service pack systemu Windows, gdy Wynikowy poziom dodatku service pack jest obsługiwany przez program Configuration Manager.  
@@ -157,7 +157,7 @@ W następujących scenariuszach uaktualniania systemu Windows Server są najczę
 
 -   Uaktualnienia obsługi do kompilacji systemu Windows 10.  Aby uzyskać więcej informacji, zobacz [Zarządzanie systemem Windows jako usługą za pomocą programu System Center Configuration Manager](../../../osd/deploy-use/manage-windows-as-a-service.md).  
 
-##  <a name="BKMK_SupConfigUpgradeDBSrv"></a>Uaktualnij program SQL Server na serwerze bazy danych lokacji  
+##  <a name="BKMK_SupConfigUpgradeDBSrv"></a> Uaktualnij program SQL Server na serwerze bazy danych lokacji  
   Program Configuration Manager obsługuje uaktualnienie w miejscu programu SQL Server z obsługiwanej wersji programu SQL Server na serwerze bazy danych lokacji. Scenariuszach uaktualniania programu SQL Server w tej sekcji są obsługiwane przez program Configuration Manager i zawierają wymagania dotyczące każdego scenariusza.
 
  Aby uzyskać informacje o wersjach programu SQL Server, które są obsługiwane przez program Configuration Manager, zobacz [pomocy technicznej dla wersji programu SQL Server dla programu System Center Configuration Manager](../../../core/plan-design/configs/support-for-sql-server-versions.md).  
