@@ -16,11 +16,11 @@ caps.latest.revision:
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 6d93be3ec04396c9980b039617c673985090cdc6
-ms.sourcegitcommit: fbd4a9d2fa8ed4ddd3a0fecc4a2ec4fc0ccc3d0c
+ms.openlocfilehash: 8ac078fa33e24bd1cc10ab04d6120bf5759461ff
+ms.sourcegitcommit: 1378532fac2620ddcfd31061982f344a290c2e67
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 02/20/2018
 ---
 # <a name="keep-windows-10-up-to-date-in-the-enterprise-using-configuration-manager"></a>Aktualizowanie systemu Windows 10 w przedsiębiorstwie za pomocą programu Configuration Manager
 
@@ -36,7 +36,7 @@ System Center Configuration Manager umożliwia kompleksowe sterowanie aktualizac
 |[Cykl życia pomocy technicznej](/sccm/core/servers/manage/current-branch-versions-supported)|Wyjaśniono, nowa funkcja obsługi i modelu obsługi.|
 |[Elementy usunięte i przestarzałe](/sccm//core/plan-design/changes/deprecated/removed-and-deprecated)|Zapewnia wczesne powiadomienie na temat przyszłych zmian, które mogą mieć wpływ na korzystanie z programu Configuration Manager.|
 |[Menedżer konfiguracji jako usługa](/sccm/core/servers/manage/updates)|W tym artykule wyjaśniono łatwa metoda w konsoli stosowania funkcji aktualizacji programu Configuration Manager.|
-|[Pobierz dostępne aktualizacje](/sccm/core/servers/manage/install-in-console-updates.md#get-available-updates)|Opisano dwa tryby dostępne aktualizacje funkcji uzyskanie nowego programu Configuration Manager.|
+|[Pobierz dostępne aktualizacje](/sccm/core/servers/manage/install-in-console-updates#get-available-updates)|Opisano dwa tryby dostępne aktualizacje funkcji uzyskanie nowego programu Configuration Manager.|
 |[Lista kontrolna aktualizacji](/sccm/core/servers/manage/install-in-console-updates#bkmk_beforeinstall)|Udostępnia listy kontrolne dotyczące wersji aktualizacji, jeśli ma to zastosowanie.| 
 |[Instalacja nowych aktualizacji funkcja programu Configuration Manager](/sccm/core/servers/manage/install-in-console-updates#bkmk_install)|Wyjaśniono prostą instalację funkcji aktualizacji.|
 |[Obsługa systemu Windows 10](/sccm/core/plan-design/configs/support-for-windows-10)|Udostępnia obsługę wersji macierzy dla systemu Windows 10 (i ADK).|

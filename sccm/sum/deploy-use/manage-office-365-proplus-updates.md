@@ -5,22 +5,23 @@ description: "Menedżer konfiguracji synchronizuje aktualizacje klienta usługi 
 keywords: 
 author: mestew
 ms.author: mstewart
-manager: angrobe
-ms.date: 12/28/2017
+manager: dougeby
+ms.date: 02/16/2018
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: 
-ms.technology: configmgr-sum
+ms.technology:
+- configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
-ms.openlocfilehash: b951e72635806c12bd0ec0dd66e382a767b99b43
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: aedfec9d423c52b1d6864cd8a10dd5c498fb3b0a
+ms.sourcegitcommit: 1378532fac2620ddcfd31061982f344a290c2e67
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 02/20/2018
 ---
 # <a name="manage-office-365-proplus-with-configuration-manager"></a>Zarządzanie usługą Office 365 ProPlus w programie Configuration Manager
 
-*Dotyczy: Program System Center Configuration Manager (Current Branch)*
+Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 Menedżer konfiguracji umożliwia zarządzanie aplikacjami usługi Office 365 ProPlus w następujący sposób:
 
@@ -30,7 +31,7 @@ Menedżer konfiguracji umożliwia zarządzanie aplikacjami usługi Office 365 Pr
 
 - [Wdrażanie aktualizacji usługi Office 365](#deploy-office-365-updates): Począwszy od programu Configuration Manager w wersji 1602, można zarządzać aktualizacjami klienta usługi Office 365 za pomocą przepływu pracy zarządzania aktualizacjami oprogramowania. Gdy firma Microsoft publikuje nową aktualizację klienta usługi Office 365 w sieci dostarczania zawartości (CDN) pakietu Office, publikuje również pakiet aktualizacji w programie Windows Server Update Services (WSUS). Po synchronizacji aktualizacji klienta usługi Office 365 z katalogu WSUS na serwerze lokacji programu Configuration Manager aktualizacja jest dostępna do wdrażania na klientach.    
 
-- [Dodaj pobranie aktualizacji języków dla usługi Office 365](#add-languages-for-office-365-update-downloads): Począwszy od programu Configuration Manager 1610 wersji, można dodać obsługę programu Configuration Manager mógł pobierać aktualizacje dla dowolnego języki obsługiwane przez usługi Office 365. Do obsługi języka tak długo, jak usługi Office 365 jest nie ma znaczenia Configuration Manager.  
+- [Dodaj pobranie aktualizacji języków dla usługi Office 365](#add-languages-for-office-365-update-downloads): Począwszy od programu Configuration Manager 1610 wersji, można dodać obsługę programu Configuration Manager mógł pobierać aktualizacje dla dowolnego języki obsługiwane przez usługi Office 365. Do obsługi języka tak długo, jak usługi Office 365 jest nie ma znaczenia Configuration Manager. Przed 1610 wersji programu Configuration Manager należy pobrać i wdrożyć aktualizacje w te same języki skonfigurowane dla klientów usługi Office 365. 
 
 - [Zmień kanału aktualizacji](#change-the-update-channel-after-you-enable-office-365-clients-to-receive-updates-from-configuration-manager): Można użyć zasad grupy, aby dystrybuować zmianę wartości klucza rejestru klientów usługi Office 365, aby zmienić kanału aktualizacji.
 
@@ -70,8 +71,8 @@ W poprzednich wersjach programu Configuration Manager należy wykonać następuj
 - Komputer z uruchomioną Office 365 Instalator musi mieć dostęp do Internetu.  
 - Użytkownik uruchamiający Instalatora pakietu Office 365 musi mieć **odczytu** i **zapisu** dostęp do udziału lokalizacji zawartości znajduje się w kreatorze.
 - Jeśli wystąpi błąd 404 pobierania, skopiuj następujące pliki do folderu temp % % użytkownika:
-  - [releasehistory.XML](http://officecdn.microsoft.com/pr/wsus/releasehistory.cab)
-  - [o365client_32bit.XML](http://officecdn.microsoft.com/pr/wsus/ofl.cab)  
+  - [releasehistory.xml](http://officecdn.microsoft.com/pr/wsus/releasehistory.cab)
+  - [o365client_32bit.xml](http://officecdn.microsoft.com/pr/wsus/ofl.cab)  
 
 
 ### <a name="to-deploy-office-365-apps-to-clients-from-the-office-365-client-management-dashboard"></a>Do wdrażania aplikacji usługi Office 365 na klientach z poziomu pulpitu nawigacyjnego zarządzania klienta usługi Office 365
@@ -98,6 +99,8 @@ Po utworzeniu i wdrażania aplikacji usługi Office 365 za pomocą pakietu Offic
 
 
 ## <a name="deploy-office-365-updates"></a>Wdrażanie aktualizacji usługi Office 365
+Począwszy od aktualizacji klienta usługi Office 365 1706 wersji programu Configuration Manager zostały przeniesione do **zarządzania klienta usługi Office 365** >**aktualizacji pakietu Office 365** węzła. Nie będzie to miało wpływ konfiguracji reguły ADR. 
+
 Do wdrażania aktualizacji usługi Office 365 z programem Configuration Manager, wykonaj następujące kroki:
 
 1.  [Sprawdź wymagania](https://technet.microsoft.com/library/mt628083.aspx) dla programu Configuration Manager do zarządzania aktualizacjami klienta usługi Office 365 w **wymagania dotyczące korzystania z programu Configuration Manager do zarządzania aktualizacjami klienta usługi Office 365** sekcji tego artykułu.  
@@ -118,7 +121,7 @@ Do wdrażania aktualizacji usługi Office 365 z programem Configuration Manager,
 4. [Wdrażanie aktualizacji usługi Office 365](deploy-software-updates.md) do klientów.   
 
 > [!Important]
-> Należy pobrać i wdrożyć aktualizacje w te same języki skonfigurowane dla klientów usługi Office 365. Na przykład, załóżmy, że masz klienta usługi Office 365 skonfigurowano en-us i de-de języków. Na serwerze lokacji, należy pobrać i zainstalować tylko en-us zawartości dla odpowiednich aktualizacji usługi Office 365. Gdy użytkownik uruchomi instalację z Centrum oprogramowania dla tej aktualizacji, aktualizacja zawiesza się podczas pobierania zawartości.   
+> Przed 1610 wersji programu Configuration Manager należy pobrać i wdrożyć aktualizacje w te same języki skonfigurowane dla klientów usługi Office 365. Na przykład, załóżmy, że masz klienta usługi Office 365 skonfigurowano en-us i de-de języków. Na serwerze lokacji, należy pobrać i zainstalować tylko en-us zawartości dla odpowiednich aktualizacji usługi Office 365. Gdy użytkownik uruchomi instalację z Centrum oprogramowania dla tej aktualizacji, aktualizacja zawiesza się podczas pobierania zawartości de-de.   
 
 ## <a name="restart-behavior-and-client-notifications-for-office-365-updates"></a>Uruchom ponownie klienta i zachowanie powiadomienia o aktualizacji usługi Office 365
 Podczas wdrażania aktualizacji klienta usługi Office 365, powiadomienia klienta i zachowanie ponownego uruchamiania są różne w zależności od wersji programu Configuration Manager ma. Poniższa tabela zawiera informacje na temat środowiska użytkownika końcowego po otrzymaniu przez klienta aktualizacji usługi Office 365:
@@ -175,19 +178,19 @@ Aby zmienić kanału aktualizacji po włączeniu klientów usługi Office 365 ot
 
 - Kanał co miesiąc <br/>
 <i>(dawniej bieżący kanał) </i>:  
-  **CDNBaseUrl** = http &#58;//officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60
+  **CDNBaseUrl** = http&#58;//officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60
 
 - Częściowo roczna kanału <br/>
 <i>(dawniej opóźnieniem kanał) </i>:  
-  **CDNBaseUrl** = http &#58;//officecdn.microsoft.com/pr/7ffbc6bf-bc32-4f92-8982-f9dd17fd3114
+  **CDNBaseUrl** = http&#58;//officecdn.microsoft.com/pr/7ffbc6bf-bc32-4f92-8982-f9dd17fd3114
 
 - Kanał co miesiąc (docelowe)<Br/>
  <i>(dawniej pierwszej wersji dla bieżącej kanału) </i>:  
-  **CDNBaseUrl** = http &#58;//officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be
+  **CDNBaseUrl** = http&#58;//officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be
 
 - Kanał częściowo roczna (docelowe) <br/>
 <i>(dawniej pierwszej wersji dla kanału opóźnieniem) </i>:  
-  **CDNBaseUrl** = http &#58;//officecdn.microsoft.com/pr/b8f9b850-328d-4355-9145-c59439a0c4cf
+  **CDNBaseUrl** = http&#58;//officecdn.microsoft.com/pr/b8f9b850-328d-4355-9145-c59439a0c4cf
 <!--the channel names changed in Sept 2017- https://docs.microsoft.com/en-us/DeployOffice/overview-of-update-channels-for-office-365-proplus?ui=en-US&rs=en-US&ad=US>
 
 
