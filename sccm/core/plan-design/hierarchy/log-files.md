@@ -3,28 +3,29 @@ title: "Pliki dzienników w celu rozwiązywania problemów"
 titleSuffix: Configuration Manager
 description: "Pliki dziennika umożliwia rozwiązywanie problemów w hierarchii programu System Center Configuration Manager."
 ms.custom: na
-ms.date: 7/03/2017
+ms.date: 02/14/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c1ff371e-b0ad-4048-aeda-02a9ff08889e
-caps.latest.revision: "9"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: c310e23b543e8767a393ca5bf87a224a9269e359
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: b0f15b0c7cf983234f41e3f202be7d46ce4954e2
+ms.sourcegitcommit: fbd4a9d2fa8ed4ddd3a0fecc4a2ec4fc0ccc3d0c
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="log-files-in-system-center-configuration-manager"></a>Pliki dziennika w programie System Center Configuration Manager
 
-*Dotyczy: Program System Center Configuration Manager (Current Branch)*
+Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 W programie System Center Configuration Manager, składniki serwera klienta i lokację rejestrowania informacji o procesie osobnych plikach dziennika. Informacje można użyć w plikach dziennika ułatwiają rozwiązywanie problemów, które mogą wystąpić w hierarchii programu Configuration Manager. Domyślnie rejestrowanie przez składnik klienta i serwera jest włączone w programie Configuration Manager.   
 
@@ -50,7 +51,9 @@ W programie System Center Configuration Manager, składniki serwera klienta i lo
 
     -   [Witryna serwera i witryny serwera dzienniki systemu](#BKMK_SiteSiteServerLog)  
 
-    -   [Pliki dziennika instalacji serwera lokacji](#BKMK_SiteInstallLog)  
+    -   [Pliki dziennika instalacji serwera lokacji](#BKMK_SiteInstallLog) 
+
+    -   [Pliki dziennika punktu usługi Magazyn danych](#BKMK_DataWarehouse)
 
     -   [Pliki dziennika punktu stanu powrotu](#BKMK_FSPLog)  
 
@@ -73,6 +76,8 @@ W programie System Center Configuration Manager, składniki serwera klienta i lo
     -   [Brama zarządzania w chmurze](#cloud-management-gateway)
 
     -   [Ustawienia zgodności i dostęp do zasobów firmy](#BKMK_CompSettingsLog)  
+
+    -   [Dostęp warunkowy](#BKMK_CA)
 
     -   [Konsola programu Configuration Manager](#BKMK_ConsoleLog)  
 
@@ -114,15 +119,15 @@ W programie System Center Configuration Manager, składniki serwera klienta i lo
 
     -   [Serwer WSUS](#BKMK_WSUSLog)  
 
-##  <a name="BKMK_AboutLogs"></a>Informacje o plikach dziennika programu Configuration Manager  
- Większość procesów w programie Configuration Manager zapisuje informacje o działaniu do pliku dziennika dedykowanego dla tego procesu. Pliki dziennika mają rozszerzenie **log** lub **Lo_** rozszerzenia plików. Programu Configuration Manager zapisuje w pliku log, dopóki nie osiągnie maksymalny rozmiar. Po zapełnieniu dziennika zawartość pliku log jest kopiowana do pliku o tej samej nazwie, ale z rozszerzeniem Lo_, a proces lub składnik kontynuuje zapis do pliku log. Gdy plik log ponownie osiągnie maksymalny rozmiar, plik Lo_ jest zastępowany i proces powtarza się. Niektóre składniki tworzą historię pliku dziennika, dodając sygnaturę daty i godziny do nazwy pliku dziennika i zachowując rozszerzenie log. Wyjątek od maksymalnego rozmiaru i korzystania z pliku Lo_ jest klient dla systemów Linux i UNIX. Aby uzyskać informacje o używaniu plików dziennika klienta dla systemów Linux i UNIX, zobacz [zarządzanie plikami dziennika klienta dla systemów Linux i UNIX](#BKMK_ManageLinuxLogs) w tym temacie.  
+##  <a name="BKMK_AboutLogs">Informacje o plikach dziennika programu Configuration Manager</a>  
+ Większość procesów w programie Configuration Manager zapisuje informacje o działaniu do pliku dziennika dedykowanego dla tego procesu. Pliki dziennika mają rozszerzenie **log** lub **Lo_** rozszerzenia plików. Programu Configuration Manager zapisuje w pliku log, dopóki nie osiągnie maksymalny rozmiar. Po zapełnieniu dziennika zawartość pliku log jest kopiowana do pliku o tej samej nazwie, ale z rozszerzeniem Lo_, a proces lub składnik kontynuuje zapis do pliku log. Gdy plik log ponownie osiągnie maksymalny rozmiar, plik Lo_ jest zastępowany i proces powtarza się. Niektóre składniki tworzą historię pliku dziennika, dodając sygnaturę daty i godziny do nazwy pliku dziennika i zachowując rozszerzenie log. Wyjątek od maksymalnego rozmiaru i korzystania z pliku Lo_ jest klient dla systemów Linux i UNIX. Aby uzyskać informacje o używaniu plików dziennika klienta dla systemów Linux i UNIX, zobacz [zarządzanie plikami dziennika klienta dla systemów Linux i UNIX](#BKMK_ManageLinuxLogs) w tym artykule.  
 
  Aby wyświetlić dzienniki, użyj Menedżera konfiguracji narzędzie podglądu dziennika CMTrace, znajduje się w \\SMSSetup\\narzędzia folderu nośnika źródłowego programu Configuration Manager. Narzędzie CMTrace jest dodawane do wszystkich obrazów rozruchowych, które są dodawane do biblioteki oprogramowania.  
 
-###  <a name="BKMK_LogOptions"></a>Konfigurowanie opcji rejestrowania za pomocą Menedżera usług programu Configuration Manager  
+###  <a name="BKMK_LogOptions">Konfigurowanie opcji rejestrowania za pomocą Menedżera usług programu Configuration Manager</a>  
  W programie Configuration Manager można zmienić gdzie są przechowywane pliki dziennika i można zmienić rozmiar pliku dziennika.  
 
- Aby zmodyfikować rozmiar plików dziennika, Zmień nazwę i lokalizację pliku dziennika lub wymuszenie do zapisu w jednym pliku dziennika przez kilka składników, wykonaj następujące kroki.  
+ Aby zmodyfikować rozmiar plików dziennika, Zmień nazwę i lokalizację pliku dziennika lub wymuszenie do zapisu w jednym pliku dziennika przez kilka składników, wykonaj następujące czynności:  
 
 #### <a name="to-modify-logging-for-a-component"></a>Aby zmienić sposób rejestrowania dla składnika  
 
@@ -135,13 +140,13 @@ W programie System Center Configuration Manager, składniki serwera klienta i lo
 7.  W oknie dialogowym **Rejestrowanie składników programu Configuration Manager** uzupełnij dostępne opcje konfiguracji dla wybranego elementu.  
 8.  Wybierz **OK** Aby zapisać konfigurację.  
 
-###  <a name="BKMK_LogLocation"></a>Znajdowanie dzienników programu Configuration Manager  
+###  <a name="BKMK_LogLocation"></a> Znajdowanie dzienników programu Configuration Manager  
 Pliki dziennika programu Configuration Manager są przechowywane w różnych lokalizacjach, które zależą od procesu tworzącego plik dziennika i konfiguracji systemów lokacji. Ponieważ lokalizacja dziennika na komputerze może być inna, należy użyć funkcji wyszukiwania można znaleźć odpowiednich plików dziennika na komputerach w programie Configuration Manager, jeśli chcesz rozwiązać danego scenariusza.  
 
-##  <a name="BKMK_ClientLogs"></a>Dzienniki klienta programu Configuration Manager  
+##  <a name="BKMK_ClientLogs">Dzienniki klienta programu Configuration Manager</a>  
 Poniższe sekcje zawierają listę plików dziennika związanych z operacjami i instalacją klienta.  
 
-###  <a name="BKMK_ClientOpLogs"></a>Operacje klienta  
+###  <a name="BKMK_ClientOpLogs">Operacje klienta</a>  
 Poniższej tabeli wymieniono pliki dziennika znajdujące się na komputerze klienckim programu Configuration Manager.  
 
 |Nazwa dziennika|Opis|  
@@ -187,13 +192,13 @@ Poniższej tabeli wymieniono pliki dziennika znajdujące się na komputerze klie
 |PolicySdk.log|Rejestruje działania dla interfejsów zestawu SDK systemu zasad.|  
 |Pwrmgmt.log|Rejestruje informacje o włączeniu lub wyłączeniu ustawień klienta serwera proxy wznawiania.|  
 |PwrProvider.log|Rejestruje działania dostawcy zarządzania energią (PWRInvProvider) hostowanego w usłudze WMI. We wszystkich obsługiwanych wersjach systemu Windows dostawca wylicza bieżące ustawienia na komputerach podczas tworzenia spisu sprzętu i stosuje ustawienia planu zasilania.|  
-|SCClient_&lt;*domeny*\>@&lt;*username*\>_1.log|Rejestruje działanie w Centrum oprogramowania dla określonego użytkownika na komputerze klienckim.|  
-|SCClient_&lt;*domeny*\>@&lt;*username*\>_2.log|Rejestruje historyczne działanie w Centrum oprogramowania dla określonego użytkownika na komputerze klienckim.|  
+|SCClient_&lt;*domain*\>@&lt;*username*\>_1.log|Rejestruje działanie w Centrum oprogramowania dla określonego użytkownika na komputerze klienckim.|  
+|SCClient_&lt;*domain*\>@&lt;*username*\>_2.log|Rejestruje historyczne działanie w Centrum oprogramowania dla określonego użytkownika na komputerze klienckim.|  
 |Scheduler.log|Rejestruje działania zaplanowanych zadań dla wszystkich operacji klienta.|  
 |SCNotify_&lt;*domeny*\>@&lt;*username*\>_1.log|Rejestruje działanie powiadamiania użytkowników dla określonego użytkownika.|  
 |SCNotify_&lt;*domeny*\>@&lt;*username*\>_1 -&lt;*data_godzina*> .log|Rejestruje informacje historyczne dotyczące powiadamiania użytkowników dla określonego użytkownika.|  
 |setuppolicyevaluator.log|Rejestruje konfigurację i tworzenie zasad magazynu w usłudze WMI.|  
-|SleepAgent_&lt;*domeny*\>@SYSTEM_0.log|Główny plik dziennika dla serwera proxy wznawiania.|  
+|SleepAgent_&lt;*domain*\>@SYSTEM_0.log|Główny plik dziennika dla serwera proxy wznawiania.|  
 |smscliui.log|Rejestruje użycie klienta programu Configuration Manager w Panelu sterowania.|  
 |SrcUpdateMgr.log|Rejestruje działanie zainstalowanych aplikacji Instalator Windows, w których zaktualizowano lokalizacje źródłowe bieżącego punktu dystrybucji.|  
 |StatusAgent.log|Rejestruje komunikaty o stanie tworzone przez komponenty klienta.|  
@@ -204,7 +209,7 @@ Poniższej tabeli wymieniono pliki dziennika znajdujące się na komputerze klie
 |wakeprxy-install.log|Rejestruje informacje o instalacji, gdy klienci odbierają opcję Ustawienia klienta, aby włączyć serwer proxy wznawiania.|  
 |wakeprxy-uninstall.log|Rejestruje informacje o odinstalowaniu serwera proxy wznawiania, gdy klienci odbiorą opcję Ustawienia klienta o wyłączenie serwera proxy wznawiania, jeżeli serwera proxy wznawiania był wcześniej włączony.|  
 
-###  <a name="BKMK_ClientInstallLog"></a>Pliki dziennika instalacji klienta  
+###  <a name="BKMK_ClientInstallLog">Pliki dziennika instalacji klienta</a>  
  W poniższej tabeli wymieniono pliki dziennika zawierające informacje dotyczące instalacji klienta programu Configuration Manager.  
 
 |Nazwa dziennika|Opis|  
@@ -214,7 +219,7 @@ Poniższej tabeli wymieniono pliki dziennika znajdujące się na komputerze klie
 |CcmRepair.log|Rejestruje działania naprawy agenta klienta.|  
 |client.msi.log|Rejestruje zadania instalacji wykonywane przez program client.msi. Może służyć do rozwiązywania problemów z instalacją lub usuwaniem klienta.|  
 
-###  <a name="BKMK_LogFilesforLnU"></a>Klient dla systemów Linux i UNIX  
+###  <a name="BKMK_LogFilesforLnU">Klient dla systemów Linux i UNIX</a>  
  Klient programu Configuration Manager dla systemów Linux i UNIX rejestruje informacje w poniższych plikach dziennika.  
 
 > [!TIP]  
@@ -253,29 +258,29 @@ Poniższej tabeli wymieniono pliki dziennika znajdujące się na komputerze klie
 
 W normalnych warunkach pracy Użyj poziomu dziennika błędów. Ten poziom dziennika tworzy najmniejszy plik dziennika. Zwiększenie poziomu dziennika z ERROR WARNING, INFO, a następnie do śledzenia, rozmiar pliku dziennika jest tworzony podczas zapisywania do pliku większej ilości danych.  
 
-####  <a name="BKMK_ManageLinuxLogs"></a>Zarządzanie plikami dziennika klienta systemów Linux i UNIX  
+####  <a name="BKMK_ManageLinuxLogs"></a> Zarządzanie plikami dziennika klienta systemów Linux i UNIX  
 Klient dla systemów Linux i UNIX nie istnieje limit maksymalnego rozmiaru plików dziennika klienta, ani klienta kopiuje automatycznie zawartości jego log plików do innego pliku, takich jak plik Lo_. Aby kontrolować maksymalny rozmiar plików dziennika, należy wdrożyć proces zarządzania nimi niezależnie od klienta programu Configuration Manager dla systemów Linux i UNIX.  
 
 Na przykład używasz standardowego polecenia systemu Linux i UNIX **logrotate** Aby zarządzać rozmiarem i rotacją plików dziennika klienta. Klient programu Configuration Manager dla systemów Linux i UNIX zawiera interfejs umożliwiający **logrotate** sygnalizują klienta po ukończeniu rotacji dziennika, więc klient możliwe wznowienie rejestrowania w pliku dziennika.  
 
 Informacje o poleceniu **logrotate** zawiera dokumentacja używanych dystrybucji systemu Linux i UNIX.  
 
-###  <a name="BKMK_LogfilesforMac"></a>Klient dla komputerów Mac  
+###  <a name="BKMK_LogfilesforMac">Klient dla komputerów Mac</a>  
 Klient programu Configuration Manager dla komputerów Mac rejestruje informacje w poniższych plikach dziennika.  
 
 |Nazwa dziennika|Szczegóły|  
 |--------------|-------------|  
-|CCMClient -&lt;*data_godzina*> .log|Rejestruje działania związane z operacjami klienta Mac, w tym zarządzania aplikacjami, spisu i rejestrowania błędów.<br /><br /> Ten plik dziennika znajduje się w folderze/Library/Application Support/Microsoft/CCM/Logs na komputerze Mac.|  
-|CCMAgent -&lt;*data_godzina*> .log|Rejestruje informacje dotyczące operacji klienta, w tym logowania użytkownika i działania wylogowania oraz działań komputera Mac.<br /><br /> Ten plik dziennika znajduje się w folderze ~/Library/Logs na komputerze Mac.|  
-|CCMNotifications -&lt;*data_godzina*> .log|Rejestruje działania dotyczące powiadomień programu Configuration Manager na komputerze Mac.<br /><br /> Ten plik dziennika znajduje się w folderze ~/Library/Logs na komputerze Mac.|  
-|CCMPrefPane -&lt;*data_godzina*> .log|Rejestruje działania powiązane do okna dialogowego preferencji programu Configuration Manager na komputerze Mac, w tym stanu ogólnego i rejestrowania błędów.<br /><br /> Ten plik dziennika znajduje się w folderze ~/Library/Logs na komputerze Mac.|  
+|CCMClient-&lt;*date_time*>.log|Rejestruje działania związane z operacjami klienta Mac, w tym zarządzania aplikacjami, spisu i rejestrowania błędów.<br /><br /> Ten plik dziennika znajduje się w folderze/Library/Application Support/Microsoft/CCM/Logs na komputerze Mac.|  
+|CCMAgent-&lt;*date_time*>.log|Rejestruje informacje dotyczące operacji klienta, w tym logowania użytkownika i działania wylogowania oraz działań komputera Mac.<br /><br /> Ten plik dziennika znajduje się w folderze ~/Library/Logs na komputerze Mac.|  
+|CCMNotifications-&lt;*date_time*>.log|Rejestruje działania dotyczące powiadomień programu Configuration Manager na komputerze Mac.<br /><br /> Ten plik dziennika znajduje się w folderze ~/Library/Logs na komputerze Mac.|  
+|CCMPrefPane-&lt;*date_time*>.log|Rejestruje działania powiązane do okna dialogowego preferencji programu Configuration Manager na komputerze Mac, w tym stanu ogólnego i rejestrowania błędów.<br /><br /> Ten plik dziennika znajduje się w folderze ~/Library/Logs na komputerze Mac.|  
 
 Plik dziennika SMS_DM.log na serwerze systemu lokacji rejestruje także komunikacji między komputerami Mac i punktu zarządzania, który jest skonfigurowany dla urządzeń przenośnych i komputerów Mac.  
 
-##  <a name="BKMK_ServerLogs"></a>Pliki dziennika serwera lokacji programu Configuration Manager  
+##  <a name="BKMK_ServerLogs">Pliki dziennika serwera lokacji programu Configuration Manager</a>  
  W poniższych częściach wymieniono pliki dziennika, które znajdują się na serwerze lokacji lub które są związane z określonych ról systemu lokacji.  
 
-###  <a name="BKMK_SiteSiteServerLog"></a>Witryna serwera i witryny serwera dzienniki systemu  
+###  <a name="BKMK_SiteSiteServerLog">Witryna serwera i witryny serwera dzienniki systemu</a>  
  Poniższa tabela zawiera listę plików dziennika, które znajdują się na serwerze lokacji programu Configuration Manager i serwery systemu lokacji.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
@@ -350,7 +355,7 @@ Plik dziennika SMS_DM.log na serwerze systemu lokacji rejestruje także komunika
 |statmgr.log|Rejestruje zapisywanie wszystkich komunikatów o stanie w bazie danych.|Serwer lokacji|  
 |swmproc.log|Rejestruje przetwarzanie plików i ustawień zliczania.|Serwer lokacji|  
 
-###  <a name="BKMK_SiteInstallLog"></a>Pliki dziennika instalacji serwera lokacji  
+###  <a name="BKMK_SiteInstallLog"></a> Pliki dziennika instalacji serwera lokacji  
  W poniższej tabeli wymieniono pliki dziennika zawierające informacje dotyczące instalacji lokacji.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
@@ -361,7 +366,16 @@ Plik dziennika SMS_DM.log na serwerze systemu lokacji rejestruje także komunika
 |SMS_BOOTSTRAP.log|Rejestruje informacje postępie uruchamiania procesu instalacji lokacji dodatkowej. Szczegółowe informacje o procesie instalacji znajdują się w pliku ConfigMgrSetup.log.|Serwer lokacji|  
 |smstsvc.log|Rejestruje informacje o instalacji, użyciu i usunięciu usługi systemu Windows, który służy do testowania połączenia sieciowego i uprawnień między serwerami przy użycia konta komputera serwera, który inicjuje połączenie.|Serwer lokacji i serwera systemu lokacji|  
 
-###  <a name="BKMK_FSPLog"></a>Pliki dziennika punktu stanu powrotu  
+###  <a name="BKMK_DataWarehouse"></a> Pliki dziennika punktu usługi Magazyn danych  
+ Poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane z punktem usługi magazynu danych.  
+
+|Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
+|--------------|-----------------|----------------------------|  
+|DWSSMSI.log|Rejestruje komunikaty generowane przez instalację punktu usługi magazynu danych.|Serwer systemu lokacji|  
+|DWSSSetup.log|Rejestruje komunikaty generowane przez instalację punktu usługi magazynu danych.|Serwer systemu lokacji|  
+|Microsoft.ConfigMgrDataWarehouse.log|Rejestruje informacje o synchronizacji danych między bazą danych lokacji i bazy danych magazynu danych.|Serwer systemu lokacji|  
+
+###  <a name="BKMK_FSPLog"></a> Pliki dziennika punktu stanu powrotu  
  W poniższej tabeli wymieniono pliki dziennika zawierające informacje dotyczące rezerwowego punkt stanu.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
@@ -370,7 +384,7 @@ Plik dziennika SMS_DM.log na serwerze systemu lokacji rejestruje także komunika
 |fspMSI.log|Rejestruje komunikaty generowane przez instalację rezerwowego punkt stanu.|Serwer systemu lokacji|  
 |fspmgr.log|Rejestruje działania roli systemu lokacji rezerwowego punkt stanu.|Serwer systemu lokacji|  
 
-###  <a name="BKMK_MPLog"></a>Pliki dziennika punktu zarządzania  
+###  <a name="BKMK_MPLog"></a> Pliki dziennika punktu zarządzania  
  W poniższej tabeli wymieniono pliki dziennika zawierające informacje dotyczące punktu zarządzania.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
@@ -389,13 +403,13 @@ Plik dziennika SMS_DM.log na serwerze systemu lokacji rejestruje także komunika
 |MP_Retry.log|Rejestruje procesy ponawiania prób spisu sprzętu.|Serwer systemu lokacji|  
 |MP_Sinv.log|Rejestruje szczegółowe informacje o konwersji rekordów XML spisu oprogramowania od klientów i kopii tych plików na serwerze lokacji.|Serwer systemu lokacji|  
 |MP_SinvCollFile.log|Rejestruje szczegółowe informacje o zbieraniu plików.|Serwer systemu lokacji|  
-|MP_Status.log|Rejestruje szczegółowe informacje o konwersji plików komunikatów o stanie XML.svf od klientów i kopii tych plików na serwerze lokacji.|Serwer systemu lokacji|  
+|MP_Status.log|Rejestruje szczegółowe informacje o konwersji plików komunikatów o stanie XML.svf od klientów i kopii tych plików na serwerze lokacji.|Serwer systemu lokacji|
 |mpcontrol.log|Rejestruje rejestrację punktu zarządzania w usłudze WINS. Rejestruje dostępność punktu zarządzania co 10 minut.|Serwer lokacji|  
 |mpfdm.log|Rejestruje akcje składnika punktu zarządzania, który przenosi pliki klienta do odpowiedniego folderu INBOXES na serwerze lokacji.|Serwer systemu lokacji|  
 |mpMSI.log|Rejestruje szczegółowe informacje o zarządzaniu punktu instalacji.|Serwer lokacji|  
 |MPSetup.log|Rejestruje proces otoki instalacji punktu zarządzania.|Serwer lokacji|  
 
-###  <a name="BKMK_SUPLog"></a>Pliki dziennika punktu aktualizacji oprogramowania  
+###  <a name="BKMK_SUPLog"></a> Pliki dziennika punktu aktualizacji oprogramowania  
  W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane z punktem aktualizacji oprogramowania.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
@@ -409,10 +423,10 @@ Plik dziennika SMS_DM.log na serwerze systemu lokacji rejestruje także komunika
 |wsyncmgr.log|Rejestruje szczegółowe informacje na temat procesu synchronizacji aktualizacji oprogramowania.|Serwer systemu lokacji|  
 |WUSSyncXML.log|Rejestruje szczegółowe informacje na temat narzędzia stanu zapasów usługi Microsoft Updates synchronizacji procesu.|Komputer kliencki skonfigurowany jako host synchronizacji narzędzia stanu zapasów usługi Microsoft Updates|  
 
-##  <a name="BKMK_FunctionLogs"></a>Pliki dziennika dotyczące funkcji programu Configuration Manager  
+##  <a name="BKMK_FunctionLogs"></a> Pliki dziennika dotyczące funkcji programu Configuration Manager  
  Na poniższej liście sekcje pliki dziennika związane z funkcjami programu Configuration Manager.  
 
-###  <a name="BKMK_AppManageLog"></a>Zarządzanie aplikacjami  
+###  <a name="BKMK_AppManageLog"></a> Zarządzanie aplikacjami  
  W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane z zarządzaniem aplikacjami.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
@@ -441,7 +455,7 @@ Plik dziennika SMS_DM.log na serwerze systemu lokacji rejestruje także komunika
 |colleval.log|Rejestruje szczegóły dotyczące utworzenia, zmiany i usunięcia kolekcji przez Ewaluatora kolekcji.|Serwer lokacji|  
 |execmgr.log|Rejestruje szczegółowe informacje o uruchamianych pakietach i sekwencjach zadań.|Klient|  
 
-###  <a name="BKMK_AILog"></a>Analiza zasobów  
+###  <a name="BKMK_AILog"></a> Analiza zasobów  
  W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane z Analizą zasobów.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
@@ -464,7 +478,7 @@ Plik dziennika SMS_DM.log na serwerze systemu lokacji rejestruje także komunika
 |smssqlbkup.log|Rejestruje dane wyjściowe z procesu tworzenia kopii zapasowej bazy danych programu SQL Server jest zainstalowany na serwerze, który nie jest serwerem lokacji.|Serwer bazy danych lokacji|  
 |Smswriter.log|Rejestruje informacje o stanie składnika zapisywania usługi VSS programu Configuration Manager, który jest używany przez proces tworzenia kopii zapasowej.|Serwer lokacji|  
 
-###  <a name="BKMK_CertificateEnrollment"></a>Rejestracja certyfikatów  
+###  <a name="BKMK_CertificateEnrollment"></a> Rejestracja certyfikatów  
  Poniższa tabela zawiera listę plików dziennika programu Configuration Manager, zawierające informacje powiązane z rejestracją certyfikatów. Rejestrowanie certyfikatów używa punkt rejestracji certyfikatu i moduł zasad programu Configuration Manager na serwerze, na którym działa usługa rejestracji urządzeń sieciowych.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
@@ -486,7 +500,7 @@ Plik dziennika SMS_DM.log na serwerze systemu lokacji rejestruje także komunika
     > [!NOTE]  
     >  Ten plik znajduje się w folderze profilu konta usługi rejestracji urządzeń sieciowych, na przykład w folderze C:\Users\SCEPSvc. Więcej informacji o sposobach włączania rejestrowania zdarzeń dla usługi rejestracji urządzeń sieciowych znajduje się w sekcji [Enable Logging (Włączanie rejestrowania)](http://go.microsoft.com/fwlink/?LinkId=320576) w artykule Network Device Enrollment Service (NDES) in Active Directory Certificate Services (AD CS) (Usługa rejestracji urządzeń sieciowych w usługach certyfikatów Active Directory) w witrynie wiki biblioteki TechNet.  
 
-###  <a name="BKMK_BGB"></a>Powiadomienie klienta  
+###  <a name="BKMK_BGB"></a> Powiadomienie klienta  
  W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane z powiadamianiem klientów.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
@@ -506,18 +520,18 @@ Poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane 
 |-|-|-|
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|
 |CloudMgr.log|Rejestruje szczegółowe informacje o wdrażaniu usługi bramy zarządzania usługą chmury, stan trwającej usługi i Użyj danych skojarzony z usługą.<br>Można skonfigurować poziom rejestrowania Edycja rejestru **poziom HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\COMPONENTS\SMS_CLOUD_SERVICES_MANAGER\Logging**|*Installdir* folderu na serwerze lokacji głównej lub urzędów certyfikacji.|
-|CMGSetup.log lub CMG -*RoleInstanceID*-CMGSetup.log<sup>1</sup>|Rejestruje szczegółowe informacje o fazy 2 wdrożenie bramy zarządzania chmury (lokalny wdrożenie na platformie Azure)<br>Można skonfigurować poziom rejestrowania przy użyciu ustawienia **poziom śledzenia** (**informacji** (domyślna), **pełne**, **błąd**) na **Konfiguracja usług Azure portal\Cloud** kartę.|**%Approot%\logs** na serwer platformy Azure lub w folderze programu SMS/dzienniki na serwerze systemu lokacji|
+|CMGSetup.log lub CMG -*RoleInstanceID*-CMGSetup.log<sup>1</sup>|Rejestruje szczegółowe informacje o drugiej fazy wdrożenia bramy zarządzania chmury (lokalny wdrożenie na platformie Azure)<br>Można skonfigurować poziom rejestrowania przy użyciu ustawienia **poziom śledzenia** (**informacji** (domyślna), **pełne**, **błąd**) na **Konfiguracja usług Azure portal\Cloud** kartę.|**%Approot%\logs** na serwer platformy Azure lub w folderze programu SMS/dzienniki na serwerze systemu lokacji|
 |CMGHttpHandler.log lub CMG -*RoleInstanceID*-CMGHttpHandler.log<sup>1</sup>|Rejestruje szczegółowe informacje o chmurze zarządzania bramy http obsługi powiązania z internetowych usług informacyjnych na platformie Azure<br>Można skonfigurować poziom rejestrowania przy użyciu ustawienia **poziom śledzenia** (**informacji** (domyślna), **pełne**, **błąd**) na **Konfiguracja usług Azure portal\Cloud** kartę.|**%Approot%\logs** na serwer platformy Azure lub w folderze programu SMS/dzienniki na serwerze systemu lokacji|
 |CMGService.log lub CMG -*RoleInstanceID*-CMGService.log<sup>1</sup>|Rejestruje szczegółowe informacje o składnik podstawowe usługi bramy zarządzania chmurze na platformie Azure<br>Można skonfigurować poziom rejestrowania przy użyciu ustawienia **poziom śledzenia** (**informacji** (domyślna), **pełne**, **błąd**) na **Konfiguracja usług Azure portal\Cloud** kartę.|**%Approot%\logs** na serwer platformy Azure lub w folderze programu SMS/dzienniki na serwerze systemu lokacji|
 |SMS_Cloud_ProxyConnector.log|Rejestruje szczegółowe informacje o konfigurowaniu połączeń między usługi bramy zarządzania w chmurze i połączenia bramy zarządzania chmury punktu.|Serwer systemu lokacji|
 
-<sup>1</sup> są to lokalne pliki dziennika programu Configuration Manager, które usługa Menedżera synchronizacji z usługi Azure storage w chmurze, co 5 minut. Brama zarządzania chmury przeprowadzi wypychanie dzienników do magazynu Azure co 5 minut. tak więc Maksymalne opóźnienie będzie 10 minut. Pełne przełączniki wpłynie na dzienniki lokalnych i zdalnych.
+<sup>1</sup> są to lokalne pliki dziennika programu Configuration Manager, które usługa Menedżera synchronizacji z usługi Azure storage w chmurze, co 5 minut. Brama zarządzania chmury wypchnięcia dzienników do magazynu Azure, co 5 minut. dlatego maksymalne opóźnienie to 10 minut. Pełne przełączniki mają wpływ na dzienniki lokalnych i zdalnych.
 
 - Rozwiązywanie problemów z wdrożeniami, użyj **CloudMgr.log** i **CMGSetup.log**
 - Rozwiązywanie problemów z usługi kondycji, użyj **CMGService.log** i **SMS_Cloud_ProxyConnector.log**.
 - Do rozwiązywania problemów klienta ruch, użyj **CMGHttpHandler.log**, **CMGService.log**, i **SMS_Cloud_ProxyConnector.log**.
 
-###  <a name="BKMK_CompSettingsLog"></a>Ustawienia zgodności i dostęp do zasobów firmy  
+###  <a name="BKMK_CompSettingsLog"></a> Ustawienia zgodności i dostęp do zasobów firmy  
  W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane z ustawieniami zgodności i dostępem do zasobów firmy.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
@@ -528,7 +542,20 @@ Poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane 
 |DCMReporting.log|Rejestruje informacje o raportowaniu wyników platformy zasad w komunikatach o stanie elementów konfiguracji.|Klient|  
 |DcmWmiProvider.log|Rejestruje informacje o odczytywaniu synclets elementu konfiguracji z instrumentacji WMI.|Klient|  
 
-###  <a name="BKMK_ConsoleLog"></a>Konsola programu Configuration Manager  
+###  <a name="BKMK_CA"></a> Dostęp warunkowy
+ W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane z dostępu warunkowego.  
+
+|Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
+|--------------|-----------------|----------------------------|  
+|ADALOperationProvider.log|Rejestruje szczegółowe informacje dotyczące pozyskiwania token usługi AAD.|Klient|  
+|cloudusersync.log|Rejestruje uaktywnianie licencji dla użytkowników.|Komputer z punktem połączenia z usługą|  
+|ComplRelayAgent.log|Odbiera ogólny stan zgodności z zarządzaniem żądaną konfiguracją, uzyskuje MP token uzyskuje token usługi AAD i raporty zgodności do usługi Intune (usługa przekaźnika urzędu certyfikacji).|Klient|  
+|DcmWmiProvider.log|Rejestruje informacje o odczytywaniu synclets elementu konfiguracji z instrumentacji WMI.|Klient|  
+|w pliku dmpdownloader.log|Rejestruje szczegółowe informacje o pobraniach z Microsoft Intune.|Komputer z punktem połączenia z usługą|
+|dmpuploader.log|Rejestruje szczegóły związane z przekazywanie zmian w bazie danych w usłudze Microsoft Intune.|Komputer z punktem połączenia z usługą|   
+|MP_Token.log|Rejestruje żądania tokenu od klientów.|Serwer systemu lokacji|  
+
+###  <a name="BKMK_ConsoleLog"></a> Konsola programu Configuration Manager  
  W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane z konsoli programu Configuration Manager.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
@@ -542,7 +569,7 @@ Poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane 
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
 |--------------|-----------------|----------------------------|  
-|Pliku CloudDP -&lt;guid\>.log|Rejestruje szczegółowe informacje o określonym chmurowym punkcie dystrybucji, w tym informacje o magazynie i dostępie do zawartości.|Serwer systemu lokacji|  
+|CloudDP-&lt;guid\>.log|Rejestruje szczegółowe informacje o określonym chmurowym punkcie dystrybucji, w tym informacje o magazynie i dostępie do zawartości.|Serwer systemu lokacji|  
 |CloudMgr.log|Rejestruje szczegóły dotyczące inicjowania obsługi zawartości, zbieraniu magazynu i statystyki przepustowości oraz inicjowanych przez administratora akcjach zatrzymywania lub uruchamiania usługi w chmurze z punktem dystrybucji w chmurze.|Serwer systemu lokacji|  
 |DataTransferService.log|Rejestruje całą komunikację usługi BITS dotyczącą zasad lub dostępu do pakietów. Ten dziennik jest używane również do zarządzania zawartością przez ściągające punkty dystrybucji.|Komputer skonfigurowany jako punkt dystrybucji ściągania|  
 |PullDP.log|Rejestruje szczegółowe informacje o zawartości, jaką ściągający punkt dystrybucji transferuje od źródłowych punktów dystrybucji.|Komputer skonfigurowany jako punkt dystrybucji ściągania|  
@@ -550,8 +577,7 @@ Poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane 
 |SMSdpmon.log|Rejestruje szczegółowe informacje o kondycji punktu dystrybucji monitorowania zaplanowanych zadań, które są skonfigurowane w punkcie dystrybucji.|Rola systemu lokacji|  
 |smsdpprov.log|Rejestruje szczegółowe informacje o wyodrębnianiu plików skompresowanych odebranych z lokacji głównej. Ten dziennik jest generowany przez dostawcę WMI zdalnego punktu dystrybucji.|Komputer punktu dystrybucji, który nie jest wspólnie przechowywane na serwerze lokacji|  
 
-
-###  <a name="BKMK_DiscoveryLog"></a>Odnajdywania  
+###  <a name="BKMK_DiscoveryLog"></a> Odnajdywania  
 W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane z odnajdywaniem.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
@@ -583,7 +609,7 @@ W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązan
 |FeatureExtensionInstaller.log|Rejestruje informacje o instalowaniu i usuwaniu poszczególnych rozszerzeń, gdy są one włączone lub wyłączone w konsoli programu Configuration Manager.|Komputer, na którym uruchomiona jest konsola programu Configuration Manager|  
 |SmsAdminUI.log|Rejestruje działanie konsoli programu Configuration Manager.|Komputer, na którym uruchomiona jest konsola programu Configuration Manager|  
 
-###  <a name="BKMK_InventoryLog"></a>Spis  
+###  <a name="BKMK_InventoryLog"></a> Spis  
  W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane z przetwarzaniem danych o stanie zapasów.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
@@ -592,24 +618,24 @@ W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązan
 |invproc.log|Rejestruje przekazywanie plików MIF z lokacji dodatkowej do jej lokacji nadrzędnej.|Serwer lokacji dodatkowej|  
 |sinvproc.log|Rejestruje informacje o przetwarzaniu danych stanu zapasów oprogramowania w bazie danych lokacji.|Serwer lokacji|  
 
-###  <a name="BKMK_MeteringLog"></a>Pomiaru  
+###  <a name="BKMK_MeteringLog"></a> Pomiaru  
  W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane z pomiarami użytkowania.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
 |--------------|-----------------|----------------------------|  
 |mtrmgr.log|Monitoruje wszystkie procesy pomiarów użytkowania oprogramowania.|Serwer lokacji|  
 
-###  <a name="BKMK_MigrationLog"></a>Migracji  
+###  <a name="BKMK_MigrationLog"></a> Migracji  
  W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane z migracją.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
 |--------------|-----------------|----------------------------|  
 |migmctrl.log|Rejestruje informacje o akcjach migracji dotyczące zadań migracji, współużytkowanych punktów dystrybucji i uaktualnień punktów dystrybucji.|Lokacja najwyższego poziomu w hierarchii programu Configuration Manager, a każda podrzędna lokacja główna.<br /><br /> W hierarchii z kilkoma lokacjami głównymi należy użyć pliku dziennika utworzonego w centralnej lokacji administracyjnej.|  
 
-###  <a name="BKMK_MDMLog"></a>Urządzenia przenośne  
+###  <a name="BKMK_MDMLog"></a> Urządzenia przenośne  
  W poniższych częściach wymieniono pliki dziennika zawierające informacje powiązane z zarządzaniem urządzeniami przenośnymi.  
 
-####  <a name="BKMK_EnrollmentLog"></a>Rejestracji  
+####  <a name="BKMK_EnrollmentLog"></a> Rejestracji  
  W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane z rejestrowaniem urządzeń przenośnych.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
@@ -623,14 +649,14 @@ W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązan
 |enrollmentservice.log|Rejestruje komunikację między punktem proxy rejestracji i punktem rejestracyjnym.|Serwer systemu lokacji|  
 |SMS_DM.log|Rejestruje komunikację między urządzeniami przenośnymi, komputerami Mac i punktem zarządzania, w którym włączono obsługę urządzeń przenośnych i komputerów Mac.|Serwer systemu lokacji|  
 
-####  <a name="BKMK_ExchSrvLog"></a>Łącznik serwera Exchange  
+####  <a name="BKMK_ExchSrvLog"></a> Łącznik serwera Exchange  
  Następujące dzienniki zawiera informacje powiązane z łącznikiem serwera Exchange.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
 |--------------|-----------------|----------------------------|  
 |easdisc.log|Rejestruje działania i stan łącznika serwera Exchange.|Serwer lokacji|  
 
-####  <a name="BKMK_MDLegLog"></a>Starsze urządzenia przenośne  
+####  <a name="BKMK_MDLegLog"></a> Starsze urządzenia przenośne  
  W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane ze starszymi klientami urządzeń przenośnych.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
@@ -654,7 +680,7 @@ W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązan
 |DmSvc.log|Rejestruje komunikację kliencką starszych klientów urządzeń przenośnych z punktem zarządzania, w którym włączono obsługę urządzeń przenośnych.|Klient|  
 |FspIsapi.log|Rejestruje szczegółowe informacje o komunikacji z rezerwowym punktem stanu ze starszych klientów urządzeń przenośnych i komputerów klienckich.|Serwer systemu lokacji|  
 
-###  <a name="BKMK_OSDLog"></a>Wdrożenie systemu operacyjnego  
+###  <a name="BKMK_OSDLog"></a> Wdrożenie systemu operacyjnego  
  W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane z wdrażaniem systemu operacyjnego.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
@@ -714,7 +740,7 @@ W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązan
 |srsrpMSI.log|Rejestruje szczegółowe wyniki procesu instalacji punktu usług raportowania z danych wyjściowych MSI.|Serwer systemu lokacji|  
 |srsrpsetup.log|Rejestruje wyniki procesu instalacji punktu usług raportowania.|Serwer systemu lokacji|  
 
-###  <a name="BKMK_RBALog"></a>Administracja oparta na rolach  
+###  <a name="BKMK_RBALog"></a> Administracja oparta na rolach  
  W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane z zarządzaniem administracją opartą na rolach.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
@@ -722,7 +748,7 @@ W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązan
 |hman.log|Rejestruje informacje o zmianach konfiguracji lokacji i publikowaniu informacji o lokacji w usługach domenowych w usłudze Active Directory.|Serwer lokacji|  
 |SMSProv.log|Rejestruje dostęp dostawcy WMI do bazy danych lokacji.|Komputer z dostawcą programu SMS|  
 
-###  <a name="BKMK_WITLog"></a>Punkt połączenia usługi  
+###  <a name="BKMK_WITLog"></a> Punkt połączenia usługi  
  W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane z punktem połączenia z usługą.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
@@ -734,7 +760,7 @@ W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązan
 |ddm.log|Rejestruje czynności menedżera danych odnajdywania.|Serwer lokacji|  
 |Distmgr.log|Rejestruje szczegółowe informacje o żądaniach dystrybucji zawartości.|Sewer lokacji najwyższego poziomu|  
 |Dmpdownloader.log|Rejestruje szczegółowe informacje o pobraniach z Microsoft Intune.|Komputer z punktem połączenia z usługą|  
-|Dmpuploader.log|Rejestruje szczegółowe informacje dotyczące przekazywania zmian w bazie danych w usłudze Microsoft Intune.|Komputer z punktem połączenia z usługą|  
+|Dmpuploader.log|Rejestruje szczegóły związane z przekazywanie zmian w bazie danych w usłudze Microsoft Intune.|Komputer z punktem połączenia z usługą|  
 |hman.log|Rejestruje informacje o przesyłaniu komunikatów dalej.|Serwer lokacji|  
 |objreplmgr.log|Rejestruje przetwarzanie zasad i przypisań.|Serwer lokacji głównej|  
 |PolicyPV.log|Rejestruje generowanie wszystkich zasad.|Serwer lokacji|  
@@ -768,11 +794,11 @@ W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązan
 |wsyncmgr.log|Rejestruje szczegółowe informacje o oprogramowaniu aktualizacji procesu synchronizacji.|Serwer lokacji|  
 |WUAHandler.log|Rejestruje szczegółowe informacje o usłudze Windows Update Agent na kliencie podczas wyszukiwania przez nią aktualizacji oprogramowania.|Klient|  
 
-###  <a name="BKMK_WOLLog"></a>Funkcji Wake On LAN  
+###  <a name="BKMK_WOLLog"></a> Funkcji Wake On LAN  
  W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane z użyciem funkcji Wake On LAN.  
 
 > [!NOTE]  
->  Gdy funkcji Wake On LAN można uzupełnić przy użyciu serwera proxy wznawiania, to działanie jest rejestrowane na kliencie. Na przykład Zobacz pliki CcmExec.log i SleepAgent_ <*domeny* \> @SYSTEM_0.log w [operacje klienta](#BKMK_ClientOpLogs) sekcji tego tematu.  
+>  Gdy funkcji Wake On LAN można uzupełnić przy użyciu serwera proxy wznawiania, to działanie jest rejestrowane na kliencie. Na przykład Zobacz pliki CcmExec.log i SleepAgent_ <*domeny* \> @SYSTEM_0.log w [operacje klienta](#BKMK_ClientOpLogs) sekcji tego artykułu.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
 |--------------|-----------------|----------------------------|  
@@ -792,7 +818,7 @@ W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązan
 |ScanAgent.log|Rejestruje szczegółowe informacje o żądaniach skanowania pod kątem aktualizacji oprogramowania, lokalizacji WSUS i akcjach powiązanych.|Klient|  
 |SdmAgent.log|Rejestruje szczegółowe informacje o śledzeniu korygowania i zgodności. Niemniej jednak plik dziennika aktualizacji oprogramowania, UpdatesHandler.log, zawiera więcej szczegółowych informacji o instalowaniu aktualizacji oprogramowania, które są wymagane dla zgodności.<br /><br /> Ten plik dziennika jest współużytkowany z ustawieniami zgodności.|Klient|  
 |ServiceWindowManager.log|Rejestruje szczegółowe informacje o ocenie okien obsługi.|Klient|  
-|Setupact.log|Podstawowy plik dziennika dla większość błędów występujących podczas procesu instalacji systemu Windows. Plik dziennika znajduje się w folderze % windir %\$Windows.~BT\sources\panther folderu.|Klient|
+|setupact.log|Podstawowy plik dziennika dla większość błędów występujących podczas procesu instalacji systemu Windows. Plik dziennika znajduje się w folderze % windir %\$Windows.~BT\sources\panther folderu.|Klient|
 |SmsWusHandler.log|Rejestruje szczegółowe informacje o procesie skanowania dotyczącym narzędzia stanu zapasów usługi Microsoft Updates.|Klient|  
 |StateMessage.log|Rejestruje szczegółowe informacje o komunikatach o stanie aktualizacji oprogramowania tworzonych i wysyłanych do punktu zarządzania.|Klient|  
 |SUPSetup.log|Rejestruje szczegółowe informacje o instalacji punktu aktualizacji oprogramowania. Po ukończeniu instalacji punktu aktualizacji oprogramowania w tym pliku dziennika zapisywany jest komunikat **Instalacja powiodła się**.|Serwer systemu lokacji|  
@@ -804,14 +830,14 @@ W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązan
 |wsyncmgr.log|Rejestruje szczegółowe informacje o oprogramowaniu aktualizacji procesu synchronizacji.|Serwer lokacji|  
 |WUAHandler.log|Rejestruje szczegółowe informacje o usłudze Windows Update Agent na kliencie podczas wyszukiwania przez nią aktualizacji oprogramowania.|Klient|  
 
-###  <a name="BKMK_WULog"></a>Usługa Windows Update Agent  
+###  <a name="BKMK_WULog"></a> Usługa Windows Update Agent  
  W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane z programem Windows Update Agent.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
 |--------------|-----------------|----------------------------|  
 |WindowsUpdate.log|Rejestruje szczegółowe informacje o Kiedy Windows Update Agent łączy się z serwerem WSUS i pobiera aktualizacje oprogramowania w celu oceny zgodności, i czy są dostępne aktualizacje składników agenta.|Klient|  
 
-###  <a name="BKMK_WSUSLog"></a>Serwer WSUS  
+###  <a name="BKMK_WSUSLog"></a> Serwer WSUS  
  W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane z serwerem WSUS.  
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
