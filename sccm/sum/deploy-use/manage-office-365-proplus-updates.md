@@ -13,11 +13,11 @@ ms.service:
 ms.technology:
 - configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
-ms.openlocfilehash: aedfec9d423c52b1d6864cd8a10dd5c498fb3b0a
-ms.sourcegitcommit: 1378532fac2620ddcfd31061982f344a290c2e67
+ms.openlocfilehash: 2f765df84b94524cf56f6d1d9e051157f1a325ef
+ms.sourcegitcommit: 45ff3ffa040eada5656b17f47dcabd3c637bdb60
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="manage-office-365-proplus-with-configuration-manager"></a>Zarządzanie usługą Office 365 ProPlus w programie Configuration Manager
 
@@ -134,7 +134,7 @@ Podczas wdrażania aktualizacji klienta usługi Office 365, powiadomienia klient
 |1706|Klient odbiera powiadomienia wyskakującego i w aplikacji, a także okno odliczania, przed zainstalowaniem aktualizacji.|
 
 > [!Important]
-> 1706 wersji programu Configuration Manager zanotuj następujące informacje:
+> Począwszy 1706 wersji programu Configuration Manager, należy uwzględnić następujące informacje:
 >
 >- Wyświetla ikony powiadomień w obszarze powiadomień na pasku zadań dla wymaganych aplikacji, gdzie jest ostatecznym w ciągu 48 godzin w przyszłości i zawartość aktualizacji została pobrana. 
 >- Wyświetla okno odliczania dla wymaganych aplikacji, gdzie ostatecznym mieści się w przyszłości 7,5 godziny, a aktualizacja została pobrana. Użytkownika można odroczyć okno odliczania maksymalnie trzy razy przed upływem określonego terminu. Odroczone, odliczania Wyświetla ponownie po dwóch godzinach. Jeśli nie odłożyć, istnieje odliczania 30-minutowych i aktualizacji są instalowane, po wygaśnięciu odliczania.
