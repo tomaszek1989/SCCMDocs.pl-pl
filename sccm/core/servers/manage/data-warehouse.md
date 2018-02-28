@@ -3,7 +3,7 @@ title: Magazyn danych
 titleSuffix: Configuration Manager
 description: "Punkt usługi magazynu danych i bazy danych programu System Center Configuration Manager"
 ms.custom: na
-ms.date: 02/21/2018
+ms.date: 02/26/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -16,14 +16,14 @@ caps.latest.revision:
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: a660b291eb7ae1e009330085d20c3908996c43f3
-ms.sourcegitcommit: 45ff3ffa040eada5656b17f47dcabd3c637bdb60
+ms.openlocfilehash: 954ec65bae15e087d6cf5afbcc8e0da1ebf83533
+ms.sourcegitcommit: be939893f0ceca4add8655ae2c24e42aa16aec38
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 02/27/2018
 ---
 #  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>Punkt usługi magazynu danych programu System Center Configuration Manager
-Dotyczy: Program System Center Configuration Manager (Current Branch)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 Wskaż, począwszy od wersji 1702, których można użyć usługi magazynu danych do przechowywania i raport dotyczący długoterminowe dane historyczne dla danego wdrożenia programu Configuration Manager.
 
@@ -47,6 +47,7 @@ Podczas instalowania roli systemu lokacji, instaluje i konfiguruje bazę danych 
 ## <a name="prerequisites-for-the-data-warehouse-service-point"></a>Wymagania wstępne dotyczące danych magazynu punktu usługi
 - Rola systemu lokacji magazynu danych jest obsługiwana tylko w lokacji najwyższego poziomu w hierarchii. (Centralnej lokacji administracyjnej lub autonomicznej lokacji głównej).
 - Komputer, na którym zainstalowano rolę systemu lokacji wymaga programu .NET Framework 4.5.2 lub nowszej.
+- Udziel **konta punktu usług raportowania** **db_datareader** uprawnień w bazie danych magazynu danych. 
 - Aby zsynchronizować dane z bazy danych magazynu danych jest używane konto komputera komputera, na którym zainstalowano rolę systemu lokacji. To konto wymaga następujących uprawnień:  
   - **Administrator** na komputerze, który jest hostem bazy danych magazynu danych.
   - **DB_Creator** uprawnień w bazie danych magazynu danych.
@@ -82,41 +83,30 @@ Po zainstalowaniu roli programu Configuration Manager utworzy bazę danych magaz
 
 **Ogólne** strony:
 -   **Ustawienia połączenia bazy danych magazynu danych programu Configuration Manager**:
- - **Program SQL Server w pełni kwalifikowana nazwa domeny**:  
- Określ w pełni kwalifikowanej nazwy domeny (FQDN) serwera, który jest hostem bazy danych punktu usługi magazynu danych.
- - **Nazwa wystąpienia serwera SQL, jeśli ma to zastosowanie**:   
- Jeśli nie używasz domyślnego wystąpienia programu SQL Server, należy określić wystąpienie.
- - **Nazwa bazy danych**:   
- Określ nazwę bazy danych magazynu danych. Nazwa bazy danych nie może przekraczać 10 znaków. (Długość nazwy obsługiwanych zostanie zwiększony w przyszłej wersji).
- Configuration Manager tworzy bazę danych magazynu danych o tej nazwie. Jeśli określisz nazwy bazy danych, która już istnieje w wystąpieniu programu SQL server Configuration Manager korzysta z tej bazy danych.
- - **Port serwera SQL używane do łączenia**:   
- Określ numer portu TCP/IP używane przez program SQL Server, który jest hostem bazy danych magazynu danych. Port ten jest używany przez usługę synchronizacji magazynu danych do nawiązania połączenia bazy danych magazynu danych.  
+     - **Program SQL Server w pełni kwalifikowana nazwa domeny**: Określ w pełni kwalifikowanej nazwy domeny (FQDN) serwera, który jest hostem bazy danych punktu usługi magazynu danych.
+     - **Nazwa wystąpienia serwera SQL, jeśli ma to zastosowanie**: Jeśli nie używasz domyślnego wystąpienia programu SQL Server, należy określić wystąpienie.
+     - **Nazwa bazy danych**: Określ nazwę bazy danych magazynu danych. Nazwa bazy danych nie może przekraczać 10 znaków. (Długość nazwy obsługiwanych zostanie zwiększony w przyszłej wersji).
+     Configuration Manager tworzy bazę danych magazynu danych o tej nazwie. Jeśli określisz nazwy bazy danych, która już istnieje w wystąpieniu programu SQL server Configuration Manager korzysta z tej bazy danych.
+     - **Port serwera SQL używane do łączenia**: Określ numer portu TCP/IP używane przez program SQL Server, który jest hostem bazy danych magazynu danych. Port ten jest używany przez usługę synchronizacji magazynu danych do nawiązania połączenia bazy danych magazynu danych.  
 
 **Harmonogram synchronizacji** strony:   
 - **Harmonogram synchronizacji**:
- - **Godzina rozpoczęcia**:  
- Określ czas, który ma synchronizacji magazynu danych, aby uruchomić.
- - **Wzorzec cyklu**:
-    - **Codzienne**: Określ, że synchronizacja jest uruchamiana codziennie.
-    - **Co tydzień**: Określ jeden dzień w każdej tydzień i cyklu tygodniowego synchronizacji.
+    - **Godzina rozpoczęcia**: Określ czas, który ma synchronizacji magazynu danych, aby uruchomić.
+    - **Wzorzec cyklu**:
+         - **Codzienne**: Określ, że synchronizacja jest uruchamiana codziennie.
+         - **Co tydzień**: Określ jeden dzień w każdej tydzień i cyklu tygodniowego synchronizacji.
 
 ## <a name="reporting"></a>Raportowanie
 Po zainstalowaniu punktu usługi magazynu danych, kilka raportów stają się dostępne w punkcie usług raportowania jest zainstalowany w tej samej lokacji. Po zainstalowaniu punktu usługi magazynu danych przed zainstalowaniem punktu usług raportowania, raporty są automatycznie dodawane podczas późniejszej instalacji punktu usług raportowania.
 
 Rola systemu lokacji magazynu danych obejmuje następujące raporty, które mają kategorię z **hurtowni danych**:
- - **Wdrażanie aplikacji — historycznych**:   
- Przejrzyj szczegóły dotyczące wdrażania aplikacji dla określonej aplikacji i komputera.
+ - **Wdrażanie aplikacji — historycznych**: Przejrzyj szczegóły dotyczące wdrażania aplikacji dla określonej aplikacji i komputera.
  - **Program Endpoint Protection i aktualizacji oprogramowania zgodności - historycznych**: Wyświetl komputery, których brakuje aktualizacji oprogramowania.  
- - **Spis sprzętu ogólne — historycznych**:   
- Wyświetl wszystkie spisu sprzętu dla określonej maszyny.
- - **Spis oprogramowania ogólne — historycznych**:   
- Wyświetl wszystkie spisu oprogramowania dla określonej maszyny.
- - **Przegląd kondycji infrastruktury — historycznych**:  
- Wyświetla Przegląd kondycji infrastruktury programu Configuration Manager
- - **Lista złośliwego oprogramowania wykryto - historycznych**:    
- Widok złośliwego oprogramowania, która została wykryta w organizacji.
- - **Podsumowanie dystrybucji oprogramowania - historycznych**:   
- Podsumowanie dystrybucji oprogramowania dla określonych anonsów i komputera.
+ - **Spis sprzętu ogólne — historycznych**: Wyświetl wszystkie spisu sprzętu dla określonej maszyny.
+ - **Spis oprogramowania ogólne — historycznych**: Wyświetl wszystkie spisu oprogramowania dla określonej maszyny.
+ - **Przegląd kondycji infrastruktury — historycznych**: Wyświetla Przegląd kondycji infrastruktury programu Configuration Manager
+ - **Lista złośliwego oprogramowania wykryto - historycznych**:   Widok złośliwego oprogramowania, która została wykryta w organizacji.
+ - **Podsumowanie dystrybucji oprogramowania - historycznych**: Podsumowanie dystrybucji oprogramowania dla określonych anonsów i komputera.
 
 
 ## <a name="expand-an-existing-stand-alone-primary-into-a-hierarchy"></a>Rozszerzyć istniejącą autonomiczną lokację główną do hierarchii
@@ -139,26 +129,23 @@ Aby przenieść bazę danych magazynu danych na nowy serwer SQL, wykonaj następ
 4.  Po zainstalowaniu roli systemu lokacji, przeniesienie zostało ukończone.
 
 ## <a name="troubleshooting-data-warehouse-issues"></a>Rozwiązywanie problemów z magazynem danych
-**Pliki dziennika**:  
+**Pliki dziennika**  
 Użyj następujących dzienników do badania problemów dotyczących instalacji punktu usług magazynu danych lub synchronizacji danych:
  - *DWSSMSI.log* i *DWSSSetup.log* — za pomocą tych dzienników do sprawdzania, czy błędy podczas instalowania punktu usług magazynu danych.
  - *Microsoft.ConfigMgrDataWarehouse.log* — ten dziennik umożliwia badanie synchronizacji danych między programami bazy danych lokacji do bazy danych magazynu danych.
 
 **Konfigurowanie awarii**  
  Instalacja punktu usługi magazynu danych nie powiedzie się na zdalnym serwerze systemu lokacji w magazynie danych po pierwszym Rola systemu lokacji, która instaluje na tym komputerze.  
-  - **Rozwiązanie**:   
-    Upewnij się, że komputer jest instalowany usługi magazynu danych na hostach już co najmniej jeden innych roli systemu lokacji punktu.  
+  - **Rozwiązanie**: Upewnij się, że komputer jest instalowany usługi magazynu danych na hostach już co najmniej jeden innych roli systemu lokacji punktu.  
 
 
 **Znane problemy z synchronizacją**:   
 Synchronizacja nie powiedzie się następujący komunikat o błędzie w *Microsoft.ConfigMgrDataWarehouse.log*: **"nie powiodło się wypełnienie obiektów schematu"**  
- - **Rozwiązanie**:  
-    Upewnij się, że konto komputera komputera hostującego rolę systemu lokacji jest **db_owner** na bazę danych magazynu danych.
+ - **Rozwiązanie**: Upewnij się, że konto komputera komputera hostującego rolę systemu lokacji jest **db_owner** na bazę danych magazynu danych.
 
 Raporty magazynu danych nie można otworzyć bazy danych magazynu danych i punkt usług raportowania znajdują się na innych systemów lokacji.  
 
- - **Rozwiązanie**:  
-    Udziel **konta punktu usług raportowania** **db_datareader** uprawnień w bazie danych magazynu danych.
+ - **Rozwiązanie**: Udziel **konta punktu usług raportowania** **db_datareader** uprawnień w bazie danych magazynu danych.
 
 Po otwarciu raportu magazynu danych, jest zwracany następujący błąd:
 

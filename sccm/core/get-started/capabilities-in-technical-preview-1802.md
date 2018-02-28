@@ -15,15 +15,15 @@ ms.assetid: 4884a2d3-13ce-44e5-88c4-a66dc7ec6014
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 1b5e8f744573680ab55fcfff26622e312206ca1a
-ms.sourcegitcommit: fbd4a9d2fa8ed4ddd3a0fecc4a2ec4fc0ccc3d0c
+ms.openlocfilehash: 162c47d867e78498650da685327c0fe296aa2eda
+ms.sourcegitcommit: b1fa7be6a6fa5bb7c49e90c0e28a21ba8b41c842
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="capabilities-in-technical-preview-1802-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1802 programu System Center Configuration Manager
 
-Dotyczy: System Center Configuration Manager (wersja zapoznawcza Technical Preview)*
+*Dotyczy: System Center Configuration Manager (wersja zapoznawcza Technical Preview)*
 
 W tym artykule przedstawiono funkcje, które są dostępne w wersji Technical Preview programu System Center Configuration Manager, wersja 1802. Można zainstalować tę wersję, aby zaktualizować i dodać nowe funkcje do lokacji programu Configuration Manager technical preview. 
 
@@ -318,9 +318,9 @@ AutoPilot systemu Windows to rozwiązanie dotyczące dołączania i konfigurowan
 
 
 
-## <a name="improvements-to-configuration-manager-policies-for-windows-device-exploit-guard"></a>Ochrona wykorzystać ulepszenia zasad programu Configuration Manager urządzenia systemu Windows
+## <a name="improvements-to-configuration-manager-policies-for-windows-defender-exploit-guard"></a>Ulepszenia zasad programu Configuration Manager dla usługi Windows Defender wykorzystać zabezpieczenia
 <!-- 1356220 -->
-Dodatkowe ustawienia zasad dla służącym do zmniejszania możliwości ataków i składniki dostępu folderu kontrolowanych zostały dodane do ochrony wykorzystać urządzeń z systemem Windows w programie Configuration Manager.
+Dodatkowe ustawienia zasad dla składników służącym do zmniejszania możliwości ataków i kontrolowane dostępu do folderu zostały dodane w programie Configuration Manager dla [Windows Defender wykorzystać zabezpieczenia](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/windows-defender-exploit-guard).
 
 **Nowe ustawienia dla dostępu do folderu kontrolowanych**<br/>
 Podczas konfigurowania dostępu do folderu kontrolowanych istnieją dwie dodatkowe opcje: **Blokuj tylko sektory dysku mają** i **inspekcji sektory dysku mają tylko**. Te dwa ustawienia dostęp do kontrolowanych folderu można włączyć tylko sektory rozruchowe i nie obsługuje ochrony foldery lub foldery domyślne chronione. 

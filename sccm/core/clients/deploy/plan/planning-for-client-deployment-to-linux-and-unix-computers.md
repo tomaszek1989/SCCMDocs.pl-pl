@@ -7,20 +7,21 @@ ms.date: 08/30/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-client
+ms.technology:
+- configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 44153689-70e8-42ad-9ae8-17ae35f6a2e3
-caps.latest.revision: "9"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: d96a8aedd046e3a8dcd12e711ae19f53a901fceb
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 9df979fe98dc4d4ead18ff3cfb276612681c9bce
+ms.sourcegitcommit: b1fa7be6a6fa5bb7c49e90c0e28a21ba8b41c842
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="planning-for-client-deployment-to-linux-and-unix-computers-in-system-center-configuration-manager"></a>Planowanie wdrożenia klientów na komputerach z systemami Linux i UNIX w programie System Center Configuration Manager
 
@@ -46,10 +47,10 @@ Klienta programu System Center Configuration Manager można zainstalować na kom
 
  Skorzystaj z informacji w tym artykule, aby ułatwić planowanie wdrażania klientów programu Configuration Manager dla systemów Linux i UNIX.  
 
-##  <a name="BKMK_ClientDeployPrereqforLnU"></a>Wymagania wstępne dotyczące wdrażania klientów na serwerach Linux i UNIX  
+##  <a name="BKMK_ClientDeployPrereqforLnU"></a> Wymagania wstępne dotyczące wdrażania klientów na serwerach Linux i UNIX  
  Poniższe informacje pozwolą ustalić wymagania wstępne warunkujące pomyślne zainstalowanie klienta dla systemów Linux i UNIX.  
 
-###  <a name="BKMK_ClientDeployExternalforLnU"></a>Zależności poza programem Configuration Manager:  
+###  <a name="BKMK_ClientDeployExternalforLnU"></a> Zależności poza programem Configuration Manager:  
  Poniższe tabele zawierają opis wymaganych systemów operacyjnych UNIX i Linux oraz zależności pakietów.  
 
  **Wersja Red Hat Enterprise Linux Server 5.1 (Tikanga)**  
@@ -68,6 +69,13 @@ Klienta programu System Center Configuration Manager można zainstalować na kom
 |Openssl|Biblioteki protokołu OpenSSL; protokół bezpiecznej komunikacji sieciowej (Secure Network Communications, SNC)|1.0.0-4|  
 |PAM|Podłączane moduły uwierzytelniania (PAM)|1.1.1-4|  
 
+ **Red Hat Enterprise Linux Server w wersji 7**  
+
+|Wymagany pakiet|Opis|Minimalna wersja|  
+|----------------------|-----------------|---------------------|  
+|glibc|Biblioteki standardowe C Standard|2.17|  
+|Openssl|Biblioteki protokołu OpenSSL; protokół bezpiecznej komunikacji sieciowej (Secure Network Communications, SNC)|1.0.1|  
+|PAM|Podłączane moduły uwierzytelniania (PAM)|1.1.1-4|  
 
  **Solaris 10 SPARC**  
 
@@ -188,15 +196,15 @@ Klienta programu System Center Configuration Manager można zainstalować na kom
 
  Aby uzyskać więcej informacji o komunikacji klientów i portach żądań, zobacz [Konfigurowanie klienta dla systemów Linux i UNIX w celu zlokalizowania punktów zarządzania](../../../../core/clients/deploy/deploy-clients-to-unix-and-linux-servers.md#BKMK_ConfigClientMP).  
 
-##  <a name="BKMK_PlanningforCommunicationsforLnU"></a>Planowanie komunikacji między lasem zaufania dla serwerów systemu UNIX i Linux  
+##  <a name="BKMK_PlanningforCommunicationsforLnU"></a> Planowanie komunikacji między lasem zaufania dla serwerów systemu UNIX i Linux  
  Serwery systemu Linux i UNIX, którymi można zarządzać w programie Configuration Manager działają jako klienci grupy roboczej i wymagają podobnej konfiguracji jak klienci z systemem Windows, które znajdują się w grupie roboczej. Informacje dotyczące komunikacji pochodzącej z komputerów należących do grup roboczych znajdują się w sekcji [Komunikacja między lasami usługi Active Directory](../../../../core/plan-design/hierarchy/communications-between-endpoints.md#Plan_Com_X-Forest) tematu [Komunikacja między punktami końcowymi w programie System Center Configuration Manager](../../../../core/plan-design/hierarchy/communications-between-endpoints.md).  
 
-###  <a name="BKMK_ServiceLocationforLnU"></a>Lokalizacja usługi przez klienta dla systemów Linux i UNIX  
+###  <a name="BKMK_ServiceLocationforLnU"></a> Lokalizacja usługi przez klienta dla systemów Linux i UNIX  
  Zadanie lokalizowania serwera systemu lokacji udostępniającego usługę dla klientów jest nazywane lokalizowaniem usługi. W odróżnieniu od klienta z systemem Windows, klient dla systemów Linux i UNIX nie używa usługi Active Directory do lokalizowania usługi. Ponadto klient programu Configuration Manager dla systemów Linux i UNIX nie obsługuje właściwości klienta, która określa sufiks domeny punktu zarządzania. Zamiast tego klient uzyskuje informacje o dodatkowych serwerach systemu lokacji, które zapewniają usługi dla klientów, ze znanego punktu zarządzania przypisanego podczas instalowania oprogramowania klienckiego.  
 
  Więcej informacji o lokalizacji usług znajduje się w sekcji [Usługa lokacji i metoda określania przypisanego punktu zarządzania przez klientów](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md#BKMK_Plan_Service_Location) tematu [Informacje o tym, jak klienci znajdują zasoby i usługi lokacji w programie System Center Configuration Manager](../../../../core/plan-design/hierarchy/understand-how-clients-find-site-resources-and-services.md).  
 
-##  <a name="BKMK_SecurityforLnU"></a>Planowanie zabezpieczeń i certyfikatów dla serwerów systemu UNIX i Linux  
+##  <a name="BKMK_SecurityforLnU"></a> Planowanie zabezpieczeń i certyfikatów dla serwerów systemu UNIX i Linux  
  Dla zapewnienia bezpiecznej i uwierzytelnionej komunikacji z lokacjami programu Configuration Manager klienta programu Configuration Manager dla systemów Linux i UNIX korzysta z tego samego modelu komunikacji co klient programu Configuration Manager dla systemu Windows.  
 
  Po zainstalowaniu klienta systemów Linux i UNIX można przypisać klienta certyfikatu PKI, który umożliwia użycie protokołu HTTPS do komunikacji z lokacjami programu Configuration Manager. Jeśli certyfikat PKI nie został przypisany, klient tworzy certyfikat z podpisem własnym i komunikuje się tylko przy użyciu protokołu HTTP.  
@@ -209,21 +217,21 @@ Klienta programu System Center Configuration Manager można zainstalować na kom
 
  Aby uzyskać informacje o sposobie używania certyfikatów w programie Configuration Manager, zobacz [wymagania dotyczące certyfikatu PKI dla programu System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
 
-###  <a name="BKMK_AboutCertsforLnU"></a>Informacje o certyfikatach używanych przez serwery systemu UNIX i Linux  
+###  <a name="BKMK_AboutCertsforLnU"></a> Informacje o certyfikatach używanych przez serwery systemu UNIX i Linux  
  Klient programu Configuration Manager dla systemów Linux i UNIX używa certyfikatu z podpisem własnym lub certyfikatu X.509 PKI, podobnie jak klienci z systemem Windows. Brak zmian do wymagań dotyczących infrastruktury kluczy publicznych dla systemów lokacji programu Configuration Manager w przypadku zarządzania klienci systemu Linux i UNIX.  
 
  Certyfikaty, których można używać dla systemu Linux i UNIX klientów, którzy komunikują się z systemami lokacji programu Configuration Manager muszą być w formacie klucza publicznego certyfikatu (PKCS #12), a hasło musi być znane, aby można ją określić do klienta podczas określania certyfikatu PKI.  
 
  Klient programu Configuration Manager dla systemów Linux i UNIX obsługuje jeden certyfikat PKI, a nie obsługuje wielu certyfikatów. W związku z tym kryteria wyboru certyfikatu można skonfigurować dla programu Configuration Manager nie obejmuje lokacji.  
 
-###  <a name="BKMK_ConfigCertsforLnU"></a>Konfigurowanie certyfikatów dla serwerów systemu UNIX i Linux  
+###  <a name="BKMK_ConfigCertsforLnU"></a> Konfigurowanie certyfikatów dla serwerów systemu UNIX i Linux  
  Aby skonfigurować klienta programu Configuration Manager dla serwerów Linux i UNIX do komunikacji HTTPS, skonfiguruj klienta do korzystania z certyfikatu PKI w czasie instalacji klienta. Nie można zainicjować obsługi administracyjnej certyfikatu przed zainstalowaniem oprogramowania klienckiego.  
 
  Podczas instalowania klienta korzystającego z certyfikatu PKI można użyć parametru wiersza polecenia **-UsePKICert**, aby określić lokalizację i nazwę pliku PKCS#12, który zawiera certyfikat PKI. Ponadto należy za pomocą parametru wiersza polecenia **-certpw** określić hasło dla certyfikatu.  
 
  Jeśli nie określisz parametru **-UsePKICert**, klient wygeneruje certyfikat z podpisem własnym i będzie próbował komunikować się z serwerami systemu lokacji tylko przy użyciu protokołu HTTP.  
 
-##  <a name="BKMK_NoSHA-256"></a>O systemu Linux i UNIX systemów operacyjnych, że czy nie obsługi algorytmu SHA-256  
+##  <a name="BKMK_NoSHA-256"></a> O systemu Linux i UNIX systemów operacyjnych, że czy nie obsługi algorytmu SHA-256  
  Następujących systemów Linux i UNIX systemów operacyjnych, które są obsługiwane jako klienci programu Configuration Manager zostały wydane z wersjami biblioteki OpenSSL, które nie obsługują algorytmu SHA-256:  
 
 -   Wersja systemu Solaris 10 (SPARC/x86)  
