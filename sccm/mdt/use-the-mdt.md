@@ -4,17 +4,18 @@ titleSuffix: Microsoft Deployment Toolkit
 description: "Dowiedz się, jak używać programu Microsoft Deployment Toolkit 2013. "
 ms.date: 09/09/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-osd
+ms.technology:
+- configmgr-osd
 ms.topic: article
 ms.assetid: 10a846c2-e63c-4c2b-8210-7485bfe7e47f
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 1af6032dabf122d67b8bc5d003fe63b8e8ec7a9b
-ms.sourcegitcommit: 645cd5a324bdd299906efa27eaca5885eafc9e9c
+manager: dougeby
+ms.openlocfilehash: c55df0fe9aab04d4688f022caebc9412b3f511c8
+ms.sourcegitcommit: be939893f0ceca4add8655ae2c24e42aa16aec38
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/16/2018
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="using-the-microsoft-deployment-toolkit"></a>Przy użyciu zestawu narzędzi firmy Microsoft do wdrażania  
  Microsoft® Deployment Toolkit (MDT) 2013 umożliwia automatyzację wdrożenia komputerów w organizacji. Ten dokument zawiera wskazówki dotyczące planowania, tworzenia i wdrażania systemów operacyjnych Windows® i aplikacji przy użyciu zestawu MDT 2013.  
@@ -56,10 +57,10 @@ ms.lasthandoff: 01/16/2018
 |[Przygotowanie usług wdrażania systemu Windows](#PreparingWindowsDeploymentServices)|Zawiera wskazówki dotyczące przygotowania usług wdrażania systemu Windows do użycia w inicjowania procesów wdrażania LTI, ZTI i UDI, w tym tworzenie obrazów i konfigurowania integracji z usługą wdrożenia LTI, ZTI i UDI.|  
 |[Planowanie wdrożenia aplikacji](#PlanningforApplicationDeployment)|Zawiera wskazówki dotyczące sposobu wdrażania aplikacji przy użyciu zestawu MDT, programu Configuration Manager i Microsoft Application Virtualization (App-V), w tym wdrażania aplikacji z obrazem systemu operacyjnego lub po wdrożeniu obrazu.|  
 
-##  <a name="PlanningMdtDeployments"></a>Planowanie wdrożenia zestawu MDT  
+##  <a name="PlanningMdtDeployments">Planowanie wdrożenia zestawu MDT</a>  
  Proces planowania ułatwia przygotowanie do wdrożenia w środowisku produkcyjnym. Proces rozpoczyna się od projekty koncepcyjne, które zostały sprawdzone i wprowadzono ulepszenia w środowisku testowym. W wyniku planowania procesu to zbiór dokumentów projektowych, które służą do tworzenia infrastruktury wdrożenia zestawu MDT i wykonywania automatycznych systemu operacyjnego i wdrożenia aplikacji w środowisku produkcyjnym.  
 
-###  <a name="OverviewoftheMDTDeploymentProcess"></a>Omówienie procesu wdrażania zestawu MDT  
+###  <a name="OverviewoftheMDTDeploymentProcess"></a> Omówienie procesu wdrażania zestawu MDT  
  Zestaw MDT ma na celu pomoc zautomatyzuj wdrażanie systemu operacyjnego i aplikacji do komputerów przenośnych oraz komputery serwerów w środowisku. Na wysokim poziomie zestaw MDT automatyzuje proces wdrażania, konfigurując pliki instalacji nienadzorowanej dla systemu Windows i Pakując niezbędne pliki do skonsolidowanego pliku obrazu, który można następnie wdrożyć na komputerach referencyjnych i docelowych.  
 
  Rysunek 1 pokazuje wysokiego poziomu LTI, ZTI i UDI procesów wdrażania.  
@@ -86,7 +87,7 @@ ms.lasthandoff: 01/16/2018
 
 5.  Przechwyconych obrazów komputera odniesienia należy wdrożyć na komputerach docelowych.  
 
-###  <a name="PlanningChecklist"></a>Lista kontrolna planowania  
+###  <a name="PlanningChecklist"></a> Lista kontrolna planowania  
   Tabela 3 zawiera listę kontrolną planowania w formie listy pytania, które służy do pomocy w procesie planowania. Dla każdego pytania, należy skorzystać z informacji zawartych w **omówienie** kolumna ułatwiają znajdowanie odpowiedzi oparta na wymagania danej organizacji.  
 
 #### <a name="table-3-planning-checklist"></a>Tabela 3. Lista kontrolna planowania  
@@ -97,7 +98,7 @@ ms.lasthandoff: 01/16/2018
 |Wdroży przez sieć, z nośnika wymiennego lub? Wdrożenia multiemisyjne będzie używana?|Jeśli są wdrażane przez sieć, sprawdź, czy jest wystarczającą przepustowość między udziałami wdrożenia, punkty dystrybucji i komputerów docelowych i podaj punkty dystrybucji regionalne. Aby uzyskać więcej informacji, zobacz [Wybieranie metody wdrażania](#ChoosingaDeploymentMethod) i [oceny wymagań dotyczących sieci](#EvaluatingNetworkRequirements).|  
 |Co to jest swoją strategię tworzenia obrazów i źródła?|Aby uzyskać więcej informacji, zobacz [przy użyciu komputerów odniesienia w przypadku wdrożeń MDT](#UsingReferenceComputersinMDTDeployments).|  
 |Czy wdroży pełny zestaw plików systemu operacyjnego lub niestandardowego obrazu?|Aby uzyskać więcej informacji, zobacz [przy użyciu komputerów odniesienia w przypadku wdrożeń MDT](#UsingReferenceComputersinMDTDeployments).|  
-|Jak będzie można obsługiwać kluczy produktów i Licencjonowanie?|Małe firmy mogą przypisać każdemu użytkownikowi klucz indywidualnych produktów. Większe organizacje powinny używać aktywacji usługi zarządzania kluczami (KMS) lub klucza aktywacji wielokrotnej (MAK). Aby uzyskać więcej informacji, zobacz [aktywacji produktu i informacje klucza](http://www.microsoft.com/licensing/existing-customers/product-activation.aspx).|  
+|Jak będzie można obsługiwać kluczy produktów i Licencjonowanie?|Małe firmy mogą przypisać każdemu użytkownikowi klucz indywidualnych produktów. Większe organizacje powinny używać aktywacji usługi zarządzania kluczami (KMS) lub klucza aktywacji wielokrotnej (MAK). Aby uzyskać więcej informacji, zobacz [aktywacji produktu i informacje klucza](https://licensingapps.microsoft.com/product-activation).|  
 |Zamierzasz zezwolić użytkownikom na wybranie własnych systemu operacyjnego, aplikacji, ustawień regionalnych, strefa czasowa i hasło administracyjne?|Użytkownicy mogą wybrać te informacje w czasie wdrażania lub informacji wcześniej, można skonfigurować. Aby uzyskać więcej informacji, zobacz [Wybieranie LTI ZTI i UDI wdrożeń](#ChoosingLTIZTIorUDIDeployments).|  
 |Zostanie użytkowników Odśwież ich bieżący komputer, w miejscu, przeprowadzić migrację ustawień do nowej instalacji systemu operacyjnego lub zakupu nowego komputera?|Aby uzyskać więcej informacji, zobacz [identyfikacji scenariuszy wdrażania](#IdentifyingDeploymentScenarios).|  
 |Użytkowników, którzy będą mogli zainstalować aplikacji, które?|Aby uzyskać więcej informacji, zobacz [Planowanie wdrożenia aplikacji](#PlanningforApplicationDeployment).|  
@@ -108,7 +109,7 @@ ms.lasthandoff: 01/16/2018
 |Czy wdroży wersje innego produktu (na przykład Professional, Ultimate lub biznesowe)?|Aby uzyskać więcej informacji, zobacz [Szacowanie MDT wymagania dotyczące magazynu](#EstimatingMDTStorageRequirements).|  
 |Typ wdrożenia zostanie wykonane (na przykład wdrożyć nowy komputer, zastąpienie istniejącego komputera)?|Aby uzyskać więcej informacji, zobacz [identyfikacji scenariuszy wdrażania](#IdentifyingDeploymentScenarios).|  
 
-###  <a name="EstimatingMDTStorageRequirements"></a>Szacowanie wymagania dotyczące magazynu zestawu MDT  
+###  <a name="EstimatingMDTStorageRequirements"></a> Szacowanie wymagania dotyczące magazynu zestawu MDT  
  Wdrożenia LTI przechowywania obrazów systemu, aplikacji i innych plików w udziałach wdrożenia. Wdrożenia ZTI i UDI przechowywania plików w punktach dystrybucji programu Configuration Manager. Aby określić magazyn musi, oszacować wymagania dotyczące magazynu:  
 
 -   Komputery z systemem zestawu MDT, zgodnie z opisem w [szacowania wymagania dotyczące magazynu dla zestawu MDT komputerach z systemem](#EstimateStorageRequirementsforComputersRunningMDT)  
@@ -121,14 +122,14 @@ ms.lasthandoff: 01/16/2018
 
 -   Tworzenie kopii zapasowej istniejących komputerów przed ich wdrożeniem dla scenariusza wdrażania Odśwież komputer zgodnie z opisem w [szacowania wymagania dotyczące magazynu dla kopii zapasowych komputerów docelowych](#EstimateStorageRequirementsforTargetComputerBackup)  
 
-####  <a name="EstimateStorageRequirementsforComputersRunningMDT"></a>Oszacować wymagania dotyczące magazynu dla komputerów z systemem zestawu MDT  
+####  <a name="EstimateStorageRequirementsforComputersRunningMDT"></a> Oszacować wymagania dotyczące magazynu dla komputerów z systemem zestawu MDT  
  Komputer z uruchomionym MDT ma następujące wymagania dotyczące magazynu:  
 
 -   Wymagane jest co najmniej 4 gigabajty (GB) wolnego miejsca na dysku zawierającym folderu % TEMP %, jeśli utworzysz nośnik obrazów. W przeciwnym razie wymagane jest 1 GB wolnego miejsca na dysku zawierającym folderu % TEMP %.  
 
 -   1 GB wolnego miejsca jest wymagany na dysku zawierającym pliki programu zestawu MDT.  
 
-####  <a name="EstimateStorageRequirementsforMDTDeploymentShares"></a>Oszacować wymagania dotyczące magazynu dla udziałów wdrożenia zestawu MDT  
+####  <a name="EstimateStorageRequirementsforMDTDeploymentShares"></a> Oszacować wymagania dotyczące magazynu dla udziałów wdrożenia zestawu MDT  
  Upewnij się, że wystarczającą ilość miejsca jest dostępne do przechowywania obrazów systemu operacyjnego, pakiety językowe i sterowniki urządzeń, używany w konsoli Deployment Workbench. Te obrazy są przechowywane w udziałach wdrożenia zestawu MDT utworzone w konsoli Deployment Workbench.  
 
  Określić wymagania dotyczące magazynu dla każdej z następujących elementów w udziału wdrożenia:  
@@ -149,19 +150,19 @@ ms.lasthandoff: 01/16/2018
 
 -   **Typ procesora.** Osobny obraz jest wymagany dla 32-bitowych i 64-bitowych wersjach systemu Windows.  
 
-####  <a name="EstimateStorageRequirementsforConfigurationManagerDistributionPoints"></a>Oszacować wymagania dotyczące magazynu dla punktów dystrybucji programu Configuration Manager  
+####  <a name="EstimateStorageRequirementsforConfigurationManagerDistributionPoints"></a> Oszacować wymagania dotyczące magazynu dla punktów dystrybucji programu Configuration Manager  
  Oszacować wymagania dotyczące magazynu dla punktów dystrybucji programu Configuration Manager przy użyciu tych samych obliczeń opisanego w [udziałów wdrożenia zestawu MDT, wymagania dotyczące magazynu szacowania](#EstimateStorageRequirementsforMDTDeploymentShares). Jeśli obrazy są dystrybuowane do wielu punktów dystrybucji, wymagania dotyczące magazynu są stosowane do każdego punktu dystrybucji.  
 
  Aby uzyskać więcej informacji o planowaniu punktów dystrybucji programu Configuration Manager zobacz sekcję "Punktu dystrybucji," w sekcji "Planowania konfiguracji Menedżera lokacji systemów dla wdrożeń systemu operacyjnego," w programie Configuration Manager Biblioteka dokumentacji, która jest instalowana z programem Configuration Manager.  
 
-####  <a name="EstimateStorageRequirementsforUserStateMigrationData"></a>Oszacować wymagania dotyczące magazynu dla danych migracji stanu użytkownika  
+####  <a name="EstimateStorageRequirementsforUserStateMigrationData"></a> Oszacować wymagania dotyczące magazynu dla danych migracji stanu użytkownika  
  Szacowanie ilości miejsca wymaganego dla danych migracji stanu użytkownika systemu Windows użytkownika stanu migracji narzędzia (USMT) zapisanych podczas procesu wdrażania przez:  
 
 -   Określanie, czy mają być przechowywane dane migracji stanu użytkownika lokalnie na komputerach docelowych lub sieci udostępnione foldery, zgodnie z opisem w [określić, gdzie do przechowywania danych migracji stanu użytkownika](#DetermineWheretoStoreUserStateMigrationData)  
 
 -   Określanie wymagania dotyczące magazynu dla danych migracji stanu użytkownika, zgodnie z opisem w [ustalić wymagania dotyczące magazynu dla danych migracji stanu użytkownika](#DetermineStorageRequirementsforUserStateMigrationData)  
 
-#####  <a name="DetermineWheretoStoreUserStateMigrationData"></a>Określenie miejsca dane migracji stanu użytkownika magazynu  
+#####  <a name="DetermineWheretoStoreUserStateMigrationData"></a> Określenie miejsca dane migracji stanu użytkownika magazynu  
  Po określeniu, wymagania dotyczące magazynu dla danych migracji stanu użytkownika, określ lokalizację przechowywania danych. Przechowywania danych migracji stanu użytkownika w następujących lokalizacjach:  
 
 -   Na komputerze lokalnym, aby skrócić czas wdrażania systemu Windows, a także wykorzystanie (zalecane) w sieci  
@@ -175,7 +176,7 @@ ms.lasthandoff: 01/16/2018
 
  Utwórz udział na serwer wyznaczony podczas procesu planowania do przechowywania Przechowuj pliki narzędzia USMT. MDT używa wartości znajdujące się w CustomSettings.ini, aby zlokalizować folder magazynu stanu użytkownika.  
 
-#####  <a name="DetermineStorageRequirementsforUserStateMigrationData"></a>Określić wymagania dotyczące magazynu dla danych migracji stanu użytkownika  
+#####  <a name="DetermineStorageRequirementsforUserStateMigrationData"></a> Określić wymagania dotyczące magazynu dla danych migracji stanu użytkownika  
  Dla celów planowania wykonaj następujące zadania, aby oszacować wymagania dotyczące magazynu migracji stanu użytkownika:  
 
 -   Uruchom Scanstate.exe w narzędzia USMT z **/p** opcję, aby oszacować rozmiar danych migracji stanu użytkownika. Za pomocą **/p** opcji, można oszacować wymagania dotyczące miejsca na dysku bez rzeczywistego wykonania migracji.  
@@ -184,7 +185,7 @@ ms.lasthandoff: 01/16/2018
 
  Oblicz całkowita pojemność wymagane przez pomnożenie średni rozmiar danych migracji stanu użytkownika przez liczbę dni, aby zachować dane, a następnie mnożąc wynik według liczby użytkowników do migracji w okresie przechowywania. Na przykład jeśli rozmiar migracji stanu użytkownika średnia jest 3 GB, dane muszą być przechowywane przez pięć dni, 100 użytkowników są migrowane każdego dnia i łączne wymaganie magazynowania jest 1500 GB (3 GB x 5 dni × 100 użytkowników dziennie).  
 
-####  <a name="EstimateStorageRequirementsforTargetComputerBackup"></a>Oszacować wymagania dotyczące magazynu dla kopii zapasowych komputerów docelowych  
+####  <a name="EstimateStorageRequirementsforTargetComputerBackup"></a> Oszacować wymagania dotyczące magazynu dla kopii zapasowych komputerów docelowych  
  Opcjonalny krok w procesie wdrażania w scenariuszu odświeżania komputera można wykonać kopii zapasowej komputera docelowego przed wdrożeniem docelowego systemu operacyjnego.  
 
  Proces tworzenia kopii zapasowej możesz wykonać w zestawie MDT, za pomocą narzędzia Imagex.exe. Proces tworzenia kopii zapasowej tworzy obraz woluminu dysku, na którym są przechowywane dane migracji stanu użytkownika. Ta kopia zapasowa służy do odzyskiwania danych migracji stanu użytkownika, nie można przywrócić komputer docelowy z obrazu.  
@@ -194,7 +195,7 @@ ms.lasthandoff: 01/16/2018
 > [!NOTE]
 >  Domyślnie proces tworzenia kopii zapasowej zestawu MDT nie kopii zapasowej wiele partycji. Jeśli chcesz utworzyć kopię zapasową wiele partycji, modyfikacja procesu wdrożenia zestawu MDT lub użyj innej metody tworzenia kopii zapasowej.  
 
-###  <a name="PlanningforApplicationDeployment"></a>Planowanie wdrożenia aplikacji  
+###  <a name="PlanningforApplicationDeployment">Planowanie wdrożenia aplikacji</a>  
  Aplikacje można wdrażać jako część obrazu systemu operacyjnego lub po wdrożeniu systemu operacyjnego do komputera docelowego. W ramach przygotowania do wdrożenia należy wykonać te zadania:  
 
 -   **Utwórz portfolio aplikacji.** Portfolio aplikacji zawiera listę aplikacji i stan zgodności w każdej aplikacji. W tej ofercie aplikacji można utworzyć za pomocą oprogramowania spisu oprogramowania, takich jak funkcja Toolkit zgodności aplikacji (ACT), zasoby i zgodność w programie Configuration Manager.  
@@ -209,7 +210,7 @@ ms.lasthandoff: 01/16/2018
 
 -   **Określenie aplikacji, które wymagają ponownego uruchomienia systemu operacyjnego.** Aplikacje, które wymagają ponownego uruchomienia systemu operacyjnego po zakończeniu instalacji wymagają dodatkowej konfiguracji. Aby uzyskać więcej informacji, zobacz [skonfigurować komputer w celu ponownego uruchomienia po instalacji aplikacji](#ConfiguretheComputertoRestartAfterApplicationInstallation).  
 
-###  <a name="DefiningOperatingSystemComponentsandSettings"></a>Definiowanie składników systemu operacyjnego i ustawienia  
+###  <a name="DefiningOperatingSystemComponentsandSettings"></a> Definiowanie składników systemu operacyjnego i ustawienia  
  W ramach konfiguracji standaryzowanej ustanowienia określają składniki systemu operacyjnego, aby uwzględnić oraz ustawienia dla tych składników. Oznaczanie zawiera składniki opcjonalne w wszystkich systemów operacyjnych, usługi ról serwera w systemach operacyjnych Windows Server i składniki do uwzględnienia w środowisku preinstalacji systemu Windows (Windows PE). Na przykład może zdecydować, usuń zbędne składników systemu Windows z wdrażania komputerów stacjonarnych i przenośnych Aby ograniczyć wpływ zabezpieczeń tych komputerów.  
 
  Dla każdego obrazu systemu operacyjnego, należy określić:  
@@ -222,14 +223,14 @@ ms.lasthandoff: 01/16/2018
 
 -   **Ustawienia konfiguracji.** Określ ustawienia konfiguracji dla składników zawartych w obrazach. Wybierz ustawienia konfiguracji, które spełniają wymagania biznesowe i zabezpieczeń organizacji. Aby uzyskać więcej informacji na temat zabezpieczeń komputera docelowego, zobacz [planowania zabezpieczeń komputera docelowego](#PlanningTargetComputerSecurity).  
 
-###  <a name="ChoosingaDeploymentMethod"></a>Wybieranie metody wdrażania  
+###  <a name="ChoosingaDeploymentMethod"></a> Wybieranie metody wdrażania  
  Zazwyczaj komputery docelowe mają szybkie, trwałe połączenie infrastruktury wdrażania. Jednak niektóre komputerów docelowych może nawiązać intranet zdalnie lub w ogóle. Zestaw MDT zawiera następujące metody wdrażania systemów operacyjnych i aplikacji przy użyciu LTI oparta na połączenie sieciowe:  
 
 -   **Udziału wdrożenia.** Ta metoda używa sieci folderu udostępnionego, w którym znajdują się wszystkie pliki wdrożenia. Komputer docelowy uruchamia środowisko Windows PE, a następnie łączy z udziałem wdrożenia, aby przeprowadzić wdrożenie. Wybierz tę metodę, gdy komputery docelowe mają szybkie, trwałe połączenie infrastruktury wdrażania.  
 
 -   **Nośnika.** Ta metoda tworzy obraz, który można wykonać wdrożenia z nośników wymiennych, takich jak dyski DVD lub dyski flash USB (dyskach flash USB). Windows PE służy do uruchomienia komputera z nośnika. Wybierz tę metodę, gdy na komputerach docelowych zdalnie połączonych lub może nie mieć łączności na wszystkich.  
 
-###  <a name="EvaluatingNetworkRequirements"></a>Trwa szacowanie wymagań sieci  
+###  <a name="EvaluatingNetworkRequirements"></a> Trwa szacowanie wymagań sieci  
  Ze względu na rozmiar obrazów są dystrybuowane do komputerów docelowych (500 MB [MB do 4 GB) komputery muszą mieć szybkie, trwałe połączenie z serwerami używane w procesie wdrażania. Te serwery muszą być w sąsiadujących ze sobą podsieci do komputerów docelowych, aby upewnić się na komputerach i szybkie połączenie.  
 
 > [!NOTE]
@@ -247,7 +248,7 @@ ms.lasthandoff: 01/16/2018
 
  Oprócz pojemności sieci należy włączyć odpowiednie protokoły i ruchu. Na przykład do inicjowania wdrożenia LTI ZTI i UDI za pomocą usług wdrażania systemu Windows i wdrażania multiemisji, należy włączyć ruch multiemisji między komputerami infrastruktury i docelowego zestawu MDT.  
 
-###  <a name="UsingReferenceComputersinMDTDeployments"></a>Korzystanie z komputerów odniesienia do wdrożenia zestawu MDT  
+###  <a name="UsingReferenceComputersinMDTDeployments"></a> Korzystanie z komputerów odniesienia do wdrożenia zestawu MDT  
  Proces wdrożenia zestawu MDT korzysta z komputera odniesienia jako linii bazowej konfiguracji komputerów docelowych po ukończeniu procesu wdrażania. Należy skonfigurować komputer odniesienia, aby spełnić wymagania biznesowe, technicznych i zabezpieczeń organizacji. Po skonfigurowaniu komputera odniesienia, przechwytywania obrazu komputera odniesienia, który można następnie wdrożyć na komputerach docelowych.  
 
  Tylko w rzadkich przypadkach będzie można będzie wdrażać obrazy z nośnika dystrybucji systemu Windows nie mają być modyfikowane na komputerach referencyjnych i docelowych. Zamiast tego należy utworzyć dostosowany obraz, które zawierają system operacyjny Windows, języka pakiety, aplikacje, sterowniki urządzeń, aktualizacji oprogramowania i innego oprogramowania.  
@@ -259,7 +260,7 @@ ms.lasthandoff: 01/16/2018
 > [!NOTE]
 >  Maszyny wirtualne zwykle nie mają ta sama wydajność co komputery fizyczne, dlatego tworzenie obrazów odwołania może trwać dłużej.  
 
-###  <a name="ChoosingThickThinorHybridImages"></a>Wybieranie grubości, cienki, lub hybrydowego obrazów  
+###  <a name="ChoosingThickThinorHybridImages"></a> Wybieranie grubości, cienki, lub hybrydowego obrazów  
  W ramach procesu planowania należy określić typy obrazów, które zostaną utworzone. Typy obrazów, które można utworzyć można podzielić na następujące kategorie:  
 
 -   **Obrazy grubości.** Grubość obrazy są wbudowanymi obrazów, które zawierają podstawowe aplikacje, pakiety językowe i inne pliki. Część procesu tworzenia obrazu instaluje podstawowe aplikacje i pakiety językowe na komputerze odniesienia przed przechwyceniem obrazu dysku.  
@@ -290,7 +291,7 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 
  Jak zwiększa rozmiar plików obrazów, zwiększyć koszty. Duże obrazy mają więcej aktualizacji, testowanie dystrybucji, sieci i skojarzonych z nimi kosztów magazynowania. Nawet jeśli niewielką część obrazu jest aktualizowany, musi redystrybucji całego obrazu.  
 
-###  <a name="IdentifyingDeploymentScenarios"></a>Identyfikowanie scenariusze wdrażania  
+###  <a name="IdentifyingDeploymentScenarios"></a> Identyfikowanie scenariusze wdrażania  
  Tabela 5 wymieniono scenariusze wdrażania i zawiera krótki opis każdego z nich.  
 
 #### <a name="table-5-deployment-scenarios"></a>Tabela 5. Scenariusze wdrażania  
@@ -312,10 +313,10 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 
  W ramach scenariusza wdrażania komputera zastąpić czyszczenie partycji dysku oryginalnego komputera. Standardowy format wykonana przez systemy operacyjne Windows wykonuje bezpiecznego czyszczenia dysku zgodnie z definicją w USA Departamentu Obrony standardowe 5520.22M. Jeśli jest to wymagane, czyszczenie bezpiecznego dysków twardych w komputerach docelowych przy użyciu narzędzi dostarczonych przez dostawców innych niż Microsoft.  
 
-###  <a name="PlanningforBitLockerDriveEncryption"></a>Planowanie szyfrowania dysków funkcją BitLocker  
+###  <a name="PlanningforBitLockerDriveEncryption"></a> Planowanie szyfrowania dysków funkcją BitLocker  
  Funkcja BitLocker jest uwzględniona w systemu Windows obejmują więc planowanie decyzji związanych z funkcją BitLocker w środowisku. Jeden decyzji funkcji BitLocker, które należy wykonać jest magazyn kluczy odzyskiwania. Można przechowywać kluczy odzyskiwania funkcji BitLocker w:  
 
--   `A local folder.`Wybierz tę opcję, aby przechowywać klucz odzyskiwania na dyskach flash USB, w których każdy użytkownik zarządza.  
+-   `A local folder.` Wybierz tę opcję, aby przechowywać klucz odzyskiwania na dyskach flash USB, w których każdy użytkownik zarządza.  
 
 -   **W folderze sieciowym.** Wybierz tę opcję, aby centralnie przechowywania kluczy odzyskiwania w udostępnionym folderze sieciowym, które administratorzy sieci zarządzania.  
 
@@ -328,11 +329,11 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
     > [!NOTE]
     >  Możesz podać numer PIN, które użytkownicy mogą wprowadzać w połączeniu z modułem TPM lub dysku flash USB można użyć do zwiększenia poziomu bezpieczeństwa podczas uruchamiania komputera.  
 
--   **DYSK FLASH USB.** W przypadku tej metody wymagane klucze szyfrowania są przechowywane na dysku flash USB, który musi być obecny na komputerze po uruchomieniu komputera. Jest to preferowana metoda, jeśli komputer docelowy nie obsługuje modułu TPM.  
+-   **UFD.** W przypadku tej metody wymagane klucze szyfrowania są przechowywane na dysku flash USB, który musi być obecny na komputerze po uruchomieniu komputera. Jest to preferowana metoda, jeśli komputer docelowy nie obsługuje modułu TPM.  
 
- Aby uzyskać więcej informacji o funkcji BitLocker, zobacz [omówieniu szyfrowania dysków funkcją BitLocker](http://windows.microsoft.com/windows-vista/BitLocker-Drive-Encryption-Overview).  
+ Aby uzyskać więcej informacji o funkcji BitLocker, zobacz [omówieniu szyfrowania dysków funkcją BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-device-encryption-overview-windows-10).  
 
-###  <a name="EvaluatingTargetComputerReadiness"></a>Oceny gotowości komputera docelowego  
+###  <a name="EvaluatingTargetComputerReadiness"></a> Oceny gotowości komputera docelowego  
  W ramach procesu planowania oceny gotowości komputera docelowego do wdrożenia docelowego systemu operacyjnego, sterowników urządzeń, aplikacji i innych składników. Oceny gotowości komputera docelowego przy użyciu automatycznego sprzętu i oprogramowania spisu narzędzi, takich jak programu Configuration Manager lub Microsoft Assessment and Toolkit planowania (MAP).  
 
  Sprawdź komputer docelowy jest gotowa do wdrożenia przez:  
@@ -343,7 +344,7 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 
 -   Identyfikowanie różnice w procesie wdrażania 32-bitowe i 64-bitowych komputerów, zgodnie z opisem w [zidentyfikować różnice w 64-bitowe i 32-bitowego wdrożenia](#IdentifyDifferencesin64-bitand32-bitDeployments)  
 
-###  <a name="VerifyTargetComputerReadinessforRunningMDTScripts"></a>Sprawdź gotowość komputera docelowego do uruchamiania skryptów zestawu MDT  
+###  <a name="VerifyTargetComputerReadinessforRunningMDTScripts"></a> Sprawdź gotowość komputera docelowego do uruchamiania skryptów zestawu MDT  
  Przed uruchomieniem reszty uruchomienie ZTIPrereq.vbs, aby upewnić się, że komputer docelowy spełnia wymagania dotyczące uruchamiania pozostałych skryptów MDT skryptów zestawu MDT. Wymagania wstępne dotyczące skryptu obejmują:  
 
 -   Windows Script Host (WSH) wersja 5.6 lub później zainstalowana i uruchomiona  
@@ -353,7 +354,7 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
     > [!NOTE]
     >  Wersja programu MSXML musi być w wersji 3.0. Program MSXML w wersji 4.0 i 6.0 nie są zgodne ze skryptami zestawu MDT.  
 
-###  <a name="VerifyAdequateTargetComputerResources"></a>Sprawdź zasoby komputera docelowego odpowiednie  
+###  <a name="VerifyAdequateTargetComputerResources"></a> Sprawdź zasoby komputera docelowego odpowiednie  
  Po ZTIPrereq.vbs Określa, czy komputer spełnia wymagania dotyczące uruchamiania skryptów pozostałe, ZTIValidate.wsf Określa, czy komputer docelowy ma odpowiedniego oprogramowania i sprzętu zasobów systemowych do wdrożenia docelowego systemu operacyjnego . Wymagania te obejmują:  
 
 -   Komputer docelowy ma WSH 5.6 lub nowszy  
@@ -388,7 +389,7 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 
  Stwierdzenia, czy wszystkie komputery istniejące zasoby systemowe niewystarczającego przy użyciu programu Configuration Manager lub innego narzędzia stanu zapasów oprogramowania. Uaktualnij zasobów systemowych na tych komputerach docelowych przed wdrożeniem systemu Windows, jeśli to konieczne.  
 
-###  <a name="IdentifyDifferencesin64-bitand32-bitDeployments"></a>Zidentyfikuj różnice w 64-bitowe i 32-bitowego wdrożenia  
+###  <a name="IdentifyDifferencesin64-bitand32-bitDeployments"></a> Zidentyfikuj różnice w 64-bitowe i 32-bitowego wdrożenia  
  Większość funkcji i funkcji, które znajdują się w 32-bitowe wersje systemu Windows są takie same, w 64-bitowych wersjach systemu Windows. Jednak wziąć pod uwagę następujące różnice w przypadku wdrażania 64-bitowych wersjach systemu Windows:  
 
 -   We wdrożeniach LTI wersję środowiska Windows PE musi być zgodna wersja systemu Windows jest wdrażany. Jeśli wdrażania 64-bitowej wersji systemu Windows, należy użyć 64-bitowej wersji systemu Windows PE.  
@@ -407,27 +408,25 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 
 -   64-bitowe wersje systemu Windows wymaga 64-bitowe sterowniki urządzeń. Nie można użyć 32-bitowe sterowniki urządzeń w 64-bitowych wersjach systemu Windows.  
 
-###  <a name="PlanningPerformanceandPowerManagement"></a>Planowanie wydajności i zarządzania energią  
+###  <a name="PlanningPerformanceandPowerManagement"></a> Planowanie wydajności i zarządzania energią  
  System Windows udostępnia wiele funkcji, które pomagają zwiększyć wydajność i użycie energii przez komputery. Można zastosować tych usprawnień w ramach ustawienia konfiguracji, które można wdrożyć na komputerach docelowych przy użyciu zestawu MDT.  
 
  Przejrzyj następujące zasoby do określania ustawień konfiguracji, wydajności i zarządzania energią do uwzględnienia podczas przeprowadzania wdrożeń komputera docelowego:  
 
--   [Centrum deweloperów analizy wydajności systemu Windows](http://msdn.microsoft.com/performance/default.aspx)  
+-   [Narzędzia analizy wydajności systemu Windows](https://docs.microsoft.com/windows-hardware/test/wpt/)  
 
--   [Narzędzia analizy wydajności systemu Windows](http://msdn.microsoft.com/performance/cc825801.aspx)  
+-   [Stałego obliczeniowych: Wymuszanie ustawień zarządzania energią w organizacji za pomocą zasad grupy](https://technet.microsoft.com/magazine/dd252731.aspx)  
 
--   [Stałego obliczeniowych: Wymuszanie ustawień zarządzania energią w organizacji za pomocą zasad grupy](http://technet.microsoft.com/magazine/dd252731.aspx)  
+-   [Przenośne baterii życia rozwiązania dla systemu Windows 7](https://msdn.microsoft.com/windows/hardware/gg487547)  
 
--   [Przenośne baterii życia rozwiązania dla systemu Windows 7](http://msdn.microsoft.com/windows/hardware/gg487547)  
+-   [Konfiguracja zasad zasilania i wdrażania systemu Windows](https://msdn.microsoft.com/windows/hardware/gg463243.aspx)  
 
--   [Konfiguracja zasad zasilania i wdrażania systemu Windows](http://msdn.microsoft.com/windows/hardware/gg463243.aspx)  
-
-###  <a name="PlanningTargetComputerSecurity"></a>Planowanie zabezpieczeń komputera docelowego  
+###  <a name="PlanningTargetComputerSecurity"></a> Planowanie zabezpieczeń komputera docelowego  
  Podczas planowania konfiguracji systemów operacyjnych Windows dla komputerów docelowych, upewnij się, że obiekt docelowy, który komputery są wdrożone zgodnie z wymaganiami w Twojej organizacji. Firma Microsoft opracowała Akceleratory rozwiązań zabezpieczeń, pomocne komputery docelowe w zabezpieczonych konfiguracji wdrażania.  
 
- Akceleratory rozwiązań zabezpieczeń zawierają wskazówki i narzędzia ułatwiające bezpieczne systemu Windows. Aby uzyskać więcej informacji o wdrażaniu komputerów docelowych w konfiguracji zabezpieczonych przy użyciu tych akceleratorów rozwiązania, zobacz [Akceleratory rozwiązań zabezpieczeń](http://technet.microsoft.com/solutionaccelerators/cc835245.aspx).  
+ Akceleratory rozwiązań zabezpieczeń zawierają wskazówki i narzędzia ułatwiające bezpieczne systemu Windows. Aby uzyskać więcej informacji o wdrażaniu komputerów docelowych w konfiguracji zabezpieczonych przy użyciu tych akceleratorów rozwiązania, zobacz [Akceleratory rozwiązań zabezpieczeń](https://technet.microsoft.com/solutionaccelerators/cc835245.aspx).  
 
-###  <a name="ChoosingLTIZTIorUDIDeployments"></a>Wybieranie LTI ZTI i UDI wdrożenia  
+###  <a name="ChoosingLTIZTIorUDIDeployments"></a> Wybieranie LTI ZTI i UDI wdrożenia  
  Wdrożenia LTI, ZTI i UDI Użyj tego samego wspólnego zestawu skryptów i plików konfiguracji (takich jak CustomSettings.ini) do wdrażania na komputerach docelowych. Tabela 6 porównuje wdrożenia LTI, ZTI i UDI.  
 
 #### <a name="table-6-comparison-of-lti-zti-and-udi-deployments"></a>Tabela 6. Porównanie LTI, ZTI i UDI wdrożenia  
@@ -462,7 +461,7 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 |Pełni|-Interakcji z technika użytkownika lub wdrożenia jest wymagana.<br /><br /> -Zmniejsza się ryzyko wprowadzenia błędów konfiguracji.<br /><br /> -Użytkowników lub pracowników technicznych wdrożenia nie trzeba znać informacji o konfiguracji przed inicjowania procesu wdrożenia zestawu MDT.|-Więcej czasu jest potrzebna do zapewnienia informacji o konfiguracji wymaganej do wdrożenia w pełni zautomatyzowanych.<br /><br /> -Poświadczenia dostępu do zasobów sieciowych i który mają podwyższony poziom uprawnień są przechowywane w plikach konfiguracji, które muszą być chronione.|  
 |Częściowo|-Mniej czasu jest wymagany do przygotowania do wdrożenia, ponieważ informacje o konfiguracji można podać interaktywnie.|-Interakcji z technika użytkownika lub wdrożenia jest wymagana.<br /><br /> -Zwiększa się ryzyko wprowadzenia błędów konfiguracji.<br /><br /> -Użytkowników lub pracowników technicznych wdrożenie musi mieć poświadczenia, które wymagają uprawnień z podwyższonym poziomem uprawnień.<br /><br /> -Użytkowników lub pracowników technicznych wdrożenia musisz znać niektóre informacje o konfiguracji przed inicjowania procesu wdrożenia zestawu MDT.|  
 
-###  <a name="ReviewingKnownIssuesLimitationsandRecommendationsforMDT"></a>Znane problemy, ograniczenia i zaleceń dotyczących zestawu MDT  
+###  <a name="ReviewingKnownIssuesLimitationsandRecommendationsforMDT"></a> Znane problemy, ograniczenia i zaleceń dotyczących zestawu MDT  
  Przejrzyj znanych problemów, ograniczenia i zalecenia dotyczące:  
 
 -   Ogólne problemy w zestawie MDT zgodnie z opisem w [ogólny przegląd — znane problemy, ograniczenia i zalecenia dotyczące zestawu MDT](#ReviewGeneralKnownIssuesLimitationsandRecommendationsforMDT)  
@@ -483,7 +482,7 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 
 -   Zapisywanie i przywracanie informacji o użytkowniku, zgodnie z opisem w [przeglądu znane problemy, ograniczenia i zalecenia dotyczące zapisywanie i przywracanie informacji o użytkowniku](#ReviewKnownIssuesLimitationsandRecommendationsforSavingandRestoringUserInformation)  
 
-####  <a name="ReviewGeneralKnownIssuesLimitationsandRecommendationsforMDT"></a>Ogólny przegląd — znane problemy, ograniczenia i zalecenia dotyczące zestawu MDT  
+####  <a name="ReviewGeneralKnownIssuesLimitationsandRecommendationsforMDT"></a> Ogólny przegląd — znane problemy, ograniczenia i zalecenia dotyczące zestawu MDT  
  Poniżej przedstawiono listę znanych problemów ogólne ograniczenia i zaleceń, które odnoszą się do zestawu MDT:  
 
 -   Zestaw MDT obsługuje Windows Assessment and Deployment Kit (Windows ADK) dla Windows 8.1, Windows PE w wersji 5.0, System Center 2012 R2 Configuration Manager.  
@@ -496,7 +495,7 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 
 -   Podczas określania konta Uruchom jako, należy określić użytkownika będącego członkiem grupy Administratorzy na serwerze. W przeciwnym razie konto będzie ma wystarczające uprawnienia dostępu połączeń sieciowych przez administratorów.  
 
--   Podczas tworzenia udziałów wdrożenia na komputerach z nazw plików 8.3 wyłączona (zobacz artykuł Microsoft Support [sposobu tworzenia nazw Wyłącz 8.3 na partycjach NTFS](http://support.microsoft.com/kb/121007/)), konsoli Deployment Workbench nie powiedzie się wygenerować środowiska Preinstalacyjnego systemu Windows obraz. Nazwy plików 8.3 została wyłączona, ponownie je włączyć, ustawiając **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem\NtfsDisable8dot3NameCreation** wartości rejestru w celu **0**.  
+-   Podczas tworzenia udziałów wdrożenia na komputerach z nazw plików 8.3 wyłączona (zobacz artykuł Microsoft Support [sposobu tworzenia nazw Wyłącz 8.3 na partycjach NTFS](https://support.microsoft.com/kb/121007/)), konsoli Deployment Workbench nie powiedzie się wygenerować środowiska Preinstalacyjnego systemu Windows obraz. Nazwy plików 8.3 została wyłączona, ponownie je włączyć, ustawiając **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem\NtfsDisable8dot3NameCreation** wartości rejestru w celu **0**.  
 
 -   W folderze należy unikać tworzenia podfolder i plik o takiej samej nazwie. Na przykład w folderze plików należy nie nazwa podfolderu elementu i następnie utwórz plik o nazwie elementu.  
 
@@ -536,7 +535,7 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 
 -   Podczas wdrożenia LTI na nowych komputerach, niektóre strony (takie jak **ustawienia regionalne użytkownika** i **ustawień regionalnych klawiatury** stron) nie są wyświetlane tekst poprawnie w razie potrzeby, nie są zainstalowane w środowisku Windows PE. W scenariuszu odświeżania komputera te same symptomy są wyświetlane, gdy wymagane nie są zainstalowane w systemie operacyjnym figury geometrycznej.  
 
--   Niektóre układów klawiatury może wymagać pakiety językowe lub edytory input method, które zestawu MDT nie ma automatycznie w obrazie środowiska Windows PE uruchamiania. Zestaw MDT sprawdza, czy układ klawiatury jest nieprawidłowy. Aby uzyskać więcej informacji, zobacz artykuł Microsoft Support [jak dodać obsługę Input Method Editor (IME) do środowiska Windows PE 2.0](http://support.microsoft.com/kb/926181).  
+-   Niektóre układów klawiatury może wymagać pakiety językowe lub edytory input method, które zestawu MDT nie ma automatycznie w obrazie środowiska Windows PE uruchamiania. Zestaw MDT sprawdza, czy układ klawiatury jest nieprawidłowy. Aby uzyskać więcej informacji, zobacz artykuł Microsoft Support [jak dodać obsługę Input Method Editor (IME) do środowiska Windows PE 2.0](https://support.microsoft.com/kb/926181).  
 
 -   Podczas konfigurowania statyczne ustawienia konfiguracji protokołu IP dla karty sieciowej można dodać maksymalnie dwa adresy serwera WINS. Jeśli więcej niż dwa adresy serwerów WINS są dodawane przy użyciu zestawu MDT, używane są tylko pierwsze dwa adresy serwera WINS.  
 
@@ -616,12 +615,12 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 
 -   Wybieranie właściwości, które nie są skonfigurowane, nawet wtedy, gdy obecny w pliku odpowiedzi, dołączyć kod kraju/regionu, numer kierunkowy, zamiejscowych access i reguły. Aby obejść ten problem, skonfiguruj reguły tworzenia i testowania pliku reg w środowisku laboratoryjnym, a następnie zaimportować ten plik .reg jako zadania niestandardowego podczas sekwencji zadań.  
 
-####  <a name="ReviewGeneralKnownIssuesLimitationsandRecommendationsThatRelatetoWindows"></a>Przejrzyj znanych problemów, ograniczenia i zaleceń, które odnoszą się do systemu Windows  
+####  <a name="ReviewGeneralKnownIssuesLimitationsandRecommendationsThatRelatetoWindows"></a> Przejrzyj znanych problemów, ograniczenia i zaleceń, które odnoszą się do systemu Windows  
  Poniżej przedstawiono listę znanych problemów, ograniczenia i zaleceń, które odnoszą się do systemu Windows:  
 
 -   Wdrożenie zakończy się niepowodzeniem na komputerach skonfigurowanych dla języka innego niż angielski, po uruchomieniu usługi Windows Media® Player sieci udostępniania. Jako obejście Zatrzymaj usługi udostępniania w sieci programu Windows Media Player dopiero po zakończeniu wdrożenia.  
 
--   Kopię zapasową danych funkcji BitLocker i modułu TPM można używać usług AD DS. Informacje odzyskiwania obejmuje hasła odzyskiwania dla każdej wartości zaszyfrowane, hasłem właściciela modułu TPM i informacje niezbędne do skojarzenia informacje odzyskiwania z komputerów i woluminów. Innym rozwiązaniem jest, aby zapisać pakiet zawierający klucze używane do szyfrowania danych oprócz hasła odzyskiwania trzeba uzyskać dostęp do tych kluczy. Aby uzyskać więcej informacji, zobacz [Konfigurowanie usługi Active Directory do tworzenia kopii zapasowych szyfrowania dysków funkcją BitLocker i zaufane informacje odzyskiwania modułu platformy](http://www.microsoft.com/downloads/details.aspx?FamilyID=3a207915-dfc3-4579-90cd-86ac666f61d4) w programie Microsoft Download Center.  
+-   Kopię zapasową danych funkcji BitLocker i modułu TPM można używać usług AD DS. Informacje odzyskiwania obejmuje hasła odzyskiwania dla każdej wartości zaszyfrowane, hasłem właściciela modułu TPM i informacje niezbędne do skojarzenia informacje odzyskiwania z komputerów i woluminów. Innym rozwiązaniem jest, aby zapisać pakiet zawierający klucze używane do szyfrowania danych oprócz hasła odzyskiwania trzeba uzyskać dostęp do tych kluczy. Aby uzyskać więcej informacji, zobacz [często zadawane pytania dotyczące funkcji BitLocker w usługach AD DS](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-frequently-asked-questions#bkmk-adds) w programie Microsoft Download Center.  
 
 -   Podczas włączania funkcji BitLocker, pliki klucza są generowane jako pliki systemowe ukryty, tylko do odczytu. Aby je wyświetlić, ustaw opcję Eksploratora Windows, aby wyświetlić ukryte i system plików.  
 
@@ -645,7 +644,7 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 
 -   Zestaw MDT obsługuje wybór pakietu języka systemu Windows podczas wdrażania w przypadku wszystkich scenariuszy, jeśli pakiety językowe są konfigurowane w konsoli Deployment Workbench. Wybranie wielu pakietów językowych jest możliwe w przypadku wdrażania wersje Enterprise i Ultimate systemu operacyjnego. Jeśli są wdrażane w innych wersjach systemu Windows, można wybrać tylko jednego pakietu językowego z powodu ograniczeń licencjonowania systemu Windows.  
 
-####  <a name="ReviewGeneralKnownIssuesLimitationsandRecommendationsThatRelatetoDisksandPartitioning"></a>Przejrzyj znanych problemów, ograniczenia i zaleceń, które odnoszą się do dysków i partycjonowania  
+####  <a name="ReviewGeneralKnownIssuesLimitationsandRecommendationsThatRelatetoDisksandPartitioning"></a> Przejrzyj znanych problemów, ograniczenia i zaleceń, które odnoszą się do dysków i partycjonowania  
  Poniżej przedstawiono listę znanych problemów, ograniczenia i zaleceń, które odnoszą się do dysku i partycji:  
 
 -   LTI nie obsługuje wdrożenia docelowy system operacyjny do dysków logicznych lub dysków dynamicznych.  
@@ -688,7 +687,7 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 
 -   Podczas konfigurowania **Format i partycji** zadań, zawsze podać partycji rozszerzonych i logicznych ze sobą i nie należy dodawać partycji podstawowej między nimi, co daje niepożądane wyniki, gdy rozmiar partycji logicznej jest skonfigurowana przy użyciu wartości procentowej. Innymi słowy nie dodawaj partycji podstawowej między partycji rozszerzonych i logicznych.  
 
-####  <a name="ReviewGeneralKnownIssuesLimitationsandRecommendationsThatRelatetoBitLocker"></a>Przejrzyj znanych problemów, ograniczenia i zaleceń, które dotyczą funkcji BitLocker  
+####  <a name="ReviewGeneralKnownIssuesLimitationsandRecommendationsThatRelatetoBitLocker"></a> Przejrzyj znanych problemów, ograniczenia i zaleceń, które dotyczą funkcji BitLocker  
  Oto lista znanych problemów, ograniczenia i zaleceń, które dotyczą funkcji BitLocker:  
 
 -   Windows Server może ulec awarii, jeśli używany do wykonywania wdrożenie obrazu systemu operacyjnego nie ma składników opcjonalnych funkcji BitLocker. Taka sytuacja może wystąpić w następujących scenariuszach:  
@@ -709,12 +708,12 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 
     -   Wdrażanie komputera bez uruchamiania nośnika; na przykład przy użyciu wdrażania środowiska wykonawczego przed uruchomieniem (PXE).  
 
-####  <a name="ReviewKnownIssuesLimitationsandRecommendationsforLTIDeployments"></a>Przejrzyj znanych problemów, ograniczenia i zalecenia dotyczące wdrożenia LTI  
+####  <a name="ReviewKnownIssuesLimitationsandRecommendationsforLTIDeployments"></a> Przejrzyj znanych problemów, ograniczenia i zalecenia dotyczące wdrożenia LTI  
  Oto lista znanych problemów, ograniczenia i zaleceń, które odnoszą się do wdrożenia LTI:  
 
 -   Sieci poświadczeń określonych w celu uzyskania dostępu do zasobów sieciowych (przez narzędzie USMT przechowywać lokalizacji, lokalizacja kopii zapasowej komputera i tak dalej) nie są weryfikowane, jeśli użytkownik jest zalogowany na komputerze przy użyciu konta domeny, a komputer jest już nawiązać połączenie inny udział w tym samym serwerze.  
 
-####  <a name="ReviewKnownIssuesLimitationsandRecommendationsforZTIDeploymentsUsingConfigurationManager"></a>Przejrzyj znanych problemów, ograniczenia i zalecenia dotyczące wdrożenia ZTI programu Configuration Manager  
+####  <a name="ReviewKnownIssuesLimitationsandRecommendationsforZTIDeploymentsUsingConfigurationManager"></a> Przejrzyj znanych problemów, ograniczenia i zalecenia dotyczące wdrożenia ZTI programu Configuration Manager  
  Poniżej przedstawiono listę znanych problemów, ograniczenia i zaleceń, które odnoszą się do wdrożenia ZTI programu Configuration Manager:  
 
 -   Podczas wdrażania systemu operacyjnego docelowych — się w języku angielskim, metody instalacji monituje o język użytkownika, ponieważ szablon pliku unattend.xml zawiera ustawienia dla Stanów Zjednoczonych w języku angielskim (en-us). Aby obejść ten problem, wykonaj jedną z następujących zadań:  
@@ -729,12 +728,12 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 
 -   Podczas instalowania ról serwera, programu Configuration Manager może być wyświetlany monit dla bibliotek DLL wymaganego do ukończenia instalacji roli. W takim przypadku należy określić prawidłową lokalizację wymaganych plików. Aby uniknąć tego kroku, Dodaj krok wcześniej w sekwencji zadań, która kopiuje wymagane biblioteki dll do folderu plików Instalatora systemu Windows, które są zdefiniowane w rejestrze. Ta lokalizacja folderu jest zdefiniowany w **Ścieżka_źródłowa** znajduje się w wartości rejestru **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup**.  
 
-####  <a name="ReviewKnownIssuesLimitationsandRecommendationsforUDIDeployments"></a>Przejrzyj znanych problemów, ograniczenia i zalecenia dotyczące wdrożenia UDI  
+####  <a name="ReviewKnownIssuesLimitationsandRecommendationsforUDIDeployments"></a> Przejrzyj znanych problemów, ograniczenia i zalecenia dotyczące wdrożenia UDI  
  Poniżej przedstawiono listę znanych problemów, ograniczenia i zaleceń, które odnoszą się do wdrożeń UDI:  
 
 -   Aplikacje są wyłączone i nie może zostać zainstalowana automatycznie. Ten problem wystąpi, gdy aplikacja wymaga zatwierdzenia przez administratora, ale jeszcze nie została zatwierdzona. Jeśli **Wymagaj zgody administratora, jeśli użytkownicy zażądają tej aplikacji**zaznaczono pole wyboru dla aplikacji, upewnij się, że aplikacja została zatwierdzona.  
 
-     Aby uzyskać więcej informacji na temat wymagają zatwierdzenia przez administratora i uznania, zobacz [jak wdrażać aplikacje w programie Configuration Manager](http://technet.microsoft.com/library/gg682082.aspx).  
+     Aby uzyskać więcej informacji na temat wymagają zatwierdzenia przez administratora i uznania, zobacz [jak wdrażać aplikacje w programie Configuration Manager](https://docs.microsoft.com/sccm/apps/deploy-use/deploy-applications).  
 
 -   Podczas wykonywania scenariusz wdrażania komputer odświeżania zestawu MDT z dysku twardego USB, mogą wystąpić błędy sekwencji zadań, ponieważ program sequencer zadań programu Configuration Manager umieszczona _SMSTaskSequence folderu na dysku USB. Domyślnie program sequencer zadań programu Configuration Manager umieszcza folderu _SMSTaskSequence na dysku z najbardziej dostępne wolne miejsce na dysku, co może spowodować problemy w dalszej części procesu wdrażania, jeśli dysk USB zostanie usunięty.  
 
@@ -750,7 +749,7 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 
     5.  Ukończ pracę kreatora UDI.  
 
-####  <a name="ReviewKnownIssuesLimitationsandRecommendationsforRunningTaskSequencesonTargetComputers"></a>Przegląd — znane problemy, ograniczenia i zalecenia dotyczące uruchamiania sekwencji zadań na komputerach docelowych  
+####  <a name="ReviewKnownIssuesLimitationsandRecommendationsforRunningTaskSequencesonTargetComputers"></a> Przegląd — znane problemy, ograniczenia i zalecenia dotyczące uruchamiania sekwencji zadań na komputerach docelowych  
  Poniżej przedstawiono listę znanych problemów, ograniczenia i zalecenia dotyczące uruchamiania sekwencji zadań na komputerach docelowych w zestawie MDT:  
 
 -   We wdrożeniach LTI upewnij się, że kontrola konta użytkownika (UAC) jest wyłączona dla wbudowanego konta administratora lokalnego na komputerach docelowych przed zakończeniem sekwencji zadań. Uruchamianie sekwencji zadań na komputerach z funkcji Kontrola konta użytkownika jest włączona dla konta administratora lokalnego powoduje, że sekwencje zadań zakończyć się niepowodzeniem.  
@@ -758,9 +757,9 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
     > [!NOTE]
     >  Kontrola konta użytkownika należy wyłączyć tylko dla wbudowanego konta administratora lokalnego i włączona dla wszystkich innych kont. Domyślnie wbudowanego konta administratora lokalnego jest wykluczony z funkcji Kontrola konta użytkownika z powodu **Kontrola konta użytkownika: Tryb zatwierdzania przez administratora dla wbudowanego konta administratora** ustawienie zasad (wyłączone).  
 
-     Aby uzyskać więcej informacji na temat [ustawienia zasad grupy funkcji Kontrola konta użytkownika, zobacz ustawienia zasad grupy funkcji Kontrola konta użytkownika i ustawień klucza rejestru](http://technet.microsoft.com/library/dd835564\(WS.10\).aspx).  
+     Aby uzyskać więcej informacji na temat [ustawienia zasad grupy funkcji Kontrola konta użytkownika, zobacz ustawienia zasad grupy funkcji Kontrola konta użytkownika i ustawień klucza rejestru](https://technet.microsoft.com/library/dd835564\(WS.10\).aspx).  
 
-####  <a name="ReviewKnownIssuesLimitationsandRecommendationsforSavingandRestoringUserInformation"></a>Przejrzyj znanych problemów, ograniczenia i zalecenia dla zapisywanie i przywracanie informacji o użytkowniku  
+####  <a name="ReviewKnownIssuesLimitationsandRecommendationsforSavingandRestoringUserInformation"></a> Przejrzyj znanych problemów, ograniczenia i zalecenia dla zapisywanie i przywracanie informacji o użytkowniku  
  Oto lista znanych problemów, ograniczenia i zalecenia dotyczące zapisywanie i przywracanie informacji o użytkowniku w zestawie MDT:  
 
 -   We wdrożeniach LTI, nie dodawaj żadnego z następujących parametrów wiersza polecenia narzędzia USMT do **ScanStateArgs** lub **LoadStateArgs** właściwości, ponieważ powodują zapisywanie i przywracanie informacji o stanie użytkownika Błąd:  
@@ -771,9 +770,9 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 
     -   **/ szyfrowania**  
 
-    -   **następujący/key**  
+    -   **/key**  
 
-    -   **/ KeyFile**  
+    -   **/keyfile**  
 
     -   **/vsc**  
 
@@ -803,7 +802,7 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 > [!NOTE]
 >  Jeśli znasz UDI, przejrzyj warunki UDI i terminologia "UDI koncepcje" w *odwołanie do usługi Microsoft Deployment Toolkit*. Zapoznawanie się z tych warunków i terminologia pomoże Ci być szanse stosowania w dalszej części tego podręcznika dla Twojej organizacji.  
 
-##  <a name="InstallingorUpgradingtoMDT"></a>Instalowanie lub uaktualnianie do zestawu MDT  
+##  <a name="InstallingorUpgradingtoMDT"></a> Instalowanie lub uaktualnianie do zestawu MDT  
  Aby przygotować się do wykonywania wdrożeń przy użyciu zestawu MDT, wykonaj następujące zadania:  
 
 1.  Przejrzyj znanych problemów, ograniczenia i wskazówki dotyczące przygotowywania dysków na komputerach docelowych w zestawie MDT, zgodnie z opisem w [recenzowania znane problemy, ograniczenia i zalecenia dotyczące Instalowanie lub uaktualnianie do zestawu MDT](#ReviewingKnownIssuesLimitationsandRecommendationsforInstallingorUpgradingtoMDT).  
@@ -821,7 +820,7 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 > [!NOTE]
 >  Na dowolnym komputerze, na którym zainstalowano zestaw MDT do zarządzania wdrożenia LTI lub ZTI musi być zainstalowany Windows PowerShell™ w wersji 2.0 lub nowszej.  
 
-###  <a name="ReviewingKnownIssuesLimitationsandRecommendationsforInstallingorUpgradingtoMDT"></a>Przeglądanie znanych problemów, ograniczenia i zalecenia dotyczące instalowania lub uaktualniania do zestawu MDT  
+###  <a name="ReviewingKnownIssuesLimitationsandRecommendationsforInstallingorUpgradingtoMDT"></a> Przeglądanie znanych problemów, ograniczenia i zalecenia dotyczące instalowania lub uaktualniania do zestawu MDT  
  Poniżej przedstawiono listę znanych problemów, ograniczenia i zalecenia dotyczące instalowania zestawu MDT:  
 
 -   Upewnij się, że wolumin dysku, który zawiera folder tymczasowy, który używa konsoli Deployment Workbench ma co najmniej 20 GB dostępnego miejsca na dysku.  
@@ -834,7 +833,7 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 
      Upewnij się, że wolumin dysku, określony w **katalog_tymczasowy** rejestru podklucza lub zmienna środowiskowa % TEMP % ma wystarczającą ilość wolnego miejsca.  
 
-###  <a name="PreparingthePrerequisiteInfrastructureforAllMDTDeploymentMethods"></a>Przygotowanie infrastruktury wymaganej wstępnie do wszystkich metod wdrażania zestawu MDT  
+###  <a name="PreparingthePrerequisiteInfrastructureforAllMDTDeploymentMethods"></a> Przygotowanie infrastruktury wymaganej wstępnie do wszystkich metod wdrażania zestawu MDT  
  Zestaw MDT wymaga instalacji następujące oprogramowanie LTI, ZTI i UDI:  
 
 -   Microsoft .NET Framework w wersji 3.5 z dodatkiem SP1  
@@ -849,7 +848,7 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 
 -   [Przygotowywanie środowiska wdrażania UDI](#PreparingtheUDIDeploymentEnvironment)  
 
-###  <a name="InstallingaNewInstanceofMDT"></a>Zainstalowanie nowego wystąpienia zestawu mdt  
+###  <a name="InstallingaNewInstanceofMDT"></a> Zainstalowanie nowego wystąpienia zestawu mdt  
  Których wszystkie wstępnie wymagane oprogramowanie jest zainstalowane, wykonaj następujące kroki, aby zainstalować zestaw MDT (MicrosoftDeploymentToolkit_*platformy.* MSI, gdzie *platformy* x86 lub x64):  
 
 1.  Kliknij dwukrotnie **MicrosoftDeploymentToolkit2012_x64.msi** (dla 64-bitowych systemach operacyjnych) lub **MicrosoftDeploymentToolkit2012_x86.msi** (dla 32-bitowych systemach operacyjnych).  
@@ -871,14 +870,14 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 
  Po zakończeniu zestaw MDT jest zainstalowany w folderze docelowym, które wybrano w kreatorze.  
 
-###  <a name="UpgradingtoMDT"></a>Uaktualnienie do zestawu MDT  
+###  <a name="UpgradingtoMDT"></a> Uaktualnienie do zestawu MDT  
  Zestaw MDT automatycznie odinstalowuje poprzednich wersji przed zainstalowaniem, łącznie z następujących wersji:  
 
--   Zestaw MDT 2012 aktualizacja 1  
+-   MDT 2012 Update 1  
 
  Oprócz uaktualnienia instalacji zestawu MDT, Uaktualnij żadnych istniejących udziałów wdrożenia. Aby uzyskać więcej informacji na ten proces, zobacz [uaktualnienie istniejącego udziału wdrożenia w konsoli Deployment Workbench](#UpgradeanExistingDeploymentShareintheDeploymentWorkbench).  
 
-##  <a name="PerformingLTIDeployments"></a>Wykonywanie wdrożenia LTI  
+##  <a name="PerformingLTIDeployments"></a> Wykonywanie wdrożenia LTI  
  Możesz wykonać wdrożenia LTI przy użyciu tylko zestawu MDT i pomocnicze składniki. Można wykonać wdrożenia LTI, za pośrednictwem sieci lub z nośnika wymiennego. Tego rodzaju elastyczności sprawia, że wdrożenia LTI jest odpowiednia dla wielu organizacji.  
 
  Wykonaj wdrożenia LTI przez:  
@@ -893,7 +892,7 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 
 -   Wdrażanie przechwyconych obrazów na komputerach docelowych, zgodnie z opisem w [wdrażania przechwyconych obrazów na komputerach docelowych w LTI](#DeployingCapturedImagestoTargetComputersinLTI)  
 
-###  <a name="PreparingtheLTIDeploymentEnvironment"></a>Przygotowywanie środowiska wdrożenia LTI  
+###  <a name="PreparingtheLTIDeploymentEnvironment">Przygotowywanie środowiska wdrożenia LTI</a>  
  Po przygotowaniu wstępnie wymaganej infrastruktury dla zestawu MDT, należy przygotować środowisko wdrożenia LTI.  
 
 ##### <a name="to-prepare-the-lti-deployment-environment"></a>Aby przygotować środowisko wdrożenia LTI  
@@ -906,7 +905,7 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 
 4.  Pobieranie oprogramowania wymagającego proces wdrożenia LTI, zgodnie z opisem w [uzyskać oprogramowania, które wymaga proces wdrożenia LTI](#ObtaintheSoftwareThattheLTIDeploymentProcessRequiresh).  
 
-####  <a name="PreparethePrerequisiteLTIInfrastructure"></a>Przygotowanie infrastruktury LTI wymagań wstępnych  
+####  <a name="PreparethePrerequisiteLTIInfrastructure"></a> Przygotowanie infrastruktury LTI wymagań wstępnych  
  Wdrożenia LTI wymagają, aby prawidłowo skonfigurowaną infrastrukturę istnieje przed zainstalowaniem zestawu MDT i wykonywania wdrożeń. Upewnij się, że nowej lub istniejącej infrastruktury jest zoptymalizowany pod kątem wdrożeń systemu operacyjnego.  
 
 > [!NOTE]
@@ -918,14 +917,14 @@ Tabela 4 wymieniono zalety wady gruby, elastyczne i hybrydowych obrazy typów.
 
 -   "Krok 1: Uzyskanie wymaganego oprogramowania"  
 
-####  <a name="InstallorUpgradetoMDTforLTIDeployments"></a>Zainstalować lub uaktualnić we wdrożeniach LTI zestawu MDT  
+####  <a name="InstallorUpgradetoMDTforLTIDeployments"></a> Zainstalować lub uaktualnić we wdrożeniach LTI zestawu MDT  
  Aby wykonać wdrożenia LTI, musi mieć co najmniej jedno wystąpienie zestawu mdt w swoim środowisku. Jeśli ma istniejącego środowiska:  
 
 -   Zgodnie z opisem w żadnych komputerów aktualnie uruchomione MDT lub jego starszej wersji zestawu mdt, następnie zainstalować co najmniej jedno wystąpienie nowego zestawu mdt [zainstalowanie nowego wystąpienia zestawu MDT](#InstallingaNewInstanceofMDT)  
 
 -   Co najmniej jeden komputer korzystającej z poprzedniej wersji zestawu MDT, następnie uaktualnić tych wystąpień do zestawu MDT, zgodnie z opisem w [uaktualnienie do zestawu MDT](#UpgradingtoMDT).  
 
-####  <a name="InstallComponentsThatMDTandLTIRequire"></a>Zainstaluj składniki, które wymagają zestaw MDT i LTI  
+####  <a name="InstallComponentsThatMDTandLTIRequire"></a> Zainstaluj składniki, które wymagają zestaw MDT i LTI  
  Konsoli Deployment Workbench jest Konsola administracyjna dla LTI. Większość zadań zarządzania LTI są wykonywane w konsoli Deployment Workbench. Zestaw MDT umożliwia także dostawcy środowiska Windows PowerShell, który pozwala na automatyzację zadań zarządzania LTI za pomocą powłoki poleceń programu Windows PowerShell przy użyciu poleceń cmdlet zestawu MDT.  
 
 > [!NOTE]
@@ -968,7 +967,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
  Zestaw MDT korzysta z systemu Windows ADK dla Windows 8.1 w tym narzędzia USMT.  
 
-####  <a name="ObtaintheSoftwareThattheLTIDeploymentProcessRequiresh"></a>Uzyskaj oprogramowanie, które wymaga LTI proces wdrażania  
+####  <a name="ObtaintheSoftwareThattheLTIDeploymentProcessRequiresh"></a> Uzyskaj oprogramowanie, które wymaga LTI proces wdrażania  
  Zbieraj oprogramowania, które zostaną wdrożone LTI. LTI będzie zaimportować albo dodaj to oprogramowanie do udziałów wdrożenia. Oprogramowanie, które można wdrożyć zawiera:  
 
 -   Pliki źródłowe systemu operacyjnego lub pliki obrazów dla każdego systemu operacyjnego w celu wdrażania na komputerach referencyjnych i docelowych  
@@ -993,7 +992,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
 -   Transparent logowania dla komputerów docelowych nie można włączyć za pomocą zasad grupy lub zasady zabezpieczeń lokalnych  
 
-###  <a name="PreparingforLTIDeploymenttotheReferenceComputer"></a>Przygotowywanie do wdrożenia LTI na komputerze odniesienia  
+###  <a name="PreparingforLTIDeploymenttotheReferenceComputer"></a> Przygotowywanie do wdrożenia LTI na komputerze odniesienia  
  Dla wielu scenariuszy wdrożenia LTI, najlepszym rozwiązaniem jest tworzenie komputera odniesienia, zgodnie z opisem w [Wybieranie grubości, cienki lub hybrydowego obrazów](#ChoosingThickThinorHybridImages), a następnie przechwycić obraz tego komputera. Później w procesie wdrożenia LTI zostanie wdrożona na komputery docelowe odpowiednie przechwycony obraz komputera odniesienia.  
 
 > [!NOTE]
@@ -1046,7 +1045,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
 6.  Zaktualizuj udział wdrożenia do tworzenia obrazów środowiska Preinstalacyjnego systemu Windows używane do uruchamiania wdrożenia LTI, zgodnie z opisem w [zaktualizować udział wdrożenia w konsoli Deployment Workbench](#UpdateaDeploymentShareintheDeploymentWorkbench).  
 
-###  <a name="DeployingToandCapturinganImageoftheReferenceComputerinLTI"></a>Wdrażania i przechwytywania obrazu komputera odniesienia w LTI  
+###  <a name="DeployingToandCapturinganImageoftheReferenceComputerinLTI"></a> Wdrażania i przechwytywania obrazu komputera odniesienia w LTI  
  Po skonfigurowaniu udziału wdrożenia, zaktualizować udział wdrożenia i utworzyć obrazów środowiska Windows PE, które obejmują skrypty LTI, uruchomienia komputera odniesienia w obrazie środowiska Preinstalacyjnego systemu Windows, a następnie Ukończ pracę Kreatora wdrażania. Sekwencji zadań utworzonej wcześniej w procesie wdrażania docelowego systemu operacyjnego, sterowników, pakietów systemu operacyjnego i aplikacji na komputerze odniesienia, a następnie przechwycić obraz komputera odniesienia.  
 
 ##### <a name="to-deploy-to-and-capture-an-image-of-the-reference-computer"></a>Aby wdrożyć i przechwytywania obrazu komputera odniesienia  
@@ -1057,7 +1056,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
 3.  Dodaj przechwycony obraz komputera odniesienia do węzła systemy operacyjne w konsoli Deployment Workbench, zgodnie z opisem w [Dodaj przechwycony obraz komputera odniesienia do konsoli Deployment Workbench](#AddtheCapturedImageoftheReferenceComputertotheDeploymentWorkbench).  
 
-####  <a name="CreatetheLTIBootableMedia"></a>Tworzenie nośnika rozruchowego LTI  
+####  <a name="CreatetheLTIBootableMedia"></a> Tworzenie nośnika rozruchowego LTI  
  Należy podać metodę uruchamiania komputera z dostosowaną wersję środowiska Windows PE utworzonej po zaktualizowaniu udziału wdrożenia. Konsoli Deployment Workbench tworzy pliki LiteTouchPE_x86.iso i LiteTouchPE_x86.wim (dla 32-bitowych komputerów docelowych) lub pliki pliki LiteTouchPE_x64.iso i LiteTouchPE_x64.wim (dla 64-bitowych komputerów docelowych) w *udział_wdrożenia*Folderu \Boot (gdzie *udział_wdrożenia* jest udostępnianym folderem sieciowym używanym jako udziału wdrożenia). Utwórz odpowiedni nośnik rozruchowy LTI z jednego z tych obrazów.  
 
 ###### <a name="to-create-the-lti-bootable-media"></a>Aby utworzyć nośnik rozruchowy LTI  
@@ -1073,7 +1072,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
     -   Jeśli komputer odniesienia jest Maszynę wirtualną, uruchom maszynę Wirtualną, bezpośrednio z pliku ISO lub dysku CD lub DVD do pliku ISO.  
 
-####  <a name="CompletetheDeploymentWizard"></a>Ukończ pracę Kreatora wdrażania  
+####  <a name="CompletetheDeploymentWizard"></a> Ukończ pracę Kreatora wdrażania  
  Uruchom komputer odniesienia z nośnika rozruchowego LTI utworzonego wcześniej w procesie. Nośnik rozruchowy LTI uruchamia środowisko Windows PE na komputerze odniesienia i inicjuje proces wdrażania. Po zakończeniu procesu docelowego systemu operacyjnego jest wdrożony na komputerze odniesienia i przechwytywania obrazu komputera odniesienia.  
 
 > [!NOTE]
@@ -1105,7 +1104,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
  Został wdrożony na komputerze odniesienia, a przechwycony plik WIM komputera odniesienia znajduje się w lokalizacji określonej w **Określ, czy do przechwycenia obrazu** strony kreatora.  
 
-####  <a name="AddtheCapturedImageoftheReferenceComputertotheDeploymentWorkbench"></a>Dodaj przechwycony obraz komputera odniesienia do konsoli Deployment Workbench  
+####  <a name="AddtheCapturedImageoftheReferenceComputertotheDeploymentWorkbench"></a> Dodaj przechwycony obraz komputera odniesienia do konsoli Deployment Workbench  
  Do wdrażania przechwyconego obrazu komputera odniesienia do komputera docelowego, należy dodać do listy systemów operacyjnych w węźle systemy operacyjne w konsoli Deployment Workbench przechwyconego obrazu. Działanie Kreatora importu systemu operacyjnego kopiuje pliki systemu operacyjnego do *udział_wdrożenia*\Operating systemów\\*operating_system* folder (gdzie *deployment_ udostępnianie* jest folder udziału wdrożenia utworzony wcześniej w procesie i *operating_system* jest nazwą dodane do udziału wdrożenia systemu operacyjnego).  
 
  Dodaj przechwycony obraz komputera odniesienia, wykonując proces importu systemu operacyjnego, zgodnie z opisem w [Importuj wcześniej przechwycony obraz komputera odniesienia](#ImportaPreviouslyCapturedImageofaReferenceComputer), zapewnienie w szczególności należy wykonać konfigurację ustawienia na stronach kreatora wymienione w tabeli 12 i wybierając wartości na innych stronach kreatora, które są odpowiednie dla Twojej organizacji.  
@@ -1118,7 +1117,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
  Zakończeniu pracy Kreatora importu systemu operacyjnego. Przechwycony obraz komputera odniesienia zostanie dodany do listy systemów operacyjnych w okienku informacji i jest kopiowany do udziału wdrożenia.  
 
-###  <a name="PreparingforLTIDeploymenttoTargetComputers"></a>Przygotowywanie do wdrożenia LTI do komputerów docelowych  
+###  <a name="PreparingforLTIDeploymenttoTargetComputers"></a> Przygotowywanie do wdrożenia LTI do komputerów docelowych  
  Przy użyciu obrazów komputera odniesienia, przechwycone wdrażanie obrazów na komputerach docelowych. W przygotowania Utwórz jeden lub więcej sekwencji zadań do wdrażania przechwyconych obrazów, sprawdź, czy konieczne wdrażanie zasobów istnieje i dostosowania procesu wdrażania.  
 
 ##### <a name="to-prepare-for-deployment-to-the-target-computers"></a>Aby przygotować się do wdrożenia na komputerach docelowych  
@@ -1139,7 +1138,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
      W zależności od komputerów docelowych w organizacji może być konieczne dowolną kombinację scenariuszy wdrożenia. Aby uzyskać więcej informacji na temat scenariuszy wdrożenia zestawu MDT, zobacz [identyfikacji scenariuszy wdrażania](#IdentifyingDeploymentScenarios).  
 
-####  <a name="PreparefortheNewComputerDeploymentScenariotoTargetComputersUsingLTI"></a>Przygotuj się do nowego komputera scenariusz wdrażania na komputerach docelowych przy użyciu LTI  
+####  <a name="PreparefortheNewComputerDeploymentScenariotoTargetComputersUsingLTI">Przygotuj się do nowego komputera scenariusz wdrażania na komputerach docelowych przy użyciu LTI</a>  
  W tym scenariuszu wdrażania nowego komputera nowa instalacja systemu operacyjnego Windows jest wdrażana na nowym komputerze. Brak nie istniejących systemów plików, aby zachować i nie informacje o migracji użytkowników do zapisywania i przywracania. Za pomocą szablonów standardowe sekwencję zadań klienta lub standardowy sekwencji zadań serwera wdrażania przechwyconego obrazu komputera odniesienia do komputera docelowego.  
 
 ###### <a name="to-prepare-for-the-new-computer-deployment-scenario"></a>Aby przygotować się do scenariusza wdrażania nowego komputera  
@@ -1181,7 +1180,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
     -   [Generowanie obrazów nośników w konsoli Deployment Workbench](#GenerateMediaImagesintheDeploymentWorkbench)  
 
-####  <a name="PrepareforaRefreshComputerDeploymentScenariotoTargetComputersUsingLTI"></a>Przygotowanie do scenariusza wdrażania odświeżania komputera na komputerach docelowych przy użyciu LTI  
+####  <a name="PrepareforaRefreshComputerDeploymentScenariotoTargetComputersUsingLTI">Przygotowanie do scenariusza wdrażania odświeżania komputera na komputerach docelowych przy użyciu LTI</a>  
  W scenariuszu wdrażania komputera odświeżyć, jest odświeżany komputera — to znaczy ponownie obrazami normalizacji obrazu lub w celu rozwiązania problemu. Należy zapisać i przywrócić informacje o migracji użytkownika, ponieważ istniejące systemy plików na komputerze docelowym nie są zachowywane. Za pomocą szablonów standardowe sekwencję zadań klienta lub standardowy sekwencji zadań serwera wdrażania przechwyconego obrazu komputera odniesienia do komputera docelowego.  
 
 ###### <a name="to-prepare-for-the-refresh-computer-deployment-scenario"></a>Aby przygotować się do scenariusza wdrażania odświeżania komputera  
@@ -1223,7 +1222,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
     -   [Generowanie obrazów nośników w konsoli Deployment Workbench](#GenerateMediaImagesintheDeploymentWorkbench)  
 
-####  <a name="PrepareforaReplaceComputerDeploymentScenariotoTargetComputersUsingLTI"></a>Przygotowanie do scenariusza wdrażania komputera zamiany na komputerach docelowych przy użyciu LTI  
+####  <a name="PrepareforaReplaceComputerDeploymentScenariotoTargetComputersUsingLTI">Przygotowanie do scenariusza wdrażania komputera zamiany na komputerach docelowych przy użyciu LTI</a>  
  W scenariuszu wdrażania komputera Zastąp jeden komputer zastępuje inny komputer. Istniejące dane migracji stanu użytkownika są zapisywane z oryginalnego komputera sieciowym folderze udostępnionym lub wymiennym. Następnie w nowej instalacji systemu Windows jest wdrażana na nowym komputerze. Na koniec dane stanu użytkownika został przywrócony na nowym komputerze, ponieważ systemy plików na nowym komputerze są sformatowane jako część nowej instalacji systemu Windows. Użycie:  
 
 -   Standardowy szablon sekwencję zadań Zastąp klienta, aby zapisać dane migracji stanu użytkownika z istniejącego komputera docelowego  
@@ -1284,7 +1283,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
     -   [Generowanie obrazów nośników w konsoli Deployment Workbench](#GenerateMediaImagesintheDeploymentWorkbench)  
 
-###  <a name="DeployingCapturedImagestoTargetComputersinLTI"></a>Wdrażania przechwyconych obrazów na komputerach docelowych w LTI  
+###  <a name="DeployingCapturedImagestoTargetComputersinLTI"></a> Wdrażania przechwyconych obrazów na komputerach docelowych w LTI  
  Wdrażania przechwyconych obrazów z komputerami docelowymi różni się nieznacznie dla LTI. Wdrażanie przechwycony obraz komputera odniesienia do komputerów docelowych dla każdego ze scenariuszy wdrażania w organizacji, zgodnie z opisem w temacie:  
 
 -   [Wdrażania przechwyconych obrazów na komputerach docelowych w nowy scenariusz wdrażania komputera przy użyciu LTI](#DeployCapturedImagestoTargetComputersintheNewComputerDeploymentScenarioUsingLTI)  
@@ -1295,7 +1294,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
  W zależności od komputerów docelowych w organizacji może być konieczne dowolną kombinację scenariuszy wdrażania. Aby uzyskać więcej informacji na temat scenariuszy wdrożenia zestawu MDT, zobacz [identyfikacji scenariuszy wdrażania](#IdentifyingDeploymentScenarios).  
 
-####  <a name="DeployCapturedImagestoTargetComputersintheNewComputerDeploymentScenarioUsingLTI"></a>Wdrażania przechwyconych obrazów na komputerach docelowych w nowy scenariusz wdrażania komputera przy użyciu LTI  
+####  <a name="DeployCapturedImagestoTargetComputersintheNewComputerDeploymentScenarioUsingLTI">Wdrażania przechwyconych obrazów na komputerach docelowych w nowy scenariusz wdrażania komputera przy użyciu LTI</a>  
  Uruchom komputer docelowy przy użyciu nośnika rozruchowego LTI utworzonego wcześniej w procesie lub z usług wdrażania systemu Windows. Nośnik rozruchowy LTI uruchamia środowisko Windows PE na komputerze docelowym i inicjuje wdrożenia. Po zakończeniu procesu przechwycony obraz komputera odniesienia jest wdrażana na komputerach docelowych.  
 
 ###### <a name="to-complete-the-deployment-wizard"></a>Aby zakończyć działanie Kreatora wdrażania  
@@ -1322,7 +1321,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
  Teraz są wdrażane na komputerach docelowych.  
 
-####  <a name="DeployCapturedImagestoTargetComputersinaRefreshComputerDeploymentScenarioUsingLTI"></a>Wdrażania przechwyconych obrazów na komputerach docelowych w odświeżania scenariusz wdrażania komputera przy użyciu LTI  
+####  <a name="DeployCapturedImagestoTargetComputersinaRefreshComputerDeploymentScenarioUsingLTI">Wdrażania przechwyconych obrazów na komputerach docelowych w odświeżania scenariusz wdrażania komputera przy użyciu LTI</a>  
  Uruchom Kreatora wdrażania na istniejącego systemu operacyjnego na komputerze docelowym, aby uruchomić **standardowe klienta** sekwencji zadań lub **Standard Server** utworzony wcześniej w procesie sekwencji zadań. Kreator wdrażania zapisuje dane migracji stanu użytkownika z istniejącego komputera docelowego do lokalizacji, które określisz. Później w sekwencji zadań danych migracji stanu użytkownika został przywrócony na komputerze docelowym.  
 
 ###### <a name="to-complete-the-deployment-wizard"></a>Aby zakończyć działanie Kreatora wdrażania  
@@ -1351,7 +1350,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
  Teraz jest wdrażany na komputerze docelowym.  
 
-####  <a name="DeployCapturedImagestoTargetComputersinaReplaceComputerDeploymentScenarioUsingLTI"></a>Wdrażania przechwyconych obrazów na komputerach docelowych w Zamień scenariusz wdrażania komputera przy użyciu LTI  
+####  <a name="DeployCapturedImagestoTargetComputersinaReplaceComputerDeploymentScenarioUsingLTI">Wdrażania przechwyconych obrazów na komputerach docelowych w Zamień scenariusz wdrażania komputera przy użyciu LTI</a>  
  Scenariusz wdrażania Zastąp komputera, użytkownik musi uruchomić Kreatora wdrażania dwa razy. Uruchom kreatora po raz pierwszy do przechwytywania danych migracji stanu użytkownika z istniejącego komputera docelowego (starego komputera). Następnie uruchom go ponownie, aby wdrożyć przechwycony obraz komputera odniesienia do nowego docelowego komputerze (nowy) i przywrócenia stanu użytkownika zapisane wcześniej w procesie.  
 
  Upewnij się, że dane migracji stanu użytkownika znajduje się w lokalizacji spójne i bezpieczne, tak, aby dane można łatwo przywrócić później w procesie LTI.  
@@ -1362,7 +1361,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
 2.  Wdrażanie przechwycony obraz komputera odniesienia do nowego komputera docelowego, zgodnie z opisem w [wdrażanie przechwycony obraz komputera odniesienia do nowego docelowego komputera przy użyciu LTI](#DeploytheCapturedImageoftheReferenceComputertotheNewTargetComputerUsingLTI).  
 
-#####  <a name="SavetheUserStateMigrationDatafromtheExistingTargetComputerUsingLTI"></a>Zapisz dane migracji stanu użytkownika z istniejącego komputera docelowego przy użyciu LTI  
+#####  <a name="SavetheUserStateMigrationDatafromtheExistingTargetComputerUsingLTI"></a> Zapisz dane migracji stanu użytkownika z istniejącego komputera docelowego przy użyciu LTI  
  Uruchom Kreatora wdrażania na istniejącego systemu operacyjnego na komputerze docelowym, aby uruchomić szablon sekwencję zadań Zastąp klienta standardowe utworzony wcześniej w procesie. Kreator wdrażania zapisuje dane migracji stanu użytkownika z istniejącego komputera docelowego do lokalizacji, które określisz.  
 
 ###### <a name="to-complete-the-deployment-wizard"></a>Aby zakończyć działanie Kreatora wdrażania  
@@ -1391,7 +1390,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
  Dane migracji stanu użytkownika z istniejącego komputera docelowego jest zapisywany.  
 
-#####  <a name="DeploytheCapturedImageoftheReferenceComputertotheNewTargetComputerUsingLTI"></a>Wdrażanie na komputerze docelowym przy użyciu LTI przechwycony obraz komputera odniesienia  
+#####  <a name="DeploytheCapturedImageoftheReferenceComputertotheNewTargetComputerUsingLTI"></a> Wdrażanie na komputerze docelowym przy użyciu LTI przechwycony obraz komputera odniesienia  
  Uruchom komputer docelowy przy użyciu nośnika rozruchowego LTI utworzonego wcześniej w procesie lub z usług wdrażania systemu Windows. Nośnik rozruchowy LTI uruchamia środowisko Windows PE na komputerze docelowym i inicjowania wdrożenia LTI. Po zakończeniu procesu przechwycony obraz komputera odniesienia jest wdrażana na komputerze docelowym.  
 
 ###### <a name="to-deploy-the-captured-image-of-the-reference-computer"></a>Do wdrażania przechwyconego obrazu komputera odniesienia  
@@ -1417,7 +1416,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
 4.  W **Wdrożęnia** okno dialogowe, kliknij przycisk **Zakończ**.  
 
-##  <a name="ManagingLTIDeploymentsintheDeploymentWorkBench"></a>Zarządzanie wdrożeniami LTI w konsoli Deployment Workbench  
+##  <a name="ManagingLTIDeploymentsintheDeploymentWorkBench"></a> Zarządzanie wdrożeniami LTI w konsoli Deployment Workbench  
  Udziały wdrożenia to repozytorium dla wszystkich plików wdrożenia używanych we wdrożeniu LTI. Udział wdrożenia można przechowywać na dysku lokalnym, w udostępnionym folderze sieciowym lub w autonomicznej rozproszonego systemu plików (DFS); nie musi znajdować się na dowolnym określonym komputerze. Udziały wdrażania zawiera systemy operacyjne, aplikacje, pakiety systemu operacyjnego i sterowniki urządzeń.  
 
  Zarządzanie wdrożeniami LTI w konsoli Deployment Workbench przez:  
@@ -1446,7 +1445,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
 -   Sekcji "Zarządzanie MDT przy użyciu programu Windows PowerShell" w dokumencie MDT *Microsoft Deployment Toolkit przykłady Guide*  
 
-###  <a name="ManagingDeploymentSharesintheDeploymentWorkbench"></a>Udziały wdrażania w konsoli Deployment Workbench zarządzania  
+###  <a name="ManagingDeploymentSharesintheDeploymentWorkbench"></a> Udziały wdrażania w konsoli Deployment Workbench zarządzania  
  Zestaw MDT używa konsoli Deployment Workbench do zarządzania udziałami wdrożenia w organizacji. Należy skonfigurować udziały wdrożenia przez:  
 
 -   Tworzenie nowego udziału wdrożenia, zgodnie z opisem w [utworzyć nowy udział wdrożenia w konsoli Deployment Workbench](#CreateaNewDeploymentShareintheDeploymentWorkbench)  
@@ -1467,19 +1466,19 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
  W addtion do zarządzania udziały wdrażania w konsoli Deployment Workbench można zarządzać udziałami wdrożenia przy użyciu poleceń cmdlet programu Windows PowerShell dla zestawu MDT. Aby uzyskać więcej informacji na temat zarządzania udziały wdrożenia przy użyciu poleceń cmdlet programu Windows PowerShell dla zestawu MDT zobacz następujące sekcje znajdujące się poniżej sekcji "MDT Windows PowerShell polecenia cmdlet", w dokumentacji zestawu MDT odwołanie do zestawu narzędzi:  
 
--   **Dodaj MDTPersistentDrive**  
+-   **Add-MDTPersistentDrive**  
 
 -   **Get-MDTDeploymentShareStatistics**  
 
 -   **Get-MDTPersistentDrive**  
 
--   **Usuń MDTPersistentDrive**  
+-   **Remove-MDTPersistentDrive**  
 
--   **Przywracanie MDTPersistentDrive**  
+-   **Restore-MDTPersistentDrive**  
 
--   **MDTDeploymentShare aktualizacji**  
+-   **Update-MDTDeploymentShare**  
 
-####  <a name="CreateaNewDeploymentShareintheDeploymentWorkbench"></a>Utwórz nowy udział wdrożenia w konsoli Deployment Workbench  
+####  <a name="CreateaNewDeploymentShareintheDeploymentWorkbench"></a> Utwórz nowy udział wdrożenia w konsoli Deployment Workbench  
  Aby utworzyć nowy udział wdrożenia, wykonaj następujące czynności:  
 
 1.  Kliknij przycisk **Start**, a następnie wskaż **wszystkie programy**. Wskaż **Microsoft Deployment Toolkit**, a następnie kliknij przycisk **konsoli Deployment Workbench**.  
@@ -1496,7 +1495,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
     |Na tej stronie kreatora|Wykonaj te czynności|  
     |-------------------------|-------------|  
-    |**Ścieżka** |W **ścieżka udziału wdrożenia**, typ **ścieżki** (gdzie *ścieżki* jest w pełni kwalifikowana ścieżka do istniejącego folderu na dysku lokalnym lub udostępnionego folderu sieciowego utworzone wcześniej w proces wdrażania), a następnie kliknij przycisk **dalej**.<br /><br /> Alternatywnie kliknij **Przeglądaj** można znaleźć w istniejącym folderze w lokalnym folderze udostępnionym dysku lub w sieci.|  
+    |**Path** |W **ścieżka udziału wdrożenia**, typ **ścieżki** (gdzie *ścieżki* jest w pełni kwalifikowana ścieżka do istniejącego folderu na dysku lokalnym lub udostępnionego folderu sieciowego utworzone wcześniej w proces wdrażania), a następnie kliknij przycisk **dalej**.<br /><br /> Alternatywnie kliknij **Przeglądaj** można znaleźć w istniejącym folderze w lokalnym folderze udostępnionym dysku lub w sieci.|  
     |**Udostępnij** |Ta strona jest wyświetlana tylko wtedy, gdy należy określić ścieżkę do folderu na dysku lokalnym, na stronie kreatora ścieżki.<br /><br /> — W **nazwa udziału**, typ **nazwa_udziału** (gdzie *nazwa_udziału* to nazwa udziału do folderu na dysku lokalnym, na stronie kreatora ścieżki).<br /><br /> -Należy zwrócić uwagę pełni kwalifikowaną ścieżką UNC ścieżka do udziału tworzona natychmiastowe wymienionych poniżej **nazwa udziału** , a następnie kliknij przycisk **dalej**.<br /><br /> Kreator przyznaje lokalnej grupy Wszyscy Pełna kontrola dostępu na poziomie udziału. Zgodnie z wymaganiami zabezpieczeń, można ograniczyć zabezpieczeń udziału.|  
     |**Opisowa nazwa** |W **opis udziału wdrożenia**, typ **opis** (gdzie *opis* jest to opisowa nazwa wdrożenia udostępnianie określonej w poprzednich stron kreatora), a następnie kliknij przycisk **dalej**.|  
     |**Zezwalaj na przechwytywanie obrazu** |Wybierz lub wyczyść **poprosić, jeśli mają być przechwytywane obrazu** na podstawie wymagań pole wyboru, a następnie kliknij przycisk **dalej**.<br /><br /> To pole wyboru służy do konfigurowania Kreatora wdrażania, aby zezwolić użytkownikowi na opcjonalnie przechwytywania obrazu komputera docelowego, który jest zwykle na komputerze odniesienia. Jeśli pole wyboru jest:<br /><br /> -Zaznaczone, ścieżki do przechowywania obrazu i nazwa obrazu można skonfigurować w Kreatorze wdrażania<br /><br /> -Wyczyszczone, obrazu nie jest przechwytywania lub informacji przechwytywania obrazu musi być ustawiona w pliku konfiguracji MDT lub bazy danych<br /><br /> To pole wyboru jest domyślnie zaznaczone.|  
@@ -1507,7 +1506,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
  Po zakończeniu nowy udział wdrożenia jest tworzony w folderze docelowym wybrane w kreatorze i zostanie wyświetlony w konsoli Deployment Workbench.  
 
-####  <a name="OpenanExistingDeploymentShareintheDeploymentWorkbench"></a>Otwórz istniejący udział wdrożenia w konsoli Deployment Workbench  
+####  <a name="OpenanExistingDeploymentShareintheDeploymentWorkbench"></a> Otwórz istniejący udział wdrożenia w konsoli Deployment Workbench  
  Konsoli Deployment Workbench można otworzyć za pomocą Kreatora udziału wdrożenia Otwórz istniejącego udziału wdrożenia. Uruchom Kreatora udziału wdrożenia otwarte przez:  
 
 -   Prawym przyciskiem myszy węzeł udziały wdrożenia, a następnie klikając**Otwórz udziału wdrożenia**  
@@ -1532,18 +1531,18 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
     |Na tej stronie kreatora|Wykonaj te czynności|  
     |-------------------------|-------------|  
-    |**Ścieżka** |a. W **ścieżka udziału wdrożenia**, typ **share_path** (gdzie *share_path* jest w pełni kwalifikowana ścieżka do istniejącego udziału wdrożenia).<br /><br /> Można też kliknij przycisk Przeglądaj, aby znaleźć lokalnego lub udostępnionego folderu sieciowego.<br /><br /> b. Wybierz **uaktualnić zawartość udziału wdrożenia (jeśli jest to wymagane)**pole wyboru. Jeśli pole wyboru jest:<br /><br /> -Zaznaczone, Otwórz kreatora udziału wdrożenia uaktualnia udziału wdrożenia<br /><br /> -Wyczyszczone, Otwórz kreatora udziału wdrożenia nie będą uaktualniane udziału wdrożenia<br /><br /> c. Kliknij przycisk **Dalej**.|  
+    |**Path** |a. W **ścieżka udziału wdrożenia**, typ **share_path** (gdzie *share_path* jest w pełni kwalifikowana ścieżka do istniejącego udziału wdrożenia).<br /><br /> Można też kliknij przycisk Przeglądaj, aby znaleźć lokalnego lub udostępnionego folderu sieciowego.<br /><br /> b. Wybierz **uaktualnić zawartość udziału wdrożenia (jeśli jest to wymagane)**pole wyboru. Jeśli pole wyboru jest:<br /><br /> -Zaznaczone, Otwórz kreatora udziału wdrożenia uaktualnia udziału wdrożenia<br /><br /> -Wyczyszczone, Otwórz kreatora udziału wdrożenia nie będą uaktualniane udziału wdrożenia<br /><br /> c. Kliknij przycisk **Dalej**.|  
     |**Podsumowanie** |Przejrzyj informacje w **szczegóły** , a następnie kliknij przycisk **dalej**.|  
     |**Potwierdzenie** |Możesz kliknąć Zapisz dane wyjściowe można zapisać do pliku dane wyjściowe kreatora. Można również kliknąć pozycję Wyświetl skrypt, aby wyświetlić skryptów programu Windows PowerShell, używane do wykonywania zadań kreatora.<br /><br /> Kliknij przycisk **Zakończ**.|  
 
-####  <a name="UpgradeanExistingDeploymentShareintheDeploymentWorkbench"></a>Uaktualnienie istniejącego udziału wdrożenia w konsoli Deployment Workbench  
+####  <a name="UpgradeanExistingDeploymentShareintheDeploymentWorkbench"></a> Uaktualnienie istniejącego udziału wdrożenia w konsoli Deployment Workbench  
  Zestaw MDT można uaktualnić istniejącego udziału wdrożenia przez:  
 
 -   Otwieranie istniejącego udziału wdrożenia, który nie jest już wyświetlany w konsoli Deployment Workbench zgodnie z opisem w [uaktualniania wdrożenia udziałów już niewymienionych w konsoli Deployment Workbench](#UpgradeDeploymentSharesNotAlreadyListedintheDeploymentWorkbench)  
 
 -   Uaktualnianie istniejącego udziału wdrożenia znajduje się w konsoli Deployment Workbench zgodnie z opisem w [uaktualniania wdrożenia udziałów już na liście konsoli Deployment Workbench](#UpgradeDeploymentSharesAlreadyListedintheDeploymentWorkbench)  
 
-#####  <a name="UpgradeDeploymentSharesNotAlreadyListedintheDeploymentWorkbench"></a>Udziały wdrożenia uaktualnienia nie jest wyświetlany w konsoli Deployment Workbench  
+#####  <a name="UpgradeDeploymentSharesNotAlreadyListedintheDeploymentWorkbench"></a> Udziały wdrożenia uaktualnienia nie jest wyświetlany w konsoli Deployment Workbench  
  Udziały wdrożenia uaktualnienia niewymienionych w konsoli Deployment Workbench przy użyciu Kreatora Otwórz udziału wdrożenia. Uruchom kreatora przez:  
 
 -   Prawym przyciskiem myszy udział wdrożenia, a następnie klikając **Otwórz udział wdrożenia**  
@@ -1568,7 +1567,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
     |**Na tej stronie kreatora** |**W tym** |  
     |-----------------------------|-----------------|  
-    |**Ścieżka** |— W **ścieżka udziału wdrożenia**, typ **share_path** (gdzie *share_path* jest w pełni kwalifikowana ścieżka do istniejącego udziału wdrożenia).<br /><br /> Alternatywnie kliknij przycisk Przeglądaj, aby znaleźć lokalnego lub udostępnionego folderu sieciowego.<br /><br /> -Wybierz **uaktualnić zawartość udziału wdrożenia (jeśli jest to wymagane)** pole wyboru, a następnie kliknij przycisk **dalej**.|  
+    |**Path** |— W **ścieżka udziału wdrożenia**, typ **share_path** (gdzie *share_path* jest w pełni kwalifikowana ścieżka do istniejącego udziału wdrożenia).<br /><br /> Alternatywnie kliknij przycisk Przeglądaj, aby znaleźć lokalnego lub udostępnionego folderu sieciowego.<br /><br /> -Wybierz **uaktualnić zawartość udziału wdrożenia (jeśli jest to wymagane)** pole wyboru, a następnie kliknij przycisk **dalej**.|  
     |**Podsumowanie** |Przejrzyj informacje w **szczegóły** , a następnie kliknij przycisk **dalej**.|  
     |**Potwierdzenie** |Kliknij przycisk **Zapisz dane wyjściowe** Aby zapisać dane wyjściowe kreatora do pliku, lub kliknij przycisk **Wyświetl skrypt** do wyświetlania skryptów programu Windows PowerShell, używane do wykonywania zadań kreatora.<br /><br /> Kliknij przycisk Zakończ.|  
 
@@ -1576,7 +1575,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
  Oprócz uaktualniania istniejących udziałów wdrożenia, należy uaktualnić wszystkie istniejące instalacje poprzednich wersji zestawu mdt do zestawu MDT. Aby uzyskać więcej informacji na temat uaktualniania wszelkie poprzednie instalacje do zestawu MDT, zobacz [uaktualnienie do zestawu MDT](#UpgradingtoMDT).  
 
-#####  <a name="UpgradeDeploymentSharesAlreadyListedintheDeploymentWorkbench"></a>Udziały wdrożenia uaktualnienia już wyświetlane w konsoli Deployment Workbench  
+#####  <a name="UpgradeDeploymentSharesAlreadyListedintheDeploymentWorkbench"></a> Udziały wdrożenia uaktualnienia już wyświetlane w konsoli Deployment Workbench  
  Uaktualnienia istniejącej udziały wdrożenia już wyświetlane w konsoli Deployment Workbench przy użyciu Kreatora uaktualniania udziału wdrożenia. Uruchom kreatora przez:  
 
 -   Prawym przyciskiem myszy udział wdrożenia, a następnie klikając **udział wdrożenia uaktualnienia**  
@@ -1606,7 +1605,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
  Po zakończeniu pracy Kreatora istniejącego udziału wdrożenia jest uaktualniany i może być teraz dostępne w konsoli Deployment Workbench.  
 
-####  <a name="ConfigureaDeploymentShareintheDeploymentWorkbench"></a>Skonfiguruj udział wdrożenia w konsoli Deployment Workbench  
+####  <a name="ConfigureaDeploymentShareintheDeploymentWorkbench"></a> Skonfiguruj udział wdrożenia w konsoli Deployment Workbench  
  Właściwości wdrożenia udziałów w węźle udziałów wdrożenia można wyświetlić w konsoli Deployment Workbench, za pomocą **właściwości** działania zgodnie z opisem w [właściwości elementu widoku w konsoli Deployment Workbench](#ViewItemPropertiesintheDeploymentWorkbench).  
 
  Konfigurowanie aplikacji w konsoli Deployment Workbench, wykonując następujące zadania w **właściwości aplikacji** okno dialogowe:  
@@ -1623,7 +1622,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
 -   Skonfiguruj ustawienia na **składniki systemu Windows PE x64** karcie zgodnie z opisem w [karta składników środowiska Preinstalacyjnego systemu Windows właściwości udziału wdrożenia x64 Konfigurowanie](#ConfiguretheDeploymentSharePropertiesWindowsPEx64ComponentsTab).  
 
-#####  <a name="ConfiguretheDeploymentSharePropertiesGeneralTab"></a>Skonfiguruj kartę Ogólne właściwości udziału wdrożenia  
+#####  <a name="ConfiguretheDeploymentSharePropertiesGeneralTab"></a> Skonfiguruj kartę Ogólne właściwości udziału wdrożenia  
  Właściwości udziału wdrożenia, które są przechowywane na **ogólne** przede wszystkim skonfigurowano kartę, po uruchomieniu Kreatora nowego udziału wdrożenia. Można zaktualizować właściwości udziału wdrożenia na **ogólne** karcie za pośrednictwem **udział_wdrożenia właściwości** okno dialogowe (gdzie *udział_wdrożenia* jest nazwą udział wdrożenia w konsoli Deployment Workbench).  
 
 ###### <a name="to-configure-the-general-tab"></a>Aby skonfigurować kartę Ogólne  
@@ -1654,7 +1653,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
  Ustawienia konfiguracji udziału wdrożenia są zapisywane i udziału wdrożenia jest wyświetlana w okienku szczegółów konsoli Deployment Workbench.  
 
-#####  <a name="ConfiguretheDeploymentSharePropertiesRulesTab"></a>Skonfigurować na karcie reguły właściwości udziału wdrożenia  
+#####  <a name="ConfiguretheDeploymentSharePropertiesRulesTab"></a> Skonfigurować na karcie reguły właściwości udziału wdrożenia  
  Właściwości udziału wdrożenia, które są przechowywane na **reguły** przede wszystkim skonfigurowano kartę, po uruchomieniu Kreatora nowego udziału wdrożenia. Te ustawienia znajdują się w CustomSettings.ini, który znajduje się w folderze Control udziału wdrożenia. Aby uzyskać więcej informacji o ustawieniach, które można skonfigurować na tej karcie, zobacz dokument MDT *odwołanie do zestawu narzędzi*.  
 
 ###### <a name="to-configure-the-rules-tab"></a>Aby skonfigurować kartę reguły  
@@ -1676,11 +1675,11 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
     |**Ustawienie** |**Opis** |  
     |-----------------|---------------------|  
     |**CustomSettings.ini** |Zawiera bieżącą konfigurację w pliku CustomSetting.ini udziału wdrożenia.|  
-    |**Edytuj Bootstrap.ini** |Kliknij, aby zmodyfikować zawartość pliku Bootstrap.ini, który generuje konsoli Deployment Workbench.|  
+    |**Edit Bootstrap.ini** |Kliknij, aby zmodyfikować zawartość pliku Bootstrap.ini, który generuje konsoli Deployment Workbench.|  
 
  Ustawienia konfiguracji udziału wdrożenia są zapisywane i udziału wdrożenia jest wyświetlana w okienku szczegółów konsoli Deployment Workbench.  
 
-#####  <a name="ConfiguretheDeploymentSharePropertiesWindowsPEx86SettingsTab"></a>Skonfiguruj właściwości udziału wdrożenia w Windows PE x86 karta ustawień  
+#####  <a name="ConfiguretheDeploymentSharePropertiesWindowsPEx86SettingsTab"></a> Skonfiguruj właściwości udziału wdrożenia w Windows PE x86 karta ustawień  
  Właściwości udziału wdrożenia, które są przechowywane na **ustawienia systemu Windows PE x86** przede wszystkim skonfigurowano kartę, po uruchomieniu Kreatora nowego udziału wdrożenia.  
 
 ###### <a name="to-configure-the-windows-pe-x86-settings-tab"></a>Aby skonfigurować kartę Ustawienia systemu Windows PE x86  
@@ -1715,7 +1714,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
  Ustawienia konfiguracji udziału wdrożenia są zapisywane i udziału wdrożenia jest wyświetlana w okienku szczegółów konsoli Deployment Workbench.  
 
-#####  <a name="ConfiguretheDeploymentSharePropertiesWindowsPEx86ComponentsTab"></a>Skonfiguruj właściwości udziału wdrożenia w Windows PE x86 karta składników  
+#####  <a name="ConfiguretheDeploymentSharePropertiesWindowsPEx86ComponentsTab"></a> Skonfiguruj właściwości udziału wdrożenia w Windows PE x86 karta składników  
  Właściwości udziału wdrożenia, które są przechowywane na **składniki systemu Windows PE x86** przede wszystkim skonfigurowano kartę, po uruchomieniu Kreatora nowego udziału wdrożenia.  
 
 ###### <a name="to-configure-the-windows-pe-x86-components-tab"></a>Aby skonfigurować kartę składniki systemu Windows PE x86  
@@ -1748,7 +1747,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
  Ustawienia konfiguracji udziału wdrożenia są zapisywane i udziału wdrożenia jest wyświetlana w okienku szczegółów konsoli Deployment Workbench.  
 
-#####  <a name="ConfiguretheDeploymentSharePropertiesWindowsPEx64SettingsTab"></a>Skonfiguruj właściwości udziału wdrożenia w Windows PE x64 karta ustawień  
+#####  <a name="ConfiguretheDeploymentSharePropertiesWindowsPEx64SettingsTab"></a> Skonfiguruj właściwości udziału wdrożenia w Windows PE x64 karta ustawień  
  Właściwości udziału wdrożenia, które są przechowywane na karcie Ustawienia systemu Windows PE x64 najczęściej są skonfigurowane, po uruchomieniu Kreatora nowego udziału wdrożenia.  
 
 ###### <a name="to-configure-the-windows-pe-x64-settings-tab"></a>Aby skonfigurować kartę Ustawienia systemu Windows PE x64  
@@ -1783,7 +1782,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
  Ustawienia konfiguracji udziału wdrożenia są zapisywane i udziału wdrożenia jest wyświetlana w okienku szczegółów konsoli Deployment Workbench.  
 
-#####  <a name="ConfiguretheDeploymentSharePropertiesWindowsPEx64ComponentsTab"></a>Skonfiguruj właściwości udziału wdrożenia w Windows PE x64 karta składników  
+#####  <a name="ConfiguretheDeploymentSharePropertiesWindowsPEx64ComponentsTab"></a> Skonfiguruj właściwości udziału wdrożenia w Windows PE x64 karta składników  
  Właściwości udziału wdrożenia, które są przechowywane na **składniki systemu Windows PE x64** przede wszystkim skonfigurowano kartę, po uruchomieniu Kreatora nowego udziału wdrożenia.  
 
 ###### <a name="to-configure-the-windows-pe-x64-components-tab"></a>Aby skonfigurować kartę składniki systemu Windows PE x64  
@@ -1816,12 +1815,12 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
  Ustawienia konfiguracji udziału wdrożenia są zapisywane i udziału wdrożenia jest wyświetlana w okienku szczegółów konsoli Deployment Workbench.  
 
-####  <a name="CopyaDeploymentShare"></a>Skopiuj udziału wdrożenia  
+####  <a name="CopyaDeploymentShare"></a> Skopiuj udziału wdrożenia  
  Udziały wdrożenia są lokalne lub sieci folderów udostępnionych. Można utworzyć kopii udziału wdrożenia za pomocą dowolnego procesu kopiowania plików, takich jak w Eksploratorze Windows. Podczas kopiowania udział wdrożenia do innego komputera, upewnij się, Udostępnij folder z odpowiednimi uprawnieniami.  
 
  Po skopiowaniu udziału wdrożenia, otwórz go w konsoli Deployment Workbench. Aby uzyskać więcej informacji na temat otwierania udziały wdrażania, zobacz [Otwórz istniejącego udziału wdrożenia w konsoli Deployment Workbench](#OpenanExistingDeploymentShareintheDeploymentWorkbench).  
 
-####  <a name="CloseaDeploymentShareintheDeploymentWorkbench"></a>Zamknij udziału wdrożenia, w konsoli Deployment Workbench  
+####  <a name="CloseaDeploymentShareintheDeploymentWorkbench"></a> Zamknij udziału wdrożenia, w konsoli Deployment Workbench  
 
 > [!NOTE]
 >  Zamykanie udziału wdrożenia nie usunąć lokalnego lub udostępnionego folderu sieciowego lub usuwanie zawartości lokalnej lub udostępnionego folderu sieciowego: Z listy udziałów wdrożenia w węźle udziałów wdrożenia w konsoli Deployment Workbench powoduje tylko usunięcie udziału wdrożenia.  
@@ -1834,7 +1833,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
 -   Kliknij udziału wdrożenia, a następnie w okienku Akcje kliknij przycisk **Zamknij udział wdrożenia**.  
 
-####  <a name="UpdateaDeploymentShareintheDeploymentWorkbench"></a>Zaktualizuj udział wdrożenia, w konsoli Deployment Workbench  
+####  <a name="UpdateaDeploymentShareintheDeploymentWorkbench"></a> Zaktualizuj udział wdrożenia, w konsoli Deployment Workbench  
  Aktualizacja udziału wdrożenia tworzy niezbędne do uruchomienia wdrożenia LTI obrazy rozruchowe Windows PE (pliki WIM i ISO).  
 
 ###### <a name="to-update-a-deployment-share-in-the-deployment-workbench"></a>Aby zaktualizować udział wdrożenia, w konsoli Deployment Workbench  
@@ -1862,7 +1861,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 > [!NOTE]
 >  Opcjonalnie utworzyć urządzenia rozruchowego, takie jak dysk flash USB lub USB dysk twardy z pliku ISO, tak, aby można było uruchomić na komputerze docelowym z urządzenia zgodnie z opisem w [tworzenia urządzeń rozruchowych z obrazy rozruchowe zestawu MDT](#CreateBootableDevicesfromMDTBootImages).  
 
-####  <a name="CreateBootableDevicesfromMDTBootImages"></a>Tworzenie urządzeń rozruchowych z obrazy rozruchowe zestawu MDT  
+####  <a name="CreateBootableDevicesfromMDTBootImages"></a> Tworzenie urządzeń rozruchowych z obrazy rozruchowe zestawu MDT  
  Uruchamianie komputerów docelowych przy użyciu urządzenia rozruchowego (np. dysku flash USB lub dysk twardy USB) jest często szybsze i łatwiejsze niż uruchamianie komputerów za pomocą usług wdrażania systemu Windows lub dysk CD.  
 
 > [!NOTE]
@@ -1878,19 +1877,19 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
     -   **Wybierz dysk N**  
 
-    -   **czyszczenie**  
+    -   **Czyszczenie**  
 
     -   **Tworzenie partycji podstawowej**  
 
     -   **Wybierz partycję 1**  
 
-    -   **aktywne**  
+    -   **Aktywne**  
 
-    -   **Format fs = fat32**  
+    -   **format fs=fat32**  
 
     -   **Przypisz**  
 
-    -   **Zakończ**  
+    -   **exit**  
 
 4.  Skopiuj zawartość LiteTouchPE_x86.iso (dla 32-bitowych komputerów docelowych) lub pliki LiteTouchPE_x64.iso (dla 64-bitowych komputerów docelowych) na urządzeniu, wykonując jedną z następujących czynności:  
 
@@ -1900,7 +1899,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
         xcopy <d>:\*.* <e>:\*.* /s /e /f  
         ```  
 
-         Gdzie *d* to litera dysku CD sterowników i *e* to litera dysku urządzenia.  
+         gdzie *d* to litera dysku CD sterowników i *e* to litera dysku urządzenia.  
 
     -   Można również zainstalować plik ISO za pomocą programu wirtualnego dysku CD, a następnie skopiuj jego zawartość do urządzenia za pomocą polecenia:  
 
@@ -1910,7 +1909,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
          gdzie *d* to litera dysku CD sterowników i *e* to litera dysku urządzenia.  
 
-###  <a name="ConfiguringOperatingSystemsintheDeploymentWorkbench"></a>Konfigurowanie systemy operacyjne w konsoli Deployment Workbench  
+###  <a name="ConfiguringOperatingSystemsintheDeploymentWorkbench"></a> Konfigurowanie systemy operacyjne w konsoli Deployment Workbench  
  Zestaw MDT używa konsoli Deployment Workbench do zarządzania systemami operacyjnymi, które można wdrożyć na komputerach referencyjnych i docelowych w organizacji. Skonfigurować systemy operacyjne w konsoli Deployment Workbench przez:  
 
 -   Importowanie systemu operacyjnego, zgodnie z opisem w [zaimportować systemu operacyjnego do konsoli Deployment Workbench](#ImportanOperatingSystemintotheDeploymentWorkbench)  
@@ -1931,9 +1930,9 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
 -   **Get-MDTOperatingSystemCatalog**  
 
--   **MDTOperatingSystem importu**  
+-   **Import-MDTOperatingSystem**  
 
-####  <a name="ImportanOperatingSystemintotheDeploymentWorkbench"></a>Importowanie systemu operacyjnego do konsoli Deployment Workbench  
+####  <a name="ImportanOperatingSystemintotheDeploymentWorkbench"></a> Importowanie systemu operacyjnego do konsoli Deployment Workbench  
  Systemy operacyjne można zaimportować do konsoli Deployment Workbench, używając opcji wymienionych w tabeli 31. Możesz zarządzać tym importu Kreatora importu systemu operacyjnego w konsoli Deployment Workbench.  
 
 ### <a name="table-31-options-for-importing-operating-systems-into-the-deployment-workbench"></a>Tabela 31. Opcje importowania systemy operacyjne w konsoli Deployment Workbench  
@@ -1963,7 +1962,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
 -   Obrazy WIM istniejące w usługach wdrażania systemu Windows, zgodnie z opisem w [zaimportować systemu operacyjnego z istniejącego obrazu usług wdrażania systemu Windows](#ImportanOperatingSystemfromanExistingWindowsDeploymentServicesImage)  
 
-#####  <a name="ImportanOperatingSystemfromWindowsDistributionMedia"></a>Importuj systemu operacyjnego z nośnika dystrybucji systemu Windows  
+#####  <a name="ImportanOperatingSystemfromWindowsDistributionMedia"></a> Importuj systemu operacyjnego z nośnika dystrybucji systemu Windows  
  Zestaw MDT umożliwia zaimportowanie systemy operacyjne w konsoli Deployment Workbench z nośnika dystrybucji systemu Windows, w tym DVD produktu, dysków CD lub foldery zawierające pliki dystrybucji. Importuj systemu operacyjnego przy użyciu Kreatora importu systemu operacyjnego w konsoli Deployment Workbench.  
 
 ###### <a name="to-import-an-operating-system-from-windows-distribution-media"></a>Aby zaimportować systemu operacyjnego z nośnika dystrybucji systemu Windows  
@@ -1986,7 +1985,7 @@ Tabela 10 zawiera węzły najwyższego poziomu w konsoli Deployment Workbench i 
 
      Zakończeniu pracy Kreatora importu systemu operacyjnego. System operacyjny jest dodawany do listy systemów operacyjnych w okienku szczegółów w konsoli Deployment Workbench.  
 
-#####  <a name="ImportaPreviouslyCapturedImageofaReferenceComputer"></a>Importowanie wcześniej przechwycony obraz komputera odniesienia  
+#####  <a name="ImportaPreviouslyCapturedImageofaReferenceComputer"></a> Importowanie wcześniej przechwycony obraz komputera odniesienia  
  Zestaw MDT umożliwia importowanie wcześniej przechwyconych obrazów odwołania komputerów lub innych niestandardowych obrazów do konsoli Deployment Workbench. Importuj systemu operacyjnego przy użyciu Kreatora importu systemu operacyjnego w konsoli Deployment Workbench.  
 
 ###### <a name="to-import-an-operating-system-from-a-previously-captured-image-of-a-reference-computer"></a>Aby zaimportować systemu operacyjnego z wcześniej przechwycony obraz komputera odniesienia  
@@ -2025,7 +2024,7 @@ ZTI ERROR – Non-zero return code by LTIApply, rc = 31.
 imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_description>  
 ```  
 
-#####  <a name="ImportanOperatingSystemfromanExistingWindowsDeploymentServicesImage"></a>Importuj systemu operacyjnego z istniejącego obrazu usług wdrażania systemu Windows  
+#####  <a name="ImportanOperatingSystemfromanExistingWindowsDeploymentServicesImage"></a> Importuj systemu operacyjnego z istniejącego obrazu usług wdrażania systemu Windows  
  Zestaw MDT umożliwia importowanie istniejących obrazów WIM w usługach wdrażania systemu Windows do konsoli Deployment Workbench. Importuj systemu operacyjnego przy użyciu Kreatora importu systemu operacyjnego w konsoli Deployment Workbench.  
 
 ###### <a name="to-import-an-operating-system-from-an-existing-image-in-windows-deployment-services"></a>Aby zaimportować systemu operacyjnego z istniejącego obrazu usług wdrażania systemu Windows  
@@ -2045,13 +2044,13 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Na tej stronie kreatora** |**W tym** |  
     |-----------------------------|-----------------|  
     |**Typ systemu operacyjnego** |Kliknij przycisk **niestandardowy plik obrazu**, a następnie kliknij przycisk **dalej**.|  
-    |**Serwer usług wdrażania systemu Windows** |W **nazwy serwera**, typ ***nazwa_serwera*** (gdzie *nazwa_serwera* to nazwa serwera usług wdrażania systemu Windows, który zawiera istniejących obrazów WIM), a następnie kliknij przycisk Dalej.|  
+    |**WDS Server** |W **nazwy serwera**, typ ***nazwa_serwera*** (gdzie *nazwa_serwera* to nazwa serwera usług wdrażania systemu Windows, który zawiera istniejących obrazów WIM), a następnie kliknij przycisk Dalej.|  
     |**Podsumowanie** |Kliknij przycisk **Dalej**.|  
     |**Potwierdzenie** |Kliknij przycisk **Zapisz dane wyjściowe** Aby zapisać dane wyjściowe kreatora do pliku, lub kliknij pozycję Wyświetl skrypt, aby wyświetlić skryptów programu Windows PowerShell, używane do wykonywania zadań kreatora.<br /><br /> Kliknij przycisk **Zakończ**.|  
 
  Zakończeniu pracy Kreatora importu systemu operacyjnego. System operacyjny zostanie dodany do listy systemów operacyjnych w okienku szczegółów, ale nie jest kopiowany do udziału wdrożenia. Konsoli Deployment Workbench pozostawia obrazu systemu operacyjnego na serwerze usług wdrażania systemu Windows, ale obraz jest teraz dostępna do LTI.  
 
-####  <a name="ViewOperatingSystemPropertiesintheDeploymentWorkbench"></a>Wyświetl właściwości systemu operacyjnego w konsoli Deployment Workbench  
+####  <a name="ViewOperatingSystemPropertiesintheDeploymentWorkbench"></a> Wyświetl właściwości systemu operacyjnego w konsoli Deployment Workbench  
  Wyświetl właściwości systemu operacyjnego pod węzłem systemu operacyjnego w konsoli Deployment Workbench, używając **właściwości** działania zgodnie z opisem w [właściwości elementu widoku w konsoli Deployment Workbench](#ViewItemPropertiesintheDeploymentWorkbench).  
 
 35 tabeli wymieniono ustawienia konfiguracji na **ogólne** systemu operacyjnego na karcie **właściwości** okno dialogowe i zawiera opis każdego ustawienia.  
@@ -2067,33 +2066,33 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 |**Platformy** |Architektura procesora systemu operacyjnego zawiera — na przykład x64.|  
 |**Języki (s)** |Zawiera języki zawarte w systemie operacyjnym — na przykład en US.|  
 |**Zawiera ustawienia** |Zawiera **True** lub **False**, która wskazuje, czy systemu operacyjnego zawiera pliki niezbędne do przeprowadzenia instalacji.|  
-|**Ścieżka** |Zawiera ścieżkę do systemu operacyjnego względem katalogu głównego udziału wdrożenia.|  
+|**Path** |Zawiera ścieżkę do systemu operacyjnego względem katalogu głównego udziału wdrożenia.|  
 |**Plik obrazu** |Zawiera nazwę i ścieżka pliku względem katalogu głównego udziału wdrożenia systemu operacyjnego.|  
 |**Indeks obrazu** |Zawiera wartość numeryczną, która wskazuje indeks obrazu dla obrazu — na przykład 1.|  
 |**Nazwa obrazu** |Zawiera nazwę obrazu — na przykład systemu Windows 8 ENTERPRISE.|  
 |**Rozmiar obrazu (MB)** |Rozmiar obrazu w megabajtach zawiera — na przykład 7921 oznacza 7,921 MB lub 7.921 GB.|  
 |**HAL** |Zawiera typ HAL obrazu — na przykład acpiapic.|  
 
-####  <a name="CopyanOperatingSystemintheDeploymentWorkbench"></a>Skopiuj systemu operacyjnego w konsoli Deployment Workbench  
+####  <a name="CopyanOperatingSystemintheDeploymentWorkbench"></a> Skopiuj systemu operacyjnego w konsoli Deployment Workbench  
  Skopiuj i Wklej systemów operacyjnych i foldery pod węzłem systemu operacyjnego w konsoli Deployment Workbench, używając **kopiowania** i **Wklej** działania zgodnie z opisem w [kopiowanie elementów we wdrożeniu Workbench](#CopyItemsintheDeploymentWorkbench).  
 
-####  <a name="MoveanOperatingSystemintheDeploymentWorkbench"></a>Przenieś systemu operacyjnego w konsoli Deployment Workbench  
+####  <a name="MoveanOperatingSystemintheDeploymentWorkbench"></a> Przenieś systemu operacyjnego w konsoli Deployment Workbench  
  Przenoszenie systemów operacyjnych i folderów pod węzłem systemu operacyjnego w konsoli Deployment Workbench, używając **Wytnij** i **Wklej** działania zgodnie z opisem w [przenoszenie elementów w konsoli Deployment Workbench ](#MoveItemsintheDeploymentWorkbench).  
 
-####  <a name="RenameanOperatingSystemintheDeploymentWorkbench"></a>Zmień nazwę systemu operacyjnego w konsoli Deployment Workbench  
+####  <a name="RenameanOperatingSystemintheDeploymentWorkbench"></a> Zmień nazwę systemu operacyjnego w konsoli Deployment Workbench  
  Zmień nazwę systemów operacyjnych i foldery pod węzłem systemu operacyjnego w konsoli Deployment Workbench, używając **zmienić** działania zgodnie z opisem w [zmiany nazwy elementów w konsoli Deployment Workbench](#RenameItemsintheDeploymentWorkbench).  
 
-####  <a name="DeleteanOperatingSystemfromtheDeploymentWorkbench"></a>Usuń z konsoli Deployment Workbench systemu operacyjnego  
+####  <a name="DeleteanOperatingSystemfromtheDeploymentWorkbench"></a> Usuń z konsoli Deployment Workbench systemu operacyjnego  
  Usuń systemów operacyjnych i foldery pod węzłem systemu operacyjnego w konsoli Deployment Workbench przy użyciu Kreatora usuwania elementów wybrane zgodnie z opisem w [usuwanie elementów z konsoli Deployment Workbench](#DeleteItemsfromtheDeploymentWorkbench). Usunąć wybrane elementy kreatora zezwala na usuwanie plików poszczególnych systemu operacyjnego lub całego folderu struktury.  
 
-####  <a name="ManageFoldersforOperatingSystemsintheDeploymentWorkbench"></a>Zarządzanie folderami dla systemów operacyjnych w konsoli Deployment Workbench  
+####  <a name="ManageFoldersforOperatingSystemsintheDeploymentWorkbench"></a> Zarządzanie folderami dla systemów operacyjnych w konsoli Deployment Workbench  
  Możesz zarządzać folderów w węźle systemy operacyjne w konsoli Deployment Workbench, aby utworzyć grupowanie hierarchiczne systemów operacyjnych. Aby uzyskać więcej informacji na:  
 
 -   Zarządzanie folderami, zobacz [Zarządzanie folderami w konsoli Deployment Workbench](#ManageFoldersintheDeploymentWorkbench)  
 
 -   Wybór profilów, zobacz [zarządzania profilami zaznaczenia](#ManageSelectionProfiles)  
 
-###  <a name="ConfiguringApplicationsintheDeploymentWorkbench"></a>Konfigurowanie aplikacji w konsoli Deployment Workbench  
+###  <a name="ConfiguringApplicationsintheDeploymentWorkbench"></a> Konfigurowanie aplikacji w konsoli Deployment Workbench  
  Zestaw MDT używa konsoli Deployment Workbench do zarządzania aplikacje wdrożone na komputerach referencyjnych i docelowych w organizacji. Konfigurowanie aplikacji w konsoli Deployment Workbench przez:  
 
 -   Tworzenie nowej aplikacji, zgodnie z opisem w [Tworzenie nowej aplikacji w konsoli Deployment Workbench](#CreateaNewApplicationintheDeploymentWorkbench)  
@@ -2122,9 +2121,9 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   **Get-MDTDeploymentShareStatistics**  
 
--   **MDTApplication importu**  
+-   **Import-MDTApplication**  
 
-####  <a name="CreateaNewApplicationintheDeploymentWorkbench"></a>Tworzenie nowej aplikacji w konsoli Deployment Workbench  
+####  <a name="CreateaNewApplicationintheDeploymentWorkbench"></a> Tworzenie nowej aplikacji w konsoli Deployment Workbench  
  Można tworzyć nowych aplikacji w konsoli Deployment Workbench, używając jednej z opcji wymienionych w tabeli 36. Systemy operacyjne można zaimportować do konsoli Deployment Workbench za pomocą Kreatora nowej aplikacji.  
 
 ### <a name="table-36-options-for-creating-a-new-application"></a>36 tabeli. Opcje tworzenia nowej aplikacji  
@@ -2151,7 +2150,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Wdrażanie zależności aplikacji, zgodnie z opisem w [Utwórz nową aplikację dla wdrażania zależności aplikacji](#CreateaNewApplicationforDeployingApplicationDependencies)  
 
-#####  <a name="CreateaNewApplicationThatIsDeployedfromtheDeploymentShare"></a>Utwórz nową aplikację, która została wdrożona z udziału wdrożenia  
+#####  <a name="CreateaNewApplicationThatIsDeployedfromtheDeploymentShare"></a> Utwórz nową aplikację, która została wdrożona z udziału wdrożenia  
  Zestaw MDT umożliwia przy użyciu Kreatora nowej aplikacji w konsoli Deployment Workbench do tworzenia nowych aplikacji, które zostały wdrożone z udziału wdrożenia. Kreator nowej aplikacji kopiuje pliki źródłowe dla tego typu aplikacji do udziału wdrożenia.  
 
 ###### <a name="to-create-a-new-application-that-is-deployed-from-the-deployment-share"></a>Aby utworzyć nową aplikację, która została wdrożona na podstawie udziału wdrożenia  
@@ -2180,7 +2179,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Zakończeniu pracy Kreatora nowej aplikacji. Aplikacja zostanie dodany do listy systemów operacyjnych w okienku szczegółów w konsoli Deployment Workbench.  
 
-#####  <a name="CreateaNewApplicationThatIsDeployedfromAnotherNetworkSharedFolder"></a>Utwórz nową aplikację, która jest wdrażana z innego udostępnionego folderu sieciowego  
+#####  <a name="CreateaNewApplicationThatIsDeployedfromAnotherNetworkSharedFolder"></a> Utwórz nową aplikację, która jest wdrażana z innego udostępnionego folderu sieciowego  
  Zestaw MDT umożliwia tworzenie nowych aplikacji wdrażanych w udostępnionym folderze sieciowym innym niż udziału wdrożenia. Utwórz nową aplikację za pomocą Kreatora nowej aplikacji w konsoli Deployment Workbench. Kreator nowej aplikacji nie kopiuje pliki źródłowe dla tego typu aplikacji.  
 
 ###### <a name="to-create-a-new-application-that-is-deployed-from-a-network-shared-folder-other-than-the-deployment-share"></a>Aby utworzyć nową aplikację, która jest wdrażana z udostępnionym folderze sieciowym innym niż udziału wdrożenia  
@@ -2205,7 +2204,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Zakończeniu pracy Kreatora nowej aplikacji. Aplikacja zostanie dodany do listy systemów operacyjnych w okienku szczegółów w konsoli Deployment Workbench.  
 
-#####  <a name="CreateaNewApplicationforDeployingApplicationDependencies"></a>Tworzenie nowej aplikacji do wdrażania zależności aplikacji  
+#####  <a name="CreateaNewApplicationforDeployingApplicationDependencies"></a> Tworzenie nowej aplikacji do wdrażania zależności aplikacji  
  Zestaw MDT umożliwia tworzenie nowych aplikacji używane do wdrażania tylko zależności dla aplikacji, zamiast instalowania aplikacji. Utwórz nową aplikację za pomocą Kreatora nowej aplikacji w konsoli Deployment Workbench. Kreator nowej aplikacji nie kopiuje plików źródłowych do udziału wdrożenia.  
 
 ###### <a name="to-create-a-new-application-for-deploying-application-dependencies"></a>Aby utworzyć nową aplikację do wdrożenia zależności aplikacji  
@@ -2231,7 +2230,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Zakończeniu pracy Kreatora nowej aplikacji. Aplikacja zostanie dodany do listy systemów operacyjnych w okienku szczegółów w konsoli Deployment Workbench.  
 
-####  <a name="ViewandConfigureanApplicationintheDeploymentWorkbench"></a>Wyświetlanie i konfigurowanie aplikacji w konsoli Deployment Workbench  
+####  <a name="ViewandConfigureanApplicationintheDeploymentWorkbench"></a> Wyświetlanie i konfigurowanie aplikacji w konsoli Deployment Workbench  
  Wyświetl właściwości aplikacji pod węzłem aplikacji w konsoli Deployment Workbench, używając **właściwości** działania zgodnie z opisem w [właściwości elementu widoku w konsoli Deployment Workbench](#ViewItemPropertiesintheDeploymentWorkbench). Konfigurowanie aplikacji w konsoli Deployment Workbench, wykonując następujące kroki w **właściwości aplikacji** okno dialogowe:  
 
 -   Skonfiguruj właściwości na **ogólne** karcie zgodnie z opisem w [skonfigurować na karcie Ogólne właściwości aplikacji](#ConfiguretheApplicationPropertiesGeneralTab).  
@@ -2242,7 +2241,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Skonfiguruj właściwości na **produktów pakietu Office** karcie zgodnie z opisem w [karta produktów Office właściwości aplikacji Konfigurowanie](#ConfiguretheApplicationPropertiesOfficeProductsTab).  
 
-#####  <a name="ConfiguretheApplicationPropertiesGeneralTab"></a>Skonfiguruj kartę Ogólne właściwości aplikacji  
+#####  <a name="ConfiguretheApplicationPropertiesGeneralTab"></a> Skonfiguruj kartę Ogólne właściwości aplikacji  
  Właściwości aplikacji przechowywane na **ogólne** przede wszystkim skonfigurowano kartę, po uruchomieniu Kreatora nowej aplikacji. Aktualizowanie właściwości aplikacji na **ogólne** karcie za pośrednictwem ***nazwa_aplikacji*** **właściwości** okno dialogowe (gdzie *nazwa_aplikacji* jest nazwą aplikacji w konsoli Deployment Workbench).  
 
 ###### <a name="to-configure-the-general-tab-for-application-properties"></a>Aby skonfigurować kartę Ogólne właściwości aplikacji  
@@ -2259,7 +2258,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 5.  Na **ogólne** , skonfigurować ustawienia wymienione w tabeli 40 na podstawie wymagań organizacji, a następnie kliknij **OK**.  
 
-    ### <a name="table-40-configuration-settings-on-the-general-tab-of-application-properties"></a>40 tabeli. Ustawienia konfiguracji, na karcie Ogólne we właściwościach aplikacji  
+    ### <a name="table-40-configuration-settings-on-the-general-tab-of-application-properties"></a>Table 40. Ustawienia konfiguracji, na karcie Ogólne we właściwościach aplikacji  
 
     |**Ustawienie** |**Opis** |  
     |-----------------|---------------------|  
@@ -2268,7 +2267,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Nazwa wyświetlana** |(Opcjonalnie) Zawiera nazwę wyświetlaną w Kreatorze wdrażania zamiast wartości w **nazwa**. Jeśli nie określono wartości, wartość w **nazwa** jest wyświetlana w Kreatorze wdrażania.|  
     |**Krótka nazwa** |Zawiera nazwę folderu, w którym znajduje się aplikacja.|  
     |**Wersja** |Zawiera numer wersji aplikacji.<br /><br /> Wprowadź numer wersji w tym; nie jest weryfikowany pod kątem aplikacja rzeczywisty numer wersji, ale podano w celach informacyjnych.|  
-    |**Wydawcy** |Zawiera nazwę wydawcy aplikacji.<br /><br /> Wprowadź wydawcy w tym; nie jest weryfikowany pod kątem aplikacja rzeczywisty numer wersji, ale podano w celach informacyjnych.|  
+    |**Publisher** |Zawiera nazwę wydawcy aplikacji.<br /><br /> Wprowadź wydawcy w tym; nie jest weryfikowany pod kątem aplikacja rzeczywisty numer wersji, ale podano w celach informacyjnych.|  
     |**Język** |Zawiera język aplikacji.<br /><br /> Wprowadź język, w tym; nie jest weryfikowany pod kątem języka rzeczywistej aplikacji, ale podano w celach informacyjnych.|  
     |**Katalog źródłowy** |Konfiguruje folder, w której znajduje się źródło plików aplikacji.|  
     |**GUID aplikacji** |Zawiera identyfikator GUID dla aplikacji.|  
@@ -2277,7 +2276,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Ustawienia konfiguracji aplikacji zostaną zapisane, a zmiany są wyświetlane w okienku szczegółów konsoli Deployment Workbench.  
 
-#####  <a name="ConfiguretheApplicationPropertiesDetailsTab"></a>Skonfiguruj kartę szczegółów właściwości aplikacji  
+#####  <a name="ConfiguretheApplicationPropertiesDetailsTab"></a> Skonfiguruj kartę szczegółów właściwości aplikacji  
  Ustawienia konfiguracji aplikacji, które są przechowywane na **szczegóły** kartę są wstępnie skonfigurowane po uruchomieniu Kreatora nowej aplikacji. Aktualizowanie właściwości aplikacji na **szczegóły** karcie za pośrednictwem ***nazwa_aplikacji*** **właściwości** okno dialogowe (gdzie *nazwa_aplikacji* jest nazwą aplikacji w konsoli Deployment Workbench).  
 
 ###### <a name="to-configure-the-details-tab-for-application-properties"></a>Aby skonfigurować kartę szczegółów dla właściwości aplikacji  
@@ -2298,7 +2297,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
     |**Ustawienie** |**Opis** |  
     |-----------------|---------------------|  
-    |**Pakiet aplikacji** |Wybierz, aby skonfigurować aplikację do zainstalowania zależności aplikacji, ale nie aplikacji. Jest dostępna opcja **standardowej aplikacji**.|  
+    |Pakiet aplikacji |Wybierz, aby skonfigurować aplikację do zainstalowania zależności aplikacji, ale nie aplikacji. Jest dostępna opcja **standardowej aplikacji**.|  
     |**Standardowa aplikacja** |Wybierz aplikację do standardowych aplikacji, która zawiera pliki źródłowe, wiersz polecenia i inne opcje wymienione na tej karcie można skonfigurować. Jest dostępna opcja **pakietu aplikacji**.|  
     |**Polecenie instalacji dyskretnej** |Określa wiersz poleceń do uruchamiania instalacji nienadzorowanej lub cichą aplikacji. To pole tekstowe jest włączona tylko po wybraniu **standardowej aplikacji** opcji.|  
     |**Katalog roboczy** |Określa katalog roboczy aplikacji i jest włączona tylko po wybraniu **standardowej aplikacji**.|  
@@ -2309,7 +2308,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Ustawienia konfiguracji aplikacji zostaną zapisane, a zmiany są wyświetlane w okienku szczegółów konsoli Deployment Workbench.  
 
-#####  <a name="ConfiguretheApplicationPropertiesDependenciesTab"></a>Skonfiguruj właściwości karty zależności aplikacji  
+#####  <a name="ConfiguretheApplicationPropertiesDependenciesTab"></a> Skonfiguruj właściwości karty zależności aplikacji  
  Zestaw MDT sprawdza zależności aplikacji przed zainstalowaniem aplikacji. Podobnie zestawu MDT gwarantuje, że wszystkie zależności aplikacji są zainstalowane przed zainstalowaniem aplikacji.  
 
 > [!NOTE]
@@ -2342,7 +2341,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Ustawienia konfiguracji aplikacji zostaną zapisane, a zmiany są wyświetlane w okienku szczegółów konsoli Deployment Workbench.  
 
-#####  <a name="ConfiguretheApplicationPropertiesOfficeProductsTab"></a>Skonfiguruj kartę produktów Office właściwości aplikacji  
+#####  <a name="ConfiguretheApplicationPropertiesOfficeProductsTab"></a> Skonfiguruj kartę produktów Office właściwości aplikacji  
  Właściwości aplikacji przechowywane na **produktów pakietu Office** przede wszystkim skonfigurowano kartę, po uruchomieniu Kreatora nowej aplikacji. Aktualizowanie właściwości aplikacji na **produktów pakietu Office** karcie za pośrednictwem ***nazwa_aplikacji*** **właściwości** okno dialogowe (gdzie *nazwa_aplikacji*  jest nazwą aplikacji w konsoli Deployment Workbench).  
 
 > [!NOTE]
@@ -2375,33 +2374,33 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Tylko w pamięci podręcznej** |Wybierz, aby określić, czy konsoli Deployment Workbench konfiguruje pliku Config.xml dla Instalatora pakietu Microsoft Office do zainstalowania instalacji lokalnej pamięci podręcznej źródła (LIS) do komputera docelowego podczas procesu instalacji, a nie instalacji programu Microsoft Office. Jeśli pole wyboru jest:<br /><br /> -Wybrania pliku Config.xml jest skonfigurowany do kopiowanie pamięci podręcznej LIS podczas Instalatora pakietu Microsoft Office, ale nie instalować produktów Microsoft Office<br /><br /> -Wyczyszczone, LIS pamięci podręcznej jest kopiowany i produktów Microsoft Office będą instalowane w ramach Instalatora pakietu Microsoft Office|  
     |**Zawsze Pomiń ponowny rozruch** |Wybierz, aby określić, czy konsoli Deployment Workbench konfiguruje pliku Config.xml dla Instalatora pakietu Microsoft Office uniknąć ponownego uruchomienia komputera docelowego podczas procesu instalacji. Jeśli pole wyboru jest:<br /><br /> -Zaznaczone, aby uniknąć ponownego uruchomienia komputera docelowego podczas Instalatora pakietu Microsoft Office jest skonfigurowany w pliku Config.xml<br /><br /> -Wyczyszczone, komputera docelowego może zostać uruchomiony ponownie podczas Instalatora pakietu Microsoft Office|  
     |**Dodaj** |Kliknij, aby dodać pakiety językowe programu Microsoft Office.|  
-    |**Edytowanie pliku Config.xml** |Kliknij, aby zmodyfikować zawartość pliku Config.xml, który generuje konsoli Deployment Workbench.|  
+    |**Edit Config.xml** |Kliknij, aby zmodyfikować zawartość pliku Config.xml, który generuje konsoli Deployment Workbench.|  
 
  Ustawienia konfiguracji aplikacji zostaną zapisane, a zmiany są wyświetlane w okienku szczegółów konsoli Deployment Workbench.  
 
-####  <a name="CopyanApplicationintheDeploymentWorkbench"></a>Kopiowanie aplikacji w konsoli Deployment Workbench  
+####  <a name="CopyanApplicationintheDeploymentWorkbench"></a> Kopiowanie aplikacji w konsoli Deployment Workbench  
  Skopiuj i Wklej aplikacji i foldery poniżej węzła aplikacji w konsoli Deployment Workbench przy użyciu **kopiowania** i **Wklej** działania zgodnie z opisem w [kopiowanie elementów we wdrożeniu Workbench](#CopyItemsintheDeploymentWorkbench).  
 
-####  <a name="MoveanApplicationintheDeploymentWorkbench"></a>Przenieś aplikacji w konsoli Deployment Workbench  
+####  <a name="MoveanApplicationintheDeploymentWorkbench"></a> Przenieś aplikacji w konsoli Deployment Workbench  
  Przenoszenie aplikacji i folderów poniżej węzła aplikacji w konsoli Deployment Workbench przy użyciu **Wytnij** i **Wklej** działania zgodnie z opisem w [przenoszenie elementów w konsoli Deployment Workbench](#MoveItemsintheDeploymentWorkbench).  
 
-####  <a name="RenameanApplicationintheDeploymentWorkbench"></a>Zmień nazwę aplikacji w konsoli Deployment Workbench  
+####  <a name="RenameanApplicationintheDeploymentWorkbench"></a> Zmień nazwę aplikacji w konsoli Deployment Workbench  
  Zmień nazwę aplikacji i foldery poniżej węzła aplikacji w konsoli Deployment Workbench przy użyciu **zmienić** działania zgodnie z opisem w [zmiany nazwy elementów w konsoli Deployment Workbench](#RenameItemsintheDeploymentWorkbench).  
 
-####  <a name="DeleteanApplicationfromtheDeploymentWorkbench"></a>Usuwanie aplikacji z konsoli Deployment Workbench  
+####  <a name="DeleteanApplicationfromtheDeploymentWorkbench"></a> Usuwanie aplikacji z konsoli Deployment Workbench  
  Usuwanie aplikacji i foldery poniżej węzła aplikacji w konsoli Deployment Workbench przy użyciu Kreatora usuwania elementów wybrane zgodnie z opisem w [usuwanie elementów z konsoli Deployment Workbench](#DeleteItemsfromtheDeploymentWorkbench). Usunąć wybrane elementy kreatora zezwala na usuwanie poszczególnych aplikacji lub struktury całego folderu.  
 
 > [!NOTE]
 >  Nie należy usuwać aplikacji, gdy inne aplikacje są zależne od niej. Jednak konsoli Deployment Workbench nie obsługuje wymuszania tego zalecenia.  
 
-####  <a name="ManageFoldersforApplicationsintheDeploymentWorkbench"></a>Zarządzanie folderami dla aplikacji w konsoli Deployment Workbench  
+####  <a name="ManageFoldersforApplicationsintheDeploymentWorkbench"></a> Zarządzanie folderami dla aplikacji w konsoli Deployment Workbench  
  Możesz zarządzać folderów poniżej węzła aplikacji w konsoli Deployment Workbench, aby utworzyć hierarchiczne grupy aplikacji. Aby uzyskać więcej informacji na:  
 
 -   Zarządzanie folderami, zobacz [Zarządzanie folderami w konsoli Deployment Workbench](#ManageFoldersintheDeploymentWorkbench)  
 
 -   Wybór profilów, zobacz [zarządzania profilami zaznaczenia](#ManageSelectionProfiles)  
 
-####  <a name="EnableorDisableanApplicationintheDeploymentWorkbench"></a>Włączanie lub wyłączanie aplikacji w konsoli Deployment Workbench  
+####  <a name="EnableorDisableanApplicationintheDeploymentWorkbench"></a> Włączanie lub wyłączanie aplikacji w konsoli Deployment Workbench  
  Czy aplikacje są dostępne dla innych kreatory i okna dialogowe pola w konsoli Deployment Workbench za pomocą formantu **Włączanie aplikacji** pole wyboru na **ogólne** aplikacji **Właściwości** okno dialogowe.  
 
 > [!TIP]
@@ -2409,13 +2408,13 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Aby uzyskać więcej informacji dotyczących włączania lub wyłączania aplikacji w konsoli Deployment Workbench, zobacz [skonfigurować na karcie Ogólne właściwości aplikacji](#ConfiguretheApplicationPropertiesGeneralTab).  
 
-####  <a name="PreventanApplicationfromBeingVisibleintheDeploymentWizard"></a>Uniemożliwić są widoczne w Kreatorze wdrażania aplikacji  
+####  <a name="PreventanApplicationfromBeingVisibleintheDeploymentWizard"></a> Uniemożliwić są widoczne w Kreatorze wdrażania aplikacji  
  Zapobiegaj aplikacji jest widoczny w Kreatorze wdrażania, wybierając **Ukryj tej aplikacji w Kreatorze wdrażania** pole wyboru na **ogólne** aplikacji  **Właściwości** okno dialogowe, zgodnie z opisem w [skonfigurować na karcie Ogólne właściwości aplikacji](#ConfiguretheApplicationPropertiesGeneralTab).  
 
 > [!NOTE]
 >  Stan **Ukryj tej aplikacji w Kreatorze wdrażania** pole wyboru jest wyświetlane w **Ukryj** kolumny w okienku szczegółów **aplikacji** węzła.  
 
-####  <a name="ConfiguretheComputertoRestartAfterApplicationInstallation"></a>Skonfiguruj komputer tak, aby uruchomić ponownie po zakończeniu instalacji aplikacji  
+####  <a name="ConfiguretheComputertoRestartAfterApplicationInstallation"></a> Skonfiguruj komputer tak, aby uruchomić ponownie po zakończeniu instalacji aplikacji  
  Ponowne uruchomienie komputera docelowego po zainstalowaniu aplikacji przez wybranie **ponowne uruchomienie komputera po zainstalowaniu tej aplikacji** pole wyboru na **szczegóły** aplikacji  **Właściwości** okno dialogowe. Po zaznaczeniu tego pola wyboru powoduje, że Kreatora wdrażania do ponownego uruchomienia komputera docelowego po zainstalowaniu aplikacji, a następnie kontynuuj do następnego kroku w sekwencji zadań.  
 
 > [!CAUTION]
@@ -2423,7 +2422,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Aby uzyskać więcej informacji na temat konfigurowania zestawu MDT, aby ponownie uruchomić komputer docelowy po zainstalowaniu aplikacji, zobacz [Karta Szczegóły właściwości aplikacji Konfigurowanie](#ConfiguretheApplicationPropertiesDetailsTab).  
 
-####  <a name="CustomizeApplicationInstallationinTaskSequences"></a>Dostosuj instalację aplikacji w sekwencji zadań  
+####  <a name="CustomizeApplicationInstallationinTaskSequences"></a> Dostosuj instalację aplikacji w sekwencji zadań  
  Dodawanie aplikacji w węźle aplikacji w udziale wdrożenia za pośrednictwem konsoli Deployment Workbench jest najprostszą metodą wdrażania większości aplikacji. Sekwencje zadań zestawu MDT wdrażać aplikacje za pomocą **zainstaluj aplikację** typ sekwencji zadań. Niektóre szablony sekwencji zadań zawarte w zestawie MDT mają **instalowanie aplikacji** krok sekwencji zadań **przywracania** grupy, która jest oparta na **zainstaluj aplikację**typ sekwencji zadań.  
 
  **Zainstaluj aplikację** typ sekwencji zadań umożliwia instalacja jednego lub więcej aplikacji w jednym sekwencji zadań przy użyciu jednej z opcji konfiguracji wymienione w tabeli 44.  
@@ -2441,7 +2440,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Tworzenie nowej sekwencji zadań na podstawie **zainstaluj aplikację** typ sekwencji zadań, zgodnie z opisem w [Tworzenie nowej sekwencji zadań dla instalowanie aplikacji](#CreateaNewTaskSequenceStepforInstallingApplications)  
 
-#####  <a name="ConfigureanExistingInstallApplicationsTaskSequenceStep"></a>Konfigurowanie istniejącej instalacji aplikacji sekwencji zadań  
+#####  <a name="ConfigureanExistingInstallApplicationsTaskSequenceStep"></a> Konfigurowanie istniejącej instalacji aplikacji sekwencji zadań  
  Skonfiguruj istniejące **instalowanie aplikacji** krok sekwencji zadań, modyfikując ustawienia konfiguracji na **właściwości** kartę kroku sekwencji zadań.  
 
 ###### <a name="to-configure-an-existing-install-applications-task-sequence-step"></a>Aby skonfigurować istniejącą krok sekwencji zadań instalowanie aplikacji  
@@ -2475,7 +2474,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Sekwencja zadań zaktualizowane zostanie wyświetlony w okienku szczegółów w konsoli Deployment Workbench.  
 
-#####  <a name="CreateaNewTaskSequenceStepforInstallingApplications"></a>Tworzenie nowej sekwencji zadań do instalowania aplikacji  
+#####  <a name="CreateaNewTaskSequenceStepforInstallingApplications"></a> Tworzenie nowej sekwencji zadań do instalowania aplikacji  
  W większości przypadków istniejące **instalowanie aplikacji** krok sekwencji zadań jest wystarczająca do instalowania aplikacji na komputerach docelowych. Jednak istnieją sytuacje, w którym istniejące **instalowanie aplikacji** krok sekwencji zadań mogą nie wystarczać do wymagań organizacji lub może być konieczne zainstalowanie aplikacji na inną sekwencję w zadaniu Sekwencja.  
 
  Na przykład proces instalacji niektórych sterowników urządzeń jest wykonywane więcej takich jak instalacja aplikacji niż proces typowej instalacji sterownika urządzenia tradycyjnych. Można zainstalować te sterowniki urządzeń przez utworzenie nowej sekwencji zadań na podstawie **zainstaluj aplikację** typ sekwencji zadań.  
@@ -2489,7 +2488,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 2.  Skonfiguruj nowy krok sekwencji zadań, aby wdrożyć jeden lub więcej aplikacji, zgodnie z opisem w [skonfigurować istniejących instalacji aplikacji krok sekwencji zadań](#ConfigureanExistingInstallApplicationsTaskSequenceStep).  
 
-###  <a name="ConfiguringPackagesintheDeploymentWorkbench"></a>Konfigurowanie pakietów w konsoli Deployment Workbench  
+###  <a name="ConfiguringPackagesintheDeploymentWorkbench"></a> Konfigurowanie pakietów w konsoli Deployment Workbench  
  Pakiety w zestawie MDT są zainstalowane na komputerach docelowych i przechowywane w pliku CAB lub MSU plików, takich jak aktualizacje zabezpieczeń, dodatki service pack, pakiety funkcji lub pakiety językowe oprogramowanie systemu operacyjnego. Zarządzaj pakietami wdrażane na komputerach referencyjnych i docelowych w organizacji za pomocą konsoli Deployment Workbench. Pakietów można skonfigurować w konsoli Deployment Workbench w węźle pakietów udział wdrożenia przez:  
 
 -   Importowanie nowego pakietu, zgodnie z opisem w [zaimportować nowy pakiet do konsoli Deployment Workbench](#ImportaNewPackageintotheDeploymentWorkbench)  
@@ -2516,9 +2515,9 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   **Get-MDTDeploymentShareStatistics**  
 
--   **MDTPackage importu**  
+-   **Import-MDTPackage**  
 
-####  <a name="ImportaNewPackageintotheDeploymentWorkbench"></a>Zaimportuj nowy pakiet do konsoli Deployment Workbench  
+####  <a name="ImportaNewPackageintotheDeploymentWorkbench"></a> Zaimportuj nowy pakiet do konsoli Deployment Workbench  
  Zaimportuj pakiety do konsoli Deployment Workbench przy użyciu Kreatora importu systemu operacyjnego pakietów. Uruchom Kreatora importu systemu operacyjnego pakietów przy użyciu jednej z następujących metod:  
 
 -   W drzewie konsoli kliknij węzeł pakietów lub folder w węźle pakietów. Następnie w okienku Akcje kliknij przycisk **pakietów systemu operacyjnego importu**.  
@@ -2547,7 +2546,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Zakończeniu pracy Kreatora importu systemu operacyjnego pakietów. Pakiet jest dodawany do listy pakietów w okienku szczegółów w konsoli Deployment Workbench.  
 
-####  <a name="ModifyanExistingPackageintheDeploymentWorkbench"></a>Modyfikuj istniejący pakiet w konsoli Deployment Workbench  
+####  <a name="ModifyanExistingPackageintheDeploymentWorkbench"></a> Modyfikuj istniejący pakiet w konsoli Deployment Workbench  
  Modyfikowanie pakietów w węźle pakietów w konsoli Deployment Workbench, używając **właściwości** działania zgodnie z opisem w [właściwości elementu widoku w konsoli Deployment Workbench](#ViewItemPropertiesintheDeploymentWorkbench). Właściwości pakietu najczęściej są skonfigurowane, po uruchomieniu Kreatora importu systemu operacyjnego pakietów. Właściwości pakietu aktualizacji na **ogólne** karcie za pośrednictwem ***nazwa_pakietu*** **właściwości** okno dialogowe (gdzie *nazwa_pakietu* jest Nazwa aplikacji w konsoli Deployment Workbench).  
 
 ###### <a name="to-modify-an-existing-package"></a>Aby zmodyfikować istniejący pakiet  
@@ -2574,7 +2573,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Typ** |Typ pakietu, które zwykle obejmuje następujące ogólne typy pakietów:<br /><br /> -Pakiety językowe<br /><br /> — Poprawki poprawki<br /><br /> — Pakiety funkcja<br /><br /> Typ pakietu w tym polu tekstowym jest ustalany automatycznie konsoli Deployment Workbench i nie może być modyfikowany.|  
     |**Architektura procesora** |Architektura procesora docelowego pakietu; może być x86, amd64 lub ia64.<br /><br /> Architektura procesora w tym polu jest ustalany automatycznie konsoli Deployment Workbench i nie może być modyfikowany.|  
     |**Język** |Zawiera język aplikacji.<br /><br /> Język, w tym polu jest ustalany automatycznie konsoli Deployment Workbench i nie może być modyfikowany.|  
-    |**Słowo kluczowe** |Używany do identyfikowania wersji pakietu językowego.<br /><br /> Słowo kluczowe, w tym polu tekstowym jest ustalany automatycznie konsoli Deployment Workbench i nie może być modyfikowany.|  
+    |**Keyword** |Używany do identyfikowania wersji pakietu językowego.<br /><br /> Słowo kluczowe, w tym polu tekstowym jest ustalany automatycznie konsoli Deployment Workbench i nie może być modyfikowany.|  
     |**Token klucza publicznego** |Zawiera token klucza publicznego zestawu MDT używa zaktualizowany plik unattended.xml.<br /><br /> Token klucza publicznego w tym polu tekstowym jest ustalany automatycznie konsoli Deployment Workbench i nie może być modyfikowany.|  
     |**Wersja** |Zawiera numer wersji pakietu.<br /><br /> Numer wersji, w tym polu tekstowym jest ustalany automatycznie konsoli Deployment Workbench i nie może być modyfikowany.|  
     |**Nazwa produktu** |Zawiera nazwę produktu, dla których przeznaczony jest pakiet.<br /><br /> Nazwa produktu, w tym polu tekstowym jest ustalany automatycznie konsoli Deployment Workbench i nie może być modyfikowany.|  
@@ -2585,26 +2584,26 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Ustawienia konfiguracji pakietu są zapisywane, a zmiany są wyświetlane w okienku szczegółów konsoli Deployment Workbench.  
 
-####  <a name="CopyaPackageintheDeploymentWorkbench"></a>Skopiuj pakiet w konsoli Deployment Workbench  
+####  <a name="CopyaPackageintheDeploymentWorkbench"></a> Skopiuj pakiet w konsoli Deployment Workbench  
  Możesz skopiować i wkleić pakietów folderów pod węzłem pakietów w konsoli Deployment Workbench, używając **kopiowania** i **Wklej** działania zgodnie z opisem w [kopiowanie elementów w konsoli Deployment Workbench ](#CopyItemsintheDeploymentWorkbench).  
 
-####  <a name="MoveaPackageintheDeploymentWorkbench"></a>Przenieś pakiet w konsoli Deployment Workbench  
+####  <a name="MoveaPackageintheDeploymentWorkbench"></a> Przenieś pakiet w konsoli Deployment Workbench  
  Można przenieść pakietów i foldery pod węzłem pakietów w konsoli Deployment Workbench, używając **Wytnij** i **Wklej** działania zgodnie z opisem w [przenoszenie elementów w konsoli Deployment Workbench](#MoveItemsintheDeploymentWorkbench).  
 
-####  <a name="RenameaPackageintheDeploymentWorkbench"></a>Zmień nazwę pakietu w konsoli Deployment Workbench  
+####  <a name="RenameaPackageintheDeploymentWorkbench"></a> Zmień nazwę pakietu w konsoli Deployment Workbench  
  Można zmienić nazwy pakietów i foldery pod węzłem pakietów w konsoli Deployment Workbench, używając **zmienić** działania zgodnie z opisem w [zmiany nazwy elementów w konsoli Deployment Workbench](#RenameItemsintheDeploymentWorkbench).  
 
-####  <a name="DeleteaPackagefromtheDeploymentWorkbench"></a>Usuń pakiet z konsoli Deployment Workbench  
+####  <a name="DeleteaPackagefromtheDeploymentWorkbench"></a> Usuń pakiet z konsoli Deployment Workbench  
  Można usuwać pakiety i foldery poniżej węzła aplikacji w konsoli Deployment Workbench przy użyciu Kreatora usuwania elementów wybrane zgodnie z opisem w [usuwanie elementów z konsoli Deployment Workbench](#DeleteItemsfromtheDeploymentWorkbench). Usunąć wybrane elementy Kreator umożliwia usunięcie poszczególnych pakietu lub struktury całego folderu.  
 
-####  <a name="ManageFoldersforPackagesintheDeploymentWorkbench"></a>Zarządzanie folderami pakietów w konsoli Deployment Workbench  
+####  <a name="ManageFoldersforPackagesintheDeploymentWorkbench"></a> Zarządzanie folderami pakietów w konsoli Deployment Workbench  
  Możesz zarządzać folderów pod węzłem pakietów w konsoli Deployment Workbench, aby utworzyć grupowanie hierarchiczne pakietów systemu operacyjnego. Aby uzyskać więcej informacji na:  
 
 -   Zarządzanie folderami, zobacz [Zarządzanie folderami w konsoli Deployment Workbench](#ManageFoldersintheDeploymentWorkbench)  
 
 -   Wybór profilów, zobacz [zarządzania profilami zaznaczenia](#ManageSelectionProfiles)  
 
-####  <a name="EnableorDisableaPackageintheDeploymentWorkbench"></a>Włącz lub wyłącz pakietu w konsoli Deployment Workbench  
+####  <a name="EnableorDisableaPackageintheDeploymentWorkbench"></a> Włącz lub wyłącz pakietu w konsoli Deployment Workbench  
  Można kontrolować, czy pakiety są dostępne dla innych kreatorach i oknach dialogowych w konsoli Deployment Workbench, wybierając **włączyć (zatwierdzić) tego pakietu** pole wyboru na **ogólne** pakietu **Właściwości** okno dialogowe.  
 
 > [!TIP]
@@ -2612,10 +2611,10 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Aby uzyskać więcej informacji o włączeniu lub wyłączeniu pakietów w konsoli Deployment Workbench, zobacz [konfigurowania pakietów w konsoli Deployment Workbench](#ConfiguringPackagesintheDeploymentWorkbench).  
 
-####  <a name="PreventaPackagefromBeingVisibleintheDeploymentWizard"></a>Zapobiegaj pakietu jest widoczny w Kreatorze wdrażania  
+####  <a name="PreventaPackagefromBeingVisibleintheDeploymentWizard"></a> Zapobiegaj pakietu jest widoczny w Kreatorze wdrażania  
  Możesz uniemożliwić pakietu są widoczne w Kreatorze wdrażania, wybierając **Ukryj tej aplikacji w Kreatorze wdrażania** pole wyboru na **ogólne** aplikacji  **Właściwości** okno dialogowe. Aby uzyskać więcej informacji na uniemożliwia pakietów znajdujących się w Kreatorze wdrażania, zobacz [konfigurowania pakietów w konsoli Deployment Workbench](#ConfiguringPackagesintheDeploymentWorkbench).  
 
-####  <a name="CustomizePackageInstallationinTaskSequences"></a>Dostosowanie instalacji pakietu w sekwencji zadań  
+####  <a name="CustomizePackageInstallationinTaskSequences"></a> Dostosowanie instalacji pakietu w sekwencji zadań  
  Dodawanie pakietów w węźle pakietów udziału wdrożenia za pośrednictwem konsoli Deployment Workbench jest najprostszą metodą wdrażania większość pakietów. Sekwencje zadań zestawu MDT wdrażania pakietów przy użyciu **zainstalować aktualizacji w trybie Offline** typ sekwencji zadań. Niektóre szablony sekwencji zadań zawarte w zestawie MDT mają **zastosować poprawki** krok sekwencji zadań **instalacją/odświeżania**grupy, która jest oparta na **zainstalować aktualizacji w trybie Offline** typ sekwencji zadań.  
 
  **Zainstalować aktualizacji w trybie Offline** typ sekwencji zadań umożliwia zainstalowanie co najmniej jednego pakietu w pojedynczy sekwencji zadań przy użyciu profilów zaznaczenia, pozwalających na jeden lub więcej pakietów i wdrożone jako jednostka. Aby uzyskać więcej informacji, Zarządzanie profilami zaznaczenia, zobacz [zarządzania profilami wybór](#ManageSelectionProfiles).  
@@ -2628,7 +2627,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Dodawanie języka pakietów do kroków sekwencji zadań, zgodnie z opisem w [dodawania pakietów językowych do kroków sekwencji zadań](#AddLanguagePackstoTaskSequenceSteps)  
 
-#####  <a name="ConfigureanExistingApplyPatchesTaskSequenceStep"></a>Konfigurowanie istniejących krok sekwencji zadań poprawki Zastosuj  
+#####  <a name="ConfigureanExistingApplyPatchesTaskSequenceStep"></a> Konfigurowanie istniejących krok sekwencji zadań poprawki Zastosuj  
  Możesz skonfigurować istniejącą **zastosować poprawki** krok sekwencji zadań, modyfikując ustawienia konfiguracji na **właściwości** kartę kroku sekwencji zadań.  
 
 ###### <a name="to-configure-an-existing-apply-patches-task-sequence-step"></a>Aby skonfigurować istniejącą krok sekwencji zadań Zastosuj poprawki  
@@ -2659,7 +2658,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Sekwencja zadań zaktualizowane zostanie wyświetlony w okienku szczegółów w konsoli Deployment Workbench.  
 
-#####  <a name="CreateaNewTaskSequenceStepforInstallingPackages"></a>Tworzenie nowej sekwencji zadań dla instalowanie pakietów  
+#####  <a name="CreateaNewTaskSequenceStepforInstallingPackages"></a> Tworzenie nowej sekwencji zadań dla instalowanie pakietów  
  W większości przypadków istniejące **zastosować poprawki** krok sekwencji zadań jest wystarczająca dla instalowanie pakietów do komputerów docelowych. Jednak istnieją sytuacje, w którym istniejące **zastosować poprawki** krok sekwencji zadań mogą nie wystarczać do wymagań lub może być konieczne do zainstalowania pakietu w innym miejscu w sekwencji zadań.  
 
  Na przykład pakiety mogą muszą być zainstalowane w dowolnej kolejności lub mogą zawierać zależności, takich jak instalowanie dodatku service pack przed zainstalowaniem poprawki. Najpierw należy utworzyć foldery i wybór profilów dla każdej grupy pakiety, które chcesz zainstalować osobno. Następnie należy zainstalować grup pakietów przez utworzenie nowej sekwencji zadań dla każdej grupy na podstawie **zainstalować aktualizacji w trybie Offline**— typ sekwencji zadań.  
@@ -2673,7 +2672,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 2.  Skonfiguruj nowy krok sekwencji zadań do wdrożenia co najmniej jeden pakiet, wybierając odpowiedni profil zawierający pakiety do zainstalowania zgodnie z opisem w [skonfigurować istniejących instalacji aplikacji krok sekwencji zadań](#ConfigureanExistingInstallApplicationsTaskSequenceStep).  
 
-#####  <a name="AddLanguagePackstoTaskSequenceSteps"></a>Dodawanie pakietów językowych do kroków sekwencji zadań  
+#####  <a name="AddLanguagePackstoTaskSequenceSteps"></a> Dodawanie pakietów językowych do kroków sekwencji zadań  
  Pakiety językowe to jeden z typów pakietów, które są dostępne w zestawie MDT i Włącz wielojęzyczny środowiska systemu Windows. System Windows jest niezależny od języka i wszystkie zasoby język i ustawienia regionalne zostaną dodane do systemu Windows za pomocą pakietów językowych (pliki Lp.cab). Dodając co najmniej jeden pakiet językowy do systemu Windows tych języków można włączyć podczas instalowania systemu operacyjnego. W związku z tym ten sam obraz systemu Windows można wdrażać w regionach z innego języka i ustawienia regionalne, ograniczenie programowanie i wdrożenie czasu.  
 
  Zobacz następujące informacje, aby uzyskać dodatkowe informacje o pakietach językowych w systemie Windows:  
@@ -2684,7 +2683,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Aby uzyskać więcej informacji o pakietach językowych systemu Windows zobacz "Zarządzaj języka pakietów dla systemu Windows" w zestawie Windows ADK.  
 
-###  <a name="ConfiguringDeviceDriversintheDeploymentWorkbench"></a>Konfigurowanie sterowników urządzeń w konsoli Deployment Workbench  
+###  <a name="ConfiguringDeviceDriversintheDeploymentWorkbench"></a> Konfigurowanie sterowników urządzeń w konsoli Deployment Workbench  
  Zintegrować sterowniki urządzeń dla komputerów referencyjnych i docelowych środowiska Windows PE i docelowy system operacyjny, chyba że te składniki są uwzględnione w środowisku Windows PE lub docelowego systemu operacyjnego. Konsoli Deployment Workbench pomaga scentralizować i zautomatyzować zarządzanie sterownikami urządzeń i integracji dla LTI zapewniając scentralizowane repozytorium sterowników urządzeń, zapewnienie, że odpowiednie sterowniki urządzenia są wdrażane. Konsoli Deployment Workbench automatyzuje również wprowadzanie odpowiednie sterowniki urządzeń do obrazów środowiska Windows PE, które generuje konsoli Deployment Workbench. Zestaw MDT obsługuje różne strategie zarządzania sterownikami urządzeń. Aby uzyskać więcej informacji na temat strategii zarządzania sterownika urządzenia, zobacz [zarządzania sterownikami urządzeń](#ManagingDeviceDrivers).  
 
  Skonfiguruj sterowniki urządzeń w konsoli Deployment Workbench w węźle Out-of-Box udział wdrożenia przez:  
@@ -2709,11 +2708,11 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  W addtion do zarządzania sterownikami urządzeń w konsoli Deployment Workbench można zarządzać za pomocą poleceń cmdlet środowiska Windows PowerShell dla zestawu MDT sterowników urządzeń. Aby uzyskać więcej informacji na temat zarządzania sterowników urządzeń za pomocą poleceń cmdlet środowiska Windows PowerShell dla zestawu MDT, zobacz następujące sekcje znajdujące się poniżej sekcji "MDT Windows PowerShell polecenia cmdlet", w dokumentacji zestawu MDT *odwołanie do zestawu narzędzi*:  
 
--   **MDTDriver importu**  
+-   **Import-MDTDriver**  
 
 -   **Get-MDTDeploymentShareStatistics**  
 
-####  <a name="ImportDeviceDriversintotheDeploymentWorkbench"></a>Importowanie sterowników urządzeń do konsoli Deployment Workbench  
+####  <a name="ImportDeviceDriversintotheDeploymentWorkbench"></a> Importowanie sterowników urządzeń do konsoli Deployment Workbench  
  Importowanie sterowników urządzeń do konsoli Deployment Workbench przy użyciu Kreatora importu sterowników. Uruchom Kreatora sterowniki importu przy użyciu jednej z następujących metod:  
 
 -   W drzewie konsoli kliknij węzeł sterowniki Out-of-Box lub folder w węźle sterowniki Out-of-Box. Następnie w okienku Akcje kliknij przycisk **importowania sterowników**.  
@@ -2744,14 +2743,14 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Zakończeniu pracy Kreatora importu sterowników. Sterowniki urządzeń są dodawane do listy sterowników urządzeń w okienku szczegółów w konsoli Deployment Workbench.  
 
-####  <a name="ModifyExistingDeviceDriversintheDeploymentWorkbench"></a>Modyfikowanie istniejących sterowników w konsoli Deployment Workbench  
+####  <a name="ModifyExistingDeviceDriversintheDeploymentWorkbench"></a> Modyfikowanie istniejących sterowników w konsoli Deployment Workbench  
  Modyfikowanie sterowników urządzeń w węźle sterowniki Out-of-Box w konsoli Deployment Workbench, używając **właściwości** działania zgodnie z opisem w [właściwości elementu widoku w konsoli Deployment Workbench](#ViewItemPropertiesintheDeploymentWorkbench). Skonfiguruj sterowniki urządzeń w konsoli Deployment Workbench, wykonując następujące czynności w sterownika urządzenia **właściwości** okno dialogowe:  
 
 1.  Skonfiguruj właściwości na **ogólne** karcie zgodnie z opisem w [karta Ogólne właściwości sterownika urządzenia Konfigurowanie](#ConfiguretheDeviceDriverPropertiesGeneralTab).  
 
 2.  Wyświetl właściwości na **szczegóły** karcie zgodnie z opisem w [Wyświetl kartę szczegółów właściwości sterownika urządzenia](#ViewtheDeviceDriverPropertiesDetailsTab).  
 
-#####  <a name="ConfiguretheDeviceDriverPropertiesGeneralTab"></a>Skonfiguruj kartę Ogólne właściwości sterownika urządzenia  
+#####  <a name="ConfiguretheDeviceDriverPropertiesGeneralTab"></a> Skonfiguruj kartę Ogólne właściwości sterownika urządzenia  
  Właściwości sterownika urządzenia, które są przechowywane na **ogólne** przede wszystkim skonfigurowano kartę, po uruchomieniu Kreatora importu sterowników urządzeń. Aktualizowanie właściwości sterownika urządzenia na **ogólne** karcie za pośrednictwem ***driver_name*** **właściwości** okno dialogowe (gdzie *driver_name* jest to nazwa sterownika urządzenia, w konsoli Deployment Workbench).  
 
 ###### <a name="to-modify-existing-device-drivers-properties-on-the-general-tab"></a>Aby zmodyfikować istniejący właściwości sterowniki urządzeń, na karcie Ogólne  
@@ -2780,7 +2779,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Ustawienia konfiguracji dla sterowników urządzeń są zapisywane, a zmiany są wyświetlane w okienku szczegółów konsoli Deployment Workbench.  
 
-#####  <a name="ViewtheDeviceDriverPropertiesDetailsTab"></a>Wyświetl kartę szczegółów właściwości sterownika urządzenia  
+#####  <a name="ViewtheDeviceDriverPropertiesDetailsTab"></a> Wyświetl kartę szczegółów właściwości sterownika urządzenia  
  Właściwości sterownika urządzenia, które są przechowywane na **szczegóły** karty są skonfigurowane, po uruchomieniu Kreatora importu sterowników urządzeń. Wszystkie informacje w **szczegóły** karcie jest tylko do odczytu i nie może być modyfikowany. Wyświetl właściwości sterownika urządzenia na **szczegóły** karcie za pośrednictwem ***driver_name*** **właściwości** okno dialogowe (gdzie *driver_name* jest Nazwa sterownika urządzenia, w konsoli Deployment Workbench).  
 
 ###### <a name="to-view-existing-device-drivers-properties-on-the-details-tab"></a>Aby wyświetlić istniejące właściwości sterowniki urządzeń na karcie Szczegóły  
@@ -2804,7 +2803,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
     |**Ustawienie** |**Opis** |  
     |-----------------|---------------------|  
-    |**Producent** |Zawiera nazwę producenta sterownika urządzenia.|  
+    |**producent** |Zawiera nazwę producenta sterownika urządzenia.|  
     |**Wersja** |Zawiera numer wersji sterownika urządzenia.|  
     |**Data sterownika** |Zawiera datę sterownika urządzenia.|  
     |**Typ sterownika (klasa)** |Zawiera klasę sterownika urządzenia, takie jak systemowymi ani rozruchowymi.|  
@@ -2814,26 +2813,26 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Obsługiwane identyfikatorami PnP** |Zawiera listę z identyfikatorami plug and play, które obsługuje sterownika urządzenia.|  
     |**Ten sterownik jest podpisany WHQL** |Wybierz, aby wskazać, czy sterownik urządzenia jest podpisany przez laboratoria jakości sprzętu systemu Windows (WHQL). Sterowniki urządzeń, które przejdą testów WHQL Microsoft tworzy plik cyfrowo podpisanych certyfikacji umożliwia instalację w 64-bitowych wersjach systemu Windows, która uniemożliwia wyświetlanie ostrzeżenie informujące, że nie został sterownika 32-bitowe wersje systemu Windows certyfikowanych przez Microsoft.If pole wyboru jest:<br /><br /> -Zaznaczone, sterownik urządzenia został podpisany przez WHQL<br /><br /> -Wyczyszczone, sterownik nie został podpisany przez WHQL|  
 
-####  <a name="CopyDeviceDriversintheDeploymentWorkbench"></a>Skopiuj sterowniki urządzeń w konsoli Deployment Workbench  
+####  <a name="CopyDeviceDriversintheDeploymentWorkbench"></a> Skopiuj sterowniki urządzeń w konsoli Deployment Workbench  
  Można skopiować i wkleić sterowników urządzeń i foldery w węźle sterowniki Out-of-Box w konsoli Deployment Workbench, używając **kopiowania** i **Wklej** działania zgodnie z opisem w [kopiowanie elementów w Konsoli Deployment Workbench](#CopyItemsintheDeploymentWorkbench).  
 
-####  <a name="MoveDeviceDriversintheDeploymentWorkbench"></a>Przenieś sterowniki urządzeń w konsoli Deployment Workbench  
+####  <a name="MoveDeviceDriversintheDeploymentWorkbench"></a> Przenieś sterowniki urządzeń w konsoli Deployment Workbench  
  Można przenieść sterowników urządzeń i foldery w węźle sterowniki Out-of-Box w konsoli Deployment Workbench, używając **Wytnij** i **Wklej** działania zgodnie z opisem w [przenoszenie elementów we wdrożeniu Workbench](#MoveItemsintheDeploymentWorkbench).  
 
-####  <a name="RenameDeviceDriversintheDeploymentWorkbench"></a>Zmień nazwę sterowniki urządzeń w konsoli Deployment Workbench  
+####  <a name="RenameDeviceDriversintheDeploymentWorkbench"></a> Zmień nazwę sterowniki urządzeń w konsoli Deployment Workbench  
  Można zmienić nazwy sterowników urządzeń i foldery w węźle sterowniki Out-of-Box w konsoli Deployment Workbench, używając **zmienić** działania zgodnie z opisem w [zmiany nazwy elementów w konsoli Deployment Workbench](#RenameItemsintheDeploymentWorkbench).  
 
-####  <a name="DeleteDeviceDriversfromtheDeploymentWorkbench"></a>Usuwanie sterowników urządzeń z konsoli Deployment Workbench  
+####  <a name="DeleteDeviceDriversfromtheDeploymentWorkbench"></a> Usuwanie sterowników urządzeń z konsoli Deployment Workbench  
  Możesz usunąć sterowniki urządzeń i foldery w konsoli Deployment Workbench przy użyciu Kreatora usuwania elementów wybrane zgodnie z opisem w węźle sterowniki Out-of-Box [usuwanie elementów z konsoli Deployment Workbench](#DeleteItemsfromtheDeploymentWorkbench). Usunąć wybrane elementy Kreator umożliwia usunięcie indywidualne pakiety lub struktury całego folderu.  
 
-####  <a name="ManageFoldersforDeviceDriversintheDeploymentWorkbench"></a>Zarządzanie folderami dla sterowników urządzeń w konsoli Deployment Workbench  
+####  <a name="ManageFoldersforDeviceDriversintheDeploymentWorkbench"></a> Zarządzanie folderami dla sterowników urządzeń w konsoli Deployment Workbench  
  Foldery pod węzłem Out-of-Box sterowniki w konsoli Deployment Workbench, aby utworzyć grupowanie hierarchiczne sterowników urządzeń można zarządzać. Aby uzyskać więcej informacji na:  
 
 -   Zarządzanie folderami, zobacz [Zarządzanie folderami w konsoli Deployment Workbench](#ManageFoldersintheDeploymentWorkbench)  
 
 -   Wybór profilów, zobacz [zarządzania profilami zaznaczenia](#ManageSelectionProfiles)  
 
-####  <a name="EnableorDisableDeviceDriversintheDeploymentWorkbench"></a>Włącz lub wyłącz sterowniki urządzeń w konsoli Deployment Workbench  
+####  <a name="EnableorDisableDeviceDriversintheDeploymentWorkbench"></a> Włącz lub wyłącz sterowniki urządzeń w konsoli Deployment Workbench  
  Można kontrolować, czy sterowniki urządzeń są dostępne dla innych kreatorach i oknach dialogowych w konsoli Deployment Workbench, wybierając **Włącz ten sterownik** pole wyboru na **ogólne** kartę sterownika urządzenia **Właściwości** okno dialogowe.  
 
 > [!CAUTION]
@@ -2841,12 +2840,12 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Aby uzyskać więcej informacji o włączeniu lub wyłączeniu sterowniki urządzeń w konsoli Deployment Workbench, zobacz [modyfikowania istniejących sterowników urządzeń w konsoli Deployment Workbench](#ModifyExistingDeviceDriversintheDeploymentWorkbench).  
 
-####  <a name="DeploySpecificDeviceDriverstoTargetComputersinLTI"></a>Wdrażanie określone sterowniki urządzeń na komputerach docelowych w LTI  
+####  <a name="DeploySpecificDeviceDriverstoTargetComputersinLTI"></a> Wdrażanie określone sterowniki urządzeń na komputerach docelowych w LTI  
  Domyślnie wdrożenia LTI obejmują wszystkie sterowniki urządzeń w systemie Windows PE i wdrażania ich na komputerach docelowych. Następnie docelowy system operacyjny używa identyfikatorów Plug and Play do identyfikowania sterowniki urządzeń, które są wymagane w przypadku urządzeń na komputerach docelowych.  
 
  Aby zmienić to zachowanie domyślne, należy skonfigurować proces wdrożenia LTI, aby zainstalować określone sterowniki do komputerów docelowych, zgodnie z opisem w [kontroli wdrożeń sterownika urządzenia LTI](#ControlDeviceDriverDeploymentsforLTI). Aby uzyskać więcej informacji na temat strategii zarządzania sterownikami urządzeń, zobacz wybierz [strategii zarządzania urządzeniami sterownika](#SelecttheDeviceDriverManagementStrategy).  
 
-###  <a name="ConfiguringTaskSequencesintheDeploymentWorkbench"></a>Konfigurowanie sekwencji zadań w konsoli Deployment Workbench  
+###  <a name="ConfiguringTaskSequencesintheDeploymentWorkbench"></a> Konfigurowanie sekwencji zadań w konsoli Deployment Workbench  
  Sekwencje zadań w zestawie MDT zawierają kroki do wykonania podczas LTI. Sekwencje zadań w zestawie MDT przy użyciu tego samego silnika sekwencji zadań jako Menedżera konfiguracji; jednak programu Configuration Manager nie jest wymagane przeprowadzenie wdrożenia LTI. Użyj konsoli Deployment Workbench zarządzania sekwencjami zadań, używany do wykonywania wdrożenia na komputerach referencyjnych i docelowych w organizacji.  
 
  Konfigurowanie sekwencji zadań w konsoli Deployment Workbench w węźle pakietów udział wdrożenia przez:  
@@ -2873,11 +2872,11 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  W addtion zarządzania sekwencjami zadań w konsoli Deployment Workbench można zarządzać za pomocą poleceń cmdlet środowiska Windows PowerShell dla zestawu MDT sekwencji zadań. Aby uzyskać więcej informacji na temat zarządzania za pomocą poleceń cmdlet środowiska Windows PowerShell dla zestawu MDT sekwencji zadań, zobacz następujące sekcje znajdujące się poniżej sekcji "MDT Windows PowerShell polecenia cmdlet", w dokumentacji zestawu MDT *odwołanie do zestawu narzędzi*:  
 
--   **MDTTaskSequence importu**  
+-   **Import-MDTTaskSequence**  
 
 -   **Get-MDTDeploymentShareStatistics**  
 
-####  <a name="CreateaNewTaskSequenceintheDeploymentWorkbench"></a>Tworzenie nowej sekwencji zadań w konsoli Deployment Workbench  
+####  <a name="CreateaNewTaskSequenceintheDeploymentWorkbench"></a> Tworzenie nowej sekwencji zadań w konsoli Deployment Workbench  
  Za pomocą Kreatora nowej sekwencji zadań w konsoli Deployment Workbench do utworzenia nowej sekwencji zadań. Uruchom nowe zadanie Kreatora sekwencji przy użyciu jednej z następujących metod:  
 
 -   W drzewie konsoli kliknij węzeł sekwencji zadań lub folderu w węźle sekwencje zadań, a następnie w okienku Akcje kliknij przycisk **nowej sekwencji zadań**.  
@@ -2924,7 +2923,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Ustawienia ogólne** |— W **identyfikator sekwencji zadań**, typ ***task_sequence_id*** (gdzie *task_sequence_id* jest unikatowym identyfikatorem dla sekwencji zadań, które tworzysz).<br /><br /> Później można zmienić nazwę sekwencji zadań i komentarze, ale nie można zmienić identyfikatora sekwencji zadań. Przed utworzeniem sekwencji zadań, należy utworzyć schemat nazewnictwa do użycia podczas tworzenia sekwencji zadań identyfikatorów, które zapewnią istotnych informacji o poszczególnych sekwencji zadań. Przykład nazewnictwa jest *poziom etykiety, wersji Edition w-*, gdzie *wersji* jest wersja systemu operacyjnego (Windows 8, Win2012), *wersji* jest system operacyjny Edycja (Enterprise, Standard, Ultimate), *poziom* jest poziom pakietu service pack (SP1, SP2), i *etykiety* jest opisową etykietę, która identyfikuje dostosowania.<br /><br /> — W **nazwę sekwencji zadań**, typ ***task_sequence_name*** (gdzie *task_sequence_name* jest opisową nazwę sekwencji zadań, które tworzysz).<br /><br /> — W **komentarze sekwencji zadań**, typ ***task_sequence_comment*** (gdzie *task_sequence_comment* jest opis przeznaczenia lub użycia sekwencji zadań).<br /><br /> — Kliknij **dalej**.|  
     |**Wybierz szablon** |W **dostępne są następujące szablony sekwencji zadań. Wybierz ten, który chcesz użyć jako punktu wyjścia**, wybierz pozycję ***task_sequence***, a następnie kliknij przycisk **dalej**.|  
     |**Wybierz system operacyjny** |W **zawiera następujące obrazy systemu operacyjnego są dostępne do wdrożenia z tą sekwencją zadań. Wybierz jeden z nich do używania**, wybierz pozycję ***operating_system*** (gdzie *operating_system* jest system operacyjny w węźle systemy operacyjne w konsoli Deployment Workbench, który chcesz wdrożyć zasób lub docelowy komputer), a następnie kliknij przycisk **dalej**.|  
-    |**Określ klucz produktu** |a. Kliknij jedną z następujących opcji na podstawie wymagań Twojej organizacji:<br /><br /> - **Nie określaj klucz produktu w tej chwili**. Wybierz tę opcję, jeśli klucz produktu nie jest wymagana w przypadku wdrażania systemu Windows; gdy zostanie podany klucz produktu w Kreatora wdrażania; lub w przypadku używania licencji zbiorczych, które są aktywowane przy użyciu usługi KMS.<br /><br /> -                                          **Określ klucz aktywacji wielokrotnej (MAK) do aktywowania tego systemu operacyjnego**. Wybierz tę opcję, podczas wdrażania systemu Windows za pomocą kluczy produktu MAK we wdrożeniu. Klucz MAK produktu klucze są używane przez klientów usługi licencjonowania zbiorowego firmy Microsoft.<br /><br /> -                                          **Określ klucz produktu dla tego systemu operacyjnego**. Wybierz tę opcję, wdrażając klucz produktu w sprzedaży detalicznej.<br /><br /> Aby uzyskać więcej informacji o aktywacji zbiorczej i klucze produktów w zestawie MDT, zobacz [Omówienie aktywacji zbiorczej](http://technet.microsoft.com/library/hh831612.aspx).<br /><br /> b. Kliknij przycisk **Dalej**.|  
+    |**Określ klucz produktu** |a. Kliknij jedną z następujących opcji na podstawie wymagań Twojej organizacji:<br /><br /> - **Nie określaj klucz produktu w tej chwili**. Wybierz tę opcję, jeśli klucz produktu nie jest wymagana w przypadku wdrażania systemu Windows; gdy zostanie podany klucz produktu w Kreatora wdrażania; lub w przypadku używania licencji zbiorczych, które są aktywowane przy użyciu usługi KMS.<br /><br /> -                                          **Określ klucz aktywacji wielokrotnej (MAK) do aktywowania tego systemu operacyjnego**. Wybierz tę opcję, podczas wdrażania systemu Windows za pomocą kluczy produktu MAK we wdrożeniu. Klucz MAK produktu klucze są używane przez klientów usługi licencjonowania zbiorowego firmy Microsoft.<br /><br /> -                                          **Określ klucz produktu dla tego systemu operacyjnego**. Wybierz tę opcję, wdrażając klucz produktu w sprzedaży detalicznej.<br /><br /> Aby uzyskać więcej informacji o aktywacji zbiorczej i klucze produktów w zestawie MDT, zobacz [Omówienie aktywacji zbiorczej](https://technet.microsoft.com/library/hh831612.aspx).<br /><br /> b. Kliknij przycisk **Dalej**.|  
     |**Ustawienia systemu operacyjnego** |— W **imię i nazwisko**, typ ***user_full_name*** (gdzie *user_full_name* jest nazwą użytkownika, komputera docelowego).<br /><br /> — W **organizacji**, typ ***nazwa_organizacji*** (gdzie *nazwa_organizacji* jest nazwa organizacji).<br /><br /> — W **strona główna programu Internet Explorer**, typ ***home_url*** (gdzie *home_url* jest adres URL [URL] witryny sieci Web z domyślnej witryny podczas uruchamiania Internet Explorer).<br /><br /> — Kliknij **dalej**.|  
     |**Hasło administratora** |W **hasło administratora** i **Potwierdź hasło administratora**, typ ***hasło*** (gdzie *hasło* to hasło, które ma być przypisane do wbudowanego konta administratora na komputerze odniesienia lub docelowy), a następnie kliknij przycisk **dalej**.|  
     |**Podsumowanie** |Kliknij przycisk **Dalej**.|  
@@ -2932,7 +2931,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Zakończeniu pracy Kreatora nowej sekwencji zadań. Pakiet jest dodawany do listy pakietów w okienku szczegółów w konsoli Deployment Workbench.  
 
-####  <a name="ModifyanExistingTaskSequenceintheDeploymentWorkbench"></a>Modyfikowanie istniejącej sekwencji zadań w konsoli Deployment Workbench  
+####  <a name="ModifyanExistingTaskSequenceintheDeploymentWorkbench"></a> Modyfikowanie istniejącej sekwencji zadań w konsoli Deployment Workbench  
  Modyfikowanie sekwencji zadań w węźle sekwencje zadań w konsoli Deployment Workbench, używając **właściwości** działania zgodnie z opisem w [właściwości elementu widoku w konsoli Deployment Workbench](#ViewItemPropertiesintheDeploymentWorkbench). Konfigurowanie sekwencji zadań w konsoli Deployment Workbench, wykonując następujące kroki w sekwencji zadań **właściwości** okno dialogowe:  
 
 1.  Skonfiguruj właściwości na **ogólne** karcie zgodnie z opisem w [skonfigurować karty Ogólne właściwości sekwencji zadań](#ConfiguretheTaskSequencePropertiesGeneralTab).  
@@ -2941,7 +2940,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 3.  Skonfiguruj właściwości na **informacje o systemie operacyjnym** karcie zgodnie z opisem w [skonfigurować kartę informacje systemu operacyjnego właściwości sekwencji zadań](#ConfiguretheTaskSequencePropertiesOSInfoTab).  
 
-#####  <a name="ConfiguretheTaskSequencePropertiesGeneralTab"></a>Skonfiguruj kartę Ogólne właściwości sekwencji zadań  
+#####  <a name="ConfiguretheTaskSequencePropertiesGeneralTab"></a> Skonfiguruj kartę Ogólne właściwości sekwencji zadań  
  Właściwości sekwencji zadań, które są przechowywane na **ogólne** przede wszystkim skonfigurowano kartę, po uruchomieniu Kreatora nowej sekwencji zadań. Aktualizowanie właściwości sekwencji zadań na **ogólne** karcie za pośrednictwem ***task_sequence_name*** **właściwości** okno dialogowe (gdzie *task_sequence_name*  to nazwa sekwencji zadań w konsoli Deployment Workbench).  
 
 ###### <a name="to-modify-existing-task-sequence-properties-on-the-general-tab"></a>Aby zmodyfikować istniejący właściwości sekwencji zadań na karcie Ogólne  
@@ -2973,7 +2972,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Ustawienia konfiguracji sekwencji zadań są zapisywane, a zmiany są wyświetlane w okienku szczegółów konsoli Deployment Workbench.  
 
-#####  <a name="ConfiguretheTaskSequencePropertiesTaskSequenceTab"></a>Skonfiguruj kartę sekwencji zadań właściwości sekwencji zadań  
+#####  <a name="ConfiguretheTaskSequencePropertiesTaskSequenceTab"></a> Skonfiguruj kartę sekwencji zadań właściwości sekwencji zadań  
  Właściwości sekwencji zadań, które są przechowywane na **sekwencji zadań** przede wszystkim skonfigurowano kartę, po uruchomieniu Kreatora nowej sekwencji zadań. Jednak można zaktualizować właściwości sekwencji zadań na **sekwencji zadań** karcie za pośrednictwem ***task_sequence_name*** **właściwości** okno dialogowe (gdzie  *task_sequence_name* to nazwa sekwencji zadań w konsoli Deployment Workbench).  
 
  **Sekwencji zadań** karta zawiera obszary i inne formanty, które umożliwia:  
@@ -2984,7 +2983,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Skonfiguruj opcje kroku, zgodnie z opisem w [skonfigurować opcje kroku sekwencji zadań](#ConfiguretheTaskSequenceStepOptions)  
 
-######  <a name="ConfiguretheTaskSequenceStepsandStepSequence"></a>Skonfiguruj kroków sekwencji zadań i krok sekwencji  
+######  <a name="ConfiguretheTaskSequenceStepsandStepSequence"></a> Skonfiguruj kroków sekwencji zadań i krok sekwencji  
  **Sekwencji zadań** karta zawiera hierarchiczną reprezentację kroków sekwencji zadań i ich kolejności. Kroki sekwencji zadań są zorganizowane w strukturę hierarchiczną folderów oparte na fazy wdrożenia.  
 
  Co najmniej jeden kroków sekwencji zadań można organizować przez utworzenie grupy. Można określić wiele grup i kroków sekwencji zadań w celu tworzenia hierarchii grup i kroków sekwencji zadań. Grupy kroku sekwencji zadań umożliwia sterowanie przetwarzanie co najmniej jeden kroków sekwencji zadań jako jednostka.  
@@ -3040,7 +3039,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Pakiety, zobacz [dostosowanie instalacji pakietu w sekwencji zadań](#CustomizePackageInstallationinTaskSequences)  
 
-######  <a name="ConfiguretheTaskSequenceStepProperties"></a>Skonfiguruj właściwości krok sekwencji zadań  
+######  <a name="ConfiguretheTaskSequenceStepProperties"></a> Skonfiguruj właściwości krok sekwencji zadań  
  Na **właściwości** kartę, skonfiguruj właściwości dla grupy sekwencji zadań lub poszczególnych kroków. Ustawienia konfiguracji:  
 
 -   Grupy sekwencji zadań są takie same dla wszystkich grup  
@@ -3079,7 +3078,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 6.  Na **właściwości** , skonfiguruj grupy sekwencji zadań lub pojedynczy krok na podstawie wymagań organizacji, a następnie kliknij **OK**.  
 
-######  <a name="ConfiguretheTaskSequenceStepOptions"></a>Skonfiguruj opcje kroku sekwencji zadań  
+######  <a name="ConfiguretheTaskSequenceStepOptions"></a> Skonfiguruj opcje kroku sekwencji zadań  
  Na **opcje** kartę, skonfigurować ustawienia, które kontrolują sposób uruchamiania kroku sekwencji zadań. Te ustawienia umożliwiają wyłączyć krok, określ kody powrotne kroku, które Sprawdź, czy krok powinno być kontynuowane w przypadku błąd i wszystkie warunki wykonywania kroku, informując o powodzeniu.  
 
  Ustawienia konfiguracji na **opcje** karcie:  
@@ -3117,7 +3116,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Kontynuuj przy błędzie** |Wybierz do formantu, czy sekwencja zadań powinno być kontynuowane, gdy sekwencja zadań — grupa lub krok napotka błąd. Jeśli pole wyboru jest:<br /><br /> -Zaznaczone, sekwencja zadań będzie nadal występować Jeśli grupa lub krok napotka błąd<br /><br /> -Wyczyszczone, sekwencja zadań nie będzie kontynuowane, jeśli grupa lub krok napotka błąd<br /><br /> To pole wyboru jest zaznaczone domyślnie.|  
     |**Pole listy warunku** |Zawiera warunkowego kryteriów do uruchamiania tego kroku. Jeśli nie określono żadnych kryteriów, wykonuje kroku. Dodaj kryteria określające grupy zadań powinna lub nie powinien uruchomienia. Użyj **Dodaj**, **Usuń**, i **Edytuj** przycisków, aby zmodyfikować warunki, na których działa grupy zadań.<br /><br /> Kryteria mogą być oparte na:<br /><br /> - **IF** — instrukcja<br /><br /> -Zmienną sekwencji zadań<br /><br /> -Wersja docelowego systemu operacyjnego.<br /><br /> -Zapytanie języka zapytań usługi Instrumentacja zarządzania Windows (WMI) (WQL) w ramach przestrzeni nazw usługi WMI<br /><br /> Wprowadź wszystkie jego warunki skonfigurowana dla grupy wpływają na wszystkie zadania w grupie.<br /><br /> Aby uzyskać więcej informacji o warunkach w krokach sekwencji zadań, zobacz [Konfigurowanie warunków krok sekwencji zadań](#ConfigureTaskSequenceStepConditions).|  
 
-#####  <a name="ConfiguretheTaskSequencePropertiesOSInfoTab"></a>Skonfiguruj kartę informacje o systemie operacyjnym właściwości sekwencji zadań  
+#####  <a name="ConfiguretheTaskSequencePropertiesOSInfoTab"></a> Skonfiguruj kartę informacje o systemie operacyjnym właściwości sekwencji zadań  
  Właściwości sekwencji zadań, które są przechowywane na **informacje o systemie operacyjnym** przede wszystkim skonfigurowano kartę, po uruchomieniu Kreatora nowej sekwencji zadań. Aktualizowanie właściwości sekwencji zadań na **informacje o systemie operacyjnym** karcie za pośrednictwem ***task_sequence_name*** **właściwości** okno dialogowe (gdzie *task_sequence_name*  to nazwa sekwencji zadań w konsoli Deployment Workbench).  
 
 ###### <a name="to-modify-existing-task-sequence-properties-on-the-os-info-tab"></a>Aby zmodyfikować istniejący właściwości sekwencji zadań na karcie Informacje o systemie operacyjnym  
@@ -3145,32 +3144,32 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Ustawienia konfiguracji sekwencji zadań są zapisywane, a zmiany są wyświetlane w okienku szczegółów konsoli Deployment Workbench.  
 
-####  <a name="CopyTaskSequencesintheDeploymentWorkbench"></a>Skopiuj sekwencji zadań w konsoli Deployment Workbench  
+####  <a name="CopyTaskSequencesintheDeploymentWorkbench"></a> Skopiuj sekwencji zadań w konsoli Deployment Workbench  
  Można skopiować i wkleić sekwencji zadań i foldery w węźle sekwencje zadań w konsoli Deployment Workbench, używając **kopiowania** i **Wklej** działania zgodnie z opisem w [kopiowanie elementów w Konsoli Deployment Workbench](#CopyItemsintheDeploymentWorkbench).  
 
-####  <a name="MoveTaskSequencesintheDeploymentWorkbench"></a>Przenieś sekwencji zadań w konsoli Deployment Workbench  
+####  <a name="MoveTaskSequencesintheDeploymentWorkbench"></a> Przenieś sekwencji zadań w konsoli Deployment Workbench  
  Przenieś sekwencji zadań i foldery w węźle sekwencje zadań w konsoli Deployment Workbench przy użyciu **Wytnij** i **Wklej** działania zgodnie z opisem w [przenoszenie elementów w konsoli Deployment Workbench ](#MoveItemsintheDeploymentWorkbench).  
 
-####  <a name="RenameTaskSequencesintheDeploymentWorkbench"></a>Zmień nazwę sekwencji zadań w konsoli Deployment Workbench  
+####  <a name="RenameTaskSequencesintheDeploymentWorkbench"></a> Zmień nazwę sekwencji zadań w konsoli Deployment Workbench  
  Zmień nazwę sekwencji zadań i foldery w węźle sekwencje zadań w konsoli Deployment Workbench przy użyciu **zmienić** działania zgodnie z opisem w [zmiany nazwy elementów w konsoli Deployment Workbench](#RenameItemsintheDeploymentWorkbench).  
 
-####  <a name="DeleteTaskSequencesfromtheDeploymentWorkbench"></a>Usunięcie sekwencji zadań z konsoli Deployment Workbench  
+####  <a name="DeleteTaskSequencesfromtheDeploymentWorkbench"></a> Usunięcie sekwencji zadań z konsoli Deployment Workbench  
  Usunięcie sekwencji zadań i foldery w węźle sekwencje zadań w konsoli Deployment Workbench przy użyciu Kreatora usuwania elementów wybrane zgodnie z opisem w [usuwanie elementów z konsoli Deployment Workbench](#DeleteItemsfromtheDeploymentWorkbench). Usunąć wybrane elementy Kreator umożliwia usunięcie sekwencjami pojedynczych zadań lub całego folderu struktury.  
 
-####  <a name="ManageFoldersforTaskSequencesintheDeploymentWorkbench"></a>Zarządzanie folderami dla sekwencji zadań w konsoli Deployment Workbench  
+####  <a name="ManageFoldersforTaskSequencesintheDeploymentWorkbench"></a> Zarządzanie folderami dla sekwencji zadań w konsoli Deployment Workbench  
  Możesz zarządzać folderów w węźle sekwencje zadań w konsoli Deployment Workbench, aby utworzyć hierarchiczne grupy sekwencji zadań. Aby uzyskać więcej informacji na:  
 
 1.  Zarządzanie folderami, zobacz [Zarządzanie folderami w konsoli Deployment Workbench](#ManageFoldersintheDeploymentWorkbench)  
 
 2.  Wybór profilów, zobacz [zarządzania profilami zaznaczenia](#ManageSelectionProfiles)  
 
-####  <a name="EnableorDisableaTaskSequenceintheDeploymentWorkbench"></a>Włącz lub wyłącz sekwencji zadań w konsoli Deployment Workbench  
+####  <a name="EnableorDisableaTaskSequenceintheDeploymentWorkbench"></a> Włącz lub wyłącz sekwencji zadań w konsoli Deployment Workbench  
  Można kontrolować, czy sekwencje zadań będą dostępne dla innych kreatorach i oknach dialogowych w konsoli Deployment Workbench, używając **włączyć tę sekwencję zadań** pole wyboru na **ogólne** pakietu  **Właściwości** okno dialogowe, zgodnie z opisem w [Konfigurowanie sekwencji zadań w konsoli Deployment Workbench](#ConfiguringTaskSequencesintheDeploymentWorkbench).  
 
-####  <a name="PreventaTaskSequencefromBeingVisibleintheDeploymentWizard"></a>Zapobieganie są widoczne w Kreatorze wdrażania sekwencji zadań  
+####  <a name="PreventaTaskSequencefromBeingVisibleintheDeploymentWizard"></a> Zapobieganie są widoczne w Kreatorze wdrażania sekwencji zadań  
  Sekwencja zadań może uniemożliwić jest widoczny w Kreatorze wdrażania przy użyciu **Ukryj tę sekwencję zadań w Kreatorze wdrażania** pole wyboru na **ogólne** aplikacji  **Właściwości** okno dialogowe, zgodnie z opisem w [Konfigurowanie sekwencji zadań w konsoli Deployment Workbench](#ConfiguringTaskSequencesintheDeploymentWorkbench).  
 
-####  <a name="ModifytheUnattendedSetupAnswerFileAssociatedwiththeTaskSequence"></a>Modyfikowanie pliku odpowiedzi instalacji nienadzorowanej, które są skojarzone z sekwencją zadań  
+####  <a name="ModifytheUnattendedSetupAnswerFileAssociatedwiththeTaskSequence"></a> Modyfikowanie pliku odpowiedzi instalacji nienadzorowanej, które są skojarzone z sekwencją zadań  
  Zestaw MDT automatycznie aktualizuje plik odpowiedzi instalacji nienadzorowanej (Unattend.xml) dla sekwencji zadań na podstawie ustawień konfiguracji podane w konsoli Deployment Workbench i w Kreatorze wdrażania. Istnieją jednak wystąpień, w których konieczne może być bezpośrednio zmodyfikować pliku odpowiedzi instalacji nienadzorowanej dla sekwencji zadań takich jak po zmodyfikowaniu parametru konfiguracji, która nie jest widoczna w konsoli Deployment Workbench lub w Kreatorze wdrażania. Bezpośrednio zmodyfikować pliku odpowiedzi instalacji nienadzorowanej dla sekwencji zadań, klikając **Edytuj Unattend.xml** na **informacje o systemie operacyjnym** sekwencji zadań na karcie **właściwości** okno dialogowe.  
 
  Aby uzyskać więcej informacji dotyczących:  
@@ -3179,7 +3178,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Pliku Unattend.XML, zobacz *przewodnik zestawu Windows Assessment and Deployment Kit użytkownika* w zestawie Windows ADK  
 
-###  <a name="PerformingCommonManagementTasksintheDeploymentWorkbench"></a>Wykonywanie typowych zadań administracyjnych w konsoli Deployment Workbench  
+###  <a name="PerformingCommonManagementTasksintheDeploymentWorkbench"></a> Wykonywanie typowych zadań administracyjnych w konsoli Deployment Workbench  
  Do wykonywania wielu typowych zadań zarządzania można używać konsoli Deployment Workbench. Mimo że niektóre zarządzania jest unikatowa dla każdego typu elementu, następujące zadania są wspólne dla wszystkich elementów w konsoli Deployment Workbench:  
 
 -   Zarządzanie folderami zgodnie z opisem w [Zarządzanie folderami w konsoli Deployment Workbench](#ManageFoldersintheDeploymentWorkbench)  
@@ -3194,7 +3193,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Usuwanie elementów, zgodnie z opisem w [usuwanie elementów z konsoli Deployment Workbench](#DeleteItemsfromtheDeploymentWorkbench)  
 
-####  <a name="ManageFoldersintheDeploymentWorkbench"></a>Zarządzanie folderami w konsoli Deployment Workbench  
+####  <a name="ManageFoldersintheDeploymentWorkbench"></a> Zarządzanie folderami w konsoli Deployment Workbench  
  Można używać folderów do organizowania aplikacji, systemów operacyjnych, sterowników urządzeń i innych elementów w konsoli Deployment Workbench. Foldery umożliwiają tworzenie hierarchii do organizowania elementów, jak również podzbiór elementów, które można uwzględnić w profilach zaznaczenia.  
 
 > [!NOTE]
@@ -3216,7 +3215,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Włączanie lub wyłączanie folderem, zgodnie z opisem w [włączyć lub wyłączyć folderu w konsoli Deployment Workbench](#EnableorDisableaFolderintheDeploymentWorkbench)  
 
-#####  <a name="CreateaNewFolderintheDeploymentWorkbench"></a>Utwórz nowy Folder w konsoli Deployment Workbench  
+#####  <a name="CreateaNewFolderintheDeploymentWorkbench"></a> Utwórz nowy Folder w konsoli Deployment Workbench  
  Tworzenie folderów w konsoli Deployment Workbench, korzystając z Kreatora nowego folderu. Uruchom Kreatora nowego folderu przy użyciu jednej z następujących metod:  
 
 -   W drzewie konsoli kliknij węzeł lub folder. Następnie w okienku Akcje kliknij przycisk **nowy Folder**.  
@@ -3247,7 +3246,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Po zakończeniu pracy Kreatora nowego folderu, zostanie wyświetlony nowy folder udziału wdrożenia w konsoli Deployment Workbench.  
 
-#####  <a name="ModifyanExistingFolderintheDeploymentWorkbench"></a>Modyfikuj istniejący Folder, w konsoli Deployment Workbench  
+#####  <a name="ModifyanExistingFolderintheDeploymentWorkbench"></a> Modyfikuj istniejący Folder, w konsoli Deployment Workbench  
  Modyfikuj istniejący folder w konsoli Deployment Workbench, używając **właściwości** działania zgodnie z opisem w [właściwości elementu widoku w konsoli Deployment Workbench](#ViewItemPropertiesintheDeploymentWorkbench). Właściwości folderu najczęściej są skonfigurowane, po uruchomieniu Kreatora nowego folderu. Aktualizowanie właściwości folderu na **ogólne** karcie za pośrednictwem ***nazwa_folderu*** **właściwości** okno dialogowe (gdzie *nazwa_folderu* jest Nazwa folderu w konsoli Deployment Workbench).  
 
 ###### <a name="to-modify-an-existing-folder"></a>Aby zmodyfikować istniejący folder  
@@ -3274,22 +3273,22 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Folder ustawienia konfiguracji są zapisywane, a zmiany są wyświetlane w okienku szczegółów konsoli Deployment Workbench.  
 
-#####  <a name="CopyaFolderintheDeploymentWorkbench"></a>Skopiuj Folder w konsoli Deployment Workbench  
+#####  <a name="CopyaFolderintheDeploymentWorkbench"></a> Skopiuj Folder w konsoli Deployment Workbench  
  Możesz skopiować i wkleić folderów w konsoli Deployment Workbench, używając **kopiowania** i **Wklej** działania zgodnie z opisem w [kopiowanie elementów w konsoli Deployment Workbench](#CopyItemsintheDeploymentWorkbench).  
 
-#####  <a name="MoveaFolderintheDeploymentWorkbench"></a>Przenieś Folder, w konsoli Deployment Workbench  
+#####  <a name="MoveaFolderintheDeploymentWorkbench"></a> Przenieś Folder, w konsoli Deployment Workbench  
  Można przenosić folderów w konsoli Deployment Workbench, używając **Wytnij** i **Wklej** działania zgodnie z opisem w [przenoszenie elementów w konsoli Deployment Workbench](#MoveItemsintheDeploymentWorkbench).  
 
-#####  <a name="RenameaFolderintheDeploymentWorkbench"></a>Zmień nazwę folderu w konsoli Deployment Workbench  
+#####  <a name="RenameaFolderintheDeploymentWorkbench"></a> Zmień nazwę folderu w konsoli Deployment Workbench  
  Możesz zmienić nazwy folderów w konsoli Deployment Workbench, używając **zmienić** działania zgodnie z opisem w [zmiany nazwy elementów w konsoli Deployment Workbench](#RenameItemsintheDeploymentWorkbench).  
 
-#####  <a name="DeleteaFolderfromtheDeploymentWorkbench"></a>Usuń Folder z konsoli Deployment Workbench  
+#####  <a name="DeleteaFolderfromtheDeploymentWorkbench"></a> Usuń Folder z konsoli Deployment Workbench  
  Można usunąć folderu, w konsoli Deployment Workbench przy użyciu Kreatora usuwania elementów wybrane zgodnie z opisem w [usuwanie elementów z konsoli Deployment Workbench](#DeleteItemsfromtheDeploymentWorkbench). Usunąć wybrane elementy Kreator pozwala na usuwanie poszczególnych folderów lub całej hierarchii folderów.  
 
-#####  <a name="EnableorDisableaFolderintheDeploymentWorkbench"></a>Włącz lub wyłącz Folder, w konsoli Deployment Workbench  
+#####  <a name="EnableorDisableaFolderintheDeploymentWorkbench"></a> Włącz lub wyłącz Folder, w konsoli Deployment Workbench  
  Można kontrolować, czy foldery są dostępne dla innych kreatorach i oknach dialogowych w konsoli Deployment Workbench, używając **Włącz ten folder** pole wyboru na **ogólne** kartę folderu  **Właściwości** okno dialogowe. Aby uzyskać więcej informacji o włączeniu lub wyłączeniu folderów w konsoli Deployment Workbench, zobacz [zmodyfikować istniejący Folder, w konsoli Deployment Workbench](#ModifyanExistingFolderintheDeploymentWorkbench).  
 
-####  <a name="ViewItemPropertiesintheDeploymentWorkbench"></a>Wyświetlanie właściwości elementu w konsoli Deployment Workbench  
+####  <a name="ViewItemPropertiesintheDeploymentWorkbench"></a> Wyświetlanie właściwości elementu w konsoli Deployment Workbench  
  Można wyświetlić właściwości systemów operacyjnych, sterowniki i inne elementy z konsoli Deployment Workbench, używając jednego z następujących metod:  
 
 -   W okienku szczegółów kliknij element. Następnie w okienku Akcje kliknij przycisk **właściwości**.  
@@ -3314,7 +3313,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  ***Elementu*** **właściwości** zostanie wyświetlone okno dialogowe (gdzie *elementu* to nazwa wybranego elementu).  
 
-####  <a name="CopyItemsintheDeploymentWorkbench"></a>Kopiowanie elementów w konsoli Deployment Workbench  
+####  <a name="CopyItemsintheDeploymentWorkbench"></a> Kopiowanie elementów w konsoli Deployment Workbench  
  Użyj konsoli Deployment Workbench, aby skopiować systemów operacyjnych, sterowników urządzeń i innych elementów w obrębie udziału wdrożenia, lub między udziałami dwa wdrożenia. Podczas kopiowania elementu konsoli Deployment Workbench tworzy łącze do oryginalnego elementu zamiast tworzenie oddzielnych kopii elementu. Zmniejsza rozmiar udziału wdrożenia. Jeśli chcesz utworzyć duplikat elementu, należy zaimportować elementu ponownie w folderze docelowym.  
 
  Podczas kopiowania elementu między udziałami wdrożenia i element o takim samym:  
@@ -3329,7 +3328,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 2.  Funkcjonalność przeciągania i upuszczania, zgodnie z opisem w [kopiowania elementów przy użyciu funkcji przeciągania i upuszczania](#CopyItemsUsingDragandDropFunctionality)  
 
-#####  <a name="CopyItemsUsingtheCutandPasteActions"></a>Kopiowanie elementów przy użyciu wycinanie i wklejanie działań  
+#####  <a name="CopyItemsUsingtheCutandPasteActions"></a> Kopiowanie elementów przy użyciu wycinanie i wklejanie działań  
  Można skopiować elementu przy użyciu **Wytnij** i **Wklej** akcji w konsoli Deployment Workbench. Skopiuj element w lokalizacji źródłowej przy użyciu jednej z następujących metod:  
 
 -   W okienku szczegółów kliknij element. Następnie w okienku Akcje kliknij przycisk **kopiowania**.  
@@ -3362,7 +3361,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Nową kopię elementu zostanie wyświetlona w okienku szczegółów w konsoli Deployment Workbench.  
 
-#####  <a name="CopyItemsUsingDragandDropFunctionality"></a>Kopiowanie elementów za pomocą funkcji przeciągania i upuszczania  
+#####  <a name="CopyItemsUsingDragandDropFunctionality"></a> Kopiowanie elementów za pomocą funkcji przeciągania i upuszczania  
  Możesz skopiować elementy, przeciągając go w lokalizacji źródłowej do docelowej lokalizacji.  
 
 ###### <a name="to-copy-items-in-the-deployment-workbench-using-drag-and-drop-functionality"></a>Aby skopiować elementy w konsoli Deployment Workbench, za pomocą funkcji przeciągania i upuszczania  
@@ -3375,14 +3374,14 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Element jest kopiowany do docelowej lokalizacji w okienku szczegółów konsoli Deployment Workbench.  
 
-####  <a name="MoveItemsintheDeploymentWorkbench"></a>Przenieś elementy w konsoli Deployment Workbench  
+####  <a name="MoveItemsintheDeploymentWorkbench"></a> Przenieś elementy w konsoli Deployment Workbench  
  Użyj konsoli Deployment Workbench, aby przenieść systemów operacyjnych, sterowników urządzeń i innych elementów w obrębie udziału wdrożenia, lub między udziałami dwa wdrożenia. Można przenieść elementów przy użyciu:  
 
 -   **Wytnij** i **Wklej** działania zgodnie z opisem w [przenieść elementów za pomocą wycinanie i wklejanie działań](#MoveItemsUsingtheCutandPasteActions)  
 
 -   Funkcjonalność przeciągania i upuszczania, zgodnie z opisem w [Przenieś elementy przy użyciu funkcji przeciągania i upuszczania](#MoveItemsUsingDragandDropFunctionality)  
 
-#####  <a name="MoveItemsUsingtheCutandPasteActions"></a>Przenoszenie elementów za pomocą wycinanie i wklejanie działań  
+#####  <a name="MoveItemsUsingtheCutandPasteActions"></a> Przenoszenie elementów za pomocą wycinanie i wklejanie działań  
  Można przenieść elementu przy użyciu **Wytnij** i **Wklej** w konsoli Deployment Workbench. Wytnij element w lokalizacji źródłowej przy użyciu jednej z następujących metod:  
 
 -   W okienku szczegółów kliknij element. Następnie w okienku Akcje kliknij przycisk **właściwości**.  
@@ -3405,7 +3404,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  **Właściwości elementów** zostanie wyświetlone okno dialogowe (gdzie *elementu* to nazwa wybranego elementu).  
 
-#####  <a name="MoveItemsUsingDragandDropFunctionality"></a>Przenoszenie elementów za pomocą funkcji przeciągania i upuszczania  
+#####  <a name="MoveItemsUsingDragandDropFunctionality"></a> Przenoszenie elementów za pomocą funkcji przeciągania i upuszczania  
  Można przenosić elementy, przeciągając je z lokalizacji źródłowej do docelowej lokalizacji.  
 
 ###### <a name="to-move-items-in-the-deployment-workbench-using-drag-and-drop-functionality"></a>Aby przenieść elementy w konsoli Deployment Workbench, za pomocą funkcji przeciągania i upuszczania  
@@ -3418,7 +3417,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Element jest przenoszony do lokalizacji docelowej.  
 
-####  <a name="RenameItemsintheDeploymentWorkbench"></a>Zmienianie nazw elementów w konsoli Deployment Workbench  
+####  <a name="RenameItemsintheDeploymentWorkbench"></a> Zmienianie nazw elementów w konsoli Deployment Workbench  
  Możesz zmienić nazwy systemów operacyjnych, sterowniki i inne elementy w konsoli Deployment Workbench przy użyciu jednej z następujących metod:  
 
 -   W okienku szczegółów kliknij element. Następnie w okienku Akcje kliknij przycisk **zmienić**.  
@@ -3441,7 +3440,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Nazwa nowego elementu zostanie wyświetlona w okienku szczegółów w konsoli Deployment Workbench.  
 
-####  <a name="DeleteItemsfromtheDeploymentWorkbench"></a>Usuwanie elementów z konsoli Deployment Workbench  
+####  <a name="DeleteItemsfromtheDeploymentWorkbench"></a> Usuwanie elementów z konsoli Deployment Workbench  
  Możesz usunąć systemów operacyjnych, sterowniki i inne elementy z konsoli Deployment Workbench przy użyciu Kreatora usuwania elementów wybrane. Uruchom zaznaczone elementy Kreatora usuwania przy użyciu jednej z następujących metod:  
 
 -   W okienku szczegółów kliknij element. Następnie w okienku Akcje kliknij przycisk **usunąć**.  
@@ -3486,7 +3485,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Po zakończeniu pracy Kreatora usuwania elementów wybrane element i innych pozycji, zostaną usunięte z konsoli Deployment Workbench i z udziału wdrożenia.  
 
-###  <a name="PerformingAdvancedConfigurationTasksintheDeploymentWorkbench"></a>Wykonywanie zadań konfiguracji zaawansowanej w konsoli Deployment Workbench  
+###  <a name="PerformingAdvancedConfigurationTasksintheDeploymentWorkbench"></a> Wykonywanie zadań konfiguracji zaawansowanej w konsoli Deployment Workbench  
  Konsoli Deployment Workbench zawiera opcje konfiguracji zaawansowanej, które rozszerzają funkcje udostępniane we wdrożeniach LTI podstawowe. Te opcje konfiguracji zapewniają bardziej szczegółowego wybór zawartość, którą chcesz uwzględnić w wdrażania, obsługi wdrożeń w większych organizacji i obsługę wdrożenia z nośników autonomicznych, bez konieczności połączenia z udziałem wdrożenia.  
 
  Zadania konfiguracji zaawansowanej, które można wykonywać obejmują:  
@@ -3499,7 +3498,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Zarządzanie DB zestawu MDT, zgodnie z opisem w [Zarządzanie DB zestawu MDT](#ManagetheMDTDB)  
 
-####  <a name="ManageSelectionProfiles"></a>Zarządzanie profilami zaznaczenia  
+####  <a name="ManageSelectionProfiles"></a> Zarządzanie profilami zaznaczenia  
  Wybór Profile umożliwiają wybierz jeden lub więcej folderów w konsoli Deployment Workbench, która zawiera co najmniej jeden element w konsoli Deployment Workbench, w tym aplikacje, sterowniki urządzeń, systemów operacyjnych, pakietami systemu operacyjnego i sekwencji zadań.  
 
  Profile wybór SE grupować elementy, a następnie użyć tych grupowania elementów:  
@@ -3543,7 +3542,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Zidentyfikuj różnice między zaznaczenie zawiera i grup zgodnie z opisem w [zidentyfikować relacji między wybór profilów i grup](#IdentifytheRelationshipBetweenSelectionProfilesandGroups).  
 
-#####  <a name="CreateaNewSelectionProfileintheDeploymentWorkbench"></a>Utwórz nowy profil zaznaczenia w konsoli Deployment Workbench  
+#####  <a name="CreateaNewSelectionProfileintheDeploymentWorkbench"></a> Utwórz nowy profil zaznaczenia w konsoli Deployment Workbench  
  Tworzenie profilów zaznaczenia w konsoli Deployment Workbench, korzystając z Kreatora nowego profilu zaznaczenia. Uruchom Kreator nowego profilu wyboru przy użyciu jednej z następujących metod:  
 
 -   W drzewie konsoli kliknij węzeł profile zaznaczenia. Następnie w okienku Akcje kliknij przycisk **nowy profil wybór**.  
@@ -3575,7 +3574,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Kreator nowego profilu wybór zakończeniu. Wybór profil zostanie dodany do listy wyboru profile w okienku szczegółów w konsoli Deployment Workbench.  
 
-#####  <a name="ModifyanExistingSelectionProfileintheDeploymentWorkbench"></a>Modyfikuj istniejący profil zaznaczenia w konsoli Deployment Workbench  
+#####  <a name="ModifyanExistingSelectionProfileintheDeploymentWorkbench"></a> Modyfikuj istniejący profil zaznaczenia w konsoli Deployment Workbench  
  Modyfikowanie istniejących profilów zaznaczenia w konsoli Deployment Workbench profile wybór węzła, używając **właściwości** działania zgodnie z opisem w [właściwości elementu widoku w konsoli Deployment Workbench](#ViewItemPropertiesintheDeploymentWorkbench). Wybór właściwości profilu najczęściej są skonfigurowane, po uruchomieniu Kreatora nowego profilu zaznaczenia. Jednak można zaktualizować właściwości profilu zaznaczenie na **ogólne** karcie ***nazwa_profilu*** **właściwości** okno dialogowe (gdzie *nazwa_profilu*  jest nazwą profilu zaznaczenia w konsoli Deployment Workbench).  
 
 ###### <a name="to-configure-the-general-tab-for-package-properties"></a>Aby skonfigurować kartę Ogólne właściwości pakietu  
@@ -3602,19 +3601,19 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Ustawienia konfiguracji profilu wyboru są zapisywane, zmiany są wyświetlane w okienku szczegółów konsoli Deployment Workbench i *udział_wdrożenia*\Control\SelectionProfiles.xml pliku (gdzie  *udział_wdrożenia* to nazwa udziału wdrożenia) jest aktualizowany przy użyciu ustawień konfiguracyjnych profilu zaznaczenia.  
 
-#####  <a name="CopyaSelectionProfileintheDeploymentWorkbench"></a>Kopiowanie zaznaczenia profilu w konsoli Deployment Workbench  
+#####  <a name="CopyaSelectionProfileintheDeploymentWorkbench"></a> Kopiowanie zaznaczenia profilu w konsoli Deployment Workbench  
  Można skopiować i wkleić profile zaznaczenia w konsoli Deployment Workbench, używając **kopiowania** i **Wklej** działania zgodnie z opisem w [kopiowanie elementów w konsoli Deployment Workbench](#CopyItemsintheDeploymentWorkbench).  
 
-#####  <a name="MoveaSelectionProfileintheDeploymentWorkbench"></a>Przenieś wybór profilu w konsoli Deployment Workbench  
+#####  <a name="MoveaSelectionProfileintheDeploymentWorkbench"></a> Przenieś wybór profilu w konsoli Deployment Workbench  
  Można przenieść profile zaznaczenia w konsoli Deployment Workbench, używając **Wytnij** i **Wklej** działania zgodnie z opisem w [przenoszenie elementów w konsoli Deployment Workbench](#MoveItemsintheDeploymentWorkbench).  
 
-#####  <a name="RenameaSelectionProfileintheDeploymentWorkbench"></a>Zmień nazwę profilu w konsoli Deployment Workbench zaznaczenia  
+#####  <a name="RenameaSelectionProfileintheDeploymentWorkbench"></a> Zmień nazwę profilu w konsoli Deployment Workbench zaznaczenia  
  Możesz zmienić nazwy profilów zaznaczenia w konsoli Deployment Workbench, używając **zmienić** działania zgodnie z opisem w [zmiany nazwy elementów w konsoli Deployment Workbench](#RenameItemsintheDeploymentWorkbench).  
 
-#####  <a name="DeleteaSelectionProfilefromtheDeploymentWorkbench"></a>Usuwanie profilu wybór z konsoli Deployment Workbench  
+#####  <a name="DeleteaSelectionProfilefromtheDeploymentWorkbench"></a> Usuwanie profilu wybór z konsoli Deployment Workbench  
  Można usunąć zaznaczenia profilu w konsoli Deployment Workbench przy użyciu Kreatora usuwania elementów wybrane zgodnie z opisem w [usuwanie elementów z konsoli Deployment Workbench](#DeleteItemsfromtheDeploymentWorkbench). Usunąć wybrane elementy kreatora umożliwia usunięcie zaznaczenia poszczególne profile.  
 
-#####  <a name="IdentifytheRelationshipBetweenSelectionProfilesandGroups"></a>Zidentyfikuj relacji między profilami wybór i grup  
+#####  <a name="IdentifytheRelationshipBetweenSelectionProfilesandGroups"></a> Zidentyfikuj relacji między profilami wybór i grup  
  Profile wybór umożliwiają tworzenie grup w konsoli Deployment Workbench elementów, takich jak systemy operacyjne, sterowniki urządzeń lub aplikacji. Profile wybór Określ sterowniki urządzeń, zdefiniuj zawartość do objąć udziału wdrożenia połączone, zdefiniuj zawartość do dołączenia do wdrożenia z nośników i innych zadań.  
 
  Relacja między elementami i foldery w profilu wybór są przechowywane w następujących plików w *udział_wdrożenia*\Control folder (gdzie *udział_wdrożenia* jest lokalizacja wdrożenia udział):  
@@ -3675,7 +3674,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
      Aby uzyskać więcej informacji na temat tych właściwości, zobacz sekcje odpowiednie w dokumencie MDT *odwołanie do zestawu narzędzi*.  
 
-####  <a name="ManageLinkedDeploymentShares"></a>Zarządzanie udziałami wdrożenia połączonego  
+####  <a name="ManageLinkedDeploymentShares"></a> Zarządzanie udziałami wdrożenia połączonego  
  Udziały wdrożenia połączonych w zestawie MDT umożliwiają podanie połączenie logiczne między dwoma udziałami wdrożenia: źródłowy i docelowy udziału wdrożenia. Profil zaznaczenia określa elementy, które mają być połączone. Podczas tworzenia łącza między udziałami wdrożenia, można wybrać, czy scalania lub Zastąp zawartość w celu udział wdrożenia.  
 
  Przy użyciu udziałów wdrożenia połączone, można łatwo replikować udziału wdrożenia całego lub części udział wdrożenia do innego udziału wdrożenia. W ten sposób zmiany do wdrożenia jednego udziału i łatwo aktualizować inne udziały wdrożenia oparte na wybranej podczas tworzenia udziałów wdrożenia połączonego profilów zaznaczenia.  
@@ -3698,11 +3697,11 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  W addtion do zarządzania udziały deployement połączonych w konsoli Deployment Workbench można zarządzać udziałów wdrożenia połączone za pomocą poleceń cmdlet środowiska Windows PowerShell dla zestawu MDT. Więcej informacji o zarządzaniu wdrożenia połączonego udziałów, za pomocą poleceń cmdlet środowiska Windows PowerShell dla zestawu MDT, zobacz następujące sekcje znajdujące się poniżej sekcji "MDT Windows PowerShell polecenia cmdlet", w dokumentacji zestawu MDT *odwołanie do zestawu narzędzi*:  
 
--   **MDTLinkedDS aktualizacji**  
+-   **Update-MDTLinkedDS**  
 
 -   **Get-MDTDeploymentShareStatistics**  
 
-#####  <a name="CreateaNewLinkedDeploymentShareintheDeploymentWorkbench"></a>Utwórz nowy udział wdrożenia połączonych w konsoli Deployment Workbench  
+#####  <a name="CreateaNewLinkedDeploymentShareintheDeploymentWorkbench"></a> Utwórz nowy udział wdrożenia połączonych w konsoli Deployment Workbench  
  Utwórz nowe udziały połączonego wdrażania w konsoli Deployment Workbench, używając Kreatora nowego udziału wdrożenia połączone. Uruchom połączonego wdrożenia Kreatora nowego udziału przy użyciu jednej z następujących metod:  
 
 -   W drzewie konsoli kliknij węzeł połączonego udziału wdrożenia. Następnie w okienku Akcje kliknij przycisk **nowy udział wdrożenia połączonego**.  
@@ -3733,7 +3732,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Zakończy połączonego Kreatora nowego udziału wdrożenia i udziału wdrożenia połączonego zostanie dodany do listy połączonej wdrożeń udziałów, w okienku szczegółów w konsoli Deployment Workbench.  
 
-#####  <a name="ModifyanExistingLinkedDeploymentShareintheDeploymentWorkbench"></a>Modyfikowanie istniejącego udziału wdrożenia połączonych w konsoli Deployment Workbench  
+#####  <a name="ModifyanExistingLinkedDeploymentShareintheDeploymentWorkbench"></a> Modyfikowanie istniejącego udziału wdrożenia połączonych w konsoli Deployment Workbench  
  Modyfikowanie istniejącego udziału wdrożenia połączone za pomocą węzła połączonego udziałów wdrożenia konsoli Deployment Workbench **właściwości** działania zgodnie z opisem w [właściwości elementu widoku w konsoli Deployment Workbench](#ViewItemPropertiesintheDeploymentWorkbench). Właściwości udziału wdrożenia połączonego są konfigurowane po uruchomieniu połączonego Kreatora nowego udziału wdrożenia. Jednak można zaktualizować właściwości udziału wdrożenia połączonego na **ogólne** karcie ***linked_deployment_share*** **właściwości** okno dialogowe (gdzie *linked_deployment_share* to nazwa udziału wdrożenia połączonych w konsoli Deployment Workbench).  
 
 ###### <a name="to-modify-an-existing-linked-deployment-share"></a>Aby zmodyfikować istniejący udział wdrożenia połączonego  
@@ -3754,7 +3753,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
     |**Ustawienie** |**Opis** |  
     |-----------------|---------------------|  
-    |**Identyfikator łącza** |Zawiera identyfikator udziału wdrożenia połączony.<br /><br /> Identyfikator w tym polu jest generowana automatycznie przez konsoli Deployment Workbench i nie może być modyfikowany.|  
+    |**Link identifier** |Zawiera identyfikator udziału wdrożenia połączony.<br /><br /> Identyfikator w tym polu jest generowana automatycznie przez konsoli Deployment Workbench i nie może być modyfikowany.|  
     |**Komentarze** |Zawiera informacje dotyczące udziału wdrożenia połączony.|  
     |**Ścieżka UNC udziału wdrożenia połączonego** |Zawiera w pełni kwalifikowana ścieżka UNC do udziału wdrożenia docelowego.|  
     |**Wybierz profil zaznaczenia** |Zawiera profil zaznaczenia, który identyfikuje zawartość powinny być replikowane między udziałami wdrożenia źródłowe i docelowe.|  
@@ -3766,19 +3765,19 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Połączone wdrożenia udostępnianie konfiguracji, które ustawienia są zapisywane. Zmiany są wyświetlane w okienku szczegółów w konsoli Deployment Workbench.  
 
-#####  <a name="CopyaLinkedDeploymentShareintheDeploymentWorkbench"></a>Skopiuj udziału wdrożenia połączonych w konsoli Deployment Workbench  
+#####  <a name="CopyaLinkedDeploymentShareintheDeploymentWorkbench"></a> Skopiuj udziału wdrożenia połączonych w konsoli Deployment Workbench  
  Można skopiować i wkleić udziały połączonego wdrażania w konsoli Deployment Workbench, używając **kopiowania** i **Wklej** działania zgodnie z opisem w [kopiowanie elementów w konsoli Deployment Workbench](#CopyItemsintheDeploymentWorkbench).  
 
-#####  <a name="MoveaLinkedDeploymentShareintheDeploymentWorkbench"></a>Przenieś udziału wdrożenia połączonych w konsoli Deployment Workbench  
+#####  <a name="MoveaLinkedDeploymentShareintheDeploymentWorkbench"></a> Przenieś udziału wdrożenia połączonych w konsoli Deployment Workbench  
  Można przenieść udziały połączonego wdrażania w konsoli Deployment Workbench, używając **Wytnij** i **Wklej** działania zgodnie z opisem w [przenoszenie elementów w konsoli Deployment Workbench](#MoveItemsintheDeploymentWorkbench).  
 
-#####  <a name="RenameaLinkedDeploymentShareintheDeploymentWorkbench"></a>Zmień nazwę udziału wdrożenia połączonych w konsoli Deployment Workbench  
+#####  <a name="RenameaLinkedDeploymentShareintheDeploymentWorkbench"></a> Zmień nazwę udziału wdrożenia połączonych w konsoli Deployment Workbench  
  Możesz zmienić nazwy udziały połączonego wdrażania w konsoli Deployment Workbench, używając **zmienić** działania zgodnie z opisem w [zmiany nazwy elementów w konsoli Deployment Workbench](#RenameItemsintheDeploymentWorkbench).  
 
-#####  <a name="DeleteaLinkedDeploymentSharefromtheDeploymentWorkbench"></a>Usuń udział wdrożenia połączonego z konsoli Deployment Workbench  
+#####  <a name="DeleteaLinkedDeploymentSharefromtheDeploymentWorkbench"></a> Usuń udział wdrożenia połączonego z konsoli Deployment Workbench  
  Możesz usunąć połączone udziałów wdrożenia w konsoli Deployment Workbench przy użyciu Kreatora usuwania elementów wybrane zgodnie z opisem w [usuwanie elementów z konsoli Deployment Workbench](#DeleteItemsfromtheDeploymentWorkbench). Usunąć wybrane elementy Kreator umożliwia usunięcie udziały poszczególnych połączonego wdrożenia.  
 
-#####  <a name="ReplicateLinkedDeploymentSharesintheDeploymentWorkbench"></a>Udziały wdrożenia połączonych w konsoli Deployment Workbench replikacji  
+#####  <a name="ReplicateLinkedDeploymentSharesintheDeploymentWorkbench"></a> Udziały wdrożenia połączonych w konsoli Deployment Workbench replikacji  
  Zawartość z udziału wdrożenia źródła można replikować do udziałów wdrożenia połączonych w konsoli Deployment Workbench przy użyciu replikacji do połączonego kreatora udziału wdrożenia. Upewnij się, że istnieje wystarczającej ilości miejsca dla udziału wdrożenia połączone przed uruchomieniem replikowania do połączonego wdrożeń kreatora udziału, i jak Kreator sprawdzają, czy wystarczającej ilości miejsca istnieje przed replikowania zawartości.  
 
 > [!NOTE]
@@ -3810,7 +3809,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Replikuj do połączonego udziału wdrożenia kreatora zakończy się. Foldery oraz zawartość, którą określona w profilu zaznaczenia w udziału wdrożenia połączonego są replikowane z udziału wdrożenia źródłowego do docelowego udziału wdrożenia. W zależności od konfiguracji udziału wdrożenia połączonego folderów i zawartości na udział wdrożenia docelowej są scalane lub wymieniane.  
 
-####  <a name="ManageLTIDeploymentMedia"></a>Zarządzanie nośnikiem wdrożenia LTI  
+####  <a name="ManageLTIDeploymentMedia"></a> Zarządzanie nośnikiem wdrożenia LTI  
  Nośnik w programie LTI umożliwia wykonywanie wdrożenia LTI wyłącznie z nośnika lokalnego, bez konieczności nawiązywania połączenia udziału wdrożenia. Nośnik można przechowywać na dysku DVD, USB dysk twardy lub inne przenośne urządzenie. Po utworzeniu nośnika generowanie obrazów rozruchowych WIM umożliwiających wdrożenia można wykonać z urządzeń przenośnych nośników dostępne lokalnie na komputerze docelowym.  
 
  Można określić elementów do uwzględnienia na nośniku w profilu wybór określonych podczas tworzenia nośnika. Konsoli Deployment Workbench automatycznie uwzględnia środowiska Windows PE obrazu WIM nośnika, aby środowiska Preinstalacyjnego systemu Windows jest uruchomiona z nośnika, które są dostępne do komputera docelowego. Po uruchomieniu systemu Windows PE Kreatora wdrażania zostanie automatycznie uruchomiony, jak również.  
@@ -3833,11 +3832,11 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  W addtion zarządzania nośniki wdrażania w konsoli Deployment Workbench można zarządzać nośnika wdrażania przy użyciu poleceń cmdlet programu Windows PowerShell dla zestawu MDT. Aby uzyskać więcej informacji na temat zarządzania nośnika wdrażania przy użyciu poleceń cmdlet programu Windows PowerShell dla zestawu MDT, zobacz następujące sekcje znajdujące się poniżej sekcji "MDT Windows PowerShell polecenia cmdlet", w dokumentacji zestawu MDT *odwołanie do zestawu narzędzi*:  
 
--   **MDTMedia aktualizacji**  
+-   **Update-MDTMedia**  
 
 -   **Get-MDTDeploymentShareStatistics**  
 
-#####  <a name="CreateNewDeploymentMediaintheDeploymentWorkbench"></a>Utwórz nowy nośnik wdrażania w konsoli Deployment Workbench  
+#####  <a name="CreateNewDeploymentMediaintheDeploymentWorkbench"></a> Utwórz nowy nośnik wdrażania w konsoli Deployment Workbench  
  Utwórz nowy nośnik wdrażania w konsoli Deployment Workbench, korzystając z Kreatora nowego nośnika. Uruchom Kreatora nowego nośnika przy użyciu jednej z następujących metod:  
 
 -   W drzewie konsoli kliknij węzeł nośnika. Następnie w okienku Akcje kliknij przycisk **nowego nośnika**.  
@@ -3868,7 +3867,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Zakończeniu pracy Kreatora nowego nośnika. Nośnik zostaną dodane do listy nośnika w okienku szczegółów w konsoli Deployment Workbench. *Media_path*\Content\Deploy folder jest tworzony (gdzie *media_path* jest nazwą ścieżki nośnika określone w kreatorze), a niektóre foldery podstawowej są tworzone. Folderów i zawartości określonej przez użytkownika w profilu wyboru są kopiowane do folderu Wdróż po uruchomieniu Kreatora aktualizacji zawartości nośnika.  
 
-#####  <a name="ModifyExistingMediaintheDeploymentWorkbench"></a>Modyfikowanie istniejących nośników w konsoli Deployment Workbench  
+#####  <a name="ModifyExistingMediaintheDeploymentWorkbench"></a> Modyfikowanie istniejących nośników w konsoli Deployment Workbench  
  Modyfikowanie istniejących nośników w węźle nośnika w konsoli Deployment Workbench, używając **właściwości** działania zgodnie z opisem w [właściwości elementu widoku w konsoli Deployment Workbench](#ViewItemPropertiesintheDeploymentWorkbench). Skonfiguruj nośnika w konsoli Deployment Workbench, wykonując następujące czynności na nośniku **właściwości** okno dialogowe:  
 
 -   Skonfiguruj właściwości na **ogólne** karcie zgodnie z opisem w [karta Ogólne właściwości nośnika Konfigurowanie](#ConfiguretheMediaPropertiesGeneralTab).  
@@ -3883,7 +3882,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Skonfiguruj ustawienia na **składniki systemu Windows PE x64** karcie zgodnie z opisem w [karta składniki nośnika właściwości systemu Windows PE x64 Konfigurowanie](#ConfiguretheMediaPropertiesWindowsPEx64ComponentsTab).  
 
-######  <a name="ConfiguretheMediaPropertiesGeneralTab"></a>Skonfiguruj kartę Ogólne właściwości nośnika  
+######  <a name="ConfiguretheMediaPropertiesGeneralTab"></a> Skonfiguruj kartę Ogólne właściwości nośnika  
  Właściwości nośnika na **ogólne** karty są skonfigurowane, po uruchomieniu Kreatora nowego nośnika. Jednak można zaktualizować właściwości udziału wdrożenia połączonego na **ogólne** karcie ***nośnika*** **właściwości** okno dialogowe (gdzie *nośnika*to nazwa nośnika w konsoli Deployment Workbench).  
 
 ###### <a name="to-modify-existing-media-properties-on-the-general-tab"></a>Aby zmodyfikować istniejący właściwości nośnika, na karcie Ogólne  
@@ -3900,7 +3899,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 5.  Na **ogólne** , skonfigurować ustawienia na liście 70 tabeli na podstawie wymagań organizacji, a następnie kliknij **OK**.  
 
-    ### <a name="table-70-configuration-settings-on-the-general-tab-of-media-properties"></a>70 tabeli. Ustawienia konfiguracji do karty właściwości nośnika  
+    ### <a name="table-70-configuration-settings-on-the-general-tab-of-media-properties"></a>Table 70. Ustawienia konfiguracji do karty właściwości nośnika  
 
     |**Ustawienie** |**Opis** |  
     |-----------------|---------------------|  
@@ -3914,7 +3913,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Ustawienia konfiguracji nośnika są zapisywane. Zmiany są wyświetlane w okienku szczegółów konsoli Deployment Workbench, a zawartość *media_folder* aktualizacji folderu (gdzie *media_folder* jest nazwą folderu, który można określić dla nośnika).  
 
-######  <a name="ConfiguretheMediaPropertiesRulesTab"></a>Skonfigurować na karcie reguły właściwości nośnika  
+######  <a name="ConfiguretheMediaPropertiesRulesTab"></a> Skonfigurować na karcie reguły właściwości nośnika  
  Właściwości nośnika na **reguły** karty są skonfigurowane, po uruchomieniu Kreatora nowego nośnika. Jednak można zaktualizować właściwości udziału wdrożenia połączonego na **reguły** karty ***nośnika*** **właściwości** okno dialogowe (gdzie *nośnika*to nazwa nośnika w konsoli Deployment Workbench).  
 
 ###### <a name="to-modify-existing-media-properties-on-the-rules-tab"></a>Aby zmodyfikować istniejący właściwości nośnika, na karcie reguły  
@@ -3936,11 +3935,11 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Ustawienie** |**Opis** |  
     |-----------------|---------------------|  
     |**CustomSettings.ini** |Zawiera bieżącą konfigurację w pliku CustomSetting.ini nośników wdrażania|  
-    |**Edytuj Bootstrap.ini** |Kliknij, aby zmodyfikować zawartość pliku Bootstrap.ini konsoli Deployment Workbench generuje dla nośnika wdrażania|  
+    |**Edit Bootstrap.ini** |Kliknij, aby zmodyfikować zawartość pliku Bootstrap.ini konsoli Deployment Workbench generuje dla nośnika wdrażania|  
 
  Ustawienia konfiguracji nośnika są zapisywane. Zmiany są wyświetlane w okienku szczegółów konsoli Deployment Workbench, a zawartość *media_folder* folder (gdzie *media_folder* jest nazwą folderu, który został określony dla w przypadku nośników) jest aktualizowana.  
 
-######  <a name="ConfiguretheMediaPropertiesWindowsPEx86SettingsTab"></a>Konfigurowanie właściwości nośnika systemu Windows PE x86 karta ustawień  
+######  <a name="ConfiguretheMediaPropertiesWindowsPEx86SettingsTab"></a> Konfigurowanie właściwości nośnika systemu Windows PE x86 karta ustawień  
  Właściwości nośnika na **ustawienia systemu Windows PE x86** karty są skonfigurowane, po uruchomieniu Kreatora nowego nośnika. Jednak można zaktualizować właściwości udziału wdrożenia połączonego na **środowiska Windows PE x86** karcie ***nośnika*** **właściwości** okno dialogowe (gdzie *nośnika* to nazwa nośnika w konsoli Deployment Workbench).  
 
 ###### <a name="to-configure-the-windows-pe-x86-settings-tab"></a>Aby skonfigurować kartę Ustawienia systemu Windows PE x86  
@@ -3975,7 +3974,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Ustawienia konfiguracji nośnika są zapisywane i nośnika jest wyświetlana w okienku szczegółów konsoli Deployment Workbench.  
 
-######  <a name="ConfiguretheMediaPropertiesWindowsPEx86ComponentsTab"></a>Konfigurowanie właściwości nośnika systemu Windows PE x86 karta składników  
+######  <a name="ConfiguretheMediaPropertiesWindowsPEx86ComponentsTab"></a> Konfigurowanie właściwości nośnika systemu Windows PE x86 karta składników  
  Właściwości nośnika na **składniki systemu Windows PE x86** karty są skonfigurowane, po uruchomieniu Kreatora nowego nośnika. Jednak można zaktualizować właściwości udziału wdrożenia połączonego na **składniki systemu Windows PE x86** karcie ***nośnika*** **właściwości** okno dialogowe (gdzie  *nośnik* to nazwa nośnika w konsoli Deployment Workbench).  
 
 ###### <a name="to-configure-the-windows-pe-x86-components-tab"></a>Aby skonfigurować kartę składniki systemu Windows PE x86  
@@ -4008,7 +4007,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Ustawienia konfiguracji nośnika są zapisywane i nośnika jest wyświetlana w okienku szczegółów konsoli Deployment Workbench.  
 
-######  <a name="ConfiguretheMediaPropertiesWindowsPEx64SettingsTab"></a>Konfigurowanie właściwości nośnika systemu Windows PE x64 karta ustawień  
+######  <a name="ConfiguretheMediaPropertiesWindowsPEx64SettingsTab"></a> Konfigurowanie właściwości nośnika systemu Windows PE x64 karta ustawień  
  Właściwości nośnika na **ustawienia systemu Windows PE x64** karty są skonfigurowane, po uruchomieniu Kreatora nowego nośnika. Jednak można zaktualizować właściwości udziału wdrożenia połączonego na **ustawienia systemu Windows PE x64** karcie ***nośnika*** **właściwości** okno dialogowe (gdzie  *nośnik* to nazwa nośnika w konsoli Deployment Workbench).  
 
 ###### <a name="to-configure-the-windows-pe-x64-settings-tab"></a>Aby skonfigurować kartę Ustawienia systemu Windows PE x64  
@@ -4043,7 +4042,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Ustawienia konfiguracji nośnika są zapisywane i nośnika jest wyświetlana w okienku szczegółów konsoli Deployment Workbench.  
 
-######  <a name="ConfiguretheMediaPropertiesWindowsPEx64ComponentsTab"></a>Konfigurowanie właściwości nośnika systemu Windows PE x64 karta składników  
+######  <a name="ConfiguretheMediaPropertiesWindowsPEx64ComponentsTab"></a> Konfigurowanie właściwości nośnika systemu Windows PE x64 karta składników  
  Właściwości nośnika na **składniki systemu Windows PE x64** karty są skonfigurowane, po uruchomieniu Kreatora nowego nośnika. Jednak można zaktualizować właściwości udziału wdrożenia połączonego na **składniki systemu Windows PE x64** karcie ***nośnika*** **właściwości** okno dialogowe (gdzie  *nośnik* to nazwa nośnika w konsoli Deployment Workbench).  
 
 ###### <a name="to-configure-the-windows-pe-x64-components-tab"></a>Aby skonfigurować kartę składniki systemu Windows PE x64  
@@ -4076,16 +4075,16 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Ustawienia konfiguracji nośnika są zapisywane i nośnika jest wyświetlana w okienku szczegółów konsoli Deployment Workbench.  
 
-#####  <a name="CopyMediaintheDeploymentWorkbench"></a>Kopiowanie nośników w konsoli Deployment Workbench  
+#####  <a name="CopyMediaintheDeploymentWorkbench"></a> Kopiowanie nośników w konsoli Deployment Workbench  
  Można skopiować i wkleić nośnika w konsoli Deployment Workbench, używając **kopiowania** i **Wklej** działania zgodnie z opisem w [kopiowanie elementów w konsoli Deployment Workbench](#CopyItemsintheDeploymentWorkbench).  
 
-#####  <a name="MoveMediaintheDeploymentWorkbench"></a>Przenieś nośnik w konsoli Deployment Workbench  
+#####  <a name="MoveMediaintheDeploymentWorkbench"></a> Przenieś nośnik w konsoli Deployment Workbench  
  Można przenieść nośniki w konsoli Deployment Workbench, używając **Wytnij** i **Wklej** działania zgodnie z opisem w [przenoszenie elementów w konsoli Deployment Workbench](#MoveItemsintheDeploymentWorkbench).  
 
-#####  <a name="DeleteMediafromtheDeploymentWorkbench"></a>Usuń nośnik z konsoli Deployment Workbench  
+#####  <a name="DeleteMediafromtheDeploymentWorkbench"></a> Usuń nośnik z konsoli Deployment Workbench  
  Możesz usunąć nośnika w konsoli Deployment Workbench przy użyciu Kreatora usuwania elementów wybrane zgodnie z opisem w [usuwanie elementów z konsoli Deployment Workbench](#DeleteItemsfromtheDeploymentWorkbench). Usunąć wybrane elementy Kreator umożliwia usunięcie poszczególnych nośnika.  
 
-#####  <a name="GenerateMediaImagesintheDeploymentWorkbench"></a>Generowanie obrazów nośników w konsoli Deployment Workbench  
+#####  <a name="GenerateMediaImagesintheDeploymentWorkbench"></a> Generowanie obrazów nośników w konsoli Deployment Workbench  
  Możesz wygenerować obrazów nośników, dla zawartości multimedialnej w konsoli Deployment Workbench za pomocą Kreatora aktualizacji zawartości nośnika. Kreator zawartości nośnika aktualizacji tworzy obrazy pliku WIM zawartości nośnika, którą można wykonać z nośnika autonomicznego wdrożenia LTI. Upewnij się, że dla folderu zawierającego dla zawartości multimedialnej przed uruchomieniem Kreatora aktualizacji zawartości nośnika, jak Kreator sprawdzają, czy wystarczającej ilości miejsca istnieje przed wygenerowaniem dla zawartości multimedialnej istnieje wystarczające miejsce.  
 
 > [!NOTE]
@@ -4127,7 +4126,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Można również utworzyć urządzenia rozruchowego, który zawiera kopię *media_folder*\Content folder (gdzie *media_folder* nazywa się w folderze określonym dla nośnika) tak, aby uruchomić element docelowy komputer z dysku twardego dysku flash USB lub USB. Aby uzyskać więcej informacji, zobacz [tworzenia urządzeń rozruchowych z nośnika wdrażania](#CreateBootableDevicesfromDeploymentMedia).  
 
-#####  <a name="CreateBootableDevicesfromDeploymentMedia"></a>Tworzenie nośnika wdrażania urządzeń  
+#####  <a name="CreateBootableDevicesfromDeploymentMedia"></a> Tworzenie nośnika wdrażania urządzeń  
  Może być konieczne wdrażanie obrazów na komputerach docelowych przy użyciu urządzenia rozruchowego (np. dysku flash USB lub dysk twardy USB) gdy komputer docelowy nie ma szybkie, trwałe połączenie do udziału wdrożenia.  
 
 > [!NOTE]
@@ -4143,34 +4142,34 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
     -   **Wybierz dysk *N***  
 
-    -   **czyszczenie**  
+    -   **Czyszczenie**  
 
     -   **Tworzenie partycji podstawowej**  
 
     -   **Wybierz partycję 1**  
 
-    -   **aktywne**  
+    -   **Aktywne**  
 
     -   **Format fs = systemu plików ntfs**  
 
     -   **Przypisz**  
 
-    -   **Zakończ**  
+    -   **exit**  
 
 4.  Skopiuj zawartość *media_folder*\Content folder (gdzie *media_folder* jest nazwą folderu określona na nośniku) na urządzeniu.  
 
-####  <a name="ManagetheMDTDB"></a>Zarządzanie DB zestawu MDT  
+####  <a name="ManagetheMDTDB"></a> Zarządzanie DB zestawu MDT  
  MDT DB wspomaga konfigurację, która zapewnia CustomSettings.ini we wdrożeniach LTI jak również ZTI. MDT DB umożliwia centralne zarządzanie ustawieniami konfiguracji dla komputerów docelowych. Mimo że można wykonywać przy użyciu pliku CustomSettings.ini wdrożeń na dużą skalę, MDT DB może pomóc zmniejszyć nakład konieczność zarządzania takich wdrożeniach.  
 
  Aby uzyskać więcej informacji na temat zarządzania DB zestawu MDT Zobacz wykonywania wdrożeń za pomocą zestawu MDT bazy danych.  
 
  W addtion zarządzania DB zestawu MDT w konsoli Deployment Workbench można zarządzać DB zestawu MDT, za pomocą poleceń cmdlet środowiska Windows PowerShell dla zestawu MDT. Aby uzyskać więcej informacji na temat zarządzania DB zestawu MDT, za pomocą poleceń cmdlet środowiska Windows PowerShell dla zestawu MDT, zobacz następujące sekcje znajdujące się poniżej sekcji "MDT Windows PowerShell polecenia cmdlet", w dokumentacji zestawu MDT *odwołanie do zestawu narzędzi*:  
 
--   **Nowe MDTDatabase**  
+-   **New-MDTDatabase**  
 
--   **MDTDatabaseSchema aktualizacji**  
+-   **Update-MDTDatabaseSchema**  
 
-###  <a name="ConfiguringLTITaskSequenceStepsintheDeploymentWorkbench"></a>Kroki konfigurowania LTI sekwencji zadań w konsoli Deployment Workbench  
+###  <a name="ConfiguringLTITaskSequenceStepsintheDeploymentWorkbench"></a> Kroki konfigurowania LTI sekwencji zadań w konsoli Deployment Workbench  
  Skonfiguruj kroków sekwencji zadań LTI w konsoli Deployment Workbench przez:  
 
 -   Konfigurowanie warunków krok sekwencji zadań LTI, zgodnie z opisem w [Konfigurowanie warunków krok sekwencji zadań](#ConfigureTaskSequenceStepConditions)  
@@ -4183,7 +4182,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Konfigurowanie **Sprawdź Bios** zawiera listę wersji niezgodne podstawowego systemu wejścia/wyjścia (BIOS) zgodnie z opisem w kroku sekwencji zadań [skonfigurować Sprawdź sekwencję zadań systemu BIOS dla listy BIOS niezgodne Wersje](#ConfiguretheCheckBIOSTaskSequenceStepfortheListofIncompatibleBIOSVersions)  
 
-####  <a name="ConfigureTaskSequenceStepConditions"></a>Konfigurowanie warunków krok sekwencji zadań  
+####  <a name="ConfigureTaskSequenceStepConditions"></a> Konfigurowanie warunków krok sekwencji zadań  
  W niektórych scenariuszach rozważ warunkowo uruchomienie sekwencji zadań na podstawie określonych kryteriów. Konfigurowanie warunków krok sekwencji zadań na **opcje** kartę krok sekwencji zadań. Dodaj dowolnej kombinacji tych warunków, aby określić, czy krok sekwencji zadań należy uruchomić. Na przykład można użyć wartości zmiennej sekwencji zadań i ustawienie rejestru, aby określić, czy krok sekwencji zadań należy uruchomić.  
 
  Skonfiguruj kroków sekwencji zadań warunkowego, wykonując dowolną kombinację następujących czynności:  
@@ -4204,7 +4203,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Dodawanie testu dla różnych plików właściwości do warunku kroku sekwencji zadań, zgodnie z opisem w [dodać testu dla właściwości pliku do warunków krok sekwencji zadań](#AddaTestforFilePropertiestoTaskSequenceStepConditions).  
 
-#####  <a name="AddIFStatementstoTaskSequenceStepConditions"></a>Dodawanie, jeśli instrukcje do zadania sekwencji warunków kroku  
+#####  <a name="AddIFStatementstoTaskSequenceStepConditions"></a> Dodawanie, jeśli instrukcje do zadania sekwencji warunków kroku  
  Wszystkie warunki sekwencji zadań zawierają jedną lub więcej `IF` instrukcje, będące podstawę tworzenia kroków sekwencji zadań warunkowego. Warunek krok sekwencji zadań może zawierać tylko jeden `IF` instrukcji, ale można zagnieżdżać wielu `IF` instrukcje poniżej najwyższego poziomu `IF` instrukcji tworzenie złożonych warunków.  
 
  Testowanie wyrażenia IF na podstawie wybranych warunków wymienionych w tabeli 77, którą można skonfigurować w `IF` **— właściwości instrukcji** okno dialogowe.  
@@ -4225,7 +4224,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 2.  W  **`If` — właściwości instrukcji** okno dialogowe, kliknij przycisk ***warunku*** (gdzie *warunku* jest jeden z warunków wymienionych w tabeli 77), a następnie kliknij przycisk  **OK**.  
 
-#####  <a name="AddTaskSequenceVariablestoTaskSequenceStepConditions"></a>Dodaj zmienne sekwencji zadań do warunków krok sekwencji zadań  
+#####  <a name="AddTaskSequenceVariablestoTaskSequenceStepConditions"></a> Dodaj zmienne sekwencji zadań do warunków krok sekwencji zadań  
  Tworzenie warunków opartych na dowolnym zmienną sekwencji zadań (w tym te, które definiuje zestaw MDT). Te zmienne także dostępne w systemie operacyjnym zmiennych środowiskowych.  
 
  Aby skonfigurować warunek oparte na zmienną sekwencji zadań, należy podać następujące informacje w **warunek zmiennej sekwencji zadań** okno dialogowe:  
@@ -4246,7 +4245,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 4.  W **warunek zmiennej sekwencji zadań** okna dialogowego, **wartość**, typ ***wartość*** (której wartość jest *wartość* zadania Zmienna sekwencji), a następnie kliknij przycisk **OK**.  
 
-#####  <a name="AddOperatingSystemVersionstoTaskSequenceStepConditions"></a>Dodaj wersji systemu operacyjnego do warunków krok sekwencji zadań  
+#####  <a name="AddOperatingSystemVersionstoTaskSequenceStepConditions"></a> Dodaj wersji systemu operacyjnego do warunków krok sekwencji zadań  
  Tworzenie warunków, w zależności od używanej wersji systemu operacyjnego, podając następujące informacje w **warunek systemu operacyjnego sekwencja zadań** okno dialogowe:  
 
 -   **Architektura**. Nazwa instrukcji zestawu, na którym system operacyjny jest zaprojektowana x86 lub x64  
@@ -4265,8 +4264,8 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 4.  W **warunek systemu operacyjnego sekwencja zadań** okna dialogowego, **pole warunku**, kliknij przycisk ***warunku*** (gdzie *warunku* jest logiczny Operacja do użycia w tym stanie), a następnie kliknij przycisk **OK**.  
 
-#####  <a name="AddWMIQueriestoTaskSequenceStepConditions"></a>Dodawanie zapytań usługi WMI do warunków krok sekwencji zadań  
- Kwerendy usługi WMI można użyć w warunku sekwencji zadań. Usługa WMI jest technologii zarządzania głównej dla systemów operacyjnych Windows i umożliwia spójne i jednolite zarządzanie, kontroli i monitorowania systemów w całym przedsiębiorstwie. Oparte na standardach, WMI umożliwia zapytania, Zmień i monitorowanie ustawień konfiguracji na systemach stacjonarnych i serwerów, aplikacji, sieci i innych składników przedsiębiorstwa. Można również napisać skrypty korzystające z usługi WMI skryptów biblioteki do pracy z usługą WMI i tworzenia szerokiej gamy zarządzania systemami i skrypty monitorowania. Aby uzyskać więcej informacji dotyczących usługi WMI, zobacz [Elementarz skryptów WMI](http://www.microsoft.com/technet/scriptcenter/guide/sas_wmi_overview.mspx?mfr=true).  
+#####  <a name="AddWMIQueriestoTaskSequenceStepConditions"></a> Dodawanie zapytań usługi WMI do warunków krok sekwencji zadań  
+ Kwerendy usługi WMI można użyć w warunku sekwencji zadań. Usługa WMI jest technologii zarządzania głównej dla systemów operacyjnych Windows i umożliwia spójne i jednolite zarządzanie, kontroli i monitorowania systemów w całym przedsiębiorstwie. Oparte na standardach, WMI umożliwia zapytania, Zmień i monitorowanie ustawień konfiguracji na systemach stacjonarnych i serwerów, aplikacji, sieci i innych składników przedsiębiorstwa. Można również napisać skrypty korzystające z usługi WMI skryptów biblioteki do pracy z usługą WMI i tworzenia szerokiej gamy zarządzania systemami i skrypty monitorowania. Aby uzyskać więcej informacji dotyczących usługi WMI, zobacz [Elementarz skryptów WMI](https://technet.microsoft.com/library/ee156560.aspx).  
 
  Aby skonfigurować warunek na podstawie warunku WMI, należy podać następujące informacje w **warunek WMI sekwencji zadań** okno dialogowe:  
 
@@ -4282,7 +4281,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 3.  W **warunek WMI sekwencji zadań** okna dialogowego, **pole kwerendy WQL**, wpisz skrypt zapytanie można uruchomić, a następnie kliknij przycisk **OK**.  
 
-#####  <a name="AddRegistrySettingstoTaskSequenceStepConditions"></a>Dodać ustawienia rejestru do warunków krok sekwencji zadań  
+#####  <a name="AddRegistrySettingstoTaskSequenceStepConditions"></a> Dodać ustawienia rejestru do warunków krok sekwencji zadań  
  Podawanie wartości ustawień rejestru podczas sekwencji zadań; na podstawie zdefiniowanych kryteriów, określ, czy do uruchamiania dodatkowych procesów. Rejestr zawiera dwa podstawowe elementy: klucze i wartości.  
 
 -   Klucze rejestru są podobne do folderów. Każdy klucz może zawierać podklucze, które z kolei może zawierać dodatkowe podklucze, które mogą zawierać wartości. Klucze są przywoływana za pomocą składni podobnej do nazwy ścieżki systemu Windows, przy użyciu ukośników odwrotnych (\\) wskazująca poziomów hierarchii. Na przykład **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows** odwołuje się do podklucza **Windows** podklucza **Microsoft** klucza **oprogramowania** poddrzewa **HKEY_LOCAL_MACHINE**.  
@@ -4299,11 +4298,11 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
     -   **HKEY_USERS**  
 
-    -   **HKEY_CURRENT_USER**  
+    -   **HKEY_CURRENT_CONFIG**  
 
--   **Klucz**. Wartość klucza rejestru do użycia w tym stanie  
+-   **Key**. Wartość klucza rejestru do użycia w tym stanie  
 
--   **Warunek**. Operator logiczny, takich jak `AND` lub`OR`  
+-   **Warunek**. Operator logiczny, takich jak `AND` lub `OR`  
 
 -   **Nazwa wartości**. Nazwa wartości do użycia w tym stanie  
 
@@ -4333,7 +4332,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 7.  W **ustawienie rejestru** okna dialogowego, **wartość**, wpisz wartość do testowania, które występują, a następnie kliknij **OK**.  
 
-#####  <a name="AddaTestforInstalledSoftwaretoTaskSequenceStepConditions"></a>Dodawanie testu dla zainstalowanego oprogramowania do warunków krok sekwencji zadań  
+#####  <a name="AddaTestforInstalledSoftwaretoTaskSequenceStepConditions"></a> Dodawanie testu dla zainstalowanego oprogramowania do warunków krok sekwencji zadań  
  Należy ocenić oprogramowania zainstalowanego na podstawie informacji z produktu z pliku Instalatora Microsoft Windows (MSI). Te informacje umożliwiają zgodny z określonym produktem przy użyciu zarówno kod produktu i kod uaktualnienia lub służy do dopasowania do dowolnej wersji tego produktu za pomocą kodu uaktualnienia.  
 
 ###### <a name="to-add-an-installed-software-condition-to-a-task-sequence-step"></a>Aby dodać warunek oprogramowanie zainstalowane na krok sekwencji zadań  
@@ -4350,7 +4349,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 4.  W **oprogramowanie zainstalowane** okno dialogowe, kliknij przycisk **OK**.  
 
-#####  <a name="AddaTestforFolderPropertiestoTaskSequenceStepConditions"></a>Dodawanie testu dla właściwości folderu do warunków krok sekwencji zadań  
+#####  <a name="AddaTestforFolderPropertiestoTaskSequenceStepConditions"></a> Dodawanie testu dla właściwości folderu do warunków krok sekwencji zadań  
  Należy ocenić folderów na podstawie właściwości folderu. Oprócz obliczenia ścieżkę folderu, który ma zostać przetestowana, sprawdź sygnatury czasowej w określonych warunków.  
 
  Aby skonfigurować warunek na podstawie właściwości folderu, podaj następujące informacje w **właściwości folderu** okno dialogowe:  
@@ -4373,7 +4372,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 4.  W **właściwości folderu** okno dialogowe, kliknij przycisk **OK**.  
 
-#####  <a name="AddaTestforFilePropertiestoTaskSequenceStepConditions"></a>Dodawanie testu dla właściwości pliku do warunków krok sekwencji zadań  
+#####  <a name="AddaTestforFilePropertiestoTaskSequenceStepConditions"></a> Dodawanie testu dla właściwości pliku do warunków krok sekwencji zadań  
  Należy ocenić plików na podstawie właściwości pliku. Oprócz oceniania ścieżki pliku, który ma zostać przetestowana, sprawdź jego wersja i sygnaturę czasową w określonych warunków.  
 
  Aby skonfigurować warunek na podstawie właściwości pliku, wprowadź następujące informacje w **właściwości pliku**okno dialogowe:  
@@ -4400,7 +4399,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 5.  W **właściwości pliku** okno dialogowe, kliknij przycisk **OK**.  
 
-####  <a name="ConfigureDiskTaskSequenceSteps"></a>Skonfiguruj kroków sekwencji zadań dysku  
+####  <a name="ConfigureDiskTaskSequenceSteps"></a> Skonfiguruj kroków sekwencji zadań dysku  
  Można dostosować sekwencje zadań, aby skonfigurować ustawienia dysku na komputerze docelowym. W konsoli Deployment Workbench lub w konsoli programu Configuration Manager, należy skonfigurować ustawienia dysku.  
 
  Aby skonfigurować kroków sekwencji zadań, które wykonywania funkcji związanych z dyskami, wykonaj następujące czynności:  
@@ -4409,7 +4408,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Konfiguruj **Włącz funkcję BitLocker** typy krok sekwencji zadań, zgodnie z opisem w [skonfigurować Włącz funkcję BitLocker kroków sekwencji zadań](#ConfigureEnableBitLockerTaskSequenceSteps)  
 
-#####  <a name="ConfigureFormatandPartitionDiskTaskSequenceSteps"></a>Skonfiguruj Format i partycji dysku zadania sekwencji kroki  
+#####  <a name="ConfigureFormatandPartitionDiskTaskSequenceSteps"></a> Skonfiguruj Format i partycji dysku zadania sekwencji kroki  
  Na podstawie czynności sekwencji zadań **Format i partycji** typ kroku sekwencji zadań pozwala na tworzenie wiele partycji i są zwykle używane do tworzenia dodatkowej partycji do przechowywania danych. Niestandardowe partycji są obsługiwane tylko w scenariuszach nowego komputera.  
 
 > [!NOTE]
@@ -4460,7 +4459,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Szybkie formatowanie** |Wybierz, aby skonfigurować kroku sekwencji zadań Formatuj partycję, wykonując szybkie formatowanie. Jeśli pole wyboru jest:<br /><br /> -Zaznaczone, format partycji odbywa się przy użyciu procesu szybkie formatowanie<br /><br /> -Wyczyszczone, format partycji odbywa się przy użyciu standardowego formatu procesu|  
     |**Zmienna** |Zawiera nazwę zmiennej sekwencji zadań umożliwia przechowywanie literę dysku przypisaną do partycji.<br /><br /> Zestaw MDT automatycznie tworzy dodatkowe partycji dla nowych komputerów podczas wdrażania systemu Windows lub zażądano funkcji BitLocker.|  
 
-#####  <a name="ConfigureEnableBitLockerTaskSequenceSteps"></a>Skonfiguruj kroków sekwencji zadań funkcji BitLocker Włącz  
+#####  <a name="ConfigureEnableBitLockerTaskSequenceSteps"></a> Skonfiguruj kroków sekwencji zadań funkcji BitLocker Włącz  
  To zadanie służy do włączenia **funkcji BitLocker** zadań. Funkcja BitLocker jest funkcją szyfrowania dysków pełnej systemu Windows przeznaczone do ochrony danych, zapewniając szyfrowanie całego woluminów. Domyślnie używa szyfrowania AES (Advanced Standard), nazywany także *Rijndael*, szyfry blokowe przyjęty jako standard szyfrowania przez Rząd Stanów Zjednoczonych.  
 
  Algorytmu AES w trybie łańcucha Cipher-block za pomocą 128-bitowego klucza jest często połączone z rozpraszania Słoń w celu zapewnienia dodatkowych zabezpieczeń. Funkcja BitLocker jest dostępne tylko w Enterprise i Ultimate systemu Windows.  
@@ -4479,30 +4478,30 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   W pliku CustomSettings.ini ustaw następujące właściwości:  
 
-    -   BDEInstall = modułu TPM  
+    -   BDEInstall=TPM  
 
-    -   BdeInstallSuppress = nie  
+    -   BdeInstallSuppress=NO  
 
     -   BDeWaitForEncryption = False  
 
-    -   BDEDriveSize = 2000  
+    -   BDEDriveSize=2000  
 
-    -   BDEDriveLetter = S:  
+    -   BDEDriveLetter=S:  
 
-    -   BDEKeyLocation = C:  
+    -   BDEKeyLocation=C:  
 
-    -   SkipBitLocker = tak  
+    -   SkipBitLocker=YES  
 
- Aby uzyskać więcej informacji na temat włączania funkcji BitLocker, zobacz [funkcji BitLocker — często zadawane pytania](http://technet.microsoft.com/library/hh831507.aspx).  
+ Aby uzyskać więcej informacji na temat włączania funkcji BitLocker, zobacz [funkcji BitLocker — często zadawane pytania](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-frequently-asked-questions).  
 
-####  <a name="ConfigureNetworkTaskSequenceSteps"></a>Skonfiguruj kroki sekwencji zadań w sieci  
+####  <a name="ConfigureNetworkTaskSequenceSteps"></a> Skonfiguruj kroki sekwencji zadań w sieci  
  Można dostosować sekwencji zadań w konsoli Deployment Workbench, aby skonfigurować ustawienia sieciowe na komputerze docelowym. Aby skonfigurować kroków sekwencji zadań, które wykonywania funkcji związanych z siecią, wykonaj następujące czynności:  
 
 -   Konfiguruj **Przechwyć ustawienia sieci** czynności sekwencji zadań, zgodnie z opisem w [skonfigurować przechwytywania sieci ustawienia kroków sekwencji zadań](#ConfigureCaptureNetworkSettingsTaskSequenceSteps)  
 
 -   Konfiguruj **Zastosuj ustawienia sieci** czynności sekwencji zadań, zgodnie z opisem w [skonfigurować zastosować sieci ustawienia kroków sekwencji zadań](#ConfigureApplyNetworkSettingsTaskSequenceSteps)  
 
-#####  <a name="ConfigureCaptureNetworkSettingsTaskSequenceSteps"></a>Skonfiguruj kroków sekwencji zadań ustawienia sieciowe przechwytywania  
+#####  <a name="ConfigureCaptureNetworkSettingsTaskSequenceSteps"></a> Skonfiguruj kroków sekwencji zadań ustawienia sieciowe przechwytywania  
  Na podstawie czynności sekwencji zadań **Przechwyć ustawienia sieci** krok sekwencji zadań umożliwiają przechwytywanie ustawień konfiguracji sieci dla wszystkich kart sieciowych na komputerze docelowym, który ma statycznie skonfigurowanych adresów IP Odśwież komputer scenariuszy wdrażania.  
 
  Szablony sekwencji zadań LTI podany zestaw mdt nie zawierają krok sekwencji zadań na podstawie **Przechwyć ustawienia sieci** typ kroku sekwencji zadań. Odśwież komputer scenariuszy wdrażania, Dodaj krok sekwencji zadań na podstawie **Przechwyć ustawienia sieci** typ kroku sekwencji zadania w fazę Przechwytywanie stanu.  
@@ -4526,7 +4525,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 6.  Na **właściwości** , skonfigurować ustawienia wymienione w tabeli 80 na podstawie wymagań organizacji, a następnie kliknij **OK**.  
 
-    ### <a name="table-80-configuration-settings-on-the-properties-tab-of-the-capture-network-settings-task-sequence-step-type"></a>80 tabeli. Ustawienia konfiguracji, na karcie właściwości w typ kroku sekwencji zadań ustawienia przechwytywania sieci  
+    ### <a name="table-80-configuration-settings-on-the-properties-tab-of-the-capture-network-settings-task-sequence-step-type"></a>Table 80. Ustawienia konfiguracji, na karcie właściwości w typ kroku sekwencji zadań ustawienia przechwytywania sieci  
 
     |**Ustawienie** |**Opis** |  
     |-----------------|---------------------|  
@@ -4534,7 +4533,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Nazwa** |Zawiera nazwę kroku sekwencji zadań, która jest wyświetlana w hierarchii sekwencji zadań|  
     |**Opis** |Zawiera opis informacji o kroku sekwencji zadań|  
 
-#####  <a name="ConfigureApplyNetworkSettingsTaskSequenceSteps"></a>Skonfiguruj zastosować kroków sekwencji zadań ustawień sieci  
+#####  <a name="ConfigureApplyNetworkSettingsTaskSequenceSteps"></a> Skonfiguruj zastosować kroków sekwencji zadań ustawień sieci  
  Na podstawie czynności sekwencji zadań **Zastosuj ustawienia sieci** typ kroku sekwencji zadań umożliwia skonfigurowanie ustawień sieci dla każdej karty sieciowej w komputerze docelowym. Ustawienia sieci, które konfiguruje ten typ kroku sekwencji zadań są tych samych ustawień, które są skonfigurowane we właściwościach karty sieciowej.  
 
  Dla każdej karty sieciowej w komputerze docelowym skonfiguruj odpowiednie ustawienia sieciowe. Jeżeli nie określono żadnych ustawień konfiguracji, **Zastosuj ustawienia sieci** typ kroku sekwencji zadań umożliwia skonfigurowanie krok sekwencji zadań, który z kolei konfiguruje kart sieciowych na komputerze docelowym, aby użyć dynamicznej konfiguracji hosta Protocol (DHCP) dla konfiguracji.  
@@ -4592,7 +4591,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Uzyskaj serwera DNS automatycznie** |Zaznacz, aby skonfigurować sekwencję zadań do skonfigurowania ustawień DNS karty sieciowej na komputerze docelowym przy użyciu protokołu DHCP.|  
     |**Użyj następujących serwerów DNS** |Zaznacz, aby skonfigurować sekwencję zadań do skonfigurowania ustawień DNS karty sieciowej na komputerze docelowym przy użyciu wartości określonej w **adresy serwerów DNS w kolejności używania** pole.|  
     |**Adresy serwerów DNS w kolejności użycia** |Zawiera listę adresów IP serwerów DNS, można skonfigurować dla karty sieciowej. Kliknij jedną z następujących czynności, aby zmodyfikować listę serwerów DNS:<br /><br /> -                                          **Dodaj**. Dodaj adres IP serwera DNS do pola listy.<br /><br /> -                                          **Właściwości**. Zmodyfikuj adres IP serwera DNS dla istniejący wpis.<br /><br /> -                                          **Usuń**. Usuń istniejący wpis.|  
-    |**Sufiks DNS** |Zawiera sufiks nazwy domeny DNS, który ma zostać dodany do wszelkich zapytań DNS.|  
+    |**DNS Suffix** |Zawiera sufiks nazwy domeny DNS, który ma zostać dodany do wszelkich zapytań DNS.|  
     |**Rejestruj adresy tego połączenia w usłudze DNS** |Zaznacz, aby skonfigurować kartę sieciową, aby zarejestrować adres IP karty sieciowej podstawowy serwer DNS. Jeśli pole wyboru jest:<br /><br /> -Zaznaczone, adres IP karty sieciowej jest zarejestrowane w usłudze DNS<br /><br /> -Wyczyszczone, adres IP karty sieciowej nie jest zarejestrowany w systemie DNS<br /><br /> To pole wyboru jest domyślnie zaznaczone.|  
     |**Użyj sufiksu tego połączenia w rejestracji DNS** |Zaznacz, aby skonfigurować kartę sieciową, która powoduje zarejestrowanie adresu IP karty sieciowej przy użyciu sufiksu na liście **sufiks DNS**. Jeśli pole wyboru jest:<br /><br /> -Zaznaczone, adres IP karty sieciowej jest zarejestrowana przy użyciu sufiksu na liście **sufiks DNS**<br /><br /> -Wyczyszczone, adres IP karty sieciowej nie jest zarejestrowany przy użyciu sufiksu na liście **sufiks DNS**<br /><br /> To pole wyboru jest domyślnie wyczyszczone.|  
 
@@ -4608,7 +4607,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Włącz system NetBIOS przez TCP/IP** |Wybierz opcję Włącz system NetBIOS przez TCP/IP karty sieciowej. Inne opcje są **domyślne** i **Wyłącz system NetBIOS przez TCP/IP**.|  
     |**Wyłącz system NetBIOS przez TCP/IP** |Wybierz opcję Wyłącz system NetBIOS przez TCP/IP karty sieciowej. Inne opcje są **domyślne** i **Włącz system NetBIOS przez TCP/IP**.|  
 
-####  <a name="ConfigureServerRoleTaskSequenceStepsforLTI"></a>Skonfiguruj dla LTI kroków sekwencji zadań roli serwera  
+####  <a name="ConfigureServerRoleTaskSequenceStepsforLTI"></a> Skonfiguruj dla LTI kroków sekwencji zadań roli serwera  
  LTI ułatwia automatyzację wdrażania ról serwera w systemie Windows Server. Skonfiguruj LTI kroków sekwencji zadań do wdrażania ról serwera obsługiwanych, które obejmują:  
 
 -   USŁUGI AD DS  
@@ -4619,7 +4618,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Proces konfigurowania kroki sekwencji zadań w roli serwera jest podobny do LTI i ZTI. Aby uzyskać więcej informacji o konfigurowaniu kroków sekwencji zadań roli serwera do LTI, zobacz [Konfigurowanie kroków sekwencji zadań roli serwera](#ConfiguringServerRoleTaskSequenceSteps).  
 
-####  <a name="ConfiguretheCheckBIOSTaskSequenceStepfortheListofIncompatibleBIOSVersions"></a>Skonfiguruj sekwencję zadań systemu BIOS wyboru Lista wersji systemu BIOS niezgodne  
+####  <a name="ConfiguretheCheckBIOSTaskSequenceStepfortheListofIncompatibleBIOSVersions"></a> Skonfiguruj sekwencję zadań systemu BIOS wyboru Lista wersji systemu BIOS niezgodne  
  Domyślna kolejność zadań dla sekwencji zadań obejmuje **Sprawdź systemu BIOS** zadań w **Non-Zamień** w **weryfikacji** grupy. **Sprawdź BIOS** zadanie uruchamia skrypt ZTIBIOSCheck.wsf, która sprawdza wersję systemu BIOS komputerów docelowych z listą niezgodnej wersji systemu BIOS w pliku ZTIBIOSCheck.xml.  
 
  Zmodyfikuj plik ZTIBIOSCheck.xml, który będzie zawierać listę wersji systemu BIOS jest niezgodny z docelowego systemu operacyjnego w kompilacji systemu operacyjnego. Zmodyfikuj ZTIBIOSCheck.xml dla poszczególnych sekwencji zadań utworzonych w konsoli Deployment Workbench. Znajduje się plik ZTIBIOSCheck.xml *udział_wdrożenia*folderu \Scripts (gdzie *udział_wdrożenia* jest nazwą folderu, który jest elementem głównym udziału wdrożenia).  
@@ -4649,7 +4648,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 5.  Zaktualizuj ZTIBIOSCheck.xml w celu uwzględnienia systemu BIOS na podstawie atrybutów pobierane w poprzednich krokach.  
 
-##  <a name="RunningtheDeploymentWizard"></a>Uruchamianie Kreatora wdrażania  
+##  <a name="RunningtheDeploymentWizard"></a> Uruchamianie Kreatora wdrażania  
  Aby zainicjować wdrożenie systemu Windows na komputerach docelowych, uruchom Kreatora wdrażania. Zainicjuj Kreatora wdrażania ręcznie lub za pomocą usług wdrażania systemu Windows. Każdy scenariusz wdrażania (Zastąp komputera, nowy komputer lub Odśwież komputer) używa innego procesu. Zainicjowania wdrożenia z usług wdrażania systemu Windows, udział sieciowy z dyskami lokalnymi lub z dysku DVD. Proces wdrażania wyświetli monit o wszystkich ustawień konfiguracji, które nie zostały już.  
 
  Kreator wdrażania uruchomiono wcześniejszy niż Kreatora wdrażania i jest odpowiedzialny za inicjowanie środowiska. Kreator wdrażania programu wyświetla na podstawie wybranego scenariusza wdrażania i opcje konfiguracji określone w CustomSettings.ini stron kreatora. Logika do wyświetlania (lub nie są wyświetlane) strony kreatora należy zauważyć, dla każdej strony kreatora w kolejnych krokach.  
@@ -4710,7 +4709,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |------------------|-------------------|  
     |**UserID_isDirty** |Równa TRUE|  
     |**Nazwa użytkownika** |Równa ""|  
-    |**DeploymentType** |Nie równa się ZAMIEŃ|  
+    |**deploymentType** |Nie równa się ZAMIEŃ|  
     |**DeploymentMethod** |Nie równa się NOŚNIK|  
 
      Te poświadczenia umożliwiają dostęp do udostępnionych folderów sieciowych używanych podczas procesu wdrażania. Te foldery udostępnione obejmują foldery używane do przechowywania użytkownika stanu migracji danych lub obraz kopii zapasowych komputera docelowego.  
@@ -4740,8 +4739,8 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |------------------|-------------------|  
     |**SkipComputerName** |Nie równa się tak|  
     |**SkipDomainMembership** |Nie równa się tak|  
-    |**DeploymentType** |Nie równa się StateRestore lub Zastąp lub niestandardowe|  
-    |**DeploymentType** |Nie równa się ZAMIEŃ|  
+    |**deploymentType** |Nie równa się StateRestore lub Zastąp lub niestandardowe|  
+    |**deploymentType** |Nie równa się ZAMIEŃ|  
 
     ### <a name="table-92-specify-computer-membership-configuration"></a>92 tabeli. Określ konfigurację członkostwa komputera  
 
@@ -4760,8 +4759,8 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
     |**Właściwość** |Warunek|  
     |------------------|---------------|  
-    |**SkipUserData** |**Nie równa się tak** |  
-    |**DeploymentType** |Nie równa się odświeżania lub Zastąp lub StateRestore|  
+    |**SkipUserData** |Nie równa się tak |  
+    |**deploymentType** |Nie równa się odświeżania lub Zastąp lub StateRestore|  
     |**ImageFlags** |Nie zawiera serwera|  
     |**IsServerOS** |Nie ma wartości TRUE|  
 
@@ -4784,7 +4783,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Właściwość** |**Warunek** |  
     |------------------|-------------------|  
     |**SkipUserData** |Nie równa się tak|  
-    |**DeploymentType** |Taki sam, jak NEWCOMPUTER|  
+    |**deploymentType** |Taki sam, jak NEWCOMPUTER|  
     |**ImageFlags** |Nie zawiera serwera|  
     |**IsServerOS** |Nie ma wartości TRUE|  
     |**FindTaskSequenceStep** |Sekwencja zadań zawiera **w trybie Offline użytkownika Przechwytywanie stanu** i **ZTIUserState.wsf** |  
@@ -4807,7 +4806,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Właściwość** |**Warunek** |  
     |------------------|-------------------|  
     |**SkipUserData** |Nie równa się tak|  
-    |**DeploymentType** |Równa NEWCOMPUTER lub StateRestore i nie jest równa niestandardowe|  
+    |**deploymentType** |Równa NEWCOMPUTER lub StateRestore i nie jest równa niestandardowe|  
     |**ImageFlags** |Nie zawiera serwera|  
     |**IsServerOS** |Nie ma wartości TRUE|  
 
@@ -4827,7 +4826,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Właściwość** |**Warunek** |  
     |------------------|-------------------|  
     |**SkipComputerBackup** |Nie równa się tak|  
-    |**DeploymentType** |Nie równa NEWCOMPUTER i nie równa niestandardowy i nie równa STATERESTORE i równa odświeżania lub równej ZAMIEŃ|  
+    |**deploymentType** |Nie równa NEWCOMPUTER i nie równa niestandardowy i nie równa STATERESTORE i równa odświeżania lub równej ZAMIEŃ|  
 
     ### <a name="table-100-computer-backup-options"></a>100 tabeli. Opcje tworzenia kopii zapasowej komputera  
 
@@ -4851,7 +4850,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Właściwość** |**Warunek** |  
     |------------------|-------------------|  
     |**SkipProductKey** |Nie równa się tak.|  
-    |**DeploymentType** |Nie równa się ZAMIEŃ i nie jest równa niestandardowy i nie jest równa StateRestore.|  
+    |**deploymentType** |Nie równa się ZAMIEŃ i nie jest równa niestandardowy i nie jest równa StateRestore.|  
 
     ### <a name="table-102-product-key-options"></a>102 tabeli. Opcje klucza produktu  
 
@@ -4873,7 +4872,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Właściwość** |**Warunek** |  
     |------------------|-------------------|  
     |**SkipPackageDisplay** |Nie równa się tak|  
-    |**DeploymentType** |Nie równa się ZAMIANY lub niestandardowe|  
+    |**deploymentType** |Nie równa się ZAMIANY lub niestandardowe|  
     |**ImageBuild** |Pierwszy znak w właściwości jest równa 6 (co oznacza kompilacji systemu Windows 7, Windows 8 lub Windows 8.1), a ma aktywnych pakietów do wyświetlenia dla użytkownika.|  
 
      Ultimate, Enterprise i wszystkie wersje systemu Windows Server można wybrać więcej niż jednym języku. W innych wersjach systemu Windows należy wybrać tylko jeden język.  
@@ -4887,7 +4886,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Właściwość** |**Warunek** |  
     |------------------|-------------------|  
     |**SkipLocaleSelection** |Nie równa się tak.|  
-    |**DeploymentType** |Nie równa się ZAMIANY lub niestandardowy.|  
+    |**deploymentType** |Nie równa się ZAMIANY lub niestandardowy.|  
     |**ImageBuild** |Pierwszy znak w właściwości jest równa 6 (co oznacza kompilacji systemu Windows 7, Windows 8 lub Windows 8.1).|  
 
     ### <a name="table-105-locale-and-time-options"></a>105 tabeli. Ustawienia regionalne i opcje czasu  
@@ -4932,7 +4931,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Właściwość** |**Warunek** |  
     |------------------|-------------------|  
     |**SkipApplications** |Nie równa się tak|  
-    |**DeploymentType** |Nie równa się ZAMIEŃ|  
+    |**deploymentType** |Nie równa się ZAMIEŃ|  
     |**IsThereAtLeastOneApplicationPresent** |Więcej niż jeden|  
 
 17. Na **hasło administratora** strony w **hasło administratora** i **Potwierdź hasło administratora** wpisz ***hasło***(gdzie *hasło* jest hasłem dla wbudowanego konta administratora lokalnego na komputerze docelowym), a następnie kliknij przycisk **dalej**.  
@@ -4944,7 +4943,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Właściwość** |**Warunek** |  
     |------------------|-------------------|  
     |**SkipAdminPassword** |Nie równa się tak|  
-    |**DeploymentType** |Nie równa się ZAMIANY lub niestandardowe|  
+    |**deploymentType** |Nie równa się ZAMIANY lub niestandardowe|  
     |**TaskSequenceTemplate** |Nie równa LTIOEM. XML|  
 
 18. Na **Administratorzy lokalni** strony w **kont administratorów**wpisz ***admin_accounts*** (gdzie *admin_accounts* są konta, które chcesz dodać do wbudowanego konta administratora lokalnego na komputerze docelowym), a następnie kliknij przycisk **dalej**.  
@@ -4956,8 +4955,8 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Właściwość** |**Warunek** |  
     |------------------|-------------------|  
     |**SkipAdminAccounts** |Nie równa się tak|  
-    |**DeploymentType** |Nie równa się ZAMIEŃ i nie jest równa niestandardowe|  
-    |**Przyłączania** |Nie równa się ""|  
+    |**deploymentType** |Nie równa się ZAMIEŃ i nie jest równa niestandardowe|  
+    |**JoinDomain** |Nie równa się ""|  
 
     > [!NOTE]
     >  W przeciwieństwie do innych stron Kreatora wdrażania **kont administratorów** strona zostanie pominięta domyślnie, ponieważ wartość domyślna dla **SkipAdminAccount** właściwość jest **tak**. Aby uzyskać więcej informacji, zobacz **SkipAdminAccounts** właściwości w dokumencie MDT *odwołanie do zestawu narzędzi*.  
@@ -4971,8 +4970,8 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Właściwość** |**Warunek** |  
     |------------------|-------------------|  
     |**SkipCapture** |Nie równa się tak|  
-    |**DeploymentType** |Nie równa się odświeżania lub nie jest równa ZAMIEŃ|  
-    |**Przyłączania** |Równa ""|  
+    |**deploymentType** |Nie równa się odświeżania lub nie jest równa ZAMIEŃ|  
+    |**JoinDomain** |Równa ""|  
 
     ### <a name="table-112-capture-image-options"></a>112 tabeli. Opcje obrazu przechwytywania  
 
@@ -4992,7 +4991,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     |**Właściwość** |**Warunek** |  
     |------------------|-------------------|  
     |**SkipBitLocker** |Nie równa się tak.|  
-    |**DeploymentType** |ZAMIEŃ lub niestandardowy.|  
+    |**deploymentType** |ZAMIEŃ lub niestandardowy.|  
     |**DoCapture** |Nie równa się tak lub nie jest równa PREPARE.|  
     |**ImageBuild** |Pierwszy znak w właściwości jest równa 6 (co oznacza system operacyjny Windows Vista lub nowszy).|  
     |**ImageFlags** |Taki sam, ENTERPRISE i ULTIMATE.|  
@@ -5014,7 +5013,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Powoduje zamknięcie kreatora wdrażania i rozpoczyna się wdrażania nowego systemu operacyjnego.  
 
-##  <a name="PerformingZTIDeploymentsUsingConfigurationManager"></a>Wykonywanie wdrożenia ZTI programu Configuration Manager  
+##  <a name="PerformingZTIDeploymentsUsingConfigurationManager"></a> Wykonywanie wdrożenia ZTI programu Configuration Manager  
  Możesz wykonać wdrożenia ZTI przy użyciu programu Configuration Manager i zestaw MDT w domenie usług AD DS, w grupie roboczej systemu Windows lub z nośnika wymiennego. Wykonaj wdrożenia ZTI przez:  
 
 -   Przygotowywanie środowiska wdrożenia ZTI, zgodnie z opisem w [przygotowywanie środowiska wdrożenia ZTI programu Configuration Manager](#PreparingtheZTIDeploymentEnvironmentforConfigurationManager)  
@@ -5027,7 +5026,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Wdrażanie przechwyconych obrazów z komputerem docelowym w ZTI, zgodnie z opisem w [wdrażania przechwyconych obrazów do docelowych komputerów przy użyciu programu Configuration Manager](#DeployingCapturedImagestoTargetComputersUsingConfigurationManager)  
 
-###  <a name="PreparingtheZTIDeploymentEnvironmentforConfigurationManager"></a>Przygotowywanie środowiska wdrożenia ZTI programu Configuration Manager  
+###  <a name="PreparingtheZTIDeploymentEnvironmentforConfigurationManager"></a> Przygotowywanie środowiska wdrożenia ZTI programu Configuration Manager  
  Po przygotowaniu wstępnie wymaganej infrastruktury dla zestawu MDT można przystąpić do przygotowania środowiska wdrożenia zestawu MDT do ZTI.  
 
 ##### <a name="to-prepare-the-mdt-deployment-environment-for-zti-deployments"></a>Aby przygotować środowisko wdrożenia zestawu MDT do wdrożenia ZTI  
@@ -5040,7 +5039,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 4.  Włącz integrację konsoli programu Configuration Manager z zestawu MDT, zgodnie z opisem w [Włącz z integracji konsoli Menedżera konfiguracji programu Configuration Manager](#EnableConfigurationManagerConsoleIntegrationforConfigurationManager).  
 
-####  <a name="PreparethePrerequisiteZTIInfrastructureforUsewithConfigurationManager"></a>Przygotowanie infrastruktury ZTI wymagań wstępnych do użytku z programem Configuration Manager  
+####  <a name="PreparethePrerequisiteZTIInfrastructureforUsewithConfigurationManager"></a> Przygotowanie infrastruktury ZTI wymagań wstępnych do użytku z programem Configuration Manager  
  Wdrożenia ZTI programu Configuration Manager wymagają istnienia prawidłowo skonfigurowaną infrastrukturę programu Configuration Manager przed zainstalowaniem zestawu MDT i wykonywania wdrożeń. Upewnij się, że nowej lub istniejącej infrastruktury programu Configuration Manager jest zoptymalizowany pod kątem funkcji wdrażania systemu operacyjnego.  
 
 > [!NOTE]
@@ -5048,11 +5047,11 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Aby uzyskać więcej informacji dotyczących:  
 
--   Wymagania dotyczące sprzętu i oprogramowania dla programu Configuration Manager, zobacz [obsługiwane konfiguracje programu Configuration Manager](http://technet.microsoft.com/library/gg682077.aspx)  
+-   Wymagania dotyczące sprzętu i oprogramowania dla programu Configuration Manager, zobacz [obsługiwane konfiguracje programu Configuration Manager](https://docs.microsoft.com/sccm/core/plan-design/configs/supported-configurations)  
 
 -   Konfigurowanie infrastruktury programu Configuration Manager w celu zapewnienia obsługi wdrożenia ZTI, zobacz sekcję "krok 1: Przygotowanie wymagań wstępnych dotyczących infrastruktury"w dokumencie MDT *Przewodnik Szybki Start dla programu Microsoft System Center 2012 R2 Configuration Manager*.  
 
-####  <a name="InstallorUpgradetoMDTfortheZTIDeploymentProcessUsingConfigurationManager"></a>Instalacji lub uaktualnienia do zestawu MDT dla procesu wdrożenia ZTI programu Configuration Manager  
+####  <a name="InstallorUpgradetoMDTfortheZTIDeploymentProcessUsingConfigurationManager"></a> Instalacji lub uaktualnienia do zestawu MDT dla procesu wdrożenia ZTI programu Configuration Manager  
  Pierwszym krokiem przy wykonywaniu wdrożenia ZTI ma co najmniej jedno wystąpienie zestawu mdt w swoim środowisku. Zainstaluj zestaw MDT na każdym komputerze, który konsoli programu Configuration Manager zainstalowane i używanego do tworzenia lub edytowania sekwencji zadań, które generuje zestawu MDT. Jeśli ma istniejącego środowiska:  
 
 -   Żadnych komputerów aktualnie uruchomione MDT lub jego starszej wersji zestawu mdt, zainstalować co najmniej jedno wystąpienie nowego zestawu mdt, zgodnie z opisem w [zainstalowanie nowego wystąpienia zestawu MDT](#InstallingaNewInstanceofMDT).  
@@ -5070,7 +5069,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
         > [!NOTE]
         >  W przypadku uaktualnienia z poprzedniej wersji programu Configuration Manager, można użyć sekwencji zadań ZTI dla zestawu MDT, które zostały utworzone w poprzedniej wersji programu Configuration Manager tak długo, jak zostały utworzone przy użyciu tej samej wersji zestawu MDT.  
 
-####  <a name="ObtaintheSoftwareThattheZTIDeploymentProcessUsingConfigurationManagerRequires"></a>Uzyskaj oprogramowanie, które wymaga proces wdrożenia ZTI programu Configuration Manager  
+####  <a name="ObtaintheSoftwareThattheZTIDeploymentProcessUsingConfigurationManagerRequires"></a> Uzyskaj oprogramowanie, które wymaga proces wdrożenia ZTI programu Configuration Manager  
  Zbieraj oprogramowanie niezbędne podczas procesu wdrażania ZTI programu Configuration Manager. To oprogramowanie zostanie zaimportowana lub dodane do udziałów wdrożenia, chyba że istnieje już w udziału wdrożenia.  
 
 > [!NOTE]
@@ -5088,7 +5087,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Pliki źródłowe narzędzia USMT pozwala utworzyć pakiet oprogramowania, które zostały wdrożone na komputerach docelowych do przechwytywania danych migracji stanu użytkownika  
 
-####  <a name="EnableConfigurationManagerConsoleIntegrationforConfigurationManager"></a>Włącz integrację konsoli programu Configuration Manager dla programu Configuration Manager  
+####  <a name="EnableConfigurationManagerConsoleIntegrationforConfigurationManager"></a> Włącz integrację konsoli programu Configuration Manager dla programu Configuration Manager  
  Przed użyciem programu Configuration Manager funkcje integracji zestawu mdt, uruchom Kreatora konfigurowania integracji programu ConfigMgr. Ten Kreator kopiuje odpowiednie pliki integracji programu Configuration Manager do *Manager_root konfiguracji* (gdzie *Manager_root konfiguracji* to folder, w którym programu Configuration Manager Konsola jest zainstalowana).  
 
  Kreator dodaje również klas WMI nowe akcje niestandardowe zestawu MDT. Możesz dodać tych klas, kompilowanie pliku Managed Object Format (MOF), który zawiera nowe definicje klas.  
@@ -5113,7 +5112,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Gdy Kreator zakończy pracę, konsoli programu Configuration Manager jest skonfigurowany do integracji zestawu MDT.  
 
-###  <a name="PreparingforZTIDeploymenttotheReferenceComputerUsingConfigurationManager"></a>Przygotowywanie do wdrożenia ZTI na komputerze odniesienia przy użyciu programu Configuration Manager  
+###  <a name="PreparingforZTIDeploymenttotheReferenceComputerUsingConfigurationManager"></a> Przygotowywanie do wdrożenia ZTI na komputerze odniesienia przy użyciu programu Configuration Manager  
  Niezależnie od scenariusza wdrożenia ZTI wykonywanego zawsze zacząć od utworzenia komputera odniesienia, a następnie przechwytywania obrazu tego komputera. Później w procesie wdrożenia ZTI zostanie wdrożona na komputery docelowe odpowiednie przechwycony obraz komputera odniesienia.  
 
  Utwórz komputer odniesienia dla każdego obrazu, który chcesz utworzyć wdrożenia do komputerów docelowych. Aby uzyskać więcej informacji na temat określania Liczba obrazów wymaganych w Twojej organizacji (i następnie odwołanie wymaganej liczby komputerów), zobacz [szacowania wymagania dotyczące magazynu dla punktów dystrybucji programu Configuration Manager](#EstimateStorageRequirementsforConfigurationManagerDistributionPoints). Aby uzyskać więcej informacji o używaniu komputerów odniesienia w wdrożenia zestawu MDT, zobacz [przy użyciu komputerów odniesienia w przypadku wdrożeń MDT](#UsingReferenceComputersinMDTDeployments).  
@@ -5153,7 +5152,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     > [!NOTE]
     >  Większość sieci produkcyjnej ma wiele punktów dystrybucji. Podczas wykonywania tego kroku w środowisku produkcyjnym, wybierz odpowiednie punkty dystrybucji w sieci.  
 
-###  <a name="DeployingToandCapturinganImageoftheReferenceComputerUsingConfigurationManager"></a>Wdrażania i przechwytywania obrazu komputera odniesienia przy użyciu programu Configuration Manager  
+###  <a name="DeployingToandCapturinganImageoftheReferenceComputerUsingConfigurationManager"></a> Wdrażania i przechwytywania obrazu komputera odniesienia przy użyciu programu Configuration Manager  
  Po aktualizacji punktów dystrybucji anonsowanie sekwencji zadań na komputerze odniesienia i uruchomić komputer odniesienia z obraz rozruchowy środowiska Windows PE, utworzony wcześniej w procesie. Sekwencja zadań utworzony wcześniej wdrażanie docelowy system operacyjny, sterowniki urządzeń, pakiety systemu operacyjnego i aplikacji na komputerze odniesienia, a następnie przechwycić obraz komputera odniesienia.  
 
 ##### <a name="to-deploy-to-and-capture-an-image-of-the-reference-computer"></a>Aby wdrożyć i przechwytywania obrazu komputera odniesienia  
@@ -5170,7 +5169,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 6.  Opcjonalnie można monitorować proces wdrażania za pomocą węzła monitorowania w konsoli Deployment Workbench lub **Get-MDTMonitorData** polecenia cmdlet.  
 
-###  <a name="PreparingforZTIDeploymenttoTargetComputersUsingConfigurationManager"></a>Przygotowywanie wdrożenia ZTI do komputerów docelowych przy użyciu programu Configuration Manager  
+###  <a name="PreparingforZTIDeploymenttoTargetComputersUsingConfigurationManager"></a> Przygotowywanie wdrożenia ZTI do komputerów docelowych przy użyciu programu Configuration Manager  
  Po przechwyceniu obrazów komputera odniesienia, można je wdrożyć na komputerach docelowych. W ramach przygotowania do wdrażania przechwyconych obrazów na komputerach docelowych Utwórz jeden lub więcej sekwencji zadań do wdrażania przechwyconych obrazów, sprawdź, czy konieczne wdrażanie zasobów istnieje i dostosowania procesu wdrożenia zestawu MDT.  
 
 ##### <a name="to-prepare-for-zti-deployment-to-target-computers"></a>Aby przygotować się do wdrożenia ZTI do komputerów docelowych  
@@ -5191,7 +5190,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  W zależności od komputerów docelowych w organizacji może być konieczne dowolnej kombinacji tych scenariuszy wdrożenia. Aby uzyskać więcej informacji na temat scenariuszy wdrożenia zestawu MDT, zobacz [identyfikacji scenariuszy wdrażania](#IdentifyingDeploymentScenarios).  
 
-####  <a name="PreparefortheZTINewComputerDeploymentScenariotoTargetComputersUsingConfigurationManager"></a>Przygotowywanie scenariusza wdrażania komputera nowej ZTI na komputerach docelowych przy użyciu programu Configuration Manager  
+####  <a name="PreparefortheZTINewComputerDeploymentScenariotoTargetComputersUsingConfigurationManager">Przygotowywanie scenariusza wdrażania komputera nowej ZTI na komputerach docelowych przy użyciu programu Configuration Manager</a>  
  W scenariuszu wdrażania nowego komputera możesz wdrożyć nowa instalacja systemu operacyjnego Windows na nowym komputerze. Brak nie istniejących systemów plików, aby zachować i nie informacje o migracji użytkowników do zapisywania i przywracania. Szablon sekwencję zadań klienta do wdrażania przechwyconego obrazu komputera odniesienia do komputera docelowego.  
 
 ###### <a name="to-prepare-for-the-new-computer-deployment-scenario-to-target-computers"></a>Aby przygotować się do danego scenariusza wdrażania nowego komputera do komputerów docelowych  
@@ -5232,7 +5231,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     > [!NOTE]
     >  Większość sieci produkcyjnej ma wiele punktów dystrybucji. Podczas wykonywania tego kroku w środowisku produkcyjnym, wybierz odpowiednie punkty dystrybucji w sieci.  
 
-####  <a name="PreparefortheZTIRefreshComputerDeploymentScenariotoTargetComputersUsingConfigurationManager"></a>Przygotowanie do scenariusza wdrożenia ZTI odświeżania komputera, na komputerach docelowych przy użyciu programu Configuration Manager  
+####  <a name="PreparefortheZTIRefreshComputerDeploymentScenariotoTargetComputersUsingConfigurationManager">Przygotowanie do scenariusza wdrożenia ZTI odświeżania komputera, na komputerach docelowych przy użyciu programu Configuration Manager</a>  
  W scenariuszu wdrażania Odśwież komputer komputer jest odświeżany, łącznie z komputerów, które muszą być ponownym utworzeniu obrazu normalizacji obrazu lub w celu rozwiązania problemu. Istnieje, ale brak istniejących systemów plików, aby zachować informacje na temat migracji użytkowników do zapisywania i przywracania. Szablon sekwencję zadań klienta do wdrażania przechwyconego obrazu komputera odniesienia do komputera docelowego.  
 
 ###### <a name="to-prepare-for-the-refresh-computer-deployment-scenario-to-target-computers"></a>Aby przygotować się do komputera Odśwież scenariusz wdrażania na komputerach docelowych  
@@ -5275,7 +5274,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     > [!NOTE]
     >  Większość sieci produkcyjnej ma wiele punktów dystrybucji. Podczas wykonywania tego kroku w środowisku produkcyjnym, wybierz odpowiednie punkty dystrybucji w sieci.  
 
-####  <a name="PreparefortheZTIReplaceComputerDeploymentScenariotoTargetComputersUsingConfigurationManager"></a>Przygotowanie do scenariusza wdrożenia ZTI zamiany komputera, na komputerach docelowych przy użyciu programu Configuration Manager  
+####  <a name="PreparefortheZTIReplaceComputerDeploymentScenariotoTargetComputersUsingConfigurationManager">Przygotowanie do scenariusza wdrożenia ZTI zamiany komputera, na komputerach docelowych przy użyciu programu Configuration Manager</a>  
  W scenariuszu wdrażania komputera Zastąp jeden komputer zastępuje inny komputer. Utwórz rekord skojarzenia komputera, który kojarzy istniejącego komputera docelowego, a nowy komputer docelowy. Istniejące dane migracji stanu użytkownika jest zapisywane z istniejącego komputera docelowego. Następnie w nowej instalacji systemu Windows jest wdrażana na nowym komputerze. Ponadto dane stanu użytkownika został przywrócony do nowego komputera. Nie ma żadnych istniejących systemów plików, aby zachować.  
 
 > [!IMPORTANT]
@@ -5340,7 +5339,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     > [!NOTE]
     >  Większość sieci produkcyjnej ma wiele punktów dystrybucji. Podczas wykonywania tego kroku w środowisku produkcyjnym, wybierz odpowiednie punkty dystrybucji w sieci.  
 
-###  <a name="DeployingCapturedImagestoTargetComputersUsingConfigurationManager"></a>Wdrażania przechwyconych obrazów na komputerach docelowych przy użyciu programu Configuration Manager  
+###  <a name="DeployingCapturedImagestoTargetComputersUsingConfigurationManager"></a> Wdrażania przechwyconych obrazów na komputerach docelowych przy użyciu programu Configuration Manager  
  Wdrażania przechwyconych obrazów z komputerami docelowymi są nieco inne dla każdego scenariusza wdrożenia zestawu MDT, za pomocą ZTI. Przechwycony obraz komputera odniesienia należy wdrożyć do komputerów docelowych dla każdego scenariusza wdrażania odpowiednich w Twojej organizacji.  
 
 ##### <a name="to-deploy-the-capture-image-of-the-reference-computer-to-the-target-computers"></a>Aby wdrożyć przechwytywania obrazu komputera odniesienia na komputerach docelowych  
@@ -5374,7 +5373,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
      W zależności od komputerów docelowych w organizacji może być konieczne dowolną kombinację scenariuszy wdrożenia. Aby uzyskać więcej informacji na temat scenariuszy wdrożenia zestawu MDT, zobacz [identyfikacji scenariuszy wdrażania](#IdentifyingDeploymentScenarios).  
 
-####  <a name="DeployCapturedImagestoTargetComputersintheZTINewComputerDeploymentScenarioUsingConfigurationManager"></a>Wdrażania przechwyconych obrazów z komputerami docelowymi w scenariuszu ZTI do wdrożenia nowego komputera przy użyciu programu Configuration Manager  
+####  <a name="DeployCapturedImagestoTargetComputersintheZTINewComputerDeploymentScenarioUsingConfigurationManager">Wdrażania przechwyconych obrazów z komputerami docelowymi w scenariuszu ZTI do wdrożenia nowego komputera przy użyciu programu Configuration Manager</a>  
  Uruchom komputer docelowy przy użyciu nośnika rozruchowego sekwencji zadań, utworzony wcześniej w procesie lub z usług wdrażania systemu Windows. Każda z tych metod uruchamia środowisko Windows PE na komputerze docelowym i inicjuje proces wdrożenia ZTI. Po zakończeniu procesu przechwycony obraz komputera odniesienia jest wdrażany na komputerze docelowym.  
 
 ###### <a name="to-deploy-the-capture-images-to-the-target-computers-in-the-zti-new-computer-deployment-scenario-using-configuration-manager"></a>Aby wdrożyć obrazy przechwytywania z komputerami docelowymi w scenariuszu ZTI do wdrożenia nowego komputera przy użyciu programu Configuration Manager  
@@ -5422,7 +5421,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 2.  Wdrażanie przechwycony obraz komputera odniesienia do nowego komputera docelowego, zgodnie z opisem w [wdrożyć obraz przechwytywane do nowego komputera docelowego z danych migracji stanu użytkownika z istniejącego komputera przy użyciu programu Configuration Manager](#DeploytheCapturedImagetotheNewTargetComputerwiththeUserStateMigrationDatafromtheExistingComputerUsingConfigurationManager).  
 
-#####  <a name="SavetheUserStateMigrationDatafromtheExistingTargetComputerUsingConfigurationManager"></a>Zapisz dane migracji stanu użytkownika z istniejącego komputera docelowego przy użyciu programu Configuration Manager  
+#####  <a name="SavetheUserStateMigrationDatafromtheExistingTargetComputerUsingConfigurationManager"></a> Zapisz dane migracji stanu użytkownika z istniejącego komputera docelowego przy użyciu programu Configuration Manager  
  Uruchom proces wdrożenia ZTI, uruchamiając anonsów programu Configuration Manager do przechwytywania danych migracji stanu użytkownika, który został utworzony wcześniej w procesie. Ta sekwencja zadań jest uruchamiany w bieżący system operacyjny na komputerze docelowym istniejących.  
 
 ###### <a name="to-deploy-the-capture-images-to-the-target-computers-in-the-replace-computer-deployment-scenario-using-configuration-manager"></a>Aby wdrożyć obrazy przechwytywania z komputerami docelowymi w Zastąp komputera wdrażania scenariusza przy użyciu Menedżera konfiguracji  
@@ -5435,7 +5434,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Sekwencja zadań jest uruchamiana w bieżącym systemem operacyjnym do przechwytywania danych migracji stanu użytkownika. Na końcu sekwencji zadań danych migracji stanu użytkownika z istniejącego komputera docelowego jest zapisywany w punkcie migracji stanu programu Configuration Manager.  
 
-#####  <a name="DeploytheCapturedImagetotheNewTargetComputerwiththeUserStateMigrationDatafromtheExistingComputerUsingConfigurationManager"></a>Wdrażania przechwyconego obrazu na komputerze docelowym przy użyciu danych migracji stanu użytkownika z istniejącego komputera przy użyciu programu Configuration Manager  
+#####  <a name="DeploytheCapturedImagetotheNewTargetComputerwiththeUserStateMigrationDatafromtheExistingComputerUsingConfigurationManager"></a> Wdrażania przechwyconego obrazu na komputerze docelowym przy użyciu danych migracji stanu użytkownika z istniejącego komputera przy użyciu programu Configuration Manager  
  Uruchom komputer docelowy przy użyciu nośnika rozruchowego ZTI utworzony wcześniej w procesie lub z usług wdrażania systemu Windows. Nośnik rozruchowy ZTI uruchamia środowisko Windows PE na komputerze docelowym i inicjuje ZTI. Na koniec procesu wdrażania przechwycony obraz komputera odniesienia jest wdrożony na komputerze docelowym, a dane migracji stanu użytkownika został przywrócony z punktu migracji stanu programu Configuration Manager.  
 
 ###### <a name="deployment-scenario-for-deploying-the-captured-image"></a>scenariusz wdrażania do wdrażania przechwyconego obrazu  
@@ -5463,7 +5462,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
      Nowy komputer docelowy jest wdrażany z stanu użytkownika z istniejącego komputera docelowego automatycznie przywrócony do nowego komputera docelowego.  
 
-##  <a name="ManagingZTIDeploymentsInTheConfigurationManagerConsole"></a>Zarządzanie wdrożeniami ZTI w konsoli programu Configuration Manager  
+##  <a name="ManagingZTIDeploymentsInTheConfigurationManagerConsole"></a> Zarządzanie wdrożeniami ZTI w konsoli programu Configuration Manager  
  Możesz zarządzać wdrożenia ZTI programu Configuration Manager za pośrednictwem konsoli programu Configuration Manager. Używasz konsoli Deployment Workbench ZTI wdrożeń skonfigurowanie DB zestawu MDT. Kreatorzy służąca do konfigurowania ZTI są zintegrowane w konsoli programu Configuration Manager.  
 
  Zarządzanie wdrożeniami ZTI w konsoli programu Configuration Manager przez:  
@@ -5494,7 +5493,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Konfigurowanie ZTI kroków sekwencji zadań, które wykonują akcje skojarzone z rolą serwera, zgodnie z opisem w [Konfigurowanie ZTI serwer roli kroków sekwencji zadań w programie Configuration Manager](#ConfiguringZTIServerRoleTaskSequenceStepsinConfigurationManager)  
 
-###  <a name="CreatingaZTITaskSequenceUsingMDTTaskSequenceTemplatesinConfigurationManager"></a>Tworzenie sekwencji zadań ZTI za pomocą szablonów sekwencji zadań zestawu MDT w programie Configuration Manager  
+###  <a name="CreatingaZTITaskSequenceUsingMDTTaskSequenceTemplatesinConfigurationManager"></a> Tworzenie sekwencji zadań ZTI za pomocą szablonów sekwencji zadań zestawu MDT w programie Configuration Manager  
  Użyj Kreatora tworzenia sekwencji zadań zestawu MDT w konsoli programu Configuration Manager do tworzenia sekwencji zadań w programie Configuration Manager, które są zintegrowane z zestawu MDT. Zestaw MDT zawiera szablony sekwencji zadań, których można użyć do wdrożenia komputerów referencyjnych i docelowych.  
 
  Tworzenie sekwencji zadań ZTI za pomocą szablonów sekwencji zadań zestawu MDT przez:  
@@ -5505,24 +5504,24 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Tworzenie sekwencji zadań ZTI, zgodnie z opisem w [sekwencje zadań ZTI Utwórz za pomocą Kreatora tworzenia sekwencji zadań zestawu MDT w programie Configuration Manager](#CreateZTITaskSequencesUsingtheCreateMDTTaskSequenceWizardinConfigurationManager)  
 
-####  <a name="IdentifytheTaskSequenceTemplatesinMDTinConfigurationManager"></a>Zidentyfikowanie szablonów sekwencji zadań w zestawie MDT w programie Configuration Manager  
+####  <a name="IdentifytheTaskSequenceTemplatesinMDTinConfigurationManager"></a> Zidentyfikowanie szablonów sekwencji zadań w zestawie MDT w programie Configuration Manager  
   Tabela 121 listy szablonów w zestawie MDT programu Configuration Manager, nazwę pliku dla każdego szablonu i opis szablonu sekwencja zadań. Pliki szablonów znajdują się w *install_folder*\SCCM folder (gdzie *install_folder* to folder, w którym został zainstalowany zestaw MDT).  
 
 ### <a name="table-121-task-sequence-templates-included-in-mdt-for-configuration-manager"></a>121 tabeli. Szablony sekwencji zadań zawarte w zestawie MDT programu Configuration Manager  
 
 |**Szablon** |**Nazwa pliku** |**Wybierz ten szablon służy do** |  
 |------------------|-------------------|---------------------------------|  
-|Sekwencję zadań klienta|SCCM_Client.XML|Wdrażanie systemów operacyjnych klienta na komputerach docelowych we wszystkich scenariuszach za wyjątkiem scenariusza wdrożenia zestawu MDT Zastąp komputera.|  
-|Sekwencję zadań klienta Zamień|SCCM_ClientReplace.XML|Przechwytuje dane migracji stanu użytkownika z komputerów docelowych dla tego scenariusza wdrożenia zestawu MDT Zastąp komputera.|  
-|Firmy Microsoft do wdrażania niestandardowej sekwencji zadań|SCCM_Custom.XML|Utwórz sekwencję zadań, które mogą być dostosowywane do potrzeb organizacji.|  
-|Standard Server sekwencji zadań|SCCM_Server.XML|Wdrażanie systemów operacyjnych serwera na komputerach docelowych we wszystkich scenariuszach.|  
-|Użytkownik zmiennych sekwencji zadań instalacji|SCCM_UDI.XML|Wdrażanie systemów operacyjnych na komputerach docelowych przy użyciu UDI.|  
-|Użytkownik zmiennych sekwencji zadań instalacji Zamień|SCCM_UDIReplace.XML|Przechwytuje dane migracji stanu użytkownika z komputerów docelowych dla tego scenariusza wdrożenia zestawu MDT Zastąp komputera przy użyciu UDI.|  
+|Sekwencję zadań klienta|SCCM_Client.xml|Wdrażanie systemów operacyjnych klienta na komputerach docelowych we wszystkich scenariuszach za wyjątkiem scenariusza wdrożenia zestawu MDT Zastąp komputera.|  
+|Sekwencję zadań klienta Zamień|SCCM_ClientReplace.xml|Przechwytuje dane migracji stanu użytkownika z komputerów docelowych dla tego scenariusza wdrożenia zestawu MDT Zastąp komputera.|  
+|Firmy Microsoft do wdrażania niestandardowej sekwencji zadań|SCCM_Custom.xml|Utwórz sekwencję zadań, które mogą być dostosowywane do potrzeb organizacji.|  
+|Standard Server sekwencji zadań|SCCM_Server.xml|Wdrażanie systemów operacyjnych serwera na komputerach docelowych we wszystkich scenariuszach.|  
+|Użytkownik zmiennych sekwencji zadań instalacji|SCCM_UDI.xml|Wdrażanie systemów operacyjnych na komputerach docelowych przy użyciu UDI.|  
+|Użytkownik zmiennych sekwencji zadań instalacji Zamień|SCCM_UDIReplace.xml|Przechwytuje dane migracji stanu użytkownika z komputerów docelowych dla tego scenariusza wdrożenia zestawu MDT Zastąp komputera przy użyciu UDI.|  
 
 > [!NOTE]
 >  Zawsze używać Kreatora tworzenia sekwencji zadań zestawu MDT można zaimportować szablonów sekwencji zadań. Mimo że można ręcznie zaimportować szablony sekwencji zadań, to nie jest to zalecane.  
 
-####  <a name="IdentifythePackagesandImagesThattheMDTTaskSequenceTemplatesinConfigurationManagerRequire"></a>Zidentyfikuj pakiety i obrazów, które wymagają szablony sekwencji zadań zestawu MDT w programie Configuration Manager  
+####  <a name="IdentifythePackagesandImagesThattheMDTTaskSequenceTemplatesinConfigurationManagerRequire"></a> Zidentyfikuj pakiety i obrazów, które wymagają szablony sekwencji zadań zestawu MDT w programie Configuration Manager  
  122 tabela zawiera listę pakietów i obrazów, które wymagają szablony sekwencji zadań w zestawie MDT. Te pakiety i obrazów, musi istnieć lub można utworzyć dla sekwencji zadań do poprawnego działania w programie Configuration Manager.  
 
 ### <a name="table-122-packages-and-images-required-by-the-task-sequence-templates-included-in-mdt-for-configuration-manager"></a>122 tabeli. Pakiety i obrazy wymagane przez Szablony sekwencji zadań, które są zawarte w zestawie MDT programu Configuration Manager  
@@ -5560,7 +5559,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   **Pakiet sterowników urządzenia**. Program Configuration Manager używa pakiety sterowników, aby kontrolować dystrybucję sterowników do punktów dystrybucji. Można określić kategorie sterowników urządzeń w **automatycznie Zastosuj sterowniki** typ kroku sekwencji zadań, aby ograniczyć liczbę sterowników, które są zainstalowane, można także zainstalować wszystkie sterowniki urządzeń przy użyciu **zastosuj pakiet sterowników** zadań Typ kroku sekwencji. Aby uzyskać więcej informacji o tym, jak dołączyć sterowników urządzeń do obrazu systemu operacyjnego, zobacz sekcję "Jak do zainstalowania urządzenia sterowniki do komputerów przez przy użyciu sekwencji zadań," w bibliotece dokumentacji programu Configuration Manager, która jest dostarczana z konfiguracji Menedżer.  
 
-####  <a name="CreateZTITaskSequencesUsingtheCreateMDTTaskSequenceWizardinConfigurationManager"></a>Tworzenie sekwencji zadań ZTI przy użyciu zestawu MDT Kreator tworzenia sekwencji zadań w programie Configuration Manager  
+####  <a name="CreateZTITaskSequencesUsingtheCreateMDTTaskSequenceWizardinConfigurationManager"></a> Tworzenie sekwencji zadań ZTI przy użyciu zestawu MDT Kreator tworzenia sekwencji zadań w programie Configuration Manager  
  Zestaw MDT Kreatora tworzenia sekwencji zadań w programie Configuration Manager zastępuje pakiety i obrazy wybrane symboli zastępczych w szablonach sekwencji zadań. Po zakończeniu pracy Kreatora nowej sekwencji zadań odwołuje się do odpowiednich pakietów i obrazów.  
 
 > [!NOTE]
@@ -5608,7 +5607,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
      **Podsumowanie** paska stanu, który będzie wyświetlany postęp zadań określonych w kreatorze zostanie wyświetlona strona kreatora. Kreatora tworzenia sekwencji zadań zestawu MDT zostanie zamknięte po utworzeniu sekwencji zadań.  
 
-###  <a name="ManagingOperatingSystemsinConfigurationManager"></a>Zarządzanie systemów operacyjnych w programie Configuration Manager  
+###  <a name="ManagingOperatingSystemsinConfigurationManager"></a> Zarządzanie systemów operacyjnych w programie Configuration Manager  
  Zarządzanie systemami operacyjnymi w węźle systemy operacyjne, w obszarze roboczym Biblioteka oprogramowania. Systemy operacyjne są zawarte i zarządzane w następujących węzłach poniżej węzła systemy operacyjne:  
 
 -   **Instalatorzy systemu operacyjnego**. Ten węzeł zawiera systemy operacyjne, które są używane do wdrażania komputerów odniesienia i są oparte na plik install.wim z oryginalnego nośnika systemu operacyjnego.  
@@ -5617,7 +5616,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Aby uzyskać więcej informacji o zarządzaniu systemy operacyjne w konsoli programu Configuration Manager zobacz sekcję "Konfigurowanie Configuration Manager dla wdrożeń systemu operacyjnego," w bibliotece dokumentacji programu Configuration Manager, który jest instalowany z Menedżer konfiguracji.  
 
-###  <a name="ManagingDeviceDriversinConfigurationManager"></a>Zarządzanie sterownikami urządzeń w programie Configuration Manager  
+###  <a name="ManagingDeviceDriversinConfigurationManager"></a> Zarządzanie sterownikami urządzeń w programie Configuration Manager  
  Zarządzanie sterownikami urządzeń w konsoli programu Configuration Manager w programie Configuration Manager przez:  
 
 -   Importowanie sterowników urządzeń do programu Configuration Manager, zgodnie z opisem w [importowania sterowników do programu Configuration Manager](#ImportDriversintoConfigurationManager)  
@@ -5628,13 +5627,13 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Wdrażanie określone sterowniki urządzeń do komputerów docelowych dla wdrożenia ZTI zgodnie z opisem w [wdrożyć określone sterowniki urządzeń na komputerach docelowych w programie Configuration Manager](#DeploySpecificDeviceDriverstoTargetComputersinConfigurationManager)  
 
-####  <a name="ImportDriversintoConfigurationManager"></a>Importowanie sterowników do programu Configuration Manager  
+####  <a name="ImportDriversintoConfigurationManager"></a> Importowanie sterowników do programu Configuration Manager  
  Aby zaimportować sterowniki do programu Configuration Manager, użyj Kreatora importowania nowego sterownika. Informacje dotyczące tego kreatora zobacz sekcję "Jak do importowania Windows sterowników do katalogu sterowników urządzeń," w bibliotece dokumentacji programu Configuration Manager, który jest instalowany z programem Configuration Manager.  
 
-####  <a name="CreateaNewConfigurationManagerDriverPackage"></a>Utwórz nowy pakiet sterowników programu Configuration Manager  
+####  <a name="CreateaNewConfigurationManagerDriverPackage"></a> Utwórz nowy pakiet sterowników programu Configuration Manager  
  Pakiet sterowników z zawartością skojarzony z co najmniej jednego sterownika urządzenia. Należy dodać sterowniki urządzeń do pakietu sterowników i skopiuj je do punktu dystrybucji, aby je zainstalować klientów programu Configuration Manager. Informacji o tworzeniu nowego pakietu sterowników Zobacz sekcję "Jak Aby utworzyć nowy pakiet sterowników," w bibliotece dokumentacji Menedżera konfiguracji, który jest instalowany z programem Configuration Manager.  
 
-####  <a name="AddDeviceDriverstoOperatingSystemandBootImagesinConfigurationManager"></a>Dodawanie sterowników urządzeń do operacyjnego i obrazy rozruchowe w programie Configuration Manager  
+####  <a name="AddDeviceDriverstoOperatingSystemandBootImagesinConfigurationManager"></a> Dodawanie sterowników urządzeń do operacyjnego i obrazy rozruchowe w programie Configuration Manager  
  Po dodaniu sterowników urządzeń do katalogu sterowników, można dodać je do obrazów rozruchowych i istniejącymi systemami operacyjnymi. Katalogu sterowników ułatwia zarządzanie kosztów i wprowadzania złożoności wdrażania systemu operacyjnego w środowisku, które zawiera różne typy komputerów i urządzeń. Przechowywanie sterowniki urządzeń w katalogu sterowników, a nie z każdego obrazu systemu operacyjnego poszczególnych znacznie zmniejsza liczbę obrazów systemu operacyjnego, które są potrzebne.  
 
  Informacje o zarządzaniu katalogiem sterowników Zobacz sekcję "Jak do zarządzania sterownik katalogu w programie Configuration Manager" w bibliotece dokumentacji programu Configuration Manager, który jest instalowany z programem Configuration Manager.  
@@ -5645,22 +5644,22 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Dodawanie sterowników urządzeń z katalogu sterowników do istniejących obrazów rozruchowych, zgodnie z opisem w [Dodawanie sterowników urządzeń do obrazu rozruchowego w programie Configuration Manager](#AddDeviceDriverstoaBootImageinConfigurationManager).  
 
-#####  <a name="AddDeviceDriverstoanOperatingSysteminConfigurationManager"></a>Dodawanie sterowników urządzeń do systemu operacyjnego w programie Configuration Manager  
+#####  <a name="AddDeviceDriverstoanOperatingSysteminConfigurationManager"></a> Dodawanie sterowników urządzeń do systemu operacyjnego w programie Configuration Manager  
  Dodaj nowe sterowniki urządzeń do istniejącego obrazu systemu operacyjnego za pomocą edytora sekwencji zadań. Aby umożliwić programowi Configuration Manager, aby wyszukać w katalogu sterowników dla nowych sterowników urządzeń, należy dodać **automatycznie Zastosuj sterowniki** krok sekwencji zadań do istniejącej sekwencji zadań.  
 
  Dla informacji na temat dodawania sterowników urządzeń do systemu operacyjnego Zobacz sekcję "Jak do zainstalowania urządzenia sterowniki do komputerów przez przy użyciu sekwencji zadań," w bibliotece dokumentacji programu Configuration Manager, który jest instalowany z programem Configuration Manager.  
 
-#####  <a name="AddDeviceDriverstoaBootImageinConfigurationManager"></a>Dodawanie sterowników urządzeń do obrazu rozruchowego w programie Configuration Manager  
+#####  <a name="AddDeviceDriverstoaBootImageinConfigurationManager"></a> Dodawanie sterowników urządzeń do obrazu rozruchowego w programie Configuration Manager  
  Można dodać sterowniki urządzeń systemu Windows, które zostały zaimportowane do katalogu sterowników do obrazów rozruchowych. Tylko sterowniki urządzeń pamięci masowej i sterowniki kart sieciowych powinni zostać dodani do rozruchu obrazów, ponieważ sterowniki innych typów nie są potrzebne i spowoduje zwiększenie rozmiaru obrazu rozruchowego. Tylko dodać prawidłowe sterowniki, które są przeznaczone do użycia z programem Windows 8.1, ponieważ wersja systemu Windows PE jest oparta na Windows 8.1.  
 
  Informacje na temat dodawania sterowników urządzeń do obrazów rozruchowych, zobacz sekcję "Jak do dodać i usunąć urządzenie sterowniki czy są skojarzone z sterownika pakietów i obrazy rozruchowe," w bibliotece dokumentacji programu Configuration Manager, który został zainstalowany z konfiguracją Menedżer.  
 
-####  <a name="DeploySpecificDeviceDriverstoTargetComputersinConfigurationManager"></a>Wdrażanie określone sterowniki urządzeń na komputerach docelowych w programie Configuration Manager  
+####  <a name="DeploySpecificDeviceDriverstoTargetComputersinConfigurationManager"></a> Wdrażanie określone sterowniki urządzeń na komputerach docelowych w programie Configuration Manager  
  Domyślnie ZTI programu Configuration Manager wdraża wszystkie sterowniki urządzeń na komputerach docelowych. Następnie docelowy system operacyjny używa identyfikatorów Plug and Play do identyfikowania sterowniki urządzeń wymagane dla urządzeń na komputerach docelowych.  
 
  Aby zmienić to zachowanie domyślne, należy skonfigurować proces wdrożenia ZTI, aby zainstalować określone sterowniki do komputerów docelowych, zgodnie z opisem w [kontroli urządzenia sterownika wdrożenia przy użyciu Menedżera konfiguracji dla ZTI](#ControlDeviceDriverDeploymentsUsingConfigurationManagerforZTI). Aby uzyskać więcej informacji na temat strategii zarządzania sterownikami urządzeń, zobacz [wybierz strategii zarządzania urządzeniami sterownika](#SelecttheDeviceDriverManagementStrategy).  
 
-###  <a name="DeployinganOperatingSystemUsingTaskSequenceBootableMediainConfigurationManager"></a>Wdrażanie systemu operacyjnego przy użyciu nośnika rozruchowego w sekwencji zadań w programie Configuration Manager  
+###  <a name="DeployinganOperatingSystemUsingTaskSequenceBootableMediainConfigurationManager"></a> Wdrażanie systemu operacyjnego przy użyciu nośnika rozruchowego w sekwencji zadań w programie Configuration Manager  
  Do inicjowania wdrożenia ZTI programu Configuration Manager z nośnika rozruchowego, należy uruchomić z nośnika rozruchowego na komputerze docelowym. Proces rozruchu uruchamia środowisko Windows PE, a następnie uruchamia ZTI. Można uruchomić na komputerze docelowym z dysk flash USB, dysk CD lub DVD.  
 
 > [!NOTE]
@@ -5668,7 +5667,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Aby uzyskać więcej informacji na temat wdrażania systemu operacyjnego przy użyciu nośnika rozruchowego w sekwencji zadań, zobacz sekcję "Jak do wdrażania systemów operacyjnych przez za pomocą nośników w Configuration Manager" w bibliotece dokumentacji programu Configuration Manager, który został zainstalowany z Menedżer konfiguracji.  
 
-###  <a name="CreatingTaskSequenceBootableMediainConfigurationManager"></a>Tworzenie nośnika rozruchowego w sekwencji zadań w programie Configuration Manager  
+###  <a name="CreatingTaskSequenceBootableMediainConfigurationManager"></a> Tworzenie nośnika rozruchowego w sekwencji zadań w programie Configuration Manager  
  Aby zainicjować proces wdrożenia ZTI programu Configuration Manager z nośnika rozruchowego, udostępnia metody uruchamiania komputera za pomocą środowiska Windows PE i niezbędne oprogramowania przez utworzenie dysku rozruchowego nośnika sekwencji zadań. Użyj Kreatora nośnika sekwencji zadań w konsoli programu Configuration Manager do tworzenia nośnika rozruchowego dla magazynu na dysk flash USB, dysk CD lub DVD.  
 
 > [!NOTE]
@@ -5676,7 +5675,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Aby uzyskać więcej informacji o sposobie tworzenia nośnika rozruchowego w sekwencji zadań zobacz sekcję "Jak do tworzenia nośnika rozruchowego," w bibliotece dokumentacji programu Configuration Manager, który jest instalowany z programem Configuration Manager.  
 
-###  <a name="CreatingZTIBootImagesinConfigurationManager"></a>Tworzenie obrazów rozruchowych ZTI w programie Configuration Manager  
+###  <a name="CreatingZTIBootImagesinConfigurationManager"></a> Tworzenie obrazów rozruchowych ZTI w programie Configuration Manager  
  Niektóre sytuacje wymagają należy utworzyć nowy obraz rozruchowy dla procesu ZTI bez uruchamiania Kreatora tworzenia sekwencji zadań zestawu MDT. Można tworzyć nowych obrazów rozruchowych dla ZTI za pomocą tworzenia obrazu rozruchowego za pomocą Kreatora zestawu MDT w węźle obrazy rozruchowe w konsoli programu Configuration Manager.  
 
 ##### <a name="to-create-a-zti-boot-image-in-configuration-manager"></a>Aby utworzyć obraz rozruchowy ZTI w programie Configuration Manager  
@@ -5697,24 +5696,24 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
     |**Na tej stronie kreatora** |**W tym** |  
     |-----------------------------|-----------------|  
-    |**Źródło pakietów** |a. W **folderu źródłowego pakietu należy utworzyć ścieżkę UNC**, typ ***unc_path*** (gdzie *unc_path* jest w pełni kwalifikowaną ścieżkę UNC do folderu, który ma być używany jako źródło dla uruchomienia Pakiet obrazów).<br /><br /> Konto usługi programu Configuration Manager musi mieć uprawnienia do modyfikowania zawartości tej ścieżki UNC, aby zaktualizować obrazy rozruchowe. Upewnij się, że konto usługi programu Configuration Manager ma odpowiednie uprawnienia w tym udostępnionym folderze sieciowym.<br /><br /> Alternatywnie kliknij **Przeglądaj** można odnaleźć udostępnionego folderu sieciowego.<br /><br /> b. Kliknij przycisk **Dalej**.|  
+    |**Package Source** |a. W **folderu źródłowego pakietu należy utworzyć ścieżkę UNC**, typ ***unc_path*** (gdzie *unc_path* jest w pełni kwalifikowaną ścieżkę UNC do folderu, który ma być używany jako źródło dla uruchomienia Pakiet obrazów).<br /><br /> Konto usługi programu Configuration Manager musi mieć uprawnienia do modyfikowania zawartości tej ścieżki UNC, aby zaktualizować obrazy rozruchowe. Upewnij się, że konto usługi programu Configuration Manager ma odpowiednie uprawnienia w tym udostępnionym folderze sieciowym.<br /><br /> Alternatywnie kliknij **Przeglądaj** można odnaleźć udostępnionego folderu sieciowego.<br /><br /> b. Kliknij przycisk **Dalej**.|  
     |**Ustawienia ogólne** |a. W **nazwa**, typ ***nazwa_pakietu*** (gdzie *nazwa_pakietu* jest opisowa nazwa wyświetlana w konsoli programu Configuration Manager).<br /><br /> b. W **wersji**, typ ***package_version*** (gdzie *package_version* jest numer wersji, który ma zostać przypisany do pakietu).<br /><br /> c. W **komentarze**, typ ***package_comments*** (gdzie *package_comments* jest tekst, który opisuje cel obraz rozruchowy).<br /><br /> d. Kliknij przycisk **Dalej**.|  
     |**Ustawienia ogólne: Opcje** |a. W **platformy**, kliknij przycisk ***platformy*** (gdzie *platformy* to architektura platformy obrazu rozruchowego — x86 lub x64).<br /><br /> b. W **miejsce na pliki tymczasowe**, wybierz pozycję ***scratch_space*** (gdzie *scratch_space* jest dostępna w środowisku Windows PE woluminu systemowego podczas rozruchu w trybie ramdisk ilość miejsca zapisu i jest określana w MB).<br /><br /> c. Kliknij przycisk **Dalej**.|  
     |**Ustawienia ogólne: Składniki** |a. W **platformy**, kliknij przycisk ***platformy*** (gdzie *platformy* to architektura platformy obrazu rozruchowego — x86 lub x64).<br /><br /> b. Wybierz lub wyczyść ***składnika*** pole wyboru (gdzie składnika jest nazwa składnika należy wybrać). Jeśli pole wyboru jest:<br /><br /> -Zaznaczone, składnik jest dodawane do obrazu rozruchowego<br /><br /> -Wyczyszczone, składnik nie zostanie dodany do obrazu rozruchowego<br /><br /> Obsługa skryptów, HTA XML i usługi WMI są zawsze dodawane do obrazu rozruchowego.<br /><br /> c. Kliknij przycisk **Dalej**.|  
-    |**Dostosowywanie** |a. Wybierz lub wyczyść **nośnika rozruchowego plików poleceń przeduruchomieniowych Dodaj, aby włączyć Kreatora wdrażania tego** pole wyboru. Jeśli to pole wyboru jest:<br /><br /> -Wybrana, pliki poleceń przeduruchomieniowych są dodawane do obrazu rozruchowego. W **wiersza polecenia**, wpisz na uruchomienie skryptu polecenia przeduruchomieniowego, jakie nie ZTIMediaHook.wsf. W **folderu plików poleceń przeduruchomieniowych**, typ ***unc_path*** (gdzie *unc_path* jest w pełni kwalifikowaną ścieżkę UNC do folderu zapisu).<br /><br /> Alternatywnie kliknij **Przeglądaj** do folderu, w którym znajdują się pliki poleceń przeduruchomieniowych.<br /><br /> -Wyczyszczone, plikami polecenia przeduruchomieniowego nie są dodawane do obrazu rozruchowego.<br /><br /> b. Wybierz lub wyczyść **dodać dodatkowe pliki do nowego obrazu rozruchowego** pole wyboru. Jeśli to pole wyboru jest:<br /><br /> -Zaznaczone, dodatkowe pliki są dodawane do obrazu rozruchowego. W **ścieżki**, typ ***ścieżki*** (gdzie *ścieżki* jest lokalny w pełni kwalifikowaną lub względną lub ścieżką UNC do folderu zapisu).<br /><br /> Alternatywnie kliknij **Przeglądaj** do folderu, w którym znajdują się dodatkowe pliki.<br /><br /> -Wyczyszczone, dodatkowe pliki nie są dodawane do obrazu rozruchowego.<br /><br /> c. W **przy użyciu pliku mapy bitowej niestandardowego tła (ścieżka UNC)**, typ ***unc_path*** (gdzie *unc_path* jest w pełni kwalifikowaną ścieżkę UNC do pliku mapy bitowej, który ma być używany jako tło).<br /><br /> Alternatywnie kliknij **Przeglądaj** można znaleźć pliku mapy bitowej.<br /><br /> d. Wybierz lub wyczyść **włączenie obsługi wiersza polecenia (F8)** pole wyboru.<br /><br /> e. Kliknij przycisk **Dalej**.|  
+    |Dostosowywanie** |a. Wybierz lub wyczyść **nośnika rozruchowego plików poleceń przeduruchomieniowych Dodaj, aby włączyć Kreatora wdrażania tego** pole wyboru. Jeśli to pole wyboru jest:<br /><br /> -Wybrana, pliki poleceń przeduruchomieniowych są dodawane do obrazu rozruchowego. W **wiersza polecenia**, wpisz na uruchomienie skryptu polecenia przeduruchomieniowego, jakie nie ZTIMediaHook.wsf. W **folderu plików poleceń przeduruchomieniowych**, typ ***unc_path*** (gdzie *unc_path* jest w pełni kwalifikowaną ścieżkę UNC do folderu zapisu).<br /><br /> Alternatywnie kliknij **Przeglądaj** do folderu, w którym znajdują się pliki poleceń przeduruchomieniowych.<br /><br /> -Wyczyszczone, plikami polecenia przeduruchomieniowego nie są dodawane do obrazu rozruchowego.<br /><br /> b. Wybierz lub wyczyść **dodać dodatkowe pliki do nowego obrazu rozruchowego** pole wyboru. Jeśli to pole wyboru jest:<br /><br /> -Zaznaczone, dodatkowe pliki są dodawane do obrazu rozruchowego. W **ścieżki**, typ ***ścieżki*** (gdzie *ścieżki* jest lokalny w pełni kwalifikowaną lub względną lub ścieżką UNC do folderu zapisu).<br /><br /> Alternatywnie kliknij **Przeglądaj** do folderu, w którym znajdują się dodatkowe pliki.<br /><br /> -Wyczyszczone, dodatkowe pliki nie są dodawane do obrazu rozruchowego.<br /><br /> c. W **przy użyciu pliku mapy bitowej niestandardowego tła (ścieżka UNC)**, typ ***unc_path*** (gdzie *unc_path* jest w pełni kwalifikowaną ścieżkę UNC do pliku mapy bitowej, który ma być używany jako tło).<br /><br /> Alternatywnie kliknij **Przeglądaj** można znaleźć pliku mapy bitowej.<br /><br /> d. Wybierz lub wyczyść **włączenie obsługi wiersza polecenia (F8)** pole wyboru.<br /><br /> e. Kliknij przycisk **Dalej**.|  
     |**Podsumowanie** |Przejrzyj informacje w **szczegóły**, a następnie kliknij przycisk **dalej**.|  
     |**Potwierdzenie** |Możesz kliknąć **Zapisz dane wyjściowe** można zapisać do pliku dane wyjściowe kreatora. Możesz również kliknąć **Wyświetl skrypt** do wyświetlania skryptów programu Windows PowerShell, używane do wykonywania zadań kreatora.<br /><br /> Kliknij przycisk **Zamknij**.|  
 
  Po utworzenia obrazu rozruchowego za pomocą Kreatora zestawu MDT zakończeniu nowy obraz rozruchowy zostanie wyświetlony w okienku podglądu w konsoli programu Configuration Manager.  
 
-###  <a name="ManagingSoftwarePackagesinConfigurationManager"></a>Zarządzanie pakietów oprogramowania w programie Configuration Manager  
+###  <a name="ManagingSoftwarePackagesinConfigurationManager"></a> Zarządzanie pakietów oprogramowania w programie Configuration Manager  
  Zarządzaj pakietami oprogramowania w konsoli programu Configuration Manager w programie Configuration Manager przez:  
 
 -   Dodawanie pakietów językowych, zgodnie z opisem w [dodać pakiety językowe w programie Configuration Manager](#AddLanguagePacksinConfigurationManager)  
 
 -   Dodawanie aktualizacji oprogramowania, zgodnie z opisem w [dodać aktualizacje oprogramowania w programie Configuration Manager](#AddSoftwareUpdatesinConfigurationManager)  
 
-####  <a name="AddLanguagePacksinConfigurationManager"></a>Dodaj pakiety językowe w programie Configuration Manager  
+####  <a name="AddLanguagePacksinConfigurationManager"></a> Dodaj pakiety językowe w programie Configuration Manager  
  *Pakiety językowe* to pliki cab, które można dodać do pakietów programu Configuration Manager w trybie offline lub online. Przed dodaniem pakietów językowych, jednak należy utworzyć pakiet programu Configuration Manager, który zawiera jeden lub więcej pakietów językowych.  
 
  Liczba pakietów językowych, które dodajesz do pakietu programu Configuration Manager opiera się na typ wdrożenia jest wykonywane. W przypadku wdrażania pakietów językowych za pomocą:  
@@ -5817,7 +5816,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 11. W ***task_sequence_name*** **edytora sekwencji zadań** okno dialogowe, kliknij przycisk **OK**.  
 
-####  <a name="AddSoftwareUpdatesinConfigurationManager"></a>Dodawanie aktualizacji oprogramowania w programie Configuration Manager  
+####  <a name="AddSoftwareUpdatesinConfigurationManager"></a> Dodawanie aktualizacji oprogramowania w programie Configuration Manager  
  Dodawanie aktualizacji za pomocą Menedżera konfiguracji — online lub offline — podczas sekwencji zadań. Zarządzanie aktualizacjami oprogramowania w programie Configuration Manager za pomocą serwera skonfigurowanego jako punkt aktualizacji oprogramowania. Aby uzyskać szczegółowe informacje o aktualizacjach oprogramowania za pomocą programu Configuration Manager zobacz sekcję "Konfigurowanie oprogramowania aktualizacji w programie Configuration Manager" w bibliotece dokumentacji programu Configuration Manager, który jest instalowany z programem Configuration Manager.  
 
  Pakiety wdrożeniowe używany do wdrażania aktualizacji oprogramowania. Aby uzyskać więcej informacji o konfiguracji i wdrażania oprogramowania pakietów aktualizacji, zobacz sekcję "Pobierz aktualizacje oprogramowania," w bibliotece dokumentacji programu Configuration Manager, który jest instalowany z programem Configuration Manager.  
@@ -5901,15 +5900,15 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 > [!NOTE]
 >  Rola punktu aktualizacji oprogramowania i systemu Windows Server Update Services (WSUS) musi być poprawnie skonfigurowane do pracy z tym typem kroku sekwencji zadań.  
 
-###  <a name="ManagingTaskSequenceDeploymentinConfigurationManager"></a>Zarządzanie wdrożenia sekwencji zadań w programie Configuration Manager  
+###  <a name="ManagingTaskSequenceDeploymentinConfigurationManager"></a> Zarządzanie wdrożenia sekwencji zadań w programie Configuration Manager  
  W przypadku wdrożeń ZTI programu Configuration Manager należy wdrożyć sekwencji zadań na komputerach docelowych przy użyciu Kreatora wdrażania oprogramowania. Sekwencja zadań jest wdrażana w kolekcji, która zawiera komputer odniesienia lub komputerach docelowych. Aby uzyskać więcej informacji o wdrażaniu sekwencji zadań zobacz sekcję "Jak do wdrażania sekwencji zadań," w sekcji "Jak do zarządzania zadań sekwencje w programie Configuration Manager" w bibliotece dokumentacji programu Configuration Manager, który jest instalowany z Menedżer konfiguracji.  
 
-###  <a name="ManuallyAddingComputerstotheSiteDatabaseinConfigurationManager"></a>Ręczne dodawanie komputerów do bazy danych lokacji w programie Configuration Manager  
+###  <a name="ManuallyAddingComputerstotheSiteDatabaseinConfigurationManager"></a> Ręczne dodawanie komputerów do bazy danych lokacji w programie Configuration Manager  
  W przypadku wdrożeń ZTI programu Configuration Manager komputery, musi istnieć w bazie danych lokacji programu Configuration Manager przed może anonsować sekwencji zadań na komputerze. Configuration Manager udostępnia funkcję automatycznego dodawania komputerów docelowych do bazy danych lokacji. Jednak w przypadku komputerów odniesienia łatwiej można ręcznie dodać komputer odniesienia do bazy danych lokacji.  
 
  Aby uzyskać więcej informacji na temat ręcznego dodawania komputerów do bazy danych lokacji Zobacz sekcję "Jak do dodawania komputera do Menedżera bazy danych konfiguracji" w sekcji "Jak do wdrażania systemów operacyjnych w programie Configuration Manager" w programie Configuration Manager Biblioteka dokumentacji, która jest instalowana z programem Configuration Manager.  
 
-###  <a name="ManagingComputerCollectionsinConfigurationManager"></a>Zarządzanie kolekcjami komputera w programie Configuration Manager  
+###  <a name="ManagingComputerCollectionsinConfigurationManager"></a> Zarządzanie kolekcjami komputera w programie Configuration Manager  
  W przypadku wdrożeń ZTI programu Configuration Manager sekwencje zadań musi być anonsowany dla kolekcji komputerów docelowych. W programie Configuration Manager *kolekcje* to grupa składająca się z co najmniej jednym komputerze. Aby uzyskać więcej informacji o zarządzaniu kolekcji komputerów zobacz następujące sekcje w bibliotece dokumentacji programu Configuration Manager, który jest instalowany z programem Configuration Manager:  
 
 -   "Wprowadzenie do kolekcji w programie Configuration Manager"  
@@ -5920,14 +5919,14 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   "Zabezpieczenia i prywatność kolekcji w programie Configuration Manager"  
 
-###  <a name="ManagingDistributionPointsinConfigurationManager"></a>Zarządzanie punktami dystrybucji w programie Configuration Manager  
+###  <a name="ManagingDistributionPointsinConfigurationManager"></a> Zarządzanie punktami dystrybucji w programie Configuration Manager  
  W przypadku wdrożeń ZTI przy użyciu programu Configuration Manager *punktów dystrybucji* są repozytorium dla plików wdrażane na komputerach referencyjnych i docelowych. Organizacja może mieć więcej niż jeden punkt dystrybucji. Skonfiguruj punkty dystrybucji dla obrazów systemu operacyjnego i pakiety oprogramowania, które korzysta z zestawu MDT, zapewniając w ten sposób każdy komputer odniesienia i obiekt docelowy trwałe, szybkich dystrybucji punkt połączenia.  
 
  Jeśli wprowadzisz zmiany obrazy systemu operacyjnego, pakiety oprogramowania, które korzysta z zestawu MDT, należy zaktualizować punkty dystrybucji, w którym są przechowywane te obrazy i pakiety.  
 
  Aby uzyskać więcej informacji na temat zarządzania punktami dystrybucji zobacz sekcję "Operacje i konserwacja dla zawartości zarządzania w programie Configuration Manager" w bibliotece dokumentacji programu Configuration Manager, który jest instalowany z programem Configuration Manager.  
 
-###  <a name="ConfiguringZTITaskSequenceStepsinConfigurationManager"></a>Konfigurowanie sekwencji zadań ZTI kroki w programie Configuration Manager  
+###  <a name="ConfiguringZTITaskSequenceStepsinConfigurationManager"></a> Konfigurowanie sekwencji zadań ZTI kroki w programie Configuration Manager  
  Po utworzeniu sekwencji zadań ZTI za pomocą Kreatora tworzenia sekwencji zadań zestawu MDT w programie Configuration Manager, można dostosować za pomocą konsoli programu Configuration Manager. Konsola programu Configuration Manager umożliwia:  
 
 -   Dodaj nowe kroki sekwencji zadań  
@@ -5942,7 +5941,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Sekwencje zadań, zobacz sekcję "Planowanie zadań sekwencji strategii w programie Configuration Manager" w bibliotece dokumentacji programu Configuration Manager, który jest instalowany z programem Configuration Manager.  
 
-###  <a name="ConfiguringZTIServerRoleTaskSequenceStepsinConfigurationManager"></a>Konfigurowanie sekwencji zadań w roli serwera ZTI kroki w programie Configuration Manager  
+###  <a name="ConfiguringZTIServerRoleTaskSequenceStepsinConfigurationManager"></a> Konfigurowanie sekwencji zadań w roli serwera ZTI kroki w programie Configuration Manager  
  ZTI ułatwia automatyzację wdrażania ról serwera w systemie Windows Server. Skonfiguruj kroków sekwencji zadań ZTI w programie Configuration Manager do wdrażania ról serwera obsługiwanych, które obejmują:  
 
 -   USŁUGI AD DS  
@@ -5953,7 +5952,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Proces konfigurowania kroki sekwencji zadań w roli serwera jest podobny do ZTI i LTI. Aby uzyskać więcej informacji o konfigurowaniu kroków sekwencji zadań roli serwera do ZTI w programie Configuration Manager, zobacz [Konfigurowanie kroków sekwencji zadań roli serwera](#ConfiguringServerRoleTaskSequenceSteps).  
 
-##  <a name="PerformingUDIDeployments"></a>Wykonywanie UDI wdrożenia  
+##  <a name="PerformingUDIDeployments"></a> Wykonywanie UDI wdrożenia  
  Możesz wykonać UDI wdrożeń w zestawie MDT przy użyciu programu Configuration Manager w ramach domeny usług AD DS, w grupie roboczej systemu Windows lub z nośnika wymiennego.  
 
 > [!NOTE]
@@ -5973,7 +5972,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Wdrażania przechwyconych obrazów na komputer docelowy przy użyciu UDI zgodnie z opisem w [wdrażania przechwyconych obrazów UDI przy użyciu komputerów docelowych](#DeployingCapturedImagestoTargetComputersUsingUDI)  
 
-###  <a name="OverviewofUDIDeployments"></a>Omówienie wdrożenia UDI  
+###  <a name="OverviewofUDIDeployments"></a> Omówienie wdrożenia UDI  
  UDI umożliwia interakcyjne wdrożenia systemu operacyjnego i aplikacji przy użyciu programu Configuration Manager. Zazwyczaj podczas wdrażania systemów operacyjnych przy użyciu tej funkcji OSD w programie Configuration Manager i ZTI w zestawie MDT, musisz podać wszystkie informacje niezbędne do wdrożenia systemu operacyjnego. Przed przystąpieniem do wdrażania, informacje jest skonfigurowany w plikach konfiguracji lub w bazach danych (na przykład plik CustomSettings.ini lub zestaw MDT bazy danych). W procesie wdrożenia ZTI ZTI konwertuje zmienne sekwencji zadań, które zużywają sekwencje zadań zestawu MDT dla UDI odpowiednie ustawienia konfiguracji. Przed rozpoczęciem wdrażania należy podać wszystkie ustawienia konfiguracji.  
 
  UDI udostępnia kreatora Interfejs uruchomioną na komputerze docelowym, który umożliwia podanie informacji o konfiguracji bezpośrednio przed systemu operacyjnego i wdrażania aplikacji. Dzięki temu można utworzyć rodzajowe sekwencje zadań wdrożenia systemu operacyjnego, a następnie innym użytkownikom, podaj informacje określonego komputera w czasie wdrażania, co zapewnia większą elastyczność w procesie wdrażania.  
@@ -6000,7 +5999,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 |*Przewodnik dla deweloperów instalacji opartej na użytkownika*|Ta zawartość udostępnia instrukcje dotyczące dostosować i rozszerzyć UDI do potrzeb organizacji.|  
 |W sekcji "UDI pojęcia" *odwołanie do usługi Microsoft Deployment Toolkit*|Ta zawartość zawiera definicje terminów UDI i terminologia i informacje o pojęciach dotyczących UDI.|  
 
-####  <a name="OverviewofUDIinMDTDeploymentScenarios"></a>Omówienie UDI w środowiskach wdrożenia zestawu MDT  
+####  <a name="OverviewofUDIinMDTDeploymentScenarios">Omówienie UDI w środowiskach wdrożenia zestawu MDT</a>  
  UDI obsługuje nowy komputer, Odśwież komputera i Zastąp MDT komputera scenariusze wdrażania, które zostały opisane w [identyfikacji scenariuszy wdrażania](#IdentifyingDeploymentScenarios). UDI obsługuje te scenariusze wdrożenia za pomocą szablonów sekwencji zadań programu Configuration Manager dostarczane z zestawu MDT. 136 tabeli wymieniono scenariusze wdrożenia zestawu MDT i odpowiednie szablony sekwencji zadań UDI używane w celu wykonania danego scenariusza wdrażania.  
 
 ### <a name="table-136-mdt-deployment-scenarios-and-udi-task-sequence-templates-used-to-perform-the-scenarios"></a>136 tabeli. Scenariusze wdrożenia zestawu MDT i szablony sekwencji zadań UDI używany do wykonywania w scenariuszach  
@@ -6021,7 +6020,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Więcej informacji na temat sposobu UDI działa w każdym z tych scenariuszy wdrożenia zestawu MDT można znaleźć odpowiedniej części "Odwołania do etapu UDI" w *odwołanie do usługi Microsoft Deployment Toolkit*.  
 
-#####  <a name="UDIintheNewComputerDeploymentScenario"></a>UDI w nowy scenariusz wdrażania komputera  
+#####  <a name="UDIintheNewComputerDeploymentScenario">UDI w nowy scenariusz wdrażania komputera</a>  
  Dla Kreatora nowego wdrożenia komputera obrazy systemu operacyjnego może być w następujących lokalizacjach:  
 
 -   **W punkcie dystrybucji**. Ta metoda używa tradycyjnych metodę wdrażania wdrożenia systemu operacyjnego w programie Configuration Manager.  
@@ -6040,14 +6039,14 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  **Rysunek 3. Przebieg procesu UDI wykonywania scenariusz wdrażania nowego komputera z wstępnie przygotowanego nośnika**  
 
-#####  <a name="UDIintheRefreshComputerDeploymentScenario"></a>UDI w scenariuszu wdrażania odświeżania komputera  
+#####  <a name="UDIintheRefreshComputerDeploymentScenario">UDI w scenariuszu wdrażania odświeżania komputera</a>  
  Sekwencje zadań, używany do wykonywania w scenariuszu odświeżania komputera używają tego samego szablonu sekwencji zadań jako scenariusza nowy komputer **sekwencji zadań instalacji zmiennych użytkownika** szablonu sekwencji zadań. Scenariusz wdrażania komputera Odśwież zawsze zaczyna się od komputera docelowego z istniejącego systemu operacyjnego Windows, czyli jak sekwencji zadań zna różnica między scenariusz wdrażania Odśwież komputer i wdrożenia nowego komputera Scenariusz. Rysunek 4 przedstawia sposób UDI jest używany w scenariuszu wdrażania Odśwież komputer.  
 
  ![MDTDevToolkit4](media/MDTDevToolkit4.jpg "MDTDevToolkit4")  
 
  Rysunek 4. Przebieg procesu UDI wykonywania scenariusz wdrażania odświeżania komputera  
 
-#####  <a name="UDIintheReplaceComputerDeploymentScenario"></a>UDI w scenariuszu wdrażania komputera Zamień  
+#####  <a name="UDIintheReplaceComputerDeploymentScenario">UDI w scenariuszu wdrażania komputera Zamień</a>  
  Scenariusz Zastąp komputera wymaga następujących sekwencji zadań.  
 
 -   Utworzone za pomocą sekwencji zadań **użytkownika zmiennych instalacji Zastąp sekwencji zadań** szablonu sekwencji zadań. Ta sekwencja zadań jest uruchamiana pierwszy na istniejącego komputera i służy do przechwytywania danych migracji stanu użytkownika do udostępnionego folderu sieciowego lub na dysk USB, który jest dołączony do istniejącego komputera.  
@@ -6060,7 +6059,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  **Rysunek 5. Przebieg procesu UDI wykonywania scenariusz wdrażania Zastąp komputera**  
 
-####  <a name="OverviewofBuiltinUDIComponents"></a>Omówienie UDI wbudowanych składników  
+####  <a name="OverviewofBuiltinUDIComponents">Omówienie UDI wbudowanych składników</a>  
  UDI jest dostarczany z wbudowanej sekwencji zadań programu Configuration Manager, etap grup etapy, zadania, moduły i stronach kreatora, które można wykonać większość typowych scenariuszy wdrożeń bez pomocy dewelopera. Te wbudowane składniki można skonfigurować za pomocą projektanta Kreatora instalacji UDI:  
 
  Aby uzyskać więcej informacji na temat wbudowanych składników UDI, zobacz następujące sekcje w *odwołanie do usługi Microsoft Deployment Toolkit*:  
@@ -6075,7 +6074,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Oprócz tych wbudowanych składników można tworzyć stron kreatora niestandardowego, edytory strony kreatora, zadania i moduły weryfikacji przy użyciu UDI zestaw software development kit (SDK). UDI zestawu SDK jest zainstalowany zestaw mdt i zawiera przykładowe rozwiązania dla programu Microsoft Visual Studio 2010. Aby uzyskać więcej informacji na temat rozszerzania UDI przy użyciu zestawu SDK UDI, zobacz dokument MDT *przewodnik dla deweloperów instalacji sterowanej*.  
 
-###  <a name="PreparingtheUDIDeploymentEnvironment"></a>Przygotowywanie środowiska wdrażania UDI  
+###  <a name="PreparingtheUDIDeploymentEnvironment"></a> Przygotowywanie środowiska wdrażania UDI  
  Po przygotowaniu wstępnie wymaganej infrastruktury dla zestawu MDT można przystąpić do przygotowania środowiska wdrożenia zestawu MDT do UDI.  
 
 ##### <a name="to-prepare-the-mdt-deployment-environment-for-udi-deployments"></a>Aby przygotować środowisko wdrożenia zestawu MDT wdrożeń UDI  
@@ -6088,7 +6087,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 4.  Włącz integrację konsoli programu Configuration Manager z zestawu MDT, zgodnie z opisem w [włączyć Configuration Manager integracji konsoli dla UDI](#EnableConfigurationManagerConsoleIntegrationforUDI).  
 
-####  <a name="PreparethePrerequisiteInfrastructureforUDIDeployments"></a>Przygotowanie infrastruktury wymaganej wstępnie wdrożeń UDI  
+####  <a name="PreparethePrerequisiteInfrastructureforUDIDeployments"></a> Przygotowanie infrastruktury wymaganej wstępnie wdrożeń UDI  
  UDI wdrożenia wymagają istnienia prawidłowo skonfigurowaną infrastrukturę programu Configuration Manager przed zainstalowaniem zestawu MDT i wykonywania wdrożeń. Upewnij się, że nowej lub istniejącej infrastruktury programu Configuration Manager jest zoptymalizowany pod kątem funkcji wdrażania systemu operacyjnego.  
 
 > [!NOTE]
@@ -6096,11 +6095,11 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Aby uzyskać więcej informacji dotyczących:  
 
--   Wymagania dotyczące sprzętu i oprogramowania dla programu Configuration Manager, zobacz [obsługiwane konfiguracje programu Configuration Manager](http://technet.microsoft.com/library/gg682077.aspx) ...  
+-   Wymagania dotyczące sprzętu i oprogramowania dla programu Configuration Manager, zobacz [obsługiwane konfiguracje programu Configuration Manager](https://docs.microsoft.com/sccm/core/plan-design/configs/supported-configurations) ...  
 
 -   Konfigurowanie infrastruktury programu Configuration Manager w celu obsługi wdrożeń UDI, zobacz sekcję "krok 1: Przygotowanie infrastruktury wymaganej wstępnie", w zestawie MDT dokumentu Przewodnik Szybki Start dla instalacji sterowanej.  
 
-####  <a name="InstallorUpgradetoMDTforUDIDeployments"></a>Instalacji lub uaktualnienia do zestawu MDT wdrożeń UDI  
+####  <a name="InstallorUpgradetoMDTforUDIDeployments"></a> Instalacji lub uaktualnienia do zestawu MDT wdrożeń UDI  
  Pierwszym krokiem przy wykonywaniu UDI wdrożeń ma co najmniej jedno wystąpienie zestawu mdt w swoim środowisku. Zainstaluj zestaw MDT na każdym komputerze, który konsoli programu Configuration Manager zainstalowane i używanego do tworzenia lub edytowania sekwencji zadań, które generuje zestawu MDT. Jeśli ma istniejącego środowiska:  
 
 -   Żadnych komputerów aktualnie uruchomione MDT lub jego starszej wersji zestawu mdt, zainstalować co najmniej jedno wystąpienie nowego zestawu mdt, zgodnie z opisem w [zainstalowanie nowego wystąpienia zestawu MDT](#InstallingaNewInstanceofMDT).  
@@ -6113,7 +6112,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
     -   **Upewnij się, sekwencje zadań UDI utworzone przed uaktualnieniem za pomocą pakietu plików Toolkit wdrożenia firmy Microsoft, które istniały przed uaktualnieniem**. Możesz zmodyfikować te sekwencje zadań UDI, ale nie można używać nowych akcji sekwencji zadań zestawu MDT lub kroków. Aby użyć nowych akcji sekwencji zadań zestawu MDT lub kroki, Utwórz nową sekwencję zadań UDI.  
 
-####  <a name="ObtaintheSoftwareThattheUDIDeploymentProcessRequires"></a>Uzyskaj oprogramowanie, które wymaga UDI proces wdrażania  
+####  <a name="ObtaintheSoftwareThattheUDIDeploymentProcessRequires"></a> Uzyskaj oprogramowanie, które wymaga UDI proces wdrażania  
  Zbieraj oprogramowanie niezbędne podczas procesu wdrażania UDI. To oprogramowanie zostanie zaimportowana lub dodane do udziałów wdrożenia, chyba że istnieje już w udziału wdrożenia.  
 
 > [!NOTE]
@@ -6131,7 +6130,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Pliki źródłowe narzędzia USMT pozwala utworzyć pakiet oprogramowania, które zostały wdrożone na komputerach docelowych do przechwytywania danych migracji stanu użytkownika  
 
-####  <a name="EnableConfigurationManagerConsoleIntegrationforUDI"></a>Włącz integrację konsoli programu Configuration Manager dla UDI  
+####  <a name="EnableConfigurationManagerConsoleIntegrationforUDI"></a> Włącz integrację konsoli programu Configuration Manager dla UDI  
  Przed użyciem programu Configuration Manager funkcje integracji zestawu mdt, uruchom Kreatora konfigurowania integracji programu ConfigMgr. Ten Kreator kopiuje odpowiednie pliki integracji programu Configuration Manager do *_root programu Configuration Manager* (gdzie *_root programu Configuration Manager* to folder, w którym programu Configuration Manager Konsola jest zainstalowana).  
 
  Kreator dodaje również klas WMI nowe akcje niestandardowe zestawu MDT. Możesz dodać tych klas przez skompilowanie pliku MOF, który zawiera nowe definicje klas.  
@@ -6156,7 +6155,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Zakończeniu pracy Kreatora konfigurowania integracji programu ConfigMgr, a zestaw MDT jest zintegrowany z programem Configuration Manager.  
 
-###  <a name="PreparingforUDIDeploymenttotheReferenceComputer"></a>Przygotowywanie do wdrożenia UDI na komputerze odniesienia  
+###  <a name="PreparingforUDIDeploymenttotheReferenceComputer"></a> Przygotowywanie do wdrożenia UDI na komputerze odniesienia  
  Niezależnie od scenariusza wdrożenia zestawu MDT są wykonywane przy użyciu UDI, zawsze Rozpocznij od utworzenia komputera odniesienia, a następnie przechwytywania obrazu tego komputera. Później w procesie wdrożenia zestawu MDT zostanie wdrożona na komputery docelowe odpowiednie przechwycony obraz komputera odniesienia. Ponadto można użyć istniejących obrazów systemu operacyjnego w formacie WIM.  
 
  Utwórz komputer odniesienia dla każdego obrazu, który chcesz utworzyć wdrożenia do komputerów docelowych. Aby uzyskać więcej informacji na temat określania Liczba obrazów wymaganych w Twojej organizacji (i następnie odwołanie wymaganej liczby komputerów), zobacz [szacowania wymagania dotyczące magazynu dla punktów dystrybucji programu Configuration Manager](#EstimateStorageRequirementsforConfigurationManagerDistributionPoints). Aby uzyskać więcej informacji o używaniu komputerów odniesienia w wdrożenia zestawu MDT, zobacz [przy użyciu komputerów odniesienia w przypadku wdrożeń MDT](#UsingReferenceComputersinMDTDeployments).  
@@ -6191,7 +6190,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     > [!NOTE]
     >  Nie można wykonać operacji Sysprep na komputerze docelowym, który jest szyfrowana przy użyciu szyfrowania dysków funkcją BitLocker jest UDI procesu wdrażania. Nie włączyć funkcję BitLocker na komputerze odniesienia i włączyć funkcję BitLocker na komputerach docelowych, tylko wtedy, gdy całkowicie jest wdrażany system operacyjny docelowej.  
 
-###  <a name="DeployingToandCapturinganImageoftheReferenceComputerUsingUDI"></a>Wdrażania i przechwytywania obrazu komputera odniesienia przy użyciu UDI  
+###  <a name="DeployingToandCapturinganImageoftheReferenceComputerUsingUDI"></a> Wdrażania i przechwytywania obrazu komputera odniesienia przy użyciu UDI  
  Po aktualizacji punktów dystrybucji anonsowanie sekwencji zadań na komputerze odniesienia i uruchomić komputer odniesienia z obraz rozruchowy środowiska Windows PE, utworzony wcześniej w procesie. Sekwencja zadań utworzony wcześniej wdrażanie docelowy system operacyjny, sterowniki urządzeń, pakiety systemu operacyjnego i aplikacji na komputerze odniesienia, a następnie przechwycić obraz komputera odniesienia.  
 
 ##### <a name="to-deploy-to-and-capture-an-image-of-the-reference-computer"></a>Aby wdrożyć i przechwytywania obrazu komputera odniesienia  
@@ -6208,7 +6207,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 6.  Uruchom komputer odniesienia przy użyciu sekwencji zadań nośnika rozruchowego na dysku zgodnie z opisem w [wdrażanie systemu operacyjnego przy użyciu nośnika sekwencji zadań rozruchowego w programie Configuration Manager](#DeployinganOperatingSystemUsingTaskSequenceBootableMediainConfigurationManager) co jest ten sam proces we wdrożeniach UDI oraz ZTI.  
 
-###  <a name="PreparingforUDIDeploymenttoTargetComputers"></a>Przygotowywanie do wdrożenia UDI do komputerów docelowych  
+###  <a name="PreparingforUDIDeploymenttoTargetComputers"></a> Przygotowywanie do wdrożenia UDI do komputerów docelowych  
  Po przechwyceniu obrazów komputera odniesienia, można je wdrożyć na komputerach docelowych. W ramach przygotowania do wdrażania przechwyconych obrazów na komputerach docelowych Utwórz jeden lub więcej sekwencji zadań do wdrażania przechwyconych obrazów, sprawdź, czy konieczne wdrażanie zasobów istnieje i dostosowania procesu wdrożenia zestawu MDT.  
 
 ##### <a name="to-prepare-for-udi-deployment-to-target-computers"></a>Aby przygotować UDI wdrożenia do komputerów docelowych  
@@ -6229,7 +6228,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
      W zależności od komputerów docelowych w organizacji może być konieczne dowolnej kombinacji tych scenariuszy wdrożenia. Aby uzyskać więcej informacji na temat scenariuszy wdrożenia zestawu MDT, zobacz [identyfikacji scenariuszy wdrażania](#IdentifyingDeploymentScenarios).  
 
-####  <a name="PreparefortheNewComputerDeploymentScenariotoTargetComputersUsingUDI"></a>Przygotuj się do nowego komputera scenariusz wdrażania na komputerach docelowych przy użyciu UDI  
+####  <a name="PreparefortheNewComputerDeploymentScenariotoTargetComputersUsingUDI">Przygotuj się do nowego komputera scenariusz wdrażania na komputerach docelowych przy użyciu UDI</a>  
  W scenariuszu wdrażania nowego komputera możesz wdrożyć nowa instalacja systemu operacyjnego Windows na nowym komputerze. Brak nie istniejących systemów plików, aby zachować i nie informacje o migracji użytkowników do zapisywania i przywracania. Szablon sekwencji zadań instalacji sterowanej służy do wdrażania przechwyconego obrazu komputera odniesienia do komputera docelowego.  
 
 ###### <a name="to-prepare-for-the-new-computer-deployment-scenario-to-target-computers-using-udi"></a>Aby przygotować się do nowego komputera scenariusz wdrażania na komputerach docelowych przy użyciu UDI  
@@ -6277,7 +6276,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     > [!NOTE]
     >  Większość sieci produkcyjnej ma wiele punktów dystrybucji. Podczas wykonywania tego kroku w środowisku produkcyjnym, wybierz odpowiednie punkty dystrybucji w sieci.  
 
-####  <a name="PreparefortheRefreshComputerDeploymentScenariotoTargetComputersUsingUDI"></a>Przygotowanie do scenariusza wdrażania komputera odświeżania na komputerach docelowych przy użyciu UDI  
+####  <a name="PreparefortheRefreshComputerDeploymentScenariotoTargetComputersUsingUDI">Przygotowanie do scenariusza wdrażania komputera odświeżania na komputerach docelowych przy użyciu UDI</a>  
  W scenariuszu wdrażania Odśwież komputer komputer jest odświeżany, łącznie z komputerów, które muszą być ponownym utworzeniu obrazu normalizacji obrazu lub w celu rozwiązania problemu. Istnieje, ale brak istniejących systemów plików, aby zachować informacje na temat migracji użytkowników do zapisywania i przywracania. Użyj **sekwencji zadań instalacji zmiennych użytkownika** szablon do wdrażania przechwyconego obrazu komputera odniesienia do komputera docelowego.  
 
 ###### <a name="to-prepare-for-the-refresh-computer-deployment-scenario-to-target-computers-using-udi"></a>Aby przygotować się do komputera Odśwież scenariusz wdrażania na komputerach docelowych przy użyciu UDI  
@@ -6322,7 +6321,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     > [!NOTE]
     >  Większość sieci produkcyjnej ma wiele punktów dystrybucji. Podczas wykonywania tego kroku w środowisku produkcyjnym, wybierz odpowiednie punkty dystrybucji w sieci.  
 
-####  <a name="PreparefortheReplaceComputerDeploymentScenariotoTargetComputersUsingUDI"></a>Przygotowanie do scenariusza wdrażania komputera zamiany na komputerach docelowych przy użyciu UDI  
+####  <a name="PreparefortheReplaceComputerDeploymentScenariotoTargetComputersUsingUDI">Przygotowanie do scenariusza wdrażania komputera zamiany na komputerach docelowych przy użyciu UDI</a>  
  W scenariuszu wdrażania komputera Zastąp jeden komputer zastępuje inny komputer. Utwórz rekord skojarzenia komputera, który kojarzy istniejącego komputera docelowego, a nowy komputer docelowy. Istniejące dane migracji stanu użytkownika jest zapisywane z istniejącego komputera docelowego. Następnie w nowej instalacji systemu Windows jest wdrażana na nowym komputerze. Ponadto dane stanu użytkownika został przywrócony do nowego komputera. Nie ma żadnych istniejących systemów plików, aby zachować.  
 
 > [!IMPORTANT]
@@ -6387,7 +6386,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     > [!NOTE]
     >  Większość sieci produkcyjnej ma wiele punktów dystrybucji. Podczas wykonywania tego kroku w środowisku produkcyjnym, wybierz odpowiednie punkty dystrybucji w sieci.  
 
-###  <a name="DeployingCapturedImagestoTargetComputersUsingUDI"></a>Wdrażania przechwyconych obrazów na komputerach docelowych przy użyciu UDI  
+###  <a name="DeployingCapturedImagestoTargetComputersUsingUDI"></a> Wdrażania przechwyconych obrazów na komputerach docelowych przy użyciu UDI  
  Wdrażania przechwyconych obrazów z komputerami docelowymi są nieco inne dla każdego scenariusza wdrożenia zestawu MDT, za pomocą UDI. Przechwycony obraz komputera odniesienia należy wdrożyć do komputerów docelowych dla każdego scenariusza wdrażania odpowiednich w Twojej organizacji.  
 
 ##### <a name="to-deploy-the-capture-image-of-the-reference-computer-to-the-target-computers-using-udi"></a>Aby wdrożyć na komputerach docelowych przy użyciu UDI przechwytywania obrazu komputera odniesienia  
@@ -6424,7 +6423,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
      W zależności od komputerów docelowych w organizacji może być konieczne dowolną kombinację scenariuszy wdrożenia. Aby uzyskać więcej informacji na temat scenariuszy wdrożenia zestawu MDT, zobacz [identyfikacji scenariuszy wdrażania](#IdentifyingDeploymentScenarios).  
 
-####  <a name="DeployCapturedImagestoTargetComputersintheNewComputerDeploymentScenarioUsingUDI"></a>Wdrażania przechwyconych obrazów na komputerach docelowych w nowy scenariusz wdrażania komputera przy użyciu UDI  
+####  <a name="DeployCapturedImagestoTargetComputersintheNewComputerDeploymentScenarioUsingUDI">Wdrażania przechwyconych obrazów na komputerach docelowych w nowy scenariusz wdrażania komputera przy użyciu UDI</a>  
  Uruchom komputer docelowy przy użyciu nośnika rozruchowego sekwencji zadań, utworzony wcześniej w procesie lub z usług wdrażania systemu Windows. Każda z tych metod uruchamia środowisko Windows PE na komputerze docelowym i inicjuje proces wdrażania UDI. Po zakończeniu procesu przechwycony obraz komputera odniesienia jest wdrażany na komputerze docelowym.  
 
 ###### <a name="to-deploy-the-capture-images-to-the-target-computers-in-the-new-computer-deployment-scenario-using-udi"></a>Aby wdrożyć na komputerach docelowych w nowy scenariusz wdrażania komputera przy użyciu UDI obrazy przechwytywania  
@@ -6452,7 +6451,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 4.  Ukończ pracę kreatora UDI, wybierając odpowiednie wartości na stronach kreatora do wymagań organizacji, zgodnie z opisem w [kreatora UDI](#RunningtheUDIWizard).  
 
-####  <a name="DeployCapturedImagestoTargetComputersintheRefreshComputerDeploymentScenarioUsingUDI"></a>Wdrażania przechwyconych obrazów na komputerach docelowych w odświeżania scenariusz wdrażania komputera przy użyciu UDI  
+####  <a name="DeployCapturedImagestoTargetComputersintheRefreshComputerDeploymentScenarioUsingUDI">Wdrażania przechwyconych obrazów na komputerach docelowych w odświeżania scenariusz wdrażania komputera przy użyciu UDI</a>  
  Uruchom ten scenariusz, uruchamiając wdrożenia sekwencji zadań programu Configuration Manager (anons) do przechwytywania danych migracji stanu użytkownika, który został utworzony wcześniej w procesie. Ta sekwencja zadań jest uruchamiany w bieżący system operacyjny na komputerze docelowym istniejących.  
 
 ###### <a name="to-deploy-the-capture-images-to-the-target-computers-in-the-refresh-computer-deployment-scenario-using-udi"></a>Aby wdrożyć na komputerach docelowych w Odśwież komputer wdrażania scenariusza przy użyciu UDI obrazy przechwytywania  
@@ -6469,7 +6468,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Sekwencja zadań jest uruchamiana w środowisku Windows PE w celu przechwycenia danych migracji stanu użytkownika. Sekwencja zadań ponownie uruchamia komputer uruchamia środowisko Windows PE i inicjuje instalacji nowego systemu operacyjnego. Sekwencja zadań uruchamia ponownie komputer, rozpoczyna się w nowym systemie operacyjnym, przywraca dane migracji stanu użytkownika, instaluje wszystkie pakiety, instaluje wszystkie aplikacje i wykonuje inne akcje w sekwencji zadań. Na koniec programu wyniki OSD OSDResults.exe, uruchamia i wyświetla wyniki wdrożenia. Teraz jest wdrażany na komputerze docelowym.  
 
-####  <a name="DeployCapturedImagestoTargetComputersintheReplaceComputerDeploymentScenarioUsingUDI"></a>Wdrażania przechwyconych obrazów na komputerach docelowych w Zamień scenariusz wdrażania komputera przy użyciu UDI  
+####  <a name="DeployCapturedImagestoTargetComputersintheReplaceComputerDeploymentScenarioUsingUDI">Wdrażania przechwyconych obrazów na komputerach docelowych w Zamień scenariusz wdrażania komputera przy użyciu UDI</a>  
  Scenariusz wdrażania komputera Zastąp wymaga dwa oddzielne kroki, aby ukończyć migrację. Najpierw uruchom wdrożenia (anons) dla sekwencji zadań został utworzony do przechwytywania danych migracji stanu użytkownika z istniejącego komputera docelowego (starego komputera). Po drugie, Kreator UDI do wdrażania przechwyconego obrazu komputera odniesienia do nowego docelowego komputerze (nowy) i przywrócenia stanu użytkownika zapisane wcześniej w procesie.  
 
 ###### <a name="to-deploy-captured-images-of-the-reference-computer-to-target-computers-in-the-replace-computer-deployment-scenario-using-udi"></a>Do wdrażania przechwyconych obrazów komputera odniesienia do komputerów docelowych w scenariuszu wdrażania Zastąp komputera przy użyciu UDI  
@@ -6478,7 +6477,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 2.  Wdrażanie przechwycony obraz komputera odniesienia do nowego komputera docelowego, zgodnie z opisem w [wdrażania przechwyconych obrazów i dane migracji stanu użytkownika w Zastąp komputera wdrażania scenariusza za pomocą UDI](#DeploytheCapturedImageandUserStateMigrationDataintheReplaceComputerDeploymentScenarioUsingUDI).  
 
-#####  <a name="SavetheUserStateMigrationDataintheReplaceComputerDeploymentScenarioUsingUDI"></a>Zapisz dane migracji stanu użytkownika w scenariuszu wdrażania Zamień komputera, przy użyciu UDI  
+#####  <a name="SavetheUserStateMigrationDataintheReplaceComputerDeploymentScenarioUsingUDI"></a> Zapisz dane migracji stanu użytkownika w scenariuszu wdrażania Zamień komputera, przy użyciu UDI  
  Uruchom ten scenariusz, uruchamiając wdrożenia sekwencji zadań (anons) do przechwytywania danych migracji stanu użytkownika, który został utworzony wcześniej w procesie. Ta sekwencja zadań jest uruchamiany w bieżący system operacyjny na komputerze docelowym istniejących.  
 
 ###### <a name="to-save-the-user-state-migration-data-from-the-existing-target-computers-in-the-replace-computer-deployment-scenario-using-udi"></a>Aby zapisać dane migracji stanu użytkownika z istniejących komputerów docelowych w użyciu UDI scenariuszu Zastąp wdrażania komputera  
@@ -6491,7 +6490,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Sekwencja zadań jest uruchamiana w bieżącym systemem operacyjnym do przechwytywania danych migracji stanu użytkownika. Na końcu sekwencji zadań danych migracji stanu użytkownika z istniejącego komputera docelowego jest zapisywany w punkcie migracji stanu programu Configuration Manager.  
 
-#####  <a name="DeploytheCapturedImageandUserStateMigrationDataintheReplaceComputerDeploymentScenarioUsingUDI"></a>Wdrażania przechwyconego obrazu i dane migracji stanu użytkownika w scenariuszu wdrażania Zamień komputera, przy użyciu UDI  
+#####  <a name="DeploytheCapturedImageandUserStateMigrationDataintheReplaceComputerDeploymentScenarioUsingUDI"></a> Wdrażania przechwyconego obrazu i dane migracji stanu użytkownika w scenariuszu wdrażania Zamień komputera, przy użyciu UDI  
  Uruchom komputer docelowy przy użyciu nośnika rozruchowego ZTI utworzony wcześniej w procesie lub z usług wdrażania systemu Windows. Nośnik rozruchowy ZTI uruchamia środowisko Windows PE na komputerze docelowym i inicjuje proces wdrażania UDI. Na koniec procesu wdrażania przechwycony obraz komputera odniesienia jest wdrożony na komputerze docelowym, a dane migracji stanu użytkownika został przywrócony z punktu migracji stanu programu Configuration Manager.  
 
 ###### <a name="to-complete-the-windows-deployment-wizard-in-the-replace-computer-deployment-scenario-for-deploying-the-captured-image-using-udi"></a>Aby zakończyć działanie Kreatora wdrażania systemu Windows w scenariuszu wdrażania Zastąp komputera do wdrażania przechwyconego obrazu przy użyciu UDI  
@@ -6521,7 +6520,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Sekwencja zadań uruchamia środowisko Windows PE, a następnie inicjuje instalacji nowego systemu operacyjnego. Sekwencja zadań uruchamia ponownie komputer, rozpoczyna się w nowym systemie operacyjnym, przywraca dane migracji stanu użytkownika, instaluje wszystkie pakiety, instaluje wszystkie aplikacje i wykonuje inne akcje w sekwencji zadań. Na koniec programu wyniki OSD OSDResults.exe, uruchamia i wyświetla wyniki wdrożenia. Teraz jest wdrażany na komputerze docelowym.  
 
-##  <a name="ManagingUDIDeployments"></a>Zarządzanie wdrożeniami UDI  
+##  <a name="ManagingUDIDeployments"></a> Zarządzanie wdrożeniami UDI  
  Możesz zarządzać UDI wdrożenia za pośrednictwem konsoli programu Configuration Manager i projektanta Kreatora instalacji UDI. Używasz konsoli Deployment Workbench UDI wdrożeń skonfigurowanie DB zestawu MDT. Kreator pozwala utworzyć UDI sekwencje zadań są zintegrowane w konsoli programu Configuration Manager. Aby skonfigurować działanie kreatora UDI, można użyć projektanta Kreatora instalacji UDI.  
 
  Zarządzanie wdrożeniami UDI przez:  
@@ -6556,7 +6555,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Tworzenie strony kreatora niestandardowego do zbierania informacji o dodatkowe wdrożenia, zgodnie z opisem w [stron kreatora niestandardowe tworzenie za pomocą funkcji tworzenia Your strony własnych](#CreatingCustomWizardPagesUsingtheBuildYourOwnPageFeature)  
 
-###  <a name="OverviewofUDIAdministration"></a>Omówienie administrowania UDI  
+###  <a name="OverviewofUDIAdministration"></a> Omówienie administrowania UDI  
  Celem UDI administracji jest konfigurowania środowiska użytkownika w Kreatorze UDI i ostatecznie kontrolowania wdrażania systemu operacyjnego i aplikacji na komputerach docelowych. UDI środowisko użytkownika można skonfigurować za pomocą projektanta Kreatora instalacji UDI i dostosowując sekwencji zadań programu Configuration Manager używane z UDI w konsoli programu Configuration Manager.  
 
  Podstawowym narzędziem do administrowania UDI jest projektanta kreatora UDI. Projektanta Kreatora instalacji UDI jest instalowany jako część zestawu MDT, który jest zainstalowany na tym samym komputerze konsoli programu Configuration Manager. Ponieważ UDI jest wbudowana w funkcji wdrożenia systemu operacyjnego w programie Configuration Manager, będą też używać konsoli programu Configuration Manager do administrowania określonych aspektów wdrożenia UDI.  
@@ -6597,7 +6596,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
      AppInstaller umożliwia programu Configuration Manager do zidentyfikowania aplikacji zainstalowane za pomocą modelu aplikacji podczas sekwencji zadań. Dzięki temu programu Configuration Manager do używania funkcji, takich jak funkcja monitorowania.  
 
-###  <a name="CreatingaUDITaskSequenceUsingMDTTaskSequenceTemplates"></a>Tworzenie sekwencji zadań UDI za pomocą szablonów sekwencji zadań zestawu MDT  
+###  <a name="CreatingaUDITaskSequenceUsingMDTTaskSequenceTemplates"></a> Tworzenie sekwencji zadań UDI za pomocą szablonów sekwencji zadań zestawu MDT  
  Użyj Kreatora tworzenia sekwencji zadań zestawu MDT w konsoli programu Configuration Manager do tworzenia sekwencji zadań w programie Configuration Manager, które są zintegrowane z zestawu MDT. Zestaw MDT zawiera szablony sekwencji zadań, których można użyć do wdrożenia komputerów referencyjnych i docelowych.  
 
  Tworzenie sekwencji zadań UDI za pomocą szablonów sekwencji zadań zestawu MDT przez:  
@@ -6610,7 +6609,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Konfigurowanie UDI sekwencji zadań do wdrażania systemów operacyjnych, zgodnie z opisem w [skonfigurować sekwencje zadań UDI do wdrażania systemów operacyjnych](#ConfigureUDITaskSequencestoDeployDifferentOperatingSystems)  
 
-####  <a name="IdentifytheUDITaskSequenceTemplatesinMDT"></a>Zidentyfikowanie szablonów sekwencji zadań UDI w zestawie MDT  
+####  <a name="IdentifytheUDITaskSequenceTemplatesinMDT"></a> Zidentyfikowanie szablonów sekwencji zadań UDI w zestawie MDT  
  Zestaw MDT zawiera szablony sekwencji zadań, które są używane do tworzenia sekwencji zadań zestawu MDT w programie Configuration Manager. Szablony sekwencji zadań, które są zawarte w zestawie MDT opisanym w [zidentyfikowanie szablonów sekwencji zadań w zestawie MDT w programie Configuration Manager](#IdentifytheTaskSequenceTemplatesinMDTinConfigurationManager).  
 
  Szablony opisanego w [zidentyfikowanie szablonów sekwencji zadań w zestawie MDT w programie Configuration Manager](#IdentifytheTaskSequenceTemplatesinMDTinConfigurationManager), następujące są używane w scenariuszach wdrożenia zestawu MDT, za pomocą UDI:  
@@ -6628,10 +6627,10 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 > [!NOTE]
 >  Zawsze używać Kreatora tworzenia sekwencji zadań zestawu MDT do tworzenia sekwencji zadań. Mimo że można ręcznie tworzyć sekwencje zadań, to nie jest to zalecane.  
 
-####  <a name="IdentifythePackagesandImagesThattheUDITaskSequenceTemplatesRequire"></a>Zidentyfikuj pakiety i obrazów, które wymagają UDI szablony sekwencji zadań  
+####  <a name="IdentifythePackagesandImagesThattheUDITaskSequenceTemplatesRequire"></a> Zidentyfikuj pakiety i obrazów, które wymagają UDI szablony sekwencji zadań  
  Szablony sekwencji zadań UDI wymagają same pakiety i obrazów, co jest wymagane przez wdrożenia ZTI, zgodnie z opisem w [zidentyfikować pakiety i obrazów szablonów sekwencji zadań zestawu MDT w Configuration Manager wymaga](#IdentifythePackagesandImagesThattheMDTTaskSequenceTemplatesinConfigurationManagerRequire).  
 
-####  <a name="CreateUDITaskSequencesUsingtheCreateMDTTaskSequenceWizard"></a>Tworzenie sekwencji zadań UDI przy użyciu Kreator tworzenia sekwencji zadań zestawu MDT  
+####  <a name="CreateUDITaskSequencesUsingtheCreateMDTTaskSequenceWizard"></a> Tworzenie sekwencji zadań UDI przy użyciu Kreator tworzenia sekwencji zadań zestawu MDT  
  Kreatora tworzenia sekwencji zadań zestawu MDT zastępuje pakiety i obrazy wybrane symboli zastępczych w szablonach sekwencji zadań. Po zakończeniu pracy Kreatora nowej sekwencji zadań odwołuje się do odpowiednich pakietów i obrazów.  
 
 > [!NOTE]
@@ -6641,7 +6640,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Wybierz szablon sekwencji odpowiednie zadanie UDI oparte na scenariusz wdrażania jest wykonywane. Aby uzyskać więcej informacji na temat szablonów UDI sekwencji zadań w zestawie MDT zobacz [zidentyfikowanie szablonów sekwencji zadań UDI w zestawie MDT](#IdentifytheUDITaskSequenceTemplatesinMDT).  
 
-####  <a name="ConfigureUDITaskSequencestoDeployDifferentOperatingSystems"></a>Konfigurowanie UDI sekwencji zadań do wdrażania systemów operacyjnych  
+####  <a name="ConfigureUDITaskSequencestoDeployDifferentOperatingSystems"></a> Konfigurowanie UDI sekwencji zadań do wdrażania systemów operacyjnych  
  **VolumePage** strony w wbudowanych grup etap UDI służy do wybierania z żadnych obrazów systemu operacyjnego, które skonfigurowano w projektanta Kreatora instalacji UDI. Jednak odwołuje się tylko jeden obraz systemu operacyjnego określonego w sekwencji zadań utworzonej przez kreatora Utwórz sekwencję zadań zestawu MDT **Zastosuj obraz systemu operacyjnego** krok sekwencji zadań.  
 
  Po wybraniu obrazu systemu operacyjnego na **VolumePage** strony kreatora UDI zestawy **OSDImageName** zmienną sekwencji zadań do wartości Nazwa obrazu, który został wybrany. Wartość **OSDImageName** zmienną sekwencji zadań odnosi się do nazwy obrazu systemu operacyjnego w **obrazów systemu operacyjnego** lub **instalatorzy systemu operacyjnego**węzłów w konsoli programu Configuration Manager.  
@@ -6660,7 +6659,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Po wykonaniu tych kroków, gdy użytkownik wybrał obrazu systemu operacyjnego na **VolumePage** strony odpowiadającego **Zastosuj obraz systemu operacyjnego** krok sekwencji zadań zostanie uruchomiona i wdrażanie obraz z odpowiednim systemem operacyjnym.  
 
-###  <a name="ConfiguringUDIWizardBehavior"></a>Konfigurowanie zachowania kreatora UDI  
+###  <a name="ConfiguringUDIWizardBehavior"></a> Konfigurowanie zachowania kreatora UDI  
  Sekwencja zadań instalacji sterowanej i sekwencji zadań Zastąp instalacji sterowanej szablony zawierają kroków sekwencji zadań, które Uruchom Kreatora UDI. Po uruchomieniu kreatora UDI krok sekwencji zadań krok odwołujący się plik UDIWizard_Config.xml, który kontroluje sposób działania kreatora UDI i są przechowywane w folderze skryptów pakietu plików zestawu MDT. Można dostosować plik UDIWizard_Config.xml za pomocą projektanta Kreatora instalacji UDI.  
 
  Konfigurowanie zachowania UDI kreatora, wykonując następujące czynności w projektanta Kreatora instalacji UDI:  
@@ -6705,7 +6704,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Pomiń (Usuń) strony kreatora z etapu zgodnie z opisem w [Pomiń stronę kreatora](#SkipaWizardPage).  
 
-####  <a name="ReviewUDIWizardDesignerConcepts"></a>Zapoznaj się z pojęciami projektanta kreatora UDI  
+####  <a name="ReviewUDIWizardDesignerConcepts"></a> Zapoznaj się z pojęciami projektanta kreatora UDI  
  Projektanta Kreatora instalacji UDI jest konsoli w zestawie MDT, która pozwala na łatwe konfigurowanie pliku konfiguracyjnego UDI kreatora. Projektanta Kreatora instalacji UDI zaktualizować istniejący plik konfiguracyjny UDI kreatora lub Utwórz nowy plik konfiguracji kreatora UDI.  
 
 > [!NOTE]
@@ -6721,7 +6720,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Aby uzyskać szczegółowe informacje o zadaniach, które mogą być wykonywane w projektanta Kreatora instalacji UDI zobacz Konfigurowanie UDI działanie kreatora.  
 
-####  <a name="IdentifyUDIDeploymentProcessComponents"></a>Zidentyfikuj składniki procesu wdrażania UDI  
+####  <a name="IdentifyUDIDeploymentProcessComponents"></a> Zidentyfikuj składniki procesu wdrażania UDI  
  Proces wdrażania UDI opiera się na wdrożenia ZTI w zestawie MDT i wymaga programu Configuration Manager. Proces UDI działa jako wszystkie inne sekwencję zadań zestawu MDT, z wyjątkiem tego, że sekwencje zadań specyficznych dla UDI Uruchom Kreatora UDI na odpowiednie kroki w sekwencji zadań.  
 
   143 tabeli wymieniono składniki procesu wdrażania UDI i krótki opis jak działają razem we wdrożeniu UDI.  
@@ -6735,7 +6734,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 |**Plik konfiguracji kreatora UDI** |Kreator UDI odczytywania pliku konfiguracji przez kreatora UDI ustalenie stronach kreatora, które są wyświetlane sekwencji stron kreatora, wartości domyślne dla kontrolki i określa, czy formanty są włączone lub wyłączone do interakcji z użytkownikiem.<br /><br /> Plik konfiguracji kreatora UDI jest dostosowane przy użyciu projektanta Kreatora instalacji UDI.<br /><br /> Domyślny plik konfiguracji kreatora UDI jest nazwą UDIWizard_Config.xml i są przechowywane w folderze skryptów w pakiecie plików zestawu MDT.|  
 |**UDI sekwencji zadań** |UDI sekwencje zadań są tworzone za pomocą szablonów sekwencji zadań związanych z UDI zestawu MDT. Szablony sekwencji zadań UDI obejmują krok sekwencji zadań, aby uruchomić Kreatora UDI we właściwym czasie w procesie wdrażania UDI.<br /><br /> Aby uzyskać więcej informacji na temat szablonów sekwencji zadań UDI, zobacz [zidentyfikowanie szablonów sekwencji zadań UDI w zestawie MDT](#IdentifytheUDITaskSequenceTemplatesinMDT).|  
 
-####  <a name="ReviewtheRelationshipAmongUDIWizardPagesWizardPageEditorsandtheUDIWizardConfigurationFile"></a>Przegląd relacji między UDI stron kreatora, edytory strony kreatora i pliku konfiguracji kreatora UDI  
+####  <a name="ReviewtheRelationshipAmongUDIWizardPagesWizardPageEditorsandtheUDIWizardConfigurationFile"></a> Przegląd relacji między UDI stron kreatora, edytory strony kreatora i pliku konfiguracji kreatora UDI  
  Dla każdej strony kreatora jest wyświetlana w Kreatorze UDI brak odpowiednich Edytor stron kreatora, który może służyć do konfigurowania tego kreatora, za pomocą projektanta Kreatora instalacji UDI. Plik konfiguracji kreatora UDI (UDIWizard_Config.xml) jest używany do przechowywania ustawień konfiguracji dla każdej strony kreatora. Na rysunku nr 7 przedstawiono relację między UDI stron kreatora, edytory strony kreatora UDI i pliku konfiguracji kreatora UDI.  
 
  ![MDTDevToolkit7](media/MDTDevToolkit7.jpg "MDTDevToolkit7")  
@@ -6751,7 +6750,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 > [!NOTE]
 >  Nie należy bezpośrednio modyfikować kreatora UDI pliku konfiguracji. W zamian użyj odpowiedniego kreatora edytory strony w projektanta Kreatora instalacji UDI.  
 
-####  <a name="ReviewtheUDIWizardDesignerUserInterface"></a>Przegląd interfejsu użytkownika projektanta kreatora UDI  
+####  <a name="ReviewtheUDIWizardDesignerUserInterface"></a> Przegląd interfejsu użytkownika projektanta kreatora UDI  
  Projektanta Kreatora instalacji UDI służy do dostosowywania środowiska użytkownika w Kreatorze UDI, w tym:  
 
 -   Stronach kreatora, które są wyświetlane w Kreatorze UDI (stronach kreatora można dodać lub usunąć)  
@@ -6776,7 +6775,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 4.  Przegląd **Konfiguruj** karcie w okienku szczegółów projektanta Kreatora instalacji UDI zgodnie z opisem w [Przejrzyj karcie Konfigurowanie Projektanta Kreatora instalacji UDI](#ReviewtheConfigureTabintheUDIWizardDesigner).  
 
-#####  <a name="ReviewtheUDIWizardDesignerHighLevelUserInterfaceElements"></a>Przejrzyj elementy interfejsu użytkownika wysokiego poziomu projektanta kreatora UDI  
+#####  <a name="ReviewtheUDIWizardDesignerHighLevelUserInterfaceElements"></a> Przejrzyj elementy interfejsu użytkownika wysokiego poziomu projektanta kreatora UDI  
  Rysunek nr 8 przedstawiono ogólne elementy interfejsu użytkownika projektanta Kreatora instalacji UDI.  
 
  ![MDTDevToolkit8](media/MDTDevToolkit8.jpg "MDTDevToolkit8")  
@@ -6793,7 +6792,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 |Okienko biblioteki strony|Zawiera stronach kreatora, które są dostępne do użycia w ramach projektanta Kreatora instalacji UDI. Ile razy każdej stronie jest używany w pliku konfiguracyjnym UDI kreatora jest wyświetlana w prawej części wpisu strony kreatora. Na przykład **języka** strony służy trzy razy podczas **skanowania konfiguracji** dwukrotnie użyto strony.|  
 |W okienku szczegółów|Zapewnia dostęp do szczegółów konfiguracji kreatora UDI pliku konfiguracji jest dostosowane.|  
 
-#####  <a name="ReviewthePageLibraryPaneintheUDIWizardDesigner"></a>Przejrzyj zawartość okienka Biblioteka stron w projektanta Kreatora instalacji UDI  
+#####  <a name="ReviewthePageLibraryPaneintheUDIWizardDesigner"></a> Przejrzyj zawartość okienka Biblioteka stron w projektanta Kreatora instalacji UDI  
   Na rysunku nr 9 przedstawiono elementy interfejsu użytkownika w okienku Biblioteka strony projektanta Kreatora instalacji UDI.  
 
  ![MDTDevToolkit9](media/MDTDevToolkit9.jpg "MDTDevToolkit9")  
@@ -6812,7 +6811,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 |Nazwa strony|Jest to nazwa wystąpienia typu strony kreatora. Ta wartość musi być unikatowa w obrębie biblioteki strony.|  
 |Liczba używanych strony|Ten element obsługuje licznik razy wystąpienie strona kreatora jest używany na etapach. Na przykład, jak pokazano REF _Ref307996589 \h rysunek 9 **ComputerPage** w dwóch różnych miejscach w pliku konfiguracji kreatora UDI jest używane wystąpienie strony kreatora.|  
 
-#####  <a name="ReviewtheFlowTabintheUDIWizardDesigner"></a>Przejrzyj karta przepływu w projektanta Kreatora instalacji UDI  
+#####  <a name="ReviewtheFlowTabintheUDIWizardDesigner"></a> Przejrzyj karta przepływu w projektanta Kreatora instalacji UDI  
   Na rysunku nr 10 przedstawiono elementy interfejsu użytkownika w **przepływ** kartę w okienku szczegółów. **Przepływ** karta służy do konfigurowania:  
 
 1.  Strony kreatora, które będą wyświetlane w Kreatorze UDI dla określonego etapu w obrębie grupy określonego etapu  
@@ -6830,11 +6829,11 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 |**Element interfejsu użytkownika** |**Opis** |  
 |--------------------|---------------------|  
 |Etap grupy|Kolekcja jeden lub więcej zestawów grupowania strony kreatora (etapy), które są używane przez scenariusze wdrażania, które obsługuje UDI, w tym scenariusze wdrażania nowego komputera, Odśwież komputera i Zastąp MDT komputera.<br /><br /> W UDI jest wstępnie zdefiniowanych grup etapu. Dodawanie lub usuwanie grup etapie nie jest obsługiwane.|  
-|Etap|Kolekcja używane w określonym czasie w grupie etap jedną lub więcej stron kreatora.<br /><br /> W przypadku grupy etap nowy komputer zestawu MDT zawiera następujące etapy:<br /><br /> -                                  **NEWCOMPUTER**. Ten etap służy do wdrażania nowych komputerów.<br /><br /> -                                  **NEWCOMPUTER. Wstępnie przygotowane**. Ten etap służy do wdrożenia z nośników wstępnie przygotowanych w programie Configuration Manager.<br /><br /> Grupy etap Zastąp komputerów zestawu MDT obejmuje następujące etapy:<br /><br /> 1.                                  **ZASTĄP**. Ten etap służy części grupy etap Zastąp komputerów, które są wykonywane w oryginalnego systemu operacyjnego działającego na komputerze docelowym.<br /><br /> 2.                                 **ZASTĄP. WinPE**. Ten etap służy części grupy etap Zastąp komputerów, które są wykonywane w środowisku Windows PE.<br /><br /> Etapy są wstępnie zdefiniowane w UDI. Dodawanie lub usuwanie etapów nie jest obsługiwane.|  
+|Etap|Kolekcja używane w określonym czasie w grupie etap jedną lub więcej stron kreatora.<br /><br /> W przypadku grupy etap nowy komputer zestawu MDT zawiera następujące etapy:<br /><br /> -                                  **NEWCOMPUTER**. Ten etap służy do wdrażania nowych komputerów.<br /><br /> -                                  **NEWCOMPUTER. Wstępnie przygotowane**. Ten etap służy do wdrożenia z nośników wstępnie przygotowanych w programie Configuration Manager.<br /><br /> Grupy etap Zastąp komputerów zestawu MDT obejmuje następujące etapy:<br /><br /> 1.                                  **ZASTĄP**. Ten etap służy części grupy etap Zastąp komputerów, które są wykonywane w oryginalnego systemu operacyjnego działającego na komputerze docelowym.<br /><br /> 2.                                 **REPLACE.WinPE**. Ten etap służy części grupy etap Zastąp komputerów, które są wykonywane w środowisku Windows PE.<br /><br /> Etapy są wstępnie zdefiniowane w UDI. Dodawanie lub usuwanie etapów nie jest obsługiwane.|  
 |Strona kreatora|Strona kreatora, który ma być wyświetlany w Kreatorze UDI dla określonego etapu w obrębie grupy określonego etapu.<br /><br /> Strona kreatora jest oparta na wystąpienie strony kreatora w bibliotece strony. Wystąpienie strony kreatora może występować w wielu etapów i grup etapu. Ustawienia konfiguracji dla strony kreatora wpływa na wystąpienie strony kreatora, nie poszczególnych stron, które znajdują się w fazach i grup etapu.<br /><br /> Utwórz wystąpienie unikatowy strony kreatora w bibliotece strony dla każdego zestawu ustawienia unikatowy konfiguracji, które mają być zarządzane dla określonego typu strony kreatora.|  
 |Sekwencja strony kreatora|Kolejność, w którym zostanie wyświetlona strona kreatora w Kreatorze UDI dla określonego etapu w obrębie grupy określonego etapu.|  
 
-#####  <a name="ReviewtheConfigureTabintheUDIWizardDesigner"></a>Karta Konfigurowanie w projektanta Kreatora instalacji UDI przeglądu  
+#####  <a name="ReviewtheConfigureTabintheUDIWizardDesigner"></a> Karta Konfigurowanie w projektanta Kreatora instalacji UDI przeglądu  
  Elementy interfejsu użytkownika w przedstawia rysunek 11 **Konfiguruj** kartę w okienku szczegółów. Możesz użyć **Konfiguruj** kartę, aby skonfigurować pojedynczych formantów na stronie kreatora.  
 
 > [!NOTE]
@@ -6877,7 +6876,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Aby uzyskać więcej informacji o konfigurowaniu określonych formantów na określonych stronach kreatora, zobacz sekcję odpowiednie dla tej strony kreatora w dokumencie MDT *odwołanie do zestawu narzędzi*.  
 
-####  <a name="CreateaNewUDIWizardConfigurationFile"></a>Utwórz nowy plik konfiguracji kreatora UDI  
+####  <a name="CreateaNewUDIWizardConfigurationFile"></a> Utwórz nowy plik konfiguracji kreatora UDI  
  Kreator UDI Wyświetla strony kreatora na podstawie opcji konfiguracji określone w pliku UDIWizard_Config.xml w folderze skryptów pakiet plików zestawu MDT określony w sekwencji zadań. Utwórz nowy plik konfiguracji kreatora UDI za pomocą projektanta Kreatora instalacji UDI.  
 
 > [!TIP]
@@ -6901,7 +6900,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Po utworzeniu nowego pliku konfiguracji kreatora UDI, Utwórz nową sekwencję zadań, lub zmodyfikuj istniejące kroków sekwencji zadań do użycia odpowiedniego pakietu plików zestawu MDT. Należy również zaktualizować punkty dystrybucji do pakietu zmodyfikowane pliki zestawu MDT, zgodnie z opisem w w [Zarządzanie punktów dystrybucji w programie Configuration Manager](#ManagingDistributionPointsinConfigurationManager), która jest ten sam proces we wdrożeniach UDI oraz ZTI.  
 
-####  <a name="OpenanExistingUDIWizardConfigurationFile"></a>Otwórz istniejący plik konfiguracyjny kreatora UDI  
+####  <a name="OpenanExistingUDIWizardConfigurationFile"></a> Otwórz istniejący plik konfiguracyjny kreatora UDI  
  Kreator UDI Wyświetla strony na podstawie opcji konfiguracji określone w pliku UDIWizard_Config.xml w folderze skryptów pakiet plików zestawu MDT określony w sekwencji zadań. Otwórz istniejący plik konfiguracyjny kreatora UDI za pomocą projektanta Kreatora instalacji UDI.  
 
 ###### <a name="to-open-an-existing-udi-wizard-configuration-file-using-the-udi-wizard-designer"></a>Aby otworzyć istniejący plik konfiguracyjny kreatora UDI za pomocą projektanta Kreatora instalacji UDI  
@@ -6914,7 +6913,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 3.  W **Otwórz** okno dialogowe, przejdź do ***folder_path*** (gdzie *folder_path* jest w pełni kwalifikowana ścieżka do folderu skryptów w źródle pakietów plików zestawu MDT), kliknij przycisk ***nazwa_pliku*** (gdzie *nazwa_pliku* to nazwa pliku dla pliku konfiguracji), a następnie kliknij przycisk **Otwórz**.  
 
-####  <a name="SaveUDIWizardConfigurationUpdates"></a>Zapisanie UDI Kreatora konfiguracji aktualizacji  
+####  <a name="SaveUDIWizardConfigurationUpdates"></a> Zapisanie UDI Kreatora konfiguracji aktualizacji  
  Po dokonaniu aktualizacji konfiguracji UDI kreatora, musisz zapisać zmiany w pliku konfiguracji kreatora UDI. Zapisz plik konfiguracji kreatora UDI w folderze skryptów pakiet plików zestawu MDT określony w sekwencji zadań.  
 
 ###### <a name="to-save-the-udi-wizard-configuration-updates-using-the-udi-wizard-designer"></a>Aby zapisać konfiguracji kreatora UDI aktualizacje za pomocą projektanta Kreatora instalacji UDI  
@@ -6935,7 +6934,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 6.  W **zapisywanie pliku** okno dialogowe, kliknij przycisk **OK**.  
 
-####  <a name="OverridetheConfigurationFileThattheUDIWizardUses"></a>Zastąpienie pliku konfiguracji, który korzysta z Kreatora UDI  
+####  <a name="OverridetheConfigurationFileThattheUDIWizardUses"></a> Zastąpienie pliku konfiguracji, który korzysta z Kreatora UDI  
  Domyślnie Kreator UDI przy użyciu pliku UDIWizard_Config.xml w folderze skryptów w pakiecie zestawu MDT plików konfiguracji. Można zastąpić domyślny plik konfiguracji kreator używa modyfikując **kreatora UDI**sekwencja zadań **/definition** parametru.  
 
 ###### <a name="to-override-the-configuration-file-that-the-udi-wizard-uses"></a>Aby zastąpić plik konfiguracji, który korzysta z Kreatora UDI  
@@ -6969,7 +6968,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 10. Kliknij przycisk **OK**.  
 
-####  <a name="ConfiguretheUDIWizardTitleandBannerImage"></a>Skonfiguruj tytuł kreatora UDI i obraz transparentu  
+####  <a name="ConfiguretheUDIWizardTitleandBannerImage"></a> Skonfiguruj tytuł kreatora UDI i obraz transparentu  
  Kreator UDI Wyświetla tytuł i transparent w górnej części strony kreatora. Obraz tytuł i transparent UDI kreatora można skonfigurować w projektanta Kreatora instalacji UDI danej organizacji.  
 
 ###### <a name="to-configure-the-udi-wizard-title-and-banner-image-using-the-udi-wizard-designer"></a>Aby skonfigurować za pomocą projektanta Kreatora instalacji UDI obraz tytuł i transparent UDI Kreatora  
@@ -7007,7 +7006,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 9. Zamknij wszystkie otwarte okna i oknach dialogowych.  
 
-####  <a name="AddaWizardPagetoaStage"></a>Dodaj stronę kreatora do etapu  
+####  <a name="AddaWizardPagetoaStage"></a> Dodaj stronę kreatora do etapu  
  Kreator UDI sekwencja stronach kreatora, które są używane do zbierania informacje niezbędne do ukończenia systemu operacyjnego i wdrażania aplikacji. Można skonfigurować na stronach kreatora i sekwencji stron kreatora wyświetlaną w Kreatorze UDI za pomocą projektanta Kreatora instalacji UDI.  
 
  W okienku Biblioteka strona zostanie wyświetlona lista stron kreatora dostępne. W okienku Biblioteka strony można dodać stron, przeciągając strony kreatora z okienka biblioteki strony do etapu w okienku szczegółów.  
@@ -7023,7 +7022,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     > [!TIP]
     >  Pamiętaj, aby zapisać plik konfiguracji kreatora UDI po wprowadzeniu dowolnych zmian.  
 
-####  <a name="RemoveaWizardPagefromaStage"></a>Usuń strony kreatora z etap  
+####  <a name="RemoveaWizardPagefromaStage"></a> Usuń strony kreatora z etap  
  Kreator UDI sekwencja stronach kreatora, które są używane do zbierania informacje niezbędne do ukończenia systemu operacyjnego i wdrażania aplikacji. Można skonfigurować na stronach kreatora i sekwencji stron kreatora wyświetlaną w Kreatorze UDI za pomocą projektanta Kreatora instalacji UDI. W ramach tego procesu można usunąć strony kreatora w ramach etapu. W okienku Biblioteka strony usunięcie strony kreatora z etap nie powoduje usunięcia strony kreatora.  
 
 > [!NOTE]
@@ -7046,7 +7045,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     > [!TIP]
     >  Pamiętaj, aby zapisać plik konfiguracji kreatora UDI po wprowadzeniu dowolnych zmian.  
 
-####  <a name="ChangetheWizardPageSequenceFlowWithinaStage"></a>Zmień przepływ sekwencji stron kreatora, w ramach etapu  
+####  <a name="ChangetheWizardPageSequenceFlowWithinaStage"></a> Zmień przepływ sekwencji stron kreatora, w ramach etapu  
  Kreator UDI sekwencja stron kreatora, używany do gromadzenia informacje niezbędne do ukończenia systemu operacyjnego i wdrażania aplikacji. Można skonfigurować na stronach kreatora i sekwencji stron kreatora wyświetlaną w Kreatorze UDI za pomocą projektanta Kreatora instalacji UDI. W ramach tego procesu można w ramach etapu sekwencji stron kreatora.  
 
 ###### <a name="to-change-the-wizard-page-sequence-flow-within-a-stage-using-the-udi-wizard-designer"></a>Aby zmienić przepływ sekwencji stron kreatora w etapie, za pomocą projektanta Kreatora instalacji UDI  
@@ -7060,7 +7059,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 > [!TIP]
 >  Pamiętaj, aby zapisać plik konfiguracji kreatora UDI po wprowadzeniu dowolnych zmian.  
 
-####  <a name="AlloworPreventUsersfromEnteringInformationinaControlonaWizardPage"></a>Zezwalaj lub uniemożliwić użytkownikom wprowadzanie informacji w formancie na stronie kreatora  
+####  <a name="AlloworPreventUsersfromEnteringInformationinaControlonaWizardPage"></a> Zezwalaj lub uniemożliwić użytkownikom wprowadzanie informacji w formancie na stronie kreatora  
  Każdej stronie kreatora, wyświetlane przez kreatora UDI przedstawia informacje na temat procesu wdrażania UDI lub zbiera informacje używane w procesie wdrażania UDI. Następnie stron kreatora, które zbierają informacje mają co najmniej jeden formant używane do zbierania informacji.  
 
  Domyślnie wszystkie formanty są włączone na wszystkich stronach kreatora. Za pomocą projektanta Kreatora instalacji UDI, można wyłączyć pojedynczych formantów na każdej stronie kreatora, aby uniemożliwić użytkownikom wprowadzanie informacji za pomocą tych kontrolek. Projektant UDI Kreator ma przycisku, który wyświetla następujące stany:  
@@ -7087,7 +7086,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 > [!TIP]
 >  Pamiętaj, aby zapisać plik konfiguracji kreatora UDI po wprowadzeniu dowolnych zmian.  
 
-####  <a name="ConfiguretheUserExperienceforaWizardPage"></a>Konfigurowanie środowiska użytkownika dla strony kreatora  
+####  <a name="ConfiguretheUserExperienceforaWizardPage"></a> Konfigurowanie środowiska użytkownika dla strony kreatora  
  Każdej stronie kreatora zbiera unikatowe informacje ułatwiające konfigurowanie procesu wdrażania UDI. Można skonfigurować czynności użytkownika dla każdej stronie kreatora.  
 
 ###### <a name="to-configure-the-user-experience-for-a-specific-wizard-page-using-the-udi-wizard-designer"></a>Aby skonfigurować środowisko użytkownika dla strony kreatora określonego za pomocą projektanta Kreatora instalacji UDI  
@@ -7105,7 +7104,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 > [!TIP]
 >  Pamiętaj, aby zapisać plik konfiguracji kreatora UDI po wprowadzeniu dowolnych zmian.  
 
-####  <a name="PreviewWizardPagesandtheWizardPageSequenceFlow"></a>Podgląd strony kreatora i przepływem sekwencji strony kreatora  
+####  <a name="PreviewWizardPagesandtheWizardPageSequenceFlow"></a> Podgląd strony kreatora i przepływem sekwencji strony kreatora  
  Po utworzeniu strony odpowiedniego kreatora w odpowiedniej kolejności dla etapu można wyświetlić podgląd wygląd stron w Kreatorze UDI funkcja wersji zapoznawczej w projektanta Kreatora instalacji UDI. Funkcja w wersji zapoznawczej umożliwia wizualizowanie środowisko użytkownika i wprowadzać żadnych zmian do środowiska użytkownika przed wykonaniem rzeczywistych wdrożeń.  
 
 ###### <a name="to-preview-the-wizard-pages-and-wizard-page-sequence-flow-for-a-stage-using-the-udi-wizard-designer"></a>Aby wyświetlić podgląd strony kreatora i przepływ sekwencji stron kreatora na etapie, za pomocą projektanta Kreatora instalacji UDI  
@@ -7120,7 +7119,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Można także przejrzeć strony kreatora i przepływ sekwencji stron kreatora etapu klikając **Podgląd** hiperłącze na etapie w ramach etapu.  
 
-####  <a name="AddaWizardPagetothePageLibrary"></a>Dodaj stronę kreatora do biblioteki strony  
+####  <a name="AddaWizardPagetothePageLibrary"></a> Dodaj stronę kreatora do biblioteki strony  
  Biblioteka strony w projektanta Kreatora instalacji UDI zawiera listę stronach kreatora, które można dodać do etapach. Każdej stronie kreatora w bibliotece strona zachowuje liczba liczba wystąpień, w których używany jest strona kreatora w bieżącej wersji pliku konfiguracji kreatora UDI.  
 
  Strona kreatora można dodać do biblioteki strony, aby dodać go do etapów.  
@@ -7149,7 +7148,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Strona kreatora można również dodać prawym przyciskiem myszy na etapie w okienku szczegółów, a następnie klikając polecenie **Dodawanie strony**.  
 
-####  <a name="RemoveaWizardPagefromthePageLibrary"></a>Usuń strony kreatora z biblioteki strony  
+####  <a name="RemoveaWizardPagefromthePageLibrary"></a> Usuń strony kreatora z biblioteki strony  
  Biblioteka strony w projektanta Kreatora instalacji UDI zawiera listę stronach kreatora, które można dodać do etapach. Każdej stronie kreatora w bibliotece strona zachowuje liczba liczba wystąpień, w których używany jest strona kreatora w bieżącej wersji pliku konfiguracji kreatora UDI.  
 
  Strona kreatora można usunąć z biblioteki strony, aby nie można dodać do etapów.  
@@ -7174,7 +7173,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 > [!TIP]
 >  Pamiętaj, aby zapisać plik konfiguracji kreatora UDI po wprowadzeniu dowolnych zmian.  
 
-####  <a name="ChangetheSequenceofaStageGrouporaStage"></a>Zmiana sekwencji grupy etap lub etap  
+####  <a name="ChangetheSequenceofaStageGrouporaStage"></a> Zmiana sekwencji grupy etap lub etap  
  W okienku szczegółów zawiera listę grup etap i etapy obsługiwanych w pliku konfiguracji kreatora UDI (UDIWizard_Config.xml). Każda grupa etap wyświetlane w okienku szczegółów jest używana w co najmniej jednej z poniższych scenariuszy wdrożenia zestawu MDT:  
 
 -   Nowy komputer  
@@ -7219,7 +7218,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 > [!TIP]
 >  Pamiętaj, aby zapisać plik konfiguracji kreatora UDI po wprowadzeniu dowolnych zmian.  
 
-####  <a name="PrepareforLanguagePackDeploymentinUDI"></a>Przygotowanie do wdrożenia pakietu języka w UDI  
+####  <a name="PrepareforLanguagePackDeploymentinUDI"></a> Przygotowanie do wdrożenia pakietu języka w UDI  
  Jedna jest dostępne w bibliotece strony w projektanta Kreatora instalacji UDI typy stron kreatora UDI **LanguagePage** typ strony kreatora. **LanguagePage** typ strony kreatora można wybrać:  
 
 -   Język domyślny  
@@ -7245,7 +7244,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Aby uzyskać więcej informacji na temat **LanguagePage** typ strony kreatora w projektanta Kreatora instalacji UDI, zobacz sekcję odpowiednie w *przewodnik dla deweloperów instalacji sterowanej*.  
 
-####  <a name="SkipaWizardPage"></a>Pomiń strony kreatora  
+####  <a name="SkipaWizardPage"></a> Pomiń strony kreatora  
  W niektórych przypadkach warto dalszego kontroli i uprościć czynności kreatora UDI przez pominięcie (usuwania) stron kreatora. Pomijanie strony kreatora umożliwia podanie wartości konfiguracji zwykle podanego przez użytkownika dla strony kreatora. Ponadto pomijanie strona kreatora jest prostszy i bardziej jednoznaczne niż wyłączenie (blokowanie) wszystkie kontrolki na stronie kreatora.  
 
 ###### <a name="to-skip-a-wizard-page"></a>Aby pominąć strony kreatora  
@@ -7258,7 +7257,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 3.  Usuwanie strony kreatora z etap w etapie za pomocą **Usuń element** akcję na Wstążce w **projektanta przepływu** grupy.  
 
-###  <a name="CreatingCustomWizardPagesUsingtheBuildYourOwnPageFeature"></a>Tworzenie stron kreatora niestandardowego przy użyciu własnych funkcji strony  
+###  <a name="CreatingCustomWizardPagesUsingtheBuildYourOwnPageFeature"></a> Tworzenie stron kreatora niestandardowego przy użyciu własnych funkcji strony  
  Mogą wystąpić sytuacje, w których mają być zbierane informacje dodatkowe wdrożenia do użycia w UDI. Użytkownik musi zebrać dodatkowe informacje w Kreatorze UDI za pomocą strony kreatora niestandardowego. Można utworzyć za pomocą strony kreatora niestandardowego:  
 
 -   **Tworzenie funkcji swój własny strony**. Ta funkcja służy do tworzenia niestandardowych kreatora do zbierania informacji o wdrożeniu bez konieczności pisania kodu lub ma umiejętności programowania. Użyj tej funkcji, jeśli chcesz zbierać podstawowe informacje bez interakcji z użytkownikiem zaawansowane. Na przykład nie można dodać żadnego kodu lub dostosować czcionki interfejsu użytkownika za pomocą tej funkcji.  
@@ -7285,7 +7284,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Sprawdź i przetestuj strony kreatora niestandardowego po utworzeniu zgodnie z opisem w [Sprawdź i przetestuj niestandardowej strony kreatora](#VerifyandTestaCustomWizardPage).  
 
-####  <a name="CreateaNewCustomWizardPage"></a>Utwórz nową stronę kreatora niestandardowego  
+####  <a name="CreateaNewCustomWizardPage"></a> Utwórz nową stronę kreatora niestandardowego  
  Strony kreatora niestandardowego UDI utworzone przy użyciu funkcji tworzenia swój własny strony umożliwiają zbieranie informacji o wdrożeniu oprócz informacji zbieranych na innych stronach kreatora UDI. Tworzenie stron kreatora niestandardowego na podstawie **strona kreatora tworzenia swój własny strony** typu. Po utworzeniu strony kreatora niestandardowego można dodawanie formantów do strony kreatora i konfigurować zmienne sekwencji zadań, które kontrolki.  
 
 ###### <a name="to-create-a-new-custom-wizard-page"></a>Aby utworzyć nową stronę kreatora niestandardowego  
@@ -7316,7 +7315,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 9. W bibliotece strony kliknij ***display_name***. Przeciągnij strony w odpowiednie miejsce w ***stage_group*** na **przepływ** kartę (gdzie *display_name* jest przyjazna nazwa strony kreatora i *stage_ grupy* to nazwa grupy etap, do której chcesz dodać nową stronę kreatora niestandardowego).  
 
-####  <a name="AddaControltoaCustomWizardPage"></a>Dodawanie formantu do strony kreatora niestandardowego  
+####  <a name="AddaControltoaCustomWizardPage"></a> Dodawanie formantu do strony kreatora niestandardowego  
  Po dodaniu nowej strony kreatora niestandardowego UDI do grupy etap, należy dodać odpowiednie formanty do nowej strony kreatora niestandardowego. Dodaj formanty z przybornika kompilacji swój własny strony, która jest wyświetlana podczas przeglądania na stronie kreatora niestandardowego **Konfiguruj** karcie projektanta Kreatora instalacji UDI.  
 
   149 tabeli przedstawiono typy formantów do strony kreatora niestandardowego, w którym przedstawiono na rysunku 13.  
@@ -7327,11 +7326,11 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 |----------------------|---------------------|  
 |**Pole wyboru** |Ten formant umożliwia zaznacz lub usuń zaznaczenie opcji konfiguracji i zachowuje się jak tradycyjnych pole wyboru interfejsu użytkownika. Ten formant ma odpowiednie etykietę, którą można użyć do opisania celem pole wyboru. Stan tego formantu jest wartość PRAWDA, jeśli pole wyboru jest zaznaczone i wartość False, gdy pole wyboru jest wyczyszczone. Stan pola wyboru są przechowywane w zmiennej sekwencji zadań, które są skonfigurowane dla tego formantu. Aby uzyskać więcej informacji dotyczących tego formantu, zobacz "Formant wyboru" w dokumencie MDT *odwołanie do zestawu narzędzi*.|  
 |**Pola kombi ComboBox** |Ten formant służy do wybierania elementu z listy elementów i zachowuje się jak tradycyjnych listy rozwijanej interfejsu użytkownika. Ten formant umożliwia dodawanie i usuwanie elementów z listy i podaj odpowiadającą mu wartość, która zostanie ustawiona w zmiennej sekwencji zadań, które są skonfigurowane dla tego formantu. Aby uzyskać więcej informacji dotyczących tego formantu, zobacz "Formantu Combobox" w dokumencie MDT *odwołanie do zestawu narzędzi*.|  
-|**Wiersz** |Ten formant umożliwia dodawanie linii poziomej do dzielenia jedną część z innej strony kreatora niestandardowego. Ten formant nie zbiera żadnych wartości konfiguracji, ale raczej służy do wizualne rozbudowywanie interfejsu użytkownika. Aby uzyskać więcej informacji dotyczących tego formantu, zobacz "Wiersza" w dokumencie MDT *odwołanie do zestawu narzędzi*.|  
-|**Etykiety** |Ten formant umożliwia dodanie tekst opisowy, tylko do odczytu do strony kreatora. Ten formant nie zbiera żadnych wartości konfiguracji, ale raczej służy do wizualne rozbudowywanie interfejsu użytkownika. Aby uzyskać więcej informacji dotyczących tego formantu, zobacz "Formantu etykiety" w dokumencie MDT *odwołanie do zestawu narzędzi*.|  
-|**Opcji** |Tego formantu można wybrać jedną z opcji konfiguracji z grupy co najmniej dwie opcje. Podobnie jak w przypadku przycisków radiowych tradycyjne, co najmniej dwa z tych kontrolek można grupować, a następnie użytkownik może wybrać jedną z opcji w grupie przycisków radiowych. Unikatowa wartość jest przypisany do każdej opcji. Wartość przypisana do sterowania zaznaczoną opcję są zapisywane w zmiennej sekwencji zadań, które są skonfigurowane dla tego formantu. Aby uzyskać więcej informacji dotyczących tego formantu, zobacz "Radio Control" w dokumencie MDT *odwołanie do zestawu narzędzi*.|  
-|**Mapy bitowej** |Ten formant umożliwia dodanie grafiki mapa bitowa (BMP plik) do strony kreatora niestandardowego. Ten formant nie zbiera żadnych wartości konfiguracji, ale raczej służy do wizualne rozbudowywanie interfejsu użytkownika. Ścieżka do pliku .bmp jest względną wobec lokalizacji kreatora UDI (OSDSetupWizard.exe). Aby uzyskać więcej informacji dotyczących tego formantu, zobacz "Formant mapy bitowej" w dokumencie MDT *odwołanie do zestawu narzędzi*.|  
-|**Pole tekstowe** |Ten formant pozwala na wprowadzenie tekstu na stronie kreatora niestandardowego. Tekstu w tym formancie są zapisywane w zmiennej sekwencji zadań, które są skonfigurowane dla tego formantu. Aby uzyskać więcej informacji dotyczących tego formantu, zobacz "W formancie Textbox" w dokumencie MDT *odwołanie do zestawu narzędzi*.|  
+|**wiersz** |Ten formant umożliwia dodawanie linii poziomej do dzielenia jedną część z innej strony kreatora niestandardowego. Ten formant nie zbiera żadnych wartości konfiguracji, ale raczej służy do wizualne rozbudowywanie interfejsu użytkownika. Aby uzyskać więcej informacji dotyczących tego formantu, zobacz "Wiersza" w dokumencie MDT *odwołanie do zestawu narzędzi*.|  
+|**Label** |Ten formant umożliwia dodanie tekst opisowy, tylko do odczytu do strony kreatora. Ten formant nie zbiera żadnych wartości konfiguracji, ale raczej służy do wizualne rozbudowywanie interfejsu użytkownika. Aby uzyskać więcej informacji dotyczących tego formantu, zobacz "Formantu etykiety" w dokumencie MDT *odwołanie do zestawu narzędzi*.|  
+|**Radio** |Tego formantu można wybrać jedną z opcji konfiguracji z grupy co najmniej dwie opcje. Podobnie jak w przypadku przycisków radiowych tradycyjne, co najmniej dwa z tych kontrolek można grupować, a następnie użytkownik może wybrać jedną z opcji w grupie przycisków radiowych. Unikatowa wartość jest przypisany do każdej opcji. Wartość przypisana do sterowania zaznaczoną opcję są zapisywane w zmiennej sekwencji zadań, które są skonfigurowane dla tego formantu. Aby uzyskać więcej informacji dotyczących tego formantu, zobacz "Radio Control" w dokumencie MDT *odwołanie do zestawu narzędzi*.|  
+|**Bitmap** |Ten formant umożliwia dodanie grafiki mapa bitowa (BMP plik) do strony kreatora niestandardowego. Ten formant nie zbiera żadnych wartości konfiguracji, ale raczej służy do wizualne rozbudowywanie interfejsu użytkownika. Ścieżka do pliku .bmp jest względną wobec lokalizacji kreatora UDI (OSDSetupWizard.exe). Aby uzyskać więcej informacji dotyczących tego formantu, zobacz "Formant mapy bitowej" w dokumencie MDT *odwołanie do zestawu narzędzi*.|  
+|**Textbox** |Ten formant pozwala na wprowadzenie tekstu na stronie kreatora niestandardowego. Tekstu w tym formancie są zapisywane w zmiennej sekwencji zadań, które są skonfigurowane dla tego formantu. Aby uzyskać więcej informacji dotyczących tego formantu, zobacz "W formancie Textbox" w dokumencie MDT *odwołanie do zestawu narzędzi*.|  
 
  Możesz dodać dowolną kombinację tych kontrolek do strony kreatora niestandardowego w oparciu o informacje, które mają być zbierane. Ponadto można użyć **Pokaż linie siatki** pole wyboru, aby pokazać lub ukryć linie siatki, który może służyć do celów wizualne projektowanie strony kreatora niestandardowego.  
 
@@ -7339,7 +7338,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  ![MDTDevToolkit13](media/MDTDevToolkit13.jpg "MDTDevToolkit13")  
 
- Rysunek 13. Przykładowa strona kreatora niestandardowego  
+ Figure 13. Przykładowa strona kreatora niestandardowego  
 
 ###### <a name="to-add-a-control-to-a-custom-wizard-page"></a>Aby dodać kontrolkę do strony kreatora niestandardowego  
 
@@ -7355,14 +7354,14 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
      Formant został dodany do strony kreatora niestandardowego.  
 
-####  <a name="PositionaControlonaCustomWizardPage"></a>Położenie formantu na stronie kreatora niestandardowego  
+####  <a name="PositionaControlonaCustomWizardPage"></a> Położenie formantu na stronie kreatora niestandardowego  
  Po dodaniu formantu do strony kreatora niestandardowego można umieścić formantu, wykonując jedną z następujących czynności:  
 
 -   Położenie formantu na stronie kreatora niestandardowego za pomocą przeciągania i upuszczania, zgodnie z opisem w [położenie formantu niestandardowego Kreatora strony przy użyciu przeciągnij i upuść](#PositionaControlonaCustomWizardPageUsingDragandDrop).  
 
 -   Położenie formantu na stronie kreatora niestandardowego za pomocą właściwości formantu, zgodnie z opisem w [położenie formantu na niestandardowe strony kreatora przy użyciu właściwości formantu](#PositionaControlonaCustomWizardPageUsingControlProperties).  
 
-#####  <a name="PositionaControlonaCustomWizardPageUsingDragandDrop"></a>Położenie formantu na stronie kreatora niestandardowego przy użyciu operacji przeciągania i upuszczania  
+#####  <a name="PositionaControlonaCustomWizardPageUsingDragandDrop"></a> Położenie formantu na stronie kreatora niestandardowego przy użyciu operacji przeciągania i upuszczania  
  Można położenie formantu na stronie kreatora niestandardowego za pomocą przeciągania i upuszczania dla jednej z następujących sytuacji:  
 
 1.  Początkowo wprowadzenie do formantu z kompilacji swój własny strony do strony kreatora niestandardowego  
@@ -7386,7 +7385,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
     > [!TIP]
     >  Można użyć *x* i *y* współrzędną lokalizacji wyświetlany w górnej części strony kreatora niestandardowego ułatwiające pozycji formantu.  
 
-#####  <a name="PositionaControlonaCustomWizardPageUsingControlProperties"></a>Położenie formantu na stronie kreatora niestandardowego za pomocą właściwości formantu  
+#####  <a name="PositionaControlonaCustomWizardPageUsingControlProperties"></a> Położenie formantu na stronie kreatora niestandardowego za pomocą właściwości formantu  
  Umieść formantu na stronie kreatora niestandardowego należy do kontrolowania umieszczania formantu, aby precyzyjnie wyrównania wszystkie formanty. Rozmieszczanie za pomocą formantu **X** i **Y** właściwości **układu** właściwości formantu.  
 
  Położenie formantu około, takie jak podczas wprowadzania początkowy układ, czy za pomocą przeciągania i upuszczania. Aby uzyskać więcej informacji na pozycjonowanie formantu na stronie kreatora niestandardowego, przy użyciu operacji przeciągania i upuszczania, zobacz [położenie formantu niestandardowego Kreatora strony przy użyciu przeciągnij i upuść](#PositionaControlonaCustomWizardPageUsingDragandDrop).  
@@ -7414,7 +7413,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
      Po skonfigurowaniu właściwości formantu znajduje się we współrzędnych określonych przez te właściwości.  
 
-####  <a name="ChangetheSizeofaControlonaCustomWizardPage"></a>Zmień rozmiar formantu na stronie kreatora niestandardowego  
+####  <a name="ChangetheSizeofaControlonaCustomWizardPage"></a> Zmień rozmiar formantu na stronie kreatora niestandardowego  
  Zmień rozmiar formantu na stronie kreatora niestandardowego, aby prawidłowo wyświetlona zawartość formantu. Zmień rozmiar za pomocą formantu **szerokość** i **wysokość** właściwości **układu** właściwości formantu.  
 
 ###### <a name="to-change-the-size-of-a-control-on-a-custom-wizard-page"></a>Aby zmienić rozmiar formantu na stronie kreatora niestandardowego  
@@ -7438,7 +7437,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
      Po skonfigurowaniu właściwości rozmiar formantu odzwierciedla wartości tych właściwości.  
 
-####  <a name="RemoveaControlfromaCustomWizardPage"></a>Usuwanie formantu ze strony kreatora niestandardowego  
+####  <a name="RemoveaControlfromaCustomWizardPage"></a> Usuwanie formantu ze strony kreatora niestandardowego  
  Usuwanie ze strony kreatora niestandardowego formantu, gdy formant nie jest już potrzebna na stronie kreatora niestandardowego. Po usunięciu formantu za pomocą Kreatora niestandardowe strony, wszystkich **układu** i **ustawienia** właściwości skojarzone z formantem również zostaną usunięte. Gdy formant został usunięty i pliku konfiguracji kreatora UDI zostały zapisane, usunięcia nie można cofnąć.  
 
 > [!TIP]
@@ -7456,7 +7455,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
      Formant zostanie usunięta ze strony kreatora niestandardowego.  
 
-####  <a name="EditCustomWizardPageControlProperties"></a>Edytowanie właściwości formantu strony kreatora niestandardowego  
+####  <a name="EditCustomWizardPageControlProperties"></a> Edytowanie właściwości formantu strony kreatora niestandardowego  
  Każdego formantu, który można umieścić na stronie kreatora niestandardowego ma właściwości. Te właściwości są używane do konfigurowania wygląd formantu, oraz jak Kreator UDI przetwarza informacje o formancie zbiera.  
 
  Następujące właściwości są dostępne dla formantów przybornika kompilacji swój własny strony:  
@@ -7487,7 +7486,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
          Aby uzyskać więcej informacji na temat **ustawienia** właściwości dla określonego formantu, znajduje się w odpowiednich sekcjach dla każdego formantu w "UDI kompilacji swój własny przybornika kontroli odwołania do strony" w dokumencie MDT *Toolkit Odwołanie*.  
 
-####  <a name="ShoworHideCustomWizardPageGridlines"></a>Pokaż lub Ukryj linie siatki strony kreatora niestandardowego  
+####  <a name="ShoworHideCustomWizardPageGridlines"></a> Pokaż lub Ukryj linie siatki strony kreatora niestandardowego  
  Możesz wyświetlić lub ukryć linie siatki na stronach kreatora niestandardowego. Linie siatki ułatwiają Umieść formanty, tak aby zostały one wyrównane poprawnie ze sobą.  
 
 ###### <a name="to-show-or-hide-custom-wizard-page-gridlines"></a>Aby wyświetlić lub ukryć linie siatki strony kreatora niestandardowego  
@@ -7506,14 +7505,14 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
     -   Wyczyszczone, następnie linie siatki nie są wyświetlane  
 
-####  <a name="VerifyandTestaCustomWizardPage"></a>Sprawdź i przetestuj strony kreatora niestandardowego  
+####  <a name="VerifyandTestaCustomWizardPage"></a> Sprawdź i przetestuj strony kreatora niestandardowego  
  Po utworzeniu strony kreatora niestandardowego i skonfigurować odpowiednie kontrolki, sprawdź, czy strony kreatora niestandardowego działa zgodnie z oczekiwaniami. Można sprawdzić i testować przy użyciu funkcji w wersji zapoznawczej w projektanta Kreatora instalacji UDI stronę kreatora niestandardowego.  
 
  Funkcja w wersji zapoznawczej umożliwia wizualizowanie środowisko użytkownika i wprowadź wymagane zmiany przed wykonaniem rzeczywistych wdrożeń środowiska użytkownika. Tak, jakby były użytkownika Kreatora UDI mogą współdziałać z Twojej strony kreatora niestandardowego.  
 
  Aby uzyskać więcej informacji na temat podglądu strony kreatora i przepływ sekwencji stron kreatora, zobacz [podglądu strony kreatora i przepływ sekwencji stron kreatora](#PreviewWizardPagesandtheWizardPageSequenceFlow).  
 
-##  <a name="RunningtheUDIWizard"></a>Uruchamianie Kreatora UDI  
+##  <a name="RunningtheUDIWizard"></a> Uruchamianie Kreatora UDI  
  Kreator UDI inicjowana jest automatycznie po uruchomieniu sekwencji zadań na podstawie UDI. Automatycznie Zainicjuj sekwencji zadań na podstawie UDI za pomocą usług wdrażania systemu Windows, lub ręcznie przy użyciu sekwencji zadań (anonsowany) wdrożone w kliencie programu Configuration Manager. Każdy scenariusz wdrożenia zestawu MDT (nowy komputer, Odśwież komputer lub Zastąp komputera) używa innego procesu. Inicjowanie wdrażania usług wdrażania systemu Windows lub przy użyciu nośnika rozruchowego w sekwencji zadań. Proces wdrażania wyświetli monit o wszystkich ustawień konfiguracji, które nie zostały już.  
 
  Kreator UDI wyświetla na podstawie scenariusza wdrożenia zestawu MDT wybranych i opcje konfiguracji, zapisana w pliku konfiguracji kreatora UDI (UDIWizard_Config.xml) w folderze skryptów MDT plików pakietu stron kreatora. Formanty, które są włączone i ich wartości domyślne również są kontrolowane przez opcje konfiguracji, zapisana w pliku konfiguracyjnym UDI kreatora.  
@@ -7539,7 +7538,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
  Po zakończeniu pracy Kreatora UDI, rozpoczyna się wdrażania nowego systemu operacyjnego. Po ukończeniu procesu wdrażania **wyniki OSD** strona jest wyświetlana bezpośrednio przed pierwszym użytkownika logującego się na komputerze docelowym. Aby uzyskać więcej informacji o sposobie konfigurowania **wyniki OSD** strony, zobacz sekcję "OSDResults.exe.config pliku elementu wartości" w dokumencie zestawu MDT *odwołanie do zestawu narzędzi*.  
 
-##  <a name="ConfiguringMDTDeployments"></a>Konfigurowanie wdrożenia zestawu MDT  
+##  <a name="ConfiguringMDTDeployments"></a> Konfigurowanie wdrożenia zestawu MDT  
  Skonfiguruj wdrożenia zestawu MDT przez:  
 
 -   Dostosowywanie plików CustomSettings.ini i Bootstrap.ini, zgodnie z opisem w [Dostosowywanie pliki konfiguracyjne zestawu MDT](#CustomizingMDTConfigurationFiles)  
@@ -7568,7 +7567,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Stosowanie ustawień konfiguracji zabezpieczeń i zgodności przy użyciu pakietów obiektu zasad grupy, zgodnie z opisem w [stosowania pakiety obiektu zasad grupy](#ApplyingGroupPolicyObjectPacks)  
 
--   Włączanie udział w [Program poprawy jakości obsługi klienta systemu Windows](http://windows.microsoft.com/da-DK/windows-8/privacy-statement?T1=server#section_9)(CEIP) i [raportowanie błędów systemu Windows](http://msdn.microsoft.com/windows/hardware/gg487440) (WER) zgodnie z opisem w [włączenie uczestnictwo w programie poprawy jakości obsługi klienta i raportowaniu błędów systemu Windows](#EnablingParticipationinCEIPandWER)  
+-   Włączanie udział w [Program poprawy jakości obsługi klienta systemu Windows](https://privacy.microsoft.com/privacystatement)(CEIP) i [raportowanie błędów systemu Windows](https://docs.microsoft.com/windows-hardware/drivers/dashboard/windows-error-reporting-getting-started) (WER) zgodnie z opisem w [włączenie uczestnictwo w programie poprawy jakości obsługi klienta i raportowaniu błędów systemu Windows](#EnablingParticipationinCEIPandWER)  
 
 -   Konfigurowanie kroków sekwencji zadań, które skonfigurować funkcje i role systemu Windows na komputerze docelowym, zgodnie z opisem w [konfigurowania ról i kroki sekwencji zadań w funkcji](#ConfiguringRolesandFeaturesTaskSequenceSteps)  
 
@@ -7578,7 +7577,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Tworzenie niestandardowych skryptów, które integrują się z wdrożenia zestawu MDT przetwarza zgodnie z opisem w [tworzenia niestandardowych skryptów dla zestawu MDT](#CreatingCustomScriptsforMDT)  
 
-###  <a name="CustomizingMDTConfigurationFiles"></a>Dostosowywanie pliki konfiguracyjne zestawu MDT  
+###  <a name="CustomizingMDTConfigurationFiles"></a> Dostosowywanie pliki konfiguracyjne zestawu MDT  
  Zestaw MDT to elastyczny i dużym stopniu dostosowywane z pliki konfiguracyjne zestawu MDT. Poniższe sekcje zawierają przykłady konfiguracji, które przedstawiają sposób dostosowywania procesu wdrażania.  
 
  Dostosowywanie pliki konfiguracyjne zestawu MDT przez:  
@@ -7599,7 +7598,7 @@ imagex /flags <edition_id> /info <wim_file> 1 <new_image_name> <new_image_descri
 
 -   Identyfikowanie składni pliku BootStrap.ini zgodnie z opisem w [zidentyfikować składni pliku BootStrap.ini](#IdentifytheBootStrap.iniFileSyntax)  
 
-####  <a name="IdentifytheCustomSettings.iniFileSyntax"></a>Zidentyfikuj składni plik CustomSettings.ini  
+####  <a name="IdentifytheCustomSettings.iniFileSyntax"></a> Zidentyfikuj składni plik CustomSettings.ini  
  Składnia pliku CustomSettings.ini jest podobny do wielu plików .ini. Plik CustomSettings.ini obejmuje:  
 
 -   Sekcje  
@@ -7631,7 +7630,7 @@ CustomProperty=FALSE
 
 ```  
 
-####  <a name="SectionsintheCustomSettings.iniFile"></a>Sekcji w pliku CustomSettings.ini  
+####  <a name="SectionsintheCustomSettings.iniFile"></a> Sekcji w pliku CustomSettings.ini  
  Sekcje są identyfikowane za pomocą nawiasów (`[]`) otaczające nazwy sekcji (na przykład `[Settings]`). Wyświetlanie listy 1, w sekcjach zawarto `[Settings]`, `[Default]`, `[00:0F:20:35:DE:AC]`, i `[00:03:FF:FE:FF:FF]`.  
 
  Sekcji w pliku CustomSettings.ini obejmują:  
@@ -7640,17 +7639,17 @@ CustomProperty=FALSE
 
 -   Opcjonalne sekcje zgodnie z opisem w [sekcje opcjonalne](#OptionalSections)  
 
-#####  <a name="RequiredSections"></a>Wymagane sekcje  
+#####  <a name="RequiredSections"></a> Wymagane sekcje  
  Tylko `[Settings]` sekcja jest wymagana. Wszystkie pozostałe sekcje są opcjonalne. Skrypty MDT wymagają `[Settings]` części CustomSettings.ini, aby zlokalizować właściwości zastrzeżone (**priorytet** i **właściwości**).  
 
-#####  <a name="OptionalSections"></a>Sekcje opcjonalne  
+#####  <a name="OptionalSections"></a> Sekcje opcjonalne  
  Opcjonalne sekcje można użyć w pliku CustomSettings.ini, aby przypisać grupę ustawień konfiguracyjnych:  
 
 -   **Grupa komputerów**. Wyświetlanie 1 ustawienia konfiguracji w `[Default]`sekcji są stosowane do więcej niż jednego komputera. Aby uzyskać więcej informacji, zobacz [stosowania zestawu MDT właściwości do grup komputerów](#ApplyingMDTPropertiestoGroupsofComputers)w dalszej części tego przewodnika.  
 
 -   **Pojedynczy komputer**. Wyświetlanie 1 ustawienia konfiguracji w `[00:0F:20:35:DE:AC]` i `[00:03:FF:FE:FF:FF]` sekcje są stosowane do odpowiednich komputera (w tym przypadku identyfikowane przez adres media access control [MAC] na komputerze docelowym). Aby uzyskać więcej informacji, zobacz [stosowania zestawu MDT właściwości na poszczególnych komputerach](#ApplyingMDTPropertiestoIndividualComputers)w dalszej części tego przewodnika.  
 
-####  <a name="PropertiesintheCustomSettings.iniFile"></a>Właściwości w pliku CustomSettings.ini  
+####  <a name="PropertiesintheCustomSettings.iniFile"></a> Właściwości w pliku CustomSettings.ini  
  Właściwości są zmienne, do których można przypisać wartości. Właściwości są po znaku równości (=). Skrypty skanowania pliku CustomSettings.ini, aby zlokalizować właściwości.  
 
  Właściwości, których można używać w wdrażanie komputerów docelowych typy właściwości, które są:  
@@ -7678,7 +7677,7 @@ CustomProperty=FALSE
 
 -   Konfigurowanie wartości dla właściwości, zgodnie z opisem w [wartości w pliku CustomSettings.ini](#ValuesintheCustomSettings.iniFile)  
 
-#####  <a name="PriorityReservedProperty"></a>Właściwości zastrzeżone priorytet  
+#####  <a name="PriorityReservedProperty"></a> Właściwości zastrzeżone priorytet  
  **Priorytet** zarezerwowanej właściwości określa sekwencji i sekcji, w którym można znaleźć wartości konfiguracji. Każda sekcja przeszukiwany jest w określonej kolejności. Gdy wartość właściwości zostanie znaleziony, pozostałe sekcje nie są używane dla tej właściwości. Wyświetlanie listy 1 `[Default]` sekcji zostanie przeanalizowany pierwszy, a następnie sekcja, która odpowiada adres MAC komputera docelowego (w tym przypadku `[00:0F:20:35:DE:AC]` lub `[00:03:FF:FE:FF:FF]`).  
 
   152 tabeli przedstawiono typy sekcje, w których można się odwołać **priorytet** właściwości.  
@@ -7691,7 +7690,7 @@ CustomProperty=FALSE
 |Nazwa sekcji literału|Literał nazwy określonej w **priorytet** właściwości. Na przykład jeśli `MySection` znajduje się w **priorytet** właściwości, zestawu MDT będzie wyszukiwać właściwości nie poprzednio znaleziony w `[MySection]`sekcji.|  
 |Pośrednie odwołanie|Nazwa literału, która odwołuje się do sekcji, która z kolei odwołuje się do innej sekcji. Na przykład jeśli **brama_domyślna** właściwość jest uwzględniona w **priorytet** właściwości, wyszukaj czy zestaw MDT `[DefaultGateway]` sekcji. Jeśli `[DefaultGateway]` sekcji odwołuje się do innej sekcji (na podstawie adresu IP bramy domyślnej), jest to przykład pośrednie odwołanie. Przykład pośrednie odwołanie przy użyciu **brama_domyślna** właściwości, zobacz "przykład: Grupy komputerów wybranych przez banku Woodgrove"w [wybierz metodę grupowania komputerów](#SelecttheMethodforGroupingComputers).|  
 
-#####  <a name="PropertiesReservedProperty"></a>Właściwości zastrzeżone właściwości  
+#####  <a name="PropertiesReservedProperty"></a> Właściwości zastrzeżone właściwości  
  **Właściwości** zarezerwowanej właściwości (pokazany na wyświetlanie 1) definiuje żadnych właściwości niestandardowych, definiowanych przez użytkownika do użycia we wdrożeniu. Te właściwości zdefiniowane przez użytkownika znajdują się za pomocą skryptu ZTIGather.wsf w pliku CustomSettings.ini (lub bazy danych konfiguracji). Te właściwości są również wstępnie zdefiniowanych właściwości w zestawie MDT.  
 
  Wyświetlanie listy 1 **właściwości niestandardowej** jest właściwością zdefiniowane przez użytkownika i **ScanStateArgs** jest wstępnie zdefiniowanych właściwości. Aby uzyskać listę właściwości wstępnie zdefiniowane w zestawie MDT, zobacz sekcję "Właściwości" w dokumencie zestawu MDT *odwołanie do zestawu narzędzi*.  
@@ -7709,7 +7708,7 @@ ListProperty001=New York City
 ListProperty002=Chicago  
 ```  
 
-#####  <a name="ValuesintheCustomSettings.iniFile"></a>Wartości w pliku CustomSettings.ini  
+#####  <a name="ValuesintheCustomSettings.iniFile"></a> Wartości w pliku CustomSettings.ini  
  *Wartości* są przypisane do właściwości ustawień konfiguracji. Wartości są poprzedzone znakiem równości (=). Skrypty skanowania pliku CustomSettings.ini, aby zlokalizować wartości. Wyświetlanie listy 1 wartość przypisaną do **LoadStateArgs** właściwość jest:  
 
 ```  
@@ -7719,7 +7718,7 @@ ListProperty002=Chicago
 > [!NOTE]
 >  pliku CustomSettings.ini różni się od tradycyjnych pliki INI, nie należy umieszczać cudzysłowów wokół wartości, nawet jeśli wartość zawiera spacje.  
 
-####  <a name="SubsectionsintheCustomSettings.iniFile"></a>Podpunkty w pliku CustomSettings.ini  
+####  <a name="SubsectionsintheCustomSettings.iniFile"></a> Podpunkty w pliku CustomSettings.ini  
  Możesz utworzyć podpunkty w pliku Customsettings.ini na podstawie wartości właściwości, używając **podsekcji** dyrektywy. Wartość **podsekcji** dyrektywa może służyć do dynamicznie odwołania podpunkty, których można użyć do ustawienia konfiguracji grupy.  
 
   Wyświetlanie listy 2 przedstawiono fragment pliku CustomSettings.ini, który używa **podsekcji** dyrektywy do dynamicznie odwołania podpunkty oparte na modelu komputera, które jest określone w **modelu** Właściwość.  
@@ -7749,7 +7748,7 @@ Packages002=XXX00003:Program4
 
  Zawiera podsekcja "Contoso Corporation komputera" **podsekcji** wiersza, który odwołuje się do innych podpunkty na podstawie wartości z **modelu** właściwości. W tym przykładzie "Contoso-zestaw MDT 6600" i "Contoso-MDT 2431" sekcje będą przetwarzane przez zestaw MDT w zależności od wartości **modelu** właściwości.  
 
-####  <a name="UserExitScriptsintheCustomSettings.iniFile"></a>Skrypty zakończenia użytkownika w pliku CustomSettings.ini  
+####  <a name="UserExitScriptsintheCustomSettings.iniFile"></a> Skrypty zakończenia użytkownika w pliku CustomSettings.ini  
  Skrypt zakończenia użytkownika jest biblioteka funkcji, które może być wywołane podczas przetwarzania przy użyciu pliku CustomSettings.ini **UserExit** dyrektywy. Skrypt zakończenia użytkownika zawiera jedną lub więcej funkcji, które mogą być wywoływane podczas procesu pliku CustomSettings.ini.  
 
  Skrypt zakończenia użytkownika jest wywoływana przez określenie **UserExit** dyrektywy i przypisywania nazwy właściwości skryptu, ma być wywoływana — na przykład **UserExit=TrimAssetTag.vbs**. Funkcja skryptu zakończenia użytkownika jest wywoływana przez określenie nazwy funkcji ujęta w  **#**  znaków. Na przykład, jeśli użytkownik wyjść skryptu zawiera funkcji o nazwie **TrimAssetTag()**, czy można wywołać, określając **#TrimAssetTag() #**.  
@@ -7843,7 +7842,7 @@ SkipProductKey=YES
 
 ```  
 
-####  <a name="BasicCustomSettings.iniFileforLTIDeployments"></a>Podstawowego pliku CustomSettings.ini we wdrożeniach LTI  
+####  <a name="BasicCustomSettings.iniFileforLTIDeployments"></a> Podstawowego pliku CustomSettings.ini we wdrożeniach LTI  
  We wdrożeniach LTI, konsoli Deployment Workbench używa wersji szablonu pliku CustomSettings.ini (przechowywane w *installation_folder*\Templates, gdzie *installation_folder* to folder, w którym Zestaw MDT jest zainstalowana) jako podstawę dostosowaną wersję CustomSettings.ini. Wersja szablonu pliku CustomSettings.ini przedstawia listę 5. Wersja szablonu w listę 5 nie zawiera wystarczających ustawienia, aby pomyślnie wdrożyć system Windows na komputerze docelowym. Niemniej jednak plik zostanie niestandardowych za pomocą konsoli Deployment Workbench.  
 
  **Wyświetlanie listy 5. Niezmodyfikowanego pliku CustomSettings.ini w folderze Szablony**  
@@ -7900,7 +7899,7 @@ SkipProductKey=YES
 
  Aby uzyskać więcej informacji na temat poszczególnych właściwości Zobacz odpowiedniej sekcji w dokumencie MDT *odwołanie do zestawu narzędzi*.  
 
-####  <a name="BasicCustomSettings.iniFileforZTIDeploymentsUsingConfigurationManger"></a>Podstawowego pliku CustomSettings.ini dla wdrożenia ZTI przy użyciu programu Configuration Manager  
+####  <a name="BasicCustomSettings.iniFileforZTIDeploymentsUsingConfigurationManger"></a> Podstawowego pliku CustomSettings.ini dla wdrożenia ZTI przy użyciu programu Configuration Manager  
  W przypadku wdrożeń ZTI programu Configuration Manager konsoli Deployment Workbench używa wersji szablonu pliku CustomSettings.ini (przechowywane w *installation_folder*\Templates, gdzie *installation_folder* to folder, w którym jest zainstalowany zestaw MDT) jako podstawę dostosowaną wersję CustomSettings.ini. Wersja szablonu pliku CustomSettings.ini przedstawia listę 7. Wersja szablonu w wyświetlania 7 nie zawiera ustawienia wystarczające, aby pomyślnie wdrożyć system Windows na komputerze docelowym. Niemniej jednak plik zostanie niestandardowych za pomocą konsoli Deployment Workbench.  
 
  **Wyświetlanie listy 7. Niezmodyfikowanego pliku CustomSettings.ini w folderze Szablony**  
@@ -7977,7 +7976,7 @@ MyCustomProperty=FALSE
 
  Aby uzyskać więcej informacji na temat poszczególnych właściwości Zobacz odpowiedniej sekcji w dokumencie MDT *odwołanie do zestawu narzędzi*.  
 
-####  <a name="IdentifytheBootStrap.iniFileSyntax"></a>Zidentyfikuj składni pliku BootStrap.ini  
+####  <a name="IdentifytheBootStrap.iniFileSyntax"></a> Zidentyfikuj składni pliku BootStrap.ini  
  We wdrożeniach LTI Aby określić ustawienia właściwości przed uzyskaniem dostępu do pliku CustomSettings.ini należy użyć pliku BootStrap.ini. Użyj pliku BootStrap.ini, aby podać informacje o punkcie dystrybucji, poświadczenia logowania i ustawienia regionalne systemu Windows PE klawiatury. Właściwości skonfigurowane w BootStrap.ini pomocy skrypty MDT zlokalizować odpowiedni udział dystrybucji zestawu MDT.  
 
  Składnia pliku BootStrap.ini jest taki sam jak plik CustomSettings.ini. Plik typu BootStrap.ini zawiera podzbiór właściwości używane w CustomSettings.ini w następujący sposób:  
@@ -8013,7 +8012,7 @@ Priority=Default
 DeployRoot=\\NYC-MDT-01\Distribution$  
 ```  
 
-###  <a name="ConfiguringtheAppropriateMDTProperties"></a>Konfigurowanie właściwości odpowiedniego zestawu MDT  
+###  <a name="ConfiguringtheAppropriateMDTProperties"></a> Konfigurowanie właściwości odpowiedniego zestawu MDT  
  Zestaw MDT używa kreatorów do tworzenia i obsługi plików konfiguracyjnych. Aby uzyskać więcej informacji na temat standardowe pliki konfiguracji zestawu MDT, CustomSettings.ini i BootStrap.ini, zobacz [Dostosowywanie pliki konfiguracyjne zestawu MDT](#CustomizingMDTConfigurationFiles). Można jednak dostosować pliki konfiguracji do potrzeb organizacji.  
 
  Przed skonfigurowaniem procesu wdrażania, zaznacz właściwości, aby odwołać się z właściwości wstępnie zdefiniowanych lub zdefiniowanych przez użytkownika. Wybrane właściwości musi zawierać wszystkie ustawienia konfiguracji, należy podać podczas procesu wdrażania.  
@@ -8038,7 +8037,7 @@ DeployRoot=\\NYC-MDT-01\Distribution$
 
  Aby uzyskać więcej informacji na każdej z właściwości używane w każdej fazie, zobacz sekcję "Właściwości" w dokumencie MDT *odwołanie do zestawu narzędzi*.  
 
-###  <a name="ApplyingMDTPropertiestoGroupsofComputers"></a>Stosowanie zestawu MDT właściwości grupy komputerów  
+###  <a name="ApplyingMDTPropertiestoGroupsofComputers"></a> Stosowanie zestawu MDT właściwości grupy komputerów  
  Jeśli to możliwe, użyj reguły na podstawie grupy, aby zastosować większość ustawień konfiguracji komputera. Reguły na podstawie grupy umożliwiają te same ustawienia konfiguracji, ma zostać zastosowany do grupy komputerów klienckich. Po zastosowaniu reguły na podstawie grupy, możesz podawać ustawienia konfiguracji specyficznych dla komputera przy użyciu reguł opartych na komputerach.  
 
  Zastosuj właściwości do grup komputerów, wykonując następujące czynności:  
@@ -8047,7 +8046,7 @@ DeployRoot=\\NYC-MDT-01\Distribution$
 
 2.  Zastosuj właściwości do grup komputerów, zgodnie z opisem w [Zastosuj właściwości do grup](#ApplythePropertiestotheGroups).  
 
-####  <a name="SelecttheMethodforGroupingComputers"></a>Wybierz metodę grupowania komputerów  
+####  <a name="SelecttheMethodforGroupingComputers"></a> Wybierz metodę grupowania komputerów  
  Różne metody może służyć do grupy komputerów klienckich. Po określeniu, jak grupy komputerów, wybierz odpowiednie właściwości, aby ułatwić ich grupy.  
 
  Przy użyciu przetwarzania reguły w zestawie MDT, grupy komputerów, w zależności od dowolnej właściwości, która może być stosowane do grupy komputerów (takich jak **upewnij**, **modelu**, lub **brama_domyślna**).  155 tabeli wymieniono metody grupowania komputery, opis metody i właściwości, które mogą służyć do grupy komputerów.  
@@ -8056,7 +8055,7 @@ DeployRoot=\\NYC-MDT-01\Distribution$
 
 |GROUPING — metoda|Opis|Właściwości|  
 |---------------------|-----------------|----------------|  
-|Geograficznie|Grupa ustawień konfiguracji na podstawie zasobów znajdujących się w regionie geograficznym (na przykład folder udostępniony na komputerze w regionie geograficznym).|**Brama_domyślna** |  
+|Geograficznie|Grupa ustawień konfiguracji na podstawie zasobów znajdujących się w regionie geograficznym (na przykład folder udostępniony na komputerze w regionie geograficznym).|**DefaultGateway** |  
 |Atrybuty sprzętu komputera docelowego|Grupa ustawień konfiguracji na podstawie atrybutów sprzętu (na przykład markę komputera ani architektury procesora komputera docelowego).|**Architektura**CapableArchitectureMake|  
 |Atrybutów oprogramowania komputera docelowego|Grupa ustawień konfiguracji na podstawie atrybutów sprzętu (takie jak wersja systemu operacyjnego na komputerze docelowym).|**OSVersion** |  
 |Domyślne atrybuty|Na wszystkich komputerach docelowych należy zastosować ustawienia konfiguracji, gdy właściwości nie są w innych częściach.|**Domyślny** |  
@@ -8098,7 +8097,7 @@ SLShare=\\DAL-AM-FIL-01\Logs
 Administrator1=WOODGROVEBANK\DAL Help Desk Staff  
 ```  
 
-####  <a name="ApplythePropertiestotheGroups"></a>Zastosuj właściwości do grup  
+####  <a name="ApplythePropertiestotheGroups"></a> Zastosuj właściwości do grup  
  Po określeniu sposób grupowania ustawienia konfiguracji, określ, które właściwości i odpowiednie ustawienia konfiguracji mają być stosowane do każdej grupy. Właściwości, które mogą być grupowane są te, które można stosować do wielu komputerów.  
 
  Niektóre właściwości, które są zazwyczaj stosowane do grup komputerów należą:  
@@ -8111,7 +8110,7 @@ Administrator1=WOODGROVEBANK\DAL Help Desk Staff
 
 -   **ComputerBackupLocation**  
 
--   **Pakiety**  
+-   **Packages**  
 
 -   **SLShare**  
 
@@ -8139,7 +8138,7 @@ Administrator1=WOODGROVEBANK\DAL Help Desk Staff
 
 -   W NYC, specyficzne dla lokalizacji pakiety są oznaczane `Packages1` i `Packages2`.  
 
-###  <a name="ApplyingMDTPropertiestoIndividualComputers"></a>Stosowanie właściwości zestawu MDT do poszczególnych komputerów  
+###  <a name="ApplyingMDTPropertiestoIndividualComputers"></a> Stosowanie właściwości zestawu MDT do poszczególnych komputerów  
  Po określeniu grupy komputerów docelowych oraz ustawienia konfiguracji, które mają być stosowane do każdej grupy, należy określić metodę dla poszczególnych komputerów oraz ustawienia konfiguracji, które można przypisać do każdego komputera. Reguły dla komputerów docelowych zezwalają na zastąpienie lub rozszerzeniu grupy na podstawie przetwarzania zasad na podstawie priorytetu zasady oparte na komputerze.  
 
  Aby uzyskać więcej informacji na temat wyznaczania priorytet przetwarzania reguły, zobacz [priorytet zarezerwowanej właściwości](#PriorityReservedProperty)we wcześniejszej części tego przewodnika.  
@@ -8156,7 +8155,7 @@ Administrator1=WOODGROVEBANK\DAL Help Desk Staff
 
 |Identyfikacja — metoda|Opis|Właściwości|  
 |---------------------------|-----------------|----------------|  
-|Atrybuty sprzętu komputera docelowego|Zidentyfikuj komputer docelowy przy użyciu konfiguracji sprzętowej.|**AssetTag**, **MACAddress**, **SerialNumber**, **UUID**, **produktu**, **upewnij** , a **modelu** |  
+|Atrybuty sprzętu komputera docelowego|Zidentyfikuj komputer docelowy przy użyciu konfiguracji sprzętowej.|**AssetTag**, **MACAddress**, **SerialNumber**, **UUID**, **produktu**, **upewnij**, i **modelu** |  
 |Atrybutów oprogramowania komputera docelowego|Zidentyfikuj komputer docelowy przy użyciu konfiguracji oprogramowania lub oprogramowania układowego.|**OSVersion**, **IsServerOS**, i **OSSKU** |  
 |Atrybuty zdefiniowane przez użytkownika komputera docelowego|Zidentyfikuj komputer docelowy przy użyciu atrybutów, które są przypisane do komputera, ale nie jest częścią konfiguracji sprzętu lub oprogramowania.|**Numer seryjny AssetTag** |  
 
@@ -8188,23 +8187,23 @@ OverRideProductKey=11111-22222-33333-44444-55555
 
 |Komputer docelowy|Ustawienia i opis|  
 |---------------------|------------------------------|  
-|`[00:03:FF:CB:4E:C2]`|`ComputerName`to nazwa komputera, po wdrożeniu — w tym przypadku WasW2K.`OverRideProductKey` jest to klucz produktu do przypisania do komputera — w tym przypadku TTTTT-VVVVV-WWWWW-XXXXX-YYYYY.|  
-|`[00:0F:20:35:DE:AC]`|`ComputerName`to nazwa komputera, po wdrożeniu — w tym przypadku HPD530-1.`OverRideProductKey` jest to klucz produktu do przypisania do komputera — w tym przypadku AAAAA-BBBBB-CCCCC-DDDDD-EEEEE.|  
-|`[00:03:FF:FE:FF:FF]`|`ComputerName`to nazwa komputera, po wdrożeniu — w tym przypadku BVMXP.<br /><br /> `OverRideProductKey`jest to klucz produktu do przypisania do komputera — w tym przypadku 11111-22222-33333-44444-55555.|  
+|`[00:03:FF:CB:4E:C2]`|`ComputerName` to nazwa komputera, po wdrożeniu — w tym przypadku WasW2K.`OverRideProductKey` jest to klucz produktu do przypisania do komputera — w tym przypadku TTTTT-VVVVV-WWWWW-XXXXX-YYYYY.|  
+|`[00:0F:20:35:DE:AC]`|`ComputerName` to nazwa komputera, po wdrożeniu — w tym przypadku HPD530-1.`OverRideProductKey` jest to klucz produktu do przypisania do komputera — w tym przypadku AAAAA-BBBBB-CCCCC-DDDDD-EEEEE.|  
+|`[00:03:FF:FE:FF:FF]`|`ComputerName` to nazwa komputera, po wdrożeniu — w tym przypadku BVMXP.<br /><br /> `OverRideProductKey` jest to klucz produktu do przypisania do komputera — w tym przypadku 11111-22222-33333-44444-55555.|  
 
-###  <a name="ConfiguringMDTProcessingRules"></a>Konfigurowanie reguł przetwarzania zestawu MDT  
+###  <a name="ConfiguringMDTProcessingRules"></a> Konfigurowanie reguł przetwarzania zestawu MDT  
  Skrypty MDT Skonfiguruj ustawienia komputera na podstawie reguł i ustawień konfiguracji przechowywanych w pliku CustomSettings.ini lub w bazie danych zestawu MDT. Skonfiguruj reguły przetwarzania zestawu MDT, wykonując następujące zadania:  
 
 -   Konfigurowanie reguł przetwarzania, zgodnie z opisem w [skonfigurować reguły w pliku CustomSettings.ini](#ConfiguretheRulesintheCustomSettings.iniFile).  
 
 -   Konfigurowanie reguł przetwarzania, zgodnie z opisem w [skonfigurować reguły w bazie danych zestawu MDT](#ConfiguretheRulesintheMDTDB).  
 
-####  <a name="ConfiguretheRulesintheCustomSettings.iniFile"></a>Skonfiguruj reguły w pliku CustomSettings.ini  
+####  <a name="ConfiguretheRulesintheCustomSettings.iniFile"></a> Skonfiguruj reguły w pliku CustomSettings.ini  
  Konfigurowanie reguł w pliku CustomSettings.ini. Wersja szablonu pliku CustomSettings.ini, wraz z zasadami organizacji, staje się dostosowanego pliku CustomSettings.ini.  
 
  We wdrożeniach LTI Konfigurowanie ustawień na podstawie grupy są wystarczające, ponieważ ustawienia specyficzne dla komputera można podać podczas instalacji zestawu MDT. W przypadku wdrożeń ZTI programu Configuration Manager dodać unikatowe ustawienia konfiguracji dla określonego komputera, ponieważ ZTI przyjęto założenie, że wszystkie ustawienia konfiguracji niezbędne do wdrożenia są skonfigurowane z wyprzedzeniem. Te ustawienia konfiguracji można oprócz lub zamiast reguły grupy.  
 
-####  <a name="ConfiguretheRulesintheMDTDB"></a>Skonfiguruj reguły w bazie danych zestawu MDT  
+####  <a name="ConfiguretheRulesintheMDTDB"></a> Skonfiguruj reguły w bazie danych zestawu MDT  
  Umożliwia skonfigurowanie reguł we wdrożeniach LTI oraz ZTI w bazie danych zestawu MDT w konsoli Deployment Workbench. Korzyści wynikające ze stosowania zestawu MDT DB obejmują:  
 
 -   **Składa się z bardziej ogólnym wersji CustomSettings.ini**. Zapisanie ustawień konfiguracji w bazie danych zestawu MDT Usuwa większość szczegółów z pliku CustomSettings.ini. Ta zmiana ułatwia pliku CustomSettings.ini bardziej ogólnym, aby mogli używać tego samego pliku w wielu udziałów wdrożenia.  
@@ -8213,7 +8212,7 @@ OverRideProductKey=11111-22222-33333-44444-55555
 
  Aby uzyskać informacje o bazie danych zestawu MDT i użyciem jej do przeprowadzania wdrożeń, zobacz [wdrożeń wykonywanie przy użyciu zestawu MDT DB](#PerformingDeploymentsUsingtheMDTDB).  
 
-###  <a name="PreparingDisksonTargetComputers"></a>Przygotowywanie dysków na komputerach docelowych  
+###  <a name="PreparingDisksonTargetComputers"></a> Przygotowywanie dysków na komputerach docelowych  
  Przed wdrożeniem docelowego systemu operacyjnego na komputerze docelowym, proces wdrożenia zestawu MDT przygotowuje dyski na komputerze docelowym dla wdrożenia. Proces przygotowywania dysku obejmuje następujące kroki:  
 
 1.  Tworzenie partycji na jeden lub więcej dysków na komputerach docelowych.  
@@ -8238,15 +8237,15 @@ OverRideProductKey=11111-22222-33333-44444-55555
 
 6.  Skonfiguruj właściwości zestawu MDT używane w zapisywanie i przywracanie informacji o stanie użytkownika, zgodnie z opisem w [konfigurowania właściwości przygotowania dysku](#ConfigureDiskPreparationProperties).  
 
-####  <a name="ReviewtheDefaultPartitionConfigurationCreatedbyMDT"></a>Przejrzyj domyślnej konfiguracji partycji utworzonego przez zestaw MDT  
+####  <a name="ReviewtheDefaultPartitionConfigurationCreatedbyMDT"></a> Przejrzyj domyślnej konfiguracji partycji utworzonego przez zestaw MDT  
  Zestaw MDT procesów wdrażania automatycznego tworzenia niezbędne partycji w pełni wykorzystać funkcje oferowane przez komputer docelowy i systemu operacyjnego. Domyślnie zestaw MDT tworzy partycji konfiguracji dla komputerów z systemem BIOS, zgodnie z opisem w tabeli 158.  
 
 ### <a name="table-158-default-partition-configuration-created-by-mdt-for-bios-based-computers"></a>158 tabeli. Domyślna konfiguracja partycji utworzonego przez zestaw MDT dla komputerów z systemem BIOS  
 
 |Partycji|System plików|Rozmiar|Opis|  
 |---------------|-----------------|----------|-----------------|  
-|BDEDrive|SYSTEMU PLIKÓW NTFS|512 MB|Niezaszyfrowana partycji używanych do uruchamiania systemu Windows, znanej także jako *partycji systemowej*. Ta partycja jest używany do początkowo uruchamiania systemu Windows, dopóki funkcja BitLocker zostanie załadowany i mogą być odczytywane dysku systemu operacyjnego. Ta partycja również można udostępniać partycji odzyskiwania.|  
-|Parametr OSDisk|SYSTEMU PLIKÓW NTFS|Pozostałe miejsce|Partycja systemu Windows o zlokalizować, znanej także jako *dysku systemu operacyjnego*. Jeśli funkcja BitLocker jest używana, jest partycji, która jest zaszyfrowany.|  
+|BDEDrive|NTFS|512 MB|Niezaszyfrowana partycji używanych do uruchamiania systemu Windows, znanej także jako *partycji systemowej*. Ta partycja jest używany do początkowo uruchamiania systemu Windows, dopóki funkcja BitLocker zostanie załadowany i mogą być odczytywane dysku systemu operacyjnego. Ta partycja również można udostępniać partycji odzyskiwania.|  
+|Parametr OSDisk|NTFS|Pozostałe miejsce|Partycja systemu Windows o zlokalizować, znanej także jako *dysku systemu operacyjnego*. Jeśli funkcja BitLocker jest używana, jest partycji, która jest zaszyfrowany.|  
 
  Domyślnie zestaw MDT tworzy partycji konfiguracji dla komputerów z interfejsem UEFI, zgodnie z opisem w tabeli 159.  
 
@@ -8256,11 +8255,11 @@ OverRideProductKey=11111-22222-33333-44444-55555
 |---------------|-----------------|----------|-----------------|  
 |Opis|FAT32|512 MB|Nieszyfrowanej partycji używanych do uruchamiania systemu Windows. Aby uzyskać więcej informacji, zobacz [wdrażanie na komputerach z interfejsem UEFI](#DeploytoComputerswithUEFI). Ta partycja również można udostępniać partycji odzyskiwania.|  
 |MSR|Niesformatowany|128 MB|*Partycja Microsoft Reserved* (MSR) jest partycją na urządzeniu magazynującym danych, który jest oznaczony za pomocą identyfikatora GUID równa równym E3C9E316-0B5C-4DB8-817 D-F92DF00215AE. Zawierające urządzenia pamięci masowej musi używać nowego formatu tabeli partycji GUID (GPT), nie tradycyjnego wzorca rekordów (MBR) partycji tabeli format rozruchowego. Partycja MSR jest wymagana na każdym dysku GPT i należy utworzyć jako dysk początkowo jest podzielona na partycje. Powinien znajdować się po partycji systemu EFI (ESP) oraz wszelkich OEM usługi partycji, ale — najważniejsze — pierwszej partycji danych musi występować zaraz po jego.|  
-|Parametr OSDisk|SYSTEMU PLIKÓW NTFS|Pozostałe miejsce|Partycja systemu Windows o zlokalizować, znanej także jako *dysku systemu operacyjnego*. Jeśli funkcja BitLocker jest używana, jest partycji, która jest zaszyfrowany.|  
+|Parametr OSDisk|NTFS|Pozostałe miejsce|Partycja systemu Windows o zlokalizować, znanej także jako *dysku systemu operacyjnego*. Jeśli funkcja BitLocker jest używana, jest partycji, która jest zaszyfrowany.|  
 
- Oprócz domyślne konfiguracje partycji zestawu MDT można tworzyć konfiguracje niestandardowe partycji. Na przykład domyślne konfiguracje partycji zestawu MDT nie zawierają innych partycjach narzędzia lub obrazów odzyskiwania. Aby uzyskać więcej informacji, zobacz [Opis partycji dysku](http://technet.microsoft.com/library/dd799232\(WS.10\).aspx).  
+ Oprócz domyślne konfiguracje partycji zestawu MDT można tworzyć konfiguracje niestandardowe partycji. Na przykład domyślne konfiguracje partycji zestawu MDT nie zawierają innych partycjach narzędzia lub obrazów odzyskiwania. Aby uzyskać więcej informacji, zobacz [Opis partycji dysku](https://technet.microsoft.com/library/dd799232\(WS.10\).aspx).  
 
-####  <a name="PrepareforDeploymenttoVirtualHardDiskswithNativeBoot"></a>Przygotowanie do wdrożenia do wirtualnych dysków twardych z funkcją macierzystego rozruchu  
+####  <a name="PrepareforDeploymenttoVirtualHardDiskswithNativeBoot"></a> Przygotowanie do wdrożenia do wirtualnych dysków twardych z funkcją macierzystego rozruchu  
  Rozruchu z macierzystego pozwala na uruchamianie na komputerze bez maszyny Wirtualnej lub funkcji hypervisor.  
 
 > [!NOTE]
@@ -8286,9 +8285,9 @@ OverRideProductKey=11111-22222-33333-44444-55555
 
 -   **Wyczyść OSDDiskIndexVariable**. Ten krok powoduje wyczyszczenie **OSDDiskIndexVariable** zmienną sekwencji zadań, która została ustawiona podczas **Utwórz dysk VHD** krok sekwencji zadań. Wyczyszczenie **OSDDiskIndexVariable** zmienną sekwencji zadań umożliwia innych dysków na partycje i sformatowany jako część sekwencji zadań.  
 
- Aby uzyskać więcej informacji dotyczących wirtualnych dysków twardych z funkcją macierzystego rozruchu, zobacz [Opis wirtualnych dysków twardych z funkcją macierzystego rozruchu](http://technet.microsoft.com/library/hh825689.aspx).  
+ Aby uzyskać więcej informacji dotyczących wirtualnych dysków twardych z funkcją macierzystego rozruchu, zobacz [Opis wirtualnych dysków twardych z funkcją macierzystego rozruchu](https://technet.microsoft.com/library/hh825689.aspx).  
 
-####  <a name="ConfiguretheCreateVHDDiskTaskSequenceStepType"></a>Konfigurowanie tworzenia typ kroku sekwencji zadań dysku VHD  
+####  <a name="ConfiguretheCreateVHDDiskTaskSequenceStepType"></a> Konfigurowanie tworzenia typ kroku sekwencji zadań dysku VHD  
  **Utwórz dysk VHD** typ kroku sekwencji zadań tworzy plik VHD w ramach przygotowania do wykonania wdrożenia z obsługą rozruchu z macierzystego dysku VHD. 160 tabela zawiera opis sposobu konfigurowania **Utwórz dysk VHD** typ kroku sekwencji zadań.  
 
 ### <a name="table-160-configure-create-vhd-disk-task-sequence-step-type"></a>160 tabeli. Konfigurowanie tworzenia typ kroku sekwencji zadań dysku VHD  
@@ -8296,14 +8295,14 @@ OverRideProductKey=11111-22222-33333-44444-55555
 |Ustawienie|Opis|  
 |-------------|-----------------|  
 |Ścieżka nazwy pliku dysku VHD| Określa ścieżkę do folderu, w którym plik VHD zostanie utworzone i może zawierać jedną z następujących wartości:<br /><br /> -                              **Losowe**. Ta wartość określa, czy krok sekwencji zadań automatycznie utworzy unikatową nazwę folderu i VHD pliku. Krok sekwencji zadań automatycznie umieszcza plik VHD w folderze.<br /><br /> -                              ***vhd_path***. W takim przypadku *vhd_path* to ścieżka do folderu, w którym krok sekwencji zadań, aby utworzyć plik VHD, łącznie z nazwą pliku VHD.<br /><br /> Wartość domyślna to ustawienie jest **losowe**.|  
-|Nazwa pliku różnicowego|Określa nazwę pliku dla pliku różnicowego dysku VHD:<br /><br /> -                              **Losowe**. Ta wartość określa, krok sekwencji zadań automatycznie utworzy unikatową nazwę folderowi i plikowi różnicowych pliku VHD.<br /><br /> -                              ***vhd_path***. W takim przypadku *vhd_path* jest ścieżka do folderu, w którym ma krok sekwencji zadań, aby utworzyć różnicowych pliku VHD, łącznie z nazwą pliku VHD.<br /><br /> -                              ***Puste***. W takim przypadku jest tworzony plik VHD nie różnicowych.<br /><br /> Wartość domyślna to ustawienie jest **puste**, która wskazuje, czy plik VHD nie różnicowych został utworzony.|  
+|Nazwa pliku różnicowego|Określa nazwę pliku dla pliku różnicowego dysku VHD:<br /><br /> -                              **Losowe**. Ta wartość określa, krok sekwencji zadań automatycznie utworzy unikatową nazwę folderowi i plikowi różnicowych pliku VHD.<br /><br /> -                              ***vhd_path***. W takim przypadku *vhd_path* jest ścieżka do folderu, w którym ma krok sekwencji zadań, aby utworzyć różnicowych pliku VHD, łącznie z nazwą pliku VHD.<br /><br /> -                              ***Blank***. W takim przypadku jest tworzony plik VHD nie różnicowych.<br /><br /> Wartość domyślna to ustawienie jest **puste**, która wskazuje, czy plik VHD nie różnicowych został utworzony.|  
 |Rozmiar wirtualnego dysku twardego|Określa pojemność pliku VHD, który można określić w megabajtach lub jako procent dostępnego miejsca na dysku.|  
 |Dynamicznie powiększający się|Opcja ta tworzy dynamicznie powiększających się plik VHD, który fizycznie spowoduje zwiększenie rozmiaru, jak dane są przechowywane w pliku VHD. Druga opcja to **stały rozmiar**. To ustawienie jest ustawieniem domyślnym.|  
 |O stałym rozmiarze|Opcja ta tworzy plik VHD o rozmiarze stałym, który został utworzony jako rozmiar określony rozmiar wirtualnego dysku twardego, a nie automatycznie powiększyć rozmiar. Druga opcja to **dynamicznie powiększających się**, co jest ustawieniem domyślnym.|  
 |Dysk docelowy dla pliku wirtualnego dysku twardego należy pobrać zmiennej|Określa nazwę zmiennej sekwencji zadań służy do wyznaczania dysk docelowy zmiennej sekwencji zadań. Możesz określić wszelkie prawidłową zmienną sekwencji zadań w tym ustawieniu. Wartość domyślna to **VHDTargetDisk** zmienną sekwencji zadań. Aby uzyskać więcej informacji na temat **VHDTargetDisk** zmiennych, zobacz sekwencji zadań **VHDTargetDisk** właściwości w w dokumencie MDT *odwołanie do zestawu narzędzi*.|  
 |Przypisz indeks dysku utworzone na podstawie wirtualnego dysku twardego do zmiennej|To ustawienie określa nazwę zmiennej sekwencji zadań służy do wyznaczania indeks dysku, który ma być używany podczas wdrażania systemu operacyjnego. Możesz określić wszelkie prawidłową zmienną sekwencji zadań w tym ustawieniu. Wartość domyślna to **OSDDiskIndex** zmienną sekwencji zadań. Aby uzyskać więcej informacji na temat **OSDDiskIndex** zmiennych, zobacz sekwencji zadań **OSDDiskIndex** właściwości w w dokumencie MDT *odwołanie do zestawu narzędzi*.|  
 
-####  <a name="DeploytoComputerswithUEFI"></a>Wdrażanie na komputerach z interfejsem UEFI  
+####  <a name="DeploytoComputerswithUEFI"></a> Wdrażanie na komputerach z interfejsem UEFI  
  To UEFI to specyfikacja interfejsu oprogramowania między systemu operacyjnego i oprogramowania układowego platformy. Włączenie automatycznego testu (POST) procesów lub UEFI jest bardziej bezpieczne zastępuje starszy interfejs oprogramowania sprzętowego BIOS, w niektórych komputerów osobistych, które są narażone na złośliwego oprogramowania, które wykonuje ataków podczas uruchamiania.  
 
  Systemy operacyjne Windows obsługują wersji oprogramowania układowego, które są oparte na UEFI w wersji 2.0 lub nowszej specyfikacji na platformach 64-bitowych i Intel Itanium. System Windows obsługuje również wersji oprogramowania układowego, które są oparte na specyfikacji 1.10 wersji EFI na platformach firmy Intel Itanium.  
@@ -8317,11 +8316,11 @@ OverRideProductKey=11111-22222-33333-44444-55555
 
  Aby uzyskać więcej informacji zobacz następujące zasoby:  
 
--   [Obsługa UEFI i wymagania dotyczące systemu operacyjnego](http://msdn.microsoft.com/windows/hardware/gg463144.aspx)  
+-   [Obsługa UEFI i wymagania dotyczące systemu operacyjnego](https://msdn.microsoft.com/windows/hardware/gg463144.aspx)  
 
--   [Zalecane konfiguracje partycji dysku z systemem UEFI](http://technet.microsoft.com/library/dd744301\(WS.10\).aspx)  
+-   [Zalecane konfiguracje partycji dysku z systemem UEFI](https://technet.microsoft.com/library/dd744301\(WS.10\).aspx)  
 
-####  <a name="ConfigureDiskPreparationTaskSequenceSteps"></a>Skonfiguruj kroków sekwencji zadań przygotowania dysku  
+####  <a name="ConfigureDiskPreparationTaskSequenceSteps"></a> Skonfiguruj kroków sekwencji zadań przygotowania dysku  
  Zestaw MDT zawiera szablony sekwencji zadań we wdrożeniach LTI oraz ZTI. Te szablony sekwencji zadań obejmują kroki sekwencji zadań na liście 161 tabeli, które są używane do wykonywania czynności przygotowujące dysku.  
 
 ### <a name="table-161-disk-preparation-task-sequence-steps"></a>161 tabeli. Kroki sekwencji zadań przygotowania dysku  
@@ -8335,7 +8334,7 @@ OverRideProductKey=11111-22222-33333-44444-55555
 |Wyłącz BDE-Protectors|Wyłącza funkcje ochrony funkcji BitLocker na komputerze docelowym. dostępne w LTI tylko sekwencji zadań|  
 |Utwórz wirtualny dysk twardy (VHD)|Tworzy plik VHD w ramach przygotowania do wdrażania systemu Windows z obsługą rozruchu z macierzystego dysku VHD.|  
 
-####  <a name="ConfigureDiskPreparationProperties"></a>Skonfiguruj właściwości przygotowania dysku  
+####  <a name="ConfigureDiskPreparationProperties"></a> Skonfiguruj właściwości przygotowania dysku  
   162 tabeli wymieniono właściwości zestawu MDT, które kontrolują przygotowywania dysków na komputerach docelowych. Te właściwości można skonfigurować w CustomSettings.ini lub w bazie danych zestawu MDT. Aby uzyskać więcej informacji na temat właściwości w tabeli 162, zobacz sekcję odpowiednie dla każdej właściwości w dokumencie MDT *odwołanie do zestawu narzędzi*.  
 
 ### <a name="table-162-disk-preparation-properties"></a>162 tabeli. Właściwości przygotowania dysku  
@@ -8364,7 +8363,7 @@ OverRideProductKey=11111-22222-33333-44444-55555
 |**OSDPartitionsxVolumeName** |Nazwa woluminu, który zostanie przypisany do partycji|  
 |**Narzędzia WipeDisk** |Wskazuje, czy można wyczyścić dysku|  
 
-###  <a name="SavingandRestoringUserStateInformation"></a>Zapisywanie i przywracanie informacji o stanie użytkownika  
+###  <a name="SavingandRestoringUserStateInformation"></a> Zapisywanie i przywracanie informacji o stanie użytkownika  
  Informacje o stanie użytkownika składa się z informacje o profilu użytkownika, program Internet Explorer ulubione plików danych i inne dane specyficzne dla użytkownika przechowywane na komputerze docelowym. Proces wdrożenia zestawu MDT można automatycznie przechwytywania i przywracania informacji o stanie użytkownika na komputerach docelowych.  
 
  Proces wdrożenia zestawu MDT używa narzędzia USMT do zapisywania i przywracania informacji o stanie użytkownika. W stanie przechwytywania fazie w procesie wdrożenia zestawu MDT narzędzia USMT zapisuje informacje o stanie użytkownika do odpowiedniej lokalizacji. Później podczas fazę Przywracanie stanu USMT przywraca tej informacji o stanie użytkownika.  
@@ -8379,7 +8378,7 @@ OverRideProductKey=11111-22222-33333-44444-55555
 
 4.  Konfigurowanie zestawu MDT, aby wykonać przechwytywania stanu użytkownika w środowisku Windows PE (offline) lub istniejącego systemu operacyjnego (online) zgodnie z opisem w [Konfigurowanie narzędzia USMT w trybie Offline migracja stanu użytkownika](#ConfigureUSMTOfflineUserStateMigration).  
 
-####  <a name="ReviewUserStateInformationTaskSequenceSteps"></a>Kroki sekwencji zadań informacji przegląd stanu użytkownika  
+####  <a name="ReviewUserStateInformationTaskSequenceSteps"></a> Kroki sekwencji zadań informacji przegląd stanu użytkownika  
  Zestaw MDT zawiera szablony sekwencji zadań we wdrożeniach LTI oraz ZTI programu Configuration Manager. Te szablony sekwencji zadań zawierają kroki sekwencji zadań na liście 163 tabeli, które są używane do zapisywania i przywracania informacji o stanie użytkownika.  
 
 ### <a name="table-163-user-state-information-task-sequence-steps"></a>163 tabeli. Kroki sekwencji zadań informacji o stanie użytkownika  
@@ -8393,7 +8392,7 @@ OverRideProductKey=11111-22222-33333-44444-55555
 |**Przywróć grup** |Przywraca informacje o członkostwie grupy który **grup przechwytywania** krok sekwencji zadań zapisane na komputerze docelowym|  
 |**Przechwytywanie stanu użytkownika w trybie offline** |Przechwytuje informacje o stanie użytkownika podczas uruchamiania w środowisku Windows PE (offline) zamiast systemu operacyjnego orignial (online). Ten krok sekwencji zadań uruchamia skrypt ZTIUserState.wsf i jest uruchamiany, gdy są spełnione następujące warunki:<br /><br /> - **_SMSTSMediaType** właściwość nie jest równa **"OEMMedia"**.<br /><br /> - **OSDDiskPart** właściwość nie jest równa **"TRUE"**.<br /><br /> Ten krok sekwencji zadań jest częścią grupy USMT w trybie Offline, który jest uruchomiony, jeśli **USMTOfflineMigration** jest równe **"TRUE"**.|  
 
-####  <a name="ConfigureUserStateInformationProperties"></a>Skonfiguruj właściwości informacji o stanie użytkownika  
+####  <a name="ConfigureUserStateInformationProperties"></a> Skonfiguruj właściwości informacji o stanie użytkownika  
   164 tabeli wymieniono właściwości zestawu MDT we wdrożeniach LTI kontrolujących zapisywanie i przywracanie informacji o stanie użytkownika. Te właściwości można skonfigurować w pliku CustomSettings.ini lub w bazie danych zestawu MDT. Aby uzyskać więcej informacji na temat właściwości w tabeli 164, zobacz sekcję odpowiednie dla każdej właściwości w dokumencie MDT *odwołanie do zestawu narzędzi*.  
 
 ### <a name="table-164-user-state-information-properties-for-lti-deployments"></a>164 tabeli. Właściwości informacji o stanie użytkownika we wdrożeniach LTI  
@@ -8411,14 +8410,14 @@ OverRideProductKey=11111-22222-33333-44444-55555
 > [!IMPORTANT]
 >  Narzędzia USMT zostanie domyślnie Przechwyć wszystkie konta użytkowników lokalnych i domeny, chyba że jawnie wykluczone. Wszelkie zarejestrowanych kont lokalnych, a następnie, domyślnie być uwzględnione w procesie przywracania. W niektórych sytuacjach krok przywracania zakończy się niepowodzeniem bez włączenia parametru /lae, aby ustawić hasło dla tych kont lokalnych.  
 
-####  <a name="ConfigureUserStateMigrationXMLControlFiles"></a>Konfiguruj pliki sterowania XML migracji stanu użytkownika  
+####  <a name="ConfigureUserStateMigrationXMLControlFiles"></a> Konfiguruj pliki sterowania XML migracji stanu użytkownika  
  Narzędzia USMT używa domyślnej wersji plików XML migracji inaczej ścieżki do niestandardowych kontroli plików XML. Dostosowywanie plików sterowania XML migracji stanu użytkownika dla narzędzia USMT, wykonując następujące zadania:  
 
 -   Konfiguruj pliki sterowania XML dla narzędzia USMT we wdrożeniach LTI, zgodnie z opisem w [Konfigurowanie stanu migracji XML pliki kontrolek użytkownika we wdrożeniach LTI](#ConfigureUserStateMigrationXMLControlFilesforLTIDeployments).  
 
 -   Konfigurowanie kontroli plików XML dla narzędzia USMT dla wdrożenia ZTI zgodnie z opisem w [Konfigurowanie stanu migracji XML pliki kontrolek użytkownika dla wdrożenia ZTI](#ConfigureUserStateMigrationXMLControlFilesforZTIDeployments).  
 
-#####  <a name="ConfigureUserStateMigrationXMLControlFilesforLTIDeployments"></a>Konfiguruj pliki sterowania XML migracji stanu użytkownika we wdrożeniach LTI  
+#####  <a name="ConfigureUserStateMigrationXMLControlFilesforLTIDeployments"></a> Konfiguruj pliki sterowania XML migracji stanu użytkownika we wdrożeniach LTI  
  We wdrożeniach LTI, wstawienia jedną lub więcej wierszy w pliku CustomSettings.ini, który zawiera **USMTMigFiles** właściwości dla poszczególnych plików sterowania XML migracji narzędzia USMT, które ma zostać określony. Pliki XML muszą być kopiowane do folderu USMT lub folderze skryptów w udziale dystrybucyjnym.  
 
  Dla tych wierszy, użyj następującego formatu:  
@@ -8434,7 +8433,7 @@ USMTConfigFile=Config.xml
 > [!NOTE]
 >  Można znaleźć w dokumencie MDT *odwołanie do zestawu narzędzi* szczegółowe informacje dotyczące ustawień konfiguracji.  
 
-#####  <a name="ConfigureUserStateMigrationXMLControlFilesforZTIDeployments"></a>Skonfigurować pliki sterowania XML migracji stanu użytkownika dla wdrożenia ZTI  
+#####  <a name="ConfigureUserStateMigrationXMLControlFilesforZTIDeployments"></a> Skonfigurować pliki sterowania XML migracji stanu użytkownika dla wdrożenia ZTI  
  W przypadku wdrożeń ZTI programu Configuration Manager, Wstaw wiersz w pliku CustomSettings.ini, który zawiera **OSDMigrateConfigFiles** zmiennej sekwencji zadań dla narzędzia USMT migracji kontroli plik XML, który ma zostać określony. Jeśli określisz **OSDMigrateConfigFiles** właściwości, wstawianie kolejnego wiersza, który ustawia **gdy zmienna OSDMigrateMode** zmienną sekwencji zadań do zaawansowane.  
 
  Dla tych wierszy, użyj następującego formatu:  
@@ -8446,7 +8445,7 @@ OSDMigrateConfigFiles=MigApp.xml,MigUser.xml
 
  Ścieżka do plików XML kontroli jest odnoszącego się do bieżącego folderu, który będzie lokalizacja pakietu narzędzia USMT. Jeśli zachowasz plików sterowania XML w pakiecie narzędzia USMT, należy zaktualizować tego pakietu dowolny plik XML kontroli po każdej zmianie. W przeciwnym razie można przechowywać pliki XML kontroli w oddzielnym folderze udostępnionym pakietu lub sieci i określ w pełni kwalifikowaną ścieżkę UNC do folderu udostępnionego pakietu lub sieci.  
 
-####  <a name="ConfigureUSMTOfflineUserStateMigration"></a>Konfigurowanie narzędzia USMT migracji stanu użytkownika w trybie Offline  
+####  <a name="ConfigureUSMTOfflineUserStateMigration"></a> Konfigurowanie narzędzia USMT migracji stanu użytkownika w trybie Offline  
  Narzędzia USMT można wykonywać w trybie offline migracji stanu użytkownika z komputera. W przypadku migracji w trybie offline przechwytywania jest wykonywane w środowisku Windows PE zamiast istniejącego systemu operacyjnego. Zalety migracji stanu użytkownika w trybie offline są następujące:  
 
 -   Nie trzeba zalogować się do komputera, na którym jest przechwytywany stan użytkownika.  
@@ -8459,7 +8458,7 @@ OSDMigrateConfigFiles=MigApp.xml,MigUser.xml
 
 -   Można użyć migracji w trybie offline można odzyskać pliki i ustawienia, jeśli komputer nie jest uruchamiany poprawnie.  
 
- Wadą migracji stanu użytkownika w trybie offline jest, że niektóre ustawienia użytkownika nie są przechwytywane, ale raczej można jedynie przechwycić podczas uruchamiania narzędzia USMT w docelowego systemu operacyjnego. Aby uzyskać listę ustawień, które nie są przechwytywane podczas przechwytywania stanu użytkownika w trybie offline, zobacz [co wykonuje USMT migracji?](http://technet.microsoft.com/library/hh825238.aspx)  
+ Wadą migracji stanu użytkownika w trybie offline jest, że niektóre ustawienia użytkownika nie są przechwytywane, ale raczej można jedynie przechwycić podczas uruchamiania narzędzia USMT w docelowego systemu operacyjnego. Aby uzyskać listę ustawień, które nie są przechwytywane podczas przechwytywania stanu użytkownika w trybie offline, zobacz [co wykonuje USMT migracji?](https://technet.microsoft.com/library/hh825238.aspx)  
 
  Migracja stanu użytkownika w trybie offline narzędzia USMT można wykonywać w zestawie MDT:  
 
@@ -8470,7 +8469,7 @@ OSDMigrateConfigFiles=MigApp.xml,MigUser.xml
 > [!NOTE]
 >  Nie można wykonać migracji stanu użytkownika w trybie offline narzędzia USMT w scenariuszu wdrożenia zestawu MDT nowego komputera przy użyciu ZTI.8  
 
-###  <a name="JoiningTargetComputerstoADDSDomains"></a>Przyłączanie komputerów docelowych do domenami usługi AD DS  
+###  <a name="JoiningTargetComputerstoADDSDomains"></a> Przyłączanie komputerów docelowych do domenami usługi AD DS  
  Końcowe czynności w ukończeniu wdrażania docelowego systemu operacyjnego na komputerach docelowych jest przyłączania komputera do domeny usług AD DS. Mimo że ten proces można wykonać ręcznie, zestawu MDT obsługuje następujące metody automatyczne dołączenie komputerów docelowych do domeny usług AD DS:  
 
 -   Za pomocą Kreatora wdrażania, zgodnie z opisem w [Dołącz do domeny za pomocą Kreatora wdrażania](#JoinDomainsUsingtheDeploymentWizard)  
@@ -8483,7 +8482,7 @@ OSDMigrateConfigFiles=MigApp.xml,MigUser.xml
 
 -   Funkcja przyłączania do domeny w trybie offline z systemem Windows przy użyciu, zgodnie z opisem w [sprzężenia domen przy użyciu trybu Offline przyłączania do domeny](#JoinDomainsUsingOfflineDomainJoin)  
 
-####  <a name="JoinDomainsUsingtheDeploymentWizard"></a>Dołącz do domeny za pomocą Kreatora wdrażania  
+####  <a name="JoinDomainsUsingtheDeploymentWizard"></a> Dołącz do domeny za pomocą Kreatora wdrażania  
  We wdrożeniach LTI **przyłączyć komputer do domeny lub grupy roboczej** strona kreatora w Kreatorze wdrażania systemu Windows w zestawie MDT umożliwia interakcyjne zapewniają ustawienia konfiguracji niezbędne do przyłączenia do domeny. 165 tabeli wymieniono ustawienia konfiguracji na tej stronie kreatora używane w przyłączanie do domeny.  
 
 ### <a name="table-165-configuration-settings-on-the-join-the-computer-to-a-domain-or-workgroup-wizard-page-for-joining-domain"></a>165 tabeli. Ustawienia konfiguracji na dołączenie komputera do domeny lub grupy roboczej strony kreatora dla przyłączania do domeny  
@@ -8495,24 +8494,24 @@ OSDMigrateConfigFiles=MigApp.xml,MigUser.xml
 |**Nazwa użytkownika** |Określa konto, które ma być używana podczas przyłączania komputera docelowego do domeny określonej w **domeny**. To pole tekstowe jest włączona tylko po wybraniu **Przyłącz do domeny**.|  
 |**Hasło** |Określa hasło konta wskazanego w **nazwy użytkownika**. To pole tekstowe jest włączona tylko po wybraniu **Przyłącz do domeny**.|  
 |**Domeny** |Określa domenę, w którym konto określone w **nazwy użytkownika** znajduje się. To pole tekstowe jest włączona tylko po wybraniu **Przyłącz do domeny**.|  
-|**Jednostka organizacyjna** |Określa jednostkę Organizacyjną, w której zostanie utworzone konto komputera w domenie określonej w **domeny**. To pole tekstowe jest włączona tylko po wybraniu **Przyłącz do domeny**.|  
+|**Organizational Unit** |Określa jednostkę Organizacyjną, w której zostanie utworzone konto komputera w domenie określonej w **domeny**. To pole tekstowe jest włączona tylko po wybraniu **Przyłącz do domeny**.|  
 
  Aby uzyskać więcej informacji o zakończeniu **przyłączyć komputer do domeny lub grupy roboczej** strona kreatora w Kreatorze wdrażania systemu Windows, temacie [zakończyć działanie Kreatora wdrażania](#CompletetheDeploymentWizard).  
 
-####  <a name="JoinDomainsbyModifyingtheCustomSettings.iniFile"></a>Dołącz do domeny, modyfikując plik CustomSettings.ini  
+####  <a name="JoinDomainsbyModifyingtheCustomSettings.iniFile"></a> Dołącz do domeny, modyfikując plik CustomSettings.ini  
  Można zautomatyzować proces przyłączania do domeny we wdrożeniach LTI lub ZTI przez modyfikowanie właściwości wymienione w tabeli 166 w pliku CustomSettings.ini, używane w procesie wdrożenia zestawu MDT.  
 
 ### <a name="table-166-properties-in-customsettingsini-to-modify-for-joining-a-domain"></a>166 tabeli. Właściwości w CustomSettings.ini, aby zmodyfikować przyłączanie do domeny  
 
 |Właściwość|Opis|  
 |--------------|-----------------|  
-|**Administrator domeny** |Poświadczenia konta użytkownika, które są używane do przyłączenia komputera docelowego do domeny określonej w **przyłączania**; określ jako *domena\nazwa_użytkownika* lub*user_name@domain.com*|  
+|**DomainAdmin** |Poświadczenia konta użytkownika, które są używane do przyłączenia komputera docelowego do domeny określonej w **przyłączania**; określ jako *domena\nazwa_użytkownika* lub *user_name@domain.com*|  
 |**DomainAdminDomain** |Domeny, w którym poświadczenia użytkownika określonego w **administrator domeny** znajdują się|  
 |**DomainAdminPassword** |Hasło używane do domeny, konto administratora określone w **administrator domeny** właściwość, aby przyłączyć komputer do domeny|  
-|**Przyłączania** |Domena, do której jest przyłączany komputer docelowy po docelowego systemu operacyjnego jest wdrażany (jest to domena, w którym jest tworzone konto komputera dla komputera docelowego. **Przyłączania** właściwości może zawierać znaki alfanumeryczne, łączniki [-] i podkreślenia [_]. **Przyłączania** właściwości nie może być pusta ani zawierać spacji.)|  
+|**JoinDomain** |Domena, do której jest przyłączany komputer docelowy po docelowego systemu operacyjnego jest wdrażany (jest to domena, w którym jest tworzone konto komputera dla komputera docelowego. **Przyłączania** właściwości może zawierać znaki alfanumeryczne, łączniki [-] i podkreślenia [_]. **Przyłączania** właściwości nie może być pusta ani zawierać spacji.)|  
 |**MachineObjectOU** |Jednostki Organizacyjnej DS AD w domenie docelowej, w której jest utworzone konto komputera dla komputera docelowego|  
 
-####  <a name="JoinDomainsbyModifyingtheUnattended.xmlFile"></a>Dołącz do domeny przez zmodyfikowanie pliku Unattended.xml  
+####  <a name="JoinDomainsbyModifyingtheUnattended.xmlFile"></a> Dołącz do domeny przez zmodyfikowanie pliku Unattended.xml  
  Można zautomatyzować proces przyłączania do domeny we wdrożeniach LTI lub ZTI, modyfikując ustawienia wymienione w tabeli 167 w pliku Unattended.xml używane w procesie wdrożenia zestawu MDT.  
 
 ### <a name="table-167-settings-in-unattendedxml-to-modify-for-joining-a-domain"></a>167 tabeli. Ustawienia w Unattended.xml można zmodyfikować w celu przyłączenia do domeny  
@@ -8522,12 +8521,12 @@ OSDMigrateConfigFiles=MigApp.xml,MigUser.xml
 |**Nazwa użytkownika** |Poświadczenia konta użytkownika, które są używane do przyłączenia komputera docelowego do domeny określonej w **przyłączania** |  
 |**Domeny** |Domeny, w którym poświadczenia użytkownika określonego w **Username** znajdują się|  
 |**Hasło** |Hasło używane do domeny, konto administratora określone w **Username** ustawienie, aby przyłączyć komputer do domeny|  
-|**Przyłączania** |Domeny, do której jest przyłączany komputer docelowy po docelowego systemu operacyjnego jest wdrażany.|  
+|**JoinDomain** |Domeny, do której jest przyłączany komputer docelowy po docelowego systemu operacyjnego jest wdrażany.|  
 |**MachineObjectOU** |Jednostki Organizacyjnej DS AD w domenie docelowej, w której jest utworzone konto komputera dla komputera docelowego|  
 
- Aby uzyskać więcej informacji o tych ustawieniach, zobacz [Microsoft-Windows-UnattendedJoin](http://technet.microsoft.com/library/cc748842\(WS.10\).aspx).  
+ Aby uzyskać więcej informacji o tych ustawieniach, zobacz [Microsoft-Windows-UnattendedJoin](https://technet.microsoft.com/library/cc748842\(WS.10\).aspx).  
 
-####  <a name="JoinDomainsUsingtheRecoverfromDomainJoinFailureTaskSequenceStepType"></a>Dołącz do domeny przy użyciu opcji Odzyskaj z typ kroku sekwencji zadań domeny sprzężenia awarii  
+####  <a name="JoinDomainsUsingtheRecoverfromDomainJoinFailureTaskSequenceStepType"></a> Dołącz do domeny przy użyciu opcji Odzyskaj z typ kroku sekwencji zadań domeny sprzężenia awarii  
  Na podstawie czynności sekwencji zadań **odzyskiwania po awarii sprzężenia domeny** typ kroku sekwencji zadań ponów próbę wykonania procesu przyłączania do domeny, przy użyciu podanych informacji o konfiguracji w CustomSettings.ini. Można skonfigurować **odzyskiwania po awarii Dołącz do domeny** zadań typ kroku sekwencji odzyskać przy użyciu jednej z następujących metod:  
 
 -   **Automatyczne odzyskiwanie (Uruchom ponownie przyłączenie do domeny)**. Ta metoda ma automatycznie ponawiać próbę procesu przyłączania do domeny bez konieczności interwencji. Wybierz tę metodę, gdy proces MDT ma automatycznie ponów próbę wykonania procesu przyłączania do domeny.  
@@ -8563,7 +8562,7 @@ OSDMigrateConfigFiles=MigApp.xml,MigUser.xml
         |**Odzyskaj ręczne (Zezwalaj użytkownikowi na Przyłącz do domeny)** |Zaznacz, aby skonfigurować krok sekwencji zadań, aby zezwolić użytkownikowi na ponów próbę wykonania procesu przyłączania do domeny|  
         |**Nie Odzyskaj (zatrzymuje wykonywanie skryptu)** |Zaznacz, aby skonfigurować krok sekwencji zadań, aby zatrzymać sekwencji zadań, jeśli komputer nie został pomyślnie przyłączony do domeny|  
 
-####  <a name="JoinDomainsUsingOfflineDomainJoin"></a>Dołącz do domeny za pomocą Dołączanie domeny Offline  
+####  <a name="JoinDomainsUsingOfflineDomainJoin"></a> Dołącz do domeny za pomocą Dołączanie domeny Offline  
  Dołączanie domeny offline jest procesem, aby dołączyć do domeny bez kontaktowania się z kontrolerem domeny. Ten proces umożliwia przyłączanie komputerów do domeny w lokalizacji w przypadku, gdy nie ma żadnej łączności z siecią firmową.  
 
  Przy użyciu Dołączanie domeny offline, komputerów docelowych mogą należeć do domeny po rozpoczęciu początkowo po zakończeniu instalacji docelowego systemu operacyjnego. Nie dodatkowe ponowne uruchomienie jest wymagane do ukończenia procesu przyłączania do domeny, w którym można znacznie zmniejszyć całkowity czas wymagany dla całej skali wdrożenia maszyny Wirtualnej.  
@@ -8576,7 +8575,7 @@ OSDMigrateConfigFiles=MigApp.xml,MigUser.xml
 
 -   Konfigurowanie pliku Unattended.xml do wykonania sprzężenia w trybie offline, zobacz sekcję "Wykonywanie Dołączanie domeny offline przy użyciu instalacji nienadzorowanej systemu operacyjnego" w przewodniku krok po kroku przyłączania do domeny w trybie Offline (Djoin.exe)  
 
-###  <a name="DeployingSoftwareUpdatestoTargetComputers"></a>Wdrażanie aktualizacji oprogramowania na komputerach docelowych  
+###  <a name="DeployingSoftwareUpdatestoTargetComputers"></a> Wdrażanie aktualizacji oprogramowania na komputerach docelowych  
  Oprócz docelowy system operacyjny, aplikacje, sterowniki urządzeń i innych składników oprogramowania może być konieczne zastosowanie aktualizacji oprogramowania do wszystkich składników oprogramowania. Te aktualizacje oprogramowania są wymagane do zapewnienia linii bazowej konfiguracji spójności dla wszystkich komputerów docelowych.  
 
  Wdrażanie aktualizacji oprogramowania na komputerach docelowych w zestawie MDT przez:  
@@ -8589,14 +8588,14 @@ OSDMigrateConfigFiles=MigApp.xml,MigUser.xml
 
 -   Wdrażanie aktualizacji oprogramowania za pomocą programu Configuration Manager dla wdrożenia ZTI zgodnie z opisem w [wdrażania aktualizacji oprogramowania w programie Configuration Manager dla wdrożenia ZTI](#DeploySoftwareUpdateswithConfigurationManagerforZTIDeployments)  
 
-####  <a name="SelecttheSoftwareUpdateDeploymentStrategy"></a>Wybierz strategię wdrażania aktualizacji oprogramowania  
+####  <a name="SelecttheSoftwareUpdateDeploymentStrategy"></a> Wybierz strategię wdrażania aktualizacji oprogramowania  
  Strategie wdrażania aktualizacji oprogramowania są oparte na, gdy aktualizacje oprogramowania mają zostać zainstalowane. Możesz zainstalować aktualizacje oprogramowania:  
 
 -   Jako część obrazu wdrożone na komputerach docelowych  
 
 -   Po elemencie docelowym jest wdrażany system operacyjny na komputerach docelowych  
 
-####  <a name="DeploySoftwareUpdateswithWindowsUpdateAgentforLTIDeployments"></a>Wdrażanie aktualizacji oprogramowania z usługi Windows Update Agent we wdrożeniach LTI  
+####  <a name="DeploySoftwareUpdateswithWindowsUpdateAgentforLTIDeployments"></a> Wdrażanie aktualizacji oprogramowania z usługi Windows Update Agent we wdrożeniach LTI  
  We wdrożeniach LTI można zainstalować aktualizacje oprogramowania z witryny Windows Update lub WSUS za pomocą kroku sekwencji zadań, który uruchamia skrypt ZTIWindowsUpdate.wsf. LTI szablonu sekwencji zadań dostępnego w zestawie MDT między innymi **usługi Windows Update (Instalacja aplikacji przed)** krok sekwencji zadań i **usługi Windows Update (aplikacji po instalacji)** zadań krok sekwencji.  
 
  Można również utworzyć niestandardowy krok sekwencji zadań na podstawie **Uruchom wiersz polecenia** zadań sekwencji kroku działająca następujący wiersz polecenia:  
@@ -8605,14 +8604,14 @@ OSDMigrateConfigFiles=MigApp.xml,MigUser.xml
 Cscript.exe "%SCRIPTROOT%\ZTIWindowsUpdate.wsf"  
 ```  
 
-####  <a name="DeploySoftwareUpdateswiththeDeploymentWorkbenchforLTIDeployments"></a>Wdrożenia aktualizacji oprogramowania przy użyciu konsoli Deployment Workbench we wdrożeniach LTI  
+####  <a name="DeploySoftwareUpdateswiththeDeploymentWorkbenchforLTIDeployments"></a> Wdrożenia aktualizacji oprogramowania przy użyciu konsoli Deployment Workbench we wdrożeniach LTI  
  We wdrożeniach LTI, możesz zainstalować aktualizacje oprogramowania dla systemu Windows, w węźle pakietów w konsoli Deployment Workbench za pomocą kroku sekwencji zadań na podstawie **zainstalować aktualizacji w trybie Offline** typ kroku sekwencji zadań. LTI szablonu sekwencji zadań dostępnego w zestawie MDT między innymi **zastosować poprawki** krok sekwencji zadań, która jest oparta na **zainstalować aktualizacji w trybie Offline** typ kroku sekwencji zadań.  
 
  Można kontrolować aktualizacje oprogramowania wdrożone na komputerach docelowych przez tę metodę, przy użyciu profilów zaznaczenia. **Zainstalować aktualizacji w trybie Offline** krok sekwencji zadań umożliwia określenie profilu wyboru, aby określić, które aktualizacje do wdrożenia. Jeśli chcesz wdrożyć aktualizacje oprogramowania na podstawie wielu profilów zaznaczenia, tworzenia sekwencji zadań dla każdego profilu zaznaczenie, a następnie określ odpowiedni profil wyboru w kroku sekwencji zadań.  
 
  Aby uzyskać więcej informacji na temat tworzenia profilów wybór zobacz [Utwórz nowy profil zaznaczenia w konsoli Deployment Workbench](#CreateaNewSelectionProfileintheDeploymentWorkbench).  
 
-####  <a name="DeploySoftwareUpdateswithConfigurationManagerforZTIDeployments"></a>Wdrażanie aktualizacji oprogramowania za pomocą Menedżera konfiguracji dla wdrożenia ZTI  
+####  <a name="DeploySoftwareUpdateswithConfigurationManagerforZTIDeployments"></a> Wdrażanie aktualizacji oprogramowania za pomocą Menedżera konfiguracji dla wdrożenia ZTI  
  W przypadku wdrożeń ZTI programu Configuration Manager, można zainicjować aktualizacji oprogramowania za pomocą kroku sekwencji zadań na podstawie **Zainstaluj aktualizacje oprogramowania** typ kroku sekwencji zadań. **Zainstaluj aktualizacje oprogramowania** typ sekwencji zadań umożliwia zainstalowanie tylko obowiązkowe lub wszystkie aktualizacje oprogramowania w jednym sekwencji zadań przy użyciu jednej z wymienionych w tabeli 169 opcje konfiguracji.  
 
 ### <a name="table-169-configuration-settings-on-the-properties-tab-of-the-install-software-updates-type-task-sequence-step"></a>169 tabeli. Ustawienia konfiguracji, na karcie właściwości w kroku sekwencji zadań typu aktualizacji instalacji oprogramowania  
@@ -8626,7 +8625,7 @@ Cscript.exe "%SCRIPTROOT%\ZTIWindowsUpdate.wsf"
 
  Aby uzyskać więcej informacji na temat **Zainstaluj aktualizacje oprogramowania** typ sekwencji zadań, zobacz sekcję "Zainstaluj aktualizacje oprogramowania," w sekcji "Zadania sekwencji kroki w programie Configuration Manager" w dokumentacji programu Configuration Manager Biblioteka, która jest instalowana z programem Configuration Manager.  
 
-###  <a name="ManagingDeviceDrivers"></a>Zarządzanie sterownikami urządzeń  
+###  <a name="ManagingDeviceDrivers"></a> Zarządzanie sterownikami urządzeń  
  Zarządzanie sterownikami urządzeń jest składnikiem krytycznym w wdrażania systemów operacyjnych na komputerach docelowych. Odpowiednie sterowniki urządzenia muszą być dostępne na środowisku Windows PE i docelowy system operacyjny do pomyślnego wdrożenia.  
 
  Zarządzanie sterownikami urządzeń przy użyciu zestawu MDT przez:  
@@ -8639,7 +8638,7 @@ Cscript.exe "%SCRIPTROOT%\ZTIWindowsUpdate.wsf"
 
 -   Rozpoznawanie podpisywania sterowników urządzeń wystawia zgodnie z opisem w [rozwiązać problemy podpisywania sterowników urządzeń](#ResolveDeviceDriverSigningIssues)  
 
-####  <a name="SelecttheDeviceDriverManagementStrategy"></a>Wybieranie strategii zarządzania sterowników urządzeń  
+####  <a name="SelecttheDeviceDriverManagementStrategy"></a> Wybieranie strategii zarządzania sterowników urządzeń  
  Poniżej przedstawiono ogólny strategii wykonywania Zarządzanie sterownikami urządzeń:  
 
 -   **Obejmują wszystkie sterowniki urządzeń**. Jest to domyślne zachowanie we wdrożeniach LTI oraz ZTI. W tej strategii wszystkie sterowniki są wdrażane na komputerze docelowym. Następnie środowiska Windows PE i docelowy system operacyjny za pomocą identyfikatorów Plug-and-Play zidentyfikować sterowniki urządzeń wymagane dla urządzeń na komputerach docelowych.  
@@ -8659,7 +8658,7 @@ Cscript.exe "%SCRIPTROOT%\ZTIWindowsUpdate.wsf"
 
  W większości przypadków wybierz sterownik strategii zarządzania urządzeniami, która jest hybrydowego strategie i najlepiej pasuje do Twojej organizacji.  
 
-####  <a name="ControlDeviceDriverDeploymentsforLTI"></a>Formant urządzenia sterownika wdrożenia LTI  
+####  <a name="ControlDeviceDriverDeploymentsforLTI"></a> Formant urządzenia sterownika wdrożenia LTI  
  Zarządzanie sterownikami urządzeń we wdrożeniach LTI celem jest pomaga zapewnić, że tylko odpowiednie sterowniki urządzeń są wdrożone na komputerach docelowych bez niepotrzebnego nakładu pracy i zarządzanie. Ogólne podejście do zarządzania sterownikami urządzeń przy użyciu konsoli Deployment Workbench we wdrożeniach LTI wygląda następująco:  
 
 1.  Utwórz strukturę folderu w węźle sterowniki Out-of-Box do organizowania sterowniki urządzeń, zgodnie z opisem w konsoli Deployment Workbench [tworzenie folderów do organizowania sterowniki urządzeń we wdrożeniach LTI](#CreateFolderstoOrganizeDeviceDriversforLTIDeployments).  
@@ -8668,7 +8667,7 @@ Cscript.exe "%SCRIPTROOT%\ZTIWindowsUpdate.wsf"
 
 3.  Konfigurowanie sekwencji zadań do wdrażania sterowników urządzeń w profilach zaznaczenia, zgodnie z opisem w [Konfigurowanie sekwencji zadań do wdrażania sterowników urządzeń w profilach wyboru we wdrożeniach LTI](#ConfigureTaskSequencestoDeployDeviceDriversinSelectionProfilesforLTIDeployments).  
 
-#####  <a name="CreateFolderstoOrganizeDeviceDriversforLTIDeployments"></a>Tworzenie folderów w celu organizowania sterowniki urządzeń we wdrożeniach LTI  
+#####  <a name="CreateFolderstoOrganizeDeviceDriversforLTIDeployments"></a> Tworzenie folderów w celu organizowania sterowniki urządzeń we wdrożeniach LTI  
  Tworzenie struktur folderu w węźle sterowniki Out-of-Box w konsoli Deployment Workbench do zapewnienia poziomu kontroli, którą chcesz wdrażania sterowników urządzeń na komputerach docelowych. Struktura folderów grup lub kategoryzuje sterowniki urządzeń, dzięki czemu można wybrać określonych grup lub kategorii sterowników przy użyciu profilów zaznaczenia.  
 
  Wybierz dowolną kombinację poniższych metod tworzenia struktury folderów:  
@@ -8706,21 +8705,21 @@ Cscript.exe "%SCRIPTROOT%\ZTIWindowsUpdate.wsf"
 
     -   make_01\  
 
-         ...\model_01  
+         …\model_01  
 
-         ...\model_02  
+         …\model_02  
 
-         ...\model_03  
+         …\model_03  
 
     -   make_02\  
 
-         ...\model_aa  
+         …\model_aa  
 
-         ...\model_ab  
+         …\model_ab  
 
     -   make_03\  
 
-         ...\model_xx  
+         …\model_xx  
 
          ...\model_xy  
 
@@ -8736,7 +8735,7 @@ Cscript.exe "%SCRIPTROOT%\ZTIWindowsUpdate.wsf"
 
  **Rysunek 14. Struktura folderów sterownika urządzenia utworzone przez banku Woodgrove Bank**  
 
-#####  <a name="CreateSelectionProfilestoSelecttheDeviceDriversforLTIDeployments"></a>Tworzenie profilów wybór wybierz sterowniki urządzeń we wdrożeniach LTI  
+#####  <a name="CreateSelectionProfilestoSelecttheDeviceDriversforLTIDeployments"></a> Tworzenie profilów wybór wybierz sterowniki urządzeń we wdrożeniach LTI  
  Tworzenie profilów wyboru do identyfikacji kombinację sterowniki urządzeń, które mają zostać wdrożone na komputerach docelowych określonych na podstawie struktury folderu utworzonego w węźle sterowniki Out-of-Box w konsoli Deployment Workbench. Proces wdrażania LTI używa profile wyboru w celu określenia sterowników urządzeń do wdrożenia w **wstrzyknąć sterowniki** zadań typ kroku sekwencji, w CustomSettings.ini, a w bazie danych zestawu MDT.  
 
  Domyślnie profile wybór wdrażania sterowników urządzeń w wybranym folderze i jego podfolderach. Tworzenie profilów zaznaczenie na podstawie poziomu kontroli, którą mają za pośrednictwem wdrażany sterowników urządzeń. W przypadku utworzenia profilów zaznaczenia w folderach:  
@@ -8756,13 +8755,13 @@ Cscript.exe "%SCRIPTROOT%\ZTIWindowsUpdate.wsf"
 
  Banku Woodgrove o nazwie Profile wybór oparty na strukturze folderu w formacie w następujący sposób:  
 
- Utwórz — model-operating_system — architektura  
+ make–model-operating_system–architecture  
 
  Poniżej przedstawiono przykład banku Woodgrove wybór profilu konwencji nazewnictwa dla 64-bitowe sterowniki urządzeń dla systemu Windows 8 na komputerze z "Fabrikam" jako "FK5323" jako model i upewnij:  
 
- "Fabrikam — FK5323 — Windows 8 — x64"  
+ “Fabrikam–FK5323–Win8–x64”  
 
-#####  <a name="ConfigureTaskSequencestoDeployDeviceDriversinSelectionProfilesforLTIDeployments"></a>Konfigurowanie sekwencji zadań do wdrażania sterowników urządzeń w profilach wyboru we wdrożeniach LTI  
+#####  <a name="ConfigureTaskSequencestoDeployDeviceDriversinSelectionProfilesforLTIDeployments"></a> Konfigurowanie sekwencji zadań do wdrażania sterowników urządzeń w profilach wyboru we wdrożeniach LTI  
  Zmodyfikuj konfigurację sekwencjach zadań odwołują się profile wybór i wdrożyć odpowiednie sterowniki urządzeń na komputerach docelowych. Wybór profile są widoczne dla procesu wdrożenia LTI jako:  
 
 -   Wybór profilów, które można skonfigurować w konsoli Deployment Workbench, pliku CustomSettings.ini lub z bazą danych. zestawu MDT  
@@ -8812,7 +8811,7 @@ DriverSelectionProfile =%MAKE%-%MODEL%-Win8-%ARCHITECTURE%
 > [!NOTE]
 >  System operacyjny jest wartością statyczną dla **DriverSelectionProfile** zmienną sekwencji zadań, ponieważ sekwencja zadań zostanie wdrożona tylko jeden system operacyjny.  
 
-####  <a name="ControlDeviceDriverDeploymentsUsingConfigurationManagerforZTI"></a>Wdrożenia sterownika urządzenia kontroli dla ZTI przy użyciu programu Configuration Manager  
+####  <a name="ControlDeviceDriverDeploymentsUsingConfigurationManagerforZTI"></a> Wdrożenia sterownika urządzenia kontroli dla ZTI przy użyciu programu Configuration Manager  
  Wdrożenia ZTI w programie Configuration Manager korzystania z katalogu sterowników w programie Configuration Manager jako centralne repozytorium dla sterowników urządzeń. Po zaimportowaniu sterowników urządzeń do katalogu sterowników można zorganizować je przez:  
 
 -   **Pakiety sterowników urządzeń**. Jak pakiety oprogramowania pakietami sterowników urządzeń są dystrybuowane do punktów dystrybucji, aby były dostępne dla komputerów docelowych. Można utworzyć wiele urządzeniu pakietów sterowników do grupy sterowników urządzeń do wdrażania na komputerze docelowym, takich jak marka i model komputera docelowego. Wdrożone sterowniki urządzeń można kontrolować przy użyciu pakietów sterowników urządzeń w oparciu **zastosuj pakiet sterowników** krok sekwencji zadań.  
@@ -8884,18 +8883,18 @@ DriverSelectionProfile =%MAKE%-%MODEL%-Win8-%ARCHITECTURE%
 
 -   Podczas przeprowadzania wdrożeń przy użyciu nośnika autonomicznego, użyj **zastosuj pakiet sterowników** sekwencji zadań, ponieważ **automatycznie Zastosuj sterowniki** sekwencja zadań wymaga połączenia z punktem zarządzania i nośnik samodzielny nie podejmie próbę połączenia z punktem zarządzania.  
 
-####  <a name="ResolveDeviceDriverSigningIssues"></a>Rozwiązywanie problemów podpisywania sterownika urządzenia  
+####  <a name="ResolveDeviceDriverSigningIssues"></a> Rozwiązywanie problemów podpisywania sterownika urządzenia  
  Podpisy cyfrowe stwierdzić, czy sterownik urządzenia są dostarczane przez wiarygodnego wydawcy. Funkcje systemu Windows korzystać z technologii podpisywania kodu i wymagania dotyczące zabezpieczeń w systemie operacyjnym wymusić stosowanie podpisów cyfrowych dla niektórych typów kodu.  
 
  W wielu przypadkach sterowniki urządzeń od dostawcy jest już zarejestrowany. Można jednak wystąpień, w którym można zmodyfikować plików zawierający sterowniki urządzeń i Zarejestruj ponownie sterowniki urządzeń. Na przykład może być konieczne do zmodyfikowania pliku INF sterownika urządzenia, a następnie zarejestruj sterownika urządzenia.  
 
  Przejrzyj następujące zasoby w celu ułatwienia rozwiązywania problemów podpisywania sterownika urządzenia:  
 
--   [Wymagania dotyczące podpisywania sterowników dla systemu Windows](http://msdn.microsoft.com/windows/hardware/gg487317.aspx)  
+-   [Wymagania dotyczące podpisywania sterowników dla systemu Windows](https://msdn.microsoft.com/windows/hardware/gg487317.aspx)  
 
--   [Zarządzanie urządzeniami i instalacja przewodnik krok po kroku: Podpisywanie i przejściowych sterowniki urządzeń w systemie Windows 7 i Windows Server 2008 R2](http://technet.microsoft.com/library/dd919230.aspx)  
+-   [Zarządzanie urządzeniami i instalacja przewodnik krok po kroku: Podpisywanie i przejściowych sterowniki urządzeń w systemie Windows 7 i Windows Server 2008 R2](https://technet.microsoft.com/library/dd919230.aspx)  
 
-###  <a name="RunningOrchestratorRunbooks"></a>Uruchomione elementy Runbook programu Orchestrator  
+###  <a name="RunningOrchestratorRunbooks"></a> Uruchomione elementy Runbook programu Orchestrator  
  System Center 2012 Orchestrator może powiązać różnorodne zadania i procedury ze sobą przy użyciu programu Runbook Designer graficzny interfejs użytkownika do tworzenia niezawodne, elastyczne i wydajne rozwiązania end-to-end w środowisku IT.  
 
  Można wykonywać następujące zadania za pomocą programu Orchestrator:  
@@ -8933,8 +8932,8 @@ DriverSelectionProfile =%MAKE%-%MODEL%-Win8-%ARCHITECTURE%
     |-------------|-----------------|  
     |**Nazwa** |Wpisz nazwę zadania.|  
     |**Opis** |Wpisz opis zadania — na przykład ***runbook_name*** (gdzie *runbook_name* jest nazwą elementu runbook programu Orchestrator, który zostanie uruchomiony ten krok sekwencji zadań).|  
-    |**Serwer programu orchestrator** |Wpisz adres URL usługi sieci web programu Orchestrator, która zawiera nazwę serwera. Usługa sieci web Orchestrator można użyć protokołu HTTP (Hypertext Transfer) lub HTTP za pośrednictwem warstwy Secure Sockets (HTTPS). Domyślnie usługa sieci web programu Orchestrator na porcie 81.<br /><br /> Usługa sieci web Orchestrator obsługuje wiele serwerów elementów runbook. Domyślnie element runbook może działać na dowolnym serwerze runbook. Aby określić serwerów runbook, które mają być używane do uruchamiania elementu runbook można skonfigurować elementu runbook.<br /><br /> Usługa sieci web Orchestrator obsługuje możliwość uruchamiania elementu runbook na określonego serwera runbook. Ta funkcja nie jest obsługiwana w zestawie MDT.<br /><br /> Podaj adres URL w jednym z następujących formatów:<br /><br /> -                                  **ServerName**. Korzystając z tego formatu, adres URL domyślnie:<br /><br /> `http://<servername>:81/Orchestrator2012/Orchestrator.svc`<br /><br /> -                                  **nazwa_serwera: port**. Korzystając z tego formatu, adres URL domyślnie:<br /><br /> `http://<servername:port>/Orchestrator2012/Orchestrator.svc.`<br /><br /> -                                  **port**. Korzystając z tego formatu, adres URL domyślnie:<br /><br /> `http://<servername:port>/Orchestrator2012/Orchestrator.svc.`<br /><br /> -                                  **https://servername:port**. Korzystając z tego formatu, adres URL domyślnie:<br /><br /> `https://<servername:port>/Orchestrator2012/Orchestrator.svc.`<br /><br /> -                                  **http://servername:port/Orchestrator2012/Orchestrator.svc**. Korzystając z tego formatu, zestawu MDT przyjęto założenie, że udostępniasz pełni kwalifikowany adres URL, ponieważ wartość kończy się wyrazem *SVC*.<br /><br /> -                                  **https://servername:port/Orchestrator2012/Orchestrator.svc**. Korzystając z tego formatu, zestawu MDT przyjęto założenie, że udostępniasz pełni kwalifikowany adres URL, ponieważ wartość kończy się wyrazem *SVC*.|  
-    |**Element Runbook** |Kliknij przycisk **Przeglądaj**, a następnie wybierz nazwę elementu runbook programu Orchestrator, które należy uruchomić tej sekwencji zadań.<br /><br /> Aby pomyślnie Przeglądaj w poszukiwaniu elementy runbook programu Orchestrator, należy zainstalować [aktualizacja ADO.NET Data Services dla programu .NET Framework 3.5 SP1 dla systemu Windows 7 i Windows Server 2008 R2](http://www.microsoft.com/download/details.aspx?displaylang=en&id=2343).|  
+    |**Orchestrator Server** |Wpisz adres URL usługi sieci web programu Orchestrator, która zawiera nazwę serwera. Usługa sieci web Orchestrator można użyć protokołu HTTP (Hypertext Transfer) lub HTTP za pośrednictwem warstwy Secure Sockets (HTTPS). Domyślnie usługa sieci web programu Orchestrator na porcie 81.<br /><br /> Usługa sieci web Orchestrator obsługuje wiele serwerów elementów runbook. Domyślnie element runbook może działać na dowolnym serwerze runbook. Aby określić serwerów runbook, które mają być używane do uruchamiania elementu runbook można skonfigurować elementu runbook.<br /><br /> Usługa sieci web Orchestrator obsługuje możliwość uruchamiania elementu runbook na określonego serwera runbook. Ta funkcja nie jest obsługiwana w zestawie MDT.<br /><br /> Podaj adres URL w jednym z następujących formatów:<br /><br /> -                                  **ServerName**. Korzystając z tego formatu, adres URL domyślnie:<br /><br /> `https://<servername>:81/Orchestrator2012/Orchestrator.svc`<br /><br /> -                                  **nazwa_serwera: port**. Korzystając z tego formatu, adres URL domyślnie:<br /><br /> `https://<servername:port>/Orchestrator2012/Orchestrator.svc.`<br /><br /> -                                  **https://servername:port**. Korzystając z tego formatu, adres URL domyślnie:<br /><br /> `https://<servername:port>/Orchestrator2012/Orchestrator.svc.`<br /><br /> -                                  **https://servername:port**. Korzystając z tego formatu, adres URL domyślnie:<br /><br /> `https://<servername:port>/Orchestrator2012/Orchestrator.svc.`<br /><br /> -                                  **https://servername:port/Orchestrator2012/Orchestrator.svc**. Korzystając z tego formatu, zestawu MDT przyjęto założenie, że udostępniasz pełni kwalifikowany adres URL, ponieważ wartość kończy się wyrazem *SVC*.<br /><br /> -                                  **https://servername:port/Orchestrator2012/Orchestrator.svc**. Korzystając z tego formatu, zestawu MDT przyjęto założenie, że udostępniasz pełni kwalifikowany adres URL, ponieważ wartość kończy się wyrazem *SVC*.|  
+    |**Runbook** |Kliknij przycisk **Przeglądaj**, a następnie wybierz nazwę elementu runbook programu Orchestrator, które należy uruchomić tej sekwencji zadań.<br /><br /> Aby pomyślnie Przeglądaj w poszukiwaniu elementy runbook programu Orchestrator, należy zainstalować [aktualizacja ADO.NET Data Services dla programu .NET Framework 3.5 SP1 dla systemu Windows 7 i Windows Server 2008 R2](https://www.microsoft.com/download/details.aspx?id=2343).|  
     |**Automatycznie podać wartości parametrów elementu runbook** |Wybierz tę opcję, aby automatycznie udostępnić Orchestrator runbook wartości parametru wejściowego (który przy założeniu, że wartości parametrów elementu runbook są zmienne sekwencji zadań). Na przykład, jeśli element runbook ma parametr wejściowy o nazwie **OSDComputerName**, a następnie **OSDComputerName** wartość zmiennej sekwencji zadań jest przekazywany do elementu runbook.<br /><br /> Ta opcja działa tylko dla parametrów wejściowych, które są nazwy zmiennych sekwencji zadań nieprawidłowy i nie zawiera spacji ani innych znaków specjalnych. Spacje i znaki specjalne są obsługiwane jako nazwy parametrów programu Orchestrator, ale nie są one nazwy zmiennych sekwencji zadań prawidłowe. Aby przekazać wartości do parametrów mających spacji ani innych znaków specjalnych, należy użyć **runbook jawne parametry** opcji.<br /><br /> Druga opcja to **runbook jawne parametry**.<br /><br /> Podane parametry wejściowe elementu runbook z usługą sieci web programu Orchestrator wartości są w formacie XML. Przekazywanie wartości, które zawierają dane, które jest lub podobny dane w formacie XML może powodować błędy.|  
     |**Określ parametry jawne elementu runbook** |Wybierz tę opcję, aby jawnie Podaj Orchestrator parametry wejściowe elementu runbook.<br /><br /> Należy skonfigurować następujące ustawienia dla każdego elementu runbook programu Orchestrator wymaga parametru wejściowego:<br /><br /> -                                  **Nazwa**. Jest to nazwa parametru wejściowego elementu runbook.<br /><br /> W przypadku zmiany parametrów dla istniejącego elementu runbook programu Orchestrator, należy ponownie, przejdź (ponownie) dla elementu runbook ponieważ MDT pobiera tylko z listą parametrów podczas dodawania początkowo runbook programu Orchestrator.<br /><br /> -                                  **Wartość**. Może to być stałą lub zmienną, takie jak zmienna sekwencji zadań lub zmiennej środowiskowej. Na przykład można określić wartość **OSDComputerName %**, który przekazuje wartość **OSDComputerName** zmienną sekwencji zadań do parametr wejściowy elementu runbook.|  
     |**Poczekaj na zakończenie przed kontynuowaniem działania elementu runbook** |To pole wyboru określa, czy krok sekwencji zadań będzie czekać na zakończenie przed przejściem do następnego kroku sekwencji zadań dla elementu runbook. Jeśli to pole wyboru jest:<br /><br /> -                                  **Wybrane**, a następnie sekwencja zadań będzie czekać na element runbook, aby zakończyć działanie przed przejściem do kolejnego kroku sekwencji zadań.<br /><br /> Gdy to pole wyboru jest zaznaczone, krok sekwencji zadań wykona sondowanie usługi sieci web Orchestrator dla elementu runbook zakończyć. Ilość czasu między sond rozpoczyna się od 1 sekundy, a następnie wzrasta do 2, 4, 8, 16, 32 i 64 sekund między każdym sondowania. Gdy czas osiągnie 64 sekund, krok sekwencji zadań w dalszym ciągu sondowania co 64 sekund.<br /><br /> -                                  **Wyczyszczone**, a następnie kroku sekwencji zadań nie będzie czekać na element runbook, aby zakończyć działanie przed przejściem do następnego kroku sekwencji zadań.<br /><br /> To pole wyboru musi zostać wybrany, gdy element runbook zwraca parametrów wyjściowych.|  
@@ -8949,7 +8948,7 @@ DriverSelectionProfile =%MAKE%-%MODEL%-Win8-%ARCHITECTURE%
 > [!NOTE]
 >  **Poczekaj na zakończenie przed kontynuowaniem działania elementu runbook** musi być zaznaczone pole wyboru, jeśli element runbook zwraca parametrów wyjściowych.  
 
-###  <a name="RunningWindowsPowerShellScriptsDuringDeployment"></a>Uruchamianie skryptów programu PowerShell systemu Windows podczas wdrażania  
+###  <a name="RunningWindowsPowerShellScriptsDuringDeployment"></a> Uruchamianie skryptów programu PowerShell systemu Windows podczas wdrażania  
  Zestaw MDT obsługuje uruchamianie skryptów środowiska Windows PowerShell w ramach procesu wdrażania. Można tworzyć skrypty programu Windows PowerShell, aby zautomatyzować proces wdrażania, a następnie uruchom te skrypty w ramach sekwencji zadań zestawu MDT.  
 
  Uruchamianie skryptów programu Windows PowerShell, za pomocą kroku sekwencji zadań utworzonych przy użyciu **Uruchom skrypt programu PowerShell** typ kroku sekwencji zadań. Można dodać krok sekwencji zadań na podstawie **Uruchom skrypt programu PowerShell** typ kroku sekwencji zadań w programie LTI ZTI i UDI sekwencji zadań.  
@@ -8979,7 +8978,7 @@ DriverSelectionProfile =%MAKE%-%MODEL%-Win8-%ARCHITECTURE%
 
     -   Pełna ścieżka i nazwa skryptu, następnie upewnij się, że sekwencja zadań ma dostęp do folderu, w którym skrypt jest przechowywany (na przykład jeśli skrypt jest przechowywany w udostępnionym folderze sieciowym, upewnij się, że istnieje istniejące połączenie do tego serwera przed uruchomieniem tej skrypt e.)  
 
-###  <a name="ApplyingGroupPolicyObjectPacks"></a>Zastosowanie pakietów obiektu zasad grupy  
+###  <a name="ApplyingGroupPolicyObjectPacks"></a> Zastosowanie pakietów obiektu zasad grupy  
  Wdrażanie systemów operacyjnych i aplikacji, tak aby były zgodne z zabezpieczeniami i normami jest integralną część wszelkich starań wdrożenia. Zestaw MDT umożliwia dotyczą zabezpieczeń i zgodności szablonów konfiguracji systemu operacyjnego i aplikacji wdrożone przy użyciu zasad grupy (GPO) obiektu pakietów.  
 
  Pakiety obiektu zasad grupy są tworzone przez wyeksportowanie kopii zapasowej obiektu zasad grupy w Menedżera zgodności zabezpieczeń firmy Microsoft. Te pakiety obiektu zasad grupy są stosowane przez **zastosuj pakiet lokalny obiekt zasad grupy** krok sekwencji zadań dla sekwencji zadań utworzonych przy użyciu szablonów sekwencji zadań zestawu MDT. **Zastosuj pakiet lokalny obiekt zasad grupy** krok sekwencji zadań uruchamia skrypt ZTIApplyGPOPack.wsf, który odpowiada pakietów zastosowaniu obiektu zasad grupy do komputera docelowego.  
@@ -9018,21 +9017,21 @@ DriverSelectionProfile =%MAKE%-%MODEL%-Win8-%ARCHITECTURE%
 
 3.  Konfigurowanie zestawu MDT, aby wdrożyć obiekt zasad grupy pakiety zgodnie z opisem w [skonfigurować zestaw MDT do wdrożenia pakiety obiektu zasad grupy](#ConfigureMDTtoDeploytheGPOPacks).  
 
-####  <a name="IdentifyorCreatetheGPOPacks"></a>Zidentyfikuj lub tworzenia pakietów obiektu zasad grupy  
+####  <a name="IdentifyorCreatetheGPOPacks"></a> Zidentyfikuj lub tworzenia pakietów obiektu zasad grupy  
  Można użyć pakietów obiektu zasad grupy, które są:  
 
 -   **Wygenerowane od Menedżera zgodności zabezpieczeń**. Menedżer zgodności zabezpieczeń można wyeksportować kopii zapasowej obiektu zasad grupy, których mogą używać jako pakiet obiektu zasad grupy. Możesz skopiować te pakiety obiektu zasad grupy do folderu plików zestawu MDT i zastosować je podczas procesu wdrażania.  
 
 -   **Dostosowane przez Ciebie**. Można tworzyć własne dostosowane pakiety obiektu zasad grupy na podstawie wymagań Twojej organizacji. Można użyć ustawień konfiguracji zabezpieczeń i zgodności w Menedżera zgodności zabezpieczeń jako początkowy, a następnie dostosować te ustawienia dla Twojej organizacji. Następnie można wyeksportować ustawienia konfiguracji zabezpieczeń i zgodności jako kopię zapasową obiektu zasad grupy, a następnie pakiet obiektu zasad grupy.  
 
-####  <a name="PlacetheGPOPacksintheAppropriateMDTFolders"></a>Pakiety miejsce obiektu zasad grupy w folderach odpowiedniego zestawu MDT  
+####  <a name="PlacetheGPOPacksintheAppropriateMDTFolders"></a> Pakiety miejsce obiektu zasad grupy w folderach odpowiedniego zestawu MDT  
  Po zidentyfikować lub umieścić utworzone pakiety obiektu zasad grupy, które są wymagane w organizacji, obiekt zasad grupy pakietów w podfolderze w Templates\GPOPacksfolder w:  
 
 -   Udział wdrożenia dla LTI  
 
 -   Pakiet plików zestawu MDT dla ZTI i UDI  
 
-####  <a name="ConfigureMDTtoDeploytheGPOPacks"></a>Skonfiguruj zestaw MDT do wdrożenia pakiety obiektu zasad grupy  
+####  <a name="ConfigureMDTtoDeploytheGPOPacks"></a> Skonfiguruj zestaw MDT do wdrożenia pakiety obiektu zasad grupy  
  **Zastosuj pakiet lokalny obiekt zasad grupy** krok sekwencji zadań można skonfigurować przy użyciu właściwości wymienionych w tabeli 172. Te właściwości można skonfigurować przy użyciu pliku CustomSettings.ini lub DB zestawu MDT.  
 
 ### <a name="table-172-properties-used-to-configure-the-apply-local-gpo-package-task-sequence-step"></a>172 tabeli. Właściwości używanych do konfigurowania zastosuj pakiet lokalny obiekt zasad grupy sekwencji zadań  
@@ -9045,11 +9044,11 @@ DriverSelectionProfile =%MAKE%-%MODEL%-Win8-%ARCHITECTURE%
 > [!NOTE]
 >  Odpowiedni pakiet obiektu zasad grupy jest uzależniony wdrażanego systemu operacyjnego. W przypadku nieodnalezienia nie zgodnych pakiet obiektu zasad grupy nie pakiet obiektu zasad grupy zostaną zastosowane.  
 
-###  <a name="EnablingParticipationinCEIPandWER"></a>Włączanie uczestnictwo w programie poprawy jakości obsługi klienta i raportowaniu błędów systemu Windows  
- Zestaw MDT obejmuje nowy krok sekwencji zadań, która automatyzuje proces konfiguracji udział w [Program poprawy jakości obsługi klienta systemu Windows](http://www.microsoft.com/products/ceip/%20privacypolicy.mspx) (CEIP) i [raportowanie błędów systemu Windows](http://msdn.microsoft.com/%20windows/hardware/gg487440) (WER). **Uczestnictwa w celu poprawy jakości obsługi klienta i raportowaniu błędów systemu Windows** krok sekwencji zadań jest używany do automatyzacji tego udziału.  
+###  <a name="EnablingParticipationinCEIPandWER"></a> Włączanie uczestnictwo w programie poprawy jakości obsługi klienta i raportowaniu błędów systemu Windows  
+ Zestaw MDT obejmuje nowy krok sekwencji zadań, która automatyzuje proces konfiguracji udział w [Program poprawy jakości obsługi klienta systemu Windows](https://privacy.microsoft.com/privacystatement) (CEIP) i [raportowanie błędów systemu Windows](https://docs.microsoft.com/windows-hardware/drivers/dashboard/windows-error-reporting-getting-started) (WER). **Uczestnictwa w celu poprawy jakości obsługi klienta i raportowaniu błędów systemu Windows** krok sekwencji zadań jest używany do automatyzacji tego udziału.  
 
 > [!NOTE]
->  Mimo że sekwencje zadań zestawu MDT można użyć do włączenia systemów operacyjnych poprawy jakości obsługi klienta i raportowaniu błędów systemu Windows dla systemu Windows (tylko wtedy, gdy odpowiedni krok sekwencji zadań jest włączona), jest oddzielona od informacji CEIP zbierane po przystąpieniu do programu poprawy jakości obsługi klienta zestawu MDT. Aby uzyskać więcej informacji o informacjach MDT wysyła po włączeniu poprawy jakości obsługi klienta, zobacz [Microsoft Deployment Toolkit — zasady zachowania poufności informacji](http://go.microsoft.com/fwlink/?LinkId=314082).  
+>  Mimo że sekwencje zadań zestawu MDT można użyć do włączenia systemów operacyjnych poprawy jakości obsługi klienta i raportowaniu błędów systemu Windows dla systemu Windows (tylko wtedy, gdy odpowiedni krok sekwencji zadań jest włączona), jest oddzielona od informacji CEIP zbierane po przystąpieniu do programu poprawy jakości obsługi klienta zestawu MDT. Aby uzyskać więcej informacji o informacjach MDT wysyła po włączeniu poprawy jakości obsługi klienta, zobacz [Microsoft Deployment Toolkit — zasady zachowania poufności informacji](https://go.microsoft.com/fwlink/?LinkId=314082).  
 
  **Uczestnictwa w celu poprawy jakości obsługi klienta i raportowaniu błędów systemu Windows** krok sekwencji zadań znajduje się w następujących szablonów sekwencji zadań zestawu MDT, ale jest domyślnie wyłączone:  
 
@@ -9071,25 +9070,25 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
 
  Skrypt ZTIOptIn.wsf ma następujące parametry nazwane:  
 
--   **PROGRAM CEIP**. Ten parametr określa udział w programie CEIP i może być jedną z następujących czynności:  
+-   **CEIP**. Ten parametr określa udział w programie CEIP i może być jedną z następujących czynności:  
 
-    -   **TAK**. Ta wartość określa, aby włączyć udział.  
+    -   **YES**. Ta wartość określa, aby włączyć udział.  
 
     -   **NIE**. Ta wartość określa, aby zrezygnować z włączenia udziału.  
 
     > [!NOTE]
     >  Wszystkie wartości innych niż **tak** jest traktowany jako **nr**, umieszczając nie parametru.  
 
--   **RAPORTOWANIE BŁĘDÓW SYSTEMU WINDOWS**. Ten parametr określa uczestnictwa w raportowaniu błędów systemu Windows i może być jedną z następujących czynności:  
+-   **WER**. Ten parametr określa uczestnictwa w raportowaniu błędów systemu Windows i może być jedną z następujących czynności:  
 
-    -   **TAK**. Ta wartość określa, aby włączyć udział.  
+    -   **YES**. Ta wartość określa, aby włączyć udział.  
 
     -   **NIE**. Ta wartość określa, aby zrezygnować z włączenia udziału.  
 
 > [!NOTE]
 >  Wszystkie wartości innych niż **tak** jest traktowany jako **nr**, umieszczając nie parametru.  
 
-###  <a name="ConfiguringRolesandFeaturesTaskSequenceSteps"></a>Konfigurowanie ról i kroki sekwencji zadań w funkcji  
+###  <a name="ConfiguringRolesandFeaturesTaskSequenceSteps"></a> Konfigurowanie ról i kroki sekwencji zadań w funkcji  
  Zestaw MDT automatyzuje instalowania i odinstalowywania ról systemu Windows i funkcji przy użyciu **zainstalować role i funkcje** i **odinstalowywanie ról i funkcji** typy krok sekwencji zadań. Te typy sekwencji zadań umożliwia organizacjom wdrażanie komputerów docelowych z systemu Windows role i funkcje, które są zgodne ze standardami konfiguracji wynika z przepisami lub organizacyjne urzędów.  
 
  Konfigurowanie ról i funkcji kroki sekwencji zadań dla LTI i ZTI przez:  
@@ -9098,7 +9097,7 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
 
 -   Odinstalowywanie odpowiednie role systemu Windows i funkcji, zgodnie z opisem w [skonfigurować odinstalowywanie ról i kroki sekwencji zadań w funkcji](#ConfigureUninstallRolesandFeaturesTaskSequenceSteps)  
 
-####  <a name="ConfigureInstallRolesandFeaturesTaskSequenceSteps"></a>Konfigurowanie instalacji ról i funkcji zadania sekwencji kroki  
+####  <a name="ConfigureInstallRolesandFeaturesTaskSequenceSteps"></a> Konfigurowanie instalacji ról i funkcji zadania sekwencji kroki  
  Zestaw MDT automatyzuje proces wdrażania systemu Windows ról i funkcji przy użyciu zainstalować role i funkcje typ kroku sekwencji zadań. Ten krok sekwencji zadań należy uruchomić w docelowy system operacyjny nie znajduje się w środowisku Windows PE.  
 
 > [!NOTE]
@@ -9126,12 +9125,12 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
     |-------------|-----------------|  
     |**Nazwa** |Wpisz nazwę zadania.|  
     |**Opis** |Wpisz opis zadania.|  
-    |**Wybierz system operacyjny, dla którego mają zostać zainstalowane role** |Wybierz docelowy system operacyjny do wdrożenia z poniższej listy:<br /><br /> — Windows 7<br /><br /> — Windows 8<br /><br /> — Windows 8.1<br /><br /> — Windows Server 2008 R2<br /><br /> — Windows Server 2008 R2 Core<br /><br /> — Windows Server 2012<br /><br /> — Windows Server 2012 Core<br /><br /> — Windows Server 2012 R2<br /><br /> — Podstawowy Windows Server 2012 R2|  
+    |**Wybierz system operacyjny, dla którego mają zostać zainstalowane role** |Wybierz docelowy system operacyjny do wdrożenia z poniższej listy:<br /><br /> — Windows 7<br /><br /> - Windows 8<br /><br /> - Windows 8.1<br /><br /> — Windows Server 2008 R2<br /><br /> — Windows Server 2008 R2 Core<br /><br /> — Windows Server 2012<br /><br /> — Windows Server 2012 Core<br /><br /> — Windows Server 2012 R2<br /><br /> — Podstawowy Windows Server 2012 R2|  
     |**Wybierz role i funkcje, które powinny być instalowane** |Zaznacz pole wyboru obok ról lub funkcji do zainstalowania.<br /><br /> Możesz kliknąć **Zaznacz wszystko** aby wybrać wszystkie role i funkcje lub kliknij przycisk **wybierz Brak** wyczyść wszystkie role i funkcje.|  
 
  Aby uzyskać informacje na temat odinstalowywania Windows ról i funkcji, zobacz [skonfigurować odinstalowywanie ról i kroki sekwencji zadań funkcji](#ConfigureUninstallRolesandFeaturesTaskSequenceSteps).  
 
-#####  <a name="ConfigureUninstallRolesandFeaturesTaskSequenceSteps"></a>Skonfiguruj odinstalowywania ról i funkcji zadania sekwencji kroki  
+#####  <a name="ConfigureUninstallRolesandFeaturesTaskSequenceSteps"></a> Skonfiguruj odinstalowywania ról i funkcji zadania sekwencji kroki  
  Zestaw MDT automatyzuje usuwania (dezinstalacji) systemu operacyjnego ról i funkcji w systemie Windows przy użyciu **odinstalowywanie ról i funkcji** krok sekwencji zadań. Ten krok sekwencji zadań należy uruchomić w docelowy system operacyjny nie znajduje się w środowisku Windows PE.  
 
  Dla ZTI sekwencje zadań, które nie są tworzone przy użyciu zestawu MDT zadań Szablony sekwencji, upewnij się, że uruchamiasz **Użyj pakietu Toolkit** i **zebrać** zadania sekwencji kroki przed uruchomieniem polecenia **instalacji Role i funkcje** krok sekwencji zadań. **Zainstalować role i funkcje** krok sekwencji zadań jest zależna od **Użyj pakietu Toolkit** i **zebrać** czynności sekwencji zadań.  
@@ -9161,12 +9160,12 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
     |-------------|-----------------|  
     |**Nazwa** |Wpisz nazwę zadania.|  
     |**Opis** |Wpisz opis zadania.|  
-    |**Wybierz system operacyjny, dla której mają zostać odinstalowane ról** |Wybierz docelowy system operacyjny do wdrożenia z poniższej listy:<br /><br /> — Windows 7<br /><br /> — Windows 8<br /><br /> — Windows 8.1<br /><br /> — Windows Server 2008 R2<br /><br /> — Windows Server 2008 R2 Core<br /><br /> — Windows Server 2012<br /><br /> — Windows Server 2012 Core<br /><br /> — Windows Server 2012 R2<br /><br /> — Podstawowy Windows Server 2012 R2|  
+    |**Wybierz system operacyjny, dla której mają zostać odinstalowane ról** |Wybierz docelowy system operacyjny do wdrożenia z poniższej listy:<br /><br /> — Windows 7<br /><br /> - Windows 8<br /><br /> - Windows 8.1<br /><br /> — Windows Server 2008 R2<br /><br /> — Windows Server 2008 R2 Core<br /><br /> — Windows Server 2012<br /><br /> — Windows Server 2012 Core<br /><br /> — Windows Server 2012 R2<br /><br /> — Podstawowy Windows Server 2012 R2|  
     |**Wybierz role i funkcje, które ma zostać odinstalowane** |Zaznacz pole wyboru obok ról lub funkcji, które ma zostać odinstalowany.<br /><br /> Możesz kliknąć **Zaznacz wszystko** aby zaznaczyć wszystkie role i funkcje lub **wybierz Brak** wyczyść wszystkie role i funkcje.|  
 
  Aby uzyskać informacje dotyczące instalowania ról systemu Windows i funkcji, zobacz [konfigurowanie instalowanie ról i kroki sekwencji zadań funkcji](#ConfigureUninstallRolesandFeaturesTaskSequenceSteps).  
 
-###  <a name="ConfiguringServerRoleTaskSequenceSteps"></a>Konfigurowanie kroków sekwencji zadań roli serwera  
+###  <a name="ConfiguringServerRoleTaskSequenceSteps"></a> Konfigurowanie kroków sekwencji zadań roli serwera  
  Zestaw MDT automatyzuje proces wdrażania ról serwera w systemie Windows Server. Skonfiguruj kroków sekwencji zadań w zestawie MDT do wdrażania ról serwera, które są obsługiwane przez zestaw MDT.  
 
 > [!NOTE]
@@ -9182,7 +9181,7 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
 
 -   Konfigurowanie autoryzacji DHCP kroku sekwencji zadań, zgodnie z opisem w [skonfigurować autoryzacji DHCP ustawień sekwencji zadań krok](#ConfigureAuthorizeDHCPTaskSequenceStepSettings)  
 
-####  <a name="ConfigureADDSServerRoleTaskSequenceStepSettings"></a>Konfigurowanie ustawień krok sekwencji zadań w roli serwera DS AD  
+####  <a name="ConfigureADDSServerRoleTaskSequenceStepSettings"></a> Konfigurowanie ustawień krok sekwencji zadań w roli serwera DS AD  
  Usługi AD DS przechowuje dane katalogów i zarządza komunikacją między użytkownikami a domeną, w tym procesami logowania, uwierzytelniania i wyszukiwania w katalogu. Kontroler domeny usług AD DS jest serwer z systemem usług AD DS.  
 
 > [!NOTE]
@@ -9202,7 +9201,7 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
 
 -   Konfigurowanie usług AD DS zaawansowane właściwości dla kontrolerów domeny, zgodnie z opisem w [właściwości Zaawansowane konfigurowanie usługi AD DS](#ConfigureADDSAdvancedProperties)  
 
-#####  <a name="DeployaDomainControllerinaNewForest"></a>Wdrażanie kontrolera domeny w nowym lesie  
+#####  <a name="DeployaDomainControllerinaNewForest"></a> Wdrażanie kontrolera domeny w nowym lesie  
  Za pomocą tej opcji wdrażania kontrolera domeny, który zawiera środowisko nowego lasu. Użyj tej opcji w przypadku wdrażania w środowisku z nowego lasu.  
 
 ###### <a name="to-deploy-a-domain-controller-with-a-new-forest"></a>Aby wdrożyć kontroler domeny z nowego lasu  
@@ -9241,9 +9240,9 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
 
 8.  W **właściwości zaawansowane** sekcji, wykonaj zadania konfiguracji, zgodnie z opisem w [Konfigurowanie usługi AD DS zaawansowane właściwości](#ConfigureADDSAdvancedProperties), a następnie kliknij przycisk **OK**.  
 
- Aby uzyskać więcej informacji na temat **DCPROMO** opcji wiersza polecenia, zobacz [Dcpromo](http://technet2.microsoft.com/windowsserver2008/en/library/d660e761-9ee7-4382-822a-06fc2365a1d21033.mspx?mfr=true).  
+ Aby uzyskać więcej informacji na temat **DCPROMO** opcji wiersza polecenia, zobacz [Dcpromo](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/install-active-directory-domain-services--level-100-#BKMK_PS).  
 
-#####  <a name="DeployaNewDomainControllerasaReplicainanExistingDomain"></a>Wdrażanie nowego kontrolera domeny jako replika w istniejącej domenie  
+#####  <a name="DeployaNewDomainControllerasaReplicainanExistingDomain"></a> Wdrażanie nowego kontrolera domeny jako replika w istniejącej domenie  
  Przy użyciu tej opcji, Wdróż istniejącego kontrolera domeny jako nowego kontrolera domeny przez replikowanie go do istniejącego środowiska. Użyj tej opcji, jeśli w przypadku wdrażania nowego kontrolera domeny do istniejącego środowiska replikacji uzyska istniejące informacje o domenie z usług AD DS.  
 
 ###### <a name="to-deploy-a-domain-controller-as-a-new-domain-controller-replica"></a>Do wdrożenia kontrolera domeny jako nowej repliki kontrolera domeny  
@@ -9280,9 +9279,9 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
 
 9. W **właściwości zaawansowane** sekcji, wykonaj zadania konfiguracji, zgodnie z opisem w [Konfigurowanie usługi AD DS zaawansowane właściwości](#ConfigureADDSAdvancedProperties), a następnie kliknij przycisk **OK**.  
 
- Aby uzyskać więcej informacji na temat **DCPROMO** opcji wiersza polecenia, zobacz [Dcpromo](http://technet2.microsoft.com/windowsserver2008/en/library/d660e761-9ee7-4382-822a-06fc2365a1d21033.mspx?mfr=true).  
+ Aby uzyskać więcej informacji na temat **DCPROMO** opcji wiersza polecenia, zobacz [Dcpromo](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/install-active-directory-domain-services--level-100-#BKMK_PS).  
 
-#####  <a name="DeployaNewDomainControllerinaNewDomainTreeinanExistingForest"></a>Wdrażanie nowego kontrolera domeny w nowe drzewo domen w istniejącym lesie  
+#####  <a name="DeployaNewDomainControllerinaNewDomainTreeinanExistingForest"></a> Wdrażanie nowego kontrolera domeny w nowe drzewo domen w istniejącym lesie  
  Za pomocą tej opcji wdrażania kontrolera domeny, która zawiera nowego drzew do istniejącego środowiska lasu. Użyj tej opcji w przypadku wdrażania domeny podrzędnej w istniejącym środowisku lasu.  
 
 ###### <a name="to-deploy-a-domain-controller-with-a-new-domain-tree-in-an-existing-forest"></a>Aby wdrożyć kontroler domeny z nowe drzewo domen w istniejącym lesie  
@@ -9323,9 +9322,9 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
 
 11. W **właściwości zaawansowane** sekcji, wykonaj zadania konfiguracji, zgodnie z opisem w [Konfigurowanie usługi AD DS zaawansowane właściwości](#ConfigureADDSAdvancedProperties), a następnie kliknij przycisk **OK**.  
 
- Aby uzyskać więcej informacji na temat **DCPROMO** opcji wiersza polecenia, zobacz [Dcpromo](http://technet2.microsoft.com/windowsserver2008/en/library/d660e761-9ee7-4382-822a-06fc2365a1d21033.mspx?mfr=true).  
+ Aby uzyskać więcej informacji na temat **DCPROMO** opcji wiersza polecenia, zobacz [Dcpromo](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/install-active-directory-domain-services--level-100-#BKMK_PS).  
 
-#####  <a name="DeployaNewDomainControllerinaNewDomaininanExistingForest"></a>Wdrażanie nowego kontrolera domeny w nowej domeny w istniejącym lesie  
+#####  <a name="DeployaNewDomainControllerinaNewDomaininanExistingForest"></a> Wdrażanie nowego kontrolera domeny w nowej domeny w istniejącym lesie  
  Za pomocą tej opcji wdrażania kontrolera domeny, która zawiera nową domenę do istniejącego lasu środowiska. Użyj tej opcji w przypadku wdrażania nową domenę podrzędną w istniejącym środowisku lasu.  
 
 ###### <a name="to-deploy-a-domain-controller-with-a-new-domain-in-an-existing-forest"></a>Aby wdrożyć kontroler domeny z nowej domeny w istniejącym lesie  
@@ -9366,9 +9365,9 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
 
 11. W **właściwości zaawansowane** sekcji, wykonaj zadania konfiguracji, zgodnie z opisem w [Konfigurowanie usługi AD DS zaawansowane właściwości](#ConfigureADDSAdvancedProperties), a następnie kliknij przycisk **OK**.  
 
- Aby uzyskać więcej informacji na temat **DCPROMO** opcji wiersza polecenia, zobacz [Dcpromo](http://technet2.microsoft.com/windowsserver2008/en/library/d660e761-9ee7-4382-822a-06fc2365a1d21033.mspx?mfr=true).  
+ Aby uzyskać więcej informacji na temat **DCPROMO** opcji wiersza polecenia, zobacz [Dcpromo](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/install-active-directory-domain-services--level-100-#BKMK_PS).  
 
-#####  <a name="DeployanRODCinanExistingDomain"></a>Wdrażanie kontrolera RODC w istniejącej domenie  
+#####  <a name="DeployanRODCinanExistingDomain"></a> Wdrażanie kontrolera RODC w istniejącej domenie  
  Za pomocą tej opcji wdrażania kontrolera domeny, który zawiera tylko do odczytu repliki istniejącej domeny do istniejącego lasu środowiska. Ta opcja służy do wdrażania kontrolera domeny, który zawiera replika nie można edytować struktura domeny do istniejącego lasu środowiska.  
 
 ###### <a name="to-deploy-an-rodc-in-an-existing-domain"></a>Do wdrażania kontrolera RODC w istniejącej domenie  
@@ -9405,9 +9404,9 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
 
 9. W **właściwości zaawansowane** sekcji, wykonaj zadania konfiguracji, zgodnie z opisem w [Konfigurowanie usługi AD DS zaawansowane właściwości](#ConfigureADDSAdvancedProperties), a następnie kliknij przycisk **OK**.  
 
- Aby uzyskać więcej informacji na temat **DCPROMO** opcji wiersza polecenia, przejdź do [Dcpromo](http://technet2.microsoft.com/windowsserver2008/en/library/d660e761-9ee7-4382-822a-06fc2365a1d21033.mspx?mfr=true).  
+ Aby uzyskać więcej informacji na temat **DCPROMO** opcji wiersza polecenia, przejdź do [Dcpromo](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/install-active-directory-domain-services--level-100-#BKMK_PS).  
 
-#####  <a name="ConfigureADDSAdvancedProperties"></a>Skonfiguruj zaawansowane właściwości usługi AD DS  
+#####  <a name="ConfigureADDSAdvancedProperties"></a> Skonfiguruj zaawansowane właściwości usługi AD DS  
  Aby skonfigurować zaawansowane właściwości usługi AD DS, należy wykonać następujące czynności:  
 
 1.  Edytuj ***task_sequence_name*** (gdzie *task_sequence_name* to nazwa sekwencji zadań, do której chcesz dodać krok sekwencji zadań) dla:  
@@ -9446,7 +9445,7 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
 
     -   **Pliki dziennika**. Zawiera pełną ścieżkę do komputera docelowego do lokalizacji plików dziennika. Wartość domyślna to % SYSTEMROOT % NTDS. Można również skonfigurować za pomocą tej wartości **LogPath** właściwość w pliku CustomSettings.ini lub w bazie danych zestawu MDT.  
 
-    -   **FOLDER SYSVOL**. Zawiera pełną ścieżkę do komputera docelowego do lokalizacji folderu SYSVOL. Wartość domyślna to % SYSTEMROOT % folderu SYSVOL. Można również skonfigurować za pomocą tej wartości **SysVolPath** właściwość w pliku CustomSettings.ini lub w bazie danych zestawu MDT.  
+    -   **SYSVOL**. Zawiera pełną ścieżkę do komputera docelowego do lokalizacji folderu SYSVOL. Wartość domyślna to % SYSTEMROOT % folderu SYSVOL. Można również skonfigurować za pomocą tej wartości **SysVolPath** właściwość w pliku CustomSettings.ini lub w bazie danych zestawu MDT.  
 
     > [!NOTE]
     >  Jeśli konfigurujesz wartości w CustomSettings.ini lub zestaw MDT bazę danych, należy użyć zmiennej sekwencji zadań w programie % DESTINATIONLOGICALDRIVE % zamiast zmienną % SYSTEMROOT %. We wdrożeniach LTI zmienne są oceniane podczas uruchamiania systemu Windows PE, więc zmienną % SYSTEMROOT % zwróci folderze systemu Windows PE nie docelowego systemu operacyjnego. Zmienna % SYSTEMROOT % dla systemu Windows PE jest zwykle ustawiana na X:\WINDOWS.  
@@ -9455,7 +9454,7 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
 
      Domyślna nazwa dla nowego lasu lub lokacji jest *default_first_site*, jednak ta wartość nie jest wyświetlany w **nazwa witryny** pole domyślnie — należy ją wpisać. Następnie kliknij przycisk **OK** do ukończenia konfiguracji **właściwości zaawansowane usługi AD DS** , a następnie kliknij przycisk **OK** w ***Nazwa zadania*** **Właściwości** okno dialogowe, aby ukończyć konfigurowanie zadania.  
 
-####  <a name="ConfigureDNSServerRoleSettings"></a>Konfigurowanie ustawień roli serwera DNS  
+####  <a name="ConfigureDNSServerRoleSettings"></a> Konfigurowanie ustawień roli serwera DNS  
  Przy użyciu tej opcji, konfigurować i wdrażać roli serwera DNS na nowy komputer lub serwer DNS działający na istniejącym komputerze. Przez przypisanie roli serwera DNS, można skonfigurować standardowej podstawowej DNS, lokacji dodatkowej i stref skrótowych, a także AD zintegrowane podstawowej i skrótowych. Istnieje również możliwość zarządzania przedawnienia, aktualizacje, typy i wiele stref — wszystko w zautomatyzowany proces. To nie jest proces migracji z istniejącego serwera DNS. jest to raczej instalację nowej strefy DNS wszystkich typów.  
 
 > [!NOTE]
@@ -9513,7 +9512,7 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
 
 16. Zamknięcie konsoli Deployment Workbench.  
 
-####  <a name="ConfigureDHCPServerRoleTaskSequenceStepSettings"></a>Konfigurowanie ustawień krok sekwencji zadań w roli serwera DHCP  
+####  <a name="ConfigureDHCPServerRoleTaskSequenceStepSettings"></a> Konfigurowanie ustawień krok sekwencji zadań w roli serwera DHCP  
  Przy użyciu tej opcji, konfigurowanie i wdrażanie roli serwera DHCP przy użyciu zestawu MDT. Można skonfigurować wszystkie standardowe opcje zakresu DHCP podobnie jak przy użyciu standardowych konsoli DHCP w systemie Windows Server. Aby zaimplementować roli serwera DHCP, należy skonfigurować **autoryzacji DHCP** sekwencji w połączeniu z zadań **skonfigurować serwer DHCP** sekwencji zadań.  
 
 > [!NOTE]
@@ -9527,7 +9526,7 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
 
 -   Konfigurowanie opcji serwera DHCP dla roli serwera DHCP, zgodnie z opisem w [Konfigurowanie opcji serwera DHCP dla roli serwera DHCP](#ConfiguretheDHCPServerOptionsfortheDHCPServerRole)  
 
-#####  <a name="ConfigureDeploymentoftheDHCPServerRole"></a>Konfigurowanie wdrożenia roli serwera DHCP  
+#####  <a name="ConfigureDeploymentoftheDHCPServerRole"></a> Konfigurowanie wdrożenia roli serwera DHCP  
  Instalowanie i konfigurowanie roli serwera DHCP na komputerze docelowym, modyfikując **skonfigurować serwer DHCP** typ kroku sekwencji zadań.  
 
 ###### <a name="to-configure-and-deploy-the-dhcp-server-role"></a>Aby skonfigurować i wdrożyć rolę serwera DHCP  
@@ -9556,8 +9555,8 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
 
 4.  Kliknij przycisk **OK**.  
 
-#####  <a name="ConfigureDHCPScopesfortheDHCPServerRole"></a>Konfigurowanie zakresów DHCP dla roli serwera DHCP  
- Przy użyciu tej opcji, skonfiguruj zakresów DHCP, które zawierają zasady i aktywnych zakresach używane na serwerze DHCP. Aby uzyskać więcej informacji o protokole DHCP zakres opcji konfiguracji i wskazówki dotyczące używania każdej opcji konfiguracji, zobacz [rozdział 6 - Dynamic Host Configuration Protocol](http://technet.microsoft.com/library/bb727003.aspx) w podstawowe informacje na temat protokołu TCP/IP systemu Microsoft Windows.  
+#####  <a name="ConfigureDHCPScopesfortheDHCPServerRole"></a> Konfigurowanie zakresów DHCP dla roli serwera DHCP  
+ Przy użyciu tej opcji, skonfiguruj zakresów DHCP, które zawierają zasady i aktywnych zakresach używane na serwerze DHCP. Aby uzyskać więcej informacji o protokole DHCP zakres opcji konfiguracji i wskazówki dotyczące używania każdej opcji konfiguracji, zobacz [rozdział 6 - Dynamic Host Configuration Protocol](https://technet.microsoft.com/library/bb727003.aspx) w podstawowe informacje na temat protokołu TCP/IP systemu Microsoft Windows.  
 
 ###### <a name="to-configure-and-deploy-dhcp-scopes"></a>Aby skonfigurować i wdrożyć zakresów DHCP  
 
@@ -9613,7 +9612,7 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
 
 7.  Kliknij przycisk **OK**.  
 
-#####  <a name="ConfiguretheDHCPServerOptionsfortheDHCPServerRole"></a>Konfigurowanie opcji serwera DHCP dla roli serwera DHCP  
+#####  <a name="ConfiguretheDHCPServerOptionsfortheDHCPServerRole"></a> Konfigurowanie opcji serwera DHCP dla roli serwera DHCP  
  Przy użyciu tej opcji, należy skonfigurować opcje serwera DHCP do klientów DHCP, w tym oznaczenia bramy routera lub wartość domyślną, informacje o adresie IP serwera DNS i informacji o serwerze usługi WINS.  
 
 ###### <a name="to-configure-and-deploy-dhcp-server-options"></a>Aby skonfigurować i wdrożyć opcji serwera DHCP  
@@ -9660,11 +9659,11 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
 
 8.  Kliknij przycisk **046 typ węzła WINS/NBT**, a następnie wpisz jedno z następujących kodów: **44**, **46**, lub **47**.  
 
-     Aby uzyskać więcej informacji dotyczących sposobu ustalenia opcję odpowiednią dla środowiska, zobacz [zarządzanie opcje DHCP](http://technet.microsoft.com/library/cc958929.aspx).  
+     Aby uzyskać więcej informacji dotyczących sposobu ustalenia opcję odpowiednią dla środowiska, zobacz [zarządzanie opcje DHCP](https://technet.microsoft.com/library/cc958929.aspx).  
 
 9. Kliknij przycisk **060 klient PXE**; a następnie na **wartość ciągu** wpisz ciąg klienta środowiska PXE (zazwyczaj PXEClient).  
 
-####  <a name="ConfigureAuthorizeDHCPTaskSequenceStepSettings"></a>Skonfiguruj ustawienia kroku sekwencji zadań DHCP autoryzacji  
+####  <a name="ConfigureAuthorizeDHCPTaskSequenceStepSettings"></a> Skonfiguruj ustawienia kroku sekwencji zadań DHCP autoryzacji  
  Autoryzowanie usługi DHCP w usługach AD DS jest pomyślnie instalowania i korzystania z usługi DHCP w sieci opartej na systemie Windows.  
 
 > [!NOTE]
@@ -9700,17 +9699,17 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
 
 5.  Kliknij przycisk **OK**, następnie kliknij przycisk **OK** ponownie.  
 
-###  <a name="CopyingContenttotheTargetComputer"></a>Kopiowanie zawartości do komputera docelowego  
+###  <a name="CopyingContenttotheTargetComputer"></a> Kopiowanie zawartości do komputera docelowego  
  Aby skopiować zawartość do komputerów docelowych, wykonaj dowolną kombinację następujących czynności:  
 
 -   Skopiuj zawartość do komputera docelowego przy użyciu kroku sekwencji zadań, zgodnie z opisem w [kopiowania zawartości do kroków sekwencji zadań przy użyciu komputerów docelowych](#CopyContenttoTargetComputersUsingTaskSequenceSteps).  
 
 -   Skopiuj zawartość do komputera docelowego przy użyciu folderów $OEM$, zgodnie z opisem [kopiowania zawartości do folderów docelowych komputerów przy użyciu $OEM$](#CopyContenttoTargetComputersUsingOEMFolders).  
 
-####  <a name="CopyContenttoTargetComputersUsingTaskSequenceSteps"></a>Skopiuj zawartość do komputerów docelowych przy użyciu kroków sekwencji zadań  
+####  <a name="CopyContenttoTargetComputersUsingTaskSequenceSteps"></a> Skopiuj zawartość do komputerów docelowych przy użyciu kroków sekwencji zadań  
  Tworzenie sekwencji zadań na podstawie **Uruchom wiersz polecenia** zadań sekwencji kroku działająca **xcopy.exe** lub podobne polecenia kopiowania zawartości do komputera docelowego. Upewnij się, że **Uruchom wiersz polecenia** typ kroku sekwencji zadań występuje przed żadnych kroków sekwencji zadań lub skryptów, które są zależne od plików kopiowanych na komputerach docelowych. Aby uzyskać więcej informacji na temat modyfikowania kroków sekwencji zadań, zobacz [skonfigurować kroków sekwencji zadań i krok sekwencji](#ConfiguretheTaskSequenceStepsandStepSequence).  
 
-####  <a name="CopyContenttoTargetComputersUsingOEMFolders"></a>Skopiuj zawartość do komputerów docelowych przy użyciu folderów $OEM$  
+####  <a name="CopyContenttoTargetComputersUsingOEMFolders"></a> Skopiuj zawartość do komputerów docelowych przy użyciu folderów $OEM$  
  Zestaw MDT obsługuje za pomocą starszej wersji $OEM$ folderów do organizowania i kopiowanie dodatkowych plików na komputerach docelowych. Pliki WIM danych są preferowane względem folderów $OEM$.  
 
 > [!NOTE]
@@ -9738,7 +9737,7 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
 
      Firma Microsoft zaleca, aby tych folderów nie można użyć. Foldery są zależne od konfiguracji bardzo określonego dysku na komputerze docelowym. $1 należy użyć do reprezentowania % SystemDrive %, zamiast tego. W przypadku większości instalacji $OEM$\\$1 i $OEM$ \C zapisu w tej samej lokalizacji: w katalogu głównym dysku C.  
 
-###  <a name="CreatingCustomScriptsforMDT"></a>Tworzenie niestandardowych skryptów dla zestawu MDT  
+###  <a name="CreatingCustomScriptsforMDT"></a> Tworzenie niestandardowych skryptów dla zestawu MDT  
  Skrypty Podaj automatyzacji Tworzenie obrazu i ogólny proces wdrażania. One Skanuj pliki konfiguracji, w bazie danych konfiguracji oceny zmiennych środowiskowych, aby określić zasady, które ma być używane podczas wdrażania obrazów na komputerach docelowych i wykonywać inne zadania skomplikowanych wdrożenia. Zestaw MDT używa zarówno programu Microsoft Visual Basic® Scripting Edition (VBScript [.vbs]), jak i skryptów (mu) pliku skryptu systemu Windows. Zazwyczaj jest niepotrzebna, aby zmodyfikować jeden z dostarczonego skryptów. Modyfikacja jest to konieczne, zamiast modyfikowania jeden z dostarczonego skryptów, skopiuj skrypt do nowego pliku, aktualizować i dokładnie przetestować wpływu zmiany.  
 
  Skrypty utworzyć pliki dziennika, jak skryptów automatyzacji procesu wdrażania. Plik dziennika rejestruje stan procesu wdrażania i może służyć do przy rozwiązywaniu problemów z tego procesu:  
@@ -9749,7 +9748,7 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
 
 -   Tworzenie skryptów programu Windows PowerShell do użycia we wdrożeniach MDT zgodnie z opisem w [tworzyć skrypty programu Windows PowerShell do użytku w zestawie MDT](#CreateWindowsPowerShellScriptsforUseinMDT).  
 
-####  <a name="DevelopCustomScripts"></a>Tworzenie niestandardowych skryptów  
+####  <a name="DevelopCustomScripts"></a> Tworzenie niestandardowych skryptów  
  Możesz utworzyć nowe skrypty do użycia we wdrożeniach zestawu MDT. Skrypty te powinna być w formie vbs lub mu plików. Przykłady skryptów, które korzysta z konsoli Deployment Workbench ścieżki instalacji udziału wdrożenia, a następnie otwórz folder skryptów.  
 
 > [!NOTE]
@@ -9781,13 +9780,13 @@ cscript.exe %SCRIPTROOT%\ZTIOptIn.wsf /CEIP:YES /WER:YES
 
     -   Umożliwia dostęp do bazy danych w skryptach, zamiast konfigurować CustomSettings.ini lub BootStrap.ini plików; można określić parametrów, aby uzyskać dostęp do bazy danych w skryptach  
 
--   **Usługa sieci Web**. Zapewnia dostęp do usług sieci web i jest zdefiniowany w ZTIDataAccess.vbs, zgodnie z opisem w [klasa usługi sieci Web](#WebServiceClass). **WebService** klasy:  
+-   **WebService**. Zapewnia dostęp do usług sieci web i jest zdefiniowany w ZTIDataAccess.vbs, zgodnie z opisem w [klasa usługi sieci Web](#WebServiceClass). **WebService** klasy:  
 
     -   Jest używana przez ZTIGather.wsf podczas przetwarzania reguły usługi sieci web z CustomSettings.ini lub BootStrap.ini plików  
 
     -   Umożliwia dostęp do usług sieci web w skryptach, zamiast konfigurować CustomSettings.ini lub BootStrap.ini plików; można określić parametrów, aby uzyskać dostęp do usług sieci web w skryptach  
 
-#####  <a name="EnvironmentClass"></a>Klasa środowiska  
+#####  <a name="EnvironmentClass"></a> Klasa środowiska  
  Odwołanie tej klasy w skryptach za pośrednictwem **oEnvironment** obiektu. Na przykład zmienić nazwę komputera, aby **przykład** za pomocą polecenia:  
 
 ```  
@@ -9800,7 +9799,7 @@ oEnvironment.Item("ComputerName") = "Example"
 oEnvironment.Item("Architecture")  
 ```  
 
-#####  <a name="LoggingClass"></a>Rejestrowanie klasy  
+#####  <a name="LoggingClass"></a> Rejestrowanie klasy  
  Odwołanie tej klasy w skryptach za pośrednictwem **oLogging** obiektu. Tworząc wpis informacyjny w dzienniku, należy użyć polecenia:  
 
 ```  
@@ -9813,7 +9812,7 @@ oLogging.CreateEntry "Informational message", LogTypeInfo
 oLogging.CreateEntry "An error occurred",LogTypeError  
 ```  
 
-#####  <a name="UtilityClass"></a>Klasa narzędzi  
+#####  <a name="UtilityClass"></a> Klasa narzędzi  
  Odwołanie tej klasy w skryptach za pośrednictwem **oUtility** obiektu. Aby określić nazwę bieżącego skryptu, użyj polecenia:  
 
 ```  
@@ -9826,7 +9825,7 @@ oUtility.ScriptName
 iRetVal = oUtility.FindFile("CustomSettings.ini", sIniFile)  
 ```  
 
-#####  <a name="DatabaseClass"></a>Klasy bazy danych  
+#####  <a name="DatabaseClass"></a> Klasy bazy danych  
  Odwołanie tej klasy w skryptach za pośrednictwem **bazy danych** klasy. Można utworzyć wystąpienia klasy obiektów i połączenia do bazy danych za pomocą następujących fragment skryptu:  
 
 ```  
@@ -9853,7 +9852,7 @@ iRetVal = oUtility.FindFile("CustomSettings.ini", sIniFile)
    WScript.Echo "Records retrieved: " & oRecordset.RecordCount  
 ```  
 
-#####  <a name="WebServiceClass"></a>Klasa usługi sieci Web  
+#####  <a name="WebServiceClass"></a> Klasa usługi sieci Web  
  Odwołanie tej klasy w skryptach za pośrednictwem **WebService** klasy. Można utworzyć wystąpienia klasy obiektów i połączenia do bazy danych za pomocą następujących fragment skryptu:  
 
 ```  
@@ -9866,7 +9865,7 @@ iRetVal = oUtility.FindFile("CustomSettings.ini", sIniFile)
    oEnvironment.Item("USZip") = "98029"  
    oEnvironment.Item("USZip") = "98029"  
    Set oWebService = new WebService  
-   oWebService.WebService = "http://www.webservicex.net/uszip.asmx/GetInfoByZIP"  
+   oWebService.WebService = "https://www.webservicex.net/uszip.asmx/GetInfoByZIP"  
    oWebService.Parameters = "USZip"  
 
    Set oXML = oWebService.Query  
@@ -9874,7 +9873,7 @@ iRetVal = oUtility.FindFile("CustomSettings.ini", sIniFile)
    WScript.Echo oXML.XML  
 ```  
 
-####  <a name="CreateNewScriptsfromaTemplate"></a>Utwórz nowe skrypty z szablonu  
+####  <a name="CreateNewScriptsfromaTemplate"></a> Utwórz nowe skrypty z szablonu  
  Można również tworzyć skrypty do użycia w ramach procesu przetwarzania obrazów. Te skrypty wywołania przez dodanie ich do edytora sekwencji zadań, a ostatecznie jest przesyłany przez dodanie ich do pliku TS.xml. Wyświetlanie listy 13 przedstawiono szablon do tworzenia niestandardowych skryptów.  
 
  **Wyświetlanie listy 13. Szablonu niestandardowego skryptu**  
@@ -9972,7 +9971,7 @@ End Function
 
 -   Upewnij się, że ZTIUtility.vbs i ZTIDataAccess.vbs nie są już dostępne funkcje wymagane przed zapisaniem funkcji.  
 
-####  <a name="CreateWindowsPowerShellScriptsforUseinMDT"></a>Tworzenie skryptów programu Windows PowerShell do użytku w zestawie MDT  
+####  <a name="CreateWindowsPowerShellScriptsforUseinMDT"></a> Tworzenie skryptów programu Windows PowerShell do użytku w zestawie MDT  
  Zestaw MDT umożliwia tworzenia skryptów środowiska Windows PowerShell, a następnie uruchom te skrypty w ramach użycia sekwencji zadań zestawu MDT **Uruchom skrypt programu PowerShell** typ kroku sekwencji zadań. Skryptów programu Windows PowerShell, które możesz utworzyć mogą wykonywać wszystkie typowe automatyzacji obsługiwane przez docelowy system operacyjny.  
 
  Tworzenie skryptów programu Windows PowerShell do użytku w zestawie MDT przez:  
@@ -9985,12 +9984,12 @@ End Function
 
 4.  Interpretowanie środowiska Windows PowerShell zwraca kody wygenerowane przez skrypt, zgodnie z opisem w [zinterpretować Windows PowerShell skryptu kody powrotne](#InterpretWindowsPowerShellScriptReturnCodes)  
 
-#####  <a name="IncludePrerequisitesforRunningWindowsPowerShellScriptsinMDT"></a>Wymagania wstępne dotyczące uruchamiania skryptów programu Windows PowerShell w zestawie MDT obejmują  
+#####  <a name="IncludePrerequisitesforRunningWindowsPowerShellScriptsinMDT"></a> Wymagania wstępne dotyczące uruchamiania skryptów programu Windows PowerShell w zestawie MDT obejmują  
  Gdy **Uruchom skrypt programu PowerShell** krok sekwencji zadań uruchamia skrypt programu Windows PowerShell, kroku automatycznie ładuje **Microsoft.BDD.TaskSequenceModule** moduł przed uruchomieniem skryptu. **Microsoft.BDD.TaskSequenceModule** modułu jest odpowiedzialny za tworzenie **TSENV**: i **TSENVLIST**: Dyski programu Windows PowerShell.  
 
  Ponadto zaleca się, czy ładowanie skryptu **ZTIUtility.psm1** modułu na początku skryptu, dodając następujący wiersz na początku skryptu:  
 
- Import-Module`.\ZTIUtility.psm1`  
+ Import-Module `.\ZTIUtility.psm1`  
 
  W tym **ZTIUtility.psm1** moduł na początku skryptu zapewnia następujące funkcje:  
 
@@ -10009,7 +10008,7 @@ End Function
 Import-Module MyCustomModule  
 ```  
 
-#####  <a name="UseTaskSequenceVariablesWithinWindowsPowerShellScripts"></a>Użyj zmiennych sekwencji zadań w ramach skryptów programu Windows PowerShell  
+#####  <a name="UseTaskSequenceVariablesWithinWindowsPowerShellScripts"></a> Użyj zmiennych sekwencji zadań w ramach skryptów programu Windows PowerShell  
  Windows PowerShell skrypt można pobrać lub ustawić zmienne sekwencji zadań, które mogą być używane przez zestaw MDT. Należy pobrać lub ustawić zmienne sekwencji zadań przy użyciu następujących dyskach środowiska Windows PowerShell:  
 
 -   **TSENV**:. Ten dysk jest lista wszystkich zmiennych sekwencji zadań i ich wartości. Tak jak każdy inny dysk z systemem Windows można uzyskać dostępu do tego dysku. Można na przykład wpisz następujące polecenie w programie Windows PowerShell, aby wyświetlić listę wszystkich zmiennych sekwencji zadań i ich bieżącej wartości: dir tsenv:  
@@ -10037,7 +10036,7 @@ Import-Module MyCustomModule
 
      To polecenie ustawia wartość **PAKIETY** zmienną sekwencji zadań do `"XXX00001:Program","XXX00002:Program"`.  
 
-####  <a name="UpdateMDTLogsUsingWindowsPowerShellScripts"></a>Aktualizacja zestawu MDT dzienników przy użyciu skryptów programu Windows PowerShell  
+####  <a name="UpdateMDTLogsUsingWindowsPowerShellScripts"></a> Aktualizacja zestawu MDT dzienników przy użyciu skryptów programu Windows PowerShell  
  Domyślnie BDD są zapisywane dane wyjściowe z skryptów środowiska Windows PowerShell. DZIENNIK. 175 tabela zawiera listę typów komunikatów, które są widoczne w BDD. Plik dziennika oraz jak te typy komunikatów są generowane przez skrypt.  
 
 ### <a name="table-175-bddlog-message-types-and-script-output-that-generates-them"></a>175 tabeli. BDD. Typy komunikatu dziennika i dane wyjściowe skryptu, który generuje je  
@@ -10052,12 +10051,12 @@ Import-Module MyCustomModule
 
 -   Postęp jest wyświetlany jako procent wykonania całkowitej bieżący skrypt i komunikaty, które są wyświetlane.  
 
--   Postęp jest aktualizowany przy użyciu standardu [Write-Progress](http://technet.microsoft.com/library/dd347663.aspx) polecenia cmdlet.  
+-   Postęp jest aktualizowany przy użyciu standardu [Write-Progress](https://technet.microsoft.com/library/dd347663.aspx) polecenia cmdlet.  
 
 > [!NOTE]
 >  W odróżnieniu od niektóre inne skrypty w zestawie MDT oddzielny plik dziennika nie jest generowany dla kroku sekwencji zadań, uruchomienie skryptu programu Windows PowerShell. Rejestrowanie odbywa się tylko w BDD. Plik dziennika.  
 
-####  <a name="InterpretWindowsPowerShellScriptReturnCodes"></a>Interpretacji kodów powrotnych skrypt programu PowerShell systemu Windows  
+####  <a name="InterpretWindowsPowerShellScriptReturnCodes"></a> Interpretacji kodów powrotnych skrypt programu PowerShell systemu Windows  
  Domyślnie jeśli skrypt programu Windows PowerShell zgłasza błąd powodujący przerwanie lub niezerowy kod powrotny, krok sekwencji zadań będzie i przestanie działać (chyba że skonfigurowano krok ignoruje wygenerowany kod powrotny).  
 
   176 tabeli wymieniono wstępnie zdefiniowane kody powrotu, czy zestaw MDT zwraca i zawiera krótki opis każdego z nich. Wszystkie pozostałe kody powrotu niewymienionych w tabeli 176 zwróconych przez skrypt programu Windows PowerShell.  
@@ -10070,7 +10069,7 @@ Import-Module MyCustomModule
 |10902|Skrypt programu Windows PowerShell, nie została określona w kroku sekwencji zadań.|  
 |10903|Błąd powodujący przerwanie został zgłoszony przez skrypt programu Windows PowerShell.|  
 
-##  <a name="PerformingDeploymentsUsingtheMDTDB"></a>Wykonywanie wdrożeń przy użyciu zestawu MDT bazy danych  
+##  <a name="PerformingDeploymentsUsingtheMDTDB"></a> Wykonywanie wdrożeń przy użyciu zestawu MDT bazy danych  
  Zestaw MDT zawiera bazy danych — MDT bazy danych — można przekazywać ustawienia konfiguracyjne we wdrożeniach LTI lub ZTI programu Configuration Manager. Skonfiguruj DB zestawu MDT, za pomocą konsoli Deployment Workbench zestawu MDT lub innego narzędzia Zarządzanie danymi, który służy do modyfikowania informacji przechowywanych w bazach danych programu SQL Server.  
 
  Koncepcyjnie DB zestaw MDT jest scentralizowane wersję pliku CustomSettings.ini. Zaletą używania zestawu MDT bazy danych jest w przypadku większych wdrożeń, scentralizowane repozytorium do zarządzania ustawieniami konfiguracji wdrażania.  
@@ -10089,7 +10088,7 @@ Import-Module MyCustomModule
 
 -   Rozszerzanie schematu DB zestawu MDT, zgodnie z opisem w [rozszerzanie schematu bazy danych zestawu MDT](#ExtendingtheMDTDBSchema)  
 
-###  <a name="PreparingtheMDTDB"></a>Trwa przygotowywanie bazy danych zestawu MDT  
+###  <a name="PreparingtheMDTDB"></a> Trwa przygotowywanie bazy danych zestawu MDT  
  Zanim użyjesz DB zestawu MDT, aby dostarczyć ustawienia konfiguracji w celu wdrożenia zestawu MDT, należy przygotować DB zestawu MDT do użytku przez zestaw MDT. Przygotuj MDT bazę danych do przechowywania ustawień konfiguracji:  
 
 -   Tworzenie nowego DB MDT lub połączenie z istniejącą DB zestawu MDT, zgodnie z opisem w [tworzenia nowych DB MDT lub łączenie istniejącego DB zestawu MDT](#CreatingaNewMDTDBorConnectingtoanExistingMDTDB)  
@@ -10098,7 +10097,7 @@ Import-Module MyCustomModule
 
 -   Przypisywanie odpowiednich uprawnień do bazy danych zestawu MDT, zgodnie z opisem w [przypisywania odpowiednich uprawnień do bazy danych zestawu MDT](#AssigningtheAppropriatePermissionstotheMDTDB)  
 
-####  <a name="CreatingaNewMDTDBorConnectingtoanExistingMDTDB"></a>Tworzenie nowego DB MDT lub nawiązywania połączenia z istniejącej bazy danych zestawu MDT  
+####  <a name="CreatingaNewMDTDBorConnectingtoanExistingMDTDB"></a> Tworzenie nowego DB MDT lub nawiązywania połączenia z istniejącej bazy danych zestawu MDT  
  Aby można było zarządzać ustawienia konfiguracji w bazie danych zestawu MDT, Utwórz nowy DB zestawu MDT lub Połącz z istniejącej bazy danych zestawu MDT w konsoli Deployment Workbench. Zestaw MDT bazy danych zawiera obiekty, których używa procesu wdrożenia zestawu MDT, takich jak widoki, tabele i procedury składowane. Utwórz nowy DB MDT lub Połącz z istniejącym obiektów bazy danych DB zestawu MDT, za pomocą węzła zaawansowane/bazy danych konfiguracji w konsoli Deployment Workbench.  
 
 > [!NOTE]
@@ -10110,14 +10109,14 @@ Import-Module MyCustomModule
 
 -   Nawiąż połączenie istniejącego zestawu MDT bazą danych zgodnie z opisem w [Połącz z istniejącej bazy danych MDT](#ConnecttoanExistingMDTDB).  
 
-#####  <a name="CreateaNewMDTDB"></a>Utwórz nowy DB zestawu MDT  
+#####  <a name="CreateaNewMDTDB"></a> Utwórz nowy DB zestawu MDT  
  Utwórz nowy DB zestawu MDT, a następnie utwórz obiekty bazy danych DB zestawu MDT w bazie danych. Można utworzyć bazę danych zestawu MDT w:  
 
 -   Istniejące bazy danych, zgodnie z opisem w [utworzyć bazę danych zestawu MDT w istniejącej bazy danych](#CreatetheMDTDBinanExistingDatabase)  
 
 -   Nową bazę danych, zgodnie z opisem w [utworzyć bazę danych zestawu MDT w nowej bazy danych](#CreatetheMDTDBinaNewDatabase)  
 
-######  <a name="CreatetheMDTDBinanExistingDatabase"></a>Tworzenie zestawu MDT bazy danych w istniejącej bazy danych  
+######  <a name="CreatetheMDTDBinanExistingDatabase"></a> Tworzenie zestawu MDT bazy danych w istniejącej bazy danych  
  Jeśli chcesz przechowywać w bazie danych programu SQL Server MDT DB zarządza administrator bazy danych (DBA), administrator musi utworzyć MDT DB i następnie przyznać odpowiednie uprawnienia do tworzenia obiektów DB zestawu MDT w nowej bazy danych. Po utworzeniu bazy danych, należy utworzyć DB zestawu MDT w nowej bazy danych przy użyciu konsoli Deployment Workbench.  
 
 > [!NOTE]
@@ -10149,7 +10148,7 @@ Import-Module MyCustomModule
 
  Zakończeniu pracy Kreatora nowej bazy danych. Informacje o konfiguracji bazy danych znajduje się w okienku szczegółów w konsoli Deployment Workbench.  
 
-######  <a name="CreatetheMDTDBinaNewDatabase"></a>Utwórz bazę danych zestawu MDT w nowej bazy danych  
+######  <a name="CreatetheMDTDBinaNewDatabase"></a> Utwórz bazę danych zestawu MDT w nowej bazy danych  
  W przypadkach, gdy są administrator bazy danych programu SQL Server lub masz niezbędne uprawnienia można utworzyć nowego zestawu MDT bazę danych i następnie tworzenie obiektów bazy danych DB zestawu MDT w nowej bazy danych przy użyciu konsoli Deployment Workbench.  
 
 > [!NOTE]
@@ -10179,7 +10178,7 @@ Import-Module MyCustomModule
 
  Zakończeniu pracy Kreatora nowej bazy danych. Informacje o konfiguracji bazy danych jest wyświetlany w okienku szczegółów w konsoli Deployment Workbench.  
 
-#####  <a name="ConnecttoanExistingMDTDB"></a>Połącz do istniejącej bazy danych zestawu MDT  
+#####  <a name="ConnecttoanExistingMDTDB"></a> Połącz do istniejącej bazy danych zestawu MDT  
  Można połączyć z konsoli Deployment Workbench do istniejącego zestawu MDT bazy danych, dzięki czemu można je skopiować lub replikować MDT bazę danych do innego wystąpienia programu SQL Server, a następnie skonfiguruj CustomSettings.ini dostępu MDT DB do.  
 
 > [!NOTE]
@@ -10209,12 +10208,12 @@ Import-Module MyCustomModule
 
  Zakończeniu pracy Kreatora nowej bazy danych. Informacje o konfiguracji bazy danych jest wyświetlany w okienku szczegółów w konsoli Deployment Workbench.  
 
-####  <a name="UpgradinganExistingMDTDB"></a>Uaktualnianie istniejącego DB zestawu MDT  
+####  <a name="UpgradinganExistingMDTDB"></a> Uaktualnianie istniejącego DB zestawu MDT  
  Po uaktualnieniu udziału wdrożenia zestawu MDT bazy danych zostaje automatycznie uaktualnione z poprzedniej wersji zestawu mdt. Proces uaktualniania zachowuje żadnych modyfikacji schematu w istniejącej bazie danych zestawu MDT po uaktualnieniu do nowej bazy danych zestawu MDT.  
 
  Jeśli niektóre przyczyny istniejące DB zestawu MDT nie zostanie uaktualniony po uaktualnieniu udziału wdrożenia, możesz ręcznie uaktualnić przy użyciu zestawu MDT DB **MDTDatabaseSchema uaktualnienia** polecenia cmdlet programu Windows PowerShell.  
 
-####  <a name="AssigningtheAppropriatePermissionstotheMDTDB"></a>Przypisywanie odpowiednich uprawnień do bazy danych zestawu MDT  
+####  <a name="AssigningtheAppropriatePermissionstotheMDTDB"></a> Przypisywanie odpowiednich uprawnień do bazy danych zestawu MDT  
  W zależności od zadania do wykonania może być konieczne różne uprawnienia w bazie danych zestawu MDT. 180 tabeli przedstawiono typy zadań do wykonania odpowiednich ról serwera programu SQL Server i wymagane do przeprowadzenia ich ról bazy danych.  
 
 ### <a name="table-180-roles-and-required-roles"></a>180 tabeli. Ról i wymaganych ról  
@@ -10228,9 +10227,9 @@ Import-Module MyCustomModule
 |Zmień konfigurację informacje przechowywane w bazie danych zestawu MDT|db_datawrite roli bazy danych w MDT bazy danych lub uprawnień do poszczególnych tabele i widoki w bazie danych zestawu MDT|  
 |Wyświetl informacje o konfiguracji przechowywane w bazie danych zestawu MDT|Rola bazy danych db_datareader w MDT DB lub prawa do poszczególnych tabel i widoków w bazie danych zestawu MDT|  
 
- Aby uzyskać więcej informacji na temat tych uprawnień, zobacz [tożsamości i kontroli dostępu (aparat bazy danych)](http://technet.microsoft.com/library/bb510418\(v=sql.105\)).  
+ Aby uzyskać więcej informacji na temat tych uprawnień, zobacz [tożsamości i kontroli dostępu (aparat bazy danych)](https://technet.microsoft.com/library/bb510418).  
 
-###  <a name="SelectingtheMethodsforApplyingConfigurationSettings"></a>Wybieranie metody służące do stosowania ustawień konfiguracji  
+###  <a name="SelectingtheMethodsforApplyingConfigurationSettings"></a> Wybieranie metody służące do stosowania ustawień konfiguracji  
  Po przygotowaniu DB zestawu MDT, wybierz metodę stosowania zestawu MDT ustawień konfiguracji przy użyciu zestawu MDT bazy danych. Można zarządzać ustawieniami konfiguracji przechowywane w bazie danych zestawu MDT w udziału wdrożenia konsoli Deployment Workbench, używając węzłów pod węzłem bazy danych.  
 
 > [!NOTE]
@@ -10252,7 +10251,7 @@ Import-Module MyCustomModule
 > [!NOTE]
 >  Utwórz elementy w węźle role przed utworzeniem elementów poniżej innych węzłów (komputerów, lokalizacji i upewnij i modelu), ponieważ elementy w innych węzłach może być powiązany z rolami.  
 
-###  <a name="ManagingConfigurationSettingsStoredintheMDTDB"></a>Zarządzanie ustawieniami konfiguracji przechowywane w bazie danych zestawu MDT  
+###  <a name="ManagingConfigurationSettingsStoredintheMDTDB"></a> Zarządzanie ustawieniami konfiguracji przechowywane w bazie danych zestawu MDT  
  Zestaw MDT bazy danych zawiera tabele i widoki, które można zbadać proces wdrożenia zestawu MDT. Tabele zawierają ustawienia konfiguracji, które są dostępne za pośrednictwem widoków.  
 
  Można zarządzać ustawieniami konfiguracji przechowywane w bazie danych zestawu MDT, za pomocą dowolną kombinację następujących metod:  
@@ -10261,7 +10260,7 @@ Import-Module MyCustomModule
 
 2.  Zarządzanie ustawieniami konfiguracji przechowywane w bazie danych zestawu MDT, za pomocą narzędzi bazy danych programu SQL Server, zgodnie z opisem w [Zarządzanie konfiguracji ustawienia przechowywane w MDT bazy danych przy użyciu narzędzia SQL Server Management](#ManageConfigurationSettingsStoredintheMDTDBUsingSQLServerManagementTools).  
 
-####  <a name="ManageConfigurationSettingsStoredintheMDTDBUsingtheDeploymentWorkbench"></a>Zarządzanie ustawieniami konfiguracji przechowywane w bazie danych zestawu MDT, za pomocą konsoli Deployment Workbench  
+####  <a name="ManageConfigurationSettingsStoredintheMDTDBUsingtheDeploymentWorkbench"></a> Zarządzanie ustawieniami konfiguracji przechowywane w bazie danych zestawu MDT, za pomocą konsoli Deployment Workbench  
  Można zarządzać ustawieniami konfiguracji przechowywane w bazie danych zestawu MDT w udziału wdrożenia konsoli Deployment Workbench, używając węzłów pod węzłem bazy danych.  
 
 > [!NOTE]
@@ -10283,7 +10282,7 @@ Import-Module MyCustomModule
     |---------------------|-------------|  
     |**Komputery** |a. W **opis**, typu ***description_name*** (gdzie *description_name* jest to opisowa nazwa komputera).<br /><br /> b. Podaj dowolną kombinację następujących informacji (należy skonfigurować co najmniej jedną z następujących):<br /><br /> — W **tag zasobu**, typ ***asset_tag*** (gdzie *asset_tag* jest tag zasobu lub tag kontroli spisu przypisane do komputera).<br /><br /> — W **UUID**, typ ***uuid*** (gdzie *uuid* jest UUID przypisane do komputera docelowego).<br /><br /> — W **numer seryjny**, typ ***numer_seryjny*** (gdzie *numer_seryjny* jest numer seryjny przypisane do komputera docelowego).<br /><br /> — W **adres MAC**, typ ***adres_MAC*** (gdzie *adres_MAC* adres MAC karty sieciowej głównej dla komputera docelowego).|  
     |**Role** |W **nazwy roli**, typ ***role_name*** (gdzie *role_name* jest to opisowa nazwa roli).|  
-    |**Lokalizacje** |a. W **lokalizacji**, typ ***location_name*** (gdzie *location_name* jest to opisowa nazwa lokalizacji).<br /><br /> b. W **bram domyślnych**, Dodaj adresy IP dla wszystkich bram domyślnych, które istnieją w lokalizacji.|  
+    |Lokalizacje |a. W **lokalizacji**, typ ***location_name*** (gdzie *location_name* jest to opisowa nazwa lokalizacji).<br /><br /> b. W **bram domyślnych**, Dodaj adresy IP dla wszystkich bram domyślnych, które istnieją w lokalizacji.|  
     |**Marka i modele** |a. W **upewnij**, typ ***make_name*** (gdzie *make_name* jest dokładnie sprawdź [producent] Nazwa zwróconego przez system BIOS komputera docelowego przy użyciu usługi WMI).<br /><br /> b. W **modelu**, typ ***nazwa_modelu*** (gdzie *nazwa_modelu* jest nazwą modelu dokładne zwrócony przez system BIOS komputera docelowego przy użyciu usługi WMI).|  
 
 5.  Zakończenie **szczegóły** kartę, wykonując następujące czynności:  
@@ -10303,7 +10302,7 @@ Import-Module MyCustomModule
     |Do|Wykonaj te czynności|  
     |--------|-------------|  
     |Dodawanie aplikacji z udziału wdrożenia (który jest zarządzany w węźle aplikacji w konsoli Deployment Workbench)|a. Kliknij przycisk **Dodaj**, a następnie kliknij przycisk **Lite TouchApplication**.<br /><br /> **Wybierz element** zostanie wyświetlone okno dialogowe.<br /><br /> b. W **wybierz element** okno dialogowe, aplikacji, aby dodać, a następnie kliknij przycisk **OK**.<br /><br /> Aplikacja musi istnieć w tym samym udziału wdrożenia jako udziału wdrożenia skojarzony z zestawu MDT bazy danych są konfigurowane.|  
-    |Dodawanie aplikacji programu Configuration Manager|a. Kliknij przycisk **Dodaj**, a następnie kliknij przycisk **programu ConfigMgr 2012 aplikacji**.<br /><br /> **Nowej aplikacji programu ConfigMgr** zostanie wyświetlone okno dialogowe.<br /><br /> b. W **nowej aplikacji programu ConfigMgr** okna dialogowego, **Określ nowej aplikacji programu ConfigMgr, aby dodać**, typ ***configmgr_application***, a następnie kliknij przycisk **OK** (gdzie *configmgr_application* jest nazwą aplikacji programu Configuration Manager ma zostać dodany).<br /><br /> Nazwa wprowadzona w **Określ nowej aplikacji programu ConfigMgr, aby dodać** musi dokładnie odpowiadać nazwie aplikacji programu Configuration Manager.<br /><br /> Aby uzyskać więcej informacji na temat określania nazwy aplikacji, zobacz sekcję "Zainstaluj aplikację" w [kroków sekwencji zadań w programie Configuration Manager](http://technet.microsoft.com/library/hh846237).<br /><br /> **Zezwolić tej aplikacji do zainstalowania z sekwencji zadań operacji instalacja aplikacji bez wdrożenia**musi być zaznaczone pole wyboru dla aplikacji programu Configuration Manager, aby prawidłowo wdrożony.|  
+    |Dodawanie aplikacji programu Configuration Manager|a. Kliknij przycisk **Dodaj**, a następnie kliknij przycisk **programu ConfigMgr 2012 aplikacji**.<br /><br /> **Nowej aplikacji programu ConfigMgr** zostanie wyświetlone okno dialogowe.<br /><br /> b. W **nowej aplikacji programu ConfigMgr** okna dialogowego, **Określ nowej aplikacji programu ConfigMgr, aby dodać**, typ ***configmgr_application***, a następnie kliknij przycisk **OK** (gdzie *configmgr_application* jest nazwą aplikacji programu Configuration Manager ma zostać dodany).<br /><br /> Nazwa wprowadzona w **Określ nowej aplikacji programu ConfigMgr, aby dodać** musi dokładnie odpowiadać nazwie aplikacji programu Configuration Manager.<br /><br /> Aby uzyskać więcej informacji na temat określania nazwy aplikacji, zobacz sekcję "Zainstaluj aplikację" w [kroków sekwencji zadań w programie Configuration Manager](https://docs.microsoft.com/sccm/osd/understand/task-sequence-steps).<br /><br /> **Zezwolić tej aplikacji do zainstalowania z sekwencji zadań operacji instalacja aplikacji bez wdrożenia**musi być zaznaczone pole wyboru dla aplikacji programu Configuration Manager, aby prawidłowo wdrożony.|  
     |Usuń aplikację z listy aplikacji do wdrożenia|Kliknij przycisk ***aplikacji*** (gdzie *aplikacji* to nazwa aplikacji, którą chcesz usunąć), a następnie kliknij przycisk **Usuń**.|  
     |Zainstalować aplikację przed innych aplikacji |Kliknij przycisk ***aplikacji*** (gdzie *aplikacji* to nazwa aplikacji, która ma zostać zainstalowany przed innych aplikacji), a następnie kliknij przycisk **się**.|  
     |Zainstaluj aplikację po innych aplikacji |Kliknij przycisk ***aplikacji*** (gdzie *aplikacji* to nazwa aplikacji, która ma zostać zainstalowany po innych aplikacji), a następnie kliknij przycisk **dół**.|  
@@ -10340,7 +10339,7 @@ Import-Module MyCustomModule
     |Dodawanie administratora|a. Kliknij pozycję **Dodaj**.<br /><br /> b. **Nowego administratora** zostanie wyświetlone okno dialogowe.|  
     |Usuwanie administratora|Kliknij przycisk ***admin_name*** (gdzie *admin_name* to nazwa konta użytkownika lub grupy, które chcesz usunąć), a następnie kliknij przycisk **Usuń**.<br /><br /> Usunięcie konta z tej listy nie powoduje usunięcia konta z usług AD DS lub z komputera lokalnego.|  
 
-####  <a name="ManageConfigurationSettingsStoredintheMDTDBUsingSQLServerManagementTools"></a>Zarządzanie ustawieniami konfiguracji przechowywane w bazie danych zestawu MDT, za pomocą narzędzia do zarządzania serwerem SQL  
+####  <a name="ManageConfigurationSettingsStoredintheMDTDBUsingSQLServerManagementTools"></a> Zarządzanie ustawieniami konfiguracji przechowywane w bazie danych zestawu MDT, za pomocą narzędzia do zarządzania serwerem SQL  
  Zarządzanie ustawieniami konfiguracji przechowywane w bazie danych zestawu MDT, za pomocą konsoli Deployment Workbench jest prawidłowa dla zarządzania ograniczoną liczbę wpisów bazy danych. Jednak jeśli konieczne jest dodanie setki wpisów (takie jak dodanie ustawienia konfiguracji dla komputerów docelowych) lub chcesz przeprowadzić aktualizację zbiorczą, ustawień konfiguracji, należy użyć narzędzia do zarządzania bazą danych programu SQL Server.  
 
  Wykonaj zbiorczego importowania i aktualizowania ustawień konfiguracji za pomocą zestawu MDT bazy danych:  
@@ -10353,14 +10352,14 @@ Import-Module MyCustomModule
 
  Możesz przejrzeć tabel, widoków i innych obiektów bazy danych w bazie danych zestawu MDT ustalenie tabel, które chcesz zaktualizować. Aby uzyskać więcej informacji na tabele i widoki w bazie danych zestawu MDT, zobacz sekcję "Tabele i widoki w MDT bazy danych", w dokumentacji zestawu MDT*odwołanie do zestawu narzędzi*.  
 
-###  <a name="ConfiguringtheMDTDeploymentProcesstoRetreiveConfigurationSettingsfromtheMDTDB"></a>Konfigurowanie procesu wdrażania MDT można pobrać ustawień konfiguracji z bazy danych zestawu MDT  
+###  <a name="ConfiguringtheMDTDeploymentProcesstoRetreiveConfigurationSettingsfromtheMDTDB"></a> Konfigurowanie procesu wdrażania MDT można pobrać ustawień konfiguracji z bazy danych zestawu MDT  
  Konfigurowanie procesu wdrażania MDT dostępu do bazy danych MDT i pobrać ustawienia konfiguracji w niej przechowywane, modyfikując CustomSettings.ini. Można zmodyfikować CustomSettings.ini, aby umożliwić proces wdrożenia zestawu MDT MDT bazy danych, przy użyciu dowolnej kombinacji następujących metod dostępu do:  
 
 -   Użyj Kreatora bazy danych konfiguracji w konsoli Deployment Workbench, zgodnie z opisem w [skonfigurować Retreival ustawień konfiguracji z bazy danych MDT przy użyciu Kreatora bazy danych konfiguracji](#ConfiguretheRetreivalofConfigurationSettingsfromtheMDTDBUsingtheConfigureDBWizard).  
 
 -   Bezpośrednio modyfikować pliku CustomSettings.ini, zgodnie z opisem w [skonfigurować Retreival ustawień konfiguracji z bazy danych MDT przez bezpośrednie zmodyfikowanie pliku CustomSettings.ini](#ConfiguretheRetreivalofConfigurationSettingsfromtheMDTDBbyDirectlyModifyingtheCustomSettings.iniFile).  
 
-####  <a name="ConfiguretheRetreivalofConfigurationSettingsfromtheMDTDBUsingtheConfigureDBWizard"></a>Skonfiguruj pobieranie ustawień konfiguracji z zestawu MDT bazy danych przy użyciu Kreatora bazy danych konfiguracji  
+####  <a name="ConfiguretheRetreivalofConfigurationSettingsfromtheMDTDBUsingtheConfigureDBWizard"></a> Skonfiguruj pobieranie ustawień konfiguracji z zestawu MDT bazy danych przy użyciu Kreatora bazy danych konfiguracji  
  Kreator konfigurowania bazy danych, w konsoli Deployment Workbench udostępnia interfejs graficzny proces wdrożenia zestawu MDT dostępu MDT DB do konfigurowania. Zalety korzystania z tego kreatora jest pomaga ograniczyć:  
 
 1.  Możliwość wystąpienia błędów konfiguracji w pliku CustomSettings.ini  
@@ -10457,7 +10456,7 @@ Import-Module MyCustomModule
 
 1.  Sekcji "Tabele i widoki w MDT bazy danych", w dokumentacji zestawu MDT *odwołanie do zestawu narzędzi*  
 
-####  <a name="ConfiguretheRetreivalofConfigurationSettingsfromtheMDTDBbyDirectlyModifyingtheCustomSettings.iniFile"></a>Skonfiguruj Retreival ustawień konfiguracji z bazy danych MDT przez bezpośrednie zmodyfikowanie pliku CustomSettings.ini  
+####  <a name="ConfiguretheRetreivalofConfigurationSettingsfromtheMDTDBbyDirectlyModifyingtheCustomSettings.iniFile"></a> Skonfiguruj Retreival ustawień konfiguracji z bazy danych MDT przez bezpośrednie zmodyfikowanie pliku CustomSettings.ini  
  Kreatora bazy danych konfiguracji w konsoli Deployment Workbench udostępnia metodę, która wymaga co najmniej wysiłku, wymaga minimalnego wiedzą na temat sposobu zostanie zmodyfikowana w pliku CustomSettings.ini i minimalizuje ryzyko błędów konfiguracji. Jednak należy utworzyć niestandardowe zapytania, aby uzyskać informacje, można zmodyfikować CustomSettings.ini do zwracania wyników prawidłowego zapytania.  
 
 > [!NOTE]
@@ -10477,7 +10476,7 @@ Import-Module MyCustomModule
 
 -   Skonfiguruj właściwości w pliku CustomSettings.ini, które są używane do wdrażania przez rolę, zgodnie z opisem w [skonfigurować właściwości używanych do wdrożenia przez rolę](#ConfigurePropertiesThatAreUsedforDeploymentbyRole).  
 
-#####  <a name="ReviewtheCustomSettings.iniFileAfterRunningtheConfigureDBWizard"></a>Przejrzyj plik CustomSettings.ini po uruchomieniu Kreatora bazy danych konfiguracji  
+#####  <a name="ReviewtheCustomSettings.iniFileAfterRunningtheConfigureDBWizard"></a> Przejrzyj plik CustomSettings.ini po uruchomieniu Kreatora bazy danych konfiguracji  
  Po zakończeniu pracy Kreatora bazy danych konfiguracji pliku CustomSettings.ini jest skonfigurowany do wykonywania zapytań wybranego. **Błąd! Nie można odnaleźć źródła odwołania**. przykład pliku CustomSettings.ini po zakończeniu pracy Kreatora konfigurowania bazy danych.  
 
  **Wyświetlanie listy 14. Plik CustomSettings.ini po skonfigurować DB zakończeniu pracy Kreatora**  
@@ -10689,7 +10688,7 @@ Parameters=Role
 
 ```  
 
-#####  <a name="ConfigurePropertiesThatAreUsedtoCreateanSQLQuery"></a>Skonfiguruj właściwości, które są używane do tworzenia zapytań SQL  
+#####  <a name="ConfigurePropertiesThatAreUsedtoCreateanSQLQuery"></a> Skonfiguruj właściwości, które są używane do tworzenia zapytań SQL  
  Kreator konfigurowania bazy danych tworzy wpisy w pliku CustomSettings.ini, które są używane w celu skonstruowania zapytania SQL. 191 tabela zawiera listę właściwości zestawu MDT, które są używane do tworzenia zapytania. Aby uzyskać więcej informacji na właściwości w tabeli 191, zobacz sekcję odpowiednie dla każdej właściwości w sekcji "Właściwości" w dokumencie zestawu MDT *odwołanie do zestawu narzędzi*.  
 
 ### <a name="table-191-properties-that-are-used-to-create-an-sql-query"></a>191 tabeli. Właściwości, które są używane do tworzenia zapytań SQL  
@@ -10737,7 +10736,7 @@ ParameterCondition=OR
 
  Możesz przejrzeć tabele i widoki w bazie danych zestawu MDT w celu określenia kolumn ma dotyczyć odwołanie w **parametry** właściwości. Aby uzyskać więcej informacji na tabele i widoki w bazie danych zestawu MDT, zobacz sekcję "Tabele i widoki w MDT bazy danych", w dokumentacji zestawu MDT *odwołanie do zestawu narzędzi*.  
 
-#####  <a name="ConfigurePropertiesThatAreUsedforDeploymenttoaSpecificComputer"></a>Skonfiguruj właściwości, które są używane do wdrożenia na określonym komputerze  
+#####  <a name="ConfigurePropertiesThatAreUsedforDeploymenttoaSpecificComputer"></a> Skonfiguruj właściwości, które są używane do wdrożenia na określonym komputerze  
  Konfiguruje Kreatora bazy danych konfiguracji **priorytet** właściwości i tworzy odpowiedniej sekcji w pliku CustomSettings.ini dla określonego wdrożenia komputerów przy użyciu zestawu MDT bazy danych. 192 tabela zawiera listę sekcji utworzone i zawiera krótki opis przeznaczenia poszczególnych sekcji. Zapoznaj się przykładowy plik CustomSettings.ini w 192 tabeli.  
 
 ### <a name="table-192-sections-in-the-customsettingsini-file-for-deployment-to-a-specific-computer-and-their-purpose"></a>192 tabeli. Sekcji w pliku CustomSettings.ini do wdrożenia na określonym komputerze oraz ich przeznaczenie  
@@ -10752,7 +10751,7 @@ ParameterCondition=OR
 
  Aby uzyskać więcej informacji na temat widoków bazy danych i tabele zarządzające konsoli Deployment Workbench, zobacz sekcję "Tabele i widoki w MDT bazy danych", w dokumentacji zestawu MDT *odwołanie do zestawu narzędzi*.  
 
-#####  <a name="ConfigurePropertiesThatAreUsedforDeploymentbyLocation"></a>Skonfiguruj właściwości, które są używane do wdrożenia na podstawie lokalizacji  
+#####  <a name="ConfigurePropertiesThatAreUsedforDeploymentbyLocation"></a> Skonfiguruj właściwości, które są używane do wdrożenia na podstawie lokalizacji  
  Konfiguruje Kreatora bazy danych konfiguracji **priorytet** właściwości i tworzy odpowiedniej sekcji w pliku CustomSettings.ini wdrożenia przez lokalizacji za pomocą zestawu MDT bazy danych. 193 tabeli wymieniono sekcje utworzone i krótki opis przeznaczenia dla każdej sekcji. Zapoznaj się przykładowy plik CustomSettings.ini w 193 tabeli.  
 
 ### <a name="table-193-sections-in-the-customsettingsini-file-for-deployment-by-location-and-their-purpose"></a>193 tabeli. Sekcji w pliku CustomSettings.ini wdrożenia według lokalizacji i ich przeznaczenie  
@@ -10769,7 +10768,7 @@ ParameterCondition=OR
 
  Aby uzyskać więcej informacji na temat widoków bazy danych i tabele zarządzające konsoli Deployment Workbench, zobacz sekcję "Tabele i widoki w MDT bazy danych", w dokumentacji zestawu MDT *odwołanie do zestawu narzędzi*.  
 
-#####  <a name="ConfigurePropertiesThatAreUsedforDeploymentbyComputerMakeandModel"></a>Skonfiguruj właściwości, które są używane do wdrożenia przez Marka i Model komputera  
+#####  <a name="ConfigurePropertiesThatAreUsedforDeploymentbyComputerMakeandModel"></a> Skonfiguruj właściwości, które są używane do wdrożenia przez Marka i Model komputera  
  Konfiguruje Kreatora bazy danych konfiguracji **priorytet** właściwości i tworzy odpowiedniej sekcji w pliku CustomSettings.ini wdrożenia przez Marka i model przy użyciu zestawu MDT bazy danych komputera. 194 tabeli wymieniono sekcje utworzone i zawiera krótki opis przeznaczenia każdego z nich. Zapoznaj się przykładowy plik CustomSettings.ini w 194 tabeli.  
 
 ### <a name="table-194-sections-in-the-customsettingsini-file-for-deployment-by-computer-make-and-model-and-their-purpose"></a>194 tabeli. Sekcji w pliku CustomSettings.ini wdrożenia przez komputer marka i Model i ich przeznaczenie  
@@ -10784,7 +10783,7 @@ ParameterCondition=OR
 
  Aby uzyskać więcej informacji na temat widoków bazy danych i tabele zarządzające konsoli Deployment Workbench, zobacz sekcję "Tabele i widoki w MDT bazy danych", w dokumentacji zestawu MDT *odwołanie do zestawu narzędzi*.  
 
-#####  <a name="ConfigurePropertiesThatAreUsedforDeploymentbyRole"></a>Skonfiguruj właściwości, które są używane do wdrożenia przez rolę  
+#####  <a name="ConfigurePropertiesThatAreUsedforDeploymentbyRole"></a> Skonfiguruj właściwości, które są używane do wdrożenia przez rolę  
  Konfiguruje Kreatora bazy danych konfiguracji **priorytet** właściwości i tworzy odpowiedniej sekcji w pliku CustomSettings.ini w przypadku wdrożeń przez rolę za pomocą zestawu MDT bazy danych. 195 tabela zawiera listę sekcje utworzone i zawiera krótki opis przeznaczenia dla każdego. Zapoznaj się przykładowy plik CustomSettings.ini w 195 tabeli.  
 
 ### <a name="table-195-sections-in-the-customsettingsini-file-for-deployment-by-roles-and-their-purpose"></a>195 tabeli. Sekcji w pliku CustomSettings.ini wdrożenia według ról i ich przeznaczenie  
@@ -10801,7 +10800,7 @@ ParameterCondition=OR
 
  Aby uzyskać więcej informacji na temat widoku bazy danych i tabele, które zarządza konsoli Deployment Workbench, zobacz sekcję "Tabele i widoki w MDT bazy danych", w dokumentacji zestawu MDT *odwołanie do zestawu narzędzi*.  
 
-###  <a name="ExtendingtheMDTDBSchema"></a>Rozszerzanie schematu bazy danych zestawu MDT  
+###  <a name="ExtendingtheMDTDBSchema"></a> Rozszerzanie schematu bazy danych zestawu MDT  
  MDT DB zawiera większość typowych ustawień konfiguracji, które są potrzebne w danym wdrożeniu, mogą wystąpić sytuacje, w których należy rozszerzyć informacje skojarzone z jedną lub więcej jednostek w bazie danych zestawu MDT, takich jak komputery, role , lokalizacji, lub sprawia, że i modeli.  
 
  Jeśli tak, można rozszerzyć schematu dla jednego lub więcej tabel i widoków w bazie danych zestawu MDT. Jeśli w przypadku rozszerzenia schematu dla tabel, konieczne może do modyfikowania widoków, które są zależne od tych tabel. Rozszerzanie schematu dla:  
@@ -10826,7 +10825,7 @@ ParameterCondition=OR
 
 6.  Tworzenie sekwencji zadań odwołuje się do nowej kolumny, zgodnie z opisem w [odwołuje się do nowej kolumny, w kroku sekwencji zadań](#ReferencetheNewColumninaTaskSequenceStep).  
 
-####  <a name="DeterminetheTablesandViewstoBeModified"></a>Określić tabele i widoki, do zmodyfikowania  
+####  <a name="DeterminetheTablesandViewstoBeModified"></a> Określić tabele i widoki, do zmodyfikowania  
  Ustal, tabele i widoki, które ma być zmodyfikowana, przeglądając schematu tabel i widoków w bazie danych zestawu MDT. Tabela najczęściej zmodyfikowane jest **ustawienia**, który jest wspólny dla wszystkich widoków, takich jak **ComputerSettings** lub **LocationSettings**.  
 
 > [!TIP]
@@ -10847,14 +10846,14 @@ ParameterCondition=OR
 
 -   Pobieranie informacji za pośrednictwem **LocationSettings** widoku  
 
-####  <a name="CreateaBackupoftheMDTDB"></a>Utwórz kopię zapasową bazy danych zestawu MDT  
+####  <a name="CreateaBackupoftheMDTDB"></a> Utwórz kopię zapasową bazy danych zestawu MDT  
  Najlepszym rozwiązaniem Utwórz kopię zapasową bazy danych zestawu MDT przed zmodyfikowaniem tabele i widoki w nim. Utwórz kopię zapasową przy użyciu zestawu MDT bazy danych:  
 
 -   **SQL Server Management Studio**. Aby uzyskać więcej informacji na temat sposobu wykonywania kopii zapasowych bazy danych przy użyciu tej metody, zobacz "jak: Wykonaj kopię zapasową bazy danych (SQL Server Management Studio) "w dokumentacji SQL Server — książki Online, dołączone do programu SQL Server.  
 
 -   **Istniejące rozwiązania tworzenia kopii zapasowych programu SQL Server w Twojej organizacji**. Aby uzyskać więcej informacji na temat sposobu wykonywania kopii zapasowych bazy danych przy użyciu tej metody zobacz dokumentację dla rozwiązania do tworzenia kopii zapasowych, lub skontaktuj się z administratora bazy danych.  
 
-####  <a name="ModifytheTable"></a>Zmodyfikuj tabelę  
+####  <a name="ModifytheTable"></a> Zmodyfikuj tabelę  
  Tabeli można zmodyfikować przez dodanie do niej nowe kolumny. Można dodać kolumny do tabel za pomocą zestawu MDT bazy danych:  
 
 -   **SQL Server Management Studio**. Aby uzyskać więcej informacji na temat dodawania kolumny za pomocą programu SQL Server Management Studio, zobacz "jak: Wstawianie kolumn do tabel (graficznych narzędzi bazy danych) "w dokumentacji SQL Server — książki Online, dołączone do programu SQL Server.  
@@ -10889,7 +10888,7 @@ ParameterCondition=OR
 |**Dopuszcza wartości null** |Tak|  
 |**Typ danych** |char(20)|  
 
-####  <a name="ModifyandRefreshtheDependentViews"></a>Zmodyfikuj i Odśwież widoki zależne  
+####  <a name="ModifyandRefreshtheDependentViews"></a> Zmodyfikuj i Odśwież widoki zależne  
  Po dodaniu kolumny do tabeli, zmodyfikuj wszystkie widoki, które mają być wyświetlane dla nowo utworzonej kolumny. Zazwyczaj należy dodać nową kolumnę do widoków niestandardowych, które zostały utworzone.  
 
 > [!NOTE]
@@ -10917,7 +10916,7 @@ ParameterCondition=OR
 
  Banku Woodgrove nie trzeba zmodyfikować, wszelkie widoki **LocationSettings** widok już zwraca wszystkie kolumny z **ustawienia** tabeli. Jednak uruchamiane banku Woodgrove **sp_refreshview** przechowywane procedury, aby odświeżyć **ComputerSettings**, **LocationSettings**, **MakeModelSettings** , lub **RoleSettings** widoków, które odwołują się do tabeli Ustawienia. Dzięki temu wszystkie widoki zwrócić nazwę komputera serwera oprogramowania antywirusowego, jeśli jest to wymagane.  
 
-####  <a name="ReferencetheNewColumnintheCustomSettings.iniFile"></a>Odwołanie do nowej kolumny w pliku CustomSettings.ini  
+####  <a name="ReferencetheNewColumnintheCustomSettings.iniFile"></a> Odwołanie do nowej kolumny w pliku CustomSettings.ini  
  Po dodaniu kolumny do tabeli i zmodyfikować odpowiednie widoki, należy skonfigurować pliku CustomSettings.ini odwoływać się do nowej kolumny. Aby odwołać nowej kolumny w pliku CustomSettings.ini, wykonaj następujące czynności:  
 
 1.  Dodaj odwołanie do sekcji zapytania na **priorytet** wiersz w pliku CustomSettings.ini, jeśli jest to wymagane.  
@@ -10954,7 +10953,7 @@ Table=LocationSettings
 Parameters=DefaultGateway  
 ```  
 
-####  <a name="ReferencetheNewColumninaTaskSequenceStep"></a>Odwołanie do nowej kolumny, która w kroku sekwencji zadań  
+####  <a name="ReferencetheNewColumninaTaskSequenceStep"></a> Odwołanie do nowej kolumny, która w kroku sekwencji zadań  
  Teraz, aby zwrócić ustawień konfiguracji z nową kolumnę zmodyfikowany plik CustomSettings.ini, możesz przystąpić do odwołuje się do nowej kolumny, w kroku sekwencji zadań. Możesz odwoływać się do nowej kolumny jako zmienną sekwencji zadań w kroku sekwencji zadań. Zmienna będzie mieć taką samą nazwę jak kolumna. Na przykład w przypadku utworzenia kolumny o nazwie **Zip_Code**, będzie miała nazwę zmiennej sekwencji zadań **Zip_Code**.  
 
  **Przykład: Jak banku Woodgrove odwołuje się do nowej kolumny, w kroku sekwencji zadań**  
@@ -10963,7 +10962,7 @@ Parameters=DefaultGateway
 
  `avsetup.exe -server %AVSERVER%`  
 
-##  <a name="MonitoringMDTDeployments"></a>Monitorowanie wdrożenia zestawu MDT  
+##  <a name="MonitoringMDTDeployments"></a> Monitorowanie wdrożenia zestawu MDT  
  Możesz monitorować wdrożenia zestawu MDT, za pomocą funkcji monitorowania obsługiwane przez zestaw MDT skryptów i konsoli Deployment Workbench. Funkcja monitorowania wdrożenia zestawu MDT umożliwia przeglądanie procesu wdrożenia zestawu MDT we wdrożeniach LTI, ZTI i UDI. Proces wdrażania można wyświetlić w konsoli Deployment Workbench lub za pomocą **Get-MDTMonitorData** polecenia cmdlet.  
 
  Monitorowanie wdrożenia zestawu MDT, za pomocą zestawu MDT, funkcji monitorowania, wykonując następujące czynności:  
@@ -10972,7 +10971,7 @@ Parameters=DefaultGateway
 
 2.  Przeglądanie procesu wdrożenia zestawu MDT, zgodnie z opisem w [postępu wdrożenia zestawu MDT widoku](#ViewMDTDeploymentProgress).  
 
-###  <a name="EnableMDTDeploymentMonitoring"></a>Monitorowanie wdrożenia Włącz zestawu MDT  
+###  <a name="EnableMDTDeploymentMonitoring"></a> Monitorowanie wdrożenia Włącz zestawu MDT  
  Zanim będzie możliwe monitorowanie wdrożenia zestawu MDT, należy włączyć monitorowanie wdrożenia zestawu MDT. Procesu włączania monitorowania wdrożenia zestawu MDT różni się dla wdrożenia LTI i wdrożenia oparte na programie Configuration Manager (w tym wdrożenia ZTI i UDI).  
 
  Włącz zestaw MDT monitorowania wdrożenia:  
@@ -10981,7 +10980,7 @@ Parameters=DefaultGateway
 
 -   Włączanie monitorowania ZTI i UDI wdrożenia zgodnie z opisem w zestawie MDT [włączenie ZTI lub monitorowania wdrożenia UDI](#EnablingZTIorUDIDeploymentMonitoring)  
 
-####  <a name="EnablingLTIDeploymentMonitoring"></a>Włączanie wdrożenia LTI monitorowania  
+####  <a name="EnablingLTIDeploymentMonitoring"></a> Włączanie wdrożenia LTI monitorowania  
  Przed wdrożeniem komputerów przy użyciu LTI, aby włączyć monitorowanie procesu wdrożenia LTI. Monitorowanie na **monitorowanie** karty w oknie dialogowym właściwości udziału wdrożenia.  
 
 ###### <a name="to-enable-monitoring-of-the-lti-deployment-process"></a>Aby włączyć monitorowanie procesu wdrażania LTI  
@@ -11002,7 +11001,7 @@ Parameters=DefaultGateway
 
 7.  Zamknij wszystkie otwarte okna i oknach dialogowych.  
 
-####  <a name="EnablingZTIorUDIDeploymentMonitoring"></a>Włączanie monitorowania ZTI i UDI wdrażania  
+####  <a name="EnablingZTIorUDIDeploymentMonitoring"></a> Włączanie monitorowania ZTI i UDI wdrażania  
  Przed wdrożeniem komputerów przy użyciu ZTI i UDI, aby włączyć monitorowanie procesu wdrażania je w konsoli Deployment Workbench. Monitorowanie na **monitorowanie** kartę w udziału wdrożenia **właściwości** okno dialogowe po prostu, podobnie jak w przypadku wdrożenia LTI.  
 
  Następnie skopiuj **EventService** wiersz właściwości na **reguły** kartę w udziału wdrożenia **właściwości** okno dialogowe do pliku CustomSettings.ini w zestawie MDT plików pakietu w Menedżer konfiguracji. Zaktualizuj pakiet plików zestawu MDT we wszystkich punktach dystrybucji.  
@@ -11015,7 +11014,7 @@ Parameters=DefaultGateway
 
      Poniżej przedstawiono przykład **EventService** wiersz właściwości:  
 
-     `EventService=http://WDG-MDT-01:9800`  
+     `EventService=https://WDG-MDT-01:9800`  
 
      Aby uzyskać więcej informacji o dostosowywaniu pliki konfiguracyjne zestawu MDT, aby uwzględnić **EventService** wiersz właściwości, zobacz "krok 3 — 4: Dostosowywanie pliki konfiguracyjne zestawu MDT dla komputera odniesienia"w*Przewodnik Szybki Start dla programu Microsoft System Center 2012 R2 Configuration Manager* dla środowisk programu Configuration Manager.  
 
@@ -11023,7 +11022,7 @@ Parameters=DefaultGateway
 
      Aby uzyskać więcej informacji na temat aktualizowania zestaw MDT plików pakietu w punktach dystrybucji, zobacz "krok 3 – 5: Aktualizuj punkty dystrybucji dla pakietu plików ustawień niestandardowych"w *Przewodnik Szybki Start dla programu Microsoft System Center 2012 R2 Configuration Manager* dla środowisk programu Configuration Manager.  
 
-###  <a name="ViewMDTDeploymentProgress"></a>Wyświetl zestaw MDT postęp wdrażania  
+###  <a name="ViewMDTDeploymentProgress"></a> Wyświetl zestaw MDT postęp wdrażania  
  Możesz wyświetlić postęp wdrożenia zestawu MDT, za pomocą konsoli Deployment Workbench lub **Get-MDTMonitorData** polecenia cmdlet.  
 
 > [!NOTE]
@@ -11035,7 +11034,7 @@ Parameters=DefaultGateway
 
 2.  Przy użyciu postęp wdrażania widoku zestaw MDT **Get-MDTMonitorData** polecenia cmdlet, zgodnie z opisem w [przeglądanie MDT wdrożenia postępu przy użyciu polecenia cmdlet Get-MDTMonitorData](#ViewingtheMDTDeploymentProgressUsingtheGetMDTMonitorDataCmdlet).  
 
-####  <a name="ViewingtheMDTDeploymentProgressintheDeploymentWorkbench"></a>Wyświetlanie postępu wdrożenia zestawu MDT w konsoli Deployment Workbench  
+####  <a name="ViewingtheMDTDeploymentProgressintheDeploymentWorkbench"></a> Wyświetlanie postępu wdrożenia zestawu MDT w konsoli Deployment Workbench  
  Możesz wyświetlić proces wdrożenia zestawu MDT w **monitorowanie** węzła w udziału wdrożenia. Postęp procesu wdrożenia LTI jest wyświetlana jako procentu ukończenia.  
 
 > [!NOTE]
@@ -11065,7 +11064,7 @@ Parameters=DefaultGateway
 
     |Informacje| Opis|  
     |-----------------|-----------------|  
-    |**IDENTYFIKATOR** |Unikatowy identyfikator dla komputera wdrażany.|  
+    |**ID** |Unikatowy identyfikator dla komputera wdrażany.|  
     |**Nazwa komputera** |Nazwa komputera jest wdrożony.|  
     |**Stan wdrożenia** |Bieżący stan komputera wdrożony; może to być jedna z następujących czynności:<br /><br /> -                                      **Uruchomiona**. Wskazuje, że sekwencja zadań jest dobra i uruchomiona.<br /><br /> -                                      **Nie powiodło się**. Wskazuje, że sekwencja zadań nie powiodło się i proces wdrażania nie powiodło się.<br /><br /> -                                      **Ukończono**. Wskazuje, czy sekwencja zadań zostało zakończone.<br /><br /> -                                      **Odpowiadać**. Sekwencja zadań jego stan nie został zaktualizowany w ciągu ostatnich czterech godzin i zostanie uznany za nieodpowiadający.|  
     |**Krok** |Bieżącego kroku sekwencji zadań uruchamiana.|  
@@ -11085,7 +11084,7 @@ Parameters=DefaultGateway
 
 9. Zamknięcie konsoli Deployment Workbench  
 
-####  <a name="ViewingtheMDTDeploymentProgressUsingtheGetMDTMonitorDataCmdlet"></a>Wyświetlanie postępu wdrożenia zestawu MDT, za pomocą polecenia Cmdlet Get-MDTMonitorData  
+####  <a name="ViewingtheMDTDeploymentProgressUsingtheGetMDTMonitorDataCmdlet"></a> Wyświetlanie postępu wdrożenia zestawu MDT, za pomocą polecenia Cmdlet Get-MDTMonitorData  
  Można wyświetlić, używając procesu wdrożenia zestawu MDT **Get-MDTMonitorData** polecenia cmdlet. To polecenie cmdlet znajduje się w programie PowerShell zestawu MDT **microsoft.bdd.pssnapin** przystawki, który jest dołączony do zestawu MDT. Aby użyć tego polecenia cmdlet, musi być włączone monitorowanie zgodnie z opisem w [Włącz monitorowanie wdrożenia zestawu MDT](#EnableMDTDeploymentMonitoring).  
 
 ###### <a name="to-view-mdt-deployment-progress-using-the-get-mdtmonitordata-cmdlet"></a>Aby wyświetlić postęp wdrożenia zestawu MDT, za pomocą polecenia cmdlet Get-MDTMonitorData  
@@ -11150,15 +11149,15 @@ Parameters=DefaultGateway
 
 5.  Zamknij konsolę programu Windows PowerShell.  
 
-##  <a name="SupportingWindowsREandDaRT"></a>Obsługa środowiska Windows RE i DaRT  
+##  <a name="SupportingWindowsREandDaRT"></a> Obsługa środowiska Windows RE i DaRT  
  Zestaw MDT jest zintegrowany z środowiska Windows RE, a DaRT zapewniają rozszerzoną obsługę i rozwiązywanie problemów z funkcji. Zestaw MDT obsługę środowiska Windows RE i DaRT wygląda następująco:  
 
 -   LTI obsługuje środowisko odzyskiwania systemu Windows i DaRT do obrazów rozruchowych LTI i partycji odzyskiwania na komputerze docelowym, zgodnie z opisem w [Obsługa środowiska Windows RE i DaRT w LTI](#SupportingWindowsREandDaRTinLTI).  
 
 -   ZTI i UDI obsługuje DaRT do obrazów rozruchowych zgodnie z opisem w [obsługi DaRT ZTI i UDI obrazów rozruchowych](#SupportingDaRTinZTIandUDIBootImages).  
 
-###  <a name="SupportingWindowsREandDaRTinLTI"></a>Obsługa środowiska Windows RE i DaRT w LTI  
- Zestaw MDT obsługuje możliwość wdrażania partycji środowiska Windows RE na komputerach. Ponadto, jeśli Twoja organizacja jest licencjonowany do [Microsoft Desktop optymalizacji pakietu](http://www.microsoft.com/windows/enterprise/products-and-technologies/mdop/default.aspx) (MDOP), mogą zawierać DaRT w partycji środowiska Windows RE.  
+###  <a name="SupportingWindowsREandDaRTinLTI"></a> Obsługa środowiska Windows RE i DaRT w LTI  
+ Zestaw MDT obsługuje możliwość wdrażania partycji środowiska Windows RE na komputerach. Ponadto, jeśli Twoja organizacja jest licencjonowany do [Microsoft Desktop optymalizacji pakietu](https://technet.microsoft.com/windows/mdop.aspx) (MDOP), mogą zawierać DaRT w partycji środowiska Windows RE.  
 
 > [!NOTE]
 >  Zestaw MDT nie obsługuje środowiska Windows RE w systemie Windows 7, korzystając z zestawu Windows ADK.  
@@ -11171,7 +11170,7 @@ Parameters=DefaultGateway
 
 3.  Dostosowywanie konfiguracji DaRT, gdy DaRT jest zintegrowany z LTI, zgodnie z opisem w [dostosować DaRT podczas zintegrowane z LTI](#CustomizeDaRTWhenIntegratedwithLTI).  
 
-####  <a name="EnableWindowsRESupportinLTI"></a>Włącz Windows RE pomocy technicznej w LTI  
+####  <a name="EnableWindowsRESupportinLTI"></a> Włącz Windows RE pomocy technicznej w LTI  
  Środowisko odzyskiwania systemu Windows ułatwia użytkownikom Rozwiązywanie problemów i rozwiązania problemów związanych z Autostart na swoich komputerach. Po zaktualizowaniu udziału wdrożenia konsoli Deployment Workbench automatycznie generuje pliki .iso i wim, które zawierają Obsługa środowiska Windows RE.  
 
 > [!NOTE]
@@ -11185,8 +11184,8 @@ Parameters=DefaultGateway
 
  **Dodać odzyskiwania systemu Windows (WinRE)** krok sekwencji zadań działa, kiedy **PrepareWinRE** właściwość jest ustawiona na wartość **tak**. Aby uzyskać więcej informacji na temat **PrepareWinRE** właściwości, sprawdź właściwość "PrepareWinRE" w dokumencie MDT *odwołanie do zestawu narzędzi*.  
 
-####  <a name="EnableDaRTSupportinLTI"></a>Włącz obsługę DaRT w LTI  
- DaRT jest uwzględniana jako część [Microsoft Desktop optymalizacji pakietu](http://www.microsoft.com/windows/enterprise/products-and-technologies/mdop/default.aspx), które jest dostarczane jako część programu Microsoft Software Assurance. DaRT można uwzględnić w partycji środowiska Windows RE.  
+####  <a name="EnableDaRTSupportinLTI"></a> Włącz obsługę DaRT w LTI  
+ DaRT jest uwzględniana jako część [Microsoft Desktop optymalizacji pakietu](https://technet.microsoft.com/windows/mdop.aspx), które jest dostarczane jako część programu Microsoft Software Assurance. DaRT można uwzględnić w partycji środowiska Windows RE.  
 
  Poniżej przedstawiono podsumowanie funkcji DaRT:  
 
@@ -11204,7 +11203,7 @@ Parameters=DefaultGateway
 
 -   DaRT wersji 8 (używany z systemem Windows 8) zgodnie z opisem w [Włącz obsługę 8 DaRT w LTI](#EnableDaRT8SupportinLTI)  
 
-#####  <a name="EnableDaRT7SupportinLTI"></a>Włącz obsługę DaRT 7 w LTI  
+#####  <a name="EnableDaRT7SupportinLTI"></a> Włącz obsługę DaRT 7 w LTI  
  DaRT w wersji 7 jest przeznaczona do użytku z systemem Windows 7. Aby uzyskać informacje o sposobie włączania DaRT wersji 8 do użytku z systemem Windows 8, zobacz [Włącz obsługę 8 DaRT w LTI](#EnableDaRT8SupportinLTI).  
 
 ###### <a name="to-enable-dart-7-support-in-lti"></a>Aby włączyć obsługę DaRT 7 w LTI  
@@ -11244,7 +11243,7 @@ Parameters=DefaultGateway
 
 10. Zamknij wszystkie otwarte okna i oknach dialogowych.  
 
-#####  <a name="EnableDaRT8SupportinLTI"></a>Włącz obsługę DaRT 8 w LTI  
+#####  <a name="EnableDaRT8SupportinLTI"></a> Włącz obsługę DaRT 8 w LTI  
  Wersja daRT 8 jest przeznaczona do użytku z systemem Windows 8. Aby uzyskać informacje o sposobie włączania DaRT 7 do użytku z systemem Windows 7, zobacz [Włącz obsługę 7 DaRT w LTI](#EnableDaRT7SupportinLTI).  
 
 ###### <a name="to-enable-dart-8-support-in-lti"></a>Aby włączyć obsługę DaRT 8 w LTI  
@@ -11294,7 +11293,7 @@ Parameters=DefaultGateway
 
 11. Zamknij wszystkie otwarte okna i oknach dialogowych.  
 
-####  <a name="CustomizeDaRTWhenIntegratedwithLTI"></a>Dostosowywanie DaRT po zintegrowaniu z LTI  
+####  <a name="CustomizeDaRTWhenIntegratedwithLTI"></a> Dostosowywanie DaRT po zintegrowaniu z LTI  
  Można dostosować DaRT, a następnie zapisz dostosowań w LTI, tak, aby spójnie skonfigurowano wdrożonej partycji, które obejmują DaRT. Można to zrobić, tworzenie nowego obrazu odzyskiwania DaRT zawierający ustawienia konfiguracji, której wymagasz, a następnie kopiowania pliku DartConfig.dat z nowo skonfigurowanego obrazu odzyskiwania DaRT do udziału wdrożenia LTI.  
 
 ###### <a name="to-customize-dart-when-integrated-with-lti"></a>Aby dostosować DaRT po zintegrowaniu z LTI  
@@ -11307,7 +11306,7 @@ Parameters=DefaultGateway
 
      Aby uzyskać więcej informacji o sposobie tworzenia nowego obrazu odzyskiwania DaRT dla:  
 
-    -   DaRT 7, zobacz [jak tworzyć i testować diagnostyki i odzyskiwania Toolkit (DaRT 7) Odzyskiwanie obrazu — część I](http://blogs.technet.com/b/aviraj/archive/2011/10/01/how-to-create-amp-test-diagnostics-amp-recovery-toolkit-dart-7-recovery-image-part-i.aspx).  
+    -   DaRT 7, zobacz [jak tworzyć i testować diagnostyki i odzyskiwania Toolkit (DaRT 7) Odzyskiwanie obrazu — część I](https://blogs.technet.microsoft.com/aviraj/2011/10/01/how-to-create-test-diagnostics-recovery-toolkit-dart-7-recovery-imagepart-i/).  
 
     -   DaRT 8, zobacz sekcję "Tworzenie DaRT 8 odzyskiwania obrazu," w *przewodnik Microsoft Diagnostics and Recovery Toolset administratora*, która jest dostarczana z DaRT 8.  
 
@@ -11319,7 +11318,7 @@ Parameters=DefaultGateway
 
      Aby uzyskać więcej informacji na temat aktualizowania udziału wdrożenia, zobacz [zaktualizować udział wdrożenia w konsoli Deployment Workbench](#UpdateaDeploymentShareintheDeploymentWorkbench).  
 
-###  <a name="SupportingDaRTinZTIandUDIBootImages"></a>Obsługa DaRT w ZTI i UDI obrazów rozruchowych  
+###  <a name="SupportingDaRTinZTIandUDIBootImages"></a> Obsługa DaRT w ZTI i UDI obrazów rozruchowych  
  Zestaw MDT obsługuje DaRT (dla systemu Windows 7) w wersji 7 i DaRT (dla systemu Windows 8) w wersji 8 do obrazów rozruchowych ZTI i UDI. Ta obsługa udostępnia funkcje DaRT uruchomionej obrazów rozruchowych ZTI i UDI na komputerach docelowych.  
 
  Po włączeniu ZTI i UDI obrazu rozruchowego dla DaRT, **Użyj pakietu Toolkit** krok sekwencji zadań rozpozna, że pliki zdalne sterowanie DaRT istnieją i zostaną automatycznie uruchomione DaRT agent zdalnego sterowania. Agent zdalnego sterowania DaRT dostarcza zdalne sterowanie komputerem docelowym podczas wdrażania, co ułatwia rozwiązywanie problemów z wdrażaniem.  
@@ -11330,7 +11329,7 @@ Parameters=DefaultGateway
 
 -   DaRT wersji 8 (używany z systemem Windows 8) zgodnie z opisem w [Włącz obsługę 8 DaRT ZTI i UDI obrazów rozruchowych](#EnableDaRT8SupportinZTIandUDIBootImages).  
 
-####  <a name="EnableDaRT7SupportinZTIandUDIBootImages"></a>Włącz obsługę DaRT 7 ZTI i UDI obrazów rozruchowych  
+####  <a name="EnableDaRT7SupportinZTIandUDIBootImages"></a> Włącz obsługę DaRT 7 ZTI i UDI obrazów rozruchowych  
  DaRT w wersji 7 jest przeznaczona do użytku z systemem Windows 7. Aby uzyskać informacje o sposobie włączania DaRT wersji 8 do użytku z systemem Windows 8, zobacz [Włącz obsługę 8 DaRT ZTI i UDI obrazów rozruchowych](#EnableDaRT8SupportinZTIandUDIBootImages).  
 
 ###### <a name="to-enable-dart-7-support-in-zti-and-udi-boot-images"></a>Aby włączyć obsługę DaRT 7 ZTI i UDI obrazów rozruchowych  
@@ -11357,7 +11356,7 @@ Parameters=DefaultGateway
 
 5.  Zamknij wszystkie otwarte okna i oknach dialogowych.  
 
-####  <a name="EnableDaRT8SupportinZTIandUDIBootImages"></a>Włącz obsługę DaRT 8 ZTI i UDI obrazów rozruchowych  
+####  <a name="EnableDaRT8SupportinZTIandUDIBootImages"></a> Włącz obsługę DaRT 8 ZTI i UDI obrazów rozruchowych  
  Wersja daRT 8 jest przeznaczona do użytku z systemem Windows 8. Aby uzyskać informacje o sposobie włączania DaRT 7 do użytku z systemem Windows 7, zobacz [Włącz obsługę 7 DaRT ZTI i UDI obrazów rozruchowych](#EnableDaRT7SupportinZTIandUDIBootImages).  
 
  Można włączyć obsługę DaRT według systemu operacyjnego działającego na komputerze, na którym zainstalowano zestawu MDT. DaRT 8 można zainstalować tylko w systemie Windows 8. Po zainstalowaniu zestawu MDT na komputerze z systemem:  
@@ -11366,7 +11365,7 @@ Parameters=DefaultGateway
 
 -   Systemach operacyjnych starszych niż Windows 8, następnie przeprowadzić instalację administracyjne na komputerze z systemem Windows 8, a następnie skopiuj pliki Toolsx86.cab i Toolsx64.cab do komputera z uruchomionym zestawu MDT, zgodnie z opisem w [Włącz obsługę 8 DaRT ZTI i UDI Obrazy rozruchowe dla systemach operacyjnych starszych niż Windows 8](#EnableDaRT8SupportinZTIandUDIBootImagesforOperatingSystemsPriortoWindows8).  
 
-#####  <a name="EnableDaRT8SupportinZTIandUDIBootImagesforWindows8OperatingSystems"></a>Włącz obsługę DaRT 8 ZTI i UDI obrazów rozruchowych dla systemów operacyjnych Windows 8  
+#####  <a name="EnableDaRT8SupportinZTIandUDIBootImagesforWindows8OperatingSystems"></a> Włącz obsługę DaRT 8 ZTI i UDI obrazów rozruchowych dla systemów operacyjnych Windows 8  
  Włączanie obsługi DaRT 8 do obrazów rozruchowych ZTI i UDI dla systemów operacyjnych Windows 8 wymaga zainstalowania DaRT 8 na komputerze, na którym zainstalowano zestawu MDT. Po zainstalowaniu DaRT 8 konsoli Deployment Workbench w zestawie MDT automatycznie kopiuje niezbędne pliki DaRT 8 w odpowiednich lokalizacjach.  
 
 ###### <a name="to-enable-dart-8-support-in-zti-and-udi-boot-images-for-windows-8-operating-systems"></a>Aby włączyć obsługę DaRT 8 ZTI i UDI rozruch obrazów systemów operacyjnych Windows 8  
@@ -11393,7 +11392,7 @@ Parameters=DefaultGateway
 
 4.  Zamknij wszystkie otwarte okna i oknach dialogowych.  
 
-#####  <a name="EnableDaRT8SupportinZTIandUDIBootImagesforOperatingSystemsPriortoWindows8"></a>Włączanie obsługi DaRT 8 ZTI i UDI obrazów rozruchowych systemach operacyjnych starszych niż Windows 8  
+#####  <a name="EnableDaRT8SupportinZTIandUDIBootImagesforOperatingSystemsPriortoWindows8"></a> Włączanie obsługi DaRT 8 ZTI i UDI obrazów rozruchowych systemach operacyjnych starszych niż Windows 8  
  Włączenie DaRT 8 pomocy technicznej do obrazów rozruchowych ZTI i UDI dla systemów operacyjnych starszych niż Windows 8 wymaga instalacji administracyjnej DaRT 8 na komputerze obsługującym system operacyjny przed systemu Windows 8. Po zainstalowaniu DaRT 8, należy ręcznie skopiować pliki DaRT 8 do odpowiedniej lokalizacji na komputerze z uruchomionym zestawu MDT.  
 
 ###### <a name="to-enable-dart-8-support-in-zti-and-udi-boot-images-for-operating-systems-prior-to-windows-8"></a>Aby włączyć obsługę DaRT 8 ZTI i UDI rozruch obrazów systemów operacyjnych starszych niż Windows 8  
@@ -11426,7 +11425,7 @@ Parameters=DefaultGateway
 
 5.  Zamknij wszystkie otwarte okna i oknach dialogowych.  
 
-##  <a name="PreparingtheMDTMigrationResources"></a>Trwa przygotowywanie zasobów migracji zestawu MDT  
+##  <a name="PreparingtheMDTMigrationResources"></a> Trwa przygotowywanie zasobów migracji zestawu MDT  
  Podczas wdrażania na komputerach docelowych skryptów wdrażania połączyć się z udziałami wdrożenia i folderów udostępnionych. Utwórz konta dla skryptów do użycia podczas uzyskiwania dostępu do tych zasobów.  
 
  Przygotowanie zasobów migracji MDT przez:  
@@ -11437,7 +11436,7 @@ Parameters=DefaultGateway
 
 -   Konfigurowanie dostępu do innych zasobów, zgodnie z opisem w [Konfigurowanie dostępu do innych zasobów](#ConfiguringAccesstoOtherResources)  
 
-###  <a name="CreatingAdditionalSharedFolders"></a>Tworzenie dodatkowych folderów udostępnionych  
+###  <a name="CreatingAdditionalSharedFolders"></a> Tworzenie dodatkowych folderów udostępnionych  
  Przed rozpoczęciem wdrażania, należy utworzyć dodatkowych folderów udostępnionych, w którym będą przechowywane dane migracji stanu użytkownika i dzienniki wdrożenia. 198 tabela zawiera listę folderów udostępnionych, które muszą być tworzone i opisującą jego cel.  
 
 ### <a name="table-198-shared-folders-and-their-descriptions"></a>198 tabeli. Folderów udostępnionych i ich opisy.  
@@ -11450,7 +11449,7 @@ Parameters=DefaultGateway
 > [!NOTE]
 >  Pliki w tabeli 198 zaleca się nazwy folderu udostępnionego. Użyj dowolnej nazwy dla tych folderów udostępnionych. Jednak w pozostałej części procesu wdrażania odwołuje się do tych folderów udostępnionych przez te nazwy.  
 
-###  <a name="ConfiguringSharedFolderPermissions"></a>Konfigurowanie uprawnień do folderu udostępnionego  
+###  <a name="ConfiguringSharedFolderPermissions"></a> Konfigurowanie uprawnień do folderu udostępnionego  
  Po utworzeniu dodatkowych folderów udostępnionych na liście 198 tabeli, należy skonfigurować uprawnienia do odpowiedniego folderu udostępnionego. Upewnij się, że nieautoryzowani użytkownicy są w stanie uzyskiwać dostęp do informacji o migracji stanu użytkownika i dzienniki wdrożenia. Tworzenie informacje o migracji stanu użytkownika i dzienniki wdrożenia tylko komputer docelowy powinien mieć dostęp do tych folderów.  
 
 ##### <a name="to-configure-the-shared-folder-permissions-for-the-folders-listed-in-table-198"></a>Aby skonfigurować uprawnienia do folderu udostępnionego dla wymienionych w tabeli 198 folderów  
@@ -11489,7 +11488,7 @@ Parameters=DefaultGateway
 
 -   Wdrożenia ZTI podstawiając **użytkownicy uwierzytelnieni** w powyższe kroki z konta dostępu do sieci w programie Configuration Manager  
 
-###  <a name="ConfiguringAccesstoOtherResources"></a>Konfigurowanie dostępu do innych zasobów  
+###  <a name="ConfiguringAccesstoOtherResources"></a> Konfigurowanie dostępu do innych zasobów  
  Oprócz folderów udostępnionych, które właśnie utworzony skrypty MDT mogą wymagać dostępu do innych zasobów. Zasoby obejmują serwery aplikacji lub bazy danych (na przykład Microsoft SQL Server lub programu Microsoft Exchange Server).  
 
  Dostęp do poświadczeń określonych w:  
@@ -11514,7 +11513,7 @@ Parameters=DefaultGateway
     > [!NOTE]
     >  Inne połączenia do tych samych serwerów, np. potoków nazwanych i usługi RPC, używają tych samych poświadczeń wymienionych powyżej. Użyj skryptu ZTIConnect.wsf ustanowienie te połączenia.  
 
-##  <a name="PreparingWindowsDeploymentServices"></a>Przygotowanie usług wdrażania systemu Windows  
+##  <a name="PreparingWindowsDeploymentServices"></a> Przygotowanie usług wdrażania systemu Windows  
  Usług wdrażania systemu Windows można użyć w połączeniu z zestawu MDT automatycznie zainicjować obrazów rozruchowych na komputerach docelowych. Tych obrazów rozruchowych można obrazów środowiska Windows PE lub niestandardowych obrazów, które systemy operacyjne można wdrażać bezpośrednio na komputerach docelowych.  
 
  Przygotowanie usług wdrażania systemu Windows do użycia z zestawem MDT przez:  
@@ -11525,7 +11524,7 @@ Parameters=DefaultGateway
 
 -   Przygotowanie usług wdrażania systemu Windows do użycia we wdrożeniach UDI zgodnie z opisem w [przygotowywanie usług wdrażania systemu Windows dla wdrożenia UDI](#PreparingWindowsDeploymentServicesforUDIDeployments)  
 
-###  <a name="PreparingWindowsDeploymentServicesforLTIDeployments"></a>Przygotowywanie wdrożenia LTI usług wdrażania systemu Windows  
+###  <a name="PreparingWindowsDeploymentServicesforLTIDeployments"></a> Przygotowywanie wdrożenia LTI usług wdrażania systemu Windows  
  Usługi wdrażania systemu Windows można używać we wdrożeniach LTI w następujący sposób:  
 
 -   **Uruchom środowisko Windows PE na komputerach docelowych**. Na początku scenariusz wdrażania nowego komputera i drugiej połowie scenariusz wdrażania komputera Zastąp uruchom komputer docelowy w środowisku Windows PE. W tych sytuacjach można zautomatyzować, uruchamianie środowiska Windows PE za pomocą usług wdrażania systemu Windows.  
@@ -11534,11 +11533,9 @@ Parameters=DefaultGateway
 
  Aby uzyskać więcej informacji na temat instalowania i konfigurowania usług wdrażania systemu Windows Zobacz:  
 
--   [Usługi wdrażania systemu Windows](http://technet.microsoft.com/library/hh831764.aspx)  
+-   [Usługi wdrażania systemu Windows](https://technet.microsoft.com/library/hh831764.aspx)  
 
 -   Plik Pomocy usług wdrażania systemu Windows, zawarte w usługach wdrażania systemu Windows  
-
--   Oficjalny dokument [przewodnik krok po kroku usług wdrażania systemu Windows](http://www.microsoft.com/download/details.aspx?displaylang=en&id=17556)  
 
  Przygotowanie usług wdrażania systemu Windows dla wdrożenia LTI przez:  
 
@@ -11548,7 +11545,7 @@ Parameters=DefaultGateway
 
 -   Włączanie usług wdrażania systemu Windows multiemisji wdrażania obrazów w usługach wdrażania systemu Windows we wdrożeniach LTI, zgodnie z opisem w [włączyć wdrażania systemu Windows wdrożenia usługi multiemisji dla wdrożenia LTI](#EnableWindowsDeploymentServicesMulticastDeploymentforLTIDeployments)  
 
-####  <a name="AddLTIBootImagestoWindowsDeploymentServices"></a>Dodawanie obrazów rozruchowych LTI do usług wdrażania systemu Windows  
+####  <a name="AddLTIBootImagestoWindowsDeploymentServices"></a> Dodawanie obrazów rozruchowych LTI do usług wdrażania systemu Windows  
  Do usług wdrażania systemu Windows można dodać pliki WIM obrazu rozruchowego LTI w folderze rozruchu udziału wdrożenia. Dzięki temu usługi wdrażania systemu Windows automatycznie inicjowania wdrożenia LTI przez uruchomienie LTI obrazów rozruchowych.  
 
 > [!NOTE]
@@ -11560,9 +11557,9 @@ Parameters=DefaultGateway
 
 -   "Dodaj obraz" w Pomocy systemu Windows wdrożenia usługi, który jest dostępny w ramach usług wdrażania systemu Windows  
 
--   [Przewodnik Wprowadzenie do usług wdrażania systemu Windows wprowadzenie](http://technet.microsoft.com/library/jj648426.aspx)  
+-   [Przewodnik Wprowadzenie do usług wdrażania systemu Windows wprowadzenie](https://technet.microsoft.com/library/jj648426.aspx)  
 
-####  <a name="PrestageTargetComputersforWindowsDeploymentServicesforLTIDeployments"></a>Wstępnie przygotowanego komputerów docelowych dla usług wdrażania systemu Windows dla wdrożenia LTI  
+####  <a name="PrestageTargetComputersforWindowsDeploymentServicesforLTIDeployments"></a> Wstępnie przygotowanego komputerów docelowych dla usług wdrażania systemu Windows dla wdrożenia LTI  
  Można wstępnie przygotowanego PXE komputerów klienckich w domenach usług AD DS. W przypadku wstępnie przygotowanych komputerów docelowych do kont komputera istnieje w domenach usług AD DS (nazywane również *komputery znane*). Komputerów docelowych, które nie są wstępnie przygotowanych nie masz konta komputerów w domenach usług AD DS (nazywanych również nieznane komputery).  
 
 > [!NOTE]
@@ -11583,9 +11580,6 @@ Parameters=DefaultGateway
 
 4.  W **zarządzane** okno dialogowe, wybierz opcję **jest komputer zarządzany** pole wyboru. W **komputera unikatowego Identyfikatora (GUID/UUID)** wpisz ***guid_uuid*** (gdzie *guid_uuid* jest identyfikator GUID/UUID komputera), a następnie kliknij przycisk **dalej**.  
 
-    > [!NOTE]
-    >  Aby uzyskać więcej informacji o lokalizacji identyfikator GUID dla komputerów docelowych, zobacz dokument Microsoft TechNet [Znajdź identyfikator GUID dla komputerów klienckich](http://technet.microsoft.com/library/cc739558.aspx).  
-
 5.  W **serwera hosta** okno dialogowe, wybierz jedną z następujących opcji, a następnie kliknij przycisk **dalej**:  
 
     -   **Wszelkie dostępny serwer instalacji zdalnej**. Ta opcja określa, czy ten komputer może być obsługiwany przez dowolny serwer usług wdrażania systemu Windows.  
@@ -11596,7 +11590,7 @@ Parameters=DefaultGateway
 
 7.  Zamknij wszystkie otwarte okna.  
 
-####  <a name="EnableWindowsDeploymentServicesMulticastDeploymentforLTIDeployments"></a>Włącz multiemisji wdrażania usług wdrażania systemu Windows dla wdrożenia LTI  
+####  <a name="EnableWindowsDeploymentServicesMulticastDeploymentforLTIDeployments"></a> Włącz multiemisji wdrażania usług wdrażania systemu Windows dla wdrożenia LTI  
  Multiemisji wdrażania systemów operacyjnych LTI za pomocą usług wdrażania systemu Windows umożliwia wielu komputerów w celu uzyskania jednej kopii obrazu, który zmniejsza ilość ruchu sieciowego wymagana, gdy wiele komputerów muszą otrzymać ten sam obraz. Domyślnie obsługa multiemisji jest wyłączona w zestawie MDT.  
 
  We wdrożeniach LTI konsoli Deployment Workbench tworzy przestrzeni nazw multiemisji dla udziału wdrożenia. Obrazy są przenoszone do komputerów docelowych przy użyciu multiemisji z udziału wdrożenia, a nie z udziału usług wdrażania systemu Windows.  
@@ -11622,7 +11616,7 @@ Parameters=DefaultGateway
 > [!NOTE]
 >  Nie można użyć tych scenariuszy umożliwia multiemisji dla obrazów rozruchowych, jak klienta multiemisji nie został załadowany do czasu, po uruchomieniu systemu Windows PE. LTI używa tylko multiemisji dla przesyłania plików WIM systemu operacyjnego.  
 
-#####  <a name="EnableMulticastDeploymentswithMDTInstalledontheSameComputerasWindowsDeploymentServices"></a>Włącz wdrożeń multiemisji z zestawu MDT zainstalowany na tym samym komputerze co usługi wdrażania systemu Windows  
+#####  <a name="EnableMulticastDeploymentswithMDTInstalledontheSameComputerasWindowsDeploymentServices"></a> Włącz wdrożeń multiemisji z zestawu MDT zainstalowany na tym samym komputerze co usługi wdrażania systemu Windows  
  W tym scenariuszu zestaw MDT jest zainstalowany na komputerze z systemem Windows Server z rolą serwera usług wdrażania systemu Windows. W tym scenariuszu zestawu MDT można automatycznie skonfigurować usługi wdrażania systemu Windows do obsługi wdrożeń multiemisji.  
 
 ###### <a name="to-enable-multicast-deployments-with-mdt-installed-on-the-same-computer-as-windows-deployment-services"></a>Aby włączyć wdrożeń multiemisji za pomocą zestawu MDT zainstalowany na tym samym komputerze co usługi wdrażania systemu Windows  
@@ -11650,7 +11644,7 @@ Parameters=DefaultGateway
 
  Po zakończeniu konsoli Deployment Workbench tworzy transmisję w trybie multiemisji Usługi wdrażania systemu Windows automatycznie rzutowania z udziału wdrożenia.  
 
-#####  <a name="EnableMulticastDeploymentswithMDTInstalledonaDifferentComputerfromWindowsDeploymentServices"></a>Włącz wdrożeń multiemisji z zestawu MDT zainstalowany na innym komputerze z usług wdrażania systemu Windows  
+#####  <a name="EnableMulticastDeploymentswithMDTInstalledonaDifferentComputerfromWindowsDeploymentServices"></a> Włącz wdrożeń multiemisji z zestawu MDT zainstalowany na innym komputerze z usług wdrażania systemu Windows  
  W tym scenariuszu usług wdrażania systemu Windows i Windows Server są zainstalowane na komputerze działającym jako serwer wdrażania, ale zestaw MDT jest zainstalowany na innym komputerze. W tej konfiguracji zdalnie uruchamiać **WDSUTIL** polecenia na komputerze z uruchomionymi usługami wdrażania systemu Windows i Windows Server.  
 
 ###### <a name="to-enable-multicast-deployments-with-mdt-installed-on-a-different-computer-than-windows-deployment-services"></a>Aby włączyć wdrożeń multiemisji z zestawu MDT zainstalowany na innym komputerze niż usług wdrażania systemu Windows  
@@ -11669,7 +11663,7 @@ Parameters=DefaultGateway
 
  Po zakończeniu Narzędzie WDSUTIL tworzy transmisję w trybie multiemisji Usługi wdrażania systemu Windows automatycznie rzutowania z udziału wdrożenia.  
 
-###  <a name="PreparingWindowsDeploymentServicesforZTIDeploymentsUsingConfigurationManager"></a>Przygotowanie usług wdrażania systemu Windows dla wdrożenia ZTI programu Configuration Manager  
+###  <a name="PreparingWindowsDeploymentServicesforZTIDeploymentsUsingConfigurationManager"></a> Przygotowanie usług wdrażania systemu Windows dla wdrożenia ZTI programu Configuration Manager  
  W przypadku wdrożeń ZTI programu Configuration Manager należy skonfigurować punkt usługi środowiska PXE programu Configuration Manager na komputerze, na którym zainstalowano usług wdrażania systemu Windows. Dzięki temu programu Configuration Manager bezpośrednio usługi żądania rozruchu środowiska PXE odebranych przez usługi wdrażania systemu Windows jako punkt usługi środowiska PXE, który z kolei umożliwia komputerów docelowych do programu Configuration Manager zarządza przy użyciu środowiska PXE obrazy rozruchowe. Punkt obsługi środowiska PXE jest funkcją dystrybucji Rola systemu lokacji punktu, co oznacza, że skonfiguruje komputera z usługami wdrażania systemu Windows jako rola systemu lokacji punktu dystrybucji.  
 
  Aby uzyskać więcej informacji na temat przygotowywania usług wdrażania systemu Windows dla wdrożenia ZTI programu Configuration Manager zobacz:  
@@ -11681,5 +11675,5 @@ Parameters=DefaultGateway
 > [!NOTE]
 >  Oprócz metod opisanych w tym miejscu można użyć tradycyjnych metod usług wdrażania systemu Windows dla odpowiada na żądania rozruchu środowiska PXE. Więcej informacji na ten temat można znaleźć w Pomocy usług wdrażania systemu Windows pliku dołączonego do usług wdrażania systemu Windows.  
 
-###  <a name="PreparingWindowsDeploymentServicesforUDIDeployments"></a>Przygotowywanie wdrożenia UDI usług wdrażania systemu Windows  
+###  <a name="PreparingWindowsDeploymentServicesforUDIDeployments"></a> Przygotowywanie wdrożenia UDI usług wdrażania systemu Windows  
  Przygotowanie usług wdrażania systemu Windows dla wdrożenia UDI za pomocą tego samego procesu dla wdrożenia ZTI zgodnie z opisem w przygotowywanie usług wdrażania systemu Windows dla ZTI wdrożenia przy użyciu programu Configuration Manager.
