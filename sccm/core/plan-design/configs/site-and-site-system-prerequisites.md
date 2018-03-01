@@ -3,7 +3,7 @@ title: "Wymagania wstępne dotyczące lokacji"
 titleSuffix: Configuration Manager
 description: "Dowiedz się, jak skonfigurować komputer z systemem Windows jako serwera systemu lokacji programu System Center Configuration Manager."
 ms.custom: na
-ms.date: 8/25/2017
+ms.date: 02/28/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,12 +15,12 @@ ms.assetid: 1392797b-76cb-46b4-a3e4-8f349ccaa078
 caps.latest.revision: 
 author: mestew
 ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: cb1b81fc0765e6754c7dea9ce421e41fcd58a70e
-ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
+manager: dougeby
+ms.openlocfilehash: 6d1be6375dde2df51aafe076e5613647ecca3c4c
+ms.sourcegitcommit: d0fc79214bc35ca172fd2023dfa617b977ee865b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="site-and-site-system-prerequisites-for-system-center-configuration-manager"></a>Witryny i wymagania wstępne systemu lokacji dla programu System Center Configuration Manager
 
@@ -30,17 +30,17 @@ ms.lasthandoff: 02/01/2018
  Komputery z systemem Windows muszą mieć określone konfiguracje, aby zapewnić obsługę ich użycia jako serwery systemu lokacji programu System Center Configuration Manager.  
 
  
- Dla niektórych produktów takie jak Windows Server Update Services (WSUS) dla oprogramowania punktu aktualizacji, należy zapoznać się z dokumentacją produktu, aby zidentyfikować dodatkowe wymagania wstępne i ograniczenia dotyczące użycia tego produktu. W tym miejscu są uwzględniane tylko konfiguracje, które są stosowane bezpośrednio do użytku z programem Configuration Manager.   
+ Dla niektórych produktów, takie jak Windows Server Update Services (WSUS) dla punktu aktualizacji oprogramowania należy zapoznać się z dokumentacją produktu, aby zidentyfikować dodatkowe wymagania wstępne i ograniczenia dotyczące użycia. W tym miejscu są uwzględniane tylko konfiguracje, które są stosowane bezpośrednio do użytku z programem Configuration Manager.   
 
 > [!NOTE]  
 >  W styczeń 2016 r. Obsługa wygasł dla programu .NET Framework 4.0, 4.5 i 4.5.1. Aby uzyskać więcej informacji, zobacz [Zasady dotyczące cyklu pomocy technicznej w zakresie programu Microsoft .NET Framework — często zadawane pytania](https://support.microsoft.com/gp/framework_faq?WT.mc_id=azurebg_email_Trans_943_NET452_Update) w witrynie support.microsoft.com.  
 
-## <a name="bkmk_generalprerewq"></a>Wymagania dotyczące serwera lokacji głównej i ograniczenia
+## <a name="bkmk_generalprerewq"></a> Wymagania dotyczące serwera lokacji głównej i ograniczenia
 **Poniższe informacje dotyczą wszystkich serwerach systemu lokacji:**
 
 -   Każdy serwer systemu lokacji musi używać 64-bitowym systemie operacyjnym. Jedynym wyjątkiem jest dystrybucji Rola systemu lokacji punktu, który można zainstalować w niektórych 32-bitowych systemach operacyjnych.  
 
--   Systemy lokacji nie są obsługiwane w instalacjach Server Core każdego systemu operacyjnego. Wyjątkiem jest to, że instalacje Server Core są obsługiwane dla roli lokacji punktu dystrybucji systemu, bez środowiska PXE i multiemisji.  
+-   Systemy lokacji nie są obsługiwane w instalacjach Server Core każdego systemu operacyjnego. Wyjątek jest, że instalacje Server Core są obsługiwane dla roli lokacji punktu dystrybucji systemu, bez środowiska PXE i multiemisji.  
 
 -   Po zainstalowaniu serwera systemu lokacji nie jest obsługiwane do zmiany:  
 
@@ -50,25 +50,25 @@ ms.lasthandoff: 02/01/2018
 
     -   Nazwa komputera.  
 
-  Jeśli zmiana któregoś z tych, należy najpierw usunąć rolę systemu lokacji z komputera i ponownej instalacji roli po zakończeniu zmiany. Jeśli ma to wpływ na komputerze serwera lokacji, należy odinstalować lokację i zainstalować ponownie lokacji po zakończeniu zmiany.  
+  Jeśli zmiana któregoś z tych elementów, należy najpierw usunąć rolę systemu lokacji z komputera i ponownej instalacji roli po zakończeniu zmiany. Zmian wpływających na komputerze serwera lokacji należy odinstalować lokacji, a następnie zainstalować ponownie lokacji, po zakończeniu zmiany.  
 
 -   Role systemu lokacji nie są obsługiwane w wystąpieniu klastra systemu Windows Server. Jedynym wyjątkiem jest serwer bazy danych lokacji.  
 
 -   Nie jest obsługiwane Zmienianie typu uruchamiania lub "Logowanie w trybie" ustawienia dla usługi programu Configuration Manager. Jeśli to zrobisz, może uniemożliwić prawidłowe działanie najważniejszych usług.  
 
-##  <a name="bkmk_2012Prereq"></a>Wymagania wstępne dotyczące systemu Windows Server 2012 i nowszych systemów operacyjnych  
-###  <a name="bkmk_2012sspreq"></a>Serwer lokacji: centralnej lokacji administracyjnej i lokacji głównej  
+##  <a name="bkmk_2012Prereq"></a> Wymagania wstępne dotyczące systemu Windows Server 2012 i nowszych systemów operacyjnych  
+###  <a name="bkmk_2012sspreq"></a> Serwer lokacji: centralnej lokacji administracyjnej i lokacji głównej  
   **Windows Server role i funkcje:**  
 
 -   .NET framework 3.5 z dodatkiem SP1 (lub nowszy)  
 
--   .NET Framework 4.5.2  
+-   .NET framework 4.5.2 (lub nowszy)
 
 -   Kompresja RDC  
 
 **Zestaw Windows ADK:**  
 
--   Przed zainstalowaniem lub uaktualnieniem centralnej lokacji administracyjnej lub lokacji głównej, należy zainstalować wersję systemu Windows Assessment and Deployment Kit (ADK), który wymaga wersji programu Configuration Manager w przypadku instalowania lub uaktualniania do. Zobacz [zestawu Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) w pomocy technicznej dla systemu Windows 10 jako temat klienta.  
+-   Przed zainstalowaniem lub uaktualnieniem centralnej lokacji administracyjnej lub lokacji głównej, należy zainstalować wersję systemu Windows Assessment and Deployment Kit (ADK), który wymaga wersji programu Configuration Manager w przypadku instalowania lub uaktualniania do. Zobacz [zestawu Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) w pomocy technicznej dla systemu Windows 10 jako artykuł klienta.  
 
 -   Aby uzyskać więcej informacji na temat tego wymagania, zobacz [wymagania dotyczące infrastruktury dla wdrożenia systemu operacyjnego](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
@@ -78,12 +78,12 @@ ms.lasthandoff: 02/01/2018
 
 -   Centralne Lokacje administracyjne i lokacje główne wymagają x86 i x64 wersje odpowiedniego pliku pakietu redystrybucyjnego.  
 
-###  <a name="bkmk_2012secpreq"></a>Serwer lokacji: lokacji dodatkowej  
+###  <a name="bkmk_2012secpreq"></a> Serwer lokacji: lokacji dodatkowej  
 **Windows Server role i funkcje:**  
 
 -   .NET framework 3.5 z dodatkiem SP1 (lub nowszy)  
 
--   .NET Framework 4.5.2  
+-   .NET framework 4.5.2 (lub nowszy)   
 
 -   Kompresja RDC  
 
@@ -99,7 +99,7 @@ ms.lasthandoff: 02/01/2018
 
 -   Upewnij się, że serwer lokacji dodatkowej spełnia wymagania wstępne dotyczące tych ról systemu lokacji.  
 
-###  <a name="bkmk_2012dbpreq"></a>Serwer bazy danych  
+###  <a name="bkmk_2012dbpreq"></a> Serwer bazy danych  
 **Usługa Rejestr zdalny:**  
 
 -   Podczas instalacji lokacji programu Configuration Manager należy włączyć usługę Rejestr zdalny na komputerze, który będzie hostem bazy danych lokacji.  
@@ -112,19 +112,19 @@ ms.lasthandoff: 02/01/2018
 
 -   Jeśli wybierzesz opcję zainstalowania programu SQL Server Express w ramach instalacji lokacji dodatkowej programu Configuration Manager, upewnij się, że komputer spełnia wymagania do uruchomienia programu SQL Server Express.  
 
-###  <a name="bkmk_2012smsprovpreq"></a>Serwer dostawcy programu SMS  
+###  <a name="bkmk_2012smsprovpreq"></a> Serwer dostawcy programu SMS  
 **Zestaw Windows ADK:**  
 
--   Komputer, na którym jest instalowane wystąpienie dostawcy programu SMS musi mieć wymaganą wersję zestawu Windows ADK, który wymaga programu Configuration Manager w przypadku instalowania lub uaktualniania do wersji. Zobacz [zestawu Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) w pomocy technicznej dla systemu Windows 10 jako temat klienta.
+-   Komputer, na którym jest instalowane wystąpienie dostawcy programu SMS musi mieć wymaganą wersję zestawu Windows ADK, który wymaga programu Configuration Manager w przypadku instalowania lub uaktualniania do wersji. Zobacz [zestawu Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) w pomocy technicznej dla systemu Windows 10 jako artykuł klienta.
 
 -   Aby uzyskać więcej informacji na temat tego wymagania, zobacz [wymagania dotyczące infrastruktury dla wdrożenia systemu operacyjnego](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
-###  <a name="bkmk_2012acwspreq"></a>Punkt witryny sieci Web katalogu aplikacji  
+###  <a name="bkmk_2012acwspreq"></a> Punkt witryny sieci Web katalogu aplikacji  
 **Windows Server role i funkcje:**  
 
 -   .NET framework 3.5 z dodatkiem SP1 (lub nowszy)  
 
--   .NET Framework 4.5.2:  
+-   .NET framework 4.5.2 (lub nowsze):  
 
     -   ASP.NET 4.5  
 
@@ -154,12 +154,12 @@ ms.lasthandoff: 02/01/2018
 
     -   Zgodność z metabazą usług IIS 6  
 
-###  <a name="bkmk_2012ACwsitepreq"></a>Punkt usługi sieci web katalogu aplikacji  
+###  <a name="bkmk_2012ACwsitepreq"></a> Punkt usługi sieci web katalogu aplikacji  
 **Windows Server role i funkcje:**  
 
 -   .NET framework 3.5 z dodatkiem SP1 (lub nowszy)  
 
--   .NET Framework 4.5.2:  
+-   .NET framework 4.5.2 (lub nowsze):  
 
     -   ASP.NET 4.5:  
 
@@ -191,15 +191,15 @@ ms.lasthandoff: 02/01/2018
 
 -   Gdy ta rola systemu lokacji jest kolokowana z inną rolą systemu lokacji, która ma ten sam wymóg, to wymagania dotyczące pamięci dla komputera nie rosną, ale pozostaje na minimalnym poziomie 5%.  
 
-###  <a name="bkmk_2012AIpreq"></a>Punkt synchronizacji analizy zasobów  
+###  <a name="bkmk_2012AIpreq"></a> Punkt synchronizacji analizy zasobów  
 **Windows Server role i funkcje:**  
 
--   .NET Framework 4.5.2  
+-   .NET framework 4.5.2 (lub nowszy)  
 
-###  <a name="bkmk_2012crppreq"></a>Punkt rejestracji certyfikatu  
+###  <a name="bkmk_2012crppreq"></a> Punkt rejestracji certyfikatu  
 **Windows Server role i funkcje:**  
 
--   .NET Framework 4.5.2:  
+-   .NET framework 4.5.2 (lub nowsze):  
 
     -   Aktywacja HTTP  
 
@@ -217,7 +217,7 @@ ms.lasthandoff: 02/01/2018
 
     -   Zgodność z usługą WMI dla usług IIS 6  
 
-###  <a name="bkmk_2012dppreq"></a>Punkt dystrybucji  
+###  <a name="bkmk_2012dppreq"></a> Punkt dystrybucji  
 **Windows Server role i funkcje:**  
 
 -   Kompresja RDC  
@@ -261,21 +261,21 @@ ms.lasthandoff: 02/01/2018
 
 <!--sms.503672 -Clarified BITS use-->
 > [!NOTE]  
-> Podczas przesyłania zawartości z punktu dystrybucji, przesyłania przy użyciu **Usługa inteligentnego transferu w tle** (BITS) wbudowane w system operacyjny Windows. Rola punktu dystrybucji nie wymaga opcjonalna funkcja rozszerzenie serwera IIS usługi BITS do zainstalowania, ponieważ klient nie przekazuje informacje do niego.  
+> Podczas przesyłania zawartości z punktu dystrybucji, przesyłania przy użyciu **Usługa inteligentnego transferu w tle** (BITS) wbudowane w system operacyjny Windows. Rola punktu dystrybucji nie wymaga opcjonalna funkcja rozszerzenie serwera IIS usługi BITS do zainstalowania, ponieważ klient nie przekazywania informacji do niego.  
 
-###  <a name="bkmk_2012EPPpreq"></a>Punkt programu Endpoint Protection  
+###  <a name="bkmk_2012EPPpreq"></a> Punkt programu Endpoint Protection  
 **Windows Server role i funkcje:**  
 
 -   .NET framework 3.5 z dodatkiem SP1 (lub nowszy)  
 
-###  <a name="bkmk_2012Enrollpreq"></a>Punkt rejestracji  
+###  <a name="bkmk_2012Enrollpreq"></a> Punkt rejestracji  
 **Windows Server role i funkcje:**  
 
 -   .NET framework 3.5 (lub nowszy)  
 
--   .NET Framework 4.5.2:  
+-   .NET framework 4.5.2 (lub nowsze):  
 
-     Podczas instalowania tej roli systemu lokacji programu Configuration Manager automatycznie instaluje program .NET Framework 4.5.2. Ta instalacja może spowodować przełączenie serwera do ponownego uruchomienia komputera w stanie oczekiwania. Gdy oczekuje na ponowny rozruch dla programu .NET Framework aplikacje .NET może się nie powieść dopiero po ponownym uruchomieniu serwera i zakończeniu instalacji.  
+     Podczas instalowania tej roli systemu lokacji programu Configuration Manager automatycznie instaluje program .NET Framework 4.5.2. Ta instalacja może spowodować przełączenie serwera do ponownego uruchomienia komputera w stanie oczekiwania. Jeśli trwa oczekiwanie na ponowne uruchomienie komputera dla programu .NET Framework aplikacje .NET może się nie powieść dopiero po ponownym uruchomieniu serwera i zakończeniu instalacji.  
 
     -   Aktywacja HTTP (wraz z automatycznie wybranymi opcjami)  
 
@@ -308,14 +308,14 @@ ms.lasthandoff: 02/01/2018
 
 -   Gdy ta rola systemu lokacji jest kolokowana z inną rolą systemu lokacji, która ma ten sam wymóg, to wymagania dotyczące pamięci dla komputera nie rosną, ale pozostaje na minimalnym poziomie 5%.  
 
-###  <a name="bkmk_2012EnrollProxpreq"></a>Punkt proxy rejestracji  
+###  <a name="bkmk_2012EnrollProxpreq"></a> Punkt proxy rejestracji  
 **Windows Server role i funkcje:**  
 
 -   .NET framework 3.5 (lub nowszy)  
 
--   .NET Framework 4.5.2  
+-   .NET framework 4.5.2 (lub nowszy) 
 
-     Podczas instalowania tej roli systemu lokacji programu Configuration Manager automatycznie instaluje program .NET Framework 4.5.2. Ta instalacja może spowodować przełączenie serwera do ponownego uruchomienia komputera w stanie oczekiwania. Gdy oczekuje na ponowny rozruch dla programu .NET Framework aplikacje .NET może się nie powieść dopiero po ponownym uruchomieniu serwera i zakończeniu instalacji.  
+     Podczas instalowania tej roli systemu lokacji programu Configuration Manager automatycznie instaluje program .NET Framework 4.5.2. Ta instalacja może spowodować przełączenie serwera do ponownego uruchomienia komputera w stanie oczekiwania. Jeśli trwa oczekiwanie na ponowne uruchomienie komputera dla programu .NET Framework aplikacje .NET może się nie powieść dopiero po ponownym uruchomieniu serwera i zakończeniu instalacji.  
 
 **Konfiguracja programu IIS:**  
 
@@ -349,17 +349,17 @@ ms.lasthandoff: 02/01/2018
 
 -   Gdy ta rola systemu lokacji jest kolokowana z inną rolą systemu lokacji, która ma ten sam wymóg, to wymagania dotyczące pamięci dla komputera nie rosną, ale pozostaje na minimalnym poziomie 5%.  
 
-###  <a name="bkmk_2012FSPpreq"></a>Rezerwowy punkt stanu  
+###  <a name="bkmk_2012FSPpreq"></a> Rezerwowy punkt stanu  
 Domyślna konfiguracja usług IIS jest wymagany z następującymi dodatkami:  
 
 -   Zgodność 6 zarządzania usług IIS:  
 
     -   Zgodność z metabazą usług IIS 6  
 
-###  <a name="bkmk_2012MPpreq"></a>Punkt zarządzania  
+###  <a name="bkmk_2012MPpreq"></a> Punkt zarządzania  
 **Windows Server role i funkcje:**  
 
--   .NET Framework 4.5.2  
+-   .NET framework 4.5.2 (lub nowszy) 
 
 -   Rozszerzenia serwera usługi BITS (i automatycznie wybieranych opcji) lub usługi inteligentnego transferu w tle (BITS) (wraz z automatycznie wybranymi opcjami)  
 
@@ -379,25 +379,25 @@ Domyślna konfiguracja usług IIS jest wymagany z następującymi dodatkami:
 
     -   Zgodność z usługą WMI dla usług IIS 6  
 
-###  <a name="bkmk_2012RSpoint"></a>Punkt usług raportowania  
+###  <a name="bkmk_2012RSpoint"></a> Punkt usług raportowania  
 **Windows Server role i funkcje:**  
 
--   .NET Framework 4.5.2  
+-   .NET framework 4.5.2 (lub nowszy) 
 
 **Usługi Usługi SQL Server Reporting Services:**  
 
--   Należy zainstalować i skonfigurować co najmniej jedno wystąpienie programu SQL Server do obsługi programu SQL Server Reporting Services, zanim punkt instalacji raportowania usług.  
+-   Zainstaluj i skonfiguruj co najmniej jedno wystąpienie programu SQL Server do obsługi programu SQL Server Reporting Services, zanim punkt instalacji raportowania usług.  
 
 -   Wystąpienie, używanego programu SQL Server Reporting Services może być tego samego wystąpienia używanego w bazie danych lokacji.  
 
 -   Ponadto wystąpienie, którego używasz może współużytkowane z innymi produktami System Center, tak długo, jak innymi produktami System Center nie mają ograniczeń dotyczących udostępniania wystąpienia programu SQL Server.  
 
-###  <a name="bkmk_SCPpreq"></a>Punkt połączenia usługi  
+###  <a name="bkmk_SCPpreq"></a> Punkt połączenia usługi  
 **Windows Server role i funkcje:**  
 
--   .NET Framework 4.5.2  
+-   .NET framework 4.5.2 (lub nowszy) 
 
-     Podczas instalowania tej roli systemu lokacji programu Configuration Manager automatycznie instaluje program .NET Framework 4.5.2. Ta instalacja może spowodować przełączenie serwera do ponownego uruchomienia komputera w stanie oczekiwania. Gdy oczekuje na ponowny rozruch dla programu .NET Framework aplikacje .NET może się nie powieść dopiero po ponownym uruchomieniu serwera i zakończeniu instalacji.  
+     Podczas instalowania tej roli systemu lokacji programu Configuration Manager automatycznie instaluje program .NET Framework 4.5.2. Ta instalacja może spowodować przełączenie serwera do ponownego uruchomienia komputera w stanie oczekiwania. Jeśli trwa oczekiwanie na ponowne uruchomienie komputera dla programu .NET Framework aplikacje .NET może się nie powieść dopiero po ponownym uruchomieniu serwera i zakończeniu instalacji.  
 
 **Pakiet redystrybucyjny Visual C++:**  
 
@@ -405,12 +405,12 @@ Domyślna konfiguracja usług IIS jest wymagany z następującymi dodatkami:
 
 -   Rola systemu lokacji wymaga x64 wersji.  
 
-###  <a name="bkmk_2012SUPpreq"></a>Punkt aktualizacji oprogramowania  
+###  <a name="bkmk_2012SUPpreq"></a> Punkt aktualizacji oprogramowania  
 **Windows Server role i funkcje:**  
 
 -   .NET framework 3.5 z dodatkiem SP1 (lub nowszy)  
 
--   .NET Framework 4.5.2  
+-   .NET framework 4.5.2 (lub nowszy) 
 
 Domyślna konfiguracja usług IIS jest wymagany.
 
@@ -423,7 +423,7 @@ Domyślna konfiguracja usług IIS jest wymagany.
 ### <a name="state-migration-point"></a>punkt migracji stanu  
 Domyślna konfiguracja usług IIS jest wymagany.  
 
-##  <a name="bkmk_2008"></a>Wymagania wstępne dotyczące systemu Windows Server 2008 R2 i Windows Server 2008  
+##  <a name="bkmk_2008"></a> Wymagania wstępne dotyczące systemu Windows Server 2008 R2 i Windows Server 2008  
 Windows Server 2008 i Windows Server 2008 R2 znajdują się teraz w rozszerzonej pomocy technicznej i nie są już dostępne podstawowe wsparcie, zgodnie z opisem [Microsoft Cykl wsparcia technicznego produktów](https://support.microsoft.com/lifecycle). Aby uzyskać więcej informacji na temat wsparcia w przyszłości dla tych systemów operacyjnych jako serwerów systemu lokacji z programem Configuration Manager, zobacz [usunięte i przestarzałe serwerowych systemów operacyjnych](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server#deprecated-server-operating-systems).  
 
 **Poniższe wymagania dotyczą wszystkich .NET Framework:**  
@@ -432,14 +432,14 @@ Windows Server 2008 i Windows Server 2008 R2 znajdują się teraz w rozszerzonej
 
 **Poniższe informacje dotyczą wszystkich wymagań aktywacji usługi Windows Communication Foundation (WCF):**  
 
--   Aktywację programu WCF można skonfigurować jako część funkcji .NET Framework w systemie Windows na serwerze systemu lokacji. Na przykład systemu Windows Server 2008 R2, należy uruchomić **Kreatora dodawania funkcji** Aby zainstalować dodatkowe funkcje na serwerze. Na **Wybieranie funkcji** rozwiń pozycję **funkcje programu .NET Framework 3.5.1**, rozwiń węzeł **aktywacji WCF**, a następnie zaznacz pola wyboru dla obu **Aktywacja HTTP** i **Aktywacja bez HTTP** Aby włączyć te opcje.  
+-   Aktywację programu WCF można skonfigurować jako część funkcji .NET Framework w systemie Windows na serwerze systemu lokacji. Na przykład systemu Windows Server 2008 R2, należy uruchomić **Kreatora dodawania funkcji** Aby zainstalować dodatkowe funkcje na serwerze. Na **Wybieranie funkcji** rozwiń pozycję **funkcje programu .NET Framework 3.5.1**i rozwiń **aktywacji WCF**. Zaznacz pola wyboru dla obu **Aktywacja HTTP** i **Aktywacja bez HTTP** Aby włączyć te opcje.  
 
-###  <a name="bkmk_2008sspreq"></a>Serwer lokacji: centralnej lokacji administracyjnej i lokacji głównej  
+###  <a name="bkmk_2008sspreq"></a> Serwer lokacji: centralnej lokacji administracyjnej i lokacji głównej  
 **.NET framework:**  
 
 -   .NET framework 3.5 z dodatkiem SP1 (lub nowszy)  
 
--   .NET Framework 4.5.2  
+-   .NET framework 4.5.2 (lub nowszy) 
 
 **Funkcja systemu Windows:**  
 
@@ -447,7 +447,7 @@ Windows Server 2008 i Windows Server 2008 R2 znajdują się teraz w rozszerzonej
 
 **Zestaw Windows ADK:**  
 
--   Przed zainstalowaniem lub uaktualnieniem centralnej lokacji administracyjnej lub lokacji głównej, należy zainstalować wersję zestawu Windows ADK, który wymaga programu Configuration Manager w przypadku instalowania lub uaktualniania do wersji.  Zobacz [zestawu Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) w pomocy technicznej dla systemu Windows 10 jako temat klienta.  
+-   Przed zainstalowaniem lub uaktualnieniem centralnej lokacji administracyjnej lub lokacji głównej, należy zainstalować wersję zestawu Windows ADK, który wymaga programu Configuration Manager w przypadku instalowania lub uaktualniania do wersji.  Zobacz [zestawu Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) w pomocy technicznej dla systemu Windows 10 jako artykuł klienta.  
 
 -   Aby uzyskać więcej informacji na temat tego wymagania, zobacz [wymagania dotyczące infrastruktury dla wdrożenia systemu operacyjnego](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
@@ -457,12 +457,12 @@ Windows Server 2008 i Windows Server 2008 R2 znajdują się teraz w rozszerzonej
 
 -   Centralne Lokacje administracyjne i lokacje główne wymagają x86 i x64 wersje odpowiedniego pliku pakietu redystrybucyjnego.  
 
-###  <a name="bkmk_2008secpreq"></a>Serwer lokacji: lokacji dodatkowej  
+###  <a name="bkmk_2008secpreq"></a> Serwer lokacji: lokacji dodatkowej  
 **.NET framework:**  
 
 -   .NET framework 3.5 z dodatkiem SP1 (lub nowszy)  
 
--   .NET Framework 4.5.2  
+-   .NET framework 4.5.2 (lub nowszy)  
 
 **Pakiet redystrybucyjny Visual C++:**  
 
@@ -476,7 +476,7 @@ Windows Server 2008 i Windows Server 2008 R2 znajdują się teraz w rozszerzonej
 
 -   Upewnij się, że serwer lokacji dodatkowej spełnia wymagania wstępne dotyczące tych ról systemu lokacji.  
 
-###  <a name="bkmk_2008dbpreq"></a>Serwer bazy danych  
+###  <a name="bkmk_2008dbpreq"></a> Serwer bazy danych  
 **Usługa Rejestr zdalny:**  
 
 -   Podczas instalacji lokacji programu Configuration Manager należy włączyć usługę Rejestr zdalny na komputerze, który będzie hostem bazy danych lokacji.  
@@ -489,17 +489,17 @@ Windows Server 2008 i Windows Server 2008 R2 znajdują się teraz w rozszerzonej
 
 -   Jeśli wybierzesz opcję zainstalowania programu SQL Server Express w ramach instalacji lokacji dodatkowej programu Configuration Manager, upewnij się, że komputer spełnia wymagania do uruchomienia programu SQL Server Express.  
 
-###  <a name="bkmk_2008smsprovpreq"></a>Serwer dostawcy programu SMS  
+###  <a name="bkmk_2008smsprovpreq"></a> Serwer dostawcy programu SMS  
 **Zestaw Windows ADK:**  
 
--   Komputer, na którym jest instalowane wystąpienie dostawcy programu SMS musi mieć wymaganą wersję zestawu Windows ADK, który wymaga programu Configuration Manager w przypadku instalowania lub uaktualniania do wersji. Zobacz [zestawu Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) w pomocy technicznej dla systemu Windows 10 jako temat klienta.  
+-   Komputer, na którym jest instalowane wystąpienie dostawcy programu SMS musi mieć wymaganą wersję zestawu Windows ADK, który wymaga programu Configuration Manager w przypadku instalowania lub uaktualniania do wersji. Zobacz [zestawu Windows 10 ADK](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-adk) w pomocy technicznej dla systemu Windows 10 jako artykuł klienta.  
 
 -   Aby uzyskać więcej informacji na temat tego wymagania, zobacz [wymagania dotyczące infrastruktury dla wdrożenia systemu operacyjnego](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment).  
 
-###  <a name="bkmk_2008acwspreq"></a>Punkt witryny sieci Web katalogu aplikacji  
+###  <a name="bkmk_2008acwspreq"></a> Punkt witryny sieci Web katalogu aplikacji  
 **.NET framework:**  
 
--   .NET Framework 4.5.2  
+-   .NET framework 4.5.2 (lub nowszy) 
 
 **Konfiguracja programu IIS:**
 
@@ -525,12 +525,12 @@ Domyślna konfiguracja usług IIS jest wymagany z następującymi dodatkami:
 
     -   Zgodność z metabazą usług IIS 6  
 
-###  <a name="bkmk_2008ACwsitepreq"></a>Punkt usługi sieci web katalogu aplikacji  
+###  <a name="bkmk_2008ACwsitepreq"></a> Punkt usługi sieci web katalogu aplikacji  
 **.NET framework:**  
 
 -   .NET framework 3.5 z dodatkiem SP1 (lub nowszy)  
 
--   .NET Framework 4.5.2  
+-   .NET framework 4.5.2 (lub nowszy) 
 
 **Aktywacja systemu Windows Communication Foundation (WCF):**  
 
@@ -558,15 +558,15 @@ Domyślna konfiguracja usług IIS jest wymagany z następującymi dodatkami:
 
 -   Gdy ta rola systemu lokacji jest kolokowana z inną rolą systemu lokacji, która ma ten sam wymóg, to wymagania dotyczące pamięci dla komputera nie rosną, ale pozostaje na minimalnym poziomie 5%.  
 
-###  <a name="bkmk_2008AIpreq"></a>Punkt synchronizacji analizy zasobów  
+###  <a name="bkmk_2008AIpreq"></a> Punkt synchronizacji analizy zasobów  
 **.NET framework:**  
 
--   .NET Framework 4.5.2  
+-   .NET framework 4.5.2 (lub nowszy) 
 
-###  <a name="bkmk_2008crppreq"></a>Punkt rejestracji certyfikatu  
+###  <a name="bkmk_2008crppreq"></a> Punkt rejestracji certyfikatu  
 **.NET framework:**  
 
--   .NET Framework 4.5.2  
+-   .NET framework 4.5.2 (lub nowszy) 
 
 -   Aktywacja HTTP  
 
@@ -580,7 +580,7 @@ Domyślna konfiguracja usług IIS jest wymagany z następującymi dodatkami:
 
     -   Zgodność z usługą WMI dla usług IIS 6  
 
-###  <a name="bkmk_2008dppreq"></a>Punkt dystrybucji  
+###  <a name="bkmk_2008dppreq"></a> Punkt dystrybucji  
 **Konfiguracja programu IIS:**
 
 Można użyć domyślnej konfiguracji programu IIS lub konfiguracji niestandardowej. Aby użyć niestandardowej konfiguracji programu IIS, należy włączyć następujące opcje dla usług IIS:  
@@ -599,7 +599,7 @@ Można użyć domyślnej konfiguracji programu IIS lub konfiguracji niestandardo
 
     -   Zgodność z usługą WMI dla usług IIS 6  
 
-Użycie niestandardowej konfiguracji programu IIS, należy usunąć opcje, które nie są wymagane, takie jak następujące:  
+Użycie niestandardowej konfiguracji programu IIS, należy usunąć opcje, które nie są wymagane, na przykład następujące elementy:  
 
 -   Wspólne funkcje HTTP:  
 
@@ -633,15 +633,44 @@ Użycie niestandardowej konfiguracji programu IIS, należy usunąć opcje, któr
 > Podczas przesyłania zawartości z punktu dystrybucji, przesyłania przy użyciu **Usługa inteligentnego transferu w tle** (BITS) wbudowane w system operacyjny Windows. Rola punktu dystrybucji nie wymaga opcjonalna funkcja rozszerzenie serwera IIS usługi BITS do zainstalowania, ponieważ klient nie przekazuje informacje do niego.   
 
 
-###  <a name="bkmk_2008EPPpreq"></a>Punkt programu Endpoint Protection  
+###  <a name="bkmk_2008EPPpreq"></a> Punkt programu Endpoint Protection  
 **.NET framework:**  
 
 -   .NET framework 3.5 z dodatkiem SP1 (lub nowszy)  
 
-###  <a name="bkmk_2008Enrollpreq"></a>Punkt rejestracji  
+###  <a name="bkmk_2008Enrollpreq"></a> Punkt rejestracji  
 **.NET framework:**  
 
--   .NET Framework 4.5.2  
+-   .NET framework 4.5.2 (lub nowszy) 
+
+     Podczas instalowania tej roli systemu lokacji, jeśli serwer nie ma obsługiwanej wersji programu .NET Framework zainstalowana, programu Configuration Manager automatycznie instaluje program .NET Framework 4.5.2. Ta instalacja może spowodować przełączenie serwera do ponownego uruchomienia komputera w stanie oczekiwania. Jeśli trwa oczekiwanie na ponowne uruchomienie komputera dla programu .NET Framework aplikacje .NET może się nie powieść dopiero po ponownym uruchomieniu serwera i zakończeniu instalacji.  
+
+**Aktywacja systemu Windows Communication Foundation (WCF):**  
+
+-   Aktywacja HTTP  
+
+-   Aktywacja bez HTTP  
+
+**Konfiguracja programu IIS:**
+
+Domyślna konfiguracja usług IIS jest wymagany z następującymi dodatkami:  
+
+-   Projektowanie aplikacji:  
+
+    -   ASP.NET (wraz z automatycznie wybranymi opcjami)  
+
+         W niektórych scenariuszach, na przykład w przypadku usług IIS jest zainstalowana lub ponownie skonfigurować po zainstalowaniu programu .NET Framework 4.5.2 Musisz jawnie włączyć platformę ASP.NET w wersji 4.5. Na przykład na komputerze 64-bitowym systemem .NET Framework w wersji 4.0.30319 uruchom następujące polecenie: **%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -i-Włącz**  
+
+**Pamięć komputera:**  
+
+-   Komputer obsługujący tę rolę systemu lokacji musi mieć co najmniej 5% komputera wolnej pamięci, aby włączyć rolę systemu lokacji do przetwarzania żądań.  
+
+-   Gdy ta rola systemu lokacji jest kolokowana z inną rolą systemu lokacji, która ma ten sam wymóg, to wymagania dotyczące pamięci dla komputera nie rosną, ale pozostaje na minimalnym poziomie 5%.  
+
+###  <a name="bkmk_2008EnrollProxpreq"></a> Punkt proxy rejestracji  
+**.NET framework:**  
+
+-   .NET framework 4.5.2 (lub nowszy) 
 
      Podczas instalowania tej roli systemu lokacji, jeśli serwer nie ma obsługiwanej wersji programu .NET Framework zainstalowana, programu Configuration Manager automatycznie instaluje program .NET Framework 4.5.2. Ta instalacja może spowodować przełączenie serwera do ponownego uruchomienia komputera w stanie oczekiwania. Gdy oczekuje na ponowny rozruch dla programu .NET Framework aplikacje .NET może się nie powieść dopiero po ponownym uruchomieniu serwera i zakończeniu instalacji.  
 
@@ -667,36 +696,7 @@ Domyślna konfiguracja usług IIS jest wymagany z następującymi dodatkami:
 
 -   Gdy ta rola systemu lokacji jest kolokowana z inną rolą systemu lokacji, która ma ten sam wymóg, to wymagania dotyczące pamięci dla komputera nie rosną, ale pozostaje na minimalnym poziomie 5%.  
 
-###  <a name="bkmk_2008EnrollProxpreq"></a>Punkt proxy rejestracji  
-**.NET framework:**  
-
--   .NET Framework 4.5.2  
-
-     Podczas instalowania tej roli systemu lokacji, jeśli serwer nie ma obsługiwanej wersji programu .NET Framework zainstalowana, programu Configuration Manager automatycznie instaluje program .NET Framework 4.5.2. Ta instalacja może spowodować przełączenie serwera do ponownego uruchomienia komputera w stanie oczekiwania. Gdy oczekuje na ponowny rozruch dla programu .NET Framework aplikacje .NET może się nie powieść dopiero po ponownym uruchomieniu serwera i zakończeniu instalacji.  
-
-**Aktywacja systemu Windows Communication Foundation (WCF):**  
-
--   Aktywacja HTTP  
-
--   Aktywacja bez HTTP  
-
-**Konfiguracja programu IIS:**
-
-Domyślna konfiguracja usług IIS jest wymagany z następującymi dodatkami:  
-
--   Projektowanie aplikacji:  
-
-    -   ASP.NET (wraz z automatycznie wybranymi opcjami)  
-
-         W niektórych scenariuszach, na przykład w przypadku usług IIS jest zainstalowana lub ponownie skonfigurować po zainstalowaniu programu .NET Framework 4.5.2 Musisz jawnie włączyć platformę ASP.NET w wersji 4.5. Na przykład na komputerze 64-bitowym systemem .NET Framework w wersji 4.0.30319 uruchom następujące polecenie: **%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -i-Włącz**  
-
-**Pamięć komputera:**  
-
--   Komputer obsługujący tę rolę systemu lokacji musi mieć co najmniej 5% komputera wolnej pamięci, aby włączyć rolę systemu lokacji do przetwarzania żądań.  
-
--   Gdy ta rola systemu lokacji jest kolokowana z inną rolą systemu lokacji, która ma ten sam wymóg, to wymagania dotyczące pamięci dla komputera nie rosną, ale pozostaje na minimalnym poziomie 5%.  
-
-###  <a name="bkmk_2008FSPpreq"></a>Rezerwowy punkt stanu  
+###  <a name="bkmk_2008FSPpreq"></a> Rezerwowy punkt stanu  
 **Konfiguracja programu IIS:**
 
 Domyślna konfiguracja usług IIS jest wymagany z następującymi dodatkami:  
@@ -705,10 +705,10 @@ Domyślna konfiguracja usług IIS jest wymagany z następującymi dodatkami:
 
     -   Zgodność z metabazą usług IIS 6  
 
-###  <a name="bkmk_2008MPpreq"></a>Punkt zarządzania  
+###  <a name="bkmk_2008MPpreq"></a> Punkt zarządzania  
 **.NET framework:**  
 
--   .NET Framework 4.5.2  
+-   .NET framework 4.5.2 (lub nowszy)
 
 **Konfiguracja programu IIS:**
 
@@ -734,7 +734,7 @@ Aby użyć niestandardowej konfiguracji programu IIS, należy włączyć następ
     -   Zgodność z usługą WMI dla usług IIS 6  
 
 
-Użycie niestandardowej konfiguracji programu IIS, należy usunąć opcje, które nie są wymagane, takie jak następujące:  
+Użycie niestandardowej konfiguracji programu IIS, należy usunąć opcje, które nie są wymagane, na przykład następujące opcje:  
 
 -   Wspólne funkcje HTTP:  
 
@@ -746,25 +746,25 @@ Użycie niestandardowej konfiguracji programu IIS, należy usunąć opcje, któr
 
 -   BITY rozszerzenia serwera (i automatycznie wybieranych opcji), lub usługi inteligentnego transferu w tle (BITS) (wraz z automatycznie wybranymi opcjami)  
 
-###  <a name="bkmk_2008RSpoint"></a>Punkt usług raportowania  
+###  <a name="bkmk_2008RSpoint"></a> Punkt usług raportowania  
 **.NET framework:**  
 
--   .NET Framework 4.5.2  
+-   .NET framework 4.5.2 (lub nowszy)  
 
 **Usługi Usługi SQL Server Reporting Services:**  
 
--   Należy zainstalować i skonfigurować co najmniej jedno wystąpienie programu SQL Server do obsługi programu SQL Server Reporting Services, zanim punkt instalacji raportowania usług.  
+-   Zainstaluj i skonfiguruj co najmniej jedno wystąpienie programu SQL Server do obsługi programu SQL Server Reporting Services, zanim punkt instalacji raportowania usług.  
 
 -   Wystąpienie, używanego programu SQL Server Reporting Services może być tego samego wystąpienia używanego w bazie danych lokacji.  
 
 -   Ponadto wystąpienie, którego używasz może współużytkowane z innymi produktami System Center, tak długo, jak innymi produktami System Center nie mają ograniczeń dotyczących udostępniania wystąpienia programu SQL Server.  
 
-###  <a name="bkmk_2008SCPpreq"></a>Punkt połączenia usługi  
+###  <a name="bkmk_2008SCPpreq"></a> Punkt połączenia usługi  
 **.NET framework:**  
 
--   .NET Framework 4.5.2  
+-   .NET framework 4.5.2 (lub nowszy) 
 
-     Podczas instalowania tej roli systemu lokacji, jeśli serwer nie ma obsługiwanej wersji programu .NET Framework zainstalowana, programu Configuration Manager automatycznie instaluje program .NET Framework 4.5.2. Ta instalacja może spowodować przełączenie serwera do ponownego uruchomienia komputera w stanie oczekiwania. Gdy oczekuje na ponowny rozruch dla programu .NET Framework aplikacje .NET może się nie powieść dopiero po ponownym uruchomieniu serwera i zakończeniu instalacji.  
+     Podczas instalowania tej roli systemu lokacji, jeśli serwer nie ma obsługiwanej wersji programu .NET Framework zainstalowana, programu Configuration Manager automatycznie instaluje program .NET Framework 4.5.2. Ta instalacja może spowodować przełączenie serwera do ponownego uruchomienia komputera w stanie oczekiwania. Jeśli trwa oczekiwanie na ponowne uruchomienie komputera dla programu .NET Framework aplikacje .NET może się nie powieść dopiero po ponownym uruchomieniu serwera i zakończeniu instalacji.  
 
 **Pakiet redystrybucyjny Visual C++:**  
 
@@ -772,12 +772,12 @@ Użycie niestandardowej konfiguracji programu IIS, należy usunąć opcje, któr
 
 -   Rola systemu lokacji wymaga x64 wersji.  
 
-###  <a name="bkmk_2008SUPpreq"></a>Punkt aktualizacji oprogramowania  
+###  <a name="bkmk_2008SUPpreq"></a> Punkt aktualizacji oprogramowania  
 **.NET framework:**  
 
 -   .NET framework 3.5 z dodatkiem SP1 (lub nowszy)  
 
--   .NET Framework 4.5.2  
+-   .NET framework 4.5.2 (lub nowszy) 
 
 **Konfiguracja programu IIS:**
 
@@ -789,7 +789,7 @@ Domyślna konfiguracja usług IIS jest wymagany.
 
 -   Aby uzyskać więcej informacji, zobacz [Planowanie aktualizacji oprogramowania w programie System Center Configuration Manager](../../../sum/plan-design/plan-for-software-updates.md).
 
-###  <a name="bkmk_2008SMPpreq"></a>Punkt migracji stanu  
+###  <a name="bkmk_2008SMPpreq"></a> Punkt migracji stanu  
 **Konfiguracja programu IIS:**
 
 Domyślna konfiguracja usług IIS jest wymagany.  
