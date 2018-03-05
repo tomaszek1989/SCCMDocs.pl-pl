@@ -3,7 +3,7 @@ title: "What's new in hybrydowego zarządzania urządzeniami Przenośnymi"
 titleSuffix: Configuration Manager
 description: "Poznaj nowe funkcje zarządzania urządzeniami przenośnymi dostępne dla hybrydowych wdrożeń z programu Configuration Manager i usługi Intune."
 ms.custom: na
-ms.date: 02/21/2018
+ms.date: 03/01/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,13 +15,13 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 47bed8655772d0371ce53c1609956a6ed60eb89c
-ms.sourcegitcommit: 45ff3ffa040eada5656b17f47dcabd3c637bdb60
+ms.openlocfilehash: 3b48c5296caecd66b5abb6d40578af2009ef0f11
+ms.sourcegitcommit: 6e4fca19083b5dbdcd841012f6e1051bb7c00eb8
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/05/2018
 ---
-# <a name="whats-new-in-hybrid-mobile-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>What's new in hybrydowego zarządzania urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Microsoft Intune
+# <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>What's new in hybrydowego zarządzania urządzeniami przenośnymi za pomocą programu Configuration Manager i Microsoft Intune
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
@@ -42,6 +42,15 @@ Każda sekcja w tym artykule wymieniono funkcje hybrydowych w trzech różnych k
 |**Nowość w programie Configuration Manager Technical Preview**| Wszystkie funkcje wymienione w tej kategorii są prawidłowe tylko w określonej wersji Technical Preview. Aby wypróbować te funkcje, należy zainstalować wersję Technical Preview określony w opisie funkcji. Aby uzyskać więcej informacji, zobacz [Technical Preview programu System Center Configuration Manager](../../core/get-started/technical-preview.md).|
 |**Nowe w programie Configuration Manager (wersji current branch)**| Wszystkie funkcje wymienione w tej kategorii pracować tylko z określonej wersji programu Configuration Manager (wersji current branch), np. w wersji 1511 lub 1602. Jeśli używasz starszej wersji programu Configuration Manager dla danego wdrożenia hybrydowego, należy uaktualnić do wersji Configuration Manager (wersji current branch) określona w opisie funkcji. Aby uzyskać więcej informacji, zobacz [uaktualnienia do programu System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|
 
+
+
+## <a name="february-2018"></a>2018 lutego
+
+### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune
+
+- **System macOS Portal firmy obsługę rejestracji, które używają Menedżera rejestracji urządzeń**  
+    Użytkownicy mogą teraz używać Menedżera rejestracji urządzeń podczas rejestrowania z macOS portalu firmy.
+    <!-- 1352411 -->
 
 
 ## <a name="january-2018"></a>2018 stycznia
