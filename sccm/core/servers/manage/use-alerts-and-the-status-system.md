@@ -24,7 +24,7 @@ ms.lasthandoff: 02/20/2018
 ---
 # <a name="use-alerts-and-the-status-system-for-system-center-configuration-manager"></a>Korzystanie z alertów i systemu stanu w programie System Center Configuration Manager
 
-Dotyczy: Program System Center Configuration Manager (Current Branch)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 Skonfiguruj alerty oraz Użyj wbudowanego systemu stanu, aby uzyskiwać aktualne informacje o stanie wdrożenia programu System Center Configuration Manager.  
 
