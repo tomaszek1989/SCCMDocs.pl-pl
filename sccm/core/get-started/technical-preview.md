@@ -16,11 +16,11 @@ caps.latest.revision:
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 4f16216bd1bbb662cc8d532664ccd593f94d3898
-ms.sourcegitcommit: e15516983883a4dd002c4bdd114147b04b811021
+ms.openlocfilehash: 1cb4d775985839ea7c4fb1b48a04ab0be64f5d8c
+ms.sourcegitcommit: 32bbc006a41868a6d9a708db5f7b372d9c71d985
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="technical-preview-for-system-center-configuration-manager"></a>Wersja zapoznawcza Technical Preview programu System Center Configuration Manager
 
@@ -131,7 +131,7 @@ Poniżej przedstawiono możliwości oferowane przez najnowszej wersji programu C
 - [Zatwierdzanie żądań aplikacji dla użytkowników na urządzenie](capabilities-in-technical-preview-1802.md#approve-application-requests-for-users-per-device) <!-- 1357015 --> 
 - [Przeglądanie i instalowanie aplikacji dostępne dla użytkowników na urządzeniach przyłączonych do usługi AD platformy Azure przy użyciu programu Software Center](capabilities-in-technical-preview-1802.md#use-software-center-to-browse-and-install-user-available-applications-on-azure-ad-joined-devices) <!-- 1322613 --> 
 - [Raport dotyczący informacji o urządzeniu AutoPilot systemu Windows](capabilities-in-technical-preview-1802.md#report-on-windows-autopilot-device-information) <!-- 1351442 --> 
-- [Ochrona wykorzystać ulepszenia zasad programu Configuration Manager urządzenia systemu Windows](capabilities-in-technical-preview-1802.md#improvements-to-configuration-manager-policies-for-windows-device-exploit-guard) <!-- 1356220 -->
+- [Ulepszenia zasad programu Configuration Manager dla usługi Windows Defender wykorzystać zabezpieczenia](capabilities-in-technical-preview-1802.md#improvements-to-configuration-manager-policies-for-windows-defender-exploit-guard) <!-- 1356220 -->
 - [Zasady przeglądarki Microsoft Edge](capabilities-in-technical-preview-1802.md#microsoft-edge-browser-policies) <!-- 1357310 -->
 - [Raport dotyczący liczby przeglądarka domyślna](capabilities-in-technical-preview-1802.md#report-for-default-browser-counts) <!-- 1357830 --> 
 - [Obsługa urządzeń z systemem Windows 10 ARM64](capabilities-in-technical-preview-1802.md#support-for-windows-10-arm64-devices) <!-- 1353704 --> 
@@ -156,7 +156,7 @@ Then remove the bottom of this list and/or move individual items not in CB to th
  |Ulepszenia dotyczące spisu sprzętu <!-- 1357389 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#improvements-to-hardware-inventory)  |![Nie dodano](media/Red_X.gif)    |
  |Udoskonalenia ustawień klienta w programie Software Center <!-- 1355146 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#improvements-to-client-settings-for-software-center)  |![Nie dodano](media/Red_X.gif)    |
  |Nowe ustawienia dla systemu Windows Defender aplikacji Guard <!-- 1356256 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#new-settings-for-windows-defender-application-guard)  |![Nie dodano](media/Red_X.gif)    |
- |<!-- 1236459 -->Ulepszenia na uruchamianie skryptów  | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#improvements-to-run-scripts)  |![Nie dodano](media/Red_X.gif)    |
+ |Ulepszenia na uruchamianie skryptów <!-- 1236459 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#improvements-to-run-scripts)  |![Nie dodano](media/Red_X.gif)    |
  |Nie uaktualniaj automatycznie zastąpionej aplikacji <!-- 1351266 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#do-not-automatically-upgrade-superseded-applications)  |![Nie dodano](media/Red_X.gif)    | 
  |Zainstaluj wiele aplikacji w programie Software Center <!-- 1357126 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#install-multiple-applications-in-software-center)  |![Nie dodano](media/Red_X.gif)    |
  |Usługa klienta środowiska PXE <!-- 1357148 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#client-based-pxe-responder-service)  |![Nie dodano](media/Red_X.gif)    |
