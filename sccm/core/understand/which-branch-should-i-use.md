@@ -3,23 +3,24 @@ title: "Która gałąź należy używać"
 titleSuffix: Configuration Manager
 description: "Dowiedz się różnic między dostępne gałęzi programu System Center Configuration Manager."
 ms.custom: na
-ms.date: 05/02/2017
+ms.date: 03/08/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a3be4f8f-3d44-4e3c-9fa1-e85f30a36e72
-caps.latest.revision: "0"
+caps.latest.revision: 
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 9985ff5db4357b6b18de1ef58de40bc631d6cc6b
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: d762cf5e6932e17d8dfb0dd6c442c452028b5228
+ms.sourcegitcommit: b653342fb5d69a16e71b3548a7e9a2e47e54bf88
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="which-branch-of-configuration-manager-should-i-use"></a>Które gałęzi programu Configuration Manager należy użyć?
 
@@ -77,7 +78,7 @@ LTSB jest oparty na wersji 1606. Tej gałęzi nie otrzymywać aktualizacje w kon
 Aby zainstalować LTSB jako nową lokację lub uaktualnienie z obsługiwanej lokacji programu Configuration Manager 2012, należy użyć wersji 1606 [nośnika linii bazowej](/sccm/core/servers/manage/updates#baseline-and-update-versions) występujący jako dysk DVD z programu System Center 2016 lub wersji System Center Configuration Manager (Current Branch i długoterminowe obsługi gałęzi 1606). Nośnika linii bazowej można użyć do zainstalowania nowej lokacji, na którym działa wersja 1606 bieżącej gałęzi lub nowej lokacji z uruchomionym programem gałęzi obsługi długoterminowe.
 
 > [!TIP]  
-> Aby dowiedzieć się więcej na temat programu System Center 2016, zobacz [dokumentacji programu System Center 2016](https://technet.microsoft.com/system-center-docs/system-center). Ta dokumentacja identyfikuje również jak uzyskać programu System Center 2016, co wymaga umowy licencyjnej firmy Microsoft lub podobne prawa.
+> Aby dowiedzieć się więcej na temat programu System Center 2016, zobacz [dokumentacji programu System Center 2016](https://docs.microsoft.com/system-center/index). Ta dokumentacja identyfikuje również jak uzyskać programu System Center 2016, co wymaga umowy licencyjnej firmy Microsoft lub podobne prawa.
 
 > Aby znaleźć System Center Configuration Manager w wersji 1606 w wolumin licencjonowania Service Center (VLSC), przejdź do **pliki do pobrania i klucze** karcie [VLSC](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx), wyszukaj "system center konfiguracji", a następnie wybierz **System Center Config Mgr (bieżącej gałęzi i LTSB)**.
 
@@ -90,7 +91,7 @@ Aby zainstalować LTSB jako nową lokację lub uaktualnienie z obsługiwanej lok
 
 **Ograniczenia**  
 LTSB jest oparty na wersji Current Branch 1606 i ma następujące ograniczenia:
-- LTSB nie jest obsługiwane 10 lat krytyczne aktualizacje zabezpieczeń po jej udostępnieniu wersji ogólnodostępnej (października 2016), po których, pomocy technicznej dla tej gałęzi wygaśnie. Aby uzyskać więcej informacji na temat cyklu pomocy technicznej, zobacz [Microsoft Lifecycle Policy](https://support.microsoft.com/en-us/lifecycle).
+- LTSB nie jest obsługiwane 10 lat krytyczne aktualizacje zabezpieczeń po jej udostępnieniu wersji ogólnodostępnej (października 2016), po których, pomocy technicznej dla tej gałęzi wygaśnie. Aby uzyskać więcej informacji na temat cyklu pomocy technicznej, zobacz [Microsoft Lifecycle Policy](https://support.microsoft.com/lifecycle).
 - Obsługuje ograniczony zestaw listę systemów operacyjnych serwera i klienta i powiązanych technologii, takich jak wersji programu SQL Server. Aby uzyskać więcej informacji o to, co jest obsługiwane w tej gałęzi, zobacz [obsługiwane konfiguracje dla gałęzi obsługi długoterminowe](supported-configurations-for-ltsb.md).
 - Nie otrzymywać aktualizacje dla nowych funkcji.
 - Nie obsługuje dodawania subskrypcji usługi Microsoft Intune, co uniemożliwia używanie:

@@ -2,18 +2,19 @@
 title: "Planowanie brama zarządzania w chmurze"
 titleSuffix: Configuration Manager
 description: 
-ms.date: 10/06/2017
+ms.date: 03/08/2018
 ms.prod: configuration-manager
-ms.technology: configmgr-client
+ms.technology:
+- configmgr-client
 ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: b1063826841c37973e26954e164d867649c3fb9f
-ms.sourcegitcommit: c4a1bafcd004638d264a93d307c70d8b6f7fe023
+ms.openlocfilehash: 051d3fcba379aec83ea7c4dc1e407b3d3e774e12
+ms.sourcegitcommit: b653342fb5d69a16e71b3548a7e9a2e47e54bf88
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Planowanie brama zarządzania chmury w programie Configuration Manager
 
@@ -30,7 +31,7 @@ Certyfikaty klienta i certyfikatów Secure Socket Layer (SSL) są wymagane do uw
 
 ## <a name="requirements-for-cloud-management-gateway"></a>Wymagania dotyczące bramy zarządzania w chmurze
 
--   Komputery klienckie i serwerze systemu lokacji uruchomione punkt łącznika chmury zarządzania bramy.
+-    System lokacji łącznikiem na chmurze Zarządzanie bramy dla klientów internetowych do użycia.
 
 -   Niestandardowe certyfikaty SSL z wewnętrznego urzędu certyfikacji — używany do szyfrowania komunikacji z komputerami klienckimi i uwierzytelniania tożsamości usługi bramy zarządzania w chmurze.
 
@@ -55,7 +56,7 @@ Certyfikaty klienta i certyfikatów Secure Socket Layer (SSL) są wymagane do uw
     -   Witryny sieci Web raportowania
     -   Wake on LAN
     -   Mac, Linux i UNIX
-    -   Usługa Azure Resource Manager
+    -   Azure Resource Manager
     -   Równorzędna pamięć podręczna
     -   Lokalne zarządzanie urządzeniami przenośnymi
 
@@ -175,7 +176,7 @@ Wszystkie opublikowane zewnętrzne adresy URL są przekazywane do CMG automatycz
 |-|-|-|-|
 |Przepływ danych|Serwer|Porty serwera|Klient|
 |CMG wdrożenia|Azure|443|Punkt połączenia usługi programu Configuration Manager|
-|Tworzenie kanału CMG|CMG|Wystąpienie maszyny Wirtualnej: 1 port: 443<br>Wystąpienie maszyny Wirtualnej: N (N > = 2 lub N < = 16) porty: 10124 ~ N 10140 ~ N|Punkt połączenia CMG|
+|Tworzenie kanału CMG|CMG|Wystąpienie maszyny Wirtualnej: 1 port: 443<br>Wystąpienie maszyny Wirtualnej: N (N > = 2 lub N < = 16) porty: 10124~N 10140~N|Punkt połączenia CMG|
 |Klientowi CMG|CMG|443|Klient|
 |Łącznik CMG do roli lokacji (obecnie punktów zarządzania i punkty aktualizacji oprogramowania)|Rola lokacji|Protokół/porty skonfigurowane w roli lokacji|Punkt połączenia CMG|
 

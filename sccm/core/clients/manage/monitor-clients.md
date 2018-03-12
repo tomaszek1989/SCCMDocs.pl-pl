@@ -7,19 +7,20 @@ ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-client
+ms.technology:
+- configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2c8f57cf-1968-48de-87fb-4897432ed6e0
-caps.latest.revision: "23"
+caps.latest.revision: 
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: 1abd791817af5b59e850cec4d529f57d9e541674
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 2df5127f3eb5049d1a4277fd25ce04c6de05999d
+ms.sourcegitcommit: b653342fb5d69a16e71b3548a7e9a2e47e54bf88
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="how-to-monitor-clients-in-system-center-configuration-manager"></a>Jak monitorować klientów w programie System Center Configuration Manager
 
@@ -31,7 +32,7 @@ ms.lasthandoff: 10/12/2017
 ##  <a name="bkmk_about"></a> Informacje o stanie klienta  
  Configuration Manager udostępnia następujące rodzaje informacji o stanie klienta:  
 
--   **Stan online klienta** — począwszy od wersji 1602 programu Configuration Manager, ten stan wskazuje, czy komputer jest włączony. Komputer jest traktowany jako będący w trybie online, jeśli jest połączony z przypisanym do niego punktem zarządzania.  Aby wskazać, że klient jest w trybie online, wysyła komunikaty typu ping do punktu zarządzania. Jeśli punkt zarządzania nie odbierze komunikatu w ciągu mniej więcej 5 minut, klient jest traktowany jako będący w trybie offline.  
+-   **Stan online klienta** — począwszy od wersji 1602 programu Configuration Manager, ten stan wskazuje, czy komputer jest włączony. Komputer jest uznawany za online, jeśli jest ona połączona z przypisanym punkcie zarządzania.  Aby wskazać, że klient jest w trybie online, wysyła komunikaty typu ping do punktu zarządzania. Jeśli punkt zarządzania nie odbierze komunikatu w ciągu mniej więcej 5 minut, klient jest traktowany jako będący w trybie offline.  
 
 -   **Aktywność klienta** — ten stan wskazuje, czy klient aktywnie korzystał z programu Configuration Manager w ciągu ostatnich 7 dni. Jeśli klient nie zażądał aktualizacji zasad, nie wysłał komunikatu z sygnałem pulsu ani nie wysłał informacji spisu sprzętu w ciągu 7 dni, jest traktowany jako nieaktywny.  
 
