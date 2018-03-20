@@ -7,26 +7,27 @@ ms.date: 04/23/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-client
+ms.technology:
+- configmgr-client
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 038e61f9-f49d-41d1-9a9f-87bec9e00d5d
-caps.latest.revision: "7"
-caps.handback.revision: "0"
+caps.latest.revision: 
+caps.handback.revision: 
 author: arob98
 ms.author: angrobe
 manager: angrobe
 ms.openlocfilehash: c4f3d8a9b043707340e56d3ae483ad66ca17dc10
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.sourcegitcommit: 52080ef1b0f9a27c123711ef274ac3ffe070e8e0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="planning-for-client-deployment-to-windows-embedded-devices-in-system-center-configuration-manager"></a>Planowanie wdrożenia klientów na urządzeniach Windows Embedded w programie System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-<a name="BKMK_DeployClientEmbedded"></a>Jeśli urządzenie Windows Embedded nie zawiera klienta programu System Center Configuration Manager, można użyć dowolnej metody instalacji klienta, jeśli urządzenie spełnia wymagane zależności. Jeśli urządzenie osadzone obsługuje filtry zapisu, przed zainstalowaniem klienta konieczne jest ich wyłączenie, a następnie ponowne ich włączenie po zainstalowaniu klienta i przypisaniu go do lokacji.  
+<a name="BKMK_DeployClientEmbedded"></a> Jeśli urządzenie Windows Embedded nie zawiera klienta programu System Center Configuration Manager, można użyć dowolnej metody instalacji klienta, jeśli urządzenie spełnia wymagane zależności. Jeśli urządzenie osadzone obsługuje filtry zapisu, przed zainstalowaniem klienta konieczne jest ich wyłączenie, a następnie ponowne ich włączenie po zainstalowaniu klienta i przypisaniu go do lokacji.  
 
  Pamiętaj, że po wyłączeniu filtrów nie należy wyłączać sterowników filtrów. Zwykle te sterowniki są uruchamiane automatycznie podczas uruchamiania komputera. Wyłączenie tych sterowników zapobiegnie instalacji klienta albo zakłóci aranżację filtru zapisu, powodując niepowodzenie działania klienta. Oto usługi skojarzone z każdym typem filtru zapisu, który nie może zostać wyłączony:  
 

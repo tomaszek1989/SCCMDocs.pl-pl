@@ -5,21 +5,22 @@ description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej
 ms.custom: na
 ms.date: 03/24/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2e801f8c-d331-41ee-8f27-908448fc0951
-caps.latest.revision: "5"
+caps.latest.revision: 
 author: erikje
 ms.author: erikje
 manager: angrobe
 ms.openlocfilehash: a44d6a0c9b02a529fe8776033e58e971af37e332
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.sourcegitcommit: 52080ef1b0f9a27c123711ef274ac3ffe070e8e0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="capabilities-in-technical-preview-1703-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1703 programu System Center Configuration Manager
 
@@ -56,7 +57,7 @@ Teraz możesz zapewnić użytkownikom końcowym bezpośredniego łącza do aplik
 
 Użyj następującego formatu adresu URL, aby otworzyć Centrum oprogramowania do konkretnej aplikacji:
 
-**Softwarecenter:SoftwareId =*identyfikator aplikacji***
+**Softwarecenter:SoftwareId=*Application Identifier***
 
 ### <a name="how-to-get-the-application-identifier-of-an-application"></a>Jak uzyskać identyfikator aplikacji dla aplikacji.
 
@@ -65,7 +66,7 @@ Użyj następującego formatu adresu URL, aby otworzyć Centrum oprogramowania d
 3.  W **aplikacji** wyświetlić, kliknij prawym przyciskiem myszy jeden z nagłówków kolumn, a następnie, na liście, wybierz **Unikatowy identyfikator elementu konfiguracji**. Zobaczysz, że Unikatowy identyfikator każdego aplikacji jest teraz wyświetlane na liście.
 4.  Uwaga **Unikatowy identyfikator elementu konfiguracji** z aplikacji, którą chcesz udostępnić łącze do, na przykład: **ScopeId_1672B0CD-912A-4613-9BAB-D4EF2696D416/Application_970b1fef-1f38-405c-ad37-c753400b895f/2**
 5.  Następnie usunąć wszelkie tekst, w tym przypadku następujący identyfikator GUID, aplikacji **/2**. Pozostawia identyfikator aplikacji.
-6.  Na koniec na zakończenie tworzenia łącza, należy poprzedzić go z **Softwarecenter:SoftwareID =**. W powyższym przykładzie odczyta końcowe łącza: **Softwarecenter:SoftwareId = ScopeId_1672B0CD-912A-4613-9BAB-D4EF2696D416/Application_970b1fef-1f38-405c-ad37-c753400b895f**.
+6.  Na koniec na zakończenie tworzenia łącza, należy poprzedzić go z **Softwarecenter:SoftwareID =**. W powyższym przykładzie odczyta końcowe łącza: **Softwarecenter:SoftwareId= ScopeId_1672B0CD-912A-4613-9BAB-D4EF2696D416/Application_970b1fef-1f38-405c-ad37-c753400b895f**.
 
 Za pomocą tego łącza, użytkownicy końcowi mogą otworzyć programu Software Center bezpośrednio do wskazanej aplikacji.
 

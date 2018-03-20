@@ -7,19 +7,20 @@ ms.date: 12/23/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-app
+ms.technology:
+- configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 08f711ba-83bf-4b5f-9520-a0778c6ae7eb
-caps.latest.revision: "18"
+caps.latest.revision: 
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
 ms.openlocfilehash: a8a66169f3c187f8fa0319548ddde23b399811f3
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.sourcegitcommit: 52080ef1b0f9a27c123711ef274ac3ffe070e8e0
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="introduction-to-application-management-in-system-center-configuration-manager"></a>Wprowadzenie do zarządzania aplikacjami w programie System Center Configuration Manager
 
@@ -59,7 +60,7 @@ W tym temacie omówiono podstawowe zagadnienia, które należy wiedzieć przed r
 - Microsoft Application Virtualization 4
 - Microsoft Application Virtualization 5
 - Plik cabinet systemu Windows Mobile
-- System macOS  
+- macOS  
 
 
 Ponadto podczas zarządzania urządzeniami za pomocą programu Microsoft Intune lub programu Configuration Manager zarządzanie urządzeniami lokalnymi, można zarządzać te dodatkowe typy aplikacji:
