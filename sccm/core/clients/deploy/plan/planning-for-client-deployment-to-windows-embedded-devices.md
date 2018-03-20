@@ -65,7 +65,7 @@ ms.lasthandoff: 03/20/2018
 >
 > **Urządzenia używające tylko plikach:** Skonfiguruj następujące wyjątki, aby zachować stan klienta i dane spisu między ponownymi uruchomieniami urządzeń:  
 >   
->  -   CCMINSTALLDIR\\*.sdf  
+>  -   CCMINSTALLDIR\\\*.sdf  
 > -   CCMINSTALLDIR\ServiceData  
 > -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\CCM\StateSystem  
 >   
