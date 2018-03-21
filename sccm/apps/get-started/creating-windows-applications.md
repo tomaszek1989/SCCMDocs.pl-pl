@@ -33,8 +33,8 @@ Oprócz innych wymagań programu System Center Configuration Manager i procedury
 
 |Typ urządzenia|Obsługiwane typy plików|  
 |-----------------|---------------------|  
-|Windows RT i Windows RT 8.1|*.appx, \*.appxbundle|  
-|Windows 8.1 lub nowszy zarejestrowany jako urządzenie przenośne|*.appx, \*.appxbundle|  
+|Windows RT i Windows RT 8.1|\*.appx, \*.appxbundle|  
+|Windows 8.1 lub nowszy zarejestrowany jako urządzenie przenośne|\*.appx, \*.appxbundle|  
 
  Obsługiwane są następujące akcje wdrażania:  
 

@@ -55,7 +55,7 @@ W tym temacie omówiono podstawowe zagadnienia, które należy wiedzieć przed r
  Menedżer konfiguracji umożliwia wdrażanie następujących typów aplikacji:  
 
 - Instalator Windows (plik *.msi)
-- Pakiet aplikacji systemu Windows (*.appx, *.appxbundle)
+- Pakiet aplikacji systemu Windows (\*.appx, \*.appxbundle)
 - Pakiet aplikacji systemu Windows (w Sklepie Windows)
 - Microsoft Application Virtualization 4
 - Microsoft Application Virtualization 5
