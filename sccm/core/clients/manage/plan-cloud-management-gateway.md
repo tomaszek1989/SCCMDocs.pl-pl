@@ -1,7 +1,7 @@
 ---
-title: "Planowanie brama zarządzania w chmurze"
+title: Planowanie brama zarządzania w chmurze
 titleSuffix: Configuration Manager
-description: 
+description: ''
 ms.date: 03/08/2018
 ms.prod: configuration-manager
 ms.technology:
@@ -11,10 +11,10 @@ author: arob98
 ms.author: angrobe
 manager: angrobe
 ms.openlocfilehash: 051d3fcba379aec83ea7c4dc1e407b3d3e774e12
-ms.sourcegitcommit: b653342fb5d69a16e71b3548a7e9a2e47e54bf88
+ms.sourcegitcommit: d03e4dee92a31dd214c528e895379f6013b7de82
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Planowanie brama zarządzania chmury w programie Configuration Manager
 
@@ -164,7 +164,7 @@ Wewnętrzny adres URL jest punkt połączenia CMG używany do przekazywania żą
 #### <a name="example"></a>Przykład:
 Po włączeniu CMG ruchu w punkcie zarządzania programu Configuration Manager tworzy zbiór mapowania adresów URL wewnętrznie dla każdego serwera punktu zarządzania, takich jak ccm_system, ccm_incoming i sms_mp.
 Zewnętrzny adres URL punktu końcowego ccm_system punkt zarządzania może wyglądać **https://<CMG service name>/CCM_Proxy_MutualAuth/<MP Role ID>/CCM_System**.
-Adres URL jest unikatowy dla każdego punktu zarządzania. Klient programu Configuration Manager, a następnie naraża CMG włączone nazwa pakietu administracyjnego, takich jak  **<CMG service name>/CCM_Proxy_MutualAuth/<MP Role ID>**  do listy punktów zarządzania internetowego.
+Adres URL jest unikatowy dla każdego punktu zarządzania. Klient programu Configuration Manager, a następnie naraża CMG włączone nazwa pakietu administracyjnego, takich jak **<CMG service name>/CCM_Proxy_MutualAuth/<MP Role ID>** do listy punktów zarządzania internetowego.
 Wszystkie opublikowane zewnętrzne adresy URL są przekazywane do CMG automatycznie, a następnie CMG jest w stanie wykonać filtrowanie adresów URL. Wszystkie replikacja mapowanie adresu URL do CMG punktu połączenia, dzięki czemu może przekazywać do serwerów wewnętrznych, zgodnie z zewnętrznego adresu URL żądania klienta.
 
 ### <a name="what-ports-are-used-by-the-cloud-management-gateway"></a>Jakie porty są używane przez bramę zarządzania w chmurze?
