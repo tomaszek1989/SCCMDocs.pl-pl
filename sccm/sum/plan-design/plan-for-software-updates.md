@@ -1,22 +1,23 @@
 ---
 title: Planowanie aktualizacji oprogramowania
 titleSuffix: Configuration Manager
-description: "Planowanie infrastruktury punktu aktualizacji oprogramowania jest niezbędne, aby używać aktualizacji oprogramowania w środowisku produkcyjnym programu System Center Configuration Manager."
-keywords: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.date: 06/27/2017
+description: Planowanie infrastruktury punktu aktualizacji oprogramowania jest niezbędne, aby używać aktualizacji oprogramowania w środowisku produkcyjnym programu System Center Configuration Manager.
+keywords: ''
+author: mestew
+ms.author: mstewart
+manager: dougeby
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: configuration-manager
-ms.service: 
-ms.technology: configmgr-sum
+ms.service: ''
+ms.technology:
+- configmgr-sum
 ms.assetid: d071b0ec-e070-40a9-b7d4-564b92a5465f
-ms.openlocfilehash: e36048141400097950a7c24733f382acacb73131
-ms.sourcegitcommit: db9978135d7a6455d83dbe4a5175af2bdeaeafd8
+ms.openlocfilehash: b57a1b584ec40d67b263959ae52f694c486481d7
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="plan-for-software-updates-in-system-center-configuration-manager"></a>Planowanie aktualizacji oprogramowania w programie System Center Configuration Manager
 
@@ -133,12 +134,12 @@ Włącz tę opcję dla kolekcji urządzeń lub zestawu wybranych urządzeń. Po 
  Najczęściej lokację najwyższego poziomu w danej hierarchii konfiguruje się do synchronizowania metadanych aktualizacji oprogramowania z usługą Microsoft Update. Gdy zasady zabezpieczeń firmy nie zezwala na dostęp do Internetu z lokacji najwyższego poziomu, można skonfigurować źródło synchronizacji dla lokacji najwyższego poziomu do użycia istniejący serwer WSUS, który nie znajduje się w hierarchii programu Configuration Manager. Na przykład serwer usług WSUS może być zainstalowany w sieci obwodowej, która ma dostęp do Internetu, mimo że lokacja najwyższego poziomu tego dostępu nie ma. Serwer WSUS w sieci obwodowej można wówczas skonfigurować jako źródło synchronizacji dla metadanych aktualizacji oprogramowania. Pamiętaj, że serwer WSUS w strefie DMZ synchronizuje te aktualizacje oprogramowania, które spełniają kryteria wymagane w hierarchii programu Configuration Manager. W przeciwnym razie lokacja najwyższego poziomu może synchronizować nie te aktualizacje oprogramowania, których się oczekuje. Podczas instalacji punktu aktualizacji oprogramowania należy skonfigurować konto połączenia WSUS mające dostęp do serwera WSUS w sieci obwodowej i potwierdzić, że zapora pozwala na ruch danych przez odpowiednie porty. Aby uzyskać więcej informacji, przejrzyj [porty używane przez punkt aktualizacji oprogramowania ze źródłem synchronizacji](../../core/plan-design/hierarchy/ports.md#BKMK_PortsSUP-WSUS).  
 
 ###  <a name="BKMK_NLBSUPSP1"></a> Punkt aktualizacji oprogramowania skonfigurowany do korzystania z równoważenia obciążenia sieciowego  
- Prawdopodobnie przełączenie punktu aktualizacji oprogramowania eliminuje potrzeby tolerancji błędów, które masz. Domyślnie program Configuration Manager nie obsługuje konfigurowania punktów aktualizacji oprogramowania jako klastrów równoważenia obciążenia Sieciowego. Przed 1702 wersji programu Configuration Manager możesz użyć zestawu SDK programu Configuration Manager można skonfigurować maksymalnie czterech punktów aktualizacji oprogramowania w klastrze równoważenia obciążenia Sieciowego. Jednak począwszy od programu Configuration Manager w wersji 1702 punktów aktualizacji oprogramowania nie są obsługiwane jako klastrów równoważenia obciążenia Sieciowego i uaktualnienia do programu Configuration Manager w wersji 1702 zostanie zablokowane, jeśli zostanie wykryty w tej konfiguracji. Aby uzyskać więcej informacji na temat polecenia cmdlet Set-CMSoftwareUpdatePoint środowiska PowerShell, zobacz [Set-CMSoftwareUpdatePoint](http://go.microsoft.com/fwlink/?LinkId=276834).
+ Prawdopodobnie przełączenie punktu aktualizacji oprogramowania eliminuje potrzeby tolerancji błędów, które masz. Domyślnie program Configuration Manager nie obsługuje konfigurowania punktów aktualizacji oprogramowania jako klastrów równoważenia obciążenia Sieciowego. Przed 1702 wersji programu Configuration Manager możesz użyć zestawu SDK programu Configuration Manager do skonfigurowania do czterech punktów aktualizacji oprogramowania w klastrze równoważenia obciążenia Sieciowego. Jednak począwszy od programu Configuration Manager w wersji 1702 punktów aktualizacji oprogramowania nie są obsługiwane jako klastrów równoważenia obciążenia Sieciowego i uaktualnienia do programu Configuration Manager w wersji 1702 zostanie zablokowane, jeśli zostanie wykryty w tej konfiguracji. Aby uzyskać więcej informacji na temat polecenia cmdlet Set-CMSoftwareUpdatePoint środowiska PowerShell, zobacz [Set-CMSoftwareUpdatePoint](http://go.microsoft.com/fwlink/?LinkId=276834).
 
 ###  <a name="BKMK_SUPSecSite"></a> Punkt aktualizacji oprogramowania w lokacji dodatkowej  
- Punkt aktualizacji oprogramowania jest opcjonalny w lokacji dodatkowej. Podczas instalowania punktu aktualizacji oprogramowania w lokacji dodatkowej baza danych programu WSUS jest konfigurowana jako replika domyślnego punktu aktualizacji w nadrzędnej lokacji głównej. W lokacji dodatkowej można zainstalować tylko jeden punkt aktualizacji oprogramowania. Urządzenia przypisane do lokacji dodatkowej są skonfigurowane do używania punktu aktualizacji oprogramowania w lokacji nadrzędnej, gdy ten punkt nie jest zainstalowany w lokacji dodatkowej. Zazwyczaj zainstalować punkt aktualizacji oprogramowania w lokacji dodatkowej, gdy występuje ograniczona przepustowość sieci między urządzeniami, które są przypisane do lokacji dodatkowej i punkty aktualizacji oprogramowania w nadrzędnej lokacji głównej lub gdy punkt aktualizacji oprogramowania zbliża się do limitu pojemności. Po pomyślnym zainstalowaniu i skonfigurowaniu punktu aktualizacji oprogramowania w lokacji dodatkowej zasady obejmujące całą lokację zostaną zaktualizowane na komputerach klienckich przypisanych do tej lokacji i zaczną używać nowego punktu aktualizacji oprogramowania.  
+ Punkt aktualizacji oprogramowania jest opcjonalny w lokacji dodatkowej. W lokacji dodatkowej można zainstalować tylko jeden punkt aktualizacji oprogramowania. Urządzenia przypisane do lokacji dodatkowej są skonfigurowane do używania punktu aktualizacji oprogramowania w lokacji nadrzędnej, gdy ten punkt nie jest zainstalowany w lokacji dodatkowej. Zazwyczaj zainstalować punkt aktualizacji oprogramowania w lokacji dodatkowej, gdy występuje ograniczona przepustowość sieci między urządzeniami, które są przypisane do lokacji dodatkowej i punkty aktualizacji oprogramowania w nadrzędnej lokacji głównej lub gdy punkt aktualizacji oprogramowania zbliża się do limitu pojemności. Po pomyślnym zainstalowaniu i skonfigurowaniu punktu aktualizacji oprogramowania w lokacji dodatkowej zasady obejmujące całą lokację zostaną zaktualizowane na komputerach klienckich przypisanych do tej lokacji i zaczną używać nowego punktu aktualizacji oprogramowania.  
 
-##  <a name="BKMK_SUPInstallation"></a>Planowanie instalacji punktu aktualizacji oprogramowania  
+##  <a name="BKMK_SUPInstallation"></a> Planowanie instalacji punktu aktualizacji oprogramowania  
  Przed utworzeniem roli systemu lokacji punktu aktualizacji oprogramowania w programie Configuration Manager, istnieje kilka wymagań, które należy wziąć pod uwagę w zależności od infrastruktury programu Configuration Manager. Z informacjami w tej sekcji należy się zapoznać w szczególności, gdy punkt aktualizacji oprogramowania został skonfigurowany do komunikacji przy użyciu protokołu SSL. W takim przypadku w celu prawidłowego działania punktów aktualizacji oprogramowania w hierarchii należy wykonać dodatkowe czynności. W tej sekcji opisano czynności, jakie należy wykonać w celu pomyślnego zaplanowania i przygotowania instalacji punktu aktualizacji oprogramowania.  
 
 ###  <a name="BKMK_SUPSystemRequirements"></a> Wymagania dotyczące punktu aktualizacji oprogramowania  
@@ -171,7 +172,7 @@ Aktualizacje oprogramowania wymagają zainstalowania obsługiwanej wersji progra
  Gdy serwer programu WSUS jest skonfigurowany jako punkt aktualizacji oprogramowania, nie jesteś już można używać go jako autonomiczny serwer programu WSUS. Jeśli potrzebujesz oddzielnych autonomicznego serwera WSUS, który nie jest zarządzany przez program Configuration Manager, musi skonfigurować go na innym serwerze.
 
 ####  <a name="BKMK_WSUSAsReplica"></a> Konfigurowanie programu WSUS jako serwera repliki  
- W przypadku utworzenia roli systemu lokacji punktu aktualizacji oprogramowania na serwerze lokacji głównej nie można korzystać z serwera programu WSUS skonfigurowanego jako replika. Gdy serwer WSUS został skonfigurowany jako replika, programu Configuration Manager nie może skonfigurować serwer WSUS i synchronizacji programu WSUS również nie powiedzie się. Po utworzeniu punktu aktualizacji oprogramowania w lokacji dodatkowej programu Configuration Manager konfiguruje serwer tak, aby pełnił funkcję serwera repliki programu WSUS uruchomionego w punkcie aktualizacji oprogramowania w nadrzędnej lokacji głównej. Pierwszy punkt aktualizacji oprogramowania zainstalowany w lokacji głównej jest domyślnym punktem aktualizacji oprogramowania. Dodatkowe punkty aktualizacji oprogramowania w danej lokacji są konfigurowane jako repliki domyślnego punktu aktualizacji oprogramowania.  
+ W przypadku utworzenia roli systemu lokacji punktu aktualizacji oprogramowania na serwerze lokacji głównej nie można korzystać z serwera programu WSUS skonfigurowanego jako replika. Gdy serwer WSUS został skonfigurowany jako replika, programu Configuration Manager nie może skonfigurować serwer WSUS i synchronizacji programu WSUS również nie powiedzie się. Pierwszy punkt aktualizacji oprogramowania zainstalowany w lokacji głównej jest domyślnym punktem aktualizacji oprogramowania. Dodatkowe punkty aktualizacji oprogramowania w danej lokacji są konfigurowane jako repliki domyślnego punktu aktualizacji oprogramowania.  
 
 ####  <a name="BKMK_WSUSandSSL"></a> Czy skonfigurować program WSUS do używania protokołu SSL  
  Użycie protokołu SSL może pomóc w zabezpieczeniu programu WSUS uruchomionego w punkcie aktualizacji oprogramowania. Program WSUS używa protokołu SSL do uwierzytelniania komputerów klienckich oraz podrzędnych serwerów programu WSUS. Program WSUS używa protokołu SSL również do szyfrowania metadanych aktualizacji oprogramowania. W przypadku zabezpieczenia programu WSUS przy użyciu protokołu SSL należy przygotować serwer programu WSUS przed zainstalowaniem punktu aktualizacji oprogramowania.  

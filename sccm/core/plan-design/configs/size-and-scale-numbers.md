@@ -1,25 +1,26 @@
 ---
 title: Rozmiaru i skali
 titleSuffix: Configuration Manager
-description: "Określ liczbę ról systemu lokacji i lokacji, które należy do obsługi urządzeń w środowisku programu System Center Configuration Manager."
+description: Określenie liczby ról systemu lokacji i lokacji, które należy do obsługi urządzeń w danym środowisku.
 ms.custom: na
-ms.date: 07/24/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c5a42100-2f60-4952-b495-918025ea6559
-caps.latest.revision: "4"
+caps.latest.revision: ''
 author: mestew
 ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: bda1ab737a3af5e13f180771cc17c9850165906c
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+manager: dougeby
+ms.openlocfilehash: cc5ce67ffe7c18d4e7be4c9a74f2a0ca0ba0253c
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="size-and-scale-numbers-for-system-center-configuration-manager"></a>Numery rozmiaru i skali dla programu System Center Configuration Manager
 
@@ -27,7 +28,7 @@ ms.lasthandoff: 12/04/2017
 
 
 
-Dla każdego wdrożenia programu System Center Configuration Manager ma maksymalną liczbę lokacji, role systemu lokacji i urządzeń, które może obsługiwać. Te liczby różne w zależności od struktury hierarchii (jakie typy i liczby używanych lokacji) i role systemu lokacji, które można wdrożyć.  Informacje zawarte w następujących obszarach ułatwia określenie liczby ról systemu lokacji i lokacji, które należy do obsługi urządzeń, którymi będziesz zarządzać ze środowiskiem.
+Dla każdego wdrożenia programu Configuration Manager ma maksymalną liczbę lokacji, role systemu lokacji i urządzeń, które może obsługiwać. Te liczby zależy od struktury hierarchii, jakie typy i liczby lokacji możesz użycia i role systemu lokacji, które można wdrożyć. Informacje przedstawione w tym artykule ułatwia określenie liczby ról systemu lokacji i lokacji, które są potrzebne do obsługi urządzeń, które chcesz zarządzać.
 
 Informacje przedstawione w tym temacie w połączeniu z informacjami w następujących artykułach:
 -   [Zalecany sprzęt](../../../core/plan-design/configs/recommended-hardware.md)
@@ -36,31 +37,34 @@ Informacje przedstawione w tym temacie w połączeniu z informacjami w następuj
 -   [Wymagania wstępne dla lokacji i systemu lokacji](../../../core/plan-design/configs/site-and-site-system-prerequisites.md)
 
 
-Następujące numery pomocy technicznej są oparte na użyciu zalecany sprzęt dla programu Configuration Manager i domyślne ustawienia dla wszystkich dostępnych funkcji programu Configuration Manager. Jeśli nie używasz zalecanego sprzętu lub użyj bardziej agresywną niestandardowych ustawień (takich jak uruchomionych spis sprzętu lub oprogramowania częściej niż domyślne co siedem dni), wydajność systemów lokacji może być niższa i może nie zapewniać deklarowanych poziomów obsługi.
+Te obsługi numerów są oparte na użyciu zalecany sprzęt dla programu Configuration Manager. Są one również oparte na wartości domyślne dla wszystkich dostępnych funkcji programu Configuration Manager. Jeśli nie używasz zalecanego sprzętu lub użyj bardziej agresywną ustawień niestandardowych, mogą obniżyć wydajność systemów lokacji. Systemy lokacji może nie zapewniać deklarowanych poziomów obsługi. (Przykład bardziej aktywnego ustawienia klienta działa spis sprzętu lub oprogramowania częściej niż domyślne co siedem dni.)
 
-##  <a name="bkmk_SiteSystemScale"></a>Typy lokacji  
- **Centralna lokacja administracyjna:**  
+##  <a name="bkmk_SiteSystemScale"></a> Typy lokacji  
+
+### <a name="central-administration-site"></a>Centralna lokacja administracyjna  
 
 -   Centralna lokacja administracyjna obsługuje do 25 podrzędnych lokacji głównych.  
 
-**Lokacja główna:**  
+
+### <a name="primary-site"></a>Lokacja główna  
 
 -   Każda lokacja główna obsługuje do 250 lokacji dodatkowych.  
 
 -   Liczba lokacji dodatkowych na lokację główną jest oparta na nieprzerwanych i niezawodnych rozległej połączeń sieci (rozległej WAN). W przypadku lokalizacji, które mają mniej niż 500 klientów należy wziąć pod uwagę punktu dystrybucji zamiast lokacji dodatkowej.  
 
- Aby uzyskać informacje o liczbie klientów i urządzeń, które lokacja główna może obsługiwać, zobacz [liczba klientów dla lokacji i hierarchii](#bkmk_clientnumbers) w tym temacie.  
+ Aby uzyskać informacje o liczbie klientów i urządzeń, które lokacja główna może obsługiwać, zobacz [liczba klientów dla lokacji i hierarchii](#bkmk_clientnumbers).  
 
-**Lokacja dodatkowa:**  
+
+### <a name="secondary-site"></a>Lokacja dodatkowa  
 
 -   Lokacje dodatkowe nie obsługują lokacji podrzędnych.  
 
 
 
-## <a name="bkmk_roles"></a>Role systemu lokacji    
+## <a name="bkmk_roles"></a> Role systemu lokacji    
 
 
-**Punkt usługi sieci web katalogu aplikacji:**  
+### <a name="application-catalog-web-service-point"></a>Punkt usługi sieci Web Wykaz aplikacji  
 
 -   Można zainstalować wiele wystąpień punktu usługi sieci web katalogu aplikacji w lokacjach głównych.  
 
@@ -71,7 +75,8 @@ Następujące numery pomocy technicznej są oparte na użyciu zalecany sprzęt d
 
     -   Każde wystąpienie tej roli systemu lokacji obsługuje maksymalną liczbę klientów obsługiwanych przez hierarchię.  
 
-**Punkt witryny sieci Web katalogu aplikacji:**  
+
+### <a name="application-catalog-website-point"></a>Punkt witryny sieci Web wykazu aplikacji  
 
 -   Można zainstalować wiele wystąpień punktu witryny sieci Web katalogu aplikacji w lokacjach głównych.  
 
@@ -83,7 +88,30 @@ Następujące numery pomocy technicznej są oparte na użyciu zalecany sprzęt d
     -   Każde wystąpienie tej roli systemu lokacji obsługuje maksymalną liczbę klientów obsługiwanych przez hierarchię.  
 
 
-**Punkt dystrybucji:**  
+### <a name="bkmk_cmg"></a> Brama zarządzania w chmurze
+
+- Można zainstalować wiele wystąpień bramy zarządzania chmury (CMG) w lokacjach głównych lub centralnej lokacji administracyjnej.  
+
+    > [!Tip]  
+    > W hierarchii należy utworzyć CMG w witrynie Administracja centralna.  
+
+    - Jeden CMG obsługuje jeden do 16 wystąpień maszyn wirtualnych (VM) w usłudze w chmurze Azure.  
+
+    - Każde wystąpienie maszyny Wirtualnej CMG obsługuje 6000 równoczesnych połączeń klientów. Gdy CMG jest mocno obciążony ze względu na więcej niż liczba obsługiwanych klientów, nadal obsługuje żądania, ale mogą występować opóźnienia.  
+
+Aby uzyskać więcej informacji, zobacz CMG [wydajności i skalowania](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#performance-and-scale)
+
+
+### <a name="cloud-management-gateway-connection-point"></a>Punkt połączenia z chmurą zarządzania bramy
+
+- Można zainstalować wiele wystąpień punktu połączenia CMG w lokacjach głównych.  
+
+- Punkt połączenia z jednym CMG może obsługiwać CMG z maksymalnie cztery wystąpień maszyn wirtualnych. Jeśli CMG ma więcej niż czterech wystąpień maszyn wirtualnych, należy dodać drugi punkt połączenia CMG Równoważenie obciążenia sieciowego. CMG z 16 wystąpień maszyn wirtualnych powinna być połączona z czterech punktów połączenia CMG.
+
+Aby uzyskać więcej informacji, zobacz CMG [wydajności i skalowania](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#performance-and-scale)
+
+
+### <a name="distribution-point"></a>Punkt dystrybucji  
 
 -   Punkty dystrybucji na lokację:  
 
@@ -100,38 +128,43 @@ Następujące numery pomocy technicznej są oparte na użyciu zalecany sprzęt d
 -   Każdy punkt dystrybucji obsługuje łącznie do 10 000 pakietów i aplikacji.  
 
 > [!WARNING]  
->  Rzeczywista liczba klientów, którzy mogą obsługiwać jeden punkt dystrybucji zależy od prędkości sieci oraz konfiguracji sprzętowej komputera punktu dystrybucji.  
+>  Rzeczywista liczba klientów, którzy mogą obsługiwać jeden punkt dystrybucji zależy od szybkości sieci i konfiguracji sprzętu serwera.  
 >   
->  Liczba ściągających punktów dystrybucji obsługujących jeden punkt dystrybucji podobnie zależy od prędkości sieci oraz konfiguracji sprzętowej komputera źródłowego punktu dystrybucji. Jednak ta liczba wpływa także na ilość zawartości, która została wdrożona. Wynika to z faktu, w odróżnieniu od klientów, którzy zwykle uzyskują dostęp do zawartości w różnym czasie podczas wdrażania, wszystkie punkty dystrybucji ściągania żądanie zawartości w tym samym czasie — i mogą żądać całej zawartości dostępna nie tylko zawartości, która ich dotyczy, jak klient. Gdy zbyt dużo obciążenie przetwarzania jest umieszczony w źródłowym punkcie dystrybucji, może być nieoczekiwane opóźnienia w dystrybucji zawartości do oczekujących punktów dystrybucji w danym środowisku.  
+>  Liczba ściągających punktów dystrybucji obsługujących jeden punkt dystrybucji podobnie zależy od szybkości sieci i konfiguracji sprzętowej źródłowego punktu dystrybucji. Jednak ta liczba wpływa także na ilość zawartości, która została wdrożona. Efekt jest, ponieważ w odróżnieniu od klientów, którzy zwykle uzyskują dostęp do zawartości w różnym czasie podczas wdrażania, wszystkie punkty dystrybucji ściągania żądanie zawartości w tym samym czasie. Ściągające punkty dystrybucji mogą żądać całej zawartości dostępna nie tylko zawartości, która ich dotyczy. Po umieszczeniu wysokie obciążenie przetwarzania w źródłowym punkcie dystrybucji może być nieoczekiwane opóźnienia w dystrybucji zawartości do punktów dystrybucji docelowej.  
 
 
-**Rezerwowy punkt stanu:**  
+### <a name="fallback-status-point"></a>Rezerwowy punkt stanu  
 
 -   Każdy rezerwowy punkt stanu może obsługiwać do 100 000 klientów.  
 
-**Punkt zarządzania:**  
+
+### <a name="management-point"></a>Punkt zarządzania  
 
 -   Każda lokacja główna obsługuje do 15 punktów zarządzania.  
 
     > [!TIP]  
-    >  Nie należy instalować punktów zarządzania na serwerach, które są przy użyciu wolnego połączenia z serwera lokacji głównej lub z serwera bazy danych lokacji.  
+    >  Nie należy instalować punktów zarządzania na serwerach korzystających z serwera lokacji podstawowej powolnego łącza lub na serwerze bazy danych lokacji.  
 
 -   Każda lokacja dodatkowa obsługuje pojedynczy punkt zarządzania, który musi być zainstalowany na serwerze lokacji dodatkowej.  
 
- Aby uzyskać informacje o liczbie klientów i urządzeń obsługiwanych przez punkt zarządzania, zobacz [punktów zarządzania](#bkmk_mp) w tym temacie.  
+ Aby uzyskać informacje o liczbie klientów i urządzeń obsługiwanych przez punkt zarządzania, zobacz [punktów zarządzania](#bkmk_mp) sekcji.  
 
-**Punkt aktualizacji oprogramowania:**  
 
--   Punkt aktualizacji oprogramowania, który jest zainstalowany na serwerze lokacji może obsługiwać do 25 000 klientów.  
+### <a name="software-update-point"></a>Punkt aktualizacji oprogramowania  
+
+-   Punkt aktualizacji oprogramowania, który jest zainstalowany na serwerze lokacji może obsługiwać do 25 000 klientów.   
 
 -   Punkt aktualizacji oprogramowania, który jest zdalny z serwera lokacji może obsługiwać do 150 000 klientów, gdy komputer zdalny spełnia wymagania dotyczące systemu Windows Server Update Services (WSUS) dotyczące obsługi tej liczby klientów.  
 
 -   Domyślnie program Configuration Manager nie obsługuje konfigurowania punktów aktualizacji oprogramowania jako klastrów równoważenia obciążenia sieciowego (NLB). Jednak można użyć zestawu SDK programu Configuration Manager do skonfigurowania do czterech punktów aktualizacji oprogramowania w klastrze równoważenia obciążenia Sieciowego.  
 
-##  <a name="bkmk_clientnumbers"></a>Liczba klientów dla lokacji i hierarchii  
+
+
+##  <a name="bkmk_clientnumbers"></a> Liczba klientów dla lokacji i hierarchii  
  Skorzystaj z poniższych informacji, aby określić liczbę klientów i jakie typy klientów mogą być obsługiwane w lokacji lub w hierarchii.  
 
-###  <a name="bkmk_cas"></a>Hierarchia z centralną lokacją administracyjną  
+
+###  <a name="bkmk_cas"></a> Hierarchia z centralną lokacją administracyjną  
 Centralna lokacja administracyjna obsługuje łączna liczba urządzeń zawierającą maksymalnie liczbę urządzeń dla trzech następujących grup:  
 
 -   700 000 komputerów stacjonarnych (komputerów z systemem Windows, Linux lub UNIX). Zobacz też, obsługę [urządzenia osadzone](#embedded).
@@ -144,23 +177,24 @@ Centralna lokacja administracyjna obsługuje łączna liczba urządzeń zawieraj
 
     -   300 000 urządzeń opartych na chmurze  
 
- Na przykład w hierarchii można obsługiwać 700 000 komputerów stacjonarnych, maksymalnie 25 000 komputerów Mac lub Windows CE 7.0 oraz maksymalnie 300 000 urządzeń opartych na chmurze podczas integracji programów Microsoft Intune — łącznie 1 025 000 urządzeń. Jeśli w przypadku obsługi urządzeń, które są zarządzane przez lokalnego zarządzania urządzeniami Przenośnymi, łączna liczba dla hierarchii jest 825 000 urządzeń.  
+ Na przykład w hierarchii można obsługiwać 700 000 komputerów stacjonarnych, maksymalnie 25 000 urządzeń Mac lub Windows CE 7.0 oraz maksymalnie 300 000 urządzeń opartych na chmurze podczas integracji programów Microsoft Intune. Ta hierarchia obsługuje łącznie 1 025 000 urządzeń. Jeśli w przypadku obsługi urządzeń, które są zarządzane przez lokalnego zarządzania urządzeniami Przenośnymi, łączna liczba w tej hierarchii jest 825 000 urządzeń.  
 
 > [!IMPORTANT]  
->  W hierarchii, w której centralna lokacja administracyjna korzysta z wersji Standard programu SQL Server hierarchia obsługuje maksymalnie 50 000 komputerów stacjonarnych i urządzeń. Aby obsługiwać więcej niż 50 000 komputerów stacjonarnych i urządzeń, należy użyć wersji Enterprise programu SQL Server. To wymaganie dotyczy tylko centralnej lokacji administracyjnej, a nie ma zastosowania do autonomicznej lokacji głównej lub podrzędnej lokacji głównej, której wersji programu SQL Server, należy użyć nie ogranicza pojemność tej lokacji do obsługi dla określonej liczby klientów.   
+>  W hierarchii, w której centralna lokacja administracyjna korzysta z wersji Standard programu SQL Server hierarchia obsługuje maksymalnie 50 000 komputerów stacjonarnych i urządzeń. Aby obsługiwać więcej niż 50 000 komputerów stacjonarnych i urządzeń, należy użyć wersji Enterprise programu SQL Server. To wymaganie dotyczy tylko centralną lokację administracyjną. Nie ma zastosowania do autonomicznej lokacji głównej lub podrzędnej lokacji głównej. Wersja programu SQL Server używane na potrzeby lokacji głównej nie ograniczyć jej zdolności do obsługi dla określonej liczby klientów.   
 
 
  Wersja programu SQL Server, który jest używany w autonomicznej lokacji głównej nie ograniczają pojemność tej lokacji do obsługi do określonej liczby klientów.  
 
 
-###  <a name="bkmk_chipri"></a>Podrzędna lokacja główna  
-Każda podrzędna lokacja główna w hierarchii z centralną lokacją administracyjną obsługuje następujące funkcje:  
+###  <a name="bkmk_chipri"></a> Podrzędna lokacja główna  
+Każda podrzędna lokacja główna w hierarchii z centralną lokacją administracyjną obsługuje następującą liczbę klientów:  
 
 -   150 000 łącznej liczby klientów i urządzeń, które nie są ograniczone do określonej grupy lub typu, jak długo pomocy technicznej nie przekracza liczbę, która jest obsługiwana dla hierarchii. Zobacz też, obsługę [urządzenia osadzone](#embedded).
 
-Na przykład lokacji głównej, która obsługuje 25 000 komputerów z systemem Mac lub Windows CE 7.0 (ponieważ taki jest limit dla hierarchii), następnie może obsługiwać dodatkowe 125 000 komputerów stacjonarnych. Powoduje to całkowita liczba obsługiwanych urządzeń do podrzędnej lokacji głównej obsługiwany limit maksymalną 150 000.
+Na przykład lokacja główna obsługuje 25 000 urządzeń Mac lub Windows CE 7.0. Numer ten jest limit dla hierarchii. Ta lokacja główna może obsługiwać następnie dodatkowe 125 000 komputerów stacjonarnych. Całkowita liczba obsługiwanych urządzeń dla podrzędnej lokacji głównej jest obsługiwany limit maksymalną 150 000.
 
-###  <a name="bkmk_pri"></a>Autonomicznej lokacji głównej  
+
+###  <a name="bkmk_pri"></a> Autonomicznej lokacji głównej  
 Autonomiczna lokacja główna obsługuje następującą liczbę urządzeń:  
 
 -   175 000 łącznej liczby klientów i urządzeń, nie może przekraczać:  
@@ -178,15 +212,18 @@ Autonomiczna lokacja główna obsługuje następującą liczbę urządzeń:
 
 Na przykład autonomicznej lokacji głównej, która obsługuje 150 000 komputerów stacjonarnych i 10 000 komputerów Mac lub Windows CE 7.0 może obsługiwać tylko 15 000 dodatkowych urządzeń. Te urządzenia muszą być oparte na chmurze lub zarządzane przy użyciu lokalnego zarządzania urządzeniami przenośnymi.  
 
-### <a name="embedded"></a>Lokacje główne i urządzeń z systemem Windows Embedded
-Lokacje główne obsługują urządzeń Windows Embedded opartych na plikach włączone filtry zapisu (FBWF). Gdy urządzenia osadzone nie mają włączone filtry zapisu, lokacja główna może obsługiwać kilka urządzeń osadzonych maksymalnie dozwolonej liczbie urządzeń dla tej lokacji. Łączna liczba urządzeń obsługiwanych przez lokację główną, maksymalnie 10 000 może być urządzeniach Windows Embedded podczas te urządzenia są skonfigurowane z uwzględnieniem wyjątków z ważna uwaga w [Planowanie wdrożenia klientów na urządzeniach Windows Embedded](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices). Lokacja główna obsługuje tylko 3000 urządzeń Windows Embedded, które z włączonymi Rozszerzonymi filtrami, które nie są skonfigurowane dla wyjątków.
 
-###  <a name="bkmk_sec"></a>Lokacje dodatkowe  
-Lokacje dodatkowe obsługują następujące czynności:  
+### <a name="embedded"></a> Lokacje główne i urządzeń z systemem Windows Embedded
+Lokacje główne obsługują urządzeń Windows Embedded opartych na plikach włączone filtry zapisu (FBWF). Gdy urządzenia osadzone nie mają włączone filtry zapisu, lokacja główna może obsługiwać kilka urządzeń osadzonych maksymalnie dozwolonej liczbie urządzeń dla tej lokacji. Łączna liczba urządzeń obsługiwanych przez lokację główną może być maksymalnie 10 000 urządzeń z systemem Windows Embedded. Te urządzenia muszą być skonfigurowane dla wyjątków, na liście ważna uwaga w [Planowanie wdrożenia klientów na urządzeniach Windows Embedded](/sccm/core/clients/deploy/plan/planning-for-client-deployment-to-windows-embedded-devices). Lokacja główna obsługuje tylko 3000 urządzeń Windows Embedded, które z włączonymi Rozszerzonymi filtrami, które nie są skonfigurowane dla wyjątków.
+
+
+###  <a name="bkmk_sec"></a> Lokacje dodatkowe  
+Lokacje dodatkowe obsługują następującą liczbę urządzeń:  
 
 -   15 000 komputerów stacjonarnych (komputerów z systemem Windows, Linux i UNIX)  
 
-###  <a name="bkmk_mp"></a>Punkty zarządzania  
+
+###  <a name="bkmk_mp"></a> Punkty zarządzania  
 Każdy punkt zarządzania może obsługiwać następującą liczbę urządzeń:  
 
 -   25 000 łącznej liczby klientów i urządzeń, nie może przekraczać:  

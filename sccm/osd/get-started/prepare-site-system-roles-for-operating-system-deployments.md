@@ -1,203 +1,131 @@
 ---
-title: "Przygotowanie roli systemu lokacji do wdrażania systemów operacyjnych"
+title: Przygotowanie ról systemu lokacji dla wdrożenia systemu operacyjnego
 titleSuffix: Configuration Manager
-description: "Przed przystąpieniem do wdrażania systemów operacyjnych w programie System Center Configuration Manager, należy skonfigurować role systemu lokacji."
+description: Konfigurowanie ról systemu lokacji, przed przystąpieniem do wdrażania systemów operacyjnych
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-osd
+ms.technology:
+- configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 0ef5f3ce-b0e4-4775-b5c2-b245e45b4194
-caps.latest.revision: "11"
-caps.handback.revision: "0"
+caps.latest.revision: ''
+caps.handback.revision: ''
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 379a77ad83916a4a4660aea8816b353dd8c11c60
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: a1675f6ed3070972354ea4a14a65339c299ee01f
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="prepare-site-system-roles-for-operating-system-deployments-with-system-center-configuration-manager"></a>Przygotowanie ról systemu lokacji do wdrożeń systemu operacyjnego w programie System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Do wdrażania systemów operacyjnych w programie System Center Configuration Manager, należy najpierw przygotować następujące witryny ról systemowych, które wymagają określonych konfiguracji i podjęcia.
+Do wdrażania systemów operacyjnych w programie Configuration Manager, należy najpierw przygotować następujące witryny ról systemowych, które wymagają określonych konfiguracji i podjęcia.
+
+
 
 ##  <a name="BKMK_DistributionPoints"></a> Punkty dystrybucji  
- Rola systemu lokacji punktu dystrybucji zawiera pliki źródłowe do pobrania przez klientów, takie jak zawartość aplikacji, aktualizacje oprogramowania, obrazy systemu operacyjnego i obrazy rozruchowe. Dystrybucję zawartości można kontrolować, korzystając opcji dotyczących przepustowości, ograniczania przepustowości i planowania.  
+ Rola systemu lokacji punktu dystrybucji zawiera pliki źródłowe do pobrania przez klientów. Ta zawartość jest dla aplikacji, aktualizacje oprogramowania, obrazy systemu operacyjnego, obrazy rozruchowe i pakiety sterowników. Dystrybucję zawartości można kontrolować, korzystając opcji dotyczących przepustowości, ograniczania przepustowości i planowania.  
 
- Koniecznie upewnij się, że masz wystarczająco dużo punktów dystrybucji, aby obsłużyć wdrożenie systemów operacyjnych na komputerach. Koniecznie zaplanuj również rozmieszczenie tych punktów dystrybucji w hierarchii. Znajdziesz się większość to informacje w planowaniu [zarządzanie zawartością i infrastrukturą zawartości](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md). Należy jednak wziąć pod uwagę pewne dodatkowe kwestie związane z punktami dystrybucji, specyficzne dla wdrożenia systemu operacyjnego.  
+ Jest ważne, że masz wystarczająco dużo punktów dystrybucji, aby obsłużyć wdrożenie systemów operacyjnych na komputerach. Należy również zaplanować rozmieszczenie tych punktów dystrybucji w hierarchii. Aby uzyskać więcej informacji, zobacz [zarządzanie zawartością i infrastrukturą zawartości](../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md). Ten artykuł zawiera niektóre dodatkowe zagadnienia związane z planowaniem punktów dystrybucji określonego do wdrażania systemu operacyjnego.  
+
 
 ###  <a name="BKMK_AdditionalPlanning"></a> Dodatkowe kwestie związane z planowaniem punktów dystrybucji  
- Należy wziąć pod uwagę następujące dodatkowe kwestie związane z planowaniem punktów dystrybucji:  
+ Dodatkowe planowanie rzeczy, które należy wziąć pod uwagę w przypadku punktów dystrybucji są następujące elementy:  
 
--   **Jak mogę zapobiec niepożądanym wdrożeniom systemu operacyjnego?**  
+-   **Jak mogę zapobiec niepożądanych wdrożeń systemu operacyjnego**  
 
-     Menedżer konfiguracji nie rozróżnia serwerów lokacji od innych komputerów docelowych w kolekcji. Jeśli wymagana sekwencja zadań jest wdrażana w kolekcji zawierającej serwer lokacji, serwer ten wykonuje sekwencję zadań tak samo jak każdy inny komputer w kolekcji. Należy upewnić się, że wdrożenie systemu operacyjnego korzysta z kolekcji zawierającej klientów, którzy mają uruchamiać wdrożenie.  
+     Menedżer konfiguracji nie rozróżnia serwerów lokacji od innych komputerów docelowych w kolekcji. Wdrożenie sekwencji zadań wymaganych do kolekcji zawierającej serwer lokacji, go uruchamia sekwencję zadań tak samo jak dowolny inny komputer w kolekcji. Upewnij się, że wdrożenie systemu operacyjnego używa kolekcji zawierającej klientów zamierzone.  
 
-     Można zarządzać zachowaniem wdrożeń sekwencji zadań wysokiego ryzyka. Wdrożenie wysokiego ryzyka to wdrożenie, które jest instalowane automatycznie na kliencie i może mieć niepożądane skutki. Przykładem może być sekwencja zadań, której cel to „Wymagane” i która wdraża system operacyjny. Aby zmniejszyć ryzyko niepożądanych wdrożeń o wysokim ryzyku, można skonfigurować ustawienia weryfikacji wdrażania: Aby uzyskać więcej informacji, zobacz [ustawienia zarządzania wdrożeniami o wysokim ryzyku](../../protect/understand/settings-to-manage-high-risk-deployments.md).  
+     Zarządzać zachowaniem wdrożeń sekwencji zadań wysokiego ryzyka. Wdrożenie wysokiego ryzyka to wdrożenie, które jest instalowane automatycznie na kliencie i może mieć niepożądane skutki. Na przykład sekwencji zadań z celem wymagane, która wdraża system operacyjny. Aby zmniejszyć ryzyko niepożądanych wdrożeń o wysokim ryzyku, należy skonfigurować ustawienia weryfikacji wdrożenia. Aby uzyskać więcej informacji, zobacz [ustawienia zarządzania wdrożeniami o wysokim ryzyku](../../protect/understand/settings-to-manage-high-risk-deployments.md).  
 
--   **Na ilu komputerach można jednocześnie wdrożyć obraz systemu operacyjnego z pojedynczego punktu dystrybucji?**  
+-   **Ilu komputerach można otrzymywać obrazu systemu operacyjnego, w tym samym czasie pojedynczego punktu dystrybucji?**  
 
-     Aby oszacować liczbę potrzebnych punktów dystrybucji, należy wziąć pod uwagę szybkość przetwarzania oraz wydajność we/wy dysku punktu dystrybucji, dostępną przepustowość sieci oraz wpływ, jaki rozmiar pakietu obrazu ma na te zasoby. Na przykład w sieci Ethernet o szybkości 100 megabajtów (MB) maksymalna liczba komputerów, jaka umożliwia przetworzenie pakietów obrazu rozmiaru 4 gigabajtów (GB) w jedną godzinę, to 11, jeśli nie są brane pod uwagę żadne inne zasoby serwera.  
+     Aby oszacować liczbę potrzebnych punktów dystrybucji, należy wziąć pod uwagę następujące zmienne:  
+       - Szybkość przetwarzania punktu dystrybucji
+       - Prędkość dysku punktu dystrybucji
+       - Dostępna przepustowość sieci
+       - Rozmiar pakietu obrazu   
+  
+    Na przykład dowolnego innego serwera nie rozważ czynniki zasobu, maksymalną liczbę komputerów, które może przetworzyć pakietu obrazu 4 gigabajtów (GB) w ciągu jednej godziny w sieci Ethernet 100-megabita na sekundę jest 11 komputerów.  
 
-     `100 Megabits/sec = 12.5 Megabytes/sec = 750 Megabytes/min = 45 Gigabytes/hour = 11 images @ 4GB per image.`  
+    `100 megabits/sec = 12.5 megabytes/sec = 750 megabytes/min = 45 gigabytes/hour = 11 images @ 4 GB per image`  
 
-     Jeśli jest konieczne wdrożenie systemu operacyjnego na konkretnej liczbie komputerów w określonym przedziale czasu, należy dokonać dystrybucji obrazu do odpowiedniej liczby punktów dystrybucji.  
+    Jeśli zachodzi potrzeba wdrożenia systemu operacyjnego na konkretnej liczbie komputerów w określonym przedziale czasu, należy dokonać dystrybucji obrazu do odpowiedniej liczby punktów dystrybucji.  
 
--   **Czy mogę wdrożyć system operacyjny w punkcie dystrybucji?**  
+-   **Czy mogę wdrożyć system operacyjny do punktu dystrybucji?**  
 
-     Można wdrożyć system operacyjny w punkcie dystrybucji, ale obraz systemu operacyjnego musi być pobrany z innego punktu dystrybucji.  
+     System operacyjny można wdrożyć do punktu dystrybucji, ale obraz systemu operacyjnego musi być pobrany z innego punktu dystrybucji.  
+
 
 ###  <a name="BKMK_PXEDistributionPoint"></a> Konfigurowanie punktów dystrybucji do akceptowania żądań PXE  
- Aby wdrożyć systemy operacyjne klientów programu Configuration Manager, które żądania rozruchu środowiska PXE, należy skonfigurować co najmniej jeden punkt dystrybucji do akceptowania żądań PXE. Po skonfigurowaniu punktu dystrybucji będzie on odpowiadać na żądania rozruchu PXE oraz podejmować decyzje dotyczące wykonywania akcji wdrażania.
-
-> [!IMPORTANT]  
->  [Usługi wdrażania systemu Windows](../plan-design/infrastructure-requirements-for-operating-system-deployment.md#BKMK_WDS) muszą być zainstalowane we wszystkich punktach dystrybucji obsługujących żądania PXE.  
-
- Aby zmodyfikować istniejący punkt dystrybucji tak, aby akceptował żądania PXE, należy wykonać poniższą procedurę. Aby uzyskać więcej informacji na temat sposobu instalowania nowego punktu dystrybucji, zobacz [Instalowanie lub modyfikowanie punktu dystrybucji](../../core/servers/deploy/configure/install-and-configure-distribution-points.md).  
-
-#### <a name="to-modify-an-existing-distribution-point-to-accept-pxe-requests"></a>Aby zmodyfikować istniejący punkt dystrybucji tak, aby akceptował żądania PXE  
-
-1.  W konsoli programu Configuration Manager kliknij **administracji**, rozwiń węzeł **omówienie** i kliknij przycisk **punktów dystrybucji**.  
-
-2.  Wybierz punkt dystrybucji, który chcesz skonfigurować, i na karcie **Narzędzia główne** w grupie **Właściwości** kliknij pozycję **Właściwości**.  
-
-3.  Na stronie właściwości punktu dystrybucji, kliknij przycisk **PXE** kartę i wybierz **Włącz obsługę środowiska PXE dla klientów** włączania obsługi środowiska PXE w tym punkcie dystrybucji.  
-
-4.  Kliknij pozycję **Tak** w oknie dialogowym **Sprawdzenie wymaganych portów dla środowiska PXE** , aby potwierdzić, że chcesz włączyć obsługę środowiska PXE. Menedżer konfiguracji automatycznie konfiguruje domyślnych portów w Zaporze systemu Windows. Jeśli jednak używasz innej zapory, musisz ręcznie skonfigurować porty.  
-
-    > [!NOTE]  
-    >  Jeśli usługi WDS i DHCP są zainstalowane na tym samym serwerze, należy skonfigurować usługi WDS do nasłuchiwania na innym porcie (ponieważ usługa DHCP nasłuchuje na tym samym porcie). Aby uzyskać więcej informacji, zobacz [Zagadnienia dotyczące sytuacji, gdy na tym samym serwerze istnieją Usługi wdrażania systemu Windows i protokół DHCP](../plan-design/infrastructure-requirements-for-operating-system-deployment.md#BKMK_WDSandDHCP).  
-
-5.  Aby włączyć usługi wdrażania systemu Windows, tak aby odpowiadały na żądania obsługi PXE, zaznacz pole wyboru **Zezwól temu punktowi dystrybucji na odpowiadanie na przychodzące żądania środowiska PXE** . Możesz użyć tego ustawienia, aby włączać i wyłączać usługę bez usuwania funkcji PXE z punktu dystrybucji.  
-
-6.  Wybierz **Włącz obsługę nieznanych komputerów** do wdrażania systemów operacyjnych na komputerach, które nie są zarządzane przez program Configuration Manager.  
-
-7.  Wybierz pozycję **Wymagaj hasła, kiedy komputery używają środowiska PXE**i podaj silne hasło, aby zapewnić dodatkową ochronę wdrożeń PXE.  
-
-8.  Na liście **Koligacja urządzenia użytkownika** wybierz, w jaki sposób punkt dystrybucji ma kojarzyć użytkowników z komputerem docelowym w ramach wdrożeń PXE.  
-
-    -   Wybierz pozycję **Nie używaj koligacji urządzenia użytkownika** , aby nie kojarzyć użytkowników z komputerem docelowym.  
-
-    -   Wybierz pozycję **Zezwalaj na koligację urządzenia użytkownika z zatwierdzaniem ręcznym** , aby czekać na zatwierdzenie przez użytkownika administracyjnego przed skojarzeniem użytkowników z komputerem docelowym.  
-
-    -   Wybierz pozycję **Zezwalaj na koligację urządzenia użytkownika z automatycznym zatwierdzeniem** , aby automatycznie kojarzyć użytkowników z komputerem docelowym bez czekania na zatwierdzenie.  
-
-     Aby uzyskać więcej informacji, zobacz [kojarzyć użytkowników z komputerem docelowym](../get-started/associate-users-with-a-destination-computer.md).  
-
-9. Określ, czy punkt dystrybucji ma odpowiadać na żądania PXE ze wszystkich interfejsów sieciowych, czy tylko z konkretnych interfejsów sieciowych. Jeśli punkt dystrybucji ma odpowiadać na konkretnych interfejsach sieciowych, podaj adres MAC każdego interfejsu sieciowego.  
-
-10. Określ w sekundach opóźnienie oczekiwania punktu dystrybucji przed udzieleniem odpowiedzi na żądanie komputera, gdy jest używanych wiele punktów dystrybucji z włączoną funkcją PXE.  
-
-11. Kliknij przycisk **OK** , aby zaktualizować właściwości punktu dystrybucji.  
-
-###  <a name="BKMK_RamDiskTFTP"></a> Dostosowywanie rozmiaru okna i bloku RamDisk TFTP w punktach dystrybucji z obsługą środowiska PXE  
-Można dostosować rozmiar bloku RamDisk TFTP, a począwszy od wersji programu 1606 wersji programu Configuration Manager, rozmiar okna dla punktów dystrybucji z włączoną obsługą środowiska PXE. Jeśli skonfigurowano sieć, może to powodować niepowodzenie pobrania obrazu rozruchowego z błędem przekroczenia limitu czasu, ponieważ rozmiar bloku lub okna jest zbyt duży. Dostosowanie rozmiaru bloku i rozmiaru okna RamDisk TFTP umożliwia zoptymalizowanie ruchu TFTP w środowisku PXE w celu spełnienia określonych wymagań sieciowych.   
-Aby określić najbardziej wydajne rozwiązanie, należy przetestować dostosowane ustawienia w swoim środowisku.  
-
--   **Rozmiar bloku TFTP**: Rozmiar bloku jest rozmiarem pakietów danych, które są wysyłane przez serwer do klienta pobierającego plik (zgodnie z opisem w dokumencie RFC 2347). Większy rozmiar bloku zezwala serwerowi na wysyłanie mniejszej liczby pakietów, co przekłada się na zmniejszenie obustronnych opóźnień między serwerem a klientem. Niemniej jednak duże rozmiary bloków powodują fragmentowanie pakietów. Większość wdrożeń klienckich środowiska PXE nie obsługuje pakietów po fragmentacji.  
-
--   **Rozmiar okna TFTP**: TFTP wymaga pakietu z potwierdzeniem (ACK) dla każdego bloku danych, które są wysyłane. Serwer nie wyśle kolejnego bloku, dopóki nie odbierze pakietu ACK dla poprzedniego bloku. Dostosowywanie okien TFTP jest funkcją Usług wdrażania systemu Windows, która umożliwia określenie liczby bloków danych potrzebnych do wypełnienia okna. Serwer wysyła bloki danych symetrycznie, dopóki okno nie zostanie wypełnione, a następnie klient wysyła pakiet ACK. Zwiększenie rozmiaru okna redukuje liczbę obustronnych opóźnień między klientem a serwerem i zmniejsza całkowity czas wymagany do pobrania obrazu rozruchowego.  
+ Aby wdrożyć systemy operacyjne klientów programu Configuration Manager, które żądania rozruchu środowiska PXE, należy skonfigurować co najmniej jeden punkt dystrybucji do akceptowania żądań PXE. Po skonfigurowaniu punktu dystrybucji ma odpowiadać na żądania rozruchu środowiska PXE i określa odpowiedniej akcji wdrażania do wykonania. Aby uzyskać więcej informacji, zobacz [zainstalować lub zmodyfikować punkt dystrybucji](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#pxe).  
 
 
-#### <a name="to-modify-the-ramdisk-tftp-window-size"></a>Aby zmienić rozmiar okna RamDisk TFTP  
+###  <a name="BKMK_RamDiskTFTP"></a> Dostosuj rozmiar bloku i okna RamDisk TFTP w punktach dystrybucji z włączoną obsługą środowiska PXE  
+Można dostosować rozmiar bloku i okna RamDisk TFTP dla punktów dystrybucji z włączoną obsługą środowiska PXE. Duży rozmiar bloku lub okna dostosowaną sieci, może spowodować pobrania obrazu rozruchowego z błędem przekroczenia limitu czasu. Dostosowywanie rozmiaru bloku i okna RamDisk TFTP pozwalają na zoptymalizowanie ruchu TFTP przy użyciu środowiska PXE w celu spełnienia określonych wymagań sieciowych. Aby ustalić, jakie konfiguracja jest najbardziej wydajnym, należy przetestować dostosowane ustawienia w danym środowisku.  
 
--   Dodaj następujący klucz rejestru w punktach dystrybucji obsługujących środowisko PXE, aby skonfigurować rozmiar okna RamDisk TFTP:  
+-   **Rozmiar bloku TFTP**: Rozmiar bloku jest rozmiarem pakietów danych, które serwer wysyła do klienta pobierającego plik. Większy rozmiar bloku zezwala serwerowi na wysyłanie mniejszej liczby pakietów, co przekłada się na zmniejszenie obustronnych opóźnień między serwerem a klientem. Jednak duże blok o rozmiarze powodują fragmentowanie pakietów, które nie obsługują większość wdrożeń klienckich środowiska PXE.  
 
-     **Lokalizacja**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
-    Nazwa: RamDiskTFTPWindowSize  
+-   **Rozmiar okna TFTP**: TFTP wymaga pakietu z potwierdzeniem (ACK) dla każdego bloku danych, które są wysyłane. Serwer nie wyśle kolejnego bloku, dopóki nie odbierze pakietu ACK dla poprzedniego bloku. Dostosowywanie okien TFTP umożliwia zdefiniowanie liczby bloków danych potrzebnych do wypełnienia okna. Serwer wysyła bloki danych symetrycznie, dopóki okno nie zostanie wypełnione, a następnie klient wysyła pakiet ACK. Zwiększenie rozmiaru okna zmniejsza liczbę obustronnych opóźnień między klientem a serwerem i zmniejsza całkowity czas wymagany do pobrania obrazu rozruchowego.  
+  
 
-     **Typ**: REG_DWORD  
 
-     **Wartość**: &lt;dostosowany rozmiar okna >  
+#### <a name="modify-the-ramdisk-tftp-window-size"></a>Zmodyfikuj rozmiar okna RamDisk TFTP  
+Aby dostosować rozmiar okna RamDisk TFTP, Dodaj następujący klucz rejestru w punktach dystrybucji z włączoną obsługą środowiska PXE:  
 
- Wartość domyślna to 1 (1 blok danych będzie wypełniać okno).  
+  - **Lokalizacja**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
+  - **Nazwa**: RamDiskTFTPWindowSize  
+  - **Typ**: REG_DWORD  
+  - **Wartość**: &lt;dostosowany rozmiar okna >  </br>
+     Wartość domyślna to **1** (jeden blok danych będzie wypełniać okno)  
 
-#### <a name="to-modify-the-ramdisk-tftp-block-size"></a>Aby zmienić rozmiar bloku RamDisk TFTP  
+#### <a name="modify-the-ramdisk-tftp-block-size"></a>Zmodyfikuj rozmiar bloku RamDisk TFTP  
+Aby dostosować rozmiar okna RamDisk TFTP, Dodaj następujący klucz rejestru w punktach dystrybucji z włączoną obsługą środowiska PXE:  
 
--   Dodaj następujący klucz rejestru w punktach dystrybucji obsługujących środowisko PXE, aby skonfigurować rozmiar okna RamDisk TFTP:  
-
-     **Lokalizacja**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
-    Nazwa: RamDiskTFTPBlockSize  
-
-     **Typ**: REG_DWORD  
-
-     **Wartość**: &lt;dostosowany rozmiar bloku >  
-
- Wartość domyślna to 4096 (4k).  
+  - **Lokalizacja**: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SMS\DP  
+  - **Nazwa**: RamDiskTFTPBlockSize  
+  - **Typ**: REG_DWORD  
+  - **Wartość**: &lt;dostosowany rozmiar bloku >  </br>
+     Wartość domyślna to **4096**.  
 
 
 ###  <a name="BKMK_DPMulticast"></a> Konfigurowanie punktów dystrybucji pod kątem obsługi multiemisji  
- Multiemisja to metoda optymalizacji sieci, której można użyć dla punktów dystrybucji, gdy wielu klientów może jednocześnie pobierać ten sam obraz systemu operacyjnego. W przypadku multiemisji obraz systemu operacyjnego jest udostępniony w punkcie dystrybucji i może być jednocześnie pobierany na wiele komputerów. Punkt dystrybucji nie musi wysyłać kopii danych do każdego klienta w ramach oddzielnego połączenia. Obsługa multiemisji wymaga skonfigurowania co najmniej jednego punktu dystrybucji. Aby uzyskać więcej informacji, zobacz [użyć multiemisji do wdrażania systemu Windows za pośrednictwem sieci](../deploy-use/use-multicast-to-deploy-windows-over-the-network.md).  
+ Multiemisja to metoda optymalizacji sieci. Służy on w punktach dystrybucji w przypadku wielu klientów może pobierać ten sam obraz systemu operacyjnego, w tym samym czasie. Podczas korzystania z multiemisji, wielu komputerów może być jednocześnie pobierany obrazu systemu operacyjnego jest udostępniony w punkcie dystrybucji. Bez multiemisji punkt dystrybucji wysyła kopię danych do każdego klienta przez oddzielne połączenie. Aby uzyskać więcej informacji, zobacz [użyć multiemisji do wdrażania systemu Windows za pośrednictwem sieci](../deploy-use/use-multicast-to-deploy-windows-over-the-network.md).  
 
- Przed wdrożeniem systemu operacyjnego należy skonfigurować punkt dystrybucji do obsługi multiemisji. Aby zmodyfikować istniejący punkt dystrybucji do obsługi multiemisji, należy wykonać poniższą procedurę. Aby uzyskać informacje o sposobie instalowania nowego punktu dystrybucji, zobacz [zainstalować i skonfigurować punkty dystrybucji](../../core/servers/deploy/configure/install-and-configure-distribution-points.md).
+ Przed wdrożeniem systemu operacyjnego należy skonfigurować punkt dystrybucji do obsługi multiemisji. Aby uzyskać więcej informacji, zobacz [zainstalować i skonfigurować punkty dystrybucji](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#multicast).
 
-#### <a name="to-enable-multicast-for-a-distribution-point"></a>Aby włączyć multiemisję dla punktu dystrybucji  
-
-1.  W konsoli programu Configuration Manager kliknij przycisk **Administracja**.  
-
-2.  W obszarze roboczym **Administracja** rozwiń węzeł **Przegląd**, a następnie wybierz węzeł **Punkty dystrybucji** .  
-
-3.  Wybierz punkt dystrybucji, który ma być używany do multiemisji obrazu systemu operacyjnego.  
-
-4.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij pozycję **Właściwości**.  
-
-5.  Wybierz kartę **Multiemisja** i skonfiguruj poniższe opcje:  
-
-    -   **Włącz multiemisję**: Należy wybrać tę opcję dla punktu dystrybucji w celu obsługi multiemisji.  
-
-    -   **Konto połączenia multiemisji**: Określ konto w celu połączenia z bazą danych lokacji.  
-
-    -   **Ustawienia adresu multiemisji**: Określ adresy IP do przesyłania danych do komputerów docelowych. Domyślnie adres IP jest pobierany z serwera DHCP, na którym jest włączona funkcja dystrybucji adresów multiemisji. W zależności od środowiska sieciowego możesz określić zakres adresów IP między 239.0.0.0 i 239.255.255.255.  
-
-        > [!IMPORTANT]  
-        >  Te adresy IP muszą być dostępne dla komputerów docelowych, które żądają obrazu systemu operacyjnego. Oznacza to, że routery i zapory między komputerem docelowym a serwerem lokacji muszą być skonfigurowane tak, aby zezwalały na ruch multiemisji.  
-
-    -   **Zakres portów UDP**: Określ zakres portów UDP w celu wysyłania danych do komputerów docelowych.  
-
-        > [!IMPORTANT]  
-        >  Te porty muszą być dostępne dla komputerów docelowych, które żądają obrazu systemu operacyjnego. Oznacza to, że routery i zapory między komputerem docelowym a serwerem lokacji muszą być skonfigurowane tak, aby zezwalały na ruch multiemisji.  
-
-    -   **Włącz zaplanowaną multiemisję**: Określ, jak programu Configuration Manager sterować uruchamianiem wdrażania systemów operacyjnych na komputerach docelowych. Kliknij opcję **Włącz zaplanowaną multiemisję**, a następnie wybierz jedną z poniższych opcji.  
-
-         W **opóźnienie rozpoczęcia sesji** Określ liczbę minut, przez które programu Configuration Manager czeka przed udzieleniem odpowiedzi na pierwsze żądanie wdrożenia.  
-
-         W **minimalna wielkość sesji** Określ, ile żądań musi odebrać przed uruchomieniem programu Configuration Manager do wdrażania systemu operacyjnego.  
-
-    -   **Szybkość przesyłu**: Wybierz szybkość przesyłu w celu pobierania danych do komputerów docelowych.  
-
-    -   **Maksymalna liczba klientów**: Określ maksymalną liczbę komputerów docelowych, które mogą pobierać system operacyjny z tego punktu dystrybucji.  
-
-6.  Kliknij przycisk **OK**.  
 
 ##  <a name="BKMK_StateMigrationPoints"></a> Punkt migracji stanu  
- Punkt migracji stanu przechowuje dane stanu użytkownika przechwycone na jednym komputerze, a następnie przywrócone na innym komputerze. Jednak w przypadku przechwytywania ustawień użytkownika na potrzeby wdrożenia systemu operacyjnego na tym samym komputerze, na przykład w ramach wdrożenia polegającego na odświeżeniu systemu operacyjnego komputera docelowego, możesz wybrać, czy dane mają być przechowywane na tym samym komputerze przy użyciu twardych linków, czy za pomocą punktu migracji stanu. Dla niektórych wdrożeń komputerów podczas tworzenia magazynu stanu programu Configuration Manager automatycznie tworzy skojarzenie między magazynem stanów i komputerem docelowym. Planując punkt migracji stanu, należy uwzględnić wymienione niżej kwestie.  
+ Punkt migracji stanu przechowuje dane stanu użytkownika narzędzia USMT znajdują się na jednym komputerze, a następnie przywraca na innym komputerze. Jednak podczas przechwytywania ustawień użytkownika na potrzeby wdrożenia systemu operacyjnego na tym samym komputerze, na przykład wdrożenia, w którym odświeżeniu systemu Windows na komputerze docelowym, możesz wybrać, czy do przechowywania danych na tym samym komputerze przy użyciu twardych linków lub użyć punktu migracji stanu . Dla niektórych wdrożeń komputerów podczas tworzenia magazynu stanu programu Configuration Manager automatycznie tworzy skojarzenie między magazynem stanów i komputerem docelowym. Planując punkt migracji stanu, należy wziąć pod uwagę następujące czynniki:    
 
 ### <a name="user-state-size"></a>Rozmiar danych stanu użytkownika  
- Rozmiar danych stanu użytkownika bezpośrednio wpływa na magazyn dyskowy punktu migracji stanu oraz na wydajność sieci w czasie migracji. Należy uwzględnić rozmiar danych stanu użytkownika oraz liczbę komputerów, do których odbywa się migracja. Należy także wziąć pod uwagę, jakie ustawienia są migrowane z komputera. Jeśli na przykład folder **Moje dokumenty** ma już kopię zapasową na serwerze, być może jego migracja w ramach wdrożenia obrazu nie jest konieczna. Unikanie niepotrzebnych migracji może zmniejszyć ogólny rozmiar danych stanu użytkownika oraz ograniczyć jego wpływ na wydajność sieci oraz magazyn dyskowy punktu migracji stanu.  
+ Rozmiar danych stanu użytkownika bezpośrednio wpływa na magazyn dyskowy punktu migracji stanu oraz na wydajność sieci w czasie migracji. Należy uwzględnić rozmiar danych stanu użytkownika oraz liczbę komputerów, do których odbywa się migracja. Należy także wziąć pod uwagę, jakie ustawienia są migrowane z komputera. Na przykład jeśli **Moje dokumenty** folder już kopia zapasowa jest tworzona na serwerze, a następnie prawdopodobnie nie masz do migracji w ramach wdrożenia obrazu. Unikanie niepotrzebnych migracji zachowuje mniejszych całkowity rozmiar stanu użytkownika i zmniejsza wpływ, w przeciwnym razie mają go w sieci wydajność oraz Magazyn dyskowy punktu migracji stanu.  
 
 ### <a name="user-state-migration-tool"></a>Narzędzie do migracji stanu użytkowników  
- Aby przechwycić i przywrócić stan użytkownika podczas wdrażania systemu operacyjnego, należy korzystać z pakietu Narzędzie do migracji stanu użytkowników (USMT), który wskazuje pliki źródłowe narzędzia USMT. Menedżer konfiguracji automatycznie tworzy ten pakiet w konsoli programu Configuration Manager w **Biblioteka oprogramowania** > **Zarządzanie aplikacjami** > **pakiety**. Program Configuration Manager używa narzędzia USMT 10.0, które jest udostępniane w systemie Windows Assessment and Deployment Kit (Windows ADK), aby przechwycić stan użytkownika z jednego systemu operacyjnego, a następnie przywróć ją do innego systemu operacyjnego.  
+ Aby przechwycić i przywrócić stan użytkownika podczas wdrażania systemu operacyjnego, należy korzystać z pakietu Narzędzie do migracji stanu użytkowników (USMT), który wskazuje pliki źródłowe narzędzia USMT. Menedżer konfiguracji automatycznie tworzy ten pakiet w konsoli programu Configuration Manager w **Biblioteka oprogramowania** > **Zarządzanie aplikacjami** > **pakiety**. Configuration Manager używa narzędzia USMT 10 do przechwytywania stanu użytkownika z jednego systemu operacyjnego, a następnie przywróć ją na inny. Obejmuje narzędzia USMT 10, Windows Assessment and Deployment Kit (Windows ADK) dla systemu Windows 10.
 
- Aby uzyskać opis różnych scenariuszy migracji dla narzędzia USMT 10.0, zobacz [Common Migration Scenarios](https://technet.microsoft.com/library/mt299169\(v=vs.85\).aspx)(Typowe scenariusze migracji).  
+ Opis różnych scenariuszy migracji dotyczących narzędzia USMT 10, zobacz [typowe scenariusze migracji](/windows/deployment/usmt/usmt-common-migration-scenarios) w dokumentacji systemu Windows.  
 
 ### <a name="retention-policy"></a>Zasady przechowywania  
- Podczas konfigurowania punktu migracji stanu można określić, jak długo punkt przechowuje dane stanu użytkownika. Czas przechowywania danych na punkcie migracji stanu zależy od dwóch kwestii:  
+ Podczas konfigurowania punktu migracji stanu, określ czas przechowywania danych stanu użytkownika, który jest przechowywany. Czas przechowywania danych na punkcie migracji stanu zależy od dwóch kwestii:  
 
 -   Wpływ przechowywanych danych na magazyn dyskowy  
 
--   Potencjalny wymóg przechowywania danych przez pewien czas na wypadek ponownej migracji danych  
-
- Migracja stanu odbywa się w dwóch fazach: Przechwytywanie danych i przywracanie danych. Podczas przechwytywania dane stanu użytkownika są zbierane i zapisywane w punkcie migracji stanu. Podczas przywracania dane stanu użytkownika są pobierane z punktu migracji stanu i zapisywane na komputerze docelowym. Następnie zapisane dane są zwalniane w kroku **Zwolnij magazyn stanów** sekwencji zadań. Po uwolnieniu danych następuje włączenie licznika czasu przechowywania. W przypadku wybrania opcji natychmiastowego usunięcia zmigrowanych danych dane stanu użytkownika zostaną usunięte natychmiast po uwolnieniu. W przypadku wybrania opcji zachowania danych przez pewien czas dane zostaną usunięte po upływie tego czasu, liczonego od chwili uwolnienia danych. Im dłuższy czas przechowywania, tym więcej związanej z tym wymaganej przestrzeni dyskowej.  
+-   Potencjalny wymóg przechowywania danych przez pewien czas na wypadek ponownej migracji danych
+  
+  
+Migracja stanu odbywa się w dwóch fazach: Przechwytywanie danych i przywracanie danych. Podczas przechwytywania dane stanu użytkownika są zbierane i zapisywane w punkcie migracji stanu. Podczas przywracania dane stanu użytkownika są pobierane z punktu migracji stanu i zapisywane na komputerze docelowym. Następnie zapisane dane są zwalniane w kroku **Zwolnij magazyn stanów** sekwencji zadań. Po uwolnieniu danych następuje włączenie licznika czasu przechowywania. Jeśli zostanie wybrana opcja usunięcia zmigrowanych danych, dane stanu użytkownika zostaną usunięte natychmiast po uwolnieniu. W przypadku wybrania opcji zachowania danych przez pewien czas dane zostaną usunięte po upływie tego czasu, liczonego od chwili uwolnienia danych. Już przechowywania możesz ustawić okres, więcej miejsca na dysku prawdopodobnie wymagają.  
 
 ### <a name="select-drive-to-store-user-state-migration-data"></a>Wybieranie dysku do zapisania danych migracji stanu użytkownika  
- Podczas konfigurowania punktu migracji stanu należy określić dysk serwera, na którym mają być przechowywane migrowane dane stanu użytkownika. Dysk można wybrać z listy. Niektóre dyski widoczne na liście mogą jednak być dyskami niezapisywalnymi, takimi jak napęd CD lub dysk niebędący udziałem sieciowym. Dodatkowo niektóre litery dysków mogą nie być mapowane do żadnych dysków na komputerze. Podczas konfigurowania punktu migracji stanu należy wskazać zapisywalny, udostępniony dysk.  
+ Podczas konfigurowania punktu migracji stanu należy określić dysk serwera, na którym mają być przechowywane migrowane dane stanu użytkownika. Dysk można wybrać z listy. Niektóre dyski widoczne na liście mogą jednak być dyskami niezapisywalnymi, takimi jak napęd CD lub dysk niebędący udziałem sieciowym. Niektóre litery dysków mogą nie być mapowane do żadnych dysków na komputerze. Podczas konfigurowania punktu migracji stanu, określ zapisywalny, udostępniony dysk.  
 
 ### <a name="configure-a-state-migration-point"></a>Konfigurowanie punktu migracji stanu  
  Poniższe metody pozwalają skonfigurować punkt migracji stanu, tak aby przechowywać w nich dane o stanie użytkownika.  
@@ -206,7 +134,7 @@ Aby określić najbardziej wydajne rozwiązanie, należy przetestować dostosowa
 
 -   Użyj **Kreatora dodawania ról systemu lokacji** , aby dodać punkt migracji stanu do istniejącego serwera.  
 
- Korzystając z tych kreatorów, należy podać następujące informacje dotyczące punktu migracji stanu:  
+ Korzystając z tych kreatorów, zostanie wyświetlony monit o podanie poniższych informacji dla punktu migracji stanu:  
 
 -   Foldery do przechowywania danych o stanie użytkownika.  
 
@@ -214,7 +142,7 @@ Aby określić najbardziej wydajne rozwiązanie, należy przetestować dostosowa
 
 -   Minimalna ilość wolnego miejsca dla punktu migracji stanu, w którym będą przechowywane dane o stanie użytkownika.  
 
--   Zasady usuwania dla nowej roli. Istnieje możliwość określenia, aby dane o stanie użytkownika były usuwane natychmiast, po ich przywróceniu na komputerze, albo po upływie określonej liczby dni od ich przywrócenia.  
+-   Zasady usuwania dla nowej roli. Albo określić, czy dane stanu użytkownika zostaną usunięte natychmiast po ich przywróceniu na komputerze lub po określonej liczbie dni, po przywróceniu danych użytkownika na komputerze.  
 
 -   Czy punkt migracji stanu odpowiada tylko na żądania przywrócenia danych stanu użytkownika. Włączenie tej opcji uniemożliwia użycie punktu migracji stanu do przechowywania danych o stanie użytkownika.  
 

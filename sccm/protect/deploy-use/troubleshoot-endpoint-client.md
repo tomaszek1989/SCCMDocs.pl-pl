@@ -1,26 +1,27 @@
 ---
-title: "Rozwiązywanie problemów z klientem usługi Windows Defender lub program Endpoint Protection"
+title: Rozwiązywanie problemów z klientem usługi Windows Defender lub program Endpoint Protection
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak rozwiązywanie problemów z usługi Windows Defender oraz programu Endpoint Protection."
+description: Dowiedz się, jak rozwiązywanie problemów z usługi Windows Defender oraz programu Endpoint Protection.
 ms.custom: na
-ms.date: 01/03/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d837253e-fcc2-422a-9e2c-c78b938dfd8c
-caps.latest.revision: "7"
-caps.handback.revision: "0"
-author: NathBarn
-ms.author: nathbarn
-manager: angrobe
-ms.openlocfilehash: b667db471a16faef057f49a0a26759849e03f237
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+caps.latest.revision: ''
+caps.handback.revision: ''
+author: mestew
+ms.author: mstewart
+manager: dougeby
+ms.openlocfilehash: a8460cafce15e5fb97ace76983932841ec77412f
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="troubleshooting-windows-defender-or-endpoint-protection-client"></a>Rozwiązywanie problemów z klientem usługi Windows Defender lub program Endpoint Protection
 
@@ -100,7 +101,7 @@ W razie wystąpienia problemów z usługą Windows Defender lub programem Endpoi
 
 2.  Jeśli wyświetlony komunikat o błędzie zawiera kod 0x80072f8f, problem najprawdopodobniej wynika z nieprawidłowego ustawienia daty lub godziny na komputerze.  
 
-3.  W celu zresetowania ustawienia daty lub godziny na komputerze wykonaj kroki opisane w temacie [Problem ze skrótem, niepoprawny czas systemowy, błąd 0x80072f8f](http://go.microsoft.com/fwlink/?LinkId=155579) (http://go.microsoft.com/fwlink/?LinkId=155579).  
+3.  Aby zresetować komputera ustawienia daty lub godziny, postępuj zgodnie z instrukcjami [napraw przerwanych skrótów pulpitu i wspólny system zadania konserwacji](http://go.microsoft.com/fwlink/?LinkId=155579) (http://go.microsoft.com/fwlink/?LinkId=155579).  
 
 ### <a name="step-4-rename-the-software-distribution-folder-on-your-computer"></a>Krok 4. Zmień nazwę folderu dystrybucji oprogramowania na komputerze  
 
@@ -136,7 +137,7 @@ W razie wystąpienia problemów z usługą Windows Defender lub programem Endpoi
 
 2.  W oknie **Wiersz polecenia** wpisz następujące polecenia i naciśnij klawisz **Enter** po każdym z nich:  
 
-     **Dysku CD\\**  
+     **dysku CD\\**  
 
      **Usługa defender files\windows program dysku CD**  
 
@@ -153,16 +154,16 @@ W razie wystąpienia problemów z usługą Windows Defender lub programem Endpoi
 
 ### <a name="step-6-manually-install-the-virus-and-spyware-definition-updates"></a>Krok 6. Ręczne instalowanie aktualizacji definicji wirusów i programów szpiegujących  
 
--   Jeśli na komputerze jest zainstalowany 32-bitowy system operacyjny Windows, pobierz ręcznie najnowsze aktualizacje przy użyciu linku [http://go.microsoft.com/fwlink/?LinkID=87342](http://go.microsoft.com/fwlink/?LinkID=87342) (http://go.microsoft.com/fwlink/?LinkID=87342).  
+-   Jeśli używasz 32-bitowym systemie operacyjnym Windows, Pobierz ręcznie najnowsze aktualizacje przy [ http://go.microsoft.com/fwlink/?LinkID=87342 ](http://go.microsoft.com/fwlink/?LinkID=87342) (http://go.microsoft.com/fwlink/?LinkID=87342).  
 
--   Jeśli na komputerze jest zainstalowany 64-bitowy system operacyjny Windows, pobierz ręcznie najnowsze aktualizacje przy użyciu linku [http://go.microsoft.com/fwlink/?LinkID=87341](http://go.microsoft.com/fwlink/?LinkID=87341) (http://go.microsoft.com/fwlink/?LinkID=87341).  
+-   Jeśli używasz 64-bitowym systemie operacyjnym Windows, Pobierz ręcznie najnowsze aktualizacje przy [ http://go.microsoft.com/fwlink/?LinkID=87341 ](http://go.microsoft.com/fwlink/?LinkID=87341) (http://go.microsoft.com/fwlink/?LinkID=87341).  
 
 -   Kliknij przycisk **Uruchom**. Najnowsze aktualizacje zostaną ręcznie zainstalowane na komputerze.  
 
 
 ### <a name="step-7-contact-support"></a>Krok 7. Skontaktuj się z pomocą techniczną  
 
--   Jeśli powyższe czynności nie rozwiążą problemu, skontaktuj się z pomocą techniczną. Aby uzyskać więcej informacji, zobacz temat [Pomoc techniczna](http://go.microsoft.com/fwlink/?LinkID=196174) (http://go.microsoft.com/fwlink/?LinkID=196174).  
+-   Jeśli powyższe czynności nie rozwiążą problemu, skontaktuj się z pomocą techniczną. Aby uzyskać więcej informacji, zobacz [techniczną](http://go.microsoft.com/fwlink/?LinkID=196174) (http://go.microsoft.com/fwlink/?LinkID=196174).  
 
 ##  <a name="starting-windows-defender-or-endpoint-protection-service"></a>Uruchamianie usługi Windows Defender lub program Endpoint Protection  
  **Objaw**  
@@ -238,8 +239,7 @@ W razie wystąpienia problemów z usługą Windows Defender lub programem Endpoi
 3.  Jeśli używasz modemu kablowego lub routera DSL, upewnij się, że połączenia z routerem i z komputerem są prawidłowe. Spróbuj odłączyć i wyłączyć router i modem. Odczekaj kilka minut, podłącz najpierw modem, odczekaj minutę, następnie podłącz router i uruchom ponownie komputer.  
 
 ##  <a name="detected-threat-cant-be-remediated"></a>Nie można skorygować wykrytych zagrożeń  
- Gdy usługa Windows Defender lub  
-      Program Endpoint Protection wykryje potencjalne zagrożenie, które znajduje się wewnątrz skompresowanego pliku z rozszerzeniem zip lub w udziale sieciowym, zostanie próba akcji związanej z zagrożeniem przez poddawanie kwarantannie lub jego usunięcie.  
+ Gdy usługa Windows Defender lub program Endpoint Protection wykryje potencjalne zagrożenie, które znajduje się wewnątrz skompresowanego pliku z rozszerzeniem zip lub w udziale sieciowym, zostanie próba akcji związanej z zagrożeniem przez poddawanie kwarantannie lub jego usunięcie.  
 
 ### <a name="remove-or-scan-the-file"></a>Usuwanie lub skanowanie pliku  
 

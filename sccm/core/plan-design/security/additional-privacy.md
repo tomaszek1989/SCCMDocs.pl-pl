@@ -1,20 +1,22 @@
 ---
-title: "System Center Configuration Manager privacy statement — informacje dodatkowe"
-description: "Więcej informacji na temat jak firma Microsoft zbiera i korzysta z danych z wdrożenia programu System Center Configuration Manager."
+title: Privacy statement — informacje dodatkowe
+titleSuffix: Configuration Manager
+description: Więcej informacji na temat jak firma Microsoft zbiera i używa danych z programu System Center Configuration Manager.
 ms.custom: na
-ms.date: 10/13/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1fcc921f-085f-4b0b-9c53-1e0707211076
-caps.latest.revision: "5"
-caps.handback.revision: "0"
+caps.latest.revision: ''
+caps.handback.revision: ''
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
+manager: dougeby
 translation.priority.ht:
 - cs-cz
 - de-de
@@ -34,11 +36,11 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 5332d02f4d128516f310a2edff897b4efc5b971b
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: eb557a29b1412e136023b3e6caddf358732659e9
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="additional-information-about-privacy-for-system-center-configuration-manager"></a>Dodatkowe informacje o ochronie prywatności dla programu System Center Configuration Manager
 
@@ -57,18 +59,22 @@ Menedżer konfiguracji zbiera dane tylko z bazy danych serwera SQL dla lokacji i
 
 Administratorzy mogą zmieniać poziom danych, które są zbierane, przechodząc do **dane użycia** sekcji konsoli programu Configuration Manager.
 
-Aby uzyskać więcej informacji, zobacz "Dowiedz się więcej" artykuły dotyczące poziomy użycia danych i ustawień w [diagnostycznych i danych użycia programu System Center Configuration Manager](http://go.microsoft.com/fwlink/?LinkID=626566) artykułu.
+Aby uzyskać więcej informacji, zobacz "Dowiedz się więcej" artykuły dotyczące poziomy użycia danych i ustawień w [diagnostycznych i danych użycia programu System Center Configuration Manager](https://go.microsoft.com/fwlink/?LinkID=626566) artykułu.
 
 
 ## <a name="customer-experience-improvement-program"></a>Program poprawy jakości obsługi klienta
+
+> [!Note]  
+> Począwszy od programu Configuration Manager w wersji 1802 funkcję programu CEIP zostanie usunięte z produktu.
+
 Program poprawy jakości obsługi klienta (CEIP) zbiera podstawowe informacje z konsoli programu Configuration Manager o konfiguracji sprzętu i sposobie używania naszego oprogramowania i usług w celu identyfikacji trendów i wzorców użytkowania. Program CEIP zbiera również typ i liczbę napotkanych błędów, wydajności oprogramowania i sprzętu oraz szybkości usług. Nie gromadzimy nazwę, adres lub inne informacje kontaktowe. Z komputerów klientów nie są zbierane żadne dane programu CEIP.
 
 Używamy tych informacji w celu poprawienia jakości, niezawodności i wydajności oprogramowania i usług firmy Microsoft.
 
-Aby uzyskać więcej informacji o informacje zbierane, przetwarzane lub przekazywane przez program CEIP, zobacz [zasady zachowania poufności informacji programu CEIP](http://go.microsoft.com/fwlink/?LinkID=525211).
+Aby uzyskać więcej informacji o informacje zbierane, przetwarzane lub przekazywane przez program CEIP, zobacz [zasady zachowania poufności informacji programu CEIP](https://go.microsoft.com/fwlink/?LinkID=525211).
 
 ## <a name="operations-management-suite-connector"></a>Łącznik programu Operations Management Suite
-Łącznika pakiet Microsoft Operations Management synchronizuje dane, takie jak kolekcje, programu System Center Configuration Manager do programu Microsoft Operations Management Suite. Identyfikator subskrypcji Microsoft Azure i klucz tajny są przechowywane w bazie danych programu Configuration Manager, gdy administrator skonfiguruje tę funkcję. Zarówno klucz tajny klienta usługi Azure Active Directory, jak i klucz udostępniony obszaru roboczego programu Microsoft Operations Management Suite są przechowywane w bazie danych programu System Center Configuration Manager lokalnie. Cała komunikacja między System Center Configuration Manager i Microsoft Operations Management Suite za pośrednictwem protokołu HTTPS. Brak dodatkowych informacji o kolekcjach znajduje się do firmy Microsoft poza dane telemetryczne losowego. Aby uzyskać szczegółowe informacje, która gromadzi programu Microsoft Operations Management Suite, zobacz [rejestrować analytics](http://go.microsoft.com/fwlink/?LinkId=823545).
+Łącznika pakiet Microsoft Operations Management synchronizuje dane, takie jak kolekcje, programu System Center Configuration Manager do programu Microsoft Operations Management Suite. Identyfikator subskrypcji Microsoft Azure i klucz tajny są przechowywane w bazie danych programu Configuration Manager, gdy administrator skonfiguruje tę funkcję. Zarówno klucz tajny klienta usługi Azure Active Directory, jak i klucz udostępniony obszaru roboczego programu Microsoft Operations Management Suite są przechowywane w bazie danych programu System Center Configuration Manager lokalnie. Cała komunikacja między System Center Configuration Manager i Microsoft Operations Management Suite za pośrednictwem protokołu HTTPS. Brak dodatkowych informacji o kolekcjach znajduje się do firmy Microsoft poza dane telemetryczne losowego. Aby uzyskać szczegółowe informacje, która gromadzi programu Microsoft Operations Management Suite, zobacz [rejestrować analytics](https://go.microsoft.com/fwlink/?LinkId=823545).
 
 ## <a name="asset-intelligence"></a>Analiza zasobów
 Funkcja analizy zasobów umożliwia Administratorzy IT definiowanie, śledzenie i aktywne Zarządzanie zgodnością ze standardami konfiguracji. Pomiary i raporty dotyczące wdrażania i używania zarówno aplikacji fizycznych, jak i wirtualnych pomagają organizacjom podejmować lepsze decyzje biznesowe dotyczące licencji na oprogramowanie oraz zachować zgodność z umowami licencyjnymi. Po zebraniu danych użycia od klientów programu Configuration Manager, Administratorzy można użyć różnych funkcji, aby wyświetlić dane, włącznie z kolekcji, zapytań i raportowania.
@@ -96,16 +102,16 @@ Usługa ochrony chmury firmy Microsoft raporty są wykorzystywane do ulepszania 
 
 Usługa ochrony chmury firmy Microsoft nie zbiera celowo informacji osobistych. W zakresie, w jakim usługi Microsoft Cloud Protection zbiera żadnych informacji osobistych, Microsoft nie używa informacji do identyfikacji użytkownika lub skontaktowania się z Tobą.
 
-Dodatkowe szczegóły dotyczące zebranych danych można znaleźć w dokumentacji produktu w [programu Endpoint Protection w programie System Center Configuration Manager](http://go.microsoft.com/fwlink/?LinkId=823547).
+Dodatkowe szczegóły dotyczące zebranych danych można znaleźć w dokumentacji produktu w [programu Endpoint Protection w programie System Center Configuration Manager](https://go.microsoft.com/fwlink/?LinkId=823547).
 
 ## <a name="site-hierarchy--geographical-view-with-bing-maps"></a>Hierarchia lokacji — widok geograficzny przy użyciu map Bing
 Hierarchia lokacji — widok geograficzny umożliwia używanie mapy, mapy Bing firmy Microsoft dostępnych do wyświetlenia topologii fizycznej serwera programu Configuration Manager. Aby włączyć tę funkcję, podane informacje o lokalizacji są wysyłane z serwera z usługą sieci Web mapy Bing.
 
-Firma Microsoft używa tych informacji do obsługi i ulepszania usługi Mapy Bing firmy Microsoft oraz innych witryn i usług firmy Microsoft. Aby uzyskać więcej informacji, zobacz [zasady zachowania poufności informacji firmy Microsoft](http://go.microsoft.com/fwlink/?LinkId=823548).
+Firma Microsoft używa tych informacji do obsługi i ulepszania usługi Mapy Bing firmy Microsoft oraz innych witryn i usług firmy Microsoft. Aby uzyskać więcej informacji, zobacz [zasady zachowania poufności informacji firmy Microsoft](https://go.microsoft.com/fwlink/?LinkId=823548).
 Można zrezygnować z używania widoku geograficznego hierarchii lokacji. Widok diagramu hierarchii umożliwia zobaczenie hierarchii i nie używa usługi mapy Bing.
 
 ## <a name="microsoft-intune-subscription"></a>Subskrypcja usługi Microsoft Intune
-Klienci, którzy kupili subskrypcję Microsoft Intune można używać programu Configuration Manager do zarządzania urządzeniami przenośnymi podłączonymi przy użyciu programu Microsoft Intune. [Microsoft Online Services Privacy Statement](http://go.microsoft.com/fwlink/?LinkId=262214) ma zastosowanie do usług online firmy Microsoft, w tym programu Microsoft Intune. Jeśli klienci mają też subskrypcję Microsoft Intune [Microsoft Online Services Privacy Statement](http://go.microsoft.com/fwlink/?LinkId=262214) należy przeczytać łącznie z te zasady zachowania poufności.
+Klienci, którzy kupili subskrypcję Microsoft Intune można używać programu Configuration Manager do zarządzania urządzeniami przenośnymi podłączonymi przy użyciu programu Microsoft Intune. [Microsoft Online Services Privacy Statement](https://go.microsoft.com/fwlink/?LinkId=262214) ma zastosowanie do usług online firmy Microsoft, w tym programu Microsoft Intune. Jeśli klienci mają też subskrypcję Microsoft Intune [Microsoft Online Services Privacy Statement](https://go.microsoft.com/fwlink/?LinkId=262214) należy przeczytać łącznie z te zasady zachowania poufności.
 
 Cała komunikacja z usługą Microsoft Intune używać protokołu HTTPS. Aby skonfigurować subskrypcję Microsoft Intune i pobrać podpisywania żądanie certyfikatu (CSR) potrzebne do skonfigurowania obsługi systemu iOS, administrator zalogować się do programu Microsoft Intune za pomocą konta służbowego i hasła. Te poświadczenia nie są przechowywane w programie Configuration Manager. Cała pozostała komunikacja w usłudze Microsoft Intune jest uwierzytelniana za pomocą certyfikatów PKI, które automatycznie generuje Microsoft Intune.
 

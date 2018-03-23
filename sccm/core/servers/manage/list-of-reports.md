@@ -1,56 +1,62 @@
 ---
-title: "Lista raportów"
+title: Lista raportów
 titleSuffix: Configuration Manager
-description: "Przejrzyj listę raportów dostępnych w programie Configuration Manager. Należą one do różnych kategorii."
+description: Przejrzyj listę raportów dostępnych w programie Configuration Manager. Należą one do różnych kategorii.
 ms.custom: na
-ms.date: 10/06/2016
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b7332ed3-8003-454b-bb12-1fdf8721425c
-caps.latest.revision: "10"
-caps.handback.revision: "0"
-author: Dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 9657634621b200b0fcda3fea2785a6ceaa68f8ca
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+caps.latest.revision: ''
+caps.handback.revision: ''
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: b15726b2551464c178774dc2c87a6a2f41a37c07
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="list-of-reports-in-system-center-configuration-manager"></a>Lista raportów w programie System Center Configuration Manager.
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Wiele wbudowanych raportów są dostarczane z System Center Configuration Manager, obejmujące wiele zadań raportowania, które można wykonywać. W tych raportach można również używać instrukcji SQL, co pozwoli na tworzenie własnych raportów. Skorzystaj z informacji w tym temacie, aby dowiedzieć się więcej na temat raportów dostępnych w programie Configuration Manager.  
+Configuration Manager udostępnia wiele wbudowanych raportów, obejmujące wiele zadań raportowania, które można wykonywać. W tych raportach można również używać instrukcji SQL, co pozwoli na tworzenie własnych raportów.   
 
-## <a name="list-of-built-in-configuration-manager-reports"></a>Lista wbudowanych raportów programu Configuration Manager  
- Następujące raporty są uwzględnione w programie Configuration Manager. Należą one do różnych kategorii.  
+Następujące raporty są uwzględnione w programie Configuration Manager. Należą one do różnych kategorii.  
 
-### <a name="administrative-security"></a>Zabezpieczenia administracyjne  
+
+
+## <a name="administrative-security"></a>Zabezpieczenia administracyjne  
  Następujące raporty są wyświetlane w obszarze **zabezpieczenia administracyjne** kategorii.  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
-|**Dziennik działań administracyjnych**|Przedstawia rekord zmian administracyjnych wprowadzonych w przypadku użytkowników administracyjnych, ról zabezpieczeń, zakresów zabezpieczeń oraz kolekcji.|  
+|**Dziennik działań administracyjnych**|Przedstawia rekord zmian administracyjnych wykonanych odnośnie do użytkowników administracyjnych, ról zabezpieczeń, zakresów zabezpieczeń i kolekcje.|  
 |**Przydziały zabezpieczeń użytkowników administracyjnych**|Przedstawia dane użytkowników administracyjnych, skojarzone z nimi role zabezpieczeń oraz zakresy zabezpieczeń skojarzone z każdą rolą zabezpieczeń dla każdego użytkownika.|  
-|**Obiekty zabezpieczane w ramach pojedynczego zakresu zabezpieczeń**|Przedstawia obiekty zabezpieczane w ramach określonego zakresu zabezpieczeń i przypisane tylko do tego zakresu zabezpieczeń. Ten raport nie zawiera obiektów skojarzonych z więcej niż jednym zakresem zabezpieczeń.|  
+|**Obiekty zabezpieczane w ramach pojedynczego zakresu zabezpieczeń**|Wyświetla obiekty, które administrator przypisał do tylko określonego zakresu zabezpieczeń. Ten raport nie wyświetla obiektów, które administrator kojarzy z więcej niż jednego zakresu zabezpieczeń.|  
 |**Zabezpieczenia określonych lub wielu obiektów programu Configuration Manager**|Przedstawia obiekty możliwe do zabezpieczenia, zakresy zabezpieczeń skojarzone z obiektami i użytkowników administracyjnych z uprawnieniami do obiektów.|  
 |**Podsumowanie ról zabezpieczeń**|Wyświetla role zabezpieczeń i administratorów programu Configuration Manager skojarzonych z poszczególnymi rolami.|  
 |**Podsumowanie zakresów zabezpieczeń**|Przedstawia zakresy zabezpieczeń oraz użytkowników administracyjnych programu Configuration Manager i grupy zabezpieczeń skojarzonych z każdym zakresem.|  
 
-### <a name="alerts"></a>Alerty  
+
+
+## <a name="alerts"></a>Alerty  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
 |**Ocena alertu**|Przedstawia podsumowanie wszystkich przełożonych alertów, które zostały wygenerowane między określonymi datami rozpoczęcia i zakończenia.|  
 |**Alerty generowane najczęściej**|Przedstawia podsumowanie alertów, które były najczęściej generowane w okresie od określonej daty do daty bieżącej dla określonego obszaru funkcji.|  
 
-### <a name="asset-intelligence"></a>Analiza zasobów  
+
+
+## <a name="asset-intelligence"></a>Analiza zasobów  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -65,14 +71,14 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Sprzęt 07C - komputery z określonym urządzeniem USB**|Przedstawia wszystkie komputery z określonym urządzeniem USB.|  
 |**Sprzęt 07D - urządzenia USB na określonym komputerze**|Przedstawia wszystkie urządzenia USB na określonym komputerze.|  
 |**Sprzęt 08A - sprzęt który nie jest gotowy do aktualizacji oprogramowania**|Przedstawia sprzęt, który nie spełnia minimalnych wymagań sprzętowych.|  
-|**Sprzęt 09A - wyszukiwanie komputerów**|Wyświetla podsumowanie Menedżera zasobów dotyczące komputerów spełniających kryteria filtrów słów kluczowych dotyczących nazwy komputera, lokacji programu Configuration Manager, domeny, najczęstszego użytkownika konsoli, systemu operacyjnego, producenta lub modelu.|  
+|**Sprzęt 09A - wyszukiwanie komputerów**|Wyświetla podsumowanie komputerów spełniających kryteria filtrów słów kluczowych. Te filtry są nazwę komputera, lokacji programu Configuration Manager, domeny, najczęstszego użytkownika konsoli, systemu operacyjnego, producenta lub modelu.|  
 |**Sprzęt 10A - komputery w określonej kolekcji które uległy zmianie w określonym przedziale czasu**|Przedstawia listę komputerów w określonej kolekcji, dla których klasa sprzętu została zmieniona w określonym przedziale czasu.|  
 |**Sprzęt 10B - zmiany na określonym komputerze w określonym przedziale czasu**|Przedstawia klasy, które zostały zmienione na określonym komputerze w określonym przedziale czasu.|  
 |**Licencja 01A - Księga licencji zbiorczych firmy Microsoft dla deklaracje licencyjne firmy Microsoft**|Przedstawia spis wszystkich tytułów oprogramowania firmy Microsoft, które są dostępne w ramach programu licencjonowania zbiorowego firmy Microsoft.|  
 |**Licencja 01B — elementy księgi licencji grupowych Microsoft wg kanału sprzedaży**|Identyfikuje i przedstawia kanał sprzedaży dla uwzględnionego w spisie oprogramowania z licencją zbiorczą firmy Microsoft.|  
 |**Licencja 01C - komputery z określonym licencjonowania zbiorowego firmy Microsoft księgi elementu i kanałem sprzedaży**|Identyfikuje i przedstawia komputery z określonym elementem księgi licencji zbiorczych firmy Microsoft.|  
 |**Licencja 01D - produkty w księdze licencji grupowych Microsoft na określonym komputerze**|Identyfikuje i przedstawia wszystkie elementy księgi licencji zbiorczych firmy Microsoft na określonym komputerze.|  
-|**Licencja 02A — liczba licencji wygasną, według przedziałów czasu**|Przedstawia liczbę licencji, które wkrótce wygasną, według określonego przedziału czasu. Są w nim wyświetlane produkty, których licencje są zarządzane przez usługę licencjonowania oprogramowania.|  
+|**Licencja 02A — liczba licencji wygasną, według przedziałów czasu**|Przedstawia liczbę licencji, które wkrótce wygasną, według określonego przedziału czasu. Wyświetlane produkty licencje są zarządzane przez usługę licencjonowania oprogramowania.|  
 |**Licencja 02B - komputery z licencjami bliskimi wygaśnięcia**|Przedstawia określone komputery z licencjami, które wkrótce wygasną.|  
 |**Licencja 02C - informacje dotyczące licencji na określonym komputerze**|Przedstawia produkty na określonym komputerze, których licencje są zarządzane przez usługę licencjonowania oprogramowania.|  
 |**Licencja 03A - liczba licencji według stanu licencji**|Przedstawia produkty, których licencje są zarządzane przez usługę licencjonowania oprogramowania, uporządkowane według stanu licencji.|  
@@ -96,19 +102,19 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Oprogramowanie 04A - oprogramowanie skonfigurowane do automatycznego uruchamiania na komputerach**|Przedstawia listę programów skonfigurowanych do automatycznego uruchamiania na komputerach.|  
 |**Oprogramowanie 04B - komputery z określonym oprogramowaniem skonfigurowanym do automatycznego uruchamiania**|Przedstawia wszystkie komputery z określonym oprogramowaniem skonfigurowanym do automatycznego uruchamiania.|  
 |**Oprogramowanie 04C - oprogramowanie skonfigurowane do automatycznego uruchamiania na określonym komputerze**|Przedstawia zainstalowane oprogramowanie skonfigurowane do automatycznego uruchamiania na określonym komputerze.|  
-|**Oprogramowanie 05A - obiekty Pomocnik przeglądarki**|Przedstawia obiekty pomocnicze przeglądarki zainstalowane na komputerach w określonej kolekcji.|  
-|**Oprogramowanie 05B - komputery z określonym obiektem Pomocnik przeglądarki**|Przedstawia wszystkie komputery z określonym obiektem pomocniczym przeglądarki.|  
-|**Oprogramowanie 05C - obiekty Pomocnik przeglądarki na określonym komputerze**|Przedstawia wszystkie obiekty pomocnicze przeglądarki na określonym komputerze.|  
-|**Oprogramowanie 06A - wyszukiwanie zainstalowanego oprogramowania**|Ten raport przedstawia podsumowanie zainstalowanego oprogramowania uporządkowane według liczby wystąpień na podstawie kryteriów wyszukiwania dla nazwy produktu, wydawcy lub wersji.|  
-|**Oprogramowanie 06B - oprogramowanie według nazwy produktu**|Przedstawia podsumowanie zainstalowanego oprogramowania uporządkowane według liczby wystąpień na podstawie określonej nazwy produktu.|  
-|**Oprogramowanie 07A - ostatnio używane programy wykonywalne według liczby komputerów**|Przedstawia programy wykonywalne, które były ostatnio używane, oraz liczbę komputerów, na których ich używano. Aby wyświetlanie tego raportu było możliwe, w tej lokacji należy włączyć pomiar użytkowania oprogramowania.|  
-|**Oprogramowanie 07B — komputery których ostatnio używany określony program wykonywalny**|Przedstawia komputery, na których ostatnio używano określonego programu wykonywalnego po włączeniu ustawienia klienta dotyczącego pomiaru użytkowania oprogramowania.|  
-|**Oprogramowanie 07C - ostatnio używane programy wykonywalne na określonym komputerze**|Przedstawia pliki wykonywalne, których ostatnio używano na określonym komputerze po włączeniu ustawienia klienta dotyczącego pomiaru użytkowania oprogramowania.|  
-|**Oprogramowanie 08A - ostatnio używane programy wykonywalne według liczby użytkowników**|Przedstawia ostatnio używane programy wykonywalne oraz liczbę użytkowników, którzy ostatnio z nich korzystali po włączeniu ustawienia klienta dotyczącego pomiaru użytkowania oprogramowania.|  
-|**Oprogramowanie 08B - użytkownicy którzy używali ostatnio określonego programu wykonywalnego**|Przedstawia użytkowników, którzy ostatnio używali określonego programu wykonywalnego po włączeniu ustawienia klienta dotyczącego pomiaru użytkowania oprogramowania.|  
-|**Oprogramowanie 08C - ostatnio używane programy wykonywalne według określonego użytkownika**|Przedstawia programy wykonywalne ostatnio używane przez określonego użytkownika po włączeniu ustawienia klienta dotyczącego pomiaru użytkowania oprogramowania.|  
-|**Oprogramowanie 09A - rzadko używane oprogramowanie**|Przedstawia tytuły oprogramowania, które nie były używane w określonym przedziale czasu.|  
-|**Oprogramowanie 09B - komputery z rzadko używanym oprogramowaniem**|Przedstawia komputery z zainstalowanym oprogramowaniem, które nie było używane w określonym przedziale czasu. Określony przedział czasu opiera się na wartości podanej w raporcie „Oprogramowanie 09A — rzadko używane oprogramowanie”.|  
+|**Oprogramowanie 05A - obiekty Pomocnik przeglądarki**|Wyświetla obiekty Pomocnik przeglądarki zainstalowane na komputerach w określonej kolekcji.|  
+|**Oprogramowanie 05B - komputery z określonym obiektem Pomocnik przeglądarki**|Wyświetla wszystkie komputery z obiektem pomocniczym przeglądarki określony.|  
+|**Oprogramowanie 05C - obiekty Pomocnik przeglądarki na określonym komputerze**|Wyświetla wszystkie obiekty Pomocnik przeglądarki na określonym komputerze.|  
+|**Oprogramowanie 06A - wyszukiwanie zainstalowanego oprogramowania**|Ten raport zawiera podsumowanie zainstalowanego oprogramowania. Go wyszukiwania na podstawie następujących kryteriów: Nazwa produktu, wydawcy lub wersji.|  
+|**Oprogramowanie 06B - oprogramowanie według nazwy produktu**|Wyświetla podsumowanie oprogramowania zainstalowanego na podstawie nazwy określonego produktu.|  
+|**Oprogramowanie 07A - ostatnio używane programy wykonywalne według liczby komputerów**|Przedstawia programy wykonywalne ostatnio używane użytkowników. Zawiera również liczbę komputerów, na których program używany użytkowników. Aby wyświetlanie tego raportu było możliwe, w tej lokacji należy włączyć pomiar użytkowania oprogramowania.|  
+|**Oprogramowanie 07B — komputery których ostatnio używany określony program wykonywalny**|Wyświetla listę komputerów, na których użytkownicy ostatnio używali określonego programu wykonywalnego. Ten raport wymaga, aby włączyć ustawienia klienta zliczania oprogramowania.|  
+|**Oprogramowanie 07C - ostatnio używane programy wykonywalne na określonym komputerze**|Przedstawia pliki wykonywalne, które użytkownicy ostatnio używane na określonym komputerze. Ten raport wymaga, aby włączyć ustawienia klienta zliczania oprogramowania.|  
+|**Oprogramowanie 08A - ostatnio używane programy wykonywalne według liczby użytkowników**|Przedstawia programy wykonywalne ostatnio używane użytkowników. Zawiera również liczbę użytkowników, którzy ostatnio używane program. Ten raport wymaga, aby włączyć ustawienia klienta zliczania oprogramowania.|  
+|**Oprogramowanie 08B - użytkownicy którzy używali ostatnio określonego programu wykonywalnego**|Wyświetla użytkowników, którzy ostatnio używali określonego programu wykonywalnego. Ten raport wymaga, aby włączyć ustawienia klienta zliczania oprogramowania.|  
+|**Oprogramowanie 08C - ostatnio używane programy wykonywalne według określonego użytkownika**|Przedstawia programy wykonywalne ostatnio używane określonego użytkownika. Ten raport wymaga, aby włączyć ustawienia klienta zliczania oprogramowania.|  
+|**Oprogramowanie 09A - rzadko używane oprogramowanie**|Wyświetla listę tytułów oprogramowania bez użycia użytkowników w określonym okresie czasu.|  
+|**Oprogramowanie 09B - komputery z rzadko używanym oprogramowaniem**|Wyświetla komputery, na których zainstalowane oprogramowanie, które użytkownicy nie były używane w określonym okresie czasu. Określony przedział czasu opiera się na wartości podanej w raporcie „Oprogramowanie 09A — rzadko używane oprogramowanie”.|  
 |**Oprogramowane 10A - tytuły oprogramowania z określonymi zdefiniowanymi wieloma etykietami niestandardowymi**|Przedstawia tytuły oprogramowania w oparciu o dopasowanie wszystkich określonych kryteriów etykiet niestandardowych. Aby zawęzić wyniki wyszukiwania tytułu oprogramowania, można wybrać maksymalnie trzy etykiety niestandardowe.|  
 |**Oprogramowanie 10B - komputery z zainstalowanym tytułem oprogramowania z etykietą niestandardową określonych**|Przedstawia wszystkie komputery w tej kolekcji, na których zainstalowano tytuł oprogramowania z określoną etykietą niestandardową.|  
 |**Oprogramowanie 11A - tytuły oprogramowania ze zdefiniowaną określoną etykietą niestandardową**|Przedstawia tytuły oprogramowania w oparciu o dopasowanie co najmniej jednego określonego kryterium etykiet niestandardowych.|  
@@ -117,7 +123,9 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Oprogramowanie 14B - komputery z określonym znacznikiem identyfikacji włączonym zainstalowanego oprogramowania**|Przedstawia wszystkie komputery, na których zainstalowano oprogramowanie z włączonym znacznikiem identyfikacji programu.|  
 |**Oprogramowanie 14C - identyfikator tagu włączone oprogramowanie zainstalowane na określonym komputerze**|Przedstawia wszystkie programy z określonym włączonym znacznikiem identyfikacji programu, które zainstalowano na określonym komputerze.|  
 
-### <a name="client-push"></a>Wypychane przez klienta  
+
+
+## <a name="client-push"></a>Wypychane przez klienta  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -126,7 +134,9 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Podsumowanie stanu instalacji wypychanych klienta**|Przedstawia widok podsumowania stanu wypychanej instalacji klienta dla wszystkich lokacji.|  
 |**Podsumowanie dla określonej lokacji stanu instalacji wypychanych klienta**|Przedstawia widok podsumowania stanu wypychanej instalacji klienta dla określonej lokacji.|  
 
-### <a name="client-status"></a>Stan klienta  
+
+
+## <a name="client-status"></a>Stan klienta  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -134,84 +144,96 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Podsumowanie korygowania klienta**|Przedstawia podsumowanie akcji korygowania klienta dla określonej kolekcji.|  
 |**Historia stanu klienta**|Przedstawia widok historycznych danych dotyczących ogólnego stanu klienta w lokacji.|  
 |**Podsumowanie stanu klienta**|Przedstawia wyniki sprawdzania aktywnych klientów dla danej kolekcji.|  
-|**Czas klienta na zażądanie zasady**|Przedstawia odsetek klientów, którzy zażądali zasad co najmniej raz w ciągu ostatnich 30 dni. Każdy dzień reprezentuje procent łącznej liczby klientów, którzy zażądali zasad od pierwszego dnia cyklu.|  
+|**Czas klienta na zażądanie zasady**|Wyświetla odsetek klientów, którzy zażądali zasady przynajmniej raz w ciągu ostatnich 30 dni. Każdy dzień reprezentuje odsetek łącznej liczby klientów, którzy zażądali zasady od pierwszego dnia cyklu.|  
 |**Klienci w których nie powiodło się sprawdzenie szczegółów**|Przedstawia szczegółowe informacje dotyczące klientów, dla których wystąpiły błędy sprawdzania klienta dla określonej kolekcji.|  
 |**Szczegóły nieaktywnych klientów**|Przedstawia szczegółową listę nieaktywnych klientów dla danej kolekcji.|  
 
-### <a name="company-resource-access"></a>Dostęp do zasobów firmy  
+
+
+## <a name="company-resource-access"></a>Dostęp do zasobów firmy  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
-|**Historia wystawiania certyfikatów**|Przedstawia historię certyfikatów, które zostały wystawione przez punkt rejestracji certyfikatu dla użytkowników i urządzeń w określonym przedziale czasu.|  
+|**Historia wystawiania certyfikatów**|Wyświetla historię certyfikatów wystawionych przez punkt rejestracji certyfikatów dla użytkowników i urządzeń w określonym zakresie dat.|  
 |**Lista zasobów według stanu wystawienia certyfikatu**|Przedstawia urządzenia lub użytkowników w określonym stanie wystawiania certyfikatu po dokonaniu oceny określonego profilu certyfikatu.|  
 |**Lista zasobów z certyfikatami bliskimi wygaśnięcia**|Przedstawia urządzenia lub użytkowników z certyfikatami wygasającymi w określonym dniu lub wcześniej.|  
 
-### <a name="compliance-and-settings-management"></a>Zarządzanie zgodnością i ustawieniami  
+
+
+## <a name="compliance-and-settings-management"></a>Zarządzanie zgodnością i ustawieniami  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
-|**Historia zgodności linii bazowej konfiguracji**|Przedstawia historię zmian zgodności linii bazowej konfiguracji dla określonego przedziału dat.|  
+|**Historia zgodności linii bazowej konfiguracji**|Wyświetla historię zmian zgodności linii bazowej konfiguracji dla określonego przedziału dat.|  
 |**Historia zgodności elementu konfiguracji**|Przedstawia historię zmian zgodności elementu konfiguracji dla określonego przedziału dat.|  
-|**Szczegóły zgodnych reguł elementów konfiguracji w linii bazowej konfiguracji dla zasobu**|Przedstawia informacje o regułach, które zostały ocenione jako zgodne dla określonego elementu konfiguracji oraz dla określonego urządzenia lub użytkownika.|  
-|**Szczegóły będących w konflikcie reguł elementów konfiguracji w linii bazowej konfiguracji dla zasobu**|Przedstawia informacje o regułach w elemencie konfiguracji wdrożonym do określonego użytkownika lub urządzenia, które powodują konflikt z innymi regułami zawartymi w tym samym wdrożonym elemencie konfiguracji.|  
+|**Zgodność z dostępem warunkowym dla użytkownika**|Wyświetla szczegółowe zgodność z dostępem warunkowym dla określonego użytkownika.|
+|**Raport zgodności z dostępem warunkowym**|Raport dotyczący zgodności dostępu warunkowego dla poszczególnych docelowych zasad zgodności.|
+|**Szczegóły zgodnych reguł elementów konfiguracji w linii bazowej konfiguracji dla zasobu**|Wyświetla informacje o regułach ocenione jako zgodne dla określonego elementu konfiguracji określonego urządzenia lub użytkownika.|  
+|**Szczegóły będących w konflikcie reguł elementów konfiguracji w linii bazowej konfiguracji dla zasobu**|Wyświetla informacje dotyczące reguł w elemencie konfiguracji wdrożonym, które powodują konflikt z innymi regułami. Inne zasady mogą być zawarte w tym samym lub innym wdrożyć element konfiguracji.|  
 |**Szczegóły błędów elementów konfiguracji w linii bazowej konfiguracji dla zasobu**|Przedstawia informacje o błędach wygenerowanych przez określony element konfiguracji dla określonego urządzenia lub użytkownika.|  
 |**Szczegóły niezgodnych reguł elementów konfiguracji w linii bazowej konfiguracji dla zasobu**|Przedstawia informacje o regułach, które zostały ocenione jako niezgodne dla określonego elementu konfiguracji oraz dla określonego urządzenia lub użytkownika.|  
 |**Szczegóły skorygowanych reguł elementów konfiguracji w linii bazowej konfiguracji dla zasobu**|Przedstawia informacje o regułach skorygowanych przez określony element konfiguracji dla określonego urządzenia lub użytkownika.|  
+|**Lista zasobów według stanu zgodności dla linii bazowej konfiguracji**|Wyświetla urządzeń lub użytkowników z określonym stanem zgodności po ocenie określonej linii bazowej konfiguracji.|  
 |**Lista zasobów według stanu zgodności elementu konfiguracji w linii bazowej konfiguracji**|Przedstawia urządzenia lub użytkowników w określonym stanie zgodności po dokonaniu oceny określonego elementu konfiguracji.|  
-|**Lista zasobów według stanu zgodności dla linii bazowej konfiguracji**|Przedstawia urządzenia lub użytkowników w określonym stanie zgodności po dokonaniu oceny określonej linii bazowej konfiguracji.|  
-|**Lista reguł w konflikcie z określoną regułą zasobu**|Przedstawia listę reguł, które powodują konflikt z określoną regułą dla elementu konfiguracji wdrożonego do określonego urządzenia.|  
-|**Lista nieznanych zasobów linii bazowej konfiguracji**|Przedstawia listę urządzeń lub użytkowników, którzy nie zgłosili jeszcze żadnych danych zgodności dla określonej linii bazowej konfiguracji.|  
-|**Lista nieznanych zasobów pozycji bazowej konfiguracji**|Przedstawia listę urządzeń lub użytkowników, którzy nie zgłosili jeszcze żadnych danych zgodności dla określonego elementu konfiguracji.|  
-|**Reguł i błędów elementów konfiguracji w linii bazowej konfiguracji dla zasobu podsumowania**|Przedstawia podsumowanie stanu zgodności reguł i wszelkich błędów ustawień dla określonego elementu konfiguracji wdrożonego do określonego urządzenia lub użytkownika.|  
-|**Podsumowanie zgodności według linii bazowej konfiguracji**|Przedstawia podsumowanie ogólnej zgodności wdrożonych linii bazowych konfiguracji w hierarchii.|  
-|**Podsumowanie zgodności według elementów konfiguracji dla linii bazowej konfiguracji**|Przedstawia podsumowanie zgodności elementów konfiguracji w określonej linii bazowej konfiguracji.|  
-|**Podsumowanie zgodności według zasad konfiguracji**|Przedstawia podsumowanie zgodności zasad konfiguracji.|  
-|**Podsumowanie zgodności linii bazowej konfiguracji dla kolekcji**|Przedstawia podsumowanie ogólnej zgodności określonej linii bazowej konfiguracji wdrożonej w określonej kolekcji.|  
 |**Lista niezgodnych aplikacji i urządzeń dla określonego użytkownika**|Zawiera informacje o użytkownikach i urządzeniach z zainstalowanymi aplikacjami niezgodnymi z wybranymi zasadami.|  
+|**Lista reguł w konflikcie z określoną regułą zasobu**|Wyświetla listę reguł w konflikcie z określoną regułą elementu konfiguracji wdrożonego.|  
+|**Lista nieznanych zasobów linii bazowej konfiguracji**|Wyświetla listę urządzeń lub użytkowników, którzy nie zaraportowali danych zgodności dotyczących określonej linii bazowej konfiguracji.|  
+|**Lista nieznanych zasobów pozycji bazowej konfiguracji**|Przedstawia listę urządzeń lub użytkowników, którzy nie zgłosili jeszcze żadnych danych zgodności dla określonego elementu konfiguracji.|  
+|**Reguł i błędów elementów konfiguracji w linii bazowej konfiguracji dla zasobu podsumowania**|Wyświetla podsumowanie stanu zgodności reguł oraz wszelkie błędy ustawień określonego elementu konfiguracji. Należy wdrożyć element konfiguracji urządzenia lub użytkownika.|  
+|**Podsumowanie zgodności według linii bazowej konfiguracji**|Wyświetla podsumowanie ogólnej zgodności wdrożonych linii bazowych konfiguracji w hierarchii.|  
+|**Podsumowanie zgodności według elementów konfiguracji dla linii bazowej konfiguracji**|Wyświetla podsumowanie zgodności elementów konfiguracji w określonej linii bazowej konfiguracji.|  
+|**Podsumowanie zgodności według zasad konfiguracji**|Przedstawia podsumowanie zgodności zasad konfiguracji.|  
+|**Podsumowanie zgodności linii bazowej konfiguracji dla kolekcji**|Wyświetla podsumowanie ogólnej zgodności określonej linii bazowej konfiguracji. Element konfiguracji, należy wdrożyć w określonej kolekcji.|  
 |**Podsumowanie użytkowników z niezgodnymi aplikacjami**|Zawiera informacje o użytkownikach z zainstalowanymi aplikacjami niezgodnymi z wybranymi zasadami.|  
 |**Akceptacja warunków i postanowień**|Zawiera elementy warunków i postanowień oraz ich wersje zaakceptowane przez każdego użytkownika.|  
 
-### <a name="device-management"></a>Zarządzanie urządzeniami  
+
+
+## <a name="device-management"></a>Zarządzanie urządzeniami  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
+|**Wszystkie urządzenia przenośne należące do firmy**|Wyświetla wszystkie firmowej prywatnych urządzeń przenośnych.|
 |**Wszyscy klienci urządzeń przenośnych**|Przedstawia informacje o wszystkich klientach urządzeń przenośnych. Urządzenia zarządzane przez łącznik serwera programu Exchange nie są uwzględniane.|  
 |**Problemy z certyfikatami na urządzeniach przenośnych, które są zarządzane przez klienta programu Configuration Manager dla systemu Windows CE, które nie są w dobrej kondycji**|Wyświetla szczegółowe informacje dotyczące problemów z certyfikatami na urządzeniach przenośnych, które są zarządzane przez klienta programu Configuration Manager dla systemu Windows CE.|  
 |**Niepowodzenie wdrożenia klienta dla urządzeń przenośnych, które są zarządzane przez klienta programu Configuration Manager dla systemu Windows CE**|Wyświetla szczegółowe informacje dotyczące niepowodzenia wdrożenia na urządzeniach przenośnych, które są zarządzane przez klienta programu Configuration Manager dla systemu Windows CE.|  
 |**Szczegóły stanu wdrażania klienta dla urządzeń przenośnych, które są zarządzane przez klienta programu Configuration Manager dla systemu Windows CE**|Wyświetla informacje o stanie urządzeń przenośnych, które są zarządzane przez klienta programu Configuration Manager dla systemu Windows CE.|  
 |**Powodzenie wdrożenia klienta dla urządzeń przenośnych, które są zarządzane przez klienta programu Configuration Manager dla systemu Windows CE**|Wyświetla szczegółowe informacje dotyczące powodzenia wdrożenia na urządzeniach przenośnych, które są zarządzane przez klienta programu Configuration Manager dla systemu Windows CE.|  
 |**Problemy z komunikacją na urządzeniach przenośnych, które są zarządzane przez klienta programu Configuration Manager dla systemu Windows CE, które nie są w dobrej kondycji**|Ten raport zawiera szczegółowe informacje dotyczące problemów z komunikacją na urządzeniach przenośnych, które są zarządzane przez klienta programu Configuration Manager dla systemu Windows CE.|  
-|**Stan zgodności dla urządzeń przenośnych, które są zarządzane przez łącznik serwera Exchange**|Przedstawia podsumowanie stanu zgodności z domyślnymi zasadami skrzynki pocztowej programu Exchange ActiveSync dla urządzeń przenośnych zarządzanych przez łącznik serwera programu Exchange.|  
+|**Stan zgodności lub domyślne zasady skrzynek pocztowych ActiveSync dla urządzeń przenośnych, które są zarządzane przez łącznik serwera Exchange**|Wyświetla podsumowanie stanu zgodności z regułą domyślnego protokołu Exchange ActiveSync dla urządzeń przenośnych zarządzanych przez łącznik serwera Exchange.|  
 |**Liczba urządzeń przenośnych według ustawień wyświetlania**|Przedstawia liczbę urządzeń przenośnych według ustawień wyświetlania.|  
 |**Liczba urządzeń przenośnych według systemu operacyjnego**|Przedstawia liczbę urządzeń przenośnych według systemu operacyjnego.|  
 |**Liczba urządzeń przenośnych według pamięci programu**|Przedstawia liczbę urządzeń przenośnych według pamięci programu.|  
 |**Liczba urządzeń przenośnych według konfiguracji pamięci magazynu**|Liczba urządzeń przenośnych według konfiguracji pamięci magazynu|  
 |**Informacje o kondycji urządzeń przenośnych, które są zarządzane przez klienta programu Configuration Manager dla systemu Windows CE**|Wyświetla szczegółowe informacje o kondycji urządzeń przenośnych, które są zarządzane przez klienta programu Configuration Manager dla systemu Windows CE.|  
 |**Podsumowanie kondycji urządzeń przenośnych, zarządzanych przez klienta programu Configuration Manager dla systemu Windows CE**|Wyświetla informacje podsumowania kondycji urządzeń przenośnych, które są zarządzane przez klienta programu Configuration Manager dla systemu Windows CE.|  
-|**Nieaktywne urządzenia przenośne, które są zarządzane przez łącznik serwera Exchange**|Przedstawia urządzenia przenośne zarządzane przez łącznik serwera programu Exchange, które nie łączyły się z serwerem programu Exchange w ciągu określonej liczby dni.|  
-|**Lista urządzeń zarejestrowanych przez użytkownika w programie Microsoft Intune**|Wyświetla wszystkie urządzenia, które użytkownik zarejestrował w usłudze Microsoft Intune.|  
+|**Nieaktywne urządzenia przenośne, które są zarządzane przez łącznik serwera Exchange**|Przedstawia urządzenia przenośne zarządzane przez łącznik serwera Exchange, które nie nawiązywały połączenia z serwerem Exchange Server w ciągu określonej liczby dni.|  
 |**Lista urządzeń uporządkowana według stanu dostępu warunkowego**|Zawiera informacje o bieżącym stanie zgodności i dostępu warunkowego urządzeń. Tego raportu można używać z zasadami dostępu warunkowego. Ten raport jest dostępny od wersji 1602 programu Configuration Manager.|  
-|**Zgodność z dostępem warunkowym dla użytkownika**|Zawiera on szczegółowe informacje na temat zgodności z dostępem warunkowym dla określonego użytkownika, łącznie z nazwą urządzenia i platformą, stanem zgodności urządzenia i datą ostatniej oceny urządzenia. Ten raport jest dostępny od wersji 1602 programu Configuration Manager.|  
+|**Lista urządzeń uporządkowana według stanu zaświadczania o kondycji**|Wyświetla listę urządzeń z atrybutami zgłoszonymi przez usługę zaświadczania o kondycji|
+|**Lista urządzeń zarejestrowanych przez użytkownika w programie Microsoft Intune**|Wyświetla wszystkie urządzenia, które użytkownik zarejestrował w usłudze Microsoft Intune.|  
+|**Lista urządzeń w konkretnej kategorii urządzeń**|Wyświetla informacje o wszystkich urządzeniach w konkretnej kategorii urządzeń.|
 |**Problemy z klientami lokalnymi na urządzeniach przenośnych, które są zarządzane przez klienta programu Configuration Manager dla systemu Windows CE, które nie są w dobrej kondycji**|Ten raport zawiera szczegółowe informacje na temat problemów z klientami lokalnymi na urządzeniach przenośnych, które są zarządzane przez klienta programu Configuration Manager dla systemu Windows CE.|  
 |**Informacje o kliencie urządzenia przenośnego**|Wyświetla informacje o urządzeniach przenośnych, które mają zainstalowanego klienta programu Configuration Manager. Z tego raportu można skorzystać, aby sprawdzić, które urządzenia przenośne mogą się pomyślnie komunikować z punktem zarządzania.|  
 |**Szczegóły zgodności urządzeń przenośnych dotyczące łącznika serwera Exchange**|Przedstawia szczegóły zgodności urządzenia przenośnego dla domyślnych zasad skrzynki pocztowej programu Exchange ActiveSync, które zostały skonfigurowane przy użyciu łącznika serwera programu Exchange.|  
 |**Urządzenia przenośne według systemu operacyjnego**|Przedstawia urządzenia przenośne według systemu operacyjnego.|  
 |**Urządzenia przenośne ze złamanymi ograniczeniami lub z odblokowanym**|Przedstawia urządzenia przenośne ze złamanymi ograniczeniami lub z odblokowanym dostępem.|  
-|**Urządzenia przenośne, które nie są zarządzane ponieważ mimo zarejestrowania nie zostały przypisane do lokacji**|Przedstawia urządzenia przenośne, które ukończyły rejestrację w programie Configuration Manager i mają certyfikat, ale nie można ukończyć przypisywanie lokacji.|  
+|**Urządzenia przenośne, które nie są zarządzane ponieważ mimo zarejestrowania nie zostały przypisane do lokacji**|Przedstawia urządzenia przenośne, które ukończyły rejestrację w programie Configuration Manager ma certyfikat, ale nie można ukończyć przypisywanie lokacji.|  
 |**Urządzenia przenośne z określoną ilością wolnej pamięci programu**|Przedstawia wszystkie urządzenia przenośne z określoną ilością wolnej pamięci programu.|  
 |**Urządzenia przenośne z określoną ilością wolnej wymiennej pamięci magazynu**|Przedstawia wszystkie urządzenia przenośne z określoną ilością wolnej pamięci magazynu wymiennego.|  
-|**Urządzenia przenośne z problemami dotyczącymi odnowienia certyfikatu**|Przedstawia zarejestrowane urządzenia przenośne, którym nie udało się odnowić certyfikatu. Jeśli certyfikat nie zostanie odnowiony przed upływem okresu wygaśnięcia, urządzenie przenośne będzie niezarządzane.|  
+|**Urządzenia przenośne z problemami dotyczącymi odnowienia certyfikatu**|Przedstawia zarejestrowane urządzenia przenośne, którym nie udało się odnowić certyfikatu. Jeśli nie odnowisz certyfikatu przed datą wygaśnięcia, te urządzenia przenośne być zarządzana.|  
 |**Urządzenia przenośne z niewielką ilością wolnej pamięci (poniżej wielkości określonej w KB) programu**|Przedstawia urządzenia przenośne, dla których pamięć programu jest mniejsza niż określony rozmiar w KB.|  
 |**Urządzenia przenośne z niskim wolnej wymiennej pamięci magazynu (poniżej wielkości określonej w KB)**|Przedstawia urządzenia przenośne, dla których pamięć magazynu wymiennego jest mniejsza niż określony rozmiar w KB.|  
-|**Liczba urządzeń zarejestrowanych przez użytkownika w usłudze Windows Intune**|Ten raport przedstawia użytkowników subskrypcję Microsoft Intune i z łączną liczbą urządzeń zarejestrowanych dla każdego użytkownika.|  
-|**Oczekujące żądania czyszczenia dla urządzeń przenośnych**|Przedstawia oczekujące żądania czyszczenia danych dla urządzeń przenośnych.|  
+|**Liczba urządzeń zarejestrowanych przez użytkownika w programie Microsoft Intune**|Wyświetla użytkowników włączony dla subskrypcji Microsoft Intune. Ponadto całkowita liczba urządzeń zarejestrowanych dla każdego użytkownika.|  
+|**Oczekujące żądania wycofania i czyszczenia dla urządzeń przenośnych**|Przedstawia oczekujące żądania czyszczenia danych dla urządzeń przenośnych.|  
 |**Ostatnio zarejestrowane i przypisane urządzenia przenośne**|Przedstawia urządzenia przenośne, które ostatnio zarejestrowane w programie Configuration Manager i przypisane do lokacji.|  
 |**Ostatnio wyczyszczone urządzenia przenośne**|Przedstawia listę urządzeń przenośnych, które zostały ostatnio pomyślnie wyczyszczone.|  
-|**Ustawienia podsumowania dla urządzeń przenośnych, które są zarządzane przez łącznik serwera Exchange**|Przedstawia liczbę urządzeń przenośnych, na których zastosowano ustawienia poszczególnych zasad domyślnych skrzynek pocztowych Exchange ActiveSync, które są zarządzane przez łącznik serwera programu Exchange.|  
+|**Ustawienia podsumowania dla urządzeń przenośnych, które są zarządzane przez łącznik serwera Exchange**|Wyświetla liczbę urządzeń przenośnych, które są stosowane ustawienia dla każdej zasady skrzynki pocztowej domyślnego protokołu Exchange ActiveSync, zarządzane przez łącznik serwera Exchange.|  
 |**Szczegółowy stan kluczy ładowania bezpośredniego systemu Windows RT**|Przedstawia szczegółowe informacje o stanie dla określonego klucza ładowania bezpośredniego w systemie Windows RT.|  
 |**Podsumowanie kluczy ładowania bezpośredniego systemu Windows RT**|Przedstawia stan kluczy ładowania bezpośredniego w systemie Windows RT.|  
 
-### <a name="driver-management"></a>Zarządzanie sterownikami  
+
+
+## <a name="driver-management"></a>Zarządzanie sterownikami  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -229,7 +251,9 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Sterowniki, których nie można zainstalować na określonym komputerze**|Przedstawia sterowniki, których nie można zainstalować na określonym komputerze.|  
 |**Obsługiwane platformy dla określonego sterownika**|Przedstawia obsługiwane platformy dla określonego sterownika.|  
 
-### <a name="endpoint-protection"></a>Program Endpoint Protection  
+
+
+## <a name="endpoint-protection"></a>Program Endpoint Protection  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -240,7 +264,9 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Użytkownicy z największą liczbą zagrożeń**|Przedstawia listę użytkowników z największą liczbą wykrytych zagrożeń.|  
 |**Lista zagrożeń użytkownika**|Przedstawia listę zagrożeń znalezionych na określonym koncie użytkownika.|  
 
-### <a name="hardware---cd-rom"></a>Sprzęt — CD-ROM  
+
+
+## <a name="hardware---cd-rom"></a>Sprzęt — CD-ROM  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -249,7 +275,9 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Liczba napędów CD-ROM według producentów**|Przedstawia liczbę napędów CD-ROM na producenta uwzględnionych w spisie.|  
 |**Historia - Historia napędów CD-ROM dla określonego komputera**|Przedstawia historię spisu napędów CD-ROM na określonym komputerze.|  
 
-### <a name="hardware---disk"></a>Sprzęt — dysk  
+
+
+## <a name="hardware---disk"></a>Sprzęt — dysk  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -262,7 +290,9 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Informacje o dyskach dla określonego komputera - dyski fizyczne**|Przedstawia podsumowanie informacji o dyskach fizycznych na określonym komputerze.|  
 |**Historia - Historia miejsca na dyskach logicznych dla określonego komputera**|Przedstawia historię spisu napędów dysków logicznych na określonym komputerze.|  
 
-### <a name="hardware---general"></a>Sprzęt — ogólne  
+
+
+## <a name="hardware---general"></a>Sprzęt — ogólne  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -270,8 +300,11 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Komputery w określonej grupie roboczej lub domenie**|Przedstawia listę komputerów w określonej grupie roboczej lub domenie.|  
 |**Klasy spisu przypisane do określonej kolekcji**|Przedstawia klasy spisu przypisane do określonej kolekcji.|  
 |**Klasy spisu włączone na określonym komputerze**|Przedstawia klasy spisu włączone na określonym komputerze.|  
+|**Informacje o urządzeniu AutoPilot systemu Windows**|Wyświetla informacje o urządzeniu klienta, potrzebnego do rejestracji AutoPilot systemu Windows.|
 
-### <a name="hardware---memory"></a>Sprzęt — pamięć  
+
+
+## <a name="hardware---memory"></a>Sprzęt — pamięć  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -281,7 +314,9 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Liczba konfiguracji pamięci**|Przedstawia liczbę komputerów w spisie uporządkowanych według ilości pamięci RAM.|  
 |**Informacje o pamięci dla określonego komputera**|Przedstawia podsumowanie informacji o pamięci na określonym komputerze.|  
 
-### <a name="hardware---modem"></a>Sprzęt — Modem  
+
+
+## <a name="hardware---modem"></a>Sprzęt — Modem  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -289,7 +324,9 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Liczba modemów według producenta**|Przedstawia liczbę modemów w spisie dla każdego producenta modemów.|  
 |**Informacje dotyczące modemu dla pojedynczego komputera**|Przedstawia podsumowanie informacji o modemie na określonym komputerze.|  
 
-### <a name="hardware---network-adapter"></a>Sprzęt — karta sieciowa  
+
+
+## <a name="hardware---network-adapter"></a>Sprzęt — karta sieciowa  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -297,7 +334,9 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Liczba kart sieciowych według typu**|Przedstawia liczbę kart sieciowych w spisie uporządkowanych według typu.|  
 |**Informacje dotyczące karty sieciowej dla określonego komputera**|Przedstawia informacje o kartach sieciowych zainstalowanych na określonym komputerze.|  
 
-### <a name="hardware---processor"></a>Sprzęt — procesor  
+
+
+## <a name="hardware---processor"></a>Sprzęt — procesor  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -307,7 +346,9 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Liczba szybkości procesora**|Przedstawia liczbę komputerów w spisie uporządkowanych według szybkości procesora.|  
 |**Informacje dotyczące procesora dla pojedynczego komputera**|Przedstawia informacje o procesorach zainstalowanych na określonym komputerze.|  
 
-### <a name="hardware---scsi"></a>Sprzęt — SCSI  
+
+
+## <a name="hardware---scsi"></a>Sprzęt — SCSI  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -315,7 +356,17 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Liczba typów kart SCSI**|Przedstawia liczbę kart SCSI w spisie uporządkowanych według typu karty.|  
 |**Informacje dotyczące karty SCSI dla pojedynczego komputera**|Przedstawia informacje o kartach SCSI zainstalowanych na określonym komputerze.|  
 
-### <a name="hardware---sound-card"></a>Sprzęt — karta dźwiękowa  
+
+
+## <a name="hardware---security"></a>Sprzęt — zabezpieczeń
+
+|Nazwa raportu|Opis|  
+|-----------------|-----------------|  
+|**Szczegółowe informacje o Państwa oprogramowania układowego na urządzeniach**|Wyświetla szczegółowe informacje o stanach UEFI, funkcji SecureBoot i modułu TPM|  
+
+
+
+## <a name="hardware---sound-card"></a>Sprzęt — karta dźwiękowa  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -323,15 +374,19 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Liczba kart dźwiękowych**|Przedstawia liczbę komputerów w spisie uporządkowanych według typu karty dźwiękowej.|  
 |**Informacje o karty dźwiękowej dla pojedynczego komputera**|Przedstawia podsumowanie informacji o karcie dźwiękowej na określonym komputerze.|  
 
-### <a name="hardware---video-card"></a>Sprzęt — karta wideo  
+
+
+## <a name="hardware---video-card"></a>Sprzęt — karta wideo  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
 |**Komputery z określoną kartą graficzną**|Przedstawia listę komputerów z określoną kartą wideo.|  
-|**Liczba kart graficznych według typu**|Przedstawia listę wszystkich kart wideo zainstalowanych na komputerach oraz liczbę kart wideo każdego typu.|  
+|**Liczba kart graficznych według typu**|Wyświetla listę wszystkich kart graficznych zainstalowanych na komputerach. Ponadto liczba kart graficznych poszczególnych typów.|  
 |**Informacje dotyczące karty graficznej dla pojedynczego komputera**|Przedstawia informacje o kartach wideo zainstalowanych na określonym komputerze.|  
 
-### <a name="migration"></a>Migracja  
+
+
+## <a name="migration"></a>Migracja  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -341,7 +396,9 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Zadania migracji**|Przedstawia listę zadań migracji.|  
 |**Obiekty niezmigrowane**|Przedstawia listę obiektów, dla których ostatnia próba migracji zakończyła się niepowodzeniem.|  
 
-### <a name="network"></a>Sieć  
+
+
+## <a name="network"></a>Sieć  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -352,25 +409,9 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**IP - informacje dotyczące określonego adresu IP**|Przedstawia podsumowanie informacji na temat określonego adresu IP.|  
 |**MAC - komputery z określonym adresem MAC**|Przedstawia nazwę komputera i adres IP dla komputerów z określonym adresem MAC.|  
 
-### <a name="network-access-protection"></a>Ochrona dostępu do sieci  
 
-|Nazwa raportu|Opis|  
-|-----------------|-----------------|  
-|**Porównanie aktualizacji oprogramowania zainstalowanych przez wdrożenia aktualizacji oprogramowania i korygowanie translatora adresów SIECIOWYCH.**|Przedstawia podsumowanie porównania aktualizacji oprogramowania zainstalowanych w ramach wdrożeń aktualizacji oprogramowania i korekty ochrony dostępu do sieci.|  
-|**Częstotliwość komputer był podlegających korygowaniu w określonym przedziale czasu**|Przedstawia częstotliwość, z którą komputer był korygowany w określonym przedziale czasu.|  
-|**Lista komputerów które zainstalowana określona aktualizacja oprogramowania przy użyciu funkcji korygowania w określonym przedziale czasu**|Przedstawia listę komputerów, na których zainstalowano określoną aktualizację oprogramowania przy użyciu funkcji korygowania w określonym przedziale czasu (w dniach).|  
-|**Lista komputerów które będą niezgodne na podstawie wybranych aktualizacji oprogramowania**|Przedstawia listę komputerów, które będą niezgodne na podstawie wybranych aktualizacji oprogramowania.|  
-|**Lista komputerów, których nie można wykryć usługi translatora adresów SIECIOWYCH**|Przedstawia listę komputerów, na których nie można wykryć usługi ochrony dostępu do sieci.|  
-|**Lista komputerów uprawnionych ochrony dostępu do sieci**|Przedstawia listę komputerów, na których usługa ochrony dostępu do sieci nie została uruchomiona lub jej stan jest nieznany.|  
-|**Lista zasad translatora adresów sieciowych**|Przedstawia zasady ochrony dostępu do sieci oraz ich daty obowiązywania.|  
-|**Lista niezgodnych komputerów podlegających korygowaniu od ostatniego interwału sondowania**|Przedstawia listę niezgodnych komputerów podlegających korygowaniu oraz ich ostatnich znanych czasów oceny.|  
-|**Lista niezgodnych komputerów podlegających korygowaniu w określonym przedziale czasu**|Przedstawia listę niezgodnych komputerów podlegających korygowaniu w określonym przedziale czasu.|  
-|**Lista błędów korygowania w określonym przedziale czasu**|Przedstawia listę błędów korygowania dla określonej liczby dni.|  
-|**Lista aktualizacji oprogramowania zainstalowanych przy użyciu funkcji korygowania**|Przedstawia aktualizacje oprogramowania zainstalowane przy użyciu funkcji korygowania w określonym przedziale czasu.|  
-|**Podsumowanie niezgodnych komputerów podlegających korygowaniu od ostatniego interwału sondowania**|Przedstawia podsumowanie niezgodnych komputerów podlegających korygowaniu od ostatniego interwału sondowania.|  
-|**Podsumowanie niezgodnych komputerów podlegających korygowaniu w określonym przedziale czasu**|Przedstawia podsumowanie niezgodnych komputerów podlegających korygowaniu w określonym przedziale czasu.|  
 
-### <a name="operating-system"></a>System operacyjny  
+## <a name="operating-system"></a>System operacyjny  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -382,24 +423,19 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Usługi - komputery z uruchomioną określoną usługą**|Przedstawia listę komputerów z uruchomioną określoną usługą.|  
 |**Usługi - komputery z uruchomionym serwerem dostępu zdalnego**|Przedstawia listę komputerów z uruchomionym serwerem dostępu zdalnego.|  
 |**Usługi - informacje dotyczące określonego komputera usług**|Przedstawia podsumowanie informacji o usługach na określonym komputerze.|  
+|**Szczegóły obsługi systemu Windows 10 dla określonej kolekcji**|Wyświetlane są ogólne informacje na temat obsługi systemu Windows 10 dla określonej kolekcji.|
 |**Komputery z systemem Windows Server**|Przedstawia listę komputerów z systemem operacyjnym Windows Server.|  
 
-### <a name="out-of-band-management"></a>Zarządzanie poza pasmem  
+
+
+## <a name="power-management"></a>Zarządzanie energią  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
-|**Komputery z kontrolerami zarządzania poza pasmem**|Przedstawia listę komputerów z kontrolerami zarządzania poza pasmem.|  
-|**Poza aktywność konsoli zarządzania poza pasmem**|Przedstawia listę komunikatów o stanie identyfikujących aktywność konsoli zarządzania poza pasmem.|  
-|**Stan zainicjowania klientem poza pasmem zarządzania**|Przedstawia listę komputerów, których obsługa administracyjna została zainicjowana na potrzeby zarządzania poza pasmem.|  
-
-### <a name="power-management"></a>Zarządzanie energią  
-
-|Nazwa raportu|Opis|  
-|-----------------|-----------------|  
-|**Zarządzanie energią - aktywność komputera**|Przedstawia wykres aktywności monitora, komputera i użytkownika dla określonej kolekcji w określonym przedziale czasu.|  
-|**Zarządzanie energią - aktywność komputera według komputera**|Przedstawia wykres aktywności monitora, komputera i użytkownika dla określonego komputera w określonym dniu.|  
+|**Zarządzanie energią - aktywność komputera**|Wyświetla wykres przedstawiający aktywność monitora, komputera i użytkownika dla określonej kolekcji w określonym przedziale czasu.|  
+|**Zarządzanie energią - aktywność komputera według komputera**|Wyświetla wykres przedstawiający aktywność monitora, komputera i użytkownika dla określonego komputera w określonym dniu.|  
 |**Zarządzanie energią - szczegóły aktywności komputera**|Przedstawia listę możliwości uśpienia i przebudzenia komputerów w określonej kolekcji w określonym dniu i o określonej godzinie.|  
-|**Zarządzanie energią — szczegóły komputera**|Przedstawia szczegółowe informacje na temat możliwości zasilania, ustawień zasilania i planów zasilania zastosowanych na określonym komputerze.|  
+|**Zarządzanie energią — szczegóły komputera**|Wyświetla szczegółowe informacje dotyczące możliwości zasilania, ustawień zasilania i planów zasilania zastosowanych na określonym komputerze.|  
 |**Zarządzanie energią - szczegóły komputerów bez zgłoszeń**|Przedstawia listę komputerów niezgłaszających żadnej aktywności związanej z zasilaniem dla określonej daty i godziny.|  
 |**Zarządzanie energią — wykluczone komputery**|Przedstawia listę komputerów wykluczonych z planu zasilania.|  
 |**Zarządzanie energią - komputery z wieloma planami zasilania**|Przedstawia listę komputerów, na których zastosowano wiele ustawień zasilania powodujących konflikt.|  
@@ -410,19 +446,21 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Zarządzanie energią — wpływ na środowisko**|Przedstawia wykres emisji dwutlenku węgla (CO2) generowanego przez określoną kolekcję w określonym przedziale czasu.|  
 |**Zarządzanie energią — wpływ na środowisko wg dnia**|Przedstawia wykres emisji dwutlenku węgla (CO2) generowanego przez określoną kolekcję w ciągu ostatnich 31 dni.|  
 |**Zarządzanie energią - szczegóły braku usypiania komputera**|Przedstawia szczegółowe informacje dotyczące komputerów, które nie były wprowadzane w stan uśpienia ani hibernacji w określonym przedziale czasu.|  
-|**Zarządzanie energią — raport o braku usypiania**|Przedstawia listę typowych przyczyn, które uniemożliwiały włączanie stanu uśpienia i hibernacji na komputerach, oraz liczbę komputerów, których te przyczyny dotyczyły, w określonym przedziale czasu.|  
+|**Zarządzanie energią — raport o braku usypiania**|Wyświetla listę częstych przyczyn uniemożliwiających przejście komputerów w stan uśpienia lub hibernacji. Zawiera on również liczbę komputerów, których te przyczyny dotyczyły, w określonym przedziale czasu.|  
 |**Zarządzanie energią — możliwości zasilania**|Przedstawia możliwości zarządzania energią dla komputerów w określonej kolekcji.|  
 |**Zarządzanie energią — ustawienia zasilania**|Przedstawia zagregowaną listę ustawień zasilania używanych na komputerach w określonej kolekcji.|  
 |**Zarządzanie energią - szczegóły ustawień zasilania**|Używane, aby wyświetlić więcej informacji o komputerach, które zostały określone w **zarządzanie energią — ustawienia zasilania** raportu.|  
 
-### <a name="replication-traffic"></a>Ruch związany z replikacją  
+
+
+## <a name="replication-traffic"></a>Ruch związany z replikacją  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
 |**Globalny danych replikacji ruchu na jedno łącze (wykres liniowy)**|Przedstawia całkowity ruch związany z replikacją danych globalnych za pomocą określonego linku dla określonej liczby dni.|  
 |**Globalny danych replikacji ruchu na jedno łącze (wykres kołowy)**|Przedstawia całkowity ruch związany z replikacją danych globalnych za pomocą określonego linku dla określonej liczby dni.|  
 |**Ruch związany z replikacją hierarchii według łącza**|Przedstawia całkowity ruch związany z replikacją dla każdego linku w hierarchii w ciągu określonej liczby dni.|  
-|**Hierarchii pierwszych dziesięciu replikacji grupy ruchu na jedno łącze (wykres kołowy)**|Przedstawia ruch związany z replikacją dla dziesięciu najczęściej używanych grup replikacji w całej hierarchii, które są identyfikowane za pomocą linku.|  
+|**Hierarchii pierwszych dziesięciu replikacji grupy ruchu na jedno łącze (wykres kołowy)**|Przedstawia ruch związany z replikacją w głównych 10 grupach replikacji w całej hierarchii zidentyfikowanych według łącza.|  
 |**Ruch związany z replikacją łącza**|Przedstawia całkowity ruch związany z replikacją dla wszystkich danych w ciągu określonej liczby dni.|  
 |**Ruch związany z grupami replikacji na jedno łącze**|Przedstawia ruch sieciowy związany z grupami replikacji dla określonego linku replikacji bazy danych w ciągu określonej liczby dni.|  
 |**Witryna danych replikacji ruchu na jedno łącze (wykres liniowy)**|Przedstawia całkowity ruch związany z replikacją danych lokacji za pomocą określonego linku w ciągu określonej liczby dni.|  
@@ -430,7 +468,9 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Całkowita liczba replikacją hierarchii (wykres liniowy)**|Przedstawia replikację zagregowanych danych hierarchii — lokacji i globalnych — w każdym kierunku linku w ciągu określonej liczby dni.|  
 |**Całkowita liczba replikacją hierarchii (wykres kołowy)**|Przedstawia replikację zagregowanych danych hierarchii — lokacji i globalnych — w każdym kierunku linku w ciągu określonej liczby dni.|  
 
-### <a name="site---client-information"></a>Lokacja — informacje o kliencie  
+
+
+## <a name="site---client-information"></a>Lokacja — informacje o kliencie  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -441,35 +481,39 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Raport niepowodzeń wdrażania klientów**|Przedstawia szczegółowe informacje na temat klientów, których nie można było wdrożyć.|  
 |**Szczegóły stanu wdrożenia klienta**|Przedstawia podsumowanie informacji na temat stanu instalacji klientów.|  
 |**Raport powodzeń wdrażania klientów**|Przedstawia szczegółowe informacje na temat klientów, którzy zostali pomyślnie wdrożeni.|  
-|**Klienci bez możliwości komunikacji protokołu HTTPS**|Przedstawia szczegółowe informacje na temat każdego klienta w lokacji, dla którego uruchomiono narzędzie sprawdzania gotowości do komunikacji przy użyciu protokołu HTTPS i który został zgłoszony jako klient bez możliwości komunikacji przy użyciu protokołu HTTPS.|  
-|**Komputery przypisane, ale niezainstalowane dla określonej lokacji**|Przedstawia listę komputerów, które zostały przypisane do określonej lokacji, ale raportowanie nie odbywa się w tej lokacji.|  
+|**Klienci bez możliwości komunikacji protokołu HTTPS**|Wyświetla szczegółowe informacje dotyczące każdego klienta, który uruchamia narzędzie gotowości komunikacji protokołu HTTPS, a następnie raportuje jako niezdolne do komunikacji za pośrednictwem protokołu HTTPS.|  
+|**Komputery przypisane, ale niezainstalowane dla określonej lokacji**|Wyświetla listę komputerów przypisanych do określonej lokacji, ale nieraportujących do tej lokacji.|  
 |**Komputery z określoną wersją klienta programu Configuration Manager**|Wyświetla listę komputerów z określoną wersją oprogramowania klienckiego programu Configuration Manager.|  
 |**Liczba klientów i protokół używany do komunikacji**|Przedstawia podsumowanie metod komunikacji używanych przez klientów (protokół HTTP lub HTTPS).|  
 |**Liczba klientów przypisanych i zainstalowanych dla każdej lokacji**|Przedstawia liczbę komputerów przypisanych i zainstalowanych w każdej lokacji. Klienci z lokalizacją sieciową skojarzoną z wieloma lokacjami są traktowani jako zainstalowani, jeśli ich raportowanie dotyczy tej lokacji.|  
-|**Liczba klientów z obsługą komunikacji protokołu HTTPS**|Przedstawia szczegółowe informacje na temat każdego klienta w lokacji, dla którego uruchomiono narzędzie sprawdzania gotowości do komunikacji przy użyciu protokołu HTTPS i który został zgłoszony jako klient z możliwością komunikacji przy użyciu protokołu HTTPS lub bez tej możliwości.|  
+|**Liczba klientów z obsługą komunikacji protokołu HTTPS**|Wyświetla szczegółowe informacje o każdym kliencie uruchomionym narzędziem gotowości komunikacji protokołu HTTPS i raporty do obsługę lub brak obsługi komunikacji za pośrednictwem protokołu HTTPS.|  
 |**Liczba klientów dla każdej lokacji**|Wyświetla liczbę klientów programu Configuration Manager zainstalowane według kodu lokacji.|  
 |**Klientów liczba programu Configuration Manager według wersji klienta**|Wyświetla liczbę komputerów wykrytych przez wersję klienta programu Configuration Manager.|  
-|**Szczegóły problemu raportowanego do punktu stanu powrotu dla określonej kolekcji**|Przedstawia szczegółowe informacje na temat problemów zgłoszonych przez klientów w określonej kolekcji, jeśli przypisano do nich rezerwowy punkt stanu.|  
-|**Szczegóły problemu raportowanego do punktu stanu powrotu dla określonej lokacji**|Przedstawia szczegółowe informacje na temat problemów zgłoszonych przez klientów w określonej lokacji, jeśli przypisano do nich rezerwowy punkt stanu.|  
-|**Podsumowanie problemów raportowanych do punktu stanu powrotu**|Przedstawia informacje na temat wszystkich problemów zgłoszonych przez klientów, jeśli przypisano do nich rezerwowy punkt stanu.|  
-|**Podsumowanie problemów raportowanych do punktu stanu powrotu dla określonej kolekcji**|Przedstawia podsumowanie informacji na temat problemów zgłoszonych przez klientów w określonej kolekcji, jeśli przypisano do nich rezerwowy punkt stanu.|  
+|**Szczegóły problemu raportowanego do punktu stanu powrotu dla określonej kolekcji**|Wyświetla szczegółowe informacje o problemach raportowanych przez klientów w określonej kolekcji. Ci klienci muszą mieć przypisane rezerwowy punkt stanu.|  
+|**Szczegóły problemu raportowanego do punktu stanu powrotu dla określonej lokacji**|Wyświetla szczegółowe informacje o problemach raportowanych przez klientów w określonej lokacji. Ci klienci muszą mieć przypisane rezerwowy punkt stanu.|  
+|**Podsumowanie problemów raportowanych do punktu stanu powrotu**|Wyświetla informacje o wszystkich problemach raportowanych przez klientów. Ci klienci muszą mieć przypisane rezerwowy punkt stanu.|  
+|**Podsumowanie problemów raportowanych do punktu stanu powrotu dla określonej kolekcji**|Wyświetla podsumowanie problemów raportowanych przez klientów w określonej kolekcji. Ci klienci muszą mieć przypisane rezerwowy punkt stanu.|  
 
-### <a name="site---discovery-and-inventory-information"></a>Lokacja — odnajdywania i informacje o spisie  
+
+
+## <a name="site---discovery-and-inventory-information"></a>Lokacja — odnajdywania i informacje o spisie  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
 |**Klienci, którzy nie zgłosili się ostatnio (w ciągu określonej liczby dni)**|Przedstawia listę klientów, którzy nie raportowali danych odnajdowania, spisu sprzętu ani spisu oprogramowania w ciągu określonej liczby dni.|  
-|**Komputery odnalezione przez określoną lokację**|Przedstawia listę wszystkich komputerów wykrytych według określonej lokacji i daty ostatniego odnajdowania.|  
-|**Komputery odnalezione ostatnio według metody odnajdywania**|Przedstawia listę komputerów, które zostały odnalezione w ciągu określonej liczby dni, oraz listę agentów, którzy je odnaleźli. Komputer może pojawić się więcej niż jeden raz na liście, jeśli został odnaleziony przez wielu agentów.|  
-|**Komputery nieodnalezione ostatnio (w ciągu określonej liczby dni)**|Przedstawia listę komputerów, które nie zostały ostatnio odnalezione, i liczbę dni od momentu ich odnalezienia.|  
-|**Komputery niespisane ostatnio (w ciągu określonej liczby dni)**|Przedstawia liczbę komputerów, które nie były ostatnio umieszczane w spisie, oraz czas ich ostatniego umieszczenia w spisie.|  
+|**Komputery odnalezione przez określoną lokację**|Wyświetla listę wszystkich komputerów, które odnalezione w określonej lokacji. Przedstawia on także datę ostatniego odnajdywania.|  
+|**Komputery odnalezione ostatnio według metody odnajdywania**|Wyświetla listę komputerów, które witryny odnalezione w ciągu określonej liczby dni. Zawiera także listę agentów, które dokonały odnalezienia. Jeśli wielu agentów odnaleziony komputer, go może występować więcej niż raz na liście.|  
+|**Komputery nieodnalezione ostatnio (w ciągu określonej liczby dni)**|Wyświetla listę komputerów, które lokacji nie ma ostatnio odnalezione. Zawiera również liczbę dni, od lokacji odnalezienia komputera.|  
+|**Komputery niespisane ostatnio (w ciągu określonej liczby dni)**|Wyświetla listę komputerów, które nie ma ostatnio spisane lokacji. Przedstawiono również się, że ostatni czas klienta spisu komputera.|  
 |**Komputery, które mogą współdzielić sam Unikatowy identyfikator programu Configuration Manager**|Przedstawia listę komputerów, których nazwy zostały zmienione. Zmiana nazwy jest możliwym objawem dwa komputera identyfikatora unikatowego programu Configuration Manager z innego komputera.|  
 |**Komputery ze zduplikowanymi adresami MAC**|Przedstawia komputery korzystające z tego samego adresu MAC.|  
 |**Liczba komputerów w domenach zasobów lub grupach roboczych**|Przedstawia liczbę komputerów w każdej grupie roboczej lub domenie zasobów.|  
 |**Informacje dotyczące odnajdywania określonego komputera**|Przedstawia listę agentów i lokacji, przy użyciu których odnaleziono określony komputer.|  
 |**Daty spisu dla określonego komputera**|Przedstawia datę i godzinę ostatniego uruchomienia spisu na określonym komputerze.|  
 
-### <a name="site---general"></a>Lokacja — ogólne  
+
+
+## <a name="site---general"></a>Lokacja — ogólne  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -477,19 +521,23 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Stan lokacji w hierarchii**|Przedstawia listę lokacji w hierarchii oraz informacje na temat wersji i stanu lokacji.|  
 |**Stan aktualizacji programu Configuration Manager w hierarchii**|Wyświetla informacje o aktualizacji lokacji programu Configuration Manager w hierarchii.|  
 
-### <a name="site---server-information"></a>Lokacja — informacje o serwerze  
+
+
+## <a name="site---server-information"></a>Lokacja — informacje o serwerze  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
 |**Role systemu lokacji i serwery systemu lokacji dla określonej lokacji**|Przedstawia listę serwerów systemu lokacji i ich ról systemu lokacji dla określonej lokacji.|  
 
-### <a name="software---companies-and-products"></a>Oprogramowanie — firmy i produkty  
+
+
+## <a name="software---companies-and-products"></a>Oprogramowanie — firmy i produkty  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
 |**Wszystkie spisane produkty określonego producenta oprogramowania**|Przedstawia listę produktów programowych i ich wersji oferowanych przez określonego producenta oprogramowania.|  
 |**Wszyscy producenci oprogramowania**|Przedstawia listę wszystkich firm produkujących oprogramowanie uwzględnione w spisie.|  
-|**Wszystkie aplikacje systemu Windows**|Przedstawia podsumowanie zainstalowanych aplikacji systemu Windows uporządkowanych według liczby wystąpień na podstawie kryteriów wyszukiwania dla nazwy aplikacji, architektury lub wydawcy.|  
+|**Wszystkie aplikacje systemu Windows**|Przedstawia podsumowanie zainstalowanych aplikacji systemu Windows. Wyszukuje, używając następujących kryteriów: Nazwa aplikacji, architektury lub wydawcy.|  
 |**Komputery z określonym produktem**|Przedstawia listę komputerów, na których znajduje się określony produkt uwzględniony w spisie, wraz z wersją tego produktu.|  
 |**Komputery z określonym produktem nazwa i wersja**|Przedstawia listę komputerów, na których znajduje się określona wersja produktu uwzględniona w spisie.|  
 |**Komputery z określonym oprogramowaniem zarejestrowanym w aplecie Dodaj Usuń programy**|Przedstawia podsumowanie wszystkich komputerów z określonym oprogramowaniem zarejestrowanym w aplecie Dodaj/Usuń programy lub Programy i funkcje.|  
@@ -497,22 +545,27 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Liczba spisanych produktów i wersji określonego produktu**|Przedstawia listę wersji określonego produktu uwzględnionych w spisie oraz liczbę komputerów, na których zainstalowano każdą z nich.|  
 |**Liczba wszystkich wystąpień oprogramowania zarejestrowanego w aplecie Dodaj / Usuń programy**|Przedstawia podsumowanie wszystkich wystąpień oprogramowania zainstalowanego i zarejestrowanego przy użyciu apletu Dodaj/Usuń programy lub Programy i funkcje na komputerach w określonej kolekcji.|  
 |**Liczba wystąpień określonego oprogramowania zarejestrowanego w aplecie Dodaj / Usuń programy**|Przedstawia liczbę wystąpień dla określonych pakietów oprogramowania zainstalowanych i zarejestrowanych w aplecie Dodaj/Usuń programy lub Programy i funkcje.|  
+|**Domyślna liczba przeglądarki**|Informuje o liczbie klientów przy użyciu przeglądarki sieci web określonego jako domyślny systemu Windows. </br>Użyj następującego odwołania dla typowych BrowserProgIDs:</br> - AppXq0fevzme2pys62n3e0fbqa7peapykr8v: Microsoft Edge</br> - IE.HTTP: Microsoft Internet Explorer</br> -ChromeHTML: Google Chrome</br> -OperaStable: Opera oprogramowania</br> - FirefoxURL-308046B0AF4A39CB: Mozilla Firefox</br> -Nieznane: kliencki system operacyjny nie obsługuje zapytania, zapytanie nie zostało uruchomione lub użytkownik nie zalogowany|
 |**Instalacje określonych aplikacji systemu Windows**|Przedstawia listę wszystkich komputerów z określoną aplikacją systemu Windows.|  
 |**Produkty na określonym komputerze**|Przedstawia podsumowanie programów uwzględnionych w spisie i ich producentów na określonym komputerze.|  
 |**Oprogramowanie zarejestrowane w aplecie Dodaj Usuń programy na określonym komputerze**|Przedstawia podsumowanie wszystkich programów zainstalowanych na określonym komputerze, które zarejestrowano w aplecie Dodaj/Usuń programy lub Programy i funkcje.|  
 |**Aplikacje systemu Windows zainstalowane dla określonego użytkownika.**|Przedstawia wszystkie aplikacje systemu Windows zainstalowane dla określonego użytkownika.|  
 
-### <a name="software---files"></a>Oprogramowanie — pliki  
+
+
+## <a name="software---files"></a>Oprogramowanie — pliki  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
 |**Wszystkie spisane pliki określonego produktu**|Przedstawia podsumowanie plików uwzględnionych w spisie i skojarzonych z określonym programem.|  
 |**Wszystkie spisane pliki na określonym komputerze**|Przedstawia podsumowanie wszystkich plików uwzględnionych w spisie i przechowywanych na określonym komputerze.|  
 |**Porównanie spisu oprogramowania na dwóch komputerach**|Przedstawia różnice między spisami oprogramowania zgłoszonymi dla dwóch określonych komputerów.|  
-|**Komputery z określonym plikiem**|Przedstawia listę komputerów, na których zgromadzono dane spisu oprogramowania dla określonej nazwy pliku. Komputer może pojawić się więcej niż jeden raz na liście, jeśli zawiera wiele kopii pliku.|  
+|**Komputery z określonym plikiem**|Przedstawia listę komputerów, na których zgromadzono dane spisu oprogramowania dla określonej nazwy pliku. Jeśli komputer zawiera wiele kopii pliku, może być wyświetlany więcej niż raz na liście.|  
 |**Liczba komputerów z określoną nazwą pliku**|Przedstawia liczbę komputerów, na których zgromadzono dane spisu oprogramowania dla określonego pliku.|  
 
-### <a name="software-distribution---application-monitoring"></a>Dystrybucja oprogramowania — monitorowanie aplikacji  
+
+
+## <a name="software-distribution---application-monitoring"></a>Dystrybucja oprogramowania — monitorowanie aplikacji  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -520,14 +573,16 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Wszystkie wdrożenia aplikacji (basic)**|Przedstawia podsumowanie informacji na temat wszystkich wdrożeń aplikacji.|  
 |**Zgodność aplikacji**|Przedstawia informacje na temat zgodności dla określonej aplikacji w określonej kolekcji.|  
 |**Wdrożenia aplikacji na zasób**|Przedstawia aplikacje wdrożone do określonego urządzenia lub użytkownika.|  
-|**Szczegóły błędów infrastruktury aplikacji**|Przedstawia błędy infrastruktury aplikacji.  Mogą być to zarówno wewnętrzne błędy infrastruktury, jak i błędy wynikające z nieprawidłowych reguł dotyczących wymagań.|  
+|**Szczegóły błędów infrastruktury aplikacji**|Przedstawia błędy infrastruktury aplikacji. Błędy te mogą być problemy wewnętrznej infrastruktury, lub błędy wynikające z nieprawidłowych reguł wymagań.|  
 |**Szczegółowy stan użytkowania aplikacji**|Przedstawia szczegóły użycia zainstalowanych aplikacji.|  
 |**Podsumowanie stanu użycia aplikacji**|Przedstawia podsumowanie użycia zainstalowanych aplikacji.|  
+|**aplikacje systemu iOS z nieudanymi wdrożeniami (aplikacja jest już zainstalowana)**|Wyświetla informacje o zgodności wybranej aplikacji systemu iOS. Ta aplikacja została wdrożona jako "pakiet aplikacji dla systemu iOS ze sklepu App Store", który również skojarzone z zasadami zarządzania aplikacjami mobilnymi. Ten raport zawiera informacje o użytkownikach i urządzeniach, dla których instalacja aplikacji nie powiodła się, ponieważ aplikacja została już ręcznie zainstalowana przez użytkownika.|  
 |**Wdrożenia sekwencji zadań zawierające aplikację**|Przedstawia wdrożenia sekwencji zadań, które umożliwiają zainstalowanie określonej aplikacji.|  
 |**Żądania użytkowników dla aplikacji systemu Android**|Przedstawia użytkowników, którzy zażądali zainstalowania aplikacji systemu Android.|  
-|**aplikacje systemu iOS z nieudanymi wdrożeniami (aplikacja jest już zainstalowana)**|Zawiera informacje o zgodności wybranej aplikacji systemu iOS wdrożonej jako „Pakiet aplikacji dla systemu iOS ze sklepu App Store”, który został skojarzony z zasadami zarządzania aplikacjami mobilnymi. Ten raport zawiera informacje o użytkownikach i urządzeniach, dla których instalacja aplikacji nie powiodła się, ponieważ aplikacja została już ręcznie zainstalowana przez użytkownika.|  
 
-### <a name="software-distribution---collections"></a>Dystrybucja oprogramowania — kolekcje  
+
+
+## <a name="software-distribution---collections"></a>Dystrybucja oprogramowania — kolekcje  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -535,7 +590,9 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Wszystkie zasoby w określonej kolekcji**|Przedstawia wszystkie zasoby w określonej kolekcji.|  
 |**Okna obsługi dostępne dla określonego klienta**|Przedstawia wszystkie okna obsługi, które można zastosować do określonego klienta.|  
 
-### <a name="software-distribution---content"></a>Dystrybucja oprogramowania — zawartość  
+
+
+## <a name="software-distribution---content"></a>Dystrybucja oprogramowania — zawartość  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -552,8 +609,13 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Stan dystrybucji określonego pakietu**|Przedstawia stan dystrybucji zawartości określonego pakietu w każdym punkcie dystrybucji.|  
 |**Pakiety przeznaczone do grupy punktów dystrybucji**|Przedstawia informacje na temat pakietów przeznaczonych dla określonej grupy punktów dystrybucji.|  
 |**Pakiety niezsynchronizowane w dystrybucji określonej grupie punktów**|Przedstawia pakiety, dla których skojarzone pliki zawartości nie zostały zaktualizowane do najnowszej wersji w określonej grupie punktów dystrybucji.|  
+|**Odrzucenia zawartości równorzędnej pamięci podręcznej źródła**|Wyświetla liczbę równorzędnej pamięci podręcznej źródła odrzuceń dla każdej grupy granic.|
+|**Zawartości odrzucenia źródła równorzędnej pamięci podręcznej przez warunek**|Wyświetla źródła pamięci podręcznej elementów równorzędnych, którzy odrzucili do obsługi zawartości na podstawie warunku.|
+|**Szczegóły zawartości odrzucenia źródła pamięci podręcznej elementów równorzędnych**|Wyświetla nazwę zawartości, która została odrzucona przez źródło równorzędnej.|
 
-### <a name="software-distribution---package-and-program-deployment"></a>Dystrybucja oprogramowania - wdrażanie pakietów i programów  
+
+
+## <a name="software-distribution---package-and-program-deployment"></a>Dystrybucja oprogramowania - wdrażanie pakietów i programów  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -563,35 +625,41 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Wszystkie wdrożenia pakietów i programów na określonym komputerze**|Przedstawia wszystkie wdrożenia pakietów i programów zastosowane na określonym komputerze.|  
 |**Wszystkie wdrożenia pakietów i programów dla określonego użytkownika**|Przedstawia wszystkie wdrożenia pakietów i programów do określonego użytkownika.|  
 
-### <a name="software-distribution---package-and-program-deployment-status"></a>Dystrybucja oprogramowania — stan pakietów i programów wdrożenia  
+
+
+## <a name="software-distribution---package-and-program-deployment-status"></a>Dystrybucja oprogramowania — stan pakietów i programów wdrożenia  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
 |**Wszystkie wdrożenia zasobów systemu pakietów i programów o stanie**|Przedstawia wszystkie wdrożenia pakietów i programów dla lokacji oraz podsumowanie stanu każdego wdrożenia.|  
 |**Wszystkie zasoby systemu dla określonego wdrożenia pakietu i programu w określonym stanie**|Przedstawia listę zasobów w określonym stanie dla określonego wdrożenia pakietu i programu.|  
-|**Wykres - godzinny stan o wykonania wdrożenia pakietu i programu**|Przedstawia wartość procentową liczby komputerów, na których pomyślnie zainstalowano pakiet, dla każdej godziny od momentu utworzenia wdrożenia pakietu i programu. W tym raporcie można śledzić średni czas wdrażania pakietu i programu.|  
+|**Wykres - godzinny stan o wykonania wdrożenia pakietu i programu**|Wyświetla procent komputerów, na których pomyślnie zainstalowano pakiet. Listy są uporządkowane dla każdej godziny, ponieważ administrator tworzy wdrożenia pakietu i programu. W tym raporcie można śledzić średni czas wdrażania pakietu i programu.|  
 |**Stan wdrażania pakietów i programów dla określonego klienta i wdrożenia**|Przedstawia komunikaty o stanie zgłoszone dla określonego komputera oraz wdrożenia pakietu i programu.|  
 |**Stan określonego wdrożenia pakietu i programu**|Przedstawia podsumowanie stanu określonego wdrożenia pakietu i programu.|  
 
-### <a name="software-metering"></a>Pomiar użytkowania oprogramowania  
+
+
+## <a name="software-metering"></a>Pomiar użytkowania oprogramowania  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
 |**Wszystkie reguły zliczania oprogramowania zastosowanie do tej lokacji**|Przedstawia listę wszystkich reguł pomiaru użytkowania oprogramowania w lokacji.|  
-|**Komputery, które mierzonym programem, ale program ten nie został uruchomiony od określonej daty**|Przedstawia wszystkie komputery z zainstalowaną określoną mierzoną aplikacją zgłoszoną w spisie oprogramowania, która nie była uruchamiana od określonej daty.|  
+|**Komputery, które mierzonym programem, ale program ten nie został uruchomiony od określonej daty**|Wyświetla wszystkie komputery z określoną mierzoną aplikacją, ale żaden użytkownik nie dysponuje program od określonej daty.|  
 |**Komputery które uruchomiły określony zliczany program**|Przedstawia listę komputerów, na których uruchamiano programy zgodne z określoną regułą pomiaru użytkowania oprogramowania w określonym miesiącu i roku.|  
 |**Współbieżne użycie wszystkich zliczanych programów**|Przedstawia maksymalną liczbę użytkowników, którzy jednocześnie uruchamiali każdy mierzony program w określonym miesiącu i roku.|  
 |**Analiza trendu współbieżnego użycia określonego zliczanego programu**|Przedstawia maksymalną liczbę użytkowników, którzy jednocześnie uruchamiali określony mierzony program w każdym miesiącu ostatniego roku.|  
-|**Zainstaluj podstawa dla wszystkich zliczanych programów**|Przedstawia liczbę komputerów z zainstalowanymi mierzonymi programami zgłoszonymi w spisie oprogramowania. Ten raport wymaga przeprowadzania spisu oprogramowania na mierzonych komputerach.|  
-|**Postęp podsumowania zliczania oprogramowania**|Przedstawia czas ostatniego przetwarzania zbiorczych danych pomiarów użytkowania na serwerze lokacji.  Tylko dane pomiarów użytkowania przetworzone przed tymi datami zostaną uwzględnione w raportach pomiaru użytkowania oprogramowania.|  
+|**Zainstaluj podstawa dla wszystkich zliczanych programów**|Przedstawia liczbę komputerów z zainstalowanymi mierzonymi programami zgłoszonymi w spisie oprogramowania. Ten raport wymaga, aby komputer zbiera dane spisu oprogramowania.|  
+|**Postęp podsumowania zliczania oprogramowania**|Przedstawia czas ostatniego przetwarzania zbiorczych danych pomiarów użytkowania na serwerze lokacji. Raporty dotyczące pomiaru użytkowania oprogramowania odzwierciedlać tylko dane zliczania przetworzone przed tymi datami.|  
 |**Godzina Podsumowanie użycia określonego zliczanego programu**|Przedstawia średnią liczbę użyć określonego programu w ciągu ostatnich 90 dni z podziałem na godziny i dni.|  
-|**Całkowite użycie wszystkich zliczanych programów**|Przedstawia liczbę użytkowników, którzy uruchamiali programy pasujące do każdej reguły pomiaru użytkowania oprogramowania lokalnie lub za pomocą usług terminalowych w określonym miesiącu i roku.|  
+|**Całkowite użycie wszystkich zliczanych programów**|Wyświetla liczbę użytkowników, którzy uruchomili programy w określonym miesiącu i roku i zgodnego z poszczególnymi regułami zliczania oprogramowania. Te reguły dotyczą oprogramowania zainstalowane lokalnie lub przy użyciu usług terminalowych.|  
 |**Całkowite użycie wszystkich zliczanych programów na serwerach terminali systemu Windows**|Przedstawia liczbę użytkowników, którzy uruchamiali programy pasujące do każdej reguły pomiaru użytkowania oprogramowania za pomocą usług terminalowych w określonym miesiącu i roku.|  
-|**Analiza trendu łącznego użycia określonego zliczanego programu**|Przedstawia liczbę użytkowników, którzy uruchamiali programy pasujące do określonej reguły pomiaru użytkowania oprogramowania lokalnie lub za pomocą usług terminalowych w każdym miesiącu przez ostatni rok.|  
-|**Analiza trendu łącznego użycia określonego zliczanego programu na serwerach terminali systemu Windows**|Przedstawia liczbę użytkowników, którzy uruchamiali programy pasujące do określonej reguły pomiaru użytkowania oprogramowania za pomocą usług terminalowych w każdym miesiącu przez ostatni rok.|  
-|**Użytkownicy którzy uruchomili określony zliczany program**|Przedstawia listę użytkowników, którzy uruchamiali programy zgodne z określoną regułą pomiaru użytkowania oprogramowania w określonym miesiącu i roku.|  
+|**Analiza trendu łącznego użycia określonego zliczanego programu**|Wyświetla liczbę użytkowników, którzy uruchomili programy w poszczególnych miesiącach ubiegłego roku i spełniających określonej reguły pomiaru użytkowania oprogramowania. Te reguły dotyczą oprogramowania zainstalowane lokalnie lub przy użyciu usług terminalowych.|  
+|**Analiza trendu łącznego użycia określonego zliczanego programu na serwerach terminali systemu Windows**|Wyświetla liczbę użytkowników, którzy uruchomili programy w poszczególnych miesiącach ubiegłego roku i spełniających określonej reguły pomiaru użytkowania oprogramowania. Te reguły dotyczą przy użyciu usług terminalowych.|  
+|**Użytkownicy którzy uruchomili określony zliczany program**|Wyświetla listę użytkowników, którzy uruchomili programy w określonym miesiącu i roku i spełniających określonej reguły pomiaru użytkowania oprogramowania.|  
 
-### <a name="software-updates---a-compliance"></a>Aktualizacje oprogramowania — zgodność  
+
+
+## <a name="software-updates---a-compliance"></a>Aktualizacje oprogramowania — zgodność  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -599,25 +667,29 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Zgodność 2 - określona aktualizacja oprogramowania**|Przedstawia dane zgodności określonej aktualizacji oprogramowania.|  
 |**Zgodność 3 - grupa aktualizacji (według aktualizacji)**|Przedstawia dane zgodności aktualizacji oprogramowania zdefiniowanych w ramach grupy aktualizacji oprogramowania.|  
 |**Zgodność 4 - aktualizacje według dostawcy miesiąca i roku**|Przedstawia dane zgodności aktualizacji oprogramowania wydawanych przez dostawcę w określonym miesiącu i roku.|  
-|**Zgodność 5 — określony komputer**|Ten raport zwraca dane zgodności aktualizacji oprogramowania dla określonego komputera.  Aby ograniczyć ilość zwracanych informacji, można określić dostawcę i klasyfikację aktualizacji oprogramowania.|  
+|**Zgodność 5 — określony komputer**|Ten raport zwraca dane zgodności aktualizacji oprogramowania dla określonego komputera. Aby ograniczyć ilość zwracanych informacji, można określić dostawcę i klasyfikację aktualizacji oprogramowania.|  
 |**Zgodność 6 - stany określonej aktualizacji oprogramowania (pomocniczy)**|Przedstawia liczbę i procent komputerów w każdym stanie zgodności dla określonej aktualizacji oprogramowania.|  
 |**Zgodność 7 - komputery z określonym stanem zgodności dla grupy aktualizacji (pomocniczy)**|Przedstawia wszystkie komputery w kolekcji, które mają określony ogólny stan zgodności względem grupy aktualizacji oprogramowania.|  
 |**Zgodność 8 - komputery w określonym stanie zgodności dla aktualizacji (pomocniczy)**|Przedstawia wszystkie komputery w kolekcji, które mają określony ogólny stan zgodności dla aktualizacji oprogramowania.|  
 
-### <a name="software-updates---b-deployment-management"></a>Aktualizacje oprogramowania — Zarządzanie wdrażaniem B  
+
+
+## <a name="software-updates---b-deployment-management"></a>Aktualizacje oprogramowania — Zarządzanie wdrażaniem B  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
 |**Zarządzanie 1 - wdrożenia grupy aktualizacji**|Przedstawia wszystkie wdrożenia, które zawierają wszystkie aktualizacje oprogramowania zdefiniowane w określonej grupie aktualizacji oprogramowania.|  
-|**Zarządzanie 2 - aktualizacje wymagane lecz Niewdrożone**|Przedstawia wszystkie aktualizacje oprogramowania dla określonego dostawcy, które zostały wykryte jako wymagane na komputerach klienckich, ale które nie zostały wdrożone do określonej kolekcji.|  
+|**Zarządzanie 2 - aktualizacje wymagane lecz Niewdrożone**|Wyświetla wszystkie aktualizacje oprogramowania specyficznych dla dostawcy, którzy klienci wykrywają zgodnie z wymaganiami, ale administrator nie zostało wdrożone w określonej kolekcji.|  
 |**Zarządzanie 3 - aktualizacje we wdrożeniu**|Przedstawia aktualizacje oprogramowania, które znajdują się w określonym wdrożeniu.|  
 |**Zarządzanie 4 - wdrożenia przeznaczone dla kolekcji**|Przedstawia wszystkie wdrożenia aktualizacji oprogramowania, które są przeznaczone dla określonej kolekcji.|  
 |**Zarządzanie 5 - wdrożenia przeznaczone dla komputera**|Przedstawia wszystkie wdrożenia aktualizacji oprogramowania, które są przeznaczone dla określonego komputera.|  
 |**Zarządzanie 6 - wdrożenia zawierające określoną aktualizację**|Przedstawia wszystkie wdrożenia zawierające określoną aktualizację oprogramowania i skojarzoną kolekcję docelową dla wdrożenia.|  
-|**Zarządzanie 7 - aktualizacje wdrożenia z niepełną zawartością**|Przedstawia aktualizacje oprogramowania w określonym wdrożeniu, dla których nie pobrano całej powiązanej zawartości, co uniemożliwiło klientom zainstalowanie aktualizacji i osiągnięcie 100% zgodności wdrożenia.|  
-|**Zarządzanie 8 - komputery z niepełną zawartością (pomocniczy)**|Przedstawia wszystkie komputery, które wymagają określonej aktualizacji oprogramowania zawartej w określonym wdrożeniu, którego obsługa administracyjna nie jest inicjowana w punkcie dystrybucji.|  
+|**Zarządzanie 7 - aktualizacje wdrożenia z niepełną zawartością**|Przedstawia aktualizacje oprogramowania w określonym wdrożeniu, którego nie pobrano całej skojarzonej zawartości. Ten stan uniemożliwia klientom zainstalowanie aktualizacji, co uniemożliwia osiągnięcie 100% zgodności wdrożenia.|  
+|**Zarządzanie 8 - komputery z niepełną zawartością (pomocniczy)**|Wyświetla wszystkie komputery z określonym oprogramowaniem wymagające aktualizacji, ale skojarzonej zawartości, nie jest jeszcze rozprowadzone do punktu dystrybucji.|  
 
-### <a name="software-updates---c-deployment-states"></a>Aktualizacje oprogramowania — stany wdrożeń C  
+
+
+## <a name="software-updates---c-deployment-states"></a>Aktualizacje oprogramowania — stany wdrożeń C  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -628,16 +700,20 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Stany 5 - stany aktualizacji we wdrożeniu (pomocniczy)**|Przedstawia podsumowanie stanów dla aktualizacji oprogramowania związanej z określonym wdrożeniem.|  
 |**Stany 6 — komputery z określonym stanem wymuszenia dla aktualizacji (pomocniczy)**|Przedstawia wszystkie komputery w określonym stanie wymuszania dla określonej aktualizacji oprogramowania.|  
 
-### <a name="software-updates---d-scan"></a>Aktualizacje oprogramowania — skanowanie D  
+
+
+## <a name="software-updates---d-scan"></a>Aktualizacje oprogramowania — skanowanie D  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
-|**Skanowanie 1 - ostatnie stany skanowania według kolekcji**|Przedstawia liczbę komputerów dla określonej kolekcji w każdym stanie skanowania zgodności zwróconym przez klientów podczas ostatniego skanowania pod kątem zgodności.|  
-|**Skanowanie 2 — stany ostatniego skanowania według lokacji**|Przedstawia liczbę komputerów przypisanych do określonej lokacji w każdym stanie skanowania zgodności zwróconym przez klientów podczas ostatniego skanowania pod kątem zgodności.|  
+|**Skanowanie 1 - ostatnie stany skanowania według kolekcji**|Określ kolekcję, aby wyświetlić liczbę komputerów z poszczególnymi stanami skanowania zgodności. Klienci będą zwracać stan podczas ostatniego skanowania zgodności.|  
+|**Skanowanie 2 — stany ostatniego skanowania według lokacji**|Określ lokację, aby wyświetlić liczbę komputerów z poszczególnymi stanami skanowania zgodności. Klienci będą zwracać stan podczas ostatniego skanowania zgodności.|  
 |**Skanowanie 3 - klienci w kolekcji raportujący określony stan (pomocniczy)**|Przedstawia wszystkie komputery dla określonej kolekcji i określonego stanu skanowania zgodności podczas ich ostatniego skanowania pod kątem zgodności.|  
-|**Skanowanie 4 — klienci w lokacji raportujący określony stan (pomocniczy)**|Przedstawia wszystkie komputery przypisane do określonej lokacji i z określonym stanem skanowania zgodności podczas ich ostatniego skanowania pod kątem zgodności.|  
+|**Skanowanie 4 — klienci w lokacji raportujący określony stan (pomocniczy)**|Określ lokację, aby wyświetlić wszystkie komputery z określonego stanu skanowania zgodności. Klienci będą zwracać stan podczas ich ostatniego skanowania zgodności.|  
 
-### <a name="software-updates---e-troubleshooting"></a>Aktualizacje oprogramowania — Rozwiązywanie problemów E  
+
+
+## <a name="software-updates---e-troubleshooting"></a>Aktualizacje oprogramowania — Rozwiązywanie problemów E  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -646,7 +722,9 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Rozwiązywanie problemów 3 - komputery z niepowodzeniem skanowania z powodu określonego błędu (pomocniczy)**|Przedstawia listę komputerów, których skanowanie nie powiodło się z powodu określonego błędu.|  
 |**Rozwiązywanie problemów 4 - komputery z niepowodzeniem z powodu określonego błędu wdrożenia (pomocniczy)**|Przedstawia listę komputerów, na których wdrażanie aktualizacji nie powiodło się z powodu określonego błędu.|  
 
-### <a name="state-migration"></a>Migracja stanu  
+
+
+## <a name="state-migration"></a>Migracja stanu  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -654,14 +732,16 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Informacje o migracji stanu dla określonego punktu migracji stanu**|Przedstawia informacje na temat migracji stanu dla określonego punktu migracji stanu.|  
 |**Punkty migracji stanu dla określonej lokacji**|Przedstawia punkty migracji stanu dla określonej lokacji.|  
 
-### <a name="status-messages"></a>Komunikaty o stanie  
+
+
+## <a name="status-messages"></a>Komunikaty o stanie  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
 |**Wszystkie komunikaty z określonym Identyfikatorem komunikatu**|Przedstawia listę komunikatów o stanie z określonym identyfikatorem komunikatu.|  
 |**Klienci raportujący błędy w ciągu ostatnich 12 godzin dla określonej lokacji**|Przedstawia listę komputerów i składników zgłaszających błędy w ciągu ostatnich 12 godzin oraz liczbę zgłoszonych błędów.|  
 |**Komunikaty składników z ostatnich 12 godzin**|Przedstawia listę komunikatów składników z ostatnich 12 godzin dla określonego kodu lokacji, komputera i składnika.|  
-|**Komunikaty składników z ostatniej godziny**|Wyświetla listę komunikatów o stanie utworzonych w ciągu ostatniej godziny przez określony składnik na określonym komputerze w określonej lokacji programu Configuration Manager.|  
+|**Komunikaty składników z ostatniej godziny**|Wyświetla listę komunikatów o stanie utworzonych w ciągu ostatniej godziny przez określony składnik na określonym komputerze w określonej lokacji.|  
 |**Liczba komunikatów składników z ostatniej godziny dla określonej lokacji**|Przedstawia liczbę komunikatów o stanie zgłoszonych w ciągu ostatniej godziny w określonej lokacji i uporządkowanych według składnika i ważności.|  
 |**Liczba błędów w ciągu ostatnich 12 godzin**|Przedstawia liczbę komunikatów o stanie błędów składników serwera w ciągu ostatnich 12 godzin.|  
 |**Błędy krytyczne (według składnika)**|Przedstawia listę komputerów zgłaszających błędy krytyczne uporządkowaną według składnika.|  
@@ -671,7 +751,9 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Ostatnie 1000 komunikatów dla określonego komputera (błędy)**|Przedstawia podsumowanie ostatniego 1000 komunikatów o stanie składnika wskazujących na błąd dla określonego komputera.|  
 |**Ostatnie 1000 komunikatów dla określonego składnika serwera**|Przedstawia podsumowanie ostatniego 1000 komunikatów o stanie dla określonego składnika serwera.|  
 
-### <a name="status-messages---audit"></a>Komunikaty o stanie — inspekcja  
+
+
+## <a name="status-messages---audit"></a>Komunikaty o stanie — inspekcja  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -679,7 +761,9 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Sterowanie zdalne - wszystkie komputery zdalnie sterowane przez określonego użytkownika**|Przedstawia podsumowanie komunikatów o stanie wskazujących na zdalne sterowanie komputerami klienckimi przez określonego użytkownika.|  
 |**Sterowanie zdalne - wszystkie informacje dotyczące sterowania zdalnego**|Przedstawia podsumowanie komunikatów o stanie powiązanych ze zdalnym sterowaniem komputerami klienckimi.|  
 
-### <a name="task-sequence---deployment-status"></a>Sekwencja zadań — stan wdrożenia  
+
+
+## <a name="task-sequence---deployment-status"></a>Sekwencja zadań — stan wdrożenia  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -693,16 +777,18 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Stan określonego wdrożenia sekwencji zadań dla określonego komputera**|Przedstawia podsumowanie stanu określonego wdrożenia sekwencji zadań na określonym komputerze.|  
 |**Stan wdrożenia sekwencji zadań na nieznanym komputerze docelowym**|Przedstawia stan określonego wdrożenia sekwencji zadań na określonym nieznanym komputerze docelowym.|  
 |**Podsumowanie stanu określonego wdrożenia sekwencji zadań**|Przedstawia podsumowanie stanu wszystkich zasobów przeznaczonych do użycia we wdrożeniu.|  
-|**Podsumowanie stanu określonego wdrożenia sekwencji zadań dostępne dla nieznanych komputerów**|Przedstawia podsumowanie stanu wszystkich zasobów przeznaczonych do użycia w określonym wdrożeniu dostępnym dla kolekcji zawierającej nieznane komputery.|  
+|**Podsumowanie stanu określonego wdrożenia sekwencji zadań dostępne dla nieznanych komputerów**|Wyświetla podsumowanie stanu wszystkich zasobów objęci określonego wdrożenia, który jest dostępny do kolekcji zawierającej nieznane komputery.|  
 
-### <a name="task-sequence---deployments"></a>Sekwencja zadań — wdrożenia  
+
+
+## <a name="task-sequence---deployments"></a>Sekwencja zadań — wdrożenia  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
 |**Wszystkie zasoby systemowe obecnie w określonej grupie lub fazie określonego wdrożenia sekwencji zadań**|Przedstawia listę komputerów, które obecnie działają w ramach określonej grupy lub fazy określonego wdrożenia sekwencji zadań.|  
 |**Wszystkie zasoby systemowe, których wdrożenie sekwencji zadań w określonej grupie lub fazie zakończyło się niepowodzeniem**|Przedstawia listę komputerów, na których wystąpiły błędy w ramach określonej grupy lub fazy określonego wdrożenia sekwencji zadań.|  
 |**Wszystkie wdrożenia sekwencji zadań**|Przedstawia szczegóły wszystkich wdrożeń sekwencji zadań inicjowanych w bieżącej lokacji.|  
-|**Wszystkie wdrożenia sekwencji zadań dostępne dla nieznanych komputerów**|Przedstawia szczegóły wszystkich wdrożeń sekwencji zadań inicjowanych z lokacji, które zostały wdrożone w kolekcjach zawierających nieznane komputery.|  
+|**Wszystkie wdrożenia sekwencji zadań dostępne dla nieznanych komputerów**|Wyświetla szczegóły wszystkich wdrożeń sekwencji zadań inicjowanych z lokacji i wdrożonych do kolekcji zawierających nieznane komputery.|  
 |**Liczba niepowodzeń w każdej fazie lub grupie określonej sekwencji zadań**|Przedstawia liczbę błędów w każdej fazie lub grupie określonej sekwencji zadań.|  
 |**Liczba niepowodzeń w każdej fazie lub grupie określonego wdrożenia sekwencji zadań**|Przedstawia liczbę błędów w każdej fazie lub grupie określonego wdrożenia sekwencji zadań.|  
 |**Stan wdrożenia wszystkich wdrożeń sekwencji zadań**|Przedstawia ogólny postęp wszystkich wdrożeń sekwencji zadań.|  
@@ -711,7 +797,9 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Postęp wszystkich wdrożeń dla określonej sekwencji zadań**|Przedstawia postęp wszystkich wdrożeń określonej sekwencji zadań.|  
 |**Raport podsumowania wdrożenia sekwencji zadań**|Przedstawia podsumowanie informacji na temat określonego wdrożenia sekwencji zadań.|  
 
-### <a name="task-sequence---progress"></a>Sekwencja zadań — postęp  
+
+
+## <a name="task-sequence---progress"></a>Sekwencja zadań — postęp  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -719,47 +807,59 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Postęp sekwencji zadań**|Przedstawia postęp określonej sekwencji zadań.|  
 |**Postęp wszystkich sekwencji zadań**|Przedstawia podsumowanie postępu wszystkich sekwencji zadań.|  
 |**Postęp sekwencji zadań wdrożeń systemu operacyjnego**|Przedstawia postęp wszystkich sekwencji zadań powodujących wdrażanie systemów operacyjnych.|  
-|**Stan wszystkich nieznanych komputerów**|Przedstawia listę komputerów, które były nieznane podczas uruchamiania na nich wdrożenia sekwencji zadań, oraz informacje wskazujące, czy komputery są teraz znane.|  
+|**Stan wszystkich nieznanych komputerów**|Wyświetla listę komputerów, które były nieznane w momencie wykonywania wdrożenia sekwencji zadań, oraz określa, czy komputery są teraz znane.|  
 
-### <a name="task-sequences---references"></a>Sekwencje zadań — odwołania  
+
+
+## <a name="task-sequences---references"></a>Sekwencje zadań — odwołania  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
 |**Zawartość z odwołaniami określonej sekwencji zadań**|Przedstawia zawartość, do której odwołuje się sekwencja zadań.|  
 
-### <a name="upgrade-assessment"></a>Ocena uaktualnienia  
 
-|Nazwa raportu|Opis|  
+
+<!--
+## Upgrade Assessment  
+
+|Report name|Description|  
 |-----------------|-----------------|  
-|**Stan aplikacji dla określonego komputera**|Przedstawia zgodność aplikacji zainstalowanych na komputerze dla określonego systemu operacyjnego.|  
-|**Status aplikacji dla komputerów w określonej kolekcji**|Przedstawia stan ogólny dla komputerów w kolekcji, co pozwala na ich ocenę pod względem uaktualniania do określonego systemu operacyjnego w oparciu o aplikacje na każdym komputerze. Ten raport służy do określania, które komputery mają zgodne aplikacje przed wdrożeniem systemu operacyjnego.|  
-|**Podsumowanie stanu aplikacji**|Przedstawia podsumowanie stanu aplikacji dla określonego systemu operacyjnego. Ten raport służy do określania zgodności aplikacji przed wdrożeniem systemu operacyjnego.|  
-|**Komputery z zainstalowaną określoną aplikacją**|Przedstawia komputery z zainstalowaną określoną aplikacją.|  
-|**Komputery z określonym urządzeniem**|Przedstawia komputery z określonym urządzeniem sprzętowym.|  
-|**Stan urządzenia sprzętowego dla określonego komputera**|Przedstawia stan zgodności urządzeń sprzętowych, które znajdują się na określonym komputerze, dla określonego systemu operacyjnego.|  
-|**Stan urządzenia sprzętowego dla komputerów w określonej kolekcji**|Przedstawia stan ogólny urządzeń sprzętowych dla określonego systemu operacyjnego dla komputerów w określonej kolekcji. Ten raport służy do określania zgodności sprzętu przed wdrożeniem systemu operacyjnego.|  
-|**Podsumowanie stanu urządzeń sprzętowych**|Przedstawia podsumowanie stanu urządzeń sprzętowych dla określonego systemu operacyjnego. Ten raport służy do określania zgodności urządzeń sprzętowych przed wdrożeniem systemu operacyjnego.|  
-|**Wymagania sprzętowe systemu operacyjnego**|Przedstawia minimalne i zalecane kryteria dotyczące sprzętu dla systemów operacyjnych.|  
-|**Status wymagań systemu operacyjnego dla komputerów w określonej kolekcji**|Przedstawia stan wymagań systemu operacyjnego dla określonego systemu operacyjnego dla komputerów w określonej kolekcji. Ten raport służy do określania, czy komputer spełnia określone wymagania systemu operacyjnego dotyczące szybkości procesora CPU, rozmiaru pamięci i miejsca na dysku twardym.|  
-|**Podsumowanie oceny uaktualnienia**|Przedstawia podsumowanie oceny uaktualnienia. Ten raport służy do oceniania ogólnego stanu na potrzeby zgodności uaktualniania.|  
+|**Application status for a specific computer**|Displays the compatibility of applications that are installed on a computer for a specified operating system.|  
+|**Application status for computers in a specific collection**|Displays the overall status for computers in a collection to let you assess them for upgrade to a specified operating system based on the applications on each computer. Use this report to determine which computers have compatible applications before you deploy an operating system.|  
+|**Application status summary**|Displays a summary of the application status for a specified operating system. Use this report to determine application compatibility before you deploy an operating system.|  
+|**Computers with a specific application installed**|Displays computers with a specified application installed.|  
+|**Computers with a specific hardware device**|Displays computers that have a specific hardware device.|  
+|**Hardware device status for a specific computer**|Displays the compatibility status of hardware devices for a specified operating system that are found on a specified computer.|  
+|**Hardware device status for computers in a specific collection**|Displays the overall status for hardware devices for a specified operating system for computers in a specified collection. Use this report to determine hardware compatibility before you deploy an operating system.|  
+|**Hardware device status summary**|Displays a summary of hardware device status for a specified operating system. You can use this report to determine hardware device compatibility before you deploy an operating system.|  
+|**Operating system hardware requirements**|Displays the minimum and recommended hardware criteria for operating systems.|  
+|**Operating system requirement status for computers in a specific collection**|Displays the status of operating system requirements for the specified operating system for computers in a specified collection. Use this report to determine if a computer meets the specified operating system requirements for CPU processor speed, memory size, and hard disk space.|  
+|**Upgrade assessment summary**|Displays the upgrade assessment summary. You can use this report to assess the overall status for upgrade compatibility.|  
+-->
 
-### <a name="user---device-affinity"></a>Użytkownik — koligacja urządzenia  
+
+
+## <a name="user---device-affinity"></a>Użytkownik — koligacja urządzenia  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
 |**Powiązania koligacji urządzeń użytkownika oczekujące według kolekcji**|Przedstawia wszystkie oczekujące przypisania koligacji urządzenia użytkownika w oparciu o dane użycia dla elementów członkowskich kolekcji.|  
-|**Powiązania koligacji urządzeń użytkownika na kolekcję**|Przedstawia wszystkie skojarzenia urządzenia użytkownika dla określonej kolekcji, a następnie grupuje wyniki według typu kolekcji (np. użytkownik lub urządzenie).|  
+|**Powiązania koligacji urządzeń użytkownika na kolekcję**|Wyświetla wszystkie skojarzenia urządzeń użytkowników dla określonej kolekcji oraz grupuje wyniki według typu kolekcji (na przykład użytkownika lub urządzenia).|  
 
-### <a name="user-data-and-profiles-health"></a>Kondycja profili i danych użytkownika  
+
+
+## <a name="user-data-and-profiles-health"></a>Kondycja profili i danych użytkownika  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
-|**Raport kondycji przekierowania folderów — szczegóły**|Przedstawia szczegóły stanu kondycji przekierowania folderu dla każdego z przekierowanych folderów dla danego użytkownika.|  
-|**Mobilnego raport o kondycji profilu użytkownika — szczegóły**|Przedstawia szczegóły stanu kondycji profilu użytkownika mobilnego dla określonego użytkownika.|  
-|**Raport dane użytkownika i kondycja profilów - szczegóły**|Przedstawia szczegóły błędu lub ostrzeżenia dotyczącego przekierowania folderu lub profilu użytkownika mobilnego po przejściu do szczegółów liczby z raportu podsumowania.|  
+|**Raport kondycji przekierowania folderów — szczegóły**|Wyświetla szczegóły stanu kondycji przekierowania folderu dla każdego z przekierowanych folderów dla danego użytkownika.|  
+|**Mobilnego raport o kondycji profilu użytkownika — szczegóły**|Wyświetla szczegóły stanu kondycji profilu użytkownika mobilnego dla określonego użytkownika.|  
+|**Raport dane użytkownika i kondycja profilów - szczegóły**|Wyświetla błąd lub ostrzeżenie szczegóły Przekierowanie folderu lub profilów użytkowników mobilnych. Ten raport jest elementem docelowym szczegóły z raportu podsumowującego.|  
 |**Dane użytkownika raport i kondycja profilów - podsumowanie**|Przedstawia podsumowanie stanów kondycji przekierowania folderu i profili użytkowników mobilnych.|  
 
-### <a name="users"></a>Użytkownicy  
+
+
+## <a name="users"></a>Użytkownicy  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
@@ -767,23 +867,43 @@ Wiele wbudowanych raportów są dostarczane z System Center Configuration Manage
 |**Liczba użytkowników według domeny**|Przedstawia liczbę użytkowników w każdej domenie.|  
 |**Użytkownicy w określonej domenie**|Przedstawia listę użytkowników i ich komputerów w określonej domenie.|  
 
-### <a name="virtual-applications"></a>Aplikacje wirtualne  
+
+
+## <a name="virtual-applications"></a>Aplikacje wirtualne  
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
 |**Wyniki środowiska wirtualnego App-V**|Przedstawia informacje o określonym środowisku wirtualnym, które znajduje się w określonym stanie względem wybranej kolekcji.|  
-|**Wyniki środowiska wirtualnego App-V dla zasobu**|Przedstawia informacje o określonym środowisku wirtualnym przy określonym zasobie i dowolnym typie wdrożenia tego środowiska.|  
+|**Wyniki środowiska wirtualnego App-V dla zasobu**|Wyświetla informacje o określonym środowisku wirtualnym przy określonym zasobie. Przedstawia on także żadnych typów wdrożenia dla określonego środowiska wirtualnego.|  
 |**Status środowiska wirtualnego App-V**|Przedstawia informacje na temat zgodności określonego środowiska wirtualnego z określoną kolekcją.|  
 |**Komputery z określoną aplikacją wirtualną**|Przedstawia podsumowanie komputerów z określonym skrótem aplikacji App-V utworzonym przy użyciu aplikacji Application Virtualization Management Sequencer.|  
-|**Komputery z określonym pakietem aplikacji wirtualnych**|Przedstawia listę komputerów z określonym pakietem aplikacji App-V.|  
+|**Komputery z określonym pakietem aplikacji wirtualnych**|Wyświetla podsumowanie komputerów z określonym pakietem aplikacji App-V.|  
 |**Liczba wszystkich wystąpień pakietów aplikacji wirtualnych**|Przedstawia liczbę wykrytych pakietów aplikacji App-V.|  
 |**Liczba wszystkich wystąpień aplikacji wirtualnych**|Przedstawia liczbę wykrytych aplikacji App-V.|  
 
-### <a name="wake-on-lan"></a>Wake On LAN  
+
+
+## <a name="volume-purchase-programs---apple"></a>Programów Volume Purchase - firmy Apple
 
 |Nazwa raportu|Opis|  
 |-----------------|-----------------|  
-|**Wszystkie komputery ustawione na aktywność funkcji Wake On LAN**|Przedstawia listę komputerów przeznaczonych do użycia na potrzeby działania Wake On LAN podczas wdrażania określonego typu.|  
+|**Aplikacje programu Apple Volume Purchase Program dla systemu iOS z liczbami licencji**|Wyświetla wszystkie urządzenia iPhone, tabletów iPad i iPod aplikacji Touch licencjonowanych w ramach programu zakupów zbiorczych firmy Apple. Ten raport zawiera również razem zakupionych licencji i licencji zużytych według aplikacji.|  
+
+
+
+## <a name="vulnerability-assessment"></a>Oceny luk w zabezpieczeniach
+
+|Nazwa raportu|Opis|  
+|-----------------|-----------------|  
+|**Ogólny raport oceny luk**|Identyfikuje zabezpieczeń administracyjnych i luk w zabezpieczeniach zgodności dla określonego komputera|  
+
+
+
+## <a name="wake-on-lan"></a>Wake On LAN  
+
+|Nazwa raportu|Opis|  
+|-----------------|-----------------|  
+|**Wszystkie komputery ustawione na aktywność funkcji Wake On LAN**|Określ typ wdrożenia, aby wyświetlić listę komputerów, przeznaczone do wznawiania działania sieci LAN.|  
 |**Wszystkie obiekty oczekujące na wznowienie**|Przedstawia obiekty zaplanowane do wznowienia.|  
 |**Wszystkie lokacje z włączoną funkcją Wake On LAN**|Przedstawia listę wszystkich lokacji w hierarchii, które zostały włączone dla działania Wake On LAN.|  
 |**Błędy otrzymane podczas wysyłania pakietów wznowienia w określonym przedziale czasu**|Przedstawia błędy odebrane podczas wysyłania pakietów do komputerów w zdefiniowanym okresie.|  

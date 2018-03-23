@@ -1,9 +1,9 @@
 ---
-title: "Kroki sekwencji zadań"
+title: Kroki sekwencji zadań
 titleSuffix: Configuration Manager
-description: "Więcej informacji na temat kroków sekwencji zadań, które można dodać do sekwencji zadań programu Configuration Manager."
+description: Dowiedz się więcej na temat kroków, które można dodać do sekwencji zadań programu Configuration Manager.
 ms.custom: na
-ms.date: 01/12/2018
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,16 +12,16 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
-caps.latest.revision: 
-caps.handback.revision: 
+caps.latest.revision: ''
+caps.handback.revision: ''
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 5320d7747f7e2c6164da8c1801e631b749935d6d
-ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
+manager: dougeby
+ms.openlocfilehash: ad68209784b78da5c6e75745094ba8e6bc002c44
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Kroki sekwencji zadań w programie System Center Configuration Manager
 
@@ -44,7 +44,7 @@ W sekcjach poniżej kroków sekwencji zadań określone opisano inne ustawienia 
 
 
 
-##  <a name="BKMK_ApplyDataImage"></a>Zastosuj obraz danych   
+##  <a name="BKMK_ApplyDataImage"></a> Zastosuj obraz danych   
  Ten krok umożliwia skopiowanie obrazu danych na określoną partycję docelową.  
 
  Ten krok działa tylko w środowisku Windows PE. Nie działa on w standardowym systemie operacyjnym. Aby uzyskać więcej informacji na temat zmiennych sekwencji zadań, zobacz [zmienne akcji sekwencji zadań](task-sequence-action-variables.md).  
@@ -76,7 +76,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **obra
 
 
 
-##  <a name="BKMK_ApplyDriverPackage"></a>Zastosuj pakiet sterowników  
+##  <a name="BKMK_ApplyDriverPackage"></a> Zastosuj pakiet sterowników  
  Ten krok umożliwia pobranie wszystkich sterowników w pakiecie sterowników i zainstalowanie ich w systemie operacyjnym.
 
  Krok sekwencji zadań **Zastosuj pakiet sterowników** udostępnia wszystkie sterowniki urządzeń w pakiecie sterowników do użycia przez system Windows. Dodaj ten krok między **Zastosuj System operacyjny** i **Zainstaluj system Windows i program ConfigMgr** kroki, aby udostępnić sterowniki w pakiecie do systemu Windows. Zazwyczaj krok **Zastosuj pakiet sterowników** jest umieszczany po kroku sekwencji zadań **Automatycznie zastosuj sterowniki**. Krok sekwencji zadań **Zastosuj pakiet sterowników** może być też używany w scenariuszach wdrażania nośników autonomicznych.  
@@ -109,7 +109,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ster
 
 
 
-##  <a name="BKMK_ApplyNetworkSettings"></a>Zastosuj ustawienia sieci   
+##  <a name="BKMK_ApplyNetworkSettings"></a> Zastosuj ustawienia sieci   
  Ten krok umożliwia określenie informacji o konfiguracji sieci lub grupy roboczej na komputerze docelowym. Sekwencja zadań przechowuje te wartości w pliku odpowiedzi odpowiednie. Instalator systemu Windows używa tego pliku odpowiedzi podczas **Zainstaluj system Windows i program ConfigMgr** akcji.  
 
  Ten krok sekwencji zadań działa w standardowym systemie operacyjnym lub w środowisku Windows PE. Aby uzyskać więcej informacji na temat zmiennych sekwencji zadań dla tej akcji, zobacz [Zmienne akcji sekwencji zadań Zastosuj ustawienia sieci](task-sequence-action-variables.md#BKMK_ApplyNetworkSettings).  
@@ -123,7 +123,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ster
  Wybierz tę opcję, aby przyłączyć komputer docelowy do określonej grupy roboczej. Wprowadź nazwę grupy roboczej w wierszu **Grupa robocza**. Ta wartość może zostać przesłonięta przez wartość przechwyconą przez krok sekwencji zadań **Przechwyć ustawienia sieci**.  
 
  **Przyłącz do domeny**  
- Wybierz tę opcję, aby przyłączyć komputer docelowy do określonej domeny. Określ lub wyszukaj domenę, taką jak *fabricam.com*. Określ lub wyszukaj ścieżkę dostępu protokołu LDAP (Lightweight Directory) dla jednostki organizacyjnej. Na przykład: *LDAP / / OU = computers, DC=Fabricam.com, C = com*  
+ Wybierz tę opcję, aby przyłączyć komputer docelowy do określonej domeny. Określ lub wyszukaj domenę, taką jak *fabricam.com*. Określ lub wyszukaj ścieżkę dostępu protokołu LDAP (Lightweight Directory) dla jednostki organizacyjnej. Na przykład: *LDAP//OU=computers, DC=Fabricam.com, C=com*  
 
  **Konta**  
  Kliknij pozycję **Ustaw**, aby określić konto z uprawnieniami przyłączania komputera do domeny. W **konta użytkownika systemu Windows** okno dialogowe, które można wprowadzić nazwę użytkownika w następującym formacie: **DOMENA\UŻYTKOWNIK**.  
@@ -133,7 +133,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ster
 
 
 
-##  <a name="BKMK_ApplyOperatingSystemImage"></a>Zastosuj obraz systemu operacyjnego  
+##  <a name="BKMK_ApplyOperatingSystemImage"></a> Zastosuj obraz systemu operacyjnego  
 
 > [!TIP]  
 > Począwszy od systemu Windows 10 w wersji 1709, nośnikami wiele wersji. Podczas konfigurowania sekwencji zadań w celu za pomocą pakietu uaktualnienia systemu operacyjnego lub obrazu systemu operacyjnego, należy wybrać [obsługiwana wersja](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
@@ -142,7 +142,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ster
 
  **Zastosuj obraz systemu operacyjnego** krok wykonuje następujące czynności, korzystając z obrazu systemu operacyjnego:  
 
-1.  Usuń całą zawartość na docelowym woluminie, z wyjątkiem plików w folderze &#95; Określa SMSTSUserStatePath zmiennej.
+1.  Usuń całą zawartość na docelowym woluminie, z wyjątkiem plików w folderze &#95;określa SMSTSUserStatePath zmiennej.
 
 2.  Wyodrębnij zawartość określonego pliku wim do na określoną partycję docelową.  
 
@@ -158,7 +158,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ster
 
  **Zastosuj obraz systemu operacyjnego** krok wykonuje następujące czynności w przypadku korzystania z pakietu uaktualnienia systemu operacyjnego:  
 
-1.  Usuń całą zawartość na docelowym woluminie, z wyjątkiem plików w folderze &#95; Określa SMSTSUserStatePath zmiennej.  
+1.  Usuń całą zawartość na docelowym woluminie, z wyjątkiem plików w folderze &#95;określa SMSTSUserStatePath zmiennej.  
 
 2.  Przygotowanie pliku odpowiedzi:  
 
@@ -214,7 +214,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ster
 
 
 
-##  <a name="BKMK_ApplyWindowsSettings"></a>Zastosuj ustawienia systemu Windows  
+##  <a name="BKMK_ApplyWindowsSettings"></a> Zastosuj ustawienia systemu Windows  
  Ten krok umożliwia skonfigurowanie ustawień systemu Windows na komputerze docelowym. Sekwencja zadań przechowuje te wartości w pliku odpowiedzi odpowiednie. Instalator systemu Windows używa tego pliku odpowiedzi podczas **Zainstaluj system Windows i program ConfigMgr** akcji.  
 
  Ten krok sekwencji zadań działa tylko w środowisku Windows PE. Nie działa on w standardowym systemie operacyjnym. Aby uzyskać więcej informacji na temat zmiennych sekwencji zadań dla tej akcji, zobacz [Zmienne akcji sekwencji zadań Zastosuj ustawienia systemu Windows](task-sequence-action-variables.md#BKMK_ApplyWindowsSettings).  
@@ -250,7 +250,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ster
 
 
 
-##  <a name="BKMK_AutoApplyDrivers"></a>Automatycznie Zastosuj sterowniki  
+##  <a name="BKMK_AutoApplyDrivers"></a> Automatycznie Zastosuj sterowniki  
  Ten krok umożliwia dopasowanie i zainstalowanie sterowników w ramach wdrożenia systemu operacyjnego.  
 
  W ramach kroku sekwencji zadań **Automatycznie zastosuj sterowniki** są wykonywane następujące akcje:  
@@ -299,7 +299,7 @@ Ten krok sekwencji zadań działa tylko w środowisku Windows PE. Nie działa on
 
 
 
-##  <a name="BKMK_CaptureNetworkSettings"></a>Przechwyć ustawienia sieci  
+##  <a name="BKMK_CaptureNetworkSettings"></a> Przechwyć ustawienia sieci  
  Ten krok umożliwia przechwycenie ustawień sieci firmy Microsoft z komputera z uruchomioną sekwencją zadań. Sekwencja zadań te ustawienia są zapisywane w zmiennych sekwencji zadań. Ustawienia te zastępują ustawienia domyślne skonfigurowane w **Zastosuj ustawienia sieci** kroku.  
 
  Ten krok sekwencji zadań działa tylko w standardowym systemie operacyjnym. Nie działa on w środowisku Windows PE. Aby uzyskać więcej informacji na temat zmiennych sekwencji zadań dla tej akcji, zobacz [Zmienne akcji sekwencji zadań Przechwyć ustawienia sieci](task-sequence-action-variables.md#BKMK_CaptureNetworkSettings).  
@@ -317,7 +317,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **usta
 
 
 
-##  <a name="BKMK_CaptureOperatingSystemImage"></a>Przechwyć obraz systemu operacyjnego  
+##  <a name="BKMK_CaptureOperatingSystemImage"></a> Przechwyć obraz systemu operacyjnego  
  Ten krok powoduje przechwycenie jednego lub więcej obrazów z komputera odniesienia. Sekwencja zadań tworzy plik obrazu systemu Windows (wim) w określonym udziale sieciowym. Następnie użyj **dodać pakiet obrazu systemu operacyjnego** kreatora można zaimportować tego obrazu do programu Configuration Manager w przypadku wdrożeń na podstawie obrazu systemu operacyjnego.  
 
  Menedżer konfiguracji przechwytuje każdy wolumin (dysk) z komputera odniesienia na osobny obraz w pliku wim. Jeśli przywoływany komputer ma wiele woluminów, wynikowy plik wim zawiera osobny obraz każdego woluminu. Przechwytywane są t ylko woluminy sformatowane przy użyciu systemu NTFS lub FAT32. Woluminy w innych formatach i woluminy USB są pomijane.  
@@ -333,7 +333,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **usta
 ### <a name="properties"></a>Właściwości  
  Na **właściwości** karta dla tego kroku, skonfigurować ustawienia opisane w tej sekcji.  
 
- **Docelowy**  
+ **docelowy**  
  Nazwa ścieżki systemu plików do lokalizacji programu Configuration Manager używa do przechowywania przechwyconego obrazu systemu operacyjnego.  
 
  **Opis**  
@@ -350,7 +350,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **usta
 
 
 
-##  <a name="BKMK_CaptureUserState"></a>Przechwyć stan użytkownika  
+##  <a name="BKMK_CaptureUserState"></a> Przechwyć stan użytkownika  
  Aby użyć narzędzia migracji stanu użytkowników (USMT) do przechwytywania stanu użytkownika i ustawień z komputera z uruchomioną sekwencją zadań, należy użyć tego kroku. Ten krok sekwencji zadań jest używany razem z krokiem sekwencji zadań **Przywróć stan użytkownika**. Przy użyciu narzędzia USMT 3.0.1 i później, ta opcja zawsze szyfruje Magazyn stanów narzędzia USMT za pomocą klucza szyfrowania wygenerowanego i zarządzanego przez program Configuration Manager.  
 
  Aby uzyskać więcej informacji o zarządzaniu stanem użytkownika podczas wdrażania systemów operacyjnych, zobacz [Zarządzanie stanem użytkownika](../get-started/manage-user-state.md).  
@@ -408,7 +408,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **usta
 
 
 
-##  <a name="BKMK_CaptureWindowsSettings"></a>Przechwyć ustawienia systemu Windows  
+##  <a name="BKMK_CaptureWindowsSettings"></a> Przechwyć ustawienia systemu Windows  
  Ten krok umożliwia przechwycenie ustawień systemu Windows z komputera z uruchomioną sekwencją zadań. Sekwencja zadań te ustawienia są zapisywane w zmiennych sekwencji zadań. Ustawienia te przechwycone zastępują ustawienia domyślne, które można skonfigurować na **Zastosuj ustawienia systemu Windows** kroku.  
 
  Ten krok sekwencji zadań działa w środowisku Windows PE lub w standardowym systemie operacyjnym. Aby uzyskać więcej informacji na temat zmiennych sekwencji zadań dla tej akcji, zobacz [Zmienne akcji sekwencji zadań Przechwyć ustawienia systemu Windows](task-sequence-action-variables.md#BKMK_CaptureWindowsSettings).  
@@ -429,7 +429,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **usta
 
 
 
-##  <a name="BKMK_CheckReadiness"></a>Sprawdź gotowość  
+##  <a name="BKMK_CheckReadiness"></a> Sprawdź gotowość  
  Aby sprawdzić, czy komputer docelowy spełnia warunki wstępne określonego wdrożenia, należy użyć tego kroku.  
 
 W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ogólne**i wybierz **Sprawdź gotowość** Aby dodać ten krok. 
@@ -455,7 +455,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ogó
 
 
 
-##  <a name="BKMK_ConnectToNetworkFolder"></a>Połącz z folderem sieciowym  
+##  <a name="BKMK_ConnectToNetworkFolder"></a> Połącz z folderem sieciowym  
  Ten krok umożliwia utworzenie połączenia z udostępnionym folderem sieciowym.  
 
  Ten krok sekwencji zadań działa w standardowym systemie operacyjnym lub w środowisku Windows PE. Aby uzyskać więcej informacji na temat zmiennych sekwencji zadań dla tej akcji, zobacz [Zmienne akcji sekwencji zadań Połącz z folderem sieciowym](task-sequence-action-variables.md#BKMK_ConnecttoNetworkFolder).  
@@ -468,7 +468,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ogó
  **Path**  
  Kliknij przycisk **Przeglądaj** Aby określić ścieżkę do folderu sieciowego. Użyj formatu  *\\\server\share*.
 
- **Dysk**  
+ **Drive**  
  Wybierz literę dysku lokalnego, aby przypisać dla tego połączenia. 
 
  **Konta**  
@@ -476,7 +476,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ogó
 
 
 
-##  <a name="BKMK_DisableBitLocker"></a>Wyłącz funkcję BitLocker  
+##  <a name="BKMK_DisableBitLocker"></a> Wyłącz funkcję BitLocker  
  Ten krok umożliwia wyłączenie szyfrowania BitLocker na bieżącym dysku systemu operacyjnego lub na określonym dysku. Po wykonaniu tej akcji funkcje ochrony kluczy są widoczne w postaci zwykłego tekstu na dysku twardym, ale zawartość dysku nie jest odszyfrowywana. W związku z tym ta akcja jest wykonywana niemal natychmiast.  
 
 > [!NOTE]  
@@ -499,7 +499,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ogó
 
 
 
-##  <a name="BKMK_DownloadPackageContent"></a>Pobierz zawartość pakietu  
+##  <a name="BKMK_DownloadPackageContent"></a> Pobierz zawartość pakietu  
  Aby pobrać dowolny z następujących typów pakietów, należy użyć tego kroku:  
 
 -   Obrazy systemu operacyjnego  
@@ -509,6 +509,8 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ogó
 -   Pakiety sterowników  
 
 -   Pakiety  
+
+-   Obrazy rozruchowe
     
 Ten krok działa dobrze w sekwencji zadań w celu uaktualnienia systemu operacyjnego w następujących scenariuszach:  
 
@@ -546,7 +548,7 @@ Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows P
 
 
 
-##  <a name="BKMK_EnableBitLocker"></a>Włącz funkcję BitLocker  
+##  <a name="BKMK_EnableBitLocker"></a> Włącz funkcję BitLocker  
 Aby włączyć szyfrowanie funkcji BitLocker na co najmniej dwóch partycjach dysku twardego, należy użyć tego kroku. Pierwsza aktywna partycja zawiera kod ładowania początkowego systemu Windows. Kolejna partycja zawiera system operacyjny. Partycja ładowania początkowego musi pozostać niezaszyfrowana.  
 
 Krok sekwencji zadań **Wstępne inicjowanie obsługi funkcji BitLocker** umożliwia włączenie funkcji BitLocker na dysku w środowisku Windows PE. Aby uzyskać więcej informacji, zobacz [funkcja BitLocker przed udostępnieniem](#BKMK_PreProvisionBitLocker) sekcji.  
@@ -605,7 +607,7 @@ Proces szyfrowania może zająć godziny podczas szyfrowania dużego dysku tward
 
 
 
-##  <a name="BKMK_FormatandPartitionDisk"></a>Format i partycji  
+##  <a name="BKMK_FormatandPartitionDisk"></a> Format i partycji  
  Umożliwia sformatowanie określonego dysku na komputerze docelowym, należy użyć tego kroku.  
 
 > [!IMPORTANT]  
@@ -645,7 +647,7 @@ Aby usunąć partycję, zaznacz partycję do usunięcia, a następnie kliknij po
 
 
 
-##  <a name="BKMK_InstallApplication"></a>Instalowanie aplikacji  
+##  <a name="BKMK_InstallApplication"></a> Instalowanie aplikacji  
 Ta czynność powoduje zainstalowanie określonej aplikacji lub zestawu aplikacji zdefiniowane przez dynamiczną listę zmiennych sekwencji zadań. Gdy ten krok zostanie uruchomiony, instalacja aplikacji rozpocznie się natychmiast bez oczekiwania na interwał sondowania zasad.  
 
 Instalowane oprogramowanie musi spełniać następujące kryteria:  
@@ -724,7 +726,7 @@ Oprócz domyślnych opcji, należy skonfigurować następujące dodatkowe ustawi
 
 
 
-##  <a name="BKMK_InstallPackage"></a>Zainstaluj pakiet
+##  <a name="BKMK_InstallPackage"></a> Zainstaluj pakiet
 Ten krok umożliwia zainstalowanie pakietu oprogramowania w ramach sekwencji zadań. Gdy ten krok zostanie uruchomiony, instalacja rozpocznie się natychmiast bez oczekiwania na interwał sondowania zasad.  
 
 Pakiet musi spełniać następujące kryteria:  
@@ -744,7 +746,7 @@ Programy używające opcji **Uruchom najpierw inny program** w celu zainstalowan
 >   
 >  W przypadku nośnika samodzielnego zawierającego **zainstaluj pakiet** krok, Utwórz nośnik autonomiczny w lokacji głównej, w której jest włączony agent dystrybucji oprogramowania. Możesz też dodać **Uruchom wiersz polecenia** krokiem **Zainstaluj system Windows i program ConfigMgr** kroku i przed pierwszym **zainstaluj pakiet** kroku. **Uruchom wiersz polecenia** polecenie WMIC włączające agenta dystrybucji oprogramowania przed pierwszym uruchomieniem kroku **zainstaluj pakiet** kroku. Użyj następującego polecenia w **Uruchom wiersz polecenia** krok:  
 >   
->  **Wiersz polecenia**:`WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE`  
+>  **Wiersz polecenia**: `WMIC /namespace:\\\root\ccm\policy\machine\requestedconfig path ccm_SoftwareDistributionClientConfig CREATE ComponentName="Enable SWDist", Enabled="true", LockSettings="TRUE", PolicySource="local", PolicyVersion="1.0", SiteSettingsKey="1" /NOINTERACTIVE`  
 >   
 >  Aby uzyskać więcej informacji o tworzeniu nośników autonomicznych, zobacz [tworzenia nośnika samodzielnego](../deploy-use/create-stand-alone-media.md).  
 
@@ -793,7 +795,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **opro
 
 
 
-##  <a name="BKMK_InstallSoftwareUpdates"></a>Instalacja aktualizacji oprogramowania  
+##  <a name="BKMK_InstallSoftwareUpdates"></a> Instalacja aktualizacji oprogramowania  
 Ten krok umożliwia zainstalowanie aktualizacji oprogramowania na komputerze docelowym. Komputer docelowy nie jest sprawdzany pod kątem dostępności odpowiednich aktualizacji oprogramowania do czasu uruchomienia tego kroku sekwencji zadań. Po uruchomieniu komputera docelowego jest oceniane pod kątem aktualizacji oprogramowania, takich jak dowolnego klienta programu Configuration Manager. W tym kroku instalacji aktualizacji oprogramowania należy wdrożyć aktualizacje na kolekcję, której członkiem jest komputer docelowy.  
 >  [!IMPORTANT]
 > Zainstaluj najnowszą wersję programu Windows Update Agent jest najlepszym rozwiązaniem dla uzyskania optymalnej wydajności. 
@@ -832,7 +834,7 @@ Zmienną sekwencji zadań SMSTSSoftwareUpdateScanTimeout określa limit czasu sk
 
 
 
-##  <a name="BKMK_JoinDomainorWorkgroup"></a>Przyłącz do domeny lub grupy roboczej  
+##  <a name="BKMK_JoinDomainorWorkgroup"></a> Przyłącz do domeny lub grupy roboczej  
  Aby dodać komputer docelowy do domeny lub grupy roboczej, należy użyć tego kroku.  
 
  Ten krok sekwencji zadań działa tylko w standardowym systemie operacyjnym. Nie działa on w środowisku Windows PE. Aby uzyskać informacje o zmiennych sekwencji zadań dotyczących tej akcji sekwencji zadań, zobacz [Zmienne akcji sekwencji zadań Przyłącz do domeny lub grupy roboczej](task-sequence-action-variables.md#BKMK_JoinDomainWorkgroup).  
@@ -851,11 +853,11 @@ Zmienną sekwencji zadań SMSTSSoftwareUpdateScanTimeout określa limit czasu sk
  Opcjonalnie można wprowadzić lub wyszukać jednostkę organizacyjną w określonej domenie, do której ma zostać przyłączony komputer. Jeśli komputer jest aktualnie członkiem innej domeny lub grupy roboczej, ta opcja powoduje ponowne uruchomienie komputera. Jeśli komputer jest już członkiem innej jednostki Organizacyjnej, ponieważ usługi domenowe Active Directory nie zezwala na zmianę jednostki Organizacyjnej, za pomocą tej metody, Instalator systemu Windows ignoruje to ustawienie.  
 
  **Wprowadź konto z uprawnieniem do przyłączenia do domeny**  
- Kliknij przycisk **ustawić** wprowadzić nazwę użytkownika i hasło dla konta z uprawnieniami do przyłączania do domeny. Wprowadź konto w formacie:  *Domena\konto*  
+ Kliknij przycisk **ustawić** wprowadzić nazwę użytkownika i hasło dla konta z uprawnieniami do przyłączania do domeny. Wprowadź konto w formacie:  *Domain\account*  
 
 
 
-## <a name="BKMK_PrepareConfigMgrClientforCapture"></a>Przygotuj klienta programu ConfigMgr do przechwycenia  
+## <a name="BKMK_PrepareConfigMgrClientforCapture"></a> Przygotuj klienta programu ConfigMgr do przechwycenia  
 Aby usunąć lub skonfigurować klienta programu Configuration Manager na komputerze odniesienia, należy użyć tego kroku. Ta akcja przygotowuje komputer do przechwycenia w ramach procesu przetwarzania obrazów.
 
 Począwszy od programu Configuration Manager w wersji 1610, **przygotować klienta programu ConfigMgr** kroku powoduje całkowite usunięcie klienta programu Configuration Manager, a nie tylko usunięcie informacji o kluczu. Gdy sekwencja zadań wdrażania przechwyconego obrazu systemu operacyjnego, instaluje nowy klient programu Configuration Manager zawsze.  
@@ -886,7 +888,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **obra
 
 
 
-##  <a name="BKMK_PrepareWindowsforCapture"></a>Przygotuj system Windows do przechwycenia  
+##  <a name="BKMK_PrepareWindowsforCapture"></a> Przygotuj system Windows do przechwycenia  
  Ten krok umożliwia określenie opcji narzędzia Sysprep, podczas przechwytywania obrazu systemu operacyjnego na komputerze odniesienia. Tej akcji sekwencji zadań uruchamia narzędzie Sysprep, a następnie ponowne uruchomienie komputera z obrazu rozruchowego środowiska Windows PE określonego dla sekwencji zadań. Ta akcja zakończy się niepowodzeniem, jeśli komputer odniesienia jest przyłączony do domeny.  
 
  Ten krok sekwencji zadań działa tylko w standardowym systemie operacyjnym. Nie działa on w środowisku Windows PE. Aby uzyskać informacje o zmiennych sekwencji zadań dotyczących tej akcji sekwencji zadań, zobacz [Zmienne akcji sekwencji zadań Przygotuj system Windows do przechwycenia](task-sequence-action-variables.md#BKMK_PrepareWindowsCapture).  
@@ -904,7 +906,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **obra
 
 
 
-##  <a name="BKMK_PreProvisionBitLocker"></a>Funkcja BitLocker przed udostępnieniem  
+##  <a name="BKMK_PreProvisionBitLocker"></a> Funkcja BitLocker przed udostępnieniem  
  Ten krok umożliwia włączenie funkcji BitLocker na dysku w środowisku Windows PE. Szyfrowany jest tylko zajęty obszar dysku, dzięki czemu szyfrowanie jest znacznie szybsze. Aby zastosować opcje zarządzania kluczami, użyj kroku sekwencji zadań [Wstępne inicjowanie obsługi funkcji BitLocker](#BKMK_EnableBitLocker) po zainstalowaniu systemu operacyjnego. Ten krok działa tylko w środowisku Windows PE. Nie działa on w standardowym systemie operacyjnym.  
 
 > [!IMPORTANT]  
@@ -923,7 +925,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **obra
 
 
 
-##  <a name="BKMK_ReleaseStateStore"></a>Zwolnij Magazyn stanów  
+##  <a name="BKMK_ReleaseStateStore"></a> Zwolnij Magazyn stanów  
  Ten krok jest używany do powiadamiania stanu o ukończeniu akcji przechwytywania lub przywracania punktu migracji. Użyj tego kroku w połączeniu z **Zażądaj magazynu stanów**, **Przechwyć stan użytkownika**, i **Przywróć stan użytkownika** czynności. Korzystania z tych kroków do przeprowadzenia migracji danych stanu użytkownika przy użyciu punktu migracji stanu i narzędzia migracji stanu użytkowników (USMT).  
 
  Aby uzyskać więcej informacji o zarządzaniu stanem użytkownika podczas wdrażania systemów operacyjnych, zobacz [Zarządzanie stanem użytkownika](../get-started/manage-user-state.md).  
@@ -944,7 +946,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **obra
 
 
 
-##  <a name="BKMK_RequestStateStore"></a>Zażądaj magazynu stanów  
+##  <a name="BKMK_RequestStateStore"></a> Zażądaj magazynu stanów  
  Ten krok umożliwia zażądanie dostępu do punktu migracji stanu podczas przechwytywania lub przywracania stanu.  
 
  Aby uzyskać więcej informacji o zarządzaniu stanem użytkownika podczas wdrażania systemów operacyjnych, zobacz [Zarządzanie stanem użytkownika](../get-started/manage-user-state.md).  
@@ -982,7 +984,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **stan
 
 
 
-##  <a name="BKMK_RestartComputer"></a>Uruchom ponownie komputer  
+##  <a name="BKMK_RestartComputer"></a> Uruchom ponownie komputer  
  Ten krok umożliwia ponowne uruchomienie komputera z uruchomioną sekwencją zadań. Po ponownym uruchomieniu komputer będzie automatycznie kontynuować działanie do następnego kroku w sekwencji zadań.  
 
  Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows PE. Aby uzyskać więcej informacji na temat zmiennych sekwencji zadań dotyczących tej akcji sekwencji zadań, zobacz [ponowne uruchomienie zmienne akcji sekwencji zadań komputera](task-sequence-action-variables.md#BKMK_RestartComputer).  
@@ -1009,7 +1011,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **stan
 
 
 
-##  <a name="BKMK_RestoreUserState"></a>Przywróć stan użytkownika  
+##  <a name="BKMK_RestoreUserState"></a> Przywróć stan użytkownika  
  Ten krok umożliwia zainicjowanie narzędzia do migracji stanu (USMT) użytkownika, do przywrócenia stanu i ustawień użytkownika na komputerze docelowym. Ten krok można używać w połączeniu z **Przechwyć stan użytkownika** kroku.  
 
  Aby uzyskać więcej informacji o zarządzaniu stanem użytkownika podczas wdrażania systemów operacyjnych, zobacz [Zarządzanie stanem użytkownika](../get-started/manage-user-state.md).  
@@ -1048,7 +1050,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **stan
 
 
 
-##  <a name="BKMK_RunCommandLine"></a>Uruchom wiersz polecenia  
+##  <a name="BKMK_RunCommandLine"></a> Uruchom wiersz polecenia  
  Ten krok umożliwia uruchomienie określonego wiersza polecenia.  
 
  Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows PE. Aby uzyskać informacje o zmiennych sekwencji zadań dotyczących tej akcji sekwencji zadań, zobacz [Zmienne akcji sekwencji zadań Uruchom wiersz polecenia](task-sequence-action-variables.md#BKMK_RunCommand).  
@@ -1080,17 +1082,17 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **stan
 
  Przykłady:  
 
- **c:\OfficeXP**  
+ **c:\officexp**  
 
- **I386**  
+ **i386**  
 
 > [!NOTE]  
 >  **Przeglądaj** przycisk umożliwia wyszukanie na komputerze lokalnym dla plików i folderów. Coś po wybraniu muszą także istnieć na komputerze docelowym w tej samej lokalizacji i z tego samego pliku i nazwy folderów.  
 
- **Pakiet**  
+ **Package**  
  Po określeniu plików lub programów w wierszu polecenia, który nie ma jeszcze na komputerze docelowym, wybierz tę opcję, aby określić pakiet programu Configuration Manager, który zawiera odpowiednie pliki. Ten pakiet nie wymaga programu. Ta opcja nie jest wymagana, jeśli określone pliki znajdują się na komputerze docelowym.  
 
- **Limit czasu**  
+ **Time-out**  
  Określa wartość, która reprezentuje, jak długo programu Configuration Manager umożliwia wiersza polecenia do uruchomienia. Ta wartość może być od 1 do 999 minut. Wartość domyślna to 15 minut.  
 
  Ta opcja jest domyślnie wyłączona.  
@@ -1112,7 +1114,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **stan
 
 
 
-##  <a name="BKMK_RunPowerShellScript"></a>Uruchom skrypt programu PowerShell  
+##  <a name="BKMK_RunPowerShellScript"></a> Uruchom skrypt programu PowerShell  
  Ten krok umożliwia uruchomienie określonego skryptu programu PowerShell.  
 
  Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows PE. Aby można było uruchomić t en krok w środowisku Windows PE, program Power Shell musi być włączony w obrazie rozruchowym. Program Windows PowerShell (WinPE-PowerShell) można włączyć na karcie **Składniki opcjonalne** we właściwościach obrazu rozruchowego. Aby uzyskać więcej informacji o modyfikowaniu obrazu rozruchowego, zobacz [zarządzanie obrazami rozruchowymi](../get-started/manage-boot-images.md).  
@@ -1125,7 +1127,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ogó
 ### <a name="properties"></a>Właściwości  
  Na **właściwości** karta dla tego kroku, skonfigurować ustawienia opisane w tej sekcji.  
 
- **Pakiet**  
+ **Package**  
  Określ pakiet programu Configuration Manager, który zawiera skrypt programu PowerShell. Jeden pakiet może zawierać wiele skryptów programu PowerShell.  
 
  **Nazwa skryptu**  
@@ -1159,7 +1161,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ogó
 
 
 
-##  <a name="child-task-sequence"></a>Uruchomienie sekwencji zadań
+##  <a name="child-task-sequence"></a> Uruchomienie sekwencji zadań
 
 Począwszy od programu Configuration Manager w wersji 1710, możesz dodać nowy krok, który zostanie wykonany innej sekwencji zadań. Spowoduje to utworzenie relacji nadrzędny podrzędny między sekwencji zadań. Sekwencja zadań podrzędnych można utworzyć jedną sekwencją zadań moduły, wielokrotnego użytku.
 
@@ -1179,7 +1181,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ogó
 
 
 
-##  <a name="BKMK_SetDynamicVariables"></a>Ustaw zmienne dynamiczne  
+##  <a name="BKMK_SetDynamicVariables"></a> Ustaw zmienne dynamiczne  
  Ten krok umożliwia wykonaj następujące czynności:  
 
 1.  Zebranie informacji z komputera i środowiska, w którym się znajduje, a następnie ustawienie tych informacji w określonych zmiennych sekwencji zadań.  
@@ -1187,13 +1189,13 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ogó
 2.  Obliczenie zdefiniowanych reguł i ustawienie zmiennych sekwencji zadań na podstawie zmiennych i wartości skonfigurowanych dla reguł, które zwrócą wartość true.  
 
 Sekwencja zadań automatycznie ustawia następujące zmienne sekwencji zadań tylko do odczytu:  
- -   &#95; SMSTSMake  
- -   &#95; SMSTSModel  
- -   &#95; SMSTSMacAddresses  
- -   &#95; SMSTSIPAddresses  
- -   &#95; SMSTSSerialNumber  
- -   &#95; SMSTSAssetTag  
- -   &#95; SMSTSUUID  
+ -   &#95;SMSTSMake  
+ -   &#95;SMSTSModel  
+ -   &#95;SMSTSMacAddresses  
+ -   &#95;SMSTSIPAddresses  
+ -   &#95;SMSTSSerialNumber  
+ -   &#95;SMSTSAssetTag  
+ -   &#95;SMSTSUUID  
 
 Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows PE. Aby uzyskać więcej informacji na temat zmiennych sekwencji zadań, zobacz [zmienne akcji sekwencji zadań](task-sequence-action-variables.md).  
 
@@ -1234,7 +1236,7 @@ Po wybraniu zmiennych reguły musisz podać wartość każdej zmiennej. Dla zmie
 
 
 
-##  <a name="BKMK_SetTaskSequenceVariable"></a>Ustaw zmienną sekwencji zadań  
+##  <a name="BKMK_SetTaskSequenceVariable"></a> Ustaw zmienną sekwencji zadań  
 Aby ustawić wartość zmiennej używanej w sekwencji zadań, należy użyć tego kroku.  
 
 Ten krok działa w standardowym systemie operacyjnym lub w środowisku Windows PE. Zmienne sekwencji zadań są odczytywane przez akcje sekwencji zadań i określają działanie tych akcji. Aby uzyskać więcej informacji na temat określonych zmiennych sekwencji zadań akcji, zobacz [zmienne akcji sekwencji zadań](task-sequence-action-variables.md). Aby uzyskać więcej informacji na temat określonych zmiennych sekwencji zadań wbudowanych, zobacz [wbudowane zmienne sekwencji zadań](/sccm/osd/understand/task-sequence-built-in-variables).
@@ -1252,7 +1254,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ogó
 
 
 
-##  <a name="BKMK_SetupWindowsandConfigMgr"></a>Zainstaluj system Windows i program ConfigMgr  
+##  <a name="BKMK_SetupWindowsandConfigMgr"></a> Zainstaluj system Windows i program ConfigMgr  
  Aby wykonać przejście ze środowiska Windows PE do nowego systemu operacyjnego, należy użyć tego kroku. Ten krok sekwencji zadań stanowi wymaganą część każdego wdrożenia systemu operacyjnego. Go instaluje klienta programu Configuration Manager w nowym systemie operacyjnym i przygotowuje sekwencję zadań kontynuować wykonywanie w nowym systemie operacyjnym.  
 
  Ten krok działa tylko w środowisku Windows PE. Nie działa on w standardowym systemie operacyjnym. Aby uzyskać więcej informacji o zmiennych sekwencji zadań dotyczących tej akcji sekwencji zadań, zobacz [zmienne akcji sekwencji zadań Zainstaluj system Windows i program ConfigMgr](task-sequence-action-variables.md#BKMK_SetupWindows).  
@@ -1326,7 +1328,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **obra
 
 
 
-##  <a name="BKMK_UpgradeOS"></a>Uaktualnij System operacyjny  
+##  <a name="BKMK_UpgradeOS"></a> Uaktualnij System operacyjny  
  > [!TIP]  
  > Począwszy od systemu Windows 10 w wersji 1709, nośnikami wiele wersji. Podczas konfigurowania sekwencji zadań w celu za pomocą pakietu uaktualnienia systemu operacyjnego lub obrazu systemu operacyjnego, należy wybrać [obsługiwana wersja](/sccm/core/plan-design/configs/support-for-windows-10#windows-10-as-a-client).
 

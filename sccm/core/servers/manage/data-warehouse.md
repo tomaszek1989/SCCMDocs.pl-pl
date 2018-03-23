@@ -1,9 +1,9 @@
 ---
 title: Magazyn danych
 titleSuffix: Configuration Manager
-description: "Punkt usługi magazynu danych i bazy danych programu System Center Configuration Manager"
+description: Punkt usługi magazynu danych i bazy danych programu System Center Configuration Manager
 ms.custom: na
-ms.date: 02/26/2018
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,15 +12,15 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aaf43e69-68b4-469a-ad58-9b66deb29057
-caps.latest.revision: 
+caps.latest.revision: ''
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 954ec65bae15e087d6cf5afbcc8e0da1ebf83533
-ms.sourcegitcommit: be939893f0ceca4add8655ae2c24e42aa16aec38
+ms.openlocfilehash: 83bfc0e3d7bdf1ff8718c7c211c897e37b21a06b
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/23/2018
 ---
 #  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>Punkt usługi magazynu danych programu System Center Configuration Manager
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
@@ -88,6 +88,7 @@ Po zainstalowaniu roli programu Configuration Manager utworzy bazę danych magaz
      - **Nazwa bazy danych**: Określ nazwę bazy danych magazynu danych. Nazwa bazy danych nie może przekraczać 10 znaków. (Długość nazwy obsługiwanych zostanie zwiększony w przyszłej wersji).
      Configuration Manager tworzy bazę danych magazynu danych o tej nazwie. Jeśli określisz nazwy bazy danych, która już istnieje w wystąpieniu programu SQL server Configuration Manager korzysta z tej bazy danych.
      - **Port serwera SQL używane do łączenia**: Określ numer portu TCP/IP używane przez program SQL Server, który jest hostem bazy danych magazynu danych. Port ten jest używany przez usługę synchronizacji magazynu danych do nawiązania połączenia bazy danych magazynu danych.  
+     - **Konto punktu usługi Magazyn danych**: Począwszy od wersji 1802 Określ konto, które korzysta z usług SQL Server Reporting Services podczas łączenia z bazą danych magazynu danych. 
 
 **Harmonogram synchronizacji** strony:   
 - **Harmonogram synchronizacji**:
@@ -96,8 +97,12 @@ Po zainstalowaniu roli programu Configuration Manager utworzy bazę danych magaz
          - **Codzienne**: Określ, że synchronizacja jest uruchamiana codziennie.
          - **Co tydzień**: Określ jeden dzień w każdej tydzień i cyklu tygodniowego synchronizacji.
 
+
 ## <a name="reporting"></a>Raportowanie
 Po zainstalowaniu punktu usługi magazynu danych, kilka raportów stają się dostępne w punkcie usług raportowania jest zainstalowany w tej samej lokacji. Po zainstalowaniu punktu usługi magazynu danych przed zainstalowaniem punktu usług raportowania, raporty są automatycznie dodawane podczas późniejszej instalacji punktu usług raportowania.
+
+>[!WARNING]
+>W 1802 wersji programu Configuration Manager dodano obsługę alternatywnych poświadczeń dla punktu magazynu danych. <!--507334-->W przypadku uaktualnienia z poprzedniej wersji programu Configuration Manager, należy określić poświadczenia, które SQL Server Reporting Services będzie używany do łączenia z bazą danych magazynu danych. Raporty magazynu danych nie zostanie otwarty i dopóki nie podano poświadczeń. Aby określić konto, przejdź do **administracji** >**konfiguracja lokacji** >**serwery i role systemu lokacji**. Kliknij serwer z punktem usługi magazynu danych, a następnie kliknij prawym przyciskiem myszy rolę punktu usługi magazynu danych. Wybierz **właściwości** następnie określ **konta punktu usługi Magazyn danych**.
 
 Rola systemu lokacji magazynu danych obejmuje następujące raporty, które mają kategorię z **hurtowni danych**:
  - **Wdrażanie aplikacji — historycznych**: Przejrzyj szczegóły dotyczące wdrażania aplikacji dla określonej aplikacji i komputera.

@@ -1,26 +1,27 @@
 ---
 title: Aktualizacje
 titleSuffix: Configuration Manager
-description: "Więcej informacji na temat metody obsługi w konsoli o nazwie ** aktualizacje i obsługa ** który można łatwo zlokalizować i zainstalować zalecane aktualizacje."
+description: Więcej informacji na temat metody obsługi w konsoli o nazwie **aktualizacje i obsługa** ułatwia do lokalizowania i instalowanie zalecanych aktualizacji.
 ms.custom: na
-ms.date: 11/20/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3a832943-580a-4a40-b454-961d0854ac2b
-caps.latest.revision: "51"
-caps.handback.revision: "0"
+caps.latest.revision: ''
+caps.handback.revision: ''
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: a90222d16391d1e75d041c95c048a1d8d19bf278
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 8be32aa07819239820711079e4ff3637e96367db
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="updates-for-system-center-configuration-manager"></a>Aktualizacje programu System Center Configuration Manager
 
@@ -47,9 +48,9 @@ Jeśli używasz gałęzi Technical Preview, zobacz [Technical Preview programu S
 
 
 ##  <a name="bkmk_Baselines"></a> Wersje linii bazowej i aktualizacji  
- Pierwszej wersji programu System Center Configuration Manager bieżącej gałęzi była wersji 1511, której wersji linii bazowej. Nowsze wersje linii bazowej zawierają wersję 1606 i 1702:
+ Pierwszej wersji programu System Center Configuration Manager bieżącej gałęzi była wersji 1511, której wersji linii bazowej. Nowsze wersje linii bazowej zawierają wersję 1702 i 1802:
 
--   Po zainstalowaniu nowej lokacji w nowej hierarchii korzystaj z najnowszej wersji linii bazowej.  
+-   Po zainstalowaniu nowej lokacji w nowej hierarchii, należy używać najnowszej wersji linii bazowej.  
 
 -   Używasz wersji linii bazowej do uaktualnienia programu System Center 2012 Configuration Manager. Po uaktualnieniu do programu System Center Configuration Manager nie umożliwia wersje bazowe Pozostań na bieżąco i zamiast tego używać tylko [aktualizacje w konsoli](/sccm/core/servers/manage/install-in-console-updates) aktualizacji do najnowszej wersji.  
 
@@ -75,6 +76,7 @@ Poniżej przedstawiono wersje programu Configuration Manager dostępne jako lini
 
 |Wersja |Data udostępnienia|[Data zakończenia wsparcia](/sccm/core/servers/manage/current-branch-versions-supported) |Linia bazowa|Aktualizacja w konsoli|  
 |-------------|-----------|------------|--------------|------------------------|  
+|[1802](/sccm/core/plan-design/changes/whats-new-in-version-1802)<br /><br /> 5.00.8634.1000|22 marca 2018|22 września 2019|Tak|Tak|
 |[1710](/sccm/core/plan-design/changes/whats-new-in-version-1710)<br /><br /> 5.00.8577.1000|20 listopada 2017 r.|20 maja 2019|Nie|Tak|
 |[1706](/sccm/core/plan-design/changes/whats-new-in-version-1706)<br /><br /> 5.00.8540.1000|31 lipca 2017 r.|31 lipca 2018|Nie|Tak|
 |[1702](/sccm/core/plan-design/changes/whats-new-in-version-1702)<br /><br /> 5.00.8498.1000|27 marca 2017 r.| 27 marca 2018|Tak|Tak|
@@ -85,7 +87,7 @@ Poniżej przedstawiono wersje programu Configuration Manager dostępne jako lini
 | 1511 <br /><br /> 5.00.8325.1000|8 grudnia 2015 r.| 8 grudnia 2016 r.|Tak|Nie|  
 
 
-*(Uwaga 1)*  Nośnika linii bazowej 1606 i 1702 są dostępne jako część programu Microsoft System Center 2016 lub System Center Configuration Manager (Current Branch i długoterminowe obsługi gałęzi) udostępnia w [Centrum usługi licencji woluminu](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx) (firmy Microsoft VLSC). Na przykład w centrum VLSC można wyszukiwać *System Center Config Mgr (bieżącej gałęzi i LTSB)*, i jednocześnie 1606 i 1702 nośnika linii bazowej wersji są zwracane i dostępny do pobrania.
+*(Uwaga 1)*  Nośnika linii bazowej 1802 i 1702 są dostępne jako część programu Microsoft System Center 2016 lub System Center Configuration Manager (Current Branch i długoterminowe obsługi gałęzi) udostępnia w [Centrum usługi licencji woluminu](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx) MICROSOFT (VLSC). Na przykład w centrum VLSC można wyszukiwać *System Center Config Mgr (bieżącej gałęzi i LTSB)*, i jednocześnie 1802 i 1702 nośnika linii bazowej wersji są zwracane i dostępny do pobrania.
 
 Aby sprawdzić wersję lokacji programu Configuration Manager, w lewym górnym rogu konsoli, gdzie są wyświetlane nowe wersje lokacji i konsoli, wybierz pozycję **Program System Center Configuration Manager — informacje** .  
 
@@ -93,7 +95,7 @@ Aby sprawdzić wersję lokacji programu Configuration Manager, w lewym górnym r
  Realizując produkcji instalację gotowy programu System Center Configuration Manager, nazywana także bieżącej gałęzi, większość aktualizacji, które będą instalowane są dostępne za pomocą aktualizacji i obsługi kanału. Ta metoda umożliwia wyszukiwanie, pobieranie oraz udostępnianie aktualizacji dotyczących bieżącej wersji i konfiguracji infrastruktury. Obejmuje ona tylko aktualizacje zalecane przez firmę Microsoft dla wszystkich klientów.   
  Należą do nich następujące elementy:  
 
--   Nowe wersje, takie jak wersja 1610, 1702 lub 1706.  
+-   Nowe wersje, takie jak wersja 1702 1706, 1710 albo 1802.  
 
 -   Aktualizacje obejmujące nowe funkcje bieżącej wersji.
 
@@ -147,6 +149,6 @@ Te poprawki są instalowane ręcznie przy użyciu jednej z dwóch metod:
 
      Aby uzyskać więcej informacji, zobacz [używanie narzędzia rejestracji aktualizacji do importowania poprawek do programu System Center Configuration Manager](../../../core/servers/manage/use-the-update-registration-tool-to-import-hotfixes.md).  
 
--   **Instalator poprawek:** To narzędzie umożliwia ręczne zainstalowanie poprawki, której nie można zainstalować przy użyciu metody w konsoli. Ta metoda jest używana w przypadku poprawek korzystających z następującej struktury nazw plików: **&lt;Product\>-&lt;product version\>-&lt;KB article ID\>-&lt;platform\>-&lt;language\>.exe**.
+-   **Instalator poprawek:** To narzędzie umożliwia ręczne zainstalowanie poprawki, której nie można zainstalować przy użyciu metody w konsoli. Ta metoda jest używana w przypadku poprawek korzystających z następującej struktury nazw plików: **&lt;Produkt\>-&lt;wersji produktu\>-&lt;identyfikator artykułu bazy wiedzy\>-&lt;platformy\> - &lt;języka\>.exe**.
 
      Aby uzyskać więcej informacji, zobacz [używania Instalatora poprawek do instalowania aktualizacji dla programu System Center Configuration Manager](../../../core/servers/manage/use-the-hotfix-installer-to-install-updates.md).

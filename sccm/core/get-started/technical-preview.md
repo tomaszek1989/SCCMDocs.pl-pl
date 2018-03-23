@@ -1,9 +1,9 @@
 ---
 title: Wersje Technical Preview
 titleSuffix: Configuration Manager
-description: "Więcej informacji o wersji Technical Preview że teraz musisz test-drive nowe funkcje i możliwości w programie System Center Configuration Manager."
+description: Informacje o wersji Technical Preview, aby test-drive nowe funkcje i możliwości w programie Configuration Manager.
 ms.custom: na
-ms.date: 02/09/2018
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: nab
 ms.suite: na
@@ -12,15 +12,15 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 9ce0a8cb-f96c-4e41-834c-59ceb54ce44a
-caps.latest.revision: 
+caps.latest.revision: ''
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 1cb4d775985839ea7c4fb1b48a04ab0be64f5d8c
-ms.sourcegitcommit: 32bbc006a41868a6d9a708db5f7b372d9c71d985
+ms.openlocfilehash: 4509c7da3ca36d2ffd3de36774bf069c40d95ce2
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="technical-preview-for-system-center-configuration-manager"></a>Wersja zapoznawcza Technical Preview programu System Center Configuration Manager
 
@@ -149,26 +149,45 @@ Then remove the bottom of this list and/or move individual items not in CB to th
 
  |Możliwość |Wersji Technical Preview |Bieżącą wersję gałęzi|  
  |----------------|---------------------|--------------------|
- |Tworzenie wdrożenia etapowego <!-- 1357405 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#create-phased-deployments)  |![Nie dodano](media/Red_X.gif)    |
- |Raportowanie zarządzania wspólnej <!-- 1356648 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#co-management-reporting)  |![Nie dodano](media/Red_X.gif)    |
- |Ulepszenia dotyczące harmonogramu oceny reguły wdrażania automatycznego <!-- 1357133 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#improvements-to-automatic-deployment-rule-evaluation-schedule)  |![Nie dodano](media/Red_X.gif)    |
- |Ponowne przypisanie punktu dystrybucji <!-- 1306937 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#reassign-distribution-point)  |![Nie dodano](media/Red_X.gif)    |
- |Ulepszenia dotyczące spisu sprzętu <!-- 1357389 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#improvements-to-hardware-inventory)  |![Nie dodano](media/Red_X.gif)    |
- |Udoskonalenia ustawień klienta w programie Software Center <!-- 1355146 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#improvements-to-client-settings-for-software-center)  |![Nie dodano](media/Red_X.gif)    |
- |Nowe ustawienia dla systemu Windows Defender aplikacji Guard <!-- 1356256 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#new-settings-for-windows-defender-application-guard)  |![Nie dodano](media/Red_X.gif)    |
- |Ulepszenia na uruchamianie skryptów <!-- 1236459 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#improvements-to-run-scripts)  |![Nie dodano](media/Red_X.gif)    |
- |Nie uaktualniaj automatycznie zastąpionej aplikacji <!-- 1351266 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#do-not-automatically-upgrade-superseded-applications)  |![Nie dodano](media/Red_X.gif)    | 
- |Zainstaluj wiele aplikacji w programie Software Center <!-- 1357126 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#install-multiple-applications-in-software-center)  |![Nie dodano](media/Red_X.gif)    |
- |Usługa klienta środowiska PXE <!-- 1357148 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#client-based-pxe-responder-service)  |![Nie dodano](media/Red_X.gif)    |
- |Zainstaluj zmiany w kliencie programu Configuration Manager <!-- 1356195 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#change-in-the-configuration-manager-client-install)  |![Nie dodano](media/Red_X.gif)    | 
- |Zmień na pulpicie nawigacyjnym powierzchni urządzenia <!-- 1355788 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#change-to-the-surface-device-dashboard)  |![Nie dodano](media/Red_X.gif)    | 
- |Ulepszenia zarządzania usługi Office 365 klienta pulpitu nawigacyjnego <!-- 1357281 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#improvements-to-office-365-client-management-dashboard)  |![Nie dodano](media/Red_X.gif)    | 
- |Ulepszenia konsoli programu Configuration Manager <!-- 1357280,1357282 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#improvements-to-the-configuration-manager-console)  |![Nie dodano](media/Red_X.gif)    | 
- |Ulepszenia dotyczące wdrażania systemu operacyjnego <!-- SMS 500897 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#improvements-to-operating-system-deployment)  |![Nie dodano](media/Red_X.gif)    | 
- |Uruchom sekwencję zadań <!-- 1261338 --> | [Podgląd techniczna 1711](capabilities-in-technical-preview-1711.md) |[Wersja 1710](/sccm/osd/understand/task-sequence-steps#child-task-sequence)    |
- |Zezwala na interakcję użytkownika podczas instalowania aplikacji <!-- 1356976 --> | [Podgląd techniczna 1711](capabilities-in-technical-preview-1711.md) |![Nie dodano](media/Red_X.gif)    |
+ | Obciążenia programu Endpoint Protection przejścia do usługi Intune przy użyciu wspólnej zarządzania <!-- 1357365 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#transition-endpoint-protection-workload-to-intune-using-co-management) | [Wersja 1802](/sccm/core/clients/manage/co-management-switch-workloads#workloads-able-to-be-transitioned-to-intune) |  
+ | Konfigurowanie optymalizacji dostarczania systemu Windows do użycia grup granic w programie Configuration Manager <!-- 1324696 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#configure-windows-delivery-optimization-to-use-configuration-manager-boundary-groups) | [Wersja 1802](/sccm/core/plan-design/hierarchy/fundamental-concepts-for-content-management#delivery-optimization) |  
+ | Sekwencji zadań uaktualniania w miejscu systemu Windows 10 za pośrednictwem bramy zarządzania w chmurze <!-- 1357149 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#windows-10-in-place-upgrade-task-sequence-via-cloud-management-gateway) | [Wersja 1802](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#deploy-windows-10-in-place-upgrade-via-cmg) |  
+ | Ulepszenia dotyczące sekwencji zadań uaktualniania w miejscu systemu Windows 10 <!-- 1357425 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#improvements-to-windows-10-in-place-upgrade-task-sequence) | [Wersja 1802](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system) |  
+ | Ulepszenia do punktów dystrybucji z włączoną obsługą środowiska PXE <!-- 1357580 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#improvements-to-pxe-enabled-distribution-points) | ![Nie dodano](media/Red_X.gif) | 
+ | Szablony wdrażania dla sekwencji zadań <!-- 1357391 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#deployment-templates-for-task-sequences) | [Wersja 1802](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#BKMK_DeployTS) |  
+ | Produkt cyklu życia w pulpit nawigacyjny <!--1319632 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#product-lifecycle-dashboard) | ![Nie dodano](media/Red_X.gif) | 
+ | Ulepszenia dotyczące raportowania <!--1357653 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#improvements-to-reporting) | [Wersja 1802](/sccm/core/servers/manage/list-of-reports#operating-system) |  
+ | Ulepszenia Centrum oprogramowania <!--1357592 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#improvements-to-software-center) | [Wersja 1802](/sccm/core/clients/deploy/about-client-settings#BKMK_HideInstalled) |  
+ | Grupy granic rezerwowy dla punktów zarządzania <!-- 1324594 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#boundary-group-fallback-for-management-points) | [Wersja 1802](/sccm/core/servers/deploy/configure/boundary-groups#management-points) |  
+ | Ulepszona obsługa certyfikatów CNG <!-- 1357314 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#improved-support-for-cng-certificates) | [Wersja 1802](/sccm/core/plan-design/network/cng-certificates-overview) |  
+ | Obsługa brama zarządzania usługi Azure Resource Manager w chmurze <!-- 1324735 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#cloud-management-gateway-support-for-azure-resource-manager) | [Wersja 1802](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway#azure-resource-manager) |  
+ | Zatwierdzanie żądań aplikacji dla użytkowników na urządzenie <!-- 1357015 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#approve-application-requests-for-users-per-device) | [Wersja 1802](/sccm/apps/deploy-use/deploy-applications#specify-deployment-settings) |  
+ | Przeglądanie i instalowanie aplikacji dostępne dla użytkowników na urządzeniach przyłączonych do usługi AD platformy Azure przy użyciu programu Software Center <!-- 1322613 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#use-software-center-to-browse-and-install-user-available-applications-on-azure-ad-joined-devices) | [Wersja 1802](/sccm/apps/deploy-use/deploy-applications#deploy-user-available-applications-on-azure-ad-joined-devices) |  
+ | Raport dotyczący informacji o urządzeniu AutoPilot systemu Windows <!-- 1351442 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#report-on-windows-autopilot-device-information) | [Wersja 1802](/sccm/core/clients/manage/co-management-prepare#new-windows-10-devices) |  
+ | Ulepszenia zasad programu Configuration Manager dla usługi Windows Defender wykorzystać zabezpieczenia <!-- 1356220 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#improvements-to-configuration-manager-policies-for-windows-defender-exploit-guard) | [Wersja 1802](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy) |  
+ | Zasady przeglądarki Microsoft Edge <!-- 1357310 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#microsoft-edge-browser-policies) | [Wersja 1802](/sccm/compliance/deploy-use/browser-profiles) | 
+ | Raport dotyczący liczby przeglądarka domyślna <!-- 1357830 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#report-for-default-browser-counts) | [Wersja 1802](/sccm/core/servers/manage/list-of-reports#software---companies-and-products) | 
+ | Obsługa urządzeń z systemem Windows 10 ARM64 <!-- 1353704 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#support-for-windows-10-arm64-devices) | [Wersja 1802](/sccm/core/plan-design/configs/support-for-windows-10) |  
+ | Tworzenie wdrożenia etapowego <!-- 1356837 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#create-phased-deployments) | [Wersja 1802](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence) |
+ | Raportowanie zarządzania wspólnej <!-- 1356648 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#co-management-reporting) | [Wersja 1802](\sccm\core\clients\manage\client-management-dashboard) |
+ | Ulepszenia dotyczące harmonogramu oceny reguły wdrażania automatycznego <!-- 1357133 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#improvements-to-automatic-deployment-rule-evaluation-schedule) | [Wersja 1802](/sccm/sum/deploy-use/automatically-deploy-software-updates#BKMK_CreateAutomaticDeploymentRule) |
+ | Ponowne przypisanie punktu dystrybucji <!-- 1306937 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#reassign-distribution-point) | [Wersja 1802](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_reassign) |
+ | Ulepszenia dotyczące spisu sprzętu <!-- 1357389 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#improvements-to-hardware-inventory) | [Wersja 1802](/sccm/core/clients/manage/inventory/extend-hardware-inventory#BKMK_GreaterThan255) |
+ | Udoskonalenia ustawień klienta w programie Software Center <!-- 1355146 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#improvements-to-client-settings-for-software-center) | [Wersja 1802](/sccm/core/clients/deploy/about-client-settings#BKMK_HideUnapproved) |
+ | Nowe ustawienia dla systemu Windows Defender aplikacji Guard <!-- 1356256 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#new-settings-for-windows-defender-application-guard) | [Wersja 1802](/sccm/protect/deploy-use/create-deploy-application-guard-policy#BKMK_HIS) |
+ | Ulepszenia na uruchamianie skryptów <!-- 1236459 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#improvements-to-run-scripts) | [Wersja 1802](/sccm/apps/deploy-use/create-deploy-scripts) |
+ | Nie uaktualniaj automatycznie zastąpionej aplikacji <!-- 1351266 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#do-not-automatically-upgrade-superseded-applications) | [Wersja 1802](/sccm/apps/deploy-use/deploy-applications#specify-deployment-settings) | 
+ | Zainstaluj wiele aplikacji w programie Software Center <!-- 1357126 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#install-multiple-applications-in-software-center) | [Wersja 1802](/sccm/core/understand/software-center#install-multiple-applications) |
+ | Usługa klienta środowiska PXE <!-- 1357148 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#client-based-pxe-responder-service) | ![Nie dodano](media/Red_X.gif) |
+ | Zainstaluj zmiany w kliencie programu Configuration Manager <!-- 1356195 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#change-in-the-configuration-manager-client-install) | [Wersja 1802](/sccm/core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers.#BKMK_ExternalDependencies) | 
+ | Zmień na pulpicie nawigacyjnym powierzchni urządzenia <!-- 1355788 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#change-to-the-surface-device-dashboard) | [Wersja 1802](/sccm/core/clients/manage/surface-device-dashboard) | 
+ | Ulepszenia zarządzania usługi Office 365 klienta pulpitu nawigacyjnego <!-- 1357281 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#improvements-to-office-365-client-management-dashboard) | [Wersja 1802](/sccm/sum/deploy-use/manage-office-365-proplus-updates#office-365-client-management-dashboard) | 
+ | Ulepszenia konsoli programu Configuration Manager <!-- 1357280,1357282 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#improvements-to-the-configuration-manager-console) | Wersja 1802 | 
+ | Ulepszenia dotyczące wdrażania systemu operacyjnego <!-- SMS 500897 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#improvements-to-operating-system-deployment) | Wersja 1802 | 
+ | Uruchom sekwencję zadań <!-- 1261338 --> | [Podgląd techniczna 1711](capabilities-in-technical-preview-1711.md) | [Wersja 1710](/sccm/osd/understand/task-sequence-steps#child-task-sequence) |
+ | Zezwala na interakcję użytkownika podczas instalowania aplikacji <!-- 1356976 --> | [Podgląd techniczna 1711](capabilities-in-technical-preview-1711.md) | [Wersja 1802](/sccm/apps/deploy-use/create-applications#specify-user-experience-options-for-the-deployment-type) |
 
- 
+  
 
 ## <a name="capabilities-delivered-in-previous-technical-previews"></a>Możliwości oferowane w poprzednich wersjach technical Preview
 Poniżej przedstawiono możliwości oferowane przez poprzednie wersje wersje technical preview programu Configuration Manager. Te funkcje są dostępne w nowszej wersji, ale nie są jeszcze dostępne w wersji current branch. 

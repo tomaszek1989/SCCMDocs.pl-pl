@@ -1,20 +1,21 @@
 ---
-title: "Przygotowywanie urządzenia z systemem Windows 10 do zarządzania wspólnej"
-description: "Dowiedz się, jak przygotować urządzenia z systemem Windows 10 do zarządzania wspólnej."
-keywords: 
-author: dougeby
-manager: angrobe
-ms.date: 11/20/2017
+title: Przygotowywanie urządzenia z systemem Windows 10 do zarządzania wspólnej
+description: Dowiedz się, jak przygotować urządzenia z systemem Windows 10 do zarządzania wspólnej.
+keywords: ''
+author: mestew
+ms.author: mstewart
+manager: dougeby
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: configuration-manager
-ms.service: 
-ms.technology: 
+ms.service: ''
+ms.technology: ''
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
-ms.openlocfilehash: 902787f173c714fd2a73cc657aad758bd79ce3c8
-ms.sourcegitcommit: 389c4e5b4e9953b74c13b1689195f99c526fa737
+ms.openlocfilehash: 61aef0351e32ef6cf31911a8dfd27e86de82f38c
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="prepare-windows-10-devices-for-co-management"></a>Przygotowywanie urządzenia z systemem Windows 10 do zarządzania wspólnej
 Można włączyć wspólnej zarządzania na urządzeniach z systemem Windows 10, które są przyłączone do usługi AD i Azure AD i zarejestrowane w usłudze Intune i klienta w programie Configuration Manager. Dla nowych urządzeń z systemem Windows 10, a w przypadku urządzeń, które są już zarejestrowane w usłudze Intune należy zainstalować klienta programu Configuration Manager, zanim zostaną umieszczone zarządzanych. Dla urządzeń z systemem Windows 10, które są już klientów programu Configuration Manager możesz zarejestrować urządzenia w usłudze Intune i włączyć wspólnej zarządzanie w konsoli programu Configuration Manager.
@@ -23,13 +24,13 @@ Można włączyć wspólnej zarządzania na urządzeniach z systemem Windows 10,
 > Urządzenia przenośne z systemem Windows 10 nie obsługują zarządzania wspólnej.
 
 ## <a name="command-line-to-install-configuration-manager-client"></a>Wiersz polecenia, aby zainstalować klienta programu Configuration Manager
-Należy utworzyć aplikację w usłudze Intune dla systemu Windows 10 urządzeń, które nie są już klientów programu Configuration Manager. Podczas tworzenia aplikacji w kolejnych sekcjach, należy użyć następującego polecenia:
+Tworzenie aplikacji w usłudze Intune dla systemu Windows 10 urządzeń, które nie są już klientów programu Configuration Manager. Podczas tworzenia aplikacji w kolejnych sekcjach, należy użyć następującego polecenia:
 
-ccmsetup.msi CCMSETUPCMD = "/ mp: &#60; *Adres URL punktu końcowego w chmurze zarządzania bramy wzajemnego uwierzytelniania*&#62; / CCMHOSTNAME = &#60; *Adres URL punktu końcowego w chmurze zarządzania bramy wzajemnego uwierzytelniania*&#62; SMSSiteCode = &#60; *Kod_lokacji*&#62; SMSMP = https: &#47; / &#60; *FQDN punktu zarządzania*&#62; AADTENANTID = &#60; *Identyfikatora dzierżawy usługi AAD*&#62; AADTENANTNAME = &#60; *Nazwa dzierżawcy*&#62; AADCLIENTAPPID = &#60; *AppID server dla integracji usługi AAD*&#62; AADRESOURCEURI = https: &#47; / &#60; *Identyfikator zasobu*&#62; "
+ccmsetup.msi CCMSETUPCMD = "/ mp:&#60;*adres URL punktu końcowego w chmurze zarządzania bramy wzajemnego uwierzytelniania*&#62;/ CCMHOSTNAME =&#60;*adres URL punktu końcowego w chmurze zarządzania bramy wzajemnego uwierzytelniania* &#62;SMSSiteCode =&#60;*Kod_lokacji* &#62; SMSMP = https:&#47;/&#60;*FQDN MP* &#62; AADTENANTID =&#60;*Identyfikatora dzierżawy usługi AAD*  &#62; AADTENANTNAME =&#60;*nazwa_dzierżawcy* &#62; AADCLIENTAPPID =&#60;*AppID Server dla integracji usługi AAD* &#62; AADRESOURCEURI = https:&#47;/&#60;*identyfikator zasobu*&#62;"
 
 Na przykład, jeśli masz następujące wartości:
 
-- **Adres URL punktu końcowego w chmurze zarządzania bramy wzajemnego uwierzytelniania**: https:/ &#47;contoso.cloudapp.net/CCM_Proxy_MutualAuth/72057594037928100    
+- **Adres URL punktu końcowego w chmurze zarządzania bramy wzajemnego uwierzytelniania**: https:/&#47;contoso.cloudapp.net/CCM_Proxy_MutualAuth/72057594037928100    
 
    >[!Note]    
    >Użyj **MutualAuthPath** wartość w **vProxy_Roles** widoku SQL dla **adres URL punktu końcowego w chmurze zarządzania bramy wzajemnego uwierzytelniania** wartość.
@@ -62,7 +63,11 @@ ccmsetup.msi CCMSETUPCMD="/mp:https:/&#47;contoso.cloudapp.net/CCM_Proxy_MutualA
 
 ## <a name="new-windows-10-devices"></a>Nowe urządzenia z systemem Windows 10
 Dla nowych urządzeń z systemem Windows 10 Usługa Autopilot służy do konfigurowania poza pole środowisko, w tym przyłączania urządzenia do usługi AD i Azure AD, a także rejestrowanie urządzenia w usłudze Intune. Następnie utwórz aplikację w usłudze Intune do wdrażania klienta programu Configuration Manager.  
-1. Włącz AutoPilot dla nowych urządzeń z systemem Windows 10. Aby uzyskać więcej informacji, zobacz [AutoPilot omówienie Windows](https://docs.microsoft.com/windows/deployment/windows-10-auto-pilot).  
+1. Włącz AutoPilot dla nowych urządzeń z systemem Windows 10. Aby uzyskać więcej informacji, zobacz [AutoPilot omówienie Windows](https://docs.microsoft.com/windows/deployment/windows-10-auto-pilot).    
+
+   > [!NOTE]   
+   > Począwszy od wersji 1802, użyj Menedżera konfiguracji umożliwia zbieranie i raportowanie informacji o urządzeniu wymagane przez Microsoft Store dla firm i Education. Informacje te obejmują numer seryjny urządzenia, identyfikator produktu systemu Windows i identyfikatora sprzętu. W konsoli programu Configuration Manager **monitorowanie** obszaru roboczego, rozwiń węzeł **raportowania** węzła, rozwiń węzeł **raporty**i wybierz **sprzęt — ogólne**  węzła. Uruchom nowy raport **informacje o urządzeniu AutoPilot Windows** i wyświetlić wyniki. W podglądzie raportów kliknij **wyeksportować** ikonę, a następnie wybierz **CSV (rozdzielany przecinkami)** opcji. Po zapisaniu pliku, należy przekazać dane do Microsoft Store dla firm i Education. Aby uzyskać więcej informacji, zobacz [urządzenia można dodać na Microsoft Store dla firm i Education](https://docs.microsoft.com/microsoft-store/add-profile-to-devices#add-devices-and-apply-autopilot-deployment-profile).
+
 2. Skonfigurowanie automatycznego rejestrowania w usłudze Azure AD dla urządzeń do automatycznej rejestracji w usłudze Intune. Aby uzyskać więcej informacji, zobacz [urządzeń Windows zarejestrować usługi Microsoft Intune](https://docs.microsoft.com/intune/windows-enroll).
 3. Tworzenie aplikacji w usłudze Intune przy użyciu pakietu klienta programu Configuration Manager i wdrażanie aplikacji na urządzeniach Windows 10, które mają być zarządzane wspólnie. Użyj [wiersza polecenia do zainstalowania klienta programu Configuration Manager](#command-line-to-install-configuration-manager-client) po przejściu przez proces [instalowania klientów z Internetu przy użyciu usługi Azure AD](https://docs.microsoft.com/en-us/sccm/core/clients/deploy/deploy-clients-cmg-azure).   
 

@@ -1,26 +1,27 @@
 ---
-title: "Bieżące wersje gałęzi"
+title: Bieżące wersje gałęzi
 titleSuffix: Configuration Manager
-description: "Przejrzyj Historia wersji programu System Center Configuration Manager, a więcej informacji na temat usług oferowanych w fazach."
+description: Przejrzyj Historia wersji programu System Center Configuration Manager, a więcej informacji na temat usług oferowanych w fazach.
 ms.custom: na
-ms.date: 11/22/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35b5baec-d313-46aa-9d14-c443aa0d6c09
-caps.latest.revision: "8"
+caps.latest.revision: ''
 author: mestew
 ms.author: mstewart
 manager: angrobe
 robots: noindex,nofollow
-ms.openlocfilehash: 694b205144559d0ee4aee38c38361d5bd8b62a9d
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: e2ea7d8a915caebfdac824147e60bae509151fbf
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="support-for-system-center-configuration-manager-current-branch-versions"></a>Obsługa bieżących wersji gałęzi programu System Center Configuration Manager
 
@@ -32,7 +33,7 @@ Firma Microsoft planuje aktualizacje dla bieżącej gałęzi programu System Cen
 
 -   Aktualizacje zabezpieczeń (tylko) obsługi fazy — po wydaniu nowej wersji gałęzi bieżący, obsługa starszych gałęzie zmniejsza z aktualizacjami zabezpieczeń tylko w pozostałej części które wersje obsługują cyklu życia (pokazano na rysunku 1).  
 
- ![CM &#95; Obsługa &#95; Obsługa &#95; osi czasu](media/CM_Servicing_support_timeline1.png "CM_Servicing_support_timeline")  
+ ![CM&#95;Servicing&#95;support&#95;timeline](media/CM_Servicing_support_timeline1.png "CM_Servicing_support_timeline")  
 Rysunek 1. Przykład nakładanie się cyklu wersji current Branch obsługi pomocy technicznej. W tym przykładzie jest ilustracyjną cyklu, a nie reprezentuje dat rzeczywistych lub oczekiwanej wersji.
 
 > [!NOTE]  
@@ -45,7 +46,8 @@ Rysunek 1. Przykład nakładanie się cyklu wersji current Branch obsługi pomoc
  **Historia wersji**  
 
 |Wersja |Data udostępnienia |Data zakończenia wsparcia|  
-|-------------|-----------------------|----------------------|  
+|-------------|-----------------------|----------------------|
+|1802|22 marca 2018|22 września 2019  
 |1710|20 listopada 2017 r.|20 maja 2019 |
 |1706|31 lipca 2017 r.|31 lipca 2018|
 |1702|27 marca 2017 r.|27 marca 2018|

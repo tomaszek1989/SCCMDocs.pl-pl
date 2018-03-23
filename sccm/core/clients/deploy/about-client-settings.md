@@ -1,9 +1,9 @@
 ---
 title: Ustawienia klienta
 titleSuffix: Configuration Manager
-description: "Wybierz ustawienia klienta przy użyciu konsoli administracyjnej programu System Center Configuration Manager."
+description: Dowiedz się więcej o domyślnych i niestandardowych ustawień kontrolowania zachowania klienta
 ms.custom: na
-ms.date: 01/05/2018
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,20 +12,20 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
-caps.latest.revision: 
-caps.handback.revision: 
+caps.latest.revision: ''
+caps.handback.revision: ''
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: dddfde242a67a0b4a9311c0fb6f0b2f0e6742cc2
-ms.sourcegitcommit: fbd4a9d2fa8ed4ddd3a0fecc4a2ec4fc0ccc3d0c
+manager: dougeby
+ms.openlocfilehash: 42b9364fc88acc3f403db8d2ca9243a117fd78bf
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Informacje o ustawieniach klienta w programie System Center Configuration Manager
 
-Dotyczy: System Center Configuration Manager (wersji current branch)*
+*Dotyczy: System Center Configuration Manager (wersji current branch)*
 
 Zarządzanie wszystkimi ustawieniami klienta w konsoli programu Configuration Manager z **ustawień klienta** w węźle **administracji** obszaru roboczego. Menedżer konfiguracji jest dostarczany z zestawem ustawień domyślnych. Zmiana domyślnych ustawień klienta, te ustawienia są stosowane do wszystkich klientów w hierarchii. Można również skonfigurować niestandardowe ustawienia klienta, które zastąpią domyślne ustawienia klienta po przypisaniu do kolekcji. Aby uzyskać więcej informacji, zobacz [sposób konfigurowania ustawień klienta](../../../core/clients/deploy/configure-client-settings.md).
 
@@ -114,18 +114,19 @@ To ustawienie dotyczy użytkowników, gdy komputer jest w intranecie lub Interne
 
 Ustaw tę wartość na **tak** użytkownikom będą otrzymywali zasady użytkownika na komputerach opartych na internet. Również mają zastosowanie następujące wymagania:  
 
--   Klienta i lokację skonfigurowano do internetowego zarządzania.
+-   Klienta i lokację skonfigurowano do [zarządzania klientami internetowymi](/sccm/core/clients/manage/plan-internet-based-client-management) lub [brama zarządzania chmury](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway).  
 
 -   **Włącz zasady użytkownika na klientach** jest ustawienie **tak**.  
 
--   Punkt zarządzania internetowego pomyślnie uwierzytelnił użytkownika za pomocą uwierzytelniania systemu Windows (Kerberos lub NTLM).  
+-   Punkt zarządzania internetowego pomyślnie uwierzytelnił użytkownika za pomocą uwierzytelniania systemu Windows (Kerberos lub NTLM). Aby uzyskać więcej informacji, zobacz [uwagi dotyczące komunikacji klientów z Internetu](../../../core/plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan).  
+
+-   Począwszy od wersji 1710 bramy chmury zarządzania pomyślnie uwierzytelnił użytkownika za pomocą usługi Azure Active Directory. Aby uzyskać więcej informacji, zobacz [wdrażać aplikacje dostępne dla użytkowników na urządzeniach przyłączonych do usługi AD platformy Azure](\sccm\apps\deploy-use\deploy-applications#deploy-user-available-applications-on-azure-ad-joined-devices).  
 
 Jeśli ustawisz tę opcję, **nr**, lub wszelkie poprzednie wymagania nie są spełnione, a następnie komputer połączony z Internetem tylko otrzyma zasady komputera. W tym scenariuszu użytkownicy mogli nadal widzieć, żądanie i instalowanie aplikacji z katalogu aplikacji internetowych. Jeśli to ustawienie jest **nr**, ale **Włącz zasady użytkownika na klientach** jest **tak**, użytkownicy nie otrzymywali zasad użytkownika do momentu komputer jest połączony z intranetem.  
 
-Aby uzyskać więcej informacji na temat zarządzania klientami przez internet, zobacz [uwagi dotyczące komunikacji klientów z Internetu lub niezaufanego lasu](../../../core/plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan).  
-
 > [!NOTE]  
->  Żądania zatwierdzenia aplikacji od użytkowników nie wymagają zasad użytkownika ani uwierzytelnienia użytkownika.  
+>  Do zarządzania klientami internetowymi żądania zatwierdzenia aplikacji od użytkowników nie wymagają zasad użytkownika ani uwierzytelnienia użytkownika. Brama zarządzania chmura nie obsługuje żądania zatwierdzenia aplikacji.   
+
 
 
 ## <a name="cloud-services"></a>Usługi w chmurze
@@ -228,7 +229,7 @@ Wpisz nazwę wyświetlaną użytkownikom w Centrum oprogramowania. Te informacje
 
 ### <a name="use-new-software-center"></a>Użyj nowego centrum oprogramowania
 
-Jeśli ustawisz to **tak**, a następnie wszystkie komputery klienckie używają programu Software Center. Program Software Center zawiera aplikacje dostępne dla użytkowników, które były wcześniej dostępne tylko w katalogu aplikacji. Katalog aplikacji wymaga programu Silverlight, która nie jest wymagane w przypadku programu Software Center.   
+Jeśli ustawisz to **tak**, a następnie wszystkie komputery klienckie używają programu Software Center. Program Software Center zawiera aplikacje dostępne dla użytkowników, które były wcześniej dostępne tylko w katalogu aplikacji. Katalog aplikacji wymaga programu Silverlight, która nie jest wymagane w przypadku programu Software Center. Począwszy od programu Configuration Manager 1802 ustawieniem domyślnym jest **tak**.  
 
 Punkt witryny sieci Web katalogu aplikacji i usług sieci web katalogu aplikacji punktu systemu lokacji, które role są nadal wymagane dla aplikacje dostępne dla użytkowników, które mają być widoczne w Centrum oprogramowania.  
 
@@ -322,6 +323,21 @@ Następujące ustawienia musi być krótszy czas trwania od najkrótszego okna o
 
 Aby uzyskać więcej informacji o korzystaniu z okien obsługi, zobacz [Używanie okien obsługi w programie System Center Configuration Manager](../../../core/clients/manage/collections/use-maintenance-windows.md).
 
+
+
+## <a name="delivery-optimization"></a>Optymalizacja dostarczania
+
+<!-- 1324696 -->
+Grupy granic w programie Configuration Manager służy do definiowania i uregulowanie dystrybucji zawartości w sieci firmowej i biurach zdalnych. [Optymalizacja dostarczania Windows](/windows/deployment/update/waas-delivery-optimization) jest oparta na chmurze, peer-to-peer technologii do udostępniania zawartości między urządzeniami z systemem Windows 10. Począwszy od wersji 1802 Konfigurowanie optymalizacji dostarczania do grup granic udostępniania zawartości między elementami równorzędnymi.
+
+ > [!Note]
+ > Optymalizacja dostarczania jest dostępna tylko na klientów systemu Windows 10
+
+### <a name="use-configuration-manager-boundary-groups-for-delivery-optimization-group-id"></a>Grupy granic Użyj Menedżera konfiguracji dla Identyfikatora grupy optymalizacji dostarczania
+ Wybierz **tak** dotyczyć identyfikator grupy granic jako identyfikator grupy optymalizacji dostarczania na kliencie. Gdy klient komunikuje się z usługą w chmurze optymalizacji dostarczania, używa tego identyfikatora można zlokalizować elementów równorzędnych o żądanej zawartości. 
+
+
+
 ##  <a name="endpoint-protection"></a>Program Endpoint Protection  
 >  [!Tip]   
 > Oprócz poniższych informacji, można znaleźć szczegółowe informacje o użyciu ustawień klienta programu Endpoint Protection w [przykładowy scenariusz: Używanie programu System Center Endpoint Protection do ochrony komputerów przed złośliwym oprogramowaniem w programie System Center Configuration Manager](/sccm/protect/deploy-use/scenarios-endpoint-protection).
@@ -330,11 +346,11 @@ Aby uzyskać więcej informacji o korzystaniu z okien obsługi, zobacz [Używani
 
 Wybierz **tak** Jeśli chcesz zarządzać istniejącymi klientami programu Endpoint Protection i usługi Windows Defender na komputerach w hierarchii.  
 
-Wybierz tę opcję, jeśli został już zainstalowany klient programu Endpoint Protection i chcesz, możesz nim zarządzać za pomocą programu Configuration Manager. Ta instalacja oddzielne obejmuje skryptową procesu, który używa Menedżera konfiguracji aplikacji lub pakietów i programów.
+Wybierz tę opcję, jeśli został już zainstalowany klient programu Endpoint Protection i chcesz, możesz nim zarządzać za pomocą programu Configuration Manager. Ta instalacja oddzielne obejmuje skryptową procesu, który używa Menedżera konfiguracji aplikacji lub pakietów i programów. Począwszy od programu Configuration Manager 1802 urządzeń z systemem Windows 10 nie musi być zainstalowany agent programu Endpoint Protection. Jednak te urządzenia będą nadal potrzebujesz **klienta zarządzania Endpoint Protection na komputerach klienckich** włączone. <!--503654-->
 
 ### <a name="install-endpoint-protection-client-on-client-computers"></a>Zainstaluj klienta programu Endpoint Protection na komputerach klienckich
 
-Wybierz **tak** Aby zainstalować i włączyć klienta programu Endpoint Protection na komputerach klienckich, których klient nie jest już uruchomiony.  
+Wybierz **tak** Aby zainstalować i włączyć klienta programu Endpoint Protection na komputerach klienckich, których klient nie jest już uruchomiony. Począwszy od programu Configuration Manager 1802 klientów systemu Windows 10 nie musi być zainstalowany agent programu Endpoint Protection.  
 
 > [!NOTE]  
 >  Jeśli jest już zainstalowany klient programu Endpoint Protection, wybierając **nr** nie powoduje odinstalowania klienta programu Endpoint Protection. Aby odinstalować klienta programu Endpoint Protection, **klienta zarządzania Endpoint Protection na komputerach klienckich** ustawienia klienta dotyczącego **nr**. Następnie należy wdrożyć pakiet i program, aby odinstalować klienta programu Endpoint Protection.  
@@ -609,8 +625,14 @@ Wprowadź nazwę organizacji wyświetlaną użytkownikom w programie Software Ce
 - **Schemat kolorów w programie Software Center** </br>
 Wybierz **wybierz kolor** do definiowania kolor podstawowy używany przez Centrum oprogramowania.
 - **Wybierz logo, które w programie Software Center** </br>
-Wybierz **Przeglądaj** wybrać obraz, który będzie wyświetlany w programie Software Center. Logo musi być JPEG, PNG lub BMP 400 x 100 pikseli, o maksymalnym rozmiarze 750 KB. Nazwa pliku logo nie powinna zawierać spacje. <!--SMS.503731 space in filename, noticed BMP missing as filetype-->
+Wybierz **Przeglądaj** wybrać obraz, który będzie wyświetlany w programie Software Center. Logo musi być JPEG, PNG lub BMP 400 x 100 pikseli, o maksymalnym rozmiarze 750 KB. Nazwa pliku logo nie powinna zawierać spacje.  
+         
+### <a name="bkmk_HideUnapproved"></a> Ukryj niezatwierdzonych aplikacji w programie Software Center
+Począwszy 1802 wersji programu Configuration Manager, gdy ta opcja jest włączona, użytkownik dostępnych aplikacji, które wymagają zatwierdzenia są ukryte w programie Software Center.   <!--1355146-->
 
+### <a name="bkmk_HideInstalled"></a> Ukryj zainstalowanych aplikacji w programie Software Center
+Począwszy od programu Configuration Manager 1802 wersji aplikacji, które są już zainstalowane nie będą już wyświetlane na karcie aplikacje gdy ta opcja jest włączona. Ta opcja jest ustawiona domyślnie podczas instalacji lub uaktualnienia do programu Configuration Manager 1802.  Zainstalowane aplikacje są nadal dostępne do przeglądu na karcie Stan instalacji. <!--1357592-->   
+  
 ### <a name="software-center-tab-visibility"></a>Widoczność kartę Centrum oprogramowania
 Skonfiguruj dodatkowe ustawienia w tej grupie mają **tak** uwidocznić w programie Software Center następujące karty:
 - **Aplikacje**

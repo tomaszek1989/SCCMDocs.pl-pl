@@ -1,20 +1,22 @@
 ---
-title: "Jednoczesne zarządzania dla urządzeń z systemem Windows 10"
-description: "Dowiedz się, jak jednocześnie zarządzać urządzeniami z systemem Windows 10, używając programu Configuration Manager i Microsoft Intune."
-keywords: 
-author: dougeby
-manager: angrobe
-ms.date: 11/20/2017
+title: Jednoczesne zarządzania dla urządzeń z systemem Windows 10
+titleSuffix: Configuration Manager
+description: Dowiedz się, jak jednocześnie zarządzać urządzeniami z systemem Windows 10, używając programu Configuration Manager i Microsoft Intune.
+keywords: ''
+author: mestew
+ms.author: mstewart
+manager: dougeby
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: configuration-manager
-ms.service: 
-ms.technology: 
+ms.service: ''
+ms.technology: ''
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: 0cc11a05013fd9c25ee98ec35adcbe822d8a21fb
-ms.sourcegitcommit: 389c4e5b4e9953b74c13b1689195f99c526fa737
+ms.openlocfilehash: e4b8bd58d30cd87ffc461289edbfc5da9a684cda
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="co-management-for-windows-10-devices"></a>Jednoczesne zarządzania dla urządzeń z systemem Windows 10    
 <!-- 1350871 -->
@@ -35,7 +37,7 @@ Poniżej przedstawiono ogólne wymagania wstępne, aby włączyć zarządzanie w
 - Azure AD
 - Licencji pakietu EMS lub usługi Intune dla wszystkich użytkowników
 - [Automatyczne rejestrowanie usługi Azure AD](https://docs.microsoft.com/intune/windows-enroll#enable-windows-10-automatic-enrollment) włączone
-- Subskrypcję usługi Intune &#40; Ustaw urząd zarządzania urządzeniami Przenośnymi w usłudze Intune **Intune**&#41;
+- Subskrypcję usługi Intune &#40;ustaw urząd zarządzania urządzeniami Przenośnymi w usłudze Intune **usługi Intune**&#41;
 
 
    > [!Note]  
@@ -50,7 +52,7 @@ Poniżej przedstawiono ogólne wymagania wstępne, aby włączyć zarządzanie w
 - [Brama zarządzania w chmurze](/sccm/core/clients/manage/manage-clients-internet#cloud-management-gateway) w programie Configuration Manager (Jeśli używasz usługi Intune, aby zainstalować klienta programu Configuration Manager)
 
 ## <a name="workloads-you-can-switch-to-intune"></a>Obciążenia można przełączyć się do usługi Intune
-Po włączeniu wspólnego zarządzania programu Configuration Manager nadal zarządza wszystkich obciążeń. W przypadku podjęcia decyzji, że wszystko będzie gotowe, program może rozpocząć zarządzanie obciążeń dostępności usługi Intune. Program może zarządzać następujące obciążenia w usłudze Intune.   
+Po włączeniu wspólnego zarządzania programu Configuration Manager nadal zarządza wszystkich obciążeń. W przypadku podjęcia decyzji, że wszystko będzie gotowe, program może rozpocząć zarządzanie obciążeń dostępności usługi Intune. Może mieć następujące obciążenia zarządzania usługi Intune:   
 
 ### <a name="compliance-policies"></a>Zasady zgodności
 Zasady zgodności definiują reguły i ustawienia, które urządzenie musi spełniać, aby można je było uważać za spełniające zasady dostępu warunkowego. Zasady zgodności mogą być również wykorzystane do monitorowania i rozwiązywania problemów ze zgodnością urządzeń niezależnie od dostępu warunkowego. Aby uzyskać więcej informacji, zobacz [zasady zgodności urządzeń](/sccm/mdm/deploy-use/device-compliance-policies).  
@@ -60,6 +62,10 @@ Windows Update dla firm, zasady umożliwiają konfigurowanie zasad odroczenia ak
 
 ### <a name="resource-access-policies"></a>Zasady dostępu do zasobów
 Zasady dostępu do zasobów skonfigurować sieci VPN, Wi-Fi, poczty e-mail i ustawienia certyfikatów na urządzeniach. Aby uzyskać więcej informacji, zobacz [wdrażania profilów dostępu do zasobów](/sccm/protect/deploy-use/deploy-wifi-vpn-email-cert-profiles).
+
+### <a name="endpoint-protection"></a>Program Endpoint Protection 
+<!-- 1357365 -->
+Począwszy od programu Configuration Manager 1802 obciążenia programu Endpoint Protection może zostać przeniesieni do usługi Intune. Aby uzyskać więcej informacji, zobacz [obciążenia mógł zostać przeniesieni do usługi Intune](/sccm/core/clients/manage/co-management-switch-workloads.md#Workloads-able-to-be-transitioned-to-Intune) i [programu Endpoint Protection w programie Configuration Manager](/sccm/protect/deploy-use/endpoint-protection).
 
 ## <a name="architectural-overview-for-co-management"></a>Omówienie architektury zarządzania wspólnej
 Następujący diagram zawiera omówienie architektury wspólnego zarządzania i jego miejsce w istniejącej infrastruktury konfiguracji i usługi Intune.

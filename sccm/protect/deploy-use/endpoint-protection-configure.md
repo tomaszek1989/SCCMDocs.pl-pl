@@ -1,31 +1,32 @@
 ---
 title: Skonfigurowanie programu Endpoint Protection
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak konfigurowanie programu Configuration Manager aby aktualizował i rozpowszechniał definicje złośliwego oprogramowania dla usługi Windows Defender."
+description: Dowiedz się, jak konfigurowanie programu Configuration Manager aby aktualizował i rozpowszechniał definicje złośliwego oprogramowania dla usługi Windows Defender.
 ms.custom: na
-ms.date: 02/14/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: e63f2394-6eb1-4a33-bec5-8377fc62a34e
-caps.latest.revision: "21"
-author: NathBarn
-ms.author: nathbarn
-manager: angrobe
-ms.openlocfilehash: 5f005e7cd9c396fcf7e02aafefcb34c37ddab901
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+caps.latest.revision: ''
+author: mestew
+ms.author: mstewart
+manager: dougeby
+ms.openlocfilehash: 9e54b433224b86650178b4df0cd6d0f2ab827b6c
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="configure-endpoint-protection"></a>Skonfigurowanie programu Endpoint Protection
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Przed użyciem programu Endpoint Protection do zarządzania zabezpieczeniami i złośliwego oprogramowania na komputerach klienckich programu Configuration Manager, należy wykonać czynności konfiguracyjne opisane w tym temacie.  
+Przed użyciem programu Endpoint Protection do zarządzania zabezpieczeniami i złośliwego oprogramowania na komputerach klienckich programu Configuration Manager, należy wykonać kroki konfiguracji szczegółowo opisane w tym artykule.  
 
 ## <a name="how-to-configure-endpoint-protection-in-configuration-manager"></a>Jak skonfigurować program Endpoint Protection w programie Configuration Manager  
  Program Endpoint Protection w programie Configuration Manager istnieją zależności zewnętrzne i zależności w ramach produktu.  
@@ -34,7 +35,8 @@ Przed użyciem programu Endpoint Protection do zarządzania zabezpieczeniami i z
  W poniższej tabeli przedstawiono kroki, szczegóły i dodatkowe informacje o sposobie konfigurowania programu Endpoint Protection.  
 
 > [!IMPORTANT]  
->  Jeśli zarządzasz programu endpoint protection dla komputerów z systemem Windows 10, należy skonfigurować programu Configuration Manager, aby aktualizował i rozpowszechniał definicje złośliwego oprogramowania dla usługi Windows Defender. Usługa Windows Defender jest uwzględniony w systemie Windows 10, ale SCEPInstall muszą być ustawienia zainstalowanych i niestandardowych klienta programu Endpoint Protection (**krok 5** poniżej) są nadal wymagane.  
+>  Jeśli zarządzasz programu endpoint protection dla komputerów z systemem Windows 10, należy skonfigurować programu Configuration Manager, aby aktualizował i rozpowszechniał definicje złośliwego oprogramowania dla usługi Windows Defender. Usługa Windows Defender jest uwzględniony w systemie Windows 10, ale SCEPInstall muszą być ustawienia zainstalowanych i niestandardowych klienta programu Endpoint Protection (**krok 5** poniżej) są nadal wymagane. </br> </br>
+> Począwszy od programu Configuration Manager 1802 urządzeń z systemem Windows 10 nie musi być zainstalowany agent programu Endpoint Protection (SCEPInstall). Jeśli jest już zainstalowany na urządzeniach z systemem Windows 10, Menedżer konfiguracji nie zostanie on usunięty. Administratorzy mogą usunąć agenta programu Endpoint Protection na urządzeniach z systemem Windows 10, które są co najmniej z wersją klienta 1802. SCEPInstall.exe mogą być obecne w C:\Windows\ccmsetup na niektórych komputerach, ale nie powinien być pobrany w przypadku nowych instalacji klienta. Niestandardowe ustawienia klienta programu Endpoint Protection (**krok 5** poniżej) są nadal wymagane. <!--503654-->
 
 |Kroki|Szczegóły|  
 |-----------|-------------|  

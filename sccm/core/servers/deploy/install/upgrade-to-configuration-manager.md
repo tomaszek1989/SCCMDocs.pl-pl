@@ -1,24 +1,25 @@
 ---
 title: Uaktualnianie do programu System Center Configuration Manager
-description: "Dowiedz się więcej czynności umożliwiające uruchamianie pomyślne uaktualnienie w miejscu lokacji i hierarchii programu System Center 2012 Configuration Manager."
+description: Dowiedz się więcej czynności umożliwiające uruchamianie pomyślne uaktualnienie w miejscu lokacji i hierarchii programu System Center 2012 Configuration Manager.
 ms.custom: na
-ms.date: 6/6/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: c64e7483-b4bb-4738-95f4-ecdaeb6a2ba6
-caps.latest.revision: "21"
+caps.latest.revision: ''
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 770976309fbd5e8884dfec4bdaa29630ef1c02d0
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 72e11a04eb64d649749f2001ac4e3550c784132c
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="upgrade-to-system-center-configuration-manager"></a>Uaktualnianie do programu System Center Configuration Manager
 
@@ -32,6 +33,14 @@ Można uruchomić uaktualnienia i uaktualnienia w miejscu do programu System Cen
  > Podczas zarządzania w lokacji programu System Center Configuration Manager i infrastruktury hierarchii, warunki *uaktualnienia*, *aktualizacji*, i *zainstalować* służą do opisywania trzy oddzielne pojęcia. Aby dowiedzieć się, jak każdego terminu jest używany, zobacz [o uaktualnienie, aktualizacji i instalacji](/sccm/core/understand/upgrade-update-install).
 
 ##  <a name="bkmk_path"></a> Ścieżki uaktualnienia w miejscu  
+
+**Uaktualnienie do wersji 1802**   
+Jeśli masz nośnika linii bazowej 1702 wersji możesz uaktualnić następujące do pełni licencjonowanej wersji programu System Center Configuration Manager wersji 1802:   
+-     Instalacja ewaluacyjna programu System Center Configuration Manager wersji 1802
+-     System Center 2012 Configuration Manager z dodatkiem Service Pack 1
+-     System Center 2012 Configuration Manager z dodatkiem Service Pack 2
+-     System Center 2012 R2 Configuration Manager
+-     System Center 2012 R2 Configuration Manager z dodatkiem Service Pack 1
 
 **Uaktualnienie do wersji 1702**   
 Jeśli masz nośnika linii bazowej 1702 wersji możesz uaktualnić następujące do pełni licencjonowanej wersji programu System Center Configuration Manager wersji 1702:   
@@ -298,7 +307,7 @@ W każdej centralnej lokacji administracyjnej i lokacji głównej, która ma zos
 
 2.  Po przywróceniu kopii bazy danych, uruchom Instalatora z nośnika źródłowego programu System Center Configuration Manager. Podczas uruchamiania Instalatora użyj opcji wiersza polecenia **/TESTDBUPGRADE** . Jeśli wystąpienie programu SQL Server, które hostuje kopię bazy danych, nie jest wystąpieniem domyślnym, musisz także podać argumenty wiersza polecenia identyfikujące wystąpienie hostujące kopię bazy danych lokacji.  
 
-     Przykładowo chcesz przeprowadzić uaktualnienie bazy danych lokacji z nazwą bazy danych SMS_ABC. Wykonano przywrócenie kopii bazy danych lokacji na obsługiwane wystąpienie serwera SQL Server o nazwie DBTest. Aby przetestować uaktualnienie kopii bazy danych lokacji, należy użyć następującego polecenia: **Setup.exe polecenia/testdbupgrade DBtest\CM_ABC**  
+     Przykładowo chcesz przeprowadzić uaktualnienie bazy danych lokacji z nazwą bazy danych SMS_ABC. Wykonano przywrócenie kopii bazy danych lokacji na obsługiwane wystąpienie serwera SQL Server o nazwie DBTest. Aby przetestować uaktualnienie kopii bazy danych lokacji, należy użyć następującego polecenia: **Setup.exe /TESTDBUPGRADE DBtest\CM_ABC**  
 
      Setup.exe można znaleźć w następującej lokalizacji na nośniku źródłowym programu System Center Configuration Manager: **SMSSETUP\BIN\X64**.  
 

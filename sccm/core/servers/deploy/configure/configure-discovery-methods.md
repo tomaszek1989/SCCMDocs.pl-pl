@@ -1,53 +1,55 @@
 ---
 title: Konfigurowanie odnajdywania
 titleSuffix: Configuration Manager
-description: "Skonfiguruj metody odnajdywania w lokacji programu Configuration Manager w celu odnalezienia zasobów, którymi można zarządzać z infrastruktury sieci i usługi Active Directory."
+description: Skonfiguruj metody odnajdywania w celu odnalezienia zasobów do zarządzania z sieci, usługi Active Directory i Azure Active Directory.
 ms.custom: na
-ms.date: 7/31/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 49505eb1-d44d-4121-8712-e0f3d8b15bf5
-caps.latest.revision: "5"
+caps.latest.revision: ''
 author: mestew
 ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: f2d928e066702190eba32b2a2c06fe89636d59f6
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+manager: dougeby
+ms.openlocfilehash: 825b9b250000e8353b1428cbee45f8fda9a30c35
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="configure-discovery-methods-for-system-center-configuration-manager"></a>Skonfiguruj metody odnajdywania dla programu System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
-Możesz skonfigurować metod odnajdywania do uruchamiania w witrynie System Center Configuration Manager, aby znaleźć zasoby, które można zarządzać za pomocą infrastruktury sieci i usługi Active Directory. Należy włączyć, a następnie skonfiguruj każdej metody, która ma być używany do wyszukiwania środowiska. (Można również wyłączyć metodę przy użyciu tej samej procedury, która umożliwia ją włączyć.)  Jedynym wyjątkiem od tej są odnajdywania pulsu i odnajdowanie serwera:  
+Skonfiguruj metody odnajdywania w celu odnalezienia zasobów do zarządzania z sieci, usługi Active Directory i Azure Active Directory (Azure AD). Najpierw włączyć, a następnie konfigurowania poszczególnych metod, które chcesz użyć, aby wyszukać w środowisku. Można również wyłączyć metodę, przy użyciu tej samej procedury, która umożliwia ją włączyć. Jedynym wyjątkiem do tego procesu są odnajdywania pulsu i odnajdowanie serwera:  
 
--   Domyślnie odnajdywanie pulsu jest już włączona po zainstalowaniu lokacji głównej programu Configuration Manager i skonfigurowane do uruchamiania na podstawowe harmonogramu. Należy dobrze jest włączone, ponieważ zapewnia, że rekordy danych odnajdywania (DDR) dla urządzeń są aktualne odnajdywanie pulsu warto pozostawić. Aby uzyskać więcej informacji dotyczących odnajdywania pulsu, zobacz [o odnajdywaniu pulsu](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutHeartbeat).  
+-   Domyślnie **odnajdywania pulsu** jest już włączona podczas instalowania lokacji głównej programu Configuration Manager. Jest on skonfigurowany do uruchamiania zgodnie z harmonogramem podstawowe. Należy włączyć odnajdywanie pulsu. Gwarantuje, że rekordy danych odnajdywania (DDR) dla urządzeń są aktualne. Aby uzyskać więcej informacji dotyczących odnajdywania pulsu, zobacz [o odnajdywaniu pulsu](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_aboutHeartbeat).  
 
--   Odnajdowanie serwera jest metodę automatycznego wykrywania, która umożliwia znalezienie komputerów, które używają jako systemy lokacji. Nie można skonfigurować lub go wyłączyć.  
+-   **Odnajdowanie serwera** jest metodą automatycznego odnajdowania. Znajdzie komputerów, które używają jako systemy lokacji. Nie można skonfigurować lub go wyłączyć.  
 
-**Aby włączyć metodę odnajdywania można skonfigurować:**  
+### <a name="enable-a-configurable-discovery-method"></a>Włączyć metodę odnajdywania można konfigurować  
  > [!NOTE]  
- > Następujące informacje nie dotyczą odnajdywania użytkownika usługi Azure Active Directory. Zamiast tego zobacz [odnajdywania Skonfiguruj użytkownika programu Azure AD](#azureaadisc) dalszej części tego tematu.
+ > Następujące informacje nie dotyczą odnajdowanie użytkowników usługi AD platformy Azure. Zamiast tego zobacz [odnajdywania Skonfiguruj użytkownika programu Azure AD](#azureaadisc) dalszej części tego artykułu.
 
-1.  W konsoli programu Configuration Manager wybierz **administracji** > **Konfiguracja hierarchii**, a następnie wybierz pozycję **metod odnajdywania**.  
+1.  W konsoli programu Configuration Manager, przejdź do **administracji** obszaru roboczego, rozwiń węzeł **Konfiguracja hierarchii**, a następnie wybierz **metod odnajdywania**.  
 
 2.  Wybierz metodę odnajdywania dla lokacji, w której chcesz włączyć odnajdywanie.  
 
-3.  Na **Home** karcie **właściwości** grupy, wybierz **właściwości**, a następnie na **ogólne** karcie wyboru **włączyć&lt;metody odnajdywania\>**  pole.  
+3.  Na **Home** karcie **właściwości** grupy, wybierz **właściwości**. Następnie na **ogólne** karcie wyboru **włączyć &lt;metody odnajdywania\>**  pole.  
 
      Jeśli to pole jest już zaznaczone, można wyłączyć metodę odnajdywania, usuwając zaznaczenie pola wyboru pole.  
 
 4.  Wybierz **OK** Aby zapisać konfigurację.  
 
 
-##  <a name="BKMK_ConfigADForestDisc"></a>Konfigurowanie odnajdywania lasu usługi Active Directory  
+
+##  <a name="BKMK_ConfigADForestDisc"></a> Konfigurowanie odnajdywania lasu usługi Active Directory  
 Aby ukończyć konfigurację odnajdywania lasu usługi Active Directory, należy skonfigurować ustawienia w dwóch miejscach:  
 
 -   W **metod odnajdywania** węzła, można wykonywać następujące czynności:
@@ -101,8 +103,10 @@ Użyj poniższych procedur, aby włączyć odnajdowanie lasu usługi Active Dire
 
 4.  Po zakończeniu konfiguracji tego lasu do stosowania z odnajdywaniem lasu usługi Active Directory, wybierz **OK** Aby zapisać konfigurację.  
 
-##  <a name="BKMK_ConfigADDiscGeneral"></a>Konfigurowanie odnajdywania usługi Active Directory dla komputerów, użytkowników lub grup  
- Skorzystaj z informacji w poniższych sekcjach, aby skonfigurować odnajdywanie komputerów, użytkowników lub grup. Użyjesz tych metod odnajdywania:  
+
+
+##  <a name="BKMK_ConfigADDiscGeneral"></a> Konfigurowanie odnajdywania usługi Active Directory dla komputerów, użytkowników lub grup  
+ Aby skonfigurować odnajdywanie komputerów, użytkowników lub grup, użyj informacji w tych sekcjach dla następujących metod odnajdywania:  
 
 -   Odnajdywanie grupy usługi Active Directory  
 
@@ -116,7 +120,7 @@ Użyj poniższych procedur, aby włączyć odnajdowanie lasu usługi Active Dire
  Mimo że każda z tych metod odnajdywania jest niezależna od innych, mają podobne opcje. Aby uzyskać więcej informacji o tych opcjach konfiguracji, zobacz [udostępniane opcje odnajdywania grupy, systemu i użytkownika](../../../../core/servers/deploy/configure/about-discovery-methods.md#bkmk_shared).  
 
 > [!WARNING]  
->  Sondowanie usługi Active Directory każdą z tych metod odnajdywania może powodować znaczne obciążenie sieci. Warto pomyśleć o zaplanowaniu każdej metody odnajdywania w czasie, gdy ruch sieciowy nie wpływa na firm korzystanie z sieci.  
+>  Sondowanie usługi Active Directory każdą z tych metod odnajdywania może powodować znaczne obciążenie sieci. Warto pomyśleć o zaplanowaniu każdej metody odnajdywania w czasie, gdy ruch sieciowy nie negatywnie wpłynąć na firm korzystanie z sieci.  
 
 #### <a name="to-configure-active-directory-group-discovery"></a>Aby skonfigurować odnajdywanie grupy usługi Active Directory  
 
@@ -146,7 +150,7 @@ Użyj poniższych procedur, aby włączyć odnajdowanie lasu usługi Active Dire
 
 7.  Na **harmonogram sondowania** skonfiguruj zarówno sondowania pełnego odnajdywania, harmonogram i odnajdywanie zmian.  
 
-8.  Opcjonalna metoda polega na **opcji** kartę, można skonfigurować opcje odfiltrowywania, czyli wykluczania starych rekordów z procesu odnajdywania i odnajdywania członkostwa w grupach dystrybucyjnych.  
+8.  Opcjonalna metoda polega na **opcji** kartę skonfigurować opcje odfiltrowywania, czyli wykluczania starych rekordów z procesu odnajdywania. Również skonfigurować odnajdywanie członkostwa w grupach dystrybucyjnych.  
 
     > [!NOTE]  
     >  Domyślnie odnajdywanie grupy usługi Active Directory odnajduje tylko członkostwo grup zabezpieczeń.  
@@ -172,7 +176,7 @@ Użyj poniższych procedur, aby włączyć odnajdowanie lasu usługi Active Dire
     3.  Dla każdej lokalizacji określ konto do użycia jako **konto odnajdywania usługi Active Directory**.  
 
         > [!TIP]  
-        >  Dla każdej lokalizacji można skonfigurować zestaw opcji odnajdywania i unikatowe konto odnajdywania Active Directory.  
+        >  Dla każdej określonej lokalizacji można skonfigurować zestaw opcji odnajdywania i unikatowe konto odnajdywania Active Directory.  
 
     4.  Wybierz **OK** Aby zapisać konfigurację kontenera usługi Active Directory.  
 
@@ -203,7 +207,7 @@ Użyj poniższych procedur, aby włączyć odnajdowanie lasu usługi Active Dire
     3.  Dla każdej lokalizacji określ konto do użycia jako **konto odnajdywania usługi Active Directory**.  
 
         > [!NOTE]  
-        >  Dla każdej lokalizacji można skonfigurować unikatowy zestaw opcji odnajdywania i unikatowe konto odnajdywania Active Directory.  
+        >  Dla każdej określonej lokalizacji można skonfigurować unikatowy zestaw opcji odnajdywania i unikatowe konto odnajdywania Active Directory.  
 
     4.  Wybierz **OK** Aby zapisać konfigurację kontenera usługi Active Directory.  
 
@@ -213,16 +217,34 @@ Użyj poniższych procedur, aby włączyć odnajdowanie lasu usługi Active Dire
 
 8.  Po zakończeniu konfigurowania odnajdywania użytkownika usługi Active Directory dla tej lokacji wybrać **OK** Aby zapisać konfigurację.  
 
-## <a name="azureaadisc"></a>Konfigurowanie odnajdywania użytkownika usługi Azure AD
-Począwszy od wersji 1706, można skonfigurować odnajdowanie użytkowników usługi Active Directory Azure podczas łączenia programu Configuration Manager do Twojej [subskrypcji platformy Azure i usługi Azure Active Directory](/sccm/core/servers/deploy/configure/azure-services-wizard).
-
-Odnajdowanie użytkowników usługi Azure AD jest skonfigurowany jako część *zarządzania chmurą*. Procedury w tym celu została szczegółowo opisana w [tworzenie aplikacji sieci web platformy Azure do użytku w programie Configuration Manager](/sccm/core/servers/deploy/configure/Azure-services-wizard#webapp) w temacie *usług Azure skonfigurować do użytku z programem Configuration Manager*.
 
 
+## <a name="azureaadisc"></a> Konfigurowanie odnajdywania użytkownika usługi Azure AD
+Azure odnajdowanie użytkowników usługi AD nie jest włączone i skonfigurowane tak samo jak inne metody odnajdywania. Możesz dołączyć programu Configuration Manager do lokacji usługi Azure AD, należy skonfigurować go. Gdy zostanie [Konfigurowanie usług Azure](/sccm/core/servers/deploy/configure/azure-services-wizard) dla **zarządzania chmurą**, można również włączyć i skonfigurować tę metodę odnajdywania. 
+
+Podczas konfigurowania **zarządzania chmurą** usługi Azure: 
+- Na **odnajdywania** strony kreatora, kliknij przycisk **włączyć Azure użytkownika odnajdywania usługi Active Directory**. 
+- Kliknij pozycję **Ustawienia**. 
+- W oknie dialogowym Ustawienia odnajdywania użytkownika programu Azure AD należy skonfigurować harmonogram po wystąpieniu odnajdywania. Można również włączyć odnajdowania różnicowego, który sprawdza tylko dla nowych lub zmienionych kont w usłudze Azure AD. 
+
+Aby uzyskać więcej informacji, zobacz [odnajdowanie użytkowników usługi AD Azure](/sccm/core/servers/deploy/configure/about-discovery-methods#azureaddisc).
+
+ > [!Important]  
+ > Przed *zaimportować* aplikacji usługi Azure AD do programu Configuration Manager, należy przyznać uprawnienia aplikacji serwera, można odczytać danych katalogowych z usługi Azure AD. 
+ >  - W [portalu Azure](https://portal.azure.com), przejdź do **usługi Azure Active Directory** bloku. 
+ >  - Kliknij przycisk **rejestracji aplikacji**i przejdź do **wszystkie aplikacje** w razie potrzeby. 
+ >  - Wybierz aplikację serwera typu *aplikacji sieci Web / interfejs API*, a następnie kliknij przycisk **ustawienia**. 
+ >  - Kliknij przycisk **wymagane uprawnienia**, a następnie kliknij przycisk **uprawnienia**.
+ >  
+ > Jeśli użytkownik *utworzyć* serwer aplikacji z programu Configuration Manager, usługi Azure AD automatycznie tworzy uprawnień z aplikacji. Nadal potrzebujesz zgody do aplikacji w portalu Azure.
+
+ > [!Note]  
+ > Jeśli użytkownik jest tożsamości federacyjnych i zsynchronizowane, należy użyć programu Configuration Manager [odnajdywania użytkownika usługi Active Directory](/sccm/core/servers/deploy/configure/about-discovery-methods#bkmk_aboutUser) oraz odnajdowanie użytkowników usługi Azure AD. Aby uzyskać więcej informacji o tożsamości hybrydowej, zobacz [Definiowanie strategii wdrażania tożsamości hybrydowej](/azure/active-directory/active-directory-hybrid-identity-design-considerations-identity-adoption-strategy).<!--497750-->
 
 
-##  <a name="BKMK_ConfigHBDisc"></a>Konfigurowanie odnajdywania pulsu  
- Domyślnie odnajdywanie pulsu jest włączane podczas instalowania lokacji głównej programu Configuration Manager. W związku z tym wystarczy tylko skonfigurować harmonogram jak często klienci wysyłania danych odnajdywania pulsu rekordów z punktem zarządzania, jeśli nie chcesz użyć wartości domyślnej co siedem dni.  
+
+##  <a name="BKMK_ConfigHBDisc"></a> Konfigurowanie odnajdywania pulsu  
+ Domyślnie odnajdywanie pulsu jest włączane podczas instalowania lokacji głównej programu Configuration Manager. W związku z tym wystarczy tylko skonfigurować harmonogram, jak często klienci wysyłania danych odnajdywania pulsu rekordów z punktem zarządzania, jeśli nie chcesz użyć domyślnego co siedem dni.  
 
 > [!NOTE]  
 >  Jeśli zarówno wypychana instalacja klienta, jak i obsługi lokacji zadanie **Wyczyść flagę instalacji** są włączone w tej samej lokacji, ustawić harmonogram odnajdywania pulsu należy mniejszej niż **okres ponownego odnajdywania klienta** z **Wyczyść flagę instalacji** zadanie obsługi lokacji. Aby uzyskać więcej informacji na temat zadań konserwacji lokacji, zobacz [zadania konserwacji programu System Center Configuration Manager](../../../../core/servers/manage/maintenance-tasks.md).  
@@ -237,11 +259,13 @@ Odnajdowanie użytkowników usługi Azure AD jest skonfigurowany jako część *
 
 4.  Skonfiguruj częstotliwość, z jaką klienci przesłali rekordu danych odnajdywania pulsu, a następnie wybierz **OK** Aby zapisać konfigurację.  
 
-##  <a name="BKMK_ConfigNetworkDisc"></a>Konfigurowanie odnajdywania sieci  
- Skorzystaj z informacji w poniższych sekcjach ułatwiają konfigurowanie odnajdywania sieci.  
 
-###  <a name="BKMK_AboutConfigNetworkDisc"></a>Informacje o konfigurowaniu odnajdywania sieci  
- Przed rozpoczęciem konfigurowania odnajdywania sieci, należy zrozumieć następujące kwestie:  
+
+##  <a name="BKMK_ConfigNetworkDisc"></a> Konfigurowanie odnajdywania sieci  
+ Aby skonfigurować odnajdywanie sieci, skorzystaj z informacji w tych sekcjach.  
+
+###  <a name="BKMK_AboutConfigNetworkDisc"></a> Informacje o konfigurowaniu odnajdywania sieci  
+ Przed rozpoczęciem konfigurowania odnajdywania sieci, należy zrozumieć następujące tematy:  
 
 -   Dostępne poziomy odnajdywania sieci  
 
@@ -253,16 +277,16 @@ Aby uzyskać więcej informacji, zobacz [o odnajdywania sieci](../../../../core/
 
  Poniższe sekcje zawierają informacje o popularnych konfiguracjach odnajdywania sieci. Można skonfigurować jeden lub więcej z tych konfiguracji do użycia podczas odnajdowania tego samego uruchomienia. Jeśli używasz wielu konfiguracji należy zaplanować interakcje, które mogą wpłynąć na wyniki odnajdywania.  
 
- Na przykład możesz chcieć odnaleźć wszystkie urządzenia zarządzania protokołu SNMP (Simple Network), używające określonej nazwy wspólnoty SNMP. Ponadto na tym samym uruchomieniu odnajdywania można wyłączyć odnajdywanie w określonej podsieci. Podczas odnajdywania odnajdywania sieci nie odnajdzie urządzeń SNMP o określonej nazwie Wspólnoty w podsieci, która została wyłączona.  
+ Na przykład możesz chcieć odnaleźć wszystkie urządzenia zarządzania protokołu SNMP (Simple Network), używające określonej nazwy wspólnoty SNMP. Ponadto na tym samym uruchomieniu odnajdywania można wyłączyć odnajdywanie w określonej podsieci. Po uruchomieniu odnajdywania odnajdywanie sieci nie odnajdzie urządzeń SNMP o określonej nazwie Wspólnoty w podsieci, które zostały wyłączone.  
 
-####  <a name="BKMK_DetermineNetTopology"></a>Ustalenie topologii sieci  
+####  <a name="BKMK_DetermineNetTopology"></a> Ustalenie topologii sieci  
  Odnajdowanie tylko topologii służy do mapowania sieci. Ten rodzaj odnajdywania nie odnajduje potencjalnych klientów. Tylko topologii odnajdowania sieci korzysta z protokołu SNMP.  
 
  W przypadku mapowania topologii sieci, należy skonfigurować **maksymalna liczba przeskoków** na **SNMP** karcie **odnajdowanie sieci: właściwości** okno dialogowe. Wystarczy kilka przeskoków, aby pomóc kontroli przepustowości sieci, który jest używany podczas odnajdywania. W miarę odnajdywania dalszych obszarów sieci, można zwiększyć liczbę przeskoków w celu uzyskania lepszej orientacji w topologii sieci.  
 
- Po zidentyfikowaniu topologii sieci można skonfigurować dodatkowe właściwości odnajdywania sieci w celu odnalezienia potencjalnych klientów i ich systemy operacyjne, podczas używania dostępnych konfiguracji do ograniczania segmentów sieci, które odnajdywanie sieci może przeszukiwać.  
+ Po zidentyfikowaniu topologii sieci można skonfigurować dodatkowe właściwości odnajdywania sieci w celu odnalezienia potencjalnych klientów i ich systemy operacyjne podczas korzystania dostępnych konfiguracji do ograniczania segmentów sieci z tej sieci Odnajdywania można wyszukiwać.  
 
-####  <a name="BKMK_LimitBySubnet"></a>Ograniczanie wyszukiwań za pomocą podsieci  
+####  <a name="BKMK_LimitBySubnet"></a> Ograniczanie wyszukiwań za pomocą podsieci  
  Można skonfigurować odnajdywanie sieci w celu przeszukiwania określonych podsieci podczas odnajdywania. Domyślnie funkcja odnajdowania sieci przeszukuje podsieć serwera, na którym działa odnajdywanie. Dodatkowe podsieci, które można skonfigurować i włączyć mają zastosowanie tylko do protokołu SNMP protokołu dynamicznej konfiguracji hosta (DHCP) opcje wyszukiwania. Gdy funkcja odnajdowania sieci przeszukuje domeny, nie jest ograniczone konfiguracjami dotyczącymi podsieci.  
 
  W przypadku określenia co najmniej jednej podsieci **podsieci** karcie **odnajdowanie sieci: właściwości** okno dialogowe, tylko podsieci oznaczone jako **włączone** są przeszukiwane.  
@@ -275,7 +299,7 @@ Aby uzyskać więcej informacji, zobacz [o odnajdywania sieci](../../../../core/
 
 -   Zapytania oparte na domenie umożliwia odnalezienie zasobów, które znajdują się w podsieci.  
 
-####  <a name="BKMK_SearchByDomain"></a>Przeszukiwanie określonej domeny  
+####  <a name="BKMK_SearchByDomain"></a> Przeszukiwanie określonej domeny  
  Można skonfigurować odnajdywanie sieci w celu przeszukania określonej domeny lub zestawu domen podczas pracy odnajdywania. Domyślnie funkcja odnajdowania sieci przeszukuje lokalną domenę serwera, na którym działa odnajdywanie.  
 
  Po określeniu jednej lub kilku domen na **domen** karcie **odnajdowanie sieci: właściwości** okno dialogowe, tylko domeny oznaczone jako **włączone** są przeszukiwane.  
@@ -288,7 +312,7 @@ Aby uzyskać więcej informacji, zobacz [o odnajdywania sieci](../../../../core/
 
 -   Serwery DHCP nadal mogą odpowiedzieć listę zasobów znajdujących się w domenie.  
 
-####  <a name="BKMK_LimitBySNMPname"></a>Ograniczanie wyszukiwań za pomocą nazw wspólnot SNMP  
+####  <a name="BKMK_LimitBySNMPname"></a> Ograniczanie wyszukiwań za pomocą nazw wspólnot SNMP  
  Możesz skonfigurować odnajdywanie sieci w celu przeszukania określonej Wspólnoty SNMP lub zestawów Wspólnot podczas pracy odnajdywania. Domyślnie nazwa Wspólnoty **publicznego** jest skonfigurowana do użycia.  
 
  Funkcja odnajdowania sieci korzysta z nazw Wspólnot w celu uzyskania dostępu do routerów, które są urządzeniami SNMP. Router może udostępnić funkcji odnajdowania sieci informacje o innych routerach i podsieciach połączonych z pierwszym routerem.  
@@ -299,9 +323,9 @@ Aby uzyskać więcej informacji, zobacz [o odnajdywania sieci](../../../../core/
  Jeśli kilka Wspólnot SNMP są pokazywane na **SNMP** karcie **odnajdowanie sieci: właściwości** okno dialogowe, funkcja odnajdowania sieci przeszukuje je w kolejności, w którym są wyświetlane. Aby zminimalizować ruch sieciowy, który jest generowany przez próby połączenia z urządzeniem przy użyciu różnych nazw, upewnij się, że najczęściej używane nazwy znajdowały się u góry listy.  
 
 > [!NOTE]  
->  Oprócz przy użyciu nazwy wspólnoty SNMP, możesz określić adres IP lub rozpoznawalną nazwę urządzenia SNMP. Możesz to zrobić na **urządzeń SNMP** karcie **odnajdowanie sieci: właściwości** okno dialogowe.  
+>  Wraz z nazwy wspólnoty SNMP, można określić adres IP lub rozpoznawalną nazwę urządzenia SNMP. Wykonaj tę akcję na **urządzeń SNMP** karcie **odnajdowanie sieci: właściwości** okno dialogowe.  
 
-####  <a name="BKMK_SearchByDHCP"></a>Przeszukiwanie określonego serwera DHCP  
+####  <a name="BKMK_SearchByDHCP"></a> Przeszukiwanie określonego serwera DHCP  
  Można skonfigurować odnajdywania sieci do używania określonego serwera DHCP lub wiele serwerów do odnajdywania klientów DHCP podczas pracy odnajdywania.  
 
  Funkcja odnajdowania sieci przeszukuje każdy serwer DHCP, który określisz na **DHCP** karcie **odnajdowanie sieci: właściwości** okno dialogowe. Jeśli serwer, na którym działa odnajdywanie wydzierżawi swój adres IP od serwera DHCP, można skonfigurować odnajdywanie do przeszukania tego serwera DHCP, zaznaczając **Dołącz serwer DHCP, który serwer lokacji jest skonfigurowany do użycia** pole.  
@@ -309,7 +333,7 @@ Aby uzyskać więcej informacji, zobacz [o odnajdywania sieci](../../../../core/
 > [!NOTE]  
 >  Aby pomyślnie skonfigurować serwer DHCP w ramach odnajdywania sieci, środowisko musi obsługiwać protokół IPv4. Nie można skonfigurować odnajdowania sieci w celu korzystania z serwera DHCP w macierzystym środowisku IPv6.  
 
-###  <a name="BKMK_HowToConfigNetDisc"></a>Jak skonfigurować odnajdywanie sieci  
+###  <a name="BKMK_HowToConfigNetDisc"></a> Jak skonfigurować odnajdywanie sieci  
  Poniższe procedury umożliwiają najpierw wykrycie tylko topologii sieci, a następnie skonfigurowanie funkcji odnajdowania sieci w celu odnalezienia potencjalnych klientów przy użyciu co najmniej jeden z dostępnych opcji odnajdowania sieci.  
 
 ##### <a name="to-determine-your-network-topology"></a>Ustalenie topologii sieci  
@@ -325,7 +349,7 @@ Aby uzyskać więcej informacji, zobacz [o odnajdywania sieci](../../../../core/
     -   Na **podsieci** karcie wyboru **przeszukiwania podsieci lokalnej** pole.  
 
         > [!TIP]  
-        >  Jeśli znasz określonych podsieci, które tworzą używaną sieć, można usunąć zaznaczenie **przeszukiwania podsieci lokalnej** polu i użyj **nowy** ikona ![nową ikonę](media/Disc_new_Icon.gif) można dodać podsieci do przeszukania. W przypadku dużych sieci warto często przeszukiwania tylko jednego lub dwóch podsieci naraz w celu zminimalizowania użycia przepustowości sieci.  
+        >  Jeśli znasz określonych podsieci, które tworzą używaną sieć, usuń zaznaczenie pola wyboru **przeszukiwania podsieci lokalnej** pole. Następnie użyj **nowy** ikona ![nową ikonę](media/Disc_new_Icon.gif) można dodać podsieci do przeszukania. W przypadku dużych sieci warto często przeszukiwania tylko jednego lub dwóch podsieci naraz w celu zminimalizowania użycia przepustowości sieci.  
 
     -   Na **domen** karcie wyboru **Przeszukaj domenę lokalną** pole.  
 
@@ -399,7 +423,7 @@ Aby uzyskać więcej informacji, zobacz [o odnajdywania sieci](../../../../core/
 
 10. Aby skonfigurować odnajdywanie w celu odpytywania określonych serwerów DHCP dla klientów DHCP, wybierz **DHCP** karcie, a następnie skonfiguruj jedną lub więcej z następujących opcji:  
 
-    -   Aby odpytać serwer DHCP na komputerze, na którym działa odnajdowanie, zaznacz **zawsze używaj serwer DHCP serwera lokacji** pole.  
+    -   Aby odpytać serwer DHCP na komputerze, na którym działa odnajdywanie, należy wybrać **zawsze używaj serwer DHCP serwera lokacji**.  
 
         > [!NOTE]  
         >  Aby użyć tej opcji, serwer musi wydzierżawić swój adres IP od serwera DHCP i nie może używać statycznego adresu IP.  
@@ -414,12 +438,12 @@ Aby uzyskać więcej informacji, zobacz [o odnajdywania sieci](../../../../core/
      Można skonfigurować kilka harmonogramów cyklicznych i kilka harmonogramów bez cyklu.  
 
     > [!NOTE]  
-    >  Jeśli wiele harmonogramów są pokazywane na **harmonogram** kartę w tym samym czasie wszystkich harmonogramów odnajdowania sieci działa dla zgodnie z konfiguracją o godzinie określonej w harmonogramie. Dotyczy to również harmonogramów cyklicznych.  
+    >  Jeśli wiele harmonogramów są pokazywane na **harmonogram** kartę w tym samym czasie wszystkich harmonogramów odnajdowania sieci działa dla zgodnie z konfiguracją o godzinie określonej w harmonogramie. To zachowanie jest również wartość true w przypadku harmonogramów cyklicznych.  
 
 12. Wybierz **OK** Aby zapisać konfiguracje.  
 
-###  <a name="BKMK_HowToVerifyNetDisc"></a>Jak sprawdzić, czy odnajdywanie sieci zostało zakończone  
- Czas odnajdowania sieci wymaga, aby zakończyć zależy od różnych czynników. Czynniki te mogą obejmować co najmniej jeden z następujących czynności:  
+###  <a name="BKMK_HowToVerifyNetDisc"></a> Jak sprawdzić, czy odnajdywanie sieci zostało zakończone  
+ Czas, którego funkcja odnajdowania sieci wymaga, aby zakończyć zależy od co najmniej jeden z następujących czynników:  
 
 -   Rozmiar sieci  
 
@@ -454,7 +478,7 @@ Ponieważ funkcja odnajdowania sieci nie tworzy komunikatów powiadamiających o
 
     -   Opis: **Ten składnik został zatrzymany**  
 
-    Jeśli ten komunikat o stanie nie jest obecny, funkcja odnajdywania sieci nie zostało ukończone.  
+    Jeśli ten komunikat o stanie nie jest obecny, funkcja odnajdywania sieci nie została zakończona.  
 
 7.  Aby sprawdzić, gdy uruchomienie funkcji odnajdowania sieci, wyszukaj komunikat o stanie zawierający następujące informacje:  
 

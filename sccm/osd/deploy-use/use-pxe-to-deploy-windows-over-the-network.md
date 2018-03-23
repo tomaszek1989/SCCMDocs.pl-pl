@@ -1,56 +1,63 @@
 ---
-title: "Wdrażanie systemu Windows za pośrednictwem sieci przy użyciu środowiska PXE"
+title: Użyj środowiska PXE do wdrożenia systemu operacyjnego za pośrednictwem sieci
 titleSuffix: Configuration Manager
-description: "Użyj wdrożeń systemu operacyjnego zainicjowanego przez środowisko PXE, aby odświeżyć systemu operacyjnego lub instalowanie nowej wersji systemu Windows na nowym komputerze."
+description: Wdrożenia inicjowane ze środowiska PXE systemu operacyjnego za pomocą Odśwież systemu operacyjnego lub instalowanie nowej wersji systemu Windows na nowym komputerze.
 ms.custom: na
-ms.date: 06/15/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-osd
+ms.technology:
+- configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: da5f8b61-2386-4530-ad54-1a5c51911f07
-caps.latest.revision: "19"
-caps.handback.revision: "0"
+caps.latest.revision: ''
+caps.handback.revision: ''
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 1ae9c9385abe90a38169f5d539be944f03817007
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 310807547df9fdb2ccd4f0098eec6b0b7ccca996
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="use-pxe-to-deploy-windows-over-the-network-with-system-center-configuration-manager"></a>Użyj środowiska PXE, aby wdrożyć system Windows przez sieć przy użyciu programu System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Wdrożenia systemu operacyjnego w kliencie let System Center Configuration Manager komputerów żądania i wdrażanie systemów operacyjnych za pośrednictwem sieci inicjowane ze środowiska wykonawczego przed uruchomieniem systemu (PXE). W tym scenariuszu wdrażania możesz wysłać obrazu systemu operacyjnego i obrazy rozruchowe Windows PE x86 i x64 do punktu dystrybucji skonfigurowanego do akceptowania żądań rozruchu środowiska PXE.
+Środowisko wykonawcze przed uruchomieniem systemu (PXE)-inicjowane wdrożeń systemu operacyjnego w programie Configuration Manager zezwala klientom na żądanie i wdrażanie systemów operacyjnych za pośrednictwem sieci. W tym scenariuszu wdrażania możesz wysłać obrazu systemu operacyjnego i obrazy rozruchowe do punktu dystrybucji obsługującego środowisko PXE.
 
 > [!NOTE]  
 >  Podczas tworzenia wdrożenia systemu operacyjnego tego cele x64 tylko komputerów z systemem BIOS zarówno x64 rozruchu obrazu i x86 obrazu rozruchowego musi być dostępna w punkcie dystrybucji.
 
-Wdrożenia systemu operacyjnego inicjowane przez środowisko PXE mogą być używane w następujących scenariuszach wdrażania systemu operacyjnego:
+Wdrożenia inicjowane ze środowiska PXE systemu operacyjnego można użyć w następujących scenariuszach:
 
 -   [Odświeżanie istniejącego komputera za pomocą nowej wersji systemu Windows](refresh-an-existing-computer-with-a-new-version-of-windows.md)  
 
 -   [Instalowanie nowej wersji systemu Windows na nowym komputerze (od zera)](install-new-windows-version-new-computer-bare-metal.md)  
 
-Wykonaj kroki jednego ze scenariuszy wdrażania systemu operacyjnego, a następnie użyj poniższych sekcji w celu przygotowania do wdrożeń inicjowanych ze środowiska PXE.
+Wykonaj kroki jednego ze scenariuszy wdrażania systemu operacyjnego, a następnie użyj sekcji w tym artykule w celu przygotowania do wdrożeń inicjowanych ze środowiska PXE.
+
+
 
 ##  <a name="BKMK_Configure"></a> Konfigurowanie co najmniej jednego punktu dystrybucji tak, aby akceptował żądania środowiska PXE
-Aby wdrożyć systemy operacyjne klientów, którzy tworzą żądania rozruchu środowiska PXE, należy użyć co najmniej jednego punktu dystrybucji skonfigurowanego do reagowania na żądania rozruchu środowiska PXE. Aby uzyskać instrukcje dotyczące włączania obsługi środowiska PXE w punkcie dystrybucji, zobacz [Konfigurowanie punktów dystrybucji do akceptowania PXE żądań](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_PXEDistributionPoint).
+Aby wdrożyć systemy operacyjne klientów programu Configuration Manager, które żądania rozruchu środowiska PXE, należy skonfigurować co najmniej jeden punkt dystrybucji do akceptowania żądań PXE. Po skonfigurowaniu punktu dystrybucji ma odpowiadać na żądania rozruchu środowiska PXE i określa odpowiedniej akcji wdrażania do wykonania. Aby uzyskać więcej informacji, zobacz [zainstalować lub zmodyfikować punkt dystrybucji](../../core/servers/deploy/configure/install-and-configure-distribution-points.md#pxe).  
+
+
 
 ## <a name="prepare-a-pxe-enabled-boot-image"></a>Przygotowanie obrazu rozruchowego obsługującego środowisko PXE
-Aby używać środowiska PXE do wdrażania systemu operacyjnego, należy umieścić obrazy rozruchowe obsługujące środowisko PXE (zarówno te w wersji x86, jak i te w wersji x64) w co najmniej jednym punkcie dystrybucji z włączoną funkcją PXE. Korzystając z udostępnionych informacji, włącz obsługę środowiska PXE w obrazie rozruchowym i roześlij go do punktów dystrybucji:
+Aby używać środowiska PXE do wdrażania systemu operacyjnego, musi mieć x x86 i x64 obrazy rozruchowe obsługujące środowisko PXE dystrybuowana do co najmniej jeden punkt dystrybucji z włączoną obsługą środowiska PXE. Korzystając z udostępnionych informacji, włącz obsługę środowiska PXE w obrazie rozruchowym i roześlij go do punktów dystrybucji:
 
 -   Aby włączyć funkcję PXE dla obrazu rozruchowego, wybierz **Wdróż ten obraz rozruchowy z punktu dystrybucji z włączoną obsługą środowiska PXE** z **źródła danych** we właściwościach obrazu rozruchowego.
 
 -   Jeśli zmienisz właściwości obrazu rozruchowego, należy ponownie rozesłać obraz rozruchowy do punktów dystrybucji. Aby uzyskać więcej informacji, zobacz [dystrybucji zawartości](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute).
 
+
+
 ##  <a name="BKMK_PXEExclusionList"></a> Tworzenie listy wykluczeń dla wdrożeń środowiska PXE
-Podczas wdrażania systemów operacyjnych w środowisku PXE, można utworzyć listę wykluczeń w każdym punkcie dystrybucji. Dodaj adresy MAC do listy wykluczeń komputery, które mają być ignorowane przez punkt dystrybucji. Komputery z listy nie będzie odbierać sekwencje zadań wdrożenia używanych do wdrożenia środowiska PXE programu Configuration Manager.
+Podczas wdrażania systemów operacyjnych w środowisku PXE, można utworzyć listę wykluczeń w każdym punkcie dystrybucji. Dodaj adresy MAC do listy wykluczeń komputery, które mają być ignorowane przez punkt dystrybucji. Wymienione komputery nie odbierają sekwencji zadań wdrożenia używanych do wdrożenia środowiska PXE programu Configuration Manager.
 
 #### <a name="to-create-the-exclusion-list"></a>Aby utworzyć listę wykluczeń
 
@@ -69,11 +76,20 @@ Podczas wdrażania systemów operacyjnych w środowisku PXE, można utworzyć li
 
      Nie jest konieczne ponowne uruchomienie serwera po wprowadzeniu tej zmiany rejestru.
 
+
+
+## <a name="manage-duplicate-hardware-identifiers"></a>Zarządzanie sprzętu zduplikowane identyfikatory
+Configuration Manager może rozpoznać wielu komputerów jako tego samego urządzenia, jeśli mają zduplikowane atrybuty SMBIOS lub użyj karty sieci udostępnionej. Aby uniknąć tych problemów, należy sprzętu zduplikowane identyfikatory w ustawieniach hierarchii zarządzania. Aby uzyskać więcej informacji, zobacz [Zarządzaj sprzętu zduplikowane identyfikatory](/sccm/core/clients/manage/manage-clients#manage-duplicate-hardware-identifiers).
+
+
+
 ##  <a name="BKMK_RamDiskTFTP"></a>Rozmiar bloku RamDisk TFTP i rozmiaru okna
-Można dostosować rozmiar bloku RamDisk TFTP, a począwszy od wersji programu 1606 wersji programu Configuration Manager, rozmiar okna dla punktów dystrybucji z włączoną obsługą środowiska PXE. Jeśli skonfigurowano sieć, może to powodować niepowodzenie pobrania obrazu rozruchowego z błędem przekroczenia limitu czasu, ponieważ rozmiar bloku lub okna jest zbyt duży. Dostosowanie rozmiaru bloku i rozmiaru okna RamDisk TFTP umożliwia zoptymalizowanie ruchu TFTP w środowisku PXE w celu spełnienia określonych wymagań sieciowych. Należy przetestować dostosowane ustawienia w danym środowisku, aby określić najbardziej wydajne. Aby uzyskać więcej informacji, zobacz [dostosować rozmiar bloku RamDisk TFTP i rozmiaru okna w punktach dystrybucji obsługujących środowisko PXE](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_RamDiskTFTP).
+Można dostosować rozmiar bloku i okna RamDisk TFTP dla punktów dystrybucji z włączoną obsługą środowiska PXE. Duży rozmiar bloku lub okna dostosowaną sieci, może spowodować pobrania obrazu rozruchowego z błędem przekroczenia limitu czasu. Dostosowywanie rozmiaru bloku i okna RamDisk TFTP pozwalają na zoptymalizowanie ruchu TFTP przy użyciu środowiska PXE w celu spełnienia określonych wymagań sieciowych. Aby ustalić, jakie konfiguracja jest najbardziej wydajnym, należy przetestować dostosowane ustawienia w danym środowisku. Aby uzyskać więcej informacji, zobacz [dostosować rozmiar bloku RamDisk TFTP i rozmiaru okna w punktach dystrybucji obsługujących środowisko PXE](../get-started/prepare-site-system-roles-for-operating-system-deployments.md#BKMK_RamDiskTFTP).
+
+
 
 ## <a name="configure-deployment-settings"></a>Konfigurowanie ustawień wdrażania
-Aby można było użyć wdrożenia systemu operacyjnego zainicjowanego przez środowisko PXE, należy skonfigurować wdrożenie w celu udostępnienia systemu operacyjnego na użytek żądań rozruchu środowiska PXE. Istnieje możliwość skonfigurowania dostępnych systemów operacyjnych w **ustawienia wdrażania** strony Kreatora wdrażania oprogramowania lub **ustawienia wdrażania** we właściwościach wdrożenia. Dla ustawienia **Udostępnij dla następujących** wybierz jedną z poniższych wartości:
+Aby użyć inicjowanych ze środowiska PXE wdrożenia systemu operacyjnego, należy skonfigurować wdrożenie w celu udostępnienia systemu operacyjnego dla żądań rozruchu środowiska PXE. Skonfiguruj dostępnych systemów operacyjnych na **ustawienia wdrażania** we właściwościach wdrożenia. Aby uzyskać **Udostępnij dla następujących** ustawienia, wybierz jedną z następujących opcji:
 
 -   Klienci programu Configuration Manager, nośniki i PXE
 
@@ -81,24 +97,28 @@ Aby można było użyć wdrożenia systemu operacyjnego zainicjowanego przez śr
 
 -   Tylko nośniki i PXE (ukryte)
 
+
+
 ##  <a name="BKMK_Deploy"></a> Wdrażanie sekwencji zadań
-Wdróż system operacyjny w kolekcji docelowej. Aby uzyskać więcej informacji, zobacz [Wdrażanie sekwencji zadań](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS). Podczas wdrażania systemów operacyjnych za pomocą środowiska PXE możesz określić, czy wdrożenie jest wymagane, czy dostępne.
+Wdrażanie systemu operacyjnego w kolekcji docelowej. Aby uzyskać więcej informacji, zobacz [Wdrażanie sekwencji zadań](manage-task-sequences-to-automate-tasks.md#BKMK_DeployTS). Podczas wdrażania systemów operacyjnych za pomocą środowiska PXE możesz określić, czy wdrożenie jest wymagane, czy dostępne.
 
--   **Wdrożenie wymagane**: Wymagane użycie wdrożeń środowiska PXE bez jakiejkolwiek interwencji użytkownika. Użytkownik nie będzie mógł ominąć rozruchu PXE. Jednak jeśli użytkownik anuluje rozruch PXE przed punkt dystrybucji ma odpowiadać, nie będzie można wdrożyć system operacyjny.
+-   **Wdrożenie wymagane**: Wymagane użycie wdrożeń środowiska PXE bez jakiejkolwiek interwencji użytkownika. Użytkownik nie może ominąć rozruchu PXE. Jednak jeśli użytkownik anuluje rozruch PXE przed punkt dystrybucji ma odpowiadać, system operacyjny nie jest wdrożony.
 
--   **Wdrożenie dostępne**: Wdrożeń dostępnych wymagają, czy użytkownik musi być obecny przy komputerze docelowym, aby ich można nacisnąć klawisz F12 w celu kontynuowania procesu rozruchu PXE. Jeśli użytkownik na naciśnie klawisza F12, komputer uruchomi bieżący system operacyjny lub wykona rozruch z kolejnego dostępnego urządzenia rozruchowego.
+-   **Wdrożenie dostępne**: Wdrożeń dostępnych wymagają, aby użytkownik musi być obecny przy komputerze docelowym. Użytkownik musi nacisnąć klawisz F12 w celu kontynuowania procesu rozruchu PXE. Jeśli użytkownik nie jest na naciśnie klawisza F12, komputer jest uruchamiany na bieżący system operacyjny lub z kolejnego dostępnego urządzenia rozruchowego.
 
-Można ponownie wdrożyć wymagane wdrożenie PXE, czyszcząc stan poprzedniego wdrożenia PXE przypisane do komputera lub kolekcji programu Configuration Manager. Ta akcja resetuje stan tego wdrożenia i instaluje ponownie ostatnie wymagane wdrożenie.
+Można ponownie wdrożyć wymagane wdrożenie PXE, czyszcząc stan poprzedniego wdrożenia PXE przypisane do komputera lub kolekcji programu Configuration Manager. Aby uzyskać więcej informacji na temat **wyczyść wymagane wdrożenia PXE** akcji, zobacz [zarządzać klientami](/sccm/core/clients/manage/manage-clients#BKMK_ManagingClients_DevicesNode) lub [Zarządzanie kolekcjami](/sccm/core/clients/manage/collections/manage-collections#how-to-manage-device-collections). Ta akcja resetuje stan tego wdrożenia i instaluje ponownie ostatnie wymagane wdrożenie.
 
 > [!IMPORTANT]
 > Protokół PXE nie jest bezpieczny. Upewnij się, że serwer PXE i klient PXE znajdują się w fizycznie zabezpieczonej sieci, na przykład w centrum danych, aby zapobiec nieautoryzowanemu dostępowi do lokacji.
 
+
+
 ##  <a name="how-is-the-boot-image-selected-for-clients-booting-with-pxe"></a>Jak zaznaczono obraz rozruchowy dla klientów rozruchu w środowisku PXE
-Gdy klient jest uruchamiany w środowisku PXE, Configuration Manager udostępnia klientowi korzystanie z obrazem rozruchowym. Począwszy od programu Configuration Manager 1606 wersji programu Configuration Manager używa obrazu rozruchowego z architektury dokładnego dopasowania. Jeśli obraz rozruchowy z architekturą dokładne nie jest dostępna, program Configuration Manager używa obrazu rozruchowego z architekturą zgodne. Poniższa lista zawiera szczegółowe informacje dotyczące sposobu obraz rozruchowy jest zaznaczone dla klientów rozruchu w środowisku PXE.
+Gdy klient jest uruchamiany w środowisku PXE, Configuration Manager udostępnia klientowi korzystanie z obrazem rozruchowym. Program Configuration Manager używa obrazu rozruchowego z architektury dokładnego dopasowania. Jeśli obraz rozruchowy z architekturą dokładne nie jest dostępna, program Configuration Manager używa obrazu rozruchowego z architekturą zgodne. Poniższa lista zawiera szczegółowe informacje dotyczące sposobu obraz rozruchowy jest zaznaczone dla klientów rozruchu w środowisku PXE.
 1. Menedżer konfiguracji wygląda w bazie danych lokacji dla danego adresu MAC lub SMBIOS klienta, który próbuje uruchomić rekordu systemu.  
 
     > [!NOTE]
-    > Jeśli komputer, który jest przypisany do lokacji jest uruchamiany w środowisku PXE do innej lokacji, zasady nie są widoczne dla komputera. Na przykład, jeśli klient jest już przypisany do lokacji A, punkt zarządzania i punkt dystrybucji dla lokacji B nie będzie można uzyskać dostępu do zasady z lokacji A. Klient nie będzie pomyślnie rozruchu w środowisku PXE.
+    > Jeśli komputer, który jest przypisany do lokacji jest uruchamiany w środowisku PXE do innej lokacji, zasady nie są widoczne dla komputera. Na przykład jeśli klient jest już przypisany do lokacji A, punkt zarządzania i punkt dystrybucji dla lokacji B nie ma dostępu zasady z lokacji A. Klient nie pomyślnie rozruchu w środowisku PXE.
 
 2. Configuration Manager poszukuje sekwencje zadań, które są wdrażane do rekordu systemu w kroku 1.
 

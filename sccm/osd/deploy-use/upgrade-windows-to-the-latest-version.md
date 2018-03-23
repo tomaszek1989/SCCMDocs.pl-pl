@@ -1,35 +1,37 @@
 ---
-title: Uaktualnianie do najnowszej wersji systemu Windows
+title: Uaktualnienie do systemu Windows 10
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak używać programu Configuration Manager do uaktualnienia systemu operacyjnego z systemu Windows 7 lub nowszym do systemu Windows 10."
+description: Dowiedz się, jak używać programu Configuration Manager do uaktualnienia systemu operacyjnego z systemu Windows 7 lub nowszym do systemu Windows 10.
 ms.custom: na
-ms.date: 02/06/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-osd
+ms.technology:
+- configmgr-osd
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c21eec87-ad1c-4465-8e45-5feb60b92707
-caps.latest.revision: "13"
+caps.latest.revision: ''
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 30c2c2d3d2a59006e7f2ad490537a7d5bb55003a
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 976a65ad27fe615a997ef795e3acf7a175f363af
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="upgrade-windows-to-the-latest-version-with-system-center-configuration-manager"></a>Uaktualnianie systemu Windows do najnowszej wersji przy użyciu programu System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Ten temat zawiera opis czynności w System Center Configuration Manager do uaktualnienia systemu operacyjnego na komputerze z systemem Windows 7 lub nowszym do systemu Windows 10 lub Windows Server 2012 do systemu Windows Server 2016 na komputerze docelowym. Dostępne są różne metody wdrażania, takie jak wdrażanie przy użyciu nośników autonomicznych lub przy użyciu Centrum oprogramowania. Scenariusz uaktualnienia w miejscu.  
+Ten artykuł zawiera opis czynności w programie Configuration Manager do uaktualnienia systemu operacyjnego na komputerze. Dostępne są różne metody wdrażania, takie jak wdrażanie przy użyciu nośników autonomicznych lub przy użyciu Centrum oprogramowania. Scenariusz uaktualnienia w miejscu zawiera następujące funkcje:  
 
 -   Uaktualnia system operacyjny na komputerach z systemem operacyjnym:
-    - Windows 7, Windows 8 lub Windows 8.1. Umożliwia również wykonywanie uaktualnień kompilacji do kompilacji w przypadku systemu Windows 10. Na przykład możesz uaktualnić system Windows 10 RTM do systemu Windows 10 w wersji 1511.  
-    - Windows Server 2012. Można także utworzyć uaktualnień kompilacji do kompilacji systemu Windows Server 2016. Aby uzyskać szczegółowe informacje na temat obsługiwanych ścieżek uaktualniania, zobacz [obsługiwane ścieżki uaktualniania](https://docs.microsoft.com/windows-server/get-started/supported-upgrade-paths#upgrading-previous-retail-versions-of-windows-server-to-windows-server-2016).    
+    - Windows 7, Windows 8 lub Windows 8.1. Umożliwia również wykonywanie uaktualnień kompilacji do kompilacji w przypadku systemu Windows 10. Na przykład systemu Windows 10 w wersji 1607 można uaktualnić do systemu Windows 10 w wersji 1709.  
+    
+    - Windows Server 2012. Można także utworzyć uaktualnień kompilacji do kompilacji systemu Windows Server 2016. Aby uzyskać więcej informacji na temat obsługiwanych ścieżek uaktualniania, zobacz [obsługiwane ścieżki uaktualniania](https://docs.microsoft.com/windows-server/get-started/supported-upgrade-paths#upgrading-previous-retail-versions-of-windows-server-to-windows-server-2016).    
 
 -   Zachowuje aplikacje, ustawienia i dane użytkowników komputera.  
 
@@ -37,56 +39,70 @@ Ten temat zawiera opis czynności w System Center Configuration Manager do uaktu
 
 -   Jest szybsze i bardziej odporne niż tradycyjne wdrażanie systemu operacyjnego.  
 
- Następujące sekcje zawierają informacje dotyczące wdrażania systemów operacyjnych za pośrednictwem sieci przy użyciu sekwencji zadań.  
+
+> [!Note]  
+> Począwszy od wersji 1802 sekwencji zadań uaktualniania w miejscu systemu Windows 10 obsługuje wdrażanie na klientach internetowych zarządzanych za pomocą [brama zarządzania chmury](/sccm/core/clients/manage/plan-cloud-management-gateway). Dzięki tej możliwości użytkownicy zdalni łatwiej uaktualniania do systemu Windows 10, bez konieczności łączenia się z intranetem. Aby uzyskać więcej informacji, zobacz [uaktualnienia w miejscu wdrożenia systemu Windows 10 za pomocą CMG](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#deploy-windows-10-in-place-upgrade-via-cmg). <!-- 1357149 -->
+
+
 
 ##  <a name="BKMK_Plan"></a> Planowanieowanie  
 
--   **Sprawdzanie ograniczeń dotyczących sekwencji zadań uaktualniającej system operacyjny**  
+### <a name="task-sequence-requirements-and-limitations"></a>Wymagania dotyczące sekwencji zadań i ograniczenia
 
-     Sprawdź następujące wymagania i ograniczenia dotyczące sekwencji zadań uaktualniające system operacyjny, aby upewnić się, że spełnia Twoje potrzeby:  
+Przejrzyj poniższe wymagania i ograniczenia dotyczące sekwencji zadań w celu uaktualnienia systemu operacyjnego do upewnij się, że spełnia Twoje potrzeby:  
 
-    -   Należy dodawać tylko kroki sekwencji zadań powiązane z podstawowym zadaniem wdrażania systemów operacyjnych i konfigurowania komputerów po zainstalowaniu obrazu. Dotyczy to również kroków instalujących pakiety, aplikacje lub aktualizacje, a także kroków uruchamiających wiersze polecenia lub program PowerShell albo ustawiających zmienne dynamiczne.  
+  -   Dodawać tylko kroki sekwencji zadań, które są powiązane z podstawowym zadaniem uaktualniania systemu operacyjnego. Kroki te obejmują głównie instalowanie pakiety, aplikacje lub aktualizacje. Użyj także kroków uruchamiających wiersze polecenia, programu PowerShell, lub albo ustawiających zmienne dynamiczne.  
 
-    -   Zanim zostanie wdrożona sekwencja zadań uaktualniania, zapoznaj się ze sterownikami i aplikacjami zainstalowanymi na komputerach, aby upewnić się, że są zgodne z systemem Windows 10.  
+  -   Zanim zostanie wdrożona sekwencja zadań uaktualniania, zapoznaj się ze sterownikami i aplikacjami zainstalowanymi na komputerach, aby upewnić się, że są zgodne z systemem Windows 10.  
 
-    -   Poniższe zadania nie są zgodne z uaktualnianiem w miejscu i wymagają użycia tradycyjnego wdrażania systemu operacyjnego:  
+  -   Następujące zadania nie są zgodne z uaktualnianiem w miejscu. One wymagają użycia tradycyjnego wdrażania systemu operacyjnego:  
 
-        -   Zmienianie przynależności do domeny komputerów lub aktualizowanie lokalnych administratorów.  
+     -   Zmiana członkostwa w domenie komputera, lub aktualizowanie lokalnej grupy administratorów.  
 
-        -   Dokonywanie gruntownych zmian na komputerze, w tym zmian dotyczących partycji dysków, zmiany z systemu x86 na x64, wdrożenia interfejs UEFI lub zmiany podstawowego języka systemu operacyjnego.  
+     -   Dokonywanie gruntownych zmian na komputerze, takich jak: 
+         - Zmiana partycji dysku
+         - Zmiana architektura systemu z x86 do x 64
+         - Implementacja interfejsu UEFI. (Aby uzyskać więcej informacji na temat możliwych opcji, zobacz [Konwertowanie systemu BIOS na UEFI podczas uaktualniania w miejscu](/sccm/osd/deploy-use/task-sequence-steps-to-manage-bios-to-uefi-conversion#convert-from-bios-to-uefi-during-an-in-place-upgrade).)
+         - Modyfikowanie języka podstawowego systemu operacyjnego  
 
-        -   Masz własne wymagania dotyczące użycia niestandardowego obrazu podstawowego, za pomocą 3<sup>usług pulpitu zdalnego</sup> strony szyfrowanie dysków lub wymagają środowiska WinPE w trybie offline.  
+     -   Masz własne wymagania dotyczące użycia niestandardowego obrazu podstawowego, za pomocą szyfrowania dysków innych firm lub wymagają środowiska WinPE w trybie offline.  
 
--   **Planowanie i implementowanie wymagań dotyczących infrastruktury**  
+### <a name="infrastructure-requirements"></a>Wymagania dotyczące infrastruktury  
 
-     Jedynym wymaganiem wstępnym dotyczącym scenariusza uaktualniania jest, że punkt dystrybucji dla pakietu uaktualnienia systemu operacyjnego i inne pakiety, które obejmują w sekwencji zadań. Aby uzyskać więcej informacji, zobacz [zainstalować lub zmodyfikować punkt dystrybucji](../../core/servers/deploy/configure/install-and-configure-distribution-points.md).
+Jedynym wymaganiem wstępnym koniecznym do scenariusza uaktualniania jest dostępność punktu dystrybucji. Dystrybuuj pakiet uaktualnienia systemu operacyjnego i inne pakiety, które obejmują w sekwencji zadań. Aby uzyskać więcej informacji, zobacz [zainstalować lub zmodyfikować punkt dystrybucji](../../core/servers/deploy/configure/install-and-configure-distribution-points.md).
+
+
 
 ##  <a name="BKMK_Configure"></a> Konfiguracja  
 
-1.  **Przygotowywanie pakietu uaktualnienia systemu operacyjnego**  
+### <a name="prepare-the-os-upgrade-package"></a>Przygotowywanie pakietu uaktualnienia systemu operacyjnego  
 
-     Pakiet uaktualnienia systemu Windows 10 zawiera pliki źródłowe niezbędne do uaktualnienia systemu operacyjnego na komputerze docelowym. Pakiet uaktualnienia musi być edition, architekturę i język, klientów, którzy uaktualniania.  Aby uzyskać więcej informacji, zobacz [Zarządzanie pakietami uaktualnień systemu operacyjnego](../get-started/manage-operating-system-upgrade-packages.md).  
+  Pakiet uaktualnienia systemu Windows 10 zawiera pliki źródłowe niezbędne do uaktualnienia systemu operacyjnego na komputerze docelowym. Pakiet uaktualnienia musi być edition, architekturę i język, klientów, którzy uaktualniania. Aby uzyskać więcej informacji, zobacz [Zarządzanie pakietami uaktualnień systemu operacyjnego](../get-started/manage-operating-system-upgrade-packages.md).  
 
-2.  **Tworzenie sekwencji zadań w celu uaktualnienia systemu operacyjnego**  
 
-     Wykonaj kroki w [tworzenia sekwencji zadań w celu uaktualnienia systemu operacyjnego](create-a-task-sequence-to-upgrade-an-operating-system.md) Aby zautomatyzować uaktualnianie systemu operacyjnego.  
+### <a name="create-a-task-sequence-to-upgrade-the-os"></a>Tworzenie sekwencji zadań w celu uaktualnienia systemu operacyjnego  
 
-    > [!IMPORTANT]
-    > Korzystając z nośników autonomicznych, musi zawierać obraz rozruchowy w sekwencji zadań dla powinna być dostępna w Kreatorze nośnika sekwencji zadań.
+  Wykonaj kroki w [tworzenia sekwencji zadań w celu uaktualnienia systemu operacyjnego](create-a-task-sequence-to-upgrade-an-operating-system.md) Aby zautomatyzować uaktualnianie systemu operacyjnego.  
 
-    > [!NOTE]  
-    > Zwykle Użyj kroków w [tworzenia sekwencji zadań w celu uaktualnienia systemu operacyjnego](create-a-task-sequence-to-upgrade-an-operating-system.md) do tworzenia sekwencji zadań w celu uaktualnienia systemu operacyjnego do systemu Windows 10. Sekwencja zadań zawiera krok uaktualniania systemu operacyjnego, a także dodatkowe zalecane kroki i grupy służące do obsługi end-to-end procesu uaktualniania. Można jednak utworzyć niestandardową sekwencję zadań i dodać [Uaktualnij System operacyjny](../understand/task-sequence-steps.md#BKMK_UpgradeOS) krok sekwencji zadań w celu uaktualnienia systemu operacyjnego. Jest to jedyny krok wymagany do uaktualnienia systemu operacyjnego do systemu Windows 10. W przypadku wybrania tej metody, również dodać [Uruchom ponownie komputer](../understand/task-sequence-steps.md#BKMK_RestartComputer) krok po kroku uaktualniania systemu operacyjnego w celu ukończenia uaktualniania. Należy użyć **aktualnie zainstalowany domyślny system operacyjny** ustawienie, aby ponownie uruchomić komputer w zainstalowanego systemu operacyjnego i nie środowiska Preinstalacyjnego systemu Windows.  
+   > [!NOTE]  
+   > Zwykle Użyj kroków w [tworzenia sekwencji zadań w celu uaktualnienia systemu operacyjnego](create-a-task-sequence-to-upgrade-an-operating-system.md) do tworzenia sekwencji zadań w celu uaktualnienia systemu operacyjnego do systemu Windows 10. Sekwencja zadań zawiera krok uaktualniania systemu operacyjnego, a także dodatkowe zalecane kroki i grupy służące do obsługi end-to-end procesu uaktualniania. Można jednak utworzyć niestandardową sekwencję zadań i dodać [Uaktualnij System operacyjny](../understand/task-sequence-steps.md#BKMK_UpgradeOS) krok sekwencji zadań w celu uaktualnienia systemu operacyjnego. Ten krok jest tylko jeden wymagane do uaktualniania systemu operacyjnego do systemu Windows 10. W przypadku wybrania tej metody, również dodać [Uruchom ponownie komputer](../understand/task-sequence-steps.md#BKMK_RestartComputer) krok po kroku uaktualniania systemu operacyjnego w celu ukończenia uaktualniania. Należy użyć **aktualnie zainstalowany domyślny system operacyjny** ustawienie, aby ponownie uruchomić komputer do zainstalowanego systemu operacyjnego i nie środowiska Preinstalacyjnego systemu Windows.  
+
+
 
 ##  <a name="BKMK_Deploy"></a> Wdróż  
 
--   Użyj jednej z poniższych metod wdrażania, aby wdrożyć system operacyjny:  
+Aby wdrożyć system operacyjny, użyj jednej z następujących metod wdrażania:  
 
-    -   [Wdrażanie systemu Windows za pośrednictwem sieci przy użyciu programu Software Center](use-software-center-to-deploy-windows-over-the-network.md)  
+  -   [Wdrażanie systemu Windows za pośrednictwem sieci przy użyciu programu Software Center](use-software-center-to-deploy-windows-over-the-network.md)  
 
-    -   [Zastosowanie nośników samodzielnych do wdrażania systemu Windows bez użycia sieci](use-stand-alone-media-to-deploy-windows-without-using-the-network.md)  
+  -   [Zastosowanie nośników samodzielnych do wdrażania systemu Windows bez użycia sieci](use-stand-alone-media-to-deploy-windows-without-using-the-network.md)  
+
+      > [!IMPORTANT]  
+      > Korzystając z nośników autonomicznych, musi zawierać obraz rozruchowy w sekwencji zadań dla powinna być dostępna w Kreatorze nośnika sekwencji zadań.
+
+
+
 
 ## <a name="monitor"></a>Monitor  
 
--   **Monitorowanie wdrożenia sekwencji zadań**  
-
-     Aby monitorować wdrożenia sekwencji zadań w celu uaktualnienia systemu operacyjnego, zobacz [monitorowanie wdrożeń systemu operacyjnego](monitor-operating-system-deployments.md).  
+Aby monitorować wdrożenia sekwencji zadań w celu uaktualnienia systemu operacyjnego, zobacz [monitorowanie wdrożeń systemu operacyjnego](monitor-operating-system-deployments.md).  

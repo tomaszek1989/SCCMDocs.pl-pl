@@ -1,9 +1,9 @@
 ---
-title: "Zalecany sprzęt"
+title: Zalecany sprzęt
 titleSuffix: Configuration Manager
-description: "Pobierz zalecenia dotyczące sprzętu, aby ułatwić skalowanie poza podstawowego wdrożenia środowiska System Center Configuration Manager."
+description: Pobierz zalecenia dotyczące sprzętu, aby ułatwić skalowanie poza podstawowego wdrożenia środowiska System Center Configuration Manager.
 ms.custom: na
-ms.date: 05/04/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,16 +12,16 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5267f0af-34d3-47a0-9ab8-986c41276e6c
-caps.latest.revision: 
-caps.handback.revision: 
+caps.latest.revision: ''
+caps.handback.revision: ''
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 5def3fdef8e9182cb624640fa54ff2eae224e6a1
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 8d0883c7c2a735a2e651d61083d4d45570408ebb
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="recommended-hardware-for-system-center-configuration-manager"></a>Zalecany sprzęt dla programu System Center Configuration Manager
 
@@ -32,7 +32,7 @@ Poniższe zalecenia to wytyczne do stosowania podczas skalowania środowiska pro
  Skorzystaj z informacji w poniższych sekcjach przedstawiono wskazówki pomocne dla sprzętu, które mogą spełniać obciążeniem przetwarzania dla klientów i lokacji korzystających z dostępnych funkcji programu Configuration Manager z domyślnymi konfiguracjami.  
 
 
-##  <a name="bkmk_ScaleSieSystems"></a>Systemy lokacji  
+##  <a name="bkmk_ScaleSieSystems"></a> Systemy lokacji  
  Ta sekcja zawiera konfiguracje sprzętu zalecane dla programu Configuration Manager systemów lokacji w przypadku wdrożeń, które obsługuje maksymalną liczbę klientów i używać większości lub wszystkich funkcji programu Configuration Manager. Wdrożenia, które obsługuje mniej niż maksymalna liczba klientów i nie używać wszystkich dostępnych funkcji mogą wymagać mniejszej liczby zasobów komputera. Zasadniczo kluczowe czynniki ograniczające wydajność całego systemu są następujące (w podanej kolejności):  
 
 1.  Wydajność we/wy dysku  
@@ -43,7 +43,7 @@ Poniższe zalecenia to wytyczne do stosowania podczas skalowania środowiska pro
 
 Aby uzyskać najlepszą wydajność należy używać konfiguracji RAID 10 dla wszystkich dysków danych oraz sieci Ethernet 1 GB.  
 
-###  <a name="bkmk_ScaleSiteServer"></a>Serwery lokacji  
+###  <a name="bkmk_ScaleSiteServer"></a> Serwery lokacji  
 
 |Konfiguracja lokacji|Procesor CPU (rdzenie)|Pamięć (GB)|Alokacja pamięci dla programu SQL Server (%)|  
 |-------------------------------|---------------|---------------|----------------------------------------|  
@@ -60,7 +60,7 @@ Aby uzyskać najlepszą wydajność należy używać konfiguracji RAID 10 dla ws
 
  <sup>1</sup> gdy serwer lokacji i programu SQL Server są zainstalowane na tym samym komputerze, wdrożenie obsługuje maksymalne liczby [rozmiaru i skali liczby](/sccm/core/plan-design/configs/size-and-scale-numbers) dla lokacji i klientów. Jednak ta konfiguracja może ograniczyć [opcje wysokiej dostępności programu System Center Configuration Manager](/sccm/protect/understand/high-availability-options), takie jak korzystanie z klastra programu SQL Server. Ponadto ze względu na wyższe wymagania we/wy, które są wymagane do obsługi programu SQL Server i serwer lokacji programu Configuration Manager, jeśli są uruchomione na tym samym komputerze, jest warto wziąć pod uwagę przy użyciu konfiguracji z komputera zdalnego programu SQL Server, w przypadku większych wdrożenia.  
 
-###  <a name="bkmk_RemoteSiteSystem"></a>Serwery zdalnego systemu lokacji  
+###  <a name="bkmk_RemoteSiteSystem"></a> Serwery zdalnego systemu lokacji  
  Są następujące wskazówki dla komputerów, które pełnią rolę pojedynczego systemu lokacji. Zaplanuj wprowadzanie korekt, jeśli instalowanych jest wiele ról systemu lokacji na tym samym komputerze.  
 
 |Rola systemu lokacji|Procesor CPU (rdzenie)|Pamięć (GB)|Miejsce na dysku (GB)|  
@@ -75,9 +75,9 @@ Aby uzyskać najlepszą wydajność należy używać konfiguracji RAID 10 dla ws
 
 -   Zwiększ **długość kolejki WsusPool** do **2000**.  
 
--   Zwiększ **limit pamięci prywatnej WsusPool** przez 4 godziny, lub ustaw ją na **0** (brak ograniczenia).  
+-   Zwiększ **limit pamięci prywatnej WsusPool** przez cztery razy, lub ustaw ją na **0** (brak ograniczenia).  
 
-###  <a name="bkmk_DiskSpace"></a>Miejsce na dysku dla systemów lokacji  
+###  <a name="bkmk_DiskSpace"></a> Miejsce na dysku dla systemów lokacji  
  Alokacja i konfiguracja dysku wpływa na wydajność programu Configuration Manager. Ponieważ każde środowisko programu Configuration Manager jest inny, wartości, które można zaimplementować może różnić się od przedstawionych w tym temacie.  
 
  Aby uzyskać najlepszą wydajność, wszystkie obiekty powinny być umieszczone na oddzielnych dedykowanych woluminach macierzy RAID. Wszystkie woluminy danych (Configuration Manager i jego pliki bazy danych) Aby uzyskać najlepszą wydajność w macierzy RAID 10.  
@@ -102,15 +102,15 @@ Aby uzyskać najlepszą wydajność należy używać konfiguracji RAID 10 dla ws
     > [!NOTE]  
     >  Jeśli masz 50 000 lub więcej klientów w lokacji, Zaplanuj użycie co najmniej czterema Temp plików .mdf bazą danych.  
 
--   Rozmiar tymczasowej bazy danych w centralnej lokacji administracyjnej jest zwykle znacznie mniejszy niż w lokacji głównej.  
+-   Rozmiar tymczasowej bazy danych dla centralnej lokacji administracyjnej jest zwykle znacznie mniejszy niż w lokacji głównej.  
 
--   Ograniczenia rozmiaru bazy danych lokacji dodatkowej są następujące:  
+-   Baza danych lokacji dodatkowej ma następujące ograniczenia rozmiaru:  
 
-    -   Program SQL Server 2012 Express: 10 GB  
+    -   SQL Server 2012 Express: 10 GB  
 
-    -   Program SQL Server 2014 Express: 10 GB  
+    -   SQL Server 2014 Express: 10 GB  
 
-##  <a name="bkmk_ScaleClient"></a>Klienci  
+##  <a name="bkmk_ScaleClient"></a> Klienci  
  Ta sekcja zawiera konfiguracje sprzętu zalecane dla komputerów zarządzanych za pomocą oprogramowania klienckiego programu Configuration Manager.  
 
 ### <a name="client-for-windows-computers"></a>Klient dla komputerów z systemem Windows  
@@ -120,7 +120,7 @@ Aby uzyskać najlepszą wydajność należy używać konfiguracji RAID 10 dla ws
 
 -   **Miejsce na dysku:** 500 MB dostępnego miejsca, 5 GB jest zalecane dla pamięci podręcznej klienta programu Configuration Manager. Mniej miejsca na dysku jest wymagany, jeśli używasz ustawienia dostosowane do zainstalowania klienta programu Configuration Manager:  
 
-    -   Użyj/skipprereq właściwości wiersza polecenia programu CCMSetup, aby uniknąć instalowania plików, które nie są wymagane przez klienta. Na przykład uruchom **CCMSetup.exe /skipprereq:silverlight.exe** Jeśli klient nie korzystają z katalogu aplikacji.  
+    -   Użyj/skipprereq właściwości wiersza polecenia programu CCMSetup, aby uniknąć instalowania plików, które nie są wymagane przez klienta. Na przykład uruchom **CCMSetup.exe /skipprereq:silverlight.exe** Jeśli klient nie korzystają z katalogu aplikacji. Począwszy od programu Configuration Manager 1802 Silverlight jest już instalowana automatycznie.  
 
     -   Ustaw mniejszy niż domyślny (5120 MB) rozmiar pliku pamięci podręcznej za pomocą właściwości Client.msi SMSCACHESIZE. Rozmiar minimalny to 1 MB. Na przykład polecenie **CCMSetup.exe SMSCachesize=2** tworzy pamięć podręczną o rozmiarze 2 MB.  
 
@@ -148,7 +148,7 @@ Aby uzyskać najlepszą wydajność należy używać konfiguracji RAID 10 dla ws
 |Miejsce na dysku|500 MB dostępnego miejsca, 5 GB jest zalecane dla pamięci podręcznej klienta programu Configuration Manager.|  
 |Łączność sieciowa|Komputery klienckie programu Configuration Manager musi mieć łączność sieciową z systemami lokacji programu Configuration Manager, aby włączyć zarządzanie.|  
 
-##  <a name="bkmk_ScaleConsole"></a>Konsola programu Configuration Manager  
+##  <a name="bkmk_ScaleConsole"></a> Konsola programu Configuration Manager  
  Wymagania w poniższej tabeli dotyczą każdego komputera, na którym uruchomiona jest konsola programu Configuration Manager.  
 
  **Minimalna konfiguracja sprzętowa:**  
@@ -163,7 +163,7 @@ Aby uzyskać najlepszą wydajność należy używać konfiguracji RAID 10 dla ws
 |-----------------|------------------------|  
 |96 / 100%|1024 x 768|  
 |120 / 125%|1280 x 960|  
-|144 / 150%|1600 x 1200 pikseli|  
+|144 / 150%|1600 x 1200|  
 |196 / 200%|2500 x 1600|  
 
  **Pomoc techniczna dla programu PowerShell:**  
@@ -175,7 +175,7 @@ Aby uzyskać najlepszą wydajność należy używać konfiguracji RAID 10 dla ws
 Oprócz programu PowerShell Windows Management Framework (WMF) w wersji 3.0 lub nowszej jest obsługiwana.   
 
 
-##  <a name="bkmk_ScaleLab"></a>Wdrożenia w środowisku laboratoryjnym  
+##  <a name="bkmk_ScaleLab"></a> Wdrożenia w środowisku laboratoryjnym  
  Używaj poniższych zaleceń minimalne wymagania dotyczące sprzętu w środowisku laboratoryjnym lub testowym wdrożeń programu Configuration Manager. Te zalecenia dotyczą wszystkich typów lokacji, maksymalnie 100 klientów:  
 
 |Rola|Procesor CPU (rdzenie)|Pamięć (GB)|Miejsce na dysku (GB)|  

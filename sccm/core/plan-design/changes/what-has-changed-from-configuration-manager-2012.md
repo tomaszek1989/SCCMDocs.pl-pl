@@ -2,7 +2,7 @@
 title: 'Zmiany z programu Configuration Manager 2012 '
 description: Zidentyfikuj zmian i nowych funkcji programu System Center Configuration Manager i System Center 2012 Configuration Manager.
 ms.custom: na
-ms.date: 05/02/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -11,17 +11,17 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 3ae68fa6-8b30-45dd-9d12-50bb67cb4a9d
-caps.latest.revision: 
+caps.latest.revision: ''
 author: mestew
 ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 6e0da4f8c42bb0b2275566eba35b1e06b2028c1b
-ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
+manager: dougeby
+ms.openlocfilehash: 70f6604e6f1b6731d6d2685e20262552f2b80590
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/23/2018
 ---
-# <a name="what39s-changed-in-system-center-configuration-manager-from-system-center-2012-configuration-manager"></a>Co &#39; s został zmieniony w programie System Center Configuration Manager programu System Center 2012 Configuration Manager
+# <a name="what39s-changed-in-system-center-configuration-manager-from-system-center-2012-configuration-manager"></a>Co&#39;s zmienione w programie System Center Configuration Manager programu System Center 2012 Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
@@ -36,8 +36,8 @@ ms.lasthandoff: 02/01/2018
 
 -   Nie używa rok ani identyfikator produktu w nazwie produktu, w przeciwieństwie do poprzednich wersji, takie jak programu Configuration Manager 2007 lub System Center 2012 Configuration Manager.
 
--   Obsługuje aktualizacji przyrostowych, produktu, nazywane również wersjami aktualizacji. Początkowa wersja był w wersji 1511. Kolejne wersje są wydawane kilka razy w roku jako aktualizacje w konsoli, takie jak wersja 1610.
--   Zainstalowano za pomocą wersji linii bazowej. Podczas oryginalnej wersji linii bazowej 1511, nowe wersje linii bazowej są również zwalniane od czasu do czasu, takich jak 1702. Wersje bazowe może służyć do instalowania nowej lokacji programu System Center Configuration Manager i hierarchii, lub do uaktualniania z obsługiwanej wersji programu Configuration Manager 2012.
+-   Obsługuje aktualizacji przyrostowych, produktu, nazywane również wersjami aktualizacji. Początkowa wersja był w wersji 1511. Kolejne wersje są wydawane kilka razy w roku jako aktualizacje w konsoli, takie jak wersja 1710.
+-   Zainstalowano za pomocą wersji linii bazowej. Podczas oryginalnej wersji linii bazowej 1511, nowe wersje linii bazowej są również zwalniane od czasu do czasu, takich jak 1802. Wersje bazowe może służyć do instalowania nowej lokacji programu System Center Configuration Manager i hierarchii, lub do uaktualniania z obsługiwanej wersji programu Configuration Manager 2012.
 
 
 
@@ -46,15 +46,15 @@ ms.lasthandoff: 02/01/2018
  System Center Configuration Manager korzysta z metody obsługi w konsoli o nazwie **aktualizacje i obsługa** ułatwia do lokalizowania i instalowanie zalecanych aktualizacji.  
 
  Niektóre wersje są dostępne tylko jako aktualizacje dla istniejących lokacji (od w programie Configuration Manager konsoli) i nie można użyć do zainstalowania nowych lokacji programu Configuration Manager.   
-Na przykład aktualizacja 1610 tylko jest dostępne w konsoli programu Configuration Manager. Służy do aktualizacji lokacji, który już jest uruchomiona wersja programu System Center Configuration Manager.
+Na przykład aktualizacja 1710 tylko jest dostępne w konsoli programu Configuration Manager. Służy do aktualizacji lokacji, który już jest uruchomiona wersja programu System Center Configuration Manager.
 
-Okresowo zaktualizowanej wersji jest również wydane jako nowej wersji linii bazowej (np. aktualizacji 1702). Tego rodzaju aktualizację można zainstalować nową hierarchię, bez konieczności Uruchom przy użyciu starszej wersji linii bazowej (np. 1511), a następnie Uaktualnij teraz do najnowszej wersji.
+Okresowo zaktualizowanej wersji jest również wydane jako nowej wersji linii bazowej (np. aktualizacji 1802). Tego rodzaju aktualizację można zainstalować nową hierarchię, bez konieczności Uruchom przy użyciu starszej wersji linii bazowej (np. 1511), a następnie Uaktualnij teraz do najnowszej wersji.
 
 
 Aby uzyskać więcej informacji o korzystaniu z aktualizacji, zobacz [aktualizacji dla programu System Center Configuration Manager](../../../core/servers/manage/updates.md).  
 Aby uzyskać więcej informacji o baslines, zobacz [wersje linii bazowej i aktualizacji](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions).
 
-##  <a name="bkmk_servicepoint"></a>Nowa rola systemu lokacji: punkt połączenia z usługą  
+##  <a name="bkmk_servicepoint"></a> Nowa rola systemu lokacji: punkt połączenia z usługą  
  **Łącznika usługi Microsoft Intune** zastępuje nowa rola systemu lokacji, która zapewnia dodatkowe funkcje **punkt połączenia z usługą**. Punkt połączenia z usługą:  
 
 -   Zastępuje łącznik Microsoft Intune, podczas integracji usługi Intune z programu System Center Configuration Manager na lokalnego zarządzania urządzeniami przenośnymi.  

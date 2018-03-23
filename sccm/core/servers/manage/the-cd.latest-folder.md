@@ -1,25 +1,26 @@
 ---
 title: Folder CD.Latest
 titleSuffix: Configuration Manager
-description: "Więcej informacji na temat nowy proces aktualizacji, który dostarcza aktualizacje produktu z poziomu konsoli programu Configuration Manager."
+description: Więcej informacji na temat nowy proces aktualizacji, który dostarcza aktualizacje produktu z poziomu konsoli programu Configuration Manager.
 ms.custom: na
-ms.date: 05/02/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8db92d67-5d9c-4e9c-80d0-ae6fa0dd4817
-caps.latest.revision: "6"
+caps.latest.revision: ''
 author: mestew
 ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 1dd176f80afa4a9edc5a14d538eef7989614e814
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+manager: dougeby
+ms.openlocfilehash: 9371762a3f6acb9df7e7138c693b0a529c81a2ff
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="the-cdlatest-folder-for-system-center-configuration-manager"></a>Folder CD.Latest programu System Center Configuration Manager
 
@@ -27,12 +28,12 @@ ms.lasthandoff: 12/04/2017
 
 System Center Configuration Manager wprowadzono nowy proces aktualizacji, który dostarcza aktualizacje produktu z poziomu konsoli programu Configuration Manager. Do obsługi tej nowej metody aktualizacji programu Configuration Manager, tworzony jest nowy folder o nazwie **dysku CD. Najnowsze** zawierający kopię plików instalacyjnych programu Configuration Manager do zaktualizowanej wersji lokacji.  
 
-Począwszy od aktualizacji 1606, folder CD.Latest zawiera folder o nazwie **Redist** z plikami redystrybucyjnymi umożliwiającymi konfigurowanie plików do pobrania i używania. Te pliki są dopasowane do wersji plików programu Configuration Manager znajdujących się w folderze CD.Latest. Po uruchomieniu Instalatora z folderu CD.Latest musisz użyć plików dopasowanych do wersji Instalatora. W tym celu możesz przekierować Instalatora w celu pobrania nowych i bieżących plików od firmy Microsoft lub użycia plików z folderu Redist znajdującego się w folderze CD.Latest.
+Dysk CD. Najnowszy folder zawiera folder o nazwie **Redist** zawierającą pakiet redystrybucyjny pliki, które Instalator pliki do pobrania i zastosowania. Te pliki są dopasowane do wersji plików programu Configuration Manager znajdujących się w folderze CD.Latest. Po uruchomieniu Instalatora z folderu CD.Latest musisz użyć plików dopasowanych do wersji Instalatora. W tym celu możesz przekierować Instalatora w celu pobrania nowych i bieżących plików od firmy Microsoft lub użycia plików z folderu Redist znajdującego się w folderze CD.Latest.
 
-Jednak nośnika linii bazowej, takie jak wersji bazowej 1606 wydane w ramach października 2016, nie ma folderu redystrybucyjnego. Nie będzie można utworzyć folderu Redist, aż do zainstalowania aktualizacji w konsoli. W międzyczasie użyj folderu Redist, które zostały użyte podczas instalowania lokacji z nośnika linii bazowej.  
+Jednak nośnika linii bazowej, takie jak wersji linii bazowej 1802, który wydane w ramach marca 2018 nie obejmuje folderu redystrybucyjnego. Nie będzie można utworzyć folderu Redist, aż do zainstalowania aktualizacji w konsoli. W międzyczasie użyj folderu Redist, które zostały użyte podczas instalowania lokacji z nośnika linii bazowej.  
 
 > [!TIP]
-> Jeśli nie masz jeszcze zainstalowanej wersji 1606, upewnij się, że używane pliki redist są aktualne. Jeśli pliki redist nie były ostatnio pobierane, zaplanuj ich pobranie od firmy Microsoft przez Instalatora.   
+> Upewnij się, że pliki redystrybucyjne, którego używasz są aktualne. Jeśli pliki redystrybucyjne nie zostały ostatnio pobrany, zaplanuj instalację to zrobić przez firmę Microsoft.   
 
  Następujące scenariusze są związane z tworzeniem lub aktualizowaniem folderu CD.Latest na serwerze centralnej lokacji administracyjnej lub lokacji głównej:  
 
@@ -40,7 +41,7 @@ Jednak nośnika linii bazowej, takie jak wersji bazowej 1606 wydane w ramach pa�
 
 -   Możesz uruchomić wbudowanego zadania tworzenia kopii zapasowej programu Configuration Manager: Folder jest tworzony lub aktualizowany w lokalizacji wskazanego folderu kopii zapasowej.  
 
--  Począwszy od wersji 1606, dysku CD. Najnowszy folder jest tworzony podczas instalowania nowej lokacji za pomocą nośnika linii bazowej (np. wersja 1606 lub 1702).
+-  Dysk CD. Najnowszy folder jest tworzony podczas instalowania nowej lokacji za pomocą nośnika linii bazowej (np. wersja 1802).
 
 Pliki źródłowe z folderu CD.Latest są obsługiwane w następujących przypadkach:  
 

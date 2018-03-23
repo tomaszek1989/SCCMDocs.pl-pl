@@ -1,26 +1,27 @@
 ---
-title: "Tworzenie i wdrażanie zasad zgodności urządzenia"
+title: Tworzenie i wdrażanie zasad zgodności urządzenia
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak utworzyć i wdrożyć zasady zgodności urządzeń w programie System Center Configuration Manager."
+description: Dowiedz się, jak utworzyć i wdrożyć zasady zgodności urządzeń w programie System Center Configuration Manager.
 ms.custom: na
-ms.date: 03/05/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0fd76043-d7ee-423d-8c5f-aa7e9ed58ce0
-caps.latest.revision: 
-author: andredm7
-ms.author: andredm
-manager: angrobe
+caps.latest.revision: ''
+author: mestew
+ms.author: mstewart
+manager: dougeby
 robots: noindex
-ms.openlocfilehash: bf0099cdf4df1b7421a257e910c8682e63f8ee1e
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 2a576f3dac75d7c168b86ab0f26453706bda6115
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="create-and-deploy-a-device-compliance-policy"></a>Tworzenie i wdrażanie zasad zgodności urządzenia
 
@@ -37,26 +38,26 @@ ms.lasthandoff: 10/12/2017
 
 4.  Na **ogólne** strony kreatora tworzenia zasad zgodności, podaj następujące informacje:
 
-  * **Nazwa**. Wprowadź unikatową nazwę zasady zgodności. Można użyć maksymalnie 256 znaków.
+  * **Nazwa** — wprowadź unikatową nazwę zasady zgodności. Można użyć maksymalnie 256 znaków.
 
-  * **Opis elementu**. Wprowadź opis, który umożliwia identyfikowanie profilu sieci VPN i znalezienie go w konsoli programu Configuration Manager. Można użyć maksymalnie 256 znaków.
+  * **Opis elementu** — wprowadź ogólny opis profilu sieci VPN, ułatwiający identyfikację w konsoli programu Configuration Manager. Można użyć maksymalnie 256 znaków.
 
-  * **Typ zasad zgodności**. Wybierz typ zasad, który ma zostać utworzony, w zależności od tego, czy urządzenie jest zarządzane przez program Configuration Manager. Dotyczy to wersja lub później.<br /><br /> W przypadku urządzeń zarządzanych przez usługę Intune wybierz opcję **Reguły zgodności dla urządzeń zarządzanych bez klienta programu Configuration Manager** . Po wybraniu tej opcji można także wybrać typ platformy, które mają te zasady do zastosowania do.
+  * **Typ zasad zgodności** — wybierz typ zasad, który ma zostać utworzony, w zależności od tego, czy urządzenie jest zarządzane przez program Configuration Manager. <br /><br /> W przypadku urządzeń zarządzanych przez usługę Intune wybierz opcję **Reguły zgodności dla urządzeń zarządzanych bez klienta programu Configuration Manager** . Po wybraniu tej opcji można także wybrać typ platformy, które mają te zasady do zastosowania do.
 
-  * **Waga niezgodności do raportów**. Określ poziom ważności zgłaszany w przypadku oceny tych zasad zgodności jako niezgodnych. Dostępne są następujące poziomy ważności:
+  * **Waga niezgodności do raportów** — Określ poziom ważności zgłaszany w przypadku tych zasad zgodności jest ocenione jako niezgodne. Dostępne są następujące poziomy ważności:
 
-     * **Brak**. Urządzenia, które nie spełniają tej zasady zgodności nie będą zgłaszać ważności niepowodzenia dla raportów programu Configuration Manager.
-     * **Informacje o**. Urządzenia, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **informacji** dla raportów programu Configuration Manager.   
-     * **Ostrzeżenie**. Urządzenia, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **ostrzeżenie** dla raportów programu Configuration Manager.
-     * **Krytyczne**. Urządzenia, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczny** dla raportów programu Configuration Manager.
-     * **Krytyczne ze zdarzeniem**. Urządzenia, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczny** dla raportów programu Configuration Manager. Ten poziom ważności jest rejestrowany także jako zdarzenie systemu Windows w dzienniku zdarzeń aplikacji.      
+     * **Brak** — urządzenia, które nie spełniają tej zasady zgodności nie będą zgłaszać ważności niepowodzenia dla raportów programu Configuration Manager.
+     * **Informacje o** — urządzenia, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **informacji** dla raportów programu Configuration Manager.   
+     * **Ostrzeżenie** — urządzenia, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **ostrzeżenie** dla raportów programu Configuration Manager.
+     * **Krytyczne** — urządzenia, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczne** dla raportów programu Configuration Manager.
+     * **Krytyczne ze zdarzeniem** — urządzenia, które nie spełniają tej zasady zgodności, będą zgłaszać ważność niepowodzenia **krytyczne** dla raportów programu Configuration Manager. **Krytyczne ze zdarzeniem** poziom ważności jest rejestrowany także jako zdarzenie w dzienniku zdarzeń aplikacji systemu Windows.      
 
-5.  Na **obsługiwane platformy** wybierz platformy urządzeń, które zostanie obliczone w tych zasad zgodności, lub wybierz pozycję **Zaznacz wszystko** aby wybrać wszystkie platformy urządzeń. Obsługiwane platformy to: Windows 7, Windows 8.1 i Windows 10; Systemu Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 i Windows Server 2016.
+5.  Na **obsługiwane platformy** wybierz platformy urządzeń, które będzie można ocenić tych zasad zgodności. Możesz również **Zaznacz wszystko** aby wybrać wszystkie platformy urządzeń. Obsługiwane platformy to: Windows 7, Windows 8.1 i Windows 10; Systemu Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 i Windows Server 2016.
 
-6.  Na stronie **Reguły** należy zdefiniować co najmniej jedną regułę definiującą konfigurację urządzenia, która umożliwia ocenienie urządzenia jako zgodnego. Po utworzeniu zasady zgodności niektóre reguły są domyślnie włączone, ale można je edytować lub usunąć. Aby uzyskać pełną listę wszystkich reguł zobacz sekcję "Reguły zasad zgodności" w dalszej części tego tematu.
+6.  Na stronie **Reguły** należy zdefiniować co najmniej jedną regułę definiującą konfigurację urządzenia, która umożliwia ocenienie urządzenia jako zgodnego. Po utworzeniu zasady zgodności niektóre reguły są domyślnie włączone, ale można edytować lub usunąć te reguły. Aby uzyskać pełną listę wszystkich reguł zobacz sekcję "Reguły zasad zgodności" w dalszej części tego artykułu.
 
   > [!NOTE]  
-  >  Na komputerach z systemem Windows Windows 8.1 w wersji systemu operacyjnego jest zgłaszana jako 6.3, a nie 8.1. Jeśli ustawiono regułę wersji systemu operacyjnego jest Windows 8.1 dla systemu Windows, następnie urządzenia będzie zgłaszane jako niezgodne nawet wtedy, gdy urządzenie ma Windows 8.1. Upewnij się, że ustawiono prawidłową *zgłosił* wersji systemu Windows dla reguł minimalnej i maksymalnej systemu operacyjnego. Numer wersji musi odpowiadać wersji który **winver** polecenie zwraca. Ten problem nie występuje w przypadku telefonów z systemem Windows. Wersja jest zgłaszana zgodnie z oczekiwaniami jako wersja 8.1. Dla komputerów z systemem Windows w systemie operacyjnym Windows 10, wersja powinna być ustawiona jako **10.0** poszerzonych o numerze kompilacji systemu operacyjnego **winver** polecenie zwraca.
+  >  Na komputerach z systemem Windows Windows 8.1 w wersji systemu operacyjnego jest zgłaszana jako 6.3, a nie 8.1. Jeśli ustawiono regułę wersji systemu operacyjnego jest Windows 8.1 dla systemu Windows, następnie urządzenia będzie zgłaszane jako niezgodne nawet wtedy, gdy urządzenie ma Windows 8.1. Upewnij się, że ustawiono prawidłową *zgłosił* wersji systemu Windows dla reguł minimalnej i maksymalnej systemu operacyjnego. Numer wersji musi odpowiadać wersji który **winver** polecenie zwraca. Ten problem; nie występuje w telefonach z systemem Windows wersja jest zgłaszana jako 8.1 zgodnie z oczekiwaniami. Dla komputerów z systemem Windows w systemie operacyjnym Windows 10, wersja powinna być ustawiona jako **10.0** poszerzonych o numerze kompilacji systemu operacyjnego **winver** polecenie zwraca.
 
 7.  Na **Podsumowanie** strony kreatora przejrzyj ustawienia, które zostały wykonane, a następnie Zakończ pracę kreatora.
 
@@ -72,7 +73,7 @@ ms.lasthandoff: 10/12/2017
 
 4.  W **wdrażanie zasad zgodności** oknie dialogowym wybierz **Przeglądaj** aby wybrać kolekcję użytkowników, dla której chcesz wdrożyć zasady.
 
-     Ponadto można wybrać opcje generowania alertów, gdy zasady są niezgodne i ustaw harmonogram, według której ta zasada ma zostać obliczone dla zgodności.
+     Ponadto można wybrać opcje generowania alertów, gdy zasady nie jest zgodny i ustaw harmonogram, według której ta zasada ma zostać obliczone dla zgodności.
 
 5.  Gdy wszystko będzie gotowe, wybierz pozycję **OK**.
 
@@ -90,13 +91,13 @@ ms.lasthandoff: 10/12/2017
 
     **Stan wdrożenia** strona zawiera następujące karty:
 
-    -   **Zgodne**. Pokazuje zgodności zasad na podstawie liczby uwzględnionych zasobów. Można wybrać zasadę, aby utworzyć tymczasowy węzeł w węźle **użytkowników** lub **urządzeń** węzła **zasoby i zgodność** obszaru roboczego, który zawiera wszystkich użytkowników lub urządzeń, które są zgodne z tą regułą. **Szczegóły zasobu** w okienku zostaną wyświetlone użytkowników lub urządzeń, które są zgodne z zasadami. Kliknij dwukrotnie użytkownika lub urządzenie na liście, aby wyświetlić dodatkowe informacje.
+    -   **Zgodne** — przedstawia zgodności zasad na podstawie liczby uwzględnionych zasobów. Można wybrać zasadę, aby utworzyć tymczasowy węzeł w węźle **użytkowników** lub **urządzeń** węzła **zasoby i zgodność** obszaru roboczego, który zawiera wszystkich użytkowników lub urządzeń, które są zgodne z tą regułą. **Szczegóły zasobu** w okienku zostaną wyświetlone użytkowników lub urządzeń, które są zgodne z zasadami. Aby wyświetlić dodatkowe informacje, kliknij dwukrotnie użytkownika lub urządzenie na liście.
 
-    -   **Błąd**. Przedstawia listę wszystkich błędów dla wybranego wdrożenia zasad na podstawie liczby uwzględnionych zasobów. Można wybrać zasadę, aby utworzyć tymczasowy węzeł w węźle **użytkowników** lub **urządzeń** węzła **zasoby i zgodność** obszaru roboczego, który zawiera wszystkich użytkowników lub urządzeń, które wygenerowały błędy przy użyciu tej reguły. Po wybraniu użytkownika lub urządzenia, **szczegóły zasobu** w okienku zostaną wyświetlone użytkowników lub urządzeń, których dotyczy problem. Kliknij dwukrotnie użytkownika lub urządzenie na liście, aby wyświetlić dodatkowe informacje o problemie.
+    -   **Błąd** — zawiera listę wszystkich błędów dla wybranego wdrożenia zasad na podstawie liczby uwzględnionych zasobów. Można wybrać zasadę, aby utworzyć tymczasowy węzeł w węźle **użytkowników** lub **urządzeń** węzła **zasoby i zgodność** obszaru roboczego, który zawiera wszystkich użytkowników lub urządzeń, które wygenerowały błędy przy użyciu tej reguły. Po wybraniu użytkownika lub urządzenia, **szczegóły zasobu** w okienku zostaną wyświetlone użytkowników lub urządzeń, których dotyczy problem. Aby wyświetlić dodatkowe informacje o problemie, kliknij dwukrotnie użytkownika lub urządzenie na liście.
 
-    -   **Niezgodne**. Przedstawia listę wszystkich niezgodnych reguł w zasadzie na podstawie liczby uwzględnionych zasobów. Można wybrać zasadę, aby utworzyć tymczasowy węzeł w węźle **użytkowników** lub **urządzeń** węzła **zasoby i zgodność** obszaru roboczego, który zawiera wszystkich użytkowników lub urządzeń, które nie są zgodne z tą regułą. Po wybraniu użytkownika lub urządzenia, **szczegóły zasobu** w okienku zostaną wyświetlone użytkowników lub urządzeń, których dotyczy problem. Kliknij dwukrotnie użytkownika lub urządzenie na liście, aby wyświetlić dalsze informacje o problemie.
+    -   **Niezgodne** — zawiera listę wszystkich niezgodnych reguł w zasadzie na podstawie liczby uwzględnionych zasobów. Można wybrać zasadę, aby utworzyć tymczasowy węzeł w węźle **użytkowników** lub **urządzeń** węzła **zasoby i zgodność** obszaru roboczego, który zawiera wszystkich użytkowników lub urządzeń, które nie są zgodne z tą regułą. Po wybraniu użytkownika lub urządzenia, **szczegóły zasobu** w okienku zostaną wyświetlone użytkowników lub urządzeń, których dotyczy problem. Aby wyświetlić dalsze informacje o problemie, kliknij dwukrotnie użytkownika lub urządzenie na liście.
 
-    -   **Nieznany**. Przedstawia listę wszystkich użytkowników i urządzeń, które nie zgłosiły zgodności dla wybranego wdrożenia zasad, wraz z bieżącym stanem klienta urządzeń.
+    -   **Nieznany** — zawiera listę wszystkich użytkowników i urządzeń, które nie zgłosiły zgodności dla wybranego wdrożenia zasad, wraz z bieżącym stanem klienta urządzeń.
 
 #### <a name="to-monitor-the-compliance-status-of-an-individual-device"></a>Aby monitorować stan zgodności poszczególne urządzenia
 
@@ -104,51 +105,51 @@ ms.lasthandoff: 10/12/2017
 
 2.  Wybierz **urządzeń**.
 
-3.  Kliknij prawym przyciskiem myszy jeden z kolumny, aby umożliwić większą liczbę kolumn.
+3. Aby włączyć więcej kolumn, kliknij prawym przyciskiem myszy jednej z kolumn.
 
   Można dodać następujące kolumny:
 
-  - **Identyfikator urządzenia usługi Azure Active Directory**.  Unikatowy identyfikator dla urządzenia w usłudze Azure Active Directory.
+  - **Identyfikator urządzenia usługi Azure Active Directory** — Unikatowy identyfikator urządzenia w usłudze Azure Active Directory.
 
-  - **Szczegóły błędu zgodności**.  Szczegóły komunikatu o nieprawidłowość procesu end-to-end. Jeśli ta kolumna jest puste, oznacza to, nie znaleziono błędów, a stan zgodności pomyślnie został zgłoszony.
+  - **Szczegóły błędu zgodności** — szczegóły komunikatu o błędzie podczas nieprawidłowość procesu. Jeśli ta kolumna jest puste, oznacza to, nie znaleziono błędów, a stan zgodności pomyślnie został zgłoszony.
 
-  - **Lokalizacja błąd zgodności**.  Więcej informacji na temat których zgodności nie powiodło się. Jeśli ta kolumna jest puste, oznacza to, nie znaleziono błędów, a stan zgodności pomyślnie został zgłoszony. Przykłady, których proces zgodności może zakończyć się niepowodzeniem: 
+  - **Lokalizacja błąd zgodności** — więcej informacji, na których zgodności nie powiodło się. Jeśli ta kolumna jest puste, oznacza to, nie znaleziono błędów, a stan zgodności pomyślnie został zgłoszony. Przykłady, których proces zgodności może zakończyć się niepowodzeniem: 
       - Klient programu ConfigMgr
       - Punkt zarządzania
       - Intune
-      - Usługa Azure Active Directory
+      - Azure Active Directory
 <br></br>
-  - **Czas oceny zgodności**. Czas ostatniego zaznaczono zgodności.
+  - **Czas oceny zgodności** — czas ostatniego zaznaczono zgodności.
 
-  - **Zgodność ustawić czas**. Czas ostatniej aktualizacji zgodności do usługi Azure Active Directory.
+  - **Ustaw czas zgodności** — czas ostatniego zgodności zostało zaktualizowane do usługi Azure Active Directory.
 
-  - **Dostęp warunkowy zgodne**.  Określa, czy maszyna spełnia zasady dostępu warunkowego.
+  - **Zgodne dostępu warunkowego** — Określa, czy maszyna spełnia zasady dostępu warunkowego.
 
   > [!IMPORTANT]
   > Domyślnie nie są wyświetlane następujące kolumny.
 
 #### <a name="to-view-intune-compliance-policies-charts"></a>Aby wyświetlić zasadami zgodności usługi Intune wykresy
-1. Począwszy od wersji 1610 programu Configuration Manager w konsoli programu Configuration Manager wybierz **monitorowanie**.
+1. W konsoli programu Configuration Manager wybierz **monitorowanie**.
 
 2. W **monitorowanie** obszaru roboczego, przejdź do **omówienie** > **ustawień zgodności** > **zasady zgodności**.
 
    Są wyświetlane wykresy następujące:
 
-    - **Ogólna zgodność urządzenia**. Przedstawia ogólną zgodność urządzeń dla wszystkich zasad zgodności.
-    - **Z góry przyczyn braku zgodności**. Pokazuje top zasady dla urządzeń, które są niezgodne.
+    - **Ogólna zgodność urządzenia** — przedstawia ogólną zgodność urządzeń dla wszystkich zasad zgodności.
+    - **Najważniejsze przyczyny niezgodności** -Wyświetla top zasady, których urządzenia są niezgodne.
 
 3. Wybierz sekcję albo wykresie, aby przejść do szczegółów w dół listę urządzeń w ramach tej kategorii.
 
 #### <a name="to-view-a-health-attestation-report"></a>Aby wyświetlić raport zaświadczania o kondycji
 
-1.  Począwszy od wersji 1602 programu Configuration Manager w konsoli programu Configuration Manager wybierz **monitorowanie**.
+1. W konsoli programu Configuration Manager wybierz **monitorowanie**.
 
 2.  Aby wyświetlić raport zawierający podsumowanie bieżącego stanu urządzeń według ich stanu zgodności, wybierz **zabezpieczeń**, a następnie wybierz pozycję **zaświadczania o kondycji**.
 
 3.  Aby wyświetlić raport zawierający listę wszystkich urządzeń i wszystkich atrybutów zaświadczania o kondycji, należy wybrać **zabezpieczeń**, a następnie wybierz pozycję **zaświadczania o kondycji**.
 
 ## <a name="compliance-policy-rules"></a>Reguły zasad zgodności
-* **Wymagaj ustawień haseł na urządzeniach przenośnych**. Można wymagać od użytkowników podania hasła przed uzyskaniem dostępu do swoich urządzeń.
+* **Wymagaj ustawień haseł na urządzeniach przenośnych** — można wymagać od użytkowników podania hasła przed uzyskaniem dostępu do swoich urządzeń.
 
   **Obsługiwane na:**
     * Windows Phone 8+
@@ -156,7 +157,7 @@ ms.lasthandoff: 10/12/2017
     * Android 4.0+
     * Samsung Knox Standard 4.0+
 
-* **Wymagaj hasła do odblokowania bezczynnego urządzenia** (aktualizacja 1602). Można wymagać od użytkowników podania hasła do dostępu do zablokowanego urządzenia.
+* **Wymagaj hasła do odblokowania bezczynnego urządzenia** — można wymagać od użytkowników podania hasła do dostępu do zablokowanego urządzenia.
 
   **Obsługiwane na:**
   * Windows Phone 8+
@@ -164,7 +165,7 @@ ms.lasthandoff: 10/12/2017
   * Android 4.0+
   * Samsung Knox Standard 4.0+
 
-* **Liczba minut braku aktywności, zanim będzie wymagane hasło** (aktualizacja 1602). Można określić czas bezczynności, po użytkownik musi ponownie wprowadzić swoje hasło. Ustaw wartość na jedną z dostępnych opcji: **1 minute**, **5 minutes**, **15 minutes**, **30 minutes**, **1 hour**.
+* **Liczba minut braku aktywności, zanim będzie wymagane hasło** — można określić czas bezczynności, po użytkownik musi ponownie wprowadzić swoje hasło. Ustaw wartość na jedną z dostępnych opcji: **1 minuta**, **5 minut**, **15 minut**, **30 minut**, **1 godzina**.
 
   Ta reguła musi być używany z **Wymagaj hasła do odblokowania bezczynnego urządzenia**. W tym miejscu wartość określa, kiedy urządzenie jest uznawane za bezczynności i jest zablokowany. Gdy **Wymagaj hasła do odblokowania bezczynnego urządzenia** ustawiono **True**, użytkownik musi wprowadzić hasło dostępu do zablokowanego urządzenia.
 
@@ -175,20 +176,20 @@ ms.lasthandoff: 10/12/2017
   * Android 4.0+
   * Samsung Knox Standard 4.0+
 
-* **Wymagaj aktualizacji automatycznych** (aktualizacja 1602). Urządzenia z Windows 8.1 lub nowszym można wymagać, aby automatycznie zainstalować aktualizacje, a następnie można określić klasę aktualizacji.
+* **Wymagaj aktualizacji automatycznych** — urządzenia z Windows 8.1 lub nowszym można wymagać, aby automatycznie zainstalować aktualizacje, a można określić klasę aktualizacji.
 
-  Powinien mieć ustawioną wartość **Brak** zapobiegające do instalacji automatycznej **zalecane** Aby automatycznie zainstalować wszystkie zalecane aktualizacje lub **ważne** można zainstalować tylko aktualizacje sklasyfikowane jako ważne.
+  Wartość powinna być równa **Brak** zapobiegające automatycznej instalacji. Ustaw **zalecane** można automatycznie zainstalować wszystkie zalecane aktualizacje. Aby zainstalować tylko aktualizacje sklasyfikowane jako ważne, ustaw **ważne**.
 
   **Obsługiwane na:**
   * Windows Phone 8+
 
-* **Zezwalaj na proste hasła**. Można zezwolić użytkownikom na tworzenie prostych haseł, takich jak "1234" lub "1111". To ustawienie jest domyślnie wyłączona.
+* **Zezwalaj na proste hasła** — można zezwolić użytkownikom na tworzenie prostych haseł, takich jak "1234" lub "1111." To ustawienie jest domyślnie wyłączona.
 
   **Obsługiwane na:**
   * Windows Phone 8+
   * iOS 6+
 
-* **Minimalna długość hasła**. Można określić minimalną liczbę cyfr lub znaków, że hasło użytkownika musi mieć (6 domyślnie).
+* **Minimalna długość hasła** — można określić minimalną liczbę cyfr lub znaków, że hasło użytkownika musi mieć (6 domyślnie).
 
   **Obsługiwane na:**
   * Windows Phone 8+
@@ -200,7 +201,7 @@ ms.lasthandoff: 10/12/2017
   >[!NOTE]
   >Dla urządzeń z systemem Windows, które są zabezpieczone przy użyciu konta Microsoft, sprawdzanie zasad zgodności będzie zakończy się niepowodzeniem, jeśli **minimalna długość hasła** jest większa niż 8 znaków lub, jeśli **minimalna liczba zestawów znaków** jest większa niż 2.
 
-* **Szyfrowanie plików na urządzeniu przenośnym**. Może wymagać zaszyfrowania w celu łączenia się z zasobami urządzenia. Urządzenia z systemem Windows Phone 8 są szyfrowane automatycznie. Urządzenia z systemem iOS są szyfrowane po skonfigurowaniu ustawienia **Wymagaj ustawień haseł na urządzeniach przenośnych**. To ustawienie jest domyślnie włączone.
+* **Szyfrowanie plików na urządzeniu przenośnym** — można urządzenie musi być szyfrowane w celu łączenia się z zasobami. Urządzenia z systemem Windows Phone 8 są szyfrowane automatycznie. Urządzenia z systemem iOS są szyfrowane po skonfigurowaniu ustawienia **Wymagaj ustawień haseł na urządzeniach przenośnych**. To ustawienie jest domyślnie włączone.
 
   **Obsługiwane na:**
   * Windows Phone 8+
@@ -209,37 +210,28 @@ ms.lasthandoff: 10/12/2017
   * Android 4.0+
   * Samsung Knox Standard 4.0+
 
-* **Urządzenie nie może być zdjęte zabezpieczenia lub odblokowany dostęp**. Jeśli to ustawienie zostanie włączone, których zdjęto zabezpieczenia (iOS) lub z odblokowanym (Android) nie są zgodne. To ustawienie jest domyślnie wyłączona.
+* **Urządzenie nie może być zdjęte zabezpieczenia lub odblokowany dostęp** — Jeśli włączysz to ustawienie, w których zdjęto zabezpieczenia (iOS) lub odblokowanym (Android) nie są zgodne. To ustawienie jest domyślnie wyłączona.
 
   **Obsługiwane na:**
   * iOS 6+
   * Android 4.0+
   * Samsung Knox Standard 4.0+
 
-* **Profil poczty e-mail musi być zarządzane przez usługę Intune**. Po ustawieniu tej opcji **tak**, urządzenie musi używać profilu poczty e-mail wdrożony na urządzeniu. Urządzenie jest traktowane jako niezgodne, jeśli profil poczty e-mail nie jest wdrożony w tej samej grupie użytkowników co grupa użytkowników objęta zasadami zgodności.
+* **Profil poczty e-mail musi być zarządzane przez usługę Intune** — po ustawieniu tej opcji **tak**, urządzenie musi używać profilu poczty e-mail wdrożony na urządzeniu. Urządzenie jest traktowane jako niezgodne, jeśli profil poczty e-mail nie jest wdrożony w tej samej grupie użytkowników co grupa użytkowników objęta zasadami zgodności.
 
-  Jest traktowane jako niezgodne także wtedy, gdy użytkownik skonfigurował już na urządzeniu konto e-mail zgodne z profilem e-mail usługi Intune wdrożonym na urządzeniu. W takim przypadku usługa Intune nie może zastąpić profilu określonego przez użytkownika i dlatego nie może nim zarządzać. Użytkownik może Uzgodnij urządzenia przez usunięcie istniejące ustawienia poczty e-mail, co pozwala zainstalować zarządzany profil poczty e-mail usługi Intune.
+  Jest traktowane jako niezgodne także wtedy, gdy użytkownik skonfigurował już na urządzeniu konto e-mail zgodne z profilem e-mail usługi Intune wdrożonym na urządzeniu. W takim przypadku usługa Intune nie może zastąpić profilu określonego użytkownika i dlatego nie może nim zarządzać. Użytkownik może Uzgodnij urządzenia przez usunięcie istniejącego ustawienia poczty e-mail, co pozwala zainstalować zarządzany profil poczty e-mail usługi Intune.
 
   Szczegółowe informacje na temat profilów e-mail można znaleźć w artykule [Umożliwianie dostępu do firmowej poczty e-mail przy użyciu profilów poczty e-mail w usłudze Microsoft Intune](https://technet.microsoft.com/library/dn800672.aspx). To ustawienie jest domyślnie wyłączona.
 
   **Obsługiwane na:**
   * iOS 6+
 
-* **Profil poczty e-mail**. Jeśli **konto E-mail musi być zarządzane przez usługę Intune** jest wybrana, wybierz **wybierz** aby wybrać profil poczty e-mail, którego urządzenia muszą być zarządzane przez. Ten profil poczty e-mail musi znajdować się na urządzeniu.
+* **Profil poczty e-mail** — Jeśli **konto E-mail musi być zarządzane przez usługę Intune** jest wybrana, wybierz **wybierz** aby wybrać profil poczty e-mail, którego urządzenia muszą być zarządzane przez. Ten profil poczty e-mail musi znajdować się na urządzeniu.
 
   **Obsługiwane na:**
   * iOS 6+
 
-* **Wymagana minimalna wersja systemu operacyjnego**. Jeśli urządzenie nie spełnia wymagań minimalnej wersji systemu operacyjnego, określonym przez użytkownika, są zgłaszane jako niezgodne. Zostanie wyświetlony link ze wskazówkami dotyczącymi uaktualniania. Użytkownik może wybrać na uaktualnienie swojego urządzenia, po którym będą oni mogli dostęp do zasobów firmy.
-
-  **Obsługiwane na:**
-  * Windows Phone 8+
-  * Windows 8.1
-  * iOS 6+
-  * Android 4.0+
-  * Samsung Knox Standard 4.0+
-
-* **Dozwolona maksymalna wersja systemu operacyjnego**. Jeśli urządzenie korzysta z wersji systemu operacyjnego późniejszej niż określona w regule, to zablokowanie dostępu do zasobów firmy i wyświetlenie monitu do kontaktowania się z administratorem IT. Do momentu zmiany reguły dopuszczającej daną wersję systemu operacyjnego, to urządzenie nie może służyć do dostępu do zasobów firmy.
+* **Wymagana minimalna wersja systemu operacyjnego** — Jeśli urządzenie nie spełnia wymagań minimalnej wersji systemu operacyjnego, określonym przez użytkownika, są zgłaszane jako niezgodne. Zostanie wyświetlony link ze wskazówkami dotyczącymi uaktualniania. Użytkownik może wybrać na uaktualnienie swojego urządzenia, po którym będą oni mogli dostęp do zasobów firmy.
 
   **Obsługiwane na:**
   * Windows Phone 8+
@@ -248,19 +240,28 @@ ms.lasthandoff: 10/12/2017
   * Android 4.0+
   * Samsung Knox Standard 4.0+
 
-* **Wymagaj, aby urządzenia były zgłaszane jako w dobrej kondycji** (aktualizacja 1602). Można ustawić regułę wymagającą, że urządzeń systemu Windows 10 zgłoszenia dobrej kondycji w zasadach zgodności nowego lub istniejącego. Jeśli to ustawienie zostanie włączone, urządzenia systemu Windows 10 są oceniane za pośrednictwem usługi zaświadczania o kondycji (HAS) dla następujących punktów danych:
+* **Dozwolona maksymalna wersja systemu operacyjnego** — Jeśli urządzenie korzysta z wersji systemu operacyjnego późniejszej niż określona w regule, to zablokowanie dostępu do zasobów firmy i wyświetlenie monitu do kontaktowania się z administratorem IT. Do momentu zmiany reguły dopuszczającej daną wersję systemu operacyjnego, to urządzenie nie może służyć do dostępu do zasobów firmy.
 
-  - **Funkcja BitLocker jest włączona**. Po włączeniu funkcji BitLocker urządzenie może chronić dane przechowywane na dysku przed nieautoryzowanym dostępem, gdy system jest wyłączony lub zahibernowany.
+  **Obsługiwane na:**
+  * Windows Phone 8+
+  * Windows 8.1
+  * iOS 6+
+  * Android 4.0+
+  * Samsung Knox Standard 4.0+
 
-   Szyfrowanie dysków za pomocą funkcji Windows BitLocker powoduje zaszyfrowanie wszystkich danych przechowywanych na woluminie systemu operacyjnego Windows. Funkcja BitLocker używa modułu TPM do ochrony systemu operacyjnego i danych użytkownika. Pomaga upewnić się, że komputer nie jest modyfikowany, nawet wtedy, gdy zostanie pozostawiony bez nadzoru, utracone lub skradzione.
+* **Wymagaj, aby urządzenia były zgłaszane jako w dobrej kondycji** — można ustawić regułę wymagającą, że urządzeń systemu Windows 10 zgłoszenia dobrej kondycji w zasadach zgodności nowego lub istniejącego. Jeśli to ustawienie zostanie włączone, urządzenia systemu Windows 10 są oceniane za pośrednictwem usługi zaświadczania o kondycji (HAS) dla następujących punktów danych:
+
+  - **Funkcja BitLocker jest włączona** — po włączeniu funkcji BitLocker, urządzenie może chronić dane przechowywane na dysku przed nieautoryzowanym dostępem, gdy system jest wyłączony lub zahibernowany.
+
+   Szyfrowanie dysków za pomocą funkcji Windows BitLocker powoduje zaszyfrowanie wszystkich danych przechowywanych na woluminie systemu operacyjnego Windows. Funkcja BitLocker używa modułu TPM do ochrony systemu operacyjnego i danych użytkownika. Pomaga zapewnić, że komputer nie jest modyfikowany, nawet wtedy, gdy zostanie pozostawiony bez nadzoru, utracone lub skradzione.
    
-   Jeśli komputer jest wyposażony w zgodny moduł TPM, funkcja BitLocker używa go do zablokowania kluczy szyfrowania służących do ochrony danych. W związku z tym klucze są niedostępne, dopóki moduł TPM nie zweryfikuje stanu komputera.
+   Jeśli komputer jest wyposażony w zgodny moduł TPM, funkcja BitLocker używa go do zablokowania kluczy szyfrowania służących do ochrony danych. W związku z tym klucze będą niedostępne, dopóki moduł TPM zweryfikuje stanu komputera.
 
-  - **Włączono integralność kodu**. Integralność kodu to funkcja, która weryfikuje integralność sterownika lub pliku systemowego zawsze wtedy, gdy jest on ładowany do pamięci. Funkcja integralności kodu wykrywa, czy do jądra jest ładowany niepodpisany plik sterownika lub systemu. Wykrywa także, czy plik systemowy został zmieniony przez złośliwe oprogramowanie, które zostało uruchomione przez konto użytkownika z uprawnieniami administratora.
+  - **Włączono integralność kodu** -integralności kodu jest funkcją, która weryfikuje integralność pliku sterownika lub systemu zawsze wtedy, gdy jest ładowany do pamięci. Funkcja integralności kodu wykrywa, czy do jądra jest ładowany niepodpisany plik sterownika lub systemu. Wykrywa także, czy plik systemowy został zmieniony przez złośliwe oprogramowanie, które zostało uruchomione przez konto użytkownika z uprawnieniami administratora.
 
-  - **Bezpieczny rozruch jest włączony**. Gdy jest włączona funkcja bezpiecznego rozruchu, system musi włączać się do uruchamiania w fabrycznie zaufanego stanu. Ponadto gdy jest włączona funkcja bezpiecznego rozruchu, podstawowe składniki używane do uruchomienia maszyny musi mieć prawidłowe podpisy kryptograficzne, które są zaufane przez organizację, która wyprodukowała urządzenie. Oprogramowanie układowe UEFI sprawdza to, zanim pozwoli na uruchomienie komputera. Jeśli wszystkie pliki zostały naruszone, spowodowało uszkodzenie ich podpisu, system nie zostanie uruchomiona.
+  - **Bezpieczny rozruch jest włączony** — gdy bezpieczny rozruch jest włączony, system musi włączać się do uruchamiania w fabrycznie zaufanego stanu. Ponadto gdy jest włączona funkcja bezpiecznego rozruchu, podstawowe składniki używane do uruchomienia maszyny musi mieć prawidłowe podpisy kryptograficzne, które są zaufane przez organizację, która wyprodukowała urządzenie. Oprogramowanie układowe UEFI sprawdza to, zanim pozwoli na uruchomienie komputera. Jeśli wszystkie pliki zostały naruszone, spowodowało uszkodzenie ich podpisu, system nie zostanie uruchomiona.
 
-  - **Usługa wczesnej ochrony przed złośliwym kodem jest włączona**. To ustawienie ma zastosowanie tylko do komputerów. Usługa wczesnej ochrony przed złośliwym kodem (ELAM, early launch anti-malware) zapewnia ochronę komputerów w sieci podczas ich uruchamiania, zanim zostaną zainicjowane sterowniki innych firm.
+  - **Usługa wczesnej ochrony przed złośliwym kodem jest włączona** — to ustawienie ma zastosowanie tylko do komputerów. Usługa wczesnej ochrony przed złośliwym kodem (ELAM, early launch anti-malware) zapewnia ochronę komputerów w sieci podczas ich uruchamiania, zanim zostaną zainicjowane sterowniki innych firm.
   
    Ta reguła jest domyślnie wyłączona.
 
@@ -269,33 +270,38 @@ ms.lasthandoff: 10/12/2017
   **Obsługiwane na:**
   * Windows 10 i Windows 10 Mobile
 
-- **Aplikacje, których nie można zainstalować na urządzeniu**. Jeśli użytkownicy zainstalują aplikację z listy admin niezgodnych aplikacji, będzie mogą być blokowane podczas próby dostępu do firmowej poczty e-mail i innych zasobów firmy, które obsługują dostęp warunkowy. Ta zasada wymaga nazwy aplikacji i identyfikator aplikacji, podczas dodawania aplikacji do listy niezgodnych zdefiniowane przez administratora. Można również dodać wydawcę aplikacji, ale nie jest to wymagane.
+> [!NOTE]
+> Począwszy od 1802 Menedżera konfiguracji programu Software Center pokazano, że element zaświadczania o kondycji urządzenia nie jest zgodne z. <!--1235616--> 
+![Zgodność urządzenia zaświadczania o kondycji urządzenia w programie Software Center](./media/Software-Center-noncompliant.PNG)
+
+
+- **Aplikacje, których nie można zainstalować na urządzeniu** — Jeśli użytkownicy zainstalują aplikację z listy admin niezgodnych aplikacji, będzie mogą być blokowane podczas próby dostępu do firmowej poczty e-mail i innych zasobów firmy, które obsługują dostęp warunkowy. Ta zasada wymaga nazwy aplikacji i identyfikator aplikacji, podczas dodawania aplikacji do listy niezgodnych zdefiniowane przez administratora. Można również dodać wydawcę aplikacji, ale nie jest to wymagane.
 
     **Obsługiwane na:**
       * iOS 6+
       * Android 4.0+
       * Samsung Knox Standard 4.0+
 <br></br>
-* **Wymagany typ hasła**. Określ, czy użytkownik muszą utworzyć hasła alfanumerycznego i numeryczne hasła. Alfanumeryczne haseł również określić minimalną liczbę zestawów znaków, które muszą mieć hasłem. Są cztery zestawy znaków: Małe litery, wielkie litery, symbole i cyfry.
+* **Wymagany typ hasła** — Określ, czy użytkownik musi utworzyć hasła alfanumerycznego i numeryczne hasła. Alfanumeryczne haseł również określić minimalną liczbę zestawów znaków, które muszą mieć hasłem. Są cztery zestawy znaków: małe litery, wielkie litery, symbole i cyfry.
 
     **Obsługiwane na:**
     * Windows Phone 8+
-    * Windows 8.1 +
+    * Windows 8.1+
     * iOS 6+
 <br></br>
-* **Debugowanie USB bloku na urządzeniu**. Nie masz ustawień jako debugowanie USB już jest wyłączona w systemie Android pracy urządzeń.
+* **Debugowanie USB bloku na urządzeniu** — nie należy skonfigurować to ustawienie jako debugowanie USB już jest wyłączona w systemie Android pracy urządzeń.
 
     **Obsługiwane na:**
     * Android 4.0+
     * Samsung Knox Standard 4.0+
 <br></br>
-* **Blokowanie aplikacji z nieznanych źródeł**. Wymagaj, aby urządzenia uniemożliwiały instalację aplikacji z nieznanych źródeł. Nie masz Skonfiguruj to ustawienie, jak Android pracy urządzeń zawsze ograniczyć instalacja z nieznanych źródeł.
+* **Blokowanie aplikacji z nieznanych źródeł** -wymagają, aby urządzenia uniemożliwiały instalację aplikacji z nieznanych źródeł. Nie masz Skonfiguruj to ustawienie, jak Android pracy urządzeń zawsze ograniczyć instalacja z nieznanych źródeł.
 
     **Obsługiwane na:**
     * Android 4.0+
     * Samsung Knox Standard 4.0+
 <br></br>
-* **Wymagaj skanowania zagrożeń na aplikacje**. To ustawienie określa, że funkcja aplikacji Sprawdź, czy jest włączona na urządzeniu. 
+* **Wymagaj skanowania zagrożeń na aplikacje** — to ustawienie określa, że funkcja aplikacji Sprawdź, czy jest włączona na urządzeniu. 
 
     **Obsługiwane na:**
     * System android 4.2 za pośrednictwem 4.4
@@ -311,7 +317,7 @@ Identyfikator aplikacji jest identyfikatorem, który unikatowo identyfikuje apli
 - **iOS**
     1. W iTunes przechowywania adresu URL, Znajdź identyfikator, tak jak w tym przykładzie: */id875948587? mt = 8*
 
-    2. W przeglądarce sieci web, przejdź do następującego adresu URL, zastępując numer identyfikator, który właśnie znaleziono (w tym przypadku poprzedniego przykładu): https://itunes.apple.com/lookup?id=875948587
+    2. W przeglądarce sieci web przejdź do następującego adresu URL, zastępując numer identyfikator, który został właśnie znaleziono (w tym przypadku poprzedniego przykładu): https://itunes.apple.com/lookup?id=875948587
 
     3. Pobierz i Otwórz plik tekstowy.
   

@@ -3,7 +3,7 @@ title: 'Synchronizowanie danych programu Microsoft Operations Management Suite '
 titleSuffix: Configuration Manager
 description: Synchronizowanie danych z programu System Center Configuration Manager do programu Microsoft Operations Management Suite.
 ms.custom: na
-ms.date: 7/31/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,19 +12,19 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 33bcf8b3-a6b6-4fc9-bb59-70a9621b2b0d
-caps.latest.revision: 
-author: mattbriggs
-ms.author: mabrigg
-manager: angrobe
-ms.openlocfilehash: 5cb0ffd29f1b3de110101093a6644335a8167108
-ms.sourcegitcommit: 45ff3ffa040eada5656b17f47dcabd3c637bdb60
+caps.latest.revision: ''
+author: mestew
+ms.author: mstewart
+manager: dougeby
+ms.openlocfilehash: df57255108d0e5e8b8f5e4e8d73a392c4cf2faae
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/23/2018
 ---
 #  <a name="sync-data-from-configuration-manager-to-the-microsoft-operations-management-suite"></a>Synchronizowanie danych z programu Configuration Manager do programu Microsoft Operations Management Suite
 
-Dotyczy: Program System Center Configuration Manager (Current Branch)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 Możesz użyć **Kreator usług Azure** do skonfigurowania połączenia z programu Configuration Manager do usługi w chmurze Operations Management Suite (OMS). Począwszy od wersji 1706, kreator zastępuje poprzednie przepływy pracy w celu skonfigurowania tego połączenia. W przypadku wcześniejszych wersji, zobacz [synchronizowanie danych z programu Configuration Manager do programu Microsoft Operations Management Suite (1702 i starszych)](#Sync-data-from-Configuration-Manager-to-the-Microsoft-Operations-Management-Suite-(1702-and-earlier)).
 
@@ -33,7 +33,7 @@ Możesz użyć **Kreator usług Azure** do skonfigurowania połączenia z progra
 -   Configuration Manager łączy się z usługą OMS dla funkcji, takich jak [analizy dzienników](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite), lub [gotowości do uaktualnienia](/sccm/core/clients/manage/upgrade/upgrade-analytics).
 
 ## <a name="prerequisites-for-the-oms-connector"></a>Wymagania wstępne dotyczące łącznika OMS
-Wymagania wstępne, aby skonfigurować połączenie z usługą OMS uległy zmianie w porównaniu [udokumentowane dla wersji Current Branch 1702](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite#prerequisites). Te informacje jest powtarzany w tym miejscu:  
+Wymagania wstępne, aby skonfigurować połączenie z usługą OMS uległy zmianie od wymagań wstępnych [udokumentowane dla wersji Current Branch 1702](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite#prerequisites). Te informacje jest powtarzany w tym miejscu:  
 
 -   Przed zainstalowaniem łącznika OMS w programie Configuration Manager, musisz podać programu Configuration Manager z uprawnieniami do OMS. W szczególności należy przyznać *dostępu współautora* Azure *grupy zasobów* zawierający obszar roboczy analizy dzienników OMS. Procedury przedstawione w tym celu są udokumentowane w zawartości analizy dzienników. Zobacz [Podaj programu Configuration Manager z uprawnieniami do OMS](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm#provide-configuration-manager-with-permissions-to-oms) w dokumentacji pakietu OMS.
 
@@ -44,7 +44,7 @@ Wymagania wstępne, aby skonfigurować połączenie z usługą OMS uległy zmian
 
 ## <a name="use-the-azure-services-wizard-to-configure-the-connection-to-oms"></a>Użyj kreatora usług Azure, aby skonfigurować połączenie z usługą OMS
 
-1.  W konsoli przejdź do **administracji** > **omówienie** > **usługi w chmurze** > **usług Azure**, a następnie wybierz **Konfigurowanie usług Azure** z **Home** karty wstążki, aby uruchomić **Kreator usług Azure**.
+1.  W konsoli przejdź do **administracji** > **omówienie** > **usługi w chmurze** > **usług Azure**. Wybierz **Konfigurowanie usług Azure** z **Home** kartę na Wstążce, aby uruchomić **Kreator usług Azure**.
 
 2.  Na **usług Azure** wybierz usługę w chmurze operację Management Suite. Podaj przyjazną nazwę dla **nazwy usługi Azure** i opcjonalny opis, a następnie kliknij przycisk **dalej**.
 
@@ -52,7 +52,7 @@ Wymagania wstępne, aby skonfigurować połączenie z usługą OMS uległy zmian
 
 4.  Wybierz aplikację sieci web:
 
-    -   **Importuj**: Aby korzystać z aplikacji sieci web, która już istnieje w subskrypcji platformy Azure, kliknij przycisk **importu**. Podaj przyjazną nazwę dla aplikacji i dzierżawy, a następnie określ identyfikator dzierżawy, identyfikator klienta i klucz tajny aplikacji sieci web platformy Azure, który program Configuration Manager do użycia. Po **Sprawdź** informacji, kliknij przycisk **OK** aby kontynuować.   
+    -   **Importuj**: Aby korzystać z aplikacji sieci web, która już istnieje w subskrypcji platformy Azure, kliknij przycisk **importu**. Podaj przyjazną nazwę dla aplikacji i dzierżawcy. Określ identyfikator dzierżawy, identyfikator klienta i klucz tajny aplikacji sieci web platformy Azure, który program Configuration Manager do użycia. Po **Sprawdź** informacji, kliknij przycisk **OK** aby kontynuować.   
 
     > [!NOTE]   
     > Po skonfigurowaniu OMS w tej wersji zapoznawczej OMS obsługuje tylko *zaimportować* funkcja dla aplikacji sieci web. Tworzenie nowej aplikacji sieci web nie jest obsługiwane. Podobnie nie można ponownie użyć istniejącej aplikacji dla pakietu OMS.
@@ -68,13 +68,13 @@ Wymagania wstępne, aby skonfigurować połączenie z usługą OMS uległy zmian
 ## <a name="sync-data-from-configuration-manager-to-the-microsoft-operations-management-suite-1702-and-earlier"></a>Synchronizowanie danych z programu Configuration Manager do programu Microsoft Operations Management Suite (1702 i starsze)
 
 
-Dotyczy: System Center Configuration Manager (1702 i poprzednie wersje)*
+*Dotyczy: System Center Configuration Manager (1702 i poprzednie wersje)*
 
-Łącznik programu Microsoft Operations Management Suite (OMS) do synchronizacji danych można użyć, np. kolekcji programu System Center Configuration Manager do analizy dzienników OMS platformie Microsoft Azure. Dzięki temu danych z wdrożenia programu Configuration Manager są widoczne w OMS.
+Można użyć łącznika programu Microsoft Operations Management Suite (OMS), na synchronizowanie danych, takich jak kolekcji programu System Center Configuration Manager do analizy dzienników OMS platformie Microsoft Azure. Łącznik powoduje, że dane z wdrożenia programu Configuration Manager jest widoczna w OMS.
 > [!TIP]
-> Łącznik OMS to funkcja wersji wstępnej. Aby dowiedzieć się więcej, zobacz [korzystanie z funkcji wersji wstępnej aktualizacje](/sccm/core/servers/manage/pre-release-features).
+> Począwszy od programu Configuration Manager 1802 OMS łącznik nie jest już funkcji wersji wstępnej. Aby dowiedzieć się więcej, zobacz [korzystanie z funkcji wersji wstępnej aktualizacje](/sccm/core/servers/manage/pre-release-features).
 
-Począwszy od wersji 1702, można użyć łącznika OMS nawiązać obszar roboczy OMS, który znajduje się w chmurze Microsoft Azure dla instytucji rządowych. Należy zmodyfikować plik konfiguracji, przed zainstalowaniem łącznika OMS. Zobacz [korzystania z łącznika OMS z chmury Azure dla instytucji rządowych](#fairfaxconfig) w tym temacie.
+Począwszy od wersji 1702, można użyć łącznika OMS nawiązać obszar roboczy OMS, który znajduje się w chmurze Microsoft Azure dla instytucji rządowych. Należy zmodyfikować plik konfiguracji, przed zainstalowaniem łącznika OMS. Zobacz [korzystania z łącznika OMS z chmury Azure dla instytucji rządowych](#fairfaxconfig) w tym artykule.
 
 ### <a name="prerequisites"></a>Wymagania wstępne
 - Przed zainstalowaniem łącznika OMS w programie Configuration Manager, musisz podać programu Configuration Manager z uprawnieniami do OMS. W szczególności należy przyznać *dostępu współautora* Azure *grupy zasobów* zawierający obszar roboczy analizy dzienników OMS. Procedury przedstawione w tym celu są udokumentowane w zawartości analizy dzienników. Zobacz [Podaj programu Configuration Manager z uprawnieniami do OMS](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm#provide-configuration-manager-with-permissions-to-oms) w dokumentacji pakietu OMS.
@@ -92,14 +92,14 @@ Począwszy od wersji 1702, można użyć łącznika OMS nawiązać obszar robocz
 ### <a name="install-the-oms-connector"></a>Instalowanie łącznika OMS  
 1. W konsoli programu Configuration Manager, należy skonfigurować z [hierarchii w celu korzystania z funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features), a następnie Włącz użycie łącznika OMS.  
 0
-2. Następnie należy przejść do **administracji** > **usługi w chmurze** > **łącznik OMS**. Na wstążce kliknij przycisk "Utwórz połączenia na Operations Management Suite". Spowoduje to otwarcie **połączenie Kreator operacji Management Suite**. Wybierz **dalej**.  
+2. Następnie należy przejść do **administracji** > **usługi w chmurze** > **łącznik OMS**. Na wstążce kliknij przycisk "Utwórz połączenie pakietu Operations Management Suite." Ten krok powoduje otwarcie **połączenie Kreator operacji Management Suite**. Wybierz **dalej**.  
 
 
 3.  Na **ogólne** upewnij się, że następujące informacje, a następnie wybierz **dalej**.  
   - Zarejestrowany Menedżer konfiguracji narzędzia do zarządzania "API sieci Web i/lub aplikacji sieci Web", a [identyfikator klienta z tej rejestracji](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications).  
   - Utworzony klucz klienta dla zarejestrowanego narzędzia do zarządzania w usłudze Azure Active Directory.  
 
-  - W portalu zarządzania Azure, pod warunkiem aplikacji sieci web w zarejestrowany z uprawnieniami do OMS, zgodnie z opisem w [Podaj programu Configuration Manager z uprawnieniami do OMS](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm#provide-configuration-manager-with-permissions-to-oms).  
+  - W portalu Azure, pod warunkiem aplikacji sieci web w zarejestrowany z uprawnieniami do OMS, zgodnie z opisem w [Podaj programu Configuration Manager z uprawnieniami do OMS](https://docs.microsoft.com/azure/log-analytics/log-analytics-sccm#provide-configuration-manager-with-permissions-to-oms).  
 
 4.  Na **usługi Azure Active Directory** Skonfiguruj ustawienia połączenia z usługą OMS zapewniając Twojej **dzierżawy**, **identyfikator klienta**, i **klucza tajnego klienta**, a następnie wybierz pozycję **dalej**.  
 
@@ -112,11 +112,13 @@ Po połączeniu programu Configuration Manager z usługą OMS Dodaj lub usuń ko
 ### <a name="verify-the-oms-connector-properties"></a>Sprawdź właściwości łącznika OMS
 1.  W konsoli programu Configuration Manager, przejdź do **administracji** > **usługi w chmurze**, a następnie wybierz **OMS łącznik** otworzyć **OMS Strona połączenia**.
 2.  Na tej stronie istnieją dwie karty:
-  - **Usługa Azure Active Directory:**   
-    Ta karta przedstawia Twojej **dzierżawy**, **identyfikator klienta**, **wygaśnięcia klucza tajnego klienta**, i pozwala sprawdzić, Twój klucz tajny klienta utracił ważność.
+  - **Usługa Azure Active Directory:** 
+  
+     Ta karta przedstawia Twojej **dzierżawy**, **identyfikator klienta**, **wygaśnięcia klucza tajnego klienta**, i pozwala sprawdzić, Twój klucz tajny klienta utracił ważność.
 
   - **Właściwości połączenia OMS:**  
-    Ta karta przedstawia Twojej **subskrypcji platformy Azure**, **grupy zasobów platformy Azure**, **obszar roboczy usługi Operations Management Suite**oraz listę **kolekcji urządzeń, które Operations Management Suite można uzyskać danych dla**. Użyj **Dodaj** i **Usuń** przycisków, aby zmodyfikować kolekcje, które są dozwolone.
+
+     Ta karta przedstawia Twojej **subskrypcji platformy Azure**, **grupy zasobów platformy Azure**, **obszar roboczy usługi Operations Management Suite**oraz listę **kolekcji urządzeń, które Operations Management Suite można uzyskać danych dla**. Użyj **Dodaj** i **Usuń** przycisków, aby zmodyfikować kolekcje, które są dozwolone.
 
 ### <a name="fairfaxconfig"> </a> Korzystania z łącznika OMS z chmury Azure dla instytucji rządowych
 
@@ -141,7 +143,7 @@ Po połączeniu programu Configuration Manager z usługą OMS Dodaj lub usuń ko
     &lt;wartość > &lt; /value >
 
     - **Edytowane:** &lt;ustawienie name = "FairFaxAuthorityResource" serializeAs = "String" >   
-    &lt;value>https://login.microsoftonline.us/&lt;/value>
+    &lt;wartość >https://login.microsoftonline.us/ &lt; /value >
 
 2.  Po zapisaniu pliku z dwie zmiany ponownie uruchomić konsolę programu Configuration Manager na tym samym komputerze, a następnie użyj konsoli, aby zainstalować łącznik OMS. Aby zainstalować łącznik, skorzystaj z informacji w [synchronizowanie danych z programu Configuration Manager do programu Microsoft Operations Management Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite)i wybierz **obszar roboczy usługi Operations Management Suite** znajdujący się w chmurze Microsoft Azure dla instytucji rządowych.
 

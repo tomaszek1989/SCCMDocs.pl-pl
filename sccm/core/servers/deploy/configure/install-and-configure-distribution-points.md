@@ -1,31 +1,32 @@
 ---
-title: "Zarządzaj punktami dystrybucji"
+title: Zarządzaj punktami dystrybucji
 titleSuffix: Configuration Manager
-description: "Obsługujące zawartość (pliki i oprogramowanie), wdrażanego na urządzeniach i użytkowników przy użyciu punktów dystrybucji. Poniżej przedstawiono sposób instalowania i konfigurowania ich."
+description: Hostowania zawartości wdrażanej w urządzeniami i użytkownikami przy użyciu punktów dystrybucji
 ms.custom: na
-ms.date: 09/18/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aebafaf9-b3d5-4a0f-9ee5-685758c037a1
-caps.latest.revision: "5"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: e7eab46d423ed37bde7ac5f325d6cd8175806302
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+caps.latest.revision: ''
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 1010e339c586922f818e1af1e193abba95dace7b
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="install-and-configure-distribution-points-for-system-center-configuration-manager"></a>Instalowanie i konfigurowanie punktów dystrybucji programu System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Należy zainstalować System Center Configuration Manager punkty dystrybucji obsługujące zawartość (pliki i oprogramowanie), który można wdrożyć na urządzeniach i użytkowników. Można również utworzyć dystrybucji grupy punktów, które upraszcza sposób zarządzania punktami dystrybucji i sposób dystrybucji zawartości do punktów dystrybucji.  
+Instalowanie punktów dystrybucji programu Configuration Manager do obsługi plików zawartości, które są wdrażane na urządzeniach i dla użytkowników. Utwórz upraszcza sposób zarządzania punktami dystrybucji i sposób dystrybucji zawartości do punktów dystrybucji grupy punktów dystrybucji.  
 
  Gdy użytkownik *instalowania nowego punktu dystrybucji* (przy użyciu Kreatora instalacji) lub *zarządzania właściwościami istniejącego punktu dystrybucji* (edytując właściwości punktu dystrybucji), można skonfigurować większość ustawień punktu dystrybucji. Kilka ustawienia są dostępne tylko wtedy, gdy użytkownik w przypadku instalowania lub edytowania, ale nie obu:  
 
@@ -45,11 +46,11 @@ Należy zainstalować System Center Configuration Manager punkty dystrybucji obs
 
     -   **Konfiguruj harmonogramy transferów danych do punktów dystrybucji**  
 
-##  <a name="bkmk_install"></a>Instalowanie punktu dystrybucji  
-Należy wyznaczyć serwer systemu lokacji jako punktu dystrybucji przed zawartości mogą zostać udostępnione na komputerach klienckich. Należy również przypisać do co najmniej jednego punktu dystrybucji [grupy granic](/sccm/core/servers/deploy/configure/boundary-groups#distribution-points) przed lokalnymi komputery klienckie mogą używać tego punktu dystrybucji jako lokalizacji źródła zawartości. Możesz dodać roli lokacji punktu dystrybucji do nowego serwera systemu lokacji lub dodać rolę lokacji do istniejącego serwera systemu lokacji.
+##  <a name="bkmk_install"></a> Instalowanie punktu dystrybucji  
+Wyznaczanie serwera systemu lokacji punktu dystrybucji przed zawartości mogą zostać udostępnione na komputerach klienckich. Przypisać do co najmniej jeden punkt dystrybucji [grupy granic](/sccm/core/servers/deploy/configure/boundary-groups#distribution-points) przed lokalnymi komputery klienckie mogą używać tego punktu dystrybucji jako lokalizacji źródła zawartości. Dodaj rolę lokacji punktu dystrybucji do nowego serwera systemu lokacji, lub Dodaj rolę lokacji do istniejącego serwera systemu lokacji.
 
 
- Podczas instalowania nowego punktu dystrybucji, należy użyć Kreatora instalacji, który przeprowadzi Cię przez kolejne dostępne ustawienia. Przed rozpoczęciem należy rozważyć następujące kwestie:  
+ Podczas instalowania nowego punktu dystrybucji, należy użyć Kreatora instalacji, który przeprowadzi Cię przez kolejne dostępne ustawienia. Przed rozpoczęciem należy wziąć pod uwagę następujące wymagania wstępne:  
 
 -   Musi mieć następujące uprawnienia zabezpieczeń, aby utworzyć i skonfigurować punkt dystrybucji:  
 
@@ -61,7 +62,7 @@ Należy wyznaczyć serwer systemu lokacji jako punktu dystrybucji przed zawarto�
 
     -   **Zarządzaj certyfikatami wdrożenia systemu operacyjnego** dla **lokacji** obiektu  
 
--   Internet Information Services (IIS) musi być zainstalowany na serwerze, który będzie hostem punktu dystrybucji. Podczas instalowania roli systemu lokacji programu Configuration Manager można zainstalować i skonfigurować usługi IIS.  
+-   Zainstaluj usługi Internet Information Services (IIS) na serwerze hostujących punkt dystrybucji. Podczas instalowania roli systemu lokacji programu Configuration Manager można zainstalować i skonfigurować usługi IIS.  
 
 Aby zainstalować lub zmienić punkt dystrybucji, należy użyć poniższych procedur podstawowych. Aby uzyskać szczegółowe informacje na temat dostępnych opcji konfiguracji, zobacz [konfigurowania punktu dystrybucji](#bkmk_configs) tego tematu.  
 
@@ -97,8 +98,8 @@ Aby zainstalować lub zmienić punkt dystrybucji, należy użyć poniższych pro
 
 4.  Po wprowadzeniu zmian, które chcesz zapisać ustawienia i zamknij właściwości punktu dystrybucji.  
 
-##  <a name="bkmk_manage"></a>Zarządzanie grupami punktów dystrybucji  
- Grupy punktów dystrybucji umożliwiają logiczne grupowanie punktów dystrybucji w dystrybucji zawartości. Zarządzanie i monitorowanie zawartości z centralnej lokalizacji punktów dystrybucji, obejmującej wiele lokacji można używać tych grup. Należy pamiętać, że:
+##  <a name="bkmk_manage"></a> Zarządzanie grupami punktów dystrybucji  
+ Grupy punktów dystrybucji umożliwiają logiczne grupowanie punktów dystrybucji w dystrybucji zawartości. Zarządzanie i monitorowanie zawartości z centralnej lokalizacji punktów dystrybucji, obejmującej wiele lokacji można używać tych grup. Należy pamiętać, pkt:
 
 -   Do grupy punktów dystrybucji, można dodać jeden lub więcej punktów dystrybucji z dowolnej lokacji w hierarchii.  
 
@@ -161,7 +162,43 @@ Aby zainstalować lub zmienić punkt dystrybucji, należy użyć poniższych pro
 
 3.  W **dostępne grupy punktów dystrybucji**, wybierz grupy punktów dystrybucji, do których wybrane punkty dystrybucji są dodawane jako elementy członkowskie, a następnie wybierz **OK**.  
 
-##  <a name="bkmk_configs"></a>Skonfiguruj punkt dystrybucji  
+
+
+## <a name="reassign-a-distribution-point"></a>Ponowne przypisanie punktu dystrybucji
+<!-- 1306937 -->
+Wielu klientów mają duże infrastruktury programu Configuration Manager i ograniczają lokacjach głównych lub dodatkowych, aby uprościć ich środowiska. Nadal należy zachować punktów dystrybucji w oddziałach, aby obsługiwać zawartość dla klientów zarządzanych. Te punkty dystrybucji zawierają często wielu terabajtów lub więcej zawartości. Ta zawartość jest kosztowna pod względem przepustowości czasu i sieci do dystrybucji na tych serwerach zdalnych. 
+
+Począwszy od wersji 1802, ta funkcja umożliwia ponowne przypisanie punktu dystrybucji do innej lokacji głównej bez dystrybucję zawartości. Aktualizuje przypisania systemu lokacji podczas utrwalanie całej zawartości na serwerze. Jeśli do ponownego przypisania wielu punktów dystrybucji, należy najpierw wykonać tej akcji na pojedynczego punktu dystrybucji, a następnie kontynuować dodatkowych serwerów w czasie.
+
+> [!IMPORTANT]
+> Serwer docelowy może zawierać tylko rolę punktu dystrybucji. Jeśli serwer systemu lokacji obsługuje innej roli serwera programu Configuration Manager, takie jak punkt migracji stanu nie może ponownie przypisać punktu dystrybucji. Nie można ponownie przypisać punkt dystrybucji w chmurze. 
+
+Przed ponownego przypisywania punktu dystrybucji, należy dodać konto komputera serwera lokacji docelowej do lokalnej grupy administratorów na serwerze docelowym punktem dystrybucji. 
+
+Wykonaj następujące kroki, aby ponownie przypisać punkt dystrybucji:
+1. W konsoli programu Configuration Manager Połącz się z lokacją administracji centralnej. 
+2. Przejdź do **administracji** obszaru roboczego, a następnie wybierz **punktów dystrybucji** węzła.
+3. Kliknij prawym przyciskiem myszy docelowy punkt dystrybucji, a następnie wybierz **ponowne przypisanie punktu dystrybucji**. 
+4. Wybierz docelowy lokacji serwera i witryny kod, do którego chcesz ponownie przypisać ten punkt dystrybucji. 
+
+Monitor ponownego przypisania, podobnie jak podczas dodawania nowej roli. Najprostszą metodą jest Odśwież widok konsoli po kilku minutach. Kolumna kodu lokacji należy dodać do widoku. Ta wartość zostanie zmieniona, gdy serwer ponownie przypisuje programu Configuration Manager. Jeśli użytkownik próbuje wykonać inną akcję na serwerze docelowym, przed Odśwież widok konsoli, wystąpi błąd "nie można odnaleźć obiektu". Upewnij się, że proces zostanie zakończony i Odśwież widok konsoli przed rozpoczęciem inne akcje na serwerze.
+
+Po ponownego przypisywania punktu dystrybucji, Odśwież certyfikatu serwera. Nowy serwer lokacji musi ponownie zaszyfrować ten certyfikat, używając swojego klucza publicznego i zapisz go w bazie danych lokacji. Aby uzyskać więcej informacji, zobacz **Tworzenie certyfikatu z podpisem własnym lub zaimportuj certyfikat klienta infrastruktury kluczy publicznych (PKI) dla punktu dystrybucji** ustawienie [ogólne](#general) karty Właściwości punktu dystrybucji. 
+- Dla certyfikatów PKI nie musisz utworzyć nowy certyfikat. Importuj takie same. PFX, a następnie wprowadź hasło.
+- Dla certyfikatów z podpisem własnym Dostosuj Data i godzina, aby zaktualizować go i wygaśnięcia.
+Jeśli certyfikat nie będą odświeżane, punkt dystrybucji nadal obsługują zawartość, ale nie powieść następujące funkcje:
+    - Komunikaty o błędach weryfikacji zawartości (plik distmgr.log pokazuje, że nie można odszyfrować certyfikatu)
+    - Obsługę środowiska PXE dla klientów 
+
+### <a name="tips"></a>Porady
+- Tę akcję można wykonać w witrynie Administracja centralna. Takie rozwiązanie pomaga w przypadku replikacji do lokacji głównych.
+- Nie dystrybucję zawartości na serwerze docelowym, a następnie spróbuj się do ponownego przypisania. Dystrybucja zawartości, które zadania, które są w toku może zakończyć się niepowodzeniem podczas procesu ponownego przypisania, ale ponowną na normalny.
+- Jeśli serwer jest również klienta programu Configuration Manager, upewnij się, że również ponowne przypisanie klienta do nowej lokacji głównej. Ten krok ma krytyczne znaczenie dla punktów dystrybucji ściągania, które używają składników klienta do pobierania zawartości.
+- Ten proces powoduje usunięcie punktu dystrybucji do starej lokacji domyślnej grupy granic. Należy ręcznie dodać do nowej lokacji domyślnej grupy granic, jeśli to konieczne. Wszystkie inne przypisania grupy granic pozostają takie same.
+
+
+
+##  <a name="bkmk_configs"></a> Skonfiguruj punkt dystrybucji  
  Poszczególne punkty dystrybucji obsługują szereg różnych konfiguracji. Jednak nie wszystkie typy punktów dystrybucji obsługują wszystkie konfiguracje. Na przykład punkty dystrybucji w chmurze nie obsługują wdrożeń zawartości z obsługą środowiska PXE lub multiemisji. Informacje o ograniczeniach określonych można znaleźć w następujących tematach:  
 
 -   [Użyj punktu dystrybucji w chmurze w programie System Center Configuration Manager](../../../../core/plan-design/hierarchy/use-a-cloud-based-distribution-point.md)  
@@ -182,7 +219,7 @@ W poniższych sekcjach opisano konfiguracje, które można wybrać podczas insta
 
 -   **Skonfiguruj sposób komunikacji urządzeń klienckich z punktem dystrybucji**: Brak zalety i wady przy użyciu protokołu HTTP i HTTPS. Aby uzyskać więcej informacji, zobacz "Najlepsze rozwiązania w zakresie zabezpieczeń dotyczące zarządzania zawartością" w [podstawowe pojęcia związane z zarządzaniem zawartością w programie System Center Configuration Manager](../../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md).  
 
--   **Zezwalaj klientom na anonimowe połączenia**: To ustawienie określa, czy punkt dystrybucji będzie zezwalał na anonimowe połączenia od klientów programu Configuration Manager do biblioteki zawartości.  
+-   **Zezwalaj klientom na anonimowe połączenia**: To ustawienie określa, czy punkt dystrybucji będzie zezwalał na połączenia anonimowe z klientów programu Configuration Manager do biblioteki zawartości.  
 
     > [!IMPORTANT]  
     >  Naprawa aplikacji Instalatora systemu Windows może zakończyć się niepowodzeniem na komputerze klienckim, gdy to ustawienie nie jest używana.  
@@ -207,7 +244,7 @@ W poniższych sekcjach opisano konfiguracje, które można wybrać podczas insta
 
     -   Zamierzone użycie musi obejmować uwierzytelnianie klienta.  
 
-    -   Klucz prywatny musi być włączony do wyeksportowania.  
+    -   Włącz klucz prywatny do wyeksportowania.  
 
     > [!TIP]  
     >  Nie istnieją określone wymagania dla podmiotu certyfikatu lub alternatywnej nazwy podmiotu (SAN), a następnie można użyć tego samego certyfikatu dla wielu punktów dystrybucji.  
@@ -248,13 +285,18 @@ Dla każdego punktu dystrybucji ściągania, które można skonfigurować należ
 -   Użyj przycisków strzałek, aby dostosować kolejność, w jakiej ściągający punkt dystrybucji kontaktów punkty dystrybucji źródła, gdy punkt dystrybucji ściągania podejmie próbę transferu zawartości. Punkty dystrybucji o najniższej wartości są najpierw kontakt.  
 
 ### <a name="pxe"></a>Opcja PXE  
-Określ, czy włączyć obsługę środowiska PXE w punkcie dystrybucji. Po włączeniu obsługi środowiska PXE programu Configuration Manager instaluje usługi wdrażania systemu Windows na serwerze, jeśli jest to wymagane. Usługi wdrażania systemu Windows to usługa, która wykonuje rozruch w środowisku PXE w celu instalacji systemów operacyjnych. Po ukończeniu czynności kreatora tworzenia punktu dystrybucji programu Configuration Manager zainstaluje dostawcę w ramach usług wdrażania systemu Windows używającego funkcji rozruchu środowiska PXE.  
+Określ, czy włączyć obsługę środowiska PXE w punkcie dystrybucji. Po włączeniu obsługi środowiska PXE programu Configuration Manager instaluje usługi wdrażania systemu Windows (WDS) na serwerze, jeśli to konieczne. Usługi wdrażania systemu Windows to usługa, która wykonuje rozruch w środowisku PXE w celu instalacji systemów operacyjnych. Po ukończeniu czynności kreatora tworzenia punktu dystrybucji programu Configuration Manager zainstaluje dostawcę w ramach wdrażania systemu Windows używającego funkcji rozruchu środowiska PXE. 
 
 Po wybraniu **Włącz obsługę środowiska PXE dla klientów**, skonfiguruj następujące ustawienia:  
 
+ > [!Note]  
+ > Kliknij przycisk **tak** w **Sprawdź wymagane porty dla środowiska PXE** okno dialogowe, aby upewnić się, że chcesz włączyć obsługę środowiska PXE. Menedżer konfiguracji automatycznie konfiguruje domyślnych portów w Zaporze systemu Windows. Jeśli jednak używasz innej zapory, musisz ręcznie skonfigurować porty.  
+ >   
+ > Jeśli usługi WDS i DHCP są zainstalowane na tym samym serwerze, należy skonfigurować usługi WDS do nasłuchiwania na innym porcie. Domyślnie usługa DHCP nasłuchuje na tym samym porcie. Aby uzyskać więcej informacji, zobacz [Zagadnienia dotyczące sytuacji, gdy na tym samym serwerze istnieją Usługi wdrażania systemu Windows i protokół DHCP](/sccm/osd/plan-design/infrastructure-requirements-for-operating-system-deployment#BKMK_WDSandDHCP).  
+
 -   **Zezwól temu punktowi dystrybucji na odpowiadanie na przychodzące żądania środowiska PXE**: Określ, czy włączyć usługi wdrażania systemu Windows, tak aby odpowiadały na żądania usługi PXE. Użyj tego pola, aby włączać i wyłączać usługę bez usuwania funkcji PXE z punktu dystrybucji.  
 
--   **Włącz obsługę nieznanych komputerów**: Określ, czy włączyć obsługę komputerów, które nie zarządza programu Configuration Manager.  
+-   **Włącz obsługę nieznanych komputerów**: Określ, czy włączyć obsługę komputerów, które nie zarządza programu Configuration Manager. 
 
 -   **Wymagaj hasła, kiedy komputery używają środowiska PXE**: Aby zapewnić dodatkową ochronę wdrożeń PXE, należy określić silne hasło.  
 
@@ -279,9 +321,9 @@ Po wybraniu **Włącz obsługę środowiska PXE dla klientów**, skonfiguruj nas
 > 2. Interakcje z infrastrukturą programu Configuration Manager, aby określić, jakie akcje wdrażania należy podjąć.  
 
 ### <a name="multicast"></a>Multiemisji  
-Określ, czy włączyć obsługę multiemisji w punkcie dystrybucji. Po włączeniu obsługi multiemisji, Configuration Manager instaluje usługi wdrażania systemu Windows na serwerze, jeśli jest to wymagane.  
+Określ, czy włączyć obsługę multiemisji w punkcie dystrybucji. Po włączeniu obsługi multiemisji, Configuration Manager instaluje usługi wdrażania systemu Windows (WDS) na serwerze, jeśli to konieczne.  
 
-Sprawdzenie **Włącz multiemisję w celu jednoczesnego wysyłania danych do wielu klientów** skonfiguruj następujące ustawienia:  
+Gdy użytkownik **Włącz multiemisję w celu jednoczesnego wysyłania danych do wielu klientów**, skonfiguruj następujące ustawienia:  
 
 -   **Konto połączenia multiemisji**: Określ konto do użycia podczas konfigurowania połączenia z bazą danych programu Configuration Manager do multiemisji.  
 
@@ -307,6 +349,8 @@ Sprawdzenie **Włącz multiemisję w celu jednoczesnego wysyłania danych do wie
 
 > [!NOTE]  
 >  Wdrożenia multiemisyjne oszczędzenia przepustowości sieci przez wysyłają dane jednocześnie do wielu klientów programu Configuration Manager, zamiast wysyłać kopię danych do każdego klienta przez oddzielne połączenie. Aby uzyskać więcej informacji o używaniu multiemisji do wdrażania systemu operacyjnego, zobacz [użyć multiemisji do wdrażania systemu Windows za pośrednictwem sieci w programie System Center Configuration Manager](../../../../osd/deploy-use/use-multicast-to-deploy-windows-over-the-network.md).  
+
+
 
 ### <a name="group-relationships"></a>Relacje grupy  
 
@@ -343,11 +387,7 @@ Aby wyświetlić wyniki procesu weryfikacji zawartości w **monitorowanie** obsz
 ### <a name="boundary-group"></a>Grupy granic  
 Zarządzanie grupami granic, do których jest przypisany ten punkt dystrybucji. Planowanie dodać punkt dystrybucji do co najmniej jednej grupy granic. Podczas wdrażania zawartości klienci muszą być w grupie granic skojarzonej z punktem dystrybucji na użycie tego punktu dystrybucji jako lokalizacji źródłowej zawartości.
 
-Dodatkowo:
-
-- Przed wersją 1610, można sprawdzić **Zezwalaj klientom na używanie tego systemu lokacji jako rezerwowej lokalizacji źródła zawartości** pole, aby umożliwić klientom spoza grup granic na rezerwowe używanie punktu dystrybucji jako lokalizacji źródłowej zawartości, jeśli preferowane punkty dystrybucji nie są dostępne. Aby uzyskać więcej informacji o grupach granic, zobacz [grup granic dla wersji 1511, 1602 i 1606](/sccm/core/servers/deploy/configure/boundary-groups-for-1511-1602-and-1606). Do preferowanych punktów dystrybucji, zobacz [podstawowe pojęcia związane z zarządzaniem zawartością w programie System Center Configuration Manager](../../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md).
-
-- Z wersji 1610 lub nowszej, skonfiguruj grupy granic *relacje* definiującą po i do grupy granic, które klient może przełączyć się na znajdowanie zawartości. Aby uzyskać więcej informacji, zobacz [grup granic](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
+Skonfiguruj grupy granic *relacje* definiującą po i do grupy granic, które klient może przełączyć się na znajdowanie zawartości. Aby uzyskać więcej informacji, zobacz [grup granic](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups#boundary-groups).
 
 
 ### <a name="schedule"></a>Harmonogram  

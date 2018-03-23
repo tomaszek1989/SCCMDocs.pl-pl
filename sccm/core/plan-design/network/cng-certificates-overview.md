@@ -1,24 +1,25 @@
 ---
-title: "Omówienie certyfikatów CNG"
+title: Omówienie certyfikatów CNG
 titleSuffix: Configuration Manager
-description: "Omówienie CNG certyfikatów w programie Configuration Manager"
+description: Więcej informacji na temat obsługi kryptografii nowej generacji (CNG) certyfikatów dla serwerów i klientów programu Configuration Manager.
 ms.custom: na
-ms.date: 11/20/2017
+ms.date: 03/22/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
-ms.assetid: 
-author: vhorne
-ms.author: victorh
-manager: angrobe
-ms.openlocfilehash: f5f5138270d4f14b76b2c41e41ec034a0c12a932
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.assetid: ''
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 271cc0e2753f1a65740187a4faf6875c1a018014
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="cng-certificates-overview"></a>Omówienie certyfikatów CNG
 <!-- 1356191 --> 
@@ -28,28 +29,38 @@ Menedżer konfiguracji ma ograniczoną obsługę szyfrowania: Certyfikaty nastę
 ## <a name="supported-scenarios"></a>Scenariusze obsługiwane
 Można użyć [Cryptography API: Nowej generacji (CNG)](https://msdn.microsoft.com/library/windows/desktop/bb204775.aspx) certyfikatu szablonów w następujących scenariuszach:
 
-- Rejestracja klienta i komunikacji z punktem zarządzania HTTPS.   
-- Oprogramowanie dystrybucji i wdrażania aplikacji z punktem dystrybucji HTTPS.   
+- Rejestracja klienta i komunikacji z punktem zarządzania HTTPS   
+- Oprogramowanie dystrybucji i wdrażania aplikacji z punktem dystrybucji HTTPS   
 - Wdrożenie systemu operacyjnego  
-- Klient SDK (z najnowszej aktualizacji) oraz Proxy niezależnego dostawcy oprogramowania do obsługi komunikatów.   
-- Konfiguracja zarządzania bramy chmury.  
+- Wysyłania wiadomości SDK (z najnowszej aktualizacji) oraz Proxy niezależnego dostawcy oprogramowania przez klienta   
+- Konfiguracja zarządzania bramy chmury  
+
+Począwszy od wersji 1802, należy użyć certyfikatów CNG dla następujących ról serwera obsługującego protokół HTTPS: <!-- 1357314 -->   
+- Punkt zarządzania
+- Punkt dystrybucji
+- Punkt aktualizacji oprogramowania
+- punkt migracji stanu     
 
 > [!NOTE]
 > CNG jest zgodne z interfejsu API kryptografii (CAPI). Certyfikaty CAPI w dalszym ciągu obsługiwana nawet wtedy, gdy obsługa CNG jest włączona na komputerze klienckim.
 
 ## <a name="unsupported-scenarios"></a>Scenariusze nieobsługiwane
 
-Obecnie nie są obsługiwane następujące scenariusze:
+Następujące scenariusze nie są obecnie obsługiwane:
 
-- Usługa sieci Web katalogu aplikacji, witryny sieci Web katalogu aplikacji, punkt rejestracyjny i punktu proxy rejestracji ról nie działa podczas zainstalowany w trybie HTTPS przy użyciu certyfikatu CNG powiązany z witryny sieci web w Internet Information Services (IIS). Program Software Center nie jest wyświetlany w aplikacji i pakietów w zależności od dostępności, które zostały wdrożone dla użytkownika lub kolekcje grupy użytkowników.
+- Następujące role serwera nie są operacyjne zainstalowany w trybie HTTPS przy użyciu certyfikatu CNG powiązany z witryny sieci web w Internet Information Services (IIS): 
+    - Usługa sieci web wykazu aplikacji
+    - Witryny sieci Web katalogu aplikacji
+    - Punkt rejestracji  
+    - Punkt proxy rejestracji  
 
-- Punkt migracji stanu nie działa podczas instalacji w trybie HTTPS przy użyciu certyfikatu CNG powiązany z witryny sieci web w usługach IIS.
+- Program Software Center nie jest wyświetlany w aplikacji i pakietów w zależności od dostępności, które zostały wdrożone dla użytkownika lub kolekcje grupy użytkowników.
 
 - Aby utworzyć punkt dystrybucji w chmurze przy użyciu certyfikatów CNG.
 
-- Składnika NDES Policy Module komunikacja punkt rejestracji certyfikatu (CRP) kończy się niepowodzeniem, jeśli składnika NDES Policy Module używa certyfikatów CNG certyfikatu uwierzytelniania klienta.
+- Jeśli składnika NDES policy module używa certyfikatów CNG do uwierzytelniania klientów, komunikacji z punktu rejestracji certyfikatu zakończy się niepowodzeniem.
 
-- Tworzenia nośnika sekwencji zadań nie powiedzie się utworzyć nośnik rozruchowy, jeśli określono certyfikatów CNG.
+- Jeśli określisz certyfikatów CNG, podczas tworzenia nośnika sekwencji zadań, Kreator nie powiodło się tworzenie nośnika rozruchowego.
 
 ## <a name="to-use-cng-certificates"></a>Aby korzystać z certyfikatów CNG
 
