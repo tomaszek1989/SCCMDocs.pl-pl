@@ -46,6 +46,7 @@
 
 ## [Zarządzanie systemem Windows jako usługą](deploy-use/manage-windows-as-a-service.md)
 ## [Monitorowanie wdrożeń systemów operacyjnych](deploy-use/monitor-operating-system-deployments.md)
+## [Tworzenie wdrożenia fazowego dla sekwencji zadań](deploy-use/create-phased-deployment-for-task-sequence.md)
 
 ## [Zarządzanie sekwencjami zadań do automatyzacji zadań](deploy-use/manage-task-sequences-to-automate-tasks.md)
 ### [Tworzenie sekwencji zadań instalacji systemu operacyjnego](deploy-use/create-a-task-sequence-to-install-an-operating-system.md)
