@@ -1,26 +1,27 @@
 ---
-title: "Konfigurowanie infrastruktury certyfikatów"
+title: Konfigurowanie infrastruktury certyfikatów
 titleSuffix: Configuration Manager
-description: "Informacje o sposobie konfigurowania rejestracji certyfikatów w programie System Center Configuration Manager."
+description: Informacje o sposobie konfigurowania rejestracji certyfikatów w programie System Center Configuration Manager.
 ms.custom: na
 ms.date: 07/25/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 29ae59b7-2695-4a0f-a9ff-4f29222f28b3
-caps.latest.revision: "7"
-caps.handback.revision: "0"
+caps.latest.revision: ''
+caps.handback.revision: ''
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
 ms.openlocfilehash: 9ef62bbf6269a6090f2345b10c24cc4df16c1e3b
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="configure-certificate-infrastructure"></a>Konfigurowanie infrastruktury certyfikatów
 
@@ -96,7 +97,7 @@ Wykonaj te kroki, aby skonfigurować infrastrukturę dla profilu SCEP, lub certy
 
      Więcej informacji znajduje się w sekcji [Certificate Services Tools and Settings (Narzędzia i ustawienia usług certyfikatów)](http://go.microsoft.com/fwlink/p/?LinkId=309015) w bibliotece technologii PKI w witrynie TechNet.  
 
-8.  Zweryfikuj, że usługa rejestracji urządzeń sieciowych działa, używając następującego linku przykładowego: **https://server.contoso.com/certsrv/mscep/mscep.dll**. Powinna wyświetlić się wbudowana strona sieci Web usługi rejestracji urządzeń sieciowych. Na stronie sieci Web wyjaśniono, na czym polega ta usługa i objaśniono, że urządzenia sieciowe używają tego adresu URL do przekazywania żądań certyfikatów.  
+8.  Sprawdź, czy działa usługa rejestracji urządzeń sieciowych, przy użyciu następującego łącza, na przykład: **https://server.contoso.com/certsrv/mscep/mscep.dll**. Powinna wyświetlić się wbudowana strona sieci Web usługi rejestracji urządzeń sieciowych. Na stronie sieci Web wyjaśniono, na czym polega ta usługa i objaśniono, że urządzenia sieciowe używają tego adresu URL do przekazywania żądań certyfikatów.  
 
  Teraz, po skonfigurowaniu usługi rejestracji urządzeń sieciowych wraz z zależnościami, wszystko jest gotowe do instalowania i konfigurowania punktu rejestracji certyfikatu.
 
@@ -130,7 +131,7 @@ Należy zainstalować i skonfigurować co najmniej jeden punkt rejestracji certy
     -   W przypadku wybrania **żądań certyfikatów SCEP procesu**, następnie skonfiguruj następujące opcje:
         -   **Nazwa witryny sieci Web**, **numer portu HTTPS**, i **Nazwa aplikacji wirtualnej** dla punktu rejestracji certyfikatu. Te pola są wypełniane automatycznie z wartościami domyślnymi. 
         -   **Adres URL usługi rejestracji urządzeń sieciowych i urzędu certyfikacji certyfikatu głównego** — kliknij przycisk **Dodaj**, a następnie w **Dodawanie adresu URL i certyfikatu głównego urzędu certyfikacji** okna dialogowego należy określić następujące:
-            - **Adres URL dla usługi rejestracji urządzeń sieciowych**: Podaj adres URL w następującym formacie: https://*< nazwa_FQDN_serwera >*/certsrv/mscep/mscep.dll. Jeśli na przykład nazwa FQDN serwera z uruchomioną usługą rejestracji urządzeń sieciowych to server1.contoso.com, wpisz **https://server1.contoso.com/certsrv/mscep/mscep.dll**.
+            - **Adres URL dla usługi rejestracji urządzeń sieciowych**: Podaj adres URL w następującym formacie: https://*< nazwa_FQDN_serwera >*/certsrv/mscep/mscep.dll. Na przykład, jeśli nazwa FQDN serwera, na którym działa usługa rejestracji urządzeń sieciowych to server1.contoso.com, wpisz **https://server1.contoso.com/certsrv/mscep/mscep.dll**.
             - **Certyfikat głównego urzędu certyfikacji**: Wyszukaj i wybierz plik certyfikatu (.cer) uprzednio utworzony i zapisany w **krok 1: Instalowanie i konfigurowanie usługi rejestracji urządzeń sieciowych oraz zależności**. Ten certyfikat głównego urzędu certyfikacji umożliwia punkt rejestracji certyfikatu do sprawdzania poprawności klienta certyfikatu uwierzytelniania, który będzie używany przez moduł zasad programu System Center Configuration Manager.  
 
     - W przypadku wybrania **żądań certyfikatów PFX procesu**, skonfiguruj informacje dotyczące połączenia i poświadczenia dla wybranego certyfikatu urzędu certyfikacji.
@@ -190,7 +191,7 @@ Należy zainstalować i skonfigurować moduł zasad programu System Center Confi
 
 4.  Na stronie **Folder instalacji** zaakceptuj domyślny folder instalacji dla modułu zasad lub określ folder alternatywny, a następnie kliknij przycisk **Dalej**.  
 
-5.  Na stronie **Punkt rejestracji certyfikatu** określ adres URL punktu rejestracji certyfikatu, używając nazwy FQDN serwera systemu lokacji i nazwy aplikacji wirtualnej określonej we właściwościach punktu rejestracji certyfikatu. Domyślna nazwa aplikacji wirtualnej to CMCertificateRegistration. Jeśli na przykład serwer systemu lokacji ma nazwę FQDN server1.contoso.com i została użyta domyślna nazwa aplikacji wirtualnej, podaj wartość **https://server1.contoso.com/CMCertificateRegistration**.  
+5.  Na stronie **Punkt rejestracji certyfikatu** określ adres URL punktu rejestracji certyfikatu, używając nazwy FQDN serwera systemu lokacji i nazwy aplikacji wirtualnej określonej we właściwościach punktu rejestracji certyfikatu. Domyślna nazwa aplikacji wirtualnej to CMCertificateRegistration. Na przykład, jeśli serwer systemu lokacji ma nazwę FQDN server1.contoso.com i została użyta domyślna nazwa aplikacji wirtualnej, określ **https://server1.contoso.com/CMCertificateRegistration**.  
 
 6.  Zaakceptuj domyślny numer portu **443** lub określ alternatywny numer portu, którego używa punkt rejestracji certyfikatu, a następnie kliknij przycisk **Dalej**.  
 

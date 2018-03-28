@@ -1,20 +1,21 @@
 ---
-title: "Instalacja na użytkownika"
+title: Instalacja na użytkownika
 titleSuffix: Microsoft Deployment Toolkit
-description: "Przewodnik dla deweloperów dla użytkownika na instalację programu Microsoft Deployment Toolkit 2013. "
+description: 'Przewodnik dla deweloperów dla użytkownika na instalację programu Microsoft Deployment Toolkit 2013. '
 ms.date: 09/09/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-osd
+ms.technology:
+- configmgr-osd
 ms.topic: article
 ms.assetid: a2b3a3a0-7b81-4191-b1f9-c618e59347c3
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
 ms.openlocfilehash: 434178f100c32a4188ecf5283066f9332035f761
-ms.sourcegitcommit: 645cd5a324bdd299906efa27eaca5885eafc9e9c
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/16/2018
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="user-driven-installation---developers-guide"></a>Instalacja — przewodnik dla deweloperów na użytkownika
 Instalacja zmiennych użytkownika (UDI) ułatwia wdrożenie Windows® klienckie systemy operacyjne, takie jak Windows 8.1, na komputerach w Microsoft® System Center 2012 R2 Configuration Manager przy użyciu funkcji systemu operacyjnego (OSD) wdrożenia. UDI wchodzi w skład programu Microsoft Deployment Toolkit (MDT).  
@@ -76,17 +77,17 @@ Rysunek 1. Relacja między UDI kreatora i projektanta Kreatora instalacji UDI
 
 3.  Sprawdź, czy środowisko projektowe UDI jest skonfigurowane poprawnie, zgodnie z opisem w [Sprawdź środowisko projektowe UDI](#VerifyUDIDeploymentEnvironment).  
 
-####  <a name="PrepareUDIDevelopmentEnvironmentPrerequisites"></a>Przygotuj środowisko rozwoju UDI wstępnie wymagane składniki  
+####  <a name="PrepareUDIDevelopmentEnvironmentPrerequisites"></a> Przygotuj środowisko rozwoju UDI wstępnie wymagane składniki  
  Aby przygotować programowanie UDI wymagania wstępne dotyczące środowiska, wykonaj następujące czynności:  
 
 1.  Przygotowanie warunek wstępny sprzętu środowisko rozwoju UDI zgodnie z opisem w [przygotowanie wymagania wstępne dotyczące UDI programowanie środowiska sprzętu](#PrepareUDIDevelopmentEnvironmentHardwarePrerequisites).  
 
 2.  Przygotuj środowisko projektowe UDI warunek wstępny oprogramowania zgodnie z opisem w [przygotować wstępnie wymagane oprogramowanie środowisko rozwoju UDI](#PrepareUDIDevelopmentEnvironmentSoftwarePrerequisites).  
 
-#####  <a name="PrepareUDIDevelopmentEnvironmentHardwarePrerequisites"></a>Przygotowanie UDI programowanie sprzętu wymagania wstępne dotyczące środowiska  
+#####  <a name="PrepareUDIDevelopmentEnvironmentHardwarePrerequisites"></a> Przygotowanie UDI programowanie sprzętu wymagania wstępne dotyczące środowiska  
  Wymagania wstępne dotyczące UDI programowanie środowiska sprzętu są te same wymagania sprzętowe dla wersji programu Microsoft Visual Studio 2010 musisz za pomocą. Aby uzyskać więcej informacji na temat tych wymagań, zobacz wymagania systemowe dla poszczególnych wersji na [programu Visual Studio 2010 Products](http://www.microsoft.com/visualstudio/products/2010-editions).  
 
-#####  <a name="PrepareUDIDevelopmentEnvironmentSoftwarePrerequisites"></a>Przygotowanie UDI rozwoju oprogramowania wymagania wstępne dotyczące środowiska  
+#####  <a name="PrepareUDIDevelopmentEnvironmentSoftwarePrerequisites"></a> Przygotowanie UDI rozwoju oprogramowania wymagania wstępne dotyczące środowiska  
  Środowisko projektowe UDI ma następujące wstępnie wymagane oprogramowanie:  
 
 -   Oknami systemu operacyjnego obsługiwane przez program Visual Studio 2010 (Windows 7 lub Windows Server® 2008 R2 jest zalecane.)  
@@ -107,7 +108,7 @@ Rysunek 1. Relacja między UDI kreatora i projektanta Kreatora instalacji UDI
     > [!NOTE]
     >  Przykładowy kod źródłowy dla edytory strony kreatora projektanta Kreatora instalacji UDI jest napisany w języku C#. Instalowanie języka C#, jeśli chcesz użyć przykładowego kodu źródłowego.  
 
-####  <a name="ConfigureUDIDevelopmentEnvironment"></a>Konfigurowanie środowiska programowania UDI  
+####  <a name="ConfigureUDIDevelopmentEnvironment"></a> Konfigurowanie środowiska programowania UDI  
  Po UDI następnie są spełnione wymagania wstępne dotyczące środowiska programowania, wykonaj następujące kroki, aby skonfigurować środowisko projektowe UDI:  
 
 1.  Zainstaluj program Visual Studio 2010.  
@@ -140,7 +141,7 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 
      **Rysunek 2. Struktura folderów dla rozwoju UDI**  
 
-####  <a name="VerifyUDIDeploymentEnvironment"></a>Sprawdź UDI Środowisko deweloperskie  
+####  <a name="VerifyUDIDeploymentEnvironment"></a> Sprawdź UDI Środowisko deweloperskie  
  Po skonfigurowaniu środowiska projektowego UDI, sprawdzić poprawność konfiguracji środowiska programowania UDI przez zapewnienie, że przykładowych projektach prawidłowej kompilacji programu Visual Studio 2010.  
 
  Sprawdzić poprawność konfiguracji środowiska programowania UDI przez określenie czy:  
@@ -149,7 +150,7 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 
 -   Poprawnie zgodnie z opisem w temacie Tworzenie projektów SampleEditor [upewnij się, że poprawnie tworzenie projektów SampleEditor](#VerifySampleEditorProjectBuildsCorrectly)  
 
-#####  <a name="VerifySamplePageProjectBuildsCorrectly"></a>Sprawdź poprawnie tworzenie projektów SamplePage  
+#####  <a name="VerifySamplePageProjectBuildsCorrectly"></a> Sprawdź poprawnie tworzenie projektów SamplePage  
  Projekt SamplePage przedstawiono przykład sposobu tworzenia strony kreatora niestandardowego kreatora UDI. Aby uzyskać więcej informacji o projekcie SamplePage, zobacz [Przejrzyj rozwiązania Visual Studio SamplePage](#ReviewSamplePageVisualStudioSolution).  
 
  **Aby sprawdzić poprawnie tworzenie projektów SamplePage**  
@@ -208,9 +209,9 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 
 17. W **Anuluj kreatora** okno dialogowe, kliknij przycisk **tak**.  
 
-18. Zamknij program Visual Studio 2010.  
+18. Close Visual Studio 2010.  
 
-#####  <a name="VerifySampleEditorProjectBuildsCorrectly"></a>Sprawdź poprawnie tworzenie projektów SampleEditor  
+#####  <a name="VerifySampleEditorProjectBuildsCorrectly"></a> Sprawdź poprawnie tworzenie projektów SampleEditor  
  Projekt SampleEditor przedstawiono przykład sposobu tworzenia edytorze strony kreatora niestandardowego dla projektanta Kreatora instalacji UDI. Aby uzyskać więcej informacji o projekcie SampleEditor, zobacz [Przejrzyj rozwiązania Visual Studio SamplePage](#ReviewSamplePageVisualStudioSolution).  
 
  **Aby sprawdzić poprawnie tworzenie projektów SampleEditor**  
@@ -295,7 +296,7 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 
 20. Zamknij projektanta Kreatora instalacji UDI.  
 
-21. Zamknij program Visual Studio 2010.  
+21. Close Visual Studio 2010.  
 
 ## <a name="reviewing-the-udi-sdk-examples"></a>Przegląd przykładów UDI SDK  
  Przed rozpoczęciem tworzenia, przejrzyj przykłady podane w zestawie SDK UDI. Użyj informacji w tym przewodniku i kod źródłowy w przykładach ułatwiające tworzenie własnych stron kreatora niestandardowego UDI i strona kreatora edytory.  
@@ -308,7 +309,7 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 
 -   Niestandardowe UDI Kreatora strony Edytor przykład zgodnie z opisem w [Przejrzyj SampleEditor rozwiązania Visual Studio](#ReviewSampleEditorVisualStudioSolution)  
 
-###  <a name="ReviewContentsofSDKFolder"></a>Przejrzyj zawartość folderu zestawu SDK  
+###  <a name="ReviewContentsofSDKFolder"></a> Przejrzyj zawartość folderu zestawu SDK  
  Podczas konfigurowania środowiska deweloperskiego UDI folderu zestawu SDK jest skopiowany z folderu zainstalowano zestaw MDT do innego folderu, który został utworzony. Tabela 1 zawiera foldery natychmiast poniżej folderu zestawu SDK i zawiera krótki opis każdego z nich.  
 
 ### <a name="table-1-folders-in-the-udi-sdk"></a>Tabela 1. Foldery w zestawie SDK UDI  
@@ -320,14 +321,14 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 |SampleEditor|Projektu programu Visual Studio umożliwiające tworzenie niestandardowego edytora używane do edycji strony SamplePage w projektanta Kreatora instalacji UDI, który jest napisany w języku C#|  
 |SamplePage|Projektu programu Visual Studio umożliwiające tworzenie niestandardowej strony kreatora UDI, który jest zapisany w programie Visual C++|  
 
-###  <a name="ReviewSamplePageVisualStudioSolution"></a>Przejrzyj rozwiązania SamplePage Visual Studio  
+###  <a name="ReviewSamplePageVisualStudioSolution"></a> Przejrzyj rozwiązania SamplePage Visual Studio  
  Przed rozpoczęciem tworzenia kreatora niestandardowych stron i strona kreatora edytory, wykonaj następujące zadania, aby przygotować środowisko projektowe UDI:  
 
 -   Przejrzyj etapy cyklu życia strony kreatora UDI zgodnie z opisem w [Przegląd cyklu życia strony kreatora](#ReviewWizardPageLifeCycle).  
 
 -   Przejrzyj rozwiązania Visual Studio, na przykład SamplePage w zestawie SDK UDI zgodnie z opisem w [Przejrzyj przykład SamplePage](#ReviewSamplePageExample).  
 
-####  <a name="ReviewWizardPageLifeCycle"></a>Przegląd cyklu życia strony kreatora  
+####  <a name="ReviewWizardPageLifeCycle"></a> Przegląd cyklu życia strony kreatora  
  Strona kreatora UDI ma metody, które odpowiadają każdego etapu (lub fazy) cyklu życia strony. W ramach tworzenia strony kreatora niestandardowego należy zastąpić te metody z kodu. Tabela 2 zawiera listę metod, należy zastąpić i zawiera krótki opis poszczególnych metod, w tym, kiedy należy użyć metody w cyklu życia strony kreatora.  
 
 ### <a name="table-2-methods-in-a-wizard-page-life-cycle"></a>Tabela 2. Metody w kreatorze strony cykl życia  
@@ -341,7 +342,7 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 |**OnNextClicked**|Ta metoda jest wywoływana po kliknięciu **dalej** w kreatorze.<br /><br /> W przypadku tej metody należy napisać kod, który wykonuje wszystkie akcje niezbędne przed przejściem do następnej strony kreatora — na przykład, wykonywanie weryfikacji, który może zająć dużo czasu. W przypadku niepowodzenia weryfikacji, możesz anulować **dalej** żądania i wyświetlić wiadomość.|  
 |**OnWindowHidden**|Ta metoda jest wywoływana zawsze, gdy strona jest ukryty, gdy jest wyświetlana strona kreatora poprzedniego lub następnego.<br /><br /> Tę metodę należy napisać kod, który wykonuje wszystkie akcje przed strony jest ukryty przed innej strony jest pokazywany. Zwykle nie należy przesłonić tę metodę.|  
 
-####  <a name="ReviewSamplePageExample"></a>Przejrzyj przykład SamplePage  
+####  <a name="ReviewSamplePageExample"></a> Przejrzyj przykład SamplePage  
  Przejrzyj przykład SamplePage przy użyciu poniższej listy reprezentuje sekwencję zdarzeń cyklu życia strony kreatora przykładu SamplePage:  
 
 1.  Kreator UDI, OSDSetupWizard.exe, odczytuje informacje o konfiguracji z pliku konfiguracji kreatora UDI w przykładzie (pliku Config.xml) zgodnie z opisem w [krok 1: Kreator UDI (OSDSetupWizard.exe) odczytuje plik Config.xml](#UDIWizardReadstheConfigFile).  
@@ -352,7 +353,7 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 
 4.  Po stronie kreatora niestandardowego zebrał informacje, należy wykonać wszystkie zadania, które są niezbędne przed kliknięciem przycisku **dalej** do przejścia do następnej kreatora zgodnie z opisem w [krok 4: Kliknięciu przycisku Dalej na stronie kreatora niestandardowego](#TheNextButtonisClickedinCustomWizardPage).  
 
-#####  <a name="UDIWizardReadstheConfigFile"></a>Krok 1. Kreator UDI (OSDSetupWizard.exe) odczytuje plik Config.xml  
+#####  <a name="UDIWizardReadstheConfigFile"></a> Krok 1. Kreator UDI (OSDSetupWizard.exe) odczytuje plik Config.xml  
  Po uruchomieniu kreatora UDI (OSDSetupWizard.exe), domyślnie jest odczytywana plik konfiguracyjny UDI kreatora, który jest plikiem UDIWizard_Config.xml — plik konfiguracji podstawowej dla Kreatora UDI.  
 
 > [!NOTE]
@@ -384,7 +385,7 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 
 -   Nazwę strony kreatora niestandardowego zamiast z **LocationPage**.  
 
-#####  <a name="UDIWizardLoadstheDLLforCustomWizardPage"></a>Krok 2. Kreator UDI ładuje bibliotekę DLL na stronie kreatora niestandardowego  
+#####  <a name="UDIWizardLoadstheDLLforCustomWizardPage"></a> Krok 2. Kreator UDI ładuje bibliotekę DLL na stronie kreatora niestandardowego  
  Podczas ładowania biblioteki DLL Kreatora UDI wywołuje **RegisterFactories** funkcji, która musi zostać wdrożone w pliku dll. W tym przykładzie tej funkcji jest zaimplementowana w pliku dllmain.ccp. Każdej stronie Kreatora tworzenia musi implementować **RegisterFactories** funkcji.  
 
  **RegisterFactories** funkcja jest używana do zarejestrowania fabryki klasy strony kreatora z rejestru fabryki klasy dla Kreatora UDI. *Fabryki klas* są klasy, które można utworzyć wystąpienia innej klasy. **RegisterFactories** funkcja tworzy nowe wystąpienie klasy fabryki i przekazuje tej klasy w rejestrze fabryki klasy dla Kreatora UDI, który udostępnia fabrykę klas do kreatora. Kreator UDI szuka klasę fabryki zarejestrowany identyfikator, który odpowiada **typu** atrybutu **strony** elementu na stronie kreatora niestandardowego.  
@@ -402,7 +403,7 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 > [!NOTE]
 >  W przykładzie zawiera i rejestruje tylko jedną stronę kreatora niestandardowego. W przykładzie nie ma niestandardowych zadań lub moduły weryfikacji i dlatego nie rejestruje żadnych niestandardowych zadań lub moduły weryfikacji.  
 
-#####  <a name="UDIWizardDisplaysCustomWizardPage"></a>Krok 3. Kreator UDI zostanie wyświetlona strona kreatora niestandardowego  
+#####  <a name="UDIWizardDisplaysCustomWizardPage"></a> Krok 3. Kreator UDI zostanie wyświetlona strona kreatora niestandardowego  
  Strona kreatora niestandardowego, w tym przykładzie jest zdefiniowana w pliku LocationPage.cpp. Strony kreatora są uzyskiwane z szablonu klasy, które zapewniają ma wiele funkcji strony. Wszystkie strony kreatora powinien pochodzić od [WizardPageImpl szablonu klasy](#WizardPageImplTemplateClass), który implementuje [IWizardPage interfejsu](#IWizardPageInterface). Każdej stronie kreatora można zaimplementować inne opcjonalne szablonu klasy i odpowiednie interfejsy, w zależności od potrzeb strony.  
 
  [WizardPageImpl szablonu klasy](#WizardPageImplTemplateClass) ma kilka przydatne interfejsów, które mogą pomóc Ci zapisu stron kreatora niestandardowego. Implementowanie [WizardPageImpl szablonu klasy](#WizardPageImplTemplateClass) jako klasę podstawową dla strony kreatora niestandardowego.  
@@ -443,7 +444,7 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 
     -   Dodaje informacje, które będą wyświetlane na **Podsumowanie** strony **SaveFields** — metoda  
 
-#####  <a name="TheNextButtonisClickedinCustomWizardPage"></a>Krok 4. Kliknięciu przycisku Dalej na stronie kreatora niestandardowego  
+#####  <a name="TheNextButtonisClickedinCustomWizardPage"></a> Krok 4. Kliknięciu przycisku Dalej na stronie kreatora niestandardowego  
  Po ukończeniu przez użytkownika pola na stronie kreatora niestandardowego użytkownik klika polecenie **dalej**, które wywołuje **OnNextClicked** metody. **OnNextClicked** metoda wykonuje wszelkie niezbędne zadania przed kontynuowaniem do następnej strony kreatora, takie jak rejestrowanie jakiekolwiek zmiany konfiguracji wprowadzone na stronie kreatora niestandardowego.  
 
  Na stronie kreatora niestandardowego przykład zastąpienia dla **OnNextClicked** metoda jest zaimplementowana w pliku LocationPage.ccp. W **OnNextClicked** metody w przykładowa strona kreatora niestandardowych, są nazywane następujących metod:  
@@ -452,7 +453,7 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 
 2.  [SaveFields](#SaveFields). Taka metoda ogranicza wartości pól do zmiennych sekwencji zadań i dane wyświetlane w **Podsumowanie** strony.  
 
-###  <a name="ReviewSampleEditorVisualStudioSolution"></a>Przejrzyj rozwiązania SampleEditor Visual Studio  
+###  <a name="ReviewSampleEditorVisualStudioSolution"></a> Przejrzyj rozwiązania SampleEditor Visual Studio  
  Przed rozpoczęciem tworzenia własnych stron kreatora niestandardowego i strona kreatora edytory, wykonaj następujące kroki, aby przygotować środowisko projektowe UDI:  
 
 -   Przegląd architektury projektanta Kreatora instalacji UDI zgodnie z opisem w [Przejrzyj architektura projektanta kreatora UDI](#ReviewUDIWizardDesignerArchitecture).  
@@ -461,7 +462,7 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 
 -   Przejrzyj podany w zestawie SDK UDI zgodnie z opisem w przykład EditorPage [Przejrzyj przykład EditorPage](#ReviewEditorPageExample).  
 
-####  <a name="ReviewUDIWizardDesignerArchitecture"></a>Przegląd architektury projektanta kreatora UDI  
+####  <a name="ReviewUDIWizardDesignerArchitecture"></a> Przegląd architektury projektanta kreatora UDI  
  Projektanta Kreatora instalacji UDI został opracowany przy użyciu WPF, biblioteki Prism i Unity. Projektant UDI jest używany do edytowania pliku konfiguracji kreatora UDI (UDIWizard_Config.xml), Kreator UDI (OSDSetupWizard.exe) odczytywany w czasie wykonywania. [Stron](#Pages) w pliku konfiguracji kreatora UDI zawiera listę stron, która ma oddzielnej [strony](#Page) elementu dla każdej strony kreatora.  
 
  Podczas edytowania ustawień konfiguracyjnych dla strony kreatora projektanta Kreatora instalacji UDI ładuje edytorze niestandardowej strony, który odpowiada typowi strony kreatora. Edytory strony kreatora niestandardowego są tworzone jako formanty użytkownika WPF. Użyj strony Edytor stron kreatora niestandardowego [modelu — widok — ViewModel](http://msdn.microsoft.com/magazine/dd419663.aspx) wzorca projektowego (MVVM) dla programu WPF.  
@@ -470,7 +471,7 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 
  Używa projektanta Kreatora instalacji UDI **DependencyAttribute** uzyskać dostępu do **DataService** klasy oparte na framework iniekcji zależności w Unity. Aby uzyskać więcej informacji na temat framework interjection zależności w Unity, zobacz [wstrzyknąć niektóre życia do Twojej aplikacji — Poznaj bloku aplikacji platformy Unity](http://msdn.microsoft.com/library/ff650806.aspx).  
 
-####  <a name="ReviewConfigurableComponentsofUDIWizardPage"></a>Przejrzyj składniki można skonfigurować UDI strony kreatora  
+####  <a name="ReviewConfigurableComponentsofUDIWizardPage"></a> Przejrzyj składniki można skonfigurować UDI strony kreatora  
  Jak utworzyć stronę kreatora niestandardowego, niektóre ustawienia konfiguracji może być ustawiona w kodzie i nie można zmienić po stronie została wykonana. Jednak dla innych ustawień konfiguracyjnych, należy umożliwić te ustawienia konfiguracji można zmienić za pomocą projektanta Kreatora instalacji UDI.  
 
  Zazwyczaj ustawienia konfiguracji, które chcesz skonfigurować za pomocą projektanta Kreatora instalacji UDI są zapisywane w pliku konfiguracji kreatora UDI (pliku Config.xml w przykładzie). Również można jednak utworzyć własny plik osobną konfiguracją, w razie potrzeby. UDIWizard_Config.xml.app jest jednym z przykładów przy użyciu pliku konfiguracji oddzielnych plików, które **odnajdywania aplikacji** zadań i **ApplicationPage** użycie typu strony kreatora.  
@@ -485,7 +486,7 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 
  Utworzony Edytor stron kreatora niestandardowego musi mieć możliwość zarządzania te ustawienia konfiguracji.  
 
-####  <a name="ReviewEditorPageExample"></a>Przejrzyj przykład EditorPage  
+####  <a name="ReviewEditorPageExample"></a> Przejrzyj przykład EditorPage  
  W przykładzie EditorPage służy do konfigurowania ustawień konfiguracyjnych dla **SamplePage** strona kreatora w pliku konfiguracyjnym UDI kreatora. Przykład EditorPage zawiera następujące składniki podstawowe:  
 
 -   Interfejs użytkownika, aby skonfigurować **lokalizacji** ustawienia pola kombi  
@@ -506,7 +507,7 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 
 4.  Przejrzyj kod używany do zarządzania informacjami o konfiguracji zapisane w pliku konfiguracji kreatora UDI zgodnie z opisem w [przejrzeć kod używany do zarządzania informacje o konfiguracji](#ReviewCodeUsedtoManageConfigurationInformation).  
 
-#####  <a name="ReviewWizardPageEditorLoadingInitialization"></a>Przejrzyj ładowania Edytor stron kreatora i inicjalizacji  
+#####  <a name="ReviewWizardPageEditorLoadingInitialization"></a> Przejrzyj ładowania Edytor stron kreatora i inicjalizacji  
  Edytory strony kreatora niestandardowego są załadowane, co jest wymagane przez projektanta Kreatora instalacji UDI. Pliki konfiguracji projektanta Kreatora instalacji UDI są ładowane podczas uruchamiania projektanta Kreatora instalacji UDI. Skanuje projektanta Kreatora instalacji UDI *install_folder*\Bin\Config folder (gdzie *install_folder* jest nazwą folderu, w którym jest zainstalowany zestaw MDT) dla plików z rozszerzeniem pliku .config.  
 
  Podczas konfigurowania środowiska deweloperskiego UDI skopiowany plik SamplePage.dll.confg *install_folder*\Bin\Config folderu. Po uruchomieniu projektanta Kreatora instalacji UDI plik SamplePage.dll.confg odnaleźć i załadować.  
@@ -527,7 +528,7 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 
      W tym przykładzie typ **SamplePage** strona kreatora niestandardowego jest **Microsoft.SamplePage.LocationPage**, które są zapisywane w pliku Config.xml. W pliku Config.xml znajduje się w *local_folder*\SDK\SamplePage\SamplePage folder (gdzie *local_folder* jest do folderu utworzonego na komputerze dewelopera wcześniej w konfiguracji proces).  
 
-#####  <a name="ReviewUserInterfaceUsedtoConfigureLocationComboBox"></a>Przegląd interfejsu użytkownika, które umożliwiają skonfigurowanie lokalizacji pola kombi  
+#####  <a name="ReviewUserInterfaceUsedtoConfigureLocationComboBox"></a> Przegląd interfejsu użytkownika, które umożliwiają skonfigurowanie lokalizacji pola kombi  
  Gdy ładowany i zainicjować Edytor stron kreatora, Edytor stron kreatora SampleEditor jest załadowany, gdy strony o typie **Microsoft.SamplePage.LocationPage** jest edytowany. Interfejs użytkownika dla edytora strony są przechowywane w pliku LocationPageEditor.xaml.  
 
  Jeśli należy zbadać interfejsu użytkownika na **projekt** kartę i kodu na **XAML** kartę, można zobaczyć relację pomiędzy graficznego interfejsu użytkownika oraz elementy i atrybuty (Extensible Application Markup Language XAML).  
@@ -546,14 +547,14 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 
  Użyj **Views:CollectionTControl.ColumnCollectionView** elementu w języku XAML, aby edytować listę dostępnych lokalizacji, w widoku siatki. Możesz użyć [CollectionTControl](#CollectionTControl) formantu do wyświetlania widoku siatki i powiązać widoku siatki w [danych](#Data) elementu o nazwie **lokalizacji** w pliku konfiguracyjnym UDI.  
 
-#####  <a name="ReviewUserInterfaceUsedtoModifyListofPossibleLocations"></a>Przegląd interfejsu użytkownika używane do modyfikowania listy możliwych lokalizacji  
+#####  <a name="ReviewUserInterfaceUsedtoModifyListofPossibleLocations"></a> Przegląd interfejsu użytkownika używane do modyfikowania listy możliwych lokalizacji  
  Interfejs użytkownika do modyfikowania listy możliwych lokalizacji obejmuje:  
 
 -   Menu kontekstowe i przyciski wstążki, które umożliwiają dodawanie, edytowanie, usunąć lub zmienić kolejność elementów na liście lokalizacje, zgodnie z opisem w [przeglądu Context-sensitive Menu i przyciski wstążki do modyfikowania listy lokalizacji](#ReviewContextSensitiveMenuandRibbonButtons)  
 
 -   Okno dialogowe, które jest inicjowana po wybraniu umożliwiają dodawanie lub edytowanie elementu na liście lokalizacje, zgodnie z opisem w [Sprawdź okno dialogowe Dodawanie lub edytowanie lokalizacji](#ReviewDialogBoxforAddingEditingLocations)  
 
-######  <a name="ReviewContextSensitiveMenuandRibbonButtons"></a>Menu kontekstowe przeglądu i przyciski wstążki do modyfikowania listy lokalizacji  
+######  <a name="ReviewContextSensitiveMenuandRibbonButtons"></a> Menu kontekstowe przeglądu i przyciski wstążki do modyfikowania listy lokalizacji  
  Po kliknięciu prawym przyciskiem myszy w polu listy, który zawiera listę lokalizacji jest wyświetlane menu kontekstowe. Wstążka ma odpowiadające mu przyciski, które umożliwiają wykonywanie zadań. **Widoków: CollectionsTControl** element formantu w pliku LocationPageEditor.xaml definiuje metody wywołane oparte na akcję wykonywaną i właściwości, które można ustawić w następujący sposób:  
 
 -   **SelectedItem**. Ta właściwość powiązane z danymi jest aktywowany, gdy użytkownik wybiera element z listy. Ta właściwość jest związany z **CurrentLocation** właściwości w modelu widoku, który jest zlokalizowany w pliku LocationPageEditorViewModel.cs i używana przez [CollectionTControl](#CollectionTControl) formantu do przekazania elementu wybrany, gdy Edytuj lub usuń istniejący element.  
@@ -564,7 +565,7 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 
 -   **RemoveAction**. Ta akcja jest wykonywana, gdy użytkownik kliknie **Usuń element** opcji z menu kontekstowego. Brak powiązania danych właściwości w modelu widoku, który zwraca **RemoveAction** obiektu. Ten obiekt jest **EditLocationCallback** metoda, znajduje się w pliku LocationPageEditorViewModel.cs i zawiera komunikat potwierdzający usunięcie lokalizacji.  
 
-######  <a name="ReviewDialogBoxforAddingEditingLocations"></a>Sprawdź okno dialogowe dodawania i edytowania lokalizacji  
+######  <a name="ReviewDialogBoxforAddingEditingLocations"></a> Sprawdź okno dialogowe dodawania i edytowania lokalizacji  
  Jeśli dodawanie nowych lokalizacji do listy lokalizacji lub Edytuj istniejącą lokalizację, zostanie wyświetlony komunikat, który znajduje się w pliku AddEditLocationView.xaml. Ten komunikat jest wyświetlany za pomocą [ShowDialogWindow](#ShowDialogWindow) metodę okna w pliku LocationPageEditorViewModel.cs.  
 
  Interfejs użytkownika w pliku AddEditLocationView.xaml obejmuje:  
@@ -583,7 +584,7 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 
     -   Pole tekstowe, który jest powiązany z [danych](#Data) elementu o nazwie **lokalizacji** w pliku konfiguracyjnym UDI (pliku Config.xml w przykładzie)  
 
-######  <a name="ReviewCodeUsedtoManageConfigurationInformation"></a>Przejrzyj kod używany do zarządzania informacjami o konfiguracji  
+######  <a name="ReviewCodeUsedtoManageConfigurationInformation"></a> Przejrzyj kod używany do zarządzania informacjami o konfiguracji  
  Informacje o konfiguracji dla strony kreatora niestandardowego są przechowywane w pliku konfiguracyjnym UDI kreatora, który jest:  
 
 -   Pliku Config.XML w przykładzie podana przy użyciu zestawu SDK UDI (ten plik zawiera tylko ustawienia konfiguracji dla przykładu).  
@@ -665,7 +666,7 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 
 13. Skopiuj bibliotekę DLL tego kreatora niestandardowego edytora strony do *installation_folder*\Bin folder (gdzie *installation_folder* to folder, w którym jest zainstalowany zestaw MDT).  
 
-##  <a name="CreatingCustomUDITasks"></a>Tworzenie niestandardowych UDI zadań  
+##  <a name="CreatingCustomUDITasks"></a> Tworzenie niestandardowych UDI zadań  
  *Zadania UDI* są bibliotek DLL w języku C++, które implementują [interfejsu ITask](#ITaskinterface). Zarejestruj plik DLL z biblioteką zadań projektanta Kreatora instalacji UDI, tworząc plik konfiguracji projektanta Kreatora instalacji UDI (pliku .config) i umieszczenie go w *installation_folder*\Bin\Config folder (gdzie *installation_ folder* to folder, w którym jest zainstalowany zestaw MDT).  
 
 > [!NOTE]
@@ -712,7 +713,7 @@ Rysunek 2. Struktura folderów dla rozwoju UDI
 
 6.  Skopiuj biblioteki DLL dla niestandardowego zadania *installation_folder*\Templates\Distribution\Tools\ platforma folder (gdzie *installation_folder* to folder, w którym zainstalowano zestaw MDT i *platformy* jest **x86** w 32-bitowej wersji lub **x64** jest przeznaczony dla 64-bitowej wersji).  
 
-##  <a name="CreatingCustomUDIValidators"></a>Tworzenie niestandardowych UDI modułów sprawdzania poprawności  
+##  <a name="CreatingCustomUDIValidators"></a> Tworzenie niestandardowych UDI modułów sprawdzania poprawności  
  *Moduły weryfikacji UDI* są bibliotek DLL w języku C++, które implementują **IValidator** interfejsu. Zarejestruj plik DLL z biblioteką modułu sprawdzania poprawności projektanta Kreatora instalacji UDI, tworząc plik konfiguracji projektanta Kreatora instalacji UDI (pliku .config) i umieszczenie go w *installation_folder*\Bin\Config folder (gdzie  *installation_folder* to folder, w którym jest zainstalowany zestaw MDT).  
 
  **Aby utworzyć niestandardowe moduły UDI**  
@@ -786,7 +787,7 @@ CreateInstance(Container(), ID_WmiRepository, &pWmi);
 
 ### <a name="table-3-component-ids"></a>Tabela 3. Identyfikatory składników  
 
-|**IDENTYFIKATOR**|**Opis**|  
+|**ID**|**Opis**|  
 |-|-|  
 |ID_ACPowerTask|(ITask IWizardComponent) Zapewnia, że komputer nie jest uruchomiona na poziomie naładowania baterii tylko zadania wstępnego|  
 |ID_AppDiscoveryTask|(ITask IWizardComponent) Specjalne zadanie odnajdywania, jakie oprogramowanie elementów, należy mieć zainstalowany na tym komputerze|  
@@ -810,13 +811,13 @@ CreateInstance(Container(), ID_WmiRepository, &pWmi);
 
 ### <a name="table-4-directory-controls"></a>Tabela 4. Formanty katalogu  
 
-|**IDENTYFIKATOR**|**Opis**|  
+|**ID**|**Opis**|  
 |-|-|  
 |**ID_Directory**|(**IDirectory**) fasad uzyskiwania informacji katalogu z system plików|  
 
 ### <a name="table-5-defined-sharedpagesdll"></a>Tabela 5. Zdefiniowanych SharedPages.dll  
 
-|**IDENTYFIKATOR**|**Opis**|  
+|**ID**|**Opis**|  
 |-|-|  
 |**ID_ADHelper**|(**IADHelper**) zapewnia fasad ograniczony zestaw funkcji w usługach domenowych Active Directory® (AD DS)|  
 |**ID_CpuInfo**|(**ICpuInfo**) określa, czy ten Procesor, 32 lub 64-bitowa|  
@@ -885,13 +886,13 @@ pValidator->SetProperty(0, pPassword2);
 
 ### <a name="table-7-named-pattern-setters"></a>Tabela 7. Metody ustawiające wzorzec o nazwie  
 
-|**Wzorzec**|**Opis**|  
+|**Pattern**|**Opis**|  
 |-|-|  
-|Nazwa użytkownika|Sprawdza, czy tekst jest albo w postaci domena\użytkownik lubuser@domain|  
+|Nazwa użytkownika|Sprawdza, czy tekst jest albo w postaci domena\użytkownik lub user@domain|  
 |ComputerName|Nazwa musi należeć do zakresu od 1 do 15 znaków i nie może zawierać zestaw znaków (takich jak: a?)|  
-|Grupa robocza|Nazwa musi należeć do zakresu od 1 do 15 znaków i nie może zawierać zestaw znaków (taki jak =, +, i?)|  
+|Workgroup|Nazwa musi należeć do zakresu od 1 do 15 znaków i nie może zawierać zestaw znaków (taki jak =, +, i?)|  
 
-#### <a name="factoryregistry-component"></a>Składnik FactoryRegistry  
+#### <a name="factoryregistry-component"></a>FactoryRegistry Component  
  Ten składnik przechowuje informacje o wszystkich fabryki klas i usług. Implementuje **IFactoryRegistry** interfejsu i jest dostępna pośrednio za pośrednictwem strony **kontenera** metody. Ponadto rejestru załadowanie biblioteki DLL rozszerzeń. Po ładuje bibliotekę DLL, rejestru szuka wyeksportowanej funkcji o nazwie **RegisterFactories**. Należy zaimplementować tę funkcję, a w nim zarejestrować fabryki klas dla stron, zadania i modułów sprawdzania poprawności (i innych fabryki klas, które chcesz zarejestrować). Oto przykład z przykładowy projekt:  
 
 ```  
@@ -913,7 +914,7 @@ Register<LocationPageFactory>(ID_LocationPage, factories);
 #### <a name="wmirepository-component"></a>Składnik WmiRepository  
  Ten składnik zapewnia fasadowym przeznaczonym do pracy z kwerendy usługi WMI. Możesz wywołać **CreateInstance** funkcji pomocnika z **ID_WmiRepository** uzyskać wystąpienia tego składnika, który obsługuje **IWmiRepository** interfejsu. Ten składnik zwraca wynik rekordów za pomocą **IWmiIterator** interfejsu.  
 
-###  <a name="WizardPageHelperClasses"></a>Klasy pomocy strony kreatora  
+###  <a name="WizardPageHelperClasses"></a> Klasy pomocy strony kreatora  
  Można tworzyć niestandardowe strony kreatora UDI przy użyciu klasy pomocy wbudowanych podana przy użyciu zestawu SDK UDI. Tabela 8 zawiera klasy pomocnicze, które służy do tworzenia kreatora niestandardowych stron.  
 
 ### <a name="table-8-helper-classes"></a>Tabela 8. Klasy pomocy  
@@ -931,7 +932,7 @@ Register<LocationPageFactory>(ID_LocationPage, factories);
 |[WizardComponent szablonu klasy](#WizardComponentTemplateClass)|Ta klasa podstawowa jest używany do tworzenia składników, które wymagają dostępu do usług kreatora, takich jak tworzenie składników i rejestrowania.|  
 |[WizardPageImpl szablonu klasy](#WizardPageImplTemplateClass)|Ta klasa podstawowa powinien służyć jako klasa podstawowa dla wszystkich stron kreatora niestandardowego|  
 
-####  <a name="ClassFactoryImplClass"></a>Klasa ClassFactoryImpl  
+####  <a name="ClassFactoryImplClass"></a> Klasa ClassFactoryImpl  
  Jest to przydatne klasa podstawowa dla tworzenia fabrykę klas, które następnie można zarejestrować za pomocą rejestru fabryki.  
 
  Poniżej przedstawiono fragment LocationPage.h plik przykładowy projekt do definiowania **ClassFactoryImpl** klasy.  
@@ -957,7 +958,7 @@ IUnknown *LocationPageFactory::CreateNewInstance()
 }  
 ```  
 
-####  <a name="InterfaceTemplateClass"></a>Interfejs szablonu klasy  
+####  <a name="InterfaceTemplateClass"></a> Interfejs szablonu klasy  
  Ta klasa szablonu należy używać do tworzenia składnika, który implementuje interfejs więcej niż jeden — na przykład:  
 
 ```  
@@ -966,7 +967,7 @@ classLocationPage :public Interface<IFieldCallback, WizardPageImpl<IDD_LOCATION_
 
  Ten kod tworzy łańcuch klasy podstawowej, który obsługuje zarówno **IFieldCalback** i interfejsów który **WizardPageImpl** obsługuje (która stanie się być **IWizardPage**).  
 
-####  <a name="PathHelperClass"></a>Klasa pomocnika ścieżki  
+####  <a name="PathHelperClass"></a> Klasa pomocnika ścieżki  
  Ta klasa udostępnia typowe operacje pliku/katalogu:  
 
 ```  
@@ -999,7 +1000,7 @@ static inline std::wstring Combine(LPCWSTR path, LPCWSTR name)
 
  Ponadto klasa zwraca nowy ciąg, który jest nazwa połączone ścieżki i plik (lub inną ścieżkę).  
 
-####  <a name="PointerTemplateClass"></a>Wskaźnik szablonu klasy  
+####  <a name="PointerTemplateClass"></a> Wskaźnik szablonu klasy  
  Ta klasa jest zdefiniowana w Pointer.h. Ponieważ składniki COM używają Zliczanie dla Zarządzanie okresem istnienia, ważne jest zawsze wersji interfejsów po zakończeniu z nimi. Firma Microsoft udostępnia szablonu klasy, która obsługuje okres istnienia automatycznie. Na przykład jeśli chcesz wskaźnika inteligentnego dla interfejsu XML można zapisać podobny do następującego:  
 
 ```  
@@ -1007,7 +1008,7 @@ Pointer<IXMLDOMNode> pNewChild
 pXmlDom->CreateNode(NODE_ELEMENT, L"MyElement", L"", &pNewChild);  
 ```  
 
- Pierwszy wiersz definiuje wskaźnika inteligentnego. Drugi wiersz zawiera pobierania wskaźnika inteligentnego przez inne połączenie.  **&**  Operator zawsze zwalnia istniejącego interfejsu, jeśli zawiera jeden i zwraca adres wewnętrzny wskaźnik. Po pobraniu wskaźnik takie, **wskaźnika** wystąpienie wywołania **wersji** automatycznie, gdy zmienna wykracza poza zakres. Firma Microsoft zaleca użycie wskaźniki inteligentne zamiast wywoływać metodę **AddRef** i **wersji** ręcznie.  
+ Pierwszy wiersz definiuje wskaźnika inteligentnego. Drugi wiersz zawiera pobierania wskaźnika inteligentnego przez inne połączenie. **&** Operator zawsze zwalnia istniejącego interfejsu, jeśli zawiera jeden i zwraca adres wewnętrzny wskaźnik. Po pobraniu wskaźnik takie, **wskaźnika** wystąpienie wywołania **wersji** automatycznie, gdy zmienna wykracza poza zakres. Firma Microsoft zaleca użycie wskaźniki inteligentne zamiast wywoływać metodę **AddRef** i **wersji** ręcznie.  
 
  Ponadto **wskaźnika** wywołania klasy wskaźnik inteligentny **QueryInterface** pobrać inne interfejsy. Na przykład gdy rejestr fabryczny tworzy nowe wystąpienie składnika, ma kod w następujący sposób:  
 
@@ -1019,10 +1020,10 @@ if (pComp != nullptr)
 
  Pierwsze wywołania wiersza **QueryInterface** w tle, aby zażądać **IWizardComponent** interfejsu. Wynikowa wskaźnik inteligentny będzie równa **nullptr** Jeśli składnik nie obsługuje ten interfejs.  
 
-####  <a name="PUnkownClass"></a>Klasa PUnknown  
+####  <a name="PUnkownClass"></a> Klasa PUnknown  
  Ta klasa jest wskaźnika inteligentnego specjalnie z myślą o **IUnknown** interfejsu. Dla wszystkich innych interfejsów, użyj **wskaźnika** klasy szablonu.  
 
-####  <a name="StringUtilHelperClass"></a>Klasa pomocy StringUtil  
+####  <a name="StringUtilHelperClass"></a> Klasa pomocy StringUtil  
  Ta klasa jest zdefiniowana w Utilities.h i udostępnia metody pomocnicze, które ułatwiają pracy z ciągami:  
 
 ```  
@@ -1036,8 +1037,8 @@ static inline int CompareIgnore(LPCWSTR first, LPCWSTR second)
 |**Zwraca**|**Opis**|  
 |-|-|  
 |**0**|Parametry są zgodne, bez uwzględnienia wielkości liter|  
-|**< 0**|Pierwszy < drugi|  
-|**> 0**|Pierwszy > drugi|  
+|**<0**|Pierwszy < drugi|  
+|**>0**|Pierwszy > drugi|  
 
  Oto przykład:  
 
@@ -1057,7 +1058,7 @@ static inline std::wstring Printf(std::wstring format, I val1, J val2, K val3, L
 
  Są to otoki wokół **StringCchPrintf** zwracające **wstring** dzięki czemu nie trzeba przydzielić pamięci dla ciągów lub buforów samodzielnie.  
 
-####  <a name="SubInterfaceTemplateClass"></a>Identyfikator szablonu klasy  
+####  <a name="SubInterfaceTemplateClass"></a> Identyfikator szablonu klasy  
  Ta klasa podstawowa ułatwia wdrożenie składnik, który obsługuje interfejs tego samego dziedziczy inny interfejs. Na przykład **ICheckBox** dziedziczy interfejs **IControl**. Oto, jak ta klasa służy do definiowania **CheckBoxWrapper**:  
 
 ```  
@@ -1066,7 +1067,7 @@ classCheckBoxWrapper :public SubInterface<IControl, UnknownImpl<ICheckBox> >
 
  Interfejs podstawowy jest pierwszym parametrem, gdy drugi parametr jest interfejsu pochodnego.  
 
-####  <a name="UnknownImplTemplateClass"></a>UnknownImpl szablonu klasy  
+####  <a name="UnknownImplTemplateClass"></a> UnknownImpl szablonu klasy  
  Ta klasa jest zdefiniowana w UnknownImpl.h i obsługuje większość szczegółów tworzenia składnika modelu COM. Poniżej przedstawiono przykład sposobu użyje tej klasy podstawowej:  
 
 ```  
@@ -1075,7 +1076,7 @@ classDirectory :public UnknownImpl<IDirectory>
 
  Ten kod definiuje klasę, która obsługuje **IDirectory** interfejsu.  
 
-####  <a name="WizardComponentTemplateClass"></a>WizardComponent szablonu klasy  
+####  <a name="WizardComponentTemplateClass"></a> WizardComponent szablonu klasy  
  Ta klasa jest zdefiniowana w IWizardComponent.h i jest klasą podstawową przydatne do tworzenia składników, które wymagają dostępu do usług kreatora, takich jak tworzenie składników i rejestrowania.  
 
  Na przykład poniżej przedstawiono sposób **CopyFilesTask** określono składnika:  
@@ -1090,7 +1091,7 @@ classCopyFilesTask :public WizardComponent<ITask>
 
  Zawsze, gdy używasz rejestr fabryczny klasa do tworzenia nowego składnika rejestru wywołuje składnik **IWizardComponent -> SetContainer** metodę w celu zapewnienia składnika dostęp do usług kreatora.  
 
-####  <a name="WizardPageImplTemplateClass"></a>WizardPageImpl szablonu klasy  
+####  <a name="WizardPageImplTemplateClass"></a> WizardPageImpl szablonu klasy  
  Klasa jest używana jako klasa podstawowa dla niestandardowych stron — na przykład:  
 
 ```  
@@ -1099,7 +1100,7 @@ class LocationPage :public WizardPageImpl<IDD_LOCATION_PAGE>
 
  Parametr jest identyfikator zasobu szablonu — okno dialogowe.  
 
-###  <a name="WizardPageInterfaces"></a>Interfejsy strony kreatora  
+###  <a name="WizardPageInterfaces"></a> Interfejsy strony kreatora  
  Kreator UDI używa interfejsów do dostęp inne formanty na stronie. Na stronie możesz użyć **GetControlWrapper** funkcji, aby pobrać otoki formantu. Oto przykład:  
 
 ```  
@@ -1132,7 +1133,7 @@ __interfaceIADHelper : IUnknown
 |**HResult**|**Opis**|  
 |-|-|  
 |S_OK|Poświadczenia są prawidłowe|  
-|WARTOŚCI S_FALSE|Poświadczenia są nieprawidłowe|  
+|S_FALSE|Poświadczenia są nieprawidłowe|  
 |E_FAIL|Nie można zlokalizować kontrolera domeny; Sprawdź dzienniki, aby uzyskać więcej informacji|  
 
 ##### <a name="hresult-hasaccesslpctstr-username-lpctstr-password-lpctstr-domain-lpctstr-computername-lpctstr-accountdomain"></a>HRESULT HasAccess(LPCTSTR username, LPCTSTR password, LPCTSTR domain, LPCTSTR computerName, LPCTSTR accountDomain)  
@@ -1173,7 +1174,7 @@ __interface IBackgroundTask : IUnknown
 |**Parametr**|**Opis**|  
 |-|-|  
 |**pTask**|Wskaźnik do klasy, która zawiera kod, który chcesz uruchomić w innym wątku|  
-|**Identyfikator**|Numer, można użyć w metodę wywołania zwrotnego **Zakończono** metodę, aby sprawdzić, które zadanie zakończone uruchomiony; przydatne w przypadku uruchamiania kilka zadań o tej samej metody wywołania zwrotnego|  
+|**Id**|Numer, można użyć w metodę wywołania zwrotnego **Zakończono** metodę, aby sprawdzić, które zadanie zakończone uruchomiony; przydatne w przypadku uruchamiania kilka zadań o tej samej metody wywołania zwrotnego|  
 |**pCallback**|Klasa, która implementuje **Zakończono** metodę, która jest wywoływana, gdy zadanie zakończeniu; wywołanie **Zakończono** metoda będzie w wątku tła nie wątku interfejsu użytkownika|  
 
 ##### <a name="void-startvoid"></a>void Start(void)  
@@ -1422,7 +1423,7 @@ pDrives->SetWhereClause(L"WHERE InterfaceType='USB'");
 |-|-|-|  
 |**DISKQUERY_LOGICALDISK**|**Rozmiar**|Rozmiar w bajtach reprezentowany jako ciąg|  
 |**DISKQUERY_DISKPARTITION**|**DiskIndex**|Numer dysku jako liczbę całkowitą z zakresu od 0|  
-|**DISKQUERY_LOGICALDISK**|**Nazwa woluminu**|Etykieta woluminu|  
+|**DISKQUERY_LOGICALDISK**|**VolumeName**|Etykieta woluminu|  
 
 ##### <a name="sizet-countvoid"></a>size_t Count(void)  
  Liczba rekordów, które zwraca zapytanie. Wywołanie **aktualizacji** przed wywołaniem tej metody.  
@@ -1468,8 +1469,8 @@ __interface IImageList
 
 |**Parametr**|**Opis**|  
 |-|-|  
-|**wystąpienie hInstance**|Dojście wystąpienia modułu zawierającego zasobu mapy bitowej|  
-|**Identyfikator zasobu**|Identyfikator zasobu, aby załadować do listy obrazów|  
+|**hInstance**|Dojście wystąpienia modułu zawierającego zasobu mapy bitowej|  
+|**resourceId**|Identyfikator zasobu, aby załadować do listy obrazów|  
 
 #### <a name="ilistview-interface"></a>Interfejs IListView  
 
@@ -1508,9 +1509,9 @@ __interface IListView : IControl
 
 |**Parametr**|**Opis**|  
 |-|-|  
-|**Indeks**|Indeks elementu listy, który chcesz zmodyfikować|  
-|**kolumny**|Indeks kolumny, które chcesz zaktualizować; Pierwsza kolumna została skonfigurowana z **AddItem**, dwóch kolumn i następujących są konfigurowane przy użyciu tej metody|  
-|**tekst**|Ciąg wyświetlany w kolumnie|  
+|**index**|Indeks elementu listy, który chcesz zmodyfikować|  
+|**column**|Indeks kolumny, które chcesz zaktualizować; Pierwsza kolumna została skonfigurowana z **AddItem**, dwóch kolumn i następujących są konfigurowane przy użyciu tej metody|  
+|**Tekst**|Ciąg wyświetlany w kolumnie|  
 
 ##### <a name="int-getwidthvoid"></a>int GetWidth(void)  
  Ta metoda zwraca szerokość pola cały tekst.  
@@ -1612,7 +1613,7 @@ __interface IStaticText : IControl
 ##### <a name="hresult-gettextout-retval-lpbstr-ptext"></a>HRESULT GetText([out, retval] LPBSTR pText)  
  Ta metoda zwraca wartość bieżącą tekstu formantu.  
 
-####  <a name="ITaskinterface"></a>Interfejsu ITask  
+####  <a name="ITaskinterface"></a> Interfejsu ITask  
 
 ```  
 __interface IControl : IUnknown  
@@ -1656,7 +1657,7 @@ HRESULT Init(IStringProperties *pProperties, ISettingsProperties *pTaskSettings)
 
  **PProperties** parametru zapewnia dostęp do wartości trzy metody ustawiającej, podczas gdy **pTaskSettings** parametru zapewnia dostęp do **zadań** element i elementy podrzędne. Większość zadań wymagane jest tylko do odczytu danych z **pProperties** parametru.  
 
-#####  <a name="Execute"></a>Wykonanie  
+#####  <a name="Execute"></a> Wykonanie  
 
 ```  
 HRESULT Execute(LPDWORD pReturnCode)  
@@ -1733,7 +1734,7 @@ __interface ITreeView : IControl
 
 ### <a name="table-22void-checkitem-image-list-default"></a>Ustawienia domyślne listy obrazów CheckItem void 22. tabeli  
 
-|**checkState**|**Opis**|  
+|**CheckState**|**Opis**|  
 |-|-|  
 |**0**|Puste|  
 |**1**|Wyczyszczone|  
@@ -1796,7 +1797,7 @@ __interface IWmiIterator : IUnknown
 |**HRRESULT**|**Opis**|  
 |-|-|  
 |**S_OK**|Przenoszone do następnego wyniku; można użyć **GetProperty** można pobrać właściwości tego wyniku.|  
-|**WARTOŚCI S_FALSE**|Brak więcej elementów na liście.|  
+|**S_FALSE**|Brak więcej elementów na liście.|  
 |**E_NOT_SET**|Nie są wyniki zapytania|  
 
 ##### <a name="hresult-getpropertylpctstr-propertyname-out-lpvariant-pvalue"></a>HRESULT GetProperty(LPCTSTR propertyName, [out] LPVARIANT pValue)  
@@ -1843,7 +1844,7 @@ __interface IWmiRepository : IUnknown
 
 |**Parametr**|**Opis**|  
 |-|-|  
-|**Zapytania**|Ciąg zapytania usługi WMI, którą chcesz wykonać|  
+|**Query**|Ciąg zapytania usługi WMI, którą chcesz wykonać|  
 |**ppIterator**|Przekazać wskaźnika do wskaźnika interfejsu, który przy powrocie zostanie wprowadzona interfejs, zapewniając dostęp do wyników zapytania|  
 
 ### <a name="table-27-hresult-query-result"></a>27 tabeli. Wynik kwerendy HRESULT  
@@ -1891,7 +1892,7 @@ __interface IFormController : IUnknown
 ##### <a name="overview"></a>Omówienie  
  Każdej stronie kreatora UDI ma swój własny kontroler formularz, który implementuje ten interfejs. Ten kontroler umożliwia połączenie danych pola w pliku .config XML do formantów na stronie. Formularz kontroler obsługuje wiele informacji dla Ciebie.  
 
-#####  <a name="SettingUptheForm"></a>Konfigurowanie formularza  
+#####  <a name="SettingUptheForm"></a> Konfigurowanie formularza  
  Ogólnie rzecz biorąc, skonfigurować kontroler formularz na stronie **OnWindowCreated** metody. Dlatego zazwyczaj ten obejmuje wywoływania metod wyświetlany w tabeli 28.  
 
 ### <a name="table-28-onwindowcreated-method"></a>28 tabeli. OnWindowCreated — metoda  
@@ -1924,7 +1925,7 @@ Form()->ControlEvent(eventId, controlId);
 |**InitSection**|Zawiera nazwę sekcji, która będzie wyświetlana na **Podsumowanie** dla tej strony|  
 |**SaveFields**|Zapisywanie wartości pól do zmiennych sekwencji zadań oraz na **Podsumowanie** strony|  
 
-#####  <a name="Init"></a>Init  
+#####  <a name="Init"></a> init  
 
 ```  
 HRESULT Init(IWizardPageView *pView, IWizardPageContainer *pContainer)  
@@ -2006,7 +2007,7 @@ HRESULT DisableValidation(int controlId, BOOL disable)
 |**właściwości controlId**|Formant, dla którego chcesz włączyć lub wyłączyć weryfikację|  
 |**Wyłącz**|Ustawione na wartość TRUE powoduje wyłączenie sprawdzania poprawności i wartość false, aby przywrócić normalne sprawdzanie poprawności|  
 
-#####  <a name="AddField"></a>AddField  
+#####  <a name="AddField"></a> AddField  
 
 ```  
 HRESULT AddField(LPCWSTR fieldName, int controlId, BOOL suppressLog, DialogControlTypes type)  
@@ -2023,7 +2024,7 @@ HRESULT AddField(LPCWSTR fieldName, int controlId, BOOL suppressLog, DialogContr
 |**suppressLog**|Wartość TRUE, jeśli nie ma wartości z tego pola zapisywane w pliku dziennika; Ten parametr zawsze ustawiony na wartość TRUE dla hasła lub numeru PIN pól|  
 |**Typ**|Typ formantu, który jest jednym z następujących czynności:<br /><br /> -   **CONTROL_STATIC_TEXT**<br />-   **CONTROL_COMBO_BOX**<br />-   **CONTROL_LIST_VIEW**<br />-   **CONTROL_PROGRESS_BAR**<br />-   **CONTROL_GENERIC**<br />-   **CONTROL_RADIO_BUTTON**<br />-   **CONTROL_CHECK_BOX**<br />-   **CONTROL_TREE_VIEW**|  
 
-#####  <a name="AddRadioGroup"></a>AddRadioGroup  
+#####  <a name="AddRadioGroup"></a> AddRadioGroup  
 
 ```  
 HRESULT AddRadioGroup(LPCWSTR groupName, int radioControlId)  
@@ -2035,7 +2036,7 @@ HRESULT AddRadioGroup(LPCWSTR groupName, int radioControlId)
 
 |**Parametr**|**Opis**|  
 |-|-|  
-|**Nazwa grupy**|Ciąg, który definiuje grupę przycisków opcji na tej stronie|  
+|**groupName**|Ciąg, który definiuje grupę przycisków opcji na tej stronie|  
 |**radioControlId**|Identyfikator przycisku radiowego jednego do dodania do tej grupy|  
 
 ##### <a name="enableradiogroup"></a>EnableRadioGroup  
@@ -2050,7 +2051,7 @@ HRESULT EnableRadioGroup(LPCWSTR groupName, BOOL enable)
 
 |**Parametr**|**Opis**|  
 |-|-|  
-|**Nazwa grupy**|Nazwa Grupa przycisków radiowych, już zdefiniowany w wyniku wywołania **AddRadioGroup**|  
+|**groupName**|Nazwa Grupa przycisków radiowych, już zdefiniowany w wyniku wywołania **AddRadioGroup**|  
 |**Włączenie**|Wartość TRUE włącza Grupa przycisków radiowych i FALSE wyłączyć grupy|  
 
 ### <a name="table-35-hresult-enableradiogroup"></a>35 tabeli. HRESULT EnableRadioGroup  
@@ -2060,7 +2061,7 @@ HRESULT EnableRadioGroup(LPCWSTR groupName, BOOL enable)
 |**S_OK**|Grupy włączone lub wyłączone|  
 |**E_INVALIDARG**|Brak nie grupa przycisków radiowych o nazwie podane|  
 
-#####  <a name="InitFields"></a>InitFields  
+#####  <a name="InitFields"></a> InitFields  
 
 ```  
 HRESULT InitFields(IFieldCallback *pFieldCallback = nullptr)  
@@ -2070,7 +2071,7 @@ HRESULT InitFields(IFieldCallback *pFieldCallback = nullptr)
 
  **PFieldCallback** parametr jest opcjonalny. Jeśli zostaną podane, wywołuje metodę kontrolera formularza **SetFieldDefault** dla formantów, które nie są albo **CONTROL_STATIC_TEXT** lub **CONTROL_CHECK_BOX**. To zachowanie umożliwia pobieranie wartości domyślnej z pliku XML i ustaw go w formancie użytkownika.  
 
-#####  <a name="SaveFields"></a>SaveFields  
+#####  <a name="SaveFields"></a> SaveFields  
 
 ```  
 HRESULT SaveFields(IFieldCallback *pFieldCallback = nullptr)  
@@ -2086,7 +2087,7 @@ BOOL IsFieldDisabled(int controlId)
 
  Ta metoda pozwala określić, czy pole zostało wyłączone w pliku XML.  
 
-#####  <a name="InitSection"></a>InitSection  
+#####  <a name="InitSection"></a> InitSection  
 
 ```  
 HRESULT InitSection(LPCWSTR key, LPCWSTR sectionCaption)  
@@ -2098,7 +2099,7 @@ HRESULT InitSection(LPCWSTR key, LPCWSTR sectionCaption)
 
 |**Parametr**|**Opis**|  
 |-|-|  
-|**Klucz**|Ten parametr powinien być unikatowy do strony. Służy do zapewnienia, że każdej strony ma własną podsumowanie informacji.|  
+|**Key**|Ten parametr powinien być unikatowy do strony. Służy do zapewnienia, że każdej strony ma własną podsumowanie informacji.|  
 |**sectionCaption**|Nagłówek, który ma być wyświetlana w **podsumowania** strony dla tej strony Podsumowanie informacji. Zazwyczaj **DisplayName()** jako wartość tego parametru.|  
 
 ##### <a name="addsummaryitem"></a>AddSummaryItem  
@@ -2113,7 +2114,7 @@ HRESULT AddSummaryItem(LPCWSTR first, LPCWSTR second)
 
 |**Parametr**|**Opis**|  
 |-|-|  
-|**Pierwszy**|Podpis elementu podsumowania jest wyświetlany po lewej stronie|  
+|**pierwszy**|Podpis elementu podsumowania jest wyświetlany po lewej stronie|  
 |**Drugie**|Wartość, która będzie wyświetlana po prawej stronie|  
 
 ##### <a name="suppresslogvalue"></a>SuppressLogValue  
@@ -2194,7 +2195,7 @@ __interface IValidator : IUnknown
 ##### <a name="hresult-initicontrol-pcontrol-iwizardpagecontainer-pcontainer-istringproperties-pproperties"></a>HRESULT Init(IControl \*pControl, IWizardPageContainer \*pContainer, IStringProperties \*pProperties)  
  Kontroler formularza wywołuje tę metodę, aby zainicjować modułów weryfikacji, które tworzy oparte na języku XML strony. Zobacz 40 tabeli.  
 
-### <a name="table-40-hresult-init-method"></a>40 tabeli. HRESULT Init — metoda  
+### <a name="table-40-hresult-init-method"></a>Table 40. HRESULT Init — metoda  
 
 |**Parametr**|**Opis**|  
 |-|-|  
@@ -2427,7 +2428,7 @@ __interface IDataNodes : IUnknown
 |**S_OK**|Węzeł został pobrany.|  
 |**E_INVALIDARG**|Indeks jest poza koniec tablicy.|  
 
-#### <a name="ifactoryregistry-interface"></a>Interfejs IFactoryRegistry  
+#### <a name="ifactoryregistry-interface"></a>IFactoryRegistry Interface  
 
 ```  
 __interface IFactoryRegistry : IUnknown  
@@ -2543,7 +2544,7 @@ HRESULT LogBase(EMessageType messageType, LPCTSTR component, SYSTEMTIME eventTim
 
  Ta metoda jest tylko do użytku wewnętrznego.  
 
-##### <a name="log"></a>Dziennik  
+##### <a name="log"></a>Log  
 
 ```  
 HRESULT Log(EMessageType messageType, LPCTSTR component, LPCTSTR message)  
@@ -2567,7 +2568,7 @@ HRESULT Error(HRESULT error, LPCTSTR component, LPCTSTR message)
 |**Składnik**|Ciąg, który identyfikuje źródło błędu, który jest zazwyczaj ze strony lub składnik, który ma być zapisany|  
 |**Komunikat**|Komunikat, który objaśnia, co powoduje błąd|  
 
-#####  <a name="Error2"></a>Error2  
+#####  <a name="Error2"></a> error2  
 
 ```  
 HRESULT Error2(HRESULT error, LPCTSTR component, LPCTSTR message, LPCTSTR message2)  
@@ -2930,7 +2931,7 @@ __interface IWizardDialogView : IUnknown
 
  Ten interfejs jest tylko do użytku wewnętrznego.  
 
-####  <a name="IWizardPageInterface"></a>Interfejs IWizardPage  
+####  <a name="IWizardPageInterface"></a> Interfejs IWizardPage  
 
 ```  
 __interface IWizardPage : IUnknown  
@@ -2952,7 +2953,7 @@ __interface IWizardPage : IUnknown
 ##### <a name="overview"></a>Omówienie  
  Ten interfejs jest implementowany przez **WizardPageImpl**, dzięki czemu nie będą zazwyczaj musi implementacji tego użytkownika. Kreator wywołuje wszystkie te metody automatycznie, gdy interakcji z Twojej strony niestandardowe.  
 
-#### <a name="iwizardpagecontainer-interface"></a>Interfejs IWizardPageContainer  
+#### <a name="iwizardpagecontainer-interface"></a>IWizardPageContainer Interface  
 
 ```  
 __interface IWizardPageContainer : IUnknown  
@@ -3002,7 +3003,7 @@ Logger()->Verbose(s_component, L"Message for log file");
 
 |**Parametr**|**Opis**|  
 |-|-|  
-|**Obiekt źródłowy**|Ciąg wejściowy może zawierać dowolną kombinację  **$**  i  **%**  zmienne lub brak gwarancja|  
+|**Obiekt źródłowy**|Ciąg wejściowy może zawierać dowolną kombinację **$** i **%** zmienne lub brak gwarancja|  
 |**pDest**|Przy powrocie zawiera nowe ciąg, który zawiera wszystkie tokeny zastąpione zgodnie z tabeli 51|  
 
 ##### <a name="hresult-gotopagelpctstr-pagename"></a>HRESULT GotoPage(LPCTSTR pageName)  
@@ -3190,10 +3191,10 @@ GetService<ITSVariableBag>(Container(), &pTsBag);
 |[Zadanie](#Task)|Określa, czy zadanie w bibliotece zadań|  
 |[TaskItem](#TaskItem)|Określa grupę parametry przekazywane do zadania|  
 |[TaskLibrary](#TaskLibrary)|Zbiór grup [zadań](#Task) elementów|  
-|[Moduł sprawdzania poprawności](#Validator)|Określa moduł weryfikacji w bibliotece modułu sprawdzania poprawności|  
+|[Validator](#Validator)|Określa moduł weryfikacji w bibliotece modułu sprawdzania poprawności|  
 |[ValidatorLibrary](#ValidatorLibrary)|Zbiór grup [modułu sprawdzania poprawności](#Validator) elementów|  
 
-####  <a name="DesignerConfig"></a>DesignerConfig  
+####  <a name="DesignerConfig"></a> DesignerConfig  
  Ten element Określa katalog główny dla wszystkich innych elementów.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -3223,7 +3224,7 @@ GetService<ITSVariableBag>(Container(), &pTsBag);
 </DesignerConfig>  
 ```  
 
-####  <a name="DesignerMappings"></a>DesignerMappings  
+####  <a name="DesignerMappings"></a> DesignerMappings  
  Ten element grupy zestaw [strony](#Page) elementów.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -3275,7 +3276,7 @@ GetService<ITSVariableBag>(Container(), &pTsBag);
 </DesignerConfig>  
 ```  
 
-####  <a name="Page"></a>Strona  
+####  <a name="Page"></a> Strona  
  Ten element Określa edytor stron kreatora, aby można było załadować projektanta Kreatora instalacji UDI, który z kolei jest używany do edytowania ustawień konfiguracyjnych dla strony kreatora.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -3299,8 +3300,8 @@ GetService<ITSVariableBag>(Container(), &pTsBag);
 |**Opis**|Określa tekst, który zawiera informacje o parametr, który jest wyświetlany w projektanta Kreatora instalacji UDI|  
 |**DesignerAssembly**|Określa nazwę pliku DLL skojarzonych z Edytor stron kreatora (plik dll musi istnieć w *installation_folder*\Bin folder (gdzie *installation_folder* to folder, w którym możesz zainstalowanego zestawu MDT.)|  
 |**DesignerType**|Określa nazwę Edytor stron kreatora, w ramach określonego w pliku dll **DesignerAssembly** atrybutu (jest to typ platformy Microsoft .NET dla edytorze strony kreatora z przestrzenią nazw FQDN Microsoft .NET).|  
-|**Nazwa wyświetlana**|Określa przyjazną dla użytkownika nazwę Edytor stron, która jest wyświetlana w projektanta Kreatora instalacji UDI|  
-|**BIBLIOTEKI DLL**|Określa nazwę pliku DLL skojarzonych z strony kreatora (plik dll musi istnieć w *installation_folder*\Templates\Distribution\Tools\\*platformy* folder (gdzie *installation_folder* to folder, w którym jest zainstalowany zestaw MDT i *platformy* jest **x86** w 32-bitowej wersji lub **x64** jest w przypadku wersji 64-bit.) **Uwaga:**  Sprawdź, czy biblioteka DLL architektury procesora zgodny architektury procesora zestawu MDT zainstalowane. Na przykład jeśli zainstalowano 32-bitowej wersji zestawu mdt, następnie upewnij się, że używasz 32-bitowa biblioteka dla strony kreatora.|  
+|**DisplayName**|Określa przyjazną dla użytkownika nazwę Edytor stron, która jest wyświetlana w projektanta Kreatora instalacji UDI|  
+|**DLL**|Określa nazwę pliku DLL skojarzonych z strony kreatora (plik dll musi istnieć w *installation_folder*\Templates\Distribution\Tools\\*platformy* folder (gdzie *installation_folder* to folder, w którym jest zainstalowany zestaw MDT i *platformy* jest **x86** w 32-bitowej wersji lub **x64** jest w przypadku wersji 64-bit.) **Uwaga:**  Sprawdź, czy biblioteka DLL architektury procesora zgodny architektury procesora zestawu MDT zainstalowane. Na przykład jeśli zainstalowano 32-bitowej wersji zestawu mdt, następnie upewnij się, że używasz 32-bitowa biblioteka dla strony kreatora.|  
 |**Obraz**|Określa nazwę obrazu strony, która jest w formacie Portable Network Graphics (PNG) (plik PNG musi istnieć w *installation_folder*\Bin\Images folder (gdzie *installation_folder* jest folder, w którym jest zainstalowany zestaw MDT.)|  
 |**Typ**|Określa edytor stron kreatora i musi odpowiadać używany, gdy zarejestrowano niestandardową stronę o nazwie|  
 
@@ -3310,7 +3311,7 @@ GetService<ITSVariableBag>(Container(), &pTsBag);
 ##### <a name="example"></a>Przykład  
  Brak.  
 
-####  <a name="Param"></a>Param  
+####  <a name="Param"></a> Param  
  Ten element określa parametr, który jest przekazywany do elementu nadrzędnego [zadań](#Task) lub [modułu sprawdzania poprawności](#Validator) element i odpowiada [metody ustawiającej]() elementu w pliku konfiguracyjnym UDI kreatora.  
 
 > [!NOTE]
@@ -3335,7 +3336,7 @@ GetService<ITSVariableBag>(Container(), &pTsBag);
 |**Atrybut**|**Opis**|  
 |-|-|  
 |**Opis**|Określa tekst, który zawiera informacje o parametr, który jest wyświetlany w projektanta Kreatora instalacji UDI **Uwaga:**  Ten atrybut jest prawidłowy tylko w przypadku [modułu sprawdzania poprawności](#Validator) elementu.|  
-|**Nazwa wyświetlana**|Określa przyjazną dla użytkownika nazwę parametru modułu sprawdzania poprawności, która jest wyświetlana na stronie kreatora UDI odpowiednie w projektanta Kreatora instalacji UDI (Ta nazwa jest zazwyczaj bardziej opisowe niż **nazwa** atrybutu.) **Uwaga:**  Ten atrybut jest prawidłowy tylko w przypadku [modułu sprawdzania poprawności](#Validator) elementu.|  
+|**DisplayName**|Określa przyjazną dla użytkownika nazwę parametru modułu sprawdzania poprawności, która jest wyświetlana na stronie kreatora UDI odpowiednie w projektanta Kreatora instalacji UDI (Ta nazwa jest zazwyczaj bardziej opisowe niż **nazwa** atrybutu.) **Uwaga:**  Ten atrybut jest prawidłowy tylko w przypadku [modułu sprawdzania poprawności](#Validator) elementu.|  
 |**Nazwa**|Określa nazwę parametru, który zostanie przekazany do zadania lub modułu sprawdzania poprawności, w zależności od elementu nadrzędnego (tego atrybutu będzie **właściwości** atrybutu w [metody ustawiającej]() elementu w Kreatorze UDI plik konfiguracji.) **Uwaga:**  Ten parametr jest używany zarówno [TaskItem](#TaskItem) i [modułu sprawdzania poprawności](#Validator) elementów nadrzędnych.|  
 
 ##### <a name="remarks"></a>Uwagi  
@@ -3344,7 +3345,7 @@ GetService<ITSVariableBag>(Container(), &pTsBag);
 ##### <a name="example"></a>Przykład  
  Brak.  
 
-####  <a name="Task"></a>Zadanie  
+####  <a name="Task"></a> Zadanie  
  Ten element określa, czy zadanie w bibliotece zadań.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -3366,7 +3367,7 @@ GetService<ITSVariableBag>(Container(), &pTsBag);
 |**Atrybut**|**Opis**|  
 |-|-|  
 |**Opis**|Określa tekst, który zawiera informacje o zadaniu, która jest wyświetlana w projektanta Kreatora instalacji UDI|  
-|**BIBLIOTEKI DLL**|Określa nazwę pliku DLL skojarzonych z zadaniem (plik dll musi istnieć w *installation_folder*\Templates\Distribution\Tools\\*platformy* folder (gdzie *installation_folder* to folder, w którym jest zainstalowany zestaw MDT i *platformy* jest **x86** w 32-bitowej wersji lub **x64** 64 -bitowej wersji.)|  
+|**DLL**|Określa nazwę pliku DLL skojarzonych z zadaniem (plik dll musi istnieć w *installation_folder*\Templates\Distribution\Tools\\*platformy* folder (gdzie *installation_folder* to folder, w którym jest zainstalowany zestaw MDT i *platformy* jest **x86** w 32-bitowej wersji lub **x64** 64 -bitowej wersji.)|  
 |**Nazwa**|Określa nazwę zadania, które jest wyświetlane w odpowiedniej strony kreatora UDI i projektanta Kreatora instalacji UDI|  
 |**Typ**|Określa typ zadania, który jest zarejestrowana rejestr fabryczny, a następnie użyć do wywołania określonych zadań w pliku dll|  
 
@@ -3376,7 +3377,7 @@ GetService<ITSVariableBag>(Container(), &pTsBag);
 ##### <a name="example"></a>Przykład  
  Brak.  
 
-####  <a name="TaskItem"></a>TaskItem  
+####  <a name="TaskItem"></a> TaskItem  
  Ten element określa grupę parametry przekazywane do zadania.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -3397,7 +3398,7 @@ GetService<ITSVariableBag>(Container(), &pTsBag);
 
 |**Atrybut**|**Opis**|  
 |-|-|  
-|**Typ**|Określa typu elementu, który zostanie utworzony w pliku konfiguracyjnym UDI kreatora. Zostanie utworzony XML element odpowiada wartości tego atrybutu. Na przykład, jeśli wartość tego atrybutu jest [pliku](#File), a następnie **pliku** będzie można utworzyć elementu w pliku konfiguracyjnym UDI kreatora.<br /><br /> Obecnie są obsługiwane tylko następujące wartości:<br /><br /> -   **Plik**, co wymaga dwóch [Param](#Param) elementy podrzędne (jeden **Param** elementu podrzędnego z **nazwa** ustawić atrybutu **źródła** i innym **Param** elementu podrzędnego z **nazwa** ustawić atrybutu **Dest**)<br />-   [Metoda ustawiająca](), co wymaga **Param** elementu podrzędnego|  
+|**Typ**|Określa typu elementu, który zostanie utworzony w pliku konfiguracyjnym UDI kreatora. Zostanie utworzony XML element odpowiada wartości tego atrybutu. Na przykład, jeśli wartość tego atrybutu jest [pliku](#File), a następnie **pliku** będzie można utworzyć elementu w pliku konfiguracyjnym UDI kreatora.<br /><br /> Obecnie są obsługiwane tylko następujące wartości:<br /><br /> -   **Plik**, co wymaga dwóch [Param](#Param) elementy podrzędne (jeden **Param** elementu podrzędnego z **nazwa** ustawić atrybutu **źródła**i innym **Param** elementu podrzędnego z **nazwa** ustawić atrybutu **Dest**)<br />-   [Metoda ustawiająca](), co wymaga **Param** elementu podrzędnego|  
 
 ##### <a name="remarks"></a>Uwagi  
  Brak.  
@@ -3405,7 +3406,7 @@ GetService<ITSVariableBag>(Container(), &pTsBag);
 ##### <a name="example"></a>Przykład  
  Brak.  
 
-####  <a name="TaskLibrary"></a>TaskLibrary  
+####  <a name="TaskLibrary"></a> TaskLibrary  
  Ten element grupy zestaw [zadań](#Task) elementów.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -3441,7 +3442,7 @@ GetService<ITSVariableBag>(Container(), &pTsBag);
 </DesignerConfig>  
 ```  
 
-####  <a name="Validator"></a>Moduł sprawdzania poprawności  
+####  <a name="Validator"></a> Moduł sprawdzania poprawności  
  Ten element Określa moduł weryfikacji w bibliotece modułu sprawdzania poprawności.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -3463,8 +3464,8 @@ GetService<ITSVariableBag>(Container(), &pTsBag);
 |**Atrybut**|**Opis**|  
 |-|-|  
 |**Opis**|Określa tekst, który zawiera informacje o modułu sprawdzania poprawności, która jest wyświetlana w projektanta Kreatora instalacji UDI|  
-|**Nazwa wyświetlana**|Określa przyjazną dla użytkownika nazwę modułu sprawdzania poprawności wyświetlane w projektanta Kreatora instalacji UDI (Ta nazwa jest zazwyczaj bardziej opisowe niż **nazwa** atrybutu.)|  
-|**BIBLIOTEKI DLL**|Określa nazwę pliku DLL skojarzonych z modułu sprawdzania poprawności (plik dll musi istnieć w *installation_folder*\Templates\Distribution\Tools\\*platformy* folder (gdzie *installation_folder* to folder, w którym jest zainstalowany zestaw MDT i *platformy* jest **x86** w 32-bitowej wersji lub **x64** w przypadku wersji 64-bit.)|  
+|**DisplayName**|Określa przyjazną dla użytkownika nazwę modułu sprawdzania poprawności wyświetlane w projektanta Kreatora instalacji UDI (Ta nazwa jest zazwyczaj bardziej opisowe niż **nazwa** atrybutu.)|  
+|**DLL**|Określa nazwę pliku DLL skojarzonych z modułu sprawdzania poprawności (plik dll musi istnieć w *installation_folder*\Templates\Distribution\Tools\\*platformy* folder (gdzie *installation_folder* to folder, w którym jest zainstalowany zestaw MDT i *platformy* jest **x86** w 32-bitowej wersji lub **x64** w przypadku wersji 64-bit.)|  
 |**Nazwa**|Określa nazwę modułu sprawdzania poprawności, która jest wyświetlana w odpowiedniej strony kreatora UDI i projektanta Kreatora instalacji UDI|  
 |**Typ**|Określa typ modułu sprawdzania poprawności, która jest zarejestrowana w usłudze Multi-Factor rejestru i używane do wywoływania określonego modułu sprawdzania poprawności w pliku dll|  
 
@@ -3474,7 +3475,7 @@ GetService<ITSVariableBag>(Container(), &pTsBag);
 ##### <a name="example"></a>Przykład  
  Brak.  
 
-####  <a name="ValidatorLibrary"></a>ValidatorLibrary  
+####  <a name="ValidatorLibrary"></a> ValidatorLibrary  
  Ten element grupy zestaw [modułu sprawdzania poprawności](#Validator) elementów.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -3486,7 +3487,7 @@ GetService<ITSVariableBag>(Container(), &pTsBag);
 |-|-|  
 |Liczba wystąpień|Zero lub jeden w ramach [DesignerConfig](#DesignerConfig) elementu (ten element jest opcjonalny, jeśli nie ma żadnych niestandardowych modułów sprawdzania poprawności w bibliotece DLL odpowiadające ten plik konfiguracji projektanta Kreatora instalacji UDI).|  
 |Elementy nadrzędne|**DesignerConfig**|  
-|Zawartość|**Moduł sprawdzania poprawności**|  
+|Zawartość|**Validator**|  
 
 ##### <a name="element-attributes"></a>Atrybuty elementu  
  Ten element nie ma żadnych atrybutów.  
@@ -3510,10 +3511,10 @@ GetService<ITSVariableBag>(Container(), &pTsBag);
 |[FieldElementControl](#FieldElementControl)|Ten formant jest używany do edytowania pola, które zwykle są połączone do formantu TextBox na stronie .xaml.|  
 |[SetterControl](#SetterControl)|Ten formant służy do modyfikowania wartości [metody ustawiającej]() elementu w pliku konfiguracyjnym UDI kreatora.|  
 
-####  <a name="CollectionTControl"></a>CollectionTControl  
+####  <a name="CollectionTControl"></a> CollectionTControl  
  Ten formant zawiera wiele funkcji edytowanie danych. Najlepszy sposób, aby dowiedzieć się, jak użyć tej kontrolki jest spojrzeć na przykładzie pokazano, jak edytowanie danych w obszarze strony **danych** elementu. W szczególności przykładzie przedstawiono sposób dodawania, usuwania i edytowanie elementów w tym formancie.  
 
-####  <a name="FieldElementControl"></a>FieldElementControl  
+####  <a name="FieldElementControl"></a> FieldElementControl  
  Ten formant służy do edytowania pola, które zwykle jest połączone z **pole tekstowe** kontrolki na stronie .xaml.  
 
 ##### <a name="example"></a>Przykład  
@@ -3601,7 +3602,7 @@ FieldData="{Binding DataContext.Location, ElementName=ControlRoot}"
 -   **FALSE**, sekcja jest widoczne (jest to wartość domyślna).  
 
 
-####  <a name="SetterControl"></a>SetterControl  
+####  <a name="SetterControl"></a> SetterControl  
  Użyj tego formantu, aby zmodyfikować wartość [metody ustawiającej]() elementu w pliku konfiguracyjnym UDI kreatora. Ten formant zawiera kontrolki podrzędnej można modyfikować wartości **metody ustawiającej** elementu.  
 
 ##### <a name="example"></a>Przykład  
@@ -3637,14 +3638,14 @@ FieldData="{Binding DataContext.Location, ElementName=ControlRoot}"
 ### <a name="interfaces"></a>Interfejsy  
 70 tabela zawiera listę interfejsów, które umożliwia tworzenie edytory strony kreatora niestandardowego.  
 
-### <a name="table-70-interfaces-that-can-be-used-to-create-custom-wizard-page-editors"></a>70 tabeli. Interfejsy, które mogą służyć do tworzenia edytory strony kreatora niestandardowego  
+### <a name="table-70-interfaces-that-can-be-used-to-create-custom-wizard-page-editors"></a>Table 70. Interfejsy, które mogą służyć do tworzenia edytory strony kreatora niestandardowego  
 
-|**Interfejs**|**Opis**|  
+|**Interface**|**Opis**|  
 |-|-|  
 |[IDataService](#IDataService)|Ten interfejs umożliwia połączenie pól do **danych** elementów w pliku konfiguracyjnym UDI kreatora.|  
 |[IMessageBoxService](#IMessageBoxService)|Ten interfejs umożliwia dostęp do metody, które służy do wyświetlenia pola wiadomości.|  
 
-####  <a name="IDataService"></a>IDataService  
+####  <a name="IDataService"></a> IDataService  
  Ten interfejs zawiera kilka właściwości i metody, ale istnieje tylko jedna właściwość, która przypominają będzie potrzebny. Ta właściwość jest tylko jeden opisanych tutaj.  
 
  Iniekcji zależności umożliwia uzyskiwanie wskaźnika do tego interfejsu przy użyciu kodu następująco w klasie:  
@@ -3659,11 +3660,11 @@ public IDataService DataService { get; set; }
 
 ### <a name="table-71-properties-for-the-idataservice-interface"></a>71 tabeli. Właściwości interfejsu IDataService  
 
-|**Interfejs**|**Opis**|  
+|**Interface**|**Opis**|  
 |-|-|  
 |[CurrentPage](#CurrentPage)|Ta właściwość zapewnia dostęp do elementów XML, atrybuty i wartości poniżej kontekstu bieżącej strony edytowany w pliku konfiguracyjnym UDI Kreatora|  
 
-######  <a name="CurrentPage"></a>CurrentPage  
+######  <a name="CurrentPage"></a> CurrentPage  
 
 ```  
 XElement CurrentPage { get; set; }  
@@ -3671,7 +3672,7 @@ XElement CurrentPage { get; set; }
 
  Ta właściwość zapewnia dostęp do pliku XML dla bieżącej strony. Nigdy nie należy ustawić tę właściwość, ale można ją zmodyfikowany plik XML dla strony. Edytor stron przykładowych pokazano przykłady modyfikowanie kodu XML. Ta właściwość jest służy głównie w przypadku, gdy masz danych niestandardowych. Wbudowane formantów, zajmowała wszystkie szczegóły można używać pól i właściwości (ustawiające).  
 
-####  <a name="IMessageBoxService"></a>IMessageBoxService  
+####  <a name="IMessageBoxService"></a> IMessageBoxService  
  Ten interfejs umożliwia dostęp do metody, które służy do wyświetlenia pola wiadomości. Możesz się zastanawiać, czego potrzebujesz interfejsu, aby wyświetlić okno komunikatu. Istnienie jest, że nie chcesz: Firma Microsoft używa tego interfejsu w kodzie, ponieważ jego pomaga pisanie zautomatyzowanych testów dla strony projektanta.  
 
  Za pomocą następujących metod zapewnia jednak jeden przydatne korzyści: Okna dialogowe zawsze mieć ustawioną wartość kreatora UDI, który zapewnia, że okno dialogowe jest poprawnie zgrupowana za pomocą okna głównego "właściciela".  
@@ -3694,7 +3695,7 @@ public IMessageBoxService MessageBoxes { get; set; }
 |[ShowDialogWindow](#ShowDialogWindow)|Ta metoda umożliwia utworzenie nowego okna dialogowego.|  
 |[ShowWizardWindow](#ShowWizardWindow)|Ta metoda służy do wyświetlania niestandardowego edytora wewnątrz okno dialogowe, które zawiera **dalej** i **ponownie** przycisków nawigacji.|  
 
-######  <a name="ShowMessageBox"></a>ShowMessageBox  
+######  <a name="ShowMessageBox"></a> ShowMessageBox  
  Ta metoda wyświetla komunikat, który jest elementem podrzędnym Edytor stron kreatora niestandardowego. Ten element członkowski jest przeciążony: 73 tabela zawiera listę elementów członkowskich i krótki opis każdego z nich. Aby uzyskać pełne informacje dotyczące każdego elementu członkowskiego (wraz ze składnią, użycia i przykłady) zobacz sekcję umożliwiająca każdy element członkowski.  
 
 ### <a name="table-73-overloaded-members-for-the-showmessagbox-method"></a>73 tabeli. Przeciążone elementy członkowskie dla metody ShowMessagBox  
@@ -3705,7 +3706,7 @@ public IMessageBoxService MessageBoxes { get; set; }
 |[ShowMessageBox (ciąg komunikatu, ciąg podpis, przycisk MessageBoxButton, ikona MessageBoxImage)](#ShowMessageBox_stringmessage_stringcaption_MessageBoxButtonbutton_MessageBoxImage_icon)|Wyświetla okno z ikony, jak i różnych możliwych kombinacji przycisków|  
 |[ShowMessageBox (wyjątek wyjątek)](#ShowMessageBox_Exception_exception)|Wyświetla komunikat zawiera informacje o wyjątku, który ma **OK** przycisku|  
 
-######  <a name="ShowMessageBox_Stringmessage_Stringcaption_MessageBoxImage_icon"></a>ShowMessageBox (ciąg komunikatu, podpis ciąg, ikonę MessageBoxImage)  
+######  <a name="ShowMessageBox_Stringmessage_Stringcaption_MessageBoxImage_icon"></a> ShowMessageBox (ciąg komunikatu, podpis ciąg, ikonę MessageBoxImage)  
 
 ```  
 void ShowMessageBox(String message, String caption, MessageBoxImage icon);  
@@ -3719,9 +3720,9 @@ void ShowMessageBox(String message, String caption, MessageBoxImage icon);
 |-|-|  
 |**Komunikat**|Komunikat wyświetlany w obszarze zawartości okna komunikatu|  
 |**Podpis**|Tekst wyświetlany w pasku tytułu okna dialogowego|  
-|**Ikona**|Typ ikonę do wyświetlenia w oknie komunikatu|  
+|**icon**|Typ ikonę do wyświetlenia w oknie komunikatu|  
 
-######  <a name="ShowMessageBox_stringmessage_stringcaption_MessageBoxButtonbutton_MessageBoxImage_icon"></a>ShowMessageBox (ciąg komunikatu, ciąg podpis, przycisk MessageBoxButton, ikona MessageBoxImage)  
+######  <a name="ShowMessageBox_stringmessage_stringcaption_MessageBoxButtonbutton_MessageBoxImage_icon"></a> ShowMessageBox (ciąg komunikatu, ciąg podpis, przycisk MessageBoxButton, ikona MessageBoxImage)  
 
 ```  
 MessageBoxResult ShowMessageBox(string message, string caption, MessageBoxButton button, MessageBoxImage icon);  
@@ -3735,10 +3736,10 @@ MessageBoxResult ShowMessageBox(string message, string caption, MessageBoxButton
 |-|-|  
 |**Komunikat**|Komunikat wyświetlany w obszarze zawartości okna komunikatu|  
 |**Podpis**|Tekst wyświetlany w pasku tytułu okna dialogowego|  
-|**przycisk**|Wyświetlane przyciski|  
-|**Ikona**|Typ ikonę do wyświetlenia w oknie komunikatu|  
+|**button**|Wyświetlane przyciski|  
+|**icon**|Typ ikonę do wyświetlenia w oknie komunikatu|  
 
-######  <a name="ShowMessageBox_Exception_exception"></a>ShowMessageBox (wyjątek wyjątek)  
+######  <a name="ShowMessageBox_Exception_exception"></a> ShowMessageBox (wyjątek wyjątek)  
 
 ```  
 void ShowMessageBox(Exception exception);  
@@ -3750,9 +3751,9 @@ void ShowMessageBox(Exception exception);
 
 |**Parametr**|**Opis**|  
 |-|-|  
-|**wyjątek**|Wyjątek, który chcesz zgłosić (korzysta z okna dialogowego **wyjątku. Komunikat** jako zawartość.)|  
+|**Wyjątek**|Wyjątek, który chcesz zgłosić (korzysta z okna dialogowego **wyjątku. Komunikat** jako zawartość.)|  
 
-######  <a name="ShowDialogWindow"></a>ShowDialogWindow  
+######  <a name="ShowDialogWindow"></a> ShowDialogWindow  
 
 ```  
 void ShowDialogWindow(Type viewType, DialogInteraction dialogPayload);  
@@ -3762,7 +3763,7 @@ void ShowDialogWindow(Type viewType, DialogInteraction dialogPayload);
 
  Przekazywanie danych do formantu przy użyciu parametru dialogPayload. **SampleEditor** rozwiązania w katalogu zestawu SDK zawiera przykładowy sposób używać tej funkcji.  
 
-######  <a name="ShowWizardWindow"></a>ShowWizardWindow  
+######  <a name="ShowWizardWindow"></a> ShowWizardWindow  
 
 ```  
 void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);  
@@ -3770,7 +3771,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 
  Ta metoda umożliwia wyświetlanie niestandardowego edytora wewnątrz okno dialogowe, które zawiera **dalej** i **ponownie** przycisków nawigacji. Firma Microsoft nie udostępnia przykład sposobu używania tej metody.  
 
-###  <a name="UDIWizardConfigurationFileSchemaReference"></a>UDI — informacje schematu pliku konfiguracji kreatora  
+###  <a name="UDIWizardConfigurationFileSchemaReference"></a> UDI — informacje schematu pliku konfiguracji kreatora  
  Ten plik jest używane przez kreatora UDI i konfigurowane za pomocą projektanta Kreatora instalacji UDI. Ten plik jest używany do konfigurowania:  
 
 -   Wyświetlany w Kreatorze UDI strony kreatora  
@@ -3790,9 +3791,9 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 |**Nazwa elementu**|**Opis**|  
 |-|-|  
 |[Dane](#Data)|Grupuje poszczególne [DataItem](#DataItem) elementów w obrębie [strony](#Page) element i nosi nazwę przez **nazwa** atrybutu.|  
-|[Element danych](#DataItem)|Grupuje poszczególne [metody ustawiającej]() elementów w obrębie [strony](#Page) elementu. Hierarchiczne dane można utworzyć, umieszczając w niej co najmniej jeden [danych](#Data) elementów w obrębie [DataItem](#DataItem) elementu. Każdy **DataItem** element reprezentuje pojedynczy element. Na przykład listę dostępnych dysków może być **DataItem** nazwę wyświetlaną i inny **DataItem** elementu dla odpowiedniego literę dysku.|  
+|[DataItem](#DataItem)|Grupuje poszczególne [metody ustawiającej]() elementów w obrębie [strony](#Page) elementu. Hierarchiczne dane można utworzyć, umieszczając w niej co najmniej jeden [danych](#Data) elementów w obrębie [DataItem](#DataItem) elementu. Każdy **DataItem** element reprezentuje pojedynczy element. Na przykład listę dostępnych dysków może być **DataItem** nazwę wyświetlaną i inny **DataItem** elementu dla odpowiedniego literę dysku.|  
 |[Domyślny](#Default)|Określa wartość domyślną w polu określonym w obiekcie nadrzędnym [pola](#Field) lub [RadioGroup](#RadioGroup) elementu. Wartość domyślna ma ustawioną wartość oddzielona przez ten element.|  
-|[BIBLIOTEKI DLL](#DLL)|Określa bibliotekę DLL, która ma być załadowany i odwołuje się Kreator UDI i projektanta Kreatora instalacji UDI.|  
+|[DLL](#DLL)|Określa bibliotekę DLL, która ma być załadowany i odwołuje się Kreator UDI i projektanta Kreatora instalacji UDI.|  
 |[Biblioteki dll](#DLLs)|Grupuje poszczególne [DLL](#DLL) elementów.|  
 |[Błąd](#Error)|Określa, że może zwrócić kod może zawierać błąd, który można zadania. Wartość kodu błędu, jest zwracana w zadaniu **HRESULT** i jest to spowodowane ten element, aby zapewnić bardziej szczegółowe informacje o błędzie.|  
 |[ExitCode](#ExitCode)|Określa kod możliwe zakończenia zadania. Kody zakończenia są kody powrotu, które zadania oczekuje. Utwórz **ExitCode** elementu każdy kod zakończenia to możliwe. W przeciwnym razie można określić znak gwiazdki (\*) w **wartość** atrybut do obsługi niewymienione w innych kodów powrotnych **ExitCode** elementów.|  
@@ -3811,10 +3812,10 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 |[Styl](#Style)|Grupuje poszczególne [metody ustawiającej]() elementów, które skonfigurować kreatora UDI wyglądu i działania, łącznie z tytułu wyświetlaną u góry kreatora i transparent obraz wyświetlany w Kreatorze UDI.|  
 |[Zadanie](#Task)|Określa zadanie, które ma być uruchamiane na stronie określony w obiekcie nadrzędnym [strony](#Page) elementu.|  
 |[Zadania](#Tasks)|Grupy zadań dla [strony](#Page) elementu.|  
-|[Moduł sprawdzania poprawności](#Validator)|Określa moduł weryfikacji dla formantu pole, który jest określony w obiekcie nadrzędnym [pola](#Field) elementu.|  
+|[Validator](#Validator)|Określa moduł weryfikacji dla formantu pole, który jest określony w obiekcie nadrzędnym [pola](#Field) elementu.|  
 |[Kreator](#Wizard)|Określa katalog główny dla wszystkich innych elementów.|  
 
-####  <a name="Data"></a>Dane  
+####  <a name="Data"></a> Dane  
  Ten element grupuje poszczególne [DataItem](#DataItem) elementów w obrębie [strony](#Page) element i nosi nazwę przez **nazwa** atrybutu.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -3843,13 +3844,13 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 ##### <a name="example"></a>Przykład  
  Brak.  
 
-####  <a name="DataItem"></a>Element danych  
+####  <a name="DataItem"></a> Element danych  
  Ten element grupuje poszczególne [metody ustawiającej]() elementów w obrębie [strony](#Page) elementu. Hierarchiczne dane można utworzyć, umieszczając w niej co najmniej jeden [danych](#Data) elementów w obrębie [DataItem](#DataItem) elementu. Każdy **DataItem** element reprezentuje pojedynczy element. Na przykład listę dostępnych dysków może być **DataItem** nazwę wyświetlaną i inny **DataItem** elementu dla odpowiedniego literę dysku.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
  80 tabela zawiera informacje na temat [DataItem](#DataItem) elementu.  
 
-### <a name="table-80-dataitem-element-information"></a>80 tabeli. Informacje o elementach DataItem  
+### <a name="table-80-dataitem-element-information"></a>Table 80. Informacje o elementach DataItem  
 
 |**Atrybut**|**Wartość**|  
 |-|-|  
@@ -3894,7 +3895,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
   <Default>Pacific Standard Time</Default>  
 ```  
 
-####  <a name="DLL"></a>BIBLIOTEKI DLL  
+####  <a name="DLL"></a> DLL  
  Ten element Określa bibliotekę DLL UDI kreatora i projektanta Kreatora instalacji UDI do ładowania i odwołania.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -3929,7 +3930,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 </DLLs>  
 ```  
 
-####  <a name="DLLs"></a>Biblioteki dll  
+####  <a name="DLLs"></a> Biblioteki dll  
  Ten element grupuje poszczególne [DLL](#DLL) elementów.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -3941,7 +3942,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 |-|-|  
 |Liczba wystąpień|jeden|  
 |Elementy nadrzędne|**Kreator**|  
-|Zawartość|**BIBLIOTEKI DLL**|  
+|Zawartość|**DLL**|  
 
 ##### <a name="element-attributes"></a>Atrybuty elementu  
  Ten element nie ma żadnych atrybutów.  
@@ -3958,7 +3959,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 </DLLs>  
 ```  
 
-####  <a name="Error"></a>Błąd  
+####  <a name="Error"></a> Błąd  
  Ten element określa zadania mogą zwracać kod może zawierać błąd. Wartość kodu błędu został zwrócony, a to spowodowane zadania **HRESULT** zapewnienie bardziej szczegółowe informacje o błędzie.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -3980,7 +3981,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 |**Atrybut**|**Opis**|  
 |-|-|  
 |**Stan**|Określa zwracany stan zadań, który wystąpił błąd. Zwykle wartość tego atrybutu jest ustawiana na błąd. Ta wartość jest wyświetlana w **stanu** kolumn na stronie kreatora w Kreatorze UDI.|  
-|**Tekst**|Określa tekst opisujący warunek błędu, który napotkano zadania.|  
+|**Text**|Określa tekst opisujący warunek błędu, który napotkano zadania.|  
 |**Typ**|Określa, czy ten element reprezentuje błąd, ostrzeżenie lub Powodzenie. Wartość określona w**typu** muszą być unikatowe w obrębie [ExitCodes](#ExitCodes) elementu. Poniżej przedstawiono prawidłowe wartości dla tego elementu:<br /><br /> -   **0.**ten element reprezentuje sukcesu.<br />-   **1.** Ten element reprezentuje ostrzeżenie.<br />-   **-1.** Ten element reprezentuje wystąpił błąd.|  
 |**Wartość**|Określa wartość kodu, który zwrócił zadania jako wartość liczbową. Określa wartość znak gwiazdki (*) wskazuje domyślny element dla kody powrotu, które nie są wymienione w innych [błąd](#Error) elementów.|  
 
@@ -3990,7 +3991,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 ##### <a name="example"></a>Przykład  
  Brak.  
 
-####  <a name="ExitCode"></a>ExitCode  
+####  <a name="ExitCode"></a> ExitCode  
  Ten element określa kod możliwe zakończenia zadania. Kody zakończenia są kody powrotu, które zadania oczekuje. Utwórz **ExitCode** elementu każdy kod zakończenia to możliwe. W przeciwnym razie można określić znak gwiazdki (\*) w **wartość** atrybut do obsługi niewymienione w innych kodów powrotnych **ExitCode** elementów.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -4012,7 +4013,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 |**Atrybut**|Opis|  
 |-|-|  
 |**Stan**|Określa zwracany stan zadania. Wartość tego atrybutu będzie wyświetlana w **stanu** kolumn na stronie kreatora w Kreatorze UDI. Można użyć wartości dla tego atrybutu zrozumiały dla zadania. Poniżej przedstawiono typowe wartości używane dla tego atrybutu:<br /><br /> — Powodzenie<br />— Ostrzeżenie<br />— Błąd|  
-|**Tekst**|Określa tekst opisowy o kodzie istnieją zadania.|  
+|**Text**|Określa tekst opisowy o kodzie istnieją zadania.|  
 |**Typ**|Określa, czy ten element reprezentuje błąd, ostrzeżenie lub Powodzenie. Wartość określona w typie muszą być unikatowe w obrębie [ExitCodes](#ExitCodes) elementu. Poniżej przedstawiono prawidłowe wartości dla tego elementu:<br /><br /> -   **0.** Ten element reprezentuje sukcesu.<br />-   **1.** Ten element reprezentuje ostrzeżenie.<br />-   **-1.** Ten element reprezentuje wystąpił błąd.|  
 |**Wartość**|Określa wartość kodu, który zwrócił zadania jako wartość liczbową. Określa wartość znak gwiazdki (*) wskazuje domyślny element dla kody powrotu, które nie są wymienione w innych [ExitCode](#ExitCode) elementów.|  
 
@@ -4022,7 +4023,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 ##### <a name="example"></a>Przykład  
  Brak.  
 
-####  <a name="ExitCodes"></a>ExitCodes  
+####  <a name="ExitCodes"></a> ExitCodes  
  Ten element grupy zestaw [ExitCode](#ExitCode) i [błąd](#Error) elementy [zadań](#Task) lub **błąd** elementu.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -4045,7 +4046,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 ##### <a name="example"></a>Przykład  
  Brak.  
 
-####  <a name="Field"></a>Pole  
+####  <a name="Field"></a> Pole  
  Ten element określa wystąpienie formantu w [strony](#Page) element umożliwiające dostosowywanie XML. Nie wszystkie formanty można dostosowywać za pomocą XML — tylko formanty używające [pola](#Field) elementu.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -4066,7 +4067,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 
 |**Atrybut**|**Opis**|  
 |-|-|  
-|**Włączone**|Określa, czy pole jest włączone dla użytkownika danych wejściowych (atrybut może zostać ustawiony na wartość True lub False.)|  
+|**włączone**|Określa, czy pole jest włączone dla użytkownika danych wejściowych (atrybut może zostać ustawiony na wartość True lub False.)|  
 |**Nazwa**|Określa nazwę pola|  
 |**Podsumowanie**|Określa opis wyświetlany na **Podsumowanie** strony kreatora o wartości, który ustawia tego pola|  
 |**Nazwa_zmiennej**|Określa nazwy zmiennej sekwencji zadań do odczytu lub skonfigurowany za pomocą pola w obiekcie nadrzędnym [pola](#Field) — element|  
@@ -4077,7 +4078,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 ##### <a name="example"></a>Przykład  
  Brak.  
 
-####  <a name="Fields"></a>Pola  
+####  <a name="Fields"></a> Pola  
  Ten element grupuje poszczególne [pola](#Field) elementów w obrębie [strony](#Page) elementu.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -4100,7 +4101,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 ##### <a name="example"></a>Przykład  
  Brak.  
 
-####  <a name="File"></a>Plik  
+####  <a name="File"></a> Plik  
  Ten element Określa źródło i miejsce docelowe using operacji kopiowania pliku **Microsoft.Wizard.CopyFilesTask** typ zadania. Mogą zawierać osobne [pliku](#File) element, aby skopiować więcej niż jeden plik w jednym zadaniu.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -4130,7 +4131,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 ##### <a name="example"></a>Przykład  
  Brak.  
 
-####  <a name="PageElement"></a>Strona  
+####  <a name="PageElement"></a> Strona  
  Ten element określa wystąpienie strony i zawiera wszystkie ustawienia konfiguracji dla strony.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -4151,7 +4152,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 
 |**Atrybut**|**Opis**|  
 |-|-|  
-|**Nazwa wyświetlana**|Określa przyjazną dla użytkownika nazwa wyświetlana w projektanta Kreatora instalacji UDI strony kreatora. Ta nazwa jest zazwyczaj bardziej opisowe niż **nazwa** atrybutu.|  
+|**DisplayName**|Określa przyjazną dla użytkownika nazwa wyświetlana w projektanta Kreatora instalacji UDI strony kreatora. Ta nazwa jest zazwyczaj bardziej opisowe niż **nazwa** atrybutu.|  
 |**Nazwa**|Nazwa wyświetlana w projektanta Kreatora instalacji UDI strony kreatora.|  
 |**Typ**|Określa typ strony kreatora, który bezpośrednio odnosi się do strony kreatora określonej biblioteki DLL.|  
 
@@ -4161,7 +4162,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 ##### <a name="example"></a>Przykład  
  Brak.  
 
-####  <a name="PageRef"></a>PageRef  
+####  <a name="PageRef"></a> PageRef  
  Ten element określa odwołania do wystąpienia strony [etap](#Stage) w [StageGroup](#StageGroup).  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -4190,7 +4191,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 ##### <a name="example"></a>Przykład  
  Brak.  
 
-####  <a name="Pages"></a>Strony  
+####  <a name="Pages"></a> Strony  
  Ten element grupuje poszczególne [strony](#Page) elementów.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -4233,7 +4234,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 </Pages>  
 ```  
 
-####  <a name="RadioGroup"></a>RadioGroup  
+####  <a name="RadioGroup"></a> RadioGroup  
  Ten element określa grupę przyciski radiowe z w [pola](#Field) elementu.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -4263,7 +4264,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 ##### <a name="example"></a>Przykład  
  Brak.  
 
-####  <a name="StageGroup"></a>StageGroup  
+####  <a name="StageGroup"></a> StageGroup  
  Ten element określa grupę etap wdrażania.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -4284,7 +4285,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 
 |**Atrybut**|**Opis**|  
 |-|-|  
-|**Nazwa wyświetlana**|Określa przyjazną dla użytkownika nazwę grupy etapu wyświetlany w projektanta Kreatora instalacji UDI. Ta nazwa jest zazwyczaj bardziej opisowe niż **nazwa** atrybutu.|  
+|**DisplayName**|Określa przyjazną dla użytkownika nazwę grupy etapu wyświetlany w projektanta Kreatora instalacji UDI. Ta nazwa jest zazwyczaj bardziej opisowe niż **nazwa** atrybutu.|  
 
 ##### <a name="remarks"></a>Uwagi  
  Brak.  
@@ -4292,7 +4293,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 ##### <a name="example"></a>Przykład  
  Brak.  
 
-####  <a name="StageGroups"></a>StageGroups  
+####  <a name="StageGroups"></a> StageGroups  
  Ten element grupy grupy etap w pliku konfiguracji kreatora UDI.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -4315,7 +4316,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 ##### <a name="example"></a>Przykład  
  Brak.  
 
-####  <a name="Setter"></a>Metody ustawiającej  
+####  <a name="Setter"></a> Metody ustawiającej  
  Ten element określa ustawienia właściwości dla wartości dla właściwości o nazwie w **właściwości** właściwości.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -4365,7 +4366,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 
 |**Atrybut**|**Opis**|  
 |-|-|  
-|**Nazwa wyświetlana**|Określa przyjazną dla użytkownika nazwa wyświetlana w projektanta Kreatora instalacji UDI strony kreatora. Ta nazwa jest zazwyczaj bardziej opisowe niż **nazwa** atrybutu.|  
+|**DisplayName**|Określa przyjazną dla użytkownika nazwa wyświetlana w projektanta Kreatora instalacji UDI strony kreatora. Ta nazwa jest zazwyczaj bardziej opisowe niż **nazwa** atrybutu.|  
 |**Nazwa**|Określa nazwę etapu. Wartość tego elementu jest używana podczas uruchamiania kreatora UDI z **/etap: nazwa** parametr wiersza polecenia.|  
 
 ##### <a name="remarks"></a>Uwagi  
@@ -4374,7 +4375,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 ##### <a name="example"></a>Przykład  
  Brak.  
 
-####  <a name="Style"></a>Styl  
+####  <a name="Style"></a> Styl  
  Ten element grupuje poszczególne [metody ustawiającej]() elementów, które skonfigurować kreatora UDI wyglądu i działania, łącznie z tytułu wyświetlaną u góry kreatora i transparent obraz wyświetlany w Kreatorze UDI.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -4403,7 +4404,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 </Style>  
 ```  
 
-####  <a name="TaskElement"></a>Zadanie  
+####  <a name="TaskElement"></a> Zadanie  
  Ten element Określa zadanie, które ma być uruchamiane na stronie określony w obiekcie nadrzędnym [strony](#Page) elementu.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -4424,8 +4425,8 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 
 |**Atrybut**|**Opis**|  
 |-|-|  
-|**DependsOn**|Określa, czy zadanie jest zależne od innego zadania. Wartość tego atrybutu jest ustawiona na **nazwa** atrybutu innego [zadań](#Task) elementu. **Uwaga:**  Ten atrybut nie można skonfigurować za pomocą projektanta Kreatora instalacji UDI. Jednak można ręcznie dodać ten atrybut [zadań](#Task) elementu przez bezpośrednie zmodyfikowanie pliku .xml.|  
-|**Nazwa wyświetlana**|Określa przyjazną dla użytkownika nazwę zadań wyświetlane w projektanta Kreatora instalacji UDI. Ta nazwa jest zazwyczaj bardziej opisowe niż **nazwa** atrybutu.|  
+|**dependsOn**|Określa, czy zadanie jest zależne od innego zadania. Wartość tego atrybutu jest ustawiona na **nazwa** atrybutu innego [zadań](#Task) elementu. **Uwaga:**  Ten atrybut nie można skonfigurować za pomocą projektanta Kreatora instalacji UDI. Jednak można ręcznie dodać ten atrybut [zadań](#Task) elementu przez bezpośrednie zmodyfikowanie pliku .xml.|  
+|**DisplayName**|Określa przyjazną dla użytkownika nazwę zadań wyświetlane w projektanta Kreatora instalacji UDI. Ta nazwa jest zazwyczaj bardziej opisowe niż **nazwa** atrybutu.|  
 |**Nazwa**|Określa nazwę zadania. Ta nazwa musi być unikatowa.|  
 |Typ|Określa typ zadań dla zadania do wykonania, która jest zdefiniowana w pliku DLL zawierającego zadanie.|  
 
@@ -4435,7 +4436,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 ##### <a name="example"></a>Przykład  
  Brak.  
 
-####  <a name="Tasks"></a>Zadania  
+####  <a name="Tasks"></a> Zadania  
  Ten element grupy zestawu zadań dla [strony](#Page) elementu.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -4465,7 +4466,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 ##### <a name="example"></a>Przykład  
  Brak.  
 
-####  <a name="ValidatorElement"></a>Moduł sprawdzania poprawności  
+####  <a name="ValidatorElement"></a> Moduł sprawdzania poprawności  
  Ten element Określa moduł weryfikacji dla formantu pole, który jest określony w obiekcie nadrzędnym [pola](#Field) elementu.  
 
 ##### <a name="element-information"></a>Informacje o elementach  
@@ -4494,7 +4495,7 @@ void ShowWizardWindow(Type viewType, DialogInteraction dialogPayload);
 ##### <a name="example"></a>Przykład  
  Brak.  
 
-####  <a name="Wizard"></a>Kreator  
+####  <a name="Wizard"></a> Kreator  
  Ten element Określa katalog główny dla wszystkich innych elementów.  
 
 ##### <a name="element-information"></a>Informacje o elementach  

@@ -1,20 +1,21 @@
 ---
-title: "Przykłady zestawu MDT"
+title: Przykłady zestawu MDT
 titleSuffix: Microsoft Deployment Toolkit
-description: "Przykłady programu Microsoft Deployment Toolkit. "
+description: 'Przykłady programu Microsoft Deployment Toolkit. '
 ms.date: 09/09/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-osd
+ms.technology:
+- configmgr-osd
 ms.topic: article
 ms.assetid: 2ff0100c-b7ef-4e09-8c96-fc1898390b6d
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
 ms.openlocfilehash: fe61cecea2b2a4f4083933b937af90dfb61ea5bf
-ms.sourcegitcommit: 645cd5a324bdd299906efa27eaca5885eafc9e9c
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/16/2018
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="microsoft-deployment-toolkit-samples-guide"></a>Przewodnik przykłady zestawu narzędzi firmy Microsoft do wdrażania  
  Ten przewodnik jest częścią programu Microsoft® Deployment Toolkit (MDT) 2013 i przeprowadza zespołu specjalisty do wdrażania systemów operacyjnych Windows i program Microsoft Office. W szczególności ten przewodnik jest przeznaczony zapewnienie ustawień konfiguracji przykładowych scenariuszy wdrażania.  
@@ -43,7 +44,7 @@ ms.lasthandoff: 01/16/2018
  |*Przewodnik Szybki Start dla programu Microsoft System Center 2012 R2 Configuration Manager* |Użyj System Center 2012 R2 Configuration Manager do zainstalowania systemu operacyjnego Windows 8.1 w scenariuszu wdrażania nowego komputera.|  
  |*Przewodnik Szybki Start dotyczący instalacji Lite Touch* |Zainstaluj system operacyjny Windows 8.1 za pomocą Lite Touch Installation (LTI) przy użyciu nośnika rozruchowego w scenariuszu wdrażania nowego komputera.|  
  |*Przewodnik Szybki Start dotyczący instalacji opartej na użytkownika* |Instalowanie systemu operacyjnego Windows 8.1 z instalacji sterowanej i System Center 2012 R2 Configuration Manager w scenariuszu wdrażania nowego komputera.|  
- |*Przy użyciu zestawu narzędzi firmy Microsoft do wdrażania* |Dostosować pliki konfiguracji używane w przypadku wdrożeń Zero Touch instalacji (ZTI) i LTI. Ten przewodnik zawiera również informacje techniczne dotyczące i wskazówki dotyczące konfiguracji ogólnych ustawień konfiguracji.|
+ |*Korzystanie z Zestawu narzędzi firmy Microsoft do wdrażania* |Dostosować pliki konfiguracji używane w przypadku wdrożeń Zero Touch instalacji (ZTI) i LTI. Ten przewodnik zawiera również informacje techniczne dotyczące i wskazówki dotyczące konfiguracji ogólnych ustawień konfiguracji.|
 
 
 ## <a name="deploying-windows-8-applications-using-mdt"></a>Wdrażanie aplikacji systemu Windows 8 za pomocą zestawu MDT  
@@ -55,7 +56,7 @@ ms.lasthandoff: 01/16/2018
 
 -   Wdrażanie aplikacji systemu Windows 8 za pomocą instalacji sterowanej (UDI), zgodnie z opisem w [wdrażania systemu Windows 8 aplikacji przy użyciu UDI](#DeployWin8UDI).  
 
-###  <a name="DeployWin8LTI"></a>Wdrażanie aplikacji systemu Windows 8 za pomocą LTI  
+###  <a name="DeployWin8LTI"></a> Wdrażanie aplikacji systemu Windows 8 za pomocą LTI  
  Można wdrożyć aplikacji systemu Windows 8 za pomocą LTI, jak inna aplikacja, która inicjuje proces instalacji z wiersza polecenia. W węźle aplikacji w konsoli Deployment Workbench, można dodać aplikacji systemu Windows 8 do wdrożenia LTI.  
 
  **Aby wdrożyć aplikację systemu Windows 8 za pomocą LTI**  
@@ -78,7 +79,7 @@ ms.lasthandoff: 01/16/2018
 
 4.  Wybierz element aplikacji LTI utworzony w poprzednim kroku w sekwencji zadań LTI.  
 
-###  <a name="DeployWin8UDI"></a>Wdrażanie aplikacji systemu Windows 8 za pomocą UDI  
+###  <a name="DeployWin8UDI"></a> Wdrażanie aplikacji systemu Windows 8 za pomocą UDI  
  Można wdrożyć aplikacji systemu Windows 8, takie jak inna aplikacja, która inicjuje proces instalacji z wiersza polecenia przy użyciu UDI. Można dodawać aplikacje systemu Windows 8 do wdrożeń UDI **ApplicationPage** strony projektanta Kreatora instalacji UDI.  
 
 > [!NOTE]
@@ -156,14 +157,14 @@ ms.lasthandoff: 01/16/2018
 
 -   Zarządzanie folderów na udział wdrożenia przy użyciu programu Windows PowerShell, zgodnie z opisem w [Zarządzanie wdrożenia udostępnianie folderów za pomocą środowiska Windows PowerShell](#ManageDeployShareFolder).  
 
-###  <a name="LoadMDTSnapIn"></a>Podczas ładowania przystawki programu PowerShell systemu Windows zestawu MDT  
+###  <a name="LoadMDTSnapIn"></a> Podczas ładowania przystawki programu PowerShell systemu Windows zestawu MDT  
  Polecenia cmdlet MDT znajdują się w przystawce programu Windows PowerShell **Microsoft.BDD.SnapIn** muszą zostać załadowane przed użyciem polecenia cmdlet zestawu MDT. Można załadować przystawkę programu Windows PowerShell dla zestawu MDT przy użyciu jednej z następujących metod:  
 
 -   Załaduj przystawkę programu Windows PowerShell dla zestawu MDT przy użyciu konsoli moduły okno programu PowerShell, zgodnie z opisem w [załadować zestawu MDT Windows PowerShell przystawki za pomocą zadania importu modułów systemu](#LoadMDTSnapInImport).  
 
 -   Załaduj przystawkę programu Windows PowerShell dla zestawu MDT, za pomocą **Dodaj-PSSnapIn** polecenia cmdlet, zgodnie z opisem w [załadować zestawu MDT Windows PowerShell przystawki przy użyciu polecenia cmdlet Add-PSSnapIn](#LoadMDTSnapInCmdlet).  
 
-####  <a name="LoadMDTSnapInImport"></a>Załaduj zestaw MDT Windows PowerShell przystawkę za pomocą zadania importu modułów systemu  
+####  <a name="LoadMDTSnapInImport"></a> Załaduj zestaw MDT Windows PowerShell przystawkę za pomocą zadania importu modułów systemu  
  Zadania importu moduły systemowych automatycznie uwzględnia wszystkie moduły programu Windows PowerShell i przystawek, które znajdują się w tych modułów w katalogu %Windir%\System32\WindowsPowerShell\1.0\Modules. Zestaw MDT automatycznie instaluje przystawkę programu Windows PowerShell dla zestawu MDT **Microsoft.BDD.SnapIn** w tym folderze podczas instalacji zestawu MDT.  
 
 > [!NOTE]
@@ -177,14 +178,14 @@ ms.lasthandoff: 01/16/2018
 
  Aby uzyskać więcej informacji na uruchomieniem konsolę programu Windows PowerShell z modułami systemu importu, zobacz [uruchamianie środowiska Windows PowerShell z modułami systemu importu](http://msdn.microsoft.com/library/windows/desktop/hh847866.aspx).  
 
-####  <a name="LoadMDTSnapInCmdlet"></a>Załaduj zestaw MDT Windows PowerShell przystawkę za pomocą polecenia Cmdlet Dodaj PSSnapIn  
+####  <a name="LoadMDTSnapInCmdlet"></a> Załaduj zestaw MDT Windows PowerShell przystawkę za pomocą polecenia Cmdlet Dodaj PSSnapIn  
  Można załadować przystawkę programu Windows PowerShell dla zestawu MDT **Microsoft.BDD.PSSnapIn** z dowolnego programu Windows PowerShell środowiska przy użyciu [Dodaj-PSSnapIn](http://technet.microsoft.com/library/hh849705.aspx) polecenia cmdlet, Pokaż w poniższym przykładzie:  
 
 ```  
 Add-PSSnapin -Name Microsoft.BDD.PSSnapIn  
 ```  
 
-###  <a name="CreateDeployShare"></a>Tworzenie udziału wdrożenia za pomocą środowiska Windows PowerShell  
+###  <a name="CreateDeployShare"></a> Tworzenie udziału wdrożenia za pomocą środowiska Windows PowerShell  
  Można utworzyć udziały wdrożenia przy użyciu poleceń cmdlet programu Windows PowerShell dla zestawu MDT. Folder główny do udziału wdrożenia jest tworzony i udostępniane przy użyciu standardowych poleceń cmdlet programu Windows PowerShell i wywołania polecenia klasy Instrumentacji zarządzania Windows (WMI). Udział wdrożenia jest wypełniana przy użyciu dostawcy środowiska Windows PowerShell MDTProvider i [NewPSDrive](http://technet.microsoft.com/library/dd315340.aspx) polecenia cmdlet. Dysk MDTProvider Windows PowerShell jest utrwalona za pomocą **MDTPersistentDrive Dodaj** polecenia cmdlet.  
 
  **Aby przygotować udziału wdrożenia, za pomocą poleceń cmdlet środowiska Windows PowerShell dla zestawu MDT**  
@@ -243,7 +244,7 @@ Add-PSSnapin -Name Microsoft.BDD.PSSnapIn
 
      W poprzednim przykładzie potoku środowiska Windows PowerShell zawiera zarówno *nazwa* i *InputObject* parametrów.  
 
-###  <a name="ViewDeployShareProp"></a>Wyświetlanie właściwości udziału wdrożenia za pomocą środowiska Windows PowerShell  
+###  <a name="ViewDeployShareProp"></a> Wyświetlanie właściwości udziału wdrożenia za pomocą środowiska Windows PowerShell  
  Można wyświetlić właściwości udziału wdrożenia zestawu MDT przy użyciu [Get-ItemProperty](http://technet.microsoft.com/library/hh849851.aspx) polecenia cmdlet i dostawcy środowiska Windows PowerShell MDTProvider. Te takie same właściwości można także znaleźć w konsoli Deployment Workbench.  
 
  **Aby wyświetlić właściwości udziału wdrożenia za pomocą poleceń cmdlet środowiska Windows PowerShell dla zestawu MDT**  
@@ -275,7 +276,7 @@ Add-PSSnapin -Name Microsoft.BDD.PSSnapIn
 
      W tym przykładzie *DS002:* w kroku 3 zwracana jest nazwa dysk programu Windows PowerShell. Polecenie cmdlet zwraca wartość właściwości udziału wdrożenia.  
 
-###  <a name="ViewListDeployShare"></a>Wyświetlanie listy udziałów wdrożenia przy użyciu programu Windows PowerShell  
+###  <a name="ViewListDeployShare"></a> Wyświetlanie listy udziałów wdrożenia przy użyciu programu Windows PowerShell  
  Można wyświetlić listy udziałów wdrożenia zestawu MDT, za pomocą [elementu PSDrive Get](http://technet.microsoft.com/library/hh849796) polecenia cmdlet i dostawcy środowiska Windows PowerShell MDTProvider. Tę samą listę udziałów wdrożenia można również wyświetlać w konsoli Deployment Workbench.  
 
  **Aby wyświetlić listę akcji wdrażania przy użyciu poleceń cmdlet programu Windows PowerShell dla zestawu MDT**  
@@ -299,7 +300,7 @@ Add-PSSnapin -Name Microsoft.BDD.PSSnapIn
 
      Lista programu Windows PowerShell wymienione są dyski realizowane przy użyciu MDTProvider, po jednej dla każdego udziału wdrożenia.  
 
-###  <a name="UpdateDeployShare"></a>Aktualizacja udziału wdrożenia za pomocą środowiska Windows PowerShell  
+###  <a name="UpdateDeployShare"></a> Aktualizacja udziału wdrożenia za pomocą środowiska Windows PowerShell  
  Można zaktualizować udziałów wdrożenia za pomocą **MDTDeploymentShare aktualizacji** polecenia cmdlet i dostawcy środowiska Windows PowerShell MDTProvider. Aktualizacja udziału wdrożenia tworzy niezbędne do uruchomienia wdrożenia LTI obrazy rozruchowe Windows PE (WIM i Międzynarodowej Organizacji Normalizacyjnej [ISO] plików). Można wykonać te same czynności, za pomocą konsoli Deployment Workbench, zgodnie z opisem w "Aktualizacji wdrożenia udziału w konsoli Deployment Workbench".  
 
  **Aby zaktualizować udział wdrożenia przy użyciu programu Windows PowerShell**  
@@ -336,7 +337,7 @@ Add-PSSnapin -Name Microsoft.BDD.PSSnapIn
 
      Polecenie cmdlet zwraca bez wpisu, jeśli aktualizacji zakończy się pomyślnie.  
 
-###  <a name="UpdateLinkedDeployShare"></a>Aktualizacja udziału wdrożenia połączone, przy użyciu programu Windows PowerShell  
+###  <a name="UpdateLinkedDeployShare"></a> Aktualizacja udziału wdrożenia połączone, przy użyciu programu Windows PowerShell  
  Można zaktualizować udziałów wdrożenia połączonego (replikowania) za pomocą **MDTLinkedDS aktualizacji** polecenia cmdlet i dostawcy środowiska Windows PowerShell MDTProvider. Aktualizacja udziału wdrożenia połączonego replikuje zawartość z oryginalnego udział wdrożenia do udziału wdrożenia połączonego. Można wykonać te same czynności, za pomocą konsoli Deployment Workbench, zgodnie z opisem w "Replikować połączonego wdrożenia udziałów w konsoli Deployment Workbench".  
 
  **Aby zaktualizować udział wdrożenia połączone za pomocą środowiska Windows PowerShell**  
@@ -373,7 +374,7 @@ Add-PSSnapin -Name Microsoft.BDD.PSSnapIn
 
      Polecenie cmdlet zwraca bez wpisu, jeśli aktualizacji zakończy się pomyślnie.  
 
-###  <a name="UpdateDeployMedia"></a>Aktualizowanie nośnika wdrażania przy użyciu programu Windows PowerShell  
+###  <a name="UpdateDeployMedia"></a> Aktualizowanie nośnika wdrażania przy użyciu programu Windows PowerShell  
  Można aktualizować (Generuj) wdrożenia przy użyciu nośnika **MDTMedia aktualizacji** polecenia cmdlet i dostawcy środowiska Windows PowerShell MDTProvider. Aktualizowanie nośniki wdrażania replikuje zawartość z oryginalnego udział wdrożenia do udziału wdrożenia połączonej, a następnie generuje pliki .iso i wim. Można wykonać te same czynności, za pomocą konsoli Deployment Workbench, zgodnie z opisem w "Generowanie nośnika obrazów w konsoli Deployment Workbench".  
 
  Gdy **MDTMedia aktualizacji** zakończeniu działania polecenia cmdlet, są tworzone następujące pliki:  
@@ -422,25 +423,25 @@ Add-PSSnapin -Name Microsoft.BDD.PSSnapIn
 
      Polecenie cmdlet zwraca bez wpisu, jeśli aktualizacji zakończy się pomyślnie.  
 
-###  <a name="ManageItemDeployShare"></a>Zarządzanie elementów w udziale wdrożenia przy użyciu programu Windows PowerShell  
+###  <a name="ManageItemDeployShare"></a> Zarządzanie elementów w udziale wdrożenia przy użyciu programu Windows PowerShell  
  Udział wdrożenia zawiera elementy, które są używane do wykonywania wdrożeń, takich jak systemy operacyjne, aplikacje, sterowniki urządzeń, pakiety systemu operacyjnego i sekwencji zadań. Te elementy można zarządzać za pomocą poleceń cmdlet programu Windows PowerShell i udostępnianych z zestawu MDT.  
 
  Aby uzyskać więcej informacji dotyczących modyfikowania elementów bezpośrednio za pomocą poleceń cmdlet programu Windows PowerShell, zobacz [manipulowanie elementów bezpośrednio](http://technet.microsoft.com/library/dd315266.aspx). Struktura folderów dla udziału wdrożenia można też zarządzać za pomocą środowiska Windows PowerShell. Aby uzyskać więcej informacji, zobacz [Zarządzanie wdrożenia udziału folderów za pomocą środowiska Windows PowerShell](#ManageDeployShareFolder).  
 
-####  <a name="ImportItemDeployShare"></a>Zaimportuj element do udziału wdrożenia  
+####  <a name="ImportItemDeployShare"></a> Zaimportuj element do udziału wdrożenia  
  Możesz zaimportować każdego typu elementu, takiego jak systemów operacyjnych, aplikacji lub sterowników urządzeń za pomocą poleceń cmdlet zestawu MDT. Dla każdego typu elementu brak konkretnego polecenia cmdlet zestawu MDT. Jeśli chcesz zaimportować wielu elementów do udziału wdrożenia za pomocą środowiska Windows PowerShell, zobacz [populacji automatyzacji udział wdrożenia](#AutomatePopulateDeployShare).  
 
  W poniższej tabeli wymieniono MDT Windows PowerShell polecenia cmdlet używane do importowania elementów do udziału wdrożenia i zawiera krótki opis każdego polecenia cmdlet. Przykłady użycia poszczególnych poleceń cmdlet znajduje się w sekcji odpowiada każde polecenie cmdlet.  
 
  |**Polecenia cmdlet** | **Opis** |  
  |-|-|  
- |**MDTApplication importu** |Importuje aplikację do udziału wdrożenia|  
- |**MDTDriver importu** |Importuje co najmniej jednego sterownika urządzenia do udziału wdrożenia|  
- |**MDTOperatingSystem importu** |Importuje jednego lub kilku systemów operacyjnych do udziału wdrożenia|  
- |**MDTPackage importu** |Importuje jeden lub więcej pakietów systemu operacyjnego do udziału wdrożenia|  
- |**MDTTaskSequence importu** |Importuje sekwencję zadań do udziału wdrożenia|  
+ |**Import-MDTApplication** |Importuje aplikację do udziału wdrożenia|  
+ |**Import-MDTDriver** |Importuje co najmniej jednego sterownika urządzenia do udziału wdrożenia|  
+ |**Import-MDTOperatingSystem** |Importuje jednego lub kilku systemów operacyjnych do udziału wdrożenia|  
+ |**Import-MDTPackage** |Importuje jeden lub więcej pakietów systemu operacyjnego do udziału wdrożenia|  
+ |**Import-MDTTaskSequence** |Importuje sekwencję zadań do udziału wdrożenia|  
 
-####  <a name="ViewPropertyDeployShare"></a>Wyświetl właściwości elementu w udziału wdrożenia  
+####  <a name="ViewPropertyDeployShare"></a> Wyświetl właściwości elementu w udziału wdrożenia  
  Każdy element udziału wdrożenia ma inny zestaw właściwości. Można wyświetlić właściwości elementu w udziale wdrożenia za pomocą [Get-ItemProperty](http://technet.microsoft.com/library/hh849851.aspx) polecenia cmdlet. [Get ItemProperty](http://technet.microsoft.com/library/hh849851.aspx) polecenie cmdlet używa MDTProvider Aby wyświetlić właściwości dla określonego elementu, tak samo, jak widać właściwości w konsoli Deployment Workbench.  
 
  Jeśli chcesz chcesz, aby wyświetlić właściwości wielu elementów w ramach wdrożenia korzystają, przy użyciu programu Windows PowerShell, zobacz [populacji automatyzacji udział wdrożenia](#AutomatePopulateDeployShare).  
@@ -485,7 +486,7 @@ Add-PSSnapin -Name Microsoft.BDD.PSSnapIn
 
      W tym przykładzie wartość *ścieżki* parametr jest w pełni kwalifikowana ścieżka programu Windows PowerShell do elementu, łącznie z nazwą pliku, który został zwrócony w poprzednim kroku. Aby wyświetlić właściwości innych typów elementów, takich jak sterowniki urządzeń lub aplikacji, można użyć tego samego procesu.  
 
-####  <a name="RemoveItemDeployShare"></a>Usuń element z udziału wdrożenia  
+####  <a name="RemoveItemDeployShare"></a> Usuń element z udziału wdrożenia  
  Można usunąć elementu z udziału wdrożenia przy użyciu [Usuń element](http://technet.microsoft.com/library/hh849765) polecenia cmdlet. [Usuń element](http://technet.microsoft.com/library/hh849765) polecenie cmdlet używa MDTProvider można usunąć określonego elementu, tak samo, jak można usunąć element w konsoli Deployment Workbench. Jeśli chcesz usunąć wielu elementów w ramach wdrożenia udostępnić przy użyciu programu Windows PowerShell, zobacz [populacji automatyzacji udział wdrożenia](#AutomatePopulateDeployShare).  
 
 > [!NOTE]
@@ -536,7 +537,7 @@ Add-PSSnapin -Name Microsoft.BDD.PSSnapIn
     > [!NOTE]
     >  Usunięcie elementu, który sekwencja zadań używa powoduje błąd sekwencji zadań. Upewnij się, że element nie jest wywoływany przez inne elementy w udziału wdrożenia przed usunięciem elementu.  
 
-###  <a name="AutomatePopulateDeployShare"></a>Automatyzowanie wypełniania udziału wdrożenia  
+###  <a name="AutomatePopulateDeployShare"></a> Automatyzowanie wypełniania udziału wdrożenia  
  Polecenia cmdlet środowiska Windows PowerShell dla zestawu MDT umożliwiają zarządzanie poszczególne elementy. Jednak przy użyciu funkcji obsługi skryptów w programie Windows PowerShell, polecenia cmdlet mogą służyć do automatyzowania populacji udziału wdrożenia.  
 
  Na przykład organizacja może być konieczne wdrożenie wielu udziałów wdrożenia dla różnych jednostek biznesowych lub organizacja może zapewnić systemu operacyjnego, usługi wdrażania dla innych organizacji. W obu tych przykładach organizacje muszą także możliwość tworzenia i wypełniania udziałów wdrożenia, które są skonfigurowane spójnie.  
@@ -580,7 +581,7 @@ Import-MDTApplication –path $App.ApplicationFolder -enable "True" –Name $App
 
      Aby uzyskać więcej informacji dotyczących polecenia cmdlet zestawu MDT, używane do importowania elementów do udziału wdrożenia, zobacz [Importuj element na udział wdrożenia](#ImportItemDeployShare).  
 
-###  <a name="ManageDeployShareFolder"></a>Zarządzanie folderami udziału wdrożenia za pomocą środowiska Windows PowerShell  
+###  <a name="ManageDeployShareFolder"></a> Zarządzanie folderami udziału wdrożenia za pomocą środowiska Windows PowerShell  
  Możesz zarządzać foldery w udziale wdrożenia przy użyciu narzędzia wiersza polecenia, takich jak **mkdir** polecenia lub przy użyciu poleceń cmdlet programu Windows PowerShell, takich jak [nowy element](http://technet.microsoft.com/library/hh849795) polecenia cmdlet i MDTProvider systemu Windows Dostawca programu PowerShell. Można również widoczne taką samą strukturę folderów z udziałów wdrożenia i zarządzane w konsoli Deployment Workbench. Aby uzyskać więcej informacji dotyczących modyfikowania elementów bezpośrednio za pomocą poleceń cmdlet programu Windows PowerShell, zobacz [manipulowanie elementów bezpośrednio](http://technet.microsoft.com/library/dd315266.aspx).  
 
 #### <a name="create-a-folder-in-a-deployment-share-using-windows-powershell"></a>Utwórz Folder udziału wdrożenia, przy użyciu programu Windows PowerShell  
@@ -754,7 +755,7 @@ Import-MDTApplication –path $App.ApplicationFolder -enable "True" –Name $App
 
 -   Zastosowanie dodatku service pack do komputera odniesienia, a następnie przechwytywania zaktualizowanego obrazu z komputera odniesienia, zgodnie z opisem w [automatyzacja aplikacji z systemu operacyjnego z pakietów przy użyciu komputera odniesienia i programu Windows PowerShell](#AutomateAppUsingRef)  
 
-###  <a name="AutomateAppFromUSM"></a>Automatyzowanie aplikacji dodatków Service Pack dla systemu operacyjnego z nośnika źródłowego zaktualizowane  
+###  <a name="AutomateAppFromUSM"></a> Automatyzowanie aplikacji dodatków Service Pack dla systemu operacyjnego z nośnika źródłowego zaktualizowane  
  Można zautomatyzować proces aktualizacji przy użyciu programu Windows PowerShell, jeśli masz nośnika źródłowego, który dodatku service pack, takich jak o dysk DVD z systemem Windows 7 z dodatkiem SP1 już zintegrowana dodatków service Pack systemu operacyjnego.  
 
  W przypadku tej metody nośnika źródłowego systemu operacyjnego z dodatkiem service pack jest kopiowana za pośrednictwem istniejące pliki systemu operacyjnego bez dodatku service pack w udziału wdrożenia za pomocą środowiska Windows PowerShell.  
@@ -800,7 +801,7 @@ Import-MDTApplication –path $App.ApplicationFolder -enable "True" –Name $App
 
  Aby uzyskać więcej informacji o sposobie aktualizowania nośnika wdrożenia zestawu MDT wdrażania w oparciu udostępnić przy użyciu **MDTMedia aktualizacji** polecenia cmdlet, zobacz [aktualizowania wdrożenia nośnika przy użyciu programu Windows PowerShell](#UpdateDeployMedia).  
 
-###  <a name="AutomateAppUsingRef"></a>Automatyzacja aplikacji z systemu operacyjnego dodatków Service Pack przy użyciu komputera odniesienia i środowiska Windows PowerShell  
+###  <a name="AutomateAppUsingRef"></a> Automatyzacja aplikacji z systemu operacyjnego dodatków Service Pack przy użyciu komputera odniesienia i środowiska Windows PowerShell  
  Można zautomatyzować proces aktualizowania systemu operacyjnego dodatków service Pack przy użyciu programu Windows PowerShell, jeśli masz tylko dodatku service pack, który nie jest jeszcze zintegrowana z systemu operacyjnego, takich jak o dodatku SP1 dla systemu Windows 7 nie została jeszcze zintegrowane z obrazu systemu Windows 7.  
 
  W przypadku tej metody wdrożenia systemu operacyjnego bez dodatku service pack do komputera odniesienia. Następnie należy zastosować dodatek service pack na komputerze odniesienia. Następnie przechwycić obraz systemu operacyjnego komputera odniesienia. Na koniec skopiować pliku .wim przechwycone przez plik Install.wim w systemie operacyjnym w udziału wdrożenia za pomocą środowiska Windows PowerShell.  
@@ -1277,7 +1278,7 @@ Cscript.exe “%SCRIPTROOT%\ZTIConnect.wsf” /uncpath:unc_path
     |-|-|  
     |**Nazwa** |Typ **Połącz z serwerem** (gdzie serwer jest nazwą serwera, na którym chcesz nawiązać połączenie).|  
     |**Opis** |Wpisz tekst, który wyjaśnia, dlaczego należy połączenie ma zostać wykonane.|  
-    |**Polecenie** |Typ **/uncpath:unc_path "% SCRIPTROOT%\ZTIConnect.wsf" Cscript.exe** (gdzie *unc_path* jest ścieżką UNC do folderu udostępnionego na serwerze).|  
+    |**polecenie** |Typ **/uncpath:unc_path "% SCRIPTROOT%\ZTIConnect.wsf" Cscript.exe** (gdzie *unc_path* jest ścieżką UNC do folderu udostępnionego na serwerze).|  
 
 7.  Zakończenie **opcje** kartę nowego zadania, korzystając z poniższych informacji. O ile nie określono, zaakceptuj wartości domyślne, a następnie kliknij przycisk **OK**.  
 
@@ -1401,7 +1402,7 @@ Cscript.exe “%SCRIPTROOT%\ZTIConnect.wsf” /uncpath:unc_path
 
  Na **opcje** kartę kroku sekwencji zadań, wykonaj następujące czynności:  
 
--   **Dodaj.** Kliknij ten przycisk, aby dodać warunek do kroku sekwencji zadań.  
+-   **Add.** Kliknij ten przycisk, aby dodać warunek do kroku sekwencji zadań.  
 
 -   **Usuń.** Kliknij ten przycisk, aby usunąć istniejący warunek w kroku sekwencji zadań.  
 
@@ -1612,15 +1613,15 @@ IF ((Computer Model IS “Contoso 1950”) AND (operating system=2003 OR operati
 
  W tym scenariuszu przyjęto założenie, że zestaw MDT jest skonfigurowany na serwerze głównym wdrożenia i że konfiguracji MDT bazy danych zostało już zakończone zgodnie z opisem na początku tego dokumentu.  
 
-###  <a name="EnsureInfrastructure"></a>Sprawdzanie, czy istnieje odpowiedni infrastruktury  
+###  <a name="EnsureInfrastructure"></a> Sprawdzanie, czy istnieje odpowiedni infrastruktury  
  Wysoce skalowalną infrastrukturę wdrożenia LTI używa topologii gwiazdy replikacji zawartości; w związku z tym najpierw wyznaczyć serwer wdrażania w środowisku produkcyjnym, który będzie realizował roli serwera głównego wdrożenia.  Poniższa lista zawiera składniki wymagane dla serwera głównego wdrożenia.  
 
  |**Wymaganego składnika:** |**Cel/komentarza** |  
  |-|-|  
  |Windows Server 2003 R2|Wymagane do obsługi systemu plików DFS-R|  
- |ZESTAW MDT |Zawiera główną kopię udziału wdrożenia|  
+ |MDT |Zawiera główną kopię udziału wdrożenia|  
  |SQL Server 2005|Musi być pełną wersję, aby umożliwić replikację bazy danych zestawu MDT|  
- |SYSTEMU PLIKÓW DFS-R |Wymagane dla replikacji udziału wdrożenia|  
+ |DFS-R |Wymagane dla replikacji udziału wdrożenia|  
  |Usługi wdrażania systemu Windows |Wymagany w celu umożliwienia sieci instalacje oparte na środowisku PXE, aby zostać zainicjowany|  
 
  Po wybraniu serwera głównego wdrażania, obsługi administracyjnej dodatkowych serwerów w każdej lokacji w celu obsługi wdrożeń LTI.  Poniższa lista zawiera składniki wymagane dla serwera podrzędnego wdrożenia.  
@@ -1628,14 +1629,14 @@ IF ((Computer Model IS “Contoso 1950”) AND (operating system=2003 OR operati
  |**Wymaganego składnika:** |**Cel/komentarza** |  
  |-|-|  
  |Windows Server 2003 R2|Wymagane do obsługi systemu plików DFS-R|  
- |Microsoft SQL Server 2005 Express Edition. |Odbiera replikowane kopie bazy danych zestawu MDT|  
- |SYSTEMU PLIKÓW DFS-R |Wymagane dla replikacji udziału wdrożenia|  
+ |Microsoft SQL Server 2005 Express Edition |Odbiera replikowane kopie bazy danych zestawu MDT|  
+ |DFS-R |Wymagane dla replikacji udziału wdrożenia|  
  |Usługi wdrażania systemu Windows |Wymagany w celu umożliwienia sieci instalacje oparte na środowisku PXE, aby zostać zainicjowany|  
 
 > [!NOTE]
 >  Usług wdrażania systemu Windows musi być przygotowana i skonfigurowana na każdym serwerze podrzędnej, ale nie jest konieczne jest dodanie obrazów rozruchowych lub instalacji.  
 
-###  <a name="AddContent"></a>Dodawanie zawartości do zestawu MDT  
+###  <a name="AddContent"></a> Dodawanie zawartości do zestawu MDT  
  Umieścić serwer główny wdrażania zawartości przy użyciu konsoli Deployment Workbench i utworzyć i wypełnić DB zestawu MDT, zgodnie z opisem w poniższych sekcjach. Aby uzyskać informacje na wypełnianie bazy danych:  
 
 -   Aplikacje, zobacz sekcję "Konfigurowanie aplikacji w konsoli Deployment Workbench", w dokumentacji zestawu MDT *przy użyciu programu Microsoft Deployment Toolkit*  
@@ -1651,7 +1652,7 @@ IF ((Computer Model IS “Contoso 1950”) AND (operating system=2003 OR operati
 > [!NOTE]
 >  Upewnij się, że plik LiteTouchPE_x86.wim utworzone po zaktualizowaniu udziału wdrożenia dodano do usług wdrażania systemu Windows.  
 
-###  <a name="PrepareDeployment"></a>Przygotowanie usług wdrażania systemu Windows  
+###  <a name="PrepareDeployment"></a> Przygotowanie usług wdrażania systemu Windows  
  Ponieważ plik LiteTouchPE_x86.wim będą replikowane okresowo przez grupę replikacji systemu plików DFS-R, magazynu danych konfiguracji rozruchu muszą być okresowo aktualizowane do uwzględnienia nowo replikowanych środowiska Preinstalacyjnego systemu Windows. Wykonaj następujące kroki na każdym serwerze wdrażania.  
 
  **Aby przygotować usług wdrażania systemu Windows**  
@@ -1663,7 +1664,7 @@ IF ((Computer Model IS “Contoso 1950”) AND (operating system=2003 OR operati
 > [!NOTE]
 >  W tym przykładzie przedstawionych w tym miejscu okresu odświeżania jest ustawiona na 60 minut; jednak należy skonfigurować tę wartość, aby replikować okresie równa R. systemu plików DFS  
 
-###  <a name="ConfigureFileReplication"></a>Konfigurowanie replikacji systemu plików rozproszonych  
+###  <a name="ConfigureFileReplication"></a> Konfigurowanie replikacji systemu plików rozproszonych  
  Podczas skalowania architektura wdrożenia LTI, należy użyć systemu plików DFS-R jako podstawę, replikowania zawartości z zarówno udział wdrożenia zestawu MDT oraz środowisko rozruchowe Windows PE Lite Touch i na serwerze głównym wdrażania serwerów podrzędnych wdrożenia.  
 
 > [!NOTE]
@@ -1766,7 +1767,7 @@ IF ((Computer Model IS “Contoso 1950”) AND (operating system=2003 OR operati
 > [!NOTE]
 >  Upewnij się, czy nowa grupa replikacji znajduje się teraz poniżej węzła replikacji.  
 
-###  <a name="PrepareSQLReplication"></a>Przygotowywanie do replikacji programu SQL Server  
+###  <a name="PrepareSQLReplication"></a> Przygotowywanie do replikacji programu SQL Server  
  Przed skonfigurowaniem replikacji programu SQL Server, należy wykonać kilka kroków wstępną konfigurację, aby upewnić się, że serwery wdrożenia są poprawnie skonfigurowane.  
 
  **Aby przygotować się do replikacji programu SQL Server na serwerze głównym wdrożenia**  
@@ -1789,7 +1790,7 @@ IF ((Computer Model IS “Contoso 1950”) AND (operating system=2003 OR operati
 > [!NOTE]
 >  Ta baza danych musi otrzymać taką samą nazwę jak MDT bazy danych na serwerze głównym wdrożenia. Na przykład, jeśli nosi nazwę zestawu MDT bazy danych na serwerze głównym wdrożenia *MDTDB*, Utwórz pustą bazę danych o nazwie *MDTDB* na serwerze wdrażania podrzędnych.  
 
-###  <a name="ConfigureSQLReplication"></a>Konfigurowanie replikacji programu SQL Server  
+###  <a name="ConfigureSQLReplication"></a> Konfigurowanie replikacji programu SQL Server  
  Po skonfigurowaniu replikacji plików i folderów wymagane do utworzenia infrastruktury wdrażania należy skonfigurować serwer SQL do replikacji bazy danych zestawu MDT.  
 
 > [!NOTE]
@@ -1931,7 +1932,7 @@ IF ((Computer Model IS “Contoso 1950”) AND (operating system=2003 OR operati
 
  Replikacji programu SQL Server jest skonfigurowany, a MDT DB będą replikowane z serwera głównego wdrożenia do wszystkich serwerów podrzędnych wdrożenia, subskrybowany do niego w regularnych odstępach czasu.  
 
-#### <a name="configure-customsettingsini"></a>Skonfiguruj CustomSettings.ini  
+#### <a name="configure-customsettingsini"></a>Configure CustomSettings.ini  
  Infrastruktura wdrażania LTI zostało pomyślnie utworzone, a każda lokalizacja będzie zawierać serwer wdrażania LTI replikowanych kopię:  
 
 -   Udział wdrożenia  
@@ -2063,7 +2064,7 @@ ParameterCondition=OR
 
  W tym scenariuszu przyjęto założenie, że zestaw MDT jest skonfigurowany na serwerze wdrażania.  
 
-###  <a name="UnderstandingLocationServer"></a>Opis LocationServer.xml  
+###  <a name="UnderstandingLocationServer"></a> Opis LocationServer.xml  
  Najpierw trzeba poznać, jak zestaw MDT używa LocationServer.xml. Podczas LTI skrypty MDT odczytu i przetworzyć pliku BootStrap.ini początkowej informacji dotyczących wdrożenia. Dzieje się tak, zanim serwer wdrażania nawiązaniu połączenia. W związku z tym **DeployRoot** właściwości jest najczęściej używany do określenia w pliku BootStrap.ini serwera wdrażania, do którego należy ustanowić połączenie.  
 
  Jeśli nie zawiera pliku BootStrap.ini **DeployRoot** właściwości, strona kreatora, aby monitować użytkownika o ścieżkę do serwera wdrażania załadować skrypty zestawu MDT. Podczas inicjowania **aplikacji HTML (HTA)** strona kreatora zestawu MDT skryptów do sprawdzania istnienia pliku LocationServer.xml i, jeśli istnieje, użyj LocationServer.xml, aby wyświetlić dostępne wdrożenia serwerów.  
@@ -2075,7 +2076,7 @@ ParameterCondition=OR
 
  |**— Metoda** |**Szczegóły** |  
  |-|-|  
- |**WDSServer %** |Ta metoda jest używana, gdy serwer zestaw MDT jest hostowane na serwerze usług wdrażania systemu Windows.<br /><br /> Po zainicjowaniu wdrożenia LTI z usług wdrażania systemu Windows, zmiennej środowiskowej — WDSServer % — jest tworzone i wypełniane przy użyciu nazwy serwera usług wdrażania systemu Windows.<br /><br /> **DeployRoot** zmiennej można użyć tej zmiennej na automatyczne łączenie z udziałem wdrożenia na serwerze usług wdrażania systemu Windows — na przykład:<br /><br /> **DeployRoot =\\\\%WDSServer%\Deployment$** |  
+ |**%WDSServer%** |Ta metoda jest używana, gdy serwer zestaw MDT jest hostowane na serwerze usług wdrażania systemu Windows.<br /><br /> Po zainicjowaniu wdrożenia LTI z usług wdrażania systemu Windows, zmiennej środowiskowej — WDSServer % — jest tworzone i wypełniane przy użyciu nazwy serwera usług wdrażania systemu Windows.<br /><br /> **DeployRoot** zmiennej można użyć tej zmiennej na automatyczne łączenie z udziałem wdrożenia na serwerze usług wdrażania systemu Windows — na przykład:<br /><br /> **DeployRoot=\\\\%WDSServer%\Deployment$** |  
  |**Na podstawie lokalizacji automatyzacji** |Zestaw MDT umożliwia automatyzacji oparte na lokalizacji w pliku BootStrap.ini określić serwer, do którego należy wdrożyć.<br /><br /> Użyj **brama domyślna** właściwości do rozróżniania między lokalizacjami; dla każdego **brama domyślna**, określono inny serwer zestawu MDT.<br /><br /> Aby uzyskać więcej informacji na temat przy użyciu automatyzacji oparte na lokalizacji dotyczą "Wybieranie metod dla stosowania ustawienia konfiguracji".|  
 
  Każde podejście wymienione w tabeli poprzedzających oferuje jedną sposobem zautomatyzowania wybór serwera wdrażania w danej lokalizacji, w niektórych scenariuszach. Te metody są przeznaczone dla konkretnych scenariuszy — na przykład, gdy serwer zestaw MDT jest hostowanym wspólnie z usługami wdrażania systemu Windows.  
@@ -2084,7 +2085,7 @@ ParameterCondition=OR
 
  W tych scenariuszach pliku LocationServer.xml umożliwia elastyczne zaprezentowanie tych informacji w czasie wdrażania bez konieczności znajomości nazwy serwera i nazwy udziału wdrożenia.  
 
-###  <a name="CreateLocationServer"></a>Tworzenie pliku LocationServer.xml  
+###  <a name="CreateLocationServer"></a> Tworzenie pliku LocationServer.xml  
  Do prezentowania listę serwerów wdrożenie dostępne podczas wdrażania LTI, Utwórz plik LocationServer.xml, który zawiera szczegółowe informacje o każdym serwerze. Plik nie istnieje domyślny LocationServer.xml w zestawie MDT, aby utworzyć przy użyciu poniższych wskazówek.  
 
 #### <a name="create-a-locationserverxml-file-to-support-multiple-locations"></a>Utwórz plik LocationServer.xml do obsługi wielu lokalizacjach  
@@ -2212,7 +2213,7 @@ ParameterCondition=OR
 
     2.  W **dostosowań środowiska Preinstalacyjnego systemu Windows** sekcji w **dodatkowe katalogu, aby dodać** wpisz ***ścieżki*** (gdzie *ścieżki* jest w pełni kwalifikowana Ścieżka do folderu dodatkowe pliki — na przykład D:\Production pliki Share\Extra wdrożenia), a następnie kliknij przycisk **OK**.  
 
-###  <a name="UpdateBootstrap"></a>Aktualizowanie pliku BootStrap.ini  
+###  <a name="UpdateBootstrap"></a> Aktualizowanie pliku BootStrap.ini  
  Podczas tworzenia udziału wdrożenia za pomocą konsoli Deployment Workbench **DeployRoot** właściwość jest automatycznie tworzone i wypełniane w pliku BootStrap.ini. Ponieważ plik LocationServer.xml jest używany do wypełniania **DeployRoot** właściwości, należy usunąć tę wartość z pliku BootStrap.ini.  
 
  **Aby usunąć właściwość DeployRoot z BootStrap.ini**  
@@ -2231,7 +2232,7 @@ ParameterCondition=OR
 
 7.  Kliknij przycisk **OK** przesłanie zmian.  
 
-###  <a name="UpdateDeploymentShare"></a>Aktualizacja udziału wdrożenia  
+###  <a name="UpdateDeploymentShare"></a> Aktualizacja udziału wdrożenia  
  Aby wygenerować nowy LiteTouch_x86 i LiteTouch_x64 środowisko rozruchowe zawierający plik LocationServer.xml i zaktualizowanego pliku BootStrap.ini obok należy zaktualizować udziału wdrożenia.  
 
  **Aby zaktualizować udział wdrożenia**  
@@ -2320,7 +2321,7 @@ ParameterCondition=OR
     |**Wybierz system operacyjny**|W **zawiera następujące obrazy systemu operacyjnego są dostępne do wdrożenia z tą sekwencją zadań**. Wybierz jeden z nich do używania, wybierz opcję ***captured_vista_image*** (gdzie *captured_vista_image* jest przechwycony obraz komputera odniesienia dodana do węzła systemy operacyjne w konsoli Deployment Workbench), a następnie Kliknij przycisk *dalej*.|  
     |**Określ klucz produktu**|Wybierz **nie zostanie określony klucz produktu w tej chwili**, a następnie kliknij przycisk **dalej**.|  
     |Ustawienia systemu operacyjnego|1.  W **imię i nazwisko**, typ **pracownika Woodgrove**.<br />2.  W **organizacji**, typ **banku Woodgrove**.<br />3.  W **strona główna programu Internet Explorer**, typ **http://www.woodgrovebank.com**.<br />4.  Kliknij przycisk **Dalej**.|  
-    |**Hasło administratora**|W **hasło administratora** i **Potwierdź hasło administratora**, typ  **P@ssw0rd** , a następnie kliknij przycisk **Zakończ**.|  
+    |**Hasło administratora**|W **hasło administratora** i **Potwierdź hasło administratora**, typ **P@ssw0rd**, a następnie kliknij przycisk **Zakończ**.|  
     |**Potwierdzenie**|Kliknij przycisk **Zakończ**.|  
 
  Zakończeniu pracy Kreatora nowej sekwencji zadań i **VISTA_NEW** sekwencja zadań zostanie dodany do listy sekwencji zadań.  
@@ -2434,7 +2435,7 @@ ParameterCondition=OR
     |**Na tej stronie kreatora**|**W tym**|  
     |-|-|  
     |**Zapraszamy do wdrożenia**|Kliknij przycisk **Uruchom Kreatora wdrażania** zainstalować nowy system operacyjny, a następnie kliknij przycisk **dalej**.|  
-    |**Określ poświadczenia do połączenia udziałów sieciowych.**|1.  W **nazwy użytkownika**, typ **administratora**.<br />2.  W **hasło**, typ  **P@ssw0rd** .<br />3.  W **domeny**, typ **CORP**.<br />4.  Kliknij przycisk **OK**.|  
+    |**Określ poświadczenia do połączenia udziałów sieciowych.**|1.  W **nazwy użytkownika**, typ **administratora**.<br />2.  W **hasło**, typ **P@ssw0rd**.<br />3.  W **domeny**, typ **CORP**.<br />4.  Kliknij przycisk **OK**.|  
     |**Wybierz sekwencję zadań do wykonania na tym komputerze.**|Kliknij przycisk *wykonać Zastąp scenariusz komputera na istniejącym komputerze*, a następnie kliknij przycisk **dalej**.|  
     |**Określ, gdzie chcesz zapisać swoje dane i ustawienia**|Kliknij przycisk **Dalej**.|  
     |**Określ, gdzie chcesz zapisać kopię zapasową komputera ukończone**|Kliknij przycisk **nie kopii zapasowej istniejącego komputera**, a następnie kliknij przycisk **dalej**.|  
@@ -2467,7 +2468,7 @@ ParameterCondition=OR
     |**Na tej stronie kreatora**|**W tym**|  
     |--|--|
     |**Zapraszamy do wdrożenia**|Kliknij przycisk **Uruchom Kreatora wdrażania, aby zainstalować nowy system operacyjny**, a następnie kliknij przycisk **dalej**.|  
-    |**Określ poświadczenia do połączenia udziałów sieciowych.**|1.  W **nazwy użytkownika**, typ **administratora**.<br />2.  W **hasło**, typ  **P@ssw0rd** .<br />3.  W **domeny**, typ **CORP**.<br />4.  Kliknij przycisk **OK**.|  
+    |**Określ poświadczenia do połączenia udziałów sieciowych.**|1.  W **nazwy użytkownika**, typ **administratora**.<br />2.  W **hasło**, typ **P@ssw0rd**.<br />3.  W **domeny**, typ **CORP**.<br />4.  Kliknij przycisk **OK**.|  
     |**Wybierz sekwencję zadań do wykonania na tym komputerze.**|Kliknij przycisk **wykonać Zastąp scenariusz komputera na nowy komputer**, a następnie kliknij przycisk **dalej**.|  
     |**Konfigurowanie nazwy komputera**|W **nazwy komputera**, typ **WDG-nowy-02**, a następnie kliknij przycisk **dalej**.|  
     |**Dołącz komputer do domeny lub grupy roboczej**|Kliknij przycisk **Dalej**.|  
@@ -2501,7 +2502,7 @@ ParameterCondition=OR
 
  Poniższe sekcje założono, że zestaw MDT jest skonfigurowany na serwerze wdrażania.  
 
-###  <a name="ChooseAppropLanguage"></a>Wybierając odpowiedni język skryptów  
+###  <a name="ChooseAppropLanguage"></a> Wybierając odpowiedni język skryptów  
  Mimo że kodu, który może działać w systemie Windows lub środowiska Windows PE można wywołać jako instalacja aplikacji lub za pomocą kroku sekwencji zadań zestawu MDT, firma Microsoft zaleca korzystanie ze skryptów w formie plików .vbs lub mu.  
 
  Zaletą używania plików wsf jest wbudowany, oprócz rejestrowania niektórych innych funkcji wstępnie zdefiniowane już używana przez procesy ZTI i LTI. Te funkcje są dostępne w skrypcie ZTIUtility rozpowszechnianej za pomocą zestawu MDT.  
@@ -2533,7 +2534,7 @@ ParameterCondition=OR
 > [!NOTE]
 >  Większość istniejących skryptów MDT 2008 Update 1 będą działać jako-się w zestawie MDT, nawet w przypadku rozległych zmian do ZTIUtility.vbs, większość skrypty MDT uwzględni ZTIUtility.vbs.  
 
-###  <a name="UnderstandLeverageZTI"></a>Zrozumieć, jak korzystać z ZTIUtility  
+###  <a name="UnderstandLeverageZTI"></a> Zrozumieć, jak korzystać z ZTIUtility  
  Plik ZTIUtility.vbs zawiera klasy obiektów, których można użyć w niestandardowym kodem. Integracja kod niestandardowy zestaw mdt przy użyciu:  
 
 -   Rejestrowanie klasy zdefiniowane w ZTIUtility.vbs zgodnie z opisem w [ZTIUtility klasa rejestrowania](#UseZTILogging)  
@@ -2542,7 +2543,7 @@ ParameterCondition=OR
 
 -   Narzędzie klas zdefiniowanych w ZTIUtility.vbs, zgodnie z opisem w [należy użyć klasy narzędzie ZTIUtility](#UseZTIUtility)  
 
-####  <a name="UseZTILogging"></a>Należy użyć klasy rejestrowania ZTIUtility  
+####  <a name="UseZTILogging"></a> Należy użyć klasy rejestrowania ZTIUtility  
  Klasa rejestrowania w ZTIUtiliy.vbs udostępnia prosty mechanizm niestandardowego kodu do informacji o stanie dziennika, ostrzeżenia i błędy w taki sam sposób jak inne skrypty podczas wdrożenia ZTI lub LTI. Standaryzacja to również zapewnia, że **podsumowanie wdrożenia LTI** okno dialogowe poprawnie zgłasza stan kodu niestandardowego, który jest uruchamiany.  
 
  Poniżej przedstawiono kod niestandardowy skrypt, który używa **oLogging.CreateEntry** i **TestAndFail** funkcje do rejestrowania różnych typów komunikatów, w zależności od wyników różnych Akcje skryptu.  
@@ -2626,10 +2627,10 @@ End Class
 > [!NOTE]
 >  Jeśli chcesz kontynuować przy użyciu skryptów tego wywołania **ZTIProcess()** z **ProcessResults()**, możesz to zrobić. Jednak niektóre rozszerzone funkcje obsługi błędów nie zostaną włączone.  
 
-####  <a name="UseZTIEnvironment"></a>Należy użyć klasy środowiska ZTIUtility  
+####  <a name="UseZTIEnvironment"></a> Należy użyć klasy środowiska ZTIUtility  
  Klasa środowiska w ZTIUtiliy.vbs zapewnia dostęp do oraz możliwość aktualizowania właściwości zestawu MDT. W przykładzie poprzedzających **oEnvironment.Item("Memory")** służy do pobierania ilość dostępnej pamięci RAM; ten można również pobrać wartość właściwości opisane w dokumencie MDT *odwołanie do zestawu narzędzi* .  
 
-####  <a name="UseZTIUtility"></a>Klasa narzędzia ZTIUtility  
+####  <a name="UseZTIUtility"></a> Klasa narzędzia ZTIUtility  
  Skrypt ZTIUtility.vbs zawiera szereg typowych narzędzi, które można użyć dowolnego skryptu niestandardowe wdrożenie. Możesz dodać tych narzędzi do dowolnego skryptu taki sam sposób jak **oLogging** i **oEnvironment** klasy.  
 
 W poniższej tabeli przedstawiono niektóre przydatne funkcje dostępne, a ich dane wyjściowe. Pełną listę dostępnych funkcji można znaleźć w pliku ZTIUtility.vbs.  
@@ -2648,7 +2649,7 @@ W poniższej tabeli przedstawiono niektóre przydatne funkcje dostępne, a ich d
 |**oUtility.Sections(file)**|Odczytuje sekcji pliku .ini i zapisuje je w obiekcie dla odwołania|  
 |**oUtility.SectionContents (plik, sekcji)**|Odczytuje zawartość pliku .ini określonego i zapisuje je w obiekcie|  
 |**oUtility.RunWithHeartbeat(sCmd)**|Po uruchomieniu polecenia, zapisywać pulsu informacji w dziennikach co 0,5 sekund|  
-|**oUtility.FindFile**<br /><br /> **(sFilename sFoundPath)**|Wyszukuje określony plik w folderze DeployRoot i standardowe podfolderów, w tym obsługi, narzędzia USMT, szablony, skrypty i kontroli|  
+|**oUtility.FindFile**<br /><br /> **(sFilename,sFoundPath)**|Wyszukuje określony plik w folderze DeployRoot i standardowe podfolderów, w tym obsługi, narzędzia USMT, szablony, skrypty i kontroli|  
 |**oUtility.findMappedDrive(sServerUNC)**|Sprawdza, czy dysk jest mapowany na określonej ścieżce UNC i zwraca literę dysku|  
 |**oUtility.ValidateConnection(sServerUNC)**|Sprawdza, czy jest istniejące połączenie z serwerem wskazanym i, jeśli nie ma, próbuje utworzyć|  
 |**MapNetworkDrive**<br /><br /> **(sShare, SDomID, sDomPwd)**|Mapuje literę dysku do ścieżki UNC określonej jako udział i zwraca to litera dysku używana; Zwraca błąd, jeśli nie powiodło się|  
@@ -2663,7 +2664,7 @@ W poniższej tabeli przedstawiono niektóre przydatne funkcje dostępne, a ich d
 |**TestAndFail (iRc, iError, swiadomość)**|Kończy działanie skryptu **iError** Jeśli **iRc** ma wartość false lub zakończyć się niepowodzeniem|  
 |**TestAndLog (iRc, swiadomość)**|Rejestruje tylko wtedy, gdy ostrzeżenie **iRc** ma wartość false lub zakończyć się niepowodzeniem|  
 
-###  <a name="IntegrateCustomDeploy"></a>Integrowanie niestandardowe wdrożenie kodu  
+###  <a name="IntegrateCustomDeploy"></a> Integrowanie niestandardowe wdrożenie kodu  
  Kod niestandardowy wdrożenia można zintegrować z procesem MDT na kilka sposobów; Jednak niezależnie od zastosowanej metody, powinny być spełnione następujące dwie reguły:  
 
 -   Nazwa skryptu niestandardowe wdrożenie kod zawsze powinien zaczynać się od litery Z.  
@@ -2760,7 +2761,7 @@ W poniższej tabeli przedstawiono niektóre przydatne funkcje dostępne, a ich d
 
  W tym scenariuszu przyjęto założenie, że zestaw MDT działa na serwerze wdrażania.  
 
-###  <a name="WhichMethodtoInstallDriver"></a>Ustalanie, jakiej metody można używać do zainstalowania sterownika urządzenia  
+###  <a name="WhichMethodtoInstallDriver"></a> Ustalanie, jakiej metody można używać do zainstalowania sterownika urządzenia  
  Producentów sprzętu wersji sterowników urządzeń w jednym z dwóch formach:  
 
 -   W pakiecie, który można wyodrębniania i który zawiera pliki .inf służą do importowania sterowników do konsoli Deployment Workbench  
@@ -2771,7 +2772,7 @@ W poniższej tabeli przedstawiono niektóre przydatne funkcje dostępne, a ich d
 
  Nie można wyodrębnić pakiety sterowników urządzeń do izolowania plików inf lub te, które nie działają prawidłowo, bez uprzedniego instalowane za pomocą Instalatora aplikacji, takich jak plik MSI lub Setup.exe można korzystać z funkcji zestawu MDT instalowanie aplikacji i zainstalować urządzenia Sterownik podczas procesu wdrażania, podobnie jak w przypadku dowolnej aplikacji normalne.  
 
-###  <a name="InstallOutofBoxDrivers"></a>Instalowanie sterowników urządzeń przy użyciu metody Out-of-Box sterowniki  
+###  <a name="InstallOutofBoxDrivers"></a> Instalowanie sterowników urządzeń przy użyciu metody Out-of-Box sterowniki  
  Można importować pakiety sterowników urządzeń, które obejmują plik .inf do konsoli Deployment Workbench i instalować je automatycznie w ramach procesu wdrażania. Aby wdrożyć ten typ wdrożenia sterownika urządzenia, należy najpierw dodać sterownik urządzenia do konsoli Deployment Workbench.  
 
  **Aby dodać sterownik urządzenia do konsoli Deployment Workbench**  
@@ -2813,7 +2814,7 @@ W poniższej tabeli przedstawiono niektóre przydatne funkcje dostępne, a ich d
 
 6.  Na **potwierdzenie** kliknij przycisk **Zakończ**.  
 
-###  <a name="InstallDriversasApplications"></a>Instalowanie sterowników urządzeń jako aplikacje  
+###  <a name="InstallDriversasApplications"></a> Instalowanie sterowników urządzeń jako aplikacje  
  Sterowniki urządzeń, które są pakowane, jak aplikacje i że nie można wyodrębnić do folderu zawierającego plik .inf, oprócz pliki sterowników należy dodać do konsoli Deployment Workbench jako aplikacji do zainstalowania podczas wdrażania.  
 
  Aplikacje można określony jako kroku sekwencji zadań lub określone CustomSettings.ini; Jednak aplikacje sterownika urządzenia powinien być zainstalowany tylko wtedy, gdy sekwencja zadań jest uruchomiona na komputerze z urządzeniami. Aby to zapewnić, Uruchom sekwencję zadań do wdrażania aplikacji sterownika odpowiedniego urządzenia jako warunkowego sekwencji zadań. Można określić kryteria warunkowego uruchamiania kroku sekwencji zadań za pomocą zapytań usługi WMI dla urządzenia na komputerze docelowym.  
@@ -2862,7 +2863,7 @@ W poniższej tabeli przedstawiono niektóre przydatne funkcje dostępne, a ich d
 
  Każde podejście jest szczegółowo opisane w poniższych sekcjach.  
 
-####  <a name="SpecifyDeviceAppTask"></a>Określ aplikację sterowników urządzeń w ramach sekwencji zadań  
+####  <a name="SpecifyDeviceAppTask"></a> Określ aplikację sterowników urządzeń w ramach sekwencji zadań  
  Pierwsza metoda dodawania aplikacji sterownika urządzenia, proces wdrażania stosowany jest za pomocą sekwencji zadań możesz dodać kroki dla każdej aplikacji sterownika urządzenia.  
 
  Istnieją dwie metody main związanych z zarządzaniem aplikacjami sterownika urządzenia w sekwencji zadań:  
@@ -2903,7 +2904,7 @@ W poniższej tabeli przedstawiono niektóre przydatne funkcje dostępne, a ich d
 
          W tym przykładzie *hardware_model* jest nazwa modelu komputera (na przykład D620 szerokość) i *hardware_manufacturer* jest nazwa komputera (na przykład Dell Corporation).  
 
-          **%**  Symbol jest symbolem wieloznacznym uwzględnionej w nazwach, aby umożliwić administratorom zwróci żadnych modeli komputera ani produkującej zawierający wartość określona dla ***hardware_model***lub ***hardware_manufacturer***.  
+         **%** Symbol jest symbolem wieloznacznym uwzględnionej w nazwach, aby umożliwić administratorom zwróci żadnych modeli komputera ani produkującej zawierający wartość określona dla ***hardware_model***lub ***hardware_manufacturer***.  
 
      Aby uzyskać więcej informacji na temat kwerendy usługi WMI i WQL, zobacz sekcję "Dodawanie WMI zapytania do sekwencji krok warunki zadania", w dokumencie zestawu MDT *przy użyciu programu Microsoft Deployment Toolkit*i zobaczyć [kwerendy WQL](http://msdn.microsoft.com/library/aa392902.aspx).  
 
@@ -3472,7 +3473,7 @@ MandatoryApplications001={c303fa6e-3a4d-425e-8102-77db9310e4d0}
 
 -   Usuń nośnik wdrażania, zgodnie z opisem w [usuwanie nośnika](#DeleteMedia).  
 
-###  <a name="CreateNewDeployShare"></a>Tworzenie nowego udziału wdrażania  
+###  <a name="CreateNewDeployShare"></a> Tworzenie nowego udziału wdrażania  
  Następujące polecenia środowiska Windows PowerShell utworzyć nowy udział wdrożenia na udział wdrożenia D:\Production o nazwie *produkcji$*. Nowy udział wdrożenia zostanie wyświetlony w konsoli Deployment Workbench produkcyjnego.  
 
 -   ```  
@@ -3483,7 +3484,7 @@ MandatoryApplications001={c303fa6e-3a4d-425e-8102-77db9310e4d0}
     New-PSDrive -Name "DS002" -PSProvider "MDTProvider" -Root "D:\Production Deployment Share" -Description "Production" -NetworkPath "\\Deployment_Server\Production$" -Verbose | add-MDTPersistentDrive -Verbose  
     ```  
 
-###  <a name="CreateFolder"></a>Tworzenie folderu  
+###  <a name="CreateFolder"></a> Tworzenie folderu  
  Następujące polecenia środowiska Windows PowerShell Utwórz folder Adobe w drzewie konsoli Deployment Workbench w konsoli Deployment Workbench\/udziałów wdrożenia\/produkcji\/aplikacji.  
 
 -   ```  
@@ -3501,7 +3502,7 @@ MandatoryApplications001={c303fa6e-3a4d-425e-8102-77db9310e4d0}
     > [!NOTE]
     >  Dodawanie "`remove-psdrive`" do skryptu gwarantuje, że proces w tle kończy się przed kontynuowaniem.  
 
-###  <a name="DeleteFolder"></a>Usunięcie folderu  
+###  <a name="DeleteFolder"></a> Usunięcie folderu  
  Użycie następujących poleceń programu Windows PowerShell usunięcie konsoli Deployment Workbench\/udziałów wdrożenia\/produkcji\/aplikacji\/Adobe folderu.  
 
 -   ```  
@@ -3519,7 +3520,7 @@ MandatoryApplications001={c303fa6e-3a4d-425e-8102-77db9310e4d0}
 > [!NOTE]
 >  Skrypt zakończy się niepowodzeniem, jeśli folder nie jest pusty.  
 
-###  <a name="ImportDeviceDriver"></a>Importowanie sterowników urządzeń  
+###  <a name="ImportDeviceDriver"></a> Importowanie sterowników urządzeń  
  Następujące polecenia środowiska Windows PowerShell zostaną zaimportowane sterownika urządzenia monitor Dell 2407 wywołanie do udziału wdrożenia produkcyjnego.  
 
 -   ```  
@@ -3534,14 +3535,14 @@ MandatoryApplications001={c303fa6e-3a4d-425e-8102-77db9310e4d0}
     Import-mdtdriver -path "DS002:\Out-of-Box Drivers\Monitor" -SourcePath "D:\Drivers\Dell\2407 WFP" -Verbose  
     ```  
 
-###  <a name="DeleteDeviceDriver"></a>Usunięcie sterownika urządzenia  
+###  <a name="DeleteDeviceDriver"></a> Usunięcie sterownika urządzenia  
  Następujące polecenia programu Windows PowerShell usuwa sterownik monitora WFP Dell 2407 z udziałem wdrożenia produkcyjnego.  
 
 ```  
 Remove-item -path "DS002:\Out-of-Box Drivers\Dell Inc. Monitor 2407WFP.INF 1.0" -Verbose  
 ```  
 
-###  <a name="ImportOpSysPackage"></a>Importowanie pakietu systemu operacyjnego  
+###  <a name="ImportOpSysPackage"></a> Importowanie pakietu systemu operacyjnego  
  Następujące polecenia środowiska Windows PowerShell importowania wszystkich pakietów systemu operacyjnego znajduje się w obszarze D:\\aktualizacje\\Microsoft\\Vista. Te pakiety systemu operacyjnego, które będą przechowywane w produkcji udziału wdrożenia, który znajduje się w D:\\udział wdrożenia produkcyjnego.  
 
 -   ```  
@@ -3556,14 +3557,14 @@ Remove-item -path "DS002:\Out-of-Box Drivers\Dell Inc. Monitor 2407WFP.INF 1.0" 
     Import-mdtpackage -path "DS002:\Packages" -SourcePath "D:\Updates\Microsoft\Vista" -Verbose  
     ```  
 
-###  <a name="DeleteOpSysPackage"></a>Usunięcie pakietu systemu operacyjnego  
+###  <a name="DeleteOpSysPackage"></a> Usunięcie pakietu systemu operacyjnego  
  Następujące polecenia programu Windows PowerShell usuwa pakiet określonego systemu operacyjnego z udziałem wdrożenia produkcyjnego.  
 
 ```  
 Remove-item -path "DS002:\Packages\Package_1_for_KB940105 neutral x86 6.0.1.0 KB940105" -Verbose  
 ```  
 
-###  <a name="ImportOpSys"></a>Importowanie systemu operacyjnego  
+###  <a name="ImportOpSys"></a> Importowanie systemu operacyjnego  
  Następujące polecenia środowiska Windows PowerShell zaimportować systemu operacyjnego Windows Vista, znajdującego się w D:\\systemów operacyjnych\\Windows Vista x86. System operacyjny będzie przechowywana w produkcji udziału wdrożenia, który znajduje się w D:\\udział wdrożenia produkcyjnego.  
 
 -   ```  
@@ -3578,14 +3579,14 @@ Remove-item -path "DS002:\Packages\Package_1_for_KB940105 neutral x86 6.0.1.0 KB
     Import-mdtoperatingsystem -path "DS002:\Operating Systems" -SourcePath "D:\Operating Systems\Windows Vista x86" -DestinationFolder "Windows Vista x86" -Verbose  
     ```  
 
-###  <a name="DeleteOpSys"></a>Usuwanie systemu operacyjnego  
+###  <a name="DeleteOpSys"></a> Usuwanie systemu operacyjnego  
  Następujące polecenia programu Windows PowerShell usuwa systemu operacyjnego Windows Vista HOMEBASIC z udziałem wdrożenia produkcyjnego.  
 
 ```  
 Remove-item -path "DS002:\Operating Systems\Windows Vista HOMEBASIC in Windows Vista x86 install.wim" -Verbose  
 ```  
 
-###  <a name="CreateApplication"></a>Tworzenie aplikacji  
+###  <a name="CreateApplication"></a> Tworzenie aplikacji  
  Następujące polecenia środowiska Windows PowerShell utworzyć aplikację programu Adobe Reader 9, przy użyciu plików źródłowych z D:\\oprogramowania\\Adobe\\Reader 9. Aplikacja będzie przechowywana w produkcji udziału wdrożenia, który znajduje się w D:\\udział wdrożenia produkcyjnego.  
 
 -   ```  
@@ -3600,14 +3601,14 @@ Remove-item -path "DS002:\Operating Systems\Windows Vista HOMEBASIC in Windows V
     Import-MDTApplication -path "DS002:\Applications" -enable "True" -Name "Adobe Reader 9" -ShortName "Reader" -Version "9" -Publisher "Adobe" -Language "" -CommandLine "setup.exe" -WorkingDirectory ".\Applications\Adobe Reader 9" -ApplicationSourcePath "D:\Software\Adobe\Reader 9" -DestinationFolder "Adobe Reader 9" -Source ".\Applications\Adobe Reader 9" -Verbose  
     ```  
 
-###  <a name="DeleteApplication"></a>Usuwanie aplikacji  
+###  <a name="DeleteApplication"></a> Usuwanie aplikacji  
  Następujące polecenia programu Windows PowerShell usuwa aplikację Adobe Reader 9 z udziałem wdrożenia produkcyjnego.  
 
 ```  
 Remove-item -path "DS002:\Applications\Adobe Reader 9" -Verbose  
 ```  
 
-###  <a name="CreateTaskSequence"></a>Tworzenie sekwencji zadań  
+###  <a name="CreateTaskSequence"></a> Tworzenie sekwencji zadań  
  Następujące polecenia środowiska Windows PowerShell tworzą **systemu Windows Vista produkcji kompilacji** sekwencji w środowisku produkcyjnym udziału wdrożenia, znajdującego się w D: zadań\\udział wdrożenia produkcyjnego.  
 
 -   ```  
@@ -3622,14 +3623,14 @@ Remove-item -path "DS002:\Applications\Adobe Reader 9" -Verbose
     Import-mdttasksequence -path "DS002:\Task Sequences" -Name "Windows Vista Business Production Build" -Template "Client.xml" -Comments "Approved for use in the production environment.  This task sequence uses the Standard Client task sequence template" -ID "Vista_Ref" -Version "1.0" -OperatingSystemPath "DS002:\Operating Systems\Windows Vista BUSINESS in Windows Vista x86 install.wim" -FullName "Fabrikam User" -OrgName "Fabrikam" -HomePage "http://www.Fabrikam.com" -AdminPassword "secure_password" -Verbose  
     ```  
 
-###  <a name="DeleteTaskSequence"></a>Usunięcie sekwencji zadań  
+###  <a name="DeleteTaskSequence"></a> Usunięcie sekwencji zadań  
  Usuwa następującego polecenia programu Windows PowerShell **systemu Windows Vista produkcji kompilacji** zadań sekwencji z udziałem wdrożenia produkcyjnego.  
 
 ```  
 Remove-item -path "DS002:\Task Sequences\Windows Vista Business Production Build" -force -Verbose  
 ```  
 
-###  <a name="CreateMDTDB"></a>Tworzenie bazy danych zestawu MDT  
+###  <a name="CreateMDTDB"></a> Tworzenie bazy danych zestawu MDT  
  Następujących poleceń programu Windows PowerShell Utwórz nowy zestaw MDT bazę danych na *wdrożenia\_serwera* serwera dla udziału wdrożenia produkcyjnego. Połączenie z bazą danych będą się za pośrednictwem protokołu TCP\/IP.  
 
 -   ```  
@@ -3644,7 +3645,7 @@ Remove-item -path "DS002:\Task Sequences\Windows Vista Business Production Build
     New-MDTDatabase -path "DS002:" -SQLServer "DeploymentServer" -Netlib "DBMSSOCN" -Database "MDT2010" -SQLShare "DB_Connect" -Force -Verbose  
     ```  
 
-###  <a name="CreateSelectProfile"></a>Tworzenie profilu zaznaczenia  
+###  <a name="CreateSelectProfile"></a> Tworzenie profilu zaznaczenia  
  Następujące polecenia środowiska Windows PowerShell Utwórz nowy profil wybór aplikacji.  
 
 -   ```  
@@ -3659,7 +3660,7 @@ Remove-item -path "DS002:\Task Sequences\Windows Vista Business Production Build
     New-item -path "DS002:\Selection Profiles" -enable "True" -Name "Applications" -Comments "" -Definition "<SelectionProfile><Include path="Applications" /></SelectionProfile>" -ReadOnly "False" -Verbose  
     ```  
 
-###  <a name="UpdatingDeployShare"></a>Aktualizacja udziału wdrożenia  
+###  <a name="UpdatingDeployShare"></a> Aktualizacja udziału wdrożenia  
  Następujące polecenia środowiska Windows PowerShell zaktualizować udział wdrożenia produkcyjnego, który znajduje się w D:\\udział wdrożenia produkcyjnego.  
 
 -   ```  
@@ -3672,7 +3673,7 @@ Remove-item -path "DS002:\Task Sequences\Windows Vista Business Production Build
 
 -   Aktualizacja\-MDTDeploymentShare \-ścieżki "DS002:" \-Pełne  
 
-###  <a name="CreateLinkedDeployShare"></a>Tworzenie udziału wdrożenia połączonego  
+###  <a name="CreateLinkedDeployShare"></a> Tworzenie udziału wdrożenia połączonego  
  Następujące polecenia środowiska Windows PowerShell tworzą udziału wdrożenia, który jest połączony z udziałem wdrożenia produkcyjnego i znajduje się w obszarze \\ \\ *zdalnego\_serwera\_nazwa* \\Udział wdrożenia. Wszystko, czego wybór profilu służy do określania zawartość, która jest replikowana do udziału wdrożenia połączony. Zawartość z udziałem wdrożenia produkcyjnego zostaną scalone z zawartością, która już istnieje w \\ \\ *zdalnego\_serwera\_nazwa*\\udział wdrożenia.  
 
 -   ```  
@@ -3687,7 +3688,7 @@ Remove-item -path "DS002:\Task Sequences\Windows Vista Business Production Build
     New-item -path "DS002:\Linked Deployment Shares" -enable "True" -Name "LINKED001" -Comments "" -Root "\\RemoteServerName\Deployment$" -SelectionProfile "Everything" -Replace "False" -Verbose  
     ```  
 
-###  <a name="UpdatingLinkedDeployShare"></a>Aktualizacja udziału wdrożenia połączonego  
+###  <a name="UpdatingLinkedDeployShare"></a> Aktualizacja udziału wdrożenia połączonego  
  Następujące polecenia środowiska Windows PowerShell aktualizacji LINKED001 udziału wdrożenia.  
 
 -   ```  
@@ -3702,16 +3703,16 @@ Remove-item -path "DS002:\Task Sequences\Windows Vista Business Production Build
     Replicate-MDTContent -path "DS002:\Linked Deployment Shares\LINKED001" -Verbose  
     ```  
 
-###  <a name="DeleteLinkedDeployShare"></a>Usuwanie udziału wdrożenia połączonego  
+###  <a name="DeleteLinkedDeployShare"></a> Usuwanie udziału wdrożenia połączonego  
  Następujące polecenia środowiska Windows PowerShell usunięcia LINKED001 udziału wdrożenia.  
 
--   Dodaj\-PSSnapIn Microsoft.BDD.PSSnapIn  
+-   Add\-PSSnapIn Microsoft.BDD.PSSnapIn  
 
 -   ```  
     Remove-item -path "DS002:\Linked Deployment Shares\LINKED001" -Verbose  
     ```  
 
-###  <a name="CreateMedia"></a>Tworzenie nośnika  
+###  <a name="CreateMedia"></a> Tworzenie nośnika  
  Następujące polecenia środowiska Windows PowerShell Utwórz folder źródłowy, który zawiera zawartość użyta do utworzenia nośnika rozruchowego. Udział wdrożenia produkcyjnego będzie służyć jako źródło. Wszystko wybór profil określa, jakie zawartości znajduje się w folderze zawartości nośnika. Zostanie utworzony plik LiteTouchMedia.iso, gdy nośnik zostanie wygenerowany. Nośnik będzie obsługiwać zarówno x86 i x64 64.  
 
 -   ```  
@@ -3730,7 +3731,7 @@ Remove-item -path "DS002:\Task Sequences\Windows Vista Business Production Build
     New-PSDrive -Name "MEDIA001" -PSProvider "MDTProvider" -Root "D:\Media\Content" -Description "Embedded media deployment share" -Force -Verbose  
     ```  
 
-###  <a name="GenerateMedia"></a>Generowanie nośnika  
+###  <a name="GenerateMedia"></a> Generowanie nośnika  
  Następujące polecenia środowiska Windows PowerShell Utwórz plik LiteTouchMedia.iso w D:\\nośnika, który będzie używany zawartości ze źródłowego folderu nośnika MEDIA001.  
 
 -   ```  
@@ -3745,7 +3746,7 @@ Remove-item -path "DS002:\Task Sequences\Windows Vista Business Production Build
     Generate-MDTMedia -path "DS002:\Media\MEDIA001" -Verbose  
     ```  
 
-###  <a name="DeleteMedia"></a>Usuwanie nośników  
+###  <a name="DeleteMedia"></a> Usuwanie nośników  
  Następujące polecenia programu Windows PowerShell usuwa nośnika MEDIA001 z udziałem wdrożenia produkcyjnego.  
 
 ```  

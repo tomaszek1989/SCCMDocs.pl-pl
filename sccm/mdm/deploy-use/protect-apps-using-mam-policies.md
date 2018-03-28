@@ -1,7 +1,7 @@
 ---
-title: "Ochrona aplikacji przy użyciu zasad zarządzania aplikacjami mobilnymi"
+title: Ochrona aplikacji przy użyciu zasad zarządzania aplikacjami mobilnymi
 titleSuffix: Configuration Manager
-description: "Modyfikowanie funkcji wdrażanych aplikacji wdrażanych, spełniają firmowych zgodności i zasady zabezpieczeń."
+description: Modyfikowanie funkcji wdrażanych aplikacji wdrażanych, spełniają firmowych zgodności i zasady zabezpieczeń.
 ms.custom: na
 ms.date: 11/20/2017
 ms.prod: configuration-manager
@@ -12,16 +12,16 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 28115475-e563-4e16-bf30-f4c9fe704754
-caps.latest.revision: 
-caps.handback.revision: 
+caps.latest.revision: ''
+caps.handback.revision: ''
 author: dougeby
 ms.author: dougeby
 manager: angrobe
 ms.openlocfilehash: 3365f46026178d30c9bffa5078d251186d0ffba3
-ms.sourcegitcommit: 12d0d53e47bbf1a0bbd85015b8404a44589d1e14
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="protect-apps-using-mobile-application-management-policies-in-system-center-configuration-manager"></a>Ochrona aplikacji przy użyciu zasad zarządzania aplikacjami mobilnymi w programie System Center Configuration Manager
 
@@ -56,7 +56,7 @@ Aby zastosować ograniczenia dla aplikacji, aplikacja musi mieć Microsoft Intun
 
 -   **Aby uzyskać link do zasad aplikacji zarządzanej**: Ze sklepu z aplikacjami Znajdź i zanotuj adres URL aplikacji zarządzanej przez zasady, którą chcesz wdrożyć.  
 
-     Na przykład adres URL aplikacji Microsoft Word dla urządzenia iPad to **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**  
+     Na przykład adres URL aplikacji Microsoft Word dla tabletu iPad to **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**  
 
 -   **Aby utworzyć opakowaną aplikację**: Użyj informacji podanych w tematach [przygotowanie aplikacji systemu iOS do zarządzania aplikacjami mobilnymi w usłudze Microsoft Intune App Wrapping Tool](https://technet.microsoft.com/library/dn878028.aspx) i [przygotowanie aplikacji systemu Android do zarządzania aplikacjami mobilnymi za pomocą narzędzia zawijania aplikacji usługi Intune Microsoft](https://technet.microsoft.com/library/mt147413.aspx) Aby utworzyć opakowaną aplikację.  
 

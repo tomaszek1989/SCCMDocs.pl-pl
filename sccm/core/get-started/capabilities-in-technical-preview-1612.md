@@ -1,25 +1,26 @@
 ---
 title: Funkcje w wersji zapoznawczej Technical Preview 1612
 titleSuffix: Configuration Manager
-description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersja 1612."
+description: Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersja 1612.
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bceab2e8-2f05-4a17-9ac8-a7a558670fb7
-caps.latest.revision: "5"
+caps.latest.revision: ''
 author: erikje
 ms.author: erikje
 manager: angrobe
 ms.openlocfilehash: 80cace2bec8cb9c39d5f3f00ea244b697e1d75c9
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1612 programu System Center Configuration Manager
 
@@ -84,12 +85,12 @@ Zanim kreator wyświetli opcję Wybierz i zainstaluj punkt usługi magazynu dany
 
 **Ogólne** strony: Wymagane są następujące informacje ogólne:
 - **Ustawienia bazy danych programu Configuration Manager:**   
-  - **Nazwa serwera** — Określ nazwę FQDN serwera obsługującego bazę danych lokacji. Jeśli nie używasz domyślnego wystąpienia programu SQL Server, należy określić wystąpienie po nazwy FQDN w następującym formacie: ***&lt;Sqlserver_FQDN >\&< nazwa_wystąpienia >***
+  - **Nazwa serwera** — Określ nazwę FQDN serwera obsługującego bazę danych lokacji. Jeśli nie używasz domyślnego wystąpienia programu SQL Server, należy określić wystąpienie po nazwy FQDN w następującym formacie: ***&lt;Sqlserver_FQDN>\&lt;Instance_name>***
   - **Nazwa bazy danych** — Określ nazwę bazy danych lokacji.
   - **Sprawdź, czy** — kliknij przycisk **Sprawdź** aby upewnić się, że połączenie z bazą danych lokacji zostanie nawiązane.
 </br></br>
 - **Ustawienia bazy danych magazynu danych:**
-  - **Nazwa serwera** — Określ nazwę FQDN serwera, który jest hostem punktu usługi magazynu danych i bazy danych. Jeśli nie używasz domyślnego wystąpienia programu SQL Server, należy określić wystąpienie po nazwy FQDN w następującym formacie: ***&lt;Sqlserver_FQDN >\&< nazwa_wystąpienia >***
+  - **Nazwa serwera** — Określ nazwę FQDN serwera, który jest hostem punktu usługi magazynu danych i bazy danych. Jeśli nie używasz domyślnego wystąpienia programu SQL Server, należy określić wystąpienie po nazwy FQDN w następującym formacie: ***&lt;Sqlserver_FQDN>\&lt;Instance_name>***
   - **Nazwa bazy danych** — Określ nazwę FQDN dla bazy danych magazynu danych.  Configuration Manager utworzy bazę danych o tej nazwie. Jeśli określisz nazwy bazy danych, która już istnieje w wystąpieniu programu SQL server Configuration Manager będzie używać tej bazy danych.
   - **Sprawdź, czy** — kliknij przycisk **Sprawdź** aby upewnić się, że połączenie z bazą danych lokacji zostanie nawiązane.
 
@@ -204,7 +205,7 @@ Następujące przełączniki wiersza polecenia mogą być używane w dowolnej ko
 | **/dp &lt;FQDN punktów dystrybucji >**  | **Wymagane** </br> Określ w pełni kwalifikowaną nazwę (FQDN) punktu dystrybucji, które chcesz wyczyścić. </br></br> Przykład:  ***ContentLibraryCleanup.exe /dp serwer1.contoso.com***|
 | **/PS &lt;lokacji głównej nazwy FQDN >**       | **Opcjonalne** podczas czyszczenia zawartości z punktu dystrybucji w lokacji głównej.</br>**Wymagane** podczas czyszczenia zawartości z punktu dystrybucji w lokacji dodatkowej. </br></br> Określ nazwę FQDN punktu dystrybucji w lokacji głównej należy do lub z głównej nadrzędnej, gdy punkt dystrybucji znajduje się w lokacji dodatkowej. </br></br> Przykład: ***ContentLibraryCleanup.exe /dp server1.contoso.com /ps siteserver1.contoso.com*** |
 | **/sc &lt;kod lokacji głównej >**  | **Opcjonalne** podczas czyszczenia zawartości z punktu dystrybucji w lokacji głównej.</br>**Wymagane** podczas czyszczenia zawartości z punktu dystrybucji w lokacji dodatkowej. </br></br> Określ kod lokacji w lokacji głównej, należącego do punktu dystrybucji lub nadrzędnej lokacji głównej, gdy punkt dystrybucji znajduje się w lokacji dodatkowej.</br></br> Przykład: ***ContentLibraryCleanup.exe /dp server1.contoso.com /sc ABC*** |
-| **/ log<log file directory>**       |**Opcjonalne** </br> Określ katalog, aby umieścić pliki dziennika w. Może to być lokalny lub w sieci, należy udostępnić.</br></br> Gdy ta opcja nie jest używana, pliki dziennika są automatycznie umieszczane w folderze tymczasowym użytkowników.</br></br> Przykład dysku lokalnym: ***/ ContentLibraryCleanup.exe /dp server1.contoso.com log C:\Users\Administrator\Desktop*** </br></br>Przykład z udziału sieciowego: ***/ Log server1.contoso.com /dp ContentLibraryCleanup.exe \\ &lt;udostępnianie >\&< folder >***|
+| **/ log <log file directory>**       |**Opcjonalne** </br> Określ katalog, aby umieścić pliki dziennika w. Może to być lokalny lub w sieci, należy udostępnić.</br></br> Gdy ta opcja nie jest używana, pliki dziennika są automatycznie umieszczane w folderze tymczasowym użytkowników.</br></br> Przykład dysku lokalnym: ***/ ContentLibraryCleanup.exe /dp server1.contoso.com log C:\Users\Administrator\Desktop*** </br></br>Przykład z udziału sieciowego: ***/ Log server1.contoso.com /dp ContentLibraryCleanup.exe \\ &lt;udostępnianie >\&< folder >***|
 
 
 ## <a name="improvements-for-in-console-search"></a>Ulepszenia wyszukiwania w konsoli
