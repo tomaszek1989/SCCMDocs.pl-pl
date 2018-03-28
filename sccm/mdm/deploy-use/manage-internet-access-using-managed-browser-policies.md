@@ -92,7 +92,7 @@ Nowe zasady są wyświetlane w węźle **Zasady zarządzania aplikacjami** w obs
 
 Poniższe informacje dotyczą dopuszczalnych formatów i symboli wieloznacznych, których można używać podczas określania adresów URL na listach witryn dozwolonych i zablokowanych.  
 
--   Symbol wieloznaczny „**\***” może być używany zgodnie z regułami z poniższej listy dozwolonych wzorców.  
+-   Symbol wieloznaczny „**\\***” może być używany zgodnie z regułami z poniższej listy dozwolonych wzorców.  
 
 -   Upewnij się, że wszystkie adresy URL dodawane do listy będą mieć prefiks **http** lub **https**.  
 
@@ -111,7 +111,7 @@ Poniższe informacje dotyczą dopuszczalnych formatów i symboli wieloznacznych,
     |http://www.contoso.com<br /><br /> Zgodny z pojedynczą stroną|www.contoso.com|host.contoso.com<br /><br /> www.contoso.com/images<br /><br /> contoso.com/|  
     |http://contoso.com<br /><br /> Zgodny z pojedynczą stroną|contoso.com/|host.contoso.com<br /><br /> www.contoso.com/images<br /><br /> www.contoso.com|  
     |http://www.contoso.com/*<br /><br /> Zgodny ze wszystkimi adresami URL rozpoczynającymi się od www.contoso.com|www.contoso.com<br /><br /> www.contoso.com/images<br /><br /> www.contoso.com/videos/tvshows|host.contoso.com<br /><br /> host.contoso.com/images|  
-    |http://*.contoso.com/\*<br /><br /> Zgodny ze wszystkimi domenami podrzędnymi w domenie contoso.com|developer.contoso.com/resources<br /><br /> news.contoso.com/images<br /><br /> news.contoso.com/videos|contoso.host.com|  
+    |http://\*.contoso.com/\*<br /><br /> Zgodny ze wszystkimi domenami podrzędnymi w domenie contoso.com|developer.contoso.com/resources<br /><br /> news.contoso.com/images<br /><br /> news.contoso.com/videos|contoso.host.com|  
     |http://www.contoso.com/images<br /><br /> Zgodny z pojedynczym folderem|www.contoso.com/images|www.contoso.com/images/dogs|  
     |http://www.contoso.com:80<br /><br /> Zgodny z pojedynczą stroną z użyciem numeru portu|http://www.contoso.com:80||  
     |https://www.contoso.com<br /><br /> Zgodny z pojedynczą, bezpieczną stroną|https://www.contoso.com|http://www.contoso.com|  
@@ -121,11 +121,11 @@ Poniższe informacje dotyczą dopuszczalnych formatów i symboli wieloznacznych,
 
     -   *.com  
 
-    -   *.contoso/\*  
+    -   \*.contoso/\*  
 
     -   www.contoso.com/*images  
 
-    -   www.contoso.com/*images\*pigs  
+    -   www.contoso.com/\*images\*pigs  
 
     -   www.contoso.com/page*  
 
