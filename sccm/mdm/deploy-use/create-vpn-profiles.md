@@ -1,26 +1,27 @@
 ---
 title: Profile sieci VPN
 titleSuffix: Configuration Manager
-description: "Profile sieci VPN na urządzeniach przenośnych w programie System Center Configuration Manager."
+description: Profile sieci VPN na urządzeniach przenośnych w programie System Center Configuration Manager.
 ms.custom: na
 ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 45388103-2410-4c7e-b4cf-73a1bda485fc
-caps.latest.revision: "18"
-caps.handback.revision: "0"
+caps.latest.revision: ''
+caps.handback.revision: ''
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
 ms.openlocfilehash: 1d98cd234b2444873f1ffa5819af74d507dfa9c1
-ms.sourcegitcommit: ba23ff90709a5fde1a63c650ab0d848f441afc43
+ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 03/27/2018
 ---
 # <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Profile sieci VPN na urządzeniach przenośnych w programie System Center Configuration Manager
 
@@ -45,7 +46,7 @@ Profile sieci VPN w programie System Center Configuration Manager możesz wdraż
  |Dell SonicWALL Mobile Connect|Tak|Tak|Tak|Nie|Tak|Tak|Tak|  
  |Check Point Mobile VPN|Tak|Tak|Tak|Nie|Tak|Tak|Tak|  
  |Microsoft SSL (SSTP)|Nie|Nie|Tak|Tak|Tak|Nie|Nie|  
- |Tryb automatyczny firmy Microsoft|Nie|Nie|Tak|Tak|Tak|Nie|Tak|  
+ |Microsoft Automatic|Nie|Nie|Tak|Tak|Tak|Nie|Tak|  
  |IKEv2|Tak (zasady niestandardowe systemu iOS 9 i nowszych)|Nie|Tak|Tak|Tak|Tak|Tak|  
  |PPTP|Tak|Nie|Tak|Tak|Tak|Nie|Tak|  
  |L2TP|Tak|Nie|Tak|Tak|Tak|Nie|Tak (OMA-URI)|  
@@ -80,12 +81,12 @@ Profile sieci VPN w programie System Center Configuration Manager możesz wdraż
         |---------------------------|--------------------------------|  
         |**Certyfikaty**<br /><br /> **Uwagi:**<ul><li>Jeśli certyfikat klienta jest uwierzytelniany na serwerze RADIUS, takich jak serwer zasad sieciowych, alternatywna nazwa podmiotu w certyfikacie musi mieć ustawioną główną nazwę użytkownika.</li><li>W przypadku wdrożeń systemu Android wybierz identyfikator rozszerzonego użycia klucza i wartości skrótu odcisk palca wystawcy certyfikatu.  W przeciwnym razie użytkownicy muszą ręcznie wybrać odpowiedni certyfikat.</li></ul>  |<ul><li>Cisco AnyConnect</li><li>Pulse Secure</li><li>F5 Edge Client</li><li>Dell SonicWALL Mobile Connect</li><li> Check Point Mobile VPN</li></ul>|  
         |**Nazwa użytkownika i hasło**|<ul><li>Pulse Secure</li><li>F5 Edge Client</li><li>Dell SonicWALL Mobile Connect</li><li> Check Point Mobile VPN</li></ul>|  
-        |**Microsoft EAP-TTLS**|<ul><li>Microsoft SSL (SSTP)</li><li>Tryb automatyczny firmy Microsoft</li><li>PPTP</li><li>IKEv2</li><li>L2TP</li></ul>|  
-        |**Microsoft chroniony protokół EAP (PEAP)**|<ul><li>Microsoft SSL (SSTP)</li><li>Tryb automatyczny firmy Microsoft</li><li>IKEv2</li><li>PPTP</li><li>L2TP</li></ul>|  
-        |**Microsoft bezpieczne hasło (EAP-MSCHAP v2)**|<ul><li>Microsoft SSL (SSTP)</li><li>Tryb automatyczny firmy Microsoft</li><li>IKEv2</li><li>PPTP</li><li>L2TP</li></ul>|  
-        |**Karta inteligentna lub inny certyfikat**|<ul><li>Microsoft SSL (SSTP)</li><li>Tryb automatyczny firmy Microsoft</li><li>IKEv2</li><li>PPTP</li><li>L2TP</li></ul>|  
-        |**MSCHAP v2**|<ul><li>Microsoft SSL (SSTP)</li><li>Tryb automatyczny firmy Microsoft</li><li>IKEv2</li><li>PPTP</li><li>L2TP</li></ul>|  
-        |**RSA SecurID** (tylko system iOS)|<ul><li>Microsoft SSL (SSTP)</li><li>Tryb automatyczny firmy Microsoft</li><li>PPTP</li><li>L2TP</li></ul>|  
+        |**Microsoft EAP-TTLS**|<ul><li>Microsoft SSL (SSTP)</li><li>Microsoft Automatic</li><li>PPTP</li><li>IKEv2</li><li>L2TP</li></ul>|  
+        |**Microsoft chroniony protokół EAP (PEAP)**|<ul><li>Microsoft SSL (SSTP)</li><li>Microsoft Automatic</li><li>IKEv2</li><li>PPTP</li><li>L2TP</li></ul>|  
+        |**Microsoft bezpieczne hasło (EAP-MSCHAP v2)**|<ul><li>Microsoft SSL (SSTP)</li><li>Microsoft Automatic</li><li>IKEv2</li><li>PPTP</li><li>L2TP</li></ul>|  
+        |**Karta inteligentna lub inny certyfikat**|<ul><li>Microsoft SSL (SSTP)</li><li>Microsoft Automatic</li><li>IKEv2</li><li>PPTP</li><li>L2TP</li></ul>|  
+        |**MSCHAP v2**|<ul><li>Microsoft SSL (SSTP)</li><li>Microsoft Automatic</li><li>IKEv2</li><li>PPTP</li><li>L2TP</li></ul>|  
+        |**RSA SecurID** (tylko system iOS)|<ul><li>Microsoft SSL (SSTP)</li><li>Microsoft Automatic</li><li>PPTP</li><li>L2TP</li></ul>|  
         |**Użyj certyfikatów komputera**|<ul><li>IKEv2</li></ul>|  
 
          W zależności od wybranych opcji może zostać poproszona o Określ więcej informacji, takich jak:  
