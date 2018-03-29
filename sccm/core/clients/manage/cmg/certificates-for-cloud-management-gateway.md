@@ -10,11 +10,11 @@ ms.prod: configuration-manager
 ms.technology:
 - configmgr-other
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
-ms.openlocfilehash: 1c7adec8f8919736c61859791802a96766af31bb
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 0e4d2add8ece7f548955064a479d9545a1fc64e1
+ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certyfikaty dla bramy zarządzania w chmurze
 
@@ -136,7 +136,7 @@ Po wystawieniu certyfikatu uwierzytelniania klienta, na komputerze, aby wyekspor
 *Wymagania dotyczące certyfikatów*
 - W wersjach 1706 lub 1710, podczas zarządzania klientami tradycyjnych z lokalnymi tożsamość za pomocą certyfikatu uwierzytelniania klienta, ten certyfikat jest zalecane, ale nie jest wymagane.
 - W wersji 1710 podczas zarządzania klientami systemu Windows 10 przyłączonych do usługi Azure AD, ten certyfikat jest wymagany dla punktów zarządzania. 
-- Począwszy od wersji 1802 ten certyfikat jest wymagany we wszystkich scenariuszach. 
+- Począwszy od wersji 1802 ten certyfikat jest wymagany we wszystkich scenariuszach. Tylko punkty zarządzania, które można włączyć CMG musi być HTTPS. Ta zmiana w zachowaniu zapewnia lepszą obsługę uwierzytelniania opartego na tokenach usługi Azure AD. 
 
 Udostępnić ten certyfikat poza kontekstem programu Configuration Manager. Na przykład użyć usług certyfikatów Active Directory i zasad grupy do wystawiania certyfikatu serwera sieci web. Aby uzyskać więcej informacji, zobacz [wymagania dotyczące certyfikatu PKI](/sccm/core/plan-design/network/pki-certificate-requirements) i [wdrażania certyfikatu serwera sieci web dla systemów lokacji z usługami IIS](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_webserver2008_cm2012).
 
@@ -146,4 +146,4 @@ Udostępnić ten certyfikat poza kontekstem programu Configuration Manager. Na p
 
 - [Konfigurowanie bramy zarządzania chmurą](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway)
 - [Często zadawane pytania dotyczące zarządzania bramy chmury](/sccm/core/clients/manage/cmg/cloud-management-gateway-faq)
-- [Bezpieczeństwo i prywatność brama zarządzania w chmurze](/sccm/core/clients/manage/cmg/security-and-privacy-for-cloud-management-gateway)
+- [Zabezpieczenia i prywatność bramy zarządzania chmurą](/sccm/core/clients/manage/cmg/security-and-privacy-for-cloud-management-gateway)

@@ -1,25 +1,26 @@
 ---
-title: "Ściągający punkt dystrybucji"
+title: Ściągający punkt dystrybucji
 titleSuffix: Configuration Manager
-description: "Informacje o konfiguracji i ograniczenia dotyczące używania punktu dystrybucji ściągania w programie System Center Configuration Manager."
+description: Informacje o konfiguracji i ograniczenia dotyczące używania punktu dystrybucji ściągania w programie System Center Configuration Manager.
 ms.custom: na
 ms.date: 2/14/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7d8f530b-1a39-4a9d-a2f0-675b516da7e4
-caps.latest.revision: "9"
+caps.latest.revision: ''
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: b4acf5753c8629bcd0f4e2ef5a97bfcb570e9d24
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: 3ef93ae505c2af709a3bd1e6a0e7a278993a77ff
+ms.sourcegitcommit: 27da4be015f1496b7b89ebddb517a2685f1ecf74
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="use-a-pull-distribution-point-with-system-center-configuration-manager"></a>Korzystanie z punktu dystrybucji ściągania w programie System Center Configuration Manager
 
@@ -45,14 +46,37 @@ Punkt dystrybucji ściągania dla programu System Center Configuration Manager t
 
 -   Po przesłaniu zawartości do punktu dystrybucji ściągania Menedżer transferu pakietów na serwerze lokacji sprawdzi bazę danych lokacji w celu potwierdzenia, czy zawartość jest dostępna w źródłowym punkcie dystrybucji. Jeśli nie będzie można potwierdzić dostępności zawartości w źródłowym punkcie dystrybucji dla ściągającego punktu dystrybucji, kontrola będzie ponawiana co 20 minut do momentu potwierdzenia dostępności zawartości.  
 
--   Gdy Menedżer transferu pakietów potwierdzi dostępność zawartości, powiadomi ściągający punkt dystrybucji o możliwości rozpoczęcia pobierania zawartości. Po otrzymaniu tego powiadomienia ściągający punkt dystrybucji podejmie próbę pobrania zawartości ze źródłowych punktów dystrybucji.  
+-   Gdy Menedżer transferu pakietów potwierdzi dostępność zawartości, powiadomi ściągający punkt dystrybucji o możliwości rozpoczęcia pobierania zawartości. Jeśli ta kończy się niepowodzeniem powiadomień będzie ponawiał próby oparte na składnika dystrybucji oprogramowania **ustawienia ponawiania** dla ściągających punktów dystrybucji. Po otrzymaniu tego powiadomienia ściągający punkt dystrybucji podejmie próbę pobrania zawartości ze źródłowych punktów dystrybucji.  
 
--   Gdy ściągający punkt dystrybucji ukończy pobieranie zawartości, prześle powiadomienie o stanie do punktu zarządzania. Jednak jeśli po 60 minutach, ten stan nie został odebrany, Menedżer transferu pakietów zostanie wznowiona i sprawdza z punktu dystrybucji ściągania, aby upewnić się, czy punkt dystrybucji ściągania została pobrana zawartość. Jeśli pobieranie zawartości będzie w trakcie wykonywania, Menedżer transferu pakietów zostanie uśpiony na 60 minut, po upływie których ponownie sprawdzi stan ściągającego punktu dystrybucji. Ten cykl będzie wykonywany do momentu ukończenia pobierania zawartości przez punkt dystrybucji ściągania.  
+-   Gdy ściągający punkt dystrybucji pobiera zawartość Menedżer transferu pakietów zostanie sondowania stanu składnika dystrybucji oprogramowania w oparciu **sondowania ustawienia stanu** dla ściągających punktów dystrybucji.  Po ukończeniu pobierania zawartości punkt dystrybucji ściągania przesyła ten stan do punktu zarządzania.
 
 **Punkt dystrybucji ściągania można skonfigurować** podczas instalowania punktu dystrybucji lub po jego zainstalowaniu, edytując właściwości roli systemu lokacji punktu dystrybucji.  
 
 **Konfigurację punktu dystrybucji ściągania można usunąć** , edytując właściwości punktu dystrybucji. Po usunięciu konfiguracji punktu dystrybucji ściągania, zwraca punkt dystrybucji do normalnego działania i serwera lokacji zarządza przyszłych zawartości przesyła do punktu dystrybucji.  
 
+## <a name="to-configure-software-distribution-component-for-pull-distribution-points"></a>Aby skonfigurować składnika dystrybucji oprogramowania dla punktów dystrybucji ściągania
+
+1.  W konsoli programu Configuration Manager wybierz **administracji** > **witryny**.  
+
+2.  Wybierz odpowiednią witrynę i wybierz **Konfiguruj składniki lokacji** > **dystrybucji oprogramowania**
+
+3. Wybierz **ściągający punkt dystrybucji** kartę.  
+
+4.  W **ustawienia ponawiania** listy, skonfiguruj następujące wartości:  
+
+    -   **Liczba ponownych prób** -liczbę prób Menedżer transferu pakietów powiadamia ściągający punkt dystrybucji pobierania zawartości.  Po przekroczeniu tej liczby Menedżer transferu pakietów spowoduje anulowanie transferu.
+
+    -   **Opóźnienie przed ponowną próbą wykonania (w minutach)** -liczbę minut oczekiwania Menedżer transferu pakietów między próbami. 
+
+5.  W **sondowania ustawienia stanu** listy, skonfiguruj następujące wartości:  
+
+    -   **Liczba sond** -liczbę razy, że Menedżer transferu pakietów kontaktuje się z punktem dystrybucji ściągania można pobrać stanu zadania.  Po przekroczeniu tej liczby ukończenia zadanie Menedżera transferu pakietów spowoduje anulowanie transferu.
+
+    -   **Opóźnienie przed ponowną próbą wykonania (w minutach)** -liczbę minut oczekiwania Menedżer transferu pakietów między próbami. 
+    
+    > [!NOTE]  
+    >  Gdy Menedżer transferu pakietów anuluje zadania, ponieważ przekroczono liczby ponownych prób sondowania stanu punktu dystrybucji ściągania będzie pobierania zawartości.  Po zakończeniu komunikatu o stanie odpowiednie będą wysyłane do Menedżera transferu pakietów i konsolę będzie odzwierciedlać nowy stan.
+    
 ## <a name="limitations-for-pull-distribution-points"></a>Ograniczenia dotyczące punktów dystrybucji ściągania  
 
 -   Punktu dystrybucji w chmurze nie można skonfigurować jako punktu dystrybucji ściągania.  
@@ -61,12 +85,12 @@ Punkt dystrybucji ściągania dla programu System Center Configuration Manager t
 
 -   **Konfiguracja wstępnie przygotowanej zawartości zastępuje konfigurację punktu dystrybucji ściągania**. Punkt dystrybucji ściągania skonfigurowany do obsługi wstępnie przygotowanej zawartości będzie oczekiwać na tę zawartość. Nie ściąga zawartości ze źródłowego punktu dystrybucji i, podobnie jak standardowy rozkład punktu Konfiguracja wstępnie przygotowanej zawartości, nie będzie otrzymywać zawartości z serwera lokacji.  
 
--   **Punkt dystrybucji ściągania nie używa ustawień limitów szybkości** podczas przesyłania zawartości. W przypadku skonfigurowania uprzednio zainstalowanego punktu dystrybucji jako punktu dystrybucji ściągania konfiguracje limitów szybkości zostaną zapisane, lecz nie będą używane. Jeśli okaże się usunięcie konfiguracji punktu dystrybucji ściągania, wcześniej skonfigurowane ustawienia limitów szybkości są implementowane.  
+-   **Punkt dystrybucji ściągania nie używa ustawień limitów harmonogram i częstotliwość** podczas przesyłania zawartości. Jeśli skonfigurujesz uprzednio zainstalowanego punktu dystrybucji do punktu dystrybucji ściągania konfiguracje limitów harmonogram i częstotliwość są zapisane, lecz nie jest używane. Jeśli okaże się usunięcie konfiguracji punktu dystrybucji ściągania, harmonogram i częstotliwość konfiguracje limit są implementowane zgodnie z wcześniejszą konfiguracją.  
 
     > [!NOTE]  
-    >  Po skonfigurowaniu punktu dystrybucji jako punktu dystrybucji ściągania karta **Limity szybkości** nie będzie widoczna w oknie właściwości punktu dystrybucji.  
+    >  Jeśli punkt dystrybucji jest skonfigurowany jako punkt dystrybucji ściągania **harmonogram** i **limity szybkości** karty nie są widoczne we właściwościach punktu dystrybucji.  
 
--   Punkt dystrybucji ściągania nie używa opcji **Ustawienia ponawiania** do dystrybucji zawartości. Opcję**Ustawienia ponawiania** można skonfigurować w ramach ustawień **Właściwości składnika dystrybucji oprogramowania** poszczególnych lokacji. Aby wyświetlić lub skonfigurować te właściwości, w **administracji** obszaru roboczego w konsoli programu Configuration Manager, rozwiń węzeł **konfiguracja lokacji**, a następnie wybierz **witryny**. Następnie w okienku wyników wybierz lokację, a następnie na **Home** wybierz opcję **Konfiguruj składniki lokacji**. Na koniec wybierz **dystrybucji oprogramowania**.  
+-   Ściągające punkty dystrybucji nie używaj ustawienia na **ogólne** karcie **właściwości składnika dystrybucji oprogramowania** dla każdej lokacji.  Obejmuje to **dystrybucji współbieżnej** i **ponawiania multiemisji** ustawienie.  Użyj **ściągający punkt dystrybucji** kartę, aby skonfigurować ustawienia dla ściągających punktów dystrybucji.
 
 -   Do przesłania zawartości ze źródłowego punktu dystrybucji w lesie zdalnym, komputera obsługującego punkt dystrybucji ściągania musi mieć zainstalowanego klienta programu Configuration Manager. Konto dostępu do sieci, które mogą uzyskiwać dostęp do źródłowego punktu dystrybucji musi być skonfigurowana do użycia.  
 

@@ -10,11 +10,11 @@ ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 614c5ba3acb81f90a75726e8783125fb53a39a93
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: dabc248c1788ecad4d7b25c0a1f592e0ddeef826
+ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Planowanie brama zarządzania chmury w programie Configuration Manager
 
@@ -155,7 +155,7 @@ Podobnie jak klienci z systemem Paryża są przekazywane do Internetu, komunikuj
 
 - **Inne certyfikaty** mogą być wymagane, w zależności od modelu wersji i uwierzytelnianie klienta systemu operacyjnego. Aby uzyskać więcej informacji, zobacz [certyfikaty CMG](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway).  
 
-    - Począwszy od wersji 1802, należy skonfigurować wszystkie [ **punktów zarządzania do używania protokołu HTTPS**](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#enable-management-point-for-https).  
+    - Począwszy od wersji 1802, należy skonfigurować wszystkie włączone CMG [ **punktów zarządzania do używania protokołu HTTPS**](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway#enable-management-point-for-https).  
 
 - Integracja z **usługi Azure AD** mogą być wymagane dla klientów systemu Windows 10. Aby uzyskać więcej informacji, zobacz [usług Azure skonfigurować](/sccm/core/servers/deploy/configure/azure-services-wizard).  
 
@@ -345,8 +345,8 @@ Systemu lokacji punktu połączenia CMG obsługuje przy użyciu serwera proxy si
 
 ## <a name="next-steps"></a>Następne kroki
 
-- [Certyfikaty bramy zarządzania w chmurze](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway)
-- [Bezpieczeństwo i prywatność brama zarządzania w chmurze](/sccm/core/clients/manage/cmg/security-and-privacy-for-cloud-management-gateway)
+- [Certyfikaty bramy zarządzania chmurą](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway)
+- [Zabezpieczenia i prywatność bramy zarządzania chmurą](/sccm/core/clients/manage/cmg/security-and-privacy-for-cloud-management-gateway)
 - [Rozmiar bramy zarządzania w chmurze i skalowanie liczb](/sccm/core/plan-design/configs/size-and-scale-numbers#bkmk_cmg)
 - [Często zadawane pytania dotyczące zarządzania bramy chmury](/sccm/core/clients/manage/cmg/cloud-management-gateway-faq)
 - [Konfigurowanie bramy zarządzania chmurą](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway)

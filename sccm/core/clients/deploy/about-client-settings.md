@@ -17,11 +17,11 @@ caps.handback.revision: ''
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 42b9364fc88acc3f403db8d2ca9243a117fd78bf
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: bd03457abdd5cc4464c10227626ba72637c96f90
+ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Informacje o ustawieniach klienta w programie System Center Configuration Manager
 
@@ -801,8 +801,9 @@ To ustawienie określa port lokalny dla odbiornika HTTP do pobierania zawartośc
 
 Jeśli to równa **tak**, umożliwia konfigurację ustawień instalacji usługi Office 365. Umożliwia również pobierania plików z pakietu Office sieci dostarczania zawartości (CDN) i wdrażanie plików jako aplikacji w programie Configuration Manager. Aby uzyskać więcej informacji, zobacz [zarządzania usługi Office 365 ProPlus](/sccm/sum/deploy-use/manage-office-365-proplus-updates).
 
+### <a name="enable-third-party-software-updates"></a>Włącz aktualizacje oprogramowania innych firm 
 
-
+Jeśli to równa **tak**, ustawia zasady dla "Zezwalaj na podpisane aktualizacje z intranetowej lokalizacji usługi aktualizacji firmy Microsoft" i instaluje certyfikat podpisywania w magazynie zaufanego wydawcy na kliencie. To ustawienie klienta został dodany w 1802 wersji programu Configuration Manager.
 ## <a name="state-messaging"></a>Do obsługi komunikatów stanu
 
 ### <a name="state-message-reporting-cycle-minutes"></a>Komunikat o stanie raportowania cyklu (w minutach)

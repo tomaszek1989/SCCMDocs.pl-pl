@@ -15,11 +15,11 @@ ms.assetid: 5bd637b1-d7a1-411b-877a-c7aae9741173
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 4582d1105f2465c37e001570227112bfca3bad1c
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 9c9ff975a58e7c56375fa7740a0a5bb6ebfa6341
+ms.sourcegitcommit: 27da4be015f1496b7b89ebddb517a2685f1ecf74
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="whats-new-in-version-1802-of-system-center-configuration-manager"></a>Nowości w wersji 1802 programu System Center Configuration Manager
 
@@ -125,9 +125,9 @@ Podczas tworzenia wystąpienia [brama zarządzania chmury](/sccm/core/clients/ma
 - Dokumentacja funkcji jest zmian i rozszerzone. Aby uzyskać więcej informacji zobacz następujące artykuły:
     - [Planowanie brama zarządzania w chmurze](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway)
     - [Rozmiar bramy zarządzania w chmurze i skalowanie liczb](/sccm/core/plan-design/configs/size-and-scale-numbers#bkmk_cmg)
-    - [Bezpieczeństwo i prywatność brama zarządzania w chmurze](/sccm/core/clients/manage/cmg/security-and-privacy-for-cloud-management-gateway)
+    - [Zabezpieczenia i prywatność bramy zarządzania chmurą](/sccm/core/clients/manage/cmg/security-and-privacy-for-cloud-management-gateway)
     - [Często zadawane pytania dotyczące zarządzania bramy chmury](/sccm/core/clients/manage/cmg/cloud-management-gateway-faq)
-    - [Certyfikaty bramy zarządzania w chmurze](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway)
+    - [Certyfikaty bramy zarządzania chmurą](/sccm/core/clients/manage/cmg/certificates-for-cloud-management-gateway)
     - [Konfigurowanie bramy zarządzania chmurą](/sccm/core/clients/manage/cmg/setup-cloud-management-gateway)  
 
 
@@ -149,8 +149,8 @@ Pulpit nawigacyjny powierzchni urządzenia zawiera informacje o powierzchni urz�
 Aby uzyskać więcej informacji, zobacz [powierzchni pulpitu nawigacyjnego](/sccm/core/clients/manage/surface-device-dashboard) artykułu.
 
 ### <a name="change-in-the-configuration-manager-client-install"></a>Zainstaluj zmiany w kliencie programu Configuration Manager
-<!--1356195-->|
-Począwszy od tej wersji Silverlight nie jest już zainstalowane na urządzeniach klienckich automatycznie. Aby uzyskać więcej informacji, zobacz [fo wymagania wstępne dotyczące wdrażania klientów na komputerach z systemem Windows](/sccm/core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers.#BKMK_ExternalDependencies)
+<!--1356195-->
+Począwszy od tej wersji Silverlight nie jest już zainstalowane na urządzeniach klienckich automatycznie. Aby uzyskać więcej informacji, zobacz [wymagania wstępne dotyczące wdrażania klientów na komputerach z systemem Windows](/sccm/core/clients/deploy/prerequisites-for-deploying-clients-to-windows-computers#bkmk_ExternalDependencies)
 
 ## <a name="co-management"></a>Zarządzanie wspólnej
 

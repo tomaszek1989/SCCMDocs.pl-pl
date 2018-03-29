@@ -17,11 +17,11 @@ caps.handback.revision: ''
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 4a8ca1a60a249756065ee2af6cb9c37f3fe2a1e0
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 903dc7cd6347579e75487c3d8a8bd33b1b2c24d5
+ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="install-and-assign-configuration-manager-windows-10-clients-using-azure-ad-for-authentication"></a>Zainstaluj i przypisz przy użyciu usługi Azure AD do uwierzytelniania klientów programu Configuration Manager systemu Windows 10
 
@@ -48,6 +48,8 @@ Aby zainstalować klienta programu Configuration Manager na urządzeniach z syst
 - Oprócz [istniejące warunki wstępne](/sccm/core/plan-design/configs/site-and-site-system-prerequisites#bkmk_2012MPpreq) roli systemu lokacji punktu zarządzania, należy również włączyć **ASP.NET 4.5** na tym serwerze. Zawierają inne opcje, które zostaną zaznaczone automatycznie podczas włączania ASP.NET 4.5.  
 
 - Skonfiguruj wszystkie punkty zarządzania w trybie protokołu HTTPS. Aby uzyskać więcej informacji, zobacz [wymagania dotyczące certyfikatu PKI](/sccm/core/plan-design/network/pki-certificate-requirements) i [wdrażania certyfikatu serwera sieci web dla systemów lokacji z usługami IIS](/sccm/core/plan-design/network/example-deployment-of-pki-certificates#BKMK_webserver2008_cm2012).  
+    - Jeśli używasz brama zarządzania chmury, następnie wystarczy Skonfiguruj protokół HTTPS dla punktów zarządzania, umożliwiające zarządzanie bramy chmury.
+    - Jeśli wdrażasz klienci w intranecie, przy użyciu uwierzytelniania opartego na tokenach usługi Azure AD, a następnie wszystkie punkty zarządzania, które mogą kontaktować się z tych klientów, należy włączyć protokół HTTPS. 
 
 - Opcjonalne konfigurowanie [brama zarządzania chmury](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway) (CMG) do wdrożenia klientów internetowych. Dla lokalnych klientów, którzy uwierzytelniania za pomocą usługi Azure AD nie potrzebujesz CMG.  
 

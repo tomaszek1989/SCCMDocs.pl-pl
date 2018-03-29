@@ -1,9 +1,9 @@
 ---
-title: "What's new in hybrydowego zarządzania urządzeniami Przenośnymi"
+title: What's new in hybrydowego zarządzania urządzeniami Przenośnymi
 titleSuffix: Configuration Manager
-description: "Poznaj nowe funkcje zarządzania urządzeniami przenośnymi dostępne dla hybrydowych wdrożeń z programu Configuration Manager i usługi Intune."
+description: Poznaj nowe funkcje zarządzania urządzeniami przenośnymi dostępne dla hybrydowych wdrożeń z programu Configuration Manager i usługi Intune.
 ms.custom: na
-ms.date: 03/01/2018
+ms.date: 03/28/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3b48c5296caecd66b5abb6d40578af2009ef0f11
-ms.sourcegitcommit: 6e4fca19083b5dbdcd841012f6e1051bb7c00eb8
+ms.openlocfilehash: 3c3d1c813c307e520b3a9709187937f0d3f732c7
+ms.sourcegitcommit: 27da4be015f1496b7b89ebddb517a2685f1ecf74
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>What's new in hybrydowego zarządzania urządzeniami przenośnymi za pomocą programu Configuration Manager i Microsoft Intune
 
@@ -41,6 +41,16 @@ Każda sekcja w tym artykule wymieniono funkcje hybrydowych w trzech różnych k
 |**Nowość w usłudze Microsoft Intune** | Ogólnie rzecz biorąc wszystkie funkcje wymienione w tej kategorii powinny współpracować z wszystkie wersje programu Configuration Manager. Zwalnia to tym System Center 2012 R2 Configuration Manager, ponieważ te funkcje tylko wymagane przez usługę Intune i nie wymagają dodatkowych funkcji w programie Configuration Manager.|
 |**Nowość w programie Configuration Manager Technical Preview**| Wszystkie funkcje wymienione w tej kategorii są prawidłowe tylko w określonej wersji Technical Preview. Aby wypróbować te funkcje, należy zainstalować wersję Technical Preview określony w opisie funkcji. Aby uzyskać więcej informacji, zobacz [Technical Preview programu System Center Configuration Manager](../../core/get-started/technical-preview.md).|
 |**Nowe w programie Configuration Manager (wersji current branch)**| Wszystkie funkcje wymienione w tej kategorii pracować tylko z określonej wersji programu Configuration Manager (wersji current branch), np. w wersji 1511 lub 1602. Jeśli używasz starszej wersji programu Configuration Manager dla danego wdrożenia hybrydowego, należy uaktualnić do wersji Configuration Manager (wersji current branch) określona w opisie funkcji. Aby uzyskać więcej informacji, zobacz [uaktualnienia do programu System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|
+
+
+
+## <a name="march-2018"></a>2018 marca
+
+### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune
+
+#### <a name="azure-active-directory-web-sites-can-require-the-intune-managed-browser-app-and-support-single-sign-on-for-the-managed-browser-public-preview"></a>Witryn sieci web w usłudze Azure Active Directory może wymagać aplikacji przeglądarki zarządzanej Intune i obsługę rejestracji jednokrotnej w programie Managed Browser (publicznej wersji zapoznawczej)
+<!-- 710595 --> 
+Za pomocą usługi Azure Active Directory (Azure AD), można teraz ograniczyć dostęp do witryn sieci web na urządzeniach przenośnych z aplikacji Intune Managed Browser. W programie managed browser danych witryny sieci web pozostanie bezpieczne i oddzielnie od danych osobowych użytkownika końcowego. Ponadto w programie Managed Browser będzie obsługiwać możliwości logowania jednokrotnego dla witryn chronione przez usługę Azure AD. Rejestrowanie w programie Managed Browser lub przy użyciu programu Managed Browser na urządzeniu z innej aplikacji zarządzanych przez usługę Intune, umożliwia Managed Browser na dostęp do firmowych stron chronione przez usługę Azure AD bez konieczności wprowadzania poświadczeń użytkownika. Ta funkcja ma zastosowanie do witryny, takich jak program Outlook Web Access (OWA) i usługi SharePoint Online, a także innych witryn firmowych, takich jak zasoby intranetowe dostępne za pośrednictwem serwera Proxy aplikacji Azure.
 
 
 
@@ -456,6 +466,35 @@ Następujące funkcje dodatkowe hybrydowego znajdują się również w wersji 17
 
 
 ## <a name="notices"></a>Powiadomienia
+
+### <a name="windows-company-portal-send-feedback-option-may-no-longer-work"></a>Systemu Windows firmy portalu wysyłania opinie mogą przestać działać.
+
+Aplikacja Portal firmy dla systemu Windows ma opcję Prześlij opinię zezwolenie użytkownikom wysyłanie informacji zwrotnych na temat aplikacji do firmy Microsoft. Od 30 kwietnia 2018 tej opcji nadal jest obsługiwany tylko w aplikacji Portal firmy dla systemu Windows 10, uruchomionej w systemie Windows 10 w wersji 1607 i nowszych.   
+
+#### <a name="how-does-this-affect-me"></a>Jak to wpływa mnie?
+
+Jeśli nie ma aplikacji Portal firmy dla systemu Windows zainstalowane dla użytkowników końcowych, możesz zignorować ten komunikat.
+
+Jeśli którykolwiek z użytkowników końcowych w aplikacji Portal firmy, należy pamiętać, że począwszy od 30 kwietnia, przycisk Prześlij opinię przestaje działać dla aplikacji w następujących scenariuszach:  
+
+ - Aplikacja Portal firmy dla systemu Windows 10 w systemie Windows 10 w wersji 1507 i wersji 1511  
+
+ - Windows Phone 8.1 aplikacji Portal firmy  
+
+W przypadku urządzeń wpływ na opcji Prześlij opinię kończy się niepowodzeniem i nie powiedzie się, nawet w przypadku ponawianie próby. Wysyłanie opinii do firmy Microsoft dotyczące środowiska na tych platformach, istnieją alternatywne opinii kanały wymienionych poniżej.
+
+#### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Co należy zrobić, aby przygotować się do tej zmiany?
+
+Powiadamia użytkowników końcowych tej zmiany i zaktualizować wskazówki żadnych użytkowników, jeśli to konieczne. 
+
+Poinformuj użytkowników końcowych za pomocą portalu firmy na Windows Phone 8.1, Windows 10 w wersji 1507 i Windows 10 w wersji 1511 mają dwa kanały alternatywny opinii. Mogą one:  
+
+- Użyj informacji zwrotnych Centrum aplikacji w systemie Windows 10  
+- Wyślij wiadomość e-mail do WinCPfeedback@microsoft.com  
+
+Poproś użytkowników końcowych w systemie Windows 10 w wersji 1607 lub później aktualizację do najnowszej wersji systemu Windows w portalu firmy dostępnej w Microsoft Store.
+
+
 
 ### <a name="company-portal-for-windows-81-and-windows-phone-81-moving-to-sustaining-mode"></a>Firmy, Portal dla Windows 8.1 i Windows Phone 8.1 przechodzenia do trybu utrzymywanie 
 <!--1428681-->

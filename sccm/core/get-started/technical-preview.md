@@ -3,7 +3,7 @@ title: Wersje Technical Preview
 titleSuffix: Configuration Manager
 description: Informacje o wersji Technical Preview, aby test-drive nowe funkcje i możliwości w programie Configuration Manager.
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 03/27/2018
 ms.prod: configuration-manager
 ms.reviewer: nab
 ms.suite: na
@@ -15,12 +15,12 @@ ms.assetid: 9ce0a8cb-f96c-4e41-834c-59ceb54ce44a
 caps.latest.revision: ''
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 4509c7da3ca36d2ffd3de36774bf069c40d95ce2
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+manager: dougeby
+ms.openlocfilehash: 753503fd8c59ef8f93c0968c3d5c386cec35f88e
+ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="technical-preview-for-system-center-configuration-manager"></a>Wersja zapoznawcza Technical Preview programu System Center Configuration Manager
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 03/23/2018
 
  Ponieważ ta wersja jest technical preview, szczegóły i funkcje mogą ulec zmianie.  
 
- Ten artykuł zawiera informacje, które dotyczą wszystkich wersji Technical Preview. Każda nowa możliwość (lub funkcji) również wyświetlane wraz z wersji zapoznawczej Technical Preview, w której możliwość najpierw pojawia się, jak wersja 1802 lutego 2018. Te możliwości są wyszczególnione w osobnych tematach dedykowana dla każdej wersji zapoznawczej.  
+ Ten artykuł zawiera informacje, które dotyczą wszystkich wersji Technical Preview. Każda nowa możliwość (lub funkcji) również wyświetlane wraz z wersji zapoznawczej Technical Preview, w której możliwość najpierw pojawia się, jak wersja 1803 marca 2018. Te możliwości są wyszczególnione w osobnych tematach dedykowana dla każdej wersji zapoznawczej.  
 
  Aby uzyskać informacje na temat nowości w wersji current branch programu Configuration Manager, zobacz [nowości w programie System Center Configuration Manager](/sccm/core/plan-design/changes/what-has-changed-from-configuration-manager-2012).
 
@@ -91,7 +91,7 @@ Następujące produkty i technologie, są obsługiwane przez gałęzi programu C
 Każdej wersji zapoznawczej jest obsługiwany, dopóki dostępne są trzy kolejne wersje. To znaczy, wersja wydana 1708 wersji 1704 nie jest już w obsłudze, ale wersje 1705, 1706 i 1707 pozostała w obsłudze. Linii bazowej przypada poza pomocy technicznej, jest nadal obsługiwane instalowania nowej lokacji Technical Preview, aż do nowej wersji linii bazowej jest dostępna, pod warunkiem, następnie zaktualizuj tę instalację do obsługiwanej wersji. Aktualizowanie do najnowszej dostępnej wersji, a następnie powtórz ten proces, przed zainstalowaniem najnowszej wersji technical preview.
 
 > [!TIP]  
->  Po zainstalowaniu aktualizacji wersji zapoznawczej Technical Preview należy zaktualizować instalację wersji wstępnej do nowej wersji zapoznawczej Technical Preview.    W przypadku instalacji wersji zapoznawczej Technical Preview nigdy nie ma możliwości uaktualnienia do instalacji Current Branch ani otrzymania aktualizacji z wersji Current Branch.  
+>  Po zainstalowaniu aktualizacji do wersji zapoznawczej technical preview należy zaktualizować instalację wersji wstępnej do nowej wersji technical preview. Instalacji wersji zapoznawczej technical preview nigdy nie ma możliwości uaktualnienia do instalacji current branch ani otrzymania aktualizacji z wersji current branch.  
 
 **Aktywne wersje bazowe Technical Preview:**
    
@@ -114,28 +114,14 @@ Poniżej przedstawiono możliwości oferowane przez najnowszej wersji programu C
 
 <!-- This is the full list of new features in the latest TP release -->
 
-### <a name="technical-preview-version-1802"></a>Technical Preview wersji 1802
-- [Obciążenia programu Endpoint Protection przejścia do usługi Intune przy użyciu wspólnej zarządzania](capabilities-in-technical-preview-1802.md#transition-endpoint-protection-workload-to-intune-using-co-management) <!-- 1357365 -->
-- [Konfigurowanie optymalizacji dostarczania systemu Windows do użycia grup granic w programie Configuration Manager](capabilities-in-technical-preview-1802.md#configure-windows-delivery-optimization-to-use-configuration-manager-boundary-groups) <!-- 1324696 --> 
-- [Sekwencji zadań uaktualniania w miejscu systemu Windows 10 za pośrednictwem bramy zarządzania w chmurze](capabilities-in-technical-preview-1802.md#windows-10-in-place-upgrade-task-sequence-via-cloud-management-gateway) <!-- 1357149 -->
-- [Ulepszenia dotyczące sekwencji zadań uaktualniania w miejscu systemu Windows 10](capabilities-in-technical-preview-1802.md#improvements-to-windows-10-in-place-upgrade-task-sequence) <!-- 1357425 --> 
-- [Ulepszenia do punktów dystrybucji z włączoną obsługą środowiska PXE](capabilities-in-technical-preview-1802.md#improvements-to-pxe-enabled-distribution-points) <!-- 1357580 --> 
-- [Szablony wdrażania dla sekwencji zadań](capabilities-in-technical-preview-1802.md#deployment-templates-for-task-sequences) <!-- 1357391 --> 
-- [Produkt cyklu życia w pulpit nawigacyjny](capabilities-in-technical-preview-1802.md#product-lifecycle-dashboard) <!--1319632 --> 
-- [Ulepszenia dotyczące raportowania](capabilities-in-technical-preview-1802.md#improvements-to-reporting) <!--1357653 --> 
-- [Ulepszenia Centrum oprogramowania](capabilities-in-technical-preview-1802.md#improvements-to-software-center) <!--1357592 --> 
-- [Ulepszenia na uruchamianie skryptów](capabilities-in-technical-preview-1802.md#improvements-to-run-scripts) <!--1236459 --> 
-- [Grupy granic rezerwowy dla punktów zarządzania](capabilities-in-technical-preview-1802.md#boundary-group-fallback-for-management-points) <!-- 1324594 --> 
-- [Ulepszona obsługa certyfikatów CNG](capabilities-in-technical-preview-1802.md#improved-support-for-cng-certificates) <!-- 1357314 --> 
-- [Obsługa brama zarządzania usługi Azure Resource Manager w chmurze](capabilities-in-technical-preview-1802.md#cloud-management-gateway-support-for-azure-resource-manager) <!-- 1324735 --> 
-- [Zatwierdzanie żądań aplikacji dla użytkowników na urządzenie](capabilities-in-technical-preview-1802.md#approve-application-requests-for-users-per-device) <!-- 1357015 --> 
-- [Przeglądanie i instalowanie aplikacji dostępne dla użytkowników na urządzeniach przyłączonych do usługi AD platformy Azure przy użyciu programu Software Center](capabilities-in-technical-preview-1802.md#use-software-center-to-browse-and-install-user-available-applications-on-azure-ad-joined-devices) <!-- 1322613 --> 
-- [Raport dotyczący informacji o urządzeniu AutoPilot systemu Windows](capabilities-in-technical-preview-1802.md#report-on-windows-autopilot-device-information) <!-- 1351442 --> 
-- [Ulepszenia zasad programu Configuration Manager dla usługi Windows Defender wykorzystać zabezpieczenia](capabilities-in-technical-preview-1802.md#improvements-to-configuration-manager-policies-for-windows-defender-exploit-guard) <!-- 1356220 -->
-- [Zasady przeglądarki Microsoft Edge](capabilities-in-technical-preview-1802.md#microsoft-edge-browser-policies) <!-- 1357310 -->
-- [Raport dotyczący liczby przeglądarka domyślna](capabilities-in-technical-preview-1802.md#report-for-default-browser-counts) <!-- 1357830 --> 
-- [Obsługa urządzeń z systemem Windows 10 ARM64](capabilities-in-technical-preview-1802.md#support-for-windows-10-arm64-devices) <!-- 1353704 --> 
-- [Zmiany do wdrożenia etapowego](capabilities-in-technical-preview-1802.md#changes-to-phased-deployments) <!-- 1357405 -->
+### <a name="technical-preview-version-1803"></a>Technical Preview wersji 1803
+- [Dystrybucji ściągania punktów obsługi punktów dystrybucji w chmurze jako źródło](capabilities-in-technical-preview-1803.md#pull-distribution-points-support-cloud-distribution-points-as-source) <!--1321554--> 
+- [Obsługa częściowej pobierania w klienta równorzędnej pamięci podręcznej, aby zmniejszyć wykorzystanie sieci WAN](capabilities-in-technical-preview-1803.md#partial-download-support-in-client-peer-cache-to-reduce-wan-utilization) <!--1357346--> 
+- [Okna obsługi w programie Software Center](capabilities-in-technical-preview-1803.md#maintenance-windows-in-software-center) <!--1358131--> 
+- [Karta niestandardowe dla strony sieci Web w programie Software Center](capabilities-in-technical-preview-1803.md#custom-tab-for-webpage-in-software-center) <!--1358132--> 
+- [Włącz obsługę aktualizacji oprogramowania innych firm na klientach](capabilities-in-technical-preview-1803.md#enable-third-party-software-update-support-on-clients) <!--1357605-->
+- [Włącz kopiowanie/wklejanie szczegóły zasobu z widokami monitorowania](capabilities-in-technical-preview-1803.md#enable-copypaste-of-asset-details-from-monitoring-views) <!--1357552-->
+- [Rozszerzenia SCAP](capabilities-in-technical-preview-1803.md#scap-extensions) <!--1357552-->
 
 
 
@@ -184,8 +170,6 @@ Then remove the bottom of this list and/or move individual items not in CB to th
  | Ulepszenia zarządzania usługi Office 365 klienta pulpitu nawigacyjnego <!-- 1357281 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#improvements-to-office-365-client-management-dashboard) | [Wersja 1802](/sccm/sum/deploy-use/manage-office-365-proplus-updates#office-365-client-management-dashboard) | 
  | Ulepszenia konsoli programu Configuration Manager <!-- 1357280,1357282 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#improvements-to-the-configuration-manager-console) | Wersja 1802 | 
  | Ulepszenia dotyczące wdrażania systemu operacyjnego <!-- SMS 500897 --> | [Podgląd techniczna 1712](capabilities-in-technical-preview-1712.md#improvements-to-operating-system-deployment) | Wersja 1802 | 
- | Uruchom sekwencję zadań <!-- 1261338 --> | [Podgląd techniczna 1711](capabilities-in-technical-preview-1711.md) | [Wersja 1710](/sccm/osd/understand/task-sequence-steps#child-task-sequence) |
- | Zezwala na interakcję użytkownika podczas instalowania aplikacji <!-- 1356976 --> | [Podgląd techniczna 1711](capabilities-in-technical-preview-1711.md) | [Wersja 1802](/sccm/apps/deploy-use/create-applications#specify-user-experience-options-for-the-deployment-type) |
 
   
 
@@ -200,12 +184,8 @@ With each CB release, review and remove from this list for anything that's now a
 
  |Możliwość |Wersji Technical Preview |  
  |----------------|---------------------|
- |VPN udoskonalone środowisko profilu w konsoli programu Configuration Manager <!-- 1313282 --> | [Podgląd techniczna 1709](capabilities-in-technical-preview-1709.md) |
- |Informacje na temat technologii zarządzania  <!-- 1353967 --> |[Podgląd techniczna 1708](capabilities-in-technical-preview-1708.md#management-insights)|
- |Powierzchni urządzenia pulpitu nawigacyjnego <!-- 1355788 --> |[Podgląd techniczna 1707](capabilities-in-technical-preview-1707.md#surface-device-dashboard)|
  |Wysoką dostępność roli serwera lokacji <!-- 1128774 --> |[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#site-server-role-high-availability) |
  |Obsługa rozruchu środowiska PXE sieci IPv6 <!-- 1269793 --> |[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#pxe-network-boot-support-for-ipv6)|
- |Ocena zaświadczania o kondycji urządzenia dla zasady zgodności dla dostępu warunkowego <!-- 1235616 -->|[Podgląd techniczna 1706](capabilities-in-technical-preview-1706.md#device-health-attestation-assessment-for-compliance-policies-for-conditional-access)|
  |Użyj usługi Azure Active Directory <!-- 1322145? --> | [Podgląd techniczna 1702](capabilities-in-technical-preview-1702.md#azurediscovery) |
  |Oceny zgodności dla usługi Windows Update dla firm aktualizacji <!-- 1235390 --> | [Podgląd techniczna 1702](capabilities-in-technical-preview-1702.md#compliance-assessment-for-windows-update-for-business-updates) |
  |Dostęp do danych punktu końcowego OData <!-- 1321523 --> |[Podgląd techniczna 1612](capabilities-in-technical-preview-1612.md#odata-endpoint-data-access)|

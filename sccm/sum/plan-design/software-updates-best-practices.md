@@ -1,22 +1,10 @@
----
-title: "Najlepsze rozwiązania dotyczące aktualizacji oprogramowania"
-titleSuffix: Configuration Manager
-description: "Użyj następujące najlepsze rozwiązania dotyczące aktualizacji oprogramowania w programie System Center Configuration Manager."
-keywords: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.date: 10/06/2016
-ms.topic: article
-ms.prod: configuration-manager
-ms.service: 
-ms.technology: configmgr-sum
-ms.assetid: 6d20389a-9de2-4a64-bced-9fc4fa519174
-ms.openlocfilehash: 10913870f650bdda6eb7e65dc88ba8e3f0b17de4
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
-ms.translationtype: MT
-ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ ---
+
+Nazwa: Najlepsze rozwiązania dotyczące titleSuffix aktualizacje oprogramowania: Opis elementu "programu configuration Manager": "Użyj następujące najlepsze rozwiązania dotyczące aktualizacji oprogramowania w programie System Center Configuration Manager".
+słowa kluczowe: Autor: dougeby ms.author: Menedżer dougeby: angrobe ms.date: 10/06/2018 ms.topic: article ms.prod: ms.service programu configuration manager: ms.technology:
+ - configmgr-sum ms.assetid: 6d20389a-9de2-4a64-bced-9fc4fa519174
+
+
 ---
 # <a name="best-practices-for-software-updates-in-system-center-configuration-manager"></a>Najlepsze rozwiązania dotyczące aktualizacji oprogramowania w programie System Center Configuration Manager
 

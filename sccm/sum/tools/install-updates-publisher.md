@@ -1,30 +1,31 @@
 ---
 title: Zainstaluj Updates Publisher
 titleSuffix: Configuration Manager
-description: "Zainstaluj System Center Updates Publisher w środowisku"
+description: Zainstaluj System Center Updates Publisher w środowisku
 ms.custom: na
 ms.date: 07/03/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ab5cda93-b67c-4aa5-904d-7b63ce790aa0
-caps.latest.revision: "1"
+caps.latest.revision: ''
 author: mestew
 ms.author: mstewart
 manager: angrobe
 robots: NOINDEX, NOFOLLOW
-ms.openlocfilehash: 629e7dd98b1b5ff7f240461b61893dfc433f61dc
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: ce65e58a2c1be0420077bddded7567ff931d041f
+ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="install-updates-publisher"></a>Zainstaluj Updates Publisher
 
-*Dotyczy: Program System Center Updates Publisher*
+*Dotyczy: System Center Updates Publisher*
 
 Informacje przedstawione w tym temacie ułatwiają get, zainstalować i skonfigurować Updates Publisher do użycia ze środowiskiem.
 
@@ -37,7 +38,7 @@ Zainstaluj i uruchom Updates Publisher w 64-bitowych wersjach następujących sy
 
 -   Windows Server 2016 (wersje Standard i Datacenter)
 -   Windows Server 2012 R2 (wersje Standard i Datacenter)
--   Windows 10 (wersje Pro, Education, Pro, Education i Enterprise)
+-   Windows 10 (Pro, Education, Pro Education, Enterprise)
 -   Windows 8.1 (Professional, Enterprise)
 
 ### <a name="prerequisites"></a>Wymagania wstępne
@@ -66,7 +67,7 @@ Na przykład możesz utworzyć aktualizacji oprogramowania, które zawiera tytu�
 Po opublikowaniu aktualizacji oprogramowania można określić język pliku binarnego aktualizacji oprogramowania. Można również określić, że plik binarny jest niezależny od języka. Obsługiwane są następujące języki:
 
 -   Arabski
--   Chiński (Hongkong SAR)
+-   Chinese (Hong Kong S.A.R.)
 -   Chiński (tradycyjny)
 -   Chiński uproszczony
 -   czeski
@@ -109,7 +110,7 @@ Następujące języki są obsługiwane dla aktualizacji tytuły i opisy.
 
 
 ## <a name="install-updates-publisher"></a>Zainstaluj Updates Publisher
-Pobierz **UpdatesPubliser.msi** dotyczące instalowania programu System Center Updates Publisher z [Microsoft Download Center](https://go.microsoft.com/fwlink/?linkid=847967).
+Pobierz **UpdatesPubliser.msi** dotyczące instalowania programu System Center Updates Publisher z [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=55543).
 
 Aby zainstalować program Updates Publisher, uruchom **UpdatesPublisher.msi** na komputerze, który spełnia *wymagania wstępne*. Instalator tworzy następujące folder zawiera pliki niezbędne do uruchomienia Updates Publisher:  *&lt;ścieżki&gt;\Program Files\Microsoft\UpdatesPublisher*.
 

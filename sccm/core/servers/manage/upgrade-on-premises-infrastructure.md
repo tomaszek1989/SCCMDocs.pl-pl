@@ -1,7 +1,7 @@
 ---
 title: Uaktualnianie infrastruktury lokalnej
 titleSuffix: Configuration Manager
-description: "Informacje o sposobie uaktualniania infrastruktury, takich jak SQL Server i systemu operacyjnego lokacji systemów lokacji."
+description: Informacje o sposobie uaktualniania infrastruktury, takich jak SQL Server i systemu operacyjnego lokacji systemów lokacji.
 ms.custom: na
 ms.date: 02/15/2018
 ms.prod: configuration-manager
@@ -12,20 +12,20 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8ca970dd-e71c-404f-9435-d36e773a0db2
-caps.latest.revision: 
-caps.handback.revision: 
+caps.latest.revision: ''
+caps.handback.revision: ''
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 8e17ffad2b972119c92e449bef8f086b950b106c
-ms.sourcegitcommit: fbd4a9d2fa8ed4ddd3a0fecc4a2ec4fc0ccc3d0c
+ms.openlocfilehash: 5c4403588872e426a9346e6c4c50f1853b75f4b9
+ms.sourcegitcommit: 27da4be015f1496b7b89ebddb517a2685f1ecf74
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="upgrade-on-premises-infrastructure-that-supports-system-center-configuration-manager"></a>Uaktualnianie infrastruktury lokalnej, która obsługuje program System Center Configuration Manager
 
-Dotyczy: Program System Center Configuration Manager (Current Branch)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 Skorzystaj z informacji w tym artykule, aby ułatwić uaktualnienie infrastruktury serwera, na którym działa System Center Configuration Manager.  
 
@@ -74,6 +74,8 @@ Podczas uaktualniania systemu Windows Server 2012 lub Windows Server 2012 R2 do 
 -   Upewnij się, każdy serwer, który jest hostem roli systemu lokacji nadal spełniają wszystkie [wymagania wstępne dotyczące ról systemu lokacji](/sccm/core/plan-design/configs/site-and-site-system-prerequisites) uruchomionymi na tym serwerze. Na przykład może być konieczne ponowne zainstalowanie usługi BITS, usług WSUS, lub skonfigurować ustawienia specyficzne dla usług IIS.
 
 -   Po przywróceniu wszystkie brakujące wymagania wstępne, uruchom ponownie serwer jeszcze raz, aby upewnić się, że usługi jest uruchomiony i działa.
+
+-   W przypadku uaktualniania serwera lokacji głównej następnie [uruchamiania resetowania lokacji](/sccm/core/servers/manage/modify-your-infrastructure#bkmk_reset).
 
 **Znany problem dla zdalnej konsoli programu Configuration Manager:**  
 Po uaktualnieniu serwera lokacji lub serwera hostującego wystąpienie SMS_Provider do systemu Windows Server 2016, użytkownicy z uprawnieniami administracyjnymi może nie móc połączyć konsolę programu Configuration Manager do lokacji. Aby obejść ten problem, należy ręcznie przywrócić uprawnienia dla grupy administratorów programu SMS w usłudze WMI. Uprawnienia należy ustawić na serwerze lokacji i na każdym serwerze zdalnym, który hostuje wystąpienie element SMS_Provider:

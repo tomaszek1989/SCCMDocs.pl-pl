@@ -16,11 +16,11 @@ caps.latest.revision: ''
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 5ec9266f33b318ac9c42f86840ebd7ac59713bdf
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 262bfa3991bbd95fad779da9520358d527a42b07
+ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="manage-task-sequences-to-automate-tasks-in-system-center-configuration-manager"></a>Zarządzanie sekwencjami zadań w celu zautomatyzowania zadań w programie System Center Configuration Manager
 
@@ -251,7 +251,14 @@ Następujący komunikat powiadomienia wyświetlany, gdy użytkownik końcowy otw
         >     - Jeśli kolekcja zawiera serwer  
 
     -   **Komentarze (opcjonalne)**: Określ dodatkowe informacje opisujące to wdrożenie sekwencji zadań.  
-    - **Wybierz szablon wdrażania**: Począwszy od programu Configuration Manager w wersji 1802 można zapisywać i określ Szablon wdrożenia sekwencji zadań. <!--1357391-->
+    - **Wybierz szablon wdrażania**: Począwszy od programu Configuration Manager w wersji 1802,<!--1357391--> można zapisywać i określ Szablon wdrożenia sekwencji zadań.     
+
+         > [!IMPORTANT]
+         > W 1802 wersji programu Configuration Manager niektóre elementy nie są zapisywane w szablonie.  <!--510610--> Upewnij się, że po uruchomieniu Kreatora wdrażania należy zastosować następujące elementy:
+         > - Instalacja oprogramowania 
+         > - Scheduling 
+         > - Przed pobraniem zawartości
+ 
 6.  Na stronie **Ustawienia wdrażania** określ poniższe informacje, a następnie kliknij przycisk **Dalej**.  
 
     -   **Cel**: Z listy rozwijanej wybierz jedną z następujących opcji:  

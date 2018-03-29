@@ -1,25 +1,26 @@
 ---
-title: "Zarządzanie urządzeniami przenośnymi "
+title: 'Zarządzanie urządzeniami przenośnymi '
 titleSuffix: Configuration Manager
-description: "Zarządzanie urządzeniami przenośnymi za pomocą łącznika serwera Exchange w programie System Center Configuration Manager."
+description: Zarządzanie urządzeniami przenośnymi za pomocą łącznika serwera Exchange w programie System Center Configuration Manager.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: aba688d9-fd5b-4c42-8cb4-f7e1b161ef50
-caps.latest.revision: "8"
+caps.latest.revision: ''
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: ff7fef664780730510f17d723a1d13ca691405af
-ms.sourcegitcommit: 0a6b2c53ff4445b5d4f3638fdb0b489d54e333d3
+ms.openlocfilehash: 23073ff562e1ca533e196fff0415efc0451d6fee
+ms.sourcegitcommit: 27da4be015f1496b7b89ebddb517a2685f1ecf74
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="manage-mobile-devices-with-system-center-configuration-manager-and-exchange"></a>Zarządzanie urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Exchange
 
@@ -27,7 +28,7 @@ ms.lasthandoff: 12/14/2017
 
 Korzystania z łącznika serwera Exchange w programie System Center Configuration Manager umożliwia zarządzanie urządzeniami przenośnymi łączącymi się z serwerem programu Exchange (lokalnie lub online) za pomocą programu Microsoft Exchange ActiveSync protokołu, a nie można zarejestrować za pomocą programu Configuration Manager. Możesz skonfigurować funkcje zarządzania urządzeniami przenośnymi programu Exchange, takie jak zdalne czyszczenie urządzenia i kontrola ustawień wielu serwerów programu Exchange z poziomu konsoli programu Configuration Manager.  
 
- ![ConfigMgr & 45; &#45; exchange](../../mdm/deploy-use/media/configmgr-with-exchange.png "programu configmgr z programu exchange")  
+ ![configmgr&#45;with&#45;exchange](../../mdm/deploy-use/media/configmgr-with-exchange.png "configmgr-with-exchange")  
 
  Podczas zarządzania urządzeniami przenośnymi za pomocą łącznika serwera Exchange, to nie instaluje klienta programu Configuration Manager na urządzeniach przenośnych. Dlatego działanie niektórych funkcji zarządzania jest ograniczone. Nie można na przykład zainstalować oprogramowania na tych urządzeniach ani użyć elementów konfiguracji do skonfigurowania tych urządzeń. Aby uzyskać więcej informacji o różnych funkcjach zarządzania, których można użyć z programem Configuration Manager dla urządzeń przenośnych, zobacz [wybór rozwiązania do zarządzania urządzeniami programu System Center Configuration Manager](../../core/plan-design/choose-a-device-management-solution.md).  
 
@@ -76,9 +77,9 @@ Korzystania z łącznika serwera Exchange w programie System Center Configuratio
 
 1.  Określ, które konto będzie się łączyć z serwerem dostępu klienta programu Exchange w celu zarządzania urządzeniami przenośnymi. Może to być konto komputera serwera lokacji lub konto użytkownika systemu Windows. Następnie skonfiguruj to konto w celu uruchomienia następujących poleceń cmdlet programu Exchange Server:  
 
-    -   **Clear-ActiveSyncDevice.**  
+    -   **Clear-ActiveSyncDevice**  
 
-    -   **Get-ActiveSyncDevice.**  
+    -   **Get-ActiveSyncDevice**  
 
     -   **Get-ActiveSyncDeviceAccessRule**  
 
@@ -92,7 +93,7 @@ Korzystania z łącznika serwera Exchange w programie System Center Configuratio
     
     -   **Get-Mailbox**
     
-    -   **Get odbiorcy**  
+    -   **Get-Recipient**  
 
     -   **Set-ADServerSettings**  
 
@@ -102,11 +103,17 @@ Korzystania z łącznika serwera Exchange w programie System Center Configuratio
 
     -   **Set-CASMailbox**  
 
-    -   **Nowe ActiveSyncDeviceAccessRule**  
+    -   **New-ActiveSyncDeviceAccessRule**  
 
-    -   **Nowe ActiveSyncMailboxPolicy**  
+    -   **New-ActiveSyncMailboxPolicy**  
 
-    -   **Remove-ActiveSyncDevice.**  
+    -   **Remove-ActiveSyncDevice**  
+    
+    -   **Get-CasMailbox**  
+    
+    -   **Get-User**  
+    
+    -   **Set-ActiveSyncOrganizationSettings**  
 
     > [!NOTE]  
     >  Te polecenia cmdlet zawierają następujące role zarządzania serwera Exchange: Zarządzanie adresatami, zarządzanie organizacją tylko do odczytu i zarządzanie serwerem. Więcej informacji o grupach ról zarządzania w programie Microsoft Exchange Server 2010 znajduje się w temacie [Understanding Management Role Groups (Informacje o grupach ról zarządzania)](http://go.microsoft.com/fwlink/p/?LinkId=212914).  
