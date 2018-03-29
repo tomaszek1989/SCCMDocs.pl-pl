@@ -11,6 +11,11 @@
 ### [Tworzenie i wdrażanie linii bazowych konfiguracji](plan-design/common-tasks-for-creating-and-deploying-configuration-baselines.md)
 ## [Zabezpieczenia i prywatność](plan-design/security-and-privacy-for-compliance-settings.md)
 
+## [Rozszerzenia protokołu SCAP (Security Content Automation Protocol)](plan-design/scap/about-scap.md)
+### [Instalowanie i konfigurowanie rozszerzeń protokołu SCAP](plan-design/scap/install-configure-scap.md)
+### [Importowanie ustawień zgodności protokołu SCAP](plan-design/scap/import-scap-compliance-settings.md)
+### [Rozwiązywanie problemów z rozszerzeniami protokołu SCAP](plan-design/scap/troubleshooting-scap.md)
+
 # Wdrażanie i użytkowanie
 
 ## [Tworzenie elementów konfiguracji](deploy-use/create-configuration-items.md)

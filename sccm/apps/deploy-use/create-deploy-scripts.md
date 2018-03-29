@@ -17,11 +17,11 @@ caps.handback.revision: ''
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 29806161b29b87834c0cb4b1e478d92bff7a7b3c
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 19bb8b2c4e47dcc8a75db568e7f93541544a4566
+ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Tworzenie i uruchamianie skryptów programu PowerShell z poziomu konsoli programu Configuration Manager
 
@@ -70,10 +70,6 @@ Uruchom skrypty obecnie obsługuje:
 >[!WARNING]
 >Należy pamiętać, że podczas korzystania z parametrów, otwiera powierzchni dla potencjalne ryzyko ataków iniekcji programu PowerShell. Istnieją różne sposoby ograniczenia i obejścia, takie jak za pomocą wyrażeń regularnych do sprawdzania poprawności danych wejściowych parametru lub przy użyciu wstępnie zdefiniowanych parametrów. Typowe najlepszym rozwiązaniem jest nie, aby dołączyć do kluczy tajnych w skryptach środowiska PowerShell (nie hasła itp.). [Dowiedz się więcej o zabezpieczeniach skrypt programu PowerShell](/sccm/apps/deploy-use/learn-script-security) <!--There are external tools available to validate your PowerShell scripts such as the [PowerShell Injection Hunter](https://www.powershellgallery.com/packages/InjectionHunter/1.0.0) tool. -->
 
-
-## <a name="group-policy-considerations-for-scripts"></a>Zagadnienia dotyczące zasad grupy dla skryptów
-<!--While running scripts on devices, Configuration Manager sets policy to allow local scripts and remote signed scripts.--> 
-Ustawienie zasad wykonywania za pomocą zasad grupy może nie zezwalać na uruchamianie z programu Configuration Manager skryptów. Informacje dotyczące zasady wykonywania i jak uzyskać ustawić zobacz [o zasad wykonywania](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies) artykułu. <!--507185-->
 
 ## <a name="run-script-authors-and-approvers"></a>Uruchom skrypt autorzy i osoby zatwierdzające
 
@@ -275,9 +271,13 @@ Po zainicjowaniu uruchomienie skryptu w kolekcji urządzeń, użyj poniższej pr
 ## <a name="script-output"></a>Dane wyjściowe skryptu
 
 - Począwszy od programu Configuration Manager w wersji 1802 danych wyjściowych skryptu zwraca przy użyciu formatowania JSON. Ten format spójnie zwraca dane wyjściowe skryptu do odczytu. 
-- Skrypty, które uzyskać nieznany wynik lub te, których klient był w trybie offline, nie zostanie wyświetlona w wykresach lub zestawu danych. <!--507179-->
+- Skrypty, które uzyskać nieznany wynik lub których klient był w trybie offline, nie zostanie wyświetlona w wykresach lub zestawu danych. <!--507179-->
 - Unikaj przekazujących dane wyjściowe skryptu dużych, ponieważ jest obcinana do 4 KB. <!--508488-->
 - Niektóre funkcje ze skryptem wyjściowe formatowanie nie jest dostępna podczas uruchamiania 1802 wersji programu Configuration Manager lub nowszego z niższej wersji klienta. <!--508487-->
+    - Gdy klient programu Configuration Manager pre 1802, otrzymasz wyjściowego ciągu.
+    -  Dla programu Configuration Manager wersja klienta 1802 i powyżej, możesz pobrać formatowania JSON.
+        - Na przykład może uzyskiwać wyniki, które Wypowiedz tekst w jednej wersji klienta i "TEXT" (dane wyjściowe jest ujęta w cudzysłów podwójny) na innych wersji, która zostanie umieszczona na wykresie jako dwa różne kategorie.
+        - Aby obejść ten problem, należy rozważyć uruchomienie skryptu przed dwa różne kolekcje. Jeden z wstępnie 1802 klienci i inny 1802 i wyższych. Lub obiektu wyliczenia można przekonwertować na wartość ciągu w skryptach, są wyświetlane poprawnie w formacie JSON formatowania. 
 - Przekonwertować obiektu wyliczenia wartość ciągu w skryptach, są wyświetlane poprawnie w formacie JSON formatowania. <!--508377--> ![Przekonwertować na wartość ciągu obiektu wyliczenia](./media/run-scripts/enum-tostring-JSON.png)
 
 
