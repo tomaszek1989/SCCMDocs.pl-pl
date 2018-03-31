@@ -5,17 +5,17 @@ description: Konfigurowanie ustawień dla przeglądarki sieci web Microsoft Edge
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.date: 03/22/2018
+ms.date: 03/28/2018
 ms.topic: article
 ms.prod: configuration-manager
 ms.technology:
 - configmgr-other
 ms.assetid: 76477b4d-df41-4b25-8318-7d18d46ca2c6
-ms.openlocfilehash: 57393c00faa0cc26d785d91ad1c6ecb9407ba5da
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: cb162e030249b02018af52ad3266b6b8df5ce355
+ms.sourcegitcommit: aed99ba3c5e9482199cb3fc5c92f6f3a160cb181
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="configure-microsoft-edge-settings-in-system-center-configuration-manager"></a>Skonfiguruj ustawienia Microsoft Edge w programie System Center Configuration Manager
 
@@ -24,6 +24,7 @@ ms.lasthandoff: 03/23/2018
 <!-- 1357310 -->
 Począwszy od wersji 1802, dla klientów, którzy korzystają z [Microsoft Edge](https://technet.microsoft.com/microsoft-edge/bb265256) sieci web w przeglądarce na klientach systemu Windows 10, należy utworzyć zasady ustawień zgodności programu Configuration Manager, aby skonfigurować kilka ustawień Microsoft Edge. 
 
+Ta zasada ma zastosowanie tylko do klientów w systemie Windows 10 w wersji 1703 lub nowszej. <!--511552-->
 
 
 ## <a name="policy-settings"></a>Ustawienia zasad

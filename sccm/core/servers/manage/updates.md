@@ -1,9 +1,9 @@
 ---
-title: Aktualizacje
+title: Aktualizacje i obsługa
 titleSuffix: Configuration Manager
-description: Więcej informacji na temat metody obsługi w konsoli o nazwie **aktualizacje i obsługa** ułatwia do lokalizowania i instalowanie zalecanych aktualizacji.
+description: Więcej informacji na temat metody obsługi w konsoli o nazwie aktualizacje i obsługa, który można łatwo zlokalizować i instalowanie zalecanych aktualizacji.
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 03/28/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,16 +12,16 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3a832943-580a-4a40-b454-961d0854ac2b
-caps.latest.revision: ''
-caps.handback.revision: ''
+caps.latest.revision: 51
+caps.handback.revision: 0
 author: mestew
 ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 8be32aa07819239820711079e4ff3637e96367db
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+manager: dougeby
+ms.openlocfilehash: 7660736dbacebb7167cb6bd19d7590d7f774e17c
+ms.sourcegitcommit: aed99ba3c5e9482199cb3fc5c92f6f3a160cb181
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="updates-for-system-center-configuration-manager"></a>Aktualizacje programu System Center Configuration Manager
 
@@ -90,6 +90,10 @@ Poniżej przedstawiono wersje programu Configuration Manager dostępne jako lini
 *(Uwaga 1)*  Nośnika linii bazowej 1802 i 1702 są dostępne jako część programu Microsoft System Center 2016 lub System Center Configuration Manager (Current Branch i długoterminowe obsługi gałęzi) udostępnia w [Centrum usługi licencji woluminu](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx) MICROSOFT (VLSC). Na przykład w centrum VLSC można wyszukiwać *System Center Config Mgr (bieżącej gałęzi i LTSB)*, i jednocześnie 1802 i 1702 nośnika linii bazowej wersji są zwracane i dostępny do pobrania.
 
 Aby sprawdzić wersję lokacji programu Configuration Manager, w lewym górnym rogu konsoli, gdzie są wyświetlane nowe wersje lokacji i konsoli, wybierz pozycję **Program System Center Configuration Manager — informacje** .  
+
+ > [!Note]  
+ > Począwszy od wersji 1802 wersja konsoli jest teraz nieco inne niż wersja lokacji. Wersja pomocnicza konsoli odpowiada teraz wydanej wersji programu Configuration Manager. Na przykład w 1802 wersji programu Configuration Manager wersja początkowa lokacji jest 5.0.8634.1000, i wersji konsoli początkowej wynosi 5. **1802**.1082.1700. (1082) numerów kompilacji i poprawki (1700) mogą ulec zmianie przy przyszłych poprawek do wydania 1802.
+
 
 ##  <a name="bkmk_inconsole"></a> Aktualizacje w konsoli i obsługa  
  Realizując produkcji instalację gotowy programu System Center Configuration Manager, nazywana także bieżącej gałęzi, większość aktualizacji, które będą instalowane są dostępne za pomocą aktualizacji i obsługi kanału. Ta metoda umożliwia wyszukiwanie, pobieranie oraz udostępnianie aktualizacji dotyczących bieżącej wersji i konfiguracji infrastruktury. Obejmuje ona tylko aktualizacje zalecane przez firmę Microsoft dla wszystkich klientów.   

@@ -3,7 +3,7 @@ title: Właściwości instalacji klienta
 titleSuffix: Configuration Manager
 description: Więcej informacji o właściwościach wiersza polecenia ccmsetup w przypadku instalowania klienta programu Configuration Manager.
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 03/28/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,15 +12,15 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c890fd27-7a8c-4f51-bbe2-f9908af1f42b
-caps.latest.revision: ''
+caps.latest.revision: 15
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 057b078767a08574a806cb6af1cdb3812148a457
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 40e844fbb15a101574d9628648dde0db59c855c4
+ms.sourcegitcommit: aed99ba3c5e9482199cb3fc5c92f6f3a160cb181
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="about-client-installation-properties-in-system-center-configuration-manager"></a>Informacje o właściwościach instalacji klientów w programie System Center Configuration Manager
 
@@ -250,6 +250,20 @@ Przykład: `CCMSetup.exe /ExcludeFeatures:ClientUI` na kliencie nie instaluje si
 
 
 
+## <a name="ccmsetupMsiProps"></a> Właściwości Ccmsetup.msi  
+ Następujące właściwości można zmodyfikować zachowanie instalacji określone ccmsetup.msi.
+
+### <a name="ccmsetupcmd"></a>CCMSETUPCMD 
+
+Określa właściwości wiersza polecenia, które są przekazywane do ccmsetup.exe, po jego zainstalowaniu, ccmsetup.msi. Mają inne właściwości wewnątrz cudzysłowów. Tej właściwości należy użyć, gdy uruchamianie klienta programu Configuration Manager przy użyciu metody instalacji Intune zarządzanie urządzeniami Przenośnymi. 
+
+Przykład: `ccmsetup.msi CCMSETUPCMD="/mp:https://mp.contoso.com CCMHOSTNAME=mp.contoso.com"`
+
+ > [!Tip]
+ > Microsoft Intune ogranicza wiersza polecenia do 1024 znaków. 
+
+
+
 ##  <a name="clientMsiProps"></a> Właściwości pliku Client.msi  
  Następujące właściwości mogą modyfikować zachowanie pliku client.msi związane z instalacją. W przypadku stosowania metody instalacji wypychanej klienta (instalacji w trybie push) właściwości można też określić na karcie **Klient** w oknie dialogowym **Właściwości instalacji wypychanej klienta** .  
 
@@ -282,16 +296,16 @@ Określa identyfikator dzierżawy usługi Azure AD. Tej dzierżawy jest połącz
 
 Przykład: `ccmsetup.exe AADTENANTID=607b7853-6f6f-4d5d-b3d4-811c33fdd49a`
 
+<!-- 
+### AADTENANTNAME
 
-### <a name="aadtenantname"></a>AADTENANTNAME
+Specifies the Azure AD tenant name. This tenant is linked to Configuration Manager when you [configure Azure services](/sccm/core/servers/deploy/configure/azure-services-wizard) for Cloud Management. To obtain the value for this property, use the following steps:
+- On a Windows 10 device that is joined to the same Azure AD tenant, open a command prompt.
+- Run the following command: `dsregcmd.exe /status`
+- In the Device State section, find the **TenantName** value. For example, `TenantName : Contoso`
 
-Określa nazwę dzierżawy usługi Azure AD. Tej dzierżawy jest połączony do programu Configuration Manager po możesz [Konfigurowanie usług Azure](/sccm/core/servers/deploy/configure/azure-services-wizard) do zarządzania chmurą. Aby uzyskać wartość dla tej właściwości, wykonaj następujące czynności:
-- Na urządzeniu z systemem Windows 10, który jest dołączony do tej samej dzierżawy usługi Azure AD Otwórz wiersz polecenia.
-- Uruchom następujące polecenie: `dsregcmd.exe /status`
-- W sekcji stanu urządzenia, Znajdź **TenantName** wartości. Na przykład `TenantName : Contoso`
-
-Przykład: `ccmsetup.exe AADTENANTNAME=Contoso`
-
+Example: `ccmsetup.exe AADTENANTNAME=Contoso`
+-->
 
 ### <a name="ccmadmins"></a>CCMADMINS  
 
@@ -637,7 +651,7 @@ Przykład: `CCMSetup.exe SMSMP=https://smsmp01.contoso.com`
 
  Przykład: `CCMSetup.exe SMSSITECODE=XZY`  
 
-##  <a name="BKMK_attributevalues"></a> Obsługiwane wartości atrybutów dotyczące kryteriów wyboru certyfikatów PKI  
+##  <a name="BKMK_attributevalues"></a> Wartości atrybutów obsługiwanych kryteriów wyboru certyfikatów PKI  
  Program Configuration Manager obsługuje następujące wartości atrybutów dotyczące kryteriów wyboru certyfikatów PKI:  
 
 |Atrybut identyfikatora OID|Atrybut nazwy wyróżniającej|Definicja atrybutu|  

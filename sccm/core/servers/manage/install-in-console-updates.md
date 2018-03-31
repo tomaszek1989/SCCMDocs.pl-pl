@@ -3,7 +3,7 @@ title: Aktualizacje w konsoli
 titleSuffix: Configuration Manager
 description: Zainstaluj aktualizacje do programu Configuration Manager z firmy Microsoft w chmurze
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 03/28/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,15 +12,15 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c14a3607-253b-41fb-8381-ae2d534a9022
-caps.latest.revision: ''
+caps.latest.revision: 36
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 5d364e35c8777c782499da978f0d1a31694278cc
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 054bbd8e7b1dd3f5d565afe60eb7e3379cc7a9ee
+ms.sourcegitcommit: aed99ba3c5e9482199cb3fc5c92f6f3a160cb181
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="install-in-console-updates-for-system-center-configuration-manager"></a>Instalacja aktualizacji w konsoli programu System Center Configuration Manager
 
@@ -99,7 +99,7 @@ Przejrzyj odpowiednią listę kontrolną aktualizacji czynności należy wykona�
 
 - [Lista kontrolna instalowania aktualizacji 1710](../../../core/servers/manage/checklist-for-installing-update-1710.md)  
 
-- [Lista kontrolna dotycząca instalowania aktualizacji 1802](../../../core/servers/manage/checklist-for-installing-update-1802.md)
+- [Lista kontrolna instalowania aktualizacji 1802](../../../core/servers/manage/checklist-for-installing-update-1802.md)
 
 
 ###  <a name="step-2-run-the-prerequisite-checker-before-installing-an-update"></a>Krok 2. Uruchom narzędzie sprawdzania wymagań wstępnych przed instalacją aktualizacji  
@@ -217,6 +217,10 @@ Po centralnej lokacji administracyjnej lub lokacji głównej aktualizacje należ
 Zaleca się natychmiastową instalację aktualizacji.  
 
 Po zakończeniu aktualizacji konsoli możesz sprawdzić, czy wersje konsoli i lokacji są poprawne. Przejdź do **System Center Configuration Manager** w lewym górnym rogu konsoli.  
+
+ > [!Note]  
+ > Począwszy od wersji 1802 wersja konsoli jest teraz nieco inne niż wersja lokacji. Wersja pomocnicza konsoli odpowiada teraz wydanej wersji programu Configuration Manager. Na przykład w 1802 wersji programu Configuration Manager wersja początkowa lokacji jest 5.0.8634.1000, i wersji konsoli początkowej wynosi 5. **1802**.1082.1700. (1082) numerów kompilacji i poprawki (1700) mogą ulec zmianie przy przyszłych poprawek do wydania 1802.
+
 
 
 ###  <a name="bkmk_toptier"></a> Aby rozpocząć instalację aktualizacji w lokacji najwyższego poziomu  

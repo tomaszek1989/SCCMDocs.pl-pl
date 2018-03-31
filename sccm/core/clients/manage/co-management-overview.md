@@ -6,17 +6,17 @@ keywords: ''
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.date: 03/22/2018
+ms.date: 03/28/2018
 ms.topic: article
 ms.prod: configuration-manager
 ms.service: ''
 ms.technology: ''
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: e4b8bd58d30cd87ffc461289edbfc5da9a684cda
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: cda2ef22bbfb86d0c25c44d5b97b0e1551010374
+ms.sourcegitcommit: aed99ba3c5e9482199cb3fc5c92f6f3a160cb181
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="co-management-for-windows-10-devices"></a>Jednoczesne zarządzania dla urządzeń z systemem Windows 10    
 <!-- 1350871 -->
@@ -41,7 +41,7 @@ Poniżej przedstawiono ogólne wymagania wstępne, aby włączyć zarządzanie w
 
 
    > [!Note]  
-   > Jeśli masz środowiska hybrydowego zarządzania urządzeniami Przenośnymi (usługa Intune zintegrowana z programem Configuration Manager), nie można włączyć zarządzania wspólnej. Jeśli interesuje Cię migracji do autonomicznej usługi Intune, zobacz [rozpocząć migrację z hybrydowego zarządzania urządzeniami Przenośnymi do autonomicznej usługi Intune](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa).
+   > Jeśli masz środowiska hybrydowego zarządzania urządzeniami Przenośnymi (usługa Intune zintegrowana z programem Configuration Manager), nie można włączyć zarządzania wspólnej. Jednak można rozpocząć migrację użytkowników do autonomicznej usługi Intune, a następnie włącz swoje skojarzone urządzenia systemu Windows 10 do zarządzania wspólnej. Aby uzyskać więcej informacji na temat migracji do autonomicznej usługi Intune, zobacz [rozpocząć migrację z hybrydowego zarządzania urządzeniami Przenośnymi do autonomicznej usługi Intune](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa).
 
 ### <a name="additional-prerequisites-for-devices-with-the-configuration-manager-client"></a>Dodatkowe wymagania wstępne dotyczące urządzeń z klientem programu Configuration Manager
 - Windows 10, wersja 1709 (znanej także jako aktualizacja twórców spadek) lub nowszy

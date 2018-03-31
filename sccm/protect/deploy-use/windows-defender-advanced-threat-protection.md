@@ -1,39 +1,40 @@
 ---
-title: "Usługa Windows Defender Advanced Threat Protection"
+title: Usługa Windows Defender Advanced Threat Protection
 titleSuffix: Configuration Manager
-description: "Informacje o sposobie monitorowania Windows Defender Advanced Threat Protection, nową usługę, która ułatwia przedsiębiorstwom odpowiadanie na zaawansowanych ataków i zarządzania nimi."
+description: Informacje o sposobie monitorowania Windows Defender Advanced Threat Protection, nową usługę, która ułatwia przedsiębiorstwom odpowiadanie na zaawansowanych ataków i zarządzania nimi.
 ms.custom: na
 ms.date: 03/07/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a5fc033e-828e-4e45-9097-bbbd0697ebdf
-caps.latest.revision: "5"
+caps.latest.revision: 5
 author: NathBarn
 ms.author: nathbarn
 manager: angrobe
-ms.openlocfilehash: 561a03c7046accaa8e6d36407c75cbd4248188ce
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 84786d741eda2be24a7deb39478e68c68adc38fe
+ms.sourcegitcommit: aed99ba3c5e9482199cb3fc5c92f6f3a160cb181
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="windows-defender-advanced-threat-protection"></a>Usługa Windows Defender Advanced Threat Protection
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Począwszy od wersji 1606 programu Configuration Manager (wersji current branch), program Endpoint Protection może ułatwić zarządzanie i monitorowanie usługi Windows Defender Advanced Threat Protection (ATP. Windows Defender ATP to nowa usługa, która pomaga firmom wykrywania, badanie i odpowiadać na zaawansowanych ataków w swoich sieciach.  Dowiedz się więcej o [Windows Defender ATP](http://aka.ms/technet-wdatp). Zasady programu Configuration Manager może pomóc dołączyć i monitor zarządzanego systemu Windows 10 w wersji 1607 (kompilacja 14328) lub nowszym.
+Począwszy od wersji 1606 programu Configuration Manager (wersji current branch), program Endpoint Protection może ułatwić zarządzanie i monitorowanie [Windows Defender Advanced Threat Protection (ATP)](http://aka.ms/technet-wdatp). Windows Defender ATP ułatwia przedsiębiorstwom wykrywania, badanie i odpowiadać na zaawansowanych ataków w swoich sieciach.  Zasady programu Configuration Manager lub Microsoft Intune może pomóc dołączyć i monitor zarządzanego systemu Windows 10 w wersji 1607 (kompilacja 14328) lub nowszym.
 
-Program Windows Defender ATP jest usługą [Centrum zabezpieczeń systemu Windows](https://securitycenter.windows.com). Dodawanie i wdrażanie pliku konfiguracji klienta dołączania, programu Configuration Manager można monitorować stan wdrożenia i Windows Defender ATP agent kondycji. Program Windows Defender ATP jest obsługiwana tylko na komputerach z uruchomionym klientem programu Configuration Manager. Lokalne zarządzanie urządzeniami przenośnymi i komputery zarządzane przez MDM hybrydowe usługi Intune nie są obsługiwane.
+Program Windows Defender ATP jest usługą [Centrum zabezpieczeń systemu Windows Defender](https://securitycenter.windows.com). Dodawanie i wdrażanie pliku konfiguracji klienta dołączania, programu Configuration Manager można monitorować stan wdrożenia i Windows Defender ATP agent kondycji. Windows Defender ATP jest obsługiwane na komputerach z uruchomionym klientem programu Configuration Manager lub są zarządzane przez program Microsoft Intune, ale nie są obsługiwane komputery zarządzane przez MDM hybrydowe usługi Intune.
 
  **Wymagania wstępne**  
 
 -   Subskrypcja usługi online Windows Defender Advanced Threat Protection  
 -   Komputery klientów z systemem Windows 10, wersji 1607 i nowszych  
--   Uruchomiona wersja programu Configuration Manager 1610 lub nowszych agent klienta komputerów klienckich
+-   Komputery klientów uruchomiona wersja programu Configuration Manager 1610 lub nowszych agent klienta lub są zarządzane przez program Microsoft Intune
 
 ## <a name="how-to-create-an-onboarding-configuration-file"></a>Jak utworzyć plik konfiguracji dołączania  
 
