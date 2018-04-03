@@ -3,7 +3,7 @@ title: Kroki sekwencji zadań
 titleSuffix: Configuration Manager
 description: Dowiedz się więcej na temat kroków, które można dodać do sekwencji zadań programu Configuration Manager.
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 03/30/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,16 +12,16 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
-caps.latest.revision: ''
-caps.handback.revision: ''
+caps.latest.revision: 26
+caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ad68209784b78da5c6e75745094ba8e6bc002c44
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 53929400b983a2191e60a7d42ae84062afd44e3a
+ms.sourcegitcommit: d8a4a53630351b3d677bbdc5d203e7d330472cba
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Kroki sekwencji zadań w programie System Center Configuration Manager
 
@@ -711,6 +711,10 @@ Poniższe warunki mają wpływ na aplikacje zainstalowane przez sekwencję zada�
 -   Jeśli wartość zmiennej zawiera informacje inne niż nazwa aplikacji, Sekwencja zadań nie instaluje aplikację, a sekwencja zadań będzie kontynuować działanie.  
 
 -   Jeśli sekwencja zadań nie zostanie znaleziona zmienna o określonej nazwie podstawowej i sufiksie "01", sekwencja zadań nie instaluj żadnych aplikacji. 
+    
+> [!Important]  
+> Te wartości jest rozróżniana wielkość liter. Na przykład "Zainstaluj" różni się od "Zainstaluj". Jeśli musisz zmienić wartość edytora sekwencji zadań nie wykrywa zmian przypadku. Należy wykonać innej edycji w tym samym czasie, na przykład, zmodyfikuj opis kroku.<!--509714-->   
+
    
 **Jeśli aplikacja nie powiedzie się, kontynuuj instalowanie pozostałych aplikacji z listy**  
  To ustawienie określa, że krok ma kontynuować działanie w przypadku niepowodzenia instalacji aplikacji. Jeśli to ustawienie nie przerywać sekwencji zadań niezależnie od błędów instalacji. Jeśli to ustawienie nie zostanie określony, a instalacja zakończy się niepowodzeniem, krok natychmiast kończy się.  
@@ -789,6 +793,10 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **opro
 -   Jeśli identyfikator pakietu zawiera małe litery, instalacja oprogramowania kończy się niepowodzeniem.  
 
 -   Jeśli sekwencja zadań nie zostanie znaleziona zmienna o określonej nazwie podstawowej i sufiksie "001", sekwencja zadań nie można zainstalować wszystkie pakiety. Sekwencja zadań będzie kontynuować działanie.  
+    
+> [!Important]  
+> Te wartości jest rozróżniana wielkość liter. Na przykład "Zainstaluj" różni się od "Zainstaluj". Jeśli musisz zmienić wartość edytora sekwencji zadań nie wykrywa zmian przypadku. Należy wykonać innej edycji w tym samym czasie, na przykład, zmodyfikuj opis kroku.<!--509714-->   
+
    
 **Jeśli instalacja pakietu oprogramowania nie powiedzie się, kontynuuj instalowanie pozostałych pakietów na liście**  
  To ustawienie określa, że krok ma kontynuować działanie w przypadku niepowodzenia instalacji pakietu oprogramowania. Jeśli to ustawienie nie przerywać sekwencji zadań niezależnie od błędów instalacji. Jeśli to ustawienie nie zostanie określony, a instalacja zakończy się niepowodzeniem, krok natychmiast kończy się.  
