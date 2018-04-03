@@ -1,18 +1,19 @@
 ---
-title: "Narzędzie Obsługa hierarchii"
+title: Narzędzie Obsługa hierarchii
 titleSuffix: Configuration Manager
-description: "Zrozumieć, co oznacza narzędzia Obsługa hierarchii, i do czego można go użyć. Zawiera dokumentacja opcji wiersza polecenia."
+description: Zrozumieć, co oznacza narzędzia Obsługa hierarchii, i do czego można go użyć. Zawiera dokumentacja opcji wiersza polecenia.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cead6825-6113-4ba5-a381-ac3598dfee86
-caps.latest.revision: "7"
-caps.handback.revision: "0"
+caps.latest.revision: 7
+caps.handback.revision: 0
 author: mestew
 ms.author: mstewart
 manager: angrobe
@@ -47,14 +48,14 @@ Aby korzystać z narzędzia Obsługa hierarchii, należy uruchomić je lokalnie 
 
 W celu uruchomienia narzędzia Obsługa hierarchii, należy użyć następującej składni: preinst.exe /&lt;opcji\>. Poniżej zamieszczono opcje wiersza polecenia.  
 
- **/ DELJOB &lt;* Kod_lokacji*> ** — Użycie tej opcji w lokacji do usunięcia wszystkich zadań lub poleceń z bieżącej lokacji do określonej lokacji docelowej.  
+ **/DELJOB &lt;*Kod_lokacji*>** — Użycie tej opcji w lokacji do usunięcia wszystkich zadań lub poleceń z bieżącej lokacji do określonej lokacji docelowej.  
 
- **/ DELSITE &lt;* Kod_lokacji_podrzędnej_do_usunięcia*> ** — Użycie tej opcji w lokacji nadrzędnej umożliwia usunięcie danych lokacji podrzędnych z bazy danych lokacji w lokacji nadrzędnej. Tej opcji należy zwykle użyć, jeżeli komputer serwera lokacji jest likwidowany, przed odinstalowaniem z niego lokacji.  
+ **/DELSITE &lt;*Kod_lokacji_podrzędnej_do_usunięcia*>** — Użycie tej opcji w lokacji nadrzędnej umożliwia usunięcie danych lokacji podrzędnych z bazy danych lokacji w lokacji nadrzędnej. Tej opcji należy zwykle użyć, jeżeli komputer serwera lokacji jest likwidowany, przed odinstalowaniem z niego lokacji.  
 
 > [!NOTE]  
 >  Opcja /DELSITE nie powoduje odinstalowania lokacji na komputerze określonym przez parametr kod_lokacji_podrzędnej_do_usunięcia. Ta opcja umożliwia tylko usunięcie informacji o lokacji z bazy danych lokacji programu Configuration Manager.  
 
-**/ DUMP &lt;* Kod_lokacji*> ** — Użycie tej opcji na lokalnym serwerze lokacji umożliwia zapisanie obrazów sterowania lokacji w folderze głównym dysku, na którym zainstalowano lokację. Można zapisać określony obraz sterowania lokacji w folderze lub zapisać wszystkie pliki sterowania lokacji w hierarchii.  
+**/DUMP &lt;*Kod_lokacji*>** — Użycie tej opcji na lokalnym serwerze lokacji umożliwia zapisanie obrazów sterowania lokacji w folderze głównym dysku, na którym zainstalowano lokację. Można zapisać określony obraz sterowania lokacji w folderze lub zapisać wszystkie pliki sterowania lokacji w hierarchii.  
 
 -   / DUMP &lt; *Kod_lokacji*> zapisanie obrazu sterowania tylko dla określonej lokacji.  
 
