@@ -15,11 +15,11 @@ ms.assetid: 56dc4b07-5aa4-43e2-9be8-d26ae5ff5613
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ac96927b563673311e9ca55d1f2d4edaac30adbe
-ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
+ms.openlocfilehash: f3c200fe699f85c195e41fc2b395a3d710b1788a
+ms.sourcegitcommit: d3863a9b34f9925515cabe9a290a6c733e10108b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="capabilities-in-technical-preview-1803-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1803 programu System Center Configuration Manager
 
@@ -146,7 +146,7 @@ Wybieranie **Włącz aktualizacje oprogramowania innych firm** w ustawieniach kl
 W Twojej [opinie użytkowników głosu](https://configurationmanager.uservoice.com/forums/300492-ideas/suggestions/20234866-allow-us-to-copy-information-out-of-the-asset-det) można teraz włączyć funkcji kopiowania i wklejania w okienku szczegółów zasobów w stan wdrażania i dystrybucji widoki monitorowania.  <!--1357552-->
 
 ## <a name="scap-extensions"></a>Rozszerzenia SCAP
-W folderze Cd.latest SMSSETUP\TOOLS\ConfigMgrSCAPExtension\ConfigMgrExtensionsForSCAP.msi dostępna jest wersja wstępna rozszerzeń SCAP. Ta wersja wstępna rozszerzeń SCAP można zainstalować w żadnej wersji obecnie obsługiwane w bieżącej gałęzi programu Configuration Manager i LTSB 1606.
+W folderze Cd.latest SMSSETUP\TOOLS\ConfigMgrSCAPExtension\ConfigMgrExtensionsForSCAP.msi dostępna jest wersja wstępna rozszerzeń SCAP. Ta wersja wstępna rozszerzeń SCAP można zainstalować w żadnej wersji obecnie obsługiwane w bieżącej gałęzi programu Configuration Manager i LTSB 1606. Aby uzyskać więcej informacji, zobacz [rozszerzenia dotyczące automatyzacji protokołu SCAP (Security Content)](/sccm/compliance/plan-design/scap/about-scap).
 
 
 

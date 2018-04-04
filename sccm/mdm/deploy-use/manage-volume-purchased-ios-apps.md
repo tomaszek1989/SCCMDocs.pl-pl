@@ -1,26 +1,27 @@
 ---
-title: "Zarządzanie aplikacjami systemu iOS nabytymi w ramach zakupów zbiorczych"
+title: Zarządzanie aplikacjami systemu iOS nabytymi w ramach zakupów zbiorczych
 titleSuffix: Configuration Manager
-description: "Wdrażania, zarządzania i śledzenie licencji dla aplikacji, które zostały zakupione w ramach iOS app store."
+description: Wdrażania, zarządzania i śledzenie licencji dla aplikacji, które zostały zakupione w ramach Apple iOS app store.
 ms.custom: na
-ms.date: 05/12/2017
+ms.date: 03/30/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7c3b9316-247b-490b-a363-8f8553821579
-caps.latest.revision: "18"
-caps.handback.revision: "0"
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 1411675b11074b610d7370f93eafd7359cfb46ee
-ms.sourcegitcommit: 92c3f916e6bbd35b6208463ff406e0247664543a
+caps.latest.revision: 18
+caps.handback.revision: 0
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: c85695282a965ea8b8f7defdb0534869638224cd
+ms.sourcegitcommit: d8a4a53630351b3d677bbdc5d203e7d330472cba
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/02/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="manage-volume-purchased-ios-apps-with-system-center-configuration-manager"></a>Zarządzanie aplikacjami systemu iOS, które zostały zakupione w ramach programu zakupów zbiorczych, w programie Configuration Manager
 
@@ -28,50 +29,51 @@ ms.lasthandoff: 01/02/2018
 
 
 
- IOS app store umożliwia wielu licencji dla aplikacji, które mają być uruchamiane w firmie. Dzięki temu można zmniejszyć koszty administracyjne śledzenia wielu kopii aplikacji, które zakupiono.  
+ Apple iOS app store umożliwia wielu licencji dla aplikacji, które mają być uruchamiane w firmie. Ta możliwość pomaga zmniejszyć koszty administracyjne śledzenia wielu kopii aplikacji, które zakupiono.  
 
- System Center Configuration Manager ułatwia wdrażanie i zarządzanie aplikacjami systemu iOS, które zakupione w ramach programu przez zaimportowanie informacji o licencji ze sklepu z aplikacjami i śledzenie liczby licencji, które są używane.  
+ Program Configuration Manager pomaga wdrażanie i zarządzanie aplikacjami systemu iOS, które zakupione za pośrednictwem programu. Importowanie informacji o licencji ze sklepu z aplikacjami i śledzenie liczby licencji, których używasz.  
+
+
 
 ## <a name="manage-volume-purchased-apps-for-ios-devices"></a>Zarządzanie zbiorczo zakupionymi aplikacjami dla urządzeń z systemem iOS  
- Możesz kupić wiele licencji dla aplikacji systemu iOS za pośrednictwem firmy Apple Volume Purchase Program (VPP). Obejmuje to skonfigurowanie konta VPP firmy Apple z witryny sieci web firmy Apple i przekazanie tokenu VPP firmy Apple do programu Configuration Manager, która zapewnia następujące możliwości:  
+ Możesz kupić wiele licencji dla aplikacji systemu iOS za pośrednictwem firmy Apple Volume Purchase Program (VPP). Ten proces obejmuje najpierw skonfigurowanie konta VPP w witrynie sieci web firmy Apple. Następnie przekaż token VPP firmy Apple do programu Configuration Manager, która zapewnia następujące możliwości:  
 
--   Zsynchronizować dane zakupu zbiorczego z programem Configuration Manager. 
+-   Zsynchronizować dane zakupu zbiorczego z programem Configuration Manager  
  
-- Synchronizacja aplikacji z programu Apple Volume Purchase Program for Business i programu Apple Volume Purchase Program dla instytucji edukacyjnych.
+- Synchronizacja aplikacji z programu Apple Volume Purchase Program for Business i programu Apple Volume Purchase Program dla instytucji edukacyjnych  
 
-- Kojarzenie z programem Configuration Manager wiele tokenów program zakupów zbiorczych firmy Apple.
+- Skojarz wiele tokenów program zakupów zbiorczych firmy Apple z programu Configuration Manager  
 
--   Aplikacje, które zakupiono są wyświetlane w konsoli programu Configuration Manager.  
+-   Aplikacje, które zakupiono są wyświetlane w konsoli programu Configuration Manager  
 
--   Można wdrażać aplikacje, monitorowania tych aplikacji i śledzić liczbę licencji dla każdej aplikacji, która została użyta.  
+-   Wdrażanie i monitorowanie tych aplikacji  
 
--   Configuration Manager może pomóc w odzyskiwaniu licencji, gdy jest to wymagane przez odinstalowanie zbiorczo zakupionymi aplikacjami, które można wdrożyć.  
+-   Śledzenie liczby licencji używanych dla każdej aplikacji   
+
+-   Configuration Manager może pomóc w odzyskaniu licencji, gdy jest to wymagane przez odinstalowanie zbiorczo zakupionymi aplikacjami, które można wdrożyć  
+
+
 
 ## <a name="before-you-start"></a>Przed rozpoczęciem  
  Przed rozpoczęciem należy uzyskać token VPP od firmy Apple i przekazać go do programu Configuration Manager.  
 
 -   Jeśli poprzednio korzystano z tokenu VPP z innym produktem MDM w istniejącego konta VPP firmy Apple, należy wygenerować nowe hasło, aby korzystać z programu Configuration Manager.  
 -   Każdy token jest ważny przez jeden rok.  
--   Domyślnie program Configuration Manager przeprowadza synchronizację z usługą Apple VPP dwa razy dziennie aby upewnić się, że licencje są zsynchronizowane z programem Configuration Manager.  
-      Tylko zmiany dotyczące licencji są synchronizowane. Ale co siedem dni, będzie można wykonać pełną synchronizację.  
-      Po wybraniu **synchronizacji** Aby wykonać ręczną synchronizację, to będzie zawsze wykonywać pełną synchronizację.  
--   Jeśli potrzebujesz odzyskać lub przywrócenia bazy danych programu Configuration Manager, zaleca się, należy wykonać ręczną synchronizację później, aby upewnić się, że zsynchronizowano dane licencji są aktualne.  
--   Ponadto zostały one zaimportowane prawidłowy certyfikat usługi Apple Push Notification service (APNs) firmy Apple, aby umożliwić zarządzanie urządzeniami z systemem iOS, w tym wdrażania aplikacji. Aby uzyskać więcej informacji, zobacz [Konfigurowanie hybrydowego zarządzania urządzeniami z systemem iOS](enroll-hybrid-ios-mac.md).  
+-   Domyślnie program Configuration Manager przeprowadza synchronizację z usługą Apple VPP dwa razy dziennie aby upewnić się, że licencje są zsynchronizowane z programem Configuration Manager. Tylko zmiany dotyczące licencji są synchronizowane. Pełna synchronizacja jest wykonywane co siedem dni. Po wybraniu **synchronizacji** Aby wykonać ręczną synchronizację, ta akcja zawsze przeprowadza pełnej synchronizacji.  
+-   Jeśli potrzebujesz odzyskać lub przywrócenia bazy danych programu Configuration Manager, zaleca się wykonaj ręczną synchronizację później. Ten proces zapewnia, że zsynchronizowano dane licencji są aktualne.  
+-   Ponadto zostały one zaimportowane prawidłowy certyfikat usługi Apple Push Notification service (APNs) firmy Apple. Ten certyfikat umożliwia zarządzanie urządzeniami z systemem iOS, w tym wdrażania aplikacji. Aby uzyskać więcej informacji, zobacz [Konfigurowanie hybrydowego zarządzania urządzeniami z systemem iOS](enroll-hybrid-ios-mac.md).  
 -   Program Configuration Manager obsługuje dodanie maksymalnie 3000 tokenów VPP.
 
-Od programu System Center Configuration Manager 1702, można teraz wdrożyć licencjonowane aplikacje do urządzeń, jak i użytkowników. W zależności od aplikacji możliwość obsługi urządzenia licencjonowania odpowiednią licencję będzie wymagana, wdrażając go w następujący sposób:
+Licencjonowane aplikacje można wdrożyć zarówno urządzeniami i użytkownikami. W zależności od aplikacji możliwość obsługi urządzenia licencjonowania odpowiednią licencję jest określona, wdrażając go w następujący sposób:
 
-|||||
-|-|-|-|-|
-|Wersja programu Configuration Manager|Aplikacja obsługuje licencjonowania urządzeń?|Typ kolekcji wdrażania|Oświadczeniem licencji|
-|Wcześniejsza niż 1702|Tak|Użytkownik|Licencja użytkownika|
-|Wcześniejsza niż 1702|Nie|Użytkownik|Licencja użytkownika|
-|Wcześniejsza niż 1702|Tak|Urządzenie|Licencja użytkownika|
-|Wcześniejsza niż 1702|Nie|Urządzenie|Licencja użytkownika|
-|1702 i nowsze|Tak|Użytkownik|Licencja użytkownika|
-|1702 i nowsze|Nie|Użytkownik|Licencja użytkownika|
-|1702 i nowsze|Tak|Urządzenie|Licencja urządzenia|
-|1702 i nowsze|Nie|Urządzenie|Licencja użytkownika|
+|Aplikacja obsługuje licencjonowania urządzeń?|Typ kolekcji wdrażania|Oświadczeniem licencji|
+|---|---|---|
+|Tak|Użytkownik|Licencja użytkownika|
+|Nie|Użytkownik|Licencja użytkownika|
+|Tak|Urządzenie|Licencja urządzenia|
+|Nie|Urządzenie|Licencja użytkownika|
+
+
 
 ## <a name="step-1---to-get-and-upload-an-apple-vpp-token"></a>Krok 1. Uzyskiwanie i przekazywanie tokenu VPP firmy Apple  
 
@@ -79,15 +81,15 @@ Od programu System Center Configuration Manager 1702, można teraz wdrożyć lic
 
 3.  Na **Home** karcie **tokenów Program zakupu woluminu Apple** grupy, wybierz **dodać Apple woluminu Purchase Program tokenu**.  
 
-4.  Na **ogólne** strony **dodać Apple woluminu Purchase Program tokenu** kreatora skonfiguruj następujące opcje:   
+4.  Na **ogólne** strony **dodać Apple woluminu Purchase Program tokenu** kreatora skonfiguruj następujące ustawienia:   
 
-    -   **Nazwa** — wprowadź nazwę dla tego tokena, tak jak będzie wyświetlana w konsoli programu Configuration Manager.  
+    -   **Nazwa** — wprowadź nazwę dla tego tokenu do wyświetlenia w konsoli programu Configuration Manager.  
 
     -   **Token** — wybierz **Przeglądaj**, a następnie wybierz pozycję token VPP został pobrany z witryny sieci web firmy Apple.  
 
-         Wybierz **konto VPP firmy Apple zobacz** łącza, a jeśli nie jest jeszcze Załóż biznesu lub edukacji program zakupów zbiorczych. Po zarejestrowaniu Pobierz token Apple VPP dla swojego konta.  
+         Kliknij przycisk **konto VPP firmy Apple zobacz** łącza. Jeśli nie jest jeszcze konto dla biznesu lub edukacji program zakupów zbiorczych. Po zarejestrowaniu Pobierz token Apple VPP dla swojego konta.  
 
-    -   **Opis elementu** — Opcjonalnie wprowadź opis, który pomoże zidentyfikować ten token VPP, w konsoli programu Configuration Manager.  
+    -   **Opis elementu** — opcjonalnie podaj opis, który pomaga zidentyfikować ten token w konsoli programu Configuration Manager.  
 
     -   **Przypisane kategorie, aby poprawić wyszukiwanie i filtrowanie** — Opcjonalnie można przypisać kategorie do tokenu VPP w celu ułatwienia wyszukiwania w konsoli programu Configuration Manager.  
     -   **Identyfikator Apple ID** — wprowadź identyfikator poczty e-mail firmy apple, skojarzony z tokenu VPP.
@@ -95,25 +97,29 @@ Od programu System Center Configuration Manager 1702, można teraz wdrożyć lic
 
 5.  Wybierz **dalej**, a następnie Zakończ pracę kreatora.  
 
-Z **tokenów Program zakupu woluminu Apple** węzła, możesz teraz przeglądać informacje związane z VPP firmy Apple tokenu, w tym datę jego ostatniej aktualizacji, datę wygaśnięcia oraz datę został ostatnio zsynchronizowany.
+Z **tokenów Program zakupu woluminu Apple** węzła, możesz teraz przeglądać informacje o token VPP firmy Apple. Ten widok zawiera datę jego ostatniej aktualizacji, po jego wygaśnięciu i został ostatnio zsynchronizowany.
 
-Pełni mogą synchronizować dane przechowywane przez firmę Apple z programem Configuration Manager w dowolnym momencie, wybierając **synchronizacji** na **Home** karcie **synchronizacji** grupy.  
+Pełni mogą synchronizować dane przechowywane przez firmę Apple z programem Configuration Manager w dowolnym momencie, wybierając **synchronizacji** na Wstążce.  
+
+
 
 ## <a name="step-2---deploy-a-volume-purchased-app"></a>Krok 2. Wdrażanie aplikacji nabytej w ramach zakupów zbiorczych  
 
 1.  W konsoli programu Configuration Manager wybierz **Biblioteka oprogramowania** > **Zarządzanie aplikacjami** > **informacji o licencji dla aplikacji ze sklepu**.  
 
 3.  Wybierz aplikację, którą chcesz wdrożyć, a następnie w **Home** karcie **Utwórz** grupy, wybierz **tworzenie aplikacji**.
-Aplikacji programu Configuration Manager, który jest tworzony ma Microsoft Store dla aplikacji biznesowych. Można następnie wdrożyć i monitorować tej aplikacji, jak w przypadku innych aplikacji programu Configuration Manager.
+Aplikacji programu Configuration Manager, który jest tworzony ma Microsoft Store dla aplikacji biznesowych. Można następnie wdrożyć i monitorować tej aplikacji, jak w przypadku innych aplikacji programu Configuration Manager.  
 
     > [!IMPORTANT]  
     > Musisz wybrać celem wdrożenia **wymagane**. Instalacje dostępne nie są obecnie obsługiwane.
 
- Podczas wdrażania aplikacji licencja jest zużywana przez każdego użytkownika lub urządzenie zostanie zainstalowany, każde urządzenie, który instaluje aplikację.  W przypadku skierowania kolekcji urządzeń w aplikacji, która obsługuje urządzenia licencjonowania, licencji urządzenie jest określona.  W przypadku skierowania kolekcji urządzeń w aplikacji, która nie obsługuje licencjonowania urządzeń, jest określona licencji użytkownika. 
+ Podczas wdrażania aplikacji licencja jest zużywana przez każdego użytkownika lub urządzenie zostanie zainstalowany, każde urządzenie, który instaluje aplikację. W przypadku skierowania kolekcji urządzeń w aplikacji, która obsługuje urządzenia licencjonowania, licencji urządzenie jest określona. W przypadku skierowania kolekcję urządzeń z aplikacją, która nie obsługuje licencjonowania urządzeń, jest określona licencji użytkownika. 
 
- Po utworzeniu aplikacji z **informacji o licencji dla aplikacji ze sklepu** węzła, aplikacja jest skojarzony z licencji z tokenu dla wybranych aplikacji.  Na przykład może być widoczne dwie wersje tej samej aplikacji w węźle. Jest to spowodowane każdej wersji aplikacji jest skojarzona z inną token VPP firmy Apple.  Następnie można tworzyć aplikacje z każdym tokenu i wdrażać je oddzielnie.
+ Po utworzeniu aplikacji z **informacji o licencji dla aplikacji ze sklepu** węzła, aplikacja jest skojarzony z licencji z tokenu dla wybranych aplikacji. Na przykład może być widoczne dwie wersje tej samej aplikacji w węźle. To zachowanie jest, ponieważ każda wersja aplikacji jest skojarzona z inną token VPP firmy Apple. Następnie można tworzyć aplikacje z każdym tokenu i wdrażać je oddzielnie.
 
- Aby odzyskać licencję, należy utworzyć nowe wdrożenie aplikacji z akcją wdrożenia **Odinstaluj**. Nie można zmienić akcję wdrażania w oryginalnego wdrożenia. Licencja zostanie odzyskana po odinstalowaniu aplikacji.  
+ Aby odzyskać licencję, należy utworzyć nowe wdrożenie aplikacji z akcją wdrożenia **Odinstaluj**. Nie można zmienić akcję wdrażania w oryginalnego wdrożenia. Licencja jest odzyskana po odinstalowaniu aplikacji.  
+
+
 
 ## <a name="step-3---monitor-ios-vpp-apps"></a>Krok 3. Monitorowanie aplikacji programu VPP dla systemu iOS  
  **Informacji o licencji dla aplikacji ze sklepu** węzła **Biblioteka oprogramowania** obszar roboczy zawiera informacje o aplikacji dla systemu iOS zakupionymi zbiorczo. Informacje zawiera całkowitą liczbę licencji, które posiadają dla każdej aplikacji i liczba, która została wdrożona. Ponadto ten widok zawiera których token VPP jest skojarzona aplikacja i typ tokenu
@@ -123,3 +129,17 @@ Aplikacji programu Configuration Manager, który jest tworzony ma Microsoft Stor
  Ten raport zawiera nazwy poszczególnych aplikacji wraz z całkowitą liczbą licencji, że zakupiono, liczbę licencji, które są dostępne i inne.  
 
  Aby uzyskać pomoc dotyczącą uruchamiania raportów programu Configuration Manager, zobacz [raportowania w programie System Center Configuration Manager](../../core/servers/manage/reporting.md).  
+
+
+
+## <a name="delete-an-apple-vpp-token"></a>Usuń token VPP firmy Apple  
+<!--505268-->
+
+Aby usunąć token z programu Configuration Manager, należy wykonać poniższe czynności:  
+
+1. W konsoli programu Configuration Manager, przejdź do **administracji** obszaru roboczego. Rozwiń węzeł **usługi w chmurze** i wybierz **tokenów Program zakupu woluminu Apple**.  
+
+2. Wybierz token, który chcesz usunąć.  
+
+3. Kliknij przycisk **usunąć** opcji na Wstążce.  
+

@@ -12,11 +12,11 @@ ms.prod: configuration-manager
 ms.service: ''
 ms.technology: ''
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: cda2ef22bbfb86d0c25c44d5b97b0e1551010374
-ms.sourcegitcommit: aed99ba3c5e9482199cb3fc5c92f6f3a160cb181
+ms.openlocfilehash: a5ceea5502e4eb2785946e1dd3bc9ed0842daf25
+ms.sourcegitcommit: d8a4a53630351b3d677bbdc5d203e7d330472cba
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="co-management-for-windows-10-devices"></a>Jednoczesne zarządzania dla urządzeń z systemem Windows 10    
 <!-- 1350871 -->
@@ -65,7 +65,7 @@ Zasady dostępu do zasobów skonfigurować sieci VPN, Wi-Fi, poczty e-mail i ust
 
 ### <a name="endpoint-protection"></a>Program Endpoint Protection 
 <!-- 1357365 -->
-Począwszy od programu Configuration Manager 1802 obciążenia programu Endpoint Protection może zostać przeniesieni do usługi Intune. Aby uzyskać więcej informacji, zobacz [obciążenia mógł zostać przeniesieni do usługi Intune](/sccm/core/clients/manage/co-management-switch-workloads.md#Workloads-able-to-be-transitioned-to-Intune) i [programu Endpoint Protection w programie Configuration Manager](/sccm/protect/deploy-use/endpoint-protection).
+Począwszy od programu Configuration Manager 1802 obciążenia programu Endpoint Protection może zostać przeniesieni do usługi Intune. Aby uzyskać więcej informacji, zobacz [obciążenia mógł zostać przeniesieni do usługi Intune](/sccm/core/clients/manage/co-management-switch-workloads#Workloads-able-to-be-transitioned-to-Intune) i [programu Endpoint Protection w programie Configuration Manager](/sccm/protect/deploy-use/endpoint-protection).
 
 ## <a name="architectural-overview-for-co-management"></a>Omówienie architektury zarządzania wspólnej
 Następujący diagram zawiera omówienie architektury wspólnego zarządzania i jego miejsce w istniejącej infrastruktury konfiguracji i usługi Intune.

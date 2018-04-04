@@ -1,7 +1,7 @@
 ---
 title: Nowa wersja 1710 | Dokumentacja firmy Microsoft
 titleSuffix: Configuration Manager
-description: "Uzyskiwanie szczegółowych informacji dotyczących zmian i nowych możliwości wprowadzonych w wersji 1710 programu System Center Configuration Manager."
+description: Uzyskiwanie szczegółowych informacji dotyczących zmian i nowych możliwości wprowadzonych w wersji 1710 programu System Center Configuration Manager.
 ms.custom: na
 ms.date: 1/08/2018
 ms.reviewer: na
@@ -14,17 +14,23 @@ ms.assetid: bc6c3e5f-b9e2-400e-9d9d-446ff93c520c
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: c75ed431c6a786759e2ddcd6dc6b55d5b55412c7
-ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
+ms.openlocfilehash: e9d1ac44bf0455ff0b1caec94d07cfa734dfbeb0
+ms.sourcegitcommit: d8a4a53630351b3d677bbdc5d203e7d330472cba
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="what39s-new-in-version-1710-of-system-center-configuration-manager"></a>Jaki &#39; s nowego w wersji 1710 programu System Center Configuration Manager
+# <a name="what39s-new-in-version-1710-of-system-center-configuration-manager"></a>Co&#39;nowego w wersji 1710 programu System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 Zaktualizuj 1710 dla bieżącej gałęzi programu System Center Configuration Manager jest dostępna jako aktualizacja w konsoli dla zainstalowanych wcześniej lokacji, w których jest uruchomiona wersja 1610, 1702 lub 1706.
+
+Oprócz nowych funkcji ta wersja zawiera również dodatkowe zmiany, takie jak poprawki błędów. Aby uzyskać więcej informacji, zobacz [podsumowanie zmian w programie System Center Configuration Manager bieżącej gałęzi, wersja 1710](https://support.microsoft.com/help/4056470/summary-of-changes-in-system-center-configuration-manager-current-bran).
+
+Następujące dodatkowe aktualizacje do tej wersji dostępne są również:
+- [Pakiet zbiorczy aktualizacji dla programu System Center Configuration Manager bieżącej gałęzi, wersja 1710](https://support.microsoft.com/help/4057517/update-rollup-for-system-center-configuration-manager-current-branch-v)
+- [Pakiet zbiorczy aktualizacji 2 dla programu System Center Configuration Manager bieżącej gałęzi, wersja 1710](https://support.microsoft.com/en-us/help/4086143/update-rollup-2-for-system-center-configuration-manager-current-branch)
 
 > [!TIP]  
 > Aby zainstalować nową lokację, należy użyć wersji bazowej programu Configuration Manager.  
@@ -45,13 +51,13 @@ Version 1710 drops support for the following products:
 
 ## <a name="site-infrastructure"></a>Infrastruktura lokacji
 
-### <a name="updates-for-peer-cache-----sms500850---"></a>Aktualizacje dla równorzędnej pamięci podręcznej<!-- sms500850 -->
+### <a name="updates-for-peer-cache-----sms500850---"></a>Aktualizacje dla równorzędnej pamięci podręcznej  <!-- sms500850 -->
 Począwszy od tej wersji, równorzędna pamięć podręczna nie jest już funkcji wersji wstępnej.  Żadne inne zmiany równorzędnej pamięci podręcznej zostały wprowadzone w tej wersji. Aby uzyskać więcej informacji, zobacz [buforowania równorzędnego klientów programu Configuration Manager](/sccm/core/plan-design/hierarchy/client-peer-cache).
 
-### <a name="cloud-distribution-point-support-for-azure-government-cloud------sms491428---"></a>Obsługa punktu dystrybucji chmury chmury Azure dla instytucji rządowych<!-- sms491428 -->
+### <a name="cloud-distribution-point-support-for-azure-government-cloud------sms491428---"></a>Obsługa punktu dystrybucji chmury chmury Azure dla instytucji rządowych   <!-- sms491428 -->
 Można teraz używać [punkty dystrybucji w chmurze](/sccm/core/plan-design/hierarchy/use-a-cloud-based-distribution-point) w chmurze Azure dla instytucji rządowych.   
 
-### <a name="inventory-default-unit-revision----sms503697---"></a>Poprawki jednostki domyślne spisu<!-- sms503697 -->
+### <a name="inventory-default-unit-revision----sms503697---"></a>Poprawki jednostki domyślne spisu <!-- sms503697 -->
 Jako urządzenia zawierają teraz dysków twardych o rozmiarze gigabajt (GB), terabajtów (TB) i większej skali, tej wersji zmiany domyślnej jednostki (SMS_Units) używanych w widokach wiele z megabajtów (MB) w GB. Na przykład wartość v_gs_LogicalDisk.FreeSpace raporty teraz jednostki GB.
 
 
@@ -64,7 +70,7 @@ Jako urządzenia zawierają teraz dysków twardych o rozmiarze gigabajt (GB), te
 <!-- 1350871 -->
 W poprzednich aktualizacje systemu Windows 10, urządzenia z systemem Windows 10 można już dołączyć do lokalnej usługi Active Directory (AD) i oparta na chmurze usługi Azure AD, w tym samym czasie (rozwiązanie hybrydowe usługi Azure AD). Począwszy od programu Configuration Manager w wersji 1710 wspólnej zarządzania korzysta z tego ulepszenia i umożliwia jednocześnie Zarządzanie systemem Windows 10 wersji 1709 (znanej także jako aktualizacja twórców spadek) urządzenia, używając programu Configuration Manager i usługi Intune. To rozwiązanie, które zapewnia mostek z tradycyjnego zarządzania nowoczesnymi i umożliwia ścieżki do dokonania zmiany przy użyciu podejście etapowe. Aby uzyskać więcej informacji, zobacz [urządzenia zarządzania wspólnej dla systemu Windows 10](/sccm/core/clients/manage/co-management-overview).
 
-### <a name="restart-computers-from-the-configuration-manager-console-----1356283---"></a>Uruchom ponownie komputer za pomocą konsoli programu Configuration Manager<!-- 1356283 -->
+### <a name="restart-computers-from-the-configuration-manager-console-----1356283---"></a>Uruchom ponownie komputer za pomocą konsoli programu Configuration Manager  <!-- 1356283 -->
 Począwszy od tej wersji, można użyć konsoli programu Configuration Manager do identyfikowania urządzenia klienckie, które wymagają ponownego uruchomienia a następnie użyć akcji powiadamiania klienta uruchomić je ponownie.
 
 Zobacz [jak zarządzać klientami w programie System Center Configuration Manager](/sccm/core/clients/manage/manage-clients#restart-clients)
@@ -74,7 +80,7 @@ Zobacz [jak zarządzać klientami w programie System Center Configuration Manage
 
 
 ## <a name="application-management"></a>Zarządzanie aplikacjami
-### <a name="improvements-for-run-scripts------1236459---"></a>Ulepszenia w przypadku wykonywania skryptów<!-- 1236459 -->
+### <a name="improvements-for-run-scripts------1236459---"></a>Ulepszenia w przypadku wykonywania skryptów   <!-- 1236459 -->
 Ta wersja oferuje kilka ulepszeń **uruchamianie skryptów** funkcji, która umożliwia wdrażanie skrypty programu PowerShell do uruchamiania na zarządzanych urządzeniach. Ta funkcja została wprowadzona w wersji 1706.
 
 Ulepszenia obejmują:
@@ -117,7 +123,7 @@ Aby uzyskać więcej informacji, zobacz [Planowanie konfiguracji zarządzania ap
 
 ## <a name="software-updates"></a>Aktualizacje oprogramowania
 
-### <a name="surface-driver-updates-----1098490---"></a>Aktualizacje sterowników powierzchni<!-- 1098490 -->
+### <a name="surface-driver-updates-----1098490---"></a>Aktualizacje sterowników powierzchni  <!-- 1098490 -->
 Począwszy od tej wersji, zarządzanie aktualizacjami powierzchni sterownik nie jest już funkcji wersji wstępnej.  
 
 
@@ -180,7 +186,7 @@ Aby zminimalizować ryzyko zgodności, istniejących profilów sieci VPN nie ule
 
 Aby uzyskać więcej informacji, zobacz [profilów sieci VPN na urządzeniach przenośnych w programie System Center Configuration Manager](../../../mdm/deploy-use/create-vpn-profiles.md).
 
-### <a name="limited-support-for-cryptography-next-generation-cng-certificates----1356191---"></a>Ograniczona obsługa szyfrowania: Next Generation (CNG) certyfikatów<!-- 1356191 -->
+### <a name="limited-support-for-cryptography-next-generation-cng-certificates----1356191---"></a>Ograniczona obsługa szyfrowania: Next Generation (CNG) certyfikatów <!-- 1356191 -->
 
 Menedżer konfiguracji ma ograniczoną obsługę szyfrowania: Certyfikaty następnej generacji (CNG). Klienci programu Configuration Manager mogą używać certyfikatu uwierzytelniania klienta PKI z kluczem prywatnym w dostawcy magazynu kluczy CNG (KSP). Dostawcy magazynu KLUCZY, z obsługą klientów programu Configuration Manager obsługuje oparte na sprzęcie klucza prywatnego, takich jak moduł TPM dostawcy magazynu KLUCZY dla certyfikatów uwierzytelniania klienta PKI.
 

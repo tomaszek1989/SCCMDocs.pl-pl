@@ -3,7 +3,7 @@ title: What's new in hybrydowego zarządzania urządzeniami Przenośnymi
 titleSuffix: Configuration Manager
 description: Poznaj nowe funkcje zarządzania urządzeniami przenośnymi dostępne dla hybrydowych wdrożeń z programu Configuration Manager i usługi Intune.
 ms.custom: na
-ms.date: 03/28/2018
+ms.date: 04/02/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -15,11 +15,11 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3c3d1c813c307e520b3a9709187937f0d3f732c7
-ms.sourcegitcommit: 27da4be015f1496b7b89ebddb517a2685f1ecf74
+ms.openlocfilehash: c6918983bca3e598fd99a8f7670ada3f7e43cfa6
+ms.sourcegitcommit: d8a4a53630351b3d677bbdc5d203e7d330472cba
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>What's new in hybrydowego zarządzania urządzeniami przenośnymi za pomocą programu Configuration Manager i Microsoft Intune
 
@@ -41,6 +41,24 @@ Każda sekcja w tym artykule wymieniono funkcje hybrydowych w trzech różnych k
 |**Nowość w usłudze Microsoft Intune** | Ogólnie rzecz biorąc wszystkie funkcje wymienione w tej kategorii powinny współpracować z wszystkie wersje programu Configuration Manager. Zwalnia to tym System Center 2012 R2 Configuration Manager, ponieważ te funkcje tylko wymagane przez usługę Intune i nie wymagają dodatkowych funkcji w programie Configuration Manager.|
 |**Nowość w programie Configuration Manager Technical Preview**| Wszystkie funkcje wymienione w tej kategorii są prawidłowe tylko w określonej wersji Technical Preview. Aby wypróbować te funkcje, należy zainstalować wersję Technical Preview określony w opisie funkcji. Aby uzyskać więcej informacji, zobacz [Technical Preview programu System Center Configuration Manager](../../core/get-started/technical-preview.md).|
 |**Nowe w programie Configuration Manager (wersji current branch)**| Wszystkie funkcje wymienione w tej kategorii pracować tylko z określonej wersji programu Configuration Manager (wersji current branch), np. w wersji 1511 lub 1602. Jeśli używasz starszej wersji programu Configuration Manager dla danego wdrożenia hybrydowego, należy uaktualnić do wersji Configuration Manager (wersji current branch) określona w opisie funkcji. Aby uzyskać więcej informacji, zobacz [uaktualnienia do programu System Center Configuration Manager](../../core/servers/deploy/install/upgrade-to-configuration-manager.md).|
+
+
+
+## <a name="april-2018"></a>2018 kwietnia
+
+### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune
+
+#### <a name="user-experience-update-for-the-company-portal-app-for-ios"></a>Aktualizacja środowiska użytkownika dla aplikacji Portal firmy dla systemu iOS 
+<!--1412866-->
+Firma Microsoft opublikowała zostały aktualizacją środowisko głównych użytkownika do aplikacji Portal firmy dla systemu iOS. Aktualizacja funkcji pełną one visual zawierającą zmodernizowanej wyglądu i działania. Firma Microsoft już utrzymywane funkcjonalności aplikacji, ale zwiększenie jego użyteczność i dostępności.  
+
+Zostanie również wyświetlony:
+- Obsługa iPhone X.
+- Szybsze uruchamianie aplikacji i ładowania odpowiedzi, aby zaoszczędzić czas użytkowników.
+- Paski postępu dodatkowe użytkownikom najbardziej aktualne informacje o stanie.
+- Ulepszenia użytkownikom sposób przekazywania dzienników, więc jeśli jakaś nieprawidłowość, jest łatwiejsze do raportu.  
+
+Aby wyświetlić zaktualizowaną wygląd, przejdź do [nowości w aplikacji interfejsu użytkownika](/intune/whats-new-app-ui).
 
 
 
