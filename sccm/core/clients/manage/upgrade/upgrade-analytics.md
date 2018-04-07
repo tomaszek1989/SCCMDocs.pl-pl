@@ -13,11 +13,11 @@ ms.service: ''
 ms.technology:
 - configmgr-client
 ms.assetid: 68407ab8-c205-44ed-9deb-ff5714451624
-ms.openlocfilehash: f9fec1723c5242485d23981bcb683e3a8e98bfd3
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 96f20c3559ac08cb4c5a16d1d33b74c63a02e4b7
+ms.sourcegitcommit: f0bfd9fa0ec5b416f0ea2beee889b94e2ad9c97d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="integrate-upgrade-readiness-with-system-center-configuration-manager"></a>Integracja gotowości do uaktualnienia z programu System Center Configuration Manager
 
@@ -27,8 +27,10 @@ Gotowości do uaktualnienia (dawniej uaktualnienia Analytics) jest częścią [m
 
 Gotowości do uaktualnienia to rozwiązanie, które działa na [Operations Management Suite (OMS)](/azure/operations-management-suite/operations-management-suite-overview). Więcej o uaktualnienie gotowości w [uaktualnia Zarządzanie systemem Windows z gotowości do uaktualnienia](/windows/deployment/upgrade/manage-windows-upgrades-with-upgrade-readiness).
 
+<!--
 >[!WARNING]
->Uaktualnij gotowości do funkcji w programie Configuration Manager musisz najpierw uaktualnić do 1802 wersji programu Configuration Manager.  <!--507205--> Łącznik gotowości uaktualnienia nie będą działać starszych niż 1802 w wersjach programu Configuration Manager. 
+>For Upgrade Readiness to function within Configuration Manager, you must upgrade to Configuration Manager version 1802. The Upgrade Readiness Connector will no longer function in Configuration Manager versions earlier than 1802. 
+SMS.507205 Pulled 4/5/18 -->
 
 
 ## <a name="configure-clients"></a>Konfigurowanie klientów
