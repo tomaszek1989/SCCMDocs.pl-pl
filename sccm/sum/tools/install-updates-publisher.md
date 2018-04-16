@@ -12,7 +12,7 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ab5cda93-b67c-4aa5-904d-7b63ce790aa0
-caps.latest.revision: ''
+caps.latest.revision: 1
 author: mestew
 ms.author: mstewart
 manager: angrobe
@@ -67,7 +67,7 @@ Na przykład możesz utworzyć aktualizacji oprogramowania, które zawiera tytu�
 Po opublikowaniu aktualizacji oprogramowania można określić język pliku binarnego aktualizacji oprogramowania. Można również określić, że plik binarny jest niezależny od języka. Obsługiwane są następujące języki:
 
 -   Arabski
--   Chinese (Hong Kong S.A.R.)
+-   Chinese (SRA Hongkong)
 -   Chiński (tradycyjny)
 -   Chiński uproszczony
 -   czeski

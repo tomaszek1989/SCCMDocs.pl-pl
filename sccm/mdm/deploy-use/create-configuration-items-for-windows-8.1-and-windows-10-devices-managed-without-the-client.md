@@ -1,18 +1,19 @@
 ---
-title: "Tworzenie elementów konfiguracji dla Windows 8.1 i Windows 10 urządzeń zarządzanych za pomocą usługi Intune"
+title: Tworzenie elementów konfiguracji dla Windows 8.1 i Windows 10 urządzeń zarządzanych za pomocą usługi Intune
 titleSuffix: Configuration Manager
-description: "Aby zarządzać ustawieniami komputerów z systemem Windows 10, należy użyć elementu konfiguracji System Center Configuration Manager systemu Windows 10."
+description: Aby zarządzać ustawieniami komputerów z systemem Windows 10, należy użyć elementu konfiguracji System Center Configuration Manager systemu Windows 10.
 ms.custom: na
 ms.date: 07/31/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 23e1e4dc-623a-4521-ad04-ae9482927097
-caps.latest.revision: "20"
-caps.handback.revision: "0"
+caps.latest.revision: 20
+caps.handback.revision: 0
 author: andredm7
 ms.author: andredm
 manager: angrobe
@@ -370,8 +371,8 @@ Te ustawienia dotyczą urządzeń z systemem Windows 10 lub nowszym.
 |**Włącz filtr SmartScreen**|Umożliwia użycie filtru SmartScreen w celu sprawdzenia, czy pliki pobierane przez użytkowników nie zawierają złośliwego kodu.|  
 |**Zezwalaj na wyskakujące okienka**|Zezwala lub wyłącza wyskakujące okienka w przeglądarce.|  
 |**Zezwalaj na pliki cookie**|Zezwala na pliki cookie lub wyłącza je.|  
-|**Zezwalaj na automatyczne uzupełnianie**|Zezwala na używanie funkcji automatycznego wypełniania w przeglądarce Edge.|  
-|**Zezwalaj na działanie Menedżera haseł**|Zezwala na używanie funkcji menedżera haseł w przeglądarce Edge.|  
+|**Zezwalaj na automatyczne uzupełnianie**|Zezwala na używanie funkcji automatycznego wypełniania w przeglądarce Microsoft Edge.|  
+|**Zezwalaj na działanie Menedżera haseł**|Zezwala na używanie funkcji menedżera haseł w przeglądarce Microsoft Edge.|  
 |**Lokalizacja listy witryn trybu przedsiębiorstwa**|Określa lokalizację listy witryn sieci web, które jest otwierane w trybie przedsiębiorstwa. Użytkownicy nie mogą edytować tej listy.|
 |**Blokowanie dostępu do informacji o: flagi**|Blokowanie dostępu użytkownika końcowego dotyczących: flagi strony w programie Edge, zawierający ustawienia eksperymentalne i deweloperów.|
 |**Filtr SmartScreen monitu o zastąpienie**|Zezwalaj użytkownikowi na pominięcie ostrzeżeń filtru SmartScreen o potencjalnie złośliwych witryn sieci Web.|
@@ -379,7 +380,7 @@ Te ustawienia dotyczą urządzeń z systemem Windows 10 lub nowszym.
 |**Adres IP hosta lokalnego WebRTC**|Blok adresu IP localhost użytkowników będą wyświetlane podczas wprowadzania połączeń telefonicznych za pomocą protokołu RTC sieci web.|
 |**Domyślny aparat wyszukiwania**|Określ domyślny aparat wyszukiwania, która ma być używany. Użytkownicy końcowi tę wartość można zmienić w dowolnym momencie.|
 |**Adres URL OpenSearch XML**|Plik OpenSearch XML służy do tworzenia usługi wyszukiwania Microsoft Edge.<br>Aby uzyskać więcej informacji, zobacz [OpenSearch](https://msdn.microsoft.com/library/windows/desktop/dd940337).|
-|**Strony główne (tylko wersja desktop)**|Dodaj listę witryn, które ma być używany jako strony głównej w przeglądarce Edge (tylko wersja desktop).|  
+|**Strony główne (tylko wersja desktop)**|Dodaj listę witryn, które ma być używany jako strony głównej w przeglądarce Microsoft Edge (tylko wersja desktop).|  
 
 
 ### <a name="windows-defender"></a>Usługa Windows Defender
