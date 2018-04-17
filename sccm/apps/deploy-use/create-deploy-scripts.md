@@ -3,7 +3,7 @@ title: Tworzenie i uruchamianie skryptów
 titleSuffix: Configuration Manager
 description: Tworzenie i uruchamianie skryptów programu Powershell na urządzeniach klienckich.
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,26 +12,30 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
-caps.latest.revision: ''
-caps.handback.revision: ''
+caps.latest.revision: 14
+caps.handback.revision: 0
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 19bb8b2c4e47dcc8a75db568e7f93541544a4566
-ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
+ms.openlocfilehash: b9699b2f4bd1f18890d25582be9a8d20778b64be
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Tworzenie i uruchamianie skryptów programu PowerShell z poziomu konsoli programu Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-
-System Center Configuration Manager ma zintegrowane możliwość uruchamiania skryptów programu Powershell. PowerShell ma Zaletą tworzenia zaawansowanych, zautomatyzowanych skryptów, Rozumiem i udostępnione z branży. Skrypty uprościć tworzenie niestandardowego narzędzia do administrowania pozwalają osiągnąć żmudnych zadań szybko, co umożliwia uzyskiwanie dużych zadań łatwiejsze i bardziej spójnego i oprogramowania.
+<!--1236459-->
+System Center Configuration Manager ma zintegrowane możliwość uruchamiania skryptów programu Powershell. PowerShell ma Zaletą tworzenia zaawansowanych, zautomatyzowanych skryptów, Rozumiem i udostępnione z branży. Skrypty uprościć tworzenie niestandardowego narzędzia do administrowania pozwalają osiągnąć żmudnych zadań szybko, co umożliwia uzyskiwanie dużych zadań łatwiejsze i bardziej spójnego i oprogramowania.  
 
 > [!TIP]  
-> Ta funkcja została wprowadzona w wersji 1706 jako [funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features). Począwszy od wersji 1802, ta funkcja nie jest już funkcji wersji wstępnej.
+> Ta funkcja została wprowadzona w wersji 1706 jako [funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features). Począwszy od wersji 1802, ta funkcja nie jest już funkcji wersji wstępnej.  
+
+
+> [!Note]  
+> Ta funkcja opcjonalna nie włączyć domyślne programu Configuration Manager. Należy włączyć tę funkcję, przed jego użyciem. Aby uzyskać więcej informacji, zobacz [Włącz funkcje opcjonalne aktualizacji](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
 
 
 Dzięki tej integracji w programie System Center Configuration Manager, można użyć *uruchamianie skryptów* funkcji, aby wykonać następujące czynności:
