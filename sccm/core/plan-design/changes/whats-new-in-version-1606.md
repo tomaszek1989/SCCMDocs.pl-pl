@@ -1,27 +1,28 @@
 ---
-title: "Nowość w wersji 1606"
+title: Nowość w wersji 1606
 titleSuffix: Configuraton Manager
-description: "Uzyskiwanie szczegółowych informacji dotyczących zmian i nowych możliwości wprowadzonych w wersji 1606 programu System Center Configuration Manager."
+description: Uzyskiwanie szczegółowych informacji dotyczących zmian i nowych możliwości wprowadzonych w wersji 1606 programu System Center Configuration Manager.
 ms.custom: na
 ms.date: 12/30/2016
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: df2e57b9-6445-4067-98e7-ace85d4e6aa6
-caps.latest.revision: "40"
+caps.latest.revision: 40
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: e26519de8ce0b905fd52ca6ab0762a406d2f1e2c
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 9c948e0ff84c4741d77b9096e52d3abd765aba7b
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="what39s-new-in-version-1606-of-system-center-configuration-manager"></a>Jaki &#39; s nowego w wersji 1606 programu System Center Configuration Manager
+# <a name="what39s-new-in-version-1606-of-system-center-configuration-manager"></a>Co&#39;nowego w wersji 1606 programu System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
@@ -82,14 +83,14 @@ Po zaktualizowaniu 1606 jest zainstalowana, przy następnej instalacji aktualiza
 
 
 
-## <a name="accessibility"></a>Ułatwienia dostępu
+## <a name="accessibility"></a> Ułatwienia dostępu
 Aby poruszać się między węzłami różnych obszaru roboczego, teraz możesz wprowadzić pierwszą literę nazwa węzła. Każdy naciśnięcie klawisza przesuwa kursor do następnego węzła, który rozpoczyna się od litery. Dla użytkowników, którzy mają do odczytywania zawartości ekranu czytnik odczytuje się nazwę tego węzła. Aby uzyskać więcej informacji na temat opcji ułatwień dostępu, zobacz [funkcje ułatwień dostępu w programie System Center Configuration Manager](../../../core/understand/accessibility-features.md).
 
 ## <a name="administration"></a>Administracja
 Dostępne są następujące zmiany Administracja w konsoli programu Configuration Manager:
 ### <a name="oms-connector"></a>Łącznik OMS
 
-Teraz możesz połączyć programu Configuration Manager jako kolekcji programu System Center Configuration Manager do [programu Microsoft Operations Management Suite (OMS)](https://azure.microsoft.com/en-us/documentation/articles/operations-management-suite-overview/). Dzięki temu dane, takie jak kolekcje, przez wdrożenie programu Configuration Manager są widoczne w OMS. Aby uzyskać więcej informacji, zobacz [synchronizowanie danych z programu Configuration Manager do programu Microsoft Operations Management Suite tutaj](../../../core/clients/manage/sync-data-microsoft-operations-management-suite.md).
+Teraz możesz połączyć programu Configuration Manager jako kolekcji programu System Center Configuration Manager do [programu Microsoft Operations Management Suite (OMS)](https://azure.microsoft.com/documentation/articles/operations-management-suite-overview/). Dzięki temu dane, takie jak kolekcje, przez wdrożenie programu Configuration Manager są widoczne w OMS. Aby uzyskać więcej informacji, zobacz [synchronizowanie danych z programu Configuration Manager do programu Microsoft Operations Management Suite tutaj](../../../core/clients/manage/sync-data-microsoft-operations-management-suite.md).
 
 Łącznik OMS to funkcja wersji wstępnej. Aby ją włączyć, zobacz [korzystanie z funkcji wersji wstępnej aktualizacje](../../../core/servers/manage/install-in-console-updates.md#bkmk_prerelease).
 

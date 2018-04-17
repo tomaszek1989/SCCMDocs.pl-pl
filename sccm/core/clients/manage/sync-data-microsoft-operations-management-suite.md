@@ -1,9 +1,9 @@
 ---
-title: 'Synchronizowanie danych programu Microsoft Operations Management Suite '
+title: Synchronizowanie danych z usługą OMS
 titleSuffix: Configuration Manager
 description: Synchronizowanie danych z programu System Center Configuration Manager do programu Microsoft Operations Management Suite.
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,25 +12,32 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 33bcf8b3-a6b6-4fc9-bb59-70a9621b2b0d
-caps.latest.revision: ''
-author: mestew
-ms.author: mstewart
+caps.latest.revision: 9
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: df57255108d0e5e8b8f5e4e8d73a392c4cf2faae
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 4ac6d69d07e17946abefdc4f5b7d4a1a73385c44
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/16/2018
 ---
 #  <a name="sync-data-from-configuration-manager-to-the-microsoft-operations-management-suite"></a>Synchronizowanie danych z programu Configuration Manager do programu Microsoft Operations Management Suite
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
+<!--1258052-->
 Możesz użyć **Kreator usług Azure** do skonfigurowania połączenia z programu Configuration Manager do usługi w chmurze Operations Management Suite (OMS). Począwszy od wersji 1706, kreator zastępuje poprzednie przepływy pracy w celu skonfigurowania tego połączenia. W przypadku wcześniejszych wersji, zobacz [synchronizowanie danych z programu Configuration Manager do programu Microsoft Operations Management Suite (1702 i starszych)](#Sync-data-from-Configuration-Manager-to-the-Microsoft-Operations-Management-Suite-(1702-and-earlier)).
 
 -   Kreator służy do konfigurowania usługi w chmurze dla programu Configuration Manager, takich jak OMS, Microsoft Store dla firm i Azure Active Directory (Azure AD).  
 
 -   Configuration Manager łączy się z usługą OMS dla funkcji, takich jak [analizy dzienników](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite), lub [gotowości do uaktualnienia](/sccm/core/clients/manage/upgrade/upgrade-analytics).
+
+
+> [!Note]  
+> Ta funkcja opcjonalna nie włączyć domyślne programu Configuration Manager. Należy włączyć tę funkcję, przed jego użyciem. Aby uzyskać więcej informacji, zobacz [Włącz funkcje opcjonalne aktualizacji](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+
+
 
 ## <a name="prerequisites-for-the-oms-connector"></a>Wymagania wstępne dotyczące łącznika OMS
 Wymagania wstępne, aby skonfigurować połączenie z usługą OMS uległy zmianie od wymagań wstępnych [udokumentowane dla wersji Current Branch 1702](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite#prerequisites). Te informacje jest powtarzany w tym miejscu:  

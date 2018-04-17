@@ -2,7 +2,7 @@
 title: Plan chmury zarządzania bramy
 titleSuffix: Configuration Manager
 description: Planowanie i projektowanie brama zarządzania chmury (CMG), aby uprościć zarządzanie klientów internetowych.
-ms.date: 03/22/2018
+ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.technology:
 - configmgr-client
@@ -10,20 +10,26 @@ ms.assetid: 2dc8c9f1-4176-4e35-9794-f44b15f4e55f
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: dabc248c1788ecad4d7b25c0a1f592e0ddeef826
-ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
+ms.openlocfilehash: 2b207ffe95a078c955817d9251da3adbdf4de10d
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="plan-for-the-cloud-management-gateway-in-configuration-manager"></a>Planowanie brama zarządzania chmury w programie Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
-
+ 
+<!--1101764-->
 Brama zarządzania chmury (CMG) zapewnia prosty sposób zarządzać klientami programu Configuration Manager w Internecie. Wdrażając CMG jako usługa w chmurze w systemie Microsoft Azure, możesz zarządzać tradycyjnych klientów, którzy są przekazywane w Internecie, bez dodatkowej infrastruktury. Nie należy uwidaczniać infrastruktury lokalnej z Internetem. 
 
 > [!Tip]  
-> Ta funkcja została wprowadzona w wersji 1610 jako [funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features). Począwszy od wersji 1802, ta funkcja nie jest już funkcji wersji wstępnej.
+> Ta funkcja została wprowadzona w wersji 1610 jako [funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features). Począwszy od wersji 1802, ta funkcja nie jest już funkcji wersji wstępnej.  
+
+
+> [!Note]  
+> Ta funkcja opcjonalna nie włączyć domyślne programu Configuration Manager. Należy włączyć tę funkcję, przed jego użyciem. Aby uzyskać więcej informacji, zobacz [Włącz funkcje opcjonalne aktualizacji](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+
 
 Po ustaleniu wymagań wstępnych, tworzenie CMG składa się z trzech kroków w konsoli programu Configuration Manager:
 1. Usługi w chmurze CMG wdrażanie na platformie Azure.
@@ -186,6 +192,7 @@ W poniższej tabeli wymieniono CMG obsługę funkcji programu Configuration Mana
 | Program Endpoint protection     | ![Obsługiwane](media/green_check.png) |
 | Spis sprzętu i oprogramowania     | ![Obsługiwane](media/green_check.png) |
 | Stan klienta i powiadomienia     | ![Obsługiwane](media/green_check.png) |
+| Uruchamianie skryptów     | ![Obsługiwane](media/green_check.png) |
 | Ustawienia zgodności     | ![Obsługiwane](media/green_check.png) |
 | Instalacja klienta</br>(dzięki integracji usługi Azure AD)     | ![Obsługiwane](media/green_check.png)  (1706) |
 | Dystrybucja oprogramowania (docelowe urządzenia)     | ![Obsługiwane](media/green_check.png) |

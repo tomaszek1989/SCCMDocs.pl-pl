@@ -1,26 +1,27 @@
 ---
-title: "Utworzenie profili poczty e-mail protokołu Exchange ActiveSync"
+title: Utworzenie profili poczty e-mail protokołu Exchange ActiveSync
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak utworzyć i skonfigurować profile poczty e-mail w System Center Configuration Manager działa w usłudze Microsoft Intune."
+description: Dowiedz się, jak utworzyć i skonfigurować profile poczty e-mail w System Center Configuration Manager działa w usłudze Microsoft Intune.
 ms.custom: na
 ms.date: 07/28/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 120442be-179e-450c-a0c4-284046895da3
-caps.latest.revision: "4"
-caps.handback.revision: "0"
+caps.latest.revision: 4
+caps.handback.revision: 0
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: 5fc0d5e68e27b3bde9ed3aa45a439c8b333da1d6
-ms.sourcegitcommit: 922d6d9c91ba2158b938df381277be1b5f1d434a
+ms.openlocfilehash: ab429e2702ab1595b035c8e2895dad584be4061a
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/13/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="exchange-activesync-email-profiles-in-system-center-configuration-manager"></a>Profile poczty e-mail protokołu Exchange ActiveSync w programie System Center Configuration Manager
 
@@ -37,7 +38,7 @@ Za pomocą programu Microsoft Intune i program Exchange ActiveSync, można skonf
 - Samsung KNOX Standard (4 i nowsze)
 - Android for Work
 
-Aby wdrożyć profile poczty e-mail na urządzeniach, możesz zarejestrować urządzenia w usłudze Intune. Aby uzyskać więcej informacji na temat rejestrowania urządzeń, zobacz [Zarządzanie urządzeniami przenośnymi w usłudze Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).
+Aby wdrożyć profile poczty e-mail na urządzeniach, możesz zarejestrować urządzenia w usłudze Intune. Aby uzyskać więcej informacji na temat rejestrowania urządzeń, zobacz artykuł [Zarządzanie urządzeniami przenośnymi w usłudze Microsoft Intune](https://technet.microsoft.com/library/dn646962.aspx).
 
 > [!NOTE]
 > Usługa Intune umożliwia Android dwa profile poczty e-mail pracy, jeden dla usługi Gmail aplikacja poczty e-mail i pracy dziewięć aplikacji poczty e-mail. Te aplikacje są dostępne w sklepie Google Play i obsługują połączenia z serwerem Exchange. Aby umożliwić łączność poczty e-mail, wdrażania jednej z tych aplikacji poczty e-mail na urządzeniach użytkowników, a następnie utwórz i wdrożyć odpowiedni profil. Aplikacji poczty e-mail, takich jak dziewięciu pracy może być wolne. Przegląd aplikacji szczegółowe informacje o licencjonowaniu lub skontaktuj się z firmą aplikacji z jakieś pytania.

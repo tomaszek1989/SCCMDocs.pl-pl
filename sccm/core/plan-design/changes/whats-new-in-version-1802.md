@@ -3,7 +3,7 @@ title: Nowa wersja 1802
 titleSuffix: Configuration Manager
 description: Uzyskiwanie szczegółowych informacji dotyczących zmian i nowych możliwości wprowadzonych w wersji 1802 programu Configuration Manager.
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 04/11/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,20 +12,27 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5bd637b1-d7a1-411b-877a-c7aae9741173
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 9c9ff975a58e7c56375fa7740a0a5bb6ebfa6341
-ms.sourcegitcommit: 27da4be015f1496b7b89ebddb517a2685f1ecf74
+ms.openlocfilehash: a667c34dc39ef0578ff840e5603080b09c67c63c
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="whats-new-in-version-1802-of-system-center-configuration-manager"></a>Nowości w wersji 1802 programu System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 Zaktualizuj 1802 dla bieżącej gałęzi programu Configuration Manager jest dostępna jako aktualizacja w konsoli. W witrynach, w których jest uruchomiona wersja 1702, 1706 lub 1710, należy zastosować tę aktualizację. <!-- baseline only statement: -->Podczas instalowania nowej lokacji, jest również dostępny jako wersji linii bazowej.
+
+Oprócz nowych funkcji ta wersja zawiera również dodatkowe zmiany, takie jak poprawki błędów. Aby uzyskać więcej informacji, zobacz [podsumowanie zmian w programie System Center Configuration Manager bieżącej gałęzi, wersja 1802](https://support.microsoft.com/help/4101375).
+
+<!--
+The following additional updates to this release are also now available:
+- [Update rollup for System Center Configuration Manager current branch, version 1710](https://support.microsoft.com/help/4057517)
+-->
 
 > [!TIP]  
 > Aby zainstalować nową lokację, należy użyć wersji bazowej programu Configuration Manager.  

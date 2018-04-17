@@ -1,5 +1,5 @@
 ---
-title: "Obsługiwane wersje programu SQL Server"
+title: Obsługiwane wersje programu SQL Server
 titleSuffix: Configuration Manager
 description: Pobierz wymagania konfiguracji i wersji programu SQL Server do hostowania bazy danych lokacji programu System Center Configuration Manager.
 ms.custom: na
@@ -12,15 +12,15 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35e237b6-9f7b-4189-90e7-8eca92ae7d3d
-caps.latest.revision: 
+caps.latest.revision: 21
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 5c17efa3498907fcc57d366965bec3b4198890bb
-ms.sourcegitcommit: 37e990d191028160486dbca286d2ea945bd5c8c3
+ms.openlocfilehash: 0e1cafc9b1900dd370cb8dac80f5a02fbb3d12dc
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="supported-sql-server-versions-for-system-center-configuration-manager"></a>Obsługiwane wersje programu SQL Server dla programu System Center Configuration Manager
 
@@ -75,14 +75,14 @@ Obsługa określonego dodatku service pack programu SQL Server obejmuje aktualiz
 >  Korzystając z programu SQL Server Standard dla bazy danych w centralnej lokacji administracyjnej, należy ograniczyć całkowitą liczbę klientów obsługiwanych w hierarchii. Zobacz [Wartości dotyczące rozmiarów i skalowania](../../../core/plan-design/configs/size-and-scale-numbers.md).
 
 ### <a name="sql-server-2017-standard-enterprise"></a>SQL Server 2017: Wersje Standard, Enterprise  
-Ta wersja programu SQL Server, można użyć z co najmniej [wersji aktualizacji zbiorczej 2](https://support.microsoft.com/help/4052574), począwszy od [1710 wersji programu Configuration Manager](https://docs.microsoft.com/en-us/sccm/core/plan-design/changes/whats-new-in-version-1710) dla następujących witryn: 
+Ta wersja programu SQL Server, można użyć z co najmniej [wersji aktualizacji zbiorczej 2](https://support.microsoft.com/help/4052574), począwszy od [1710 wersji programu Configuration Manager](https://docs.microsoft.com/sccm/core/plan-design/changes/whats-new-in-version-1710) dla następujących witryn: 
 
 -   Centralna lokacja administracyjna  
 -   Lokacja główna  
 -   Lokację dodatkową  
 <!--SMS.498506-->
 
-### <a name="sql-server-2016-sp1-standard-enterprise"></a>SQL Server 2016 SP1: Wersje Standard, Enterprise  
+### <a name="sql-server-2016-sp1-standard-enterprise"></a>SQL Server 2016 z dodatkiem SP1: Wersje Standard, Enterprise  
 Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktualizacji zbiorczej dla następujących witryn:  
 
 -   Centralna lokacja administracyjna  
@@ -134,7 +134,7 @@ Za pomocą tej wersji programu SQL Server i nie ma wersji minimalnej wersji aktu
 -   A secondary site  
 -->
 
-### <a name="sql-server-2008-r2-sp3-standard-enterprise-datacenter"></a>SQL Server 2008 R2 SP3: Standard, Enterprise, Datacenter     
+### <a name="sql-server-2008-r2-sp3-standard-enterprise-datacenter"></a>SQL Server 2008 R2 SP3: Standard, Enterprise i Datacenter     
   Ta wersja programu SQL Server nie jest obsługiwana [począwszy od wersji 1702.](/sccm/core/plan-design/changes/deprecated/removed-and-deprecated-server#deprecated-support-for-sql-server-versions-as-a-site-database)  
  Ta wersja programu SQL Server jest obsługiwany w przypadku korzystania z wersji programu Configuration Manager przed 1702.
 
@@ -145,7 +145,7 @@ Jeśli są obsługiwane przez wersję programu Configuration Manager, można tej
 -   Lokację dodatkową
 
 ### <a name="sql-server-2017-express"></a>SQL Server 2017 Express   
-Ta wersja programu SQL Server, można użyć z co najmniej [wersji aktualizacji zbiorczej 2](https://support.microsoft.com/help/4052574), począwszy od [1710 wersji programu Configuration Manager](https://docs.microsoft.com/en-us/sccm/core/plan-design/changes/whats-new-in-version-1710) dla następujących witryn:
+Ta wersja programu SQL Server, można użyć z co najmniej [wersji aktualizacji zbiorczej 2](https://support.microsoft.com/help/4052574), począwszy od [1710 wersji programu Configuration Manager](https://docs.microsoft.com/sccm/core/plan-design/changes/whats-new-in-version-1710) dla następujących witryn:
 -   Lokację dodatkową
 <!--SMS.498506-->
 

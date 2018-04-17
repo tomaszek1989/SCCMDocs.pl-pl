@@ -12,16 +12,16 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 45388103-2410-4c7e-b4cf-73a1bda485fc
-caps.latest.revision: ''
-caps.handback.revision: ''
+caps.latest.revision: 18
+caps.handback.revision: 0
 author: lleonard-msft
 ms.author: alleonar
 manager: angrobe
-ms.openlocfilehash: 1d98cd234b2444873f1ffa5819af74d507dfa9c1
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: a66212537c9e6829965f81d7622ae825ca6b80bb
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/27/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="vpn-profiles-on-mobile-devices-in-system-center-configuration-manager"></a>Profile sieci VPN na urządzeniach przenośnych w programie System Center Configuration Manager
 
@@ -35,7 +35,7 @@ Profile sieci VPN w programie System Center Configuration Manager możesz wdraż
 
  ## <a name="vpn-profiles-when-using-configuration-manager-together-with-intune"></a>Profile sieci VPN w przypadku korzystania z programu Configuration Manager wraz z usługą Intune
 
- Aby wdrożyć profile dla systemu iOS, Android, Windows Phone i urządzeń Windows 8.1, te urządzenia muszą być zarejestrowane w programie Microsoft Intune. Urządzenia na innych platformach, można również zarejestrowane w usłudze Intune. Aby uzyskać informacje o sposobie rejestrowania, zobacz [zarządzania urządzeniami przenośnymi w usłudze Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx). Ta tabela pokazuje typ połączenia, który jest obsługiwany dla każdej platformy urządzeń:  
+ Aby wdrożyć profile dla systemu iOS, Android, Windows Phone i urządzeń Windows 8.1, te urządzenia muszą być zarejestrowane w programie Microsoft Intune. Urządzenia na innych platformach, można również zarejestrowane w usłudze Intune. Aby uzyskać informacje o sposobie rejestrowania, zobacz [zarządzania urządzeniami przenośnymi w usłudze Microsoft Intune](https://technet.microsoft.com/library/dn646962.aspx). Ta tabela pokazuje typ połączenia, który jest obsługiwany dla każdej platformy urządzeń:  
 
  |Typ połączenia|iOS i macOS X|Android|Windows 8.1|Windows RT|Windows RT 8.1|Windows Phone 8,1|Windows 10 Desktop i Mobile|  
  |---------------------|----------------------|-------------|-----------------|----------------|--------------------|-----------------------|-----------------------------------|  
@@ -103,11 +103,11 @@ Profile sieci VPN w programie System Center Configuration Manager możesz wdraż
             >  Urządzenia z systemem iOS obsługują tylko RSA SecurID i MSCHAP v2 metody uwierzytelniania, gdy typ połączenia to PPTP. Aby uniknąć zgłaszania błędów, należy wdrożyć oddzielny profil PPTP sieci VPN na urządzeniach z systemem iOS.  
 
         - **Dostęp warunkowy**
-            - Wybierz **włączania dostępu warunkowego dla tego połączenia VPN** aby upewnić się, że urządzenia, które łączą się z siecią VPN są sprawdzane pod kątem dostępu warunkowego zgodności przed nawiązaniem połączenia. Zasady zgodności są opisane w [zasady zgodności urządzeń w programie System Center Configuration Manager](https://docs.microsoft.com/en-us/sccm/protect/deploy-use/device-compliance-policies.md).
+            - Wybierz **włączania dostępu warunkowego dla tego połączenia VPN** aby upewnić się, że urządzenia, które łączą się z siecią VPN są sprawdzane pod kątem dostępu warunkowego zgodności przed nawiązaniem połączenia. Zasady zgodności są opisane w [zasady zgodności urządzeń w programie System Center Configuration Manager](https://docs.microsoft.com/sccm/protect/deploy-use/device-compliance-policies.md).
             - Wybierz **włączyć logowanie jednokrotne (SSO) z alternatywnym certyfikatem** do wybrania certyfikatu innego niż certyfikat uwierzytelniania sieci VPN dla zgodności urządzenia. Jeśli wybierzesz tę opcję, podaj **EKU** (rozdzielana przecinkami lista) i **skrót wystawcy**, dla poprawny certyfikat, którego klient sieci VPN należy zlokalizować.
 
          - Aby uzyskać **Windows Information Protection**, podaj zarządzanych przez przedsiębiorstwo firmowej tożsamości, która jest zazwyczaj domeny podstawowej w organizacji, na przykład, *contoso.com*. Można określić wiele domen, należące do organizacji możesz oddzielając je z "|" znaków. Na przykład *contoso.com|newcontoso.com*.   
-            Aby uzyskać więcej informacji o systemie Windows Information Protection, zobacz [Tworzenie zasad systemu Windows informacji ochrony (pracy w toku) przy użyciu programu Microsoft Intune](https://technet.microsoft.com/en-us/itpro/windows/keep-secure/create-wip-policy-using-intune).   
+            Aby uzyskać więcej informacji o systemie Windows Information Protection, zobacz [Tworzenie zasad systemu Windows informacji ochrony (pracy w toku) przy użyciu programu Microsoft Intune](https://technet.microsoft.com/itpro/windows/keep-secure/create-wip-policy-using-intune).   
 
          ![Konfigurowanie dostępu warunkowego dla sieci VPN](media/vpn-conditional-access.png)
 

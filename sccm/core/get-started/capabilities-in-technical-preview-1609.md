@@ -1,25 +1,26 @@
 ---
 title: Funkcje w wersji zapoznawczej Technical Preview 1609
 titleSuffix: Configuration Manager
-description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersja 1609."
+description: Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersja 1609.
 ms.custom: na
 ms.date: 01/23/2017
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.topic: article
 ms.assetid: e2a59116-b2e5-4dd2-90eb-0b8a5eb50b56
-caps.latest.revision: "2"
+caps.latest.revision: 2
 author: erikje
 ms.author: erikje
 manager: angrobe
-ms.openlocfilehash: e1cceae5f73d003be2fe64df9e6dbaa7badaf0c7
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: 4beca8479e5adbfa24b597769b792fd91bed9a2c
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="capabilities-in-technical-preview-1609-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1609 programu System Center Configuration Manager
 
@@ -45,7 +46,7 @@ Administratorzy mogą teraz włączyć użytkownikom na rejestrację maksymalnie
 
 Administratorzy mogą teraz skonfiguruj następujące ustawienia programu Apple Device Enrollment Program (DEP) w profilu DEP dla systemu iOS i Mac urządzenia:
 - **Touch ID**
-- **Powiększenie**
+- **Zoom**
 - **Siri**
 
 U możliwia firmy Apple Asystent ustawień wyświetla monit dotyczący tej usługi podczas aktywacji urządzenia.
@@ -95,7 +96,7 @@ Procedura tworzenia i wdrażania aplikacji programu Configuration Manager z maga
 
 Dodaliśmy wiele nowych ustawień, które można używać we wszystkich elementach konfiguracji dla różnych platform urządzeń.
 Są to ustawienia, które wcześniej były dostępne w programie Microsoft Intune w konfiguracji autonomicznej i są teraz dostępne podczas korzystania z usługi Intune z programem Configuration Manager.
-Jeśli potrzebujesz pomocy z dowolnymi spośród tych ustawień, otwórz [Zarządzanie ustawieniami i funkcjami na urządzeniach przy użyciu zasad usługi Microsoft Intune](https://docs.microsoft.com/en-us/intune/deploy-use/manage-settings-and-features-on-your-devices-with-microsoft-intune-policies) , a następnie wybierz podrzędny ustawień dla platformy ma.
+Jeśli potrzebujesz pomocy z dowolnymi spośród tych ustawień, otwórz [Zarządzanie ustawieniami i funkcjami na urządzeniach przy użyciu zasad usługi Microsoft Intune](https://docs.microsoft.com/intune/deploy-use/manage-settings-and-features-on-your-devices-with-microsoft-intune-policies) , a następnie wybierz podrzędny ustawień dla platformy ma.
 
 
 ### <a name="new-settings-for-android-devices"></a>Nowe ustawienia dla urządzeń z systemem Android
@@ -374,9 +375,9 @@ W tej wersji, z poziomu pulpitu nawigacyjnego zarządzania klienta usługi Offic
 #### <a name="to-deploy-office-365-apps-to-clients"></a>Do wdrażania aplikacji usługi Office 365 na klientach
 1. W konsoli programu Configuration Manager, przejdź do **Biblioteka oprogramowania** > **omówienie** > **zarządzania klienta usługi Office 365**.
 2. Kliknij przycisk **Office 365 Instalator** w prawym górnym okienku. Zostanie otwarty Kreator instalacji klienta Office 365.
-3. Na **ustawienia aplikacji** , podaj nazwę i opis aplikacji, wprowadź lokalizację pobierania dla plików, a następnie kliknij przycisk **dalej**. Należy pamiętać, że lokalizacja musi być określony w formularzu &#92; &#92; *server*&#92; *udostępnianie*.
+3. Na **ustawienia aplikacji** , podaj nazwę i opis aplikacji, wprowadź lokalizację pobierania dla plików, a następnie kliknij przycisk **dalej**. Należy pamiętać, że lokalizacja musi być określona w postaci &#92; &#92; *serwera*&#92;*udostępnianie*.
 4. Na **importowania ustawień klienta** strony wybierz, czy do zaimportowania ustawień klienta usługi Office 365 z istniejącego pliku konfiguracji XML lub ręcznie określ ustawienia, a następnie kliknij przycisk **dalej**.
-Jeśli masz istniejący plik konfiguracyjny wprowadź lokalizację pliku, a następnie przejdź do kroku 7. Należy pamiętać, że lokalizacja musi być określony w formularzu &#92; &#92; *server*&#92; *udostępnianie*&#92; *Nazwa pliku*. KOD XML.
+Jeśli masz istniejący plik konfiguracyjny wprowadź lokalizację pliku, a następnie przejdź do kroku 7. Należy pamiętać, że lokalizacja musi być określona w postaci &#92; &#92; *serwera*&#92;*udostępnianie*&#92;*filename*. KOD XML.
 
     > [!IMPORTANT]
     >Problemy mogą wystąpić podczas próby zaimportowania istniejących ustawień klienta (XML) w tej wersji technical preview.

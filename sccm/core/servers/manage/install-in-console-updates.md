@@ -3,7 +3,7 @@ title: Aktualizacje w konsoli
 titleSuffix: Configuration Manager
 description: Zainstaluj aktualizacje do programu Configuration Manager z firmy Microsoft w chmurze
 ms.custom: na
-ms.date: 03/28/2018
+ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c14a3607-253b-41fb-8381-ae2d534a9022
 caps.latest.revision: 36
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 054bbd8e7b1dd3f5d565afe60eb7e3379cc7a9ee
-ms.sourcegitcommit: aed99ba3c5e9482199cb3fc5c92f6f3a160cb181
+ms.openlocfilehash: 9924346ccbd862aa4462075a3307b4ec40b955bc
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="install-in-console-updates-for-system-center-configuration-manager"></a>Instalacja aktualizacji w konsoli programu System Center Configuration Manager
 
@@ -369,10 +369,36 @@ Gdy aktualizacja zawiera jeden lub więcej funkcji opcjonalnych, masz możliwoś
 
 Aby wyświetlić dostępne funkcje i ich stan, w konsoli przejdź do **administracji** > **aktualizacje i obsługa** > **funkcji**.
 
-Jeśli funkcja nie jest opcjonalne, jest instalowana automatycznie i nie ma **funkcje** węzła.  
+Funkcja nie jest opcjonalne, jest instalowana automatycznie. Nie jest wyświetlana w **funkcje** węzła.  
+
+> [!Important]  
+> W hierarchii wielu lokacji można włączyć tylko funkcje opcjonalne lub wersji wstępnej z centralnej lokacji administracyjnej. Takie zachowanie gwarantuje, że nie ma żadnych konfliktów całej hierarchii. <!--507197-->
+ 
+
+Po włączeniu nowych funkcji i funkcji wersji wstępnej Menedżera hierarchii programu Configuration Manager (HMAN) musi przetworzyć zmiany, zanim ta funkcja stanie się dostępny. Przetwarzanie zmiana jest często natychmiastowe, ale może potrwać do 30 minut, w zależności od HMAN cykl przetwarzania. Po przetworzeniu zmiana wymaga ponownego uruchomienia konsoli możesz wyświetlić nowe węzły związane z tej funkcji.
+
+#### <a name="list-of-optional-features"></a>Lista funkcji opcjonalnych
+Opcjonalnie w najnowszej wersji programu Configuration Manager są następujące funkcje:<!--505213-->  
+- [Dostęp warunkowy dla zarządzanych komputerów](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm)  <!--1191496-->
+- [Usługa Passport for Work](/sccm/protect/deploy-use/windows-hello-for-business-settings) (znanej także jako *Windows Hello dla firm*) <!--1245704-->
+- [Sieć VPN dla systemu Windows 10](/sccm/protect/deploy-use/vpn-profiles) <!--1283610-->
+- [Zasady programu Windows Defender wykorzystać Guard](/sccm/protect/deploy-use/create-deploy-exploit-guard-policy) <!--1355468-->
+- [Łącznik programu Microsoft Operations Management Suite (OMS)](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite) <!--1258052-->
+- [Utwórz PFX](/sccm/protect/deploy-use/introduction-to-certificate-profiles) <!--1321368-->
+- [Klient równorzędnej pamięci podręcznej](/sccm/core/plan-design/hierarchy/client-peer-cache) <!--1101436-->
+- [Punkt usługi magazynu danych](/sccm/core/servers/manage/data-warehouse) <!--1277922-->
+- [Brama zarządzania w chmurze](/sccm/core/clients/manage/cmg/plan-cloud-management-gateway) <!--1101764-->
+- [Aktualizacje sterowników powierzchni](/sccm/sum/get-started/configure-classifications-and-products) <!--1098490-->
+- [Zadanie sekwencji wstępnie buforowanie zawartości](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content) <!--1021244-->
+- [Uruchom sekwencję zadań](/sccm/osd/deploy-use/manage-task-sequences-to-automate-tasks#add-child-task-sequences-to-a-task-sequence) <!--1261338-->
+- [Tworzenie i uruchamianie skryptów](/sccm/apps/deploy-use/create-deploy-scripts) <!--1236459-->
+- [Ocena zaświadczania o kondycji urządzenia dla zasady zgodności dla dostępu warunkowego](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm) <!--1235616-->
+- [Zatwierdzanie żądań aplikacji dla użytkowników na urządzenie](/sccm/apps/deploy-use/deploy-applications#specify-deployment-settings) <!--1357015-->  
 
 
-Po włączeniu nowych funkcji i funkcji wersji wstępnej Menedżera hierarchii programu Configuration Manager (HMAN) musi przetworzyć zmiany, zanim ta funkcja stanie się dostępny. Przetwarzanie zmiana jest często natychmiastowe, ale może potrwać do 30 minut, w zależności od HMAN cykl przetwarzania. Po przetworzeniu zmiana wymaga ponownego uruchomienia konsoli można wyświetlić nowy interfejs użytkownika związane z tej funkcji.
+> [!Tip]  
+> Aby uzyskać więcej informacji na temat funkcji, które wymagają zgody włączyć, zobacz [funkcje wersji wstępnej](/sccm/core/servers/manage/pre-release-features).  
+> Aby uzyskać więcej informacji na temat funkcji, które są dostępne tylko w wersji zapoznawczej technical preview gałęzi, zobacz [Technical Preview](/sccm/core/get-started/technical-preview).
 
 
 

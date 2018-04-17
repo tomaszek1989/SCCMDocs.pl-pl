@@ -1,25 +1,26 @@
 ---
-title: "Konfigurowanie spisu sprzętu dla urządzeń przenośnych"
+title: Konfigurowanie spisu sprzętu dla urządzeń przenośnych
 titleSuffix: Configuration Manager
-description: "Konfigurowanie spisu sprzętu dla urządzeń przenośnych zarejestrowanych w usłudze Microsoft Intune i programu System Center Configuration Manager."
+description: Konfigurowanie spisu sprzętu dla urządzeń przenośnych zarejestrowanych w usłudze Microsoft Intune i programu System Center Configuration Manager.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 78a0aecc-f775-451e-aa05-56377ec91b1f
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: c176955c3fcfe40f2089b84c50a982906b59f04d
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: c3dcb39b50293d5c221a1b8b13fcfbf8aa53ad83
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="how-to-configure-hardware-inventory-for-mobile-devices-enrolled-by-microsoft-intune-and-system-center-configuration-manager"></a>Jak skonfigurować spis sprzętu dla urządzeń przenośnych zarejestrowanych w usłudze Microsoft Intune i programu System Center Configuration Manager
 
@@ -27,7 +28,7 @@ ms.lasthandoff: 10/12/2017
 
 W programie Configuration Manager można zebrać spis sprzętu w systemach iOS, Android i Windows urządzeń przy użyciu łącznika programu Microsoft Intune. Aby uzyskać informacje o sposobie konfigurowania spisu sprzętu, zobacz [jak rozszerzyć spis sprzętu w programie System Center Configuration Manager](../../core/clients/manage/inventory/extend-hardware-inventory.md).  
 
- Aby uzyskać informacje o sposobie rejestrowania urządzeń w programie Microsoft Intune, zobacz [zarządzania urządzeniami przenośnymi w usłudze Microsoft Intune](https://technet.microsoft.com/en-us/library/dn646962.aspx).  
+ Aby uzyskać informacje o sposobie rejestrowania urządzeń w programie Microsoft Intune, zobacz [zarządzania urządzeniami przenośnymi w usłudze Microsoft Intune](https://technet.microsoft.com/library/dn646962.aspx).  
 
 ## <a name="hardware-inventory-for-mobile-devices"></a>Spis sprzętu dla urządzeń przenośnych  
  W poniższych tabelach przedstawiono klas sprzętu dostępnych dla spisu sprzętu w często używanych platform urządzeń przenośnych.  

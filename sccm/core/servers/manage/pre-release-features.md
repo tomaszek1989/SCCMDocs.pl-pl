@@ -1,9 +1,9 @@
 ---
 title: Funkcje wersji wstępnej
 titleSuffix: Configuration Manager
-description: Funkcje wersji wstępnej programu System Center Configuration Manager
+description: Funkcje wersji wstępnej są funkcje, które znajdują się w bieżącej gałęzi do wczesnego testowania w środowisku produkcyjnym.
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,15 +12,15 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6bce416b-761d-4b23-bd33-5b7c30edb10d
-caps.latest.revision: ''
-author: mestew
-ms.author: mstewart
+caps.latest.revision: 36
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c30fbeaad87b18750f65f90427366044d30c6609
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 6e3a6a8dd437238a9dd08b07494b51333283f41c
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="pre-release-features-in-system-center-configuration-manager"></a>Funkcje wersji wstępnej programu System Center Configuration Manager
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
@@ -39,7 +39,10 @@ Po zainstalowaniu aktualizacji, która zawiera funkcje wersji wstępnej, te funk
     Opcjonalnie można poczekać do włączenia funkcji wersji wstępnej później w **administracji** > **aktualizacje i obsługa** > **funkcje** węzła konsoli. W **funkcje** węzła wybierz funkcję, a następnie wybierz **włączyć**. Ta opcja jest szary, dopóki wyrażenia zgody. (Przed wersji 1702, aktualizacje i obsługa znajdowało się pod **administracji** > **usługi w chmurze**.)
   -   **Jeśli nie mają zgody:** Podczas instalowania aktualizacji, funkcje wersji wstępnej są widoczne w węźle aktualizacje i obsługa kreatora, ale są wygaszone i nie można włączyć. Po zainstalowaniu tej aktualizacji można wyświetlić te funkcje w **funkcje** węzła. Jednak nie można włączyć je dopiero po wyrazić zgodę **ustawienia hierarchii**.
 
-Jeśli udzielił zgody w autonomicznej lokacji głównej, a następnie rozwiń węzeł hierarchii, instalując nową centralną lokację administracyjną, należy wyrazić zgodę ponownie w witrynie Administracja centralna.
+
+> [!Important]  
+> W hierarchii wielu lokacji można włączyć tylko funkcje opcjonalne lub wersji wstępnej z centralnej lokacji administracyjnej. Takie zachowanie gwarantuje, że nie ma żadnych konfliktów całej hierarchii. <!--507197-->  
+> Jeśli udzielił zgody w autonomicznej lokacji głównej, a następnie rozwiń węzeł hierarchii, instalując nową centralną lokację administracyjną, należy wyrazić zgodę ponownie w witrynie Administracja centralna.  
 
  Po włączeniu funkcji wersji wstępnej, Menedżer hierarchii programu Configuration Manager (HMAN) musi przetworzyć zmiany, zanim ta funkcja stanie się dostępny. Przetwarzanie zmiana jest często natychmiastowe, ale może potrwać do 30 minut, w zależności od HMAN cykl przetwarzania. Po przetworzeniu zmiana wymaga ponownego uruchomienia konsoli można wyświetlić nowy interfejs użytkownika związane z tej funkcji.
 
@@ -54,7 +57,7 @@ Jeśli udzielił zgody w autonomicznej lokacji głównej, a następnie rozwiń w
 | Tworzenie i uruchamianie skryptów programu PowerShell z poziomu konsoli programu Configuration Manager <!-- 1236459 --> |  [Wersja 1706](/sccm/apps/deploy-use/create-deploy-scripts)|[Wersja 1802](/sccm/apps/deploy-use/create-deploy-scripts)|
 | Zarządzanie aktualizacjami sterownik Microsoft Surface <!-- 1098490 --> |  [Wersja 1706](/sccm/sum/get-started/configure-classifications-and-products) | [Wersja 1710](/sccm/sum/get-started/configure-classifications-and-products)|
 | Zarządzanie urządzeniami Guard z programu Configuration Manager <!-- 1319346 --> |  [Wersja 1702](/sccm/protect/deploy-use/use-device-guard-with-configuration-manager)|![Jeszcze nie](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
-| Zadanie sekwencji wstępnie buforowanie zawartości <!-- 1021244 --> |  [Wersja 1702](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content) | [Wersja 1706](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content)|
+| Zadanie sekwencji wstępnie buforowanie zawartości <!-- 1021244 --> |  [Wersja 1702](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content) | [Wersja 1710](/sccm/osd/deploy-use/create-a-task-sequence-to-upgrade-an-operating-system#configure-pre-cache-content)|
 | Sprawdź, czy uruchamianie plików wykonywalnych przed zainstalowaniem aplikacji <!-- 1284624 --> |   [Wersja 1702](/sccm/apps/deploy-use/deploy-applications#how-to-check-for-running-executable-files-before-installing-an-application) |[Wersja 1706](/sccm/apps/deploy-use/deploy-applications#how-to-check-for-running-executable-files-before-installing-an-application)|
 | Punkt usługi magazynu danych <!-- 1277922 --> |  [Wersja 1702](/sccm/core/servers/manage/data-warehouse) |[Wersja 1706](/sccm/core/servers/manage/data-warehouse)|
 | Równorzędnej pamięci podręcznej w celu dystrybucji zawartości do klientów <!-- 1101436 --> |  [Wersja 1610](/sccm/core/plan-design/hierarchy/client-peer-cache) | [Wersja 1710](/sccm/core/plan-design/hierarchy/client-peer-cache)|
@@ -63,3 +66,7 @@ Jeśli udzielił zgody w autonomicznej lokacji głównej, a następnie rozwiń w
 | Obsługa kolekcji wykrywania klastra (Usługa grupy serwera) <!-- 1081776 --> | [Wersja 1602](../../../core/get-started/capabilities-in-technical-preview-1605.md#BKMK_ServerGroups)|![Jeszcze nie](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif)|
 | Dostęp warunkowy dla komputerów zarządzanych przez program System Center Configuration Manager <!--  --> | [Wersja 1602](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm)     | [Wersja 1702](/sccm/mdm/deploy-use/manage-access-to-o365-services-for-pcs-managed-by-sccm)                     |
 <!--Image used = ![Not yet](media/83c5d168-8faf-4e8e-920b-528e3c43ffd4.gif) -->
+
+> [!Tip]  
+> Aby uzyskać więcej informacji na funkcje — się w wersji pre, które należy najpierw włączyć, zobacz [Włącz funkcje opcjonalne aktualizacji](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).  
+> Aby uzyskać więcej informacji na temat funkcji, które są dostępne tylko w wersji zapoznawczej technical preview gałęzi, zobacz [Technical Preview](/sccm/core/get-started/technical-preview).  

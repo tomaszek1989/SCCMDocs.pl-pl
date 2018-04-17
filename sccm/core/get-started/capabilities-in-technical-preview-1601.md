@@ -1,26 +1,27 @@
 ---
 title: Funkcje w wersji zapoznawczej Technical Preview 1601
 titleSuffix: Configuration Manager
-description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersja 1601."
+description: Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersja 1601.
 ms.custom: na
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aae1cf2f-2c04-4f68-a03a-f4a925433c09
-caps.latest.revision: "7"
+caps.latest.revision: 7
 author: erikje
 ms.author: erikje
 manager: angrobe
 robots: noindex,nofollow
-ms.openlocfilehash: 70efb483ac15ba14497b884ed753032e8e48a4b5
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: b17a89ab08c99a1c3cd8a501e7d58d5b42a110a3
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="capabilities-in-technical-preview-1601-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1601 programu System Center Configuration Manager
 
@@ -61,7 +62,7 @@ W tym artykule przedstawiono funkcje, które są dostępne w wersji Technical Pr
 
 **Poniżej przedstawiono nowe funkcje, które można wypróbować z tą wersją.**  
 
-##  <a name="bkmk_hybrid1"></a>Ulepszenia integracji programu Microsoft Intune  
+##  <a name="bkmk_hybrid1"></a> Ulepszenia integracji programu Microsoft Intune  
 W 1601 Technical Preview dodano obsługę następujących funkcji:  
 
 ### <a name="improvements-to-conditional-access"></a>Ulepszenia dostępu warunkowego  
@@ -79,11 +80,11 @@ W 1601 Technical Preview dodano obsługę następujących funkcji:
 
     -   Subskrypcja usługi Microsoft Intune. Subskrypcja usługi Microsoft Intune należy skonfigurować w konsoli programu Configuration Manager.  
 
-    -   [Wymagania wstępne dotyczące rejestracji automatycznej usługi Azure AD](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
+    -   [Wymagania wstępne dotyczące rejestracji automatycznej usługi Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
 
     Aby użyć opcji, należy utworzyć zasady zgodności w programie Configuration Manager za pomocą określonych reguł opisanych poniżej i ustawić zasady dostępu warunkowego w konsoli usługi Intune.  Ponadto aby upewnić się, mogą uzyskiwać dostęp tylko dla zgodnych komputerów, należy ustawić wymaganie na komputerze z systemem Windows **urządzenia muszą być zgodne** opcji. Poniżej przedstawiono reguły zasad zgodności, które mają zastosowanie do komputerów zarządzanych przez program System Center Configuration manager.  
 
-    -   **Wymagaj rejestracji w usłudze Azure ActiveDirectory:** Ta reguła sprawdza, czy urządzenie użytkownika miejscu pracy zostało dołączone do usługi Azure AD, a jeśli nie, urządzenie jest automatycznie rejestrowane w usłudze Azure AD. Automatyczna rejestracja jest obsługiwana tylko w systemie Windows 8.1. W przypadku komputerów z systemem Windows 7 należy wdrożyć instalatora MSI w celu przeprowadzenia rejestracji automatycznej. Aby uzyskać więcej informacji, zobacz [tutaj](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
+    -   **Wymagaj rejestracji w usłudze Azure ActiveDirectory:** Ta reguła sprawdza, czy urządzenie użytkownika miejscu pracy zostało dołączone do usługi Azure AD, a jeśli nie, urządzenie jest automatycznie rejestrowane w usłudze Azure AD. Automatyczna rejestracja jest obsługiwana tylko w systemie Windows 8.1. W przypadku komputerów z systemem Windows 7 należy wdrożyć instalatora MSI w celu przeprowadzenia rejestracji automatycznej. Aby uzyskać więcej informacji, zobacz [tutaj](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-automatic-device-registration/?rnd=1).  
 
     -   **Zainstalowano wszystkie wymagane aktualizacje z ostatecznym terminem przypadającym wcześniej niż określona liczba dni temu:** Ta reguła sprawdza, czy urządzenie użytkownika ma wszystkie wymagane aktualizacje (określone w **wymagane aktualizacje automatyczne** reguły) w ramach terminu ostatecznego i okresu prolongaty określonego przez użytkownika i automatycznie instaluje wszystkie oczekujące wymagane aktualizacje.  
 
@@ -127,7 +128,7 @@ W 1601 Technical Preview dodano obsługę następujących funkcji:
 
      Aby użyć tej opcji, przejdź do **ogólne** strony **warunkowego Kreatora konfiguracji zasad dostępu** dla lokalnego programu Exchange.  
 
-##  <a name="bkmk_clientStatus"></a>Stan online klienta  
+##  <a name="bkmk_clientStatus"></a> Stan online klienta  
 Począwszy od wersji zapoznawczej technical preview 1601, można określić jeden rzut oka czy klient jest w trybie online lub offline w konsoli programu Configuration Manager. Dzięki zaktualizowanym ikonom i kolumn w liście urządzeń konsoli można ocenić stan klientów w środowisku w celu zidentyfikowania obszarów problemów oraz innych problemów, które mogą wymagać Twojej uwagi.  
 
 Klient jest w trybie online, jeśli jest on aktualnie połączony z rolą systemu lokacji punktu zarządzania Configuration Manager. Tak długo, jak punkt zarządzania odbiera komunikaty typu ping od klienta, jest w stanie online. Jeśli punkt zarządzania nie odbierze komunikatu do 5 minut, stan klienta zmieni się na offline.  
@@ -160,7 +161,7 @@ Klient jest w trybie online, jeśli jest on aktualnie połączony z rolą system
 
  Aby wyświetlić ostatnie zmiany stanu klienta, Odśwież konsolę.  
 
-##  <a name="bkmk_appmgmt1601"></a>Ulepszenia dotyczące zarządzania aplikacjami  
+##  <a name="bkmk_appmgmt1601"></a> Ulepszenia dotyczące zarządzania aplikacjami  
  W wersji zapoznawczej Technical Preview 1601 dodano obsługę następujących funkcji:  
 
 ### <a name="manage-volume-purchased-apps-for-ios-devices"></a>Zarządzanie zbiorczo zakupionymi aplikacjami dla urządzeń z systemem iOS  
@@ -196,7 +197,7 @@ Klient jest w trybie online, jeśli jest on aktualnie połączony z rolą system
 
 -   W **wdrażanie oprogramowania** kreatora na **zasady konfiguracji aplikacji** Skojarz zasady konfiguracji aplikacji utworzone przy użyciu typu wdrożenia zgodnego z aplikacji.  
 
-##  <a name="bkmk_compliance1601"></a>Ulepszenia dotyczące ustawień zgodności  
+##  <a name="bkmk_compliance1601"></a> Ulepszenia dotyczące ustawień zgodności  
  W wersji zapoznawczej Technical Preview 1601 dodano obsługę następujących funkcji:  
 
 ### <a name="microsoft-edge-browser-settings"></a>Ustawienia przeglądarki Microsoft Edge  

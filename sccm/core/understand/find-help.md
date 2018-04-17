@@ -1,26 +1,27 @@
 ---
 title: Wyszukiwanie pomocy
 titleSuffix: Configuration Manager
-description: "Znajdź zasoby, aby uzyskać dodatkowe informacje o programie System Center Configuration Manager."
+description: Znajdź zasoby, aby uzyskać dodatkowe informacje o programie System Center Configuration Manager.
 ms.custom: na
 ms.date: 12/22/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 86810629-cf2a-43e8-86a2-847444119fc1
-caps.latest.revision: "19"
-caps.handback.revision: "0"
+caps.latest.revision: 19
+caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 73c057af033a91535d79c743e05df83601112626
-ms.sourcegitcommit: 92c3f916e6bbd35b6208463ff406e0247664543a
+ms.openlocfilehash: bcf53c11a30aa2fc3995697f36f00960035bbe57
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/02/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="find-help-for-using-system-center-configuration-manager"></a>Wyszukiwanie pomocy dotyczącej korzystania z programu System Center Configuration Manager
 
@@ -31,7 +32,7 @@ Ten artykuł zawiera wiele zasobów, aby znaleźć Pomoc dla programu Configurat
 Aby uzyskać pomoc dotyczącą produktów ułatwień dostępu, zobacz [funkcje ułatwień dostępu w programie System Center Configuration Manager](../../core/understand/accessibility-features.md).
 
 
-##  <a name="bkmk_Info"></a>Dokumentacja produktu  
+##  <a name="bkmk_Info"></a> Dokumentacja produktu  
  Użyj następujących zasobów, aby uzyskać dodatkowe informacje o programie Configuration Manager.  
 
 -   Aby uzyskać dostęp do najbardziej aktualnej dokumentacji produktu, Rozpocznij od [indeksu biblioteki](https://docs.microsoft.com/sccm/)
@@ -54,7 +55,7 @@ Aby uzyskać pomoc dotyczącą produktów ułatwień dostępu, zobacz [funkcje u
 
 
 ## <a name="product-feedback"></a>Opinię o produkcie
-Raport potencjalnych produktu usterki za pomocą [aplikacji Centrum opinii](https://support.microsoft.com/en-us/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app) wbudowana w systemie Windows 10. Gdy możesz **dodać nowe opinii**, pamiętaj o wybraniu **zarządzania przedsiębiorstwem** kategorii, a następnie wybierz jedną z następujących podkategorii:
+Raport potencjalnych produktu usterki za pomocą [aplikacji Centrum opinii](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app) wbudowana w systemie Windows 10. Gdy możesz **dodać nowe opinii**, pamiętaj o wybraniu **zarządzania przedsiębiorstwem** kategorii, a następnie wybierz jedną z następujących podkategorii:
  - Klient programu Configuration Manager
  - Konsola programu Configuration Manager
  - Wdrażanie systemu operacyjnego programu Configuration Manager
@@ -63,7 +64,7 @@ Raport potencjalnych produktu usterki za pomocą [aplikacji Centrum opinii](http
 Nadal używać naszych [strony głos użytkownika](http://configurationmanager.uservoice.com/) zagłosować na pomysły dotyczące funkcji nowe w programie Configuration Manager.
 
 
-##  <a name="BKMK_ProductGroupBlog"></a>Blog zespołu programu Configuration Manager  
+##  <a name="BKMK_ProductGroupBlog"></a> Blog zespołu programu Configuration Manager  
  Zespoły inżynieryjne programu Configuration Manager i partnerów [Enterprise Mobility + Security blog](https://cloudblogs.microsoft.com/enterprisemobility/?product=system-center-configuration-manager) dostarczają informacje techniczne i aktualności dotyczące programu Configuration Manager i technologii pokrewnych. Wpisy blogu uzupełniają dokumentację produktu i informacje pomocy technicznej.  
 
 

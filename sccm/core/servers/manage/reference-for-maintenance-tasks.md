@@ -1,26 +1,27 @@
 ---
 title: Informacje o zadaniach konserwacji
 titleSuffix: Configuration Manager
-description: "Przeczytaj szczegółowe informacje dla każdego zadania konserwacji programu System Center Configuration Manager lokacji i określa, czy zadania te są domyślnie włączone."
+description: Przeczytaj szczegółowe informacje dla każdego zadania konserwacji programu System Center Configuration Manager lokacji i określa, czy zadania te są domyślnie włączone.
 ms.custom: na
 ms.date: 3/8/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 68dc6acd-5848-47a4-b4c1-ffa40e47890b
-caps.latest.revision: "16"
-caps.handback.revision: "0"
+caps.latest.revision: 16
+caps.handback.revision: 0
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 3f67bddcb7233b62769271871354c86c5440e320
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 21b5e47efd2678f78fe7b7c0e10524ec7141634d
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="reference-for-maintenance-tasks-for-system-center-configuration-manager"></a>Informacje o zadaniach konserwacji programu System Center Configuration Manager
 
@@ -105,7 +106,7 @@ Ten temat zawiera szczegółowe informacje dotyczące każdego zadania konserwac
 -   **Lokacja główna**: Włączono    
 -   Lokacja dodatkowa: Niedostępne  
 
-**Usuń przestarzałe dane wykrywania**: To zadanie służy do usuwania przestarzałych danych odnajdywania z bazy danych. Dane te mogą obejmować rekordy wynikające z odnajdywania pulsu, funkcja odnajdowania sieci i metod odnajdywania usług domenowych w usłudze Active Directory (systemu, użytkowników i grup). Gdy to zadanie zostanie uruchomione w lokacji, dane powiązane z tą lokacją zostaną usunięte, a zmiany zostaną zreplikowane do innych lokacji. Aby uzyskać informacje na temat odnajdywania, zobacz [Uruchamianie odnajdywania dla programu System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
+**Usuń przestarzałe dane wykrywania**: To zadanie służy do usuwania przestarzałych danych odnajdywania z bazy danych. Dane te mogą obejmować rekordy wynikające z odnajdywania pulsu, funkcja odnajdowania sieci i metod odnajdywania usług domenowych w usłudze Active Directory (systemu, użytkowników i grup). To zadanie spowoduje również usunięcie przestarzałe urządzenia, oznaczona jako zlikwidowana. Gdy to zadanie zostanie uruchomione w lokacji, dane powiązane z tą lokacją zostaną usunięte, a zmiany zostaną zreplikowane do innych lokacji. Aby uzyskać informacje na temat odnajdywania, zobacz [Uruchamianie odnajdywania dla programu System Center Configuration Manager](../../../core/servers/deploy/configure/run-discovery.md).  
 
 -   Centralna lokacja administracyjna: Niedostępne    
 -   **Lokacja główna**: Włączono    

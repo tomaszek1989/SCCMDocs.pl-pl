@@ -1,7 +1,7 @@
 ---
 title: Funkcje w wersji zapoznawczej Technical Preview 1702
 titleSuffix: Configuration Manager
-description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersja 1702."
+description: Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersja 1702.
 ms.custom: na
 ms.date: 02/24/2017
 ms.prod: configuration-manager
@@ -12,15 +12,15 @@ ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aedd608d-6db3-4ea5-851d-70f2dcda6bb5
-caps.latest.revision: 
+caps.latest.revision: 5
 author: erikje
 ms.author: erikje
 manager: angrobe
-ms.openlocfilehash: ed2a858c55cbf389a0e974f4699b5a9c548953ef
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+ms.openlocfilehash: 94c025a75cd0aef62ee00c11b8ee5a113fba2bb1
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="capabilities-in-technical-preview-1702-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1702 programu System Center Configuration Manager
 
@@ -42,7 +42,7 @@ Ta wersja zapoznawcza wprowadza nowe opcje opinii w konsoli programu Configurati
 -  Po kliknięciu prawym przyciskiem myszy dowolnego obiektu w konsoli.   
     ![Kopiowanie kliknięcia](./media/feedback-option.png)   
 
-Wybieranie **opinii** Otwiera przeglądarkę, aby UserVoice programu Configuration Manager feedback witryny sieci Web, https://configurationmanager.uservoice.com/forums/300492-ideas.
+Wybieranie **opinii** otwiera w przeglądarce opinii UserVoice Menedżera konfiguracji witryny sieci Web, https://configurationmanager.uservoice.com/forums/300492-ideas.
 ##  <a name="changes-for-updates-and-servicing"></a>Zmiany dotyczące aktualizacji i obsługi
 Poniżej zostały wprowadzone w tej wersji zapoznawczej.
 
@@ -66,7 +66,7 @@ Można skonfigurować te ustawienia przy użyciu klasy konfiguracji agenta klien
 
 Gdy komputer odrzuci zawartości, komputera wysyłającego żądanie będzie wyszukiwać źródła alternatywne zawartości formularza w puli lokalizacji źródła zawartości.   
 
-## <a name="azurediscovery"></a>Azure Active Directory Domain Services umożliwia zarządzanie urządzeniami, użytkownikami i grupami
+## <a name="azurediscovery"></a> Azure Active Directory Domain Services umożliwia zarządzanie urządzeniami, użytkownikami i grupami
 
 Z tej wersji technical preview można zarządzać urządzeniami, które są przyłączone do usług domenowych w usłudze Azure Active Directory (AD) w wersji zarządzane domeny. Umożliwia również odnajdywanie urządzeń, użytkowników i grup w domenie z różnych metod odnajdywania programu Configuration Manager.
 
@@ -104,7 +104,7 @@ Usługi Azure AD przechowuje urządzeń bez względu na **komputerów AADDC** je
 Usługi Azure AD nie ma jednostkę Organizacyjną, która przechowuje grup. Zamiast tego należy używać tej samej struktury ogólne jako System lub użytkownik zapytania i skonfiguruj zapytanie LDAP do punktu z jednostką organizacyjną, która zawiera grupy, czy ma zostać przeprowadzone odnajdywanie.
 
 Zobacz następujące tematy, aby uzyskać więcej informacji na temat usługi Azure AD:  
- - [Azure Active Directory Domain Services](https://azure.microsoft.com/en-us/services/active-directory-ds) w witrynie azure.microsoft.com.
+ - [Azure Active Directory Domain Services](https://azure.microsoft.com/services/active-directory-ds) w witrynie azure.microsoft.com.
  - [Dokumentacja usługi domenowe Active Directory](https://docs.microsoft.com/azure/active-directory-domain-services) w witrynie docs.microsoft.com.
 
 ## <a name="conditional-access-device-compliance-policy-improvements"></a>Ulepszenia zasad zgodności urządzenia dostępu warunkowego
@@ -155,7 +155,7 @@ Nowe zasady zostaną wyświetlone w węźle **Zasady zgodności** w obszarze rob
 4. Gdy wszystko będzie gotowe, kliknij przycisk **OK**.
 
 ### <a name="monitor-the-compliance-policy"></a>Monitorowanie zasad zgodności
-Po utworzeniu zasad zgodności można monitorować wyniki zgodności w konsoli programu Configuration Manager. Aby uzyskać więcej informacji, zobacz [monitorowanie zasad zgodności](https://docs.microsoft.com/en-us/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy).
+Po utworzeniu zasad zgodności można monitorować wyniki zgodności w konsoli programu Configuration Manager. Aby uzyskać więcej informacji, zobacz [monitorowanie zasad zgodności](https://docs.microsoft.com/sccm/protect/deploy-use/create-compliance-policy#monitor-the-compliance-policy).
 
 
 ## <a name="improvements-to-software-center-settings-and-notification-messages-for-high-impact-task-sequences"></a>Ulepszenia w ustawieniach Centrum oprogramowania i komunikaty powiadomień dla sekwencji zadań o dużym wpływie na działanie
@@ -211,7 +211,7 @@ Poniższa procedura umożliwia skonfigurowanie szczegóły sekwencji zadań wyś
 
 ## <a name="check-for-running-executable-files-before-installing-an-application"></a>Sprawdź, czy uruchamianie plików wykonywalnych przed zainstalowaniem aplikacji
 
-W  *<deployment type name>*  **właściwości** okno dialogowe typu wdrożenia, na karcie zachowanie instalacji można teraz określić jedną więcej pliki wykonywalne, jeśli uruchomiony, blokuje instalację typu wdrożenia. Użytkownik musi zamknąć plik wykonywalny uruchomiona (lub może zostać zamknięty w automatycznie w przypadku wdrożeń z celem wymagane) przed wdrożeniem można było zainstalować typ.
+W *<deployment type name>* **właściwości** okno dialogowe typu wdrożenia, na karcie zachowanie instalacji można teraz określić jedną więcej pliki wykonywalne, jeśli uruchomiony, blokuje instalację typu wdrożenia. Użytkownik musi zamknąć plik wykonywalny uruchomiona (lub może zostać zamknięty w automatycznie w przypadku wdrożeń z celem wymagane) przed wdrożeniem można było zainstalować typ.
 
 ### <a name="try-it-out"></a>Wypróbować jej możliwości.
 

@@ -1,9 +1,9 @@
 ---
 title: Ustawienia funkcji Windows Hello dla firm
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak zintegrować Windows Hello dla firm z System Center Configuration Manager."
+description: Dowiedz się, jak zintegrować Windows Hello dla firm z System Center Configuration Manager.
 ms.custom: na
-ms.date: 09/21/2017
+ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,25 +12,31 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a95bc292-af10-4beb-ab56-2a815fc69304
-caps.latest.revision: 
-author: lleonard-msft
-ms.author: alleonar
-manager: angrobe
-ms.openlocfilehash: 195a5f8e595b6a8597e8c8c8d9046c5864f46526
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+caps.latest.revision: 17
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 0d5e0f5e1d47441bd105fb5cae2e8f3f313dfa54
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="windows-hello-for-business-settings-in-system-center-configuration-manager"></a>Ustawienia funkcji Windows Hello dla firm w programie System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
+<!--1245704-->
 System Center Configuration Manager umożliwia integrację z usługą Windows Hello dla firm (dawniej Microsoft Passport dla systemu Windows), czyli alternatywną metodą logowania dla urządzeń z systemem Windows 10. Funkcja Hello dla firm korzysta z usługi Active Directory lub konta usługi Azure Active Directory w celu zastąpienia hasła, karty inteligentnej lub wirtualnej karty inteligentnej.  
 
-Funkcja Hello dla firm pozwala używać **gestu użytkownika** do logowania, zamiast hasła. Gestem użytkownika może być prosty numer PIN, uwierzytelnianie biometryczne lub urządzenie zewnętrzne, np. czytnik linii papilarnych.
+Hello dla firm umożliwia korzystanie z **gestu użytkownika** logowania, zamiast hasła. Gestem użytkownika może być prosty numer PIN, uwierzytelnianie biometryczne lub urządzenie zewnętrzne, np. czytnik linii papilarnych.
 
-[Dowiedz się więcej na temat usługi Windows Hello dla firm](https://docs.microsoft.com/windows/access-protection/hello-for-business/hello-identity-verification)
+Aby uzyskać więcej informacji, zobacz [Windows Hello dla firm](https://docs.microsoft.com/windows/access-protection/hello-for-business/hello-identity-verification).
+
+
+> [!Note]  
+> Ta funkcja opcjonalna nie włączyć domyślne programu Configuration Manager. Należy włączyć tę funkcję, przed jego użyciem. Aby uzyskać więcej informacji, zobacz [Włącz funkcje opcjonalne aktualizacji](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+
 
  Configuration Manager integruje się z usługi Windows Hello dla firm na dwa sposoby:  
 
@@ -38,10 +44,10 @@ Funkcja Hello dla firm pozwala używać **gestu użytkownika** do logowania, zam
 
 -   W dostawcy magazynu kluczy funkcji Windows Hello dla firm można przechowywać certyfikaty uwierzytelniania. Aby uzyskać więcej informacji, zobacz [profile certyfikatów](introduction-to-certificate-profiles.md).  
 
-- Można wdrożyć usługi Windows Hello dla firm zasad na urządzeniach przyłączonych do domeny systemu Windows 10, w z klientem programu Configuration Manager. Ta konfiguracja jest opisana w [konfigurowania usługi Windows Hello dla firm na urządzeniach z systemem Windows 10 przyłączonych do domeny](#configure-windows-hello-for-business-on-domain-joined-windows-10-devices), poniżej. Gdy używasz programu Configuration Manager w usłudze Microsoft Intune (rozwiązanie hybrydowe), te ustawienia można skonfigurować na systemu Windows 10 i urządzeniach z systemem Windows 10 Mobile. Zobacz [konfigurowania usługi Windows Hello dla firm ustawienia (rozwiązanie hybrydowe)](../../mdm/deploy-use/windows-hello-for-business-settings.md) Aby uzyskać więcej informacji.
+- Można wdrożyć usługi Windows Hello dla firm zasad na urządzeniach przyłączonych do domeny systemu Windows 10, w z klientem programu Configuration Manager. Ta konfiguracja jest opisana w [konfigurowania usługi Windows Hello dla firm na urządzeniach z systemem Windows 10 przyłączonych do domeny](#configure-windows-hello-for-business-on-domain-joined-windows-10-devices) sekcji. Gdy używasz programu Configuration Manager w usłudze Microsoft Intune (rozwiązanie hybrydowe), te ustawienia można skonfigurować na systemu Windows 10 i urządzeniach z systemem Windows 10 Mobile. Aby uzyskać więcej informacji, zobacz [konfigurowania usługi Windows Hello dla firm ustawienia (rozwiązanie hybrydowe)](../../mdm/deploy-use/windows-hello-for-business-settings.md).
 
 ## <a name="configure-windows-hello-for-business-on-domain-joined-windows-10-devices"></a>Konfigurowanie usługi Windows Hello dla firm na urządzeniach z systemem Windows 10 przyłączonych do domeny
-Można kontrolować Windows Hello dla firm ustawień na urządzeniach z systemem Windows 10 przyłączonych do domeny, tworząc i wdrażając Windows Hello dla firm. Jest to zalecane podejście.
+Można kontrolować Windows Hello dla firm ustawień na urządzeniach z systemem Windows 10 przyłączonych do domeny, tworząc i wdrażając Windows Hello dla firm. Takie podejście jest zalecane.
 
 
 Jeśli korzystasz z uwierzytelniania opartego na certyfikatach, należy również wdrożyć profil certyfikatu zgodnie z opisem w [konfiguracji profilu certyfikatu](#configure-a-certificate-profile). Jeśli korzystasz z uwierzytelniania opartego na kluczach, Wdróż profil certyfikatu nie jest konieczne.
@@ -50,10 +56,10 @@ Jeśli korzystasz z uwierzytelniania opartego na certyfikatach, należy równie�
 
 W konsoli programu Configuration Manager w obszarze **dostęp do zasobów firmy**, kliknij prawym przyciskiem myszy **usługi Windows Hello dla firm profile** i wybierz polecenie **nowy** Aby uruchomić Kreatora profilu. Podaj ustawienia wymagane przez kreatora, przejrzyj i Potwierdź ustawienia na ostatniej stronie, a następnie kliknij przycisk **Zamknij**. Oto przykład jak może wyglądać ustawienia:  
 
-![Ustawienia funkcji Windows Hello dla firm](../media/Hello-for-Business-settings.png)
+![Usługi Windows Hello dla kreatora zasady biznesowe, wyświetlane na liście dostępnych ustawień](../media/Hello-for-Business-settings.png)
 
 ## <a name="configure-a-certificate-profile-to-enroll-the-windows-hello-for-business-enrollment-certificate-in-configuration-manager"></a>Konfigurowanie profilu certyfikatu w celu zarejestrowania certyfikatu rejestracji funkcji Windows Hello dla firm w programie Configuration Manager  
- Jeśli chcesz użyć usługi Windows Hello dla firm oparte na certyfikatach logowania, skonfiguruj następujące ustawienia:  
+ Jeśli chcesz użyć usługi Windows Hello dla firm oparte na certyfikatach logowania, należy skonfigurować następujące składniki:  
 
 -   Profil certyfikatu programu Configuration Manager.  
 
@@ -64,9 +70,8 @@ Najpierw należy utworzyć **Administratorzy klucz** grupy i dodać wszystkie pr
 
 Niektóre konfiguracje nie może być konieczne można skonfigurować uprawnienia lub mogą wymagać dalszej konfiguracji. Można skorzystać z poniższej tabeli, aby uzyskać więcej informacji:
 
-|||||
-|-|-|-|-|
 |Wersja klienta systemu Windows|Configuration Manager 1602 lub 1606|Menedżer konfiguracji 1610|Menedżer konfiguracji 1702 lub nowszy|
+|-|-|-|-|
 |Windows 10 Anniversary aktualizacji|Wymagana poprawka<br><br>Brak wymaganych uprawnień<br><br>Wymagana aktualizacja schematu systemu Windows|Wymagana poprawka (zobacz **ostrzeżenie**)<br><br>Brak wymaganych uprawnień<br><br>Wymagana aktualizacja schematu systemu Windows|Konfigurowanie uprawnień<br><br>Dotyczy systemu Windows Server 2016 schematu usługi Active Directory|
 |Windows 10 twórców Update lub nowszy|Nieobsługiwane|Zainstaluj [tej poprawki](https://support.microsoft.com/help/4010155/update-rollup-for-system-center-configuration-manager-current-branch-v)<br><br>Konfigurowanie uprawnień<br><br>Dotyczy systemu Windows Server 2016 schematu usługi Active Directory|Konfigurowanie uprawnień<br><br>Dotyczy systemu Windows Server 2016 schematu usługi Active Directory|
 
@@ -75,13 +80,13 @@ Niektóre konfiguracje nie może być konieczne można skonfigurować uprawnieni
 
 ## <a name="to-configure-permissions"></a>Aby skonfigurować uprawnienia
 
-1.  Zaloguj się do kontrolera lub zarządzania stacjach roboczych z administratora domeny lub równoważne poświadczeń.
+1.  Zaloguj się do kontrolera domeny lub stacjami roboczymi do zarządzania z administratora domeny lub równoważne poświadczeń.
 2.  Otwórz **użytkowników usługi Active Directory i komputery**.
 3.  W okienku nawigacji kliknij prawym przyciskiem myszy nazwę domeny, a następnie kliknij przycisk **właściwości**.
-4.  Na **zabezpieczeń** karcie  *<domain name>*  **właściwości** okno dialogowe, kliknij przycisk **zaawansowane**. Jeśli **zabezpieczeń** karta nie jest wyświetlana, Włącz **funkcje zaawansowane** z **widoku** menu **użytkownicy usługi Active Directory i komputery**.
+4.  Na **zabezpieczeń** karcie *<domain name>* **właściwości** okno dialogowe, kliknij przycisk **zaawansowane**. Jeśli **zabezpieczeń** karta nie jest wyświetlana, Włącz **funkcje zaawansowane** z **widoku** menu **użytkownicy usługi Active Directory i komputery**.
 5.  Kliknij pozycję **Dodaj**.
-6.  W **wpis uprawnienia dla**  *<domain name>*  okno dialogowe, kliknij przycisk **Wybierz podmiot zabezpieczeń**.
-7.  W **wybierz użytkownika, komputera, konto usługi lub grupy** okno dialogowe, typ **Administratorzy klucza** w **wprowadź nazwę obiektu do wybrania** pola tekstowego.  Kliknij przycisk **OK**.
+6.  W **wpis uprawnienia dla** *<domain name>* okno dialogowe, kliknij przycisk **Wybierz podmiot zabezpieczeń**.
+7.  W **wybierz użytkownika, komputera, konto usługi lub grupy** okno dialogowe, typ **Administratorzy klucza** w **wprowadź nazwę obiektu do wybrania** pola tekstowego. Kliknij przycisk **OK**.
 8.  Z **dotyczy** listy, wybierz **obiekty użytkownika podrzędnym**.
 9.  Przewiń do dołu strony, a następnie kliknij przycisk **Wyczyść wszystko**.
 10. W **właściwości** zaznacz **odczytu msDS-KeyCredentialLink**.

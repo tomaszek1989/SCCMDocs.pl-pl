@@ -1,26 +1,27 @@
 ---
-title: "Konfigurowanie systemu Android hybrydowego zarządzania urządzeniami w usłudze Microsoft Intune"
+title: Konfigurowanie systemu Android hybrydowego zarządzania urządzeniami w usłudze Microsoft Intune
 titleSuffix: Configuration Manager
-description: "Przygotowanie do zarządzania urządzeniami przenośnymi dla systemu Android za pomocą programu Configuration Manager i usługi Intune."
+description: Przygotowanie do zarządzania urządzeniami przenośnymi dla systemu Android za pomocą programu Configuration Manager i usługi Intune.
 ms.custom: na
 ms.date: 08/11/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: c517fe34-0130-465b-a020-bdb555878778
-caps.latest.revision: "9"
-caps.handback.revision: "0"
+caps.latest.revision: 9
+caps.handback.revision: 0
 author: arob98
 ms.author: angrobe
 manager: angrobe
-ms.openlocfilehash: c9b35122f6afbb4fffbbff48b919fd696939c897
-ms.sourcegitcommit: 51cfce302fa8ddf633ad1f379b1161c0617089b8
+ms.openlocfilehash: c75979e8485fa3ece2178af6d21ff06282206569
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/11/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="set-up-android-hybrid-device-management-with-system-center-configuration-manager-and-microsoft-intune"></a>Konfigurowanie hybrydowego zarządzania urządzeniami z systemem Android za pomocą programu System Center Configuration Manager i usługi Microsoft Intune
 
@@ -60,7 +61,7 @@ Poniższe kroki umożliwiają zarządzanie urządzeniami z systemem Android za p
 > Zapobiega to znany problem **Zarządzaj obsługiwanych urządzeniach użytkowników tylko w tych grupach jako Android for Work** opcję działać zgodnie z oczekiwaniami. Urządzenia użytkowników w określonym zarejestrować grup usługi Azure AD jako Android zamiast Android for Work. Aby włączyć Android for Work, należy użyć **Zarządzanie wszystkich obsługiwanych urządzeń jako Android for Work** opcji.
 
 
-Po skonfigurowaniu, należy poinformować użytkowników, jak zarejestrować swoje urządzenia. Zobacz [Co mówić użytkownikom na temat rejestrowania ich urządzeń](https://docs.microsoft.com/en-us/intune/end-user-educate). Te informacje dotyczą urządzeń przenośnych zarządzanych zarówno przez usługę Microsoft Intune, jak i program Configuration Manager.
+Po skonfigurowaniu, należy poinformować użytkowników, jak zarejestrować swoje urządzenia. Zobacz [Co mówić użytkownikom na temat rejestrowania ich urządzeń](https://docs.microsoft.com/intune/end-user-educate). Te informacje dotyczą urządzeń przenośnych zarządzanych zarówno przez usługę Microsoft Intune, jak i program Configuration Manager.
 
 Po zakończeniu wiązania, zobacz nazwę konta i nazwę organizacji w portalu usługi Intune. W tej chwili możesz zamknąć obie przeglądarki.
 

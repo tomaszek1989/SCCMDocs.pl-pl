@@ -1,26 +1,27 @@
 ---
-title: "Wdrażanie aplikacji wirtualnych App-V"
+title: Wdrażanie aplikacji wirtualnych App-V
 titleSuffix: Configuration Manager
-description: "Zobacz uwagi, które należy wziąć pod uwagę podczas tworzenia i wdrażania aplikacji wirtualnych."
+description: Zobacz uwagi, które należy wziąć pod uwagę podczas tworzenia i wdrażania aplikacji wirtualnych.
 ms.custom: na
-ms.date: 02/16/2017
+ms.date: 03/12/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-app
+ms.technology:
+- configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ddcad9f2-a542-4079-83ca-007d7cb44995
-caps.latest.revision: "11"
-caps.handback.revision: "0"
+caps.latest.revision: 11
+caps.handback.revision: 0
 author: mattbriggs
 ms.author: mabrigg
 manager: angrobe
-ms.openlocfilehash: bf324f458c37fa137e24179eb4455fcbe75c855d
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 99c259a20a7e9c9f34d7b355e6fea5d4c6861392
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="deploy-app-v-virtual-applications-with-system-center-configuration-manager"></a>Wdrażać aplikacje wirtualne App-V w programie System Center Configuration Manager
 
@@ -46,7 +47,7 @@ Oprócz innych wymagań programu System Center Configuration Manager i procedury
 
 -   Podczas sekwencjonowania aplikacji należy zapisać pakiet do lokalizacji dostępnej dla programu Configuration Manager. Następnie można utworzyć wdrożenie aplikacji zawierające tę aplikację wirtualną.  
 
--   Menedżer konfiguracji nie obsługuje korzystanie z funkcji współużytkowanej pamięci podręcznej tylko do odczytu programu App-V.  
+-   Menedżer konfiguracji nie obsługuje korzystanie z funkcji współużytkowanej pamięci podręcznej tylko do odczytu programu App-V 4.6.  
 
 -   Program Configuration Manager obsługuje funkcję magazynu zawartości udostępnione w App-V 5.  
 
@@ -66,7 +67,7 @@ Oprócz innych wymagań programu System Center Configuration Manager i procedury
      Przed wdrożeniem aplikacji wirtualnych, należy również zaktualizować klienta App-V 4.6 z dodatkiem SP1 z poprawką opisaną w artykule bazy wiedzy [2645225](http://go.microsoft.com/fwlink/p/?LinkId=237322).  
 
 -   **App-V 5, App-V 5.0 z dodatkiem SP1, App-V 5.0 z dodatkiem SP2, App-V 5.0 z dodatkiem SP3 i App-V 5.1**: App-V 5.0 z dodatkiem SP2 należy zainstalować [pakiet poprawek 5](https://support.microsoft.com/en-us/kb/2963211) lub użyć programu App-V 5.0 z dodatkiem SP3.  
--   **App-V 5.2**: To jest wbudowana w system Windows 10 Enterprise (rocznicy aktualizacji i nowsze).
+-   **App-V 5.2**: Jest to wbudowana w system Windows 10 Education (1607 i nowszych), Windows 10 Enterprise (1607 i nowszych) i systemu Windows Server 2016.
 
 Aby uzyskać więcej informacji na temat programu App-V w systemie Windows 10 zobacz następujące tematy:
 
@@ -83,7 +84,7 @@ Aby uzyskać więcej informacji na temat programu App-V w systemie Windows 10 zo
 
 3.   **Dystrybuuj**: Dystrybucja to proces udostępniania aplikacji App-V w punktach dystrybucji programu Configuration Manager.
 
-4.   **Wdrażanie**: Wdrażanie to proces udostępniania aplikacji na komputerach klienckich. Jest on nazywany przesyłaniem strumieniowym w pełnej infrastrukturze App-V.  
+4.   **Wdrażanie**: Wdrażanie to proces udostępniania aplikacji na komputerach klienckich. Jest to publikowania i przesyłaniem strumieniowym w pełnej infrastrukturze App-V.  
 
 ##  <a name="configuration-manager-virtual-application-delivery-methods"></a>Metody dostarczania aplikacji wirtualnych programu Configuration Manager  
 Program Configuration Manager obsługuje dwie metody dostarczania klientom aplikacji wirtualnych: przesyłanie strumieniowe oraz dostarczanie lokalne (Pobieranie i uruchamianie).
@@ -100,7 +101,7 @@ Użyj informacji w tej tabeli, aby określić, czy dostarczania strumieniowego j
 |W ramach tej metody do strumieniowania zawartości pakietu z punktów dystrybucyjnych są używane standardowe protokoły sieciowe.<br /><br /> Skróty programów dla aplikacji wirtualnych wywołują połączenie z punktem dystrybucji, dzięki czemu aplikacja wirtualna jest dostarczana na żądanie.<br /><br /> Ta metoda jest najlepsza w przypadku klientów mających szerokopasmowe połączenie z punktami dystrybucji.<br /><br /> Zaktualizowane aplikacje wirtualne dystrybuowane w całym przedsiębiorstwie stają się dostępne, kiedy klienci otrzymują zasady informujące o zastąpieniu bieżącej wersji i pobierają tylko zmiany względem poprzedniej.<br /><br /> Uprawnienia dostępu są definiowane w punkcie dystrybucji w celu uniemożliwienia użytkownikom dostępu aplikacji lub pakietów, do których nie ma ją uprawnień.|Aplikacje wirtualne są strumieniowane dopiero po pierwszym uruchomieniu. W takim scenariuszu użytkownik może otrzymać skróty programu dla aplikacji wirtualnych i odłączyć się od sieci przed ich pierwszym uruchomieniem. Jeśli użytkownik spróbuje uruchomić aplikację wirtualną, gdy klient jest w trybie offline, użytkownik widzi błąd i nie można uruchomić zwirtualizowanej aplikacji, ponieważ punkt dystrybucji programu Configuration Manager nie jest dostępne do przesyłania strumieniowego aplikacji. Aplikacja będzie niedostępna, dopóki użytkownik nie nawiąże połączenia z siecią i nie uruchomi aplikacji.<br /><br /> Aby tego uniknąć, można dostarczyć aplikację wirtualną klientom za pomocą metody lokalnego dostarczania, a także można włączyć internetowe zarządzanie klientami na potrzeby dostarczania strumieniowego.|  
 
 ###  <a name="local-delivery-download-and-execute"></a>Dostarczanie lokalne (Pobieranie i uruchamianie)  
-Korzystając z metody lokalnego dostarczania, klient programu Configuration Manager najpierw pobiera cały pakiet aplikacji wirtualnej do pamięci podręcznej klienta programu Configuration Manager. Menedżer konfiguracji następnie instruuje klienta App-V, aby strumieniował aplikację z pamięci podręcznej programu Configuration Manager do pamięci podręcznej programu App-V. Jeśli wdrożyć aplikację wirtualną na komputerach klienckich i jego zawartość nie jest w pamięci podręcznej programu App-V, App-V Client prześle strumieniowo zawartość aplikacji z pamięci podręcznej klienta programu Configuration Manager do pamięci podręcznej programu App-V, a następnie uruchomi aplikację. Po udanym uruchomieniu aplikacji, można ustawić klienta programu Configuration Manager, aby usuwał starsze wersje pakietu w kolejnych cyklach usuwania, albo zachowywał je w pamięci podręcznej klienta programu Configuration Manager.  
+Pobieranie i uruchamianie jest najczęściej, gdy za pomocą programu Configuration Manager, ponieważ takie podejście ściśle naśladuje, jak inne formaty aplikacji są dostarczane z programem Configuration Manager. Korzystając z metody lokalnego dostarczania, klient programu Configuration Manager najpierw pobiera cały pakiet aplikacji wirtualnej do pamięci podręcznej klienta programu Configuration Manager. Menedżer konfiguracji następnie instruuje klienta App-V, aby strumieniował aplikację z pamięci podręcznej programu Configuration Manager do pamięci podręcznej programu App-V. Jeśli wdrożyć aplikację wirtualną na komputerach klienckich i jego zawartość nie jest w pamięci podręcznej programu App-V, App-V Client prześle strumieniowo zawartość aplikacji z pamięci podręcznej klienta programu Configuration Manager do pamięci podręcznej programu App-V, a następnie uruchomi aplikację. Po udanym uruchomieniu aplikacji, można ustawić klienta programu Configuration Manager, aby usuwał starsze wersje pakietu w kolejnych cyklach usuwania, albo zachowywał je w pamięci podręcznej klienta programu Configuration Manager. Utrwalanie zawartość lokalnie może korzystać z dostarczania zawartości pakietu optymalizacji metod, takich jak usługa BranchCache i PeerCache.
 
 Użyj informacji w tej tabeli, aby określić, czy dostarczanie lokalne jest najlepszą metodę dostarczania dla Ciebie:   
 

@@ -1,25 +1,26 @@
 ---
-title: "Zarządzanie aplikacjami ze sklepu firmy Microsoft dla firm"
+title: Zarządzanie aplikacjami ze sklepu firmy Microsoft dla firm
 titleSuffix: Configuration Manager
-description: "Zarządzanie i wdrażanie aplikacji Microsoft Store dla firm za pomocą programu System Center Configuration Manager."
+description: Zarządzanie i wdrażanie aplikacji Microsoft Store dla firm za pomocą programu System Center Configuration Manager.
 ms.custom: na
 ms.date: 12/29/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-app
+ms.technology:
+- configmgr-app
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8cdb22a6-72d7-41f5-9bed-c098b1bcf675
-caps.latest.revision: "11"
+caps.latest.revision: 11
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 15644a8c1acdbde85c7ca194a72a10c3cc2c0fcc
-ms.sourcegitcommit: f1535281b2c3fecff773b722c3f7590bf6ba10a0
+ms.openlocfilehash: 89bb52b806c99395bca14be34d06611174823a3c
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="manage-apps-from-the-microsoft-store-for-business-with-system-center-configuration-manager"></a>Zarządzanie aplikacjami ze sklepu firmy Microsoft dla firm z programu System Center Configuration Manager
 [Microsoft Store dla firm](https://www.microsoft.com/business-store) jest, gdzie można znaleźć i zakupić aplikacje systemu Windows w Twojej organizacji, pojedynczo lub zbiorczo. Łącząc Sklep do programu Configuration Manager, można zsynchronizować listę aplikacji, które zostały zakupione w programie Configuration Manager. Następnie można wyświetlić tych aplikacji w konsoli programu Configuration Manager i wdrażać je tak, jaki wdraża się innych aplikacji.
@@ -88,7 +89,7 @@ Synchronizowanie listę aplikacji zakupionych w danej organizacji pozwala zobacz
 ### <a name="for-configuration-manager-versions-prior-to-1706"></a>Wersje programu Configuration Manager przed 1706
 
 **W usłudze Azure Active Directory należy zarejestrować programu Configuration Manager jako narzędzie do zarządzania "API sieci Web i/lub aplikacji sieci Web". Ta akcja umożliwia Identyfikatora klienta, które są potrzebne później.**
-1. W węźle usługi Active Directory [https://manage.windowsazure.com](https://manage.windowsazure.com), wybierz w usłudze Azure Active Directory, a następnie kliknij przycisk **aplikacji** > **Dodaj**.
+1. W węźle usługi Active Directory [ https://manage.windowsazure.com ](https://manage.windowsazure.com), wybierz w usłudze Azure Active Directory, a następnie kliknij przycisk **aplikacji** > **Dodaj**.
 2.  Kliknij przycisk **Dodaj aplikację moją organizację**.
 3.  Wprowadź nazwę aplikacji, wybierz pozycję **aplikacji sieci Web** i/lub **interfejsu API sieci Web**, następnie kliknij przycisk **dalej** strzałki.
 4.  Wprowadź ten sam adres URL dla obu **adres URL logowania** i **identyfikator URI aplikacji**. Adres URL może być dowolny i nie musi prowadzić do faktycznego adresu. Na przykład można wprowadzić *https://yourdomain/sccm*.
@@ -99,7 +100,7 @@ Synchronizowanie listę aplikacji zakupionych w danej organizacji pozwala zobacz
 2.  W obszarze **klucze**, wybierz czas trwania z listy, a następnie kliknij przycisk **zapisać**. Ta akcja powoduje utworzenie nowego klucza klienta. Nie opuścić tę stronę, dopóki nie został załadowany Microsoft Store dla firm do programu Configuration Manager.
 
 **W Store firmy Microsoft dla firm Konfigurowanie programu Configuration Manager jako narzędzie do zarządzania magazynami**
-1.  Otwórz [https://businessstore.microsoft.com/en-us/managementtools](https://businessstore.microsoft.com/en-us/managementtools) i zaloguj się w przypadku wyświetlenia monitu.
+1.  Otwórz [ https://businessstore.microsoft.com/managementtools ](https://businessstore.microsoft.com/managementtools) i zaloguj się w przypadku wyświetlenia monitu.
 2.  Zaakceptuj warunki użytkowania, jeśli jest to wymagane.
 3.  W obszarze **narzędzia do zarządzania**, kliknij przycisk **Dodaj narzędzie do zarządzania**.
 4.  W **Wyszukaj narzędzie według nazwy**, wpisz nazwę aplikacji wcześniej utworzony w usłudze AAD, a następnie kliknij przycisk **Dodaj**.
@@ -151,6 +152,6 @@ Dla każdej aplikacji sklepu, którymi zarządzasz można wyświetlić informacj
 
 Po wdrożeniu aplikacji online, wszelkie aktualizacje, aplikacja będzie pochodzić bezpośrednio z Microsoft Store. Ponadto programu Configuration Manager nie sprawdza zgodności wersji aplikacji online tylko system Windows zgłasza aplikacji jako zainstalowaną.  
 
-W przypadku wdrażania aplikacji w trybie offline na urządzeniach z systemem Windows 10 przy użyciu klienta programu Configuration Manager, nie należy zezwalać użytkownikom na aktualizację aplikacji zewnętrznych do wdrożenia programu Configuration Manager. Formant aktualizacji, które aplikacje w trybie offline jest szczególnie ważne w środowisku wielu użytkowników, takich jak klasy. Jedną opcję, aby wyłączyć Microsoft Store polega na użyciu [zasady grupy](https://docs.microsoft.com/en-us/windows/configuration/stop-employees-from-using-microsoft-store#a-href-idblock-store-group-policyablock-microsoft-store-using-group-policy). 
+W przypadku wdrażania aplikacji w trybie offline na urządzeniach z systemem Windows 10 przy użyciu klienta programu Configuration Manager, nie należy zezwalać użytkownikom na aktualizację aplikacji zewnętrznych do wdrożenia programu Configuration Manager. Formant aktualizacji, które aplikacje w trybie offline jest szczególnie ważne w środowisku wielu użytkowników, takich jak klasy. Jedną opcję, aby wyłączyć Microsoft Store polega na użyciu [zasady grupy](https://docs.microsoft.com/windows/configuration/stop-employees-from-using-microsoft-store#a-href-idblock-store-group-policyablock-microsoft-store-using-group-policy). 
 
 Po Microsoft Store dla firm administratora zakupów w aplikacji w trybie offline, nie należy również publikować aplikację do użytkowników za pośrednictwem sklepu. Taka konfiguracja powoduje, że użytkownicy nie może zainstalować lub aktualizacji w trybie online. Użytkownicy będą otrzymywać tylko aktualizacji aplikacji w trybie offline za pomocą programu Configuration Manager. 

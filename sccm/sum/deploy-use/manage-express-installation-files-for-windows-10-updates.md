@@ -1,25 +1,26 @@
 ---
-title: "Zarządzanie plikami instalacji ekspresowej aktualizacji systemu Windows 10"
+title: Zarządzanie plikami instalacji ekspresowej aktualizacji systemu Windows 10
 titleSuffix: Configuration Manager
-description: "Program Configuration Manager obsługuje pliki instalacji ekspresowej dla systemu Windows 10, która zapewnia mniejsze pliki do pobrania i instalacji szybsze na klientach."
-keywords: 
+description: Program Configuration Manager obsługuje pliki instalacji ekspresowej dla systemu Windows 10, która zapewnia mniejsze pliki do pobrania i instalacji szybsze na klientach.
+keywords: ''
 author: dougeby
 ms.author: dougeby
 manager: angrobe
 ms.date: 03/24/2017
 ms.topic: article
 ms.prod: configuration-manager
-ms.service: 
-ms.technology: configmgr-sum
+ms.service: ''
+ms.technology:
+- configmgr-sum
 ms.assetid: b8d8af88-e8ac-4deb-921b-975e2d2afd80
-ms.openlocfilehash: 1ec69b5679f726f20da4ff0f63d9271e5d06cee3
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 80ff608ca0e8270fc004995f861a0ccb312a6f34
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="manage-express-installation-files-for-windows-10-updates"></a>Zarządzanie plikami instalacji ekspresowej aktualizacji systemu Windows 10
-Począwszy od 1702 wersji programu Configuration Manager, Configuration Manager obsługuje pliki instalacji ekspresowej aktualizacji systemu Windows 10. Korzystając z obsługiwanej wersji systemu Windows 10, umożliwia ustawień programu Configuration Manager Pobierz tylko zmiany między bieżącego miesiąca systemu Windows 10 aktualizacji zbiorczej i aktualizacją poprzedniego miesiąca. Bez plików instalacji ekspresowej programu Configuration Manager pobiera pełnego systemu Windows 10 aktualizacji zbiorczej (w tym wszystkie aktualizacje z ostatnich miesięcy) każdego miesiąca. Przy użyciu plików instalacji ekspresowej zapewnia mniejsze pliki do pobrania i instalacji szybsze na klientach.
+Począwszy od 1702 wersji programu Configuration Manager, Configuration Manager obsługuje pliki instalacji ekspresowej aktualizacji systemu Windows 10. Korzystając z obsługiwanej wersji systemu Windows 10, można użyć ustawień klienta programu Configuration Manager skonfigurować klienta do Pobierz tylko zmiany między bieżącego miesiąca systemu Windows 10 aktualizacji zbiorczej i aktualizacją poprzedniego miesiąca. Bez plików instalacji ekspresowej klientów programu Configuration Manager Pobierz pełną systemu Windows 10 aktualizacji zbiorczej (w tym wszystkie aktualizacje z ostatnich miesięcy) każdego miesiąca. Przy użyciu plików instalacji ekspresowej zapewnia mniejsze pliki do pobrania i instalacji szybsze na klientach.
 
 > [!IMPORTANT]
 > Podczas ustawienia, aby obsługiwać użycie plików instalacji ekspresowej jest dostępna w 1702 wersji programu Configuration Manager, system operacyjny klienta obsługuje jest dostępna w systemie Windows 10 w wersji 1607 z aktualizacją usługi Windows Update Agent. Ta aktualizacja jest dostępna w przypadku aktualizacji wydanej w dniu 11 kwietnia 2017 (wtorek poprawek). Aby uzyskać więcej informacji na temat tych aktualizacji, zobacz [obsługuje artykułu 4015217](http://support.microsoft.com/kb/4015217). Przyszłe aktualizacje będzie korzystać z express dla mniejsze pliki do pobrania. Windows 10 w wersji 1607 bez aktualizacji i wcześniejsze wersje nie obsługują plików instalacji ekspresowej.
@@ -29,7 +30,10 @@ Począwszy od 1702 wersji programu Configuration Manager, Configuration Manager 
 Aby rozpocząć, synchronizacja metadanych dla plików instalacji ekspresowej systemu Windows 10, należy włączyć ją we właściwościach punktu aktualizacji oprogramowania.
 1.  W konsoli programu Configuration Manager, przejdź do **administracji** > **konfiguracja lokacji** > **witryny**.
 2.  Wybierz centralnej lokacji administracyjnej lub autonomicznej lokacji głównej.
-3.  Na karcie **Narzędzia główne** w grupie **Ustawienia** kliknij przycisk **Konfiguruj składniki lokacji**, a następnie kliknij pozycję **Punkt aktualizacji oprogramowania**. Na **pliki aktualizacji** wybierz opcję **pobrać pełną pliki dla wszystkich aktualizacji zatwierdzonych i pliki instalacji ekspresowej dla systemu Windows 10**.
+3.  Na karcie **Narzędzia główne** w grupie **Ustawienia** kliknij przycisk **Konfiguruj składniki lokacji**, a następnie kliknij pozycję **Punkt aktualizacji oprogramowania**. Na **pliki aktualizacji** wybierz opcję **pobrać zarówno pełne pliki wszystkie zatwierdzone aktualizacje i plików instalacji ekspresowej dla systemu Windows 10**.
+
+> [!NOTE]    
+> Nie można skonfigurować składnika punktu aktualizacji oprogramowania tylko pobieranie aktualizacji express.  Pobieranie instalacji ekspresowej plików będzie oprócz plików pełne i w związku z tym spowoduje zwiększenie ilości zawartości dystrybucji i przechowywane w punktach dystrybucji.
 
 ### <a name="to-enable-support-for-clients-to-download-and-install-express-installation-files"></a>Aby włączyć obsługę klientów pobrać i zainstalować pliki instalacji ekspresowej
 Aby włączyć obsługę plików instalacji ekspresowej na klientach, należy włączyć plików instalacji ekspresowej, w sekcji Ustawienia klienta aktualizacji oprogramowania. Spowoduje to utworzenie nowego odbiornik HTTP, która nasłuchuje żądań pobrać pliki instalacji ekspresowej na porcie, który określisz.

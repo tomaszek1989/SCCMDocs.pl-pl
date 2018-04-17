@@ -1,36 +1,37 @@
 ---
-title: "Zarządzanie dostępem do usług O365 dla komputerów zarządzanych"
+title: Zarządzanie dostępem do usługi O365
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak skonfigurować dostęp warunkowy dla komputerów, które są zarządzane przez program System Center Configuration Manager."
+description: Informacje o sposobie konfigurowania warunkowego dostępu do usług Office 365 dla komputerów, które są zarządzane przez program System Center Configuration Manager.
 ms.custom: na
-ms.date: 01/10/2018
+ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 34024741-edfa-4088-8599-d6bafc331e62
-caps.latest.revision: "15"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: e1f50ea65236473f059ded6ef85c37646e929e53
-ms.sourcegitcommit: e121d8d3dd82b9f2dde2cb5206cbee602ab8e107
+caps.latest.revision: 15
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 1e02cb911397d5f1f837996318b12049d328c9c3
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="manage-access-to-o365-services-for-pcs-managed-by-system-center-configuration-manager"></a>Zarządzanie dostępem do usług O365 dla komputerów zarządzanych przez program System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-W tym artykule opisano sposób konfigurowania dostępu warunkowego dla komputerów zarządzanych przez program Configuration Manager.  
+<!--1191496-->
+Konfigurowanie warunkowego dostępu do usług Office 365 dla komputerów zarządzanych przez program Configuration Manager.  
 
-<!--
- >> [!Tip]  
-> This feature was first introduced in version 1602 as a [pre-release feature](/sccm/core/servers/manage/pre-release-features). Beginning with version 1702, this feature is no longer a pre-release feature.
--->
+> [!Note]  
+> Ta funkcja opcjonalna nie włączyć domyślne programu Configuration Manager. Należy włączyć tę funkcję, przed jego użyciem. Aby uzyskać więcej informacji, zobacz [Włącz funkcje opcjonalne aktualizacji](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+
 
 Aby uzyskać informacje na temat konfigurowania dostępu warunkowego dla urządzeń zarejestrowanych i zarządzanych przez program Microsoft Intune, zobacz [zarządzanie dostępem do usług w programie System Center Configuration Manager](../../protect/deploy-use/manage-access-to-services.md). Ten artykuł obejmuje także urządzenia, które są domeny przyłączone i nie ocenione pod kątem zgodności.
 
@@ -94,15 +95,18 @@ Aby uzyskać informacje na temat konfigurowania dostępu warunkowego dla urządz
     - **Wymagaj funkcji BitLocker można włączyć w urządzeniu**
     - **Wymagaj Bezpieczny rozruch jest włączony na urządzeniu** 
     - **Wymagaj integralności kodu jest włączone na urządzeniu**
-    - **Wymaga wcześniejszego uruchomienia przed złośliwym oprogramowaniem włączenia na urządzeniu**
+    - **Wymaga wcześniejszego uruchomienia przed złośliwym oprogramowaniem włączenia na urządzeniu**  
 
->[!Tip]
-> Kryteria dostępu warunkowego zaświadczania o kondycji wprowadzonym w wersji 1710, to funkcja wersji wstępnej. Aby włączyć tę funkcję, zobacz [funkcje wersji wstępnej](/sccm/core/servers/manage/pre-release-features). 
+    >[!Tip]  
+    > Kryteria dostępu warunkowego zaświadczania o kondycji została wprowadzona w wersji 1710 jako [funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features). Począwszy od wersji 1802, ta funkcja nie jest już funkcji wersji wstępnej.<!--1235616-->  
+
+    > [!Note]  
+    > Ta funkcja opcjonalna nie włączyć domyślne programu Configuration Manager. Należy włączyć tę funkcję, przed jego użyciem. Aby uzyskać więcej informacji, zobacz [Włącz funkcje opcjonalne aktualizacji](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
 
 ### <a name="step-2-evaluate-the-effect-of-conditional-access"></a>Krok 2. Ocena wpływu dostępu warunkowego  
- Uruchom raport zgodności z dostępem warunkowym. Można je znaleźć w sekcji Monitorowanie, w raportach > Zarządzanie zgodnością i ustawieniami. Ten raport wyświetla stan zgodności dla wszystkich urządzeń.  Raportowania jako zgodne urządzenia będą miały dostępu do usługi Exchange Online i SharePoint Online.  
+ Uruchom **raport zgodności z dostępem warunkowym**. Można je znaleźć w **monitorowanie** obszarze roboczym **raporty** > **Zarządzanie zgodnością i ustawieniami**. Ten raport wyświetla stan zgodności dla wszystkich urządzeń. Raportowania jako zgodne urządzenia będą miały dostępu do usługi Exchange Online i SharePoint Online.  
 
- ![CA&#95;compliance&#95;report](media/CA_compliance_report.png)  
+ ![Konsola programu Configuration Manager, obszar roboczy monitorowanie, raportowanie, raporty, Zarządzanie zgodnością i ustawieniami: Raport zgodności z dostępem warunkowym](media/CA_compliance_report.png)  
 
 ### <a name="configure-active-directory-security-groups"></a>Konfigurowanie grup zabezpieczeń usługi Active Directory  
  Zasady dostępu warunkowego są przeznaczone dla grup użytkowników w zależności od typów zasad. Grupy te zawierają użytkowników, które zasady elementy docelowe lub wykluczone z zasad. Jeśli zasady jest przeznaczony dla użytkownika, każde urządzenie, którego używają musi być zgodne w celu uzyskania dostępu do usługi.  
@@ -113,12 +117,12 @@ Aby uzyskać informacje na temat konfigurowania dostępu warunkowego dla urządz
 
 -   **Grupy docelowe** — grupy użytkowników, dla których zasady są stosowane. Należy używać tej samej grupy, zgodności i zasad dostępu warunkowego.  
 
--   **Wykluczone grupy** — grupy użytkowników, którzy są wykluczeni z zasad (opcjonalnie)  
+-   **Wykluczone grupy** — grupy użytkowników, którzy są wykluczeni z zasad (opcjonalnie).  
     Jeśli użytkownik należy zarówno, są wykluczone z zasad.  
 
      Tylko grupy objęte zasadami dostępu warunkowego są oceniane.  
 
-### <a name="step-3--create-a-conditional-access-policy-for-exchange-online-and-sharepoint-online"></a>Krok 3.  Tworzenie zasad dostępu warunkowego dla usług Exchange Online i SharePoint Online  
+### <a name="step-3-create-a-conditional-access-policy-for-exchange-online-and-sharepoint-online"></a>Krok 3. Tworzenie zasad dostępu warunkowego dla usług Exchange Online i SharePoint Online  
 
 1.  W konsoli programu Configuration Manager kliknij pozycję **Zasoby i zgodność**.  
 

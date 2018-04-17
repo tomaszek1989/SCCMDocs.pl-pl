@@ -1,25 +1,26 @@
 ---
-title: "Zarządzanie dostępem do poczty e-mail"
+title: Zarządzanie dostępem do poczty e-mail
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak używać dostępu warunkowego programu System Center Configuration Manager do zarządzania dostępem do poczty e-mail programu Exchange."
+description: Dowiedz się, jak używać dostępu warunkowego programu System Center Configuration Manager do zarządzania dostępem do poczty e-mail programu Exchange.
 ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fa648e73-5fb8-4818-ab57-7466ffaf888e
-caps.latest.revision: "24"
+caps.latest.revision: 24
 author: andredm7
 ms.author: andredm
 manager: angrobe
-ms.openlocfilehash: a83c2030de8a146dad7bf2258e8a983c8ab6c45e
-ms.sourcegitcommit: 922d6d9c91ba2158b938df381277be1b5f1d434a
+ms.openlocfilehash: e36674d27757daab9ced4e7e8b51942a4929b5ff
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/13/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="manage-email-access-in-system-center-configuration-manager"></a>Zarządzanie dostępem do poczty e-mail w programie System Center Configuration Manager
 
@@ -47,7 +48,7 @@ Dostęp do programu Exchange Online i lokalnego programu Exchange można kontrol
 
 Aplikacje komputerowe pakietu Office można uzyskać dostępu do usługi Exchange Online na komputerach z systemem:  
 
--   Pakietem Office 2013 lub nowszym z włączonym [nowoczesnym uwierzytelnianiem](https://support.office.com/en-US/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a) .  
+-   Pakietem Office 2013 lub nowszym z włączonym [nowoczesnym uwierzytelnianiem](https://support.office.com/article/Using-Office-365-modern-authentication-with-Office-clients-776c0036-66fd-41cb-8928-5495c0f9168a).  
 
 -   Systemem Windows 7.0 lub Windows 8.1  
 
@@ -171,11 +172,11 @@ Nieobsługiwane przeglądarki zostaną zablokowane. Aplikacje programu OWA dla s
 #### <a name="for-exchange-online-and-tenants-in-the-new-exchange-online-dedicated-environment"></a>Usługa Exchange Online (i dzierżawy w nowym środowisku usługi Exchange Online w wersji dedykowanej)
 
 >[!NOTE]
->Można też utworzyć zasady dostępu warunkowego w konsoli zarządzania usługą Azure AD. Konsola zarządzania w usłudze Azure AD umożliwia tworzenie urządzeń w usłudze Intune zasady dostępu warunkowego (nazywane zasad dostępu warunkowego opartego na urządzeniach w usłudze Azure AD) oprócz innych zasad dostępu warunkowego, takich jak uwierzytelnianie wieloskładnikowe. Można także ustawić zasady dostępu warunkowego dla aplikacji przedsiębiorstwa innych firm, takich jak Salesforce i obsługuje pole tej usługi Azure AD. Aby uzyskać więcej informacji, zobacz [sposobu ustawiania zasad dostępu warunkowego opartego na urządzenia usługi Azure Active Directory do kontroli dostępu do usługi Azure Active Directory połączone aplikacji](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-policy-connected-applications/).
+>Można też utworzyć zasady dostępu warunkowego w konsoli zarządzania usługą Azure AD. Konsola zarządzania w usłudze Azure AD umożliwia tworzenie urządzeń w usłudze Intune zasady dostępu warunkowego (nazywane zasad dostępu warunkowego opartego na urządzeniach w usłudze Azure AD) oprócz innych zasad dostępu warunkowego, takich jak uwierzytelnianie wieloskładnikowe. Można także ustawić zasady dostępu warunkowego dla aplikacji przedsiębiorstwa innych firm, takich jak Salesforce i obsługuje pole tej usługi Azure AD. Aby uzyskać więcej informacji, zobacz [sposobu ustawiania zasad dostępu warunkowego opartego na urządzenia usługi Azure Active Directory do kontroli dostępu do usługi Azure Active Directory połączone aplikacji](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-policy-connected-applications/).
 
  Następujący przepływ jest używany przez zasady dostępu warunkowego dla usługi Exchange Online na potrzeby oceniania, czy urządzenia mają mieć do niej dostęp.  
 
- ![ConditionalAccess8 &#45; 1](media/ConditionalAccess8-1.png)  
+ ![ConditionalAccess8 & #45; 1](media/ConditionalAccess8-1.png)  
 
  Aby uzyskać dostęp do poczty e-mail, urządzenie musi:  
 
@@ -185,7 +186,7 @@ Nieobsługiwane przeglądarki zostaną zablokowane. Aplikacje programu OWA dla s
 
 -   Rejestrowanie urządzenia w usłudze Azure Active Directory (dzieje się automatycznie, gdy urządzenie jest zarejestrowane w usłudze Intune.  
 
-     W przypadku komputerów przyłączonych do domeny musisz skonfigurować [automatyczne rejestrowanie urządzenia](https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-automatic-device-registration/) w usłudze Azure Active Directory.  
+     W przypadku komputerów przyłączonych do domeny musisz skonfigurować [automatyczne rejestrowanie urządzenia](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-automatic-device-registration/) w usłudze Azure Active Directory.  
 
 -   Mieć aktywną pocztę e-mail, co powoduje skojarzenie Identyfikatora programu Exchange ActiveSync urządzenia z rekordem urządzenia w usłudze Azure Active Directory (dotyczy systemów iOS i tylko w przypadku urządzeń z systemem Android).  
 

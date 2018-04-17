@@ -1,26 +1,27 @@
 ---
-title: "Konfigurowanie systemu Android dla aplikacji służbowych przy użyciu zasad konfiguracji aplikacji"
+title: Konfigurowanie systemu Android dla aplikacji służbowych przy użyciu zasad konfiguracji aplikacji
 titleSuffix: Configuration Manager
-description: "Wyeliminować problemy z konfiguracją na urządzeniach z systemem Android for Work przez wdrożenie zasad konfiguracji aplikacji dla użytkowników przed ich uruchomieniem aplikacji."
+description: Wyeliminować problemy z konfiguracją na urządzeniach z systemem Android for Work przez wdrożenie zasad konfiguracji aplikacji dla użytkowników przed ich uruchomieniem aplikacji.
 ms.custom: na
 ms.date: 09/12/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-hybrid
+ms.technology:
+- configmgr-hybrid
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 9126d188-7780-45a4-b21d-7fcf4fad7da2
-caps.latest.revision: "0"
-caps.handback.revision: "0"
+caps.latest.revision: 0
+caps.handback.revision: 0
 author: NathBarn
 ms.author: NathBarn
 manager: angrobe
-ms.openlocfilehash: 79d1b3fed3baa74c8ad195925ccda35713cb8865
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 0b1d4993e6ddb2301121a1e32b1672425e919dea
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="apply-settings-to-android-for-work-apps-with-app-configuration-policies-in-system-center-configuration-manager"></a>Ustawienia dotyczą systemu Android dla aplikacji służbowych przy użyciu zasad konfiguracji aplikacji w programie System Center Configuration Manager
 
@@ -35,7 +36,7 @@ Zasady konfiguracji aplikacji można użyć w programie System Center Configurat
 Jeśli użytkownik wprowadzi ustawienia nieprawidłowo, obciążenia naprawione mieści się w pomocy technicznej i wdrażanie aplikacji jest powolne. Aby uniknąć tych problemów, zasady konfiguracji aplikacji służy do wdrożenia wymagane ustawienia dla użytkowników, zanim uruchomią oni aplikację. Ustawienia są automatycznie skojarzone z użytkownikiem. Użytkownik nie musi wykonywać żadnych czynności.
 Zamiast wdrażać zasady konfiguracji bezpośrednio do użytkowników i urządzeń, należy skojarzyć zasady z typem wdrożenia podczas wdrażania aplikacji. Ustawienia zasad są stosowane, gdy aplikacja sprawdza, czy je, zwykle przy pierwszym uruchomieniu aplikacji.
 
-Zasady konfiguracji aplikacji systemu android są dostępne tylko na urządzeniach z systemem Android for Work. Zasady konfiguracji aplikacji dotyczą zatwierdzonych aplikacji w sklepie Play pracy magazynu. Aby uzyskać więcej informacji o Android aplikacje nabyte zbiorczo, zobacz [sposobu wdrażania aplikacji w systemie Android pracy urządzeń](https://docs.microsoft.com/en-us/intune/deploy-use/android-for-work-apps).
+Zasady konfiguracji aplikacji systemu android są dostępne tylko na urządzeniach z systemem Android for Work. Zasady konfiguracji aplikacji dotyczą zatwierdzonych aplikacji w sklepie Play pracy magazynu. Aby uzyskać więcej informacji o Android aplikacje nabyte zbiorczo, zobacz [sposobu wdrażania aplikacji w systemie Android pracy urządzeń](https://docs.microsoft.com/intune/deploy-use/android-for-work-apps).
 
 Aby uzyskać więcej informacji na temat typów instalacji aplikacji, zobacz [wprowadzenie do zarządzania aplikacjami](/sccm/apps/understand/introduction-to-application-management).
 

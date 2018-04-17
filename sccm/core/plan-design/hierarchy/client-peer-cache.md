@@ -1,34 +1,41 @@
 ---
-title: "Klient równorzędnej pamięci podręcznej"
+title: Klient równorzędnej pamięci podręcznej
 titleSuffix: Configuration Manager
-description: "Używanie równorzędnej pamięci podręcznej dla lokalizacji źródła zawartości klienta podczas wdrażania zawartości w programie System Center Configuration Manager."
+description: Używanie równorzędnej pamięci podręcznej dla lokalizacji źródła zawartości klienta podczas wdrażania zawartości w programie System Center Configuration Manager.
 ms.custom: na
-ms.date: 12/07/2017
+ms.date: 04/10/2018
 ms.reviewer: na
 ms.suite: na
 ms.prod: configuration-manager
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 86cd5382-8b41-45db-a4f0-16265ae22657
-caps.latest.revision: "3"
+caps.latest.revision: 3
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 424f4030f2dd2a337a29d48ca831fa3a791de610
-ms.sourcegitcommit: e121d8d3dd82b9f2dde2cb5206cbee602ab8e107
+manager: dougeby
+ms.openlocfilehash: 99eef9faf6ac66f65d16020b703e3a64d9beb9d0
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="peer-cache-for-configuration-manager-clients"></a>Buforowania równorzędnego klientów programu Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-W programie System Center Configuration Manager wersji 1610, można użyć **równorzędnej pamięci podręcznej** pomagające w zarządzaniu wdrażaniem zawartości dla klientów w lokalizacjach zdalnych. Równorzędna pamięć podręczna jest wbudowanego rozwiązania programu Configuration Manager, która umożliwia klientom na współużytkowanie zawartości z innymi klientami bezpośrednio z lokalnej pamięci podręcznej.   
+<!--1101436-->
+Użyj **równorzędnej pamięci podręcznej** pomagające w zarządzaniu wdrażaniem zawartości dla klientów w lokalizacjach zdalnych. Równorzędna pamięć podręczna jest wbudowanego rozwiązania programu Configuration Manager, która umożliwia klientom na współużytkowanie zawartości z innymi klientami bezpośrednio z lokalnej pamięci podręcznej.   
 
 > [!TIP]  
-> Ta funkcja została wprowadzona w wersji 1610 jako [funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features). Począwszy od wersji 1710, ta funkcja nie jest już funkcji wersji wstępnej.
+> Ta funkcja została wprowadzona w wersji 1610 jako [funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features). Począwszy od wersji 1710, ta funkcja nie jest już funkcji wersji wstępnej.  
+
+
+> [!Note]  
+> Ta funkcja opcjonalna nie włączyć domyślne programu Configuration Manager. Należy włączyć tę funkcję, przed jego użyciem. Aby uzyskać więcej informacji, zobacz [Włącz funkcje opcjonalne aktualizacji](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+
 
 ## <a name="overview"></a>Omówienie
 Klient równorzędnej pamięci podręcznej jest możliwość używania równorzędnej pamięci podręcznej klienta programu Configuration Manager. Równorzędnej pamięci podręcznej, który klient, który ma on zawartości mogą udostępniać dodatkowe klientach jest źródłem równorzędnej pamięci podręcznej.
@@ -37,7 +44,7 @@ Klient równorzędnej pamięci podręcznej jest możliwość używania równorz�
     -  Muszą być przyłączone do domeny. Jednak klient, który nie jest przyłączony do domeny mogą pobierać zawartość z domeny częścią źródła równorzędnej pamięci podręcznej.
     -  Musi należeć do bieżącej grupy granic klienta, który jest wyszukiwanie zawartości. Gdy klient użyje powrotu do wyszukania zawartości z grupą granic sąsiada, listy lokalizacji źródła zawartości nie ma w grupie granic sąsiada równorzędnej pamięci podręcznej klienta. Aby uzyskać więcej informacji o grupach granic bieżących i sąsiada, zobacz [grup granic](/sccm/core/servers/deploy/configure/define-site-boundaries-and-boundary-groups##a-namebkmkboundarygroupsa-boundary-groups).
  - Klient programu Configuration Manager służy każdego typu zawartości w pamięci podręcznej dla innych klientów przy użyciu równorzędnej pamięci podręcznej. Ta zawartość zawiera pliki usługi Office 365 i określa pliki instalacyjne.<!--SMS.500850-->
- -  Równorzędna pamięć podręczna nie zastępuje użycia innych rozwiązań, takich jak usługi BranchCache. Równorzędnej pamięci podręcznej działa wraz z innych rozwiązań więcej opcji rozszerzenia tradycyjnych rozwiązań wdrażania zawartości takie jak punkty dystrybucji. Równorzędna pamięć podręczna jest rozwiązanie niestandardowe z nie zależy od usługi BranchCache.  Jeśli nie włączysz lub użyć usługi Windows BranchCache, równorzędnej pamięci podręcznej nadal działa.
+ -  Równorzędna pamięć podręczna nie zastępuje użycia innych rozwiązań, takich jak usługi BranchCache. Równorzędnej pamięci podręcznej działa wraz z innych rozwiązań więcej opcji rozszerzenia tradycyjnych rozwiązań wdrażania zawartości takie jak punkty dystrybucji. Równorzędna pamięć podręczna jest rozwiązanie niestandardowe z nie zależy od usługi BranchCache. Jeśli nie włączysz lub użyć usługi Windows BranchCache, równorzędnej pamięci podręcznej nadal działa.
 
 ### <a name="operations"></a>Operacje
 
@@ -81,7 +88,7 @@ Ten raport umożliwia poznać szczegóły odrzucenia dla typu grupy lub odrzucen
 3. **Elementu równorzędnego pamięci podręcznej źródła zawartości odrzucenia szczegóły**:   
   Ten raport służy do zrozumienia zawartość, która zażądano klienta, gdy odrzucona.
 
- - **Znany problem:** Nie można wybierać z dostępnych parametrów, a zamiast tego należy wprowadzić je ręcznie. Wprowadź wartość dla *typu odrzucenia* wyświetlaną w **elementu równorzędnego pamięci podręcznej źródła zawartości odrzucenia** raportu. Następnie wprowadź *identyfikator zasobu* dla źródła zawartości, o którym chcesz uzyskać więcej informacji.  Aby znaleźć identyfikator zasobu źródła zawartości:  
+ - **Znany problem:** Nie można wybierać z dostępnych parametrów, a zamiast tego należy wprowadzić je ręcznie. Wprowadź wartość dla *typu odrzucenia* wyświetlaną w **elementu równorzędnego pamięci podręcznej źródła zawartości odrzucenia** raportu. Następnie wprowadź *identyfikator zasobu* dla źródła zawartości, o którym chcesz uzyskać więcej informacji. Aby znaleźć identyfikator zasobu źródła zawartości:  
 
     1. Znajdowanie nazwy komputera, który będzie wyświetlany jako *źródła równorzędnej pamięci podręcznej* w wynikach **elementu równorzędnego odrzucenia zawartości w pamięci podręcznej źródło przez warunek** raportu.  
     2. Następnie należy przejść do **zasoby i zgodność** > **urządzeń** , a następnie wyszukaj tej nazwy komputerów. Użyj wartości w kolumnie Identyfikator zasobu.  
@@ -92,7 +99,7 @@ Ten raport umożliwia poznać szczegóły odrzucenia dla typu grupy lub odrzucen
 
 -   Tylko klienci mogą przesyłać zawartość, od klientów równorzędnej pamięci podręcznej, które znajdują się w ich bieżącej grupy granic.
 
--   Przed wersją 1706 każdej lokacji, w którym klienci używają równorzędnej pamięci podręcznej musi być skonfigurowany z [konta dostępu do sieci](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account). Począwszy od wersji 1706, że konto nie jest już wymagane z jednym wyjątkiem.  Scenariusz wyjątku jest w przypadku elementu równorzędnego z obsługą pamięci podręcznej klient uruchamia sekwencję zadań z Centrum oprogramowania, a sekwencja zadań wykonuje ponowny rozruch do obrazu rozruchowego. W tym scenariuszu klient nadal wymaga konta dostępu do sieci. Jeśli klient znajduje się w środowisku Windows PE, używa konta dostępu do sieci pobierać zawartość ze źródła równorzędnej pamięci podręcznej.
+-   Przed wersją 1706 każdej lokacji, w którym klienci używają równorzędnej pamięci podręcznej musi być skonfigurowany z [konta dostępu do sieci](/sccm/core/plan-design/hierarchy/manage-accounts-to-access-content#a-namebkmknaaa-network-access-account). Począwszy od wersji 1706, że konto nie jest już wymagane z jednym wyjątkiem. Scenariusz wyjątku jest w przypadku elementu równorzędnego z obsługą pamięci podręcznej klient uruchamia sekwencję zadań z Centrum oprogramowania, a sekwencja zadań wykonuje ponowny rozruch do obrazu rozruchowego. W tym scenariuszu klient nadal wymaga konta dostępu do sieci. Jeśli klient znajduje się w środowisku Windows PE, używa konta dostępu do sieci pobierać zawartość ze źródła równorzędnej pamięci podręcznej.
 
     Gdy jest to wymagane, komputer źródła równorzędnej pamięci podręcznej używa konta dostępu do sieci do uwierzytelniania żądań pobierania od elementów równorzędnych. To konto wymaga tylko uprawnienia użytkownika domeny, w tym celu.
 

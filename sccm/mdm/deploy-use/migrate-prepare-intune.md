@@ -1,21 +1,21 @@
 ---
-title: "Przygotowanie usługi Intune dla użytkowników"
+title: Przygotowanie usługi Intune dla użytkowników
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak przygotować usługę Intune na platformie Azure do migracji użytkownika z hybrydowego zarządzania urządzeniami przenośnymi."
-keywords: 
+description: Dowiedz się, jak przygotować usługę Intune na platformie Azure do migracji użytkownika z hybrydowego zarządzania urządzeniami przenośnymi.
+keywords: ''
 author: dougeby
 manager: dougeby
 ms.date: 12/05/2017
 ms.topic: article
 ms.prod: configmgr-hybrid
-ms.service: 
-ms.technology: 
+ms.service: ''
+ms.technology: ''
 ms.assetid: db97ae9e-34f4-4e10-a282-cd211f612bb4
-ms.openlocfilehash: 226586f0ee42cdad98b1d74f25421685d85e0dcf
-ms.sourcegitcommit: 8c6e9355846ff6a73c534c079e3cdae09cf13c45
+ms.openlocfilehash: 8d636f2c46f3fa14fbc76a605d2cf55a2c0375c6
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="prepare-intune-for-user-migration"></a>Przygotowanie usługi Intune dla użytkowników 
 
@@ -42,7 +42,7 @@ W programie Configuration Manager w przypadku dodania kolekcji do subskrypcji us
 Użytkownikami i grupami są prawdopodobnie już w usłudze AAD, ponieważ ma skonfigurowany synchronizacji katalogów. Aby upewnić się, że użytkownicy są częścią grupy użytkownika, firma Microsoft zaleca przejrzenie grupy użytkowników usługi Intune. Zasady, profile, aplikacje itd. do tych grup są przeznaczone. Upewnij się, że użytkowników, których można dokonać migracji do autonomicznej usługi Intune są częścią grupy poprawne. 
 
 ## <a name="configure-role-based-administration-control-rbac"></a>Skonfiguruj kontrolę administracji opartej na rolach (RBAC)
-W ramach migracji skonfiguruj wszystkie wymagane role RBAC w usłudze Intune i przypisać użytkowników do tych ról. Należy pamiętać, że istnieją różnice między RBAC w programie Configuration Manager i usługi Intune, takie jak zakres zasobów. Aby uzyskać więcej informacji, zobacz [kontroli administracji opartej na rolach (RBAC) przy użyciu usługi Intune](https://docs.microsoft.com/en-us/intune/role-based-access-control).
+W ramach migracji skonfiguruj wszystkie wymagane role RBAC w usłudze Intune i przypisać użytkowników do tych ról. Należy pamiętać, że istnieją różnice między RBAC w programie Configuration Manager i usługi Intune, takie jak zakres zasobów. Aby uzyskać więcej informacji, zobacz [kontroli administracji opartej na rolach (RBAC) przy użyciu usługi Intune](https://docs.microsoft.com/intune/role-based-access-control).
 
 ## <a name="assign-apps-and-policies-to-aad-groups"></a>Przypisywanie aplikacji i zasad do grup usługi AAD
 Jeśli poszło za pośrednictwem [danych Import Configuration Manager w usłudze Microsoft Intune](migrate-import-data.md) fazy procesu migracji przeprowadzić migrację innego programu Configuration Manager obiekty do usługi Intune, wiele obiektów mogą być już przypisane do grup usługi AAD. Jednak należy sprawdzić, czy wszystkie obiekty (aplikacje, zasady, profile, itp.) są przypisane do poprawne grup usługi AAD. Jeśli poprawnie przypisanie obiektów urządzeń użytkownika są konfigurowane automatycznie po migracji należy niewidoczny dla użytkowników i migracji użytkownika. Aby uzyskać więcej informacji o przypisywaniu obiekty do grupy usługi AAD, zobacz następujące tematy: 
@@ -62,7 +62,7 @@ Skrypty programu PowerShell dostępnych może ułatwić przygotowania do przejś
 ### <a name="steps-to-ensure-conditional-access-works-properly-after-user-migration"></a>Kroki w celu zapewnienia działania dostępu warunkowego prawidłowo po migracji użytkowników
 Dla dostępu warunkowego do poprawnego działania po przeprowadzeniu migracji użytkowników i upewnij się, że użytkownicy nadal mają dostęp do swojego serwera poczty e-mail upewnij się, że są spełnione następujące warunki:
 - Jeśli programu Exchange ActiveSync dostępu poziomu ustawieniem domyślnym (DefaultAccessLevel) jest ustawiona na blokowanie lub kwarantannę, urządzenia mogą utracić dostęp do poczty e-mail. 
-- Jeśli łącznik programu Exchange jest zainstalowany w programie Configuration Manager i **poziom dostępu, gdy urządzenie przenośne nie jest zarządzane przez regułę** ustawienie ma wartość **zezwolić na dostęp**, musisz zainstalować [ Łącznik programu Exchange lokalnego](https://docs.microsoft.com/en-us/intune/conditional-access-exchange-create#configure-exchange-on-premises-access) w usłudze Intune, przed przeprowadzeniem migracji użytkowników. Skonfiguruj domyślne ustawienia poziomu dostępu w usłudze Intune na **do lokalnego programu Exchange** bloku w **ustawień dostępu do programu Exchange ActiveSync zaawansowane**. Aby uzyskać więcej informacji, zobacz [Konfigurowanie lokalnego programu Exchange dostępu](https://docs.microsoft.com/intune/conditional-access-exchange-create#configure-exchange-on-premises-access).
+- Jeśli łącznik programu Exchange jest zainstalowany w programie Configuration Manager i **poziom dostępu, gdy urządzenie przenośne nie jest zarządzane przez regułę** ustawienie ma wartość **zezwolić na dostęp**, musisz zainstalować [ Łącznik programu Exchange lokalnego](https://docs.microsoft.com/intune/conditional-access-exchange-create#configure-exchange-on-premises-access) w usłudze Intune, przed przeprowadzeniem migracji użytkowników. Skonfiguruj domyślne ustawienia poziomu dostępu w usłudze Intune na **do lokalnego programu Exchange** bloku w **ustawień dostępu do programu Exchange ActiveSync zaawansowane**. Aby uzyskać więcej informacji, zobacz [Konfigurowanie lokalnego programu Exchange dostępu](https://docs.microsoft.com/intune/conditional-access-exchange-create#configure-exchange-on-premises-access).
 - Użyj tej samej konfiguracji dla łączników. Ostatni łącznik, który należy skonfigurować zastępuje ustawienia organizacji ActiveSync wcześniej zapisane przez łącznik programu. Jeśli konfigurujesz łączniki inaczej, może to spowodować zmiany nieoczekiwany dostępu warunkowego.
 - Usunąć użytkowników z dostępu warunkowego obiektów docelowych w programie Configuration Manager po ich zmigrowaniu do autonomicznej usługi Intune.
 

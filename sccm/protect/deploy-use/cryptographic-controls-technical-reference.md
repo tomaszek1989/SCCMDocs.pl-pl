@@ -1,23 +1,24 @@
 ---
-title: "Informacje techniczne dotyczące formantów kryptograficznych"
+title: Informacje techniczne dotyczące formantów kryptograficznych
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak podpisywania i szyfrowania może pomóc chronić ataków odczytywania danych w programie System Center Configuration Manager."
+description: Dowiedz się, jak podpisywania i szyfrowania może pomóc chronić ataków odczytywania danych w programie System Center Configuration Manager.
 ms.custom: na
 ms.date: 12/8/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 2c1ed6f4c93f74719ab3fe5d723f7dc01eb1ede7
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+ms.openlocfilehash: 3057d3d78dbb67e0b1b061a6845a6885570b239a
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="cryptographic-controls-technical-reference"></a>Informacje techniczne dotyczące formantów kryptograficznych
 
@@ -196,7 +197,7 @@ System Center Configuration Manager korzysta z podpisywania i szyfrowania, aby u
 
 -   Punkt usługi sieci Web Wykaz aplikacji  
 
--   Punkt witryny sieci Web katalogu aplikacji  
+-   Punkt witryny sieci Web wykazu aplikacji  
 
 -   Punkt synchronizacji analizy zasobów  
 
@@ -218,7 +219,7 @@ System Center Configuration Manager korzysta z podpisywania i szyfrowania, aby u
 
 -   Punkt aktualizacji oprogramowania  
 
--   Punkt migracji stanu  
+-   punkt migracji stanu  
 
 -   Punkt modułu sprawdzania kondycji systemu  
 
@@ -286,5 +287,5 @@ Aby zwiększyć bezpieczeństwo serwerów oraz klientów programu Configuration 
 -   Wyłączenie protokołu SSL 3.0 i TLS 1.0, TLS 1.1 
 -   Zmiana kolejności mechanizmów szyfrowania związanych z protokołem TLS 
 
-Aby uzyskać więcej informacji, zobacz [jak ograniczyć stosowanie niektórych protokołów w bibliotece Schannel.dll i algorytmów kryptograficznych](https://support.microsoft.com/en-us/kb/245030/) i [Priorytetyzowanie mechanizmy szyfrowania Schannel](https://msdn.microsoft.com/en-us/library/windows/desktop/bb870930.aspx). Te procedury nie wpływa na działanie programu Configuration Manager.
+Aby uzyskać więcej informacji, zobacz [jak ograniczyć stosowanie niektórych protokołów w bibliotece Schannel.dll i algorytmów kryptograficznych](https://support.microsoft.com/en-us/kb/245030/) i [Priorytetyzowanie mechanizmy szyfrowania Schannel](https://msdn.microsoft.com/library/windows/desktop/bb870930.aspx). Te procedury nie wpływa na działanie programu Configuration Manager.
 

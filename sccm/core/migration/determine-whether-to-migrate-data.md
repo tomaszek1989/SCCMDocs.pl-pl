@@ -1,26 +1,27 @@
 ---
 title: Wybierz, co do migracji
 titleSuffix: Configuration Manager
-description: "Dowiedz się, które można migrować dane i dane, których nie można migrować do programu System Center Configuration Manager."
+description: Dowiedz się, które można migrować dane i dane, których nie można migrować do programu System Center Configuration Manager.
 ms.custom: na
 ms.date: 12/29/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 99222dc8-0e1e-4513-8302-7a1acf671e9b
-caps.latest.revision: "6"
-caps.handback.revision: "0"
+caps.latest.revision: 6
+caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: 822bc5b4e17bdc611243fadfb13c551b0a8237a8
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: 0718b7863c45f7b7e56380d4a2fa74e8d1a17b54
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="determine-whether-to-migrate-data-to-system-center-configuration-manager"></a>Określanie, czy migrować dane do programu System Center Configuration Manager
 
@@ -50,7 +51,7 @@ Po zainstalowaniu klienta do nowej hierarchii i przesłaniu jego danych, jego un
 
 -   [Dane, które nie można dokonać migracji do programu System Center Configuration Manager](#Cannot_migrate)  
 
-##  <a name="Can_Migrate"></a>Dane, które można migrować do programu System Center Configuration Manager  
+##  <a name="Can_Migrate"></a> Dane, które można migrować do programu System Center Configuration Manager  
  Migracja pozwala migrować większość obiektów między hierarchiami programu Configuration Manager obsługiwane. Migrowane wystąpienia niektórych obiektów z obsługiwanej wersji programu Configuration Manager 2007 muszą zostać zmodyfikowane, aby był zgodny ze System Center 2012 Configuration Manager schematem i formatem obiektów.
 
 Te modyfikacje nie mają wpływu na dane w bazie danych lokacji źródłowej. Obiekty migrowane z obsługiwanej wersji programu System Center 2012 Configuration Manager lub System Center Configuration Manager nie wymagają modyfikacji.  
@@ -58,8 +59,6 @@ Te modyfikacje nie mają wpływu na dane w bazie danych lokacji źródłowej. Ob
  Poniżej przedstawiono obiekty, które można migrować na podstawie wersji programu Configuration Manager w hierarchii źródłowej. Niektóre obiekty, takie jak zapytania, nie są migrowane. Aby nadal używać tych obiektów, które nie są migrowane, należy je ponownie utworzyć w nowej hierarchii. Inne obiekty, w tym niektóre dane klienta są automatycznie tworzone ponownie w nowej hierarchii podczas zarządzania klientami w tej hierarchii.  
 
 ### <a name="objects-that-you-can-migrate-from-system-center-2012-configuration-manager-or-system-center-configuration-manager-current-branch"></a>Obiekty, które można migrować z bieżącej gałęzi programu System Center 2012 Configuration Manager lub System Center Configuration Manager
-
--   Anonse  
 
 -   Aplikacje dla programu System Center 2012 Configuration Manager i nowszych wersji  
 
@@ -76,6 +75,8 @@ Te modyfikacje nie mają wpływu na dane w bazie danych lokacji źródłowej. Ob
     -   Linie bazowe konfiguracji  
 
     -   Elementy konfiguracji  
+
+-   Wdrożenia  
 
 -   Wdrożenie systemu operacyjnego:  
 
@@ -161,7 +162,7 @@ Te modyfikacje nie mają wpływu na dane w bazie danych lokacji źródłowej. Ob
 
 -   Pakiety aplikacji wirtualnych  
 
-##  <a name="Cannot_migrate"></a>Dane, które nie można dokonać migracji do programu System Center Configuration Manager  
+##  <a name="Cannot_migrate"></a> Dane, które nie można dokonać migracji do programu System Center Configuration Manager  
  Nie można migrować obiektów następujących typów:  
 
 -   Informacje o udostępnianiu klientów AMT  

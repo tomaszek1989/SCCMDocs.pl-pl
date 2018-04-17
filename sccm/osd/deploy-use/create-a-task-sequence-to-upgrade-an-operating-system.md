@@ -1,9 +1,9 @@
 ---
-title: Tworzenie sekwencji zadań w celu uaktualnienia systemu operacyjnego
+title: Tworzenie sekwencji zadań uaktualniania systemu operacyjnego
 titleSuffix: Configuration Manager
 description: Za pomocą sekwencji zadań do automatycznego uaktualniania z systemu Windows 7 lub nowszym do systemu Windows 10
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,15 +12,15 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7591e386-a9ab-4640-8643-332dce5aa006
-caps.latest.revision: ''
+caps.latest.revision: 12
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 91d3bf5b1488eb7eac52c7426e4bdeeb92ff43b8
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 48a5e7aa381924e3c0ad052833c9588e3dffa4f5
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="create-a-task-sequence-to-upgrade-an-operating-system-in-system-center-configuration-manager"></a>Tworzenie sekwencji zadań w celu uaktualnienia systemu operacyjnego w programie System Center Configuration Manager
 
@@ -87,9 +87,16 @@ Użyj sekwencji zadań w programie Configuration Manager automatycznie uaktualni
 
 
 ## <a name="configure-pre-cache-content"></a>Konfigurowanie wstępne wypełnienie pamięci podręcznej
-Funkcja wstępne pamięci podręcznej dla wdrożeń dostępnych sekwencji zadań umożliwia klientom pobieranie odpowiedniej zawartości pakietu uaktualnienia systemu operacyjnego, zanim użytkownik instaluje sekwencji zadań.
+<!--1021244-->
+Funkcja wstępne pamięci podręcznej dla wdrożeń dostępnych sekwencji zadań umożliwia klientom pobieranie odpowiedniej zawartości pakietu uaktualnienia systemu operacyjnego, zanim użytkownik instaluje sekwencji zadań.  
+
 > [!TIP]  
-> Ta funkcja została wprowadzona w wersji 1702 jako [funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features). Począwszy od wersji 1706, ta funkcja nie jest już funkcji wersji wstępnej.
+> Ta funkcja została wprowadzona w wersji 1702 jako [funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features). Począwszy od wersji 1706, ta funkcja nie jest już funkcji wersji wstępnej.  
+
+
+> [!Note]  
+> Ta funkcja opcjonalna nie włączyć domyślne programu Configuration Manager. Należy włączyć tę funkcję, przed jego użyciem. Aby uzyskać więcej informacji, zobacz [Włącz funkcje opcjonalne aktualizacji](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+
 
 Na przykład można tylko sekwencja pojedyncze zadanie uaktualniania w miejscu dla wszystkich użytkowników i wielu architektur i języków. W poprzednich wersjach zawartość uruchamia pobierania, gdy użytkownik instaluje wdrożenie dostępnej sekwencji zadań w programie Software Center. To opóźnienie dodaje dodatkowy czas, zanim będzie gotowy do rozpoczęcia instalacji. Cała zawartość, do którego odwołuje się sekwencja zadań zostanie pobrana. Ta zawartość zawiera pakiet uaktualniający systemu operacyjnego dla wszystkich języków i architektury. W przypadku każdego pakietu uaktualnienia około trzech GB rozmiar, całkowita zawartość jest bardzo duża.
 

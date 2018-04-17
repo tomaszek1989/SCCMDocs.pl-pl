@@ -3,7 +3,7 @@ title: Zarządzanie sekwencjami zadań
 titleSuffix: Configuration Manager
 description: Tworzenia, edytowania, wdrażanie, importowania i eksportowania sekwencji zadań w celu zarządzania nimi i automatyzowania zadań w środowisku.
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.reviewer: nac
 ms.suite: na
@@ -12,15 +12,15 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a1f099f1-e9b5-4189-88b3-f53e3b4e4add
-caps.latest.revision: ''
+caps.latest.revision: 10
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 262bfa3991bbd95fad779da9520358d527a42b07
-ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
+manager: dougeby
+ms.openlocfilehash: 9ed5a94d644aa0bdb7d63c3b976da7dd566dfedd
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="manage-task-sequences-to-automate-tasks-in-system-center-configuration-manager"></a>Zarządzanie sekwencjami zadań w celu zautomatyzowania zadań w programie System Center Configuration Manager
 
@@ -256,7 +256,7 @@ Następujący komunikat powiadomienia wyświetlany, gdy użytkownik końcowy otw
          > [!IMPORTANT]
          > W 1802 wersji programu Configuration Manager niektóre elementy nie są zapisywane w szablonie.  <!--510610--> Upewnij się, że po uruchomieniu Kreatora wdrażania należy zastosować następujące elementy:
          > - Instalacja oprogramowania 
-         > - Scheduling 
+         > - Planowanie 
          > - Przed pobraniem zawartości
  
 6.  Na stronie **Ustawienia wdrażania** określ poniższe informacje, a następnie kliknij przycisk **Dalej**.  
@@ -483,8 +483,12 @@ Zmiennymi dla komputera można zarządzać w lokacji głównej lub w centralnej 
 6.  Po dodaniu wszystkich zmiennych do kolekcji kliknij przycisk **OK**.  
 
 ## <a name="add-child-task-sequences-to-a-task-sequence"></a>Dodaj do sekwencji zadań sekwencje zadań podrzędnych
+<!--1261338-->
+Począwszy od programu Configuration Manager w wersji 1710, możesz dodać nowy krok sekwencji zadań uruchamiana innej sekwencji zadań. Spowoduje to utworzenie relacji nadrzędny podrzędny między sekwencji zadań. Przy użyciu ten krok umożliwia tworzenie jedną sekwencją zadań moduły, które można użyć ponownie.  
 
-Począwszy od programu Configuration Manager w wersji 1710, możesz dodać nowy krok sekwencji zadań uruchamiana innej sekwencji zadań. Spowoduje to utworzenie relacji nadrzędny podrzędny między sekwencji zadań. Przy użyciu ten krok umożliwia tworzenie jedną sekwencją zadań moduły, które można użyć ponownie.
+> [!Note]  
+> Ta funkcja opcjonalna nie włączyć domyślne programu Configuration Manager. Należy włączyć tę funkcję, przed jego użyciem. Aby uzyskać więcej informacji, zobacz [Włącz funkcje opcjonalne aktualizacji](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+
 
 Należy rozważyć dodanie sekwencji zadań podrzędnych do sekwencji zadań:
 

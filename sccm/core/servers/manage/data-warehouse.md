@@ -3,7 +3,7 @@ title: Magazyn danych
 titleSuffix: Configuration Manager
 description: Punkt usługi magazynu danych i bazy danych programu System Center Configuration Manager
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 04/10/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -13,22 +13,28 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aaf43e69-68b4-469a-ad58-9b66deb29057
 caps.latest.revision: ''
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 83bfc0e3d7bdf1ff8718c7c211c897e37b21a06b
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 02a3c672c95587aeecd41e804b32981104896923
+ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/16/2018
 ---
 #  <a name="the-data-warehouse-service-point-for-system-center-configuration-manager"></a>Punkt usługi magazynu danych programu System Center Configuration Manager
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Wskaż, począwszy od wersji 1702, których można użyć usługi magazynu danych do przechowywania i raport dotyczący długoterminowe dane historyczne dla danego wdrożenia programu Configuration Manager.
+<!--1277922-->
+Korzystanie z punktu usługi magazynu danych, do przechowywania i raport dotyczący długoterminowe dane historyczne dla danego wdrożenia programu Configuration Manager.
 
 > [!TIP]
-> Ta funkcja została wprowadzona w wersji 1702 jako [funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features). Począwszy od wersji 1706, ta funkcja nie jest już funkcji wersji wstępnej.
+> Ta funkcja została wprowadzona w wersji 1702 jako [funkcji wersji wstępnej](/sccm/core/servers/manage/pre-release-features). Począwszy od wersji 1706, ta funkcja nie jest już funkcji wersji wstępnej.  
+
+
+> [!Note]  
+> Ta funkcja opcjonalna nie włączyć domyślne programu Configuration Manager. Należy włączyć tę funkcję, przed jego użyciem. Aby uzyskać więcej informacji, zobacz [Włącz funkcje opcjonalne aktualizacji](/sccm/core/servers/manage/install-in-console-updates#bkmk_options).<!--505213-->  
+
 
 Magazyn danych obsługuje maksymalnie 2 TB danych z sygnaturami czasowymi, śledzenie zmian. Przechowywanie danych odbywa się przez automatyczne synchronizacje z bazy danych lokacji programu Configuration Manager do bazy danych magazynu danych. Te informacje są dostępne z punktu Usługi raportowania. Dane, które są synchronizowane z bazy danych magazynu danych jest zachowywana przez 3 lata. Okresowo wbudowanego zadania usuwa dane starsze niż trzy lata.
 
@@ -168,7 +174,7 @@ Po otwarciu raportu magazynu danych, jest zwracany następujący błąd:
 
 
 ## <a name="data-warehouse-dataflow"></a>Biblioteka przepływu danych magazynu danych   
-![Datawarehouse_flow](./media/datawarehouse.png)
+![Diagram przedstawiający przepływ danych logicznych między składnikami lokacji dla magazynu danych](./media/datawarehouse.png)
 
 **Magazyn danych i synchronizacji**
 
