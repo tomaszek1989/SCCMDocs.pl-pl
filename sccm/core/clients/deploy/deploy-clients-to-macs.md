@@ -12,7 +12,7 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e46ad501-5d73-44ac-92de-0de14ef72b83
-caps.latest.revision: ''
+caps.latest.revision: 12
 author: arob98
 ms.author: angrobe
 manager: angrobe
@@ -199,7 +199,7 @@ Użyj tej procedury do automatyzacji instalacji klienta i żądania i rejestracj
 > -   Pliku rachunku materiałów (BOM) pliku i listy właściwości (plist) utworzonych przez instalację klienta programu Configuration Manager.  
 > -   zawartości folderu /Library/Application Support/Microsoft/CCM/Logs.  
 >   
->  Informacje zebrane przez program CmDiagnostics są dodawane do pliku zip, który zostanie zapisany na pulpicie komputera i nazwie cmdiag -*< nazwa_hosta\>***-***&gt;Data i godzina\>* . zip.* **
+>  Informacje zebrane przez program CmDiagnostics są dodawane do pliku zip, który zostanie zapisany na pulpicie komputera i nazwie cmdiag -*< nazwa_hosta\>***-***&gt;Data i godzina\>* . zip.***
 
 
 ##  <a name="use-a-certificate-request-and-installation-method-that-is-independent-from-configuration-manager"></a>Żądania i instalowania metoda certyfikatu niezależna od programu Configuration Manager  
