@@ -1,18 +1,19 @@
 ---
-title: "Tworzenie niestandardowych raportów"
+title: Tworzenie niestandardowych raportów
 titleSuffix: Configuration Manager
-description: "Zdefiniować modele, aby spełnić wymagania biznesowe, a następnie wdrożyć modeli raportów do programu Configuration Manager."
+description: Zdefiniować modele, aby spełnić wymagania biznesowe, a następnie wdrożyć modeli raportów do programu Configuration Manager.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f2df88b4-c348-4dcf-854a-54fd6eedf485
-caps.latest.revision: "5"
-caps.handback.revision: "0"
+caps.latest.revision: 5
+caps.handback.revision: 0
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
@@ -29,7 +30,7 @@ ms.lasthandoff: 10/12/2017
 W programie System Center Configuration Manager są dostępne przykładowe modele raportów, ale można również zdefiniować modele, aby spełnić wymagania biznesowe, a następnie Wdróż model raportu do programu Configuration Manager do użycia podczas tworzenia nowych raportów na podstawie modelu. W poniższej tabeli przedstawiono opis kroków składających się na tworzenie i wdrożenie podstawowego modelu raportu.  
 
 > [!NOTE]  
->  Opis kroków służących do utworzenia bardziej zaawansowanego modelu raportu znajduje się w sekcji [Steps for Creating an Advanced Report Model in SQL Server Reporting Services](#AdvancedReportModel) w tym temacie.  
+>  Opis kroków służących do utworzenia bardziej zaawansowanego modelu raportu znajduje się w sekcji [kroki tworzenia zaawansowanego modelu raportu w usługach SQL Server Reporting Services](#AdvancedReportModel) w tym temacie.  
 
 |Krok|Opis|Więcej informacji|  
 |----------|-----------------|----------------------|  
@@ -39,7 +40,7 @@ W programie System Center Configuration Manager są dostępne przykładowe model
 |Zdefiniuj widok źródła danych dla modelu raportu|Po zdefiniowaniu źródeł danych do wykorzystania w projekcie modelu raportu następnym krokiem jest zdefiniowanie widoku źródła danych dla projektu. Widok źródła danych to model danych logicznych oparty na jednym lub większej liczbie źródeł danych. Widoki źródeł danych reprezentują dostęp do obiektów fizycznych, takich jak tabele i widoki, zawartych w odnośnych źródłach danych. Z widoku źródła danych usługi SQL Server Reporting Services generują model raportu.<br /><br /> Widoki źródła danych umożliwiają proces projektowania modelu, zapewniając praktyczne odwzorowanie określonych danych. Nie zmieniając odnośnych źródeł danych, w widoku źródła danych można zmieniać nazwy tabel i pól oraz dodawać pola zbiorcze i tabele pochodne. Aby tworzony model działał sprawnie, do widoku źródła danych warto dodawać tylko te tabele, z których planuje się korzystać.|Więcej informacji można znaleźć w sekcji [Aby zdefiniować widok źródła danych dla modelu raportu](#BKMK_DefineReportModelDataSourceView) w tym temacie.|  
 |Utwórz model raportu|Model raportu to wierzchnia warstwa bazy danych, która identyfikuje jednostki biznesowe, pola i role. Posługując się tymi modelami po ich opublikowaniu, użytkownicy programu Report Builder mogą opracowywać raporty bez potrzeby zaznajamiania się ze strukturami baz danych i bez potrzeby rozumienia kwerend czy umiejętności ich pisania. Modele składają się z zestawów powiązanych ze sobą elementów raportów, które zgrupowano pod przyjazną nazwą, ze wstępnie zdefiniowanymi relacjami między tymi elementami biznesowymi i ze wstępnie zdefiniowanymi obliczeniami. Modele definiuje się w odmianie języka XML zwanej językiem definiowania modeli semantycznych (ang. Semantic Model Definition Language, SMDL). Rozszerzenie nazwy pliku modelu raportu to .smdl.|Więcej informacji można znaleźć w sekcji [To create the report model](#BKMK_CreateReportModel) w tym temacie.|  
 |Opublikuj model raportu|Aby utworzyć raport na podstawie właśnie utworzonego modelu, należy opublikować ten model na serwerze raportów. Źródło danych i widok źródła danych są dołączane do modelu w czasie jego publikacji.|Więcej informacji można znaleźć w sekcji [Aby opublikować model raportu w programie SQL Server Reporting Services](#BKMK_PublishReportModel) w tym temacie.|  
-|Wdróż model raportu do programu Configuration Manager|Przed użyciem niestandardowego modelu raportu w **Kreatora tworzenia raportu** do utworzenia raportu na podstawie modelu, należy wdrożyć model raportu do programu Configuration Manager.|Więcej informacji można znaleźć w sekcji [To deploy the custom report model to Configuration Manager](#BKMK_DeployReportModel) w tym temacie.|  
+|Wdróż model raportu do programu Configuration Manager|Przed użyciem niestandardowego modelu raportu w **Kreatora tworzenia raportu** do utworzenia raportu na podstawie modelu, należy wdrożyć model raportu do programu Configuration Manager.|Więcej informacji można znaleźć w sekcji [Aby wdrożyć niestandardowy model raportu do programu Configuration Manager](#BKMK_DeployReportModel) w tym temacie.|  
 
 ## <a name="steps-for-creating-a-basic-report-model-in-sql-server-reporting-services"></a>Procedury tworzenia podstawowego modelu raportu w usługach SQL Server Reporting Services  
  Poniższe procedury służą do utworzenia podstawowego modelu raportu, który użytkownicy danej lokacji mogą wykorzystać do tworzenia konkretnych raportów na podstawie modelu, opartych na danych pojedynczego widoku bazy danych programu Configuration Manager. Utworzony model raportu prezentuje autorowi raportu informacje o komputerach klienckich w danej lokacji. Informacje te są brane z **v_R_System** widoku w bazie danych programu Configuration Manager.  
@@ -139,7 +140,7 @@ W programie System Center Configuration Manager są dostępne przykładowe model
 
 3.  Kliknij przycisk **Plik**, polecenie **Zapisz wszystko**i zamknij okno programu **SQL Server Business Intelligence Development Studio**.  
 
-###  <a name="BKMK_DeployReportModel"></a> To deploy the custom report model to Configuration Manager  
+###  <a name="BKMK_DeployReportModel"></a> Aby wdrożyć niestandardowy model raportu do programu Configuration Manager  
 
 1.  Zlokalizuj folder, w którym został utworzony projekt z modelem raportu. Na przykład %*USERPROFILE*%\Documents\Visual Studio 2008\Projects\\*&lt;Nazwa projektu\>.*  
 
@@ -175,7 +176,7 @@ W programie System Center Configuration Manager są dostępne przykładowe model
 
 9. Zapisz i zamknij plik  *&lt;Nazwa modelu\>***.smdl**.  
 
-10. Skopiuj plik  *&lt;Nazwa modelu\>***.smdl** do folderu *% programfiles %*\Microsoft Configuration Manager \AdminConsole\XmlStorage\Other na serwerze lokacji programu Configuration Manager.  
+10. Skopiuj plik  *&lt;Nazwa modelu\>***.smdl** do folderu *% programfiles %* \Microsoft Configuration Manager \AdminConsole\XmlStorage\Other na serwerze lokacji programu Configuration Manager.  
 
     > [!IMPORTANT]  
     >  Po skopiowaniu pliku modelu raportu na serwerze lokacji programu Configuration Manager, należy zamknąć i ponownie uruchomić konsolę programu Configuration Manager zanim można użyć danego modelu raportu w **Kreatora tworzenia raportu**.  
@@ -382,7 +383,7 @@ W programie System Center Configuration Manager są dostępne przykładowe model
 
 3.  Kliknij przycisk **Plik**, polecenie **Zapisz wszystko**i zamknij okno programu **SQL Server Business Intelligence Development Studio**.  
 
-#### <a name="to-deploy-the-custom-report-model-to-configuration-manager"></a>To deploy the custom report model to Configuration Manager  
+#### <a name="to-deploy-the-custom-report-model-to-configuration-manager"></a>Aby wdrożyć niestandardowy model raportu do programu Configuration Manager  
 
 1.  Zlokalizuj folder, w którym został utworzony projekt z modelem raportu. Na przykład %*USERPROFILE*%\Documents\Visual Studio 2008\Projects\\*&lt;Nazwa projektu\>.*  
 
@@ -418,7 +419,7 @@ W programie System Center Configuration Manager są dostępne przykładowe model
 
 9. Zapisz i zamknij plik  *&lt;Nazwa modelu\>***.smdl**.  
 
-10. Skopiuj plik  *&lt;Nazwa modelu\>***.smdl** do folderu *% programfiles %*\Microsoft Configuration Manager\AdminConsole\XmlStorage\Other na serwerze lokacji programu Configuration Manager.  
+10. Skopiuj plik  *&lt;Nazwa modelu\>***.smdl** do folderu *% programfiles %* \Microsoft Configuration Manager\AdminConsole\XmlStorage\Other na serwerze lokacji programu Configuration Manager.  
 
     > [!IMPORTANT]  
     >  Po skopiowaniu pliku modelu raportu na serwerze lokacji programu Configuration Manager, należy zamknąć i ponownie uruchomić konsolę programu Configuration Manager zanim można użyć danego modelu raportu w **Kreatora tworzenia raportu**.  
