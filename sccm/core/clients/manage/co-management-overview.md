@@ -12,11 +12,11 @@ ms.prod: configuration-manager
 ms.service: ''
 ms.technology: ''
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: 1657cbacde468ef7c54f95524e0fa9607a1a0186
-ms.sourcegitcommit: e23350fe65ff99228274e465b24b5e163769f38f
+ms.openlocfilehash: 3d7ca4bb72f6f3f76855faac125385374347ba55
+ms.sourcegitcommit: d67c6246bb6027cd5501e772b0521f9272407c28
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="co-management-for-windows-10-devices"></a>Jednoczesne zarządzania dla urządzeń z systemem Windows 10    
  Z poprzedniej aktualizacji systemu Windows 10, urządzenia z systemem Windows 10 można już Dołącz do lokalnej usługi Active Directory (AD) i oparta na chmurze usługi Azure AD, w tym samym czasie (rozwiązanie hybrydowe usługi Azure AD). Począwszy od programu Configuration Manager w wersji 1710 wspólnej zarządzania korzysta z tego ulepszenia i umożliwia jednocześnie zarządzanie urządzeniami 1709 wersji systemu Windows 10, używając programu Configuration Manager i usługi Intune. <!-- 1350871 -->
@@ -82,7 +82,7 @@ Istnieją dwa główne ścieżki do wspólnego zarządzania. Jedna jest inicjowa
 ### <a name="install-configuration-manager-client-to-the-devices-enrolled-in-intune"></a>Zainstaluj klienta programu Configuration Manager na urządzeniach zarejestrowanych w usłudze Intune
 W przypadku urządzeń z systemem Windows 10 zarejestrowanych w usłudze Intune, można zainstalować klienta programu Configuration Manager na urządzeniach ([przy użyciu określonego argumentu wiersza polecenia](/sccm/core/clients/manage/co-management-prepare#command-line-to-install-configuration-manager-client)) do przygotowania klientów do wspólnego zarządzania. Następnie możesz włączyć zarządzanie wspólnej z konsoli programu Configuration Manager pomyśleć konkretnych obciążeń do usługi Intune dla konkretnych urządzeń z systemem Windows 10.
 Dla urządzeń z systemem Windows 10, które nie zostały jeszcze zarejestrowane w usłudze Intune można użyć automatycznego rejestrowania na platformie Azure rejestracji urządzeń. W przypadku nowych urządzeń z systemem Windows 10, można użyć [Windows AutoPilot](https://docs.microsoft.com/intune/enrollment-autopilot) skonfigurować poza (tryb OOBE Box Experience), w tym automatycznego rejestrowania, który umożliwia rejestrację urządzeń w usłudze Intune.
- - Włącz [brama zarządzania chmury](/sccm/core/clients/manage/manage-clients-internet#cloud-management-gateway) w programie Configuration Manager (tylko w przypadku instalowania klienta programu Configuration Manager przy użyciu usługi Intune.
+ - Włącz [brama zarządzania chmury](/sccm/core/clients/manage/manage-clients-internet#cloud-management-gateway) w programie Configuration Manager (tylko w przypadku instalowania klienta programu Configuration Manager przy użyciu usługi Intune).
 
 ## <a name="monitor-co-management"></a>Monitorowania zarządzania wspólnej
 [Pulpit nawigacyjny zarządzania wspólnej](/sccm/core/clients/manage/co-management-dashboard) pomaga Przejrzyj maszyny, które są zarządzane wspólnie w danym środowisku. Wykresy ułatwiają identyfikowanie urządzeń, które mogą wymagać uwagi.
