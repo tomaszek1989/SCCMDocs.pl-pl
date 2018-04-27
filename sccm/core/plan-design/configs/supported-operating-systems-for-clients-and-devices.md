@@ -1,9 +1,9 @@
 ---
-title: "Obsługiwani klienci i urządzenia"
+title: Obsługiwani klienci i urządzenia
 titleSuffix: Configuration Manager
-description: "Dowiedz się, które systemy operacyjne, w programie System Center Configuration Manager obsługuje klientów i urządzeń."
+description: Dowiedz się, które systemy operacyjne, w programie System Center Configuration Manager obsługuje klientów i urządzeń.
 ms.custom: na
-ms.date: 8/30/2017
+ms.date: 04/17/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,22 +12,22 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 87f4e041-67df-4c61-aa98-7444faffe565
-caps.latest.revision: 
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 614226e60f9bcd7b8e3c1330f52a4847e89e0880
-ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
+caps.latest.revision: 5
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: d6befce522bcfef293f36def39405e9555cd3510
+ms.sourcegitcommit: e23350fe65ff99228274e465b24b5e163769f38f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="supported-operating-systems-for-clients-and-devices-for-system-center-configuration-manager"></a>Obsługiwane systemy operacyjne dla klientów i urządzeń dla programu System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
- System Center Configuration Manager obsługuje instalowanie oprogramowania klienckiego na różnych komputerach z systemem Windows, Mac, Linux i UNIX.  
+ Program Configuration Manager obsługuje instalowanie oprogramowania klienckiego na różnych komputerach z systemem Windows, Mac, Linux i UNIX.  
 
  **Wymagania i ograniczenia dotyczące wszystkich klientów:**  
 
@@ -44,6 +44,8 @@ ms.lasthandoff: 02/01/2018
 -  **Windows Server 2016**: Standard, Datacenter <sup>1</sup>
   - Ten system operacyjny jest obsługiwany począwszy od 1606 wersji programu Configuration Manager, z pakiet zbiorczy poprawek z KB3186654 (lub wersji linii bazowej 1606, wydanej w października 2016).  
 
+-   **System Windows Storage Server 2016**  
+
 -   **Windows Server 2012 R2** (x64): Standard, Datacenter <sup>1</sup>    
 
 -   **Windows Storage Server 2012 R2** (x64)    
@@ -52,11 +54,11 @@ ms.lasthandoff: 02/01/2018
 
 -   **Windows Storage Server 2012** (x64)    
 
--   **Windows Server 2008 R2 z dodatkiem SP1** (x64): Standard, Enterprise, Datacenter <sup>1</sup>    
+-   **Windows Server 2008 R2 z dodatkiem SP1** (x64): Standard, Enterprise i Datacenter <sup>1</sup>    
 
--   **Windows Storage Server 2008 R2** (x86, x64): Workgroup, Standard, Enterprise    
+-   **Windows Storage Server 2008 R2** (x86, x64): Workgroup, Standard i Enterprise    
 
--   **Windows Server 2008 z dodatkiem SP2** (x86, x64): Standard, Enterprise, Datacenter <sup>1</sup>    
+-   **Windows Server 2008 z dodatkiem SP2** (x86, x64): Standard, Enterprise i Datacenter <sup>1</sup>    
 
 -   **Windows 10** zobacz [pomocy technicznej dla wersji systemu Windows 10](/sccm/core/plan-design/configs/support-for-windows-10) szczegółowe informacje o różnych wersji systemu Windows 10 obsługiwanych przez różne wersje programu Configuration Manager.
 
@@ -65,6 +67,9 @@ ms.lasthandoff: 02/01/2018
 <!---   **Windows 8** (x86, x64): Professional, Enterprise  -removed Jan 12,2018 sms505863-->
 
 -   **Windows 7 z dodatkiem SP1** (x86, x64): Professional, Enterprise i Ultimate    
+
+-   **Instalacja Server Core systemu Windows Server w wersji 1709** (x64) <sup>2</sup>
+  - Ten system operacyjny jest obsługiwany począwszy od wersji 1710.
 
 -   **Instalacja Server Core systemu Windows Server 2016** (x64) <sup>2</sup>
   - Ten system operacyjny jest obsługiwany począwszy od wersji 1606 z pakiet zbiorczy poprawek z KB3186654 (lub wersji linii bazowej 1606, wydanej w października 2016).
@@ -308,7 +313,7 @@ Następujące systemy operacyjne są oparte na systemie Windows XP Embedded i ob
 -   [Możliwości zarządzania urządzeniami przenośnymi w programie Microsoft Intune](https://docs.microsoft.com/intune/get-started/choose-how-to-manage-devices)  
 -   [Możliwości zarządzania Komputerami z systemem Windows w Microsoft Intune](https://docs.microsoft.com/intune/get-started/windows-pc-management-capabilities-in-microsoft-intune)  
 
-##  <a name="bkmk_OnpremOS"></a>W ramach lokalnego zarządzania urządzeniami przenośnymi  
+##  <a name="bkmk_OnpremOS"></a> W ramach lokalnego zarządzania urządzeniami przenośnymi  
  Configuration Manager ma wbudowane funkcje zarządzania urządzeniami, które są lokalnymi bez konieczności instalowania oprogramowania klienta.  Aby uzyskać więcej informacji, zobacz [zarządzanie urządzeniami przenośnymi za pomocą infrastruktury lokalnej w programie System Center Configuration Manager](../../../mdm/understand/manage-mobile-devices-with-on-premises-infrastructure.md).  
 
  **Wymagania i ograniczenia:**  
@@ -331,7 +336,7 @@ Następujące systemy operacyjne są oparte na systemie Windows XP Embedded i ob
 
 - **System Windows 10 Team dla powierzchni Centrum**
 
-##  <a name="bkmk_ExSrvConOS"></a>Łącznik serwera Exchange  
+##  <a name="bkmk_ExSrvConOS"></a> Łącznik serwera Exchange  
 Program Configuration Manager obsługuje ograniczone Zarządzanie urządzeń łączących się z serwerem Exchange, bez konieczności instalowania klienta programu Configuration Manager. Aby uzyskać więcej informacji, zobacz [Zarządzanie urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Exchange](../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
 
  **Wymagania i ograniczenia:**  

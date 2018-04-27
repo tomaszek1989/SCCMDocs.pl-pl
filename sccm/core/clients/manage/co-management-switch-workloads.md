@@ -13,11 +13,11 @@ ms.date: 03/22/2018
 ms.topic: article
 ms.service: ''
 ms.assetid: 60e2022f-a4f9-40dd-af01-9ecb37b43878
-ms.openlocfilehash: cdfe52768499b929db473ac08d42207059965ffd
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: d0cee0eb242011d6cc7b3085b4ae9df908604fa8
+ms.sourcegitcommit: ac06e034cc60db7b1acade1f541e26b6cc50506e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="switch-configuration-manager-workloads-to-intune"></a>Przełącz obciążeń programu Configuration Manager do usługi Intune
 W [urządzenia przygotowanie systemu Windows 10 do zarządzania wspólnej](co-management-prepare.md), przygotowywania urządzenia z systemem Windows 10 do zarządzania wspólnej. Te urządzenia są połączone z usługami AD, Azure AD, są zarejestrowane w usłudze Intune i zainstalować klienta Configuration Manager. Prawdopodobnie nadal masz urządzenia z systemem Windows 10, które dołączyły do usługi AD i klienta programu Configuration Manager, ale nie zostały dołączone do usługi Azure AD lub zarejestrowane w usłudze Intune. Poniższa procedura zawiera kroki, aby włączyć zarządzanie wspólnej przygotowanie pozostałe urządzenia z systemem Windows 10 (klientów programu Configuration Manager bez rejestracji w usłudze Intune) do wspólnego zarządzania i umożliwia rozpoczęcie przełączania określonego programu Configuration Manager obciążeń do usługi Intune.
@@ -43,10 +43,13 @@ Wybierz obiekt wspólnej zarządzania, a następnie na karcie Narzędzia główn
 ## <a name="workloads-able-to-be-transitioned-to-intune"></a>Obciążenia mógł zostać przeniesieni do usługi Intune
 Niektórych obciążeń dostępnych może być przełączane za pośrednictwem usługi Intune. Poniższa lista zostanie zaktualizowany po obciążenia stają się dostępne dla przejścia:
 1. Zasady zgodności urządzeń
-2. Zasady dostępu do zasobów
+2. Zasady dostępu do zasobów: Zasady dostępu do zasobów skonfigurować sieci VPN, Wi-Fi, poczty e-mail i ustawienia certyfikatów na urządzeniach. Aby uzyskać więcej informacji, zobacz [wdrażania profilów dostępu do zasobów](https://docs.microsoft.com/intune/device-profiles).
+      - Profil e-mail
+      - Profil sieci Wi-Fi
+      - Profil sieci VPN
+      - Profil certyfikatu
 3. Zasady usługi Windows Update
 4. Program Endpoint Protection (począwszy od programu Configuration Manager w wersji 1802)
-      - Oprogramowanie antywirusowe programu Windows Defender
       - Ochrona programu Windows Defender aplikacji
       - Zapora systemu Windows Defender
       - Program Windows Defender SmartScreen
@@ -60,6 +63,8 @@ Niektórych obciążeń dostępnych może być przełączane za pośrednictwem u
 
 ## <a name="monitor-co-management"></a>Monitorowania zarządzania wspólnej
 Po włączeniu wspólnego zarządzania można monitorować wspólnej zarządzania urządzeniami przy użyciu następujących metod:
+
+- [Pulpit nawigacyjny zarządzania wspólnej](/sccm/core/clients/manage/co-management-dashboard)
 - **SQL widoku i klasy WMI**: Można zbadać **v&#95;ClientCoManagementState** widoku SQL w bazie danych lokacji programu Configuration Manager lub **SMS&#95;klienta&#95;ComanagementState** klasy usługi WMI. Informacje w klasie usługi WMI można utworzyć kolekcji niestandardowych w programie Configuration Manager w celu określenia stanu wdrożenia zarządzania wspólnej. Aby uzyskać więcej informacji, zobacz [sposobach tworzenia kolekcji](/sccm/core/clients/manage/collections/create-collections). Następujące pola są dostępne w widoku SQL i klasy WMI: 
     - **MachineId**: Określa unikatowy identyfikator urządzenia dla klienta programu Configuration Manager.
     - **MDMEnrolled**: Określa, czy urządzenie jest zarejestrowane zarządzania urządzeniami Przenośnymi. 

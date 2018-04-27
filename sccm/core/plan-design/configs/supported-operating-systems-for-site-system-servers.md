@@ -3,7 +3,7 @@ title: Obsługiwane serwery systemu lokacji
 titleSuffix: Configuration Manager
 description: Dowiedz się, które wersje systemu Windows można użyć do hostowania lokacji programu System Center Configuration Manager lub rola systemu lokacji.
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 04/17/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,22 +12,22 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 17905b4c-3895-4ad4-a69c-5e0d0fc5a8c3
-caps.latest.revision: ''
-author: mestew
-ms.author: mstewart
+caps.latest.revision: 44
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5bcaddb38ea6ecf1c3b5e0543c676c6a99e06101
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 092fc9d47e0dc7bb7afe0e078bd835dd2d091226
+ms.sourcegitcommit: e23350fe65ff99228274e465b24b5e163769f38f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="supported-operating-systems-for-system-center-configuration-manager-site-system-servers"></a>Obsługiwane systemy operacyjne dla serwerów systemu lokacji programu System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
-Ten artykuł zawiera szczegóły dotyczące wersji systemu Windows, które służą do hostowania lokacji programu System Center Configuration Manager lub rola systemu lokacji.
+Ten artykuł zawiera szczegóły dotyczące wersji systemu Windows, które służą do hostowania lokacji programu Configuration Manager lub rola systemu lokacji.
 
 
 Informacje przedstawione w tym artykule z informacjami w następujących artykułach:
@@ -88,7 +88,15 @@ Ten pakiet zbiorczy poprawek z KB3186654 ten system operacyjny jest obsługiwana
 
 
 
-## <a name="windows-server-2012-r2-x64-standard-and-datacenter"></a>Windows Server 2012 R2 (x64): Standard i Datacenter  
+## <a name="windows-storage-server-2016"></a>System Windows Storage Server 2016
+
+**Serwer systemu lokacji:**  
+
+-   Punkt dystrybucji  
+
+
+
+## <a name="windows-server-2012-r2-x64-standard-and-datacenter"></a>Windows Server 2012 R2 (x 64): Standard i Datacenter  
 **Serwery lokacji:**  
 
 -   Centralna lokacja administracyjna  
@@ -253,7 +261,10 @@ Ten system operacyjny nie jest obsługiwany dla serwerów lokacji i ról systemu
 
     -   Punkty dystrybucji obsługują kilka różnych konfiguracji czy o różnych wymaganiach. W niektórych przypadkach te konfiguracje obsługują instalację nie tylko na serwerach, ale w systemach operacyjnych klienta. Aby uzyskać więcej informacji na temat opcji dostępnych dla punktów dystrybucji, zobacz [zarządzanie zawartością i infrastrukturą zawartości](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
-
+## <a name="the-server-core-installation-of-windows-server-version-1709"></a>Instalacja server core systemu Windows Server w wersji 1709
+W programie Configuration Manager 1710, [w systemie Windows Server w wersji 1709](https://docs.microsoft.com/windows-server/get-started/get-started-with-1709) jest obsługiwana w przypadku użycia jako dystrybucji punktu z następującymi ograniczeniami:  
+  -   Obsługiwana jest tylko wersja x64-bitowych.
+  -   Punkty dystrybucji w tym systemie operacyjnym nie obsługują środowiska PXE lub multiemisji.  
 
 ## <a name="the-server-core-installation-of-windows-server-2016"></a>Instalacja server core systemu Windows Server 2016
 Ten pakiet zbiorczy poprawek z KB3186654, ten system operacyjny jest obsługiwana jako dystrybucji do punktu z następującymi ograniczeniami:  

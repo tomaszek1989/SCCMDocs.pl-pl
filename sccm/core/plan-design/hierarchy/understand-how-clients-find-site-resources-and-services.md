@@ -1,25 +1,26 @@
 ---
-title: "Znajdowania zasobów lokacji"
+title: Znajdowania zasobów lokacji
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak i kiedy klienci programu System Center Configuration Manager używają lokalizacji usług do znajdowania zasobów lokacji."
+description: Dowiedz się, jak i kiedy klienci programu System Center Configuration Manager używają lokalizacji usług do znajdowania zasobów lokacji.
 ms.custom: na
 ms.date: 2/7/2017
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ae72df4b-5f5d-4e19-9052-bda28edfbace
-caps.latest.revision: "10"
+caps.latest.revision: 10
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: d0cbaf0b9f10926015cf203dbb28633976034162
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: 76d9d486bf0c07da3d81596b1b065fe6532b29fe
+ms.sourcegitcommit: e4ca9fb1fad2caaf61bb46e0a12f4d6b96f15513
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="learn-how-clients-find-site-resources-and-services-for-system-center-configuration-manager"></a>Dowiedz się, jak klienci znajdują zasoby i usługi programu System Center Configuration Manager lokacji
 
@@ -56,13 +57,13 @@ W procesie nazywanym Użyj klientów System Center Configuration Manager *usług
 
 -   Podczas wdrażania roli systemu lokacji, która korzysta z internetowych usług informacyjnych (IIS) i obsługuje komunikację od klientów, należy określić, czy klienci łączą się z systemem lokacji przy użyciu protokołu HTTP, czy HTTPS. W przypadku wybrania protokołu HTTP należy również skonfigurować opcje podpisywania i szyfrowania. Aby uzyskać więcej informacji, zobacz [planowanie podpisywania i szyfrowania](../../../core/plan-design/security/plan-for-security.md#BKMK_PlanningForSigningEncryption) w [Planowanie zabezpieczeń w programie System Center Configuration Manager](../../../core/plan-design/security/plan-for-security.md).  
 
-##  <a name="BKMK_Plan_Service_Location"></a>Lokalizacja usługi i jak klienci określają przypisanego punktu zarządzania  
+##  <a name="BKMK_Plan_Service_Location"></a> Lokalizacja usługi i jak klienci określają przypisanego punktu zarządzania  
 Gdy klient najpierw jest przypisany do lokacji głównej, wybiera domyślny punkt zarządzania dla tej lokacji. Lokacje główne obsługują wiele punktów zarządzania, a każdy klient niezależnie identyfikuje punkt zarządzania jako swój domyślny punkt zarządzania. Ten domyślny punkt zarządzania staje się tego klienta przypisanego punktu zarządzania. (Umożliwia także polecenia instalacji klienta można ustawić przypisanego punktu zarządzania dla klienta, gdy jest zainstalowany.)  
 
 Klient wybiera punkt zarządzania do komunikacji z oparte na klienta bieżącej lokalizacji i granic grupy konfiguracji sieci. Nawet jeśli ma przypisany punkt zarządzania, to może być używany przez klienta punktu zarządzania.  
 
-    > [!NOTE]  
-    >  A client always uses the assigned management point for registration messages and certain policy messages, even when other communications are sent to a proxy or local management point.  
+   > [!NOTE]  
+   >  Klient zawsze używa przypisanego punktu zarządzania dla komunikatów rejestracji i niektórych komunikatów zasad, nawet jeśli pozostała komunikacja jest przesyłana do punktu zarządzania proxy lub lokalnego.
 
 Możesz użyć preferowanych punktów zarządzania. Preferowane punkty zarządzania to punkty zarządzania z przypisanej lokacji klienta, które są skojarzone z grupą granic, co klient używa do wyszukiwania serwerów systemu lokacji. Preferowanego punktu zarządzania w połączeniu z granicy grupy jako serwer systemu lokacji jest podobny do sposobu punkty dystrybucji lub punkty migracji stanu są skojarzone z grupą granic. Gdy po włączeniu w hierarchii preferowanych punktów zarządzania klient będzie chciał użyć punktu zarządzania z przypisanej do niego lokacji, podejmie próbę użycia preferowanego punktu zarządzania przed użyciem innych punktów zarządzania z przypisanej do niego lokacji.  
 

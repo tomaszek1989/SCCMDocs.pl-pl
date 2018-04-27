@@ -3,7 +3,7 @@ title: Informacje o wersji
 titleSuffix: Configuration Manager
 description: Więcej informacji na temat pilnych problemów, które nie zostały jeszcze rozwiązane w produkcie lub omówione w artykule bazy wiedzy Microsoft Knowledge Base.
 ms.custom: na
-ms.date: 03/22/2018
+ms.date: 04/18/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,16 +12,16 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 030947fd-f5e0-4185-8513-2397fb2ec96f
-caps.latest.revision: ''
-caps.handback.revision: ''
+caps.latest.revision: 41
+caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: e22bc4818f10a1f60fdb2135eb705e46dbaa10a4
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 2eabcba6e56bd2a0a9977ab31610a9d747ab6207
+ms.sourcegitcommit: e23350fe65ff99228274e465b24b5e163769f38f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="release-notes-for-system-center-configuration-manager"></a>Informacje o wersji dla programu System Center Configuration Manager
 
@@ -35,7 +35,7 @@ Dokumentacja właściwych dla funkcji zawiera informacje o znanych problemach, k
 >  Ten temat zawiera informacje o wersji dla bieżącej gałęzi programu Configuration Manager. Informacje dotyczące gałęzi wersji zapoznawczej technical preview, sekcji [Technical Preview programu System Center Configuration Manager](../../../../core/get-started/technical-preview.md)  
 
 Aby uzyskać informacje o nowych funkcjach wprowadzona z różnymi wersjami zobacz następujące artykuły:
-- [Nowości w wersji 1802](/sccm/core/plan-design/changes/whats-new-in-version-1802)
+- [Co nowego w wersji 1802](/sccm/core/plan-design/changes/whats-new-in-version-1802)
 - [Co nowego w wersji 1710](/sccm/core/plan-design/changes/whats-new-in-version-1710)
 - [Co nowego w wersji 1706](/sccm/core/plan-design/changes/whats-new-in-version-1706)  
 
@@ -101,6 +101,21 @@ Domyślnie kreator tworzenia planów obsługi jest uruchamiany obecnie po każde
 
 #### <a name="workaround"></a>Obejście
  po utworzeniu planu obsługi otwórz właściwości planu, przejdź do karty **Harmonogram szacowania**, wybierz pozycję **Uruchom tę regułę według harmonogramu**, kliknij pozycję **Dostosuj** i utwórz harmonogram niestandardowy. Można na przykład określić uruchamianie planu obsługi co 60 dni.  
+
+
+### <a name="changing-office-365-client-setting-doesnt-apply"></a>Zmiana usługi Office 365 ustawienie klienta nie ma zastosowania 
+<!--511551-->
+*Dotyczy: 1802 wersji programu Configuration Manager*  
+
+Wdrażanie [ustawienia klienta](/sccm/core/clients/deploy/about-client-settings#enable-management-of-the-office-365-client-agent) z **Włącz zarządzanie agenta klienta Office 365** skonfigurowany tak, aby `Yes`. Następnie zmienić to ustawienie, aby `No` lub `Not Configured`. Po zaktualizowaniu zasad na docelowych komputerach klienckich, aktualizacji usługi Office 365 są nadal zarządzane przez program Configuration Manager. 
+
+#### <a name="workaround"></a>Obejście
+Zmień poniższej wartości rejestru w celu `0` i uruchom ponownie **usługi kliknij program Microsoft Office** (ClickToRunSvc):
+
+```
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\office\16.0\Common\officeupdate]
+"OfficeMgmtCOM"=dword:00000000
+```
 
 
 

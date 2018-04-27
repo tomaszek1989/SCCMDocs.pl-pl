@@ -1,9 +1,9 @@
 ---
-title: "Wbudowane zmienne sekwencji zadań"
+title: Wbudowane zmienne sekwencji zadań
 titleSuffix: Configuration Manager
-description: "Wbudowane zmienne sekwencji zadań zawierają informacje o środowisku, w którym sekwencja zadań uruchamia i są dostępne w całej sekwencji zadań."
+description: Wbudowane zmienne sekwencji zadań zawierają informacje o środowisku, w którym sekwencja zadań uruchamia i są dostępne w całej sekwencji zadań.
 ms.custom: na
-ms.date: 02/09/2018
+ms.date: 04/18/2018
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
@@ -12,23 +12,23 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 02bc6bd4-ca53-4e22-8b80-d8ee5fe72567
-caps.latest.revision: 
-caps.handback.revision: 
+caps.latest.revision: 15
+caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 673f29189fe03df706d9f277afc7bde5fc8e72b0
-ms.sourcegitcommit: fbde417e3c3002898bd216a7e110e725ae269893
+ms.openlocfilehash: fe26982195e7cae639cc457dbba31e3dbd45b6d3
+ms.sourcegitcommit: e23350fe65ff99228274e465b24b5e163769f38f
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="task-sequence-built-in-variables-in-system-center-configuration-manager"></a>Wbudowane zmienne sekwencji zadań w programie System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 
- Wbudowane zmienne sekwencji zadań są dostarczane przez program System Center Configuration Manager. Wbudowane zmienne zawierają informacje o środowisku, w którym sekwencja zadań jest uruchomiona, a ich wartości są dostępne w całej sekwencji zadań. Zazwyczaj wbudowane zmienne są inicjowane przed wykonaniem kroków w sekwencji zadań. Na przykład wbudowana zmienna **_SMSTSLogPath** jest zmienną środowiskową, który określa ścieżkę używaną przez składniki programu Configuration Manager do zapisania plików dziennika. Dowolny etap sekwencji zadań można uzyskać dostępu do tej zmiennej środowiskowej. Jednak sekwencji zadań ocenia niektóre zmienne, takie jak **&#95; SMSTSCurrentActionName**, przed każdym etapem. Wartości są tylko do odczytu w przypadku wbudowanych zmiennych o nazwie rozpoczynającej się od znaku podkreślenia.  
+ Wbudowane zmienne sekwencji zadań są dostarczane przez program System Center Configuration Manager. Wbudowane zmienne zawierają informacje o środowisku, w którym sekwencja zadań jest uruchomiona, a ich wartości są dostępne w całej sekwencji zadań. Zazwyczaj wbudowane zmienne są inicjowane przed wykonaniem kroków w sekwencji zadań. Na przykład wbudowana zmienna **_SMSTSLogPath** jest zmienną środowiskową, który określa ścieżkę używaną przez składniki programu Configuration Manager do zapisania plików dziennika. Dowolny etap sekwencji zadań można uzyskać dostępu do tej zmiennej środowiskowej. Jednak sekwencji zadań ocenia niektóre zmienne, takie jak  **&#95;SMSTSCurrentActionName**, przed każdym etapem. Wartości są tylko do odczytu w przypadku wbudowanych zmiennych o nazwie rozpoczynającej się od znaku podkreślenia.  
 
 ## <a name="task-sequence-built-in-variable-list"></a>Lista wbudowanych zmiennych sekwencji zadań  
  Poniższa lista zawiera wbudowane zmienne, które są dostępne w programie Configuration Manager:  
@@ -77,7 +77,8 @@ ms.lasthandoff: 02/12/2018
 |SMSTSDownloadRetryDelay|Liczbę sekund oczekiwania menedżera konfiguracji przed ponawia próbę pobrania zawartości z punktu dystrybucji. Domyślnie klient odczekuje **15** sekund przed ponowną próbą.|
 |SMSTSDriverReceiveTimeOut|Upłynął limit czasu liczba sekund przed połączenia z serwerem.|
 |SMSTSErrorDialogTimeout|Po wystąpieniu błędu w sekwencji zadań, wyświetla okno dialogowe z powodu błędu. Sekwencja zadań automatycznie odrzuci go po upływie liczby sekund określonej przez tę zmienną. Domyślnie ta wartość jest **900** sekundach (15 minut).|  
-| TSDisableProgressUI | <!-- 1354291 -->Począwszy od 1706 wersji programu Configuration Manager, użyj tej zmiennej do formantu, gdy sekwencja zadań wyświetla postęp dla użytkowników końcowych. Ukryj lub Wyświetl postęp w różnym czasie, ustawić tę zmienną wiele razy w sekwencji zadań. Aby ukryć postęp sekwencji zadań, należy ustawić wartość tej zmiennej do **True**. Aby wyświetlić postęp sekwencji zadań, należy ustawić wartość tej zmiennej do **False**. | 
+| TSDisableProgressUI | <!-- 1354291 --> Począwszy od 1706 wersji programu Configuration Manager, użyj tej zmiennej do formantu, gdy sekwencja zadań wyświetla postęp dla użytkowników końcowych. Ukryj lub Wyświetl postęp w różnym czasie, ustawić tę zmienną wiele razy w sekwencji zadań. Aby ukryć postęp sekwencji zadań, należy ustawić wartość tej zmiennej do **True**. Aby wyświetlić postęp sekwencji zadań, należy ustawić wartość tej zmiennej do **False**. | 
+| SMSTSDisableStatusRetry | <!--512358--> W scenariuszach bez połączenia aparat sekwencji zadań wielokrotnie próbuje wysłać komunikaty o stanie do punktu zarządzania. To zachowanie, w tym scenariuszu powoduje opóźnienia w przetwarzaniu sekwencji zadań. Począwszy od wersji programu Configuration Manager w wersji 1802, ustaw wartość tej zmiennej **True** i aparat sekwencji zadań nie próbuje ponownie wysłać komunikatów o stanie po pierwszym niepowodzeniu. To zachowanie ważny dopiero po ponownym lub ma ustawioną wartość tej zmiennej **False**. Uwaga: [raportowania stanu sekwencji zadań](/sccm/core/servers/manage/list-of-reports#task-sequence---deployment-status) opiera się na te komunikaty o stanie można wyświetlić postęp, Historia i szczegóły każdego kroku. | 
 |SMSTSLanguageFolder|ta zmienna umożliwia zmianę języka wyświetlania obrazu rozruchowego niezależnego od języka.|  
 |SMSTSLocalDataDrive|Określa, gdzie są przechowywane tymczasowe pliki na komputerze docelowym, gdy jest uruchomiona sekwencja zadań.<br /><br /> Ta zmienna musi zostać ustawiona przed uruchomieniem sekwencji zadań, na przykład przez ustawienie zmiennej kolekcji. Po uruchomieniu sekwencji zadań program Configuration Manager definiuje zmienną _SMSTSMDataPath, po uruchomieniu sekwencji zadań.|  
 |SMSTSMP|Ta zmienna umożliwia określenie adresu URL lub adres IP punktu zarządzania Configuration Manager.|  

@@ -1,25 +1,26 @@
 ---
 title: Konfigurowanie raportowania
 titleSuffix: Configuration Manager
-description: "Więcej informacji o sposobie konfigurowania raportowania w hierarchii programu Configuration Manager, w tym informacje na temat usług SQL Server Reporting Services."
+description: Więcej informacji o sposobie konfigurowania raportowania w hierarchii programu Configuration Manager, w tym informacje na temat usług SQL Server Reporting Services.
 ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
 ms.reviewer: na
 ms.suite: na
-ms.technology: configmgr-other
+ms.technology:
+- configmgr-other
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 55ae86a7-f0ab-4c09-b4da-89cd0e7fa0e0
-caps.latest.revision: "6"
+caps.latest.revision: 6
 author: Dougeby
 ms.author: dougeby
 manager: angrobe
-ms.openlocfilehash: be8c36c73478e232254185681546f5f52c7d701f
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.openlocfilehash: 6d50a35dc86b80ea135c79fc2f9825162115b764
+ms.sourcegitcommit: f65d4d24f0533e5e196ece0d8a4df0fb3e30eba1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="configuring-reporting-in-system-center-configuration-manager"></a>Konfigurowanie raportowania w programie System Center Configuration Manager
 
@@ -129,7 +130,7 @@ Zanim można utworzyć, modyfikować i uruchamiać raporty w konsoli programu Sy
 
     -   **Konto punktu usług raportowania**: Kliknij przycisk **ustawić**, a następnie wybierz konto do użycia, gdy punkt usług SQL Server Reporting Services na raportowania łączy się z bazy danych lokacji programu Configuration Manager można pobrać dane, które są wyświetlane w raporcie. Wybierz **istniejące konto** Aby określić konto użytkownika systemu Windows skonfigurowane wcześniej jako konto programu Configuration Manager lub wybierz **nowe konto** Aby określić konto użytkownika systemu Windows nieskonfigurowane aktualnie jako konto programu Configuration Manager. Menedżer konfiguracji automatycznie udziela określonemu użytkownikowi dostępu do bazy danych lokacji. Użytkownik zostanie wyświetlony w podfolderze **Konta** węzła **Zabezpieczenia** w obszarze roboczym **Administracja** z nazwą konta **Punkt usług raportowania programu ConfigMgr** .  
 
-         Konto, z którego są uruchamiane usługi Reporting Services, musi należeć do lokalnej grupy zabezpieczeń domeny **Grupa dostępu autoryzacji systemu Windows**i mieć uprawnienie **Odczyt tokenGroupsGlobalAndUniversal** ustawione na **Zezwalaj**. Musi istnieć zaufanie dwukierunkowe dla użytkowników z innej domeny niż konto punktu Servicies raportowania do pomyślnego uruchomienia raportów.
+         Konto, z którego są uruchamiane usługi Reporting Services, musi należeć do lokalnej grupy zabezpieczeń domeny **Grupa dostępu autoryzacji systemu Windows**i mieć uprawnienie **Odczyt tokenGroupsGlobalAndUniversal** ustawione na **Zezwalaj**. Musi istnieć zaufanie dwukierunkowe dla użytkowników z innej domeny niż konto punktu usług raportowania na pomyślne uruchamianie raportów.
 
          Konto użytkownika systemu Windows i hasło do niego są szyfrowane i przechowywane w bazie danych usługi Reporting Services. Za pomocą tego konta i hasła usługa Reporting Services pobiera dane do raportów z bazy danych lokacji.  
 

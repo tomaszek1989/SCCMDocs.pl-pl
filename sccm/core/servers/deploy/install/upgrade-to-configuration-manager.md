@@ -11,15 +11,15 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: c64e7483-b4bb-4738-95f4-ecdaeb6a2ba6
-caps.latest.revision: ''
+caps.latest.revision: 21
 author: mestew
 ms.author: mstewart
 manager: angrobe
-ms.openlocfilehash: 72e11a04eb64d649749f2001ac4e3550c784132c
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 2af440e68d3f37914299d899b3a0e565050f651b
+ms.sourcegitcommit: e4ca9fb1fad2caaf61bb46e0a12f4d6b96f15513
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="upgrade-to-system-center-configuration-manager"></a>Uaktualnianie do programu System Center Configuration Manager
 
@@ -35,7 +35,7 @@ Można uruchomić uaktualnienia i uaktualnienia w miejscu do programu System Cen
 ##  <a name="bkmk_path"></a> Ścieżki uaktualnienia w miejscu  
 
 **Uaktualnienie do wersji 1802**   
-Jeśli masz nośnika linii bazowej 1702 wersji możesz uaktualnić następujące do pełni licencjonowanej wersji programu System Center Configuration Manager wersji 1802:   
+Jeśli masz nośnika linii bazowej 1802 wersji możesz uaktualnić następujące do pełni licencjonowanej wersji programu System Center Configuration Manager wersji 1802:   
 -     Instalacja ewaluacyjna programu System Center Configuration Manager wersji 1802
 -     System Center 2012 Configuration Manager z dodatkiem Service Pack 1
 -     System Center 2012 Configuration Manager z dodatkiem Service Pack 2
@@ -307,7 +307,7 @@ W każdej centralnej lokacji administracyjnej i lokacji głównej, która ma zos
 
 2.  Po przywróceniu kopii bazy danych, uruchom Instalatora z nośnika źródłowego programu System Center Configuration Manager. Podczas uruchamiania Instalatora użyj opcji wiersza polecenia **/TESTDBUPGRADE** . Jeśli wystąpienie programu SQL Server, które hostuje kopię bazy danych, nie jest wystąpieniem domyślnym, musisz także podać argumenty wiersza polecenia identyfikujące wystąpienie hostujące kopię bazy danych lokacji.  
 
-     Przykładowo chcesz przeprowadzić uaktualnienie bazy danych lokacji z nazwą bazy danych SMS_ABC. Wykonano przywrócenie kopii bazy danych lokacji na obsługiwane wystąpienie serwera SQL Server o nazwie DBTest. Aby przetestować uaktualnienie kopii bazy danych lokacji, należy użyć następującego polecenia: **Setup.exe /TESTDBUPGRADE DBtest\CM_ABC**  
+     Przykładowo chcesz przeprowadzić uaktualnienie bazy danych lokacji z nazwą bazy danych SMS_ABC. Wykonano przywrócenie kopii bazy danych lokacji na obsługiwane wystąpienie serwera SQL Server o nazwie DBTest. Aby przetestować uaktualnienie kopii bazy danych lokacji, należy użyć następującego polecenia: **Setup.exe polecenia/testdbupgrade DBtest\CM_ABC**  
 
      Setup.exe można znaleźć w następującej lokalizacji na nośniku źródłowym programu System Center Configuration Manager: **SMSSETUP\BIN\X64**.  
 

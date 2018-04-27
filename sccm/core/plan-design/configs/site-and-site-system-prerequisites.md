@@ -1,7 +1,7 @@
 ---
-title: "Wymagania wstępne dotyczące lokacji"
+title: Wymagania wstępne dotyczące lokacji
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak skonfigurować komputer z systemem Windows jako serwera systemu lokacji programu System Center Configuration Manager."
+description: Dowiedz się, jak skonfigurować komputer z systemem Windows jako serwera systemu lokacji programu System Center Configuration Manager.
 ms.custom: na
 ms.date: 02/28/2018
 ms.prod: configuration-manager
@@ -12,15 +12,15 @@ ms.technology:
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1392797b-76cb-46b4-a3e4-8f349ccaa078
-caps.latest.revision: 
+caps.latest.revision: 5
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: 6d1be6375dde2df51aafe076e5613647ecca3c4c
-ms.sourcegitcommit: d0fc79214bc35ca172fd2023dfa617b977ee865b
+ms.openlocfilehash: ae0a36acf4203fb5c7601a2960c0b5bb0a52082e
+ms.sourcegitcommit: ac06e034cc60db7b1acade1f541e26b6cc50506e
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="site-and-site-system-prerequisites-for-system-center-configuration-manager"></a>Witryny i wymagania wstępne systemu lokacji dla programu System Center Configuration Manager
 
@@ -62,7 +62,8 @@ ms.lasthandoff: 02/28/2018
 
 -   .NET framework 3.5 z dodatkiem SP1 (lub nowszy)  
 
--   .NET framework 4.5.2 (lub nowszy)
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1
+    - Więcej informacji na temat .net Framework w wersji dla [wersje programu .NET Framework i zależności](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)
 
 -   Kompresja RDC  
 
@@ -83,7 +84,8 @@ ms.lasthandoff: 02/28/2018
 
 -   .NET framework 3.5 z dodatkiem SP1 (lub nowszy)  
 
--   .NET framework 4.5.2 (lub nowszy)   
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1
+    - Więcej informacji na temat .net Framework w wersji dla [wersje programu .NET Framework i zależności](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)
 
 -   Kompresja RDC  
 
@@ -124,9 +126,12 @@ ms.lasthandoff: 02/28/2018
 
 -   .NET framework 3.5 z dodatkiem SP1 (lub nowszy)  
 
--   .NET framework 4.5.2 (lub nowsze):  
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1
+    - ASP.NET 4.5 
 
-    -   ASP.NET 4.5  
+    - Więcej informacji na temat .net Framework w wersji dla [wersje programu .NET Framework i zależności](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)  
+
+    
 
 **Konfiguracja programu IIS:**  
 
@@ -159,7 +164,7 @@ ms.lasthandoff: 02/28/2018
 
 -   .NET framework 3.5 z dodatkiem SP1 (lub nowszy)  
 
--   .NET framework 4.5.2 (lub nowsze):  
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1:  
 
     -   ASP.NET 4.5:  
 
@@ -194,12 +199,12 @@ ms.lasthandoff: 02/28/2018
 ###  <a name="bkmk_2012AIpreq"></a> Punkt synchronizacji analizy zasobów  
 **Windows Server role i funkcje:**  
 
--   .NET framework 4.5.2 (lub nowszy)  
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1 
 
 ###  <a name="bkmk_2012crppreq"></a> Punkt rejestracji certyfikatu  
 **Windows Server role i funkcje:**  
 
--   .NET framework 4.5.2 (lub nowsze):  
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1:  
 
     -   Aktywacja HTTP  
 
@@ -273,7 +278,7 @@ ms.lasthandoff: 02/28/2018
 
 -   .NET framework 3.5 (lub nowszy)  
 
--   .NET framework 4.5.2 (lub nowsze):  
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1:  
 
      Podczas instalowania tej roli systemu lokacji programu Configuration Manager automatycznie instaluje program .NET Framework 4.5.2. Ta instalacja może spowodować przełączenie serwera do ponownego uruchomienia komputera w stanie oczekiwania. Jeśli trwa oczekiwanie na ponowne uruchomienie komputera dla programu .NET Framework aplikacje .NET może się nie powieść dopiero po ponownym uruchomieniu serwera i zakończeniu instalacji.  
 
@@ -313,7 +318,7 @@ ms.lasthandoff: 02/28/2018
 
 -   .NET framework 3.5 (lub nowszy)  
 
--   .NET framework 4.5.2 (lub nowszy) 
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1 
 
      Podczas instalowania tej roli systemu lokacji programu Configuration Manager automatycznie instaluje program .NET Framework 4.5.2. Ta instalacja może spowodować przełączenie serwera do ponownego uruchomienia komputera w stanie oczekiwania. Jeśli trwa oczekiwanie na ponowne uruchomienie komputera dla programu .NET Framework aplikacje .NET może się nie powieść dopiero po ponownym uruchomieniu serwera i zakończeniu instalacji.  
 
@@ -359,7 +364,7 @@ Domyślna konfiguracja usług IIS jest wymagany z następującymi dodatkami:
 ###  <a name="bkmk_2012MPpreq"></a> Punkt zarządzania  
 **Windows Server role i funkcje:**  
 
--   .NET framework 4.5.2 (lub nowszy) 
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1 
 
 -   Rozszerzenia serwera usługi BITS (i automatycznie wybieranych opcji) lub usługi inteligentnego transferu w tle (BITS) (wraz z automatycznie wybranymi opcjami)  
 
@@ -382,7 +387,7 @@ Domyślna konfiguracja usług IIS jest wymagany z następującymi dodatkami:
 ###  <a name="bkmk_2012RSpoint"></a> Punkt usług raportowania  
 **Windows Server role i funkcje:**  
 
--   .NET framework 4.5.2 (lub nowszy) 
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1 
 
 **Usługi Usługi SQL Server Reporting Services:**  
 
@@ -395,7 +400,7 @@ Domyślna konfiguracja usług IIS jest wymagany z następującymi dodatkami:
 ###  <a name="bkmk_SCPpreq"></a> Punkt połączenia usługi  
 **Windows Server role i funkcje:**  
 
--   .NET framework 4.5.2 (lub nowszy) 
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1 
 
      Podczas instalowania tej roli systemu lokacji programu Configuration Manager automatycznie instaluje program .NET Framework 4.5.2. Ta instalacja może spowodować przełączenie serwera do ponownego uruchomienia komputera w stanie oczekiwania. Jeśli trwa oczekiwanie na ponowne uruchomienie komputera dla programu .NET Framework aplikacje .NET może się nie powieść dopiero po ponownym uruchomieniu serwera i zakończeniu instalacji.  
 
@@ -410,7 +415,7 @@ Domyślna konfiguracja usług IIS jest wymagany z następującymi dodatkami:
 
 -   .NET framework 3.5 z dodatkiem SP1 (lub nowszy)  
 
--   .NET framework 4.5.2 (lub nowszy) 
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1 
 
 Domyślna konfiguracja usług IIS jest wymagany.
 
@@ -439,7 +444,7 @@ Windows Server 2008 i Windows Server 2008 R2 znajdują się teraz w rozszerzonej
 
 -   .NET framework 3.5 z dodatkiem SP1 (lub nowszy)  
 
--   .NET framework 4.5.2 (lub nowszy) 
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1 
 
 **Funkcja systemu Windows:**  
 
@@ -462,7 +467,7 @@ Windows Server 2008 i Windows Server 2008 R2 znajdują się teraz w rozszerzonej
 
 -   .NET framework 3.5 z dodatkiem SP1 (lub nowszy)  
 
--   .NET framework 4.5.2 (lub nowszy)  
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1 
 
 **Pakiet redystrybucyjny Visual C++:**  
 
@@ -499,7 +504,7 @@ Windows Server 2008 i Windows Server 2008 R2 znajdują się teraz w rozszerzonej
 ###  <a name="bkmk_2008acwspreq"></a> Punkt witryny sieci Web katalogu aplikacji  
 **.NET framework:**  
 
--   .NET framework 4.5.2 (lub nowszy) 
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1
 
 **Konfiguracja programu IIS:**
 
@@ -530,7 +535,7 @@ Domyślna konfiguracja usług IIS jest wymagany z następującymi dodatkami:
 
 -   .NET framework 3.5 z dodatkiem SP1 (lub nowszy)  
 
--   .NET framework 4.5.2 (lub nowszy) 
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1 
 
 **Aktywacja systemu Windows Communication Foundation (WCF):**  
 
@@ -561,12 +566,12 @@ Domyślna konfiguracja usług IIS jest wymagany z następującymi dodatkami:
 ###  <a name="bkmk_2008AIpreq"></a> Punkt synchronizacji analizy zasobów  
 **.NET framework:**  
 
--   .NET framework 4.5.2 (lub nowszy) 
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1
 
 ###  <a name="bkmk_2008crppreq"></a> Punkt rejestracji certyfikatu  
 **.NET framework:**  
 
--   .NET framework 4.5.2 (lub nowszy) 
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1 
 
 -   Aktywacja HTTP  
 
@@ -641,7 +646,7 @@ Użycie niestandardowej konfiguracji programu IIS, należy usunąć opcje, któr
 ###  <a name="bkmk_2008Enrollpreq"></a> Punkt rejestracji  
 **.NET framework:**  
 
--   .NET framework 4.5.2 (lub nowszy) 
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1 
 
      Podczas instalowania tej roli systemu lokacji, jeśli serwer nie ma obsługiwanej wersji programu .NET Framework zainstalowana, programu Configuration Manager automatycznie instaluje program .NET Framework 4.5.2. Ta instalacja może spowodować przełączenie serwera do ponownego uruchomienia komputera w stanie oczekiwania. Jeśli trwa oczekiwanie na ponowne uruchomienie komputera dla programu .NET Framework aplikacje .NET może się nie powieść dopiero po ponownym uruchomieniu serwera i zakończeniu instalacji.  
 
@@ -670,7 +675,7 @@ Domyślna konfiguracja usług IIS jest wymagany z następującymi dodatkami:
 ###  <a name="bkmk_2008EnrollProxpreq"></a> Punkt proxy rejestracji  
 **.NET framework:**  
 
--   .NET framework 4.5.2 (lub nowszy) 
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1
 
      Podczas instalowania tej roli systemu lokacji, jeśli serwer nie ma obsługiwanej wersji programu .NET Framework zainstalowana, programu Configuration Manager automatycznie instaluje program .NET Framework 4.5.2. Ta instalacja może spowodować przełączenie serwera do ponownego uruchomienia komputera w stanie oczekiwania. Gdy oczekuje na ponowny rozruch dla programu .NET Framework aplikacje .NET może się nie powieść dopiero po ponownym uruchomieniu serwera i zakończeniu instalacji.  
 
@@ -708,7 +713,7 @@ Domyślna konfiguracja usług IIS jest wymagany z następującymi dodatkami:
 ###  <a name="bkmk_2008MPpreq"></a> Punkt zarządzania  
 **.NET framework:**  
 
--   .NET framework 4.5.2 (lub nowszy)
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1
 
 **Konfiguracja programu IIS:**
 
@@ -749,7 +754,7 @@ Użycie niestandardowej konfiguracji programu IIS, należy usunąć opcje, któr
 ###  <a name="bkmk_2008RSpoint"></a> Punkt usług raportowania  
 **.NET framework:**  
 
--   .NET framework 4.5.2 (lub nowszy)  
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1 
 
 **Usługi Usługi SQL Server Reporting Services:**  
 
@@ -762,7 +767,7 @@ Użycie niestandardowej konfiguracji programu IIS, należy usunąć opcje, któr
 ###  <a name="bkmk_2008SCPpreq"></a> Punkt połączenia usługi  
 **.NET framework:**  
 
--   .NET framework 4.5.2 (lub nowszy) 
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1 
 
      Podczas instalowania tej roli systemu lokacji, jeśli serwer nie ma obsługiwanej wersji programu .NET Framework zainstalowana, programu Configuration Manager automatycznie instaluje program .NET Framework 4.5.2. Ta instalacja może spowodować przełączenie serwera do ponownego uruchomienia komputera w stanie oczekiwania. Jeśli trwa oczekiwanie na ponowne uruchomienie komputera dla programu .NET Framework aplikacje .NET może się nie powieść dopiero po ponownym uruchomieniu serwera i zakończeniu instalacji.  
 
@@ -777,7 +782,7 @@ Użycie niestandardowej konfiguracji programu IIS, należy usunąć opcje, któr
 
 -   .NET framework 3.5 z dodatkiem SP1 (lub nowszy)  
 
--   .NET framework 4.5.2 (lub nowszy) 
+-   .NET framework 4.5.2, 4.6.1, 4.6.2, 4.7 lub 4.7.1 
 
 **Konfiguracja programu IIS:**
 

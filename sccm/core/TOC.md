@@ -292,13 +292,13 @@
 ###  [Jak zarządzać klientami z systemami Linux i UNIX](clients/manage/manage-clients-for-linux-and-unix-servers.md)
 ###  [Synchronizowanie danych dla usługi OMS](clients/manage/sync-data-microsoft-operations-management-suite.md)
 ###  [Konserwacja klientów na komputerach Mac](clients/manage/maintain-mac-clients.md)
-### [Pulpit nawigacyjny współzarządzania](clients/manage/co-management-dashboard.md)
 
 ### [Pulpit nawigacyjny urządzenia Surface](clients/manage/surface-device-dashboard.md)
 
 ##   [Współzarządzanie urządzeniami z systemem Windows 10](clients/manage/co-management-overview.md)
 ###  [Przygotowywanie urządzeń z systemem Windows 10 pod kątem współzarządzania](clients/manage/co-management-prepare.md)
 ###  [Przełączanie obciążeń programu Configuration Manager do usługi Intune](clients/manage/co-management-switch-workloads.md)
+### [Pulpit nawigacyjny współzarządzania](clients/manage/co-management-dashboard.md)
 
 ##   [Zarządzanie klientami w Internecie](clients/manage/manage-clients-internet.md)
 ###  [Planowanie bramy zarządzania chmurą](clients/manage/cmg/plan-cloud-management-gateway.md)

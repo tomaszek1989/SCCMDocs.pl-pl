@@ -15,11 +15,11 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c6918983bca3e598fd99a8f7670ada3f7e43cfa6
-ms.sourcegitcommit: d8a4a53630351b3d677bbdc5d203e7d330472cba
+ms.openlocfilehash: 6a47569ee56931d76a41e5f14ed56f8276d264fb
+ms.sourcegitcommit: e4ca9fb1fad2caaf61bb46e0a12f4d6b96f15513
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>What's new in hybrydowego zarządzania urządzeniami przenośnymi za pomocą programu Configuration Manager i Microsoft Intune
 
@@ -47,6 +47,24 @@ Każda sekcja w tym artykule wymieniono funkcje hybrydowych w trzech różnych k
 ## <a name="april-2018"></a>2018 kwietnia
 
 ### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune
+
+#### <a name="updated-help-experience-on-company-portal-app-for-android"></a>Zaktualizowano środowiska Pomoc w aplikacji Portal firmy dla systemu Android 
+<!--1631531-->
+Zaktualizowaliśmy środowiska Pomoc w aplikacji Portal firmy dla systemu Android w celu zapewnienia zgodności z najlepszymi rozwiązaniami platformy systemu Android. Teraz, gdy użytkownicy wystąpi problem w aplikacji, można wybrać **Menu** > **pomocy** oraz:
+- Przekazywanie dzienników diagnostycznych do firmy Microsoft.
+- Wyślij wiadomość e-mail, który opisuje identyfikator problemu i zdarzenia do działu pomocy technicznej firmy.
+
+
+#### <a name="update-where-to-configure-your-app-protection-policies"></a>Zaktualizuj where do skonfigurowania zasad ochrony aplikacji 
+<!--2144597-->
+W portalu Azure w ramach usługi Microsoft Intune zamierzamy tymczasowo przekierowanie z **ochrony aplikacji usługi Intune** bloku usługi do **aplikacji mobilnej** bloku. Należy pamiętać, że wszystkie zasad ochrony aplikacji znajdują się już na **aplikacji mobilnej** bloku w usłudze Intune w obszarze Konfiguracja aplikacji. Zamiast przechodząc do ochrony aplikacji usługi Intune, tak aby przejść do usługi Intune. W kwietniu 2018, możemy zatrzyma przekierowywanie i całkowitego usunięcia **ochrony aplikacji usługi Intune** usługi bloku, w taki sposób, aby tylko jedną lokalizację dla zasad ochrony aplikacji w ramach usługi Intune. 
+
+**Jak to wpływa mnie?** Ta zmiana będzie miało wpływ na klientów autonomicznej usługi Intune i klientów hybrydowych (usługę Intune z programem Configuration Manager). Integracja ta pomoże uprościć administrowanie zarządzania z chmury.
+
+**Co należy zrobić, aby przygotować się do tej zmiany?** Sprawdź znacznik **Intune** jako ulubiony zamiast **ochrony aplikacji usługi Intune** usługi bloku i upewnij się, możesz zapoznać się z przepływem pracy zasad ochrony aplikacji w **Mobile** bloku aplikacji w ramach usługi Intune. Firma Microsoft będzie przekierowywać krótki okres czasu, a następnie usuń **ochrony aplikacji** bloku. Pamiętaj, że wszystkie zasady ochrony aplikacji znajdują się już w usłudze Intune i można zmodyfikować jego dowolne zasad dostępu warunkowego. Aby uzyskać więcej informacji na temat modyfikowania zasad dostępu warunkowego, zobacz [dostępu warunkowego w usłudze Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal). Aby uzyskać dodatkowe informacje, zobacz [co to są zasady ochrony aplikacji?](/intune/app-protection-policy) 
+
+
+
 
 #### <a name="user-experience-update-for-the-company-portal-app-for-ios"></a>Aktualizacja środowiska użytkownika dla aplikacji Portal firmy dla systemu iOS 
 <!--1412866-->
@@ -416,7 +434,7 @@ Następujące funkcje były wcześniej dostępne w wersjach Configuration Manage
 - **Ulepszona obsługa użytkowników systemu Android na podstawie w Chinach**  
   Z powodu braku sklepu Google Play w Chinach urządzenia z systemem Android musi uzyskać aplikacje z języka chińskiego rynków. Portal firmy obsługuje ten przepływ pracy. Przekierowuje użytkowników systemu Android w Chinach, pobierania aplikacji Portal firmy i Outlook z magazynów lokalnych aplikacji. To zachowanie poprawia środowisko użytkownika po włączeniu zasady dostępu warunkowego do zarządzania urządzeniami przenośnymi i zarządzania aplikacjami mobilnymi. Aplikacji portalu firmy i Outlook dla systemu Android są dostępne w następujących przechowywanych w chińskiej wersji językowej aplikacji:
 
-  - [Baidu](https://go.microsoft.com/fwlink/?linkid=836946)
+  - [Usługi Baidu](https://go.microsoft.com/fwlink/?linkid=836946)
   - [Xiaomi](https://go.microsoft.com/fwlink/?linkid=836947)
   - [Tencent](https://go.microsoft.com/fwlink/?linkid=836949)
   - [Huawei](https://go.microsoft.com/fwlink/?linkid=836948)

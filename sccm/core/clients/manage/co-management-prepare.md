@@ -11,11 +11,11 @@ ms.prod: configuration-manager
 ms.service: ''
 ms.technology: ''
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
-ms.openlocfilehash: a45ded0f3824c148f64f9578e51cc112c05d9f78
-ms.sourcegitcommit: aed99ba3c5e9482199cb3fc5c92f6f3a160cb181
+ms.openlocfilehash: 93a991cb3fd78e44f5ae4434a9845a57450e1025
+ms.sourcegitcommit: e4ca9fb1fad2caaf61bb46e0a12f4d6b96f15513
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="prepare-windows-10-devices-for-co-management"></a>Przygotowywanie urządzenia z systemem Windows 10 do zarządzania wspólnej
 Można włączyć wspólnej zarządzania na urządzeniach z systemem Windows 10, które są przyłączone do usługi AD i Azure AD i zarejestrowane w programie Microsoft Intune i klienta w programie Configuration Manager. Dla nowych urządzeń z systemem Windows 10, a w przypadku urządzeń, które są już zarejestrowane w usłudze Intune należy zainstalować klienta programu Configuration Manager, zanim zostaną umieszczone zarządzanych. Dla urządzeń z systemem Windows 10, które są już klientów programu Configuration Manager możesz zarejestrować urządzenia w usłudze Intune i włączyć wspólnej zarządzanie w konsoli programu Configuration Manager.
@@ -23,6 +23,32 @@ Można włączyć wspólnej zarządzania na urządzeniach z systemem Windows 10,
 > [!IMPORTANT]
 > Urządzenia przenośne z systemem Windows 10 nie obsługują zarządzania wspólnej.
 
+
+## <a name="prerequisites"></a>Wymagania wstępne
+Musi mieć następujące wymagania wstępne w miejscu, aby można było włączyć zarządzania wspólnej. Istnieją ogólne wymagania wstępne i inne wymagania wstępne dla urządzeń z klientem programu Configuration Manager i urządzeń, które nie mają zainstalowanego klienta.
+### <a name="general-prerequisites"></a>Ogólne wymagania wstępne
+Poniżej przedstawiono ogólne wymagania wstępne, aby włączyć zarządzanie wspólnej:  
+
+- Configuration Manager w wersji 1710 lub nowszy
+- Azure AD
+- Licencji pakietu EMS lub usługi Intune dla wszystkich użytkowników
+- [Automatyczne rejestrowanie usługi Azure AD](https://docs.microsoft.com/intune/windows-enroll#enable-windows-10-automatic-enrollment) włączone
+- Subskrypcję usługi Intune &#40;ustaw urząd zarządzania urządzeniami Przenośnymi w usłudze Intune **usługi Intune**&#41;
+
+
+   > [!Note]  
+   > Jeśli masz środowiska hybrydowego zarządzania urządzeniami Przenośnymi (usługa Intune zintegrowana z programem Configuration Manager), nie można włączyć zarządzania wspólnej. Jednak można rozpocząć migrację użytkowników do autonomicznej usługi Intune, a następnie włącz swoje skojarzone urządzenia systemu Windows 10 do zarządzania wspólnej. Aby uzyskać więcej informacji na temat migracji do autonomicznej usługi Intune, zobacz [rozpocząć migrację z hybrydowego zarządzania urządzeniami Przenośnymi do autonomicznej usługi Intune](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa).
+
+### <a name="additional-prerequisites-for-devices-with-the-configuration-manager-client"></a>Dodatkowe wymagania wstępne dotyczące urządzeń z klientem programu Configuration Manager
+- Windows 10 w wersji 1709 lub nowszej
+- [Przyłączony do hybrydowej usługi Azure AD](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup) (dołączony do usługi AD i Azure AD)
+
+### <a name="additional-prerequisites-for-devices-without-the-configuration-manager-client"></a>Dodatkowe wymagania wstępne dotyczące urządzeń bez klienta programu Configuration Manager
+- Windows 10 w wersji 1709 lub nowszej
+- [Brama zarządzania w chmurze](/sccm/core/clients/manage/manage-clients-internet#cloud-management-gateway) w programie Configuration Manager (Jeśli używasz usługi Intune, aby zainstalować klienta programu Configuration Manager)
+
+> [!IMPORTANT]
+> Urządzenia przenośne z systemem Windows 10 nie obsługują zarządzania wspólnej.
 
 
 ## <a name="command-line-to-install-configuration-manager-client"></a>Wiersz polecenia, aby zainstalować klienta programu Configuration Manager
@@ -39,8 +65,8 @@ Na przykład, jeśli masz następujące wartości:
 
 - **Nazwa FQDN punktu zarządzania (MP)**: mp1.contoso.com    
 - **Kod lokacji**: PS1    
-- **Identyfikator dzierżawy usługi Azure AD**: daf4a1c2-3a0c-401b-966f-0b855d3abd1a    
-- **Identyfikator aplikacji klienta usługi Azure AD**: 7506ee10-f7ec-415a-b415-cd3d58790d97     
+- **Identyfikator dzierżawy usługi Azure AD**: 60a413f4-c606-4744-8adb-9476ae3XXXXX    
+- **Identyfikator aplikacji klienta usługi Azure AD**: 9fb9315f - 4c 42-405f-8664-ae63283XXXXX     
 - **Identyfikator URI identyfikator zasobu usługi AAD**: ConfigMgrServer    
 
   > [!Note]    
@@ -48,7 +74,7 @@ Na przykład, jeśli masz następujące wartości:
 
 Należy użyć następującego polecenia:
 
-`ccmsetup.msi CCMSETUPCMD="/mp:https://contoso.cloudapp.net/CCM_Proxy_MutualAuth/72186325152220500    CCMHOSTNAME=contoso.cloudapp.net/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=PS1 SMSMP=https://mp1.contoso.com AADTENANTID=daf4a1c2-3a0c-401b-966f-0b855d3abd1a AADCLIENTAPPID=7506ee10-f7ec-415a-b415-cd3d58790d97 AADRESOURCEURI=https://ConfigMgrServer"`
+`ccmsetup.msi CCMSETUPCMD="/mp:https://contoso.cloudapp.net/CCM_Proxy_MutualAuth/72186325152220500    CCMHOSTNAME=contoso.cloudapp.net/CCM_Proxy_MutualAuth/72186325152220500 SMSSiteCode=PS1 SMSMP=https://mp1.contoso.com AADTENANTID=60a413f4-c606-4744-8adb-9476ae3XXXXX AADCLIENTAPPID=9fb9315f-4c42-405f-8664-ae63283XXXXX AADRESOURCEURI=https://ConfigMgrServer"`
 
 > [!Tip]
 > Parametry wiersza polecenia można znaleźć w witrynie przy użyciu następujących kroków:     

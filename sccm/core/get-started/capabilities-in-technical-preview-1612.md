@@ -12,15 +12,15 @@ ms.suite: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bceab2e8-2f05-4a17-9ac8-a7a558670fb7
-caps.latest.revision: ''
+caps.latest.revision: 5
 author: erikje
 ms.author: erikje
 manager: angrobe
-ms.openlocfilehash: 80cace2bec8cb9c39d5f3f00ea244b697e1d75c9
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: e0688c41978d95e0e1fd4da817e602a2c8a6483b
+ms.sourcegitcommit: f65d4d24f0533e5e196ece0d8a4df0fb3e30eba1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/27/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="capabilities-in-technical-preview-1612-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1612 programu System Center Configuration Manager
 
@@ -122,7 +122,7 @@ Po zainstalowaniu roli systemu lokacji hurtowni danych, następujące raporty s�
 | **Raport ze spisu oprogramowania ogólne**  | Wyświetl wszystkie spisu oprogramowania dla określonej maszyny.|
 | **Przegląd kondycji infrastruktury**  |Wyświetla Przegląd kondycji infrastruktury programu Configuration Manager.|
 | **Lista wykrytym złośliwym oprogramowaniem**  |Widok złośliwego oprogramowania, która została wykryta w organizacji.|
-|** Oprogramowania dystrybucji podsumowania raportu ** | Podsumowanie dystrybucji oprogramowania dla określonych anonsów i komputera.|
+| **Raport podsumowania dystrybucji oprogramowania** | Podsumowanie dystrybucji oprogramowania dla określonych anonsów i komputera.|
 
 ### <a name="move-the-data-warehouse-database"></a>Przenoszenie bazy danych magazynu danych
 Aby przenieść bazę danych magazynu danych na nowy serwer SQL, wykonaj następujące kroki:
