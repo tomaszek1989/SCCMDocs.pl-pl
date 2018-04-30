@@ -111,10 +111,10 @@
 
 <!-- Only show the current plus three; four total) -->
 ##   [Technical Preview](get-started/technical-preview.md)
+###  [Możliwości w wersji 1804](get-started/capabilities-in-technical-preview-1804.md)
 ###  [Możliwości w wersji 1803](get-started/capabilities-in-technical-preview-1803.md)
 ###  [Możliwości w wersji 1802](get-started/capabilities-in-technical-preview-1802.md)
 ###  [Możliwości w wersji 1801](get-started/capabilities-in-technical-preview-1801.md)
-###  [Możliwości w wersji 1712](get-started/capabilities-in-technical-preview-1712.md)
 
 ##   [Migrowanie danych między hierarchiami](migration/migrate-data-between-hierarchies.md)
 ###  [Planowanie migracji](migration/planning-for-migration.md)

@@ -17,11 +17,11 @@ caps.handback.revision: 0
 author: mestew
 ms.author: mstewart
 manager: dougeby
-ms.openlocfilehash: b9699b2f4bd1f18890d25582be9a8d20778b64be
-ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
+ms.openlocfilehash: 7cfb969ab70c27859788732839f4715541e1b91e
+ms.sourcegitcommit: e4ca9fb1fad2caaf61bb46e0a12f4d6b96f15513
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Tworzenie i uruchamianie skryptów programu PowerShell z poziomu konsoli programu Configuration Manager
 
@@ -141,7 +141,7 @@ Domyślnie w programie Configuration Manager nie są tworzone trzy role używane
          |Skrypty programu SMS|Usuwanie|Tak|
          |Skrypty programu SMS|Modyfikuj|Tak|
 
-    **Nazwa roli**: Autorzy skryptu
+    **Nazwa roli**: Osoba zatwierdzająca skryptu
     - **Opis elementu**: Te uprawnienia włączyć tę rolę zatwierdzić skryptów, ale ich nie można utworzyć ani uruchomić je. 
     - **Uprawnienia:** Upewnij się, że następujące uprawnienia zostały ustawione.
 
@@ -184,7 +184,8 @@ W **Tworzenie skryptu** okna dialogowego, kliknij przycisk **Parametry skryptu**
 Każdy z parametrów skryptu ma własne okno dialogowe dodawania dalszych szczegółów i sprawdzania poprawności.
 
 >[!IMPORTANT]
-> Wartości parametrów nie może zawierać apostrof. 
+> Wartości parametrów nie może zawierać apostrof. </br></br>
+> Jest to znany problem, w której parametry spacjami nie zostały przekazane do skryptu prawidłowo 1802 wersji programu Configuration Manager. Jeśli miejsce jest używana w parametrze, tylko pierwszy element w parametrze są przekazywane do skryptu i wszystko po miejsce nie zostanie przekazany. Administratorzy mogą skryptu obejścia tego problemu, podstawiając alternatywne znaki spacji i konwertowanie ich lub z innych metod.
 
 
 ### <a name="parameter-validation"></a>Sprawdzanie poprawności parametru
