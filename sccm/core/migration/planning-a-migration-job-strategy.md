@@ -1,27 +1,21 @@
 ---
-title: "Planowanie zadań migracji"
+title: Planowanie zadań migracji
 titleSuffix: Configuration Manager
-description: "Aby skonfigurować dane, które chcesz migrować do środowiska programu System Center Configuration Manager, należy użyć zadania migracji."
-ms.custom: na
+description: Aby skonfigurować dane, które chcesz migrować do środowiska programu System Center Configuration Manager, należy użyć zadania migracji.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: a70bfbd4-757a-4468-9312-1c3b373ef9fc
-caps.latest.revision: "6"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
+manager: dougeby
 robots: noindex
-ms.openlocfilehash: 96fb65352042c7785dded06251b57cea04b293d7
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+ms.openlocfilehash: 0481abfb1ed881355a489b99b0c3f7ec9c595e69
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="plan-a-migration-job-strategy-in-system-center-configuration-manager"></a>Planowanie strategii zadania migracji w programie System Center Configuration Manager
 
@@ -47,7 +41,7 @@ Aby skonfigurować określone dane, które chcesz migrować do środowiska progr
 
 -   [Planowanie poprzednio zmigrowanych zadania migracji obiektów](#About_Object_Migrations)  
 
-##  <a name="Types_of_Migration"></a>Rodzaje zadań migracji  
+##  <a name="Types_of_Migration"></a> Rodzaje zadań migracji  
  Configuration Manager obsługuje następujące rodzaje zadań migracji. Każdy typ zadania jest zaprojektowany z myślą o określeniu obiektów, które można uwzględnić w danym zadaniu.  
 
  **Migracja kolekcji** (obsługiwana tylko w przypadku migracji z programu Configuration Manager 2007 z dodatkiem SP2): Migrację obiektów, które są powiązane z wybranymi kolekcjami. Domyślnie migracja kolekcji obejmuje wszystkie obiekty, które są skojarzone z elementów kolekcji. Wykonując zadanie migracji kolekcji, można wykluczyć określone wystąpienia obiektów.  
@@ -56,7 +50,7 @@ Aby skonfigurować określone dane, które chcesz migrować do środowiska progr
 
  **Migracja uprzednio zmigrowanych obiektów**: Migrację obiektów, które zostały już uprzednio zmigrowane zostały zaktualizowane w hierarchii źródłowej po ostatniej migracji.  
 
-###  <a name="Objects_that_can_migrate"></a>Obiekty, które można migrować  
+###  <a name="Objects_that_can_migrate"></a> Obiekty, które można migrować  
  Nie każdy obiekt może zostać zmigrowany w określonym typie zadania migracji. Poniższa lista wskazuje typy obiektów, które można migrować za pomocą poszczególnych typów zadań migracji.  
 
 > [!NOTE]  
@@ -212,7 +206,7 @@ Aby skonfigurować określone dane, które chcesz migrować do środowiska progr
     > [!IMPORTANT]  
     >  Chociaż migrację pakietu z aplikacją wirtualną można wykonać za pomocą migracji obiektu, to nie jest możliwa migracja pakietów za pomocą typu zadania **Migracja uprzednio zmigrowanych obiektów**. Zamiast tego należy usunąć zmigrowany pakiet aplikacji wirtualnej z lokacji docelowej oraz utworzyć nowe zadanie migracji aplikacji wirtualnej.  
 
-##  <a name="About_Migration_Jobs"></a>Planowanie ogólne wszystkich zadań migracji  
+##  <a name="About_Migration_Jobs"></a> Planowanie ogólne wszystkich zadań migracji  
  Kreator tworzenia zadania migracji można utworzyć zadania migracji obiektów do hierarchii docelowej. Typ utworzonego zadania migracji określa obiekty dostępne do migracji. Możesz utworzyć i użyć wielu zadań migracji, aby przeprowadzić migrację danych z tej samej lokacji źródłowej lub z wielu lokacji źródłowych. Użycie jednego typu zadania migracji nie blokuje migracji za pomocą zadania innego typu.  
 
  Po pomyślnym uruchomieniu zadania migracji jego stan jest przedstawiony jako **Zakończono**. Ponowne uruchomienie takiego zadania nie jest możliwe. Jednak można utworzyć nowe zadanie migracji obejmujące obiekty, które zostały zmigrowane w oryginalnym zadaniu. Do nowego zadania można dołączyć dodatkowe obiekty. Po utworzeniu dodatkowych zadań migracji obiekty, które zostały już uprzednio zmigrowane, wyświetlić stan **zmigrowane**. Można wybrać te obiekty do migracji je ponownie, ale chyba, że obiekt został zaktualizowany w hierarchii źródłowej, ponownie migracji tych obiektów nie jest konieczne. Jeśli obiekt został zaktualizowany w hierarchii źródłowej po pierwotnej migracji, można go zidentyfikować, używając typu zadania dla migracji o nazwie **Obiekty zmodyfikowane po migracji**.  
@@ -258,7 +252,7 @@ Aby skonfigurować określone dane, które chcesz migrować do środowiska progr
 ### <a name="specify-conflict-resolution-for-migrated-data"></a>Wybierz sposób rozwiązywania konfliktów dla migrowanych danych  
  Domyślnie zadania migracji nie zastępują danych w docelowej bazie danych dopiero po skonfigurowaniu zadania migracji, aby pomijać lub nadpisywać dane, które wcześniej zostały poddane migracji do docelowej bazy danych.  
 
-##  <a name="About_Collection_Migration "></a>Planowanie zadań migracji kolekcji  
+##  <a name="About_Collection_Migration "></a> Planowanie zadań migracji kolekcji  
  Zadania migracji kolekcji są dostępne tylko w przypadku migracji danych z hierarchii źródłowej, która działa obsługiwana wersja programu Configuration Manager 2007. Podczas migracji kolekcji należy określić co najmniej jedną migrację, która ma być migrowana. W przypadku każdej określonej kolekcji zadanie migracji automatycznie wybierze do migracji wszystkie powiązane obiekty. Jeśli na przykład zostanie wybrana konkretna kolekcja użytkowników, nastąpi zidentyfikowanie członków tej kolekcji oraz będzie można migrować wdrożenia skojarzone z tą kolekcją. Opcjonalnie można wybrać do migracji także inne obiekty wdrożenia, które są skojarzone z tymi członkami. Wszystkie wybrane elementy są dodawane do listy obiektów przeznaczonych do migracji.  
 
  Podczas migracji kolekcji, System Center Configuration Manager migruje także ustawienia kolekcji, w tym okna obsługi i zmienne kolekcji, ale nie można migrować ustawień kolekcji dotyczących zapewniania udostępniania klientów AMT.  
@@ -308,12 +302,12 @@ Aby skonfigurować określone dane, które chcesz migrować do środowiska progr
 
  Aby włączyć program po migracji, usuń zaznaczenie **Wyłącz ten program na komputerach, na których jest anonsowany** na **zaawansowane** karcie we właściwościach programu.  
 
-##  <a name="About_Object_Migration"></a>Planowanie zadań migracji obiektów  
+##  <a name="About_Object_Migration"></a> Planowanie zadań migracji obiektów  
  W przeciwieństwie do migracji kolekcji jest konieczne wybieranie poszczególnych obiektów i wystąpień obiektów przeznaczonych do migracji. Można wybierać pojedyncze obiekty, takie jak (anonse z hierarchii programu Configuration Manager 2007) lub publikacje z hierarchii programu System Center 2012 Configuration Manager lub System Center Configuration Manager do dodania do listy obiektów migrowanych w konkretnym zadaniu migracji. Wszelkie obiekty, które nie zostaną dodane do listy migracji, nie zostaną zmigrowane do lokacji docelowej w tym zadaniu migracji obiektów.  
 
  Zadania migracji obiektów nie ma żadnych dodatkowych konfiguracji oprócz tych, które są stosowane do wszystkich zadań migracji.  
 
-##  <a name="About_Object_Migrations"></a>Planowanie zadań migracji poprzednio zmigrowanych obiektów  
+##  <a name="About_Object_Migrations"></a> Planowanie zadań migracji poprzednio zmigrowanych obiektów  
  Gdy w hierarchii źródłowej jest aktualizowany obiekt, który został już zmigrowany do hierarchii docelowej, można go ponownie zmigrować za pomocą typu zadania **Obiekty zmodyfikowane po migracji**. Na przykład po zmiany nazwy lub zaktualizowaniu plików źródłowych dla pakietu w hierarchii źródłowej, zwiększa się wersja pakietu w hierarchii źródłowej. Po zwiększeniu wersji pakietu może on zostać zidentyfikowany przez zadanie tego typu jako nadający się do migracji.  
 
  Ten typ zadania jest podobny do typu migracji obiektów, jednak podczas wybierania migrowanych obiektów można wybierać tylko obiekty zaktualizowane po poprzedniej migracji wykonywanej za pomocą poprzedniego zadania migracji.   

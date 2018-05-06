@@ -1,26 +1,20 @@
 ---
-title: "Zarządzanie kolekcjami"
+title: Zarządzanie kolekcjami
 titleSuffix: Configuration Manager
-description: "Czy kolekcje typowych zadań zarządzania w programie System Center Configuration Manager."
-ms.custom: na
+description: Czy kolekcje typowych zadań zarządzania w programie System Center Configuration Manager.
 ms.date: 4/25/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: e102fd1a-76df-4d8e-b1b0-10ee18318f67
-caps.latest.revision: "8"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 0655a1dc566657cb27cdc7537603871dc36cc568
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: b00b62a90f496eb19a77dcc431ccf157b1227923
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-manage-collections-in-system-center-configuration-manager"></a>Zarządzanie kolekcjami w programie System Center Configuration Manager
 
@@ -46,7 +40,7 @@ Użyj Przegląd informacji w tym temacie ułatwiają wykonywanie zadań zarządz
 |**Zaktualizuj członkostwo**|Ocenia członkostwo dla wybranej kolekcji. W przypadku kolekcji z wieloma elementami członkowskimi aktualizowanie może zająć trochę czasu. Użyj akcji **Odśwież** , aby zaktualizować wyświetlane dane z uwzględnieniem nowych elementów członkowskich kolekcji po zakończeniu aktualizacji.|Brak dodatkowych informacji.|  
 |**Dodaj zasoby**|Otwiera okno dialogowe **Dodawanie zasobów do kolekcji** , w którym można wyszukać nowe zasoby, aby dodać je do wybranej kolekcji.<br /><br /> Ikona wybranej kolekcji będą wyświetlane klepsydry w trakcie aktualizacji.|Brak dodatkowych informacji.|  
 |**Powiadomienie klienta**|Powoduje, że wszyscy klienci w wybranej kolekcji urządzeń pobiorą zasady komputera lub użytkownika.|Brak dodatkowych informacji.|  
-|**Program Program Endpoint Protection**|Wykonuje pełne lub szybkie skanowanie ochrony przed złośliwym kodem na komputerach w wybranej kolekcji lub pobiera na nie najnowsze definicje dla funkcji ochrony przed złośliwym kodem.|[Program Endpoint Protection w programie System Center Configuration Manager](../../../../protect/deploy-use/endpoint-protection.md)|  
+|**Program Endpoint Protection**|Wykonuje pełne lub szybkie skanowanie ochrony przed złośliwym kodem na komputerach w wybranej kolekcji lub pobiera na nie najnowsze definicje dla funkcji ochrony przed złośliwym kodem.|[Program Endpoint Protection w programie System Center Configuration Manager](../../../../protect/deploy-use/endpoint-protection.md)|  
 |**Eksportowanie**|Otwiera **Kreatora eksportu kolekcji** umożliwia wyeksportowanie kolekcji do Managed Object Format (MOF) plik, który można następnie zarchiwizować lub używane w innej lokacji programu Configuration Manager.<br /><br /> Podczas eksportowania kolekcji kolekcje przywoływane przez nią za pomocą reguły **Dołącz** lub **Wyklucz** nie są eksportowane.|Brak dodatkowych informacji.|  
 |**Kopiuj**|Tworzy kopię wybranej kolekcji. Nowa kolekcja używa wybranej kolekcji jako kolekcji ograniczającej.|Brak dodatkowych informacji.|  
 |**Usuwanie**|Usuwa wybraną kolekcję. Możesz także usunąć wszystkie zasoby w kolekcji z bazy danych lokacji.<br /><br /> Nie można usunąć kolekcji, które są wbudowane w oprogramowanie Configuration Manager.|Lista kolekcji wbudowanych, zobacz [wprowadzenie do kolekcji w programie System Center Configuration Manager](../../../../core/clients/manage/collections/introduction-to-collections.md).|  

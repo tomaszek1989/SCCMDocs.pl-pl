@@ -1,25 +1,20 @@
 ---
-title: "Koligacja użytkownika dla hybrydowych urządzeń zarządzanych"
+title: Koligacja użytkownika dla hybrydowych urządzeń zarządzanych
 titleSuffix: Configuration Manager
-description: "Konfiguruj koligację użytkownika dla zarządzanych urządzeń w programie Configuration Manager."
-ms.custom: na
+description: Konfiguruj koligację użytkownika dla zarządzanych urządzeń w programie Configuration Manager.
 ms.date: 03/05/2017
-ms.reviewer: na
-ms.suite: na
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: b5d520a7-e9e5-40ee-91f9-f2684214beb6
-caps.latest.revision: "6"
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: ea496402fa72c3145038701d65af5a72dd9fd3c4
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 11b448d27dbf639eaccf0f41ed97b7961a01adb6
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="user-affinity-for-hybrid-managed-devices-in-configuration-manager"></a>Koligacja użytkownika dla hybrydowych zarządzanych urządzeń w programie Configuration Manager
 
@@ -27,7 +22,7 @@ ms.lasthandoff: 10/12/2017
 
 Podczas konfigurowania profilów dla urządzeń należących do firmy, administrator może określić, czy urządzenia zarządzanego mogą mieć *koligacji użytkownika* identyfikujący określonego użytkownika z urządzeniem.  
 
-##  <a name="BKMK_iOSCP"></a>Zarządzanych urządzeń z koligacją użytkownika  
+##  <a name="BKMK_iOSCP"></a> Zarządzanych urządzeń z koligacją użytkownika  
  Na urządzeniach, na których skonfigurowano **user affinity** , można instalować i uruchamiać aplikację Portal firmy w celu pobierania aplikacji i zarządzania urządzeniami. Gdy użytkownicy otrzymają urządzenia, ich należy wykonać kilka dodatkowych czynności w celu ukończenia działania Asystenta ustawień i zainstalowania aplikacji Portal firmy.  
 
 #### <a name="how-to-enroll-ios-devices-with-user-affinity"></a>Jak rejestrować urządzenia z systemem iOS z koligacją użytkownika  
@@ -52,5 +47,5 @@ Podczas konfigurowania profilów dla urządzeń należących do firmy, administr
 
 8.  Rejestracja jest teraz ukończona. Możesz teraz używać tego urządzenia z pełnym zestawem funkcji.  
 
-##  <a name="BKMK_noUA"></a>Zarządzanych urządzeń bez koligacji użytkownika  
+##  <a name="BKMK_noUA"></a> Zarządzanych urządzeń bez koligacji użytkownika  
  Na urządzeniach, na których skonfigurowano **no user affinity** nie obsługują Portalu firmy i nie należy na nich instalować aplikacji. Portal firmy jest przeznaczony dla użytkowników, którzy mają poświadczenia firmowe i wymagają dostępu do spersonalizowanych zasobów firmowych (np. poczta e-mail). Urządzenia zarejestrowane **bez koligacji użytkownika** nie powinny być dedykowane do logowania dla określonego użytkownika. Urządzenia zarejestrowane bez koligacji użytkownika są zazwyczaj stosowane w kioskach lub punktach sprzedaży (POS) albo jako narzędzia udostępnione. Jeśli koligacja użytkownika jest wymagana, upewnij się, że dla profilu rejestracji urządzenia wybrano opcję **Koligacja użytkownika** przed zarejestrowaniem urządzenia. Aby zmienić stan koligacji urządzenia, należy wycofać i ponownie zarejestrować urządzenie.

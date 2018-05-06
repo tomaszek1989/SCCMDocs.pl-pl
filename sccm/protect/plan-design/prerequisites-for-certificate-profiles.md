@@ -1,25 +1,20 @@
 ---
-title: "Wymagania wstępne dotyczące profilów certyfikatów"
+title: Wymagania wstępne dotyczące profilów certyfikatów
 titleSuffix: Configuration Manager
-description: "Więcej informacji na temat profili certyfikatów w programie System Center Configuration Manager oraz ich zależności zewnętrzne i zależności w produkcie."
-ms.custom: na
+description: Więcej informacji na temat profili certyfikatów w programie System Center Configuration Manager oraz ich zależności zewnętrzne i zależności w produkcie.
 ms.date: 12/20/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: 0317fd02-3721-4634-b18b-7c976a4e92bf
-caps.latest.revision: "9"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: b12afbb731d2280fadaa43e94af0dc85d6a9e0ec
-ms.sourcegitcommit: 6c2aa79924c0e7fc64ef5e9003498fc00c349db9
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 1c5a4ddc906b6304f61f1476a125d98c18acab55
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="prerequisites-for-certificate-profiles-in-system-center-configuration-manager"></a>Wymagania wstępne dotyczące profilów certyfikatów w programie System Center Configuration Manager
 
@@ -46,4 +41,4 @@ Profile certyfikatów w programie System Center Configuration Manager mają zale
 |Rola systemu lokacji punktu rejestracji certyfikatu|Zanim będzie możliwe użycie profili certyfikatów, należy zainstalować rolę systemu lokacji punktu rejestracji certyfikatu. Ta rola komunikuje się z bazy danych programu System Center Configuration Manager, serwer lokacji programu System Center Configuration Manager i modułu zasady programu System Center Configuration Manager.<br /><br /> Aby uzyskać więcej informacji na temat wymagań systemowych dla tej roli systemu lokacji i miejsca instalacji tej roli w hierarchii, zobacz **wymagania systemowe lokacji** sekcji [obsługiwane konfiguracje programu System Center Menedżer konfiguracji](../../core/plan-design/configs/supported-configurations.md) artykułu.<br /><br /> Punkt rejestracji certyfikatu nie mogą być instalowane na tym samym serwerze, na którym działa usługa rejestracji urządzeń sieciowych.|  
 |System Center Configuration Manager modułu zasad jest zainstalowany na serwerze, na którym uruchomiona jest usługa roli usługi rejestracji urządzeń sieciowych dla usług certyfikatów w usłudze Active Directory|Aby wdrożyć profile certyfikatów, należy zainstalować moduł zasad programu System Center Configuration Manager. Ten moduł zasad można znaleźć na nośniku instalacyjnym programu System Center Configuration Manager.|  
 |Dane odnajdywania|Wartości podmiotu certyfikatu i alternatywnej nazwy podmiotu są dostarczane przez program System Center Configuration Manager i pobierane z informacji zebranych podczas odnajdowania:<br /><br /> Certyfikaty użytkowników: odnajdywanie użytkownika usługi Active Directory<br /><br /> Certyfikaty komputerów: Odnajdowanie systemu usługi Active Directory i odnajdowanie sieci|  
-|Określone uprawnienia zabezpieczeń w celu zarządzania profilami certyfikatów|Wymagane są następujące uprawnienia zabezpieczeń w celu zarządzania ustawieniami dostępu do zasobów firmowych, takich jak profile certyfikatów, profile sieci Wi-Fi i profile sieci VPN:<br /><br /> Aby wyświetlać i zarządzać alertów i raportów dotyczących profilów certyfikatów: **Utwórz**, **usunąć**, **Modyfikuj**, **modyfikowanie raportu**, **odczytu**, i **Uruchom raport** dla **alerty** obiektu.<br /><br /> Aby utworzyć i zarządzać profilami certyfikatów: **Tworzenie zasad**, **modyfikowanie raportu**, **odczytu**, i **Uruchom raport** dla **profil certyfikatu** obiektu.<br /><br /> Aby zarządzać sieci Wi-Fi, wdrożeniami profili certyfikatów i sieci VPN: **Wdrażanie zasad konfiguracji**, **modyfikowanie alertu stanu klienta**, **odczytu**, i **Odczytaj zasób** dla **kolekcji** obiektu.<br /><br /> Aby zarządzać wszystkimi zasadami konfiguracji: **Utwórz**, **usunąć**, **Modyfikuj**, **odczytu**, i **Ustawianie zakresu zabezpieczeń** dla **zasady konfiguracji** obiektu.<br /><br /> Aby uruchamiać kwerendy dotyczące profili certyfikatów: **Odczyt** uprawnienie **zapytania** obiektu.<br /><br /> Aby wyświetlić informacje o profilach certyfikatów w konsoli programu System Center Configuration Manager: **Odczyt** uprawnienie **lokacji** obiektu.<br /><br /> Aby wyświetlić komunikaty o stanie dla profilów certyfikatów: **Odczyt** uprawnienie **komunikaty o stanie** obiektu.<br /><br /> Tworzenie i modyfikowanie profilu certyfikatu zaufanego urzędu certyfikacji: **Tworzenie zasad**, **modyfikowanie raportu**, **odczytu**, i **Uruchom raport** dla **profil zaufanego certyfikatu CA** obiektu.<br /><br /> Aby utworzyć i zarządzać profilami sieci VPN: **Tworzenie zasad**, **modyfikowanie raportu**, **odczytu**, i **Uruchom raport** dla **profilu sieci VPN** obiektu.<br /><br /> Aby utworzyć i zarządzać profilami sieci Wi-Fi: **Tworzenie zasad**, **modyfikowanie raportu**, **odczytu**, i **Uruchom raport** dla **profilu sieci Wi-Fi** obiektu.<br /><br /> **Menedżer dostępu do zasobów firmy** te uprawnienia, które są wymagane do zarządzania profilami certyfikatów w programie System Center Configuration Manager obejmuje rola zabezpieczeń. Aby uzyskać więcej informacji, zobacz **Konfigurowanie administracji opartej na rolach** sekcji [Konfigurowanie zabezpieczeń w programie System Center Configuration Manager](../../core/plan-design/security/configure-security.md) artykułu.|  
+|Określone uprawnienia zabezpieczeń w celu zarządzania profilami certyfikatów|Wymagane są następujące uprawnienia zabezpieczeń w celu zarządzania ustawieniami dostępu do zasobów firmowych, takich jak profile certyfikatów, profile sieci Wi-Fi i profile sieci VPN:<br /><br /> Aby wyświetlać i zarządzać alertów i raportów dotyczących profilów certyfikatów: **Utwórz**, **usunąć**, **zmodyfikować**, **Modyfikuj raport**, **odczytu**, i **Uruchom raport** Aby uzyskać **alerty** obiektu.<br /><br /> Aby utworzyć i zarządzać profilami certyfikatów: **Tworzenie zasad**, **modyfikowanie raportu**, **odczytu**, i **Uruchom raport** dla **profil certyfikatu** obiektu.<br /><br /> Aby zarządzać sieci Wi-Fi, wdrożeniami profili certyfikatów i sieci VPN: **Wdrażanie zasad konfiguracji**, **Modyfikuj Alert stanu klienta**, **odczytu**, i **odczytu zasobów** dla **kolekcji**obiektu.<br /><br /> Aby zarządzać wszystkimi zasadami konfiguracji: **Utwórz**, **usunąć**, **zmodyfikować**, **odczytu**, i **Ustaw zakres zabezpieczeń** dla **zasady konfiguracji**  obiektu.<br /><br /> Aby uruchamiać kwerendy dotyczące profili certyfikatów: **Odczyt** uprawnienie **zapytania** obiektu.<br /><br /> Aby wyświetlić informacje o profilach certyfikatów w konsoli programu System Center Configuration Manager: **Odczyt** uprawnienie **lokacji** obiektu.<br /><br /> Aby wyświetlić komunikaty o stanie dla profilów certyfikatów: **Odczyt** uprawnienie **komunikaty o stanie** obiektu.<br /><br /> Tworzenie i modyfikowanie profilu certyfikatu zaufanego urzędu certyfikacji: **Tworzenie zasad**, **modyfikowanie raportu**, **odczytu**, i **Uruchom raport** dla **profil zaufanego certyfikatu CA** obiektu.<br /><br /> Aby utworzyć i zarządzać profilami sieci VPN: **Tworzenie zasad**, **modyfikowanie raportu**, **odczytu**, i **Uruchom raport** dla **profilu sieci VPN** obiektu.<br /><br /> Aby utworzyć i zarządzać profilami sieci Wi-Fi: **Tworzenie zasad**, **modyfikowanie raportu**, **odczytu**, i **Uruchom raport** dla **profilu sieci Wi-Fi** obiektu.<br /><br /> **Menedżer dostępu do zasobów firmy** te uprawnienia, które są wymagane do zarządzania profilami certyfikatów w programie System Center Configuration Manager obejmuje rola zabezpieczeń. Aby uzyskać więcej informacji, zobacz **Konfigurowanie administracji opartej na rolach** sekcji [Konfigurowanie zabezpieczeń w programie System Center Configuration Manager](../../core/plan-design/security/configure-security.md) artykułu.|  

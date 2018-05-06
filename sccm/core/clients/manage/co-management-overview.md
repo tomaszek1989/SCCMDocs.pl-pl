@@ -2,21 +2,19 @@
 title: Jednoczesne zarządzania dla urządzeń z systemem Windows 10
 titleSuffix: Configuration Manager
 description: Dowiedz się, jak jednocześnie zarządzać urządzeniami z systemem Windows 10, używając programu Configuration Manager i Microsoft Intune.
-keywords: ''
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
 ms.date: 03/28/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
-ms.service: ''
-ms.technology: ''
+ms.technology: configmgr-client
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: 3d7ca4bb72f6f3f76855faac125385374347ba55
-ms.sourcegitcommit: d67c6246bb6027cd5501e772b0521f9272407c28
+ms.openlocfilehash: 3a667ae075ac688d4b49789ed88f858c2ff39397
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="co-management-for-windows-10-devices"></a>Jednoczesne zarządzania dla urządzeń z systemem Windows 10    
  Z poprzedniej aktualizacji systemu Windows 10, urządzenia z systemem Windows 10 można już Dołącz do lokalnej usługi Active Directory (AD) i oparta na chmurze usługi Azure AD, w tym samym czasie (rozwiązanie hybrydowe usługi Azure AD). Począwszy od programu Configuration Manager w wersji 1710 wspólnej zarządzania korzysta z tego ulepszenia i umożliwia jednocześnie zarządzanie urządzeniami 1709 wersji systemu Windows 10, używając programu Configuration Manager i usługi Intune. <!-- 1350871 -->
@@ -52,8 +50,11 @@ Istnieją dwa główne ścieżki do wspólnego zarządzania. Jedna jest inicjowa
 
 
 ### <a name="intune"></a>**Intune**
- - [Jak skonfigurować subskrypcję usługi Intune.](/sccm/mdm/deploy-use/configure-intune-subscription) lub https://docs.microsoft.com/en-us/intune/setup-steps
- - [Uruchom migrację z hybrydowego zarządzania urządzeniami Przenośnymi do autonomicznej usługi Intune.](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa)
+ - [Jak skonfigurować subskrypcję usługi Intune](/sccm/mdm/deploy-use/configure-intune-subscription) lub [Konfigurowanie usługi Intune](/intune/setup-steps)  
+ - [Rozpoczynanie migracji z hybrydowego zarządzania urządzeniami przenośnymi do autonomicznej usługi Intune](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa)  
+
+> [!Note]  
+> Jeśli masz środowiska hybrydowego zarządzania urządzeniami Przenośnymi (usługa Intune zintegrowana z programem Configuration Manager), nie można włączyć zarządzania wspólnej. Jednak można rozpocząć migrację użytkowników do autonomicznej usługi Intune, a następnie włącz swoje skojarzone urządzenia systemu Windows 10 do zarządzania wspólnej. Aby uzyskać więcej informacji na temat migracji do autonomicznej usługi Intune, zobacz [rozpocząć migrację z hybrydowego zarządzania urządzeniami Przenośnymi do autonomicznej usługi Intune](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa).  
 
 
 ### <a name="enable-co-management"></a>Włącz zarządzanie wspólnej 

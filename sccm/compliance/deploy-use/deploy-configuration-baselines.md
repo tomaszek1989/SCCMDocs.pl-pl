@@ -1,26 +1,20 @@
 ---
-title: "Wdrażanie linii bazowych konfiguracji"
+title: Wdrażanie linii bazowych konfiguracji
 titleSuffix: Configuration Manager
-description: "Wdrażanie linii bazowych konfiguracji, aby zdefiniować wdrożenia linii bazowej konfiguracji, a także dodać lub usunąć linie bazowe konfiguracji z wdrożenia."
-ms.custom: na
+description: Wdrażanie linii bazowych konfiguracji, aby zdefiniować wdrożenia linii bazowej konfiguracji, a także dodać lub usunąć linie bazowe konfiguracji z wdrożenia.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-compliance
+ms.topic: conceptual
 ms.assetid: 9be8aaf3-075e-4acd-abd2-7459254e16e2
-caps.latest.revision: "7"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: e61314c5c10f4a4c9eda1f0a292cb5a9c72b32bb
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: c55382bf1fc377fd7e86f433a0cb92a5240eafa1
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-deploy-configuration-baselines-in-system-center-configuration-manager"></a>Jak wdrożyć linie bazowe konfiguracji w programie System Center Configuration Manager
 
@@ -28,28 +22,28 @@ ms.lasthandoff: 10/12/2017
 
 Linie bazowe konfiguracji w programie System Center Configuration Manager należy wdrożyć w co najmniej jednej kolekcji użytkowników lub urządzeń, zanim urządzeń klienckich w tych kolekcjach mogły osiągać zgodność z linią bazową konfiguracji.  
 
-Użyj okna dialogowego **Wdrażanie linii bazowych konfiguracji** , aby zdefiniować wdrożenia linii bazowej konfiguracji, w tym dodać lub usunąć linie bazowe konfiguracji z wdrożenia (oprócz określenia harmonogramu szacowania).  
+Użyj **wdrażanie linii bazowych konfiguracji** okno dialogowe, aby zdefiniować wdrożenia linii bazowej konfiguracji, w tym dodać lub usunąć linie bazowe konfiguracji z wdrożenia oprócz określenia harmonogramu szacowania.  
 
 ## <a name="deploy-a-configuration-baseline"></a>Wdrażanie linii bazowej konfiguracji  
 
 1.  W konsoli programu Configuration Manager kliknij **zasoby i zgodność** > **ustawień zgodności** > **linie bazowe konfiguracji**.  
 
-3.  Na liście **Linie bazowe konfiguracji** wybierz linię bazową konfiguracji, którą chcesz wdrożyć, a następnie na karcie **Narzędzia główne** w grupie **Wdrażanie** kliknij pozycję **Wdróż**.  
+3.  W **linie bazowe konfiguracji** listy, wybierz linię bazową konfiguracji, który chcesz wdrożyć, a następnie w **Home** karcie **wdrożenia** kliknij przycisk  **Wdrażanie**.  
 
-4.  W oknie dialogowym **Wdrażanie linii bazowych konfiguracji** wybierz linie bazowe konfiguracji do wdrożenia z listy **Dostępne linie bazowe konfiguracji** . Kliknij pozycję **Dodaj** , aby dodać je do listy **Wybrane linie bazowe konfiguracji** .  
+4.  W **wdrażanie linii bazowych konfiguracji** oknie dialogowym Wybierz linie bazowe konfiguracji, które mają zostać wdrożone w **dostępne linie bazowe konfiguracji** listy. Kliknij przycisk **Dodaj** je dodać do **wybrane linie bazowe konfiguracji** listy.  
 
     > [!IMPORTANT]  
-    >  Jeśli zmienisz element konfiguracji, który został dodany do wdrożonej linii bazowej konfiguracji, zmodyfikowany element konfiguracji nie będzie oceniany pod względem zgodności do momentu uruchomienia następnej zaplanowanej oceny.  
+    >  Jeśli zmienisz element konfiguracji, który został dodany do linii bazowej konfiguracji wdrożonej zmodyfikowany element konfiguracji nie jest oceniane pod kątem zgodności, do momentu jego następnej zaplanowanej oceny.  
 
 5.  Podaj następujące informacje dodatkowe:  
 
-    -   **Koryguj niezgodne reguły, jeśli są obsługiwane** — automatycznie rozwiąże problemy z reguł, które są niezgodne dla Instrumentacji zarządzania Windows (WMI), rejestru, skrypty i wszystkich ustawień dla urządzeń przenośnych, które są zarejestrowane przez program Configuration Manager.  
+    -   **Koryguj niezgodne reguły, jeśli są obsługiwane** — automatycznie rozwiąże problemy z wszystkimi regułami określającymi są niezgodne dla Instrumentacji zarządzania Windows (WMI), rejestru, skrypty i wszystkich ustawień dla urządzeń przenośnych, które są zarejestrowane w konfiguracji Menedżer.  
 
-    -   **Zezwalaj na korygowanie poza oknem obsługi** — jeśli okno obsługi zostało skonfigurowane dla kolekcji, w której wdrażasz linię bazową konfiguracji, włącz tę opcję, aby pozwolić na korygowanie wartości przy użyciu ustawień zgodności poza oknem obsługi. Aby uzyskać więcej informacji dotyczących okien obsługi, zobacz [używanie okien obsługi](/sccm/core/clients/manage/collections/use-maintenance-windows).  
+    -   **Zezwalaj na korygowanie poza oknem obsługi** — Jeśli okno obsługi zostało skonfigurowane dla kolekcji, w której wdrażasz linię bazową konfiguracji, Włącz tę opcję, aby pozwolić na korygowanie wartości przy użyciu poza ustawień zgodności okna obsługi. Aby uzyskać więcej informacji dotyczących okien obsługi, zobacz [używanie okien obsługi](/sccm/core/clients/manage/collections/use-maintenance-windows).  
 
 6.  **Generuj alert** — konfiguruje alert jest generowany, gdy zgodności linii bazowej konfiguracji jest mniejsza niż określony procent określonej daty i godziny. Możesz również określić, czy chcesz wysyłać alert do programu System Center Operations Manager.  
 
-7.  **Kolekcja** — kliknij pozycję **Przeglądaj** , aby wybrać kolekcję, w której chcesz wdrożyć linię bazową konfiguracji.  
+7.  **Kolekcja** — kliknij przycisk **Przeglądaj** aby wybrać kolekcję, w której chcesz wdrożyć linię bazową konfiguracji.  
 
 8.  **Określ harmonogram oceny zgodności dla tej linii bazowej konfiguracji** Określ harmonogram oceny linii bazowej konfiguracji wdrożonej na komputerach klienckich. Może to być harmonogram prosty lub niestandardowy.  
 

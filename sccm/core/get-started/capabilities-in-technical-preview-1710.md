@@ -1,24 +1,20 @@
 ---
 title: Technical Preview 1710 | Dokumentacja firmy Microsoft
 titleSuffix: Configuration Manager
-description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview 1710 programu System Center Configuration Manager."
-ms.custom: na
+description: Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview 1710 programu System Center Configuration Manager.
 ms.date: 11/20/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: f4706a58-1f11-4eab-b1eb-3d1a0da02d0f
-author: erikje
-ms.author: erikje
-manager: angrobe
-ms.openlocfilehash: ed5f977df79114e1209cd3cc82d2e56e8e728c3d
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 730d14c5985c088d964761bb83043f3a34924486
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1710-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1710 programu System Center Configuration Manager
 
@@ -114,7 +110,7 @@ Zarządzanych urządzeń należy uruchomić Windows 10 1709 spadek twórców Upd
 | Wykorzystać ochrony  | Brak  |
 | Ochrona sieci  |  Urządzenia muszą mieć [ochrony w czasie rzeczywistym programu Windows Defender AV]( https://docs.microsoft.com/windows/threat-protection/windows-defender-exploit-guard/controlled-folders-exploit-guard) włączone.  |
 
-### <a name="create-an-exploit-guard-policy----1355468---"></a>Utwórz zasadę wykorzystać zabezpieczenia<!--1355468 -->
+### <a name="create-an-exploit-guard-policy----1355468---"></a>Utwórz zasadę wykorzystać zabezpieczenia  <!--1355468 -->
 1.  W konsoli programu Configuration Manager, przejdź do **zasoby i zgodność** > **programu Endpoint Protection**, a następnie kliknij przycisk **Windows Defender wykorzystać zabezpieczenia**.
 2.  Na **Home** karcie **Utwórz** kliknij przycisk **Utwórz zasady wykorzystać**.
 3.  Na stronie **Ogólne** w **Kreatorze tworzenia elementu konfiguracji**podaj nazwę i opcjonalny opis elementu konfiguracji.
@@ -153,12 +149,12 @@ Aby korzystać z certyfikatów CNG, urząd certyfikacji (CA) należy podać CNG 
 Aby uzyskać najlepsze wyniki zaleca się tworzenia nazwy podmiotu, na podstawie informacji usługi Active Directory.  Użyj nazwy DNS dla **format nazwy podmiotu** i Dołącz nazwy DNS alternatywnej nazwy podmiotu.  W przeciwnym razie należy podać te informacje podczas rejestrowania urządzenia w usłudze na profil certyfikatu.
 
 
-## <a name="improved-descriptions-for-pending-computer-restarts-----1356283---"></a>Ulepszone opisy do czasu ponownego uruchomienia komputera<!--1356283 -->
+## <a name="improved-descriptions-for-pending-computer-restarts-----1356283---"></a>Ulepszone opisy do czasu ponownego uruchomienia komputera   <!--1356283 -->
 W [wersji zapoznawczej technical preview 1708](/sccm/core/get-started/capabilities-in-technical-preview-1708#restart-computers-from-the-configuration-manager-console), dodano możliwość identyfikowania urządzeń, które oczekują na ponowne uruchomienie z poziomu konsoli programu Configuration Manager.
 
 Począwszy od tej wersji technical preview, w konsoli są wyświetlane dodatkowe informacje, które zawierają informacje na temat procesu lub akcji, który żąda ponownego rozruchu.
 
-## <a name="device-guard-policy-changes----1355092---"></a>Zmiany zasad ochrona urządzeń<!-- 1355092 -->
+## <a name="device-guard-policy-changes----1355092---"></a>Zmiany zasad ochrona urządzeń <!-- 1355092 -->
 Z 1710 kompilacji wersji zapoznawczej Technical Preview trzy następujące zmiany zostały wprowadzone w odniesieniu do zasady ochrony urządzeń:
 
 ### <a name="device-guard-policies-renamed-to-windows-defender-application-control-policies"></a>Zasady zabezpieczenia urządzeń zmieniona na zasad kontroli aplikacji Defender systemu Windows
@@ -194,7 +190,7 @@ Aby zezwolić urządzeniu z systemem Windows Defender SmartScreen zaufanych opro
 3.  W **zaufanych plików lub folder** Dodaj pliki i foldery, które mają być zaufane.
 4.  Kliknij przycisk **dalej** aż kreator zakończy pracę.
 
-## <a name="configure-and-deploy-windows-defender-application-guard-policies----1351960---"></a>Konfigurowanie i wdrażanie zasad Guard aplikacji programu Windows Defender<!-- 1351960 -->
+## <a name="configure-and-deploy-windows-defender-application-guard-policies----1351960---"></a>Konfigurowanie i wdrażanie zasad Guard aplikacji programu Windows Defender <!-- 1351960 -->
 
 [Ochrona programu Windows Defender aplikacji](https://blogs.windows.com/msedgedev/2016/09/27/application-guard-microsoft-edge/#XLxEbcpkuKcFebrw.97) jest nową funkcją systemu Windows, która pomaga chronić użytkowników przez otwarcie niezaufanych witryn sieci web w bezpiecznego kontenera izolowanym, który nie jest dostępny za pomocą innymi składnikami systemu operacyjnego. W tej wersji technical preview dodaliśmy pomocy technicznej, aby skonfigurować tę funkcję za pomocą ustawień zgodności programu Configuration Manager, które można skonfigurować, a następnie wdrożyć do kolekcji. Ta funkcja zostanie wydana w 64-bitowej wersji aktualizacji twórcy systemu Windows 10 w wersji zapoznawczej (nazwa kodowa: RS2). Do testowania tej funkcji teraz, możesz muszą używać wersji zapoznawczej tej aktualizacji.
 

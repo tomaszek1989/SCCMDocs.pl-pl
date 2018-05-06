@@ -1,25 +1,20 @@
 ---
-title: "Konfigurowanie alertów programu Endpoint Protection"
+title: Konfigurowanie alertów programu Endpoint Protection
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak skonfigurować alerty programu Endpoint Protection w programie System Center Configuration Manager."
-ms.custom: na
+description: Dowiedz się, jak skonfigurować alerty programu Endpoint Protection w programie System Center Configuration Manager.
 ms.date: 03/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: f504de3e-4caf-455c-80d7-a63f13f4c5d9
-caps.latest.revision: "21"
-author: NathBarn
-ms.author: nathbarn
-manager: angrobe
-ms.openlocfilehash: 91df245565cfe99f79a18618d62c00f0cea579d2
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 275ce06520174adf10100b77a8034620b072c93f
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 #  <a name="configure-alerts-for-endpoint-protection-in-configuration-manager"></a>Konfigurowanie alertów dla programu Endpoint Protection w programie Configuration Manager
 
@@ -43,12 +38,12 @@ ms.lasthandoff: 10/12/2017
     > [!NOTE]
     >  Nie można skonfigurować alertów dla kolekcji użytkowników.
 
-4.  Na **alerty** karcie *< nazwa kolekcji\>***właściwości** okno dialogowe, wybierz opcję **Wyświetl tę kolekcję na pulpicie nawigacyjnym programu Endpoint Protection** Jeśli chcesz wyświetlić szczegółowe informacje o operacjach ochrony przed złośliwym kodem dla tej kolekcji w **monitorowanie** obszaru roboczego w konsoli programu Configuration Manager.
+4.  Na **alerty** karcie *< nazwa kolekcji\>*** właściwości** wybierz pozycję **Wyświetl tę kolekcję na pulpicie nawigacyjnym programu Endpoint Protection** Jeśli Aby wyświetlić szczegółowe informacje o operacjach ochrony przed złośliwym kodem dla tej kolekcji w **monitorowanie** obszaru roboczego w konsoli programu Configuration Manager.
 
     > [!NOTE]
     >  Ta opcja jest niedostępna w przypadku kolekcji **Wszystkie systemy** .
 
-5.  Na **alerty** karcie *< nazwa kolekcji\>***właściwości** okno dialogowe, kliknij przycisk **Dodaj**.
+5.  Na **alerty** karcie *< nazwa kolekcji\>*** właściwości** okno dialogowe, kliknij przycisk **Dodaj**.
 
 6.  W **Dodaj nowe alerty kolekcji** okna dialogowego, **Generowanie alertu, gdy te warunki zostaną spełnione** Wybierz alerty, Configuration Manager, aby wygenerować wystąpić określonych zdarzeń programu Endpoint Protection, a następnie kliknij opcję **OK**.
 
@@ -87,7 +82,7 @@ ms.lasthandoff: 10/12/2017
 
         -   **Interwał wykrywania (godziny):** Określ interwał wykrywania w godzinach, w którym musi wystąpić liczba wykryć złośliwego oprogramowania. Liczba ta powinna należeć do zakresu od **1** do **168**.
 
-9. Kliknij przycisk **OK** zamknąć *< nazwa kolekcji\>***właściwości** okno dialogowe.  
+9. Kliknij przycisk **OK** zamknąć *< nazwa kolekcji\>*** właściwości** okno dialogowe.  
 
 ## <a name="alert-for-outdated-malware-client"></a>Alert dotyczący nieaktualne przed złośliwym oprogramowaniem klienta
 

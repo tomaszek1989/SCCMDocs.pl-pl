@@ -1,26 +1,20 @@
 ---
-title: "Narzędzie sprawdzania wymagań wstępnych"
+title: Narzędzie sprawdzania wymagań wstępnych
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak używać narzędzia sprawdzania wymagań wstępnych można zidentyfikować i rozwiązać problemy, które mogłyby zablokować lokacji lub instalacji roli systemu lokacji."
-ms.custom: na
+description: Dowiedz się, jak używać narzędzia sprawdzania wymagań wstępnych można zidentyfikować i rozwiązać problemy, które mogłyby zablokować lokacji lub instalacji roli systemu lokacji.
 ms.date: 3/1/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: aaf13bb8-4ba2-4bd7-9fac-d36a9d88a1b6
-caps.latest.revision: 
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 45e356b153a95a49f09f2d2931b8b306d0fd2b4c
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 296ed6590c10adeab22fb274d5e6f44bc578a784
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="prerequisite-checker-for-system-center-configuration-manager"></a>Narzędzie sprawdzania wymagań wstępnych programu System Center Configuration Manager
 
@@ -91,7 +85,7 @@ Aby uzyskać więcej informacji na temat sprawdza, czy narzędzie sprawdzania wy
 
     Na przykład aby sprawdzić lokację główną, można użyć następujących czynności:  
 
-       **prereqchk.exe [/ noui] / PRI/SQL &lt;nazwa FQDN programu SQL Server\> nazwa_fqdn_programu_sql_server &lt;Nazwa_fqdn_dostawcy_programu_sms\> [/ JOIN &lt;nazwę FQDN centralnej lokacji administracyjnej\>] [/MP &lt;FQDN punktu zarządzania\>] [/DP &lt;FQDN punktu dystrybucji\>]**  
+       **prereqchk.exe [/ noui] / PRI/SQL &lt;nazwa FQDN programu SQL Server\> nazwa_fqdn_programu_sql_server &lt;Nazwa_fqdn_dostawcy_programu_sms\> [/ JOIN &lt;nazwę FQDN centralnej lokacji administracyjnej\>] [/MP &lt;nazwa FQDN punkt zarządzania\>] [/DP &lt;FQDN punktu dystrybucji\>]**  
 
     **Serwer centralnej lokacji administracyjnej:**  
 
@@ -103,11 +97,11 @@ Aby uzyskać więcej informacji na temat sprawdza, czy narzędzie sprawdzania wy
 
          Wymagany. Sprawdza, czy komputer lokalny spełnia wymagania centralnej lokacji administracyjnej.  
 
-    -   **/ SQL &lt;* nazwa FQDN programu SQL Server*>**  
+    -   **/ SQL &lt; *nazwa FQDN programu SQL Server*>**  
 
          Wymagany. Przy użyciu w pełni kwalifikowaną nazwę (FQDN), sprawdza, czy określony komputer spełnia wymagania programu SQL Server do obsługi bazy danych lokacji programu Configuration Manager.  
 
-    -   **/ SDK &lt;* nazwa FQDN dostawcy programu SMS*>**  
+    -   **/ SDK &lt; *nazwa FQDN dostawcy programu SMS*>**  
 
          Wymagany. Sprawdza, czy określony komputer spełnia wymagania dostawcy programu SMS.  
 
@@ -115,7 +109,7 @@ Aby uzyskać więcej informacji na temat sprawdza, czy narzędzie sprawdzania wy
 
          Nie jest wymagane. Weryfikuje, czy wyjątek zapory umożliwia komunikację za pośrednictwem portu usługi SQL Server Service Broker (SSB). Domyślny port SSB to 4022.  
 
-    -   **InstallDir &lt;* ścieżki instalacji programu Configuration Manager*>**  
+    -   **InstallDir &lt; *ścieżki instalacji programu Configuration Manager*>**  
 
          Nie jest wymagane. Sprawdza, czy minimalna ilość miejsca na wymagania dotyczące instalacji lokacji.  
 
@@ -129,23 +123,23 @@ Aby uzyskać więcej informacji na temat sprawdza, czy narzędzie sprawdzania wy
 
          Wymagany. Sprawdza, czy komputer lokalny spełnia wymagania lokacji głównej.  
 
-    -   **/ SQL &lt;* nazwa FQDN programu SQL Server*>**  
+    -   **/ SQL &lt; *nazwa FQDN programu SQL Server*>**  
 
          Wymagany. Sprawdza, czy określony komputer spełnia wymagania programu SQL Server do obsługi bazy danych lokacji programu Configuration Manager.  
 
-    -   **/ SDK &lt;* nazwa FQDN dostawcy programu SMS*>**  
+    -   **/ SDK &lt; *nazwa FQDN dostawcy programu SMS*>**  
 
          Wymagany. Sprawdza, czy określony komputer spełnia wymagania dostawcy programu SMS.  
 
-    -   **/ JOIN &lt;* nazwę FQDN centralnej lokacji administracyjnej*>**  
+    -   **/ JOIN &lt; *nazwę FQDN centralnej lokacji administracyjnej*>**  
 
          Nie jest wymagane. Sprawdza, czy komputer lokalny spełnia wymagania dotyczące połączenia z serwerem witryny Administracja centralna.  
 
-    -   **/MP &lt;* FQDN punktu zarządzania*>**  
+    -   **/MP &lt; *FQDN punktu zarządzania*>**  
 
          Nie jest wymagane. Sprawdza, czy określony komputer spełnia wymagania roli systemu lokacji punktu zarządzania. Ta opcja jest obsługiwana tylko wtedy, gdy używasz **/PRI** opcji.  
 
-    -   **/DP &lt;* FQDN punktu dystrybucji*>**  
+    -   **/DP &lt; *FQDN punktu dystrybucji*>**  
 
          Nie jest wymagane. Sprawdza, czy określony komputer spełnia wymagania roli systemu lokacji punktu dystrybucji. Ta opcja jest obsługiwana tylko wtedy, gdy używasz **/PRI** opcji.  
 
@@ -153,7 +147,7 @@ Aby uzyskać więcej informacji na temat sprawdza, czy narzędzie sprawdzania wy
 
          Nie jest wymagane. Weryfikuje, czy wyjątek zapory umożliwia komunikację za pośrednictwem portu usługi SSB. Domyślny port SSB to 4022.  
 
-    -   **InstallDir &lt;* ścieżki instalacji programu Configuration Manager*>**  
+    -   **InstallDir &lt; *ścieżki instalacji programu Configuration Manager*>**  
 
          Nie jest wymagane. Sprawdza, czy minimalna ilość miejsca na wymagania dotyczące instalacji lokacji.  
 
@@ -163,7 +157,7 @@ Aby uzyskać więcej informacji na temat sprawdza, czy narzędzie sprawdzania wy
 
          Nie jest wymagane. Uruchamia narzędzie sprawdzania wymagań wstępnych bez wyświetlania interfejsu użytkownika. Należy określić tę opcję, przed innymi opcjami w wierszu polecenia.  
 
-    -   **/ SEC &lt;* nazwę FQDN serwera lokacji dodatkowej*>**  
+    -   **/ SEC &lt; *nazwę FQDN serwera lokacji dodatkowej*>**  
 
          Wymagany. Sprawdza, czy określony komputer spełnia wymagania lokacji dodatkowej.  
 
@@ -179,7 +173,7 @@ Aby uzyskać więcej informacji na temat sprawdza, czy narzędzie sprawdzania wy
 
          Nie jest wymagane. Sprawdza, czy obowiązująca jest wyjątek zapory umożliwia komunikację dla programu SQL Server port usługi, i że port nie jest używany przez inne wystąpienie nazwane programu SQL Server. Domyślny port to 1433.  
 
-    -   **InstallDir &lt;* ścieżki instalacji programu Configuration Manager*>**  
+    -   **InstallDir &lt; *ścieżki instalacji programu Configuration Manager*>**  
 
          Nie jest wymagane. Sprawdza, czy minimalna ilość miejsca na wymagania dotyczące instalacji lokacji.  
 

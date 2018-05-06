@@ -1,25 +1,20 @@
 ---
-title: "Spis sprzętu dla systemów Linux i UNIX"
+title: Spis sprzętu dla systemów Linux i UNIX
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak korzystać ze spisu sprzętu dla systemów Linux i UNIX w programie System Center Configuration Manager."
-ms.custom: na
+description: Dowiedz się, jak korzystać ze spisu sprzętu dla systemów Linux i UNIX w programie System Center Configuration Manager.
 ms.date: 02/22/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 1026d616-2a20-4fb2-8604-d331763937f8
-caps.latest.revision: "6"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 6f71478f6a2a8e5a2a41068624debfe3ac3e915d
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 68e60611356cbaea3dc14a42776e89ecdc951008
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="hardware-inventory-for-linux-and-unix-in-system-center-configuration-manager"></a>Spis sprzętu dla systemów Linux i UNIX w programie System Center Configuration Manager
 

@@ -1,24 +1,19 @@
 ---
 title: Kreator instalacji
 titleSuffix: Configuration Manager
-ms.custom: na
 ms.date: 7/24/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 1f703376-5f2c-4fd2-8209-7028c931ddc7
-caps.latest.revision: "3"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 266b6ef8664b98d0bf15e20f8bf968b609dd607b
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: c15f59ababae6908a08c28d3ec8ad46075068d52
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="use-the-setup-wizard-to-install-system-center-configuration-manager-sites"></a>Instalowanie lokacji programu System Center Configuration Manager za pomocą Kreatora konfiguracji
 
@@ -29,7 +24,7 @@ Aby zainstalować nową witrynę programu System Center Configuration Manager pr
 
 Aby zainstalować lokację dodatkową, należy zainstalować lokacji z poziomu konsoli programu Configuration Manager. Lokacje dodatkowe nie obsługują instalację skryptową wiersza polecenia.
 
-## <a name="bkmk_primary"></a>Instalowanie centralnej lokacji administracyjnej lub lokacji głównej
+## <a name="bkmk_primary"></a> Instalowanie centralnej lokacji administracyjnej lub lokacji głównej
 Użyj poniższej procedury do zainstalowania centralnej lokacji administracyjnej lub lokacji głównej lub uaktualnić lokację w wersji ewaluacyjne do pełni licencjonowanej lokacji programu Configuration Manager.   
 
 Przed rozpoczęciem instalacji lokacji, należy zapoznać się ze szczegółowymi informacjami w następujących artykułach:
@@ -38,7 +33,7 @@ Przed rozpoczęciem instalacji lokacji, należy zapoznać się ze szczegółowym
 
 Jeśli instalujesz centralną lokację administracyjną w ramach scenariusza rozszerzania lokacji, przejrzyj [rozszerzania autonomicznej lokacji głównej](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_expand) tego tematu, aby można było używać poniższej procedury.
 
-### <a name="bkmk_installpri"></a>Aby zainstalować lokację głównej lub centralnej administracji
+### <a name="bkmk_installpri"></a> Aby zainstalować lokację głównej lub centralnej administracji
 
 1.  Na komputerze, na którym chcesz zainstalować lokację, uruchom  **&lt;InstallationMedia\>\SMSSETUP\BIN\X64\Setup.exe** uruchomić **Kreatora instalacji programu System Center Configuration Manager**.  
 
@@ -219,7 +214,7 @@ Jeśli instalujesz centralną lokację administracyjną w ramach scenariusza roz
     -   Po zakończeniu instalacji będzie można połączyć konsolę, która umożliwia edytowanie obiektów i ustawień.  
 
 
-## <a name="bkmk_expand"></a>Rozszerzenia autonomicznej lokacji głównej
+## <a name="bkmk_expand"></a> Rozszerzenia autonomicznej lokacji głównej
 Jeśli po zainstalowaniu autonomicznej lokacji głównej jako pierwszej lokacji, masz opcję później rozszerzyć tę lokację w większej hierarchii, instalując centralną lokację administracyjną.   
 
 Po rozwinięciu autonomicznej lokacji głównej, należy zainstalować nową centralną lokację administracyjną korzystającej z istniejącej autonomicznej lokacji głównej bazy danych jako odwołanie. Po zainstalowaniu nowej centralnej lokacji administracyjnej autonomiczna lokacja główna działa jako podrzędnej lokacji głównej.
@@ -242,10 +237,10 @@ Aby rozszerzyć lokację, należy użyć Kreatora instalacji programu System Cen
 
 -   Na **instalacji lokacji** strony, wybierz opcję rozszerzenia autonomicznej lokacji głównej.  
 
-Aby rozszerzyć autonomiczną lokację główną, należy najpierw zobacz [wymagania wstępne dotyczące rozszerzania lokacji](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#bkmk_expand), a następnie wykonać procedurę  *[instalacji lokacji głównej lub centralnej administracji](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_installpri)*we wcześniejszej części tego artykułu.
+Aby rozszerzyć autonomiczną lokację główną, należy najpierw zobacz [wymagania wstępne dotyczące rozszerzania lokacji](/sccm/core/servers/deploy/install/prerequisites-for-installing-sites#bkmk_expand), a następnie wykonać procedurę  *[instalacji lokacji głównej lub centralnej administracji](../../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_installpri)* we wcześniejszej części tego artykułu.
 
 
-## <a name="bkmk_secondary"></a>Instalacja lokacji dodatkowej
+## <a name="bkmk_secondary"></a> Instalacja lokacji dodatkowej
  Aby zainstalować lokację dodatkową używa się konsoli programu Configuration Manager.  
 
 -   Jeśli konsola, której używasz, nie jest podłączony do lokacji głównej, który ma być lokacją nadrzędną nowej lokacji dodatkowej, polecenie zainstalowania lokacji zostaną zreplikowane do prawidłowej lokacji głównej.  
@@ -254,7 +249,7 @@ Aby rozszerzyć autonomiczną lokację główną, należy najpierw zobacz [wymag
 
 -   Po zainstalowaniu lokacji dodatkowej programu Configuration Manager skonfiguruje nową lokację w celu użycia portów komunikacyjnych klienta skonfigurowanych w nadrzędnej lokacji głównej.  
 
-### <a name="bkmk_installsecondary"></a>Aby zainstalować lokację dodatkową  
+### <a name="bkmk_installsecondary"></a> Aby zainstalować lokację dodatkową  
 
 
 1.  W konsoli programu Configuration Manager, przejdź do **administracji** > **konfiguracja lokacji** > **witryny**. Wybierz lokację, która będzie nadrzędną lokacją główną nowej lokacji dodatkowej.  
@@ -382,7 +377,7 @@ Aby rozszerzyć autonomiczną lokację główną, należy najpierw zobacz [wymag
 11. Na **Podsumowanie** strony, sprawdź ustawienia, a następnie wybierz **dalej** do instalacji lokacji dodatkowej. Gdy Kreator wyświetli **zakończenia** strony, możesz zamknąć kreatora. Instalacja lokacji dodatkowej będzie kontynuowana w tle.  
 
 
-### <a name="bkmk_verify"></a>Aby sprawdzić stan instalacji lokacji dodatkowej  
+### <a name="bkmk_verify"></a> Aby sprawdzić stan instalacji lokacji dodatkowej  
 
 1.  W konsoli programu Configuration Manager, przejdź do **administracji** > **konfiguracja lokacji** > **witryny**.  
 

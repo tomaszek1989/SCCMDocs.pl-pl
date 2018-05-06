@@ -2,25 +2,19 @@
 title: Konfigurowanie odnajdywania
 titleSuffix: Configuration Manager
 description: Skonfiguruj metody odnajdywania w celu odnalezienia zasobów do zarządzania z sieci, usługi Active Directory i Azure Active Directory.
-ms.custom: na
 ms.date: 03/22/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 49505eb1-d44d-4121-8712-e0f3d8b15bf5
-caps.latest.revision: ''
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 825b9b250000e8353b1428cbee45f8fda9a30c35
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: e7ac10fdc08569e519468633f30548c5c76b5838
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-discovery-methods-for-system-center-configuration-manager"></a>Skonfiguruj metody odnajdywania dla programu System Center Configuration Manager
 
@@ -183,6 +177,9 @@ Użyj poniższych procedur, aby włączyć odnajdowanie lasu usługi Active Dire
 6.  Na **harmonogram sondowania** skonfiguruj zarówno sondowania pełnego odnajdywania, harmonogram i odnajdywanie zmian.  
 
 7.  Opcjonalna metoda polega na **atrybuty usługi Active Directory** kartę, można skonfigurować dodatkowe atrybuty usługi Active Directory dla komputerów, które chcesz odnajdywać. Są także wyświetlane domyślne atrybuty obiektów.  
+
+     > [!Tip]  
+     > Na przykład organizacja używa **opis** atrybutu konta komputera w usłudze Active Directory. Kliknij przycisk **niestandardowych**i Dodaj `Description` jako atrybut niestandardowy. Po uruchomieniu tej metody odnajdywania tego atrybutu jest wyświetlany na karcie właściwości urządzenia w konsoli programu Configuration Manager.<!--513948-->
 
 8.  Opcjonalna metoda polega na **opcji** kartę, można skonfigurować opcje odfiltrowywania, czyli wykluczania starych rekordów z procesu odnajdywania.  
 

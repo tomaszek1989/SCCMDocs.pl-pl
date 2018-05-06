@@ -2,26 +2,19 @@
 title: Pliki dzienników w celu rozwiązywania problemów
 titleSuffix: Configuration Manager
 description: Pliki dziennika umożliwia rozwiązywanie problemów z systemami lokacji i klientów programu Configuration Manager.
-ms.custom: na
 ms.date: 03/22/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: c1ff371e-b0ad-4048-aeda-02a9ff08889e
-caps.latest.revision: ''
-caps.handback.revision: ''
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 471730e056ca512f300ead234b9a8a9e4f10a835
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: c068ea5a079d43148191e41dc9a2b4fb7a2e00c7
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="log-files-in-system-center-configuration-manager"></a>Pliki dziennika w programie System Center Configuration Manager
 
@@ -234,7 +227,7 @@ Poniższej tabeli wymieniono pliki dziennika znajdujące się na komputerze klie
 |Nazwa dziennika|Szczegóły|  
 |--------------|-------------|  
 |Scxcm.log|Plik dziennika usługi podstawowej klienta programu Configuration Manager dla systemów Linux i UNIX (ccmexec.bin). Ten plik dziennika zawiera informacje o instalacji i przeprowadzanych operacjach programu ccmexec.bin.<br /><br /> Domyślnie ten plik dziennika znajduje się w **/var/opt/microsoft/scxcm.log**<br /><br /> Aby zmienić lokalizację pliku dziennika, należy otworzyć do edycji plik **/opt/microsoft/configmgr/etc/scxcm.conf** i zmienić wartość pola **PATH**. Aby zmiana została uwzględniona, nie trzeba ponownie uruchamiać komputera klienckiego ani usługi.<br /><br /> Do jednej z czterech ustawień, można ustawić poziom dziennika.|  
-|Scxcmprovider.log|Plik dziennika usługi CIM klienta programu Configuration Manager dla systemów Linux i UNIX (omiserver.bin). Ten plik dziennika zawiera informacje o przeprowadzanych operacjach programu nwserver.bin.<br /><br /> Ten dziennik znajduje się pod adresem**/var/opt/microsoft/configmgr/scxcmprovider.log**<br /><br /> Aby zmienić lokalizację pliku dziennika, należy otworzyć do edycji plik **/opt/microsoft/omi/etc/scxcmprovider.conf** i zmienić wartość pola **PATH**. Aby zmiana została uwzględniona, nie trzeba ponownie uruchamiać komputera klienckiego ani usługi.<br /><br /> Jedno z trzech ustawień można ustawić poziom dziennika.|  
+|Scxcmprovider.log|Plik dziennika usługi CIM klienta programu Configuration Manager dla systemów Linux i UNIX (omiserver.bin). Ten plik dziennika zawiera informacje o przeprowadzanych operacjach programu nwserver.bin.<br /><br /> Ten dziennik znajduje się pod adresem **/var/opt/microsoft/configmgr/scxcmprovider.log**<br /><br /> Aby zmienić lokalizację pliku dziennika, należy otworzyć do edycji plik **/opt/microsoft/omi/etc/scxcmprovider.conf** i zmienić wartość pola **PATH**. Aby zmiana została uwzględniona, nie trzeba ponownie uruchamiać komputera klienckiego ani usługi.<br /><br /> Jedno z trzech ustawień można ustawić poziom dziennika.|  
 
  Oba pliki dziennika obsługują kilka poziomów rejestrowania:  
 
@@ -569,7 +562,7 @@ Poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązane 
 
 |Nazwa dziennika|Opis|Komputer z plikiem dziennika|  
 |--------------|-----------------|----------------------------|  
-|CloudDP-&lt;guid\>.log|Rejestruje szczegółowe informacje o określonym chmurowym punkcie dystrybucji, w tym informacje o magazynie i dostępie do zawartości.|Serwer systemu lokacji|  
+|Pliku CloudDP -&lt;guid\>.log|Rejestruje szczegółowe informacje o określonym chmurowym punkcie dystrybucji, w tym informacje o magazynie i dostępie do zawartości.|Serwer systemu lokacji|  
 |CloudMgr.log|Rejestruje szczegóły dotyczące inicjowania obsługi zawartości, zbieraniu magazynu i statystyki przepustowości oraz inicjowanych przez administratora akcjach zatrzymywania lub uruchamiania usługi w chmurze z punktem dystrybucji w chmurze.|Serwer systemu lokacji|  
 |DataTransferService.log|Rejestruje całą komunikację usługi BITS dotyczącą zasad lub dostępu do pakietów. Ten dziennik jest używane również do zarządzania zawartością przez ściągające punkty dystrybucji.|Komputer skonfigurowany jako punkt dystrybucji ściągania|  
 |PullDP.log|Rejestruje szczegółowe informacje o zawartości, jaką ściągający punkt dystrybucji transferuje od źródłowych punktów dystrybucji.|Komputer skonfigurowany jako punkt dystrybucji ściągania|  
@@ -819,7 +812,7 @@ W poniższej tabeli wymieniono pliki dziennika zawierające informacje powiązan
 |ScanAgent.log|Rejestruje szczegółowe informacje o żądaniach skanowania pod kątem aktualizacji oprogramowania, lokalizacji WSUS i akcjach powiązanych.|Klient|  
 |SdmAgent.log|Rejestruje szczegółowe informacje o śledzeniu korygowania i zgodności. Niemniej jednak plik dziennika aktualizacji oprogramowania, UpdatesHandler.log, zawiera więcej szczegółowych informacji o instalowaniu aktualizacji oprogramowania, które są wymagane dla zgodności.<br /><br /> Ten plik dziennika jest współużytkowany z ustawieniami zgodności.|Klient|  
 |ServiceWindowManager.log|Rejestruje szczegółowe informacje o ocenie okien obsługi.|Klient|  
-|setupact.log|Podstawowy plik dziennika dla większość błędów występujących podczas procesu instalacji systemu Windows. Plik dziennika znajduje się w folderze % windir %\$Windows.~BT\sources\panther folderu.|Klient|
+|Setupact.log|Podstawowy plik dziennika dla większość błędów występujących podczas procesu instalacji systemu Windows. Plik dziennika znajduje się w folderze % windir %\$Windows.~BT\sources\panther folderu.|Klient|
 |SmsWusHandler.log|Rejestruje szczegółowe informacje o procesie skanowania dotyczącym narzędzia stanu zapasów usługi Microsoft Updates.|Klient|  
 |StateMessage.log|Rejestruje szczegółowe informacje o komunikatach o stanie aktualizacji oprogramowania tworzonych i wysyłanych do punktu zarządzania.|Klient|  
 |SUPSetup.log|Rejestruje szczegółowe informacje o instalacji punktu aktualizacji oprogramowania. Po ukończeniu instalacji punktu aktualizacji oprogramowania w tym pliku dziennika zapisywany jest komunikat **Instalacja powiodła się**.|Serwer systemu lokacji|  

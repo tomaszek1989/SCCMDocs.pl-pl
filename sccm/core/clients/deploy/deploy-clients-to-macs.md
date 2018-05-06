@@ -2,25 +2,19 @@
 title: Wdrażanie klientów na komputery Mac.
 titleSuffix: Configuration Manager
 description: Dowiedz się, jak wdrożyć klientów na komputerach Mac w programie System Center Configuration Manager.
-ms.custom: na
 ms.date: 05/04/2017
 ms.prod: configuration-manager
-ms.reviewer: aaroncz
-ms.suite: na
-ms.technology:
-- configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: e46ad501-5d73-44ac-92de-0de14ef72b83
-caps.latest.revision: 12
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 1b7f20a48e0e7219d933c367fb9f0315fc287dfd
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 01e53b80b47b3c1452cd73e408af48bc0283d60b
+ms.sourcegitcommit: 526ded222b69b5e75e8068ba09c5dda227c155c4
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/27/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-deploy-clients-to-macs"></a>Jak wdrożyć klientów na komputerach Mac
 
@@ -199,7 +193,7 @@ Użyj tej procedury do automatyzacji instalacji klienta i żądania i rejestracj
 > -   Pliku rachunku materiałów (BOM) pliku i listy właściwości (plist) utworzonych przez instalację klienta programu Configuration Manager.  
 > -   zawartości folderu /Library/Application Support/Microsoft/CCM/Logs.  
 >   
->  Informacje zebrane przez program CmDiagnostics są dodawane do pliku zip, który zostanie zapisany na pulpicie komputera i nazwie cmdiag -*< nazwa_hosta\>***-***&gt;Data i godzina\>* . zip.***
+>  Informacje zebrane przez program CmDiagnostics są dodawane do pliku zip, który zostanie zapisany na pulpicie komputera i nosi nazwę `cmdiag-<hostname>-<datetime>.zip`
 
 
 ##  <a name="use-a-certificate-request-and-installation-method-that-is-independent-from-configuration-manager"></a>Żądania i instalowania metoda certyfikatu niezależna od programu Configuration Manager  

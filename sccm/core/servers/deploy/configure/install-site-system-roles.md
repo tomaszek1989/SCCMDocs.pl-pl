@@ -1,25 +1,20 @@
 ---
-title: "Instalowanie ról systemu lokacji"
+title: Instalowanie ról systemu lokacji
 titleSuffix: Configuration Manager
-description: "Kreatorzy ułatwiają Dodawanie ról systemu lokacji do istniejącego lub nowego serwera systemu lokacji w lokacji."
-ms.custom: na
+description: Kreatorzy ułatwiają Dodawanie ról systemu lokacji do istniejącego lub nowego serwera systemu lokacji w lokacji.
 ms.date: 2/7/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 61f5c774-7667-44ae-b8e4-a4951318b183
-caps.latest.revision: "4"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 82be333fcca636dfd68763cdfa7e97d0eaf14915
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 7edfc72195b289488242adcbd1903dbacf26bfe2
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="install-site-system-roles-for-system-center-configuration-manager"></a>Instalowanie ról systemu lokacji dla programu System Center Configuration Manager
 
@@ -39,7 +34,7 @@ Tuż przed zainstalowaniem roli systemu lokacji, program Configuration Manager s
 
 -   Program Configuration Manager używa **konta instalacji systemu lokacji** do zainstalowania ról systemu lokacji. To konto można określić po uruchomieniu odpowiedniego kreatora w celu utworzenia nowego serwera systemu lokacji lub dodać role systemu lokacji do istniejącego serwera systemu lokacji. Domyślnie jest konto systemu lokalnego na komputerze serwera lokacji, ale można określić konto użytkownika domeny do użycia jako konta instalacji systemu lokacji. Aby uzyskać więcej informacji, zobacz [Konta używane w programie System Center Configuration Manager](../../../../core/plan-design/hierarchy/accounts.md).  
 
-##  <a name="bkmk_Install"></a>Aby zainstalować role systemu lokacji na istniejącym serwerze systemu lokacji  
+##  <a name="bkmk_Install"></a> Aby zainstalować role systemu lokacji na istniejącym serwerze systemu lokacji  
 
 1.  W konsoli programu Configuration Manager kliknij przycisk **Administracja**.  
 

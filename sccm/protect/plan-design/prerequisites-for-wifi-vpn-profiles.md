@@ -1,26 +1,20 @@
 ---
-title: "Wymagania wstępne dotyczące profili sieci Wi-Fi i sieci VPN"
+title: Wymagania wstępne dotyczące profili sieci Wi-Fi i sieci VPN
 titleSuffix: Configuration Manager
-description: "Więcej informacji na temat uprawnień zabezpieczeń wymaganych do zarządzania profile certyfikatów, profile sieci Wi-Fi i profile sieci VPN w programie System Center Configuration Manager."
-ms.custom: na
+description: Więcej informacji na temat uprawnień zabezpieczeń wymaganych do zarządzania profile certyfikatów, profile sieci Wi-Fi i profile sieci VPN w programie System Center Configuration Manager.
 ms.date: 11/23/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: d2dacb2d-ab3b-42a2-8dc8-94da31f993c2
-caps.latest.revision: "5"
-caps.handback.revision: "0"
-author: Nbigman
-ms.author: nbigman
-manager: angrobe
-ms.openlocfilehash: 9f459ad76768443c218bbc86d75b3f5ae34596b3
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 894717df4b5acb7142aa7d171a8b8b63a28f8dc0
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="prerequisites-for-wi-fi-and-vpn-profiles-in-system-center-configuration-manager"></a>Wymagania wstępne dotyczące sieci Wi-Fi i profile sieci VPN w programie System Center Configuration Manager
 
@@ -30,13 +24,13 @@ Wi-Fi i profile sieci VPN w programie System Center Configuration Manager mają 
 
  Wymagane są następujące uprawnienia zabezpieczeń w celu zarządzania ustawieniami dostępu do zasobów firmowych, takich jak profile certyfikatów, profile sieci Wi-Fi i profile sieci VPN:  
 
--   Aby wyświetlić i Zarządzanie alertami oraz raportami dla sieci Wi-Fi i profile: **Utwórz**, **usunąć**, **Modyfikuj**, **modyfikowanie raportu**, **odczytu**, i **Uruchom raport** dla **alerty** obiektu.  
+-   Aby wyświetlić i Zarządzanie alertami oraz raportami dla sieci Wi-Fi i profile: **Utwórz**, **usunąć**, **zmodyfikować**, **Modyfikuj raport**, **odczytu**, i **Uruchom raport** Aby uzyskać **alerty** obiektu.  
 
 -   Aby utworzyć i zarządzać profilami certyfikatów: **Tworzenie zasad**, **modyfikowanie raportu**, **odczytu**, i **Uruchom raport** dla **profil certyfikatu** obiektu.  
 
--   Aby zarządzać wdrożeniami profili sieci Wi-Fi, certyfikatów i sieci VPN: **Wdrażanie zasad konfiguracji**, **modyfikowanie alertu stanu klienta**, **odczytu**, i **Odczytaj zasób** dla **kolekcji** obiektu.  
+-   Aby zarządzać wdrożeniami profili sieci Wi-Fi, certyfikatów i sieci VPN: **Wdrażanie zasad konfiguracji**, **Modyfikuj Alert stanu klienta**, **odczytu**, i **odczytu zasobów** dla **kolekcji**obiektu.  
 
--   Aby zarządzać wszystkimi zasadami konfiguracji: **Utwórz**, **usunąć**, **Modyfikuj**, **odczytu**, i **Ustawianie zakresu zabezpieczeń** dla **zasady konfiguracji** obiektu.  
+-   Aby zarządzać wszystkimi zasadami konfiguracji: **Utwórz**, **usunąć**, **zmodyfikować**, **odczytu**, i **Ustaw zakres zabezpieczeń** dla **zasady konfiguracji**  obiektu.  
 
 -   Uruchamianie zapytań dotyczących profilów sieci Wi-Fi i sieci VPN: **Odczyt** uprawnienie **zapytania** obiektu.  
 

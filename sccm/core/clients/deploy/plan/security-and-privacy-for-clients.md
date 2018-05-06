@@ -1,26 +1,20 @@
 ---
-title: "Klient zabezpieczenia i prywatność"
+title: Klient zabezpieczenia i prywatność
 titleSuffix: Configuration Manager
-description: "Dowiedz się więcej o zabezpieczeniach i prywatności dla klientów w programie System Center Configuration Manager."
-ms.custom: na
+description: Dowiedz się więcej o zabezpieczeniach i prywatności dla klientów w programie System Center Configuration Manager.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: c1d71899-308f-49d5-adfa-3a3ec0163ed8
-caps.latest.revision: "10"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: b28a461894bcd1cffd3c98bfce9fcfe22cc7a8f0
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 89b7664067747c9afb04c3a5dd059e81cfb2716e
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="security-and-privacy-for-clients-in-system-center-configuration-manager"></a>Bezpieczeństwo i prywatność klientów w programie System Center Configuration Manager
 
@@ -28,7 +22,7 @@ ms.lasthandoff: 10/12/2017
 
 Ten artykuł zawiera bezpieczeństwa i informacje o ochronie prywatności dla klientów w programie System Center Configuration Manager i dla urządzeń przenośnych, które są zarządzane przez łącznik serwera Exchange:  
 
-##  <a name="BKMK_Security_Cliients"></a>Najlepsze rozwiązania dotyczące klientów  
+##  <a name="BKMK_Security_Cliients"></a> Najlepsze rozwiązania dotyczące klientów  
  Kiedy programu Configuration Manager akceptuje dane od urządzeń z klientem programu Configuration Manager, powstaje ryzyko ataku lokacji czy klientów. Klienci mogą na przykład wysłać nieprawidłowe zapasy lub podjąć próbę przeciążenia systemów lokacji. Wdrażanie klienta programu Configuration Manager wyłącznie na zaufanych urządzeniach. Ponadto należy się stosować do następujących rozwiązań dotyczących zabezpieczeń, aby chronić lokację przed urządzeniami nieautoryzowanymi lub ze złamanymi zabezpieczeniami:  
 
  **Do komunikacji z klientami z systemami lokacji, na których działają usługi IIS, należy użyć certyfikatów infrastruktury kluczy publicznych (PKI).**  
@@ -146,7 +140,7 @@ Ten artykuł zawiera bezpieczeństwa i informacje o ochronie prywatności dla kl
 
  To ustawienie klienta umożliwia klienta programu Configuration Manager uruchamiać niepodpisane skrypty programu PowerShell, co może spowodować uruchomienie złośliwego oprogramowania na komputerach klienckich. Jeśli wybranie tej opcji jest konieczne, należy użyć niestandardowego ustawienia klienta i przypisać je tylko do komputerów klienckich, które muszą uruchamiać niepodpisane skrypty powłoki PowerShell.  
 
-##  <a name="bkmk_mobile"></a>Najlepsze rozwiązania dotyczące urządzeń przenośnych  
+##  <a name="bkmk_mobile"></a> Najlepsze rozwiązania dotyczące urządzeń przenośnych  
  **Dla urządzeń przenośnych, które rejestrowanie przy użyciu Menedżera konfiguracji i będą obsługiwane w Internecie: Zainstalowanie punktu proxy rejestracji w sieci obwodowej oraz punkt rejestracyjny w sieci intranet**  
 
  Ta separacja ról pomaga chronić punkt rejestracyjny przed atakiem. W przypadku złamania zabezpieczeń punktu rejestracyjnego osoba atakująca może uzyskać certyfikaty służące do uwierzytelniania i skraść poświadczenia użytkowników, którzy rejestrują swoje urządzenia przenośne.  
@@ -199,7 +193,7 @@ Ten artykuł zawiera bezpieczeństwa i informacje o ochronie prywatności dla kl
 
  Listę minimalnych poleceń cmdlet, których wymaga łącznik serwera Exchange, zawiera temat [Zarządzanie urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i Exchange](../../../../mdm/deploy-use/manage-mobile-devices-with-exchange-activesync.md).  
 
-##  <a name="bkmk_macs"></a>Najlepsze rozwiązania dla komputerów Mac  
+##  <a name="bkmk_macs"></a> Najlepsze rozwiązania dla komputerów Mac  
  **Dla komputerów Mac: Przechowywanie i dostęp do plików źródłowych klienta z bezpiecznej lokalizacji.**  
 
  Menedżer konfiguracji nie sprawdza, czy pliki źródłowe klienta zostały naruszone z przed zainstalowaniem lub zarejestrowaniem klienta na komputerze Mac. Takie pliki należy pobierać z wiarygodnego źródła, a także przechowywać je i uzyskiwać do nich dostęp w bezpieczny sposób.  
@@ -237,7 +231,7 @@ Ten artykuł zawiera bezpieczeństwa i informacje o ochronie prywatności dla kl
 
 6.  Zamknij okno dialogowe i po wyświetleniu monitu wprowadź hasło administratora, a następnie kliknij przycisk **ustawienia aktualizacji**.  
 
-##  <a name="BKMK_SecurityIssues_Clients"></a>Problemy dotyczące zabezpieczeń klientów programu Configuration Manager  
+##  <a name="BKMK_SecurityIssues_Clients"></a> Problemy dotyczące zabezpieczeń klientów programu Configuration Manager  
  Następujące problemy dotyczące zabezpieczeń nie mają środków zaradczych:  
 
 -   Komunikaty o stanie nie są uwierzytelniane  
@@ -282,7 +276,7 @@ Ten artykuł zawiera bezpieczeństwa i informacje o ochronie prywatności dla kl
 
      Jeśli urządzenie Windows Embedded jest uruchomiony system operacyjny niż Windows 7, użytkownik próbuje się zalogować przy wyłączonych filtrach zapisu w celu zatwierdzenia zmian wprowadzonych przez program Configuration Manager, liczba nieudanych prób logowania dozwolona przed zablokowaniem konta jest dwukrotnie mniejsza. Jeśli na przykład opcja **Próg blokady konta** jest ustawiona na 6, a użytkownik błędnie wpisze hasło 3 razy, konto zostaje zablokowane, tworząc sytuację podobną do ataku typu „odmowa usługi”.  Jeśli użytkownicy w tym scenariuszu muszą się logować na urządzeniach z systemem osadzonym, należy ich ostrzec o potencjalnie zmniejszonym progu blokady konta.  
 
-##  <a name="BKMK_Privacy_Cliients"></a>Informacje o ochronie prywatności klientów programu Configuration Manager  
+##  <a name="BKMK_Privacy_Cliients"></a> Informacje o ochronie prywatności klientów programu Configuration Manager  
  Podczas wdrażania klienta programu Configuration Manager konfigurujesz ustawienia klienta, dzięki czemu można użyć funkcji zarządzania programu Configuration Manager. Ustawienia, które są używane do konfigurowania funkcji mogą dotyczyć wszystkich klientów w hierarchii programu Configuration Manager, niezależnie od tego, czy ich są bezpośrednio podłączone do sieci firmowej, podłączeni za pomocą sesji zdalnej lub połączony z Internetem, ale obsługiwane przez program Configuration Manager.  
 
  Informacje o kliencie są przechowywane w bazie danych programu Configuration Manager i nie są wysyłane do firmy Microsoft. Informacje są przechowywane w bazie danych, aż do ich usunięcia przez uruchamiane co 90 dni zadania konserwacji lokacji **Usuń przestarzałe dane wykrywania**. Możesz skonfigurować interwał usuwania.  
@@ -299,7 +293,7 @@ Ten artykuł zawiera bezpieczeństwa i informacje o ochronie prywatności dla kl
 
  Przed zainstalowaniem klienta programu Configuration Manager z sprawdzanie stanu klienta, należy wziąć pod uwagę wymagania dotyczące ochrony prywatności.  
 
-##  <a name="BKMK_Privacy_ExchangeConnector"></a>Informacje o ochronie prywatności urządzeń przenośnych, które są zarządzane przez łącznik serwera Exchange  
+##  <a name="BKMK_Privacy_ExchangeConnector"></a> Informacje o ochronie prywatności urządzeń przenośnych, które są zarządzane przez łącznik serwera Exchange  
  Łącznik serwera Exchange umożliwia wyszukiwanie urządzeń przenośnych i zarządzanie urządzeniami przenośnymi, które łączą się z serwerem Exchange Server (lokalnie lub online), używając protokołu ActiveSync. Rejestry znalezione przez łącznik serwera Exchange są przechowywane w bazie danych programu Configuration Manager. Informacje są zbierane z serwera programu Exchange. Nie zawierają żadnych dodatkowych informacji wysyłanych przez urządzenia przenośne do serwera programu Exchange.  
 
  Informacje o urządzeniach przenośnych nie są wysyłane do firmy Microsoft. Informacje o urządzeniach przenośnych jest przechowywane w bazie danych programu Configuration Manager. Informacje są przechowywane w bazie danych, aż do ich usunięcia przez uruchamiane co 90 dni zadania konserwacji lokacji **Usuń przestarzałe dane wykrywania**. Możesz skonfigurować interwał usuwania.  

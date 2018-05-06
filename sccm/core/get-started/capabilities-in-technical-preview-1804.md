@@ -4,18 +4,17 @@ titleSuffix: Configuration Manager
 description: Więcej informacji na temat nowych funkcji dostępnych w wersji Configuration Manager Technical Preview 1804.
 ms.date: 04/25/2018
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 8af43618-ec60-4c3e-a007-12399d1335b9
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 82de25f24771d4b66d58a550eb4caed6ad262869
-ms.sourcegitcommit: d67c6246bb6027cd5501e772b0521f9272407c28
+ms.openlocfilehash: 0fcdcc984e267e6c54ad7c6194e8494854f0a1ee
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1804-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1804 programu System Center Configuration Manager
 
@@ -176,6 +175,9 @@ Narzędzia serwera i klienta programu Configuration Manager są teraz uwzględni
 >  - Wyślij narzędzia harmonogramu
 > 
 > <sup>1</sup> CMTrace nie zależą od platformy .NET lub Windows Presentation Foundation (WPF), dlatego jest nadal używana w środowisku Windows PE obrazów rozruchowych.
+
+### <a name="known-issues"></a>Znane problemy
+Niektóre narzędzia klienta i serwera może zostać nieoczekiwanie zamknięty podczas uruchamiania. Jest to problem ze względu na Brak pliku na nośniku. Jako obejście, skopiuj **Microsoft.Diagnostics.Tracing.EventSource.dll** plików z katalogu AdminConsole\bin do katalogów zarówno SMSSETUP\Tools\ClientTools i ServerTools. Ten plik musi znajdować się w tej samej wersji, co używana przez konsolę programu Configuration Manager. Inne wersje mogą nie działać. <!--513977-->
 
 
 

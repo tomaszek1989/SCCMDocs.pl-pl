@@ -1,25 +1,20 @@
 ---
 title: Wybieranie metod odnajdywania
 titleSuffix: Configuration Manager
-description: "Zapoznaj się z uwagami dla metod do zastosowania i lokacje, w których je uruchomić."
-ms.custom: na
+description: Zapoznaj się z uwagami dla metod do zastosowania i lokacje, w których je uruchomić.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 127ce713-d085-430f-ac7b-2701637fe126
-caps.latest.revision: "9"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 0a8a572c51a6d36ffe11c7a2c05933c96790e95f
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: faa974fda68c9448902f2f5c8e8fcf8ef2f2d386
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="select-discovery-methods-to-use-for-system-center-configuration-manager"></a>Wybieranie metod odnajdywania do zastosowania dla programu System Center Configuration Manager
 
@@ -64,7 +59,7 @@ Istnieją dwie metody można użyć do odnajdywania infrastruktury sieci **odnaj
 
  Jeśli chcesz odnaleźć topologię sieci, użyj funkcji odnajdywania sieci. Podczas gdy inne metody odnajdywania zwracają informacje związane z usług domenowych w usłudze Active Directory i można zidentyfikować także bieżącą lokalizację sieciową klienta, nie zapewniają informacji o infrastrukturze na podstawie podsieci i routerów topologii sieci.  
 
-##  <a name="bkmk_shared"></a>Dane odnajdywania są udostępniane między lokacjami  
+##  <a name="bkmk_shared"></a> Dane odnajdywania są udostępniane między lokacjami  
  Po programu Configuration Manager doda danych odnajdywania do bazy danych, są one szybko udostępniane między wszystkimi lokacjami w hierarchii. Ponieważ nie istnieje zwykle żadnych korzyści odnajdywanie tych samych informacji w wielu lokacjach w hierarchii, warto rozważyć skonfigurowanie jednego wystąpienia każdej metody odnajdywania, którego używasz do uruchamiania w jednej lokacji. Należy dobrze w tym celu zamiast uruchamiać kilka wystąpień jednej metody w różnych lokacjach.  
 
  Jednak w niektórych środowiskach takie mogą być przydatne do tej samej metody odnajdywania do uruchamiania w wielu lokacjach, każda z osobną konfiguracją i harmonogramem przypisywania. Na przykład przy użyciu odnajdywania sieci, można kierować każdej lokacji w celu odnajdywania swoich sieciach lokalnych, a podjęciem próby odnajdywania wszystkich lokalizacje sieciowe w sieci WAN.
@@ -105,7 +100,7 @@ Jeśli używasz **odnajdywania sieci**:
 
 Ponieważ **odnajdywania pulsu** nie działa w określonej lokacji, nie trzeba uważają, że w ogólnym planowaniu uruchamiania odnajdywania.  
 
-##  <a name="bkmk_best"></a>Najlepsze rozwiązania dotyczące odnajdywania  
+##  <a name="bkmk_best"></a> Najlepsze rozwiązania dotyczące odnajdywania  
 Aby uzyskać najlepsze wyniki z odnajdywaniem zaleca się następujące:
 
  - **Uruchom odnajdowanie systemu usługi Active Directory i odnajdowanie użytkowników usługi Active Directory przed uruchomieniem odnajdowanie grup usługi Active Directory.**  

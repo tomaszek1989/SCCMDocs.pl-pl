@@ -1,26 +1,20 @@
 ---
-title: "Konfigurowanie spisu sprzętu"
+title: Konfigurowanie spisu sprzętu
 titleSuffix: Configuration Manager
-description: "Konfigurowanie spisu sprzętu dla wszystkich klientów lub kolekcji w programie System Center Configuration Manager."
-ms.custom: na
+description: Konfigurowanie spisu sprzętu dla wszystkich klientów lub kolekcji w programie System Center Configuration Manager.
 ms.date: 02/22/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 0e45290e-f8f7-4335-801e-570225d12c2b
-caps.latest.revision: "5"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 91f17e4ab9f828576ac1b11076a008289ff588a0
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 7b282fdb2f7cf3a200950484e4da5b9505c5b71c
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-configure-hardware-inventory-in-system-center-configuration-manager"></a>Jak skonfigurować spis sprzętu w programie System Center Configuration Manager
 

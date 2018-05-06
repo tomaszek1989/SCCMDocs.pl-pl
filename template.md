@@ -1,20 +1,25 @@
 ---
-title: "TYTUŁ ARTYKUŁU | Dokumentacja firmy Microsoft"
-description: 
-keywords: 
-author: GITHUB USERNAME
-manager: ALIAS
-ms.date: 10/06/2016
-ms.topic: article
-ms.prod: 
-ms.service: 
-ms.technology: 
-ms.assetid: GET ONE FROM guidgenerator.com
-ms.openlocfilehash: a218011ded1ff3acc1dbd24471119b701f2cce23
-ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+title:
+- Tytuł artykułu 35 znaków lub mniej
+titleSuffix: Configuration Manager
+description: ''
+ms.date: mm/dd/yyyy
+ms.prod: configuration-manager
+ms.technology: configmgr-other
+ms.topic: conceptual
+ms.assetid:
+- GET ONE FROM guidgenerator.com
+author:
+- GITHUB USERNAME
+ms.author:
+- ALIAS
+manager:
+- ALIAS
+ms.openlocfilehash: bb0a23b8870d31136967b1bc594580bcc2cd0cd9
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/07/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="metadata-and-markdown-template"></a>Metadane i szablon Markdown
 
@@ -29,11 +34,11 @@ Pełen blok metadanych jest powyżej, podzielony na pola wymagane i opcjonalne p
 
 - Możesz **musi** spacją między dwukropkiem (:) a wartością elementu metadanych.
 - Jeśli opcjonalny element metadanych nie ma wartość, komentarz poprzedzając symbolem # (nie należy pozostawiać pustego elementu ani używać "Brak"); Jeśli wartość jest dodawane do elementu, który został opatrzony, należy usunąć symbol #.
-- Dwukropki w wartości (np. tytule) Podziel analizatora składni metadanych. Zamiast nich należy użyć kodu HTML &#58; (np. "tytuł: Usługi Azure Rights Management &#58; podstawy | Usługi Azure RMS").
+- Dwukropki w wartości (np. tytule) Podziel analizatora składni metadanych. Zamiast nich należy użyć kodu HTML &#58; (np. "tytuł: Usługa Azure Rights Management&#58; podstawy | Usługi Azure RMS").
 - **Tytuł**: Ten tytuł pojawi się w wynikach aparatu wyszukiwania. Tytuł powinien kończyć się symbolem kreski pionowej (|) i nazwa usługi (np. zobacz powyżej). Tytuł nie musi i prawdopodobnie nie powinien być taki sam jak tytuł w nagłówku H1. Powinien zawierać około 65 znaków (łącznie z | NAZWA USŁUGI)
 - **Autor**, **Menedżera**, **Weryfikacja**: W polu Autor powinien zawierać **nazwę użytkownika usługi Github** autora, a nie jego alias.  Z drugiej strony, pola "manager" i "reviewer" powinny zawierać aliasy. Wartość MS.Reviewer Określa nazwę Powiązanego z artykułem lub usługą.
-- **MS.AssetID**: Jest to identyfikator GUID artykułu z witryny CAPS. Podczas tworzenia nowego pliku markdown Uzyskaj identyfikator GUID z [https://www.guidgenerator.com](https://www.guidgenerator.com).
-- **MS.prod**, **ms.service**, **ms.technology**, **ms.devlang**, **ms.topic**, **ms.tgt_pltfrm**: Możliwe wartości tych elementów można znaleźć [tutaj](https://microsoft.sharepoint.com/teams/STBCSI/Insights/_layouts/15/WopiFrame.aspx?sourcedoc=%7b7A321BF1-0611-4184-84DA-A0E964C435FA%7d&file=WEDCS_MasterList_CSIValues.xlsx&action=default).
+- **MS.AssetID**: Jest to identyfikator GUID artykułu z witryny CAPS. Podczas tworzenia nowego pliku markdown Uzyskaj identyfikator GUID z [ https://www.guidgenerator.com ](https://www.guidgenerator.com).
+- **MS.prod**, **ms.service**, **ms.technology**, **ms.devlang**, **ms.topic**, **ms.tgt_pltfrm** : Możliwe wartości tych elementów można znaleźć [tutaj](https://microsoft.sharepoint.com/teams/STBCSI/Insights/_layouts/15/WopiFrame.aspx?sourcedoc=%7b7A321BF1-0611-4184-84DA-A0E964C435FA%7d&file=WEDCS_MasterList_CSIValues.xlsx&action=default).
 
 ## <a name="basic-markdown-and-gfm"></a>Podstawowe języka Markdown i GFM
 
@@ -114,7 +119,7 @@ Jeśli w pliku markdown występuje adres URL, zostanie on przekształcony w link
 
 - To
 - jest
-- A
+- a
 - Lista punktowana
 - Lista
 
@@ -222,7 +227,7 @@ To jest przykład `in-line code`.
 
 > [!div class="op_single_selector"]
 - [foo](/rights-management/template.md)
-- [pasek](/rights-management/scratch.md)
+- [Pasek](/rights-management/scratch.md)
 
 ### <a name="step-by-step"></a>Krok po kroku
 

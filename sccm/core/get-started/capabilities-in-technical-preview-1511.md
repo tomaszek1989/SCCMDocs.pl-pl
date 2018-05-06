@@ -1,26 +1,21 @@
 ---
 title: Funkcje w wersji zapoznawczej Technical Preview 1511
 titleSuffix: Configuration Manager
-description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersja 1511."
-ms.custom: na
+description: Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersja 1511.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 69473706-21b3-498b-a67e-670fdc988f0d
-caps.latest.revision: "5"
-author: erikje
-ms.author: erikje
-manager: angrobe
+author: aczechowski
 robots: noindex,nofollow
-ms.openlocfilehash: e12e67a3b0d182a8e3abd045c89e6b2bf3183054
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 8a805d6b7075d61b0e7669200670ac8434eccdf5
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1511-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1511 programu System Center Configuration Manager
 
@@ -30,7 +25,7 @@ W tym artykule przedstawiono funkcje, które są dostępne w wersji Technical Pr
 
 Poniżej przedstawiono nowe funkcje, które można wypróbować z tą wersją.  
 
-##  <a name="BKMK_WUfB"></a>Integracja z usługą Windows Update dla firm w systemie Windows 10  
+##  <a name="BKMK_WUfB"></a> Integracja z usługą Windows Update dla firm w systemie Windows 10  
  Menedżer konfiguracji ma teraz możliwość rozróżnienia komputera systemu Windows 10, która są połączone bezpośrednio za pomocą usługi Windows Update dla firm (WUfB) od komputerów połączonych z usługami WSUS na potrzeby pobierania aktualizacji i uaktualnień systemu Windows 10.  W przypadku komputerów połączonych za pośrednictwem usług WUfB można zarządzać aktualizacjami i uaktualnieniami w okresach ustawionych przez użytkownika administracyjnego za pomocą zasad grupy lub zarządzania urządzeniami Przenośnymi zasad i instalować je bezpośrednio z usług WUfB.    
 W przypadku komputerów połączonych za pośrednictwem usług WUfB programu Configuration Manager nie będzie mógł zgłosić stanu zgodności (w tym aktualizacje systemu Windows ani aktualizacji definicji). Również programu Configuration Manager nie będzie mógł wdrożyć Microsoft Updates lub 3 aktualizacji firm na tych komputerach.  
 
@@ -54,7 +49,7 @@ W przypadku komputerów połączonych za pośrednictwem usług WUfB programu Con
 
 5.  Komputery zarządzane za pośrednictwem usługi Windows Update dla Firm będą miały status zgodności **Nieznany** i nie będą uwzględniane podczas obliczania wartości procentowej określającej ogólną zgodność.  
 
-##  <a name="BKMK_Office365ProPlus"></a>Zarządzanie usługą Office 365 ProPlus klienta aktualizacji za pomocą programu System Center Configuration Manager  
+##  <a name="BKMK_Office365ProPlus"></a> Zarządzanie usługą Office 365 ProPlus klienta aktualizacji za pomocą programu System Center Configuration Manager  
  Menedżer konfiguracji ma teraz możliwość zarządzania aktualizacjami klienta klasycznego usługi Office 365 za pomocą przepływu pracy zarządzania aktualizacjami oprogramowania programu Configuration Manager.    
 Gdy firma Microsoft opublikuje nową aktualizację klienta klasycznego usługi Office 365 do systemu Windows Server aktualizuje Services (WSUS), programu Configuration Manager będzie mógł zsynchronizuje aktualizację ze swoim katalogiem, jeśli aktualizację usługi Office 365 jest skonfigurowany jako część synchronizacji katalogu.  Serwer lokacji programu Configuration Manager pobierze aktualizacje klienta usługi Office 365 i rozproszyć pakiet do punktów dystrybucji programu Configuration Manager.  Klient programu Configuration Manager poinformuje klientów stacjonarnych usługi Office 365 skąd uzyskać aktualizacje i kiedy rozpocząć proces instalacji aktualizacji.  
 
@@ -73,7 +68,7 @@ Gdy firma Microsoft opublikuje nową aktualizację klienta klasycznego usługi O
 
  Aby uzyskać szczegółowe instrukcje, zobacz [Zarządzanie usługą Office 365 aktualizacji klienta z System Center Configuration Manager Technical Preview](https://technet.microsoft.com/library/mt628083.aspx).  
 
-##  <a name="BKMK_AlwasyOn"></a>Obsługa funkcji AlwaysOn programu SQL Server na potrzeby wysokiej dostępności bazy danych  
+##  <a name="BKMK_AlwasyOn"></a> Obsługa funkcji AlwaysOn programu SQL Server na potrzeby wysokiej dostępności bazy danych  
  Program Configuration Manager obsługuje teraz przy użyciu grup dostępności AlwaysOn programu SQL Server do hostowania bazy danych lokacji.  Podczas instalowania nowej lokacji możesz wskazać Instalatorowi używanie grupy dostępności zamiast normalnego wystąpienia programu SQL Server.  
 
 > [!NOTE]  
@@ -149,7 +144,7 @@ Aby zainstalować lokację korzystającą z grupy dostępności programu SQL Ser
 
 3.  Po podaniu tych informacji ukończ procedurę instalacji, wykonując normalne czynności procedury i konfiguracji.  
 
-##  <a name="BKMK_ClusterServerUpdates"></a>Obsługa klastra serwerów  
+##  <a name="BKMK_ClusterServerUpdates"></a> Obsługa klastra serwerów  
 Można teraz utworzyć kolekcję zawierającą serwery w klastrze, a następnie skonfiguruj ustawienia klastra używane podczas wdrażania aktualizacji do klastra. Można kontrolować procent serwerów, które są w trybie online w danym momencie, a także aby skonfigurować przed wdrożeniem i po wdrożeniu skrypty programu PowerShell do uruchamiania działań niestandardowych.  
 
 **Znane problemy dotyczące tej wersji:**  

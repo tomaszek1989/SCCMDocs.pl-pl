@@ -1,25 +1,20 @@
 ---
 title: Monitorowanie stanu programu Endpoint Protection
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak monitorować program Endpoint Protection w hierarchii programu System Center Configuration Manager."
-ms.custom: na
+description: Dowiedz się, jak monitorować program Endpoint Protection w hierarchii programu System Center Configuration Manager.
 ms.date: 03/13/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: f4a1335c-bb3d-493e-a124-83a32a107dc8
-caps.latest.revision: "8"
-author: NathBarn
-ms.author: nathbarn
-manager: angrobe
-ms.openlocfilehash: 9e6356f8b3814ac49c26bfa4d319c3c9926a4382
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: f4e1ea4cb097381467774af9c3161079419d6840
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-monitor-endpoint-protection-status"></a>Jak monitorować stan programu Endpoint Protection
 
@@ -27,7 +22,7 @@ ms.lasthandoff: 10/12/2017
 
 Można monitorować program Endpoint Protection w hierarchii programu Microsoft System Center Configuration Manager za pomocą **stan programu Endpoint Protection** węźle **zabezpieczeń** w **monitorowanie** obszaru roboczego, **programu Endpoint Protection** w węźle **zasoby i zgodność** obszaru roboczego oraz za pomocą raportów.  
 
-##  <a name="BKMK_1"></a>Jak monitorować program Endpoint Protection przy użyciu węzła stan ochrony punktu końcowego  
+##  <a name="BKMK_1"></a> Jak monitorować program Endpoint Protection przy użyciu węzła stan ochrony punktu końcowego  
 
 1.  W konsoli programu Configuration Manager kliknij **monitorowanie**.  
 
@@ -38,7 +33,7 @@ Można monitorować program Endpoint Protection w hierarchii programu Microsoft 
     > [!IMPORTANT]  
     >  Kolekcje są dostępne do wyboru w następujących przypadkach:  
     >   
-    >  -   Po wybraniu **Wyświetl tę kolekcję na pulpicie nawigacyjnym programu Endpoint Protection** na **alerty** karcie *< nazwa kolekcji\>***właściwości** okno dialogowe.  
+    >  -   Po wybraniu **Wyświetl tę kolekcję na pulpicie nawigacyjnym programu Endpoint Protection** na **alerty** karcie *< nazwa kolekcji\>*** właściwości** okna dialogowego pole.  
     > -   Podczas wdrażania zasad ochrony przed złośliwym kodem programu Endpoint Protection w kolekcji.  
     > -   Po włączeniu i wdrożeniu ustawień klienta programu Endpoint Protection w kolekcji.  
 
@@ -47,7 +42,7 @@ Można monitorować program Endpoint Protection w hierarchii programu Microsoft 
     > [!IMPORTANT]  
     >  Informacje wyświetlane w **stan programu Endpoint Protection** są oparte na ostatnio dane zostały zagregowane z bazy danych programu Configuration Manager i mogą być nieaktualne. Jeśli chcesz pobrać najnowsze dane, na karcie **Narzędzia główne** kliknij pozycję **Uruchom podsumowanie**lub kliknij pozycję **Zaplanuj podsumowanie** , aby dostosować interwał podsumowania.  
 
-##  <a name="BKMK_2"></a>Jak monitorować program Endpoint Protection w roboczym zasoby i zgodność  
+##  <a name="BKMK_2"></a> Jak monitorować program Endpoint Protection w roboczym zasoby i zgodność  
 
 1.  W konsoli programu Configuration Manager kliknij przycisk **Zasoby i zgodność**.  
 
@@ -59,7 +54,7 @@ Można monitorować program Endpoint Protection w hierarchii programu Microsoft 
 
 3.  W *< nazwa kolekcji\>*  listy, wybierz komputer, a następnie kliknij przycisk **szczegóły złośliwego oprogramowania** kartę.  
 
-##  <a name="BKMK_3"></a>Jak monitorować program Endpoint Protection przy użyciu raportów  
+##  <a name="BKMK_3"></a> Jak monitorować program Endpoint Protection przy użyciu raportów  
  Za pomocą następujących raportów, aby wyświetlić informacje o programie Endpoint Protection w hierarchii. Umożliwia także tych raportów do rozwiązywania problemów programu Endpoint Protection. Aby uzyskać więcej informacji o sposobie konfiguracji raportowania w programie Configuration Manager, zobacz [raportowania w programie System Center Configuration Manager](../../core/servers/manage/reporting.md) i [pliki dziennika w programie System Center Configuration Manager](../../core/plan-design/hierarchy/log-files.md). Raporty programu Endpoint Protection znajdują się w folderze programu Endpoint Protection.  
 
 |Nazwa raportu|Opis|  

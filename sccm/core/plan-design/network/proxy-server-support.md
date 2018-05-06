@@ -1,26 +1,20 @@
 ---
-title: "Obsługa serwerów proxy"
+title: Obsługa serwerów proxy
 titleSuffix: Configuration Manager
-description: "Więcej informacji na temat obsługi programu System Center Configuration Manager dla serwerów proxy, korzystających z serwerami systemu lokacji i klientów."
-ms.custom: na
+description: Więcej informacji na temat obsługi programu System Center Configuration Manager dla serwerów proxy, korzystających z serwerami systemu lokacji i klientów.
 ms.date: 2/7/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 9123a87a-0b6f-43c7-b5c2-fac5d09686b1
-caps.latest.revision: "6"
-caps.handback.revision: "0"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: fe42d5ca64b5a969e1a6def4266466875c4a3183
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 480ab29bbd97f2cdc173019b1b3cccd90403d011
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="proxy-server-support-in-system-center-configuration-manager"></a>Obsługa serwerów proxy w programie System Center Configuration Manager
 
@@ -53,7 +47,7 @@ W przypadku tej konfiguracji serwer lokacji głównej:
 
 Nie można skonfigurować serwer proxy w chmurze na podstawie — punkt dystrybucji w systemie Microsoft Azure.  
 
-**Punkt połączenia z chmurą** — ta rola systemu lokacji łączy się z usługą chmury programu Configuration Manager, aby pobierać aktualizacje wersji dla programu Configuration Manager i korzysta z serwera proxy, który jest skonfigurowany na komputerze, który hostuje punkt połączenia usługi.  
+**Punkt połączenia z chmurą** — ta rola systemu lokacji łączy się z usługą chmury programu Configuration Manager, aby pobierać aktualizacje wersji dla programu Configuration Manager i korzysta z serwera proxy, który jest skonfigurowany na komputerze, który obsługuje połączenia z usługą punkt.  
 
 **Łącznik serwera Exchange** — ta rola systemu lokacji łączy się z serwerem programu Exchange i używa konfiguracji serwera proxy na komputerze, który hostuje łącznik serwera Exchange.  
 

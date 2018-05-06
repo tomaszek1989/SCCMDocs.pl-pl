@@ -1,26 +1,20 @@
 ---
-title: "Tworzenie i stosowanie planów zasilania"
+title: Tworzenie i stosowanie planów zasilania
 titleSuffix: Configuration Manager
-description: "Tworzenie i stosowanie planów zasilania w programie System Center Configuration Manager."
-ms.custom: na
+description: Tworzenie i stosowanie planów zasilania w programie System Center Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 738eddaa-52e2-467f-b453-821ef2884d47
-caps.latest.revision: "6"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: ec32a0b1591fffe77ace91f478e03302f429c957
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 4504f26f8f6288750d36028d8eb795ae0d839fbc
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-and-apply-power-plans-in-system-center-configuration-manager"></a>Tworzenie i stosowanie planów zasilania w programie System Center Configuration Manager
 
@@ -52,7 +46,7 @@ Zarządzanie energią w programie System Center Configuration Manager umożliwia
 
 3.  Na liście **Kolekcje urządzeń** kliknij kolekcję, dla której chcesz zastosować ustawienia zarządzania energią, a następnie na karcie **Narzędzia główne** w grupie **Właściwości** kliknij pozycję **Właściwości**.  
 
-4.  W **zarządzania energią** karcie *< nazwa kolekcji\>***właściwości** okno dialogowe, wybierz opcję **Określ ustawienia zarządzania zasilaniem dla tej kolekcji**.  
+4.  W **zarządzania energią** karcie *< nazwa kolekcji\>*** właściwości** wybierz pozycję **Określ ustawienia zarządzania zasilaniem dla tej kolekcji**.  
 
     > [!NOTE]  
     >  Możesz również kliknąć polecenie **Przeglądaj** , a następnie skopiować ustawienia zarządzania energią z wybranej kolekcji do bieżącej kolekcji.  
@@ -74,7 +68,7 @@ Zarządzanie energią w programie System Center Configuration Manager umożliwia
     > [!NOTE]  
     >  Nie możesz zmodyfikować wbudowanych planów zasilania.  
 
-8.  W *< Nazwa planu zasilania\>***właściwości** okna dialogowego Skonfiguruj następujące ustawienia:  
+8.  W *< Nazwa planu zasilania\>*** właściwości** okna dialogowego Skonfiguruj następujące ustawienia:  
 
     -   **Nazwa:** Określ nazwę dla tego planu zasilania lub użyj podanej wartości domyślnej.  
 
@@ -85,9 +79,9 @@ Zarządzanie energią w programie System Center Configuration Manager umożliwia
         > [!IMPORTANT]  
         >  Włączone ustawienia są stosowane dla komputerów po zastosowaniu planu zasilania. Wyczyszczenie pola wyboru ustawienia zasilania nie powoduje zmiany wartości na komputerze klienckim po zastosowaniu planu zasilania. Wyczyszczenie pola wyboru nie przywraca poprzedniej wartości ustawienia zasilania (tzn. wartości sprzed zastosowania planu zasilania).  
 
-9. Kliknij przycisk **OK** zamknąć *< Nazwa planu zasilania\>***właściwości** okno dialogowe.  
+9. Kliknij przycisk **OK** zamknąć *< Nazwa planu zasilania\>*** właściwości** okno dialogowe.  
 
-10. Kliknij przycisk **OK** zamknąć *< nazwa kolekcji\>***ustawienia** okno dialogowe i zastosować plan zasilania.  
+10. Kliknij przycisk **OK** zamknąć *< nazwa kolekcji\>*** ustawienia** okno dialogowe i zastosować plan zasilania.  
 
 ##  <a name="BKMK_Plans"></a> Available power management plan settings  
  W poniższej tabeli wymieniono ustawienia zarządzania energią dostępne w programie Configuration Manager. Możesz skonfigurować oddzielne ustawienia dla czasu, w którym komputer jest podłączony do zasilania sieciowego, i dla czasu, w którym jest zasilany z baterii. W zależności od wersji systemu Windows niektóre ustawienia mogą nie być konfigurowalne.  

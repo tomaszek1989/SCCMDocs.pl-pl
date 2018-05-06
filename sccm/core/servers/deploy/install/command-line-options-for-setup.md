@@ -2,25 +2,19 @@
 title: Opcje wiersza polecenia Instalatora
 titleSuffix: Configuration Manager
 description: Tworzenie skryptów automatyzacji do zainstalowania programu System Center Configuration Manager z wiersza polecenia.
-ms.custom: na
 ms.date: 03/22/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 0da167f1-52cf-4dfd-8f73-833ca3eb8478
-caps.latest.revision: ''
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fede359c884ef8b4027935b2e3fb48a5b7543d26
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: fa8e3bf572ced8a2394099bbb59532502ef3b019
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="command-line-options-for-setup-in-system-center-configuration-manager"></a>Opcje wiersza polecenia instalacji w programie System Center Configuration Manager
 
@@ -36,7 +30,7 @@ ms.lasthandoff: 03/23/2018
  **/ DONTSTARTSITECOMP**  
  Instaluje witrynę, lecz zapobiega uruchomieniu usługi Menedżer składników lokacji. Do czasu uruchamiania usługi Menedżer składników lokacji, lokacji nie jest aktywne. Menedżer składników lokacji jest odpowiedzialny za instalację i uruchomienie usługi SMS_Executive oraz dodatkowych procesów w lokacji. Po zakończeniu instalacji lokacji, po uruchomieniu usługi Menedżer składników lokacji, instaluje usługę SMS_Executive oraz dodatkowych procesów, które są niezbędne do funkcjonowania lokacji.  
 
- **/HIDDEN**  
+ **/ UKRYTE**  
  Powoduje ukrycie interfejsu użytkownika podczas instalacji. Użyj tej opcji tylko w połączeniu z **/SCRIPT** opcji. Plik skryptu instalacji nienadzorowanej musi zawierać wszystkie wymagane opcje lub instalacja zakończy się niepowodzeniem.  
 
  **/ NOUSERINPUT**  
@@ -519,11 +513,11 @@ Następujące dane należy zainstalować lokacji głównej przy użyciu pliku sk
 
     -   **Wymagane:** Nie  
 
-    -   **Wartości:** HTTPS *or* HTTP  
+    -   **Wartości:** HTTPS *lub* HTTP  
 
     -   **Szczegóły:** Określa protokół do użycia w punkcie zarządzania.  
 
--   **Nazwa klucza:** DistributionPoint  
+-   **Nazwa klucza:** W Krakowie  
 
     -   **Wymagane:** Nie  
 
@@ -535,7 +529,7 @@ Następujące dane należy zainstalować lokacji głównej przy użyciu pliku sk
 
     -   **Wymagane:** Nie  
 
-    -   **Wartości:** HTTPS *or* HTTP  
+    -   **Wartości:** HTTPS *lub* HTTP  
 
     -   **Szczegóły:** Określa protokół do użycia w punkcie dystrybucji.  
 

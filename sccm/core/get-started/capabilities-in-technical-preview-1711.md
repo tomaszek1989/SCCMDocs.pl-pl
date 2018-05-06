@@ -1,24 +1,20 @@
 ---
 title: Technical Preview 1711 | Dokumentacja firmy Microsoft
 titleSuffix: Configuration Manager
-description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview 1711 programu System Center Configuration Manager."
-ms.custom: na
+description: Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview 1711 programu System Center Configuration Manager.
 ms.date: 11/17/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 2e68dc12-6776-437a-9138-45cd7d4bf9cf
-author: erikje
-ms.author: erikje
-manager: angrobe
-ms.openlocfilehash: b740c422a71e625ccc110a043028cf986cdffb20
-ms.sourcegitcommit: ed8b2438ef85c9160741ef61f9171be41dd1ae0a
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 6353b765f769dfa57ea57926d12bf2b254ba8f68
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/17/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1711-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1711 programu System Center Configuration Manager
 
@@ -71,7 +67,7 @@ Spróbuj wykonać następujące zadania, a następnie wyślij do nas **opinii** 
 1. W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ogólne**i kliknij przycisk **uruchamiania sekwencji zadań**.
 2. Kliknij przycisk **Przeglądaj** do wybierania sekwencji zadań podrzędnych.
 
-## <a name="allow-user-interaction-when-installing-an-application----1356976---"></a>Zezwala na interakcję użytkownika podczas instalowania aplikacji<!-- 1356976 -->
+## <a name="allow-user-interaction-when-installing-an-application----1356976---"></a>Zezwala na interakcję użytkownika podczas instalowania aplikacji <!-- 1356976 -->
 
 W tej wersji zapoznawczej można zezwolić użytkownikowi końcowemu możliwość interakcji z instalacją aplikacji, podczas uruchamiania sekwencji zadań. Na przykład uruchomić proces instalacji, które monituje użytkownika końcowego dla różnych opcji. Niektóre instalatory aplikacji nie może mieć zignorowane monity użytkownika lub proces instalacji może wymagać tylko znane użytkownikowi wartości określonej konfiguracji. Ta funkcja umożliwia obsługę tych scenariuszy instalacji.
 

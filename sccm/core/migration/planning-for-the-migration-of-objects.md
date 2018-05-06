@@ -1,26 +1,20 @@
 ---
-title: "Migracja obiektów"
+title: Migracja obiektów
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak planowanie migracji obiektów między hierarchiami w środowisku programu System Center Configuration Manager."
-ms.custom: na
+description: Dowiedz się, jak planowanie migracji obiektów między hierarchiami w środowisku programu System Center Configuration Manager.
 ms.date: 1/12/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 066caf00-e419-4efb-93d3-ba4ba878297c
-caps.latest.revision: "7"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 6e046ed675614f15f2ea1a03ff3cf86f295da2da
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 0e42b7c8db3ef8c6d645d29f371fd6da475159bd
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="plan-for-the-migration-of-configuration-manager-objects-to-system-center-configuration-manager"></a>Planowanie migracji obiektów programu Configuration Manager do programu System Center Configuration Manager
 
@@ -48,7 +42,7 @@ Z programem System Center Configuration Manager można migrować wiele różnych
 
 -   [Planowanie migracji dostosowań reguł pomiaru użytkowania oprogramowania](#Plan_Migrate_SWM_Rules)  
 
-##  <a name="Plan_migrate_Software_updates"></a>Planowanie migracji aktualizacji oprogramowania  
+##  <a name="Plan_migrate_Software_updates"></a> Planowanie migracji aktualizacji oprogramowania  
  Można migrować obiekty aktualizacji oprogramowania, takie jak pakiety aktualizacji oprogramowania i wdrożenia aktualizacji oprogramowania.  
 
  Aby pomyślnie migrować obiekty aktualizacji oprogramowania, należy najpierw skonfigurować hierarchię docelową z konfiguracjami, które odpowiadają środowiskiem hierarchii źródłowej. Wymaga to wykonania następujących akcji:  
@@ -79,7 +73,7 @@ W przypadku migracji z hierarchii źródłowej programu Configuration Manager 20
 
 Przy migracji obiektów z hierarchii źródłowej programu System Center 2012 Configuration Manager lub System Center Configuration Manager, obiekty aktualizacji oprogramowania nie są modyfikowane.  
 
-##  <a name="Plan_Migrate_content"></a>Planowanie migracji zawartości  
+##  <a name="Plan_Migrate_content"></a> Planowanie migracji zawartości  
  Zawartość można migrować z obsługiwanej hierarchii źródłowej do hierarchii docelowej. Dla hierarchii źródłowej programu Configuration Manager 2007 ta zawartość obejmuje pakiety dystrybucji oprogramowania oraz programy i aplikacje wirtualne, takie jak Microsoft Application Virtualization (App-V). Dla programu System Center 2012 Configuration Manager i System Center Configuration Manager hierarchii źródłowej ta zawartość obejmuje aplikacje i aplikacje wirtualne App-V. Podczas migrowania zawartości między hierarchiami, skompresowane pliki źródłowe migracji do hierarchii docelowej.  
 
 ### <a name="packages-and-programs"></a>Pakiety i programy  
@@ -121,12 +115,12 @@ Anonse można migrować z obsługiwanej lokacji źródłowej programu Configurat
 ### <a name="applications"></a>Aplikacje  
  Aplikacje można migrować z obsługiwanej hierarchii źródłowej programu System Center 2012 Configuration Manager lub System Center Configuration Manager do hierarchii docelowej. Po ponownym przypisaniu klienta z hierarchii źródłowej do hierarchii docelowej zachowuje on historię poprzednio zainstalowanych aplikacji, aby zapobiec ponownemu uruchomieniu migrowanych aplikacji.  
 
-##  <a name="BKMK_MigrateCollections"></a>Planowanie migracji kolekcji  
+##  <a name="BKMK_MigrateCollections"></a> Planowanie migracji kolekcji  
  Kryteria kolekcji można migrować z obsługiwanej hierarchii źródłowej programu System Center 2012 Configuration Manager lub System Center Configuration Manager. W tym celu należy użyć zadania migracji obiektów. Migracja kolekcji oznacza migrację jej zasad, a nie informacji o członkach kolekcji ani informacji lub obiektów dotyczących członków kolekcji.  
 
  Migracja obiektu kolekcji nie jest obsługiwana w przypadku migracji z hierarchii źródłowej programu Configuration Manager 2007.  
 
-##  <a name="Plan_migrate_OSD"></a>Planowanie migracji wdrożeń systemu operacyjnego  
+##  <a name="Plan_migrate_OSD"></a> Planowanie migracji wdrożeń systemu operacyjnego  
 Z obsługiwanej hierarchii źródłowej można migrować następujące obiekty wdrożenia systemu operacyjnego:  
 
 -   Obrazy i pakiety systemów operacyjnych. Ścieżka źródłowa obrazów rozruchowych jest aktualizowane do domyślnej lokalizacji obraz dla systemu Windows administracyjne zestawie instalacji (systemu Windows Windows AIK) w lokacji docelowej. Poniżej przedstawiono wymagania i ograniczenia dotyczące migracji obrazów i pakietów systemu operacyjnego:  
@@ -144,7 +138,7 @@ Z obsługiwanej hierarchii źródłowej można migrować następujące obiekty w
 
 -   Sterowniki i pakiety sterowników. Podczas migracji pakietów sterowników, konto komputera dostawcy programu SMS w hierarchii docelowej musi mieć pełną kontrolę do źródła pakietu.
 
-##  <a name="Plan_Migrate_Compliance_settings"></a>Planowanie migracji zarządzania wymaganą konfiguracją  
+##  <a name="Plan_Migrate_Compliance_settings"></a> Planowanie migracji zarządzania wymaganą konfiguracją  
 Można migrować elementy konfiguracji i linie bazowe konfiguracji.  
 
 > [!NOTE]  
@@ -152,14 +146,14 @@ Można migrować elementy konfiguracji i linie bazowe konfiguracji.
 
 Można importować pakiety konfiguracyjne programu Configuration Manager 2007. Proces importowania powoduje automatyczną konwersję pakiety konfiguracyjne, aby był zgodny z System Center Configuration Manager.  
 
-##  <a name="Plan_migrate_Boundaries"></a>Planowanie migracji granic  
+##  <a name="Plan_migrate_Boundaries"></a> Planowanie migracji granic  
  Granice można migrować między hierarchiami. Podczas migracji z programu Configuration Manager 2007, wszystkie granice z lokacji źródłowej są migrowane jednocześnie oraz dodawane do nowej grupy granic utworzonej w hierarchii docelowej. Podczas migracji z hierarchii programu System Center 2012 Configuration Manager lub System Center Configuration Manager, wszystkie granice, którą wybierzesz jest dodawany do nowej grupy granic w hierarchii docelowej.  
 
  Każda automatycznie utworzona grupa granic może być lokalizacją zawartości, jednak nie może być używana do przypisywania lokacji. Zapobiega to nakładaniu się granic podczas przypisywania lokacji między hierarchiami źródłową i docelową. W przypadku migracji z lokacji źródłowej programu Configuration Manager 2007, to zapobiega nowych klientów programu Configuration Manager 2007, które zainstalować nieprawidłowemu przypisywaniu do hierarchii docelowej. Domyślnie klienci programu System Center Configuration Manager nie są automatycznie przypisywani do lokacji programu Configuration Manager 2007.  
 
  Podczas migracji, jeśli współużytkujesz punkt dystrybucji z hierarchią docelową, wszystkie granice skojarzone z tą dystrybucją automatycznie migrują do hierarchii docelowej. W hierarchii docelowej proces migracji tworzy nową grupę granic tylko do odczytu dla każdego współużytkowanego punktu dystrybucji. Jeśli zmienisz granice punktu dystrybucji w hierarchii źródłowej, grupa granic w hierarchii docelowej zostanie zaktualizowana tymi zmianami podczas następnego cyklu zbierania danych.  
 
-##  <a name="Plan_Migrate_reports"></a>Planowanie migracji raportów  
+##  <a name="Plan_Migrate_reports"></a> Planowanie migracji raportów  
 Menedżer konfiguracji nie obsługuje migracji raportów. W tej sytuacji raporty można eksportować z hierarchii źródłowej za pomocą narzędzia SQL Server Reporting Services Report Builder, a następnie zaimportować je do hierarchii docelowej.  
 
 > [!NOTE]  
@@ -167,7 +161,7 @@ Menedżer konfiguracji nie obsługuje migracji raportów. W tej sytuacji raporty
 
 Aby uzyskać więcej informacji o raportach zobacz [raportowania w programie System Center Configuration Manager](../../core/servers/manage/reporting.md).  
 
-##  <a name="Plan_Migrate_Org_Folders"></a>Planowanie migracji folderów wyszukiwania i organizacyjnych  
+##  <a name="Plan_Migrate_Org_Folders"></a> Planowanie migracji folderów wyszukiwania i organizacyjnych  
  Foldery organizacyjne i folder wyszukiwania można migrować z obsługiwanej hierarchii źródłowej do hierarchii docelowej. Dodatkowo z hierarchii źródłowej programu System Center 2012 Configuration Manager lub System Center Configuration Manager, kryteria dla zapisanego wyszukiwania można migrować do hierarchii docelowej.  
 
  Domyślnie proces migracji obsługuje obiekty i kolekcje ze struktur folderu wyszukiwania i folderu organizacyjnego. Jednak w kreatorze tworzenia zadania migracji na **ustawienia** strony, można skonfigurować zadania migracji, aby nie migrowało organizacyjnej struktury obiektów, usuwając zaznaczenie pola wyboru pole dla tej opcji. Struktury organizacyjne kolekcji są zawsze obsługiwane.  
@@ -176,13 +170,13 @@ Aby uzyskać więcej informacji o raportach zobacz [raportowania w programie Sys
 
  Podczas migracji zapisanego kryterium wyszukiwania z hierarchii źródłowej programu System Center 2012 Configuration Manager lub System Center Configuration Manager, można migrować kryteria wyszukiwania, a nie informacje o wynikach wyszukiwania. Migracja zapisanego kryterium wyszukiwania nie ma zastosowania z lokacji źródłowej programu Configuration Manager 2007.  
 
-##  <a name="Plan_Migrate_AI"></a>Planowanie migracji dostosowań analizy zasobów  
+##  <a name="Plan_Migrate_AI"></a> Planowanie migracji dostosowań analizy zasobów  
  Dostosowania analizy zasobów można migrować z obsługiwanej hierarchii źródłowej do hierarchii docelowej. Nie wprowadzono żadnych ważnych zmian w strukturze dostosowań analizy zasobów między programu Configuration Manager 2007 i System Center Configuration Manager.  
 
 > [!NOTE]  
 >  System Center Configuration Manager nie obsługuje migracji obiektów analizy zasobów z lokacji programu Configuration Manager 2007, która jest używa usługi w wersji 2.0 (AIS 2.0).  
 
-##  <a name="Plan_Migrate_SWM_Rules"></a>Planowanie migracji dostosowań reguł pomiaru użytkowania oprogramowania  
+##  <a name="Plan_Migrate_SWM_Rules"></a> Planowanie migracji dostosowań reguł pomiaru użytkowania oprogramowania  
  Nie wprowadzono żadnych ważnych zmian dotyczących pomiaru użytkowania oprogramowania między programu Configuration Manager 2007 i System Center Configuration Manager. Zasady pomiaru użytkowania oprogramowania można migrować z obsługiwanej hierarchii źródłowej do hierarchii docelowej.  
 
  Domyślnie zasady pomiaru użytkowania oprogramowania, które można migrować do hierarchii docelowej, nie są skojarzone z konkretną lokacją w hierarchii docelowej, lecz mają zastosowanie do wszystkich klientów w hierarchii. Aby zastosować zasadę pomiaru użytkowania oprogramowania do klientów w konkretnej lokacji, należy edytować zasadę pomiaru po jej zmigrowaniu.  

@@ -1,27 +1,21 @@
 ---
 title: Certyfikaty i zabezpieczenia
 titleSuffix: Configuration Manager
-description: "Zarządzaj certyfikatami i zabezpieczeń dla programu System Center Updates Publisher"
-ms.custom: na
+description: Zarządzaj certyfikatami i zabezpieczeń dla programu System Center Updates Publisher
 ms.date: 4/29/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-sum
+ms.topic: conceptual
 ms.assetid: a7f91e63-4750-402e-9970-dd14be7f76a3
-caps.latest.revision: 
-author: mestew
-ms.author: mstewart
-manager: angrobe
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
 robots: NOINDEX, NOFOLLOW
-ms.openlocfilehash: 9d8812da3588b60f388288cef6f9a093731d873f
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: b3ce22747cddc1371fb38718cc97b70cda8afcb1
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-certificates-and-security-for-updates-publisher"></a>Zarządzaj certyfikatami i zabezpieczeń dla programu Updates Publisher
 
@@ -41,7 +35,7 @@ Poniższa procedura jest jednym z kilku dostępnych metod, aby dodać certyfikat
 
 3.  Wybierz **inny komputer**, wpisz nazwę serwera aktualizacji, lub kliknij przycisk **Przeglądaj** Aby odnaleźć komputer serwera aktualizacji, kliknij przycisk **Zakończ**, kliknij przycisk **Zamknij**, a następnie kliknij przycisk **OK**.
 
-4.  Rozwiń węzeł  **certyfikatów (*nazwy serwera aktualizacji*) **, rozwiń węzeł **WSUS**, a następnie kliknij przycisk **certyfikaty**.
+4.  Rozwiń węzeł **certyfikatów (*nazwy serwera aktualizacji*)**, rozwiń węzeł **WSUS**, a następnie kliknij przycisk **certyfikaty**.
 
 5.  W okienku wyników kliknij prawym przyciskiem myszy żądany certyfikat, kliknij przycisk **wszystkie zadania**, a następnie kliknij przycisk **wyeksportować**.
 
@@ -51,7 +45,7 @@ Poniższa procedura jest jednym z kilku dostępnych metod, aby dodać certyfikat
 
 8.  Jeśli certyfikat z podpisem własnym jest używany, takich jak **WSUS Publishers Self-signed**, kliknij prawym przyciskiem myszy **zaufane główne urzędy certyfikacji**, kliknij przycisk **wszystkie zadania**, a następnie kliknij przycisk **importu**. Ukończ pracę Kreatora importu certyfikatów za pomocą wyeksportowanego pliku z kroku 6.
 
-9.  Kliknij prawym przyciskiem myszy  **certyfikatów (*nazwy serwera aktualizacji*) **, kliknij przycisk **Podłącz do innego komputera**, wpisz nazwę komputera dla komputera Updates Publisher i kliknij przycisk **OK**.
+9.  Kliknij prawym przyciskiem myszy **certyfikatów (*nazwy serwera aktualizacji*)**, kliknij przycisk **Podłącz do innego komputera**, wpisz nazwę komputera dla komputera Updates Publisher i kliknij przycisk  **OK**.
 
 10. Jeśli Updates Publisher znajduje się zdalnie z serwera aktualizacji, powtórz kroki od 7 do 9, aby zaimportować certyfikat do magazynu certyfikatów na komputerze Updates Publisher.
 
@@ -71,7 +65,7 @@ Poniżej podano jako przykład sposobu konfigurowania certyfikatów podpisywania
 
 3.  Wybierz **inny komputer**, wpisz nazwę serwera aktualizacji, lub kliknij przycisk **Przeglądaj** Aby odnaleźć komputer serwera aktualizacji, kliknij przycisk **Zakończ**, kliknij przycisk **Zamknij**, a następnie kliknij przycisk **OK**.
 
-4.  Rozwiń węzeł  **certyfikatów (*nazwy serwera aktualizacji*) **, rozwiń węzeł **WSUS**, a następnie kliknij przycisk **certyfikaty**.
+4.  Rozwiń węzeł **certyfikatów (*nazwy serwera aktualizacji*)**, rozwiń węzeł **WSUS**, a następnie kliknij przycisk **certyfikaty**.
 
 5.  Kliknij prawym przyciskiem myszy certyfikat w okienku wyników, kliknij przycisk **wszystkie zadania**, a następnie kliknij przycisk **wyeksportować**. Zakończenie **Kreatora eksportu certyfikatów** przy użyciu ustawień domyślnych, aby utworzyć plik eksportu certyfikatu za pomocą nazwy i lokalizacji określonej w kreatorze.
 

@@ -1,26 +1,20 @@
 ---
-title: "Rozmieszczanie zawartości"
+title: Rozmieszczanie zawartości
 titleSuffix: Configuration Manager
-description: "Po zainstalowaniu punktów dystrybucji programu System Center Configuration Manager, Oto jak można rozpocząć wdrażania zawartości."
-ms.custom: na
+description: Po zainstalowaniu punktów dystrybucji programu System Center Configuration Manager, Oto jak można rozpocząć wdrażania zawartości.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: d50dcca0-4419-449d-a487-73abcadf328f
-caps.latest.revision: 
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 14d2d9cfc25f7445ad6e873f1969e1ffcd522737
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: c6a2a69047a8fee5ab0c1f4f0f13197178334f05
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="deploy-and-manage-content-for-system-center-configuration-manager"></a>Wdrażanie i zarządzanie zawartością programu System Center Configuration Manager
 
@@ -28,7 +22,7 @@ ms.lasthandoff: 12/04/2017
 
 Po zainstalowaniu punktów dystrybucji programu System Center Configuration Manager, można rozpocząć wdrażania zawartości. Zazwyczaj zawartości przesyła do punktów dystrybucji w sieci, ale istnieje inne opcje, aby pobrać zawartość do punktów dystrybucji. Po przesyła zawartość do punktu dystrybucji, można zaktualizować, ponownie rozesłać, usuwanie i sprawdź poprawność tej zawartości w punktach dystrybucji.  
 
-##  <a name="bkmk_distribute"></a>Dystrybucja zawartości  
+##  <a name="bkmk_distribute"></a> Dystrybucja zawartości  
  Zazwyczaj dystrybucji zawartości do punktów dystrybucji, aby była ona dostępna na komputerach klienckich. (Wyjątkiem jest użycie opcji dystrybucji zawartości na żądanie dla określonego wdrożenia).  Podczas dystrybucji zawartości program Configuration Manager przechowuje pliki zawartości w pakiecie, a następnie dystrybuuje pakiet do punktu dystrybucji. Typy zawartości, którą można dystrybuować:  
 
 -   Typy wdrożenia aplikacji  
@@ -107,7 +101,7 @@ Użyj poniższej procedury do dystrybucji zawartości do punktów dystrybucji.
 
 9. **Potwierdzenie** zostanie wyświetlona strona, czy zawartość została pomyślnie przypisana do punktów. Do monitorowania dystrybucji zawartości, zobacz [monitorowania zawartości ma dystrybuowane z System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  
 
-##  <a name="bkmk_prestage"></a>Użyj wstępnie przygotowanej zawartości  
+##  <a name="bkmk_prestage"></a> Użyj wstępnie przygotowanej zawartości  
  Można wstępnie przygotować pliki zawartości aplikacji i typów pakietów:  
 
 -   W konsoli programu Configuration Manager, należy wybrać wymaganą zawartość, a następnie użyć **Tworzenie kreatora przygotowanego pliku zawartości** można utworzyć skompresowany, wstępnie przygotowany plik zawartości obejmujący pliki oraz skojarzone metadane wybranej zawartości.  
@@ -132,7 +126,7 @@ Aby uzyskać informacje o tym, kiedy należy wstępnie przygotować pliki zawart
 
 Użyj poniższych sekcji, aby wstępnie przygotować zawartość.  
 
-###  <a name="BKMK_CreatePrestagedContentFile"></a>Krok 1. Tworzenie wstępnie przygotowanego pliku zawartości  
+###  <a name="BKMK_CreatePrestagedContentFile"></a> Krok 1. Tworzenie wstępnie przygotowanego pliku zawartości  
  Można utworzyć skompresowany, wstępnie przygotowany plik zawartości obejmujący pliki oraz skojarzone metadane zawartości wybrane w konsoli programu Configuration Manager. Poniższa procedura umożliwia utworzenie wstępnie przygotowanego pliku zawartości.  
 
 ##### <a name="to-create-a-prestaged-content-file"></a>Aby utworzyć wstępnie przygotowany plik zawartości  
@@ -178,7 +172,7 @@ Użyj poniższych sekcji, aby wstępnie przygotować zawartość.
 
 11. Na **zakończenia** , sprawdź, czy wstępnie przygotowany plik zawartości został pomyślnie utworzony, a następnie kliknij przycisk **Zamknij**.  
 
-###  <a name="BKMK_AssignContentToDistributionPoint"></a>Krok 2. Przypisz zawartość do punktów dystrybucji  
+###  <a name="BKMK_AssignContentToDistributionPoint"></a> Krok 2. Przypisz zawartość do punktów dystrybucji  
  Po utworzeniu wstępnie przygotowanego pliku zawartości, należy przypisać zawartość do punktów dystrybucji.  
 
 > [!NOTE]  
@@ -240,7 +234,7 @@ Użyj poniższych sekcji, aby wstępnie przygotować zawartość.
 
 9. **Potwierdzenie** zostanie wyświetlona strona, czy zawartość została pomyślnie przypisana do punktów dystrybucji. Do monitorowania dystrybucji zawartości, zobacz [monitorowania zawartości ma dystrybuowane z System Center Configuration Manager](../../../../core/servers/deploy/configure/monitor-content-you-have-distributed.md).  
 
-###  <a name="BKMK_ExportContentFromPrestagedContentFile"></a>Krok 3. Wyodrębnienie zawartości ze wstępnie przygotowanego pliku zawartości  
+###  <a name="BKMK_ExportContentFromPrestagedContentFile"></a> Krok 3. Wyodrębnienie zawartości ze wstępnie przygotowanego pliku zawartości  
  Po utworzeniu wstępnie przygotowanego pliku zawartości i przypisaniu zawartości do punktów dystrybucji, można wyodrębnić pliki zawartości do biblioteki zawartości w lokacji serwera lub punktu dystrybucji. Zazwyczaj kopiowany na dysk przenośny, takich jak dysk USB, wstępnie przygotowany plik zawartości lub zawartość na nośniku, na przykład dysk DVD jest nagrywana i jest dostępny w lokalizacji lokacji serwera lub punktu dystrybucji wymagającego zawartości.  
 
  Aby ręcznie wyodrębnić pliki zawartości ze wstępnie przygotowanego pliku zawartości za pomocą narzędzia wiersza polecenia Extract Content, należy użyć następującej procedury.  
@@ -281,7 +275,7 @@ Użyj poniższych sekcji, aby wstępnie przygotować zawartość.
     >   
     > Menedżer konfiguracji nie przeprowadzi automatycznej dystrybucji pakietu w wersji 2 do punktu dystrybucji. Należy utworzyć nowy wstępnie przygotowanego pliku zawartości, która zawiera nową wersję pliku, a następnie wyodrębnić zawartość, aktualizacji punktu dystrybucji w celu dystrybuowania plików, które uległy zmianie lub ponownie rozesłać wszystkie pliki w pakiecie.  
 
-###  <a name="bkmk_dpsiteserver"></a>Jak wstępnie przygotować zawartość w punkcie dystrybucji na serwerze lokacji  
+###  <a name="bkmk_dpsiteserver"></a> Jak wstępnie przygotować zawartość w punkcie dystrybucji na serwerze lokacji  
  Punkt dystrybucji jest zainstalowany na serwerze lokacji, musi użyć poniższej procedury Aby pomyślnie przygotować zawartość. Jest to spowodowane pliki zawartości znajdują się już w bibliotece zawartości.  
 
  Gdy punkt dystrybucji nie jest włączone dla wstępnie przygotowanej zawartości lub gdy punkt dystrybucji nie znajduje się na serwerze lokacji, zobacz [Użyj wstępnie przygotowanej zawartości](#bkmk_prestage) w tym temacie.  
@@ -294,7 +288,7 @@ Użyj poniższych sekcji, aby wstępnie przygotować zawartość.
 
     2.  W **administracji** obszaru roboczego kliknij **punktów dystrybucji**, a następnie wybierz punkt dystrybucji, który znajduje się na serwerze lokacji.  
 
-    3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
+    3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij pozycję **Właściwości**.  
 
     4.  Na **ogólne** karcie, upewnij się, że **Włącz ten punkt dystrybucji dla wstępnie przygotowanej zawartości** nie zaznaczono pola wyboru.  
 
@@ -307,7 +301,7 @@ Użyj poniższych sekcji, aby wstępnie przygotować zawartość.
     > [!NOTE]  
     >  Gdy punkt dystrybucji znajduje się w lokacji pomocniczej, odczekaj przynajmniej 10 minut, a następnie za pomocą konsoli programu Configuration Manager połączonej z nadrzędną lokacją podstawową, przypisz zawartość do punktu dystrybucji w lokacji dodatkowej.  
 
-##  <a name="bkmk_manage"></a>Zarządzanie dystrybuowaną zawartość  
+##  <a name="bkmk_manage"></a> Zarządzanie dystrybuowaną zawartość  
  Masz następujące opcje zarządzania zawartością:  
  - [Aktualizacja zawartości](#update-content)
  - [Ponowna dystrybucja zawartości](#redistribute-content)
@@ -381,7 +375,7 @@ Można ponownie rozesłać pakietu, aby skopiować wszystkie pliki zawartości w
 
     -   **Obrazy rozruchowe**: Rozwiń węzeł **systemów operacyjnych** >  **obrazów rozruchowych**, a następnie wybierz obraz rozruchowy, który chcesz ponownie dystrybuować.  
 
-3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
+3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij pozycję **Właściwości**.  
 
 4.  Kliknij przycisk **lokalizacje zawartości** , a następnie wybierz punkt dystrybucji lub grupę punktów dystrybucji, w której chcesz ponownie rozesłać zawartość, kliknij przycisk **Ponowna dystrybucja**, a następnie kliknij przycisk **OK**.  
 
@@ -391,7 +385,7 @@ Można ponownie rozesłać pakietu, aby skopiować wszystkie pliki zawartości w
 
 2.  W **administracji** obszaru roboczego kliknij **punktów dystrybucji**, a następnie wybierz punkt dystrybucji, w którym chcesz wykonać ponowną dystrybucję zawartości.  
 
-3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
+3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij pozycję **Właściwości**.  
 
 4.  Kliknij przycisk **zawartości** , a następnie wybierz zawartość do ponownego rozesłania, kliknij przycisk **Ponowna dystrybucja**, a następnie kliknij przycisk **OK**.  
 
@@ -401,7 +395,7 @@ Można ponownie rozesłać pakietu, aby skopiować wszystkie pliki zawartości w
 
 2.  W **administracji** obszaru roboczego, kliknij przycisk **grupy punktów dystrybucji**, a następnie wybierz grupę punktów dystrybucji, w którym chcesz wykonać ponowną dystrybucję zawartości.  
 
-3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
+3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij pozycję **Właściwości**.  
 
 4.  Kliknij przycisk **zawartości** , a następnie wybierz zawartość do ponownego rozesłania, kliknij przycisk **Ponowna dystrybucja**, a następnie kliknij przycisk **OK**.  
 
@@ -445,7 +439,7 @@ Jednakże gdy zawartość jest powiązana z innym pakietem rozesłanym do tego s
 
     -   **Obrazy rozruchowe**: Rozwiń węzeł **systemów operacyjnych** > **obrazów rozruchowych**, a następnie wybierz obraz rozruchowy, który chcesz usunąć.  
 
-3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
+3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij pozycję **Właściwości**.  
 
 4.  Kliknij przycisk **lokalizacje zawartości** , a następnie wybierz punkt dystrybucji lub grupę punktów dystrybucji, z którego chcesz usunąć zawartość, kliknij przycisk **Usuń**, a następnie kliknij przycisk **OK**.  
 
@@ -455,7 +449,7 @@ Jednakże gdy zawartość jest powiązana z innym pakietem rozesłanym do tego s
 
 2.  W **administracji** obszaru roboczego kliknij **punktów dystrybucji**, a następnie wybierz punkt dystrybucji, w której chcesz usunąć zawartość.  
 
-3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
+3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij pozycję **Właściwości**.  
 
 4.  Kliknij przycisk **zawartości** , a następnie wybierz zawartość do usunięcia, kliknij przycisk **Usuń**, a następnie kliknij przycisk **OK**.  
 
@@ -465,7 +459,7 @@ Jednakże gdy zawartość jest powiązana z innym pakietem rozesłanym do tego s
 
 2.  W **administracji** obszaru roboczego kliknij **grupy punktów dystrybucji**, a następnie wybierz grupę punktów dystrybucji, w której chcesz usunąć zawartość.  
 
-3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
+3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij pozycję **Właściwości**.  
 
 4.  Kliknij przycisk **zawartości** , a następnie wybierz zawartość do usunięcia, kliknij przycisk **Usuń**, a następnie kliknij przycisk **OK**.  
 
@@ -484,7 +478,7 @@ Proces weryfikacji zawartości sprawdza integralność plików zawartości w pun
 
 2.  W **administracji** obszaru roboczego kliknij **punktów dystrybucji**, a następnie wybierz punkt dystrybucji, w którym chcesz zweryfikować zawartość.  
 
-3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
+3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij pozycję **Właściwości**.  
 
 4.  Na **zawartości** , a następnie wybierz pakiet, w którym chcesz zweryfikować zawartość, kliknij przycisk **weryfikacji**, kliknij przycisk **OK**, a następnie kliknij przycisk **OK**. Inicjuje procesu weryfikacji zawartości pakietu w punkcie dystrybucji.  
 
@@ -510,7 +504,7 @@ Proces weryfikacji zawartości sprawdza integralność plików zawartości w pun
 
     -   **Obrazy rozruchowe**: Rozwiń węzeł **systemów operacyjnych** > **obrazów rozruchowych**, a następnie wybierz obraz rozruchowy, który chcesz wstępnie przygotować.  
 
-3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
+3.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij pozycję **Właściwości**.  
 
 4.  Na **lokalizacje zawartości** , a następnie wybierz punkt dystrybucji lub grupę punktów dystrybucji, w których chcesz zweryfikować zawartość, kliknij przycisk **weryfikacji**, kliknij przycisk **OK**, a następnie kliknij przycisk **OK**. Uruchamia proces weryfikacji zawartości zawartości na wybranym punkcie dystrybucji lub grupę punktów dystrybucji.  
 

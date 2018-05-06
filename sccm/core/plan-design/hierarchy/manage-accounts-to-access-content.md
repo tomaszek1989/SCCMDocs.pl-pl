@@ -1,25 +1,20 @@
 ---
-title: "Konta dostępu do zawartości"
+title: Konta dostępu do zawartości
 titleSuffix: Configuration Manager
-description: "Więcej informacji na temat kont, których klienci uzyskują dostęp do zawartości programu System Center Configuration Manager."
-ms.custom: na
+description: Więcej informacji na temat kont, których klienci uzyskują dostęp do zawartości programu System Center Configuration Manager.
 ms.date: 2/6/2017
-ms.reviewer: na
-ms.suite: na
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: a7df9d0f-fbde-47eb-97e7-3d29536424fa
-caps.latest.revision: "4"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: e0f0d4d12905a986159d379b9fd29a06afa4cad0
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: c21601246cb0024837256b7cf8d4c1576c00149d
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-accounts-to-access-content-in-system-center-configuration-manager"></a>Zarządzanie kontami dostępu do zawartości w programie System Center Configuration Manager
 
@@ -35,7 +30,7 @@ Przed wdrożeniem zawartości w programie System Center Configuration Manager, n
 
 -   **Konto połączenia multiemisji**. Użyć wdrożeń systemu operacyjnego.  
 
-##  <a name="bkmk_NAA"></a>Konto dostępu do sieci  
+##  <a name="bkmk_NAA"></a> Konto dostępu do sieci  
  Komputery klienckie używają konta dostępu do sieci, gdy nie mogą użyć lokalnego konta komputera na dostęp do zawartości w punktach dystrybucji. Dotyczy to na przykład komputerów i klientów grupy roboczej z niezaufanych domen. Tego konta można również używać podczas wdrażania systemu operacyjnego, jeżeli komputer instalujący system operacyjny nie ma jeszcze konta komputera w domenie.  
 
 -   Klienci używają konta dostępu do sieci wyłącznie do uzyskiwania dostępu do zasobów w sieci.  
@@ -67,7 +62,7 @@ Przyznaj temu kontu najniższe odpowiednie uprawnienia dostępu do oprogramowani
 
 3.  Wybierz **konta dostępu do sieci** kartę. Skonfiguruj co najmniej jednego konta, a następnie wybierz **OK**.  
 
-##  <a name="bkmk_Paa"></a>Konta dostępu do pakietu  
+##  <a name="bkmk_Paa"></a> Konta dostępu do pakietu  
  Konta dostępu do pakietu pozwalają ustawić uprawnienia systemu plików NTFS w celu określenia użytkowników i grup użytkowników, którzy mają dostęp do zawartości pakietu w punktach dystrybucji. Domyślnie program Configuration Manager przypisuje dostęp tylko do ogólnych **użytkowników** i **Administratorzy** kont. Możesz jednak kontroli dostępu dla komputerów klienckich przy użyciu dodatkowych kont systemu Windows lub grup. Urządzenia przenośne nie używają kont dostępu do pakietu, ponieważ te urządzenia zawsze pobierają zawartość pakietów anonimowo.  
 
  Domyślnie, gdy programu Configuration Manager skopiuje pliki zawartości pakietu do punktu dystrybucji, domyślnie przyzna **odczytu** dostęp do lokalnego **użytkowników** grupy i **Pełna kontrola** do lokalnej **Administratorzy** grupy. Rzeczywiste uprawnienia, które są wymagane są zależne od pakietu. Klienci w grupach roboczych lub lasach niezaufanych uzyskują dostęp do zawartości pakietu przy użyciu konta dostępu do sieci. Upewnij się, że konto dostępu do sieci ma uprawnienia do pakietu przy użyciu zdefiniowanych kont dostępu do pakietu.  
@@ -103,7 +98,7 @@ Przyznaj temu kontu najniższe odpowiednie uprawnienia dostępu do oprogramowani
     > [!NOTE]  
     >  Gdy zostanie dodana nazwa użytkownika dla konta, a Configuration Manager znajduje się zarówno konto użytkownika lokalnego, jak i konto użytkownika domeny o tej samej nazwie, programu Configuration Manager określa prawa dostępu do konta użytkownika domeny.  
 
-##  <a name="bkmk_multi"></a>Konto połączenia multiemisji  
+##  <a name="bkmk_multi"></a> Konto połączenia multiemisji  
  Konto połączenia multiemisji jest używany przez punkty dystrybucji, które są skonfigurowane do multiemisji w celu odczytywania informacji z bazy danych lokacji.  
 
 -   Należy określić konto do użycia podczas konfigurowania połączenia z bazą danych programu Configuration Manager do multiemisji.  

@@ -1,26 +1,20 @@
 ---
 title: Funkcje w wersji zapoznawczej Technical Preview 1606
 titleSuffix: Configuration Manager
-description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersja 1606."
-ms.custom: na
+description: Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersja 1606.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 134a2f60-811e-4dc9-a8f5-1ce0018c5c12
-caps.latest.revision: 
-author: erikje
-ms.author: erikje
-manager: angrobe
-ms.openlocfilehash: 59a57e20a21aac7c650c25e13df0f3180c2110ea
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: f3ee48d60c46def5daef25a2f3654e8a79a0e9e1
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1606-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1606 programu System Center Configuration Manager
 
@@ -38,7 +32,7 @@ W tym artykule przedstawiono funkcje, które są dostępne w wersji Technical Pr
 
 **Poniżej przedstawiono nowe funkcje, które można wypróbować z tą wersją.**  
 
-## <a name="dmp_category"></a>Automatycznie kategoryzowanie urządzeń do kolekcji
+## <a name="dmp_category"></a> Automatycznie kategoryzowanie urządzeń do kolekcji
 Możesz utworzyć kategorie urządzeń, które mogą być używane do automatycznego umieszczania urządzeń w kolekcji urządzeń, gdy używasz programu Configuration Manager w usłudze Microsoft Intune. Następnie użytkownicy muszą wybrać kategorię urządzenia, gdy rejestrują urządzenia w usłudze Intune. Ponadto można zmienić kategorię urządzenia z konsoli programu Configuration Manager.
 
 **Ważne:** Ta funkcja działa z **czerwca 2016** wersji usługi Microsoft Intune. Upewnij się, że możesz zostały zaktualizowane do tej wersji przed wypróbowanie tych procedur.
@@ -61,7 +55,7 @@ Gdy kolekcja jest skojarzona z kategorii urządzeń, wszystkie urządzenia w tej
 2.  Wybierz urządzenie z **urządzeń** listy, a następnie w **Home** karcie **urządzenia** kliknij przycisk **Zmień kategorię**.
 3.  W **edycji kategorii urządzeń** oknie dialogowym Wybierz kategorię, która ma zastosowanie do tego urządzenia, a następnie kliknij pozycję **OK**.
 
-## <a name="dmp_grace"></a>Okres prolongaty wymuszania dla wymaganej aplikacji i wdrożenia aktualizacji oprogramowania
+## <a name="dmp_grace"></a> Okres prolongaty wymuszania dla wymaganej aplikacji i wdrożenia aktualizacji oprogramowania
 
 W niektórych przypadkach można umożliwić użytkownikom więcej czasu do instalacji wymagane wdrożenia aplikacji lub aktualizacji oprogramowania poza wszystkie terminy, które zostały skonfigurowane. To może być zwykle być wymagane, jeśli komputer został wyłączony przez dłuższy czas i musi zainstalować dużą liczbę wdrożeń aplikacji lub aktualizacji.
 Na przykład jeśli użytkownik końcowy zwrócił się tylko z urlopu, ich może być konieczne Zaczekaj, aż do postaci długiej jako zaległe aplikacji są zainstalowane wdrożeń.
@@ -103,7 +97,7 @@ Dalsze informacje:
 - [Urządzenie Guard certyfikacji i zgodność](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-certification-and-compliance)
 - [Przewodnik wdrażania ochrona urządzeń](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide)
 
- ##  <a name="dmp_onprem"></a>Wiele punktów zarządzania urządzeniami do zarządzania urządzeniami przenośnymi lokalnej  
+ ##  <a name="dmp_onprem"></a> Wiele punktów zarządzania urządzeniami do zarządzania urządzeniami przenośnymi lokalnej  
  Z Technical Preview 1606, na\-lokalnego zarządzania urządzeniami przenośnymi (MDM) obsługuje nową funkcję systemu Windows 10 Anniversary aktualizację, która automatycznie konfiguruje zarejestrowane urządzenie ma więcej niż jeden zarządzania urządzeniami punktu dostępne do użycia. Ta funkcja umożliwia urządzeniu powrotu do innego punktu zarządzania urządzeniami, gdy który normalne używa nie jest dostępna. Ta funkcja działa tylko dla komputerów przy użyciu systemu Windows 10 Anniversary aktualizacja jest zainstalowana.  
 
 ### <a name="try-it-out"></a>Wypróbuj  

@@ -1,25 +1,20 @@
 ---
 title: Konfiguracja subskrypcji z Lookout
 titleSuffix: Configuration Manager
-description: "Tematy to szczegółowe informacje na temat konfigurowania ochrony Lookout urządzenia przed zagrożeniami."
-ms.custom: na
+description: Tematy to szczegółowe informacje na temat konfigurowania ochrony Lookout urządzenia przed zagrożeniami.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 6087b279-ba05-4824-b5e3-3af14f3d3cfe
-caps.latest.revision: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 142926bc41a79adc8d8300e413022fb0e3566c5a
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 08bf88c0f6660c213c47a5ed283b3be0431056a2
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="set-up-your-subscription-for--lookout-device-threat-protection"></a>Konfigurowanie subskrypcji dla ochrony Lookout urządzenia przed zagrożeniami
 
@@ -59,13 +54,13 @@ Obsługa lookout będzie współpracować kontakt podstawowy, aby dodać subskry
 
 ## <a name="configure-your-subscription-with-lookout-device-threat-protection"></a>Skonfiguruj subskrypcję z ochrony Lookout urządzenia przed zagrożeniami
 ### <a name="step-1-set-up-your-device-threat-protection"></a>Krok 1. Konfigurowanie sieci ochrony urządzenia przed zagrożeniami
-Gdy Lookout pomocy technicznej utworzy konto Lookout przedsiębiorstwa, można logowania się do konsoli Lookout.   Wiadomość e-mail z ewentualnym są wysyłane do głównej osoby kontaktowej w firmie łącze do adresu url logowania: https://aad.lookout.com/les?action=consent
+Gdy Lookout pomocy technicznej utworzy konto Lookout przedsiębiorstwa, można logowania się do konsoli Lookout.   Link do adresu url logowania do głównej osoby kontaktowej w Twojej firmie zostanie wysłana wiadomość e-mail z Lookout:https://aad.lookout.com/les?action=consent
 
 Podczas pierwszego logowania konsoli Lookout, ponieważ Lookout wymaga te informacje do zarejestrowania dzierżawy usługi Azure AD, należy użyć konta użytkownika z roli Administrator globalny usługi Azure AD.   Kolejne logowania nie wymaga od użytkownika posiadania ten poziom uprawnień usługi Azure AD.  W tym pierwszego logowania zostanie wyświetlona strona zgody. Wybierz **Akceptuj** do ukończenia rejestracji.
 
 ![Zrzut ekranu przedstawiający pierwsza strona logowania konsoli Lookout czasu](media/lookout-initial-login.png)
 
-Po zaakceptowane i zgodę, nastąpi przekierowanie do konsoli Lookout. Kolejnych logowań po wstępnej można zrobić za pomocą adresu URL: https://aad.lookout.com
+Po zaakceptowane i zgodę, nastąpi przekierowanie do konsoli Lookout. Kolejnych logowań po wstępnej można zrobić za pomocą adresu URL:  https://aad.lookout.com
 
 Zobacz [Rozwiązywanie problemów z artykułu]() Jeśli wystąpiły problemy dotyczące logowania.
 

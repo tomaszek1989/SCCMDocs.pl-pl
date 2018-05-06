@@ -1,26 +1,20 @@
 ---
-title: "Konfigurowanie certyfikatów "
+title: 'Konfigurowanie certyfikatów '
 titleSuffix: Configuration Manager
-description: "Konfigurowanie certyfikatów dla zaufanej komunikacji na potrzeby zarządzania urządzeniami przenośnymi lokalnymi w programie System Center Configuration Manager."
-ms.custom: na
+description: Konfigurowanie certyfikatów dla zaufanej komunikacji na potrzeby zarządzania urządzeniami przenośnymi lokalnymi w programie System Center Configuration Manager.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: 2a7d7170-1933-40e9-96d6-74a6eb7278e2
-caps.latest.revision: "27"
-caps.handback.revision: "0"
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 860f6e3f418a15ecfb79e9cbac5e6a09e17feb1a
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: c538c3b7668cc93069f0805b98f29586c3d7c86c
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="set-up-certificates-for-trusted-communications-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Konfigurowanie certyfikatów dla zaufanej komunikacji związanej z lokalnym zarządzaniem urządzeniami przenośnymi w programie System Center Configuration Manager
 
@@ -49,7 +43,7 @@ System Center Configuration Manager na\-lokalne zarządzanie urządzeniami przen
 
 -   [Eksportowanie certyfikatu z tym samym katalogu głównym jako certyfikatu serwera sieci web](#bkmk_exportCert)  
 
-##  <a name="bkmk_configCa"></a>Skonfigurowanie urzędu certyfikacji (CA) do publikowania listy CRL  
+##  <a name="bkmk_configCa"></a> Skonfigurowanie urzędu certyfikacji (CA) do publikowania listy CRL  
  Domyślnie urząd certyfikacji korzysta z list odwołania certyfikatów (CRL), opartych na protokole LDAP, co umożliwia ustanawianie połączeń dla urządzeń dołączonych do domeny. Należy dodać do urzędu certyfikacji listy CRL oparte na protokole HTTP, aby umożliwić ustanawianie relacji zaufania dla urządzeń, które nie zostały dołączone do domeny, przy użyciu certyfikatów wystawianych przez urząd certyfikacji. Te certyfikaty są wymagane do komunikacji SSL między serwerami hostującymi role systemu lokacji programu Configuration Manager i urządzeń zarejestrowanych dla na\-lokalnych zarządzanie urządzeniami przenośnymi.  
 
  Wykonaj poniższe kroki, aby skonfigurować urząd certyfikacji do automatycznego publikowania list CRL w celu wystawiania certyfikatów umożliwiających ustanawianie zaufanych połączeń dla urządzeń dołączonych do domeny i urządzeń, które nie zostały dołączone do domeny:  
@@ -76,14 +70,14 @@ System Center Configuration Manager na\-lokalne zarządzanie urządzeniami przen
 
 8.  W oknie dialogowym Publikowanie listy CRL wybierz pozycję **Tylko różnicowa lista CRL**, a następnie kliknij przycisk **OK**.  
 
-##  <a name="bkmk_certTempl"></a>Tworzenie szablonu certyfikatu serwera sieci web w urzędzie certyfikacji  
+##  <a name="bkmk_certTempl"></a> Tworzenie szablonu certyfikatu serwera sieci web w urzędzie certyfikacji  
  Następnym krokiem po opublikowaniu nowej listy CRL w urzędzie certyfikacji jest utworzenie szablonu certyfikatu serwera sieci Web. Ten szablon jest wymagany do wystawiania certyfikatów dla serwerów hostujących role systemu lokacji punktu rejestracji, punktu serwera proxy rejestracji, punktu dystrybucji i punktu zrządzania urządzeniami. Te serwery będą punktami końcowymi protokołu SSL dla zaufanej komunikacji między rolami systemu lokacji i zarejestrowanymi urządzeniami.    Aby utworzyć szablon certyfikatu, wykonaj następujące czynności:  
 
 1.  Utwórz grupę zabezpieczeń o nazwie **Serwery funkcji MDM programu ConfigMgr** zawierającą serwery, na których zostały uruchomione systemy lokacji wymagające zaufanej komunikacji z zarejestrowanymi urządzeniami.  
 
 2.  W konsoli Urząd certyfikacji kliknij prawym przyciskiem myszy pozycję **Szablony certyfikatów**, a następnie kliknij polecenie **Zarządzaj**, aby załadować konsolę Szablony certyfikatów.  
 
-3.  W okienku wyników w kolumnie **Nazwa wyświetlana szablonu** kliknij prawym przyciskiem myszy wpis opisany jako **Serwer sieci Web** i kliknij polecenie **Duplikuj szablon**.  
+3.  W okienku wyników w kolumnie **Nazwa wyświetlana szablonu** kliknij prawym przyciskiem myszy wpis opisany jako **Serwer sieci Web**i kliknij polecenie **Duplikuj szablon**.  
 
 4.  W oknie dialogowym **Duplikowanie szablonu** sprawdź, czy jest wybrany system **Windows 2003 Server, Enterprise Edition** , a następnie kliknij przycisk **OK**.  
 
@@ -105,7 +99,7 @@ System Center Configuration Manager na\-lokalne zarządzanie urządzeniami przen
 
 8.  Kliknij przycisk **Dodaj**, w polu tekstowym wprowadź tekst **Serwery IIS programu ConfigMgr**, a następnie kliknij przycisk **OK**.  
 
-9. Wybierz dla tej grupy uprawnienie **Rejestracja** i nie usuwaj zaznaczenia uprawnienia **Odczyt**.  
+9. Wybierz dla tej grupy uprawnienie **Rejestracja** i nie usuwaj zaznaczenia uprawnienia **Odczyt** .  
 
 10. Kliknij przycisk **OK** i zamknij konsolę Szablony certyfikatów.  
 
@@ -113,7 +107,7 @@ System Center Configuration Manager na\-lokalne zarządzanie urządzeniami przen
 
 12. W oknie dialogowym **Włączanie szablonu certyfikatu** wybierz właśnie utworzony nowy szablon **Serwer sieci Web funkcji MDM programu ConfigMgr**, a następnie kliknij przycisk **OK**.  
 
-##  <a name="bkmk_requestCert"></a>Żądanie certyfikatu serwera sieci web dla każdej roli systemu lokacji  
+##  <a name="bkmk_requestCert"></a> Żądanie certyfikatu serwera sieci web dla każdej roli systemu lokacji  
  Urządzenia zarejestrowane dla na\-lokalne zarządzanie urządzeniami przenośnymi muszą ufać punktom końcowym SSL hosting punkt rejestracyjny, punkt proxy rejestracji, punktu dystrybucji i punktu zarządzania urządzeniami.  Aby zażądać certyfikatu serwera sieci Web dla programu IIS, należy wykonać poniższe czynności. Należy wykonać tę czynność dla każdego serwera (punktu końcowego protokołu SSL) hostującego jedną z ról systemu lokacji wymagane dla na\-lokalnych zarządzanie urządzeniami przenośnymi.  
 
 1.  Na serwerze lokacji głównej otwórz wiersz polecenia, korzystając z uprawnienia administratora, wpisz **MMC** i naciśnij klawisz **Enter**.  
@@ -132,7 +126,7 @@ System Center Configuration Manager na\-lokalne zarządzanie urządzeniami przen
 
  Ponieważ każdy serwer będzie potrzebować certyfikatu serwera sieci web unikatowy, należy powtórzyć ten proces dla każdego serwera hostującego jedną z ról systemu lokacji wymagane dla na\-lokalnych zarządzanie urządzeniami przenośnymi.  Jeśli jeden serwer hostuje wszystkie role sytemu lokacji, wystarczy zażądać jednego certyfikatu serwera sieci Web.  
 
-##  <a name="bkmk_bindCert"></a>Powiązać certyfikat z serwera sieci web  
+##  <a name="bkmk_bindCert"></a> Powiązać certyfikat z serwera sieci web  
  Nowy certyfikat należy powiązać z serwerem sieci web każdego serwera systemu lokacji hostujących role systemu lokacji wymagane dla na\-lokalnych zarządzanie urządzeniami przenośnymi. Poniższe czynności należy wykonać dla każdego serwera hostującego role systemu lokacji punktu rejestracji i punktu serwera proxy rejestracji. Jeśli jeden serwer hostuje wszystkie role sytemu lokacji, wystarczy wykonać te czynności tylko jeden raz. Wykonywanie tego zadania dla ról systemu lokacji punktu dystrybucji i punktu zarządzania urządzeniami nie jest konieczne, ponieważ automatycznie otrzymują one certyfikat podczas rejestrowania.  
 
 1.  Na serwerze hostującym punkt rejestracji, punkt proxy rejestracji, punkt dystrybucji lub punkt zarządzania urządzeniami kliknij pozycje **Start** > **Narzędzia administracyjne** > **Menedżer usług IIS**.  
@@ -145,7 +139,7 @@ System Center Configuration Manager na\-lokalne zarządzanie urządzeniami przen
 
 5.  W konsoli Menedżer usług IIS w obszarze Połączenia wybierz serwer sieci Web, a następnie w prawym okienku akcji kliknij pozycję **Uruchom ponownie**.  
 
-##  <a name="bkmk_exportCert"></a>Eksportowanie certyfikatu z tym samym katalogu głównym jako certyfikatu serwera sieci web  
+##  <a name="bkmk_exportCert"></a> Eksportowanie certyfikatu z tym samym katalogu głównym jako certyfikatu serwera sieci web  
  Usługi certyfikatów w usługi Active Directory zazwyczaj instalują wymagany certyfikat z urzędu certyfikacji na wszystkich urządzeniach dołączonych do domeny. Urządzenia, które nie zostały dołączone do domeny, nie będą jednak mogły komunikować się z rolami systemu lokacji bez certyfikatu z głównego urzędu certyfikacji. Aby uzyskać certyfikat umożliwiający urządzeniom komunikowanie się z rolami systemu lokacji, można eksportować go z certyfikatu powiązanego z serwerem sieci Web.  
 
  Aby eksportować certyfikat główny certyfikatu serwera sieci Web, wykonaj poniższe czynności.  

@@ -1,24 +1,22 @@
 ---
-title: "Zarządzanie ustawieniami aktualizacji oprogramowania"
+title: Zarządzanie ustawieniami aktualizacji oprogramowania
 titleSuffix: Configuration Manager
-description: "Dowiedz się więcej o ustawieniach klienta, które są odpowiednie dla aktualizacji oprogramowania w lokacji po zainstalowaniu punktu aktualizacji oprogramowania."
-keywords: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
+description: Dowiedz się więcej o ustawieniach klienta, które są odpowiednie dla aktualizacji oprogramowania w lokacji po zainstalowaniu punktu aktualizacji oprogramowania.
+author: aczechowski
 ms.date: 03/26/2017
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
-ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: 0d484c1a-e903-4bff-9e9b-e452c62e38a8
-ms.openlocfilehash: 54fb48ca210f66eabe8d438f0aa23d9ad82e0bd9
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: ad44beeb662cb0cd5cf083b18721d88a5b7360c4
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
-#  <a name="BKMK_ManageSUSettings"></a>Zarządzanie ustawieniami aktualizacji oprogramowania  
+#  <a name="BKMK_ManageSUSettings"></a> Zarządzanie ustawieniami aktualizacji oprogramowania  
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 

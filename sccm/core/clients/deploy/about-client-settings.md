@@ -2,26 +2,19 @@
 title: Ustawienia klienta
 titleSuffix: Configuration Manager
 description: Dowiedz się więcej o domyślnych i niestandardowych ustawień kontrolowania zachowania klienta
-ms.custom: na
 ms.date: 03/22/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: f7560876-8084-4570-aeab-7fd44f4ba737
-caps.latest.revision: ''
-caps.handback.revision: ''
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bd03457abdd5cc4464c10227626ba72637c96f90
-ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
+ms.openlocfilehash: a60e54ffac3ae029f07c2df555e905b55ca7b0b5
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="about-client-settings-in-system-center-configuration-manager"></a>Informacje o ustawieniach klienta w programie System Center Configuration Manager
 
@@ -294,7 +287,7 @@ Ta opcja wymaga co najmniej programu Windows PowerShell w wersji 2.0. Wartość 
 >   
 > -   **Monitorowanie** w obszarze roboczym w konsoli wyświetlane identyfikator błąd stanu wdrożenia **0x87D00327**. Wyświetla również opis **skrypt nie jest podpisany**.  
 > -   Raporty zawierają typ błędu **błąd odnajdywania**. Raporty zawierają albo kodu błędu, a następnie **0x87D00327** i opis **skrypt nie jest podpisany**, lub kod błędu **0x87D00320** i opis  **host skryptów nie został jeszcze zainstalowany**. Przykładowy raport jest: **Szczegóły błędów elementów konfiguracji w linii bazowej konfiguracji dla zasobu**.  
-> -   **DcmWmiProvider.log** pliku wyświetli komunikat **skrypt nie jest podpisany (błąd: 87D00327; Source: CCM)**.  
+> -   **DcmWmiProvider.log** pliku wyświetli komunikat **skrypt nie jest podpisany (błąd: 87D 00327; Źródło: CCM)**.  
 
 ### <a name="show-notifications-for-new-deployments"></a>Pokaż powiadomienia o nowych wdrożeniach
 
@@ -714,7 +707,7 @@ Aby zebrać pliki z komputerów klienckich, należy zaznaczyć **Ustaw pliki**, 
     -   **Zatrzymaj zbieranie plików, gdy łączny rozmiar plików przekracza (KB)**: Określ rozmiar pliku w kilobajtach (KB), po którym klient zatrzymuje zbieranie określonych plików.  
 
     > [!NOTE]  
-    >  Serwer lokacji zbiera pięć ostatnio zmienionych wersji zebranych plików i zapisuje je w  *&lt;katalog instalacyjny programu ConfigMgr\>*\Inboxes\Sinv.box\Filecol katalogu. Jeśli plik nie został zmieniony od ostatniego cyklu spisu oprogramowania, plik nie jest zebrany ponownie.  
+    >  Serwer lokacji zbiera pięć ostatnio zmienionych wersji zebranych plików i zapisuje je w  *&lt;katalog instalacyjny programu ConfigMgr\>* \Inboxes\Sinv.box\Filecol katalogu. Jeśli plik nie został zmieniony od ostatniego cyklu spisu oprogramowania, plik nie jest zebrany ponownie.  
     >   
     >  Spis oprogramowania nie zbiera pliki większe niż 20 MB.  
     >   

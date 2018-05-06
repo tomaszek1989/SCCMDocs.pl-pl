@@ -1,22 +1,20 @@
 ---
-title: "Ręczne wdrażanie aktualizacji oprogramowania"
+title: Ręczne wdrażanie aktualizacji oprogramowania
 titleSuffix: Configuration Manager
-description: "Aby ręcznie wdrożyć aktualizacje, wybierz aktualizacje z konsoli programu Configuration Manager i ręcznie wdrożyć je, lub do grupy aktualizacji dodawać aktualizacje i wdrożenie grupy."
-keywords: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
+description: Aby ręcznie wdrożyć aktualizacje, wybierz aktualizacje z konsoli programu Configuration Manager i ręcznie wdrożyć je, lub do grupy aktualizacji dodawać aktualizacje i wdrożenie grupy.
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
 ms.date: 12/07/2016
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
-ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: 57184274-5fea-4d79-a2b4-22e08ed26daf
-ms.openlocfilehash: becab57c5f04bb67512d665175038f6c477b65b1
-ms.sourcegitcommit: e13bb2c86c40a88e5f4602beb1d31e4adc90e099
+ms.openlocfilehash: 3f79da78df10e97813b221ffca3df25396591fbc
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 05/03/2018
 ---
 #  <a name="BKMK_ManualDeploy"></a> Ręczne wdrażanie aktualizacji oprogramowania  
 
@@ -26,7 +24,7 @@ ms.lasthandoff: 01/12/2018
 
  Kroki, aby ręcznie wdrożyć aktualizacje oprogramowania można znaleźć w poniższych sekcjach.  
 
-##  <a name="BKMK_1SearchCriteria"></a>Krok 1. Określanie kryteriów wyszukiwania aktualizacji oprogramowania  
+##  <a name="BKMK_1SearchCriteria"></a> Krok 1. Określanie kryteriów wyszukiwania aktualizacji oprogramowania  
  Potencjalnie są tysiące aktualizacji oprogramowania wyświetlanych w konsoli programu Configuration Manager. Pierwszym krokiem przepływu pracy ręcznego wdrażania aktualizacji oprogramowania jest ustalenie aktualizacji do wdrożenia. Istnieje na przykład możliwość określenia kryteriów pozwalających pobrać wszystkie aktualizacje oprogramowania wymagane na ponad 50 urządzeniach klienckich, które mają klasyfikację **Zabezpieczenia** lub **Krytyczne** .  
 
 > [!IMPORTANT]  
@@ -52,7 +50,7 @@ ms.lasthandoff: 01/12/2018
     > [!TIP]  
     >  Na karcie **Wyszukiwanie** oraz w grupie **Zapisywanie** można zapisać kryteria filtrowania.  
 
-##  <a name="BKMK_2UpdateGroup"></a>Krok 2. Tworzenie grupy aktualizacji oprogramowania zawierającej aktualizacje oprogramowania  
+##  <a name="BKMK_2UpdateGroup"></a> Krok 2. Tworzenie grupy aktualizacji oprogramowania zawierającej aktualizacje oprogramowania  
  Grupy aktualizacji oprogramowania stanowią efektywną metodę organizowania aktualizacji oprogramowania podczas przygotowywania wdrożenia. Można ręcznie dodać aktualizacje oprogramowania do grupy aktualizacji oprogramowania lub programu Configuration Manager może automatycznie dodać aktualizacje oprogramowania do nowej lub istniejącej grupy aktualizacji przy użyciu reguły ADR. Aby ręcznie dodać aktualizacje oprogramowania do nowej grupy aktualizacji, wykonaj czynności opisane w poniższych procedurach.  
 
 #### <a name="to-manually-add-software-updates-to-a-new-software-update-group"></a>Aby ręcznie dodać aktualizacje oprogramowania do nowej grupy aktualizacji  
@@ -71,7 +69,7 @@ ms.lasthandoff: 01/12/2018
 
 7.  Wybierz grupę aktualizacji oprogramowania, a następnie na karcie **Narzędzia główne** w grupie **Aktualizacja** kliknij przycisk **Pokaż członków** , aby wyświetlić listę aktualizacji oprogramowania w grupie.  
 
-##  <a name="BKMK_3DownloadContent"></a>Krok 3. Pobieranie zawartości do grupy aktualizacji oprogramowania  
+##  <a name="BKMK_3DownloadContent"></a> Krok 3. Pobieranie zawartości do grupy aktualizacji oprogramowania  
  Przed wdrożeniem aktualizacji oprogramowania można opcjonalnie pobrać zawartość aktualizacji oprogramowania znajdujących się w grupie aktualizacji. Dzięki temu istnieje możliwość sprawdzenia przed wdrożeniem aktualizacji oprogramowania, czy zawartość jest dostępna w punkcie dystrybucji. Pozwoli to zapobiec wszelkim nieoczekiwanym problemom związanym z dostarczeniem zawartości. W przypadku pominięcie tego kroku zawartość zostanie pobrana i skopiowana do punktów dystrybucji w ramach procesu wdrażania. Aby pobrać zawartość aktualizacji oprogramowania do grup aktualizacji, wykonaj czynności opisane w poniższej procedurze.  
 
 
@@ -158,7 +156,7 @@ ms.lasthandoff: 01/12/2018
 
 4. Na karcie **Narzędzia główne** w grupie **Zawartość** kliknij przycisk **Wyświetl stan**.  
 
-##  <a name="BKMK_4DeployUpdateGroup"></a>Krok 4. Wdrożenie grupy aktualizacji oprogramowania  
+##  <a name="BKMK_4DeployUpdateGroup"></a> Krok 4. Wdrożenie grupy aktualizacji oprogramowania  
  Po określeniu, które aktualizacje oprogramowania mają zostać wdrożone i dodaniu owych aktualizacji do grupy aktualizacji oprogramowania można ręcznie wdrożyć aktualizacje w grupie. Aby ręcznie wdrożyć aktualizacje oprogramowania w grupie aktualizacji oprogramowania, należy wykonać następującą procedurę.  
 
 #### <a name="to-manually-deploy-the-software-updates-in-a-software-update-group"></a>Aby ręcznie wdrożyć aktualizacje oprogramowania w grupie aktualizacji oprogramowania:  

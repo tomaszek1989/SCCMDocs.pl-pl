@@ -1,26 +1,20 @@
 ---
-title: "Tworzenie nośnika sekwencji zadań"
+title: Tworzenie nośnika sekwencji zadań
 titleSuffix: Configuration Manager
-description: "Utwórz nośnik sekwencji zadań, takich jak dysk CD, aby wdrożyć system operacyjny na komputerze docelowym w środowisku programu Configuration Manager."
-ms.custom: na
+description: Utwórz nośnik sekwencji zadań, takich jak dysk CD, aby wdrożyć system operacyjny na komputerze docelowym w środowisku programu Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 90498b4b-6a9b-43cd-b465-1d6c9a52df1c
-caps.latest.revision: "8"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 790f7272240df7f19bb91fc0b4da15cbffb1463e
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 69c2f3620ed618711534366121aa1267efe6a8a5
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="create-task-sequence-media-with-system-center-configuration-manager"></a>Tworzenie nośnika sekwencji zadań w programie System Center Configuration Manager
 
@@ -35,10 +29,10 @@ Nośnika można użyć, aby przechwycić obraz systemu operacyjnego z komputera 
 > [!IMPORTANT]  
 >  Aby utworzyć nośnik sekwencji zadań, musi być kontem administratora na komputerze z poziomu konsoli programu Configuration Manager. Jeśli użytkownik nie jest administratorem, zostanie poproszony o poświadczenia administratora po uruchomieniu Kreatora tworzenia nośnika sekwencji zadań.  
 
-##  <a name="BKMK_PlanCaptureMedia"></a>Nośniki dla obrazów systemu operacyjnego przechwytywania  
+##  <a name="BKMK_PlanCaptureMedia"></a> Nośniki dla obrazów systemu operacyjnego przechwytywania  
  Nośniki przechwytywania pozwalają przechwytywać obraz systemu operacyjnego z komputera odniesienia. Nośnik przechwytywania zawiera obraz rozruchowy, który uruchamia komputer odniesienia, oraz sekwencję zadań, która przechwytuje obraz systemu operacyjnego. Aby uzyskać informacje na temat sposobu tworzenia nośnika przechwytywania, zobacz [Tworzenie nośnika przechwytywania w programie System Center Configuration Manager](create-capture-media.md).  
 
-##  <a name="BKMK_PlanBootableMedia"></a>Wdrożenia z nośników rozruchowych systemu operacyjnego  
+##  <a name="BKMK_PlanBootableMedia"></a> Wdrożenia z nośników rozruchowych systemu operacyjnego  
  Nośnik rozruchowy zawiera tylko obraz rozruchowy, opcjonalne [polecenia przeduruchomieniowe](../understand/prestart-commands-for-task-sequence-media.md) i wymaganymi przez nie plikami oraz pliki binarne programu Configuration Manager. W chwili uruchomienia komputer docelowy łączy się z siecią i pobiera z niej sekwencję zadań, obraz systemu operacyjnego oraz inną wymaganą zawartość. Ponieważ sekwencja zadań nie znajduje się na nośniku, sekwencję zadań oraz zawartość można zmienić bez konieczności ponownego tworzenia nośnika.  
 
 > [!IMPORTANT]  
@@ -46,7 +40,7 @@ Nośnika można użyć, aby przechwycić obraz systemu operacyjnego z komputera 
 
  Aby uzyskać informacje o sposobie tworzenia nośnika rozruchowego [tworzenia nośnika rozruchowego](create-bootable-media.md).  
 
-##  <a name="BKMK_PlanPrestagedMedia"></a>Wdrażanie systemu operacyjnego wstępnie przygotowanego nośnika  
+##  <a name="BKMK_PlanPrestagedMedia"></a> Wdrażanie systemu operacyjnego wstępnie przygotowanego nośnika  
  Nośniki wstępnie przygotowane pozwalają wstępnie przygotować nośnik rozruchowy oraz obraz systemu operacyjnego przed ich udostępnieniem. Nośnik wstępnie przygotowany to plik Windows Imaging Format (WIM), który można zainstalować na komputerze bez systemu operacyjnego przez producenta tego komputera lub w Centrum przygotowywania przedsiębiorstwa niepołączonym do środowiska programu Configuration Manager.  
 
  Nośnik wstępnie przygotowany zawiera obraz rozruchowy używany do uruchomienia komputera docelowego oraz obraz systemu operacyjnego stosowany względem tego komputera. Możesz także określić aplikacje, pakiety i pakiety sterowników, które mają zostać dołączone do wstępnie przygotowanego nośnika. Na nośniku nie znajduje się sekwencja zadań, która wdraża system operacyjny. W czasie wdrażania sekwencji zadań wykorzystującej wstępnie przygotowany nośnik klient najpierw sprawdza, czy w lokalnej pamięci podręcznej sekwencji zadań znajduje się prawidłowa zawartość. Jeśli zawartości nie można odnaleźć lub została zmieniona, klient pobiera zawartość z punktu dystrybucji.  
@@ -58,7 +52,7 @@ Nośnika można użyć, aby przechwycić obraz systemu operacyjnego z komputera 
 
  Aby uzyskać informacje o sposobie tworzenia wstępnie przygotowanego nośnika, zobacz [Tworzenie wstępnie przygotowanego nośnika](create-prestaged-media.md).  
 
-##  <a name="BKMK_PlanStandaloneMedia"></a>Wdrożenia z nośników autonomicznych systemu operacyjnego  
+##  <a name="BKMK_PlanStandaloneMedia"></a> Wdrożenia z nośników autonomicznych systemu operacyjnego  
  Nośniki samodzielne zawierają wszystkie elementy niezbędne do wdrożenia systemu operacyjnego. Obejmuje to sekwencję zadań oraz wszelką inną wymaganą zawartość. Ponieważ na nośniku samodzielnym są przechowywane wszystkie elementy wymagane do wdrożenia systemu operacyjnego, przestrzeń dyskowa wymagana przez taki nośnik jest znacznie mniejsza niż w przypadku nośników innych typów.  
 
  Aby uzyskać informacje o sposobie tworzenia nośnika autonomicznego, zobacz [tworzenia nośnika samodzielnego](create-stand-alone-media.md).  

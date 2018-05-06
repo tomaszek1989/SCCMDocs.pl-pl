@@ -1,25 +1,20 @@
 ---
-title: "Ułatwienia dostępu"
+title: Ułatwienia dostępu
 titleSuffix: Configuration Manager
-description: "Informacje o funkcjach, które ułatwiają dostęp do programu System Center Configuration Manager osobom niepełnosprawnym."
-ms.custom: na
+description: Informacje o funkcjach, które ułatwiają dostęp do programu System Center Configuration Manager osobom niepełnosprawnym.
 ms.date: 7/31/2017
-ms.reviewer: na
-ms.suite: na
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 1cb96666-98bf-49a9-85ca-dbb53f0655e9
-caps.latest.revision: "6"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 8a56e14f1c366bb4e2218428c0e93b60aa13e015
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: fc0e7b81b4b46502e4477f098bdc129b0491be69
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="accessibility-features-in-system-center-configuration-manager"></a>Funkcje ułatwień dostępu w programie System Center Configuration Manager
 
@@ -29,7 +24,7 @@ ms.lasthandoff: 01/04/2018
 System Center Configuration Manager zawiera funkcje, które pomagają stał się dostępny dla osób niepełnosprawnych.
 
 
-## <a name="bkmk_aconsole"></a>Funkcje ułatwień dostępu dla konsoli programu Configuration Manager  
+## <a name="bkmk_aconsole"></a> Funkcje ułatwień dostępu dla konsoli programu Configuration Manager  
 
 **Skróty i ulepszenia w wersji 1706 i nowsze**
 
@@ -78,7 +73,7 @@ System Center Configuration Manager zawiera funkcje, które pomagają stał się
 > [!NOTE]  
 >  Informacje przedstawione w tej sekcji mogą być stosowane tylko do użytkowników, którzy licencjonowane produkty firmy Microsoft w Stanach Zjednoczonych. Jeśli użytkownik uzyskał produkt poza Stanami Zjednoczonymi, może użyć karty informacji o przedstawicielstwach dołączonej do pakietu oprogramowania lub odwiedzić witrynę [witryny sieci Web Microsoft Accessibility](http://go.microsoft.com/fwlink/?LinkId=8431) informacje kontaktowe firmy Microsoft pomocy technicznej. Możesz skontaktować się z oddziałem, aby dowiedzieć się, czy typ produktów i usług, które zostały opisane w tej sekcji są dostępne w danym regionie. Informacje o ułatwieniach dostępu są dostępne w innych językach, w tym języku japońskim i francuskim.  
 
-##  <a name="bkmk_ahelp"></a>Funkcje ułatwień dostępu pomocy programu Configuration Manager  
+##  <a name="bkmk_ahelp"></a> Funkcje ułatwień dostępu pomocy programu Configuration Manager  
  Pomoc programu Configuration Manager zawiera funkcje ułatwiające dostęp dla szerszej grupy użytkowników, w tym użytkowników o ograniczonej sprawności ruchowej, ograniczonych możliwościach widzenia lub innymi rodzajami niepełnosprawności.  
 
 |Wymagana czynność|Użyj tego skrótu klawiaturowego|  

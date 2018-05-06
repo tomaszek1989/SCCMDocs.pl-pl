@@ -1,25 +1,20 @@
 ---
 title: Tworzenie aplikacji systemu Windows Embedded
 titleSuffix: Configuration Manager
-description: "Zobacz zagadnienia, które należy wziąć pod uwagę podczas tworzenia i wdrażania aplikacji dla urządzeń z systemem Windows Embedded."
-ms.custom: na
+description: Zobacz zagadnienia, które należy wziąć pod uwagę podczas tworzenia i wdrażania aplikacji dla urządzeń z systemem Windows Embedded.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-app
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 16acfd63-0c40-424c-82f4-8c63f7f1c30b
-caps.latest.revision: "7"
-author: mattbriggs
-ms.author: mabrigg
-manager: angrobe
-ms.openlocfilehash: e37dabb84cc6d56d9f08b2c0ee07115dd4bcb4fd
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 6374fa186ab13f3288e218e6670da3ea4ff10f4e
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="create-windows-embedded-applications-with-system-center-configuration-manager"></a>Tworzenie aplikacji systemu Windows Embedded w programie System Center Configuration Manager
 

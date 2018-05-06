@@ -2,26 +2,19 @@
 title: Przestarzałe klientów programu Configuration Manager
 titleSuffix: Configuration Manager
 description: Więcej informacji na temat funkcji, produktów i systemów operacyjnych, które System Center Configuration Manager nie obsługuje już dla klientów.
-ms.custom: na
 ms.date: 03/22/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 604ab835-bce3-4fe3-a7f3-3f059cfc0ecf
-caps.latest.revision: ''
-caps.handback.revision: ''
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: a745a67e3f3f4c61b3fa3f863cdb25d74ca6cbf8
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 02cb366ecf1935c79924b3ad23882f9952fe1f78
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="removed-and-deprecated-items-for-system-center-configuration-manager-clients"></a>Usunięte i przestarzałe elementy dla klientów programu System Center Configuration Manager
 

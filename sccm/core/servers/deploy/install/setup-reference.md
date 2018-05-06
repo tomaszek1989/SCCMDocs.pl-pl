@@ -1,25 +1,20 @@
 ---
-title: "Informacje dotyczące instalacji"
+title: Informacje dotyczące instalacji
 titleSuffix: Configuration Manager
-description: "Przejrzyj to odwołanie, aby pomóc w przygotowaniu do zainstalowania lokacji programu Configuration Manager lub w hierarchii."
-ms.custom: na
+description: Przejrzyj to odwołanie, aby pomóc w przygotowaniu do zainstalowania lokacji programu Configuration Manager lub w hierarchii.
 ms.date: 4/18/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: cdb9fb0c-0912-41e4-b427-f40620971763
-caps.latest.revision: "22"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: bc85d1140b19167b31d5ae2176ddbcb9320b21e1
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: f9f857a2045f67690579955236c082ff29721a5f
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="reference-for-system-center-configuration-manager-setup"></a>Dokumentacja instalacji programu System Center Configuration Manager
 
@@ -69,10 +64,10 @@ Zbieranie danych obejmuje następujące trzy poziomy:
 
 -   **Podstawowe** obejmuje dane dotyczące instalacji i uaktualniania, takie jak liczba lokacji oraz włączonych funkcjach programu Configuration Manager, które. Są przesyłane żadne dane osobowe.  
 
--   **Ulepszone** obejmuje dane poziomu ustawienia podstawowy, oraz jej przesyła dane dotyczące hierarchii, sposobu każdej funkcji jest używana (częstotliwości i czasu używania), a także zaawansowane informacje diagnostyczne, takie jak stan pamięci serwera podczas systemu lub wystąpienia awarii aplikacji. Są przesyłane żadne dane osobowe.  
+-   **Ulepszone** obejmuje dane z ustawienia poziomu podstawowy, ale dodatkowo przesyła on dane dotyczące hierarchii, jak każdej funkcji jest używana (częstotliwości i czasu używania), a także zaawansowane informacje diagnostyczne, takich jak stan pamięci serwera podczas awarii systemu lub aplikacji występuje. Są przesyłane żadne dane osobowe.  
 
 -   **Pełna** obejmuje dane poziomu ustawień podstawowy i rozszerzony, a także wysyła zaawansowane informacje diagnostyczne, takie jak migawki plików systemu i pamięci. Ta opcja może obejmować dane osobowe, ale nie używamy tych informacji do identyfikacji lub skontaktować się z Tobą, lub do nich reklam docelowej.  
 
 Aby uzyskać więcej informacji, w tym o ujawnianiu informacji zbieranych na każdym poziomie, zobacz [diagnostycznych i danych użycia programu System Center Configuration Manager](../../../../core/plan-design/diagnostics/diagnostics-and-usage-data.md).  
 
-Aby wyświetlić System Center Configuration Manager Privacy Statement online, przejdź do [http://go.microsoft.com/fwlink/?LinkID=626527](http://go.microsoft.com/fwlink/?LinkID=626527).
+Aby wyświetlić System Center Configuration Manager Privacy Statement online, przejdź do [ http://go.microsoft.com/fwlink/?LinkID=626527 ](http://go.microsoft.com/fwlink/?LinkID=626527).

@@ -1,26 +1,20 @@
 ---
-title: "Tworzenie elementów konfiguracji dla komputerów zarządzanych przez klienta systemu Windows "
+title: 'Tworzenie elementów konfiguracji dla komputerów zarządzanych przez klienta systemu Windows '
 titleSuffix: Configuration Manager
-description: "Zarządzaj ustawieniami dla serwerów z niestandardowego elementu konfiguracji systemu Windows, komputerów stacjonarnych i serwerów i komputerów z systemem Windows."
-ms.custom: na
+description: Zarządzaj ustawieniami dla serwerów z niestandardowego elementu konfiguracji systemu Windows, komputerów stacjonarnych i serwerów i komputerów z systemem Windows.
 ms.date: 11/18/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-compliance
+ms.topic: conceptual
 ms.assetid: 1eb2fcaf-acac-4388-9b31-6cccafacaabe
-caps.latest.revision: "9"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: ed3aa1ce9e21c7c486cc40deb804a8687a1cd4f2
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: b2b2af6c022d854a6c6d623e3901abac70d42c7a
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-custom-configuration-items-for-windows-desktop-and-server-computers-managed-with-the-system-center-configuration-manager-client"></a>Tworzenie niestandardowych elementów konfiguracji dla komputerów stacjonarnych i serwerów z systemem Windows zarządzanych za pomocą klienta programu System Center Configuration Manager
 
@@ -35,7 +29,7 @@ Użyj programu System Center Configuration Manager **niestandardowe systemu Wind
 
 3.  Na karcie **Narzędzia główne** w grupie **Tworzenie** kliknij pozycję **Utwórz element konfiguracji**.  
 
-4.  Na stronie **Ogólne** w **Kreatorze tworzenia elementu konfiguracji** podaj nazwę i opcjonalny opis elementu konfiguracji.  
+4.  Na stronie **Ogólne** w **Kreatorze tworzenia elementu konfiguracji**podaj nazwę i opcjonalny opis elementu konfiguracji.  
 
 5.  W obszarze **Określ typ elementu konfiguracji, który chcesz utworzyć** wybierz pozycję **Komputery stacjonarne i serwery z systemem Windows (niestandardowy)**.  
 
@@ -181,7 +175,7 @@ Użyj programu System Center Configuration Manager **niestandardowe systemu Wind
 
             -   **Gałąź** — z listy wybierz gałąź rejestru, w której ma nastąpić wyszukiwanie.  
 
-            -   **Klucz** — określ nazwę klucza rejestru, który chcesz wyszukać. Użyj formatu *klucz\podklucz*.  
+            -   **Klucz** — Określ nazwę klucza rejestru, który chcesz wyszukać. Użyj formatu *klucz\podklucz*.  
 
             -   **Wartość** — określ wartość, która musi być zawarta w określonym kluczu rejestru.  
 
@@ -235,7 +229,7 @@ Użyj programu System Center Configuration Manager **niestandardowe systemu Wind
 
             -   **Uwzględnij podfoldery** — Włącz tę opcję, jeśli chcesz dodatkowo przeszukać wszystkie podfoldery znajdujące się we wskazanej ścieżce.  
 
-            -   **Ten plik jest skojarzony z aplikacją 64-bitowych** — wybierz, czy lokalizacja plików systemu 64-bitowego (*% windir %*\System32) powinna być dodatkowo przeszukiwana oprócz lokalizacji plików systemu 32-bitowych (*% windir %*\Syswow64) na komputerach klienckich programu Configuration Manager z uruchomioną 64-bitowej wersji systemu Windows.  
+            -   **Ten plik jest skojarzony z aplikacją 64-bitowych** — wybierz, czy lokalizacja plików systemu 64-bitowego (*% windir %* \System32) powinna być dodatkowo przeszukiwana oprócz lokalizacji plików systemu 32-bitowych (*% windir %* \Syswow64) na komputerach klienckich programu Configuration Manager z uruchomioną 64-bitowej wersji systemu Windows.  
 
             -   **Zapytanie XPath** — określ prawidłowe pełne zapytanie w języku XML Path Language (XPath) do użycia w celu oceny zgodności na komputerach klienckich.  
 

@@ -1,27 +1,20 @@
 ---
-title: "Zmienne akcji sekwencji zadań"
+title: Zmienne akcji sekwencji zadań
 titleSuffix: Configuration Manager
-description: "Zmienne akcji sekwencji, takich jak ustawienia sieci zmiennych, umożliwia określenie ustawień konfiguracyjnych dla jednego kroku w sekwencji zadań programu Configuration Manager."
-ms.custom: na
+description: Zmienne akcji sekwencji, takich jak ustawienia sieci zmiennych, umożliwia określenie ustawień konfiguracyjnych dla jednego kroku w sekwencji zadań programu Configuration Manager.
 ms.date: 02/09/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-osd
+ms.topic: conceptual
 ms.assetid: e2269031-0977-4f01-a274-420e00630575
-caps.latest.revision: 
-caps.handback.revision: 
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 2928ecb254d08e4ed08c5e79b55e210ce25dcb61
-ms.sourcegitcommit: fbde417e3c3002898bd216a7e110e725ae269893
+ms.openlocfilehash: 7f66203e335524fa922ec1b6ab3dd4dc5fb917b0
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="task-sequence-action-variables-in-system-center-configuration-manager"></a>Zmienne akcji sekwencji zadań w programie System Center Configuration Manager
 
@@ -42,7 +35,7 @@ Zmienne akcji sekwencji zadań Określ ustawienia konfiguracji, które są używ
 
 
 
-###  <a name="BKMK_ApplyDataImage"></a>Zastosuj obraz danych   
+###  <a name="BKMK_ApplyDataImage"></a> Zastosuj obraz danych   
  Aby uzyskać więcej informacji, zobacz [Zastosuj obraz danych](task-sequence-steps.md#BKMK_ApplyDataImage). 
 
 #### <a name="details"></a>Szczegóły  
@@ -54,7 +47,7 @@ Zmienne akcji sekwencji zadań Określ ustawienia konfiguracji, które są używ
 
 
 
-###  <a name="BKMK_ApplyDriverPackage"></a>Zastosuj pakiet sterowników   
+###  <a name="BKMK_ApplyDriverPackage"></a> Zastosuj pakiet sterowników   
 Aby uzyskać więcej informacji, zobacz [zastosuj pakiet sterowników](task-sequence-steps.md#BKMK_ApplyDriverPackage).  
 
 #### <a name="details"></a>Szczegóły  
@@ -65,11 +58,11 @@ Aby uzyskać więcej informacji, zobacz [zastosuj pakiet sterowników](task-sequ
 |OSDApplyDriverBootCriticalINFFile<br /><br /> (dane wejściowe)|Określa plik INF sterownika pamięci masowej do zainstalowania.<br /><br /> <br /><br /> Ta zmienna sekwencji zadań jest wymagana, jeśli ustawiono zmienną OSDApplyDriverBootCriticalContentUniqueID.|  
 |OSDApplyDriverBootCriticalHardwareComponent<br /><br /> (dane wejściowe)|Określa, czy jest zainstalowany sterownik urządzenia pamięci masowej, ta zmienna musi być **scsi**.<br /><br /> Ta zmienna sekwencji zadań jest wymagana, jeśli ustawiono zmienną OSDApplyDriverBootCriticalContentUniqueID.|  
 |OSDApplyDriverBootCriticalID<br /><br /> (dane wejściowe)|Określa identyfikator o krytycznym znaczeniu dla rozruchu dla sterownika urządzenia pamięci masowej do zainstalowania. Ten identyfikator jest wymieniony w **scsi** pliku txtsetup.oem sterownika urządzenia.<br /><br /> Ta zmienna sekwencji zadań jest wymagana, jeśli ustawiono zmienną OSDApplyDriverBootCriticalContentUniqueID.|  
-|OSDAllowUnsignedDriver<br /><br /> (dane wejściowe)|Określa, czy system Windows ma zezwalać na instalowanie niepodpisanych sterowników urządzeń. Ta zmienna sekwencji zadań nie jest używana podczas wdrażania systemu Windows Vista i nowszych systemów operacyjnych.<br /><br /> Prawidłowe wartości:<br /><br /> **wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
+|OSDAllowUnsignedDriver<br /><br /> (dane wejściowe)|Określa, czy system Windows ma zezwalać na instalowanie niepodpisanych sterowników urządzeń. Ta zmienna sekwencji zadań nie jest używana podczas wdrażania systemu Windows Vista i nowszych systemów operacyjnych.<br /><br /> Prawidłowe wartości:<br /><br /> **Wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
 
 
 
-###  <a name="BKMK_ApplyNetworkSettings"></a>Zastosuj ustawienia sieci   
+###  <a name="BKMK_ApplyNetworkSettings"></a> Zastosuj ustawienia sieci   
  Aby uzyskać więcej informacji, zobacz [Zastosuj ustawienia sieci](task-sequence-steps.md#BKMK_ApplyNetworkSettings).  
 
 #### <a name="details"></a>Szczegóły  
@@ -81,7 +74,7 @@ Aby uzyskać więcej informacji, zobacz [zastosuj pakiet sterowników](task-sequ
 |OSDDNSDomain<br /><br /> (dane wejściowe)|Określa podstawowy serwer DNS, który jest używany przez komputer docelowy.|  
 |OSDDomainName<br /><br /> (dane wejściowe)|Określa nazwę domeny systemu Windows, do której jest przyłączany komputer docelowy. Określona wartość musi być prawidłową nazwą domeny usług domenowych Active Directory.|  
 |OSDDomainOUName<br /><br /> (dane wejściowe)|Określa nazwę jednostki organizacyjnej (OU), do której jest przyłączany komputer docelowy, w formacie RFC 1779. Jeśli wartość jest określona, musi zawierać pełną ścieżkę.<br /><br /> Przykład:<br /><br /> **LDAP://OU=MojaJO,DC=MojaDomena,DC=MojaFirma,DC=com**|  
-|OSDEnableTCPIPFiltering<br /><br /> (dane wejściowe)|Określa, czy filtrowanie protokołu TCP/IP jest włączone.<br /><br /> Prawidłowe wartości:<br /><br /> **wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
+|OSDEnableTCPIPFiltering<br /><br /> (dane wejściowe)|Określa, czy filtrowanie protokołu TCP/IP jest włączone.<br /><br /> Prawidłowe wartości:<br /><br /> **Wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
 |OSDJoinAccount<br /><br /> (dane wejściowe)|Określa konto sieciowe, które służy do dodawania komputera docelowego do domeny systemu Windows.|  
 |OSDJoinPassword<br /><br /> (dane wejściowe)|Określa hasło dostępu do sieci, które służy do dodawania komputera docelowego do domeny systemu Windows.|  
 |OSDNetworkJoinType<br /><br /> (dane wejściowe)|Określa, czy komputer docelowy jest przyłączany do domeny systemu Windows lub grupy roboczej.<br /><br /> **0** wskazuje, że komputer docelowy jest dołączany do domeny systemu Windows. **1** Określa, czy komputer jest przyłączony do grupy roboczej.<br /><br /> Prawidłowe wartości:<br /><br /> **0**<br /><br /> **1**|  
@@ -90,7 +83,7 @@ Aby uzyskać więcej informacji, zobacz [zastosuj pakiet sterowników](task-sequ
 
 
 
-###  <a name="BKMK_ApplyOperatingSystem"></a>Zastosuj obraz systemu operacyjnego   
+###  <a name="BKMK_ApplyOperatingSystem"></a> Zastosuj obraz systemu operacyjnego   
  Aby uzyskać więcej informacji, zobacz [Zastosuj obraz systemu operacyjnego](task-sequence-steps.md#BKMK_ApplyOperatingSystemImage).  
 
 #### <a name="details"></a>Szczegóły  
@@ -104,14 +97,14 @@ Aby uzyskać więcej informacji, zobacz [zastosuj pakiet sterowników](task-sequ
 
 
 
-###  <a name="BKMK_ApplyWindowsSettings"></a>Zastosuj ustawienia systemu Windows   
+###  <a name="BKMK_ApplyWindowsSettings"></a> Zastosuj ustawienia systemu Windows   
  Aby uzyskać więcej informacji, zobacz [Zastosuj ustawienia systemu Windows](task-sequence-steps.md#BKMK_ApplyWindowsSettings).  
 
 #### <a name="details"></a>Szczegóły  
 
 |Nazwa zmiennej akcji|Opis|  
 |--------------------------|-----------------|  
-|OSDComputerName<br /><br /> (dane wejściowe)|Określa nazwę komputera docelowego.<br /><br /> Przykład:<br /><br /> **%_SMSTSMachineName%** (default)|  
+|OSDComputerName<br /><br /> (dane wejściowe)|Określa nazwę komputera docelowego.<br /><br /> Przykład:<br /><br /> **% _SMSTSMachineName %** (ustawienie domyślne)|  
 |OSDProductKey<br /><br /> (dane wejściowe)|Określa klucz produktu systemu Windows. Określona wartość musi mieć od 1 do 255 znaków.|  
 |OSDRegisteredUserName<br /><br /> (dane wejściowe)|Określa domyślną nazwę zarejestrowanego użytkownika w nowym systemie operacyjnym. Określona wartość musi mieć od 1 do 255 znaków.|  
 |OSDRegisteredOrgName<br /><br /> (dane wejściowe)|Określa domyślną nazwę zarejestrowanej organizacji w nowym systemie operacyjnym. Określona wartość musi mieć od 1 do 255 znaków.|  
@@ -123,7 +116,7 @@ Aby uzyskać więcej informacji, zobacz [zastosuj pakiet sterowników](task-sequ
 
 
 
-###  <a name="BKMK_AutoApplyDrivers"></a>Automatycznie Zastosuj sterowniki   
+###  <a name="BKMK_AutoApplyDrivers"></a> Automatycznie Zastosuj sterowniki   
  Aby uzyskać więcej informacji, zobacz [automatycznie Zastosuj sterowniki](task-sequence-steps.md#BKMK_AutoApplyDrivers).  
 
 #### <a name="details"></a>Szczegóły  
@@ -131,7 +124,7 @@ Aby uzyskać więcej informacji, zobacz [zastosuj pakiet sterowników](task-sequ
 |Nazwa zmiennej akcji|Opis|  
 |--------------------------|-----------------|  
 |OSDAutoApplyDriverCategoryList<br /><br /> (dane wejściowe)|Rozdzielana przecinkami lista unikatowych identyfikatorów kategorii katalogu sterownika. **Automatycznie Zastosuj sterownik** krok uwzględnia tylko sterowniki w co najmniej jeden z określonych kategorii. Ta wartość jest opcjonalna i domyślnie nie jest ustawiona. Uzyskaj dostępne identyfikatory kategorii wyliczając listę **SMS_CategoryInstance** obiektów w lokacji.|  
-|OSDAllowUnsignedDriver<br /><br /> (dane wejściowe)|Określa, czy konfiguracja systemu Windows zezwala na instalowanie niepodpisanych sterowników urządzeń. Ta zmienna sekwencji zadań nie jest używana podczas wdrażania systemu operacyjnego Windows Vista i nowszych.<br /><br /> Prawidłowe wartości:<br /><br /> **wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
+|OSDAllowUnsignedDriver<br /><br /> (dane wejściowe)|Określa, czy konfiguracja systemu Windows zezwala na instalowanie niepodpisanych sterowników urządzeń. Ta zmienna sekwencji zadań nie jest używana podczas wdrażania systemu operacyjnego Windows Vista i nowszych.<br /><br /> Prawidłowe wartości:<br /><br /> **Wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
 |OSDAutoApplyDriverBestMatch<br /><br /> (dane wejściowe)|Jeśli istnieje wiele sterowników urządzeń w katalogu sterowników, które są zgodne z urządzeniem sprzętowym, ta zmienna Określa działanie etapu. Jeśli ustawiono **true**, kroku instaluje tylko najlepszy sterownik urządzenia. Jeśli **false**kroku są instalowane wszystkie zgodne sterowniki urządzenia i system Windows wybiera najlepszy sterownik do użycia.<br /><br /> Prawidłowe wartości:<br /><br /> **wartość true,** (ustawienie domyślne)<br /><br /> **wartość false**|  
 |SMSTSDriverRequestConnectTimeOut|Podczas żądania z katalogu sterowników, ta zmienna jest liczbę sekund, sekwencja zadań czeka na połączenie z serwerem HTTP. Jeśli połączenie trwa dłużej niż ustawienie limitu czasu, sekwencja zadań anuluje żądanie. Domyślnie limit czasu ma ustawioną wartość **60** sekund.|  
 |SMSTSDriverRequestReceiveTimeOut|Podczas żądania z katalogu sterowników, ta zmienna jest liczbę sekund, przez które sekwencja zadań czeka na odpowiedź. Jeśli połączenie trwa dłużej niż ustawienie limitu czasu, sekwencja zadań anuluje żądanie. Domyślnie limit czasu ma ustawioną wartość **480** sekund.|
@@ -140,7 +133,7 @@ Aby uzyskać więcej informacji, zobacz [zastosuj pakiet sterowników](task-sequ
 
 
 
-###  <a name="BKMK_CaptureNetworkSettings"></a>Przechwyć ustawienia sieci   
+###  <a name="BKMK_CaptureNetworkSettings"></a> Przechwyć ustawienia sieci   
  Aby uzyskać więcej informacji, zobacz [Przechwyć ustawienia sieci](task-sequence-steps.md#BKMK_CaptureNetworkSettings).  
 
 #### <a name="details"></a>Szczegóły  
@@ -152,7 +145,7 @@ Aby uzyskać więcej informacji, zobacz [zastosuj pakiet sterowników](task-sequ
 
 
 
-###  <a name="BKMK_CaptureOperatingSystemImage"></a>Przechwyć obraz systemu operacyjnego   
+###  <a name="BKMK_CaptureOperatingSystemImage"></a> Przechwyć obraz systemu operacyjnego   
  Aby uzyskać więcej informacji, zobacz [Przechwyć obraz systemu operacyjnego](task-sequence-steps.md#BKMK_CaptureOperatingSystemImage).  
 
 #### <a name="details"></a>Szczegóły  
@@ -169,7 +162,7 @@ Aby uzyskać więcej informacji, zobacz [zastosuj pakiet sterowników](task-sequ
 
 
 
-###  <a name="BKMK_CaptureUserState"></a>Przechwyć stan użytkownika   
+###  <a name="BKMK_CaptureUserState"></a> Przechwyć stan użytkownika   
  Aby uzyskać więcej informacji, zobacz [Przechwyć stan użytkownika](task-sequence-steps.md#BKMK_CaptureUserState).  
 
 #### <a name="details"></a>Szczegóły  
@@ -181,13 +174,13 @@ Aby uzyskać więcej informacji, zobacz [zastosuj pakiet sterowników](task-sequ
 |OSDMigrateMode<br /><br /> (dane wejściowe)|Umożliwia dostosowanie plików przechwytywanych przez narzędzie USMT. Jeśli ta zmienna jest ustawiona **proste**, a następnie sekwencja zadań używa tylko standardowe pliki konfiguracji narzędzia USMT. Jeśli ta zmienna jest ustawiona **zaawansowane**, a następnie zmienną sekwencji zadań OSDMigrateConfigFiles Określa pliki konfiguracyjne, które korzysta z narzędzia USMT.<br /><br /> Prawidłowe wartości:<br /><br /> **Proste**<br /><br /> **Zaawansowane**|  
 |OSDMigrateConfigFiles<br /><br /> (dane wejściowe)|Określa pliki konfiguracji służące do kontrolowania przechwytywania profilów użytkowników. Ta zmienna jest używana tylko wtedy gdy zmienna OSDMigrateMode jest ustawiona na Zaawansowane. Ta wartość określająca rozdzielaną przecinkami listę jest ustawiana na potrzeby wykonania niestandardowej migracji profilu użytkownika.<br /><br /> Przykład: miguser.xml,migsys.xml,migapps.xml|  
 |OSDMigrateContinueOnLockedFiles<br /><br /> (dane wejściowe)|Jeśli narzędzie USMT nie można przechwycić niektórych plików, ta zmienna umożliwia kontynuowanie przechwytywania stanu użytkownika.<br /><br /> Prawidłowe wartości:<br /><br /> **wartość true,** (ustawienie domyślne)<br /><br /> **wartość false**|  
-|OSDMigrateEnableVerboseLogging<br /><br /> (dane wejściowe)|Włącza pełne rejestrowanie dla narzędzia USMT.<br /><br /> Prawidłowe wartości:<br /><br /> **wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
-|OSDMigrateSkipEncryptedFiles<br /><br /> (dane wejściowe)|Określa, czy zaszyfrowane pliki są przechwytywane.<br /><br /> Prawidłowe wartości:<br /><br /> **wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
+|OSDMigrateEnableVerboseLogging<br /><br /> (dane wejściowe)|Włącza pełne rejestrowanie dla narzędzia USMT.<br /><br /> Prawidłowe wartości:<br /><br /> **Wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
+|OSDMigrateSkipEncryptedFiles<br /><br /> (dane wejściowe)|Określa, czy zaszyfrowane pliki są przechwytywane.<br /><br /> Prawidłowe wartości:<br /><br /> **Wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
 |_OSDMigrateUsmtPackageID<br /><br /> (dane wejściowe)|Określa identyfikator pakietu pakietu programu Configuration Manager, który zawiera pliki narzędzia USMT. Ta zmienna jest wymagana.|  
 
 
 
-###  <a name="BKMK_CaptureWindowsSettings"></a>Przechwyć ustawienia systemu Windows   
+###  <a name="BKMK_CaptureWindowsSettings"></a> Przechwyć ustawienia systemu Windows   
  Aby uzyskać więcej informacji, zobacz [Przechwyć ustawienia systemu Windows](task-sequence-steps.md#BKMK_CaptureWindowsSettings).  
 
 #### <a name="details"></a>Szczegóły  
@@ -203,7 +196,7 @@ Aby uzyskać więcej informacji, zobacz [zastosuj pakiet sterowników](task-sequ
 
 
 
-###  <a name="BKMK_ConnecttoNetworkFolder"></a>Połącz z folderem sieciowym   
+###  <a name="BKMK_ConnecttoNetworkFolder"></a> Połącz z folderem sieciowym   
  Aby uzyskać więcej informacji, zobacz [połączenia do folderu sieciowego](task-sequence-steps.md#BKMK_ConnectToNetworkFolder).  
 
 #### <a name="details"></a>Szczegóły  
@@ -217,7 +210,7 @@ Aby uzyskać więcej informacji, zobacz [zastosuj pakiet sterowników](task-sequ
 
 
 
-###  <a name="BKMK_EnableBitLocker"></a>Włącz funkcję BitLocker   
+###  <a name="BKMK_EnableBitLocker"></a> Włącz funkcję BitLocker   
  Aby uzyskać więcej informacji, zobacz [Włącz funkcję BitLocker](task-sequence-steps.md#BKMK_EnableBitLocker).  
 
 #### <a name="details"></a>Szczegóły  
@@ -229,7 +222,7 @@ Aby uzyskać więcej informacji, zobacz [zastosuj pakiet sterowników](task-sequ
 
 
 
-###  <a name="BKMK_FormatPartitionDisk"></a>Format i partycji   
+###  <a name="BKMK_FormatPartitionDisk"></a> Format i partycji   
  Aby uzyskać więcej informacji, zobacz [Format i partycji](task-sequence-steps.md#BKMK_FormatandPartitionDisk).  
 
 #### <a name="details"></a>Szczegóły  
@@ -237,14 +230,14 @@ Aby uzyskać więcej informacji, zobacz [zastosuj pakiet sterowników](task-sequ
 |Nazwa zmiennej akcji|Opis|  
 |--------------------------|-----------------|  
 |OSDDiskIndex<br /><br /> (dane wejściowe)|Określa numer dysku fizycznego do podzielenia na partycje.|  
-|OSDDiskpartBiosCompatibilityMode<br /><br /> (dane wejściowe)|Podczas partycjonowania dysku twardego w celu zapewnienia zgodności z pewnymi typami systemu BIOS, ta zmienna Określa, czy wyłączyć optymalizacje wyrównania pamięci podręcznej. Jest to konieczne w przypadku wdrażania systemów operacyjnych Windows XP lub Windows Server 2003. Aby uzyskać więcej informacji, zobacz [artykuł 931760](http://go.microsoft.com/fwlink/?LinkId=134081) i [artykuł 931761](http://go.microsoft.com/fwlink/?LinkId=134082) w bazie wiedzy Microsoft Knowledge Base.<br /><br /> Prawidłowe wartości:<br /><br /> **wartość true**<br /><br /> **FALSE** (ustawienie domyślne)| 
-|OSDGPTBootDisk<br /><br /> (dane wejściowe)|Określa, czy utworzyć partycję EFI na dysku twardym GPT. Komputery z interfejsem EFI używają tej partycji jako dysku startowego.<br /><br /> Prawidłowe wartości:<br /><br /> **wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
+|OSDDiskpartBiosCompatibilityMode<br /><br /> (dane wejściowe)|Podczas partycjonowania dysku twardego w celu zapewnienia zgodności z pewnymi typami systemu BIOS, ta zmienna Określa, czy wyłączyć optymalizacje wyrównania pamięci podręcznej. Jest to konieczne w przypadku wdrażania systemów operacyjnych Windows XP lub Windows Server 2003. Aby uzyskać więcej informacji, zobacz [artykuł 931760](http://go.microsoft.com/fwlink/?LinkId=134081) i [artykuł 931761](http://go.microsoft.com/fwlink/?LinkId=134082) w bazie wiedzy Microsoft Knowledge Base.<br /><br /> Prawidłowe wartości:<br /><br /> **Wartość true**<br /><br /> **FALSE** (ustawienie domyślne)| 
+|OSDGPTBootDisk<br /><br /> (dane wejściowe)|Określa, czy utworzyć partycję EFI na dysku twardym GPT. Komputery z interfejsem EFI używają tej partycji jako dysku startowego.<br /><br /> Prawidłowe wartości:<br /><br /> **Wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
 |OSDPartitions<br /><br /> (dane wejściowe)|Określa tablicę ustawień partycji. Informacje na temat uzyskiwania dostępu do zmiennych tablicowych w środowisku sekwencji zadań zawiera temat dotyczący zestawu SDK.<br /><br /> Ta zmienna sekwencji zadań jest zmienną tablicową. Każdy element tablicy reprezentuje ustawienia jednej partycji na dysku twardym. Dostęp do ustawień zdefiniowane dla każdej partycji przez połączenie nazwy zmiennej tablicowej z numerem partycji dysku liczonym od 0 i nazwą właściwości.<br /><br /> Na przykład użyć następujące nazwy zmiennych do zdefiniowania właściwości pierwszej partycji, która w tym kroku zostanie utworzony na dysku twardym:<br /><br /> - **OSDPartitions0Type**: Określa typ partycji. Ta właściwość jest wymagana. Prawidłowe wartości to **głównej**, **rozszerzone**, **logiczne**, i **Hidden**.<br />-   **OSDPartitions0FileSystem**: Określa typ systemu plików do użycia podczas formatowania partycji. Ta właściwość jest opcjonalna. Jeśli system plików nie jest określony, kroku nie Formatuj partycję. Prawidłowe wartości to **FAT32** i **NTFS**.<br />-   **OSDPartitions0Bootable**: Określa, czy partycja jest partycją rozruchową. Ta właściwość jest wymagana. Jeśli ta wartość jest równa **TRUE** w przypadku dysków MBR kroku oznaczy wtedy tej partycji jako aktywne.<br />-   **OSDPartitions0QuickFormat**: Określa typ użytego formatu. Ta właściwość jest wymagana. Jeśli ta wartość jest równa **TRUE**, wykonuje kroku szybkie formatowanie. W przeciwnym razie krok przeprowadza pełne formatowanie.<br />-   **OSDPartitions0VolumeName**: Określa nazwę, która jest przypisana do woluminu, gdy jest on formatowany. Ta właściwość jest opcjonalna.<br />-   **OSDPartitions0Size**: Określa rozmiar partycji. Jednostki są określone przez zmienną **OSDPartitions0SizeUnits** . Ta właściwość jest opcjonalna. Jeśli ta właściwość nie jest określona, utworzona partycja będzie zajmowała całe wolne miejsce.<br />-   **OSDPartitions0SizeUnits**: Krok używa tych jednostek interpretować **OSDPartitions0Size** zmiennej. Ta właściwość jest opcjonalna. Prawidłowe wartości to **MB** (ustawienie domyślne), **GB**, i **procent**.<br />-   **OSDPartitions0VolumeLetterVariable**: Spowoduje to utworzenie partycji, zawsze używa następna dostępna litera dysku w środowisku Windows PE. Użyj tej opcjonalnej właściwości do określenia nazwy innej zmiennej sekwencji zadań. Krok używa tej zmiennej do zapisania litery nowego dysku do użytku w przyszłości.<br /><br />W przypadku definiowania wiele partycji z tej akcji sekwencji zadań, właściwości drugiej partycji są definiowane przy użyciu jej indeksu w nazwie zmiennej. Na przykład: **OSDPartitions1Type**, **OSDPartitions1FileSystem**, **OSDPartitions1Bootable**, **OSDPartitions1QuickFormat**, i  **OSDPartitions1VolumeName**.|  
 |OSDPartitionStyle<br /><br /> (dane wejściowe)|Określa styl partycji do użycia podczas tworzenia partycji na dysku. **MBR** wskazuje na styl partycji rekordów główny i **GPT** wskazuje na styl z tabelą partycji GUID.<br /><br /> Prawidłowe wartości:<br /><br /> **GPT**<br /><br /> **MBR**|  
 
 
 
-###  <a name="BKMK_InstallApplication"></a>Instalowanie aplikacji   
+###  <a name="BKMK_InstallApplication"></a> Instalowanie aplikacji   
  Aby uzyskać więcej informacji, zobacz [zainstaluj aplikację](task-sequence-steps.md#BKMK_InstallApplication).  
 
 #### <a name="details"></a>Szczegóły  
@@ -257,7 +250,7 @@ Aby uzyskać więcej informacji, zobacz [zastosuj pakiet sterowników](task-sequ
 
 
 
-###  <a name="BKMK_InstallSoftwareUpdates"></a>Instalacja aktualizacji oprogramowania   
+###  <a name="BKMK_InstallSoftwareUpdates"></a> Instalacja aktualizacji oprogramowania   
 Aby uzyskać więcej informacji, zobacz [Zainstaluj aktualizacje oprogramowania](task-sequence-steps.md#BKMK_InstallSoftwareUpdates).  
 
 #### <a name="details"></a>Szczegóły  
@@ -272,7 +265,7 @@ Aby uzyskać więcej informacji, zobacz [Zainstaluj aktualizacje oprogramowania]
 
 
 
-###  <a name="BKMK_JoinDomainWorkgroup"></a>Przyłącz do domeny lub grupy roboczej   
+###  <a name="BKMK_JoinDomainWorkgroup"></a> Przyłącz do domeny lub grupy roboczej   
  Aby uzyskać więcej informacji, zobacz [Przyłącz do domeny lub grupy roboczej](task-sequence-steps.md#BKMK_JoinDomainorWorkgroup).  
 
 #### <a name="details"></a>Szczegóły  
@@ -283,26 +276,26 @@ Aby uzyskać więcej informacji, zobacz [Zainstaluj aktualizacje oprogramowania]
 |OSDJoinDomainName<br /><br /> (dane wejściowe)|Określa nazwę domeny usługi Active Directory komputera docelowego sprzężenia. Długość nazwy domeny musi należeć do zakresu od 1 do 255 znaków.|  
 |OSDJoinDomainOUName<br /><br /> (dane wejściowe)|Określa nazwę jednostki organizacyjnej (OU), do której jest przyłączany komputer docelowy, w formacie RFC 1779. Jeśli wartość jest określona, musi zawierać pełną ścieżkę. Długość nazwy jednostki Organizacyjnej musi należeć do zakresu od 0 do 32 767 znaków. Ta wartość nie jest ustawiona, jeśli **OSDJoinType** zmienna jest ustawiona na **1** (Dołącz do grupy roboczej).<br /><br /> Przykład:<br /><br /> **LDAP://OU=MojaJO,DC=MojaDomena,DC=MojaFirma,DC=com**|  
 |OSDJoinPassword<br /><br /> (dane wejściowe)|Określa hasło sieciowe, które korzysta z komputera docelowego do przyłączenia do domeny usługi Active Directory. Jeśli środowiska sekwencji zadań nie zawiera tej zmiennej, Instalator systemu Windows podejmie pustego hasła. Jeśli zmienna **OSDJoinType** zmienna jest ustawiona na **0** (przyłączenie do domeny), ta wartość jest wymagana.|  
-|OSDJoinSkipReboot<br /><br /> (dane wejściowe)|Określa, czy pominąć ponowne uruchomienie po przyłączeniu komputera docelowego do domeny lub grupy roboczej.<br /><br /> Prawidłowe wartości:<br /><br /> **wartość true**<br /><br /> **wartość false**|  
+|OSDJoinSkipReboot<br /><br /> (dane wejściowe)|Określa, czy pominąć ponowne uruchomienie po przyłączeniu komputera docelowego do domeny lub grupy roboczej.<br /><br /> Prawidłowe wartości:<br /><br /> **Wartość true**<br /><br /> **wartość false**|  
 |OSDJoinType<br /><br /> (dane wejściowe)|Określa, czy komputer docelowy jest przyłączany do domeny systemu Windows lub grupy roboczej. Aby przyłączyć komputer docelowy do domeny systemu Windows, należy określić **0**. Aby przyłączyć komputer docelowy do grupy roboczej, określ **1**.<br /><br /> Prawidłowe wartości:<br /><br /> **0**<br /><br /> **1**|  
 |OSDJoinWorkgroupName<br /><br /> (dane wejściowe)|Określa nazwę grupy roboczej, do której zostanie przyłączony komputer docelowy. Długość nazwy grupy roboczej musi wynosić od 1 do 32 znaków.<br /><br /> Przykład:<br /><br /> **Ewidencjonowanie aktywności**|  
 
 
 
-###  <a name="BKMK_PrepareWindowsCapture"></a>Przygotuj system Windows do przechwycenia   
+###  <a name="BKMK_PrepareWindowsCapture"></a> Przygotuj system Windows do przechwycenia   
  Aby uzyskać więcej informacji, zobacz [Przygotuj system Windows do przechwycenia](task-sequence-steps.md#BKMK_PrepareWindowsforCapture).  
 
 #### <a name="details"></a>Szczegóły  
 
 |Nazwa zmiennej akcji|Opis|  
 |--------------------------|-----------------|  
-|OSDBuildStorageDriverList<br /><br /> (dane wejściowe)|Określa, czy program Sysprep tworzy listę sterowników urządzeń pamięci masowej. To ustawienie dotyczy tylko systemów Windows XP i Windows Server 2003. Ta zmienna wypełnia sekcję [SysprepMassStorage] pliku Sysprep.inf przy użyciu informacji na temat wszystkie sterowniki pamięci masowej, które są obsługiwane przez obraz do przechwycenia.<br /><br /> Prawidłowe wartości:<br /><br /> **wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
-|OSDKeepActivation<br /><br /> (dane wejściowe)|Określa, czy program sysprep resetuje flagę aktywacji produktu.<br /><br /> Prawidłowe wartości:<br /><br /> **wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
+|OSDBuildStorageDriverList<br /><br /> (dane wejściowe)|Określa, czy program Sysprep tworzy listę sterowników urządzeń pamięci masowej. To ustawienie dotyczy tylko systemów Windows XP i Windows Server 2003. Ta zmienna wypełnia sekcję [SysprepMassStorage] pliku Sysprep.inf przy użyciu informacji na temat wszystkie sterowniki pamięci masowej, które są obsługiwane przez obraz do przechwycenia.<br /><br /> Prawidłowe wartości:<br /><br /> **Wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
+|OSDKeepActivation<br /><br /> (dane wejściowe)|Określa, czy program sysprep resetuje flagę aktywacji produktu.<br /><br /> Prawidłowe wartości:<br /><br /> **Wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
 |OSDTargetSystemRoot<br /><br /> (dane wyjściowe)|Określa ścieżkę do katalogu zainstalowanego systemu operacyjnego Windows na komputerze odniesienia. Ten system operacyjny jest weryfikowany jako możliwy do przechwycenia obsługiwanego systemu operacyjnego przez program Configuration Manager.|  
 
 
 
-###  <a name="BKMK_ReleaseStateStore"></a>Zwolnij Magazyn stanów   
+###  <a name="BKMK_ReleaseStateStore"></a> Zwolnij Magazyn stanów   
  Aby uzyskać więcej informacji, zobacz [Zwolnij Magazyn stanów](task-sequence-steps.md#BKMK_ReleaseStateStore).  
 
 #### <a name="details"></a>Szczegóły  
@@ -313,21 +306,21 @@ Aby uzyskać więcej informacji, zobacz [Zainstaluj aktualizacje oprogramowania]
 
 
 
-###  <a name="BKMK_RequestState"></a>Zażądaj magazynu stanów   
+###  <a name="BKMK_RequestState"></a> Zażądaj magazynu stanów   
   Aby uzyskać więcej informacji, zobacz [Zwolnij Magazyn stanów](task-sequence-steps.md#BKMK_ReleaseStateStore).  
 
 #### <a name="details"></a>Szczegóły  
 
 |Nazwa zmiennej akcji|Opis|  
 |--------------------------|-----------------|  
-|OSDStateFallbackToNAA<br /><br /> (dane wejściowe)|Gdy konto komputera nie może nawiązać połączenia z punktem migracji stanu, ta zmienna Określa, czy sekwencja zadań przechodzi do używają konta dostępu do sieci (ana).<br /><br /> Prawidłowe wartości:<br /><br /> **wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
+|OSDStateFallbackToNAA<br /><br /> (dane wejściowe)|Gdy konto komputera nie może nawiązać połączenia z punktem migracji stanu, ta zmienna Określa, czy sekwencja zadań przechodzi do używają konta dostępu do sieci (ana).<br /><br /> Prawidłowe wartości:<br /><br /> **Wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
 |OSDStateSMPRetryCount<br /><br /> (dane wejściowe)|Określa liczbę prób znalezienia punktu migracji stanu przez krok sekwencji zadań, po której krok zakończy się niepowodzeniem. Określona liczba musi wynosić od 0 do 600.|  
 |OSDStateSMPRetryTime<br /><br /> (dane wejściowe)|Określa liczbę sekund oczekiwania przez krok sekwencji zadań między ponownymi próbami. Wartość liczby sekund może zawierać maksymalnie 30 znaków.|  
 |OSDStateStorePath<br /><br /> (dane wyjściowe)|Ścieżka UNC do folderu w punkcie migracji stanu, w którym jest przechowywany stan użytkownika.|  
 
 
 
-###  <a name="BKMK_RestartComputer"></a>Uruchom ponownie komputer   
+###  <a name="BKMK_RestartComputer"></a> Uruchom ponownie komputer   
  Aby uzyskać więcej informacji, zobacz [Uruchom ponownie komputer](task-sequence-steps.md#BKMK_RestartComputer).  
 
 #### <a name="details"></a>Szczegóły  
@@ -339,7 +332,7 @@ Aby uzyskać więcej informacji, zobacz [Zainstaluj aktualizacje oprogramowania]
 
 
 
-###  <a name="BKMK_RestoreUserState"></a>Przywróć stan użytkownika   
+###  <a name="BKMK_RestoreUserState"></a> Przywróć stan użytkownika   
   Aby uzyskać więcej informacji, zobacz [Przywróć stan użytkownika](task-sequence-steps.md#BKMK_RestoreUserState).  
 
 #### <a name="details"></a>Szczegóły  
@@ -348,15 +341,15 @@ Aby uzyskać więcej informacji, zobacz [Zainstaluj aktualizacje oprogramowania]
 |--------------------------|-----------------|  
 |OSDStateStorePath<br /><br /> (dane wejściowe)|Nazwa ścieżki UNC lub lokalnej dla folderu, z którego jest przywracany stan użytkownika.|  
 |OSDMigrateContinueOnRestore<br /><br /> (dane wejściowe)|Kontynuuj proces, nawet w przypadku narzędzia USMT nie można przywrócić niektórych plików.<br /><br /> Prawidłowe wartości:<br /><br /> **wartość true,** (ustawienie domyślne)<br /><br /> **wartość false**|  
-|OSDMigrateEnableVerboseLogging<br /><br /> (dane wejściowe)|Włącza pełne rejestrowanie dla narzędzia USMT. Ta wartość jest wymagana przez akcję.<br /><br /> Prawidłowe wartości:<br /><br /> **wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
-|OSDMigrateLocalAccounts<br /><br /> (dane wejściowe)|Określa, czy konto komputera lokalnego jest przywracane.<br /><br /> Prawidłowe wartości:<br /><br /> **wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
+|OSDMigrateEnableVerboseLogging<br /><br /> (dane wejściowe)|Włącza pełne rejestrowanie dla narzędzia USMT. Ta wartość jest wymagana przez akcję.<br /><br /> Prawidłowe wartości:<br /><br /> **Wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
+|OSDMigrateLocalAccounts<br /><br /> (dane wejściowe)|Określa, czy konto komputera lokalnego jest przywracane.<br /><br /> Prawidłowe wartości:<br /><br /> **Wartość true**<br /><br /> **FALSE** (ustawienie domyślne)|  
 |OSDMigrateLocalAccountPassword<br /><br /> (dane wejściowe)|Jeśli **zmienna OSDMigrateLocalAccounts** zmienna ma wartość "PRAWDA," Ta zmienna musi zawierać hasło przypisywane do wszystkich migrowanych kont lokalnych. Narzędzie USMT przypisuje to samo hasło do wszystkich migrowanych kont lokalnych. Należy wziąć pod uwagę to hasło jako tymczasowy, a później zmienić za pomocą innej metody.|  
 |OSDMigrateAdditionalRestoreOptions<br /><br /> (dane wejściowe)|Określa dodatkowe opcje migracji stanu użytkowników (USMT) Narzędzie wiersza polecenia, które są używane podczas przywracania stanu użytkownika. Dodatkowe opcje są określone w postaci ciągu, który jest dołączany do automatycznie wygenerowanego wiersza polecenia narzędzia USMT. Opcje narzędzia USMT określone za pomocą tej zmiennej sekwencji zadań nie są weryfikowane pod kątem dokładności przed uruchomieniem sekwencji zadań.|  
 |_OSDMigrateUsmtRestorePackageID<br /><br /> (dane wejściowe)|Określa identyfikator pakietu pakietu programu Configuration Manager, który zawiera pliki narzędzia USMT. Ta zmienna jest wymagana.|  
 
 
 
-###  <a name="BKMK_RunCommand"></a>Uruchom wiersz polecenia   
+###  <a name="BKMK_RunCommand"></a> Uruchom wiersz polecenia   
   Aby uzyskać więcej informacji, zobacz [Uruchom wiersz polecenia](task-sequence-steps.md#BKMK_RunCommandLine).  
 
 #### <a name="details"></a>Szczegóły  
@@ -388,7 +381,7 @@ Aby uzyskać więcej informacji, zobacz [Ustaw zmienne dynamiczne](task-sequence
 
 
 
-###  <a name="BKMK_SetupWindows"></a>Zainstaluj system Windows i program ConfigMgr   
+###  <a name="BKMK_SetupWindows"></a> Zainstaluj system Windows i program ConfigMgr   
   Aby uzyskać więcej informacji, zobacz [Zainstaluj system Windows i program ConfigMgr](task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr).  
 
 #### <a name="details"></a>Szczegóły  

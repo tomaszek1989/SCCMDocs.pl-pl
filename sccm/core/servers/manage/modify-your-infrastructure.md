@@ -1,27 +1,20 @@
 ---
 title: Modyfikowanie infrastruktury
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak wprowadzić zmiany lub wykonać akcje, które mają wpływ na infrastruktury programu Configuration Manager, które zostały wdrożone."
-ms.custom: na
+description: Dowiedz się, jak wprowadzić zmiany lub wykonać akcje, które mają wpływ na infrastruktury programu Configuration Manager, które zostały wdrożone.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: a7975dc8-46ab-4dae-86b6-dc3e3cf3b2f0
-caps.latest.revision: 
-caps.handback.revision: 
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 93456b2708afbdaac0ff3c68dc6c2d9927def7ad
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 7f798fdb1183b852bded92711cc5f489666f4f2a
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="modify-your-system-center-configuration-manager-infrastructure"></a>Modyfikowanie infrastruktury programu System Center Configuration Manager
 
@@ -30,7 +23,7 @@ ms.lasthandoff: 12/04/2017
 Po zainstalowaniu co najmniej jednej lokacji może zaistnieć potrzeba zmodyfikowania konfiguracji lub podjęcia działań, które będą miały wpływ na wdrożoną infrastrukturę.  
 
 
-##  <a name="BKMK_ManageSMSprovider"></a>Zarządzanie dostawcą programu SMS  
+##  <a name="BKMK_ManageSMSprovider"></a> Zarządzanie dostawcą programu SMS  
  Dostawca programu SMS (plik biblioteki dołączanej: smsprov.dll) zapewnia konsolom programu Configuration Manager punkt kontaktu administracyjnego. W przypadku instalowania wielu dostawców programu SMS można zapewnić nadmiarowość punktów kontaktu w celu administrowania lokacją i hierarchią.  
 
  W każdej lokacji programu Configuration Manager można ponownie uruchomić Instalatora, aby:  
@@ -66,7 +59,7 @@ Po zainstalowaniu co najmniej jednej lokacji może zaistnieć potrzeba zmodyfiko
 
  Po zakończeniu działania Kreatora instalacji konfiguracja dostawcy programu SMS zostanie ukończona. Na karcie **Ogólne** w oknie dialogowym **Właściwości** danej lokacji można zweryfikować komputery, które mają zainstalowanego dostawcę programu SMS dla jednej z lokacji.  
 
-##  <a name="bkmk_Console"></a>Zarządzanie konsoli programu Configuration Manager  
+##  <a name="bkmk_Console"></a> Zarządzanie konsoli programu Configuration Manager  
  Poniżej przedstawiono zadania, które można wykonywać, aby zarządzać konsoli programu Configuration Manager:  
 
 -   **Modyfikowanie języka wyświetlanego w konsoli programu Configuration Manager** — Aby zmodyfikować zainstalowane języki, zobacz sekcję [język konsoli zarządzania programu Configuration Manager](#BKMK_ManageConsoleLanguages) w tym temacie.  
@@ -75,9 +68,9 @@ Po zainstalowaniu co najmniej jednej lokacji może zaistnieć potrzeba zmodyfiko
 
 -   **Konfigurowanie modelu DCOM** — Aby skonfigurować uprawnienia modelu DCOM umożliwia konsolom sterowanym zdalnie z serwera lokacji do połączenia, zobacz [skonfigurować uprawnienia modelu DCOM dla zdalnej konsoli programu Configuration Manager](#BKMK_ConfigDCOMforRemoteConsole) w tym temacie.  
 
--   **Modyfikowanie uprawnień w celu ograniczenia, co użytkownicy administracyjni mogą wyświetlać w konsoli** — Aby zmodyfikować uprawnienia administracyjne ograniczające co użytkownicy mogą i w konsoli można znaleźć [modyfikacja zakresu administracyjnego użytkownika administracyjnego](/sccm/core/servers/deploy/configure/configure-role-based-administration#BKMK_ModAdminUser).     
+-   **Modyfikowanie uprawnień w celu ograniczenia, co użytkownicy administracyjni mogą wyświetlać w konsoli** — Aby zmodyfikować uprawnienia administracyjne ograniczające co użytkownicy mogą i w konsoli można znaleźć [modyfikacja zakresu administracyjnego użytkownika administracyjnego ](/sccm/core/servers/deploy/configure/configure-role-based-administration#BKMK_ModAdminUser).     
 
-###  <a name="BKMK_ManageConsoleLanguages"></a>Zarządzanie językiem konsoli programu Configuration Manager  
+###  <a name="BKMK_ManageConsoleLanguages"></a> Zarządzanie językiem konsoli programu Configuration Manager  
  Podczas instalacji serwera lokacji pliki instalacyjne konsoli programu Configuration Manager oraz obsługiwane pakiety języków lokacji są kopiowane do  **&lt;Ścieżka_instalacji_programu_configmgr\>\Tools\ConsoleSetup** podfolderu na serwerze lokacji.  
 
 -   Po rozpoczęciu instalacji konsoli programu Configuration Manager z tego folderu na serwerze lokacji, konsola programu Configuration Manager i pliki pakietu obsługiwanego języka są kopiowane do komputera  
@@ -113,7 +106,7 @@ Na przykład Rozważmy scenariusz, w którym zainstalowano konsolę programu Con
 
 4.  Aby otworzyć konsolę programu Configuration Manager w języku skonfigurowanym na komputerze, Zmień nazwę folderu oryginalną nazwę. Na przykład zmień nazwę folderu **de.disabled** na **de**.  
 
-##  <a name="BKMK_ConfigDCOMforRemoteConsole"></a>Konfigurowanie uprawnień modelu DCOM dla zdalnej konsoli programu Configuration Manager  
+##  <a name="BKMK_ConfigDCOMforRemoteConsole"></a> Konfigurowanie uprawnień modelu DCOM dla zdalnej konsoli programu Configuration Manager  
  Konto użytkownika, na którym uruchomiona jest konsola programu Configuration Manager wymaga uprawnień dostępu do bazy danych lokacji za pomocą dostawcy programu SMS. Jednak użytkownik administracyjny używający zdalnej konsoli programu Configuration Manager wymaga również **aktywacji zdalnej** uprawnień modelu DCOM na:  
 
 -   komputerze serwera lokacji;  
@@ -148,7 +141,7 @@ Na przykład Rozważmy scenariusz, w którym zainstalowano konsolę programu Con
 
  Powtórz tę procedurę na każdym komputerze dostawcy programu SMS, który ma obsługiwać zdalne konsole programu Configuration Manager.  
 
-##  <a name="bkmk_dbconfig"></a>Modyfikowanie konfiguracji bazy danych lokacji  
+##  <a name="bkmk_dbconfig"></a> Modyfikowanie konfiguracji bazy danych lokacji  
  Po zainstalowaniu lokacji można zmodyfikować konfigurację jej bazy danych i serwera bazy danych, uruchamiając Instalatora na serwerze centralnej lokacji administracyjnej lub lokacji głównej. Bazę danych lokacji można przenieść do nowego wystąpienia programu SQL Server na tym samym komputerze lub do innego komputera z uruchomioną obsługiwaną wersją programu SQL Server. Te i pokrewne zmiany nie są obsługiwane dla konfiguracji bazy danych w lokacjach dodatkowych.  
 
  Aby uzyskać więcej informacji na temat limitów pomocy technicznej, zobacz [Zasady pomocy technicznej dotyczące ręcznego wprowadzania zmian w bazach danych w środowisku programu Configuration Manager](https://support.microsoft.com/kb/3106512).  
@@ -179,7 +172,7 @@ Na przykład Rozważmy scenariusz, w którym zainstalowano konsolę programu Con
 > [!IMPORTANT]  
 >  Przed przeniesieniem bazy danych zawierającej co najmniej jedną replikę dla punktów zarządzania należy najpierw usunąć repliki bazy danych. Po przeniesieniu bazy danych można ponownie skonfigurować repliki bazy danych. Aby uzyskać więcej informacji, zobacz [Repliki bazy danych dla punktów zarządzania programu System Center Configuration Manager](../../../core/servers/deploy/configure/database-replicas-for-management-points.md).  
 
-##  <a name="bkmk_SPN"></a>Zarządzanie główną nazwę usługi dla serwera bazy danych lokacji  
+##  <a name="bkmk_SPN"></a> Zarządzanie główną nazwę usługi dla serwera bazy danych lokacji  
 Możliwe jest wybranie konta, na którym uruchomiono usługi SQL Services dla bazy danych lokacji:  
 
 -   Gdy usługi są uruchomione przy użyciu konta systemowego komputerów, główna nazwa usługi jest automatycznie rejestrowana.  
@@ -249,7 +242,7 @@ Główną nazwę usługi konta usługi programu SQL Server na serwerze bazy dany
 
 6.  Po pomyślnej zmianie konta usługi kliknij przycisk **OK**.  
 
-##  <a name="bkmk_reset"></a>Uruchamianie resetowania lokacji  
+##  <a name="bkmk_reset"></a> Uruchamianie resetowania lokacji  
  Gdy resetowanie lokacji ma miejsce w centralnej lokacji administracyjnej lub lokacji głównej, przeprowadzane jest:  
 
 -   Ponowne zastosowanie programu Configuration Manager domyślne uprawnienia plików i rejestru  
@@ -307,7 +300,7 @@ Konto, którego chcesz użyć do wykonania resetu lokacji, musi mieć przyznane 
 
 Po zakończeniu resetowania lokacji kliknij przycisk **Zamknij**, aby dokończyć procedurę.  
 
-##  <a name="bkmk_sitelang"></a>Zarządzanie pakietami językowymi w lokacji  
+##  <a name="bkmk_sitelang"></a> Zarządzanie pakietami językowymi w lokacji  
 Po zainstalowaniu lokacji można zmienić używane pakiety językowe serwera i klienta:  
 
 **Pakiety językowe serwera:**  
@@ -357,7 +350,7 @@ Aby uzyskać informacje o językach klienta i serwera, które są obsługiwane p
 
 8.  Po zakończeniu tej procedury kliknij przycisk **Zamknij**.  
 
-##  <a name="BKMK_ModDBAlert"></a>Modyfikowanie progu alertu serwera bazy danych  
+##  <a name="BKMK_ModDBAlert"></a> Modyfikowanie progu alertu serwera bazy danych  
  Domyślnie program Configuration Manager generuje alerty, gdy brakuje wolnego miejsca na dysku na serwerze bazy danych lokacji. Według domyślnych ustawień ostrzeżenie będzie generowane, gdy ilość wolnego miejsca na dysku osiągnie 10 GB lub mniej, natomiast próg alertu krytycznego wynosi 5 GB lub mniej. Można zmodyfikować te wartości lub wyłączyć funkcję alertów w poszczególnych lokacjach.  
 
  Aby zmienić te ustawienia:  

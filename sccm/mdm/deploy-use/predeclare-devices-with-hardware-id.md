@@ -1,25 +1,20 @@
 ---
-title: "Wstępna deklaracja urządzeń z numery IMEI lub iOS za"
+title: Wstępna deklaracja urządzeń z numery IMEI lub iOS za
 titleSuffix: Configuration Manager
-description: "Wstępna deklaracja urządzeń firmowych z ich numerami IMEI lub iOS za."
-ms.custom: na
+description: Wstępna deklaracja urządzeń firmowych z ich numerami IMEI lub iOS za.
 ms.date: 09/01/2017
-ms.reviewer: na
-ms.suite: na
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: ddb4c68e-e7f7-475a-89e2-7379a86e44c4
-caps.latest.revision: "3"
-author: nathbarn
-ms.author: nathbarn
-manager: angrobe
-ms.openlocfilehash: a58c765833fe1ef65c2497fd1e2d079caa3f2ff3
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 86ef14c871f476df39923e01e47874702271a08d
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="predeclare-devices-with-imei-or-ios-serial-numbers"></a>Wstępna deklaracja urządzeń z numery IMEI lub iOS za
 
@@ -54,7 +49,7 @@ Podczas przekazywania numerów seryjnych urządzeń z systemem iOS należące do
 
   Jeśli wybrano opcję ręcznie wprowadzić numer, wypełnij formularz dla urządzeń, które chcesz predeclare.
 
-  Kliknij przycisk **Dalej**, aby kontynuować.
+  Kliknij przycisk **Dalej** , aby kontynuować.
 
 4. Jeśli lista zawiera numery seryjne systemu iOS, wybierz **profil rejestracji do przypisania** z listy dostępnych profilów, a następnie kliknij przycisk **dalej**.
 
@@ -69,9 +64,9 @@ Plik CSV, który umożliwia identyfikowanie urządzeń za pomocą numeru seryjne
 | IMEI #  | numer seryjny systemu iOS  | SYSTEM OPERACYJNY | Szczegóły |
 |------------ |---------------|-----|-----|
 | 123456789012345    |   | SYSTEMU WINDOWS | Należące do firmy urządzenia z systemem Windows|
-|   | A1B2C3D4E5C6 | DLA SYSTEMU IOS |  Urządzenia z systemem iOS należące do firmy|
-| 223456789012345 | E6D5C4B3A210 |   DLA SYSTEMU IOS |  Inne urządzenie z systemem iOS|
-| 323456789012345 |        |   DLA SYSTEMU IOS |    Trzeci urządzenia z systemem iOS|
+|   | A1B2C3D4E5C6 | IOS |  Urządzenia z systemem iOS należące do firmy|
+| 223456789012345 | E6D5C4B3A210 |   IOS |  Inne urządzenie z systemem iOS|
+| 323456789012345 |        |   IOS |    Trzeci urządzenia z systemem iOS|
 | 123456789012346 |         |   ANDROID |   Należące do firmy urządzenia z systemem Android|
 
 Nie dołączaj wiersz nagłówków w pliku CSV. W poniższym przykładzie przedstawiono te same dane przykładowe w formacie CSV:

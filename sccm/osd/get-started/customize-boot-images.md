@@ -1,26 +1,20 @@
 ---
-title: "Dostosowywanie obrazów rozruchowych "
+title: 'Dostosowywanie obrazów rozruchowych '
 titleSuffix: Configuration Manager
-description: "Więcej informacji na kilka sposobów użycia programu Configuration Manager lub Deployment Image Servicing i Management (DISM) Narzędzie wiersza polecenia, aby dostosować obraz rozruchowy."
-ms.custom: na
+description: Więcej informacji na kilka sposobów użycia programu Configuration Manager lub Deployment Image Servicing i Management (DISM) Narzędzie wiersza polecenia, aby dostosować obraz rozruchowy.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 9cbfc406-d009-446d-8fee-4938de48c919
-caps.latest.revision: "15"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 184768e87406051508c8dcacfa63db5ff85c3732
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 3532e6db7b4ece1676c9b9f41f9336274ac3d117
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="customize-boot-images-with-system-center-configuration-manager"></a>Dostosowywanie obrazów rozruchowych przy użyciu programu System Center Configuration Manager
 
@@ -141,7 +135,7 @@ Każda wersja programu Configuration Manager obsługuje określoną wersję syst
 
     4.  Na stronie **Źródło danych** określ poniższe opcje, a następnie kliknij przycisk **Dalej**.  
 
-        -   W polu **Ścieżka** podaj ścieżkę do zaktualizowanego pliku obrazu rozruchowego. Określona ścieżka musi być prawidłową ścieżką sieciową w formacie UNC. Na przykład:  **\\ \\ <**  *servername***>\\<***udział WinPEWAIK***> \winpe.wim**.  
+        -   W polu **Ścieżka** podaj ścieżkę do zaktualizowanego pliku obrazu rozruchowego. Określona ścieżka musi być prawidłową ścieżką sieciową w formacie UNC. Na przykład: **\\ \\ < ***servername***>\\<***udział WinPEWAIK***> \winpe.wim**.  
 
         -   Wybierz obraz rozruchowy z listy rozwijanej **Obraz rozruchowy**. Jeżeli plik WIM zawiera wiele obrazów rozruchowych, poszczególne obrazy zostaną wyświetlone na liście.  
 
@@ -165,7 +159,7 @@ Każda wersja programu Configuration Manager obsługuje określoną wersję syst
 
     4.  W wierszu polecenia wpisz polecenie **wbemtest**. Zostanie uruchomione narzędzie Tester oprzyrządowania Instrumentacji zarządzania Windows.  
 
-    5.  Typ  **\\ \\ <**  *komputer dostawcy programu SMS***> \root\sms\site_ <***kod_lokacji*  **>**  w **Namespace**, a następnie kliknij przycisk **Connect**.  
+    5.  Typ **\\ \\ < ***komputer dostawcy programu SMS***> \root\sms\site_ <***kod_lokacji*** >** w **Namespace**, a następnie kliknij przycisk **Connect**.  
 
     6.  Kliknij polecenie **Otwórz wystąpienie**, wpisz ciąg **sms_bootimagepackage.packageID"<identyfikator pakietu\>"** i kliknij przycisk **OK**. Jako packageID wpisz wartość określoną w kroku 3.  
 
@@ -257,7 +251,7 @@ Każda wersja programu Configuration Manager obsługuje określoną wersję syst
 
     4.  Na stronie **Źródło danych** określ poniższe opcje, a następnie kliknij przycisk **Dalej**.  
 
-        -   W polu **Ścieżka** podaj ścieżkę do zaktualizowanego pliku obrazu rozruchowego. Określona ścieżka musi być prawidłową ścieżką sieciową w formacie UNC. Na przykład:  **\\ \\ <**  *servername***>\\<***udział WinPEWAIK***> \winpe.wim**.  
+        -   W polu **Ścieżka** podaj ścieżkę do zaktualizowanego pliku obrazu rozruchowego. Określona ścieżka musi być prawidłową ścieżką sieciową w formacie UNC. Na przykład: **\\ \\ < ***servername***>\\<***udział WinPEWAIK***> \winpe.wim**.  
 
         -   Wybierz obraz rozruchowy z listy rozwijanej **Obraz rozruchowy**. Jeżeli plik WIM zawiera wiele obrazów rozruchowych, poszczególne obrazy zostaną wyświetlone na liście.  
 
@@ -281,7 +275,7 @@ Każda wersja programu Configuration Manager obsługuje określoną wersję syst
 
     4.  W wierszu polecenia wpisz polecenie **wbemtest**. Zostanie uruchomione narzędzie Tester oprzyrządowania Instrumentacji zarządzania Windows.  
 
-    5.  Typ  **\\ \\ <**  *komputer dostawcy programu SMS***> \root\sms\site_ <***kod_lokacji*  **>**  w **Namespace**, a następnie kliknij przycisk **Connect**.  
+    5.  Typ **\\ \\ < ***komputer dostawcy programu SMS***> \root\sms\site_ <***kod_lokacji*** >** w **Namespace**, a następnie kliknij przycisk **Connect**.  
 
     6.  Kliknij polecenie **Otwórz wystąpienie**, wpisz ciąg **sms_bootimagepackage.packageID"<identyfikator pakietu\>"** i kliknij przycisk **OK**. Jako packageID wpisz wartość określoną w kroku 3.  
 

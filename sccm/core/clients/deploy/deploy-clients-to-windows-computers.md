@@ -2,26 +2,19 @@
 title: Wdrażanie klientów do systemu Windows
 titleSuffix: Configuration Manager
 description: Dowiedz się, jak wdrożyć klienta programu Configuration Manager na komputerach z systemem Windows.
-ms.custom: na
 ms.date: 03/22/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 341f0d0b-f907-44cf-9e10-e1b41fc15f82
-caps.latest.revision: ''
-caps.handback.revision: ''
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3d7c3e9c9f2af8d612ef158897c281d422692268
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 5efca393afe2fc6441d074f987549228e7d0418f
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-deploy-clients-to-windows-computers-in-system-center-configuration-manager"></a>Jak wdrożyć klientów na komputerach z systemem Windows w programie System Center Configuration Manager
 
@@ -184,7 +177,7 @@ Aby uzyskać informacje o sposobie używania zasad grupy w usługach domenowych 
 ##  <a name="BKMK_Manual"></a> Jak instalować klientów ręcznie  
  Można ręcznie zainstalować oprogramowanie klienta na komputerach w przedsiębiorstwie za pomocą programu CCMSetup.exe. Ten program i towarzyszące mu pliki można znaleźć w **klienta** folderu folder instalacji programu Configuration Manager na serwerze lokacji i w punktach zarządzania lokacji. Ten folder jest udostępniany w sieci jako  
 
- \\\\*&lt;Nazwa serwera lokacji\>*\SMS_*&lt;kod lokacji\>*\Client\  
+ \\\\*&lt;Nazwa serwera lokacji\>* \SMS_*&lt;kod lokacji\>* \Client\  
 
  gdzie *&lt;nazwa serwera lokacji\>* jest nazwą jednego z serwerów obsługujących punkt zarządzania i *&lt;kod lokacji\>* jest kod lokacji głównej której przypisano klienta. Aby uruchomić program CCMSetup.exe z wiersza polecenia na komputerze klienckim, musisz zamapować dysk sieciowy do tej lokalizacji, a następnie uruchomić to polecenie.  
 
@@ -398,7 +391,7 @@ Gdy lokacja programu Configuration Manager obsługuje [zarządzania klientami in
 
 -   Mechanizm umożliwiający tych klientów, aby tymczasowo łączenia się z intranetem, korzystając z sieci VPN. Następnie należy zainstalować klienta przy użyciu dowolnej metody instalacji odpowiedniego klienta.  
 
--   Użyj metody instalacji, która jest niezależna od programu Configuration Manager. Na przykład pakiet plików źródłowych instalacji klienta na nośniku wymiennym, który można wysłać do użytkowników z instrukcjami instalacji. Pliki źródłowe instalacji klienta znajdują się w  *&lt;Ścieżka_instalacji\>*folderu \Client na punktach serwera oraz zarządzania lokacji programu Configuration Manager. Umieść na nośniku skrypt ręcznego kopiowania do i z folderu klienta, zainstaluj klienta, używając programu CCMSetup.exe i wszystkie odpowiednie właściwości wiersza polecenia programu CCMSetup.  
+-   Użyj metody instalacji, która jest niezależna od programu Configuration Manager. Na przykład pakiet plików źródłowych instalacji klienta na nośniku wymiennym, który można wysłać do użytkowników z instrukcjami instalacji. Pliki źródłowe instalacji klienta znajdują się w  *&lt;Ścieżka_instalacji\>* folderu \Client na punktach serwera oraz zarządzania lokacji programu Configuration Manager. Umieść na nośniku skrypt ręcznego kopiowania do i z folderu klienta, zainstaluj klienta, używając programu CCMSetup.exe i wszystkie odpowiednie właściwości wiersza polecenia programu CCMSetup.  
 
 > [!NOTE]  
 >  Program Configuration Manager nie obsługuje instalacji klienta bezpośrednio z punktu zarządzania internetowego ani z punktu aktualizacji oprogramowania z internetowego.  

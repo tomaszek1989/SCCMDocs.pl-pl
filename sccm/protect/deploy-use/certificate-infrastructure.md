@@ -2,26 +2,19 @@
 title: Konfigurowanie infrastruktury certyfikatów
 titleSuffix: Configuration Manager
 description: Informacje o sposobie konfigurowania rejestracji certyfikatów w programie System Center Configuration Manager.
-ms.custom: na
 ms.date: 07/25/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: 29ae59b7-2695-4a0f-a9ff-4f29222f28b3
-caps.latest.revision: ''
-caps.handback.revision: ''
-author: lleonard-msft
-ms.author: alleonar
-manager: angrobe
-ms.openlocfilehash: 9ef62bbf6269a6090f2345b10c24cc4df16c1e3b
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: c27f92374470c7d87d49661b20996a3f0c47f8a4
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/27/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-certificate-infrastructure"></a>Konfigurowanie infrastruktury certyfikatów
 
@@ -161,11 +154,11 @@ Należy zainstalować i skonfigurować co najmniej jeden punkt rejestracji certy
 
     -   W obszarze roboczym **Monitorowanie** rozwiń węzeł **Stan systemu**, kliknij pozycję **Stan zawartości** i poszukaj komunikatów o stanie składnika **SMS_CERTIFICATE_REGISTRATION_POINT**.  
 
-    -   Na serwerze systemu lokacji użyj plików *<ścieżka instalacji programu Configuration Manager\>*\Logs\crpsetup.log i *<ścieżka instalacji programu Configuration Manager\>*\Logs\crpmsi.log. Instalacja, która się powiodła, zwróci kod zakończenia 0.  
+    -   Na serwerze systemu lokacji użyj plików *<ścieżka instalacji programu Configuration Manager\>* \Logs\crpsetup.log i *<ścieżka instalacji programu Configuration Manager\>* \Logs\crpmsi.log. Instalacja, która się powiodła, zwróci kod zakończenia 0.  
 
     -   Za pomocą przeglądarki, sprawdź, czy możesz nawiązać adres URL € pointâ rejestracji certyfikatu "na przykład https://server1.contoso.com/CMCertificateRegistration. Dla nazwy aplikacji powinna się wyświetlić strona **Błąd serwera** z opisem HTTP 404.  
 
-11. Zlokalizuj plik wyeksportowanego certyfikatu dla głównego urzędu certyfikacji, który punkt rejestracji certyfikatu automatycznie utworzył, w następującym folderze na komputerze serwera lokacji głównej: *<ścieżka instalacji programu Configuration Manager\>*\inboxes\certmgr.box. Zapisz ten plik w zabezpieczonej lokalizacji, w którym będziesz mieć bezpieczny dostęp podczas późniejszej instalacji modułu zasady programu System Center Configuration Manager na serwerze, na którym działa usługa rejestracji urządzeń sieciowych.  
+11. Zlokalizuj plik wyeksportowanego certyfikatu dla głównego urzędu certyfikacji, który punkt rejestracji certyfikatu automatycznie utworzył, w następującym folderze na komputerze serwera lokacji głównej: *<ścieżka instalacji programu Configuration Manager\>* \inboxes\certmgr.box. Zapisz ten plik w zabezpieczonej lokalizacji, w którym będziesz mieć bezpieczny dostęp podczas późniejszej instalacji modułu zasady programu System Center Configuration Manager na serwerze, na którym działa usługa rejestracji urządzeń sieciowych.  
 
     > [!TIP]  
     >  Ten certyfikat nie jest od razu dostępny we wspomnianym folderze. Może być konieczne będzie zaczekać trochę czasu (na przykład pół godziny) programu System Center Configuration Manager skopiuje plik do tej lokalizacji.  

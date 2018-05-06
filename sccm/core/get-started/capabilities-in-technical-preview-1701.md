@@ -1,25 +1,20 @@
 ---
 title: Funkcje w wersji zapoznawczej Technical Preview 1701
 titleSuffix: Configuration Manager
-description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersja 1701."
-ms.custom: na
+description: Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersja 1701.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 18598eaa-1131-44ff-8f8b-6093e87ac7a1
-caps.latest.revision: "5"
-author: erikje
-ms.author: erikje
-manager: angrobe
-ms.openlocfilehash: 90e5aa799516bf2a7d6715e12bb8f3d1b72737f3
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 894d268151f9c9dfb05ded812eb642f8025dc459
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1701-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1701 programu System Center Configuration Manager
 
@@ -99,7 +94,7 @@ Począwszy od tej wersji zapoznawczej, można skonfigurować punkty zarządzania
 
 ### <a name="try-it-out"></a>Podczas próby
 
-- **Włączanie zaświadczania o kondycji urządzenia lokalnego punktu zarządzania**<br>  W konsoli programu Configuration Manager, przejdź do punktu zarządzania i Otwórz **właściwości składnika punktu zarządzania** , a następnie kliknij przycisk **zaawansowane opcje** kartę. Kliknij przycisk **Dodaj** i określić adres URL lokalnej (na przykład https://10.10.10.10) dla **URL usługi zaświadczania o kondycji urządzenia lokalnymi**.
+- **Włączanie zaświadczania o kondycji urządzenia lokalnego punktu zarządzania**<br>  W konsoli programu Configuration Manager, przejdź do punktu zarządzania i Otwórz **właściwości składnika punktu zarządzania** , a następnie kliknij przycisk **zaawansowane opcje** kartę. Kliknij przycisk **Dodaj** i podaj adres URL lokalnej (na przykład https://10.10.10.10) dla **URL usługi zaświadczania o kondycji urządzenia lokalnymi**.
 - **Włącz lokalnymi zarządzania punktu zaświadczania o kondycji raportowania dla agenta klienta**<br>W konsoli programu Configuration Manager wybierz **administracji** > **ustawień klienta** i kliknij dwukrotnie lub utworzyć nowy **niestandardowych ustawień urządzenia**. Wybierz **Agent komputera** i ustaw **Użyj lokalnej usługi zaświadczania o kondycji** do **tak**. Jeśli **Włącz komunikację z usługą zaświadczania o kondycji urządzenia** ustawiono **tak** i **wykorzystanie lokalnych zaświadczania o kondycji** ma ustawioną wartość **nr**, punkt zarządzania użyje usługę zaświadczania o kondycji urządzenia oparte na chmurze.
 
 ## <a name="use-the-oms-connector-for-microsoft-azure-government-cloud"></a>Korzystania z łącznika OMS chmury Microsoft Azure dla instytucji rządowych
@@ -114,12 +109,12 @@ Aby to zrobić, zmodyfikuj plik konfiguracji do punktu w chmurze dla instytucji 
 
     Zmień wartość atrybutu Nazwa ustawienia *FairFaxArmResourceID* powinna być równa "https://management.usgovcloudapi.net/"
 
-   - **Oryginalne:** &lt;ustawienie name = "FairFaxArmResourceId" serializeAs = "String" >   
+   - **Original:** &lt;setting name="FairFaxArmResourceId" serializeAs="String">   
       &lt;wartość > &lt; /value >   
       &lt;/ Ustawienia >
 
    - **Edycji:**     
-      &lt;Nazwa ustawienia = "FairFaxArmResourceId" serializeAs = "String" > &lt;wartość > https://management.usgovcloudapi.net/ &lt; /value >  
+      &lt;setting name="FairFaxArmResourceId" serializeAs="String"> &lt;value>https://management.usgovcloudapi.net/&lt;/value>  
       &lt;/ Ustawienia >
 
   Zmień wartość atrybutu Nazwa ustawienia *FairFaxAuthorityResource* powinna być równa "https://login.microsoftonline.com/"
@@ -128,7 +123,7 @@ Aby to zrobić, zmodyfikuj plik konfiguracji do punktu w chmurze dla instytucji 
     &lt;wartość > &lt; /value >
 
     - **Edytowane:** &lt;ustawienie name = "FairFaxAuthorityResource" serializeAs = "String" >   
-    &lt;wartość > https://login.microsoftonline.com/ &lt; /value >
+    &lt;wartość >https://login.microsoftonline.com/ &lt; /value >
 
 2.  Po zapisaniu pliku z dwie zmiany ponownie uruchomić konsolę programu Configuration Manager na tym samym komputerze, a następnie użyj konsoli, aby zainstalować łącznik OMS. Aby zainstalować łącznik, skorzystaj z informacji w [synchronizowanie danych z programu Configuration Manager do programu Microsoft Operations Management Suite](/sccm/core/clients/manage/sync-data-microsoft-operations-management-suite)i wybierz **obszar roboczy usługi Operations Management Suite** znajdujący się w chmurze Microsoft Azure dla instytucji rządowych.
 
@@ -140,7 +135,7 @@ Począwszy od tej wersji technical preview hybrydowego zarządzania urządzeniam
 
 - Android
 - Samsung KNOX Standard 4.0 lub nowszy
-- urządzenia iPhone
+- iPhone
 - iPad
 
 Ta zmiana wpływa na kreatorów tworzenia następujące elementy:

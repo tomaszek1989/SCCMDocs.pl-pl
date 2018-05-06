@@ -1,26 +1,20 @@
 ---
-title: "Tworzenie elementów konfiguracji dla komputerów zarządzanych przez klienta Mac "
+title: 'Tworzenie elementów konfiguracji dla komputerów zarządzanych przez klienta Mac '
 titleSuffix: Configuration Manager
-description: "Umożliwia zarządzanie ustawieniami urządzeń z systemem Mac OS X, należy użyć elementu konfiguracji programu System Center Configuration Manager Mac OS X."
-ms.custom: na
+description: Umożliwia zarządzanie ustawieniami urządzeń z systemem Mac OS X, należy użyć elementu konfiguracji programu System Center Configuration Manager Mac OS X.
 ms.date: 03/28/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-compliance
+ms.topic: conceptual
 ms.assetid: 722d5bf5-bedc-4dfc-b324-6eeb773874e9
-caps.latest.revision: "8"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 1947bc8907d00a2f6d78acee5f563fa9b7f6cf78
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: e6358c8e84d12c37418d7a1af459e775783efaa2
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-configuration-items-for-mac-os-x-devices-managed-with-the-system-center-configuration-manager-client"></a>Tworzenie elementów konfiguracji dla urządzeń z systemem Mac OS X zarządzanych za pomocą klienta programu System Center Configuration Manager
 Użyj programu System Center Configuration Manager**systemu Mac OS X (niestandardowy)** element konfiguracji do zarządzania ustawieniami urządzeń systemu Mac OS X, które są zarządzane przez klienta programu Configuration Manager.  
@@ -104,7 +98,7 @@ Użyj programu System Center Configuration Manager**systemu Mac OS X (niestandar
   
         -   Ustawienie musi być zgodne z następującą regułą — wybierz operator i wartość, która zostanie oceniona pod kątem zgodności z wybranym ustawieniem. Możesz użyć następujących operatorów:  
   
-            -   **Równa się**  
+            -   **Equals**  
   
             -   **Nie równa się**  
   

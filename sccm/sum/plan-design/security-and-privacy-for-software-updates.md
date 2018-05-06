@@ -1,22 +1,20 @@
 ---
-title: "Bezpieczeństwo i prywatność aktualizacji oprogramowania"
+title: Bezpieczeństwo i prywatność aktualizacji oprogramowania
 titleSuffix: Configuration Manager
-description: "Wykonaj następujące najlepsze rozwiązania w zakresie zabezpieczeń dotyczące aktualizacji oprogramowania i Dowiedz się więcej na temat obsługi informacje o ochronie prywatności w programie Configuration Manager."
-keywords: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
+description: Wykonaj następujące najlepsze rozwiązania w zakresie zabezpieczeń dotyczące aktualizacji oprogramowania i Dowiedz się więcej na temat obsługi informacje o ochronie prywatności w programie Configuration Manager.
+author: aczechowski
+manager: dougeby
 ms.date: 10/06/2016
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
-ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: 41d6d5d8-ba84-4efb-b105-4d1eed239824
-ms.openlocfilehash: 753f0c106a2f41b9991b8e3da72ad3784573d8f9
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+ms.author: aaroncz
+ms.openlocfilehash: 3bf98c7b5ae2ee29266203e3496f0b28b1ea134e
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="security-and-privacy-for-software-updates-in-system-center-configuration-manager"></a>Bezpieczeństwo i prywatność aktualizacji oprogramowania w programie System Center Configuration Manager
 
@@ -60,7 +58,7 @@ Ten temat zawiera bezpieczeństwa i informacje o ochronie prywatności dotycząc
 
      Aby uzyskać więcej informacji, zobacz [skonfigurować program WSUS do używania niestandardowej witryny sieci web](plan-for-software-updates.md#BKMK_CustomWebSite).  
 
-##  <a name="BKMK_Privacy_HardwareInventory"></a>Informacje o ochronie prywatności dotyczące aktualizacji oprogramowania  
+##  <a name="BKMK_Privacy_HardwareInventory"></a> Informacje o ochronie prywatności dotyczące aktualizacji oprogramowania  
  Aktualizacje oprogramowania skanują komputery klienckie, aby określić, które aktualizacje są wymagane, a następnie wysyłają odpowiednią informację z powrotem do bazy danych lokacji. Podczas procesu aktualizacji oprogramowania programu Configuration Manager może przesyłać informacje między klientami a serwerami, które identyfikują komputer i konta logowania.  
 
  Configuration Manager przechowuje informacje o stanie dotyczące procesu wdrażania oprogramowania. Informacje o stanie nie są szyfrowane podczas przesyłania ani przechowywania. Informacje o stanie są przechowywane w bazie danych programu Configuration Manager i ich usunięcia przez zadania konserwacji bazy danych. Żadne informacje o stanie nie są wysyłane do firmy Microsoft.  

@@ -1,25 +1,20 @@
 ---
-title: "Instalowanie punktów dystrybucji w chmurze"
+title: Instalowanie punktów dystrybucji w chmurze
 titleSuffix: Configuration Manager
-description: "Dowiedz się, co należy zrobić, aby rozpocząć korzystanie z punktów dystrybucji w chmurze w systemie Microsoft Azure."
-ms.custom: na
+description: Dowiedz się, co należy zrobić, aby rozpocząć korzystanie z punktów dystrybucji w chmurze w systemie Microsoft Azure.
 ms.date: 2/8/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: bb83ac87-9914-4a35-b633-ad070031aa6e
-caps.latest.revision: "7"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 6471ac81718666403127c0ebcfaa19c41d3af47b
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 2c9c79c5e635a50fecf02c46e2a134df87c2d784
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="install-cloud-based-distribution-points-in-microsoft-azure-for-system-center-configuration-manager"></a>Instalowanie punktów dystrybucji w chmurze w systemie Microsoft Azure dla programu System Center Configuration Manager
 
@@ -41,7 +36,7 @@ Punkty dystrybucji w chmurze programu System Center Configuration Manager można
 
  Jeśli używasz serwera proxy sieci web, może być skonfigurowanie ustawień serwera proxy w celu umożliwienia komunikacji z usługą w chmurze, który hostuje punkt dystrybucji.  
 
-##  <a name="BKMK_ConfigWindowsAzureandInstallDP"></a>Skonfiguruj Azure i zainstaluj punkty dystrybucji w chmurze  
+##  <a name="BKMK_ConfigWindowsAzureandInstallDP"></a> Skonfiguruj Azure i zainstaluj punkty dystrybucji w chmurze  
  Użyj następujących procedur, aby skonfigurować Azure w celu obsługi punktów dystrybucji, a następnie zainstalować punkt dystrybucji w chmurze w programie Configuration Manager.  
 
 ### <a name="to-set-up-a-cloud-service-in-azure-for-a-distribution-point"></a>Aby skonfigurować usługi w chmurze na platformie Azure dla punktu dystrybucji  
@@ -101,7 +96,7 @@ Kreator tworzy nową usługę hostowaną dla punktu dystrybucji w chmurze. Po za
 
 -   Menedżer konfiguracji Wyświetla identyfikator komunikatu o stanie **9409** dla składnika SMS_CLOUD_SERVICES_MANAGER.  
 
-##  <a name="BKMK_ConfigDNSforCloudDPs"></a>Konfigurowanie rozpoznawania nazw dla punktów dystrybucji w chmurze  
+##  <a name="BKMK_ConfigDNSforCloudDPs"></a> Konfigurowanie rozpoznawania nazw dla punktów dystrybucji w chmurze  
  Zanim klienci mogą uzyskać dostęp do punktu dystrybucji w chmurze, muszą być w stanie rozpoznać nazwę punktu dystrybucji w chmurze na adres IP, która zarządza Azure. Klienci to zrobić na dwa etapy:  
 
 1.  Mapują nazwę usługi dostarczoną z certyfikatem usługi punktu dystrybucji w chmurze programu Configuration Manager do nazwy FQDN usługi platformy Azure. Ta nazwa FQDN zawiera identyfikator GUID oraz sufiks DNS **cloudapp.net**. Identyfikator GUID jest generowany automatycznie po zainstalowaniu punktu dystrybucji w chmurze. Można zobaczyć pełną nazwę FQDN w portalu Azure, odwołując **adres URL witryny** na pulpicie nawigacyjnym usługi w chmurze. Przykład witryny adres URL jest **http://d1594d4527614a09b934d470.cloudapp.net**.  
@@ -110,7 +105,7 @@ Kreator tworzy nową usługę hostowaną dla punktu dystrybucji w chmurze. Po za
 
 Aby zamapować nazwę usługi dostarczoną z certyfikatem usługi punktu dystrybucji w chmurze programu Configuration Manager (na przykład **clouddp1.contoso.com**) do platformy Azure nazwę FQDN usługi (na przykład **d1594d4527614a09b934d470.cloudapp.net**), serwery DNS w Internecie muszą mieć alias DNS (rekord CNAME). Klienci mogą następnie rozpoznać nazwę FQDN usługi platformy Azure z adresem IP przy użyciu serwerów DNS w Internecie.  
 
-##  <a name="BKMK_ConfigProxyforCloud"></a>Konfigurowanie ustawień serwera proxy dla lokacji głównych zarządzających usługami w chmurze  
+##  <a name="BKMK_ConfigProxyforCloud"></a> Konfigurowanie ustawień serwera proxy dla lokacji głównych zarządzających usługami w chmurze  
  Korzystając z usługi w chmurze z programem Configuration Manager, lokacji głównej zarządzającej punktem dystrybucji w chmurze musi być można nawiązać połączenia z portalu Azure. Łączy lokacji za pomocą **systemu** konto komputera lokacji głównej. To połączenie jest nawiązywane za pomocą domyślnej przeglądarki sieci web na komputerze serwera lokacji głównej.  
 
  Na serwerze lokacji głównej zarządzającej punktem dystrybucji w chmurze może być można skonfigurować ustawienia serwera proxy, aby umożliwić lokacji głównej dostęp do Internetu oraz platformy Azure.  

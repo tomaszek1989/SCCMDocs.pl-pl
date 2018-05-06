@@ -1,26 +1,20 @@
 ---
-title: "Typowe zadania związane z linii bazowych konfiguracji "
+title: 'Typowe zadania związane z linii bazowych konfiguracji '
 titleSuffix: Configuration Manager
-description: "Więcej informacji na temat sposobu tworzenia i wdrażania linii bazowych konfiguracji programu System Center Configuration Manager."
-ms.custom: na
+description: Więcej informacji na temat sposobu tworzenia i wdrażania linii bazowych konfiguracji programu System Center Configuration Manager.
 ms.date: 07/12/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-compliance
+ms.topic: conceptual
 ms.assetid: 4bb6afeb-d267-4f9b-ade2-26e5400c223b
-caps.latest.revision: "6"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 50f7bdf4dc537f734864304d96566347e6341de6
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: bd76ecfcd4f5731e7fa078a00e79fdc6ab91ffa4
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="common-tasks-for-creating-and-deploying-configuration-baselines-with-system-center-configuration-manager"></a>Typowe zadania dotyczące tworzenia i wdrażania linii bazowych konfiguracji z System Center Configuration Manager
 
@@ -32,7 +26,7 @@ Ten temat zawiera typowe scenariusze, aby uzyskać więcej informacji o sposobie
 
  Przed rozpoczęciem przeczytaj [wprowadzenie do ustawień zgodności w programie System Center Configuration Manager](../../compliance/get-started/get-started-with-compliance-settings.md) Aby poznać niektóre podstawowe ustawienia zgodności, a także temat [planowanie i konfigurowanie ustawień zgodności](../../compliance/plan-design/plan-for-and-configure-compliance-settings.md) implementacji wszelkich niezbędnych wymagań wstępnych.  
 
-## <a name="create-a-configuration-baseline"></a>Tworzenie planu bazowego konfiguracji  
+## <a name="create-a-configuration-baseline"></a>Tworzenie linii bazowej konfiguracji  
  W tym przykładzie utworzono element konfiguracji tylko 10 komputerów z systemem Windows uruchom klienta programu Configuration Manager.  
 
  Ten element konfiguracji wymusza stosowanie hasła z co najmniej 6 znakami na komputerach z systemem Windows 10. Element konfiguracji ma nazwę **Wymuszanie hasła w systemie Windows 10**.  
@@ -62,17 +56,17 @@ Użyj poniższej procedury, aby dowiedzieć się, jak dodać ten element konfigu
 
 1.  W konsoli programu Configuration Manager kliknij **zasoby i zgodność** > **ustawień zgodności** > **linie bazowe konfiguracji**.  
 
-3.  Na liście linii bazowych konfiguracji wybierz pozycję **Hasła systemu Windows 10**.  
+3.  Wybierz z listy linie bazowe konfiguracji, **hasła systemu Windows 10**.  
 
 4.  Na karcie **Narzędzia główne** w grupie **Wdrażanie** kliknij przycisk **Wdróż**.  
 
 5.  W **wdrażanie linii bazowych konfiguracji** okna dialogowego Skonfiguruj następujące ustawienia:  
 
-    -   **Wybrane linie bazowe konfiguracji** — sprawdź, czy linia bazowa konfiguracji **Hasła systemu Windows 10** została automatycznie dodana do tej listy.  
+    -   **Wybrane linie bazowe konfiguracji** — upewnij się, że **hasła systemu Windows 10** linia bazowa konfiguracji została automatycznie dodana do tej listy.  
 
     -   **Koryguj niezgodne reguły, jeśli są obsługiwane** — to pole, aby upewnić się, że jeśli poprawne ustawienia nie są obecne na urządzeniach docelowych, a następnie są one skorygowane przez program Configuration Manager.  
 
-    -   **Kolekcja** — kliknij przycisk **Przeglądaj** aby wybrać kolekcję komputerów, na których linia bazowa konfiguracji jest obliczane i skorygowana pod kątem zgodności. W tym przykładzie linia bazowa konfiguracji została wdrożona do wbudowanej kolekcji **Wszystkie komputery stacjonarne i klienci serwera** .  
+    -   **Kolekcja** — kliknij przycisk **Przeglądaj** aby wybrać kolekcję komputerów, na których linia bazowa konfiguracji jest obliczane i skorygowana pod kątem zgodności. W tym przykładzie linia bazowa konfiguracji została wdrożona do wbudowanej **wszystkie komputery stacjonarne i klienci serwera** kolekcji.  
 
         > [!TIP]  
         >  Nie jest ważne, czy wybrana kolekcja zawiera komputery lub urządzenia z systemem Windows 10. Tak długo, jak został skonfigurowany obsługiwanych platform w elemencie konfiguracji, który został utworzony, tylko komputery z systemem Windows 10 są oceniane pod kątem zgodności.  

@@ -1,25 +1,20 @@
 ---
-title: "Sprawdzanie wymagań wstępnych"
+title: Sprawdzanie wymagań wstępnych
 titleSuffix: Configuration Manager
-description: "Przejrzyj dostępne Sprawdzanie wymagań wstępnych programu System Center Configuration Manager. Obejmuje kontroli w przypadku praw zabezpieczeń."
-ms.custom: na
+description: Przejrzyj dostępne Sprawdzanie wymagań wstępnych programu System Center Configuration Manager. Obejmuje kontroli w przypadku praw zabezpieczeń.
 ms.date: 4/17/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 6a279624-ffc9-41aa-8132-df1809708dd5
-caps.latest.revision: "12"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 9ae5abeb5fe175f2e01a05cbda1a21232b54dd70
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: f51f2d5f94a185f35a5d843d674a3dd8f1e8a275
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="list-of-prerequisite-checks-for-system-center-configuration-manager"></a>Lista testów wymagań wstępnych programu System Center Configuration Manager
 
@@ -29,7 +24,7 @@ W poniższych sekcjach opisano dostępne funkcje sprawdzania wymagań wstępnych
 
 Aby uzyskać informacje o używaniu narzędzia sprawdzania wymagań wstępnych, zobacz [narzędzie sprawdzania wymagań wstępnych](prerequisite-checker.md).  
 
-##  <a name="BKMK_Security"></a>Sprawdzanie wymagań wstępnych dotyczące praw zabezpieczeń  
+##  <a name="BKMK_Security"></a> Sprawdzanie wymagań wstępnych dotyczące praw zabezpieczeń  
 W poniższej tabeli wymieniono kontroli wykonywanych przez narzędzie sprawdzania wymagań wstępnych w przypadku praw zabezpieczeń.
 
 |Operacji sprawdzania|Wyjaśnienie|Ważność|Stosowanie lokacji|
@@ -45,7 +40,7 @@ W poniższej tabeli wymieniono kontroli wykonywanych przez narzędzie sprawdzani
 |**Uprawnienia sysadmin serwera SQL**|Sprawdza, czy konto użytkownika uruchamiającego instalację programu Configuration Manager ma **sysadmin** rolę w wystąpieniu programu SQL Server wybranym do zainstalowania bazy danych lokacji. To sprawdzenie nie powiedzie się także wtedy, gdy Instalator nie będzie mógł uzyskać dostępu do wystąpienia dla programu SQL Server w celu sprawdzenia uprawnień.|Błąd|Serwer SQL|
 |**Uprawnienia sysadmin serwera SQL dla lokacji odniesienia**|Sprawdza, czy konto użytkownika uruchamiającego instalację programu Configuration Manager ma **sysadmin** wystąpieniu roli programu SQL Server wybranym jako baza danych lokacji odniesienia. SQL Server **sysadmin** wymagane są uprawnienia roli do modyfikowania bazy danych lokacji.|Błąd|Serwer SQL|
 
-##  <a name="BKMK_Dependencies"></a>Sprawdzanie wymagań wstępnych dotyczące zależności programu Configuration Manager
+##  <a name="BKMK_Dependencies"></a> Sprawdzanie wymagań wstępnych dotyczące zależności programu Configuration Manager
 W poniższej tabeli wymieniono sprawdza, czy narzędzie sprawdzania wymagań wstępnych przeprowadza zależności programu Configuration Manager.
 
 |Operacji sprawdzania|Wyjaśnienie|Ważność|Stosowanie lokacji|
@@ -107,7 +102,7 @@ W poniższej tabeli wymieniono sprawdza, czy narzędzie sprawdzania wymagań wst
 |**Usługa Windows Remote Management (WinRM) w wersji 1.1**|Sprawdza, czy Usługa WinRM 1.1 jest zainstalowana na serwerze lokacji głównej lub komputerze konsoli programu Configuration Manager do uruchamiania konsoli zarządzania poza pasmem. Więcej informacji pobieraniu usługi WinRM 1.1 zawiera [artykuł 936059](https://support.microsoft.com/en-us/kb/936059) w bazie wiedzy Microsoft Knowledge Base.|Ostrzeżenie|Lokacja główna <br>Konsola programu Configuration Manager|
 |**Usługi WSUS na serwerze lokacji**|Sprawdza, czy system Windows Server Update Services (WSUS) 3.0 z dodatkiem Service Pack 2 (SP2) jest zainstalowana na serwerze lokacji. Korzystając z punktu aktualizacji oprogramowania na komputerze, który nie jest serwerem lokacji, należy zainstalować konsolę administracyjną programu WSUS na serwerze lokacji. Aby uzyskać więcej informacji na temat programu WSUS, zobacz [systemu Windows Server Update Services](http://go.microsoft.com/fwlink/p/?LinkID=79477).|Ostrzeżenie|Centralna lokacja administracyjna, <br>Lokacja główna|  
 
-##  <a name="BKMK_Requirements"></a>Sprawdzanie wymagań wstępnych dotyczące wymagań systemowych  
+##  <a name="BKMK_Requirements"></a> Sprawdzanie wymagań wstępnych dotyczące wymagań systemowych  
 W poniższej tabeli wymieniono sprawdza, czy narzędzie sprawdzania wymagań wstępnych przeprowadza wymagania systemowe.  
 
 |Operacji sprawdzania|Wyjaśnienie|Ważność|Stosowanie lokacji|

@@ -2,25 +2,19 @@
 title: Nienadzorowane odzyskiwanie
 titleSuffix: Configuration Manager
 description: Odzyskiwanie lokacji w programie System Center Configuration Manager za pomocą skryptu.
-ms.custom: na
 ms.date: 03/22/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: 828c31d1-3d70-4412-b1a8-c92e7e504d39
-caps.latest.revision: ''
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fc6325d00e048fbbf54d740a89f78070fac6b0cb
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 043a99b85614186cef910e6cf04cfa1cdd5e62c5
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="unattended-site-recovery-for-configuration-manager"></a>Nienadzorowane odzyskiwanie lokacji programu Configuration Manager   
 
@@ -88,7 +82,7 @@ ms.lasthandoff: 03/23/2018
 -   **Nazwa klucza:** ReferenceSite  
 
     -   **Wymagane:** Być może
-    -   **Wartości:** &lt;ReferenceSiteFQDN\>
+    -   **Wartości:** &lt;Nazwa FQDN lokacji odniesienia\>
     -   **Szczegóły:** Określa lokację główną odniesienia. Jeśli kopia zapasowa bazy danych jest starsza od okresu przechowywania śledzenia zmian lub odzyskiwania lokacji bez kopii zapasowej, centralna lokacja administracyjna użyje lokacji odniesienia do odzyskiwania danych globalnych.
 
          Jeśli nie określono lokacji odniesienia, a tworzenie kopii zapasowej jest starsza od okresu przechowywania śledzenia zmian, wszystkie lokacje główne zostaną zainicjowane ponownie przy użyciu danych przywróconych z centralnej lokacji administracyjnej.
@@ -381,7 +375,7 @@ ms.lasthandoff: 03/23/2018
 -   **Nazwa klucza:** CASRetryInterval
 
     -   **Wymagane:** Nie
-    -   **Wartości:** &lt;*Interval*>
+    -   **Wartości:** &lt;*Interwał*>
     -   **Szczegóły:** Określa interwał ponawiania prób (w minutach) prób połączenia z lokacją administracji centralnej po niepowodzeniu. Na przykład jeśli nie może nawiązać połączenia z lokacją administracji centralnej, lokacji głównej oczekuje liczbę minut, przez które dla opcji CASRetryInterval, a następnie reattempts połączenia.
 
 

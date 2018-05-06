@@ -1,25 +1,20 @@
 ---
 title: Funkcje w wersji zapoznawczej Technical Preview 1605
 titleSuffix: Configuration Manager
-description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersja 1605."
-ms.custom: na
+description: Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersja 1605.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 2bafd028-1923-4463-9e3e-ee41bc0c437b
-caps.latest.revision: "36"
-author: erikje
-ms.author: erikje
-manager: angrobe
-ms.openlocfilehash: 795b7658f5da8f863f208f01896ae2d7823ff2a6
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 05d87b253f2387dd8428f4b9fadea3fe5f3a48e8
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1605-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1605 programu System Center Configuration Manager
 
@@ -35,7 +30,7 @@ W tym artykule przedstawiono funkcje, które są dostępne w wersji Technical Pr
 
  **Poniżej przedstawiono nowe funkcje, które można wypróbować z tą wersją.**  
 
-##  <a name="BKMK_PerAppVPN"></a>Urządzenia sieci VPN dla systemu Windows 10 dla aplikacji  
+##  <a name="BKMK_PerAppVPN"></a> Urządzenia sieci VPN dla systemu Windows 10 dla aplikacji  
  Dla urządzeń z systemem Windows 10 zarządzane przy użyciu programu Configuration Manager z usługą Intune możesz dodać listę aplikacji, które automatycznie otwarte połączenie sieci VPN, który został skonfigurowany za pomocą konsoli administracyjnej programu Configuration Manager. Istnieje możliwość ograniczenia ruchu sieci VPN do aplikacji, lub możesz zezwolić na cały ruch przez połączenie VPN.  
 
  **Wymagania dotyczące**:  
@@ -44,17 +39,17 @@ W tym artykule przedstawiono funkcje, które są dostępne w wersji Technical Pr
 
 -   Profil sieci VPN systemu Windows 10, który został wdrożony co najmniej jedno urządzenie  
 
-##  <a name="BKMK_InstallSU"></a>Ulepszenia sekwencja zadań instalacji aktualizacji oprogramowania  
+##  <a name="BKMK_InstallSU"></a> Ulepszenia sekwencja zadań instalacji aktualizacji oprogramowania  
  Do sekwencji zadań Zainstaluj aktualizacje oprogramowania zostały wprowadzone następujące udoskonalenia:  
 
 -   Nową zmienną sekwencji zadań, SMSTSSoftwareUpdateScanTimeout, jest dostępna daje możliwość kontrolowania limitu czasu na skanowanie aktualizacji oprogramowania podczas kroku sekwencji zadań instalacji oprogramowania aktualizacji. Wartość domyślna to 30 minut.  
 
 -   Zostały ulepszenia rejestrowania. Plik dziennika smsts.log będzie zawierać nowych wpisów dziennika, które odwołują się do innych plików dziennika, które ułatwią rozwiązywanie problemów podczas procesu instalacji aktualizacji oprogramowania.  
 
-##  <a name="BKMK_PrepareConfigMgrClient"></a>Ulepszenia, aby przygotować klienta programu ConfigMgr dla kroku sekwencji zadań przechwytywania  
+##  <a name="BKMK_PrepareConfigMgrClient"></a> Ulepszenia, aby przygotować klienta programu ConfigMgr dla kroku sekwencji zadań przechwytywania  
  Przygotuj klienta programu ConfigMgr krok teraz spowoduje całkowite usunięcie klienta programu Configuration Manager, a nie tylko usunięcie informacji o kluczu. Jeśli sekwencja zadań wdrażania przechwyconego obrazu systemu operacyjnego zainstaluje nowy klient programu Configuration Manager zawsze.  
 
-##  <a name="BKMK_Grace"></a>Okres prolongaty dla wymaganych wdrożeń aplikacji  
+##  <a name="BKMK_Grace"></a> Okres prolongaty dla wymaganych wdrożeń aplikacji  
  W niektórych przypadkach może być zapewniają użytkownikom więcej czasu w celu zainstalowania wymaganych wdrożeń aplikacji poza wszystkie terminy, które zostały skonfigurowane. Na przykład jeśli użytkownik końcowy zwrócił się tylko z urlopu, ich może być konieczne Zaczekaj, aż do postaci długiej jako zaległe aplikacji są zainstalowane wdrożeń. Jednak nadal natychmiast mogą zainstalować aplikację w dowolnym momencie, które mają.  
 
  Aby rozwiązać ten problem, można zdefiniować **okres prolongaty** przez wdrożenie ustawienia klienta programu Configuration Manager do kolekcji.  
@@ -71,7 +66,7 @@ W tym artykule przedstawiono funkcje, które są dostępne w wersji Technical Pr
 
  Podobne opcje zostały dodane do Kreatora wdrażania aktualizacji oprogramowania, Kreator reguł wdrażania automatycznego i strony właściwości. Jednak te nie są obecnie implementowane w tej wersji technical preview.  
 
-##  <a name="BKMK_Remote"></a>Nowe środowisko dla akcji urządzeniu zdalnym  
+##  <a name="BKMK_Remote"></a> Nowe środowisko dla akcji urządzeniu zdalnym  
  Udoskonalono obsługę wykonywania akcji urządzenia zdalnego z konsoli programu Configuration Manager.  
 Typowe akcje, takie jak **Wycofaj/wyczyść**, **resetowania kodu dostępu**, **zdalne blokowanie**, i **obejścia blokady aktywacji** można znaleźć w **akcje urządzeń zdalnych** menu użytkowcy **zasoby i zgodność** obszaru roboczego.  
 
@@ -87,7 +82,7 @@ Typowe akcje, takie jak **Wycofaj/wyczyść**, **resetowania kodu dostępu**, **
 
  Aby uzyskać więcej informacji na temat obejścia blokady aktywacji systemu iOS, zobacz [Łatwiejsza ochrona urządzeń z blokady aktywacji obejścia dla programu Configuration Manager dla systemu iOS](/sccm/mdm/deploy-use/manage-ios-activation-lock), w szczególności **obejście obecnie znane problemy z blokady aktywacji w programu Configuration Manager Technical Preview** sekcji.  
 
-##  <a name="BKMK_WSFB"></a>Sklep Windows dla aplikacji biznesowych  
+##  <a name="BKMK_WSFB"></a> Sklep Windows dla aplikacji biznesowych  
  [Sklep Windows dla firm](https://www.microsoft.com/business-store) jest, gdzie można znaleźć i zakupić aplikacje dla Twojej organizacji, pojedynczo lub zbiorczo. Łącząc Sklep do programu Configuration Manager, można zarządzać aplikacjami zakupionymi zbiorczo z poziomu konsoli programu Configuration Manager, na przykład:  
 
 -   Możesz zsynchronizować listę zakupionych aplikacji z programu Configuration Manager  
@@ -102,7 +97,7 @@ Typowe akcje, takie jak **Wycofaj/wyczyść**, **resetowania kodu dostępu**, **
 
 1.  W usłudze Azure Active Directory należy zarejestrować programu Configuration Manager jako narzędzie do zarządzania "API sieci Web i/lub aplikacji sieci Web". Otrzymasz identyfikator klienta, który będzie potrzebny później.  
 
-    1.  W węźle usługi Active Directory [https://manage.windowsazure.com](https://manage.windowsazure.com), wybierz w usłudze Azure Active Directory, a następnie kliknij przycisk **aplikacji** > **Dodaj**.  
+    1.  W węźle usługi Active Directory [ https://manage.windowsazure.com ](https://manage.windowsazure.com), wybierz w usłudze Azure Active Directory, a następnie kliknij przycisk **aplikacji** > **Dodaj**.  
 
     2.  Kliknij przycisk **Dodaj aplikację moją organizację**.  
 
@@ -120,7 +115,7 @@ Typowe akcje, takie jak **Wycofaj/wyczyść**, **resetowania kodu dostępu**, **
 
 3.  W Sklepie Windows dla firm należy skonfigurować programu Configuration Manager jako narzędzie do zarządzania magazynami.  
 
-    1.  Otwórz [https://businessstore.microsoft.com/en-us/managementtools](https://businessstore.microsoft.com/managementtools) i zaloguj się w przypadku wyświetlenia monitu.  
+    1.  Otwórz [ https://businessstore.microsoft.com/en-us/managementtools ](https://businessstore.microsoft.com/managementtools) i zaloguj się w przypadku wyświetlenia monitu.  
 
     2.  Zaakceptuj warunki użytkowania, jeśli jest to wymagane.  
 
@@ -158,7 +153,7 @@ Typowe akcje, takie jak **Wycofaj/wyczyść**, **resetowania kodu dostępu**, **
 >   
 >  Obecnie nie można wdrożyć aplikacji licencjonowanych online z programem Configuration Manager.  
 
-##  <a name="BKMK_VPP2"></a>Ogólne poprawki dotyczące aplikacje nabyte zbiorczo  
+##  <a name="BKMK_VPP2"></a> Ogólne poprawki dotyczące aplikacje nabyte zbiorczo  
 
 -   W tej wersji, aplikacjami zakupionymi zbiorczo w Sklepie Windows dla firm i aplikacji dla systemu iOS magazynu zostały skonsolidowane do tego samego widoku **informacji o licencji dla aplikacji do przechowywania**.  
 
@@ -170,14 +165,14 @@ Typowe akcje, takie jak **Wycofaj/wyczyść**, **resetowania kodu dostępu**, **
 
 -   Lokalizacja, używaną do pobrania i przekaż token VPP firmy Apple dla aplikacjami zakupionymi zbiorczo w konsoli programu Configuration Manager została zmieniona. Teraz można to zrobić w **Admin** obszarze roboczym **usługi w chmurze** > **tokenów Program zakupu woluminu Apple** węzła.  
 
-##  <a name="BKMK_VPP"></a>Ochrona danych przedsiębiorstwa (EDP)  
+##  <a name="BKMK_VPP"></a> Ochrona danych przedsiębiorstwa (EDP)  
  Możesz utworzyć elementy konfiguracji, które pozwalają na wdrożenie zasad ochrony (EDP) danych przedsiębiorstwa, tym, co pozwala wybrać chronionych aplikacji, poziom ochrony EDP i jak znaleźć dane organizacji w sieci. Aby uzyskać więcej informacji na temat ochrony danych przedsiębiorstwa zobacz następujące tematy:  
 
 -   [Chroń dane przedsiębiorstwa przy użyciu ochrony danych przedsiębiorstwa (EDP)](https://technet.microsoft.com/itpro/windows/keep-secure/protect-enterprise-data-using-edp)  
 
 -   [Tworzenie i wdrażanie zasad ochrony (EDP) dane przedsiębiorstwa przy użyciu programu System Center Configuration Manager](https://technet.microsoft.com/itpro/windows/keep-secure/create-edp-policy-using-sccm)  
 
-##  <a name="BKMK_End"></a>Użytkownicy końcowi mogą instalować aplikacje z portalu firmy  
+##  <a name="BKMK_End"></a> Użytkownicy końcowi mogą instalować aplikacje z portalu firmy  
  Lokalna Usługa zarządzania urządzeniami Przenośnymi została wprowadzona w System Center Configuration Manager w wersji 1511. W poprzednich wersjach, można wdrażać aplikacji dla urządzeń zarządzanych MDM systemu Windows 10 z celem wdrożenia **wymagane** zainstalować dla urządzeń zarządzanych MDM lokalnych.  
 
  W tej wersji, mogą obecnie wdrażać aplikacje z celem wdrożenia **dostępne** dla użytkowników lokalnych MDM zarządzanych komputerów z systemem Windows 10, a użytkownicy mogą teraz instalować te same aplikacje z portalu firmy.
@@ -268,12 +263,12 @@ W tej wersji technical preview Jeśli Portal firmy jest otwarty przez ponad 15 m
 
      Po otwarciu portalu firmy, zobaczą okno dialogowe uwierzytelniania o nazwie **System Center Configuration Manager** Określ poświadczenia użytkownika usługi Active Directory (albo w formie user@domain lub domena\użytkownik) do logowania.  
 
-##  <a name="BKMK_SW1"></a>Nowe karty aktualizacji i systemów operacyjnych w programie Software Center  
+##  <a name="BKMK_SW1"></a> Nowe karty aktualizacji i systemów operacyjnych w programie Software Center  
  W tej wersji wprowadzono następujące zmiany zwiększające układ aplikacji programu Software Center:  
 
 -   **Aplikacji** kartę podzielone na trzy oddzielne karty **aktualizacje**, **systemów operacyjnych** (który zarówno wcześniej znaleziono w **filtry** listy), i **aplikacji**.  
 
-##  <a name="BKMK_ServerGroups"></a>Usługa grupy serwerów  
+##  <a name="BKMK_ServerGroups"></a> Usługa grupy serwerów  
  Technical Preview programu System Center Configuration Manager, w wersji 1511, uwzględnione możliwość tworzenia kolekcji, w której wszystkie urządzenia w kolekcji tworzą grupę serwerów. Następnie można skonfigurować ustawienia grupy serwerów do użycia podczas wdrażania aktualizacji oprogramowania do grupy serwerów, kontroli procent komputerów, które zostały zaktualizowane w dowolnej chwili, i skonfigurować przed wdrożeniem i po wdrożeniu skrypty programu PowerShell do uruchamiania działań niestandardowych.  
 
  Technical Preview programu System Center Configuration Manager, wersja 1605, dodaje możliwość aktualizowania komputerów w grupie serwerów w określonej kolejności definiowanie, dodaje monitorowaniu do wyświetlenia stanu dla komputerów w grupie serwerów i zapewnia możliwość to wyczyszczenie blokad wdrożenia, który jest przydatne w przypadku klientów nie można zainstalować aktualizacji oprogramowania i uniemożliwiają innym klientom zainstalowanie ich aktualizacji oprogramowania.  
@@ -340,7 +335,7 @@ W tej wersji technical preview Jeśli Portal firmy jest otwarty przez ponad 15 m
 
 2.  Na **Home** karcie **wdrożenia** kliknij przycisk **wyczyść blokady wdrożenia grupy serwera**. Gdy klienci nie można zainstalować aktualizacji oprogramowania i uniemożliwiają innym klientom zainstalowanie ich aktualizacji oprogramowania, blokad wdrożenia można ręcznie wyczyścić.  
 
-##  <a name="BKMK_ATP"></a>Obsługa usługi Windows Defender Advanced Threat Protection  
+##  <a name="BKMK_ATP"></a> Obsługa usługi Windows Defender Advanced Threat Protection  
  Windows Defender Advanced Threat Protection (ATP) to nowa usługa, która pomaga firmom wykrywania, badanie i odpowiadać na zaawansowanych ataków w swoich sieciach. Dowiedz się więcej o [Windows Defender ATP](https://blogs.windows.com/windowsexperience/2016/03/01/announcing-windows-defender-advanced-threat-protection). Configuration Manager może pomóc dołączyć i monitorowanie zarządzanych urządzeń klienckich z systemem Windows 10 Anniversary Edition.  
 
 ### <a name="try-it-now"></a>Wypróbuj teraz!  
@@ -407,7 +402,7 @@ W tej wersji technical preview Jeśli Portal firmy jest otwarty przez ponad 15 m
 
         -   **Nie został załadowany** — zasady zostały zastosowane, ale agent nie zgłosił dołączyć zasad  
 
-##  <a name="BKMK_DHA"></a>Zaświadczanie o kondycji urządzenia lokalnego  
+##  <a name="BKMK_DHA"></a> Zaświadczanie o kondycji urządzenia lokalnego  
  Zaświadczanie o kondycji dla urządzeń z systemem Windows 10 można teraz skonfigurować do komunikacji za pomocą infrastruktury lokalnej. Administratorzy mogą określić, czy raportowania odbywa się za pośrednictwem chmury lub zasobów lokalnych. Jeśli lokalne jest wybrana na potrzeby raportowania zaświadczania o kondycji, adres URL można określić dla usługi. Dzięki temu komputery klienckie bez dostępu do Internetu włączyć i zarządzać urządzeniami przy użyciu zaświadczania o kondycji.  
 
 ### <a name="enable-health-attestation-for-on-premises-devices"></a>Włączanie zaświadczania o kondycji urządzeń lokalnych  
@@ -417,10 +412,10 @@ W tej wersji technical preview Jeśli Portal firmy jest otwarty przez ponad 15 m
 
 2.  Określ adres w polu **Adres URL lokalnej usługi zaświadczania o kondycji**, a następnie kliknij przycisk **OK**.  
 
-##  <a name="BKMK_RestartOptions"></a>Nowe opcje dla klientów systemu Windows 10 ponownego uruchamiania po zainstalowaniu aktualizacji oprogramowania  
+##  <a name="BKMK_RestartOptions"></a> Nowe opcje dla klientów systemu Windows 10 ponownego uruchamiania po zainstalowaniu aktualizacji oprogramowania  
  Gdy aktualizacja oprogramowania wymaga ponowne uruchomienie jest wdrażany przy użyciu programu Configuration Manager i zainstalowany na komputerze, oczekuje na ponowne uruchomienie zostało zaplanowane i zostanie wyświetlone okno dialogowe ponownego uruchomienia. Obecnie dla systemu Windows 8 lub nowszym, jeśli zamknięcie lub ponowne uruchomienie komputera przy użyciu opcji zasilania systemu Windows (a nie z okna dialogowego ponownego uruchomienia), pozostaje okno dialogowe ponownego uruchomienia po ponownym uruchomieniu komputera, a komputer wymaga ponownego uruchomienia po osiągnięciu terminu. W tej wersji technical preview, opcja **zaktualizować i ponownie uruchom** i **aktualizacji i zamykania** będą dostępne na komputerach z systemem Windows 10 w opcji zasilania systemu Windows, gdy istnieje oczekujące ponowne uruchomienie komputera dla aktualizacji oprogramowania programu Configuration Manager. W przypadku skorzystania z dowolnej z tych opcji okno dialogowe ponownego uruchamiania nie zostanie wyświetlone po ponownym uruchomieniu komputera.  
 
-##  <a name="BKMK_IMEI"></a>Wstępnie Zadeklaruj urządzenia należące do firmy z numerami IMEI lub iOS  
+##  <a name="BKMK_IMEI"></a> Wstępnie Zadeklaruj urządzenia należące do firmy z numerami IMEI lub iOS  
  Teraz możesz zidentyfikować urządzenia należące do firmy przez zaimportowanie ich stacji międzynarodowe numery identyfikujące (IMEI) urządzenia przenośne. Możesz przekazać plik wartości rozdzielanych przecinkami (.csv) zawierający numery IMEI lub możesz ręcznie wprowadzić informacje o urządzeniu.  Można również zaimportować numerów seryjnych urządzeń z systemem iOS.  Zaimportowane informacje ustawią własność rejestrowanych jako "Firmowe" urządzeń.  Licencji usługi Intune są nadal wymagane dla każdego użytkownika uzyskującego dostęp do usługi.  
 
 ### <a name="try-it-out"></a>Wypróbuj  
@@ -444,10 +439,10 @@ W tej wersji technical preview Jeśli Portal firmy jest otwarty przez ponad 15 m
 
 3.  W przypadku przekazanych plików wyszukać plik CSV zawierający informacje do wstępnie Zadeklaruj urządzenia należące do firmy. Nazwa pliku musi mieć następujący format, z wyłączeniem górnym wierszu (udostępnione tylko do celów informacyjnych):  
 
-    |**IMEI #**|**Seryjny systemu iOS**|**SYSTEM OPERACYJNY**|**Szczegóły**|
+    |**IMEI #**|**Seryjny systemu iOS**|**OS**|**Szczegóły**|
     |---|---|---|---|
     |123456789012345||SYSTEMU WINDOWS|Należące do firmy urządzenia z systemem Windows|
-    |123456789012|A0BCD0EFGH0J|DLA SYSTEMU IOS|Urządzenia z systemem iOS należące do firmy|
+    |123456789012|A0BCD0EFGH0J|IOS|Urządzenia z systemem iOS należące do firmy|
     |123456789012346||ANDROID|Należące do firmy urządzenia z systemem Android|
 
      **Kolumny:**  

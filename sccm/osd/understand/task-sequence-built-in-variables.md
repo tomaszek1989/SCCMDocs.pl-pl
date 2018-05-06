@@ -2,26 +2,19 @@
 title: Wbudowane zmienne sekwencji zadań
 titleSuffix: Configuration Manager
 description: Wbudowane zmienne sekwencji zadań zawierają informacje o środowisku, w którym sekwencja zadań uruchamia i są dostępne w całej sekwencji zadań.
-ms.custom: na
 ms.date: 04/18/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-osd
+ms.topic: conceptual
 ms.assetid: 02bc6bd4-ca53-4e22-8b80-d8ee5fe72567
-caps.latest.revision: 15
-caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fe26982195e7cae639cc457dbba31e3dbd45b6d3
-ms.sourcegitcommit: e23350fe65ff99228274e465b24b5e163769f38f
+ms.openlocfilehash: d3ea1b35c5f220155cecafddaf3a2ff1acf5ed53
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="task-sequence-built-in-variables-in-system-center-configuration-manager"></a>Wbudowane zmienne sekwencji zadań w programie System Center Configuration Manager
 
@@ -78,7 +71,7 @@ ms.lasthandoff: 04/20/2018
 |SMSTSDriverReceiveTimeOut|Upłynął limit czasu liczba sekund przed połączenia z serwerem.|
 |SMSTSErrorDialogTimeout|Po wystąpieniu błędu w sekwencji zadań, wyświetla okno dialogowe z powodu błędu. Sekwencja zadań automatycznie odrzuci go po upływie liczby sekund określonej przez tę zmienną. Domyślnie ta wartość jest **900** sekundach (15 minut).|  
 | TSDisableProgressUI | <!-- 1354291 --> Począwszy od 1706 wersji programu Configuration Manager, użyj tej zmiennej do formantu, gdy sekwencja zadań wyświetla postęp dla użytkowników końcowych. Ukryj lub Wyświetl postęp w różnym czasie, ustawić tę zmienną wiele razy w sekwencji zadań. Aby ukryć postęp sekwencji zadań, należy ustawić wartość tej zmiennej do **True**. Aby wyświetlić postęp sekwencji zadań, należy ustawić wartość tej zmiennej do **False**. | 
-| SMSTSDisableStatusRetry | <!--512358--> W scenariuszach bez połączenia aparat sekwencji zadań wielokrotnie próbuje wysłać komunikaty o stanie do punktu zarządzania. To zachowanie, w tym scenariuszu powoduje opóźnienia w przetwarzaniu sekwencji zadań. Począwszy od wersji programu Configuration Manager w wersji 1802, ustaw wartość tej zmiennej **True** i aparat sekwencji zadań nie próbuje ponownie wysłać komunikatów o stanie po pierwszym niepowodzeniu. To zachowanie ważny dopiero po ponownym lub ma ustawioną wartość tej zmiennej **False**. Uwaga: [raportowania stanu sekwencji zadań](/sccm/core/servers/manage/list-of-reports#task-sequence---deployment-status) opiera się na te komunikaty o stanie można wyświetlić postęp, Historia i szczegóły każdego kroku. | 
+| SMSTSDisableStatusRetry | <!--512358--> W scenariuszach bez połączenia aparat sekwencji zadań wielokrotnie próbuje wysłać komunikaty o stanie do punktu zarządzania. To zachowanie, w tym scenariuszu powoduje opóźnienia w przetwarzaniu sekwencji zadań. Począwszy od wersji programu Configuration Manager w wersji 1802, ustaw wartość tej zmiennej **True** i aparat sekwencji zadań nie próbuje wysyłać komunikaty o stanie po niepowodzeniu pierwszego komunikatu do wysłania. To pierwsza próba obejmuje wiele ponownych prób.<br/><br/>Po ponownym uruchomieniu sekwencja zadań będzie nadal występował wartość tej zmiennej. Jednak sekwencja zadań będzie próbował, wysyłania komunikatu stanu początkowego. To pierwsza próba obejmuje wiele ponownych prób. W przypadku powodzenia przerywać sekwencji zadań, stan, niezależnie od wartości tej zmiennej wysyłania. Jeśli stan nie może wysłać, sekwencja zadań używa wartość tej zmiennej.<br/><br/>Uwaga: [raportowania stanu sekwencji zadań](/sccm/core/servers/manage/list-of-reports#task-sequence---deployment-status) opiera się na te komunikaty o stanie można wyświetlić postęp, Historia i szczegóły każdego kroku. | 
 |SMSTSLanguageFolder|ta zmienna umożliwia zmianę języka wyświetlania obrazu rozruchowego niezależnego od języka.|  
 |SMSTSLocalDataDrive|Określa, gdzie są przechowywane tymczasowe pliki na komputerze docelowym, gdy jest uruchomiona sekwencja zadań.<br /><br /> Ta zmienna musi zostać ustawiona przed uruchomieniem sekwencji zadań, na przykład przez ustawienie zmiennej kolekcji. Po uruchomieniu sekwencji zadań program Configuration Manager definiuje zmienną _SMSTSMDataPath, po uruchomieniu sekwencji zadań.|  
 |SMSTSMP|Ta zmienna umożliwia określenie adresu URL lub adres IP punktu zarządzania Configuration Manager.|  

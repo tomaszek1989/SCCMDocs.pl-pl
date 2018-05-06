@@ -1,26 +1,20 @@
 ---
-title: "Bezpieczeństwo i ochrona prywatności przy wdrażaniu systemów operacyjnych"
+title: Bezpieczeństwo i ochrona prywatności przy wdrażaniu systemów operacyjnych
 titleSuffix: Configuration Manager
-description: "Dowiedz się więcej o zabezpieczeniach i prywatności najlepsze rozwiązania dotyczące wdrażania systemu operacyjnego w programie System Center Configuration Manager."
-ms.custom: na
+description: Dowiedz się więcej o zabezpieczeniach i prywatności najlepsze rozwiązania dotyczące wdrażania systemu operacyjnego w programie System Center Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 5ee5928f-3d72-4b00-8156-1e0d1030a96c
-caps.latest.revision: "6"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 0cf0213b83f6bbaf0aabff24b16162dbe215bcf1
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 4ec1457fafabe2e40106ec76310d9ff64b2aa267
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="security-and-privacy-for-operating-system-deployment-in-system-center-configuration-manager"></a>Bezpieczeństwo i ochrona prywatności przy wdrażaniu systemów operacyjnych w programie System Center Configuration Manager
 
@@ -28,7 +22,7 @@ ms.lasthandoff: 12/12/2017
 
 Ten temat zawiera bezpieczeństwa i informacje o ochronie prywatności dotyczące wdrażania systemu operacyjnego w programie System Center Configuration Manager.  
 
-##  <a name="BKMK_Security_HardwareInventory"></a>Najlepsze rozwiązania dotyczące wdrażania systemu operacyjnego  
+##  <a name="BKMK_Security_HardwareInventory"></a> Najlepsze rozwiązania dotyczące wdrażania systemu operacyjnego  
  Podczas wdrażania systemów operacyjnych w programie Configuration Manager, należy użyć poniższe najlepsze rozwiązania:  
 
 -   **Wdrożenie kontroli dostępu w celu ochrony nośnika rozruchowego**  
@@ -193,7 +187,7 @@ Ten temat zawiera bezpieczeństwa i informacje o ochronie prywatności dotycząc
 
      Mimo że zmienne kolekcji oferują elastyczną metodą wdrażania systemów operacyjnych, może to skutkować ujawnieniem informacji.  
 
-##  <a name="BKMK_Privacy_HardwareInventory"></a>Informacje o ochronie prywatności dotyczące wdrażania systemu operacyjnego  
+##  <a name="BKMK_Privacy_HardwareInventory"></a> Informacje o ochronie prywatności dotyczące wdrażania systemu operacyjnego  
  Oprócz wdrażania systemów operacyjnych na komputerach bez systemu operacyjnego, programu Configuration Manager może służyć do migracji ustawień i plików użytkowników z jednego komputera na inny. Administrator konfiguruje, które informacje mają być przesłane, takie jak pliki danych osobistych, ustawienia konfiguracyjne i pliki cookie przeglądarki.  
 
  Informacje są przechowywane w punkcie migracji stanu i szyfrowane podczas transmisji i przechowywania. Informacje mogą być pobierane przez nowy komputer skojarzony z informacjami o stanie. Jeśli nowy komputer straci klucz pozwalający pobierać informacje, administrator programu Configuration Manager z uprawnieniem Wyświetl informacje odzyskiwania względem obiektów wystąpienia skojarzenia komputera może uzyskać dostęp do informacji i skojarzyć je z nowym komputerem. Gdy nowy komputer przywróci informacje o stanie, domyślnie usunie je po jednym dniu. Można skonfigurować, kiedy punkt migracji stanu usuwa dane oznaczone do usunięcia. Informacje o migracji stanu nie są przechowywane w bazie danych lokacji ani nie są wysyłane do firmy Microsoft.  

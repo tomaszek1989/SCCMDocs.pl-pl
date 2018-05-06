@@ -1,25 +1,20 @@
 ---
-title: "Definicje złośliwego oprogramowania program Endpoint Protection"
+title: Definicje złośliwego oprogramowania program Endpoint Protection
 titleSuffix: Configuration Manager
-description: "Dowiedz się skonfigurować aktualizacje oprogramowania Configuration Manager w celu dostarczenia aktualizacji do komputerów klienckich."
-ms.custom: na
+description: Dowiedz się skonfigurować aktualizacje oprogramowania Configuration Manager w celu dostarczenia aktualizacji do komputerów klienckich.
 ms.date: 10/06/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: 3b9c4027-a98b-406b-935c-ccabcfe713df
-caps.latest.revision: "21"
-author: NathBarn
-ms.author: nathbarn
-manager: angrobe
-ms.openlocfilehash: cf488babe28267c2438e03fa94c514c872f960c7
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 414231d2cd07e583196b6b1abdd6530c3d49681a
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 #  <a name="using-configuration-manager-software-updates-to-deliver-definition-updates"></a>Przy użyciu aktualizacji oprogramowania programu Configuration Manager w celu dostarczenia aktualizacji
 

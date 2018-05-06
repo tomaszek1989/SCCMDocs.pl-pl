@@ -1,26 +1,20 @@
 ---
-title: "Ochrona danych za pomocą zdalnego czyszczenia danych, blokowanie lub resetowania kodu dostępu"
+title: Ochrona danych za pomocą zdalnego czyszczenia danych, blokowanie lub resetowania kodu dostępu
 titleSuffix: Configuration Manager
-description: "Ochrona danych urządzenia za pomocą pełnego czyszczenia danych, selektywnego czyszczenia danych, zdalnego blokowania lub resetowania kodu dostępu przy użyciu programu System Center Configuration Manager."
-ms.custom: na
+description: Ochrona danych urządzenia za pomocą pełnego czyszczenia danych, selektywnego czyszczenia danych, zdalnego blokowania lub resetowania kodu dostępu przy użyciu programu System Center Configuration Manager.
 ms.date: 10/27/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 770da7bd-02dd-474a-9604-93ff1ea0c1e4
-caps.latest.revision: "18"
-caps.handback.revision: "0"
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: e8121480f3a9d61ba0a04667407a305119d80e12
-ms.sourcegitcommit: ba23ff90709a5fde1a63c650ab0d848f441afc43
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 670667c21e85d7e5c174c051b6adbdca3eba55a8
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="protect-data-with-remote-wipe-lock-or-passcode-reset-by-using-system-center-configuration-manager"></a>Ochrona danych za pomocą czyszczenia danych, blokowania lub resetowania za pomocą programu System Center Configuration Manager kodu dostępu
 
@@ -174,7 +168,7 @@ Jeśli użytkownik zapomni swój kod dostępu, możesz mu pomóc przez usunięci
 | Platforma                              | Resetowanie kodu dostępu                                                                               |
 |---------------------------------------|----------------------------------------------------------------------------------------------|
 | iOS                                   | Obsługiwane czyszczenie kodu dostępu z urządzenia. Nie powoduje utworzenia nowego hasła tymczasowego. |
-| System macOS                                 | Nieobsługiwane.                                                                               |
+| macOS                                 | Nieobsługiwane.                                                                               |
 | Android                               | Obsługiwane w wersjach wcześniejszych niż Android 7.0. Utworzenie tymczasowego kodu dostępu.                |
 | Android for Work                      | Nieobsługiwane.                                                                               |
 | Komputery z systemem Windows 10                        | Nieobsługiwane.                                                                               |

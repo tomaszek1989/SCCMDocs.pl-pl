@@ -1,27 +1,20 @@
 ---
-title: "Przygotowywanie serwerów z systemem Windows"
+title: Przygotowywanie serwerów z systemem Windows
 titleSuffix: Configuration Manager
-description: "Upewnij się, że komputer spełnia wymagania wstępne dotyczące serwera lokacji lub serwer systemu lokacji dla programu System Center Configuration Manager."
-ms.custom: na
+description: Upewnij się, że komputer spełnia wymagania wstępne dotyczące serwera lokacji lub serwer systemu lokacji dla programu System Center Configuration Manager.
 ms.date: 2/14/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 2aca914f-641e-4bc8-98d4-bbf0a2a5276f
-caps.latest.revision: 
-caps.handback.revision: 
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: a55322868d45cf1d2b3004e21d641ca5299aa957
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 64b24d04769da7488eb7fefaa293444fbc851cfb
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="prepare-windows-servers-to-support-system-center-configuration-manager"></a>Przygotowywanie serwerów z systemem Windows do obsługi programu System Center Configuration Manager
 
@@ -35,7 +28,7 @@ Przed użyciem komputerem z systemem Windows jako serwera systemu lokacji dla pr
 
 Informacje przedstawione w tym artykule omówiono typy konfiguracji systemu Windows, które są wymagane do obsługi systemów lokacji programu Configuration Manager. Szczegółowe informacje dotyczące konfiguracji dla określonych ról systemu lokacji, zobacz [lokacji i wymagania wstępne systemu lokacji](/sccm/core/plan-design/configs/site-and-site-system-prerequisites).
 
-##  <a name="BKMK_WinFeatures"></a>Role i funkcje systemu Windows  
+##  <a name="BKMK_WinFeatures"></a> Role i funkcje systemu Windows  
  Po skonfigurowaniu funkcji systemu Windows i role na komputerze, może być konieczne ponowne uruchomienie komputera w celu ukończenia konfiguracji. W związku z tym jest dobrym rozwiązaniem, aby zidentyfikować komputery, które będą obsługiwać określonych ról systemu lokacji, przed zainstalowaniem lokacji programu Configuration Manager lub serwera systemu lokacji.
 ### <a name="features"></a>Funkcje  
  Następujące funkcje systemu Windows są wymagane przez niektóre serwery systemu lokacji i należy ją skonfigurować przed zainstalowaniem roli systemu lokacji na tym komputerze.  
@@ -90,7 +83,7 @@ Informacje przedstawione w tym artykule omówiono typy konfiguracji systemu Wind
     -   Rezerwowy punkt stanu  
     -   Punkt zarządzania  
     -   Punkt aktualizacji oprogramowania  
-    -   Punkt migracji stanu     
+    -   punkt migracji stanu     
 
     Minimalna wymagana wersja usług IIS to wersja dostarczana z systemem operacyjnym serwera lokacji.  
 
@@ -99,7 +92,7 @@ Informacje przedstawione w tym artykule omówiono typy konfiguracji systemu Wind
 -   **Usługi wdrażania systemu Windows**: Ta rola jest używana z wdrożeniem systemu operacyjnego.  
 -   **Windows Server Update Services**: Ta rola jest wymagana przy wdrażaniu aktualizacji oprogramowania.  
 
-##  <a name="BKMK_IISFiltering"></a>Filtrowanie żądań usług IIS dla punktów dystrybucji  
+##  <a name="BKMK_IISFiltering"></a> Filtrowanie żądań usług IIS dla punktów dystrybucji  
  Domyślnie usługi IIS używają Filtrowanie żądań do blokowania kilka rozszerzeń nazw plików i lokalizacji folderów dostępu przez komunikację HTTP lub HTTPS. W punkcie dystrybucji uniemożliwia to klientom pobieranie pakietów, które zostały zablokowane rozszerzenia lub lokalizacje folderów.  
 
  Gdy pliki źródłowe pakietu mają rozszerzenia blokowane przez konfigurację filtrowania żądań w usługach IIS, należy skonfigurować filtrowanie żądań umożliwia im. Można to zrobić przez [edytowanie funkcji filtrowania żądań](https://technet.microsoft.com/library/hh831621.aspx) w menedżerze usług IIS na komputerach punktów dystrybucji.  

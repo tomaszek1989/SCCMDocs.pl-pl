@@ -1,26 +1,20 @@
 ---
-title: "Tworzenie elementów konfiguracji dla zarządzanych przez klienta systemu Windows 10 "
+title: 'Tworzenie elementów konfiguracji dla zarządzanych przez klienta systemu Windows 10 '
 titleSuffix: Configuration Manager
-description: "Aby zarządzać ustawieniami komputerów z systemem Windows 10, które są zarządzane przez klienta programu Configuration Manager, należy użyć elementu konfiguracji System Center Configuration Manager systemu Windows 10."
-ms.custom: na
+description: Aby zarządzać ustawieniami komputerów z systemem Windows 10, które są zarządzane przez klienta programu Configuration Manager, należy użyć elementu konfiguracji System Center Configuration Manager systemu Windows 10.
 ms.date: 03/28/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-compliance
+ms.topic: conceptual
 ms.assetid: 14226fbe-dd07-4432-910b-130790624a4e
-caps.latest.revision: "17"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 4f22ab22ec666c55962231bf92a42b25c4a7c127
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: bdb48689efba4c6f884d4c36c1a4dee0bbcc6b65
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-configuration-items-for-windows-10-devices-managed-with-the-system-center-configuration-manager-client"></a>Jak utworzyć elementy konfiguracji dla urządzeń z systemem Windows 10 zarządzanych za pomocą klienta programu System Center Configuration Manager
 Użyj programu System Center Configuration Manager **systemu Windows 10** element konfiguracji do zarządzania ustawieniami komputerów z systemem Windows 10, które są zarządzane przez klienta programu Configuration Manager.  
@@ -28,7 +22,7 @@ Użyj programu System Center Configuration Manager **systemu Windows 10** elemen
 > [!IMPORTANT]  
 >  W tej wersji, jeśli utworzono **hasło** ustawienie jako część elementu konfiguracji typu **systemu Windows 10** (dla urządzeń zarządzanych za pomocą klienta programu Configuration Manager), następnie, jeśli ustawienie jeszcze nie istnieje lub nie został skonfigurowany na urządzeniu z systemem Windows 10, on niepoprawnie oceni jako zgodne.  
 >   
->  Aby obejść ten problem, podczas tworzenia ustawienia dla tych urządzeń upewnij się, że na stronach ustawień Kreatora tworzenia elementu konfiguracji została wybrana opcja **Koryguj niezgodne ustawienia** . Ponadto podczas wdrażania linii bazowej konfiguracji zawierającej element konfiguracji systemu Windows 10 z ustawieniami hasła wybierz opcję **Koryguj niezgodne reguły, jeśli są obsługiwane** w oknie dialogowym wdrażania linii bazowych konfiguracji. Dzięki zastosowaniu tego rozwiązania ustawienie będzie monitorowane i korygowane w przypadku niezgodności. Po skorygowaniu ustawienie będzie prawidłowo raportowane jako **Zgodne** (chyba że pojawi się problem — w takim przypadku zostanie zgłoszona wartość **Błąd**).  
+>  Aby obejść ten problem, podczas tworzenia ustawienia dla tych urządzeń upewnij się, że na stronach ustawień Kreatora tworzenia elementu konfiguracji została wybrana opcja **Koryguj niezgodne ustawienia** . Ponadto podczas wdrażania linii bazowej konfiguracji zawierającej element konfiguracji systemu Windows 10, zawierający ustawienia hasła, wybierz **Koryguj niezgodne reguły, jeśli są obsługiwane** w oknie dialogowym wdrażania linii bazowych konfiguracji . Dzięki zastosowaniu tego rozwiązania ustawienie będzie monitorowane i korygowane w przypadku niezgodności. Po skorygowaniu ustawienie będzie prawidłowo raportowane jako **Zgodne** (chyba że pojawi się problem — w takim przypadku zostanie zgłoszona wartość **Błąd**).  
   
 ### <a name="to-create-a-windows-10-configuration-item"></a>Aby utworzyć element konfiguracji systemu Windows 10  
   

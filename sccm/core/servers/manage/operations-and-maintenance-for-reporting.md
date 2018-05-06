@@ -1,25 +1,20 @@
 ---
-title: "Operacje i Obsługa raportowania "
+title: 'Operacje i Obsługa raportowania '
 titleSuffix: Configuration Manager
-description: "Dowiedz się, szczegółowe informacje o zarządzaniu raportami i subskrypcjami raportów w programie System Center Configuration Manager."
-ms.custom: na
+description: Dowiedz się, szczegółowe informacje o zarządzaniu raportami i subskrypcjami raportów w programie System Center Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: b89bcfbf-f5b6-4fb1-bb5e-a5cc18ec0c78
-caps.latest.revision: "5"
-author: Dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 05a81cdfd46ba2bf0bea17b06bd72f79296b3930
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: fff4150d6b8b4529a6f63989447ee5acb725c92f
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="operations-and-maintenance-for-reporting-in-system-center-configuration-manager"></a>Operacje i Obsługa raportowania w programie System Center Configuration Manager
 
@@ -27,10 +22,10 @@ ms.lasthandoff: 10/12/2017
 
 Po odpowiedniej infrastruktury w celu raportowania w programie System Center Configuration Manager, istnieje wiele operacji wykonywanych zwykle do zarządzania raportami i subskrypcjami raportów.  
 
-##  <a name="BKMK_ManageReports"></a>Zarządzanie raportami programu Configuration Manager  
+##  <a name="BKMK_ManageReports"></a> Zarządzanie raportami programu Configuration Manager  
  Configuration Manager udostępnia ponad 400 wstępnie zdefiniowanych raportów, które ułatwiają gromadzić, organizować i prezentować informacje o użytkownikach, sprzętu i spisu oprogramowania, aktualizacje oprogramowania, aplikacje, stan lokacji i innych operacji programu Configuration Manager w organizacji. Za pomocą wstępnie zdefiniowanych raportów, ponieważ są one lub zmodyfikować raport, zgodnie z wymaganiami. Można również tworzyć niestandardowe modelu\-na podstawie i SQL\-na podstawie raportów zgodnie z wymaganiami. Poniższe sekcje umożliwiają pomocne w zarządzaniu raportami programu Configuration Manager.  
 
-###  <a name="BKMK_RunReport"></a>Uruchamianie raportu programu Configuration Manager  
+###  <a name="BKMK_RunReport"></a> Uruchamianie raportu programu Configuration Manager  
  Raporty w programie Configuration Manager są przechowywane w usługach SQL Server Reporting Services, a dane renderowane w raporcie są pobierane z bazy danych lokacji programu Configuration Manager. Dostępne raporty w konsoli programu Configuration Manager lub za pomocą Menedżera raportów, otwieranego w przeglądarce sieci web. Możesz otworzyć raporty na dowolnym komputerze, który ma dostęp do komputera, na którym działa program SQL Server Reporting Services, a musi mieć wystarczające uprawnienia do wyświetlania raportów. Po uruchomieniu raportu, tytuł, opis i kategoria są wyświetlane w języku lokalnego systemu operacyjnego.  
 
 > [!NOTE]  
@@ -76,7 +71,7 @@ Po odpowiedniej infrastruktury w celu raportowania w programie System Center Con
 
 4.  Gdy są wymagane jakieś parametry, określ parametry, a następnie kliknij przycisk **Wyświetl raport**.  
 
-###  <a name="BKMK_ModifyReportProperties"></a>Modyfikowanie właściwości raportu programu Configuration Manager  
+###  <a name="BKMK_ModifyReportProperties"></a> Modyfikowanie właściwości raportu programu Configuration Manager  
  W konsoli programu Configuration Manager można wyświetlać właściwości raportu, takie jak nazwa i opis, ale aby zmienić właściwości, należy użyć Menedżera raportów. Użyj poniższej procedury można zmodyfikować właściwości raportu programu Configuration Manager.  
 
 #### <a name="to-modify-report-properties-in-report-manager"></a>Aby zmodyfikować właściwości raportu w Menedżerze raportów  
@@ -94,7 +89,7 @@ Po odpowiedniej infrastruktury w celu raportowania w programie System Center Con
 
 5.  Gdy skończysz, kliknij przycisk **Zastosuj**. Właściwości raportu zostają zapisane na serwerze raportów i konsoli programu Configuration Manager pobiera zaktualizowane właściwości raportu.  
 
-###  <a name="BKMK_EditReport"></a>Edytowanie raportu programu Configuration Manager  
+###  <a name="BKMK_EditReport"></a> Edytowanie raportu programu Configuration Manager  
  Jeśli istniejący raport programu Configuration Manager nie pobiera informacje, które muszą mieć albo nie oferuje układu lub struktury, która ma, można edytować raportu w programie Report Builder.  
 
 > [!NOTE]  
@@ -118,7 +113,7 @@ Po odpowiedniej infrastruktury w celu raportowania w programie System Center Con
 
 4.  W programie Report Builder zmodyfikuj odpowiednie ustawienia raportu, a następnie kliknij przycisk **zapisać** Aby zapisać raport na serwerze raportów.  
 
-###  <a name="BKMK_CreateModelBasedReport"></a>Tworzenie modelu\-na podstawie raportu  
+###  <a name="BKMK_CreateModelBasedReport"></a> Tworzenie modelu\-na podstawie raportu  
  Model\-na podstawie raportu pozwala interaktywnie wybierać elementy mają zostać uwzględnione w raporcie. Aby uzyskać więcej informacji o tworzeniu niestandardowych modeli raportów, zobacz [Tworzenie niestandardowych modeli raportów programu System Center Configuration Manager w SQL Server Reporting Services](creating-custom-report-models-in-sql-server-reporting-services.md).  
 
 > [!IMPORTANT]  
@@ -160,7 +155,7 @@ Po odpowiedniej infrastruktury w celu raportowania w programie System Center Con
 
 10. Kliknij przycisk **zapisać** Aby zapisać raport na serwerze raportów. Mogą uruchamiać i modyfikować nowy raport w **raporty** w węźle **monitorowanie** obszaru roboczego.  
 
-###  <a name="BKMK_CreateSQLBasedReport"></a>Utwórz SQL\-na podstawie raportu  
+###  <a name="BKMK_CreateSQLBasedReport"></a> Utwórz SQL\-na podstawie raportu  
  SQL\-na podstawie raportu pozwala pobierać dane oparte na instrukcji SQL raportu.  
 
 > [!IMPORTANT]  
@@ -203,10 +198,10 @@ Po odpowiedniej infrastruktury w celu raportowania w programie System Center Con
 
 9. Kliknij przycisk **zapisać** Aby zapisać raport na serwerze raportów. Nowy raport możesz uruchamiać **raporty** w węźle **monitorowanie** obszaru roboczego.  
 
-##  <a name="BKMK_ManageReportSubscriptions"></a>Zarządzanie subskrypcjami raportów  
+##  <a name="BKMK_ManageReportSubscriptions"></a> Zarządzanie subskrypcjami raportów  
  Subskrypcje raportów w usługach SQL Server Reporting Services pozwalają skonfigurować automatyczne dostarczanie określonych raportów pocztą e-mail lub do udziału plików w zaplanowanych odstępach czasu. Użyj **Kreatora tworzenia subskrypcji** w System Center 2012 Configuration Manager do konfigurowania subskrypcji raportów.  
 
-###  <a name="BKMK_ReportSubscriptionFileShare"></a>Tworzenie subskrypcji raportów w celu dostarczania raportu do udziału plików  
+###  <a name="BKMK_ReportSubscriptionFileShare"></a> Tworzenie subskrypcji raportów w celu dostarczania raportu do udziału plików  
  Podczas tworzenia subskrypcji raportów w celu dostarczania raportu do udziału plików raport jest kopiowany do określonego udziału plików w określonym formacie. Można subskrybować i żądanie dostarczania dla tylko jednego raportu naraz.  
 
  W przeciwieństwie do raportów, które są obsługiwane i zarządzane przez serwer raportów raporty, które są dostarczane do folderu udostępnionego są plikami statycznymi. Są zdefiniowane dla raportu funkcje interaktywne nie działają w przypadku raportów, które są przechowywane jako pliki w systemie plików. Funkcje interakcji są reprezentowane jako elementy statyczne. Jeśli raport zawiera wykresy, jest używany domyślny sposób ich prezentacji. Jeśli raport zawiera łącza do innego raportu, łącze jest renderowane jako tekst statyczny. Jeśli chcesz zachować funkcje interaktywne, aby w dostarczanym raporcie, należy użyć dostarczania poczty e-mail. Aby uzyskać więcej informacji o dostarczaniu pocztą e-mail, zobacz [Tworzenie subskrypcji raportów w celu dostarczenia raportu pocztą e-mail](#BKMK_ReportSubscriptionEmail) później w tym temacie.  
@@ -287,7 +282,7 @@ Po odpowiedniej infrastruktury w celu raportowania w programie System Center Con
 
 8.  Aby zamknąć kreatora, kliknij na stronie **Ukończenie** przycisk **Zamknij** . Sprawdź, czy subskrypcja raportów została utworzona pomyślnie. Można wyświetlać i modyfikować subskrypcji raportów w **subskrypcje** węźle **raportowania** w **monitorowanie** obszaru roboczego.  
 
-###  <a name="BKMK_ReportSubscriptionEmail"></a>Tworzenie subskrypcji raportów w celu dostarczenia raportu pocztą e-mail  
+###  <a name="BKMK_ReportSubscriptionEmail"></a> Tworzenie subskrypcji raportów w celu dostarczenia raportu pocztą e-mail  
  Podczas tworzenia subskrypcji raportów w celu dostarczenia raportu pocztą e-mail zostanie wysłana wiadomość e-mail do odbiorców, które można skonfigurować, a raport jest dołączony jako załącznik. Serwer raportów nie weryfikuje adresów e-mail lub uzyskać adresy e-mail z serwera e-mail. Wcześniej należy znać, których chcesz używać adresów e-mail. Domyślnie poczty e-mail raporty na dowolne prawidłowe konta e-mail wewnątrz lub na zewnątrz organizacji. Możesz wybrać jedną lub obie następujące opcje dostawy poczty e-mail:  
 
 -   Wysłanie powiadomienia i hiperłącza do wygenerowanego raportu.  

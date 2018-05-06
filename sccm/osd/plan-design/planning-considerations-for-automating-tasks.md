@@ -1,26 +1,20 @@
 ---
-title: "Uwagi dotyczące planowania automatyzacji zadań"
+title: Uwagi dotyczące planowania automatyzacji zadań
 titleSuffix: Configuration Manager
-description: "Planowanie przed automatyzacji zadań w programie System Center Configuration Manager."
-ms.custom: na
+description: Planowanie przed automatyzacji zadań w programie System Center Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: fc497a8a-3c54-4529-8403-6f6171a21c64
-caps.latest.revision: "13"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 5d044e7c7869faeb0b3ea24e24ff40674a63920e
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 485f295e83d94ed5282003c7179a5f2c1e37773e
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="planning-considerations-for-automating-tasks-in-system-center-configuration-manager"></a>Zagadnienia związane z planowaniem automatyzacji zadań w programie System Center Configuration Manager
 
@@ -28,7 +22,7 @@ ms.lasthandoff: 12/12/2017
 
 Można tworzyć sekwencje zadań do automatyzacji zadań w środowisku programu System Center Configuration Manager. Są wśród nich zadania tak różnorodne, jak przechwytywanie systemu operacyjnego na komputerze odniesienia czy wdrażanie systemu operacyjnego na jednym lub wielu komputerach docelowych. Działania sekwencji zadań definiuje się w poszczególnych krokach sekwencji. Kiedy sekwencja zadań jest uruchamiana, działania każdego jej kroku są wykonywane na poziomie wiersza polecenia w kontekście systemu lokalnego i nie wymagają interwencji użytkownika. Poniższe sekcje umożliwiają ułatwiające planowanie automatyzacji zadań w programie Configuration Manager.
 
-##  <a name="BKMK_TSStepsActions"></a>Kroki sekwencji zadań i akcji  
+##  <a name="BKMK_TSStepsActions"></a> Kroki sekwencji zadań i akcji  
  Kroki to podstawowe składniki sekwencji zadań. Mogą one zawierać polecenia pozwalające konfigurować i przechwytywać system operacyjny komputera odniesienia lub mogą one zawierać polecenia instalujące system operacyjny, sterowniki, klienta programu Configuration Manager i oprogramowania na komputerze docelowym. Polecenia kroku sekwencji zadań definiuje się w działaniach tego kroku. Istnieją dwa rodzaje działań. Działanie definiowane za pomocą ciągu wiersza polecenia nazywa się akcją niestandardową. Działanie wstępnie zdefiniowane przez program Configuration Manager nazywa się akcją wbudowaną. Sekwencja zadań może wykonywać dowolne kombinacje akcji niestandardowych i wbudowanych.  
 
  Kroki sekwencji zadań mogą również obejmować warunki kontrolujące kroku zachowania, takie jak zatrzymanie sekwencji zadań lub kontynuować sekwencję zadań, jeśli wystąpi błąd. Warunki dodaje się do kroku przez włączenie do niego zmiennej sekwencji zadań. Za pomocą zmiennej **SMSTSLastActionRetCode** możesz na przykład testować warunek poprzedniego kroku. Zmienne można dodawać do pojedynczego kroku lub grupy kroków.  
@@ -212,7 +206,7 @@ Można tworzyć sekwencje zadań do automatyzacji zadań w środowisku programu 
  Sekwencję zadań można wdrożyć na komputerach docelowych, które znajdują się w dowolnej kolekcji programu Configuration Manager. Dotyczy to także kolekcji **Wszystkie nieznane komputery** , która służy do wdrażania systemów operacyjnych na nieznanych komputerach. Sekwencji zadań nie można jednak wdrażać w kolekcjach użytkowników.  
 
 > [!IMPORTANT]  
->  Nie należy wdrażać sekwencji zadań instalujących systemy operacyjne w nieodpowiednich kolekcjach, na przykład w kolekcji **Wszystkie systemy** . Należy upewnić się, że kolekcja, do której nastąpi wdrażanie sekwencji zadań, zawiera tylko te komputery, na których ma zostać zainstalowany system operacyjny. Aby zapobiec niepożądanemu wdrożeniu systemu operacyjnego, można zarządzać ustawieniami wdrażania. Aby uzyskać więcej informacji, zobacz [ustawienia zarządzania wdrożeniami o wysokim ryzyku](../../protect/understand/settings-to-manage-high-risk-deployments.md).  
+>  Nie należy wdrażać sekwencji zadań instalujących systemy operacyjne w nieodpowiednich kolekcjach, na przykład w kolekcji **Wszystkie systemy**. Należy upewnić się, że kolekcja, do której nastąpi wdrażanie sekwencji zadań, zawiera tylko te komputery, na których ma zostać zainstalowany system operacyjny. Aby zapobiec niepożądanemu wdrożeniu systemu operacyjnego, można zarządzać ustawieniami wdrażania. Aby uzyskać więcej informacji, zobacz [ustawienia zarządzania wdrożeniami o wysokim ryzyku](../../protect/understand/settings-to-manage-high-risk-deployments.md).  
 
  Każdy komputer docelowy, który odbiera sekwencję zadań uruchamia sekwencję zadań zgodnie z ustawieniami określonymi we wdrożeniu. Sama sekwencja zadań nie zawiera skojarzonych z nią plików ani programów. Wszelkie pliki, do których odwołuje się sekwencja zadań, muszą już być obecne na komputerze docelowym lub rezydować w punkcie dystrybucji dostępnym dla klientów. Sekwencja zadań instaluje Ponadto pakiety, które odwołują się programy, nawet jeśli program lub pakiet jest już zainstalowana na komputerze docelowym.  
 

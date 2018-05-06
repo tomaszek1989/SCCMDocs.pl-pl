@@ -1,28 +1,23 @@
 ---
-title: "Nowość w wersji 1602"
+title: Nowość w wersji 1602
 titleSuffix: Configuraton Manager
-description: "Uzyskiwanie szczegółowych informacji dotyczących zmian i nowych możliwości wprowadzonych w wersji 1602 programu System Center Configuration Manager."
-ms.custom: na
+description: Uzyskiwanie szczegółowych informacji dotyczących zmian i nowych możliwości wprowadzonych w wersji 1602 programu System Center Configuration Manager.
 ms.date: 12/30/2016
-ms.reviewer: na
-ms.suite: na
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 4021eca1-adfb-4e5a-adee-159263c29637
-caps.latest.revision: "3"
-author: mestew
-ms.author: mstewart
-manager: angrobe
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
 robots: noindex,nofollow
-ms.openlocfilehash: a9d6d0f4dcf2b57c21d54e35fb3f61668d2cbea3
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: cdc8797d436e50c60f17d4c26c802465608bb26a
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="what39s-new-in-version-1602-of-system-center-configuration-manager"></a>Jaki &#39; s nowego w wersji 1602 programu System Center Configuration Manager
+# <a name="what39s-new-in-version-1602-of-system-center-configuration-manager"></a>Co&#39;nowego w wersji 1602 programu System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
@@ -40,7 +35,7 @@ Aktualizacji 1602 dla programu System Center Configuration Manager jest tylko do
 
 ## <a name="site-infrastructure"></a>Infrastruktura lokacji  
 
-###  <a name="bkmk_UpgradeOS"></a>Uaktualnienie w miejscu systemu operacyjnego serwerów lokacji, z systemem Windows Server 2008 R2  
+###  <a name="bkmk_UpgradeOS"></a> Uaktualnienie w miejscu systemu operacyjnego serwerów lokacji, z systemem Windows Server 2008 R2  
  Lokacje programu Configuration Manager, na których jest uruchomiona wersja 1602 lub nowszej obsługują uaktualnienie w miejscu lokacji serwery systemu operacyjnego z systemu Windows Server 2008 R2 do systemu Windows Server 2012 R2.  
 
 > [!WARNING]  
@@ -50,7 +45,7 @@ Aktualizacji 1602 dla programu System Center Configuration Manager jest tylko do
 
  Aby uaktualnić serwer, wykorzystywane procedury uaktualniania systemu Windows Server 2012 R2. Nie trzeba uruchomić przywracania serwera lokacji po uaktualnieniu programu Configuration Manager. Informacje dotyczące procedur uaktualniania można znaleźć w temacie [Opcje uaktualniania do systemu Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx) w dokumentacji systemu Windows Server.  
 
-###  <a name="bkmk_AOAG"></a>Grupy dostępności AlwaysOn programu SQL Server  
+###  <a name="bkmk_AOAG"></a> Grupy dostępności AlwaysOn programu SQL Server  
  Użyj grup dostępności AlwaysOn programu SQL Server do hostowania bazy danych lokacji w lokacjach głównych i centralnej lokacji administracyjnej jako rozwiązania wysokiej dostępności i odzyskiwania po awarii.  
 
  Aby uzyskać więcej informacji, zobacz [AlwaysOn programu SQL Server dla bazy danych lokacji o wysokiej dostępności programu System Center Configuration Manager](../../../core/servers/deploy/configure/sql-server-alwayson-for-a-highly-available-site-database.md).  
@@ -85,17 +80,17 @@ Aktualizacji 1602 dla programu System Center Configuration Manager jest tylko do
 ### <a name="automatic-creation-of-office-mobile-apps"></a>Automatyczne tworzenie aplikacji mobilnych pakietu Office  
  Podczas aktualizacji do wersji 1602 z 1511 programu Configuration Manager automatycznie tworzy następujące aplikacje mobilne Microsoft Office dla systemów Android i iOS:  
 
--   Program Microsoft Word  
+-   Microsoft Word  
 
--   Program Microsoft Excel  
+-   Microsoft Excel  
 
--   Program Microsoft PowerPoint  
+-   Microsoft PowerPoint  
 
 -   Microsoft OneDrive  
 
 -   Microsoft OneNote (tylko iOS)  
 
--   Program Microsoft Outlook  
+-   Microsoft Outlook  
 
 Dostępne są te aplikacje w **aplikacji** węzła konsoli programu Configuration Manager.  
 

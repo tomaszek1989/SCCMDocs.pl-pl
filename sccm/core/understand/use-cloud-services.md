@@ -1,26 +1,20 @@
 ---
-title: "Użyj usługi w chmurze, aby uzupełnić infrastruktury lokalnej"
+title: Użyj usługi w chmurze, aby uzupełnić infrastruktury lokalnej
 titleSuffix: Configuration Manager
-description: "Zainicjuj obsługę zasobów w chmurze programu System Center Configuration Manager uzupełnienie infrastruktury lokalnej."
-ms.custom: na
+description: Zainicjuj obsługę zasobów w chmurze programu System Center Configuration Manager uzupełnienie infrastruktury lokalnej.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: 24fca61e-9cdb-447a-ad7a-f4d2e4fd6704
-caps.latest.revision: "10"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 81f111f0d0061901f5f3b471f02c8035bfcac481
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 07eb6ec88a5f9b9f7985c317813b2ef7dd5534ff
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="use-cloud-services-with-system-center-configuration-manager"></a>Korzystanie z usług w chmurze w programie System Center Configuration Manager
 
@@ -91,7 +85,7 @@ Mimo że usługa Intune używa usługi Azure, nie wymaga niezależnej konfigurac
 
 Te dodatkowe możliwości nie wymagają posiadania subskrypcji platformy Azure. Nie masz konfigurowania określonych połączeń, certyfikatów i usług w chmurze. Zamiast tego zarządza nimi automatycznie przez program Configuration Manager dla Ciebie. Wszystko, co należy zrobić to zapewnić odpowiednie systemy lokacji i urządzenia mają dostęp do internetowych adresów URL.  
 
-##  <a name="BKMK_CloudSec"></a>Zabezpieczenia usług w chmurze  
+##  <a name="BKMK_CloudSec"></a> Zabezpieczenia usług w chmurze  
  Configuration Manager używa certyfikatów do udostępnienia i dostępu do zawartości na platformie Azure oraz do zarządzania usługami, których używasz. Configuration Manager szyfruje dane przechowywane na platformie Azure, ale nie zapewnia dodatkowych zabezpieczeń i kontroli danych poza zapewnianymi przez platformę Azure.  
 
  Aby uzyskać więcej informacji zobacz szczegóły w scenariuszach różnych zasobów chmurowych. Można również znaleźć w poniższych tematach zabezpieczeń platformy Azure:  

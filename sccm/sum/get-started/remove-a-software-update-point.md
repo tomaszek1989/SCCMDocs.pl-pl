@@ -1,22 +1,20 @@
 ---
-title: "Usunięcie punktu aktualizacji oprogramowania"
+title: Usunięcie punktu aktualizacji oprogramowania
 titleSuffix: Configuration Manager
-description: "Wykonaj tę procedurę, aby usunąć rolę systemu lokacji punktu aktualizacji oprogramowania w lokacji z konsoli programu Configuration Manager."
-keywords: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
+description: Wykonaj tę procedurę, aby usunąć rolę systemu lokacji punktu aktualizacji oprogramowania w lokacji z konsoli programu Configuration Manager.
+author: aczechowski
 ms.date: 10/06/2016
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
-ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: 2486375c-d4a2-4cf2-9124-9bee02bbf173
-ms.openlocfilehash: b5493f2572ecca50aba87b8944eeab706c3942fd
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 585077c44b13d79da55e8ab140fd93998b8371c1
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 #  <a name="BKMK_RemoveSUP"></a> Usuwanie roli systemu lokacji punktu aktualizacji oprogramowania  
 

@@ -1,25 +1,20 @@
 ---
-title: "Uaktualnij klientów"
+title: Uaktualnij klientów
 titleSuffix: Configuration Manager
-description: "Pobiera informacje o sposobie uaktualniania klientów w programie System Center Configuration Manager."
-ms.custom: na
+description: Pobiera informacje o sposobie uaktualniania klientów w programie System Center Configuration Manager.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 446c83b5-c292-4e74-ba19-0792ac6b3472
-caps.latest.revision: "8"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 2ca66dd36a5c31f75a5ba12f31d67b35cf52cd65
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 76b6b3e1e3ee8e1cdbfbb61890b5a1f7ac5e853f
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="upgrade-clients-in-system-center-configuration-manager"></a>Uaktualnianie klientów w programie System Center Configuration Manager
 
@@ -31,7 +26,7 @@ Do uaktualnienia oprogramowania klienta programu System Center Configuration Man
 >  Jeśli uaktualniasz infrastrukturę serwera z poprzedniej wersji programu Configuration Manager \(takiej jak Configuration Manager 2007 lub System Center 2012 Configuration Manager\), zaleca się wykonanie uaktualnień serwera, łącznie z zainstalowaniem wszystkich bieżących aktualizacji gałęzi przed uaktualnieniem klientów programu Configuration Manager. W ten sposób również należy najnowszą wersję oprogramowania klienta.  
 
 ## <a name="group-policy-installation"></a>Instalacja zasad grupy  
- **Obsługiwana platforma kliencka:** Systemu Windows  
+ **Obsługiwana platforma kliencka:** Windows  
 
  **Zalety**  
 
@@ -39,7 +34,7 @@ Do uaktualnienia oprogramowania klienta programu System Center Configuration Man
 
 -   Można jej użyć do instalacji nowych klientów lub uaktualnień.  
 
--   Komputery mogą odczytać właściwości instalacji klienta, które zostały opublikowane w usługach domenowych w usłudze Active Directory.  
+-   Komputery mogą odczytać właściwości instalacji klienta, które zostały opublikowane w usługach Active Directory Domain Services.  
 
 -   Nie wymaga konfigurowania i konserwacji konta instalacji dla danego komputera klienckiego.  
 
@@ -51,7 +46,7 @@ Do uaktualnienia oprogramowania klienta programu System Center Configuration Man
 
 
 ## <a name="logon-script-installation"></a>Instalacja skryptu logowania  
- **Obsługiwana platforma kliencka:** Systemu Windows  
+ **Obsługiwana platforma kliencka:** Windows  
 
  **Zalety**  
 
@@ -93,7 +88,7 @@ Do uaktualnienia oprogramowania klienta programu System Center Configuration Man
 -   [Jak uaktualnić klientów na komputerach Mac w programie System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-on-mac-computers.md)  
 
 ## <a name="upgrade-installation-application-management"></a>Instalacja uaktualnienia (zarządzanie aplikacjami)  
- **Obsługiwana platforma kliencka:** Systemu Windows  
+ **Obsługiwana platforma kliencka:** Windows  
 
 > [!NOTE]  
 >  Nie można uaktualnić klientów programu Configuration Manager 2007 przy użyciu tej metody. W tym scenariuszu można wdrożyć klienta programu Configuration Manager jako pakiet z lokacji programu Configuration Manager 2007, lub można użyć automatycznego uaktualniania klienta, które automatycznie utworzy i wdroży pakiet zawierający najnowszą wersję klienta.  
@@ -115,7 +110,7 @@ Do uaktualnienia oprogramowania klienta programu System Center Configuration Man
 > [!NOTE]  
 >  Można uaktualnić klientów programu Configuration Manager 2007 do klientów programu System Center Configuration Manager. Klient programu Configuration Manager 2007 można przypisać do lokacji programu Configuration Manager, ale nie można wykonać żadnych innych akcji oprócz automatycznego uaktualnienia klienta.  
 
- **Obsługiwana platforma kliencka:** Systemu Windows  
+ **Obsługiwana platforma kliencka:** Windows  
 
  **Zalety**  
 
@@ -136,7 +131,7 @@ Do uaktualnienia oprogramowania klienta programu System Center Configuration Man
  Aby uzyskać więcej informacji, zobacz [Uaktualnianie klientów komputerów z systemem Windows w programie System Center Configuration Manager](../../../../core/clients/manage/upgrade/upgrade-clients-for-windows-computers.md).  
 
 ## <a name="client-testing"></a>Testowanie klienta  
- **Obsługiwana platforma kliencka:** Systemu Windows  
+ **Obsługiwana platforma kliencka:** Windows  
 
  **Zalety**  
 

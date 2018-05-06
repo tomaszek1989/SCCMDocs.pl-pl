@@ -1,25 +1,20 @@
 ---
-title: "Przykładowy scenariusz — wdrażanie klientów Windows Embedded"
+title: Przykładowy scenariusz — wdrażanie klientów Windows Embedded
 titleSuffix: Configuration Manager
-description: "Zobacz przykładowy scenariusz wdrażania i zarządzania klientami programu System Center Configuration Manager na urządzeniach Windows Embedded."
-ms.custom: na
+description: Zobacz przykładowy scenariusz wdrażania i zarządzania klientami programu System Center Configuration Manager na urządzeniach Windows Embedded.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 10049c89-b37c-472b-b317-ce4f56cd4be7
-caps.latest.revision: "8"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: fc55aacfc1eae7a427ca4a0ae1bb3197b74fd2be
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: fdca69faefa693299d8975ec1af60f7624bc73c2
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="example-scenario-for-deploying-and-managing-system-center-configuration-manager-clients-on-windows-embedded-devices"></a>Przykładowy scenariusz wdrażania i zarządzania klientami programu System Center Configuration Manager na urządzeniach Windows Embedded
 
@@ -109,7 +104,7 @@ Firma Coho Vineyard & Winery otwiera Centrum dla gości i wymaga kioskami z syst
 
      Magdalena wybiera kolekcję urządzeń z systemem Windows Embedded dla zasady automatycznego wdrożenia.  
 
-     Aby uzyskać więcej informacji, zobacz artykuł  
+     Aby uzyskać więcej informacji, zobacz  
                   Krok 3. Konfigurowanie aktualizacji oprogramowania programu Configuration Manager w celu dostarczenia aktualizacji do komputerów klienckich w [Konfigurowanie programu Endpoint Protection w programie System Center Configuration Manager](../../../protect/deploy-use/configure-endpoint-protection.md)  
 
 10. Magdalena decyduje się na skonfigurowanie zadania obsługi, które okresowo zatwierdza wszystkie zmiany w nakładce. To zadanie ułatwia wdrażanie definicji aktualizacji oprogramowania i ogranicza liczbę skumulowanych aktualizacji, które muszą zostać zainstalowane ponownie, przy każdym ponownym uruchomieniu urządzenia. Z jej doświadczenia wynika, że zapewnia to bardziej efektywną pracę programów chroniących przed złośliwym kodem.  
@@ -135,7 +130,7 @@ Firma Coho Vineyard & Winery otwiera Centrum dla gości i wymaga kioskami z syst
 
     4.  Dokańcza pracę kreatora bez wprowadzania dodatkowych zmian.  
 
-     Aby uzyskać więcej informacji, zobacz artykuł  
+     Aby uzyskać więcej informacji, zobacz  
                   [Zarządzanie sekwencjami zadań w celu zautomatyzowania zadań w programie System Center Configuration Manager](../../../osd/deploy-use/manage-task-sequences-to-automate-tasks.md).  
 
 11. Aby kioski działały automatycznie, Magdalena pisze skrypt w celu skonfigurowania na urządzeniach następujących ustawień:  

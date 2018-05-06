@@ -2,26 +2,19 @@
 title: Konfigurowanie stanu klienta
 titleSuffix: Configuration Manager
 description: Wybierz ustawienia stanu klienta w programie System Center Configuration Manager.
-ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: a2275ba2-c83d-43e7-90ed-418963a707fe
-caps.latest.revision: 
-caps.handback.revision: 
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 5db52925515e65797a43ed35775460369f742f49
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 8f919e647ae252731d60a98e01485a01aae10698
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-configure-client-status-in-system-center-configuration-manager"></a>Jak skonfigurować stan klienta w programie System Center Configuration Manager
 
@@ -29,7 +22,7 @@ ms.lasthandoff: 10/12/2017
 
 Aby można było monitorowania stanu klienta programu System Center Configuration Manager i korygowanie znalezionych problemów, należy skonfigurować lokację do określania parametrów, które służą do oznaczania klientów jako nieaktywnych, a także ustawić opcje powiadamiania w przypadku gdy aktywność klienta spadnie poniżej określonego progu. Można również wyłączyć komputery z automatycznego korygowania wszelkich problemów, które umożliwia znalezienie stanu klienta.  
 
-##  <a name="BKMK_1"></a>Aby skonfigurować stan klienta  
+##  <a name="BKMK_1"></a> Aby skonfigurować stan klienta  
 
 1.  W konsoli programu Configuration Manager kliknij **monitorowanie**.  
 
@@ -56,7 +49,7 @@ Aby można było monitorowania stanu klienta programu System Center Configuratio
 
 5.  Kliknij przycisk **OK** Aby zapisać właściwości i zamknąć **właściwości ustawień stanu klienta** okno dialogowe.  
 
-##  <a name="BKMK_Schedule"></a>Aby skonfigurować harmonogram dla stanu klienta  
+##  <a name="BKMK_Schedule"></a> Aby skonfigurować harmonogram dla stanu klienta  
 
 1.  W konsoli programu Configuration Manager kliknij **monitorowanie**.  
 
@@ -67,7 +60,7 @@ Aby można było monitorowania stanu klienta programu System Center Configuratio
     > [!NOTE]  
     >  Po zmianie harmonogram aktualizacji stanu klienta, aktualizacja nie zacznie obowiązywać do momentu następnej zaplanowanej aktualizacji stanu klienta (w przypadku harmonogramu wcześniej skonfigurowane).  
 
-##  <a name="BKMK_2"></a>Aby skonfigurować alerty stanu klienta  
+##  <a name="BKMK_2"></a> Aby skonfigurować alerty stanu klienta  
 
 1.  W konsoli programu Configuration Manager kliknij przycisk **Zasoby i zgodność**.  
 
@@ -78,7 +71,7 @@ Aby można było monitorowania stanu klienta programu System Center Configuratio
     > [!NOTE]  
     >  Nie można skonfigurować alertów dla kolekcji użytkowników.  
 
-4.  Na **alerty** karcie  *&lt;kolekcji nazwa\>***właściwości** okno dialogowe, kliknij przycisk **Dodaj**.  
+4.  Na **alerty** karcie  *&lt;kolekcji nazwa\>*** właściwości** okno dialogowe, kliknij przycisk **Dodaj**.  
 
     > [!NOTE]  
     >  Karta **Alerty** jest widoczna tylko w przypadku, gdy rola zabezpieczeń, z którą została skojarzony użytkownik, ma uprawnienia do alertów.  
@@ -93,9 +86,9 @@ Aby można było monitorowania stanu klienta programu System Center Configuratio
 
     -   **Zgłoś alert** — Określ procentowy próg alertu.  
 
-7.  Kliknij przycisk **OK** zamknąć  *&lt;kolekcji nazwa\>***właściwości** okno dialogowe.  
+7.  Kliknij przycisk **OK** zamknąć  *&lt;kolekcji nazwa\>*** właściwości** okno dialogowe.  
 
-##  <a name="BKMK_3"></a>Aby wykluczyć komputery z automatycznego korygowania  
+##  <a name="BKMK_3"></a> Aby wykluczyć komputery z automatycznego korygowania  
 
 1.  Otwórz Edytor rejestru na komputerze klienckim, dla której chcesz wyłączyć automatyczne korygowanie.  
 

@@ -1,25 +1,19 @@
 ---
-title: "Jak utworzyć elementy konfiguracji dla urządzeń Windows Phone zarządzanych za pomocą usługi Intune"
+title: Jak utworzyć elementy konfiguracji dla urządzeń Windows Phone zarządzanych za pomocą usługi Intune
 titleSuffix: Configuration Manager
-ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: df10dc4d-c9ff-4574-bb33-8d30eb14cfe3
-caps.latest.revision: "13"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: f0a032bfa1d8d6383caf3065678d9b0a4dd3dde0
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 4590077b303d5676aa72a816d785a0864fe2205f
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-configuration-items-for-windows-phone-devices-managed-without-the-system-center-configuration-manager-client"></a>Jak utworzyć elementy konfiguracji dla urządzeń z systemem Windows Phone zarządzanych bez klienta programu System Center Configuration Manager
 Użyj programu System Center Configuration Manager**Windows Phone** element konfiguracji do zarządzania ustawieniami urządzeń Windows Phone, które są zarejestrowane w Microsoft Intune lub zarządzane lokalnie przez program Configuration Manager.  
@@ -216,8 +210,8 @@ Użyj programu System Center Configuration Manager**Windows Phone** element konf
 |-------------|----------------------|  
 |**Nazwa sieci (SSID)**||  
 |**Połączenie sieciowe**|Wybierz opcję **Internet** lub **Praca**.|  
-|**Uwierzytelnianie**|Wybierz metodę uwierzytelniania dla połączenia bezprzewodowego:<br><br> - **Otwórz**<br> - **Udostępnione**<br> - **WPA**<br> - **WPA-PSK**<br> - **WPA2**<br> - **WPA2-PSK**|  
-|**Szyfrowanie danych**|Wybierz metodę szyfrowania używaną przez to połączenie. Dostępne wartości różnią się w zależności od wybranej metody **uwierzytelniania**:<br><br> - **Wyłączone**<br> - **WEP**<br> - **TKIP**<br> - **AES**|  
+|**Uwierzytelnianie**|Wybierz metodę uwierzytelniania dla połączenia bezprzewodowego:<br><br> - **Otwórz**<br> - **udostępnione**<br> - **WPA**<br> - **WPA-PSK**<br> - **WPA2**<br> - **WPA2-PSK**|  
+|**Szyfrowanie danych**|Wybierz metodę szyfrowania używaną przez to połączenie. Dostępne wartości różnią się w zależności od wybranej metody **uwierzytelniania**:<br><br> - **wyłączone**<br> - **WEP**<br> - **TKIP**<br> - **AES**|  
 |**Indeks kluczy**|Wybierz indeks kluczy z zakresu od **1** do **4** , który będzie używany z ustawieniem **WEP** opcji **Szyfrowanie danych**.|  
 |**Ta sieć łączy się z Internetem**|Wybierz tę opcję, jeśli chcesz podać ustawienia proxy umożliwiające urządzeniom przenośnym łączenie się z Internetem za pośrednictwem połączenia bezprzewodowego.|  
 |**Ustawienia serwera proxy**|Określ zgodnie z wymaganiami ustawienia **Serwer** i **Port** dla opcji **HTTP**, **WAP** i **Sockets**.|  
@@ -234,9 +228,9 @@ Użyj programu System Center Configuration Manager**Windows Phone** element konf
   
 -   **Magazyn docelowy** – wybierz co najmniej jeden magazyn docelowy, w którym zaimportowany certyfikat zostanie dodany na urządzeniu przenośnym:  
   
-    -   **Główny**  
+    -   **główny**  
   
-    -   **URZĄD CERTYFIKACJI**  
+    -   **CA**  
   
     -   **Normalny**  
   
@@ -244,7 +238,7 @@ Użyj programu System Center Configuration Manager**Windows Phone** element konf
   
     -   **SPC**  
   
-    -   **Elementów równorzędnych**  
+    -   **elementów równorzędnych**  
   
 -   **Rola** — Jeśli wybrano magazyn docelowy **SPC** (certyfikat wydawcy oprogramowania), wybierz rolę do powiązania z certyfikatem:  
   
@@ -298,7 +292,7 @@ Użyj programu System Center Configuration Manager**Windows Phone** element konf
 |Ustawienie|Więcej informacji|  
 |**Lista zablokowanych aplikacji**|Wybierz tę opcję, aby utworzyć listę aplikacji, których użytkownicy nie mogą instalować.|  
 |**Lista dozwolonych aplikacji**|Wybierz tę opcję, aby określić listę aplikacji, które użytkownicy mogą instalować.|  
-|**Dodaj**|Dodaje aplikację do wybranej listy. Wprowadź wybraną nazwę, opcjonalnie wydawcę aplikacji, a także adres URL aplikacji w sklepie z aplikacjami.<br /><br /> Aby określić adres URL, na stronie Sklepu Windows Phone wyszukaj aplikację, której chcesz użyć.<br /><br /> **Przykład:** Wyszukaj w sklepie **Skype** aplikacji. Adres URL, którego używasz będzie http://www.windowsphone.com/en-us/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51.<br /><br /> Dla aplikacji portal firmy lub aplikacji biznesowych nie trzeba określić pełny adres URL tylko identyfikator GUID aplikacji.|  
+|**Dodaj**|Dodaje aplikację do wybranej listy. Wprowadź wybraną nazwę, opcjonalnie wydawcę aplikacji, a także adres URL aplikacji w sklepie z aplikacjami.<br /><br /> Aby określić adres URL, na stronie Sklepu Windows Phone wyszukaj aplikację, której chcesz użyć.<br /><br /> **Przykład:** Wyszukaj w sklepie **Skype** aplikacji. Adres URL, którego będzie http://www.windowsphone.com/en-us/store/app/skype/c3f8e570-68b3-4d6a-bdbb-c0a3f4360a51.<br /><br /> Dla aplikacji portal firmy lub aplikacji biznesowych nie trzeba określić pełny adres URL tylko identyfikator GUID aplikacji.|  
 |**Edytowanie**|Umożliwia edytowanie nazwy, wydawcy i adresu URL wybranej aplikacji.|  
 |**Usuń**|Usuwa wybraną aplikację z listy.|  
 |**Importujuj**|Importuje listę aplikacji wprowadzoną w pliku w formacie wartości rozdzielanych przecinkami. W pliku użyj formatu: nazwa aplikacji, wydawca, adres URL.|  

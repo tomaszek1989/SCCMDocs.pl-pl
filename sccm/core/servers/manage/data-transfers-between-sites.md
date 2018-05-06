@@ -1,25 +1,20 @@
 ---
 title: Transfer danych
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak programu Configuration Manager przenosi dane między lokacjami oraz sposobu zarządzania transferem danych w sieci."
-ms.custom: na
+description: Dowiedz się, jak programu Configuration Manager przenosi dane między lokacjami oraz sposobu zarządzania transferem danych w sieci.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: dc526e8d-fac3-4bb5-b206-03ad29b0ae11
-caps.latest.revision: "12"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 185598e9f6b0678ca1fcbe9c19ed420f37805861
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 45fb1bc31a7e888ca4caa21a710e74ec0fde422c
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="data-transfers-between-sites-in-system-center-configuration-manager"></a>Transfer danych między lokacjami w programie System Center Configuration Manager
 
@@ -179,7 +174,7 @@ Każda lokacja okresowo tworzy podsumowanie danych dotyczących obciążenia sie
 
 Podsumowanie odbywa się domyślnie co 15 minut. Aby zmienić częstotliwość podsumowania ruchu sieciowego, we właściwościach łącza replikacji bazy danych, należy edytować **interwał podsumowania**. Częstotliwość podsumowania wpływa na informacje, które można wyświetlić w raportach dotyczących replikacji bazy danych. Można wybrać między 5 minut do 60 minut. Zwiększenie częstotliwości podsumowania, możesz zwiększyć obciążenie związane z przetwarzaniem na serwerze SQL server w każdej lokacji objętej łączem replikacji.  
 
-### <a name="BKMK_DBRepThresholds"></a>Progi replikacji bazy danych  
+### <a name="BKMK_DBRepThresholds"></a> Progi replikacji bazy danych  
 Progi replikacji bazy danych pozwalają zdefiniować, kiedy ma być zgłaszane nieprawidłowe działanie lub uszkodzenie łącza replikacji bazy danych. Domyślnie łącze ustawiono obniżeniem statusu gdy wszystkie grupy replikacji nie może przeprowadzić replikacji w okresie 12 kolejnych prób. Łącze ma ustawioną stanu nie powiodło się, gdy wszystkie grupy replikacji nie powiedzie się do replikacji w 24 kolejnych prób.  
 
 Można określić wartości niestandardowe w celu dopasowania, gdy program Configuration Manager zaraportuje działanie lub uszkodzenie łącza replikacji. Dopasowywanie, gdy program Configuration Manager zaraportuje się, że każdy stan łączy replikacji bazy danych ułatwia precyzyjne monitorowanie kondycji replikacji bazy danych za pośrednictwem łączy replikacji bazy danych.  

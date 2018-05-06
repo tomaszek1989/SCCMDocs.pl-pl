@@ -2,20 +2,19 @@
 title: Przygotowanie systemu Windows 10 do zarządzania wspólnej
 titleSuffix: Configuration Manager
 description: Dowiedz się, jak przygotować urządzenia z systemem Windows 10 do zarządzania wspólnej.
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
 ms.date: 03/28/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
-ms.service: ''
-ms.technology: ''
+ms.technology: configmgr-client
 ms.assetid: 101de2ba-9b4d-4890-b087-5d518a4aa624
-ms.openlocfilehash: 93a991cb3fd78e44f5ae4434a9845a57450e1025
-ms.sourcegitcommit: e4ca9fb1fad2caaf61bb46e0a12f4d6b96f15513
+ms.openlocfilehash: 8c025d7c7a1dc452cb96f937801656bc4d0cadab
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="prepare-windows-10-devices-for-co-management"></a>Przygotowywanie urządzenia z systemem Windows 10 do zarządzania wspólnej
 Można włączyć wspólnej zarządzania na urządzeniach z systemem Windows 10, które są przyłączone do usługi AD i Azure AD i zarejestrowane w programie Microsoft Intune i klienta w programie Configuration Manager. Dla nowych urządzeń z systemem Windows 10, a w przypadku urządzeń, które są już zarejestrowane w usłudze Intune należy zainstalować klienta programu Configuration Manager, zanim zostaną umieszczone zarządzanych. Dla urządzeń z systemem Windows 10, które są już klientów programu Configuration Manager możesz zarejestrować urządzenia w usłudze Intune i włączyć wspólnej zarządzanie w konsoli programu Configuration Manager.
@@ -30,7 +29,7 @@ Musi mieć następujące wymagania wstępne w miejscu, aby można było włączy
 Poniżej przedstawiono ogólne wymagania wstępne, aby włączyć zarządzanie wspólnej:  
 
 - Configuration Manager w wersji 1710 lub nowszy
-- Azure AD
+- [Został załadowany witryny z usługą Azure AD do zarządzania chmurą](/sccm/core/servers/deploy/configure/azure-services-wizard)
 - Licencji pakietu EMS lub usługi Intune dla wszystkich użytkowników
 - [Automatyczne rejestrowanie usługi Azure AD](https://docs.microsoft.com/intune/windows-enroll#enable-windows-10-automatic-enrollment) włączone
 - Subskrypcję usługi Intune &#40;ustaw urząd zarządzania urządzeniami Przenośnymi w usłudze Intune **usługi Intune**&#41;

@@ -1,25 +1,20 @@
 ---
 title: Operacje migracji
 titleSuffix: Configuration Manager
-description: "Utwórz i uruchom zadania migracji danych i klientów do programu System Center Configuration Manager."
-ms.custom: na
+description: Utwórz i uruchom zadania migracji danych i klientów do programu System Center Configuration Manager.
 ms.date: 12/30/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: c28e3492-851a-40fc-ba13-67ebc2d8b41a
-caps.latest.revision: "6"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 286be682da590ca7a03717d29ff9b3714d4fac42
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: a038377e4b29852157fd0d92836f26f1b5e18433
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="operations-for-migrating-to-system-center-configuration-manager"></a>Operacje migracji do programu System Center Configuration Manager
 
@@ -133,7 +128,7 @@ W przypadku migracji w programie System Center Configuration Manager po pomyśln
 
 10. Potwierdź ustawienia, a następnie Zakończ pracę kreatora.  
 
-###  <a name="BKMK_Modify_Exclusion_List"></a>Zmodyfikuj listę wykluczeń dla migracji  
+###  <a name="BKMK_Modify_Exclusion_List"></a> Zmodyfikuj listę wykluczeń dla migracji  
 
 1.  W konsoli programu Configuration Manager wybierz **administracji**.  
 
@@ -218,7 +213,7 @@ W przypadku migracji w programie System Center Configuration Manager po pomyśln
 ##  <a name="BKMK_MigrateClients"></a> Migracja klientów  
  Po przeprowadzeniu migracji danych klientów między hierarchiami, ale przed zakończeniem migracji, Zaplanuj migrację klientów do hierarchii docelowej. Migracja klientów między hierarchiami wymaga odinstalowania oprogramowania klienckiego programu Configuration Manager z komputerów przypisanych do hierarchii źródłowej, a następnie zainstaluj oprogramowanie klienta programu Configuration Manager z hierarchii docelowej. Podczas instalacji klienta z hierarchii docelowej można także przypisać klienta do lokacja głównej w tej hierarchii. Aby uzyskać więcej informacji o migracji klientów, zobacz [Planowanie strategii migracji klientów w programie System Center Configuration Manager](../../core/migration/planning-a-client-migration-strategy.md).  
 
-##  <a name="Complete_Migration"></a>Zakończenie migracji  
+##  <a name="Complete_Migration"></a> Zakończenie migracji  
  Użyj tej procedury, aby zakończyć migrację z hierarchii źródłowej.  
 
 1.  W konsoli programu Configuration Manager wybierz **administracji**.  

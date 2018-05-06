@@ -1,25 +1,20 @@
 ---
-title: "Pakiety językowe"
+title: Pakiety językowe
 titleSuffix: Configuration Manager
-description: "Informacje dotyczące obsługi języków dostępnych w programie System Center Configuration Manager."
-ms.custom: na
+description: Informacje dotyczące obsługi języków dostępnych w programie System Center Configuration Manager.
 ms.date: 1/3/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: cd74e5f5-33f6-4566-8c9d-d6a93bfe71ed
-caps.latest.revision: "10"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: d7553cda2e9cc6bc1ff53afe1e357e767228db69
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: a198e15a1ef389d792acc73f2253aa4a704ac35a
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="language-packs-in-system-center-configuration-manager"></a>Pakiety językowe w programie System Center Configuration Manager
 
@@ -27,7 +22,7 @@ ms.lasthandoff: 12/04/2017
 
 Ten temat zawiera szczegółowe informacje techniczne dotyczące obsługi języków w programie System Center Configuration Manager.  
 
-## <a name="BKMK_SupLanguagePacks"></a>Języki obsługiwane systemu operacyjnego  
+## <a name="BKMK_SupLanguagePacks"></a> Języki obsługiwane systemu operacyjnego  
  W poniższych tabelach można zainstalować obsługę języków wyświetlania, instalując **pakietów językowych serwera** lub **pakiety językowe klienta** w centralnej lokacji administracyjnej i w lokacjach głównych. Należy wybrać języki serwera i klienta, aby obsługiwać w lokacji z dostępnych plików pakietów językowych podczas procesu instalacji lokacji.
 
  Pliki pakietu językowego zostaną pobrane po uruchomieniu Instalatora w ramach wstępnie wymaganego oprogramowania i pobierania plików do dystrybucji. Można też użyć [Narzędzie pobierania Instalatora](setup-downloader.md) do pobrania tych plików przed uruchomieniem Instalatora.   
@@ -39,7 +34,7 @@ Ten temat zawiera szczegółowe informacje techniczne dotyczące obsługi język
 |Język serwera|Identyfikator ustawień regionalnych (LCID)|Kod trzyliterowy|  
 |---------------------|------------------------|-----------------------|  
 |Angielski (domyślnie)|0409|ENU|  
-|Chiński (tradycyjny, Hong Kong SAR)|0c04|ZHH|  
+|Chiński (tradycyjny, Hongkong SAR)|0c04|ZHH|  
 |Chiński uproszczony|0804|CHS|  
 |Chiński (tradycyjny, Tajwan)|0404|CHT|  
 |czeski|0405|CSY|  
@@ -63,7 +58,7 @@ Ten temat zawiera szczegółowe informacje techniczne dotyczące obsługi język
 |Język klienta|Identyfikator ustawień regionalnych (LCID)|Kod trzyliterowy|  
 |---------------------|------------------------|-----------------------|  
 |Angielski (domyślnie)|0409|ENG|  
-|Chiński (tradycyjny, Hong Kong SAR)|0c04|ZHH|  
+|Chiński (tradycyjny, Hongkong SAR)|0c04|ZHH|  
 |Chiński (uproszczony)|0804|CHS|  
 |Chiński (tradycyjny, Tajwan)|0404|CHT|  
 |czeski|0405|CSY|  

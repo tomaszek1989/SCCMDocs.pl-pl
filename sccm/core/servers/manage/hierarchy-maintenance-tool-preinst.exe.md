@@ -2,26 +2,19 @@
 title: Narzędzie Obsługa hierarchii
 titleSuffix: Configuration Manager
 description: Zrozumieć, co oznacza narzędzia Obsługa hierarchii, i do czego można go użyć. Zawiera dokumentacja opcji wiersza polecenia.
-ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: cead6825-6113-4ba5-a381-ac3598dfee86
-caps.latest.revision: 7
-caps.handback.revision: 0
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 02bd5bfe0fc4ccc976d95b944bd51e9f0a276db0
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 4dd1bf9b4085b6e1591d5841bfc307398505f5d1
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="hierarchy-maintenance-tool-preinstexe-for-system-center-configuration-manager"></a>Narzędzie Obsługa hierarchii (Preinst.exe) dla programu System Center Configuration Manager
 
@@ -48,14 +41,14 @@ Aby korzystać z narzędzia Obsługa hierarchii, należy uruchomić je lokalnie 
 
 W celu uruchomienia narzędzia Obsługa hierarchii, należy użyć następującej składni: preinst.exe /&lt;opcji\>. Poniżej zamieszczono opcje wiersza polecenia.  
 
- **/DELJOB &lt;*Kod_lokacji*>** — Użycie tej opcji w lokacji do usunięcia wszystkich zadań lub poleceń z bieżącej lokacji do określonej lokacji docelowej.  
+ **/ DELJOB &lt; *Kod_lokacji* >**  — użycie tej opcji w lokacji do usunięcia wszystkich zadań lub poleceń z bieżącej lokacji do określonej lokacji docelowej.  
 
- **/DELSITE &lt;*Kod_lokacji_podrzędnej_do_usunięcia*>** — Użycie tej opcji w lokacji nadrzędnej umożliwia usunięcie danych lokacji podrzędnych z bazy danych lokacji w lokacji nadrzędnej. Tej opcji należy zwykle użyć, jeżeli komputer serwera lokacji jest likwidowany, przed odinstalowaniem z niego lokacji.  
+ **/ DELSITE &lt; *Kod_lokacji_podrzędnej_do_usunięcia* >**  — użycie tej opcji w lokacji nadrzędnej umożliwia usunięcie danych lokacji podrzędnych z bazy danych lokacji w lokacji nadrzędnej. Tej opcji należy zwykle użyć, jeżeli komputer serwera lokacji jest likwidowany, przed odinstalowaniem z niego lokacji.  
 
 > [!NOTE]  
 >  Opcja /DELSITE nie powoduje odinstalowania lokacji na komputerze określonym przez parametr kod_lokacji_podrzędnej_do_usunięcia. Ta opcja umożliwia tylko usunięcie informacji o lokacji z bazy danych lokacji programu Configuration Manager.  
 
-**/DUMP &lt;*Kod_lokacji*>** — Użycie tej opcji na lokalnym serwerze lokacji umożliwia zapisanie obrazów sterowania lokacji w folderze głównym dysku, na którym zainstalowano lokację. Można zapisać określony obraz sterowania lokacji w folderze lub zapisać wszystkie pliki sterowania lokacji w hierarchii.  
+**/ DUMP &lt; *Kod_lokacji* >**  — użycie tej opcji na lokalnym serwerze lokacji umożliwia zapisanie obrazów sterowania lokacji w folderze głównym dysku, na którym zainstalowano lokację. Można zapisać określony obraz sterowania lokacji w folderze lub zapisać wszystkie pliki sterowania lokacji w hierarchii.  
 
 -   / DUMP &lt; *Kod_lokacji*> zapisanie obrazu sterowania tylko dla określonej lokacji.  
 
@@ -94,7 +87,7 @@ Opcja/parentkeys umożliwia umieszczenie klucza z lokacji, w której uruchomiono
 
 Po uruchomieniu programu preinst.exe z tą opcją należy ręcznie skopiować &lt; *Kod_lokacji*>. CT7 plik do folderu...\Inboxes\hman.box przywracanej lokacji (nie hman.box\pubkey).  
 
-##  <a name="BKMK_ManuallyExchangeKeys"></a>Ręczna wymiana kluczy publicznych między lokacjami  
+##  <a name="BKMK_ManuallyExchangeKeys"></a> Ręczna wymiana kluczy publicznych między lokacjami  
 Domyślnie **Wymagaj wymiany klucza zabezpieczeń** opcja jest włączona dla lokacji programu Configuration Manager. Gdy wymagana jest wymiana klucza zabezpieczeń, istnieją dwie sytuacje, w których należy dokonać ręcznej początkowej wymiany klucza między lokacjami:  
 
 -   Jeżeli schemat usługi Active Directory nie został rozszerzony dla programu Configuration Manager  

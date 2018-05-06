@@ -1,25 +1,20 @@
 ---
-title: "Konfigurowanie zabezpieczeń"
+title: Konfigurowanie zabezpieczeń
 titleSuffix: Configuration Manager
-description: "Skonfiguruj opcje związane z zabezpieczeniami dla programu System Center Configuration Manager."
-ms.custom: na
+description: Skonfiguruj opcje związane z zabezpieczeniami dla programu System Center Configuration Manager.
 ms.date: 12/30/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 552e7e3d-e584-4a7c-9155-0f796a14b678
-caps.latest.revision: "5"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 4066ec43e5553859d983671a0df549a67b2cfe59
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 165f7fc0b73e288ac1718def96a50bc91a181cc2
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-security-in-system-center-configuration-manager"></a>Konfigurowanie zabezpieczeń w programie System Center Configuration Manager
 
@@ -62,7 +57,7 @@ Aby użyć certyfikatów infrastruktury klucza publicznego (PKI) dla połączeń
 
 Powtórz te czynności dla wszystkich lokacji podstawowych w hierarchii.  
 
-##  <a name="BKMK_ConfigureSigningEncryption"></a>Konfigurowanie podpisywania i szyfrowania  
+##  <a name="BKMK_ConfigureSigningEncryption"></a> Konfigurowanie podpisywania i szyfrowania  
 Należy skonfigurować najbardziej bezpieczne ustawienia podpisywania i szyfrowania dla systemów lokacji, jakie obsługują wszyscy klienci w tej lokacji. Te ustawienia są szczególnie ważne, gdy umożliwiają klientom komunikację z systemami lokacji przy użyciu certyfikatów z podpisem własnym za pośrednictwem protokołu HTTP.  
 
 #### <a name="to-configure-signing-and-encryption-for-a-site"></a>Aby skonfigurować podpisanie i szyfrowanie dla lokacji  

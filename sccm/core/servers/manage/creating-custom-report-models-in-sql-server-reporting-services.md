@@ -2,26 +2,19 @@
 title: Tworzenie niestandardowych raportów
 titleSuffix: Configuration Manager
 description: Zdefiniować modele, aby spełnić wymagania biznesowe, a następnie wdrożyć modeli raportów do programu Configuration Manager.
-ms.custom: na
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: f2df88b4-c348-4dcf-854a-54fd6eedf485
-caps.latest.revision: 5
-caps.handback.revision: 0
-author: Dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 56274cbec336219a7734d23bf1bade8a7892de30
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: fd606ff7068b7c14047e445d16ea78d20a5c12ea
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="creating-custom-report-models-for-system-center-configuration-manager-in-sql-server-reporting-services"></a>Tworzenie niestandardowych modeli raportów programu System Center Configuration Manager w SQL Server Reporting Services
 
@@ -152,7 +145,7 @@ W programie System Center Configuration Manager są dostępne przykładowe model
 
 3.  Otwórz poprzednie pliki w edytorze tekstów, np. Notatniku.  
 
-4.  W pliku  *&lt;Nazwa modelu\>***.dsv**, zlokalizuj pierwszy wiersz pliku o następującej treści:  
+4.  W pliku *&lt;Nazwa modelu\>***.dsv**, zlokalizuj pierwszy wiersz pliku o następującej treści:  
 
      **&lt;DataSourceView xmlns = "http://schemas.microsoft.com/analysisservices/2003/engine"\>**  
 
@@ -162,9 +155,9 @@ W programie System Center Configuration Manager są dostępne przykładowe model
 
 5.  Skopiuj cała zawartość pliku do schowka systemu Windows.  
 
-6.  Zamknij plik  *&lt;Nazwa modelu\>***.dsv**.  
+6.  Zamknij plik *&lt;Nazwa modelu\>***.dsv**.  
 
-7.  W pliku  *&lt;Nazwa modelu\>***.smdl**, zlokalizuj trzy ostatnie wiersze pliku, które znajdują się w następujący sposób:  
+7.  W pliku *&lt;Nazwa modelu\>***.smdl**, zlokalizuj trzy ostatnie wiersze pliku, które znajdują się w następujący sposób:  
 
      `</Entity>`  
 
@@ -172,11 +165,11 @@ W programie System Center Configuration Manager są dostępne przykładowe model
 
      `</SemanticModel>`  
 
-8.  Wklej zawartość pliku  *&lt;Nazwa modelu\>***.dsv** bezpośrednio przed ostatnim wierszem pliku (**&lt;SemanticModel\>**).  
+8.  Wklej zawartość pliku  *&lt;Nazwa modelu\>** *.dsv** bezpośrednio przed ostatnim wierszem pliku (**&lt;SemanticModel\>**).  
 
-9. Zapisz i zamknij plik  *&lt;Nazwa modelu\>***.smdl**.  
+9. Zapisz i zamknij plik *&lt;Nazwa modelu\>***.smdl**.  
 
-10. Skopiuj plik  *&lt;Nazwa modelu\>***.smdl** do folderu *% programfiles %* \Microsoft Configuration Manager \AdminConsole\XmlStorage\Other na serwerze lokacji programu Configuration Manager.  
+10. Skopiuj plik  *&lt;Nazwa modelu\>** *.smdl** do folderu *% programfiles %* \Microsoft Configuration Manager \AdminConsole\XmlStorage\Other na konfiguracji Menedżer serwera lokacji.  
 
     > [!IMPORTANT]  
     >  Po skopiowaniu pliku modelu raportu na serwerze lokacji programu Configuration Manager, należy zamknąć i ponownie uruchomić konsolę programu Configuration Manager zanim można użyć danego modelu raportu w **Kreatora tworzenia raportu**.  
@@ -395,7 +388,7 @@ W programie System Center Configuration Manager są dostępne przykładowe model
 
 3.  Otwórz poprzednie pliki w edytorze tekstów, np. Notatniku.  
 
-4.  W pliku  *&lt;Nazwa modelu\>***.dsv**, zlokalizuj pierwszy wiersz pliku o następującej treści:  
+4.  W pliku *&lt;Nazwa modelu\>***.dsv**, zlokalizuj pierwszy wiersz pliku o następującej treści:  
 
      **&lt;DataSourceView xmlns = "http://schemas.microsoft.com/analysisservices/2003/engine"\>**  
 
@@ -405,9 +398,9 @@ W programie System Center Configuration Manager są dostępne przykładowe model
 
 5.  Skopiuj cała zawartość pliku do schowka systemu Windows.  
 
-6.  Zamknij plik  *&lt;Nazwa modelu\>***.dsv**.  
+6.  Zamknij plik *&lt;Nazwa modelu\>***.dsv**.  
 
-7.  W pliku  *&lt;Nazwa modelu\>***.smdl**, zlokalizuj trzy ostatnie wiersze pliku, które znajdują się w następujący sposób:  
+7.  W pliku *&lt;Nazwa modelu\>***.smdl**, zlokalizuj trzy ostatnie wiersze pliku, które znajdują się w następujący sposób:  
 
      `</Entity>`  
 
@@ -415,11 +408,11 @@ W programie System Center Configuration Manager są dostępne przykładowe model
 
      `</SemanticModel>`  
 
-8.  Wklej zawartość pliku  *&lt;Nazwa modelu\>***.dsv** bezpośrednio przed ostatnim wierszem pliku (**&lt;SemanticModel\>**).  
+8.  Wklej zawartość pliku  *&lt;Nazwa modelu\>** *.dsv** bezpośrednio przed ostatnim wierszem pliku (**&lt;SemanticModel\>**).  
 
-9. Zapisz i zamknij plik  *&lt;Nazwa modelu\>***.smdl**.  
+9. Zapisz i zamknij plik *&lt;Nazwa modelu\>***.smdl**.  
 
-10. Skopiuj plik  *&lt;Nazwa modelu\>***.smdl** do folderu *% programfiles %* \Microsoft Configuration Manager\AdminConsole\XmlStorage\Other na serwerze lokacji programu Configuration Manager.  
+10. Skopiuj plik  *&lt;Nazwa modelu\>** *.smdl** do folderu *% programfiles %* \Microsoft Configuration Manager\AdminConsole\XmlStorage\Other na konfiguracji Menedżer serwera lokacji.  
 
     > [!IMPORTANT]  
     >  Po skopiowaniu pliku modelu raportu na serwerze lokacji programu Configuration Manager, należy zamknąć i ponownie uruchomić konsolę programu Configuration Manager zanim można użyć danego modelu raportu w **Kreatora tworzenia raportu**.  

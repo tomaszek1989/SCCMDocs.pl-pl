@@ -1,26 +1,20 @@
 ---
-title: "Wdrażanie funkcji Windows to Go"
+title: Wdrażanie funkcji Windows to Go
 titleSuffix: Configuration Manager
-description: "Informacje o sposobie udostępniania funkcji Windows To Go w System Center Configuration Manager do tworzenia obszaru roboczego funkcji Windows To Go, który jest uruchamiany z dysku zewnętrznego."
-ms.custom: na
+description: Informacje o sposobie udostępniania funkcji Windows To Go w System Center Configuration Manager do tworzenia obszaru roboczego funkcji Windows To Go, który jest uruchamiany z dysku zewnętrznego.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 8eed50f5-80a4-422e-8aa6-a7ccb2171475
-caps.latest.revision: "8"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 9d902f75911b484d22d38b07cea40e1c00ea0d93
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 12b7a28ff5ea0e2e1870c0c37edd8e056930b09f
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="deploy-windows-to-go-with-system-center-configuration-manager"></a>Wdrażanie systemu Windows to Go w programie System Center Configuration Manager
 
@@ -316,15 +310,15 @@ Ten temat zawiera procedurę udostępniania funkcji Windows To Go w programie Sy
 
     1.  **Nazwa**: Określ nazwę dla wiersza polecenia, takich jak **Włącz funkcję BitLocker dla Windows To Go**.  
 
-    2.  **Wiersz polecenia**: i386\osdbitlocker_wtg.exe/enable/pwd: < *Brak &#124; USŁUGI AD*>  
+    2.  **Wiersz polecenia**: i386\osdbitlocker_wtg.exe/enable/pwd: < *Brak&#124;AD*>  
 
          Parametry:  
 
-        -   / pwd: < none &#124; AD > — Określ tryb odzyskiwania hasła funkcji BitLocker. Ten parametr jest wymagany w przypadku użycia w wierszu polecenia parametru /Enable.  
+        -   / pwd: < none&#124;AD > — Określ tryb odzyskiwania hasła funkcji BitLocker. Ten parametr jest wymagany w przypadku użycia w wierszu polecenia parametru /Enable.  
 
              Wybierz parametr **AD** , aby skonfigurować szyfrowanie dysków funkcją BitLocker i utworzyć kopię zapasową informacji odzyskiwania dysków chronionych przez funkcję BitLocker w usługach domenowych Active Directory (AD DS). Tworzenie kopii zapasowych haseł odzyskiwania do dysków chronionych przez funkcję BitLocker pozwala użytkownikom administracyjnym odzyskać te dyski w razie ich zablokowania. Dzięki temu użytkownicy autoryzowani zawsze mogą uzyskać dostęp do szyfrowanych danych przedsiębiorstwa. W przypadku określenia parametru **Brak**użytkownik musi zachować kopię hasła lub klucza odzyskiwania. Jeżeli użytkownik utraci te informacje lub nie odszyfruje dysku przed opuszczeniem organizacji, użytkownicy administracyjni będą mieli trudności z uzyskaniem dostępu do tego dysku.  
 
-        -   / wait: < TRUE &#124; FALSE > — Określ, czy sekwencja zadań ma oczekiwać na ukończenie szyfrowania przed jego zakończenie.  
+        -   / wait: < TRUE&#124;FALSE > — Określ, czy sekwencja zadań ma oczekiwać na ukończenie szyfrowania przed jego zakończenie.  
 
     3.  Wybierz opcję **Pakiet**, a następnie określ pakiet utworzony na początku tej procedury.  
 
@@ -451,7 +445,7 @@ Ten temat zawiera procedurę udostępniania funkcji Windows To Go w programie Sy
     -   **Gdy żaden lokalny punkt dystrybucji nie jest dostępna, Użyj zdalnego punktu dystrybucji**: Określ, czy klienci mogą używać punktów dystrybucji znajdujących się w powolnych i zawodnych sieciach do pobierania zawartości wymaganej przez sekwencję zadań.  
 
     -   **Zezwalaj klientom na użycie rezerwowej lokalizacji źródła zawartości**:
-        - *Przed wersją 1610*, można wybrać Zezwalaj na rezerwową lokalizację źródła zawartości pola wyboru umożliwić klientom spoza grup granic na rezerwowe używanie punktu dystrybucji jako lokalizacji źródłowej zawartości, jeśli preferowane punkty dystrybucji nie są dostępne.
+        - *Przed wersją 1610*, można wybrać Zezwalaj na rezerwową lokalizację źródła zawartości pola wyboru umożliwić klientom spoza grup granic na rezerwowe używanie punktu dystrybucji jako lokalizacji źródłowej zawartości, gdy żadnych punktów dystrybucji są dostępne.
         - *Począwszy od wersji 1610*, nie będzie można skonfigurować **Zezwalaj na rezerwową lokalizację źródła zawartości**.  Zamiast tego należy skonfigurować relacje między grupami granic, które określania, kiedy klient można rozpocząć wyszukiwanie grup dodatkowe granic dla lokalizacji poprawne źródło zawartości. 
 
 11. Ukończ pracę kreatora.  

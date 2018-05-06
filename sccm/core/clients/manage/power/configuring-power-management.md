@@ -1,26 +1,20 @@
 ---
-title: "Konfigurowanie zarządzania energią"
+title: Konfigurowanie zarządzania energią
 titleSuffix: Configuration Manager
-description: "Konfigurowanie zarządzania energią w programie System Center Configuration Manager."
-ms.custom: na
+description: Konfigurowanie zarządzania energią w programie System Center Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 435c923c-ea30-4dce-8afd-48962ed85502
-caps.latest.revision: "5"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: ed6aa0ce35d93837ac133cccedb44dedaa4a9602
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: ceb8c07c111818136db7c3815eee58cc87ae75c8
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configuring-power-management-in-system-center-configuration-manager"></a>Konfigurowanie zarządzania energią w programie System Center Configuration Manager
 
@@ -39,7 +33,7 @@ Przed użyciem funkcji zarządzania energią w programie System Center Configura
 
 3.  Kliknij przycisk **Ustawienia domyślne klienta**.  
 
-4.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
+4.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij pozycję **Właściwości**.  
 
 5.  W oknie dialogowym **Domyślne ustawienia klienta** kliknij pozycję **Zarządzanie energią**.  
 
@@ -82,6 +76,6 @@ Przed użyciem funkcji zarządzania energią w programie System Center Configura
 
 3.  Na liście **Kolekcje urządzeń** wybierz kolekcję, którą chcesz wykluczyć z zarządzania energią, a następnie na karcie **Narzędzia główne** w grupie **Właściwości** kliknij pozycję **Właściwości**.  
 
-4.  W **zarządzania energią** karcie *< nazwa kolekcji\>***właściwości** okno dialogowe, wybierz opcję **nigdy nie stosuj ustawień zarządzania zasilaniem do komputerów w tej kolekcji**.  
+4.  W **zarządzania energią** karcie *< nazwa kolekcji\>*** właściwości** wybierz pozycję **nigdy nie stosuj ustawień zarządzania zasilaniem do komputerów w tej kolekcji** .  
 
-5.  Kliknij przycisk **OK** zamknąć *< nazwa kolekcji\>***właściwości** okno dialogowe i zapisać ustawienia.  
+5.  Kliknij przycisk **OK** zamknąć *< nazwa kolekcji\>*** właściwości** okno dialogowe i zapisać ustawienia.  

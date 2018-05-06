@@ -1,25 +1,20 @@
 ---
-title: "Wdrożenie certyfikatów PKI"
+title: Wdrożenie certyfikatów PKI
 titleSuffix: Configuration Manager
-description: "Wykonaj krok przykładowy sposób tworzenia i wdrażania certyfikatów infrastruktury kluczy publicznych, których używa System Center Configuration Manager."
-ms.custom: na
+description: Wykonaj krok przykładowy sposób tworzenia i wdrażania certyfikatów infrastruktury kluczy publicznych, których używa System Center Configuration Manager.
 ms.date: 02/14/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: 3417ff88-7177-4a0d-8967-ab21fe7eba17
-caps.latest.revision: "11"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 092e3e752a27ab652f2b38c0ba43e6e2e26c99c8
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 0b34163bfb5aea716062882d4c2ebb1360bba2c9
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="step-by-step-example-deployment-of-the-pki-certificates-for-system-center-configuration-manager-windows-server-2008-certification-authority"></a>Krok po kroku Przykładowe wdrożenie certyfikatów PKI dla programu System Center Configuration Manager: Urząd certyfikacji systemu Windows Server 2008
 
@@ -56,7 +51,7 @@ To przykładowe krok wdrożenie, która używa urząd certyfikacji (CA) systemu 
 
  [Wdrażanie certyfikatu klienta dla komputerów Mac](#BKMK_MacClient_SP1)  
 
-##  <a name="BKMK_testnetworkenvironment"></a>Wymagania dotyczące sieci testowej  
+##  <a name="BKMK_testnetworkenvironment"></a> Wymagania dotyczące sieci testowej  
  Z instrukcjami krok po kroku wiążą się następujące wymagania:  
 
 -   W sieci testowej działają usługi domenowe Active Directory z systemem Windows Server 2008; instalacja to pojedyncza domena, pojedynczy las.  
@@ -69,7 +64,7 @@ To przykładowe krok wdrożenie, która używa urząd certyfikacji (CA) systemu 
 
 -   Możesz zalogować się przy użyciu konta administratora domeny głównej lub konta administratora domeny przedsiębiorstwa i wykorzystać to konto do wszystkich procedur tego przykładowego wdrożenia.  
 
-##  <a name="BKMK_overview2008"></a>Przegląd certyfikatów  
+##  <a name="BKMK_overview2008"></a> Przegląd certyfikatów  
  W poniższej tabeli wymieniono typy certyfikatów PKI, które mogą być wymagane dla programu System Center Configuration Manager i opisano sposób użycia.  
 
 |Wymagany certyfikat|Opis certyfikatu|  
@@ -82,7 +77,7 @@ To przykładowe krok wdrożenie, która używa urząd certyfikacji (CA) systemu 
 |Certyfikaty dla komputerów Intel AMT|Trzy certyfikaty odnoszą się do zarządzania poza pasmem komputerami opartymi na technologii Intel AMT:<ul><li>Certyfikat udostępniania technologii zarządzania aktywnego (AMT)</li><li>Certyfikat serwera sieci web AMT</li><li>Opcjonalnie certyfikat uwierzytelniania klienta dla 802.1 X sieci przewodowej lub bezprzewodowej</li></ul>Certyfikat udostępniania AMT musi być zainstalowany zewnętrznie z programu System Center Configuration Manager na komputerze punktu Usługi poza pasmem, a następnie wybierz certyfikat zainstalowany we właściwościach punktu Usługi poza pasmem. Certyfikat serwera sieci web AMT i certyfikat uwierzytelniania klienta są instalowane podczas udostępniania AMT i zarządzania i wybierz szablony certyfikatów skonfigurowane we właściwościach składnika zarządzania poza pasmem.<br /><br /> Aby uzyskać instrukcje dotyczące konfigurowania tych certyfikatów, zobacz [wdrożyć certyfikaty dla AMT](#BKMK_AMT2008_cm2012) w tym temacie.|  
 |Certyfikat klienta dla komputerów Mac|Można zażądać oraz instalacji tego certyfikatu z komputera Mac, użyj rejestracji za pomocą programu System Center Configuration Manager i wybrać jako ustawienie klienta urządzenia przenośnego skonfigurowany szablon certyfikatu.<br /><br /> Aby uzyskać instrukcje dotyczące konfigurowania tego certyfikatu, zobacz [wdrażanie certyfikatu klienta dla komputerów Mac](#BKMK_MacClient_SP1) w tym temacie.|  
 
-##  <a name="BKMK_webserver2008_cm2012"></a>Wdrażanie certyfikatu serwera sieci web dla systemów lokacji z usługami IIS  
+##  <a name="BKMK_webserver2008_cm2012"></a> Wdrażanie certyfikatu serwera sieci web dla systemów lokacji z usługami IIS  
  Wdrożenie tego certyfikatu jest objęte następującymi procedurami:  
 
 -   Utworzyć i wystawić szablon certyfikatu w urzędzie certyfikacji serwera sieci web  
@@ -91,7 +86,7 @@ To przykładowe krok wdrożenie, która używa urząd certyfikacji (CA) systemu 
 
 -   Skonfiguruj usługi IIS do używania certyfikatu serwera sieci web  
 
-###  <a name="BKMK_webserver22008"></a>Utworzyć i wystawić szablon certyfikatu w urzędzie certyfikacji serwera sieci web  
+###  <a name="BKMK_webserver22008"></a> Utworzyć i wystawić szablon certyfikatu w urzędzie certyfikacji serwera sieci web  
  Ta procedura powoduje utworzenie szablonu certyfikatu dla systemów lokacji programu System Center Configuration Manager i dodaje go do urzędu certyfikacji.  
 
 ##### <a name="to-create-and-issue-the-web-server-certificate-template-on-the-certification-authority"></a>Aby utworzyć i wystawić szablon certyfikatu serwera sieci Web w urzędzie certyfikacji  
@@ -125,7 +120,7 @@ To przykładowe krok wdrożenie, która używa urząd certyfikacji (CA) systemu 
 
 13. Jeśli nie ma potrzeby tworzenia i wystawiania certyfikatów więcej, Zamknij **urzędu certyfikacji**.  
 
-###  <a name="BKMK_webserver32008"></a>Żądanie certyfikatu serwera sieci web  
+###  <a name="BKMK_webserver32008"></a> Żądanie certyfikatu serwera sieci web  
  Ta procedura pozwala określić wartości intranetowej i internetowej nazwy FQDN wartości, które będą skonfigurowane we właściwościach serwera systemu lokacji, a następnie instaluje certyfikat serwera sieci web na serwerze członkowskim z uruchomionymi usługami IIS.  
 
 ##### <a name="to-request-the-web-server-certificate"></a>Aby zażądać certyfikatu serwera sieci Web  
@@ -175,7 +170,7 @@ To przykładowe krok wdrożenie, która używa urząd certyfikacji (CA) systemu 
 
 16. Zamknij konsolę **Certyfikaty (komputer lokalny)**.  
 
-###  <a name="BKMK_webserver42008"></a>Skonfiguruj usługi IIS do używania certyfikatu serwera sieci web  
+###  <a name="BKMK_webserver42008"></a> Skonfiguruj usługi IIS do używania certyfikatu serwera sieci web  
  Ta procedura wiąże zainstalowany certyfikat z **Domyślną witryną sieci Web**usług IIS.  
 
 ##### <a name="to-set-up-iis-to-use-the-web-server-certificate"></a>Aby skonfigurować usługi IIS do używania certyfikatu serwera sieci web  
@@ -200,7 +195,7 @@ To przykładowe krok wdrożenie, która używa urząd certyfikacji (CA) systemu 
 > [!IMPORTANT]  
 >  Po zainstalowaniu serwera systemu lokacji programu System Center Configuration Manager na tym komputerze, upewnij się, określ tej samej nazwy FQDN we właściwościach systemu lokacji, jak określono podczas żądania certyfikatu.  
 
-##  <a name="BKMK_clouddp2008_cm2012"></a>Wdrażanie certyfikatu usługi dla punktów dystrybucji w chmurze  
+##  <a name="BKMK_clouddp2008_cm2012"></a> Wdrażanie certyfikatu usługi dla punktów dystrybucji w chmurze  
 
 Wdrożenie tego certyfikatu jest objęte następującymi procedurami:  
 
@@ -210,7 +205,7 @@ Wdrożenie tego certyfikatu jest objęte następującymi procedurami:
 
 -   [Eksportowanie certyfikatu serwera sieci web niestandardowego dla punktów dystrybucji w chmurze](#BKMK_clouddpexporting2008)  
 
-###  <a name="BKMK_clouddpcreating2008"></a>Utworzyć i wydać szablon certyfikatu w urzędzie certyfikacji serwera sieci web niestandardowego  
+###  <a name="BKMK_clouddpcreating2008"></a> Utworzyć i wydać szablon certyfikatu w urzędzie certyfikacji serwera sieci web niestandardowego  
  Ta procedura powoduje utworzenie niestandardowego szablonu certyfikatu opartego na szablonie certyfikatu serwera sieci web. Certyfikat jest przeznaczony dla punktów dystrybucji w chmurze programu System Center Configuration Manager i klucz prywatny musi być możliwy do eksportu. Po utworzeniu szablon certyfikatu jest dodawany do urzędu certyfikacji.  
 
 > [!NOTE]  
@@ -253,7 +248,7 @@ Wdrożenie tego certyfikatu jest objęte następującymi procedurami:
 
 13. Jeśli nie masz do tworzenia i wystawiania certyfikatów więcej, Zamknij **urzędu certyfikacji**.  
 
-###  <a name="BKMK_clouddprequesting2008"></a>Żądanie certyfikatu serwera sieci web niestandardowego  
+###  <a name="BKMK_clouddprequesting2008"></a> Żądanie certyfikatu serwera sieci web niestandardowego  
  Ta procedura żądań, a następnie instaluje certyfikat serwera sieci web niestandardowego na serwerze członkowskim, który będzie uruchamiany na serwerze lokacji.  
 
 ##### <a name="to-request-the-custom-web-server-certificate"></a>Aby zażądać niestandardowego certyfikatu serwera sieci Web  
@@ -295,7 +290,7 @@ Wdrożenie tego certyfikatu jest objęte następującymi procedurami:
 
 17. Zamknij konsolę **Certyfikaty (komputer lokalny)**.  
 
-###  <a name="BKMK_clouddpexporting2008"></a>Eksportowanie certyfikatu serwera sieci web niestandardowego dla punktów dystrybucji w chmurze  
+###  <a name="BKMK_clouddpexporting2008"></a> Eksportowanie certyfikatu serwera sieci web niestandardowego dla punktów dystrybucji w chmurze  
  Ta procedura umożliwia wyeksportowanie niestandardowego certyfikatu serwera sieci Web do pliku, aby można go było zaimportować po utworzeniu chmurowego punktu dystrybucji.  
 
 ##### <a name="to-export-the-custom-web-server-certificate-for-cloud-based-distribution-points"></a>Aby wyeksportować niestandardowy certyfikat serwera sieci Web dla chmurowych punktów dystrybucji  
@@ -323,7 +318,7 @@ Wdrożenie tego certyfikatu jest objęte następującymi procedurami:
 
  Certyfikat jest teraz gotowy do zaimportowania po utworzeniu chmurowego punktu dystrybucji.  
 
-##  <a name="BKMK_client2008_cm2012"></a>Wdrażanie certyfikatu klienta dla komputerów z systemem Windows  
+##  <a name="BKMK_client2008_cm2012"></a> Wdrażanie certyfikatu klienta dla komputerów z systemem Windows  
  Wdrożenie tego certyfikatu jest objęte następującymi procedurami:  
 
 -   Utworzyć i wydać szablon certyfikatu uwierzytelniania stacji roboczej w urzędzie certyfikacji  
@@ -332,7 +327,7 @@ Wdrożenie tego certyfikatu jest objęte następującymi procedurami:
 
 -   Automatyczne rejestrowanie certyfikatu uwierzytelniania stacji roboczej i zweryfikować jego instalację na komputerach  
 
-###  <a name="BKMK_client02008"></a>Utworzyć i wydać szablon certyfikatu uwierzytelniania stacji roboczej w urzędzie certyfikacji  
+###  <a name="BKMK_client02008"></a> Utworzyć i wydać szablon certyfikatu uwierzytelniania stacji roboczej w urzędzie certyfikacji  
  Ta procedura powoduje utworzenie szablonu certyfikatu dla klienta programu System Center Configuration Manager z komputerów i dodaje go do urzędu certyfikacji.  
 
 ##### <a name="to-create-and-issue-the-workstation-authentication-certificate-template-on-the-certification-authority"></a>Aby utworzyć i wydać szablon certyfikatu uwierzytelniania stacji roboczej w urzędzie certyfikacji  
@@ -358,7 +353,7 @@ Wdrożenie tego certyfikatu jest objęte następującymi procedurami:
 
 9. Jeśli nie ma potrzeby tworzenia i wystawiania certyfikatów więcej, Zamknij **urzędu certyfikacji**.  
 
-###  <a name="BKMK_client12008"></a>Konfigurowanie automatycznej rejestracji szablonu uwierzytelniania stacji roboczej za pomocą zasad grupy  
+###  <a name="BKMK_client12008"></a> Konfigurowanie automatycznej rejestracji szablonu uwierzytelniania stacji roboczej za pomocą zasad grupy  
  Ta procedura konfiguruje zasady grupy do autorejestrowania certyfikatu klienta na komputerach.  
 
 ##### <a name="to-set-up-autoenrollment-of-the-workstation-authentication-template-by-using-group-policy"></a>Aby skonfigurować autorejestrację szablonu uwierzytelniania stacji roboczej za pomocą zasad grupy  
@@ -382,7 +377,7 @@ Wdrożenie tego certyfikatu jest objęte następującymi procedurami:
 
 8.  Zamknij okno **Zarządzanie zasadami grupy**.  
 
-###  <a name="BKMK_client22008"></a>Automatyczne rejestrowanie certyfikatu uwierzytelniania stacji roboczej i zweryfikować jego instalację na komputerach  
+###  <a name="BKMK_client22008"></a> Automatyczne rejestrowanie certyfikatu uwierzytelniania stacji roboczej i zweryfikować jego instalację na komputerach  
  Ta procedura powoduje zainstalowanie certyfikatu klienta na komputerach i weryfikację instalacji.  
 
 ##### <a name="to-automatically-enroll-the-workstation-authentication-certificate-and-verify-its-installation-on-the-client-computer"></a>Aby automatycznie zarejestrować certyfikat uwierzytelniania stacji roboczej i zweryfikować jego instalację na komputerze klienckim  
@@ -416,7 +411,7 @@ Wdrożenie tego certyfikatu jest objęte następującymi procedurami:
 
  Komputer jest skonfigurowany z certyfikatem klienta programu System Center Configuration Manager.  
 
-##  <a name="BKMK_clientdistributionpoint2008_cm2012"></a>Wdrażanie certyfikatu klienta dla punktów dystrybucji  
+##  <a name="BKMK_clientdistributionpoint2008_cm2012"></a> Wdrażanie certyfikatu klienta dla punktów dystrybucji  
 
 > [!NOTE]  
 >  Tego certyfikatu można także użyć dla obrazów nośników, które nie używają rozruchu PXE, ponieważ wymagania dotyczące certyfikatu są takie same.  
@@ -429,7 +424,7 @@ Wdrożenie tego certyfikatu jest objęte następującymi procedurami:
 
 -   Wyeksportuj certyfikat klienta dla punktów dystrybucji  
 
-###  <a name="BKMK_clientdistributionpoint02008"></a>Utworzyć i wydać niestandardowy szablon certyfikatu uwierzytelniania stacji roboczej w urzędzie certyfikacji  
+###  <a name="BKMK_clientdistributionpoint02008"></a> Utworzyć i wydać niestandardowy szablon certyfikatu uwierzytelniania stacji roboczej w urzędzie certyfikacji  
  Ta procedura powoduje utworzenie niestandardowego szablonu certyfikatu dla punktów dystrybucji programu System Center Configuration Manager, aby klucz prywatny można eksportować i dodanie szablonu certyfikatu do urzędu certyfikacji.  
 
 > [!NOTE]  
@@ -470,7 +465,7 @@ Wdrożenie tego certyfikatu jest objęte następującymi procedurami:
 
 12. Jeśli nie masz do tworzenia i wystawiania certyfikatów więcej, Zamknij **urzędu certyfikacji**.  
 
-###  <a name="BKMK_clientdistributionpoint12008"></a>Żądanie niestandardowego certyfikatu uwierzytelniania stacji roboczej  
+###  <a name="BKMK_clientdistributionpoint12008"></a> Żądanie niestandardowego certyfikatu uwierzytelniania stacji roboczej  
  Ta procedura żądań, a następnie instalację niestandardowego certyfikatu klienta na serwerze członkowskim, na którym działają usługi IIS i który zostanie skonfigurowany jako punkt dystrybucji.  
 
 ##### <a name="to-request-the-custom-workstation-authentication-certificate"></a>Aby zażądać niestandardowego certyfikatu uwierzytelniania stacji roboczej  
@@ -501,7 +496,7 @@ Wdrożenie tego certyfikatu jest objęte następującymi procedurami:
 
 13. Nie zamykaj konsoli **Certyfikaty (komputer lokalny)**.  
 
-###  <a name="BKMK_exportclientdistributionpoint22008"></a>Wyeksportuj certyfikat klienta dla punktów dystrybucji  
+###  <a name="BKMK_exportclientdistributionpoint22008"></a> Wyeksportuj certyfikat klienta dla punktów dystrybucji  
  Ta procedura eksportuje niestandardowego certyfikatu uwierzytelniania stacji roboczej do pliku, aby można było importować we właściwościach punktu dystrybucji.  
 
 ##### <a name="to-export-the-client-certificate-for-distribution-points"></a>Aby wyeksportować certyfikat klienta dla punktów dystrybucji  
@@ -532,7 +527,7 @@ Wdrożenie tego certyfikatu jest objęte następującymi procedurami:
 > [!TIP]  
 >  Można użyć tego samego pliku certyfikatu, konfigurując obrazy nośników do wdrożenia systemu operacyjnego, które nie są używane w środowisku PXE i sekwencji zadań umożliwia zainstalowanie obrazu musisz skontaktować się z punktem zarządzania, który wymaga połączeń klienckich HTTPS.  
 
-##  <a name="BKMK_mobiledevices2008_cm2012"></a>Wdrażanie certyfikatu rejestracji dla urządzeń przenośnych  
+##  <a name="BKMK_mobiledevices2008_cm2012"></a> Wdrażanie certyfikatu rejestracji dla urządzeń przenośnych  
  W tym wdrożeniu certyfikatu zarówno utworzenie, jak i wystawienie szablonu certyfikatu rejestracji w urzędzie certyfikacji jest objęte tą samą procedurą.  
 
 ### <a name="create-and-issue-the-enrollment-certificate-template-on-the-certification-authority"></a>Utworzyć i wydać szablon certyfikatu rejestracji w urzędzie certyfikacji  
@@ -567,7 +562,7 @@ Wdrożenie tego certyfikatu jest objęte następującymi procedurami:
 
  Szablon certyfikatu rejestracji urządzeń przenośnych jest teraz gotowy do wybrania podczas konfigurowania profilu rejestracji urządzenia przenośnego w ustawieniach klienta.  
 
-##  <a name="BKMK_AMT2008_cm2012"></a>Wdrażanie certyfikatów dla AMT  
+##  <a name="BKMK_AMT2008_cm2012"></a> Wdrażanie certyfikatów dla AMT  
  Wdrożenie tego certyfikatu jest objęte następującymi procedurami:  
 
 -   Tworzenia, wystawiania i instalowanie certyfikatu udostępniania AMT  
@@ -576,7 +571,7 @@ Wdrożenie tego certyfikatu jest objęte następującymi procedurami:
 
 -   Utworzyć i wydać certyfikaty uwierzytelniania 802.1 X AMT, na komputerach klienta  
 
-###  <a name="BKMK_AMTprovisioning2008"></a>Tworzenia, wystawiania i instalowanie certyfikatu udostępniania AMT  
+###  <a name="BKMK_AMTprovisioning2008"></a> Tworzenia, wystawiania i instalowanie certyfikatu udostępniania AMT  
  Z wewnętrznego urzędu certyfikacji należy utworzyć certyfikat udostępniania, gdy komputery oparte na technologii AMT są skonfigurowane z odcisk palca certyfikatu z wewnętrznego głównego urzędu certyfikacji. Jeśli nie jest to i musi użyć zewnętrznego urzędu certyfikacji, postępuj zgodnie z instrukcjami firmy, który wystawił certyfikat udostępniania AMT, który często pociąga za sobą żądanie certyfikatu za pośrednictwem publicznej witryny sieci web firmy. Można także znaleźć szczegółowe instrukcje dotyczące wybranego zewnętrznego urzędu certyfikacji na [Intel vPro Expert Center: Witrynie sieci web firmy Microsoft vPro możliwości zarządzania](http://go.microsoft.com/fwlink/?LinkId=132001).  
 
 > [!IMPORTANT]  
@@ -732,11 +727,11 @@ Wdrożenie tego certyfikatu jest objęte następującymi procedurami:
 
  Szablon certyfikatu uwierzytelniania klienta jest teraz gotowy do wystawiania komputerom opartym na technologii AMT certyfikatów, których można będzie użyć do uwierzytelniania klientów 802.1X. Wybierz ten szablon certyfikatu we właściwościach składnika zarządzania poza pasmem.  
 
-##  <a name="BKMK_MacClient_SP1"></a>Wdrażanie certyfikatu klienta dla komputerów Mac  
+##  <a name="BKMK_MacClient_SP1"></a> Wdrażanie certyfikatu klienta dla komputerów Mac  
 
 W tym wdrożeniu certyfikatu zarówno utworzenie, jak i wystawienie szablonu certyfikatu rejestracji w urzędzie certyfikacji jest objęte tą samą procedurą.  
 
-###  <a name="BKMK_MacClient_CreatingIssuing"></a>Utworzyć i wydać szablon certyfikatu w urzędzie certyfikacji klienta na komputery Mac  
+###  <a name="BKMK_MacClient_CreatingIssuing"></a> Utworzyć i wydać szablon certyfikatu w urzędzie certyfikacji klienta na komputery Mac  
  Ta procedura powoduje utworzenie niestandardowego szablonu certyfikatu dla komputerów Mac programu System Center Configuration Manager i dodanie szablonu certyfikatu do urzędu certyfikacji.  
 
 > [!NOTE]  

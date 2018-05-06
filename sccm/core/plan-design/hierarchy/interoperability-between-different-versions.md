@@ -1,25 +1,20 @@
 ---
-title: "Współdziałanie między wersjami"
+title: Współdziałanie między wersjami
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak uniknąć konfliktów między wieloma hierarchiami programu System Center Configuration Manager w tej samej sieci."
-ms.custom: na
+description: Dowiedz się, jak uniknąć konfliktów między wieloma hierarchiami programu System Center Configuration Manager w tej samej sieci.
 ms.date: 1/30/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 9b0a7859-747f-4495-a2f4-13fd5991f897
-caps.latest.revision: "8"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 66bfb130a27ed8e4b8b9d052a672ef7f72b56f59
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 712007dd8892e28316f277326b2182e5fe945f7b
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="interoperability-between-different-versions-of-system-center-configuration-manager"></a>Współdziałanie różnych wersji programu System Center Configuration Manager
 
@@ -63,7 +58,7 @@ Na przykład, jeśli co najmniej dwie hierarchie programu Configuration Manager 
 
  Aby zapobiec przypadkowemu przypisaniu do niewłaściwej lokacji gdy dwie hierarchie mają pokrywające się granice klientów, firma Microsoft zaleca, aby skonfigurować parametry instalacji klientów programu Configuration Manager, aby przypisać klientów do określonej lokacji.  
 
-##  <a name="bkmk_mixed"></a>Ograniczenia programu Configuration Manager w hierarchii o różnych wersjach  
+##  <a name="bkmk_mixed"></a> Ograniczenia programu Configuration Manager w hierarchii o różnych wersjach  
  Jeśli wszystko jest w trakcie procesu uaktualniania lokacji programu System Center Configuration Manager, istnieje razy, gdy różne lokacje będą korzystają z różnych wersji. Na przykład można uaktualnić centralną lokację administracyjną do nowej wersji, ale z powodu wystąpienia okna czasowego obsługi lokacji co najmniej jedna lokacja główna może zostać uaktualniona dopiero w późniejszym czasie.  
 
  Jeżeli różne lokacje w jednej hierarchii korzystają z różnych wersji, niektóre funkcje są niedostępne. Może to wpłynąć na sposób zarządzania obiektami programu Configuration Manager w konsoli programu Configuration Manager i które funkcje są dostępne dla klientów. Zwykle funkcje nowszej wersji programu Configuration Manager nie jest dostępny w lokacjach lub dla klientów korzystających z starszą wersją dodatku service pack.  
@@ -77,7 +72,7 @@ Na przykład, jeśli co najmniej dwie hierarchie programu Configuration Manager 
 |Nowe kroki sekwencji zadań|Podczas tworzenia sekwencji zadań z krokiem wprowadzony w jednej wersji programu Configuration Manager nie jest dostępna w starszej wersji, można napotkać następujące problemy:<br /><br /> — Występuje błąd podczas próby edytowania sekwencji zadań z lokacji, na którym działa poprzednia wersja programu Configuration Manager.<br /><br /> — Sekwencja zadań nie działa na komputerze, na którym działa poprzednia wersja klienta programu Configuration Manager.|  
 |Klient do komunikacji punktem zarządzania niskiego poziomu|Klient programu Configuration Manager, który komunikuje się z punktem zarządzania z lokacji korzystającej z niższej wersji niż klienta można używać tylko funkcji, która obsługuje wersję niskiego poziomu programu Configuration Manager. Przykładowo po wdrożeniu zawartości z lokacji programu System Center Configuration Manager, który został ostatnio uaktualniony do klienta, który komunikuje się z punktem zarządzania, która nie została jeszcze uaktualniona do tej wersji, ten klient nie można użyć nowych funkcji z najnowszej wersji.|  
 
-##  <a name="BKMK_ConsoleInterop"></a>Współdziałanie dla konsoli programu Configuration Manager  
+##  <a name="BKMK_ConsoleInterop"></a> Współdziałanie dla konsoli programu Configuration Manager  
  Poniższa tabela zawiera informacje na temat używania konsoli programu Configuration Manager w środowisku zawierającym różne wersje programu Configuration Manager.  
 
 |Środowisko współpracy|Więcej informacji|  

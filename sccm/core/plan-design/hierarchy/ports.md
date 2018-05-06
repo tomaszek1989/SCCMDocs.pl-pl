@@ -1,31 +1,24 @@
 ---
-title: "Porty używane do połączenia"
+title: Porty używane do połączenia
 titleSuffix: Configuration Manager
-description: "Więcej informacji na temat portów wymaganych i dostosowania, które korzysta z programu System Center Configuration Manager dla połączeń."
-ms.custom: na
+description: Więcej informacji na temat portów wymaganych i dostosowania, które korzysta z programu System Center Configuration Manager dla połączeń.
 ms.date: 02/16/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: c6777fb0-0754-4abf-8a1b-7639d23e9391
-caps.latest.revision: 
-caps.handback.revision: 
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 8db098f69180aac3785087af6ee305b3651094e5
-ms.sourcegitcommit: 1378532fac2620ddcfd31061982f344a290c2e67
+manager: dougeby
+ms.openlocfilehash: dd9c3f9440f4215b82a0f9d63614f646772cc0fa
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ports-used-in-system-center-configuration-manager"></a>Porty używane w programie System Center Configuration Manager
 
-Dotyczy: Program System Center Configuration Manager (Current Branch)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 System Center Configuration Manager jest systemem rozproszonych klient/serwer. Rozproszony charakter programu Configuration Manager oznacza, że można nawiązać połączenia między serwerami lokacji, systemami lokacji i klientami. Niektóre połączenia używają portów, których nie można skonfigurować, a niektóre obsługują niestandardowe porty określone. Sprawdź, czy wymagane porty są dostępne, korzystając z technologii, takich jak zapory, routery, serwery proxy lub protokołu IPsec filtrowania portów.  
     

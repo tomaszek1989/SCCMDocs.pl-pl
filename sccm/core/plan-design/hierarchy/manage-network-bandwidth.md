@@ -1,26 +1,20 @@
 ---
-title: "Zarządzanie przepustowością sieci dla zawartości"
+title: Zarządzanie przepustowością sieci dla zawartości
 titleSuffix: Configuration Manager
-description: "Skonfiguruj harmonogram, ograniczania i wstępnie przygotowanej zawartości programu System Center Configuration Manager."
-ms.custom: na
+description: Skonfiguruj harmonogram, ograniczania i wstępnie przygotowanej zawartości programu System Center Configuration Manager.
 ms.date: 2/6/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: e80d1151-91db-4a27-8411-a957297b67d0
-caps.latest.revision: "15"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: e7f5dbd76c19e85f41987bc9053943645830e0f7
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 2d8587c0640d831a723b9ff7c3a6402d47ee2405
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-network-bandwidth-for-content"></a>Zarządzanie przepustowością sieci dla zawartości
 Aby ułatwić zarządzanie przepustowością sieci, który jest używany przez proces zarządzania zawartością programu System Center Configuration Manager, używając formantów wbudowanych planowania i ograniczania przepustowości. Można również użyć wstępnie przygotowanej zawartości. W poniższych sekcjach opisano te opcje bardziej szczegółowo.

@@ -1,25 +1,20 @@
 ---
-title: "Zastosowanie nośników samodzielnych do wdrażania systemu Windows bez użycia sieci"
+title: Zastosowanie nośników samodzielnych do wdrażania systemu Windows bez użycia sieci
 titleSuffix: Configuration Manager
-description: "W programie Configuration Manager do wdrażania systemów operacyjnych, w przypadku ograniczonej przepustowości lub jako opcję, aby odświeżyć, instalacji lub uaktualnienia komputerów, należy użyć nośnika autonomicznego."
-ms.custom: na
+description: W programie Configuration Manager do wdrażania systemów operacyjnych, w przypadku ograniczonej przepustowości lub jako opcję, aby odświeżyć, instalacji lub uaktualnienia komputerów, należy użyć nośnika autonomicznego.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 58a0d2ae-de76-401f-b854-7a5243949033
-caps.latest.revision: "16"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 02f7c1d549b38c6bddb31fef91de49b0aa1d7969
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 18e50806868955eac807645a5378aea53acdc899
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="use-stand-alone-media-to-deploy-windows-without-using-the-network-in-system-center-configuration-manager"></a>Zastosowanie nośników samodzielnych do wdrażania systemu Windows bez użycia sieci w programie System Center Configuration Manager
 
@@ -63,7 +58,7 @@ Nośnika samodzielnego można użyć w następujących scenariuszach wdrażania 
 >   
 >  W przypadku nośnika samodzielnego zawierającego **zainstaluj pakiet** kroku, należy utworzyć nośnik autonomiczny w lokacji głównej, w której jest włączony agent dystrybucji oprogramowania lub dodać [Uruchom wiersz polecenia](../understand/task-sequence-steps.md#BKMK_RunCommandLine) krok po [Zainstaluj system Windows i program ConfigMgr](../understand/task-sequence-steps.md#BKMK_SetupWindowsandConfigMgr) kroku i przed pierwszym **zainstaluj pakiet** kroku w sekwencji zadań. Krok **Uruchom wiersz polecenia** uruchamia polecenie WMIC włączające agenta dystrybucji oprogramowania przed pierwszym uruchomieniem kroku Zainstaluj pakiet. W kroku **Uruchom wiersz polecenia** sekwencji zadań można użyć następującej składni:  
 >   
->  **Wiersz polecenia**: **WMIC/Namespace:\\ccm_SoftwareDistributionClientConfig ścieżki \root\ccm\policy\machine\requestedconfig NazwaSkładnika utworzyć = "Włącz SWDist" Enabled = "true", LockSettings = "TRUE", PolicySource = "local", PolicyVersion = "1.0" SiteSettingsKey = "1" /NOINTERACTIVE**  
+>  **Wiersz polecenia**: **WMIC/Namespace:\\ccm_SoftwareDistributionClientConfig ścieżki \root\ccm\policy\machine\requestedconfig NazwaSkładnika utworzyć = "Włącz SWDist", Enabled = "true", LockSettings = "TRUE", PolicySource = "local", PolicyVersion = "1.0" SiteSettingsKey = "1" /NOINTERACTIVE**  
 
 ## <a name="configure-deployment-settings"></a>Konfigurowanie ustawień wdrażania  
  W przypadku używania nośnika samodzielnego do rozpoczęcia procesu wdrażania systemu operacyjnego należy skonfigurować wdrożenie pod kątem udostępnienia systemu operacyjnego nośnikowi. Tę konfigurację można określić na stronie **Ustawienia wdrożenia** Kreatora wdrażania oprogramowania lub na karcie **Ustawienia wdrożenia** we właściwościach wdrożenia.  Dla ustawienia **Udostępnij dla następujących** skonfiguruj jedną z poniższych wartości:  

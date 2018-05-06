@@ -1,25 +1,20 @@
 ---
-title: "Rozwiązywanie problemów z integracją Lookout"
+title: Rozwiązywanie problemów z integracją Lookout
 titleSuffix: Configuration Manager
-description: "W tym temacie opisano rozwiązywania problemów, które występują najczęściej w przypadku integracji Lookout."
-ms.custom: na
+description: W tym temacie opisano rozwiązywania problemów, które występują najczęściej w przypadku integracji Lookout.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: e36b98c7-d0f4-4dd6-bac3-6a6c4b4bf841
-caps.latest.revision: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 244d32e98ad863f6c9ea1747b4f786c3a1279fc0
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: ee978543248e70182e12a3d6234cfd12be80dc98
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="troubleshoot-lookout-integration-with-intune"></a>Rozwiązywanie problemów z integracją Lookout przy użyciu usługi Intune
 
@@ -33,7 +28,7 @@ Lookout MTP jest skonfigurowany do zezwalania na grupy tylko użytkownicy z skon
 
 Można się z pomocą techniczną Lookout za pomocą następujących metod:
 
-* Adres e-mail:enterprisesupport@lookout.com
+* Adres e-mail: enterprisesupport@lookout.com
 * Zaloguj się do [konsoli z MTP](http://aad.lookout.com), a następnie przejdź do **pomocy technicznej** modułu.
 * Przejdź do: https://enterprise.support.lookout.com/hc/requests i Utwórz żądanie obsługi.
 
@@ -57,7 +52,7 @@ Może się tak zdarzyć w jednym z następujących scenariuszy:
 
 Urządzenia, który jest wyświetlany **oczekujące** oznacza, że użytkownik końcowy nie ma otworzyć aplikację Lookout for work aplikacji i dotknięciu **Aktywuj** przycisku. Aby uzyskać więcej informacji na urządzeniu aktywacji za pomocą Lookout pracy aplikacji, przeczytaj temat następujące:
 
-[Zostanie wyświetlony monit o zainstalowanie aplikacji Lookout for Work na urządzeniu z systemem Android](http://docs.microsoft.com/intune/enduser/you-are-prompted-to-install-lookout-for-work-android)
+[Zostanie wyświetlony monit o zainstalowanie aplikacji Lookout for Work na urządzeniu z systemem Android ](http://docs.microsoft.com/intune/enduser/you-are-prompted-to-install-lookout-for-work-android)
 
 ### <a name="in-the-lookout-mtp-console-a-device-is-showing-as-active-but-does-not-have-a-device-id"></a>W konsoli Lookout MTP urządzenie jest wyświetlany jako aktywny, ale nie ma identyfikatora urządzenia.
 Oznacza to, że nie jest podana w konsoli Lookout MTP Grupa rejestracji użytkownika będącego właścicielem tego urządzenia.   Urządzenie można uzyskać do tego stanu użytkownika, który jest właścicielem urządzenia został usunięty z grupy rejestracji lub ma grupy rejestracji, do której należy użytkownik został usunięty.
@@ -84,4 +79,4 @@ Tak długo, jak nowy użytkownik to w jednej z grup rejestracji określone w kon
 ## <a name="compliance-remediation-workflows"></a>Przepływy pracy korygowania zgodności
 [Zostanie wyświetlony monit o zainstalowanie aplikacji Lookout for Work na urządzeniu z systemem Android]( http://docs.microsoft.com/intune/enduser/you-are-prompted-to-install-lookout-for-work-android)
 
-[Musisz rozwiązać zagrożenie znaleziono aplikację Lookout for Work na urządzeniu z systemem Android](http://docs.microsoft.com/intune/enduser/you-need-to-resolve-a-threat-found-by-lookout-for-work-android)
+[Musisz rozwiązać zagrożenie znaleziono aplikację Lookout for Work na urządzeniu z systemem Android ](http://docs.microsoft.com/intune/enduser/you-need-to-resolve-a-threat-found-by-lookout-for-work-android)

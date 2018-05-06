@@ -1,25 +1,20 @@
 ---
 title: Tworzenie obrazu dla producenta OEM w fabryce lub lokalnym magazynie
 titleSuffix: Configuration Manager
-description: "Wdrożenia z nośników wstępnie przygotowanych umożliwia zmniejszenie ruchu w sieci, podczas wdrażania systemu operacyjnego na komputerze, który nie jest w pełni zaaprowizowanym."
-ms.custom: na
+description: Wdrożenia z nośników wstępnie przygotowanych umożliwia zmniejszenie ruchu w sieci, podczas wdrażania systemu operacyjnego na komputerze, który nie jest w pełni zaaprowizowanym.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: a7d3df90-062d-4d57-9e9d-e137d3e7cd7f
-caps.latest.revision: "8"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: e12acb44cc78e0a6d118cfece538366263758aec
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 0c8cf0af19017f4acfd95bcd01f8226229c05a14
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="create-an-image-for-an-oem-in-factory-or-a-local-depot-with-system-center-configuration-manager"></a>Tworzenie obrazu dla producenta OEM w fabryce lub lokalnym magazynie przy użyciu programu System Center Configuration Manager
 

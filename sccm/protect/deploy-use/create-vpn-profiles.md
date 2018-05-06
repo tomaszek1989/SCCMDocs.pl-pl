@@ -2,26 +2,19 @@
 title: 'Tworzenie profilów sieci VPN '
 titleSuffix: Configuration Manager
 description: Dowiedz się, jak utworzyć profile sieci VPN w programie System Center Configuration Manager.
-ms.custom: ''
 ms.date: 11/20/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: f338e4db-73b5-45ff-92f4-1b89a8ded989
-caps.latest.revision: ''
-author: lleonard-msft
-caps.handback.revision: ''
-ms.author: alleonar
-ms.manager: angrobe
-ms.openlocfilehash: 21fc286cdcc05244e1895ded5623d346e6cb8ebe
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: d2969a0df23f7e8b74708a4aee03c3ea7f689a99
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/27/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-vpn-profiles-in-system-center-configuration-manager"></a>Jak tworzyć profile sieci VPN w programie System Center Configuration Manager
 
@@ -58,7 +51,7 @@ Dla połączeń sieci VPN innych firm należy przeprowadzić dystrybucję aplika
 
      Ta tabela zawiera opcje typy połączeń. Zapoznaj się z dokumentacją serwera VPN, aby uzyskać więcej informacji.
 
-| &nbsp;&nbsp;Option&nbsp;&nbsp; | Więcej informacji | &nbsp;&nbsp;Połączenie&nbsp;typu&nbsp;&nbsp; |  
+| &nbsp;&nbsp;Opcja&nbsp;&nbsp; | Więcej informacji | &nbsp;&nbsp;Połączenie&nbsp;typu&nbsp;&nbsp; |  
 |----------------|----------------------|---------------------|  
 |**Obszar**     |Obszar uwierzytelniania, którego chcesz używać. Obszar uwierzytelniania to grupa zasobów uwierzytelniania używana przez typ połączenia Pulse Secure.|Pulse Secure|    
 |**Rola**        |Rola użytkownika, który ma dostęp do tego połączenia. |Pulse Secure|  
@@ -69,7 +62,7 @@ Dla połączeń sieci VPN innych firm należy przeprowadzić dystrybucję aplika
 |**Obejście sieci VPN po podłączeniu do firmowej sieci Wi-Fi**  |Połączenia sieci VPN nie będzie używany, gdy urządzenie jest połączone z firmową siecią Wi-Fi.|— Cisco AnyConnect<br /><br /> — Pulse Secure<br /><br /> — F5 Edge Client<br /><br /> — Dell SonicWALL Mobile Connect<br /><br /> — Check Point Mobile VPN<br /><br /> — Microsoft SSL (SSTP)<br /><br /> — Tryb automatyczny firmy Microsoft<br /><br /> — IKEv2<br /><br /> — L2TP|  
 |**Obejdź sieć VPN w przypadku połączenia z domową siecią Wi-Fi**  |Połączenia sieci VPN nie będzie używany, gdy urządzenie jest połączone z domową siecią Wi-Fi.|Wszystkie|  
 |**Dla sieci VPN aplikacji (system iOS 7 i nowsze, system Mac OS X 10.9 i nowsze)** |Powiązać to połączenie VPN z aplikacją dla systemu iOS, tak aby połączenie było otwierane w momencie uruchomienia aplikacji. Podczas wdrażania profilu sieci VPN możesz skojarzyć go z aplikacją.|— Cisco AnyConnect<br /><br /> — Pulse Secure<br /><br /> — F5 Edge Client<br /><br /> — Dell SonicWALL Mobile Connect<br /><br /> — Check Point Mobile VPN|  
-|**Niestandardowy plik XML (opcja)** |Określenie niestandardowych poleceń XML konfiguracji połączenia sieci VPN.<br /><br /> Przykłady:<br /><br /> **Pulse Secure**:<br /><br /> **&lt;pulse-schema><br /> &nbsp; &lt;isSingleSignOnCredential>true&lt;/isSingleSignOnCredential\><br />&lt;/pulse-schema>**<br /><br /> **CheckPoint Mobile VPN**:<br /><br /> **&lt;CheckPointVPN <br /> &nbsp; port="443" name="CheckPointSelfhost" <br /> &nbsp; sso="true" <br /> &nbsp; debug="3"<br />/>**<br /><br /> **Dell SonicWALL Mobile Connect**:<br /><br /> **&lt;MobileConnect\><br />&nbsp; &nbsp; &lt;Compression\>false&lt;/Compression\><br />&nbsp; &nbsp; &lt;debugLogging\>True&lt;/debugLogging\><br />&nbsp; &nbsp; &lt;packetCapture\>False&lt;/packetCapture\><br />&lt;/MobileConnect\>**<br /><br /> **F5 Edge Client**:<br /><br /> **&lt;f5-vpn-conf>&lt;single-sign-on-credential>&lt;/f5-vpn-conf>**<br /><br /> Więcej informacji na temat tworzenia niestandardowych poleceń XML zawiera dokumentacja sieci VPN dostarczana przez producentów.|— Cisco AnyConnect<br /><br /> — Pulse Secure<br /><br /> — F5 Edge Client<br /><br /> — Dell SonicWALL Mobile Connect<br /><br /> — Check Point Mobile VPN|  
+|**Niestandardowy plik XML (opcja)** |Określenie niestandardowych poleceń XML konfiguracji połączenia sieci VPN.<br /><br /> Przykłady:<br /><br /> **Pulse Secure**:<br /><br /> **&lt;pulse-schema><br /> &nbsp; &lt;isSingleSignOnCredential>true&lt;/isSingleSignOnCredential\><br />&lt;/pulse-schema>**<br /><br /> **CheckPoint Mobile VPN**:<br /><br /> **&lt;CheckPointVPN <br /> &nbsp; port = "443" name = "CheckPointSelfhost" <br /> &nbsp; sso = "true" <br /> &nbsp; debug = "3"<br />/>**<br /><br /> **Dell SonicWALL Mobile Connect**:<br /><br /> **&lt;MobileConnect\><br />&nbsp; &nbsp; &lt;Compression\>false&lt;/Compression\><br />&nbsp; &nbsp; &lt;debugLogging\>True&lt;/debugLogging\><br />&nbsp; &nbsp; &lt;packetCapture\>False&lt;/packetCapture\><br />&lt;/MobileConnect\>**<br /><br /> **F5 Edge Client**:<br /><br /> **&lt;F5-vpn-conf >&lt;single-sign na credential >&lt;/f5-vpn-conf >**<br /><br /> Więcej informacji na temat tworzenia niestandardowych poleceń XML zawiera dokumentacja sieci VPN dostarczana przez producentów.|— Cisco AnyConnect<br /><br /> — Pulse Secure<br /><br /> — F5 Edge Client<br /><br /> — Dell SonicWALL Mobile Connect<br /><br /> — Check Point Mobile VPN|  
 
 > [!NOTE]  
 >  Aby uzyskać informacje dotyczące tworzenia profilów sieci VPN dla urządzeń przenośnych, zobacz [tworzenie profilów sieci VPN](../../mdm/deploy-use/create-vpn-profiles.md)  

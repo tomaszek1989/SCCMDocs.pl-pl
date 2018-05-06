@@ -1,32 +1,26 @@
 ---
-title: "Planowanie zabezpieczeń"
+title: Planowanie zabezpieczeń
 titleSuffix: Configuration Manager
-description: "Pobierz najlepszych rozwiązań i inne informacje dotyczące zabezpieczeń w programie System Center Configuration Manager."
-ms.custom: na
+description: Pobierz najlepszych rozwiązań i inne informacje dotyczące zabezpieczeń w programie System Center Configuration Manager.
 ms.date: 01/04/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 2a216814-ca8c-4d2e-bcef-dc00966a3c9f
-caps.latest.revision: "6"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 8f63d1b762b296cb6b6aa56480a5cddf7a3249dc
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 02ab0884b49a8b4ac6998b9994cec23f02f076ec
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="plan-for-security-in-system-center-configuration-manager"></a>Planowanie zabezpieczeń w programie System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-##  <a name="BKMK_PlanningForCertificates"></a>Planowanie certyfikatów (z podpisem własnym i PKI)  
+##  <a name="BKMK_PlanningForCertificates"></a> Planowanie certyfikatów (z podpisem własnym i PKI)  
  Configuration Manager korzysta z kombinacji certyfikatów z podpisem własnym i certyfikatów infrastruktury kluczy publicznych (PKI).  
 
  W ramach najlepszych praktyk w dziedzinie zabezpieczeń doradzamy korzystanie z certyfikatów PKI zawsze, o ile to tylko możliwe. Aby uzyskać więcej informacji o wymaganiach dotyczących certyfikatów PKI, zobacz [wymagania dotyczące certyfikatu PKI dla programu System Center Configuration Manager](../../../core/plan-design/network/pki-certificate-requirements.md). Gdy programu Configuration Manager żąda certyfikatów PKI, takich jak podczas rejestracji urządzeń przenośnych i udostępniania Intel technologii zarządzania aktywnego (AMT), należy użyć usług domenowych w usłudze Active Directory i urzędu certyfikacji przedsiębiorstwa. Dla wszystkich innych certyfikatów PKI należy wdrażać je i zarządzać nimi niezależnie od programu Configuration Manager.  
@@ -58,9 +52,9 @@ ms.lasthandoff: 10/12/2017
 
 2.  Wyeksportuj certyfikat bez klucza prywatnego, Zapisz plik w bezpiecznym miejscu i uzyskać do niego dostęp tylko z kanału zabezpieczonego, na przykład za pomocą podpisywania bloku komunikatów serwera (SMB) lub protokołu IPsec.  
 
-3.  Zainstaluj klienta za pomocą właściwości Client.msi **SMSSIGNCERT =***&lt;Pełna ścieżka i nazwa pliku\>*, z programem CCMSetup.exe.  
+3.  Zainstaluj klienta za pomocą właściwości Client.msi **SMSSIGNCERT = ***&lt;Pełna ścieżka i nazwa pliku\>*, z programem CCMSetup.exe.  
 
-###  <a name="BKMK_PlanningForCRLs"></a>Planowanie odwoływania certyfikatów PKI  
+###  <a name="BKMK_PlanningForCRLs"></a> Planowanie odwoływania certyfikatów PKI  
 Korzystając z certyfikatów PKI z programem Configuration Manager, należy zaplanować w sposób oraz tego, czy klienci i serwery będą korzystać z listy odwołania certyfikatów (CRL) w celu weryfikowania certyfikatu na łączącym się z nimi komputerze. Lista CRL jest plik, który tworzy urząd certyfikacji (CA) i znaki i ma listę certyfikatów, które urząd certyfikacji został wystawiony, ale odwołanych. Administrator urzędu certyfikacji można odwołać certyfikaty, na przykład, jeżeli wiadomo lub podejrzenie takiego naruszenia wystawiony certyfikat.  
 
 > [!IMPORTANT]  
@@ -78,7 +72,7 @@ Zapoznaj się z Administratorzy infrastruktury kluczy publicznych, przed podjęc
 
 -   Wymaganie sprawdzania listy CRL dla każdego połączenia systemu lokacji, która jest skonfigurowana do używania certyfikatu PKI jest większa niż wymaganie szybszych połączeń i wydajnego przetwarzania na kliencie i ryzyko związane z brakiem połączenia między serwerami niemogących odnaleźć listy odwołania certyfikatów klientów.  
 
-###  <a name="BKMK_PlanningForRootCAs"></a>Planowanie infrastruktury kluczy publicznych zaufany główny certyfikaty i listy wystawców certyfikatów  
+###  <a name="BKMK_PlanningForRootCAs"></a> Planowanie infrastruktury kluczy publicznych zaufany główny certyfikaty i listy wystawców certyfikatów  
 Jeśli w danych systemach lokacji z usługami IIS wykorzystuje się certyfikaty PKI klienta do uwierzytelniania klientów w połączeniach HTTP lub uwierzytelniania klientów i szyfrowania w połączeniach HTTPS, może zajść potrzeba zaimportowania certyfikatów głównego urzędu certyfikacji jako właściwości lokacji. Poniżej przedstawiono dwa scenariusze:  
 
 -   Wdrażanie systemów operacyjnych przy użyciu programu Configuration Manager, a punkty zarządzania akceptują tylko połączenia klienckie HTTPS.  
@@ -100,7 +94,7 @@ Te certyfikaty importowane głównego urzędu certyfikacji i certyfikatu główn
 
 Niezależne od konfiguracji lokacji, może być również konieczne zaimportuj certyfikat głównego urzędu certyfikacji podczas rejestrowania urządzeń przenośnych, rejestrowania komputerów Mac i konfigurowania komputerów opartych na technologii Intel AMT dla sieci bezprzewodowych.  
 
-###  <a name="BKMK_PlanningForClientCertificateSelection"></a>Planowanie wyboru certyfikatu klienta PKI  
+###  <a name="BKMK_PlanningForClientCertificateSelection"></a> Planowanie wyboru certyfikatu klienta PKI  
  Jeśli systemów lokacji usług IIS będzie używać certyfikatów PKI klienta do uwierzytelniania klientów za pośrednictwem protokołu HTTP lub uwierzytelniania klientów i szyfrowania za pośrednictwem protokołu HTTPS, Zaplanuj sposób klienci z systemem Windows będą wybierali certyfikat do użycia dla programu Configuration Manager.  
 
 > [!NOTE]  
@@ -174,7 +168,7 @@ Aby ułatwić identyfikację unikatowego certyfikatu klienta PKI, można równie
 
 Aby uzyskać informacje o sposobie konfigurowania ustawień dla certyfikatów klienta, zobacz [Konfigurowanie ustawień certyfikatów PKI klienta](../../../core/plan-design/security/configure-security.md#BKMK_ConfigureClientPKI) sekcji [Konfigurowanie zabezpieczeń w programie System Center Configuration Manager](../../../core/plan-design/security/configure-security.md) artykułu.  
 
-###  <a name="BKMK_PlanningForPKITransition"></a>Planowanie strategii przejścia dla certyfikatów PKI i internetowego zarządzania  
+###  <a name="BKMK_PlanningForPKITransition"></a> Planowanie strategii przejścia dla certyfikatów PKI i internetowego zarządzania  
 Opcje konfiguracji elastycznych w programie Configuration Manager umożliwiają stopniowe przejście klientów oraz lokacji do używania certyfikatów PKI, aby ułatwić zabezpieczenie punktów końcowych klienta. Certyfikaty PKI zapewniają większy poziom zabezpieczeń i pozwala na zarządzanie klientów internetowych.  
 
 Ze względu na liczbę opcji konfiguracji i dostępnych wyborów w programie Configuration Manager nie istnieje jeden sposób na przejście lokacji, tak aby wszyscy klienci używali połączeń HTTPS. W razie potrzeby postępuj zgodnie z następującymi wskazówkami:  
@@ -194,7 +188,7 @@ Ze względu na liczbę opcji konfiguracji i dostępnych wyborów w programie Con
      Można również wdrożyć narzędzie oceny gotowości protokołu HTTPS Menedżera konfiguracji (**cmHttpsReadiness.exe**) na komputerach i pomocą raportów liczbę komputerów mogą używać PKI klienta certyfikatu z programu Configuration Manager.  
 
     > [!NOTE]  
-    >  Po zainstalowaniu klienta programu Configuration Manager **cmHttpsReadiness.exe** narzędzie jest instalowane w *% windir %***\CCM** folderu. Po uruchomieniu tego narzędzia w klientach można określić następujące opcje:  
+    >  Po zainstalowaniu klienta programu Configuration Manager **cmHttpsReadiness.exe** narzędzie jest instalowane w *%windir%***\CCM** folderu. Po uruchomieniu tego narzędzia w klientach można określić następujące opcje:  
     >   
     >  -   / Magazyn:&lt;nazwy\>  
     > -   / Wystawców:&lt;listy\>  
@@ -222,7 +216,7 @@ Ze względu na liczbę opcji konfiguracji i dostępnych wyborów w programie Con
 
  Po wykonaniu tego planu w celu stopniowego wprowadzenia certyfikatów PKI, najpierw do uwierzytelniania tylko za pośrednictwem protokołu HTTP, a następnie do uwierzytelniania i szyfrowania za pośrednictwem protokołu HTTPS, można zmniejszyć ryzyko, że klienci staną się Niezarządzani. Ponadto umożliwi to zastosowanie optymalnych zabezpieczeń, które program Configuration Manager obsługuje.  
 
-##  <a name="BKMK_PlanningForRTK"></a>Planowanie zaufanego klucza głównego  
+##  <a name="BKMK_PlanningForRTK"></a> Planowanie zaufanego klucza głównego  
 Menedżer konfiguracji zaufanego klucza głównego udostępnia mechanizm dla klientów programu Configuration Manager sprawdzić, czy systemy lokacji należą do ich hierarchii. Każdy serwer lokacji generuje klucz wymiany lokacji do komunikowania się z innymi lokacjami. Klucz wymiany lokacji z lokacji najwyższego poziomu w hierarchii jest nazywany zaufanym kluczem głównym.  
 
 Funkcja zaufany klucz główny w programie Configuration Manager jest podobny do certyfikatu głównego w infrastrukturze kluczy publicznych, tzn. wszystkie elementy podpisane przez klucz prywatny zaufanego klucza głównego są objęte zaufaniem na wszystkich poziomach hierarchii. Na przykład przez podpisywania certyfikatu punktu zarządzania za pomocą klucza prywatnego pary zaufanych kluczy głównych i udostępnianie kopię klucza publicznego z zaufanym certyfikatem głównym pary kluczy dla klientów, klientów można odróżnić punkty zarządzania, które znajdują się w ich hierarchii oraz punktów zarządzania, które nie należą do ich hierarchii. Klienci używają Instrumentacji zarządzania Windows (WMI), aby zapisać kopię zaufanego klucza głównego w **root\ccm\locationservices** przestrzeni nazw.  
@@ -250,7 +244,7 @@ Zaufany klucz główny można usunąć z klienta, za pomocą właściwości Clie
 
 #### <a name="to-pre-provision-a-client-with-the-trusted-root-key-by-using-a-file"></a>Aby wstępnie udostępnić klientowi zaufany klucz główny przy użyciu pliku  
 
-1.  W edytorze tekstów otwórz plik  *&lt;katalog programu Configuration Manager\>***\bin\mobileclient.tcf**.  
+1.  W edytorze tekstów otwórz plik *&lt;katalog programu Configuration Manager\>***\bin\mobileclient.tcf**.  
 
 2.  Znajdź wpis, **SMSPublicRootKey =**, skopiuj klucz z tego wiersza i zamknij plik bez wprowadzania żadnych zmian.  
 
@@ -258,18 +252,18 @@ Zaufany klucz główny można usunąć z klienta, za pomocą właściwości Clie
 
 4.  Zapisz plik i umieść go w lokalizacji, gdzie wszystkie komputery do niego dostęp, ale gdy plik jest zabezpieczony, aby zapobiec naruszeniu.  
 
-5.  Zainstaluj klienta przy użyciu metody odpowiedniej dla właściwości pliku Client.msi, a następnie określ właściwość pliku Client.msi **SMSROOTKEYPATH =***&lt;Pełna ścieżka i nazwa pliku\>*.  
+5.  Zainstaluj klienta przy użyciu metody odpowiedniej dla właściwości pliku Client.msi, a następnie określ właściwość pliku Client.msi **SMSROOTKEYPATH = ***&lt;Pełna ścieżka i nazwa pliku\>*.  
 
     > [!IMPORTANT]  
     >  Po określeniu zaufanego klucza głównego w celu zapewnienia dodatkowych zabezpieczeń podczas instalacji klienta, należy również określić kod lokacji, używając właściwości pliku Client.msi **SMSSITECODE =&lt;kod lokacji\>**.  
 
 #### <a name="to-pre-provision-a-client-with-the-trusted-root-key-without-using-a-file"></a>Aby wstępnie udostępnić klientowi zaufany klucz główny bez użycia pliku  
 
-1.  W edytorze tekstów otwórz plik  *&lt;katalog programu Configuration Manager\>***\bin\mobileclient.tcf**.  
+1.  W edytorze tekstów otwórz plik *&lt;katalog programu Configuration Manager\>***\bin\mobileclient.tcf**.  
 
 2.  Znajdź wpis SMSPublicRootKey =, zanotuj klucz z tego wiersza lub skopiuj go do Schowka, a następnie zamknij plik bez wprowadzania żadnych zmian.  
 
-3.  Zainstaluj klienta przy użyciu metody odpowiedniej dla właściwości pliku Client.msi, a następnie określ właściwość pliku Client.msi **SMSPublicRootKey =***&lt;klucza\>*, gdzie  *&lt;klucza\>*  to ciąg skopiowany z pliku mobileclient.tcf.  
+3.  Zainstaluj klienta przy użyciu metody odpowiedniej dla właściwości pliku Client.msi, a następnie określ właściwość pliku Client.msi **SMSPublicRootKey = ***&lt;klucza\>*, gdzie *&lt; klucz\>* to ciąg skopiowany z pliku mobileclient.tcf.  
 
     > [!IMPORTANT]  
     >  Po określeniu zaufanego klucza głównego w celu zapewnienia dodatkowych zabezpieczeń podczas instalacji klienta, należy również określić kod lokacji, używając właściwości pliku Client.msi **SMSSITECODE =&lt;kod lokacji\>**.  
@@ -292,9 +286,9 @@ Zaufany klucz główny można usunąć z klienta, za pomocą właściwości Clie
 
 8.  W nowym **wynik zapytania** okna, które zawiera wystąpienia **TrustedRootKey**, kliknij dwukrotnie **TrustedRootKey = @**.  
 
-9. W **Edytor obiektów dla TrustedRootKey = @** okna dialogowego, **właściwości** sekcji, przewiń w dół do **TrustedRootKey CIM_STRING**. Ciąg w prawej kolumnie to zaufany klucz główny. Sprawdź, czy zgodna **SMSPublicRootKey** wartości w pliku  *&lt;katalog programu Configuration Manager\>***\bin\mobileclient.tcf**.  
+9. W **Edytor obiektów dla TrustedRootKey = @** okna dialogowego, **właściwości** sekcji, przewiń w dół do **TrustedRootKey CIM_STRING**. Ciąg w prawej kolumnie to zaufany klucz główny. Sprawdź, czy zgodna **SMSPublicRootKey** wartości w pliku *&lt;katalog programu Configuration Manager\>***\bin\mobileclient.tcf**.  
 
-##  <a name="BKMK_PlanningForSigningEncryption"></a>Planowanie podpisywania i szyfrowania  
+##  <a name="BKMK_PlanningForSigningEncryption"></a> Planowanie podpisywania i szyfrowania  
  Gdy certyfikat PKI jest używany do całej komunikacji z klientem, nie trzeba planować podpisywania i szyfrowania korespondencji w celu zabezpieczenia danych klienta. Jednak jeśli skonfigurować systemy lokacji z usługami IIS zezwala na połączenia klienckie HTTP, należy zdecydować, jak zabezpieczyć komunikację z klientem w lokacji.  
 
  Aby chronić dane wysyłane przez klientów do punktów zarządzania, może być wymagane dane były podpisane. Dodatkowo można wymóc, aby wszystkie podpisane dane z klientów używających protokołu HTTP zostały podpisane algorytmem SHA-256. Mimo że to ustawienie jest bezpieczniejsze, nie należy włączać tej opcji, jeśli wszyscy klienci nie obsługują algorytmu SHA-256. Wiele systemów operacyjnych w sposób natywny obsługuje algorytm SHA-256, ale w przypadku starszych systemów konieczna może być aktualizacja lub poprawka. Przykładowo w komputerach z systemem Windows Server 2003 SP2 trzeba zainstalować poprawkę hotfix, do której podano odwołanie w [artykule KB 938397](http://go.microsoft.com/fwlink/p/?LinkId=226666).  
@@ -303,7 +297,7 @@ Zaufany klucz główny można usunąć z klienta, za pomocą właściwości Clie
 
  Aby uzyskać więcej informacji o sposobie konfigurowania ustawień podpisywania i szyfrowania, zobacz [Konfigurowanie podpisywania i szyfrowania](../../../core/plan-design/security/configure-security.md#BKMK_ConfigureSigningEncryption) sekcji [Konfigurowanie zabezpieczeń w programie System Center Configuration Manager](../../../core/plan-design/security/configure-security.md) artykułu.  
 
-##  <a name="BKMK_PlanningForRBA"></a>Planowanie administracji opartej na rolach  
+##  <a name="BKMK_PlanningForRBA"></a> Planowanie administracji opartej na rolach  
  Aby uzyskać te informacje, zobacz [podstawowe informacje dotyczące administrowania opartego na rolach dla programu System Center Configuration Manager](../../../core/understand/fundamentals-of-role-based-administration.md).  
 
 ### <a name="see-also"></a>Zobacz także

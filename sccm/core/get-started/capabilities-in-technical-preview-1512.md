@@ -1,26 +1,21 @@
 ---
 title: Funkcje w wersji zapoznawczej Technical Preview 1512
 titleSuffix: Configuration Manager
-description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersji 1512."
-ms.custom: na
+description: Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersji 1512.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: e4d9e414-1346-4ed4-85d0-64d602b68731
-caps.latest.revision: "6"
-author: erikje
-ms.author: erikje
-manager: angrobe
+author: aczechowski
 robots: noindex,nofollow
-ms.openlocfilehash: e107b24a821ebbd575db9c00a817938d50931344
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 939a767820983c1fe2d575d7a745d6dabb45f25c
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1512-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1512 programu System Center Configuration Manager
 
@@ -45,7 +40,7 @@ W konsoli są wyświetlane również najważniejsze brakujące ustawienia zaświ
 
 Wyświetlenie podglądu widoku zaświadczania o kondycji urządzeń, w konsoli programu Configuration Manager przejdź do **monitorowanie** roboczym kliknij **zabezpieczeń** węzeł, a następnie kliknij przycisk **zaświadczania o kondycji**.  
 
-##  <a name="bkmk_viewterms"></a>Monitorowanie warunków i postanowień w konsoli  
+##  <a name="bkmk_viewterms"></a> Monitorowanie warunków i postanowień w konsoli  
 Technical Preview 1512, począwszy od po zintegrowaniu programu Configuration Manager w usłudze Microsoft Intune, można użyć konsoli programu Configuration Manager, aby wyświetlić użytkowników, którzy zaakceptowali warunki i postanowienia skonfigurowane przez dział IT i użytkowników, którzy nie mają.  
 
 **Aby wyświetlić informacje podsumowujące:**  
@@ -58,7 +53,7 @@ Technical Preview 1512, począwszy od po zintegrowaniu programu Configuration Ma
 
 2.  W dolnej części konsoli, wybierz **wdrożeń** , wybierz wdrożenie, a następnie kliknij **stanu widoku.**  
 
-##  <a name="bkmk_EPpolicy"></a>Udoskonalenia ustawień zasad programu Endpoint Protection  
+##  <a name="bkmk_EPpolicy"></a> Udoskonalenia ustawień zasad programu Endpoint Protection  
 W wersji 1512 Technical Preview dodaliśmy następujące nowe ustawienia w zasadach ochrony przed złośliwym kodem Endpoint Protection:  
 
 -   Ochrona w czasie rzeczywistym: **Blokuj potencjalnie niechciane aplikacje podczas pobierania i przed instalacją**  
@@ -85,7 +80,7 @@ W wersji 1512 Technical Preview dodaliśmy następujące nowe ustawienia w zasad
 
          Na przykład poniżej przedstawiono ustawienie usługi Windows Defender w systemie Windows 10 ustawionych przez administratora, jak włączone i użytkownik nie może go zmodyfikować:  
 
-         ![TechRef &#95; WinDefender](../../core/get-started/media/TechRef_WinDefender.png "TechRef_WinDefender")  
+         ![TechRef&#95;WinDefender](../../core/get-started/media/TechRef_WinDefender.png "TechRef_WinDefender")  
 
     Ponadto istniejące **wykluczyć pliki i foldery** ustawienia w sekcji "Ustawienia wykluczania" przed złośliwym kodem endpoint protection zasad została poprawiona w celu umożliwia teraz wykluczanie urządzeń. Obecnie możesz na przykład określić następujące wykluczenie: **\device\mvfs** (dla systemu plików Multiversion File System). Zasady nie weryfikują ścieżki urządzenia; zasada programu endpoint protection są przekazywane aparatowi ochrony przed złośliwym kodem na kliencie, który musi być w stanie zinterpretować ciąg urządzenia.  
 

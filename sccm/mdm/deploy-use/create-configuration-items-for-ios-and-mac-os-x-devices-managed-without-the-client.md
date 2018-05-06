@@ -1,26 +1,20 @@
 ---
-title: "Tworzenie elementów konfiguracji dla systemów iOS i Mac OS X urządzeń zarządzanych za pomocą usługi Intune"
+title: Tworzenie elementów konfiguracji dla systemów iOS i Mac OS X urządzeń zarządzanych za pomocą usługi Intune
 titleSuffix: Configuration Manager
-description: "Użyj elementu konfiguracji systemu Mac OS X i System Center Configuration Manager dla systemu iOS do zarządzania ustawieniami dla systemów iOS i Mac OS X urządzeń."
-ms.custom: na
+description: Użyj elementu konfiguracji systemu Mac OS X i System Center Configuration Manager dla systemu iOS do zarządzania ustawieniami dla systemów iOS i Mac OS X urządzeń.
 ms.date: 03/28/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 613a48ac-c55d-4c4a-94ea-d3747a1b10cb
-caps.latest.revision: "15"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: d101ffc649928c1136386bc7979d4a37ad404af1
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 0a6925cdc1f3b3a5018cc4895820019d88254bd3
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-configuration-items-for-ios-and-mac-os-x-devices-managed-with-intune"></a>Jak utworzyć elementy konfiguracji dla systemów iOS i Mac OS X urządzeń zarządzanych za pomocą usługi Intune
 Użyj programu System Center Configuration Manager **z systemem iOS i Mac OS X** element konfiguracji do zarządzania ustawieniami dla systemów iOS i Mac OS X urządzeń, które są zarejestrowane w programie Microsoft Intune lub zarządzane lokalnie przez program Configuration Manager.  
@@ -33,7 +27,7 @@ Użyj programu System Center Configuration Manager **z systemem iOS i Mac OS X**
   
 3.  Na karcie **Narzędzia główne** w grupie **Tworzenie** kliknij pozycję **Utwórz element konfiguracji**.  
   
-4.  Na stronie **Ogólne** w **Kreatorze tworzenia elementu konfiguracji** podaj nazwę i opcjonalny opis elementu konfiguracji.  
+4.  Na stronie **Ogólne** w **Kreatorze tworzenia elementu konfiguracji**podaj nazwę i opcjonalny opis elementu konfiguracji.  
   
 5.  W obszarze **Określ typ elementu konfiguracji, który chcesz utworzyć** wybierz pozycję **iOS i Mac OS X**.  
   
@@ -243,7 +237,7 @@ Użyj programu System Center Configuration Manager **z systemem iOS i Mac OS X**
   
          Otwórz stronę instalacji aplikacji i skopiuj adres URL do schowka. Możesz teraz użyć tego adresu URL na liście zgodnych lub niezgodnych aplikacji.  
   
-         **Przykład:** Wyszukaj w sklepie **Microsoft Word dla tabletu iPad** aplikacji. Adres URL, którego użyjesz, to **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
+         **Przykład:** Wyszukaj w sklepie **Microsoft Word dla tabletu iPad** aplikacji. Adres URL, którego będzie **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
   
     -   **Edytuj** — umożliwia edytowanie nazwy, wydawcy i adresu URL wybranej aplikacji.  
   
@@ -280,7 +274,7 @@ Użyj programu System Center Configuration Manager **z systemem iOS i Mac OS X**
         >  Aby znaleźć identyfikator pakietu aplikacji, wykonaj następujące czynności na komputerze Mac z zainstalowaną aplikacją:  
         >   
         >  1.  Otwórz folder, w którym zainstalowano aplikację (na przykład **/Aplikacje**).  
-        > 2.  Wybierz pakiet *<Nazwa aplikacji>\>***.app**, a następnie wybierz pozycję **Pokaż zawartość pakietu**.  
+        > 2.  Wybierz *< nazwa aplikacji\>** *.app** pakietu, a następnie wybierz pozycję **Pokaż zawartość pakietu**  
         > 3.  Otwórz plik **Info.plist**.  
         > 4.  Sprawdź wartość skojarzoną z kluczem **CFBundleIdentifier**.  
         >   
@@ -363,7 +357,7 @@ Użyj programu System Center Configuration Manager **z systemem iOS i Mac OS X**
   
         -   Skopiuj adres URL strony i użyj go jako adresu URL do określenia aplikacji, którą chcesz uruchomić w trybie kiosku.  
   
-        -   **Przykład:** Wyszukaj **Microsoft Word dla tabletu iPad**. Adres URL, którego użyjesz, to **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
+        -   **Przykład:** Wyszukaj **Microsoft Word dla tabletu iPad**. Adres URL, którego będzie **https://itunes.apple.com/us/app/microsoft-word-for-ipad/id586447913?mt=8**.  
   
     -   **Dotknięcie** — włącza lub wyłącza ekran dotykowy na urządzeniu.  
   

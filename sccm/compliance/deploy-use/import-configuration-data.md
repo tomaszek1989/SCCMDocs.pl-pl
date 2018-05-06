@@ -1,26 +1,20 @@
 ---
 title: Importuj dane konfiguracji
 titleSuffix: Configuration Manager
-description: "Importowanie danych konfiguracji, jeśli jest zawarty w formacie pliku cabinet i jest zgodna ze schematem obsługiwanych Service Modeling Language."
-ms.custom: na
+description: Importowanie danych konfiguracji, jeśli jest zawarty w formacie pliku cabinet i jest zgodna ze schematem obsługiwanych Service Modeling Language.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-compliance
+ms.topic: conceptual
 ms.assetid: 309b9a09-a611-4ba2-90ab-dde51582cf87
-caps.latest.revision: "6"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: c7273ff47edb4a6d39d8c85b2d349ee7315edb17
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 2a779f80f42439fe6526c05d7027c22fb191e41e
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="import-configuration-data-with-system-center-configuration-manager"></a>Importowanie danych konfiguracji w programie System Center Configuration Manager
 
@@ -36,7 +30,7 @@ Oprócz tworzenia linii bazowych konfiguracji i elementy konfiguracji w konsoli 
 
  Aby uzyskać przykładowy pakiet konfiguracyjny ułatwiający zarządzanie zgodnością ról serwera lokacji programu System Center 2012 Configuration Manager, zobacz [pakiet konfiguracyjny programu System Center 2012 Configuration Manager](http://www.microsoft.com/en-us/download/details.aspx?id=30710&WT.mc_id=rss_alldownloads_all).  
 
-W przypadku importowania linii bazowej konfiguracji niektóre lub wszystkie elementy konfiguracji, do których odwołania zawiera linia bazowa konfiguracji, mogą również zostać dołączone do pliku cabinet. Podczas procesu importowania programu Configuration Manager weryfikuje, czy wszystkie elementy konfiguracji, do których odwołuje się linia bazowa konfiguracji są zawarte w pliku cabinet lub już istnieje w lokacji programu Configuration Manager. Proces importowania kończy się niepowodzeniem, jeśli próby zaimportowania linii bazowej konfiguracji, który odwołuje się do danych konfiguracji programu Configuration Manager nie można zlokalizować.  
+Podczas importowania linii bazowej konfiguracji niektóre lub wszystkie elementy konfiguracji, które są przywoływane w linii bazowej konfiguracji może również uwzględnione w pliku cabinet. Podczas procesu importowania programu Configuration Manager weryfikuje, czy wszystkie elementy konfiguracji, do których odwołuje się linia bazowa konfiguracji są zawarte w pliku cabinet lub już istnieje w lokacji programu Configuration Manager. Proces importowania kończy się niepowodzeniem, jeśli próby zaimportowania linii bazowej konfiguracji, który odwołuje się do danych konfiguracji programu Configuration Manager nie można zlokalizować.  
 
 Proces importowania może zakończyć się niepowodzeniem także w następujących scenariuszach:  
 

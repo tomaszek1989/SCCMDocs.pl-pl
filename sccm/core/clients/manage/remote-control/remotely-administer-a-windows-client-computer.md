@@ -1,26 +1,20 @@
 ---
 title: Zdalne administrowanie komputerem z systemem Windows
 titleSuffix: Configuration Manager
-description: "Administrowanie zdalny komputer kliencki z systemem Windows przy użyciu programu System Center Configuration Manager."
-ms.custom: na
+description: Administrowanie zdalny komputer kliencki z systemem Windows przy użyciu programu System Center Configuration Manager.
 ms.date: 07/27/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 3c9648c4-645e-4e47-ae10-2da817b8c83b
-caps.latest.revision: "5"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 7cce5f2deab7ec6f5c16628dc53e4d1cb5507f37
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 4437ef8f88b18b7148eadbc3d125d8ac72fb240a
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-remotely-administer-a-windows-client-computer-by-using-system-center-configuration-manager"></a>Zdalne administrowanie komputerem klienckim z systemem Windows przy użyciu programu System Center Configuration Manager
 

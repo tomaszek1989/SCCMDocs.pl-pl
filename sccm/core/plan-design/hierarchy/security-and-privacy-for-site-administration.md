@@ -1,25 +1,20 @@
 ---
-title: "Witryny Administracja Zabezpieczenia i prywatność"
+title: Witryny Administracja Zabezpieczenia i prywatność
 titleSuffix: Configuration Manager
-description: "Optymalizuj zabezpieczeń i prywatności dotyczące administrowania lokacją w programie System Center Configuration Manager."
-ms.custom: na
+description: Optymalizuj zabezpieczeń i prywatności dotyczące administrowania lokacją w programie System Center Configuration Manager.
 ms.date: 3/1/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 1d58176e-abc0-4087-8583-ce70deb4dcf5
-caps.latest.revision: "8"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 2dd77a607e2ab87d9abf0ea46ca7c5565a8286b6
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 515385c6c6855e63dc32b522edff9cd2047331bd
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="security-and-privacy-for-site-administration-in-system-center-configuration-manager"></a>Zabezpieczenia i prywatność w kontekście administrowania lokacją w programie System Center Configuration Manager
 
@@ -27,7 +22,7 @@ ms.lasthandoff: 01/04/2018
 
 Ten temat zawiera bezpieczeństwa i informacje o ochronie prywatności dotyczące programu System Center Configuration Manager lokacji i hierarchii.
 
-##  <a name="BKMK_Security_Sites"></a>Najlepsze rozwiązania dotyczące administrowania lokacją  
+##  <a name="BKMK_Security_Sites"></a> Najlepsze rozwiązania dotyczące administrowania lokacją  
  Użyj poniższe najlepsze rozwiązania ułatwiające bezpiecznych witryn programu System Center Configuration Manager i hierarchii.  
 
  **Uruchamiaj Instalatora tylko z zaufanego źródła i bezpieczny kanał komunikacji między nośnikiem z Instalatorem a serwerem lokacji.**  
@@ -175,7 +170,7 @@ Aby uzyskać więcej informacji o różnych technologiach Wake On LAN, zobacz [p
 
 Jeśli to możliwe, Użyj serwera poczty obsługującego dostęp uwierzytelniony, a konto komputera serwera lokacji na użytek uwierzytelniania. W przypadku konieczności określenia konta użytkownika do uwierzytelniania należy użyć konta o najniższych uprawnieniach.  
 
-##  <a name="BKMK_Security_SiteServer"></a>Najlepsze rozwiązania dotyczące serwera lokacji  
+##  <a name="BKMK_Security_SiteServer"></a> Najlepsze rozwiązania dotyczące serwera lokacji  
  Użyj poniższe najlepsze rozwiązania, aby zabezpieczyć serwer lokacji programu Configuration Manager.  
 
  **Instalowanie programu Configuration Manager na serwerze członkowskim w kontrolerze domeny.**  
@@ -192,7 +187,7 @@ Jeśli to możliwe, Użyj serwera poczty obsługującego dostęp uwierzytelniony
 
  Aby uzyskać więcej informacji, zobacz sekcję [Install a secondary site](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md#bkmk_secondary)(Instalacja lokacji dodatkowej) w temacie [Use the SetupWizard to install sites](../../../core/servers/deploy/install/use-the-setup-wizard-to-install-sites.md) (Instalowanie lokacji za pomocą Kreatora instalacji).  
 
-##  <a name="BKMK_Security_SQLServer"></a>Najlepsze rozwiązania dotyczące programu SQL Server  
+##  <a name="BKMK_Security_SQLServer"></a> Najlepsze rozwiązania dotyczące programu SQL Server  
  Configuration Manager używa programu SQL Server jako wewnętrznej bazy danych. W przypadku złamania zabezpieczeń bazy danych osoby atakujące mogą obejścia programu Configuration Manager i dostęp do programu SQL Server bezpośrednio do przeprowadzania ataków za pośrednictwem programu Configuration Manager. Należy wziąć pod uwagę ataków na program SQL Server do bardzo duże ryzyko i ograniczenia odpowiednio.  
 
  Aby zabezpieczyć program SQL Server dla programu Configuration Manager, należy użyć poniższe najlepsze rozwiązania.  
@@ -223,7 +218,7 @@ Określ i stosuj najlepsze rozwiązania dla używanej wersji programu SQL Server
 
 -   W przypadku instalowania programu SQL Server przy użyciu konta użytkownika domeny należy się upewnić, że konto komputera serwera lokacji ma skonfigurowaną główną nazwę usługi (SPN) publikowaną w usługach domenowych Active Directory. Bez nazwy SPN uwierzytelnianie Kerberos nie powiedzie się i Instalatora programu Configuration Manager zakończy się niepowodzeniem.  
 
-##  <a name="BKMK_Security_IIS"></a>Najlepsze rozwiązania dotyczące systemów lokacji z usługami IIS  
+##  <a name="BKMK_Security_IIS"></a> Najlepsze rozwiązania dotyczące systemów lokacji z usługami IIS  
 Niektóre role systemu lokacji w programie Configuration Manager wymagają programu IIS. Proces zabezpieczania usług IIS umożliwia Configuration Manager, aby działać poprawnie i zmniejsza zagrożenie bezpieczeństwa. Gdy jest to przydatne zminimalizowanie liczby serwerów, które wymagają usług IIS. Uruchamiaj na przykład tylko punkty zarządzania niezbędne do obsługi bazy klientów, biorąc pod uwagę wysoką dostępność i izolację sieciową internetowego zarządzania klientami.  
 
  Aby zabezpieczyć systemy lokacji z uruchomionymi usługami IIS, należy stosować poniższe najlepsze rozwiązania w zakresie zabezpieczeń.  
@@ -291,7 +286,7 @@ Należy na przykład usunąć następujące katalogi wirtualne punktu dystrybucj
 
 Określ i stosuj najlepsze rozwiązania dla używanej wersji serwera usług IIS. Jednak uwzględnia wszelkie wymagania, których dla określonych ról systemu lokacji programu Configuration Manager. Aby uzyskać więcej informacji, zobacz [Site and site system prerequisites](../../../core/plan-design/configs/site-and-site-system-prerequisites.md) (Wymagania wstępne dotyczące lokacji i systemu lokacji).  
 
-##  <a name="BKMK_Security_ManagementPoint"></a>Najlepsze rozwiązania dotyczące punktu zarządzania  
+##  <a name="BKMK_Security_ManagementPoint"></a> Najlepsze rozwiązania dotyczące punktu zarządzania  
  Punkty zarządzania stanowią podstawowy interfejs między urządzeniami i programu Configuration Manager. Należy wziąć pod uwagę ataków na punkt zarządzania i serwera, który jest uruchamiany na bardzo duże ryzyko i odpowiednio ograniczyć. Zastosuj wszystkie odpowiednie najlepsze rozwiązania w zakresie zabezpieczeń i monitoruj działanie pod kątem nieprawidłowości.  
 
  Użyj poniższe najlepsze rozwiązania, aby zabezpieczyć punkt zarządzania w programie Configuration Manager.  
@@ -302,7 +297,7 @@ Określ i stosuj najlepsze rozwiązania dla używanej wersji serwera usług IIS.
 
  W przypadku migrowania z wcześniejszej wersji do programu System Center Configuration Manager, przeprowadź migrację oprogramowania klienckiego w punkcie zarządzania do programu System Center Configuration Manager tak szybko, jak to możliwe.  
 
-##  <a name="BKMK_Security_FSP"></a>Najlepsze rozwiązania dotyczące rezerwowego punktu stanu  
+##  <a name="BKMK_Security_FSP"></a> Najlepsze rozwiązania dotyczące rezerwowego punktu stanu  
  Jeśli zainstalujesz rezerwowy punkt stanu w programie Configuration Manager, należy użyć poniższe najlepsze rozwiązania.  
 
  Więcej informacji dotyczących zabezpieczeń w przypadku instalowania rezerwowego punktu stanu znajduje się w sekcji [Określanie, czy jest wymagany rezerwowy punkt stanu](../../../core/clients/deploy/plan/determine-the-site-system-roles-for-clients.md#determine-if-you-need-a-fallback-status-point).  
@@ -324,7 +319,7 @@ Określ i stosuj najlepsze rozwiązania dla używanej wersji serwera usług IIS.
 
  Jeśli zainstalujesz rezerwowy punkt stanu w sieci obwodowej lub dowolnej niezaufanej sieci, należy skonfigurować serwer lokacji do inicjowania transferu danych, a nie przy użyciu domyślnego ustawienia umożliwia punktu stanu powrotu do nawiązania połączenia z serwerem lokacji.  
 
-##  <a name="BKMK_SecurityIssues_Clients"></a>Problemy z bezpieczeństwem dotyczące administrowania lokacją  
+##  <a name="BKMK_SecurityIssues_Clients"></a> Problemy z bezpieczeństwem dotyczące administrowania lokacją  
  Przejrzyj następujące zagadnienia dotyczące zabezpieczeń programu Configuration Manager:  
 
 -   Menedżer konfiguracji nie ma funkcji chroniącej przed autoryzowanym użytkownikiem administracyjnym, który używa programu Configuration Manager w celu przeprowadzania ataków na sieć. Nieautoryzowani użytkownicy administracyjni są duże zagrożenie dla bezpieczeństwa i mogą uruchamiać wiele ataków, które dotyczą następujących strategii:  
@@ -357,7 +352,7 @@ Określ i stosuj najlepsze rozwiązania dla używanej wersji serwera usług IIS.
 
     Zidentyfikuj najlepsze rozwiązania z zakresu bezpieczeństwa dotyczące wersji systemów DNS oraz WINS używanych z funkcją rozpoznawania nazw i przestrzegaj ich.  
 
-##  <a name="BKMK_Privacy_Cliients"></a>Informacje o prywatności dotyczące odnajdywania  
+##  <a name="BKMK_Privacy_Cliients"></a> Informacje o prywatności dotyczące odnajdywania  
  Odnajdywanie tworzy rekordy dotyczące zasobów sieciowych i przechowuje je w bazie danych programu System Center Configuration Manager. Rekordy danych odnajdywania zawierają informacje o komputerze, takie jak adresy IP, systemów operacyjnych i nazwy komputera. Metody odnajdowania dostępne w usłudze Active Directory można również skonfigurować do odnajdywania dowolnych informacji przechowywanych w usługach domenowych Active Directory.  
 
  Odnajdywanie pulsu to jedyna metoda odnajdowania jest domyślnie włączona, ale ta metoda tylko odnajduje komputery, które są już mieć zainstalowane oprogramowanie klienckie programu System Center Configuration Manager.  

@@ -2,25 +2,19 @@
 title: Wprowadzenie do zarządzania aplikacjami
 titleSuffix: Configuration Manager
 description: Wykryj podstawowe informacje, które będą potrzebne do zarządzania i wdrażania aplikacji w programie System Center Configuration Manager.
-ms.custom: na
 ms.date: 12/23/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-app
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-app
+ms.topic: conceptual
 ms.assetid: 08f711ba-83bf-4b5f-9520-a0778c6ae7eb
-caps.latest.revision: ''
-author: mattbriggs
-ms.author: mabrigg
-manager: angrobe
-ms.openlocfilehash: a8a66169f3c187f8fa0319548ddde23b399811f3
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: bcdc5800a1c280c99289528c40e0efee8acf5ad5
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/27/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="introduction-to-application-management-in-system-center-configuration-manager"></a>Wprowadzenie do zarządzania aplikacjami w programie System Center Configuration Manager
 

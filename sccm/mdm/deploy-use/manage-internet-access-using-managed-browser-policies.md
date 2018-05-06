@@ -2,26 +2,19 @@
 title: Zarządzanie dostępem do Internetu za pomocą zasad programu Managed Browser
 titleSuffix: Configuration Manager
 description: Wdrożyć program Intune Managed Browser do zarządzania i ograniczyć dostęp do Internetu.
-ms.custom: na
 ms.date: 03/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-hybrid
+ms.topic: conceptual
 ms.assetid: 8e25e00c-c9a8-473f-bcb7-ea989f6ca3c5
-caps.latest.revision: ''
-caps.handback.revision: ''
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 3aea2a65733a52ab532d451b21ae98fbc0f122c6
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 8754219f36e30f2442178dc5521e05246948d3de
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/27/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-internet-access-using-managed-browser-policies-with-system-center-configuration-manager"></a>Zarządzanie dostępem do Internetu za pomocą zasad programu Managed Browser przy użyciu programu System Center Configuration Manager
 
@@ -92,7 +85,7 @@ Nowe zasady są wyświetlane w węźle **Zasady zarządzania aplikacjami** w obs
 
 Poniższe informacje dotyczą dopuszczalnych formatów i symboli wieloznacznych, których można używać podczas określania adresów URL na listach witryn dozwolonych i zablokowanych.  
 
--   Symbol wieloznaczny „**\\***” może być używany zgodnie z regułami z poniższej listy dozwolonych wzorców.  
+-   Symbol wieloznaczny „**\***” może być używany zgodnie z regułami z poniższej listy dozwolonych wzorców.  
 
 -   Upewnij się, że wszystkie adresy URL dodawane do listy będą mieć prefiks **http** lub **https**.  
 
@@ -121,7 +114,7 @@ Poniższe informacje dotyczą dopuszczalnych formatów i symboli wieloznacznych,
 
     -   *.com  
 
-    -   \*.contoso/\*  
+    -   *.contoso/\*  
 
     -   www.contoso.com/*images  
 

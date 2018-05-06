@@ -1,26 +1,20 @@
 ---
-title: "Konfigurowanie grup dostępności"
+title: Konfigurowanie grup dostępności
 titleSuffix: Configuration Manager
-description: "Konfigurowanie i zarządzanie grupami dostępności serwera SQL Server zawsze na wraz z programem SCCM."
-ms.custom: na
+description: Konfigurowanie i zarządzanie grupami dostępności serwera SQL Server zawsze na wraz z programem SCCM.
 ms.date: 7/31/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 7e4ec207-bb49-401f-af1b-dd705ecb465d
-caps.latest.revision: 
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: d6b208da49e27775548ac6f544b7a7278b96d980
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 2baafa04c315ebc7512504f042c89615b7217b4c
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-sql-server-always-on-availability-groups-for-configuration-manager"></a>Konfigurowanie programu SQL Server zawsze włączonych grup dostępności dla programu Configuration Manager
 
@@ -89,14 +83,14 @@ Aby wykonać tę procedurę, musi być konto, którego używasz do uruchamiania 
 > Korzystając z programu Microsoft Intune z programem Configuration Manager w konfiguracji hybrydowych, przenoszenie bazy danych lokacji z grupy dostępności lub wyzwala ponowne synchronizowanie danych z chmurą. Nie można uniknąć tego ponownej synchronizacji.
 
 ### <a name="to-configure-a-site-to-use-the-availability-group"></a>Aby skonfigurować lokację do używania grupy dostępności
-1.  Uruchom **Instalatora programu Configuration Manager** z  **&lt;* folder instalacji lokacji programu Configuration Manager*> \BIN\X64\setup.exe**.
+1.  Uruchom **Instalatora programu Configuration Manager** z  **&lt; *folder instalacji lokacji programu Configuration Manager*> \BIN\X64\setup.exe**.
 
 2.  Na stronie **Pierwsze kroki** wybierz pozycję **Przeprowadź obsługę lokacji lub zresetuj tę lokację**, a następnie kliknij przycisk **Dalej**.
 
 3.  Wybierz opcję **Modyfikuj konfigurację serwera SQL** , a następnie kliknij przycisk **Dalej**.
 
 4.  Skonfiguruj ponownie następujące elementy dla bazy danych lokacji:
-    -   **Nazwa programu SQL Server:** Wprowadź nazwę wirtualną dla grupy dostępności **odbiornika** można skonfigurować podczas tworzenia grupy dostępności. Nazwa wirtualna powinna być pełną nazwą DNS, takie jak  **&lt;* Serwer_punktu_końcowego*>. fabrikam.com**.  
+    -   **Nazwa programu SQL Server:** Wprowadź nazwę wirtualną dla grupy dostępności **odbiornika** można skonfigurować podczas tworzenia grupy dostępności. Nazwa wirtualna powinna być pełną nazwą DNS, takie jak  **&lt; *Serwer_punktu_końcowego*>. fabrikam.com**.  
 
     -   **Wystąpienie:** Ta wartość musi być pusta, aby określić wystąpienie domyślne *odbiornika* grupy dostępności. Jeśli bieżąca baza danych lokacji działa w nazwanym wystąpieniu, nazwane wystąpienie znajduje się i muszą zostać wyczyszczone.
 
@@ -158,7 +152,7 @@ Aby wykonać tę procedurę, konto, którego używasz, musi być:
 
 4.  Na serwerze, który będzie hostem bazy danych lokacji (repliką podstawową lub serwerze, gdzie przywróconej bazy danych lokacji), należy zmienić model kopii zapasowej bazy danych lokacji z **pełne** do **proste**. Zobacz [View or Change the Recovery Model of a Database](/sql/relational-databases/backup-restore/view-or-change-the-recovery-model-of-a-database-sql-server) (Wyświetlanie lub zmiana modelu odzyskiwania bazy danych) w dokumentacji programu SQL Server.  
 
-5.  Uruchom **Instalatora programu Configuration Manager** z  **&lt;* folder instalacji lokacji programu Configuration Manager >*\BIN\X64\setup.exe**.
+5.  Uruchom **Instalatora programu Configuration Manager** z  **&lt; *folder instalacji lokacji programu Configuration Manager >* \BIN\X64\setup.exe**.
 
 6.  Na stronie **Pierwsze kroki** wybierz pozycję **Przeprowadź obsługę lokacji lub zresetuj tę lokację**, a następnie kliknij przycisk **Dalej**.  
 

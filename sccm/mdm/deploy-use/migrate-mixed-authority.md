@@ -1,21 +1,20 @@
 ---
-title: "Zmienić urząd zarządzania urządzeniami Przenośnymi dla określonych użytkowników (mieszane urzędu zarządzania urządzeniami Przenośnymi)"
+title: Zmienić urząd zarządzania urządzeniami Przenośnymi dla określonych użytkowników (mieszane urzędu zarządzania urządzeniami Przenośnymi)
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak zmienić urząd zarządzania urządzeniami Przenośnymi z hybrydowego zarządzania urządzeniami Przenośnymi do autonomicznej usługi Intune dla niektórych użytkowników."
-keywords: 
-author: dougeby
+description: Dowiedz się, jak zmienić urząd zarządzania urządzeniami Przenośnymi z hybrydowego zarządzania urządzeniami Przenośnymi do autonomicznej usługi Intune dla niektórych użytkowników.
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.date: 12/05/2017
-ms.topic: article
-ms.prod: configmgr-hybrid
-ms.service: 
-ms.technology: 
+ms.date: 04/30/2018
+ms.topic: conceptual
+ms.prod: configuration-manager
+ms.technology: configmgr-hybrid
 ms.assetid: 6f0201d7-5714-4ba0-b2bf-d1acd0203e9a
-ms.openlocfilehash: 59fb06d14002f781e0448a64bb0064b4add2f087
-ms.sourcegitcommit: ac9268e31440ffe91b133c2ba8405d885248d404
+ms.openlocfilehash: 46fb1333c58f3010acde4d064044a124050d211a
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/08/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="change-the-mdm-authority-for-specific-users-mixed-mdm-authority"></a>Zmienić urząd zarządzania urządzeniami Przenośnymi dla określonych użytkowników (mieszane urzędu zarządzania urządzeniami Przenośnymi) 
 
@@ -97,53 +96,48 @@ Aby zmienić urząd zarządzania dla następujących urządzeń MDM, możesz uż
 
 ### <a name="cmdlet-switch-mdmdeviceauthority"></a>Polecenia cmdlet *MdmDeviceAuthority przełącznika*
 
-#### <a name="synopsis"></a>STRESZCZENIE
+#### <a name="synopsis"></a>SYNOPSIS
 Polecenie cmdlet zmienia urząd zarządzania MDM urządzeń bez koligacji użytkownika (na przykład urządzeń rejestrowanych zbiorczo). Polecenie cmdlet zmienia między usługą Intune i programu Configuration Manager urzędów zarządzania dla określonego urządzenia na podstawie ich urzędy zarządzania Uruchom polecenie cmdlet.
 
-### <a name="syntax"></a>SKŁADNIA
+### <a name="syntax"></a>SYNTAX
 `Switch-MdmDeviceAuthority -DeviceIds <Guid[]> [-Credential <PSCredential>] [-Force] [-LogFilePath <string>] [-LoggingLevel {Off | Critical | Error | Warning | Information | Verbose | ActivityTracing | All}] [-Confirm] [-WhatIf] [<CommonParameters>]`
 
 
 ### <a name="parameters"></a>PARAMETRY
-``` powershell
--Credential <PSCredential>
-Credential for Intune Tenant Admin or Service Admin account to use when switching device management authorities. The user is prompted for credentials if the parameter is not specified.
+#### `-Credential <PSCredential>`
+Obiekt poświadczeń PowerShell dla konta użytkownika usługi Azure AD, które jest używane podczas przełączania urzędy zarządzania urządzeniami. Użytkownik jest monitowany o poświadczenia, jeśli parametr nie jest określony. Rola katalog dla tego konta użytkownika powinna być **administratora globalnego** lub **administratorem ograniczonym** z rolą administratora **administratora usługi Intune**.
 
--DeviceIds <Guid[]>
-The ids of the MDM devices that need to have their management authority switched. The device ids are unique identifiers for the devices displayed by the Configuration Manager console.
+#### `-DeviceIds <Guid[]>`
+Identyfikatory urządzeń MDM, które muszą mieć ich urząd zarządzania przełączaniem. Identyfikatory urządzeń są unikatowych identyfikatorów dla urządzeń wyświetlane w konsoli programu Configuration Manager.
 
--Force [<SwitchParameter>]
-Specify parameter to disable the Should Continue prompt.<br>
+#### `-Force [<SwitchParameter>]`
+Określ parametr, aby wyłączyć wiersza powinno być kontynuowane.<br>
  
--LogFilePath <string>
-Path to log file location.
+#### `-LogFilePath <string>`
+Ścieżka do lokalizacji pliku dziennika.
  
--LoggingLevel <SourceLevels>
-The log level used to determine the type of logs that need to be written to the log file.
+#### `-LoggingLevel <SourceLevels>`
+Dziennik poziom użytego w celu określenia typu dzienników konieczne są zapisywane w pliku dziennika.
  
-The following are the possible values for LoggingLevel:
+Poniżej przedstawiono możliwe wartości LoggingLevel:
 
   - ActivityTracing
-  - All
-  - Critical
-  - Error
-  - Information
-  - Off
-  - Verbose
-  - Warning
+  - Wszystkie
+  - Krytyczny
+  - Błąd
+  - Informacje
+  - Wyłączanie
+  - Pełny
+  - Ostrzeżenie
  
--Confirm [<SwitchParameter>]
-Prompts you for confirmation before executing the command.
+#### `-Confirm [<SwitchParameter>]`
+Monituje o potwierdzenie przed wykonaniem polecenia.
  
--WhatIf [<SwitchParameter>]
-Describes what would happen if you executed the command without actually executing the command.
+#### `-WhatIf [<SwitchParameter>]`
+Opisuje rezultat wykonania polecenia bez jego rzeczywistego wykonania polecenia.
  
-<CommonParameters>
-This cmdlet supports the common parameters: Verbose, Debug,
-ErrorAction, ErrorVariable, WarningAction, WarningVariable,
-OutBuffer, PipelineVariable, and OutVariable. For more information, see
-[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
-```
+#### `<CommonParameters>`
+To polecenie cmdlet obsługuje typowe parametry: Verbose, Debug, ErrorAction, ErrorVariable, WarningAction, WarningVariable, OutBuffer, PipelineVariable i OutVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ### <a name="example-1"></a>Przykład 1
 
@@ -162,13 +156,13 @@ Description
  
 Successfully switched the management authority of the device from Configuration Manager to Intune.
 ```
-### <a name="remarks"></a>UWAGI
-``` powershell
-To see the examples, type: "get-help Switch-MdmDeviceAuthority -examples".
-For more information, type: "get-help Switch-MdmDeviceAuthority -detailed".
-For technical information, type: "get-help Switch-MdmDeviceAuthority -full".
-For online help, type: "get-help Switch-MdmDeviceAuthority -online".
-```
+
+### <a name="remarks"></a>REMARKS
+- Aby zapoznać się z przykładami, wpisz: `get-help Switch-MdmDeviceAuthority -examples`  
+- Aby uzyskać więcej informacji wpisz: `get-help Switch-MdmDeviceAuthority -detailed`  
+- Aby uzyskać informacje techniczne wpisz: `get-help Switch-MdmDeviceAuthority -full`  
+- Aby uzyskać pomoc wpisz: `get-help Switch-MdmDeviceAuthority -online`   
+
 
 ## <a name="next-steps"></a>Następne kroki
 Po migracji użytkowników i przetestować funkcje usługi Intune, należy rozważyć, czy wszystko jest gotowe do [zmienić urząd zarządzania urządzeniami Przenośnymi](migrate-change-mdm-authority.md) dzierżawy usługi Intune z programu Configuration Manager do usługi Intune. 

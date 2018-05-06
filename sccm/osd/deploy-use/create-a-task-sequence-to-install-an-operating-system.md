@@ -1,25 +1,20 @@
 ---
-title: "Tworzenie sekwencji zadań instalacji systemu operacyjnego"
+title: Tworzenie sekwencji zadań instalacji systemu operacyjnego
 titleSuffix: Configuration Manager
-description: "Użyj sekwencji zadań w programie System Center Configuration Manager automatyczne zainstalowanie obrazu systemu operacyjnego i innej zawartości na komputerze docelowym."
-ms.custom: na
+description: Użyj sekwencji zadań w programie System Center Configuration Manager automatyczne zainstalowanie obrazu systemu operacyjnego i innej zawartości na komputerze docelowym.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 217c8a0e-5112-420e-a325-2a6d75326290
-caps.latest.revision: "13"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 433a1778213b357c6c41eb20e4b975b2e682050d
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 274a6c22b76c8def437e6159036ff3e82877e88f
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="create-a-task-sequence-to-install-an-operating-system-in-system-center-configuration-manager"></a>Tworzenie sekwencji zadań instalacji systemu operacyjnego w programie System Center Configuration Manager
 
@@ -48,7 +43,7 @@ Użyj sekwencji zadań w programie System Center Configuration Manager, aby auto
 
 2.  W obszarze roboczym **Biblioteka oprogramowania** rozwiń węzeł **Systemy operacyjne**, a następnie kliknij przycisk **Sekwencje zadań**.  
 
-3.  Na karcie **Narzędzia główne** w grupie **Tworzenie** kliknij przycisk **Utwórz sekwencję zadań** , aby uruchomić Kreatora tworzenia sekwencji zadań.  
+3.  Na karcie **Narzędzia główne** w grupie **Tworzenie** kliknij przycisk **Utwórz sekwencję zadań**, aby uruchomić Kreatora tworzenia sekwencji zadań.  
 
 4.  Na stronie **Tworzenie nowej sekwencji zadań** kliknij pozycję **Zainstaluj istniejący pakiet obrazów**, a następnie kliknij przycisk **Dalej**.  
 
@@ -134,7 +129,7 @@ Użyj sekwencji zadań w programie System Center Configuration Manager, aby auto
 
 |Grupa lub krok sekwencji zadań|Opis|  
 |---------------------------------|-----------------|  
-|Przechwyć pliki i ustawienia — **(Nowa grupa sekwencji zadań)**|Umożliwia utworzenie grupy sekwencji zadań. Grupa sekwencji zadań zawiera podobne kroki sekwencji zadań w celu zapewnienia lepszej organizacji i kontroli błędów.<br /><br /> Ta grupa zawiera kroki niezbędne do przechwytywania plików i ustawień z systemu operacyjnego komputera odniesienia.|  
+|Przechwyć pliki i ustawienia — **(Nowa grupa sekwencji zadań)**|Umożliwia utworzenie grupy sekwencji zadań. Grupa sekwencji zadań przechowuje podobne kroki sekwencji zadań w celu zapewnienia lepszej organizacji i kontroli błędów.<br /><br /> Ta grupa zawiera kroki niezbędne do przechwytywania plików i ustawień z systemu operacyjnego komputera odniesienia.|  
 |Przechwyć ustawienia systemu Windows|Ten krok sekwencji zadań służy do identyfikowania ustawień systemu Microsoft Windows do przechwycenia z komputera odniesienia. Można przechwycić nazwę komputera, informacje o użytkowniku i organizacji oraz ustawienia strefy czasowej.|  
 |Przechwyć ustawienia sieci|Ten krok sekwencji zadań umożliwia przechwycenie ustawień sieci z komputera odniesienia. Oprócz ustawień karty sieciowej można przechwycić informacje o członkostwie w domenie lub grupie roboczej dla komputera odniesienia.|  
 |Przechwyć pliki użytkownika i ustawienia — **(Nowa grupa sekwencji zadań podrzędnych)**|Utwórz grupę sekwencji zadań w innej grupie sekwencji zadań. Ta podgrupa zawiera kroki niezbędne do przechwycenia danych stanu użytkownika. Tak jak w przypadku początkowo dodanej grupy, ta podgrupa zawiera podobne kroki sekwencji zadań w celu zapewnienia lepszej organizacji i kontroli błędów.|  

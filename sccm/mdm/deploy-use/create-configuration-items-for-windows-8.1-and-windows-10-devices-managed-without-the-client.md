@@ -2,26 +2,19 @@
 title: Tworzenie elementów konfiguracji dla Windows 8.1 i Windows 10 urządzeń zarządzanych za pomocą usługi Intune
 titleSuffix: Configuration Manager
 description: Aby zarządzać ustawieniami komputerów z systemem Windows 10, należy użyć elementu konfiguracji System Center Configuration Manager systemu Windows 10.
-ms.custom: na
 ms.date: 07/31/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-hybrid
+ms.topic: conceptual
 ms.assetid: 23e1e4dc-623a-4521-ad04-ae9482927097
-caps.latest.revision: 20
-caps.handback.revision: 0
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 7f5a50ae6ea05af7e864cf94df3063d70bd737b4
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 639fabbe1e2f51194669fc1f196d88140193a727
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-configuration-items-for-windows-81-and-windows-10-devices-managed-without-the-system-center-configuration-manager-client"></a>Jak utworzyć elementy konfiguracji dla urządzeń z systemem Windows 8.1 lub Windows 10 zarządzanych bez klienta programu System Center Configuration Manager
 
@@ -36,7 +29,7 @@ ms.lasthandoff: 10/12/2017
   
 3.  Na karcie **Narzędzia główne** w grupie **Tworzenie** kliknij pozycję **Utwórz element konfiguracji**.  
   
-4.  Na stronie **Ogólne** w **Kreatorze tworzenia elementu konfiguracji** podaj nazwę i opcjonalny opis elementu konfiguracji.  
+4.  Na stronie **Ogólne** w **Kreatorze tworzenia elementu konfiguracji**podaj nazwę i opcjonalny opis elementu konfiguracji.  
   
 5.  W obszarze **Określ typ elementu konfiguracji, który chcesz utworzyć** wybierz pozycję **Windows 8.1 i Windows 10**.  
   
@@ -70,7 +63,7 @@ ms.lasthandoff: 10/12/2017
   
 12. Ukończ pracę kreatora.  
   
- Możesz wyświetlić nowy element konfiguracji w węźle **Elementy konfiguracji** obszaru roboczego **Zasoby i zgodność**.  
+ Możesz wyświetlić nowy element konfiguracji w węźle **Elementy konfiguracji** obszaru roboczego **Zasoby i zgodność** .  
   
 ##  <a name="windows-81-and-windows-10-configuration-item-settings-reference"></a>Informacje dotyczące ustawień elementu konfiguracji systemów Windows 8.1 i Windows 10  
   
@@ -247,8 +240,8 @@ ms.lasthandoff: 10/12/2017
 |-------------|----------------------|  
 |**Nazwa sieci (SSID)**|Wprowadź nazwę sieci Wi-Fi.|  
 |**Połączenie sieciowe**|Wybierz opcję **Internet** lub **Praca**.|  
-|**Uwierzytelnianie**|Wybierz metodę uwierzytelniania dla połączenia bezprzewodowego:<br /><br /> - **Otwórz**<br /><br /> - **Udostępnione**<br /><br /> - **WPA**<br /><br /> - **WPA-PSK**<br /><br /> - **WPA2**<br /><br /> - **WPA2-PSK**|  
-|**Szyfrowanie danych**|Wybierz metodę szyfrowania używaną przez to połączenie. Można wybrać wartości są różne w zależności od **uwierzytelniania** wybranej metody:<br /><br /> - **Wyłączone**<br /><br /> - **WEP**<br /><br /> - **TKIP**<br /><br /> - **AES**|  
+|**Uwierzytelnianie**|Wybierz metodę uwierzytelniania dla połączenia bezprzewodowego:<br /><br /> - **Otwórz**<br /><br /> - **udostępnione**<br /><br /> - **WPA**<br /><br /> - **WPA-PSK**<br /><br /> - **WPA2**<br /><br /> - **WPA2-PSK**|  
+|**Szyfrowanie danych**|Wybierz metodę szyfrowania używaną przez to połączenie. Można wybrać wartości są różne w zależności od **uwierzytelniania** wybranej metody:<br /><br /> - **wyłączone**<br /><br /> - **WEP**<br /><br /> - **TKIP**<br /><br /> - **AES**|  
 |**Indeks kluczy**|Wybierz indeks kluczy z **1** do **4** używana przez **szyfrowanie danych** ustawienie **WEP**.|  
 |**Ta sieć łączy się z Internetem**|Wybierz tę opcję, jeśli chcesz podać ustawienia proxy umożliwiające urządzeniom przenośnym łączenie się z Internetem za pośrednictwem połączenia bezprzewodowego.|  
 |**Ustawienia serwera proxy**|Określ zgodnie z wymaganiami ustawienia **Serwer** i **Port** dla opcji **HTTP**, **WAP** i **Sockets**.|  
@@ -266,9 +259,9 @@ ms.lasthandoff: 10/12/2017
   
 -   **Magazyn docelowy** — wybierz co najmniej jeden Magazyn docelowy, w którym zaimportowany certyfikat zostanie dodany na urządzeniu przenośnym z:  
   
-    -   **Główny**  
+    -   **główny**  
   
-    -   **URZĄD CERTYFIKACJI**  
+    -   **CA**  
   
     -   **Normalny**  
   
@@ -276,7 +269,7 @@ ms.lasthandoff: 10/12/2017
   
     -   **SPC**  
   
-    -   **Elementów równorzędnych**  
+    -   **elementów równorzędnych**  
   
 -   **Rola** — Jeśli **SPC** (certyfikat wydawcy oprogramowania) wybrano Magazyn docelowy, wybierz rolę, którą jest skojarzony z certyfikatem:  
   

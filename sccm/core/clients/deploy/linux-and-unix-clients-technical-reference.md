@@ -1,25 +1,20 @@
 ---
-title: "Usługi składowe klienta systemu UNIX/Linux i poleceń"
+title: Usługi składowe klienta systemu UNIX/Linux i poleceń
 titleSuffix: Configuration Manager
-description: "Więcej informacji na temat poleceń na klientach z systemem Linux i UNIX w programie System Center Configuration Manager i usługi składowe."
-ms.custom: na
+description: Więcej informacji na temat poleceń na klientach z systemem Linux i UNIX w programie System Center Configuration Manager i usługi składowe.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: e5a8c79f-5791-49c5-8055-086d742e5559
-caps.latest.revision: "6"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 238a824aad1acd1f3dd41b1b01afa9248b44ab5d
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 3e66708471b22346901e8ee16e63dd962b699a16
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="linux-and-unix-clients-component-services-and-commands-for-system-center-configuration-manager"></a>Polecenia dla programu System Center Configuration Manager i usługi składowe klientów systemu Linux i UNIX
 

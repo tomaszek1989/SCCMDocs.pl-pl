@@ -1,26 +1,20 @@
 ---
-title: "Odnajdywanie zasobów komputerów i użytkowników"
+title: Odnajdywanie zasobów komputerów i użytkowników
 titleSuffix: Configuration Manager
-description: "Odczytywanie omówienie odnajdywania i odnajdowanie podczas procesu rekordów danych."
-ms.custom: na
+description: Odczytywanie omówienie odnajdywania i odnajdowanie podczas procesu rekordów danych.
 ms.date: 2/8/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: 30844519-ce14-456f-bfb8-4318b578e9f6
-caps.latest.revision: "20"
-caps.handback.revision: "0"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: b380df38c4e08a04691a0bca9d46580fedf7b78a
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 7d43415ce9517843490c815f7c9f2f3490e87674
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="run-discovery-for-system-center-configuration-manager"></a>Uruchamianie odnajdywania dla programu System Center Configuration Manager
 
@@ -64,7 +58,7 @@ Używasz co najmniej jednej metody odnajdywania w programie System Center Config
 
 -   Wdrażanie ustawień klienta i pokrewnych konfiguracji.
 
-##  <a name="BKMK_DDRs"></a>Informacje o rekordach danych odnajdywania  
+##  <a name="BKMK_DDRs"></a> Informacje o rekordach danych odnajdywania  
  Liczba rekordów DDR to pliki tworzone przez metodę odnajdywania. Zawierają one informacje o zasobie, można zarządzać w programie Configuration Manager, takich jak komputery, użytkowników, a w niektórych przypadkach, infrastrukturze sieci. Są przetwarzane w lokacjach głównych lub w centralnych lokacjach administracyjnych. Po wprowadzeniu informacji o zasobie z rekordu DDR do bazy danych, rekord DDR jest usuwany, a informacja replikowana jako dane globalne do wszystkich lokacji w hierarchii.  
 
  Lokacja, w które następuje przetworzenie rekordu DDR, zależy od informacji jakie zawiera:  

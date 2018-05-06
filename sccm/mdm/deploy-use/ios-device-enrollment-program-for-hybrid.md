@@ -1,31 +1,26 @@
 ---
-title: "Rejestrowanie urządzeń z systemem iOS z programu Device Enrollment Program (DEP) "
+title: 'Rejestrowanie urządzeń z systemem iOS z programu Device Enrollment Program (DEP) '
 titleSuffix: Configuration Manager
-description: "Włącz rejestracja Device Enrollment Program (DEP) dla hybrydowych wdrożeń w programie Configuration Manager przy użyciu usługi Intune dla systemu iOS."
-ms.custom: na
+description: Włącz rejestracja Device Enrollment Program (DEP) dla hybrydowych wdrożeń w programie Configuration Manager przy użyciu usługi Intune dla systemu iOS.
 ms.date: 09/22/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 78d44adc-9b1c-4bc6-b72d-e93873916ea6
-caps.latest.revision: "9"
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 1d8a1765b599daa98014feeb3d88efe9a07cb907
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: a4a6d8d67060dbf7c5bc75892d2f231bce67df8f
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ios-device-enrollment-program-dep-enrollment-for-hybrid-deployments-with-configuration-manager"></a>Rejestracja systemu iOS Device Enrollment Program (DEP) dla hybrydowych wdrożeń z programu Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Firmy mogą kupić urządzeń z systemem iOS za pośrednictwem programu device enrollment program firmy Apple i następnie zarządzać nimi za pomocą programu Microsoft Intune. W celu zarządzania firmowymi urządzeniami z systemem iOS przy użyciu programu Device Enrollment Program (DEP) firmy Apple należy wykonać czynności wymagane przez firmę Apple do uczestnictwa w programie i zakupić urządzenia w ramach tego programu. Szczegóły tego procesu są dostępne pod adresem:  [https://deploy.apple.com](https://deploy.apple.com). Zalety programu obejmują funkcję bezobsługowego konfigurowania urządzeń bez konieczności podłączania poszczególnych urządzeń do komputera przy użyciu połączenia USB.  
+Firmy mogą kupić urządzeń z systemem iOS za pośrednictwem programu device enrollment program firmy Apple i następnie zarządzać nimi za pomocą programu Microsoft Intune. W celu zarządzania firmowymi urządzeniami z systemem iOS przy użyciu programu Device Enrollment Program (DEP) firmy Apple należy wykonać czynności wymagane przez firmę Apple do uczestnictwa w programie i zakupić urządzenia w ramach tego programu. Szczegóły tego procesu są dostępne pod adresem: [ https://deploy.apple.com ](https://deploy.apple.com). Zalety programu obejmują funkcję bezobsługowego konfigurowania urządzeń bez konieczności podłączania poszczególnych urządzeń do komputera przy użyciu połączenia USB.  
 
  Aby zarejestrować firmowe urządzenia z systemem iOS w programie DEP, należy uzyskać token programu DEP od firmy Apple. Token umożliwia usłudze Intune synchronizację informacji dotyczących urządzeń uczestniczących w programie DEP należących do firmy. Ponadto pozwala on usłudze Intune przekazywanie profilów rejestracji do firmy Apple i przypisywanie urządzeń do tych profilów.  
 

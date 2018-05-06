@@ -1,28 +1,21 @@
 ---
 title: Importowanie ustawień zgodności SCAP
-titleSuffix: System Center Configuration Manager
+titleSuffix: Configuraton Manager
 description: Importowanie ustawień zgodności SCAP jako linie bazowe konfiguracji i eksportowanie wyników
-ms.custom: na
 ms.date: 03/27/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-app
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-compliance
+ms.topic: conceptual
 ms.assetid: 0bdcb018-bac2-4540-b786-6242bac73ff4
-caps.latest.revision: ''
-caps.handback.revision: ''
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
 robots: noindex,nofollow
-ms.openlocfilehash: 5863f8b9a79e8e22e215e9feac7744b4a6ce279d
-ms.sourcegitcommit: 27da4be015f1496b7b89ebddb517a2685f1ecf74
+ms.openlocfilehash: 1f6b1fa0dd0775083eff9925a65509083b3f47d3
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="import-the-compliance-settings-compliant-cab-files-into-system-center-configuration-manager"></a>Zaimportuj pliki cab zgodne z funkcją ustawień zgodności do programu System Center Configuration Manager
 
@@ -49,7 +42,7 @@ Proces kreatora danych konfiguracji importu
 | Nazwa strony kreatora | Akcja użytkownika |
 | --- | --- |
 | **Wybierz pliki** |1. Kliknij pozycję **Dodaj**. </br>Zostanie wyświetlone okno dialogowe Otwieranie.|
-||2. W **Otwórz** okno dialogowe, przejdź do **&lt;wyjściowy plik cab zgodny\_folderu &gt;**. Kliknij przycisk  **&lt; zgodne\_pliku cab&gt;**plik .cab, gdzie cab _compliant **dane wyjściowe\_folderu** jest folder, w którym określono następujące Przełącznik dane wyjściowe po uruchomieniu narzędzia Sces.ScapToDcm.exe. **zgodne\_pliku** to nazwa pliku cab utworzonego wcześniej w procesie. Następnie kliknij przycisk **Otwórz**. </br> Konsola programu Configuration Manager — zostanie wyświetlone okno dialogowe Ostrzeżenie o zabezpieczeniach.|
+||2. W **Otwórz** okno dialogowe, przejdź do **&lt;wyjściowy plik cab zgodny\_folderu &gt;**. Kliknij przycisk  **&lt; zgodne\_pliku cab&gt;** plik .cab, gdzie cab _compliant **dane wyjściowe\_folderu** jest folder, w którym określono następujące Przełącznik dane wyjściowe po uruchomieniu narzędzia Sces.ScapToDcm.exe. **zgodne\_pliku** to nazwa pliku cab utworzonego wcześniej w procesie. Następnie kliknij przycisk **Otwórz**. </br> Konsola programu Configuration Manager — zostanie wyświetlone okno dialogowe Ostrzeżenie o zabezpieczeniach.|
 ||3. W **konsoli programu Configuration Manager — ostrzeżenie o zabezpieczeniach** okno dialogowe, kliknij przycisk **Uruchom**. Na stronie Wybieranie plików dane konfiguracji zostaną wyświetlone na liście linii bazowych do zaimportowania.|
 ||3. Kliknij przycisk **Dalej**.|
 | **Podsumowanie** |5. Kliknij przycisk **Dalej**. |
@@ -72,7 +65,7 @@ Po utworzeniu odpowiednich kolekcji komputerów dla komputerów, które chcesz o
 
 Aby przypisać linię bazową konfiguracji do kolekcji komputerów:
 
-1. Otwórz **programu Configuration Manager****konsoli**.  
+1. Otwórz **programu Configuration Manager****konsoli**.
 
 2. W **konsoli programu Configuration Manager, w okienku nawigacji przejdź do **zasoby i zgodność** > **ustawień zgodności**  >**  Linie bazowe konfiguracji **.
 3. W okienku nawigacji kliknij &lt; ** konfiguracji\_linii bazowej >, gdzie &lt; _konfiguracji\_linii bazowej&gt;_  jest nazwą linii bazowej konfiguracji które Czy chcesz przypisać do kolekcji komputerów.
@@ -81,7 +74,7 @@ Aby przypisać linię bazową konfiguracji do kolekcji komputerów:
 
 4. W okienku Akcje kliknij polecenie **Wdróż**.
 
-5. Zakończenie **Wdróż****linii bazowej konfiguracji****okna dialogowego** korzystając z informacji w poniższej tabeli i akceptując wartości domyślne, chyba że określono inaczej.    
+5. Zakończenie **Wdróż****linii bazowej konfiguracji****okna dialogowego** korzystając z informacji w poniższej tabeli i akceptując wartości domyślne, chyba że określono inaczej.
 
 ### <a name="deploy-configuration-baseline-dialog-process"></a>Wdrażanie proces okna dialogowego linii bazowej konfiguracji
 
@@ -187,7 +180,7 @@ Wybierz odpowiednią linię bazową konfiguracji, kliknij kartę wdrożenia, je�
 
 | **Parametr** | **Użycie** | **Wymagane** |
 | --- | --- | --- |
-| -baseline [Baseline CI ID] | Określenie linii bazowej konfiguracji | Tak |
+| -linii bazowej [identyfikator elementu konfiguracji linii bazowej] | Określenie linii bazowej konfiguracji | Tak |
 | -przypisania [identyfikator przypisania] | Określ wdrożenia linii bazowej konfiguracji | Tak |
 | -organization [nazwa organizacji] | Określ nazwę organizacji, która będzie wyświetlana w raporcie. Mogą być oddzielone znakami &#39;; &#39; Aby określić nazwę organizacji w wielu wierszach. | Nie |
 | — Typ [elastycznej/pełnej/fullnosc] | Określ typ wyniku OVAL: wynik uproszczony, wynik, lub wynik pełny lub wynik pełny bez charakterystyki systemu. | Nie (Jeśli nie jest określony, wartością domyślną jest pełna) |

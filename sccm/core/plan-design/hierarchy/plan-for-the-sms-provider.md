@@ -1,25 +1,20 @@
 ---
 title: Planowanie dostawcy programu SMS
 titleSuffix: Configuration Manager
-description: "Więcej informacji na temat sposobu dostawcy programu SMS pomaga w zarządzaniu System Center Configuration Manager."
-ms.custom: na
+description: Więcej informacji na temat sposobu dostawcy programu SMS pomaga w zarządzaniu System Center Configuration Manager.
 ms.date: 2/7/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: 5d5d6273-0d8a-43c7-865a-cdb1736dcae3
-caps.latest.revision: "8"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 36f4e9e94e794998a59453f709bf6248975d8792
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 9807bab4a5edd60ebc8a4aaa000cea6b8c25afb0
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="plan-for-the-sms-provider-for-system-center-configuration-manager"></a>Planowanie dostawcy programu SMS dla programu System Center Configuration Manager
 
@@ -122,7 +117,7 @@ Aby wyświetlić lokalizacje poszczególnych dostawców programu SMS jest zainst
 
     -   Ta lokalizacja może używać zasobów systemu, które byłyby w innym przypadku przeznaczone do obsługi innych usług.  
 
-##  <a name="BKMK_SMSProvLanguages"></a>Języki dostawcy programu SMS — informacje  
+##  <a name="BKMK_SMSProvLanguages"></a> Języki dostawcy programu SMS — informacje  
  Dostawca programu SMS działa niezależnie od języka wyświetlania wybranego na komputerze, na którym jest zainstalowany.  
 
  Gdy użytkownik administracyjny lub dane żądań proces programu Configuration Manager przy użyciu dostawcy programu SMS, dostawca programu SMS próbuje zwrócić te dane w formacie który jest zgodny z językiem systemu operacyjnego komputera wysyłającego żądanie.
@@ -172,7 +167,7 @@ Można wyświetlać i konfigurować uprawnienia grupy administratorów programu 
 >  Każdy użytkownik administracyjny używający zdalnej konsoli programu Configuration Manager wymaga uprawnień modelu DCOM zdalnej aktywacji na komputerze serwera lokacji i komputerze dostawcy programu SMS. Mimo że można przyznać tych praw dowolnemu użytkownikowi lub grupie, jest dobrym rozwiązaniem jest ich udzielić grupie Administratorzy SMS w celu ułatwienia administracji. Aby uzyskać więcej informacji, zobacz sekcję [Konfigurowanie uprawnień modelu DCOM dotyczących zdalnych konsol programu Configuration Manager](../../../core/servers/manage/modify-your-infrastructure.md#BKMK_ConfigDCOMforRemoteConsole) w temacie [Modyfikowanie infrastruktury programu System Center Configuration Manager](../../../core/servers/manage/modify-your-infrastructure.md).  
 
 
-##  <a name="BKMK_SMSProvNamespace"></a>Przestrzeń nazw dostawcy programu SMS — informacje  
+##  <a name="BKMK_SMSProvNamespace"></a> Przestrzeń nazw dostawcy programu SMS — informacje  
 Struktura dostawcy programu SMS jest definiowana przez schemat usługi WMI. Przestrzenie nazw schematu opisują lokalizację danych programu Configuration Manager w ramach schematu dostawcy programu SMS. Poniższa tabela zawiera niektóre z popularnych przestrzeni nazw używanych przez dostawcę programu SMS.  
 
 |Przestrzeń nazw|Opis|  
@@ -183,7 +178,7 @@ Struktura dostawcy programu SMS jest definiowana przez schemat usługi WMI. Prze
 |Nazwy Root\CCM|Zasady konfiguracji klienta programu Configuration Manager i dane klienta.|  
 |root\CIMv2\SMS|Lokalizacja klas, które są zbierane przez agenta klienta spisu raportowania spisu. Te ustawienia są kompilowane przez klientów podczas oceny zasad komputera i opierają się na konfiguracji ustawień klienta dla komputera.|  
 
-##  <a name="BKMK_WAIKforSMSProv"></a>Wymagania dotyczące wdrażania systemu operacyjnego dla dostawcy programu SMS  
+##  <a name="BKMK_WAIKforSMSProv"></a> Wymagania dotyczące wdrażania systemu operacyjnego dla dostawcy programu SMS  
 Komputer, na którym jest instalowane wystąpienie dostawcy programu SMS musi mieć wymaganą wersję zestawu Windows ADK, który wymaga wersji programu Configuration Manager używasz.  
 
  -   Na przykład w wersji 1511 programu Configuration Manager wymaga wersji systemu Windows 10 RTM (10.0.10240) zestawu Windows adk.  

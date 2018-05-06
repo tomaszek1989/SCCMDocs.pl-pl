@@ -1,25 +1,20 @@
 ---
-title: "Zarządzanie klientami"
+title: Zarządzanie klientami
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak zarządzać klientami w programie System Center Configuration Manager."
-ms.custom: na
+description: Dowiedz się, jak zarządzać klientami w programie System Center Configuration Manager.
 ms.date: 12/21/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 3986a992-c175-4b6f-922e-fc561e3d7cb7
-caps.latest.revision: "17"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 2065fd0910b1d89df3f8296c87ede15b89331568
-ms.sourcegitcommit: 528b1ce79803fecd34937a790e9b5cde282d4caa
+manager: dougeby
+ms.openlocfilehash: 623d7b6a048b7728e40adb3655dc1017408fb1d7
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-manage-clients-in-system-center-configuration-manager"></a>Jak zarządzać klientami w programie System Center Configuration Manager
 
@@ -154,7 +149,7 @@ W zależności od typu urządzenia, niektóre z tych opcji mogą być niedostęp
 
          Aby uzyskać więcej informacji, zobacz [Hybrydowe zarządzanie urządzeniami przenośnymi za pomocą programu System Center Configuration Manager i usługi Microsoft Intune](../../../mdm/understand/hybrid-mobile-device-management.md).  
 
-##  <a name="BKMK_ManagingClients_DeviceCollectionsNode"></a>Zarządzanie klientami z węzła kolekcje urządzeń  
+##  <a name="BKMK_ManagingClients_DeviceCollectionsNode"></a> Zarządzanie klientami z węzła kolekcje urządzeń  
   Wiele zadań, które są dostępne dla urządzeń w **urządzeń** węzła są również dostępne w kolekcji. Konsolę automatycznie stosuje operacji do wszystkich kwalifikujących się urządzeń w kolekcji. Ta akcja na całą kolekcję generuje pakietów sieciowych dodatkowe i zwiększa użycie procesora CPU na serwerze lokacji.  
 
   Należy rozważyć przed wykonaniem zadań na poziomie kolekcji. Po rozpoczęciu nie można zatrzymać zadania z poziomu konsoli. 
@@ -172,7 +167,7 @@ W zależności od typu urządzenia, niektóre z tych opcji mogą być niedostęp
 
          Zobacz [programu Endpoint Protection w programie System Center Configuration Manager](../../../protect/deploy-use/endpoint-protection.md).  
 
-    -   **Wdrożenie oprogramowania, linii bazowych konfiguracji i sekwencji zadań.**  
+    -   **Wdrażanie oprogramowania, linii bazowych konfiguracji i sekwencji zadań.**  
 
          Zobacz:  
 
@@ -278,7 +273,7 @@ Aby uzyskać więcej informacji na temat używania tych właściwości wiersza p
 
 1.  Na komputerze klienckim, przejdź do **programu Configuration Manager** w Panelu sterowania i kliknij dwukrotnie, aby wyświetlić właściwości.  
 
-2.  Na **pamięci podręcznej** kartę Ustaw właściwości miejsca i lokalizacji. Lokalizacja domyślna to *%windir%*\ccmcache.  
+2.  Na **pamięci podręcznej** kartę Ustaw właściwości miejsca i lokalizacji. Lokalizacja domyślna to *%windir%* \ccmcache.  
 
 3.  Aby usunąć pliki w folderze pamięci podręcznej, wybierz pozycję **Usuń pliki**.  
 
@@ -320,7 +315,7 @@ Dostosuj rozmiar pamięci podręcznej klienta bez konieczności ponownej instala
 
 #### <a name="to-change-the-hierarchy-setting-for-managing-conflicting-records"></a>Aby zmienić hierarchię ustawień przy zarządzaniu rekordami powodującymi konflikt  
 
-1.  W konsoli programu Configuration Manager wybierz **administracji** > **konfiguracja lokacji** > **witryny** > **ustawienia hierarchii**
+1.  W konsoli programu Configuration Manager wybierz **administracji** > **konfiguracja lokacji** > **witryny**  >  **Ustawienia hierarchii**
 2.  Na **zatwierdzania klienta i rekordy powodujące konflikt** , wybierz pozycję albo **automatycznie rozwiązuj rekordy powodujące konflikt**, lub **ręcznie rozwiązuj rekordy powodujące konflikt**.  
 
 #### <a name="to-manually-resolve-conflicting-records"></a>Aby ręcznie rozwiązać rekordy powodujące konflikt  

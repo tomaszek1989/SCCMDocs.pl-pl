@@ -1,26 +1,20 @@
 ---
 title: Wprowadzenie
 titleSuffix: Configuration Manager
-description: "Uzyskać podstawowe informacje jako wprowadzenie do programu System Center Configuration Manager."
-ms.custom: na
+description: Uzyskać podstawowe informacje jako wprowadzenie do programu System Center Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 3343eccf-bf09-41cd-9e68-03e893c7f904
-caps.latest.revision: 
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: b63386f69ea05a610868de9bc85ff606d4ade73d
-ms.sourcegitcommit: b13da5ad8ffd58e3b89fa6d7170e1dec3ff130a4
+manager: dougeby
+ms.openlocfilehash: f0986d713b47d15dc0298e413216a1e33fe2e937
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="introduction-to-system-center-configuration-manager"></a>Wprowadzenie do programu System Center Configuration Manager
 
@@ -101,7 +95,7 @@ Aby uzyskać więcej informacji, zobacz [Instalowanie konsol programu System Cen
 
 Aby uzyskać więcej informacji, zobacz [wprowadzenie do zarządzania aplikacjami w programie System Center Configuration Manager](../../apps/understand/introduction-to-application-management.md).  
 
-###  <a name="BKMK_Client"></a>Właściwości programu Configuration Manager (na komputerach z systemem Windows)  
+###  <a name="BKMK_Client"></a> Właściwości programu Configuration Manager (na komputerach z systemem Windows)  
  Podczas instalowania klienta programu Configuration Manager na komputerach z systemem Windows, program Configuration Manager jest zainstalowany w Panelu sterowania. Zazwyczaj nie trzeba konfigurować tej aplikacji, ponieważ konfiguracja klienta jest wykonywana w konsoli programu Configuration Manager. Za pomocą tej aplikacji użytkownicy administracyjni oraz pomoc techniczna może rozwiązywać problemy u poszczególnych klientów.  
 
  Aby uzyskać więcej informacji dotyczących wdrażania klienta, zobacz [Metody instalacji klientów w programie System Center Configuration Manager](../../core/clients/deploy/plan/client-installation-methods.md).  
@@ -115,7 +109,7 @@ Aby uzyskać więcej informacji, zobacz [wprowadzenie do zarządzania aplikacjam
 
 We wszystkich scenariuszach głównym administratorem programu Configuration Manager jest Adam.  
 
-###  <a name="BKMK_ScenarioEmpower"></a>Przykładowy scenariusz: Zwiększenie możliwości dostępnych dla użytkowników przez zapewnienie im dostępu do aplikacji z dowolnego urządzenia  
+###  <a name="BKMK_ScenarioEmpower"></a> Przykładowy scenariusz: Zwiększenie możliwości dostępnych dla użytkowników przez zapewnienie im dostępu do aplikacji z dowolnego urządzenia  
  Firma Trey Research chce upewnić się, że pracownicy mają dostęp do aplikacji, które są im niezbędne jak najbardziej wydajny. Adam mapuje te wymagania firmy do następujących scenariuszy:  
 
 |Wymaganie|Bieżący stan zarządzania klientami|Przyszły stan zarządzania klientami|  
@@ -143,7 +137,7 @@ Implementuje te wymagania przy użyciu kroków konfiguracji w poniższej tabeli:
 
  Te czynności konfiguracyjne i wyniki sprawiają, że firma Trey Research może łatwo udostępniać pracownikom aplikacje na dowolnym urządzeniu.  
 
-###  <a name="BKMK_ScenarioUnify"></a>Przykładowy scenariusz: Ujednolicenie zarządzania zgodnością urządzeń  
+###  <a name="BKMK_ScenarioUnify"></a> Przykładowy scenariusz: Ujednolicenie zarządzania zgodnością urządzeń  
  Firma Trey Research oczekuje jednolitego rozwiązania w zakresie zarządzania klientami obejmującego aktualizowane automatycznie oprogramowanie antywirusowe. To znaczy:  
 
 -   Zapora systemu Windows jest włączona.  
@@ -183,7 +177,7 @@ Implementuje te wymagania przy użyciu kroków konfiguracji w poniższej tabeli:
 
  Te czynności konfiguracyjne i wyniki sprawią, że firma Trey Research pomyślnie ujednolici zarządzanie zgodnością urządzeń.  
 
-###  <a name="BKMK_ScenarioSimplify"></a>Przykładowy scenariusz: Uproszczenie zarządzania klientami dla urządzeń  
+###  <a name="BKMK_ScenarioSimplify"></a> Przykładowy scenariusz: Uproszczenie zarządzania klientami dla urządzeń  
  Firma Trey Research oczekuje wszystkich nowych komputerach będzie automatycznie instalowany firmy podstawowy obraz komputera z systemem Windows 7. Po zainstalowaniu obrazu systemu operacyjnego na tych komputerach muszą być zarządzane i monitorowane pod kątem dodatkowego oprogramowania instalowanego przez użytkowników. Komputery przechowujące poufne dane wymagają bardziej restrykcyjnych zasad zarządzania niż pozostałe komputery. Na przykład, inżynierowie działu pomocy technicznej nie mogą łączyć się z takimi komputerami zdalnie, w celu ich ponownego uruchomienia musi zostać wprowadzony numer PIN funkcji BitLocker i jedynie administratorzy lokalni mogą instalować na nich oprogramowanie.  
 
  Adam mapuje te wymagania firmy do następujących scenariuszy:  

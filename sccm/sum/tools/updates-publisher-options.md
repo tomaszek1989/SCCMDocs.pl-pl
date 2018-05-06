@@ -1,31 +1,25 @@
 ---
 title: Skonfiguruj opcje
 titleSuffix: Configuration Manager
-description: "Skonfiguruj opcje przy użyciu programu System Center Updates Publisher"
-ms.custom: na
+description: Skonfiguruj opcje przy użyciu programu System Center Updates Publisher
 ms.date: 4/29/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-sum
+ms.topic: conceptual
 ms.assetid: 4e620080-5400-45bb-87c2-fbdbc8aeacac
-caps.latest.revision: 
-author: mestew
-ms.author: mstewart
-manager: angrobe
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
 robots: NOINDEX, NOFOLLOW
-ms.openlocfilehash: 0080e8067c0689d4a681a135b16d62b4af4f0fb8
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 497ff025dafcdb135e466a18f2f6661ca0f21a00
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-options-for-updates-publisher"></a>Skonfiguruj opcje dla programu Updates Publisher
 
-*Dotyczy: Program System Center Updates Publisher*
+*Dotyczy: System Center Updates Publisher*
 
 Przejrzyj i skonfiguruj opcje i powiązane ustawienia, które mają wpływ na działanie programu Updates Publisher.
 
@@ -127,7 +121,7 @@ Aby otworzyć **właściwości wydawcy aktualizacji**, a następnie wybierz pozy
 Po Updates Publisher znajdzie nowe aktualizacje, wyświetla **aktualizacji dostępnych** okna, a następnie można go zainstalować. Jeśli wybierzesz nie, zainstaluj aktualizację, więc jest oferowany przy następnym otwarciu konsoli.
 
 ## <a name="logging"></a>Rejestrowanie
-Updates Publisher rejestruje podstawowych informacji dotyczących programu Updates Publisher, aby  **&lt;* ścieżki*&gt;\Windows\Temp\UpdatesPublisher.log**.
+Updates Publisher rejestruje podstawowych informacji dotyczących programu Updates Publisher, aby  **&lt; *ścieżki*&gt;\Windows\Temp\UpdatesPublisher.log**.
 
 Użyj Notatnik lub **CMTrace** Aby przejrzeć dziennik. CMTrace jest narzędzia plików dziennika programu Configuration Manager i znajduje się w **\SMSSetup\Tools** folderu nośnika źródłowego programu Configuration Manager.
 

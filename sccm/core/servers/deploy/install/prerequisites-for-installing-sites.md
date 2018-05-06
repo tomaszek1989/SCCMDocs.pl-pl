@@ -1,25 +1,20 @@
 ---
-title: "Wymagania wstępne dotyczące lokacji"
+title: Wymagania wstępne dotyczące lokacji
 titleSuffix: Configuration Manager
-description: "Więcej informacji na temat wymagań wstępnych dotyczących instalowania różnych typów lokacji programu System Center Configuration Manager."
-ms.custom: na
+description: Więcej informacji na temat wymagań wstępnych dotyczących instalowania różnych typów lokacji programu System Center Configuration Manager.
 ms.date: 7/31/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 92b339ef-2723-4322-bec6-077b3e8846b0
-caps.latest.revision: "5"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 07e57a15834d2f29444f47b9503cc04947f36150
-ms.sourcegitcommit: 92c3f916e6bbd35b6208463ff406e0247664543a
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 6e45ec9aca5ee1a14f9058453497003814b2fdb0
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/02/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="prerequisites-for-installing-system-center-configuration-manager-sites"></a>Wymagania wstępne dotyczące instalowania lokacji programu System Center Configuration Manager
 
@@ -30,7 +25,7 @@ Przed rozpoczęciem instalacji lokacji jest dobrym rozwiązaniem, aby dowiedzie�
 ## <a name="primary-sites-and-the-central-administration-site"></a>Lokacje główne i centralna lokacja administracyjna
 Następujące wymagania wstępne dotyczą instalowania centralną lokację administracyjną jako pierwszą lokację w hierarchii, zainstalowaniu autonomicznej lokacji głównej lub podrzędnej lokacji głównej. Jeśli instalujesz centralną lokację administracyjną w ramach rozszerzania hierarchii, zobacz [rozszerzania autonomicznej lokacji głównej](../../../../core/servers/deploy/install/prerequisites-for-installing-sites.md#bkmk_expand) w tym temacie.
 
-###  <a name="bkmk_PrereqPri"></a>Wymagania wstępne dotyczące instalowania lokacji głównej lub centralnej lokacji administracyjnej  
+###  <a name="bkmk_PrereqPri"></a> Wymagania wstępne dotyczące instalowania lokacji głównej lub centralnej lokacji administracyjnej  
 
 -   Konto użytkownika, który powoduje zainstalowanie lokacji musi mieć następujące uprawnienia:  
 
@@ -60,7 +55,7 @@ Następujące wymagania wstępne dotyczą instalowania centralną lokację admin
 - Serwer lokacji i komputery bazy danych lokacji muszą spełniać wszystkie wymagania wstępne konfiguracji. Przed rozpoczęciem instalacji możesz [ręcznie uruchomić narzędzie sprawdzania wymagań wstępnych](../../../../core/servers/deploy/install/prerequisite-checker.md) do identyfikowania i rozwiązywania problemów.  
 
 
-### <a name="bkmk_expand"></a>Wymagania wstępne dotyczące rozszerzania autonomicznej lokacji głównej
+### <a name="bkmk_expand"></a> Wymagania wstępne dotyczące rozszerzania autonomicznej lokacji głównej
 Autonomicznej lokacji głównej musi spełniać następujące wymagania wstępne, aby rozszerzyć do hierarchii z centralną lokacją administracyjną:
 
 -   **Zainstalowanie nowych instalacji centralnej lokacji administracyjnej przy użyciu nośnika z dysku CD. Najnowszy folder (zawierający pliki źródłowe) odpowiadający wersji autonomicznej lokacji głównej**
@@ -114,7 +109,7 @@ Aby rozwiązać ten problem, wykonaj następujące kroki:
  3.   Ponownie skonfiguruj połączenie z usługą Azure do użytku z programem Configuration Manager.
 
 
-## <a name="bkmk_secondary"></a>Lokacje dodatkowe
+## <a name="bkmk_secondary"></a> Lokacje dodatkowe
 Poniżej przedstawiono wymagania wstępne dotyczące instalowania lokacji dodatkowej:
 -   Administrator konfigurujący instalację lokacji dodatkowej w konsoli programu Configuration Manager musi mieć prawa administracyjne oparte na rolach, które są równoważne roli zabezpieczeń **Administrator infrastruktury** lub **administrator o pełnych uprawnieniach**.  
 -   Konto komputera nadrzędnej lokacji głównej musi być **administratora** na komputerze serwera lokacji dodatkowej.  

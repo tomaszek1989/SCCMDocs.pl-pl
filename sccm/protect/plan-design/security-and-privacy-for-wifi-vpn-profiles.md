@@ -1,26 +1,20 @@
 ---
-title: "Profili sieci Wi-Fi i sieci VPN zabezpieczenia i prywatność"
+title: Profili sieci Wi-Fi i sieci VPN zabezpieczenia i prywatność
 titleSuffix: Configuration Manager
-description: "Więcej informacji na temat zabezpieczeń najlepsze rozwiązania dotyczące zarządzania profilami sieci Wi-Fi i VPN dla urządzeń w programie System Center Configuration Manager."
-ms.custom: na
+description: Więcej informacji na temat zabezpieczeń najlepsze rozwiązania dotyczące zarządzania profilami sieci Wi-Fi i VPN dla urządzeń w programie System Center Configuration Manager.
 ms.date: 12/28/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: ef3ab519-9cf7-47fc-8831-d400e0e96df8
-caps.latest.revision: "4"
-caps.handback.revision: "0"
-author: Nbigman
-ms.author: nbigman
-manager: angrobe
-ms.openlocfilehash: 9c66945e498042ef013fb00f56cfb73598a9776f
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 6ba2cf8139cd1a5f416ff7877afc0a6b7b1ad081
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="security-and-privacy-for-wi-fi-and-vpn-profiles-in-system-center-configuration-manager"></a>Bezpieczeństwo i prywatność profilów sieci Wi-Fi i sieci VPN w programie System Center Configuration Manager
 

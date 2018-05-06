@@ -1,68 +1,76 @@
 ---
-title: "Użyj rozszerzonej współdziałanie klienta z bieżącej gałęzi "
+title: Rozszerzone współdziałanie klienta
 titleSuffix: Configuration Manager
-description: "Informacje o używaniu klienta z długoterminowe obsługi gałęzi programu Configuration Manager z lokacją bieżącej gałęzi."
-ms.custom: na
-ms.date: 08/09/2017
+description: Informacje o używaniu rozszerzonej współdziałanie klienta do długoterminowego Obsługa statycznej klienta programu Configuration Manager z bieżącą lokacją gałęzi.
+ms.date: 05/01/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 600086d5-bd9e-4ac1-8ace-c7a62de80dc2
-caps.latest.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: ba79f2b9cf0cdfc4525645a647dddb624a0a5e5b
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: f46fdb622a55c7281de89c84d5e66e54ab149548
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="use-the-configuration-manager-client-software-for-extended-interoperability-with-future-versions-of-a-current-branch-site"></a>Użyj rozszerzonej współdziałanie z przyszłych wersji Current Branch lokacji oprogramowanie klienta programu Configuration Manager
 
-*Dotyczy: Program System Center Configuration Manager (Current Branch), (długoterminowej obsługi Branch)*  
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*  
 
-W niektórych przypadkach zasad firmy może nie pozwalają na regularnie aktualizację klienta programu Configuration Manager na niektórych komputerach. Na przykład konieczne może być zgodne z zasadami zarządzania zmiany lub urządzenie może być krytycznym.
-
-Gdy powinno być kontynuowane użycie automatycznego uaktualnienia klienta, gdy to możliwe w dla większości klientów, w programie Configuration Manager zaktualizuje 1610, mogą obsługiwać te potrzeby przez zainstalowanie nowego klienta do użycia długoterminowej, wywołuje rozszerzoną współdziałanie klienta (EIC).
-
-EIC jest zgodna z wersją 1610 lokacji programu Configuration Manager lub nowszego. EIC należy używać tylko dla określonych komputerów, które nie może być często aktualizowana, takich jak kiosku lub urządzeń w punktach sprzedaży. Korzystając z najnowszych klienta programu Configuration Manager dla wszystkich innych komputerów.
+Wymagania biznesowe mogą nie pozwalają na regularnie aktualizację klienta programu Configuration Manager na niektórych urządzeniach. Na przykład konieczne może być zgodne z zasadami zarządzania zmiany lub urządzenie może być krytycznym. Uwzględnienia tych potrzeb przez zainstalowanie nowego klienta do użycia długoterminowej, wywołuje rozszerzoną współdziałanie klienta (EIC). EIC należy używać tylko dla określonych urządzeń, których nie można zaktualizować często, takie jak kiosku lub urządzeń w punktach sprzedaży. Nadal używać [automatyczne uaktualnianie klienta](/sccm/core/clients/manage/upgrade/upgrade-clients-for-windows-computers#use-automatic-client-upgrade) dla większości klientów. 
 
 ## <a name="how-this-scenario-works"></a>Jak działa w tym scenariuszu
 
-Zwykle po zainstalowaniu nowej aktualizacji w konsoli dla bieżącej gałęzi klientów automatycznie aktualizuje oprogramowanie klienckie, ich aby mogli oni korzystać te nowe funkcje.
+Zwykle po zainstalowaniu nowego [aktualizacji w konsoli](/sccm/core/servers/manage/install-in-console-updates) programu Configuration Manager klienci automatycznie zaktualizować ich oprogramowanie klienckie aby mogli oni korzystać te nowe funkcje. W tym scenariuszu nadal aktualizacji do bieżącej gałęzi odbieranie nowe funkcje i aktualizacje. Większość urządzeń aktualizacji oprogramowania klienckiego programu Configuration Manager z każdego wersję aktualizacji, które będą instalowane. Jednak na podzbiór krytycznych systemów, które chcesz odbierać aktualizacje oprogramowania klienta, należy zainstalować klienta współdziałanie rozszerzonej. Tacy klienci nie należy instalować nowe oprogramowanie klienckie do momentu jawnie wdrożenia nowej wersji oprogramowania klienckiego do nich.
 
-W tym scenariuszu możesz użyć bieżącej gałęzi i odbierać nowe funkcje i aktualizacje. Większość klientów uruchomione oprogramowanie klienckie z bieżącej gałęzi i może je aktualizować przy każdej wersji aktualizacji, które należy zainstalować oprogramowanie klienta. Jednak na podzbiór krytycznych systemów, które chcesz odbierać aktualizacje oprogramowania klienta, należy zainstalować klienta współdziałanie rozszerzonej. Ci klienci nie należy instalować nowe oprogramowanie klienckie, dopóki nie zostanie jawnie wdrożony nowej wersji oprogramowania klienckiego do nich.
 
->[!IMPORTANT]
->Bieżąca gałąź witryny musi być zainstalowana wersja 1610 lub nowszej.
 
-## <a name="how-to-use-the-eic"></a>Jak używać EIC
+## <a name="supported-versions"></a>Obsługiwane wersje
+W poniższej tabeli wymieniono wersje klienta programu Configuration Manager, które są obsługiwane dla tego scenariusza:
 
-1. Uzyskaj EIC (wersja klienta 5.00.8412) z folderu \SMSSETUP\Client z nośnika instalacyjnego programu Configuration Manager 1606 aktualizacji. Upewnij się, że należy skopiować całą zawartość folderu.
-2. Ręcznie zainstaluj EIC na tych urządzeniach. [Przeczytaj więcej informacji o sposobie ręcznego zainstalowania klienta](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Manual).
-3. Wyklucz tej kolekcji uaktualnienia klienta.
+| Wersja  | Data udostępnienia  | Data zakończenia wsparcia  |
+|---------|---------|---------|
+|1802<br/>5.00.8634     | 1 maja 2018        | Nie wcześniej niż 1 może 2020        |
+|1606<br/>5.00.8412     | 18 listopada 2016 r.        | 1 maja 2019        |
 
->[!TIP]
->Aby znaleźć System Center Configuration Manager w wersji 1606 w wolumin licencjonowania Service Center (VLSC), przejdź do **pliki do pobrania i klucze** karcie [VLSC](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx), wyszukaj "system center konfiguracji", a następnie wybierz **System Center Config Mgr (bieżącej gałęzi i LTSB)**.
-
-## <a name="the-extended-interoperability-client-software"></a>Oprogramowanie klienckie rozszerzonej współdziałanie
-
-Bieżący EIC będą nadal obsługiwane zaktualizowane wersje programu Configuration Manager bieżącej gałęzi do momentu co najmniej 18 listopada 2018. Po upływie tego czasu Sprawdź na tej stronie Szczegóły nowego EIC lub rozszerzenia obsługi EIC istniejących.
-
->[!TIP]
->EIC jest obsługiwana w przypadku co najmniej dwóch lat od daty wydania (zobacz [pomocy technicznej dla programu System Center Configuration Manager bieżącej gałęzi wersji](/sccm/core/servers/manage/current-branch-versions-supported)). Na przykład obsługa bieżącego EIC wynosi dwa lata po wydaniu 1610, czyli 18 listopada 2018.
+> [!TIP]  
+> EIC jest obsługiwana dla co najmniej dwóch lat od daty wydania. Aby uzyskać więcej informacji na daty wydania, zobacz [pomocy technicznej dla programu System Center Configuration Manager bieżącej gałęzi wersji](/sccm/core/servers/manage/current-branch-versions-supported)).  
 
 Planuje aktualizację klienta współdziałanie rozszerzonej na urządzeniach, którymi zarządzasz przy użyciu bieżącej gałęzi przed pomocy technicznej dla klienta wygaśnie. Aby to zrobić, pobrać nową wersję klienta firmy Microsoft, a następnie wdrożyć oprogramowanie zaktualizowanego klienta na urządzeniach korzystających z bieżącego rozszerzonej współdziałanie klienta.
 
+
+
+## <a name="how-to-use-the-eic"></a>Jak używać EIC
+
+1. Uzyskać obsługiwanej wersji programu EIC z `\SMSSETUP\Client` folderu nośnik instalacyjny aktualizacji programu Configuration Manager. Upewnij się, że należy skopiować całą zawartość folderu.  
+
+2. Ręcznie zainstaluj EIC na tych urządzeniach. Aby uzyskać więcej informacji, zobacz [ręcznego zainstalowania klienta](/sccm/core/clients/deploy/deploy-clients-to-windows-computers#BKMK_Manual).  
+
+    > [!Important]  
+    > Podczas uaktualniania wersji 1606 klientów do wersji 1802, użyj opcji CCMSETUP **/AlwaysExcludeUpgrade:True**. W przeciwnym razie klient może otrzymać zasad z punktu zarządzania, aby automatycznie uaktualniał przed zasad wykluczania.
+
+3. Te urządzenia można dodać do kolekcji, a wyłączenie tej kolekcji z automatycznych uaktualnień klienta. Aby uzyskać więcej informacji, zobacz [użycie automatycznego uaktualnienia klienta](/sccm/core/clients/manage/upgrade/upgrade-clients-for-windows-computers#use-automatic-client-upgrade).  
+
+> [!TIP]  
+> Można znaleźć na nośniku programu Configuration Manager w [Volume Licensing Service Center](https://www.microsoft.com/Licensing/servicecenter/Downloads/DownloadsAndKeys.aspx) (VLSC), przejdź do **pliki do pobrania i klucze** karcie, wyszukaj `System Center Config`, a następnie wybierz **programu System Center Config Mgr (wersji current branch)**.
+
+
+
 ## <a name="limitations-of-the-extended-interoperability-client"></a>Ograniczenia rozszerzonej współdziałanie klienta
 
-- Aktualizacje oprogramowania klienckiego rozszerzonej współdziałanie nie są dostępne za pomocą aktualizacji w konsoli. Dodatkowe szczegóły dotyczące wdrażania oprogramowania zaktualizowanego klienta są udostępniane po zwolnieniu zaktualizowanego klienta.
-- EIC obsługuje tylko aktualizacje oprogramowania, spisu i pakietów i programów.
+- Aktualizacje oprogramowania klienckiego rozszerzonej współdziałanie nie są dostępne za pomocą aktualizacji w konsoli. Aby uzyskać więcej informacji na temat aktualizowania EIC klientów, zobacz [sposób użycia EIC](#how-to-use-the-eic).  
+
+- EIC obsługuje tylko następujące funkcje:  
+
+   - Aktualizacje oprogramowania  
+   - Spis sprzętu i oprogramowania
+   - Pakiety i programy
+
+
 
 ## <a name="next-steps"></a>Następne kroki
 
-Skorzystaj z informacji w [jak monitorować klientów](/sccm/core/clients/manage/monitor-clients) aby upewnić się, że klienci są poprawnie zainstalowane na urządzeniach ma.
+Aby upewnić się, że klienci są poprawnie zainstalowane na urządzenia, zobacz [jak monitorować klientów](/sccm/core/clients/manage/monitor-clients).

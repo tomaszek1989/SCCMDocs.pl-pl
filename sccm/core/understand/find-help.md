@@ -2,56 +2,45 @@
 title: Wyszukiwanie pomocy
 titleSuffix: Configuration Manager
 description: Znajdź zasoby, aby uzyskać dodatkowe informacje o programie System Center Configuration Manager.
-ms.custom: na
-ms.date: 12/22/2017
+ms.date: 04/30/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: 86810629-cf2a-43e8-86a2-847444119fc1
-caps.latest.revision: 19
-caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: bcf53c11a30aa2fc3995697f36f00960035bbe57
-ms.sourcegitcommit: fb84bcb31d825f454785e3d9d8be669e00fe2b27
+manager: dougeby
+ms.openlocfilehash: 2c9e2f0b570360b730f7a8659791a7f054200d36
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="find-help-for-using-system-center-configuration-manager"></a>Wyszukiwanie pomocy dotyczącej korzystania z programu System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Ten artykuł zawiera wiele zasobów, aby znaleźć Pomoc dla programu Configuration Manager.  
+Ten artykuł zawiera następujące sekcje z wielu zasobów, aby znaleźć Pomoc dla programu Configuration Manager:  
 
-Aby uzyskać pomoc dotyczącą produktów ułatwień dostępu, zobacz [funkcje ułatwień dostępu w programie System Center Configuration Manager](../../core/understand/accessibility-features.md).
+- [Dokumentacja produktu](#bkmk_Info)  
+
+- [Udostępnianie opinię o produkcie](#product-feedback)  
+
+- [Wykonaj blog zespołu programu Configuration Manager](#BKMK_ProductGroupBlog)  
+
+- [Opcje pomocy technicznej i zasoby społecznościowe](#BKMK_SupportOptions)  
+
+Aby uzyskać pomoc dotyczącą produktów ułatwień dostępu, zobacz [funkcje ułatwień dostępu w programie Configuration Manager](../../core/understand/accessibility-features.md).  
 
 
 ##  <a name="bkmk_Info"></a> Dokumentacja produktu  
- Użyj następujących zasobów, aby uzyskać dodatkowe informacje o programie Configuration Manager.  
 
--   Aby uzyskać dostęp do najbardziej aktualnej dokumentacji produktu, Rozpocznij od [indeksu biblioteki](https://docs.microsoft.com/sccm/)
+Aby uzyskać dostęp do najbardziej aktualnej dokumentacji produktu, Rozpocznij od [indeksu Biblioteka](https://docs.microsoft.com/sccm/).  
 
--   Aby przekazać opinię o dokumentacji, przesyłania za pośrednictwem [UserVoice](https://configurationmanager.uservoice.com/forums/300492-ideas/category/112371-documentation)  
+<a name="BKMK_SearchTips"></a>  
 
+Aby uzyskać porady dotyczące wyszukiwania, podając opinii i więcej informacji o korzystaniu z dokumentacją produktu, zobacz [sposobu korzystania z dokumentami](/sccm/core/understand/use-docs).  
 
-###  <a name="BKMK_SearchTips"></a> Wyszukiwanie w bibliotece dokumentacji  
- Poniższe porady dotyczące wyszukiwania ułatwiają znajdowanie potrzebnych informacji:  
-
--   Podczas korzystania z preferowanych wyszukiwarki do zlokalizowania zawartości programu Configuration Manager, wyniki wyszukiwania w bieżącej bibliotece zawartości skupić się przy tym następujące dwa warunki **SCCM** i **Docs**.
-
--   Używaj terminów wyszukiwania, zgodne terminologii w interfejsie użytkownika i dokumentację w trybie online. Unikaj nieoficjalnych terminów lub skrótów spotykanych w zawartości społecznościowej. Na przykład wyszukaj "punkt zarządzania" zamiast "PZ"; "typ wdrożenia" zamiast "Tw"; i "aktualizacje oprogramowania" zamiast "Ao".  
-
--   Aby wyszukać w artykule aktualnie używanego w witrynie docs.microsoft.com, wybierz kombinację klawiszy Ctrl + F, a następnie wprowadź terminy wyszukiwania w przeglądarce **znaleźć** pole. 
-
--   Każdy artykuł w witrynie docs.microsoft.com obejmuje następujące pola, aby ułatwić wyszukiwanie zawartości:
-    - **Wyszukiwanie** w prawym górnym rogu. Aby wyszukać wszystkie artykuły wprowadź terminy w tym polu. Artykuły w bibliotece programu Configuration Manager automatycznie zawierać zakres "ConfigMgr".
-    - **Filtr** powyżej po lewej stronie spisu treści. Aby wyszukać bieżącego spisu treści wprowadź terminy w tym polu. To pole jest zgodny tylko warunki, które pojawiają się w artykule tytułów. 
 
 
 ## <a name="product-feedback"></a>Opinię o produkcie

@@ -1,26 +1,20 @@
 ---
-title: "Tworzenie warunków globalnych"
+title: Tworzenie warunków globalnych
 titleSuffix: Configuration Manager
-description: "Tworzenie warunków globalnych, aby określić sposób aplikacja ma być dostarczana i wdrażana na urządzeniach klienckich."
-ms.custom: na
+description: Tworzenie warunków globalnych, aby określić sposób aplikacja ma być dostarczana i wdrażana na urządzeniach klienckich.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-app
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 2d5f871a-19dc-4bd3-a3ad-4230c7a69f1b
-caps.latest.revision: "7"
-caps.handback.revision: "0"
-author: mattbriggs
-ms.author: mabrigg
-manager: angrobe
-ms.openlocfilehash: 480e7a68308d458bc77ddb4956db2616eaaced97
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: dac47f55a1ad0d287e789d555d2f0a93b40f9376
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-create-global-conditions-in-system-center-configuration-manager"></a>Tworzenie warunków globalnych w programie System Center Configuration Manager
 
@@ -77,7 +71,7 @@ W programie System Center Configuration Manager, warunki globalne to zasady repr
 
         -   **Właściwość** — Określ właściwość obiektu usług domenowych Active Directory do użycia w celu oceny zgodności na komputerach klienckich.  
 
-        -   **Zapytanie** -pokazuje kwerendy LDAP, który jest tworzony na podstawie wpisów w **prefiks LDAP**, **nazwa wyróżniająca (DN)**, **filtr wyszukiwania** Jeśli zostanie określona, i **właściwości**. To zapytanie zostanie użyte do oceny zgodności na komputerach klienckich.  
+        -   **Zapytanie** -pokazuje kwerendy LDAP, który jest tworzony na podstawie wpisów w **prefiks LDAP**, **nazwa wyróżniająca (DN)**, **filtr wyszukiwania** Jeśli zostanie określona i  **Właściwość**. To zapytanie zostanie użyte do oceny zgodności na komputerach klienckich.  
 
     -   **Zestaw**  
 
@@ -102,7 +96,7 @@ W programie System Center Configuration Manager, warunki globalne to zasady repr
 
         -   **Uwzględnij podfoldery** — Włącz tę opcję, jeśli chcesz dodatkowo przeszukać wszystkie podfoldery znajdujące się we wskazanej ścieżce.  
 
-        -   **Ten plik lub folder jest skojarzony z aplikacją 64-bitowych** — wybierz, czy lokalizacja plików systemu 64-bitowego (*% windir %*\system32) powinna być dodatkowo przeszukiwana oprócz lokalizacji plików systemu 32-bitowych (*% windir %*\syswow64) na klientach programu Configuration Manager, z uruchomioną 64-bitowej wersji systemu Windows.  
+        -   **Ten plik lub folder jest skojarzony z aplikacją 64-bitowych** — wybierz, czy lokalizacja plików systemu 64-bitowego (*% windir %* \system32) powinna być dodatkowo przeszukiwana oprócz lokalizacji plików systemu 32-bitowych (*% Windir %* \syswow64) na klientach programu Configuration Manager, z uruchomioną 64-bitowej wersji systemu Windows.  
 
             > [!NOTE]  
             >  Jeśli na jednym komputerze 64-bitowym ten sam plik lub folder istnieje zarówno w lokalizacji plików systemu 64-bitowego, jak i 32-bitowego, warunek globalny spowoduje odnalezienie wielu plików.  
@@ -181,7 +175,7 @@ W programie System Center Configuration Manager, warunki globalne to zasady repr
 
         -   **Uwzględnij podfoldery** — Włącz tę opcję, jeśli chcesz dodatkowo przeszukać wszystkie podfoldery znajdujące się we wskazanej ścieżce.  
 
-        -   **Ten plik jest skojarzony z aplikacją 64-bitowych** — wybierz, czy lokalizacja plików systemu 64-bitowego (*% windir %*\system32) powinna być dodatkowo przeszukiwana oprócz lokalizacji plików systemu 32-bitowych (*% windir %*\syswow64) na klientach programu Configuration Manager, z uruchomioną 64-bitowej wersji systemu Windows.  
+        -   **Ten plik jest skojarzony z aplikacją 64-bitowych** — wybierz, czy lokalizacja plików systemu 64-bitowego (*% windir %* \system32) powinna być dodatkowo przeszukiwana oprócz lokalizacji plików systemu 32-bitowych (*% windir %* \syswow64) na klientach programu Configuration Manager, z uruchomioną 64-bitowej wersji systemu Windows.  
 
         -   **Zapytanie XPath** — Określ prawidłowe pełne zapytanie w języku XML Path Language (XPath) do użycia w celu oceny zgodności na komputerach klienckich.  
 

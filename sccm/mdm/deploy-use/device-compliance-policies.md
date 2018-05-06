@@ -1,26 +1,20 @@
 ---
-title: "Zasady zgodności urządzeń"
+title: Zasady zgodności urządzeń
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak zarządzanie zasadami zgodności programu System Center Configuration Manager w celu zapewnienia zgodności z dostępu warunkowego urządzeń zasady."
-ms.custom: na
+description: Dowiedz się, jak zarządzanie zasadami zgodności programu System Center Configuration Manager w celu zapewnienia zgodności z dostępu warunkowego urządzeń zasady.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: ad8fa94d-45bb-4c94-8d86-31234c5cf21c
-caps.latest.revision: "18"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: d9811d81987e8531ee48a07a6855b337fdccb73b
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 776af7499c576f21d47dafec8a668f3c4051ad88
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="device-compliance-policies-in-system-center-configuration-manager"></a>Zasady zgodności urządzeń w programie System Center Configuration Manager
 
@@ -57,7 +51,7 @@ ms.lasthandoff: 10/12/2017
 |**Minimalna wersja systemu operacyjnego**|Poddane kwarantannie|Poddane kwarantannie|Poddane kwarantannie|Poddane kwarantannie|  
 |**Maksymalna wersja systemu operacyjnego**|Poddane kwarantannie|Poddane kwarantannie|Poddane kwarantannie|Poddane kwarantannie|  
 |**Zaświadczanie o kondycji urządzenia (aktualizacja 1602)**|Ustawienie nie dotyczy systemu Windows 8.1<br /><br /> Systemy Windows 10 i Windows 10 Mobile są objęte kwarantanną.|Brak|Brak|Brak|  
-|**Aplikacje, których nie można zainstalować**|Brak|Brak|Kwarantanna|Poddane kwarantannie|
+|**Aplikacje, których nie można zainstalować**|Brak|Brak|Poddane kwarantannie|Poddane kwarantannie|
 
  **Skorygowane** — zgodność jest wymuszana przez system operacyjny urządzenia (na przykład system wymusza na użytkowniku ustawienie kodu PIN).  Nigdy nie wystąpi niezgodność tego ustawienia.  
 

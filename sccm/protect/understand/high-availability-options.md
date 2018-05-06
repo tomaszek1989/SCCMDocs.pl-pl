@@ -1,25 +1,20 @@
 ---
-title: "Wysoka dostępność"
+title: Wysoka dostępność
 titleSuffix: Configuration Manager
-description: "Informacje o sposobie wdrażania programu System Center Configuration Manager za pomocą opcje zapewniające wysoką dostępność usług."
-ms.custom: na
+description: Informacje o sposobie wdrażania programu System Center Configuration Manager za pomocą opcje zapewniające wysoką dostępność usług.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: 1a38421d-24c1-4fef-bf6c-42fce53109ac
-caps.latest.revision: "4"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: bfc40f13f166a4f4aeda4a363ec633a54206dce4
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: a1011aa1b30661d756d457a38ebc770a61fac07f
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="high-availability-options-for-system-center-configuration-manager"></a>Opcje wysokiej dostępności programu System Center Configuration Manager
 
@@ -62,7 +57,7 @@ Opcje, które obsługują wysokiej dostępności:
 -   [Wymagania wstępne dla lokacji i systemu lokacji](../../core/plan-design/configs/site-and-site-system-prerequisites.md)
 
 
-##  <a name="bkmk_snh"></a>Wysoka dostępność dla lokacji i hierarchii  
+##  <a name="bkmk_snh"></a> Wysoka dostępność dla lokacji i hierarchii  
  **Używanie klastra programu SQL Server do hostowania bazy danych lokacji:**  
 
  Korzystając z klastra programu SQL Server dla bazy danych w centralnej lokacji administracyjnej lub lokacji głównej, należy użyć funkcji awaryjnej wbudowane w program SQL Server.  
@@ -87,7 +82,7 @@ Opcje, które obsługują wysokiej dostępności:
 
  **Instalowanie wielu wystąpień dostawcy programu SMS w lokacji:** Dostawca programu SMS zapewnia punkt kontaktu administracyjnego dla co najmniej jeden konsoli programu Configuration Manager. W przypadku instalowania wielu dostawców programu SMS można zapewnić nadmiarowość punktów kontaktu w celu administrowania lokacją i hierarchią.  
 
-##  <a name="bkmk_ssr"></a>Wysoka dostępność dla ról systemu lokacji  
+##  <a name="bkmk_ssr"></a> Wysoka dostępność dla ról systemu lokacji  
  W każdej lokacji można wdrażać role systemu lokacji do świadczenia usług, których klienci mają używać w tej lokacji. Baza danych lokacji zawiera informacje o konfiguracji lokacji oraz wszystkich klientów. Zapewnienie wysokiej dostępności bazy danych lokacji i funkcji odzyskiwania lokacji i bazy danych lokacji, jeśli to konieczne, należy użyć co najmniej jeden z dostępnych opcji.  
 
  **Nadmiarowość ważnych ról systemu lokacji:**  
@@ -156,7 +151,7 @@ Opcje, które obsługują wysokiej dostępności:
 
  Aby uzyskać więcej informacji na temat tego klienta ustawienie i jak automatyczne wykrywanie znaleźć [Agent komputera](../../core/clients/deploy/about-client-settings.md#computer-agent) sekcji [informacje o ustawieniach klienta w programie System Center Configuration Manager](../../core/clients/deploy/about-client-settings.md) tematu.  
 
-##  <a name="bkmk_client"></a>Wysoka dostępność dla klientów  
+##  <a name="bkmk_client"></a> Wysoka dostępność dla klientów  
  **Operacje klienta są autonomiczne:**  
 
  Autonomia klienta programu Configuration Manager obejmuje następujące funkcje:  
@@ -201,7 +196,7 @@ Opcje, które obsługują wysokiej dostępności:
 
 -   Awaria komputera klienckiego nie wpływa na integralność informacji przechowywanych w bazie danych. Te informacje mogą pozostać dostępne do raportowania.  
 
-##  <a name="bkmk_nonHAoptions"></a>Opcje dla lokacji i ról systemu lokacji, które nie mają wysokiej dostępności  
+##  <a name="bkmk_nonHAoptions"></a> Opcje dla lokacji i ról systemu lokacji, które nie mają wysokiej dostępności  
  Kilka systemów lokacji nie obsługują wiele wystąpień w lokacji lub w hierarchii. Te informacje mogą pomóc w przygotowaniu się do tych systemów lokacji do trybu offline.  
 
  **Serwer lokacji (lokacja):**  

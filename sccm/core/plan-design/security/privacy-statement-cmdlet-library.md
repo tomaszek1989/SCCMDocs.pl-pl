@@ -1,26 +1,19 @@
 ---
 title: Zasady zachowania poufności dla programu Configuration Manager cmdletlLibrary
 description: Więcej informacji na temat jak firma Microsoft zbiera i używa danych związanych z biblioteki poleceń cmdlet programu System Center Configuration Manager.
-ms.custom: na
 ms.date: 1/3/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: bec00fb4-1ac0-4e49-b330-0871b3722459
-caps.latest.revision: ''
-caps.handback.revision: ''
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 0ed94de1fc4782539baed0f1589cebf69c0f2219
-ms.sourcegitcommit: a19e12d5c3198764901d44f4df7c60eb542e765f
+manager: dougeby
+ms.openlocfilehash: a6a996c4f1e00c05c0b3766b8955130529832063
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="system-center-configuration-manager-privacy-statement---configuration-manager-cmdlet-library"></a>System Center Configuration Manager privacy statement — Biblioteka poleceń cmdlet programu Configuration Manager
 

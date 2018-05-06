@@ -1,24 +1,19 @@
 ---
 title: Configuration Manager na platformie Azure
-description: "Informacje o korzystaniu z programu Configuration Manager w środowisku platformy Azure."
-ms.custom: na
+description: Informacje o korzystaniu z programu Configuration Manager w środowisku platformy Azure.
 ms.date: 03/27/2017
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: d24257d8-8136-47f4-8e0d-34021356dc37
-caps.latest.revision: "2"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: d73ab50e5fc9472a977951f6c2d5bbd3fd408c39
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 2b952e76fc21e3190430cdf34cb4a264918fd199
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configuration-manager-on-azure---frequently-asked-questions"></a>Menedżer konfiguracji Azure — często zadawane pytania
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
@@ -153,29 +148,29 @@ Można skonfigurować dowolnego klienta jest źródłem równorzędnej pamięci 
 
 ## <a name="cost"></a>Koszt
 ### <a name="ok-tell-me-a-bit-about-the-cost-will-this-be-a-cost-effective-solution-for-me"></a>OK Powiedz mi coś o koszty. Spowoduje to ekonomiczne rozwiązanie służące do mnie
-Trudno powiedzieć, ponieważ każde środowisko jest inna. Najlepiej, aby zrobić ma koszt środowiska przy użyciu Microsoft Azure Kalkulator cen: https://azure.microsoft.com/pricing/calculator/
+Trudno powiedzieć, ponieważ każde środowisko jest inna. Najlepiej, aby zrobić jest koszt środowiska przy użyciu Microsoft Azure Kalkulator cen:  https://azure.microsoft.com/pricing/calculator/
 
 ## <a name="additional-resources"></a>Dodatkowe zasoby
-**Podstawowe założenia:** http://azure.microsoft.com/documentation/articles/fundamentals-introduction-to-azure/
+**Podstawowe informacje na temat:** http://azure.microsoft.com/documentation/articles/fundamentals-introduction-to-azure/
 
 **Typy maszyna wirtualna Azure:**
- - Azure rozmiary: https://azure.microsoft.com/documentation/articles/virtual-machines-size-specs/  
+ - Rozmiary Azure: https://azure.microsoft.com/documentation/articles/virtual-machines-size-specs/  
  - Cennik maszyn wirtualnych: http://azure.microsoft.com/pricing/details/virtual-machines/  
  - Cennik Storage: http://azure.microsoft.com/pricing/details/storage/
 
 **Zagadnienia dotyczące wydajności dysku:**    
- - Wprowadzenie do dysku Premium: http://azure.microsoft.com/blog/2014/12/11/introducing-premium-storage-high-performance-storage-for-azure-virtual-machine-workloads/  
- - Lepszy wyświetlania informacji o dysku Premium: http://azure.microsoft.com/documentation/articles/storage-premium-storage-preview-portal/   
+ - Wprowadzenie do dysku Premium:  http://azure.microsoft.com/blog/2014/12/11/introducing-premium-storage-high-performance-storage-for-azure-virtual-machine-workloads/  
+ - Lepszy dysku Premium informacje: http://azure.microsoft.com/documentation/articles/storage-premium-storage-preview-portal/   
  - Celem przydatny zestaw wykresy maksymalny rozmiar i wydajności dla magazynu: https://azure.microsoft.com/documentation/articles/storage-scalability-targets/  
- - Wprowadzenie do innego + niektóre cool pełny geek dane dotyczące sposobu działania magazyn w warstwie Premium za obejmuje: http://azure.microsoft.com/blog/2015/04/16/azure-premium-storage-now-generally-available-2/
+ - Wprowadzenie do innego + niektóre cool pełny geek dane dotyczące sposobu działania magazyn w warstwie Premium za obejmuje:  http://azure.microsoft.com/blog/2015/04/16/azure-premium-storage-now-generally-available-2/
 
 **Dostępność:**
- - Azure IaaS przestojów SLA w: https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_0/  
- - Zestawy dostępności wyjaśniono: https://azure.microsoft.com/documentation/articles/virtual-machines-manage-availability/
+ - Azure IaaS czas działania umowy SLA dla firmy: https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_0/  
+ - Zestawy dostępności objaśniono: https://azure.microsoft.com/documentation/articles/virtual-machines-manage-availability/
 
 **Łączność:**
  - Express vs trasy. Sieci VPN platformy Azure: http://azure.microsoft.com/blog/2014/06/10/expressroute-or-virtual-network-vpn-whats-right-for-me/
- - Express trasy cennik: http://azure.microsoft.com/pricing/details/expressroute/
+ - Express cennik trasy: http://azure.microsoft.com/pricing/details/expressroute/
  - Więcej informacji na temat Express Route: http://azure.microsoft.com/documentation/articles/expressroute-introduction/
 
  

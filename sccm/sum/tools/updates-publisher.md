@@ -1,30 +1,25 @@
 ---
 title: Updates Publisher
 titleSuffix: Configuration Manager
-description: "Umożliwia zarządzanie niestandardowe aktualizacje programu System Center Updates Publisher"
-ms.custom: na
+description: Umożliwia zarządzanie niestandardowe aktualizacje programu System Center Updates Publisher
 ms.date: 4/29/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-sum
+ms.topic: conceptual
 ms.assetid: 2200b02b-e76b-4aa7-a77a-6dc5e70f1333
-caps.latest.revision: "1"
-author: mestew
-ms.author: mstewart
-manager: angrobe
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
 robots: NOINDEX, NOFOLLOW
-ms.openlocfilehash: 6c0af411d51c2b56c5d8e6479112e6f9cb317971
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+ms.openlocfilehash: 3a9c7758e394118041700192a393aff98f0d9087
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="system-center-updates-publisher"></a>Program System Center Updates Publisher
 
-*Dotyczy: Program System Center Updates Publisher*
+*Dotyczy: System Center Updates Publisher*
 
 System Center Updates Publisher (Updates Publisher) jest autonomicznym narzędziem pozwala niezależnym dostawcom oprogramowania lub deweloperzy aplikacji biznesowych — Zarządzanie aktualizacji niestandardowych. Dotyczy to również aktualizacji, które są zależne, takie jak sterowniki i pakiety aktualizacji.
 

@@ -1,26 +1,20 @@
 ---
-title: "Migracji zawartości"
+title: Migracji zawartości
 titleSuffix: Configuration Manager
-description: "Punkty dystrybucji umożliwia zarządzanie zawartością podczas migracji danych do hierarchii docelowej programu System Center Configuration Manager."
-ms.custom: na
+description: Punkty dystrybucji umożliwia zarządzanie zawartością podczas migracji danych do hierarchii docelowej programu System Center Configuration Manager.
 ms.date: 12/30/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 66f7759c-6272-4116-aad7-0d05db1d46cd
-caps.latest.revision: "8"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 7332ff4bf0ad10bd18e42485fb548eee70deaf04
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: d261b246c0718777be56425c7783d05f767575df
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="plan-a-content-deployment-migration-strategy-in-system-center-configuration-manager"></a>Planowanie strategii migracji wdrożenia zawartości w programie System Center Configuration Manager
 
@@ -91,7 +85,7 @@ Przed udostępnieniem punktów dystrybucji z lokacji źródłowej kwalifikujące
 
 Po udostępnieniu punktów dystrybucji można zmienić konfigurację dowolnego punktu dystrybucji w hierarchii źródłowej. Zmiany wprowadzone w konfiguracji punktu dystrybucji są uwzględniane w hierarchii docelowej po następnym cyklu zbierania danych. Punkty dystrybucji zaktualizowane w celu kwalifikacji do udostępnienia są udostępniane automatycznie, a te, które już się nie kwalifikują, zatrzymują udostępnianie punktów dystrybucji. Na przykład może być punkt dystrybucji, który nie jest skonfigurowany przy użyciu intranetowej nazwy FQDN i nie został początkowo udostępniony w hierarchii docelowej. Po skonfigurowaniu nazwy FQDN dla tego punktu dystrybucji następny cykl zbierania danych identyfikuje tę konfigurację, a punkt dystrybucji jest następnie udostępniany w hierarchii docelowej.  
 
-##  <a name="Planning_to_Upgrade_DPs"></a>Planowanie uaktualnienia programu Configuration Manager 2007 współużytkowanych punktów dystrybucji  
+##  <a name="Planning_to_Upgrade_DPs"></a> Planowanie uaktualnienia programu Configuration Manager 2007 współużytkowanych punktów dystrybucji  
 W przypadku migracji z hierarchii źródłowej programu Configuration Manager 2007, można uaktualnić współużytkowany punkt dystrybucji aby stał się punkt dystrybucji programu System Center Configuration Manager. Możesz uaktualnić punkty dystrybucji w lokacjach głównych i lokacjach dodatkowych. Proces uaktualniania powoduje usunięcie punktu dystrybucji z hierarchii programu Configuration Manager 2007 i ustawienie go jako serwera systemu lokacji w hierarchii docelowej. Ten proces powoduje także skopiowanie istniejącej zawartości w punkcie dystrybucji do nowej lokalizacji na komputerze punktu dystrybucji. Następnie proces uaktualniania modyfikuje kopię zawartości, aby utworzyć magazyn SIS do użytku z wdrożeniem zawartości w hierarchii docelowej. Dlatego po uaktualnieniu punktu dystrybucji, nie trzeba ponownej dystrybucji migrowanej zawartości hostowanej w punkcie dystrybucji programu Configuration Manager 2007.  
 
 Po programu Configuration Manager konwertuje zawartości w magazyn pojedynczego wystąpienia, programu Configuration Manager usuwa oryginalną zawartość źródłową na komputerze punktu dystrybucji, aby zwolnić miejsce na dysku. Menedżer konfiguracji nie używa oryginalnej lokalizacji zawartości źródłowej.  
@@ -152,7 +146,7 @@ Można monitorować postępy uaktualniania punktu dystrybucji w konsoli programu
 
 Jeśli zdecydujesz się z uaktualnienia współużytkowanego punktu dystrybucji, można nadal zainstalować punkt dystrybucji z hierarchii docelowej na wcześniejsze punktu dystrybucji programu Configuration Manager 2007. Przed zainstalowaniem nowego punktu dystrybucji, musisz najpierw odinstalować wszystkie role systemu lokacji programu Configuration Manager 2007 z komputera punktu dystrybucji. Dotyczy to również lokacji programu Configuration Manager 2007, jeśli pełni rolę komputera serwera lokacji. Podczas dezinstalacji punktu dystrybucji programu Configuration Manager 2007, zawartość, która została wdrożona w punkcie dystrybucji nie jest usuwany z komputera.  
 
-###  <a name="BKMK_UpgradeSS"></a>Planowanie uaktualnienia lokacji dodatkowych programu Configuration Manager 2007  
+###  <a name="BKMK_UpgradeSS"></a> Planowanie uaktualnienia lokacji dodatkowych programu Configuration Manager 2007  
  Podczas migracji do uaktualnienia współużytkowanego punktu dystrybucji hostowanego na serwerze lokacji dodatkowej programu Configuration Manager 2007, programu Configuration Manager uaktualnia roli systemu lokacji punktu dystrybucji do punktu dystrybucji w hierarchii docelowej. Także dezinstalację lokacji dodatkowej z hierarchii źródłowej. Wynik jest punkt dystrybucji programu System Center Configuration Manager, lecz nie lokacja dodatkowa.  
 
  Dla punktu dystrybucji na komputerze serwera lokacji kwalifikował się do uaktualnienia programu Configuration Manager musi być w stanie odinstalować lokację dodatkową i każdej z ról systemu lokacji na tym komputerze. Zazwyczaj współużytkowanego punktu dystrybucji w udziale serwera programu Configuration Manager 2007 nie kwalifikuje się do uaktualnienia. Jeśli jednak udział serwera znajduje się na serwerze lokacji dodatkowej, punkty dystrybucji owej lokacji oraz wszelkie inne współużytkowane punkty dystrybucji na komputerze nie będą kwalifikowały się do uaktualnienia. Jest to spowodowane udziału serwera jest traktowany jako dodatkowy obiekt systemu lokacji, podczas procesu podejmuje próbę dezinstalacji lokacji dodatkowej, a ten proces nie można odinstalować tego obiektu. W tym scenariuszu można włączyć standardowy punkt dystrybucji na serwerze lokacji dodatkowej, a następnie przeprowadzić ponowną dystrybucję zawartości do tego standardowego punktu dystrybucji. Ten proces nie używa przepustowości sieci, a po zakończeniu można odinstalować punkt dystrybucji w udziale serwera, usunąć udział serwera, a następnie Uaktualnij punktu dystrybucji i lokacji dodatkowej.  
@@ -170,7 +164,7 @@ Jeśli zdecydujesz się z uaktualnienia współużytkowanego punktu dystrybucji,
 
  Aby uzyskać więcej informacji o sposobie uaktualniania współużytkowanego punktu dystrybucji, zobacz [Plan uaktualniania programu Configuration Manager 2007 współużytkowanych punktów dystrybucji](#Planning_to_Upgrade_DPs).  
 
-##  <a name="BKMK_ReassignDistPoint"></a>Planowanie ponownego przypisania punktów dystrybucji programu System Center Configuration Manager  
+##  <a name="BKMK_ReassignDistPoint"></a> Planowanie ponownego przypisania punktów dystrybucji programu System Center Configuration Manager  
  Podczas migracji z obsługiwanej wersji programu System Center 2012 Configuration Manager do hierarchii tej samej wersji, można ponownie przypisać współużytkowany punkt dystrybucji z hierarchii źródłowej do lokacji w hierarchii docelowej. Przypomina koncepcji uaktualniania punktu dystrybucji programu Configuration Manager 2007 do roli punktu dystrybucji w hierarchii docelowej. Można ponownie przypisać punkty dystrybucji z lokacji głównej i dodatkowej. Działanie ponownego przypisania punktu dystrybucji powoduje usunięcie punktu dystrybucji z hierarchii źródłowej i sprawia, że komputer i jego serwera systemu lokacji punktu dystrybucji lokacji wybranej w hierarchii docelowej.  
 
  Przypisując ponownie punkt dystrybucji, nie trzeba przeprowadzać ponownej dystrybucji zawartości poddanej migracji obsługiwanej przez punkt dystrybucji lokacji źródłowej. Ponadto w przeciwieństwie do uaktualniania punktu dystrybucji programu Configuration Manager 2007, ponowne przypisanie punktu dystrybucji nie wymaga dodatkowego miejsca na dysku na komputerze punktu dystrybucji. Jest to spowodowane od programu System Center 2012 Configuration Manager, punkty dystrybucji używają formatu magazynu jednego wystąpienia dla zawartości. Zawartość na komputerze punktu dystrybucji nie muszą zostać przekonwertowane, gdy punkt dystrybucji jest ponownie przypisywane między hierarchiami.  
@@ -203,7 +197,7 @@ Przed wersją 1610 programu Configuration Manager można przetworzyć tylko jede
 - Gdy używasz zestawu SDK programu Configuration Manager, można zmienić **SharedDPImportThreadLimit** Aby dostosować liczbę punktów dystrybucji przypisywać ich programu Configuration Manager może przetwarzać równolegle.
 
 
-##  <a name="About_Migrating_Content"></a>Przypisz własność zawartości podczas migracji zawartości  
+##  <a name="About_Migrating_Content"></a> Przypisz własność zawartości podczas migracji zawartości  
  Przeprowadzając migrację zawartości w celu jej wdrożenia, należy przypisać obiekt zawartości do lokacji w hierarchii docelowej. Ta lokacja stanie się następnie właścicielem treści w hierarchii docelowej. Mimo że lokacji najwyższego poziomu w hierarchii docelowej lokację, która wykonuje migrację metadane dla zawartości, jest przypisanej lokacji, która używa oryginalnych plików źródłowych zawartości w sieci.  
 
  Aby zminimalizować obciążenie przepustowości sieci podczas migrowania zawartości, warto zastanowić się nad przeniesieniem własności zawartości do lokacji w hierarchii docelowej znajdującej się blisko sieciowej lokalizacji zawartości w hierarchii źródłowej. Ponieważ informacje o zawartości w hierarchii docelowej są udostępniane globalnie, będą dostępne we wszystkich lokacjach.  

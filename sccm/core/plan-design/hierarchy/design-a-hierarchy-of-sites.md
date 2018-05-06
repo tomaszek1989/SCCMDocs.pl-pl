@@ -1,26 +1,20 @@
 ---
 title: 'Projektowanie hierarchii lokacji '
 titleSuffix: Configuration Manager
-description: "Zrozumieć topologie dostępne i opcje zarządzania dla programu System Center Configuration Manager, co umożliwia planowanie hierarchii lokacji."
-ms.custom: na
+description: Zrozumieć topologie dostępne i opcje zarządzania dla programu System Center Configuration Manager, co umożliwia planowanie hierarchii lokacji.
 ms.date: 8/24/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: 07ce872e-1558-42ad-b5ad-582c5b1bdbb4
-caps.latest.revision: "22"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 845ec5210b9055ff9c52039a32f008b1baa36413
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 602d9455dcdd69209ef8ba157916b35db976b89f
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="design-a-hierarchy-of-sites-for-system-center-configuration-manager"></a>Projektowanie hierarchii lokacji dla programu System Center Configuration Manager
 
@@ -39,7 +33,7 @@ Podczas planowania należy mieć na uwadze ograniczenia dotyczące dodawania dod
 > [!NOTE]
 > Podczas planowania nowej instalacji programu Configuration Manager, należy pamiętać o [informacje o wersji]( /sccm/core/servers/deploy/install/release-notes), które szczegółowo bieżących problemach w aktywnych wersji. Informacje o wersji dotyczą wszystkie gałęzie programu Configuration Manager.  Jednak jeśli używasz [Technical Preview gałęzi]( /sccm/core/get-started/technical-preview), można znaleźć problemy specyficzne tylko dla tej gałęzi w dokumentacji dla każdej wersji Technical Preview.  
 
-##  <a name="bkmk_topology"></a>Topologia hierarchii  
+##  <a name="bkmk_topology"></a> Topologia hierarchii  
  Różne topologie hierarchii — od pojedynczej autonomicznej lokacji głównej do grupy połączonych lokacji głównych i dodatkowych z centralną lokacją administracyjną w lokacji najwyższego poziomu (w najwyższej warstwie) hierarchii.   Kluczowym czynnikiem decydującym o typie i liczbie lokacji używanych w hierarchii jest zwykle liczba i typ urządzeń, które należy obsługiwać, w następujący sposób:   
 
  **Autonomiczna lokacja główna:** Użyj autonomicznej lokacji głównej, gdy pojedyncza lokacja główna może obsługiwać zarządzanie wszystkimi urządzeniami i użytkownikami (zobacz [rozmiaru i skali liczby](/sccm/core/plan-design/configs/size-and-scale-numbers)). Ta topologia jest pomyślne również w przypadku, gdy w firmie różne lokalizacje geograficzne mogą być pomyślnie przekazywane przez jedną lokację główną.  Aby ułatwić zarządzanie ruchu sieciowego, można użyć preferowanych punktów zarządzania i dokładnie zaplanować infrastrukturę zawartości (zobacz [podstawowe pojęcia związane z zarządzaniem zawartością w programie System Center Configuration Manager](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md)).  
@@ -64,7 +58,7 @@ Podczas planowania należy mieć na uwadze ograniczenia dotyczące dodawania dod
 
  Poniższe sekcje ułatwią zrozumienie, kiedy należy użyć określonej lokacji lub opcji zarządzania zawartością zamiast dodatkowej lokacji.  
 
-##  <a name="BKMK_ChooseCAS"></a>Ustalanie, kiedy należy użyć witryny Administracja centralna  
+##  <a name="BKMK_ChooseCAS"></a> Ustalanie, kiedy należy użyć witryny Administracja centralna  
  Do konfigurowania ustawień całej hierarchii oraz monitorowania wszystkich lokacji i obiektów w hierarchii, należy użyć witryny Administracja centralna. Ten typ lokacji nie bezpośrednie zarządzanie klientami, ale koordynuje replikację danych między lokacjami, w tym konfiguracji lokacji i klientów w całej hierarchii.  
 
 **Poniższe informacje ułatwią podjęcie decyzji dotyczącej instalacji centralnej lokacji administracyjnej:**  
@@ -89,7 +83,7 @@ Podczas planowania należy mieć na uwadze ograniczenia dotyczące dodawania dod
 
 -   W ramach kontroli komunikacji między lokacjami w hierarchii istnieje możliwość skonfigurowania replikacji plików i bazy danych. Obejmuje to planowanie replikacji bazy danych lokacji i zarządzanie przepustowością transferu danych opartych na plikach między lokacjami.  
 
-##  <a name="BKMK_ChoosePriimary"></a>Ustalanie, kiedy należy używać lokacji głównej  
+##  <a name="BKMK_ChoosePriimary"></a> Ustalanie, kiedy należy używać lokacji głównej  
  Lokacje główne służą do zarządzania klientami. Lokację główną można zainstalować jako lokację podrzędną względem centralnej lokacji administracyjnej, a w przypadku nowej hierarchii — jako pierwszą lokację. Lokacji głównej, która jest zainstalowana jako pierwsza lokacja hierarchii tworzy autonomicznej lokacji głównej. Zarówno podrzędnych lokacji głównych, jak i autonomiczne Lokacje główne obsługują Lokacje dodatkowe jako Lokacje podrzędne względem lokacji głównej.  
 
  Użycie lokacji głównej zaleca się z następujących powodów:  
@@ -115,7 +109,7 @@ Podczas planowania należy mieć na uwadze ograniczenia dotyczące dodawania dod
 
 -   Lokacje główne replikacji bazy danych do komunikowania się bezpośrednio z centralną lokacją administracyjną (która jest konfigurowana automatycznie podczas instalowania nowej lokacji).  
 
-##  <a name="BKMK_ChooseSecondary"></a>Ustalanie, kiedy należy używać lokacji dodatkowej  
+##  <a name="BKMK_ChooseSecondary"></a> Ustalanie, kiedy należy używać lokacji dodatkowej  
  Lokacje dodatkowe służą do zarządzania transferem zawartości wdrożenia oraz klienta danymi w sieciach o niskiej przepustowości.  
 
  Lokacją dodatkową zarządza się z centralnej lokacji administracyjnej lub lokacji głównej bezpośrednio nadrzędnej lokacji dodatkowej. Lokacje dodatkowe muszą być dołączone do lokacji głównej, a nie można przenieść je do innej lokacji nadrzędnej bez je odinstalować, a następnie zainstalować ponownie jako Lokacje podrzędne względem nowej lokacji głównej.
@@ -145,7 +139,7 @@ Jednak mogą przesyłać zawartość między dwiema równorzędnymi lokacjami do
 
 -   Instalacja lokacji dodatkowej powoduje automatyczne wdrażanie punkt zarządzania i punkt dystrybucji, które znajdują się na serwerze lokacji dodatkowej.  
 
-##  <a name="BKMK_ChooseSecondaryorDP"></a>Ustalanie, kiedy należy używać opcji zarządzania zawartością  
+##  <a name="BKMK_ChooseSecondaryorDP"></a> Ustalanie, kiedy należy używać opcji zarządzania zawartością  
  Jeżeli klienci znajdują się w zdalnych lokalizacjach sieciowych, zaleca się użycie co najmniej jednej opcji zarządzania zawartością zamiast lokacji głównej lub dodatkowej. Często można usunąć konieczności instalowania lokacji, gdy usługa Windows BranchCache, konfigurując punkty dystrybucji do kontroli przepustowości lub ręcznie skopiuj zawartość do punktów dystrybucji (wstępne przygotowywanie zawartości).  
 
 
@@ -157,7 +151,7 @@ Jednak mogą przesyłać zawartość między dwiema równorzędnymi lokacjami do
 
  Aby uzyskać więcej informacji o opcjach zarządzania zawartością w programie Configuration Manager, zobacz [podstawowe pojęcia związane z zarządzaniem zawartością w programie System Center Configuration Manager](../../../core/plan-design/hierarchy/fundamental-concepts-for-content-management.md).  
 
-##  <a name="bkmk_beyond"></a>Poza topologia hierarchii  
+##  <a name="bkmk_beyond"></a> Poza topologia hierarchii  
  Oprócz topologii początkowej hierarchii należy wziąć pod uwagę usług lub możliwości, które będą dostępne w różnych lokacjach w hierarchii (Role systemu lokacji) i konfiguracji i możliwości jak całej hierarchii, będą zarządzane w infrastrukturze. W osobnych tematach opisano następujące typowe kwestie wymagające rozważenia. Są to ważne, ponieważ mogą mieć wpływ lub mieć wpływ na projekt hierarchii:  
 
 -   Podczas przygotowywania [zarządzania komputerami i urządzeniami w programie System Center Configuration Manager](/sccm/core/clients/manage/manage-clients), należy wziąć pod uwagę zarządzanych urządzeń lokalnych, w chmurze, czy obejmują urządzenia należące do użytkowników (BYOD).  Ponadto należy wziąć pod uwagę sposób będą zarządzać urządzeniami, które są obsługiwane przez wiele opcji zarządzania, takich jak komputery z systemem Windows 10, które mogą być zarządzane bezpośrednio przez program Configuration Manager lub że integracja z usługą Microsoft Intune.  

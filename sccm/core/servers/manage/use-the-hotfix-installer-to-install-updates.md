@@ -1,26 +1,20 @@
 ---
 title: Instalator poprawek
 titleSuffix: Configuration Manager
-description: "Dowiedz się, kiedy i jak instalować aktualizacje za pomocą instalatora poprawek dla programu Configuration Manager."
-ms.custom: na
+description: Dowiedz się, kiedy i jak instalować aktualizacje za pomocą instalatora poprawek dla programu Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: f3058277-c597-4dac-86d1-41b6f7e62b36
-caps.latest.revision: 
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 0ed8399c080994745f79f58818781e9d32be7e48
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 5c90889861db55a27da897e709b16b66edece08a
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="use-the-hotfix-installer-to-install-updates-for-system-center-configuration-manager"></a>Instalowanie aktualizacji programu System Center Configuration Manager przy użyciu instalatora poprawek
 
@@ -34,7 +28,7 @@ Kiedy należy zainstalować aktualizacja (lub poprawkę) otrzymaną od firmy Mic
 > [!NOTE]  
 >  W tym temacie przedstawiono ogólne wskazówki dotyczące sposobu instalacji poprawek, które aktualizują program System Center Configuration Manager. Ze szczegółami dotyczącymi konkretnej aktualizacji można zapoznać się w odpowiadającym jej artykule Bazy wiedzy na stronach pomocy technicznej firmy Microsoft.  
 
-##  <a name="bkmk_Overview"></a>Omówienie poprawek programu Configuration Manager  
+##  <a name="bkmk_Overview"></a> Omówienie poprawek programu Configuration Manager  
  Poprawki dla programu Configuration Manager są podobne jak w przypadku innych produktów firmy Microsoft, takich jak SQL Server, zawierają jedną poprawkę lub pakiet (zbiór) poprawek i są opisane w artykule bazy wiedzy Microsoft Knowledge Base.  
 
  Pojedyncze aktualizacje obejmują jedną konkretną aktualizację dla określonej wersji programu Configuration Manager.  
@@ -90,7 +84,7 @@ Kreator tworzy także wdrożenia, których można użyć do zainstalowania aktua
  Podczas uruchamiania pakiet aktualizacji wyodrębnia plik o nazwie identycznej z nazwą pakietu aktualizacji do folderu tymczasowego na komputerze, a następnie uruchamia program Updatesetup.exe. Updatesetup.exe uruchamia aktualizacji oprogramowania programu Configuration Manager &lt;wersji produktu\> &lt;numer bazy wiedzy\> kreatora.  
 
  Odpowiednio do zakresu aktualizacji, Kreator tworzy serię podfolderów w folderze instalacji programu System Center Configuration Manager na serwerze lokacji. Struktura folderów wygląda mniej więcej tak:   
- **\\\\&lt;Nazwa serwera\>\SMS_&lt;kod lokacji\>\Hotfix\\&lt;numer bazy wiedzy\>\\&lt;typ aktualizacji\>\\&lt;platformy\>**.  
+ **\\\\&lt;Nazwa serwera\>\SMS_&lt;kod lokacji\>\Hotfix\\&lt;numer bazy wiedzy\>\\&lt;typ aktualizacji\> \\ &lt; Platforma\>**.  
 
  Szczegółowe informacje o folderach z tej struktury folderów przedstawiono w poniższej tabeli:  
 
@@ -131,12 +125,12 @@ Po zainstalowaniu pakietu aktualizacji na serwerze lokacji można zaktualizować
 ###  <a name="bkmk_servers"></a> Aktualizowanie serwerów  
  Aktualizacje dla serwerów mogą obejmować aktualizacje **lokacji**, **site database**i komputerów z uruchomionym wystąpieniem **dostawcy programu SMS**:  
 
-####  <a name="bkmk_site"></a>Aktualizowanie lokacji  
+####  <a name="bkmk_site"></a> Aktualizowanie lokacji  
  Aby zaktualizować lokację programu Configuration Manager, można zainstalować pakiet aktualizacji bezpośrednio na serwerze lokacji lub można wdrożyć aktualizacje na serwerze lokacji po zainstalowaniu pakietu aktualizacji w innej lokacji.  
 
  Podczas instalowania aktualizacji na serwerze lokacji proces instalacji aktualizacji zarządza dodatkowymi działaniami, które są wymagane do zastosowania aktualizacji, takimi jak aktualizowanie ról systemu lokacji. Wyjątkiem jest baza danych lokacji. Informacje o tym, jak zaktualizować bazę danych lokacji, zamieszczono w poniższej sekcji.  
 
-####  <a name="bkmk_database"></a>Zaktualizuj bazę danych lokacji  
+####  <a name="bkmk_database"></a> Zaktualizuj bazę danych lokacji  
  Aby zaktualizować bazę danych lokacji, proces instalacji uruchamia w pliku o nazwie **update.sql** w bazie danych lokacji. Proces aktualizacji można skonfigurować w celu automatycznego aktualizowania bazy danych lokacji albo można ręcznie zaktualizować bazę danych lokacji później.  
 
  **Automatyczna aktualizacja bazy danych lokacji**  
@@ -168,12 +162,12 @@ Po zainstalowaniu pakietu aktualizacji na serwerze lokacji można zaktualizować
 
 5.  Podczas instalowania pakietu aktualizacji wyodrębnia **update.sql** w następującej lokalizacji na serwerze lokacji:  **\\\\&lt;Nazwa serwera\>\SMS_&lt;kod lokacji\>\Hotfix\\&lt;numer bazy wiedzy\>\update.sql**  
 
-####  <a name="bkmk_provider"></a>Aktualizacja komputera z uruchomionym dostawcą programu SMS  
+####  <a name="bkmk_provider"></a> Aktualizacja komputera z uruchomionym dostawcą programu SMS  
  Po zainstalowaniu pakietu aktualizacji zawiera aktualizacje dla dostawcy programu SMS należy wdrożyć aktualizację na każdym komputerze z uruchomionym dostawcą programu SMS. Jedynym wyjątkiem od tej zasady jest wystąpienie dostawcy programu SMS zainstalowane wcześniej na serwerze lokacji, na którym jest instalowany pakiet aktualizacji. Po zainstalowaniu pakietu aktualizacji, jest aktualizowane lokalne wystąpienie dostawcy programu SMS na serwerze lokacji.  
 
  Jeśli zostanie usunięty i ponownie zainstalować dostawcę programu SMS na komputerze, należy ponownie zainstalować aktualizację dostawcy programu SMS na tym komputerze.  
 
-###  <a name="BKMK_clients"></a>Aktualizacja klientów  
+###  <a name="BKMK_clients"></a> Aktualizacja klientów  
  Po zainstalowaniu aktualizacji, która zawiera aktualizacje dla klienta programu Configuration Manager jest wyświetlana opcja automatycznego uaktualnienia klientów instalacji aktualizacji lub ręcznego uaktualnienia ich w późniejszym czasie. Aby uzyskać więcej informacji na temat automatycznego uaktualniania klientów, zobacz [Uaktualnianie klientów komputerów z systemem Windows](https://technet.microsoft.com/library/mt627885.aspx).  
 
  Aktualizacje można wdrażać za pomocą programu Updates Publisher lub pakietu wdrożeniowego oprogramowania. Można też ręcznie zainstalować aktualizację na każdym kliencie. Więcej informacji o sposobie używania wdrożeń do instalowania aktualizacji znajduje się w sekcji [Wdrażanie aktualizacji programu Configuration Manager](#BKMK_Deploy) w tym temacie.  
@@ -185,7 +179,7 @@ Aby ręcznie zainstalować aktualizację klienta, na każdym kliencie programu C
 
  Na przykład można użyć poniższego polecenia aktualizacji klienta. Ten wiersz polecenia powoduje uruchomienie programu MSIEXEC na komputerze klienckim i przywołuje plik msp, który został wyodrębniony przez pakiet aktualizacji na serwerze lokacji: **msiexec.exe /p \\ \\ &lt;ServerName\>\SMS_&lt;Kod_lokacji\>\Hotfix\\&lt;numer bazy wiedzy\>\Client\\&lt;platformy\>\\&lt;msp\> /L\*v &lt;logfile\>REINSTALLMODE = mous REINSTALL = ALL**  
 
-###  <a name="BKMK_console"></a>Aktualizacja konsol programu Configuration Manager  
+###  <a name="BKMK_console"></a> Aktualizacja konsol programu Configuration Manager  
  Aby zaktualizować konsolę programu Configuration Manager, aktualizację należy zainstalować na komputerze, na którym jest uruchomiona konsola, po zakończeniu instalowaniu konsoli.  
 
 > [!IMPORTANT]  
@@ -199,12 +193,12 @@ Jeśli na komputerze, jest uruchomiony klient programu Configuration Manager:
 
 -   Możesz zainstalować aktualizację ręcznie na każdym komputerze. Aby ręcznie zainstalować aktualizację konsoli programu Configuration Manager, na każdym komputerze, na którym uruchomiona jest konsola programu Configuration Manager, można uruchomić Msiexec.exe i odwołać się do pliku *.msp aktualizacji konsoli programu Configuration Manager.  
 
-Na przykład można użyć następujący wiersz polecenia, aby zaktualizować konsolę programu Configuration Manager. Ten wiersz polecenia powoduje uruchomienie programu MSIEXEC na komputerze i odwołuje się do pliku msp, który został wyodrębniony przez pakiet aktualizacji na serwerze lokacji: **msiexec.exe /p \\ \\ &lt;ServerName\>\SMS_&lt;Kod_lokacji\>\Hotfix\\&lt;numer bazy wiedzy\>\AdminConsole\\&lt;platformy\>\\&lt;msp\> /L\*v &lt;logfile\>REINSTALLMODE = mous REINSTALL = ALL**  
+Na przykład można użyć następujący wiersz polecenia, aby zaktualizować konsolę programu Configuration Manager. Ten wiersz polecenia powoduje uruchomienie programu MSIEXEC na komputerze i odwołuje się do pliku msp, który został wyodrębniony przez pakiet aktualizacji na serwerze lokacji: **msiexec.exe /p \\ \\ &lt;ServerName\>\SMS_&lt; Kod lokacji\>\Hotfix\\&lt;numer bazy wiedzy\>\AdminConsole\\&lt;platformy\>\\&lt;msp\> /L\*v &lt;logfile\>REINSTALLMODE = mous REINSTALL = ALL**  
 
 ##  <a name="BKMK_Deploy"></a> Wdrażanie aktualizacji programu Configuration Manager  
  Po zainstalowaniu pakietu aktualizacji na serwerze lokacji można jedną z następujących trzech metod wdrożyć aktualizacje na dodatkowych komputerach.  
 
-###  <a name="BKMK_DeploySCUP"></a>Zainstaluj aktualizacje za pomocą programu Updates Publisher 2011  
+###  <a name="BKMK_DeploySCUP"></a> Zainstaluj aktualizacje za pomocą programu Updates Publisher 2011  
  Po zainstalowaniu pakietu aktualizacji na serwerze lokacji instalacji Kreator tworzy plik katalogu dla programu Updates Publisher, którego można użyć do wdrożenia aktualizacji na odpowiednich komputerach. Kreator zawsze tworzy ten katalog, nawet jeśli wybrano opcję **Użyj pakietu i programu do wdrożenia tej aktualizacji**.  
 
  Katalog dla programu Updates Publisher ma nazwę **SCUPCatalog.cab** i znajduje się w następującej lokalizacji na komputerze, na którym jest uruchamiany pakiet aktualizacji: **\\\\&lt;ServerName\>\SMS_&lt;Kod_lokacji\>\Hotfix\\&lt;numer bazy wiedzy\>\SCUP\SCUPCatalog.cab**  
@@ -232,7 +226,7 @@ Na przykład można użyć następujący wiersz polecenia, aby zaktualizować ko
 
 7.  Ukończ pracę kreatora, aby opublikować aktualizacje.  
 
-###  <a name="BKMK_DeploySWDist"></a>Instalowanie aktualizacji metodą wdrażania oprogramowania  
+###  <a name="BKMK_DeploySWDist"></a> Instalowanie aktualizacji metodą wdrażania oprogramowania  
  Po zainstalowaniu pakietu aktualizacji na serwerze lokacji w lokacji głównej lub centralnej lokacji administracyjnej można skonfigurować instalację kreatora, aby utworzyć pakiety aktualizacji dla wdrożenia oprogramowania. Następnie można wdrożyć każdy pakiet do kolekcji komputerów, które chcesz zaktualizować.  
 
  Aby utworzyć pakiet wdrożeniowy oprogramowania, na **skonfigurować wdrożenie aktualizacji oprogramowania** strony kreatora zaznacz pole wyboru dla każdej aktualizacji typu, który chcesz zaktualizować. Dostępne typy to między innymi serwery, konsole programu Configuration Manager i klienci. Dla każdego typu aktualizacji są tworzone oddzielnie pakiety.  
@@ -250,7 +244,7 @@ Na przykład można użyć następujący wiersz polecenia, aby zaktualizować ko
 
  Aby uzyskać informacje o sposobie wdrażania pakietów na klientach programu Configuration Manager, zobacz [pakietów i programów w programie System Center Configuration Manager](../../../apps/deploy-use/packages-and-programs.md).  
 
-###  <a name="BKMK_DeployCollections"></a>Tworzenie kolekcji w celu wdrażania aktualizacji programu Configuration Manager  
+###  <a name="BKMK_DeployCollections"></a> Tworzenie kolekcji w celu wdrażania aktualizacji programu Configuration Manager  
  Można wdrożyć aktualizacje na odpowiednich klientach. Poniższe informacje mogą pomóc tworzenie kolekcji urządzeń dla różnych składników programu Configuration Manager.  
 
 |Składnik programu Configuration Manager|Instrukcje|  

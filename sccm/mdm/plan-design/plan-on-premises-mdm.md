@@ -1,26 +1,20 @@
 ---
-title: "Planowanie lokalnego zarządzania urządzeniami Przenośnymi"
+title: Planowanie lokalnego zarządzania urządzeniami Przenośnymi
 titleSuffix: Configuration Manager
-description: "Planowanie lokalnego zarządzania urządzeniami przenośnymi do zarządzania urządzeniami przenośnymi w programie System Center Configuration Manager."
-ms.custom: na
+description: Planowanie lokalnego zarządzania urządzeniami przenośnymi do zarządzania urządzeniami przenośnymi w programie System Center Configuration Manager.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: 02979fb8-ea7e-4ec6-b7e0-ecbfda73e52d
-caps.latest.revision: "9"
-caps.handback.revision: "0"
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: e1c6a5ccd003295d007e78f0745c30732e10c2df
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 10cddac80b9a7ea4bd912e2f52585cdcef7e70da
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="plan-for-on-premises-mobile-device-management-in-system-center-configuration-manager"></a>Planowanie lokalnego zarządzania urządzeniami przenośnymi w programie System Center Configuration Manager
 
@@ -28,7 +22,7 @@ ms.lasthandoff: 10/12/2017
 
 Należy wziąć pod uwagę następujące wymagania przed przygotowaniem infrastruktury programu Configuration Manager w celu obsługi na\-lokalnych zarządzanie urządzeniami przenośnymi.
 
-##  <a name="bkmk_devices"></a>Obsługiwane urządzenia  
+##  <a name="bkmk_devices"></a> Obsługiwane urządzenia  
  Lokalna Usługa zarządzania urządzeniami przenośnymi umożliwia zarządzanie urządzeniami przenośnymi za pomocą funkcji zarządzania wbudowanych w systemy operacyjne urządzeń.  Możliwość zarządzania jest oparta na standardzie zarządzania urządzeniami Open Mobile Alliance (OMA). Wiele platform urządzeń używa tego standardu, aby umożliwić zarządzanie urządzeniami.  Nazywamy je **nowoczesnych urządzeń** (w dokumentacji i interfejsie użytkownika konsoli programu Configuration Manager) aby odróżnić je od innych urządzeń, które wymagają klienta Configuration Manager do zarządzania nimi.  
 
  > [!NOTE]  
@@ -41,7 +35,7 @@ Należy wziąć pod uwagę następujące wymagania przed przygotowaniem infrastr
 > -   Windows 10 Mobile Enterprise
 > -   Windows 10 Enterprise IoT   
 
-##  <a name="bkmk_intune"></a>Użyj subskrypcję Microsoft Intune  
+##  <a name="bkmk_intune"></a> Użyj subskrypcję Microsoft Intune  
  Aby rozpocząć używanie w\-lokalnych zarządzania urządzeniami przenośnymi, konieczne będzie subskrypcję Microsoft Intune. Subskrypcja jest wymagana tylko do śledzenia licencjonowania urządzeń i nie jest używana do zarządzania urządzeniami ani do przechowywania związanych z tym informacji. Wszystkie operacje zarządzania obsługuje organizacja użytkownika przy użyciu lokalnej infrastruktury programu Configuration Manager.  
 
  > [!NOTE]  
@@ -54,7 +48,7 @@ Należy wziąć pod uwagę następujące wymagania przed przygotowaniem infrastr
 
  Aby uzyskać informacje na temat sposobu konfigurowania subskrypcji usługi Intune, zobacz [skonfigurować subskrypcję Microsoft Intune do zarządzania urządzeniami przenośnymi lokalnymi w programie System Center Configuration Manager](../../mdm/get-started/set-up-intune-subscription-on-premises-mdm.md).  
 
-##  <a name="bkmk_roles"></a>Wymagane role systemu lokacji  
+##  <a name="bkmk_roles"></a> Wymagane role systemu lokacji  
  Na\-lokalne zarządzanie urządzeniami przenośnymi wymaga co najmniej jeden z następujących ról systemu lokacji:  
 
 -   **Punkt proxy rejestracji** do obsługi żądań rejestrowania.  
@@ -73,7 +67,7 @@ Należy wziąć pod uwagę następujące wymagania przed przygotowaniem infrastr
 
  Aby uzyskać więcej informacji o dodawaniu wymaganych ról systemu lokacji, zobacz [Instalowanie ról systemu lokacji na potrzeby lokalnego zarządzania urządzeniami przenośnymi w programie System Center Configuration Manager](../../mdm/get-started/install-site-system-roles-for-on-premises-mdm.md).  
 
-##  <a name="bkmk_trustedComs"></a>Wymagana zaufana komunikacja  
+##  <a name="bkmk_trustedComs"></a> Wymagana zaufana komunikacja  
  Na\-lokalne zarządzanie urządzeniami przenośnymi wymaga ról systemu lokacji mają być włączone dla połączeń HTTPS. Zależnie od potrzeb można użyć urzędu certyfikacji przedsiębiorstwa w celu ustanawiania zaufanych połączeń między serwerami i urządzeniami lub użyć publicznie dostępnego urzędu certyfikacji jako zaufanego urzędu.  W obu przypadkach należy skonfigurować certyfikat serwera sieci Web za pomocą programu IIS na serwerach systemu lokacji hostujących wymagane role systemu lokacji oraz zainstalować certyfikat główny tego urzędu certyfikacji na urządzeniach, które będą nawiązywały połączenia z tymi serwerami.  
 
  Aby użyć urzędu certyfikacji przedsiębiorstwa do ustanawiania zaufanych połączeń, należy wykonać następujące zadania:  
@@ -106,7 +100,7 @@ Należy wziąć pod uwagę następujące wymagania przed przygotowaniem infrastr
 
  Aby uzyskać więcej informacji, zobacz [Konfigurowanie certyfikatów dla zaufanej komunikacji związanej z lokalnym zarządzaniem urządzeniami przenośnymi w programie System Center Configuration Manager](../../mdm/get-started/set-up-certificates-on-premises-mdm.md)  
 
-##  <a name="bkmk_enrollment"></a>Uwagi dotyczące rejestrowania  
+##  <a name="bkmk_enrollment"></a> Uwagi dotyczące rejestrowania  
  Aby włączyć rejestrowanie urządzeń na\-lokalnego zarządzania urządzeniami przenośnymi, użytkownicy muszą otrzymać uprawnienia do rejestrowania i ich urządzenia muszą mieć możliwość zaufanej komunikacji z serwerami systemu lokacji hostujących role systemu lokacji wymagane.  
 
  Udzielanie uprawnień do rejestracji można osiągnąć przez proces konfigurowania profilu rejestracji w ustawieniach klienta programu Configuration Manager. Można użyć domyślnych ustawień klienta w celu wypchnięcia profilu rejestracji do wszystkich odnalezionych użytkowników albo skonfigurować profil rejestracji w niestandardowych ustawieniach klienta i wypchnąć ustawienia do co najmniej jednej kolekcji użytkowników.  

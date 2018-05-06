@@ -1,30 +1,25 @@
 ---
-title: "Archiwum nowości nowe hybrydowego zarządzania urządzeniami Przenośnymi"
+title: Archiwum nowości nowe hybrydowego zarządzania urządzeniami Przenośnymi
 titleSuffix: Configuration Manager
-description: "Archiwum ostatnich funkcje zarządzania urządzeniami przenośnymi dostępne dla hybrydowych wdrożeń z programu System Center Configuration Manager i usługi Intune."
-ms.custom: na
+description: Archiwum ostatnich funkcje zarządzania urządzeniami przenośnymi dostępne dla hybrydowych wdrożeń z programu System Center Configuration Manager i usługi Intune.
 ms.date: 02/21/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-hybrid
+ms.topic: conceptual
 ms.assetid: 4c27b161-9eb7-4cdd-b469-d8eb27e71aea
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
 ROBOTS: NOINDEX, NOFOLLOW
-ms.openlocfilehash: d6b67cd820a618d6a96424362ff282cbf232f092
-ms.sourcegitcommit: 45ff3ffa040eada5656b17f47dcabd3c637bdb60
+ms.openlocfilehash: 88b005ad90625592a4fccfa1d98abfcb8b930a75
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="past-hybrid-features-with-system-center-configuration-manager-and-microsoft-intune"></a>Hybrydowe ostatnich funkcji za pomocą programu System Center Configuration Manager i Microsoft Intune
 
-Dotyczy: Program System Center Configuration Manager (Current Branch)*
+*Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
 Ten artykuł zawiera szczegółowe informacje na urządzeniu przenośnym, ostatnie funkcje zarządzania urządzeniami Przenośnymi jest dostępne dla hybrydowych wdrożeń z programu System Center Configuration Manager i Microsoft Intune.  
 
@@ -48,7 +43,7 @@ Ten artykuł zawiera szczegółowe informacje na urządzeniu przenośnym, ostatn
 
 - **Nowy adres serwera zarządzania urządzeniami Przenośnymi dla urządzeń z systemem Windows**
 
-  Adres serwera MDM związane z rejestrowaniem urządzeń z systemem Windows i Windows Phone zmienił się z manage.microsoft.com enrollment.manage.microsoft.com. Powiadom użytkownika do używania enrollment.manage.microsoft.com jako adres serwera MDM, jeśli wyświetlony monit o jej podczas rejestrowania systemu Windows lub i urządzeń Windows Phone. Ta aktualizacja wymaga również wszystkie CNAME w systemie DNS, który przekierowuje domenę EnterpriseEnrollment.contoso.com do domeny manage.microsoft.com być zastąpiona rekord CNAME w systemie DNS, który przekierowuje domenę EnterpriseEnrollment.contoso.com do domeny EnterpriseEnrollment-s.manage.microsoft.com. Aby uzyskać dodatkowe informacje o tej zmianie odwiedź stronę http://aka.ms/intuneenrollsvrchange.
+  Adres serwera MDM związane z rejestrowaniem urządzeń z systemem Windows i Windows Phone zmienił się z manage.microsoft.com enrollment.manage.microsoft.com. Powiadom użytkownika do używania enrollment.manage.microsoft.com jako adres serwera MDM, jeśli wyświetlony monit o jej podczas rejestrowania systemu Windows lub i urządzeń Windows Phone. Ta aktualizacja wymaga również wszystkie CNAME w systemie DNS, który przekierowuje domenę EnterpriseEnrollment.contoso.com do domeny manage.microsoft.com być zastąpiona rekord CNAME w systemie DNS, który przekierowuje domenę EnterpriseEnrollment.contoso.com do domeny EnterpriseEnrollment-s.manage.microsoft.com. Aby uzyskać dodatkowe informacje o tej zmianie, odwiedź stronę http://aka.ms/intuneenrollsvrchange.
 
 ### <a name="new-in-configuration-manager-technical-preview-1702"></a>Nowość w programie Configuration Manager Technical Preview 1702
 
@@ -96,13 +91,13 @@ Ten artykuł zawiera szczegółowe informacje na urządzeniu przenośnym, ostatn
 
 - **Uwierzytelnianie wieloskładnikowe (MFA) na rejestracji jest przenoszona do portalu Azure**
 
-  Wcześniej przejdzie do konsoli usługi Intune lub konsoli programu Configuration Manager do ustawienia usługi MFA dla rejestracji w usłudze Intune. Ta funkcja zaktualizowane, można teraz logowania [portalu Microsoft Azure] (https://manage.windowsazure.com) za pomocą programu Intune poświadczenia i skonfigurować ustawienia usługi MFA za pośrednictwem usługi Azure AD. Aby dowiedzieć się więcej, zobacz [uwierzytelnianie wieloskładnikowe w usłudze Microsoft Intune] (https://aka.ms/mfa_ad).
+  Wcześniej przejdzie do konsoli usługi Intune lub konsoli programu Configuration Manager do ustawienia usługi MFA dla rejestracji w usłudze Intune. Ta funkcja zaktualizowane, można teraz logowania [portalu Microsoft Azure] (https://manage.windowsazure.com) przy użyciu poświadczeń konta usługi Intune i skonfigurować ustawienia usługi MFA za pośrednictwem usługi Azure AD. Aby dowiedzieć się więcej, zobacz [uwierzytelnianie wieloskładnikowe w usłudze Microsoft Intune] (https://aka.ms/mfa_ad).
 
 - **Aplikacja Portal firmy dla systemu Android teraz dostępny w Chinach**
 
   Aplikacja Portal firmy dla systemu Android jest teraz dostępna w Chinach. Z powodu braku sklepu Google Play w Chinach urządzenia z systemem Android musi uzyskać aplikacje z aplikacji języka chińskiego rynków. Aplikacja Portal firmy dla systemu Android jest dostępny do pobrania w sklepach następujące:
 
-  - [Baidu](https://go.microsoft.com/fwlink/?linkid=836946)
+  - [Usługi Baidu](https://go.microsoft.com/fwlink/?linkid=836946)
   - [Huawei](https://go.microsoft.com/fwlink/?linkid=836948)
   - [Tencent](https://go.microsoft.com/fwlink/?linkid=836949)
   - [Wandoujia](https://go.microsoft.com/fwlink/?linkid=836950)
@@ -263,7 +258,7 @@ Następujące nowa funkcja wprowadzona w we wrześniu 2016 r jest dostępna dla 
 
 - **Obsługa systemu iOS 10**
 
-  Jeśli profile lub elementy konfiguracji, przeznaczone dla wszystkich platform systemu iOS, te również zostanie przekazany do systemu iOS 10. Zostało również opublikowane aktualizacji 1606 wersji programu Configuration Manager, umożliwiający profile docelowy i elementy konfiguracji do poszczególnych iOS platform, w tym iOS 10. Można zainstalować aktualizacji z konsoli administratora programu Configuration Manager pod adresem **Administracja > Przegląd > usługi w chmurze > aktualizacje i obsługa**. Można znaleźć więcej informacji na temat aktualizacji w [http://support.microsoft.com/kb/3192616](http://support.microsoft.com/kb/3192616).
+  Jeśli profile lub elementy konfiguracji, przeznaczone dla wszystkich platform systemu iOS, te również zostanie przekazany do systemu iOS 10. Zostało również opublikowane aktualizacji 1606 wersji programu Configuration Manager, umożliwiający profile docelowy i elementy konfiguracji do poszczególnych iOS platform, w tym iOS 10. Można zainstalować aktualizacji z konsoli administratora programu Configuration Manager pod adresem **Administracja > Przegląd > usługi w chmurze > aktualizacje i obsługa**. Można znaleźć więcej informacji na temat aktualizacji w [ http://support.microsoft.com/kb/3192616 ](http://support.microsoft.com/kb/3192616).
 
 ## <a name="august-2016"></a>Sierpnia 2016
 

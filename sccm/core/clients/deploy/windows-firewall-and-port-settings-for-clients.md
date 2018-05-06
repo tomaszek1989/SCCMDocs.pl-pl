@@ -1,26 +1,20 @@
 ---
 title: Ustawienia zapory i portu klienta systemu Windows
 titleSuffix: Configuration Manager
-description: "Wybierz zapory systemu Windows i ustawienia portu dla klientów w programie System Center Configuration Manager."
-ms.custom: na
+description: Wybierz zapory systemu Windows i ustawienia portu dla klientów w programie System Center Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: dce4b640-c92f-401a-9873-ce9aa9262014
-caps.latest.revision: "8"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: fe9f98ad6567b4f691dcfe6f70868fc63d61a63d
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 193ee803fd0a6bacf043dbabc6550ef68a4a629a
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="windows-firewall-and-port-settings-for-clients-in-system-center-configuration-manager"></a>Ustawienia zapory systemu Windows i portu dla klientów w programie System Center Configuration Manager
 
@@ -150,7 +144,7 @@ Komputery klienckie w programie System Center Configuration Manager, w których 
 
 |Opis|UDP|TCP|  
 |-----------------|---------|---------|  
-|Blok komunikatów serwera (SMB) między komputerem klienckim a udziałem sieciowym, z którego uruchomiono program CCMSetup.exe.<br /><br /> Podczas instalowania programu Configuration Manager, pliki źródłowe instalacji klienta są kopiowane i automatycznie udostępniane z  *&lt;Ścieżka_instalacji\>*folderu \Client na punktach zarządzania. Można jednak skopiować te pliki i utworzyć nowy udział na komputerze w sieci. Można także wyeliminować ten ruch sieciowy, uruchamiając program CCMSetup.exe lokalnie, na przykład z nośnika wymiennego.|--|445|  
+|Blok komunikatów serwera (SMB) między komputerem klienckim a udziałem sieciowym, z którego uruchomiono program CCMSetup.exe.<br /><br /> Podczas instalowania programu Configuration Manager, pliki źródłowe instalacji klienta są kopiowane i automatycznie udostępniane z  *&lt;Ścieżka_instalacji\>* folderu \Client na punktach zarządzania. Można jednak skopiować te pliki i utworzyć nowy udział na komputerze w sieci. Można także wyeliminować ten ruch sieciowy, uruchamiając program CCMSetup.exe lokalnie, na przykład z nośnika wymiennego.|--|445|  
 |Protokół HTTP (Hypertext Transfer) z komputera klienckiego do punktu zarządzania, jeżeli połączenie wykorzystuje protokół HTTP i nie należy określać właściwości wiersza polecenia CCMSetup **/source:&lt;ścieżki\>**.|--|80 (zobacz uwaga 1, **Dostępny alternatywny port**)|  
 |Secure Hypertext Transfer Protocol (HTTPS) z komputera klienckiego do punktu zarządzania, jeśli połączenie wykorzystuje protokół HTTPS i nie należy określać właściwości wiersza polecenia programu CCMSetup **/source:&lt;ścieżki\>**.|--|443 (zobacz uwaga 1, **Dostępny alternatywny port**)|  
 |Blok komunikatów serwera (SMB) między serwerem źródłowym i komputer kliencki w przypadku określenia właściwości wiersza polecenia CCMSetup **/source:&lt;ścieżki\>**.|--|445|  

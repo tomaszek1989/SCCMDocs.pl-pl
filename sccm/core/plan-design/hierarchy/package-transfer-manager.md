@@ -1,25 +1,20 @@
 ---
-title: "Menedżer transferu pakietów"
+title: Menedżer transferu pakietów
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak Menedżer transferu pakietów w programie System Center Configuration Manager przesyła zawartość z serwera lokacji do zdalnych punktów dystrybucji."
-ms.custom: na
+description: Dowiedz się, jak Menedżer transferu pakietów w programie System Center Configuration Manager przesyła zawartość z serwera lokacji do zdalnych punktów dystrybucji.
 ms.date: 2/8/2017
-ms.reviewer: na
-ms.suite: na
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 3359f254-dd48-42b7-9eab-c92a3417e3fb
-caps.latest.revision: "3"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: eef88b25119558c78c57e2df665507be6d70698f
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 44041fd0eb2a71cc72d809eea0a0b8d15ba6c53e
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="package-transfer-manager-in-system-center-configuration-manager"></a>Menedżer transferu pakietów w programie System Center Configuration Manager
 

@@ -1,25 +1,20 @@
 ---
 title: Technical Preview 1709
 titleSuffix: Configuration Manager
-description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview 1709 programu System Center Configuration Manager."
-ms.custom: na
+description: Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview 1709 programu System Center Configuration Manager.
 ms.date: 09/28/2017
 ms.prod: configuration-manager
-ms.technology:
-- configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: a3ef6bdc-a204-4c4c-a02f-2bd03f35183e
-author: erikje
-ms.author: erikje
-manager: angrobe
-ms.openlocfilehash: f0acc5ae0d8207dce92c56a4c80e8321faf51393
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 74ffd06f8b9786d627dc7fd9cecb15215228313d
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1709-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1709 programu System Center Configuration Manager
 
@@ -94,9 +89,9 @@ Po utworzeniu zasad zarządzania wspólnej nie można edytować zasady. Aby zmie
 Poniżej przedstawiono ogólne wymagania wstępne, aby włączyć zarządzanie wspólnej:  
 
 - Technical Preview dla 1709 wersji programu Configuration Manager
-- Usługi Azure AD 
+- Azure AD 
 - Licencji pakietu EMS lub usługi Intune dla wszystkich użytkowników
-- Subskrypcję usługi Intune &#40; Ustaw urząd zarządzania urządzeniami Przenośnymi w usłudze Intune **Intune**&#41;
+- Subskrypcję usługi Intune &#40;ustaw urząd zarządzania urządzeniami Przenośnymi w usłudze Intune **usługi Intune**&#41;
 
    > [!Note]  
    > Jeśli masz środowiska hybrydowego zarządzania urządzeniami Przenośnymi (usługa Intune zintegrowana z programem Configuration Manager), nie można włączyć zarządzania wspólnej. Jeśli interesuje Cię migracji do autonomicznej usługi Intune, zobacz [rozpocząć migrację z hybrydowego zarządzania urządzeniami Przenośnymi do autonomicznej usługi Intune](/sccm/mdm/deploy-use/migrate-hybridmdm-to-intunesa).
@@ -155,11 +150,11 @@ Można włączyć wspólnej zarządzania na urządzeniach z systemem Windows 10,
 #### <a name="command-line-to-install-configuration-manager-client"></a>Wiersz polecenia, aby zainstalować klienta programu Configuration Manager
 Tworzenie aplikacji w usłudze Intune dla systemu Windows 10 urządzeń, które nie są już klientów programu Configuration Manager. Podczas tworzenia aplikacji w kolejnych sekcjach, należy użyć następującego polecenia:
 
-ccmsetup.msi CCMSETUPCMD = "/ mp: &#60; *Adres URL punktu końcowego w chmurze zarządzania bramy wzajemnego uwierzytelniania*&#62; / CCMHOSTNAME = &#60; *Adres URL punktu końcowego w chmurze zarządzania bramy wzajemnego uwierzytelniania*&#62; SMSSiteCode = &#60; *Kod_lokacji*&#62; SMSMP = https: &#47; / &#60; *FQDN punktu zarządzania*&#62; AADTENANTID = &#60; *Identyfikatora dzierżawy usługi AAD*&#62; AADTENANTNAME = &#60; *Nazwa dzierżawcy*&#62; AADCLIENTAPPID = &#60; *AppID server dla integracji usługi AAD*&#62; AADRESOURCEURI = https: &#47; / &#60; *Identyfikator zasobu*&#62; "
+ccmsetup.msi CCMSETUPCMD = "/ mp:&#60;*adres URL punktu końcowego w chmurze zarządzania bramy wzajemnego uwierzytelniania*&#62;/ CCMHOSTNAME =&#60;*adres URL punktu końcowego w chmurze zarządzania bramy wzajemnego uwierzytelniania* &#62;SMSSiteCode =&#60;*Kod_lokacji* &#62; SMSMP = https:&#47;/&#60;*FQDN MP* &#62; AADTENANTID =&#60;*Identyfikatora dzierżawy usługi AAD*  &#62; AADTENANTNAME =&#60;*nazwa_dzierżawcy* &#62; AADCLIENTAPPID =&#60;*AppID Server dla integracji usługi AAD* &#62; AADRESOURCEURI = https:&#47;/&#60;*identyfikator zasobu*&#62;"
 
 Na przykład, jeśli masz następujące wartości:
 
-- **Adres URL punktu końcowego w chmurze zarządzania bramy wzajemnego uwierzytelniania**: https:/ &#47;contoso.cloudapp.net/CCM_Proxy_MutualAuth/72057594037928100    
+- **Adres URL punktu końcowego w chmurze zarządzania bramy wzajemnego uwierzytelniania**: https:/&#47;contoso.cloudapp.net/CCM_Proxy_MutualAuth/72057594037928100    
 
    >[!Note]    
    >Użyj **MutualAuthPath** wartość w **vProxy_Roles** widoku SQL dla **adres URL punktu końcowego w chmurze zarządzania bramy wzajemnego uwierzytelniania** wartość.
@@ -176,7 +171,7 @@ Na przykład, jeśli masz następujące wartości:
 
 Należy użyć następującego polecenia:
 
-ccmsetup.msi CCMSETUPCMD = "/ mp:https: / &#47;contoso.cloudapp.net/CCM_Proxy_MutualAuth/72057594037928100 CCMHOSTNAME=contoso.cloudapp.net/CCM_Proxy_MutualAuth/72057594037928100 SMSSiteCode = PS1 SMSMP = https: / &#47; sccmmp.corp.contoso.com AADTENANTID = AADTENANTNAME 72F988BF-86F1-41AF-91AB-2D7CD011XXXX = contoso AADCLIENTAPPID = AADRESOURCEURI bef323b3-042f-41a6-907a-f9faf0d1XXXX = https: / &#47; ConfigMgrServer"
+ccmsetup.msi CCMSETUPCMD="/mp:https:/&#47;contoso.cloudapp.net/CCM_Proxy_MutualAuth/72057594037928100    CCMHOSTNAME=contoso.cloudapp.net/CCM_Proxy_MutualAuth/72057594037928100 SMSSiteCode=PS1 SMSMP=https:/&#47;sccmmp.corp.contoso.com AADTENANTID=72F988BF-86F1-41AF-91AB-2D7CD011XXXX AADTENANTNAME=contoso  AADCLIENTAPPID=bef323b3-042f-41a6-907a-f9faf0d1XXXX AADRESOURCEURI=https:/&#47;ConfigMgrServer”
 
 > [!Tip]
 >Parametry wiersza polecenia można znaleźć w witrynie przy użyciu następujących kroków:     

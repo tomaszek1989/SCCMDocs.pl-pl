@@ -1,26 +1,20 @@
 ---
-title: "Zarządzanie obrazami systemu operacyjnego"
+title: Zarządzanie obrazami systemu operacyjnego
 titleSuffix: Configuration Manager
-description: "W programie Configuration Manager informacje na temat metod, które umożliwiają zarządzanie obrazami systemu operacyjnego, które są przechowywane w plikach obrazów systemu Windows (WIM)."
-ms.custom: na
+description: W programie Configuration Manager informacje na temat metod, które umożliwiają zarządzanie obrazami systemu operacyjnego, które są przechowywane w plikach obrazów systemu Windows (WIM).
 ms.date: 12/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: fab13949-371c-4a4c-978e-471db1e54966
-caps.latest.revision: "17"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: e0ddf9801430984efb63ac593d1f60b8fbfe0f59
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 3b0931671c05604a0115c14a5e7fc5d9c6767b7c
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-operating-system-images-with-system-center-configuration-manager"></a>Zarządzanie obrazami systemu operacyjnego w programie System Center Configuration Manager
 
@@ -28,7 +22,7 @@ ms.lasthandoff: 12/12/2017
 
 Obrazy systemu operacyjnego w programie Configuration Manager to pliki w formacie WIM (Windows Imaging) stanowiące skompresowaną kolekcję plików i folderów odniesienia wymaganych do pomyślnej instalacji i konfiguracji systemu operacyjnego na komputerze. W przypadku wszystkich scenariuszy wdrożenia systemu operacyjnego musisz wybrać obraz systemu operacyjnego.   Możesz użyć domyślnego obrazu systemu operacyjnego lub utworzyć obraz systemu operacyjnego na podstawie skonfigurowanego komputera odniesienia. Podczas tworzenia komputera odniesienia możesz dodać pliki systemu operacyjnego, sterowniki, pliki obsługi, aktualizacje oprogramowania, narzędzia i inne aplikacje do systemu operacyjnego przed przechwyceniem go w celu utworzenia pliku obrazu. Poniżej znajdują się informacje dotyczące każdej z metod.  
 
- **Domyślny obraz**  
+ **domyślny obraz**  
 
  Domyślny obraz systemu operacyjnego (install.wim) jest dołączony do plików instalacji systemu operacyjnego Windows. Ten obraz to obraz podstawowego systemu operacyjnego, który zawiera standardowy zestaw sterowników. Jeśli korzystasz z domyślnego obrazu systemu operacyjnego, możesz zainstalować aplikacje i wprowadzić inne zmiany konfiguracji po zainstalowaniu systemu operacyjnego przy użyciu kroków sekwencji zadań.  Domyślny obraz systemu operacyjnego znajduje się w ścieżce <*ścieżka źródłowa systemu operacyjnego*>\Sources\install.wim.  
 
@@ -56,7 +50,7 @@ Aby uzyskać instrukcje dotyczące tworzenia dostosowanego obrazu systemu operac
     -   Instalacja systemu operacyjnego może trwać dłużej, ponieważ instalacja aplikacji i działania konfiguracji są wykonywane po zakończeniu instalacji systemu operacyjnego.  
 
 
-##  <a name="BKMK_AddOSImages"></a>Dodawanie obrazów systemu operacyjnego do programu Configuration Manager  
+##  <a name="BKMK_AddOSImages"></a> Dodawanie obrazów systemu operacyjnego do programu Configuration Manager  
  Przed użyciem obrazu systemu operacyjnego, należy dodać obraz do lokacji programu Configuration Manager. Użyj następującej procedury, aby dodać obraz systemu operacyjnego do lokacji.  
 
 #### <a name="to-add-an-operating-system-image-to-a-site"></a>Dodawanie obrazu systemu operacyjnego do lokacji  
@@ -81,10 +75,10 @@ Aby uzyskać instrukcje dotyczące tworzenia dostosowanego obrazu systemu operac
 
  Teraz możesz dystrybuować obraz systemu operacyjnego do punktów dystrybucji.  
 
-##  <a name="BKMK_DistributeBootImages"></a>Dystrybuowanie obrazów systemu operacyjnego do punktów dystrybucji  
+##  <a name="BKMK_DistributeBootImages"></a> Dystrybuowanie obrazów systemu operacyjnego do punktów dystrybucji  
  Dystrybuowanie obrazów systemu operacyjnego do punktów dystrybucji przebiega tak samo jak w przypadku zawartości innego typu. W większości przypadków przed wdrożeniem systemu operacyjnego musisz przeprowadzić dystrybucję obrazu systemu operacyjnego do co najmniej jednego punktu dystrybucji. Aby zapoznać się z procedurą dystrybucji obrazu systemu operacyjnego, zobacz temat [Dystrybucja zawartości](../../core/servers/deploy/configure/deploy-and-manage-content.md#bkmk_distribute).  
 
-##  <a name="BKMK_OSImagesApplyUpdates"></a>Stosowanie aktualizacji oprogramowania do obrazu systemu operacyjnego  
+##  <a name="BKMK_OSImagesApplyUpdates"></a> Stosowanie aktualizacji oprogramowania do obrazu systemu operacyjnego  
  Okresowo są wydawane nowe aktualizacje oprogramowania, które mają zastosowanie do systemu operacyjnego znajdującego się w używanym obrazie. Przed zainstalowaniem aktualizacji oprogramowania do obrazu musi mieć aktualizacje oprogramowania infrastruktury w Umieść, zostały pomyślnie zsynchronizować aktualizacje oprogramowania i pobrane aktualizacje oprogramowania do biblioteki zawartości na serwerze lokacji. Aby uzyskać więcej informacji, zobacz [wdrażania aktualizacji oprogramowania](../../sum/deploy-use/deploy-software-updates.md).  
 
  Odpowiednie aktualizacje oprogramowania można stosować do obrazu zgodnie z zaplanowanym harmonogramem. Zgodnie z harmonogramem określonym przez użytkownika stosuje wybrane aktualizacje oprogramowania do obrazu systemu operacyjnego programu Configuration Manager, a następnie opcjonalnie dystrybuuje zaktualizowane obrazy do punktów dystrybucji. Informacje o obrazie systemu operacyjnego, w tym informacje o aktualizacjach oprogramowania zastosowanych podczas importu, są przechowywane w bazie danych lokacji. W bazie danych lokacji są także przechowywane informacje o aktualizacjach oprogramowania zastosowanych do obrazu od jego pierwszego dodania. Po uruchomieniu kreatora w celu zastosowania aktualizacji oprogramowania do obrazu systemu operacyjnego kreator pobiera listę dostępnych do wyboru aktualizacji, które nie zostały jeszcze zastosowane do obrazu. Configuration Manager kopiuje aktualizacje oprogramowania z biblioteki zawartości na serwerze lokacji i stosuje aktualizacje oprogramowania do obrazu systemu operacyjnego.  
@@ -115,7 +109,7 @@ Aby uzyskać instrukcje dotyczące tworzenia dostosowanego obrazu systemu operac
 
 8.  Na stronie **Ukończenie** sprawdź, czy aktualizacje oprogramowania zostały pomyślnie zastosowane do obrazu systemu operacyjnego.  
 
-##  <a name="BKMK_OSImageMulticast"></a>Przygotowywanie obrazu systemu operacyjnego dla wdrożeń multiemisji  
+##  <a name="BKMK_OSImageMulticast"></a> Przygotowywanie obrazu systemu operacyjnego dla wdrożeń multiemisji  
  Wdrożenia za pomocą multiemisji umożliwiają wielu komputerom równoczesne pobranie obrazu systemu operacyjnego. Obraz jest przekazywany za pomocą multiemisji do klientów przez punkt dystrybucji — w odróżnieniu od sytuacji, w której punkt dystrybucji wysyła kopię obrazu do każdego klienta przez oddzielne połączenie. Po wybraniu [użyć multiemisji do wdrażania systemu Windows za pośrednictwem sieci](../deploy-use/use-multicast-to-deploy-windows-over-the-network.md) metodę wdrożenia systemu operacyjnego, należy skonfigurować pakiet obrazu systemu operacyjnego w celu obsługi multiemisji przed rozpoczęciem dystrybucji obrazu systemu operacyjnego do punktu dystrybucji obsługującego multiemisję. Aby ustawić opcje multiemisji dla istniejącego pakietu obrazu systemu operacyjnego, należy wykonać poniższą procedurę.  
 
 #### <a name="to-modify-an-operating-system-image-package-to-use-multicast"></a>Aby zmodyfikować pakiet obrazu systemu operacyjnego w celu użycia multiemisji  
@@ -126,7 +120,7 @@ Aby uzyskać instrukcje dotyczące tworzenia dostosowanego obrazu systemu operac
 
 3.  Wybierz obraz systemu operacyjnego, który chcesz dystrybuować do punktu dystrybucji z obsługą multiemisji.  
 
-4.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij przycisk **Właściwości**.  
+4.  Na karcie **Narzędzia główne** w grupie **Właściwości** kliknij pozycję **Właściwości**.  
 
 5.  Wybierz kartę **Ustawienia dystrybucji** i ustaw poniższe opcje:  
 

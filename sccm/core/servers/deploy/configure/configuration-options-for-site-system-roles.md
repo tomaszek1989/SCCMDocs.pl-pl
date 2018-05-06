@@ -1,25 +1,20 @@
 ---
 title: Opcje roli systemu lokacji
 titleSuffix: Configuration Manager
-description: "Więcej informacji o rolach systemu lokacji programu Configuration Manager, które nie są oczywiste musi w tym artykule."
-ms.custom: na
+description: Więcej informacji o rolach systemu lokacji programu Configuration Manager, które nie są oczywiste musi w tym artykule.
 ms.date: 2/8/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 0e9f0fbd-e442-4509-a021-bfdedf2d04dd
-caps.latest.revision: "5"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 83fbde5fd15b1781822bcc743e2c13611ad88e0d
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 5651eaa7a69c6b75c37cb368973d1d3947e3a498
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configuration-options-for-site-system-roles-for-system-center-configuration-manager"></a>Opcje konfiguracji ról systemu lokacji dla programu System Center Configuration Manager
 
@@ -27,7 +22,7 @@ ms.lasthandoff: 12/04/2017
 
 Większość opcji konfiguracji ról systemu lokacji programu System Center Configuration Manager nie wymaga wyjaśnień lub opisano szczegółowo w kreatorze lub w oknach dialogowych, konfigurując je. W poniższych sekcjach opisano role systemu lokacji, której ustawienia może wymagać dodatkowych informacji.  
 
-##  <a name="BKMK_ApplicationCatalog_Website"></a>Punkt witryny sieci Web katalogu aplikacji  
+##  <a name="BKMK_ApplicationCatalog_Website"></a> Punkt witryny sieci Web katalogu aplikacji  
  Aby uzyskać informacje o sposobie konfigurowania punktu witryny sieci Web katalogu aplikacji, katalogu aplikacji, zobacz [planowanie i Konfigurowanie zarządzania aplikacjami w programie System Center Configuration Manager](../../../../apps/plan-design/plan-for-and-configure-application-management.md).  
 
  **Połączenia klientów**  
@@ -46,19 +41,19 @@ Większość opcji konfiguracji ról systemu lokacji programu System Center Conf
 
  Wprowadź nazwę wyświetlaną użytkownikom w katalogu aplikacji. To informacje o znakowaniu ułatwiają użytkownikom identyfikację tej witryny sieci Web jako zaufane źródło.  
 
-##  <a name="BKMK_ApplicationCatalog_WebService"></a>Punkt usługi sieci web katalogu aplikacji  
+##  <a name="BKMK_ApplicationCatalog_WebService"></a> Punkt usługi sieci web katalogu aplikacji  
  Aby uzyskać informacje o sposobie konfigurowania punktu usługi sieci web katalogu aplikacji, katalogu aplikacji, zobacz [planowanie i Konfigurowanie zarządzania aplikacjami w programie System Center Configuration Manager](../../../../apps/plan-design/plan-for-and-configure-application-management.md).  
 
- **PROTOKÓŁ HTTPS**  
+ **HTTPS**  
 
  Wybierz **HTTPS** do uwierzytelniania witryny sieci Web katalogu aplikacji punktów tego punktu usługi sieci web katalogu aplikacji.  Ta opcja wymaga certyfikatu PKI na serwerach z systemem punkt witryny sieci Web katalogu aplikacji do uwierzytelniania serwera, a także do szyfrowania danych za pośrednictwem protokołu SSL. Aby uzyskać więcej informacji na temat wymagań dotyczących certyfikatów, zobacz [wymagania dotyczące certyfikatu PKI dla programu System Center Configuration Manager](../../../../core/plan-design/network/pki-certificate-requirements.md).  
 
  Przykład wdrożenia certyfikatu serwera oraz informacje o sposobie konfigurowania go w usługach IIS, zobacz *wdrażanie certyfikatu serwera sieci Web dla systemów lokacji, który program IIS uruchom* sekcji [krok Przykładowe wdrożenie infrastruktury kluczy publicznych certyfikatów dla programu System Center Configuration Manager: Urząd certyfikacji systemu Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
 
-##  <a name="BKMK_CertificateRegistrationPoint"></a>Punkt rejestracji certyfikatu  
+##  <a name="BKMK_CertificateRegistrationPoint"></a> Punkt rejestracji certyfikatu  
  Aby uzyskać więcej informacji na temat sposobu konfigurowania punktu rejestracji certyfikatu, zobacz [wprowadzenie do profilów certyfikatów](/sccm/protect/deploy-use/introduction-to-certificate-profiles).  
 
-##  <a name="BKMK_Distribution_Point"></a>Punkt dystrybucji  
+##  <a name="BKMK_Distribution_Point"></a> Punkt dystrybucji  
  Aby uzyskać więcej informacji na temat sposobu konfigurowania punktu dystrybucji w ramach wdrażania zawartości, zobacz [zarządzanie zawartością i infrastrukturą zawartości programu System Center Configuration Manager](../../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
 
  Aby uzyskać więcej informacji na temat sposobu konfigurowania punktu dystrybucji w ramach wdrożeń PXE, zobacz [przy użyciu środowiska PXE do wdrażania systemu Windows za pośrednictwem sieci w programie System Center Configuration Manager](../../../../osd/deploy-use/use-pxe-to-deploy-windows-over-the-network.md).  
@@ -95,10 +90,10 @@ Zaznacz to pole wyboru, aby włączyć punkt dystrybucji dla wstępnie przygotow
 
 **Grupy granic**  
  Można skojarzyć grup granic do punktu dystrybucji. Podczas wdrażania zawartości klienci muszą być w grupie granic skojarzonej z punktem dystrybucji, aby używać go jako źródłowej lokalizacji zawartości.
- - **Przed wersją 1610**, można sprawdzić **Zezwalaj na rezerwową lokalizację źródła zawartości** pole wyboru, aby umożliwić klientom spoza grup granic na rezerwowe używanie punktu dystrybucji jako lokalizacji źródłowej zawartości, jeśli preferowane punkty dystrybucji nie są dostępne.
+ - **Przed wersją 1610**, można sprawdzić **Zezwalaj na rezerwową lokalizację źródła zawartości** pole wyboru, aby umożliwić klientom spoza grup granic na rezerwowe używanie punktu dystrybucji jako lokalizacji źródłowej zawartości, gdy nie preferowane punkty dystrybucji są dostępne.
  - **Począwszy od wersji 1610**, nie będzie można skonfigurować **Zezwalaj na rezerwową lokalizację źródła zawartości**.  Zamiast tego należy zdefiniować relacje między grupami granic, kontrola, gdy klient można rozpocząć wyszukiwanie grup dodatkowe granic dla lokalizacji poprawne źródło zawartości.
 
-##  <a name="BKMK_Enrollment_Point"></a>Punkt rejestracji  
+##  <a name="BKMK_Enrollment_Point"></a> Punkt rejestracji  
 Punkty rejestracji służą do instalowania komputerów Mac i rejestrowania urządzeń, którymi zarządzasz przy użyciu lokalnego zarządzania urządzeniami przenośnymi. Aby uzyskać więcej informacji, zobacz następujące tematy:  
 
 -   [Jak wdrożyć klientów na komputerach Mac w programie System Center Configuration Manager](../../../../core/clients/deploy/deploy-clients-to-macs.md)  
@@ -110,7 +105,7 @@ Punkty rejestracji służą do instalowania komputerów Mac i rejestrowania urz�
 
  Przykład wdrożenia certyfikatu serwera oraz informacje o sposobie konfigurowania go w usługach IIS, zobacz *wdrażanie certyfikatu serwera sieci Web dla systemów lokacji, który program IIS uruchom* sekcji [krok Przykładowe wdrożenie infrastruktury kluczy publicznych certyfikatów dla programu System Center Configuration Manager: Urząd certyfikacji systemu Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
 
-##  <a name="BKMK_Enrollment_Proxy_Point"></a>Punkt proxy rejestracji  
+##  <a name="BKMK_Enrollment_Proxy_Point"></a> Punkt proxy rejestracji  
 Aby uzyskać więcej informacji na temat sposobu konfigurowania punktu proxy rejestracji dla urządzeń przenośnych, zobacz [jak użytkownicy rejestrują urządzenia z zarządzania urządzeniami przenośnymi lokalnymi w programie System Center Configuration Manager](../../../../mdm/deploy-use/user-enroll-devices-on-premises-mdm.md).  
 
 **Połączenia klientów**  
@@ -118,7 +113,7 @@ Aby uzyskać więcej informacji na temat sposobu konfigurowania punktu proxy rej
 
  Przykład wdrożenia certyfikatu serwera oraz informacje o sposobie konfigurowania go w usługach IIS, zobacz *wdrażanie certyfikatu serwera sieci Web dla systemów lokacji, który program IIS uruchom* sekcji [krok Przykładowe wdrożenie infrastruktury kluczy publicznych certyfikatów dla programu System Center Configuration Manager: Urząd certyfikacji systemu Windows Server 2008](/sccm/core/plan-design/network/example-deployment-of-pki-certificates).  
 
-##  <a name="BKMK_Fallback_Status_Point"></a>Rezerwowy punkt stanu  
+##  <a name="BKMK_Fallback_Status_Point"></a> Rezerwowy punkt stanu  
 **Liczba komunikatów o stanie** i **interwał ograniczania (w sekundach)**  
 Mimo że domyślne ustawienia tych opcji (10 000 komunikatów o stanie i interwał ograniczania 3600 s) są wystarczające w większości okolicznościach, należy je zmienić, gdy są spełnione oba poniższe warunki:  
 

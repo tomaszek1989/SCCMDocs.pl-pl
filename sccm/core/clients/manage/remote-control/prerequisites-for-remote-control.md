@@ -1,26 +1,20 @@
 ---
-title: "Wymagania wstępne dotyczące zdalnego sterowania"
+title: Wymagania wstępne dotyczące zdalnego sterowania
 titleSuffix: Configuration Manager
-description: "Pobierz wymagania wstępne dotyczące zdalnego sterowania w programie System Center Configuration Manager."
-ms.custom: na
+description: Pobierz wymagania wstępne dotyczące zdalnego sterowania w programie System Center Configuration Manager.
 ms.date: 04/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: c1b2057e-b74f-43fa-a293-763a8f866d3d
-caps.latest.revision: "6"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: e7287ae7df68ebbcb8f251b8d001233a647596ee
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 117ad9a087151db51c4cf33112ab662f53b9134e
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="prerequisites-for-remote-control-in-system-center-configuration-manager"></a>Wymagania wstępne dotyczące zdalnego sterowania w programie System Center Configuration Manager
 

@@ -2,26 +2,19 @@
 title: Kroki sekwencji zadań
 titleSuffix: Configuration Manager
 description: Dowiedz się więcej na temat kroków, które można dodać do sekwencji zadań programu Configuration Manager.
-ms.custom: na
 ms.date: 03/30/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-osd
+ms.topic: conceptual
 ms.assetid: 7c888a6f-8e37-4be5-8edb-832b218f266d
-caps.latest.revision: 26
-caps.handback.revision: 0
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 53929400b983a2191e60a7d42ae84062afd44e3a
-ms.sourcegitcommit: d8a4a53630351b3d677bbdc5d203e7d330472cba
+ms.openlocfilehash: a678cbbd8500070e2d4056d6e424818e7000ef83
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="task-sequence-steps-in-system-center-configuration-manager"></a>Kroki sekwencji zadań w programie System Center Configuration Manager
 
@@ -468,7 +461,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ogó
  **Path**  
  Kliknij przycisk **Przeglądaj** Aby określić ścieżkę do folderu sieciowego. Użyj formatu  *\\\server\share*.
 
- **Drive**  
+ **Dysk**  
  Wybierz literę dysku lokalnego, aby przypisać dla tego połączenia. 
 
  **Konta**  
@@ -1097,7 +1090,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **stan
 > [!NOTE]  
 >  **Przeglądaj** przycisk umożliwia wyszukanie na komputerze lokalnym dla plików i folderów. Coś po wybraniu muszą także istnieć na komputerze docelowym w tej samej lokalizacji i z tego samego pliku i nazwy folderów.  
 
- **Package**  
+ **Pakiet**  
  Po określeniu plików lub programów w wierszu polecenia, który nie ma jeszcze na komputerze docelowym, wybierz tę opcję, aby określić pakiet programu Configuration Manager, który zawiera odpowiednie pliki. Ten pakiet nie wymaga programu. Ta opcja nie jest wymagana, jeśli określone pliki znajdują się na komputerze docelowym.  
 
  **Time-out**  
@@ -1135,7 +1128,7 @@ W edytorze sekwencji zadań, kliknij przycisk **Dodaj**, wybierz pozycję **ogó
 ### <a name="properties"></a>Właściwości  
  Na **właściwości** karta dla tego kroku, skonfigurować ustawienia opisane w tej sekcji.  
 
- **Package**  
+ **Pakiet**  
  Określ pakiet programu Configuration Manager, który zawiera skrypt programu PowerShell. Jeden pakiet może zawierać wiele skryptów programu PowerShell.  
 
  **Nazwa skryptu**  

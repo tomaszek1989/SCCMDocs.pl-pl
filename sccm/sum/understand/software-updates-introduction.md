@@ -2,21 +2,19 @@
 title: Wprowadzenie do aktualizacji oprogramowania
 titleSuffix: Configuration Manager
 description: Poznaj podstawy aktualizacji oprogramowania w programie System Center Configuration Manager.
-keywords: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
 ms.date: 10/30/2017
-ms.topic: article
+ms.topic: conceptual
 ms.prod: configuration-manager
-ms.service: 
 ms.technology: configmgr-sum
 ms.assetid: e9778b13-c8a3-40eb-8655-34ac8ce9cdaa
-ms.openlocfilehash: 66aa73e5c1aae68feeacb0eabe6233845289d104
-ms.sourcegitcommit: 986fc2d54f7c5fa965fd4df42f4db4ecce6b79cb
+ms.openlocfilehash: d5528fc3e035cd5bed8bc92c8b65f3025d97a2d1
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="introduction-to-software-updates-in-system-center-configuration-manager"></a>Wprowadzenie do aktualizacji oprogramowania w programie System Center Configuration Manager
 
@@ -194,7 +192,7 @@ Przykładowy scenariusz przedstawiający sposób demonstrujący wdrażanie aktua
  Klienci instalują aktualizacje oprogramowania we wdrożeniu, korzystając z dowolnego punktu dystrybucji mającego dostępne aktualizacje oprogramowania, niezależnie od pakietu wdrożeniowego. Nawet jeśli któryś z pakietów wdrożeniowych dla aktywnego wdrożenia zostanie usunięty, klienci nadal mogą zainstalować aktualizacje oprogramowania we wdrożeniu, o ile tylko każda z aktualizacji została pobrana do co najmniej jednego innego pakietu wdrożeniowego i jest dostępna w punkcie dystrybucji, do którego ma dostęp dany klient. Wraz z usunięciem ostatniego pakietu wdrożeniowego zawierającego aktualizację oprogramowania komputery klienckie tracą możliwość pobrania aktualizacji oprogramowania, dopóki aktualizacja nie zostanie ponownie pobrana do pakietu wdrożeniowego. Aktualizacje oprogramowania są wyświetlane z czerwoną strzałką w konsoli programu Configuration Manager, jeśli pliki aktualizacji nie są w żadnym pakiecie wdrożeniowym. Wdrożenia, które zawierają jakiekolwiek aktualizacje w tym stanie, są wyświetlane z podwójną czerwoną strzałką.  
 
 ##  <a name="BKMK_DeploymentWorkflows"></a> Przepływy pracy wdrożeń aktualizacji oprogramowania  
- Istnieją dwa główne scenariusze wdrażania aktualizacji oprogramowania w danym środowisku: wdrażanie ręczne i wdrażanie automatyczne. Na ogół aktualizacje oprogramowania wdraża się ręcznie, aby utworzyć linię bazową dla komputerów klienckich, po czym zarządza się aktualizacjami oprogramowania na klientach za pomocą wdrażania automatycznego. W poniższych częściach omówiono przepływ pracy ręcznego i automatycznego wdrażania aktualizacji oprogramowania.  
+ Istnieją dwa główne scenariusze wdrażania aktualizacji oprogramowania w danym środowisku: wdrażanie ręczne i wdrażanie automatyczne. Zazwyczaj wdrażania aktualizacji oprogramowania ręcznie, aby utworzyć linię bazową dla klienta na komputery, a następnie zarządzanie aktualizacjami oprogramowania na klientach za pomocą wdrażania automatycznego. W poniższych częściach omówiono przepływ pracy ręcznego i automatycznego wdrażania aktualizacji oprogramowania.  
 
 ###  <a name="BKMK_ManualDeployment"></a> Ręczne wdrażanie aktualizacji oprogramowania  
  Ręczne wdrażanie aktualizacji oprogramowania to proces wyborze aktualizacji oprogramowania w konsoli programu Configuration Manager i ręcznym uruchomieniu procedury wdrażania. Tę metodę wdrażania stosuje się najczęściej po to, aby uaktualnić komputery klienckie za pomocą wymaganych aktualizacji oprogramowania przed utworzeniem zasad wdrażania automatycznego, zarządzających ciągłymi comiesięcznymi wdrożeniami aktualizacji oprogramowania, i aby wdrożyć wymagania aktualizacji oprogramowania poza pasmem. Na poniższej liście przedstawiono ogólny przepływ pracy ręcznego wdrażania aktualizacji oprogramowania:  

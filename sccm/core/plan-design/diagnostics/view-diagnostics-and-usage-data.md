@@ -1,25 +1,20 @@
 ---
 title: Widok danych diagnostycznych
 titleSuffix: Configuration Manager
-description: "Wyświetl dane diagnostyczne i użycia, aby upewnić się, że hierarchii programu System Center Configuration Manager nie zawiera żadnych poufnych informacji."
-ms.custom: na
+description: Wyświetl dane diagnostyczne i użycia, aby upewnić się, że hierarchii programu System Center Configuration Manager nie zawiera żadnych poufnych informacji.
 ms.date: 3/27/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 594eb284-0d93-4c5d-9ae6-f0f71203682a
-caps.latest.revision: "8"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: eb05bee0e0fceb68611c660870bb1778a07ef0a9
-ms.sourcegitcommit: da27d37cc4e4e06cf23758846cdd7acb617f744b
+manager: dougeby
+ms.openlocfilehash: 15e6f84be22d90e937c33ebd3a24520e6832a751
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="how-to-view-diagnostics-and-usage-data-for-system-center-configuration-manager"></a>Jak wyświetlać dane diagnostyczne i dane użycia dla programu System Center Configuration Manager
 
@@ -36,7 +31,7 @@ Użyj następującego polecenia programu SQL, aby wyświetlić zawartość tej t
 
 Gdy punkt połączenia usługi jest w trybie offline, można użyć narzędzia połączenia usługi do wyeksportowania bieżących danych diagnostycznych i danych użycia do pliku wartości rozdzielanych przecinkami (CSV). Uruchom narzędzie połączenia usługi na punkt połączenia usługi przy użyciu **-wyeksportować** parametru.  
 
-##  <a name="bkmk_hashes"></a>Skróty jednokierunkowe  
+##  <a name="bkmk_hashes"></a> Skróty jednokierunkowe  
 Niektóre dane składają się z ciągów losowo wybranych znaków alfanumerycznych. Configuration Manager używa algorytmu SHA-256, który używa jednokierunkowych skrótów, aby upewnić się, że nie zbieramy potencjalnie poufnych danych. Algorytm pozostawia danych w stanie, w którym mogą nadal służyć do korelacji i porównywania. Na przykład zamiast zbierać nazwy tabel w bazie danych lokacji, następuje przechwycenie jednokierunkowego skrótu dla każdej nazwy tabeli. Gwarantuje to, że żadne niestandardowe nazwy tabel utworzone czy dodatki produktów, spośród innych reguł nie są widoczne. Następnie możemy sam sposób utworzyć jednokierunkowy skrót nazw tabel SQL wysyłanych domyślnie w ramach produktu i porównywania wyników dwa zapytania w celu określenia odchylenia schemat bazy danych z domyślnej produktu. Te dane są następnie używane do poprawy aktualizacji, które wymagają zmian schematu SQL.  
 
 Podczas przeglądania danych pierwotnych w każdym wierszu danych zostanie wyświetlona wspólna wartość skrótu. Jest to identyfikator hierarchii. Ta wartość skrótu służy do zapewnienia, że dane są skorelowane z tej samej hierarchii bez identyfikowania klienta lub źródła.  

@@ -1,25 +1,20 @@
 ---
 title: Przygotowanie do zainstalowania lokacji
 titleSuffix: Configuration Manager
-description: "Jeśli planujesz zainstalować wiele lokacji programu Configuration Manager, przeczytaj te informacje, aby zaoszczędzić czas i aby zapobiec wystąpieniu błędów."
-ms.custom: na
+description: Jeśli planujesz zainstalować wiele lokacji programu Configuration Manager, przeczytaj te informacje, aby zaoszczędzić czas i aby zapobiec wystąpieniu błędów.
 ms.date: 3/1/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 9089e1b5-cba4-42bd-a2de-126ef882a3af
-caps.latest.revision: "5"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 67f53f6f9e346835ed3e72fe45b699c86d35766a
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 9f07a321ac6f10f5287a88d0df7064920f538ae5
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="prepare-to-install-system-center-configuration-manager-sites"></a>Przygotowanie do instalacji lokacji programu System Center Configuration Manager
 
@@ -30,7 +25,7 @@ Aby przygotować się do pomyślnego wdrożenia co najmniej jednej lokacji progr
 > [!TIP]
 > Podczas zarządzania w lokacji programu System Center Configuration Manager i infrastruktury hierarchii, warunki *uaktualnienia*, *aktualizacji*, i *zainstalować* służą do opisywania trzy oddzielne pojęcia. Aby dowiedzieć się, jak każdego terminu jest używany, zobacz [o uaktualnienie, aktualizacji i instalacji](/sccm/core/understand/upgrade-update-install).
 
-## <a name="bkmk_options"></a>Opcje instalacji różnych typów lokacji
+## <a name="bkmk_options"></a> Opcje instalacji różnych typów lokacji
 Podczas instalowania nowej lokacji programu Configuration Manager wersji plików źródłowych, których można użyć zależy od wersji witryn, które już znajdują się w hierarchii (jeśli istnieje). Metody instalacji, których można użyć, zależą od typu lokacji, którą chcesz zainstalować.  
 
 Przed zainstalowaniem lokacji, upewnij się, zaplanowano hierarchii, oraz że znasz typ lokacji, którą chcesz zainstalować. Aby uzyskać więcej informacji, zobacz [Projektowanie hierarchii lokacji](../../../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md).
@@ -65,7 +60,7 @@ Lokację dodatkową należy zainstalować z konsoli programu Configuration Manag
 -   **Dodaj podrzędnej lokacji głównej**:  Aby dodać lokację główną podrzędną poniżej centralnej lokacji administracyjnej można użyć Kreatora instalacji programu Configuration Manager lub wiersza polecenia instalacji.
 -   **Dodawanie lokacji dodatkowej**:  Użyj konsoli programu Configuration Manager, aby zainstalować lokację dodatkową jako lokację podrzędną lokację główną. Inne metody dodawania Lokacje dodatkowe są nieobsługiwane.
 
-## <a name="bkmk_tasks"></a>Typowe zadania do wykonania przed rozpoczęciem instalacji
+## <a name="bkmk_tasks"></a>  Typowe zadania do wykonania przed rozpoczęciem instalacji
 -   **Zrozumienie topologia hierarchii, które będą używane dla danego wdrożenia**    
 Aby uzyskać więcej informacji, zobacz [Projektowanie hierarchii lokacji programu System Center Configuration Manager](../../../../core/plan-design/hierarchy/design-a-hierarchy-of-sites.md).  
 
@@ -83,7 +78,7 @@ Aby uzyskać więcej informacji, zobacz [wymagania dotyczące certyfikatu PKI dl
 
 -   **Zainstaluj najnowsze aktualizacje zabezpieczeń na komputerach, które będzie używane jako serwery lokacji lub serwery systemu lokacji i w razie potrzeby uruchomić je ponownie**
 
-## <a name="bkmk_sitecodes"></a>O nazwach lokacji i kodach lokacji
+## <a name="bkmk_sitecodes"></a>  O nazwach lokacji i kodach lokacji
 Kody i nazwy lokacji służą do identyfikowania i zarządzania lokacji w hierarchii programu Configuration Manager. W konsoli programu Configuration Manager kod lokacji i nazwa lokacji są wyświetlane w &lt; *kod lokacji*\> - &lt;*nazwa witryny* \> format. Każdy kod lokacji używany w hierarchii musi być unikatowa. Jeśli schemat usługi Active Directory zostanie rozszerzony dla programu Configuration Manager, a lokacje publikują dane, kody lokacji w lesie usługi Active Directory musi być unikatowa, nawet jeśli są używane w innej hierarchii programu Configuration Manager lub jeśli były używane w przypadku wcześniejszej instalacji programu Configuration Manager. Należy dokładnie zaplanować kody i nazwy lokacji przed wdrożeniem hierarchii.
 
 ### <a name="specify-a-site-code-and-site-name"></a>Określ kod lokacji i nazwa lokacji
@@ -117,7 +112,7 @@ Przed zainstalowaniem lokacji należy koniecznie pamiętać o następujących og
   -   Menedżer konfiguracji nie obsługuje przenoszenia podrzędnej lokacji głównej poza hierarchię w celu utworzenia autonomicznej lokacji głównej lub dołączenie go do innej hierarchii. Zamiast tego należy odinstalować podrzędną lokację główną, a następnie zainstalować ją ponownie jako nową autonomiczną lokację główną lub lokacją podrzędną lokacji centralnej lokacji administracyjnej z innej hierarchii.  
 
 
-## <a name="bkmk_optionalsteps"></a>Opcjonalne kroki przed uruchomieniem Instalatora
+## <a name="bkmk_optionalsteps"></a>  Opcjonalne kroki przed uruchomieniem Instalatora
 **Ręcznie uruchom [Narzędzie pobierania Instalatora](../../../../core/servers/deploy/install/setup-downloader.md)**
 
 Aby pobrać zaktualizowane pliki Instalatora programu Configuration Manager, możesz uruchomić Narzędzie pobierania Instalatora. Jeśli komputer, na którym zostanie uruchomiony Instalator nie jest połączony z Internetem lub jeśli będziesz instalować wiele serwerów lokacji, należy wziąć pod uwagę przy użyciu narzędzia pobierania Instalatora, aby pobrać aktualizacje do zainstalowania. Poniżej przedstawiono dodatkowe informacje:

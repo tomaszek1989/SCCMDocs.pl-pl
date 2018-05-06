@@ -1,25 +1,20 @@
 ---
-title: "Składniki lokacji"
+title: Składniki lokacji
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak skonfigurować składniki lokacji, aby zmodyfikować zachowanie ról systemu lokacji i raportowania stanu lokacji."
-ms.custom: na
+description: Dowiedz się, jak skonfigurować składniki lokacji, aby zmodyfikować zachowanie ról systemu lokacji i raportowania stanu lokacji.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: 5fccbbeb-0faa-4943-83c2-e67db62d392d
-caps.latest.revision: "9"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 4c5e6d4587f79eb52e9295d2641f985520738ebe
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: da7537ff9cda198f938eafdfc5db198e79a2cb5b
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="site-components-for-system-center-configuration-manager"></a>Składniki lokacji dla programu System Center Configuration Manager
 

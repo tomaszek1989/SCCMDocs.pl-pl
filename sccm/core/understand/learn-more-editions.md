@@ -1,26 +1,20 @@
 ---
-title: "Dowiedz się więcej na temat licencjonowania i gałęzie"
+title: Dowiedz się więcej na temat licencjonowania i gałęzie
 titleSuffix: Configuration Manager
-description: "Użyj tego tematu, aby poznać wymagania licencyjne opcjami instalacji wraz z wydaniem października 2016 programu System Center Configuration Manager, które dotyczą wersji Current Branch 1606, długoterminowe Servicing Branch (LTSB) i instalacja dotyczy wersji ewaluacyjnej bieżącej gałęzi."
-ms.custom: na
+description: Użyj tego tematu, aby poznać wymagania licencyjne opcjami instalacji wraz z wydaniem października 2016 programu System Center Configuration Manager, które dotyczą wersji Current Branch 1606, długoterminowe Servicing Branch (LTSB) i instalacja dotyczy wersji ewaluacyjnej bieżącej gałęzi.
 ms.date: 12/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 495b87ae-41a4-49ba-abe2-d4f7d22ac0d4
-caps.latest.revision: "0"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 8c5fcb718cf03a1e779212207d696cfa5fe9f0e2
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 8eb561d9867c6bde778ffd5fb6ef404395c359da
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="licensing-and-branches-for-system-center-configuration-manager"></a>Licencjonowanie i gałęzi programu System Center Configuration Manager
 
@@ -100,16 +94,16 @@ Aby uzyskać więcej informacji na temat licencjonowania Software Assurance i bi
 Skorzystaj z poniższych linków, aby dowiedzieć się więcej o szczegółowe informacje o licencjonowaniu produktu.
 
 **Łącza Microsoft wolumin licencjonowania Service Center (VLSC):**
-- Omówienie centrum VLSC: [https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx](https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx).
+- Omówienie centrum VLSC: [ https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx ](https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx).
 
-- Warunkami produktu licencji zbiorczych firmy Microsoft: [http://go.microsoft.com/fwlink/?LinkId=800052](http://go.microsoft.com/fwlink/?LinkId=800052).
+- Warunkami produktu licencji zbiorczych firmy Microsoft: [ http://go.microsoft.com/fwlink/?LinkId=800052 ](http://go.microsoft.com/fwlink/?LinkId=800052).
 
-- Klienci z licencjami zbiorczymi może uzyskać podsumowanie informacji o licencji ich tutaj: [https://www.microsoft.com/Licensing/servicecenter/default.aspx](https://www.microsoft.com/Licensing/servicecenter/default.aspx).  
+- Klienci z licencjami zbiorczymi może uzyskać podsumowanie informacji o licencji ich tutaj: [ https://www.microsoft.com/Licensing/servicecenter/default.aspx ](https://www.microsoft.com/Licensing/servicecenter/default.aspx).  
   Przejdź do **licencji** menu, a następnie kliknij przycisk **podsumowanie licencji** omówienie licencji.
 
 **VLSC wideo:**
 - Uczenie filmy wideo dotyczące sposobu działania VLSC: m[https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx#tab=2](https://www.microsoft.com/en-us/Licensing/existing-customer/vlsc-training-and-resources.aspx#tab=2).
 
-- Gdzie można odszukać active umowy Software Assurance (począwszy od około 43 sekund): [https://www.microsoft.com/showcase/video.aspx?uuid=fe1846cb-1d26-49fc-b064-57b25dcc31a0](https://www.microsoft.com/showcase/video.aspx?uuid=fe1846cb-1d26-49fc-b064-57b25dcc31a0).
+- Gdzie można odszukać active umowy Software Assurance (począwszy od około 43 sekund): [ https://www.microsoft.com/showcase/video.aspx?uuid=fe1846cb-1d26-49fc-b064-57b25dcc31a0 ](https://www.microsoft.com/showcase/video.aspx?uuid=fe1846cb-1d26-49fc-b064-57b25dcc31a0).
 
-- Jak można uzyskać uprawnień do centrum VLSC: [https://www.microsoft.com/showcase/video.aspx?uuid=ac4ed1ca-d0a9-43cd-89fa-74ccb555dec4](https://www.microsoft.com/showcase/video.aspx?uuid=ac4ed1ca-d0a9-43cd-89fa-74ccb555dec4).  Możesz delegować VLSC odczytu i uprawnienia zapisu do innych osób w organizacji.
+- Jak można uzyskać uprawnień do centrum VLSC: [ https://www.microsoft.com/showcase/video.aspx?uuid=ac4ed1ca-d0a9-43cd-89fa-74ccb555dec4 ](https://www.microsoft.com/showcase/video.aspx?uuid=ac4ed1ca-d0a9-43cd-89fa-74ccb555dec4).  Możesz delegować VLSC odczytu i uprawnienia zapisu do innych osób w organizacji.

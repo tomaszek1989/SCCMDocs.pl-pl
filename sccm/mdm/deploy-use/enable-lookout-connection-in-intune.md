@@ -1,25 +1,20 @@
 ---
-title: "Włącz Lookout MTP w usłudze Intune"
+title: Włącz Lookout MTP w usłudze Intune
 titleSuffix: Configuration Manager
-description: "Włącz ochronę zagrożeń przenośnych Lookout w konsoli administracyjnej usługi Intune."
-ms.custom: na
+description: Włącz ochronę zagrożeń przenośnych Lookout w konsoli administracyjnej usługi Intune.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 7e4ada34-63bf-4b9f-8246-31816aa44196
-caps.latest.revision: 
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: 2d4cdb20f66864ac9bf79b89189e97fab26b34f3
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 79a583237d882101d70442cbf6b55a5e3c0e9b11
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="enable-lookout-mtp-connection-in-the-intune-admin-console"></a>Włącz połączenie z usługą Lookout MTP w konsoli administracyjnej usługi Intune
 
@@ -37,4 +32,4 @@ Na tym kończy się Konfigurowanie integracji Lookout i Intune w konsoli adminis
 > Możesz **musi** skonfigurować aplikację Lookout for Work aplikacji przed utworzeniem reguły zasad zgodności i skonfigurowaniem dostępu warunkowego. Dzięki temu, że dana aplikacja jest gotowa i dostępna dla użytkowników końcowych zainstalować, zanim uzyskają dostęp do poczty e-mail ani innych zasobów firmy.
 
 ## <a name="next-steps"></a>Następne kroki
-[Skonfiguruj aplikację Lookout pracy aplikacji](configure-and-deploy-lookout-for-work-apps.md)
+[Skonfiguruj aplikację Lookout pracy aplikacji ](configure-and-deploy-lookout-for-work-apps.md)

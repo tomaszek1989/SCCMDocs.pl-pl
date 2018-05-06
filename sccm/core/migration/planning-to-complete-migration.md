@@ -1,26 +1,20 @@
 ---
-title: "Kończenie migracji"
+title: Kończenie migracji
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak zakończyć migracji do hierarchii docelowej programu System Center Configuration Manager po hierarchii źródłowej nie ma już danych."
-ms.custom: na
+description: Dowiedz się, jak zakończyć migracji do hierarchii docelowej programu System Center Configuration Manager po hierarchii źródłowej nie ma już danych.
 ms.date: 1/12/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: f4854b50-2e8c-414c-a872-9579554dca98
-caps.latest.revision: "5"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 67e1d850043d5b922ab53dd13a782414730d5866
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: b9bdffc9271b1e59bbe459dffc0e3c69578a4711
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="plan-to-complete-migration-in-system-center-configuration-manager"></a>Planowanie kończenia migracji w programie System Center Configuration Manager
 
@@ -42,7 +36,7 @@ Użyj sekcje ułatwią planowanie kończenia migracji z hierarchii źródłowej 
 
 -   [Planowanie czyszczenia danych migracji](#Plan_to_clean_up)  
 
-##  <a name="Plan_to_Stop_Data_Gath"></a>Planowanie zatrzymywania gromadzenia danych  
+##  <a name="Plan_to_Stop_Data_Gath"></a> Planowanie zatrzymywania gromadzenia danych  
  Przed ukończeniem migracji i wyczyść dane migracji należy zatrzymać zbieranie danych z każdej lokacji źródłowej w hierarchii źródłowej. Aby zatrzymać zbieranie danych z każdej lokacji źródłowej, należy wykonać **Zatrzymaj zbieranie danych** poleceń w lokacjach źródłowych najniższej warstwy, a następnie powtórzyć ten proces w każdej lokacji nadrzędnej. Ostatnią lokacją, w której należy zatrzymać gromadzenie danych, jest lokacja najwyższego poziomu hierarchii źródłowej. Należy zatrzymać zbieranie w każdej lokacji podrzędnej przed wykonaniem tego polecenia w lokacji nadrzędnej danych. Zazwyczaj można tylko zatrzymać zbieranie danych, gdy wszystko będzie gotowe zakończyć proces migracji.  
 
  Po zatrzymaniu zbierania danych z lokacji źródłowej, współużytkowane punkty dystrybucji w tej lokacji nie są już dostępne jako lokalizacje zawartości dla klientów w hierarchii docelowej. W związku z tym upewnij się, że wszelka zawartość zmigrowana, która klientów w hierarchii docelowej wymaga dostępu do jest nadal dostępny przy użyciu jednej z następujących opcji:  
@@ -55,7 +49,7 @@ Po zatrzymaniu zbierania danych z każdej lokacji źródłowej w hierarchii źr�
 
 Aby uzyskać więcej informacji o lokacjach źródłowych i gromadzeniu danych, zobacz [Planowanie strategii hierarchii źródłowej w programie System Center Configuration Manager](../../core/migration/planning-a-source-hierarchy-strategy.md).  
 
-##  <a name="Plan_to_clean_up"></a>Planowanie czyszczenia danych migracji  
+##  <a name="Plan_to_clean_up"></a> Planowanie czyszczenia danych migracji  
  Ostatni krok wymagany do zakończenia migracji jest czyszczenie danych migracji. Można użyć **Wyczyść dane migracji** po zatrzymaniu gromadzenia danych dla każdej lokacji źródłowej w hierarchii źródłowej. To opcjonalne działanie powoduje usunięcie danych dotyczących bieżącej hierarchii źródłowej z bazy danych hierarchii docelowej.  
 
  Czyszczenie danych migracji większość danych dotyczących migracji usunięcie z bazy danych hierarchii docelowej. Niemniej jednak szczegółowe informacje o zmigrowanych obiektach są zachowywane. Dysponując tymi szczegółowymi informacjami, można użyć **migracji** obszaru roboczego do zmiany konfiguracji hierarchii źródłowej, która zawiera dane, które zostały poddane migracji, aby wznowić migrację z tej hierarchii źródłowej, lub aby przejrzeć obiekty i przynależność obiektów, które zostały już poprzednio zmigrowane do lokacji.  

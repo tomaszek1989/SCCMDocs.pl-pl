@@ -1,26 +1,20 @@
 ---
-title: "Wprowadzenie do zarządzania energią"
+title: Wprowadzenie do zarządzania energią
 titleSuffix: Configuration Manager
-description: "Wprowadzenie do zarządzania energią w programie System Center Configuration Manager."
-ms.custom: na
+description: Wprowadzenie do zarządzania energią w programie System Center Configuration Manager.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-client
+ms.topic: conceptual
 ms.assetid: 3ddff2a7-99eb-4ef8-b969-f3f7f24053db
-caps.latest.revision: "4"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 5b22b13fa904f26e25555c3095a2db2455594d1e
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: adf410b2cfdb45b3f01ac48c53d324b678689cda
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="introduction-to-power-management-in-system-center-configuration-manager"></a>Wprowadzenie do zarządzania energią w programie System Center Configuration Manager
 
@@ -45,7 +39,7 @@ Zarządzania energią w programie System Center Configuration Manager eliminuje 
 >  Nie należy stosować planów zasilania na komputerach w lokacji przed zebraniem i przeanalizowaniem danych dotyczących zasilania z komputerów klienckich. Zastosowanie nowych ustawień zarządzania energią na komputerach przed sprawdzeniem istniejących ustawień może spowodować wzrost zużycia energii.  
 
 ### <a name="enforcement-phase"></a>Faza wymuszania  
- Zarządzanie energią umożliwia utworzenie planów zasilania, które możesz zastosować dla kolekcji komputerów w lokacji. Te plany zasilania konfigurują ustawienia zarządzania energią systemu Windows na komputerach. Można użyć planów zasilania, które są uwzględniane w programie Configuration Manager lub skonfigurować własne niestandardowe plany zasilania. Możesz użyć danych zasilania zebranych w fazie monitorowania i planowania jako linii bazowej, aby łatwiej ocenić oszczędność energii po zastosowaniu planu zasilania na komputerach. Aby uzyskać więcej informacji, zobacz [Lista kontrolna administratora dotycząca zarządzania energią w programie System Center Configuration Manager](../../../../core/clients/manage/power/administrator-checklist-for-power-management.md).  
+ Zarządzanie energią umożliwia utworzenie planów zasilania, które możesz zastosować dla kolekcji komputerów w lokacji. Te plany zasilania konfigurują ustawienia zarządzania energią systemu Windows na komputerach. Można użyć planów zasilania, które są uwzględniane w programie Configuration Manager lub skonfigurować własne niestandardowe plany zasilania. Można użyć danych zasilania zebranych w fazie monitorowania i planowania jako linii bazowej, aby ocenić oszczędność energii po zastosowaniu planu zasilania do komputerów. Aby uzyskać więcej informacji, zobacz [Lista kontrolna administratora dotycząca zarządzania energią w programie System Center Configuration Manager](../../../../core/clients/manage/power/administrator-checklist-for-power-management.md).  
 
 ### <a name="compliance-phase"></a>Faza sprawdzania zgodności  
  W fazie sprawdzania zgodności możesz uruchomić raporty, które ułatwiają ocenę użycia energii i oszczędności związanych z wydatkami na energię w organizacji. Można także uruchomić raporty, które opisują redukcję ilości CO2 generowany przez komputery. Są także dostępne raporty, które ułatwiają zweryfikowanie, czy ustawienia zasilania zostały zastosowane poprawnie na komputerach, a także ułatwiają rozwiązywanie problemów z funkcją zarządzania energią.  

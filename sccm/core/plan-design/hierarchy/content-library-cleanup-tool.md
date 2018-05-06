@@ -1,25 +1,20 @@
 ---
-title: "Narzędzie do biblioteki zawartości oczyszczania"
+title: Narzędzie do biblioteki zawartości oczyszczania
 titleSuffix: Configuration Manager
-description: "Usuwanie osieroconych zawartości nie są już skojarzone z wdrożeniem programu System Center Configuration Manager za pomocą narzędzia Oczyszczanie biblioteki zawartości."
-ms.custom: na
+description: Usuwanie osieroconych zawartości nie są już skojarzone z wdrożeniem programu System Center Configuration Manager za pomocą narzędzia Oczyszczanie biblioteki zawartości.
 ms.date: 4/7/2017
-ms.reviewer: na
-ms.suite: na
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 226cbbb2-9afa-4e2e-a472-be989c0f0e11
-caps.latest.revision: "4"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 334b79e675ea7804128b0feb9678de4ad06dbc93
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 5d83b23673d8eea6e98f21ea30b6b802eb7e5595
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="the-content-library-cleanup-tool-for-system-center-configuration-manager"></a>Narzędzia do oczyszczania zawartości biblioteki programu System Center Configuration Manager
 
@@ -76,4 +71,4 @@ Następujące przełączniki wiersza polecenia mogą być używane w dowolnej ko
 | **/dp &lt;FQDN punktów dystrybucji >**  | **Wymagane** </br> Określ w pełni kwalifikowaną nazwę (FQDN) punktu dystrybucji, które chcesz wyczyścić. </br></br> Przykład:  ***ContentLibraryCleanup.exe /dp serwer1.contoso.com***|
 | **/PS &lt;lokacji głównej nazwy FQDN >**       | **Opcjonalne** podczas czyszczenia zawartości z punktu dystrybucji w lokacji głównej.</br>**Wymagane** podczas czyszczenia zawartości z punktu dystrybucji w lokacji dodatkowej. </br></br>Narzędzie łączy do nadrzędnej lokacji głównej do wykonywania kwerend do SMS_Provider. Pozwalają one zapytania narzędzie określają zawartość powinna być w punkcie dystrybucji, ale pozwala wykryć zawartość, która jest oddzielona i może zostać usunięta. To połączenie nadrzędnej lokacji głównej muszą być wprowadzane do punktów dystrybucji w lokacji dodatkowej, ponieważ wymagane szczegóły nie są dostępne bezpośrednio z lokacji dodatkowej.</br></br> Określ nazwę FQDN należącą do punktu dystrybucji lokacji głównej lub podstawowej nadrzędnego elementu nadrzędnego, gdy punkt dystrybucji znajduje się w lokacji dodatkowej. </br></br> Przykład: ***ContentLibraryCleanup.exe /dp server1.contoso.com /ps siteserver1.contoso.com*** |
 | **/sc &lt;kod lokacji głównej >**  | **Opcjonalne** podczas czyszczenia zawartości z punktu dystrybucji w lokacji głównej.</br>**Wymagane** podczas czyszczenia zawartości z punktu dystrybucji w lokacji dodatkowej. </br></br> Określ kod lokacji w lokacji głównej, należącego do punktu dystrybucji lub nadrzędnej lokacji głównej, gdy punkt dystrybucji znajduje się w lokacji dodatkowej.</br></br> Przykład: ***ContentLibraryCleanup.exe /dp server1.contoso.com /sc ABC*** |
-| **/ log<log file directory>**       |**Opcjonalne** </br> Określ lokalizację, w której narzędzie zapisuje plik dziennika. Może to być lokalny lub w sieci, należy udostępnić.</br></br> Gdy ta opcja nie jest używana, plik dziennika znajduje się w folderze tymczasowym użytkownika, na komputerze, na którym działa narzędzie.</br></br> Przykład dysku lokalnym: ***/ ContentLibraryCleanup.exe /dp server1.contoso.com log C:\Users\Administrator\Desktop*** </br></br>Przykład z udziału sieciowego: ***/ Log server1.contoso.com /dp ContentLibraryCleanup.exe \\ &lt;udostępnianie >\&< folder >***|
+| **/ log <log file directory>**       |**Opcjonalne** </br> Określ lokalizację, w której narzędzie zapisuje plik dziennika. Może to być lokalny lub w sieci, należy udostępnić.</br></br> Gdy ta opcja nie jest używana, plik dziennika znajduje się w folderze tymczasowym użytkownika, na komputerze, na którym działa narzędzie.</br></br> Przykład dysku lokalnym: ***/ ContentLibraryCleanup.exe /dp server1.contoso.com log C:\Users\Administrator\Desktop*** </br></br>Przykład z udziału sieciowego: ***/ Log server1.contoso.com /dp ContentLibraryCleanup.exe \\ &lt;udostępnianie >\&< folder >***|

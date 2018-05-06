@@ -1,25 +1,20 @@
 ---
-title: "Obsługiwane konfiguracje dla LTSB "
+title: 'Obsługiwane konfiguracje dla LTSB '
 titleSuffix: Configuration Manager
-description: "Dowiedz się, które systemy operacyjne i produkty zależne działają z długoterminowe obsługi gałęzi programu System Center Configuration Manager."
-ms.custom: na
+description: Dowiedz się, które systemy operacyjne i produkty zależne działają z długoterminowe obsługi gałęzi programu System Center Configuration Manager.
 ms.date: 5/10/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: f0f818d4-7f45-402f-8758-dc88bc024953
-caps.latest.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: e634ade367375dd092cea0381fe976109c4936df
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 2da1ff9f8a45ba33f6546dcab8df423d9064e650
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="supported-configurations-for-the-long-term-servicing-branch-of-system-center-configuration-manager"></a>Obsługiwane konfiguracje dla długoterminowego gałęzi obsługi programu System Center Configuration Manager
 
@@ -56,7 +51,7 @@ LTSB obsługuje następujące systemy operacyjne Windows komputera jako systemy 
 - Windows 10 Enterprise LTSB 2015 (x86, x64)
 - Windows 10 Enterprise LTSB 2016 (x86, x64)
 - Windows 8.1 (x86, x64): Professional, Enterprise
-- W systemie Windows 7 z dodatkiem SP1 (x 86, x 64): Professional, Enterprise i Ultimate
+- W systemie Windows 7 z dodatkiem SP1 (x 86, x 64): Professional, Enterprise, Ultimate
 - Instalacja Server Core systemu Windows Server 2012
 - Instalacja Server Core systemu Windows Server 2012 R2    
 
@@ -80,7 +75,7 @@ LTSB służy do zarządzania następujących systemów operacyjnych komputera z 
 - Windows 10 Enterprise LTSB 2015 (x86, x64)
 - Windows 10 Enterprise LTSB 2016 (x86, x64)
 - Windows 8.1 (x86, x64): Professional, Enterprise
-- W systemie Windows 7 z dodatkiem SP1 (x 86, x 64): Professional, Enterprise i Ultimate
+- W systemie Windows 7 z dodatkiem SP1 (x 86, x 64): Professional, Enterprise, Ultimate
 - Instalacja Server Core systemu Windows Server 2012 R2 (x64) (Uwaga 2)
 - Instalacja Server Core systemu Windows Server 2012 (x64) (Uwaga 2)
 - Instalacja Server Core systemu Windows Server 2008 R2 z dodatkiem SP1 (x64)
@@ -179,16 +174,16 @@ Obsługiwane są następujące wersje przy użyciu podanego pliku tar.
 |Wersja|Plik|  
 |-|-|  
 |W wersji 5.3 (Power)|CCM-Aix53ppc. &lt;kompilacji\>tar|  
-|W wersji 6.1 (Power)|CCM-Aix61ppc. &lt;kompilacji\>tar|  
-|W wersji 7.1 (Power)|CCM-Aix71ppc. &lt;kompilacji\>tar|  
+|W wersji 6.1 (Power)|ccm-Aix61ppc.&lt;build\>.tar|  
+|W wersji 7.1 (Power)|ccm-Aix71ppc.&lt;build\>.tar|  
 
 ### <a name="centos"></a>CentOS  
 
 |Wersja|Plik|  
 |-|-|  
-|W wersji 5 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|W wersji 5 x86|ccm-Universalx86.&lt;build\>.tar|  
 |W wersji 5 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
-|W wersji 6 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|W wersji 6 x86|ccm-Universalx86.&lt;build\>.tar|  
 |W wersji 6 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 |Wersja 7 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 
@@ -196,13 +191,13 @@ Obsługiwane są następujące wersje przy użyciu podanego pliku tar.
 
 |Wersja|Plik|    
 |-|-|  
-|W wersji 5 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|W wersji 5 x86|ccm-Universalx86.&lt;build\>.tar|  
 |W wersji 5 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
-|W wersji 6 x 86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|W wersji 6 x 86|ccm-Universalx86.&lt;build\>.tar|  
 |W wersji 6 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
-|Wersja 7 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|Wersja 7 x86|ccm-Universalx86.&lt;build\>.tar|  
 |Wersja 7 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
-|W wersji 8 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|W wersji 8 x86|ccm-Universalx86.&lt;build\>.tar|  
 |W wersji 8 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 
 ### <a name="hp-ux"></a>HP-UX  
@@ -211,16 +206,16 @@ Obsługiwane są następujące wersje przy użyciu podanego pliku tar.
 |-|-|  
 |Wersja 11iv2 IA64|CCM-HpuxB.11.23i64. &lt;kompilacji\>tar|  
 |Wersja 11iv2 PA-RISC|CCM-HpuxB.11.23PA. &lt;kompilacji\>tar|  
-|Wersja 11iv3 IA64|CCM-HpuxB.11.31i64. &lt;kompilacji\>tar|  
+|Wersja 11iv3 IA64|ccm-HpuxB.11.31i64.&lt;build\>.tar|  
 |Wersja 11iv3 PA-RISC|CCM-HpuxB.11.31PA. &lt;kompilacji\>tar|  
 
 ### <a name="oracle-linux"></a>Oracle Linux  
 
 |Wersja|Plik|    
 |-|-|  
-|W wersji 5 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|W wersji 5 x86|ccm-Universalx86.&lt;build\>.tar|  
 |W wersji 5 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
-|W wersji 6 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|W wersji 6 x86|ccm-Universalx86.&lt;build\>.tar|  
 |W wersji 6 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 |Wersja 7 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 
@@ -230,9 +225,9 @@ Obsługiwane są następujące wersje przy użyciu podanego pliku tar.
 |-|-|  
 |W wersji 4 x86|CCM-RHEL4x86. &lt;kompilacji\>tar|  
 |W wersji 4 x64|CCM-RHEL4x64. &lt;kompilacji\>tar|  
-|W wersji 5 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|W wersji 5 x86|ccm-Universalx86.&lt;build\>.tar|  
 |W wersji 5 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
-|W wersji 6 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|W wersji 6 x86|ccm-Universalx86.&lt;build\>.tar|  
 |W wersji 6 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 |Wersja 7 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 
@@ -241,19 +236,19 @@ Obsługiwane są następujące wersje przy użyciu podanego pliku tar.
 |Wersja|Plik|   
 |-|-|  
 |W wersji 9 SPARC|CCM-Sol9sparc. &lt;kompilacji\>tar|  
-|W wersji 10 x86|CCM-Sol10x86. &lt;kompilacji\>tar|  
-|W wersji 10 SPARC|CCM-Sol10sparc. &lt;kompilacji\>tar|  
-|W wersji 11 x86|CCM-Sol11x86. &lt;kompilacji\>tar|  
-|W wersji 11 SPARC|CCM-Sol11sparc. &lt;kompilacji\>tar|  
+|W wersji 10 x86|ccm-Sol10x86.&lt;build\>.tar|  
+|W wersji 10 SPARC|ccm-Sol10sparc.&lt;build\>.tar|  
+|W wersji 11 x86|ccm-Sol11x86.&lt;build\>.tar|  
+|W wersji 11 SPARC|ccm-Sol11sparc.&lt;build\>.tar|  
 
 ### <a name="suse-linux-enterprise-server-sles"></a>SUSE Linux Enterprise Server (SLES)  
 
 |Wersja|Plik|  
 |-|-|  
 |W wersji 9 x86|CCM-SLES9x86. &lt;kompilacji\>tar|  
-|Z dodatkiem SP1 w wersji 10 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|Z dodatkiem SP1 w wersji 10 x86|ccm-Universalx86.&lt;build\>.tar|  
 |Z dodatkiem SP1 w wersji 10 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
-|Z dodatkiem SP1 w wersji 11 x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|Z dodatkiem SP1 w wersji 11 x86|ccm-Universalx86.&lt;build\>.tar|  
 |Z dodatkiem SP1 w wersji 11 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 |W wersji 12 x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 
@@ -261,11 +256,11 @@ Obsługiwane są następujące wersje przy użyciu podanego pliku tar.
 
 |Wersja|Plik|    
 |-|-|  
-|Wersja 10.04 LTS x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|Wersja 10.04 LTS x86|ccm-Universalx86.&lt;build\>.tar|  
 |Wersja 10.04 LTS x64|CCM-Universalx64. &lt;kompilacji\>tar|  
-|Wersja 12.04 LTS x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|Wersja 12.04 LTS x86|ccm-Universalx86.&lt;build\>.tar|  
 |Wersja 12.04 LTS x64|CCM-Universalx64. &lt;kompilacji\>tar|  
-|Wersja 14.04 LTS x86|CCM-Universalx86. &lt;kompilacji\>tar|  
+|Wersja 14.04 LTS x86|ccm-Universalx86.&lt;build\>.tar|  
 |Wersja 14.04 LTS x64|CCM-Universalx64. &lt;kompilacji\>tar|  
 
 ### <a name="exchange-server-connector"></a>Łącznik serwera Exchange
@@ -298,7 +293,7 @@ LTSB obsługuje następujące systemy operacyjne do uruchamiania konsoli program
 - Windows 10 Enterprise LTSB 2016 (x86, x64)
 - Windows 10 Enterprise LTSB 2015 (x86, x64)
 - Windows 8.1 (x86, x64): Professional, Enterprise
-- W systemie Windows 7 z dodatkiem SP1 (x 86, x 64): Professional, Enterprise i Ultimate
+- W systemie Windows 7 z dodatkiem SP1 (x 86, x 64): Professional, Enterprise, Ultimate
 
 
 ## <a name="sql-server-versions-supported-for-the-site-database-and-reporting-point"></a>Wersje programu SQL Server obsługuje bazy danych lokacji lub punkt raportowania
@@ -306,13 +301,13 @@ LTSB obsługuje następujące wersje programu SQL Server do hostowania bazy dany
 
 **Obsługiwane wersje:**
 
-- Program SQL Server 2016: Wersje Standard, Enterprise
-- Program SQL Server 2014 SP2: Wersje Standard, Enterprise
-- SQL Server 2014 z dodatkiem SP1: Wersje Standard, Enterprise
-- SQL Server 2012 z dodatkiem SP3: Wersje Standard, Enterprise
-- SQL Server 2008 R2 z dodatkiem SP3: Standard, Enterprise i Datacenter
-- Program SQL Server 2016 Express
-- SQL Server 2014 Express z dodatkiem SP2
+- SQL Server 2016: Wersje Standard, Enterprise
+- SQL Server 2014 SP2: Wersje Standard, Enterprise
+- SQL Server 2014 SP1: Wersje Standard, Enterprise
+- SQL Server 2012 SP3: Wersje Standard, Enterprise
+- SQL Server 2008 R2 SP3: Standard, Enterprise i Datacenter
+- SQL Server 2016 Express
+- SQL Server 2014 Express SP2
 - SQL Server 2014 Express SP1
 - SQL Server 2012 Express SP3
 

@@ -1,25 +1,20 @@
 ---
-title: "Tworzenie aplikacji dla komputerów Mac"
+title: Tworzenie aplikacji dla komputerów Mac
 titleSuffix: Configuration Manager
-description: "Zobacz uwagi, które należy wziąć pod uwagę podczas tworzenia i wdrażania aplikacji dla komputerów Mac."
-ms.custom: na
+description: Zobacz uwagi, które należy wziąć pod uwagę podczas tworzenia i wdrażania aplikacji dla komputerów Mac.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-app
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: ab1aecdd-d943-44f5-b0a9-e8fe7439e5d6
-caps.latest.revision: "9"
-author: mattbriggs
-ms.author: mabrigg
-manager: angrobe
-ms.openlocfilehash: 912632c672c49deefc946e089dad6a82454c4b67
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 3cbb7281cd7dd39a32a71105fe173f868947eef9
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="create-mac-computer-applications-with-system-center-configuration-manager"></a>Tworzenie aplikacji dla komputerów Mac w programie System Center Configuration Manager
 
@@ -118,7 +113,7 @@ Użyj poniższej procedury ułatwiające tworzenie aplikacji dla komputerów Mac
 
 5.  Z listy rozwijanej **Typ** wybierz pozycję **Mac OS X**.  
 
-6.  W **lokalizacji** Określ ścieżkę UNC w postaci  *\\ \\< server\>\\< udziału\>\\< nazwa pliku\>*  do pliku instalacji aplikacji dla komputerów Mac (**cmmac** pliku) który wykryje informacje o aplikacji. Możesz też wybrać **Przeglądaj** wskaż i określ lokalizację pliku instalacyjnego.  
+6.  W **lokalizacji** Określ ścieżkę UNC w postaci *\\ \\< server\>\\< udziału\>\\< nazwa pliku\>* do pliku instalacji aplikacji dla komputerów Mac (**cmmac** pliku) który wykryje informacje o aplikacji. Możesz też wybrać **Przeglądaj** wskaż i określ lokalizację pliku instalacyjnego.  
 
     > [!NOTE]  
     >  Wymagany jest dostęp do ścieżki UNC zawierającej aplikację.  

@@ -1,26 +1,20 @@
 ---
-title: "Tworzenie profili połączenia zdalnego"
+title: Tworzenie profili połączenia zdalnego
 titleSuffix: Configuration Manager
-description: "Użyj profili połączenia zdalnego programu System Center Configuration Manager, aby umożliwić użytkownikom połączenie zdalne z komputerami roboczymi."
-ms.custom: na
+description: Użyj profili połączenia zdalnego programu System Center Configuration Manager, aby umożliwić użytkownikom połączenie zdalne z komputerami roboczymi.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-compliance
+ms.topic: conceptual
 ms.assetid: 8c6eabc4-5dda-4682-b03e-3a450e6ef65a
-caps.latest.revision: "8"
-caps.handback.revision: "0"
-author: andredm7
-ms.author: andredm
-manager: angrobe
-ms.openlocfilehash: 8ca0b961f075f41984d6dbba7321c375940a8622
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: c0e94fd8669556223044403fc72216fcaaaa5e54
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="remote-connection-profiles-in-system-center-configuration-manager"></a>Profile połączenia zdalnego w programie System Center Configuration Manager
 
@@ -67,7 +61,7 @@ Aby użytkownicy mogli się łączyć ze swoimi komputerami roboczymi przy użyc
 |----------------|----------------------|  
 |Programu Configuration Manager musi być podłączony do Microsoft Intune (nazywane Konfiguracja hybrydowa).|Aby uzyskać więcej informacji o podłączaniu programu Configuration Manager w usłudze Microsoft Intune Zobacz Zarządzanie urządzeniami przenośnymi za pomocą programu Configuration Manager i Microsoft Intune.|  
 |Aby użytkownik mógł się połączyć z komputerem roboczym w sieci firmowej, musi on być jego urządzeniem podstawowym.|Aby uzyskać więcej informacji o koligacji urządzenia użytkownika, zobacz [łączenie użytkowników i urządzeń za pomocą koligacji urządzenia użytkownika](/sccm/apps/deploy-use/link-users-and-devices-with-user-device-affinity).|  
-|Do zarządzania profilami połączenia zdalnego należy przyznać określone uprawnienia zabezpieczeń.|Rola zabezpieczeń **Menedżer ustawień zgodności** zawiera uprawnienia wymagane do zarządzania profilami połączenia zdalnego. Aby uzyskać więcej informacji, zobacz artykuł <br />[Konfigurowanie administracji opartej na rolach](/sccm/core/servers/deploy/configure/configure-role-based-administration).|  
+|Do zarządzania profilami połączenia zdalnego należy przyznać określone uprawnienia zabezpieczeń.|Rola zabezpieczeń **Menedżer ustawień zgodności** zawiera uprawnienia wymagane do zarządzania profilami połączenia zdalnego. Aby uzyskać więcej informacji, zobacz <br />[Konfigurowanie administracji opartej na rolach](/sccm/core/servers/deploy/configure/configure-role-based-administration).|  
 
 ## <a name="security-and-privacy-considerations-for-remote-connection-profiles"></a>Zagadnienia dotyczące bezpieczeństwa i ochrony prywatności w profilach połączenia zdalnego  
 
@@ -135,14 +129,14 @@ Wdróż profil połączenia zdalnego
 
     -   **Koryguj niezgodne reguły, jeśli są obsługiwane** -Włącz to, aby automatycznie korygować profil połączenia zdalnego, gdy okaże się niezgodny na urządzeniu, na przykład, jeśli nie występuje.  
 
-    -   **Zezwalaj na korygowanie poza oknem obsługi** — Jeśli okno obsługi zostało skonfigurowane dla kolekcji, w której wdrażasz profil połączenia zdalnego, Włącz tę opcję, aby umożliwić programowi Configuration Manager korygować profil połączenia zdalnego poza oknem obsługi. Aby uzyskać więcej informacji dotyczących okien obsługi, zobacz [używanie okien obsługi](/sccm/core/clients/manage/collections/use-maintenance-windows).  
+    -   **Zezwalaj na korygowanie poza oknem obsługi** — Jeśli okno obsługi zostało skonfigurowane dla kolekcji, w której wdrażasz profil połączenia zdalnego, Włącz tę opcję, aby umożliwić programowi Configuration Manager skorygować połączenia zdalnego Profil poza oknem obsługi. Aby uzyskać więcej informacji dotyczących okien obsługi, zobacz [używanie okien obsługi](/sccm/core/clients/manage/collections/use-maintenance-windows).  
 
     -   **Wygeneruj alert** — włącz tę opcję, aby skonfigurować alert generowany, jeśli zgodność profilu połączenia zdalnego do danego dnia i godziny będzie mniejsza niż określony procent. Możesz również określić, czy chcesz wysyłać alert do programu System Center Operations Manager.  
 
-    -   **Określ harmonogram oceny zgodności dla tej linii bazowej konfiguracji** — określ harmonogram oceny profilu połączenia zdalnego wdrożonego na urządzeniach. Może to być harmonogram prosty lub niestandardowy.  
+    -   **Określ harmonogram oceny zgodności dla tej linii bazowej konfiguracji** — Określ harmonogram oceny profilu połączenia zdalnego na urządzeniach. Może to być harmonogram prosty lub niestandardowy.  
 
     > [!TIP]  
-    >  Jeśli urządzenie opuści kolekcję, do której został wdrożony profil połączenia zdalnego, ustawienia tego profilu zostaną wyłączone w urządzeniu. Aby jednak ten proces odbył się prawidłowo, powinien już być wdrożony co najmniej jeden element konfiguracji lub plan bazowy konfiguracji zawierający element konfiguracji z używanej lokacji.  
+    >  Jeśli urządzenie opuści kolekcję, do której został wdrożony profil połączenia zdalnego, ustawienia tego profilu zostaną wyłączone w urządzeniu. Jednak ten proces odbył się prawidłowo, należy został już wdrożony co najmniej jeden element konfiguracji lub linię bazową konfiguracji, który zawiera element konfiguracji z witryny.  
     >   
     >  Klienci oceniają profile według urządzeń po zalogowaniu się użytkownika.  
     >   

@@ -1,24 +1,20 @@
 ---
-title: "Kroki sekwencji zadań do zarządzania systemem BIOS do konwersji UEFI"
+title: Kroki sekwencji zadań do zarządzania systemem BIOS do konwersji UEFI
 titleSuffix: Configuration Manager
-description: "Dowiedz się, jak dostosować sekwencję zadań wdrażania systemu operacyjnego na przygotowanie partycji FAT32 przejścia do UEFI."
-ms.custom: na
+description: Dowiedz się, jak dostosować sekwencję zadań wdrażania systemu operacyjnego na przygotowanie partycji FAT32 przejścia do UEFI.
 ms.date: 03/24/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-osd
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: bd3df04a-902f-4e91-89eb-5584b47d9efa
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: f2d53b7f525d4f827b78840a7f0d9482d203c08d
-ms.sourcegitcommit: 08f9854fb6c6d21e1e923b13e38a64d0bc2bc9a4
+manager: dougeby
+ms.openlocfilehash: 8c807f771d88701127c47d0290b6d8fc6bcb0f00
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="task-sequence-steps-to-manage-bios-to-uefi-conversion"></a>Kroki sekwencji zadań do zarządzania systemem BIOS do konwersji UEFI
 Windows 10 udostępnia wiele nowych funkcji zabezpieczeń, które wymagają urządzenia z włączoną obsługą interfejsu UEFI. Konieczne może być nowoczesnych komputerów z systemem Windows, które obsługują interfejs UEFI, ale używana jest starszy system BIOS. Konwertowanie urządzenia na UEFI są wymagane przejdź do każdego komputera na partycje dysk twardy, a następnie ponownie skonfigurować oprogramowanie układowe. Za pomocą sekwencji zadań w programie Configuration Manager, można przygotować dysk twardy dla systemu BIOS do konwersji UEFI, konwertowanie systemu BIOS na UEFI w ramach procesu uaktualniania w miejscu i zbierać informacje z interfejsem UEFI w ramach spisu sprzętu.

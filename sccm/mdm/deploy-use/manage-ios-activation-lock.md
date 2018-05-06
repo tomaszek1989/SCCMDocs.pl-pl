@@ -1,25 +1,20 @@
 ---
-title: "Zarządzanie blokadą aktywacji systemu iOS"
+title: Zarządzanie blokadą aktywacji systemu iOS
 titleSuffix: Configuration Manager
-description: "Zarządzanie blokadą aktywacji w programie System Center Configuration Manager systemu iOS."
-ms.custom: na
+description: Zarządzanie blokadą aktywacji w programie System Center Configuration Manager systemu iOS.
 ms.date: 03/05/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: e2745bac-e1b4-4dac-8ac7-32f1c820bc9c
-caps.latest.revision: "9"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 3b372d9f766fa48b4b57fcd0658f66573ed02d12
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 4550116bd4635e7320e9cbdf18997e2e17ae0466
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-ios-activation-lock-with-system-center-configuration-manager"></a>Zarządzanie blokadą aktywacji systemu iOS za pomocą programu System Center Configuration Manager
 
@@ -75,7 +70,7 @@ Aby utworzyć i wdrożyć element konfiguracji typu **Systemy iOS i Mac OS X** w
 1. Aby utworzyć element konfiguracji typu **Systemy iOS i Mac OS X**, skorzystaj z informacji w temacie [Jak utworzyć elementy konfiguracji dla urządzeń z systemem iOS lub Mac OS X zarządzanych bez klienta programu System Center Configuration Manager](/sccm/compliance/deploy-use/create-configuration-items-for-ios-and-mac-os-x-devices-managed-without-the-client).
 2. Na stronie **Zabezpieczenia systemu** w Kreatorze tworzenia elementu konfiguracji skonfiguruj ustawienie **Zezwalaj na blokadę aktywacji (tylko w trybie nadzorowanym)** , wybierając opcję **Dozwolone**.
 3. [Dodaj element konfiguracji do linii bazowej konfiguracji](/sccm/compliance/deploy-use/create-configuration-baselines).
-4. [Wdróż tę linię bazową konfiguracji](/sccm/compliance/deploy-use/deploy-configuration-baselines) do kolekcji zawierającej urządzenia z systemem iOS, dla których chcesz włączyć blokadę aktywacji.
+4. [Wdrażanie tej linii bazowej konfiguracji](/sccm/compliance/deploy-use/deploy-configuration-baselines) dla kolekcji zawierającej urządzenia z systemem iOS, dla których chcesz włączyć blokady aktywacji.
 
 > [!IMPORTANT]
 > Upewnij się, że masz fizyczny dostęp do urządzenia, aby móc wykonać tę procedurę. W przeciwnym razie blokada aktywacji zostanie pominięta, a osoba będąca w posiadaniu urządzenia będzie mieć do niego pełny dostęp z możliwością wyłączenia funkcji Znajdź mój iPhone, wyczyszczenia urządzenia lub jego ponownej aktywacji.

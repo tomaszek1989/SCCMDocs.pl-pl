@@ -1,26 +1,20 @@
 ---
-title: "Hierarchie źródłowe migracji"
+title: Hierarchie źródłowe migracji
 titleSuffix: Configuration Manager
-description: "Konfigurowanie hierarchii źródłowej i lokacji źródłowych dane można migrować do środowiska programu System Center Configuration Manager."
-ms.custom: na
+description: Konfigurowanie hierarchii źródłowej i lokacji źródłowych dane można migrować do środowiska programu System Center Configuration Manager.
 ms.date: 12/29/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: ccce7cb5-e18f-4337-8adf-2018edca3c00
-caps.latest.revision: "5"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 7977f66c71da300c59c7781f09975ca08ddea0b9
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: d9ef1ca2dd2763cf5b96fd82031a2ef38ef64927
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-source-hierarchies-and-source-sites-for-migration-to-system-center-configuration-manager"></a>Konfigurowanie hierarchii źródłowych i lokacji źródłowych na potrzeby migracji do programu System Center Configuration Manager
 
@@ -37,7 +31,7 @@ Aby umożliwić migrację danych do środowiska programu System Center Configura
 
 -   [Zidentyfikuj dodatkowe Lokacje źródłowe hierarchii źródłowej](#BKBM_ConfigSrcSites)  
 
-##  <a name="BKBM_ConfigSrcHierarchy"></a>Określ hierarchię źródłową do migracji  
+##  <a name="BKBM_ConfigSrcHierarchy"></a> Określ hierarchię źródłową do migracji  
  Aby przeprowadzić migrację danych do hierarchii docelowej, należy określić obsługiwanej hierarchii źródłowej zawierającej dane, które chcesz migrować. Domyślnie w lokacji najwyższego poziomu tej hierarchii staje się lokację źródłową hierarchii źródłowej. W przypadku migrowania z hierarchii programu Configuration Manager 2007, następnie skonfigurowaniem dodatkowe Lokacje źródłowe do migracji danych są zbierane z początkowej lokacji źródłowej. W przypadku migrowania z hierarchii programu System Center 2012 Configuration Manager lub System Center Configuration Manager, nie trzeba skonfigurować dodatkowe Lokacje źródłowe do migracji danych z hierarchii źródłowej. Jest to spowodowane te wersje programu Configuration Manager używają udostępnionej bazy danych, która jest dostępna w lokacji najwyższego poziomu hierarchii źródłowej. Udostępnionej bazy danych ma wszystkie informacje, których można migrować.  
 
  Użyj poniższych procedur, aby określić hierarchię źródłową do migracji oraz zidentyfikować dodatkowe Lokacje źródłowe w hierarchii programu Configuration Manager 2007.  
@@ -70,7 +64,7 @@ Aby umożliwić migrację danych do środowiska programu System Center Configura
 
 9. Po zakończeniu zbierania danych kliknij przycisk **zamknąć** zamknąć **Stan zbierania danych** okna dialogowego i ukończyć konfigurację.  
 
-##  <a name="BKBM_ConfigSrcSites"></a>Zidentyfikuj dodatkowe Lokacje źródłowe hierarchii źródłowej  
+##  <a name="BKBM_ConfigSrcSites"></a> Zidentyfikuj dodatkowe Lokacje źródłowe hierarchii źródłowej  
  Podczas konfigurowania obsługiwanej hierarchii źródłowej lokacja najwyższego poziomu tej hierarchii jest automatycznie konfigurowany jako lokację źródłową, a następuje automatyczne zbieranie danych z tej lokacji. Następnej akcji, które należy podjąć, zależy od wersji Menedżera konfiguracji, który jest uruchamiany w hierarchii źródłowej:  
 
 -   Dla hierarchii źródłowej programu Configuration Manager 2007 można rozpocząć migrację z tej lokacji źródłowej lub skonfigurować dodatkowe Lokacje źródłowe z hierarchii źródłowej po zakończeniu zbierania danych w pierwotnej lokacji źródłowej. Aby przeprowadzić migrację danych, które są dostępne tylko z lokacji podrzędnej, skonfigurować dodatkowe Lokacje źródłowe hierarchii programu Configuration Manager 2007. Na przykład można skonfigurować dodatkowe Lokacje źródłowe do zbierania danych o zawartości, które chcesz migrować, gdy jest tworzony w lokacji podrzędnej w hierarchii źródłowej, a nie jest dostępna w lokacji najwyższego poziomu w hierarchii źródłowej.  

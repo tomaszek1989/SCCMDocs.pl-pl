@@ -1,26 +1,21 @@
 ---
 title: Funkcje w wersji zapoznawczej Technical Preview 1603
 titleSuffix: Configuration Manager
-description: "Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersji 1603."
-ms.custom: na
+description: Dowiedz się więcej o funkcjach dostępnych w wersji zapoznawczej Technical Preview programu System Center Configuration Manager, wersji 1603.
 ms.date: 01/23/2017
 ms.prod: configuration-manager
 ms.technology: configmgr-other
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 5f861b72-9f14-4d17-a512-4a79b660abe6
-caps.latest.revision: "8"
-author: erikje
-ms.author: erikje
-manager: angrobe
+author: aczechowski
 robots: noindex,nofollow
-ms.openlocfilehash: 9152016afe1d6333cb919f3b5eb155028dc6eae1
-ms.sourcegitcommit: 7fe45ff75f05f7cc03ad021db8119791abe18049
+manager: dougeby
+ms.author: aaroncz
+ms.openlocfilehash: 6d5ecf4e2d231a596012aa9f7d371f18ef0705a1
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="capabilities-in-technical-preview-1603-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1603 programu System Center Configuration Manager
 
@@ -36,7 +31,7 @@ W tym artykule przedstawiono funkcje, które są dostępne w wersji Technical Pr
 
  **Poniżej przedstawiono nowe funkcje, które można wypróbować z tą wersją.**  
 
-##  <a name="BKMK_SC1603"></a>Ulepszenia Centrum oprogramowania  
+##  <a name="BKMK_SC1603"></a> Ulepszenia Centrum oprogramowania  
 
 ### <a name="new-tiled-view-for-apps"></a>Nowy widok sąsiadującym dla aplikacji  
  Użytkownicy końcowi mogą teraz wybierać między listę aplikacji lub aplikacji w widoku sąsiadującym **aplikacji** Centrum oprogramowania.  
@@ -44,7 +39,7 @@ W tym artykule przedstawiono funkcje, które są dostępne w wersji Technical Pr
 ### <a name="select-multiple-updates-in-software-center"></a>Wybieranie wielu aktualizacji w programie Software Center  
  W **aktualizacje** kartę Centrum oprogramowania, można teraz wybrać wiele aktualizacji, lub wybrać **Aktualizuj wszystkie** aby rozpocząć jednoczesne instalowanie wielu aktualizacji.  
 
-##  <a name="BKMK_RC1603"></a>Ulepszenia zdalnego sterowania  
+##  <a name="BKMK_RC1603"></a> Ulepszenia zdalnego sterowania  
 
 ### <a name="limit-shared-clipboard-access-in-a-remote-control-session"></a>Ogranicz dostęp do udostępnionego Schowka podczas sesji zdalnego sterowania  
  Można teraz włączyć nowe ustawienie klienta narzędzi zdalnych **Monituj użytkownika o zezwolenie na transfer pliku udostępnionego w schowku** Aby ograniczyć dostęp do udostępnionego Schowka podczas sesji zdalnego sterowania.  

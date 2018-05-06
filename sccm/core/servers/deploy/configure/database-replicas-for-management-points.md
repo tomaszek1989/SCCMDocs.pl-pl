@@ -1,25 +1,20 @@
 ---
-title: "Repliki bazy danych punktu zarządzania"
+title: Repliki bazy danych punktu zarządzania
 titleSuffix: Configuration Manager
-description: "Użyj repliki bazy danych, aby zmniejszyć obciążenie procesora CPU umieszczone na serwerze bazy danych lokacji przez punkty zarządzania."
-ms.custom: na
+description: Użyj repliki bazy danych, aby zmniejszyć obciążenie procesora CPU umieszczone na serwerze bazy danych lokacji przez punkty zarządzania.
 ms.date: 10/06/2016
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: b06f781b-ab25-4d9a-b128-02cbd7cbcffe
-caps.latest.revision: "9"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: f322d5dcd2f505f52e363e07801497ffa3bfdc7e
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 0893df43f7979fa3c36ba90ab400e399f96e6228
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="database-replicas-for-management-points-for-system-center-configuration-manager"></a>Repliki bazy danych dla punktów zarządzania programu System Center Configuration Manager
 
@@ -118,7 +113,7 @@ Aby korzystać z konfigurowania repliki bazy danych, wymagane są następujące 
 
     -   **Uprawnienia udziału**:  
 
-        -   SYSTEM: **Zapisu**  
+        -   SYSTEM: **zapisu**  
 
         -   ConfigMgr_MPReplicaAccess: **Odczyt**  
 
@@ -152,7 +147,7 @@ Poniższa procedura przedstawia przykład sposobu konfigurowania serwera repliki
 
     2.  Wybierz **ConfigMgr_MPReplica**, a następnie kliknij przycisk **dalej**.  
 
-    3.  Na **lokalizacja agenta dystrybucji** wybierz pozycję **Uruchom każdego agenta jako jego subskrybent (subskrypcje wciągane)**i kliknij przycisk **dalej**.  
+    3.  Na **lokalizacja agenta dystrybucji** wybierz pozycję **Uruchom każdego agenta jako jego subskrybent (subskrypcje wciągane)** i kliknij przycisk **dalej**.  
 
     4.  Na stronie **Subskrybenci** wykonaj jedną z następujących czynności:  
 
@@ -160,7 +155,7 @@ Poniższa procedura przedstawia przykład sposobu konfigurowania serwera repliki
 
         -   Wybierz opcję **Nowa baza danych** , aby utworzyć nową bazę danych dla repliki bazy danych. Na stronie **Nowa baza danych** określ nazwę bazy danych, a następnie kliknij przycisk **OK**.  
 
-    5.  Kliknij przycisk **Dalej**, aby kontynuować.  
+    5.  Kliknij przycisk **Dalej** , aby kontynuować.  
 
     6.  Na **zabezpieczenia agenta dystrybucji** strony, kliknij przycisk Właściwości **(...)**  w wierszu połączenie z subskrybentem okna dialogowego polu, a następnie skonfiguruj ustawienia zabezpieczeń dla tego połączenia.  
 
@@ -204,7 +199,7 @@ Poniższa procedura przedstawia przykład sposobu konfigurowania serwera repliki
 
         -   W **programu SQL Server Management Studio**, połącz się z komputerem bazy danych lokacji, kliknij prawym przyciskiem myszy **replikacji** folder, a następnie wybierz **Uruchom Monitor replikacji**.  
 
-5.  Aby włączyć integrację środowiska uruchomieniowego (języka wspólnego CLR) repliki bazy danych, należy użyć **programu SQL Server Management Studio** Połącz się z repliką bazy danych na serwerze repliki bazy danych i uruchom następującą procedurę składowaną jako zapytanie: **exec sp_configure 'clr enabled', 1; SKONFIGURUJ PONOWNIE ZA ZASTĄPIENIA**  
+5.  Aby włączyć integrację środowiska uruchomieniowego (języka wspólnego CLR) repliki bazy danych, należy użyć **programu SQL Server Management Studio** Połącz się z repliką bazy danych na serwerze repliki bazy danych i uruchom następującą procedurę składowaną jako zapytanie:  **exec sp_configure 'clr enabled', 1; SKONFIGURUJ PONOWNIE ZA ZASTĄPIENIA**  
 
 6.  Dla każdego punktu zarządzania wykorzystującego serwer repliki bazy danych dodaj konto komputera punktu zarządzania do lokalnej grupy **Administratorzy** na serwerze repliki bazy danych.  
 
@@ -438,10 +433,10 @@ Aby włączyć obsługę powiadomień klienta z repliką bazy danych dla punktu 
 
 3.  Użyj programu **SQL Server Management Studio** , aby połączyć się z bazą danych lokacji głównej. Po połączeniu się z bazą danych lokacji głównych, uruchom zapytanie, które pozwoli zaimportować certyfikat oraz określić port brokera usługi używany w serwerze z repliką bazy danych, nazwą FQDN serwera z repliką baz danych oraz nazwę bazy danych na serwerze z repliką baz danych. Pozwoli to na skonfigurowanie baz danych lokacji głównych pod kątem wykorzystania brokera usługi do komunikacji z bazami danych z serwera z repliką baz danych.  
 
-     Uruchom następującą kwerendę, aby zaimportować certyfikat z serwera repliki bazy danych, podając wymagane szczegóły: **EXEC sp_BgbConfigSSBForRemoteService 'REPLICA', '&lt;Port brokera usługi SQL\>","&lt;ścieżka do pliku certyfikatu\>","&lt;nazwa FQDN serwera SQL repliki\>","&lt;nazwa repliki bazy danych\>"**  
+     Uruchom następującą kwerendę, aby zaimportować certyfikat z serwera repliki bazy danych, podając wymagane szczegóły: **EXEC sp_BgbConfigSSBForRemoteService 'REPLICA', '&lt;Port brokera usługi SQL\>","&lt;ścieżka do pliku certyfikatu\>","&lt;nazwa FQDN serwera SQL repliki\>","&lt;repliki Nazwa bazy danych\>"**  
 
     > [!NOTE]  
-    >  Jeśli serwer repliki bazy danych nie znajduje się w domyślnym wystąpieniu programu SQL Server, należy w tym kroku obok nawy bazy danych repliki podać nazwę wystąpienia. Aby to zrobić, Zamień  **&lt;nazwa repliki bazy danych\>**  z **nazwa \Instance\\nazwa repliki bazy danych\>**.  
+    >  Jeśli serwer repliki bazy danych nie znajduje się w domyślnym wystąpieniu programu SQL Server, należy w tym kroku obok nawy bazy danych repliki podać nazwę wystąpienia. Aby to zrobić, Zamień **&lt;nazwa repliki bazy danych\>** z **nazwa \Instance\\nazwa repliki bazy danych\>**.  
 
 4.  Następnie na serwerze bazy danych lokacji, uruchom następujące polecenie, aby wyeksportować certyfikat serwera bazy danych lokacji: **EXEC sp_BgbCreateAndBackupSQLCert '&lt;ścieżka do pliku kopii zapasowej certyfikatu\>"**  
 

@@ -1,25 +1,20 @@
 ---
 title: Kopii zapasowej lokacji
 titleSuffix: Configuration Manager
-description: "Dowiedz się utworzyć kopię zapasową lokacji przed zdarzeniem awarii lub utraty danych w programie System Center Configuration Manager."
-ms.custom: na
+description: Dowiedz się utworzyć kopię zapasową lokacji przed zdarzeniem awarii lub utraty danych w programie System Center Configuration Manager.
 ms.date: 6/5/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-protect
+ms.topic: conceptual
 ms.assetid: f7832d83-9ae2-4530-8a77-790e0845e12f
-caps.latest.revision: "22"
-author: mestew
-ms.author: mstewart
-manager: angrobe
-ms.openlocfilehash: 6c7c1ebbe1fccfb641d39a3cb2e2b911b1dd5e02
-ms.sourcegitcommit: daa080cf220835f157a23e8c8e2bd2781b869bb7
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: b69789fe6e685e2fe42c260e50329f85f2eb421e
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/04/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="back-up-a-configuration-manager-site"></a>Tworzenie kopii zapasowej lokacji programu Configuration Manager
 
@@ -132,7 +127,7 @@ Plik AfterBackup.bat umożliwia archiwizowanie migawki kopii zapasowej po zakoń
 Jeśli plik AfterBackup.bat nie istnieje, zadanie tworzenia kopii zapasowej pominie ten plik, co nie będzie miało wpływu na operację tworzenia kopii zapasowej. Aby sprawdzić, czy zadanie tworzenia kopii zapasowej lokacji pomyślnie uruchomiło plik AfterBackup.bat, w węźle **Stan składnika** w obszarze roboczym **Monitorowanie** należy sprawdzić komunikaty o stanie dla elementu SMS_SITE_BACKUP. Po pomyślnym uruchomieniu pliku polecenia AfterBackup.bat przez zadanie jest wyświetlany komunikat o identyfikatorze 5040.  
 
 > [!TIP]  
->  Aby utworzyć plik AfterBackup.bat w celu zarchiwizowania plików kopii zapasowej serwera lokacji, należy użyć narzędzia poleceń kopiowania, jak [Robocopy](http://go.microsoft.com/fwlink/p/?LinkId=228408), w pliku wsadowym. Na przykład można utworzyć plik AfterBackup.bat i w pierwszym wierszu, można dodać wyglądać mniej więcej tak:`Robocopy E:\ConfigMgr_Backup \\ServerName\ShareName\ConfigMgr_Backup /MIR`  
+>  Aby utworzyć plik AfterBackup.bat w celu zarchiwizowania plików kopii zapasowej serwera lokacji, należy użyć narzędzia poleceń kopiowania, jak [Robocopy](http://go.microsoft.com/fwlink/p/?LinkId=228408), w pliku wsadowym. Na przykład można utworzyć plik AfterBackup.bat i w pierwszym wierszu, można dodać wyglądać mniej więcej tak: `Robocopy E:\ConfigMgr_Backup \\ServerName\ShareName\ConfigMgr_Backup /MIR`  
 
  Zamierzonym użyciem pliku AfterBackup.bat jest archiwizowanie migawek kopii zapasowych. Plik AfterBackup.bat można jednak również utworzyć w celu wykonywania dodatkowych zadań po zakończeniu każdej operacji tworzenia kopii zapasowej.  
 

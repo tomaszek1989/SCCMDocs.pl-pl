@@ -1,26 +1,20 @@
 ---
-title: "Zarządzanie klientem infrastruktury pulpitów wirtualnych (VDI) "
+title: 'Zarządzanie klientem infrastruktury pulpitów wirtualnych (VDI) '
 titleSuffix: Configuration Manager
-description: "Zarządzanie klientami programu System Center Configuration Manager w infrastrukturze pulpitu wirtualnego (VDI)."
-ms.custom: na
+description: Zarządzanie klientami programu System Center Configuration Manager w infrastrukturze pulpitu wirtualnego (VDI).
 ms.date: 04/23/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-client
-ms.tgt_pltfrm: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.assetid: abd45393-d84e-4583-bc80-74bbb3709577
-caps.latest.revision: "7"
-caps.handback.revision: "0"
-author: arob98
-ms.author: angrobe
-manager: angrobe
-ms.openlocfilehash: 1d35865895a8837d4c30a4f43967f777e61d7cbf
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: ec8989a2e7b71d09198e03f2e263364bebc6b169
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="considerations-for-managing-system-center-configuration-manager-clients--in-a-virtual-desktop-infrastructure-vdi"></a>Uwagi dotyczące zarządzania klientami programu System Center Configuration Manager w infrastrukturze pulpitu wirtualnego (VDI)
 
