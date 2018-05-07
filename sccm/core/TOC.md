@@ -1,6 +1,7 @@
 #   Poznawanie i eksplorowanie
 ##  [Wprowadzenie do programu Configuration Manager](understand/introduction.md)
 ### [Wyszukiwanie pomocy dla programu Configuration Manager](understand/find-help.md)
+### [Jak korzystać z dokumentacji](understand/use-docs.md)
 ### [Funkcje ułatwień dostępu](understand/accessibility-features.md)
 ### [Podręcznik użytkownika Centrum oprogramowania](understand/software-center.md)
 ##  [Podstawy programu Configuration Manager](understand/fundamentals.md)
