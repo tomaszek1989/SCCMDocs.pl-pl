@@ -1,26 +1,20 @@
 ---
-title: "Obsługa kodów ASCII i Unicode"
+title: Obsługa kodów ASCII i Unicode
 titleSuffix: Configuration Manager
-description: "Więcej informacji o obsługę znaków Unicode i ASCII w obiektach programu System Center Configuration Manager."
-ms.custom: na
+description: Więcej informacji o obsługę znaków Unicode i ASCII w obiektach programu System Center Configuration Manager.
 ms.date: 3/1/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 2bdec799-905f-48bc-aed5-2d92134739e8
-caps.latest.revision: "6"
-caps.handback.revision: "0"
 author: aczechowski
 ms.author: aaroncz
-manager: angrobe
-ms.openlocfilehash: 654d70d97adefca6801bb64b1e23797e71c75f40
-ms.sourcegitcommit: ca9d15dfb1c9eb47ee27ea9b5b39c9f8cdcc0748
+manager: dougeby
+ms.openlocfilehash: 6212a22a8ed2fbce7dda19a0b70b0336812b2827
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="unicode-and-ascii-support-in-system-center-configuration-manager"></a>Obsługa standardów Unicode i ASCII w programie System Center Configuration Manager
 
@@ -36,7 +30,7 @@ System Center Configuration Manager tworzy większość obiektów przy użyciu z
 
 -   [Obiekty programu Configuration Manager, które nie są zlokalizowane](#BKMK_LangNonLocalize)  
 
-##  <a name="BKMK_ASCIIchar"></a>Obiekty używające znaków ASCII  
+##  <a name="BKMK_ASCIIchar"></a> Obiekty używające znaków ASCII  
  Program Configuration Manager obsługuje zestaw znaków ASCII tylko podczas tworzenia poniższych obiektów:  
 
 -   Kod lokacji  
@@ -133,14 +127,14 @@ System Center Configuration Manager tworzy większość obiektów przy użyciu z
 
 -   Nośnik rozruchowy nazwy plików ISO  
 
-##  <a name="BKMK_OtherCharLimitations"></a>Dodatkowe ograniczenia  
+##  <a name="BKMK_OtherCharLimitations"></a> Dodatkowe ograniczenia  
  Poniżej przedstawiono dodatkowe ograniczenia dotyczące obsługiwanych zestawów znaków i wersji językowych:  
 
 -   Menedżer konfiguracji nie obsługuje zmiany ustawień regionalnych komputera serwera lokacji.  
 
 -   Urząd certyfikacji (CA) przedsiębiorstwa nie obsługuje nazw komputerów klienckich, które używają zestawów znaków dwubajtowych (DBCS). Nazwy komputerów klienckich, które są dostępne są ograniczone przez ograniczenia zestaw znaków IA5 infrastruktury kluczy publicznych. Ponadto program Configuration Manager nie obsługuje nazw urzędów certyfikacji ani wartości nazw podmiotów, które używają zestawów znaków Dwubajtowych.  
 
-##  <a name="BKMK_LangNonLocalize"></a>Obiekty programu Configuration Manager, które nie są zlokalizowane  
+##  <a name="BKMK_LangNonLocalize"></a> Obiekty programu Configuration Manager, które nie są zlokalizowane  
  Baza danych programu Configuration Manager obsługuje standard Unicode dla większości zapisywanych obiektów, a jeśli to możliwe, wyświetla te informacje w języku systemu operacyjnego zgodnym z ustawieniami regionalnymi komputera. Interfejs klienta lub konsolę programu Configuration Manager, aby wyświetlać informacje w języku systemu operacyjnego komputera ustawienia regionalne tego komputera muszą być zgodne z językiem klienta lub serwera zainstalowanego w lokacji.  
 
  Jednak niektóre obiekty programu Configuration Manager nie obsługują standardu Unicode i są przechowywane w bazie danych przy użyciu znaków ASCII lub mają ograniczenia związane z dodatkowych języków. Te informacje są zawsze wyświetlane przy użyciu zestawu znaków ASCII lub w języku, który był używany podczas tworzenia obiektu.  

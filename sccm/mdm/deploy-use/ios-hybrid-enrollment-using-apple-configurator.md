@@ -1,25 +1,20 @@
 ---
-title: "Rejestrowanie urządzeń z systemem iOS firmy Apple Configurator "
+title: 'Rejestrowanie urządzeń z systemem iOS firmy Apple Configurator '
 titleSuffix: Configuration Manager
 descriptions: Pre-enroll iOS devices by using Apple Configurator with Configuration Manager.
-ms.custom: na
 ms.date: 08/15/2017
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
 ms.technology: configmgr-hybrid
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 61a19d95-83ff-4ad8-9a67-f304d2ba54f2
-caps.latest.revision: "5"
-author: dougeby
-ms.author: dougeby
-manager: angrobe
-ms.openlocfilehash: e5f7356e2cfe003071a0f090add67cd66acfe062
-ms.sourcegitcommit: c236214b2fcc13dae7bad96d7fb33f692868191d
+author: aczechowski
+ms.author: aaroncz
+manager: dougeby
+ms.openlocfilehash: 4c3dea67cd16c8efe272038894aa4f958f4ef160
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="ios-hybrid-enrollment-using-apple-configurator-with-configuration-manager"></a>Rejestrowanie hybrydowego systemu iOS przy użyciu programu Apple Configurator z programu Configuration Manager
 
@@ -55,7 +50,7 @@ Poniższa procedura jest zalecane dla systemu IOS dedykowanych, które mają jed
 
         -   **Brak koligacji użytkownika**: Urządzenie nie jest powiązany z użytkownikiem. Tego typu przynależności należy użyć w przypadku urządzeń wykonujących zadania bez uzyskiwania dostępu do danych użytkowników lokalnych. Aplikacje wymagające przynależności do użytkownika nie będą działać.
 
-    Kliknij przycisk **Dalej**, aby kontynuować.  
+    Kliknij przycisk **Dalej** , aby kontynuować.  
 
 3.  Na **Device Enrollment Program** zostaw **ustawienia konfiguracji programu rejestracji urządzenia dla tego profilu** usunięciu zaznaczenia pola wyboru i kliknij przycisk **dalej**.  
 

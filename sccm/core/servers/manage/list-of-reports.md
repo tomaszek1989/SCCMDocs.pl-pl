@@ -2,26 +2,19 @@
 title: Lista raportów
 titleSuffix: Configuration Manager
 description: Przejrzyj listę raportów dostępnych w programie Configuration Manager. Należą one do różnych kategorii.
-ms.custom: na
 ms.date: 03/22/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-other
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-other
+ms.topic: conceptual
 ms.assetid: b7332ed3-8003-454b-bb12-1fdf8721425c
-caps.latest.revision: ''
-caps.handback.revision: ''
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: b15726b2551464c178774dc2c87a6a2f41a37c07
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: d486907a7819758b27c9a644214ed4d5ec873762
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="list-of-reports-in-system-center-configuration-manager"></a>Lista raportów w programie System Center Configuration Manager.
 
@@ -545,7 +538,7 @@ Następujące raporty są uwzględnione w programie Configuration Manager. Nale�
 |**Liczba spisanych produktów i wersji określonego produktu**|Przedstawia listę wersji określonego produktu uwzględnionych w spisie oraz liczbę komputerów, na których zainstalowano każdą z nich.|  
 |**Liczba wszystkich wystąpień oprogramowania zarejestrowanego w aplecie Dodaj / Usuń programy**|Przedstawia podsumowanie wszystkich wystąpień oprogramowania zainstalowanego i zarejestrowanego przy użyciu apletu Dodaj/Usuń programy lub Programy i funkcje na komputerach w określonej kolekcji.|  
 |**Liczba wystąpień określonego oprogramowania zarejestrowanego w aplecie Dodaj / Usuń programy**|Przedstawia liczbę wystąpień dla określonych pakietów oprogramowania zainstalowanych i zarejestrowanych w aplecie Dodaj/Usuń programy lub Programy i funkcje.|  
-|**Domyślna liczba przeglądarki**|Informuje o liczbie klientów przy użyciu przeglądarki sieci web określonego jako domyślny systemu Windows. </br>Użyj następującego odwołania dla typowych BrowserProgIDs:</br> - AppXq0fevzme2pys62n3e0fbqa7peapykr8v: Microsoft Edge</br> - IE.HTTP: Microsoft Internet Explorer</br> -ChromeHTML: Google Chrome</br> -OperaStable: Opera oprogramowania</br> - FirefoxURL-308046B0AF4A39CB: Mozilla Firefox</br> -Nieznane: kliencki system operacyjny nie obsługuje zapytania, zapytanie nie zostało uruchomione lub użytkownik nie zalogowany|
+|**Domyślna liczba przeglądarki**|Informuje o liczbie klientów przy użyciu przeglądarki sieci web określonego jako domyślny systemu Windows. </br>Użyj następującego odwołania dla typowych BrowserProgIDs:</br> - AppXq0fevzme2pys62n3e0fbqa7peapykr8v: Microsoft Edge</br> -IE. HTTP: Microsoft Internet Explorer</br> -ChromeHTML: Google Chrome</br> -OperaStable: Opera oprogramowania</br> - FirefoxURL-308046B0AF4A39CB: Mozilla Firefox</br> -Nieznane: kliencki system operacyjny nie obsługuje zapytania, zapytanie nie zostało uruchomione lub użytkownik nie zalogowany|
 |**Instalacje określonych aplikacji systemu Windows**|Przedstawia listę wszystkich komputerów z określoną aplikacją systemu Windows.|  
 |**Produkty na określonym komputerze**|Przedstawia podsumowanie programów uwzględnionych w spisie i ich producentów na określonym komputerze.|  
 |**Oprogramowanie zarejestrowane w aplecie Dodaj Usuń programy na określonym komputerze**|Przedstawia podsumowanie wszystkich programów zainstalowanych na określonym komputerze, które zarejestrowano w aplecie Dodaj/Usuń programy lub Programy i funkcje.|  
