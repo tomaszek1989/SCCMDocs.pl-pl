@@ -2,7 +2,7 @@
 title: Wymagania wstępne dotyczące migracji
 titleSuffix: Configuration Manager
 description: Informacje o obsługiwanych wersjach programu Configuration Manager, języków obsługiwanych lokacji źródłowej i konfiguracje wymagane do migracji.
-ms.date: 3/7/2017
+ms.date: 5/7/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,11 +10,11 @@ ms.assetid: ec976930-7467-4d3c-b33c-991bf408a74a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: fde02837f281a6db182d3144d2009e6b56f0dc69
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: da35641b7e00bfdae025d2978beaa541951487da
+ms.sourcegitcommit: 7198ec49d9ce68c6d55bfb9e2d537b5442a132cb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="prerequisites-for-migration-in-system-center-configuration-manager"></a>Wymagania wstępne dotyczące migracji w programie System Center Configuration Manager
 
@@ -46,7 +46,7 @@ Aby przeprowadzić migrację z obsługiwanej hierarchii źródłowej, musi mieć
 
 
 ##  <a name="BKMK_SorceSiteLanguage"></a> Języki lokacji źródłowej obsługiwane na potrzeby migracji  
- W przypadku migracji danych między hierarchiami programu Configuration Manager, dane są przechowywane w hierarchii docelowej w formacie niezależnym od języka programu System Center Configuration Manager. Ponieważ Manager2007 konfiguracji nie przechowuje danych w formacie niezależnym od języka, proces migracji muszą być konwertowane obiekty do tego formatu podczas migracji z programu Configuration Manager 2007. W związku z tym migracja obsługuje tylko Lokacje źródłowe programu Configuration Manager 2007, które są zainstalowane z następującymi językami:  
+ W przypadku migracji danych między hierarchiami programu Configuration Manager, dane są przechowywane w hierarchii docelowej w formacie niezależnym od języka programu System Center Configuration Manager. Ponieważ programu Configuration Manager 2007 nie przechowuje danych w formacie niezależnym od języka, proces migracji muszą być konwertowane obiekty do tego formatu podczas migracji z programu Configuration Manager 2007. W związku z tym migracja obsługuje tylko Lokacje źródłowe programu Configuration Manager 2007, które są zainstalowane z następującymi językami:  
 
 -   angielski  
 
@@ -67,7 +67,7 @@ Aby przeprowadzić migrację z obsługiwanej hierarchii źródłowej, musi mieć
 Podczas migracji danych z hierarchii programu System Center 2012 Configuration Manager lub System Center Configuration Manager, nie istnieją żadne ograniczenia dotyczące języka lokacji źródłowej. Obiekty w bazie danych lokacji źródłowej mają już format niezależny od języka.  
 
 ##  <a name="BKMK_Required_Configurations"></a> Konfiguracje wymagane do migracji  
-Poniżej podano konfiguracje wymagane do migracji oraz poszczególne operacje migracji:  
+Dostępne są następujące konfiguracje wymagane do migracji i operacje migracji:  
 
 -   **Aby skonfigurować, uruchomić i monitorować migrację w konsoli programu Configuration Manager:**  
 
@@ -79,7 +79,7 @@ Poniżej podano konfiguracje wymagane do migracji oraz poszczególne operacje mi
 
     -   **Konto lokacji źródłowej:** To konto jest używane do dostępu do dostawcy programu SMS lokacji źródłowej.  
 
-        -   Dla lokacji źródłowej Configuration Manager2007 SP2 to konto wymaga **odczytu** uprawnienia do wszystkich obiektów lokacji źródłowej.  
+        -   Dla lokacji źródłowej programu Configuration Manager 2007 SP2 to konto wymaga **odczytu** uprawnienia do wszystkich obiektów lokacji źródłowej.  
 
         -   Dla lokacji źródłowej programu System Center 2012 Configuration Manager lub System Center Configuration Manager, to konto wymaga **odczytu** uprawnienia do wszystkich obiektów lokacji źródłowej, to uprawnienie można przyznać za pośrednictwem administracji opartej na rolach. Aby uzyskać informacje o korzystaniu z funkcji administracji opartej na rolach, zobacz [Podstawowe informacje dotyczące administrowania opartego na rolach dla programu System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 
@@ -115,7 +115,7 @@ Poniżej podano konfiguracje wymagane do migracji oraz poszczególne operacje mi
 
      **Konto dostępu do lokacji źródłowej** skonfigurowane do zbierania danych od dostawcy programu SMS lokacji źródłowej musi mieć przypisane następujące uprawnienia:  
 
-    -   Aby uaktualnić punkt dystrybucji konfiguracji Manager2007, konto wymaga **odczytu**, **Execute**, i **usunąć** uprawnień do **lokacji** klasy na serwerze lokacji Manager2007 konfiguracji można pomyślnie usunąć punkt dystrybucji z lokacji źródłowej Manager2007 konfiguracji  
+    -   Aby uaktualnić punkt dystrybucji programu Configuration Manager 2007, konto wymaga **odczytu**, **Execute**, i **usunąć** uprawnień do **lokacji** klasy na serwerze lokacji Manager2007 konfiguracji można pomyślnie usunąć punkt dystrybucji z lokacji źródłowej Manager2007 konfiguracji  
 
     -   Do ponownego przypisania punktu dystrybucji programu System Center 2012 Configuration Manager lub System Center Configuration Manager, konto musi mieć **Modyfikuj** uprawnienia do **lokacji** w lokacji źródłowej. Uprawnienie to można przyznać za pośrednictwem administracji opartej na rolach. Aby uzyskać informacje o korzystaniu z funkcji administracji opartej na rolach, zobacz [Podstawowe informacje dotyczące administrowania opartego na rolach dla programu System Center Configuration Manager](../../core/understand/fundamentals-of-role-based-administration.md).  
 

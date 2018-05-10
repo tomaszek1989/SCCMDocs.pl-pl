@@ -22,7 +22,7 @@ ms.lasthandoff: 05/03/2018
 
 Jeśli zarządzasz serwerów Linux i UNIX z System Center Configuration Manager można skonfigurować kolekcji, okien obsługi i ustawienia klienta, aby ułatwić zarządzanie serwerami przez. Ponadto chociaż klienta programu Configuration Manager dla systemów Linux i UNIX nie ma interfejsu użytkownika, możesz wymusić ręczne sondowanie zasad klienta przez klienta.
 
-##  <a name="BKMK_CollectionsforLnU"></a> Collections of Linux and UNIX servers  
+##  <a name="BKMK_CollectionsforLnU"></a> Kolekcje serwerów Linux i UNIX  
  Za pomocą kolekcji można zarządzać grupami serwerów Linux i UNIX w taki sam sposób zarządzania innymi typami klientów za pomocą kolekcji. Kolekcje mogą być bezpośrednich kolekcji członkostwa lub kolekcje oparte na zapytaniach. Kolekcje oparte na zapytaniach zidentyfikować klienckich systemów operacyjnych, konfiguracjach sprzętu lub inne szczegóły klienta, które są przechowywane w bazie danych lokacji. Na przykład można użyć kolekcji zawierających serwery systemu Linux i UNIX można zarządzać następującymi ustawieniami:  
 
 -   Ustawienia klienta  
@@ -41,10 +41,10 @@ Jeśli zarządzasz serwerów Linux i UNIX z System Center Configuration Manager 
 
  Jeśli tworzysz kolekcję niestandardową dla serwerów z systemami Linux i UNIX, dołącz zapytania reguł członkowskich obejmujące atrybut podpisu dla atrybutu systemu operacyjnego. Aby uzyskać informacje o tworzeniu kolekcji, zobacz [jak tworzyć kolekcje w programie System Center Configuration Manager](../../../core/clients/manage/collections/create-collections.md).  
 
-##  <a name="BKMK_MaintenanceWindowsforLnU"></a> Maintenance windows for Linux and UNIX servers  
+##  <a name="BKMK_MaintenanceWindowsforLnU"></a> Okna obsługi dla serwerów Linux i UNIX  
  Klient programu Configuration Manager dla serwerów Linux i UNIX obsługuje korzystanie z [okna obsługi](../../../core/clients/manage/collections/use-maintenance-windows.md). Ta obsługa różni się od klientów z systemem Windows.  
 
-##  <a name="BKMK_ClientSettingsforLnU"></a> Client settings for Linux and UNIX servers  
+##  <a name="BKMK_ClientSettingsforLnU"></a> Ustawienia klienta dla serwerów Linux i UNIX  
  Możesz [Konfigurowanie ustawień klienta](../../../core/clients/deploy/configure-client-settings.md) które są stosowane do serwerów Linux i UNIX taki sam sposób konfigurowania ustawień dla innych klientów.  
 
  Domyślnie do serwerów z systemami Linux i UNIX jest stosowane ustawienie **Domyślne ustawienia agenta klientów** . Można również utworzyć niestandardowe ustawienia klienta i wdrożyć je do kolekcji z określonym klientem.  
@@ -53,7 +53,7 @@ Jeśli zarządzasz serwerów Linux i UNIX z System Center Configuration Manager 
 
  Na przykład niestandardowe ustawienie urządzenia, które włącza i konfiguruje ustawienia zdalnego sterowania będzie ignorowane przez serwery systemu Linux i UNIX, ponieważ klient dla systemów Linux i UNIX nie obsługuje zdalnego sterowania.  
 
-##  <a name="BKMK_PolicyforLnU"></a> Computer policy for Linux and UNIX servers  
+##  <a name="BKMK_PolicyforLnU"></a> Zasady komputera dla serwerów Linux i UNIX  
  W przypadku klienta dla serwerów Linux i UNIX okresowo sonduje swoją lokację pod kątem zasad komputera, aby dowiedzieć się więcej o żądanych konfiguracjach oraz sprawdzenia obecności wdrożeń.  
 
  Możesz też wymusić natychmiastowe sondowanie zasad komputera dla klienta na serwerze z systemem Linux lub UNIX. Aby to zrobić, użyj **głównego** poświadczenia na serwerze, aby uruchomić następujące polecenie: **/opt/microsoft/configmgr/bin/ccmexec - rs zasad**  
@@ -63,7 +63,7 @@ Jeśli zarządzasz serwerów Linux i UNIX z System Center Configuration Manager 
 > [!NOTE]  
 >  Klient programu Configuration Manager dla systemów Linux i UNIX nigdy nie żąda ani nie przetwarza zasad użytkownika.  
 
-##  <a name="BKMK_ManageLinuxCerts"></a> How to manage certificates on the client for Linux and UNIX  
+##  <a name="BKMK_ManageLinuxCerts"></a> Jak zarządzać certyfikatami na kliencie dla systemów Linux i UNIX  
  Po zainstalowaniu klienta dla systemów Linux i UNIX możesz użyć narzędzia **certutil** , aby zaktualizować klienta przy użyciu nowego certyfikatu PKI i zaimportować nową listę odwołania certyfikatów (CRL). Podczas instalowania klienta dla systemów Linux i UNIX to narzędzie jest umieszczane w **/opt/microsoft/configmgr/bin/certutil**. 
 
  Aby zarządzać certyfikatami, na każdym kliencie uruchom narzędzie certutil z jedną z następujących opcji:  

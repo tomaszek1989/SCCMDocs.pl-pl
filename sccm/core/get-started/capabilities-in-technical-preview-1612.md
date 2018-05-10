@@ -147,7 +147,7 @@ Począwszy od wersji Technical Preview 1612, można użyć nowego narzędzia wie
 
 To narzędzie ma wpływ tylko na zawartość w punkcie dystrybucji, które określisz po uruchomieniu narzędzia i nie można usunąć zawartość z biblioteki zawartości na serwerze lokacji.
 
-Po zainstalowaniu Technical Preview 1612 można znaleźć **ContentLibraryCleanup.exe** w *%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* folderu na serwerze lokacji Technical Preview.
+Po zainstalowaniu Technical Preview 1612 można znaleźć **ContentLibraryCleanup.exe** w \*%CM_Installation_Path%\cd.latest\SMSSETUP\TOOLS\ContentLibraryCleanup\* folderu na serwerze lokacji Technical Preview.
 
 Narzędzia dostępne w tej wersji Technical Preview ma zastąpić starsze wersje narzędzi podobne wydane w ciągu ostatnich produktów Configuration Manager. Mimo że ta wersja narzędzia przestanie działać po 1 marca 2017 nowe wersje opublikuje z przyszłych wersji zapoznawczych Technical Preview, dopóki to narzędzie jest wydane jako część Current Branch lub wersja produkcyjna gotowy poza pasmem.
 

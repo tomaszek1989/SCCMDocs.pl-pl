@@ -11,11 +11,11 @@ ms.assetid: 2ff0100c-b7ef-4e09-8c96-fc1898390b6d
 author: aczechowski
 ms.author: aaroncz
 manager: angrobe
-ms.openlocfilehash: fe61cecea2b2a4f4083933b937af90dfb61ea5bf
-ms.sourcegitcommit: 11bf4ed40ed0cbb10500cc58bbecbd23c92bfe20
+ms.openlocfilehash: 6b36da9f98749858829ab591571496532b26f290
+ms.sourcegitcommit: 7198ec49d9ce68c6d55bfb9e2d537b5442a132cb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/27/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="microsoft-deployment-toolkit-samples-guide"></a>Przewodnik przykłady zestawu narzędzi firmy Microsoft do wdrażania  
  Ten przewodnik jest częścią programu Microsoft® Deployment Toolkit (MDT) 2013 i przeprowadza zespołu specjalisty do wdrażania systemów operacyjnych Windows i program Microsoft Office. W szczególności ten przewodnik jest przeznaczony zapewnienie ustawień konfiguracji przykładowych scenariuszy wdrażania.  
@@ -439,7 +439,7 @@ Add-PSSnapin -Name Microsoft.BDD.PSSnapIn
  |**Import-MDTDriver** |Importuje co najmniej jednego sterownika urządzenia do udziału wdrożenia|  
  |**Import-MDTOperatingSystem** |Importuje jednego lub kilku systemów operacyjnych do udziału wdrożenia|  
  |**Import-MDTPackage** |Importuje jeden lub więcej pakietów systemu operacyjnego do udziału wdrożenia|  
- |**Import-MDTTaskSequence** |Importuje sekwencję zadań do udziału wdrożenia|  
+ |**MDTTaskSequence importu** |Importuje sekwencję zadań do udziału wdrożenia|  
 
 ####  <a name="ViewPropertyDeployShare"></a> Wyświetl właściwości elementu w udziału wdrożenia  
  Każdy element udziału wdrożenia ma inny zestaw właściwości. Można wyświetlić właściwości elementu w udziale wdrożenia za pomocą [Get-ItemProperty](http://technet.microsoft.com/library/hh849851.aspx) polecenia cmdlet. [Get ItemProperty](http://technet.microsoft.com/library/hh849851.aspx) polecenie cmdlet używa MDTProvider Aby wyświetlić właściwości dla określonego elementu, tak samo, jak widać właściwości w konsoli Deployment Workbench.  
@@ -1402,7 +1402,7 @@ Cscript.exe “%SCRIPTROOT%\ZTIConnect.wsf” /uncpath:unc_path
 
  Na **opcje** kartę kroku sekwencji zadań, wykonaj następujące czynności:  
 
--   **Add.** Kliknij ten przycisk, aby dodać warunek do kroku sekwencji zadań.  
+-   **Dodaj.** Kliknij ten przycisk, aby dodać warunek do kroku sekwencji zadań.  
 
 -   **Usuń.** Kliknij ten przycisk, aby usunąć istniejący warunek w kroku sekwencji zadań.  
 
@@ -1722,7 +1722,7 @@ IF ((Computer Model IS “Contoso 1950”) AND (operating system=2003 OR operati
 
 19. Na **folderów na ponowne zreplikowanie** kliknij przycisk **Dodaj**, a następnie wykonaj następujące kroki:  
 
-    1.  W **lokalną ścieżkę folderu do replikacji** kliknij **Przeglądaj** można przejść do *X:\\*folderu wdrożenia (gdy *X* jest litera dysku na serwerze wdrażania).  
+    1.  W **lokalną ścieżkę folderu do replikacji** kliknij **Przeglądaj** można przejść do *X:\\* folderu wdrożenia (gdy *X* jest litera dysku na serwerze wdrażania).  
 
     2.  Kliknij przycisk **Użyj nazwy na podstawie ścieżki**.  
 
@@ -1730,7 +1730,7 @@ IF ((Computer Model IS “Contoso 1950”) AND (operating system=2003 OR operati
 
     4.  Kliknij pozycję **Dodaj**.  
 
-    5.  W **Dodaj Folder do replikowania** okno dialogowe, kliknij przycisk **Przeglądaj** można przejść do *X:*\RemoteInstall\Boot folderu.  
+    5.  W **Dodaj Folder do replikowania** okno dialogowe, kliknij przycisk **Przeglądaj** można przejść do *X:* \RemoteInstall\Boot folderu.  
 
     6.  Kliknij przycisk **Użyj nazwy na podstawie ścieżki**.  
 
@@ -3670,9 +3670,11 @@ Remove-item -path "DS002:\Task Sequences\Windows Vista Business Production Build
 -   ```  
     New-PSDrive -Name "DS002" -PSProvider MDTProvider -Root "D:\Production Deployment Share"  
     ```  
-
--   Aktualizacja\-MDTDeploymentShare \-ścieżki "DS002:" \-Pełne  
-
+    
+-   ```
+    Update\-MDTDeploymentShare \-path "DS002:" \-Verbose  
+    ```
+    
 ###  <a name="CreateLinkedDeployShare"></a> Tworzenie udziału wdrożenia połączonego  
  Następujące polecenia środowiska Windows PowerShell tworzą udziału wdrożenia, który jest połączony z udziałem wdrożenia produkcyjnego i znajduje się w obszarze \\ \\ *zdalnego\_serwera\_nazwa* \\Udział wdrożenia. Wszystko, czego wybór profilu służy do określania zawartość, która jest replikowana do udziału wdrożenia połączony. Zawartość z udziałem wdrożenia produkcyjnego zostaną scalone z zawartością, która już istnieje w \\ \\ *zdalnego\_serwera\_nazwa*\\udział wdrożenia.  
 
