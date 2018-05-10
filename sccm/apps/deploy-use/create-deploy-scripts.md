@@ -2,26 +2,19 @@
 title: Tworzenie i uruchamianie skryptów
 titleSuffix: Configuration Manager
 description: Tworzenie i uruchamianie skryptów programu Powershell na urządzeniach klienckich.
-ms.custom: na
 ms.date: 04/10/2018
 ms.prod: configuration-manager
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- configmgr-app
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.technology: configmgr-app
+ms.topic: conceptual
 ms.assetid: cc230ff4-7056-4339-a0a6-6a44cdbb2857
-caps.latest.revision: 14
-caps.handback.revision: 0
-author: mestew
-ms.author: mstewart
+author: aczechowski
+ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 7cfb969ab70c27859788732839f4715541e1b91e
-ms.sourcegitcommit: e4ca9fb1fad2caaf61bb46e0a12f4d6b96f15513
+ms.openlocfilehash: fcf3bc335efc4c7436842b29d30c67c118ceb05d
+ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="create-and-run-powershell-scripts-from-the-configuration-manager-console"></a>Tworzenie i uruchamianie skryptów programu PowerShell z poziomu konsoli programu Configuration Manager
 
@@ -116,43 +109,50 @@ Domyślnie w programie Configuration Manager nie są tworzone trzy role używane
 1. W konsoli programu Configuration Manager, przejdź do **administracji** >**zabezpieczeń** >**ról zabezpieczeń**
 2. Kliknij prawym przyciskiem myszy rolę i kliknij przycisk **kopiowania**. Rola, którą należy skopiować ma już przypisane uprawnienia. Upewnij się, że należy wykonać tylko uprawnienia, które mają. 
 3. Nadaj tworzona rola niestandardowa **nazwa** i **opis**. 
-4. Przypisz uprawnienia przedstawione poniżej roli zabezpieczeń. 
+4. Przypisz uprawnienia przedstawione poniżej roli zabezpieczeń.  
 
-    ### <a name="security-role-permissions"></a>**Uprawnienia roli zabezpieczeń**
+### <a name="security-role-permissions"></a>Uprawnienia roli zabezpieczeń  
 
-     **Nazwa roli**: Używanych modułów uruchamiających skryptu
-    - **Opis elementu**: Te uprawnienia włączyć tę rolę można uruchamiać tylko skrypty, które zostały wcześniej utworzona i zatwierdzona przez innych ról. 
-    - **Uprawnienia:** Upewnij się, ustawiono następujące **tak**.
-         |**Kategoria**|**Uprawnienia**|**Stan**|
-         |---|---|---|
-         |Kolekcja|Uruchom skrypt|Tak|
-         |Skrypty programu SMS|Utwórz|Tak|
-         |Skrypty programu SMS|Odczyt|Tak|
+**Nazwa roli**: Używanych modułów uruchamiających skryptu  
+- **Opis elementu**: Te uprawnienia włączyć tę rolę można uruchamiać tylko skrypty, które zostały wcześniej utworzona i zatwierdzona przez innych ról.  
+- **Uprawnienia:** Upewnij się, ustawiono następujące **tak**.  
 
-     **Nazwa roli**: Autorzy skryptu
-    - **Opis elementu**: Te uprawnienia włączyć tę rolę można tworzyć skrypty, ale nie można zatwierdzić lub ich uruchamiać. 
-    - **Uprawnienia**: Upewnij się, że następujące uprawnienia zostały ustawione.
-    - 
-         |**Kategoria**|**Uprawnienia**|**Stan**|
-         |---|---|---|
-         |Kolekcja|Uruchom skrypt|Nie|
-         |Skrypty programu SMS|Utwórz|Tak|
-         |Skrypty programu SMS|Odczyt|Tak|
-         |Skrypty programu SMS|Usuwanie|Tak|
-         |Skrypty programu SMS|Modyfikuj|Tak|
+|Kategoria|Uprawnienia|Stan|
+|---|---|---|
+|Kolekcja|Uruchom skrypt|Tak|
+|Lokacja|Odczyt|Tak|
+|Skrypty programu SMS|Utwórz|Tak|
+|Skrypty programu SMS|Odczyt|Tak|
 
-    **Nazwa roli**: Osoba zatwierdzająca skryptu
-    - **Opis elementu**: Te uprawnienia włączyć tę rolę zatwierdzić skryptów, ale ich nie można utworzyć ani uruchomić je. 
-    - **Uprawnienia:** Upewnij się, że następujące uprawnienia zostały ustawione.
 
-         |**Kategoria**|**Uprawnienia**|**Stan**|
-         |---|---|---|
-         |Kolekcja|Uruchom skrypt|Nie|
-         |Skrypty programu SMS|Odczyt|Tak|
-         |Skrypty programu SMS|Zatwierdzanie|Tak|
-         |Skrypty programu SMS|Modyfikuj|Tak|
+**Nazwa roli**: Autorzy skryptu  
+- **Opis elementu**: Te uprawnienia włączyć tę rolę można tworzyć skrypty, ale nie można zatwierdzić lub ich uruchamiać.  
+- **Uprawnienia**: Upewnij się, że następujące uprawnienia zostały ustawione.
+ 
+|Kategoria|Uprawnienia|Stan|
+|---|---|---|
+|Kolekcja|Uruchom skrypt|Nie|
+|Lokacja|Odczyt|Tak|
+|Skrypty programu SMS|Utwórz|Tak|
+|Skrypty programu SMS|Odczyt|Tak|
+|Skrypty programu SMS|Usuwanie|Tak|
+|Skrypty programu SMS|Modyfikuj|Tak|
+
+
+**Nazwa roli**: Osób zatwierdzających skryptu  
+- **Opis elementu**: Te uprawnienia włączyć tę rolę zatwierdzić skryptów, ale ich nie można utworzyć ani uruchomić je.  
+- **Uprawnienia:** Upewnij się, że następujące uprawnienia zostały ustawione.  
+
+|Kategoria|Uprawnienia|Stan|
+|---|---|---|
+|Kolekcja|Uruchom skrypt|Nie|
+|Lokacja|Odczyt|Tak|
+|Skrypty programu SMS|Odczyt|Tak|
+|Skrypty programu SMS|Zatwierdzanie|Tak|
+|Skrypty programu SMS|Modyfikuj|Tak|
+
      
-**Przykładowe skrypty SMS uprawnienia roli autorów skryptu**
+**Przykładowe skrypty SMS uprawnienia roli autorów skryptu**  
 
  ![Przykładowe skrypty SMS uprawnienia roli autorów skryptu](./media/run-scripts/script_authors_permissions.png)
 
