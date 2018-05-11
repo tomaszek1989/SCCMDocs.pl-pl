@@ -10,11 +10,11 @@ ms.assetid: 9181c84e-d74f-44ea-9bb9-f7805eb465fc
 author: aczechowski
 manager: dougeby
 ms.author: aaroncz
-ms.openlocfilehash: 8a00acaf0ba39d809a3b4741420aa737518df5f7
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 3ac0526d31bb46cce18e096ff1d120eda452c806
+ms.sourcegitcommit: 1701943932818e0df1928d9be36ebaf424dd93b7
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="create-windows-applications-with-system-center-configuration-manager"></a>Tworzenie aplikacji systemu Windows w programie System Center Configuration Manager
 
@@ -28,7 +28,9 @@ Oprócz innych wymagań programu System Center Configuration Manager i procedury
 |Typ urządzenia|Obsługiwane typy plików|  
 |-----------------|---------------------|  
 |Windows RT i Windows RT 8.1|\*.appx, \*.appxbundle|  
-|Windows 8.1 lub nowszy zarejestrowany jako urządzenie przenośne|\*.appx, \*.appxbundle|  
+|Windows 8.1 i nowsze|\*.appx, \*.appxbundle|  
+
+
 
  Obsługiwane są następujące akcje wdrażania:  
 

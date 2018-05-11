@@ -2,7 +2,7 @@
 title: What's new in hybrydowego zarządzania urządzeniami Przenośnymi
 titleSuffix: Configuration Manager
 description: Poznaj nowe funkcje zarządzania urządzeniami przenośnymi dostępne dla hybrydowych wdrożeń z programu Configuration Manager i usługi Intune.
-ms.date: 05/01/2018
+ms.date: 05/09/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.topic: conceptual
@@ -10,11 +10,11 @@ ms.assetid: 7b127cee-61f1-4681-9760-caebed36ddf5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 3105f9597d1f3971d6ef1092a33b0077118a1a22
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 72aeff7874456c3866ccb658395b8706057bdfaf
+ms.sourcegitcommit: 7bec1331c4f3096e6a278ff9ea0e929cff0a9cb9
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="whats-new-in-hybrid-mobile-device-management-with-configuration-manager-and-microsoft-intune"></a>What's new in hybrydowego zarządzania urządzeniami przenośnymi za pomocą programu Configuration Manager i Microsoft Intune
 
@@ -41,6 +41,13 @@ Każda sekcja w tym artykule wymieniono funkcje hybrydowych w trzech różnych k
 
 ## <a name="may-2018"></a>2018 maja
 
+### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune
+
+#### <a name="requesting-help-in-the-company-portal-for-windows-10"></a>Żądanie pomocy w portalu firmy dla systemu Windows 10 
+<!--1874137-->
+Portal firmy dla systemu Windows 10 teraz wysyła Dzienniki aplikacji bezpośrednio do firmy Microsoft, gdy użytkownik inicjuje przepływu pracy, aby uzyskać pomoc dotyczącą problemu. To zachowanie ułatwia do rozwiązywania oraz usuwania problemów, które zostały zgłoszone do firmy Microsoft.  
+
+
 ### <a name="new-in-configuration-manager-current-branch"></a>Nowe w programie Configuration Manager (wersji current branch)
 
 #### <a name="support-for-new-versions-of-cisco-anyconnect-client-for-ios"></a>Obsługa nowych wersji klienta Cisco AnyConnect dla systemu iOS
@@ -58,6 +65,9 @@ Aby uzyskać więcej informacji na temat włączania tej funkcji, zobacz [funkcj
 
 ### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune
 
+#### <a name="intune-adapts-to-fluent-design-system-in-the-company-portal-app-for-windows-10"></a>Usługa Intune dostosowuje się do Fluent System projektu w aplikacji Portal firmy dla systemu Windows 10 
+<!--1195010-->
+Aplikacja Portal firmy usługi Intune dla systemu Windows 10 zostały zaktualizowane o [widok nawigacji Fluent System projektu](/windows/uwp/design/basics/navigation-basics). Strony aplikacji zauważyć statycznych, pionowy listy wszystkich stron najwyższego poziomu. Kliknij dowolne łącze, aby szybko wyświetlić i przełączać się między stronami. Ta aktualizacja jest pierwszy z kilku zostanie wyświetlony w ramach dążenia trwającą, aby utworzyć środowisko adaptacyjną, empathetic i znanego w usłudze Intune. Aby wyświetlić zaktualizowaną wygląd, przejdź do [nowości w aplikacji interfejsu użytkownika](/intune/whats-new-app-ui).
 
 #### <a name="improved-device-tiles-in-the-windows-10-company-portal"></a>Kafelki ulepszone urządzenia w portalu firmy systemu Windows 10
 <!--2213364-->
@@ -112,6 +122,35 @@ Aby wyświetlić zaktualizowaną wygląd, przejdź do [nowości w aplikacji inte
 ## <a name="march-2018"></a>2018 marca
 
 ### <a name="new-in-microsoft-intune"></a>Nowość w usłudze Microsoft Intune
+
+#### <a name="windows-company-portal-send-feedback-option-may-no-longer-work"></a>Systemu Windows firmy portalu wysyłania opinie mogą przestać działać.
+<!--2070166-->
+Aplikacja Portal firmy dla systemu Windows ma opcję Prześlij opinię zezwolenie użytkownikom wysyłanie informacji zwrotnych na temat aplikacji do firmy Microsoft. Od 30 kwietnia 2018 tej opcji nadal jest obsługiwany tylko w aplikacji Portal firmy dla systemu Windows 10, uruchomionej w systemie Windows 10 w wersji 1607 i nowszych.   
+
+**Jak to wpływa mnie?**
+
+Jeśli nie ma aplikacji Portal firmy dla systemu Windows zainstalowane dla użytkowników końcowych, możesz zignorować ten komunikat.
+
+Jeśli którykolwiek z użytkowników końcowych w aplikacji Portal firmy, należy pamiętać, że począwszy od 30 kwietnia, przycisk Prześlij opinię przestaje działać dla aplikacji w następujących scenariuszach:  
+
+ - Aplikacja Portal firmy dla systemu Windows 10 w systemie Windows 10 w wersji 1507 i wersji 1511  
+
+ - Windows Phone 8.1 aplikacji Portal firmy  
+
+W przypadku urządzeń wpływ na opcji Prześlij opinię kończy się niepowodzeniem i nie powiedzie się, nawet w przypadku ponawianie próby. Wysyłanie opinii do firmy Microsoft dotyczące środowiska na tych platformach, istnieją alternatywne opinii kanały wymienionych poniżej.
+
+**Co należy zrobić, aby przygotować się do tej zmiany?**
+
+Powiadamia użytkowników końcowych tej zmiany i zaktualizować wskazówki żadnych użytkowników, jeśli to konieczne. 
+
+Poinformuj użytkowników końcowych za pomocą portalu firmy na Windows Phone 8.1, Windows 10 w wersji 1507 i Windows 10 w wersji 1511 mają dwa kanały alternatywny opinii. Mogą one:  
+
+- Użyj informacji zwrotnych Centrum aplikacji w systemie Windows 10  
+- Wyślij wiadomość e-mail do WinCPfeedback@microsoft.com  
+
+Poproś użytkowników końcowych w systemie Windows 10 w wersji 1607 lub później aktualizację do najnowszej wersji systemu Windows w portalu firmy dostępnej w Microsoft Store.
+
+
 
 #### <a name="azure-active-directory-web-sites-can-require-the-intune-managed-browser-app-and-support-single-sign-on-for-the-managed-browser-public-preview"></a>Witryn sieci web w usłudze Azure Active Directory może wymagać aplikacji przeglądarki zarządzanej Intune i obsługę rejestracji jednokrotnej w programie Managed Browser (publicznej wersji zapoznawczej)
 <!-- 710595 --> 
@@ -531,35 +570,6 @@ Następujące funkcje dodatkowe hybrydowego znajdują się również w wersji 17
 
 
 ## <a name="notices"></a>Powiadomienia
-
-### <a name="windows-company-portal-send-feedback-option-may-no-longer-work"></a>Systemu Windows firmy portalu wysyłania opinie mogą przestać działać.
-
-Aplikacja Portal firmy dla systemu Windows ma opcję Prześlij opinię zezwolenie użytkownikom wysyłanie informacji zwrotnych na temat aplikacji do firmy Microsoft. Od 30 kwietnia 2018 tej opcji nadal jest obsługiwany tylko w aplikacji Portal firmy dla systemu Windows 10, uruchomionej w systemie Windows 10 w wersji 1607 i nowszych.   
-
-#### <a name="how-does-this-affect-me"></a>Jak to wpływa mnie?
-
-Jeśli nie ma aplikacji Portal firmy dla systemu Windows zainstalowane dla użytkowników końcowych, możesz zignorować ten komunikat.
-
-Jeśli którykolwiek z użytkowników końcowych w aplikacji Portal firmy, należy pamiętać, że począwszy od 30 kwietnia, przycisk Prześlij opinię przestaje działać dla aplikacji w następujących scenariuszach:  
-
- - Aplikacja Portal firmy dla systemu Windows 10 w systemie Windows 10 w wersji 1507 i wersji 1511  
-
- - Windows Phone 8.1 aplikacji Portal firmy  
-
-W przypadku urządzeń wpływ na opcji Prześlij opinię kończy się niepowodzeniem i nie powiedzie się, nawet w przypadku ponawianie próby. Wysyłanie opinii do firmy Microsoft dotyczące środowiska na tych platformach, istnieją alternatywne opinii kanały wymienionych poniżej.
-
-#### <a name="what-do-i-need-to-do-to-prepare-for-this-change"></a>Co należy zrobić, aby przygotować się do tej zmiany?
-
-Powiadamia użytkowników końcowych tej zmiany i zaktualizować wskazówki żadnych użytkowników, jeśli to konieczne. 
-
-Poinformuj użytkowników końcowych za pomocą portalu firmy na Windows Phone 8.1, Windows 10 w wersji 1507 i Windows 10 w wersji 1511 mają dwa kanały alternatywny opinii. Mogą one:  
-
-- Użyj informacji zwrotnych Centrum aplikacji w systemie Windows 10  
-- Wyślij wiadomość e-mail do WinCPfeedback@microsoft.com  
-
-Poproś użytkowników końcowych w systemie Windows 10 w wersji 1607 lub później aktualizację do najnowszej wersji systemu Windows w portalu firmy dostępnej w Microsoft Store.
-
-
 
 ### <a name="company-portal-for-windows-81-and-windows-phone-81-moving-to-sustaining-mode"></a>Firmy, Portal dla Windows 8.1 i Windows Phone 8.1 przechodzenia do trybu utrzymywanie 
 <!--1428681-->
