@@ -10,11 +10,11 @@ ms.assetid: 78d44adc-9b1c-4bc6-b72d-e93873916ea6
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: a4a6d8d67060dbf7c5bc75892d2f231bce67df8f
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 31c94d3632014110302cb1815f72af0c26245dc9
+ms.sourcegitcommit: 95452daa3340d4d0818562bcbb53672cb16f8799
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/11/2018
 ---
 # <a name="ios-device-enrollment-program-dep-enrollment-for-hybrid-deployments-with-configuration-manager"></a>Rejestracja systemu iOS Device Enrollment Program (DEP) dla hybrydowych wdrożeń z programu Configuration Manager
 
@@ -73,7 +73,7 @@ Firmy mogą kupić urządzeń z systemem iOS za pośrednictwem programu device e
       -   **Włącz** — (wymaga **tryb przygotowania** = **nadzorowane**) wyłącza ustawienia systemu iOS, które umożliwiają usunięcie profilu zarządzania  
 
 4.  Na stronie **Asystent ustawień** skonfiguruj ustawienia umożliwiające dostosowanie asystenta ustawień systemu iOS uruchamianego po pierwszym włączeniu urządzenia, a następnie kliknij pozycję **Dalej**. Należą do nich następujące ustawienia:  
-  -   **Kod dostępu** — wyświetla monit o podanie kodu dostępu podczas aktywacji. Zawsze wymagają hasła, chyba że urządzenia będą chronione lub mają dostęp steruje się w inny sposób (tj. tryb kiosku ograniczającej urządzenia do jednej aplikacji).  
+  -   **Kod dostępu** — wyświetla monit o podanie kodu dostępu podczas aktywacji. Zawsze wymagają hasła, chyba że urządzenia będą chronione lub mają dostęp steruje się w inny sposób (tj., trybu kiosku ograniczającej urządzenia do jednej aplikacji).  
   -   **Usługi lokalizacji** — Jeśli włączone, Asystent ustawień wyświetla monit dotyczący usługi podczas aktywacji  
   -   **Przywróć** — Jeśli włączone, Asystent ustawień wyświetla monit dla kopii zapasowej iCloud podczas aktywacji  
   -   **Identyfikator Apple ID** — identyfikator Apple ID jest wymagany do pobrania dla systemu iOS aplikacje w sklepie z aplikacjami, w tym zainstalowanych przez usługę Intune. Jeśli jest włączone, system iOS wyświetla monit podanie identyfikatora Apple ID podczas Intune będzie podejmowała próbę zainstalowania aplikacji bez identyfikatora.  
@@ -102,7 +102,10 @@ Firmy mogą kupić urządzeń z systemem iOS za pośrednictwem programu device e
     > [!NOTE]
     > W konfiguracji hybrydowego operacji synchronizacji z usługą DEP ręcznie jest wyzwalany przez kliknięcie przycisku **synchronizacji z usługą DEP** w konsoli programu Configuration Manager.
 
-4.  **Przypisz profil DEP**<br>W **zasoby i zgodność** obszaru roboczego, przejdź do **wszystkich firmowych urządzeń** > **iOS** > **profile rejestracji**. Wybierz profil rejestracji DEP, a następnie w **Home** , kliknij pozycję **przypisany do urządzeń**. Wybierz urządzenia, które będą korzystać z tego profilu rejestracji, kliknij przycisk **Dodaj**, a następnie kliknij przycisk **OK**.   
+4.  **Przypisz profil DEP**<br>W **zasoby i zgodność** obszaru roboczego, przejdź do **wszystkich firmowych urządzeń** > **iOS** > **profile rejestracji**. Wybierz profil rejestracji DEP, a następnie w **Home** , kliknij pozycję **przypisany do urządzeń**. Wybierz urządzenia, które będą korzystać z tego profilu rejestracji, kliknij przycisk **Dodaj**, a następnie kliknij przycisk **OK**.
+
+    > [!NOTE]
+    > Po profilu DEP jest przypisana do urządzenia, tylko z innym profilem DEP można zastąpić profil. Jednak nie można usunąć przypisania profilu DEP. Aby usunąć profil DEP z urządzenia, musisz wyrejestrować urządzenie.  
      ![Zrzut ekranu przedstawiający Przypisywanie profilu DEP do urządzeń z systemem iOS](../media/dep-assign-profile.png)
 
 ## <a name="distribute-devices-to-users"></a>Dystrybuuj urządzenia do użytkowników
