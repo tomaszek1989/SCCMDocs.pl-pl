@@ -2,7 +2,7 @@
 title: Wersje Technical Preview
 titleSuffix: Configuration Manager
 description: Informacje o wersji Technical Preview, aby test-drive nowe funkcje i możliwości w programie Configuration Manager.
-ms.date: 04/25/2018
+ms.date: 05/11/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,11 +10,11 @@ ms.assetid: 9ce0a8cb-f96c-4e41-834c-59ceb54ce44a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 6b39f5eec4209e176374dcbdffc11183625c4967
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a6a4faff728b14fae198f9709ca9ce9ca5d04455
+ms.sourcegitcommit: 021272d5858e5dbb650b95644736d1de3dab7d8a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="technical-preview-for-system-center-configuration-manager"></a>Wersja zapoznawcza Technical Preview programu System Center Configuration Manager
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 05/03/2018
 
  Ponieważ ta wersja jest technical preview, szczegóły i funkcje mogą ulec zmianie.  
 
- Ten artykuł zawiera informacje, które dotyczą wszystkich wersji Technical Preview. Każda nowa możliwość (lub funkcji) również wyświetlane wraz z wersji zapoznawczej Technical Preview, w której możliwość najpierw pojawia się, jak wersja 1804 kwietnia 2018. Te możliwości są wyszczególnione w osobnych tematach dedykowana dla każdej wersji zapoznawczej.  
+ Ten artykuł zawiera informacje, które dotyczą wszystkich wersji Technical Preview. Każda nowa możliwość (lub funkcji) również wyświetlane wraz z wersji zapoznawczej Technical Preview, w której możliwości najpierw pojawia się, jak wersja 1805 maja 2018. Te możliwości są wyszczególnione w osobnych tematach dedykowana dla każdej wersji zapoznawczej.  
 
  Aby uzyskać informacje na temat nowości w wersji current branch programu Configuration Manager, zobacz [nowości w programie System Center Configuration Manager](/sccm/core/plan-design/changes/what-has-changed-from-configuration-manager-2012).
 
@@ -108,30 +108,49 @@ Poniżej przedstawiono możliwości oferowane przez najnowszej wersji programu C
 
 <!-- This is the full list of new features in the latest TP release -->
 
-### <a name="technical-preview-version-1804"></a>Technical Preview wersji 1804
-- [Konfigurowanie zdalnego biblioteki zawartości na serwerze lokacji](capabilities-in-technical-preview-1804.md#configure-a-remote-content-library-for-the-site-server) <!--1357525--> 
-- [Przesyłanie opinii z konsoli programu Configuration Manager](capabilities-in-technical-preview-1804.md#bkmk_feedback) <!--1357542--> 
-- [Centrum pomocy technicznej](capabilities-in-technical-preview-1804.md#support-center) <!--1357489--> 
-- [Zestaw narzędzi programu Configuration Manager](capabilities-in-technical-preview-1804.md#configuration-manager-toolkit) <!--1357145--> 
-- [Odinstaluj aplikację na zatwierdzenie odwołania](capabilities-in-technical-preview-1804.md#uninstall-application-on-approval-revocation) <!--1357891--> 
-- [Wyklucz kontenerach usługi Active Directory z odnajdywania](capabilities-in-technical-preview-1804.md#exclude-active-directory-containers-from-discovery) <!--1358143--> 
-- [Określ widoczność łącze witryny sieci Web katalogu aplikacji w programie Software Center](capabilities-in-technical-preview-1804.md#specify-the-visibility-of-the-application-catalog-website-link-in-software-center) <!--1358214--> 
-- [Filtrowanie reguł automatycznego wdrażania do architektury aktualizacji oprogramowania](capabilities-in-technical-preview-1804.md#filter-automatic-deployment-rules-by-software-update-architecture) <!--1322266--> 
-- [Ulepszenia dotyczące wdrażania systemu operacyjnego](capabilities-in-technical-preview-1804.md#improvements-to-os-deployment) <!--1358330,1358493--> 
-- [Ulepszenia konsoli programu Configuration Manager](capabilities-in-technical-preview-1804.md#improvements-to-the-configuration-manager-console) <!--510252--> 
+### <a name="technical-preview-version-1805"></a>Technical Preview wersji 1805
+- [Utwórz wdrożenie etapowe z fazy ręcznie skonfigurowanej dla sekwencji zadań](capabilities-in-technical-preview-1805.md#create-a-phased-deployment-with-manually-configured-phases-for-a-task-sequence) <!--1358148--> 
+- [Obsługa punktu dystrybucji chmury dla usługi Azure Resource Manager](capabilities-in-technical-preview-1805.md#cloud-distribution-point-support-for-azure-resource-manager) <!--1322209--> 
+- [Podjąć działania w oparciu o informacje na temat technologii zarządzania](capabilities-in-technical-preview-1805.md#take-actions-based-on-management-insights) <!--1357930--> 
+- [Obciążenie konfiguracji urządzenia przejścia do usługi Intune przy użyciu wspólnej zarządzania](capabilities-in-technical-preview-1805.md#transition-device-configuration-workload-to-intune-using-co-management) <!--1357903--> 
+- [Włącz punkty dystrybucji do użycia kontroli przeciążenia sieci](capabilities-in-technical-preview-1805.md#enable-distribution-points-to-use-network-congestion-control) <!--1358112--> 
+- [Pulpit nawigacyjny zarządzania w chmurze](capabilities-in-technical-preview-1805.md#cloud-management-dashboard) <!--1358461--> 
+- [CMPivot](capabilities-in-technical-preview-1805.md#cmpivot) <!--1358456--> 
+- [Ulepszono klienta bezpiecznej komunikacji](capabilities-in-technical-preview-1805.md#improved-secure-client-communications) <!--1356889,1358228,1358460--> 
+- [Ulepszenia włączania obsługi aktualizacji oprogramowania innych firm](capabilities-in-technical-preview-1805.md#improvements-for-enabling-third-party-software-update-support) <!--1357605--> 
+- [Ulepszenia dotyczące sekwencji zadań uaktualniania w miejscu systemu Windows 10](capabilities-in-technical-preview-1805.md#improvements-to-windows-10-in-place-upgrade-task-sequence) <!--1358500--> 
+- [CMTrace zainstalowane z klientem](capabilities-in-technical-preview-1805.md#cmtrace-installed-with-client) <!--1357971--> 
+- [Ulepszenia w konsoli programu Configuration Manager](capabilities-in-technical-preview-1805.md#improvement-to-the-configuration-manager-console) <!--1358202--> 
+- [Ulepszenia konsoli opinii](capabilities-in-technical-preview-1805.md#improvements-to-console-feedback) <!--1357542--> 
+- [Ulepszenia do punktów dystrybucji z włączoną obsługą środowiska PXE](capabilities-in-technical-preview-1805.md#improvements-to-pxe-enabled-distribution-points) <!--1357580--> 
+- [Poprawa spis sprzętu dla dużej liczby całkowite](capabilities-in-technical-preview-1805.md#improvement-to-hardware-inventory-for-large-integer-values) <!--1357880--> 
+- [Poprawy obsługi usług WSUS](capabilities-in-technical-preview-1805.md#improvement-to-wsus-maintenance) <!--1357898--> 
+- [Poprawy jakości obsługi w przypadku certyfikatów CNG](capabilities-in-technical-preview-1805.md#improvement-to-support-for-cng-certificates) <!--1357314--> 
+
+
+
 
 
 
 ## <a name="capabilities-delivered-in-recent-supported-technical-previews"></a>Możliwości oferowane przez ostatnie obsługiwanych wersji zapoznawczych technical Preview
 Poniżej przedstawiono możliwości oferowane przez poprzednie wersje wersje technical preview programu Configuration Manager, które nadal są obsługiwane. 
 
-<!-- This is the full list of new features in the past three TP releases. 
+<!-- This is the full list of new features in the past THREE (3) TP releases. 
 Each month, add features from the list above to the top of this table. 
 Then remove the bottom of this list and/or move individual items not in CB to the third table below.
 -->
 
  |Możliwość |Wersji Technical Preview |Bieżącą wersję gałęzi|  
  |----------------|---------------------|--------------------|
+ | Konfigurowanie zdalnego biblioteki zawartości na serwerze lokacji <!--1357525--> | [Podgląd techniczna 1804](capabilities-in-technical-preview-1804.md#configure-a-remote-content-library-for-the-site-server)  | ![Nie dodano](media/Red_X.gif) | 
+ | Przesyłanie opinii z konsoli programu Configuration Manager <!--1357542--> | [Podgląd techniczna 1804](capabilities-in-technical-preview-1804.md#bkmk_feedback)  | ![Nie dodano](media/Red_X.gif) | 
+ | Centrum pomocy technicznej <!--1357489--> | [Podgląd techniczna 1804](capabilities-in-technical-preview-1804.md#support-center)  | ![Nie dodano](media/Red_X.gif) | 
+ | Zestaw narzędzi programu Configuration Manager <!--1357145--> | [Podgląd techniczna 1804](capabilities-in-technical-preview-1804.md#configuration-manager-toolkit)  | ![Nie dodano](media/Red_X.gif) | 
+ | Odinstaluj aplikację na zatwierdzenie odwołania <!--1357891--> | [Podgląd techniczna 1804](capabilities-in-technical-preview-1804.md#uninstall-application-on-approval-revocation)  | ![Nie dodano](media/Red_X.gif) | 
+ | Wyklucz kontenerach usługi Active Directory z odnajdywania <!--1358143--> | [Podgląd techniczna 1804](capabilities-in-technical-preview-1804.md#exclude-active-directory-containers-from-discovery)  | ![Nie dodano](media/Red_X.gif) | 
+ | Określ widoczność łącze witryny sieci Web katalogu aplikacji w programie Software Center <!--1358214--> | [Podgląd techniczna 1804](capabilities-in-technical-preview-1804.md#specify-the-visibility-of-the-application-catalog-website-link-in-software-center)  | ![Nie dodano](media/Red_X.gif) | 
+ | Filtrowanie reguł automatycznego wdrażania do architektury aktualizacji oprogramowania <!--1322266--> | [Podgląd techniczna 1804](capabilities-in-technical-preview-1804.md#filter-automatic-deployment-rules-by-software-update-architecture)  | ![Nie dodano](media/Red_X.gif) | 
+ | Ulepszenia dotyczące wdrażania systemu operacyjnego <!--1358330,1358493--> | [Podgląd techniczna 1804](capabilities-in-technical-preview-1804.md#improvements-to-os-deployment) | ![Nie dodano](media/Red_X.gif) | 
  | Dystrybucji ściągania punktów obsługi punktów dystrybucji w chmurze jako źródło <!--1321554--> | [Podgląd techniczna 1803](capabilities-in-technical-preview-1803.md#pull-distribution-points-support-cloud-distribution-points-as-source)  | ![Nie dodano](media/Red_X.gif) | 
  | Obsługa częściowej pobierania w klienta równorzędnej pamięci podręcznej, aby zmniejszyć wykorzystanie sieci WAN <!--1357346--> | [Podgląd techniczna 1803](capabilities-in-technical-preview-1803.md#partial-download-support-in-client-peer-cache-to-reduce-wan-utilization)  | ![Nie dodano](media/Red_X.gif) | 
  | Okna obsługi w programie Software Center <!--1358131--> | [Podgląd techniczna 1803](capabilities-in-technical-preview-1803.md#maintenance-windows-in-software-center)  | ![Nie dodano](media/Red_X.gif) | 
@@ -158,14 +177,6 @@ Then remove the bottom of this list and/or move individual items not in CB to th
  | Zasady przeglądarki Microsoft Edge <!-- 1357310 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#microsoft-edge-browser-policies) | [Wersja 1802](/sccm/compliance/deploy-use/browser-profiles) | 
  | Raport dotyczący liczby przeglądarka domyślna <!-- 1357830 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#report-for-default-browser-counts) | [Wersja 1802](/sccm/core/servers/manage/list-of-reports#software---companies-and-products) | 
  | Obsługa urządzeń z systemem Windows 10 ARM64 <!-- 1353704 --> | [Podgląd techniczna 1802](capabilities-in-technical-preview-1802.md#support-for-windows-10-arm64-devices) | [Wersja 1802](/sccm/core/plan-design/configs/support-for-windows-10) |  
- | Tworzenie wdrożenia etapowego <!-- 1356837 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#create-phased-deployments) | [Wersja 1802](/sccm/osd/deploy-use/create-phased-deployment-for-task-sequence) |
- | Raportowanie zarządzania wspólnej <!-- 1356648 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#co-management-reporting) | [Wersja 1802](\sccm\core\clients\manage\client-management-dashboard) |
- | Ulepszenia dotyczące harmonogramu oceny reguły wdrażania automatycznego <!-- 1357133 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#improvements-to-automatic-deployment-rule-evaluation-schedule) | [Wersja 1802](/sccm/sum/deploy-use/automatically-deploy-software-updates#BKMK_CreateAutomaticDeploymentRule) |
- | Ponowne przypisanie punktu dystrybucji <!-- 1306937 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#reassign-distribution-point) | [Wersja 1802](/sccm/core/servers/deploy/configure/install-and-configure-distribution-points#bkmk_reassign) |
- | Ulepszenia dotyczące spisu sprzętu <!-- 1357389 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#improvements-to-hardware-inventory) | [Wersja 1802](/sccm/core/clients/manage/inventory/extend-hardware-inventory#BKMK_GreaterThan255) |
- | Udoskonalenia ustawień klienta w programie Software Center <!-- 1355146 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#improvements-to-client-settings-for-software-center) | [Wersja 1802](/sccm/core/clients/deploy/about-client-settings#BKMK_HideUnapproved) |
- | Nowe ustawienia dla systemu Windows Defender aplikacji Guard <!-- 1356256 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#new-settings-for-windows-defender-application-guard) | [Wersja 1802](/sccm/protect/deploy-use/create-deploy-application-guard-policy#BKMK_HIS) |
- | Ulepszenia na uruchamianie skryptów <!-- 1236459 --> | [Podgląd techniczna 1801](capabilities-in-technical-preview-1801.md#improvements-to-run-scripts) | [Wersja 1802](/sccm/apps/deploy-use/create-deploy-scripts) |
  
   
 

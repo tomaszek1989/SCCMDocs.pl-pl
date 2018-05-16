@@ -10,11 +10,11 @@ ms.assetid: 3417ff88-7177-4a0d-8967-ab21fe7eba17
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 0b34163bfb5aea716062882d4c2ebb1360bba2c9
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 376d75a2aed5fe0b14b3af309e48a75d8f392c11
+ms.sourcegitcommit: defdaf493c1dc5a7a380541bc028fbd2b21c1047
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="step-by-step-example-deployment-of-the-pki-certificates-for-system-center-configuration-manager-windows-server-2008-certification-authority"></a>Krok po kroku Przykładowe wdrożenie certyfikatów PKI dla programu System Center Configuration Manager: Urząd certyfikacji systemu Windows Server 2008
 
@@ -239,6 +239,9 @@ Wdrożenie tego certyfikatu jest objęte następującymi procedurami:
 8.  Wybierz **Dodaj**, wprowadź **serwerów lokacji programu ConfigMgr** w tekście polu, a następnie wybierz pozycję **OK**.  
 
 9. Wybierz dla tej grupy uprawnienie **Rejestracja** i nie usuwaj zaznaczenia uprawnienia **Odczyt** .  
+
+    > [!NOTE]
+    > Upewnij się, że **minimalny rozmiar klucza** na **kryptografii** karta została ustawiona jako **2048**
 
 10. Wybierz **OK**, a następnie Zamknij **konsolę Szablony certyfikatów**.  
 
