@@ -1,7 +1,7 @@
 ---
-title: Właściwości instalacji klienta
+title: Parametry instalacji klientów i właściwości
 titleSuffix: Configuration Manager
-description: Więcej informacji o właściwościach wiersza polecenia ccmsetup w przypadku instalowania klienta programu Configuration Manager.
+description: Więcej informacji na temat właściwości instalacji klienta programu Configuration Manager i parametry wiersza polecenia programu ccmsetup.
 ms.date: 03/28/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-client
@@ -10,17 +10,17 @@ ms.assetid: c890fd27-7a8c-4f51-bbe2-f9908af1f42b
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 27479bf3db9ab0ed5d842f5cbf9db4e399a4168d
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 735a8da57c0225aee533568eb997dc82d9816d6b
+ms.sourcegitcommit: db6074317d5c68ebb5fc478be5bceeb441aa0737
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="about-client-installation-properties-in-system-center-configuration-manager"></a>Informacje o właściwościach instalacji klientów w programie System Center Configuration Manager
+# <a name="about-client-installation-parameters-and-properties-in-system-center-configuration-manager"></a>Parametry instalacji klientów i właściwości w programie System Center Configuration Manager — informacje
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-Aby zainstalować klienta programu Configuration Manager, należy użyć polecenia CCMSetup.exe. Jeśli podasz te właściwości instalacji klienta w wierszu polecenia modyfikują zachowanie instalacji.
+Aby zainstalować klienta programu Configuration Manager, należy użyć polecenia CCMSetup.exe. Jeśli podasz klienta parametry instalacji w wierszu polecenia, modyfikują zachowanie instalacji. Jeśli użytkownik dostarczenie właściwości instalacji klienta w wierszu polecenia, modyfikują początkowej konfiguracji agenta zainstalowanego klienta.
 
 
 
@@ -38,16 +38,16 @@ Aby zainstalować klienta programu Configuration Manager, należy użyć polecen
 > [!NOTE]  
 >  W programie Configuration Manager nie można uruchomić pliku Client.msi bezpośrednio.  
 
- Udostępnia CCMSetup.exe [właściwości wiersza polecenia](#ccmsetup-exe-command-line-properties) dostosować instalację. Można również określić właściwości modyfikujące zachowanie się pliku client.msi w wierszu polecenia programu CCMSetup.exe.  
+ Udostępnia CCMSetup.exe [parametry wiersza polecenia](#ccmsetup-exe-command-line-parameters) w celu dostosowania instalacji — parametry mają przedrostek ukośnik odwrotny i Konwencja są małymi literami. Należy określić wartość parametru, jeśli to konieczne, za pomocą dwukropka bezpośrednio po nim żądaną wartość. Może też podawać właściwości modyfikujące zachowanie się pliku client.msi w wierszu polecenia CCMSetup.exe — właściwości według Konwencji są wszystkie wielkimi literami. Należy określić wartość dla właściwości przy użyciu znaku równości bezpośrednio po nim żądaną wartość.  
 
 > [!IMPORTANT]  
->  Określ właściwości programu CCMSetup, aby określić właściwości pliku Client.msi.  
+>  Określ parametrów CCMSetup należy określić przed właściwościami pliku Client.msi.  
 
  CCMSetup.exe i pliki pomocnicze, które znajdują się na serwerze lokacji w **klienta** folderu w folderze instalacyjnym programu Configuration Manager. Ten folder jest udostępniany w sieci jako  **&lt;nazwa serwera lokacji\>\SMS_&lt;kod lokacji\>\Client**.  
 
  W wierszu polecenia polecenie CCMSetup.exe posługuje się następującym formatem:  
 
- `CCMSetup.exe [<Ccmsetup properties>] [<client.msi setup properties>]`  
+ `CCMSetup.exe [<Ccmsetup parameters>] [<client.msi setup properties>]`  
 
  Na przykład:  
 
@@ -64,7 +64,7 @@ Aby zainstalować klienta programu Configuration Manager, należy użyć polecen
 -   Nakazuje plikowi client.msi użycie rezerwowego punktu stanu o nazwie SMSFP01.  
 
 > [!NOTE]  
->  Jeśli właściwość zawiera spacje, należy ująć ją w znaki cudzysłowu.  
+>  Jeśli wartość parametru zawiera spacje, należy ująć ją w znaki cudzysłowu.  
 
 
 > [!IMPORTANT]  
@@ -72,11 +72,11 @@ Aby zainstalować klienta programu Configuration Manager, należy użyć polecen
 
 
 
-##  <a name="ccmsetupexe-command-line-properties"></a>Właściwości wiersza polecenia CCMSetup.exe  
+##  <a name="ccmsetupexe-command-line-parameters"></a>Parametry wiersza polecenia CCMSetup.exe  
 
 ### <a name=""></a>/?  
 
-Otwiera okno dialogowe **CCMSetup**, w którym są wyświetlane właściwości wiersza polecenia ccmsetup.exe.  
+Otwiera **CCMSetup** okno dialogowe pokazujące parametry wiersza polecenia programu ccmsetup.exe.  
 
 Przykład: **ccmsetup.exe /?**  
 
@@ -85,7 +85,7 @@ Przykład: **ccmsetup.exe /?**
  Określa lokalizację pobierania pliku. Użyj lokalną lub ścieżkę UNC. Pliki są pobierane przy użyciu protokołu serwera komunikat protokołu SMB. Aby użyć **/source**, konta użytkownika systemu Windows do instalacji klienta musi mieć uprawnienia do odczytu do lokalizacji.
 
 > [!NOTE]  
->  Można użyć **/source** właściwości więcej niż raz w wierszu polecenia, aby określić alternatywne lokalizacje.  
+>  Można użyć **/source** parametru więcej niż raz w wierszu polecenia, aby określić alternatywne lokalizacje.  
 
  Przykład: **ccmsetup.exe /source:"\\komputer\folder"**  
 
@@ -94,39 +94,39 @@ Przykład: **ccmsetup.exe /?**
  Określa punkt zarządzania źródła dla komputerów nawiązać połączenie. Komputery użycie tego punktu zarządzania, aby znaleźć najbliższy punkt dystrybucji dla plików instalacyjnych. Jeśli nie ma punktów dystrybucji lub komputery nie mogą pobrać pliki z punktów dystrybucji po upływie czterech godzin, będą oni mogli pobrać plików z określonym punktem zarządzania.  
 
 > [!IMPORTANT]  
->  Ta właściwość służy do określania początkowy punkt zarządzania na komputerach w celu znalezienia źródła pobierania i może być dowolnym punktem zarządzania w dowolnej lokacji. Nie *przypisać* klienta z punktem zarządzania.   
+>  Ten parametr jest używany do określenia początkowy punkt zarządzania na komputerach w celu znalezienia źródła pobierania i może być dowolnym punktem zarządzania w dowolnej lokacji. Nie *przypisać* klienta z punktem zarządzania.   
 
  Komputery pobierają pliki w połączeniu HTTP lub HTTPS, zależnie od konfiguracji roli systemu lokacji dla połączeń klienckich. Jeśli skonfigurowana, procesy pobierania korzystają z ograniczenia przepustowości usługi BITS. Jeśli wszystkie punkty dystrybucji i punkty zarządzania są skonfigurowane dla tylko połączeń klienckich HTTPS, sprawdź, czy komputer kliencki ma prawidłowy certyfikat klienta.  
 
-Można użyć **/mp** właściwości wiersza polecenia, aby określić więcej niż jeden punkt zarządzania. Jeśli komputer nie może połączyć się z pierwszym punktem, próbuje dalej na liście. Podczas określania wielu punktów zarządzania, poszczególne wartości należy rozdzielić średnikami.
+Można użyć **/mp** parametru wiersza polecenia, aby określić więcej niż jeden punkt zarządzania. Jeśli komputer nie może połączyć się z pierwszym punktem, próbuje dalej na liście. Podczas określania wielu punktów zarządzania, poszczególne wartości należy rozdzielić średnikami.
 
-Jeśli klient łączy się z punktem zarządzania przy użyciu protokołu HTTPS, zazwyczaj należy określić nazwę FQDN, a nie nazwa komputera. Wartość musi odpowiadać certyfikatu PKI podmiotu lub alternatywna nazwa podmiotu punktu zarządzania. Mimo że program Configuration Manager obsługuje przy użyciu nazwy komputera w certyfikacie dla połączeń w intranecie, nazwy FQDN jest najlepszą zalecaną praktyką zabezpieczeń.
+Jeśli klient łączy się z punktem zarządzania przy użyciu protokołu HTTPS, zazwyczaj należy określić nazwę FQDN, a nie nazwa komputera. Wartość musi odpowiadać certyfikatu PKI podmiotu lub alternatywna nazwa podmiotu punktu zarządzania. Mimo że program Configuration Manager obsługuje przy użyciu nazwy komputera w certyfikacie dla połączeń w intranecie, użycie nazwy FQDN jest zalecane.
 
 Przykład zastosowania nazwy komputera: `ccmsetup.exe /mp:SMSMP01`  
 
 Przykład zastosowania nazwy FQDN: `ccmsetup.exe /mp:smsmp01.contoso.com`  
 
-Tej właściwości można określić adres URL zarządzania bramy chmury. Użyj tego adresu URL, aby zainstalować klienta na urządzeniu z systemem internetowym. Aby uzyskać wartość dla tej właściwości, wykonaj następujące kroki:
+Ten parametr można określić adres URL zarządzania bramy chmury. Użyj tego adresu URL, aby zainstalować klienta na urządzeniu z systemem internetowym. Aby uzyskać wartość tego parametru, wykonaj następujące kroki:
 - Utwórz bramę zarządzania chmury.
 - Na aktywnego klienta otwórz wiersz polecenia programu Windows PowerShell jako administrator. 
 - Uruchom następujące polecenie: `(Get-WmiObject -Namespace Root\Ccm\LocationServices -Class SMS_ActiveMPCandidate | Where-Object {$_.Type -eq "Internet"}).MP`
-- Dołącz prefiks "https://", który ma być używany z **/mp** właściwości.
+- Dołącz prefiks "https://", który ma być używany z **/mp** parametru.
 
 Przykład zastosowania adres URL bramy zarządzania chmury: `ccmsetup.exe /mp:https://CONTOSO.CLOUDAPP.NET/CCM_Proxy_MutualAuth/72057598037248100`
 
  > [!Important]
- > Podczas określania adresu URL bramy zarządzania chmury dla **/mp** właściwości, musi rozpoczynać się **https://**.
+ > Podczas określania adresu URL bramy zarządzania chmury dla **/mp** parametru musi zaczynać się znakiem **https://**.
 
 
 ### <a name="retryltminutes"></a>/ Ponów:&lt;minut\>
 
-Interwał ponawiania, jeśli CCMSetup.exe nie uda się pobrać pliki instalacyjne. Program CCMSetup kontynuuje ponawianie prób, dopóki nie osiągnie limitu określonego we **downloadtimeout** właściwości.  
+Interwał ponawiania, jeśli CCMSetup.exe nie uda się pobrać pliki instalacyjne. Program CCMSetup kontynuuje ponawianie prób, dopóki nie osiągnie limitu określonego we **downloadtimeout** parametru.  
 
 Przykład: `ccmsetup.exe /retry:20`  
 
 ### <a name="noservice"></a>/noservice
 
-Zapobiega uruchamianiu jako usługa, która jest ustawiona domyślnie programu CCMSetup. Gdy program CCMSetup jest uruchamiany jako usługa, jest uruchamiany w kontekście konta systemu lokalnego komputera. To konto może nie mieć wystarczających praw dostępu do zasobów sieciowych wymaganych do instalacji. Z **/noservice**, CCMSetup.exe jest uruchamiany w kontekście konta użytkownika, którego używasz do rozpoczęcia instalacji. Ponadto jeśli używasz skryptu do uruchomienia CCMSetup.exe z **/service** , czyli CCMSetup.exe zostanie zakończony po uruchomieniu usługi i może nie raportować szczegółów instalacji prawidłowo.   
+Zapobiega uruchamianiu jako usługa, która jest ustawiona domyślnie programu CCMSetup. Gdy program CCMSetup jest uruchamiany jako usługa, jest uruchamiany w kontekście konta systemu lokalnego komputera. To konto może nie mieć wystarczających praw dostępu do zasobów sieciowych wymaganych do instalacji. Z **/noservice**, CCMSetup.exe jest uruchamiany w kontekście konta użytkownika, którego używasz do rozpoczęcia instalacji. Ponadto jeśli używasz skryptu do uruchomienia CCMSetup.exe z **/service** parametru CCMSetup.exe kończy działanie po uruchomieniu usługi i może nie raportować szczegółów instalacji prawidłowo.   
 
 Przykład: `ccmsetup.exe /noservice`  
 
@@ -144,13 +144,13 @@ Przykład: `ccmsetup.exe /uninstall`
 
 ### <a name="logon"></a>/logon
 
-Jeśli jakakolwiek wersja klienta jest już zainstalowany, ta właściwość określa, że instalacja klienta ma zostać zatrzymana.  
+Jeśli jakakolwiek wersja klienta jest już zainstalowany, ten parametr określa, że instalacja klienta ma zostać zatrzymana.  
 
 Przykład: `ccmsetup.exe /logon`  
 
 ### <a name="forcereboot"></a>/forcereboot
 
- Określa, że program CCMSetup ma wymusić na komputerze klienckim, uruchom ponownie, jeśli jest to niezbędne do ukończenia instalacji. Jeśli ta właściwość nie jest określony, program CCMSetup zakończy działanie, gdy konieczne jest ponowne uruchomienie. Następnie kontynuuje po najbliższym ponownym uruchomieniu.  
+ Określa, że program CCMSetup ma wymusić na komputerze klienckim, uruchom ponownie, jeśli jest to niezbędne do ukończenia instalacji. Jeśli ten parametr nie jest określony, program CCMSetup zakończy działanie, gdy konieczne jest ponowne uruchomienie. Następnie kontynuuje po najbliższym ponownym uruchomieniu.  
 
  Przykład: `CCMSetup.exe /forcereboot`  
 
@@ -178,10 +178,10 @@ Przykład: `ccmsetup.exe /downloadtimeout:100`
 
 ### <a name="usepkicert"></a>/UsePKICert
 
- Jeśli określone, klient używa certyfikatu PKI obejmującego uwierzytelnianie klienta, jeśli jest dostępna. Jeśli klient nie może znaleźć prawidłowego certyfikatu, za pomocą połączeń HTTP i certyfikatu z podpisem własnym. To zachowanie jest takie same, jeśli ta właściwość nie jest używany.
+Jeśli określone, klient używa certyfikatu PKI obejmującego uwierzytelnianie klienta, jeśli jest dostępna. Jeśli klient nie może znaleźć prawidłowego certyfikatu, za pomocą połączeń HTTP i certyfikatu z podpisem własnym. To zachowanie jest takie same, jeśli ten parametr nie jest używany.
 
 > [!NOTE]  
->  W niektórych scenariuszach nie trzeba określić tę właściwość podczas instalowania klienta i nadal używać certyfikatu klienta. Tego typu scenariuszy należą Instalowanie klienta za pomocą wypychania klienta i instalacja klienta oparta na punkcie aktualizacji oprogramowania. Należy jednak określić tę właściwość za każdym razem podczas ręcznej instalacji klienta i użycia właściwości **/mp** do określenia punktu zarządzania skonfigurowanego do akceptowania tylko połączeń klienckich HTTPS. Należy również określić tę właściwość podczas instalowania klienta komunikacji wyłącznie internetowej. Użyj CCMALWAYSINF = 1 właściwości wraz z właściwościami punkt zarządzania internetowego i kod lokacji. Aby uzyskać więcej informacji dotyczących zarządzania klientami internetowymi, zobacz [uwagi dotyczące komunikacji klientów z Internetu lub niezaufanego lasu](../../plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan).  
+>  W niektórych scenariuszach nie trzeba określać tego parametru podczas instalowania klienta i nadal używać certyfikatu klienta. Tego typu scenariuszy należą Instalowanie klienta za pomocą wypychania klienta i instalacja klienta oparta na punkcie aktualizacji oprogramowania. Jednak należy zawsze określić, ten parametr ręcznej instalacji klienta i użycia **/mp** parametru w celu określenia punktu zarządzania skonfigurowanego do akceptowania tylko połączeń klienckich HTTPS. Należy również określić tego parametru podczas instalowania klienta komunikacji wyłącznie internetowej. Użyj CCMALWAYSINF = 1 właściwości wraz z właściwościami punktu internetowego zarządzania (CCMHOSTNAME) i kod lokacji (SMSSITECODE). Aby uzyskać więcej informacji dotyczących zarządzania klientami internetowymi, zobacz [uwagi dotyczące komunikacji klientów z Internetu lub niezaufanego lasu](../../plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan).  
 
  Przykład: `CCMSetup.exe /UsePKICert`  
 
@@ -199,18 +199,18 @@ Przykład: `ccmsetup.exe /downloadtimeout:100`
 
 Określa nazwę pliku tekstowego zawierającego właściwości instalacji klienta.
 
-- Jeśli nie określisz **/noservice** właściwość programu CCMSetup, ten plik musi znajdować się w folderze programu CCMSetup, którym jest % Windir %\\Ccmsetup dla 32-bitowych i 64-bitowych systemów operacyjnych.
-- W przypadku określenia właściwości **/noservice** ten plik musi znajdować się w tym samym folderze, w którym jest uruchamiany program CCMSetup.exe.  
+- Jeśli nie określisz **/noservice** parametru CCMSetup, ten plik musi znajdować się w folderze programu CCMSetup, którym jest % Windir %\\Ccmsetup dla 32-bitowych i 64-bitowych systemów operacyjnych.
+- Jeśli określisz **/noservice** parametru, ten plik musi znajdować się w tym samym folderze, w którym jest uruchamiany CCMSetup.exe.  
 
 Przykład: `CCMSetup.exe /config:&lt;Configuration File Name.txt\>`  
 
-Aby zapewnić odpowiedni format pliku, należy użyć pliku mobileclienttemplate.tcf z &lt;katalog programu Configuration Manager\>\\bin\\&lt;platformy\> folderu na serwerze lokacji. Ten plik zawiera również komentarzy o poszczególnych sekcjach i sposób ich używania. Określ właściwości instalacji klienta w sekcji [Client Install] po następującym tekście: **Zainstaluj = INSTALL = ALL**.  
+Aby zapewnić odpowiedni format pliku, należy użyć pliku mobileclienttemplate.tcf z &lt;katalog programu Configuration Manager\>\\bin\\&lt;platformy\> folderu na serwerze lokacji. Ten plik zawiera również komentarzy o poszczególnych sekcjach i sposób ich używania. Określ właściwości instalacji klienta w sekcji [Client Install] po następującym tekście: **Install=INSTALL=ALL**.  
 
 Wpis w sekcji [Client Install] przykład: `Install=INSTALL=ALL SMSSITECODE=ABC SMSCACHESIZE=100`  
 
 ### <a name="skipprereqltfilename"></a>/ skipprereq:&lt;filename\>
 
- Określa, że CCMSetup.exe ma nie instalować określonego programu wymagań wstępnych, podczas instalowania klienta programu Configuration Manager. Ta właściwość obsługuje wprowadzanie wielu wartości. Wartości należy rozdzielać średnikiem (;).  
+ Określa, że CCMSetup.exe ma nie instalować określonego programu wymagań wstępnych, podczas instalowania klienta programu Configuration Manager. Ten parametr obsługuje wprowadzanie wielu wartości. Wartości należy rozdzielać średnikiem (;).  
 
 
  Przykłady: `CCMSetup.exe /skipprereq:dotnetfx40_client_x86_x64.exe` lub `CCMSetup.exe /skipprereq:dotnetfx40_client_x86_x64.exe;windowsupdateagent30_x86.exe`  
@@ -226,7 +226,7 @@ Określa, że CCMSetup.exe nie instalować określonej funkcji podczas instalacj
 Przykład: `CCMSetup.exe /ExcludeFeatures:ClientUI` na kliencie nie instaluje się Centrum oprogramowania.  
 
 > [!NOTE]  
->  **ClientUI** jest jedyną wartość obsługiwaną **/ExcludeFeatures** właściwości.  
+>  **ClientUI** jest jedyną wartość obsługiwaną **/ExcludeFeatures** parametru.  
 
 
 
@@ -249,7 +249,7 @@ Przykład: `CCMSetup.exe /ExcludeFeatures:ClientUI` na kliencie nie instaluje si
 
 ### <a name="ccmsetupcmd"></a>CCMSETUPCMD 
 
-Określa właściwości wiersza polecenia, które są przekazywane do ccmsetup.exe, po jego zainstalowaniu, ccmsetup.msi. Mają inne właściwości wewnątrz cudzysłowów. Tej właściwości należy użyć, gdy uruchamianie klienta programu Configuration Manager przy użyciu metody instalacji Intune zarządzanie urządzeniami Przenośnymi. 
+Określa parametry wiersza polecenia i właściwości, które są przekazywane do ccmsetup.exe, po jego zainstalowaniu, ccmsetup.msi. Mają inne właściwości wewnątrz cudzysłowów. Tej właściwości należy użyć, gdy uruchamianie klienta programu Configuration Manager przy użyciu metody instalacji Intune zarządzanie urządzeniami Przenośnymi. 
 
 Przykład: `ccmsetup.msi CCMSETUPCMD="/mp:https://mp.contoso.com CCMHOSTNAME=mp.contoso.com"`
 
@@ -314,13 +314,13 @@ Określa, czy komputer może zostać ponownie uruchom po instalacji klienta, je�
 > [!IMPORTANT]  
 >  Komputer zostanie uruchomiony bez ostrzeżenia, nawet jeśli użytkownik jest zalogowany.  
 
-Przykład: **CCMSetup.exe CCMALLOWSILENTREBOOT**  
+Przykład: **CCMSetup.exe  CCMALLOWSILENTREBOOT**  
 
 ### <a name="ccmalwaysinf"></a>CCMALWAYSINF
 
  Ustaw **1** do określenia, czy klient jest zawsze oparty na Internecie i nigdy nie nawiązuje połączenie z siecią intranet. Typ połączenia klienta jest wyświetlany jako **Zawsze Internet**.  
 
- Tej właściwości należy użyć w połączeniu z właściwością CCMHOSTNAME, która określa nazwę FQDN punktu zarządzania internetowego. Także używać z właściwością/usepkicert programu CCMSetup i z kodem lokacji.  
+ Tej właściwości należy użyć w połączeniu z właściwością CCMHOSTNAME, która określa nazwę FQDN punktu zarządzania internetowego. Także używać z/usepkicert parametru CCMSetup i z kodem lokacji.  
 
  Aby uzyskać więcej informacji dotyczących zarządzania klientami internetowymi, zobacz [uwagi dotyczące komunikacji klientów z Internetu lub niezaufanego lasu](../../plan-design/hierarchy/communications-between-endpoints.md#BKMK_clientspan).  
 
@@ -460,7 +460,7 @@ Przykład: `CCMSetup.exe CCMLOGMAXSIZE=300000`
 
  Jeśli ustawiono wartość TRUE, ta właściwość wyłącza administracyjne użytkownikom zmianę przypisanej lokacji w **programu Configuration Manager** Panelu sterowania.  
 
- Przykład: **CCMSetup.exe DISABLESITEOPT = TRUE**  
+ Przykład: **CCMSetup.exe DISABLESITEOPT=TRUE**  
 
 ### <a name="disablecacheopt"></a>DISABLECACHEOPT
 
