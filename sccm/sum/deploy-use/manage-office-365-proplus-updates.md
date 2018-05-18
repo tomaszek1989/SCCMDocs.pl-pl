@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: eac542eb-9aa1-4c63-b493-f80128e4e99b
-ms.openlocfilehash: a7c1786e9acce10d98da031d9d5df3b81f9a1a28
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a94ac00b8fce6098cbd829947f4e2fbdcb761b9e
+ms.sourcegitcommit: c5e078b8eee87f527e5b5a0c2eb687bb9d6896c5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="manage-office-365-proplus-with-configuration-manager"></a>Zarządzanie usługą Office 365 ProPlus w programie Configuration Manager
 
@@ -96,7 +96,7 @@ Po utworzeniu i wdrażania aplikacji usługi Office 365 za pomocą pakietu Offic
 
 
 ## <a name="deploy-office-365-updates"></a>Wdrażanie aktualizacji usługi Office 365
-Począwszy od aktualizacji klienta usługi Office 365 1706 wersji programu Configuration Manager zostały przeniesione do **zarządzania klienta usługi Office 365** >**aktualizacji pakietu Office 365** węzła.  Przenieś nie ma wpływu na konfigurację reguły ADR. 
+Począwszy od aktualizacji klienta usługi Office 365 1706 wersji programu Configuration Manager zostały przeniesione do **zarządzania klienta usługi Office 365** >**aktualizacji pakietu Office 365** węzła. To przeniesienie nie ma wpływu na bieżącą konfigurację reguły ADR. 
 
 Do wdrażania aktualizacji usługi Office 365 z programem Configuration Manager, wykonaj następujące kroki:
 
