@@ -9,11 +9,11 @@ ms.topic: conceptual
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: c28964d8cf6b11e9999a9d0967422ececafe234b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: dd37bb3f452f5018dd1130d43ead0117481f2aab
+ms.sourcegitcommit: b113f184efafa166813c18fa1fa000b75a67e4eb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/22/2018
 ---
 # <a name="cryptographic-controls-technical-reference"></a>Informacje techniczne dotyczące formantów kryptograficznych
 
@@ -116,18 +116,7 @@ System Center Configuration Manager korzysta z podpisywania i szyfrowania, aby u
 ### <a name="mobile-device-management-and-pki-certificates"></a>Zarządzanie urządzeniami przenośnymi a certyfikaty PKI  
  Jeśli urządzenie przenośne nie jest zablokowany przez operatora sieci komórkowej, można użyć programu Configuration Manager lub Microsoft Intune do żądania i instalowania certyfikatu klienta. Ten certyfikat umożliwia uwierzytelnianie wzajemne między klientem na urządzeniu przenośnym i systemy lokacji programu Configuration Manager lub usługi Microsoft Intune. Jeśli urządzenie przenośnie jest zablokowanie, nie można użyć programu Configuration Manager lub usługi Intune do wdrażania certyfikatów.  
 
- Po włączeniu spisu sprzętu dla urządzeń przenośnych programu Configuration Manager lub usługi Intune będą również inwentaryzować certyfikaty zainstalowane na urządzeniu przenośnym.  
-
-### <a name="out-of-band-management-and-pki-certificates"></a>Zarządzanie poza pasmem a certyfikaty PKI  
- Do zarządzania poza pasmem komputerami opartymi na technologii Intel AMT używane są co najmniej dwa typy certyfikatów wystawionych przez infrastrukturę PKI: certyfikaty udostępniania AMT i certyfikaty serwera sieci Web.  
-
- Punkt obsługi poza pasmem korzysta z certyfikatu udostępniania AMT, aby przygotować komputery do zarządzania poza pasmem. Komputery oparte na technologii AMT, które będą udostępniane, muszą ufać certyfikatowi dostarczonemu przez punkt zarządzania poza pasmem. Komputery oparte na technologii AMT są domyślnie skonfigurowane przez producenta komputera w taki sposób, aby używały zewnętrznych urzędów certyfikacji, jak VeriSign, Go Daddy, Comodo i Starfield. Jeśli nabycia certyfikatu udostępniania od jednego z zewnętrznych urzędów certyfikacji i konfigurowanie programu Configuration Manager do korzystania z tego certyfikatu komputery oparte na technologii AMT będą ufać urzędowi certyfikacji, który wystawił certyfikat udostępniania, a udostępnienie będzie możliwe. Najlepszym rozwiązaniem w zakresie zabezpieczeń będzie jednak użycie własnego, wewnętrznego urzędu certyfikacji w celu wystawienia certyfikatu udostępniającego AMT.  
-
- Komputery oparte na technologii AMT używają składnika serwera sieci Web, który jest częścią oprogramowania układowego i szyfruje kanał komunikacyjny z punktem obsługi poza pasmem przy użyciu protokołu TLS (Transport Layer Security). System BIOS w komputerach opartych na technologii AMT nie ma interfejsu użytkownika umożliwiającego ręczne skonfigurowanie certyfikatu, jest więc wymagany urząd certyfikacji przedsiębiorstwa Microsoft, który automatycznie zatwierdza żądania certyfikatów od komputerów opartych na technologii AMT. Żądanie używa formatu PKCS#10 jako formatu żądania, który z kolei używa formatu PKCS#7 do transmitowania informacji o certyfikacie na komputer oparty na technologii AMT.  
-
- Komputer oparty na technologii AMT zostaje uwierzytelniony na komputerze, który nim zarządza, nie istnieje jednak odpowiedni certyfikat PKI klienta na komputerze, który nim zarządza. Tego rodzaju komunikacja używa zamiast tego uwierzytelniania Kerberos lub HTTP Digest. W przypadku uwierzytelniania HTTP Digest szyfrowanie następuje przy użyciu protokołu TLS.  
-
- Do zarządzania komputerami opartymi na technologii AMT poza pasmem może być wymagany dodatkowy typ certyfikatu: opcjonalny certyfikat klienta dla uwierzytelnianych sieci przewodowych i bezprzewodowych 802.1X. Komputer oparty na technologii AMT może wymagać certyfikatu klienta w celu uwierzytelnienia na serwerze RADIUS. Jeśli serwer RADIUS jest skonfigurowany do uwierzytelniania za pomocą protokołu EAP-TLS, certyfikat klienta jest zawsze wymagany. Jeśli serwer RADIUS jest skonfigurowany do uwierzytelniania za pomocą protokołów EAP-TTLS/MSCHAPv2 lub PEAPv0/EAP-MSCHAPv2, konfiguracja serwera RADIUS określa, czy jest wymagany certyfikat klienta. Komputer oparty na technologii AMT żąda tego certyfikatu przy użyciu tego samego procesu jak w przypadku żądania certyfikatu serwera sieci Web.  
+ Po włączeniu spisu sprzętu dla urządzeń przenośnych programu Configuration Manager lub usługi Intune będą również inwentaryzować certyfikaty zainstalowane na urządzeniu przenośnym.   
 
 ### <a name="operating-system-deployment-and-pki-certificates"></a>Wdrożenie systemu operacyjnego a certyfikaty PKI  
  Jeśli używasz programu Configuration Manager do wdrażania systemów operacyjnych i punkt zarządzania wymaga połączeń klienckich HTTPS, komputer kliencki musi mieć certyfikat do komunikacji z punktem zarządzania również, nawet jeśli komputer jest na etapie przejściowym, takim jak rozruch z nośnika sekwencji zadań lub punktu dystrybucji obsługującego środowisko PXE. Tego scenariusza, należy utworzyć certyfikat uwierzytelniania klienta PKI i wyeksportować go przy użyciu klucza prywatnego, a następnie zaimportować go do właściwości serwera lokacji i również dodać € pointâ zarządzania™ s certyfikatu zaufanego głównego urzędu certyfikacji.  

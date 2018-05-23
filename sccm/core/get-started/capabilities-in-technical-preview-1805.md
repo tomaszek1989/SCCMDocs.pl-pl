@@ -2,7 +2,7 @@
 title: Technical Preview 1805
 titleSuffix: Configuration Manager
 description: Więcej informacji na temat nowych funkcji dostępnych w wersji Configuration Manager Technical Preview 1805.
-ms.date: 05/11/2018
+ms.date: 05/21/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,11 +10,11 @@ ms.assetid: 7996b3eb-5259-483b-af40-adae2943d123
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: bb2b25440c87d4969d152ce410b8a28f010868ce
-ms.sourcegitcommit: 021272d5858e5dbb650b95644736d1de3dab7d8a
+ms.openlocfilehash: 24cb16ab17475bdd063949c7e3e2961b53341026
+ms.sourcegitcommit: b113f184efafa166813c18fa1fa000b75a67e4eb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/15/2018
+ms.lasthandoff: 05/22/2018
 ---
 # <a name="capabilities-in-technical-preview-1805-for-system-center-configuration-manager"></a>Funkcje w wersji Technical Preview 1805 programu System Center Configuration Manager
 
@@ -413,6 +413,9 @@ W tej wersji dodano następujące ulepszenia do nowego [opinii](capabilities-in-
 - Okno dialogowe opinii pamięta teraz poprzednich ustawień, takich jak wybrane opcje i adres e-mail.  
 
 - Obsługuje ona teraz w trybie offline opinii. Zapisz swoją opinię w konsoli, a następnie przekazać do firmy Microsoft z systemu podłączonej do Internetu. Użyj nowego narzędzia przesyłania opinii w trybie offline znajduje się w `cd.latest\SMSSETUP\Tools\UploadOfflineFeedback\UploadOfflineFeedback.exe`. Aby wyświetlić dostępne i wymagane opcje wiersza polecenia, należy uruchomić narzędzie z `--help` opcji. Połączony system musi mieć dostęp do **petrol.office.microsoft.com**.
+
+### <a name="known-issues"></a>Znane problemy
+Korzystając z **Wyślij uśmiech** lub **Wyślij niezadowolenie** z poziomu konsoli na komputerze z łącznością z Internetem, może zwrócić z następującym komunikatem: "Wystąpił błąd podczas wysyłania opinii." Po kliknięciu **szczegółowe**, widoczny jest następujący tekst: `{"Message":""}`. Przyczyną tego błędu jest to znany problem z odpowiedzią z wewnętrznej bazy danych systemu opinii. Można zignorować ten błąd. Microsoft nadal otrzymał Twoją opinię. (Jeśli zostanie wyświetlone szczegóły inny komunikat, użyć w trybie offline opinie aby ponowić próbę wysyłanie opinii w późniejszym czasie).
 
 
 
