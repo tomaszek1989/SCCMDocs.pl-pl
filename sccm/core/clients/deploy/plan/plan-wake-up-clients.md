@@ -1,8 +1,8 @@
 ---
 title: Wznawianie klientów
 titleSuffix: Configuration Manager
-description: Planowanie sposobu wznawiania działania klientów w programie System Center Configuration Manager.
-ms.date: 04/23/2017
+description: Planowanie sposobu wznawiania działania klientów programu System Center Configuration Manager przy użyciu wznawiania pracy w sieci LAN (WOL).
+ms.date: 05/23/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.topic: conceptual
@@ -10,31 +10,31 @@ ms.assetid: 52ee82b2-0b91-4829-89df-80a6abc0e63a
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: aa5a0b30526f66add7dfb87fa988ed502cca1ee1
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 2f36ff6c28bd8a3fa23599652aff82ef0c721cad
+ms.sourcegitcommit: fe41e2b3a7d0c735c72252fc817c5b946e25bc3d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="plan-how-to-wake-up-clients-in-system-center-configuration-manager"></a>Planowanie sposobu wznawiania działania klientów w programie System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
- Menedżer konfiguracji obsługuje dwa funkcji wake on technologie sieci lokalnych (LAN) do wznawiania komputerów w trybie uśpienia, jeśli chcesz zainstalować wymaganego oprogramowania, takie jak aktualizacje oprogramowania i aplikacji: tradycyjne pakiety wznawiania i polecenia włączania zasilania AMT.  
+ Program Configuration Manager obsługuje tradycyjne pakiety wznawiania do wznawiania komputerów w trybie uśpienia, jeśli chcesz zainstalować wymaganego oprogramowania, takie jak aktualizacje oprogramowania i aplikacji.  
 
 Przy użyciu ustawień klienta serwera proxy wznawiania, można uzupełnić metodę tradycyjnych pakietów wznawiania. Serwer proxy wznawiania używa protokół peer-to-peer oraz wybranych komputerów, aby sprawdzić, czy inne komputery w podsieci są wznowione oraz wznowić je w razie potrzeby. Gdy lokacja jest skonfigurowana dla funkcji Wake On LAN i klientów są skonfigurowane dla serwera proxy wznawiania, proces działa w następujący sposób:  
 
-1.  Komputery z zainstalowanym klientem programu Configuration Manager, które nie są uśpione w podsieci, sprawdzają czy inne komputery w podsieci są wznowione. Robią to, wysyłając siebie polecenie TCP/IP ping co 5 sekund.  
+1.  Komputery z zainstalowanym klientem programu Configuration Manager, które nie są uśpione w podsieci, sprawdzają czy inne komputery w podsieci są wznowione. Robią to sprawdzenie, wysyłając siebie polecenie TCP/IP ping co pięć sekund.  
 
 2.  Jeśli nie ma odpowiedzi z innych komputerów, są one przyjęto uśpione. Komputery wznowione stają się *komputer zarządzający* podsieci.  
 
      Ponieważ istnieje możliwość, że komputer może nie odpowiadać z powodów innych niż jest w stanie uśpienia (na przykład jest wyłączony, odłączony od sieci lub ustawienie serwera proxy wznawiania klienta nie jest już stosowane), do komputerów będzie wysyłany pakiet wznawiania codziennie o godzinie 2: 00 czas lokalny. Nieodpowiadające komputery nie będą już uważane za uśpione i nie będą wznawiane przez serwer proxy wznawiania.  
 
-     Do obsługi serwera proxy wznawiania, co najmniej trzy komputery muszą być w stanie aktywności dla każdej podsieci. Aby to osiągnąć, trzy komputery są wybrane w sposób niejednoznaczny jako *komputery stróżujące* podsieci. Oznacza to, że będą stale wznowione, niezależnie od ewentualnych skonfigurowanych zasad zasilania nakazujących uśpienie lub hibernację po okresie braku aktywności. Komputery stróżujące uznawać zamknięcia lub ponownego uruchomienia polecenia, na przykład w wyniku zadań konserwacji. W takim przypadku pozostałe komputery stróżujące wznawianie inny komputer w podsieci, aby podsieci w dalszym ciągu ma trzy komputery stróżujące.  
+     Do obsługi serwera proxy wznawiania, co najmniej trzy komputery muszą być w stanie aktywności dla każdej podsieci. Uzyskanie to wymaganie, trzy komputery są wybrane w sposób niejednoznaczny jako *komputery stróżujące* podsieci. Ten stan oznacza, że będą stale wznowione, niezależnie od ewentualnych skonfigurowanych zasad zasilania nakazujących uśpienie lub hibernację po okresie braku aktywności. Komputery stróżujące uznawać zamknięcia lub ponownego uruchomienia polecenia, na przykład w wyniku zadań konserwacji. Pozostałe komputery stróżujące wznawiania inny komputer w podsieci, aby nadal mieć trzy komputery stróżujące podsieci, w przypadku tej akcji.  
 
 3.  Komputery zarządzające nakazują przełącznikowi do przekierowywania ruchu sieciowego dla uśpionych komputerów do siebie.  
 
-     Przekierowywanie odbywa się przez komputer zarządzający przesyła ramkę Ethernet używającą adresu MAC uśpionego komputera jako adresu źródłowego. Dzięki temu zachowują się tak, jakby uśpiony komputer przeniósł się do tego samego portu, który komputer zarządzający znajduje się na przełącznik sieciowy. Komputer zarządzający wysyła również pakiety ARP dla uśpionych komputerów, aby zapewnić bieżące wpisy w pamięci podręcznej ARP. Komputer zarządzający będzie także odpowiadał na żądania ARP w imieniu uśpionego komputera i Odpowiedz przy użyciu adresu MAC uśpionego komputera.  
+     Przekierowywanie odbywa się przez komputer zarządzający przesyła ramkę Ethernet używającą adresu MAC uśpionego komputera jako adresu źródłowego. To zachowanie sprawia, że przełącznik sieciowy zachowują się tak, jakby uśpiony komputer przeniósł się do tego samego portu, który komputer zarządzający znajduje się na. Komputer zarządzający wysyła również pakiety ARP dla uśpionych komputerów, aby zapewnić bieżące wpisy w pamięci podręcznej ARP. Komputer zarządzający również odpowiada na żądania ARP w imieniu uśpionego komputera i replys z adresem MAC uśpionego komputera.  
 
     > [!WARNING]  
     >  W trakcie tego procesu mapowanie adresu IP do MAC dla uśpionego komputera nie jest taka sama. Serwer proxy wznawiania działa informuje przełącznik sieciowy do innej karty sieciowej korzysta z portu, który został zarejestrowany przez inną kartę sieciową. Jednak to zachowanie jest nazywany niestabilnością adresu MAC i jest typowe dla standardowego działania sieci. Niektóre narzędzia monitorowania sieci szukają oznak takiego działania i można założyć, że dany element jest nieprawidłowy. W rezultacie tych narzędzi do monitorowania można generować alerty lub wyłączać porty, gdy używasz serwera proxy wznawiania.  
@@ -50,7 +50,7 @@ Przy użyciu ustawień klienta serwera proxy wznawiania, można uzupełnić meto
 > [!IMPORTANT]  
 >  Jeśli masz odrębny zespół, która jest odpowiedzialna za infrastrukturę sieci i usługami sieciowymi, powiadomienia, a także włączyć prowadzonej ewaluacji i testowaniu. Na przykład w sieci, która korzysta z metodą 802.1 X kontroli dostępu do sieci, serwer proxy wznawiania nie będzie działać i może zakłócać funkcjonowanie sieci. Ponadto serwer proxy wznawiania może spowodować niektóre narzędzia do generowania alertów w sytuacji wykrycia ruch do innych komputerów wznawiania monitorowania sieci.  
 
--   Obsługiwani klienci są Windows 7, Windows 8, Windows Server 2008 R2, Windows Server 2012.  
+-   Wszystkie systemy operacyjne Windows wymienionym obsługiwani klienci w [obsługiwane systemy operacyjne dla klientów i urządzeń](/sccm/core/plan-design/configs/supported-operating-systems-for-clients-and-devices) są obsługiwane w przypadku funkcji Wake On LAN.  
 
 -   Systemy operacyjne gościa, które są uruchamiane na maszynie wirtualnej nie są obsługiwane.  
 
@@ -60,7 +60,7 @@ Przy użyciu ustawień klienta serwera proxy wznawiania, można uzupełnić meto
 
 -   Jeśli komputer ma więcej niż jedną kartę sieciową, która karta będzie używana dla serwera proxy wznawiania; nie można skonfigurować Wybór jest deterministyczna. Wybrana karta zostanie jednak zapisana w SleepAgent_ < domena\> @SYSTEM_0.log pliku.  
 
--   Sieć musi zezwalać na żądania echa protokołu ICMP (przynajmniej w obrębie podsieci). Nie można skonfigurować 5-sekundowego interwału, który służy do wysyłania komunikaty ICMP ping poleceń.  
+-   Sieć musi zezwalać na żądania echa protokołu ICMP (przynajmniej w obrębie podsieci). Nie można skonfigurować interwał pięciu sekund, które jest używane do wysyłania polecenia ping protokołu ICMP.  
 
 -   Komunikacja jest bez szyfrowania i uwierzytelniania i protokołu IPsec nie jest obsługiwany.  
 
@@ -80,7 +80,7 @@ Jeśli chcesz wznawiania komputerów dla zaplanowaną instalacją oprogramowania
 
  Aby użyć serwera proxy wznawiania, należy wdrożyć ustawienia klienta serwera proxy wznawiania zarządzania energią, oprócz konfigurowania lokacji głównej.  
 
-Należy również postanowić, czy używać pakietów emisji skierowanych do podsieci lub pakietów emisji pojedynczej i jakiego numeru portu UDP. Domyślnie tradycyjne pakiety wznawiania są przesyłane przy użyciu portu 9 UDP, ale aby zwiększyć poziom bezpieczeństwa, można wybrać alternatywny port dla witryny, jeśli to jest on obsługiwany przez pośredniczące routery i zapory.  
+Zdecyduj, czy używać pakietów emisji skierowanych do podsieci lub pakietów emisji pojedynczej i jakiego numeru portu UDP. Domyślnie tradycyjne pakiety wznawiania są przesyłane przy użyciu portu 9 UDP, ale aby zwiększyć poziom bezpieczeństwa, można wybrać alternatywny port dla witryny, jeśli to jest on obsługiwany przez pośredniczące routery i zapory.  
 
 ### <a name="choose-between-unicast-and-subnet-directed-broadcast-for-wake-on-lan"></a>Wybór między emisją pojedynczą i emisją kierowaną do podsieci na potrzeby funkcji Wake on LAN  
  W przypadku wybrania wznawiania komputerów, wysyłając tradycyjnych pakietów wznawiania należy zdecydować, czy do przesyłania pakietów emisji pojedynczej lub podsieci emisji skierowanej. Jeśli używasz serwera proxy wznawiania, należy wybrać opcję pakietów emisji pojedynczej. W przeciwnym razie użyj poniższej tabeli, aby ułatwić określenie, którą metodę transmisji należy wybrać.  
