@@ -2,7 +2,7 @@
 title: Zalecany sprzęt
 titleSuffix: Configuration Manager
 description: Pobierz zalecenia dotyczące sprzętu, aby ułatwić skalowanie poza podstawowego wdrożenia środowiska System Center Configuration Manager.
-ms.date: 03/22/2018
+ms.date: 05/23/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,11 +10,11 @@ ms.assetid: 5267f0af-34d3-47a0-9ab8-986c41276e6c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: ae2ba43c8e5c97dd0b8b9ba43c3e3fde1eb259f4
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 51d3a537fd7aa874fb2662bb6ec15fcfaa2124e5
+ms.sourcegitcommit: fe41e2b3a7d0c735c72252fc817c5b946e25bc3d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="recommended-hardware-for-system-center-configuration-manager"></a>Zalecany sprzęt dla programu System Center Configuration Manager
 
@@ -23,6 +23,7 @@ ms.lasthandoff: 05/03/2018
 Poniższe zalecenia to wytyczne do stosowania podczas skalowania środowiska programu System Center Configuration Manager w celu obsługi ponad wykraczającego poza podstawowe wdrażanie lokacji, systemami lokacji i klientów. Zalecenia te nie odnoszą się do wszystkich możliwych konfiguracji lokacji i hierarchii.  
 
  Skorzystaj z informacji w poniższych sekcjach przedstawiono wskazówki pomocne dla sprzętu, które mogą spełniać obciążeniem przetwarzania dla klientów i lokacji korzystających z dostępnych funkcji programu Configuration Manager z domyślnymi konfiguracjami.  
+
 
 
 ##  <a name="bkmk_ScaleSieSystems"></a> Systemy lokacji  
@@ -113,11 +114,11 @@ Aby uzyskać najlepszą wydajność należy używać konfiguracji RAID 10 dla ws
 
 -   **Miejsce na dysku:** 500 MB dostępnego miejsca, 5 GB jest zalecane dla pamięci podręcznej klienta programu Configuration Manager. Mniej miejsca na dysku jest wymagany, jeśli używasz ustawienia dostosowane do zainstalowania klienta programu Configuration Manager:  
 
-    -   Użyj/skipprereq właściwości wiersza polecenia programu CCMSetup, aby uniknąć instalowania plików, które nie są wymagane przez klienta. Na przykład uruchom **CCMSetup.exe /skipprereq:silverlight.exe** Jeśli klient nie korzystają z katalogu aplikacji. Począwszy od programu Configuration Manager 1802 Silverlight jest już instalowana automatycznie.  
+    -   Użyj/skipprereq właściwości wiersza polecenia programu CCMSetup, aby uniknąć instalowania plików, które nie są wymagane przez klienta. Na przykład uruchom `CCMSetup.exe /skipprereq:silverlight.exe` Jeśli klient nie korzystają z katalogu aplikacji. Począwszy od programu Configuration Manager 1802 Silverlight jest już instalowana automatycznie.  
 
-    -   Ustaw mniejszy niż domyślny (5120 MB) rozmiar pliku pamięci podręcznej za pomocą właściwości Client.msi SMSCACHESIZE. Rozmiar minimalny to 1 MB. Na przykład polecenie **CCMSetup.exe SMSCachesize=2** tworzy pamięć podręczną o rozmiarze 2 MB.  
+    -   Ustaw mniejszy niż domyślny (5120 MB) rozmiar pliku pamięci podręcznej za pomocą właściwości Client.msi SMSCACHESIZE. Rozmiar minimalny to 1 MB. Na przykład `CCMSetup.exe SMSCachesize=2` tworzy pamięć podręczną o rozmiarze 2 MB.  
 
-    Aby uzyskać więcej informacji o tych właściwościach instalacji klienta, zobacz [Informacje o właściwościach instalacji klientów w programie System Center Configuration Manager](../../../core/clients/deploy/about-client-installation-properties.md).  
+    Aby uzyskać więcej informacji o tych ustawieniach instalacji klienta, zobacz [o właściwościach instalacji klienta](../../../core/clients/deploy/about-client-installation-properties.md).  
 
     > [!TIP]  
     >  Zainstalowanie klienta z minimalną ilością wolnego miejsca jest przydatne w przypadku urządzeń z systemem Windows Embedded, które zazwyczaj mają mniejsze rozmiary dysku niż standardowe komputery z systemem Windows.  
@@ -173,6 +174,6 @@ Oprócz programu PowerShell Windows Management Framework (WMF) w wersji 3.0 lub 
 
 |Rola|Procesor CPU (rdzenie)|Pamięć (GB)|Miejsce na dysku (GB)|  
 |----------|---------------|-------------------|-----------------------|  
-|Serwer lokacji i bazy danych|2 - 4|7 - 12|100|  
+|Serwer lokacji i bazy danych|2 - 4|8 – 12|100|  
 |Serwer systemu lokacji|1 - 4|2 - 4|50|  
 |Klient|1 - 2|1 - 3|30|  

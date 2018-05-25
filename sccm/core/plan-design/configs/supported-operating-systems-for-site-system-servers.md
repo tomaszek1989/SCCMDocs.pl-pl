@@ -2,7 +2,7 @@
 title: Obsługiwane serwery systemu lokacji
 titleSuffix: Configuration Manager
 description: Dowiedz się, które wersje systemu Windows można użyć do hostowania lokacji programu System Center Configuration Manager lub rola systemu lokacji.
-ms.date: 04/17/2018
+ms.date: 05/23/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,11 +10,11 @@ ms.assetid: 17905b4c-3895-4ad4-a69c-5e0d0fc5a8c3
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: de7f340080111daf3f1b19e26aa838dc6db2e263
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: aa933186e95f084bd4e3e518e167a1cd301a4484
+ms.sourcegitcommit: fe41e2b3a7d0c735c72252fc817c5b946e25bc3d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="supported-operating-systems-for-system-center-configuration-manager-site-system-servers"></a>Obsługiwane systemy operacyjne dla serwerów systemu lokacji programu System Center Configuration Manager
 
@@ -254,6 +254,12 @@ Ten system operacyjny nie jest obsługiwany dla serwerów lokacji i ról systemu
     -   Punkty dystrybucji w tej wersji systemu operacyjnego nie obsługują multiemisji.  
 
     -   Punkty dystrybucji obsługują kilka różnych konfiguracji czy o różnych wymaganiach. W niektórych przypadkach te konfiguracje obsługują instalację nie tylko na serwerach, ale w systemach operacyjnych klienta. Aby uzyskać więcej informacji na temat opcji dostępnych dla punktów dystrybucji, zobacz [zarządzanie zawartością i infrastrukturą zawartości](../../../core/servers/deploy/configure/manage-content-and-content-infrastructure.md).  
+
+## <a name="the-server-core-installation-of-windows-server-version-1803"></a>Instalacja server core systemu Windows Server w wersji 1803
+<!--503702-->
+W programie Configuration Manager 1802, [w systemie Windows Server w wersji 1803](https://docs.microsoft.com/windows-server/get-started/get-started-with-1803) jest obsługiwana w przypadku użycia jako dystrybucji punktu z następującymi ograniczeniami:  
+  -   Obsługiwana jest tylko wersja x64-bitowych.
+  -   Punkty dystrybucji w tym systemie operacyjnym nie obsługują środowiska PXE lub multiemisji.  
 
 ## <a name="the-server-core-installation-of-windows-server-version-1709"></a>Instalacja server core systemu Windows Server w wersji 1709
 W programie Configuration Manager 1710, [w systemie Windows Server w wersji 1709](https://docs.microsoft.com/windows-server/get-started/get-started-with-1709) jest obsługiwana w przypadku użycia jako dystrybucji punktu z następującymi ograniczeniami:  

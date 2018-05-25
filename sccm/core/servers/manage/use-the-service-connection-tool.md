@@ -10,11 +10,11 @@ ms.assetid: 6e4964c5-43cb-4372-9a89-b62ae6a4775c
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 906b39f01b05600d86a045e07d3e28184e9360e8
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 1faabd64d11eeef8e825f22f7f661112813f5459
+ms.sourcegitcommit: fe41e2b3a7d0c735c72252fc817c5b946e25bc3d
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="use-the-service-connection-tool-for-system-center-configuration-manager"></a>Używanie narzędzia połączenia z usługą w programie System Center Configuration Manager
 
@@ -101,7 +101,13 @@ Aby określić serwer proxy, można użyć następujących parametrów opcjonaln
 Począwszy od wersji 1706, zmieniono domyślne zachowanie pobierania narzędzia i narzędzie obsługuje opcje kontroli, które możesz pobrać pliki.
 -   Domyślnie narzędzie pobierze tylko najnowszych dostępnych aktualizacji, do której ma zastosowanie do wersji witryny. Nie pobiera poprawki.
 
-Aby zmienić to zachowanie, użyj jednej z następujących parametrów do zmiany, które pliki są pobierane. Wersji lokacji jest określana na podstawie danych w pliku cab, który jest przekazywany po uruchomieniu narzędzia.
+Aby zmienić to zachowanie, użyj jednej z następujących parametrów do zmiany, które pliki są pobierane. 
+
+> [!NOTE]
+> Wersji lokacji jest określana na podstawie danych w pliku cab, który jest przekazywany po uruchomieniu narzędzia.
+>
+> Numer wersji można sprawdzić, wyszukując *SiteVersion*pliku txt w pliku cab.
+
 -   **-downloadall** tej opcji pliki do pobrania wszystkim łącznie aktualizacje i poprawki, niezależnie od wersji lokacji.
 -   **-downloadhotfix** ta opcja pobiera wszystkie poprawki niezależnie od wersji lokacji.
 -   **-downloadsiteversion** tej opcji pliki do pobrania, aktualizacje i poprawki, które mają wersję, która jest wyższa niż wersja lokacji.
@@ -160,8 +166,19 @@ Przykład wiersz polecenia, który używa *- downloadsiteversion*:
 
  Aby uzyskać informacje o instalowaniu aktualizacji, zobacz [Instalacja aktualizacji w konsoli programu System Center Configuration Manager](../../../core/servers/manage/install-in-console-updates.md).  
 
+## <a name="bkmk_cmd"></a> Pliki dziennika
+
+**ServiceConnectionTool.log**
+
+Zawsze należy uruchomić narzędzie połączenia usługi, wygeneruje plik dziennika w tej samej lokalizacji co narzędzie o nazwie **ServiceConnectionTool.log**.  Ten plik dziennika zawierają proste szczegółowe informacje dotyczące wykonywania narzędzia oparte na jakie polecenia są używane.  Istniejący plik dziennika zostanie zamieniony na każdym razem, gdy jest uruchomione narzędzie.
+
+**Plik ConfigMgrSetup.log**
+
+Podczas korzystania z narzędzia do łączenia i pobierania aktualizacji, w folderze głównym dysku systemowego o nazwie wygeneruje plik dziennika **ConfigMgrSetup.log**.  Ten plik dziennika będzie dostarczać bardziej szczegółowe informacje, takie jak co pliki są pobierane wyodrębnione, a jeśli skrót sprawdza zostały wykonane pomyślnie.
+
 ## <a name="bkmk_cmd"></a> Opcje wiersza polecenia  
  Aby wyświetlić informacje pomocnicze o narzędziu punktu połączenia z usługą, przejdź w wierszu polecenia do folderu zawierającego to narzędzie, a następnie uruchom polecenie:  **serviceconnectiontool.exe**.  
+
 
 |Opcje wiersza polecenia|Szczegóły|  
 |---------------------------|-------------|  
