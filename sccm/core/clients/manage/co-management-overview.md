@@ -10,11 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: d6bbc787-83a5-44b4-ad64-016e5da7413f
-ms.openlocfilehash: 3a667ae075ac688d4b49789ed88f858c2ff39397
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 9324126014245b586ba8fed87c670ac829f6cb81
+ms.sourcegitcommit: 493cc42f05b9388ef872e466e5a75d569642b9fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34703472"
 ---
 # <a name="co-management-for-windows-10-devices"></a>Jednoczesne zarządzania dla urządzeń z systemem Windows 10    
  Z poprzedniej aktualizacji systemu Windows 10, urządzenia z systemem Windows 10 można już Dołącz do lokalnej usługi Active Directory (AD) i oparta na chmurze usługi Azure AD, w tym samym czasie (rozwiązanie hybrydowe usługi Azure AD). Począwszy od programu Configuration Manager w wersji 1710 wspólnej zarządzania korzysta z tego ulepszenia i umożliwia jednocześnie zarządzanie urządzeniami 1709 wersji systemu Windows 10, używając programu Configuration Manager i usługi Intune. <!-- 1350871 -->
@@ -60,7 +61,7 @@ Istnieją dwa główne ścieżki do wspólnego zarządzania. Jedna jest inicjowa
 ### <a name="enable-co-management"></a>Włącz zarządzanie wspólnej 
  W konsoli programu Configuration Manager, przejdź do **administracji** > **omówienie** > **usługi w chmurze**  >  **Zarządzania wspólnej**. Wybierz **konfigurowania zarządzania wspólnej** na Wstążce, aby otworzyć **Kreator przechodzenia do wspólnego zarządzania** 
    
-1. Na **subskrypcji** kliknij przycisk **logowania** i zaloguj się do dzierżawy usługi Intune, a następnie kliknij przycisk **dalej**.    
+1. Na **subskrypcji** kliknij przycisk **logowania** i zaloguj się do dzierżawy usługi Intune, a następnie kliknij przycisk **dalej**. Upewnij się, że konto używane do logowania się na Twojej dzierżawy ma przypisanej licencji usługi Intune, w przeciwnym razie nie będzie z komunikatem o błędzie "Nie rozpoznano użytkownika".   
 2. W **włączenie** wybierz Twoje **automatycznej rejestracji w usłudze Intune** ustawienie. Wiersz polecenia dla urządzenia już zarejestrowane w usłudze Intune, należy skopiować, jeśli to konieczne. 
 3. Na **obciążeń** strony dla poszczególnych obciążeń, wybierz grupę urządzeń, aby przenieść do zarządzania za pomocą usługi Intune.
 4. W **przemieszczania** wybierz kolekcję urządzeń jako **pilotażowe kolekcji**. Sprawdź **Podsumowanie** i Zakończ pracę kreatora. 

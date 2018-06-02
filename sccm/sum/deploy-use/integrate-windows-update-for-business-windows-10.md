@@ -10,11 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-sum
 ms.assetid: 183315fe-27bd-456f-b2c5-e8d25e05229b
-ms.openlocfilehash: 3dd5a7f9717843244ab8477a09b109261618f9aa
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 07616a1c03c0383e9001418043dc6cd7ec117c1d
+ms.sourcegitcommit: 493cc42f05b9388ef872e466e5a75d569642b9fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34703489"
 ---
 # <a name="integration-with-windows-update-for-business-in-windows-10"></a>Integracja z usługą Windows Update dla Firm w systemie Windows 10
 
@@ -72,7 +73,8 @@ Począwszy od programu Configuration Manager 1706 wersji, można skonfigurować 
 >Począwszy od programu Configuration Manager 1802 wersji, można ustawić zasady odroczenia dla wewnętrznego systemu Windows. <!--507201-->Aby uzyskać więcej informacji o programie niejawnego systemu Windows, temacie [wprowadzenie do korzystania z programu niejawnego systemu Windows dla firm](https://docs.microsoft.com/windows/deployment/update/waas-windows-insider-for-business).
 
 ### <a name="prerequisites"></a>Wymagania wstępne
-Urządzenia z systemem Windows 10 zarządzane przez usługę Windows Update dla firm musi mieć połączenie z Internetem.
+-   Windows 10 w wersji 1703 lub nowszy
+-   Urządzenia z systemem Windows 10 zarządzane przez usługę Windows Update dla firm musi mieć połączenie z Internetem
 
 #### <a name="to-create-a-windows-update-for-business-deferral-policy"></a>Aby utworzyć Windows Update dla firm, zasady odroczenia
 1. W **Biblioteka oprogramowania** > **obsługi systemu Windows 10** > **usługi Windows Update dla firm zasad**
