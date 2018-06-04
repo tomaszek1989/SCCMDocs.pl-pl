@@ -1,26 +1,33 @@
 ---
-title: Planowanie wdrożenia klienta na urządzeniach Windows Embedded
-titleSuffix: Configuration Manager
+title: Planowanie wdrożenia klienta na urządzeniach Windows Embedded | Dokumentacja firmy Microsoft
 description: Planowanie wdrożenia klientów na urządzeniach Windows Embedded w programie System Center Configuration Manager.
+ms.custom: na
 ms.date: 04/23/2017
 ms.prod: configuration-manager
-ms.technology: configmgr-client
-ms.topic: conceptual
+ms.reviewer: na
+ms.suite: na
+ms.technology:
+- configmgr-client
+ms.tgt_pltfrm: na
+ms.topic: get-started-article
 ms.assetid: 038e61f9-f49d-41d1-9a9f-87bec9e00d5d
-author: aczechowski
-ms.author: aaroncz
-manager: dougeby
-ms.openlocfilehash: 6ca987411775ec3a6fbe626d4b34f83313673f5b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: MT
+caps.latest.revision: 7
+caps.handback.revision: 0
+author: arob98
+ms.author: angrobe
+manager: angrobe
+ms.openlocfilehash: 513dcb2a224a6e60553fdc602813e9fe47116235
+ms.sourcegitcommit: b438515490e04fb09c82a8af642d38e9a0605178
+ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 09/15/2017
+ms.locfileid: "22103608"
 ---
 # <a name="planning-for-client-deployment-to-windows-embedded-devices-in-system-center-configuration-manager"></a>Planowanie wdrożenia klientów na urządzeniach Windows Embedded w programie System Center Configuration Manager
 
 *Dotyczy: Program System Center Configuration Manager (Current Branch)*
 
-<a name="BKMK_DeployClientEmbedded"></a> Jeśli urządzenie Windows Embedded nie zawiera klienta programu System Center Configuration Manager, można użyć dowolnej metody instalacji klienta, jeśli urządzenie spełnia wymagane zależności. Jeśli urządzenie osadzone obsługuje filtry zapisu, przed zainstalowaniem klienta konieczne jest ich wyłączenie, a następnie ponowne ich włączenie po zainstalowaniu klienta i przypisaniu go do lokacji.  
+<a name="BKMK_DeployClientEmbedded"></a>Jeśli urządzenie Windows Embedded nie zawiera klienta programu System Center Configuration Manager, można użyć dowolnej metody instalacji klienta, jeśli urządzenie spełnia wymagane zależności. Jeśli urządzenie osadzone obsługuje filtry zapisu, przed zainstalowaniem klienta konieczne jest ich wyłączenie, a następnie ponowne ich włączenie po zainstalowaniu klienta i przypisaniu go do lokacji.  
 
  Pamiętaj, że po wyłączeniu filtrów nie należy wyłączać sterowników filtrów. Zwykle te sterowniki są uruchamiane automatycznie podczas uruchamiania komputera. Wyłączenie tych sterowników zapobiegnie instalacji klienta albo zakłóci aranżację filtru zapisu, powodując niepowodzenie działania klienta. Oto usługi skojarzone z każdym typem filtru zapisu, który nie może zostać wyłączony:  
 
@@ -58,7 +65,7 @@ ms.lasthandoff: 05/03/2018
 >
 > **Urządzenia używające tylko plikach:** Skonfiguruj następujące wyjątki, aby zachować stan klienta i dane spisu między ponownymi uruchomieniami urządzeń:  
 >   
->  -   CCMINSTALLDIR\\\*.sdf  
+>  -   CCMINSTALLDIR\\*.sdf  
 > -   CCMINSTALLDIR\ServiceData  
 > -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\CCM\StateSystem  
 >   

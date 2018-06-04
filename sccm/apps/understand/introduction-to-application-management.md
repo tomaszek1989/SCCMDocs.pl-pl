@@ -1,20 +1,26 @@
 ---
-title: Wprowadzenie do zarządzania aplikacjami
-titleSuffix: Configuration Manager
+title: Wprowadzenie do zarządzania aplikacjami | Dokumentacja firmy Microsoft
 description: Wykryj podstawowe informacje, które będą potrzebne do zarządzania i wdrażania aplikacji w programie System Center Configuration Manager.
+ms.custom: na
 ms.date: 12/23/2016
 ms.prod: configuration-manager
-ms.technology: configmgr-app
-ms.topic: conceptual
+ms.reviewer: na
+ms.suite: na
+ms.technology:
+- configmgr-app
+ms.tgt_pltfrm: na
+ms.topic: get-started-article
 ms.assetid: 08f711ba-83bf-4b5f-9520-a0778c6ae7eb
-author: aczechowski
-ms.author: aaroncz
-manager: dougeby
-ms.openlocfilehash: bcdc5800a1c280c99289528c40e0efee8acf5ad5
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
-ms.translationtype: MT
+caps.latest.revision: 18
+author: robstackmsft
+ms.author: robstack
+manager: angrobe
+ms.openlocfilehash: 959a36413d06bb225f260bd44c1d3d59efd44e69
+ms.sourcegitcommit: 51fc48fb023f1e8d995c6c4eacfda7dbec4d0b2f
+ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 08/07/2017
+ms.locfileid: "20784595"
 ---
 # <a name="introduction-to-application-management-in-system-center-configuration-manager"></a>Wprowadzenie do zarządzania aplikacjami w programie System Center Configuration Manager
 
@@ -49,12 +55,12 @@ W tym temacie omówiono podstawowe zagadnienia, które należy wiedzieć przed r
  Menedżer konfiguracji umożliwia wdrażanie następujących typów aplikacji:  
 
 - Instalator Windows (plik *.msi)
-- Pakiet aplikacji systemu Windows (\*.appx, \*.appxbundle)
+- Pakiet aplikacji systemu Windows (*.appx, *.appxbundle)
 - Pakiet aplikacji systemu Windows (w Sklepie Windows)
 - Microsoft Application Virtualization 4
 - Microsoft Application Virtualization 5
 - Plik cabinet systemu Windows Mobile
-- macOS  
+- System macOS  
 
 
 Ponadto podczas zarządzania urządzeniami za pomocą programu Microsoft Intune lub programu Configuration Manager zarządzanie urządzeniami lokalnymi, można zarządzać te dodatkowe typy aplikacji:
