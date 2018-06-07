@@ -10,16 +10,18 @@ manager: dougeby
 ms.date: 03/22/2018
 ms.topic: conceptual
 ms.assetid: 60e2022f-a4f9-40dd-af01-9ecb37b43878
-ms.openlocfilehash: 439e4e26c08b5a2710da0978ed2407d715bc86bd
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: ceb4004c7f4cc24ff17f0e9648cddb29cb26d898
+ms.sourcegitcommit: 493cc42f05b9388ef872e466e5a75d569642b9fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34569650"
 ---
 # <a name="switch-configuration-manager-workloads-to-intune"></a>Przełącz obciążeń programu Configuration Manager do usługi Intune
 W [urządzenia przygotowanie systemu Windows 10 do zarządzania wspólnej](co-management-prepare.md), przygotowywania urządzenia z systemem Windows 10 do zarządzania wspólnej. Te urządzenia są połączone z usługami AD, Azure AD, są zarejestrowane w usłudze Intune i zainstalować klienta Configuration Manager. Prawdopodobnie nadal masz urządzenia z systemem Windows 10, które dołączyły do usługi AD i klienta programu Configuration Manager, ale nie zostały dołączone do usługi Azure AD lub zarejestrowane w usłudze Intune. Poniższa procedura zawiera kroki, aby włączyć zarządzanie wspólnej przygotowanie pozostałe urządzenia z systemem Windows 10 (klientów programu Configuration Manager bez rejestracji w usłudze Intune) do wspólnego zarządzania i umożliwia rozpoczęcie przełączania określonego programu Configuration Manager obciążeń do usługi Intune.
 
 1. W konsoli programu Configuration Manager, przejdź do **administracji** > **omówienie** > **usługi w chmurze**  >  **Zarządzania wspólnej**.    
+
 2. Na karcie Narzędzia główne w grupie zarządzania, wybierz **konfigurowania zarządzania wspólnej** aby otworzyć Kreatora konfiguracji zarządzania wspólnej.    
 3. Na stronie subskrypcji kliknij **logowania** i zaloguj się do dzierżawy usługi Intune, a następnie kliknij przycisk **dalej**.   
 4. Na stronie aktywacji wybierz **pilotażu** lub **wszystkie** Włączanie automatycznej rejestracji w usłudze Intune, a następnie kliknij przycisk **dalej**. Po wybraniu **pilotażu**, tylko klienci programu Configuration manager, które są elementami członkowskimi grupy pilotażu automatycznie zarejestrowane w usłudze Intune. Ta opcja umożliwia włączenie zarządzania wspólnej w podzestawie klientów do początkowego testowania wspólnego zarządzania i zarządzania wspólnej wdrożenia przy użyciu podejście etapowe. W wierszu polecenia może służyć do wdrażania klienta programu Configuration Manager jako aplikacja w usłudze Intune dla urządzenia już zarejestrowane w usłudze Intune. Aby uzyskać więcej informacji, zobacz [urządzeń z systemem Windows 10 zarejestrowanych w usłudze Intune](co-management-prepare.md#windows-10-devices-enrolled-in-intune).
@@ -55,8 +57,8 @@ Niektórych obciążeń dostępnych może być przełączane za pośrednictwem u
       - Formant aplikacji systemu Windows Defender
       - Centrum zabezpieczeń systemu Windows Defender
       - Usługa Windows Defender Advanced Threat Protection
-
-
+      - Rozwiązanie Windows Information Protection
+      
 
 ## <a name="monitor-co-management"></a>Monitorowania zarządzania wspólnej
 Po włączeniu wspólnego zarządzania można monitorować wspólnej zarządzania urządzeniami przy użyciu następujących metod:

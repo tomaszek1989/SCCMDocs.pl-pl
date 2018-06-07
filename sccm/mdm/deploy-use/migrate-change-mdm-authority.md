@@ -9,11 +9,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-hybrid
 ms.assetid: be503ec9-5324-4f7c-bcf5-77204328e99c
-ms.openlocfilehash: b8bc778f4bcede45d3035b8b119fc3e4a4df4978
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: b295dad503b801ff9d04767f75c1688107016d0b
+ms.sourcegitcommit: 493cc42f05b9388ef872e466e5a75d569642b9fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34569684"
 ---
 # <a name="change-your-mdm-authority-to-intune-standalone"></a>Zmień urzędu zarządzania urządzeniami Przenośnymi autonomicznej usługi Intune.
 
@@ -53,7 +54,9 @@ Użyj poniższej procedury można zmienić urząd zarządzania urządzeniami Prz
 3.  Zaloguj się do dzierżawy usługi Intune, która pierwotnie używana po ustawieniu urzędu zarządzania urządzeniami Przenośnymi w programie Configuration Manager.
 4.  Kliknij przycisk **Dalej** i ukończ pracę kreatora.
 5.  Urząd zarządzania urządzeniami Przenośnymi została zresetowana. Subskrypcję usługi Intune nie jest już wyświetlane w węźle subskrypcje usługi Microsoft Intune w konsoli programu Configuration Manager.
-6.  Zaloguj się do [usługi Intune w portalu Azure](https://portal.azure.com/#blade/Microsoft_Intune_DeviceSettings/ExtensionLandingBlade/overview) przy użyciu tej samej dzierżawy usługi Intune używany w starszych.    
+6.  Zaloguj się do [portalu Intune](https://aka.ms/IntunePortal).
+7.  W bloku Microsoft Intune kliknij **rejestracji urządzeń**.
+8.  W bloku omówienie rejestracji urządzenia, zobacz **urzędu zarządzania urządzeniami Przenośnymi** właściwości.
 
   > [!Important]    
   > Nie używaj klasycznego konsoli usługi Intune. Możesz musi zalogować się w usłudze Intune w portalu Azure.
