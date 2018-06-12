@@ -10,11 +10,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.assetid: 9e68de6e-2b33-442b-b674-a382728d9529
-ms.openlocfilehash: 4c45da7b5a4b7f8945b23d03d0fd551276205ee2
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: ff40af9dd40921b63f8b8bd13ba5c287c3bf9972
+ms.sourcegitcommit: e35d07870656eadd29faacc378ecd091ff3bdcfb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848666"
 ---
 # <a name="software-center-user-guide"></a>Podręcznik użytkownika Centrum oprogramowania
 
@@ -45,7 +46,7 @@ Kliknij przycisk **aplikacji** kartę, aby znaleźć i zainstalować aplikacje, 
 - **Filtry**: Administrator IT może utworzyć kategorii aplikacji. Jeśli jest dostępny, kliknij przycisk listy rozwijanej, aby filtrować widok, aby tylko aplikacje w określonej kategorii. Wybierz **wszystkie** do Pokaż wszystkie aplikacje.
 - **Sortuj według**: Rozmieszczanie na liście aplikacji. Domyślnie ta lista podczas sortowania **najnowszych**.
 - **Wyszukiwanie**: Nadal nie możesz znaleźć, czego szukasz? Wprowadź słowa kluczowe w polu wyszukiwania, aby ją znaleźć!
--  Przełącz widok: Kliknij ikony do przełączenia widoku między widokiem listy i Kafelek widoku. Domyślnie na liście aplikacji jest pokazywana jako kafelki grafiki. 
+-  **Przełącz widok**: Kliknij ikony do przełączenia widoku między widokiem listy i Kafelek widoku. Domyślnie na liście aplikacji jest pokazywana jako kafelki grafiki. 
     - Widok kafelków: Administrator IT może dostosować ikony. Poniżej każdego kafelka Wyświetla nazwę aplikacji, Wydawca i wersja. 
     - Widok listy: Ten widok przedstawia ikona aplikacji, nazwa, wydawca, wersji i stanu. 
 

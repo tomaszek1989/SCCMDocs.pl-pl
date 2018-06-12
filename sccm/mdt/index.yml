@@ -4,50 +4,51 @@ title: Dokumentacja programu Microsoft Deployment Toolkit
 metadata:
   document_id: bfb05467-f6ec-4cb2-b108-254972de2d06
   title: Dokumentacja programu Microsoft Deployment Toolkit
-  description: "Program Microsoft Deployment Toolkit udostępnia kolekcję ujednoliconego narzędzi, procesów i wskazówki dotyczące automatyzacji wdrożenia pulpitu i serwera."
-  keywords: "bezpłatne, narzędzia, proces, przepływ pracy, automatyzacji, wdrażania automatycznego, dystrybucji"
-  author: arob98
-  ms.author: angrobe
-  manager: angrobe
-  ms.date: 12/27/2017
+  description: Program Microsoft Deployment Toolkit udostępnia kolekcję ujednoliconego narzędzi, procesów i wskazówki dotyczące automatyzacji wdrożenia pulpitu i serwera.
+  keywords: bezpłatne, narzędzia, proces, przepływ pracy, automatyzacji, wdrażania automatycznego, dystrybucji
+  author: aczechowski
+  ms.author: aaroncz
+  manager: dougeby
+  ms.date: 06/04/2018
   ms.topic: landing-page
   ms.devlang: na
   ms.prod: configuration-manager
-  ms.openlocfilehash: 56462ae538a2336f94a1883d099ad7b45c714633
-  ms.sourcegitcommit: 32bbc006a41868a6d9a708db5f7b372d9c71d985
+  ms.openlocfilehash: e02afe511d0c9f240bba68161551857d13d33de0
+  ms.sourcegitcommit: 10b3a571e2a822bbd7b58a25840ee1e6f703a7a2
   ms.translationtype: MT
   ms.contentlocale: pl-PL
-  ms.lasthandoff: 03/08/2018
+  ms.lasthandoff: 06/06/2018
+  ms.locfileid: "34814226"
 sections:
 - items:
   - type: markdown
-    text: "Program Microsoft Deployment Toolkit udostępnia kolekcję ujednoliconego narzędzi, procesów i wskazówki dotyczące automatyzacji wdrożenia pulpitu i serwera."
+    text: Program Microsoft Deployment Toolkit udostępnia kolekcję ujednoliconego narzędzi, procesów i wskazówki dotyczące automatyzacji wdrożenia pulpitu i serwera.
 - items:
   - type: list
     style: cards
     className: cardsM
     columns: 2
     items:
-    - href: whats-new-in-mdt.md
-      html: "<p>Poznaj nowości.</p>"
+    - href: https://aka.ms/mdtdownload
+      html: <p>Pobierz najnowszy zestaw MDT.</p>
       image:
-        src: https://docs.microsoft.com/media/common/i_whats-new.svg
-      title: "Nowości"
+        src: https://docs.microsoft.com/media/common/i_download-generic.svg
+      title: Pobieranie zestawu MDT
     - href: release-notes.md
-      html: "<p>Szczegółowe informacje o poprawki i usterki zawarte w tej wersji.</p>"
+      html: <p>Szczegółowe informacje o poprawki i usterki zawarte w tej wersji.</p>
       image:
         src: https://docs.microsoft.com/media/common/i_whats-new.svg
       title: Informacje o wersji
     - href: samples-guide.md
-      html: "<p>Przykładowe ustawienia konfiguracji dla scenariuszy wdrażania.</p>"
+      html: <p>Przykładowe ustawienia konfiguracji dla scenariuszy wdrażania.</p>
       image:
         src: https://docs.microsoft.com/media/common/i_code-samples.svg
-      title: "Przewodnik próbek"
-    - href: user-driven-installation-developers-guide.md
-      html: "<p>Dostosowywanie instalacji za pomocą użytkownika dla Twojej organizacji.</p>"
+      title: Przewodnik próbek
+    - href: use-the-mdt.md
+      html: <p>Przeprowadzania wdrożeń systemu Windows przy użyciu lite touch (LTI) bezobsługową (ZTI) lub instalacje oparte na użytkownika (UDI).</p>
       image:
-        src: https://docs.microsoft.com/media/common/i_architecture.svg
-      title: Przewodnik dewelopera
+        src: https://docs.microsoft.com/media/common/i_api-reference.svg
+      title: Jak używać programu Microsoft Deployment Toolkit
 - title: Przewodniki Szybki Start
   items:
   - type: list
@@ -56,15 +57,15 @@ sections:
     columns: 3
     items:
     - href: lite-touch-installation-guide.md
-      title: "Instalowanie przy użyciu nośnika rozruchowego"
+      title: Instalowanie przy użyciu nośnika rozruchowego
       image:
         src: https://docs.microsoft.com/media/common/i_get-started.svg
     - href: user-driven-installation-guide.md
-      title: "Rozmieszczanie za pomocą instalacji opartej na użytkownika"
+      title: Rozmieszczanie za pomocą instalacji opartej na użytkownika
       image:
         src: https://docs.microsoft.com/media/common/i_get-started.svg
     - href: sccm-guide.md
-      title: "Wdrażanie na nowym komputerze"
+      title: Wdrażanie na nowym komputerze
       image:
         src: https://docs.microsoft.com/media/common/i_get-started.svg
 - title: Dodatkowe zasoby
@@ -74,15 +75,15 @@ sections:
     className: cardsM
     columns: 3
     items:
-    - href: use-the-mdt.md
-      title: "Przeprowadzanie wdrożenia przy użyciu Lite Touch bezobsługową i instalacji sterowanej wdrożeń."
-      image:
-        src: https://docs.microsoft.com/media/common/i_api-reference.svg
     - href: toolkit-reference.md
-      title: "Ustawienia konfiguracji, które pomocy z wdrożeniami."
+      title: Ustawienia konfiguracji, które pomocy z wdrożeniami.
       image:
         src: https://docs.microsoft.com/media/common/i_download-install.svg
     - href: troubleshooting-reference.md
-      title: "Pliki dziennika, kody błędów i inne szczegóły dotyczące rozwiązywania problemów."
+      title: Pliki dziennika, kody błędów i inne szczegóły dotyczące rozwiązywania problemów.
       image:
         src: https://docs.microsoft.com/media/common/i_support.svg
+    - href: user-driven-installation-developers-guide.md
+      title: Dostosowywanie instalacji za pomocą użytkownika dla Twojej organizacji.
+      image:
+        src: https://docs.microsoft.com/media/common/i_architecture.svg

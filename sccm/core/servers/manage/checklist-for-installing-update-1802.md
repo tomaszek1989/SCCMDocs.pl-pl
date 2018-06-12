@@ -1,8 +1,8 @@
 ---
-title: Lista kontrolna dotycząca 1802 | System Center Configuration Manager
+title: Lista kontrolna dotycząca 1802
 titleSuffix: Configuration Manager
 description: Więcej informacji na temat działania należy podjąć przed zaktualizowaniem do System Center Configuration Manager w wersji 1802.
-ms.date: 03/22/2018
+ms.date: 06/08/2018
 ms.prod: configuration-manager
 ms.technology: configmgr-other
 ms.topic: conceptual
@@ -10,11 +10,12 @@ ms.assetid: 6af92de2-b2c7-4d5c-affd-6cce81979fb5
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 5f16f69e7b359112a03bb26c964ac0a6990c0b24
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: 74fa4e9240cf4a3d369d6b20bcb9233fb6319a8d
+ms.sourcegitcommit: 690f64bd02139f893bd0b45e2e0f00ed6bb4e1c1
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35259302"
 ---
 # <a name="checklist-for-installing-update-1802-for-system-center-configuration-manager"></a>Lista kontrolna dotycząca instalowania aktualizacji 1802 programu System Center Configuration Manager
 
@@ -22,7 +23,7 @@ ms.lasthandoff: 05/03/2018
 
 Korzystając z bieżącej gałęzi programu System Center Configuration Manager, można zainstalować aktualizacji w konsoli dla wersji 1802 zaktualizować hierarchii z poprzedniej wersji. <!-- baseline only statement: -->(Ponieważ jest również dostępna jako wersja 1802 [nośnika linii bazowej](/sccm/core/servers/manage/updates#a-namebkmkbaselinesa-baseline-and-update-versions), nośnik instalacyjny służy do instalowania pierwszej lokacji nowej hierarchii.)
 
-Umożliwia pobranie aktualizacji do wersji 1802, rola systemu lokacji punktu połączenia usługi należy użyć w lokacji najwyższego poziomu w hierarchii. Może to być w trybie online lub offline. Po hierarchii Pobieranie pakietu aktualizacji firmy Microsoft, można znaleźć je w konsoli w obszarze **administracji &gt; omówienie &gt; usługi w chmurze &gt; aktualizacje i obsługa**.
+Aby pobranie aktualizacji do wersji 1802, należy użyć w lokacji najwyższego poziomu w hierarchii punkt połączenia usługi. Ta rola systemu lokacji może być w trybie online lub offline. Po hierarchii Pobieranie pakietu aktualizacji firmy Microsoft, można znaleźć je w konsoli w obszarze **administracji** obszaru roboczego w **aktualizacje i obsługa** węzła.
 
 -   Gdy aktualizacja jest wymienione jako **dostępne**, aktualizacja jest gotowa do zainstalowania. Przed zainstalowaniem wersji 1802, przejrzyj następujące informacje [informacje dotyczące instalowania aktualizacji 1802](#about-installing-update-1802) i [Lista kontrolna](#checklist) konfiguracji, które należy wykonać przed rozpoczęciem aktualizacji.
 
@@ -141,10 +142,14 @@ Aby zdefiniować okres, podczas którego aktualizacji do lokacji można zainstal
 
 Może to ułatwić określenie, kiedy można zainstalować aktualizację w danej hierarchii. Aby uzyskać więcej informacji, zobacz [usługi systemu windows dla serwerów lokacji](/sccm/core/servers/manage/service-windows).
 
+**Przejrzyj obsługiwanych rozszerzeń:**   
+<!--SCCMdocs#587-->   
+Jeśli rozszerzania programu Configuration Manager z innymi produktami firmy Microsoft lub partnerów, potwierdzić, że te produkty obsługi wersji 1802. Skontaktuj się z dostawcą tej informacji. Na przykład, zobacz Microsoft Deployment Toolkit [informacje o wersji](/sccm/mdt/release-notes).
+
 **Uruchom narzędzie sprawdzania wymagań wstępnych Instalatora:**   
 Gdy aktualizacja jest wyświetlane w konsoli jako **dostępne,** niezależnie można uruchomić narzędzie sprawdzania wymagań wstępnych przed instalacją aktualizacji. (Po zainstalowaniu aktualizacji w witrynie Narzędzia sprawdzania wymagań wstępnych zostanie ponownie uruchomione.)
 
-Aby uruchomić sprawdzanie wymagań wstępnych z konsoli, przejdź do **Administracja > Przegląd > usługi w chmurze > aktualizacje i obsługa.** Następnie kliknij prawym przyciskiem myszy **pakiet aktualizacji programu Configuration Manager 1802**, a następnie wybierz pozycję **sprawdzania wymagań wstępnych**.
+Aby uruchomić sprawdzanie wymagań wstępnych z konsoli, przejdź do **administracji** obszaru roboczego, a następnie wybierz **aktualizacje i obsługa**. Wybierz **Configuration Manager 1802** pakiet aktualizacji, a następnie kliknij przycisk **sprawdzania wymagań wstępnych** na Wstążce.
 
 Aby uzyskać więcej informacji na temat uruchamiania i następnie monitorowania Sprawdzanie wymagań wstępnych, zobacz **krok 3: Uruchom narzędzie sprawdzania wymagań wstępnych przed instalacją aktualizacji** w temacie [instalacja aktualizacji w konsoli programu System Center Configuration Manager](/sccm/core/servers/manage/install-in-console-updates).
 
@@ -167,3 +172,4 @@ Przejrzyj następujące akcje do wykonania po zakończeniu instalacji aktualizac
 3.  Skonfiguruj ponownie repliki bazy danych dla punktów zarządzania w lokacjach głównych, które zostały wyłączone przed rozpoczęciem aktualizacji.
 4.  Skonfiguruj ponownie zadania konserwacji bazy danych, które zostały wyłączone przed rozpoczęciem aktualizacji.
 5.  Jeśli skonfigurowano wdrażania pilotażowego przed zainstalowaniem aktualizacji klienta, należy uaktualnić klientów na planu, który został utworzony.
+6.  Jeśli używasz wszystkich rozszerzeń do programu Configuration Manager aktualizację do najnowszej wersji w celu obsługi tej aktualizacji programu Configuration Manager. 

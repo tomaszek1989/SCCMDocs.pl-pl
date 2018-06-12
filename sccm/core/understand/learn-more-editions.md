@@ -10,11 +10,12 @@ ms.assetid: 495b87ae-41a4-49ba-abe2-d4f7d22ac0d4
 author: aczechowski
 ms.author: aaroncz
 manager: dougeby
-ms.openlocfilehash: 8eb561d9867c6bde778ffd5fb6ef404395c359da
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: a8ce492aa34fa130a11bde0d5823252a9d782960
+ms.sourcegitcommit: e35d07870656eadd29faacc378ecd091ff3bdcfb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848632"
 ---
 # <a name="licensing-and-branches-for-system-center-configuration-manager"></a>Licencjonowanie i gałęzi programu System Center Configuration Manager
 
@@ -38,9 +39,9 @@ W tym temacie odwołuje się do Umowy Software Assurance (lub równoważne subsk
 |----------------|---------------------|--------------------|
 |Bieżąca gałąź | Wymaga active umowę Software Assurance (lub równoważne uprawnienia) do programu Configuration Manager. </br></br> Zobacz [Software Assurance i bieżącej gałęzi](#software-assurance-and-the-current-Branch) w tym temacie.| Obsługiwane do użytku w środowiskach produkcyjnych, które chcesz otrzymywać regularne aktualizacje funkcji i jakości firmy Microsoft. </br></br> Tej gałęzi zapewnia dostęp do używania wszystkich funkcji i ulepszeń. </br></br> W wersji programu Configuration Manager wydane przed 1710 pomocy technicznej jest za 12 miesięcy. Począwszy od wersji 1710 każdej wersji aktualizacji pozostaje w obsługę 18 miesięcy od jego data wydania ogólnej dostępności. Zobacz [pomocy technicznej dla programu System Center Configuration Manager bieżącej gałęzi wersji](/sccm/core/servers/manage/current-branch-versions-supported) więcej szczegółów.|
 |Długoterminowe obsługi Branch (LTSB)| Wymaga bieżącego Software Assurance umowę z firmą Microsoft w chwili wydania (1 października 2016) </br></br> Zobacz [Software Assurance i LTSB](#software-assurance-and-the-ltsb) w tym temacie. | Obsługiwane do użytku w środowiskach produkcyjnych. Przeznaczony do użycia przez klientów, które mają się, że ich Software Assurance (SA) lub równoważne subskrypcje prawa do programu Configuration Manager wygasają po 1 2016 października. </br></br> Tej gałęzi jest ograniczona w porównaniu z bieżącej gałęzi. </br></br> Krytyczne aktualizacje zabezpieczeń dla programu Configuration Manager są udostępnione do tego rozgałęzienia, ale żadne nowe funkcje stają się dostępne. |
-|Instalacja dotyczy wersji ewaluacyjnej bieżącej gałęzi| Nie wymagają umowy Software Assurance z firmą Microsoft. | [Instaluje oceny](https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection) są zawsze bieżącej gałęzi i może służyć do 180 dni. </br></br> Można uaktualnić instalacji wersji ewaluacyjnej do pełnej wersji instalacji bieżącej gałęzi. Nie można uaktualnić instalację w wersji ewaluacyjnej do gałęzi obsługi długoterminowe.|
+|Instalacja dotyczy wersji ewaluacyjnej bieżącej gałęzi| Nie wymagają umowy Software Assurance z firmą Microsoft. | [Instaluje oceny](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection) są zawsze bieżącej gałęzi i może służyć do 180 dni. </br></br> Można uaktualnić instalacji wersji ewaluacyjnej do pełnej wersji instalacji bieżącej gałęzi. Nie można uaktualnić instalację w wersji ewaluacyjnej do gałęzi obsługi długoterminowe.|
 
-Oprócz bieżącej gałęzi, LTSB i instalacja dotyczy wersji ewaluacyjnej bieżącej gałęzi [Technical Preview programu System Center Configuration Manager](https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview) jest również dostępna. Jest to ograniczona kompilacja programu Configuration Manager umożliwia wypróbowanie nowych funkcji, które mogą zostać dodane do bieżącej gałęzi w przyszłej aktualizacji. Należy zainstalować przy użyciu nośnika inny niż w przypadku wersji licencjonowanej wersji Technical Preview. Aby uzyskać więcej informacji, zobacz dokumentację [Technical Preview](/sccm/core/get-started/technical-preview).
+Oprócz bieżącej gałęzi, LTSB i instalacja dotyczy wersji ewaluacyjnej bieżącej gałęzi [Technical Preview programu System Center Configuration Manager](https://www.microsoft.com/evalcenter/evaluate-system-center-configuration-manager-and-endpoint-protection-technical-preview) jest również dostępna. Jest to ograniczona kompilacja programu Configuration Manager umożliwia wypróbowanie nowych funkcji, które mogą zostać dodane do bieżącej gałęzi w przyszłej aktualizacji. Należy zainstalować przy użyciu nośnika inny niż w przypadku wersji licencjonowanej wersji Technical Preview. Aby uzyskać więcej informacji, zobacz dokumentację [Technical Preview](/sccm/core/get-started/technical-preview).
 
 
 ## <a name="licensed-branches"></a>Licencjonowane gałęzi

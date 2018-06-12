@@ -9,11 +9,12 @@ ms.topic: conceptual
 ms.prod: configuration-manager
 ms.technology: configmgr-client
 ms.assetid: 71eaa409-b955-45d6-8309-26bf3b3b0911
-ms.openlocfilehash: e62b748596aba1404d6b097e5aa0bf74266f055b
-ms.sourcegitcommit: 0b0c2735c4ed822731ae069b4cc1380e89e78933
+ms.openlocfilehash: fbae44d1344dd36d3c0a6faf2e50727dfa830ba0
+ms.sourcegitcommit: 8060ea520fb08629e1d5f249daffe825536673a5
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35232374"
 ---
 # <a name="certificates-for-the-cloud-management-gateway"></a>Certyfikaty dla bramy zarządzania w chmurze
 
@@ -41,7 +42,7 @@ CMG tworzy usługi protokołu HTTPS, do którego połączenia klientów internet
 ### <a name="cmg-trusted-root-certificate-to-clients"></a>CMG zaufany certyfikat główny dla klientów
 
 Klienci muszą ufać CMG certyfikatu uwierzytelniania serwera. Istnieją dwie metody w celu tego zaufania:
-- Użyj certyfikatu z dostawcy publicznego i globalnie zaufanych certyfikatów. Na przykład, między innymi VeriSign i Thawte. Klienci systemu Windows obejmują zaufane główne urzędy certyfikacji (CA) z usług tych dostawców. Za pomocą certyfikatu uwierzytelniania serwera wydany przez jedną z tych dostawców, klienci automatycznie ufać go. 
+- Użyj certyfikatu z dostawcy publicznego i globalnie zaufanych certyfikatów. Na przykład, ale nie ograniczone do DigiCert, Thawte lub od firmy VeriSign. Klienci systemu Windows obejmują zaufane główne urzędy certyfikacji (CA) z usług tych dostawców. Za pomocą certyfikatu uwierzytelniania serwera wydany przez jedną z tych dostawców, klienci automatycznie ufać go. 
 - Użyć certyfikatu wydanego przez urząd certyfikacji przedsiębiorstwa z infrastruktury kluczy publicznych (PKI). Większości wdrożeń infrastruktury kluczy publicznych przedsiębiorstwa Dodaj zaufanych głównych urzędów certyfikacji do klientów systemu Windows. Na przykład za pomocą usług certyfikatów Active Directory przy użyciu zasad grupy. Jeśli wydawane serwera CMG uwierzytelniania certyfikatu z urzędu certyfikacji, który klient automatycznie niezaufane musisz dodać certyfikat zaufanego głównego urzędu certyfikacji do klientów internetowych.
     - Umożliwia także profili certyfikatów programu Configuration Manager, aby udostępnić certyfikaty na klientach. Aby uzyskać więcej informacji, zobacz [wprowadzenie do profilów certyfikatów](/sccm/protect/deploy-use/introduction-to-certificate-profiles).
 
